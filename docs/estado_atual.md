@@ -17,7 +17,7 @@ O vídeo deve ensinar integração por partes duas vezes, justificar a escolha d
 **ID do piloto:** `vid_0001`  
 **Nome de trabalho:** `integral_001`  
 **Pasta planejada:** `videos/vid_0001_integracao_por_partes/`  
-**Status:** ambiente validado; estrutura mínima local criada; primeiro commit/GitHub remoto e preview ainda pendentes.
+**Status:** ambiente validado; estrutura mínima versionada e enviada ao GitHub; template vertical e preview ainda pendentes.
 
 ## Ambiente validado
 
@@ -46,10 +46,10 @@ Não reinstalar Python, Manim, MiKTeX, recriar `.venv` ou rodar `uv init` sem um
 - Nome/local do projeto: `manim-fisica`
 - Caminho local conhecido no Windows: `C:\Users\KaioOrtiz\PycharmProjects\manim-fisica`
 - Git local: inicializado
-- GitHub remoto: **ainda não registrado neste documento**
-- URL do repositório: **pendente**
+- GitHub remoto: `origin`
+- URL do repositório: `https://github.com/Unylake18/parallaxlab.git`
 - Branch atual: `main`
-- Último commit relevante: **primeiro commit ainda pendente**
+- Primeiro commit da estrutura: `acd47bf` — `chore: organizar estrutura inicial do Parallax Lab`
 - Estratégia MVP: trabalhar em `main` com commits pequenos; usar branch/PR apenas para alterações maiores, arriscadas ou estruturais.
 
 ## Configuração de vídeo aprovada
@@ -157,27 +157,20 @@ Verificação:
 
 ## Próxima ação concreta
 
-1. Criar ou confirmar o repositório Git local/GitHub para `manim-fisica`.
-2. Registrar URL, branch e primeiro commit neste arquivo.
-3. Criar a estrutura mínima:
-   - `docs/`
-   - `template/`
-   - `videos/vid_0001_integracao_por_partes/`
-   - `renders/`
-4. Criar `template/__init__.py`, `template/config.py` e `template/helpers.py`.
-5. Mover/adaptar o código de teste existente sem apagar a versão que já funciona.
-6. Criar `cena.py` do piloto.
-7. Renderizar preview vertical em 540×960/15 fps.
-8. Conferir a cena em tela de celular.
-9. Só depois produzir narração, legendas, edição e render final.
+1. Validar o template vertical mínimo.
+2. Adaptar o código de teste existente sem apagar a versão funcional.
+3. Criar `cena.py` do piloto.
+4. Renderizar preview vertical em 540×960/15 fps.
+5. Conferir a cena em tela de celular.
+6. Só depois avançar para narração, legendas, edição e render final.
 
 ## Pendências reais
 
-- [ ] Confirmar/inicializar Git no projeto local.
-- [ ] Criar repositório remoto no GitHub.
-- [ ] Registrar URL do GitHub.
-- [ ] Confirmar branch principal.
-- [ ] Fazer primeiro commit da estrutura/documentação.
+- [ x ] Confirmar/inicializar Git no projeto local.
+- [ x ] Criar repositório remoto no GitHub.
+- [ x ] Registrar URL do GitHub.
+- [ x ] Confirmar branch principal.
+- [ x ] Fazer primeiro commit da estrutura/documentação.
 - [ ] Criar template vertical reutilizável.
 - [ ] Criar helpers iniciais.
 - [ ] Produzir preview do `vid_0001`.
