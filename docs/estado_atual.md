@@ -50,6 +50,7 @@ Não reinstalar Python, Manim, MiKTeX, recriar `.venv` ou rodar `uv init` sem um
 - URL do repositório: `https://github.com/Unylake18/parallaxlab.git`
 - Branch atual: `main`
 - Primeiro commit da estrutura: `acd47bf` — `chore: organizar estrutura inicial do Parallax Lab`
+- Último commit relevante: `6f467c2` — `docs: registrar repositório GitHub`
 - Estratégia MVP: trabalhar em `main` com commits pequenos; usar branch/PR apenas para alterações maiores, arriscadas ou estruturais.
 
 ## Configuração de vídeo aprovada
@@ -166,11 +167,11 @@ Verificação:
 
 ## Pendências reais
 
-- [ x ] Confirmar/inicializar Git no projeto local.
-- [ x ] Criar repositório remoto no GitHub.
-- [ x ] Registrar URL do GitHub.
-- [ x ] Confirmar branch principal.
-- [ x ] Fazer primeiro commit da estrutura/documentação.
+- [x] Confirmar/inicializar Git no projeto local.
+- [x] Criar repositório remoto no GitHub.
+- [x] Registrar URL do GitHub.
+- [x] Confirmar branch principal.
+- [x] Fazer primeiro commit da estrutura/documentação.
 - [ ] Criar template vertical reutilizável.
 - [ ] Criar helpers iniciais.
 - [ ] Produzir preview do `vid_0001`.
