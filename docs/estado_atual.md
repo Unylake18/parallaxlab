@@ -73,7 +73,7 @@ config.frame_width = 9
 config.frame_height = 16
 ```
 
-Comandos padrão planejados:
+Comandos validados:
 
 ```powershell
 # Preview vertical
@@ -172,7 +172,7 @@ Verificação:
 - [x] Confirmar branch principal.
 - [x] Fazer primeiro commit da estrutura/documentação.
 - [x] Criar template vertical reutilizável.
-- [ ] Criar helpers iniciais.
+- [x] Criar helpers iniciais.
 - [ ] Produzir preview do `vid_0001`.
 - [ ] Aprovar roteiro de 45–60 segundos.
 - [ ] Definir voz do piloto.
