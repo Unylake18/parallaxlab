@@ -1,0 +1,1 @@
+"""Helpers reutilizáveis para as cenas Manim do Parallax Lab."""

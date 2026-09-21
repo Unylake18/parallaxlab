@@ -1,0 +1,22 @@
+# Ambiente Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# PyCharm
+.idea/
+
+# Manim
+media/
+
+# Renders
+renders/*
+!renders/.gitkeep
+
+# Caches
+.pytest_cache/
+.ruff_cache/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
