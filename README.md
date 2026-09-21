@@ -37,13 +37,13 @@ Antes de alterar a infraestrutura, ler:
 Executar na raiz do projeto:
 
 ```powershell
-uv run manim -p -r 540,960 --fps 15 videos/vid_0001_integracao_por_partes/cena.py Integral001
+uv run python -m manim -p -r 540,960 --fps 15 videos/vid_0001_integracao_por_partes/cena.py Integral001
 ```
 
 ## Render final
 
 ```powershell
-uv run manim -p -r 1080,1920 --fps 30 videos/vid_0001_integracao_por_partes/cena.py Integral001
+uv run python -m manim -p -r 1080,1920 --fps 30 videos/vid_0001_integracao_por_partes/cena.py Integral001
 ```
 
 ## Git

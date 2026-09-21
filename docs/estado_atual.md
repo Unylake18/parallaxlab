@@ -17,8 +17,7 @@ O vídeo deve ensinar integração por partes duas vezes, justificar a escolha d
 **ID do piloto:** `vid_0001`  
 **Nome de trabalho:** `integral_001`  
 **Pasta planejada:** `videos/vid_0001_integracao_por_partes/`  
-**Status:** ambiente validado; estrutura mínima versionada e enviada ao GitHub; template vertical e preview ainda pendentes.
-
+**Status:** ambiente e template vertical validados; preview técnico renderizado com sucesso; implementação do `vid_0001` ainda pendente.
 ## Ambiente validado
 
 - Sistema operacional: Windows
@@ -78,10 +77,10 @@ Comandos padrão planejados:
 
 ```powershell
 # Preview vertical
-uv run manim -p -r 540,960 --fps 15 videos/vid_0001_integracao_por_partes/cena.py Integral001
+uv run python -m manim -p -r 540,960 --fps 15 videos/vid_0001_integracao_por_partes/cena.py Integral001
 
 # Render vertical final
-uv run manim -p -r 1080,1920 --fps 30 videos/vid_0001_integracao_por_partes/cena.py Integral001
+uv run python -m manim -p -r 1080,1920 --fps 30 videos/vid_0001_integracao_por_partes/cena.py Integral001
 ```
 
 ## Solução-fonte do piloto
@@ -172,7 +171,7 @@ Verificação:
 - [x] Registrar URL do GitHub.
 - [x] Confirmar branch principal.
 - [x] Fazer primeiro commit da estrutura/documentação.
-- [ ] Criar template vertical reutilizável.
+- [x] Criar template vertical reutilizável.
 - [ ] Criar helpers iniciais.
 - [ ] Produzir preview do `vid_0001`.
 - [ ] Aprovar roteiro de 45–60 segundos.

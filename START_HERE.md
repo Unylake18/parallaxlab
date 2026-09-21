@@ -42,10 +42,10 @@ Na raiz do repositório:
 uv run manim --version
 
 # Preview vertical rápido
-uv run manim -p -r 540,960 --fps 15 videos/vid_0001_integracao_por_partes/cena.py Integral001
+uv run python -m manim -p -r 540,960 --fps 15 videos/vid_0001_integracao_por_partes/cena.py Integral001
 
 # Render vertical final
-uv run manim -p -r 1080,1920 --fps 30 videos/vid_0001_integracao_por_partes/cena.py Integral001
+uv run python -m manim -p -r 1080,1920 --fps 30 videos/vid_0001_integracao_por_partes/cena.py Integral001
 
 git status
 git add <arquivos>
