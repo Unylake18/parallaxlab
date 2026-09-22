@@ -45,7 +45,7 @@ Pendência: escolher tipografia oficial compatível com uso comercial e disponí
 
 ## Assets aprovados, funções e organização
 
-A estrutura abaixo é a organização aprovada. Na inspeção local de 2026-09-22, os oito arquivos estavam presentes nesses caminhos. Todos aparecem como untracked (`?? assets/branding/`), nenhum está staged, nenhum é retornado por `git ls-files assets/branding` e, portanto, nenhum está commitado. Aprovação visual, presença local e versionamento são estados distintos. A inspeção de existência não certifica dimensões, transparência ou qualidade de exportação.
+A estrutura abaixo é a organização aprovada. Os oito arquivos estão presentes nesses caminhos, são rastreados pelo Git e já foram versionados no repositório. Aprovação visual, versionamento e aplicação no vídeo continuam sendo estados distintos; a presença do arquivo não certifica sua adequação a todo recorte ou contexto.
 
 Caminhos relativos a `assets/branding/`:
 
@@ -77,7 +77,7 @@ Equações claras, resultado destacado, branding discreto e espaço inferior liv
 3. Matemática/física.
 4. Identidade visual.
 
-O template vertical e os helpers básicos já existem. **A aplicação desta identidade ao template e ao piloto permanece pendente.** O piloto atual usa fundo `#101820` e destaques YELLOW/TEAL/GREEN; esse estado técnico não substitui a paleta aprovada nem deve ser descrito como integração de branding concluída. Esta consolidação documental não altera cenas, cores ou assets.
+O template vertical e os helpers básicos já existem. **A aplicação desta identidade ao template e ao piloto está em produção:** a paleta e o watermark aparecem em alterações locais de `template/config.py` e `cena.py`, ainda não commitadas nem aprovadas como versão final. O estado versionado e o working tree devem ser diferenciados até a conclusão dessa unidade.
 
 ## Uso de logo, avatar e watermark
 
@@ -98,6 +98,8 @@ Estética infantil, escolar genérica, gamer ou excessivamente carregada; psicod
 
 **Aprovado:** nome Parallax Lab; @labparallax; conceito de perspectiva; símbolo com planos e orbe; direção visual; famílias de cor; oito variantes e suas funções; organização de pastas; branding discreto e prioridade de leitura.
 
-**Implementado/verificado:** oito PNGs presentes localmente na estrutura aprovada; template vertical básico e piloto com voz existentes. Assets ainda não versionados; branding ainda não integrado ao Manim.
+**Implementado/versionado:** oito PNGs rastreados na estrutura aprovada; template vertical básico, helpers e piloto com voz existentes no histórico do repositório.
 
-**Pendente:** conferir exportações, transparência e dimensões; extrair/refinar cores dos assets; escolher e verificar licença das fontes; definir títulos, legendas e MathTex; definir área de proteção, tamanhos e watermark; integrar a identidade ao template preservando didática e sincronização; revisar em celular; revisar e versionar os assets em uma etapa autorizada.
+**Em produção:** aplicação da paleta e do watermark ao template/piloto em mudanças locais ainda não commitadas.
+
+**Pendente:** revisar e versionar essa aplicação; escolher e verificar licença das fontes; definir títulos, legendas e MathTex; consolidar área de proteção, tamanhos e watermark após QA; revisar em celular.

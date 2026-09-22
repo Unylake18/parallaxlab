@@ -12,10 +12,10 @@
 
 - Windows + PyCharm; Python 3.12; uv; Manim Community 0.21.0; MiKTeX/MathTex funcionais; renders MP4 já produzidos.
 - Projeto local: `C:\Users\KaioOrtiz\PycharmProjects\manim-fisica`; branch `main`.
-- Remoto `origin` configurado: `https://github.com/Unylake18/parallaxlab.git`. Configuração local conferida; estado online não consultado nesta reconciliação.
-- HEAD local: `f372c1a` — `feat: adicionar helpers iniciais do template`. Existem alterações não commitadas em documentação, cena e dependências, além de assets e áudios não rastreados. Não confundir arquivos presentes com arquivos já versionados.
-- Preservar o ambiente: não reinstalar, recriar `.venv`, executar `uv init` ou alterar dependências sem diagnóstico concreto. Alterações preexistentes em `pyproject.toml`/`uv.lock` foram preservadas nesta etapa.
-- MVP: trabalhar em `main`, com commits pequenos; branch/PR para alterações maiores ou arriscadas. Nenhum commit/push nesta consolidação.
+- Remoto `origin` configurado: `https://github.com/Unylake18/parallaxlab.git`. O HEAD local está um commit documental à frente da referência local `origin/main`; esse commit ainda não foi enviado.
+- Alterações locais de produção, ainda não commitadas: `template/config.py`, `videos/vid_0001_integracao_por_partes/cena.py` e `videos/vid_0001_integracao_por_partes/audio/narracao_final.mp3`.
+- Preservar o ambiente: não reinstalar, recriar `.venv`, executar `uv init` ou alterar dependências sem diagnóstico concreto. `pyproject.toml` e `uv.lock` não possuem alterações locais.
+- MVP: trabalhar em `main`, com commits pequenos; branch/PR para alterações maiores ou arriscadas.
 
 ## Identidade: aprovado × implementado
 
@@ -23,7 +23,7 @@
 
 **Paleta operacional inicial:** fundo `#050816`, ciano `#35D9FF`, azul `#267BFF`, violeta `#745CFF`, magenta `#EA63FF`, branco `#F5F7FF`. Extração/refinamento pelos assets ainda pendente. Tipografia exata ainda não escolhida/licenciada.
 
-**Assets aprovados e presentes localmente:** oito PNGs na organização prevista abaixo. Em 2026-09-22, todos aparecem como untracked (`?? assets/branding/`), nenhum está staged, nenhum é retornado por `git ls-files assets/branding` e, portanto, nenhum está commitado. Funções em `docs/identidade_visual.md`; propriedades de exportação ainda não validadas.
+**Assets aprovados e versionados:** os oito PNGs estão presentes na organização prevista abaixo, são rastreados pelo Git e já integram o histórico do repositório. Funções em `docs/identidade_visual.md`; propriedades finais de aplicação ainda dependem do contexto de uso.
 
 ```text
 assets/branding/
@@ -40,7 +40,7 @@ assets/branding/
     └── parallax_lab_logo_horizontal.png
 ```
 
-**Implementado:** template vertical 9×16 e helpers `make_title`/`make_equation`. **Pendente:** aplicar a identidade aprovada ao template/piloto. A cena ainda usa fundo `#101820` e YELLOW/TEAL/GREEN, sem a integração de branding concluída. Prioridade: legibilidade → compreensão → matemática/física → identidade; logo discreto e faixa inferior livre.
+**Implementado e versionado:** template vertical 9×16, helpers `make_title`/`make_equation` e assets oficiais. **Em produção:** a aplicação da paleta e do watermark ao template/piloto existe em alterações locais de `template/config.py` e `cena.py`, ainda não commitadas nem tratadas como versão final. Prioridade: legibilidade → compreensão → matemática/física → identidade; logo discreto e faixa inferior livre.
 
 ## Vídeo atual e evidências
 
@@ -52,10 +52,9 @@ assets/branding/
 
 Cena implementada com duas aplicações explícitas, motivação da escolha de u, distribuição do −2, expansão/fatoração e verificação pela derivada, recuperando x²eˣ. Smoke test preservado como `TemplateSmokeTest`.
 
-- Voz via ElevenLabs, conforme briefing aprovado; sete blocos em `videos/vid_0001_integracao_por_partes/audio/`.
-- `narracao_final.mp3`: **68,439 s**, incluindo seis pausas de 0,20 s. Originais preservados; sem mudança de pitch/velocidade.
-- Preview mais recente: `media/qa_integral001_com_voz/Integral001_preview_sincronia_fina.mp4`, **68,933 s**, 540×960/15 fps, com **0,494 s** de respiro após o áudio.
-- Microajustes guiados pelo texto exato e pelas pausas medidas já implementados. Frames inspecionados; áudio e vídeo copiados sem recodificação na última montagem. Evidências em `media/qa_integral001_com_voz/sincronia_fina/qa.json` e `contact_sheet.jpg`.
+- Voz via ElevenLabs, conforme briefing aprovado; os sete blocos originais e uma montagem de `narracao_final.mp3` estão versionados em `videos/vid_0001_integracao_por_partes/audio/`.
+- A duração de **68,933 s** identifica o último preview validado antes das alterações visuais e de áudio atualmente locais; ela não descreve a versão de produção no working tree.
+- As alterações locais possuem QA em `media/qa_integral001_microajustes/`: narração de **68,719 s** e preview com voz de **69,266 s**, em 540×960/15 fps. Esses artefatos correspondem a trabalho não commitado e não constituem render final publicado.
 - Validação auditiva palavra a palavra e QA físico em celular **pendentes**. Não declarar aprovação audiovisual final.
 - Legendas, render final e publicação **pendentes**. O preview já existe; não reiniciar sua produção nem a escolha da voz.
 
@@ -79,6 +78,6 @@ Primeiro ciclo aprovado: **10 vídeos — 6 exercícios, 2 teorias curtas, 2 apl
 
 **Status: PLANEJADA / NÃO IMPLEMENTADA.** O Parallax Lab possui como direção futura aprovada visualizações matemáticas dinâmicas, física animada ampliada, conteúdos de intuição e curiosidades e representações complementares ou sincronizadas de um mesmo fenômeno. Essa expansão não está implementada, não constitui pendência atual e não altera `vid_0001`, os dez primeiros vídeos ou a próxima ação operacional do MVP.
 
-**Próxima ação concreta:** conferir as propriedades dos oito assets locais e definir a tipografia oficial compatível com uso comercial e Windows/Manim; então integrar a identidade ao template em uma unidade técnica própria, preservando a matemática e os timings do piloto.
+**Próxima ação concreta:** revisar o preview e as alterações locais de identidade, composição e áudio; após aprovação, versionar essa unidade de produção sem misturá-la às mudanças documentais.
 
-**Pendências seguintes:** revisar/versionar assets e alterações locais em etapa autorizada; validar sincronização auditiva e legibilidade em celular; concluir legendas/edição, render final e QA; preparar publicação e regras atuais de plataforma. Nenhuma publicação confirmada.
+**Pendências seguintes:** definir a tipografia oficial; validar sincronização auditiva e legibilidade em celular; concluir legendas/edição, render final e QA; preparar publicação e regras atuais de plataforma. Nenhuma publicação confirmada.

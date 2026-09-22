@@ -2,7 +2,7 @@
 
 Manual curto para abrir antes de trabalhar. O guia completo está em `docs/guia_mestre.md`; a verdade operacional está em `docs/estado_atual.md`.
 
-**Reconciliação de 2026-09-22:** marca Parallax Lab, Instagram @labparallax. Identidade aprovada em `docs/identidade_visual.md`; oito assets presentes localmente, todos untracked, não staged e ainda não commitados. Template básico e piloto com voz já existem; aplicação do branding ao Manim ainda pendente. O preview mais recente tem 68,933 s; a voz aprovada substitui o alvo antigo de 45–60 s. Validação auditiva palavra a palavra e QA físico em celular continuam pendentes.
+**Reconciliação de 2026-09-22:** marca Parallax Lab, Instagram @labparallax. Identidade aprovada em `docs/identidade_visual.md`; os oito assets estão rastreados e versionados. Template básico e piloto com voz já existem. A aplicação do branding e os microajustes de composição e áudio estão em mudanças locais ainda não commitadas. Os 68,933 s identificam o preview validado anterior a essas mudanças; o QA local atual registra preview de 69,266 s e narração de 68,719 s. Validação auditiva palavra a palavra e QA físico em celular continuam pendentes.
 ## Setup já validado
 
 - Windows + PyCharm
@@ -101,7 +101,7 @@ Nos primeiros dez vídeos, trabalhe diretamente em `main` com commits pequenos. 
 - [x] Justificar a escolha de \(u=x^2\) pela redução do grau.
 - [x] Animar passagens com `TransformMatchingTex` e `FadeOut`/`FadeIn` conforme a relação matemática.
 - [x] Renderizar preview vertical com voz.
-- [ ] Aplicar a identidade aprovada ao template e conferir em tela de celular.
+- [ ] Revisar e versionar a aplicação local da identidade e conferir em tela de celular.
 - [ ] Validar sincronização auditiva e produzir/revisar legendas.
 - [ ] Conferir matemática, áudio, legibilidade, resolução e começo/fim.
 - [ ] Preparar textos por plataforma e publicar sem marca d’água cruzada.
@@ -129,7 +129,7 @@ Depois do vídeo 10: compare formatos, retenção e tempo de produção. Automat
 
 ## Próxima ação
 
-1. Conferir assets locais e definir tipografia comercial compatível com Windows/Manim.
-2. Integrar a identidade aprovada ao template, preservando matemática e timings do piloto.
-3. Validar sincronização auditiva e QA físico em celular.
+1. Revisar o preview e as alterações locais de identidade, composição e áudio.
+2. Após aprovação, versionar essa unidade de produção sem misturá-la à documentação.
+3. Definir tipografia comercial compatível com Windows/Manim e validar sincronização e legibilidade em celular.
 4. Concluir legendas/edição, render final e QA antes de publicar.

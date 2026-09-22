@@ -4,7 +4,7 @@ Guia mestre do Projeto, repositório e produção do canal.
 
 **Versão:** 1.3 · **Referência:** 22 de setembro de 2026 · **Idioma:** português brasileiro.
 
-**Reconciliação operacional — 2026-09-22:** nome oficial Parallax Lab; Instagram @labparallax. A identidade e os oito assets estão aprovados, conforme `docs/identidade_visual.md`; os arquivos já existem localmente, todos untracked, não staged e ainda não commitados. Template básico, cena do piloto e preview com voz já foram produzidos. A aplicação da identidade ao Manim permanece pendente. O piloto atual tem 68,933 s, orientado pela narração aprovada; seu alvo antigo de 45–60 s foi substituído. Exemplos de inicialização e storyboard abaixo são referências históricas, não pendências atuais. Consulte `docs/estado_atual.md` para próximos passos e QA restante.
+**Reconciliação operacional — 2026-09-22:** nome oficial Parallax Lab; Instagram @labparallax. A identidade e os oito assets estão aprovados, e os arquivos já estão rastreados e versionados conforme `docs/identidade_visual.md`. Template básico, cena do piloto e preview com voz já foram produzidos. A aplicação da identidade ao Manim está em alterações locais ainda não commitadas. A duração de 68,933 s identifica o preview validado anterior a essas alterações; o QA da versão local em produção está registrado em `docs/estado_atual.md`. O alvo antigo de 45–60 s foi substituído. Exemplos de inicialização e storyboard abaixo são referências históricas, não pendências atuais.
 
 **Uso:** adicione este arquivo às fontes do Projeto no ChatGPT e mantenha a cópia versionada em `docs/guia_mestre.md`. Para trabalhar hoje, abra primeiro `START_HERE.md`. Para saber a realidade do projeto neste instante, abra `docs/estado_atual.md` — ele é a fonte operacional.
 
@@ -477,4 +477,4 @@ Referências técnicas úteis: documentação oficial do Manim Community, `uv`, 
 
 ---
 
-**Próxima ação concreta:** consultar `docs/estado_atual.md` e `docs/identidade_visual.md`, conferir os assets e definir tipografia antes de integrar a identidade ao template. O preview com voz do piloto já existe; preservar matemática e sincronização e concluir o QA pendente.
+**Próxima ação concreta:** consultar `docs/estado_atual.md`, revisar o preview e as alterações locais de identidade, composição e áudio e, após aprovação, versionar essa unidade de produção. O preview com voz do piloto já existe; preservar matemática e sincronização e concluir o QA pendente.
