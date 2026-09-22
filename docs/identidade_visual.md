@@ -12,6 +12,12 @@ Parallax remete à mudança aparente de posição causada por diferentes pontos 
 
 A identidade deve transmitir ciência, perspectiva, profundidade, curiosidade, universo/cosmos, tecnologia e inteligência. A influência psicodélica é leve e sofisticada. A direção aprovada é **premium, futurista, científica, cósmica, elegante e limpa**; não está em fase de escolha de um novo conceito.
 
+### Perspectivas complementares
+
+**Status: PLANEJADA / NÃO IMPLEMENTADA.** Parallax representa a possibilidade de compreender o mesmo problema por perspectivas complementares. Futuramente, essa ideia poderá aparecer didaticamente em representações simultâneas ou sincronizadas, como objeto físico com vetores e gráficos, representação geométrica com representação analítica, movimento com gráficos associados ou fenômeno físico com seu modelo matemático.
+
+Qualquer aplicação concreta desse princípio depende de decisão posterior. Ele não define agora novo layout, transição, elemento gráfico ou regra visual obrigatória para todos os conteúdos.
+
 ## Símbolo oficial
 
 Planos geométricos translúcidos e deslocados envolvem um orbe/esfera central. A composição comunica profundidade e paralaxe por geometria limpa, vidro e luz, com linguagem futurista e inspiração cósmica. Preservar esse símbolo nas aplicações; não redesenhar a marca para cada vídeo.

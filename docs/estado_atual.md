@@ -4,7 +4,7 @@
 
 **Marca:** Parallax Lab · **Instagram aprovado:** @labparallax
 
-**Guia vigente:** `docs/guia_mestre.md`, versão 1.2, com nota de reconciliação de 2026-09-22.
+**Guia vigente:** `docs/guia_mestre.md`, versão 1.3, com nota de reconciliação de 2026-09-22.
 
 **Fonte operacional:** este arquivo; identidade detalhada em `docs/identidade_visual.md`.
 
@@ -74,6 +74,10 @@ Resolução explicitamente vertical; `config.frame_width = 9` e `config.frame_he
 ## Estratégia e próxima ação
 
 Primeiro ciclo aprovado: **10 vídeos — 6 exercícios, 2 teorias curtas, 2 aplicações**, em **Cálculo + aplicações físicas**. Não é um curso linear. Medir formato, retenção, clareza, interesse, tempo de produção e gargalos; ampliar automação somente após o ciclo e a identificação de um gargalo real.
+
+### Capacidade futura planejada
+
+**Status: PLANEJADA / NÃO IMPLEMENTADA.** O Parallax Lab possui como direção futura aprovada visualizações matemáticas dinâmicas, física animada ampliada, conteúdos de intuição e curiosidades e representações complementares ou sincronizadas de um mesmo fenômeno. Essa expansão não está implementada, não constitui pendência atual e não altera `vid_0001`, os dez primeiros vídeos ou a próxima ação operacional do MVP.
 
 **Próxima ação concreta:** conferir as propriedades dos oito assets locais e definir a tipografia oficial compatível com uso comercial e Windows/Manim; então integrar a identidade ao template em uma unidade técnica própria, preservando a matemática e os timings do piloto.
 

@@ -2,7 +2,7 @@
 
 Guia mestre do Projeto, repositório e produção do canal.
 
-**Versão:** 1.2 · **Referência:** 21 de setembro de 2026 · **Idioma:** português brasileiro.
+**Versão:** 1.3 · **Referência:** 22 de setembro de 2026 · **Idioma:** português brasileiro.
 
 **Reconciliação operacional — 2026-09-22:** nome oficial Parallax Lab; Instagram @labparallax. A identidade e os oito assets estão aprovados, conforme `docs/identidade_visual.md`; os arquivos já existem localmente, todos untracked, não staged e ainda não commitados. Template básico, cena do piloto e preview com voz já foram produzidos. A aplicação da identidade ao Manim permanece pendente. O piloto atual tem 68,933 s, orientado pela narração aprovada; seu alvo antigo de 45–60 s foi substituído. Exemplos de inicialização e storyboard abaixo são referências históricas, não pendências atuais. Consulte `docs/estado_atual.md` para próximos passos e QA restante.
 
@@ -57,6 +57,10 @@ Canal educacional faceless para estudantes brasileiros na transição entre ensi
 
 Três vídeos em quatro redes são três produções, não doze. O tablet pode complementar a explicação, mas o piloto pode ser inteiramente Manim.
 
+### Horizonte posterior ao MVP
+
+**Status: PLANEJADA / NÃO IMPLEMENTADA.** Depois do piloto, dos dez vídeos e da análise das métricas, o Parallax Lab poderá ampliar seu escopo para visualizações matemáticas dinâmicas, física animada, conteúdos de intuição e curiosidades. Essa direção não constitui backlog, requisito atual, cronograma ou autorização de implementação. A prioridade permanece: **primeiro piloto → dez vídeos → medir → evoluir e automatizar somente depois**.
+
 ## 2. Criar o Projeto no ChatGPT
 
 1. Crie **Canal Física & Matemática — IA + Manim**.
@@ -73,7 +77,7 @@ Este é o primeiro arquivo a atualizar ao terminar uma sessão e o primeiro a le
 ```markdown
 # Estado atual do canal
 Atualizado em: AAAA-MM-DD
-Guia vigente: 1.2
+Guia vigente: 1.3
 Ambiente validado: Windows; Python 3.12; uv; Manim Community 0.21.0; MiKTeX/MathTex; MP4 renderizado
 Repositório e branch: 
 Template vigente: 
@@ -242,6 +246,12 @@ O template deve separar conteúdo de apresentação. Em `template/helpers.py`, c
 
 Para evolução algébrica, prefira `TransformMatchingTex` quando termos correspondentes devem permanecer visualmente reconhecíveis. Use `FadeOut`/`FadeIn` quando a transformação seria enganosa. Cada animação deve esclarecer uma relação, não apenas enfeitar.
 
+### Perspectivas complementares
+
+**Status: PLANEJADA / NÃO IMPLEMENTADA.** Como extensão didática do conceito Parallax, um conteúdo poderá mostrar o mesmo fenômeno por representações complementares, simultâneas ou sincronizadas, quando isso melhorar a compreensão. Exemplos possíveis incluem corpo em movimento com \(x(t)\); \(x(t)\), \(v(t)\) e \(a(t)\) sincronizados; círculo unitário gerando uma senoide; projétil com trajetória, vetores e gráficos; carga com vetor de campo; e mola com gráficos de posição, velocidade e aceleração.
+
+Esse princípio expressa **ver o mesmo problema por diferentes perspectivas**. Ele não define agora layout, sistema de câmeras, helper, componente, módulo ou requisito obrigatório para todos os vídeos.
+
 Exemplo conceitual:
 
 ```python
@@ -254,6 +264,35 @@ Mantenha a cena do vídeo curta; a lógica repetida pertence aos helpers.
 ## 11. Banco de questões e ficha de produção
 
 Para cada ideia, registre: ID, família (exercício/teoria/aplicação), pergunta, público/pré-requisito, objetivo, erro comum, solução aprovada, checagem, potencial visual, fonte quando aplicável e esforço. A ficha do vídeo deve registrar também versão do roteiro, voz, render e status do QA.
+
+### Taxonomia editorial de longo prazo
+
+**Status: PLANEJADA / NÃO IMPLEMENTADA.** A taxonomia futura possui quatro famílias principais:
+
+1. **Exercícios resolvidos:** matemática e física.
+2. **Visualizações dinâmicas:** funções, gráficos, campos, vetores, ondas, trajetórias e sistemas físicos ou matemáticos.
+3. **Intuição:** significado visual de fórmulas, relações matemáticas, representações geométricas, fenômenos físicos e conexões entre representações.
+4. **Curiosidades:** funções interessantes, caos, infinito, relatividade, paradoxos, fenômenos contraintuitivos e outras visualizações científicas adequadas ao canal.
+
+Essa taxonomia orienta o longo prazo. Ela não substitui as famílias operacionais nem modifica a composição ou a ordem dos dez primeiros vídeos.
+
+### Visualizações matemáticas dinâmicas
+
+Como possibilidades editoriais posteriores ao MVP, o projeto poderá abordar funções variando com parâmetros, gráficos animados, senoides, parábolas, exponenciais, funções polares, curvas paramétricas, círculo unitário, limites, derivadas visualizadas, integrais como acumulação, vetores, séries, Fourier, fractais, sistemas dinâmicos, caos e outras construções matemáticas visualmente interessantes.
+
+Parâmetros poderão variar continuamente para revelar seu papel. Por exemplo, \(y=a\sin(x)\), com \(a\) variando para mostrar a amplitude, e \(y=\sin(kx)\), com \(k\) variando para mostrar a frequência. São possibilidades editoriais futuras, não cenas, testes ou requisitos atuais do template.
+
+### Física animada
+
+A futura frente ampliada de física poderá incluir:
+
+- **Mecânica:** leis de Newton, diagramas de corpo livre, vetores e decomposição de forças, plano inclinado, atrito, lançamento oblíquo, queda livre, movimento circular, trabalho e energia, quantidade de movimento, colisões, molas, pêndulos e movimento harmônico simples.
+- **Eletrostática e eletromagnetismo:** cargas, força e campo elétrico, campo resultante, linhas de campo, potencial, superfícies equipotenciais, lei de Gauss, fluxo, campo e força magnética, partículas carregadas e indução.
+- **Ondas:** amplitude, frequência, comprimento de onda, fase, interferência, superposição, ondas estacionárias e Fourier.
+- **Óptica:** reflexão, refração, lentes, foco e formação de imagens.
+- **Gravitação:** órbitas, força gravitacional, velocidade orbital, aceleração centrípeta e energia orbital.
+
+Esses temas delimitam um espaço editorial futuro. Não definem cronograma, backlog, ordem de produção, vídeos aprovados ou prioridade operacional atual.
 
 ## 12. Pipeline de cada vídeo
 
@@ -269,6 +308,12 @@ Para cada ideia, registre: ID, família (exercício/teoria/aplicação), pergunt
 10. Registrar métricas na mesma idade de publicação.
 
 Não automatize uma etapa somente porque ela parece repetitiva; primeiro meça tempo, retrabalho e taxa de erro.
+
+### Modelagem antes da visualização
+
+O Manim será usado como ferramenta de visualização, não como simulador físico automático. O fluxo conceitual é **modelo correto → verificação → representação visual**: a animação representa o modelo aprovado e não o determina. Uma animação convincente não valida a matemática ou a física.
+
+Em matemática, a visualização não substitui demonstração, derivação, cálculo ou outra verificação adequada. Quando a frente ampliada de física for implementada, cálculos, aproximações, hipóteses e condições iniciais deverão ser definidos antes da animação. O pipeline futuro deverá incluir checagem física explícita de unidades, sinais, hipóteses, condições iniciais, leis de conservação, comportamento em limites e plausibilidade, conforme aplicável. Essa exigência metodológica está planejada; ela não acrescenta agora checklist, script, teste ou etapa ao MVP.
 
 ## 13. Piloto `integral_001`
 
@@ -362,6 +407,8 @@ Use o primeiro ciclo para testar três famílias, não para construir um curso l
 
 Distribuição: **6 exercícios + 2 teorias curtas + 2 aplicações**. O primeiro ciclo deve parecer uma mini-temporada coerente de **Cálculo + aplicações físicas**, não uma amostra aleatória de todo o currículo. Valide enunciado, nível e solução antes de produzir. Depois do décimo, compare interesse, retenção e tempo de produção por família.
 
+A expansão editorial de longo prazo não reclassifica, remove, substitui ou reorganiza este ciclo. Os dez vídeos e sua distribuição permanecem integralmente aprovados como estão.
+
 ## 18. Métricas e decisões semanais
 
 Compare vídeos da mesma plataforma, com idade semelhante e duração próxima. Registre: alcance, retenção/conclusão quando disponível, salvamentos, compartilhamentos, comentários/dúvidas, seguidores atribuídos, tempo de produção e custo incremental. Dados ausentes são `ND`, nunca zero. A cada ciclo, escolha uma hipótese e um experimento; mantenha o restante estável.
@@ -415,6 +462,8 @@ Leia README.md e docs/estado_atual.md, depois o template e a pasta do vídeo. Im
 6. Fazer QA e publicar o piloto.
 7. Produzir os outros nove seguindo a distribuição da seção 17.
 8. Medir, fazer retrospectiva e automatizar somente o gargalo real.
+
+Visualizações dinâmicas, física animada ampliada e as demais famílias de longo prazo só entram em avaliação operacional depois desse ciclo e de uma decisão explícita de implementação.
 
 ## 23. Manutenção e recuperação
 
