@@ -1,186 +1,80 @@
-# Estado atual do canal
+# Estado atual — Parallax Lab
 
-**Atualizado em:** 2026-09-21  
-**Guia vigente:** 1.2  
-**START_HERE vigente:** 1.1
+**Atualizado em:** 2026-09-22
 
-## Objetivo atual
+**Marca:** Parallax Lab · **Instagram aprovado:** @labparallax
 
-Construir e publicar o primeiro piloto do canal faceless de Física & Matemática usando Manim:
+**Guia vigente:** `docs/guia_mestre.md`, versão 1.2, com nota de reconciliação de 2026-09-22.
 
-\[
-\int x^2e^x\,dx
-\]
+**Fonte operacional:** este arquivo; identidade detalhada em `docs/identidade_visual.md`.
 
-O vídeo deve ensinar integração por partes duas vezes, justificar a escolha de \(u=x^2\) e conferir a primitiva pela derivada.
+## Ambiente e repositório verificados
 
-**ID do piloto:** `vid_0001`  
-**Nome de trabalho:** `integral_001`  
-**Pasta planejada:** `videos/vid_0001_integracao_por_partes/`  
-**Status:** ambiente e template vertical validados; preview técnico renderizado com sucesso; implementação do `vid_0001` ainda pendente.
-## Ambiente validado
+- Windows + PyCharm; Python 3.12; uv; Manim Community 0.21.0; MiKTeX/MathTex funcionais; renders MP4 já produzidos.
+- Projeto local: `C:\Users\KaioOrtiz\PycharmProjects\manim-fisica`; branch `main`.
+- Remoto `origin` configurado: `https://github.com/Unylake18/parallaxlab.git`. Configuração local conferida; estado online não consultado nesta reconciliação.
+- HEAD local: `f372c1a` — `feat: adicionar helpers iniciais do template`. Existem alterações não commitadas em documentação, cena e dependências, além de assets e áudios não rastreados. Não confundir arquivos presentes com arquivos já versionados.
+- Preservar o ambiente: não reinstalar, recriar `.venv`, executar `uv init` ou alterar dependências sem diagnóstico concreto. Alterações preexistentes em `pyproject.toml`/`uv.lock` foram preservadas nesta etapa.
+- MVP: trabalhar em `main`, com commits pequenos; branch/PR para alterações maiores ou arriscadas. Nenhum commit/push nesta consolidação.
 
-- Sistema operacional: Windows
-- IDE: PyCharm
-- Python: 3.12
-- Gerenciador de projeto/dependências: `uv`
-- `uv`: funcionando
-- Manim Community: 0.21.0
-- MiKTeX: instalado e funcional
-- `MathTex`: funcionando
-- Primeiro MP4 de teste: renderizado com sucesso
-- Galaxy Tab S6 Lite: disponível para estudo, rascunho ou trechos manuscritos
-- ChatGPT Plus: disponível
-- Claude Pro: disponível
-- Gemini Pro: disponível
+## Identidade: aprovado × implementado
 
-### Observação
+**Aprovado:** marca e @ acima; símbolo de planos geométricos translúcidos deslocados com orbe central; linguagem científica, futurista, cósmica, elegante e limpa. Influência psicodélica leve, sem estética infantil, escolar genérica ou gamer.
 
-O primeiro MP4 validou o pipeline técnico básico `Python → Manim → LaTeX/MathTex → MP4`. Ele **não é ainda o piloto editorial completo**.
+**Paleta operacional inicial:** fundo `#050816`, ciano `#35D9FF`, azul `#267BFF`, violeta `#745CFF`, magenta `#EA63FF`, branco `#F5F7FF`. Extração/refinamento pelos assets ainda pendente. Tipografia exata ainda não escolhida/licenciada.
 
-Não reinstalar Python, Manim, MiKTeX, recriar `.venv` ou rodar `uv init` sem um problema diagnosticado.
+**Assets aprovados e presentes localmente:** oito PNGs na organização prevista abaixo. Em 2026-09-22, todos aparecem como untracked (`?? assets/branding/`), nenhum está staged, nenhum é retornado por `git ls-files assets/branding` e, portanto, nenhum está commitado. Funções em `docs/identidade_visual.md`; propriedades de exportação ainda não validadas.
 
-## Repositório
-
-- Nome/local do projeto: `manim-fisica`
-- Caminho local conhecido no Windows: `C:\Users\KaioOrtiz\PycharmProjects\manim-fisica`
-- Git local: inicializado
-- GitHub remoto: `origin`
-- URL do repositório: `https://github.com/Unylake18/parallaxlab.git`
-- Branch atual: `main`
-- Primeiro commit da estrutura: `acd47bf` — `chore: organizar estrutura inicial do Parallax Lab`
-- Último commit relevante: `6f467c2` — `docs: registrar repositório GitHub`
-- Estratégia MVP: trabalhar em `main` com commits pequenos; usar branch/PR apenas para alterações maiores, arriscadas ou estruturais.
-
-## Configuração de vídeo aprovada
-
-Formato alvo:
-
-- orientação: vertical 9:16
-- preview: 540×960, 15 fps
-- final: 1080×1920, 30 fps
-- fundo: escuro
-- alto contraste
-- fórmulas grandes
-- espaço inferior reservado para legenda/interface das plataformas
-
-Configuração lógica no Manim:
-
-```python
-from manim import config
-
-config.frame_width = 9
-config.frame_height = 16
+```text
+assets/branding/
+├── master/
+│   ├── parallax_lab_logo_master.png
+│   ├── parallax_lab_icon_profile.png
+│   ├── parallax_lab_icon_transparent.png
+│   └── parallax_lab_logo_monochrome.png
+├── social/
+│   ├── parallax_lab_banner_16x9.png
+│   └── parallax_lab_cover_template_9x16.png
+└── overlays/
+    ├── parallax_lab_watermark.png
+    └── parallax_lab_logo_horizontal.png
 ```
 
-Comandos validados:
+**Implementado:** template vertical 9×16 e helpers `make_title`/`make_equation`. **Pendente:** aplicar a identidade aprovada ao template/piloto. A cena ainda usa fundo `#101820` e YELLOW/TEAL/GREEN, sem a integração de branding concluída. Prioridade: legibilidade → compreensão → matemática/física → identidade; logo discreto e faixa inferior livre.
+
+## Vídeo atual e evidências
+
+**vid_0001 / integral_001 — integração por partes**, em `videos/vid_0001_integracao_por_partes/cena.py`, classe `Integral001`.
+
+\[
+\int x^2e^x\,dx=e^x(x^2-2x+2)+C.
+\]
+
+Cena implementada com duas aplicações explícitas, motivação da escolha de u, distribuição do −2, expansão/fatoração e verificação pela derivada, recuperando x²eˣ. Smoke test preservado como `TemplateSmokeTest`.
+
+- Voz via ElevenLabs, conforme briefing aprovado; sete blocos em `videos/vid_0001_integracao_por_partes/audio/`.
+- `narracao_final.mp3`: **68,439 s**, incluindo seis pausas de 0,20 s. Originais preservados; sem mudança de pitch/velocidade.
+- Preview mais recente: `media/qa_integral001_com_voz/Integral001_preview_sincronia_fina.mp4`, **68,933 s**, 540×960/15 fps, com **0,494 s** de respiro após o áudio.
+- Microajustes guiados pelo texto exato e pelas pausas medidas já implementados. Frames inspecionados; áudio e vídeo copiados sem recodificação na última montagem. Evidências em `media/qa_integral001_com_voz/sincronia_fina/qa.json` e `contact_sheet.jpg`.
+- Validação auditiva palavra a palavra e QA físico em celular **pendentes**. Não declarar aprovação audiovisual final.
+- Legendas, render final e publicação **pendentes**. O preview já existe; não reiniciar sua produção nem a escolha da voz.
+
+## Comandos e pipeline preservados
 
 ```powershell
-# Preview vertical
+# Preview já executado com sucesso
 uv run python -m manim -p -r 540,960 --fps 15 videos/vid_0001_integracao_por_partes/cena.py Integral001
 
-# Render vertical final
+# Render final previsto, ainda pendente
 uv run python -m manim -p -r 1080,1920 --fps 30 videos/vid_0001_integracao_por_partes/cena.py Integral001
 ```
 
-## Solução-fonte do piloto
+Resolução explicitamente vertical; `config.frame_width = 9` e `config.frame_height = 16`. O render Manim é silencioso: o MP4 com voz foi montado depois usando as bibliotecas FFmpeg do PyAV existente; o executável `ffmpeg` não foi localizado na sessão anterior. Não instalar dependências por rotina. O piloto de aproximadamente 69 s substitui seu alvo antigo de 45–60 s, mantendo a voz como referência temporal.
 
-Primeira integração por partes:
+## Estratégia e próxima ação
 
-\[
-u=x^2,
-\qquad
-dv=e^x\,dx
-\]
+Primeiro ciclo aprovado: **10 vídeos — 6 exercícios, 2 teorias curtas, 2 aplicações**, em **Cálculo + aplicações físicas**. Não é um curso linear. Medir formato, retenção, clareza, interesse, tempo de produção e gargalos; ampliar automação somente após o ciclo e a identificação de um gargalo real.
 
-\[
-du=2x\,dx,
-\qquad
-v=e^x
-\]
+**Próxima ação concreta:** conferir as propriedades dos oito assets locais e definir a tipografia oficial compatível com uso comercial e Windows/Manim; então integrar a identidade ao template em uma unidade técnica própria, preservando a matemática e os timings do piloto.
 
-Logo,
-
-\[
-I=\int x^2e^x\,dx
-=x^2e^x-2\int xe^x\,dx.
-\]
-
-Segunda integração por partes:
-
-\[
-\int xe^x\,dx
-=xe^x-\int e^x\,dx
-=xe^x-e^x.
-\]
-
-Substituindo:
-
-\[
-I=x^2e^x-2(xe^x-e^x)+C
-\]
-
-\[
-\boxed{I=e^x(x^2-2x+2)+C}.
-\]
-
-Verificação:
-
-\[
-\frac{d}{dx}\left[e^x(x^2-2x+2)\right]
-=e^x(x^2-2x+2)+e^x(2x-2)
-=x^2e^x.
-\]
-
-## Decisões vigentes
-
-1. Canal faceless em português brasileiro.
-2. Conteúdo curto, direto e objetivo.
-3. Uma ideia central por vídeo.
-4. Exercícios são a espinha dorsal; teoria curta e aplicações complementam.
-5. O canal deve ajudar o responsável a estudar Física e Matemática enquanto produz conteúdo.
-6. IA pode resolver, revisar, roteirizar e ajudar na animação, mas a matemática/física deve ter verificação objetiva.
-7. O primeiro ciclo terá 10 vídeos: **6 exercícios + 2 teorias curtas + 2 aplicações**.
-8. A primeira mini-temporada será coerente em torno de **Cálculo + aplicações físicas**.
-9. O piloto será produzido primeiro com Manim; o Galaxy Tab pode entrar depois quando melhorar a didática.
-10. `TransformMatchingTex` deve ser preferido quando termos matemáticos correspondentes precisam permanecer visualmente reconhecíveis.
-11. Não automatizar publicação nem julgamento matemático/didático no MVP.
-12. Só automatizar gargalos depois de dez vídeos comparáveis.
-
-## Documentos vigentes
-
-- `docs/decisoes.md` ← criado
-- `START_HERE.md` ← usar conteúdo da versão `START_HERE_v1.1.md`
-- `docs/estado_atual.md` ← este arquivo
-- `docs/decisoes.md` ← ainda precisa ser criado/confirmado
-- `docs/plataformas_AAAA-MM.md` ← criar quando começar a preparar publicação e monetização
-
-## Próxima ação concreta
-
-1. Validar o template vertical mínimo.
-2. Adaptar o código de teste existente sem apagar a versão funcional.
-3. Criar `cena.py` do piloto.
-4. Renderizar preview vertical em 540×960/15 fps.
-5. Conferir a cena em tela de celular.
-6. Só depois avançar para narração, legendas, edição e render final.
-
-## Pendências reais
-
-- [x] Confirmar/inicializar Git no projeto local.
-- [x] Criar repositório remoto no GitHub.
-- [x] Registrar URL do GitHub.
-- [x] Confirmar branch principal.
-- [x] Fazer primeiro commit da estrutura/documentação.
-- [x] Criar template vertical reutilizável.
-- [x] Criar helpers iniciais.
-- [ ] Produzir preview do `vid_0001`.
-- [ ] Aprovar roteiro de 45–60 segundos.
-- [ ] Definir voz do piloto.
-- [ ] Definir editor de vídeo do MVP.
-- [ ] Criar regras atuais de publicação em `docs/plataformas_AAAA-MM.md`.
-- [ ] Publicar o primeiro vídeo.
-
-## Regra para próxima sessão
-
-Antes de sugerir reinstalações, mudanças estruturais ou automações, leia este arquivo.  
-Se alguma informação acima deixar de ser verdadeira, atualize este documento no mesmo ciclo de trabalho.
+**Pendências seguintes:** revisar/versionar assets e alterações locais em etapa autorizada; validar sincronização auditiva e legibilidade em celular; concluir legendas/edição, render final e QA; preparar publicação e regras atuais de plataforma. Nenhuma publicação confirmada.

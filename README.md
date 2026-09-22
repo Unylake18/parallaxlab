@@ -29,6 +29,7 @@ Antes de alterar a infraestrutura, ler:
 - `START_HERE.md`
 - `docs/estado_atual.md`
 - `docs/guia_mestre.md`
+- `docs/identidade_visual.md`
 
 `docs/estado_atual.md` prevalece quando houver divergência sobre o estado atual do projeto.
 

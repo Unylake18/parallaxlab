@@ -1,8 +1,10 @@
-# Canal Física & Matemática — IA + Manim
+# Parallax Lab — Física & Matemática com IA + Manim
 
 Guia mestre do Projeto, repositório e produção do canal.
 
 **Versão:** 1.2 · **Referência:** 21 de setembro de 2026 · **Idioma:** português brasileiro.
+
+**Reconciliação operacional — 2026-09-22:** nome oficial Parallax Lab; Instagram @labparallax. A identidade e os oito assets estão aprovados, conforme `docs/identidade_visual.md`; os arquivos já existem localmente, todos untracked, não staged e ainda não commitados. Template básico, cena do piloto e preview com voz já foram produzidos. A aplicação da identidade ao Manim permanece pendente. O piloto atual tem 68,933 s, orientado pela narração aprovada; seu alvo antigo de 45–60 s foi substituído. Exemplos de inicialização e storyboard abaixo são referências históricas, não pendências atuais. Consulte `docs/estado_atual.md` para próximos passos e QA restante.
 
 **Uso:** adicione este arquivo às fontes do Projeto no ChatGPT e mantenha a cópia versionada em `docs/guia_mestre.md`. Para trabalhar hoje, abra primeiro `START_HERE.md`. Para saber a realidade do projeto neste instante, abra `docs/estado_atual.md` — ele é a fonte operacional.
 
@@ -181,13 +183,13 @@ Não rode `uv init`, reinstale Python/Manim ou recrie `.venv` como rotina. Faça
 Comandos usuais, executados na raiz do projeto:
 
 ```powershell
-uv run manim --version
+uv run python -m manim --version
 
 # Preview vertical rápido
-uv run manim -p -r 540,960 --fps 15 videos/vid_0001_integracao_por_partes/cena.py Integral001
+uv run python -m manim -p -r 540,960 --fps 15 videos/vid_0001_integracao_por_partes/cena.py Integral001
 
 # Render vertical final
-uv run manim -p -r 1080,1920 --fps 30 videos/vid_0001_integracao_por_partes/cena.py Integral001
+uv run python -m manim -p -r 1080,1920 --fps 30 videos/vid_0001_integracao_por_partes/cena.py Integral001
 
 git status
 ```
@@ -213,6 +215,8 @@ Use branch e PR quando alterar dependências, refatorar o template usado por ví
 O README precisa de objetivo, estrutura, comando de preview, comando de render, como recuperar o ambiente e local do backup de mídia. `AGENTS.md`, se usado, deve ser curto: ler `docs/estado_atual.md`, preservar mudanças existentes, usar caminhos relativos, renderizar antes de declarar sucesso e nunca publicar sem autorização explícita.
 
 ## 10. Identidade visual e template Manim
+
+A direção aprovada é científica, futurista, cósmica, elegante e limpa, com planos translúcidos deslocados e orbe central. Paleta operacional inicial: `#050816`, `#35D9FF`, `#267BFF`, `#745CFF`, `#EA63FF`, `#F5F7FF`; refinamento pelos assets e tipografia oficial ainda pendentes. Cosmos sutil, branding discreto e prioridade de legibilidade. A especificação completa e a distinção entre aprovado, implementado e pendente estão em `docs/identidade_visual.md`.
 
 Padrão inicial: 1080×1920, 30 fps, fundo escuro, alto contraste, paleta curta, equações grandes e zona livre na parte inferior para legendas/interface. Teste sempre um frame em tamanho de celular.
 
@@ -304,7 +308,9 @@ Verificação:
 \frac{d}{dx}\left[e^x(x^2-2x+2)\right]=e^x(x^2-2x+2)+e^x(2x-2)=x^2e^x.
 \]
 
-### Storyboard mínimo (45–60 s)
+### Storyboard mínimo de referência histórica (45–60 s)
+
+O piloto implementado usa sete blocos de voz e aproximadamente 69 s; não reduzir sua duração para reproduzir a tabela antiga abaixo.
 
 | Tempo | Fala/tela | Objetivo |
 | --- | --- | --- |
@@ -422,4 +428,4 @@ Referências técnicas úteis: documentação oficial do Manim Community, `uv`, 
 
 ---
 
-**Próxima ação concreta:** abrir `START_HERE.md`, registrar o estado atual e produzir o preview do piloto `integral_001`.
+**Próxima ação concreta:** consultar `docs/estado_atual.md` e `docs/identidade_visual.md`, conferir os assets e definir tipografia antes de integrar a identidade ao template. O preview com voz do piloto já existe; preservar matemática e sincronização e concluir o QA pendente.

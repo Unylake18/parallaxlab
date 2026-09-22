@@ -1,6 +1,8 @@
-# START HERE — Canal Física & Matemática
+# START HERE — Parallax Lab
 
 Manual curto para abrir antes de trabalhar. O guia completo está em `docs/guia_mestre.md`; a verdade operacional está em `docs/estado_atual.md`.
+
+**Reconciliação de 2026-09-22:** marca Parallax Lab, Instagram @labparallax. Identidade aprovada em `docs/identidade_visual.md`; oito assets presentes localmente, todos untracked, não staged e ainda não commitados. Template básico e piloto com voz já existem; aplicação do branding ao Manim ainda pendente. O preview mais recente tem 68,933 s; a voz aprovada substitui o alvo antigo de 45–60 s. Validação auditiva palavra a palavra e QA físico em celular continuam pendentes.
 ## Setup já validado
 
 - Windows + PyCharm
@@ -39,7 +41,7 @@ Uma única regra: **não pule a verificação**. Para uma primitiva, derive o re
 Na raiz do repositório:
 
 ```powershell
-uv run manim --version
+uv run python -m manim --version
 
 # Preview vertical rápido
 uv run python -m manim -p -r 540,960 --fps 15 videos/vid_0001_integracao_por_partes/cena.py Integral001
@@ -93,14 +95,14 @@ Nos primeiros dez vídeos, trabalhe diretamente em `main` com commits pequenos. 
 
 ## Checklist do piloto
 
-- [ ] Resolver \(\int x^2e^x\,dx\) por partes duas vezes.
-- [ ] Derivar \(e^x(x^2-2x+2)+C\) e recuperar \(x^2e^x\).
-- [ ] Fazer roteiro de 45–60 segundos.
-- [ ] Justificar em uma frase por que escolher \(u=x^2\).
-- [ ] Animar as passagens com `TransformMatchingTex` quando fizer sentido.
-- [ ] Usar `FadeOut`/`FadeIn` quando uma transformação visual direta puder sugerir uma operação incorreta.
-- [ ] Renderizar preview vertical e conferir em tela de celular.
-- [ ] Gravar/gerar voz e revisar legenda.
+- [x] Resolver \(\int x^2e^x\,dx\) por partes duas vezes.
+- [x] Derivar \(e^x(x^2-2x+2)+C\) e recuperar \(x^2e^x\).
+- [x] Receber sete blocos de narração aprovados; piloto de aproximadamente 69 segundos.
+- [x] Justificar a escolha de \(u=x^2\) pela redução do grau.
+- [x] Animar passagens com `TransformMatchingTex` e `FadeOut`/`FadeIn` conforme a relação matemática.
+- [x] Renderizar preview vertical com voz.
+- [ ] Aplicar a identidade aprovada ao template e conferir em tela de celular.
+- [ ] Validar sincronização auditiva e produzir/revisar legendas.
 - [ ] Conferir matemática, áudio, legibilidade, resolução e começo/fim.
 - [ ] Preparar textos por plataforma e publicar sem marca d’água cruzada.
 - [ ] Registrar link/data, tempo de produção e métricas disponíveis.
@@ -127,8 +129,7 @@ Depois do vídeo 10: compare formatos, retenção e tempo de produção. Automat
 
 ## Próxima ação
 
-1. Atualizar `docs/estado_atual.md`.
-2. Criar/conferir o repositório GitHub.
-3. Organizar o template vertical mínimo.
-4. Produzir o preview de `vid_0001`.
-5. Só depois adicionar voz, legendas e edição.
+1. Conferir assets locais e definir tipografia comercial compatível com Windows/Manim.
+2. Integrar a identidade aprovada ao template, preservando matemática e timings do piloto.
+3. Validar sincronização auditiva e QA físico em celular.
+4. Concluir legendas/edição, render final e QA antes de publicar.
