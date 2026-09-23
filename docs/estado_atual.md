@@ -10,7 +10,7 @@
 
 ## Ambiente e repositório verificados
 
-- Windows + PyCharm; Python 3.12; Manim Community 0.21.0 e MiKTeX/MathTex já usados em renders. O `uv` existe, mas o vínculo Python da `.venv` e o cache local apresentaram falha no último render; diagnosticar antes do próximo.
+- Windows + PyCharm; Python 3.12.4, `uv` 0.12.17, `.venv` e Manim Community 0.21.0 validados com `uv run python -m manim --version`; MiKTeX/MathTex já usados em renders.
 - Projeto local: `C:\Users\KaioOrtiz\PycharmProjects\manim-fisica`; branch `main`.
 - Remoto `origin` configurado: `https://github.com/Unylake18/parallaxlab.git`.
 - A consolidação técnica dos dois primeiros vídeos e a limpeza restrita de
@@ -75,7 +75,7 @@ uv run python -m manim -p -r 1080,1920 --fps 30 videos/vid_0001_integracao_por_p
 
 Resolução explicitamente vertical; `config.frame_width = 9` e `config.frame_height = 16`. O render Manim é silencioso: `videos/montar_master.py` e `videos/montar_legendado.py` documentam a montagem posterior com PyAV/Pillow. O executável `ffmpeg` não é necessário para esse fluxo.
 
-Na execução final de 2026-09-22, o comando operacional com `uv run` não iniciou porque o cache local do uv apresentou erro e o executável Python vinculado pela `.venv` não estava disponível. Sem reinstalar ou alterar dependências, o mesmo módulo Manim 0.21.0 foi executado com o runtime Python 3.12 já existente e os pacotes da `.venv`; o master resultante passou no QA. O ambiente uv requer diagnóstico posterior antes do próximo render.
+Na execução final de 2026-09-22, `uv run` falhou no ambiente restrito do Codex; o master foi produzido com outro runtime Python 3.12 e os pacotes da `.venv`. O diagnóstico posterior confirmou que o Python base, a `.venv`, o cache do `uv`, Manim e os imports do template funcionam quando há acesso aos caminhos externos do usuário. A falha observada era de permissão do ambiente de execução, não de corrupção da `.venv`. O fluxo operacional continua `uv run python -m manim ...`; se o erro ocorrer somente no Codex restrito, verificar acesso antes de alterar Python, dependências ou cache.
 
 ## vid_0002 — integral por substituição
 
@@ -122,4 +122,4 @@ Primeiro ciclo aprovado: **10 vídeos — 6 exercícios, 2 teorias curtas, 2 apl
 
 **Próxima produção:** `vid_0003`, teoria curta sobre a escolha de `u` em integração por partes. Nenhuma cena, pasta, voz ou roteiro foi iniciado nesta consolidação. Antes de publicar os vídeos 1 e 2, fazer QA físico em celular e confirmar backup externo dos MP4s.
 
-**Pendências seguintes:** diagnosticar o fluxo local do uv antes de novo render; definir a tipografia oficial; confirmar backup dos MP4s e QA físico em celular; preparar publicação e conferir regras atuais da plataforma. Nenhuma publicação confirmada no repositório.
+**Pendências seguintes:** definir a tipografia oficial; confirmar backup dos MP4s e QA físico em celular; preparar publicação e conferir regras atuais da plataforma. Nenhuma publicação confirmada no repositório.

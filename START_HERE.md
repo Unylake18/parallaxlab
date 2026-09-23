@@ -10,7 +10,7 @@ Veja os nomes exatos em `docs/estado_atual.md`. O próximo vídeo é `vid_0003`.
 
 - Windows + PyCharm
 - Python 3.12
-- `uv` instalado; o vínculo Python da `.venv` e o cache falharam no último render
+- `uv` e Python 3.12.4 da `.venv` validados; `uv run python -m manim --version` funciona
 - Manim Community 0.21.0
 - MiKTeX/`MathTex` funcionando
 - primeiro MP4 já renderizado
@@ -139,5 +139,4 @@ Depois do vídeo 10: compare formatos, retenção e tempo de produção. Automat
 ## Próxima ação
 
 1. Confirmar QA físico em celular e backup externo dos finais dos vídeos 1 e 2.
-2. Diagnosticar o `uv`/Python local antes do próximo render, sem reinstalar por rotina.
-3. Iniciar `vid_0003` com a questão e solução verificadas; nesta consolidação ele não foi produzido.
+2. Iniciar `vid_0003` com a questão e solução verificadas; nesta consolidação ele não foi produzido.

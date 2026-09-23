@@ -28,7 +28,7 @@ Observações de `vid_0001` e `vid_0002`, não requisitos automáticos dos próx
 - Na revisão do vídeo 2, auxiliares de `MathTex`, chaves e rótulos em movimento criaram sobreposições; separar origem, cópia e destino resolveu. Uma fórmula geral `f(g(x))` acrescentou uma camada desnecessária e foi removida.
 - Os previews intermediários dos dois vídeos se acumularam em `renders/` e `media/`; os finais e o histórico em Markdown bastam após o QA.
 - Confundir a fonetização usada para TTS com a legenda produziu texto pouco natural no vídeo 2.
-- O Python vinculado pela `.venv` e o cache do `uv` falharam no render final do piloto; o runtime Python 3.12 existente com os pacotes da `.venv` funcionou. Diagnosticar antes do próximo render, sem reinstalação automática.
+- `uv run` falhou durante o render final do piloto no ambiente restrito do Codex, e outro runtime Python 3.12 com os pacotes da `.venv` permitiu concluir o render. O diagnóstico posterior confirmou `.venv`, cache e Manim saudáveis: faltava acesso aos caminhos externos do usuário. Se o erro reaparecer apenas nesse ambiente restrito, verificar permissões antes de recriar a `.venv` ou limpar o cache.
 
 ## Convenções de arquivos
 

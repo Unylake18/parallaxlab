@@ -11,9 +11,10 @@ Repositório técnico para produção de vídeos educacionais de Física e Matem
 - MiKTeX / MathTex
 - PyCharm
 
-O Manim/MathTex já gerou os dois vídeos finais. O executável Python vinculado
-à `.venv` e o cache local do `uv` apresentaram falha no último render;
-diagnosticar antes de novo uso, sem reinstalação por rotina.
+O Manim/MathTex já gerou os dois vídeos finais. O diagnóstico posterior validou
+o Python da `.venv`, o cache e `uv run python -m manim --version`. A falha
+anterior ocorreu por restrição de acesso do ambiente de execução do Codex;
+se reaparecer somente nele, verificar permissões antes de alterar o Python.
 
 Não executar `uv init`, recriar `.venv` ou alterar dependências sem uma causa técnica diagnosticada.
 
