@@ -4,7 +4,7 @@ Guia mestre do Projeto, repositório e produção do canal.
 
 **Versão:** 1.3 · **Referência:** 22 de setembro de 2026 · **Idioma:** português brasileiro.
 
-**Reconciliação operacional — 2026-09-22:** nome oficial Parallax Lab; Instagram @labparallax. A identidade e os oito assets estão aprovados, e os arquivos já estão rastreados e versionados conforme `docs/identidade_visual.md`. Template básico, cena do piloto e preview com voz já foram produzidos. A aplicação da identidade ao Manim está em alterações locais ainda não commitadas. A duração de 68,933 s identifica o preview validado anterior a essas alterações; o QA da versão local em produção está registrado em `docs/estado_atual.md`. O alvo antigo de 45–60 s foi substituído. Exemplos de inicialização e storyboard abaixo são referências históricas, não pendências atuais.
+**Reconciliação operacional — 2026-09-23:** nome oficial Parallax Lab; Instagram @labparallax. A identidade e os oito assets estão aprovados e versionados. `vid_0001` e `vid_0002` têm finais técnicos locais em 1080×1920/30 fps, narração e SRT; publicação, backup externo e QA físico em celular não estão comprovados. O estado corrente está em `docs/estado_atual.md`. O alvo antigo de 45–60 s foi substituído; exemplos de inicialização e storyboard abaixo são referências históricas.
 
 **Uso:** adicione este arquivo às fontes do Projeto no ChatGPT e mantenha a cópia versionada em `docs/guia_mestre.md`. Para trabalhar hoje, abra primeiro `START_HERE.md`. Para saber a realidade do projeto neste instante, abra `docs/estado_atual.md` — ele é a fonte operacional.
 
@@ -177,7 +177,7 @@ Versione código, documentos, roteiros e legendas. Armazene MP4/WAV/projetos pes
 
 - Windows;
 - Python 3.12;
-- `uv` funcionando;
+- `uv` instalado; o fluxo local apresentou falha no último render e requer diagnóstico;
 - Manim Community **0.21.0**;
 - MiKTeX e `MathTex` funcionando;
 - primeiro MP4 renderizado.
@@ -477,4 +477,4 @@ Referências técnicas úteis: documentação oficial do Manim Community, `uv`, 
 
 ---
 
-**Próxima ação concreta:** consultar `docs/estado_atual.md`, revisar o preview e as alterações locais de identidade, composição e áudio e, após aprovação, versionar essa unidade de produção. O preview com voz do piloto já existe; preservar matemática e sincronização e concluir o QA pendente.
+**Próxima ação concreta:** consultar `docs/estado_atual.md` para os dois finais, concluir o QA físico e backup externo pendentes e iniciar `vid_0003` pela questão e solução verificadas. Não tratar os exemplos do piloto como estado atual.

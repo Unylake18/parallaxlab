@@ -77,7 +77,10 @@ Equações claras, resultado destacado, branding discreto e espaço inferior liv
 3. Matemática/física.
 4. Identidade visual.
 
-O template vertical e os helpers básicos já existem. **A aplicação desta identidade ao template e ao piloto está em produção:** a paleta e o watermark aparecem em alterações locais de `template/config.py` e `cena.py`, ainda não commitadas nem aprovadas como versão final. O estado versionado e o working tree devem ser diferenciados até a conclusão dessa unidade.
+O template vertical e os helpers básicos já existem. A paleta e o watermark
+foram aplicados ao piloto e ao `vid_0002`; os dois finais passaram por QA
+técnico em 1080×1920/30 fps. A leitura física em celular ainda não foi
+comprovada. O estado atual e os caminhos finais estão em `docs/estado_atual.md`.
 
 ## Uso de logo, avatar e watermark
 
@@ -98,8 +101,8 @@ Estética infantil, escolar genérica, gamer ou excessivamente carregada; psicod
 
 **Aprovado:** nome Parallax Lab; @labparallax; conceito de perspectiva; símbolo com planos e orbe; direção visual; famílias de cor; oito variantes e suas funções; organização de pastas; branding discreto e prioridade de leitura.
 
-**Implementado/versionado:** oito PNGs rastreados na estrutura aprovada; template vertical básico, helpers e piloto com voz existentes no histórico do repositório.
+**Implementado/versionado:** oito PNGs de marca rastreados na estrutura aprovada; template vertical básico, helpers e piloto com voz existentes no histórico. Capas dos vídeos 1 e 2 estão nas respectivas unidades de produção.
 
-**Em produção:** aplicação da paleta e do watermark ao template/piloto em mudanças locais ainda não commitadas.
-
-**Pendente:** revisar e versionar essa aplicação; escolher e verificar licença das fontes; definir títulos, legendas e MathTex; consolidar área de proteção, tamanhos e watermark após QA; revisar em celular.
+**Pendente:** escolher e verificar licença das fontes; refinar padrões de
+tipografia e área de proteção apenas com mais evidência; revisar os finais e
+capas em celular. A aprovação técnica dos renders não comprova publicação.

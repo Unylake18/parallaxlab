@@ -2,21 +2,24 @@
 
 Manual curto para abrir antes de trabalhar. O guia completo está em `docs/guia_mestre.md`; a verdade operacional está em `docs/estado_atual.md`.
 
-**Reconciliação de 2026-09-22:** marca Parallax Lab, Instagram @labparallax. Identidade aprovada em `docs/identidade_visual.md`; os oito assets estão rastreados e versionados. Template básico e piloto com voz já existem. A aplicação do branding e os microajustes de composição e áudio estão em mudanças locais ainda não commitadas. Os 68,933 s identificam o preview validado anterior a essas mudanças; o QA local atual registra preview de 69,266 s e narração de 68,719 s. Validação auditiva palavra a palavra e QA físico em celular continuam pendentes.
+**Reconciliação de 2026-09-23:** `vid_0001` e `vid_0002` têm cena, narração,
+SRT, capa e MP4s finais locais. Ambos passaram por QA técnico; reprodução
+física em celular, backup externo dos MP4s e publicação não estão comprovados.
+Veja os nomes exatos em `docs/estado_atual.md`. O próximo vídeo é `vid_0003`.
 ## Setup já validado
 
 - Windows + PyCharm
 - Python 3.12
-- `uv` funcionando
+- `uv` instalado; o vínculo Python da `.venv` e o cache falharam no último render
 - Manim Community 0.21.0
 - MiKTeX/`MathTex` funcionando
 - primeiro MP4 já renderizado
 
 Não reinstale, recrie o projeto ou rode `uv init` por rotina. Primeiro leia `docs/estado_atual.md` e preserve o que funciona.
 
-## Missão atual
+## Primeiro ciclo
 
-Publicar `vid_0001` / `integral_001`:
+O `vid_0001` resolve:
 
 \[
 \int x^2e^x\,dx
@@ -28,7 +31,9 @@ Ensinar integração por partes duas vezes e terminar conferindo pela derivada:
 \int x^2e^x\,dx=e^x(x^2-2x+2)+C.
 \]
 
-O piloto serve para validar **didática, ritmo, legibilidade, template, narração e pipeline**.
+O piloto e o `vid_0002` são as duas primeiras unidades técnicas concluídas.
+`vid_0002` resolve ∫2x cos(x²) dx = sin(x²) + C por substituição e regra da
+cadeia concreta. Ambos permanecem sem publicação comprovada.
 
 ## Ciclo diário
 
@@ -80,13 +85,17 @@ template/
 └── helpers.py            # layout e animações reutilizáveis
 
 videos/
-└── vid_0001_integracao_por_partes/
-    ├── cena.py
-    ├── ficha.md
-    ├── roteiro.md
-    ├── revisao.md
-    ├── legenda.srt
-    └── publicacao.md
+├── montar_master.py
+├── montar_legendado.py
+├── vid_0001_integracao_por_partes/
+│   ├── cena.py
+│   ├── ficha.md
+│   ├── roteiro.md
+│   ├── revisao.md
+│   ├── legenda.srt
+│   ├── capa_instagram.png
+│   └── publicacao.md
+└── vid_0002_integral_substituicao/  # mesmos documentos; áudio de montagem reproduzível
 
 renders/                  # arquivos pesados; backup externo
 ```
@@ -101,9 +110,9 @@ Nos primeiros dez vídeos, trabalhe diretamente em `main` com commits pequenos. 
 - [x] Justificar a escolha de \(u=x^2\) pela redução do grau.
 - [x] Animar passagens com `TransformMatchingTex` e `FadeOut`/`FadeIn` conforme a relação matemática.
 - [x] Renderizar preview vertical com voz.
-- [ ] Revisar e versionar a aplicação local da identidade e conferir em tela de celular.
-- [ ] Validar sincronização auditiva e produzir/revisar legendas.
-- [ ] Conferir matemática, áudio, legibilidade, resolução e começo/fim.
+- [x] Versionar identidade, cena, narração e legendas do piloto; concluir QA técnico.
+- [x] Produzir e conferir tecnicamente o segundo vídeo.
+- [ ] Conferir ambos em tela física de celular e confirmar backup dos MP4s.
 - [ ] Preparar textos por plataforma e publicar sem marca d’água cruzada.
 - [ ] Registrar link/data, tempo de produção e métricas disponíveis.
 - [ ] Atualizar `docs/estado_atual.md` e fazer commit/push.
@@ -129,7 +138,6 @@ Depois do vídeo 10: compare formatos, retenção e tempo de produção. Automat
 
 ## Próxima ação
 
-1. Revisar o preview e as alterações locais de identidade, composição e áudio.
-2. Após aprovação, versionar essa unidade de produção sem misturá-la à documentação.
-3. Definir tipografia comercial compatível com Windows/Manim e validar sincronização e legibilidade em celular.
-4. Concluir legendas/edição, render final e QA antes de publicar.
+1. Confirmar QA físico em celular e backup externo dos finais dos vídeos 1 e 2.
+2. Diagnosticar o `uv`/Python local antes do próximo render, sem reinstalar por rotina.
+3. Iniciar `vid_0003` com a questão e solução verificadas; nesta consolidação ele não foi produzido.

@@ -13,7 +13,7 @@
 - Finais 1080×1920/30 fps: `renders/vid_0002_integral_substituicao_final_master_limpo.mp4`
   (sem legenda embutida) e `renders/vid_0002_integral_substituicao_final_legendado.mp4`.
 - Duração final: 69,433 s; áudio aprovado: 69,224 s. Status: exportação e QA técnico
-  concluídos; pendente revisão física em celular. Sem publicação.
+  concluídos; pendente revisão física em celular. Sem publicação comprovada.
 - Capa local: `capa_instagram.png`; estado de publicação em `publicacao.md`.
 - Template, piloto e dependências preservados. Componentes específicos ficam nesta unidade.
 

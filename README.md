@@ -11,7 +11,9 @@ Repositório técnico para produção de vídeos educacionais de Física e Matem
 - MiKTeX / MathTex
 - PyCharm
 
-O ambiente já está funcionando.
+O Manim/MathTex já gerou os dois vídeos finais. O executável Python vinculado
+à `.venv` e o cache local do `uv` apresentaram falha no último render;
+diagnosticar antes de novo uso, sem reinstalação por rotina.
 
 Não executar `uv init`, recriar `.venv` ou alterar dependências sem uma causa técnica diagnosticada.
 
@@ -19,8 +21,8 @@ Não executar `uv init`, recriar `.venv` ou alterar dependências sem uma causa 
 
 - `docs/` — documentação e estado operacional
 - `template/` — configuração e componentes reutilizáveis do Manim
-- `videos/` — arquivos de cada vídeo
-- `renders/` — previews e renders exportados
+- `videos/` — fontes e documentos de cada vídeo; montagem de áudio/legenda
+- `renders/` — MP4s finais locais, ignorados pelo Git; backup externo pendente
 
 ## Fonte operacional
 
@@ -31,9 +33,10 @@ Antes de alterar a infraestrutura, ler:
 - `docs/guia_mestre.md`
 - `docs/identidade_visual.md`
 
-`docs/estado_atual.md` prevalece quando houver divergência sobre o estado atual do projeto.
+`docs/estado_atual.md` registra o estado operacional após conferência do
+filesystem e Git. `docs/padroes_producao.md` compara as duas unidades reais.
 
-## Preview
+## Preview e final
 
 Executar na raiz do projeto:
 
@@ -41,11 +44,13 @@ Executar na raiz do projeto:
 uv run python -m manim -p -r 540,960 --fps 15 videos/vid_0001_integracao_por_partes/cena.py Integral001
 ```
 
-## Render final
-
-```powershell
-uv run python -m manim -p -r 1080,1920 --fps 30 videos/vid_0001_integracao_por_partes/cena.py Integral001
-```
+Para o segundo vídeo, use
+`videos/vid_0002_integral_substituicao/cena.py` e a classe `Integral002`.
+O render final usa `-r 1080,1920 --fps 30`.
+O render Manim é silencioso; `videos/montar_master.py` combina a cena e a
+narração, e `videos/montar_legendado.py` aplica o SRT no master limpo.
+Os dois finais de cada unidade ficam em `renders/` com sufixos
+`_final_master_limpo.mp4` e `_final_legendado.mp4`.
 
 ## Git
 
