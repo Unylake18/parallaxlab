@@ -1,0 +1,112 @@
+1
+00:00:00,270 --> 00:00:02,720
+Essa integral parece complicada,
+mas tem uma pista.
+
+2
+00:00:02,960 --> 00:00:04,880
+Dentro do cosseno aparece x²,
+
+3
+00:00:04,880 --> 00:00:07,820
+e a derivada de x²
+é 2x,
+
+4
+00:00:08,000 --> 00:00:10,320
+exatamente o fator
+que já está na integral.
+
+5
+00:00:10,580 --> 00:00:13,360
+Então, fazemos u = x².
+
+6
+00:00:13,780 --> 00:00:16,600
+Aí, du = 2x dx.
+
+7
+00:00:17,320 --> 00:00:19,500
+Com isso, x² vira u
+
+8
+00:00:19,500 --> 00:00:21,800
+e 2x dx vira du.
+
+9
+00:00:22,100 --> 00:00:23,920
+Então, a integral
+fica simplesmente
+
+10
+00:00:23,920 --> 00:00:26,440
+∫ cos(u) du.
+
+11
+00:00:26,640 --> 00:00:27,760
+Agora ficou fácil:
+
+12
+00:00:28,060 --> 00:00:30,560
+a integral de cosseno é seno.
+
+13
+00:00:30,880 --> 00:00:35,260
+Voltando para x, temos
+seno de x² mais C.
+
+14
+00:00:36,000 --> 00:00:38,640
+Pra conferir, usamos
+a regra da cadeia.
+
+15
+00:00:39,080 --> 00:00:40,860
+Derivando seno de x²,
+
+16
+00:00:41,180 --> 00:00:44,300
+vem cosseno de x²
+vezes 2x.
+
+17
+00:00:44,940 --> 00:00:47,720
+Recuperamos exatamente
+2x cos(x²).
+
+18
+00:00:49,970 --> 00:00:53,010
+Ou seja, derivar monta
+essa composição
+
+19
+00:00:53,010 --> 00:00:55,910
+e a substituição faz
+o caminho contrário.
+
+20
+00:00:56,230 --> 00:00:58,370
+No gráfico aparece
+a mesma relação.
+
+21
+00:00:58,910 --> 00:01:01,730
+F cresce quando F′
+é positiva,
+
+22
+00:01:02,070 --> 00:01:04,430
+para no máximo quando
+F′ é zero,
+
+23
+00:01:04,850 --> 00:01:06,030
+e depois decresce.
+
+24
+00:01:06,330 --> 00:01:07,890
+Se ajudou, deixe o like
+
+25
+00:01:07,890 --> 00:01:09,100
+e segue o Parallax Lab.
