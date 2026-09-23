@@ -13,8 +13,8 @@
 - Windows + PyCharm; Python 3.12; Manim Community 0.21.0 e MiKTeX/MathTex já usados em renders. O `uv` existe, mas o vínculo Python da `.venv` e o cache local apresentaram falha no último render; diagnosticar antes do próximo.
 - Projeto local: `C:\Users\KaioOrtiz\PycharmProjects\manim-fisica`; branch `main`.
 - Remoto `origin` configurado: `https://github.com/Unylake18/parallaxlab.git`.
-- A consolidação foi organizada em commits locais na `main`; o push ficou
-  pendente enquanto a exclusão de `media/` aguarda aprovação específica.
+- A consolidação foi organizada em commits locais na `main`; o push não foi
+  feito e aguarda revisão da auditoria restrita de `media/`.
 - A unidade de fechamento do `vid_0001` reúne a configuração visual, a cena, a narração final e a legenda no mesmo commit de produção.
 - Preservar o ambiente: não reinstalar, recriar `.venv`, executar `uv init` ou alterar dependências sem diagnóstico concreto. `pyproject.toml` e `uv.lock` não possuem alterações locais.
 - MVP: trabalhar em `main`, com commits pequenos; branch/PR para alterações maiores ou arriscadas.
@@ -100,11 +100,16 @@ ficam nas pastas versionadas. O template Manim não foi expandido nesta
 consolidação. Aprendizados comparados em `docs/padroes_producao.md`.
 
 Na limpeza local, previews/logs de `renders/` e duas cópias WAV intermediárias
-foram removidos após auditoria. `media/` ainda guarda caches e QA históricos:
-a revisão automática bloqueou a exclusão recursiva desses 920 arquivos.
-O inventário por caminho, tamanho e classe está em
-`renders/auditoria_limpeza_2026-09-23.csv`; nenhuma fonte ou MP4 final depende
-desse diretório, mas a exclusão aguarda aprovação específica.
+foram removidos após auditoria. Uma auditoria restrita posterior classificou
+individualmente os 920 arquivos de `media/` e removeu 859 caches, previews
+substituídos e imagens/vídeos temporários de QA. Uma checagem adicional dos
+26 arquivos históricos (`.py`, `.mp3`, `.srt`) confirmou que não são necessários
+para reconstrução, e eles também foram removidos. No total, saíram 885 arquivos
+(55.429.804 bytes). Permanecem 35 incertos: relatórios de QA (`.json`, `.log`)
+e dois visuais silenciosos de 1080×1920 usados na montagem.
+O inventário com caminho, tamanho, classe e ação está em
+`renders/auditoria_media_restrita_2026-09-23.csv`; nenhuma fonte necessária
+à versão final nem MP4 final foi removido nessa auditoria.
 
 ## Estratégia e próxima ação
 
