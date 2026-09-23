@@ -13,8 +13,9 @@
 - Windows + PyCharm; Python 3.12; Manim Community 0.21.0 e MiKTeX/MathTex já usados em renders. O `uv` existe, mas o vínculo Python da `.venv` e o cache local apresentaram falha no último render; diagnosticar antes do próximo.
 - Projeto local: `C:\Users\KaioOrtiz\PycharmProjects\manim-fisica`; branch `main`.
 - Remoto `origin` configurado: `https://github.com/Unylake18/parallaxlab.git`.
-- A consolidação foi organizada em commits locais na `main`; o push não foi
-  feito e aguarda revisão da auditoria restrita de `media/`.
+- A consolidação técnica dos dois primeiros vídeos e a limpeza restrita de
+  `media/` foram concluídas e enviadas ao `origin/main`. A `main` local e
+  `origin/main` estão sincronizadas ao fechamento desta etapa.
 - A unidade de fechamento do `vid_0001` reúne a configuração visual, a cena, a narração final e a legenda no mesmo commit de produção.
 - Preservar o ambiente: não reinstalar, recriar `.venv`, executar `uv init` ou alterar dependências sem diagnóstico concreto. `pyproject.toml` e `uv.lock` não possuem alterações locais.
 - MVP: trabalhar em `main`, com commits pequenos; branch/PR para alterações maiores ou arriscadas.
