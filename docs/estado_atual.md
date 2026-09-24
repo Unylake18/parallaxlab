@@ -1,10 +1,10 @@
 # Estado atual — Parallax Lab
 
-**Atualizado em:** 2026-09-23
+**Atualizado em:** 2026-09-24
 
 **Marca:** Parallax Lab · **Instagram aprovado:** @labparallax
 
-**Guia vigente:** `docs/guia_mestre.md`, versão 1.3, com nota de reconciliação de 2026-09-22.
+**Guia vigente:** `docs/guia_mestre.md`, versão 1.4, com atualização editorial de 2026-09-23.
 
 **Fonte operacional:** este arquivo; identidade detalhada em `docs/identidade_visual.md`.
 
@@ -15,7 +15,8 @@
 - Remoto `origin` configurado: `https://github.com/Unylake18/parallaxlab.git`.
 - A consolidação técnica dos dois primeiros vídeos e a limpeza restrita de
   `media/` foram concluídas e enviadas ao `origin/main`. A `main` local e
-  `origin/main` estão sincronizadas ao fechamento desta etapa.
+  `origin/main` estavam sincronizadas naquele fechamento. A implementação do
+  vídeo 3 e sua documentação são commits locais posteriores; sem push nesta etapa.
 - A unidade de fechamento do `vid_0001` reúne a configuração visual, a cena, a narração final e a legenda no mesmo commit de produção.
 - Preservar o ambiente: não reinstalar, recriar `.venv`, executar `uv init` ou alterar dependências sem diagnóstico concreto. `pyproject.toml` e `uv.lock` não possuem alterações locais.
 - MVP: trabalhar em `main`, com commits pequenos; branch/PR para alterações maiores ou arriscadas.
@@ -120,6 +121,40 @@ Primeiro ciclo aprovado: **10 vídeos — 6 exercícios, 2 teorias curtas, 2 apl
 
 **Status: PLANEJADA / NÃO IMPLEMENTADA.** O Parallax Lab possui como direção futura aprovada visualizações matemáticas dinâmicas, física animada ampliada, conteúdos de intuição e curiosidades e representações complementares ou sincronizadas de um mesmo fenômeno. Essa expansão não está implementada, não constitui pendência atual e não altera `vid_0001`, os dez primeiros vídeos ou a próxima ação operacional do MVP.
 
-**Próxima produção:** `vid_0003`, teoria curta sobre a escolha de `u` em integração por partes. Nenhuma cena, pasta, voz ou roteiro foi iniciado nesta consolidação. Antes de publicar os vídeos 1 e 2, fazer QA físico em celular e confirmar backup externo dos MP4s.
+**Produção atual:** `vid_0003`, teoria curta — “De onde vem a fórmula da
+integração por partes?”. Cena e storyboard implementados em
+`videos/vid_0003_origem_integracao_por_partes/`, classe `Integral003`.
+Preview vertical silencioso com coda e alternativa `Integral003SemCoda`
+renderizados em 540×960/15 fps. Derivação principal de 55,933 s,
+coda geométrica de 8,933 s, total de 64,866 s. Arquivos locais:
+
+- `renders/vid_0003_origem_integracao_por_partes_preview_com_coda.mp4`
+- `renders/vid_0003_origem_integracao_por_partes_preview_sem_coda.mp4`
+
+Derivação: regra do produto → dx nos três termos → d(uv), v du e u dv
+termo a termo → travessia de +v du e mudança para −v du → integração e
+resultado em caixa. Verificação: u'v + uv' − vu' → uv', com cancelamento
+visível. A coda mostra apenas a interpretação no retângulo e arco crescente
+desenhados, com escopo explícito; não é prova geral. Retirá-la mantém o
+fechamento principal. QA e medições em `revisao.md` da unidade; frames e
+metadados em `renders/vid_0003_qa/`. Preview sujeito à revisão do usuário;
+sem voz, SRT sincronizado, capa, render final ou publicação nesta etapa.
+
+O comando `uv run python -m manim -r 540,960 --fps 15
+videos/vid_0003_origem_integracao_por_partes/cena.py Integral003` funcionou
+com acesso autorizado ao cache externo do uv e ao ambiente existente.
+A primeira tentativa restrita retornou erro 183 no cache; a execução com
+acesso adequado confirmou Manim 0.21.0. Nenhum pacote, Python, `.venv`,
+template ou dependência foi alterado. `-p` foi omitido para não abrir um
+player externo automaticamente; o arquivo é o mesmo preview vertical.
+
+**Próxima ação:** revisar o preview do vídeo 3 e decidir sobre a coda antes
+de voz/sincronização e final. `vid_0004` deve trabalhar explicitamente a
+escolha de u em integração por partes; sua família de exercício permanece,
+com enunciado a definir. **Inconsistência editorial pendente:** “derivada pela
+regra da cadeia”, antes no vídeo 4, não tem nova posição aprovada. Não foi
+realocada nem excluída definitivamente. Distribuição e vídeos 1, 2 e 5–10
+preservados. Antes de publicar os vídeos 1 e 2, fazer QA físico em celular
+e confirmar backup externo dos MP4s. Sem publicação ou push nesta etapa.
 
 **Pendências seguintes:** definir a tipografia oficial; confirmar backup dos MP4s e QA físico em celular; preparar publicação e conferir regras atuais da plataforma. Nenhuma publicação confirmada no repositório.

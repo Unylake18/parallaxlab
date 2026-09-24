@@ -5,7 +5,8 @@ Manual curto para abrir antes de trabalhar. O guia completo está em `docs/guia_
 **Reconciliação de 2026-09-23:** `vid_0001` e `vid_0002` têm cena, narração,
 SRT, capa e MP4s finais locais. Ambos passaram por QA técnico; reprodução
 física em celular, backup externo dos MP4s e publicação não estão comprovados.
-Veja os nomes exatos em `docs/estado_atual.md`. O próximo vídeo é `vid_0003`.
+Veja os nomes exatos em `docs/estado_atual.md`. `vid_0003` está em revisão de
+preview: teoria curta — de onde vem a fórmula da integração por partes?
 ## Setup já validado
 
 - Windows + PyCharm
@@ -51,12 +52,16 @@ uv run python -m manim --version
 # Preview vertical rápido
 uv run python -m manim -p -r 540,960 --fps 15 videos/vid_0001_integracao_por_partes/cena.py Integral001
 
+# Preview atual: origem da integração por partes, com coda
+uv run python -m manim -r 540,960 --fps 15 videos/vid_0003_origem_integracao_por_partes/cena.py Integral003
+
 # Render vertical final
 uv run python -m manim -p -r 1080,1920 --fps 30 videos/vid_0001_integracao_por_partes/cena.py Integral001
 
 git status
 git add <arquivos>
 git commit -m "tipo: resumo claro"
+# Somente com autorização explícita
 git push origin main
 ```
 
@@ -123,8 +128,8 @@ Mini-temporada inicial: **Cálculo + aplicações físicas**.
 
 1. Exercício — \(\int x^2e^x\,dx\): integração por partes duas vezes.
 2. Exercício — integral por substituição simples.
-3. Teoria curta — como escolher \(u\) em integração por partes.
-4. Exercício — derivada pela regra da cadeia.
+3. Teoria curta — de onde vem a fórmula da integração por partes?
+4. Exercício — trabalhar explicitamente como escolher \(u\) em integração por partes.
 5. Aplicação — derivada como velocidade instantânea.
 6. Exercício — limite simples com interpretação visual.
 7. Exercício — outra integração por partes, com estrutura diferente.
@@ -134,9 +139,17 @@ Mini-temporada inicial: **Cálculo + aplicações físicas**.
 
 Distribuição: **6 exercícios + 2 teorias curtas + 2 aplicações**.
 
+Atualização editorial de 2026-09-23: a família de exercício do vídeo 4 é
+preservada; seu enunciado ainda precisa ser definido. A antiga pauta
+“derivada pela regra da cadeia” ficou **sem posição decidida**. Esta é uma
+inconsistência editorial pendente, não uma exclusão definitiva nem autorização
+para realocá-la. Vídeos 1, 2 e 5–10 e distribuição permanecem preservados.
+
 Depois do vídeo 10: compare formatos, retenção e tempo de produção. Automatize apenas o gargalo que os dados mostrarem.
 
 ## Próxima ação
 
 1. Confirmar QA físico em celular e backup externo dos finais dos vídeos 1 e 2.
-2. Iniciar `vid_0003` com a questão e solução verificadas; nesta consolidação ele não foi produzido.
+2. Revisar o preview visual de `vid_0003`, incluindo a coda removível de 9 s;
+   consultar `videos/vid_0003_origem_integracao_por_partes/revisao.md`.
+   Não avançar para publicação. `vid_0004` deve trabalhar a escolha de u.

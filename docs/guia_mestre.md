@@ -2,7 +2,7 @@
 
 Guia mestre do Projeto, repositório e produção do canal.
 
-**Versão:** 1.3 · **Referência:** 22 de setembro de 2026 · **Idioma:** português brasileiro.
+**Versão:** 1.4 · **Referência:** 23 de setembro de 2026 · **Idioma:** português brasileiro.
 
 **Reconciliação operacional — 2026-09-23:** nome oficial Parallax Lab; Instagram @labparallax. A identidade e os oito assets estão aprovados e versionados. `vid_0001` e `vid_0002` têm finais técnicos locais em 1080×1920/30 fps, narração e SRT; publicação, backup externo e QA físico em celular não estão comprovados. O estado corrente está em `docs/estado_atual.md`. O alvo antigo de 45–60 s foi substituído; exemplos de inicialização e storyboard abaixo são referências históricas.
 
@@ -77,7 +77,7 @@ Este é o primeiro arquivo a atualizar ao terminar uma sessão e o primeiro a le
 ```markdown
 # Estado atual do canal
 Atualizado em: AAAA-MM-DD
-Guia vigente: 1.3
+Guia vigente: 1.4
 Ambiente validado: Windows; Python 3.12; uv; Manim Community 0.21.0; MiKTeX/MathTex; MP4 renderizado
 Repositório e branch: 
 Template vigente: 
@@ -177,7 +177,7 @@ Versione código, documentos, roteiros e legendas. Armazene MP4/WAV/projetos pes
 
 - Windows;
 - Python 3.12;
-- `uv` instalado; o fluxo local apresentou falha no último render e requer diagnóstico;
+- `uv` instalado e validado; no Codex restrito, verificar permissões de acesso ao cache antes de alterar o ambiente;
 - Manim Community **0.21.0**;
 - MiKTeX e `MathTex` funcionando;
 - primeiro MP4 renderizado.
@@ -396,8 +396,8 @@ Use o primeiro ciclo para testar três famílias, não para construir um curso l
 | --- | --- | --- |
 | 1 | Exercício | \(\int x^2e^x\,dx\): integração por partes duas vezes |
 | 2 | Exercício | Integral por substituição simples |
-| 3 | Teoria curta | Como escolher \(u\) em integração por partes |
-| 4 | Exercício | Derivada pela regra da cadeia |
+| 3 | Teoria curta | De onde vem a fórmula da integração por partes? |
+| 4 | Exercício | Trabalhar explicitamente como escolher \(u\) em integração por partes; enunciado a definir |
 | 5 | Aplicação | Derivada como velocidade instantânea |
 | 6 | Exercício | Limite simples com interpretação visual |
 | 7 | Exercício | Outra integração por partes, com estrutura diferente do piloto |
@@ -407,7 +407,19 @@ Use o primeiro ciclo para testar três famílias, não para construir um curso l
 
 Distribuição: **6 exercícios + 2 teorias curtas + 2 aplicações**. O primeiro ciclo deve parecer uma mini-temporada coerente de **Cálculo + aplicações físicas**, não uma amostra aleatória de todo o currículo. Valide enunciado, nível e solução antes de produzir. Depois do décimo, compare interesse, retenção e tempo de produção por família.
 
-A expansão editorial de longo prazo não reclassifica, remove, substitui ou reorganiza este ciclo. Os dez vídeos e sua distribuição permanecem integralmente aprovados como estão.
+A expansão editorial de longo prazo não reclassifica, remove, substitui ou
+reorganiza este ciclo. A decisão específica de 2026-09-23 atualiza somente
+as pautas 3 e 4: o vídeo 3 deriva a integração por partes da regra do produto;
+o vídeo 4 trabalha explicitamente a escolha de u. A família de exercício
+do vídeo 4 e a distribuição original são preservadas, sem inventar enunciado.
+**Inconsistência editorial pendente:** a pauta anterior “derivada pela regra
+da cadeia” perdeu sua posição no vídeo 4 e não tem novo destino aprovado.
+Ela não foi realocada nem excluída definitivamente. Vídeos 1, 2 e 5–10 não
+foram reordenados. Resolver a pauta deslocada exige decisão editorial explícita.
+
+No primeiro preview do vídeo 3, incluir coda geométrica removível de 7–10 s,
+limitada à interpretação do retângulo e da curva crescente escolhidos. Não
+apresentá-la como prova geral nem criar requisito para outros vídeos.
 
 ## 18. Métricas e decisões semanais
 
@@ -477,4 +489,8 @@ Referências técnicas úteis: documentação oficial do Manim Community, `uv`, 
 
 ---
 
-**Próxima ação concreta:** consultar `docs/estado_atual.md` para os dois finais, concluir o QA físico e backup externo pendentes e iniciar `vid_0003` pela questão e solução verificadas. Não tratar os exemplos do piloto como estado atual.
+**Próxima ação concreta:** revisar o preview de `vid_0003` com coda removível;
+consultar `docs/estado_atual.md` e a revisão da unidade. Os finais dos vídeos
+1 e 2 ainda exigem QA físico e backup externo. O vídeo 4 trabalhará a escolha
+de u, com enunciado pendente. Não publicar nesta etapa nem tratar os exemplos
+históricos do piloto como estado atual.

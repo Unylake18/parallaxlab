@@ -6,6 +6,27 @@ Registro das decisões estáveis do projeto.
 
 As decisões aprovadas serão registradas aqui conforme o projeto evoluir.
 
+## 2026-09-23 — Origem da integração por partes e escolha de u
+
+- `vid_0003`: teoria curta — “De onde vem a fórmula da integração por partes?”.
+  Mensagem: regra do produto reorganizada e integrada. Mostrar dx antes dos
+  diferenciais, conversões termo a termo, travessia de v du com mudança de
+  sinal e verificação com cancelamento de u'v e vu'.
+- `vid_0004`: trabalhar explicitamente como escolher u em integração por
+  partes. Preservar a família de exercício e a distribuição vigente;
+  enunciado específico ainda não definido.
+- A pauta “derivada pela regra da cadeia”, antes no vídeo 4, fica sem posição
+  aprovada. Registrar essa inconsistência pendente; não inventar posição,
+  exclusão definitiva, reordenação de outros vídeos ou nova distribuição.
+- Preservar vídeos 1, 2 e 5–10 e a composição 6 exercícios + 2 teorias curtas
+  + 2 aplicações nas partes não afetadas por essas decisões.
+- Primeiro preview do vídeo 3 com coda geométrica de 7–10 s, complementar e
+  removível. Retângulo U×V e curva crescente desde (0,0) até (U,V), sem equação
+  específica atribuída. Regiões ∫v du e ∫u dv e síntese UV = ∫v du + ∫u dv
+  referem-se às acumulações ao longo desse arco. Não é prova geral.
+- Etapa autorizada: implementação, preview vertical e QA; não publicação.
+  Trabalhar em main com commits pequenos; nenhum push sem autorização explícita.
+
 ## 2026-09-22 — Marca, identidade e estratégia
 
 - Marca oficial: Parallax Lab. Instagram: @labparallax.
