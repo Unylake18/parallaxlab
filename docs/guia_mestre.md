@@ -77,7 +77,7 @@ Este é o primeiro arquivo a atualizar ao terminar uma sessão e o primeiro a le
 ```markdown
 # Estado atual do canal
 Atualizado em: AAAA-MM-DD
-Guia vigente: 1.4
+Guia vigente: 1.5
 Ambiente validado: Windows; Python 3.12; uv; Manim Community 0.21.0; MiKTeX/MathTex; MP4 renderizado
 Repositório e branch: 
 Template vigente: 

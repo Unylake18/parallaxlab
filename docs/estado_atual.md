@@ -4,7 +4,7 @@
 
 **Marca:** Parallax Lab · **Instagram aprovado:** @labparallax
 
-**Guia vigente:** `docs/guia_mestre.md`, versão 1.4, com atualização editorial de 2026-09-23.
+**Guia vigente:** `docs/guia_mestre.md`, versão 1.5, com atualização editorial de 2026-09-23.
 
 **Fonte operacional:** este arquivo; identidade detalhada em `docs/identidade_visual.md`.
 
