@@ -37,6 +37,8 @@ Antes de alterar a infraestrutura, ler:
 `docs/estado_atual.md` registra o estado operacional após conferência do
 filesystem e Git. `docs/padroes_producao.md` compara as duas unidades reais.
 
+Agentes de código devem seguir `AGENTS.md`. Esse arquivo define carregamento de contexto, escopo mínimo, validação proporcional e condição de parada para trabalho local no repositório.
+
 ## Preview e final
 
 Executar na raiz do projeto:

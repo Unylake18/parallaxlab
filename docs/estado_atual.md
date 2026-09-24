@@ -20,6 +20,7 @@
 - A unidade de fechamento do `vid_0001` reúne a configuração visual, a cena, a narração final e a legenda no mesmo commit de produção.
 - Preservar o ambiente: não reinstalar, recriar `.venv`, executar `uv init` ou alterar dependências sem diagnóstico concreto. `pyproject.toml` e `uv.lock` não possuem alterações locais.
 - MVP: trabalhar em `main`, com commits pequenos; branch/PR para alterações maiores ou arriscadas.
+- `AGENTS.md` é a instrução operacional vigente para agentes de código: contexto mínimo suficiente, validação proporcional ao que mudou e nenhuma expansão espontânea de escopo.
 
 ## Identidade: aprovado × implementado
 

@@ -6,6 +6,12 @@ Registro das decisões estáveis do projeto.
 
 As decisões aprovadas serão registradas aqui conforme o projeto evoluir.
 
+## Uso de agentes de código
+
+Agentes de código devem operar com o menor contexto suficiente para a tarefa. Decisões matemáticas, físicas, didáticas e editoriais aprovadas no chat de Produção são tratadas como especificação de implementação, salvo inconsistência objetiva.
+
+Render, QA, documentação e ações de Git devem ser proporcionais à etapa e ao que realmente mudou. A fonte operacional detalhada desse comportamento é `AGENTS.md`.
+
 ## 2026-09-23 — Origem da integração por partes e escolha de u
 
 - `vid_0003`: teoria curta — “De onde vem a fórmula da integração por partes?”.

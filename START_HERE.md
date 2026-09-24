@@ -7,6 +7,15 @@ SRT, capa e MP4s finais locais. Ambos passaram por QA técnico; reprodução
 física em celular, backup externo dos MP4s e publicação não estão comprovados.
 Veja os nomes exatos em `docs/estado_atual.md`. `vid_0003` está em revisão de
 preview: teoria curta — de onde vem a fórmula da integração por partes?
+
+## Agentes de código
+
+`AGENTS.md` contém as instruções operacionais para Codex, Claude Code e outros agentes que atuem no repositório.
+
+Por padrão, agentes devem usar o menor contexto suficiente, executar somente os testes/renders necessários para a alteração atual e parar ao concluir o escopo.
+
+Não exigir releitura ampla do projeto, QA completo, documentação global ou Git em toda pequena iteração.
+
 ## Setup já validado
 
 - Windows + PyCharm
