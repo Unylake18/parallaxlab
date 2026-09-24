@@ -6,7 +6,9 @@
 - Pré-requisito: regra do produto e relação entre derivada e integral.
 - Cena: `cena.py`, classe `Integral003`; alternativa `Integral003SemCoda`.
 - Formato: área lógica 9×16, preview 540×960/15 fps.
-- Planejamento visual: principal de 56 s; coda de 9 s; total de 65 s.
+- Primeira rodada: principal de 55,933 s; coda de 8,933 s.
+- Segunda rodada visual: principal preservado em aproximadamente 56 s;
+  coda com fatias animadas, alvo de 9–12 s. Tempos medidos em `revisao.md`.
 - Esta etapa: preview visual silencioso. Sem voz aprovada, SRT sincronizado,
   capa ou exportação final. Não há publicação autorizada.
 - Template, ambiente e dependências existentes preservados.
@@ -42,11 +44,18 @@ e vu' se cancelam pela comutatividade da multiplicação.
 Plano (u,v), U,V positivos, arco crescente contínuo da origem a (U,V),
 sem equação atribuída na tela. A curva é desenhada por uma Bézier com controles
 crescentes nas duas coordenadas. A região inferior corresponde à acumulação
-∫v du; a região à esquerda do arco, complementar no retângulo, a ∫u dv.
-As duas usam o mesmo contorno amostrado. A síntese UV = ∫v du + ∫u dv se
-refere somente às acumulações desde a origem ao longo desse arco. Não são
-integrais indefinidas arbitrárias nessa interpretação.
+∫₀ᵁ v du; a região à esquerda do arco, complementar no retângulo, a ∫₀ⱽ u dv.
+As duas usam o mesmo contorno amostrado. Na segunda rodada, a fatia vertical
+`v du` acumula a região ciano e a horizontal `u dv` acumula a magenta.
+A síntese geométrica usa integrais definidas:
+
+\[
+UV=\int_0^U v\,du+\int_0^V u\,dv.
+\]
+
+Ela se refere somente às acumulações desde a origem ao longo desse arco;
+não se confunde com a identidade entre primitivas da derivação principal.
 
 Não é apresentada como prova geral: título, hipótese visual e legenda de
 escopo acompanham o desenho. Não há aula de áreas, exemplos adicionais ou
-fórmula para a curva. Remover a coda não altera os primeiros 56 s.
+fórmula para a curva. Remover a coda não altera a derivação e o fechamento.
