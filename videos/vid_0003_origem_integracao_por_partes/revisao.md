@@ -117,3 +117,20 @@ Quadros da sequência final em ambos os vídeos confirmam que a coda continua
 removível sem retirar nenhum passo matemático. A sincronização precisa de
 nova avaliação quando houver narração aprovada. A leitura física em celular
 também permanece pendente. Não houve render final nem publicação.
+
+## Ajuste pontual do guia de dx — 2026-09-24
+
+O texto-base “Multiplicando a igualdade por dx” permanece visível após a
+entrada dos três `dx` e só começa a sair em **9 s**. A troca para “Cada
+derivada agora vira seu diferencial” usa saída e entrada curtas, sem
+sobreposição de letras. Frames em **5,7; 6,5; 7,5; 8,5; 9,0; 9,5 e 10,0 s**
+foram conferidos em `renders/vid_0003_qa/ajuste_dx/`. A derivação e a coda
+não foram reestruturadas.
+
+Os previews silenciosos desta correção são
+`renders/vid_0003_origem_integracao_por_partes_preview_ajuste_dx_com_coda.mp4`
+(**67,931 s**, 1.019 frames) e
+`renders/vid_0003_origem_integracao_por_partes_preview_ajuste_dx_sem_coda.mp4`
+(**56,199 s**, 843 frames), ambos em 540×960/15 fps. A diferença de duração
+é **11,732 s**. Os previews anteriores permanecem disponíveis. Não houve
+voz, SRT, exportação final, push ou publicação.

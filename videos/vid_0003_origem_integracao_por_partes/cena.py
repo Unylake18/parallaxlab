@@ -90,13 +90,13 @@ class Integral003(Scene):
                   *(Write(dx[i]) for i in (1, 5, 9)), run_time=1.5)
         self.remove(eq, *dx.submobjects)
         self.add(dx)
-        self.play(FadeOut(next_caption), run_time=0.25)
         eq = dx
         self.until(9)
 
         caption = self.guide("Cada derivada agora vira seu diferencial")
+        self.play(FadeOut(next_caption), run_time=0.25)
         self.play(FadeIn(caption),
-                  Indicate(VGroup(eq[0], eq[1]), color=TEXT_COLOR), run_time=1)
+                  Indicate(VGroup(eq[0], eq[1]), color=TEXT_COLOR), run_time=0.75)
         target = self.equation(r"d(uv)", "=", "u'", "v", r"\,dx", "+",
                                "u", "v'", r"\,dx", cyan=(2, 3, 4), pink=(6, 7, 8))
         eq = self.morph(eq, target, [([0, 1], [0])] +
