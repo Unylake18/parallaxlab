@@ -16,7 +16,8 @@
 - A consolidação técnica dos dois primeiros vídeos e a limpeza restrita de
   `media/` foram concluídas e enviadas ao `origin/main`. A `main` local e
   `origin/main` estavam sincronizadas naquele fechamento. A implementação do
-  vídeo 3 e sua documentação são commits locais posteriores; sem push nesta etapa.
+  vídeo 3 e sua documentação já foram enviadas ao `origin/main`; `main` local e
+  `origin/main` estão sincronizadas neste fechamento.
 - A unidade de fechamento do `vid_0001` reúne a configuração visual, a cena, a narração final e a legenda no mesmo commit de produção.
 - Preservar o ambiente: não reinstalar, recriar `.venv`, executar `uv init` ou alterar dependências sem diagnóstico concreto. `pyproject.toml` e `uv.lock` não possuem alterações locais.
 - MVP: trabalhar em `main`, com commits pequenos; branch/PR para alterações maiores ou arriscadas.
