@@ -2,7 +2,7 @@
 
 Guia mestre do Projeto, repositório e produção do canal.
 
-**Versão:** 1.4 · **Referência:** 23 de setembro de 2026 · **Idioma:** português brasileiro.
+**Versão:** 1.5 · **Referência:** 24 de setembro de 2026 · **Idioma:** português brasileiro.
 
 **Reconciliação operacional — 2026-09-23:** nome oficial Parallax Lab; Instagram @labparallax. A identidade e os oito assets estão aprovados e versionados. `vid_0001` e `vid_0002` têm finais técnicos locais em 1080×1920/30 fps, narração e SRT; publicação, backup externo e QA físico em celular não estão comprovados. O estado corrente está em `docs/estado_atual.md`. O alvo antigo de 45–60 s foi substituído; exemplos de inicialização e storyboard abaixo são referências históricas.
 
@@ -108,6 +108,24 @@ PRODUÇÃO: siga questão → solução → verificação → roteiro → Manim 
 FERRAMENTAS: Chat decide e roteiriza; Codex implementa, testa e organiza arquivos; Work serve a pesquisas/entregáveis extensos. Claude e Gemini são revisores independentes, não árbitros por votação.
 
 GIT E AUTOMAÇÃO: nos primeiros dez vídeos, trabalhe em main com commits pequenos e claros. Branch/PR só para mudança maior, arriscada ou compartilhada (template, dependência, automação). Automação é consequência de um processo manual validado e de um gargalo medido.
+
+HANDOFF PARA AGENTES DE CÓDIGO
+
+Quando o usuário pedir “mande para o Codex”, “prompt para o Codex”, “mande para Claude Code” ou equivalente, gere por padrão o menor handoff suficiente.
+
+O handoff deve conter:
+- objetivo da rodada;
+- contexto mínimo necessário;
+- arquivos que podem ser lidos/alterados;
+- mudanças específicas;
+- teste/render mínimo necessário;
+- pontos específicos de QA quando aplicável;
+- o que não fazer;
+- condição clara de parada.
+
+Não pedir por padrão releitura completa do repositório, vídeos anteriores, documentação global, múltiplos renders, QA completo, commit ou push.
+
+Escalar contexto e validação somente diante de dependência concreta, erro, ambiguidade ou fechamento final da unidade.
 
 PUBLICAÇÃO: não afirme regras, formatos, limites ou monetização sem consultar fonte atual e datada. Não publique nem alegue ação externa sem evidência.
 ```
@@ -216,7 +234,7 @@ Use branch e PR quando alterar dependências, refatorar o template usado por ví
 
 ## 9. README e orientações locais ao Codex
 
-O README precisa de objetivo, estrutura, comando de preview, comando de render, como recuperar o ambiente e local do backup de mídia. `AGENTS.md`, se usado, deve ser curto: ler `docs/estado_atual.md`, preservar mudanças existentes, usar caminhos relativos, renderizar antes de declarar sucesso e nunca publicar sem autorização explícita.
+O README precisa de objetivo, estrutura, comando de preview, comando de render, como recuperar o ambiente e local do backup de mídia. `AGENTS.md` é a instrução operacional dos agentes de código. Ele exige contexto mínimo suficiente, preservação de mudanças existentes, validação proporcional ao que mudou, respeito à fase da produção e parada quando o escopo termina. `docs/estado_atual.md`, documentação global, renders e QA amplos entram somente quando a tarefa realmente depender deles.
 
 ## 10. Identidade visual e template Manim
 
@@ -458,11 +476,35 @@ Enunciado: [...]
 Converta a solução aprovada em roteiro vertical. Entregue tabela com tempo, fala, tela, animação e objetivo didático. Preserve a matemática, inclua gancho honesto, passo central e verificação. Meta: [...] segundos.
 ```
 
-### Implementar no Codex
+### Implementar em agente de código
 
 ```text
-Leia README.md e docs/estado_atual.md, depois o template e a pasta do vídeo. Implemente o storyboard usando Manim Community e uv. Preserve mudanças existentes, use helpers e TransformMatchingTex quando termos correspondentes devem permanecer visíveis. Renderize preview e reporte evidência e limitações reais. Não publique nada.
+Objetivo:
+[uma tarefa específica]
+
+Contexto mínimo:
+[arquivos estritamente necessários]
+
+Pode ler/alterar:
+[lista explícita]
+
+Mudanças:
+[alterações aprovadas]
+
+Validação mínima:
+[testes/render realmente necessários]
+
+QA:
+[timestamps/estados afetados, quando aplicável]
+
+Não fazer:
+[documentação, final, commit/push etc. que não pertencem à rodada]
+
+Pare quando:
+[o resultado desta rodada estiver concluído e reportado]
 ```
+
+Não obrigar leitura de README, `docs/estado_atual.md`, template, vídeos anteriores ou render em toda tarefa. Expandir contexto e validação somente quando houver dependência concreta.
 
 ## 22. Ordem de execução
 

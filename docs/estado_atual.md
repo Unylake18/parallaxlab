@@ -157,6 +157,6 @@ com enunciado a definir. **Inconsistência editorial pendente:** “derivada pel
 regra da cadeia”, antes no vídeo 4, não tem nova posição aprovada. Não foi
 realocada nem excluída definitivamente. Distribuição e vídeos 1, 2 e 5–10
 preservados. Antes de publicar os vídeos 1 e 2, fazer QA físico em celular
-e confirmar backup externo dos MP4s. Sem publicação ou push nesta etapa.
+e confirmar backup externo dos MP4s. Sem publicação nesta etapa.
 
 **Pendências seguintes:** definir a tipografia oficial; confirmar backup dos MP4s e QA físico em celular; preparar publicação e conferir regras atuais da plataforma. Nenhuma publicação confirmada no repositório.

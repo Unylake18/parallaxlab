@@ -2,7 +2,7 @@
 
 Manual curto para abrir antes de trabalhar. O guia completo está em `docs/guia_mestre.md`; a verdade operacional está em `docs/estado_atual.md`.
 
-**Reconciliação de 2026-09-23:** `vid_0001` e `vid_0002` têm cena, narração,
+**Reconciliação de 2026-09-24:** `vid_0001` e `vid_0002` têm cena, narração,
 SRT, capa e MP4s finais locais. Ambos passaram por QA técnico; reprodução
 física em celular, backup externo dos MP4s e publicação não estão comprovados.
 Veja os nomes exatos em `docs/estado_atual.md`. `vid_0003` está em revisão de
@@ -88,6 +88,8 @@ config.frame_height = 16
 ## Estrutura mínima
 
 ```text
+AGENTS.md                  # instruções operacionais para agentes de código
+
 docs/
 ├── estado_atual.md       # o que é verdade agora
 ├── decisoes.md           # decisões estáveis
@@ -129,7 +131,7 @@ Nos primeiros dez vídeos, trabalhe diretamente em `main` com commits pequenos. 
 - [ ] Conferir ambos em tela física de celular e confirmar backup dos MP4s.
 - [ ] Preparar textos por plataforma e publicar sem marca d’água cruzada.
 - [ ] Registrar link/data, tempo de produção e métricas disponíveis.
-- [ ] Atualizar `docs/estado_atual.md` e fazer commit/push.
+- [x] Atualizar `docs/estado_atual.md` e fazer commit/push.
 
 ## Primeiros dez vídeos
 

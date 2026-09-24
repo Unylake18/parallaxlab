@@ -20,6 +20,7 @@ Não executar `uv init`, recriar `.venv` ou alterar dependências sem uma causa 
 
 ## Estrutura
 
+- `AGENTS.md` — instruções operacionais para agentes de código
 - `docs/` — documentação e estado operacional
 - `template/` — configuração e componentes reutilizáveis do Manim
 - `videos/` — fontes e documentos de cada vídeo; montagem de áudio/legenda
@@ -35,7 +36,7 @@ Antes de alterar a infraestrutura, ler:
 - `docs/identidade_visual.md`
 
 `docs/estado_atual.md` registra o estado operacional após conferência do
-filesystem e Git. `docs/padroes_producao.md` compara as duas unidades reais.
+filesystem e Git. `docs/padroes_producao.md` compara as duas unidades tecnicamente finalizadas (`vid_0001` e `vid_0002`).
 
 Agentes de código devem seguir `AGENTS.md`. Esse arquivo define carregamento de contexto, escopo mínimo, validação proporcional e condição de parada para trabalho local no repositório.
 
