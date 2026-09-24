@@ -127,11 +127,11 @@ Primeiro ciclo aprovado: **10 vídeos — 6 exercícios, 2 teorias curtas, 2 apl
 integração por partes?”. Cena e storyboard implementados em
 `videos/vid_0003_origem_integracao_por_partes/`, classe `Integral003`.
 Preview vertical silencioso com coda e alternativa `Integral003SemCoda`
-renderizados em 540×960/15 fps. Derivação principal de 55,933 s,
-coda geométrica de 8,933 s, total de 64,866 s. Arquivos locais:
+renderizados em 540×960/15 fps. Preview vigente sem coda de 56,199 s,
+coda geométrica de 11,732 s e total com coda de 67,931 s. Arquivos locais:
 
-- `renders/vid_0003_origem_integracao_por_partes_preview_com_coda.mp4`
-- `renders/vid_0003_origem_integracao_por_partes_preview_sem_coda.mp4`
+- `renders/vid_0003_origem_integracao_por_partes_preview_ajuste_dx_com_coda.mp4`
+- `renders/vid_0003_origem_integracao_por_partes_preview_ajuste_dx_sem_coda.mp4`
 
 Derivação: regra do produto → dx nos três termos → d(uv), v du e u dv
 termo a termo → travessia de +v du e mudança para −v du → integração e
