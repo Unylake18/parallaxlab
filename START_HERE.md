@@ -5,8 +5,9 @@ Manual curto para abrir antes de trabalhar. O guia completo está em `docs/guia_
 **Reconciliação de 2026-09-24:** `vid_0001` e `vid_0002` têm cena, narração,
 SRT, capa e MP4s finais locais. Ambos passaram por QA técnico; reprodução
 física em celular, backup externo dos MP4s e publicação não estão comprovados.
-Veja os nomes exatos em `docs/estado_atual.md`. `vid_0003` está em revisão de
-preview: teoria curta — de onde vem a fórmula da integração por partes?
+Veja os nomes exatos em `docs/estado_atual.md`. `vid_0003` (teoria curta —
+de onde vem a fórmula da integração por partes?) está tecnicamente concluído,
+sem publicação.
 
 ## Agentes de código
 
@@ -161,6 +162,6 @@ Depois do vídeo 10: compare formatos, retenção e tempo de produção. Automat
 ## Próxima ação
 
 1. Confirmar QA físico em celular e backup externo dos finais dos vídeos 1 e 2.
-2. Revisar o preview visual de `vid_0003`, incluindo a coda removível de 9 s;
-   consultar `videos/vid_0003_origem_integracao_por_partes/revisao.md`.
-   Não avançar para publicação. `vid_0004` deve trabalhar a escolha de u.
+2. Iniciar `vid_0004`: exercício sobre a escolha de u em integração por
+   partes, com enunciado ainda a definir. Não publicar o `vid_0003` sem QA
+   físico, backup e capa.

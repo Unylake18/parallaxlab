@@ -531,8 +531,8 @@ Referências técnicas úteis: documentação oficial do Manim Community, `uv`, 
 
 ---
 
-**Próxima ação concreta:** revisar o preview de `vid_0003` com coda removível;
-consultar `docs/estado_atual.md` e a revisão da unidade. Os finais dos vídeos
-1 e 2 ainda exigem QA físico e backup externo. O vídeo 4 trabalhará a escolha
-de u, com enunciado pendente. Não publicar nesta etapa nem tratar os exemplos
+**Próxima ação concreta:** iniciar `vid_0004`, exercício sobre a escolha de u
+em integração por partes, com enunciado pendente; consultar
+`docs/estado_atual.md`. `vid_0003` está tecnicamente concluído. Os finais dos
+vídeos 1 a 3 ainda exigem QA físico e backup externo. Não publicar nesta etapa nem tratar os exemplos
 históricos do piloto como estado atual.

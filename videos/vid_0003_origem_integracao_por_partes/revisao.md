@@ -1,6 +1,10 @@
-# Revisão do primeiro preview — vid_0003
+# Revisão — vid_0003
 
-**Conferido em:** 2026-09-24. Entrega desta etapa: dois previews visuais,
+O fechamento técnico final está em **Fechamento técnico — 2026-09-25**, ao
+final deste arquivo. As seções anteriores registram as rodadas de preview; os
+previews, logs e pastas de QA citados nelas foram removidos após o fechamento.
+
+**Primeiro preview conferido em:** 2026-09-24. Entrega desta etapa: dois previews visuais,
 com e sem coda. Ainda sujeitos à avaliação editorial antes de voz, legenda
 e render final. Nenhuma publicação foi feita.
 
@@ -134,3 +138,66 @@ Os previews silenciosos desta correção são
 (**56,199 s**, 843 frames), ambos em 540×960/15 fps. A diferença de duração
 é **11,732 s**. Os previews anteriores permanecem disponíveis. Não houve
 voz, SRT, exportação final, push ou publicação.
+
+## Fechamento técnico — 2026-09-25
+
+**Matemática aprovada e preservada:** regra do produto → `dx` nos três termos
+→ `d(uv) = v du + u dv` → `+v du` atravessa a igualdade como `−v du` →
+integração termo a termo → `∫u dv = uv − ∫v du`, com constante implícita.
+Verificação: ponte `du = u'dx`, `dv = v'dx`; `d/dx(uv − ∫vu'dx)` →
+`u'v + uv' − vu'`, cancelamento de `u'v` e `vu'`, resta `uv'`. A fórmula em
+caixa permanece visível durante a checagem.
+
+**Narração final:** `audio/narracao_final.wav` (PCM 16 bits, 44,1 kHz,
+estéreo, 90,48 s), a fonte aprovada sem processamento, recorte, time-stretch
+ou ajuste de volume; apenas renomeada de `narracao_original.wav`. A cena a
+incorpora com `add_sound`; `Integral003SemCoda` permanece silenciosa.
+
+**SRT final:** `legenda.srt`, 27 cues de 0,08 s a 84,74 s, até duas linhas,
+notação escrita (`dx`, `du`, `dv`, `u'dx`, `v'dx`, `d(uv)`, `uv`, `uv'`,
+`u dv`, `v du`, `(U,V)`, `U × V`), não a fonetização do áudio. O CTA falado
+não tem cue; aparece no elemento visual final.
+
+**Legendas coloridas:** `videos/montar_legendado.py --style solid
+--color-module <cena.py>` lê `SUBTITLE_TERM_COLORS` da cena, sem tags no SRT:
+termos de `v du` em ciano (`u'dx`, `du`, `v du`), de `u dv` em magenta
+(`v'dx`, `dv`, `u dv`, `uv'`) e os demais em branco. O estilo `solid` usa
+máscara opaca ampliada; os estilos `standard` e `piloto` mantêm a saída
+anterior.
+
+**Coda e CTA:** coda geométrica de 56,5 a 84,7 s (plano, curva crescente,
+fatias vertical e horizontal, acumulações, `UV = ∫₀ᵁ v du + ∫₀ⱽ u dv`).
+Depois, “Segue o Parallax Lab / @labparallax” até 90,0 s e fade final de
+0,3 s com a watermark.
+
+**Finais locais:**
+
+| Arquivo | Tamanho | Vídeo | Frames | Duração vídeo | Áudio |
+| --- | ---: | --- | ---: | ---: | --- |
+| `renders/vid_0003_origem_integracao_por_partes_final_master_limpo.mp4` | 4.107.917 B | H.264 High, 1080×1920, 30 fps, yuv420p | 2.709 | 90,300 s | AAC 48 kHz estéreo, 90,517 s |
+| `renders/vid_0003_origem_integracao_por_partes_final_legendado.mp4` | 4.283.390 B | H.264 High, 1080×1920, 30 fps, yuv420p | 2.709 | 90,300 s | AAC 48 kHz estéreo, 90,517 s |
+
+O master é cópia byte a byte da saída do Manim de
+`uv run python -m manim -r 1080,1920 --fps 30 videos/vid_0003_origem_integracao_por_partes/cena.py Integral003`.
+O legendado usa o master como fonte; os pacotes de áudio dos dois arquivos
+são idênticos.
+
+**QA técnico:** os dois arquivos foram decodificados integralmente, sem erro:
+2.709 frames de vídeo e 4.344.832 amostras de áudio cada. O áudio começa em
+0 s com narração e termina em 90,50 s com a cauda silenciosa do WAV. Frames
+amostrados em 1,5; 5,5; 10,8; 14,5; 18,5; 23,5; 29; 34; 41,5; 50; 53,5;
+58,5; 68; 77; 83,5; 88 e 90,2 s cobrem abertura, `dx`, `u'dx → du`,
+`v'dx → dv`, `v du → −v du`, integrais, fórmula, cancelamento, início da
+coda, fatias vertical e horizontal, retângulo, CTA e último frame.
+Resultado: legendas legíveis, cores corretas, sem clipping nem texto além
+das bordas; faixa superior e watermark livres. No legendado, em 79,2–84,7 s,
+a máscara opaca cobre a frase de tela “As duas regiões completam o retângulo
+UV”, que a própria legenda repete; a caixa da identidade permanece visível.
+O master não tem legenda queimada.
+
+**Limpeza:** previews, logs e pastas temporárias de QA do vid_0003 em
+`renders/`, e caches `Integral003*` em `media/videos/cena/`, foram removidos
+após o QA.
+
+**Pendências:** capa não produzida; leitura física em celular, backup externo
+dos MP4s e publicação não realizados.

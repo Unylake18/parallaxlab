@@ -123,37 +123,25 @@ Primeiro ciclo aprovado: **10 vídeos — 6 exercícios, 2 teorias curtas, 2 apl
 
 **Status: PLANEJADA / NÃO IMPLEMENTADA.** O Parallax Lab possui como direção futura aprovada visualizações matemáticas dinâmicas, física animada ampliada, conteúdos de intuição e curiosidades e representações complementares ou sincronizadas de um mesmo fenômeno. Essa expansão não está implementada, não constitui pendência atual e não altera `vid_0001`, os dez primeiros vídeos ou a próxima ação operacional do MVP.
 
-**Produção atual:** `vid_0003`, teoria curta — “De onde vem a fórmula da
-integração por partes?”. Cena e storyboard implementados em
+**vid_0003 — tecnicamente concluído (2026-09-25):** teoria curta — “De onde
+vem a fórmula da integração por partes?”, em
 `videos/vid_0003_origem_integracao_por_partes/`, classe `Integral003`.
-Preview vertical silencioso com coda e alternativa `Integral003SemCoda`
-renderizados em 540×960/15 fps. Preview vigente sem coda de 56,199 s,
-coda geométrica de 11,732 s e total com coda de 67,931 s. Arquivos locais:
+Finais locais em **1080×1920, 30 fps, 2.709 frames, 90,3 s** de vídeo
+(áudio AAC de 90,517 s):
 
-- `renders/vid_0003_origem_integracao_por_partes_preview_ajuste_dx_com_coda.mp4`
-- `renders/vid_0003_origem_integracao_por_partes_preview_ajuste_dx_sem_coda.mp4`
+- `renders/vid_0003_origem_integracao_por_partes_final_master_limpo.mp4`
+- `renders/vid_0003_origem_integracao_por_partes_final_legendado.mp4`
 
-Derivação: regra do produto → dx nos três termos → d(uv), v du e u dv
-termo a termo → travessia de +v du e mudança para −v du → integração e
-resultado em caixa. Verificação: u'v + uv' − vu' → uv', com cancelamento
-visível. A coda mostra apenas a interpretação no retângulo e arco crescente
-desenhados, com escopo explícito; não é prova geral. Retirá-la mantém o
-fechamento principal. QA e medições em `revisao.md` da unidade; frames e
-metadados em `renders/vid_0003_qa/`. Preview sujeito à revisão do usuário;
-sem voz, SRT sincronizado, capa, render final ou publicação nesta etapa.
+Áudio: `audio/narracao_final.wav`, fonte aprovada sem processamento. SRT:
+`legenda.srt`, 27 cues com notação matemática escrita; legendas coloridas
+por `SUBTITLE_TERM_COLORS` da cena via `videos/montar_legendado.py --style
+solid --color-module`. Coda geométrica de 56,5 a 84,7 s; CTA “Segue o
+Parallax Lab / @labparallax” no fechamento. QA técnico concluído; detalhes em
+`revisao.md` da unidade. Capa não produzida; QA físico em celular, backup
+externo e publicação não comprovados.
 
-O comando `uv run python -m manim -r 540,960 --fps 15
-videos/vid_0003_origem_integracao_por_partes/cena.py Integral003` funcionou
-com acesso autorizado ao cache externo do uv e ao ambiente existente.
-A primeira tentativa restrita retornou erro 183 no cache; a execução com
-acesso adequado confirmou Manim 0.21.0. Nenhum pacote, Python, `.venv`,
-template ou dependência foi alterado. `-p` foi omitido para não abrir um
-player externo automaticamente; o arquivo é o mesmo preview vertical.
-
-**Próxima ação:** revisar o preview do vídeo 3 e decidir sobre a coda antes
-de voz/sincronização e final. `vid_0004` deve trabalhar explicitamente a
-escolha de u em integração por partes; sua família de exercício permanece,
-com enunciado a definir. **Inconsistência editorial pendente:** “derivada pela
+**Próxima ação:** `vid_0004`, exercício que trabalha explicitamente a
+escolha de u em integração por partes; enunciado ainda a definir. **Inconsistência editorial pendente:** “derivada pela
 regra da cadeia”, antes no vídeo 4, não tem nova posição aprovada. Não foi
 realocada nem excluída definitivamente. Distribuição e vídeos 1, 2 e 5–10
 preservados. Antes de publicar os vídeos 1 e 2, fazer QA físico em celular

@@ -1,5 +1,9 @@
 # Publicação — vid_0003
 
-Não avançar para publicação nesta etapa. Entrega limitada à implementação,
-preview vertical com coda e QA. Sem upload, link, data de publicação ou push.
-Voz, legendas sincronizadas, capa e render final não foram produzidos.
+Vídeo tecnicamente finalizado em 2026-09-25. Finais locais:
+`renders/vid_0003_origem_integracao_por_partes_final_master_limpo.mp4` e
+`renders/vid_0003_origem_integracao_por_partes_final_legendado.mp4`.
+
+Publicação **pendente**: sem upload, link ou data registrados. Capa ainda não
+produzida. Antes de publicar, conferir em tela física de celular, confirmar
+backup externo dos MP4s e consultar regras atuais da plataforma.
