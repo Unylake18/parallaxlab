@@ -1,8 +1,10 @@
-"""Regra do produto reorganizada e integrada; preview visual, sem voz.
+"""Regra do produto reorganizada e integrada; preview narrado.
 
 As integrais da derivação representam primitivas, até uma constante.
 Na coda, representam acumulações ao longo do arco desenhado desde (0, 0).
 """
+
+from pathlib import Path
 
 import numpy as np
 from manim import (
@@ -16,10 +18,25 @@ from template.config import BACKGROUND_COLOR, PRIMARY_COLOR, TEXT_COLOR, WATERMA
 
 VDU = PRIMARY_COLOR
 UDV = "#EA63FF"
+AUDIO_PATH = Path(__file__).parent / "audio" / "narracao_final.wav"
+SUBTITLE_TERM_COLORS = {
+    "u'dx": VDU,
+    "v'dx": UDV,
+    "d(uv)": TEXT_COLOR,
+    "u dv": UDV,
+    "v du": VDU,
+    "uv'": UDV,
+    "du": VDU,
+    "dv": UDV,
+    "dx": TEXT_COLOR,
+    "uv": TEXT_COLOR,
+    "U × V": TEXT_COLOR,
+}
 
 
 class Integral003(Scene):
     include_coda = True
+    include_audio = True
 
     def equation(self, *tex, y=1.5, size=60, cyan=(), pink=()):
         mob = MathTex(*tex, font_size=size, color=TEXT_COLOR)
@@ -71,14 +88,17 @@ class Integral003(Scene):
 
     def construct(self):
         self.camera.background_color = BACKGROUND_COLOR
-        self.add(ImageMobject(str(WATERMARK_PATH)).set_width(1.8)
-                 .set_opacity(0.35).to_corner(UP + RIGHT, buff=0.28))
+        self.watermark = ImageMobject(str(WATERMARK_PATH)).set_width(1.8)
+        self.watermark.set_opacity(0.35).to_corner(UP + RIGHT, buff=0.28)
+        self.add(self.watermark)
+        if self.include_audio:
+            self.add_sound(str(AUDIO_PATH))
         heading = self.note("De onde vem a fórmula\nda integração por partes?")
         caption = self.guide("Tudo começa na regra do produto")
         eq = self.equation(r"(uv)'", "=", "u'", "v", "+", "u", "v'",
                            cyan=(2, 3), pink=(5, 6))
         self.play(FadeIn(heading, caption), Write(eq), run_time=1)
-        self.until(4)
+        self.until(3.3)
 
         # Os três dx entram juntos; fatores antigos continuam identificáveis.
         dx = self.equation(r"(uv)'", r"\,dx", "=", "u'", "v", r"\,dx",
@@ -91,18 +111,20 @@ class Integral003(Scene):
         self.remove(eq, *dx.submobjects)
         self.add(dx)
         eq = dx
-        self.until(9)
+        self.until(6.8)
 
+        # O guia de dx permanece durante o primeiro destaque, até cerca de 8 s.
+        self.play(Indicate(VGroup(eq[0], eq[1]), color=TEXT_COLOR), run_time=1)
         caption = self.guide("Cada derivada agora vira seu diferencial")
-        self.play(FadeOut(next_caption), run_time=0.25)
-        self.play(FadeIn(caption),
-                  Indicate(VGroup(eq[0], eq[1]), color=TEXT_COLOR), run_time=0.75)
+        self.play(FadeOut(next_caption), run_time=0.2)
+        self.play(FadeIn(caption), run_time=0.2)
+        self.until(9.6)
         target = self.equation(r"d(uv)", "=", "u'", "v", r"\,dx", "+",
                                "u", "v'", r"\,dx", cyan=(2, 3, 4), pink=(6, 7, 8))
         eq = self.morph(eq, target, [([0, 1], [0])] +
                         [([i], [i - 1]) for i in range(2, 10)])
         self.play(FadeOut(caption), run_time=0.25)
-        self.until(14)
+        self.until(12.2)
 
         # v sai do meio: u' dx fica contíguo antes de virar du.
         reordered = self.equation(r"d(uv)", "=", "v", "u'", r"\,dx", "+",
@@ -117,14 +139,14 @@ class Integral003(Scene):
         eq = self.morph(eq, target, [([0], [0]), ([1], [1]), ([2], [2]), ([3, 4], [3]),
                                      ([5], [4]), ([6], [5]), ([7], [6]), ([8], [7])])
         self.play(Indicate(eq[3], color=VDU), run_time=0.6)
-        self.until(20)
 
         self.play(Indicate(VGroup(eq[6], eq[7]), color=UDV), run_time=0.8)
+        self.until(17.2)
         target = self.equation(r"d(uv)", "=", "v", r"\,du", "+", "u", r"\,dv",
                                cyan=(2, 3), pink=(5, 6))
         eq = self.morph(eq, target, [([i], [i]) for i in range(6)] + [([6, 7], [6])])
         self.play(Indicate(eq[6], color=UDV), run_time=0.6)
-        self.until(25)
+        self.until(19.9)
 
         # Expõe a igualdade com u dv à esquerda antes da transposição central.
         caption = self.guide("Agora queremos isolar ", (r"u\,dv",))
@@ -134,7 +156,7 @@ class Integral003(Scene):
         eq = self.morph(eq, target, [([0], [4]), ([1], [3]), ([2, 3], [2]),
                                      ([4], [1]), ([5, 6], [0])],
                         run_time=1.8, arcs={0: -np.pi / 2, 4: -np.pi / 2})
-        self.until(29)
+        self.until(24.9)
 
         next_caption = self.guide("Subtraímos ", (r"v\,du",), " dos dois lados")
         self.play(ReplacementTransform(caption, next_caption), run_time=0.5)
@@ -149,21 +171,21 @@ class Integral003(Scene):
         self.play(Indicate(traveling, color=VDU),
                   eq[0].animate.set_opacity(0.35),
                   eq[3].animate.set_opacity(0.35),
-                  eq[4].animate.set_opacity(0.35), run_time=0.5)
-        self.play(traveling.animate.shift(UP * 1.5), run_time=0.6)
+                  eq[4].animate.set_opacity(0.35), run_time=0.7)
+        self.play(traveling.animate.shift(UP * 1.5), run_time=0.8)
         self.play(ReplacementTransform(eq[0], target[0]),
                   ReplacementTransform(eq[3], target[1]),
                   ReplacementTransform(eq[4], target[2]),
                   ReplacementTransform(traveling, raised),
-                  run_time=2)
+                  run_time=3)
         # Reúne os objetos transitórios sem trocar a equação visível.
-        self.play(ReplacementTransform(raised, destination), run_time=0.6)
+        self.play(ReplacementTransform(raised, destination), run_time=0.8)
         self.remove(eq, *eq.submobjects, *target.submobjects)
         target.set_opacity(1)
         self.add(target)
         eq = target
         self.play(FadeOut(caption), run_time=0.25)
-        self.until(35)
+        self.until(32.5)
 
         next_caption = self.guide("Integramos os dois lados")
         target = self.equation(r"\int", r"u\,dv", "=", r"\int", r"d(uv)", "-",
@@ -176,51 +198,66 @@ class Integral003(Scene):
         self.add(target)
         eq, caption = target, next_caption
         self.play(FadeOut(caption), run_time=0.25)
-        self.until(39)
+        self.until(35.2)
+        self.play(Indicate(VGroup(eq[3], eq[4]), color=TEXT_COLOR), run_time=0.8)
+        self.until(36)
         target = self.equation(r"\int u\,dv", "=", "uv", "-", r"\int v\,du",
                                pink=(0,), cyan=(4,))
         eq = self.morph(eq, target, [([0, 1], [0]), ([2], [1]), ([3, 4], [2]),
-                                     ([5], [3]), ([6, 7], [4])])
+                                     ([5], [3]), ([6, 7], [4])], run_time=1.5)
         box = SurroundingRectangle(eq, color=PRIMARY_COLOR, buff=0.25)
         constant = self.guide("Para primitivas, a constante fica implícita", size=24)
-        self.play(Create(box), FadeIn(constant), run_time=0.6)
-        self.until(44)
+        self.play(Create(box), run_time=0.5)
+        self.until(40.2)
+        self.play(FadeIn(constant), run_time=0.3)
+        self.until(42.8)
 
-        verify_heading = self.guide("Cheque: derivando, voltamos a ", (r"uv'",), y=5.2)
-        derivative = self.equation(r"\frac{d}{dx}", r"\left(uv-\int vu'\,dx\right)", size=58)
-        self.play(FadeOut(eq, box, constant), FadeIn(verify_heading, derivative), run_time=0.6)
-        self.until(46)
-        check = self.equation("u'v", "+", "uv'", "-", "vu'", cyan=(0, 4), pink=(2,))
-        self.play(ReplacementTransform(derivative, check), run_time=1)
-        self.until(48)
+        # A fórmula permanece como referência durante toda a checagem.
+        formula = VGroup(eq, box)
+        verify_heading = self.guide("Cheque: derivando, voltamos a ", (r"uv'",), y=5.4)
+        bridge = self.equation(r"du=u'\,dx", r"\qquad", r"dv=v'\,dx",
+                               y=1.0, size=46, cyan=(0,), pink=(2,))
+        self.play(FadeOut(constant), formula.animate.shift(UP * 2),
+                  FadeIn(verify_heading), run_time=0.5)
+        self.until(44.2)
+        self.play(FadeIn(bridge), run_time=0.4)
+        self.until(45.9)
+
+        derivative = self.equation(r"\frac{d}{dx}",
+                                   r"\left(uv-\int vu'\,dx\right)",
+                                   y=-0.35, size=48)
+        self.play(FadeIn(derivative), run_time=0.3)
+        self.until(46.3)
+
+        check = self.equation("u'v", "+", "uv'", "-", "vu'",
+                              y=-1.45, size=50, cyan=(0, 4), pink=(2,))
+        self.wait(0.2)
+        self.play(FadeIn(check), run_time=0.4)
+        self.until(48.5)
         slashes = VGroup(*(Line(check[i].get_corner(DOWN + LEFT),
                                 check[i].get_corner(UP + RIGHT), color=VDU, stroke_width=4)
                            for i in (0, 4)))
-        self.play(Create(slashes), run_time=0.6)
-        cancellation = self.equation("u'v", "-", "vu'", "=0", y=-0.2, size=48, cyan=(0, 2))
-        self.play(FadeIn(cancellation), run_time=0.5)
-        self.until(50)
-        recovered = self.equation("uv'", pink=(0,))
+        self.play(Create(slashes), run_time=0.5)
+        cancellation = self.equation("u'v", "-", "vu'", "=0",
+                                     y=-2.55, size=40, cyan=(0, 2))
+        self.play(FadeIn(cancellation), run_time=0.4)
+        self.until(51.75)
+        recovered = self.equation("uv'", y=-1.45, pink=(0,))
         self.play(FadeOut(slashes, cancellation, check[0], check[1], check[3], check[4]),
-                  ReplacementTransform(check[2], recovered[0]), run_time=0.8)
+                  ReplacementTransform(check[2], recovered[0]), run_time=0.6)
         self.remove(check)
         self.add(recovered)
-        self.until(52)
-        summary = self.note("Regra do produto\nreorganizada e integrada")
-        final = self.equation(r"\int u\,dv", "=", "uv", "-", r"\int v\,du",
-                              pink=(0,), cyan=(4,))
-        final_box = SurroundingRectangle(final, color=PRIMARY_COLOR, buff=0.25)
-        self.play(FadeOut(verify_heading, recovered), FadeIn(summary, final, final_box, constant), run_time=0.6)
-        self.until(56)
+        self.until(54.6)
+        self.play(Indicate(recovered, color=UDV), run_time=0.8)
+        self.play(Indicate(formula, color=PRIMARY_COLOR), run_time=0.8)
+        self.play(FadeOut(verify_heading, bridge, derivative, recovered), run_time=0.25)
+        self.until(56.5)
         if self.include_coda:
-            self.geometry_coda(VGroup(summary, final, final_box, constant))
+            self.geometry_coda(formula)
 
     def geometry_coda(self, previous):
         """Fatia em cada direção, seguida da acumulação no caso desenhado."""
-        start = self.time
-        heading = self.note("Uma segunda forma de enxergar", size=28)
-        scope = self.guide("Caso: curva crescente de ", (r"(0,0)",),
-                           " a ", (r"(U,V)",), y=4.2, size=21)
+        scope = self.note("Caso: curva crescente desde a origem", y=5.1, size=27)
         axes = Axes(x_range=[0, 1.12, 1], y_range=[0, 1.15, 1],
                     x_length=6.1, y_length=4.8, tips=True,
                     axis_config={"include_ticks": False, "color": TEXT_COLOR, "stroke_width": 2})
@@ -274,44 +311,50 @@ class Integral003(Scene):
         low_label = MathTex(r"\int_0^U v\,du", color=VDU, font_size=39).move_to(axes.c2p(0.73, 0.16))
         high_label = MathTex(r"\int_0^V u\,dv", color=UDV, font_size=39).move_to(axes.c2p(0.27, 0.71))
 
-        self.play(FadeOut(previous), FadeIn(heading, scope, axes, labels, border), run_time=0.5)
-        self.play(Create(curve), FadeIn(Dot(corner, radius=0.055, color=TEXT_COLOR)), run_time=0.5)
+        corner_dot = Dot(corner, radius=0.055, color=TEXT_COLOR)
+        self.play(FadeOut(previous), run_time=0.25)
+        self.play(FadeIn(scope, axes, labels, border), run_time=0.25)
+        self.until(60.7)
+        self.play(Create(curve), FadeIn(corner_dot), run_time=2.2)
+        self.until(65.7)
 
         # Uma fatia vertical: altura v, largura du, contribuição v du.
         sample_v = slice_at(0.55, True)
         height_v = MathTex("v", color=VDU, font_size=35).next_to(sample_v, LEFT, buff=0.12)
         width_du = MathTex("du", color=VDU, font_size=35).next_to(sample_v, DOWN, buff=0.14)
         low_cue = MathTex(r"v\,du", color=VDU, font_size=44).move_to([0, -3.5, 0])
-        self.play(FadeIn(sample_v, height_v, width_du, low_cue), run_time=0.7)
-        self.wait(0.5)
+        self.play(FadeIn(sample_v, height_v, width_du, low_cue), run_time=1)
+        self.until(69.6)
         sweep_u = ValueTracker(0.001)
         lower_growing = always_redraw(lambda: accumulated(sweep_u.get_value(), True))
         moving_v = always_redraw(lambda: slice_at(sweep_u.get_value(), True))
         self.play(FadeOut(sample_v, height_v, width_du),
                   FadeIn(lower_growing, moving_v), run_time=0.25)
-        self.play(sweep_u.animate.set_value(1), run_time=1.5, rate_func=linear)
+        self.play(sweep_u.animate.set_value(1), run_time=2.2, rate_func=linear)
         self.remove(lower_growing, moving_v)
         self.add(lower)
         self.bring_to_front(axes, border, curve, labels)
         self.play(ReplacementTransform(low_cue, low_label), run_time=0.5)
+        self.until(72.9)
 
         # Uma fatia horizontal: largura u, espessura dv, contribuição u dv.
         sample_h = slice_at(0.55, False)
         width_u = MathTex("u", color=UDV, font_size=35).next_to(sample_h, UP, buff=0.10)
         height_dv = MathTex("dv", color=UDV, font_size=35).next_to(sample_h, LEFT, buff=0.14)
         high_cue = MathTex(r"u\,dv", color=UDV, font_size=44).move_to([0, -3.5, 0])
-        self.play(FadeIn(sample_h, width_u, height_dv, high_cue), run_time=0.7)
-        self.wait(0.5)
+        self.play(FadeIn(sample_h, width_u, height_dv, high_cue), run_time=0.8)
+        self.until(75.7)
         sweep_v = ValueTracker(0.001)
         upper_growing = always_redraw(lambda: accumulated(sweep_v.get_value(), False))
         moving_h = always_redraw(lambda: slice_at(sweep_v.get_value(), False))
         self.play(FadeOut(sample_h, width_u, height_dv),
                   FadeIn(upper_growing, moving_h), run_time=0.25)
-        self.play(sweep_v.animate.set_value(1), run_time=1.5, rate_func=linear)
+        self.play(sweep_v.animate.set_value(1), run_time=2.2, rate_func=linear)
         self.remove(upper_growing, moving_h)
         self.add(upper)
         self.bring_to_front(axes, border, curve, labels, low_label)
         self.play(ReplacementTransform(high_cue, high_label), run_time=0.5)
+        self.until(79.2)
 
         total = MathTex("UV", font_size=56, color=TEXT_COLOR).move_to([0, -3.5, 0])
         synthesis = self.equation("UV", "=", r"\int_0^U v\,du", "+",
@@ -321,14 +364,30 @@ class Integral003(Scene):
         qualifier = self.guide("As duas regiões completam o retângulo ",
                                (r"UV",), y=-4.9, size=21)
         self.play(FadeIn(total), Indicate(border, color=TEXT_COLOR), run_time=0.6)
+        self.until(81.8)
         self.play(ReplacementTransform(total, synthesis[0]),
                   Write(VGroup(*synthesis[1:])), Create(box), FadeIn(qualifier),
-                  run_time=1)
+                  run_time=1.2)
         self.add(synthesis)
-        self.until(start + 11.5)
+        self.until(84.7)
+
+        cta = VGroup(
+            Text("Segue o Parallax Lab", font_size=30, color=TEXT_COLOR),
+            Text("@labparallax", font_size=34, color=PRIMARY_COLOR),
+        ).arrange(DOWN, buff=0.22).move_to([0, 0.4, 0])
+        if cta.width > 7.6:
+            cta.scale_to_fit_width(7.6)
+        coda_content = [mob for mob in self.mobjects if mob is not self.watermark]
+        self.play(FadeOut(*coda_content), run_time=0.2)
+        self.play(FadeIn(cta), run_time=0.25)
+        # Compensa o arredondamento acumulado dos cortes a 15 fps e preserva
+        # a duração aprovada do preview após o fade final.
+        self.until(90.0)
+        self.play(FadeOut(cta, self.watermark), run_time=0.3)
 
 
 class Integral003SemCoda(Integral003):
-    """Derivação, verificação e síntese completas, com encerramento em 56 s."""
+    """Derivação e verificação completas, sem a coda geométrica."""
 
     include_coda = False
+    include_audio = False

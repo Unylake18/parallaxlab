@@ -5,12 +5,13 @@
 - Fonte editorial: briefing e storyboard do handoff aprovado em 2026-09-23.
 - Pré-requisito: regra do produto e relação entre derivada e integral.
 - Cena: `cena.py`, classe `Integral003`; alternativa `Integral003SemCoda`.
-- Formato: área lógica 9×16, preview 540×960/15 fps.
+- Formato: área lógica 9×16; preview 540×960/15 fps; final 1080×1920/30 fps.
 - Primeira rodada: principal de 55,933 s; coda de 8,933 s.
 - Segunda rodada visual: principal preservado em aproximadamente 56 s;
   coda com fatias animadas, alvo de 9–12 s. Tempos medidos em `revisao.md`.
-- Esta etapa: preview visual silencioso. Sem voz aprovada, SRT sincronizado,
-  capa ou exportação final. Não há publicação autorizada.
+- Status: **tecnicamente concluído** em 2026-09-25, com narração
+  `audio/narracao_final.wav`, `legenda.srt` (27 cues), coda, CTA e finais
+  master/legendado de 90,3 s. Capa não produzida. Publicação pendente.
 - Template, ambiente e dependências existentes preservados.
 - Comandos e evidências de QA: `revisao.md`; sequência implementada: `roteiro.md`.
 

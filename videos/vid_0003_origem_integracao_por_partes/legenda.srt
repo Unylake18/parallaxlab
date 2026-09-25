@@ -1,0 +1,131 @@
+1
+00:00:00,080 --> 00:00:03,080
+A integração por partes
+nasce da regra do produto.
+
+2
+00:00:03,300 --> 00:00:06,580
+Começamos multiplicando toda
+a igualdade por dx.
+
+3
+00:00:07,160 --> 00:00:09,720
+Então, cada derivada
+acompanhada de dx
+
+4
+00:00:09,720 --> 00:00:11,900
+pode ser escrita
+como um diferencial.
+
+5
+00:00:12,260 --> 00:00:15,400
+Aqui, u'dx
+vira du.
+
+6
+00:00:15,720 --> 00:00:19,680
+E, da mesma forma,
+v'dx vira dv.
+
+7
+00:00:19,980 --> 00:00:22,100
+Com isso, reorganizamos
+a igualdade
+
+8
+00:00:22,100 --> 00:00:24,860
+para deixar u dv
+à esquerda.
+
+9
+00:00:25,080 --> 00:00:28,320
+Agora, subtraímos v du
+dos dois lados.
+
+10
+00:00:28,320 --> 00:00:32,220
+Então, à direita, esse termo
+aparece com sinal negativo.
+
+11
+00:00:32,540 --> 00:00:35,120
+Agora podemos integrar
+termo a termo.
+
+12
+00:00:35,240 --> 00:00:39,860
+A integral de d(uv)
+devolve uv.
+
+13
+00:00:40,240 --> 00:00:42,600
+E a constante de integração
+fica implícita.
+
+14
+00:00:42,860 --> 00:00:45,820
+Para conferir o resultado,
+voltamos à notação em x.
+
+15
+00:00:46,280 --> 00:00:48,500
+Aplicando novamente
+a regra do produto,
+
+16
+00:00:48,560 --> 00:00:51,640
+observamos que os termos
+opostos se cancelam.
+
+17
+00:00:51,840 --> 00:00:54,460
+Então resta uv',
+
+18
+00:00:54,680 --> 00:00:56,480
+exatamente o integrando em x.
+
+19
+00:00:56,480 --> 00:01:00,440
+Há ainda uma segunda forma
+de enxergar essa identidade.
+
+20
+00:01:00,700 --> 00:01:02,740
+No desenho, uma curva
+crescente
+
+21
+00:01:02,740 --> 00:01:05,420
+vai da origem até o ponto (U,V).
+
+22
+00:01:05,740 --> 00:01:09,580
+As fatias verticais têm altura v
+e largura du;
+
+23
+00:01:09,920 --> 00:01:12,480
+acumuladas, elas formam
+uma das regiões.
+
+24
+00:01:12,900 --> 00:01:15,580
+Já as fatias horizontais
+têm largura u
+
+25
+00:01:15,580 --> 00:01:18,920
+e espessura dv, formando
+a região complementar.
+
+26
+00:01:19,200 --> 00:01:22,160
+Por fim, observamos que
+as duas regiões juntas
+
+27
+00:01:22,160 --> 00:01:24,740
+completam o retângulo
+U × V.
