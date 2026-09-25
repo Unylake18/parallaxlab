@@ -164,4 +164,4 @@ Depois do vídeo 10: compare formatos, retenção e tempo de produção. Automat
 1. Confirmar QA físico em celular e backup externo dos finais dos vídeos 1 e 2.
 2. Iniciar `vid_0004`: exercício sobre a escolha de u em integração por
    partes, com enunciado ainda a definir. Não publicar o `vid_0003` sem QA
-   físico, backup e capa.
+   físico e backup externo.

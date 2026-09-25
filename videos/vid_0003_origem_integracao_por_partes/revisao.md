@@ -199,5 +199,24 @@ O master não tem legenda queimada.
 `renders/`, e caches `Integral003*` em `media/videos/cena/`, foram removidos
 após o QA.
 
-**Pendências:** capa não produzida; leitura física em celular, backup externo
-dos MP4s e publicação não realizados.
+## Capa — 2026-09-25
+
+`capa_instagram.png`, 1080×1920 (9:16), RGB. Construída sobre a capa do
+`vid_0002`, preservando fundo cósmico, símbolo, divisor, painel com contorno
+luminoso, marca `PARALLAX LAB` e horizonte. Foram substituídos somente o
+título, a linha de série e o conteúdo do painel:
+
+- série pública: **POR TRÁS DA FÓRMULA · EP. 01**;
+- headline: **DE ONDE VEM?** (branco);
+- assunto: **INTEGRAÇÃO POR PARTES** (gradiente ciano → azul → violeta → magenta);
+- painel: `(uv)′ = u′v + uv′`, seta para baixo, `∫ u dv = uv − ∫ v du`.
+
+A família interna continua **teoria curta** e o ID interno continua
+`vid_0003`; a série pública tem contador próprio. Conferidos: dimensões,
+ortografia, matemática, ausência de “TEORIA CURTA”, “EP. 03” e “EXERCÍCIO
+RESOLVIDO”, e leitura em miniatura de 270×480. Tipografia provisória do
+sistema (Century Gothic e Times New Roman), como nas pendências de fonte de
+`docs/identidade_visual.md`.
+
+**Pendências:** leitura física em celular (vídeo e capa), backup externo dos
+MP4s e publicação não realizados.

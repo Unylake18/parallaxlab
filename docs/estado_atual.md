@@ -137,8 +137,9 @@ Finais locais em **1080×1920, 30 fps, 2.709 frames, 90,3 s** de vídeo
 por `SUBTITLE_TERM_COLORS` da cena via `videos/montar_legendado.py --style
 solid --color-module`. Coda geométrica de 56,5 a 84,7 s; CTA “Segue o
 Parallax Lab / @labparallax” no fechamento. QA técnico concluído; detalhes em
-`revisao.md` da unidade. Capa não produzida; QA físico em celular, backup
-externo e publicação não comprovados.
+`revisao.md` da unidade. Capa `capa_instagram.png` pronta, série pública
+“POR TRÁS DA FÓRMULA · EP. 01”. QA físico em celular, backup externo e
+publicação não comprovados.
 
 **Próxima ação:** `vid_0004`, exercício que trabalha explicitamente a
 escolha de u em integração por partes; enunciado ainda a definir. **Inconsistência editorial pendente:** “derivada pela

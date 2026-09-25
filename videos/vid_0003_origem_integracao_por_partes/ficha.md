@@ -11,7 +11,8 @@
   coda com fatias animadas, alvo de 9–12 s. Tempos medidos em `revisao.md`.
 - Status: **tecnicamente concluído** em 2026-09-25, com narração
   `audio/narracao_final.wav`, `legenda.srt` (27 cues), coda, CTA e finais
-  master/legendado de 90,3 s. Capa não produzida. Publicação pendente.
+  master/legendado de 90,3 s. Capa `capa_instagram.png` pronta (série pública
+  “POR TRÁS DA FÓRMULA · EP. 01”). Publicação pendente.
 - Template, ambiente e dependências existentes preservados.
 - Comandos e evidências de QA: `revisao.md`; sequência implementada: `roteiro.md`.
 
