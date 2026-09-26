@@ -218,5 +218,11 @@ RESOLVIDO”, e leitura em miniatura de 270×480. Tipografia provisória do
 sistema (Century Gothic e Times New Roman), como nas pendências de fonte de
 `docs/identidade_visual.md`.
 
+**Reprodução:** `uv run python videos/vid_0003_origem_integracao_por_partes/gerar_capa.py`
+regenera `capa_instagram.png` byte a byte idêntica à aprovada (conferido em
+2026-09-26). Usa somente assets versionados: a capa do `vid_0002` como base.
+Depende de Century Gothic e Times New Roman instaladas no sistema, não
+versionadas; as fontes oficiais do projeto continuam pendentes.
+
 **Pendências:** leitura física em celular (vídeo e capa), backup externo dos
 MP4s e publicação não realizados.
