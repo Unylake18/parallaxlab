@@ -12,6 +12,12 @@ Agentes de código devem operar com o menor contexto suficiente para a tarefa. D
 
 Render, QA, documentação e ações de Git devem ser proporcionais à etapa e ao que realmente mudou. A fonte operacional detalhada desse comportamento é `AGENTS.md`.
 
+## 2026-09-26 — Tipografia oficial
+
+- **Space Grotesk** é a fonte de display (headlines, títulos, capas); **Inter** é a fonte de texto (auxiliares, legendas, CTA); a matemática continua em **MathTex**.
+- As fontes são versionadas no repositório com suas licenças OFL e carregadas por caminho do repo, sem instalação global.
+- Aplicação a partir do `vid_0004`. Os vídeos 1–3 e suas capas permanecem como identidade pré-tipografia oficial e não serão refeitos.
+
 ## 2026-09-23 — Origem da integração por partes e escolha de u
 
 - `vid_0003`: teoria curta — “De onde vem a fórmula da integração por partes?”.
@@ -39,7 +45,7 @@ Render, QA, documentação e ações de Git devem ser proporcionais à etapa e a
 - Conceito: ensinar física e matemática por perspectivas que tornam os problemas mais compreensíveis.
 - Símbolo aprovado: planos geométricos translúcidos e deslocados, com orbe central e sensação de paralaxe.
 - Direção visual: científica, futurista, cósmica, elegante e limpa; influência psicodélica leve. Evitar estética infantil, escolar genérica ou gamer.
-- Paleta operacional inicial, variantes de assets e organização aprovadas conforme `docs/identidade_visual.md`. Refinamento das cores e tipografia oficial permanecem pendentes.
+- Paleta operacional inicial, variantes de assets e organização aprovadas conforme `docs/identidade_visual.md`. Refinamento das cores permanece pendente; a tipografia oficial foi decidida em 2026-09-26.
 - Nos vídeos: branding discreto, cosmos sutil e faixa inferior livre. Prioridade: legibilidade, compreensão, matemática/física e identidade visual.
 - Primeiro ciclo: dez vídeos de Cálculo + aplicações físicas — seis exercícios, duas teorias curtas e duas aplicações. Não estruturar ainda um curso linear.
 - Ampliar automação após o primeiro ciclo, com base em gargalos medidos.

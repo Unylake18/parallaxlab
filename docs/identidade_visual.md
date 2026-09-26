@@ -39,9 +39,30 @@ Usar ciano para o destaque principal; azul, violeta e magenta como apoios pontua
 
 ## Diretrizes tipográficas
 
-Linguagem sans-serif geométrica, futurista, limpa, legível e premium, sem aparência gamer. **Nenhuma fonte específica foi oficialmente escolhida ou licenciada.**
+Linguagem sans-serif geométrica, futurista, limpa, legível e premium, sem aparência gamer.
 
-Pendência: escolher tipografia oficial compatível com uso comercial e disponível no Windows/Manim. Definir separadamente fonte de títulos, fonte de texto/legendas e comportamento das fórmulas via LaTeX/MathTex. A aparência atual das cenas não constitui uma decisão tipográfica final.
+**Tipografia oficial (implementada em 2026-09-26; aplicação a partir do `vid_0004`):**
+
+| Papel | Fonte | Pesos iniciais |
+| --- | --- | --- |
+| Display: headlines, títulos, capas, linhas de série | **Space Grotesk** 2.0.0 | Medium, Bold |
+| Texto: auxiliares, legendas, CTA | **Inter** 4.1 | Regular, Medium, SemiBold, Bold |
+| Matemática | **MathTex** (LaTeX), sem alteração | — |
+
+Arquivos estáticos oficiais, sem modificação, versionados em `assets/fonts/`:
+Space Grotesk da release 2.0.0 de `github.com/floriankarsten/space-grotesk`
+(`ttf/static/`) e Inter da release v4.1 de `github.com/rsms/inter`
+(`extras/ttf/`). Ambas sob SIL Open Font License 1.1, com licença junto aos
+arquivos (`OFL.txt`, `LICENSE.txt`).
+
+Carregamento pelo repositório, sem instalação global: `template/fonts.py`
+registra os arquivos no Pango ao ser importado e expõe `official_text(...)`,
+que gera o texto em 4× e reduz a escala para evitar o espaçamento irregular do
+Pango em corpos pequenos. Para Pillow, os caminhos estão em `SPACE_GROTESK` e
+`INTER`. Teste isolado: `template/teste_tipografia.py`.
+
+Os vídeos 1–3 e suas capas permanecem com a identidade pré-tipografia
+oficial e não serão refeitos.
 
 ## Assets aprovados, funções e organização
 
@@ -101,8 +122,8 @@ Estética infantil, escolar genérica, gamer ou excessivamente carregada; psicod
 
 **Aprovado:** nome Parallax Lab; @labparallax; conceito de perspectiva; símbolo com planos e orbe; direção visual; famílias de cor; oito variantes e suas funções; organização de pastas; branding discreto e prioridade de leitura.
 
-**Implementado/versionado:** oito PNGs de marca rastreados na estrutura aprovada; template vertical básico, helpers e piloto com voz existentes no histórico. Capas dos vídeos 1 e 2 estão nas respectivas unidades de produção.
+**Implementado/versionado:** oito PNGs de marca rastreados na estrutura aprovada; template vertical básico, helpers e piloto com voz existentes no histórico. Capas dos vídeos 1 a 3 estão nas respectivas unidades de produção. Tipografia oficial (Space Grotesk + Inter) e licenças em `assets/fonts/`, com carregamento em `template/fonts.py`.
 
-**Pendente:** escolher e verificar licença das fontes; refinar padrões de
-tipografia e área de proteção apenas com mais evidência; revisar os finais e
-capas em celular. A aprovação técnica dos renders não comprova publicação.
+**Pendente:** refinar padrões de tipografia (tamanhos, entrelinhas) e área de
+proteção apenas com mais evidência; validar a nova tipografia e revisar os
+finais e capas em celular. A aprovação técnica dos renders não comprova publicação.
