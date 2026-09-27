@@ -1,0 +1,159 @@
+1
+00:00:00,100 --> 00:00:02,452
+Como descobrir a velocidade
+de um objeto
+
+2
+00:00:02,472 --> 00:00:04,100
+em um único instante?
+
+3
+00:00:04,380 --> 00:00:08,460
+Neste movimento, a posição
+cresce com o quadrado do tempo
+
+4
+00:00:08,550 --> 00:00:10,770
+porque a aceleração
+é constante.
+
+5
+00:00:11,010 --> 00:00:13,480
+Vamos olhar o instante de 2 s,
+
+6
+00:00:13,500 --> 00:00:16,400
+quando o objeto está
+a 4 m da origem.
+
+7
+00:00:16,600 --> 00:00:19,197
+Agora comparamos essa
+posição com outra,
+
+8
+00:00:19,217 --> 00:00:22,050
+um pequeno incremento
+de tempo depois.
+
+9
+00:00:22,150 --> 00:00:25,780
+Entre esses dois instantes,
+temos a velocidade média:
+
+10
+00:00:25,890 --> 00:00:29,660
+a variação da posição
+dividida pelo tempo decorrido.
+
+11
+00:00:29,770 --> 00:00:33,720
+No gráfico, isso aparece como
+a inclinação da reta secante.
+
+12
+00:00:33,830 --> 00:00:37,080
+Então, para encontrar essa
+variação de posição,
+
+13
+00:00:37,150 --> 00:00:40,900
+fazemos a posição final
+menos a posição inicial.
+
+14
+00:00:41,140 --> 00:00:43,500
+Substituímos a função
+da posição,
+
+15
+00:00:43,530 --> 00:00:46,590
+desenvolvemos o quadrado
+e simplificamos.
+
+16
+00:00:46,720 --> 00:00:49,388
+Depois, dividimos pelo
+intervalo de tempo
+
+17
+00:00:49,408 --> 00:00:52,580
+e chegamos à expressão
+da velocidade média.
+
+18
+00:00:52,680 --> 00:00:56,790
+A partir daí, fazemos esse
+intervalo ficar cada vez menor.
+
+19
+00:00:56,960 --> 00:00:59,440
+O segundo ponto se
+aproxima do primeiro,
+
+20
+00:00:59,460 --> 00:01:02,457
+a secante gira e a
+velocidade média
+
+21
+00:01:02,477 --> 00:01:04,690
+se aproxima de 4 m/s.
+
+22
+00:01:04,840 --> 00:01:07,318
+No limite, quando esse
+incremento de tempo
+
+23
+00:01:07,338 --> 00:01:08,480
+tende a zero,
+
+24
+00:01:08,500 --> 00:01:11,160
+a taxa média tende
+à taxa instantânea:
+
+25
+00:01:11,190 --> 00:01:14,310
+a derivada da posição
+em relação ao tempo.
+
+26
+00:01:14,410 --> 00:01:18,310
+E essa derivada é justamente
+a velocidade instantânea.
+
+27
+00:01:18,440 --> 00:01:20,510
+Derivando a função
+da posição,
+
+28
+00:01:20,540 --> 00:01:22,830
+temos aceleração
+vezes tempo.
+
+29
+00:01:22,980 --> 00:01:27,820
+Portanto, em 2 s,
+a velocidade é 4 m/s.
+
+30
+00:01:27,950 --> 00:01:31,179
+Ou seja, a velocidade do
+objeto e a inclinação
+
+31
+00:01:31,199 --> 00:01:35,520
+da tangente mostram a mesma
+taxa instantânea de mudança,
+
+32
+00:01:35,610 --> 00:01:38,200
+só que por duas
+perspectivas diferentes.
+
+33
+00:01:38,380 --> 00:01:40,110
+Segue o Parallax Lab.

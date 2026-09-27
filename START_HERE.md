@@ -141,15 +141,15 @@ Mini-temporada inicial: **Cálculo + aplicações físicas**.
 1. Exercício — \(\int x^2e^x\,dx\): integração por partes duas vezes.
 2. Exercício — integral por substituição simples.
 3. Teoria curta — de onde vem a fórmula da integração por partes?
-4. Exercício — trabalhar explicitamente como escolher \(u\) em integração por partes.
-5. Aplicação — derivada como velocidade instantânea.
+4. Aplicação — derivada como velocidade instantânea (`DA EQUAÇÃO AO FENÔMENO · EP. 01`).
+5. *A reconciliar:* a pauta original (Aplicação — derivada como velocidade instantânea) foi usada no vídeo 4.
 6. Exercício — limite simples com interpretação visual.
 7. Exercício — outra integração por partes, com estrutura diferente.
 8. Teoria curta — o que uma integral realmente acumula.
 9. Aplicação — de \(v(t)\) ao deslocamento usando integral.
 10. Exercício — derivada ou integral aplicada a um problema curto de movimento.
 
-Distribuição: **6 exercícios + 2 teorias curtas + 2 aplicações**.
+Distribuição original: **6 exercícios + 2 teorias curtas + 2 aplicações**. Com o vídeo 4 como Aplicação, a contagem factual passou a 5 + 2 + 3; pendência editorial, sem nova distribuição decidida.
 
 Atualização editorial de 2026-09-23: a família de exercício do vídeo 4 é
 preservada; seu enunciado ainda precisa ser definido. A antiga pauta
@@ -157,11 +157,14 @@ preservada; seu enunciado ainda precisa ser definido. A antiga pauta
 inconsistência editorial pendente, não uma exclusão definitiva nem autorização
 para realocá-la. Vídeos 1, 2 e 5–10 e distribuição permanecem preservados.
 
+Atualização editorial de 2026-09-26: o vídeo 4 passou a ser Aplicação
+(velocidade instantânea). **Pendências editoriais:** “como escolher u” continua aprovada como pauta, mas sem posição; a pauta 5 (“derivada como velocidade instantânea”) passa a coincidir com o tema do vídeo 4; e a contagem vigente passa a 5 exercícios + 2 teorias curtas + 3 aplicações. Vídeos 5–10 não foram reordenados; resolver exige decisão posterior.
+
 Depois do vídeo 10: compare formatos, retenção e tempo de produção. Automatize apenas o gargalo que os dados mostrarem.
 
 ## Próxima ação
 
 1. Confirmar QA físico em celular e backup externo dos finais dos vídeos 1 e 2.
-2. Iniciar `vid_0004`: exercício sobre a escolha de u em integração por
-   partes, com enunciado ainda a definir. Não publicar o `vid_0003` sem QA
-   físico e backup externo.
+2. `vid_0004` concluído e publicado manualmente em 2026-09-26 (URLs ainda
+   não registradas). Reconciliar a próxima pauta do ciclo (pendências acima)
+   antes de produzir o vídeo seguinte.

@@ -29,7 +29,7 @@
 
 **Paleta operacional inicial:** fundo `#050816`, ciano `#35D9FF`, azul `#267BFF`, violeta `#745CFF`, magenta `#EA63FF`, branco `#F5F7FF`. Extração/refinamento pelos assets ainda pendente.
 
-**Tipografia oficial implementada:** Space Grotesk (display) e Inter (texto), com MathTex para matemática; fontes e licenças em `assets/fonts/`, carregamento em `template/fonts.py`, teste 1080×1920 aprovado tecnicamente. Uso a partir do `vid_0004`; vídeos 1–3 não mudam.
+**Tipografia oficial implementada:** Space Grotesk (display) e Inter (texto), com MathTex para matemática; fontes e licenças em `assets/fonts/`, carregamento em `template/fonts.py`, teste 1080×1920 aprovado tecnicamente. Uso previsto a partir do `vid_0004`; vídeos 1–3 não mudam. Na prática, o `vid_0004` usou `Text` padrão do Manim nos textos de apoio/CTA e Century Gothic na capa, por escolha do usuário; a aplicação da tipografia oficial aos próximos vídeos precisa ser reconciliada.
 
 **Assets aprovados e versionados:** os oito PNGs estão presentes na organização prevista abaixo, são rastreados pelo Git e já integram o histórico do repositório. Funções em `docs/identidade_visual.md`; propriedades finais de aplicação ainda dependem do contexto de uso.
 
@@ -143,11 +143,26 @@ Parallax Lab / @labparallax” no fechamento. QA técnico concluído; detalhes e
 “POR TRÁS DA FÓRMULA · EP. 01”. QA físico em celular, backup externo e
 publicação não comprovados.
 
-**Próxima ação:** `vid_0004`, exercício que trabalha explicitamente a
-escolha de u em integração por partes; enunciado ainda a definir. **Inconsistência editorial pendente:** “derivada pela
+**vid_0004 — tecnicamente concluído (2026-09-26):** Aplicação — derivada
+como velocidade instantânea (`DA EQUAÇÃO AO FENÔMENO · EP. 01`), em
+`videos/vid_0004_velocidade_instantanea/`, classe `VelocidadeInstantanea004`.
+Finais locais em **1080×1920, 30 fps, 3.045 frames, 101,5 s** (áudio AAC de
+99,93 s): `renders/vid_0004_velocidade_instantanea_final_master_limpo.mp4` e
+`renders/vid_0004_velocidade_instantanea_final_legendado.mp4`. Áudio
+`audio/narracao_montagem.wav` (derivada da voz final `narracao_final.wav`,
+intacta, por `preparar_audio.py`); SRT `legenda.srt` com 33 cues coloridos;
+capa `capa_instagram.png` (regenerável por `gerar_capa.py`). QA técnico,
+visual e matemático concluído em `revisao.md` da unidade. **Publicado
+manualmente pelo usuário em 2026-09-26** (Instagram, YouTube Shorts, TikTok,
+Facebook); URLs ainda não registradas no repositório. Backup externo dos MP4s
+não confirmado.
+
+**Próxima ação:** reconciliar a próxima pauta do ciclo antes de produzir o
+vídeo seguinte, por causa das pendências abaixo. **Pendências editoriais:** “como escolher u” continua aprovada como pauta, mas sem posição; a pauta 5 (“derivada como velocidade instantânea”) passa a coincidir com o tema do vídeo 4; e a contagem vigente passa a 5 exercícios + 2 teorias curtas + 3 aplicações. Vídeos 5–10 não foram reordenados; resolver exige decisão posterior.
+**Inconsistência editorial pendente:** “derivada pela
 regra da cadeia”, antes no vídeo 4, não tem nova posição aprovada. Não foi
 realocada nem excluída definitivamente. Distribuição e vídeos 1, 2 e 5–10
 preservados. Antes de publicar os vídeos 1 e 2, fazer QA físico em celular
-e confirmar backup externo dos MP4s. Sem publicação nesta etapa.
+e confirmar backup externo dos MP4s. Publicação dos vídeos 1–3 não comprovada no repositório.
 
-**Pendências seguintes:** validar a nova tipografia em celular; confirmar backup dos MP4s e QA físico em celular; preparar publicação e conferir regras atuais da plataforma. Nenhuma publicação confirmada no repositório.
+**Pendências seguintes:** reconciliar a tipografia dos próximos vídeos; confirmar backup dos MP4s e QA físico em celular dos vídeos 1–3; registrar as URLs do `vid_0004`; conferir regras atuais da plataforma antes de novas publicações. Única publicação registrada: `vid_0004` (manual, 2026-09-26).

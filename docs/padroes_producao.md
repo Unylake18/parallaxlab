@@ -17,6 +17,9 @@ Observações de `vid_0001` e `vid_0002`, não requisitos automáticos dos próx
 - `vid_0002`: exportação única do ElevenLabs Studio, corte de silêncio inicial e ajuste pontual de nível funcionaram; Studio não é ferramenta obrigatória. A voz foi a referência explícita para refinar a cena.
 - `vid_0002`: CTA discreto no último estado e coda de F/F′ sincronizada com os sinais funcionaram no QA; ainda falta repetição em outra unidade e revisão física.
 - `vid_0002`: a escrita do SRT foi limpa de formas fonéticas como “dê u” para `du`. Texto para TTS e texto para legenda têm funções distintas.
+- `vid_0004`: perspectivas física (partícula na pista) e gráfica (x × t) movidas pelo mesmo parâmetro, e uma única secante redesenhada por `ValueTracker` até virar tangente, funcionaram como eixo didático. Candidato, não requisito.
+- `vid_0004`: narração contínua em uma exportação do ElevenLabs (segunda unidade com exportação única) manteve volume uniforme; sem ASR, as fronteiras das frases foram estimadas pelas pausas medidas no WAV e pelo texto exato.
+- `vid_0004`: legendas com o mesmo código de cores da cena (`SUBTITLE_TERM_COLORS`) e duração de ~100 s quando a clareza pediu funcionaram no QA; falta repetição.
 
 ## Soluções específicas
 
@@ -26,6 +29,7 @@ Observações de `vid_0001` e `vid_0002`, não requisitos automáticos dos próx
 ## Armadilhas conhecidas
 
 - Na revisão do vídeo 2, auxiliares de `MathTex`, chaves e rótulos em movimento criaram sobreposições; separar origem, cópia e destino resolveu. Uma fórmula geral `f(g(x))` acrescentou uma camada desnecessária e foi removida.
+- No `vid_0004`, `TransformMatchingShapes` entre valores numéricos embaralhou algarismos; trocar o valor por fade curto resolveu. `official_text` com frase longa quebrou linha sozinho (gera em 4×); quebra explícita contornou.
 - Os previews intermediários dos dois vídeos se acumularam em `renders/` e `media/`; os finais e o histórico em Markdown bastam após o QA.
 - Confundir a fonetização usada para TTS com a legenda produziu texto pouco natural no vídeo 2.
 - `uv run` falhou durante o render final do piloto no ambiente restrito do Codex, e outro runtime Python 3.12 com os pacotes da `.venv` permitiu concluir o render. O diagnóstico posterior confirmou `.venv`, cache e Manim saudáveis: faltava acesso aos caminhos externos do usuário. Se o erro reaparecer apenas nesse ambiente restrito, verificar permissões antes de recriar a `.venv` ou limpar o cache.

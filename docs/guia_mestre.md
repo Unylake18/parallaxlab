@@ -415,15 +415,15 @@ Use o primeiro ciclo para testar três famílias, não para construir um curso l
 | 1 | Exercício | \(\int x^2e^x\,dx\): integração por partes duas vezes |
 | 2 | Exercício | Integral por substituição simples |
 | 3 | Teoria curta | De onde vem a fórmula da integração por partes? |
-| 4 | Exercício | Trabalhar explicitamente como escolher \(u\) em integração por partes; enunciado a definir |
-| 5 | Aplicação | Derivada como velocidade instantânea |
+| 4 | Aplicação | Derivada como velocidade instantânea (`DA EQUAÇÃO AO FENÔMENO · EP. 01`); concluído e publicado em 2026-09-26 |
+| 5 | *A reconciliar* | Pauta original (derivada como velocidade instantânea) usada no vídeo 4 |
 | 6 | Exercício | Limite simples com interpretação visual |
 | 7 | Exercício | Outra integração por partes, com estrutura diferente do piloto |
 | 8 | Teoria curta | O que uma integral realmente acumula |
 | 9 | Aplicação | De \(v(t)\) ao deslocamento usando integral |
 | 10 | Exercício | Derivada ou integral aplicada a um problema curto de movimento |
 
-Distribuição: **6 exercícios + 2 teorias curtas + 2 aplicações**. O primeiro ciclo deve parecer uma mini-temporada coerente de **Cálculo + aplicações físicas**, não uma amostra aleatória de todo o currículo. Valide enunciado, nível e solução antes de produzir. Depois do décimo, compare interesse, retenção e tempo de produção por família.
+Distribuição original: **6 exercícios + 2 teorias curtas + 2 aplicações**; com o vídeo 4 como Aplicação, a contagem factual passou a 5 + 2 + 3 (pendência editorial). O primeiro ciclo deve parecer uma mini-temporada coerente de **Cálculo + aplicações físicas**, não uma amostra aleatória de todo o currículo. Valide enunciado, nível e solução antes de produzir. Depois do décimo, compare interesse, retenção e tempo de produção por família.
 
 A expansão editorial de longo prazo não reclassifica, remove, substitui ou
 reorganiza este ciclo. A decisão específica de 2026-09-23 atualiza somente
@@ -434,6 +434,10 @@ do vídeo 4 e a distribuição original são preservadas, sem inventar enunciado
 da cadeia” perdeu sua posição no vídeo 4 e não tem novo destino aprovado.
 Ela não foi realocada nem excluída definitivamente. Vídeos 1, 2 e 5–10 não
 foram reordenados. Resolver a pauta deslocada exige decisão editorial explícita.
+
+Atualização de 2026-09-26: o vídeo 4 deixou de trabalhar a escolha de u e
+passou a ser Aplicação — derivada como velocidade instantânea
+(`DA EQUAÇÃO AO FENÔMENO · EP. 01`). **Pendências editoriais:** “como escolher u” continua aprovada como pauta, mas sem posição; a pauta 5 (“derivada como velocidade instantânea”) passa a coincidir com o tema do vídeo 4; e a contagem vigente passa a 5 exercícios + 2 teorias curtas + 3 aplicações. Vídeos 5–10 não foram reordenados; resolver exige decisão posterior.
 
 No primeiro preview do vídeo 3, incluir coda geométrica removível de 7–10 s,
 limitada à interpretação do retângulo e da curva crescente escolhidos. Não
@@ -531,8 +535,7 @@ Referências técnicas úteis: documentação oficial do Manim Community, `uv`, 
 
 ---
 
-**Próxima ação concreta:** iniciar `vid_0004`, exercício sobre a escolha de u
-em integração por partes, com enunciado pendente; consultar
-`docs/estado_atual.md`. `vid_0003` está tecnicamente concluído. Os finais dos
+**Próxima ação concreta:** reconciliar a próxima pauta do ciclo antes de
+produzir o vídeo seguinte; consultar `docs/estado_atual.md`. `vid_0003` e `vid_0004` estão tecnicamente concluídos; `vid_0004` foi publicado manualmente em 2026-09-26. Os finais dos
 vídeos 1 a 3 ainda exigem QA físico e backup externo. Não publicar nesta etapa nem tratar os exemplos
 históricos do piloto como estado atual.

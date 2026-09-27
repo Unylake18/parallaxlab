@@ -12,6 +12,26 @@ Agentes de código devem operar com o menor contexto suficiente para a tarefa. D
 
 Render, QA, documentação e ações de Git devem ser proporcionais à etapa e ao que realmente mudou. A fonte operacional detalhada desse comportamento é `AGENTS.md`.
 
+## 2026-09-26 — Nova pauta do vid_0004
+
+- `vid_0004` deixa de ser “como escolher u” e passa a ser **Aplicação**, série
+  pública **DA EQUAÇÃO AO FENÔMENO · EP. 01**: derivada como velocidade
+  instantânea, com a secante virando tangente enquanto Δt → 0.
+- Modelo aprovado: x(t) = ½at², a = 2 m/s², x(0) = 0, v(0) = 0, t₀ = 2 s;
+  x(2) = 4 m, v(t) = at, v(2) = 4 m/s.
+- “Como escolher u” continua aprovada como pauta, sem nova posição.
+- Nenhum outro vídeo foi realocado ou reordenado. A colisão temática com a
+  pauta 5 e a nova contagem por família exigem decisão posterior.
+- Foco da série **DA EQUAÇÃO AO FENÔMENO**: fenômeno físico e representação
+  matemática sincronizados.
+- Direção visual inicial da série, validada neste piloto: fenômeno físico +
+  gráfico/modelo; ciano e azul como base; violeta e magenta como acentos;
+  mesma marca Parallax Lab, sem identidade independente.
+- Registro factual: textos de apoio e CTA do `vid_0004` usaram o `Text`
+  padrão do Manim (estilo do `vid_0003`) e a capa usou Century Gothic, por
+  escolha do usuário durante a produção. A aplicação da tipografia oficial
+  abaixo aos próximos vídeos precisa ser reconciliada.
+
 ## 2026-09-26 — Tipografia oficial
 
 - **Space Grotesk** é a fonte de display (headlines, títulos, capas); **Inter** é a fonte de texto (auxiliares, legendas, CTA); a matemática continua em **MathTex**.
@@ -26,7 +46,8 @@ Render, QA, documentação e ações de Git devem ser proporcionais à etapa e a
   sinal e verificação com cancelamento de u'v e vu'.
 - `vid_0004`: trabalhar explicitamente como escolher u em integração por
   partes. Preservar a família de exercício e a distribuição vigente;
-  enunciado específico ainda não definido.
+  enunciado específico ainda não definido. *(Substituída em 2026-09-26:
+  ver “Nova pauta do vid_0004”.)*
 - A pauta “derivada pela regra da cadeia”, antes no vídeo 4, fica sem posição
   aprovada. Registrar essa inconsistência pendente; não inventar posição,
   exclusão definitiva, reordenação de outros vídeos ou nova distribuição.
