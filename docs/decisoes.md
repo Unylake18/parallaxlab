@@ -12,6 +12,27 @@ Agentes de código devem operar com o menor contexto suficiente para a tarefa. D
 
 Render, QA, documentação e ações de Git devem ser proporcionais à etapa e ao que realmente mudou. A fonte operacional detalhada desse comportamento é `AGENTS.md`.
 
+## 2026-09-27 — Texto na tela em Space Grotesk Medium
+
+- Todo texto na tela das animações fora da matemática (manchetes, rótulos,
+  notas, títulos de painel, tag da série) usa **Space Grotesk Medium**, a fonte
+  da tag “POR TRÁS DA FÓRMULA”. A matemática continua em **MathTex**.
+- Substitui a Inter nos textos auxiliares das animações; a Inter permanece para
+  legendas e textos fora da animação.
+- Aplicado a partir do `vid_0005`, por escolha do usuário; implementado em
+  `screen_text` de `template/fonts.py`.
+
+## 2026-09-27 — Pauta do vid_0005
+
+- `vid_0005` = origem geométrica da aceleração centrípeta (a_c = v²/R), série
+  pública **POR TRÁS DA FÓRMULA · EP. 02**.
+- Derivação aprovada: instantes simétricos t ± Δt/2, Δv = v₊ − v₋ construído na
+  origem comum, triângulos semelhantes de mesmo Δθ, |Δr|/Δt → v e depois
+  |Δv|/Δt → a_c; sem aproximação de arco.
+- Vídeos 6–10 não foram reordenados.
+- “Como escolher u” continua sem posição aprovada.
+- “Derivada pela regra da cadeia” continua sem posição aprovada.
+
 ## 2026-09-26 — Nova pauta do vid_0004
 
 - `vid_0004` deixa de ser “como escolher u” e passa a ser **Aplicação**, série
@@ -29,14 +50,14 @@ Render, QA, documentação e ações de Git devem ser proporcionais à etapa e a
   mesma marca Parallax Lab, sem identidade independente.
 - Registro factual: textos de apoio e CTA do `vid_0004` usaram o `Text`
   padrão do Manim (estilo do `vid_0003`) e a capa usou Century Gothic, por
-  escolha do usuário durante a produção. A aplicação da tipografia oficial
-  abaixo aos próximos vídeos precisa ser reconciliada.
+  escolha do usuário durante a produção: exceção de transição. A tipografia
+  oficial abaixo é a direção vigente para os próximos vídeos.
 
 ## 2026-09-26 — Tipografia oficial
 
 - **Space Grotesk** é a fonte de display (headlines, títulos, capas); **Inter** é a fonte de texto (auxiliares, legendas, CTA); a matemática continua em **MathTex**.
 - As fontes são versionadas no repositório com suas licenças OFL e carregadas por caminho do repo, sem instalação global.
-- Aplicação a partir do `vid_0004`. Os vídeos 1–3 e suas capas permanecem como identidade pré-tipografia oficial e não serão refeitos.
+- Vigente para os próximos vídeos, salvo decisão editorial posterior. O `vid_0004` foi exceção de transição (`Text` padrão do Manim e capa em Century Gothic). Os vídeos 1–3 e suas capas permanecem como identidade pré-tipografia oficial e não serão refeitos.
 
 ## 2026-09-23 — Origem da integração por partes e escolha de u
 

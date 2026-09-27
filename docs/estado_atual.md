@@ -1,6 +1,6 @@
 # Estado atual — Parallax Lab
 
-**Atualizado em:** 2026-09-24
+**Atualizado em:** 2026-09-27
 
 **Marca:** Parallax Lab · **Instagram aprovado:** @labparallax
 
@@ -29,7 +29,7 @@
 
 **Paleta operacional inicial:** fundo `#050816`, ciano `#35D9FF`, azul `#267BFF`, violeta `#745CFF`, magenta `#EA63FF`, branco `#F5F7FF`. Extração/refinamento pelos assets ainda pendente.
 
-**Tipografia oficial implementada:** Space Grotesk (display) e Inter (texto), com MathTex para matemática; fontes e licenças em `assets/fonts/`, carregamento em `template/fonts.py`, teste 1080×1920 aprovado tecnicamente. Uso previsto a partir do `vid_0004`; vídeos 1–3 não mudam. Na prática, o `vid_0004` usou `Text` padrão do Manim nos textos de apoio/CTA e Century Gothic na capa, por escolha do usuário; a aplicação da tipografia oficial aos próximos vídeos precisa ser reconciliada.
+**Tipografia oficial implementada:** Space Grotesk (display) e Inter (texto), com MathTex para matemática; fontes e licenças em `assets/fonts/`, carregamento em `template/fonts.py`, teste 1080×1920 aprovado tecnicamente. Vigente para os próximos vídeos, salvo decisão editorial posterior; vídeos 1–3 não mudam. O `vid_0004` foi exceção de transição: `Text` padrão do Manim nos textos de apoio/CTA e Century Gothic na capa, por escolha do usuário. Desde o `vid_0005`, todo texto na tela das animações fora da matemática usa Space Grotesk Medium (`screen_text` em `template/fonts.py`).
 
 **Assets aprovados e versionados:** os oito PNGs estão presentes na organização prevista abaixo, são rastreados pelo Git e já integram o histórico do repositório. Funções em `docs/identidade_visual.md`; propriedades finais de aplicação ainda dependem do contexto de uso.
 
@@ -157,12 +157,17 @@ manualmente pelo usuário em 2026-09-26** (Instagram, YouTube Shorts, TikTok,
 Facebook); URLs ainda não registradas no repositório. Backup externo dos MP4s
 não confirmado.
 
-**Próxima ação:** reconciliar a próxima pauta do ciclo antes de produzir o
-vídeo seguinte, por causa das pendências abaixo. **Pendências editoriais:** “como escolher u” continua aprovada como pauta, mas sem posição; a pauta 5 (“derivada como velocidade instantânea”) passa a coincidir com o tema do vídeo 4; e a contagem vigente passa a 5 exercícios + 2 teorias curtas + 3 aplicações. Vídeos 5–10 não foram reordenados; resolver exige decisão posterior.
+**vid_0005 — em produção (2026-09-27):** `POR TRÁS DA FÓRMULA · EP. 02`,
+origem geométrica da aceleração centrípeta (a_c = v²/R), em
+`videos/vid_0005_aceleracao_centripeta/`, classe `AceleracaoCentripeta005`.
+Primeiro preview visual silencioso 540×960/15 fps gerado; voz, SRT, master,
+versão legendada, capa e publicação não iniciados.
+
+**Próxima ação:** revisar o preview silencioso do `vid_0005`. **Pendências editoriais:** “como escolher u” continua aprovada como pauta, mas sem posição; e a contagem vigente passa a 5 exercícios + 2 teorias curtas + 3 aplicações. Vídeos 6–10 não foram reordenados; resolver exige decisão posterior.
 **Inconsistência editorial pendente:** “derivada pela
 regra da cadeia”, antes no vídeo 4, não tem nova posição aprovada. Não foi
 realocada nem excluída definitivamente. Distribuição e vídeos 1, 2 e 5–10
 preservados. Antes de publicar os vídeos 1 e 2, fazer QA físico em celular
 e confirmar backup externo dos MP4s. Publicação dos vídeos 1–3 não comprovada no repositório.
 
-**Pendências seguintes:** reconciliar a tipografia dos próximos vídeos; confirmar backup dos MP4s e QA físico em celular dos vídeos 1–3; registrar as URLs do `vid_0004`; conferir regras atuais da plataforma antes de novas publicações. Única publicação registrada: `vid_0004` (manual, 2026-09-26).
+**Pendências seguintes:** definir regras tipográficas por contexto (tamanhos, pesos, espaçamentos) no primeiro vídeo com a tipografia oficial; confirmar backup dos MP4s e QA físico em celular dos vídeos 1–3; registrar as URLs do `vid_0004`; conferir regras atuais da plataforma antes de novas publicações. Única publicação registrada: `vid_0004` (manual, 2026-09-26).

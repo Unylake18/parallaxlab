@@ -1,16 +1,19 @@
 """Tipografia oficial do Parallax Lab, carregada de assets/fonts/ (sem instalação global).
 
-Space Grotesk: display, headlines, títulos e capas. Inter: textos auxiliares,
-legendas e CTA. Matemática continua em MathTex. Uso a partir do vid_0004.
+Space Grotesk: display, títulos e capas; desde o vid_0005, também todo texto na
+tela das animações (manchetes, rótulos, notas, títulos de painel, tag da série),
+em Medium, via screen_text(...). Inter: legendas e textos fora da animação.
+Matemática continua em MathTex.
 
 Manim: importar este módulo registra as fontes no Pango do processo; use
-official_text(...) em vez de Text direto. Pillow: ImageFont.truetype(str(INTER["bold"]), 40).
+screen_text(...) ou official_text(...) em vez de Text direto.
+Pillow: ImageFont.truetype(str(INTER["bold"]), 40).
 """
 
 from pathlib import Path
 
 import manimpango
-from manim import Text
+from manim import MEDIUM, Text
 
 FONTS_DIR = Path(__file__).resolve().parents[1] / "assets" / "fonts"
 
@@ -33,10 +36,17 @@ for _path in (*SPACE_GROTESK.values(), *INTER.values()):
         raise RuntimeError(f"Falha ao registrar fonte: {_path}")
 
 # Pango espaça letras de forma irregular em corpos pequenos; gerar em 4× e
-# reduzir mantém o espaçamento original da fonte.
+# reduzir mantém o espaçamento original da fonte. Em corpos grandes (manchetes
+# ~38) o 4× faz o Pango quebrar linhas longas: passe oversample=2.
 _OVERSAMPLE = 4
 
 
-def official_text(content: str, font: str, weight: str, font_size: float, **kwargs) -> Text:
+def official_text(content: str, font: str, weight: str, font_size: float,
+                  oversample: int = _OVERSAMPLE, **kwargs) -> Text:
     return Text(content, font=font, weight=weight,
-                font_size=font_size * _OVERSAMPLE, **kwargs).scale(1 / _OVERSAMPLE)
+                font_size=font_size * oversample, **kwargs).scale(1 / oversample)
+
+
+def screen_text(content: str, font_size: float, **kwargs) -> Text:
+    """Texto na tela das animações: Space Grotesk Medium (decisão de 2026-09-27)."""
+    return official_text(content, DISPLAY_FONT, MEDIUM, font_size, **kwargs)

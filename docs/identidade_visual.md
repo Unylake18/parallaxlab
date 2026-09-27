@@ -41,13 +41,14 @@ Usar ciano para o destaque principal; azul, violeta e magenta como apoios pontua
 
 Linguagem sans-serif geométrica, futurista, limpa, legível e premium, sem aparência gamer.
 
-**Tipografia oficial (implementada em 2026-09-26; aplicação a partir do `vid_0004`):**
+**Tipografia oficial** (decisão de 2026-09-26, implementada no repositório; direção vigente para os próximos vídeos, salvo decisão editorial posterior):
 
 | Papel | Fonte | Pesos iniciais |
 | --- | --- | --- |
 | Display: headlines, títulos, capas, linhas de série | **Space Grotesk** 2.0.0 | Medium, Bold |
-| Texto: auxiliares, legendas, CTA | **Inter** 4.1 | Regular, Medium, SemiBold, Bold |
-| Matemática | **MathTex** (LaTeX), sem alteração | — |
+| Texto na tela das animações: manchetes, rótulos, notas, títulos de painel (desde o `vid_0005`) | **Space Grotesk** 2.0.0 | Medium |
+| Texto: legendas, textos fora da animação | **Inter** 4.1 | Regular, Medium, SemiBold, Bold |
+| Fórmulas e notação matemática | **MathTex** (LaTeX), sem alteração | — |
 
 Arquivos estáticos oficiais, sem modificação, versionados em `assets/fonts/`:
 Space Grotesk da release 2.0.0 de `github.com/floriankarsten/space-grotesk`
@@ -61,8 +62,17 @@ que gera o texto em 4× e reduz a escala para evitar o espaçamento irregular do
 Pango em corpos pequenos. Para Pillow, os caminhos estão em `SPACE_GROTESK` e
 `INTER`. Teste isolado: `template/teste_tipografia.py`.
 
-Os vídeos 1–3 e suas capas permanecem com a identidade pré-tipografia
-oficial e não serão refeitos.
+Histórico de aplicação:
+
+- **Vídeos 1–3 e suas capas** permanecem com a identidade tipográfica anterior
+  e não devem ser refeitos só por causa desta decisão.
+- **`vid_0004`** é uma exceção factual de transição, aprovada durante a
+  produção: textos de apoio e CTA usaram o `Text` padrão do Manim (estilo do
+  `vid_0003`) e a capa usou Century Gothic. O `vid_0004` não usou Space
+  Grotesk nem Inter visualmente.
+- **Próximos vídeos:** Space Grotesk + Inter + MathTex, conforme a tabela.
+- **`vid_0005` em diante:** todo texto na tela das animações fora da
+  matemática em Space Grotesk Medium, via `screen_text(...)`.
 
 ## Assets aprovados, funções e organização
 
@@ -116,14 +126,15 @@ Usar o template vertical aprovado como referência inicial para Reels e Shorts, 
 
 ## O que evitar
 
-Estética infantil, escolar genérica, gamer ou excessivamente carregada; psicodelia intensa; excesso de estrelas, brilhos, gradientes e efeitos; baixo contraste; fórmulas pequenas; logos dominantes; marcas sobre equações; escolhas tipográficas apresentadas como finais antes de seleção e licença.
+Estética infantil, escolar genérica, gamer ou excessivamente carregada; psicodelia intensa; excesso de estrelas, brilhos, gradientes e efeitos; baixo contraste; fórmulas pequenas; logos dominantes; marcas sobre equações; fontes sem licença verificada ou não versionadas como padrão de produção.
 
 ## Decisões finais e pendências
 
-**Aprovado:** nome Parallax Lab; @labparallax; conceito de perspectiva; símbolo com planos e orbe; direção visual; famílias de cor; oito variantes e suas funções; organização de pastas; branding discreto e prioridade de leitura.
+**Aprovado:** nome Parallax Lab; @labparallax; conceito de perspectiva; símbolo com planos e orbe; direção visual; famílias de cor; oito variantes e suas funções; organização de pastas; branding discreto e prioridade de leitura; tipografia oficial (Space Grotesk + Inter + MathTex).
 
-**Implementado/versionado:** oito PNGs de marca rastreados na estrutura aprovada; template vertical básico, helpers e piloto com voz existentes no histórico. Capas dos vídeos 1 a 3 estão nas respectivas unidades de produção. Tipografia oficial (Space Grotesk + Inter) e licenças em `assets/fonts/`, com carregamento em `template/fonts.py`.
+**Implementado/versionado:** oito PNGs de marca rastreados na estrutura aprovada; template vertical básico, helpers e piloto com voz existentes no histórico. Capas dos vídeos 1 a 4 estão nas respectivas unidades de produção. Tipografia oficial (Space Grotesk + Inter) e licenças em `assets/fonts/`, com carregamento em `template/fonts.py`.
 
-**Pendente:** refinar padrões de tipografia (tamanhos, entrelinhas) e área de
-proteção apenas com mais evidência; validar a nova tipografia e revisar os
-finais e capas em celular. A aprovação técnica dos renders não comprova publicação.
+**Pendente:** regras tipográficas de aplicação por contexto (tamanhos, pesos,
+espaçamentos e entrelinhas em cena, legenda e capa), a definir com evidência
+do primeiro vídeo que usar a tipografia oficial; validá-la em celular; refinar
+a área de proteção; revisar finais e capas em celular. A aprovação técnica dos renders não comprova publicação.
