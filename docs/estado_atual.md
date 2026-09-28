@@ -175,7 +175,7 @@ locais em **1080×1920, 30 fps, 3.166 frames, 105,53 s** (áudio AAC estéreo de
 104,64 s): `renders/vid_0006_cancelamento_ruido_final_master_limpo.mp4` e
 `renders/vid_0006_cancelamento_ruido_final_legendado.mp4`. Narração ElevenLabs
 `audio/narracao_final.wav`, intacta; SRT `legenda.srt` com 43 cues coloridos;
-capa `capa_instagram.png` (regenerável por `gerar_capa.py`, variante “a”). QA em
+capa `capa_instagram.png` (regenerável por `gerar_capa.py`). QA em
 `revisao.md` da unidade. **Publicado manualmente pelo usuário em 2026-09-28**;
 URLs ainda não registradas.
 

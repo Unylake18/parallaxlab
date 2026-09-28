@@ -54,7 +54,7 @@ processamento / mesmo atraso (violeta).
 
 ## Capa
 
-`capa_instagram.png` (1080×1920), variante “a” do `gerar_capa.py`: “O SOM PODE /
+`capa_instagram.png` (1080×1920), gerada por `gerar_capa.py`: “O SOM PODE /
 CANCELAR O SOM?”; painel INTERFERÊNCIA → CANCELAMENTO DE RUÍDO com as mesmas funções
 da cena (resíduo pequeno, não nulo). Conferida em tamanho cheio, médio e miniatura.
 

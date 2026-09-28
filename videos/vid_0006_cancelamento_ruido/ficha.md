@@ -13,10 +13,9 @@
   obtidos pelas pausas medidas no WAV).
 - Legenda: `legenda.srt` (43 cues, fala final “Se curtiu, siga o Parallax Lab.”), cores de
   `SUBTITLE_TERM_COLORS` da cena.
-- Capa: `capa_instagram.png`, gerada por `gerar_capa.py` (variante “a”, escolhida): “O SOM PODE /
-  CANCELAR O SOM?” + painel INTERFERÊNCIA (ciano + magenta → branco pequeno) → CANCELAMENTO DE
-  RUÍDO (fone com ruído chegando, contribuição magenta saindo e resíduo branco). Variantes b/c e a
-  1ª versão (“ondas”) seguem reproduzíveis pelo script.
+- Capa: `capa_instagram.png`, gerada por `gerar_capa.py`: “O SOM PODE / CANCELAR O SOM?” +
+  painel INTERFERÊNCIA (ciano + magenta → branco pequeno) → CANCELAMENTO DE RUÍDO (fone com
+  ruído chegando, contribuição magenta saindo e resíduo branco).
 - Finais: `renders/vid_0006_cancelamento_ruido_final_master_limpo.mp4` e
   `renders/vid_0006_cancelamento_ruido_final_legendado.mp4` — 1080×1920, 30 fps, 3.166 frames,
   105,53 s; AAC 44,1 kHz estéreo, 104,64 s.
