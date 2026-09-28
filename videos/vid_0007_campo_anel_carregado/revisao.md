@@ -64,4 +64,5 @@ Escolhida entre variações de headline e de rótulo; conferida em tamanho cheio
 - Sincronia obtida por pausas do áudio, não por transcrição; conferida por amostras.
 - Na miniatura muito reduzida (~180 px), o rótulo “anel” e a linha da série viram detalhe;
   headline, anel, seta e pico seguem legíveis.
-- QA físico em celular, backup externo dos MP4s e publicação ainda não registrados.
+- QA físico em celular e URLs de publicação não registrados (publicado manualmente pelo
+  usuário em 2026-09-28; backup dos finais no Google Drive do usuário).

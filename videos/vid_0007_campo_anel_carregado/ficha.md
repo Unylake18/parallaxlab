@@ -1,7 +1,7 @@
 # vid_0007 — Campo elétrico no eixo de um anel carregado
 
 - Série pública: **EXERCÍCIO RESOLVIDO · EP. 03**.
-- **Concluído em 2026-09-28**; publicação manual pendente (`publicacao.md`). Headline da
+- **Concluído e publicado manualmente pelo usuário em 2026-09-28** (URLs não registradas). Headline da
   capa: “ONDE O CAMPO ELÉTRICO É MAIS FORTE?”.
   Roteiro com tempos: `roteiro.md`; QA: `revisao.md`.
 - Pergunta: onde, no eixo de um anel uniformemente carregado, o módulo do campo é máximo?
@@ -71,7 +71,7 @@ distribuições não uniformes.
 
 ## Pendências
 
-- Publicação manual pelo usuário; URLs a registrar em `publicacao.md`.
-- QA físico em celular e backup externo dos MP4s não confirmados.
+- URLs da publicação não registradas (`publicacao.md`); QA físico em celular não confirmado.
+  Backup dos finais no Google Drive do usuário (informado).
 - Duração 148,3 s com a voz (o preview silencioso tinha ~122 s; o C5 detalhado e a fala
   definiram o tempo final).

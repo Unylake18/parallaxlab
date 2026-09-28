@@ -177,9 +177,10 @@ Depois do vídeo 10: compare formatos, retenção e tempo de produção. Automat
 
 ## Próxima ação
 
-1. Confirmar QA físico em celular e backup externo dos finais dos vídeos 1 e 2.
+1. Confirmar QA físico em celular dos finais dos vídeos 1 e 2 (backup: o usuário
+   mantém os finais no Google Drive, informado em 2026-09-28).
 2. `vid_0004`, `vid_0005` e `vid_0006` concluídos e publicados manualmente
    (2026-09-26, 2026-09-27 e 2026-09-28; URLs ainda não registradas); `vid_0007`
-   concluído em 2026-09-28, publicação manual pendente.
+   concluído e publicado manualmente em 2026-09-28.
 3. Produção: definir, resolver e verificar o `vid_0008` — teoria curta: o que uma
    integral realmente acumula — antes de roteiro e Manim.

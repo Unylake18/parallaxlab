@@ -187,7 +187,8 @@ elétrico no eixo de um anel carregado e posição do máximo (z = R/√2 ≈ 0,
 `renders/vid_0007_campo_anel_carregado_final_legendado.mp4`. Narração ElevenLabs
 `audio/narracao_final.wav`, intacta; SRT `legenda.srt` com 54 cues coloridos;
 capa `capa_instagram.png` (“ONDE O CAMPO ELÉTRICO É MAIS FORTE?”, regenerável por
-`gerar_capa.py`). QA em `revisao.md` da unidade. **Publicação manual pendente.**
+`gerar_capa.py`). QA em `revisao.md` da unidade. **Publicado manualmente pelo usuário em
+2026-09-28**; URLs ainda não registradas.
 
 **Próxima ação:** Produção definir, resolver e verificar o `vid_0008` — pela
 lista vigente, teoria curta: o que uma integral realmente acumula (questão →
@@ -205,4 +206,4 @@ realocada nem excluída definitivamente. Distribuição e vídeos 1, 2 e 5–10
 preservados. Antes de publicar os vídeos 1 e 2, fazer QA físico em celular
 e confirmar backup externo dos MP4s. Publicação dos vídeos 1–3 não comprovada no repositório.
 
-**Pendências seguintes:** definir regras tipográficas por contexto (tamanhos, pesos, espaçamentos) no primeiro vídeo com a tipografia oficial; confirmar backup dos MP4s e QA físico em celular dos vídeos 1–3; registrar as URLs do `vid_0004`, `vid_0005` e `vid_0006` e a publicação do `vid_0007`; conferir regras atuais da plataforma antes de novas publicações. Publicações registradas (manuais): `vid_0004` (2026-09-26), `vid_0005` (2026-09-27) e `vid_0006` (2026-09-28).
+**Pendências seguintes:** definir regras tipográficas por contexto (tamanhos, pesos, espaçamentos) no primeiro vídeo com a tipografia oficial; QA físico em celular dos vídeos 1–3; registrar, se desejado, as URLs do `vid_0004` ao `vid_0007`; conferir regras atuais da plataforma antes de novas publicações. Publicações registradas (manuais): `vid_0004` (2026-09-26), `vid_0005` (2026-09-27), `vid_0006` e `vid_0007` (2026-09-28). Backup: o usuário informou (2026-09-28) que mantém os finais no Google Drive.
