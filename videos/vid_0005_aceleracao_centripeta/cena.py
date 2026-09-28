@@ -13,6 +13,8 @@ Cores: azul discreto = trajetória; branco = r e matemática; azul = Δr;
 ciano = v; magenta = Δv; violeta = a_c.
 """
 
+from pathlib import Path
+
 import numpy as np
 from manim import (
     DOWN, LEFT, PI, RIGHT, UP, Arc, Arrow, Circle, Create,
@@ -38,15 +40,27 @@ THETA_C = 0.0             # direção de r no instante central t
 DTH_START = 50 * PI / 180 # Δθ da construção
 DTH_MIN = 16 * PI / 180   # Δθ ao fim do limite: v₋ e v₊ ainda distinguíveis
 SAFE_BOTTOM = -4.6        # abaixo disso: faixa reservada a legendas
+SAFE_X = 3.5              # |x| máximo do conteúdo: margem lateral dos botões do Reels
+R_E = 1.8                 # raio do círculo do limite (E), menor para caber na margem
 HEADLINE_TOP = 6.85
 
-O_A = np.array([-0.7, 2.2, 0])   # círculo das partes A–C
+O_A = np.array([-0.4, 2.2, 0])   # círculo das partes A–C
 Q_C = np.array([0.0, -3.75, 0])  # origem comum das velocidades (C)
-O_D = np.array([-3.6, 1.8, 0])   # triângulo das posições (D)
-Q_D = np.array([2.2, 0.85, 0])   # triângulo das velocidades (D)
-O_E = np.array([-1.2, 1.3, 0])   # círculo do limite (E)
-Q_E = np.array([3.0, -0.05, 0])  # triângulo das velocidades do limite (E)
+O_D = np.array([-3.15, 1.8, 0])   # triângulo das posições (D)
+Q_D = np.array([1.75, 0.85, 0])  # triângulo das velocidades (D)
+O_E = np.array([-1.3, 1.3, 0])   # círculo do limite (E)
+Q_E = np.array([2.25, -0.05, 0]) # triângulo das velocidades do limite (E)
 O_F = np.array([0.0, 2.2, 0])    # círculo do fechamento (F)
+AUDIO_PATH = Path(__file__).parent / "audio" / "narracao_final.wav"  # ElevenLabs, intacta
+# Lido por videos/montar_legendado.py --color-module: mesma lógica de cor da cena.
+SUBTITLE_TERM_COLORS = {
+    "vetor velocidade": CYAN,
+    "velocidade tangencial": CYAN,
+    "Δv": MAGENTA,
+    "Δr": BLUE,
+    "aceleração centrípeta": VIOLET,
+    "ac": VIOLET,
+}
 
 
 def unit(angle):
@@ -121,10 +135,10 @@ NUM = slice(0, 5)  # glifos de |Δx⃗| no numerador de \frac{|\Delta\vec x|}{..
 class Construction:
     """P±, r±, Δr, v± e Δθ em um círculo de centro O, para instantes t ± Δt/2."""
 
-    def __init__(self, O, dth, theta=THETA_C):
+    def __init__(self, O, dth, theta=THETA_C, radius=R_VIS):
         self.a_m, self.a_p = theta - dth / 2, theta + dth / 2
         self.O = O
-        self.P_m, self.P_p = O + R_VIS * unit(self.a_m), O + R_VIS * unit(self.a_p)
+        self.P_m, self.P_p = O + radius * unit(self.a_m), O + radius * unit(self.a_p)
         self.r_m, self.r_p = vec(O, self.P_m, WHITE, 4), vec(O, self.P_p, WHITE, 4)
         self.dr = vec(self.P_m, self.P_p, BLUE, 5)
         self.v_m = vec(self.P_m, self.P_m + L_V * tangent(self.a_m), CYAN)
@@ -151,11 +165,17 @@ class AceleracaoCentripeta005(Scene):
         bottom = min(m.get_bottom()[1] for m in self.mobjects
                      if isinstance(m, VMobject) and len(m.get_all_points()))
         assert bottom > SAFE_BOTTOM, f"conteúdo invade a faixa inferior: {bottom:.2f}"
+        # A tag da série, no canto superior, fica fora da checagem lateral.
+        for m in self.mobjects:
+            if isinstance(m, VMobject) and len(m.get_all_points()) and m is not self.series:
+                assert m.get_left()[0] > -SAFE_X and m.get_right()[0] < SAFE_X,                     f"conteúdo fora da margem lateral: {m.get_left()[0]:.2f}..{m.get_right()[0]:.2f}"
 
     def caption(self, *lines):
         """Troca a manchete do topo (linhas: str ou mobject pronto); devolve as animações."""
         new = VGroup(*(display(line) if isinstance(line, str) else line for line in lines))
         new.arrange(DOWN, buff=0.14)
+        if new.width > 2 * SAFE_X - 0.2:
+            new.scale_to_fit_width(2 * SAFE_X - 0.2)
         new.move_to([0, HEADLINE_TOP - new.height / 2, 0])
         anims = [FadeIn(new, shift=DOWN * 0.15)]
         if self.headline is not None:
@@ -163,13 +183,21 @@ class AceleracaoCentripeta005(Scene):
         self.headline = new
         return anims
 
+    def until(self, seconds):
+        """Espera até o instante `seconds` da narração (segundos do WAV)."""
+        remaining = seconds - self.time
+        if remaining > 1e-6:
+            self.wait(remaining)
+
     def construct(self):
         self.camera.background_color = BACKGROUND_COLOR
         self.headline = None
         watermark = ImageMobject(str(WATERMARK_PATH)).set_width(1.8).set_opacity(0.35)
         self.add(watermark.to_corner(UP + RIGHT, buff=0.28))
-        series = text("POR TRÁS DA FÓRMULA · EP. 02", 20, opacity=0.65)
+        series = self.series = text("POR TRÁS DA FÓRMULA · EP. 02", 20, opacity=0.65)
         series.to_corner(UP + LEFT, buff=0.4)
+        # Tempos da cena seguem a narração (segundos do WAV); comentários citam a fala.
+        self.add_sound(str(AUDIO_PATH))
 
         # ── A. Movimento circular: |v| constante, direção de v muda ─────────────
         circle = Circle(radius=R_VIS, arc_center=O_A).set_stroke(BLUE, 3, 0.55)
@@ -187,9 +215,9 @@ class AceleracaoCentripeta005(Scene):
             particle_point() + (L_V + 0.32) * tangent(theta.get_value())
             + 0.12 * unit(theta.get_value())))
 
-        self.play(FadeIn(series),
+        self.play(FadeIn(series),                                 # "Se o módulo da velocidade não muda…"
                   *self.caption("Se o módulo da velocidade", "não muda, por que", "existe aceleração?"),
-                  run_time=1.2)
+                  run_time=1.0)
         self.play(Create(circle), FadeIn(center, o_label), run_time=1.0)
         self.play(FadeIn(particle), GrowArrow(v_live), FadeIn(v_label), run_time=0.8)
 
@@ -201,21 +229,31 @@ class AceleracaoCentripeta005(Scene):
         direction_line = inline([(dir_words[0], dir_words[0][-1]), (dir_vec, baseline_glyph(dir_vec)),
                                  (dir_words[1], dir_words[1][-1])], gap=0.14).move_to([0, -1.75, 0])
 
-        omega = 2 * PI / 8.0  # rad/s na tela: uma volta em 8 s, sempre uniforme
+        # Órbita uniforme; a velocidade angular faz a 3ª cópia cair em "módulo constante".
+        orbit = {"t0": self.time, "a0": 100.0}
+        omega = (920 - orbit["a0"]) / (17.9 - orbit["t0"])  # graus/s, mantida em A e B
 
-        def orbit_to(degrees, *extra):
-            target = degrees * PI / 180
+        def time_at(degrees):
+            return orbit["t0"] + (degrees - orbit["a0"]) / omega
+
+        def orbit_until(t_end, *extra):
+            target = (orbit["a0"] + omega * (t_end - orbit["t0"])) * PI / 180
             self.play(theta.animate.set_value(target), *extra,
-                      run_time=(target - theta.get_value()) / omega, rate_func=linear)
+                      run_time=t_end - self.time, rate_func=linear)
 
-        orbit_to(220, Write(speed_line))
-        orbit_to(340, FadeIn(direction_line))
-        orbit_to(460)
+        def resume_orbit():
+            """Retoma a órbita no ritmo de sempre a partir do ângulo atual."""
+            orbit.update(t0=self.time, a0=theta.get_value() * 180 / PI)
+
+        orbit_until(7.0)
+        orbit_until(9.0, Write(speed_line))                       # "…vetor velocidade permanece o mesmo"
+        orbit_until(14.6)
+        orbit_until(15.6, FadeIn(direction_line))                 # "…a direção do vetor muda"
 
         # Microexplicação: três posições próximas, três cópias do mesmo vetor.
         copies, guides = VGroup(), VGroup()
-        for degrees in (480, 520, 560):
-            orbit_to(degrees)
+        for degrees in (840, 880, 920):
+            orbit_until(time_at(degrees))
             a, P = theta.get_value(), particle_point()
             copies.add(vec(P, P + L_V * tangent(a), CYAN).set_opacity(0.4))
             guides.add(DashedLine(P - 0.45 * tangent(a), P + (L_V + 0.4) * tangent(a),
@@ -224,10 +262,12 @@ class AceleracaoCentripeta005(Scene):
         tag_same = text("MESMO MÓDULO", 20, opacity=0.85)
         tag_dir = text("· DIREÇÃO DIFERENTE", 20, color=CYAN)
         VGroup(tag_same, tag_dir).arrange(RIGHT, buff=0.16).move_to([0, -2.6, 0])
-        self.play(FadeIn(tag_same), Indicate(copies, color=WHITE, scale_factor=1.05), run_time=1.0)
-        self.play(FadeIn(tag_dir), Create(guides), run_time=1.0)
+        self.play(FadeIn(tag_same), Indicate(copies, color=WHITE, scale_factor=1.05),
+                  run_time=1.0)                                   # "Então, módulo constante…"
+        self.play(FadeIn(tag_dir), Create(guides), run_time=1.0)  # "…não significa vetor constante"
+        self.until(20.1)
         self.play(*self.caption("O vetor velocidade muda"), run_time=0.8)
-        self.wait(1.0)
+        self.until(25.2)                                          # "…que vamos medir."
         self.check_safe_area()
 
         # ── B. Dois instantes simétricos em torno de t ────────────────────────
@@ -244,32 +284,37 @@ class AceleracaoCentripeta005(Scene):
         t_line = tex(r"t_\pm=t\pm\tfrac{\Delta t}{2}", 40).move_to([0, -0.9, 0])
 
         self.play(FadeOut(copies, guides, speed_line, direction_line, tag_same, tag_dir),
-                  *self.caption("Dois instantes próximos"), run_time=0.8)
-        # A partícula passa por P₋ e P₊: cada passagem congela posição e velocidade.
+                  *self.caption("Dois instantes próximos"), run_time=0.8)  # "Agora pegamos dois instantes…"
+        # A partícula retoma o mesmo ritmo e passa por P₋ e P₊: cada passagem congela r e v.
         v_m_frozen, v_p_frozen = b.v_m.copy(), b.v_p.copy()
-        orbit_to(720 + b.a_m * 180 / PI)
+        resume_orbit()
+        orbit_until(time_at(1080 + b.a_m * 180 / PI))
         self.add(b.dots[0], v_m_frozen)
         self.play(FadeIn(p_m_label), FadeIn(t_line), run_time=0.5)
-        orbit_to(720 + b.a_p * 180 / PI)
+        resume_orbit()
+        orbit_until(time_at(1080 + b.a_p * 180 / PI))
         self.add(b.dots[1], v_p_frozen)
         self.play(FadeIn(p_p_label), FadeOut(particle, v_live, v_label), run_time=0.6)
-        self.play(FadeIn(v_m_label, v_p_label), run_time=0.6)
-        self.wait(0.4)
 
+        self.until(30.6)                                          # "…um vetor posição, de módulo R"
         self.play(GrowArrow(b.r_m), GrowArrow(b.r_p), FadeIn(r_m_label, r_p_label), run_time=1.0)
-        self.play(Create(b.arc), FadeIn(dth_label), run_time=0.8)
+        self.until(32.9)                                          # "…velocidade tangencial, de módulo v"
+        self.play(FadeIn(v_m_label, v_p_label), Indicate(VGroup(v_m_frozen, v_p_frozen), color=CYAN),
+                  run_time=1.0)
         perp_line = tex(r"\vec v_\pm\perp\vec r_\pm", 40).move_to([0, -1.8, 0])
         perp_line[0][0:2].set_color(CYAN)
+        self.until(36.5)                                          # "Como velocidade e raio são perpendiculares"
         self.play(Create(right_marks), FadeIn(perp_line), run_time=0.9)
-        self.wait(0.9)
+        self.until(39.9)                                          # "…o mesmo delta theta aparece…"
+        self.play(Create(b.arc), FadeIn(dth_label), run_time=0.8)
 
         # Δr = r₊ − r₋: da ponta de r₋ à ponta de r₊ (corda, sem aproximação de arco).
         dr_label = tex(r"\Delta\vec r", 34, BLUE).next_to(b.dr, LEFT, buff=0.08).shift(DOWN * 0.3)
         dr_line = tex(r"\Delta\vec r=\vec r_+-\vec r_-", 40).move_to([0, -2.7, 0])
         dr_line[0][0:3].set_color(BLUE)
-        self.play(GrowArrow(b.dr), run_time=1.0)
-        self.play(FadeIn(dr_label), Write(dr_line), run_time=0.9)
-        self.wait(1.0)
+        self.until(41.0)
+        self.play(GrowArrow(b.dr), run_time=0.9)
+        self.play(FadeIn(dr_label), Write(dr_line), run_time=0.8)
         self.check_safe_area()
 
         # ── C. Δv construído na origem comum ─────────────────────────────────
@@ -278,45 +323,49 @@ class AceleracaoCentripeta005(Scene):
         panel_c.set_stroke(WHITE, 1.5, 0.2)
         panel_c_title = text("VELOCIDADES · ORIGEM COMUM", 18, opacity=0.6)
         panel_c_title.move_to([0, -1.1, 0])
+        self.until(43.1)                                          # "Então, colocamos as duas velocidades…"
         self.play(FadeOut(t_line, perp_line, dr_line), *self.caption("Variação do vetor velocidade"),
-                  run_time=0.8)
-        self.play(Create(panel_c), FadeIn(panel_c_title), run_time=0.8)
+                  run_time=0.7)
+        self.play(Create(panel_c), FadeIn(panel_c_title), run_time=0.7)
 
         # Translação pura: só shift; módulo e orientação não mudam.
         moving_m, moving_p = b.v_m.copy(), b.v_p.copy()
-        self.play(moving_m.animate.shift(Q_C - b.P_m), run_time=1.6)
-        self.play(moving_p.animate.shift(Q_C - b.P_p), run_time=1.6)
+        self.play(moving_m.animate.shift(Q_C - b.P_m), run_time=1.4)  # "…com a mesma origem"
+        self.play(moving_p.animate.shift(Q_C - b.P_p), run_time=1.4)  # "…sem girar nenhuma delas"
         c_labels = side_labels(Q_C, DTH_START, r"\vec v_-", r"\vec v_+", 32)
         self.play(FadeIn(c_labels), run_time=0.5)
         dth_c_label = tex(r"\Delta\theta", 30).move_to(Q_C + 0.8 * UP)
-        self.play(Create(c.arc), FadeIn(dth_c_label), run_time=0.8)
+        self.play(Create(c.arc), FadeIn(dth_c_label), run_time=0.7)
         self.play(Indicate(VGroup(b.arc, dth_label), color=WHITE),
-                  Indicate(VGroup(c.arc, dth_c_label), color=WHITE), run_time=1.2)
-        self.wait(0.4)
+                  Indicate(VGroup(c.arc, dth_c_label), color=WHITE), run_time=1.0)
 
         tips = VGroup(Dot(c.tip_m, 0.07, color=MAGENTA), Dot(c.tip_p, 0.07, color=MAGENTA))
+        self.until(50.2)                                          # "A seta que vai da ponta de v menos…"
         self.play(FadeIn(tips, scale=1.6), run_time=0.6)
-        self.play(GrowArrow(c.dv), run_time=1.4)  # da ponta de v₋ até a ponta de v₊
+        self.until(51.0)
+        self.play(GrowArrow(c.dv), run_time=1.8)                  # "…até a ponta de v mais"
         dv_label = tex(r"\Delta\vec v=\vec v_+-\vec v_-", 40).next_to(c.dv, UP, buff=0.18)
         dv_label[0][0:3].set_color(MAGENTA)
         dv_label[0][4:7].set_color(CYAN)
         dv_label[0][8:].set_color(CYAN)
+        self.until(53.4)                                          # "…é delta v"
         self.play(Write(dv_label), FadeOut(tips), run_time=1.0)
-        self.wait(1.2)
 
         # Simetria: Δv tem a direção de P (instante central) para O.
         P_c = O_A + R_VIS * unit(THETA_C)
         radius_c = DashedLine(P_c, O_A, dash_length=0.1).set_stroke(WHITE, 2, 0.45)
         center_ring = Circle(radius=0.1, arc_center=P_c).set_stroke(WHITE, 2, 0.7)
         dv_radial = c.dv.copy()
+        self.until(57.8)                                          # "E, com instantes simétricos,"
         self.play(Create(radius_c), FadeIn(center_ring), FadeOut(dr_label),
                   dth_label.animate.set_opacity(0.15), run_time=0.8)
         head_dv = tex(r"\Delta\vec v", 44, MAGENTA)
         head_words = display("aponta para o centro")
         head_line = inline([(head_dv, baseline_glyph(head_dv)), (head_words, head_words[-1])], gap=0.2)
+        self.until(59.9)                                          # "…delta v aponta para o centro"
         self.play(dv_radial.animate.shift(P_c - c.tip_m),
                   *self.caption("Com instantes simétricos,", head_line), run_time=1.6)
-        self.wait(1.6)
+        self.until(62.5)
         self.check_safe_area()
 
         # ── D. Triângulos semelhantes: comparação, não o mesmo espaço ─────────
@@ -327,16 +376,18 @@ class AceleracaoCentripeta005(Scene):
                     v_m_label, v_p_label, r_m_label, r_p_label, right_marks, radius_c,
                     center_ring, dv_radial, panel_c, panel_c_title, c_labels, dv_label),
             dth_label.animate.set_opacity(1),
-            *self.caption("Triângulos semelhantes"), run_time=1.0)
+            *self.caption("Triângulos semelhantes"), run_time=1.0)  # "Agora vem a chave."
         self.play(tri_r.animate.shift(O_D - O_A), tri_v.animate.shift(Q_D - Q_C), run_time=1.4)
 
-        panels = VGroup(*(RoundedRectangle(width=4.1, height=3.8, corner_radius=0.2)
-                          .set_stroke(WHITE, 1.5, 0.2).move_to([x, 2.0, 0]) for x in (-2.2, 2.2)))
-        panel_titles = VGroup(text("POSIÇÃO", 18, opacity=0.6).move_to([-2.2, 3.55, 0]),
-                              text("VELOCIDADE", 18, opacity=0.6).move_to([2.2, 3.55, 0]))
+        panels = VGroup(*(RoundedRectangle(width=3.3, height=3.8, corner_radius=0.2)
+                          .set_stroke(WHITE, 1.5, 0.2).move_to([x, 2.0, 0]) for x in (-1.75, 1.75)))
+        panel_titles = VGroup(text("POSIÇÃO", 18, opacity=0.6).move_to([-1.75, 3.55, 0]),
+                              text("VELOCIDADE", 18, opacity=0.6).move_to([1.75, 3.55, 0]))
         same_shape = text("MESMA FORMA · ESCALAS DIFERENTES", 20, opacity=0.75)
         same_shape.move_to([0, 4.4, 0])
-        self.play(Create(panels), FadeIn(panel_titles, same_shape), run_time=1.0)
+        self.play(Create(panels), FadeIn(panel_titles, same_shape), run_time=1.0)  # "…a mesma forma"
+        self.until(67.0)                                          # "…só mudam de escala"
+        self.play(Indicate(same_shape, color=WHITE, scale_factor=1.08), run_time=1.0)
 
         d_r = Construction(O_D, DTH_START)
         d_v = VelocityTriangle(Q_D, DTH_START)
@@ -346,51 +397,53 @@ class AceleracaoCentripeta005(Scene):
         v_labels = side_labels(Q_D, DTH_START, "v", "v", 36)
         dv_mag = tex(r"|\Delta\vec v|", 36, MAGENTA).next_to(d_v.dv, UP, buff=0.14)
 
-        # 1) mesmo Δθ; 2) R ↔ v; 3) |Δr| ↔ |Δv|; 4) a razão, termo a termo.
-        self.play(Indicate(VGroup(tri_r[3], tri_r[4]), color=WHITE),
-                  Indicate(VGroup(tri_v[3], tri_v[4]), color=WHITE), run_time=1.2)
+        # R ↔ v; |Δr| ↔ |Δv|; mesmo Δθ; a razão, termo a termo — na ordem da fala.
         pair_1 = tex(r"R\ \leftrightarrow\ v", 44).move_to([0, -0.45, 0])
         pair_1[0][-1].set_color(CYAN)
         pair_2 = tex(r"|\Delta\vec r|\ \leftrightarrow\ |\Delta\vec v|", 44).move_to([0, -1.35, 0])
         pair_2[0][0:5].set_color(BLUE)
         pair_2[0][6:].set_color(MAGENTA)
-        self.play(FadeIn(R_labels, v_labels), run_time=0.6)
+        self.until(68.8)                                          # "R corresponde a v,"
+        self.play(FadeIn(R_labels, v_labels), run_time=0.5)
         self.play(FadeIn(pair_1), Indicate(VGroup(tri_r[0], tri_r[1], R_labels), color=WHITE),
-                  Indicate(VGroup(tri_v[0], tri_v[1], v_labels), color=CYAN), run_time=1.3)
-        self.play(FadeIn(dr_mag, dv_mag), run_time=0.6)
+                  Indicate(VGroup(tri_v[0], tri_v[1], v_labels), color=CYAN), run_time=1.2)
+        self.until(70.6)                                          # "…e delta r a delta v"
+        self.play(FadeIn(dr_mag, dv_mag), run_time=0.5)
         self.play(FadeIn(pair_2), Indicate(VGroup(tri_r[2], dr_mag), color=BLUE),
-                  Indicate(VGroup(tri_v[2], dv_mag), color=MAGENTA), run_time=1.3)
-        self.wait(0.5)
+                  Indicate(VGroup(tri_v[2], dv_mag), color=MAGENTA), run_time=1.2)
+        self.until(73.2)                                          # "Como delta theta é o mesmo,"
+        self.play(Indicate(VGroup(tri_r[3], tri_r[4]), color=WHITE),
+                  Indicate(VGroup(tri_v[3], tri_v[4]), color=WHITE), run_time=1.2)
 
         ratio = MathTex(r"\frac{|\Delta\vec v|}{v}", "=", r"\frac{|\Delta\vec r|}{R}",
                         font_size=62, color=WHITE).move_to([0, -2.95, 0])
         color_slices(ratio, (0, NUM, MAGENTA), (0, slice(6, 7), CYAN), (2, NUM, BLUE))
-        self.play(TransformFromCopy(dv_mag, ratio[0][NUM]), run_time=1.0)
-        self.play(FadeIn(ratio[0][5]), TransformFromCopy(v_labels[0], ratio[0][6]), run_time=0.9)
-        self.play(FadeIn(ratio[1]), TransformFromCopy(dr_mag, ratio[2][NUM]), run_time=1.0)
-        self.play(FadeIn(ratio[2][5]), TransformFromCopy(R_labels[0], ratio[2][6]), run_time=0.9)
+        self.until(75.3)                                          # "…a semelhança nos dá essa proporção"
+        self.play(TransformFromCopy(dv_mag, ratio[0][NUM]), run_time=0.55)
+        self.play(FadeIn(ratio[0][5]), TransformFromCopy(v_labels[0], ratio[0][6]), run_time=0.55)
+        self.play(FadeIn(ratio[1]), TransformFromCopy(dr_mag, ratio[2][NUM]), run_time=0.55)
+        self.play(FadeIn(ratio[2][5]), TransformFromCopy(R_labels[0], ratio[2][6]), run_time=0.55)
         self.remove(*ratio.get_family())
         self.add(ratio)
-        self.wait(1.2)
 
         # Sem tela separada: a razão vira taxa ali mesmo, com os triângulos à vista.
         step_2 = MathTex(r"\frac{|\Delta\vec v|}{\Delta t}", "=", r"\frac{v}{R}",
                          r"\frac{|\Delta\vec r|}{\Delta t}", font_size=56, color=WHITE).move_to(ratio)
         color_slices(step_2, (0, NUM, MAGENTA), (2, slice(0, 1), CYAN), (3, NUM, BLUE))
-        self.play(FadeOut(pair_1, pair_2), TransformMatchingShapes(ratio, step_2), run_time=1.6)
-        self.wait(1.2)
+        self.until(77.7)
+        self.play(FadeOut(pair_1, pair_2), TransformMatchingShapes(ratio, step_2), run_time=1.4)
         self.check_safe_area()
 
         # ── E. Limite Δt → 0: primeiro a posição, depois a velocidade ─────────
         dth_r, dth_v = ValueTracker(DTH_START), ValueTracker(DTH_START)
         pos_opacity = ValueTracker(1.0)
-        e_circle = Circle(radius=R_VIS, arc_center=O_E).set_stroke(BLUE, 3, 0.55)
+        e_circle = Circle(radius=R_E, arc_center=O_E).set_stroke(BLUE, 3, 0.55)
         e_center = Dot(O_E, 0.06, color=WHITE)
-        P_e = O_E + R_VIS * unit(THETA_C)
+        P_e = O_E + R_E * unit(THETA_C)
         e_ring = Circle(radius=0.1, arc_center=P_e).set_stroke(WHITE, 2, 0.7)
 
         def e_geometry():
-            g = Construction(O_E, dth_r.get_value())
+            g = Construction(O_E, dth_r.get_value(), radius=R_E)
             fade = np.clip((dth_r.get_value() - 24 * PI / 180) / (8 * PI / 180), 0, 1)
             labels = VGroup(tex("P_-", 32).next_to(g.P_m, DOWN + RIGHT, buff=0.06),
                             tex("P_+", 32).next_to(g.P_p, RIGHT, buff=0.12).shift(UP * 0.1))
@@ -405,9 +458,9 @@ class AceleracaoCentripeta005(Scene):
 
         e_geo = always_redraw(e_geometry)
         e_dr_label = always_redraw(lambda: tex(r"|\Delta\vec r|", 30, BLUE).set_opacity(
-            pos_opacity.get_value()).move_to(P_e + 0.55 * RIGHT + 0.3 * DOWN))
+            pos_opacity.get_value()).move_to(P_e + 0.42 * RIGHT + 0.42 * DOWN))
         e_tri = always_redraw(e_triangle)
-        e_panel = RoundedRectangle(width=1.95, height=3.0, corner_radius=0.18).move_to([Q_E[0], 1.1, 0])
+        e_panel = RoundedRectangle(width=1.8, height=3.0, corner_radius=0.18).move_to([Q_E[0], 1.1, 0])
         e_panel.set_stroke(WHITE, 1.5, 0.2)
         e_panel_title = text("VELOCIDADE", 16, opacity=0.6).move_to([Q_E[0], 2.36, 0])
         dt_label = tex(r"\Delta t\to 0", 40).move_to([O_E[0], -1.35, 0])
@@ -415,29 +468,33 @@ class AceleracaoCentripeta005(Scene):
         self.play(FadeOut(tri_r, tri_v, panels, panel_titles, same_shape, R_labels, dr_mag,
                           v_labels, dv_mag),
                   step_2.animate.scale(50 / 56).move_to([0, 4.85, 0]),
-                  *self.caption("Instantes cada vez", "mais próximos"), run_time=1.2)
-        self.play(Create(e_circle), FadeIn(e_center, e_ring, e_geo, e_dr_label), run_time=1.0)
+                  *self.caption("Instantes cada vez", "mais próximos"),
+                  run_time=1.0)                                   # "Então fazemos os instantes se aproximarem"
+        self.play(Create(e_circle), FadeIn(e_center, e_ring, e_geo, e_dr_label), run_time=0.8)
 
         # Posição: P₋ e P₊ se aproximam; Δr fica alinhado com o vetor velocidade em P.
-        self.play(FadeIn(dt_label), dth_r.animate.set_value(DTH_MIN), run_time=3.5)
+        self.until(81.3)                                          # "…delta t tende a zero"
+        self.play(FadeIn(dt_label), dth_r.animate.set_value(DTH_MIN), run_time=2.4)
         v_c = vec(P_e, P_e + L_V * tangent(THETA_C), CYAN)
         v_c_label = tex(r"\vec v", 36, CYAN).next_to(v_c.get_end(), RIGHT, buff=0.12)
         lim_1 = MathTex(r"\frac{|\Delta\vec r|}{\Delta t}", r"\to", r"|\vec v|", "=", "v",
                         font_size=44, color=WHITE).move_to([O_E[0], -2.4, 0])
         color_slices(lim_1, (0, NUM, BLUE), (2, None, CYAN), (4, None, CYAN))
-        self.play(GrowArrow(v_c), FadeIn(v_c_label), run_time=0.8)
-        self.play(Write(lim_1), Indicate(step_2[3], color=BLUE), run_time=1.2)
-        self.wait(1.4)
+        self.until(84.0)                                          # "Primeiro,"
+        self.play(GrowArrow(v_c), FadeIn(v_c_label), run_time=0.6)
+        self.play(Write(lim_1), Indicate(step_2[3], color=BLUE),
+                  run_time=1.4)                                   # "…delta r sobre delta t tende ao módulo…"
 
         # Velocidade: v₋ e v₊ na origem comum; Δv encolhe junto, sempre para o centro.
         lim_2 = MathTex(r"\frac{|\Delta\vec v|}{\Delta t}", r"\to", "a_c", font_size=44,
                         color=WHITE).move_to([Q_E[0], -2.4, 0])
         color_slices(lim_2, (0, NUM, MAGENTA), (2, None, VIOLET))
+        self.until(89.4)                                          # "Depois, delta v sobre delta t…"
         self.play(pos_opacity.animate.set_value(0.35), Create(e_panel), FadeIn(e_panel_title, e_tri),
-                  run_time=0.9)
-        self.play(dth_v.animate.set_value(DTH_MIN), run_time=2.8)
-        self.play(Write(lim_2), Indicate(step_2[0], color=MAGENTA), run_time=1.2)
-        self.wait(0.8)
+                  run_time=0.8)
+        self.play(dth_v.animate.set_value(DTH_MIN), run_time=1.8)
+        self.play(Write(lim_2), Indicate(step_2[0], color=MAGENTA),
+                  run_time=1.2)                                   # "…tende à aceleração centrípeta"
         self.check_safe_area()
 
         # Ponte: duas taxas, duas perguntas.
@@ -447,37 +504,40 @@ class AceleracaoCentripeta005(Scene):
                         text("→ aceleração", 22, color=VIOLET)).arrange(DOWN, buff=0.1)
         note_1.move_to([O_E[0], -3.45, 0])
         note_2.move_to([Q_E[0], -3.45, 0])
+        self.until(95.7)                                          # "Ou seja: posição mudando por tempo…"
         self.play(FadeIn(note_1, shift=UP * 0.1), run_time=0.7)
+        self.until(98.9)                                          # "…velocidade mudando por tempo…"
         self.play(FadeIn(note_2, shift=UP * 0.1), run_time=0.7)
-        self.wait(1.4)
         self.check_safe_area()
 
         eq_lim = MathTex("a_c", "=", r"\frac{v}{R}", "v", font_size=50, color=WHITE).move_to(step_2)
         color_slices(eq_lim, (0, None, VIOLET), (2, slice(0, 1), CYAN), (3, None, CYAN))
+        self.until(102.7)                                         # "Substituindo na relação anterior,"
         self.play(FadeOut(step_2[0]), TransformFromCopy(lim_2[2], eq_lim[0]),
                   ReplacementTransform(step_2[1], eq_lim[1]), ReplacementTransform(step_2[2], eq_lim[2]),
                   FadeOut(step_2[3]), TransformFromCopy(lim_1[4], eq_lim[3]), run_time=1.6)
-        self.wait(0.5)
         eq_final = MathTex("a_c", "=", r"\frac{v}{R}", "v", "=", r"\frac{v^2}{R}",
                            font_size=50, color=WHITE).move_to(eq_lim)
         color_slices(eq_final, (0, None, VIOLET), (2, slice(0, 1), CYAN), (3, None, CYAN),
                      (5, slice(0, 2), CYAN))
         box = SurroundingRectangle(eq_final[5], buff=0.14, corner_radius=0.08).set_stroke(VIOLET, 3)
-        self.play(*(ReplacementTransform(eq_lim[i], eq_final[i]) for i in range(4)), run_time=0.9)
-        self.play(Write(eq_final[4:]), run_time=1.0)
+        self.until(105.2)                                         # "…chegamos a a c igual a…"
+        self.play(*(ReplacementTransform(eq_lim[i], eq_final[i]) for i in range(4)), run_time=0.8)
+        self.play(Write(eq_final[4:]), run_time=1.2)              # "…v ao quadrado sobre R"
+        self.until(108.0)
         self.play(Create(box), run_time=0.8)
-        self.wait(1.2)
         self.check_safe_area()
 
         # ── F. De volta ao círculo: v tangente, a_c para o centro ─────────────
         final = MathTex("a_c", "=", r"\frac{v^2}{R}", font_size=64, color=WHITE).move_to([0, -2.75, 0])
         color_slices(final, (0, None, VIOLET), (2, slice(0, 2), CYAN))
         final_box = SurroundingRectangle(final, buff=0.24, corner_radius=0.1).set_stroke(VIOLET, 3)
+        self.until(109.3)                                         # "Essa é a aceleração centrípeta:"
         self.play(FadeOut(e_circle, e_center, e_ring, e_geo, e_dr_label, e_panel, e_panel_title, e_tri,
                           dt_label, v_c, v_c_label, lim_1, lim_2, note_1, note_2, eq_final[1:5]),
                   ReplacementTransform(eq_final[0], final[0]), ReplacementTransform(eq_final[5], final[2]),
                   FadeIn(final[1]), ReplacementTransform(box, final_box),
-                  *self.caption("Aceleração centrípeta"), run_time=1.4)
+                  *self.caption("Aceleração centrípeta"), run_time=1.2)
 
         phi = ValueTracker(20 * PI / 180)
 
@@ -502,12 +562,25 @@ class AceleracaoCentripeta005(Scene):
         perp = tex(r"\vec v\perp\vec a_c", 46).move_to([0, -0.95, 0])
         perp[0][0:2].set_color(CYAN)
         perp[0][3:].set_color(VIOLET)
-        self.play(Create(f_circle), FadeIn(f_center, f_o_label, f_vecs), run_time=1.2)
-        self.play(FadeIn(perp), run_time=0.8)
-        self.play(phi.animate.set_value(20 * PI / 180 + 2 * PI), run_time=6.0, rate_func=linear)
-        self.play(Indicate(perp), Indicate(final[0], color=VIOLET), run_time=1.2)
-        # Volta à pergunta inicial.
-        self.play(phi.animate(rate_func=linear).set_value(20 * PI / 180 + 2 * PI + 70 * PI / 180),
-                  *self.caption("O módulo não muda;", "o vetor muda."), run_time=1.2 * 70 / 60)
+        self.play(Create(f_circle), FadeIn(f_center, f_o_label, f_vecs), run_time=1.0)
+
+        # Órbita uniforme até o CTA; termina no topo, com v para a esquerda e a_c para baixo.
+        spin_t0, spin_end = self.time, 124.0
+        spin_w = (810 - 20) / (spin_end - spin_t0)  # graus/s
+
+        def spin_until(t_end, *extra):
+            self.play(phi.animate.set_value((20 + spin_w * (t_end - spin_t0)) * PI / 180), *extra,
+                      run_time=t_end - self.time, rate_func=linear)
+
+        spin_until(114.2)                                         # "…ela aponta para o centro"
+        spin_until(115.0, FadeIn(perp))                           # "…e é perpendicular à velocidade tangencial"
+        spin_until(119.8)
+        spin_until(120.8, *self.caption("O módulo não muda;", "o vetor muda."))  # "…o módulo da velocidade não muda"
+        spin_until(spin_end)                                      # "…mas o vetor muda."
+
+        # CTA: o @ entra no lugar da fórmula, na hora do "siga o Parallax Lab".
+        handle = text("@labparallax", 30, color=CYAN).move_to(final_box)
+        self.until(124.8)                                         # "Se curtiu, siga o Parallax Lab."
+        self.play(FadeOut(final, final_box), FadeIn(handle, shift=UP * 0.1), run_time=0.7)
         self.check_safe_area()
-        self.wait(2.2)
+        self.until(128.0)                                         # fala termina em 127,1 s

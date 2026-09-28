@@ -1,6 +1,6 @@
 # Estado atual — Parallax Lab
 
-**Atualizado em:** 2026-09-27
+**Atualizado em:** 2026-09-27 (fechamento do `vid_0005`)
 
 **Marca:** Parallax Lab · **Instagram aprovado:** @labparallax
 
@@ -157,13 +157,20 @@ manualmente pelo usuário em 2026-09-26** (Instagram, YouTube Shorts, TikTok,
 Facebook); URLs ainda não registradas no repositório. Backup externo dos MP4s
 não confirmado.
 
-**vid_0005 — em produção (2026-09-27):** `POR TRÁS DA FÓRMULA · EP. 02`,
+**vid_0005 — concluído (2026-09-27):** `POR TRÁS DA FÓRMULA · EP. 02`,
 origem geométrica da aceleração centrípeta (a_c = v²/R), em
 `videos/vid_0005_aceleracao_centripeta/`, classe `AceleracaoCentripeta005`.
-Primeiro preview visual silencioso 540×960/15 fps gerado; voz, SRT, master,
-versão legendada, capa e publicação não iniciados.
+Finais locais em **1080×1920, 30 fps, 3.840 frames, 128,0 s** (áudio AAC
+estéreo de 127,2 s): `renders/vid_0005_aceleracao_centripeta_final_master_limpo.mp4`
+e `renders/vid_0005_aceleracao_centripeta_final_legendado.mp4`. Narração
+ElevenLabs `audio/narracao_final.wav`, intacta; SRT `legenda.srt` com 41 cues
+coloridos; capa `capa_instagram5.png` (regenerável por `gerar_capa.py`). QA em
+`revisao.md` da unidade. **Publicado manualmente pelo usuário em 2026-09-27**;
+URLs ainda não registradas.
 
-**Próxima ação:** revisar o preview silencioso do `vid_0005`. **Pendências editoriais:** “como escolher u” continua aprovada como pauta, mas sem posição; e a contagem vigente passa a 5 exercícios + 2 teorias curtas + 3 aplicações. Vídeos 6–10 não foram reordenados; resolver exige decisão posterior.
+**Próxima ação:** Produção definir enunciado, resolver e verificar o
+`vid_0006` — limite simples com interpretação visual (questão → solução →
+verificação → roteiro → Manim). **Pendências editoriais:** “como escolher u” continua aprovada como pauta, mas sem posição; e a contagem vigente passa a 5 exercícios + 2 teorias curtas + 3 aplicações. Vídeos 6–10 não foram reordenados; resolver exige decisão posterior.
 **Inconsistência editorial pendente:** “derivada pela
 regra da cadeia”, antes no vídeo 4, não tem nova posição aprovada. Não foi
 realocada nem excluída definitivamente. Distribuição e vídeos 1, 2 e 5–10

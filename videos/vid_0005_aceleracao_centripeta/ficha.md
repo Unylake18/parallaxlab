@@ -7,9 +7,16 @@
   para o centro.
 - Cena: `cena.py`, classe `AceleracaoCentripeta005`.
 - Formato: área lógica 9×16; preview 540×960/15 fps; final 1080×1920/30 fps.
-- Estado: **preview visual silencioso, 2ª rodada** (≈101,6 s). Sem voz, SRT,
-  master, versão legendada, capa ou publicação.
-- Roteiro visual: `roteiro.md`.
+- Narração: `audio/narracao_final.wav` (ElevenLabs, 127,23 s, estéreo 44,1 kHz,
+  intacta); a cena a toca por `add_sound` e segue seus tempos com `until(...)`.
+- Legenda: `legenda.srt` (41 cues), cores de `SUBTITLE_TERM_COLORS` da cena.
+- Capa: `capa_instagram5.png`, gerada por `gerar_capa.py` (variante "diagrama").
+- Finais: `renders/vid_0005_aceleracao_centripeta_final_master_limpo.mp4` e
+  `renders/vid_0005_aceleracao_centripeta_final_legendado.mp4` — 1080×1920,
+  30 fps, 128,0 s.
+- QA: concluído, ver `revisao.md`. Roteiro e narração com tempos: `roteiro.md`.
+- Publicação: **publicado manualmente pelo usuário em 2026-09-27**; URLs não
+  registradas (`publicacao.md`).
 
 ## Derivação aprovada
 

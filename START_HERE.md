@@ -142,7 +142,7 @@ Mini-temporada inicial: **Cálculo + aplicações físicas**.
 2. Exercício — integral por substituição simples.
 3. Teoria curta — de onde vem a fórmula da integração por partes?
 4. Aplicação — derivada como velocidade instantânea (`DA EQUAÇÃO AO FENÔMENO · EP. 01`).
-5. *A reconciliar:* a pauta original (Aplicação — derivada como velocidade instantânea) foi usada no vídeo 4.
+5. Origem geométrica da aceleração centrípeta (`POR TRÁS DA FÓRMULA · EP. 02`), decisão de 2026-09-27.
 6. Exercício — limite simples com interpretação visual.
 7. Exercício — outra integração por partes, com estrutura diferente.
 8. Teoria curta — o que uma integral realmente acumula.
@@ -160,11 +160,15 @@ para realocá-la. Vídeos 1, 2 e 5–10 e distribuição permanecem preservados.
 Atualização editorial de 2026-09-26: o vídeo 4 passou a ser Aplicação
 (velocidade instantânea). **Pendências editoriais:** “como escolher u” continua aprovada como pauta, mas sem posição; a pauta 5 (“derivada como velocidade instantânea”) passa a coincidir com o tema do vídeo 4; e a contagem vigente passa a 5 exercícios + 2 teorias curtas + 3 aplicações. Vídeos 5–10 não foram reordenados; resolver exige decisão posterior.
 
+Atualização editorial de 2026-09-27: a pauta 5 passou a ser a origem geométrica
+da aceleração centrípeta (`vid_0005`); vídeos 6–10 não foram reordenados.
+
 Depois do vídeo 10: compare formatos, retenção e tempo de produção. Automatize apenas o gargalo que os dados mostrarem.
 
 ## Próxima ação
 
 1. Confirmar QA físico em celular e backup externo dos finais dos vídeos 1 e 2.
-2. `vid_0004` concluído e publicado manualmente em 2026-09-26 (URLs ainda
-   não registradas). Reconciliar a próxima pauta do ciclo (pendências acima)
-   antes de produzir o vídeo seguinte.
+2. `vid_0004` e `vid_0005` concluídos e publicados manualmente (2026-09-26 e
+   2026-09-27; URLs ainda não registradas).
+3. Produção: definir enunciado, resolver e verificar o `vid_0006` — limite
+   simples com interpretação visual — antes de roteiro e Manim.
