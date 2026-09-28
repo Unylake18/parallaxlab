@@ -1,6 +1,6 @@
 # Estado atual — Parallax Lab
 
-**Atualizado em:** 2026-09-28 (fechamento do `vid_0006`)
+**Atualizado em:** 2026-09-28 (fechamento do `vid_0007`)
 
 **Marca:** Parallax Lab · **Instagram aprovado:** @labparallax
 
@@ -179,18 +179,30 @@ capa `capa_instagram.png` (regenerável por `gerar_capa.py`). QA em
 `revisao.md` da unidade. **Publicado manualmente pelo usuário em 2026-09-28**;
 URLs ainda não registradas.
 
-**Próxima ação:** Produção definir, resolver e verificar o `vid_0007` — pela
-lista vigente, exercício de outra integração por partes, com estrutura
-diferente (questão → solução → verificação → roteiro → Manim). **Pendências
-editoriais:** a pauta 6 original (“limite simples com interpretação visual”)
-ficou sem posição depois que o `vid_0006` passou a ser a aplicação de
-interferência/ANC (decisão de 2026-09-28); “como escolher u” continua aprovada
-como pauta, mas sem posição; a contagem por família precisa ser reconciliada
-pela Produção. Vídeos 7–10 não foram reordenados.
+**vid_0007 — concluído (2026-09-28):** `EXERCÍCIO RESOLVIDO · EP. 03`, campo
+elétrico no eixo de um anel carregado e posição do máximo (z = R/√2 ≈ 0,71R), em
+`videos/vid_0007_campo_anel_carregado/`, classe `CampoAnel007`. Finais locais em
+**1080×1920, 30 fps, 4.449 frames, 148,3 s** (áudio AAC estéreo de 148,0 s):
+`renders/vid_0007_campo_anel_carregado_final_master_limpo.mp4` e
+`renders/vid_0007_campo_anel_carregado_final_legendado.mp4`. Narração ElevenLabs
+`audio/narracao_final.wav`, intacta; SRT `legenda.srt` com 54 cues coloridos;
+capa `capa_instagram.png` (“ONDE O CAMPO ELÉTRICO É MAIS FORTE?”, regenerável por
+`gerar_capa.py`). QA em `revisao.md` da unidade. **Publicação manual pendente.**
+
+**Próxima ação:** Produção definir, resolver e verificar o `vid_0008` — pela
+lista vigente, teoria curta: o que uma integral realmente acumula (questão →
+solução → verificação → roteiro → Manim). **Pendências editoriais:** a pauta 6
+original (“limite simples com interpretação visual”) ficou sem posição depois
+que o `vid_0006` passou a ser a aplicação de interferência/ANC, e a pauta 7
+original (“outra integração por partes, com estrutura diferente”) ficou sem
+posição depois que o `vid_0007` passou a ser o campo do anel (decisões de
+2026-09-28); “como escolher u” continua aprovada como pauta, mas sem posição; a
+contagem por família precisa ser reconciliada pela Produção. Vídeos 8–10 não
+foram reordenados.
 **Inconsistência editorial pendente:** “derivada pela
 regra da cadeia”, antes no vídeo 4, não tem nova posição aprovada. Não foi
 realocada nem excluída definitivamente. Distribuição e vídeos 1, 2 e 5–10
 preservados. Antes de publicar os vídeos 1 e 2, fazer QA físico em celular
 e confirmar backup externo dos MP4s. Publicação dos vídeos 1–3 não comprovada no repositório.
 
-**Pendências seguintes:** definir regras tipográficas por contexto (tamanhos, pesos, espaçamentos) no primeiro vídeo com a tipografia oficial; confirmar backup dos MP4s e QA físico em celular dos vídeos 1–3; registrar as URLs do `vid_0004`, `vid_0005` e `vid_0006`; conferir regras atuais da plataforma antes de novas publicações. Publicações registradas (manuais): `vid_0004` (2026-09-26), `vid_0005` (2026-09-27) e `vid_0006` (2026-09-28).
+**Pendências seguintes:** definir regras tipográficas por contexto (tamanhos, pesos, espaçamentos) no primeiro vídeo com a tipografia oficial; confirmar backup dos MP4s e QA físico em celular dos vídeos 1–3; registrar as URLs do `vid_0004`, `vid_0005` e `vid_0006` e a publicação do `vid_0007`; conferir regras atuais da plataforma antes de novas publicações. Publicações registradas (manuais): `vid_0004` (2026-09-26), `vid_0005` (2026-09-27) e `vid_0006` (2026-09-28).

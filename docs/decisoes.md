@@ -12,6 +12,17 @@ Agentes de código devem operar com o menor contexto suficiente para a tarefa. D
 
 Render, QA, documentação e ações de Git devem ser proporcionais à etapa e ao que realmente mudou. A fonte operacional detalhada desse comportamento é `AGENTS.md`.
 
+## 2026-09-28 — Pauta do vid_0007
+
+- `vid_0007` = **Exercício**, série pública **EXERCÍCIO RESOLVIDO · EP. 03**: campo
+  elétrico no eixo de um anel uniformemente carregado e posição onde seu módulo é máximo.
+- Método aprovado: Lei de Coulomb + simetria + integração (sem Lei de Gauss); passo
+  central par oposto → laterais se cancelam → axiais se somam;
+  E(z) = kQz/(R² + z²)^{3/2}, máximo em z = R/√2 ≈ 0,71R.
+- Headline da capa: “ONDE O CAMPO ELÉTRICO É MAIS FORTE?”.
+- “Outra integração por partes, com estrutura diferente” (antiga pauta 7) fica sem
+  posição aprovada; vídeos 8–10 não foram reordenados.
+
 ## 2026-09-28 — Pauta do vid_0006
 
 - `vid_0006` = **Aplicação**, série pública **DA EQUAÇÃO AO FENÔMENO · EP. 02**:

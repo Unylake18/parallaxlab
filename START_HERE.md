@@ -144,7 +144,7 @@ Mini-temporada inicial: **Cálculo + aplicações físicas**.
 4. Aplicação — derivada como velocidade instantânea (`DA EQUAÇÃO AO FENÔMENO · EP. 01`).
 5. Origem geométrica da aceleração centrípeta (`POR TRÁS DA FÓRMULA · EP. 02`), decisão de 2026-09-27.
 6. Aplicação — interferência e cancelamento ativo de ruído (`DA EQUAÇÃO AO FENÔMENO · EP. 02`), decisão de 2026-09-28.
-7. Exercício — outra integração por partes, com estrutura diferente.
+7. Exercício — campo elétrico no eixo de um anel carregado e posição do máximo (`EXERCÍCIO RESOLVIDO · EP. 03`), decisão de 2026-09-28.
 8. Teoria curta — o que uma integral realmente acumula.
 9. Aplicação — de \(v(t)\) ao deslocamento usando integral.
 10. Exercício — derivada ou integral aplicada a um problema curto de movimento.
@@ -168,12 +168,18 @@ interferência ao cancelamento ativo de ruído (`vid_0006`). “Limite simples c
 interpretação visual” ficou **sem posição decidida**; vídeos 7–10 não foram
 reordenados e a contagem por família precisa ser reconciliada.
 
+Atualização editorial de 2026-09-28 (`vid_0007`): a pauta 7 passou a ser o
+exercício do campo elétrico no eixo de um anel carregado e do seu máximo.
+“Outra integração por partes, com estrutura diferente” ficou **sem posição
+decidida**; vídeos 8–10 não foram reordenados.
+
 Depois do vídeo 10: compare formatos, retenção e tempo de produção. Automatize apenas o gargalo que os dados mostrarem.
 
 ## Próxima ação
 
 1. Confirmar QA físico em celular e backup externo dos finais dos vídeos 1 e 2.
 2. `vid_0004`, `vid_0005` e `vid_0006` concluídos e publicados manualmente
-   (2026-09-26, 2026-09-27 e 2026-09-28; URLs ainda não registradas).
-3. Produção: definir enunciado, resolver e verificar o `vid_0007` — outra
-   integração por partes, com estrutura diferente — antes de roteiro e Manim.
+   (2026-09-26, 2026-09-27 e 2026-09-28; URLs ainda não registradas); `vid_0007`
+   concluído em 2026-09-28, publicação manual pendente.
+3. Produção: definir, resolver e verificar o `vid_0008` — teoria curta: o que uma
+   integral realmente acumula — antes de roteiro e Manim.

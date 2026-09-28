@@ -1,0 +1,257 @@
+1
+00:00:00,040 --> 00:00:03,310
+Onde o campo elétrico de um
+anel carregado é mais forte?
+
+2
+00:00:03,500 --> 00:00:07,170
+Se você pensou “no centro”,
+errou: lá ele é zero.
+
+3
+00:00:07,200 --> 00:00:09,980
+Ele cresce,
+chega a um pico e depois cai.
+
+4
+00:00:10,030 --> 00:00:11,800
+Mas onde fica esse pico?
+
+5
+00:00:11,940 --> 00:00:13,970
+Temos um anel fino, de raio R,
+
+6
+00:00:14,000 --> 00:00:17,110
+com carga total positiva
+Q distribuída por igual.
+
+7
+00:00:17,160 --> 00:00:20,040
+O ponto P está
+a uma distância z do centro.
+
+8
+00:00:20,100 --> 00:00:22,720
+Pega um pedacinho do anel,
+um elemento de carga.
+
+9
+00:00:22,750 --> 00:00:23,870
+A distância dele até P
+
+10
+00:00:23,900 --> 00:00:26,310
+é a hipotenusa
+de um triângulo retângulo:
+
+11
+00:00:26,340 --> 00:00:28,900
+um cateto é o raio,
+o outro é a altura.
+
+12
+00:00:28,940 --> 00:00:33,120
+Então essa distância
+ao quadrado é R² mais z².
+
+13
+00:00:33,370 --> 00:00:36,690
+E todo pedacinho do anel está
+a essa mesma distância de P.
+
+14
+00:00:36,760 --> 00:00:38,090
+Agora vem a simetria.
+
+15
+00:00:38,120 --> 00:00:41,040
+Pra cada pedacinho,
+existe outro do lado oposto.
+
+16
+00:00:41,070 --> 00:00:44,490
+Os campos dos dois têm partes
+laterais iguais e opostas,
+
+17
+00:00:44,520 --> 00:00:45,920
+então elas se cancelam.
+
+18
+00:00:45,950 --> 00:00:47,770
+Já as partes ao longo do eixo
+
+19
+00:00:47,800 --> 00:00:50,040
+apontam pro mesmo
+lado e se somam.
+
+20
+00:00:50,070 --> 00:00:52,490
+No anel inteiro,
+só sobra o campo no eixo.
+
+21
+00:00:52,520 --> 00:00:54,950
+Então vamos calcular
+essa parte pra um pedacinho.
+
+22
+00:00:54,980 --> 00:00:57,400
+Pela lei de Coulomb,
+o campo que ele cria
+
+23
+00:00:57,430 --> 00:01:00,960
+é k vezes a carga dele, dividido
+pela distância ao quadrado.
+
+24
+00:01:00,990 --> 00:01:02,620
+Mas só interessa
+a parte no eixo,
+
+25
+00:01:02,650 --> 00:01:05,160
+e aí entra o cosseno
+do ângulo com o eixo.
+
+26
+00:01:05,190 --> 00:01:08,860
+No triângulo, cosseno é cateto
+adjacente sobre hipotenusa:
+
+27
+00:01:08,890 --> 00:01:11,260
+a altura z dividida
+pela distância.
+
+28
+00:01:11,300 --> 00:01:12,500
+Juntando as duas coisas,
+
+29
+00:01:12,530 --> 00:01:14,690
+aparece mais uma distância
+embaixo:
+
+30
+00:01:14,730 --> 00:01:17,220
+ao quadrado vezes mais uma,
+dá ao cubo.
+
+31
+00:01:17,250 --> 00:01:21,100
+E, como a distância
+é a raiz de R² mais z²,
+
+32
+00:01:21,130 --> 00:01:25,980
+elevar ao cubo dá R² mais z²,
+elevado a três meios.
+
+33
+00:01:26,040 --> 00:01:27,980
+Agora é só somar
+o anel inteiro.
+
+34
+00:01:28,010 --> 00:01:32,720
+Temos que o raio e a altura são
+os mesmos pra todo pedacinho,
+
+35
+00:01:32,750 --> 00:01:34,660
+então saem da soma.
+Sobra somar as cargas,
+
+36
+00:01:34,690 --> 00:01:35,910
+e isso dá a carga total Q.
+
+37
+00:01:35,940 --> 00:01:37,850
+Pronto:
+esse é o campo no eixo.
+
+38
+00:01:37,880 --> 00:01:41,960
+Dois testes rápidos: no centro,
+z igual a zero dá campo zero.
+
+39
+00:01:41,990 --> 00:01:46,490
+E, visto de muito longe,
+a expressão vira kQ sobre z²:
+
+40
+00:01:46,520 --> 00:01:48,510
+o anel parece
+uma carga pontual.
+
+41
+00:01:48,570 --> 00:01:51,500
+Agora acompanha o mesmo
+ponto no eixo e no gráfico:
+
+42
+00:01:51,530 --> 00:01:55,330
+o campo sai de zero, cresce,
+passa pelo pico e cai.
+
+43
+00:01:55,380 --> 00:01:58,470
+Pra achar esse pico, derivamos
+o campo em relação à altura.
+
+44
+00:01:58,500 --> 00:02:00,370
+O denominador
+é sempre positivo,
+
+45
+00:02:00,400 --> 00:02:02,510
+então o sinal depende
+do numerador:
+
+46
+00:02:02,540 --> 00:02:05,220
+R² menos dois z².
+
+47
+00:02:05,250 --> 00:02:08,220
+Ele zera quando z é R
+sobre raiz de dois,
+
+48
+00:02:08,250 --> 00:02:11,000
+e a derivada passa
+de positiva pra negativa.
+
+49
+00:02:11,030 --> 00:02:13,110
+Aí isso diz que ali é o máximo.
+
+50
+00:02:13,140 --> 00:02:16,440
+Portanto, o campo é mais forte
+a R sobre raiz de dois,
+
+51
+00:02:16,470 --> 00:02:20,210
+cerca de 0,71 R acima
+do plano do anel.
+
+52
+00:02:20,260 --> 00:02:22,060
+Simetria pra saber o que sobra,
+
+53
+00:02:22,090 --> 00:02:25,880
+integração pra somar as cargas
+e derivada pra achar o máximo.
+
+54
+00:02:25,910 --> 00:02:27,970
+Se curtiu, siga o Parallax Lab.
