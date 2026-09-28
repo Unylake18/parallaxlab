@@ -143,7 +143,7 @@ Mini-temporada inicial: **Cálculo + aplicações físicas**.
 3. Teoria curta — de onde vem a fórmula da integração por partes?
 4. Aplicação — derivada como velocidade instantânea (`DA EQUAÇÃO AO FENÔMENO · EP. 01`).
 5. Origem geométrica da aceleração centrípeta (`POR TRÁS DA FÓRMULA · EP. 02`), decisão de 2026-09-27.
-6. Exercício — limite simples com interpretação visual.
+6. Aplicação — interferência e cancelamento ativo de ruído (`DA EQUAÇÃO AO FENÔMENO · EP. 02`), decisão de 2026-09-28.
 7. Exercício — outra integração por partes, com estrutura diferente.
 8. Teoria curta — o que uma integral realmente acumula.
 9. Aplicação — de \(v(t)\) ao deslocamento usando integral.
@@ -163,12 +163,18 @@ Atualização editorial de 2026-09-26: o vídeo 4 passou a ser Aplicação
 Atualização editorial de 2026-09-27: a pauta 5 passou a ser a origem geométrica
 da aceleração centrípeta (`vid_0005`); vídeos 6–10 não foram reordenados.
 
+Atualização editorial de 2026-09-28: a pauta 6 passou a ser a aplicação de
+interferência ao cancelamento ativo de ruído (`vid_0006`). “Limite simples com
+interpretação visual” ficou **sem posição decidida**; vídeos 7–10 não foram
+reordenados e a contagem por família precisa ser reconciliada.
+
 Depois do vídeo 10: compare formatos, retenção e tempo de produção. Automatize apenas o gargalo que os dados mostrarem.
 
 ## Próxima ação
 
 1. Confirmar QA físico em celular e backup externo dos finais dos vídeos 1 e 2.
 2. `vid_0004` e `vid_0005` concluídos e publicados manualmente (2026-09-26 e
-   2026-09-27; URLs ainda não registradas).
-3. Produção: definir enunciado, resolver e verificar o `vid_0006` — limite
-   simples com interpretação visual — antes de roteiro e Manim.
+   2026-09-27; URLs ainda não registradas). `vid_0006` concluído em 2026-09-28,
+   publicação ainda não registrada.
+3. Produção: definir enunciado, resolver e verificar o `vid_0007` — outra
+   integração por partes, com estrutura diferente — antes de roteiro e Manim.

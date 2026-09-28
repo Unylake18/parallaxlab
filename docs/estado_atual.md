@@ -1,6 +1,6 @@
 # Estado atual — Parallax Lab
 
-**Atualizado em:** 2026-09-27 (fechamento do `vid_0005`)
+**Atualizado em:** 2026-09-28 (fechamento do `vid_0006`)
 
 **Marca:** Parallax Lab · **Instagram aprovado:** @labparallax
 
@@ -168,13 +168,28 @@ coloridos; capa `capa_instagram5.png` (regenerável por `gerar_capa.py`). QA em
 `revisao.md` da unidade. **Publicado manualmente pelo usuário em 2026-09-27**;
 URLs ainda não registradas.
 
-**Próxima ação:** Produção definir enunciado, resolver e verificar o
-`vid_0006` — limite simples com interpretação visual (questão → solução →
-verificação → roteiro → Manim). **Pendências editoriais:** “como escolher u” continua aprovada como pauta, mas sem posição; e a contagem vigente passa a 5 exercícios + 2 teorias curtas + 3 aplicações. Vídeos 6–10 não foram reordenados; resolver exige decisão posterior.
+**vid_0006 — concluído (2026-09-28):** `DA EQUAÇÃO AO FENÔMENO · EP. 02`,
+interferência de ondas aplicada ao cancelamento ativo de ruído em fones, em
+`videos/vid_0006_cancelamento_ruido/`, classe `CancelamentoRuido006`. Finais
+locais em **1080×1920, 30 fps, 3.166 frames, 105,53 s** (áudio AAC estéreo de
+104,64 s): `renders/vid_0006_cancelamento_ruido_final_master_limpo.mp4` e
+`renders/vid_0006_cancelamento_ruido_final_legendado.mp4`. Narração ElevenLabs
+`audio/narracao_final.wav`, intacta; SRT `legenda.srt` com 43 cues coloridos;
+capa `capa_instagram.png` (regenerável por `gerar_capa.py`, variante “a”). QA em
+`revisao.md` da unidade. Publicação ainda não registrada.
+
+**Próxima ação:** Produção definir, resolver e verificar o `vid_0007` — pela
+lista vigente, exercício de outra integração por partes, com estrutura
+diferente (questão → solução → verificação → roteiro → Manim). **Pendências
+editoriais:** a pauta 6 original (“limite simples com interpretação visual”)
+ficou sem posição depois que o `vid_0006` passou a ser a aplicação de
+interferência/ANC (decisão de 2026-09-28); “como escolher u” continua aprovada
+como pauta, mas sem posição; a contagem por família precisa ser reconciliada
+pela Produção. Vídeos 7–10 não foram reordenados.
 **Inconsistência editorial pendente:** “derivada pela
 regra da cadeia”, antes no vídeo 4, não tem nova posição aprovada. Não foi
 realocada nem excluída definitivamente. Distribuição e vídeos 1, 2 e 5–10
 preservados. Antes de publicar os vídeos 1 e 2, fazer QA físico em celular
 e confirmar backup externo dos MP4s. Publicação dos vídeos 1–3 não comprovada no repositório.
 
-**Pendências seguintes:** definir regras tipográficas por contexto (tamanhos, pesos, espaçamentos) no primeiro vídeo com a tipografia oficial; confirmar backup dos MP4s e QA físico em celular dos vídeos 1–3; registrar as URLs do `vid_0004`; conferir regras atuais da plataforma antes de novas publicações. Única publicação registrada: `vid_0004` (manual, 2026-09-26).
+**Pendências seguintes:** definir regras tipográficas por contexto (tamanhos, pesos, espaçamentos) no primeiro vídeo com a tipografia oficial; confirmar backup dos MP4s e QA físico em celular dos vídeos 1–3; registrar as URLs do `vid_0004` e do `vid_0005` e a publicação do `vid_0006`; conferir regras atuais da plataforma antes de novas publicações. Única publicação registrada: `vid_0004` (manual, 2026-09-26).

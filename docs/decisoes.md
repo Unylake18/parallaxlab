@@ -12,6 +12,17 @@ Agentes de código devem operar com o menor contexto suficiente para a tarefa. D
 
 Render, QA, documentação e ações de Git devem ser proporcionais à etapa e ao que realmente mudou. A fonte operacional detalhada desse comportamento é `AGENTS.md`.
 
+## 2026-09-28 — Pauta do vid_0006
+
+- `vid_0006` = **Aplicação**, série pública **DA EQUAÇÃO AO FENÔMENO · EP. 02**:
+  interferência de ondas aplicada ao cancelamento ativo de ruído em fones
+  (superposição p_total = p₁ + p₂; ANC como aplicação, não aula de engenharia).
+- Modelo aprovado: p₂ = A sin(ωt + φ), amplitude 2A|cos(φ/2)|; “= 0” só no caso
+  ideal; na aplicação o resíduo nunca chega a zero e a tela compara amplitudes.
+- Headline da capa: “O SOM PODE CANCELAR O SOM?”.
+- “Limite simples com interpretação visual” (antiga pauta 6) fica sem posição
+  aprovada; vídeos 7–10 não foram reordenados.
+
 ## 2026-09-27 — Texto na tela em Space Grotesk Medium
 
 - Todo texto na tela das animações fora da matemática (manchetes, rótulos,
