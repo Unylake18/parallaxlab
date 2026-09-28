@@ -1,7 +1,7 @@
 # vid_0006 — Interferência e cancelamento ativo de ruído
 
 - Série pública: **DA EQUAÇÃO AO FENÔMENO · EP. 02**.
-- **Concluído em 2026-09-28.** Headline final: “O SOM PODE CANCELAR O SOM?”.
+- **Concluído e publicado manualmente pelo usuário em 2026-09-28** (URLs não registradas). Headline final: “O SOM PODE CANCELAR O SOM?”.
   Roteiro com tempos: `roteiro.md`; QA: `revisao.md`; publicação: `publicacao.md`.
 - Ideia única: pressões acústicas se superpõem; contribuições com amplitudes
   semelhantes e fases aproximadamente opostas reduzem a pressão resultante num
@@ -86,6 +86,6 @@ feedforward/feedback, fisiologia da audição, marcas. A arquitetura mostrada
 
 ## Pendências
 
-- Publicação ainda não registrada (`publicacao.md`); QA físico em celular e backup
+- URLs da publicação não registradas (`publicacao.md`); QA físico em celular e backup
   externo dos MP4s não confirmados.
 - Duração 105,5 s com a voz (dentro dos 95–105 s previstos, +0,5 s de cauda).

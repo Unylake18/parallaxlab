@@ -173,8 +173,7 @@ Depois do vídeo 10: compare formatos, retenção e tempo de produção. Automat
 ## Próxima ação
 
 1. Confirmar QA físico em celular e backup externo dos finais dos vídeos 1 e 2.
-2. `vid_0004` e `vid_0005` concluídos e publicados manualmente (2026-09-26 e
-   2026-09-27; URLs ainda não registradas). `vid_0006` concluído em 2026-09-28,
-   publicação ainda não registrada.
+2. `vid_0004`, `vid_0005` e `vid_0006` concluídos e publicados manualmente
+   (2026-09-26, 2026-09-27 e 2026-09-28; URLs ainda não registradas).
 3. Produção: definir enunciado, resolver e verificar o `vid_0007` — outra
    integração por partes, com estrutura diferente — antes de roteiro e Manim.

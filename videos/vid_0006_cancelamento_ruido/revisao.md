@@ -63,4 +63,5 @@ da cena (resíduo pequeno, não nulo). Conferida em tamanho cheio, médio e mini
 - Sincronia obtida por pausas do áudio, não por transcrição; conferida por amostras.
 - Na miniatura muito reduzida (~180 px), rótulos do painel e linha da série da capa
   viram detalhe; headline, ondas e fone seguem legíveis.
-- QA físico em celular, backup externo dos MP4s e publicação não registrados.
+- QA físico em celular, backup externo dos MP4s e URLs de publicação não registrados
+  (publicado manualmente pelo usuário em 2026-09-28).
