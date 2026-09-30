@@ -1,0 +1,298 @@
+1
+00:00:00,050 --> 00:00:01,746
+Essa fórmula
+do campo magnético
+
+2
+00:00:01,776 --> 00:00:03,990
+de uma espira costuma
+aparecer pronta.
+
+3
+00:00:04,020 --> 00:00:05,634
+Mas ela não surge do nada:
+
+4
+00:00:05,664 --> 00:00:07,895
+dá para construir
+tudo, passo a passo.
+
+5
+00:00:07,925 --> 00:00:09,475
+Começa pela geometria.
+
+6
+00:00:09,505 --> 00:00:13,189
+O raio, a distância axial até
+o ponto e a distância do trecho
+
+7
+00:00:13,219 --> 00:00:16,215
+do fio até o ponto formam
+um triângulo retângulo.
+
+8
+00:00:16,245 --> 00:00:19,250
+Por Pitágoras, essa última
+ao quadrado é o raio
+
+9
+00:00:19,280 --> 00:00:21,940
+ao quadrado mais
+a distância axial ao quadrado.
+
+10
+00:00:21,970 --> 00:00:22,765
+Guarda isso.
+
+11
+00:00:22,795 --> 00:00:26,220
+Agora entra Biot-Savart, que dá
+o campo de cada trecho.
+
+12
+00:00:26,250 --> 00:00:29,702
+O trecho do fio é perpendicular
+à reta que o liga ao ponto,
+
+13
+00:00:29,732 --> 00:00:31,895
+então o produto
+vetorial simplifica.
+
+14
+00:00:31,925 --> 00:00:34,071
+Reescrevendo
+a distância ao cubo como
+
+15
+00:00:34,101 --> 00:00:37,285
+distância ao quadrado vezes
+distância, um fator cancela.
+
+16
+00:00:37,315 --> 00:00:38,620
+Agora a simetria.
+
+17
+00:00:38,650 --> 00:00:39,987
+Para cada trecho do fio,
+
+18
+00:00:40,017 --> 00:00:43,260
+existe outro exatamente
+do lado oposto da espira.
+
+19
+00:00:43,290 --> 00:00:45,688
+Os campos dos dois têm
+componentes transversais
+
+20
+00:00:45,718 --> 00:00:48,340
+iguais e opostas,
+e elas se cancelam.
+
+21
+00:00:48,370 --> 00:00:51,950
+As componentes axiais apontam
+para o mesmo lado e se somam.
+
+22
+00:00:51,980 --> 00:00:54,350
+Então basta calcular
+um trecho e dobrar.
+
+23
+00:00:54,380 --> 00:00:56,435
+Quanto disso aponta
+ao longo do eixo?
+
+24
+00:00:56,465 --> 00:00:59,453
+Essa fração é o cosseno
+do ângulo mostrado na tela,
+
+25
+00:00:59,483 --> 00:01:02,780
+e é o mesmo ângulo que aparece
+no ponto e no triângulo.
+
+26
+00:01:02,810 --> 00:01:05,093
+Pela geometria,
+ele é o raio dividido
+
+27
+00:01:05,123 --> 00:01:06,930
+pela distância do
+trecho ao ponto.
+
+28
+00:01:06,960 --> 00:01:10,282
+Então a parte axial é o campo
+do trecho vezes essa razão,
+
+29
+00:01:10,312 --> 00:01:12,170
+e esse campo a gente já guardou.
+
+30
+00:01:12,200 --> 00:01:13,800
+Falta o tamanho do trecho.
+
+31
+00:01:13,830 --> 00:01:16,945
+Visto de frente, ele é um pequeno
+arco da circunferência.
+
+32
+00:01:16,975 --> 00:01:18,465
+E o comprimento de um arco
+
+33
+00:01:18,495 --> 00:01:20,685
+é o raio vezes o
+ângulo que ele abre.
+
+34
+00:01:20,715 --> 00:01:21,735
+Agora encaixa.
+
+35
+00:01:21,765 --> 00:01:24,470
+O tamanho do trecho
+vira raio vezes ângulo.
+
+36
+00:01:24,500 --> 00:01:26,815
+Os dois raios formam
+raio ao quadrado.
+
+37
+00:01:26,845 --> 00:01:29,820
+Embaixo, distância
+ao quadrado vezes distância dá
+
+38
+00:01:29,850 --> 00:01:31,015
+distância ao cubo.
+
+39
+00:01:31,045 --> 00:01:34,490
+E a relação guardada troca
+isso por raio ao quadrado mais
+
+40
+00:01:34,520 --> 00:01:37,635
+distância axial ao quadrado,
+elevado a três meios.
+
+41
+00:01:37,665 --> 00:01:39,470
+Agora soma a volta inteira.
+
+42
+00:01:39,500 --> 00:01:41,940
+Ao redor da espira,
+o raio, a corrente
+
+43
+00:01:41,970 --> 00:01:45,280
+e a posição do ponto não
+mudam, então saem da integral.
+
+44
+00:01:45,310 --> 00:01:48,983
+O que sobra é integrar
+o ângulo em uma volta completa,
+
+45
+00:01:49,013 --> 00:01:50,170
+e isso dá dois pi.
+
+46
+00:01:50,200 --> 00:01:52,668
+Dois pi sobre quatro pi:
+os pi cancelam,
+
+47
+00:01:52,698 --> 00:01:54,485
+dois sobre quatro vira um meio.
+
+48
+00:01:54,515 --> 00:01:57,295
+E aparece o campo magnético
+no eixo da espira.
+
+49
+00:01:57,325 --> 00:01:58,465
+Confere no centro.
+
+50
+00:01:58,495 --> 00:02:01,009
+Leva o ponto até
+o centro da espira:
+
+51
+00:02:01,039 --> 00:02:04,425
+a distância axial vai a zero,
+e o campo vira mi zero
+
+52
+00:02:04,455 --> 00:02:06,900
+vezes a corrente,
+sobre duas vezes o raio.
+
+53
+00:02:06,930 --> 00:02:08,525
+No gráfico, é o máximo.
+
+54
+00:02:08,555 --> 00:02:10,685
+E muito longe, ainda no eixo?
+
+55
+00:02:10,715 --> 00:02:12,692
+Quando a distância axial
+fica bem maior
+
+56
+00:02:12,722 --> 00:02:14,733
+que o raio, o raio
+perde importância,
+
+57
+00:02:14,763 --> 00:02:17,845
+e o denominador
+vira a distância axial ao cubo.
+
+58
+00:02:17,875 --> 00:02:19,619
+Por isso, longe da espira,
+
+59
+00:02:19,649 --> 00:02:22,505
+o campo cai com um sobre
+essa distância ao cubo.
+
+60
+00:02:22,535 --> 00:02:24,275
+Uma espira está entendida.
+
+61
+00:02:24,305 --> 00:02:25,490
+E se forem muitas?
+
+62
+00:02:25,520 --> 00:02:27,847
+No próximo vídeo, a gente soma
+
+63
+00:02:27,877 --> 00:02:30,610
+várias espiras
+e chega ao solenoide.
+
+64
+00:02:30,640 --> 00:02:32,240
+Se curtiu, siga o Parallax Lab.
