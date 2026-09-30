@@ -145,8 +145,8 @@ Mini-temporada inicial: **Cálculo + aplicações físicas**.
 5. Origem geométrica da aceleração centrípeta (`POR TRÁS DA FÓRMULA · EP. 02`), decisão de 2026-09-27.
 6. Aplicação — interferência e cancelamento ativo de ruído (`DA EQUAÇÃO AO FENÔMENO · EP. 02`), decisão de 2026-09-28.
 7. Exercício — campo elétrico no eixo de um anel carregado e posição do máximo (`EXERCÍCIO RESOLVIDO · EP. 03`), decisão de 2026-09-28.
-8. Teoria curta — o que uma integral realmente acumula.
-9. Aplicação — de \(v(t)\) ao deslocamento usando integral.
+8. Campo magnético no eixo de uma espira (`POR TRÁS DA FÓRMULA · EP. 03`), decisão de 2026-09-30.
+9. Campo magnético de um solenoide (`DA EQUAÇÃO AO FENÔMENO · EP. 03`), decisão de 2026-09-30; depende do 8.
 10. Exercício — derivada ou integral aplicada a um problema curto de movimento.
 
 Distribuição original: **6 exercícios + 2 teorias curtas + 2 aplicações**. Com o vídeo 4 como Aplicação, a contagem factual passou a 5 + 2 + 3; pendência editorial, sem nova distribuição decidida.
@@ -173,6 +173,12 @@ exercício do campo elétrico no eixo de um anel carregado e do seu máximo.
 “Outra integração por partes, com estrutura diferente” ficou **sem posição
 decidida**; vídeos 8–10 não foram reordenados.
 
+Atualização editorial de 2026-09-30: o preview combinado espira + solenoide foi
+dividido; a pauta 8 passou a ser o campo magnético no eixo de uma espira (`vid_0008`) e a
+pauta 9 o campo do solenoide (`vid_0009`). As antigas pautas 8 (“o que uma integral
+realmente acumula”) e 9 (“de v(t) ao deslocamento”) ficaram **sem posição decidida**; o
+vídeo 10 não foi reordenado; a contagem por família precisa ser reconciliada.
+
 Depois do vídeo 10: compare formatos, retenção e tempo de produção. Automatize apenas o gargalo que os dados mostrarem.
 
 ## Próxima ação
@@ -182,5 +188,7 @@ Depois do vídeo 10: compare formatos, retenção e tempo de produção. Automat
 2. `vid_0004`, `vid_0005` e `vid_0006` concluídos e publicados manualmente
    (2026-09-26, 2026-09-27 e 2026-09-28; URLs ainda não registradas); `vid_0007`
    concluído e publicado manualmente em 2026-09-28.
-3. Produção: definir, resolver e verificar o `vid_0008` — teoria curta: o que uma
-   integral realmente acumula — antes de roteiro e Manim.
+3. `vid_0008` (espira) concluído tecnicamente em 2026-09-30: escolher a capa (propostas
+   A–F em `videos/vid_0008_campo_espira/capas/`) e publicar.
+4. `vid_0009` (solenoide): preview aprovado como protótipo; falta narração, sincronia,
+   SRT, capa e master (veja `videos/vid_0009_campo_solenoide/ficha.md`).

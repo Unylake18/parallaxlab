@@ -12,6 +12,25 @@ Agentes de código devem operar com o menor contexto suficiente para a tarefa. D
 
 Render, QA, documentação e ações de Git devem ser proporcionais à etapa e ao que realmente mudou. A fonte operacional detalhada desse comportamento é `AGENTS.md`.
 
+## 2026-09-30 — Ordem dos vídeos 8 e 9: espira e solenoide
+
+- O preview combinado “campo magnético do solenoide” (espira + solenoide, 174,7 s) ficou
+  comprimido demais e foi **dividido em dois vídeos independentes**, nesta ordem:
+  - `vid_0008` = **campo magnético no eixo de uma espira**, série pública
+    **POR TRÁS DA FÓRMULA · EP. 03** (Biot-Savart + simetria + integração;
+    B_z(z) = μ₀IR²/2(R²+z²)^{3/2}, checagens z = 0 e z ≫ R). Pasta
+    `videos/vid_0008_campo_espira/`, classe `CampoEspira008`.
+  - `vid_0009` = **campo magnético de um solenoide**, série pública
+    **DA EQUAÇÃO AO FENÔMENO · EP. 03** (superposição → simetria → Ampère → B = μ₀nI).
+    Pasta `videos/vid_0009_campo_solenoide/`, classe `CampoSolenoide009`. Usa o B_z(z) da
+    espira, por isso vem depois do `vid_0008`.
+- As pautas 8 (“teoria curta: o que uma integral realmente acumula”) e 9 (“aplicação: de
+  v(t) ao deslocamento usando integral”) ficam **sem posição aprovada**; o vídeo 10 não foi
+  reordenado. A classificação por família (exercício/teoria/aplicação) dos novos 8 e 9 e a
+  contagem por família **não foram decididas**: pendência da Produção.
+- Os nomes provisórios “008A/008B” foram descartados; a pasta `vid_0008_campo_solenoide/`
+  deixou de existir (o protótipo combinado está em `vid_0009_campo_solenoide/prototipo_combinado.py`).
+
 ## 2026-09-28 — Pauta do vid_0007
 
 - `vid_0007` = **Exercício**, série pública **EXERCÍCIO RESOLVIDO · EP. 03**: campo

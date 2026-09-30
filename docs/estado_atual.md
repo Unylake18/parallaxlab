@@ -190,16 +190,37 @@ capa `capa_instagram.png` (“ONDE O CAMPO ELÉTRICO É MAIS FORTE?”, regener�
 `gerar_capa.py`). QA em `revisao.md` da unidade. **Publicado manualmente pelo usuário em
 2026-09-28**; URLs ainda não registradas.
 
-**Próxima ação:** Produção definir, resolver e verificar o `vid_0008` — pela
-lista vigente, teoria curta: o que uma integral realmente acumula (questão →
-solução → verificação → roteiro → Manim). **Pendências editoriais:** a pauta 6
+**vid_0008 — concluído tecnicamente (2026-09-30):** `POR TRÁS DA FÓRMULA · EP. 03`,
+campo magnético no eixo de uma espira (B_z(z) = μ₀IR²/2(R²+z²)^{3/2}; checagens z = 0 e
+z ≫ R), em `videos/vid_0008_campo_espira/`, classe `CampoEspira008`. Nasceu do preview
+combinado espira + solenoide, dividido em dois vídeos (decisão de 2026-09-30). Finais locais em
+**1080×1920, 30 fps, 4.581 frames, 152,7 s** (áudio AAC estéreo de 152,3 s):
+`renders/vid_0008_campo_espira_final_master_limpo.mp4` e
+`renders/vid_0008_campo_espira_final_legendado.mp4`. Narração ElevenLabs
+`audio/narracao_final.wav`, intacta; a cena segue a voz por 45 âncoras (`sync.json`,
+`native.json`); SRT `legenda.srt` com 64 cues coloridos; **6 propostas de capa** em `capas/`
+(A–F, regeneráveis por `gerar_capa.py`), **escolha pendente**. QA em `revisao.md` da unidade.
+**Não publicado.**
+
+**vid_0009 — em preparação (2026-09-30):** `DA EQUAÇÃO AO FENÔMENO · EP. 03`, campo
+magnético de um solenoide (superposição → simetria → Ampère → B = μ₀nI), em
+`videos/vid_0009_campo_solenoide/`, classe `CampoSolenoide009`. Preview silencioso 540×960,
+15 fps, 139,2 s aprovado como protótipo; narração, sincronia, SRT, capa e master **não
+iniciados**. `prototipo_combinado.py` guarda o preview combinado original. Ficha em
+`ficha.md` da unidade.
+
+**Próxima ação:** escolher a capa do `vid_0008` (propostas A–F) e publicá-lo; retomar o
+`vid_0009` (narração, sincronia, SRT, capa). **Pendências editoriais:** as antigas pautas 8
+(“o que uma integral realmente acumula”) e 9 (“de v(t) ao deslocamento”) ficaram sem
+posição depois da decisão de 2026-09-30 (8 = espira, 9 = solenoide); a família editorial dos
+novos 8 e 9 não foi decidida; a pauta 6
 original (“limite simples com interpretação visual”) ficou sem posição depois
 que o `vid_0006` passou a ser a aplicação de interferência/ANC, e a pauta 7
 original (“outra integração por partes, com estrutura diferente”) ficou sem
 posição depois que o `vid_0007` passou a ser o campo do anel (decisões de
 2026-09-28); “como escolher u” continua aprovada como pauta, mas sem posição; a
-contagem por família precisa ser reconciliada pela Produção. Vídeos 8–10 não
-foram reordenados.
+contagem por família precisa ser reconciliada pela Produção. O vídeo 10 não foi
+reordenado.
 **Inconsistência editorial pendente:** “derivada pela
 regra da cadeia”, antes no vídeo 4, não tem nova posição aprovada. Não foi
 realocada nem excluída definitivamente. Distribuição e vídeos 1, 2 e 5–10
