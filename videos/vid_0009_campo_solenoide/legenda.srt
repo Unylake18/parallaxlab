@@ -1,0 +1,377 @@
+1
+00:00:00,070 --> 00:00:01,000
+No vídeo anterior,
+
+2
+00:00:01,040 --> 00:00:03,310
+a gente entendeu o campo
+de uma única espira.
+
+3
+00:00:03,590 --> 00:00:05,300
+Agora vem a pergunta natural:
+
+4
+00:00:05,340 --> 00:00:06,360
+e se colocarmos muitas,
+
+5
+00:00:06,400 --> 00:00:08,040
+uma ao lado da outra?
+
+6
+00:00:08,360 --> 00:00:09,660
+Cada espira dá a sua
+
+7
+00:00:09,700 --> 00:00:11,470
+contribuição para
+o campo no ponto
+
+8
+00:00:11,510 --> 00:00:13,610
+observado, e ela
+diminui quanto
+
+9
+00:00:13,650 --> 00:00:15,550
+mais longe a espira está.
+
+10
+00:00:15,740 --> 00:00:17,620
+Mas todas apontam
+para o mesmo lado,
+
+11
+00:00:17,660 --> 00:00:18,810
+ao longo do eixo.
+
+12
+00:00:19,080 --> 00:00:21,740
+Então o campo total é
+a soma de todas elas.
+
+13
+00:00:22,190 --> 00:00:23,930
+Só que, com as espiras
+muito próximas,
+
+14
+00:00:23,970 --> 00:00:26,700
+contar uma por uma
+deixa de ser prático.
+
+15
+00:00:27,020 --> 00:00:29,640
+É melhor descrever a bobina
+pela quantidade de espiras
+
+16
+00:00:29,680 --> 00:00:30,630
+por comprimento.
+
+17
+00:00:31,000 --> 00:00:32,110
+Numa fatia fina, o número
+
+18
+00:00:32,150 --> 00:00:34,550
+de espiras é essa
+densidade vezes
+
+19
+00:00:34,590 --> 00:00:36,070
+a largura da fatia.
+
+20
+00:00:36,240 --> 00:00:38,750
+Multiplicando pela contribuição
+de uma espira e somando
+
+21
+00:00:38,790 --> 00:00:40,360
+todas as fatias, a soma
+vira uma integral.
+
+22
+00:00:40,540 --> 00:00:44,100
+Essa integral determina o perfil
+do campo ao longo do eixo,
+
+23
+00:00:44,140 --> 00:00:46,290
+que aparece no gráfico.
+
+24
+00:00:46,650 --> 00:00:48,300
+Longe da bobina, o
+campo é pequeno;
+
+25
+00:00:48,340 --> 00:00:50,200
+ele cresce na entrada,
+
+26
+00:00:50,240 --> 00:00:51,900
+atinge o máximo no centro e
+
+27
+00:00:51,940 --> 00:00:53,840
+volta a cair na
+outra extremidade.
+
+28
+00:00:54,160 --> 00:00:55,250
+Agora olha para o centro.
+
+29
+00:00:55,580 --> 00:00:58,580
+Mantendo o raio e a densidade
+
+30
+00:00:58,620 --> 00:01:00,670
+fixos e aumentando
+só o comprimento,
+
+31
+00:01:00,710 --> 00:01:02,800
+essa região fica
+cada vez mais plana,
+
+32
+00:01:02,840 --> 00:01:05,520
+e o campo ali tende a mi zero
+vezes a densidade de espiras
+
+33
+00:01:05,560 --> 00:01:06,510
+vezes a corrente.
+
+34
+00:01:06,870 --> 00:01:10,060
+Já na extremidade de
+uma bobina longa,
+
+35
+00:01:10,100 --> 00:01:12,540
+ele tende à metade desse valor.
+
+36
+00:01:12,680 --> 00:01:14,210
+Isso sugere um modelo ideal:
+
+37
+00:01:14,250 --> 00:01:15,930
+uma bobina infinita,
+sem pontas.
+
+38
+00:01:16,220 --> 00:01:18,720
+Ela não existe, mas a simetria
+simplifica bastante o problema.
+
+39
+00:01:18,930 --> 00:01:21,170
+Para cada contribuição
+
+40
+00:01:21,210 --> 00:01:23,560
+transversal existe
+outra simétrica,
+
+41
+00:01:23,600 --> 00:01:24,580
+no sentido oposto.
+
+42
+00:01:24,700 --> 00:01:28,400
+Elas se cancelam, e sobra só a
+componente ao longo do eixo.
+
+43
+00:01:28,520 --> 00:01:29,500
+E, sendo infinita,
+
+44
+00:01:29,540 --> 00:01:32,170
+deslocar o ponto ao longo
+do eixo não muda nada:
+
+45
+00:01:32,210 --> 00:01:33,680
+o campo só depende
+da distância até o eixo.
+
+46
+00:01:34,040 --> 00:01:35,320
+Agora a lei de Ampère.
+
+47
+00:01:35,560 --> 00:01:38,690
+Com um retângulo
+todo do lado de fora,
+
+48
+00:01:38,730 --> 00:01:40,190
+os lados curtos
+não contribuem,
+
+49
+00:01:40,230 --> 00:01:42,580
+e os lados longos mostram que
+o campo externo é o mesmo
+
+50
+00:01:42,620 --> 00:01:43,570
+em qualquer distância.
+
+51
+00:01:43,920 --> 00:01:46,300
+Mas, muito longe,
+ele tende a zero.
+
+52
+00:01:46,460 --> 00:01:48,710
+Então, nesse modelo ideal,
+
+53
+00:01:48,750 --> 00:01:50,230
+o campo externo
+só pode ser zero.
+
+54
+00:01:50,430 --> 00:01:51,930
+O mesmo argumento
+mostra que,
+
+55
+00:01:51,970 --> 00:01:53,510
+por dentro, ele é uniforme.
+
+56
+00:01:53,830 --> 00:01:57,750
+Agora o retângulo
+atravessa a parede.
+
+57
+00:01:57,900 --> 00:01:59,230
+Só o trecho de dentro contribui:
+campo vezes comprimento.
+
+58
+00:01:59,580 --> 00:02:03,080
+Do outro lado, a
+corrente envolvida:
+
+59
+00:02:03,120 --> 00:02:05,930
+densidade de espiras
+vezes esse comprimento,
+
+60
+00:02:05,970 --> 00:02:06,920
+vezes a corrente.
+
+61
+00:02:07,040 --> 00:02:07,960
+O comprimento cancela,
+
+62
+00:02:08,000 --> 00:02:10,020
+e o campo dentro do solenoide
+
+63
+00:02:10,060 --> 00:02:13,190
+ideal é mi zero
+vezes a densidade
+
+64
+00:02:13,230 --> 00:02:14,500
+de espiras vezes a corrente.
+
+65
+00:02:14,790 --> 00:02:16,690
+Mais corrente, mais campo.
+
+66
+00:02:16,950 --> 00:02:18,900
+Mais espiras no mesmo
+comprimento, mais campo.
+
+67
+00:02:18,930 --> 00:02:20,860
+Numa bobina real, a
+igualdade vira aproximação.
+
+68
+00:02:21,060 --> 00:02:23,300
+No centro de uma
+bobina longa,
+
+69
+00:02:23,340 --> 00:02:26,880
+o campo é quase uniforme e
+muito próximo desse valor;
+
+70
+00:02:26,920 --> 00:02:28,600
+nas extremidades ele varia,
+
+71
+00:02:28,640 --> 00:02:29,590
+e fora não é exatamente zero.
+
+72
+00:02:29,840 --> 00:02:32,500
+Essa variação
+importa num atuador:
+
+73
+00:02:32,540 --> 00:02:35,400
+um núcleo ferromagnético
+perto da entrada da bobina,
+
+74
+00:02:35,440 --> 00:02:37,090
+onde o campo muda bastante,
+
+75
+00:02:37,130 --> 00:02:39,950
+é atraído para a região
+de campo mais intenso,
+
+76
+00:02:39,990 --> 00:02:41,730
+entra e movimenta a válvula.
+
+77
+00:02:41,960 --> 00:02:43,840
+Resumindo: começamos
+com uma espira,
+
+78
+00:02:43,880 --> 00:02:45,400
+somamos muitas
+e chegamos ao
+
+79
+00:02:45,440 --> 00:02:47,350
+campo no centro
+de um solenoide
+
+80
+00:02:47,390 --> 00:02:49,210
+longo: aproximadamente
+mi zero
+
+81
+00:02:49,250 --> 00:02:50,730
+vezes a densidade de espiras
+
+82
+00:02:50,770 --> 00:02:51,720
+vezes a corrente.
+
+83
+00:02:52,150 --> 00:02:54,110
+Se curtiu, siga o Parallax Lab.

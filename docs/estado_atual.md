@@ -202,15 +202,20 @@ combinado espira + solenoide, dividido em dois vídeos (decisão de 2026-09-30).
 (A–F, regeneráveis por `gerar_capa.py`), **escolha pendente**. QA em `revisao.md` da unidade.
 **Não publicado.**
 
-**vid_0009 — em preparação (2026-09-30):** `DA EQUAÇÃO AO FENÔMENO · EP. 03`, campo
-magnético de um solenoide (superposição → simetria → Ampère → B = μ₀nI), em
-`videos/vid_0009_campo_solenoide/`, classe `CampoSolenoide009`. Preview silencioso 540×960,
-15 fps, 139,2 s aprovado como protótipo; narração, sincronia, SRT, capa e master **não
-iniciados**. `prototipo_combinado.py` guarda o preview combinado original. Ficha em
-`ficha.md` da unidade.
+**vid_0009 — concluído tecnicamente (2026-09-30):** `DA EQUAÇÃO AO FENÔMENO · EP. 03`, campo
+magnético de um solenoide (superposição → Σ→∫ → gráfico B(z) → L/R → limite ideal → simetria → lei de
+Ampère → B = μ₀nI → bobina real → atuador), em `videos/vid_0009_campo_solenoide/`, classe
+`CampoSolenoide009`. Finais locais em **1080×1920, 30 fps, 5.244 quadros, 174,78 s** (áudio AAC
+estéreo de 174,4 s): `renders/vid_0009_campo_solenoide_final_master_limpo.mp4` e
+`renders/vid_0009_campo_solenoide_final_legendado.mp4`. Narração ElevenLabs `audio/narracao_final.wav`,
+intacta; a cena segue a voz por 53 âncoras (`sync.json`, `native.json`; instantes obtidos por contagem de
+sílabas e pausas, sem ASR, margem ~±0,6 s); SRT `legenda.srt` com 83 cues coloridos. Corrente em verde
+(sem laranja/amarelo). Para caber na voz, esperas nativas de B2, B3, B8 e B9 foram encurtadas (sem
+remover passos físicos). **Capa não criada; não publicado.** Ficha em `ficha.md` da unidade
+(inclui o texto da narração). `prototipo_combinado.py` guarda o preview combinado original.
 
-**Próxima ação:** escolher a capa do `vid_0008` (propostas A–F) e publicá-lo; retomar o
-`vid_0009` (narração, sincronia, SRT, capa). **Pendências editoriais:** as antigas pautas 8
+**Próxima ação:** escolher a capa do `vid_0008` (propostas A–F) e publicá-lo; criar a capa do
+`vid_0009` e publicá-lo; iniciar o `vid_0010`. **Pendências editoriais:** as antigas pautas 8
 (“o que uma integral realmente acumula”) e 9 (“de v(t) ao deslocamento”) ficaram sem
 posição depois da decisão de 2026-09-30 (8 = espira, 9 = solenoide); a família editorial dos
 novos 8 e 9 não foi decidida; a pauta 6
