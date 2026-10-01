@@ -21,6 +21,17 @@ Observações de `vid_0001` e `vid_0002`, não requisitos automáticos dos próx
 - `vid_0004`: narração contínua em uma exportação do ElevenLabs (segunda unidade com exportação única) manteve volume uniforme; sem ASR, as fronteiras das frases foram estimadas pelas pausas medidas no WAV e pelo texto exato.
 - `vid_0004`: legendas com o mesmo código de cores da cena (`SUBTITLE_TERM_COLORS`) e duração de ~100 s quando a clareza pediu funcionaram no QA; falta repetição.
 
+## MF-Tools — experimento técnico
+
+Evidência de **um experimento técnico** (worktree descartável, 2026-10-01), não de vários vídeos de produção.
+
+- MF-Tools 1.4.9 + Manim CE 0.21.0 funcionaram; um microvídeo contínuo de ~29,6 s (completar o quadrado) foi renderizado em 540×960/15 fps.
+- Ganho mais claro em reorganizações e cancelamentos (termo atravessando a igualdade, `path_arc`, remoção de termos que se cancelam). `TransformMatchingTex` segue superior em casos simples.
+- Glyph maps são frágeis: trocar `y=` por `f(x)=` (+3 glifos) quebrou 3/3 mapas sem erro nem aviso e exigiu ~17 edições de índice. Construir só com a expressão estabilizada.
+- `auto_fade` foi melhor que `auto_morph` naquele teste (o morph deixou borrão na meia-transição).
+- `VT` e `DN` ficaram estáveis; `show_indices` e `indexx_labels` foram úteis no desenvolvimento.
+- `SurroundingRectangleUnion` falha com numpy 2.5.3 (`apply_unbuff`/`np.cross`); `unbuff=0` contorna e o contorno acompanha a altura de cada glifo.
+
 ## Soluções específicas
 
 - `vid_0001`: redução do grau de x² para x justifica duas integrações por partes; distribuição do −2 e cancelamentos na regra do produto são deste exercício.

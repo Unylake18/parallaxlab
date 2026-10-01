@@ -23,10 +23,16 @@ Não exigir releitura ampla do projeto, QA completo, documentação global ou Gi
 - Python 3.12
 - `uv` e Python 3.12.4 da `.venv` validados; `uv run python -m manim --version` funciona
 - Manim Community 0.21.0
+- MF-Tools 1.4.9 (adotado em 2026-10-01 como dependência utilitária seletiva; `uv run python -m manim ...` segue igual)
 - MiKTeX/`MathTex` funcionando
 - primeiro MP4 já renderizado
 
 Não reinstale, recrie o projeto ou rode `uv init` por rotina. Primeiro leia `docs/estado_atual.md` e preserve o que funciona.
+
+Transformações matemáticas:
+- `TransformMatchingTex` por padrão;
+- `TransformByGlyphMap` (MF-Tools) quando o controle explícito de termos melhorar a compreensão;
+- `FadeOut`/`FadeIn` quando a transformação automática for enganosa.
 
 ## Primeiro ciclo
 

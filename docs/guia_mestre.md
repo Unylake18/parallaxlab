@@ -2,9 +2,11 @@
 
 Guia mestre do Projeto, repositório e produção do canal.
 
-**Versão:** 1.5 · **Referência:** 24 de setembro de 2026 · **Idioma:** português brasileiro.
+**Versão:** 1.6 · **Referência:** 1 de outubro de 2026 · **Idioma:** português brasileiro.
 
 **Reconciliação operacional — 2026-09-23:** nome oficial Parallax Lab; Instagram @labparallax. A identidade e os oito assets estão aprovados e versionados. `vid_0001` e `vid_0002` têm finais técnicos locais em 1080×1920/30 fps, narração e SRT; publicação, backup externo e QA físico em celular não estão comprovados. O estado corrente está em `docs/estado_atual.md`. O alvo antigo de 45–60 s foi substituído; exemplos de inicialização e storyboard abaixo são referências históricas.
+
+**Atualização 1.6 — 2026-10-01:** MF-Tools 1.4.9 adotado como extensão seletiva do Manim (seções 7, 10 e prompts); nenhuma outra orientação foi alterada.
 
 **Uso:** adicione este arquivo às fontes do Projeto no ChatGPT e mantenha a cópia versionada em `docs/guia_mestre.md`. Para trabalhar hoje, abra primeiro `START_HERE.md`. Para saber a realidade do projeto neste instante, abra `docs/estado_atual.md` — ele é a fonte operacional.
 
@@ -77,8 +79,8 @@ Este é o primeiro arquivo a atualizar ao terminar uma sessão e o primeiro a le
 ```markdown
 # Estado atual do canal
 Atualizado em: AAAA-MM-DD
-Guia vigente: 1.5
-Ambiente validado: Windows; Python 3.12; uv; Manim Community 0.21.0; MiKTeX/MathTex; MP4 renderizado
+Guia vigente: 1.6
+Ambiente validado: Windows; Python 3.12; uv; Manim Community 0.21.0; MF-Tools 1.4.9; MiKTeX/MathTex; MP4 renderizado
 Repositório e branch: 
 Template vigente: 
 Vídeo atual / status: 
@@ -97,7 +99,7 @@ Você colabora no “Canal Física & Matemática — IA + Manim”. Responda em 
 
 OBJETIVO: produzir vídeos educacionais autorais, faceless, de física e matemática, sobretudo verticais com Manim, voz e legendas. Uma ideia por vídeo; rigor antes de velocidade.
 
-CONTEXTO ATUAL: Windows, PyCharm, GitHub, ChatGPT, Claude e Gemini, além de Galaxy Tab S6 Lite. O ambiente local JÁ foi validado: Python 3.12, uv funcionando, Manim Community 0.21.0, MiKTeX/MathTex funcionando e primeiro MP4 renderizado. Não recomende reinstalar, recriar ou migrar o ambiente sem uma evidência concreta de necessidade. Preserve o que funciona.
+CONTEXTO ATUAL: Windows, PyCharm, GitHub, ChatGPT, Claude e Gemini, além de Galaxy Tab S6 Lite. O ambiente local JÁ foi validado: Python 3.12, uv funcionando, Manim Community 0.21.0, MF-Tools 1.4.9 (extensão seletiva do Manim), MiKTeX/MathTex funcionando e primeiro MP4 renderizado. Não recomende reinstalar, recriar ou migrar o ambiente sem uma evidência concreta de necessidade. Preserve o que funciona.
 
 FONTE OPERACIONAL: leia docs/estado_atual.md antes de sugerir próxima ação; ele prevalece sobre descrições antigas do guia. Decisões aprovadas ficam em docs/decisoes.md. Diferencie fatos verificados, decisões e sugestões.
 
@@ -197,6 +199,7 @@ Versione código, documentos, roteiros e legendas. Armazene MP4/WAV/projetos pes
 - Python 3.12;
 - `uv` instalado e validado; no Codex restrito, verificar permissões de acesso ao cache antes de alterar o ambiente;
 - Manim Community **0.21.0**;
+- MF-Tools **1.4.9** (`MF-Tools[manimce]==1.4.9`), extensão seletiva do Manim (decisão de 2026-10-01);
 - MiKTeX e `MathTex` funcionando;
 - primeiro MP4 renderizado.
 
@@ -262,7 +265,13 @@ O template deve separar conteúdo de apresentação. Em `template/helpers.py`, c
 - `show_result(scene, tex)`;
 - `add_safe_area_guides(scene, enabled=False)`.
 
-Para evolução algébrica, prefira `TransformMatchingTex` quando termos correspondentes devem permanecer visualmente reconhecíveis. Use `FadeOut`/`FadeIn` quando a transformação seria enganosa. Cada animação deve esclarecer uma relação, não apenas enfeitar.
+Para evolução algébrica:
+
+- `TransformMatchingTex` → padrão, quando termos correspondentes devem permanecer visualmente reconhecíveis;
+- `TransformByGlyphMap` (MF-Tools) → controle explícito de termos quando ele melhora a compreensão (cancelamentos, reorganização algébrica, termo atravessando a igualdade);
+- `FadeOut`/`FadeIn` → quando a transformação automática seria enganosa.
+
+Glyph maps devem ser construídos somente depois que a expressão estiver estabilizada, pois quebram com qualquer mudança no LaTeX. Cada animação deve esclarecer uma relação, não apenas enfeitar. Regras de uso do MF-Tools em `AGENTS.md`.
 
 ### Perspectivas complementares
 

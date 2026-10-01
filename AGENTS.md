@@ -104,6 +104,23 @@ O fluxo operacional de Manim é:
 
 `uv run python -m manim ...`
 
+## Animações matemáticas
+
+Manim Community é a base. MF-Tools 1.4.9 (`from MF_Tools import ...`) é uma dependência utilitária **seletiva**: ao iniciar uma cena com matemática, **considere** o MF-Tools; usá-lo não é obrigatório.
+
+Hierarquia para transformar expressões:
+1. `TransformMatchingTex` — padrão, quando a correspondência é clara e didaticamente correta.
+2. `TransformByGlyphMap` — quando o controle explícito de termos melhora a compreensão: cancelamentos, reorganização algébrica, termo atravessando a igualdade, cópia deliberada, matching ruim do passo 1.
+3. `FadeOut`/`FadeIn` — quando qualquer matching visual seria enganoso.
+
+Regras:
+- A animação deve explicar a matemática; não use MF-Tools só para produzir movimento.
+- Construa glyph maps somente depois que a expressão/LaTeX estiver estabilizada: eles são frágeis a qualquer mudança no LaTeX. Use `MathTex` de string única nos dois lados.
+- `show_indices`, `indexx_labels` e `bounding_box` são ferramentas de desenvolvimento; nunca deixe índices ou debug no vídeo final.
+- Prefira `auto_fade` a `auto_morph`; não use `Scene.keep_orientation()`.
+- `SurroundingRectangleUnion` exige `unbuff=0` (falha com numpy 2.x); não é padrão.
+- Não refaça vídeos anteriores só por causa da biblioteca.
+
 ## Escopo e parada
 
 Não inicie espontaneamente:

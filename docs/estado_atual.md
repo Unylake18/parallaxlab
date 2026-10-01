@@ -1,16 +1,16 @@
 # Estado atual — Parallax Lab
 
-**Atualizado em:** 2026-09-28 (fechamento do `vid_0007`)
+**Atualizado em:** 2026-10-01 (adoção do MF-Tools; reconciliação do `vid_0010`)
 
 **Marca:** Parallax Lab · **Instagram aprovado:** @labparallax
 
-**Guia vigente:** `docs/guia_mestre.md`, versão 1.5, com atualização editorial de 2026-09-23.
+**Guia vigente:** `docs/guia_mestre.md`, versão 1.6 (2026-10-01: MF-Tools); atualização editorial de 2026-09-23 preservada.
 
 **Fonte operacional:** este arquivo; identidade detalhada em `docs/identidade_visual.md`.
 
 ## Ambiente e repositório verificados
 
-- Windows + PyCharm; Python 3.12.4, `uv` 0.12.17, `.venv` e Manim Community 0.21.0 validados com `uv run python -m manim --version`; MiKTeX/MathTex já usados em renders.
+- Windows + PyCharm; Python 3.12.4, `uv` 0.12.17, `.venv`, Manim Community 0.21.0 e MF-Tools 1.4.9 validados com `uv run python -m manim --version`; MiKTeX/MathTex já usados em renders.
 - Projeto local: `C:\Users\KaioOrtiz\PycharmProjects\manim-fisica`; branch `main`.
 - Remoto `origin` configurado: `https://github.com/Unylake18/parallaxlab.git`.
 - A consolidação técnica dos dois primeiros vídeos e a limpeza restrita de
@@ -19,7 +19,8 @@
   vídeo 3 e sua documentação já foram enviadas ao `origin/main`; `main` local e
   `origin/main` estão sincronizadas neste fechamento.
 - A unidade de fechamento do `vid_0001` reúne a configuração visual, a cena, a narração final e a legenda no mesmo commit de produção.
-- Preservar o ambiente: não reinstalar, recriar `.venv`, executar `uv init` ou alterar dependências sem diagnóstico concreto. `pyproject.toml` e `uv.lock` não possuem alterações locais.
+- Preservar o ambiente: não reinstalar, recriar `.venv`, executar `uv init` ou alterar dependências sem diagnóstico concreto. MF-Tools foi adicionado a `pyproject.toml` e `uv.lock` em 2026-10-01 (commit `chore: adicionar MF-Tools ao pipeline`).
+- **MF-Tools 1.4.9 adotado oficialmente (2026-10-01)** como dependência utilitária seletiva (`MF-Tools[manimce]==1.4.9`), compatível com Python 3.12.4 + Manim CE 0.21.0; presente em `pyproject.toml` e `uv.lock`. O fluxo de render continua `uv run python -m manim ...`. Uso seletivo: `TransformMatchingTex` segue padrão, `TransformByGlyphMap` só com ganho didático real, glyph maps depois de estabilizar o LaTeX; ver `AGENTS.md` e `docs/decisoes.md`.
 - MVP: trabalhar em `main`, com commits pequenos; branch/PR para alterações maiores ou arriscadas.
 - `AGENTS.md` é a instrução operacional vigente para agentes de código: contexto mínimo suficiente, validação proporcional ao que mudou e nenhuma expansão espontânea de escopo.
 
@@ -214,8 +215,17 @@ sílabas e pausas, sem ASR, margem ~±0,6 s); SRT `legenda.srt` com 83 cues colo
 remover passos físicos). Capa oficial `capa_instagram.png` (“E SE FOREM / MUITAS ESPIRAS?”, `gerar_capa.py`). **Não publicado.** Ficha em `ficha.md` da unidade
 (inclui o texto da narração). `prototipo_combinado.py` guarda o preview combinado original.
 
+**vid_0010 — em produção (verificado em 2026-10-01):** `EXERCÍCIO RESOLVIDO · EP. 04`, esfera maciça
+no looping (altura mínima 2,5R → 2,7R; I_CM = 2/5 ma²; K = 7/10 mv²), em
+`videos/vid_0010_looping_esfera/cena.py`, classe `LoopingEsfera010`. No filesystem existe **apenas
+`cena.py`**, ainda **não versionado** (untracked); não há `ficha.md`, áudio, SRT, capa nem render final. Segundo o docstring da cena
+é um preview silencioso (3ª versão). Preview 540×960/15 fps renderizado em 2026-10-01 (~154 s). Três transformações
+algébricas usam `TransformByGlyphMap` (Pitágoras a²=x²+r² → r²=a²−x²; cancelamento de π e a³ em
+I = … → I_CM = 2/5 ma²; K = ½mv² + ½(⅖ma²)(v/a)² → K = ½mv² + ⅕mv²); as demais seguem `TransformMatchingTex`/fade.
+QA completo, voz, SRT, final e publicação **não** foram feitos.
+
 **Próxima ação:** escolher a capa do `vid_0008` (propostas A–F) e publicá-lo; publicar o
-`vid_0009` (capa pronta); iniciar o `vid_0010`. **Pendências editoriais:** as antigas pautas 8
+`vid_0009` (capa pronta); continuar o `vid_0010` (preview em produção). **Pendências editoriais:** as antigas pautas 8
 (“o que uma integral realmente acumula”) e 9 (“de v(t) ao deslocamento”) ficaram sem
 posição depois da decisão de 2026-09-30 (8 = espira, 9 = solenoide); a família editorial dos
 novos 8 e 9 não foi decidida; a pauta 6

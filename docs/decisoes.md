@@ -12,6 +12,20 @@ Agentes de código devem operar com o menor contexto suficiente para a tarefa. D
 
 Render, QA, documentação e ações de Git devem ser proporcionais à etapa e ao que realmente mudou. A fonte operacional detalhada desse comportamento é `AGENTS.md`.
 
+## 2026-10-01 — MF-Tools
+
+- **MF-Tools 1.4.9** (`MF-Tools[manimce]==1.4.9`) adotado como dependência utilitária **seletiva**. Presente em `pyproject.toml` e `uv.lock`; compatível com Python 3.12.4 + Manim CE 0.21.0. O fluxo de render continua `uv run python -m manim ...`.
+- O Manim Community continua sendo a base. Hierarquia nas animações matemáticas:
+  1. `TransformMatchingTex` — padrão, quando a correspondência é clara e didaticamente correta;
+  2. `TransformByGlyphMap` — quando o controle explícito de termos dá ganho didático real (cancelamentos, reorganização algébrica, termo atravessando a igualdade, cópia deliberada, matching ruim);
+  3. `FadeOut`/`FadeIn` — quando qualquer matching visual seria enganoso.
+- Glyph maps só depois de estabilizar a expressão/LaTeX (são frágeis a mudanças de LaTeX).
+- Os vídeos anteriores não serão refeitos só por causa da biblioteca.
+- `show_indices`, `indexx_labels` e `bounding_box` são ferramentas de desenvolvimento e não entram no produto final.
+- `auto_morph` não é padrão (deixou borrão no teste); preferir `auto_fade`. `Scene.keep_orientation()` não deve ser usado na versão testada.
+- Ressalva conhecida: `SurroundingRectangleUnion` falha em `apply_unbuff` (`np.cross` em vetores 2D, numpy 2.5.3); `unbuff=0` contorna, mas o helper não é padrão.
+- MF-Tools deve ser **considerado** nos próximos vídeos, sem obrigatoriedade de uso. Evidência e números em `docs/padroes_producao.md`.
+
 ## 2026-09-30 — Ordem dos vídeos 8 e 9: espira e solenoide
 
 - O preview combinado “campo magnético do solenoide” (espira + solenoide, 174,7 s) ficou

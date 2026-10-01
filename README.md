@@ -8,6 +8,7 @@ Repositório técnico para produção de vídeos educacionais de Física e Matem
 - Python 3.12
 - uv
 - Manim Community 0.21.0
+- MF-Tools 1.4.9 (`MF-Tools[manimce]==1.4.9`), usado junto com o Manim CE 0.21.0
 - MiKTeX / MathTex
 - PyCharm
 
@@ -17,6 +18,8 @@ anterior ocorreu por restrição de acesso do ambiente de execução do Codex;
 se reaparecer somente nele, verificar permissões antes de alterar o Python.
 
 Não executar `uv init`, recriar `.venv` ou alterar dependências sem uma causa técnica diagnosticada.
+
+O fluxo de render continua `uv run python -m manim ...`. As cenas importam `MF_Tools` somente quando necessário (ver "Animações matemáticas" em `AGENTS.md`).
 
 ## Estrutura
 
