@@ -430,7 +430,7 @@ Use o primeiro ciclo para testar três famílias, não para construir um curso l
 | 7 | Exercício | Outra integração por partes, com estrutura diferente do piloto |
 | 8 | Teoria curta | O que uma integral realmente acumula |
 | 9 | Aplicação | De \(v(t)\) ao deslocamento usando integral |
-| 10 | Exercício | Derivada ou integral aplicada a um problema curto de movimento |
+| 10 | Exercício | Esfera maciça em looping (`vid_0010_looping_esfera`, `EXERCÍCIO RESOLVIDO · EP. 04`); em produção, decisão de 2026-10-01. Substitui a pauta inicial “derivada ou integral aplicada a um problema curto de movimento” |
 
 Distribuição original: **6 exercícios + 2 teorias curtas + 2 aplicações**; com o vídeo 4 como Aplicação, a contagem factual passou a 5 + 2 + 3 (pendência editorial). O primeiro ciclo deve parecer uma mini-temporada coerente de **Cálculo + aplicações físicas**, não uma amostra aleatória de todo o currículo. Valide enunciado, nível e solução antes de produzir. Depois do décimo, compare interesse, retenção e tempo de produção por família.
 
@@ -447,6 +447,10 @@ foram reordenados. Resolver a pauta deslocada exige decisão editorial explícit
 Atualização de 2026-09-26: o vídeo 4 deixou de trabalhar a escolha de u e
 passou a ser Aplicação — derivada como velocidade instantânea
 (`DA EQUAÇÃO AO FENÔMENO · EP. 01`). **Pendências editoriais:** “como escolher u” continua aprovada como pauta, mas sem posição; a pauta 5 (“derivada como velocidade instantânea”) passa a coincidir com o tema do vídeo 4; e a contagem vigente passa a 5 exercícios + 2 teorias curtas + 3 aplicações. Vídeos 5–10 não foram reordenados; resolver exige decisão posterior.
+
+Atualização de 2026-10-01: o vídeo 10 passou a ser o exercício da esfera maciça em looping
+(tabela acima). A pauta inicial do vídeo 10 deixou de ser vigente e **não foi realocada**
+para outro número.
 
 No primeiro preview do vídeo 3, incluir coda geométrica removível de 7–10 s,
 limitada à interpretação do retângulo e da curva crescente escolhidos. Não

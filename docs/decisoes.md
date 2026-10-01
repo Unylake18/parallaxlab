@@ -26,6 +26,14 @@ Render, QA, documentação e ações de Git devem ser proporcionais à etapa e a
 - Ressalva conhecida: `SurroundingRectangleUnion` falha em `apply_unbuff` (`np.cross` em vetores 2D, numpy 2.5.3); `unbuff=0` contorna, mas o helper não é padrão.
 - MF-Tools deve ser **considerado** nos próximos vídeos, sem obrigatoriedade de uso. Evidência e números em `docs/padroes_producao.md`.
 
+## 2026-10-01 — Pauta do vid_0010
+
+- `vid_0010` passa a ser o **exercício da esfera maciça em looping** (altura mínima 2,5R → 2,7R; I_CM = 2/5 ma²; K = 7/10 mv²).
+- Unidade: `videos/vid_0010_looping_esfera/` (classe `LoopingEsfera010`). Série pública: **EXERCÍCIO RESOLVIDO · EP. 04**.
+- A antiga pauta genérica “derivada ou integral aplicada a um problema curto de movimento” deixa de ser a pauta vigente do vídeo 10. **Não foi realocada** automaticamente para outro número; segue sem posição aprovada.
+- MF-Tools já é usado seletivamente na implementação do vídeo 10 (`TransformByGlyphMap` em três passagens algébricas; ver decisão de MF-Tools acima).
+- O vídeo está **em produção** (preview silencioso); o checkpoint da cena foi versionado. Sem voz, SRT, capa, final ou publicação.
+
 ## 2026-09-30 — Ordem dos vídeos 8 e 9: espira e solenoide
 
 - O preview combinado “campo magnético do solenoide” (espira + solenoide, 174,7 s) ficou

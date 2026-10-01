@@ -153,7 +153,7 @@ Mini-temporada inicial: **Cálculo + aplicações físicas**.
 7. Exercício — campo elétrico no eixo de um anel carregado e posição do máximo (`EXERCÍCIO RESOLVIDO · EP. 03`), decisão de 2026-09-28.
 8. Campo magnético no eixo de uma espira (`POR TRÁS DA FÓRMULA · EP. 03`), decisão de 2026-09-30.
 9. Campo magnético de um solenoide (`DA EQUAÇÃO AO FENÔMENO · EP. 03`), decisão de 2026-09-30; depende do 8.
-10. Exercício — derivada ou integral aplicada a um problema curto de movimento.
+10. Exercício — esfera maciça em looping (`vid_0010_looping_esfera`, `EXERCÍCIO RESOLVIDO · EP. 04`), decisão de 2026-10-01; **em produção** (preview silencioso, não finalizado). Substitui a pauta inicial “derivada ou integral aplicada a um problema curto de movimento”.
 
 Distribuição original: **6 exercícios + 2 teorias curtas + 2 aplicações**. Com o vídeo 4 como Aplicação, a contagem factual passou a 5 + 2 + 3; pendência editorial, sem nova distribuição decidida.
 
@@ -185,6 +185,11 @@ pauta 9 o campo do solenoide (`vid_0009`). As antigas pautas 8 (“o que uma int
 realmente acumula”) e 9 (“de v(t) ao deslocamento”) ficaram **sem posição decidida**; o
 vídeo 10 não foi reordenado; a contagem por família precisa ser reconciliada.
 
+Atualização editorial de 2026-10-01: o vídeo 10 passou a ser o exercício da esfera maciça em
+looping (`vid_0010_looping_esfera`). A pauta anterior (“derivada ou integral aplicada a um problema
+curto de movimento”) deixou de ser a vigente do vídeo 10 e **não foi realocada** para outro número;
+a contagem por família segue por reconciliar.
+
 Depois do vídeo 10: compare formatos, retenção e tempo de produção. Automatize apenas o gargalo que os dados mostrarem.
 
 ## Próxima ação
@@ -198,4 +203,5 @@ Depois do vídeo 10: compare formatos, retenção e tempo de produção. Automat
    A–F em `videos/vid_0008_campo_espira/capas/`) e publicar.
 4. `vid_0009` (solenoide) concluído tecnicamente em 2026-09-30 (voz, sincronia, SRT e master prontos; veja
    `videos/vid_0009_campo_solenoide/ficha.md`): capa oficial pronta; falta publicar.
+5. `vid_0010` (esfera em looping) em produção: preview silencioso em `videos/vid_0010_looping_esfera/cena.py`; sem voz, SRT, capa ou final.
 

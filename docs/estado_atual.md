@@ -217,12 +217,13 @@ remover passos físicos). Capa oficial `capa_instagram.png` (“E SE FOREM / MUI
 
 **vid_0010 — em produção (verificado em 2026-10-01):** `EXERCÍCIO RESOLVIDO · EP. 04`, esfera maciça
 no looping (altura mínima 2,5R → 2,7R; I_CM = 2/5 ma²; K = 7/10 mv²), em
-`videos/vid_0010_looping_esfera/cena.py`, classe `LoopingEsfera010`. No filesystem existe **apenas
-`cena.py`**, ainda **não versionado** (untracked); não há `ficha.md`, áudio, SRT, capa nem render final. Segundo o docstring da cena
+`videos/vid_0010_looping_esfera/cena.py`, classe `LoopingEsfera010` (pauta decidida em 2026-10-01;
+substitui a antiga “derivada ou integral aplicada a um problema curto de movimento”, que não foi realocada). No filesystem existe **apenas
+`cena.py`**, versionado como checkpoint de produção (commit `feat: iniciar vid_0010 looping com MF-Tools`); não há `ficha.md`, áudio, SRT, capa nem render final. Segundo o docstring da cena
 é um preview silencioso (3ª versão). Preview 540×960/15 fps renderizado em 2026-10-01 (~154 s). Três transformações
 algébricas usam `TransformByGlyphMap` (Pitágoras a²=x²+r² → r²=a²−x²; cancelamento de π e a³ em
 I = … → I_CM = 2/5 ma²; K = ½mv² + ½(⅖ma²)(v/a)² → K = ½mv² + ⅕mv²); as demais seguem `TransformMatchingTex`/fade.
-QA completo, voz, SRT, final e publicação **não** foram feitos.
+O preview é estado de produção, não final. QA completo, voz, SRT, capa, final e publicação **não** foram feitos.
 
 **Próxima ação:** escolher a capa do `vid_0008` (propostas A–F) e publicá-lo; publicar o
 `vid_0009` (capa pronta); continuar o `vid_0010` (preview em produção). **Pendências editoriais:** as antigas pautas 8
@@ -234,8 +235,8 @@ que o `vid_0006` passou a ser a aplicação de interferência/ANC, e a pauta 7
 original (“outra integração por partes, com estrutura diferente”) ficou sem
 posição depois que o `vid_0007` passou a ser o campo do anel (decisões de
 2026-09-28); “como escolher u” continua aprovada como pauta, mas sem posição; a
-contagem por família precisa ser reconciliada pela Produção. O vídeo 10 não foi
-reordenado.
+contagem por família precisa ser reconciliada pela Produção. O vídeo 10 passou a ser o
+exercício da esfera em looping (decisão de 2026-10-01); a pauta anterior do vídeo 10 não foi realocada.
 **Inconsistência editorial pendente:** “derivada pela
 regra da cadeia”, antes no vídeo 4, não tem nova posição aprovada. Não foi
 realocada nem excluída definitivamente. Distribuição e vídeos 1, 2 e 5–10
