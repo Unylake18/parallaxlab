@@ -211,11 +211,11 @@ estéreo de 174,4 s): `renders/vid_0009_campo_solenoide_final_master_limpo.mp4` 
 intacta; a cena segue a voz por 53 âncoras (`sync.json`, `native.json`; instantes obtidos por contagem de
 sílabas e pausas, sem ASR, margem ~±0,6 s); SRT `legenda.srt` com 83 cues coloridos. Corrente em verde
 (sem laranja/amarelo). Para caber na voz, esperas nativas de B2, B3, B8 e B9 foram encurtadas (sem
-remover passos físicos). **Capa não criada; não publicado.** Ficha em `ficha.md` da unidade
+remover passos físicos). Capa oficial `capa_instagram.png` (“E SE FOREM / MUITAS ESPIRAS?”, `gerar_capa.py`). **Não publicado.** Ficha em `ficha.md` da unidade
 (inclui o texto da narração). `prototipo_combinado.py` guarda o preview combinado original.
 
-**Próxima ação:** escolher a capa do `vid_0008` (propostas A–F) e publicá-lo; criar a capa do
-`vid_0009` e publicá-lo; iniciar o `vid_0010`. **Pendências editoriais:** as antigas pautas 8
+**Próxima ação:** escolher a capa do `vid_0008` (propostas A–F) e publicá-lo; publicar o
+`vid_0009` (capa pronta); iniciar o `vid_0010`. **Pendências editoriais:** as antigas pautas 8
 (“o que uma integral realmente acumula”) e 9 (“de v(t) ao deslocamento”) ficaram sem
 posição depois da decisão de 2026-09-30 (8 = espira, 9 = solenoide); a família editorial dos
 novos 8 e 9 não foi decidida; a pauta 6

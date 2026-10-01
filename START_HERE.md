@@ -191,5 +191,5 @@ Depois do vídeo 10: compare formatos, retenção e tempo de produção. Automat
 3. `vid_0008` (espira) concluído tecnicamente em 2026-09-30: escolher a capa (propostas
    A–F em `videos/vid_0008_campo_espira/capas/`) e publicar.
 4. `vid_0009` (solenoide) concluído tecnicamente em 2026-09-30 (voz, sincronia, SRT e master prontos; veja
-   `videos/vid_0009_campo_solenoide/ficha.md`): falta capa e publicação.
+   `videos/vid_0009_campo_solenoide/ficha.md`): capa oficial pronta; falta publicar.
 

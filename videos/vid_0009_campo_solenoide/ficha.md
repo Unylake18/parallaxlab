@@ -1,7 +1,7 @@
 # vid_0009 — Campo magnético de um solenoide
 
 - Série pública: **DA EQUAÇÃO AO FENÔMENO · EP. 03**.
-- **Concluído tecnicamente em 2026-09-30: voz, sincronia por âncoras, legenda e master gerados; capa, publicação e aprovação humana do vídeo final pendentes.**
+- **Concluído tecnicamente em 2026-09-30: voz, sincronia por âncoras, legenda e master gerados; publicação e aprovação humana do vídeo final pendentes.**
 - Origem: metade solenoide do preview combinado do `vid_0008` (174,7 s), agora unidade própria
   e mais calma (decisão de 2026-09-30, ver `docs/decisoes.md`). Vem DEPOIS do `vid_0008`
   (espira), que constrói a ferramenta B_z(z); este vídeo a usa.
@@ -14,6 +14,7 @@
   `SYNC_CAL=1 uv run python -m manim -r 108,192 --fps 15 videos/vid_0009_campo_solenoide/cena.py CampoSolenoide009`.
 - Legenda: `legenda.srt` (83 cues, largura ≤ 446 px; cores de `SUBTITLE_TERM_COLORS`: campo ciano, corrente/densidade verde, comprimento violeta, Ampère/retângulo/transversais/cancelam magenta).
 - Comandos: `uv run python -m manim -r 1080,1920 --fps 30 videos/vid_0009_campo_solenoide/cena.py CampoSolenoide009`; `videos/montar_master.py` (render + WAV); `videos/montar_legendado.py … --color-module videos/vid_0009_campo_solenoide/cena.py`.
+- Capa oficial: `capa_instagram.png` (1080×1920), headline “E SE FOREM / MUITAS ESPIRAS?”, painel “espira → poucas espiras → solenoide” com o vetor B crescendo (versão sem texto nem fórmula; a variante com vetor final mais grosso foi descartada). Gerada por `gerar_capa.py` (`CAPA_SET=final uv run python videos/vid_0009_campo_solenoide/gerar_capa.py PASTA`, arquivo `capa_final.png`); logo reduzido a 78% e moldura do painel 16% maior que nas capas anteriores da série. As demais propostas ficaram fora do Git.
 - Preview anterior (silencioso, sem voz): 540×960, 15 fps, 165,9 s, ~211 animações.
 - `prototipo_combinado.py` (classe `CampoSolenoide008`) é o protótipo combinado original,
   preservado só como fonte; não é uma cena de produção.
@@ -71,6 +72,6 @@ Resumindo: começamos com uma espira, somamos muitas e chegamos ao campo no cent
 
 ## Pendências
 
-- Capa (1080×1920), `publicacao.md`, `revisao.md` e aprovação humana do vídeo final; publicação não registrada.
+- `publicacao.md`, `revisao.md` e aprovação humana do vídeo final; publicação não registrada.
 - Sincronia com margem de ±0,6 s (sem ASR): conferir no vídeo se algum passo da cena adianta/atrasa em relação à fala.
 - QA físico em celular não confirmado; `docs/estado_atual.md` não atualizado.
