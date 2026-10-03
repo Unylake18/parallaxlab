@@ -1,0 +1,314 @@
+1
+00:00:00,050 --> 00:00:02,570
+Imagine um gás ideal
+num cilindro isolado,
+
+2
+00:00:02,800 --> 00:00:05,910
+com um pistão sem atrito e
+pequenos pesos em cima.
+
+3
+00:00:06,040 --> 00:00:07,630
+Vamos tirando os
+pesos aos poucos,
+
+4
+00:00:08,090 --> 00:00:10,360
+e o gás se expande
+sem receber calor.
+
+5
+00:00:10,470 --> 00:00:13,470
+Então, de onde vem a energia
+para empurrar o pistão?
+
+6
+00:00:13,630 --> 00:00:15,470
+Pela primeira lei
+da termodinâmica,
+
+7
+00:00:15,620 --> 00:00:18,531
+a variação da energia
+interna é o calor recebido
+
+8
+00:00:18,551 --> 00:00:20,400
+menos o trabalho
+realizado.
+
+9
+00:00:20,470 --> 00:00:21,770
+Como não há
+troca de calor,
+
+10
+00:00:21,940 --> 00:00:24,690
+e a expansão é quase
+estática e sem dissipação,
+
+11
+00:00:24,930 --> 00:00:28,400
+sobra o trabalho: a pressão
+vezes a variação do volume.
+
+12
+00:00:28,480 --> 00:00:30,065
+Na expansão,
+o gás realiza
+
+13
+00:00:30,085 --> 00:00:32,600
+trabalho à custa da
+própria energia interna.
+
+14
+00:00:32,670 --> 00:00:33,880
+Por isso,
+ele esfria.
+
+15
+00:00:34,030 --> 00:00:35,290
+Agora, o
+gás ideal:
+
+16
+00:00:35,540 --> 00:00:38,130
+a energia interna depende
+só da temperatura.
+
+17
+00:00:38,240 --> 00:00:41,060
+Então, quanto ela muda
+quando a temperatura muda?
+
+18
+00:00:41,170 --> 00:00:42,553
+Essa taxa, por
+mol, define
+
+19
+00:00:42,573 --> 00:00:45,440
+o calor específico a
+volume constante.
+
+20
+00:00:45,520 --> 00:00:48,225
+Assim, uma pequena
+variação da energia interna
+
+21
+00:00:48,245 --> 00:00:51,020
+é o número de mols, vezes
+esse calor específico,
+
+22
+00:00:51,190 --> 00:00:53,270
+vezes a variação
+da temperatura.
+
+23
+00:00:53,390 --> 00:00:56,150
+Daqui em diante é álgebra,
+e a tela faz o trabalho.
+
+24
+00:00:56,240 --> 00:00:58,150
+No fim, temos
+uma relação direta
+
+25
+00:00:58,170 --> 00:01:00,630
+entre as mudanças de
+temperatura e volume.
+
+26
+00:01:00,750 --> 00:01:03,430
+Mas ainda falta entender
+de onde surge o gama.
+
+27
+00:01:03,550 --> 00:01:06,780
+Para isso, falta um resultado:
+a relação de Mayer.
+
+28
+00:01:06,910 --> 00:01:09,420
+Compare dois gases que
+esquentam o mesmo tanto.
+
+29
+00:01:09,640 --> 00:01:11,570
+A volume constante,
+não há trabalho,
+
+30
+00:01:11,730 --> 00:01:14,070
+e toda a energia vai
+para a energia interna.
+
+31
+00:01:14,170 --> 00:01:17,010
+A pressão constante, o gás
+também empurra o pistão,
+
+32
+00:01:17,170 --> 00:01:19,850
+então precisa de mais
+energia para esquentar igual.
+
+33
+00:01:19,950 --> 00:01:22,622
+Para um gás ideal, essa
+diferença entre os calores
+
+34
+00:01:22,642 --> 00:01:25,280
+específicos é a constante
+universal dos gases.
+
+35
+00:01:25,540 --> 00:01:26,846
+Chamamos de
+gama a razão
+
+36
+00:01:26,866 --> 00:01:29,020
+entre esses dois
+calores específicos.
+
+37
+00:01:29,380 --> 00:01:32,474
+E, por Mayer, a constante
+dos gases dividida pelo
+
+38
+00:01:32,494 --> 00:01:35,920
+calor específico a volume
+constante é gama menos um.
+
+39
+00:01:36,070 --> 00:01:38,380
+Voltando à relação entre
+temperatura e volume,
+
+40
+00:01:38,550 --> 00:01:39,950
+agora ela
+traz o gama.
+
+41
+00:01:40,070 --> 00:01:42,696
+Se o gama puder ser
+considerado aproximadamente
+
+42
+00:01:42,716 --> 00:01:45,580
+constante nesse intervalo, a
+gente integra os dois lados.
+
+43
+00:01:45,850 --> 00:01:48,627
+O resultado é este:
+a temperatura vezes
+
+44
+00:01:48,647 --> 00:01:51,190
+o volume elevado a gama
+menos um é constante.
+
+45
+00:01:51,320 --> 00:01:54,360
+Esse já é um
+resultado importante:
+
+46
+00:01:54,510 --> 00:01:56,270
+quando o gás se expande,
+a temperatura precisa cair.
+
+47
+00:01:56,360 --> 00:01:57,721
+Por fim, usamos
+de novo
+
+48
+00:01:57,741 --> 00:02:00,090
+o gás ideal para
+eliminar a temperatura.
+
+49
+00:02:00,200 --> 00:02:01,652
+E aí está:
+pressão vezes
+
+50
+00:02:01,672 --> 00:02:04,070
+volume elevado a
+gama é constante.
+
+51
+00:02:04,330 --> 00:02:06,410
+Agora a fórmula
+não foi imposta.
+
+52
+00:02:06,450 --> 00:02:09,000
+Ela nasceu das condições
+físicas do processo.
+
+53
+00:02:09,280 --> 00:02:12,169
+Na isotérmica, entra calor
+para compensar o trabalho
+
+54
+00:02:12,189 --> 00:02:15,310
+realizado pelo gás e manter
+a temperatura constante.
+
+55
+00:02:15,510 --> 00:02:16,890
+Na adiabática,
+não.
+
+56
+00:02:16,920 --> 00:02:19,750
+O trabalho reduz a energia
+interna do próprio gás.
+
+57
+00:02:19,970 --> 00:02:22,230
+Por isso ele esfria, e
+a pressão cai mais.
+
+58
+00:02:22,440 --> 00:02:25,920
+No mesmo volume final, a
+pressão da adiabática é menor.
+
+59
+00:02:26,000 --> 00:02:28,050
+A fórmula não é o
+começo da história.
+
+60
+00:02:28,180 --> 00:02:29,600
+É a consequência
+dela.
+
+61
+00:02:29,790 --> 00:02:33,333
+Vale para um gás ideal, num
+processo adiabático reversível,
+
+62
+00:02:33,353 --> 00:02:35,610
+com gama aproximadamente
+constante.
+
+63
+00:02:35,940 --> 00:02:38,090
+Se curtiu, siga
+o Parallax Lab.

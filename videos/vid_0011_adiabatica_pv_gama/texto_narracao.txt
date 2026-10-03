@@ -1,0 +1,19 @@
+Imagine um gás ideal num cilindro isolado, com um pistão sem atrito e pequenos pesos em cima. Vamos tirando os pesos aos poucos, e o gás se expande sem receber calor. Então, de onde vem a energia para empurrar o pistão?
+
+Pela primeira lei da termodinâmica, a variação da energia interna é o calor recebido menos o trabalho realizado. Como não há troca de calor, e a expansão é quase estática e sem dissipação, sobra o trabalho: a pressão vezes a variação do volume. Na expansão, o gás realiza trabalho à custa da própria energia interna. Por isso, ele esfria.
+
+Agora, o gás ideal: a energia interna depende só da temperatura. Então, quanto ela muda quando a temperatura muda? Essa taxa, por mol, define o calor específico a volume constante. Assim, uma pequena variação da energia interna é o número de mols, vezes esse calor específico, vezes a variação da temperatura.
+
+Daqui em diante é álgebra, e a tela faz o trabalho. No fim, temos uma relação direta entre as mudanças de temperatura e volume. Mas ainda falta entender de onde surge o gama.
+
+Para isso, falta um resultado: a relação de Máier. Compare dois gases que esquentam o mesmo tanto. A volume constante, não há trabalho, e toda a energia vai para a energia interna. A pressão constante, o gás também empurra o pistão, então precisa de mais energia para esquentar igual. Para um gás ideal, essa diferença entre os calores específicos é a constante universal dos gases.
+
+Chamamos de gama a razão entre esses dois calores específicos. E, por Máier, a constante dos gases dividida pelo calor específico a volume constante é gama menos um.
+
+Voltando à relação entre temperatura e volume, agora ela traz o gama. Se o gama puder ser considerado aproximadamente constante nesse intervalo, a gente integra os dois lados. O resultado é este: a temperatura vezes o volume elevado a gama menos um é constante. Esse já é um resultado importante: quando o gás se expande, a temperatura precisa cair.
+
+Por fim, usamos de novo o gás ideal para eliminar a temperatura. E aí está: pressão vezes volume elevado a gama é constante. Agora a fórmula não foi imposta. Ela nasceu das condições físicas do processo.
+
+Na isotérmica, entra calor para compensar o trabalho realizado pelo gás e manter a temperatura constante. Na adiabática, não. O trabalho reduz a energia interna do próprio gás. Por isso ele esfria, e a pressão cai mais. No mesmo volume final, a pressão da adiabática é menor.
+
+A fórmula não é o começo da história. É a consequência dela. Vale para um gás ideal, num processo adiabático reversível, com gama aproximadamente constante. Se curtiu, siga o Parallax Lab.
