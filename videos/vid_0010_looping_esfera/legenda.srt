@@ -1,0 +1,354 @@
+1
+00:00:00,070 --> 00:00:01,241
+Qual é a
+altura mínima
+
+2
+00:00:01,261 --> 00:00:03,240
+para uma esfera
+completar um looping?
+
+3
+00:00:03,460 --> 00:00:06,860
+Pra descobrir, começamos pelo
+caso clássico: uma partícula.
+
+4
+00:00:07,050 --> 00:00:09,780
+No topo, peso e normal
+apontam para o centro.
+
+5
+00:00:09,970 --> 00:00:11,938
+Juntos, dão massa
+vezes velocidade
+
+6
+00:00:11,958 --> 00:00:13,940
+ao quadrado sobre
+o raio do looping.
+
+7
+00:00:14,020 --> 00:00:17,200
+Como a pista só empurra, a
+normal não pode ser negativa.
+
+8
+00:00:17,340 --> 00:00:19,654
+No limite ela zera:
+velocidade no topo
+
+9
+00:00:19,674 --> 00:00:21,990
+ao quadrado igual a
+gravidade vezes raio.
+
+10
+00:00:22,130 --> 00:00:23,280
+Agora a
+energia.
+
+11
+00:00:23,380 --> 00:00:25,220
+No início, ela é
+toda potencial:
+
+12
+00:00:25,380 --> 00:00:27,690
+massa vezes
+gravidade vezes altura.
+
+13
+00:00:27,770 --> 00:00:28,963
+No topo, a
+partícula
+
+14
+00:00:28,983 --> 00:00:31,540
+está a dois raios e ainda
+tem energia cinética.
+
+15
+00:00:31,750 --> 00:00:35,009
+Troca velocidade ao quadrado
+por gravidade vezes raio, corta
+
+16
+00:00:35,029 --> 00:00:38,610
+massa e gravidade e junta:
+dois mais meio dá cinco meios.
+
+17
+00:00:38,820 --> 00:00:42,330
+Logo, a altura mínima é dois e
+meio vezes o raio do looping.
+
+18
+00:00:42,520 --> 00:00:44,880
+Soltando daí, a partícula
+completa o looping.
+
+19
+00:00:45,070 --> 00:00:46,230
+Agora, a
+esfera.
+
+20
+00:00:46,360 --> 00:00:48,270
+A condição no
+topo muda? Não.
+
+21
+00:00:48,320 --> 00:00:50,390
+As mesmas forças
+continuam atuando,
+
+22
+00:00:50,530 --> 00:00:53,000
+então a velocidade mínima
+no topo é a mesma.
+
+23
+00:00:53,060 --> 00:00:54,580
+O que muda
+é a energia.
+
+24
+00:00:54,670 --> 00:00:57,770
+A esfera também gira, então
+surge um termo de rotação,
+
+25
+00:00:57,940 --> 00:00:59,480
+que depende do
+momento de inércia.
+
+26
+00:00:59,720 --> 00:01:00,500
+Quanto
+ele vale?
+
+27
+00:01:00,610 --> 00:01:02,990
+Divida a esfera homogênea
+em discos finos.
+
+28
+00:01:03,200 --> 00:01:06,300
+Para um disco a certa
+distância do centro,
+
+29
+00:01:06,440 --> 00:01:08,190
+o raio da esfera, essa
+distância e o raio
+
+30
+00:01:08,210 --> 00:01:09,980
+do disco formam um
+triângulo retângulo.
+
+31
+00:01:10,100 --> 00:01:12,889
+Então o raio do disco ao
+quadrado é o raio da esfera
+
+32
+00:01:12,909 --> 00:01:15,330
+ao quadrado menos a
+distância ao quadrado.
+
+33
+00:01:15,460 --> 00:01:17,990
+A massa do disco é
+densidade vezes volume,
+
+34
+00:01:18,140 --> 00:01:20,260
+e o volume é área
+vezes espessura.
+
+35
+00:01:20,300 --> 00:01:21,985
+O momento de
+inércia desse disco
+
+36
+00:01:22,005 --> 00:01:24,510
+é metade da massa vezes
+o raio ao quadrado.
+
+37
+00:01:24,670 --> 00:01:27,790
+Substituindo, os dois fatores
+iguais formam um quadrado.
+
+38
+00:01:27,950 --> 00:01:29,580
+Agora somamos
+todos os discos.
+
+39
+00:01:29,950 --> 00:01:32,435
+A integral dá oito pi
+vezes a densidade
+
+40
+00:01:32,455 --> 00:01:35,350
+vezes o raio da esfera
+à quinta, sobre quinze.
+
+41
+00:01:35,490 --> 00:01:38,650
+Pela massa total, isolamos
+a densidade e substituímos.
+
+42
+00:01:38,900 --> 00:01:40,764
+Os pi cancelam,
+e raio à quinta
+
+43
+00:01:40,784 --> 00:01:43,220
+sobre raio ao cubo
+vira raio ao quadrado.
+
+44
+00:01:43,420 --> 00:01:44,387
+Sobra: dois
+quintos
+
+45
+00:01:44,407 --> 00:01:46,980
+da massa vezes o raio
+da esfera ao quadrado.
+
+46
+00:01:47,140 --> 00:01:48,200
+De volta
+à energia.
+
+47
+00:01:48,350 --> 00:01:50,493
+Substituímos o momento
+de inércia e usamos
+
+48
+00:01:50,513 --> 00:01:53,110
+o rolamento sem
+deslizamento: a velocidade
+
+49
+00:01:53,130 --> 00:01:56,050
+angular é a velocidade
+dividida pelo raio da esfera.
+
+50
+00:01:56,100 --> 00:01:57,280
+Os raios se
+cancelam.
+
+51
+00:01:57,420 --> 00:02:00,090
+Somando rotação e
+translação, chegamos a sete
+
+52
+00:02:00,110 --> 00:02:02,720
+décimos de massa vezes
+velocidade ao quadrado.
+
+53
+00:02:02,880 --> 00:02:03,880
+Desses sete
+décimos,
+
+54
+00:02:04,170 --> 00:02:07,240
+cinco partes ficam na
+translação e duas na rotação.
+
+55
+00:02:07,330 --> 00:02:09,320
+Descendo, potencial
+vira cinética;
+
+56
+00:02:09,570 --> 00:02:11,140
+subindo, acontece
+o contrário.
+
+57
+00:02:11,240 --> 00:02:13,160
+Agora a altura
+mínima da esfera.
+
+58
+00:02:13,240 --> 00:02:15,944
+No topo, a velocidade
+é a mesma e a altura
+
+59
+00:02:15,964 --> 00:02:17,750
+continua sendo dois
+raios do looping.
+
+60
+00:02:17,860 --> 00:02:20,580
+A diferença é a energia
+cinética de sete décimos.
+
+61
+00:02:21,040 --> 00:02:23,389
+Substitui a condição
+do topo, corta massa
+
+62
+00:02:23,409 --> 00:02:26,500
+e gravidade e soma: vinte
+e sete décimos do raio,
+
+63
+00:02:26,630 --> 00:02:29,420
+ou dois vírgula sete
+vezes o raio do looping.
+
+64
+00:02:29,600 --> 00:02:31,110
+Soltando a esfera
+dessa altura,
+
+65
+00:02:31,240 --> 00:02:34,180
+ela desce, rola, sobe
+e completa o looping.
+
+66
+00:02:34,320 --> 00:02:37,220
+A energia total não muda;
+apenas se redistribui.
+
+67
+00:02:37,340 --> 00:02:39,380
+Por que a esfera
+precisa de mais altura?
+
+68
+00:02:39,520 --> 00:02:41,580
+A velocidade mínima
+no topo é a mesma,
+
+69
+00:02:41,750 --> 00:02:43,940
+mas parte da energia
+vai para a rotação.
+
+70
+00:02:43,980 --> 00:02:46,070
+Mais energia,
+mais altura inicial.
+
+71
+00:02:46,220 --> 00:02:48,170
+Se curtiu, siga
+o Parallax Lab.
