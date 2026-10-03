@@ -1,0 +1,319 @@
+1
+00:00:00,050 --> 00:00:02,730
+Lembra da esfera isolante
+uniformemente carregada?
+
+2
+00:00:02,790 --> 00:00:05,130
+Nela, o campo cresce
+até a superfície.
+
+3
+00:00:05,470 --> 00:00:08,210
+E se a densidade diminuir
+do centro para a borda?
+
+4
+00:00:08,350 --> 00:00:10,850
+O campo máximo ainda
+fica na superfície?
+
+5
+00:00:11,010 --> 00:00:13,044
+Agora imagine uma
+esfera isolante
+
+6
+00:00:13,064 --> 00:00:15,510
+em que a densidade é
+máxima no centro e diminui
+
+7
+00:00:15,530 --> 00:00:18,080
+continuamente até chegar
+a zero na superfície.
+
+8
+00:00:18,310 --> 00:00:19,930
+Mesmo com a
+densidade variando,
+
+9
+00:00:20,070 --> 00:00:22,900
+a distribuição continua
+esfericamente simétrica.
+
+10
+00:00:23,130 --> 00:00:26,191
+Numa gaussiana
+a certa distância
+
+11
+00:00:26,211 --> 00:00:28,303
+do centro, o campo
+tem o mesmo módulo
+
+12
+00:00:28,323 --> 00:00:29,850
+em toda a superfície
+e aponta radialmente.
+
+13
+00:00:30,110 --> 00:00:31,442
+O vetor normal
+e o vetor
+
+14
+00:00:31,462 --> 00:00:33,510
+de área também
+apontam para fora.
+
+15
+00:00:33,620 --> 00:00:36,583
+Então o campo e o
+vetor de área são
+
+16
+00:00:36,603 --> 00:00:38,910
+paralelos: o produto escalar
+vira campo vezes área.
+
+17
+00:00:39,040 --> 00:00:42,300
+Integrando sobre
+a gaussiana,
+
+18
+00:00:42,420 --> 00:00:44,820
+sobra o campo vezes quatro pi
+vezes a distância ao quadrado,
+
+19
+00:00:44,940 --> 00:00:46,820
+igual à carga encerrada
+sobre épsilon zero.
+
+20
+00:00:46,980 --> 00:00:49,140
+Só que a densidade
+muda de ponto a ponto,
+
+21
+00:00:49,330 --> 00:00:52,230
+então não vale simplesmente
+densidade vezes volume.
+
+22
+00:00:52,360 --> 00:00:55,551
+Dividimos a esfera em
+cascas finas: a carga de cada
+
+23
+00:00:55,571 --> 00:00:58,810
+casca é a densidade local
+vezes o volume da casca.
+
+24
+00:00:59,110 --> 00:01:00,530
+Somando
+as cascas,
+
+25
+00:01:00,940 --> 00:01:04,530
+obtemos: quatro pi vezes
+a densidade central,
+
+26
+00:01:04,690 --> 00:01:06,739
+multiplicando a distância
+ao cubo sobre três menos
+
+27
+00:01:06,759 --> 00:01:09,290
+a distância à quarta dividida
+por quatro vezes o raio.
+
+28
+00:01:09,430 --> 00:01:11,602
+Substituindo em
+Gauss, o campo interno
+
+29
+00:01:11,622 --> 00:01:14,270
+fica a densidade central
+sobre épsilon zero,
+
+30
+00:01:14,390 --> 00:01:16,669
+vezes distância sobre
+três menos distância
+
+31
+00:01:16,689 --> 00:01:19,760
+ao quadrado dividida
+por quatro vezes o raio.
+
+32
+00:01:19,830 --> 00:01:21,700
+Uma parábola
+côncava para baixo.
+
+33
+00:01:22,010 --> 00:01:22,980
+E fora da
+esfera?
+
+34
+00:01:23,090 --> 00:01:26,116
+Aí a gaussiana já engloba
+toda a carga: pi vezes
+
+35
+00:01:26,136 --> 00:01:29,420
+a densidade central vezes
+o raio ao cubo, sobre três.
+
+36
+00:01:29,720 --> 00:01:31,522
+A partir daí, o
+campo externo cai
+
+37
+00:01:31,542 --> 00:01:33,620
+como um sobre a
+distância ao quadrado.
+
+38
+00:01:33,780 --> 00:01:36,410
+Pronto: agora temos o
+campo em todo o espaço.
+
+39
+00:01:36,700 --> 00:01:38,540
+Mas o exercício
+ainda não acabou.
+
+40
+00:01:38,660 --> 00:01:40,350
+Falta responder à
+pergunta inicial:
+
+41
+00:01:40,560 --> 00:01:41,760
+onde o campo
+é máximo?
+
+42
+00:01:42,080 --> 00:01:44,080
+Fora da esfera o
+campo só diminui.
+
+43
+00:01:44,160 --> 00:01:46,640
+Então procuramos o
+máximo até a superfície.
+
+44
+00:01:46,910 --> 00:01:48,080
+Derivando
+termo a termo:
+
+45
+00:01:48,410 --> 00:01:51,757
+distância sobre três vira um
+terço; o termo quadrático
+
+46
+00:01:51,777 --> 00:01:54,510
+vira distância dividida
+por duas vezes o raio.
+
+47
+00:01:54,610 --> 00:01:56,370
+No topo, a
+derivada é zero.
+
+48
+00:01:56,430 --> 00:01:59,536
+Então um terço é igual à
+distância dividida por duas
+
+49
+00:01:59,556 --> 00:02:02,980
+vezes o raio, e a distância
+vale dois terços do raio.
+
+50
+00:02:03,120 --> 00:02:06,430
+Esse é o resultado: o campo
+máximo não está na superfície.
+
+51
+00:02:06,630 --> 00:02:10,340
+Ele fica dentro da esfera, a
+dois terços do raio. Por quê?
+
+52
+00:02:10,430 --> 00:02:13,280
+Afastando-se do centro,
+mais carga fica encerrada,
+
+53
+00:02:13,440 --> 00:02:15,600
+mas a área da gaussiana
+também cresce.
+
+54
+00:02:15,830 --> 00:02:17,454
+No começo, a
+carga encerrada
+
+55
+00:02:17,474 --> 00:02:20,170
+cresce rápido o suficiente
+e o campo aumenta.
+
+56
+00:02:20,250 --> 00:02:23,367
+Perto da borda, a densidade
+já é pequena: a carga passa
+
+57
+00:02:23,387 --> 00:02:26,030
+a crescer devagar demais
+para acompanhar essa área.
+
+58
+00:02:26,120 --> 00:02:27,230
+Então o
+campo cai.
+
+59
+00:02:27,350 --> 00:02:30,817
+Checando: no centro, o
+campo é zero; na superfície,
+
+60
+00:02:30,837 --> 00:02:34,290
+as expressões coincidem;
+e, longe, ele volta a zero.
+
+61
+00:02:34,400 --> 00:02:37,120
+Gauss deu a carga
+encerrada, daí veio o campo,
+
+62
+00:02:37,310 --> 00:02:38,940
+e a derivada
+mostrou o máximo.
+
+63
+00:02:39,090 --> 00:02:41,970
+A distribuição mudou onde
+o campo é mais intenso.
+
+64
+00:02:42,180 --> 00:02:44,180
+Se curtiu, segue o
+arroba labparallax.
