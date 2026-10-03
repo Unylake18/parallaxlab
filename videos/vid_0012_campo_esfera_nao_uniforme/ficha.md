@@ -1,7 +1,7 @@
 # vid_0012 — O campo máximo está na superfície?
 
 - Série pública: **EXERCÍCIO RESOLVIDO · EP. 05**. Headline: “O CAMPO MÁXIMO ESTÁ NA SUPERFÍCIE?”.
-- **Concluído tecnicamente em 2026-10-02: voz, sincronia por âncoras, legenda colorida, master e legendado gerados; aprovação humana do vídeo final, capa e publicação pendentes.**
+- **Vídeo final aprovado em 2026-10-02** (voz, sincronia por âncoras, legenda colorida, master e legendado). **Pendentes: capa e publicação** (seguem em outro computador).
 - Final: `renders/vid_0012_campo_esfera_nao_uniforme_final_master_limpo.mp4` e `..._final_legendado.mp4` — 1080×1920, 30 fps, 4.957 quadros, 165,22 s; AAC estéreo 164,24 s (o último quadro fica 0,6 s além da fala para o handle ficar legível). Preview silencioso anterior: 540×960, 15 fps, 170,9 s (`renders/..._preview_final.mp4`).
 - Problema: esfera isolante de raio R, ρ(r) = ρ0 (1 − r/R) para r ≤ R, ρ = 0 fora. Campo E(r) em todo o espaço e onde o módulo é máximo.
 - Cena: `cena.py`, classe `CampoEsfera012` (módulo único; `Eq` local para os mapas de glifos do MF-Tools).
@@ -58,4 +58,4 @@
 
 ## Pendências
 
-- Aprovação humana do vídeo final (voz, sincronia, legenda). Capa e publicação: não iniciadas.
+- Capa e publicação: não iniciadas. Os MP4 finais ficam em `renders/` (fora do Git); copiar manualmente para o outro computador.
