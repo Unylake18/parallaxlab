@@ -174,6 +174,7 @@ TEX.add_to_preamble(r"\newcommand{\vLv}{\textcolor{cL}{d\vec\ell}}")
 TEX.add_to_preamble(r"\newcommand{\vM}[1]{\textcolor{cM}{#1}}")
 TEX.add_to_preamble(r"\newcommand{\vB}{\textcolor{cR}{dB_z}}")
 TEX.add_to_preamble(r"\newcommand{\vA}{\textcolor{cM}{\alpha}}")
+TEX.add_to_preamble(r"\newcommand{\vI}{\textcolor{cM}{I}}")   # corrente em magenta (só nas capas)
 
 
 def tex(content, size=40, color=None):

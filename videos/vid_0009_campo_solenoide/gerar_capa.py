@@ -288,14 +288,23 @@ ART_MAX = (780, 275)                # área útil do diagrama dentro da moldura
 
 
 def encolher_logo(res, soft, k=LOGO_K, centro=(560, 400)):
-    """Reduz o símbolo: troca a região por fundo liso e recoloca a versão menor por máscara de diferença."""
+    """Reduz o símbolo. O fundo da região vem só das bordas (patch de Coons), sem herdar brilho do logo antigo."""
     x0, x1, y0, y1 = 320, 810, 110, 690
-    fg, bg = res[y0:y1, x0:x1].copy(), soft[y0:y1, x0:x1]
+    fg = res[y0:y1, x0:x1].copy()
+    h, w = fg.shape[:2]
+    suave = lambda v: np.asarray(Image.fromarray(np.clip(v, 0, 255).astype(np.uint8)[None]).filter(
+        ImageFilter.GaussianBlur(6))).astype(np.float32)[0]
+    topo, base_ = suave(soft[y0, x0:x1]), suave(soft[y1 - 1, x0:x1])
+    esq, dir_ = suave(soft[y0:y1, x0]), suave(soft[y0:y1, x1 - 1])
+    u = np.linspace(0, 1, w)[None, :, None]
+    v = np.linspace(0, 1, h)[:, None, None]
+    cantos = (1 - v) * ((1 - u) * topo[0] + u * topo[-1]) + v * ((1 - u) * base_[0] + u * base_[-1])
+    bg = (1 - v) * topo[None] + v * base_[None] + (1 - u) * esq[:, None] + u * dir_[:, None] - cantos
+    bg = bg.clip(0, 255) + np.random.default_rng(7).normal(0, 1.6, bg.shape)
     alfa = np.clip((fg.max(2) - bg.max(2)) / 70.0, 0, 1)
-    h, w = alfa.shape
     jan = lambda n, f: np.clip(np.minimum(np.arange(n), np.arange(n)[::-1]) / f, 0, 1)
     feather = np.outer(jan(h, 45), jan(w, 45))
-    res[y0:y1, x0:x1] = res[y0:y1, x0:x1] * (1 - feather[..., None]) + bg * feather[..., None]
+    res[y0:y1, x0:x1] = fg * (1 - feather[..., None]) + bg * feather[..., None]
     nw, nh = round(w * k), round(h * k)
     fgs = np.asarray(Image.fromarray(fg.clip(0, 255).astype(np.uint8)).resize((nw, nh), Image.LANCZOS)).astype(np.float32)
     als = np.asarray(Image.fromarray((alfa * feather * 255).astype(np.uint8)).resize((nw, nh), Image.LANCZOS)).astype(np.float32) / 255

@@ -19,14 +19,16 @@
 - Legenda: `legenda.srt` (64 cues, fala final “Se curtiu, siga o Parallax Lab.”), cores de
   `SUBTITLE_TERM_COLORS` da cena (raio ciano, distância axial azul, distância violeta;
   cancelam, transversais, cosseno, ângulo e π em magenta).
-- Capa: **6 propostas** em `capas/` (A–F, 1080×1920), geradas por `gerar_capa.py`, todas com
-  a fórmula estampada. **Escolha pendente**; `capa_instagram.png` ainda não existe.
+- Capa oficial: `capa_instagram.png` (1080×1920), refinamento da opção 6 por
+  `gerar_capa_v3.py 7`:
+  “VOCÊ DECOROU / ESSA FÓRMULA?”, espira e ponto P à esquerda, fórmula à direita.
+  As propostas anteriores permanecem em `capas/`, `capas_v2/` e `capas_v3/`.
 - Finais: `renders/vid_0008_campo_espira_final_master_limpo.mp4` e
   `renders/vid_0008_campo_espira_final_legendado.mp4` — 1080×1920, 30 fps, 4.581 frames,
   152,7 s; AAC 44,1 kHz estéreo, 152,3 s.
 - Comandos: `uv run python -m manim -r 1080,1920 --fps 30 videos/vid_0008_campo_espira/cena.py CampoEspira008`;
   `montar_master.py` (render + WAV); `montar_legendado.py … --color-module …/cena.py`;
-  `uv run python videos/vid_0008_campo_espira/gerar_capa.py [PASTA [A-F]]`.
+  `uv run python videos/vid_0008_campo_espira/gerar_capa_v3.py 7` (capa oficial).
 
 ## Modelo aprovado
 
@@ -72,6 +74,6 @@ solenoide (o gancho “E SE FOREM MUITAS?” termina aqui; o solenoide é o `vid
 
 ## Pendências
 
-- Escolher a capa (A–F) e gerar `capa_instagram.png`; publicação e URLs não registradas
+- Publicação e URLs não registradas
   (`publicacao.md`); QA físico em celular não confirmado.
 - Sincronia por âncoras com margem de ±0,5 s (alinhamento por pausas, sem ASR).
