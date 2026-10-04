@@ -121,6 +121,19 @@ Regras:
 - `SurroundingRectangleUnion` exige `unbuff=0` (falha com numpy 2.x); não é padrão.
 - Não refaça vídeos anteriores só por causa da biblioteca.
 
+## Formatos e paralelismo
+
+Referência: `docs/formatos.md`.
+
+- Identifique o formato lendo `formato:` na `ficha.md` da unidade: `curto_vertical` ou `longo_horizontal`.
+- Curto (`videos/vid_NNNN_*`) usa `template/config.py`, sem mudança. Longo (`videos_longos/yt_NNNN_*`) usa `template/config_horizontal.py` e, se útil, `template/layout_horizontal.py`.
+- Nunca converta um formato no outro automaticamente nem use crop como solução.
+- Produção de vídeo altera apenas a própria unidade por padrão.
+- `template/`, `assets/`, `pyproject.toml`, `uv.lock`, `AGENTS.md` e `docs/` globais são compartilhados: não altere no meio de uma unidade sem handoff explícito. Dois agentes nunca editam arquivos globais ao mesmo tempo.
+- Dois agentes em paralelo: um worktree e uma branch por agente (ex.: `video/short-NNNN`, `video/long-NNNN`), sem mexer na pasta do outro vídeo.
+- Não crie ambientes Python separados: worktrees usam a `.venv` do checkout principal via `UV_PROJECT_ENVIRONMENT` e `uv run --no-sync`.
+- O briefing de Produção continua soberano sobre a implementação.
+
 ## Escopo e parada
 
 Não inicie espontaneamente:

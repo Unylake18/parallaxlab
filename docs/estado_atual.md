@@ -1,6 +1,13 @@
 # Estado atual — Parallax Lab
 
-**Atualizado em:** 2026-10-01 (adoção do MF-Tools; reconciliação do `vid_0010`)
+**Atualizado em:** 2026-10-03 (suporte horizontal para vídeos longos); antes, 2026-10-01 (adoção do MF-Tools; reconciliação do `vid_0010`)
+
+## Formatos: curto vertical + longo horizontal (2026-10-03)
+
+- Trilha de YouTube longo aprovada para teste (decisão em `docs/decisoes.md`; regras em `docs/formatos.md`). Contexto editorial informado pelo usuário: `vid_0012` concluído; `vid_0013` em finalização (não há evidência dele neste checkout).
+- Suporte horizontal **aditivo** criado na branch `feat/formatos-curto-longo` (worktree `../parallax-formatos`): `template/config_horizontal.py` (frame 16 × 9, mesma paleta e watermark), `template/layout_horizontal.py` (regiões FOCUS/split, safe area, guias só com `GUIAS=1`), `template/smoke_horizontal.py` (cena `SmokeHorizontal`) e a pasta vazia `videos_longos/`.
+- Smoke test renderizado com sucesso: **960×540, 15 fps, 168 quadros, 11,2 s**; SPLIT, MathTex, `TransformMatchingTex`, Space Grotesk, watermark e safe area conferidos por quadros. Final 1920×1080 não renderizado.
+- `template/config.py`, os vídeos verticais e as dependências não mudaram; o worktree usou a `.venv` do checkout principal (`UV_PROJECT_ENVIRONMENT` + `uv run --no-sync`), sem criar `.venv` nova.
 
 **Marca:** Parallax Lab · **Instagram aprovado:** @labparallax
 

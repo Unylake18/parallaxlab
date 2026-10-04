@@ -12,6 +12,17 @@ Agentes de código devem operar com o menor contexto suficiente para a tarefa. D
 
 Render, QA, documentação e ações de Git devem ser proporcionais à etapa e ao que realmente mudou. A fonte operacional detalhada desse comportamento é `AGENTS.md`.
 
+## 2026-10-03 — Duas trilhas: curto vertical + longo horizontal
+
+- O Parallax Lab passa a ter duas trilhas: **curto vertical** (`curto_vertical`) e **longo horizontal** (`longo_horizontal`, YouTube long-form). Referência: `docs/formatos.md`.
+- Identidade visual única e toolchain único (mesma `.venv`, `pyproject.toml`, `uv.lock`, assets e fontes).
+- Longos iniciais: 16:9, frame lógico 16 × 9, preview 960×540/15 fps, final planejado 1920×1080/30 fps, alvo de 8–10 min (até ~12 quando a clareza exigir). Valores de produção interna, não regra de plataforma.
+- Longos organizados por macroassunto → módulo → vídeo autossuficiente, sem numeração de aula.
+- Três naturezas de longo: `teoria_visual`, `exercicio_resolvido`, `derivacao_aplicada`.
+- Curtos e longos podem ser produzidos em paralelo, em worktrees e branches separados.
+- Template horizontal aditivo (`template/config_horizontal.py`, `template/layout_horizontal.py`); `template/config.py` e os vídeos históricos não mudam nem são refatorados para a nova arquitetura.
+- Mudanças globais (template, assets, dependências, AGENTS, docs) continuam em rodadas próprias.
+
 ## 2026-10-01 — MF-Tools
 
 - **MF-Tools 1.4.9** (`MF-Tools[manimce]==1.4.9`) adotado como dependência utilitária **seletiva**. Presente em `pyproject.toml` e `uv.lock`; compatível com Python 3.12.4 + Manim CE 0.21.0. O fluxo de render continua `uv run python -m manim ...`.

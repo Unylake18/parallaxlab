@@ -59,6 +59,21 @@ narração, e `videos/montar_legendado.py` aplica o SRT no master limpo.
 Os dois finais de cada unidade ficam em `renders/` com sufixos
 `_final_master_limpo.mp4` e `_final_legendado.mp4`.
 
+## Formatos: curto e longo
+
+Dois formatos, mesmo toolchain e mesma identidade. Regras em `docs/formatos.md`.
+
+- Curtos verticais (9:16): `videos/vid_NNNN_*`, configuração `template/config.py`.
+- Longos horizontais (16:9, YouTube): `videos_longos/yt_NNNN_*`, configuração `template/config_horizontal.py`.
+
+```powershell
+uv run python -m manim -r 540,960 --fps 15 videos/vid_NNNN_*/cena.py Classe   # preview vertical
+uv run python -m manim -r 960,540 --fps 15 template/smoke_horizontal.py SmokeHorizontal   # preview horizontal
+```
+
+Agentes em paralelo usam um `git worktree` e uma branch cada, compartilhando a `.venv` do
+checkout principal (`UV_PROJECT_ENVIRONMENT` + `uv run --no-sync`). Não recriar `.venv`.
+
 ## Git
 
 Nos primeiros dez vídeos, trabalhar normalmente em `main` com commits pequenos e coerentes.
