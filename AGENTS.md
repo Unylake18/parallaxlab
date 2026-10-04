@@ -26,7 +26,8 @@ Consulte conforme necessidade:
 - `docs/padroes_producao.md` — padrões observados entre vídeos;
 - `docs/identidade_visual.md` — identidade e marca;
 - `docs/decisoes.md` — decisões permanentes;
-- `docs/guia_mestre.md` — estratégia ampla.
+- `docs/guia_mestre.md` — estratégia ampla;
+- `docs/mapa_curricular.md` — arquitetura curricular/editorial; usar para localizar uma pauta dentro de Física/Cálculo e entender como ela se conecta à biblioteca futura.
 
 Não leia automaticamente todos esses documentos.
 
@@ -132,7 +133,8 @@ Referência: `docs/formatos.md`.
 - `template/`, `assets/`, `pyproject.toml`, `uv.lock`, `AGENTS.md` e `docs/` globais são compartilhados: não altere no meio de uma unidade sem handoff explícito. Dois agentes nunca editam arquivos globais ao mesmo tempo.
 - Dois agentes em paralelo: um worktree e uma branch por agente (ex.: `video/short-NNNN`, `video/long-NNNN`), sem mexer na pasta do outro vídeo.
 - Não crie ambientes Python separados: worktrees usam a `.venv` do checkout principal via `UV_PROJECT_ENVIRONMENT` e `uv run --no-sync`.
-- O briefing de Produção continua soberano sobre a implementação.
+- Para escolher ou posicionar conteúdo longo, consulte `docs/mapa_curricular.md`. Ordem de publicação não é ordem curricular; não invente posição curricular que o mapa não sustente.
+- O briefing de Produção (matemática, física, roteiro) continua soberano sobre a implementação.
 
 ## Escopo e parada
 

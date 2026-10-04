@@ -12,6 +12,17 @@ Agentes de código devem operar com o menor contexto suficiente para a tarefa. D
 
 Render, QA, documentação e ações de Git devem ser proporcionais à etapa e ao que realmente mudou. A fonte operacional detalhada desse comportamento é `AGENTS.md`.
 
+## 2026-10-03 — Mapa curricular editorial
+
+- O Parallax Lab adota `docs/mapa_curricular.md` como referência para a arquitetura acadêmica da biblioteca de vídeos longos.
+- Escopo inicial: Física I–IV e Cálculo I–IV.
+- Expansões futuras planejadas: Álgebra Linear, Equações Diferenciais e outros métodos matemáticos; não constituem backlog obrigatório atual.
+- Organização: curso/eixo → macroassunto → módulo → vídeo autossuficiente.
+- Ordem de publicação não precisa coincidir com ordem curricular.
+- Módulos podem amadurecer com teoria visual, derivação/aplicação e exercício resolvido, sem cota rígida.
+- O mapa é editorial e não pretende reproduzir literalmente a ementa de uma universidade específica.
+- Estado operacional continua em `docs/estado_atual.md`.
+
 ## 2026-10-03 — Duas trilhas: curto vertical + longo horizontal
 
 - O Parallax Lab passa a ter duas trilhas: **curto vertical** (`curto_vertical`) e **longo horizontal** (`longo_horizontal`, YouTube long-form). Referência: `docs/formatos.md`.

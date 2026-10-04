@@ -70,6 +70,10 @@ na pergunta real, sem depender de numeração.
 Exemplos: Mecânica → Energia e potencial → “Como prever o movimento usando apenas o potencial?”;
 Mecânica → Movimento em duas dimensões → “Por que o lançamento ótimo de um penhasco não é a 45°?”.
 
+Onde cada conteúdo se encaixa (curso/eixo → macroassunto → módulo) está em `docs/mapa_curricular.md`.
+Este documento define **como** o vídeo longo é produzido; o mapa define **onde** ele entra na biblioteca.
+A publicação pode ocorrer fora da ordem curricular.
+
 ### Composição
 
 `mais espaço = mais clareza`, não `mais espaço = mais informação simultânea`. Em geral, uma

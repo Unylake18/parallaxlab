@@ -25,6 +25,7 @@ O fluxo de render continua `uv run python -m manim ...`. As cenas importam `MF_T
 
 - `AGENTS.md` — instruções operacionais para agentes de código
 - `docs/` — documentação e estado operacional
+- `docs/mapa_curricular.md` — mapa de Física I–IV e Cálculo I–IV e organização curricular futura dos vídeos longos
 - `template/` — configuração e componentes reutilizáveis do Manim
 - `videos/` — fontes e documentos de cada vídeo; montagem de áudio/legenda
 - `renders/` — MP4s finais locais, ignorados pelo Git; backup externo pendente
