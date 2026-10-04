@@ -1,12 +1,12 @@
 # Estado atual — Parallax Lab
 
-**Atualizado em:** 2026-10-03 (suporte horizontal para vídeos longos); antes, 2026-10-01 (adoção do MF-Tools; reconciliação do `vid_0010`)
+**Atualizado em:** 2026-10-03 (suporte horizontal integrado; reconciliação dos vídeos 11–13); antes, 2026-10-01 (adoção do MF-Tools; reconciliação do `vid_0010`)
 
 ## Formatos: curto vertical + longo horizontal (2026-10-03)
 
-- Trilha de YouTube longo aprovada para teste (decisão em `docs/decisoes.md`; regras em `docs/formatos.md`). Contexto editorial informado pelo usuário: `vid_0012` concluído; `vid_0013` em finalização (não há evidência dele neste checkout).
-- Suporte horizontal **aditivo** criado na branch `feat/formatos-curto-longo` (worktree `../parallax-formatos`): `template/config_horizontal.py` (frame 16 × 9, mesma paleta e watermark), `template/layout_horizontal.py` (regiões FOCUS/split, safe area, guias só com `GUIAS=1`), `template/smoke_horizontal.py` (cena `SmokeHorizontal`) e a pasta vazia `videos_longos/`.
-- Smoke test renderizado com sucesso: **960×540, 15 fps, 168 quadros, 11,2 s**; SPLIT, MathTex, `TransformMatchingTex`, Space Grotesk, watermark e safe area conferidos por quadros. Final 1920×1080 não renderizado.
+- Trilha de YouTube longo aprovada para teste e **disponível tecnicamente** (decisão em `docs/decisoes.md`; regras em `docs/formatos.md`). Nenhum vídeo longo iniciado.
+- Suporte horizontal **aditivo** integrado na `main` por fast-forward (commit `f78ddc8`, feito na branch `feat/formatos-curto-longo`, worktree `../parallax-formatos`): `template/config_horizontal.py` (frame 16 × 9, mesma paleta e watermark), `template/layout_horizontal.py` (regiões FOCUS/split, safe area, guias só com `GUIAS=1`), `template/smoke_horizontal.py` (cena `SmokeHorizontal`) e a pasta vazia `videos_longos/`.
+- Smoke test renderizado e aprovado: **960×540, 15 fps, 168 quadros, 11,2 s**; SPLIT, MathTex, `TransformMatchingTex`, Space Grotesk, watermark e safe area conferidos por quadros. Final 1920×1080 não renderizado.
 - `template/config.py`, os vídeos verticais e as dependências não mudaram; o worktree usou a `.venv` do checkout principal (`UV_PROJECT_ENVIRONMENT` + `uv run --no-sync`), sem criar `.venv` nova.
 
 **Marca:** Parallax Lab · **Instagram aprovado:** @labparallax
@@ -231,6 +231,24 @@ substitui a antiga “derivada ou integral aplicada a um problema curto de movim
 algébricas usam `TransformByGlyphMap` (Pitágoras a²=x²+r² → r²=a²−x²; cancelamento de π e a³ em
 I = … → I_CM = 2/5 ma²; K = ½mv² + ½(⅖ma²)(v/a)² → K = ½mv² + ⅕mv²); as demais seguem `TransformMatchingTex`/fade.
 O preview é estado de produção, não final. QA completo, voz, SRT, capa, final e publicação **não** foram feitos.
+
+**vid_0011 — concluído tecnicamente (2026-10-02):** `POR TRÁS DA FÓRMULA · EP. 04`, origem de
+PV^γ = constante, em `videos/vid_0011_adiabatica_pv_gama/`, classe `AdiabaticaPVGama011`. Finais locais em
+**1080×1920, 30 fps, 4.751 quadros, ~158,35 s** (AAC estéreo): `renders/vid_0011_adiabatica_pv_gama_final_master_limpo.mp4`
+e `..._final_legendado.mp4`. Narração ElevenLabs `audio/narracao_final.wav`, intacta; 34 âncoras (`sync.json`,
+`native.json`); SRT `legenda.srt` com 63 cues coloridos. Seis propostas de capa versionadas em `capas/`
+(`gerar_capa.py`), escolha pendente. Segundo a `ficha.md`, aprovação humana do vídeo final e publicação pendentes.
+**Não publicado.**
+
+**vid_0012 — vídeo final aprovado (2026-10-02):** `EXERCÍCIO RESOLVIDO · EP. 05`, campo de uma esfera isolante
+com ρ(r) = ρ0(1 − r/R) e máximo em r = 2R/3, em `videos/vid_0012_campo_esfera_nao_uniforme/`, classe
+`CampoEsfera012`. Finais locais em **1080×1920, 30 fps, 4.957 quadros, ~165,22 s** (AAC estéreo):
+`renders/vid_0012_campo_esfera_nao_uniforme_final_master_limpo.mp4` e `..._final_legendado.mp4`. Narração ElevenLabs
+`audio/narracao_final.wav`, intacta; 57 âncoras de fala (`sync.json`); SRT `legenda.srt` com 64 cues. **Pendentes:
+capa e publicação** (segundo a `ficha.md`, seguem em outro computador).
+
+**vid_0013 — em finalização, segundo o usuário (2026-10-03):** produzido em outro computador; não há pasta, arquivo
+nem commit do `vid_0013` neste repositório (`main` e `origin/main`). Não registrar como concluído sem evidência.
 
 **Próxima ação:** escolher a capa do `vid_0008` (propostas A–F) e publicá-lo; publicar o
 `vid_0009` (capa pronta); continuar o `vid_0010` (preview em produção). **Pendências editoriais:** as antigas pautas 8
