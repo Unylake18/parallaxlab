@@ -63,12 +63,12 @@ limites de validade. Versão longa de “Por Trás da Fórmula / Da Equação ao
 
 ### Organização da biblioteca
 
-MACROASSUNTO → MÓDULO → VÍDEO AUTOSSUFICIENTE. Não estruturar como “Aula 1, Aula 2, Aula 3”;
+CURSO/EIXO → MACROASSUNTO → MÓDULO → VÍDEO AUTOSSUFICIENTE. Não estruturar como “Aula 1, Aula 2, Aula 3”;
 playlists ordenam depois. Cada vídeo funciona sozinho, pertence a um módulo e tem título baseado
 na pergunta real, sem depender de numeração.
 
 Exemplos: Mecânica → Energia e potencial → “Como prever o movimento usando apenas o potencial?”;
-Mecânica → Movimento em duas dimensões → “Por que o lançamento ótimo de um penhasco não é a 45°?”.
+Física I → Mecânica → Lançamentos → “Por que o lançamento ótimo de uma altura não é a 45°?”.
 
 Onde cada conteúdo se encaixa (curso/eixo → macroassunto → módulo) está em `docs/mapa_curricular.md`.
 Este documento define **como** o vídeo longo é produzido; o mapa define **onde** ele entra na biblioteca.
