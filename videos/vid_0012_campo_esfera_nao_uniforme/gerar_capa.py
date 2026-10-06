@@ -162,8 +162,8 @@ def painel_5():
 
 
 def painel_6():
-    """Esfera e, à direita, a lei de Gauss ∮E⃗·dA⃗ = Q_enc/ε0 sobre a expressão de ρ(r)."""
-    gauss = tx(r"\oint \vec{E}\cdot d\vec{A}=\frac{Q_{\mathrm{enc}}}{\varepsilon_0}", 82, WHITE)
+    """Esfera e, à direita, a lei de Gauss ∮E⃗·dA⃗ = Q_env/ε0 sobre a expressão de ρ(r)."""
+    gauss = tx(r"\oint \vec{E}\cdot d\vec{A}=\frac{Q_{\mathrm{env}}}{\varepsilon_0}", 82, WHITE)
     gauss[0][1].set_color(CYAN)
     gauss[0][2].set_color(CYAN)
     dir_ = VGroup(gauss, rho_expr(82)).arrange(DOWN, buff=0.6)

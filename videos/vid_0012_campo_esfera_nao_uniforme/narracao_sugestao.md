@@ -6,9 +6,9 @@ EXERCÍCIO RESOLVIDO · EP. 05. Texto para o TTS em `texto_narracao.txt`: 14 par
 
 - Uma tomada única com os 14 parágrafos, mesma voz/configuração dos vídeos 0010 e 0011 (prosódia contínua). Não acelerar a voz para caber.
 - Antes da tomada completa, teste curto com quatro frases: "a distância sobre duas vezes o raio", "a distância vale dois terços do raio", "quatro pi vezes a densidade central", "sobre épsilon zero". A tela mantém r, R, E; a voz usa os nomes.
-- Pausas perceptíveis (≈ 0,6–0,8 s) depois do gancho, de "É uma parábola côncava para baixo", e de "…a carga encerrada passa a crescer devagar demais… Então o campo cai". Depois de "r vale dois terços de R" e do payoff, respiro maior (≈ 1–1,5 s): a cena segura 1,5 s no quadro de r = 2R/3.
+- Pausas perceptíveis (≈ 0,6–0,8 s) depois do gancho, de "É uma parábola côncava para baixo", e de "…a carga envolvida passa a crescer devagar demais… Então o campo cai". Depois de "r vale dois terços de R" e do payoff, respiro maior (≈ 1–1,5 s): a cena segura 1,5 s no quadro de r = 2R/3.
 - Não narrar os cancelamentos de 4π e r² nem as primitivas: ficam na animação.
-- Interpretação: o argumento é o crescimento relativo da carga encerrada frente a r², não "entra pouca carga" (em termos absolutos, a casca perto da borda carrega mais carga que a do centro; ver divergência na `ficha.md`).
+- Interpretação: o argumento é o crescimento relativo da carga envolvida frente a r², não "entra pouca carga" (em termos absolutos, a casca perto da borda carrega mais carga que a do centro; ver divergência na `ficha.md`).
 - Se a voz extrapolar: primeiro ganhar 0,5–1 s no vídeo (Cascas, Integral, Campo interno são os mais apertados); só cortar texto se o desvio for maior (primeiro as checagens).
 
 ## Blocos (janelas medidas) e âncoras previstas

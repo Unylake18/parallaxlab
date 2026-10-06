@@ -41,6 +41,9 @@ ANCORAS = [
     ("s13c", "e a derivada mostrou"), ("s13d", "A distribuição mudou"), ("s14a", "Se curtiu"),
 ]
 EXTRAS = []
+# Pausas conferidas à mão no WAV (take Q_env, 165,04 s): (trecho que termina na pontuação, início da pausa em s).
+# O alinhador por sílabas usou pausas erradas aqui (s3k e s4d caíam tarde demais).
+PAUSAS_FIXAS = [("ao quadrado,", 44.18), ("cascas finas:", 53.92)]
 
 PUNCT = {",": 0.9, ":": 1.0, ";": 1.0, ".": 1.6, "?": 1.6}
 
@@ -124,6 +127,10 @@ def main():
         return forcado
 
     forcado = dp_frases()
+    for trecho, t_p in PAUSAS_FIXAS:
+        alvo = trecho.split()
+        i = next(j + len(alvo) - 1 for j in range(len(palavras)) if palavras[j:j + len(alvo)] == alvo)
+        forcado[i] = min(cand, key=lambda c: abs(c[0] - t_p))
 
     def dp(pred):
         B, P = len(limites), len(cand)

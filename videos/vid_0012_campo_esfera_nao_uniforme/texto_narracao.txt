@@ -2,7 +2,7 @@ Lembra da esfera isolante uniformemente carregada? Nela, o campo cresce até a s
 
 Agora imagine uma esfera isolante em que a densidade é máxima no centro e diminui continuamente até chegar a zero na superfície.
 
-Mesmo com a densidade variando, a distribuição continua esfericamente simétrica. Numa gaussiana a certa distância do centro, o campo tem o mesmo módulo em toda a superfície e aponta radialmente. O vetor normal e o vetor de área também apontam para fora. Então o campo e o vetor de área são paralelos: o produto escalar vira campo vezes área. Integrando sobre a gaussiana, sobra o campo vezes quatro pi vezes a distância ao quadrado, igual à carga encerrada sobre épsilon zero.
+Mesmo com a densidade variando, a distribuição continua esfericamente simétrica. Numa gaussiana a certa distância do centro, o campo tem o mesmo módulo em toda a superfície e aponta radialmente. O vetor normal e o vetor de área também apontam para fora. Então o campo e o vetor de área são paralelos: o produto escalar vira campo vezes área. Integrando sobre a gaussiana, sobra o campo vezes quatro pi vezes a distância ao quadrado, igual à carga envolvida sobre épsilon zero.
 
 Só que a densidade muda de ponto a ponto, então não vale simplesmente densidade vezes volume. Dividimos a esfera em cascas finas: a carga de cada casca é a densidade local vezes o volume da casca.
 
@@ -18,10 +18,10 @@ Fora da esfera o campo só diminui. Então procuramos o máximo até a superfíc
 
 Esse é o resultado: o campo máximo não está na superfície. Ele fica dentro da esfera, a dois terços do raio.
 
-Por quê? Afastando-se do centro, mais carga fica encerrada, mas a área da gaussiana também cresce. No começo, a carga encerrada cresce rápido o suficiente e o campo aumenta. Perto da borda, a densidade já é pequena: a carga passa a crescer devagar demais para acompanhar essa área. Então o campo cai.
+Por quê? Afastando-se do centro, mais carga fica envolvida, mas a área da gaussiana também cresce. No começo, a carga envolvida cresce rápido o suficiente e o campo aumenta. Perto da borda, a densidade já é pequena: a carga passa a crescer devagar demais para acompanhar essa área. Então o campo cai.
 
 Checando: no centro, o campo é zero; na superfície, as expressões coincidem; e, longe, ele volta a zero.
 
-Gauss deu a carga encerrada, daí veio o campo, e a derivada mostrou o máximo. A distribuição mudou onde o campo é mais intenso.
+Gauss deu a carga envolvida, daí veio o campo, e a derivada mostrou o máximo. A distribuição mudou onde o campo é mais intenso.
 
 Se curtiu, segue o arroba labparallax.

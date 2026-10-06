@@ -5,10 +5,10 @@ EXERCÍCIO RESOLVIDO · EP. 05.
 Uma única investigação contínua; nenhuma equação importante só "aparece".
 
   Gauss, por geometria: gaussiana (raio r) -> E sobre ela (mesmo módulo) -> dA⃗ (patch dA + normal n̂, d⃗A = n̂ dA)
-    -> E ∥ dA ⇒ θ = 0, cos 0 = 1 -> E⃗·dA⃗ = E dA -> ∮E dA -> E ∮dA -> E 4πr² = Q_enc(r)/ε0 (linha persistente)
-  Q_enc(r) (cópia de glifos) -> ∫dQ -> casca em corte (r', dr') -> casca aberta -> dV = 4πr'² dr' -> dQ = ρ(r') dV
+    -> E ∥ dA ⇒ θ = 0, cos 0 = 1 -> E⃗·dA⃗ = E dA -> ∮E dA -> E ∮dA -> E 4πr² = Q_env(r)/ε0 (linha persistente)
+  Q_env(r) (cópia de glifos) -> ∫dQ -> casca em corte (r', dr') -> casca aberta -> dV = 4πr'² dr' -> dQ = ρ(r') dV
     -> ∫ρ(r') 4πr'² dr' -> ρ(r') = ρ0(1 − r'/R) -> integrar -> volta ao Gauss -> corta 4π e r² -> E_in(r)
-  gráfico (curva revelada pelo tracker) -> r = R: Q = Q_enc(R) -> E_in(r) vira E_out(r) -> função por partes
+  gráfico (curva revelada pelo tracker) -> r = R: Q = Q_env(R) -> E_in(r) vira E_out(r) -> função por partes
   -> dE/dr passo a passo -> tangente (> 0 … = 0) -> resolver -> r_max = 2R/3 -> interpretação por Δr -> checagens.
 
 Estados de layout (a esfera só fica deslocada enquanto houver conteúdo que o justifique):
@@ -64,7 +64,7 @@ NCOL = "#EDE7FF"          # n̂, dA, d⃗A (lavanda clara: distinta de E⃗ e da
 # Cores dos termos na legenda queimada (montar_legendado.py --color-module); mesmos significados da cena
 SUBTITLE_TERM_COLORS = {
     "campo": CYAN, "campo elétrico": CYAN, "campo interno": CYAN, "campo externo": CYAN,
-    "densidade": MAGENTA, "carga": MAGENTA, "carga encerrada": MAGENTA,
+    "densidade": MAGENTA, "carga": MAGENTA, "carga envolvida": MAGENTA,
     "gaussiana": VIOLET, "área": VIOLET, "normal": NCOL,
 }
 
@@ -103,7 +103,7 @@ def _qa():
     rho0, R, eps = 2.3e-6, 0.37, 8.854e-12
     e_dim_in = lambda r: rho0 / eps * (r / 3 - r * r / (4 * R))
     e_dim_out = lambda r: rho0 * R ** 3 / (12 * eps * r * r)
-    # Gauss + integral numérica das cascas: Q_enc(r) = ∫ ρ(r') 4π r'² dr'
+    # Gauss + integral numérica das cascas: Q_env(r) = ∫ ρ(r') 4π r'² dr'
     for r in (0.1 * R, 0.5 * R, 2 * R / 3, 0.9 * R, R):
         rp = np.linspace(0, r, 400001)
         f = rho0 * (1 - rp / R) * 4 * np.pi * rp ** 2
@@ -142,7 +142,7 @@ def _qa():
     assert np.isclose(e(XM), 1 / 9) and np.isclose(e(1.0), 1 / 12) and np.isclose(e(XM) / e(1.0), 4 / 3)
     assert np.isclose(ep(XM), 0) and np.isclose(ep(1 - 1e-12), ep(1 + 1e-12)) and np.isclose(ep(0), 1 / 3)
     # interpretação por Δr: em termos ABSOLUTOS a casca da borda tem mais carga (dQ ∝ x²(1−x), pico em 2/3); o que
-    # decide E ∝ Q_enc/r² é o crescimento RELATIVO: Q_enc cresce mais que r² perto do centro e menos perto da borda
+    # decide E ∝ Q_env/r² é o crescimento RELATIVO: Q_env cresce mais que r² perto do centro e menos perto da borda
     q = lambda x: x ** 3 / 3 - x ** 4 / 4
     assert q(0.30) / q(0.12) > (0.30 / 0.12) ** 2 and q(0.96) / q(0.78) < (0.96 / 0.78) ** 2
     assert q(0.96) - q(0.78) > q(0.30) - q(0.12) > 0
@@ -843,7 +843,7 @@ class CampoEsfera012(Scene):
         self.play(T.FL.animate.set_value(1.0), run_time=1.0)
         self.until(24.2)
         self.ancora("s3c")
-        L1 = Eq(r"\oint", r"\vec E", r"\cdot", r"d\vec A", "=", r"\frac{Q_{\rm enc}}{\varepsilon_0}", size=52,
+        L1 = Eq(r"\oint", r"\vec E", r"\cdot", r"d\vec A", "=", r"\frac{Q_{\rm env}}{\varepsilon_0}", size=52,
                 colors={1: CYAN, 3: NCOL})
         self.place(L1, 0, -0.9)
         self.play(FadeIn(L1.mob, shift=UP * 0.1), run_time=0.9)
@@ -892,16 +892,16 @@ class CampoEsfera012(Scene):
         self.until(38.6)
         self.ancora("s3i")
         # ∮E⃗·dA⃗ -> ∮E dA -> E ∮dA -> E 4πr²
-        L2 = Eq(r"\oint", "E", "dA", "=", r"\frac{Q_{\rm enc}}{\varepsilon_0}", size=52, colors={1: CYAN, 2: NCOL})
+        L2 = Eq(r"\oint", "E", "dA", "=", r"\frac{Q_{\rm env}}{\varepsilon_0}", size=52, colors={1: CYAN, 2: NCOL})
         self.mm(L1, L2, M(L1, [0], L2, [0]), M(L1, [4], L2, [3]), M(L1, [5], L2, [4]),
                 X(L1, [1, 2, 3], shift=UP * 0.3), CG(P3.g(4, 5), L2.p(1, 2), path_arc=-PI / 4), y=-0.9, rt=1.4,
                 hold=0.2, extra=[FadeOut(P3.mob)])
-        L3 = Eq("E", r"\oint", "dA", "=", r"\frac{Q_{\rm enc}}{\varepsilon_0}", size=52, colors={0: CYAN, 2: NCOL})
+        L3 = Eq("E", r"\oint", "dA", "=", r"\frac{Q_{\rm env}}{\varepsilon_0}", size=52, colors={0: CYAN, 2: NCOL})
         self.mm(L2, L3, M(L2, [1], L3, [0], path_arc=-PI / 3), M(L2, [0], L3, [1]), M(L2, [2], L3, [2]),
                 M(L2, [3, 4], L3, [3, 4]), rt=1.2, hold=0.2)
         tag5 = mixed(tex(r"\oint dA", 36, NCOL), text("= área da esfera =", 24), tex(r"4\pi r^2", 36, VIOLET)).move_to(
             [0, TAG_Y, 0])
-        L4 = Eq("E", r"4\pi r^2", "=", r"\frac{Q_{\rm enc}(r)}{\varepsilon_0}", size=56, colors={0: CYAN, 1: VIOLET})
+        L4 = Eq("E", r"4\pi r^2", "=", r"\frac{Q_{\rm env}(r)}{\varepsilon_0}", size=56, colors={0: CYAN, 1: VIOLET})
         self.mm(L3, L4, M(L3, [0], L4, [0]), M(L3, [1, 2], L4, [1]), M(L3, [3], L4, [2]), M(L3, [4], L4, [3]),
                 rt=1.5, hold=0.2, extra=[soft_swap(tag4, tag5), T.GF.animate.set_value(0.4)])
         self.G = L4
@@ -914,7 +914,7 @@ class CampoEsfera012(Scene):
         qg.set_color(MAGENTA)
         self.until(48.0)
 
-    # ── S4 Cascas: Q_enc = ∫ dQ, casca em corte, dV, dQ ─────────────────────
+    # ── S4 Cascas: Q_env = ∫ dQ, casca em corte, dV, dQ ─────────────────────
     def s4(self):
         T = self.T
         self.ancora("s4a")
@@ -930,15 +930,15 @@ class CampoEsfera012(Scene):
         self.play(*self.layout(LP), G.mob.animate.scale(0.8).move_to([0, 1.5, 0]), T.FA.animate.set_value(0),
                   T.DA.animate.set_value(0), T.MK.animate.set_value(0), T.GF.animate.set_value(0),
                   FadeIn(rd.mob, shift=UP * 0.1), run_time=1.3)
-        # Q_enc(r) do Gauss -> Q_enc(r) = ∫ dQ
-        W0 = Eq(r"Q_{\rm enc}(r)", "=", r"\int_0^r", "dQ", size=52, colors={0: MAGENTA, 3: MAGENTA})
+        # Q_env(r) do Gauss -> Q_env(r) = ∫ dQ
+        W0 = Eq(r"Q_{\rm env}(r)", "=", r"\int_0^r", "dQ", size=52, colors={0: MAGENTA, 3: MAGENTA})
         gn = G.frac(3)[0]
         assert len(gn) == len(W0.p(0))
         self.born(W0, CG([G.mob[0][k] for k in gn], W0.p(0), path_arc=PI / 4), x=0, y=-0.2, rt=1.4, hold=0.1)
         self.W0 = W0
         self.until(52.2)
         self.ancora("s4b")
-        nr = VGroup(tex("Q_{\\rm enc}\\neq", 36, MAGENTA), tex(r"\rho\,V", 36, MAGENTA)).arrange(RIGHT, buff=0.12)
+        nr = VGroup(tex("Q_{\\rm env}\\neq", 36, MAGENTA), tex(r"\rho\,V", 36, MAGENTA)).arrange(RIGHT, buff=0.12)
         whyt = mixed(tex(r"\rho", 34, MAGENTA), text("varia com", 24), tex("r", 34, VIOLET))
         nr_g = VGroup(nr, whyt).arrange(DOWN, buff=0.12).move_to([0, -1.3, 0])
         self.play(FadeIn(nr_g, shift=UP * 0.1), run_time=0.7)
@@ -991,14 +991,14 @@ class CampoEsfera012(Scene):
         self.ancora("s5a")
         self.head("Somando as cascas")
         dQ1 = self.dQ1
-        W1 = Eq(r"Q_{\rm enc}(r)", "=", r"\int_0^r", r"\rho(r')", r"4\pi", r"r'^2", "dr'", size=48,
+        W1 = Eq(r"Q_{\rm env}(r)", "=", r"\int_0^r", r"\rho(r')", r"4\pi", r"r'^2", "dr'", size=48,
                 colors={0: MAGENTA, 3: MAGENTA})
         T.ACO.set_value(1)
         self.mm(self.W0, W1, M(self.W0, [0, 1, 2], W1, [0, 1, 2]), X(self.W0, [3], shift=UP * 0.3),
                 CG(dQ1.g(2, 3, 4, 5), W1.p(3, 4, 5, 6)), y=y, rt=1.4, hold=0.0,
                 extra=[FadeOut(dQ1.mob), T.XP.animate.set_value(0.04), T.ACC.animate.set_value(0.04 + DR0 / 2)])
         # integrar de 0 até r: a casca varre do centro até a gaussiana; a região já somada cresce
-        W2 = Eq(r"Q_{\rm enc}(r)", "=", r"4\pi", r"\int_0^r", r"\rho(r')", r"r'^2", "dr'", size=48,
+        W2 = Eq(r"Q_{\rm env}(r)", "=", r"4\pi", r"\int_0^r", r"\rho(r')", r"r'^2", "dr'", size=48,
                 colors={0: MAGENTA, 4: MAGENTA})
         self.mm(W1, W2, M(W1, [0, 1], W2, [0, 1]), M(W1, [4], W2, [2], path_arc=-PI / 3), M(W1, [2], W2, [3]),
                 M(W1, [3], W2, [4]), M(W1, [5], W2, [5]), M(W1, [6], W2, [6]), rt=2.6, hold=0.0,
@@ -1006,22 +1006,22 @@ class CampoEsfera012(Scene):
         self.until(64.2)
         self.ancora("s5b")
         # ρ(r') = ρ0 (1 − r'/R): vem da definição, que está ao lado da esfera
-        W3 = Eq(r"Q_{\rm enc}(r)", "=", r"4\pi", r"\rho_0", r"\int_0^r", r"\left(1-\frac{r'}{R}\right)", r"r'^2", "dr'",
+        W3 = Eq(r"Q_{\rm env}(r)", "=", r"4\pi", r"\rho_0", r"\int_0^r", r"\left(1-\frac{r'}{R}\right)", r"r'^2", "dr'",
                 size=48, colors={0: MAGENTA, 3: MAGENTA})
         rd = self.rd
         self.mm(W2, W3, M(W2, [0, 1, 2, 3], W3, [0, 1, 2, 4]), M(W2, [5], W3, [6]), M(W2, [6], W3, [7]),
                 X(W2, [4], shift=UP * 0.3), CG(rd.g(2), W3.p(3), path_arc=PI / 4),
                 CG(rd.g(3), W3.p(5), path_arc=PI / 4), rt=1.5, hold=0.15, extra=[FadeOut(rd.mob)])
-        W4 = Eq(r"Q_{\rm enc}(r)", "=", r"4\pi", r"\rho_0", r"\int_0^r", r"\left(r'^2-\frac{r'^3}{R}\right)", "dr'",
+        W4 = Eq(r"Q_{\rm env}(r)", "=", r"4\pi", r"\rho_0", r"\int_0^r", r"\left(r'^2-\frac{r'^3}{R}\right)", "dr'",
                 size=48, colors={0: MAGENTA, 3: MAGENTA})
         self.mm(W3, W4, M(W3, [0, 1, 2, 3, 4], W4, [0, 1, 2, 3, 4]), M(W3, [7], W4, [6]),
                 M(W3, [5, 6], W4, [5]), rt=1.2, hold=0.1)
         self.ancora("s5c")
-        W4b = Eq(r"Q_{\rm enc}(r)", "=", r"4\pi", r"\rho_0", r"\left[\frac{r'^3}{3}-\frac{r'^4}{4R}\right]_0^r",
+        W4b = Eq(r"Q_{\rm env}(r)", "=", r"4\pi", r"\rho_0", r"\left[\frac{r'^3}{3}-\frac{r'^4}{4R}\right]_0^r",
                  size=48, colors={0: MAGENTA, 3: MAGENTA})
         self.mm(W4, W4b, M(W4, [0, 1, 2, 3], W4b, [0, 1, 2, 3]), M(W4, [5], W4b, [4]), X(W4, [4, 6], shift=DOWN * 0.2),
                 rt=1.2, hold=0.1)
-        W5 = Eq(r"Q_{\rm enc}(r)", "=", r"4\pi", r"\rho_0", r"\left(\frac{r^3}{3}-\frac{r^4}{4R}\right)", size=50,
+        W5 = Eq(r"Q_{\rm env}(r)", "=", r"4\pi", r"\rho_0", r"\left(\frac{r^3}{3}-\frac{r^4}{4R}\right)", size=50,
                 colors={0: MAGENTA, 3: MAGENTA})
         self.W5box = self.mm(W4b, W5, M(W4b, [0, 1, 2, 3], W5, [0, 1, 2, 3]), M(W4b, [4], W5, [4]), rt=1.2, hold=0.2,
                              box=True, extra=[T.ACO.animate.set_value(0.0), T.RL.animate.set_value(0),
@@ -1037,7 +1037,7 @@ class CampoEsfera012(Scene):
         G, W5 = self.G, self.W5
         A = Eq("E", r"4\pi r^2", "=", r"\frac{4\pi\rho_0}{\varepsilon_0}", r"\left(\frac{r^3}{3}-\frac{r^4}{4R}\right)",
                size=44, colors={0: CYAN})
-        # o resultado volta ao Gauss: 4πρ0 e o parêntese saem de Q_enc(r) e substituem Q_enc(r) no numerador
+        # o resultado volta ao Gauss: 4πρ0 e o parêntese saem de Q_env(r) e substituem Q_env(r) no numerador
         gn, gb, gd = G.frac(3)
         an, ab, ad = A.frac(3)
         self.mm(G, A, M(G, [0, 1, 2], A, [0, 1, 2]), MG([gb], [ab]), MG(gd, ad), MG(gn, [], shift=UP * 0.3),
@@ -1097,7 +1097,7 @@ class CampoEsfera012(Scene):
                   FadeIn(ring), T.GF.animate.set_value(0.35), run_time=1.0)
         self.play(Indicate(ring, color=WHITE, scale_factor=1.4), T.GF.animate.set_value(0.13), run_time=0.8)
         self.ancora("s7b")
-        Q0 = Eq("Q", "=", r"Q_{\rm enc}(R)", "=", r"\frac{\pi\rho_0R^3}{3}", size=50, colors={0: MAGENTA, 2: MAGENTA})
+        Q0 = Eq("Q", "=", r"Q_{\rm env}(R)", "=", r"\frac{\pi\rho_0R^3}{3}", size=50, colors={0: MAGENTA, 2: MAGENTA})
         self.show(Q0, 0, SLOT, run_time=0.9)
         self.until(86.2)
         self.ancora("s7d")
@@ -1246,7 +1246,7 @@ class CampoEsfera012(Scene):
         self.ancora("s11a")
         self.toff = -0.5                  # +1,5 s de respiro depois do payoff (as marcas de S11 acompanham)
         self.head("Por que o máximo fica dentro?")
-        eqI = Eq("E", "=", r"\frac{Q_{\rm enc}(r)}{4\pi\varepsilon_0\,r^2}", size=50, colors={0: CYAN})
+        eqI = Eq("E", "=", r"\frac{Q_{\rm env}(r)}{4\pi\varepsilon_0\,r^2}", size=50, colors={0: CYAN})
         self.place(eqI, 0, 1.4)
         T.XP.set_value(0.12)
         T.DX.set_value(0.18)
@@ -1258,7 +1258,7 @@ class CampoEsfera012(Scene):
         def pair(a, b):
             return VGroup(a.move_to([0, YA, 0]), b.move_to([0, YB, 0]))
         a1 = mixed(text("Perto do centro:", 22, MAGENTA), tex(r"\rho", 27, MAGENTA), text("é grande", 22, MAGENTA))
-        b1 = mixed(tex(r"Q_{\rm enc}", 27, MAGENTA), text("cresce rápido o suficiente →", 20), tex("E", 29, CYAN),
+        b1 = mixed(tex(r"Q_{\rm env}", 27, MAGENTA), text("cresce rápido o suficiente →", 20), tex("E", 29, CYAN),
                    text("aumenta", 20, CYAN), buff=0.12)
         st1 = pair(a1, b1)
         self.ancora("s11b")
@@ -1274,7 +1274,7 @@ class CampoEsfera012(Scene):
         self.until(142.0)
         self.ancora("s11d")
         a2 = mixed(text("Perto da borda:", 22, MAGENTA), tex(r"\rho", 27, MAGENTA), text("já é pequena", 22, MAGENTA))
-        b2 = mixed(tex(r"Q_{\rm enc}", 27, MAGENTA), text("cresce devagar demais →", 20), tex("E", 29, CYAN),
+        b2 = mixed(tex(r"Q_{\rm env}", 27, MAGENTA), text("cresce devagar demais →", 20), tex("E", 29, CYAN),
                    text("diminui", 20, CYAN), buff=0.12)
         st2 = pair(a2, b2)
         self.play(T.SH.animate.set_value(0), FadeOut(st1, shift=UP * 0.1), run_time=0.5)
@@ -1328,7 +1328,7 @@ class CampoEsfera012(Scene):
         def node(mob, color=WHITE, buff=0.22):
             return VGroup(mob, boxed_rect(mob, color, buff))
         g1 = node(text("GAUSS", 38, WHITE))
-        g2 = node(tex(r"Q_{\rm enc}(r)", 46, MAGENTA), MAGENTA)
+        g2 = node(tex(r"Q_{\rm env}(r)", 46, MAGENTA), MAGENTA)
         g3 = node(tex(r"E(r)", 58, CYAN), CYAN)
         ar1, ar2 = tex(r"\rightarrow", 44, WHITE), tex(r"\rightarrow", 44, WHITE)
         row1 = VGroup(g1, ar1, g2, ar2, g3).arrange(RIGHT, buff=0.14)
