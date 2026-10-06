@@ -1,8 +1,10 @@
-"""yt_0001 — Lei de Gauss: o segredo não é a integral — é a simetria. Preview horizontal, revisão 2 (sem voz).
+"""yt_0001 — Lei de Gauss: o segredo não é a integral — é a simetria. Vídeo horizontal (revisão 2.1, sincronizado à voz).
 
 Fonte de verdade: ficha.md desta pasta (narração, storyboard e equações). Revisão 2: construção da normal e do
 vetor área, retomada das coordenadas esféricas, uma operação por transformação, domínios das fórmulas, regiões
 que contribuem nas simetrias clássicas, carga envolvida (Q_env), caminhos alternativos e tela final.
+Revisão 2.1: header ELETROMAGNETISMO · LEI DE GAUSS, watermark maior, ângulo sólido (dθ = ds/r → dΩ = dA⊥/r²,
+dΩ × dΩ_or), forma geral Q_env(r), continuidade em R, idealizações infinitas, checklist progressivo e outro.
 
 Uma única cena contínua (`LeiGauss`), dividida em seções (blocos):
   01 cold open · 02 intro · 03 normal, vetor área e fluxo · 04 Coulomb + cancelamento 1/r² × r²
@@ -10,19 +12,25 @@ Uma única cena contínua (`LeiGauss`), dividida em seções (blocos):
   08 esfera uniforme (interior, coordenadas esféricas, dV, exterior) · 09 gráfico sincronizado
   10 três simetrias · 11 casos ruins, caminhos adequados e método · 12 retorno, payoff, pausa e outro
 
-Ritmo sem voz: cada bloco declara as falas da ficha que cobre (`cues`); o instante de cada fala sai da contagem
-de palavras (RATE palavras/s + GAP entre falas). Ao importar, a cena verifica que toda fala existe literalmente
-na seção 12 da ficha — narração e animação não divergem. A voz real definirá a sincronia final.
+Ritmo pela voz: gerar_sync.py alinha texto_narracao.txt às 3 partes do ElevenLabs e grava em sync.json o instante
+de cada marco c[i] de cada bloco. Onde a animação não cabe até o marco seguinte, a cena pede uma espera à voz
+(pads.json); `gerar_sync.py montar` insere essas esperas em pausas reais da fala (audio/narracao_montagem.wav) e
+gera a legenda com a grafia normal. As durações são contadas em quadros inteiros, então vídeo e voz não derivam.
 
-Gramática visual (ficha, seção 14): ciano = E⃗, θ e E nas equações · azul (contorno contínuo + preenchimento) =
-distribuição física, R, Q · violeta tracejado = superfície gaussiana e r (traço contínuo = região que contribui) ·
-violeta translúcido = volume envolvido · branco = n̂ (fino) e d⃗A (grosso, translúcido) e matemática neutra ·
-magenta = passo inválido ou componente hipotética. Ângulos: θ (E⃗, n̂) no fluxo; ϑ polar nas coordenadas.
+Gramática visual (ficha, seção 14): ciano = E⃗ e E nas equações · âmbar = θ, ϑ, φ, dθ, dΩ e arcos · azul
+(contorno contínuo + preenchimento) = distribuição física, R, Q · violeta tracejado = superfície gaussiana e r
+(traço contínuo = região que contribui) · violeta translúcido = volume envolvido · azul elétrico = n̂ ·
+violeta #745CFF = d⃗A e o pedaço dA · branco = dA⊥ e matemática neutra · magenta = passo inválido ou componente hipotética. Ângulos: θ (E⃗, n̂) no fluxo;
+ϑ polar nas coordenadas.
 
-Preview:  uv run --no-sync python -m manim -r 960,540 --fps 15 --disable_caching videos_longos/yt_0001_lei_gauss/cena.py LeiGauss
+Final:    CRF=14 uv run --no-sync python -m manim -r 1920,1080 --fps 30 --disable_caching videos_longos/yt_0001_lei_gauss/cena.py LeiGauss
+Passada a seco (só pads.json): SO=99 ... --fps 30 (o fps precisa ser o do final: ele define a contagem de quadros).
+AJUSTAR=1 SO=99 ... recalcula ritmo.json (compressão dos trechos que não cabem na fala); depois, outra passada a seco.
 SO=6 (ou SO=6,8) renderiza só esses blocos (os outros rodam sem gerar quadros). GUIAS=1 mostra a safe area.
+CRF troca o crf fixo (23) do encoder do Manim no render final; VEL escala a duração das animações (padrão 1).
 """
 
+import json
 import os
 import sys
 from contextlib import contextmanager
@@ -34,7 +42,7 @@ from manim import (
     BOLD, DL, DOWN, DR, LEFT, ORIGIN, PI, RIGHT, UL, UP, UR, Arc, Arrow, Axes, Brace, Circle, Circumscribe, Create,
     DashedLine, DashedVMobject, DecimalNumber, Dot, Ellipse, FadeIn, FadeOut, Flash, GrowArrow, ImageMobject,
     Indicate, LaggedStart, Line, MathTex, Polygon, Rectangle, ReplacementTransform, Rotate, Scene,
-    SurroundingRectangle, Transform, TransformFromCopy, TransformMatchingTex, ValueTracker, VGroup, VMobject, Write,
+    SurroundingRectangle, Transform, TransformFromCopy, TransformMatchingTex, ValueTracker, VGroup, VMobject, Wait, Write,
     always_redraw, config, linear,
 )
 
@@ -45,37 +53,79 @@ from template.layout_horizontal import GUIAS, safe_guides, split  # noqa: E402
 
 PASTA = Path(__file__).resolve().parent
 SO = {int(s) for s in os.environ.get("SO", "").split(",") if s.strip()}
+
+
+def _qualidade_final(crf):
+    """Render final: o Manim grava os trechos com crf 23 fixo; aqui só o crf muda (codec, pix_fmt e fps iguais)."""
+    import av as _av
+    import manim.scene.scene_file_writer as _sfw
+
+    class _Saida:
+        def __init__(self, c):
+            self._c = c
+
+        def add_stream(self, codec, *a, options=None, **k):
+            if options and "crf" in options:
+                options = {**options, "crf": crf}
+            return self._c.add_stream(codec, *a, options=options, **k)
+
+        def __getattr__(self, n):
+            return getattr(self._c, n)
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *e):
+            return self._c.__exit__(*e)
+
+    class _AV:
+        def __getattr__(self, n):
+            return getattr(_av, n)
+
+        def open(self, *a, **k):
+            c = _av.open(*a, **k)
+            return _Saida(c) if k.get("mode", a[1] if len(a) > 1 else "r") == "w" else c
+
+    _sfw.av = _AV()
+
+
+if os.environ.get("CRF"):
+    _qualidade_final(os.environ["CRF"])
 LOGO_PATH = Path(__file__).resolve().parents[2] / "assets" / "branding" / "overlays" / "parallax_lab_logo_horizontal.png"
 
 # ── Paleta (identidade vigente; mesmos tons do vid_0012) ─────────────────────
 WHITE = TEXT_COLOR
-CYAN = PRIMARY_COLOR      # campo elétrico, θ, E
+CYAN = PRIMARY_COLOR      # campo elétrico e E
 BLUE = "#267BFF"          # distribuição física (preenchimento)
 BLUE_L = "#7FB2FF"        # contorno da distribuição física, R, Q
 VIOLET = "#9C8CFF"        # superfície gaussiana, r, volume envolvido
 MAGENTA = "#EA63FF"       # passo inválido / componente hipotética
-NCOL = WHITE              # n̂ e d⃗A (ficha, seção 14)
+NHAT = "#267BFF"          # normal unitária n̂ (azul elétrico; ficha, seção 14)
+DAVEC = "#745CFF"         # vetor área d⃗A e o pedaço dA (violeta)
+ANG = "#FFC24D"           # grandezas angulares: θ, ϑ, φ, dθ, dΩ, arcos e marca de 90° (âmbar; não é campo)
+AUX_OP = 0.7              # comentários auxiliares e rótulos de caso: abaixo do resultado na hierarquia
+HEADER = "ELETROMAGNETISMO · LEI DE GAUSS"
+WM_W, WM_OP = 1.92, 0.45  # watermark: V2 tinha 1.6 / 0.35 (+20% de escala)
 
 # ── Composição (frame 16 × 9; template/layout_horizontal.py) ────────────────
 _L, _R = split(0.5)
 LX, RX, MY = _L.x, _R.x, _L.y      # ≈ −3.75, 3.75, −0.2
 
-# ── Ritmo: falas da ficha → instantes ───────────────────────────────────────
-RATE, GAP = 2.45, 0.15             # palavras por segundo; respiro entre falas
-_NARR = " ".join((PASTA / "ficha.md").read_text(encoding="utf-8")
-                 .split("## 12. NARRAÇÃO FINAL")[1].split("## 13.")[0].split())
-
-
-def cues(*falas):
-    """Instantes (s, relativos ao bloco) de início de cada fala; o último é o fim da última fala."""
-    t, out = 0.0, []
-    for f in falas:
-        f = " ".join(f.split())
-        assert f in _NARR, "fala ausente da ficha: " + f[:70]
-        out.append(round(t, 2))
-        t += len(f.split()) / RATE + GAP
-    out.append(round(t, 2))
-    return out
+# ── Ritmo: a voz manda ──────────────────────────────────────────────────────
+# sync.json (gerar_sync.py alinhar): instante, no áudio, de cada marco c[i] de cada bloco e do fim da fala do bloco.
+# Quando uma animação não cabe até o marco seguinte, a cena registra a espera que a voz precisa ganhar (pads.json);
+# gerar_sync.py montar insere essas esperas em pausas reais da fala (narracao_montagem.wav). A fala não muda.
+SYNC = json.loads((PASTA / "sync.json").read_text(encoding="utf-8"))
+VEL = float(os.environ.get("VEL", "1.0"))     # fator global de duração das animações (1 = como desenhadas)
+TOL = 0.1                                       # atraso tolerado num marco antes de pedir espera à voz
+RESPIRO = {2: 0.5, 7: 0.5, 8: 0.4}              # respiro extra antes do bloco (depois de payoffs)
+# Ritmo por trecho (entre dois marcos): onde a animação desenhada não cabe na fala, o trecho é comprimido antes de
+# pedir espera à voz: primeiro as esperas explícitas (até P_ESPERA), depois as animações (até P_ANIM da duração).
+# AJUSTAR=1 numa passada a seco recalcula ritmo.json a partir das durações desenhadas.
+RITMO_ARQ = PASTA / "ritmo.json"
+AJUSTAR = os.environ.get("AJUSTAR") == "1"
+RITMO = {} if AJUSTAR or not RITMO_ARQ.exists() else json.loads(RITMO_ARQ.read_text(encoding="utf-8"))
+P_ESPERA, P_ANIM, FOLGA = 0.4, 0.62, 0.04
 
 
 # ── Física: verificações independentes do que a tela afirma ─────────────────
@@ -172,8 +222,8 @@ def fit(m, w):
     return m
 
 
-def box(m, color=WHITE, buff=0.16):
-    return SurroundingRectangle(m, color=color, buff=buff, corner_radius=0.08, stroke_width=2.5)
+def box(m, color=WHITE, buff=0.26):
+    return SurroundingRectangle(m, color=color, buff=buff, corner_radius=0.1, stroke_width=2.0)
 
 
 def strike(m, color=WHITE, w=4):
@@ -189,6 +239,17 @@ def frac_parts(part):
     return num, bar, den
 
 
+def morph_frac(src, dst, keep):
+    """Fração → fração: os `keep` primeiros glifos do numerador e o denominador conservam a identidade;
+    o restante do numerador de src vira o restante do numerador de dst (ex.: dA⊥ → dA cosθ)."""
+    sn, sb, sd = frac_parts(src)
+    dn, db, dd = frac_parts(dst)
+    anims = [ReplacementTransform(a, b) for a, b in zip(sn[:keep], dn[:keep])]
+    anims += [ReplacementTransform(VGroup(*sn[keep:]), VGroup(*dn[keep:])), ReplacementTransform(sb, db),
+              ReplacementTransform(VGroup(*sd), VGroup(*dd))]
+    return anims
+
+
 def hchain(*items, buff=0.18):
     return VGroup(*items).arrange(RIGHT, buff=buff)
 
@@ -197,8 +258,9 @@ def left_at(m, x, y):
     return m.move_to(P(0, y)).align_to(P(x, 0), LEFT)
 
 
-def domain_tag(nome, dom, size=30):
-    return hchain(text(nome, 22, opacity=0.85), eq(dom, size=size), buff=0.15)
+def domain_tag(nome, dom, size=26):
+    """Rótulo de caso (interior/exterior): secundário, menor e menos intenso que o resultado."""
+    return hchain(text(nome, 20, opacity=AUX_OP), eq(dom, size=size).set_opacity(AUX_OP + 0.05), buff=0.12)
 
 
 # ── Geometria ───────────────────────────────────────────────────────────────
@@ -331,7 +393,7 @@ def sym_sphere():
     fld = VGroup(*[vec(1.05 * U(a), 1.6 * U(a), CYAN, 4.5) for a in range(0, 360, 45)])
     srf = Circle(radius=1.05).set_stroke(VIOLET, 5).set_fill(VIOLET, 0.08)
     el = VGroup(Arc(radius=1.05, start_angle=np.radians(12), angle=np.radians(21)).set_stroke(WHITE, 8),
-                vec(1.05 * U(22.5), 1.68 * U(22.5), CYAN, 4.5, z=6), vec(1.05 * U(22.5), 1.45 * U(22.5), WHITE, 3.5, z=7))
+                vec(1.05 * U(22.5), 1.68 * U(22.5), CYAN, 4.5, z=6), vec(1.05 * U(22.5), 1.45 * U(22.5), DAVEC, 4, z=7))
     return SimpleNamespace(src=src, fld=fld, contrib=srf, zero=VGroup(), el_c=el, el_z=VGroup(),
                            all=VGroup(src, fld, srf, el))
 
@@ -348,9 +410,9 @@ def sym_line():
     caps = VGroup(DashedVMobject(Ellipse(width=1.7, height=0.42).move_to(P(0, top)), num_dashes=16),
                   DashedVMobject(Ellipse(width=1.7, height=0.42).move_to(P(0, bot)), num_dashes=16)).set_stroke(VIOLET, 2.5)
     el_lat = VGroup(Line(P(0.85, -0.62), P(0.85, -0.22)).set_stroke(WHITE, 8),
-                    vec(P(0.85, -0.5), P(1.5, -0.5), CYAN, 4.5, z=6), vec(P(0.85, -0.36), P(1.32, -0.36), WHITE, 3.5, z=7))
+                    vec(P(0.85, -0.5), P(1.5, -0.5), CYAN, 4.5, z=6), vec(P(0.85, -0.36), P(1.32, -0.36), DAVEC, 4, z=7))
     el_cap = VGroup(Ellipse(width=0.36, height=0.1).move_to(P(0.38, top)).set_stroke(WHITE, 4),
-                    vec(P(0.38, top), P(0.38, top + 0.5), WHITE, 3.5, z=7), vec(P(0.38, top), P(1.0, top), CYAN, 4.5, z=6))
+                    vec(P(0.38, top), P(0.38, top + 0.5), DAVEC, 4, z=7), vec(P(0.38, top), P(1.0, top), CYAN, 4.5, z=6))
     return SimpleNamespace(src=src, fld=fld, contrib=lateral, zero=caps, el_c=el_lat, el_z=el_cap,
                            all=VGroup(src, fld, lateral, caps, el_lat, el_cap))
 
@@ -364,10 +426,10 @@ def sym_plane():
                   Ellipse(width=0.9, height=0.24).move_to(P(0, pb)).set_stroke(VIOLET, 5).set_fill(VIOLET, 0.15))
     lateral = VGroup(DashedLine(P(-0.45, pb), P(-0.45, pt), dash_length=0.08),
                      DashedLine(P(0.45, pb), P(0.45, pt), dash_length=0.08)).set_stroke(VIOLET, 2.5)
-    el_caps = VGroup(vec(P(-0.12, pt), P(-0.12, pt + 0.45), WHITE, 3.5, z=7), vec(P(0.12, pt), P(0.12, pt + 0.62), CYAN, 4.5, z=6),
-                     vec(P(-0.12, pb), P(-0.12, pb - 0.45), WHITE, 3.5, z=7), vec(P(0.12, pb), P(0.12, pb - 0.62), CYAN, 4.5, z=6))
+    el_caps = VGroup(vec(P(-0.12, pt), P(-0.12, pt + 0.45), DAVEC, 4, z=7), vec(P(0.12, pt), P(0.12, pt + 0.62), CYAN, 4.5, z=6),
+                     vec(P(-0.12, pb), P(-0.12, pb - 0.45), DAVEC, 4, z=7), vec(P(0.12, pb), P(0.12, pb - 0.62), CYAN, 4.5, z=6))
     el_lat = VGroup(Line(P(0.45, -0.62), P(0.45, -0.32)).set_stroke(WHITE, 8),
-                    vec(P(0.45, -0.47), P(0.92, -0.47), WHITE, 3.5, z=7), vec(P(0.6, -0.4), P(0.6, -0.95), CYAN, 4.5, z=6))
+                    vec(P(0.45, -0.47), P(0.92, -0.47), DAVEC, 4, z=7), vec(P(0.6, -0.4), P(0.6, -0.95), CYAN, 4.5, z=6))
     return SimpleNamespace(src=src, fld=fld, contrib=caps, zero=lateral, el_c=el_caps, el_z=el_lat,
                            all=VGroup(src, fld, caps, lateral, el_caps, el_lat))
 
@@ -375,29 +437,90 @@ def sym_plane():
 # ── Cena ────────────────────────────────────────────────────────────────────
 class LeiGauss(Scene):
 
-    # relógio nominal: soma dos run_time; at(t) completa o bloco até o instante t (relativo)
+    # relógio: T = tempo do vídeo (em quadros exatos); b0 = início do bloco no vídeo; shift = esperas já pedidas à voz
     def setup(self):
-        self.T, self.b0, self.wm, self.tag = 0.0, 0.0, None, None
+        self.T, self.b0, self.b0a, self.shift, self.pads, self.wm, self.tag = 0.0, 0.0, 0.0, 0.0, [], None, None
+        # trecho corrente: chave "bloco.i", início no vídeo e durações desenhadas (sem compressão)
+        self.k, self.si, self.seg, self.s0, self.base_a, self.base_w, self.na_at, self.ritmo = 0, 0, "0.0", 0.0, 0.0, 0.0, False, {}
         self.camera.background_color = BACKGROUND_COLOR
 
     def play(self, *args, **kwargs):
+        """Duração em quadros inteiros, igual nos dois caminhos do Manim (Wait congelado: int; animação: arange)."""
         anims = self.compile_animations(*args, **kwargs)
-        self.T += max(a.run_time for a in anims)
+        fps = config.frame_rate
+        static = False
+        if len(anims) == 1 and isinstance(anims[0], Wait):
+            self.animations = anims                     # should_update_mobjects() lê a animação corrente
+            static = not self.should_update_mobjects()
+        espera = isinstance(anims[0], Wait)
+        fa, fw = RITMO.get(self.seg, (1.0, 1.0))
+        rt0 = max(a.run_time for a in anims) * (1.0 if espera else VEL)
+        if not self.na_at:
+            if espera:
+                self.base_w += rt0
+            else:
+                self.base_a += rt0
+        rt = rt0 if self.na_at else rt0 * (fw if espera else fa)
+        n = max(1, int(round(rt * fps)))
+        real = (n + 0.25) / fps if static else (n - 0.5) / fps
+        m = max(a.run_time for a in anims)
+        for a in anims:
+            a.run_time = real * a.run_time / m
+        self.T += n / fps
         return super().play(*anims)
 
+    def marcos(self, k):
+        """c[i] (relativos ao início do bloco) a partir da voz; o último é o fim da fala do bloco."""
+        b = SYNC["blocks"][str(k)]
+        return [t - b["cues"][0] for t in b["cues"]] + [b["end"] - b["cues"][0]]
+
+    def ext(self, nome):
+        return SYNC["extras"][nome] - self.b0a
+
+    def _espera(self, ta, d):
+        self.pads.append([round(ta, 3), round(d, 3)])
+        self.shift += d
+        self.b0 += d
+
     def at(self, t):
+        self._ajusta(self.b0 + t - self.s0)
         d = self.b0 + t - self.T
-        if d > 0.04:
+        if d > 0.5 / config.frame_rate:
             # Scene.wait congela o quadro quando não há updater dependente do tempo: aplica os updaters antes
             self.update_mobjects(0)
+            self.na_at = True
             self.wait(d)
-        elif d < -0.4:
-            print(f"ATRASO {-d:.1f}s no bloco que começou em {self.b0:.0f}s (marca {t})")
+            self.na_at = False
+        elif d < -TOL:
+            self._espera(self.b0a + t, -d)               # a voz espera a animação neste ponto
+        self.si += 1
+        self.seg, self.s0, self.base_a, self.base_w = f"{self.k}.{self.si}", self.T, 0.0, 0.0
+
+    def _ajusta(self, livre):
+        """Fatores (animação, espera) para que o trecho desenhado caiba em `livre` segundos de fala."""
+        a, w = self.base_a, self.base_w
+        sobra = a + w - (livre - FOLGA)
+        if sobra <= 0 or a + w == 0:
+            return
+        fw = max(P_ESPERA, 1 - sobra / w) if w else 1.0
+        sobra -= w * (1 - fw)
+        fa = max(P_ANIM, 1 - sobra / a) if a and sobra > 0 else 1.0
+        self.ritmo[self.seg] = [round(fa, 3), round(fw, 3)]
+
+    def respiro(self, t, d):
+        """Pausa deliberada na voz antes do instante t do bloco (sem atraso de animação)."""
+        self._espera(self.b0a + t, d)
 
     def begin(self, k, name):
+        print(f"  (relógio antes do bloco {k:02d}: {self.T:.4f}s = {self.T * config.frame_rate:.2f} quadros)")
         self.next_section(f"{k:02d}_{name}", skip_animations=bool(SO) and k not in SO)
-        self.b0 = self.T
-        print(f"bloco {k:02d} {name}: início nominal {self.T:6.1f}s")
+        self.k, self.si = k, 0
+        self.b0a = SYNC["blocks"][str(k)]["cues"][0]
+        self.b0 = self.b0a + self.shift
+        if k in RESPIRO:
+            self.respiro(0.0, RESPIRO[k])
+        self.at(0.0)
+        print(f"bloco {k:02d} {name}: início {self.T:6.1f}s (voz {self.b0a:6.1f}s + esperas {self.shift:5.1f}s)")
 
     def clear(self, *keep, run_time=0.8, extra=()):
         keep = {id(m) for m in (*keep, self.wm, self.tag) if m is not None}
@@ -434,7 +557,12 @@ class LeiGauss(Scene):
         self.b10_tres_simetrias()
         self.b11_casos_e_metodo()
         self.b12_retorno_payoff_outro()
-        print(f"duração nominal total: {self.T:.1f}s")
+        if AJUSTAR:
+            RITMO_ARQ.write_text(json.dumps(self.ritmo, indent=0), encoding="utf-8")
+            print(f"ritmo.json: {len(self.ritmo)} trechos comprimidos")
+        (PASTA / "pads.json").write_text(json.dumps({"vel": VEL, "fps": config.frame_rate, "pads": self.pads}, indent=0),
+                                         encoding="utf-8")
+        print(f"duração total: {self.T:.2f}s · esperas pedidas à voz: {len(self.pads)} (+{self.shift:.2f}s)")
 
     # ── 01 · Cold open: dois problemas (COMPARE) ────────────────────────────
     GAUSS = (r"\oint", r"\vec E\cdot d\vec A", "=", r"\frac{Q_{\mathrm{env}}}{\varepsilon_0}")
@@ -457,14 +585,7 @@ class LeiGauss(Scene):
 
     def b01_cold_open(self):
         self.begin(1, "cold_open")
-        c = cues("Olha esses dois problemas.",
-                 "Nos dois, eu consigo desenhar uma superfície fechada e escrever exatamente a mesma Lei de Gauss.",
-                 "No primeiro, a distribuição de carga é perfeitamente simétrica. Em poucos passos, o campo elétrico aparece.",
-                 "No segundo, eu coloco uma carga fora do centro de uma esfera.",
-                 "A Lei de Gauss continua verdadeira.",
-                 "O fluxo continua perfeitamente determinado.",
-                 "E mesmo assim eu não consigo simplesmente descobrir o campo sobre a esfera.",
-                 "Então o que mudou?")
+        c = self.marcos(1)
         off, aro = ValueTracker(0.0), ValueTracker(0.0)
         g = self.problems(off, aro)
         self.play(Create(g.gl), Create(g.gr), FadeIn(g.ball), run_time=1.6)
@@ -498,17 +619,14 @@ class LeiGauss(Scene):
     # ── 02 · Intro humana curta (FOCUS com contexto residual) ───────────────
     def b02_intro(self):
         self.begin(2, "intro")
-        c = cues("Fala, pessoal. Bem-vindos ao Parallax Lab.",
-                 "Hoje a gente vai entender por que a Lei de Gauss resolve alguns problemas quase instantaneamente e, em outros, parece não ajudar.",
-                 "E a chave para entender isso é a simetria.",
-                 "E é justamente essa diferença que faz muita gente aprender a usar esferas e cilindros gaussianos sem realmente entender por quê.")
+        c = self.marcos(2)
         g = self.g1
         for m in (g.q, g.ar):
             m.clear_updaters()
         ctx = VGroup(g.gl, g.gr, g.ball, g.al, g.q, g.ar, g.el, g.er, g.ask)
         orig = ctx.copy()
-        self.wm = ImageMobject(str(WATERMARK_PATH)).set_width(1.6).set_opacity(0.35).to_corner(UR, buff=0.3)
-        self.tag = text("LEI DE GAUSS", 18, opacity=0.6).to_corner(UL, buff=0.38)
+        self.wm = ImageMobject(str(WATERMARK_PATH)).set_width(WM_W).set_opacity(WM_OP).to_corner(UR, buff=0.3)
+        self.tag = text(HEADER, 18, opacity=0.6).to_corner(UL, buff=0.38)
         brand = text("PARALLAX LAB", 22, opacity=0.8).move_to(P(0, 2.05))
         title = display("LEI DE GAUSS", 58, bold=True).move_to(P(0, 1.25))
         sub = text("Quando ela realmente encontra o campo?", 26, opacity=0.85).move_to(P(0, 0.45))
@@ -546,21 +664,7 @@ class LeiGauss(Scene):
     # ── 03 · Normal, vetor área (FOCUS) e produto escalar (BUILD) ───────────
     def b03_normal_fluxo(self):
         self.begin(3, "normal_vetor_area_fluxo")
-        c = cues("Antes de responder, precisamos entender o que a Lei de Gauss está medindo.",
-                 "Pegue um pedacinho muito pequeno de uma superfície. Sua área é um número: d A.",
-                 "De tão pequeno, esse pedacinho praticamente coincide com um plano: o plano tangente naquele ponto.",
-                 "A normal, n chapéu, é um vetor de comprimento um, perpendicular a esse plano.",
-                 "Multiplicando a normal pela área, obtemos o vetor área. Ele aponta na direção da normal, e seu tamanho representa a área do pedacinho.",
-                 "Numa superfície fechada, cada ponto tem a sua própria normal. E, por convenção, escolhemos sempre a normal que aponta para fora.",
-                 "Agora coloque esse elemento num campo elétrico.",
-                 "O ângulo que importa aqui não é o de noventa graus entre a normal e a superfície. É o ângulo teta entre o campo e a normal.",
-                 "Se o campo atravessa a superfície de frente, a contribuição para o fluxo é máxima.",
-                 "Se inclinarmos o elemento, a normal e o vetor área inclinam junto com ele.",
-                 "Se o campo passa tangente à superfície, não atravessa aquele elemento. A contribuição é zero.",
-                 "E se o campo aponta para dentro de uma superfície fechada, enquanto a normal aponta para fora, a contribuição é negativa.",
-                 "É isso que o produto escalar está fazendo.",
-                 "A integral fechada apenas repete essa soma por toda a superfície.",
-                 "Ela não está contando literalmente linhas de campo. As linhas são uma representação. O fluxo é essa soma matemática de quanto do campo atravessa cada elemento de área.")
+        c = self.marcos(3)
         SC, pc = P(-4.6, -0.2), P(-3.0, -0.2)
         surf0 = getattr(self, "surf0", None) or gauss_circle(SC, 1.6)
         self.clear(surf0, run_time=0.6)
@@ -582,32 +686,43 @@ class LeiGauss(Scene):
             return VGroup(Polygon(*cs).set_stroke(width=0).set_fill(WHITE, 0.05 * o),
                           DashedVMobject(Polygon(*cs), num_dashes=36).set_stroke(WHITE, 1.5, 0.6 * o)).set_z_index(1)
         tplane = always_redraw(tangent_plane)
-        plate = always_redraw(lambda: Polygon(*corners()).set_stroke(VIOLET, 3).set_fill(VIOLET, 0.38).set_z_index(2))
-        nhat = always_redraw(lambda: vec(pc, pc + 1.0 * U(TH.get_value()), NCOL, 3.5, NA.get_value(), z=8))
-        dAv = always_redraw(lambda: vec(pc, pc + 1.5 * SZ.get_value() ** 2 * U(TH.get_value()), NCOL, 10,
-                                        0.38 * DAO.get_value(), z=7))
-        rmark = always_redraw(lambda: right_angle(pc, U(TH.get_value()), U(TH.get_value() + 90), 0.22, WHITE, RAO.get_value()))
+        plate = always_redraw(lambda: Polygon(*corners()).set_stroke(DAVEC, 3).set_fill(DAVEC, 0.35).set_z_index(2))
+        # n̂: direção unitária, curta, num ponto do pedaço (a normal é a mesma em todo o pedaço plano);
+        # d⃗A = n̂ dA: vetor área, grosso, no centro, com comprimento que acompanha a área
+        def side():
+            """Lado do pedaço onde n̂ se apoia: fora da cunha de θ até ~95°; depois gira suave para longe da seta de E⃗."""
+            th = TH.get_value()
+            w = float(np.clip((th - 95.0) / 40.0, 0.0, 1.0))
+            return U(th + 90 - 180 * w * w * (3 - 2 * w))
+        nb = lambda: pc + 0.42 * SZ.get_value() * side()
+        nhat = always_redraw(lambda: vec(nb(), nb() + 0.75 * U(TH.get_value()), NHAT, 4, NA.get_value(), z=10))
+        dAv = always_redraw(lambda: vec(pc, pc + 1.5 * SZ.get_value() ** 2 * U(TH.get_value()), DAVEC, 9,
+                                        0.75 * DAO.get_value(), z=7))
+        rmark = always_redraw(lambda: right_angle(nb(), U(TH.get_value()), side(), 0.18, ANG,
+                                                  0.8 * RAO.get_value()))
         lab_dA = eq("dA", size=32)
-        lab_dA.add_updater(lambda m: m.move_to(pc + 0.45 * SZ.get_value() * U(TH.get_value() + 90)
+        lab_dA.add_updater(lambda m: m.move_to(pc - 0.5 * SZ.get_value() * side()
                                                + 0.25 * SZ.get_value() * DEP.get_value() * DV - 0.18 * U(TH.get_value()))
                            .set_opacity(DLO.get_value()))
-        lab_n = eq(r"\hat n", size=34)
-        lab_n.add_updater(lambda m: m.move_to(pc + 0.6 * U(TH.get_value()) + 0.3 * U(TH.get_value() - 90))
+        lab_n = eq(r"\hat n", size=34, color=NHAT)
+        lab_n.add_updater(lambda m: m.move_to(nb() + 1.0 * U(TH.get_value()) + 0.2 * side())
                           .set_opacity(NA.get_value()))
-        lab_dAv = eq(r"d\vec A", size=34)
+        lab_dAv = eq(r"d\vec A", size=34, color=DAVEC)
         lab_dAv.add_updater(lambda m: m.move_to(pc + (1.5 * SZ.get_value() ** 2 + 0.4) * U(TH.get_value()))
                             .set_opacity(DAO.get_value()))
         lab_tp = text("plano tangente", 22, opacity=0.8)
         lab_tp.add_updater(lambda m: m.move_to(max(corners(2.2), key=lambda p: p[1]) + P(0.2, 0.25))
                            .set_opacity(0.8 * TPO.get_value()))
-        lab_90 = eq(r"90^\circ", size=26)
-        lab_90.add_updater(lambda m: m.move_to(pc + 0.5 * U(TH.get_value() + 45)).set_opacity(NLO.get_value()))
+        lab_90 = eq(r"90^\circ", size=22, color=ANG)
+        lab_90.add_updater(lambda m: m.move_to(nb() + 0.32 * (U(TH.get_value()) + side())).set_opacity(0.8 * NLO.get_value()))
         self.add(tplane, plate, dAv, nhat, rmark, lab_dA, lab_n, lab_dAv, lab_tp, lab_90)
 
         # dA: um número. Ampliar o elemento.
         L1 = left_at(hchain(eq("dA", size=40), text("área do elemento (um número)", 24, opacity=0.85)), 0.8, 1.6)
-        L2 = left_at(hchain(eq(r"\hat n", size=40), text("normal unitária", 24, opacity=0.85), eq(r"|\hat n|=1", size=34)), 0.8, 0.7)
-        L3 = left_at(hchain(eq(r"d\vec A", "=", r"\hat n", r"\,dA", size=44), text("vetor área", 24, opacity=0.85)), 0.8, -0.3)
+        L2 = left_at(hchain(eq(r"\hat n", size=40, color=NHAT), text("normal unitária", 24, opacity=0.85),
+                            eq(r"|\hat n|=1", size=34)), 0.8, 0.7)
+        L3 = left_at(hchain(eq(r"d\vec A", "=", r"\hat n", r"\,dA", size=44, colors={0: DAVEC, 2: NHAT}),
+                            text("vetor área", 24, opacity=0.85)), 0.8, -0.3)
         self.at(c[1])
         self.play(SZ.animate.set_value(0.3), DLO.animate.set_value(1.0), FadeIn(L1, shift=0.1 * DOWN), run_time=1.0)
         self.play(FadeOut(surf0), SZ.animate.set_value(1.0), run_time=1.5)
@@ -625,8 +740,8 @@ class LeiGauss(Scene):
         # superfície fechada: uma normal por ponto, sempre a exterior
         self.play(TPO.animate.set_value(0.0), SZ.animate.set_value(0.3), DAO.animate.set_value(0.0), RAO.animate.set_value(0.0),
                   DLO.animate.set_value(0.0), NA.animate.set_value(0.0), FadeIn(surf0), run_time=1.2)
-        outs = VGroup(*[vec(SC + 1.6 * U(a), SC + 2.08 * U(a), NCOL, 3.5) for a in range(0, 360, 45)])
-        inward = DashedLine(SC + 1.6 * U(180), SC + 1.12 * U(180), dash_length=0.06).set_stroke(WHITE, 2.5, 0.6)
+        outs = VGroup(*[vec(SC + 1.6 * U(a), SC + 2.08 * U(a), NHAT, 3.5) for a in range(0, 360, 45)])
+        inward = DashedLine(SC + 1.6 * U(180), SC + 1.12 * U(180), dash_length=0.06).set_stroke(NHAT, 2.5, 0.6)
         inward.add_tip(tip_length=0.14)
         ext_lab = text("normal exterior", 22, opacity=0.85).move_to(SC + P(-0.2, -2.2))
         self.play(LaggedStart(*[GrowArrow(a) for a in outs], lag_ratio=0.1), run_time=1.6)
@@ -642,32 +757,35 @@ class LeiGauss(Scene):
                          for dy in rows for x0 in (-6.9, -5.6, -4.3, -3.0)])
         e_here = always_redraw(lambda: vec(pc - 1.25 * U(0), pc - 0.04 * U(0), CYAN, 5, EO.get_value(), z=4))
         ref = always_redraw(lambda: DashedLine(pc, pc + 0.75 * U(0)).set_stroke(CYAN, 2, 0.6 * AO.get_value()))
-        arc = always_redraw(lambda: Arc(radius=0.55, start_angle=0, angle=np.radians(TH.get_value()), arc_center=pc)
-                            .set_stroke(CYAN, 3, AO.get_value()) if TH.get_value() > 3 else VMobject())
-        thl = eq(r"\theta", size=32, color=CYAN)
-        thl.add_updater(lambda m: m.move_to(pc + 0.85 * U(TH.get_value() / 2))
+        arc = always_redraw(lambda: Arc(radius=0.62, start_angle=0, angle=np.radians(TH.get_value()), arc_center=pc)
+                            .set_stroke(ANG, 4.5, AO.get_value()).set_z_index(9) if TH.get_value() > 3 else VMobject())
+        thl = eq(r"\theta", size=38, color=ANG)
+        thl.add_updater(lambda m: m.move_to(pc + 0.95 * U(TH.get_value() / 2))
                         .set_opacity(AO.get_value() if TH.get_value() > 12 else 0))
         self.add(e_here, ref, arc, thl)
-        eqA = eq(r"d\vec A", "=", r"\hat n", r"\,dA", size=40).move_to(P(RX, 2.15))
+        eqA = eq(r"d\vec A", "=", r"\hat n", r"\,dA", size=40, colors={0: DAVEC, 2: NHAT}).move_to(P(RX, 2.15))
         self.flatten(L3)
         self.play(LaggedStart(*[FadeIn(a) for a in field], lag_ratio=0.02), DEP.animate.set_value(0.35),
                   EO.animate.set_value(1.0), FadeOut(VGroup(L1, L2, L3[1])), ReplacementTransform(L3[0], eqA), run_time=2.0)
         self.play(TH.animate.set_value(35), run_time=1.2)
         self.at(c[7])
-        # dois ângulos diferentes: 90° (n̂ × plano) e θ (E⃗ × n̂)
-        self.play(NLO.animate.set_value(1.0), Indicate(rmark, color=WHITE, scale_factor=1.3), run_time=1.0)
-        self.play(AO.animate.set_value(1.0), run_time=1.0)
+        # dois beats, dois ângulos: 1) n̂ ⊥ pedaço (90°, secundário); 2) θ entre E⃗ e d⃗A (protagonista)
+        self.play(NLO.animate.set_value(1.0), RAO.animate.set_value(1.0), Indicate(lab_90, color=ANG, scale_factor=1.3),
+                  run_time=1.0)
+        self.wait(0.6)
+        self.play(AO.animate.set_value(1.0), NLO.animate.set_value(0.45), RAO.animate.set_value(0.5), run_time=1.0)
+        self.play(Indicate(thl, color=ANG, scale_factor=1.35), run_time=0.8)
         eqF = eq(r"d\Phi_E", "=", r"\vec E", r"\cdot d\vec A", size=46, colors={2: CYAN}).move_to(P(RX, 1.05))
-        eqF2 = eq(r"d\Phi_E", "=", "E", r"\,dA", r"\cos", r"\theta", size=46, colors={2: CYAN, 5: CYAN}).move_to(P(RX, 1.05))
+        eqF2 = eq(r"d\Phi_E", "=", "E", r"\,dA", r"\cos", r"\theta", size=46, colors={2: CYAN, 5: ANG}).move_to(P(RX, 1.05))
         self.play(Write(eqF), run_time=1.2)
         self.play(TransformMatchingTex(eqF, eqF2), run_time=1.2)
         eqF = eqF2
 
         # leituras sincronizadas: θ, cos θ, barra de dΦ e sinal; sombra = projeção da placa
         cos = lambda: float(np.cos(np.radians(TH.get_value())))
-        thv = DecimalNumber(0, num_decimal_places=0, unit=r"^\circ", font_size=38, color=CYAN)
+        thv = DecimalNumber(0, num_decimal_places=0, unit=r"^\circ", font_size=38, color=ANG)
         cv = DecimalNumber(1, num_decimal_places=2, include_sign=True, font_size=38)
-        th_lab, c_lab = eq(r"\theta=", size=38, color=CYAN), eq(r"\cos\theta=", size=38)
+        th_lab, c_lab = eq(r"\theta=", size=38, color=ANG), eq(r"\cos\theta=", size=38)
         row = VGroup(th_lab, thv, c_lab, cv)
         th_lab.move_to(P(RX - 1.9, -0.2))
         c_lab.move_to(P(RX + 0.75, -0.2))
@@ -712,9 +830,10 @@ class LeiGauss(Scene):
         self.at(c[10])
         self.play(TH.animate.set_value(90), run_time=2.6)                      # tangente: zero
         self.at(c[11])
-        closed = always_redraw(lambda: gauss_circle(pc - 1.5 * U(TH.get_value()), 1.5, op=CO.get_value()))
+        closed = always_redraw(lambda: gauss_circle(pc - 1.5 * U(TH.get_value()), 1.5, op=0.5 * CO.get_value(), w=2.5))
         self.add(closed)
-        self.play(CO.animate.set_value(1.0), SHO.animate.set_value(0.0), run_time=1.0)
+        self.play(CO.animate.set_value(1.0), SHO.animate.set_value(0.0), RAO.animate.set_value(0.0), NLO.animate.set_value(0.0),
+                  run_time=1.0)                                                # o beat do 90° já passou: menos densidade
         self.play(TH.animate.set_value(150), run_time=2.8)                     # entrando: negativo
         self.at(c[12])
         self.play(Indicate(eqF, color=WHITE, scale_factor=1.1), run_time=1.2)
@@ -727,7 +846,7 @@ class LeiGauss(Scene):
             m.clear_updaters()
         cS = P(-3.4, -0.2)
         surfS = gauss_circle(cS, 1.6)
-        normals = VGroup(*[vec(p, p + 0.42 * U(a), NCOL, 3.5) for a, p in zip(range(0, 360, 30), ring(cS, 1.6, 12))])
+        normals = VGroup(*[vec(p, p + 0.42 * U(a), NHAT, 3.5) for a, p in zip(range(0, 360, 30), ring(cS, 1.6, 12))])
         eqI = eq(r"\Phi_E", "=", r"\oint_S", r"\vec E", r"\cdot d\vec A", size=50, colors={3: CYAN}).move_to(P(RX, 0.6))
         self.play(FadeOut(VGroup(*[m for m in movers if m is not closed]), meter, eqA), ReplacementTransform(closed, surfS),
                   run_time=1.2)
@@ -746,18 +865,7 @@ class LeiGauss(Scene):
     # ── 04 · Coulomb + esfera (SPLIT) e cancelamento 1/r² × r² ──────────────
     def b04_coulomb(self):
         self.begin(4, "coulomb_esfera")
-        c = cues("Agora coloque uma carga pontual no centro de uma esfera.",
-                 "Pela Lei de Coulomb, o campo aponta radialmente e seu módulo diminui com o quadrado da distância.",
-                 "Na superfície da esfera, campo e vetor área apontam na mesma direção.",
-                 "Além disso, todos os pontos estão à mesma distância da carga. Então o módulo do campo é igual em toda a esfera.",
-                 "Nesse caso, podemos tirar E da integral.",
-                 "O fluxo vira o campo multiplicado pela área da esfera.",
-                 "E aqui acontece algo importante.",
-                 "Quando aumentamos o raio, o campo cai como um sobre o raio ao quadrado.",
-                 "Mas a área da esfera cresce como o raio ao quadrado.",
-                 "Uma coisa compensa exatamente a outra.",
-                 "Por isso, não importa qual esfera centrada na carga escolhamos: o fluxo total é sempre q dividido por épsilon zero.",
-                 "Isso já sugere que o fluxo está capturando alguma coisa mais profunda do que o valor local do campo.")
+        c = self.marcos(4)
         self.clear(run_time=0.9)
         cc = P(LX, -0.2)
         RR, AO, NO, RLO, RA, MO, PO = (ValueTracker(v) for v in (1.4, 0.0, 0.0, 0.0, 210.0, 0.0, 0.0))
@@ -770,7 +878,7 @@ class LeiGauss(Scene):
         q = charge(cc, label="q")
         arrows = always_redraw(lambda: coulomb(ring(cc, RR.get_value(), 12, 15), [cc], K4, 0.05, 2.5, op=AO.get_value()))
         normals = always_redraw(lambda: VGroup(*[
-            vec(p, p + 0.34 * U(a), NCOL, 3.5, NO.get_value(), z=4)
+            vec(p, p + 0.34 * U(a), NHAT, 3.5, NO.get_value(), z=4)
             for a, p in zip(range(0, 360, 30), ring(cc, RR.get_value(), 12))]))
         rline = always_redraw(lambda: Line(cc, cc + RR.get_value() * U(RA.get_value())).set_stroke(WHITE, 2.5, RLO.get_value()))
         rlab = eq("r", size=34, color=VIOLET)
@@ -827,7 +935,7 @@ class LeiGauss(Scene):
         self.add(mbars)
         self.play(MO.animate.set_value(1.0), FadeIn(mlabs), FadeOut(par), run_time=1.0)
         self.at(c[7])
-        self.play(RR.animate.set_value(2.2), Indicate(mlabs[0], color=CYAN), run_time=3.6)
+        self.play(RR.animate.set_value(2.2), Indicate(mlabs[0], color=CYAN), run_time=2.8)
         self.at(c[8])
         c1 = eq(r"\Phi_E=", r"\frac{q}{4\pi\varepsilon_0 r^2}", r"\cdot", r"4\pi r^2", size=46,
                 colors={1: CYAN, 3: VIOLET}).move_to(P(RX, 0.45))
@@ -855,26 +963,7 @@ class LeiGauss(Scene):
     # ── 05 · Ângulo sólido (BUILD), interna × externa (COMPARE), Q_env ──────
     def b05_angulo_solido(self):
         self.begin(5, "angulo_solido")
-        c = cues("Mas a superfície precisa mesmo ser uma esfera?",
-                 "Imagine agora um pequeno cone de direções partindo da carga.",
-                 "Esse cone intercepta um pedaço de uma superfície arbitrária.",
-                 "Se o pedaço está inclinado, entra um fator de projeção. Se está mais distante, sua área precisa crescer proporcionalmente ao quadrado da distância para ocupar o mesmo tamanho angular visto pela carga.",
-                 "A combinação entre área, inclinação e distância define um pequeno ângulo sólido.",
-                 "E o fluxo produzido pela carga através daquele pedaço depende exatamente desse ângulo sólido orientado.",
-                 "Se a superfície fechada envolve a carga, todos esses pequenos ângulos sólidos completam quatro pi.",
-                 "Quatro pi é o ângulo sólido de todas as direções do espaço: a área de uma esfera de raio um, e não a volta de um círculo.",
-                 "O resultado continua sendo q dividido por épsilon zero, independentemente da forma da superfície.",
-                 "Agora coloque a carga fora.",
-                 "O campo sobre a superfície não desaparece.",
-                 "Pode até ser muito intenso em alguns lugares.",
-                 "Mas cada feixe que entra numa região da superfície volta a sair por outra. Com a orientação correta, as contribuições se cancelam no fluxo líquido.",
-                 "Por isso uma carga externa contribui zero para o fluxo total fechado.",
-                 "E como campos elétricos obedecem ao princípio de superposição, podemos repetir o argumento para várias cargas.",
-                 "As cargas externas cancelam no fluxo líquido.",
-                 "As internas contribuem com suas cargas divididas por épsilon zero.",
-                 "Somadas, elas formam a carga envolvida: a soma algébrica das cargas que estão dentro da superfície.",
-                 "E chegamos à Lei de Gauss.",
-                 "O fluxo do campo elétrico por qualquer superfície fechada é igual à carga total envolvida dividida por épsilon zero.")
+        c = self.marcos(5)
         k4 = self.k4
         c4, c5, R4, BS = k4.c, P(-3.35, -0.25), 1.7, 1.95
         MO = ValueTracker(0.0)
@@ -888,9 +977,10 @@ class LeiGauss(Scene):
         surf.clear_updaters()
         cq = c5
         rb = lambda a: BS * blob(a)
-        PH, CO, LO, LBO, SW, SWO = (ValueTracker(v) for v in (300.0, 0.0, 0.0, 0.0, 0.0, 0.0))
+        # LO: pedaço · FO: normal, θ e dA⊥ · LBO: rótulos r, n̂, θ, dA⊥ · DOO: rótulo dΩ (só nasce com o nome)
+        PH, CO, LO, FO, LBO, DOO, SW, SWO = (ValueTracker(v) for v in (300.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0))
         DL_ = 10.0
-        refc =DashedVMobject(Circle(radius=0.62, arc_center=cq), num_dashes=22).set_stroke(WHITE, 1.5, 0.45)
+        refc = DashedVMobject(Circle(radius=0.62, arc_center=cq), num_dashes=22).set_stroke(WHITE, 1.5, 0.45)
         self.at(c[1])
 
         def cone():
@@ -900,7 +990,7 @@ class LeiGauss(Scene):
             pts = [cq] + [cq + (rb(t) + 0.45) * U(t) for t in np.linspace(a - DL_, a + DL_, 9)]
             arc_ = Arc(radius=0.62, start_angle=np.radians(a - DL_), angle=np.radians(2 * DL_), arc_center=cq)
             return VGroup(Polygon(*pts).set_stroke(WHITE, 1.5, 0.7 * o).set_fill(WHITE, 0.14 * o),
-                          arc_.set_stroke(CYAN, 5, o))
+                          arc_.set_stroke(ANG, 6, o))
 
         def geom(a):
             p = cq + rb(a) * U(a)
@@ -909,68 +999,166 @@ class LeiGauss(Scene):
             chord = np.linalg.norm(rb(a + DL_) * U(a + DL_) - rb(a - DL_) * U(a - DL_))
             return p, n, d, chord
 
-        def piece(a, o, full=True):
-            """Elemento dA, normal n̂ (branca), distância r, ângulo θ (ciano) e área projetada dA cosθ."""
+        def piece(a, o, f=1.0):
+            """Pedaço dA (violeta) e distância r; com f > 0: normal n̂, ângulo θ (ciano) e área projetada dA⊥."""
             out = VGroup()
             if o < 0.01:
                 return out
             p, n, d, chord = geom(a)
             arcp = [cq + rb(t) * U(t) for t in np.linspace(a - DL_, a + DL_, 12)]
-            out.add(VMobject().set_points_as_corners(arcp).set_stroke(VIOLET, 9, o))
+            out.add(VMobject().set_points_as_corners(arcp).set_stroke(DAVEC, 9, o))
             out.add(DashedLine(cq, p, dash_length=0.08).set_stroke(WHITE, 2, 0.7 * o))
-            if full:
-                out.add(vec(p, p + 0.72 * n, NCOL, 3.5, o, z=7))
-                out.add(DashedLine(p, p + 0.72 * U(a), dash_length=0.06).set_stroke(CYAN, 2, 0.7 * o))
+            f *= o
+            if f > 0.01:
+                out.add(vec(p, p + 0.72 * n, NHAT, 3.5, f, z=7))
+                out.add(DashedLine(p, p + 0.72 * U(a), dash_length=0.06).set_stroke(CYAN, 2, 0.7 * f))
                 if abs(d) > 4:
-                    out.add(Arc(radius=0.45, start_angle=np.radians(a), angle=np.radians(d), arc_center=p).set_stroke(CYAN, 3, o))
+                    out.add(Arc(radius=0.45, start_angle=np.radians(a), angle=np.radians(d), arc_center=p).set_stroke(ANG, 4, f))
                 hp = 0.5 * chord * abs(np.cos(np.radians(d)))
-                out.add(Line(p - hp * U(a + 90), p + hp * U(a + 90)).set_stroke(WHITE, 5, 0.9 * o).set_z_index(6))
+                out.add(Line(p - hp * U(a + 90), p + hp * U(a + 90)).set_stroke(WHITE, 5, 0.9 * f).set_z_index(6))
             return out
         cone_m = always_redraw(cone)
-        pc_m = always_redraw(lambda: piece(PH.get_value(), LO.get_value()))
-        labs = VGroup(eq("r", size=32), eq(r"\hat n", size=32), eq(r"\theta", size=32, color=CYAN),
-                      eq(r"dA\cos\theta", size=30), eq(r"d\Omega", size=30, color=CYAN))
+        pc_m = always_redraw(lambda: piece(PH.get_value(), LO.get_value(), FO.get_value()))
+        labs = VGroup(eq("r", size=32), eq(r"\hat n", size=32, color=NHAT), eq(r"\theta", size=34, color=ANG),
+                      eq(r"dA_\perp", size=30), eq(r"d\Omega", size=30, color=ANG), eq("dA", size=30, color=DAVEC))
 
         def place_labs(m):
             a = PH.get_value()
             p, n, d, chord = geom(a)
-            o = LBO.get_value()
+            t = U(ang(n) + 90)
+            t = t if np.dot(t, U(a + 90)) < 0 else -t                         # lado oposto ao rótulo de dA⊥
             m[0].move_to(cq + 0.62 * rb(a) * U(a) + 0.3 * U(a + 90))
-            m[1].move_to(p + 1.0 * n + 0.12 * U(ang(n) - 90))
+            m[1].move_to(p + 0.95 * n + 0.3 * U(ang(n) + 90 * np.sign(d or 1)))      # longe do θ, do lado de fora
             m[2].move_to(p + 0.78 * U(a + d / 2) + 0.12 * U(a + d / 2 + 90 * np.sign(d or 1)))
             m[3].move_to(p + (0.5 * chord + 0.62) * U(a + 90) + 0.3 * U(a))
             m[4].move_to(cq + 1.0 * U(a - 30))
+            m[5].move_to(p + (0.5 * chord + 0.38) * t + 0.12 * n)
             for i, sub in enumerate(m):
-                sub.set_opacity(o if i < 4 else CO.get_value())
+                sub.set_opacity({4: DOO.get_value(), 5: LO.get_value()}.get(i, LBO.get_value()))
         labs.add_updater(place_labs)
         self.add(cone_m, pc_m, labs)
         self.play(FadeIn(refc), CO.animate.set_value(1.0), run_time=1.4)
         self.at(c[2])
         self.play(LO.animate.set_value(1.0), run_time=1.2)
+
+        # nome e símbolo entram juntos: o cone é a representação; o conceito é o ângulo sólido
         self.at(c[3])
-        s1 = eq(r"d\Phi_E", "=", r"\vec E\cdot d\vec A", size=42).move_to(P(RX, 1.85))
-        s2 = eq(r"d\Phi_E", "=", r"\frac{q}{4\pi\varepsilon_0 r^2}", r"(\hat r\cdot\hat n)\,dA", size=42).move_to(P(RX, 1.85))
-        s3 = eq(r"d\Phi_E", "=", r"\frac{q}{4\pi\varepsilon_0}", r"\frac{\cos\theta\,dA}{r^2}", size=42).move_to(P(RX, 1.85))
-        self.play(LBO.animate.set_value(1.0), Write(s1), run_time=1.2)
-        self.play(TransformMatchingTex(s1, s2), run_time=1.3)
-        self.play(TransformMatchingTex(s2, s3), run_time=1.3)
+        title = hchain(display("ÂNGULO SÓLIDO", 34, bold=True), eq(r"d\Omega", size=48, color=ANG), buff=0.35).move_to(P(RX, 2.6))
+        self.play(FadeIn(title, shift=0.1 * DOWN), DOO.animate.set_value(1.0), run_time=1.1)
+        self.play(Indicate(title[1], color=ANG, scale_factor=1.25), Indicate(refc, color=WHITE, scale_factor=1.15),
+                  run_time=1.1)
+
+        # ponte curta: no plano dθ = ds/r (volta: 2π rad) → no espaço dΩ = dA⊥/r² (todas as direções: 4π sr)
+        X2, X3, YF = RX - 1.75, RX + 1.75, 0.35
+        O2, A2, H2, R2 = P(X2 - 1.3, YF - 0.3), 15.0, 18.0, 1.75
+        h2 = text("no plano", 22, opacity=0.85).move_to(P(X2, 1.85))
+        rays2 = VGroup(Line(O2, O2 + 2.2 * U(A2 - H2)), Line(O2, O2 + 2.2 * U(A2 + H2))).set_stroke(WHITE, 2.5, 0.85)
+        o2 = Dot(O2, radius=0.07, color=WHITE)
+        ds_arc = Arc(radius=R2, start_angle=np.radians(A2 - H2), angle=np.radians(2 * H2), arc_center=O2).set_stroke(WHITE, 7)
+        dt_arc = Arc(radius=0.5, start_angle=np.radians(A2 - H2), angle=np.radians(2 * H2), arc_center=O2).set_stroke(ANG, 3.5)
+        l2 = VGroup(eq("ds", size=30).move_to(O2 + (R2 + 0.36) * U(A2)),
+                    eq(r"d\theta", size=28, color=ANG).move_to(O2 + 0.98 * U(A2)),
+                    eq("r", size=28).move_to(O2 + 1.0 * U(A2 + H2) + 0.25 * U(A2 + H2 + 90)))
+        f2 = eq(r"d\theta", "=", r"\frac{ds}{r}", size=40, colors={0: ANG}).move_to(P(X2, -1.0))
+        v2 = hchain(text("volta completa:", 20, opacity=AUX_OP), eq(r"2\pi\ \mathrm{rad}", size=30, color=ANG), buff=0.12).move_to(P(X2, -1.8))
+        self.at(c[4])
+        self.play(FadeIn(h2), FadeIn(o2), Create(rays2), run_time=0.9)
+        self.play(Create(ds_arc), Create(dt_arc), FadeIn(l2), run_time=1.0)
+        self.play(Write(f2), run_time=1.0)
+        self.at(self.ext("v2"))
+        self.play(FadeIn(v2, shift=0.1 * UP), run_time=0.7)
+
+        O3, A3, R3, AH = P(X3 - 1.35, YF - 0.3), 15.0, 1.9, 0.5
+        D3 = O3 + R3 * U(A3)
+        h3 = text("no espaço", 22, opacity=0.85).move_to(P(X3, 1.85))
+        cone3 = VGroup(Polygon(O3, D3 + AH * U(A3 + 90), D3 - AH * U(A3 + 90)).set_stroke(WHITE, 1.5, 0.7).set_fill(WHITE, 0.1),
+                       Ellipse(width=0.12, height=2 * AH * 0.7 / R3).rotate(np.radians(A3)).move_to(O3 + 0.7 * U(A3))
+                       .set_stroke(ANG, 2.5),
+                       DashedLine(O3, D3, dash_length=0.07).set_stroke(WHITE, 1.5, 0.6), Dot(O3, radius=0.07, color=WHITE))
+        disk = Ellipse(width=0.34, height=2 * AH).rotate(np.radians(A3)).move_to(D3).set_stroke(WHITE, 2).set_fill(WHITE, 0.45)
+        disk.set_z_index(3)
+        patch3 = (Ellipse(width=0.62, height=2 * AH / np.cos(np.radians(35))).rotate(np.radians(A3 + 35)).move_to(D3)
+                  .set_stroke(DAVEC, 3).set_fill(DAVEC, 0.3).set_z_index(2))
+        l3 = VGroup(eq(r"dA_\perp", size=28).move_to(D3 + 0.95 * U(A3 - 70)),
+                    eq(r"d\Omega", size=28, color=ANG).move_to(O3 + 0.7 * U(A3) + 0.48 * U(A3 - 90)),
+                    eq("r", size=28).move_to(O3 + 1.1 * U(A3) + 0.55 * U(A3 + 90)))
+        l3p = eq("dA", size=28, color=DAVEC).move_to(D3 + 0.95 * U(A3 + 70))
+        arr23 = eq(r"\longrightarrow", size=36).move_to(P(RX, -1.0))
+        f3 = eq(r"d\Omega", "=", r"\frac{dA_\perp}{r^2}", size=40, colors={0: ANG}).move_to(P(X3, -1.0))
+        v3 = hchain(text("todas as direções:", 20, opacity=AUX_OP), eq(r"4\pi\ \mathrm{sr}", size=30, color=ANG), buff=0.12).move_to(P(X3, -1.8))
+        sr = text("sr = esterradiano", 18, opacity=0.6).move_to(P(X3, -2.3))
+        self.at(c[5])
+        self.play(FadeIn(h3), FadeIn(cone3), run_time=1.0)
+        self.play(FadeIn(disk), FadeIn(l3), run_time=0.9)
+        self.play(FadeIn(arr23), Write(f3), run_time=1.1)
+        self.at(self.ext("v3"))
+        self.play(FadeIn(v3, shift=0.1 * UP), run_time=0.7)
+        self.play(FadeIn(sr), run_time=0.6)
+        self.at(c[6])
+        # o mesmo cone intercepta o pedaço inclinado: o tamanho aparente é o da área projetada
+        msg = hchain(eq(r"d\Omega", size=32, color=ANG), text("= tamanho aparente do pedaço, visto da carga", 22, opacity=0.9), buff=0.18)
+        fit(msg, 6.7).move_to(P(RX, -2.9))
+        self.play(FadeIn(patch3), FadeIn(l3p), run_time=1.0)
+        self.play(FadeIn(msg, shift=0.1 * UP), Indicate(disk, color=WHITE, scale_factor=1.15), run_time=1.2)
+        self.play(Indicate(refc, color=WHITE, scale_factor=1.15), Indicate(labs[4], color=WHITE, scale_factor=1.3), run_time=1.2)
+
+        # projeção e distância no pedaço da superfície arbitrária
+        self.at(c[7])
+        dom_lab = text("ângulo sólido", 20, opacity=AUX_OP)
+        f3t = f3.copy()
+        hchain(dom_lab, f3t, buff=0.55).move_to(P(RX - 0.2, 2.5))                # folga para a margem do box
+        inset = VGroup(h2, rays2, o2, ds_arc, dt_arc, l2, f2, v2, h3, cone3, disk, patch3, l3, l3p, arr23, v3, sr, msg, title)
+        self.play(FadeOut(inset), ReplacementTransform(f3, f3t), FadeIn(dom_lab), run_time=1.3)
+        self.play(FO.animate.set_value(1.0), LBO.animate.set_value(1.0), run_time=1.2)
+        dperp = eq(r"dA_\perp", "=", "dA", r"\,|\cos", r"\theta", "|", size=40, colors={2: DAVEC, 4: ANG}).move_to(P(RX, 1.35))
+        self.play(FadeIn(dperp, shift=0.1 * DOWN), run_time=1.0)
         # mesmo cone, outro pedaço: mais longe e mais inclinado ⇒ área maior para o mesmo tamanho angular
-        ghost = piece(300.0, 0.4, full=False)
+        ghost = piece(300.0, 0.4, 0.0)
         self.add(ghost)
         self.play(LBO.animate.set_value(0.0), run_time=0.4)
         self.play(PH.animate.set_value(360.0), run_time=3.0)
         self.play(LBO.animate.set_value(1.0), run_time=0.6)
-        self.at(c[4])
-        dom = eq(r"d\Omega_{\rm or}", "=", r"\frac{\cos\theta\,dA}{r^2}", size=42).move_to(P(RX, 0.7))
-        self.play(TransformFromCopy(s3[3], dom[2]), FadeIn(dom[0:2]), run_time=1.4)
-        dom_box = box(dom, CYAN)
+        self.at(c[8])
+        # dA⊥ → dA cosθ dentro da fração: dA e r² mantêm a identidade
+        domB = eq(r"d\Omega", "=", r"\frac{dA\,|\cos\theta|}{r^2}", size=40, colors={0: ANG}).move_to(f3t).align_to(f3t, LEFT)
+        self.flatten(f3t)
+        self.play(ReplacementTransform(f3t[0], domB[0]), ReplacementTransform(f3t[1], domB[1]),
+                  *morph_frac(f3t[2], domB[2], keep=2), Indicate(dperp, color=WHITE, scale_factor=1.06), run_time=1.4)
+        self.regroup(domB)
+        dom_box = box(domB, WHITE)
         self.play(Create(dom_box), run_time=0.6)
-        self.at(c[5])
-        s4 = eq(r"d\Phi_E", "=", r"\frac{q}{4\pi\varepsilon_0}", r"\,d\Omega_{\rm or}", size=42).move_to(P(RX, 1.85))
-        self.play(TransformMatchingTex(s3, s4), run_time=1.3)
-        self.at(c[6])
+
+        # dΩ é o tamanho angular (≥ 0); dΩ_or carrega também o sinal da orientação
+        self.at(c[9])
+        orr = eq(r"d\Omega_{\rm or}", "=", r"\frac{\hat r\cdot\hat n}{r^2}\,dA", "=", r"\frac{\cos\theta\,dA}{r^2}", size=40,
+                 colors={0: ANG})
+        or_lab = text("orientado", 20, opacity=AUX_OP)
+        fit(hchain(or_lab, orr, buff=0.3), 6.7).move_to(P(RX, 1.3))
+        pm = hchain(eq(r"d\Omega_{\rm or}=\pm\,d\Omega", size=36, color=ANG), text("+ onde o campo sai · − onde entra", 18, opacity=AUX_OP),
+                    buff=0.3)
+        fit(pm, 6.7).move_to(P(RX, 0.2))
+        self.play(FadeOut(dperp), FadeIn(or_lab), FadeIn(orr[0:4], shift=0.1 * DOWN), TransformFromCopy(domB[2], orr[4]),
+                  run_time=1.3)
+        self.play(FadeIn(pm, shift=0.1 * DOWN), run_time=1.0)
+
+        # o fluxo pelo pedaço: Coulomb, depois a mesma fração vira dΩ_or (substituição pela definição)
+        self.at(c[10])
+        YS = -0.95
+        s1 = eq(r"d\Phi_E", "=", r"\vec E\cdot d\vec A", size=40).move_to(P(RX, YS))
+        s2 = eq(r"d\Phi_E", "=", r"\frac{q}{4\pi\varepsilon_0 r^2}", r"(\hat r\cdot\hat n)\,dA", size=40).move_to(P(RX, YS))
+        s3 = eq(r"d\Phi_E", "=", r"\frac{q}{4\pi\varepsilon_0}", r"\frac{\cos\theta\,dA}{r^2}", size=40).move_to(P(RX, YS))
+        s4 = eq(r"d\Phi_E", "=", r"\frac{q}{4\pi\varepsilon_0}", r"\,d\Omega_{\rm or}", size=40, colors={3: ANG}).move_to(P(RX, YS))
+        self.play(Write(s1), run_time=0.9)
+        self.play(TransformMatchingTex(s1, s2), run_time=1.0)
+        self.play(TransformMatchingTex(s2, s3), run_time=1.0)
+        self.play(Indicate(s3[3], color=WHITE, scale_factor=1.12), Indicate(orr[4], color=WHITE, scale_factor=1.12), run_time=0.8)
+        self.flatten(s3)
+        self.play(ReplacementTransform(s3[0], s4[0]), ReplacementTransform(s3[1], s4[1]), ReplacementTransform(s3[2], s4[2]),
+                  FadeOut(s3[3], shift=0.1 * UP), TransformFromCopy(orr[0], s4[3]), run_time=1.2)
+        self.regroup(s4)
 
         # carga interna: os ângulos sólidos completam 4π
+        self.at(c[11])
         a0 = PH.get_value()
         sweep = always_redraw(lambda: sector_fill(cq, rb, a0, a0 + SW.get_value(), 0.12 * SWO.get_value())
                               if SW.get_value() > 1 else VMobject())
@@ -978,31 +1166,39 @@ class LeiGauss(Scene):
         self.add(sweep)
         PH.add_updater(lambda m: m.set_value(a0 + SW.get_value()))
         self.add(PH)
-        tot = eq(r"\oint_S d\Omega_{\rm or}", "=", r"4\pi", size=42).move_to(P(RX - 0.9, -0.5))
-        self.play(SWO.animate.set_value(1.0), LO.animate.set_value(0.0), LBO.animate.set_value(0.0), run_time=0.3)
+        # três níveis: equação principal (∮ dΩ_or = 4π) · comentário geométrico (4π sr) · consequência (Φ_E = q/ε0)
+        tot = eq(r"\oint_S d\Omega_{\rm or}", "=", r"4\pi", size=44).move_to(P(RX, -0.95))
+        defs = VGroup(dom_lab, domB, or_lab, orr)
+        self.play(SWO.animate.set_value(1.0), LO.animate.set_value(0.0), FO.animate.set_value(0.0), LBO.animate.set_value(0.0),
+                  FadeOut(pm), s4.animate.move_to(P(RX, 0.2)), defs.animate.set_opacity(0.45),
+                  dom_box.animate.set_stroke(opacity=0.35), run_time=0.6)
         self.play(SW.animate.set_value(360.0), run_time=4.0, rate_func=linear)
         self.play(Write(tot), run_time=1.0)
         PH.clear_updaters()
         self.remove(PH)
-        self.at(c[7])
-        # 4π em 3D: todas as direções do espaço = área da esfera de raio 1
-        ic = P(RX + 2.35, -0.5)
-        icon = VGroup(Circle(radius=0.5, arc_center=ic).set_stroke(WHITE, 2).set_fill(CYAN, 0.12),
-                      DashedVMobject(Ellipse(width=1.0, height=0.3).move_to(ic), num_dashes=14).set_stroke(WHITE, 1.5, 0.6),
-                      eq(r"4\pi", size=28).move_to(ic))
-        icon_lab = text("esfera de raio 1", 20, opacity=0.85).move_to(ic + P(0, -0.8))
-        self.play(FadeIn(icon, scale=0.7), FadeIn(icon_lab), run_time=1.0)
-        self.at(c[8])
+        self.at(c[12])
+        # 4π como comentário geométrico: todas as direções do espaço = área da esfera unitária
+        icon = VGroup(Circle(radius=0.24).set_stroke(ANG, 1.8).set_fill(ANG, 0.12),
+                      DashedVMobject(Ellipse(width=0.48, height=0.14), num_dashes=10).set_stroke(ANG, 1.2, 0.7))
+        geo = hchain(icon, text("todas as direções =", 18, opacity=AUX_OP), eq(r"4\pi\ \mathrm{sr}", size=26, color=ANG),
+                     text("(esfera unitária)", 18, opacity=0.55), buff=0.14)
+        fit(geo, 6.6).move_to(P(RX, -1.85))
+        self.play(FadeIn(geo, shift=0.08 * UP), run_time=1.0)
+        self.at(c[13])
+        # consequência: os fatores 4π se cancelam
         res = eq(r"\Phi_E", "=", r"\frac{q}{4\pi\varepsilon_0}\cdot 4\pi", "=", r"\frac{q}{\varepsilon_0}", size=42)
-        res.move_to(P(RX, -2.2))
-        self.play(Write(res), run_time=1.4)
-        self.at(c[9])
+        res.move_to(P(RX, -2.85))
+        # atenua o comentário geométrico sem mexer no preenchimento do ícone (set_opacity encheria o círculo)
+        self.play(FadeIn(res[0:2]), TransformFromCopy(VGroup(s4[2], tot[2]), res[2]), geo[1:].animate.set_opacity(0.45),
+                  icon.animate.set_stroke(opacity=0.45), run_time=1.2)
+        self.play(FadeIn(res[3:], shift=0.1 * LEFT), run_time=0.8)
+        self.at(c[14])
 
         # COMPARE: interna (4π) × externa (0); a carga externa continua produzindo campo na superfície
         for m in (cone_m, pc_m, labs, sweep):
             m.clear_updaters()
         left_grp = VGroup(surf, k4.q, refc, sweep, cone_m)
-        self.play(FadeOut(VGroup(s4, dom, dom_box, res, pc_m, labs, icon, icon_lab)),
+        self.play(FadeOut(VGroup(s4, dom_lab, domB, dom_box, or_lab, orr, res, pc_m, labs, geo)),
                   left_grp.animate.scale(0.62, about_point=cq).move_to(P(LX, 0.3)),
                   tot.animate.scale(0.85).move_to(P(LX, -2.35)), run_time=1.6)
         bc = P(RX + 0.25, 0.3)
@@ -1013,12 +1209,12 @@ class LeiGauss(Scene):
         lab_in = text("carga interna", 24, opacity=0.8).move_to(P(LX, 2.3))
         lab_out = text("carga externa", 24, opacity=0.8).move_to(P(RX, 2.3))
         self.play(FadeIn(surf_r), FadeIn(qext, scale=0.5), FadeIn(lab_in), FadeIn(lab_out), run_time=1.0)
-        self.at(c[10])
+        self.at(c[15])
         ext_field = coulomb([bc + BS2 * blob(a) * U(a) for a in range(0, 360, 20)], [qe], 0.95, 0.12, 0.9, w=4)
         self.play(LaggedStart(*[GrowArrow(a) for a in ext_field], lag_ratio=0.05), run_time=2.2)
-        self.at(c[11])
+        self.at(c[16])
         self.play(LaggedStart(*[Indicate(a, color=CYAN, scale_factor=1.3) for a in ext_field[7:12]], lag_ratio=0.1), run_time=1.4)
-        self.at(c[12])
+        self.at(c[17])
         PE, CE = ValueTracker(-22.0), ValueTracker(0.0)
         DLe = 4.0
 
@@ -1040,28 +1236,30 @@ class LeiGauss(Scene):
             out.add(Polygon(qe, qe + far * U(a - DLe), qe + far * U(a + DLe)).set_stroke(WHITE, 1.5, 0.6 * o)
                     .set_fill(WHITE, 0.12 * o))
             if pin is not None:
-                out.add(Line(*pin).set_stroke(VIOLET, 8, o), Line(*pout).set_stroke(VIOLET, 8, o))
+                out.add(Line(*pin).set_stroke(DAVEC, 8, o), Line(*pout).set_stroke(DAVEC, 8, o))
             return out
         ecm = always_redraw(ext_cone)
-        signs = VGroup(eq(r"-d\Omega", size=32), eq(r"+d\Omega", size=32))
+        signs = VGroup(eq(r"d\Omega_{\rm or}=-d\Omega", size=24, color=ANG), eq(r"d\Omega_{\rm or}=+d\Omega", size=24, color=ANG))
 
         def place_signs(m):
             a = PE.get_value()
             _, pin, pout = ext_geom(a)
             o = CE.get_value() if pin is not None else 0.0
             if pin is not None:
-                m[0].move_to((pin[0] + pin[1]) / 2 - 0.5 * U(a) + 0.32 * U(a + 90))
-                m[1].move_to((pout[0] + pout[1]) / 2 + 0.55 * U(a) + 0.1 * U(a + 90))
+                m[0].move_to((pin[0] + pin[1]) / 2 - (0.3 + m[0].width / 2) * U(a) + 0.36 * U(a + 90))
+                m[1].move_to((pout[0] + pout[1]) / 2 + 0.78 * U(a + 90) + 0.3 * U(a))
+                if m[1].get_right()[0] > 6.95:                                  # trava na borda direita do quadro
+                    m[1].shift((6.95 - m[1].get_right()[0]) * RIGHT)
             m.set_opacity(o)
         signs.add_updater(place_signs)
         self.add(ecm, signs)
         self.play(CE.animate.set_value(1.0), run_time=0.8)
         self.play(PE.animate.set_value(22.0), run_time=4.2)
         self.play(PE.animate.set_value(6.0), run_time=1.6)
-        self.at(c[13])
+        self.at(c[18])
         tot_out = eq(r"\oint_S d\Omega_{\rm or}", "=", "0", size=42).scale(0.85).move_to(P(RX, -2.35))
         self.play(Write(tot_out), run_time=1.0)
-        self.at(c[14])
+        self.at(c[19])
 
         # superposição: cada carga recebe a sua contribuição para o fluxo → Q_env
         ecm.clear_updaters()
@@ -1075,7 +1273,7 @@ class LeiGauss(Scene):
         fieldF = coulomb([cF + rbF(a) * U(a) for a in range(0, 360, 18)], qs_pos, 0.55, 0.12, 0.8, w=4)
         self.play(FadeIn(surfF), FadeIn(charges, scale=0.6), run_time=1.2)
         self.play(LaggedStart(*[GrowArrow(a) for a in fieldF], lag_ratio=0.04), run_time=1.8)
-        self.at(c[15])
+        self.at(c[20])
         # contribuições fora da superfície, ligadas às cargas por guias tracejadas
         def tagged(lab, at_, q):
             lab.move_to(at_)
@@ -1084,41 +1282,27 @@ class LeiGauss(Scene):
             return VGroup(lab, lead)
         k3 = tagged(hchain(eq("0", size=36), text("no fluxo", 20, opacity=0.85), buff=0.12), P(1.3, 1.85), qs_pos[2])
         self.play(Indicate(charges[2], color=WHITE, scale_factor=1.5), FadeIn(k3), run_time=1.2)
-        self.at(c[16])
+        self.at(c[21])
         k1 = tagged(eq(r"\frac{q_1}{\varepsilon_0}", size=36), P(0.85, 0.45), qs_pos[0])
         k2 = tagged(eq(r"\frac{q_2}{\varepsilon_0}", size=36), P(0.85, -0.75), qs_pos[1])
         self.play(FadeIn(k1), FadeIn(k2), run_time=1.0)
-        self.at(c[17])
+        self.at(c[22])
         qenv = eq(r"Q_{\mathrm{env}}", "=", "q_1", "+", "q_2", size=40, colors={0: BLUE_L}).move_to(P(4.4, -1.0))
         qenv_lab = text("soma algébrica das cargas internas", 22, opacity=0.85).move_to(P(4.4, -1.7))
         self.play(TransformFromCopy(VGroup(charges[0][2], charges[1][2]), VGroup(qenv[2], qenv[4])),
                   FadeIn(VGroup(qenv[0], qenv[1], qenv[3])), run_time=1.4)
         self.play(FadeIn(qenv_lab), run_time=0.8)
-        self.at(c[18])
+        self.at(c[23])
         law = eq(r"\oint_S", r"\vec E\cdot d\vec A", "=", r"\frac{Q_{\mathrm{env}}}{\varepsilon_0}", size=52).move_to(P(4.4, 0.65))
         self.play(Write(law), run_time=1.6)
-        self.at(c[19])
+        self.at(c[24])
         self.play(Create(box(law)), run_time=0.9)
         self.at(c[-1] + 0.6)
 
     # ── 06 · Superfície deliberadamente ruim (COMPARE / BUILD) ──────────────
     def b06_superficie_ruim(self):
         self.begin(6, "superficie_ruim")
-        c = cues("Agora vem a parte mais importante do vídeo.",
-                 "Se essa lei vale para qualquer superfície fechada, por que não desenhar qualquer uma e calcular o campo?",
-                 "Coloque uma carga pontual deslocada do centro desta esfera.",
-                 "A carga continua dentro.",
-                 "Portanto o fluxo continua sendo q dividido por épsilon zero.",
-                 "Isso é exato.",
-                 "Mas olhe o campo sobre a superfície.",
-                 "Os pontos da esfera não estão todos à mesma distância da carga.",
-                 "Então o módulo de E varia de ponto para ponto.",
-                 "E, na maior parte da esfera, o campo também não aponta na direção da normal.",
-                 "Portanto este passo é inválido.",
-                 "Eu não posso transformar a integral em E vezes a área da esfera.",
-                 "A Lei de Gauss me deu um número: o fluxo total.",
-                 "Mas o campo sobre a superfície é uma função que muda de ponto para ponto.",
-                 "Saber o fluxo total não significa conhecer o campo em cada ponto.")
+        c = self.marcos(6)
         self.clear(run_time=0.9)
         cc, RG = P(LX, 0.05), 1.9
         QO = ValueTracker(0.0)
@@ -1130,7 +1314,7 @@ class LeiGauss(Scene):
         q = always_redraw(lambda: charge(qpos(), label="q"))
         pts = ring(cc, RG, 12, 0)
         arrows = always_redraw(lambda: coulomb(pts, [qpos()], KE, 0.12, 1.15))
-        normals = VGroup(*[vec(p, p + 0.45 * U(a), NCOL, 3.5, z=5) for a, p in zip(range(0, 360, 30), pts)])
+        normals = VGroup(*[vec(p, p + 0.45 * U(a), NHAT, 3.5, z=5) for a, p in zip(range(0, 360, 30), pts)])
         self.play(Create(sph_), FadeIn(center), FadeIn(q), run_time=1.4)
         self.add(arrows)
         self.play(FadeIn(arrows), LaggedStart(*[GrowArrow(n) for n in normals], lag_ratio=0.05), run_time=1.6)
@@ -1175,11 +1359,11 @@ class LeiGauss(Scene):
             d = (ang(e_dir) - i * 30 + 180) % 360 - 180
             th_arcs.add(VGroup(DashedLine(p, p + 1.0 * U(i * 30), dash_length=0.06).set_stroke(WHITE, 2, 0.9),
                                Arc(radius=0.65, start_angle=np.radians(i * 30), angle=np.radians(d), arc_center=p)
-                               .set_stroke(CYAN, 4.5)))
+                               .set_stroke(ANG, 4.5)))
         others = [nm for j, nm in enumerate(normals) if j not in three]
         self.play(*[nm.animate.set_opacity(0.3) for nm in others],
                   LaggedStart(*[Create(a) for a in th_arcs], lag_ratio=0.4), run_time=1.8)
-        thn = eq(r"\theta_i\neq0", size=38, color=CYAN).move_to(P(RX, -1.95))
+        thn = eq(r"\theta_i\neq0", size=38, color=ANG).move_to(P(RX, -1.95))
         self.play(FadeIn(thn, shift=0.1 * UP), run_time=0.7)
         self.at(c[10])
         tr = eq(r"\oint\vec E\cdot d\vec A", r"\overset{?}{=}", r"E\oint dA", size=46).move_to(P(RX, 0.15))
@@ -1209,26 +1393,26 @@ class LeiGauss(Scene):
             dd = (ang(e_dir) - a + 180) % 360 - 180
             out.add(DashedLine(qp, p, dash_length=0.08).set_stroke(WHITE, 2, 0.7 * o),
                     Dot(p, radius=0.08, color=WHITE).set_opacity(o).set_z_index(9),
-                    vec(p, p + L * e_dir, CYAN, 7, o, z=8), vec(p, p + 0.55 * U(a), NCOL, 4, o, z=9),
-                    Arc(radius=0.42, start_angle=np.radians(a), angle=np.radians(dd), arc_center=p).set_stroke(CYAN, 3, o))
+                    vec(p, p + L * e_dir, CYAN, 7, o, z=8), vec(p, p + 0.55 * U(a), NHAT, 4, o, z=9),
+                    Arc(radius=0.42, start_angle=np.radians(a), angle=np.radians(dd), arc_center=p).set_stroke(ANG, 3.5, o))
             return out
         prb = always_redraw(probe)
         pe = lambda: float(KE / np.dot(cc + RG * U(PA.get_value()) - qp, cc + RG * U(PA.get_value()) - qp))
         e_lab = eq(r"|\vec E|", size=36, color=CYAN).move_to(P(RX - 2.2, -1.2))
         e_bar = always_redraw(lambda: Rectangle(width=max(1.3 * pe(), 0.02), height=0.24).set_stroke(width=0)
                               .set_fill(CYAN, 0.85 * PRO.get_value()).next_to(P(RX - 1.6, -1.2), RIGHT, buff=0))
-        t_lab = eq(r"\theta=", size=36, color=CYAN).move_to(P(RX - 1.9, -1.95))
+        t_lab = eq(r"\theta=", size=36, color=ANG).move_to(P(RX - 1.9, -1.95))
 
         def theta_now():
             p = cc + RG * U(PA.get_value())
             e_dir = (p - qp) / np.linalg.norm(p - qp)
             return abs((ang(e_dir) - PA.get_value() + 180) % 360 - 180)
-        t_val = DecimalNumber(0, num_decimal_places=0, unit=r"^\circ", font_size=36, color=CYAN)
+        t_val = DecimalNumber(0, num_decimal_places=0, unit=r"^\circ", font_size=36, color=ANG)
         t_val.add_updater(lambda m: m.set_value(theta_now()).next_to(t_lab, RIGHT, buff=0.12).set_opacity(PRO.get_value()))
         self.add(prb, e_bar, t_val)
         self.play(FadeOut(VGroup(ineq, thn)), PRO.animate.set_value(1.0), FadeIn(e_lab), FadeIn(t_lab),
                   *[a.animate.set_opacity(0.35) for a in arrows], run_time=0.8)
-        self.play(PA.animate.set_value(360.0), run_time=7.5, rate_func=linear)
+        self.play(PA.animate.set_value(360.0), run_time=6.0, rate_func=linear)
         self.at(c[14])
         pay = hchain(display("FLUXO CONHECIDO", 32), eq(r"\neq", size=48, color=MAGENTA),
                      display("CAMPO LOCAL CONHECIDO", 32), buff=0.3).move_to(P(0, -2.8))
@@ -1238,23 +1422,7 @@ class LeiGauss(Scene):
     # ── 07 · Simetria da fonte (FOCUS) ──────────────────────────────────────
     def b07_simetria(self):
         self.begin(7, "simetria")
-        c = cues("É aqui que entra a simetria.",
-                 "E a ordem do raciocínio importa.",
-                 "Você não começa escolhendo uma esfera porque quer que o problema fique esférico.",
-                 "Você começa olhando para a distribuição de carga.",
-                 "E forma esférica não basta. Uma bola com mais carga de um lado tem forma de esfera, mas, se eu girá-la, a fonte muda.",
-                 "Pergunte: quais transformações deixam essa fonte fisicamente igual?",
-                 "Considere uma distribuição esfericamente simétrica.",
-                 "Se eu girá-la em torno do centro, nada muda.",
-                 "Não existe nenhuma direção tangencial privilegiada.",
-                 "O campo produzido por essa distribuição precisa apontar radialmente, e seu módulo só pode depender da distância ao centro.",
-                 "Se eu me mover mantendo a mesma distância ao centro, a direção do campo muda, mas o módulo é sempre o mesmo.",
-                 "Só depois de descobrir isso escolhemos uma esfera concêntrica.",
-                 "Nessa esfera, o campo é paralelo ao vetor área.",
-                 "E como todos os pontos têm o mesmo raio, o módulo do campo é constante.",
-                 "Agora, e somente agora, podemos tirar E da integral.",
-                 "A esfera gaussiana não criou a simetria.",
-                 "Ela apenas explorou uma simetria que a distribuição de carga já possuía.")
+        c = self.marcos(7)
         self.at(c[2] - 0.8)
         self.clear(run_time=0.8)
         cs = P(-2.4, 0.0)
@@ -1334,7 +1502,7 @@ class LeiGauss(Scene):
                   radial.animate.set_opacity(1.0), run_time=0.8)
         self.play(Create(gs), run_time=1.4)
         self.at(c[12])
-        normals = VGroup(*[vec(cs + RS * U(a), cs + (RS + 0.32) * U(a), NCOL, 3.5, z=5) for a in range(int(a_p) + 15, int(a_p) + 375, 30)])
+        normals = VGroup(*[vec(cs + RS * U(a), cs + (RS + 0.32) * U(a), NHAT, 3.5, z=5) for a in range(int(a_p) + 15, int(a_p) + 375, 30)])
         self.play(LaggedStart(*[GrowArrow(n) for n in normals], lag_ratio=0.05), run_time=1.4)
         self.at(c[13])
         self.play(Indicate(VGroup(arrows, radial), color=CYAN, scale_factor=1.06), run_time=1.4)
@@ -1355,34 +1523,7 @@ class LeiGauss(Scene):
     # ── 08 · Esfera uniforme: interior, coordenadas esféricas, exterior (SPLIT / BUILD) ──
     def b08_esfera_uniforme(self):
         self.begin(8, "esfera_uniforme")
-        c = cues("Vamos usar isso numa esfera isolante com densidade volumétrica uniforme.",                    # 0
-                 "Primeiro queremos o campo num ponto dentro da esfera.",
-                 "Pela simetria, sabemos antes de fazer qualquer conta que o campo é radial e depende apenas da distância ao centro.",
-                 "Escolhemos então uma superfície gaussiana esférica de raio menor que o raio da esfera física.",
-                 "O lado do fluxo fica simples: campo vezes a área da superfície gaussiana.",
-                 "Agora precisamos da carga realmente envolvida por ela.",                                       # 5
-                 "Como a densidade é uniforme, poderíamos simplesmente multiplicar densidade por volume.",
-                 "Mas vale a pena enxergar a versão que também funcionará quando a densidade deixar de ser constante.",
-                 "Para isso, vale relembrar as coordenadas esféricas. E repare em três letras parecidas: R maiúsculo é o raio fixo da esfera física; r é o raio da superfície gaussiana, onde medimos o campo; e r linha é a variável que percorre o volume durante a integração.",
-                 "Um ponto do volume fica determinado por três números. Primeiro, a distância r linha até o centro.",
-                 "Depois, o ângulo polar, medido a partir do eixo z. Vamos escrevê-lo com outra grafia de teta, para não confundir com o ângulo do fluxo.",  # 10
-                 "Por fim, o ângulo azimutal, fi, que dá a volta em torno do eixo z.",
-                 "Variando cada coordenada um pouquinho, formamos um pequeno bloco. Na direção radial, sua espessura é d r linha.",
-                 "Na direção polar, o arco tem comprimento r linha vezes d teta.",
-                 "Na direção azimutal, o ponto gira num círculo de raio r linha seno de teta, um círculo que encolhe perto dos polos. Por isso esse arco mede r linha seno de teta d fi.",
-                 "Multiplicando as três dimensões, temos o elemento de volume.",                                 # 15
-                 "Integramos a densidade com r linha indo de zero até r, porque só conta a carga que está dentro da superfície gaussiana.",
-                 "Para densidade constante, o resultado é exatamente a densidade vezes quatro terços de pi vezes o raio ao cubo.",
-                 "Substituindo na Lei de Gauss, primeiro cancelamos quatro pi dos dois lados.",
-                 "Depois, o raio ao cubo da carga dividido pelo raio ao quadrado da área deixa um único fator de raio.",
-                 "Por isso, dentro da esfera uniforme, o campo cresce linearmente com a distância ao centro. Esse resultado vale só para r menor que R.",  # 20
-                 "No centro ele vale zero.",
-                 "Agora mova a superfície gaussiana para fora da esfera física.",
-                 "A partir daqui, aumentar o raio da superfície não envolve mais carga.",
-                 "Toda a carga da esfera já está dentro.",
-                 "Então a carga envolvida fica constante, enquanto a área gaussiana continua crescendo como o raio ao quadrado.",  # 25
-                 "O campo passa a cair como um sobre o raio ao quadrado. Agora o resultado vale para r maior que R.",
-                 "E, para pontos externos a toda a região ocupada por essa distribuição esfericamente simétrica, o resultado é exatamente o mesmo campo que seria produzido por uma carga pontual com a carga total da esfera colocada no centro.")
+        c = self.marcos(8)
         self.clear(run_time=0.9)
         cc = P(LX, -0.15)
         S, X = ValueTracker(2.0), ValueTracker(0.55)                          # S: unidades de tela por R; X = r/R
@@ -1475,7 +1616,7 @@ class LeiGauss(Scene):
             if THO.get_value() > 0.01:
                 o = THO.get_value()
                 out.add(VMobject().set_points_as_corners([p3(cc, s, sph(0.3, t, ff)) for t in np.linspace(0, tt, 16)])
-                        .set_stroke(WHITE, 3, o))
+                        .set_stroke(ANG, 3.5, o))
             if PHO.get_value() > 0.01:
                 o = PHO.get_value()
                 v = sph(rp, tt, ff)
@@ -1484,7 +1625,7 @@ class LeiGauss(Scene):
                         DashedLine(cc, foot, dash_length=0.06).set_stroke(WHITE, 1.5, 0.6 * o),
                         DashedLine(pt3(), foot, dash_length=0.06).set_stroke(WHITE, 1.5, 0.6 * o),
                         VMobject().set_points_as_corners([p3(cc, s, sph(0.28, 90, f)) for f in np.linspace(0, ff, 16)])
-                        .set_stroke(WHITE, 3, o))
+                        .set_stroke(ANG, 3.5, o))
             if AZO.get_value() > 0.01:
                 o = AZO.get_value()
                 v = sph(rp, tt, ff)
@@ -1515,11 +1656,11 @@ class LeiGauss(Scene):
             for key, (a, b) in (("r", ((0, 0, 0), (1, 0, 0))), ("t", ((1, 0, 0), (1, 1, 0))), ("f", ((1, 0, 0), (1, 0, 1)))):
                 h = HL[key].get_value()
                 if h > 0.01:
-                    out.add(Line(C[a], C[b]).set_stroke(CYAN if key == "f" else WHITE, 6, o * h).set_z_index(10))
+                    out.add(Line(C[a], C[b]).set_stroke(WHITE, 6, o * h).set_z_index(10))
             return out.set_z_index(9)
         elem = always_redraw(element)
-        clabs = VGroup(eq("r'", size=32), eq(r"\vartheta", size=32), eq(r"\phi", size=32), eq("z", size=28),
-                       eq("dr'", size=28), eq(r"r'\,d\vartheta", size=28), eq(r"r'\sin\vartheta\,d\phi", size=28, color=CYAN))
+        clabs = VGroup(eq("r'", size=32), eq(r"\vartheta", size=32, color=ANG), eq(r"\phi", size=32, color=ANG), eq("z", size=28),
+                       eq("dr'", size=28), eq(r"r'\,d\vartheta", size=28), eq(r"r'\sin\vartheta\,d\phi", size=28))
 
         def place_clabs(m):
             s, rp, tt, ff = S.get_value(), RP.get_value(), TT.get_value(), FF.get_value()
@@ -1541,18 +1682,18 @@ class LeiGauss(Scene):
         self.play(FadeOut(VGroup(g1, rho, rr)), q1.animate.scale(0.85).move_to(P(RX, 2.25)), AO.animate.set_value(0.0),
                   PO.animate.set_value(0.0), VEO.animate.set_value(0.0), S.animate.set_value(2.75), X.animate.set_value(0.88),
                   ZO.animate.set_value(1.0), LBO.animate.set_value(1.0), run_time=1.6)
-        self.at(c[8] + 5.6)
+        self.at(self.ext("rowR"))
         self.play(FadeIn(rowR, shift=0.1 * DOWN), Indicate(rlab_R, color=BLUE_L, scale_factor=1.4), run_time=1.0)
-        self.at(c[8] + 8.8)
+        self.at(self.ext("rowr"))
         self.play(FadeIn(rowr, shift=0.1 * DOWN), Indicate(rlab, color=VIOLET, scale_factor=1.4), run_time=1.0)
-        self.at(c[8] + 12.6)
+        self.at(self.ext("rowp"))
         self.play(FadeIn(rowp, shift=0.1 * DOWN), PTO.animate.set_value(1.0), run_time=1.0)
         self.at(c[9])
         self.play(RP.animate.set_value(0.15), run_time=0.8)
         self.play(RP.animate.set_value(0.72), run_time=2.2)                  # r': distância ao centro
         self.at(c[10])
-        note = left_at(hchain(eq(r"\vartheta", size=36), text("ângulo polar", 22, opacity=0.85), eq(r"\neq", size=32),
-                              eq(r"\theta", size=36, color=CYAN), text("ângulo do fluxo", 22, opacity=0.85)), 0.8, -0.75)
+        note = left_at(hchain(eq(r"\vartheta", size=36, color=ANG), text("ângulo polar", 22, opacity=0.85), eq(r"\neq", size=32),
+                              eq(r"\theta", size=36, color=ANG), text("ângulo do fluxo", 22, opacity=0.85)), 0.8, -0.75)
         self.play(THO.animate.set_value(1.0), FadeIn(note, shift=0.1 * DOWN), run_time=1.0)
         self.play(TT.animate.set_value(22.0), run_time=1.4)
         self.play(TT.animate.set_value(72.0), run_time=1.8)
@@ -1574,8 +1715,7 @@ class LeiGauss(Scene):
         self.play(TT.animate.set_value(50.0), run_time=1.8)
         self.play(HL["f"].animate.set_value(1.0), run_time=0.8)
         self.at(c[15])
-        dvp = eq("dV", "=", "dr'", r"\cdot", r"r'\,d\vartheta", r"\cdot", r"r'\sin\vartheta\,d\phi", size=40,
-                 colors={6: CYAN}).move_to(P(RX, 1.35))
+        dvp = eq("dV", "=", "dr'", r"\cdot", r"r'\,d\vartheta", r"\cdot", r"r'\sin\vartheta\,d\phi", size=40).move_to(P(RX, 1.35))
         brs = VGroup(*[Brace(dvp[i], DOWN, buff=0.08) for i in (2, 4, 6)])
         blab = VGroup(*[text(t, 20, opacity=0.85).next_to(b, DOWN, buff=0.06) for t, b in zip(("radial", "polar", "azimutal"), brs)])
         self.play(Write(dvp), run_time=1.4)
@@ -1588,7 +1728,8 @@ class LeiGauss(Scene):
         self.regroup(dv2)
         self.at(c[16])
         # só a carga dentro da gaussiana conta: r' varre de 0 até r, e o elemento fica dentro do volume envolvido
-        qi = eq(r"Q_{\mathrm{env}}=\rho", r"\int_0^r r'^2dr'", r"\int_0^\pi\sin\vartheta\,d\vartheta", r"\int_0^{2\pi}d\phi", size=38)
+        qi = eq(r"Q_{\mathrm{env}}(r)=", r"\int_0^r\rho(r')\,r'^2dr'", r"\int_0^\pi\sin\vartheta\,d\vartheta", r"\int_0^{2\pi}d\phi",
+                size=38)
         fit(qi, _R.width - 0.3).move_to(P(RX, 0.05))
         self.play(TransformMatchingTex(q1, qi), LBO.animate.set_value(0.0), AZO.animate.set_value(0.0),
                   PHO.animate.set_value(0.0), THO.animate.set_value(0.0), *[h.animate.set_value(0.0) for h in HL.values()],
@@ -1596,21 +1737,36 @@ class LeiGauss(Scene):
         self.play(RP.animate.set_value(0.1), run_time=0.8)
         self.play(RP.animate.set_value(X.get_value() - DR_ / 2 - 0.02), Indicate(qi[1], color=VIOLET), run_time=2.6, rate_func=linear)
         self.at(c[17])
-        vals = [eq(r"\frac{r^3}{3}", size=36), eq("2", size=36), eq(r"2\pi", size=36)]
+        # forma geral em simetria esférica: os ângulos dão 4π para qualquer ρ(r')
         bq = VGroup()
-        for i, v in zip((1, 2, 3), vals):
+        for i, v in zip((2, 3), (eq("2", size=36), eq(r"2\pi", size=36))):
             b = Brace(qi[i], DOWN, buff=0.08)
             v.next_to(b, DOWN, buff=0.08)
-            bq.add(b, v)
+            bq.add(VGroup(b, v))
             self.play(FadeIn(b), FadeIn(v, shift=0.1 * DOWN), run_time=0.7)
-        qr = eq(r"Q_{\mathrm{env}}", "=", r"\frac43\pi\rho r^3", size=44, colors={0: BLUE_L}).move_to(P(RX, -2.1))
-        self.play(TransformFromCopy(VGroup(*vals), qr[2]), FadeIn(qr[0:2]), run_time=1.3)
+        qg = eq(r"Q_{\mathrm{env}}(r)", "=", r"4\pi", r"\int_0^r\rho(r')\,r'^2dr'", size=40, colors={0: BLUE_L}).move_to(P(RX, -1.55))
+        self.play(TransformFromCopy(VGroup(bq[0][1], bq[1][1]), qg[2]), TransformFromCopy(qi[1], qg[3]), FadeIn(qg[0:2]),
+                  run_time=1.3)
         self.at(c[18])
+        eg = eq("E(r)", "=", r"\frac{Q_{\mathrm{env}}(r)}{4\pi\varepsilon_0 r^2}", size=42, colors={0: CYAN}).move_to(P(RX, 0.5))
+        lesson = VGroup(text("a simetria resolve a geometria", 22, opacity=0.9),
+                        hchain(eq(r"\rho(r)", size=30, color=BLUE_L), text("só determina quanta carga há dentro de", 22, opacity=0.9),
+                               eq("r", size=30, color=VIOLET), buff=0.12)).arrange(DOWN, buff=0.16)
+        fit(lesson, 6.7).move_to(P(RX, -0.85))
+        self.play(FadeOut(VGroup(q1, dv2, qi, bq)), qg.animate.move_to(P(RX, 1.95)), run_time=1.2)
+        self.play(Write(eg), run_time=1.2)
+        self.play(FadeIn(lesson, shift=0.1 * UP), run_time=1.0)
+        self.at(c[19])
+        # densidade constante: a única integral restante dá r³/3
+        const = hchain(eq(r"\rho", size=30, color=BLUE_L), text("constante", 20, opacity=0.85), buff=0.12).move_to(P(RX, -1.2))
+        qr = eq(r"Q_{\mathrm{env}}", "=", r"\frac43\pi\rho r^3", size=44, colors={0: BLUE_L}).move_to(P(RX, -2.1))
+        self.play(FadeOut(lesson), FadeIn(const), run_time=0.7)
+        self.play(TransformFromCopy(VGroup(qg[2], qg[3]), qr[2]), FadeIn(qr[0:2]), run_time=1.3)
 
-        # Gauss interior: uma operação por passo
+        # Gauss interior: uma operação por passo (a troca de tela e a lei entram ainda na frase anterior, que tem folga)
         for m in (crd, elem, clabs):
             m.clear_updaters()
-        self.play(FadeOut(VGroup(crd, elem, clabs, dv2, qi, bq)), qr.animate.scale(0.8).move_to(P(RX, 2.25)),
+        self.play(FadeOut(VGroup(crd, elem, clabs, qg, eg, const)), qr.animate.scale(0.8).move_to(P(RX, 2.25)),
                   S.animate.set_value(2.0), X.animate.set_value(0.55), AO.animate.set_value(1.0), PO.animate.set_value(1.0),
                   FadeIn(rho), FadeIn(rr), run_time=1.3)
         Y = 0.9
@@ -1623,16 +1779,17 @@ class LeiGauss(Scene):
         h3 = eq("E(r)", "=", r"\frac{1}{3\varepsilon_0}", r"\,\rho", r"\,r", size=46, colors={0: CYAN, 4: VIOLET}).move_to(P(RX, Y))
         h4 = eq("E(r)", "=", r"\frac{\rho r}{3\varepsilon_0}", size=52, colors={0: CYAN}).move_to(P(RX, Y))
         self.play(FadeIn(h0, shift=0.1 * UP), run_time=0.9)
-        self.play(TransformMatchingTex(h0, h1), Indicate(qr, color=WHITE), run_time=1.3)       # substituir Q_env
+        self.at(c[20])
+        self.play(TransformMatchingTex(h0, h1), Indicate(qr, color=WHITE), run_time=1.1)       # substituir Q_env
         st = VGroup(strike(h1[1], WHITE), strike(h1[5], WHITE))
-        self.play(Create(st), run_time=0.8)                                                    # cancelar 4π
-        self.play(FadeOut(st), h1[1].animate.set_opacity(0), h1[5].animate.set_opacity(0), run_time=0.6)   # some no lugar
+        self.play(Create(st), run_time=0.7)                                                    # cancelar 4π
+        self.play(FadeOut(st), h1[1].animate.set_opacity(0), h1[5].animate.set_opacity(0), run_time=0.5)   # some no lugar
         self.remove(h1)
         rest = [h1[i] for i in (0, 2, 3, 4, 6, 7)]
         self.add(*rest)
         self.play(*[ReplacementTransform(a, b) for a, b in zip(rest, h2)], run_time=1.0)
         self.regroup(h2)
-        self.at(c[19])
+        self.at(c[21])
         note = eq(r"\frac{r^3}{r^2}=r", size=38, color=VIOLET).move_to(P(RX, -0.35))
         self.play(FadeIn(note, shift=0.1 * DOWN), Indicate(h2[1], color=VIOLET), Indicate(h2[5], color=VIOLET), run_time=1.2)
         # r³/r² → r: r² sai do lado esquerdo e o r³ vira r (os demais símbolos mantêm a identidade)
@@ -1644,16 +1801,16 @@ class LeiGauss(Scene):
         self.regroup(h3)
         self.play(TransformMatchingTex(h3, h4), FadeOut(note), run_time=1.0)
         b4 = box(h4)
-        tag_in = domain_tag("interior", "(r<R)").next_to(b4, DOWN, buff=0.18)
+        tag_in = domain_tag("interior", "(r<R)").next_to(b4, DOWN, buff=0.3)
         self.play(Create(b4), FadeIn(tag_in, shift=0.1 * UP), run_time=0.8)
-        self.at(c[20])
+        self.at(c[22])
         self.play(X.animate.set_value(0.9), run_time=2.2, rate_func=linear)                  # cresce linearmente
         self.play(X.animate.set_value(0.3), run_time=1.6, rate_func=linear)
         self.play(Indicate(tag_in, color=WHITE, scale_factor=1.15), run_time=1.0)
-        self.at(c[21])
+        self.at(c[23])
         e0 = eq("E(0)=0", size=36).move_to(P(RX, -1.4))
         self.play(X.animate.set_value(0.0), FadeIn(e0), run_time=1.4)
-        self.at(c[22])
+        self.at(c[24])
 
         # exterior: o interior fica identificado e atenuado; Q_env congela em Q
         res_in = VGroup(h4, b4, tag_in)
@@ -1669,35 +1826,36 @@ class LeiGauss(Scene):
                              .set_stroke(width=0).set_fill(BLUE_L, 0.85 * QM.get_value())
                              .next_to(P(RX - 1.95, 0.75), RIGHT, buff=0))
         qcap = Line(P(RX - 1.95 + 3.6, 0.55), P(RX - 1.95 + 3.6, 0.95)).set_stroke(WHITE, 2, 0.5)
-        qin = eq(r"Q_{\mathrm{env}}=\frac43\pi\rho r^3", size=34).move_to(P(RX, 0.05))
-        qout = eq(r"Q_{\mathrm{env}}=Q=\frac43\pi\rho R^3", size=34).move_to(P(RX, 0.05))
-        qin.add_updater(lambda m: m.set_opacity(QM.get_value() * (1.0 if X.get_value() < 1 else 0.0)))
-        qout.add_updater(lambda m: m.set_opacity(QM.get_value() * (1.0 if X.get_value() >= 1 else 0.0)))
+        qin = eq(r"Q_{\mathrm{env}}=\frac43\pi\rho r^3", size=30).move_to(P(RX, 0.15))
+        qout = eq(r"Q_{\mathrm{env}}=Q=\frac43\pi\rho R^3", size=30).move_to(P(RX, 0.15))
+        qin.add_updater(lambda m: m.set_opacity(0.8 * QM.get_value() * (1.0 if X.get_value() < 1 else 0.0)))
+        qout.add_updater(lambda m: m.set_opacity(0.8 * QM.get_value() * (1.0 if X.get_value() >= 1 else 0.0)))
         self.add(qbar, qin, qout)
         self.play(QM.animate.set_value(1.0), FadeIn(qlab), FadeIn(qcap), run_time=0.8)
         self.play(X.animate.set_value(1.0), run_time=2.2, rate_func=linear)
         r_eq_R = eq("r=R", size=36).move_to(cc + P(0, -1.25 - 0.5))
         self.play(FadeIn(r_eq_R, shift=0.1 * DOWN), Flash(cc + 1.25 * U(A_P), color=WHITE, flash_radius=0.3), run_time=1.0)
-        self.at(c[23])
-        self.play(FadeOut(r_eq_R), X.animate.set_value(1.6), run_time=3.2, rate_func=linear)
-        self.at(c[24])
-        self.play(Indicate(VGroup(qbar, qcap), color=BLUE_L, scale_factor=1.05), run_time=1.2)
         self.at(c[25])
-        x0 = eq("E(r)", r"\,4\pi r^2", "=", r"\frac{Q}{\varepsilon_0}", size=44, colors={0: CYAN}).move_to(P(RX, -1.0))
-        self.play(Write(x0), run_time=1.3)
+        self.play(FadeOut(r_eq_R), X.animate.set_value(1.6), run_time=3.2, rate_func=linear)
         self.at(c[26])
-        x1 = eq("E(r)", "=", r"\frac{Q}{4\pi\varepsilon_0 r^2}", size=44, colors={0: CYAN}).move_to(P(RX, -1.0))
-        x2 = eq("E(r)", "=", r"\frac{\rho R^3}{3\varepsilon_0 r^2}", size=48, colors={0: CYAN}).move_to(P(RX, -1.0))
+        self.play(Indicate(VGroup(qbar, qcap), color=BLUE_L, scale_factor=1.05), run_time=1.2)
+        self.at(c[27])
+        YX = -1.3
+        x0 = eq("E(r)", r"\,4\pi r^2", "=", r"\frac{Q}{\varepsilon_0}", size=44, colors={0: CYAN}).move_to(P(RX, YX))
+        self.play(Write(x0), run_time=1.3)
+        self.at(c[28])
+        x1 = eq("E(r)", "=", r"\frac{Q}{4\pi\varepsilon_0 r^2}", size=44, colors={0: CYAN}).move_to(P(RX, YX))
+        x2 = eq("E(r)", "=", r"\frac{\rho R^3}{3\varepsilon_0 r^2}", size=48, colors={0: CYAN}).move_to(P(RX, YX))
         self.play(TransformMatchingTex(x0, x1), X.animate.set_value(2.1), run_time=1.6)        # dividir por 4πr²
         self.play(TransformMatchingTex(x1, x2), Indicate(qout, color=WHITE), run_time=1.3)     # substituir Q
         b2 = box(x2)
-        tag_out = domain_tag("exterior", "(r>R)").next_to(b2, DOWN, buff=0.18)
+        tag_out = domain_tag("exterior", "(r>R)").next_to(b2, DOWN, buff=0.3)
         self.play(Create(b2), FadeIn(tag_out, shift=0.1 * UP), run_time=0.8)
-        self.at(c[27])
+        self.at(c[29])
         rgt = eq("r>R", size=36).move_to(cc + 2.1 * 1.25 * U(A_P) + P(0.45, -0.5))
         pq = charge(cc, label="Q")
         self.play(SFO.animate.set_value(0.15), FadeIn(pq, scale=0.5), FadeIn(rgt), run_time=1.6)
-        self.wait(5.0)
+        self.wait(2.2)
         self.play(Indicate(fld, color=CYAN, scale_factor=1.08), run_time=1.4)
         self.at(c[-1] - 2.0)
         self.play(SFO.animate.set_value(1.0), FadeOut(pq), run_time=1.4)
@@ -1708,16 +1866,7 @@ class LeiGauss(Scene):
     # ── 09 · Gráfico sincronizado (SPLIT): o mesmo X controla esfera e gráfico ──
     def b09_grafico(self):
         self.begin(9, "grafico")
-        c = cues("Agora podemos enxergar todo o comportamento no gráfico.",
-                 "No centro, o campo começa em zero.",
-                 "Dentro da esfera, cresce em linha reta.",
-                 "Atinge seu maior valor na superfície.",
-                 "E, do lado de fora, passa a cair como um sobre o raio ao quadrado.",
-                 "As duas expressões fornecem exatamente o mesmo valor na superfície.",
-                 "O campo é contínuo ali, embora a inclinação do gráfico mude.",
-                 "E repare no que realmente tornou toda essa conta simples.",
-                 "Não foi a existência de uma integral.",
-                 "Foi sabermos, antes de integrar, como o campo precisava se comportar por causa da simetria.")
+        c = self.marcos(9)
         k = self.k8
         X, cc = k.X, k.c
         for m in k.junk:
@@ -1775,7 +1924,7 @@ class LeiGauss(Scene):
         q_const = eq(r"Q_{\mathrm{env}}=Q", size=32, color=BLUE_L).move_to(P(-6.0, 2.4))
         q_const.add_updater(lambda m: m.set_opacity(1.0 if X.get_value() > 1.0 else 0.0))
         self.add(q_const)
-        self.play(X.animate.set_value(2.1), run_time=4.4, rate_func=linear)
+        self.play(X.animate.set_value(2.1), run_time=3.4, rate_func=linear)
         self.play(FadeIn(f_out), Create(lead_out), run_time=0.8)
         self.at(c[5])
         cont = eq(r"E(R^-)=E(R^+)", size=32).move_to(peak + P(1.25, 0.5))
@@ -1784,28 +1933,28 @@ class LeiGauss(Scene):
         # campo contínuo, inclinações diferentes de cada lado (sem esconder o bico)
         tl = DashedLine(ax.c2p(0.72, 0.72), ax.c2p(1.15, 1.15), dash_length=0.06).set_stroke(WHITE, 2.5, 0.9)
         tr = DashedLine(ax.c2p(0.9, 1.2), ax.c2p(1.2, 0.6), dash_length=0.06).set_stroke(WHITE, 2.5, 0.9)
-        slopes = text("inclinações diferentes", 20, opacity=0.85).move_to(peak + P(1.45, 0.02))
+        # comentário auxiliar, fora do vértice e das tangentes: à direita, abaixo da igualdade E(R⁻) = E(R⁺)
+        slopes = text("inclinações diferentes", 18, opacity=AUX_OP).move_to(peak + P(1.75, 0.0))
         self.play(Create(tl), Create(tr), FadeIn(slopes), run_time=1.4)
         self.at(c[7])
+        # continuidade em R: não há camada superficial singular de carga ali
+        no_sigma = text("sem camada superficial de carga em R", 18, opacity=AUX_OP).move_to(P(peak[0] + 0.85, 1.5))
+        self.play(FadeIn(no_sigma, shift=0.1 * DOWN), Flash(peak, color=WHITE, flash_radius=0.3), run_time=1.2)
+        self.at(c[8])
         st["on"] = False
         q_const.clear_updaters()
         form = eq(r"\vec E(\vec r)=E(r)\hat r", size=38, color=CYAN).move_to(P(LX, 2.35))
-        self.play(FadeOut(VGroup(tl, tr, slopes, q_const)), X.animate.set_value(1.5), run_time=1.4)
-        self.at(c[8])
-        self.play(FadeIn(form, shift=0.1 * DOWN), run_time=1.0)
+        self.play(FadeOut(VGroup(tl, tr, slopes, q_const, no_sigma)), X.animate.set_value(1.5), run_time=1.4)
         self.at(c[9])
+        self.play(FadeIn(form, shift=0.1 * DOWN), run_time=1.0)
+        self.at(c[10])
         self.play(Circumscribe(form, color=WHITE, stroke_width=2), Indicate(k.fld, color=CYAN, scale_factor=1.06), run_time=1.8)
         self.at(c[-1] + 1.0)
 
     # ── 10 · Três simetrias clássicas: regiões que contribuem e de fluxo nulo ──
     def b10_tres_simetrias(self):
         self.begin(10, "tres_simetrias")
-        c = cues("É daí que surgem as três superfícies gaussianas famosas. Cada uma pressupõe uma fonte idealizada.",
-                 "Se a fonte possui simetria esférica, uma esfera concêntrica acompanha essa simetria. Ali, toda a superfície contribui para o fluxo.",
-                 "Se temos uma linha infinita e uniforme, o campo depende apenas da distância ao eixo. Um cilindro coaxial aproveita isso: na lateral, o campo é paralelo ao vetor área e contribui; nas tampas, ele é tangente, e o fluxo é zero.",
-                 "Para um plano infinito uniformemente carregado, a simetria obriga o campo a ser perpendicular ao plano. Um cilindro gaussiano curto atravessando o plano inverte os papéis: as duas tampas contribuem, e a lateral tem fluxo zero.",
-                 "Essas formas não são receitas arbitrárias.",
-                 "Elas são consequências da simetria das fontes.")
+        c = self.marcos(10)
         self.clear(run_time=0.9)
         BIG_C, BIG_K, SMALL_K = P(-2.9, -0.25), 1.3, 0.85
         slots = (P(-4.75, -0.25), P(0.0, -0.25), P(4.75, -0.25))
@@ -1817,6 +1966,7 @@ class LeiGauss(Scene):
         notes = ("toda a superfície contribui", "lateral contribui · tampas: fluxo nulo", "tampas contribuem · lateral: fluxo nulo")
         hyps = ("distribuição esfericamente simétrica", "linha infinita, uniformemente carregada",
                 "plano infinito, uniformemente carregado")
+        tags = (None, "translação + rotação + reflexão", "translação + rotação no plano + reflexão")
         rules = ((("toda a superfície:", r"\vec E\parallel d\vec A", "contribui"),),
                  (("lateral:", r"\vec E\parallel d\vec A", "contribui"), ("tampas:", r"\vec E\perp d\vec A", "fluxo nulo")),
                  (("tampas:", r"\vec E\parallel d\vec A", "contribuem"), ("lateral:", r"\vec E\perp d\vec A", "fluxo nulo")))
@@ -1830,6 +1980,8 @@ class LeiGauss(Scene):
             grp = VGroup(*parts).scale(BIG_K).move_to(BIG_C)
             hyp = text(hyps[i], 26, opacity=0.9)
             left_at(hyp, 0.6, 1.9)
+            if tags[i]:
+                hyp = VGroup(hyp, left_at(text(tags[i], 20, opacity=0.7), 0.6, 1.42))
             rws = VGroup(*[left_at(rule(*r), 0.6, 0.8 - 1.0 * j) for j, r in enumerate(rules[i])])
             self.at(starts[i] if i else c[0] + 1.5)
             # os painéis já reduzidos saem de cena durante a construção grande e voltam juntos no quadro comparativo
@@ -1840,10 +1992,10 @@ class LeiGauss(Scene):
             self.play(FadeIn(pn.el_c), FadeIn(rws[0], shift=0.1 * DOWN), Indicate(pn.contrib, color=VIOLET, scale_factor=1.04),
                       run_time=1.3)
             if len(rws) > 1:
-                self.wait(1.6)
+                self.wait(1.0)
                 self.play(FadeIn(pn.el_z), FadeIn(rws[1], shift=0.1 * DOWN), Indicate(pn.zero, color=WHITE, scale_factor=1.04),
                           run_time=1.3)
-            self.wait(1.2)
+            self.wait(0.8)
             name = text(names[i], 24, opacity=0.9).move_to(slots[i] + P(0, -2.25))
             note = text(notes[i], 18, opacity=0.8).move_to(slots[i] + P(0, -2.62))
             fit(note, 4.5)
@@ -1852,36 +2004,24 @@ class LeiGauss(Scene):
                       FadeIn(name), FadeIn(note), run_time=1.3)
             small.append(SimpleNamespace(grp=grp, contrib=pn.contrib, name=name, note=note))
         self.at(c[4])
+        # as simetrias clássicas são exatas só nas idealizações infinitas
+        ideal = VGroup(text("simetrias exatas só nas idealizações infinitas", 26, opacity=0.9),
+                       text("objetos finitos: só aproximam longe das bordas", 20, opacity=0.75)).arrange(DOWN, buff=0.14)
+        ideal.move_to(P(0, 2.4))
+        self.play(FadeIn(ideal, shift=0.1 * DOWN), *[FadeIn(VGroup(s.grp, s.name, s.note)) for s in small[:-1]], run_time=1.4)
+        self.at(c[5])
         flow = hchain(text("fonte", 26), eq(r"\rightarrow", size=34), text("simetria", 26), eq(r"\rightarrow", size=34),
                       text("forma do campo", 26), eq(r"\rightarrow", size=34), text("superfície útil", 26))
         fit(flow, 13.6).move_to(P(0, 2.4))
-        self.play(FadeIn(flow, shift=0.1 * DOWN), *[FadeIn(VGroup(s.grp, s.name, s.note)) for s in small[:-1]], run_time=1.4)
-        self.at(c[5])
+        self.play(FadeOut(ideal, shift=0.1 * UP), FadeIn(flow, shift=0.1 * DOWN), run_time=1.2)
+        self.at(c[6])
         self.play(LaggedStart(*[Indicate(s.contrib, color=VIOLET, scale_factor=1.06) for s in small], lag_ratio=0.35), run_time=2.4)
         self.at(c[-1] + 1.0)
 
     # ── 11 · Quando Gauss não simplifica: casos, caminhos adequados e método ──
     def b11_casos_e_metodo(self):
         self.begin(11, "casos_caminhos_metodo")
-        c = cues("E isso também explica quando Gauss não é o método mais prático.",
-                 "A carga deslocada do começo, uma barra finita, um disco observado fora do eixo ou uma distribuição irregular continuam obedecendo perfeitamente à Lei de Gauss.",
-                 "Mas normalmente não existe uma superfície fechada na qual a simetria nos permita substituir toda aquela informação local do campo por um único E.",
-                 "Gauss ainda fornece o fluxo total.",
-                 "O que ela não fornece sozinha é a distribuição ponto a ponto do campo.",
-                 "Nesses casos, outro caminho funciona melhor.",                                                         # 5
-                 "Para a carga deslocada, basta Coulomb, ou uma esfera centrada nela.",
-                 "Para a barra, somamos as contribuições de Coulomb ao longo do comprimento.",
-                 "Para o disco, no eixo, somamos anéis.",
-                 "Para uma distribuição irregular, integramos, de forma analítica ou numérica.",
-                 "E, em problemas com condutores, costuma ser melhor resolver o potencial, com as condições de contorno.",  # 10
-                 "Então, diante de um problema novo, não pergunte primeiro qual superfície gaussiana você decorou.",
-                 "Pergunte qual é a simetria da distribuição de carga.",
-                 "Essa simetria determina a direção possível do campo?",
-                 "Ela diz de quais coordenadas o módulo pode depender?",
-                 "Existe uma superfície fechada em que o campo tenha módulo constante nas regiões que contribuem, ou fique tangente nas regiões que não devem contribuir?",  # 15
-                 "E você consegue calcular a carga envolvida?",
-                 "Se essas peças se encaixam, a Lei de Gauss provavelmente transforma um problema difícil em poucas linhas.",
-                 "Se não se encaixam, a lei continua verdadeira. Ela simplesmente pode não ser suficiente para determinar o campo local.")
+        c = self.marcos(11)
         self.at(c[0] + 2.5)
         self.clear(run_time=0.9)
         xs, cy, RC = (-5.4, -1.8, 1.8, 5.4), 0.15, 1.0
@@ -1970,11 +2110,6 @@ class LeiGauss(Scene):
                          for i in (-1, 0, 1) for j in (-1, 0, 1)])
         self.play(LaggedStart(*[Create(r_) for r_ in cells], lag_ratio=0.08),
                   FadeIn(alt_label("integração", "analítica ou numérica", xs[3])), run_time=1.6)
-        self.at(c[10])
-        pot = hchain(text("com condutores: potencial", 22, opacity=0.9), eq(r"\nabla^2V=-\rho/\varepsilon_0", size=32),
-                     text("e condições de contorno", 22, opacity=0.9))
-        fit(pot, 13.6).move_to(P(0, -2.55))
-        self.play(FadeOut(law, shift=0.1 * DOWN), FadeIn(pot, shift=0.1 * DOWN), run_time=1.2)
         self.at(c[11])
 
         # método de decisão aplicado a dois exemplos
@@ -2009,32 +2144,44 @@ class LeiGauss(Scene):
         for m, y in zip(ansB, ys):
             m.move_to(P(XB, y)).set_opacity(0.9)
         marks = (c[12], c[13], c[14], c[15], c[16], c[17])
+        # faixa da linha ativa: cada pergunta é aplicada aos dois exemplos no momento em que aparece
+        band = Rectangle(width=13.3, height=0.6).set_stroke(width=0).set_fill(WHITE, 0.07).move_to(P(0.3, ys[0]))
+
+        def fill_row(i):
+            """Pergunta i e as respostas dos dois exemplos, em sequência; as linhas anteriores recuam um pouco."""
+            back = [m.animate.set_opacity(0.55) for m in (items[i - 1], ansA[i - 1], ansB[i - 1])] if i else []
+            self.play(FadeIn(items[i], shift=0.12 * DOWN), band.animate.move_to(P(0.3, ys[i])), *back, run_time=0.7)
+            self.play(FadeIn(ansA[i], shift=0.15 * RIGHT), run_time=0.5)
+            self.play(FadeIn(ansB[i], shift=0.15 * RIGHT), run_time=0.5)
         self.at(marks[0])
-        self.play(FadeIn(hA), FadeIn(hB), FadeIn(items[0], shift=0.12 * DOWN), run_time=0.9)
-        self.play(FadeIn(ansA[0]), FadeIn(ansB[0]), run_time=0.7)
+        self.play(FadeIn(hA), FadeIn(hB), FadeIn(band), run_time=0.7)
+        fill_row(0)
         for i in range(1, 6):
             self.at(marks[i])
             arr = Arrow(items[i - 1].get_bottom() + 0.04 * DOWN, items[i].get_top() + 0.04 * UP, buff=0.03, stroke_width=4,
                         max_tip_length_to_length_ratio=0.35, color=WHITE).set_opacity(0.8)
             self.play(GrowArrow(arr), run_time=0.4)
-            self.play(FadeIn(items[i], shift=0.12 * DOWN), run_time=0.7)
-            self.play(FadeIn(ansA[i]), FadeIn(ansB[i]), run_time=0.7)
+            fill_row(i)
         self.play(Create(box(items[5])), run_time=0.6)
+        # veredito por coluna: onde as peças se encaixam (esfera) e onde não (barra)
+        colA = SurroundingRectangle(VGroup(hA, *ansA), color=WHITE, buff=0.18, corner_radius=0.1, stroke_width=2.5)
+        colB = SurroundingRectangle(VGroup(hB, *ansB), color=WHITE, buff=0.18, corner_radius=0.1, stroke_width=2.5)
+        self.at(c[17] + 3.2)
+        self.play(FadeOut(band), *[m.animate.set_opacity(0.9) for m in ansA], Create(colA), run_time=0.9)
+        self.play(Indicate(ansA[5], color=WHITE, scale_factor=1.15), run_time=1.0)
         self.at(c[18])
-        self.play(Indicate(ansB[5], color=WHITE, scale_factor=1.1), run_time=1.2)
+        self.play(ReplacementTransform(colA, colB), *[m.animate.set_opacity(0.55) for m in ansA],
+                  *[m.animate.set_opacity(0.9) for m in ansB], run_time=1.0)
+        self.play(Indicate(ansB[5], color=WHITE, scale_factor=1.15), run_time=1.0)
+        self.at(c[18] + 5.0)
+        self.play(*[m.animate.set_opacity(0.9) for m in (*items, *ansA, *ansB)], colB.animate.set_stroke(opacity=0.35),
+                  run_time=1.0)
         self.at(c[-1] + 0.8)
 
     # ── 12 · Retorno (COMPARE) · payoff (FOCUS) · pausa · outro (END SCREEN) ──
     def b12_retorno_payoff_outro(self):
         self.begin(12, "retorno_payoff_outro")
-        c = cues("Voltando aos dois casos do começo, agora a diferença fica clara.",
-                 "Nos dois, a Lei de Gauss era igualmente válida.",
-                 "Mas apenas em um deles a simetria permitia transformar a integral de fluxo numa equação simples para o campo.",
-                 "A Lei de Gauss fala sobre fluxo.",
-                 "É a simetria da fonte que transforma fluxo em campo.",
-                 "Se esse vídeo te ajudou a enxergar a Lei de Gauss de outro jeito, se inscreve no Parallax Lab, porque vem mais Física e Matemática por aqui.",
-                 "E se você conhece alguém sofrendo com Física 3, compartilha esse vídeo com essa pessoa.",
-                 "Deixa o like se curtiu, e a gente se vê no próximo.")
+        c = self.marcos(12)
         self.clear(run_time=0.9)
         off, aro = ValueTracker(1.0), ValueTracker(1.0)
         g = self.problems(off, aro)
@@ -2059,15 +2206,26 @@ class LeiGauss(Scene):
         self.play(FadeIn(p1, shift=0.12 * UP), run_time=1.2)
         self.at(c[4])
         self.play(FadeIn(p2, shift=0.12 * UP), run_time=1.4)
-        self.at(c[5] + 1.8)                                                   # frase + pausa curta (~2 s)
+        self.respiro(c[5], 0.8)                                              # pausa entre payoff e CTA
+        self.at(c[5] - 0.5)
         # outro: sem destinos definidos → marca centralizada e mensagem curta; anéis com movimento discreto
         oc = P(0, 0.2)
         rings = VGroup(*[gauss_circle(oc, r, op=0.16, n=int(14 * r)) for r in (2.0, 3.0, 4.0)])
         for i, r_ in enumerate(rings):
             r_.add_updater(lambda m, dt, s=(1 if i % 2 == 0 else -1) * (0.06 - 0.01 * i): m.rotate(s * dt, about_point=oc))
-        logo = ImageMobject(str(LOGO_PATH)).set_width(5.2).move_to(oc + P(0, 0.35))
-        msg = text("Inscreva-se para acompanhar os próximos vídeos", 26, opacity=0.85).move_to(oc + P(0, -1.15))
+        logo = ImageMobject(str(LOGO_PATH)).set_width(6.0).move_to(oc + P(0, 0.4))
+        msg = text("Inscreva-se para acompanhar os próximos vídeos", 28, opacity=0.9).move_to(oc + P(0, -1.2))
+
+        def ripple():
+            """Onda discreta saindo da marca (sem conteúdo novo): um anel tracejado que cresce e some."""
+            w = gauss_circle(oc, 1.6, op=0.35, n=24)
+            self.play(w.animate.scale(2.6, about_point=oc).set_stroke(opacity=0.0), run_time=2.6)
+            self.remove(w)
         self.play(FadeOut(VGroup(p1, p2)), FadeOut(self.wm), run_time=1.0)
-        self.play(FadeIn(rings), FadeIn(logo), run_time=1.6)
+        self.play(LaggedStart(*[FadeIn(r_, scale=0.85) for r_ in rings], lag_ratio=0.3), FadeIn(logo, scale=0.92), run_time=1.8)
         self.play(FadeIn(msg, shift=0.1 * UP), run_time=1.0)
+        self.at(c[6])
+        ripple()
+        self.at(c[7])
+        ripple()
         self.at(c[-1] + 1.2 + 1.8)

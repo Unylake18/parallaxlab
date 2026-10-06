@@ -4,7 +4,18 @@
 
 ## STATUS
 
-`REVISÃO 2 — SEGUNDO PREVIEW HORIZONTAL`
+`VOZ, SINCRONIA E FINAL 1080p`
+
+Etapa final (2026-10-05): voz ElevenLabs (3 partes), sincronia por âncoras, legenda SRT com grafia normal, render 1920×1080/30. Antes:
+
+`REVISÃO 2.1 — POLIMENTO DO SEGUNDO PREVIEW HORIZONTAL`
+
+V2.1 (2026-10-05, handoff da Produção + adendo de rigor): sem redesenho, mesma ordem de blocos. Header
+persistente `ELETROMAGNETISMO · LEI DE GAUSS`; watermark ~20% maior; ângulo sólido com nome e símbolo
+juntos, ponte $d\theta=ds/r$ (2π rad) → $d\Omega=dA_\perp/r^2$ (4π sr), distinção $d\Omega$ (tamanho
+angular) × $d\Omega_{\rm or}$ (com sinal); forma geral $Q_{\mathrm{env}}(r)$ em simetria esférica; frase da
+continuidade em $r=R$; frase das idealizações infinitas; $\hat n$ azul elétrico e $d\vec A$ violeta;
+checklist final progressivo; outro levemente polido.
 
 A Produção aprovou o conteúdo em 2026-10-03 (preview 1). Em 2026-10-04, a análise crítica do preview 1
 autorizou uma revisão localizada: construção da normal e do vetor área, retomada das coordenadas
@@ -99,8 +110,12 @@ $$d\Phi_E=\vec E\cdot d\vec A=E\,dA\cos\theta.$$
 Campo de carga pontual:
 $$\vec E=\frac{q}{4\pi\varepsilon_0r^2}\hat r.$$
 
-Ângulo sólido orientado:
-$$d\Omega_{\rm or}=\frac{\cos\theta\,dA}{r^2}.$$
+Ângulo plano e ângulo sólido (tamanho angular, $\ge0$; $dA_\perp=dA\,|\cos\theta|$ é o tamanho da área projetada):
+$$d\theta=\frac{ds}{r}\ \ (\text{volta: }2\pi\ \mathrm{rad}),\qquad
+d\Omega=\frac{dA_\perp}{r^2}=\frac{dA\,|\cos\theta|}{r^2}\ \ (\text{todas as direções: }4\pi\ \mathrm{sr}).$$
+
+Ângulo sólido orientado (o módulo some e o sinal vem de $\hat r\cdot\hat n$; para $q>0$: $+$ onde o campo sai, $-$ onde entra):
+$$d\Omega_{\rm or}=\frac{\hat r\cdot\hat n}{r^2}\,dA=\frac{\cos\theta\,dA}{r^2}=\pm\,d\Omega.$$
 
 Lei de Gauss ($Q_{\mathrm{env}}$ = carga envolvida: soma algébrica das cargas no interior da superfície):
 $$\boxed{\oint_S\vec E\cdot d\vec A=\frac{Q_{\mathrm{env}}}{\varepsilon_0}}.$$
@@ -110,6 +125,9 @@ $$\vec E(\vec r)=E(r)\hat r.$$
 
 Elemento de volume esférico ($\vartheta$ = ângulo polar, distinto do $\theta$ do fluxo):
 $$dV=dr'\cdot r'\,d\vartheta\cdot r'\sin\vartheta\,d\phi=r'^2\sin\vartheta\,dr'\,d\vartheta\,d\phi.$$
+
+Forma geral em simetria esférica (densidade $\rho(r')$ qualquer):
+$$E(r)=\frac{Q_{\mathrm{env}}(r)}{4\pi\varepsilon_0r^2},\qquad Q_{\mathrm{env}}(r)=4\pi\int_0^r\rho(r')\,r'^2dr'.$$
 
 Esfera uniforme, carga envolvida:
 $$Q_{\mathrm{env}}(r)=\frac43\pi\rho r^3,\qquad r<R.$$
@@ -195,7 +213,7 @@ Interpretação obrigatória: o campo diminui como $1/r^2$, enquanto a área cre
 
 $$d\Phi_E=\frac{q}{4\pi\varepsilon_0r^2}(\hat r\cdot\hat n)\,dA=\frac{q}{4\pi\varepsilon_0}\frac{\cos\theta\,dA}{r^2}.$$
 
-$dA\cos\theta$ é a área projetada perpendicularmente à direção radial. Definir:
+$dA\,|\cos\theta|$ é o tamanho da área projetada perpendicularmente à direção radial ($d\Omega=dA\,|\cos\theta|/r^2\ge0$). Com sinal:
 
 $$d\Omega_{\rm or}=\frac{\cos\theta\,dA}{r^2},\qquad d\Phi_E=\frac{q}{4\pi\varepsilon_0}\,d\Omega_{\rm or}.$$
 
@@ -274,147 +292,175 @@ simplificação desejada para o campo.
 
 ## 12. NARRAÇÃO FINAL
 
+Versão gravada (2026-10-05): narração Master aprovada pela Produção, gravada no ElevenLabs em 3 partes (`audio/partes/`). Grafia normal aqui e na legenda; o texto enviado ao TTS (`texto_narracao.txt`) usa só a grafia de fala "téta" e "Física três". A cena sincroniza pela voz (`sync.json`), não por esta seção.
+
 Olha esses dois problemas.
 
-Nos dois, eu consigo desenhar uma superfície fechada e escrever exatamente a mesma Lei de Gauss.
+Nos dois, dá pra desenhar uma superfície fechada e escrever exatamente a mesma Lei de Gauss.
 
-No primeiro, a distribuição de carga é perfeitamente simétrica. Em poucos passos, o campo elétrico aparece.
+No primeiro, a distribuição de carga é esfericamente simétrica, e em dois passos o campo aparece.
 
-No segundo, eu coloco uma carga fora do centro de uma esfera. A Lei de Gauss continua verdadeira. O fluxo continua perfeitamente determinado. E mesmo assim eu não consigo simplesmente descobrir o campo sobre a esfera.
+No segundo, eu só tiro a carga do centro da esfera.
 
-Então o que mudou?
+A lei continua verdadeira.
 
-Fala, pessoal. Bem-vindos ao Parallax Lab.
+O fluxo continua determinado.
 
-Hoje a gente vai entender por que a Lei de Gauss resolve alguns problemas quase instantaneamente e, em outros, parece não ajudar.
+E mesmo assim, eu não consigo tirar o campo daí.
 
-E a chave para entender isso é a simetria.
+Então, o que mudou?
 
-E é justamente essa diferença que faz muita gente aprender a usar esferas e cilindros gaussianos sem realmente entender por quê.
+Fala, pessoal!
 
-Antes de responder, precisamos entender o que a Lei de Gauss está medindo.
+Bem-vindos ao Parallax Lab.
 
-Pegue um pedacinho muito pequeno de uma superfície. Sua área é um número: d A.
+Hoje a gente vai entender por que a Lei de Gauss resolve alguns problemas quase de graça e, em outros, parece não ajudar.
 
-De tão pequeno, esse pedacinho praticamente coincide com um plano: o plano tangente naquele ponto.
+Spoiler: a chave é a simetria.
 
-A normal, n chapéu, é um vetor de comprimento um, perpendicular a esse plano.
+E a ordem importa: primeiro a fonte, depois o campo, e só então a superfície.
 
-Multiplicando a normal pela área, obtemos o vetor área. Ele aponta na direção da normal, e seu tamanho representa a área do pedacinho.
+Pular essa ordem é o que faz muita gente decorar esfera e cilindro sem entender por quê.
 
-Numa superfície fechada, cada ponto tem a sua própria normal. E, por convenção, escolhemos sempre a normal que aponta para fora.
+Antes de responder, a gente precisa entender o que a Lei de Gauss mede.
 
-Agora coloque esse elemento num campo elétrico.
+Pega um pedacinho bem pequeno de uma superfície.
 
-O ângulo que importa aqui não é o de noventa graus entre a normal e a superfície. É o ângulo teta entre o campo e a normal.
+A área dele é só um número: o elemento de área.
 
-Se o campo atravessa a superfície de frente, a contribuição para o fluxo é máxima.
+De tão pequeno, ele praticamente coincide com o plano tangente.
 
-Se inclinarmos o elemento, a normal e o vetor área inclinam junto com ele.
+Agora, a normal: a setinha azul, n chapéu.
 
-Se o campo passa tangente à superfície, não atravessa aquele elemento. A contribuição é zero.
+Perpendicular ao plano, comprimento um: só direção.
 
-E se o campo aponta para dentro de uma superfície fechada, enquanto a normal aponta para fora, a contribuição é negativa.
+Normal vezes área dá o vetor área, a seta violeta.
 
-É isso que o produto escalar está fazendo.
+Repara: quando o pedaço encolhe, ela encolhe junto; a normal não.
 
-A integral fechada apenas repete essa soma por toda a superfície.
+Numa superfície fechada, cada ponto tem a sua normal, e a convenção é sempre apontar para fora.
 
-Ela não está contando literalmente linhas de campo. As linhas são uma representação. O fluxo é essa soma matemática de quanto do campo atravessa cada elemento de área.
+Agora coloca esse pedaço num campo elétrico.
 
-Agora coloque uma carga pontual no centro de uma esfera.
+Repara que aparecem dois ângulos.
 
-Pela Lei de Coulomb, o campo aponta radialmente e seu módulo diminui com o quadrado da distância.
+O de noventa graus, entre a normal e o plano, não entra na conta.
 
-Na superfície da esfera, campo e vetor área apontam na mesma direção.
+O que importa é o teta, em amarelo: entre o campo e a normal.
 
-Além disso, todos os pontos estão à mesma distância da carga. Então o módulo do campo é igual em toda a esfera.
+De frente, o fluxo é máximo.
 
-Nesse caso, podemos tirar E da integral.
+Inclinando, ele diminui, e a normal e o vetor área giram junto.
 
-O fluxo vira o campo multiplicado pela área da esfera.
+Quando o campo passa tangente, raspando, o fluxo é zero.
 
-E aqui acontece algo importante.
+E se o campo entra numa superfície fechada, contra a normal, a contribuição fica negativa.
 
-Quando aumentamos o raio, o campo cai como um sobre o raio ao quadrado.
+É isso que o produto escalar faz.
 
-Mas a área da esfera cresce como o raio ao quadrado.
+E a integral fechada só repete essa soma pela superfície inteira.
+
+Dica: o fluxo não conta linhas de campo.
+
+As linhas são só um desenho; o fluxo é a soma de quanto campo atravessa cada pedacinho.
+
+Agora coloca uma carga pontual positiva no centro de uma esfera.
+
+Pela Lei de Coulomb, o campo aponta para fora e cai com o quadrado da distância.
+
+Na esfera, campo e vetor área ficam paralelos.
+
+E como todo ponto está à mesma distância da carga, o módulo do campo é o mesmo na superfície inteira.
+
+Então dá pra tirar o campo da integral, e o fluxo vira o campo vezes a área da esfera.
+
+Agora olha as barras quando o raio aumenta: o campo cai com um sobre o raio ao quadrado, mas a área cresce com o raio ao quadrado.
 
 Uma coisa compensa exatamente a outra.
 
-Por isso, não importa qual esfera centrada na carga escolhamos: o fluxo total é sempre q dividido por épsilon zero.
+Por isso, qualquer esfera centrada na carga dá o mesmo fluxo: a carga sobre épsilon zero.
 
-Isso já sugere que o fluxo está capturando alguma coisa mais profunda do que o valor local do campo.
+Ou seja, o fluxo mede algo mais profundo do que o campo num ponto.
 
-Mas a superfície precisa mesmo ser uma esfera?
+Mas e se a superfície não for uma esfera?
 
-Imagine agora um pequeno cone de direções partindo da carga.
+Imagina um cone bem estreito de direções saindo da carga.
 
-Esse cone intercepta um pedaço de uma superfície arbitrária.
+Ele corta um pedaço de uma superfície qualquer.
 
-Se o pedaço está inclinado, entra um fator de projeção. Se está mais distante, sua área precisa crescer proporcionalmente ao quadrado da distância para ocupar o mesmo tamanho angular visto pela carga.
+Aqui entra uma ideia nova: o ângulo sólido, o d ômega.
 
-A combinação entre área, inclinação e distância define um pequeno ângulo sólido.
+No plano, um ângulo pequeno é o arco dividido pelo raio, e a volta inteira vale dois pi radianos.
 
-E o fluxo produzido pela carga através daquele pedaço depende exatamente desse ângulo sólido orientado.
+No espaço, é a mesma ideia com uma dimensão a mais: a área projetada dividida pelo raio ao quadrado.
 
-Se a superfície fechada envolve a carga, todos esses pequenos ângulos sólidos completam quatro pi.
+Todas as direções juntas somam quatro pi esterradianos.
 
-Quatro pi é o ângulo sólido de todas as direções do espaço: a área de uma esfera de raio um, e não a volta de um círculo.
+Na prática, o d ômega mede o tamanho aparente do pedaço visto da carga: qual abertura angular ele ocupa no espaço.
 
-O resultado continua sendo q dividido por épsilon zero, independentemente da forma da superfície.
+Se o pedaço está inclinado, conta a área projetada de frente para a carga.
 
-Agora coloque a carga fora.
+E, mais longe, ele precisa ser maior para parecer do mesmo tamanho.
 
-O campo sobre a superfície não desaparece.
+Daí o raio ao quadrado.
 
-Pode até ser muito intenso em alguns lugares.
+Área, inclinação e distância: juntas, formam o d ômega.
 
-Mas cada feixe que entra numa região da superfície volta a sair por outra. Com a orientação correta, as contribuições se cancelam no fluxo líquido.
+O d ômega é só tamanho, sempre positivo.
 
-Por isso uma carga externa contribui zero para o fluxo total fechado.
+Já o d ômega orientado também leva em conta de que lado a superfície está sendo atravessada.
 
-E como campos elétricos obedecem ao princípio de superposição, podemos repetir o argumento para várias cargas.
+Para a carga positiva que estamos desenhando, ele fica positivo onde o campo sai e negativo onde entra.
 
-As cargas externas cancelam no fluxo líquido.
+E o fluxo pelo pedaço é a carga sobre quatro pi épsilon zero, vezes o d ômega orientado.
 
-As internas contribuem com suas cargas divididas por épsilon zero.
+A distância sumiu.
 
-Somadas, elas formam a carga envolvida: a soma algébrica das cargas que estão dentro da superfície.
+Com a carga dentro, a soma orientada sobre toda a superfície totaliza quatro pi.
 
-E chegamos à Lei de Gauss.
+Quatro pi esterradianos: a área da esfera unitária inteira, e não a volta de um círculo.
 
-O fluxo do campo elétrico por qualquer superfície fechada é igual à carga total envolvida dividida por épsilon zero.
+Os quatro pi se cancelam: a carga sobre épsilon zero, para qualquer formato.
+
+Agora coloca a carga do lado de fora.
+
+O campo na superfície não some; em alguns pontos, é até forte.
+
+Mas cada feixe que entra por um lado sai pelo outro: a contribuição orientada é negativa na entrada e positiva na saída.
+
+No total, o fluxo líquido é zero.
+
+Atenção: fluxo líquido zero não significa campo zero.
+
+Com várias cargas, a superposição resolve: as de fora dão zero, as de dentro dão a própria carga sobre épsilon zero.
+
+Somando, aparece a carga envolvida: a soma, com sinal, das cargas lá dentro.
+
+E chegamos à Lei de Gauss: o fluxo por qualquer superfície fechada é a carga envolvida sobre épsilon zero.
 
 Agora vem a parte mais importante do vídeo.
 
-Se essa lei vale para qualquer superfície fechada, por que não desenhar qualquer uma e calcular o campo?
+Se a lei vale para qualquer superfície, por que não desenhar qualquer uma e sair calculando o campo?
 
-Coloque uma carga pontual deslocada do centro desta esfera.
+Olha: eu desloco a carga, mas ela continua dentro.
 
-A carga continua dentro.
+O fluxo continua sendo a carga sobre épsilon zero, exatamente.
 
-Portanto o fluxo continua sendo q dividido por épsilon zero.
+Só que os pontos da esfera não estão mais à mesma distância da carga.
 
-Isso é exato.
+Então o módulo do campo muda de ponto para ponto.
 
-Mas olhe o campo sobre a superfície.
+E quase nunca aponta na direção da normal: o teta deixa de ser zero.
 
-Os pontos da esfera não estão todos à mesma distância da carga.
+Por isso esse passo, em magenta, é proibido.
 
-Então o módulo de E varia de ponto para ponto.
-
-E, na maior parte da esfera, o campo também não aponta na direção da normal.
-
-Portanto este passo é inválido.
-
-Eu não posso transformar a integral em E vezes a área da esfera.
+Não dá pra tirar o campo da integral.
 
 A Lei de Gauss me deu um número: o fluxo total.
 
-Mas o campo sobre a superfície é uma função que muda de ponto para ponto.
+Mas o campo na superfície é uma função que muda de ponto para ponto.
 
-Saber o fluxo total não significa conhecer o campo em cada ponto.
+Saber o fluxo não é saber o campo.
 
 É aqui que entra a simetria.
 
@@ -422,157 +468,173 @@ E a ordem do raciocínio importa.
 
 Você não começa escolhendo uma esfera porque quer que o problema fique esférico.
 
-Você começa olhando para a distribuição de carga.
+Você começa olhando para a carga.
 
-E forma esférica não basta. Uma bola com mais carga de um lado tem forma de esfera, mas, se eu girá-la, a fonte muda.
+Cuidado: formato de esfera não é simetria esférica.
 
-Pergunte: quais transformações deixam essa fonte fisicamente igual?
+Uma bola com mais carga de um lado parece uma esfera, mas, se eu giro, a fonte muda.
 
-Considere uma distribuição esfericamente simétrica.
+A pergunta certa é: o que eu posso fazer com essa fonte sem que ela mude?
 
-Se eu girá-la em torno do centro, nada muda.
+Aqui, qualquer rotação em torno do centro deixa tudo igual.
 
-Não existe nenhuma direção tangencial privilegiada.
+Então não existe campo de lado: com uma meia volta em torno do eixo radial que passa por esse ponto, ele teria que inverter, sem a fonte mudar.
 
-O campo produzido por essa distribuição precisa apontar radialmente, e seu módulo só pode depender da distância ao centro.
+Sobra um campo radial, que só depende da distância.
 
-Se eu me mover mantendo a mesma distância ao centro, a direção do campo muda, mas o módulo é sempre o mesmo.
+Andando à mesma distância, a direção muda, mas o módulo não.
 
-Só depois de descobrir isso escolhemos uma esfera concêntrica.
+Só agora escolhemos a esfera concêntrica: nela, campo e vetor área são paralelos, e o módulo é constante.
 
-Nessa esfera, o campo é paralelo ao vetor área.
+Agora, e só agora, o campo sai da integral.
 
-E como todos os pontos têm o mesmo raio, o módulo do campo é constante.
+A superfície explora a simetria.
 
-Agora, e somente agora, podemos tirar E da integral.
+Ela não cria.
 
-A esfera gaussiana não criou a simetria.
+Bora usar isso numa esfera isolante com densidade de carga uniforme.
 
-Ela apenas explorou uma simetria que a distribuição de carga já possuía.
+Primeiro, o campo dentro dela.
 
-Vamos usar isso numa esfera isolante com densidade volumétrica uniforme.
+Pela simetria, antes de qualquer conta, já sabemos: o campo é radial e só depende da distância ao centro.
 
-Primeiro queremos o campo num ponto dentro da esfera.
+Então escolhemos uma gaussiana esférica, menor que a esfera física.
 
-Pela simetria, sabemos antes de fazer qualquer conta que o campo é radial e depende apenas da distância ao centro.
+O lado do fluxo fica fácil: o campo vezes a área da gaussiana.
 
-Escolhemos então uma superfície gaussiana esférica de raio menor que o raio da esfera física.
+Falta a carga envolvida, a que está nesse volume violeta.
 
-O lado do fluxo fica simples: campo vezes a área da superfície gaussiana.
+Como a densidade é uniforme, daria pra fazer só densidade vezes volume.
 
-Agora precisamos da carga realmente envolvida por ela.
+Mas vale ver o caminho que funciona sempre, até quando a densidade muda.
 
-Como a densidade é uniforme, poderíamos simplesmente multiplicar densidade por volume.
+Antes, atenção a três letras parecidas: R maiúsculo é o raio da esfera física, fixo; r é o raio da gaussiana, onde medimos o campo; e r linha é a variável que percorre o volume na integral.
 
-Mas vale a pena enxergar a versão que também funcionará quando a densidade deixar de ser constante.
+Um ponto lá dentro fica definido por três números.
 
-Para isso, vale relembrar as coordenadas esféricas. E repare em três letras parecidas: R maiúsculo é o raio fixo da esfera física; r é o raio da superfície gaussiana, onde medimos o campo; e r linha é a variável que percorre o volume durante a integração.
+O primeiro é a distância até o centro, o r linha.
 
-Um ponto do volume fica determinado por três números. Primeiro, a distância r linha até o centro.
+O segundo é o ângulo polar, medido a partir do eixo z.
 
-Depois, o ângulo polar, medido a partir do eixo z. Vamos escrevê-lo com outra grafia de teta, para não confundir com o ângulo do fluxo.
+Na tela, a gente usa uma outra forma da letra teta para distinguir esse ângulo polar do teta que apareceu no fluxo.
 
-Por fim, o ângulo azimutal, fi, que dá a volta em torno do eixo z.
+E o terceiro é o ângulo azimutal, fi, que dá a volta em torno do eixo.
 
-Variando cada coordenada um pouquinho, formamos um pequeno bloco. Na direção radial, sua espessura é d r linha.
+Variando cada um só um pouquinho, nasce um bloquinho.
 
-Na direção polar, o arco tem comprimento r linha vezes d teta.
+Na direção radial, a espessura é d r linha.
 
-Na direção azimutal, o ponto gira num círculo de raio r linha seno de teta, um círculo que encolhe perto dos polos. Por isso esse arco mede r linha seno de teta d fi.
+Na polar, o arco é r linha vezes d teta.
 
-Multiplicando as três dimensões, temos o elemento de volume.
+Na azimutal, o ponto gira num círculo de raio r linha seno de teta, que encolhe perto dos polos.
 
-Integramos a densidade com r linha indo de zero até r, porque só conta a carga que está dentro da superfície gaussiana.
+Por isso, o arco é r linha seno de teta d fi.
 
-Para densidade constante, o resultado é exatamente a densidade vezes quatro terços de pi vezes o raio ao cubo.
+Multiplicando os três, temos o elemento de volume.
 
-Substituindo na Lei de Gauss, primeiro cancelamos quatro pi dos dois lados.
+Agora integramos a densidade com o r linha indo do centro até a gaussiana, porque só conta a carga lá dentro.
 
-Depois, o raio ao cubo da carga dividido pelo raio ao quadrado da área deixa um único fator de raio.
+As integrais dos ângulos dão quatro pi, para qualquer densidade que dependa só da distância ao centro.
 
-Por isso, dentro da esfera uniforme, o campo cresce linearmente com a distância ao centro. Esse resultado vale só para r menor que R.
+Guarda essa: a simetria resolve a geometria; a densidade só decide quanta carga existe dentro da gaussiana.
 
-No centro ele vale zero.
+Com densidade constante, sobra a densidade vezes quatro terços de pi vezes o raio ao cubo.
 
-Agora mova a superfície gaussiana para fora da esfera física.
+Na Lei de Gauss, o quatro pi cancela dos dois lados, e o raio ao cubo sobre o raio ao quadrado deixa o raio uma vez só.
 
-A partir daqui, aumentar o raio da superfície não envolve mais carga.
+Resultado: o campo cresce linearmente com a distância ao centro, e no centro vale zero.
 
-Toda a carga da esfera já está dentro.
+Isso só vale dentro da esfera.
 
-Então a carga envolvida fica constante, enquanto a área gaussiana continua crescendo como o raio ao quadrado.
+Agora leva a gaussiana para fora da esfera.
 
-O campo passa a cair como um sobre o raio ao quadrado. Agora o resultado vale para r maior que R.
+Daqui pra frente, aumentar o raio não envolve mais carga: a barra da carga envolvida trava no total.
 
-E, para pontos externos a toda a região ocupada por essa distribuição esfericamente simétrica, o resultado é exatamente o mesmo campo que seria produzido por uma carga pontual com a carga total da esfera colocada no centro.
+A área continua crescendo com o raio ao quadrado, então o campo passa a cair com um sobre o raio ao quadrado.
 
-Agora podemos enxergar todo o comportamento no gráfico.
+Isso vale fora da esfera.
+
+E repara: aí fora, o campo é exatamente o de uma carga pontual com a carga total, colocada no centro.
+
+Agora junta tudo no gráfico.
 
 No centro, o campo começa em zero.
 
-Dentro da esfera, cresce em linha reta.
+Dentro, cresce em linha reta.
 
-Atinge seu maior valor na superfície.
+Atinge o máximo na superfície.
 
-E, do lado de fora, passa a cair como um sobre o raio ao quadrado.
+E fora, cai com um sobre o raio ao quadrado.
 
-As duas expressões fornecem exatamente o mesmo valor na superfície.
+Na superfície, as duas fórmulas dão o mesmo valor: o campo é contínuo, só a inclinação muda.
 
-O campo é contínuo ali, embora a inclinação do gráfico mude.
+E é contínuo porque não existe uma camada de carga concentrada na superfície da esfera.
 
-E repare no que realmente tornou toda essa conta simples.
+Agora repara no que deixou essa conta simples.
 
-Não foi a existência de uma integral.
+Não foi a integral.
 
-Foi sabermos, antes de integrar, como o campo precisava se comportar por causa da simetria.
+Foi saber, antes de integrar, como o campo tinha que ser, por causa da simetria.
 
-É daí que surgem as três superfícies gaussianas famosas. Cada uma pressupõe uma fonte idealizada.
+É daí que vêm as três superfícies gaussianas famosas: cada uma funciona porque a fonte possui a simetria correspondente.
 
-Se a fonte possui simetria esférica, uma esfera concêntrica acompanha essa simetria. Ali, toda a superfície contribui para o fluxo.
+Simetria esférica pede esfera concêntrica: a superfície toda contribui.
 
-Se temos uma linha infinita e uniforme, o campo depende apenas da distância ao eixo. Um cilindro coaxial aproveita isso: na lateral, o campo é paralelo ao vetor área e contribui; nas tampas, ele é tangente, e o fluxo é zero.
+Uma linha infinita, uniformemente carregada, pede um cilindro coaxial: a lateral contribui e, nas tampas, o campo é tangente, fluxo zero.
 
-Para um plano infinito uniformemente carregado, a simetria obriga o campo a ser perpendicular ao plano. Um cilindro gaussiano curto atravessando o plano inverte os papéis: as duas tampas contribuem, e a lateral tem fluxo zero.
+Um plano infinito, uniformemente carregado, pede um cilindro curto atravessando o plano: agora as tampas contribuem e a lateral dá zero.
 
-Essas formas não são receitas arbitrárias.
+Na linha e no plano, essas simetrias são exatas nas idealizações infinitas.
 
-Elas são consequências da simetria das fontes.
+Objetos finitos aproximam esse comportamento em regiões suficientemente afastadas das bordas ou extremidades.
 
-E isso também explica quando Gauss não é o método mais prático.
+Ou seja: não é receita decorada.
 
-A carga deslocada do começo, uma barra finita, um disco observado fora do eixo ou uma distribuição irregular continuam obedecendo perfeitamente à Lei de Gauss.
+É consequência da simetria da fonte.
 
-Mas normalmente não existe uma superfície fechada na qual a simetria nos permita substituir toda aquela informação local do campo por um único E.
+E isso também explica quando Gauss não é o caminho mais prático.
 
-Gauss ainda fornece o fluxo total.
+A carga deslocada do começo, uma barra finita, um disco visto fora do eixo, uma distribuição irregular: todos obedecem à Lei de Gauss.
 
-O que ela não fornece sozinha é a distribuição ponto a ponto do campo.
+Mas não existe superfície em que a simetria deixe trocar esse campo variável por um único valor de campo.
 
-Nesses casos, outro caminho funciona melhor. Para a carga deslocada, basta Coulomb, ou uma esfera centrada nela. Para a barra, somamos as contribuições de Coulomb ao longo do comprimento. Para o disco, no eixo, somamos anéis. Para uma distribuição irregular, integramos, de forma analítica ou numérica.
+Gauss continua dando o fluxo total; o que ela não dá sozinha é o campo ponto a ponto.
 
-E, em problemas com condutores, costuma ser melhor resolver o potencial, com as condições de contorno.
+Nesses casos, outro caminho funciona melhor.
 
-Então, diante de um problema novo, não pergunte primeiro qual superfície gaussiana você decorou.
+Para uma carga pontual isolada, Coulomb direto resolve.
 
-Pergunte qual é a simetria da distribuição de carga.
+Se quiser usar Gauss, a superfície útil é uma esfera centrada na própria carga — não naquela esfera arbitrária do começo.
 
-Essa simetria determina a direção possível do campo?
+Para a barra, soma as contribuições de Coulomb ao longo dela.
 
-Ela diz de quais coordenadas o módulo pode depender?
+Para o disco, no eixo, a simetria deixa somar anéis.
 
-Existe uma superfície fechada em que o campo tenha módulo constante nas regiões que contribuem, ou fique tangente nas regiões que não devem contribuir?
+Fora do eixo, essa simplificação some: a integral fica bem mais pesada e muitas vezes vale resolver numericamente.
 
-E você consegue calcular a carga envolvida?
+Para uma distribuição irregular, integra, na mão ou no computador.
 
-Se essas peças se encaixam, a Lei de Gauss provavelmente transforma um problema difícil em poucas linhas.
+Então, diante de um problema novo, não pergunta primeiro qual superfície você decorou.
 
-Se não se encaixam, a lei continua verdadeira. Ela simplesmente pode não ser suficiente para determinar o campo local.
+Pergunta: qual é a simetria da fonte?
+
+Ela define a direção do campo?
+
+Diz de que coordenadas o módulo depende?
+
+Existe uma superfície em que o campo seja constante onde contribui e tangente onde não deve contribuir?
+
+E dá pra calcular a carga envolvida?
+
+Se as peças se encaixam, como na esfera, Gauss resolve em poucas linhas.
+
+Se não se encaixam, como na barra, a lei continua verdadeira; ela só não basta para achar o campo.
 
 Voltando aos dois casos do começo, agora a diferença fica clara.
 
-Nos dois, a Lei de Gauss era igualmente válida.
+Nos dois, a Lei de Gauss é igualmente válida.
 
-Mas apenas em um deles a simetria permitia transformar a integral de fluxo numa equação simples para o campo.
+Mas só no primeiro a simetria transforma a integral do fluxo numa equação simples para o campo.
 
 A Lei de Gauss fala sobre fluxo.
 
@@ -580,11 +642,13 @@ A Lei de Gauss fala sobre fluxo.
 
 [PAUSA CURTA]
 
-Se esse vídeo te ajudou a enxergar a Lei de Gauss de outro jeito, se inscreve no Parallax Lab, porque vem mais Física e Matemática por aqui.
+Se esse vídeo te ajudou a enxergar a Lei de Gauss de outro jeito, deixa o like: isso ajuda muito o canal.
 
-E se você conhece alguém sofrendo com Física 3, compartilha esse vídeo com essa pessoa.
+Compartilha com aquele amigo que está sofrendo com Física 3.
 
-Deixa o like se curtiu, e a gente se vê no próximo.
+E se inscreve no Parallax Lab, porque vem muito mais Física e Matemática por aí.
+
+A gente se vê no próximo!
 
 ## 13. STORYBOARD
 
@@ -626,13 +690,16 @@ Resultado $\Phi_E=q/\varepsilon_0$; última variação de raio prepara a deforma
 
 ### Cena 07 — Ângulo sólido · `BUILD`
 
-Construção ampliada. Um cone e um elemento com distância $r$, normal, inclinação $\theta$ e área projetada
-$dA\cos\theta$; depois $d\Omega_{\rm or}=\cos\theta\,dA/r^2$. Referência 3D: $4\pi$ = todas as direções
-(área da esfera de raio 1).
+Construção ampliada. Um cone e um elemento. **ÂNGULO SÓLIDO** e $d\Omega$ entram juntos (o rótulo no
+cone só nasce com o nome). Ponte curta: no plano $d\theta=ds/r$ (volta: 2π rad); no espaço
+$d\Omega=dA_\perp/r^2$ (todas as direções: 4π sr; sr = esterradiano); o mesmo cone intercepta o pedaço
+inclinado. Depois distância $r$, normal, inclinação $\theta$, $dA_\perp=dA\,|\cos\theta|$ e
+$\boxed{d\Omega=dA\,|\cos\theta|/r^2}$; então $d\Omega_{\rm or}=(\hat r\cdot\hat n)\,dA/r^2=\pm d\Omega$ e a
+substituição em $d\Phi_E$. Referência 3D: $4\pi$ = todas as direções (área da esfera de raio 1).
 
 ### Cena 08 — Carga interna × externa · `COMPARE`
 
-Interna: $4\pi$. Externa: o mesmo cone corta dois elementos, $-d\Omega$ e $+d\Omega$ (áreas diferentes);
+Interna: $4\pi$. Externa: o mesmo cone corta dois elementos, $d\Omega_{\rm or}=-d\Omega$ e $d\Omega_{\rm or}=+d\Omega$ (áreas diferentes);
 campo local visível. Superposição: cada carga recebe sua contribuição ($q_1/\varepsilon_0$, $q_2/\varepsilon_0$,
 $0$); montar $Q_{\mathrm{env}}=q_1+q_2$ (soma algébrica das cargas internas). Concluir na Lei de Gauss em caixa.
 
@@ -715,15 +782,23 @@ movimento discreto. Sem links ou títulos inventados. Nenhuma nova matemática.
 
 | Elemento | Convenção |
 | --- | --- |
-| Campo $\vec E$ e grandezas associadas (inclusive $\theta$, $E$ nas equações) | ciano |
+| Campo $\vec E$ (setas, $E$ nas equações, barras de $\lvert\vec E\rvert$) | ciano |
+| Grandezas angulares ($\theta$, $\vartheta$, $\phi$, $d\theta$, $d\Omega$, arcos; marca de 90° com peso menor) | âmbar `#FFC24D` |
 | Superfície gaussiana matemática (e $r$) | violeta, contorno tracejado; regiões que contribuem em traço contínuo |
 | Distribuição física de carga (e $R$, $Q$) | azul, contorno contínuo e preenchimento |
 | Volume envolvido | preenchimento violeta translúcido + legenda |
-| Normal e vetor área | branco: $\hat n$ fino e opaco, $d\vec A$ grosso e translúcido |
+| Normal unitária $\hat n$ | azul elétrico `#267BFF`, seta fina e opaca |
+| Vetor área $d\vec A$ e elemento $dA$ | violeta `#745CFF`: seta grossa; o pedaço com preenchimento translúcido |
+| Área projetada $dA_\perp$ | branco (geometria neutra) |
 | Matemática neutra e resultados | branco |
 | Passo inválido ou conflito / componente hipotética | magenta, com rótulo |
 
-A cor nunca é a única informação: contorno, transparência e rótulos distinguem os papéis.
+A cor nunca é a única informação: contorno, transparência e rótulos distinguem os papéis. $\hat n$ e
+$d\vec A$ também diferem por função: $\hat n$ curto e fino num ponto do elemento; $d\vec A$ grosso, no
+centro, com comprimento que acompanha a área.
+
+Hierarquia (V2.1): resultado/box > rótulo de caso e comentário auxiliar (menores, ~70% de opacidade) >
+anotações geométricas. Boxes com margem interna maior e borda fina.
 
 ## 15. TIPOGRAFIA
 

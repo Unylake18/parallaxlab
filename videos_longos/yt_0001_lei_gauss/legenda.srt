@@ -1,0 +1,1108 @@
+1
+00:00:00,050 --> 00:00:01,720
+Olha esses dois problemas.
+
+2
+00:00:01,910 --> 00:00:03,197
+Nos dois, dá pra desenhar
+
+3
+00:00:03,237 --> 00:00:07,750
+uma superfície fechada e escrever
+exatamente a mesma Lei de Gauss.
+
+4
+00:00:07,860 --> 00:00:11,530
+No primeiro, a distribuição de
+carga é esfericamente simétrica,
+
+5
+00:00:11,610 --> 00:00:13,580
+e em dois passos
+o campo aparece.
+
+6
+00:00:13,680 --> 00:00:16,640
+No segundo, eu só tiro a
+carga do centro da esfera.
+
+7
+00:00:16,680 --> 00:00:18,250
+A lei continua verdadeira.
+
+8
+00:00:18,290 --> 00:00:20,300
+O fluxo continua determinado.
+
+9
+00:00:20,340 --> 00:00:23,190
+E mesmo assim, eu não
+consigo tirar o campo daí.
+
+10
+00:00:23,230 --> 00:00:24,630
+Então, o que mudou?
+
+11
+00:00:25,310 --> 00:00:26,200
+Fala, pessoal!
+
+12
+00:00:26,240 --> 00:00:27,970
+Bem-vindos ao Parallax Lab.
+
+13
+00:00:28,010 --> 00:00:31,411
+Hoje a gente vai entender por
+que a Lei de Gauss resolve
+
+14
+00:00:31,451 --> 00:00:35,510
+alguns problemas quase de graça e,
+em outros, parece não ajudar.
+
+15
+00:00:35,550 --> 00:00:37,350
+Spoiler: a chave é a simetria.
+
+16
+00:00:37,390 --> 00:00:42,490
+E a ordem importa: primeiro a fonte,
+depois o campo, e só então a superfície.
+
+17
+00:00:42,610 --> 00:00:44,211
+Pular essa ordem é o que faz
+
+18
+00:00:44,251 --> 00:00:47,600
+muita gente decorar esfera e
+cilindro sem entender por quê.
+
+19
+00:00:47,640 --> 00:00:51,370
+Antes de responder, a gente precisa
+entender o que a Lei de Gauss mede.
+
+20
+00:00:51,490 --> 00:00:54,020
+Pega um pedacinho bem
+pequeno de uma superfície.
+
+21
+00:00:54,120 --> 00:00:57,030
+A área dele é só um número:
+o elemento de área.
+
+22
+00:00:57,070 --> 00:01:00,730
+De tão pequeno, ele praticamente
+coincide com o plano tangente.
+
+23
+00:01:00,850 --> 00:01:03,850
+Agora, a normal:
+a setinha azul, n chapéu.
+
+24
+00:01:03,890 --> 00:01:07,090
+Perpendicular ao plano,
+comprimento um: só direção.
+
+25
+00:01:07,130 --> 00:01:10,300
+Normal vezes área dá o
+vetor área, a seta violeta.
+
+26
+00:01:10,420 --> 00:01:14,140
+Repara: quando o pedaço encolhe,
+ela encolhe junto; a normal não.
+
+27
+00:01:14,180 --> 00:01:17,190
+Numa superfície fechada,
+cada ponto tem a sua normal,
+
+28
+00:01:17,300 --> 00:01:19,360
+e a convenção é sempre
+apontar para fora.
+
+29
+00:01:19,400 --> 00:01:22,060
+Agora coloca esse pedaço
+num campo elétrico.
+
+30
+00:01:22,290 --> 00:01:24,220
+Repara que aparecem dois ângulos.
+
+31
+00:01:24,330 --> 00:01:27,800
+O de noventa graus, entre a normal
+e o plano, não entra na conta.
+
+32
+00:01:27,890 --> 00:01:31,650
+O que importa é o teta, em amarelo:
+entre o campo e a normal.
+
+33
+00:01:31,690 --> 00:01:33,610
+De frente, o fluxo é máximo.
+
+34
+00:01:33,650 --> 00:01:37,390
+Inclinando, ele diminui, e a
+normal e o vetor área giram junto.
+
+35
+00:01:37,490 --> 00:01:41,040
+Quando o campo passa tangente,
+raspando, o fluxo é zero.
+
+36
+00:01:41,080 --> 00:01:43,320
+E se o campo entra numa
+superfície fechada,
+
+37
+00:01:43,440 --> 00:01:46,240
+contra a normal,
+a contribuição fica negativa.
+
+38
+00:01:46,280 --> 00:01:48,130
+É isso que o produto escalar faz.
+
+39
+00:01:48,220 --> 00:01:52,540
+E a integral fechada só repete
+essa soma pela superfície inteira.
+
+40
+00:01:52,580 --> 00:01:54,740
+Dica: o fluxo não
+conta linhas de campo.
+
+41
+00:01:54,790 --> 00:01:56,290
+As linhas são só um desenho;
+
+42
+00:01:56,410 --> 00:02:00,240
+o fluxo é a soma de quanto
+campo atravessa cada pedacinho.
+
+43
+00:02:00,787 --> 00:02:04,527
+Agora coloca uma carga pontual
+positiva no centro de uma esfera.
+
+44
+00:02:04,567 --> 00:02:09,057
+Pela Lei de Coulomb, o campo aponta para
+fora e cai com o quadrado da distância.
+
+45
+00:02:09,147 --> 00:02:12,207
+Na esfera, campo e vetor
+área ficam paralelos.
+
+46
+00:02:12,247 --> 00:02:14,987
+E como todo ponto está à
+mesma distância da carga,
+
+47
+00:02:15,067 --> 00:02:18,007
+o módulo do campo é o mesmo
+na superfície inteira.
+
+48
+00:02:18,047 --> 00:02:20,017
+Então dá pra tirar
+o campo da integral,
+
+49
+00:02:20,107 --> 00:02:22,887
+e o fluxo vira o campo
+vezes a área da esfera.
+
+50
+00:02:22,927 --> 00:02:26,644
+Agora olha as barras quando o raio
+aumenta: o campo cai com um sobre
+
+51
+00:02:26,684 --> 00:02:30,137
+o raio ao quadrado, mas a área
+cresce com o raio ao quadrado.
+
+52
+00:02:30,217 --> 00:02:32,967
+Uma coisa compensa
+exatamente a outra.
+
+53
+00:02:33,007 --> 00:02:36,477
+Por isso, qualquer esfera centrada
+na carga dá o mesmo fluxo:
+
+54
+00:02:36,867 --> 00:02:38,607
+a carga sobre épsilon zero.
+
+55
+00:02:38,647 --> 00:02:42,697
+Ou seja, o fluxo mede algo mais
+profundo do que o campo num ponto.
+
+56
+00:02:42,897 --> 00:02:45,607
+Mas e se a superfície
+não for uma esfera?
+
+57
+00:02:45,647 --> 00:02:48,987
+Imagina um cone bem estreito
+de direções saindo da carga.
+
+58
+00:02:49,027 --> 00:02:51,607
+Ele corta um pedaço de
+uma superfície qualquer.
+
+59
+00:02:51,647 --> 00:02:55,657
+Aqui entra uma ideia nova:
+o ângulo sólido, o d ômega.
+
+60
+00:02:55,697 --> 00:02:59,047
+No plano, um ângulo pequeno
+é o arco dividido pelo raio,
+
+61
+00:02:59,167 --> 00:03:01,627
+e a volta inteira
+vale dois pi radianos.
+
+62
+00:03:01,777 --> 00:03:04,817
+No espaço, é a mesma ideia
+com uma dimensão a mais:
+
+63
+00:03:05,087 --> 00:03:08,107
+a área projetada dividida
+pelo raio ao quadrado.
+
+64
+00:03:08,157 --> 00:03:11,477
+Todas as direções juntas
+somam quatro pi esterradianos.
+
+65
+00:03:11,627 --> 00:03:16,047
+Na prática, o d ômega mede o tamanho
+aparente do pedaço visto da carga:
+
+66
+00:03:16,197 --> 00:03:18,557
+qual abertura angular
+ele ocupa no espaço.
+
+67
+00:03:18,707 --> 00:03:22,697
+Se o pedaço está inclinado, conta a
+área projetada de frente para a carga.
+
+68
+00:03:22,737 --> 00:03:26,747
+E, mais longe, ele precisa ser
+maior para parecer do mesmo tamanho.
+
+69
+00:03:26,787 --> 00:03:28,137
+Daí o raio ao quadrado.
+
+70
+00:03:28,197 --> 00:03:31,077
+Área, inclinação e distância:
+juntas, formam o d ômega.
+
+71
+00:03:31,117 --> 00:03:34,127
+O d ômega é só tamanho,
+sempre positivo.
+
+72
+00:03:34,167 --> 00:03:36,292
+Já o d ômega orientado também
+
+73
+00:03:36,332 --> 00:03:40,627
+leva em conta de que lado a
+superfície está sendo atravessada.
+
+74
+00:03:40,667 --> 00:03:42,797
+Para a carga positiva
+que estamos desenhando,
+
+75
+00:03:42,897 --> 00:03:46,637
+ele fica positivo onde o campo
+sai e negativo onde entra.
+
+76
+00:03:46,677 --> 00:03:50,667
+E o fluxo pelo pedaço é a carga
+sobre quatro pi épsilon zero,
+
+77
+00:03:50,737 --> 00:03:52,577
+vezes o d ômega orientado.
+
+78
+00:03:52,637 --> 00:03:53,917
+A distância sumiu.
+
+79
+00:03:53,957 --> 00:03:58,877
+Com a carga dentro, a soma orientada sobre
+toda a superfície totaliza quatro pi.
+
+80
+00:03:58,917 --> 00:04:00,307
+Quatro pi esterradianos:
+
+81
+00:04:00,657 --> 00:04:04,397
+a área da esfera unitária inteira,
+e não a volta de um círculo.
+
+82
+00:04:04,437 --> 00:04:08,337
+Os quatro pi se cancelam: a carga sobre
+épsilon zero, para qualquer formato.
+
+83
+00:04:08,377 --> 00:04:11,427
+Agora coloca a carga
+do lado de fora.
+
+84
+00:04:11,467 --> 00:04:15,177
+O campo na superfície não some;
+em alguns pontos, é até forte.
+
+85
+00:04:15,217 --> 00:04:18,127
+Mas cada feixe que entra
+por um lado sai pelo outro:
+
+86
+00:04:18,437 --> 00:04:22,917
+a contribuição orientada é negativa
+na entrada e positiva na saída.
+
+87
+00:04:22,957 --> 00:04:25,347
+No total, o fluxo líquido é zero.
+
+88
+00:04:25,387 --> 00:04:29,327
+Atenção: fluxo líquido zero
+não significa campo zero.
+
+89
+00:04:29,367 --> 00:04:33,277
+Com várias cargas, a superposição
+resolve: as de fora dão zero,
+
+90
+00:04:33,377 --> 00:04:36,297
+as de dentro dão a própria
+carga sobre épsilon zero.
+
+91
+00:04:36,337 --> 00:04:41,517
+Somando, aparece a carga envolvida:
+a soma, com sinal, das cargas lá dentro.
+
+92
+00:04:41,557 --> 00:04:42,907
+E chegamos à Lei de Gauss:
+
+93
+00:04:43,207 --> 00:04:48,177
+o fluxo por qualquer superfície fechada
+é a carga envolvida sobre épsilon zero.
+
+94
+00:04:49,117 --> 00:04:51,707
+Agora vem a parte mais
+importante do vídeo.
+
+95
+00:04:51,877 --> 00:04:53,977
+Se a lei vale para
+qualquer superfície,
+
+96
+00:04:54,317 --> 00:04:57,457
+por que não desenhar qualquer
+uma e sair calculando o campo?
+
+97
+00:04:57,587 --> 00:05:00,977
+Olha: eu desloco a carga,
+mas ela continua dentro.
+
+98
+00:05:01,017 --> 00:05:05,047
+O fluxo continua sendo a carga
+sobre épsilon zero, exatamente.
+
+99
+00:05:05,097 --> 00:05:08,657
+Só que os pontos da esfera não estão
+mais à mesma distância da carga.
+
+100
+00:05:08,697 --> 00:05:11,697
+Então o módulo do campo
+muda de ponto para ponto.
+
+101
+00:05:11,767 --> 00:05:16,257
+E quase nunca aponta na direção da
+normal: o teta deixa de ser zero.
+
+102
+00:05:16,297 --> 00:05:19,157
+Por isso esse passo,
+em magenta, é proibido.
+
+103
+00:05:19,197 --> 00:05:21,287
+Não dá pra tirar o
+campo da integral.
+
+104
+00:05:21,347 --> 00:05:24,147
+A Lei de Gauss me deu um
+número: o fluxo total.
+
+105
+00:05:24,187 --> 00:05:28,177
+Mas o campo na superfície é uma
+função que muda de ponto para ponto.
+
+106
+00:05:28,434 --> 00:05:30,724
+Saber o fluxo não
+é saber o campo.
+
+107
+00:05:31,667 --> 00:05:33,417
+É aqui que entra a simetria.
+
+108
+00:05:33,457 --> 00:05:35,437
+E a ordem do raciocínio importa.
+
+109
+00:05:35,477 --> 00:05:39,277
+Você não começa escolhendo uma esfera
+porque quer que o problema fique esférico.
+
+110
+00:05:39,367 --> 00:05:41,557
+Você começa olhando para a carga.
+
+111
+00:05:41,597 --> 00:05:45,067
+Cuidado: formato de esfera
+não é simetria esférica.
+
+112
+00:05:45,197 --> 00:05:50,657
+Uma bola com mais carga de um lado parece
+uma esfera, mas, se eu giro, a fonte muda.
+
+113
+00:05:50,697 --> 00:05:55,067
+A pergunta certa é: o que eu posso
+fazer com essa fonte sem que ela mude?
+
+114
+00:05:55,524 --> 00:05:59,094
+Aqui, qualquer rotação em torno
+do centro deixa tudo igual.
+
+115
+00:05:59,134 --> 00:06:03,456
+Então não existe campo de lado: com
+uma meia volta em torno do eixo radial
+
+116
+00:06:03,496 --> 00:06:07,514
+que passa por esse ponto, ele teria
+que inverter, sem a fonte mudar.
+
+117
+00:06:07,554 --> 00:06:10,634
+Sobra um campo radial,
+que só depende da distância.
+
+118
+00:06:10,724 --> 00:06:14,524
+Andando à mesma distância,
+a direção muda, mas o módulo não.
+
+119
+00:06:14,564 --> 00:06:17,083
+Só agora escolhemos
+a esfera concêntrica:
+
+120
+00:06:17,123 --> 00:06:21,174
+nela, campo e vetor área são
+paralelos, e o módulo é constante.
+
+121
+00:06:21,314 --> 00:06:24,704
+Agora, e só agora,
+o campo sai da integral.
+
+122
+00:06:24,744 --> 00:06:27,104
+A superfície explora a simetria.
+
+123
+00:06:27,144 --> 00:06:28,224
+Ela não cria.
+
+124
+00:06:28,967 --> 00:06:32,667
+Bora usar isso numa esfera isolante
+com densidade de carga uniforme.
+
+125
+00:06:32,737 --> 00:06:34,497
+Primeiro, o campo dentro dela.
+
+126
+00:06:34,537 --> 00:06:36,612
+Pela simetria, antes
+de qualquer conta,
+
+127
+00:06:36,652 --> 00:06:41,067
+já sabemos: o campo é radial e só
+depende da distância ao centro.
+
+128
+00:06:41,177 --> 00:06:44,837
+Então escolhemos uma gaussiana
+esférica, menor que a esfera física.
+
+129
+00:06:44,937 --> 00:06:48,767
+O lado do fluxo fica fácil:
+o campo vezes a área da gaussiana.
+
+130
+00:06:48,867 --> 00:06:52,167
+Falta a carga envolvida,
+a que está nesse volume violeta.
+
+131
+00:06:52,287 --> 00:06:56,487
+Como a densidade é uniforme, daria
+pra fazer só densidade vezes volume.
+
+132
+00:06:56,527 --> 00:07:00,417
+Mas vale ver o caminho que funciona
+sempre, até quando a densidade muda.
+
+133
+00:07:00,457 --> 00:07:06,367
+Antes, atenção a três letras parecidas:
+R maiúsculo é o raio da esfera física,
+
+134
+00:07:06,707 --> 00:07:09,617
+fixo; r é o raio da gaussiana,
+onde medimos o campo;
+
+135
+00:07:09,877 --> 00:07:13,327
+e r linha é a variável que
+percorre o volume na integral.
+
+136
+00:07:13,367 --> 00:07:16,167
+Um ponto lá dentro fica
+definido por três números.
+
+137
+00:07:16,307 --> 00:07:19,337
+O primeiro é a distância
+até o centro, o r linha.
+
+138
+00:07:19,377 --> 00:07:22,907
+O segundo é o ângulo polar,
+medido a partir do eixo z.
+
+139
+00:07:22,947 --> 00:07:25,839
+Na tela, a gente usa uma
+outra forma da letra teta
+
+140
+00:07:25,879 --> 00:07:29,587
+para distinguir esse ângulo polar
+do teta que apareceu no fluxo.
+
+141
+00:07:29,737 --> 00:07:34,047
+E o terceiro é o ângulo azimutal,
+fi, que dá a volta em torno do eixo.
+
+142
+00:07:34,137 --> 00:07:37,207
+Variando cada um só um
+pouquinho, nasce um bloquinho.
+
+143
+00:07:37,247 --> 00:07:40,467
+Na direção radial,
+a espessura é d r linha.
+
+144
+00:07:40,507 --> 00:07:43,787
+Na polar, o arco é r
+linha vezes d teta.
+
+145
+00:07:43,827 --> 00:07:48,357
+Na azimutal, o ponto gira num
+círculo de raio r linha seno de teta,
+
+146
+00:07:48,477 --> 00:07:50,107
+que encolhe perto dos polos.
+
+147
+00:07:50,177 --> 00:07:53,347
+Por isso, o arco é r
+linha seno de teta d fi.
+
+148
+00:07:53,387 --> 00:07:56,417
+Multiplicando os três,
+temos o elemento de volume.
+
+149
+00:07:56,457 --> 00:08:01,017
+Agora integramos a densidade com o r
+linha indo do centro até a gaussiana,
+
+150
+00:08:01,147 --> 00:08:02,777
+porque só conta a
+carga lá dentro.
+
+151
+00:08:02,867 --> 00:08:04,737
+As integrais dos
+ângulos dão quatro pi,
+
+152
+00:08:04,807 --> 00:08:08,177
+para qualquer densidade que
+dependa só da distância ao centro.
+
+153
+00:08:08,357 --> 00:08:11,317
+Guarda essa: a simetria
+resolve a geometria;
+
+154
+00:08:11,497 --> 00:08:15,357
+a densidade só decide quanta
+carga existe dentro da gaussiana.
+
+155
+00:08:15,407 --> 00:08:16,747
+Com densidade constante,
+
+156
+00:08:16,887 --> 00:08:21,297
+sobra a densidade vezes quatro
+terços de pi vezes o raio ao cubo.
+
+157
+00:08:21,367 --> 00:08:24,137
+Na Lei de Gauss, o quatro
+pi cancela dos dois lados,
+
+158
+00:08:24,467 --> 00:08:28,277
+e o raio ao cubo sobre o raio ao
+quadrado deixa o raio uma vez só.
+
+159
+00:08:28,317 --> 00:08:31,797
+Resultado: o campo cresce linearmente
+com a distância ao centro,
+
+160
+00:08:32,047 --> 00:08:33,557
+e no centro vale zero.
+
+161
+00:08:33,597 --> 00:08:35,517
+Isso só vale dentro da esfera.
+
+162
+00:08:35,557 --> 00:08:38,987
+Agora leva a gaussiana
+para fora da esfera.
+
+163
+00:08:39,027 --> 00:08:41,490
+Daqui pra frente, aumentar o
+raio não envolve mais carga:
+
+164
+00:08:41,530 --> 00:08:43,877
+a barra da carga
+envolvida trava no total.
+
+165
+00:08:43,917 --> 00:08:46,517
+A área continua crescendo
+com o raio ao quadrado,
+
+166
+00:08:46,747 --> 00:08:50,087
+então o campo passa a cair com
+um sobre o raio ao quadrado.
+
+167
+00:08:50,127 --> 00:08:51,717
+Isso vale fora da esfera.
+
+168
+00:08:51,757 --> 00:08:55,823
+E repara: aí fora, o campo é exatamente
+o de uma carga pontual com a carga total,
+
+169
+00:08:55,863 --> 00:08:57,007
+colocada no centro.
+
+170
+00:08:57,367 --> 00:08:59,997
+Agora junta tudo no gráfico.
+
+171
+00:09:00,177 --> 00:09:02,347
+No centro, o campo começa em zero.
+
+172
+00:09:02,387 --> 00:09:03,997
+Dentro, cresce em linha reta.
+
+173
+00:09:04,634 --> 00:09:06,744
+Atinge o máximo na superfície.
+
+174
+00:09:06,784 --> 00:09:09,274
+E fora, cai com um sobre
+o raio ao quadrado.
+
+175
+00:09:09,334 --> 00:09:11,470
+Na superfície, as duas
+fórmulas dão o mesmo valor:
+
+176
+00:09:11,510 --> 00:09:13,724
+o campo é contínuo,
+só a inclinação muda.
+
+177
+00:09:13,764 --> 00:09:17,136
+E é contínuo porque não
+existe uma camada de carga
+
+178
+00:09:17,176 --> 00:09:19,534
+concentrada na superfície da esfera.
+
+179
+00:09:19,574 --> 00:09:22,264
+Agora repara no que
+deixou essa conta simples.
+
+180
+00:09:22,494 --> 00:09:23,664
+Não foi a integral.
+
+181
+00:09:23,704 --> 00:09:28,344
+Foi saber, antes de integrar, como o campo
+tinha que ser, por causa da simetria.
+
+182
+00:09:29,184 --> 00:09:32,224
+É daí que vêm as três
+superfícies gaussianas famosas:
+
+183
+00:09:32,554 --> 00:09:36,334
+cada uma funciona porque a fonte
+possui a simetria correspondente.
+
+184
+00:09:36,474 --> 00:09:40,974
+Simetria esférica pede esfera concêntrica:
+a superfície toda contribui.
+
+185
+00:09:41,014 --> 00:09:44,790
+Uma linha infinita, uniformemente
+carregada, pede um cilindro coaxial:
+
+186
+00:09:44,830 --> 00:09:48,544
+a lateral contribui e, nas tampas,
+o campo é tangente, fluxo zero.
+
+187
+00:09:48,664 --> 00:09:52,862
+Um plano infinito, uniformemente
+carregado, pede um cilindro curto
+
+188
+00:09:52,902 --> 00:09:57,374
+atravessando o plano: agora as tampas
+contribuem e a lateral dá zero.
+
+189
+00:09:57,414 --> 00:10:01,684
+Na linha e no plano, essas simetrias
+são exatas nas idealizações infinitas.
+
+190
+00:10:01,914 --> 00:10:04,548
+Objetos finitos aproximam
+esse comportamento
+
+191
+00:10:04,588 --> 00:10:08,364
+em regiões suficientemente afastadas
+das bordas ou extremidades.
+
+192
+00:10:08,504 --> 00:10:10,824
+Ou seja: não é receita decorada.
+
+193
+00:10:10,864 --> 00:10:13,054
+É consequência da
+simetria da fonte.
+
+194
+00:10:13,801 --> 00:10:17,151
+E isso também explica quando Gauss
+não é o caminho mais prático.
+
+195
+00:10:17,341 --> 00:10:21,901
+A carga deslocada do começo, uma barra
+finita, um disco visto fora do eixo,
+
+196
+00:10:22,001 --> 00:10:25,231
+uma distribuição irregular:
+todos obedecem à Lei de Gauss.
+
+197
+00:10:25,341 --> 00:10:27,604
+Mas não existe superfície
+em que a simetria
+
+198
+00:10:27,644 --> 00:10:31,111
+deixe trocar esse campo variável
+por um único valor de campo.
+
+199
+00:10:31,231 --> 00:10:33,261
+Gauss continua dando o fluxo total;
+
+200
+00:10:33,441 --> 00:10:36,361
+o que ela não dá sozinha
+é o campo ponto a ponto.
+
+201
+00:10:36,481 --> 00:10:39,071
+Nesses casos, outro
+caminho funciona melhor.
+
+202
+00:10:39,111 --> 00:10:42,411
+Para uma carga pontual isolada,
+Coulomb direto resolve.
+
+203
+00:10:42,491 --> 00:10:45,911
+Se quiser usar Gauss, a superfície
+útil é uma esfera centrada
+
+204
+00:10:45,951 --> 00:10:49,211
+na própria carga — não naquela
+esfera arbitrária do começo.
+
+205
+00:10:49,351 --> 00:10:52,841
+Para a barra, soma as contribuições
+de Coulomb ao longo dela.
+
+206
+00:10:52,881 --> 00:10:56,281
+Para o disco, no eixo,
+a simetria deixa somar anéis.
+
+207
+00:10:56,461 --> 00:10:58,711
+Fora do eixo, essa
+simplificação some:
+
+208
+00:10:58,871 --> 00:11:03,321
+a integral fica bem mais pesada e muitas
+vezes vale resolver numericamente.
+
+209
+00:11:03,431 --> 00:11:07,291
+Para uma distribuição irregular,
+integra, na mão ou no computador.
+
+210
+00:11:07,331 --> 00:11:09,221
+Então, diante de
+um problema novo,
+
+211
+00:11:09,301 --> 00:11:12,211
+não pergunta primeiro qual
+superfície você decorou.
+
+212
+00:11:12,251 --> 00:11:14,111
+Pergunta: qual é a
+simetria da fonte?
+
+213
+00:11:14,151 --> 00:11:16,341
+Ela define a direção do campo?
+
+214
+00:11:16,381 --> 00:11:18,761
+Diz de que coordenadas
+o módulo depende?
+
+215
+00:11:18,801 --> 00:11:21,006
+Existe uma superfície em que o campo
+
+216
+00:11:21,046 --> 00:11:24,681
+seja constante onde contribui e
+tangente onde não deve contribuir?
+
+217
+00:11:24,721 --> 00:11:26,671
+E dá pra calcular
+a carga envolvida?
+
+218
+00:11:26,711 --> 00:11:30,731
+Se as peças se encaixam, como na esfera,
+Gauss resolve em poucas linhas.
+
+219
+00:11:31,101 --> 00:11:32,981
+Se não se encaixam,
+como na barra,
+
+220
+00:11:33,081 --> 00:11:36,591
+a lei continua verdadeira; ela
+só não basta para achar o campo.
+
+221
+00:11:37,134 --> 00:11:40,834
+Voltando aos dois casos do começo,
+agora a diferença fica clara.
+
+222
+00:11:40,874 --> 00:11:43,584
+Nos dois, a Lei de Gauss
+é igualmente válida.
+
+223
+00:11:43,624 --> 00:11:46,661
+Mas só no primeiro a simetria
+transforma a integral do fluxo
+
+224
+00:11:46,701 --> 00:11:48,774
+numa equação simples para o campo.
+
+225
+00:11:48,864 --> 00:11:50,714
+A Lei de Gauss fala sobre fluxo.
+
+226
+00:11:50,754 --> 00:11:54,334
+É a simetria da fonte que
+transforma fluxo em campo.
+
+227
+00:11:55,354 --> 00:11:58,684
+Se esse vídeo te ajudou a enxergar
+a Lei de Gauss de outro jeito,
+
+228
+00:11:58,804 --> 00:12:01,284
+deixa o like: isso
+ajuda muito o canal.
+
+229
+00:12:01,324 --> 00:12:04,594
+Compartilha com aquele amigo
+que está sofrendo com Física 3.
+
+230
+00:12:04,664 --> 00:12:09,304
+E se inscreve no Parallax Lab, porque vem
+muito mais Física e Matemática por aí.
+
+231
+00:12:09,344 --> 00:12:10,694
+A gente se vê no próximo!
