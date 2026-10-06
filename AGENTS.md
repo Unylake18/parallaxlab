@@ -2,6 +2,11 @@
 
 Instruções operacionais para agentes de código que trabalham neste repositório.
 
+## Idioma
+
+Responda sempre em português do Brasil (pt-BR), incluindo explicações, planos, dúvidas e relatórios de entrega.
+Preserve comandos, nomes de arquivos e identificadores de código quando necessário.
+
 ## Princípio
 
 Use o menor contexto suficiente para concluir corretamente a tarefa.
@@ -148,6 +153,9 @@ Não inicie espontaneamente:
 
 Ao cumprir o escopo:
 1. reporte arquivos alterados;
-2. reporte testes/renders executados;
-3. reporte limitações ou pendências reais;
-4. pare.
+2. reporte verificações, testes e renders executados, com seus resultados;
+3. informe o caminho do preview e dos demais artefatos gerados, quando houver;
+4. reporte limitações ou pendências reais, incluindo verificações que não puderam ser concluídas;
+5. pare, sem iniciar outra fase da produção.
+
+Esse relatório de entrega é obrigatório ao concluir qualquer briefing ou handoff, mesmo quando o pedido não repetir o formato.
