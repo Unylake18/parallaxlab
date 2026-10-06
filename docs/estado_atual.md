@@ -1,10 +1,10 @@
 # Estado atual — Parallax Lab
 
-**Atualizado em:** 2026-10-03 (suporte horizontal integrado; reconciliação dos vídeos 11–13); antes, 2026-10-01 (adoção do MF-Tools; reconciliação do `vid_0010`)
+**Atualizado em:** 2026-10-06 (reconciliação dos vídeos 12–15 e do primeiro vídeo longo; segundo PC); antes, 2026-10-03 (suporte horizontal integrado; reconciliação dos vídeos 11–13) e 2026-10-01 (adoção do MF-Tools; reconciliação do `vid_0010`)
 
 ## Formatos: curto vertical + longo horizontal (2026-10-03)
 
-- Trilha de YouTube longo aprovada para teste e **disponível tecnicamente** (decisão em `docs/decisoes.md`; regras em `docs/formatos.md`). Nenhum vídeo longo iniciado.
+- Trilha de YouTube longo aprovada para teste e **disponível tecnicamente** (decisão em `docs/decisoes.md`; regras em `docs/formatos.md`). **Segundo o usuário (2026-10-06), o primeiro vídeo longo já foi publicado**; sua produção não está neste repositório (`videos_longos/` contém só `.gitkeep`), então não há ficha, cena nem render versionados para ele.
 - Suporte horizontal **aditivo** integrado na `main` por fast-forward (commit `f78ddc8`, feito na branch `feat/formatos-curto-longo`, worktree `../parallax-formatos`): `template/config_horizontal.py` (frame 16 × 9, mesma paleta e watermark), `template/layout_horizontal.py` (regiões FOCUS/split, safe area, guias só com `GUIAS=1`), `template/smoke_horizontal.py` (cena `SmokeHorizontal`) e a pasta vazia `videos_longos/`.
 - Smoke test renderizado e aprovado: **960×540, 15 fps, 168 quadros, 11,2 s**; SPLIT, MathTex, `TransformMatchingTex`, Space Grotesk, watermark e safe area conferidos por quadros. Final 1920×1080 não renderizado.
 - `template/config.py`, os vídeos verticais e as dependências não mudaram; o worktree usou a `.venv` do checkout principal (`UV_PROJECT_ENVIRONMENT` + `uv run --no-sync`), sem criar `.venv` nova.
@@ -19,6 +19,7 @@
 
 - Windows + PyCharm; Python 3.12.4, `uv` 0.12.17, `.venv`, Manim Community 0.21.0 e MF-Tools 1.4.9 validados com `uv run python -m manim --version`; MiKTeX/MathTex já usados em renders.
 - Projeto local: `C:\Users\KaioOrtiz\PycharmProjects\manim-fisica`; branch `main`.
+- **Segundo PC (pessoal, 2026-10-06):** clone em `C:\Users\Pichau\PycharmProjects\manim-fisica`; ambiente criado com `uv sync` a partir do `uv.lock` (`uv` 0.12.22, Manim CE 0.21.0, MF-Tools 1.4.9), MiKTeX 26.5 e Git 2.55; preview `ATE=1` do `vid_0012` renderizado para provar o LaTeX. Os MP4 de `renders/` foram copiados à mão do Drive (a pasta é ignorada pelo Git). Commits deste PC usam a identidade de Git local ao repositório (`kaio.ortiz@usp.br`).
 - Remoto `origin` configurado: `https://github.com/Unylake18/parallaxlab.git`.
 - A consolidação técnica dos dois primeiros vídeos e a limpeza restrita de
   `media/` foram concluídas e enviadas ao `origin/main`. A `main` local e
@@ -240,15 +241,35 @@ e `..._final_legendado.mp4`. Narração ElevenLabs `audio/narracao_final.wav`, i
 (`gerar_capa.py`), escolha pendente. Segundo a `ficha.md`, aprovação humana do vídeo final e publicação pendentes.
 **Não publicado.**
 
-**vid_0012 — vídeo final aprovado (2026-10-02):** `EXERCÍCIO RESOLVIDO · EP. 05`, campo de uma esfera isolante
-com ρ(r) = ρ0(1 − r/R) e máximo em r = 2R/3, em `videos/vid_0012_campo_esfera_nao_uniforme/`, classe
-`CampoEsfera012`. Finais locais em **1080×1920, 30 fps, 4.957 quadros, ~165,22 s** (AAC estéreo):
+**vid_0012 — vídeo final aprovado (2026-10-02); termo trocado em 2026-10-03:** `EXERCÍCIO RESOLVIDO · EP. 05`, campo de uma
+esfera isolante com ρ(r) = ρ0(1 − r/R) e máximo em r = 2R/3, em `videos/vid_0012_campo_esfera_nao_uniforme/`, classe
+`CampoEsfera012`. Em 2026-10-03 o termo “carga encerrada, Q_enc” passou a **“carga envolvida, Q_env”** (voz regravada, sincronia,
+legenda, final e capa 6 refeitos; os finais anteriores ficam em `renders/` com sufixo `_qenc`). Finais locais atuais em
+**1080×1920, 30 fps, 4.978 quadros, ~165,92 s** (AAC estéreo de 165,04 s):
 `renders/vid_0012_campo_esfera_nao_uniforme_final_master_limpo.mp4` e `..._final_legendado.mp4`. Narração ElevenLabs
-`audio/narracao_final.wav`, intacta; 57 âncoras de fala (`sync.json`); SRT `legenda.srt` com 64 cues. **Pendentes:
-capa e publicação** (segundo a `ficha.md`, seguem em outro computador).
+`audio/narracao_final.wav` (take Q_env), intacta; 58 âncoras de fala (`sync.json`; `PAUSAS_FIXAS` em `gerar_sync.py` corrige duas
+pausas que o alinhador errava); SRT `legenda.srt` com 65 cues. Capas: seis propostas versionadas em `capas/` (`gerar_capa.py`; a 6,
+“LEI DE GAUSS COM / DENSIDADE DE CARGA VARIÁVEL”, já com Q_env) e alternativas em `capas_codex/` e `capas_teste/`. **Segundo a
+`ficha.md`, escolha da capa e publicação seguem pendentes; publicação não comprovada no repositório.** O take anterior da voz
+(`audio/narracao_final_qenc_antiga.wav`, ~29 MB) não foi versionado.
 
-**vid_0013 — em finalização, segundo o usuário (2026-10-03):** produzido em outro computador; não há pasta, arquivo
-nem commit do `vid_0013` neste repositório (`main` e `origin/main`). Não registrar como concluído sem evidência.
+**vid_0013 — publicado, segundo o usuário (2026-10-06):** `DA EQUAÇÃO AO FENÔMENO · EP. 04`, potencial de poço duplo
+(partícula presa ou atravessando a barreira, a partir de F(x) e U(x)), em `videos/vid_0013_potencial_poco_duplo/`, classe
+`PotencialPocoDuplo013`. Versionado em 2026-10-06 a partir do trabalho do outro computador: cena final `cena.py` (mais as
+iterações `cena_v2`–`cena_v9`), narração `audio/narracao_final.wav` (159,68 s de fonte) com `montagem.json` (inserções de
+silêncio, 17,25 s no total), `sync.json`/`native.json`, `legenda.srt`, `texto_narracao.txt`, `gerar_sync.py`, capas
+(`capas/`, `gerar_capa.py`, `gerar_capas_variacoes.py`) e pranchas de QA (`frames_preview*`). Não há `ficha.md` nem `revisao.md`
+na pasta; a publicação vem do relato do usuário, sem URL nem data registradas. O WAV intermediário `audio/narracao_montagem.wav`
+(~30 MB, derivado da voz final conforme `montagem.json`) não foi versionado.
+
+**vid_0014 — em finalização, segundo o usuário (2026-10-06):** `POR TRÁS DA FÓRMULA · EP. 05`, “Por que o eixo muda o momento
+de inércia?” (teorema dos eixos paralelos, barra fina, caso final d = L/2), em
+`videos/vid_0014_momento_inercia_eixos_paralelos/`, classe `MomentoInercia014`. Versionados `cena.py`, `ficha.md`, `roteiro.md` e
+as pranchas de QA em `frames_preview/` (v1–v5). Pela `ficha.md`, o estado documentado é **preview Manim V5 silencioso**
+(sem voz, SRT, capa, final ou publicação); o relato de “finalização” ainda não está refletido na ficha.
+
+**vid_0015 — iniciando, segundo o usuário (2026-10-06):** ainda sem pasta, arquivo nem commit neste repositório. Não registrar
+como iniciado em disco sem evidência.
 
 **Próxima ação:** escolher a capa do `vid_0008` (propostas A–F) e publicá-lo; publicar o
 `vid_0009` (capa pronta); continuar o `vid_0010` (preview em produção). **Pendências editoriais:** as antigas pautas 8
