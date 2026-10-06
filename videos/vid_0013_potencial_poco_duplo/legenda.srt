@@ -1,0 +1,304 @@
+1
+00:00:00,040 --> 00:00:01,123
+Essa
+partícula fica
+
+2
+00:00:01,143 --> 00:00:03,780
+presa de um lado ou
+atravessa para o outro?
+
+3
+00:00:03,900 --> 00:00:06,340
+Dá para descobrir
+sem resolver x(t).
+
+4
+00:00:06,590 --> 00:00:09,260
+A seta mostra a força,
+não a velocidade.
+
+5
+00:00:09,480 --> 00:00:11,240
+A força depende
+da posição.
+
+6
+00:00:11,390 --> 00:00:13,670
+Ela se anula onde
+um dos fatores zera:
+
+7
+00:00:14,507 --> 00:00:17,827
+em x igual a zero
+e em x igual a ±ℓ.
+
+8
+00:00:17,997 --> 00:00:20,358
+Em x igual a
+ℓ/2, a força
+
+9
+00:00:20,378 --> 00:00:24,250
+vale 3F0/8: positiva,
+para a direita.
+
+10
+00:00:24,520 --> 00:00:26,700
+Cada ponto do gráfico
+reúne uma posição
+
+11
+00:00:26,720 --> 00:00:28,950
+escolhida e a força
+nessa posição.
+
+12
+00:00:29,100 --> 00:00:31,850
+Trocar o sinal da posição
+troca o sinal da força.
+
+13
+00:00:32,140 --> 00:00:34,360
+Perto de ℓ, a força
+aponta de volta;
+
+14
+00:00:34,610 --> 00:00:36,570
+perto do centro,
+aponta para longe.
+
+15
+00:00:36,850 --> 00:00:38,590
+Que potencial
+gera essa força?
+
+16
+00:00:38,760 --> 00:00:41,300
+A força é menos a
+derivada do potencial;
+
+17
+00:00:42,624 --> 00:00:45,564
+então o potencial é
+menos a integral da força.
+
+18
+00:00:45,754 --> 00:00:46,984
+Substituímos
+a força,
+
+19
+00:00:47,590 --> 00:00:50,760
+tiramos F0 da integral e
+integramos termo a termo:
+
+20
+00:00:53,164 --> 00:00:56,594
+x²/2,
+e x⁴/4.
+
+21
+00:00:58,927 --> 00:01:00,627
+Ao distribuir o
+fator negativo,
+
+22
+00:01:01,777 --> 00:01:05,607
+menos com menos dá mais,
+e o termo em x⁴ fica positivo.
+
+23
+00:01:06,277 --> 00:01:07,087
+E a
+constante?
+
+24
+00:01:07,257 --> 00:01:09,577
+Somar uma constante
+não muda a inclinação,
+
+25
+00:01:09,757 --> 00:01:13,347
+então não muda a força: a força
+não escolhe onde fica o zero.
+
+26
+00:01:13,447 --> 00:01:16,437
+Escolhemos
+potencial zero em ±ℓ.
+
+27
+00:01:19,981 --> 00:01:22,821
+Somando F0ℓ/4
+aos dois lados,
+
+28
+00:01:23,061 --> 00:01:25,821
+a constante
+vale F0ℓ/4.
+
+29
+00:01:26,081 --> 00:01:27,271
+Com a constante
+no lugar,
+
+30
+00:01:29,767 --> 00:01:32,597
+colocamos F0ℓ/4
+em evidência,
+
+31
+00:01:32,737 --> 00:01:35,499
+e aparece um quadrado
+perfeito: o quadrado da razão
+
+32
+00:01:35,519 --> 00:01:38,947
+entre x e ℓ, menos um;
+tudo isso ao quadrado.
+
+33
+00:01:39,157 --> 00:01:40,097
+São dois
+mínimos, em ±ℓ,
+
+34
+00:01:40,387 --> 00:01:44,297
+separados por uma
+barreira de altura Ub.
+
+35
+00:01:44,427 --> 00:01:45,787
+Onde a força é positiva,
+o potencial desce;
+
+36
+00:01:45,907 --> 00:01:48,767
+onde é
+negativa, sobe.
+
+37
+00:01:49,537 --> 00:01:50,747
+A segunda
+derivada confirma:
+
+38
+00:01:50,877 --> 00:01:54,117
+máximo instável no
+centro, mínimos estáveis.
+
+39
+00:01:54,507 --> 00:01:55,623
+Em uma dimensão,
+sem dissipação,
+
+40
+00:01:55,643 --> 00:01:57,287
+a energia total é a
+cinética mais a potencial;
+
+41
+00:01:57,407 --> 00:02:01,167
+a cinética é
+a diferença.
+
+42
+00:02:01,347 --> 00:02:05,012
+Ela vale um meio de
+mv²: com massa positiva
+
+43
+00:02:05,032 --> 00:02:08,647
+e v² nunca negativo,
+não pode ser negativa.
+
+44
+00:02:08,707 --> 00:02:10,461
+Então só são
+permitidas posições
+
+45
+00:02:10,481 --> 00:02:13,297
+onde o potencial não
+passa da energia total.
+
+46
+00:02:15,142 --> 00:02:18,522
+Cada condição inicial fixa
+essa energia, que se conserva.
+
+47
+00:02:18,712 --> 00:02:19,952
+Com a referência
+escolhida,
+
+48
+00:02:20,092 --> 00:02:22,502
+energia zero é repouso
+em um dos mínimos.
+
+49
+00:02:22,812 --> 00:02:25,462
+Abaixo da barreira, há
+duas regiões permitidas,
+
+50
+00:02:25,722 --> 00:02:27,332
+mas a partícula
+fica numa só,
+
+51
+00:02:27,462 --> 00:02:29,502
+oscilando entre dois
+pontos de retorno.
+
+52
+00:02:29,702 --> 00:02:31,942
+Com energia exatamente
+igual à barreira,
+
+53
+00:02:32,062 --> 00:02:34,490
+a partícula se aproxima
+do centro cada vez
+
+54
+00:02:34,510 --> 00:02:37,072
+mais devagar, sem
+alcançá-lo em tempo finito.
+
+55
+00:02:37,282 --> 00:02:39,942
+O repouso exato no
+topo seria outro caso.
+
+56
+00:02:40,835 --> 00:02:44,085
+Acima da barreira, ainda sobra
+energia cinética no centro:
+
+57
+00:02:44,285 --> 00:02:46,465
+ela atravessa, e
+retorna nos extremos.
+
+58
+00:02:46,875 --> 00:02:49,801
+A força define o potencial;
+a energia determina
+
+59
+00:02:49,821 --> 00:02:53,015
+se a partícula oscila de um
+lado ou atravessa o centro.
+
+60
+00:02:53,115 --> 00:02:55,115
+A energia decide
+a travessia.
+
+61
+00:02:55,255 --> 00:02:56,775
+Siga o
+Parallax Lab.

@@ -1,0 +1,27 @@
+Essa partícula fica presa de um lado ou atravessa para o outro? Dá para descobrir sem resolver x de tê. A seta mostra a força, não a velocidade.
+
+A força depende da posição. Ela se anula onde um dos fatores zera: em x igual a zero e em x igual a mais ou menos L.
+
+Em x igual a L sobre dois, a força vale três oitavos de F zero: positiva, para a direita. Cada ponto do gráfico reúne uma posição escolhida e a força nessa posição.
+
+Trocar o sinal da posição troca o sinal da força. Perto de L, a força aponta de volta; perto do centro, aponta para longe. Que potencial gera essa força?
+
+A força é menos a derivada do potencial; então o potencial é menos a integral da força. Substituímos a força, tiramos F zero da integral e integramos termo a termo: x ao quadrado sobre dois, e x à quarta sobre quatro. Ao distribuir o fator negativo, menos com menos dá mais, e o termo em x à quarta fica positivo.
+
+E a constante? Somar uma constante não muda a inclinação, então não muda a força: a força não escolhe onde fica o zero. Escolhemos potencial zero em mais ou menos L. Somando F zero L sobre quatro aos dois lados, a constante vale F zero L sobre quatro.
+
+Com a constante no lugar, colocamos F zero L sobre quatro em evidência, e aparece um quadrado perfeito: o quadrado da razão entre x e L, menos um; tudo isso ao quadrado.
+
+São dois mínimos, em mais e menos L, separados por uma barreira de altura U bê. Onde a força é positiva, o potencial desce; onde é negativa, sobe. A segunda derivada confirma: máximo instável no centro, mínimos estáveis.
+
+Em uma dimensão, sem dissipação, a energia total é a cinética mais a potencial; a cinética é a diferença. Ela vale um meio de eme vê ao quadrado: com massa positiva e vê ao quadrado nunca negativo, não pode ser negativa. Então só são permitidas posições onde o potencial não passa da energia total. Cada condição inicial fixa essa energia, que se conserva.
+
+Com a referência escolhida, energia zero é repouso em um dos mínimos.
+
+Abaixo da barreira, há duas regiões permitidas, mas a partícula fica numa só, oscilando entre dois pontos de retorno.
+
+Com energia exatamente igual à barreira, a partícula se aproxima do centro cada vez mais devagar, sem alcançá-lo em tempo finito. O repouso exato no topo seria outro caso.
+
+Acima da barreira, ainda sobra energia cinética no centro: ela atravessa, e retorna nos extremos. A força define o potencial; a energia determina se a partícula oscila de um lado ou atravessa o centro.
+
+A energia decide a travessia. Siga o Parallax Lab.

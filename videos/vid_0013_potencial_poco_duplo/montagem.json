@@ -1,0 +1,78 @@
+{
+ "fonte": "audio/narracao_final.wav",
+ "saida": "audio/narracao_montagem.wav",
+ "duracao_fonte_s": 159.68,
+ "silencio_total_s": 17.25,
+ "insercoes": [
+  {
+   "t_fonte_s": 13.8,
+   "silencio_s": 0.577,
+   "trecho": "a5->a6"
+  },
+  {
+   "t_fonte_s": 21.82,
+   "silencio_s": 0.323,
+   "trecho": "a7->a8"
+  },
+  {
+   "t_fonte_s": 40.495,
+   "silencio_s": 1.134,
+   "trecho": "b1->b2"
+  },
+  {
+   "t_fonte_s": 45.045,
+   "silencio_s": 0.416,
+   "trecho": "b3->b4"
+  },
+  {
+   "t_fonte_s": 48.465,
+   "silencio_s": 2.094,
+   "trecho": "b5->b6"
+  },
+  {
+   "t_fonte_s": 50.18,
+   "silencio_s": 0.26,
+   "trecho": "b6->b7"
+  },
+  {
+   "t_fonte_s": 51.85,
+   "silencio_s": 2.093,
+   "trecho": "b7->b8"
+  },
+  {
+   "t_fonte_s": 53.8,
+   "silencio_s": 1.01,
+   "trecho": "b8->b9"
+  },
+  {
+   "t_fonte_s": 57.76,
+   "silencio_s": 0.43,
+   "trecho": "b9->c1"
+  },
+  {
+   "t_fonte_s": 68.1,
+   "silencio_s": 3.424,
+   "trecho": "c3->c4"
+  },
+  {
+   "t_fonte_s": 75.59,
+   "silencio_s": 2.336,
+   "trecho": "d1->d2"
+  },
+  {
+   "t_fonte_s": 94.645,
+   "silencio_s": 0.7,
+   "trecho": "e2->e3"
+  },
+  {
+   "t_fonte_s": 118.475,
+   "silencio_s": 1.775,
+   "trecho": "f4->f5"
+  },
+  {
+   "t_fonte_s": 143.415,
+   "silencio_s": 0.683,
+   "trecho": "g3->g5"
+  }
+ ]
+}
