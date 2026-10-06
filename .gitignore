@@ -13,6 +13,10 @@ media/
 renders/*
 !renders/.gitkeep
 
+# Áudio dos vídeos longos: os WAV passam de 100 MB (limite de arquivo do GitHub); guardar no Drive
+videos_longos/*/audio/*.wav
+videos_longos/*/audio/partes/
+
 # Caches
 .pytest_cache/
 .ruff_cache/
