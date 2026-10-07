@@ -1,0 +1,88 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "eletromagnetismo/campo_eletrico",
+    "mecanica/momento_de_inercia"
+  ],
+  "validado_em": "2026-10-07",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.71,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060, com cargas e sem eixo"
+  },
+  "origem": "experimentos/blender/distribuicoes.py",
+  "id": "disco_carregado",
+  "nome": "Disco carregado",
+  "descricao": "Disco fino de vidro azulado no plano YZ, com eixo de simetria em X, e cargas uniformes sobre a superfície (distância mínima entre elas, semente fixa). Eixo de simetria opcional (tracejado neutro).",
+  "leitura_visual": "Disco translúcido de borda luminosa, cheio de pontos uniformes e, opcionalmente, o eixo tracejado atravessando o centro. Lê-se como 'carga distribuída numa superfície circular'.",
+  "usar_quando": [
+    "campo elétrico no eixo de um disco carregado (anéis concêntricos somados; no limite de raio grande recupera o plano infinito)",
+    "momento de inércia de um disco (com_cargas=0), com o eixo de simetria desenhado",
+    "contraste com o anel (linha circular) e com a placa infinita (plano ilimitado)"
+  ],
+  "nao_usar_quando": [
+    "o ponto do vídeo é um plano ilimitado sem borda (use placa_infinita_carregada)",
+    "a carga está só no aro (use anel_carregado)"
+  ],
+  "limitacoes": [
+    "o campo e a gaussiana não são desenhados: o ciano é reservado ao campo (animação 2D/Manim)",
+    "em contexto de mecânica (com_cargas=0) o azul de 'fonte física' vem da gramática de Eletromagnetismo; a gramática de cor da Mecânica não foi verificada aqui",
+    "espessura/raio do corpo exagerados em relação ao ideal (o corpo de vidro é visível); as cargas ficam dentro dele",
+    "cargas apenas sobre o plano médio do disco (visíveis através do vidro): uma só camada",
+    "a densidade é uniforme: perfil radial não uniforme não está representado"
+  ],
+  "construtor": "disco_carregado",
+  "parametros": {
+    "raio": {
+      "valor": 1.8,
+      "unidade": "u",
+      "descricao": "raio do disco"
+    },
+    "espessura": {
+      "valor": 0.06,
+      "unidade": "u",
+      "descricao": "espessura do disco (visual)"
+    },
+    "n_cargas": {
+      "valor": 110,
+      "unidade": "n",
+      "descricao": "número de cargas desejado (pode sair menos se a distância mínima não couber)"
+    },
+    "dist_min": {
+      "valor": 0.28,
+      "unidade": "u",
+      "descricao": "distância mínima entre cargas"
+    },
+    "com_cargas": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = cargas pontuais (campo elétrico); 0 = só o corpo de vidro (ex.: momento de inércia)"
+    },
+    "eixo": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = eixo de simetria tracejado em cor neutra"
+    },
+    "comprimento_eixo": {
+      "valor": 4.0,
+      "unidade": "u",
+      "descricao": "comprimento do eixo de simetria, se desenhado"
+    },
+    "semente": {
+      "valor": 7,
+      "unidade": "n",
+      "descricao": "semente do sorteio/jitter (mesma semente = mesma distribuição)"
+    }
+  },
+  "enquadramento": {
+    "azimute": -50,
+    "elevacao": 22,
+    "lente": 50,
+    "margem": 0.09
+  },
+  "preview_set": [
+    "eixo=1"
+  ],
+  "preview": "previews/disco_carregado.png"
+}

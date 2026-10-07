@@ -1,0 +1,82 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "eletromagnetismo/campo_eletrico",
+    "mecanica/momento_de_inercia"
+  ],
+  "validado_em": "2026-10-07",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.63,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060, com cargas e sem eixo"
+  },
+  "origem": "experimentos/blender/distribuicoes.py",
+  "id": "anel_carregado",
+  "nome": "Anel carregado (aro)",
+  "descricao": "Anel fino de vidro azulado no plano YZ, com eixo de simetria em X, e cargas espaçadas ao longo do aro (espaçamento regular com pequeno jitter). Eixo de simetria opcional (tracejado neutro).",
+  "leitura_visual": "Aro de vidro fino com pontos azuis alinhados e, opcionalmente, o eixo tracejado atravessando o centro. Lê-se como 'carga distribuída numa linha circular; o campo no eixo se calcula somando dq'.",
+  "usar_quando": [
+    "campo elétrico no eixo de um anel carregado (integração de elementos de carga dq, simetria, análise de máximo e limites)",
+    "momento de inércia de um aro (com_cargas=0), com o eixo de simetria desenhado",
+    "contraste com o disco (superfície) e com a haste (linha reta)"
+  ],
+  "nao_usar_quando": [
+    "a carga está numa superfície (use disco_carregado) ou numa linha reta (use haste_carregada)",
+    "a espessura real do anel importa para o problema (o tubo aqui é só visual)"
+  ],
+  "limitacoes": [
+    "o campo e a gaussiana não são desenhados: o ciano é reservado ao campo (animação 2D/Manim)",
+    "em contexto de mecânica (com_cargas=0) o azul de 'fonte física' vem da gramática de Eletromagnetismo; a gramática de cor da Mecânica não foi verificada aqui",
+    "espessura/raio do corpo exagerados em relação ao ideal (o corpo de vidro é visível); as cargas ficam dentro dele",
+    "as cargas têm espaçamento quase regular (jitter 0,12): uma distribuição contínua é aproximada por pontos"
+  ],
+  "construtor": "anel_carregado",
+  "parametros": {
+    "raio": {
+      "valor": 1.5,
+      "unidade": "u",
+      "descricao": "raio do anel"
+    },
+    "raio_tubo": {
+      "valor": 0.07,
+      "unidade": "u",
+      "descricao": "raio do tubo do anel (visual)"
+    },
+    "n_cargas": {
+      "valor": 60,
+      "unidade": "n",
+      "descricao": "número de cargas ao longo do aro"
+    },
+    "com_cargas": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = cargas pontuais (campo elétrico); 0 = só o corpo de vidro (ex.: momento de inércia)"
+    },
+    "eixo": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = eixo de simetria tracejado em cor neutra"
+    },
+    "comprimento_eixo": {
+      "valor": 4.0,
+      "unidade": "u",
+      "descricao": "comprimento do eixo de simetria, se desenhado"
+    },
+    "semente": {
+      "valor": 7,
+      "unidade": "n",
+      "descricao": "semente do sorteio/jitter (mesma semente = mesma distribuição)"
+    }
+  },
+  "enquadramento": {
+    "azimute": -50,
+    "elevacao": 22,
+    "lente": 50,
+    "margem": 0.09
+  },
+  "preview_set": [
+    "eixo=1"
+  ],
+  "preview": "previews/anel_carregado.png"
+}

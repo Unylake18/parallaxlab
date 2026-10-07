@@ -1,0 +1,92 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "eletromagnetismo/lei_de_gauss"
+  ],
+  "validado_em": "2026-10-07",
+  "id": "gaussiana_cilindrica",
+  "nome": "Superfície gaussiana cilíndrica (fechada)",
+  "descricao": "Cilindro gaussiano fechado (eixo X) de raio `raio` e comprimento `comprimento`: duas tampas circulares e linhas longitudinais em violeta (#9C8CFF), sobre vidro violeta muito translúcido. Lateral e tampas têm estilo independente (tracejado ou contínuo). Por padrão envolve um cilindro maciço de referência.",
+  "leitura_visual": "Cilindro de traços violeta sobre a fonte azul. Na gramática da série: lateral contínua = parte que contribui ao fluxo; tampas tracejadas = fluxo nulo (campo radial). O preview mostra esse estado (lateral contínua).",
+  "usar_quando": [
+    "simetria cilíndrica: linha infinita, cilindro maciço, casca cilíndrica, cabo coaxial",
+    "mostrar que o fluxo vem só da lateral (2πrL) e as tampas não contribuem",
+    "delimitar r < a, a < r < b e r > b com raios diferentes de gaussiana"
+  ],
+  "nao_usar_quando": [
+    "simetria esférica ou planar (use gaussiana_esferica ou gaussiana_caixa)",
+    "o campo não é radial ao eixo: o argumento das tampas nulas deixa de valer"
+  ],
+  "limitacoes": [
+    "a gaussiana é uma construção matemática, não um objeto físico: nunca preenchimento sólido (as faces são vidro violeta muito translúcido, só para dar volume)",
+    "com_fonte=1 desenha também uma fonte de referência (aprovada do arsenal) só para contexto e teste de leitura; em vídeo use com_fonte=0 e componha com a fonte da cena",
+    "comprimento finito: a gaussiana tem tampas, a fonte é idealmente infinita",
+    "as linhas longitudinais (4 por padrão) são só guias de leitura da superfície",
+    "eixo fixo em X; o enquadramento padrão (azimute -45, elevação 20) foi escolhido para a lateral ler bem"
+  ],
+  "construtor": "gaussiana_cilindrica",
+  "parametros": {
+    "raio": {
+      "valor": 1.5,
+      "unidade": "u",
+      "descricao": "raio do cilindro gaussiano"
+    },
+    "comprimento": {
+      "valor": 3.0,
+      "unidade": "u",
+      "descricao": "comprimento ao longo do eixo X"
+    },
+    "lateral_continua": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "0 = lateral tracejada; 1 = contínua (contribui)"
+    },
+    "tampas_continuas": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "0 = tampas tracejadas; 1 = contínuas"
+    },
+    "n_linhas": {
+      "valor": 4,
+      "unidade": "n",
+      "descricao": "linhas longitudinais de guia"
+    },
+    "faces": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = vidro violeta translúcido; 0 = só os traços"
+    },
+    "com_fonte": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = desenha um cilindro maciço de referência dentro"
+    },
+    "raio_fonte": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "raio do cilindro de referência"
+    },
+    "comprimento_fonte": {
+      "valor": 4.0,
+      "unidade": "u",
+      "descricao": "comprimento do cilindro de referência"
+    }
+  },
+  "enquadramento": {
+    "azimute": -45,
+    "elevacao": 20,
+    "lente": 50,
+    "margem": 0.09
+  },
+  "preview_set": [
+    "lateral_continua=1"
+  ],
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 1.21,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060, com a fonte de referência (com_fonte=1)"
+  },
+  "preview": "previews/gaussiana_cilindrica.png",
+  "origem": "experimentos/blender/gaussiana.py"
+}

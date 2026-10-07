@@ -1,0 +1,47 @@
+{
+  "fonte": "Identidade: docs/identidade_visual.md. Gramática visual da série Lei de Gauss: constantes de cor em videos_longos/yt_0001_lei_gauss/cena.py e yt_0002_lei_gauss_casos_classicos/cena.py (o 3D segue o 2D, não o contrário).",
+  "cores": {
+    "fundo": {"hex": "#050816", "papel": "fundo da cena (muito escuro, bastante espaço negativo)"},
+    "texto_neutro": {"hex": "#F5F7FF", "papel": "matemática neutra; luz principal"},
+    "campo_eletrico": {"hex": "#35D9FF", "papel": "E⃗ e linhas de campo. RESERVADA ao campo: nunca em fontes, cargas ou superfícies"},
+    "fonte_fisica": {"hex": "#267BFF", "papel": "distribuição física: preenchimento do corpo, n̂"},
+    "fonte_contorno": {"hex": "#7FB2FF", "papel": "contorno/aro da distribuição física, cargas próximas, R, Q; luz de contorno"},
+    "gaussiana": {"hex": "#9C8CFF", "papel": "superfície gaussiana e r: construção matemática, tracejada ou translúcida, nunca sólida"},
+    "area_vetor": {"hex": "#745CFF", "papel": "vetor área d⃗A e seleção matemática translúcida"},
+    "apoio_magenta": {"hex": "#EA63FF", "papel": "apoio pontual de identidade; sem uso 3D definido"},
+    "fonte_escura": {"hex": "#0B2A7A", "papel": "DERIVADA de fonte_fisica, escurecida à mão: interior de cascas (profundidade)", "derivada": true}
+  },
+  "materiais": {
+    "casca_exterior": {"cor": "fonte_fisica", "emissao": 0.25, "rugosidade": 0.4, "metalico": 0.2},
+    "casca_interior": {"cor": "fonte_escura", "emissao": 0.05, "rugosidade": 0.6},
+    "casca_aro": {"cor": "fonte_contorno", "emissao": 1.2, "rugosidade": 0.3},
+    "vidro": {"cor": "fonte_fisica", "modo": "culling", "rugosidade": 0.15, "base": 0.16, "ganho": 0.60, "brilho_borda": 2.2, "blend": 0.35},
+    "carga": {"cor_perto": "fonte_contorno", "cor_longe": "fonte_fisica", "brilho_min": 0.5, "brilho_ganho": 1.4, "tamanho": 0.04},
+    "placa": {"cor": "fonte_fisica", "modo": "culling", "rugosidade": 0.15, "base": 0.14, "ganho": 0.5, "brilho_borda": 1.4, "blend": 0.35,
+              "fade_inicio": 0.5, "grade_passo": 1.0, "grade_largura": 0.03, "grade_alfa": 0.3, "grade_brilho": 0.6},
+    "gaussiana": {"cor": "gaussiana", "emissao_traco": 1.8, "espessura_traco": 0.014, "periodo_traco": 0.3, "razao_traco": 0.6,
+                  "vidro_base": 0.03, "vidro_ganho": 0.22, "vidro_brilho_borda": 0.8},
+    "distribuicao": {"vidro_base": 0.3, "vidro_ganho": 0.6, "vidro_brilho_borda": 2.2, "jitter": 0.12},
+    "eixo": {"cor": "texto_neutro", "emissao": 0.8, "espessura": 0.01, "periodo": 0.3, "razao": 0.6}
+  },
+  "iluminacao": {
+    "principal": {"loc": [4, -4, 5], "cor": "texto_neutro", "energia": 350, "tamanho": 4},
+    "contorno": {"loc": [-4, 4, 3], "cor": "fonte_contorno", "energia": 350, "tamanho": 3}
+  },
+  "camera": {"azimute": -23, "elevacao": 17, "lente": 50, "margem": 0.09},
+  "render": {
+    "motor": "Eevee",
+    "amostras": 64,
+    "view_transform": "Standard",
+    "preview": {"largura": 960, "altura": 540, "fps": 15},
+    "final": {"largura": 1920, "altura": 1080, "fps": 30}
+  },
+  "regras": [
+    "Ciano é só do campo elétrico: cargas e fontes são azul (#267BFF preenchimento, #7FB2FF contorno).",
+    "Superfície gaussiana é violeta #9C8CFF, tracejada ou translúcida; nunca preenchimento sólido (não pode esconder a fonte).",
+    "Sem bloom e sem estética gamer: a emissão máxima do arsenal é 2,2 (borda do vidro); nenhum sólido compete com texto e equações.",
+    "Fundo #050816 e view transform Standard: as cores renderizadas têm de bater com a paleta do 2D.",
+    "Legibilidade antes de efeito: ao desenhar um sólido novo, a distinção entre sólidos vizinhos (ex.: casca x maciço) deve valer sem rótulo.",
+    "Nenhum hexadecimal ou parâmetro de material solto no código: tudo vem deste arquivo (gerar_catalogo.py recusa literais)."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "id": "cilindro_coaxial",
+  "nome": "Cilindro coaxial (condutor maciço + casca externa, em corte)",
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": ["eletromagnetismo/lei_de_gauss", "eletromagnetismo/campo_eletrico"],
+  "descricao": "Modelo do capacitor coaxial (yt_0002, A4): condutor interno maciço de raio `raio_a` (vidro translúcido) dentro de uma casca externa delgada de raio `raio_b` > `raio_a`, coaxiais, com eixo ao longo de X. A casca tem uma faixa longitudinal removida (voltada para a câmera) para o condutor aparecer. O condutor tem cargas só na superfície; a casca tem o MESMO número de cargas na face interna (lambda igual e oposto), logo mais esparsas.",
+  "leitura_visual": "Casca azul opaca aberta, com aro claro (#7FB2FF) marcando a parede e o corte; dentro, um cilindro de vidro com pontos azuis só na superfície. O vão entre os dois é vazio. Lê-se como 'duas superfícies carregadas, coaxiais, com um vão entre elas'.",
+  "usar_quando": [
+    "capacitor coaxial / cabo coaxial: condutor interno maciço e condutor externo em casca delgada, em equilíbrio eletrostático",
+    "mostrar que a carga do condutor interno fica na sua superfície (e não no volume) e que as cargas por comprimento são iguais e opostas",
+    "delimitar as regiões r < a, a < r < b e r > b para a superfície gaussiana coaxial"
+  ],
+  "nao_usar_quando": [
+    "o interno é isolante com carga em volume (use cilindro_macico_isolante)",
+    "o condutor externo é espesso com três raios públicos (a, b, c): este sólido tem casca delgada de propósito",
+    "o ponto do vídeo exige distinguir o sinal das cargas (+ e −) em cor: aqui o sinal não é codificado (use rótulos no Manim)",
+    "um cilindro isolado sem condutor externo (use casca_cilindrica_oca ou cilindro_macico_isolante)"
+  ],
+  "limitacoes": [
+    "o sinal da carga não é codificado em cor (o padrão visual não define cores de polaridade); +λ e −λ têm de ser indicados por rótulos no Manim",
+    "o corte longitudinal é convenção de leitura: a casca real é fechada; as cargas da faixa removida não são desenhadas, então aparecem menos cargas visíveis na casca do que o número nominal",
+    "o condutor interno usa o mesmo vidro do isolante maciço: o que o distingue é a carga só na superfície",
+    "espessura de parede exagerada em relação a uma casca ideal delgada (padrão 0,08)",
+    "o corte aponta para a câmera padrão (azimute -23, elevação 17); com outro ângulo pode ficar de costas"
+  ],
+  "construtor": "cilindro_coaxial",
+  "parametros": {
+    "raio_a": {"valor": 0.5, "unidade": "u", "descricao": "raio do condutor interno"},
+    "raio_b": {"valor": 1.5, "unidade": "u", "descricao": "raio externo da casca (deve ser maior que raio_a)"},
+    "comprimento": {"valor": 5.0, "unidade": "u", "descricao": "comprimento ao longo do eixo X (igual nos dois cilindros)"},
+    "espessura": {"valor": 0.08, "unidade": "u", "descricao": "espessura da parede da casca (cresce para dentro)"},
+    "n_cargas": {"valor": 70, "unidade": "n", "descricao": "cargas por superfície, iguais nas duas (lambda igual e oposto)"},
+    "dist_min": {"valor": 0.35, "unidade": "u", "descricao": "distância mínima entre cargas"},
+    "tamanho_carga": {"valor": 0.04, "unidade": "u", "descricao": "raio de cada esfera de carga"},
+    "semente": {"valor": 7, "unidade": "n", "descricao": "semente do sorteio (mesma semente = mesma distribuição)"},
+    "corte": {"valor": 1, "unidade": "0/1", "descricao": "1 = remove a faixa da casca voltada para a câmera; 0 = casca inteira (o condutor só aparece pela ponta aberta)"}
+  },
+  "enquadramento": {"azimute": -23, "elevacao": 17, "lente": 50, "margem": 0.09},
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.95,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060"
+  },
+  "preview": "previews/cilindro_coaxial.png",
+  "origem": "experimentos/blender/coaxial.py",
+  "validado_em": "2026-10-07"
+}

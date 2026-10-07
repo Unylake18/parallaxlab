@@ -1,0 +1,41 @@
+{
+  "id": "esfera_macica_isolante",
+  "nome": "Esfera maciça isolante com cargas no volume",
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": ["eletromagnetismo/lei_de_gauss", "eletromagnetismo/campo_eletrico"],
+  "descricao": "Orbe de vidro azulado translúcido, preenchido, com cargas pontuais distribuídas uniformemente no volume da bola (distância mínima entre elas, semente fixa).",
+  "leitura_visual": "Vidro translúcido de borda luminosa cheio de pontos. Cargas próximas da câmera são azul-claro (#7FB2FF) e brilhantes; as distantes, azul (#267BFF) e fracas (pista de profundidade). O ciano fica livre para o campo E⃗. Lê-se como 'há material e carga em todo o volume'.",
+  "usar_quando": [
+    "a carga está distribuída no volume de uma esfera isolante com densidade uniforme",
+    "contraste casca x maciço (par com casca_esferica_oca)",
+    "mostrar que existe carga no interior, por exemplo campo crescendo com r dentro da esfera"
+  ],
+  "nao_usar_quando": [
+    "o material só existe na superfície (use casca_esferica_oca)",
+    "a densidade de carga é não uniforme e isso é o ponto do vídeo: as cargas aqui são uniformes (para rho(r) seria preciso outro sólido)",
+    "é preciso um condutor: num condutor a carga fica na superfície"
+  ],
+  "limitacoes": [
+    "distribuição uniforme apenas; não há perfil radial rho(r)",
+    "o brilho do vidro mostra um reflexo retangular suave da luz principal; é cosmético",
+    "o número de cargas desejado pode não caber com a distância mínima escolhida (sai menos)"
+  ],
+  "construtor": "esfera_macica_isolante",
+  "parametros": {
+    "raio": {"valor": 1.0, "unidade": "u", "descricao": "raio da esfera"},
+    "n_cargas": {"valor": 70, "unidade": "n", "descricao": "número de cargas desejado (pode sair menos se a distância mínima não couber)"},
+    "dist_min": {"valor": 0.3, "unidade": "u", "descricao": "distância mínima entre cargas"},
+    "tamanho_carga": {"valor": 0.04, "unidade": "u", "descricao": "raio de cada esfera de carga"},
+    "semente": {"valor": 7, "unidade": "n", "descricao": "semente do sorteio (mesma semente = mesma distribuição)"}
+  },
+  "enquadramento": {"azimute": -23, "elevacao": 17, "lente": 50, "margem": 0.14},
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.71,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060"
+  },
+  "preview": "previews/esfera_macica_isolante.png",
+  "origem": "experimentos/blender/esferas.py",
+  "validado_em": "2026-10-07"
+}

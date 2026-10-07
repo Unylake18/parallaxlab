@@ -1,0 +1,83 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "eletromagnetismo/campo_eletrico",
+    "mecanica/momento_de_inercia"
+  ],
+  "validado_em": "2026-10-07",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.62,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060, com cargas e sem eixo"
+  },
+  "origem": "experimentos/blender/distribuicoes.py",
+  "id": "haste_carregada",
+  "nome": "Haste carregada",
+  "descricao": "Haste fina de vidro azulado ao longo de Y, com eixo de simetria (mediatriz) em X, e cargas espaçadas ao longo dela. Eixo de simetria opcional (tracejado neutro).",
+  "leitura_visual": "Bastão de vidro fino com uma fileira de pontos azuis e, opcionalmente, o eixo tracejado cruzando-o ao meio. Lê-se como 'carga distribuída numa linha reta finita'.",
+  "usar_quando": [
+    "campo elétrico de uma haste finita carregada (integração de dq, ponto na mediatriz, limite de haste longa)",
+    "momento de inércia de uma haste (com_cargas=0), com o eixo de simetria desenhado",
+    "contraste com o anel (linha curva) e com o disco (superfície)"
+  ],
+  "nao_usar_quando": [
+    "a haste deve ser infinita: o objeto é finito (para linha infinita use gaussiana_cilindrica com a fonte da cena)",
+    "a espessura da haste importa para o problema"
+  ],
+  "limitacoes": [
+    "o campo e a gaussiana não são desenhados: o ciano é reservado ao campo (animação 2D/Manim)",
+    "em contexto de mecânica (com_cargas=0) o azul de 'fonte física' vem da gramática de Eletromagnetismo; a gramática de cor da Mecânica não foi verificada aqui",
+    "espessura/raio do corpo exagerados em relação ao ideal (o corpo de vidro é visível); as cargas ficam dentro dele",
+    "haste ao longo de Y fixa; em outra orientação, girar a câmera",
+    "as cargas têm espaçamento quase regular (jitter 0,12)"
+  ],
+  "construtor": "haste_carregada",
+  "parametros": {
+    "comprimento": {
+      "valor": 4.0,
+      "unidade": "u",
+      "descricao": "comprimento da haste (eixo Y)"
+    },
+    "raio": {
+      "valor": 0.1,
+      "unidade": "u",
+      "descricao": "raio da haste (visual)"
+    },
+    "n_cargas": {
+      "valor": 36,
+      "unidade": "n",
+      "descricao": "número de cargas ao longo da haste"
+    },
+    "com_cargas": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = cargas pontuais (campo elétrico); 0 = só o corpo de vidro (ex.: momento de inércia)"
+    },
+    "eixo": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = eixo de simetria tracejado em cor neutra"
+    },
+    "comprimento_eixo": {
+      "valor": 3.0,
+      "unidade": "u",
+      "descricao": "comprimento do eixo de simetria, se desenhado"
+    },
+    "semente": {
+      "valor": 7,
+      "unidade": "n",
+      "descricao": "semente do sorteio/jitter (mesma semente = mesma distribuição)"
+    }
+  },
+  "enquadramento": {
+    "azimute": -23,
+    "elevacao": 17,
+    "lente": 50,
+    "margem": 0.09
+  },
+  "preview_set": [
+    "eixo=1"
+  ],
+  "preview": "previews/haste_carregada.png"
+}

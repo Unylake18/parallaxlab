@@ -1,0 +1,68 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "eletromagnetismo/lei_de_gauss"
+  ],
+  "validado_em": "2026-10-07",
+  "id": "gaussiana_esferica",
+  "nome": "Superfície gaussiana esférica",
+  "descricao": "Esfera gaussiana de raio `raio`: equador e dois meridianos em violeta (#9C8CFF), tracejados por padrão, sobre um orbe de vidro violeta muito translúcido. Por padrão envolve uma esfera maciça de referência (`com_fonte`).",
+  "leitura_visual": "Três círculos violeta tracejados sobre uma esfera quase transparente, envolvendo a fonte azul. Tracejado = construção; contínuo (`continua=1`) = a superfície inteira contribui ao fluxo.",
+  "usar_quando": [
+    "simetria esférica: carga pontual, esfera maciça, casca esférica (campo radial)",
+    "delimitar as regiões r < R e r > R ao escolher o raio da gaussiana",
+    "mostrar o estado de construção (tracejada) e o de cálculo do fluxo (contínua)"
+  ],
+  "nao_usar_quando": [
+    "simetria cilíndrica ou planar (use gaussiana_cilindrica ou gaussiana_caixa)",
+    "qualquer superfície não fechada: esta é fechada por construção"
+  ],
+  "limitacoes": [
+    "a gaussiana é uma construção matemática, não um objeto físico: nunca preenchimento sólido (as faces são vidro violeta muito translúcido, só para dar volume)",
+    "com_fonte=1 desenha também uma fonte de referência (aprovada do arsenal) só para contexto e teste de leitura; em vídeo use com_fonte=0 e componha com a fonte da cena",
+    "a esfera inteira contribui: não há parte tracejada e parte contínua dentro de uma mesma esfera",
+    "representada por três círculos (equador e dois meridianos), não por malha completa"
+  ],
+  "construtor": "gaussiana_esferica",
+  "parametros": {
+    "raio": {
+      "valor": 1.5,
+      "unidade": "u",
+      "descricao": "raio da esfera gaussiana"
+    },
+    "continua": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "0 = tracejada (construção); 1 = contínua (contribui ao fluxo)"
+    },
+    "faces": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = orbe de vidro violeta translúcido; 0 = só os traços"
+    },
+    "com_fonte": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = desenha uma esfera maciça de referência dentro"
+    },
+    "raio_fonte": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "raio da esfera de referência (menor que `raio`)"
+    }
+  },
+  "enquadramento": {
+    "azimute": -23,
+    "elevacao": 17,
+    "lente": 50,
+    "margem": 0.09
+  },
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 1.01,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060, com a fonte de referência (com_fonte=1)"
+  },
+  "preview": "previews/gaussiana_esferica.png",
+  "origem": "experimentos/blender/gaussiana.py"
+}

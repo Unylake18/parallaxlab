@@ -1,0 +1,69 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "eletromagnetismo/lei_de_gauss"
+  ],
+  "validado_em": "2026-10-07",
+  "id": "gaussiana_caixa",
+  "nome": "Superfície gaussiana em caixa (pillbox)",
+  "descricao": "Caixa gaussiana curta (pillbox) de arestas violeta (#9C8CFF), com a normal do plano ao longo de X: `altura` em X e `lado` em Y e Z, centrada no plano. Faces de vidro violeta muito translúcido. Por padrão atravessa uma placa carregada de referência.",
+  "leitura_visual": "Caixa de arestas violeta tracejadas atravessando o plano azul: metade de cada lado. Lê-se como 'a gaussiana envolve um pedaço do plano'; o fluxo sai pelas duas faces paralelas ao plano.",
+  "usar_quando": [
+    "simetria planar: plano infinito carregado, placa não condutora",
+    "mostrar a caixa curta atravessando o plano e que só as faces paralelas ao plano contribuem",
+    "contraste com as gaussianas esférica e cilíndrica na mesma unidade"
+  ],
+  "nao_usar_quando": [
+    "simetria esférica ou cilíndrica (use gaussiana_esferica ou gaussiana_cilindrica)",
+    "placa condutora com a caixa de um lado só: esta caixa é simétrica em torno do plano"
+  ],
+  "limitacoes": [
+    "a gaussiana é uma construção matemática, não um objeto físico: nunca preenchimento sólido (as faces são vidro violeta muito translúcido, só para dar volume)",
+    "com_fonte=1 desenha também uma fonte de referência (aprovada do arsenal) só para contexto e teste de leitura; em vídeo use com_fonte=0 e componha com a fonte da cena",
+    "a caixa é centrada no plano x=0 e simétrica; caixa assimétrica não é suportada",
+    "no preview a placa de referência é menor (8 x 5) que a do sólido placa_infinita_carregada, para a caixa ficar legível",
+    "o enquadramento padrão (azimute -40, elevação 16) segue o da placa"
+  ],
+  "construtor": "gaussiana_caixa",
+  "parametros": {
+    "lado": {
+      "valor": 2.4,
+      "unidade": "u",
+      "descricao": "lado das faces paralelas ao plano (Y e Z)"
+    },
+    "altura": {
+      "valor": 1.4,
+      "unidade": "u",
+      "descricao": "espessura da caixa ao longo de X (a normal do plano)"
+    },
+    "continua": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "0 = arestas tracejadas; 1 = contínuas"
+    },
+    "faces": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = vidro violeta translúcido; 0 = só as arestas"
+    },
+    "com_fonte": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = desenha uma placa carregada de referência"
+    }
+  },
+  "enquadramento": {
+    "azimute": -40,
+    "elevacao": 16,
+    "lente": 50,
+    "margem": 0.06
+  },
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 1.38,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060, com a fonte de referência (com_fonte=1)"
+  },
+  "preview": "previews/gaussiana_caixa.png",
+  "origem": "experimentos/blender/gaussiana.py"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "casca_esferica_oca",
+  "nome": "Casca esférica oca (com corte em octante)",
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": ["eletromagnetismo/lei_de_gauss", "eletromagnetismo/campo_eletrico"],
+  "descricao": "Esfera oca de parede fina com um octante removido (x>0, y<0, z>0), voltado para a câmera padrão, que expõe a parede e o interior vazio. O raio externo é `raio`; a espessura cresce para dentro. Com `corte=0` a esfera fica fechada.",
+  "leitura_visual": "Exterior azul (#267BFF) opaco; o contorno do corte tem um aro claro (#7FB2FF) que mostra a parede fina; dentro, escuro e vazio. Lê-se como 'só há material na superfície; o interior é vazio'.",
+  "usar_quando": [
+    "a carga ou o material está só na superfície de uma esfera (casca esférica, condutor oco)",
+    "contraste casca x maciço (par com esfera_macica_isolante)",
+    "mostrar que o interior é vazio, por exemplo campo nulo dentro via Lei de Gauss"
+  ],
+  "nao_usar_quando": [
+    "precisa mostrar cargas individuais no volume (use esfera_macica_isolante)",
+    "o ponto do vídeo é a esfera inteira e fechada: o corte em octante existe só para mostrar o interior",
+    "densidade de carga não uniforme em volume (ex.: rho(r)): este sólido não representa perfil radial"
+  ],
+  "limitacoes": [
+    "o octante removido é uma convenção de leitura, não parte da física: a casca real é fechada",
+    "o corte aponta para a câmera padrão (azimute -23, elevação 17); com outro ângulo de câmera o corte pode ficar de costas",
+    "não desenha cargas individuais sobre a superfície",
+    "espessura de parede exagerada em relação a uma casca ideal (padrão 0,08)"
+  ],
+  "construtor": "casca_esferica_oca",
+  "parametros": {
+    "raio": {"valor": 1.0, "unidade": "u", "descricao": "raio externo"},
+    "espessura": {"valor": 0.08, "unidade": "u", "descricao": "espessura da parede (cresce para dentro)"},
+    "segmentos": {"valor": 96, "unidade": "n", "descricao": "segmentos de longitude (múltiplo de 4, para o corte cair sobre linhas da malha)"},
+    "aneis": {"valor": 48, "unidade": "n", "descricao": "anéis de latitude (par, pelo mesmo motivo)"},
+    "corte": {"valor": 1, "unidade": "0/1", "descricao": "1 = remove o octante voltado para a câmera; 0 = esfera fechada"}
+  },
+  "enquadramento": {"azimute": -23, "elevacao": 17, "lente": 50, "margem": 0.14},
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.45,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060"
+  },
+  "preview": "previews/casca_esferica_oca.png",
+  "origem": "experimentos/blender/esferas.py",
+  "validado_em": "2026-10-07"
+}
