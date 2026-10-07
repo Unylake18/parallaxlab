@@ -32,6 +32,7 @@ Consulte conforme necessidade:
 - `docs/identidade_visual.md` — identidade e marca;
 - `docs/decisoes.md` — decisões permanentes;
 - `docs/guia_mestre.md` — estratégia ampla;
+- `docs/formatos.md` — formatos curto vertical e longo horizontal, campos da ficha (inclui `solido_3d:`) e relatório "Teste do arsenal";
 - `docs/mapa_curricular.md` — arquitetura curricular/editorial; usar para localizar uma pauta dentro de Física/Cálculo e entender como ela se conecta à biblioteca futura;
 - `experimentos/blender/arsenal/catalogo.md` — arsenal de sólidos 3D (Blender) e seu padrão visual. Ao planejar um vídeo que precise de um sólido 3D (cilindro, casca, esfera etc.), consulte o catálogo ANTES de modelar algo novo: confira "usar quando / não usar quando" e o status (só `aprovado` serve); `experimentos/blender/arsenal/cobertura.md` mostra, por capítulo do mapa curricular, o que existe e o que falta. Ponte com o Manim pronta (sandbox): `Solido3D` em `experimentos/blender/arsenal/manim_solido3d.py` (uso e cuidados no `README.md` do arsenal); prepare as sequências antes do render final com `ponte.py`. Usar um sólido num vídeo continua exigindo handoff explícito. Para ver um sólido no Blender: `experimentos/blender/arsenal/abrir/<id>.bat`. O arsenal deve ser testado nos próximos vídeos (curtos e longos): ver `docs/formatos.md`.
 
@@ -132,10 +133,10 @@ Regras:
 
 O arsenal de sólidos 3D (90 sólidos aprovados) está em fase de **teste em vídeos reais**, curtos e longos. Ao receber o briefing de um vídeo novo:
 
-0. Índice enxuto de consulta rápida: `experimentos/blender/arsenal/indice_producao.md` (gerado por `gerar_indice.py`; regerar ao criar ou editar sólidos).
+0. Índice enxuto de consulta rápida: `experimentos/blender/arsenal/indice_producao.md` (gerado por `gerar_indice.py`; regerar ao criar ou editar sólidos). O briefing de Produção também o consulta para preencher `solido_3d:`.
 1. Leia o campo `solido_3d:` da `ficha.md`/briefing. Se houver um `id`, ele é a especificação: integre só nessa unidade.
-2. Se o campo faltar ou for `nenhum` sem justificativa, **avalie antes de implementar**: consulte `experimentos/blender/arsenal/catalogo.md` e `cobertura.md` (usar quando / não usar quando; só `aprovado`) e **reporte** o candidato (ou "nenhum, porque ...") sem integrar por conta própria. O briefing de Produção continua soberano.
-3. Com o `id` definido, siga o checklist de `experimentos/blender/arsenal/README.md` (seção "Uso no Manim"): `Solido3D` na `cena.py` da unidade, sequências preparadas com `ponte.py` antes do render final, quadros conferidos no preview, e nada em `template/`.
+2. Se o campo faltar ou for `nenhum` sem justificativa, **avalie antes de implementar**: consulte `experimentos/blender/arsenal/catalogo.md` e `cobertura.md` (usar quando / não usar quando; só `aprovado`) e **reporte** o candidato (ou "nenhum, porque ...") sem integrar por conta própria. O briefing de Produção continua soberano. O 3D só dá a geometria: valores, fórmulas, rótulos, sinais e setas de sentido são do Manim; não force 3D onde o 2D explica melhor.
+3. Com o `id` definido, siga o checklist de `experimentos/blender/arsenal/README.md` (seção "Uso no Manim"): `Solido3D` na `cena.py` da unidade, sequências preparadas com `ponte.py` antes do render final, quadros conferidos no preview, e nada em `template/`. Não invente sólido nem parâmetro fora do catálogo: se faltar algo, registre como "ajuste desejado" no relatório em vez de improvisar.
 4. No relatório de entrega, inclua o **"Teste do arsenal"**: sólido usado, resolução, custo/peso, o que funcionou e o que faltou (formato em `docs/formatos.md`). Isso alimenta os ajustes do arsenal.
 
 ## Formatos e paralelismo
