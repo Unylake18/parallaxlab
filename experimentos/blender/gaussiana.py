@@ -54,10 +54,10 @@ def linha(p0, p1, continuo):
     return [([p0 + d * k, p0 + d * (k + G["razao_traco"])], False) for k in range(n)]
 
 
-def criar_curva(nome, polilinhas, material):
+def criar_curva(nome, polilinhas, material, espessura=None):
     curva = bpy.data.curves.new(nome, "CURVE")
     curva.dimensions = "3D"
-    curva.bevel_depth = G["espessura_traco"]
+    curva.bevel_depth = G["espessura_traco"] if espessura is None else espessura
     curva.bevel_resolution = 3
     curva.use_fill_caps = True
     for pts, ciclico in polilinhas:

@@ -114,18 +114,51 @@ def pontos_no_plano(n, largura, altura, dist_min, margem=0.3, semente=7):
     return pts
 
 
+def _escala_borda(y, z, largura, altura, fade_inicio):
+    """Escala 1 no centro e 0 na borda (smoothstep), igual ao fade do material da placa."""
+    d = max(abs(y) / (largura / 2), abs(z) / (altura / 2))
+    t = min(max((d - fade_inicio) / (1 - fade_inicio), 0.0), 1.0)
+    return 1.0 - t * t * (3 - 2 * t)
+
+
+def cargas_deslizantes(largura=14.0, altura=6.5, n_cargas=220, dist_min=0.5, tamanho_carga=0.06, semente=7,
+                       fade_inicio=None, periodos=4, fase=0.0):
+    """Cargas que deslizam ao longo de Y (corrente superficial); devolve (cargas, atualizar).
+
+    O padrão de cargas se repete `periodos` vezes ao longo de Y, e `atualizar(fase)` o desloca de 0 a 1 período:
+    fase=1 reproduz a fase 0 (loop perfeito). Nas bordas as cargas somem por escala (como o fade da placa),
+    então a volta (wrap) não aparece como salto."""
+    fi = co.ST["materiais"]["placa"]["fade_inicio"] if fade_inicio is None else fade_inicio
+    largura_p = largura / periodos
+    base = pontos_no_plano(max(1, n_cargas // periodos), largura_p, altura, dist_min, margem=dist_min / 2, semente=semente)
+    pts = [(0.0, y + (j - (periodos - 1) / 2) * largura_p, z) for j in range(periodos) for (_, y, z) in base]
+    cargas = cm.criar_cargas(pts, tamanho_carga)
+
+    def atualizar(fase):
+        for o, (_, y0, z0) in zip(cargas, pts):
+            y = ((y0 + fase * largura_p + largura / 2) % largura) - largura / 2
+            o.location = (0.0, y, z0)
+            e = _escala_borda(y, z0, largura, altura, fi)
+            o.scale = (e, e, e)
+
+    atualizar(fase)
+    return cargas, atualizar
+
+
 def criar_placa_carregada(offset=(0, 0, 0), largura=14.0, altura=6.5, espessura=0.05, n_cargas=220,
-                          dist_min=0.5, tamanho_carga=0.06, semente=7, grade=1, fade_inicio=None):
-    """Placa de vidro com cargas pontuais sobre o plano; cargas encolhem para fora, como a placa se dissolve."""
+                          dist_min=0.5, tamanho_carga=0.06, semente=7, grade=1, fade_inicio=None, com_cargas=1):
+    """Placa de vidro com cargas pontuais sobre o plano; cargas encolhem para fora, como a placa se dissolve.
+
+    `com_cargas=0` não cria as cargas estáticas (para usar `cargas_deslizantes`, que cria as suas)."""
     corpo = criar_placa(largura, altura, espessura)
     fi = co.ST["materiais"]["placa"]["fade_inicio"] if fade_inicio is None else fade_inicio
     material_placa(corpo, largura, altura, grade, fade_inicio=fi)
-    cargas = cm.criar_cargas(pontos_no_plano(n_cargas, largura, altura, dist_min, semente=semente), tamanho_carga)
-    for o in cargas:
-        d = max(abs(o.location.y) / (largura / 2), abs(o.location.z) / (altura / 2))
-        t = min(max((d - fi) / (1 - fi), 0.0), 1.0)
-        s = 1.0 - t * t * (3 - 2 * t)          # smoothstep, igual ao fade do material
-        o.scale = (s, s, s)
+    cargas = []
+    if com_cargas:
+        cargas = cm.criar_cargas(pontos_no_plano(n_cargas, largura, altura, dist_min, semente=semente), tamanho_carga)
+        for o in cargas:
+            e = _escala_borda(o.location.y, o.location.z, largura, altura, fi)
+            o.scale = (e, e, e)
     for o in [corpo, *cargas]:
         o.location = (o.location[0] + offset[0], o.location[1] + offset[1], o.location[2] + offset[2])
     # Proxy invisível (só para enquadrar/medir profundidade): região visível, sem as bordas dissolvidas

@@ -8,6 +8,8 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 
 | id | Nome | Status | Áreas |
 |---|---|---|---|
+| `amperiano_circular` | Contorno amperiano circular | aprovado | eletromagnetismo/lei_de_ampere |
+| `amperiano_retangular` | Contorno amperiano retangular | aprovado | eletromagnetismo/lei_de_ampere |
 | `anel_carregado` | Anel carregado (aro) | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
 | `casca_cilindrica_oca` | Casca cilíndrica oca | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `casca_esferica_oca` | Casca esférica oca (com corte em octante) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
@@ -15,11 +17,14 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 | `cilindro_macico_isolante` | Cilindro maciço isolante com cargas no volume | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `disco_carregado` | Disco carregado | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
 | `esfera_macica_isolante` | Esfera maciça isolante com cargas no volume | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
+| `fio_infinito` | Fio infinito (retilíneo) | aprovado | eletromagnetismo/lei_de_ampere |
 | `gaussiana_caixa` | Superfície gaussiana em caixa (pillbox) | aprovado | eletromagnetismo/lei_de_gauss |
 | `gaussiana_cilindrica` | Superfície gaussiana cilíndrica (fechada) | aprovado | eletromagnetismo/lei_de_gauss |
 | `gaussiana_esferica` | Superfície gaussiana esférica | aprovado | eletromagnetismo/lei_de_gauss |
 | `haste_carregada` | Haste carregada | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
 | `placa_infinita_carregada` | Placa infinita carregada (plano com cargas na superfície) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
+| `solenoide_corrente` | Solenoide (hélice de fio) | aprovado | eletromagnetismo/lei_de_ampere |
+| `toroide_corrente` | Toroide (fio enrolado em anel) | aprovado | eletromagnetismo/lei_de_ampere |
 
 ## Padrão visual
 
@@ -32,7 +37,7 @@ Fonte única: `estilo.json`. Identidade: docs/identidade_visual.md. Gramática v
 | `campo_eletrico` | `#35D9FF` | E⃗ e linhas de campo. RESERVADA ao campo: nunca em fontes, cargas ou superfícies |
 | `fonte_fisica` | `#267BFF` | distribuição física: preenchimento do corpo, n̂ |
 | `fonte_contorno` | `#7FB2FF` | contorno/aro da distribuição física, cargas próximas, R, Q; luz de contorno |
-| `gaussiana` | `#9C8CFF` | superfície gaussiana e r: construção matemática, tracejada ou translúcida, nunca sólida |
+| `gaussiana` | `#9C8CFF` | superfície gaussiana, contorno amperiano e r: construção matemática, tracejada ou translúcida, nunca sólida |
 | `area_vetor` | `#745CFF` | vetor área d⃗A e seleção matemática translúcida |
 | `apoio_magenta` | `#EA63FF` | apoio pontual de identidade; sem uso 3D definido |
 | `fonte_escura` | `#0B2A7A` | DERIVADA de fonte_fisica, escurecida à mão: interior de cascas (profundidade) |
@@ -51,6 +56,105 @@ Fonte única: `estilo.json`. Identidade: docs/identidade_visual.md. Gramática v
 
 ## Sólidos
 
+### `amperiano_circular` — Contorno amperiano circular
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Círculo violeta (#9C8CFF), tracejado por padrão, no plano YZ, em torno do eixo X. Por padrão envolve um fio infinito de referência.
+
+![Contorno amperiano circular](previews/amperiano_circular.png)
+
+**Como se lê:** Círculo tracejado violeta em torno do fio azul. Tracejado = construção; contínuo (`continua=1`) = circulação calculada.
+
+**Usar quando**
+- campo B de um fio infinito (circulação em torno do fio, B tangente ao círculo)
+- campo B dentro/fora de um toroide (círculo concêntrico)
+- delimitar regiões por raio (dentro/fora do condutor)
+
+**Não usar quando**
+- o contorno atravessa a parede de um solenoide (use amperiano_retangular)
+- superfície fechada de fluxo (use as gaussianas)
+
+**Limitações**
+- construção matemática (violeta, tracejada ou contínua), nunca preenchimento sólido: as faces opcionais são vidro violeta muito translúcido
+- com_fonte=1 desenha uma fonte de referência só para contexto e teste de leitura; em vídeo use com_fonte=0 e componha com a fonte da cena
+- o contorno é uma curva fechada (sem preenchimento); o sentido de percurso não é indicado: usar seta/rótulo no Manim
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `raio` | 1.4 | u | raio do círculo |
+| `continua` | 0 | 0/1 | 0 = tracejado (construção); 1 = contínuo (circulação) |
+| `faces` | 0 | 0/1 | 1 = disco de vidro violeta translúcido dentro do contorno |
+| `com_fonte` | 1 | 0/1 | 1 = desenha um fio infinito de referência |
+| `comprimento_fonte` | 10.0 | u | comprimento do fio de referência |
+| `raio_fonte` | 0.06 | u | raio do fio de referência |
+
+**Integração:** `png_seq_alpha` · custo 0.71 s/frame (1080p, Eevee)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- amperiano_circular --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("amperiano_circular").mobject(altura=5)   # estático: um quadro PNG com alpha
+```
+
+Ficha: `solidos/amperiano_circular.json`
+
+### `amperiano_retangular` — Contorno amperiano retangular
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Retângulo violeta (#9C8CFF), tracejado por padrão, no plano XY (contém o eixo X): lados `comprimento` (em X) e `altura` (em Y), centrado na parede do solenoide de referência.
+
+![Contorno amperiano retangular](previews/amperiano_retangular.png)
+
+**Como se lê:** Retângulo tracejado violeta atravessando a parede do solenoide: metade dentro, metade fora. Lê-se como 'só o lado de dentro contribui'.
+
+**Usar quando**
+- campo B no interior de um solenoide longo (retângulo amperiano atravessando a parede)
+- mostrar a corrente envolvida (n·l·I) pelos fios que o retângulo atravessa
+- mostrar que os lados transversais e o lado de fora não contribuem
+
+**Não usar quando**
+- fio ou toroide (use amperiano_circular)
+- contorno que deve ficar inteiramente fora do solenoide
+
+**Limitações**
+- construção matemática (violeta, tracejada ou contínua), nunca preenchimento sólido: as faces opcionais são vidro violeta muito translúcido
+- com_fonte=1 desenha uma fonte de referência só para contexto e teste de leitura; em vídeo use com_fonte=0 e componha com a fonte da cena
+- plano fixo XY e centrado em y = raio da fonte: outro posicionamento exige alterar `centro_y` no código
+- o sentido de percurso não é indicado: usar seta/rótulo no Manim
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `comprimento` | 2.4 | u | lado do retângulo ao longo de X |
+| `altura` | 1.8 | u | lado do retângulo ao longo de Y |
+| `continua` | 0 | 0/1 | 0 = tracejado; 1 = contínuo |
+| `faces` | 0 | 0/1 | 1 = face de vidro violeta translúcido |
+| `com_fonte` | 1 | 0/1 | 1 = desenha um solenoide de referência |
+| `raio_fonte` | 1.0 | u | raio do solenoide de referência (o retângulo é centrado na parede, em y = raio) |
+| `comprimento_fonte` | 4.0 | u | comprimento do solenoide de referência |
+| `n_espiras_fonte` | 12 | n | número de espiras do solenoide de referência |
+
+**Integração:** `png_seq_alpha` · custo 0.45 s/frame (1080p, Eevee)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- amperiano_retangular --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("amperiano_retangular").mobject(altura=5)   # estático: um quadro PNG com alpha
+```
+
+Ficha: `solidos/amperiano_retangular.json`
+
 ### `anel_carregado` — Anel carregado (aro)
 
 **Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
@@ -65,6 +169,7 @@ Anel fino de vidro azulado no plano YZ, com eixo de simetria em X, e cargas espa
 - campo elétrico no eixo de um anel carregado (integração de elementos de carga dq, simetria, análise de máximo e limites)
 - momento de inércia de um aro (com_cargas=0), com o eixo de simetria desenhado
 - contraste com o disco (superfície) e com a haste (linha reta)
+- espira com corrente: cargas circulando pelo aro (cargas_moveis=1)
 
 **Não usar quando**
 - a carga está numa superfície (use disco_carregado) ou numa linha reta (use haste_carregada)
@@ -75,6 +180,8 @@ Anel fino de vidro azulado no plano YZ, com eixo de simetria em X, e cargas espa
 - em contexto de mecânica (com_cargas=0) o azul de 'fonte física' vem da gramática de Eletromagnetismo; a gramática de cor da Mecânica não foi verificada aqui
 - espessura/raio do corpo exagerados em relação ao ideal (o corpo de vidro é visível); as cargas ficam dentro dele
 - as cargas têm espaçamento quase regular (jitter 0,12): uma distribuição contínua é aproximada por pontos
+- o movimento não codifica a corrente: a convenção (corrente convencional ou elétrons, que vão ao contrário) e o sinal vão por seta e rótulo no Manim; o movimento é didático, não em escala
+- com cargas_moveis=1 as cargas estáticas (com_cargas) são substituídas pelas móveis
 
 | Parâmetro | Padrão | Unid. | Descrição |
 |---|---|---|---|
@@ -85,11 +192,24 @@ Anel fino de vidro azulado no plano YZ, com eixo de simetria em X, e cargas espa
 | `eixo` | 0 | 0/1 | 1 = eixo de simetria tracejado em cor neutra |
 | `comprimento_eixo` | 4.0 | u | comprimento do eixo de simetria, se desenhado |
 | `semente` | 7 | n | semente do sorteio/jitter (mesma semente = mesma distribuição) |
+| `cargas_moveis` | 0 | 0/1 | 1 = cargas em movimento (animação em loop); use com animar.py ou a ponte com o Manim |
+| `fase` | 0.0 | 0-1 | fase do movimento; fase=1 repete o quadro da fase 0 (loop perfeito) |
+| `espaco_cargas` | 0.4 | u | distância entre cargas ao longo do aro (ajustada para fechar a volta) |
+| `tamanho_carga_movel` | 0.07 | u | raio de cada carga móvel |
 
 **Integração:** `png_seq_alpha` · custo 0.63 s/frame (1080p, Eevee)
 
+**Animação (cargas em movimento):** `circulacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.62 s/frame (1080p, com alpha)
+
 ```powershell
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- anel_carregado --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("anel_carregado").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
 ```
 
 Ficha: `solidos/anel_carregado.json`
@@ -129,6 +249,13 @@ Tubo oco de parede fina, aberto nas duas pontas, com eixo ao longo de X. O raio 
 
 ```powershell
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- casca_cilindrica_oca --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("casca_cilindrica_oca").mobject(altura=5)   # estático: um quadro PNG com alpha
 ```
 
 Ficha: `solidos/casca_cilindrica_oca.json`
@@ -171,6 +298,13 @@ Esfera oca de parede fina com um octante removido (x>0, y<0, z>0), voltado para 
 
 ```powershell
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- casca_esferica_oca --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("casca_esferica_oca").mobject(altura=5)   # estático: um quadro PNG com alpha
 ```
 
 Ficha: `solidos/casca_esferica_oca.json`
@@ -221,6 +355,13 @@ Modelo do capacitor coaxial (yt_0002, A4): condutor interno maciço de raio `rai
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- cilindro_coaxial --res 1920x1080 --alpha
 ```
 
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("cilindro_coaxial").mobject(altura=5)   # estático: um quadro PNG com alpha
+```
+
 Ficha: `solidos/cilindro_coaxial.json`
 
 ### `cilindro_macico_isolante` — Cilindro maciço isolante com cargas no volume
@@ -262,6 +403,13 @@ Cilindro preenchido, de vidro azulado translúcido, com tampas, eixo ao longo de
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- cilindro_macico_isolante --res 1920x1080 --alpha
 ```
 
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("cilindro_macico_isolante").mobject(altura=5)   # estático: um quadro PNG com alpha
+```
+
 Ficha: `solidos/cilindro_macico_isolante.json`
 
 ### `disco_carregado` — Disco carregado
@@ -278,6 +426,7 @@ Disco fino de vidro azulado no plano YZ, com eixo de simetria em X, e cargas uni
 - campo elétrico no eixo de um disco carregado (anéis concêntricos somados; no limite de raio grande recupera o plano infinito)
 - momento de inércia de um disco (com_cargas=0), com o eixo de simetria desenhado
 - contraste com o anel (linha circular) e com a placa infinita (plano ilimitado)
+- disco carregado girando (corrente de rotação; cargas_moveis=1)
 
 **Não usar quando**
 - o ponto do vídeo é um plano ilimitado sem borda (use placa_infinita_carregada)
@@ -289,6 +438,8 @@ Disco fino de vidro azulado no plano YZ, com eixo de simetria em X, e cargas uni
 - espessura/raio do corpo exagerados em relação ao ideal (o corpo de vidro é visível); as cargas ficam dentro dele
 - cargas apenas sobre o plano médio do disco (visíveis através do vidro): uma só camada
 - a densidade é uniforme: perfil radial não uniforme não está representado
+- o movimento não codifica a corrente: a convenção (corrente convencional ou elétrons, que vão ao contrário) e o sinal vão por seta e rótulo no Manim; o movimento é didático, não em escala
+- rotação rígida: as cargas mantêm a distribuição e giram em torno do eixo X
 
 | Parâmetro | Padrão | Unid. | Descrição |
 |---|---|---|---|
@@ -300,11 +451,23 @@ Disco fino de vidro azulado no plano YZ, com eixo de simetria em X, e cargas uni
 | `eixo` | 0 | 0/1 | 1 = eixo de simetria tracejado em cor neutra |
 | `comprimento_eixo` | 4.0 | u | comprimento do eixo de simetria, se desenhado |
 | `semente` | 7 | n | semente do sorteio/jitter (mesma semente = mesma distribuição) |
+| `cargas_moveis` | 0 | 0/1 | 1 = cargas em movimento (animação em loop); use com animar.py ou a ponte com o Manim |
+| `fase` | 0.0 | 0-1 | fase do movimento; fase=1 repete o quadro da fase 0 (loop perfeito) |
+| `voltas` | 1 | n | voltas completas por loop (rotação rígida em torno do eixo) |
 
 **Integração:** `png_seq_alpha` · custo 0.71 s/frame (1080p, Eevee)
 
+**Animação (cargas em movimento):** `rotacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.72 s/frame (1080p, com alpha)
+
 ```powershell
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- disco_carregado --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("disco_carregado").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
 ```
 
 Ficha: `solidos/disco_carregado.json`
@@ -348,7 +511,71 @@ Orbe de vidro azulado translúcido, preenchido, com cargas pontuais distribuída
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- esfera_macica_isolante --res 1920x1080 --alpha
 ```
 
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("esfera_macica_isolante").mobject(altura=5)   # estático: um quadro PNG com alpha
+```
+
 Ficha: `solidos/esfera_macica_isolante.json`
+
+### `fio_infinito` — Fio infinito (retilíneo)
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Fio retilíneo azul (#267BFF) ao longo de X, brilhante, com um halo de vidro fino em volta, cuja opacidade se dissolve nas duas pontas para sugerir comprimento infinito. Eixo de simetria opcional.
+
+![Fio infinito (retilíneo)](previews/fio_infinito.png)
+
+**Como se lê:** Linha azul luminosa com halo suave que some nas pontas: lê-se como 'fio muito longo, sem fim visível'.
+
+**Usar quando**
+- campo B de um fio longo (circulação amperiana circular em torno dele)
+- linha de carga/corrente infinita como fonte
+- contraste com solenoide e toroide (outras fontes de Ampère)
+- corrente num fio: cargas em movimento ao longo dele (cargas_moveis=1, animar.py)
+- corrente num fio: cargas em movimento ao longo dele (cargas_moveis=1)
+
+**Não usar quando**
+- o fio é finito e o efeito de pontas importa: aqui as pontas se dissolvem de propósito
+- um condutor espesso com corrente distribuída na seção: este fio é fino
+
+**Limitações**
+- só a fonte física (fio/enrolamento, azul): o campo B (ciano) e o sentido da corrente são desenhados no 2D/Manim
+- sem noção de sentido: a hélice tem um sentido de enrolamento, mas ele não representa a corrente de forma legível; indicar I por rótulo/seta no Manim
+- fisicamente finito (10 por padrão): o 'infinito' é só visual; se o enquadramento incluir as pontas, o efeito se perde
+- é um cilindro opaco-translúcido fino; não representa a densidade de corrente na seção
+- o sentido do movimento não codifica a corrente: a convenção (corrente convencional ou elétrons, que vão ao contrário) e o sinal vão por seta e rótulo no Manim
+- o movimento não codifica a corrente: a convenção (corrente convencional ou elétrons, que vão ao contrário) e o sinal vão por seta e rótulo no Manim; o movimento é didático, não em escala
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `comprimento` | 10.0 | u | comprimento do fio (eixo X) |
+| `raio` | 0.06 | u | raio do fio (visual) |
+| `eixo` | 0 | 0/1 | 1 = eixo tracejado neutro (coincide com o fio; útil só como guia) |
+| `comprimento_eixo` | 6.0 | u | comprimento do eixo, se desenhado |
+| `cargas_moveis` | 0 | 0/1 | 1 = cargas azul-claro deslizando ao longo do fio (corrente); o movimento é didático, não em escala |
+| `fase` | 0.0 | 0-1 | fase do movimento: desloca as cargas de 0 a 1 espaçamento; fase=1 repete o quadro da fase 0 (loop perfeito) |
+| `espaco_cargas` | 0.6 | u | distância entre cargas consecutivas ao longo do fio |
+| `tamanho_carga_movel` | 0.09 | u | raio de cada carga móvel |
+
+**Integração:** `png_seq_alpha` · custo 0.5 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `deslizamento` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.67 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- fio_infinito --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("fio_infinito").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/fio_infinito.json`
 
 ### `gaussiana_caixa` — Superfície gaussiana em caixa (pillbox)
 
@@ -388,6 +615,13 @@ Caixa gaussiana curta (pillbox) de arestas violeta (#9C8CFF), com a normal do pl
 
 ```powershell
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- gaussiana_caixa --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("gaussiana_caixa").mobject(altura=5)   # estático: um quadro PNG com alpha
 ```
 
 Ficha: `solidos/gaussiana_caixa.json`
@@ -436,6 +670,13 @@ Cilindro gaussiano fechado (eixo X) de raio `raio` e comprimento `comprimento`: 
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- gaussiana_cilindrica --res 1920x1080 --alpha
 ```
 
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("gaussiana_cilindrica").mobject(altura=5)   # estático: um quadro PNG com alpha
+```
+
 Ficha: `solidos/gaussiana_cilindrica.json`
 
 ### `gaussiana_esferica` — Superfície gaussiana esférica
@@ -477,6 +718,13 @@ Esfera gaussiana de raio `raio`: equador e dois meridianos em violeta (#9C8CFF),
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- gaussiana_esferica --res 1920x1080 --alpha
 ```
 
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("gaussiana_esferica").mobject(altura=5)   # estático: um quadro PNG com alpha
+```
+
 Ficha: `solidos/gaussiana_esferica.json`
 
 ### `haste_carregada` — Haste carregada
@@ -493,6 +741,7 @@ Haste fina de vidro azulado ao longo de Y, com eixo de simetria (mediatriz) em X
 - campo elétrico de uma haste finita carregada (integração de dq, ponto na mediatriz, limite de haste longa)
 - momento de inércia de uma haste (com_cargas=0), com o eixo de simetria desenhado
 - contraste com o anel (linha curva) e com o disco (superfície)
+- corrente numa haste: cargas deslizando ao longo dela (cargas_moveis=1)
 
 **Não usar quando**
 - a haste deve ser infinita: o objeto é finito (para linha infinita use gaussiana_cilindrica com a fonte da cena)
@@ -504,6 +753,8 @@ Haste fina de vidro azulado ao longo de Y, com eixo de simetria (mediatriz) em X
 - espessura/raio do corpo exagerados em relação ao ideal (o corpo de vidro é visível); as cargas ficam dentro dele
 - haste ao longo de Y fixa; em outra orientação, girar a câmera
 - as cargas têm espaçamento quase regular (jitter 0,12)
+- o movimento não codifica a corrente: a convenção (corrente convencional ou elétrons, que vão ao contrário) e o sinal vão por seta e rótulo no Manim; o movimento é didático, não em escala
+- com cargas_moveis=1 as cargas estáticas (com_cargas) são substituídas pelas móveis
 
 | Parâmetro | Padrão | Unid. | Descrição |
 |---|---|---|---|
@@ -514,11 +765,24 @@ Haste fina de vidro azulado ao longo de Y, com eixo de simetria (mediatriz) em X
 | `eixo` | 0 | 0/1 | 1 = eixo de simetria tracejado em cor neutra |
 | `comprimento_eixo` | 3.0 | u | comprimento do eixo de simetria, se desenhado |
 | `semente` | 7 | n | semente do sorteio/jitter (mesma semente = mesma distribuição) |
+| `cargas_moveis` | 0 | 0/1 | 1 = cargas em movimento (animação em loop); use com animar.py ou a ponte com o Manim |
+| `fase` | 0.0 | 0-1 | fase do movimento; fase=1 repete o quadro da fase 0 (loop perfeito) |
+| `espaco_cargas` | 0.45 | u | distância entre cargas ao longo da haste |
+| `tamanho_carga_movel` | 0.07 | u | raio de cada carga móvel |
 
 **Integração:** `png_seq_alpha` · custo 0.62 s/frame (1080p, Eevee)
 
+**Animação (cargas em movimento):** `deslizamento` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.62 s/frame (1080p, com alpha)
+
 ```powershell
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- haste_carregada --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("haste_carregada").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
 ```
 
 Ficha: `solidos/haste_carregada.json`
@@ -537,6 +801,7 @@ Folha de vidro azulado muito fina (normal ao longo de X) com grade sutil e carga
 - simetria planar: plano infinito com densidade superficial de carga uniforme (isolante fino ou plano de carga)
 - mostrar que o plano é ilimitado e que o campo não depende da distância (par com os sólidos de simetria cilíndrica e esférica)
 - contraste com as simetrias cilíndrica e esférica na mesma unidade (casca, maciço, plano)
+- corrente superficial: cargas deslizando sobre o plano na direção Y (cargas_moveis=1)
 
 **Não usar quando**
 - o vídeo precisa mostrar as bordas ou efeitos de borda: a placa aqui se dissolve de propósito
@@ -548,6 +813,8 @@ Folha de vidro azulado muito fina (normal ao longo de X) com grade sutil e carga
 - cargas só sobre o plano x=0; a normal do plano é fixa em X
 - a visualização depende do ângulo: muito de frente (olhando ao longo de X) a placa vira um retângulo chapado; o padrão usa azimute -40
 - não desenha campo elétrico: o ciano é reservado ao campo e fica para a animação 2D/Manim
+- o movimento não codifica a corrente: a convenção (corrente convencional ou elétrons, que vão ao contrário) e o sinal vão por seta e rótulo no Manim; o movimento é didático, não em escala
+- as cargas somem por escala nas bordas (como o fade da placa); a direção do deslizamento é fixa em Y
 
 | Parâmetro | Padrão | Unid. | Descrição |
 |---|---|---|---|
@@ -560,11 +827,143 @@ Folha de vidro azulado muito fina (normal ao longo de X) com grade sutil e carga
 | `semente` | 7 | n | semente do sorteio (mesma semente = mesma distribuição) |
 | `grade` | 1 | 0/1 | 1 = grade sutil sobre o plano; 0 = só o vidro |
 | `fade_inicio` | 0.5 | 0-1 | fração da meia largura/altura onde a folha começa a se dissolver |
+| `cargas_moveis` | 0 | 0/1 | 1 = cargas em movimento (animação em loop); use com animar.py ou a ponte com o Manim |
+| `fase` | 0.0 | 0-1 | fase do movimento; fase=1 repete o quadro da fase 0 (loop perfeito) |
+| `periodos` | 4 | n | o padrão de cargas se repete esta vez ao longo da largura; o loop desloca 1 período |
 
 **Integração:** `png_seq_alpha` · custo 1.31 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `deslizamento` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 1.3 s/frame (1080p, com alpha)
 
 ```powershell
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- placa_infinita_carregada --res 1920x1080 --alpha
 ```
 
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("placa_infinita_carregada").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
 Ficha: `solidos/placa_infinita_carregada.json`
+
+### `solenoide_corrente` — Solenoide (hélice de fio)
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Solenoide: fio azul (#267BFF) enrolado em hélice de passo constante ao longo do eixo X. Terminais retos nas pontas. Núcleo de vidro opcional e eixo de simetria opcional.
+
+![Solenoide (hélice de fio)](previews/solenoide_corrente.png)
+
+**Como se lê:** Hélice azul luminosa de espiras abertas em volta de um núcleo de vidro translúcido: lê-se como 'fio enrolado'. Sem núcleo (nucleo=0) o interior fica visível e vazio.
+
+**Usar quando**
+- campo B no interior de um solenoide longo (n espiras por comprimento, retângulo amperiano atravessando a parede)
+- mostrar a densidade de espiras n e o efeito de enrolar o fio
+- contraste com o toroide (enrolamento fechado) e com o fio reto
+- corrente seguindo as espiras: cargas em movimento ao longo da hélice (cargas_moveis=1, animar.py)
+- corrente seguindo as espiras: cargas em movimento ao longo da hélice (cargas_moveis=1)
+
+**Não usar quando**
+- o enrolamento é fechado em anel (use toroide_corrente)
+- uma única espira (use anel_carregado como aro, ou espira no 2D)
+
+**Limitações**
+- só a fonte física (fio/enrolamento, azul): o campo B (ciano) e o sentido da corrente são desenhados no 2D/Manim
+- sem noção de sentido: a hélice tem um sentido de enrolamento, mas ele não representa a corrente de forma legível; indicar I por rótulo/seta no Manim
+- hélice ideal: espiras muito próximas aproximam o solenoide infinito, mas a hélice é finita (4 de comprimento)
+- o fio é grosso para ser visível; o passo e o número de espiras são estilizados (12 por padrão)
+- o sentido do movimento não codifica a corrente: a convenção (corrente convencional ou elétrons, que vão ao contrário) e o sinal vão por seta e rótulo no Manim
+- o movimento não codifica a corrente: a convenção (corrente convencional ou elétrons, que vão ao contrário) e o sinal vão por seta e rótulo no Manim; o movimento é didático, não em escala
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `raio` | 1.0 | u | raio do solenoide |
+| `comprimento` | 4.0 | u | comprimento ao longo do eixo X |
+| `n_espiras` | 12 | n | número de espiras |
+| `raio_fio` | 0.035 | u | raio do fio (visual) |
+| `nucleo` | 1 | 0/1 | 1 = núcleo de vidro dentro (só visual, dá corpo ao solenoide; não representa um material magnético); 0 = só o fio |
+| `eixo` | 0 | 0/1 | 1 = eixo de simetria tracejado neutro |
+| `comprimento_eixo` | 6.0 | u | comprimento do eixo, se desenhado |
+| `terminal` | 0.7 | u | comprimento dos terminais retos de fio nas duas pontas |
+| `cargas_moveis` | 0 | 0/1 | 1 = cargas azul-claro deslizando ao longo do fio (corrente); o movimento é didático, não em escala |
+| `fase` | 0.0 | 0-1 | fase do movimento: desloca as cargas de 0 a 1 espaçamento; fase=1 repete o quadro da fase 0 (loop perfeito) |
+| `espaco_cargas` | 0.8 | u | distância entre cargas consecutivas ao longo do fio |
+| `tamanho_carga_movel` | 0.08 | u | raio de cada carga móvel |
+
+**Integração:** `png_seq_alpha` · custo 0.53 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `deslizamento` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.55 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- solenoide_corrente --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("solenoide_corrente").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/solenoide_corrente.json`
+
+### `toroide_corrente` — Toroide (fio enrolado em anel)
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Toroide: fio azul (#267BFF) enrolado em torno da seção de um toro cujo eixo é X. Núcleo de vidro opcional e eixo de simetria opcional.
+
+![Toroide (fio enrolado em anel)](previews/toroide_corrente.png)
+
+**Como se lê:** Anel formado por espiras azuis apertadas, com o buraco central visível. Lê-se como 'solenoide fechado sobre si mesmo'.
+
+**Usar quando**
+- campo B de um toroide (circulação amperiana circular dentro do núcleo; campo fora é nulo)
+- contraste com o solenoide reto (enrolamento aberto)
+- mostrar que o campo fica confinado ao interior do enrolamento
+- corrente circulando pelas espiras do toroide (cargas_moveis=1)
+
+**Não usar quando**
+- enrolamento reto (use solenoide_corrente)
+- toroide com seção retangular: aqui a seção é circular
+
+**Limitações**
+- só a fonte física (fio/enrolamento, azul): o campo B (ciano) e o sentido da corrente são desenhados no 2D/Manim
+- sem noção de sentido: a hélice tem um sentido de enrolamento, mas ele não representa a corrente de forma legível; indicar I por rótulo/seta no Manim
+- N espiras fixas e uniformes; o espaçamento interno é mais apertado que o externo, como num toroide real
+- o fio é grosso para ser visível
+- o movimento não codifica a corrente: a convenção (corrente convencional ou elétrons, que vão ao contrário) e o sinal vão por seta e rótulo no Manim; o movimento é didático, não em escala
+- as cargas seguem o fio em volta do toroide; o campo B (ciano) circular no interior não é desenhado
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `raio_maior` | 1.6 | u | raio do círculo central do toro |
+| `raio_menor` | 0.5 | u | raio da seção do toro |
+| `n_espiras` | 40 | n | número de espiras |
+| `raio_fio` | 0.04 | u | raio do fio (visual) |
+| `nucleo` | 0 | 0/1 | 1 = núcleo de vidro (toro) dentro do enrolamento |
+| `eixo` | 0 | 0/1 | 1 = eixo de simetria tracejado neutro |
+| `comprimento_eixo` | 4.5 | u | comprimento do eixo, se desenhado |
+| `cargas_moveis` | 0 | 0/1 | 1 = cargas em movimento (animação em loop); use com animar.py ou a ponte com o Manim |
+| `fase` | 0.0 | 0-1 | fase do movimento; fase=1 repete o quadro da fase 0 (loop perfeito) |
+| `espaco_cargas` | 0.9 | u | distância entre cargas ao longo do fio (ajustada para fechar a volta) |
+| `tamanho_carga_movel` | 0.07 | u | raio de cada carga móvel |
+
+**Integração:** `png_seq_alpha` · custo 0.45 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `circulacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.5 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- toroide_corrente --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("toroide_corrente").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/toroide_corrente.json`

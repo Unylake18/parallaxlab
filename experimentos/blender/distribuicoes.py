@@ -127,6 +127,23 @@ def criar_haste(comprimento=4.0, raio=0.1, n_cargas=40, com_cargas=1, eixo=0, co
     return obj, objs
 
 
+def cargas_girando(cargas, voltas=1, fase=0.0):
+    """Gira as cargas (rigidamente) em torno do eixo X; devolve `atualizar(fase)`.
+
+    fase de 0 a 1 percorre `voltas` voltas completas, então fase=1 reproduz a fase 0 (loop perfeito, qualquer
+    distribuição). Use para o disco e outros corpos de simetria axial."""
+    orig = [(o.location.y, o.location.z) for o in cargas]
+
+    def atualizar(fase):
+        a = 2 * math.pi * voltas * fase
+        c, s = math.cos(a), math.sin(a)
+        for o, (y, z) in zip(cargas, orig):
+            o.location = (o.location.x, y * c - z * s, y * s + z * c)
+
+    atualizar(fase)
+    return atualizar
+
+
 def cena_trio():
     co.limpar_cena()
     # Lado a lado na MESMA profundidade: deslocamento ao longo do eixo "direita" da câmera usada abaixo.

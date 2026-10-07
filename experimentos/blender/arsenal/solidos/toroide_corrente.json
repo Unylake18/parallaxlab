@@ -1,0 +1,113 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "eletromagnetismo/lei_de_ampere"
+  ],
+  "validado_em": "2026-10-07",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.45,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060"
+  },
+  "origem": "experimentos/blender/ampere.py",
+  "id": "toroide_corrente",
+  "nome": "Toroide (fio enrolado em anel)",
+  "descricao": "Toroide: fio azul (#267BFF) enrolado em torno da seção de um toro cujo eixo é X. Núcleo de vidro opcional e eixo de simetria opcional.",
+  "leitura_visual": "Anel formado por espiras azuis apertadas, com o buraco central visível. Lê-se como 'solenoide fechado sobre si mesmo'.",
+  "usar_quando": [
+    "campo B de um toroide (circulação amperiana circular dentro do núcleo; campo fora é nulo)",
+    "contraste com o solenoide reto (enrolamento aberto)",
+    "mostrar que o campo fica confinado ao interior do enrolamento",
+    "corrente circulando pelas espiras do toroide (cargas_moveis=1)"
+  ],
+  "nao_usar_quando": [
+    "enrolamento reto (use solenoide_corrente)",
+    "toroide com seção retangular: aqui a seção é circular"
+  ],
+  "limitacoes": [
+    "só a fonte física (fio/enrolamento, azul): o campo B (ciano) e o sentido da corrente são desenhados no 2D/Manim",
+    "sem noção de sentido: a hélice tem um sentido de enrolamento, mas ele não representa a corrente de forma legível; indicar I por rótulo/seta no Manim",
+    "N espiras fixas e uniformes; o espaçamento interno é mais apertado que o externo, como num toroide real",
+    "o fio é grosso para ser visível",
+    "o movimento não codifica a corrente: a convenção (corrente convencional ou elétrons, que vão ao contrário) e o sinal vão por seta e rótulo no Manim; o movimento é didático, não em escala",
+    "as cargas seguem o fio em volta do toroide; o campo B (ciano) circular no interior não é desenhado"
+  ],
+  "construtor": "toroide_corrente",
+  "parametros": {
+    "raio_maior": {
+      "valor": 1.6,
+      "unidade": "u",
+      "descricao": "raio do círculo central do toro"
+    },
+    "raio_menor": {
+      "valor": 0.5,
+      "unidade": "u",
+      "descricao": "raio da seção do toro"
+    },
+    "n_espiras": {
+      "valor": 40,
+      "unidade": "n",
+      "descricao": "número de espiras"
+    },
+    "raio_fio": {
+      "valor": 0.04,
+      "unidade": "u",
+      "descricao": "raio do fio (visual)"
+    },
+    "nucleo": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = núcleo de vidro (toro) dentro do enrolamento"
+    },
+    "eixo": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = eixo de simetria tracejado neutro"
+    },
+    "comprimento_eixo": {
+      "valor": 4.5,
+      "unidade": "u",
+      "descricao": "comprimento do eixo, se desenhado"
+    },
+    "cargas_moveis": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = cargas em movimento (animação em loop); use com animar.py ou a ponte com o Manim"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do movimento; fase=1 repete o quadro da fase 0 (loop perfeito)"
+    },
+    "espaco_cargas": {
+      "valor": 0.9,
+      "unidade": "u",
+      "descricao": "distância entre cargas ao longo do fio (ajustada para fechar a volta)"
+    },
+    "tamanho_carga_movel": {
+      "valor": 0.07,
+      "unidade": "u",
+      "descricao": "raio de cada carga móvel"
+    }
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 25,
+    "lente": 50,
+    "margem": 0.09
+  },
+  "preview": "previews/toroide_corrente.png",
+  "preview_set": [
+    "cargas_moveis=1"
+  ],
+  "animacao": {
+    "tipo": "circulacao",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.5,
+    "peso_mb_por_frame": 0.94,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 a 12 quadros"
+  }
+}

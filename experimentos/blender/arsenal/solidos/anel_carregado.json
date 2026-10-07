@@ -19,7 +19,8 @@
   "usar_quando": [
     "campo elétrico no eixo de um anel carregado (integração de elementos de carga dq, simetria, análise de máximo e limites)",
     "momento de inércia de um aro (com_cargas=0), com o eixo de simetria desenhado",
-    "contraste com o disco (superfície) e com a haste (linha reta)"
+    "contraste com o disco (superfície) e com a haste (linha reta)",
+    "espira com corrente: cargas circulando pelo aro (cargas_moveis=1)"
   ],
   "nao_usar_quando": [
     "a carga está numa superfície (use disco_carregado) ou numa linha reta (use haste_carregada)",
@@ -29,7 +30,9 @@
     "o campo e a gaussiana não são desenhados: o ciano é reservado ao campo (animação 2D/Manim)",
     "em contexto de mecânica (com_cargas=0) o azul de 'fonte física' vem da gramática de Eletromagnetismo; a gramática de cor da Mecânica não foi verificada aqui",
     "espessura/raio do corpo exagerados em relação ao ideal (o corpo de vidro é visível); as cargas ficam dentro dele",
-    "as cargas têm espaçamento quase regular (jitter 0,12): uma distribuição contínua é aproximada por pontos"
+    "as cargas têm espaçamento quase regular (jitter 0,12): uma distribuição contínua é aproximada por pontos",
+    "o movimento não codifica a corrente: a convenção (corrente convencional ou elétrons, que vão ao contrário) e o sinal vão por seta e rótulo no Manim; o movimento é didático, não em escala",
+    "com cargas_moveis=1 as cargas estáticas (com_cargas) são substituídas pelas móveis"
   ],
   "construtor": "anel_carregado",
   "parametros": {
@@ -67,6 +70,26 @@
       "valor": 7,
       "unidade": "n",
       "descricao": "semente do sorteio/jitter (mesma semente = mesma distribuição)"
+    },
+    "cargas_moveis": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = cargas em movimento (animação em loop); use com animar.py ou a ponte com o Manim"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do movimento; fase=1 repete o quadro da fase 0 (loop perfeito)"
+    },
+    "espaco_cargas": {
+      "valor": 0.4,
+      "unidade": "u",
+      "descricao": "distância entre cargas ao longo do aro (ajustada para fechar a volta)"
+    },
+    "tamanho_carga_movel": {
+      "valor": 0.07,
+      "unidade": "u",
+      "descricao": "raio de cada carga móvel"
     }
   },
   "enquadramento": {
@@ -78,5 +101,14 @@
   "preview_set": [
     "eixo=1"
   ],
-  "preview": "previews/anel_carregado.png"
+  "preview": "previews/anel_carregado.png",
+  "animacao": {
+    "tipo": "circulacao",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.62,
+    "peso_mb_por_frame": 0.7,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 a 12 quadros"
+  }
 }

@@ -19,7 +19,8 @@
   "usar_quando": [
     "campo elétrico no eixo de um disco carregado (anéis concêntricos somados; no limite de raio grande recupera o plano infinito)",
     "momento de inércia de um disco (com_cargas=0), com o eixo de simetria desenhado",
-    "contraste com o anel (linha circular) e com a placa infinita (plano ilimitado)"
+    "contraste com o anel (linha circular) e com a placa infinita (plano ilimitado)",
+    "disco carregado girando (corrente de rotação; cargas_moveis=1)"
   ],
   "nao_usar_quando": [
     "o ponto do vídeo é um plano ilimitado sem borda (use placa_infinita_carregada)",
@@ -30,7 +31,9 @@
     "em contexto de mecânica (com_cargas=0) o azul de 'fonte física' vem da gramática de Eletromagnetismo; a gramática de cor da Mecânica não foi verificada aqui",
     "espessura/raio do corpo exagerados em relação ao ideal (o corpo de vidro é visível); as cargas ficam dentro dele",
     "cargas apenas sobre o plano médio do disco (visíveis através do vidro): uma só camada",
-    "a densidade é uniforme: perfil radial não uniforme não está representado"
+    "a densidade é uniforme: perfil radial não uniforme não está representado",
+    "o movimento não codifica a corrente: a convenção (corrente convencional ou elétrons, que vão ao contrário) e o sinal vão por seta e rótulo no Manim; o movimento é didático, não em escala",
+    "rotação rígida: as cargas mantêm a distribuição e giram em torno do eixo X"
   ],
   "construtor": "disco_carregado",
   "parametros": {
@@ -73,6 +76,21 @@
       "valor": 7,
       "unidade": "n",
       "descricao": "semente do sorteio/jitter (mesma semente = mesma distribuição)"
+    },
+    "cargas_moveis": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = cargas em movimento (animação em loop); use com animar.py ou a ponte com o Manim"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do movimento; fase=1 repete o quadro da fase 0 (loop perfeito)"
+    },
+    "voltas": {
+      "valor": 1,
+      "unidade": "n",
+      "descricao": "voltas completas por loop (rotação rígida em torno do eixo)"
     }
   },
   "enquadramento": {
@@ -84,5 +102,14 @@
   "preview_set": [
     "eixo=1"
   ],
-  "preview": "previews/disco_carregado.png"
+  "preview": "previews/disco_carregado.png",
+  "animacao": {
+    "tipo": "rotacao",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.72,
+    "peso_mb_por_frame": 0.77,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 a 12 quadros"
+  }
 }

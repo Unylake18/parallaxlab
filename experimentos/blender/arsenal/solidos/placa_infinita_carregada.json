@@ -3,13 +3,17 @@
   "nome": "Placa infinita carregada (plano com cargas na superfície)",
   "status": "aprovado",
   "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
-  "area": ["eletromagnetismo/lei_de_gauss", "eletromagnetismo/campo_eletrico"],
+  "area": [
+    "eletromagnetismo/lei_de_gauss",
+    "eletromagnetismo/campo_eletrico"
+  ],
   "descricao": "Folha de vidro azulado muito fina (normal ao longo de X) com grade sutil e cargas pontuais distribuídas sobre o plano. A opacidade da folha, a grade e o tamanho das cargas se dissolvem com a distância ao centro, para sugerir que o plano continua além do quadro. Fisicamente finita (14 x 6,5 por padrão).",
   "leitura_visual": "Plano azul translúcido de grade discreta, cheio de pontos e sumindo nas bordas. Cargas próximas da câmera são azul-claro (#7FB2FF); as distantes, azul (#267BFF). Lê-se como 'plano contínuo de carga, sem limites visíveis'.",
   "usar_quando": [
     "simetria planar: plano infinito com densidade superficial de carga uniforme (isolante fino ou plano de carga)",
     "mostrar que o plano é ilimitado e que o campo não depende da distância (par com os sólidos de simetria cilíndrica e esférica)",
-    "contraste com as simetrias cilíndrica e esférica na mesma unidade (casca, maciço, plano)"
+    "contraste com as simetrias cilíndrica e esférica na mesma unidade (casca, maciço, plano)",
+    "corrente superficial: cargas deslizando sobre o plano na direção Y (cargas_moveis=1)"
   ],
   "nao_usar_quando": [
     "o vídeo precisa mostrar as bordas ou efeitos de borda: a placa aqui se dissolve de propósito",
@@ -20,21 +24,79 @@
     "o plano é fisicamente finito e o 'infinito' é só visual (dissolve nas bordas); se o enquadramento incluir as bordas, o efeito se perde",
     "cargas só sobre o plano x=0; a normal do plano é fixa em X",
     "a visualização depende do ângulo: muito de frente (olhando ao longo de X) a placa vira um retângulo chapado; o padrão usa azimute -40",
-    "não desenha campo elétrico: o ciano é reservado ao campo e fica para a animação 2D/Manim"
+    "não desenha campo elétrico: o ciano é reservado ao campo e fica para a animação 2D/Manim",
+    "o movimento não codifica a corrente: a convenção (corrente convencional ou elétrons, que vão ao contrário) e o sinal vão por seta e rótulo no Manim; o movimento é didático, não em escala",
+    "as cargas somem por escala nas bordas (como o fade da placa); a direção do deslizamento é fixa em Y"
   ],
   "construtor": "placa_infinita_carregada",
   "parametros": {
-    "largura": {"valor": 14.0, "unidade": "u", "descricao": "largura da folha (eixo Y)"},
-    "altura": {"valor": 6.5, "unidade": "u", "descricao": "altura da folha (eixo Z)"},
-    "espessura": {"valor": 0.05, "unidade": "u", "descricao": "espessura da folha (eixo X)"},
-    "n_cargas": {"valor": 220, "unidade": "n", "descricao": "número de cargas desejado (pode sair menos se a distância mínima não couber)"},
-    "dist_min": {"valor": 0.5, "unidade": "u", "descricao": "distância mínima entre cargas"},
-    "tamanho_carga": {"valor": 0.06, "unidade": "u", "descricao": "raio de cada esfera de carga"},
-    "semente": {"valor": 7, "unidade": "n", "descricao": "semente do sorteio (mesma semente = mesma distribuição)"},
-    "grade": {"valor": 1, "unidade": "0/1", "descricao": "1 = grade sutil sobre o plano; 0 = só o vidro"},
-    "fade_inicio": {"valor": 0.5, "unidade": "0-1", "descricao": "fração da meia largura/altura onde a folha começa a se dissolver"}
+    "largura": {
+      "valor": 14.0,
+      "unidade": "u",
+      "descricao": "largura da folha (eixo Y)"
+    },
+    "altura": {
+      "valor": 6.5,
+      "unidade": "u",
+      "descricao": "altura da folha (eixo Z)"
+    },
+    "espessura": {
+      "valor": 0.05,
+      "unidade": "u",
+      "descricao": "espessura da folha (eixo X)"
+    },
+    "n_cargas": {
+      "valor": 220,
+      "unidade": "n",
+      "descricao": "número de cargas desejado (pode sair menos se a distância mínima não couber)"
+    },
+    "dist_min": {
+      "valor": 0.5,
+      "unidade": "u",
+      "descricao": "distância mínima entre cargas"
+    },
+    "tamanho_carga": {
+      "valor": 0.06,
+      "unidade": "u",
+      "descricao": "raio de cada esfera de carga"
+    },
+    "semente": {
+      "valor": 7,
+      "unidade": "n",
+      "descricao": "semente do sorteio (mesma semente = mesma distribuição)"
+    },
+    "grade": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = grade sutil sobre o plano; 0 = só o vidro"
+    },
+    "fade_inicio": {
+      "valor": 0.5,
+      "unidade": "0-1",
+      "descricao": "fração da meia largura/altura onde a folha começa a se dissolver"
+    },
+    "cargas_moveis": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = cargas em movimento (animação em loop); use com animar.py ou a ponte com o Manim"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do movimento; fase=1 repete o quadro da fase 0 (loop perfeito)"
+    },
+    "periodos": {
+      "valor": 4,
+      "unidade": "n",
+      "descricao": "o padrão de cargas se repete esta vez ao longo da largura; o loop desloca 1 período"
+    }
   },
-  "enquadramento": {"azimute": -40, "elevacao": 16, "lente": 50, "margem": 0.06},
+  "enquadramento": {
+    "azimute": -40,
+    "elevacao": 16,
+    "lente": 50,
+    "margem": 0.06
+  },
   "integracao": {
     "formato_recomendado": "png_seq_alpha",
     "custo_1080p_s_por_frame": 1.31,
@@ -42,5 +104,14 @@
   },
   "preview": "previews/placa_infinita_carregada.png",
   "origem": "experimentos/blender/placa.py",
-  "validado_em": "2026-10-07"
+  "validado_em": "2026-10-07",
+  "animacao": {
+    "tipo": "deslizamento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 1.3,
+    "peso_mb_por_frame": 1.68,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 a 12 quadros"
+  }
 }

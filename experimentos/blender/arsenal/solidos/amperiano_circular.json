@@ -1,0 +1,72 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "eletromagnetismo/lei_de_ampere"
+  ],
+  "validado_em": "2026-10-07",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.71,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060, com a fonte de referência (com_fonte=1)"
+  },
+  "origem": "experimentos/blender/ampere.py",
+  "id": "amperiano_circular",
+  "nome": "Contorno amperiano circular",
+  "descricao": "Círculo violeta (#9C8CFF), tracejado por padrão, no plano YZ, em torno do eixo X. Por padrão envolve um fio infinito de referência.",
+  "leitura_visual": "Círculo tracejado violeta em torno do fio azul. Tracejado = construção; contínuo (`continua=1`) = circulação calculada.",
+  "usar_quando": [
+    "campo B de um fio infinito (circulação em torno do fio, B tangente ao círculo)",
+    "campo B dentro/fora de um toroide (círculo concêntrico)",
+    "delimitar regiões por raio (dentro/fora do condutor)"
+  ],
+  "nao_usar_quando": [
+    "o contorno atravessa a parede de um solenoide (use amperiano_retangular)",
+    "superfície fechada de fluxo (use as gaussianas)"
+  ],
+  "limitacoes": [
+    "construção matemática (violeta, tracejada ou contínua), nunca preenchimento sólido: as faces opcionais são vidro violeta muito translúcido",
+    "com_fonte=1 desenha uma fonte de referência só para contexto e teste de leitura; em vídeo use com_fonte=0 e componha com a fonte da cena",
+    "o contorno é uma curva fechada (sem preenchimento); o sentido de percurso não é indicado: usar seta/rótulo no Manim"
+  ],
+  "construtor": "amperiano_circular",
+  "parametros": {
+    "raio": {
+      "valor": 1.4,
+      "unidade": "u",
+      "descricao": "raio do círculo"
+    },
+    "continua": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "0 = tracejado (construção); 1 = contínuo (circulação)"
+    },
+    "faces": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = disco de vidro violeta translúcido dentro do contorno"
+    },
+    "com_fonte": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = desenha um fio infinito de referência"
+    },
+    "comprimento_fonte": {
+      "valor": 10.0,
+      "unidade": "u",
+      "descricao": "comprimento do fio de referência"
+    },
+    "raio_fonte": {
+      "valor": 0.06,
+      "unidade": "u",
+      "descricao": "raio do fio de referência"
+    }
+  },
+  "enquadramento": {
+    "azimute": -45,
+    "elevacao": 20,
+    "lente": 50,
+    "margem": 0.16
+  },
+  "preview": "previews/amperiano_circular.png"
+}

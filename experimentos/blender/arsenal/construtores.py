@@ -1,7 +1,10 @@
 """Registro de construtores do arsenal: id do JSON -> função que cria o sólido no Blender.
 
 Cada construtor recebe o dict de parâmetros ({nome: valor}) e devolve
-    {"enquadrar": [objetos que definem o enquadramento], "apos_camera": callable(cam) | None}
+    {"enquadrar": [objetos que definem o enquadramento], "apos_camera": callable(cam) | None,
+     "atualizar": callable(fase) | None}
+`atualizar(fase)` só existe nos sólidos animáveis com `cargas_moveis=1`: fase em [0, 1) percorre um loop que
+fecha sem emenda (fase=1 reproduz a fase 0); é o que `animar.py` e a ponte com o Manim usam.
 Só roda dentro do Blender (importa bpy). Reaproveita os estudos em experimentos/blender/.
 """
 
@@ -13,6 +16,7 @@ import casca_oca as co  # noqa: E402
 import cilindro_macico as cm  # noqa: E402
 import esferas as es  # noqa: E402
 import gaussiana as ga  # noqa: E402
+import ampere as am  # noqa: E402
 import coaxial as cx  # noqa: E402
 import distribuicoes as ds  # noqa: E402
 import placa as pl  # noqa: E402
@@ -47,13 +51,19 @@ def esfera_macica_isolante(p):
 
 
 def placa_infinita_carregada(p):
+    movel = int(p["cargas_moveis"])
     corpo, _, proxy = pl.criar_placa_carregada(
         largura=p["largura"], altura=p["altura"], espessura=p["espessura"], n_cargas=int(p["n_cargas"]),
         dist_min=p["dist_min"], tamanho_carga=p["tamanho_carga"], semente=int(p["semente"]),
-        grade=int(p["grade"]), fade_inicio=p["fade_inicio"],
+        grade=int(p["grade"]), fade_inicio=p["fade_inicio"], com_cargas=0 if movel else 1,
     )
     # Enquadra e mede profundidade pelo proxy (região visível), sem as bordas dissolvidas
-    return {"enquadrar": [proxy], "apos_camera": lambda cam: cm.ajustar_profundidade(cam, proxy)}
+    res = {"enquadrar": [proxy], "apos_camera": lambda cam: cm.ajustar_profundidade(cam, proxy)}
+    if movel:
+        _, res["atualizar"] = pl.cargas_deslizantes(
+            p["largura"], p["altura"], int(p["n_cargas"]), p["dist_min"], p["tamanho_carga"], int(p["semente"]),
+            p["fade_inicio"], int(p["periodos"]), p["fase"])
+    return res
 
 
 def cilindro_coaxial(p):
@@ -103,21 +113,90 @@ def _depth_se_cargas(com_cargas, alvo):
 
 
 def anel_carregado(p):
-    corpo, _ = ds.criar_anel(p["raio"], p["raio_tubo"], int(p["n_cargas"]), int(p["com_cargas"]), int(p["eixo"]),
-                             p["comprimento_eixo"], int(p["semente"]))
-    return {"enquadrar": [corpo], "apos_camera": _depth_se_cargas(int(p["com_cargas"]), corpo)}
+    movel = int(p["cargas_moveis"])
+    corpo, _ = ds.criar_anel(p["raio"], p["raio_tubo"], int(p["n_cargas"]), 0 if movel else int(p["com_cargas"]),
+                             int(p["eixo"]), p["comprimento_eixo"], int(p["semente"]))
+    res = {"enquadrar": [corpo], "apos_camera": _depth_se_cargas(movel or int(p["com_cargas"]), corpo)}
+    if movel:
+        _, res["atualizar"] = am.cargas_no_caminho(am.caminho_circulo(p["raio"]), p["espaco_cargas"],
+                                                   p["tamanho_carga_movel"], p["fase"], fechado=True)
+    return res
 
 
 def disco_carregado(p):
-    corpo, _ = ds.criar_disco(p["raio"], p["espessura"], int(p["n_cargas"]), p["dist_min"], int(p["com_cargas"]),
-                              int(p["eixo"]), p["comprimento_eixo"], int(p["semente"]))
-    return {"enquadrar": [corpo], "apos_camera": _depth_se_cargas(int(p["com_cargas"]), corpo)}
+    movel = int(p["cargas_moveis"])
+    corpo, objs = ds.criar_disco(p["raio"], p["espessura"], int(p["n_cargas"]), p["dist_min"],
+                                 1 if movel else int(p["com_cargas"]), int(p["eixo"]), p["comprimento_eixo"],
+                                 int(p["semente"]))
+    res = {"enquadrar": [corpo], "apos_camera": _depth_se_cargas(movel or int(p["com_cargas"]), corpo)}
+    if movel:
+        cargas = [o for o in objs if o.name.startswith("Carga")]
+        res["atualizar"] = ds.cargas_girando(cargas, int(p["voltas"]), p["fase"])
+    return res
 
 
 def haste_carregada(p):
-    corpo, _ = ds.criar_haste(p["comprimento"], p["raio"], int(p["n_cargas"]), int(p["com_cargas"]), int(p["eixo"]),
-                              p["comprimento_eixo"], int(p["semente"]))
-    return {"enquadrar": [corpo], "apos_camera": _depth_se_cargas(int(p["com_cargas"]), corpo)}
+    movel = int(p["cargas_moveis"])
+    corpo, _ = ds.criar_haste(p["comprimento"], p["raio"], int(p["n_cargas"]), 0 if movel else int(p["com_cargas"]),
+                              int(p["eixo"]), p["comprimento_eixo"], int(p["semente"]))
+    res = {"enquadrar": [corpo], "apos_camera": _depth_se_cargas(movel or int(p["com_cargas"]), corpo)}
+    if movel:
+        m = p["comprimento"] / 2 - 0.15
+        _, res["atualizar"] = am.cargas_no_caminho([(0.0, -m, 0.0), (0.0, m, 0.0)], p["espaco_cargas"],
+                                                   p["tamanho_carga_movel"], p["fase"], 0.4)
+    return res
+
+
+def solenoide_corrente(p):
+    corpo, _ = am.criar_solenoide(p["raio"], p["comprimento"], int(p["n_espiras"]), p["raio_fio"], int(p["nucleo"]),
+                                  int(p["eixo"]), p["comprimento_eixo"], p["terminal"])
+    res = {"enquadrar": [corpo], "apos_camera": None}
+    if int(p["cargas_moveis"]):
+        pts = am.caminho_solenoide(p["raio"], p["comprimento"], int(p["n_espiras"]), p["terminal"])
+        cargas, atualizar = am.cargas_no_caminho(pts, p["espaco_cargas"], p["tamanho_carga_movel"], p["fase"])
+        res["atualizar"] = atualizar
+        res["apos_camera"] = lambda cam: cm.ajustar_profundidade(cam, corpo)
+    return res
+
+
+def toroide_corrente(p):
+    corpo, _ = am.criar_toroide(p["raio_maior"], p["raio_menor"], int(p["n_espiras"]), p["raio_fio"], int(p["nucleo"]),
+                                int(p["eixo"]), p["comprimento_eixo"])
+    res = {"enquadrar": [corpo], "apos_camera": None}
+    if int(p["cargas_moveis"]):
+        pts = am.caminho_toroide(p["raio_maior"], p["raio_menor"], int(p["n_espiras"]))
+        _, res["atualizar"] = am.cargas_no_caminho(pts, p["espaco_cargas"], p["tamanho_carga_movel"], p["fase"],
+                                                   fechado=True)
+        res["apos_camera"] = lambda cam: cm.ajustar_profundidade(cam, corpo)
+    return res
+
+
+def fio_infinito(p):
+    _, _, proxy = am.criar_fio(p["comprimento"], p["raio"], int(p["eixo"]), p["comprimento_eixo"])
+    res = {"enquadrar": [proxy], "apos_camera": None}
+    if int(p["cargas_moveis"]):
+        m = p["comprimento"] / 2
+        cargas, atualizar = am.cargas_no_caminho([(-m, 0.0, 0.0), (m, 0.0, 0.0)], p["espaco_cargas"],
+                                                 p["tamanho_carga_movel"], p["fase"], p["comprimento"] * 0.25)
+        res["atualizar"] = atualizar
+        res["apos_camera"] = lambda cam: cm.ajustar_profundidade(cam, proxy)
+    return res
+
+
+def amperiano_circular(p):
+    objs = am.criar_amperiano_circular(p["raio"], int(p["continua"]), int(p["faces"]))
+    if int(p["com_fonte"]):
+        am.criar_fio(p["comprimento_fonte"], p["raio_fonte"])
+    return {"enquadrar": [objs[0]], "apos_camera": None}
+
+
+def amperiano_retangular(p):
+    objs = am.criar_amperiano_retangular(p["comprimento"], p["altura"], int(p["continua"]), p["raio_fonte"],
+                                         int(p["faces"]))
+    alvo = objs[0]
+    if int(p["com_fonte"]):
+        alvo, _ = am.criar_solenoide(p["raio_fonte"], p["comprimento_fonte"], int(p["n_espiras_fonte"]))
+    return {"enquadrar": [alvo], "apos_camera": None}
 
 
 CONSTRUTORES = {
@@ -133,4 +212,9 @@ CONSTRUTORES = {
     "anel_carregado": anel_carregado,
     "disco_carregado": disco_carregado,
     "haste_carregada": haste_carregada,
+    "solenoide_corrente": solenoide_corrente,
+    "toroide_corrente": toroide_corrente,
+    "fio_infinito": fio_infinito,
+    "amperiano_circular": amperiano_circular,
+    "amperiano_retangular": amperiano_retangular,
 }

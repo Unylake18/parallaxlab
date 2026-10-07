@@ -30,6 +30,15 @@ def carregar():
             erros.append(f"{arq.name}: status inválido '{f['status']}'")
         if not re.search(rf'"{re.escape(f["construtor"])}"\s*:', construtores):
             erros.append(f"{arq.name}: construtor '{f['construtor']}' não está em construtores.py")
+        if "animacao" in f:
+            for k in ("cargas_moveis", "fase"):
+                if k not in f["parametros"]:
+                    erros.append(f"{arq.name}: tem 'animacao' mas falta o parâmetro '{k}'")
+            for k in ("tipo", "frames_sugeridos"):
+                if k not in f["animacao"]:
+                    erros.append(f"{arq.name}: 'animacao' sem '{k}'")
+        elif "cargas_moveis" in f["parametros"]:
+            erros.append(f"{arq.name}: tem o parâmetro cargas_moveis mas não tem o bloco 'animacao'")
         if not (AQUI / f["preview"]).exists():
             erros.append(f"{arq.name}: preview ausente ({f['preview']})")
         fichas.append(f)
@@ -78,6 +87,25 @@ def lista(itens):
     return "\n".join(f"- {i}" for i in itens)
 
 
+def animacao(f):
+    a = f.get("animacao")
+    if not a:
+        return ""
+    custo = a.get("custo_1080p_s_por_frame")
+    c = f"{custo} s/frame (1080p, com alpha)" if custo is not None else "não medido"
+    return (f"\n**Animação (cargas em movimento):** `{a['tipo']}` · loop sem emenda (`fase` de 0 a 1) · "
+            f"{a['frames_sugeridos']} quadros sugeridos · custo {c}\n")
+
+
+def uso_manim(f):
+    importa = "from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal"
+    if "animacao" in f:
+        chamada = f'img = Solido3D("{f["id"]}").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()'
+    else:
+        chamada = f'img = Solido3D("{f["id"]}").mobject(altura=5)   # estático: um quadro PNG com alpha'
+    return "```python\n" + importa + "\n" + chamada + "\n```\n"
+
+
 def secao(f):
     params = "\n".join(
         f"| `{k}` | {v['valor']} | {v['unidade']} | {v['descricao']} |" for k, v in f["parametros"].items())
@@ -107,11 +135,14 @@ def secao(f):
 {params}
 
 **Integração:** `{f['integracao']['formato_recomendado']}` · custo {custo}
-
+{animacao(f)}
 ```powershell
 & "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe" -b -P experimentos\\blender\\arsenal\\renderizar.py -- {f['id']} --res 1920x1080 --alpha
 ```
 
+**No Manim:**
+
+{uso_manim(f)}
 Ficha: `solidos/{f['id']}.json`
 """
 

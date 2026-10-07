@@ -1,0 +1,87 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "eletromagnetismo/lei_de_ampere"
+  ],
+  "validado_em": "2026-10-07",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.45,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060, com a fonte de referência (com_fonte=1)"
+  },
+  "origem": "experimentos/blender/ampere.py",
+  "id": "amperiano_retangular",
+  "nome": "Contorno amperiano retangular",
+  "descricao": "Retângulo violeta (#9C8CFF), tracejado por padrão, no plano XY (contém o eixo X): lados `comprimento` (em X) e `altura` (em Y), centrado na parede do solenoide de referência.",
+  "leitura_visual": "Retângulo tracejado violeta atravessando a parede do solenoide: metade dentro, metade fora. Lê-se como 'só o lado de dentro contribui'.",
+  "usar_quando": [
+    "campo B no interior de um solenoide longo (retângulo amperiano atravessando a parede)",
+    "mostrar a corrente envolvida (n·l·I) pelos fios que o retângulo atravessa",
+    "mostrar que os lados transversais e o lado de fora não contribuem"
+  ],
+  "nao_usar_quando": [
+    "fio ou toroide (use amperiano_circular)",
+    "contorno que deve ficar inteiramente fora do solenoide"
+  ],
+  "limitacoes": [
+    "construção matemática (violeta, tracejada ou contínua), nunca preenchimento sólido: as faces opcionais são vidro violeta muito translúcido",
+    "com_fonte=1 desenha uma fonte de referência só para contexto e teste de leitura; em vídeo use com_fonte=0 e componha com a fonte da cena",
+    "plano fixo XY e centrado em y = raio da fonte: outro posicionamento exige alterar `centro_y` no código",
+    "o sentido de percurso não é indicado: usar seta/rótulo no Manim"
+  ],
+  "construtor": "amperiano_retangular",
+  "parametros": {
+    "comprimento": {
+      "valor": 2.4,
+      "unidade": "u",
+      "descricao": "lado do retângulo ao longo de X"
+    },
+    "altura": {
+      "valor": 1.8,
+      "unidade": "u",
+      "descricao": "lado do retângulo ao longo de Y"
+    },
+    "continua": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "0 = tracejado; 1 = contínuo"
+    },
+    "faces": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = face de vidro violeta translúcido"
+    },
+    "com_fonte": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = desenha um solenoide de referência"
+    },
+    "raio_fonte": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "raio do solenoide de referência (o retângulo é centrado na parede, em y = raio)"
+    },
+    "comprimento_fonte": {
+      "valor": 4.0,
+      "unidade": "u",
+      "descricao": "comprimento do solenoide de referência"
+    },
+    "n_espiras_fonte": {
+      "valor": 12,
+      "unidade": "n",
+      "descricao": "número de espiras do solenoide de referência"
+    }
+  },
+  "enquadramento": {
+    "azimute": -20,
+    "elevacao": 50,
+    "lente": 50,
+    "margem": 0.09
+  },
+  "preview": "previews/amperiano_retangular.png",
+  "preview_set": [
+    "faces=1",
+    "continua=1"
+  ]
+}

@@ -84,4 +84,5 @@ def main():
           f"tempo={time.perf_counter() - t0:.2f}s -> {destino}")
 
 
-main()
+if __name__ == "__main__":
+    main()

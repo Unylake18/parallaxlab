@@ -24,11 +24,64 @@ Renderizar (a partir da raiz do repositório):
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- cilindro_macico_isolante --set n_cargas=60 --res 1920x1080 --alpha
 ```
 
+Animar (só sólidos com `cargas_moveis` na ficha; `fase` de 0 a 1 percorre um loop que fecha sem emenda):
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\animar.py -- fio_infinito --frames 60 --res 1920x1080 --alpha --saida caminho\da\pasta
+```
+
 Regerar o catálogo depois de editar uma ficha:
 
 ```powershell
 python experimentos\blender\arsenal\gerar_catalogo.py
 ```
+
+## Uso no Manim (ponte)
+
+Os sólidos entram numa cena Manim como **sequências PNG com alpha** renderizadas pelo Blender e guardadas em cache
+em `renders/arsenal3d/<id>/<hash>/` (`renders/` é ignorado pelo Git). A ponte tem duas camadas:
+
+| Arquivo | Papel |
+|---|---|
+| `ponte.py` | Python puro (sem Manim nem Blender no import): cache, hash, chamada ao Blender. Também é um CLI. |
+| `manim_solido3d.py` | Classe `Solido3D` para a cena: devolve um `ImageMobject` com fundo transparente. |
+| `exemplo_manim.py` | Exemplo e teste de integração (sólido animado com Manim atrás e na frente, FadeIn, pausa). |
+
+Em uma cena (a partir da raiz do repositório):
+
+```python
+import sys
+sys.path.insert(0, "experimentos/blender/arsenal")
+from manim_solido3d import Solido3D
+
+class MinhaCena(Scene):
+    def construct(self):
+        fio = Solido3D("fio_infinito")                              # animado (cargas em loop) se a ficha permitir
+        img = fio.mobject(cena=self, altura=5, centro=RIGHT * 3)    # cena=self é obrigatório se animado
+        self.play(FadeIn(img)); self.wait(4)                        # 2 loops de 2 s (periodo=2.0)
+        img.pausar(); img.retomar(); img.set_fase(0.25)
+
+        self.play(FadeIn(Solido3D("casca_cilindrica_oca").mobject(altura=4)))   # estático: um quadro
+```
+
+Pontos que importam:
+
+- **Prepare antes do render final**: a primeira chamada de um sólido/resolução renderiza no Blender (de segundos a
+  1 min); as seguintes só leem do disco. Comando: `python experimentos/blender/arsenal/ponte.py <id> --res 1920x1080`
+  (`--lista` mostra o que existe; `--frames`, `--set nome=valor`, `--estatico`, `--forcar`). Em máquina sem Blender o
+  cache não existe (ele não vai para o Git): use `Solido3D(..., render="nunca")` para falhar com o comando certo.
+- **Resolução**: por padrão a do render do Manim (preview 960x540 e final 1920x1080 geram sequências separadas, cada
+  uma no tamanho certo). O fundo é transparente: o que estiver atrás do sólido aparece.
+- **Cache automático**: o hash cobre a ficha, `estilo.json`, o código dos construtores, os parâmetros, a resolução e
+  os quadros. Mudou qualquer um, regera; qualquer mudança de código em `experimentos/blender/*.py` invalida todas as
+  sequências (é grosseiro de propósito: nunca serve imagem velha).
+- **Fase pelo tempo da cena**: o movimento é calculado de `cena.time`, não somando `dt`. Motivo medido: durante um
+  `FadeIn`/`FadeOut` aplicado ao próprio mobject o Manim chama o updater duas vezes por quadro, e somar `dt` faria o
+  movimento andar em dobro. O loop fecha sem emenda (verificado sem compressão: diferença 0,0 entre quadros de mesma fase).
+- **O que o 3D não diz**: sentido da corrente e sinal das cargas. Desenhe seta e rótulo em Manim por cima.
+- **Custo e peso**: veja a linha "Animação" de cada sólido no `catalogo.md` (0,5 a 1,3 s por quadro em 1080p; 60 quadros
+  pesam de ~36 MB a ~100 MB por sólido, e levam de ~30 s a ~80 s no Blender).
+- **Fora do escopo**: nada disto toca `template/`. Usar um sólido num vídeo continua exigindo handoff (ver `AGENTS.md`).
 
 ## Status das fichas
 
@@ -36,7 +89,7 @@ python experimentos\blender\arsenal\gerar_catalogo.py
 - `estudo`: funciona e foi renderizado, aparência ainda não aprovada.
 - `aprovado`: pode entrar em vídeo.
 
-Aprovados (2026-10-07): `casca_cilindrica_oca`, `cilindro_macico_isolante`, `casca_esferica_oca`, `esfera_macica_isolante`, `placa_infinita_carregada`, `cilindro_coaxial`, `gaussiana_esferica`, `gaussiana_cilindrica`, `gaussiana_caixa`, `anel_carregado`, `disco_carregado` e `haste_carregada`. Promover um sólido é decisão do usuário.
+Aprovados (2026-10-07): `casca_cilindrica_oca`, `cilindro_macico_isolante`, `casca_esferica_oca`, `esfera_macica_isolante`, `placa_infinita_carregada`, `cilindro_coaxial`, `gaussiana_esferica`, `gaussiana_cilindrica`, `gaussiana_caixa`, `anel_carregado`, `disco_carregado`, `haste_carregada`, `solenoide_corrente`, `toroide_corrente`, `fio_infinito`, `amperiano_circular` e `amperiano_retangular`. Promover um sólido é decisão do usuário.
 
 ## Como adicionar um sólido
 

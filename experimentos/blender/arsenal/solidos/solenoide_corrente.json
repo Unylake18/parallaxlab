@@ -1,0 +1,119 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "eletromagnetismo/lei_de_ampere"
+  ],
+  "validado_em": "2026-10-07",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.53,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060"
+  },
+  "origem": "experimentos/blender/ampere.py",
+  "id": "solenoide_corrente",
+  "nome": "Solenoide (hélice de fio)",
+  "descricao": "Solenoide: fio azul (#267BFF) enrolado em hélice de passo constante ao longo do eixo X. Terminais retos nas pontas. Núcleo de vidro opcional e eixo de simetria opcional.",
+  "leitura_visual": "Hélice azul luminosa de espiras abertas em volta de um núcleo de vidro translúcido: lê-se como 'fio enrolado'. Sem núcleo (nucleo=0) o interior fica visível e vazio.",
+  "usar_quando": [
+    "campo B no interior de um solenoide longo (n espiras por comprimento, retângulo amperiano atravessando a parede)",
+    "mostrar a densidade de espiras n e o efeito de enrolar o fio",
+    "contraste com o toroide (enrolamento fechado) e com o fio reto",
+    "corrente seguindo as espiras: cargas em movimento ao longo da hélice (cargas_moveis=1, animar.py)",
+    "corrente seguindo as espiras: cargas em movimento ao longo da hélice (cargas_moveis=1)"
+  ],
+  "nao_usar_quando": [
+    "o enrolamento é fechado em anel (use toroide_corrente)",
+    "uma única espira (use anel_carregado como aro, ou espira no 2D)"
+  ],
+  "limitacoes": [
+    "só a fonte física (fio/enrolamento, azul): o campo B (ciano) e o sentido da corrente são desenhados no 2D/Manim",
+    "sem noção de sentido: a hélice tem um sentido de enrolamento, mas ele não representa a corrente de forma legível; indicar I por rótulo/seta no Manim",
+    "hélice ideal: espiras muito próximas aproximam o solenoide infinito, mas a hélice é finita (4 de comprimento)",
+    "o fio é grosso para ser visível; o passo e o número de espiras são estilizados (12 por padrão)",
+    "o sentido do movimento não codifica a corrente: a convenção (corrente convencional ou elétrons, que vão ao contrário) e o sinal vão por seta e rótulo no Manim",
+    "o movimento não codifica a corrente: a convenção (corrente convencional ou elétrons, que vão ao contrário) e o sinal vão por seta e rótulo no Manim; o movimento é didático, não em escala"
+  ],
+  "construtor": "solenoide_corrente",
+  "parametros": {
+    "raio": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "raio do solenoide"
+    },
+    "comprimento": {
+      "valor": 4.0,
+      "unidade": "u",
+      "descricao": "comprimento ao longo do eixo X"
+    },
+    "n_espiras": {
+      "valor": 12,
+      "unidade": "n",
+      "descricao": "número de espiras"
+    },
+    "raio_fio": {
+      "valor": 0.035,
+      "unidade": "u",
+      "descricao": "raio do fio (visual)"
+    },
+    "nucleo": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = núcleo de vidro dentro (só visual, dá corpo ao solenoide; não representa um material magnético); 0 = só o fio"
+    },
+    "eixo": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = eixo de simetria tracejado neutro"
+    },
+    "comprimento_eixo": {
+      "valor": 6.0,
+      "unidade": "u",
+      "descricao": "comprimento do eixo, se desenhado"
+    },
+    "terminal": {
+      "valor": 0.7,
+      "unidade": "u",
+      "descricao": "comprimento dos terminais retos de fio nas duas pontas"
+    },
+    "cargas_moveis": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = cargas azul-claro deslizando ao longo do fio (corrente); o movimento é didático, não em escala"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do movimento: desloca as cargas de 0 a 1 espaçamento; fase=1 repete o quadro da fase 0 (loop perfeito)"
+    },
+    "espaco_cargas": {
+      "valor": 0.8,
+      "unidade": "u",
+      "descricao": "distância entre cargas consecutivas ao longo do fio"
+    },
+    "tamanho_carga_movel": {
+      "valor": 0.08,
+      "unidade": "u",
+      "descricao": "raio de cada carga móvel"
+    }
+  },
+  "enquadramento": {
+    "azimute": -60,
+    "elevacao": 24,
+    "lente": 50,
+    "margem": 0.09
+  },
+  "preview": "previews/solenoide_corrente.png",
+  "preview_set": [
+    "cargas_moveis=1"
+  ],
+  "animacao": {
+    "tipo": "deslizamento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.55,
+    "peso_mb_por_frame": 1.14,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 a 12 quadros"
+  }
+}

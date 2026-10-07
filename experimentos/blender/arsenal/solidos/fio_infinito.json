@@ -1,0 +1,99 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "eletromagnetismo/lei_de_ampere"
+  ],
+  "validado_em": "2026-10-07",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.5,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060"
+  },
+  "origem": "experimentos/blender/ampere.py",
+  "id": "fio_infinito",
+  "nome": "Fio infinito (retilíneo)",
+  "descricao": "Fio retilíneo azul (#267BFF) ao longo de X, brilhante, com um halo de vidro fino em volta, cuja opacidade se dissolve nas duas pontas para sugerir comprimento infinito. Eixo de simetria opcional.",
+  "leitura_visual": "Linha azul luminosa com halo suave que some nas pontas: lê-se como 'fio muito longo, sem fim visível'.",
+  "usar_quando": [
+    "campo B de um fio longo (circulação amperiana circular em torno dele)",
+    "linha de carga/corrente infinita como fonte",
+    "contraste com solenoide e toroide (outras fontes de Ampère)",
+    "corrente num fio: cargas em movimento ao longo dele (cargas_moveis=1, animar.py)",
+    "corrente num fio: cargas em movimento ao longo dele (cargas_moveis=1)"
+  ],
+  "nao_usar_quando": [
+    "o fio é finito e o efeito de pontas importa: aqui as pontas se dissolvem de propósito",
+    "um condutor espesso com corrente distribuída na seção: este fio é fino"
+  ],
+  "limitacoes": [
+    "só a fonte física (fio/enrolamento, azul): o campo B (ciano) e o sentido da corrente são desenhados no 2D/Manim",
+    "sem noção de sentido: a hélice tem um sentido de enrolamento, mas ele não representa a corrente de forma legível; indicar I por rótulo/seta no Manim",
+    "fisicamente finito (10 por padrão): o 'infinito' é só visual; se o enquadramento incluir as pontas, o efeito se perde",
+    "é um cilindro opaco-translúcido fino; não representa a densidade de corrente na seção",
+    "o sentido do movimento não codifica a corrente: a convenção (corrente convencional ou elétrons, que vão ao contrário) e o sinal vão por seta e rótulo no Manim",
+    "o movimento não codifica a corrente: a convenção (corrente convencional ou elétrons, que vão ao contrário) e o sinal vão por seta e rótulo no Manim; o movimento é didático, não em escala"
+  ],
+  "construtor": "fio_infinito",
+  "parametros": {
+    "comprimento": {
+      "valor": 10.0,
+      "unidade": "u",
+      "descricao": "comprimento do fio (eixo X)"
+    },
+    "raio": {
+      "valor": 0.06,
+      "unidade": "u",
+      "descricao": "raio do fio (visual)"
+    },
+    "eixo": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = eixo tracejado neutro (coincide com o fio; útil só como guia)"
+    },
+    "comprimento_eixo": {
+      "valor": 6.0,
+      "unidade": "u",
+      "descricao": "comprimento do eixo, se desenhado"
+    },
+    "cargas_moveis": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = cargas azul-claro deslizando ao longo do fio (corrente); o movimento é didático, não em escala"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do movimento: desloca as cargas de 0 a 1 espaçamento; fase=1 repete o quadro da fase 0 (loop perfeito)"
+    },
+    "espaco_cargas": {
+      "valor": 0.6,
+      "unidade": "u",
+      "descricao": "distância entre cargas consecutivas ao longo do fio"
+    },
+    "tamanho_carga_movel": {
+      "valor": 0.09,
+      "unidade": "u",
+      "descricao": "raio de cada carga móvel"
+    }
+  },
+  "enquadramento": {
+    "azimute": -55,
+    "elevacao": 16,
+    "lente": 50,
+    "margem": 0.1
+  },
+  "preview": "previews/fio_infinito.png",
+  "preview_set": [
+    "cargas_moveis=1"
+  ],
+  "animacao": {
+    "tipo": "deslizamento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.67,
+    "peso_mb_por_frame": 0.6,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 a 12 quadros"
+  }
+}

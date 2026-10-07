@@ -19,7 +19,8 @@
   "usar_quando": [
     "campo elétrico de uma haste finita carregada (integração de dq, ponto na mediatriz, limite de haste longa)",
     "momento de inércia de uma haste (com_cargas=0), com o eixo de simetria desenhado",
-    "contraste com o anel (linha curva) e com o disco (superfície)"
+    "contraste com o anel (linha curva) e com o disco (superfície)",
+    "corrente numa haste: cargas deslizando ao longo dela (cargas_moveis=1)"
   ],
   "nao_usar_quando": [
     "a haste deve ser infinita: o objeto é finito (para linha infinita use gaussiana_cilindrica com a fonte da cena)",
@@ -30,7 +31,9 @@
     "em contexto de mecânica (com_cargas=0) o azul de 'fonte física' vem da gramática de Eletromagnetismo; a gramática de cor da Mecânica não foi verificada aqui",
     "espessura/raio do corpo exagerados em relação ao ideal (o corpo de vidro é visível); as cargas ficam dentro dele",
     "haste ao longo de Y fixa; em outra orientação, girar a câmera",
-    "as cargas têm espaçamento quase regular (jitter 0,12)"
+    "as cargas têm espaçamento quase regular (jitter 0,12)",
+    "o movimento não codifica a corrente: a convenção (corrente convencional ou elétrons, que vão ao contrário) e o sinal vão por seta e rótulo no Manim; o movimento é didático, não em escala",
+    "com cargas_moveis=1 as cargas estáticas (com_cargas) são substituídas pelas móveis"
   ],
   "construtor": "haste_carregada",
   "parametros": {
@@ -68,6 +71,26 @@
       "valor": 7,
       "unidade": "n",
       "descricao": "semente do sorteio/jitter (mesma semente = mesma distribuição)"
+    },
+    "cargas_moveis": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = cargas em movimento (animação em loop); use com animar.py ou a ponte com o Manim"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do movimento; fase=1 repete o quadro da fase 0 (loop perfeito)"
+    },
+    "espaco_cargas": {
+      "valor": 0.45,
+      "unidade": "u",
+      "descricao": "distância entre cargas ao longo da haste"
+    },
+    "tamanho_carga_movel": {
+      "valor": 0.07,
+      "unidade": "u",
+      "descricao": "raio de cada carga móvel"
     }
   },
   "enquadramento": {
@@ -79,5 +102,14 @@
   "preview_set": [
     "eixo=1"
   ],
-  "preview": "previews/haste_carregada.png"
+  "preview": "previews/haste_carregada.png",
+  "animacao": {
+    "tipo": "deslizamento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.62,
+    "peso_mb_por_frame": 0.63,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 a 12 quadros"
+  }
 }
