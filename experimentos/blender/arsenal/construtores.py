@@ -20,7 +20,10 @@ import ampere as am  # noqa: E402
 import coaxial as cx  # noqa: E402
 import distribuicoes as ds  # noqa: E402
 import placa as pl  # noqa: E402
+import capacitores as cp  # noqa: E402
+import otica as ot  # noqa: E402
 import revolucao as rv  # noqa: E402
+import termo_fluidos as tf  # noqa: E402
 import rolamento as rl  # noqa: E402
 
 
@@ -247,6 +250,53 @@ def solido_revolucao_cascas(p):
     return _revolucao("casca", p)
 
 
+def capacitor_placas_paralelas(p):
+    proxy = cp.criar_capacitor_placas(p["lado"], p["distancia"], p["espessura"], int(p["n_cargas"]), p["dist_min"],
+                                      int(p["dieletrico"]), int(p["semente"]))
+    return {"enquadrar": [proxy], "apos_camera": lambda cam: cm.ajustar_profundidade(cam, proxy)}
+
+
+def capacitor_esferico(p):
+    externa = cp.criar_capacitor_esferico(p["raio_a"], p["raio_b"], p["espessura"], int(p["n_cargas"]), corte=int(p["corte"]))
+    return {"enquadrar": [externa], "apos_camera": lambda cam: cm.ajustar_profundidade(cam, externa)}
+
+
+def lente_delgada(p):
+    corpo = ot.criar_lente(p["forma"], p["diametro"], p["raio1"], p["raio2"], p["espessura_borda"], p["indice"],
+                           int(p["focos"]), int(p["eixo"]))
+    f = 1.0 / ((p["indice"] - 1) * (1 / p["raio1"] + 1 / p["raio2"]))
+    proxy = cp._proxy((2 * (f + 0.7), p["diametro"] * 1.15, p["diametro"] * 1.15))
+    return {"enquadrar": [proxy], "apos_camera": None}
+
+
+def prisma_triangular(p):
+    corpo = ot.criar_prisma(p["angulo_apice"], p["base"], p["comprimento"], int(p["eixo"]))
+    return {"enquadrar": [corpo], "apos_camera": None}
+
+
+def anteparo_fenda_dupla(p):
+    ot.criar_fenda_dupla(p["largura"], p["altura"], p["espessura"], p["fenda"], p["separacao"])
+    proxy = cp._proxy((p["espessura"] * 4, p["largura"], p["altura"]))
+    return {"enquadrar": [proxy], "apos_camera": None}
+
+
+def caixa_gas_cinetica(p):
+    cont, atualizar = tf.criar_caixa_gas(p["comprimento"], p["largura"], int(p["n_moleculas"]), p["temperatura"],
+                                         p["pistao"], p["amplitude_pistao"], int(p["semente"]), p["fase"])
+    res = {"enquadrar": [cont], "apos_camera": lambda cam: cm.ajustar_profundidade(cam, cont)}
+    if int(p["movimento"]):
+        res["atualizar"] = atualizar
+    return res
+
+
+def tubo_escoamento(p):
+    tubo, atualizar = tf.criar_tubo(p["comprimento"], p["raio"], p["razao"], int(p["n_particulas"]), int(p["semente"]), p["fase"])
+    res = {"enquadrar": [tubo], "apos_camera": lambda cam: cm.ajustar_profundidade(cam, tubo)}
+    if int(p["movimento"]):
+        res["atualizar"] = atualizar
+    return res
+
+
 CONSTRUTORES = {
     "casca_cilindrica_oca": casca_cilindrica_oca,
     "cilindro_macico_isolante": cilindro_macico_isolante,
@@ -271,4 +321,11 @@ CONSTRUTORES = {
     "solido_revolucao_disco": solido_revolucao_disco,
     "solido_revolucao_arruela": solido_revolucao_arruela,
     "solido_revolucao_cascas": solido_revolucao_cascas,
+    "capacitor_placas_paralelas": capacitor_placas_paralelas,
+    "capacitor_esferico": capacitor_esferico,
+    "lente_delgada": lente_delgada,
+    "prisma_triangular": prisma_triangular,
+    "anteparo_fenda_dupla": anteparo_fenda_dupla,
+    "caixa_gas_cinetica": caixa_gas_cinetica,
+    "tubo_escoamento": tubo_escoamento,
 }

@@ -80,7 +80,7 @@ def material_vidro(obj, **sobrescrever):
     obj.data.materials.append(mat)
 
 
-def material_carga():
+def material_carga(cor_perto=None, cor_longe=None):
     """Carga com pista de profundidade: perto = azul-claro e brilhante, longe = azul e mais fraco.
 
     Cargas são FONTE FÍSICA (azul), nunca ciano: ciano é reservado ao campo elétrico (ver estilo.json).
@@ -88,7 +88,8 @@ def material_carga():
     (zona de perto/longe) são ajustados depois do enquadramento por `ajustar_profundidade`.
     """
     c = co.ST["materiais"]["carga"]
-    perto, longe = co.E.cor(c["cor_perto"]), co.E.cor(c["cor_longe"])
+    # cor_perto/cor_longe: nomes de cores do estilo.json (padrão: o das cargas); usados por marcadores neutros
+    perto, longe = co.E.cor(cor_perto or c["cor_perto"]), co.E.cor(cor_longe or c["cor_longe"])
     mat = bpy.data.materials.new("Carga")
     mat.use_nodes = True
     nt = mat.node_tree
@@ -153,11 +154,11 @@ def pontos_no_volume(n, raio, comprimento, dist_min, margem=0.12, semente=7):
     return pts
 
 
-def criar_cargas(pontos, tamanho=co.ST["materiais"]["carga"]["tamanho"]):
+def criar_cargas(pontos, tamanho=co.ST["materiais"]["carga"]["tamanho"], material=None):
     bpy.ops.mesh.primitive_uv_sphere_add(radius=tamanho, segments=16, ring_count=8)
     base = bpy.context.active_object
     base.name = "Carga"
-    base.data.materials.append(material_carga())
+    base.data.materials.append(material if material is not None else material_carga())
     bpy.ops.object.shade_smooth()
     objs = [base]
     for i, p in enumerate(pontos[1:], start=1):

@@ -1,0 +1,68 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "otica/interferencia",
+    "otica/difracao"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/otica.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.6,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060"
+  },
+  "id": "anteparo_fenda_dupla",
+  "nome": "Anteparo de fenda dupla",
+  "descricao": "Anteparo opaco azul (normal X) com duas fendas verticais (ao longo de Z) de largura `fenda`, separadas de `separacao` entre centros; as bordas das fendas em azul-claro. Nada atrás dele: a onda, as frentes e a figura de interferência são do Manim.",
+  "leitura_visual": "Placa azul com duas frestas escuras e bordas claras: lê-se como 'duas fontes coerentes'.",
+  "usar_quando": [
+    "experimento de Young: interferência em fenda dupla, d sen θ = mλ",
+    "difração por fenda simples (com separacao grande ou uma só fenda no Manim)",
+    "mostrar a geometria (a, d) antes das frentes de onda"
+  ],
+  "nao_usar_quando": [
+    "redes de difração com muitas fendas",
+    "fenda simples: este sólido sempre tem duas"
+  ],
+  "limitacoes": [
+    "só o objeto: raios, frentes de onda, ângulos e a figura de interferência são do Manim",
+    "vidro translúcido azul-claro (padrão do arsenal): não representa cor, dispersão nem índice de refração",
+    "as fendas se leem como frestas escuras: sem fundo, o espaço atrás aparece vazio (preto)"
+  ],
+  "construtor": "anteparo_fenda_dupla",
+  "parametros": {
+    "largura": {
+      "valor": 4.0,
+      "unidade": "u",
+      "descricao": "largura do anteparo (eixo Y)"
+    },
+    "altura": {
+      "valor": 3.0,
+      "unidade": "u",
+      "descricao": "altura do anteparo (eixo Z)"
+    },
+    "espessura": {
+      "valor": 0.12,
+      "unidade": "u",
+      "descricao": "espessura (eixo X)"
+    },
+    "fenda": {
+      "valor": 0.2,
+      "unidade": "u",
+      "descricao": "largura a de cada fenda"
+    },
+    "separacao": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "distância d entre os centros das fendas"
+    }
+  },
+  "enquadramento": {
+    "azimute": -30,
+    "elevacao": 14,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/anteparo_fenda_dupla.png"
+}

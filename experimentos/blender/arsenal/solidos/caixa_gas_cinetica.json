@@ -1,0 +1,103 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "termodinamica/teoria_cinetica",
+    "termodinamica/processos_em_gases"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/termo_fluidos.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 1.12,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "caixa_gas_cinetica",
+  "nome": "Gás ideal em recipiente com êmbolo (teoria cinética)",
+  "descricao": "Recipiente de vidro (arestas azul-claro) com um êmbolo e moléculas neutras (brancas perto, azul-claro longe) ricocheteando nas paredes e no êmbolo. `pistao` = fração do comprimento ocupada pelo gás; `temperatura` multiplica a velocidade das moléculas; `amplitude_pistao` faz o êmbolo oscilar (compressão e expansão) ao longo do loop.",
+  "leitura_visual": "Caixa de vidro com um êmbolo e pontos brancos em movimento; com o êmbolo oscilando, o volume muda e as moléculas ficam mais densas. Lê-se como 'gás ideal: pressão = colisões, T = velocidade média'.",
+  "usar_quando": [
+    "teoria cinética: pressão como colisões com as paredes, temperatura como energia cinética média",
+    "processos em gases ideais: compressão e expansão pelo êmbolo (isotérmica, adiabática no Manim)",
+    "primeira lei: trabalho realizado pelo êmbolo"
+  ],
+  "nao_usar_quando": [
+    "o ponto é o gráfico P×V (é do Manim; este sólido dá a imagem microscópica)",
+    "gás real ou interações entre moléculas (as moléculas não colidem entre si)"
+  ],
+  "limitacoes": [
+    "as moléculas não colidem entre si e a velocidade de cada uma é fixa (ciclos inteiros por loop): não há distribuição de Maxwell nem troca de energia",
+    "ao oscilar o êmbolo, as posições são escaladas com o volume (aproximação visual): a velocidade não muda como numa compressão adiabática real; temperatura/pressão ficam para o Manim",
+    "moléculas e cargas têm aspectos parecidos (pontos): moléculas são brancas, cargas azuis",
+    "a velocidade é o número de ciclos por loop: o loop precisa ser longo o bastante (60 quadros) para as mais rápidas não parecerem tremer"
+  ],
+  "construtor": "caixa_gas_cinetica",
+  "parametros": {
+    "comprimento": {
+      "valor": 4.0,
+      "unidade": "u",
+      "descricao": "comprimento do recipiente (eixo X)"
+    },
+    "largura": {
+      "valor": 2.0,
+      "unidade": "u",
+      "descricao": "lado da seção quadrada"
+    },
+    "n_moleculas": {
+      "valor": 40,
+      "unidade": "n",
+      "descricao": "número de moléculas"
+    },
+    "temperatura": {
+      "valor": 1.0,
+      "unidade": "x",
+      "descricao": "fator de velocidade das moléculas (inteiro de ciclos por loop)"
+    },
+    "pistao": {
+      "valor": 0.8,
+      "unidade": "0-1",
+      "descricao": "fração do comprimento ocupada pelo gás"
+    },
+    "amplitude_pistao": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "oscilação do êmbolo (fração do comprimento); 0 = fixo"
+    },
+    "semente": {
+      "valor": 7,
+      "unidade": "n",
+      "descricao": "semente do sorteio"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação em loop (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do loop; fase=1 repete o quadro da fase 0 (loop perfeito)"
+    }
+  },
+  "animacao": {
+    "tipo": "colisoes",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 1.12,
+    "peso_mb_por_frame": 1.28,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 20,
+    "lente": 50,
+    "margem": 0.1
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.3"
+  ],
+  "preview": "previews/caixa_gas_cinetica.png"
+}

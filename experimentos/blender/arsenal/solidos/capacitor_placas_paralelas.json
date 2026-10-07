@@ -1,0 +1,77 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "eletromagnetismo/condutores_e_capacitores"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/capacitores.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.92,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060"
+  },
+  "id": "capacitor_placas_paralelas",
+  "nome": "Capacitor de placas paralelas",
+  "descricao": "Duas placas de vidro azulado quadradas e paralelas (normal X) separadas por `distancia`, com o mesmo número de cargas pontuais nas faces internas. Dielétrico opcional (vidro azul-claro enchendo o vão).",
+  "leitura_visual": "Duas folhas de vidro paralelas com pontos azuis voltados um para o outro: lê-se como 'duas armaduras com cargas iguais e opostas e um vão entre elas'.",
+  "usar_quando": [
+    "capacitor de placas paralelas: C = ε₀A/d, campo uniforme no vão, energia armazenada",
+    "inserir um dielétrico (dieletrico=1) e comparar com o vão vazio",
+    "contraste com o capacitor cilíndrico (cilindro_coaxial) e o esférico"
+  ],
+  "nao_usar_quando": [
+    "o ponto é o plano infinito sem borda (use placa_infinita_carregada)",
+    "efeitos de borda do campo: aqui as placas são desenhadas sem campo"
+  ],
+  "limitacoes": [
+    "o sinal da carga não é codificado em cor: +Q e −Q vão por rótulo no Manim; o campo (ciano) também",
+    "o mesmo número de cargas em cada armadura (carga igual e oposta)",
+    "as placas são quadradas e finitas; o campo uniforme 'ideal' é uma aproximação feita no Manim"
+  ],
+  "construtor": "capacitor_placas_paralelas",
+  "parametros": {
+    "lado": {
+      "valor": 3.0,
+      "unidade": "u",
+      "descricao": "lado das placas quadradas"
+    },
+    "distancia": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "distância d entre as placas"
+    },
+    "espessura": {
+      "valor": 0.06,
+      "unidade": "u",
+      "descricao": "espessura das placas (visual)"
+    },
+    "n_cargas": {
+      "valor": 36,
+      "unidade": "n",
+      "descricao": "cargas por placa"
+    },
+    "dist_min": {
+      "valor": 0.42,
+      "unidade": "u",
+      "descricao": "distância mínima entre cargas"
+    },
+    "dieletrico": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = dielétrico (vidro claro) no vão"
+    },
+    "semente": {
+      "valor": 7,
+      "unidade": "n",
+      "descricao": "semente do sorteio"
+    }
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 20,
+    "lente": 50,
+    "margem": 0.09
+  },
+  "preview": "previews/capacitor_placas_paralelas.png"
+}

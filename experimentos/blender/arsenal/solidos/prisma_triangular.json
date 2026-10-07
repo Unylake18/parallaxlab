@@ -1,0 +1,62 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "otica/otica_geometrica"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/otica.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.76,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060"
+  },
+  "id": "prisma_triangular",
+  "nome": "Prisma triangular",
+  "descricao": "Prisma de vidro azul-claro de seção triangular isósceles (ângulo de ápice `angulo_apice`), com a seção no plano XY e extrusão ao longo de Z, apoiado na base. As nove arestas em azul-claro.",
+  "leitura_visual": "Prisma de vidro com arestas claras: lê-se como 'prisma óptico'. A direção dos raios, o desvio e a dispersão são do Manim.",
+  "usar_quando": [
+    "refração em um prisma, ângulo de desvio mínimo",
+    "dispersão (as cores vêm do Manim)",
+    "reflexão interna total"
+  ],
+  "nao_usar_quando": [
+    "lentes (use lente_delgada)",
+    "prismas não triangulares"
+  ],
+  "limitacoes": [
+    "só o objeto: raios, frentes de onda, ângulos e a figura de interferência são do Manim",
+    "vidro translúcido azul-claro (padrão do arsenal): não representa cor, dispersão nem índice de refração",
+    "os raios entrariam no plano da seção (XY); a extrusão em Z é só para dar volume"
+  ],
+  "construtor": "prisma_triangular",
+  "parametros": {
+    "angulo_apice": {
+      "valor": 60.0,
+      "unidade": "graus",
+      "descricao": "ângulo de ápice"
+    },
+    "base": {
+      "valor": 2.0,
+      "unidade": "u",
+      "descricao": "comprimento da base"
+    },
+    "comprimento": {
+      "valor": 2.0,
+      "unidade": "u",
+      "descricao": "comprimento da extrusão (eixo Z)"
+    },
+    "eixo": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = eixo tracejado neutro ao longo de X"
+    }
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 24,
+    "lente": 50,
+    "margem": 0.1
+  },
+  "preview": "previews/prisma_triangular.png"
+}

@@ -11,7 +11,11 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 | `amperiano_circular` | Contorno amperiano circular | aprovado | eletromagnetismo/lei_de_ampere |
 | `amperiano_retangular` | Contorno amperiano retangular | aprovado | eletromagnetismo/lei_de_ampere |
 | `anel_carregado` | Anel carregado (aro) | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
+| `anteparo_fenda_dupla` | Anteparo de fenda dupla | estudo | otica/interferencia, otica/difracao |
 | `aro_rolando` | Aro rolando sem deslizar | estudo | mecanica/rolamento, mecanica/momento_de_inercia |
+| `caixa_gas_cinetica` | Gás ideal em recipiente com êmbolo (teoria cinética) | estudo | termodinamica/teoria_cinetica, termodinamica/processos_em_gases |
+| `capacitor_esferico` | Capacitor esférico (esferas concêntricas, em corte) | estudo | eletromagnetismo/condutores_e_capacitores |
+| `capacitor_placas_paralelas` | Capacitor de placas paralelas | estudo | eletromagnetismo/condutores_e_capacitores |
 | `casca_cilindrica_oca` | Casca cilíndrica oca | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `casca_esferica_oca` | Casca esférica oca (com corte em octante) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `cilindro_coaxial` | Cilindro coaxial (condutor maciço + casca externa, em corte) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
@@ -25,12 +29,15 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 | `gaussiana_cilindrica` | Superfície gaussiana cilíndrica (fechada) | aprovado | eletromagnetismo/lei_de_gauss |
 | `gaussiana_esferica` | Superfície gaussiana esférica | aprovado | eletromagnetismo/lei_de_gauss |
 | `haste_carregada` | Haste carregada | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
+| `lente_delgada` | Lente delgada (biconvexa ou biconcava) | estudo | otica/otica_geometrica |
 | `placa_infinita_carregada` | Placa infinita carregada (plano com cargas na superfície) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
+| `prisma_triangular` | Prisma triangular | estudo | otica/otica_geometrica |
 | `solenoide_corrente` | Solenoide (hélice de fio) | aprovado | eletromagnetismo/lei_de_ampere |
 | `solido_revolucao_arruela` | Sólido de revolução: método das arruelas | estudo | calculo/volumes_de_revolucao |
 | `solido_revolucao_cascas` | Sólido de revolução: método das cascas | estudo | calculo/volumes_de_revolucao |
 | `solido_revolucao_disco` | Sólido de revolução: método dos discos | estudo | calculo/volumes_de_revolucao |
 | `toroide_corrente` | Toroide (fio enrolado em anel) | aprovado | eletromagnetismo/lei_de_ampere |
+| `tubo_escoamento` | Tubo com estrangulamento (continuidade) | estudo | fluidos/fluidos_em_movimento |
 
 ## Padrão visual
 
@@ -220,6 +227,53 @@ img = Solido3D("anel_carregado").mobject(cena=self, altura=5)   # cargas em loop
 
 Ficha: `solidos/anel_carregado.json`
 
+### `anteparo_fenda_dupla` — Anteparo de fenda dupla
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Anteparo opaco azul (normal X) com duas fendas verticais (ao longo de Z) de largura `fenda`, separadas de `separacao` entre centros; as bordas das fendas em azul-claro. Nada atrás dele: a onda, as frentes e a figura de interferência são do Manim.
+
+![Anteparo de fenda dupla](previews/anteparo_fenda_dupla.png)
+
+**Como se lê:** Placa azul com duas frestas escuras e bordas claras: lê-se como 'duas fontes coerentes'.
+
+**Usar quando**
+- experimento de Young: interferência em fenda dupla, d sen θ = mλ
+- difração por fenda simples (com separacao grande ou uma só fenda no Manim)
+- mostrar a geometria (a, d) antes das frentes de onda
+
+**Não usar quando**
+- redes de difração com muitas fendas
+- fenda simples: este sólido sempre tem duas
+
+**Limitações**
+- só o objeto: raios, frentes de onda, ângulos e a figura de interferência são do Manim
+- vidro translúcido azul-claro (padrão do arsenal): não representa cor, dispersão nem índice de refração
+- as fendas se leem como frestas escuras: sem fundo, o espaço atrás aparece vazio (preto)
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `largura` | 4.0 | u | largura do anteparo (eixo Y) |
+| `altura` | 3.0 | u | altura do anteparo (eixo Z) |
+| `espessura` | 0.12 | u | espessura (eixo X) |
+| `fenda` | 0.2 | u | largura a de cada fenda |
+| `separacao` | 1.0 | u | distância d entre os centros das fendas |
+
+**Integração:** `png_seq_alpha` · custo 0.6 s/frame (1080p, Eevee)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- anteparo_fenda_dupla --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("anteparo_fenda_dupla").mobject(altura=5)   # estático: um quadro PNG com alpha
+```
+
+Ficha: `solidos/anteparo_fenda_dupla.json`
+
 ### `aro_rolando` — Aro rolando sem deslizar
 
 **Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
@@ -274,6 +328,157 @@ img = Solido3D("aro_rolando").mobject(cena=self, altura=5)   # cargas em loop; i
 ```
 
 Ficha: `solidos/aro_rolando.json`
+
+### `caixa_gas_cinetica` — Gás ideal em recipiente com êmbolo (teoria cinética)
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Recipiente de vidro (arestas azul-claro) com um êmbolo e moléculas neutras (brancas perto, azul-claro longe) ricocheteando nas paredes e no êmbolo. `pistao` = fração do comprimento ocupada pelo gás; `temperatura` multiplica a velocidade das moléculas; `amplitude_pistao` faz o êmbolo oscilar (compressão e expansão) ao longo do loop.
+
+![Gás ideal em recipiente com êmbolo (teoria cinética)](previews/caixa_gas_cinetica.png)
+
+**Como se lê:** Caixa de vidro com um êmbolo e pontos brancos em movimento; com o êmbolo oscilando, o volume muda e as moléculas ficam mais densas. Lê-se como 'gás ideal: pressão = colisões, T = velocidade média'.
+
+**Usar quando**
+- teoria cinética: pressão como colisões com as paredes, temperatura como energia cinética média
+- processos em gases ideais: compressão e expansão pelo êmbolo (isotérmica, adiabática no Manim)
+- primeira lei: trabalho realizado pelo êmbolo
+
+**Não usar quando**
+- o ponto é o gráfico P×V (é do Manim; este sólido dá a imagem microscópica)
+- gás real ou interações entre moléculas (as moléculas não colidem entre si)
+
+**Limitações**
+- as moléculas não colidem entre si e a velocidade de cada uma é fixa (ciclos inteiros por loop): não há distribuição de Maxwell nem troca de energia
+- ao oscilar o êmbolo, as posições são escaladas com o volume (aproximação visual): a velocidade não muda como numa compressão adiabática real; temperatura/pressão ficam para o Manim
+- moléculas e cargas têm aspectos parecidos (pontos): moléculas são brancas, cargas azuis
+- a velocidade é o número de ciclos por loop: o loop precisa ser longo o bastante (60 quadros) para as mais rápidas não parecerem tremer
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `comprimento` | 4.0 | u | comprimento do recipiente (eixo X) |
+| `largura` | 2.0 | u | lado da seção quadrada |
+| `n_moleculas` | 40 | n | número de moléculas |
+| `temperatura` | 1.0 | x | fator de velocidade das moléculas (inteiro de ciclos por loop) |
+| `pistao` | 0.8 | 0-1 | fração do comprimento ocupada pelo gás |
+| `amplitude_pistao` | 0.0 | 0-1 | oscilação do êmbolo (fração do comprimento); 0 = fixo |
+| `semente` | 7 | n | semente do sorteio |
+| `movimento` | 0 | 0/1 | 1 = animação em loop (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase do loop; fase=1 repete o quadro da fase 0 (loop perfeito) |
+
+**Integração:** `png_seq_alpha` · custo 1.12 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `colisoes` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 1.12 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- caixa_gas_cinetica --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("caixa_gas_cinetica").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/caixa_gas_cinetica.json`
+
+### `capacitor_esferico` — Capacitor esférico (esferas concêntricas, em corte)
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Esfera condutora interna de raio `raio_a` (vidro, cargas na superfície) dentro de uma casca esférica externa de raio `raio_b`, com um octante removido voltado para a câmera (como a casca esférica do arsenal). O mesmo número de cargas nas duas superfícies.
+
+![Capacitor esférico (esferas concêntricas, em corte)](previews/capacitor_esferico.png)
+
+**Como se lê:** Esfera de vidro com pontos azuis dentro de uma casca azul aberta em corte, também com pontos na face interna: lê-se como 'duas superfícies esféricas concêntricas carregadas, com um vão entre elas'.
+
+**Usar quando**
+- capacitor esférico: C = 4πε₀ ab/(b−a), campo ∝ 1/r² no vão
+- Gauss em simetria esférica com condutores
+- contraste com placas paralelas e com o coaxial
+
+**Não usar quando**
+- isolante com carga em volume (use esfera_macica_isolante)
+- casca única (use casca_esferica_oca)
+
+**Limitações**
+- o sinal da carga não é codificado em cor: +Q e −Q vão por rótulo no Manim; o campo (ciano) também
+- o mesmo número de cargas em cada armadura (carga igual e oposta)
+- o corte em octante é convenção de leitura; as cargas da região removida não são desenhadas
+- o corte aponta para a câmera padrão (azimute -23, elevação 17)
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `raio_a` | 0.8 | u | raio da esfera interna |
+| `raio_b` | 1.6 | u | raio externo da casca |
+| `espessura` | 0.06 | u | espessura da parede da casca |
+| `n_cargas` | 70 | n | cargas por superfície |
+| `corte` | 1 | 0/1 | 1 = remove o octante voltado para a câmera |
+
+**Integração:** `png_seq_alpha` · custo 0.81 s/frame (1080p, Eevee)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- capacitor_esferico --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("capacitor_esferico").mobject(altura=5)   # estático: um quadro PNG com alpha
+```
+
+Ficha: `solidos/capacitor_esferico.json`
+
+### `capacitor_placas_paralelas` — Capacitor de placas paralelas
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Duas placas de vidro azulado quadradas e paralelas (normal X) separadas por `distancia`, com o mesmo número de cargas pontuais nas faces internas. Dielétrico opcional (vidro azul-claro enchendo o vão).
+
+![Capacitor de placas paralelas](previews/capacitor_placas_paralelas.png)
+
+**Como se lê:** Duas folhas de vidro paralelas com pontos azuis voltados um para o outro: lê-se como 'duas armaduras com cargas iguais e opostas e um vão entre elas'.
+
+**Usar quando**
+- capacitor de placas paralelas: C = ε₀A/d, campo uniforme no vão, energia armazenada
+- inserir um dielétrico (dieletrico=1) e comparar com o vão vazio
+- contraste com o capacitor cilíndrico (cilindro_coaxial) e o esférico
+
+**Não usar quando**
+- o ponto é o plano infinito sem borda (use placa_infinita_carregada)
+- efeitos de borda do campo: aqui as placas são desenhadas sem campo
+
+**Limitações**
+- o sinal da carga não é codificado em cor: +Q e −Q vão por rótulo no Manim; o campo (ciano) também
+- o mesmo número de cargas em cada armadura (carga igual e oposta)
+- as placas são quadradas e finitas; o campo uniforme 'ideal' é uma aproximação feita no Manim
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `lado` | 3.0 | u | lado das placas quadradas |
+| `distancia` | 1.0 | u | distância d entre as placas |
+| `espessura` | 0.06 | u | espessura das placas (visual) |
+| `n_cargas` | 36 | n | cargas por placa |
+| `dist_min` | 0.42 | u | distância mínima entre cargas |
+| `dieletrico` | 0 | 0/1 | 1 = dielétrico (vidro claro) no vão |
+| `semente` | 7 | n | semente do sorteio |
+
+**Integração:** `png_seq_alpha` · custo 0.92 s/frame (1080p, Eevee)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- capacitor_placas_paralelas --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("capacitor_placas_paralelas").mobject(altura=5)   # estático: um quadro PNG com alpha
+```
+
+Ficha: `solidos/capacitor_placas_paralelas.json`
 
 ### `casca_cilindrica_oca` — Casca cilíndrica oca
 
@@ -959,6 +1164,58 @@ img = Solido3D("haste_carregada").mobject(cena=self, altura=5)   # cargas em loo
 
 Ficha: `solidos/haste_carregada.json`
 
+### `lente_delgada` — Lente delgada (biconvexa ou biconcava)
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Lente de vidro azul-claro de revolução em torno do eixo óptico X, com faces esféricas de raios `raio1` e `raio2`. `forma` = biconvexa (converge) ou biconcava (diverge). Eixo óptico tracejado neutro e os dois focos (marcas neutras) pela equação dos fabricantes de lentes, 1/f = (n−1)(1/R₁+1/R₂).
+
+![Lente delgada (biconvexa ou biconcava)](previews/lente_delgada.png)
+
+**Como se lê:** Lente de vidro com o eixo tracejado e duas marcas nos focos: lê-se como 'lente delgada com seus focos'. A biconcava tem as marcas nos focos virtuais, do mesmo lado.
+
+**Usar quando**
+- lente delgada: foco, formação de imagem, equação de Gauss das lentes
+- contraste converge/diverge (biconvexa × biconcava)
+- ponto de partida para os raios desenhados no Manim
+
+**Não usar quando**
+- lentes espessas ou aberração (esta é delgada, de faces esféricas ideais)
+- espelhos (não há espelhos no arsenal)
+
+**Limitações**
+- só o objeto: raios, frentes de onda, ângulos e a figura de interferência são do Manim
+- vidro translúcido azul-claro (padrão do arsenal): não representa cor, dispersão nem índice de refração
+- foco pela equação das lentes delgadas, não por traçado de raios
+- o raio de curvatura deve ser maior que o semi-diâmetro
+- vista lateral (azimute -78): o perfil da lente aparece de lado, com o eixo óptico na horizontal, como nos esquemas de óptica
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `forma` | biconvexa | texto | biconvexa ou biconcava |
+| `diametro` | 2.4 | u | diâmetro da lente |
+| `raio1` | 2.2 | u | raio de curvatura da face da frente |
+| `raio2` | 2.2 | u | raio de curvatura da face de trás |
+| `espessura_borda` | 0.08 | u | espessura na borda (convexa) ou no centro (côncava) |
+| `indice` | 1.5 | n | índice de refração (só para posicionar os focos) |
+| `focos` | 1 | 0/1 | 1 = marcas nos focos |
+| `eixo` | 1 | 0/1 | 1 = eixo óptico tracejado |
+
+**Integração:** `png_seq_alpha` · custo 0.65 s/frame (1080p, Eevee)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- lente_delgada --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("lente_delgada").mobject(altura=5)   # estático: um quadro PNG com alpha
+```
+
+Ficha: `solidos/lente_delgada.json`
+
 ### `placa_infinita_carregada` — Placa infinita carregada (plano com cargas na superfície)
 
 **Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
@@ -1019,6 +1276,52 @@ img = Solido3D("placa_infinita_carregada").mobject(cena=self, altura=5)   # carg
 ```
 
 Ficha: `solidos/placa_infinita_carregada.json`
+
+### `prisma_triangular` — Prisma triangular
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Prisma de vidro azul-claro de seção triangular isósceles (ângulo de ápice `angulo_apice`), com a seção no plano XY e extrusão ao longo de Z, apoiado na base. As nove arestas em azul-claro.
+
+![Prisma triangular](previews/prisma_triangular.png)
+
+**Como se lê:** Prisma de vidro com arestas claras: lê-se como 'prisma óptico'. A direção dos raios, o desvio e a dispersão são do Manim.
+
+**Usar quando**
+- refração em um prisma, ângulo de desvio mínimo
+- dispersão (as cores vêm do Manim)
+- reflexão interna total
+
+**Não usar quando**
+- lentes (use lente_delgada)
+- prismas não triangulares
+
+**Limitações**
+- só o objeto: raios, frentes de onda, ângulos e a figura de interferência são do Manim
+- vidro translúcido azul-claro (padrão do arsenal): não representa cor, dispersão nem índice de refração
+- os raios entrariam no plano da seção (XY); a extrusão em Z é só para dar volume
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `angulo_apice` | 60.0 | graus | ângulo de ápice |
+| `base` | 2.0 | u | comprimento da base |
+| `comprimento` | 2.0 | u | comprimento da extrusão (eixo Z) |
+| `eixo` | 0 | 0/1 | 1 = eixo tracejado neutro ao longo de X |
+
+**Integração:** `png_seq_alpha` · custo 0.76 s/frame (1080p, Eevee)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- prisma_triangular --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("prisma_triangular").mobject(altura=5)   # estático: um quadro PNG com alpha
+```
+
+Ficha: `solidos/prisma_triangular.json`
 
 ### `solenoide_corrente` — Solenoide (hélice de fio)
 
@@ -1307,3 +1610,54 @@ img = Solido3D("toroide_corrente").mobject(cena=self, altura=5)   # cargas em lo
 ```
 
 Ficha: `solidos/toroide_corrente.json`
+
+### `tubo_escoamento` — Tubo com estrangulamento (continuidade)
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Tubo de vidro azulado (eixo X) que se estreita no meio até `razao` do raio, com partículas marcadoras (brancas perto, azul-claro longe) fluindo em +X com v ∝ 1/r². As partículas são igualmente espaçadas no tempo, então ficam mais afastadas e mais rápidas no gargalo.
+
+![Tubo com estrangulamento (continuidade)](previews/tubo_escoamento.png)
+
+**Como se lê:** Tubo com um gargalo e pontos que aceleram ao passar por ele e ficam mais espaçados. Lê-se como 'A v = constante'.
+
+**Usar quando**
+- equação da continuidade: A₁v₁ = A₂v₂
+- Bernoulli e efeito Venturi (a diferença de pressão é do Manim)
+- mostrar que a velocidade cresce onde a seção diminui
+
+**Não usar quando**
+- escoamento turbulento ou viscoso (o campo de velocidades é uniforme na seção)
+- fluido compressível
+
+**Limitações**
+- o campo de velocidade é uniforme na seção (escoamento ideal): não há perfil parabólico
+- as partículas são marcadores, não representam a densidade do fluido nem a pressão
+- o estrangulamento é fixo (suave, de 1,5 u de transição); só `razao` e o raio mudam
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `comprimento` | 6.0 | u | comprimento do tubo (eixo X) |
+| `raio` | 1.0 | u | raio nas pontas |
+| `razao` | 0.5 | 0-1 | raio do gargalo / raio nas pontas |
+| `n_particulas` | 36 | n | número de partículas marcadoras |
+| `semente` | 7 | n | semente do sorteio |
+| `movimento` | 0 | 0/1 | 1 = animação em loop (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase do loop; fase=1 repete o quadro da fase 0 (loop perfeito) |
+
+**Integração:** `png_seq_alpha` · custo 1.15 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `escoamento` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 1.15 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- tubo_escoamento --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("tubo_escoamento").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/tubo_escoamento.json`

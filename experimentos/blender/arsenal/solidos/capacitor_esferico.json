@@ -1,0 +1,68 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "eletromagnetismo/condutores_e_capacitores"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/capacitores.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.81,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060"
+  },
+  "id": "capacitor_esferico",
+  "nome": "Capacitor esférico (esferas concêntricas, em corte)",
+  "descricao": "Esfera condutora interna de raio `raio_a` (vidro, cargas na superfície) dentro de uma casca esférica externa de raio `raio_b`, com um octante removido voltado para a câmera (como a casca esférica do arsenal). O mesmo número de cargas nas duas superfícies.",
+  "leitura_visual": "Esfera de vidro com pontos azuis dentro de uma casca azul aberta em corte, também com pontos na face interna: lê-se como 'duas superfícies esféricas concêntricas carregadas, com um vão entre elas'.",
+  "usar_quando": [
+    "capacitor esférico: C = 4πε₀ ab/(b−a), campo ∝ 1/r² no vão",
+    "Gauss em simetria esférica com condutores",
+    "contraste com placas paralelas e com o coaxial"
+  ],
+  "nao_usar_quando": [
+    "isolante com carga em volume (use esfera_macica_isolante)",
+    "casca única (use casca_esferica_oca)"
+  ],
+  "limitacoes": [
+    "o sinal da carga não é codificado em cor: +Q e −Q vão por rótulo no Manim; o campo (ciano) também",
+    "o mesmo número de cargas em cada armadura (carga igual e oposta)",
+    "o corte em octante é convenção de leitura; as cargas da região removida não são desenhadas",
+    "o corte aponta para a câmera padrão (azimute -23, elevação 17)"
+  ],
+  "construtor": "capacitor_esferico",
+  "parametros": {
+    "raio_a": {
+      "valor": 0.8,
+      "unidade": "u",
+      "descricao": "raio da esfera interna"
+    },
+    "raio_b": {
+      "valor": 1.6,
+      "unidade": "u",
+      "descricao": "raio externo da casca"
+    },
+    "espessura": {
+      "valor": 0.06,
+      "unidade": "u",
+      "descricao": "espessura da parede da casca"
+    },
+    "n_cargas": {
+      "valor": 70,
+      "unidade": "n",
+      "descricao": "cargas por superfície"
+    },
+    "corte": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = remove o octante voltado para a câmera"
+    }
+  },
+  "enquadramento": {
+    "azimute": -23,
+    "elevacao": 17,
+    "lente": 50,
+    "margem": 0.09
+  },
+  "preview": "previews/capacitor_esferico.png"
+}

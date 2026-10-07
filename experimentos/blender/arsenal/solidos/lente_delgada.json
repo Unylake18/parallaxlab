@@ -1,0 +1,84 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "otica/otica_geometrica"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/otica.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.65,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060"
+  },
+  "id": "lente_delgada",
+  "nome": "Lente delgada (biconvexa ou biconcava)",
+  "descricao": "Lente de vidro azul-claro de revolução em torno do eixo óptico X, com faces esféricas de raios `raio1` e `raio2`. `forma` = biconvexa (converge) ou biconcava (diverge). Eixo óptico tracejado neutro e os dois focos (marcas neutras) pela equação dos fabricantes de lentes, 1/f = (n−1)(1/R₁+1/R₂).",
+  "leitura_visual": "Lente de vidro com o eixo tracejado e duas marcas nos focos: lê-se como 'lente delgada com seus focos'. A biconcava tem as marcas nos focos virtuais, do mesmo lado.",
+  "usar_quando": [
+    "lente delgada: foco, formação de imagem, equação de Gauss das lentes",
+    "contraste converge/diverge (biconvexa × biconcava)",
+    "ponto de partida para os raios desenhados no Manim"
+  ],
+  "nao_usar_quando": [
+    "lentes espessas ou aberração (esta é delgada, de faces esféricas ideais)",
+    "espelhos (não há espelhos no arsenal)"
+  ],
+  "limitacoes": [
+    "só o objeto: raios, frentes de onda, ângulos e a figura de interferência são do Manim",
+    "vidro translúcido azul-claro (padrão do arsenal): não representa cor, dispersão nem índice de refração",
+    "foco pela equação das lentes delgadas, não por traçado de raios",
+    "o raio de curvatura deve ser maior que o semi-diâmetro",
+    "vista lateral (azimute -78): o perfil da lente aparece de lado, com o eixo óptico na horizontal, como nos esquemas de óptica"
+  ],
+  "construtor": "lente_delgada",
+  "parametros": {
+    "forma": {
+      "valor": "biconvexa",
+      "unidade": "texto",
+      "descricao": "biconvexa ou biconcava"
+    },
+    "diametro": {
+      "valor": 2.4,
+      "unidade": "u",
+      "descricao": "diâmetro da lente"
+    },
+    "raio1": {
+      "valor": 2.2,
+      "unidade": "u",
+      "descricao": "raio de curvatura da face da frente"
+    },
+    "raio2": {
+      "valor": 2.2,
+      "unidade": "u",
+      "descricao": "raio de curvatura da face de trás"
+    },
+    "espessura_borda": {
+      "valor": 0.08,
+      "unidade": "u",
+      "descricao": "espessura na borda (convexa) ou no centro (côncava)"
+    },
+    "indice": {
+      "valor": 1.5,
+      "unidade": "n",
+      "descricao": "índice de refração (só para posicionar os focos)"
+    },
+    "focos": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = marcas nos focos"
+    },
+    "eixo": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = eixo óptico tracejado"
+    }
+  },
+  "enquadramento": {
+    "azimute": -78,
+    "elevacao": 10,
+    "lente": 50,
+    "margem": 0.06
+  },
+  "preview": "previews/lente_delgada.png"
+}

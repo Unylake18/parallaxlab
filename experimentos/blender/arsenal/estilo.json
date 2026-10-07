@@ -30,6 +30,10 @@
                   "marcas_por_volta": 4, "chao_comprimento": 14.0},
     "revolucao": {"perfil_cor": "fonte_contorno", "perfil_emissao": 1.4, "perfil_espessura": 0.02, "fatia_cor": "gaussiana",
                   "fatia_vidro_base": 0.16, "fatia_vidro_ganho": 0.5, "fatia_vidro_brilho": 1.6, "eixo_emissao": 0.8},
+    "vetor": {"campo_cor": "campo_eletrico", "campo_emissao": 1.6, "normal_cor": "fonte_fisica", "normal_emissao": 1.2,
+              "haste_raio": 0.022, "cabeca_raio": 0.07, "cabeca_comp": 0.2},
+    "otica": {"vidro_cor": "fonte_contorno", "vidro_base": 0.10, "vidro_ganho": 0.55, "vidro_brilho": 1.8,
+              "anteparo_emissao": 0.3, "aresta_espessura": 0.012},
     "fio": {"cor": "fonte_fisica", "raio": 0.05, "alpha": 0.95, "emissao_base": 0.6, "emissao_borda": 1.2, "fade_inicio": 0.5,
             "halo_escala": 2.4, "halo_alpha": 0.14, "halo_emissao": 0.7}
   },

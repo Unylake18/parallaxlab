@@ -1,0 +1,91 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "fluidos/fluidos_em_movimento"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/termo_fluidos.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 1.15,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "tubo_escoamento",
+  "nome": "Tubo com estrangulamento (continuidade)",
+  "descricao": "Tubo de vidro azulado (eixo X) que se estreita no meio até `razao` do raio, com partículas marcadoras (brancas perto, azul-claro longe) fluindo em +X com v ∝ 1/r². As partículas são igualmente espaçadas no tempo, então ficam mais afastadas e mais rápidas no gargalo.",
+  "leitura_visual": "Tubo com um gargalo e pontos que aceleram ao passar por ele e ficam mais espaçados. Lê-se como 'A v = constante'.",
+  "usar_quando": [
+    "equação da continuidade: A₁v₁ = A₂v₂",
+    "Bernoulli e efeito Venturi (a diferença de pressão é do Manim)",
+    "mostrar que a velocidade cresce onde a seção diminui"
+  ],
+  "nao_usar_quando": [
+    "escoamento turbulento ou viscoso (o campo de velocidades é uniforme na seção)",
+    "fluido compressível"
+  ],
+  "limitacoes": [
+    "o campo de velocidade é uniforme na seção (escoamento ideal): não há perfil parabólico",
+    "as partículas são marcadores, não representam a densidade do fluido nem a pressão",
+    "o estrangulamento é fixo (suave, de 1,5 u de transição); só `razao` e o raio mudam"
+  ],
+  "construtor": "tubo_escoamento",
+  "parametros": {
+    "comprimento": {
+      "valor": 6.0,
+      "unidade": "u",
+      "descricao": "comprimento do tubo (eixo X)"
+    },
+    "raio": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "raio nas pontas"
+    },
+    "razao": {
+      "valor": 0.5,
+      "unidade": "0-1",
+      "descricao": "raio do gargalo / raio nas pontas"
+    },
+    "n_particulas": {
+      "valor": 36,
+      "unidade": "n",
+      "descricao": "número de partículas marcadoras"
+    },
+    "semente": {
+      "valor": 7,
+      "unidade": "n",
+      "descricao": "semente do sorteio"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação em loop (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do loop; fase=1 repete o quadro da fase 0 (loop perfeito)"
+    }
+  },
+  "animacao": {
+    "tipo": "escoamento",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 1.15,
+    "peso_mb_por_frame": 1.07,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "enquadramento": {
+    "azimute": -30,
+    "elevacao": 20,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.3"
+  ],
+  "preview": "previews/tubo_escoamento.png"
+}
