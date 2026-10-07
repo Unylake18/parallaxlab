@@ -13,7 +13,7 @@
   },
   "id": "tanque_torricelli",
   "nome": "Jato de Torricelli",
-  "descricao": "Tanque com líquido até `nivel` e um furo a `altura_furo` do fundo: o jato sai com v = √(2 g h), h = nivel − altura_furo, e descreve uma parábola (violeta tracejado) até o chão; partículas marcadoras percorrem o jato continuamente (g = 1 nas unidades do sólido). fase 0 a 1 = um ciclo de emissão.",
+  "descricao": "Tanque com líquido até `nivel` e um furo a `altura_furo` do fundo: o jato sai com v = √(2 g h), h = nivel − altura_furo, e descreve uma parábola (violeta tracejado) até o chão; partículas marcadoras percorrem o jato continuamente (g = 1 nas unidades do sólido). fase 0 a 1 = um ciclo de emissão. Opcionalmente (`varrer_furo=1` com movimento) o furo sobe e desce em loop, de 0,1·H a 0,9·H, com a parábola recalculada a cada quadro; `enquadramento_fixo=1` mantém a escala da câmera, dimensionada pelo alcance máximo H, para sincronizar com um gráfico x(y) no Manim. Alcance a partir da parede: 2√(y(H−y)), máximo em y = H/2.",
   "leitura_visual": "Um tanque com um jato curvo saindo de um furo, marcado por pontos: lê-se como velocidade de saída √(2gh) e o alcance parabólico.",
   "usar_quando": [
     "velocidade de saída (Torricelli) e o alcance do jato",
@@ -29,7 +29,9 @@
     "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, vetores físicos = branco, construções = violeta, sinal da carga esculpido",
     "o nível do líquido é constante (reservatório grande)",
     "o jato é uma parábola perfeita, sem arrasto nem dispersão",
-    "g = 1 nas unidades do sólido: as escalas são qualitativas"
+    "g = 1 nas unidades do sólido: as escalas são qualitativas",
+    "na varredura o enquadramento é sempre o fixo (alcance máximo H): em alturas de furo muito baixas ou altas o jato ocupa só parte do quadro",
+    "a varredura usa y = H(c − a cos 2π fase): a velocidade de subida do furo é suave (cosseno), não constante"
   ],
   "construtor": "tanque_torricelli",
   "parametros": {
@@ -58,6 +60,26 @@
       "unidade": "0/1",
       "descricao": "seta da velocidade de saída"
     },
+    "varrer_furo": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 (com movimento=1) = a altura do furo varre em loop de faixa_min·H a faixa_max·H e volta; a parábola acompanha e o enquadramento fica fixo"
+    },
+    "enquadramento_fixo": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = câmera e chão dimensionados pelo alcance máximo teórico (x_max = H): a escala não muda com altura_furo"
+    },
+    "faixa_min": {
+      "valor": 0.1,
+      "unidade": "frac",
+      "descricao": "menor altura do furo na varredura, em fração do nível"
+    },
+    "faixa_max": {
+      "valor": 0.9,
+      "unidade": "frac",
+      "descricao": "maior altura do furo na varredura, em fração do nível"
+    },
     "movimento": {
       "valor": 0,
       "unidade": "0/1",
@@ -81,7 +103,7 @@
     "liga": "movimento",
     "frames_sugeridos": 60,
     "parametro": "fase",
-    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0; com varrer_furo=1 o loop é o ciclo completo da altura do furo (início e fim coincidem)",
     "custo_1080p_s_por_frame": 1.09,
     "peso_mb_por_frame": 1.08,
     "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"

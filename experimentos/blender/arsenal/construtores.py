@@ -522,7 +522,8 @@ def prensa_hidraulica(p):
 
 
 def tanque_torricelli(p):
-    proxy, atu = fl3.tanque_torricelli(p["largura"], p["nivel"], p["altura_furo"], int(p["n_particulas"]), int(p["setas"]), int(p["movimento"]), p["fase"])
+    proxy, atu = fl3.tanque_torricelli(p["largura"], p["nivel"], p["altura_furo"], int(p["n_particulas"]), int(p["setas"]), int(p["movimento"]), p["fase"],
+                                      int(p["varrer_furo"]), int(p["enquadramento_fixo"]), p["faixa_min"], p["faixa_max"])
     return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
 
 

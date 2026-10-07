@@ -4543,7 +4543,7 @@ Ficha: `solidos/tanque_hidrostatico.json`
 
 **Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
-Tanque com líquido até `nivel` e um furo a `altura_furo` do fundo: o jato sai com v = √(2 g h), h = nivel − altura_furo, e descreve uma parábola (violeta tracejado) até o chão; partículas marcadoras percorrem o jato continuamente (g = 1 nas unidades do sólido). fase 0 a 1 = um ciclo de emissão.
+Tanque com líquido até `nivel` e um furo a `altura_furo` do fundo: o jato sai com v = √(2 g h), h = nivel − altura_furo, e descreve uma parábola (violeta tracejado) até o chão; partículas marcadoras percorrem o jato continuamente (g = 1 nas unidades do sólido). fase 0 a 1 = um ciclo de emissão. Opcionalmente (`varrer_furo=1` com movimento) o furo sobe e desce em loop, de 0,1·H a 0,9·H, com a parábola recalculada a cada quadro; `enquadramento_fixo=1` mantém a escala da câmera, dimensionada pelo alcance máximo H, para sincronizar com um gráfico x(y) no Manim. Alcance a partir da parede: 2√(y(H−y)), máximo em y = H/2.
 
 ![Jato de Torricelli](previews/tanque_torricelli.png)
 
@@ -4564,6 +4564,8 @@ Tanque com líquido até `nivel` e um furo a `altura_furo` do fundo: o jato sai 
 - o nível do líquido é constante (reservatório grande)
 - o jato é uma parábola perfeita, sem arrasto nem dispersão
 - g = 1 nas unidades do sólido: as escalas são qualitativas
+- na varredura o enquadramento é sempre o fixo (alcance máximo H): em alturas de furo muito baixas ou altas o jato ocupa só parte do quadro
+- a varredura usa y = H(c − a cos 2π fase): a velocidade de subida do furo é suave (cosseno), não constante
 
 | Parâmetro | Padrão | Unid. | Descrição |
 |---|---|---|---|
@@ -4572,6 +4574,10 @@ Tanque com líquido até `nivel` e um furo a `altura_furo` do fundo: o jato sai 
 | `altura_furo` | 0.7 | u | altura do furo |
 | `n_particulas` | 26 | n | partículas marcadoras do jato |
 | `setas` | 1 | 0/1 | seta da velocidade de saída |
+| `varrer_furo` | 0 | 0/1 | 1 (com movimento=1) = a altura do furo varre em loop de faixa_min·H a faixa_max·H e volta; a parábola acompanha e o enquadramento fica fixo |
+| `enquadramento_fixo` | 0 | 0/1 | 1 = câmera e chão dimensionados pelo alcance máximo teórico (x_max = H): a escala não muda com altura_furo |
+| `faixa_min` | 0.1 | frac | menor altura do furo na varredura, em fração do nível |
+| `faixa_max` | 0.9 | frac | maior altura do furo na varredura, em fração do nível |
 | `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
 | `fase` | 0.0 | 0-1 | fase da animação |
 

@@ -161,43 +161,64 @@ def prensa_hidraulica(raio1=0.45, raio2=1.1, altura=2.0, curso=0.55, escala_forc
 
 
 # ── jato de Torricelli ───────────────────────────────────────────────────────
-def tanque_torricelli(largura=2.4, nivel=2.2, altura_furo=0.7, n_particulas=26, setas=1, movimento=0, fase=0.0):
-    """Tanque com líquido até `nivel` e um furo a `altura_furo` do fundo: o jato sai com v = √(2 g h), h = nivel − altura_furo
-    (g = 1 nas unidades do sólido) e descreve uma parábola (violeta tracejado) até o chão; partículas marcadoras percorrem o
-    jato continuamente. fase 0 a 1 = um ciclo de emissão."""
+def tanque_torricelli(largura=2.4, nivel=2.2, altura_furo=0.7, n_particulas=26, setas=1, movimento=0, fase=0.0,
+                      varrer_furo=0, enquadramento_fixo=0, faixa_min=0.1, faixa_max=0.9):
+    """Tanque com líquido até `nivel` (H) e um furo a `altura_furo` (y) do fundo: o jato sai com v = √(2 g h), h = H − y
+    (g = 1 nas unidades do sólido) e descreve uma parábola (violeta tracejado) até o chão; o alcance a partir da parede é
+    2√(y (H − y)), máximo em y = H/2. Partículas marcadoras percorrem o jato continuamente. fase 0 a 1 = um ciclo de emissão.
+
+    Opt-in (o padrão é o comportamento original):
+    - `varrer_furo=1` (com movimento=1): y varia em loop suave de `faixa_min`·H a `faixa_max`·H e volta (y = H(c − a cos 2π fase)); o
+      furo, a seta, a cota de altura e a parábola são recalculados a cada quadro; o quadro inicial e o final coincidem.
+    - `enquadramento_fixo=1`: enquadra pelo alcance máximo teórico (x_max = H, em y = H/2), então a escala da câmera e o chão não
+      mudam com `altura_furo`. A varredura liga isto automaticamente (senão a câmera, feita uma vez, cortaria o jato)."""
     W, D, H = largura, 1.4, nivel + 0.6
-    h = nivel - altura_furo
-    v = math.sqrt(2 * h)
-    T = math.sqrt(2 * altura_furo)
-    alcance = v * T
+    fixo = bool(enquadramento_fixo or (varrer_furo and movimento))
+    ref = nivel if fixo else math.sqrt(2 * (nivel - altura_furo)) * math.sqrt(2 * altura_furo)   # alcance que dimensiona chão e câmera
     mat_vf, mat_d = _mat_vf(), _mat_dash()
     casco = osc._caixa("Tanque", (W, D, H), (0, 0, H / 2))
     cm.material_vidro(casco, base=0.04, ganho=0.15, brilho_borda=0.7)
     _arestas(-W / 2, W / 2, -D / 2, D / 2, 0.0, H, v3.material_cor("ArestaTanque", "fonte_contorno", 1.0))
     _liquido((W - 0.1, D - 0.1, nivel), (0, 0, nivel / 2))
-    chao = osc._caixa("Chao", (W + alcance + 1.6, D + 0.6, 0.05), ((alcance + 1.0) / 2 - 0.0, 0, -0.025))
+    chao = osc._caixa("Chao", (W + ref + 1.6, D + 0.6, 0.05), ((ref + 1.0) / 2 - 0.0, 0, -0.025))
     cm.material_vidro(chao, base=0.06, ganho=0.2, brilho_borda=0.6)
     sup = [(-W / 2, -D / 2, nivel), (W / 2, -D / 2, nivel), (W / 2, D / 2, nivel), (-W / 2, D / 2, nivel)]
     ga.criar_curva("SuperficieLivre", v3.tracejado(sup, True, 0.22, 0.6), mat_d, 0.016)
     xf = W / 2
-    traj = [(xf + v * (T * k / 60), 0.0, altura_furo - 0.5 * (T * k / 60) ** 2) for k in range(61)]
-    ga.criar_curva("Parabola", v3.tracejado(traj, False, 0.18, 0.6), mat_d, 0.014)
-    ga.criar_curva("Furo", ga.circulo((xf, 0, altura_furo), (0, 1, 0), (0, 0, 1), 0.06, True), v3.material_cor("Furo", "texto_neutro", 1.6), 0.02)
-    ga.criar_curva("Altura", v3.tracejado([(xf + 0.25, 0, nivel), (xf + 0.25, 0, altura_furo)], False, 0.14, 0.6), mat_d, 0.012)
     mat_b = v3.material_degrade("Particula", "texto_neutro", "fonte_contorno", 1.0, 0.7)
     part = [v3.esfera_pt((xf, 0, altura_furo), 0.075, mat_b, "Particula") for _ in range(int(n_particulas))]
-    if setas:
-        v3.seta((xf + 0.02, 0, altura_furo), (0.4 * v + 0.2, 0, 0), mat_vf, 0.4 * v + 0.2)
+    mat_furo = v3.material_cor("Furo", "texto_neutro", 1.6)
+    dinam = []
+    estado = {}
+
+    def montar(y):
+        """Tudo o que depende de y: parábola, furo, cota de altura e seta da velocidade."""
+        v3.remover(dinam)
+        h = nivel - y
+        v, T = math.sqrt(2 * h), math.sqrt(2 * y)
+        estado.update(y=y, v=v, T=T)
+        traj = [(xf + v * (T * k / 60), 0.0, y - 0.5 * (T * k / 60) ** 2) for k in range(61)]
+        dinam.append(ga.criar_curva("Parabola", v3.tracejado(traj, False, 0.18, 0.6), mat_d, 0.014))
+        dinam.append(ga.criar_curva("Furo", ga.circulo((xf, 0, y), (0, 1, 0), (0, 0, 1), 0.06, True), mat_furo, 0.02))
+        dinam.append(ga.criar_curva("Altura", v3.tracejado([(xf + 0.25, 0, nivel), (xf + 0.25, 0, y)], False, 0.14, 0.6), mat_d, 0.012))
+        if setas:
+            dinam.append(v3.seta((xf + 0.02, 0, y), (0.4 * v + 0.2, 0, 0), mat_vf, 0.4 * v + 0.2))
+
+    def altura_em(fase):
+        c, a = nivel * (faixa_max + faixa_min) / 2, nivel * (faixa_max - faixa_min) / 2
+        return c - a * math.cos(2 * math.pi * fase)
 
     def atualizar(fase):
+        if varrer_furo and movimento:
+            montar(altura_em(fase))
+        v, T, y = estado["v"], estado["T"], estado["y"]
         for k, o in enumerate(part):
             tau = (((k / len(part)) + fase) % 1.0) * T
-            o.location = (xf + v * tau, 0.0, altura_furo - 0.5 * tau * tau + 0.0)
-            e = 1.0
-            o.scale = (e, e, e)
+            o.location = (xf + v * tau, 0.0, y - 0.5 * tau * tau)
 
+    montar(altura_em(fase) if (varrer_furo and movimento) else altura_furo)
     atualizar(fase)
-    proxy = _caixa((W + alcance + 1.6, D + 0.8, H + 0.8), ((alcance) / 2, 0, H / 2 - 0.1))
+    proxy = _caixa((W + ref + 1.6, D + 0.8, H + 0.8), ((ref) / 2, 0, H / 2 - 0.1))
     return proxy, atualizar
 
 
