@@ -162,7 +162,7 @@ def prensa_hidraulica(raio1=0.45, raio2=1.1, altura=2.0, curso=0.55, escala_forc
 
 # ── jato de Torricelli ───────────────────────────────────────────────────────
 def tanque_torricelli(largura=2.4, nivel=2.2, altura_furo=0.7, n_particulas=26, setas=1, movimento=0, fase=0.0,
-                      varrer_furo=0, enquadramento_fixo=0, faixa_min=0.1, faixa_max=0.9):
+                      varrer_furo=0, enquadramento_fixo=0, faixa_min=0.1, faixa_max=0.9, estilo_jato=0, contas_jato=12):
     """Tanque com líquido até `nivel` (H) e um furo a `altura_furo` (y) do fundo: o jato sai com v = √(2 g h), h = H − y
     (g = 1 nas unidades do sólido) e descreve uma parábola (violeta tracejado) até o chão; o alcance a partir da parede é
     2√(y (H − y)), máximo em y = H/2. Partículas marcadoras percorrem o jato continuamente. fase 0 a 1 = um ciclo de emissão.
@@ -171,7 +171,11 @@ def tanque_torricelli(largura=2.4, nivel=2.2, altura_furo=0.7, n_particulas=26, 
     - `varrer_furo=1` (com movimento=1): y varia em loop suave de `faixa_min`·H a `faixa_max`·H e volta (y = H(c − a cos 2π fase)); o
       furo, a seta, a cota de altura e a parábola são recalculados a cada quadro; o quadro inicial e o final coincidem.
     - `enquadramento_fixo=1`: enquadra pelo alcance máximo teórico (x_max = H, em y = H/2), então a escala da câmera e o chão não
-      mudam com `altura_furo`. A varredura liga isto automaticamente (senão a câmera, feita uma vez, cortaria o jato)."""
+      mudam com `altura_furo`. A varredura liga isto automaticamente (senão a câmera, feita uma vez, cortaria o jato).
+    - `estilo_jato` (0 = original): 1 = "contas": poucas contas (`contas_jato`, mais espaçadas que o diâmetro, então cada uma
+      é vista deslizando), que nascem no furo, afinam ao longo da trajetória e somem ao tocar o chão; 2 = "fluxo": o estilo 1 com
+      um rastro de duas contas menores atrás de cada uma e um pulso discreto (anel) no ponto de impacto a cada chegada.
+      Só muda a linguagem visual: a geometria da parábola e a física são as mesmas. O loop fecha (fase 1 = fase 0)."""
     W, D, H = largura, 1.4, nivel + 0.6
     fixo = bool(enquadramento_fixo or (varrer_furo and movimento))
     ref = nivel if fixo else math.sqrt(2 * (nivel - altura_furo)) * math.sqrt(2 * altura_furo)   # alcance que dimensiona chão e câmera
@@ -186,9 +190,18 @@ def tanque_torricelli(largura=2.4, nivel=2.2, altura_furo=0.7, n_particulas=26, 
     ga.criar_curva("SuperficieLivre", v3.tracejado(sup, True, 0.22, 0.6), mat_d, 0.016)
     xf = W / 2
     mat_b = v3.material_degrade("Particula", "texto_neutro", "fonte_contorno", 1.0, 0.7)
-    part = [v3.esfera_pt((xf, 0, altura_furo), 0.075, mat_b, "Particula") for _ in range(int(n_particulas))]
+    n_b = int(contas_jato) if estilo_jato else int(n_particulas)
+    raio_b = 0.066 if estilo_jato else 0.075
+    part = [v3.esfera_pt((xf, 0, altura_furo), raio_b, mat_b, "Particula") for _ in range(n_b)]
+    rastro = []                                              # estilo 2: duas contas menores atrás de cada conta
+    if estilo_jato >= 2:
+        for o in part:
+            rastro.append([(v3.esfera_pt((xf, 0, altura_furo), raio_b, mat_b, "Rastro"), d, f) for d, f in ((0.030, 0.70), (0.062, 0.45))])
+    mat_imp = v3.material_cor("ImpactoJato", "texto_neutro", 2.0)
+    no_imp = next(n for n in mat_imp.node_tree.nodes if n.type == "BSDF_PRINCIPLED")
     mat_furo = v3.material_cor("Furo", "texto_neutro", 1.6)
     dinam = []
+    impacto = []
     estado = {}
 
     def montar(y):
@@ -212,9 +225,36 @@ def tanque_torricelli(largura=2.4, nivel=2.2, altura_furo=0.7, n_particulas=26, 
         if varrer_furo and movimento:
             montar(altura_em(fase))
         v, T, y = estado["v"], estado["T"], estado["y"]
-        for k, o in enumerate(part):
-            tau = (((k / len(part)) + fase) % 1.0) * T
+        if not estilo_jato:
+            for k, o in enumerate(part):
+                tau = (((k / len(part)) + fase) % 1.0) * T
+                o.location = (xf + v * tau, 0.0, y - 0.5 * tau * tau)
+            return
+
+        def suave(a, b, x):
+            u = min(max((x - a) / (b - a), 0.0), 1.0)
+            return u * u * (3 - 2 * u)
+
+        def escala(s):                                       # nasce no furo, afina ao longo do voo, some no impacto
+            return suave(0.0, 0.10, s) * (1.0 - suave(0.92, 1.0, s)) * (1.0 - 0.30 * s)
+
+        def pos(o, s, e):
+            tau = s * T
             o.location = (xf + v * tau, 0.0, y - 0.5 * tau * tau)
+            o.scale = (e, e, e) if e > 1e-3 else (1e-4, 1e-4, 1e-4)
+
+        for k, o in enumerate(part):
+            s = (k / n_b + fase) % 1.0
+            pos(o, s, escala(s))
+            if rastro:
+                for oc, d, f in rastro[k]:
+                    s2 = s - d
+                    pos(oc, max(s2, 0.0), escala(s2) * f if s2 > 0 else 0.0)
+        if estilo_jato >= 2:                                 # pulso discreto no ponto de chegada, a cada conta que chega
+            v3.remover(impacto)
+            q = (fase * n_b) % 1.0
+            no_imp.inputs["Emission Strength"].default_value = 2.4 * (1.0 - q) ** 1.5
+            impacto.append(ga.criar_curva("Impacto", ga.circulo((xf + v * T, 0, 0.012), (1, 0, 0), (0, 1, 0), 0.07 + 0.30 * q, True), mat_imp, 0.016))
 
     montar(altura_em(fase) if (varrer_furo and movimento) else altura_furo)
     atualizar(fase)

@@ -80,6 +80,16 @@
       "unidade": "frac",
       "descricao": "maior altura do furo na varredura, em fração do nível"
     },
+    "estilo_jato": {
+      "valor": 0,
+      "unidade": "0-2",
+      "descricao": "0 = original (26 contas contínuas); 1 = contas espaçadas que nascem no furo, afinam e somem no impacto; 2 = estilo 1 com rastro de duas contas menores e um pulso (anel) no ponto de impacto"
+    },
+    "contas_jato": {
+      "valor": 12,
+      "unidade": "n",
+      "descricao": "número de contas do jato nos estilos 1 e 2 (espaçadas além do diâmetro)"
+    },
     "movimento": {
       "valor": 0,
       "unidade": "0/1",
