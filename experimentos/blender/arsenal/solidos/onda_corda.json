@@ -1,0 +1,98 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "fisica2/ondas_mecanicas",
+    "fisica2/ondas_estacionarias"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/ondas.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.39,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "onda_corda",
+  "nome": "Onda numa corda (progressiva e estacionária)",
+  "descricao": "Corda como curva azul-claro y(x, t) com contas neutras que só sobem e descem. `tipo` = progressiva (y = A sen(kx − 2π fase), anda para +X) ou estacionaria (y = A sen(kx) cos(2π fase), extremos fixos, com nós em violeta e envoltória pontilhada violeta).",
+  "leitura_visual": "Onda com contas brancas que oscilam na vertical enquanto a forma anda (progressiva) ou fica parada com nós (estacionária).",
+  "usar_quando": [
+    "ondas transversais: comprimento de onda, amplitude, frequência e velocidade (v = λf, no Manim)",
+    "partículas oscilando na vertical enquanto a onda se propaga",
+    "ondas estacionárias: nós, ventres e harmônicos (n_ondas = número de comprimentos de onda)"
+  ],
+  "nao_usar_quando": [
+    "ondas longitudinais (som): aqui só transversais",
+    "superposição de pulsos ou reflexões: a onda é senoidal e infinita"
+  ],
+  "limitacoes": [
+    "só o objeto em movimento: velocidades, energia, gráficos x(t) e as fórmulas são do Manim",
+    "movimento didático calculado por fórmula (não é uma simulação física de verdade)",
+    "para a estacionária `n_ondas` deve ser inteiro (nós nas pontas)",
+    "a onda progressiva é senoidal e preenche toda a corda: não há pulso nem reflexão"
+  ],
+  "construtor": "onda_corda",
+  "parametros": {
+    "tipo": {
+      "valor": "progressiva",
+      "unidade": "texto",
+      "descricao": "progressiva ou estacionaria"
+    },
+    "comprimento": {
+      "valor": 8.0,
+      "unidade": "u",
+      "descricao": "comprimento da corda"
+    },
+    "n_ondas": {
+      "valor": 2,
+      "unidade": "n",
+      "descricao": "número de comprimentos de onda na corda"
+    },
+    "amplitude": {
+      "valor": 0.9,
+      "unidade": "u",
+      "descricao": "amplitude A"
+    },
+    "n_contas": {
+      "valor": 9,
+      "unidade": "n",
+      "descricao": "contas indicadoras"
+    },
+    "nos": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = nós marcados (só estacionária)"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "animacao": {
+    "tipo": "onda",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um período; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.39,
+    "peso_mb_por_frame": 0.56,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "enquadramento": {
+    "azimute": -80,
+    "elevacao": 8,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.1"
+  ],
+  "preview": "previews/onda_corda.png"
+}

@@ -14,7 +14,7 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 | `anteparo_fenda_dupla` | Anteparo de fenda dupla | aprovado | otica/interferencia, otica/difracao |
 | `aro_rolando` | Aro rolando sem deslizar | aprovado | mecanica/rolamento, mecanica/momento_de_inercia |
 | `caixa_gas_cinetica` | Gás ideal em recipiente com êmbolo (teoria cinética) | aprovado | termodinamica/teoria_cinetica, termodinamica/processos_em_gases |
-| `campo_vetorial` | Campo vetorial (setas) | estudo | calculo/campos_vetoriais, eletromagnetismo/campo_eletrico |
+| `campo_vetorial` | Campo vetorial (setas) | aprovado | calculo/campos_vetoriais, eletromagnetismo/campo_eletrico |
 | `capacitor_esferico` | Capacitor esférico (esferas concêntricas, em corte) | aprovado | eletromagnetismo/condutores_e_capacitores |
 | `capacitor_placas_paralelas` | Capacitor de placas paralelas | aprovado | eletromagnetismo/condutores_e_capacitores |
 | `casca_cilindrica_oca` | Casca cilíndrica oca | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
@@ -22,6 +22,7 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 | `cilindro_coaxial` | Cilindro coaxial (condutor maciço + casca externa, em corte) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `cilindro_macico_isolante` | Cilindro maciço isolante com cargas no volume | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `cilindro_rolando` | Cilindro rolando sem deslizar | aprovado | mecanica/rolamento, mecanica/momento_de_inercia |
+| `colisao_1d` | Colisão unidimensional entre dois blocos | estudo | mecanica/colisoes |
 | `disco_carregado` | Disco carregado | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
 | `esfera_macica_isolante` | Esfera maciça isolante com cargas no volume | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `esfera_rolando` | Esfera rolando sem deslizar | aprovado | mecanica/rolamento, mecanica/momento_de_inercia |
@@ -29,19 +30,23 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 | `gaussiana_caixa` | Superfície gaussiana em caixa (pillbox) | aprovado | eletromagnetismo/lei_de_gauss |
 | `gaussiana_cilindrica` | Superfície gaussiana cilíndrica (fechada) | aprovado | eletromagnetismo/lei_de_gauss |
 | `gaussiana_esferica` | Superfície gaussiana esférica | aprovado | eletromagnetismo/lei_de_gauss |
-| `gradiente_colina` | Gradiente numa colina (curvas de nível) | estudo | calculo/gradiente, calculo/funcoes_de_varias_variaveis |
+| `gradiente_colina` | Gradiente numa colina (curvas de nível) | aprovado | calculo/gradiente, calculo/funcoes_de_varias_variaveis |
 | `haste_carregada` | Haste carregada | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
 | `lente_delgada` | Lente delgada (biconvexa ou biconcava) | aprovado | otica/otica_geometrica |
+| `massa_mola` | Sistema massa-mola horizontal (MHS) | estudo | fisica2/mhs |
+| `onda_corda` | Onda numa corda (progressiva e estacionária) | estudo | fisica2/ondas_mecanicas, fisica2/ondas_estacionarias |
+| `ondas_duas_fontes` | Ondas na superfície com duas fontes (interferência) | estudo | fisica2/superposicao_e_interferencia, otica/interferencia |
 | `orbita_kepleriana` | Órbita kepleriana com setores de áreas iguais | estudo | mecanica/gravitacao |
+| `pendulo_simples` | Pêndulo simples (pequenas oscilações) | estudo | fisica2/mhs |
 | `placa_infinita_carregada` | Placa infinita carregada (plano com cargas na superfície) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
-| `poco_gravitacional` | Poço gravitacional (potencial) | estudo | mecanica/gravitacao |
+| `poco_gravitacional` | Poço gravitacional (potencial) | aprovado | mecanica/gravitacao |
 | `prisma_triangular` | Prisma triangular | aprovado | otica/otica_geometrica |
 | `solenoide_corrente` | Solenoide (hélice de fio) | aprovado | eletromagnetismo/lei_de_ampere |
 | `solido_revolucao_arruela` | Sólido de revolução: método das arruelas | aprovado | calculo/volumes_de_revolucao |
 | `solido_revolucao_cascas` | Sólido de revolução: método das cascas | aprovado | calculo/volumes_de_revolucao |
 | `solido_revolucao_disco` | Sólido de revolução: método dos discos | aprovado | calculo/volumes_de_revolucao |
-| `superficie_parametrizada` | Superfície parametrizada com remendo dS | estudo | calculo/superficies_parametrizadas, calculo/integrais_de_superficie |
-| `teorema_stokes` | Teorema de Stokes (hemisfério e contorno) | estudo | calculo/stokes, eletromagnetismo/lei_de_ampere |
+| `superficie_parametrizada` | Superfície parametrizada com remendo dS | aprovado | calculo/superficies_parametrizadas, calculo/integrais_de_superficie |
+| `teorema_stokes` | Teorema de Stokes (hemisfério e contorno) | aprovado | calculo/stokes, eletromagnetismo/lei_de_ampere |
 | `toroide_corrente` | Toroide (fio enrolado em anel) | aprovado | eletromagnetismo/lei_de_ampere |
 | `tubo_escoamento` | Tubo com estrangulamento (continuidade) | aprovado | fluidos/fluidos_em_movimento |
 
@@ -391,7 +396,7 @@ Ficha: `solidos/caixa_gas_cinetica.json`
 
 ### `campo_vetorial` — Campo vetorial (setas)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Campo vetorial como setas ciano numa grade (plano z = 0 com `dim=2`; cubo com `dim=3`). `tipo`: radial (fonte), rotacional (circulação), sela ou espiral (fonte + circulação). O comprimento da seta cresce com o módulo do campo.
 
@@ -787,6 +792,61 @@ img = Solido3D("cilindro_rolando").mobject(cena=self, altura=5)   # cargas em lo
 
 Ficha: `solidos/cilindro_rolando.json`
 
+### `colisao_1d` — Colisão unidimensional entre dois blocos
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Dois blocos de vidro sobre um trilho (bloco 1 azul, bloco 2 azul-claro; o tamanho cresce com a massa) que colidem em x = 0 no instante `instante`. `restituicao` e = 1 elástica, e = 0 totalmente inelástica (grudam). Uma esfera neutra marca o centro de massa, que não muda de velocidade. Animação de CICLO ÚNICO (a fase 1 é o estado final, diferente da fase 0).
+
+![Colisão unidimensional entre dois blocos](previews/colisao_1d.png)
+
+**Como se lê:** Dois blocos se aproximam, colidem e se afastam (ou seguem juntos); a marca do CM anda em linha reta o tempo todo.
+
+**Usar quando**
+- colisões elásticas e inelásticas: conservação do momento linear
+- mostrar que o centro de massa não é afetado pela colisão
+- comparar massas diferentes (o tamanho do bloco acompanha a massa)
+
+**Não usar quando**
+- colisões em duas dimensões
+- colisão com perda de massa ou explosões
+
+**Limitações**
+- só o objeto em movimento: velocidades, energia, gráficos x(t) e as fórmulas são do Manim
+- movimento didático calculado por fórmula (não é uma simulação física de verdade)
+- ciclo único: não há loop (a fase 1 não repete a fase 0); a ponte renderiza quadros de 0 a 1 incluindo o final, e o Manim congela no fim
+- só 1D, sem atrito (os blocos deslizam a velocidade constante); o tamanho do bloco é proporcional a m^(1/3)
+- os blocos não se deformam e o contato é instantâneo
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `m1` | 2.0 | u | massa do bloco 1 (azul) |
+| `m2` | 1.0 | u | massa do bloco 2 (azul-claro) |
+| `v1` | 3.0 | u | velocidade inicial do bloco 1 (deve ser maior que v2) |
+| `v2` | 0.0 | u | velocidade inicial do bloco 2 |
+| `restituicao` | 1.0 | 0-1 | coeficiente de restituição e (1 elástica, 0 inelástica) |
+| `instante` | 0.45 | 0-1 | instante da colisão (fração da duração) |
+| `mostrar_cm` | 1 | 0/1 | 1 = marca do centro de massa |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo 0.75 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `colisao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.75 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- colisao_1d --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("colisao_1d").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/colisao_1d.json`
+
 ### `disco_carregado` — Disco carregado
 
 **Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
@@ -1159,7 +1219,7 @@ Ficha: `solidos/gaussiana_esferica.json`
 
 ### `gradiente_colina` — Gradiente numa colina (curvas de nível)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Colina gaussiana f(x, y) = h e^(−r²/2σ²) (vidro azul) com curvas de nível em azul-claro, um ponto P (branco) sobre a superfície, o vetor gradiente ∇f (ciano, horizontal, apontando para o topo) e a projeção vertical de P no plano (violeta tracejada). Com `movimento=1` o ponto circunda a colina e o gradiente gira com ele.
 
@@ -1321,9 +1381,168 @@ img = Solido3D("lente_delgada").mobject(altura=5)   # estático: um quadro PNG c
 
 Ficha: `solidos/lente_delgada.json`
 
-### `orbita_kepleriana` — Órbita kepleriana com setores de áreas iguais
+### `massa_mola` — Sistema massa-mola horizontal (MHS)
 
 **Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Bloco de vidro azul preso a uma mola helicoidal (fio azul) na parede, sobre um trilho, com três marcas violeta tracejadas: equilíbrio e os extremos ±A. Com `movimento=1` o bloco oscila x = x_eq + A cos(2π fase) e a mola se comprime e se estica.
+
+![Sistema massa-mola horizontal (MHS)](previews/massa_mola.png)
+
+**Como se lê:** Bloco entre duas marcas pontilhadas, com a mola mudando de comprimento: lê-se como 'oscilador harmônico simples'.
+
+**Usar quando**
+- MHS: período, amplitude e a posição de equilíbrio
+- energia no oscilador: a energia da mola é do Manim
+- contraste com o pêndulo e com as oscilações amortecidas (o amortecimento é do Manim)
+
+**Não usar quando**
+- movimento vertical com gravidade (a mola é horizontal, sem atrito)
+- oscilações amortecidas ou forçadas
+
+**Limitações**
+- só o objeto em movimento: velocidades, energia, gráficos x(t) e as fórmulas são do Manim
+- movimento didático calculado por fórmula (não é uma simulação física de verdade)
+- a mola é uma hélice de passo uniforme com espiras que mudam de espaçamento: a espessura do fio é visual
+- sem atrito: a amplitude é constante
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `amplitude` | 1.0 | u | amplitude A |
+| `equilibrio` | 0.5 | u | posição de equilíbrio do centro do bloco |
+| `parede` | -3.0 | u | posição da parede |
+| `lado` | 0.9 | u | lado do bloco |
+| `n_espiras` | 12 | n | espiras da mola |
+| `raio_mola` | 0.26 | u | raio da hélice |
+| `marcas` | 1 | 0/1 | 1 = marcas do equilíbrio e dos extremos |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo 0.87 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `oscilacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.87 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- massa_mola --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("massa_mola").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/massa_mola.json`
+
+### `onda_corda` — Onda numa corda (progressiva e estacionária)
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Corda como curva azul-claro y(x, t) com contas neutras que só sobem e descem. `tipo` = progressiva (y = A sen(kx − 2π fase), anda para +X) ou estacionaria (y = A sen(kx) cos(2π fase), extremos fixos, com nós em violeta e envoltória pontilhada violeta).
+
+![Onda numa corda (progressiva e estacionária)](previews/onda_corda.png)
+
+**Como se lê:** Onda com contas brancas que oscilam na vertical enquanto a forma anda (progressiva) ou fica parada com nós (estacionária).
+
+**Usar quando**
+- ondas transversais: comprimento de onda, amplitude, frequência e velocidade (v = λf, no Manim)
+- partículas oscilando na vertical enquanto a onda se propaga
+- ondas estacionárias: nós, ventres e harmônicos (n_ondas = número de comprimentos de onda)
+
+**Não usar quando**
+- ondas longitudinais (som): aqui só transversais
+- superposição de pulsos ou reflexões: a onda é senoidal e infinita
+
+**Limitações**
+- só o objeto em movimento: velocidades, energia, gráficos x(t) e as fórmulas são do Manim
+- movimento didático calculado por fórmula (não é uma simulação física de verdade)
+- para a estacionária `n_ondas` deve ser inteiro (nós nas pontas)
+- a onda progressiva é senoidal e preenche toda a corda: não há pulso nem reflexão
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `tipo` | progressiva | texto | progressiva ou estacionaria |
+| `comprimento` | 8.0 | u | comprimento da corda |
+| `n_ondas` | 2 | n | número de comprimentos de onda na corda |
+| `amplitude` | 0.9 | u | amplitude A |
+| `n_contas` | 9 | n | contas indicadoras |
+| `nos` | 1 | 0/1 | 1 = nós marcados (só estacionária) |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo 0.39 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `onda` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.39 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- onda_corda --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("onda_corda").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/onda_corda.json`
+
+### `ondas_duas_fontes` — Ondas na superfície com duas fontes (interferência)
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Superfície de vidro azul com malha azul-claro e duas fontes neutras (esferas brancas) que emitem ondas circulares coerentes; a altura é a soma das duas, amortecida até zero na borda. Com `movimento=1` as ondas se propagam (fase = um período).
+
+![Ondas na superfície com duas fontes (interferência)](previews/ondas_duas_fontes.png)
+
+**Como se lê:** Superfície ondulada com dois pontos brancos e um padrão de cristas e vales cruzados: lê-se como 'interferência de duas fontes'.
+
+**Usar quando**
+- interferência construtiva e destrutiva de duas fontes coerentes (cuba de ondas)
+- experimento de Young em ondas na água, antes da luz
+- mostrar a diferença de caminho: as linhas nodais vêm da soma das ondas
+
+**Não usar quando**
+- uma única fonte ou ondas estacionárias (use onda_corda)
+- fontes incoerentes
+
+**Limitações**
+- só o objeto em movimento: velocidades, energia, gráficos x(t) e as fórmulas são do Manim
+- movimento didático calculado por fórmula (não é uma simulação física de verdade)
+- a amplitude cai como 1/√(1 + 0,5 r) e é zerada na borda (apenas visual)
+- malha de 64×64: dá um aspecto de grade fina e as cristas são lisas, mas o detalhe fino some a distância
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `extensao` | 5.0 | u | meia largura da superfície |
+| `separacao` | 3.0 | u | distância entre as fontes |
+| `comprimento_onda` | 1.8 | u | comprimento de onda |
+| `amplitude` | 0.42 | u | amplitude de cada onda |
+| `resolucao` | 64 | n | divisões por lado da malha |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo 1.65 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `onda` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 1.65 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- ondas_duas_fontes --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("ondas_duas_fontes").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/ondas_duas_fontes.json`
+
+### `orbita_kepleriana` — Órbita kepleriana com setores de áreas iguais
+
+**Status:** estudo · Corpo central ajustado com degradê a pedido do usuário; aguardando nova aprovação da aparência.
 
 Órbita elíptica num plano: corpo central branco no foco, corpo orbitante azul-claro, trajetória tracejada violeta, vetor posição e `setores` fatias violeta translúcidas varridas em intervalos de tempo iguais (fração `fracao_setor` do período). Com `movimento=1` o corpo percorre a órbita (fase = um período, velocidade de Kepler).
 
@@ -1373,6 +1592,57 @@ img = Solido3D("orbita_kepleriana").mobject(cena=self, altura=5)   # cargas em l
 ```
 
 Ficha: `solidos/orbita_kepleriana.json`
+
+### `pendulo_simples` — Pêndulo simples (pequenas oscilações)
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Pêndulo no plano XZ: suporte de vidro, fio azul-claro, massa esférica com degradê, arco tracejado violeta entre ±θ0 e a vertical de referência. Com `movimento=1` θ(t) = θ0 cos(2π fase) (aproximação de pequenas oscilações, MHS).
+
+![Pêndulo simples (pequenas oscilações)](previews/pendulo_simples.png)
+
+**Como se lê:** Massa balançando num fio, com o arco pontilhado do percurso e a vertical: lê-se como 'pêndulo'.
+
+**Usar quando**
+- pêndulo simples e a aproximação de pequenos ângulos (T = 2π√(L/g))
+- contraste com massa-mola (também MHS)
+- energia: troca entre potencial e cinética (as setas e gráficos são do Manim)
+
+**Não usar quando**
+- grandes amplitudes (o movimento real não é senoidal)
+- pêndulo físico ou duplo
+
+**Limitações**
+- só o objeto em movimento: velocidades, energia, gráficos x(t) e as fórmulas são do Manim
+- movimento didático calculado por fórmula (não é uma simulação física de verdade)
+- θ(t) é cosseno puro (MHS): para amplitudes grandes (>30°) a diferença do pêndulo real é visível
+- fio inextensível e sem atrito
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `comprimento` | 3.0 | u | comprimento L do fio |
+| `amplitude_graus` | 24.0 | graus | amplitude angular θ0 |
+| `raio_corpo` | 0.24 | u | raio da massa |
+| `arco` | 1 | 0/1 | 1 = arco e vertical de referência |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo 0.53 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `oscilacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.53 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- pendulo_simples --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("pendulo_simples").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/pendulo_simples.json`
 
 ### `placa_infinita_carregada` — Placa infinita carregada (plano com cargas na superfície)
 
@@ -1437,7 +1707,7 @@ Ficha: `solidos/placa_infinita_carregada.json`
 
 ### `poco_gravitacional` — Poço gravitacional (potencial)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Superfície de vidro azulado de revolução z = −P·s/√(r²+s²) com anéis e raios em azul-claro e uma bola azul-claro em órbita circular sobre ela. Representa o poço de potencial gravitacional (o mais fundo no centro).
 
@@ -1764,7 +2034,7 @@ Ficha: `solidos/solido_revolucao_disco.json`
 
 ### `superficie_parametrizada` — Superfície parametrizada com remendo dS
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Superfície de vidro azul (`tipo`: onda, sela ou esfera) com as curvas coordenadas u = cte e v = cte em azul-claro, um remendo elementar dS em violeta tracejado, os vetores tangentes r_u e r_v (brancos) e a normal n̂ = r_u × r_v (azul) no ponto (`u0`, `v0`). Com `movimento=1` o ponto percorre uma pequena volta.
 
@@ -1818,7 +2088,7 @@ Ficha: `solidos/superficie_parametrizada.json`
 
 ### `teorema_stokes` — Teorema de Stokes (hemisfério e contorno)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Hemisfério de vidro azul (a superfície S) com o contorno ∂S no plano z = 0 em violeta contínuo, normais n̂ para fora (azuis), setas do campo rotacional (ciano) e uma seta branca percorrendo ∂S no sentido anti-horário (regra da mão direita com n̂ para cima). Com `movimento=1` a seta percorre o contorno.
 

@@ -50,7 +50,7 @@ def criar_orbita(semi_eixo=2.6, excentricidade=0.55, setores=2, fracao_setor=0.1
                  vetor=1, fase=0.0):
     """Órbita elíptica com o foco na origem. Devolve (proxy, atualizar(fase))."""
     a, e = semi_eixo, excentricidade
-    mat_c = v3.material_cor("Centro", G["centro_cor"], G["centro_emissao"])
+    mat_c = v3.material_degrade("Centro", G["centro_cor"], G["centro_borda"], G["centro_emissao"], G["centro_blend"])
     mat_o = v3.material_cor("CorpoOrbita", G["corpo_cor"], G["corpo_emissao"])
     mat_v = v3.material_cor("VetorPosicao", G["vetor_cor"], G["vetor_emissao"])
     mat_t = co._material("TracoOrbita", {"cor": "gaussiana", "emissao": 1.8, "rugosidade": 0.4})

@@ -52,6 +52,8 @@ class Solido3D:
         self.seq = ponte.sequencia(solido, params, animado=animado, frames=frames, res=res, amostras=amostras,
                                    render=render, forcar=forcar)
         self._cache = OrderedDict()                 # quadros decodificados recentes (LRU)
+        # ciclo único (ex.: colisão): a fase 1 é um estado final DIFERENTE da fase 0, então não há loop
+        self.unico = bool(self.seq.animado and ponte.ler_ficha(solido).get("animacao", {}).get("ciclo") == "unico")
 
     @property
     def animado(self):
@@ -75,6 +77,8 @@ class Solido3D:
     def indice(self, fase):
         """Quadro mais próximo da fase. Os quadros foram renderizados nas fases i/N, então arredondar (e não
         truncar) evita que 0,99999… por erro de ponto flutuante caia no quadro N-1 em vez do 0."""
+        if self.unico:
+            return int(round(min(max(fase, 0.0), 1.0) * (self.seq.frames - 1)))
         return int(round((fase % 1.0) * self.seq.frames)) % self.seq.frames
 
     def mobject(self, cena=None, altura=None, largura=None, centro=ORIGIN, periodo=2.0, autoplay=True, fase=0.0):
@@ -101,9 +105,8 @@ class Solido3D:
         estado = {"base": fase % 1.0, "t_ref": agora(), "ativo": bool(autoplay and self.animado)}
 
         def fase_atual():
-            if not estado["ativo"]:
-                return estado["base"] % 1.0
-            return (estado["base"] + (agora() - estado["t_ref"]) / periodo) % 1.0
+            f = estado["base"] if not estado["ativo"] else estado["base"] + (agora() - estado["t_ref"]) / periodo
+            return min(max(f, 0.0), 1.0) if self.unico else f % 1.0       # único: congela no fim em vez de repetir
 
         def aplicar():
             arr = self.quadro(self.indice(fase_atual()))
@@ -118,7 +121,7 @@ class Solido3D:
                 aplicar()
 
         def set_fase(x):
-            estado.update(base=x % 1.0, t_ref=agora())
+            estado.update(base=min(max(x, 0.0), 1.0) if self.unico else x % 1.0, t_ref=agora())
             aplicar()
             return mob
 

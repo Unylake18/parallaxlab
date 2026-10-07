@@ -24,7 +24,10 @@ import capacitores as cp  # noqa: E402
 import otica as ot  # noqa: E402
 import revolucao as rv  # noqa: E402
 import calc_vetorial as cv  # noqa: E402
+import colisoes as cl  # noqa: E402
 import gravitacao as gr  # noqa: E402
+import ondas as on  # noqa: E402
+import oscilacoes as osc  # noqa: E402
 import termo_fluidos as tf  # noqa: E402
 import rolamento as rl  # noqa: E402
 
@@ -339,6 +342,34 @@ def gradiente_colina(p):
     return _mov({"enquadrar": [corpo], "apos_camera": None}, atu, p)
 
 
+def massa_mola(p):
+    proxy, atu = osc.criar_massa_mola(p["amplitude"], p["equilibrio"], p["parede"], p["lado"], int(p["n_espiras"]),
+                                      p["raio_mola"], int(p["marcas"]), p["fase"])
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
+def pendulo_simples(p):
+    proxy, atu = osc.criar_pendulo(p["comprimento"], p["amplitude_graus"], p["raio_corpo"], int(p["arco"]), p["fase"])
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
+def onda_corda(p):
+    proxy, atu = on.criar_corda(p["tipo"], p["comprimento"], int(p["n_ondas"]), p["amplitude"], int(p["n_contas"]), p["fase"],
+                                int(p["nos"]))
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
+def ondas_duas_fontes(p):
+    corpo, atu = on.criar_ondas_superficie(p["extensao"], p["separacao"], p["comprimento_onda"], p["amplitude"],
+                                           int(p["resolucao"]), p["fase"])
+    return _mov({"enquadrar": [corpo], "apos_camera": None}, atu, p)
+
+
+def colisao_1d(p):
+    proxy, atu = cl.criar_colisao(p["m1"], p["m2"], p["v1"], p["v2"], p["restituicao"], p["instante"], int(p["mostrar_cm"]), p["fase"])
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
 CONSTRUTORES = {
     "casca_cilindrica_oca": casca_cilindrica_oca,
     "cilindro_macico_isolante": cilindro_macico_isolante,
@@ -376,4 +407,9 @@ CONSTRUTORES = {
     "superficie_parametrizada": superficie_parametrizada,
     "teorema_stokes": teorema_stokes,
     "gradiente_colina": gradiente_colina,
+    "massa_mola": massa_mola,
+    "pendulo_simples": pendulo_simples,
+    "onda_corda": onda_corda,
+    "ondas_duas_fontes": ondas_duas_fontes,
+    "colisao_1d": colisao_1d,
 }

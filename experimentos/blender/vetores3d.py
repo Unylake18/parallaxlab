@@ -48,6 +48,27 @@ def material_cor(nome, cor, emissao):
     return co._material(nome, {"cor": cor, "emissao": emissao, "rugosidade": 0.35})
 
 
+def material_degrade(nome, cor_centro, cor_borda, emissao=1.2, blend=0.55):
+    """Esfera com degradê: `cor_centro` onde a superfície encara a câmera, `cor_borda` no contorno (Layer Weight Facing).
+    Dá volume a um corpo emissivo, que sem isso vira um disco chapado."""
+    mat = bpy.data.materials.new(nome)
+    mat.use_nodes = True
+    nt = mat.node_tree
+    bsdf = nt.nodes["Principled BSDF"]
+    lw = nt.nodes.new("ShaderNodeLayerWeight")
+    lw.inputs["Blend"].default_value = blend
+    mix = nt.nodes.new("ShaderNodeMix")
+    mix.data_type = "RGBA"
+    mix.inputs[6].default_value = co.hex_linear(co.E.cor(cor_centro))   # A (fator 0 = encara a câmera)
+    mix.inputs[7].default_value = co.hex_linear(co.E.cor(cor_borda))    # B (fator 1 = no contorno)
+    nt.links.new(lw.outputs["Facing"], mix.inputs[0])
+    nt.links.new(mix.outputs[2], bsdf.inputs["Base Color"])
+    nt.links.new(mix.outputs[2], bsdf.inputs["Emission Color"])
+    bsdf.inputs["Roughness"].default_value = 0.4
+    bsdf.inputs["Emission Strength"].default_value = emissao
+    return mat
+
+
 def seta(origem, vetor, mat, comprimento=None):
     """Seta de `origem` na direção de `vetor`; comprimento = |vetor| a menos que seja dado."""
     v = Vector(vetor)

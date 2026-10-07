@@ -1,0 +1,93 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "fisica2/superposicao_e_interferencia",
+    "otica/interferencia"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/ondas.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 1.65,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "ondas_duas_fontes",
+  "nome": "Ondas na superfície com duas fontes (interferência)",
+  "descricao": "Superfície de vidro azul com malha azul-claro e duas fontes neutras (esferas brancas) que emitem ondas circulares coerentes; a altura é a soma das duas, amortecida até zero na borda. Com `movimento=1` as ondas se propagam (fase = um período).",
+  "leitura_visual": "Superfície ondulada com dois pontos brancos e um padrão de cristas e vales cruzados: lê-se como 'interferência de duas fontes'.",
+  "usar_quando": [
+    "interferência construtiva e destrutiva de duas fontes coerentes (cuba de ondas)",
+    "experimento de Young em ondas na água, antes da luz",
+    "mostrar a diferença de caminho: as linhas nodais vêm da soma das ondas"
+  ],
+  "nao_usar_quando": [
+    "uma única fonte ou ondas estacionárias (use onda_corda)",
+    "fontes incoerentes"
+  ],
+  "limitacoes": [
+    "só o objeto em movimento: velocidades, energia, gráficos x(t) e as fórmulas são do Manim",
+    "movimento didático calculado por fórmula (não é uma simulação física de verdade)",
+    "a amplitude cai como 1/√(1 + 0,5 r) e é zerada na borda (apenas visual)",
+    "malha de 64×64: dá um aspecto de grade fina e as cristas são lisas, mas o detalhe fino some a distância"
+  ],
+  "construtor": "ondas_duas_fontes",
+  "parametros": {
+    "extensao": {
+      "valor": 5.0,
+      "unidade": "u",
+      "descricao": "meia largura da superfície"
+    },
+    "separacao": {
+      "valor": 3.0,
+      "unidade": "u",
+      "descricao": "distância entre as fontes"
+    },
+    "comprimento_onda": {
+      "valor": 1.8,
+      "unidade": "u",
+      "descricao": "comprimento de onda"
+    },
+    "amplitude": {
+      "valor": 0.42,
+      "unidade": "u",
+      "descricao": "amplitude de cada onda"
+    },
+    "resolucao": {
+      "valor": 64,
+      "unidade": "n",
+      "descricao": "divisões por lado da malha"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "animacao": {
+    "tipo": "onda",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um período; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 1.65,
+    "peso_mb_por_frame": 1.67,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "enquadramento": {
+    "azimute": -30,
+    "elevacao": 22,
+    "lente": 50,
+    "margem": 0.05
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.2"
+  ],
+  "preview": "previews/ondas_duas_fontes.png"
+}

@@ -1,0 +1,104 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "mecanica/colisoes"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/colisoes.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.75,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "colisao_1d",
+  "nome": "Colisão unidimensional entre dois blocos",
+  "descricao": "Dois blocos de vidro sobre um trilho (bloco 1 azul, bloco 2 azul-claro; o tamanho cresce com a massa) que colidem em x = 0 no instante `instante`. `restituicao` e = 1 elástica, e = 0 totalmente inelástica (grudam). Uma esfera neutra marca o centro de massa, que não muda de velocidade. Animação de CICLO ÚNICO (a fase 1 é o estado final, diferente da fase 0).",
+  "leitura_visual": "Dois blocos se aproximam, colidem e se afastam (ou seguem juntos); a marca do CM anda em linha reta o tempo todo.",
+  "usar_quando": [
+    "colisões elásticas e inelásticas: conservação do momento linear",
+    "mostrar que o centro de massa não é afetado pela colisão",
+    "comparar massas diferentes (o tamanho do bloco acompanha a massa)"
+  ],
+  "nao_usar_quando": [
+    "colisões em duas dimensões",
+    "colisão com perda de massa ou explosões"
+  ],
+  "limitacoes": [
+    "só o objeto em movimento: velocidades, energia, gráficos x(t) e as fórmulas são do Manim",
+    "movimento didático calculado por fórmula (não é uma simulação física de verdade)",
+    "ciclo único: não há loop (a fase 1 não repete a fase 0); a ponte renderiza quadros de 0 a 1 incluindo o final, e o Manim congela no fim",
+    "só 1D, sem atrito (os blocos deslizam a velocidade constante); o tamanho do bloco é proporcional a m^(1/3)",
+    "os blocos não se deformam e o contato é instantâneo"
+  ],
+  "construtor": "colisao_1d",
+  "parametros": {
+    "m1": {
+      "valor": 2.0,
+      "unidade": "u",
+      "descricao": "massa do bloco 1 (azul)"
+    },
+    "m2": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "massa do bloco 2 (azul-claro)"
+    },
+    "v1": {
+      "valor": 3.0,
+      "unidade": "u",
+      "descricao": "velocidade inicial do bloco 1 (deve ser maior que v2)"
+    },
+    "v2": {
+      "valor": 0.0,
+      "unidade": "u",
+      "descricao": "velocidade inicial do bloco 2"
+    },
+    "restituicao": {
+      "valor": 1.0,
+      "unidade": "0-1",
+      "descricao": "coeficiente de restituição e (1 elástica, 0 inelástica)"
+    },
+    "instante": {
+      "valor": 0.45,
+      "unidade": "0-1",
+      "descricao": "instante da colisão (fração da duração)"
+    },
+    "mostrar_cm": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = marca do centro de massa"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "animacao": {
+    "tipo": "colisao",
+    "liga": "movimento",
+    "ciclo": "unico",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "ciclo único: fase 0 = antes da colisão, 1 = depois; a fase 1 NÃO repete a fase 0",
+    "custo_1080p_s_por_frame": 0.75,
+    "peso_mb_por_frame": 0.85,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "enquadramento": {
+    "azimute": -68,
+    "elevacao": 20,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.75"
+  ],
+  "preview": "previews/colisao_1d.png"
+}

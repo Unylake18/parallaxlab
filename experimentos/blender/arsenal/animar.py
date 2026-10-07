@@ -67,9 +67,10 @@ def main():
 
     co.render(pasta / "_aquecimento.png", largura, altura, a.amostras)     # configura o motor e aquece shaders
     (pasta / "_aquecimento.png").unlink()
+    unico = ficha["animacao"].get("ciclo") == "unico"                      # sem loop: a fase 1 NÃO repete a fase 0
     tempos = []
     for i in range(a.frames):
-        res["atualizar"](i / a.frames)
+        res["atualizar"](i / (a.frames - 1) if unico else i / a.frames)      # único: inclui a fase 1 (estado final)
         sc.render.filepath = str(pasta / f"frame_{i + 1:04d}.png")
         t0 = time.perf_counter()
         bpy.ops.render.render(write_still=True)

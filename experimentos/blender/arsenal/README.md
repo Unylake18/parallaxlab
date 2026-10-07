@@ -78,6 +78,7 @@ Pontos que importam:
 - **Fase pelo tempo da cena**: o movimento é calculado de `cena.time`, não somando `dt`. Motivo medido: durante um
   `FadeIn`/`FadeOut` aplicado ao próprio mobject o Manim chama o updater duas vezes por quadro, e somar `dt` faria o
   movimento andar em dobro. O loop fecha sem emenda (verificado sem compressão: diferença 0,0 entre quadros de mesma fase).
+- **Ciclo único** (`animacao.ciclo = "unico"`, ex.: `colisao_1d`): a fase 1 NÃO repete a fase 0. `animar.py` e a ponte renderizam as fases 0 a 1 incluindo o final, e `Solido3D` congela no último quadro em vez de repetir. Todos os outros movimentos são loops sem emenda.
 - **O que o 3D não diz**: sentido da corrente e sinal das cargas. Desenhe seta e rótulo em Manim por cima.
 - **Custo e peso**: veja a linha "Animação" de cada sólido no `catalogo.md` (0,5 a 1,3 s por quadro em 1080p; 60 quadros
   pesam de ~36 MB a ~100 MB por sólido, e levam de ~30 s a ~80 s no Blender).

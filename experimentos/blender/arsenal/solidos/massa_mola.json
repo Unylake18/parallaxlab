@@ -1,0 +1,102 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "fisica2/mhs"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/oscilacoes.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.87,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "massa_mola",
+  "nome": "Sistema massa-mola horizontal (MHS)",
+  "descricao": "Bloco de vidro azul preso a uma mola helicoidal (fio azul) na parede, sobre um trilho, com três marcas violeta tracejadas: equilíbrio e os extremos ±A. Com `movimento=1` o bloco oscila x = x_eq + A cos(2π fase) e a mola se comprime e se estica.",
+  "leitura_visual": "Bloco entre duas marcas pontilhadas, com a mola mudando de comprimento: lê-se como 'oscilador harmônico simples'.",
+  "usar_quando": [
+    "MHS: período, amplitude e a posição de equilíbrio",
+    "energia no oscilador: a energia da mola é do Manim",
+    "contraste com o pêndulo e com as oscilações amortecidas (o amortecimento é do Manim)"
+  ],
+  "nao_usar_quando": [
+    "movimento vertical com gravidade (a mola é horizontal, sem atrito)",
+    "oscilações amortecidas ou forçadas"
+  ],
+  "limitacoes": [
+    "só o objeto em movimento: velocidades, energia, gráficos x(t) e as fórmulas são do Manim",
+    "movimento didático calculado por fórmula (não é uma simulação física de verdade)",
+    "a mola é uma hélice de passo uniforme com espiras que mudam de espaçamento: a espessura do fio é visual",
+    "sem atrito: a amplitude é constante"
+  ],
+  "construtor": "massa_mola",
+  "parametros": {
+    "amplitude": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "amplitude A"
+    },
+    "equilibrio": {
+      "valor": 0.5,
+      "unidade": "u",
+      "descricao": "posição de equilíbrio do centro do bloco"
+    },
+    "parede": {
+      "valor": -3.0,
+      "unidade": "u",
+      "descricao": "posição da parede"
+    },
+    "lado": {
+      "valor": 0.9,
+      "unidade": "u",
+      "descricao": "lado do bloco"
+    },
+    "n_espiras": {
+      "valor": 12,
+      "unidade": "n",
+      "descricao": "espiras da mola"
+    },
+    "raio_mola": {
+      "valor": 0.26,
+      "unidade": "u",
+      "descricao": "raio da hélice"
+    },
+    "marcas": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = marcas do equilíbrio e dos extremos"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "animacao": {
+    "tipo": "oscilacao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um período; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.87,
+    "peso_mb_por_frame": 1.16,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "enquadramento": {
+    "azimute": -62,
+    "elevacao": 18,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.15"
+  ],
+  "preview": "previews/massa_mola.png"
+}

@@ -1,0 +1,87 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "fisica2/mhs"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/oscilacoes.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.53,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "pendulo_simples",
+  "nome": "Pêndulo simples (pequenas oscilações)",
+  "descricao": "Pêndulo no plano XZ: suporte de vidro, fio azul-claro, massa esférica com degradê, arco tracejado violeta entre ±θ0 e a vertical de referência. Com `movimento=1` θ(t) = θ0 cos(2π fase) (aproximação de pequenas oscilações, MHS).",
+  "leitura_visual": "Massa balançando num fio, com o arco pontilhado do percurso e a vertical: lê-se como 'pêndulo'.",
+  "usar_quando": [
+    "pêndulo simples e a aproximação de pequenos ângulos (T = 2π√(L/g))",
+    "contraste com massa-mola (também MHS)",
+    "energia: troca entre potencial e cinética (as setas e gráficos são do Manim)"
+  ],
+  "nao_usar_quando": [
+    "grandes amplitudes (o movimento real não é senoidal)",
+    "pêndulo físico ou duplo"
+  ],
+  "limitacoes": [
+    "só o objeto em movimento: velocidades, energia, gráficos x(t) e as fórmulas são do Manim",
+    "movimento didático calculado por fórmula (não é uma simulação física de verdade)",
+    "θ(t) é cosseno puro (MHS): para amplitudes grandes (>30°) a diferença do pêndulo real é visível",
+    "fio inextensível e sem atrito"
+  ],
+  "construtor": "pendulo_simples",
+  "parametros": {
+    "comprimento": {
+      "valor": 3.0,
+      "unidade": "u",
+      "descricao": "comprimento L do fio"
+    },
+    "amplitude_graus": {
+      "valor": 24.0,
+      "unidade": "graus",
+      "descricao": "amplitude angular θ0"
+    },
+    "raio_corpo": {
+      "valor": 0.24,
+      "unidade": "u",
+      "descricao": "raio da massa"
+    },
+    "arco": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = arco e vertical de referência"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "animacao": {
+    "tipo": "oscilacao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um período; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.53,
+    "peso_mb_por_frame": 0.62,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "enquadramento": {
+    "azimute": -25,
+    "elevacao": 10,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.1"
+  ],
+  "preview": "previews/pendulo_simples.png"
+}
