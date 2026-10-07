@@ -1,0 +1,100 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "calculo/volumes_de_revolucao"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/revolucao.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.96,
+    "custo_origem": "still 1920x1080 com alpha, aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "animacao": {
+    "tipo": "varredura",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = ida e volta da fatia; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.96,
+    "peso_mb_por_frame": 0.92,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "id": "solido_revolucao_cascas",
+  "nome": "Sólido de revolução: método das cascas",
+  "descricao": "Sólido de vidro azulado (uma tigela) gerado pela rotação da região sob y = H (1 − (x/a)²) em torno do eixo Z (vertical), com a curva geratriz em azul-claro, o eixo tracejado e a fatia elementar (uma casca cilíndrica de raio r, altura f(r) e espessura dr) em violeta com arestas tracejadas. Com movimento, a casca cresce de dentro para fora e volta.",
+  "leitura_visual": "Tigela de vidro azul com uma casca cilíndrica violeta de arestas tracejadas, concêntrica ao eixo vertical. Lê-se como 'o volume é a soma de cascas: 2π r f(r) dr'.",
+  "usar_quando": [
+    "volume por cascas: V = ∫ 2π x f(x) dx (região sob a curva girada em torno do eixo y)",
+    "mostrar a casca elementar varrendo o sólido (movimento=1)",
+    "contraste com discos e arruelas (fatias perpendiculares ao eixo)"
+  ],
+  "nao_usar_quando": [
+    "rotação em torno do eixo x com a região sob a curva (use solido_revolucao_disco)",
+    "outra curva ou eixo deslocado: a parábola invertida é fixa"
+  ],
+  "limitacoes": [
+    "a fatia mostra UM elemento dx exagerado, não a soma de Riemann: o limite dx→0 e a integral ficam para o Manim",
+    "o violeta da fatia segue a gramática do arsenal (construção matemática, translúcida, nunca sólida): ela fica dentro do vidro azul e perde contraste em ângulos muito rasantes",
+    "o sólido é vidro translúcido (culling de faces de trás já embutido); o interior de uma arruela só aparece pelo lado aberto",
+    "a gramática de cor de Cálculo segue o padrão do arsenal (estilo.json)",
+    "perfil fixo: parábola invertida y = H (1 − (x/a)²) em [0, a]",
+    "o eixo de rotação é Z (vertical), diferente dos outros dois métodos (eixo X)"
+  ],
+  "construtor": "solido_revolucao_cascas",
+  "parametros": {
+    "raio_base": {
+      "valor": 2.0,
+      "unidade": "u",
+      "descricao": "raio a da base da tigela"
+    },
+    "altura": {
+      "valor": 3.0,
+      "unidade": "u",
+      "descricao": "altura H da tigela (no eixo)"
+    },
+    "fatia": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = desenha a fatia elementar (violeta, arestas tracejadas); 0 = só o sólido"
+    },
+    "posicao_fatia": {
+      "valor": 0.5,
+      "unidade": "0-1",
+      "descricao": "posição da fatia ao longo do sólido (fração da extensão); ignorada com movimento=1"
+    },
+    "espessura_fatia": {
+      "valor": 0.14,
+      "unidade": "u",
+      "descricao": "espessura dx da fatia (exagerada para ser visível)"
+    },
+    "perfil_visivel": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = curva geratriz em azul-claro"
+    },
+    "eixo": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = eixo de revolução tracejado em cor neutra"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = a fatia varre o sólido em vaivém suave (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do vaivém; fase=1 repete o quadro da fase 0 (loop perfeito)"
+    }
+  },
+  "enquadramento": {
+    "azimute": -30,
+    "elevacao": 26,
+    "lente": 50,
+    "margem": 0.09
+  },
+  "preview": "previews/solido_revolucao_cascas.png"
+}

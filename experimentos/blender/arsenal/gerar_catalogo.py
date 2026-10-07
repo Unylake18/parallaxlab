@@ -31,7 +31,8 @@ def carregar():
         if not re.search(rf'"{re.escape(f["construtor"])}"\s*:', construtores):
             erros.append(f"{arq.name}: construtor '{f['construtor']}' não está em construtores.py")
         if "animacao" in f:
-            for k in ("cargas_moveis", "fase"):
+            liga = f["animacao"].get("liga", "cargas_moveis")        # parâmetro 0/1 que liga o movimento
+            for k in (liga, "fase"):
                 if k not in f["parametros"]:
                     erros.append(f"{arq.name}: tem 'animacao' mas falta o parâmetro '{k}'")
             for k in ("tipo", "frames_sugeridos"):

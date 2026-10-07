@@ -20,6 +20,8 @@ import ampere as am  # noqa: E402
 import coaxial as cx  # noqa: E402
 import distribuicoes as ds  # noqa: E402
 import placa as pl  # noqa: E402
+import revolucao as rv  # noqa: E402
+import rolamento as rl  # noqa: E402
 
 
 def casca_cilindrica_oca(p):
@@ -199,6 +201,52 @@ def amperiano_retangular(p):
     return {"enquadrar": [alvo], "apos_camera": None}
 
 
+def _rolando(tipo, p):
+    proxy, atualizar = rl.criar_rolamento(tipo, p["raio"], p.get("largura", 2.0), int(p["voltas"]),
+                                          int(p["eixo_instantaneo"]), int(p["marca_centro"]), p["fase"])
+    res = {"enquadrar": [proxy], "apos_camera": None}
+    if int(p["movimento"]):
+        res["atualizar"] = atualizar
+    else:
+        atualizar(0.0)
+    return res
+
+
+def esfera_rolando(p):
+    return _rolando("esfera", p)
+
+
+def cilindro_rolando(p):
+    return _rolando("cilindro", p)
+
+
+def aro_rolando(p):
+    return _rolando("aro", p)
+
+
+def _revolucao(metodo, p):
+    corpo, atualizar = rv.criar_revolucao(
+        metodo, p.get("perfil", "raiz"), p.get("comprimento", 4.0), p.get("raio_max", 1.6), p.get("raio_base", 2.0),
+        p.get("altura", 3.0), int(p["fatia"]), p["posicao_fatia"], p["espessura_fatia"], int(p["perfil_visivel"]),
+        int(p["eixo"]), int(p["movimento"]), p["fase"])
+    res = {"enquadrar": [corpo], "apos_camera": None}
+    if int(p["movimento"]):
+        res["atualizar"] = atualizar
+    return res
+
+
+def solido_revolucao_disco(p):
+    return _revolucao("disco", p)
+
+
+def solido_revolucao_arruela(p):
+    return _revolucao("arruela", p)
+
+
+def solido_revolucao_cascas(p):
+    return _revolucao("casca", p)
+
+
 CONSTRUTORES = {
     "casca_cilindrica_oca": casca_cilindrica_oca,
     "cilindro_macico_isolante": cilindro_macico_isolante,
@@ -217,4 +265,10 @@ CONSTRUTORES = {
     "fio_infinito": fio_infinito,
     "amperiano_circular": amperiano_circular,
     "amperiano_retangular": amperiano_retangular,
+    "esfera_rolando": esfera_rolando,
+    "cilindro_rolando": cilindro_rolando,
+    "aro_rolando": aro_rolando,
+    "solido_revolucao_disco": solido_revolucao_disco,
+    "solido_revolucao_arruela": solido_revolucao_arruela,
+    "solido_revolucao_cascas": solido_revolucao_cascas,
 }

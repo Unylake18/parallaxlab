@@ -24,6 +24,12 @@
     "distribuicao": {"vidro_base": 0.3, "vidro_ganho": 0.6, "vidro_brilho_borda": 2.2, "jitter": 0.12},
     "eixo": {"cor": "texto_neutro", "emissao": 0.8, "espessura": 0.01, "periodo": 0.3, "razao": 0.6},
     "bobina": {"cor": "fonte_fisica", "emissao": 0.7, "rugosidade": 0.35, "metalico": 0.1, "raio_fio": 0.04, "pts_por_espira": 48},
+    "rolamento": {"marca_cor": "texto_neutro", "marca_emissao": 2.2, "marca_raio": 0.07, "risco_cor": "fonte_contorno",
+                  "risco_emissao": 1.0, "risco_espessura": 0.012, "chao_cor": "texto_neutro", "chao_vidro_base": 0.02,
+                  "chao_vidro_ganho": 0.08, "chao_vidro_brilho": 0.25, "marca_chao_emissao": 0.7, "marca_chao_espessura": 0.02,
+                  "marcas_por_volta": 4, "chao_comprimento": 14.0},
+    "revolucao": {"perfil_cor": "fonte_contorno", "perfil_emissao": 1.4, "perfil_espessura": 0.02, "fatia_cor": "gaussiana",
+                  "fatia_vidro_base": 0.16, "fatia_vidro_ganho": 0.5, "fatia_vidro_brilho": 1.6, "eixo_emissao": 0.8},
     "fio": {"cor": "fonte_fisica", "raio": 0.05, "alpha": 0.95, "emissao_base": 0.6, "emissao_borda": 1.2, "fade_inicio": 0.5,
             "halo_escala": 2.4, "halo_alpha": 0.14, "halo_emissao": 0.7}
   },

@@ -58,8 +58,9 @@ def parametros(ficha, params=None, animado=None):
     if animado is not None:
         if animado and "animacao" not in ficha:
             raise ValueError(f"'{ficha['id']}' não é animável (a ficha não tem bloco 'animacao').")
-        if "cargas_moveis" in p:
-            extra.setdefault("cargas_moveis", 1 if animado else 0)
+        liga = ficha.get("animacao", {}).get("liga", "cargas_moveis")
+        if liga in p:
+            extra.setdefault(liga, 1 if animado else 0)
     for nome, valor in extra.items():
         if nome not in p:
             raise KeyError(f"Parâmetro '{nome}' não existe em '{ficha['id']}'. Válidos: {', '.join(p)}")

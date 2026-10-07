@@ -11,12 +11,15 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 | `amperiano_circular` | Contorno amperiano circular | aprovado | eletromagnetismo/lei_de_ampere |
 | `amperiano_retangular` | Contorno amperiano retangular | aprovado | eletromagnetismo/lei_de_ampere |
 | `anel_carregado` | Anel carregado (aro) | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
+| `aro_rolando` | Aro rolando sem deslizar | estudo | mecanica/rolamento, mecanica/momento_de_inercia |
 | `casca_cilindrica_oca` | Casca cilíndrica oca | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `casca_esferica_oca` | Casca esférica oca (com corte em octante) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `cilindro_coaxial` | Cilindro coaxial (condutor maciço + casca externa, em corte) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `cilindro_macico_isolante` | Cilindro maciço isolante com cargas no volume | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
+| `cilindro_rolando` | Cilindro rolando sem deslizar | estudo | mecanica/rolamento, mecanica/momento_de_inercia |
 | `disco_carregado` | Disco carregado | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
 | `esfera_macica_isolante` | Esfera maciça isolante com cargas no volume | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
+| `esfera_rolando` | Esfera rolando sem deslizar | estudo | mecanica/rolamento, mecanica/momento_de_inercia |
 | `fio_infinito` | Fio infinito (retilíneo) | aprovado | eletromagnetismo/lei_de_ampere |
 | `gaussiana_caixa` | Superfície gaussiana em caixa (pillbox) | aprovado | eletromagnetismo/lei_de_gauss |
 | `gaussiana_cilindrica` | Superfície gaussiana cilíndrica (fechada) | aprovado | eletromagnetismo/lei_de_gauss |
@@ -24,6 +27,9 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 | `haste_carregada` | Haste carregada | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
 | `placa_infinita_carregada` | Placa infinita carregada (plano com cargas na superfície) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `solenoide_corrente` | Solenoide (hélice de fio) | aprovado | eletromagnetismo/lei_de_ampere |
+| `solido_revolucao_arruela` | Sólido de revolução: método das arruelas | estudo | calculo/volumes_de_revolucao |
+| `solido_revolucao_cascas` | Sólido de revolução: método das cascas | estudo | calculo/volumes_de_revolucao |
+| `solido_revolucao_disco` | Sólido de revolução: método dos discos | estudo | calculo/volumes_de_revolucao |
 | `toroide_corrente` | Toroide (fio enrolado em anel) | aprovado | eletromagnetismo/lei_de_ampere |
 
 ## Padrão visual
@@ -213,6 +219,61 @@ img = Solido3D("anel_carregado").mobject(cena=self, altura=5)   # cargas em loop
 ```
 
 Ficha: `solidos/anel_carregado.json`
+
+### `aro_rolando` — Aro rolando sem deslizar
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Aro (toro fino de vidro azulado, eixo ao longo de Y) com 3 marcas a 120° e a do centro de massa, sobre o chão que corre. Eixo instantâneo violeta tracejado no contato.
+
+![Aro rolando sem deslizar](previews/aro_rolando.png)
+
+**Como se lê:** Aro girando parado no centro, com 3 marcas que mostram a rotação sem rótulo; o chão corre. Lê-se como 'aro rolando sem deslizar'.
+
+**Usar quando**
+- rolamento sem deslizar: v_cm = ωR, energia cinética de translação + rotação
+- mostrar o eixo instantâneo de rotação (no ponto de contato) como construção violeta
+- comparar corpos de momentos de inércia diferentes (esfera, cilindro, aro) pela forma, em vídeos separados ou composição no Manim
+- aro ou argola rolando (I = M R²)
+
+**Não usar quando**
+- o corpo desliza (rolamento com escorregamento): as marcas do chão não acompanham o giro
+- problemas com rampa e corrida de corpos: aqui só chão plano
+- disco ou cilindro cheio: use cilindro_rolando
+
+**Limitações**
+- câmera acompanha o corpo: ele gira parado no centro do quadro e é o chão que corre (é o que torna o loop perfeito); para mostrar o corpo avançando no quadro, ou corridas entre corpos, é preciso compor no Manim
+- chão horizontal: não há rampa nem inclinação
+- só a cinemática visual: velocidades (v_cm = ωR), energia, atrito e o sentido de rotação em vetores/rótulos ficam para o Manim
+- a gramática de cor de Mecânica segue o padrão do arsenal (estilo.json): azul para o corpo, branco neutro para as marcas, violeta tracejado para a construção (eixo instantâneo)
+- o aro é um toro fino: a espessura é só visual (0,07)
+- o loop fecha com ruído de amostragem: 95% dos pixels diferem em até 2/255 entre a fase 0 e a fase 1 (só 2 a 301 pixels chegam a 3-7), invisível a olho nu
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `raio` | 1.0 | u | raio do corpo |
+| `voltas` | 1 | n | voltas completas por loop (o chão avança 2πR por volta) |
+| `eixo_instantaneo` | 1 | 0/1 | 1 = eixo instantâneo de rotação tracejado violeta no ponto de contato |
+| `marca_centro` | 1 | 0/1 | 1 = marca do centro de massa |
+| `movimento` | 0 | 0/1 | 1 = animação do rolamento (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase do rolamento; fase=1 repete o quadro da fase 0 (loop perfeito) |
+
+**Integração:** `png_seq_alpha` · custo 0.88 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `rolamento` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.88 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- aro_rolando --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("aro_rolando").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/aro_rolando.json`
 
 ### `casca_cilindrica_oca` — Casca cilíndrica oca
 
@@ -412,6 +473,62 @@ img = Solido3D("cilindro_macico_isolante").mobject(altura=5)   # estático: um q
 
 Ficha: `solidos/cilindro_macico_isolante.json`
 
+### `cilindro_rolando` — Cilindro rolando sem deslizar
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Cilindro de vidro azulado (eixo ao longo de Y) com bordas circulares e 4 geratrizes em azul-claro, uma marca na borda e a do centro de massa, sobre o chão que corre. Eixo instantâneo violeta tracejado no contato.
+
+![Cilindro rolando sem deslizar](previews/cilindro_rolando.png)
+
+**Como se lê:** Tambor de vidro girando parado no centro, com geratrizes e uma marca na borda que mostram a rotação; o chão corre. Lê-se como 'cilindro rolando sem deslizar'.
+
+**Usar quando**
+- rolamento sem deslizar: v_cm = ωR, energia cinética de translação + rotação
+- mostrar o eixo instantâneo de rotação (no ponto de contato) como construção violeta
+- comparar corpos de momentos de inércia diferentes (esfera, cilindro, aro) pela forma, em vídeos separados ou composição no Manim
+- cilindro maciço rolando (I = 1/2 M R²)
+
+**Não usar quando**
+- o corpo desliza (rolamento com escorregamento): as marcas do chão não acompanham o giro
+- problemas com rampa e corrida de corpos: aqui só chão plano
+- casca cilíndrica oca (I = M R²): este cilindro é de vidro cheio
+
+**Limitações**
+- câmera acompanha o corpo: ele gira parado no centro do quadro e é o chão que corre (é o que torna o loop perfeito); para mostrar o corpo avançando no quadro, ou corridas entre corpos, é preciso compor no Manim
+- chão horizontal: não há rampa nem inclinação
+- só a cinemática visual: velocidades (v_cm = ωR), energia, atrito e o sentido de rotação em vetores/rótulos ficam para o Manim
+- a gramática de cor de Mecânica segue o padrão do arsenal (estilo.json): azul para o corpo, branco neutro para as marcas, violeta tracejado para a construção (eixo instantâneo)
+- a distribuição de massa (maciço ou oco) não é codificada visualmente: dizer por rótulo
+- o loop fecha com ruído de amostragem: 95% dos pixels diferem em até 2/255 entre a fase 0 e a fase 1 (só 2 a 301 pixels chegam a 3-7), invisível a olho nu
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `largura` | 2.0 | u | comprimento do cilindro ao longo do eixo Y |
+| `raio` | 1.0 | u | raio do corpo |
+| `voltas` | 1 | n | voltas completas por loop (o chão avança 2πR por volta) |
+| `eixo_instantaneo` | 1 | 0/1 | 1 = eixo instantâneo de rotação tracejado violeta no ponto de contato |
+| `marca_centro` | 1 | 0/1 | 1 = marca do centro de massa |
+| `movimento` | 0 | 0/1 | 1 = animação do rolamento (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase do rolamento; fase=1 repete o quadro da fase 0 (loop perfeito) |
+
+**Integração:** `png_seq_alpha` · custo 1.22 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `rolamento` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 1.22 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- cilindro_rolando --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("cilindro_rolando").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/cilindro_rolando.json`
+
 ### `disco_carregado` — Disco carregado
 
 **Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
@@ -519,6 +636,61 @@ img = Solido3D("esfera_macica_isolante").mobject(altura=5)   # estático: um qua
 ```
 
 Ficha: `solidos/esfera_macica_isolante.json`
+
+### `esfera_rolando` — Esfera rolando sem deslizar
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Esfera de vidro azulado com 3 meridianos e o equador em azul-claro, uma marca de superfície e a marca do centro de massa, sobre um chão de vidro com marcas transversais que corre sob ela (câmera acompanha). Eixo instantâneo de rotação tracejado violeta no contato.
+
+![Esfera rolando sem deslizar](previews/esfera_rolando.png)
+
+**Como se lê:** Esfera de vidro girando parada no centro, com riscos que mostram a rotação e um ponto de superfície que descreve uma ciclóide; o chão corre e o eixo violeta fica no contato. Lê-se como 'rolar sem deslizar'.
+
+**Usar quando**
+- rolamento sem deslizar: v_cm = ωR, energia cinética de translação + rotação
+- mostrar o eixo instantâneo de rotação (no ponto de contato) como construção violeta
+- comparar corpos de momentos de inércia diferentes (esfera, cilindro, aro) pela forma, em vídeos separados ou composição no Manim
+- esfera maciça rolando (I = 2/5 M R²)
+
+**Não usar quando**
+- o corpo desliza (rolamento com escorregamento): as marcas do chão não acompanham o giro
+- problemas com rampa e corrida de corpos: aqui só chão plano
+- casca esférica oca (I = 2/3 M R²): esta esfera é de vidro cheio, sem distinção de distribuição de massa
+
+**Limitações**
+- câmera acompanha o corpo: ele gira parado no centro do quadro e é o chão que corre (é o que torna o loop perfeito); para mostrar o corpo avançando no quadro, ou corridas entre corpos, é preciso compor no Manim
+- chão horizontal: não há rampa nem inclinação
+- só a cinemática visual: velocidades (v_cm = ωR), energia, atrito e o sentido de rotação em vetores/rótulos ficam para o Manim
+- a gramática de cor de Mecânica segue o padrão do arsenal (estilo.json): azul para o corpo, branco neutro para as marcas, violeta tracejado para a construção (eixo instantâneo)
+- a distribuição de massa (maciça ou oca) não é codificada visualmente: dizer por rótulo
+- o loop fecha com ruído de amostragem: 95% dos pixels diferem em até 2/255 entre a fase 0 e a fase 1 (só 2 a 301 pixels chegam a 3-7), invisível a olho nu
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `raio` | 1.0 | u | raio do corpo |
+| `voltas` | 1 | n | voltas completas por loop (o chão avança 2πR por volta) |
+| `eixo_instantaneo` | 1 | 0/1 | 1 = eixo instantâneo de rotação tracejado violeta no ponto de contato |
+| `marca_centro` | 1 | 0/1 | 1 = marca do centro de massa |
+| `movimento` | 0 | 0/1 | 1 = animação do rolamento (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase do rolamento; fase=1 repete o quadro da fase 0 (loop perfeito) |
+
+**Integração:** `png_seq_alpha` · custo 1.17 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `rolamento` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 1.17 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- esfera_rolando --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("esfera_rolando").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/esfera_rolando.json`
 
 ### `fio_infinito` — Fio infinito (retilíneo)
 
@@ -908,6 +1080,174 @@ img = Solido3D("solenoide_corrente").mobject(cena=self, altura=5)   # cargas em 
 ```
 
 Ficha: `solidos/solenoide_corrente.json`
+
+### `solido_revolucao_arruela` — Sólido de revolução: método das arruelas
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Sólido de vidro azulado gerado pela rotação, em torno do eixo X, da região entre y = √x e y = x² (as duas curvas em azul-claro; o corpo fica oco por dentro), com o eixo tracejado e a fatia elementar (uma arruela, de raio externo f e interno g, espessura dx) em violeta com arestas tracejadas. Com movimento, a arruela varre o sólido e volta.
+
+![Sólido de revolução: método das arruelas](previews/solido_revolucao_arruela.png)
+
+**Como se lê:** Corpo de vidro azul em forma de taça aberta, com uma arruela violeta de arestas tracejadas. Lê-se como 'o volume é a soma de arruelas: π (f² − g²) dx'.
+
+**Usar quando**
+- volume por arruelas: V = ∫ π (f(x)² − g(x)²) dx (região entre duas curvas girada em torno do eixo x)
+- mostrar a arruela elementar varrendo o sólido (movimento=1)
+- contraste com o método dos discos (sem furo)
+
+**Não usar quando**
+- a região vai até o eixo (use solido_revolucao_disco)
+- eixo de rotação deslocado ou outras duas curvas: aqui a região é fixa (√x e x²)
+
+**Limitações**
+- a fatia mostra UM elemento dx exagerado, não a soma de Riemann: o limite dx→0 e a integral ficam para o Manim
+- o violeta da fatia segue a gramática do arsenal (construção matemática, translúcida, nunca sólida): ela fica dentro do vidro azul e perde contraste em ângulos muito rasantes
+- o sólido é vidro translúcido (culling de faces de trás já embutido); o interior de uma arruela só aparece pelo lado aberto
+- a gramática de cor de Cálculo segue o padrão do arsenal (estilo.json)
+- região fixa entre y = √x e y = x² normalizada em [0, comprimento]
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `comprimento` | 4.0 | u | extensão ao longo do eixo X |
+| `raio_max` | 1.6 | u | raio onde as duas curvas se encontram (em x = comprimento) |
+| `fatia` | 1 | 0/1 | 1 = desenha a fatia elementar (violeta, arestas tracejadas); 0 = só o sólido |
+| `posicao_fatia` | 0.5 | 0-1 | posição da fatia ao longo do sólido (fração da extensão); ignorada com movimento=1 |
+| `espessura_fatia` | 0.14 | u | espessura dx da fatia (exagerada para ser visível) |
+| `perfil_visivel` | 1 | 0/1 | 1 = curva geratriz em azul-claro |
+| `eixo` | 1 | 0/1 | 1 = eixo de revolução tracejado em cor neutra |
+| `movimento` | 0 | 0/1 | 1 = a fatia varre o sólido em vaivém suave (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase do vaivém; fase=1 repete o quadro da fase 0 (loop perfeito) |
+
+**Integração:** `png_seq_alpha` · custo 0.91 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `varredura` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.91 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- solido_revolucao_arruela --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("solido_revolucao_arruela").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/solido_revolucao_arruela.json`
+
+### `solido_revolucao_cascas` — Sólido de revolução: método das cascas
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Sólido de vidro azulado (uma tigela) gerado pela rotação da região sob y = H (1 − (x/a)²) em torno do eixo Z (vertical), com a curva geratriz em azul-claro, o eixo tracejado e a fatia elementar (uma casca cilíndrica de raio r, altura f(r) e espessura dr) em violeta com arestas tracejadas. Com movimento, a casca cresce de dentro para fora e volta.
+
+![Sólido de revolução: método das cascas](previews/solido_revolucao_cascas.png)
+
+**Como se lê:** Tigela de vidro azul com uma casca cilíndrica violeta de arestas tracejadas, concêntrica ao eixo vertical. Lê-se como 'o volume é a soma de cascas: 2π r f(r) dr'.
+
+**Usar quando**
+- volume por cascas: V = ∫ 2π x f(x) dx (região sob a curva girada em torno do eixo y)
+- mostrar a casca elementar varrendo o sólido (movimento=1)
+- contraste com discos e arruelas (fatias perpendiculares ao eixo)
+
+**Não usar quando**
+- rotação em torno do eixo x com a região sob a curva (use solido_revolucao_disco)
+- outra curva ou eixo deslocado: a parábola invertida é fixa
+
+**Limitações**
+- a fatia mostra UM elemento dx exagerado, não a soma de Riemann: o limite dx→0 e a integral ficam para o Manim
+- o violeta da fatia segue a gramática do arsenal (construção matemática, translúcida, nunca sólida): ela fica dentro do vidro azul e perde contraste em ângulos muito rasantes
+- o sólido é vidro translúcido (culling de faces de trás já embutido); o interior de uma arruela só aparece pelo lado aberto
+- a gramática de cor de Cálculo segue o padrão do arsenal (estilo.json)
+- perfil fixo: parábola invertida y = H (1 − (x/a)²) em [0, a]
+- o eixo de rotação é Z (vertical), diferente dos outros dois métodos (eixo X)
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `raio_base` | 2.0 | u | raio a da base da tigela |
+| `altura` | 3.0 | u | altura H da tigela (no eixo) |
+| `fatia` | 1 | 0/1 | 1 = desenha a fatia elementar (violeta, arestas tracejadas); 0 = só o sólido |
+| `posicao_fatia` | 0.5 | 0-1 | posição da fatia ao longo do sólido (fração da extensão); ignorada com movimento=1 |
+| `espessura_fatia` | 0.14 | u | espessura dx da fatia (exagerada para ser visível) |
+| `perfil_visivel` | 1 | 0/1 | 1 = curva geratriz em azul-claro |
+| `eixo` | 1 | 0/1 | 1 = eixo de revolução tracejado em cor neutra |
+| `movimento` | 0 | 0/1 | 1 = a fatia varre o sólido em vaivém suave (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase do vaivém; fase=1 repete o quadro da fase 0 (loop perfeito) |
+
+**Integração:** `png_seq_alpha` · custo 0.96 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `varredura` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.96 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- solido_revolucao_cascas --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("solido_revolucao_cascas").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/solido_revolucao_cascas.json`
+
+### `solido_revolucao_disco` — Sólido de revolução: método dos discos
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Sólido de vidro azulado gerado pela rotação de uma curva y = f(x) em torno do eixo X (4 perfis: raiz, parábola, cone, elipsoide), com a curva geratriz em azul-claro, o eixo tracejado e a fatia elementar (um disco de espessura dx) em violeta com arestas tracejadas. Com movimento, o disco varre o sólido de uma ponta à outra e volta.
+
+![Sólido de revolução: método dos discos](previews/solido_revolucao_disco.png)
+
+**Como se lê:** Corpo de vidro azul atravessado por um disco violeta de arestas tracejadas. Lê-se como 'o volume é a soma de discos de raio f(x) e espessura dx'.
+
+**Usar quando**
+- volume por discos: V = ∫ π f(x)² dx (região sob a curva girada em torno do eixo x)
+- mostrar a fatia elementar varrendo o sólido (movimento=1)
+- contraste com arruelas (região entre duas curvas) e cascas (eixo vertical)
+
+**Não usar quando**
+- a região é limitada por duas curvas (use solido_revolucao_arruela)
+- o eixo de rotação é vertical e as fatias são paralelas a ele (use solido_revolucao_cascas)
+- eixo de rotação deslocado (ex.: y = −1): só o eixo X é suportado
+
+**Limitações**
+- a fatia mostra UM elemento dx exagerado, não a soma de Riemann: o limite dx→0 e a integral ficam para o Manim
+- o violeta da fatia segue a gramática do arsenal (construção matemática, translúcida, nunca sólida): ela fica dentro do vidro azul e perde contraste em ângulos muito rasantes
+- o sólido é vidro translúcido (culling de faces de trás já embutido); o interior de uma arruela só aparece pelo lado aberto
+- a gramática de cor de Cálculo segue o padrão do arsenal (estilo.json)
+- só 4 perfis normalizados (parâmetro perfil); outra curva exige alterar PERFIS em revolucao.py
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `perfil` | raiz | texto | raiz (y=√x), parabola (y=x²), cone (y=x) ou elipsoide (semi-elipse) |
+| `comprimento` | 4.0 | u | extensão ao longo do eixo X |
+| `raio_max` | 1.6 | u | raio máximo do sólido |
+| `fatia` | 1 | 0/1 | 1 = desenha a fatia elementar (violeta, arestas tracejadas); 0 = só o sólido |
+| `posicao_fatia` | 0.5 | 0-1 | posição da fatia ao longo do sólido (fração da extensão); ignorada com movimento=1 |
+| `espessura_fatia` | 0.14 | u | espessura dx da fatia (exagerada para ser visível) |
+| `perfil_visivel` | 1 | 0/1 | 1 = curva geratriz em azul-claro |
+| `eixo` | 1 | 0/1 | 1 = eixo de revolução tracejado em cor neutra |
+| `movimento` | 0 | 0/1 | 1 = a fatia varre o sólido em vaivém suave (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase do vaivém; fase=1 repete o quadro da fase 0 (loop perfeito) |
+
+**Integração:** `png_seq_alpha` · custo 0.86 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `varredura` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.86 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- solido_revolucao_disco --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("solido_revolucao_disco").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/solido_revolucao_disco.json`
 
 ### `toroide_corrente` — Toroide (fio enrolado em anel)
 

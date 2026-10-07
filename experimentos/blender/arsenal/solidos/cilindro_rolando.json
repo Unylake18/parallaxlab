@@ -1,0 +1,97 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "mecanica/rolamento",
+    "mecanica/momento_de_inercia"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/rolamento.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 1.22,
+    "custo_origem": "still 1920x1080 com alpha, aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "animacao": {
+    "tipo": "rolamento",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = uma volta completa; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 1.22,
+    "peso_mb_por_frame": 1.34,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "enquadramento": {
+    "azimute": -60,
+    "elevacao": 14,
+    "lente": 50,
+    "margem": 0.06
+  },
+  "id": "cilindro_rolando",
+  "nome": "Cilindro rolando sem deslizar",
+  "descricao": "Cilindro de vidro azulado (eixo ao longo de Y) com bordas circulares e 4 geratrizes em azul-claro, uma marca na borda e a do centro de massa, sobre o chão que corre. Eixo instantâneo violeta tracejado no contato.",
+  "leitura_visual": "Tambor de vidro girando parado no centro, com geratrizes e uma marca na borda que mostram a rotação; o chão corre. Lê-se como 'cilindro rolando sem deslizar'.",
+  "usar_quando": [
+    "rolamento sem deslizar: v_cm = ωR, energia cinética de translação + rotação",
+    "mostrar o eixo instantâneo de rotação (no ponto de contato) como construção violeta",
+    "comparar corpos de momentos de inércia diferentes (esfera, cilindro, aro) pela forma, em vídeos separados ou composição no Manim",
+    "cilindro maciço rolando (I = 1/2 M R²)"
+  ],
+  "nao_usar_quando": [
+    "o corpo desliza (rolamento com escorregamento): as marcas do chão não acompanham o giro",
+    "problemas com rampa e corrida de corpos: aqui só chão plano",
+    "casca cilíndrica oca (I = M R²): este cilindro é de vidro cheio"
+  ],
+  "limitacoes": [
+    "câmera acompanha o corpo: ele gira parado no centro do quadro e é o chão que corre (é o que torna o loop perfeito); para mostrar o corpo avançando no quadro, ou corridas entre corpos, é preciso compor no Manim",
+    "chão horizontal: não há rampa nem inclinação",
+    "só a cinemática visual: velocidades (v_cm = ωR), energia, atrito e o sentido de rotação em vetores/rótulos ficam para o Manim",
+    "a gramática de cor de Mecânica segue o padrão do arsenal (estilo.json): azul para o corpo, branco neutro para as marcas, violeta tracejado para a construção (eixo instantâneo)",
+    "a distribuição de massa (maciço ou oco) não é codificada visualmente: dizer por rótulo",
+    "o loop fecha com ruído de amostragem: 95% dos pixels diferem em até 2/255 entre a fase 0 e a fase 1 (só 2 a 301 pixels chegam a 3-7), invisível a olho nu"
+  ],
+  "construtor": "cilindro_rolando",
+  "parametros": {
+    "largura": {
+      "valor": 2.0,
+      "unidade": "u",
+      "descricao": "comprimento do cilindro ao longo do eixo Y"
+    },
+    "raio": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "raio do corpo"
+    },
+    "voltas": {
+      "valor": 1,
+      "unidade": "n",
+      "descricao": "voltas completas por loop (o chão avança 2πR por volta)"
+    },
+    "eixo_instantaneo": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = eixo instantâneo de rotação tracejado violeta no ponto de contato"
+    },
+    "marca_centro": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = marca do centro de massa"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação do rolamento (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do rolamento; fase=1 repete o quadro da fase 0 (loop perfeito)"
+    }
+  },
+  "preview": "previews/cilindro_rolando.png",
+  "preview_set": [
+    "movimento=1",
+    "fase=0.15"
+  ]
+}

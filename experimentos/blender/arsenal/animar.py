@@ -41,9 +41,10 @@ def main():
     a = ap.parse_args(resto)
 
     ficha = json.loads((AQUI / "solidos" / f"{a.solido}.json").read_text(encoding="utf-8"))
-    if "cargas_moveis" not in ficha["parametros"]:
-        raise SystemExit(f"'{a.solido}' não tem cargas móveis (parâmetro cargas_moveis ausente na ficha)")
-    p = R.parametros(ficha, ["cargas_moveis=1", *a.overrides])
+    liga = ficha.get("animacao", {}).get("liga", "cargas_moveis")      # parâmetro 0/1 que liga o movimento
+    if "animacao" not in ficha or liga not in ficha["parametros"]:
+        raise SystemExit(f"'{a.solido}' não é animável (ficha sem bloco 'animacao' ou sem o parâmetro '{liga}')")
+    p = R.parametros(ficha, [f"{liga}=1", *a.overrides])
     largura, altura = (int(x) for x in a.res.lower().split("x"))
     pasta = Path(a.saida).resolve() if a.saida else co.OUT / "arsenal_teste" / f"{a.solido}_loop"
     pasta.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,92 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "mecanica/rolamento",
+    "mecanica/momento_de_inercia"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/rolamento.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 1.17,
+    "custo_origem": "still 1920x1080 com alpha, aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "animacao": {
+    "tipo": "rolamento",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = uma volta completa; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 1.17,
+    "peso_mb_por_frame": 1.31,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "enquadramento": {
+    "azimute": -60,
+    "elevacao": 14,
+    "lente": 50,
+    "margem": 0.06
+  },
+  "id": "esfera_rolando",
+  "nome": "Esfera rolando sem deslizar",
+  "descricao": "Esfera de vidro azulado com 3 meridianos e o equador em azul-claro, uma marca de superfície e a marca do centro de massa, sobre um chão de vidro com marcas transversais que corre sob ela (câmera acompanha). Eixo instantâneo de rotação tracejado violeta no contato.",
+  "leitura_visual": "Esfera de vidro girando parada no centro, com riscos que mostram a rotação e um ponto de superfície que descreve uma ciclóide; o chão corre e o eixo violeta fica no contato. Lê-se como 'rolar sem deslizar'.",
+  "usar_quando": [
+    "rolamento sem deslizar: v_cm = ωR, energia cinética de translação + rotação",
+    "mostrar o eixo instantâneo de rotação (no ponto de contato) como construção violeta",
+    "comparar corpos de momentos de inércia diferentes (esfera, cilindro, aro) pela forma, em vídeos separados ou composição no Manim",
+    "esfera maciça rolando (I = 2/5 M R²)"
+  ],
+  "nao_usar_quando": [
+    "o corpo desliza (rolamento com escorregamento): as marcas do chão não acompanham o giro",
+    "problemas com rampa e corrida de corpos: aqui só chão plano",
+    "casca esférica oca (I = 2/3 M R²): esta esfera é de vidro cheio, sem distinção de distribuição de massa"
+  ],
+  "limitacoes": [
+    "câmera acompanha o corpo: ele gira parado no centro do quadro e é o chão que corre (é o que torna o loop perfeito); para mostrar o corpo avançando no quadro, ou corridas entre corpos, é preciso compor no Manim",
+    "chão horizontal: não há rampa nem inclinação",
+    "só a cinemática visual: velocidades (v_cm = ωR), energia, atrito e o sentido de rotação em vetores/rótulos ficam para o Manim",
+    "a gramática de cor de Mecânica segue o padrão do arsenal (estilo.json): azul para o corpo, branco neutro para as marcas, violeta tracejado para a construção (eixo instantâneo)",
+    "a distribuição de massa (maciça ou oca) não é codificada visualmente: dizer por rótulo",
+    "o loop fecha com ruído de amostragem: 95% dos pixels diferem em até 2/255 entre a fase 0 e a fase 1 (só 2 a 301 pixels chegam a 3-7), invisível a olho nu"
+  ],
+  "construtor": "esfera_rolando",
+  "parametros": {
+    "raio": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "raio do corpo"
+    },
+    "voltas": {
+      "valor": 1,
+      "unidade": "n",
+      "descricao": "voltas completas por loop (o chão avança 2πR por volta)"
+    },
+    "eixo_instantaneo": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = eixo instantâneo de rotação tracejado violeta no ponto de contato"
+    },
+    "marca_centro": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = marca do centro de massa"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação do rolamento (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do rolamento; fase=1 repete o quadro da fase 0 (loop perfeito)"
+    }
+  },
+  "preview": "previews/esfera_rolando.png",
+  "preview_set": [
+    "movimento=1",
+    "fase=0.15"
+  ]
+}

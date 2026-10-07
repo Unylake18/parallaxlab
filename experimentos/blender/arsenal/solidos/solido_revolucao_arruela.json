@@ -1,0 +1,99 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "calculo/volumes_de_revolucao"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/revolucao.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.91,
+    "custo_origem": "still 1920x1080 com alpha, aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "animacao": {
+    "tipo": "varredura",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = ida e volta da fatia; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.91,
+    "peso_mb_por_frame": 0.91,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "id": "solido_revolucao_arruela",
+  "nome": "Sólido de revolução: método das arruelas",
+  "descricao": "Sólido de vidro azulado gerado pela rotação, em torno do eixo X, da região entre y = √x e y = x² (as duas curvas em azul-claro; o corpo fica oco por dentro), com o eixo tracejado e a fatia elementar (uma arruela, de raio externo f e interno g, espessura dx) em violeta com arestas tracejadas. Com movimento, a arruela varre o sólido e volta.",
+  "leitura_visual": "Corpo de vidro azul em forma de taça aberta, com uma arruela violeta de arestas tracejadas. Lê-se como 'o volume é a soma de arruelas: π (f² − g²) dx'.",
+  "usar_quando": [
+    "volume por arruelas: V = ∫ π (f(x)² − g(x)²) dx (região entre duas curvas girada em torno do eixo x)",
+    "mostrar a arruela elementar varrendo o sólido (movimento=1)",
+    "contraste com o método dos discos (sem furo)"
+  ],
+  "nao_usar_quando": [
+    "a região vai até o eixo (use solido_revolucao_disco)",
+    "eixo de rotação deslocado ou outras duas curvas: aqui a região é fixa (√x e x²)"
+  ],
+  "limitacoes": [
+    "a fatia mostra UM elemento dx exagerado, não a soma de Riemann: o limite dx→0 e a integral ficam para o Manim",
+    "o violeta da fatia segue a gramática do arsenal (construção matemática, translúcida, nunca sólida): ela fica dentro do vidro azul e perde contraste em ângulos muito rasantes",
+    "o sólido é vidro translúcido (culling de faces de trás já embutido); o interior de uma arruela só aparece pelo lado aberto",
+    "a gramática de cor de Cálculo segue o padrão do arsenal (estilo.json)",
+    "região fixa entre y = √x e y = x² normalizada em [0, comprimento]"
+  ],
+  "construtor": "solido_revolucao_arruela",
+  "parametros": {
+    "comprimento": {
+      "valor": 4.0,
+      "unidade": "u",
+      "descricao": "extensão ao longo do eixo X"
+    },
+    "raio_max": {
+      "valor": 1.6,
+      "unidade": "u",
+      "descricao": "raio onde as duas curvas se encontram (em x = comprimento)"
+    },
+    "fatia": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = desenha a fatia elementar (violeta, arestas tracejadas); 0 = só o sólido"
+    },
+    "posicao_fatia": {
+      "valor": 0.5,
+      "unidade": "0-1",
+      "descricao": "posição da fatia ao longo do sólido (fração da extensão); ignorada com movimento=1"
+    },
+    "espessura_fatia": {
+      "valor": 0.14,
+      "unidade": "u",
+      "descricao": "espessura dx da fatia (exagerada para ser visível)"
+    },
+    "perfil_visivel": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = curva geratriz em azul-claro"
+    },
+    "eixo": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = eixo de revolução tracejado em cor neutra"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = a fatia varre o sólido em vaivém suave (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do vaivém; fase=1 repete o quadro da fase 0 (loop perfeito)"
+    }
+  },
+  "enquadramento": {
+    "azimute": -20,
+    "elevacao": 28,
+    "lente": 50,
+    "margem": 0.09
+  },
+  "preview": "previews/solido_revolucao_arruela.png"
+}
