@@ -627,6 +627,16 @@ def membrana_modos(p):
     return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
 
 
+def centro_de_massa_3d(p):
+    proxy, atu = cb.centro_de_massa_3d(p["forma"], p["raio"], p["altura"], p["massa1"], p["massa2"], p["separacao"], p["espessura_fatia"], int(p["movimento"]), p["fase"], int(p["fatia"]))
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
+def campo_conservativo(p):
+    proxy, atu = cb.campo_conservativo(p["tipo"], p["extensao"], int(p["n_campo"]), p["raio"], int(p["movimento"]), p["fase"], p["instante"])
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
 CONSTRUTORES = {
     "casca_cilindrica_oca": casca_cilindrica_oca,
     "cilindro_macico_isolante": cilindro_macico_isolante,
@@ -716,4 +726,6 @@ CONSTRUTORES = {
     "transformacao_linear_3d": transformacao_linear_3d,
     "autovetores_elipsoide": autovetores_elipsoide,
     "membrana_modos": membrana_modos,
+    "centro_de_massa_3d": centro_de_massa_3d,
+    "campo_conservativo": campo_conservativo,
 }

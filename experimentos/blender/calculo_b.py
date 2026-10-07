@@ -21,6 +21,7 @@ import casca_oca as co  # noqa: E402
 import cilindro_macico as cm  # noqa: E402
 import gaussiana as ga  # noqa: E402
 import matematica3d as m3  # noqa: E402
+import revolucao as rv  # noqa: E402
 import vetores3d as v3  # noqa: E402
 
 TAU = 2 * math.pi
@@ -343,6 +344,146 @@ def membrana_modos(m=2, n=1, lado=4.0, amplitude=0.7, movimento=0, fase=0.0, ins
 
     atualizar(fase)
     proxy = m3._caixa((L + 0.8, L + 0.8, 2 * amplitude + 0.8), (0, 0, 0))
+    return proxy, atualizar
+
+
+# ── centro de massa e momentos em 3D ─────────────────────────────────────────
+def _perfil_cm(forma, R, H):
+    """Perfil fechado (s, r) do sólido de revolução em torno de Z (base em z = 0), o raio da fatia a cada altura, a altura
+    do sólido e a altura do centroide."""
+    if forma == "hemisferio":
+        arco = [(R * math.sin(math.pi / 2 * k / 40), R * math.cos(math.pi / 2 * k / 40)) for k in range(41)]   # (altura, raio)
+        return [(0.0, 0.0)] + arco, lambda z: math.sqrt(max(R * R - z * z, 0.0)), R, 3 * R / 8
+    if forma == "cone":
+        return [(0.0, 0.0), (0.0, R), (H, 0.0)], lambda z: R * (1 - z / H), H, H / 4
+    if forma == "paraboloide":
+        curva = [(H * (1 - (1 - k / 40) ** 2), R * (1 - k / 40)) for k in range(41)]
+        return [(0.0, 0.0)] + curva, lambda z: R * math.sqrt(max(1 - z / H, 0.0)), H, H / 3
+    raise ValueError(f"forma desconhecida: {forma}")
+
+
+def centro_de_massa_3d(forma="hemisferio", raio=1.8, altura=3.0, massa1=3.0, massa2=1.0, separacao=3.0, espessura_fatia=0.14, movimento=0, fase=0.0, fatia=1):
+    """Centro de massa em 3D. `forma`: hemisferio, cone ou paraboloide (sólidos homogêneos de revolução com a base em z = 0, vidro
+    azul, eixo Z tracejado, centroide em branco com a altura marcada em violeta; a fatia elementar violeta de espessura dz varre o
+    sólido) ou halteres (duas esferas de massas m1 e m2 numa haste, CM em branco na posição ponderada pelas massas; o sistema gira
+    em torno do CM). Alturas dos centroides: hemisfério 3R/8, cone H/4, parabolóide H/3."""
+    mat_v, mat_d, mat_e = m3._mat_vf(), m3._mat_dash(), m3._mat_eixo()
+    if forma == "halteres":
+        M = massa1 + massa2
+        x1, x2 = -separacao * massa2 / M, separacao * massa1 / M
+        r1, r2 = 0.8 * (massa1 / 3.0) ** (1 / 3), 0.8 * (massa2 / 3.0) ** (1 / 3)
+        giro = bpy.data.objects.new("Giro", None)
+        bpy.context.collection.objects.link(giro)
+        for (x, r) in ((x1, r1), (x2, r2)):
+            e = v3.esfera_pt((x, 0, 0), r, v3.material_degrade("Massa", "fonte_contorno", "fonte_fisica", 0.5, 0.6), "Massa")
+            e.parent = giro
+        hast = m3._caixa((abs(x2 - x1), 0.08, 0.08), ((x1 + x2) / 2, 0, 0), "Haste")
+        hast.hide_render = False
+        hast.hide_viewport = False
+        cm.material_vidro(hast, base=0.4, ganho=0.5, brilho_borda=1.6)
+        hast.parent = giro
+        v3.esfera_pt((0, 0, 0), 0.11, mat_v, "CM")
+        ga.criar_curva("EixoGiro", v3.tracejado([(0, 0, -1.6), (0, 0, 1.6)], False, 0.2, 0.6), mat_e, 0.01)
+        for rr in (abs(x1), abs(x2)):
+            ga.criar_curva("Orbita", v3.tracejado([(rr * math.cos(TAU * k / 100), rr * math.sin(TAU * k / 100), 0) for k in range(100)], True, 0.2, 0.6), mat_d, 0.01)
+
+        def atualizar(fase):
+            giro.rotation_euler = (0, 0, TAU * fase if movimento else 0.0)
+
+        atualizar(fase)
+        L = max(abs(x1) + r1, abs(x2) + r2) + 0.6
+        proxy = m3._caixa((2 * L, 2 * L, 3.2), (0, 0, 0))
+        return proxy, atualizar
+    perfil, r_de_z, Hs, zcm = _perfil_cm(forma, raio, altura)
+    corpo = rv.malha_revolucao("Corpo", perfil, "Z")
+    cm.material_vidro(corpo, base=0.28, ganho=0.6, brilho_borda=1.8)
+    ga.criar_curva("EixoZ", v3.tracejado([(0, 0, -0.5), (0, 0, Hs + 0.7)], False, 0.2, 0.6), mat_e, 0.01)
+    v3.esfera_pt((0, 0, zcm), 0.12, mat_v, "CM")
+    ga.criar_curva("AlturaCM", v3.tracejado([(0, 0, zcm), (raio * 1.15, 0, zcm)], False, 0.16, 0.6), mat_d, 0.012)
+    dinam = []
+
+    def atualizar(fase):
+        v3.remover(dinam)
+        if not fatia:
+            return
+        z = (0.5 - 0.5 * math.cos(TAU * fase)) * (Hs - espessura_fatia) if movimento else 0.45 * Hs
+        r = r_de_z(z + espessura_fatia / 2)
+        if r < 0.02:
+            return
+        bpy.ops.mesh.primitive_cylinder_add(radius=r, depth=espessura_fatia, vertices=64, location=(0, 0, z + espessura_fatia / 2))
+        d = bpy.context.active_object
+        d.name = "Fatia"
+        cv._vidro_violeta(d, base=0.35)
+        dinam.append(d)
+        dinam.append(v3.esfera_pt((0, 0, z + espessura_fatia / 2), 0.06, mat_v, "CentroFatia"))
+
+    atualizar(fase)
+    proxy = m3._caixa((2 * raio + 1.0, 2 * raio + 1.0, Hs + 1.4), (0, 0, Hs / 2))
+    return proxy, atualizar
+
+
+# ── campo conservativo e potencial ───────────────────────────────────────────
+def _phi(x, y):
+    return 1.5 * math.exp(-((x - 0.2) ** 2 + y * y) / 2.2)
+
+
+def _grad_phi(x, y):
+    f = _phi(x, y)
+    return Vector((-(x - 0.2) * f / 1.1, -y * f / 1.1, 0.0))
+
+
+def campo_conservativo(tipo="conservativo", extensao=2.8, n_campo=7, raio=1.6, movimento=0, fase=0.0, instante=0.7):
+    """`tipo=conservativo`: campo F = ∇φ (setas ciano no piso) sobre a colina φ (vidro azul) e dois caminhos de A até B (branco,
+    sobre a superfície; violeta tracejado no piso): ambos sobem a mesma altura φ(B) − φ(A), então o trabalho não depende do caminho.
+    `tipo=rotacional`: campo (−y, x) (sem potencial) e um caminho fechado: F · dr > 0 em todo o percurso, a circulação não zera.
+    Ciclo único: os pontos percorrem os caminhos de fase 0 a 1."""
+    mat_v, mat_t, mat_d, mat_f = m3._mat_vf(), cv._mat_tang(), m3._mat_dash(), cv._mat_campo()
+    mat_tr = v3.material_cor("TrilhaCC", "texto_neutro", 1.8)
+    pts = [(-extensao + 2 * extensao * i / (n_campo - 1)) for i in range(n_campo)]
+    if tipo == "conservativo":
+        E = extensao
+        v3.malha_param("Colina", lambda u, v: (u, v, _phi(u, v)), -E, E, -E, E, 64, 64)
+        for x in pts:
+            for y in pts:
+                g = _grad_phi(x, y)
+                if g.length > 0.04:
+                    L = min(0.8, 0.25 + 1.2 * g.length)
+                    v3.seta((x, y, 0.0), g.normalized() * L, mat_f, L)
+        A, B = Vector((-2.0, -1.4, 0.0)), Vector((1.8, 1.3, 0.0))
+        n = (B - A).cross(Vector((0, 0, 1))).normalized()
+        caminhos = [lambda s: A + (B - A) * s, lambda s: A + (B - A) * s + n * 1.5 * math.sin(math.pi * s)]
+        for c in caminhos:
+            ga.criar_curva("CaminhoPiso", v3.tracejado([tuple(c(k / 80)) for k in range(81)], False, 0.2, 0.6), mat_d, 0.012)
+        for X in (A, B):
+            ga.criar_curva("Vertical", v3.tracejado([(X.x, X.y, 0.0), (X.x, X.y, _phi(X.x, X.y))], False, 0.18, 0.6), mat_d, 0.012)
+            v3.esfera_pt((X.x, X.y, _phi(X.x, X.y) + 0.03), 0.09, mat_v, "Extremo")
+        pos = lambda c, s: (lambda p: Vector((p.x, p.y, _phi(p.x, p.y) + 0.04)))(c(s))
+    else:
+        for x in pts:
+            for y in pts:
+                if (x, y) != (0.0, 0.0):
+                    F = Vector((-y, x, 0.0))
+                    L = min(0.8, 0.25 + 0.2 * F.length)
+                    v3.seta((x, y, 0.0), F.normalized() * L, mat_f, L)
+        ga.criar_curva("CaminhoFechado", v3.tracejado([(raio * math.cos(TAU * k / 120), raio * math.sin(TAU * k / 120), 0.0) for k in range(120)], True, 0.2, 0.6), mat_d, 0.012)
+        caminhos = [lambda s: Vector((raio * math.cos(TAU * s), raio * math.sin(TAU * s), 0.0))]
+        pos = lambda c, s: c(s) + Vector((0, 0, 0.04))
+    dinam = []
+
+    def atualizar(fase):
+        v3.remover(dinam)
+        s = min(max(fase, 0.0), 1.0) if movimento else instante
+        for c in caminhos:
+            if s > 0.01:
+                m = max(2, int(80 * s))
+                dinam.append(ga.criar_curva("Trilha", [([tuple(pos(c, s * k / m)) for k in range(m + 1)], False)], mat_tr, 0.034))
+            P = pos(c, s)
+            dinam.append(v3.esfera_pt(tuple(P), 0.1, mat_v, "Ponto"))
+            tg = (pos(c, min(s + 1e-3, 1.0)) - pos(c, max(s - 1e-3, 0.0))).normalized()
+            dinam.append(v3.seta(tuple(P), tg * 0.8, mat_t, 0.8))
+
+    atualizar(fase)
+    proxy = m3._caixa((2 * extensao, 2 * extensao, 2.2), (0, 0, 0.7))
     return proxy, atualizar
 
 

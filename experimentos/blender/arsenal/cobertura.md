@@ -1,7 +1,7 @@
 # Cobertura do arsenal 3D por capítulo do mapa curricular
 
 > Arquivo **gerado** por `gerar_cobertura.py`. O status vem das fichas (`solidos/*.json`); as lacunas são mantidas no script.
-> Total: **88 sólidos** (88 aprovado); **66** têm animação (loop ou ciclo único). Fonte dos capítulos: `docs/mapa_curricular.md`.
+> Total: **90 sólidos** (90 aprovado); **68** têm animação (loop ou ciclo único). Fonte dos capítulos: `docs/mapa_curricular.md`.
 
 ## 1. O que temos, por assunto do curso
 
@@ -41,8 +41,10 @@
 | 10.6 | Extremos em várias variáveis | `pontos_criticos` (aprovado), `lagrange_restricao` (aprovado, anima) |  |
 | 10.7 | Integrais duplas | `integral_dupla_colunas` (aprovado, anima) |  |
 | 10.8–10.9 | Integrais triplas e Jacobiano | `elemento_volume` (aprovado, anima) |  |
+| 10.10 | Centro de massa e momentos em 3D | `centro_de_massa_3d` (aprovado, anima) | hemisfério, cone, parabolóide e halteres |
 | 11.1 e 11.8 | Campos vetoriais, divergência e rotacional | `campo_vetorial` (aprovado), `divergencia_local` (aprovado, anima), `rotacional_roda_de_pas` (aprovado, anima) |  |
 | 11.2–11.3 | Integrais de linha | `integral_de_linha` (aprovado, anima) |  |
+| 11.4 | Campos conservativos e potencial | `campo_conservativo` (aprovado, anima), `gradiente_colina` (aprovado, anima) | φ fixa (colina gaussiana) |
 | 11.6–11.7 | Superfícies parametrizadas e integrais de superfície | `superficie_parametrizada` (aprovado, anima), `gaussiana_esferica` (aprovado), `gaussiana_cilindrica` (aprovado), `gaussiana_caixa` (aprovado) |  |
 | 13 | Álgebra linear | `transformacao_linear_3d` (aprovado, anima), `autovetores_elipsoide` (aprovado, anima) |  |
 | 15 | Equações diferenciais parciais | `membrana_modos` (aprovado, anima) | um modo por vez |
@@ -53,12 +55,11 @@ Todos os sólidos aparecem em pelo menos um capítulo.
 
 ## 2. O que não temos, com o assunto e a limitação
 
-### 2a. Poderiam ser sólidos 3D (2 lacunas)
+### 2a. Poderiam ser sólidos 3D (0 lacunas)
 
 | Capítulo | Assunto | Sólido sugerido | Limitação / por que ainda não |
 |---|---|---|---|
-| 10.10 | Centro de massa e momentos em 3D | `—` | reutiliza os sólidos de revolução e `elemento_volume`; não há um sólido dedicado |
-| 11.4 | Campos conservativos e potencial | `—` | `gradiente_colina` mostra o potencial; o teste de conservatividade é do Manim |
+
 
 ### 2b. Melhor no Manim, sem sólido 3D (13 blocos)
 

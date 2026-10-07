@@ -16,7 +16,9 @@
 
 | Atalho | Sólido | Status | Movimento |
 |---|---|---|---|
+| [`campo_conservativo.bat`](campo_conservativo.bat) | Campo conservativo e potencial | aprovado | ciclo único |
 | [`campo_vetorial.bat`](campo_vetorial.bat) | Campo vetorial (setas) | aprovado | — |
+| [`centro_de_massa_3d.bat`](centro_de_massa_3d.bat) | Centro de massa em 3D | aprovado | loop |
 | [`divergencia_local.bat`](divergencia_local.bat) | Divergência local (cubo elementar) | aprovado | loop |
 | [`elemento_volume.bat`](elemento_volume.bat) | Elemento de volume dV (cartesiano, cilíndrico, esférico) | aprovado | loop |
 | [`gradiente_colina.bat`](gradiente_colina.bat) | Gradiente numa colina (curvas de nível) | aprovado | loop |

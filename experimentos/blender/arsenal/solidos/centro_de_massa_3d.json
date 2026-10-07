@@ -1,0 +1,109 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "calculo/integrais_triplas",
+    "mecanica/momento_de_inercia"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/calculo_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "centro_de_massa_3d",
+  "nome": "Centro de massa em 3D",
+  "descricao": "Quatro casos: `hemisferio`, `cone` e `paraboloide` (sólidos homogêneos de revolução de vidro azul com a base em z = 0, eixo Z tracejado, centroide em branco com a altura marcada em violeta tracejado e uma fatia elementar violeta de espessura dz que varre o sólido) e `halteres` (duas esferas de massas m1 e m2 numa haste, com o CM em branco na posição ponderada pelas massas; o sistema gira em torno do CM). Alturas dos centroides: hemisfério 3R/8, cone H/4, parabolóide H/3. Com movimento a fatia sobe e desce (ou os halteres dão uma volta): loop.",
+  "leitura_visual": "Um corpo transparente com um ponto branco no eixo e um disco violeta que o percorre de baixo para cima: lê-se como integral tripla de z dm sobre a massa (centroide). Nos halteres, o ponto branco fica mais perto da esfera grande.",
+  "usar_quando": [
+    "centro de massa de sólidos de revolução por fatias (z̄ = ∫ z dm / ∫ dm)",
+    "massa ponderada: o CM de um sistema de partículas (halteres)",
+    "o CM como eixo natural de rotação (use com os momentos de inércia)"
+  ],
+  "nao_usar_quando": [
+    "corpos sem simetria de revolução (o centroide fora do eixo)",
+    "densidade variável (os corpos são homogêneos)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, integrais e rótulos são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): corpos = vidro azul, construções (fatia, projeções) = violeta, vetores = branco, campo = ciano",
+    "a altura do centroide vem de fórmula fechada de cada forma: números e integrais são do Manim",
+    "no modo `halteres` não há fatia e o sistema fica no plano XY",
+    "o tamanho das esferas dos halteres vai com a raiz cúbica da massa (visual)"
+  ],
+  "construtor": "centro_de_massa_3d",
+  "parametros": {
+    "forma": {
+      "valor": "hemisferio",
+      "unidade": "texto",
+      "descricao": "hemisferio, cone, paraboloide ou halteres"
+    },
+    "raio": {
+      "valor": 1.8,
+      "unidade": "u",
+      "descricao": "raio da base (sólidos de revolução)"
+    },
+    "altura": {
+      "valor": 3.0,
+      "unidade": "u",
+      "descricao": "altura (cone e parabolóide)"
+    },
+    "massa1": {
+      "valor": 3.0,
+      "unidade": "m",
+      "descricao": "massa da esfera 1 (halteres)"
+    },
+    "massa2": {
+      "valor": 1.0,
+      "unidade": "m",
+      "descricao": "massa da esfera 2 (halteres)"
+    },
+    "separacao": {
+      "valor": 3.0,
+      "unidade": "u",
+      "descricao": "distância entre as esferas (halteres)"
+    },
+    "espessura_fatia": {
+      "valor": 0.14,
+      "unidade": "u",
+      "descricao": "espessura dz da fatia"
+    },
+    "fatia": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "mostra a fatia elementar"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -40,
+    "elevacao": 22,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/centro_de_massa_3d.png",
+  "animacao": {
+    "tipo": "fatia",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.72,
+    "peso_mb_por_frame": 0.74,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.3"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "calculo/campos_vetoriais",
+    "calculo/integrais_de_linha"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/calculo_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "campo_conservativo",
+  "nome": "Campo conservativo e potencial",
+  "descricao": "`tipo=conservativo`: campo F = ∇φ (setas ciano no piso) sobre a colina φ (vidro azul) e dois caminhos de A até B (brancos sobre a superfície, violeta tracejado no piso): os dois sobem a mesma altura φ(B) − φ(A), então o trabalho não depende do caminho. `tipo=rotacional`: campo (−y, x), sem potencial, e um caminho fechado em que F · dr > 0 o tempo todo, então a circulação não zera. Ciclo único: os pontos percorrem os caminhos de fase 0 a 1.",
+  "leitura_visual": "Uma colina com duas trilhas diferentes ligando os mesmos pontos, e pontos que chegam juntos: lê-se como independência do caminho (conservativo). No outro modo, um redemoinho com um círculo percorrido sempre a favor do campo.",
+  "usar_quando": [
+    "campos conservativos e a independência do caminho (∫ F · dr = φ(B) − φ(A))",
+    "contraste com um campo com rotacional (circulação não nula)",
+    "ponte para o gradiente (gradiente_colina) e as integrais de linha (integral_de_linha)"
+  ],
+  "nao_usar_quando": [
+    "testar conservatividade com ∂F/∂y = ∂F/∂x (é do Manim)",
+    "campos em R³ completo (o campo é plano)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, integrais e rótulos são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): corpos = vidro azul, construções (fatia, projeções) = violeta, vetores = branco, campo = ciano",
+    "φ é fixa nesta ficha (uma colina gaussiana): o valor numérico do trabalho é do Manim",
+    "as setas do piso têm comprimento visual, não proporcional a |F|",
+    "os dois pontos andam com a mesma fase, não com a mesma velocidade física"
+  ],
+  "construtor": "campo_conservativo",
+  "parametros": {
+    "tipo": {
+      "valor": "conservativo",
+      "unidade": "texto",
+      "descricao": "conservativo ou rotacional"
+    },
+    "extensao": {
+      "valor": 2.8,
+      "unidade": "u",
+      "descricao": "meia largura do campo"
+    },
+    "n_campo": {
+      "valor": 7,
+      "unidade": "n",
+      "descricao": "setas por lado"
+    },
+    "raio": {
+      "valor": 1.6,
+      "unidade": "u",
+      "descricao": "raio do caminho fechado (rotacional)"
+    },
+    "instante": {
+      "valor": 0.7,
+      "unidade": "0-1",
+      "descricao": "fase mostrada sem movimento"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 26,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/campo_conservativo.png",
+  "animacao": {
+    "tipo": "percurso",
+    "liga": "movimento",
+    "ciclo": "unico",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "ciclo único: os pontos percorrem os caminhos de A até B; a fase 1 NÃO repete a fase 0",
+    "custo_1080p_s_por_frame": 0.92,
+    "peso_mb_por_frame": 0.97,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.6"
+  ]
+}

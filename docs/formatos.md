@@ -145,7 +145,7 @@ ver abaixo) · possíveis derivados curtos (opcional).
 `nenhum`, com uma linha de justificativa pelos critérios "usar quando / não usar quando" da ficha do
 sólido. Registrar o campo não autoriza integrar: a integração com o Manim exige handoff explícito.
 
-**Arsenal 3D: funcionalidade nova, a testar nos próximos vídeos.** Desde 2026-10-07 o arsenal tem 88 sólidos
+**Arsenal 3D: funcionalidade nova, a testar nos próximos vídeos.** Desde 2026-10-07 o arsenal tem 90 sólidos
 aprovados (Lei de Gauss, eletromagnetismo, mecânica, fluidos, óptica, física moderna, cálculo, álgebra linear e
 EDP), vários com movimento (loop ou ciclo único), e a ponte `Solido3D` para o Manim (sandbox, ainda não usada em
 vídeo). Nos próximos vídeos **curtos e longos**, ao planejar, confira o `catalogo.md`/`cobertura.md` e, quando um

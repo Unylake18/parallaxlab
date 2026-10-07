@@ -117,8 +117,7 @@ A lista completa, por capítulo do mapa curricular, com o status de cada sólido
 em **`cobertura.md`** (gerado por `gerar_cobertura.py`: o status vem das fichas, as lacunas ficam no script).
 
 A fila A do levantamento de 2026-10-07 (17 sólidos de alto valor) foi construída e aprovada em 2026-10-07 (o `ima_espira_inducao` foi ajustado depois e aprovado). A **fila B** (30 sólidos: mecânica, fluidos, eletricidade, óptica, física moderna, cálculo,
-álgebra linear e EDP) foi construída e aprovada no mesmo dia. Sobram só duas lacunas 3D (centro de massa e campos
-conservativos): veja `cobertura.md`, seção 2a.
+álgebra linear e EDP) foi construída e aprovada no mesmo dia. As duas últimas lacunas (`centro_de_massa_3d` e `campo_conservativo`) foram construídas e aprovadas: não sobram lacunas 3D (`cobertura.md`, seção 2a).
 
 ### Convenções visuais decididas pelo usuário (2026-10-07)
 

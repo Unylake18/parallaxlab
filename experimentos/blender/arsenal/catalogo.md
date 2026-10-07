@@ -18,12 +18,14 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 | `barra_trilhos_fem_movimento` | Barra em trilhos num campo B (fem de movimento) | aprovado | eletromagnetismo/inducao_eletromagnetica |
 | `biot_savart_espira` | Biot–Savart numa espira | aprovado | eletromagnetismo/biot_savart |
 | `caixa_gas_cinetica` | Gás ideal em recipiente com êmbolo (teoria cinética) | aprovado | termodinamica/teoria_cinetica, termodinamica/processos_em_gases |
+| `campo_conservativo` | Campo conservativo e potencial | aprovado | calculo/campos_vetoriais, calculo/integrais_de_linha |
 | `campo_vetorial` | Campo vetorial (setas) | aprovado | calculo/campos_vetoriais, eletromagnetismo/campo_eletrico |
 | `capacitor_esferico` | Capacitor esférico (esferas concêntricas, em corte) | aprovado | eletromagnetismo/condutores_e_capacitores |
 | `capacitor_placas_paralelas` | Capacitor de placas paralelas | aprovado | eletromagnetismo/condutores_e_capacitores |
 | `cargas_pontuais` | Cargas pontuais e forças de Coulomb | aprovado | eletromagnetismo/lei_de_coulomb |
 | `casca_cilindrica_oca` | Casca cilíndrica oca | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `casca_esferica_oca` | Casca esférica oca (com corte em octante) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
+| `centro_de_massa_3d` | Centro de massa em 3D | aprovado | calculo/integrais_triplas, mecanica/momento_de_inercia |
 | `cilindro_coaxial` | Cilindro coaxial (condutor maciço + casca externa, em corte) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `cilindro_macico_isolante` | Cilindro maciço isolante com cargas no volume | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `cilindro_rolando` | Cilindro rolando sem deslizar | aprovado | mecanica/rolamento, mecanica/momento_de_inercia |
@@ -655,6 +657,59 @@ img = Solido3D("caixa_gas_cinetica").mobject(cena=self, altura=5)   # cargas em 
 
 Ficha: `solidos/caixa_gas_cinetica.json`
 
+### `campo_conservativo` — Campo conservativo e potencial
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+`tipo=conservativo`: campo F = ∇φ (setas ciano no piso) sobre a colina φ (vidro azul) e dois caminhos de A até B (brancos sobre a superfície, violeta tracejado no piso): os dois sobem a mesma altura φ(B) − φ(A), então o trabalho não depende do caminho. `tipo=rotacional`: campo (−y, x), sem potencial, e um caminho fechado em que F · dr > 0 o tempo todo, então a circulação não zera. Ciclo único: os pontos percorrem os caminhos de fase 0 a 1.
+
+![Campo conservativo e potencial](previews/campo_conservativo.png)
+
+**Como se lê:** Uma colina com duas trilhas diferentes ligando os mesmos pontos, e pontos que chegam juntos: lê-se como independência do caminho (conservativo). No outro modo, um redemoinho com um círculo percorrido sempre a favor do campo.
+
+**Usar quando**
+- campos conservativos e a independência do caminho (∫ F · dr = φ(B) − φ(A))
+- contraste com um campo com rotacional (circulação não nula)
+- ponte para o gradiente (gradiente_colina) e as integrais de linha (integral_de_linha)
+
+**Não usar quando**
+- testar conservatividade com ∂F/∂y = ∂F/∂x (é do Manim)
+- campos em R³ completo (o campo é plano)
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, integrais e rótulos são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): corpos = vidro azul, construções (fatia, projeções) = violeta, vetores = branco, campo = ciano
+- φ é fixa nesta ficha (uma colina gaussiana): o valor numérico do trabalho é do Manim
+- as setas do piso têm comprimento visual, não proporcional a |F|
+- os dois pontos andam com a mesma fase, não com a mesma velocidade física
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `tipo` | conservativo | texto | conservativo ou rotacional |
+| `extensao` | 2.8 | u | meia largura do campo |
+| `n_campo` | 7 | n | setas por lado |
+| `raio` | 1.6 | u | raio do caminho fechado (rotacional) |
+| `instante` | 0.7 | 0-1 | fase mostrada sem movimento |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `percurso` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.92 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- campo_conservativo --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("campo_conservativo").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/campo_conservativo.json`
+
 ### `campo_vetorial` — Campo vetorial (setas)
 
 **Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
@@ -948,6 +1003,62 @@ img = Solido3D("casca_esferica_oca").mobject(altura=5)   # estático: um quadro 
 ```
 
 Ficha: `solidos/casca_esferica_oca.json`
+
+### `centro_de_massa_3d` — Centro de massa em 3D
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Quatro casos: `hemisferio`, `cone` e `paraboloide` (sólidos homogêneos de revolução de vidro azul com a base em z = 0, eixo Z tracejado, centroide em branco com a altura marcada em violeta tracejado e uma fatia elementar violeta de espessura dz que varre o sólido) e `halteres` (duas esferas de massas m1 e m2 numa haste, com o CM em branco na posição ponderada pelas massas; o sistema gira em torno do CM). Alturas dos centroides: hemisfério 3R/8, cone H/4, parabolóide H/3. Com movimento a fatia sobe e desce (ou os halteres dão uma volta): loop.
+
+![Centro de massa em 3D](previews/centro_de_massa_3d.png)
+
+**Como se lê:** Um corpo transparente com um ponto branco no eixo e um disco violeta que o percorre de baixo para cima: lê-se como integral tripla de z dm sobre a massa (centroide). Nos halteres, o ponto branco fica mais perto da esfera grande.
+
+**Usar quando**
+- centro de massa de sólidos de revolução por fatias (z̄ = ∫ z dm / ∫ dm)
+- massa ponderada: o CM de um sistema de partículas (halteres)
+- o CM como eixo natural de rotação (use com os momentos de inércia)
+
+**Não usar quando**
+- corpos sem simetria de revolução (o centroide fora do eixo)
+- densidade variável (os corpos são homogêneos)
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, integrais e rótulos são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): corpos = vidro azul, construções (fatia, projeções) = violeta, vetores = branco, campo = ciano
+- a altura do centroide vem de fórmula fechada de cada forma: números e integrais são do Manim
+- no modo `halteres` não há fatia e o sistema fica no plano XY
+- o tamanho das esferas dos halteres vai com a raiz cúbica da massa (visual)
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `forma` | hemisferio | texto | hemisferio, cone, paraboloide ou halteres |
+| `raio` | 1.8 | u | raio da base (sólidos de revolução) |
+| `altura` | 3.0 | u | altura (cone e parabolóide) |
+| `massa1` | 3.0 | m | massa da esfera 1 (halteres) |
+| `massa2` | 1.0 | m | massa da esfera 2 (halteres) |
+| `separacao` | 3.0 | u | distância entre as esferas (halteres) |
+| `espessura_fatia` | 0.14 | u | espessura dz da fatia |
+| `fatia` | 1 | 0/1 | mostra a fatia elementar |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `fatia` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.72 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- centro_de_massa_3d --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("centro_de_massa_3d").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/centro_de_massa_3d.json`
 
 ### `cilindro_coaxial` — Cilindro coaxial (condutor maciço + casca externa, em corte)
 

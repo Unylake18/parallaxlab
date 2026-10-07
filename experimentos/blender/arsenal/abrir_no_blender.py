@@ -75,6 +75,9 @@ def main():
     if res["apos_camera"]:
         res["apos_camera"](cam)
 
+    for o in bpy.data.objects:                      # caixas de enquadramento (hide_render) não somem sozinhas na vista Renderizada
+        if o.hide_render:
+            o.hide_viewport = True
     sc = bpy.context.scene
     for nome in ("BLENDER_EEVEE", "BLENDER_EEVEE_NEXT"):
         try:
