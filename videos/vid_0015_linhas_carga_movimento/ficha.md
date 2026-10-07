@@ -211,3 +211,17 @@ uv run --no-sync python videos/vid_0015_linhas_carga_movimento/gerar_sync.py
 uv run --no-sync python videos/vid_0015_linhas_carga_movimento/montar_preview_sync.py
 uv run --no-sync python -m py_compile videos/vid_0015_linhas_carga_movimento/gerar_sync.py videos/vid_0015_linhas_carga_movimento/montar_preview_sync.py videos/vid_0015_linhas_carga_movimento/legendas_cores.py
 ```
+
+## Limpeza de versões intermediárias — 2026-10-07
+
+Removidas do repositório (continuam no histórico do Git, commit "feat: vid_0015 duas linhas
+carregadas em movimento"): `cena_v1.py`–`cena_v3.py`, `qa_estados`/`qa_tecnico` das versões
+anteriores à V4, auditorias V3/V4, inspeções e logs de preview, `montar_preview_sync.py` e os
+frames de preview/produção V1–V4. As menções a "preservado" nas seções acima referem-se ao
+estado de cada rodada, não a arquivos ainda presentes. Mantidos: `cena.py` (final),
+`qa_estados_v4.json`, `qa_estados_postagem.json`, `frames_postagem/`, `frames_qa_mao_direita/`,
+os scripts de sync, montagem de postagem e capas, e `audio/narracao_final.wav`.
+
+Também removidos do repositório (mesmo commit, recuperáveis pelo histórico): as propostas de capa
+(`capas/`, `capas_ia/`, `capas_manim/`) e `gerar_capas.py`. Apagados do disco, sem cópia no Git:
+os MP4s `vid_0015_preview_sync_*`, `audio/narracao_preview.m4a` e os zips de frames.
