@@ -1,6 +1,6 @@
 {
-  "status": "estudo",
-  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
   "area": [
     "eletromagnetismo/forca_magnetica",
     "eletromagnetismo/dipolo_magnetico"
@@ -9,7 +9,7 @@
   "origem": "experimentos/blender/eletromag3d.py",
   "integracao": {
     "formato_recomendado": "png_seq_alpha",
-    "custo_1080p_s_por_frame": 0.41,
+    "custo_1080p_s_por_frame": 0.42,
     "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
   },
   "id": "espira_em_campo_magnetico",
@@ -29,7 +29,7 @@
     "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
     "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
     "o movimento é a oscilação de pequenas amplitudes θ = θ0 cos(2π fase), prescrita (sem atrito)",
-    "o módulo do torque é desenhado ∝ sen θ numa escala visual"
+    "o torque (seta branca ao longo de Z) é ∝ sen θ numa escala visual de 2,2 u: some no alinhamento (θ = 0), que é o fisicamente esperado"
   ],
   "construtor": "espira_em_campo_magnetico",
   "parametros": {
@@ -72,7 +72,7 @@
     "frames_sugeridos": 60,
     "parametro": "fase",
     "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
-    "custo_1080p_s_por_frame": 0.41,
+    "custo_1080p_s_por_frame": 0.42,
     "peso_mb_por_frame": 0.59,
     "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
   },

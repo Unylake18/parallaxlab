@@ -203,9 +203,9 @@ def espira_em_B(raio=1.5, amplitude_graus=70.0, movimento=0, angulo_graus=40.0, 
         pts = [tuple(R * math.cos(2 * math.pi * k / NP) * Vector((0, 0, 1)) + R * math.sin(2 * math.pi * k / NP) * w) for k in range(NP)]
         osc.pontos_curva(sp, pts)
         v3.remover(dinam)
-        dinam.append(v3.seta((0, 0, 0), tuple(n * 1.5), mat_vf, 1.5))                              # μ
+        dinam.append(v3.seta((0, 0, 0), tuple(n * 1.9), mat_vf, 1.9))                              # μ
         tau = math.sin(th)
-        dinam.append(v3.seta((0, 0, 0), (0, 0, 1.3 * tau), mat_vf, abs(1.3 * tau)) if abs(tau) > 0.03 else v3.seta((0, 0, 0), (0, 0, 1), mat_vf, 1e-3))
+        dinam.append(v3.seta((0, 0, 0), (0, 0, 2.2 * tau), mat_vf, abs(2.2 * tau)) if abs(tau) > 0.03 else v3.seta((0, 0, 0), (0, 0, 1), mat_vf, 1e-3))
         t = math.pi / 2                                                                           # seta de corrente (sentido de μ)
         P = Vector((0, 0, 1)) * R * math.cos(t) + w * R * math.sin(t)
         tg = -Vector((0, 0, 1)) * math.sin(t) + w * math.cos(t)
@@ -220,7 +220,7 @@ def espira_em_B(raio=1.5, amplitude_graus=70.0, movimento=0, angulo_graus=40.0, 
 
 
 # ── ímã atravessando uma espira (Faraday / Lenz) ─────────────────────────────
-def ima_espira(raio=1.3, comprimento_ima=1.1, lado_ima=0.9, movimento=0, posicao=-2.0, fase=0.0, setas=1):
+def ima_espira(raio=1.6, comprimento_ima=1.1, lado_ima=0.9, movimento=0, posicao=-2.0, fase=0.0, setas=1):
     """Ímã de barra (N azul, S magenta) que atravessa uma espira fixa (fio azul, disco de fluxo violeta). Setas brancas
     na espira mostram a corrente induzida: sentido por Lenz e módulo ∝ |dΦ/dt| (nulo quando o ímã está no plano da espira).
     Ciclo único: o ímã vai de −4,2 a +4,2 (polo N na frente)."""
@@ -235,32 +235,47 @@ def ima_espira(raio=1.3, comprimento_ima=1.1, lado_ima=0.9, movimento=0, posicao
     N_.name = "PoloN"
     N_.scale = (Lm, s, s)
     bpy.ops.object.transform_apply(scale=True)
-    cm.material_vidro(N_, cor=MG["polo_norte_cor"], base=MG["ima_base"], ganho=MG["ima_ganho"], brilho_borda=MG["ima_brilho"])
+    N_.data.materials.append(co._material("PoloN", {"cor": MG["polo_norte_cor"], "emissao": 0.55, "rugosidade": 0.35}))   # sólido opaco:
+    bpy.ops.object.shade_smooth_by_angle(angle=math.radians(30))                                                          # oclui o anel como um objeto de verdade
     bpy.ops.mesh.primitive_cube_add(size=1)
     S_ = bpy.context.active_object
     S_.name = "PoloS"
     S_.scale = (Lm, s, s)
     bpy.ops.object.transform_apply(scale=True)
-    cm.material_vidro(S_, cor=MG["polo_sul_cor"], base=MG["ima_base"], ganho=MG["ima_ganho"], brilho_borda=MG["ima_brilho"])
+    S_.data.materials.append(co._material("PoloS", {"cor": MG["polo_sul_cor"], "emissao": 0.55, "rugosidade": 0.35}))
     mat_vf = _mat_vf()
     flechas = [v3.seta((0, 0, 0), (0, 1, 0), mat_vf, 0.5) for _ in range(4)]
-    emax = max(abs(x) / (R * R + x * x) ** 2.5 for x in [i * 0.01 for i in range(1, 400)])
+    def fluxo_polo(d):
+        """Fluxo (em +X) de um polo magnético unitário a distância axial d (d > 0: o polo está em x < 0) pelo disco da espira.
+        Polo pontual: sinal(d) · ½ (1 − |d|/√(d² + R²)), com um SALTO quando o polo cruza o plano. Um polo real tem a face
+        do ímã (lado s): suavizamos o sinal por d/√(d² + a²), a = s/2, e o salto vira uma transição contínua."""
+        a = s / 2
+        return 0.5 * (d / math.sqrt(d * d + a * a)) * (1.0 - abs(d) / math.sqrt(d * d + R * R))
+
+    def fluxo(xm):
+        # polo N (+) à frente, em xm + Lm; polo S (−) atrás, em xm − Lm: as faces externas do ímã de comprimento 2·Lm
+        return fluxo_polo(-(xm + Lm)) - fluxo_polo(-(xm - Lm))
+
+    def epsilon(xm, h=1e-3):
+        return -(fluxo(xm + h) - fluxo(xm - h)) / (2 * h)            # ε = −dΦ/dt com v = 1
+
+    emax = max(abs(epsilon(i * 0.02 - 4.2)) for i in range(0, 421))
     X0, X1 = -4.2, 4.2
 
     def atualizar(fase):
         xm = X0 + (X1 - X0) * min(max(fase, 0.0), 1.0) if movimento else posicao
         N_.location = (xm + Lm / 2, 0, 0)                      # N na frente (+X)
         S_.location = (xm - Lm / 2, 0, 0)
-        eps = xm / (R * R + xm * xm) ** 2.5 / emax              # ε ∝ x/(R²+x²)^(5/2): −, 0, + (aproxima, passa, afasta)
+        eps = epsilon(xm) / emax                                  # ε = −dΦ/dt do ímã finito: − ao aproximar, ~0 centrado, + ao afastar
         for k, f in enumerate(flechas):
             t = math.pi / 4 + k * math.pi / 2
             p = (0.0, R * math.cos(t), R * math.sin(t))
             tg = Vector((0.0, -math.sin(t), math.cos(t)))
-            if not setas or abs(eps) < 0.03:
+            if not setas or abs(eps) < 0.04:
                 v3.ajustar_seta(f, p, (0, 0, 0))
             else:
                 # eps < 0 (aproximando): corrente horária vista de +X (oposta a CCW); eps > 0: anti-horária (Lenz)
-                v3.ajustar_seta(f, tuple(Vector(p) - tg * 0.5 * (1 if eps > 0 else -1)), tuple(tg * (1 if eps > 0 else -1) * (0.5 + 0.9 * abs(eps))), 0.5 + 0.9 * abs(eps))
+                v3.ajustar_seta(f, tuple(Vector(p) - tg * 0.75 * (1 if eps > 0 else -1) * 0.5), tuple(tg * (1 if eps > 0 else -1) * (0.75 + 1.0 * abs(eps))), 0.75 + 1.0 * abs(eps))
 
     atualizar(fase)
     proxy = _caixa((9.4, 2 * R + 1.0, 2 * R + 0.8), (0, 0, 0))
@@ -346,13 +361,21 @@ def equipotenciais(tipo="dipolo", niveis=(0.5, 0.8, 1.3), distancia=2.0, sinal=1
     Devolve (proxy, glifos)."""
     glifos = []
     ext = 2.4
+    mat_contorno = co._material("ContornoEquip", {"cor": "gaussiana", "emissao": 2.0, "rugosidade": 0.4})
+
+    def contorno(F):
+        """Corte da superfície pelo plano z = 0 (u = 0 e u = π): círculo/curva fechada violeta que marca o nível."""
+        pts = [F(0.0, math.pi * k / 60) for k in range(61)] + [F(math.pi, math.pi * (60 - k) / 60) for k in range(61)]
+        ga.criar_curva("Contorno", [(pts + [pts[0]], False)], mat_contorno, 0.022)
+
     if tipo == "carga_pontual":
         for c in niveis:
             r = 1.0 / c
             F = lambda u, v, r=r: (r * math.cos(v), r * math.sin(v) * math.cos(u), r * math.sin(v) * math.sin(u))
             s = v3.malha_param("Equipotencial", F, 0, 2 * math.pi, 0.0, math.pi, 64, 32, espessura=0.012, vidro=False)
             e = co.ST["materiais"]["equipotencial"]
-            cm.material_vidro(s, cor=e["cor"], base=e["base"], ganho=e["ganho"], brilho_borda=e["brilho"])
+            cm.material_vidro(s, cor=e["cor"], base=e["base"] * 0.6, ganho=e["ganho"] * 0.7, brilho_borda=e["brilho"])
+            contorno(F)
         v3.carga_sinal((0, 0, 0), sinal, 0.32, glifos)
         ext = 1.0 / min(niveis) * 1.05
     else:
@@ -368,7 +391,8 @@ def equipotenciais(tipo="dipolo", niveis=(0.5, 0.8, 1.3), distancia=2.0, sinal=1
                     r = _raio_equipotencial(lambda p: fV(fonte + p), c, dire)
                     return tuple(fonte + dire * r)
                 s = v3.malha_param("Equipotencial", F, 0, 2 * math.pi, 0.0, math.pi, 48, 28, espessura=0.012, vidro=False)
-                cm.material_vidro(s, cor=e["cor"], base=e["base"], ganho=e["ganho"], brilho_borda=e["brilho"])
+                cm.material_vidro(s, cor=e["cor"], base=e["base"] * 0.6, ganho=e["ganho"] * 0.7, brilho_borda=e["brilho"])
+                contorno(F)
         v3.carga_sinal(tuple(qp), sinal, 0.32, glifos)
         v3.carga_sinal(tuple(qn), -sinal, 0.32, glifos)
         if plano:

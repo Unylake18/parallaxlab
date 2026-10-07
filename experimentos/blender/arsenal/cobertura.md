@@ -1,15 +1,15 @@
 # Cobertura do arsenal 3D por capítulo do mapa curricular
 
 > Arquivo **gerado** por `gerar_cobertura.py`. O status vem das fichas (`solidos/*.json`); as lacunas são mantidas no script.
-> Total: **58 sólidos** (41 aprovado, 17 estudo); **39** têm animação (loop ou ciclo único). Fonte dos capítulos: `docs/mapa_curricular.md`.
+> Total: **58 sólidos** (57 aprovado, 1 estudo); **39** têm animação (loop ou ciclo único). Fonte dos capítulos: `docs/mapa_curricular.md`.
 
 ## 1. O que temos, por assunto do curso
 
 | Capítulo | Assunto | Sólidos (status, animação) | Observação |
 |---|---|---|---|
-| 4.7–4.8 | Energia potencial e conservação | `paisagem_potencial` (estudo, anima) |  |
+| 4.7–4.8 | Energia potencial e conservação | `paisagem_potencial` (aprovado, anima) |  |
 | 4.9–4.10 | Momento linear e colisões | `colisao_1d` (aprovado, anima) | só 1D |
-| 4.11 | Rotação de corpos rígidos | `giroscopio_precessao` (estudo, anima), `anel_carregado` (aprovado, anima), `disco_carregado` (aprovado, anima), `haste_carregada` (aprovado, anima) | anel, disco e haste com `com_cargas=0` e `eixo=1` servem ao momento de inércia |
+| 4.11 | Rotação de corpos rígidos | `giroscopio_precessao` (aprovado, anima), `anel_carregado` (aprovado, anima), `disco_carregado` (aprovado, anima), `haste_carregada` (aprovado, anima) | anel, disco e haste com `com_cargas=0` e `eixo=1` servem ao momento de inércia |
 | 4.12 | Rolamento | `esfera_rolando` (aprovado, anima), `cilindro_rolando` (aprovado, anima), `aro_rolando` (aprovado, anima) | só em chão plano |
 | 4.13 | Gravitação | `orbita_kepleriana` (aprovado, anima), `poco_gravitacional` (aprovado, anima) |  |
 | 5.1 | Movimento harmônico simples | `massa_mola` (aprovado, anima), `pendulo_simples` (aprovado, anima) |  |
@@ -18,24 +18,24 @@
 | 5.8–5.10 | Teoria cinética e gases ideais | `caixa_gas_cinetica` (aprovado, anima) | êmbolo oscilante |
 | 6.2 | Campo elétrico (distribuições contínuas) | `anel_carregado` (aprovado, anima), `disco_carregado` (aprovado, anima), `haste_carregada` (aprovado, anima), `campo_vetorial` (aprovado) |  |
 | 6.3 | Lei de Gauss | `casca_cilindrica_oca` (aprovado), `cilindro_macico_isolante` (aprovado), `casca_esferica_oca` (aprovado), `esfera_macica_isolante` (aprovado), `placa_infinita_carregada` (aprovado, anima), `cilindro_coaxial` (aprovado), `gaussiana_esferica` (aprovado), `gaussiana_cilindrica` (aprovado), `gaussiana_caixa` (aprovado) |  |
-| 6.4 | Potencial elétrico | `equipotenciais` (estudo), `gradiente_colina` (aprovado, anima) | o gradiente é o de uma colina genérica |
+| 6.4 | Potencial elétrico | `equipotenciais` (aprovado), `gradiente_colina` (aprovado, anima) | o gradiente é o de uma colina genérica |
 | 6.5 | Condutores e capacitores | `capacitor_placas_paralelas` (aprovado), `capacitor_esferico` (aprovado), `cilindro_coaxial` (aprovado) |  |
-| 6.7 | Força magnética | `particula_em_campo_magnetico` (estudo, anima), `espira_em_campo_magnetico` (estudo, anima) |  |
-| 6.8 | Biot–Savart | `biot_savart_espira` (estudo, anima) |  |
+| 6.7 | Força magnética | `particula_em_campo_magnetico` (aprovado, anima), `espira_em_campo_magnetico` (aprovado, anima) |  |
+| 6.8 | Biot–Savart | `biot_savart_espira` (aprovado, anima) |  |
 | 6.9 | Lei de Ampère | `fio_infinito` (aprovado, anima), `solenoide_corrente` (aprovado, anima), `toroide_corrente` (aprovado, anima), `amperiano_circular` (aprovado), `amperiano_retangular` (aprovado) |  |
-| 6.10 | Indução eletromagnética | `ima_espira_inducao` (estudo, anima), `barra_trilhos_fem_movimento` (estudo, anima) |  |
-| 6.12 e 7.1 | Maxwell e ondas eletromagnéticas | `onda_eletromagnetica` (estudo, anima) |  |
+| 6.10 | Indução eletromagnética | `ima_espira_inducao` (estudo, anima), `barra_trilhos_fem_movimento` (aprovado, anima) |  |
+| 6.12 e 7.1 | Maxwell e ondas eletromagnéticas | `onda_eletromagnetica` (aprovado, anima) |  |
 | 7.2 | Óptica geométrica | `lente_delgada` (aprovado), `prisma_triangular` (aprovado) |  |
 | 7.3–7.4 | Interferência e difração | `anteparo_fenda_dupla` (aprovado), `ondas_duas_fontes` (aprovado, anima) | só fenda dupla |
-| 7.6 | Relatividade especial | `cone_de_luz` (estudo, anima) |  |
-| 7.11 | Estrutura atômica | `orbital_atomico` (estudo, anima) | só 1s, 2s, 2p, 3d |
+| 7.6 | Relatividade especial | `cone_de_luz` (aprovado, anima) |  |
+| 7.11 | Estrutura atômica | `orbital_atomico` (aprovado, anima) | só 1s, 2s, 2p, 3d |
 | 8.12 e 9.5 | Volumes de revolução | `solido_revolucao_disco` (aprovado, anima), `solido_revolucao_arruela` (aprovado, anima), `solido_revolucao_cascas` (aprovado, anima) |  |
-| 10.1 | Geometria e vetores em R³ | `produto_vetorial` (estudo, anima), `superficie_quadrica` (estudo) |  |
-| 10.3 | Derivadas parciais e plano tangente | `plano_tangente` (estudo, anima) |  |
+| 10.1 | Geometria e vetores em R³ | `produto_vetorial` (aprovado, anima), `superficie_quadrica` (aprovado) |  |
+| 10.3 | Derivadas parciais e plano tangente | `plano_tangente` (aprovado, anima) |  |
 | 10.5 | Gradiente | `gradiente_colina` (aprovado, anima) |  |
-| 10.6 | Extremos em várias variáveis | `pontos_criticos` (estudo) |  |
-| 10.7 | Integrais duplas | `integral_dupla_colunas` (estudo, anima) |  |
-| 10.8–10.9 | Integrais triplas e Jacobiano | `elemento_volume` (estudo, anima) |  |
+| 10.6 | Extremos em várias variáveis | `pontos_criticos` (aprovado) |  |
+| 10.7 | Integrais duplas | `integral_dupla_colunas` (aprovado, anima) |  |
+| 10.8–10.9 | Integrais triplas e Jacobiano | `elemento_volume` (aprovado, anima) |  |
 | 11.1 e 11.8 | Campos vetoriais, divergência e rotacional | `campo_vetorial` (aprovado) | a divergência e o rotacional locais ainda se leem só pela forma |
 | 11.6–11.7 | Superfícies parametrizadas e integrais de superfície | `superficie_parametrizada` (aprovado, anima), `gaussiana_esferica` (aprovado), `gaussiana_cilindrica` (aprovado), `gaussiana_caixa` (aprovado) |  |
 | 11.9 | Teorema de Stokes | `teorema_stokes` (aprovado, anima) |  |

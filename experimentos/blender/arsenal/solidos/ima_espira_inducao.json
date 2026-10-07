@@ -1,6 +1,6 @@
 {
   "status": "estudo",
-  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "status_nota": "Ímã tornado sólido opaco e anel maior, a pedido do usuário (parecia passar por trás); aguardando nova aprovação.",
   "area": [
     "eletromagnetismo/inducao_eletromagnetica"
   ],
@@ -8,17 +8,17 @@
   "origem": "experimentos/blender/eletromag3d.py",
   "integracao": {
     "formato_recomendado": "png_seq_alpha",
-    "custo_1080p_s_por_frame": 0.62,
+    "custo_1080p_s_por_frame": 0.66,
     "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
   },
   "id": "ima_espira_inducao",
   "nome": "Ímã atravessando uma espira (Faraday e Lenz)",
-  "descricao": "Ímã de barra (polo N em azul, polo S em magenta, o N na frente) que atravessa uma espira fixa de fio azul com um disco violeta (a superfície do fluxo). Setas brancas na espira mostram a corrente induzida: sentido por Lenz (horário ao aproximar, anti-horário ao afastar, visto de +X) e módulo ∝ |dΦ/dt| (nulo quando o ímã está no plano da espira). Ciclo único.",
-  "leitura_visual": "Uma barra bicolor passando por um anel com setinhas que invertem o sentido: lê-se como 'a corrente induzida muda de sinal quando o ímã passa'.",
+  "descricao": "Ímã de barra sólido (polo N em azul, polo S em magenta, o N na frente) que atravessa uma espira fixa de fio azul com um disco violeta (a superfície do fluxo). Setas brancas na espira mostram a corrente induzida, calculada pelo fluxo de dois polos magnéticos de face finita: ε = −dΦ/dt é pequena ao aproximar, tem um PICO quando o polo N cruza o plano da espira (anti-horário visto de +X), é ~0 com o ímã centrado, tem um pico oposto (horário) quando o S cruza e é pequena ao afastar. Ciclo único.",
+  "leitura_visual": "Uma barra bicolor passando por um anel: as setinhas brancas crescem e invertem de sentido quando cada polo cruza o plano do anel e somem com o ímã centrado.",
   "usar_quando": [
     "lei de Faraday e lei de Lenz",
-    "por que a corrente muda de sentido e é nula no centro",
-    "fluxo magnético por uma espira"
+    "fluxo magnético por uma espira",
+    "por que a corrente inverte de sentido a cada vez que um polo cruza o plano da espira, e é ~0 com o ímã centrado"
   ],
   "nao_usar_quando": [
     "ímã que gira ou espiras que se movem (use barra_trilhos_fem_movimento)",
@@ -27,14 +27,15 @@
   "limitacoes": [
     "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
     "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
-    "o módulo da corrente segue ε ∝ x/(R² + x²)^(5/2) (dipolo pontual): é uma boa aproximação para x grande, não para o ímã dentro da espira",
     "as linhas do campo B do ímã não são desenhadas (o magenta fica só no polo S)",
-    "N e S são distinguidos só pela cor: os nomes vão por rótulo no Manim"
+    "N e S são distinguidos só pela cor: os nomes vão por rótulo no Manim",
+    "o módulo da corrente vem do fluxo de dois polos de face finita (suavizados pela largura do ímã), não de um modelo de dipolo pontual: o formato bipolar de dois picos é o de um ímã real atravessando uma bobina; a altura relativa dos picos é qualitativa",
+    "o sentido e a altura dos picos dependem do comprimento e da largura do ímã e do raio da espira (parâmetros)"
   ],
   "construtor": "ima_espira_inducao",
   "parametros": {
     "raio": {
-      "valor": 1.3,
+      "valor": 1.6,
       "unidade": "u",
       "descricao": "raio da espira"
     },
@@ -70,8 +71,8 @@
     }
   },
   "enquadramento": {
-    "azimute": -52,
-    "elevacao": 18,
+    "azimute": -58,
+    "elevacao": 16,
     "lente": 50,
     "margem": 0.08
   },
@@ -83,7 +84,7 @@
     "frames_sugeridos": 60,
     "parametro": "fase",
     "loop": "ciclo único: o ímã vai de x = −4,2 a +4,2; a fase 1 NÃO repete a fase 0",
-    "custo_1080p_s_por_frame": 0.62,
+    "custo_1080p_s_por_frame": 0.66,
     "peso_mb_por_frame": 0.65,
     "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
   },

@@ -13,8 +13,8 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 | `anel_carregado` | Anel carregado (aro) | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
 | `anteparo_fenda_dupla` | Anteparo de fenda dupla | aprovado | otica/interferencia, otica/difracao |
 | `aro_rolando` | Aro rolando sem deslizar | aprovado | mecanica/rolamento, mecanica/momento_de_inercia |
-| `barra_trilhos_fem_movimento` | Barra em trilhos num campo B (fem de movimento) | estudo | eletromagnetismo/inducao_eletromagnetica |
-| `biot_savart_espira` | Biot–Savart numa espira | estudo | eletromagnetismo/biot_savart |
+| `barra_trilhos_fem_movimento` | Barra em trilhos num campo B (fem de movimento) | aprovado | eletromagnetismo/inducao_eletromagnetica |
+| `biot_savart_espira` | Biot–Savart numa espira | aprovado | eletromagnetismo/biot_savart |
 | `caixa_gas_cinetica` | Gás ideal em recipiente com êmbolo (teoria cinética) | aprovado | termodinamica/teoria_cinetica, termodinamica/processos_em_gases |
 | `campo_vetorial` | Campo vetorial (setas) | aprovado | calculo/campos_vetoriais, eletromagnetismo/campo_eletrico |
 | `capacitor_esferico` | Capacitor esférico (esferas concêntricas, em corte) | aprovado | eletromagnetismo/condutores_e_capacitores |
@@ -25,44 +25,44 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 | `cilindro_macico_isolante` | Cilindro maciço isolante com cargas no volume | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `cilindro_rolando` | Cilindro rolando sem deslizar | aprovado | mecanica/rolamento, mecanica/momento_de_inercia |
 | `colisao_1d` | Colisão unidimensional entre dois blocos | aprovado | mecanica/colisoes |
-| `cone_de_luz` | Cone de luz no espaço-tempo | estudo | fisica4/relatividade_especial |
+| `cone_de_luz` | Cone de luz no espaço-tempo | aprovado | fisica4/relatividade_especial |
 | `disco_carregado` | Disco carregado | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
-| `elemento_volume` | Elemento de volume dV (cartesiano, cilíndrico, esférico) | estudo | calculo/integrais_triplas, calculo/jacobiano |
-| `equipotenciais` | Superfícies equipotenciais (carga pontual e dipolo) | estudo | eletromagnetismo/potencial_eletrico |
+| `elemento_volume` | Elemento de volume dV (cartesiano, cilíndrico, esférico) | aprovado | calculo/integrais_triplas, calculo/jacobiano |
+| `equipotenciais` | Superfícies equipotenciais (carga pontual e dipolo) | aprovado | eletromagnetismo/potencial_eletrico |
 | `esfera_macica_isolante` | Esfera maciça isolante com cargas no volume | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `esfera_rolando` | Esfera rolando sem deslizar | aprovado | mecanica/rolamento, mecanica/momento_de_inercia |
-| `espira_em_campo_magnetico` | Espira de corrente num campo magnético (torque) | estudo | eletromagnetismo/forca_magnetica, eletromagnetismo/dipolo_magnetico |
+| `espira_em_campo_magnetico` | Espira de corrente num campo magnético (torque) | aprovado | eletromagnetismo/forca_magnetica, eletromagnetismo/dipolo_magnetico |
 | `fio_infinito` | Fio infinito (retilíneo) | aprovado | eletromagnetismo/lei_de_ampere |
 | `gaussiana_caixa` | Superfície gaussiana em caixa (pillbox) | aprovado | eletromagnetismo/lei_de_gauss |
 | `gaussiana_cilindrica` | Superfície gaussiana cilíndrica (fechada) | aprovado | eletromagnetismo/lei_de_gauss |
 | `gaussiana_esferica` | Superfície gaussiana esférica | aprovado | eletromagnetismo/lei_de_gauss |
-| `giroscopio_precessao` | Giroscópio e precessão | estudo | mecanica/momento_angular, mecanica/torque |
+| `giroscopio_precessao` | Giroscópio e precessão | aprovado | mecanica/momento_angular, mecanica/torque |
 | `gradiente_colina` | Gradiente numa colina (curvas de nível) | aprovado | calculo/gradiente, calculo/funcoes_de_varias_variaveis |
 | `haste_carregada` | Haste carregada | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
 | `ima_espira_inducao` | Ímã atravessando uma espira (Faraday e Lenz) | estudo | eletromagnetismo/inducao_eletromagnetica |
-| `integral_dupla_colunas` | Soma de Riemann dupla (colunas) | estudo | calculo/integrais_duplas |
+| `integral_dupla_colunas` | Soma de Riemann dupla (colunas) | aprovado | calculo/integrais_duplas |
 | `lente_delgada` | Lente delgada (biconvexa ou biconcava) | aprovado | otica/otica_geometrica |
 | `massa_mola` | Sistema massa-mola horizontal (MHS) | aprovado | fisica2/mhs |
 | `onda_corda` | Onda numa corda (progressiva e estacionária) | aprovado | fisica2/ondas_mecanicas, fisica2/ondas_estacionarias |
-| `onda_eletromagnetica` | Onda eletromagnética plana | estudo | eletromagnetismo/maxwell_e_ondas, fisica4/ondas_eletromagneticas |
+| `onda_eletromagnetica` | Onda eletromagnética plana | aprovado | eletromagnetismo/maxwell_e_ondas, fisica4/ondas_eletromagneticas |
 | `ondas_duas_fontes` | Ondas na superfície com duas fontes (interferência) | aprovado | fisica2/superposicao_e_interferencia, otica/interferencia |
 | `orbita_kepleriana` | Órbita kepleriana com setores de áreas iguais | aprovado | mecanica/gravitacao |
-| `orbital_atomico` | Orbitais atômicos (nuvens de probabilidade) | estudo | fisica4/estrutura_atomica |
-| `paisagem_potencial` | Bola numa paisagem de energia potencial | estudo | mecanica/energia_potencial |
-| `particula_em_campo_magnetico` | Partícula carregada em campo magnético uniforme | estudo | eletromagnetismo/forca_magnetica |
+| `orbital_atomico` | Orbitais atômicos (nuvens de probabilidade) | aprovado | fisica4/estrutura_atomica |
+| `paisagem_potencial` | Bola numa paisagem de energia potencial | aprovado | mecanica/energia_potencial |
+| `particula_em_campo_magnetico` | Partícula carregada em campo magnético uniforme | aprovado | eletromagnetismo/forca_magnetica |
 | `pendulo_simples` | Pêndulo simples (pequenas oscilações) | aprovado | fisica2/mhs |
 | `placa_infinita_carregada` | Placa infinita carregada (plano com cargas na superfície) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
-| `plano_tangente` | Plano tangente a uma superfície | estudo | calculo/derivadas_parciais, calculo/linearizacao |
+| `plano_tangente` | Plano tangente a uma superfície | aprovado | calculo/derivadas_parciais, calculo/linearizacao |
 | `poco_gravitacional` | Poço gravitacional (potencial) | aprovado | mecanica/gravitacao |
-| `pontos_criticos` | Pontos críticos (máximo, mínimo e sela) | estudo | calculo/extremos_varias_variaveis |
+| `pontos_criticos` | Pontos críticos (máximo, mínimo e sela) | aprovado | calculo/extremos_varias_variaveis |
 | `prisma_triangular` | Prisma triangular | aprovado | otica/otica_geometrica |
-| `produto_vetorial` | Produto vetorial a × b | estudo | calculo/vetores_r3, eletromagnetismo/forca_magnetica |
+| `produto_vetorial` | Produto vetorial a × b | aprovado | calculo/vetores_r3, eletromagnetismo/forca_magnetica |
 | `solenoide_corrente` | Solenoide (hélice de fio) | aprovado | eletromagnetismo/lei_de_ampere |
 | `solido_revolucao_arruela` | Sólido de revolução: método das arruelas | aprovado | calculo/volumes_de_revolucao |
 | `solido_revolucao_cascas` | Sólido de revolução: método das cascas | aprovado | calculo/volumes_de_revolucao |
 | `solido_revolucao_disco` | Sólido de revolução: método dos discos | aprovado | calculo/volumes_de_revolucao |
 | `superficie_parametrizada` | Superfície parametrizada com remendo dS | aprovado | calculo/superficies_parametrizadas, calculo/integrais_de_superficie |
-| `superficie_quadrica` | Superfícies quádricas | estudo | calculo/vetores_r3, calculo/superficies_quadricas |
+| `superficie_quadrica` | Superfícies quádricas | aprovado | calculo/vetores_r3, calculo/superficies_quadricas |
 | `teorema_stokes` | Teorema de Stokes (hemisfério e contorno) | aprovado | calculo/stokes, eletromagnetismo/lei_de_ampere |
 | `toroide_corrente` | Toroide (fio enrolado em anel) | aprovado | eletromagnetismo/lei_de_ampere |
 | `tubo_escoamento` | Tubo com estrangulamento (continuidade) | aprovado | fluidos/fluidos_em_movimento |
@@ -363,7 +363,7 @@ Ficha: `solidos/aro_rolando.json`
 
 ### `barra_trilhos_fem_movimento` — Barra em trilhos num campo B (fem de movimento)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Duas trilhas paralelas fechadas à esquerda e uma barra que desliza num B uniforme (+Z, setas magenta). A área do circuito (violeta translúcido) é o fluxo e as setas brancas são a corrente induzida (sentido de Lenz, módulo ∝ v). Com movimento a barra oscila: o sentido da corrente inverte com a velocidade.
 
@@ -416,7 +416,7 @@ Ficha: `solidos/barra_trilhos_fem_movimento.json`
 
 ### `biot_savart_espira` — Biot–Savart numa espira
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Espira de fio azul no plano YZ, ponto P no eixo, o elemento dl (seta branca), o vetor r de dl até P (violeta tracejado) e a contribuição dB em P (seta magenta, direção dl × r). Com movimento o elemento percorre a espira.
 
@@ -972,7 +972,7 @@ Ficha: `solidos/colisao_1d.json`
 
 ### `cone_de_luz` — Cone de luz no espaço-tempo
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Espaço-tempo (x, y, ct): cones do futuro e do passado (vidro azul) com curvas coordenadas, o eixo ct tracejado, uma linha de universo (azul-claro) dentro do cone e um evento (branco) subindo por ela. O plano de simultaneidade (violeta) passa pelo evento e corta o cone num círculo azul-claro: a frente de luz. Com movimento (ciclo único) o evento sobe.
 
@@ -1082,7 +1082,7 @@ Ficha: `solidos/disco_carregado.json`
 
 ### `elemento_volume` — Elemento de volume dV (cartesiano, cilíndrico, esférico)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Elemento de volume em violeta translúcido com arestas tracejadas: caixa dx dy dz (cartesiano), cunha r dr dθ dz (cilíndrico) ou r² sen θ dr dθ dφ (esférico), com os eixos x, y, z, o raio ao elemento e a projeção no plano xy (guias). Com movimento o elemento dá uma volta em torno de z.
 
@@ -1131,9 +1131,9 @@ Ficha: `solidos/elemento_volume.json`
 
 ### `equipotenciais` — Superfícies equipotenciais (carga pontual e dipolo)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
-Superfícies equipotenciais em violeta translúcido, aninhadas: esferas concêntricas ao redor de uma carga pontual (`tipo=carga_pontual`) ou superfícies fechadas ao redor das duas cargas de um dipolo (`tipo=dipolo`, com o plano V = 0). As cargas têm o sinal esculpido (+ ou −).
+Superfícies equipotenciais em violeta translúcido, aninhadas: esferas concêntricas ao redor de uma carga pontual (`tipo=carga_pontual`) ou superfícies fechadas ao redor das duas cargas de um dipolo (`tipo=dipolo`, com o plano V = 0). As cargas têm o sinal esculpido (+ ou −). Cada superfície tem o seu corte no plano da carga destacado em contorno violeta nítido (um círculo na carga pontual, uma curva fechada em cada carga do dipolo), para o nível se ler mesmo com as cascas translúcidas sobrepostas.
 
 ![Superfícies equipotenciais (carga pontual e dipolo)](previews/equipotenciais.png)
 
@@ -1152,8 +1152,8 @@ Superfícies equipotenciais em violeta translúcido, aninhadas: esferas concênt
 - só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim
 - a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta
 - no dipolo, só os níveis fechados em torno de cada carga (|V| ≥ nivel_min); o plano V = 0 é o plano mediador
-- cada superfície é uma casca de vidro fina e ruído/transparência aparecem ao sobrepor muitas
 - o sinal esculpido só aparece de frente
+- as cascas são translúcidas e se sobrepõem: o contorno violeta no plano da carga é o que marca cada nível com clareza
 
 | Parâmetro | Padrão | Unid. | Descrição |
 |---|---|---|---|
@@ -1285,7 +1285,7 @@ Ficha: `solidos/esfera_rolando.json`
 
 ### `espira_em_campo_magnetico` — Espira de corrente num campo magnético (torque)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Espira de fio azul que gira em torno de Z num B uniforme (+Y, setas magenta), com o momento de dipolo μ = I A n̂ (branco, normal à espira), o torque τ = μ × B (branco, ao longo de Z, ∝ sen θ) e uma seta de corrente. Com movimento a espira oscila em torno do alinhamento (μ ∥ B).
 
@@ -1306,7 +1306,7 @@ Espira de fio azul que gira em torno de Z num B uniforme (+Y, setas magenta), co
 - só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim
 - a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta
 - o movimento é a oscilação de pequenas amplitudes θ = θ0 cos(2π fase), prescrita (sem atrito)
-- o módulo do torque é desenhado ∝ sen θ numa escala visual
+- o torque (seta branca ao longo de Z) é ∝ sen θ numa escala visual de 2,2 u: some no alinhamento (θ = 0), que é o fisicamente esperado
 
 | Parâmetro | Padrão | Unid. | Descrição |
 |---|---|---|---|
@@ -1316,9 +1316,9 @@ Espira de fio azul que gira em torno de Z num B uniforme (+Y, setas magenta), co
 | `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
 | `fase` | 0.0 | 0-1 | fase da animação |
 
-**Integração:** `png_seq_alpha` · custo 0.41 s/frame (1080p, Eevee)
+**Integração:** `png_seq_alpha` · custo 0.42 s/frame (1080p, Eevee)
 
-**Animação (cargas em movimento):** `oscilacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.41 s/frame (1080p, com alpha)
+**Animação (cargas em movimento):** `oscilacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.42 s/frame (1080p, com alpha)
 
 ```powershell
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- espira_em_campo_magnetico --res 1920x1080 --alpha
@@ -1542,7 +1542,7 @@ Ficha: `solidos/gaussiana_esferica.json`
 
 ### `giroscopio_precessao` — Giroscópio e precessão
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Rotor de vidro com quatro raios claros, preso a um eixo que gira em torno de z (precessão, rastro violeta tracejado) enquanto o rotor gira em torno do próprio eixo (`voltas_spin` por volta de precessão). O momento angular L ao longo do eixo, o peso e o torque (tangente ao cone) são brancos.
 
@@ -1707,18 +1707,18 @@ Ficha: `solidos/haste_carregada.json`
 
 ### `ima_espira_inducao` — Ímã atravessando uma espira (Faraday e Lenz)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** estudo · Ímã tornado sólido opaco e anel maior, a pedido do usuário (parecia passar por trás); aguardando nova aprovação.
 
-Ímã de barra (polo N em azul, polo S em magenta, o N na frente) que atravessa uma espira fixa de fio azul com um disco violeta (a superfície do fluxo). Setas brancas na espira mostram a corrente induzida: sentido por Lenz (horário ao aproximar, anti-horário ao afastar, visto de +X) e módulo ∝ |dΦ/dt| (nulo quando o ímã está no plano da espira). Ciclo único.
+Ímã de barra sólido (polo N em azul, polo S em magenta, o N na frente) que atravessa uma espira fixa de fio azul com um disco violeta (a superfície do fluxo). Setas brancas na espira mostram a corrente induzida, calculada pelo fluxo de dois polos magnéticos de face finita: ε = −dΦ/dt é pequena ao aproximar, tem um PICO quando o polo N cruza o plano da espira (anti-horário visto de +X), é ~0 com o ímã centrado, tem um pico oposto (horário) quando o S cruza e é pequena ao afastar. Ciclo único.
 
 ![Ímã atravessando uma espira (Faraday e Lenz)](previews/ima_espira_inducao.png)
 
-**Como se lê:** Uma barra bicolor passando por um anel com setinhas que invertem o sentido: lê-se como 'a corrente induzida muda de sinal quando o ímã passa'.
+**Como se lê:** Uma barra bicolor passando por um anel: as setinhas brancas crescem e invertem de sentido quando cada polo cruza o plano do anel e somem com o ímã centrado.
 
 **Usar quando**
 - lei de Faraday e lei de Lenz
-- por que a corrente muda de sentido e é nula no centro
 - fluxo magnético por uma espira
+- por que a corrente inverte de sentido a cada vez que um polo cruza o plano da espira, e é ~0 com o ímã centrado
 
 **Não usar quando**
 - ímã que gira ou espiras que se movem (use barra_trilhos_fem_movimento)
@@ -1727,13 +1727,14 @@ Ficha: `solidos/haste_carregada.json`
 **Limitações**
 - só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim
 - a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta
-- o módulo da corrente segue ε ∝ x/(R² + x²)^(5/2) (dipolo pontual): é uma boa aproximação para x grande, não para o ímã dentro da espira
 - as linhas do campo B do ímã não são desenhadas (o magenta fica só no polo S)
 - N e S são distinguidos só pela cor: os nomes vão por rótulo no Manim
+- o módulo da corrente vem do fluxo de dois polos de face finita (suavizados pela largura do ímã), não de um modelo de dipolo pontual: o formato bipolar de dois picos é o de um ímã real atravessando uma bobina; a altura relativa dos picos é qualitativa
+- o sentido e a altura dos picos dependem do comprimento e da largura do ímã e do raio da espira (parâmetros)
 
 | Parâmetro | Padrão | Unid. | Descrição |
 |---|---|---|---|
-| `raio` | 1.3 | u | raio da espira |
+| `raio` | 1.6 | u | raio da espira |
 | `comprimento_ima` | 1.1 | u | comprimento de cada polo |
 | `lado_ima` | 0.9 | u | lado da seção do ímã |
 | `posicao` | -1.2 | u | posição do centro do ímã (sem movimento) |
@@ -1741,9 +1742,9 @@ Ficha: `solidos/haste_carregada.json`
 | `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
 | `fase` | 0.0 | 0-1 | fase da animação |
 
-**Integração:** `png_seq_alpha` · custo 0.62 s/frame (1080p, Eevee)
+**Integração:** `png_seq_alpha` · custo 0.66 s/frame (1080p, Eevee)
 
-**Animação (cargas em movimento):** `travessia` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.62 s/frame (1080p, com alpha)
+**Animação (cargas em movimento):** `travessia` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.66 s/frame (1080p, com alpha)
 
 ```powershell
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- ima_espira_inducao --res 1920x1080 --alpha
@@ -1760,7 +1761,7 @@ Ficha: `solidos/ima_espira_inducao.json`
 
 ### `integral_dupla_colunas` — Soma de Riemann dupla (colunas)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Colunas de vidro azul de altura f(centro) sobre uma grade n×n do quadrado [−E, E]², com a superfície z = f em azul-claro por cima e o quadrado da base tracejado em violeta. Com movimento (ciclo único) n cresce de 2 a `n_max` e as colunas passam a preencher o volume.
 
@@ -1781,7 +1782,7 @@ Colunas de vidro azul de altura f(centro) sobre uma grade n×n do quadrado [−E
 - só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim
 - a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta
 - a altura é f no centro de cada célula (ponto médio), não o máximo nem o mínimo
-- n sobe em passos discretos (2, 3, 4, 6, 8, 12, 16), não continuamente
+- n sobe de 1 em 1, de 2 até `n_max` (15 passos por padrão): cada passo é um salto de grade, não uma mudança contínua
 - a superfície é fixa: f = 1,2 + 0,7 sen(1,3x) cos(1,1y)
 
 | Parâmetro | Padrão | Unid. | Descrição |
@@ -1792,9 +1793,9 @@ Colunas de vidro azul de altura f(centro) sobre uma grade n×n do quadrado [−E
 | `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
 | `fase` | 0.0 | 0-1 | fase da animação |
 
-**Integração:** `png_seq_alpha` · custo 1.67 s/frame (1080p, Eevee)
+**Integração:** `png_seq_alpha` · custo 1.83 s/frame (1080p, Eevee)
 
-**Animação (cargas em movimento):** `refinamento` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 1.67 s/frame (1080p, com alpha)
+**Animação (cargas em movimento):** `refinamento` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 1.83 s/frame (1080p, com alpha)
 
 ```powershell
 & "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- integral_dupla_colunas --res 1920x1080 --alpha
@@ -1970,7 +1971,7 @@ Ficha: `solidos/onda_corda.json`
 
 ### `onda_eletromagnetica` — Onda eletromagnética plana
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Onda plana linearmente polarizada que se propaga em +X: E (setas ciano, ao longo de Z) e B (setas magenta, ao longo de Y), em fase, com as curvas das pontas, a direção de propagação S = E × B (seta branca) e os planos do campo E e do campo B em tom translúcido. fase 0 a 1 = um período.
 
@@ -2129,7 +2130,7 @@ Ficha: `solidos/orbita_kepleriana.json`
 
 ### `orbital_atomico` — Orbitais atômicos (nuvens de probabilidade)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Nuvem de pontos da densidade |ψ|² de um orbital do hidrogênio (`orbital`: 1s, 2s, 2p ou 3d), em dois tons de azul conforme o sinal de ψ, com o núcleo branco no centro e o eixo z tracejado. Com movimento a nuvem gira uma volta em torno de z.
 
@@ -2183,7 +2184,7 @@ Ficha: `solidos/orbital_atomico.json`
 
 ### `paisagem_potencial` — Bola numa paisagem de energia potencial
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Pista de vidro azul com o perfil U(x) (`tipo`: poco_simples, poco_duplo ou barreira) e uma reta de energia E tracejada (violeta). Uma bola neutra oscila conservando E (integração numérica) e uma barra violeta mostra K = E − U. Com movimento a bola percorre um período.
 
@@ -2237,7 +2238,7 @@ Ficha: `solidos/paisagem_potencial.json`
 
 ### `particula_em_campo_magnetico` — Partícula carregada em campo magnético uniforme
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Hélice de uma carga num B uniforme (+Z, setas magenta em duas camadas). A carga tem o sinal esculpido (+ ou −), a trajetória é tracejada violeta, a velocidade v e a força F = q v × B (apontando para o eixo) são brancas. O sentido da hélice inverte com o sinal da carga. Ciclo único: a partícula percorre `voltas` voltas.
 
@@ -2403,7 +2404,7 @@ Ficha: `solidos/placa_infinita_carregada.json`
 
 ### `plano_tangente` — Plano tangente a uma superfície
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Superfície de vidro azul (`tipo`: onda, sela ou esfera) com curvas coordenadas, o ponto P (branco), o plano tangente em P (violeta translúcido, arestas tracejadas) e a normal n̂ (azul). Com movimento P percorre uma pequena volta e o plano acompanha.
 
@@ -2506,7 +2507,7 @@ Ficha: `solidos/poco_gravitacional.json`
 
 ### `pontos_criticos` — Pontos críticos (máximo, mínimo e sela)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Superfície z = h sen(kx) sen(ky) de vidro azul com um máximo, um mínimo e uma sela, cada um marcado com um ponto branco e um plano tangente horizontal violeta translúcido.
 
@@ -2599,7 +2600,7 @@ Ficha: `solidos/prisma_triangular.json`
 
 ### `produto_vetorial` — Produto vetorial a × b
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Vetores a (ao longo de X) e b (no plano XY) em branco, o paralelogramo que formam (violeta translúcido, arestas tracejadas) e a × b (azul, ao longo de +Z, comprimento ∝ área). Com movimento o ângulo entre a e b oscila entre 25° e 155°.
 
@@ -2933,7 +2934,7 @@ Ficha: `solidos/superficie_parametrizada.json`
 
 ### `superficie_quadrica` — Superfícies quádricas
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Quádrica de vidro azul com curvas coordenadas e os eixos x, y, z tracejados em branco neutro. `tipo`: elipsoide, hiperboloide_uma_folha, hiperboloide_duas_folhas, paraboloide_eliptico, paraboloide_hiperbolico ou cone (duas folhas).
 

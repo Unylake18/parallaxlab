@@ -105,7 +105,7 @@ Aprovados pelo usuário em 2026-10-07: todos os 41 sólidos atuais. Promover um 
 A lista completa, por capítulo do mapa curricular, com o status de cada sólido, o que falta, o assunto e a limitação, está
 em **`cobertura.md`** (gerado por `gerar_cobertura.py`: o status vem das fichas, as lacunas ficam no script).
 
-A fila A do levantamento de 2026-10-07 (17 sólidos de alto valor) foi construída em 2026-10-07 e está em `estudo`: onda
+A fila A do levantamento de 2026-10-07 (17 sólidos de alto valor) foi construída e aprovada em 2026-10-07 (o `ima_espira_inducao` foi ajustado depois e aguarda nova aprovação): onda
 eletromagnética, partícula e espira em B, ímã com espira, barra em trilhos, equipotenciais, giroscópio, Biot–Savart, produto
 vetorial, plano tangente, quádricas, pontos críticos, soma de Riemann dupla, elemento de volume, orbital atômico, cone de luz e
 paisagem de potencial. O que sobra (fila B) está em `cobertura.md`, seção 2a.

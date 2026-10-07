@@ -1,6 +1,6 @@
 {
-  "status": "estudo",
-  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
   "area": [
     "eletromagnetismo/potencial_eletrico"
   ],
@@ -13,7 +13,7 @@
   },
   "id": "equipotenciais",
   "nome": "Superfícies equipotenciais (carga pontual e dipolo)",
-  "descricao": "Superfícies equipotenciais em violeta translúcido, aninhadas: esferas concêntricas ao redor de uma carga pontual (`tipo=carga_pontual`) ou superfícies fechadas ao redor das duas cargas de um dipolo (`tipo=dipolo`, com o plano V = 0). As cargas têm o sinal esculpido (+ ou −).",
+  "descricao": "Superfícies equipotenciais em violeta translúcido, aninhadas: esferas concêntricas ao redor de uma carga pontual (`tipo=carga_pontual`) ou superfícies fechadas ao redor das duas cargas de um dipolo (`tipo=dipolo`, com o plano V = 0). As cargas têm o sinal esculpido (+ ou −). Cada superfície tem o seu corte no plano da carga destacado em contorno violeta nítido (um círculo na carga pontual, uma curva fechada em cada carga do dipolo), para o nível se ler mesmo com as cascas translúcidas sobrepostas.",
   "leitura_visual": "Cascas violeta aninhadas em torno de uma esfera com + ou −: lê-se como 'superfícies de mesmo potencial'. No dipolo, bolhas distintas em volta de cada carga.",
   "usar_quando": [
     "superfícies equipotenciais e a relação com o campo (E ⟂ equipotencial)",
@@ -28,8 +28,8 @@
     "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
     "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
     "no dipolo, só os níveis fechados em torno de cada carga (|V| ≥ nivel_min); o plano V = 0 é o plano mediador",
-    "cada superfície é uma casca de vidro fina e ruído/transparência aparecem ao sobrepor muitas",
-    "o sinal esculpido só aparece de frente"
+    "o sinal esculpido só aparece de frente",
+    "as cascas são translúcidas e se sobrepõem: o contorno violeta no plano da carga é o que marca cada nível com clareza"
   ],
   "construtor": "equipotenciais",
   "parametros": {

@@ -192,8 +192,7 @@ def soma_riemann_dupla(extensao=2.0, n_max=16, n_unico=0, fase=0.0, movimento=0)
     wf.thickness = 0.014
     wf.use_replace = True
     grade.data.materials.append(v3.material_cor("MalhaColunas", "fonte_contorno", 0.9))
-    niveis = [2, 3, 4, 6, 8, 12, 16]
-    niveis = [n for n in niveis if n <= n_max]
+    niveis = list(range(2, int(n_max) + 1))                       # n de 1 em 1: o refinamento sobe sem degraus grandes
 
     def montar(n):
         d = 2 * E / n

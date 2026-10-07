@@ -1,6 +1,6 @@
 {
-  "status": "estudo",
-  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
   "area": [
     "calculo/integrais_duplas"
   ],
@@ -8,7 +8,7 @@
   "origem": "experimentos/blender/matematica3d.py",
   "integracao": {
     "formato_recomendado": "png_seq_alpha",
-    "custo_1080p_s_por_frame": 1.67,
+    "custo_1080p_s_por_frame": 1.83,
     "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
   },
   "id": "integral_dupla_colunas",
@@ -28,7 +28,7 @@
     "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
     "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
     "a altura é f no centro de cada célula (ponto médio), não o máximo nem o mínimo",
-    "n sobe em passos discretos (2, 3, 4, 6, 8, 12, 16), não continuamente",
+    "n sobe de 1 em 1, de 2 até `n_max` (15 passos por padrão): cada passo é um salto de grade, não uma mudança contínua",
     "a superfície é fixa: f = 1,2 + 0,7 sen(1,3x) cos(1,1y)"
   ],
   "construtor": "integral_dupla_colunas",
@@ -73,7 +73,7 @@
     "frames_sugeridos": 60,
     "parametro": "fase",
     "loop": "ciclo único: n cresce de 2 até `n_max` ao longo da fase 0 a 1; a fase 1 NÃO repete a fase 0",
-    "custo_1080p_s_por_frame": 1.67,
+    "custo_1080p_s_por_frame": 1.83,
     "peso_mb_por_frame": 1.25,
     "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
   },
