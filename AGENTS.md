@@ -33,7 +33,7 @@ Consulte conforme necessidade:
 - `docs/decisoes.md` — decisões permanentes;
 - `docs/guia_mestre.md` — estratégia ampla;
 - `docs/mapa_curricular.md` — arquitetura curricular/editorial; usar para localizar uma pauta dentro de Física/Cálculo e entender como ela se conecta à biblioteca futura;
-- `experimentos/blender/arsenal/catalogo.md` — arsenal de sólidos 3D (Blender) e seu padrão visual. Ao planejar um vídeo que precise de um sólido 3D (cilindro, casca, esfera etc.), consulte o catálogo ANTES de modelar algo novo: confira "usar quando / não usar quando" e o status (só `aprovado` serve). Ponte com o Manim pronta (sandbox): `Solido3D` em `experimentos/blender/arsenal/manim_solido3d.py` (uso e cuidados no `README.md` do arsenal); prepare as sequências antes do render final com `ponte.py`. Usar um sólido num vídeo continua exigindo handoff explícito.
+- `experimentos/blender/arsenal/catalogo.md` — arsenal de sólidos 3D (Blender) e seu padrão visual. Ao planejar um vídeo que precise de um sólido 3D (cilindro, casca, esfera etc.), consulte o catálogo ANTES de modelar algo novo: confira "usar quando / não usar quando" e o status (só `aprovado` serve); `experimentos/blender/arsenal/cobertura.md` mostra, por capítulo do mapa curricular, o que existe e o que falta. Ponte com o Manim pronta (sandbox): `Solido3D` em `experimentos/blender/arsenal/manim_solido3d.py` (uso e cuidados no `README.md` do arsenal); prepare as sequências antes do render final com `ponte.py`. Usar um sólido num vídeo continua exigindo handoff explícito.
 
 Não leia automaticamente todos esses documentos.
 
