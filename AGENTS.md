@@ -128,6 +128,16 @@ Regras:
 - `SurroundingRectangleUnion` exige `unbuff=0` (falha com numpy 2.x); não é padrão.
 - Não refaça vídeos anteriores só por causa da biblioteca.
 
+## Arsenal 3D em vídeos novos (teste em andamento)
+
+O arsenal de sólidos 3D (90 sólidos aprovados) está em fase de **teste em vídeos reais**, curtos e longos. Ao receber o briefing de um vídeo novo:
+
+0. Índice enxuto de consulta rápida: `experimentos/blender/arsenal/indice_producao.md` (gerado por `gerar_indice.py`; regerar ao criar ou editar sólidos).
+1. Leia o campo `solido_3d:` da `ficha.md`/briefing. Se houver um `id`, ele é a especificação: integre só nessa unidade.
+2. Se o campo faltar ou for `nenhum` sem justificativa, **avalie antes de implementar**: consulte `experimentos/blender/arsenal/catalogo.md` e `cobertura.md` (usar quando / não usar quando; só `aprovado`) e **reporte** o candidato (ou "nenhum, porque ...") sem integrar por conta própria. O briefing de Produção continua soberano.
+3. Com o `id` definido, siga o checklist de `experimentos/blender/arsenal/README.md` (seção "Uso no Manim"): `Solido3D` na `cena.py` da unidade, sequências preparadas com `ponte.py` antes do render final, quadros conferidos no preview, e nada em `template/`.
+4. No relatório de entrega, inclua o **"Teste do arsenal"**: sólido usado, resolução, custo/peso, o que funcionou e o que faltou (formato em `docs/formatos.md`). Isso alimenta os ajustes do arsenal.
+
 ## Formatos e paralelismo
 
 Referência: `docs/formatos.md`.

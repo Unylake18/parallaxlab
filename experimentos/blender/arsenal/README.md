@@ -13,9 +13,11 @@ serve **antes** de modelar algo novo. Fase atual: sandbox (`experimentos/blender
 | `construtores.py` | id da ficha → função que cria o sólido no Blender |
 | `renderizar.py` | Constrói e renderiza qualquer sólido a partir da ficha |
 | `gerar_catalogo.py` | Valida as fichas e regera `catalogo.md` (Python puro, sem Blender) |
+| `indice_producao.md` | Índice enxuto (uma linha por sólido, em ordem curricular) para quem escreve briefings; **gerado** por `gerar_indice.py` |
 | `gerar_cobertura.py` | Gera `cobertura.md`: o que existe e o que falta por capítulo do mapa curricular |
 | `abrir/<id>.bat` | Atalho de dois cliques: abre o sólido já montado na janela do Blender (loop tocando, se animado); índice em `abrir/LEIA-ME.md` |
 | `abrir_no_blender.py` | Script que os atalhos chamam (monta o sólido na interface, câmera + modo Renderizado) |
+| `gerar_indice.py` | Gera `indice_producao.md` a partir das fichas (rode de novo ao criar ou editar sólidos) |
 | `gerar_atalhos.py` | Gera `abrir/*.bat` e `abrir/LEIA-ME.md` a partir das fichas (rode de novo ao criar sólidos) |
 
 ## Abrir no Blender para ver
@@ -95,6 +97,15 @@ Pontos que importam:
 - **Custo e peso**: veja a linha "Animação" de cada sólido no `catalogo.md` (0,5 a 1,3 s por quadro em 1080p; 60 quadros
   pesam de ~36 MB a ~100 MB por sólido, e levam de ~30 s a ~80 s no Blender).
 - **Fora do escopo**: nada disto toca `template/`. Usar um sólido num vídeo continua exigindo handoff (ver `AGENTS.md`).
+
+### Checklist: integrar um sólido num vídeo (curto ou longo)
+
+1. Confirmar o `id` (`status: aprovado`) e ler "usar quando / não usar quando" e as limitações da ficha; ver o sólido com `abrir/<id>.bat`.
+2. Decidir o que o 3D mostra e o que fica no Manim (sentidos, sinais, rótulos, valores, setas): o 3D só dá a geometria.
+3. Na `cena.py` **da unidade do vídeo** (nunca em `template/`): `sys.path.insert(0, "experimentos/blender/arsenal")`, `Solido3D("<id>")` e `.mobject(cena=self, altura=..., centro=..., periodo=...)`. Formato curto: `config` vertical 540×960; longo: horizontal (`template/config_horizontal.py`); o cache é por resolução.
+4. Preparar as sequências **antes** do render: `python experimentos/blender/arsenal/ponte.py <id> --res LxA` (preview e final são sequências diferentes). Para outro estado do sólido, `--set nome=valor` (valores nos parâmetros da ficha).
+5. Preview 540×960 (curto) ou 960×540 (longo), 15 fps: conferir quadros com o sólido, o texto e a safe area; FadeIn/FadeOut e pausa funcionam (ver `exemplo_manim.py`).
+6. Fechar com o relatório "Teste do arsenal" de `docs/formatos.md`. O que faltar vira ajuste no arsenal (sólido, parâmetro ou ficha), sem mexer em outros vídeos.
 
 ## Status das fichas
 

@@ -153,6 +153,16 @@ sólido servir, proponha-o no `solido_3d:` como candidato de teste; depois da pr
 funcionou (legibilidade, peso do render, o que faltou) para ajustarmos o arsenal. Para ver qualquer sólido antes de
 decidir, dê dois cliques em `experimentos/blender/arsenal/abrir/<id>.bat` (abre no Blender, em loop).
 
+*Para quem escreve o briefing (chat de Produção ou outra IA):* consulte `experimentos/blender/arsenal/indice_producao.md` (índice enxuto, uma linha por sólido, gerado das fichas). Ao definir o vídeo, preencha `solido_3d:` com um `id` aprovado
+(consultando `catalogo.md`/`cobertura.md`) ou `nenhum` + motivo, e diga **o que o 3D deve mostrar e onde entra no storyboard**
+(o 3D só dá a geometria; valores, fórmulas, rótulos e setas de sentido são do Manim). Quem implementa avalia o encaixe e integra
+via `Solido3D` (checklist no `README.md` do arsenal).
+
+*Relatório "Teste do arsenal" (ao fechar o vídeo, na ficha ou no relatório de entrega):* sólido(s) e `id`; resolução e se o cache
+foi preparado com `ponte.py`; custo de render e peso das sequências; legibilidade nos formatos (vertical ou horizontal, preview e
+final); o que funcionou; o que faltou ou incomodou (ajuste desejado no sólido, parâmetro novo, sólido ausente); veredito
+(encaixou / encaixou com ajustes / não encaixou).
+
 ## Comandos
 
 ```powershell
