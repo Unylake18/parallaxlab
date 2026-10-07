@@ -22,7 +22,7 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 | `cilindro_coaxial` | Cilindro coaxial (condutor maciço + casca externa, em corte) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `cilindro_macico_isolante` | Cilindro maciço isolante com cargas no volume | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `cilindro_rolando` | Cilindro rolando sem deslizar | aprovado | mecanica/rolamento, mecanica/momento_de_inercia |
-| `colisao_1d` | Colisão unidimensional entre dois blocos | estudo | mecanica/colisoes |
+| `colisao_1d` | Colisão unidimensional entre dois blocos | aprovado | mecanica/colisoes |
 | `disco_carregado` | Disco carregado | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
 | `esfera_macica_isolante` | Esfera maciça isolante com cargas no volume | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `esfera_rolando` | Esfera rolando sem deslizar | aprovado | mecanica/rolamento, mecanica/momento_de_inercia |
@@ -33,11 +33,11 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 | `gradiente_colina` | Gradiente numa colina (curvas de nível) | aprovado | calculo/gradiente, calculo/funcoes_de_varias_variaveis |
 | `haste_carregada` | Haste carregada | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
 | `lente_delgada` | Lente delgada (biconvexa ou biconcava) | aprovado | otica/otica_geometrica |
-| `massa_mola` | Sistema massa-mola horizontal (MHS) | estudo | fisica2/mhs |
-| `onda_corda` | Onda numa corda (progressiva e estacionária) | estudo | fisica2/ondas_mecanicas, fisica2/ondas_estacionarias |
-| `ondas_duas_fontes` | Ondas na superfície com duas fontes (interferência) | estudo | fisica2/superposicao_e_interferencia, otica/interferencia |
-| `orbita_kepleriana` | Órbita kepleriana com setores de áreas iguais | estudo | mecanica/gravitacao |
-| `pendulo_simples` | Pêndulo simples (pequenas oscilações) | estudo | fisica2/mhs |
+| `massa_mola` | Sistema massa-mola horizontal (MHS) | aprovado | fisica2/mhs |
+| `onda_corda` | Onda numa corda (progressiva e estacionária) | aprovado | fisica2/ondas_mecanicas, fisica2/ondas_estacionarias |
+| `ondas_duas_fontes` | Ondas na superfície com duas fontes (interferência) | aprovado | fisica2/superposicao_e_interferencia, otica/interferencia |
+| `orbita_kepleriana` | Órbita kepleriana com setores de áreas iguais | aprovado | mecanica/gravitacao |
+| `pendulo_simples` | Pêndulo simples (pequenas oscilações) | aprovado | fisica2/mhs |
 | `placa_infinita_carregada` | Placa infinita carregada (plano com cargas na superfície) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `poco_gravitacional` | Poço gravitacional (potencial) | aprovado | mecanica/gravitacao |
 | `prisma_triangular` | Prisma triangular | aprovado | otica/otica_geometrica |
@@ -794,7 +794,7 @@ Ficha: `solidos/cilindro_rolando.json`
 
 ### `colisao_1d` — Colisão unidimensional entre dois blocos
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Dois blocos de vidro sobre um trilho (bloco 1 azul, bloco 2 azul-claro; o tamanho cresce com a massa) que colidem em x = 0 no instante `instante`. `restituicao` e = 1 elástica, e = 0 totalmente inelástica (grudam). Uma esfera neutra marca o centro de massa, que não muda de velocidade. Animação de CICLO ÚNICO (a fase 1 é o estado final, diferente da fase 0).
 
@@ -1383,7 +1383,7 @@ Ficha: `solidos/lente_delgada.json`
 
 ### `massa_mola` — Sistema massa-mola horizontal (MHS)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Bloco de vidro azul preso a uma mola helicoidal (fio azul) na parede, sobre um trilho, com três marcas violeta tracejadas: equilíbrio e os extremos ±A. Com `movimento=1` o bloco oscila x = x_eq + A cos(2π fase) e a mola se comprime e se estica.
 
@@ -1437,7 +1437,7 @@ Ficha: `solidos/massa_mola.json`
 
 ### `onda_corda` — Onda numa corda (progressiva e estacionária)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Corda como curva azul-claro y(x, t) com contas neutras que só sobem e descem. `tipo` = progressiva (y = A sen(kx − 2π fase), anda para +X) ou estacionaria (y = A sen(kx) cos(2π fase), extremos fixos, com nós em violeta e envoltória pontilhada violeta).
 
@@ -1490,7 +1490,7 @@ Ficha: `solidos/onda_corda.json`
 
 ### `ondas_duas_fontes` — Ondas na superfície com duas fontes (interferência)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Superfície de vidro azul com malha azul-claro e duas fontes neutras (esferas brancas) que emitem ondas circulares coerentes; a altura é a soma das duas, amortecida até zero na borda. Com `movimento=1` as ondas se propagam (fase = um período).
 
@@ -1542,7 +1542,7 @@ Ficha: `solidos/ondas_duas_fontes.json`
 
 ### `orbita_kepleriana` — Órbita kepleriana com setores de áreas iguais
 
-**Status:** estudo · Corpo central ajustado com degradê a pedido do usuário; aguardando nova aprovação da aparência.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Órbita elíptica num plano: corpo central branco no foco, corpo orbitante azul-claro, trajetória tracejada violeta, vetor posição e `setores` fatias violeta translúcidas varridas em intervalos de tempo iguais (fração `fracao_setor` do período). Com `movimento=1` o corpo percorre a órbita (fase = um período, velocidade de Kepler).
 
@@ -1595,7 +1595,7 @@ Ficha: `solidos/orbita_kepleriana.json`
 
 ### `pendulo_simples` — Pêndulo simples (pequenas oscilações)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Pêndulo no plano XZ: suporte de vidro, fio azul-claro, massa esférica com degradê, arco tracejado violeta entre ±θ0 e a vertical de referência. Com `movimento=1` θ(t) = θ0 cos(2π fase) (aproximação de pequenas oscilações, MHS).
 
