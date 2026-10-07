@@ -145,6 +145,14 @@ ver abaixo) · possíveis derivados curtos (opcional).
 `nenhum`, com uma linha de justificativa pelos critérios "usar quando / não usar quando" da ficha do
 sólido. Registrar o campo não autoriza integrar: a integração com o Manim exige handoff explícito.
 
+**Arsenal 3D: funcionalidade nova, a testar nos próximos vídeos.** Desde 2026-10-07 o arsenal tem 88 sólidos
+aprovados (Lei de Gauss, eletromagnetismo, mecânica, fluidos, óptica, física moderna, cálculo, álgebra linear e
+EDP), vários com movimento (loop ou ciclo único), e a ponte `Solido3D` para o Manim (sandbox, ainda não usada em
+vídeo). Nos próximos vídeos **curtos e longos**, ao planejar, confira o `catalogo.md`/`cobertura.md` e, quando um
+sólido servir, proponha-o no `solido_3d:` como candidato de teste; depois da produção, anote na ficha se o encaixe
+funcionou (legibilidade, peso do render, o que faltou) para ajustarmos o arsenal. Para ver qualquer sólido antes de
+decidir, dê dois cliques em `experimentos/blender/arsenal/abrir/<id>.bat` (abre no Blender, em loop).
+
 ## Comandos
 
 ```powershell
