@@ -1,0 +1,69 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "eletromagnetismo/condutores_e_capacitores"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/eletro_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "condutor_com_cavidade",
+  "nome": "Condutor com cavidade e cargas induzidas",
+  "descricao": "Casca condutora esférica (com um octante removido para ver dentro) com uma cavidade concêntrica contendo uma carga + no centro: cargas induzidas − na parede da cavidade e + na superfície externa, todas com sinal esculpido. No equilíbrio eletrostático o campo dentro do material do condutor é zero (leitura do Manim).",
+  "leitura_visual": "Uma esfera aberta com um + no centro, vários − dentro da parede da cavidade e vários + por fora: lê-se como indução eletrostática.",
+  "usar_quando": [
+    "condutores em equilíbrio, cavidades e a carga induzida (−q na cavidade, +q fora)",
+    "blindagem e a gaiola de Faraday",
+    "aplicação da Lei de Gauss com um condutor"
+  ],
+  "nao_usar_quando": [
+    "cavidades não concêntricas (o arranjo uniforme da carga induzida seria distorcido)",
+    "condutores sem cavidade (use casca_esferica_oca)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, vetores físicos = branco, construções = violeta, sinal da carga esculpido",
+    "as cargas induzidas são pontos numa distribuição de Fibonacci: a densidade real não é pontual",
+    "as cargas das regiões removidas pelo corte não aparecem, então a contagem visível é menor que a nominal",
+    "só a cavidade concêntrica"
+  ],
+  "construtor": "condutor_com_cavidade",
+  "parametros": {
+    "raio_externo": {
+      "valor": 1.9,
+      "unidade": "u",
+      "descricao": "raio externo b"
+    },
+    "raio_cavidade": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "raio da cavidade a"
+    },
+    "n_cargas": {
+      "valor": 14,
+      "unidade": "n",
+      "descricao": "cargas induzidas na cavidade (a externa tem n + 4)"
+    },
+    "raio_carga": {
+      "valor": 0.14,
+      "unidade": "u",
+      "descricao": "raio das cargas induzidas"
+    },
+    "corte": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "remove o octante voltado para a câmera"
+    }
+  },
+  "enquadramento": {
+    "azimute": -28,
+    "elevacao": 20,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/condutor_com_cavidade.png"
+}

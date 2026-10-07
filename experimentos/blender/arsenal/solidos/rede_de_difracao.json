@@ -1,0 +1,74 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "otica/difracao",
+    "otica/interferencia"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/otica_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "estático: não cronometrado (um quadro, ordem de 1 s)"
+  },
+  "id": "rede_de_difracao",
+  "nome": "Rede de difração",
+  "descricao": "Anteparo opaco azul com `n_fendas` fendas verticais de largura `fenda` e período `separacao`, com as bordas em azul-claro: a generalização do anteparo_fenda_dupla. O padrão de difração é desenhado pelo Manim.",
+  "leitura_visual": "Uma placa com várias frestas verticais regularmente espaçadas: lê-se como rede de difração (ou fenda múltipla).",
+  "usar_quando": [
+    "rede de difração e a condição d sen θ = m λ",
+    "fenda dupla (n_fendas = 2) e fenda múltipla",
+    "resolução de uma rede com mais fendas"
+  ],
+  "nao_usar_quando": [
+    "fenda simples (use n_fendas = 1)",
+    "o padrão em si (do Manim)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, rótulos (n, θ, λ, ...) e o padrão de franjas/difração são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): raios de luz = branco, campo E = ciano, objetos transparentes = vidro azul-claro, construções = violeta tracejado",
+    "só o anteparo: a luz, os máximos e a intensidade ficam por conta do Manim",
+    "as fendas são retângulos (sem rugosidade ou profundidade real)"
+  ],
+  "construtor": "rede_de_difracao",
+  "parametros": {
+    "n_fendas": {
+      "valor": 5,
+      "unidade": "n",
+      "descricao": "número de fendas"
+    },
+    "largura": {
+      "valor": 4.0,
+      "unidade": "u",
+      "descricao": "largura do anteparo"
+    },
+    "altura": {
+      "valor": 3.0,
+      "unidade": "u",
+      "descricao": "altura do anteparo"
+    },
+    "espessura": {
+      "valor": 0.12,
+      "unidade": "u",
+      "descricao": "espessura do anteparo"
+    },
+    "fenda": {
+      "valor": 0.16,
+      "unidade": "u",
+      "descricao": "largura de cada fenda"
+    },
+    "separacao": {
+      "valor": 0.5,
+      "unidade": "u",
+      "descricao": "período (distância entre fendas)"
+    }
+  },
+  "enquadramento": {
+    "azimute": -30,
+    "elevacao": 14,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/rede_de_difracao.png"
+}

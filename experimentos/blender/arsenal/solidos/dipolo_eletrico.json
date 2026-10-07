@@ -1,0 +1,97 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "eletromagnetismo/campo_eletrico"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/eletro_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "dipolo_eletrico",
+  "nome": "Dipolo elétrico e seu campo",
+  "descricao": "Duas cargas de sinal esculpido (+q e −q) e o campo E (setas ciano numa grade no plano da figura, calculado por superposição), com o momento de dipolo p (branco, de − para +). Com movimento o dipolo gira uma volta em torno de Z e o campo acompanha.",
+  "leitura_visual": "Um par + e − com setas ciano saindo de uma e chegando na outra, desenhando o padrão do dipolo: lê-se como campo de dipolo e momento p.",
+  "usar_quando": [
+    "campo de um dipolo (linhas saindo de + e chegando em −)",
+    "momento de dipolo p = q d e o torque num campo uniforme (use com a espira)",
+    "campo no eixo e na mediatriz"
+  ],
+  "nao_usar_quando": [
+    "distribuições contínuas (use anel, disco e haste)",
+    "campo tridimensional completo (a grade está num plano)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, vetores físicos = branco, construções = violeta, sinal da carga esculpido",
+    "o campo é desenhado numa grade plana (z = 0) com comprimento saturante (não proporcional ao módulo)",
+    "as setas perto das cargas (a menos de 0,65) ficam ocultas"
+  ],
+  "construtor": "dipolo_eletrico",
+  "parametros": {
+    "distancia": {
+      "valor": 1.8,
+      "unidade": "u",
+      "descricao": "distância entre as cargas"
+    },
+    "n_grade": {
+      "valor": 8,
+      "unidade": "n",
+      "descricao": "setas por lado da grade"
+    },
+    "extensao": {
+      "valor": 2.7,
+      "unidade": "u",
+      "descricao": "meia largura da grade"
+    },
+    "raio": {
+      "valor": 0.3,
+      "unidade": "u",
+      "descricao": "raio das cargas"
+    },
+    "angulo_graus": {
+      "valor": 0.0,
+      "unidade": "graus",
+      "descricao": "orientação do dipolo (sem movimento)"
+    },
+    "momento": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "seta do momento p"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -30,
+    "elevacao": 48,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/dipolo_eletrico.png",
+  "animacao": {
+    "tipo": "rotacao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.43,
+    "peso_mb_por_frame": 0.67,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.12"
+  ]
+}

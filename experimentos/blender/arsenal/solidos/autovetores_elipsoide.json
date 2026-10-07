@@ -1,0 +1,103 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "algebra_linear/autovalores_e_autovetores"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/calculo_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "autovetores_elipsoide",
+  "nome": "Autovetores e elipsoide de uma matriz simétrica",
+  "descricao": "Esfera unitária (três círculos máximos violeta, parados) e a sua imagem por uma matriz simétrica A = Q Λ Qᵀ: um elipsoide (vidro azul) cujos semi-eixos têm comprimento |λ| e estão ao longo dos autovetores (setas brancas e eixos tracejados). Com movimento o elipsoide sai da esfera, chega a A e volta (loop).",
+  "leitura_visual": "Uma esfera tracejada que se estica num elipsoide inclinado, com três setas brancas ao longo dos eixos: lê-se como autovalores e autovetores.",
+  "usar_quando": [
+    "autovetores como direções que só são esticadas",
+    "teorema espectral: eixos ortogonais da matriz simétrica",
+    "formas quadráticas e quádricas (superficie_quadrica)"
+  ],
+  "nao_usar_quando": [
+    "matrizes não simétricas (eixos oblíquos ou complexos)",
+    "autovalores negativos (o elipsoide ignora o sinal)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, matrizes, resultados e rótulos são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): superfícies = vidro azul, curvas = azul-claro, construções = violeta, vetores = branco, normal e ∇g = azul, campo = ciano",
+    "só matrizes simétricas definidas por (λ1, λ2, λ3) e os ângulos de Q",
+    "os semi-eixos são |λ|: o sinal do autovalor não aparece (as setas de comprimento λ inverteriam)",
+    "a escala é visual"
+  ],
+  "construtor": "autovetores_elipsoide",
+  "parametros": {
+    "lambda1": {
+      "valor": 2.0,
+      "unidade": "n",
+      "descricao": "autovalor 1"
+    },
+    "lambda2": {
+      "valor": 1.25,
+      "unidade": "n",
+      "descricao": "autovalor 2"
+    },
+    "lambda3": {
+      "valor": 0.6,
+      "unidade": "n",
+      "descricao": "autovalor 3"
+    },
+    "angulo_z": {
+      "valor": 35.0,
+      "unidade": "graus",
+      "descricao": "rotação de Q em torno de Z"
+    },
+    "angulo_x": {
+      "valor": 25.0,
+      "unidade": "graus",
+      "descricao": "rotação de Q em torno de X"
+    },
+    "escala": {
+      "valor": 1.0,
+      "unidade": "x",
+      "descricao": "escala do desenho"
+    },
+    "intensidade": {
+      "valor": 1.0,
+      "unidade": "0-1",
+      "descricao": "fração da esfera ao elipsoide (sem movimento)"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -40,
+    "elevacao": 25,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/autovetores_elipsoide.png",
+  "animacao": {
+    "tipo": "deformacao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.74,
+    "peso_mb_por_frame": 0.74,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.5"
+  ]
+}

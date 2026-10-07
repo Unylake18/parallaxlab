@@ -1,0 +1,99 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "mecanica/movimento_circular",
+    "mecanica/energia_potencial"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/mecanica_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "trilho_looping",
+  "nome": "Looping (pista com laço vertical)",
+  "descricao": "Pista de vidro com uma rampa, uma concordância suave e um laço vertical (a pista se desloca lateralmente para não se cruzar). A bola parte do repouso na altura h0 (linha tracejada violeta) e a velocidade vem da energia, v = √(2 g (h0 − z)). Ciclo único.",
+  "leitura_visual": "Uma bola descendo uma rampa, subindo o laço e saindo: lê-se como energia potencial virando cinética, e a condição para completar o looping.",
+  "usar_quando": [
+    "looping e a altura mínima h0 ≥ 2,5 R",
+    "conservação da energia mecânica numa pista",
+    "condições de contato (a normal no topo)"
+  ],
+  "nao_usar_quando": [
+    "rolamento com rotação (a bola aqui desliza sem atrito)",
+    "pistas que não sejam laço"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): vetores físicos = branco, construções = violeta tracejado, corpos = vidro azul",
+    "a bola desliza sem atrito e sem rotação (g = 1 nas unidades do sólido): a velocidade é qualitativa",
+    "o deslocamento lateral do laço é uma convenção de desenho"
+  ],
+  "construtor": "trilho_looping",
+  "parametros": {
+    "raio_loop": {
+      "valor": 1.4,
+      "unidade": "u",
+      "descricao": "raio do laço"
+    },
+    "altura_inicial": {
+      "valor": 0.0,
+      "unidade": "u",
+      "descricao": "altura h0 (0 = automática: 3,2 R)"
+    },
+    "largura": {
+      "valor": 0.9,
+      "unidade": "u",
+      "descricao": "largura da pista"
+    },
+    "deslocamento_y": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "deslocamento lateral do laço"
+    },
+    "raio_bola": {
+      "valor": 0.16,
+      "unidade": "u",
+      "descricao": "raio da bola"
+    },
+    "linha_energia": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "linha do nível h0"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -80,
+    "elevacao": 12,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/trilho_looping.png",
+  "animacao": {
+    "tipo": "descida",
+    "liga": "movimento",
+    "ciclo": "unico",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "ciclo único: a bola desce, faz o laço e sai; a fase 1 NÃO repete a fase 0",
+    "custo_1080p_s_por_frame": 0.72,
+    "peso_mb_por_frame": 0.71,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.5"
+  ]
+}

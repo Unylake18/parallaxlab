@@ -46,7 +46,7 @@ def carregar():
     return fichas, erros
 
 
-CODIGO = ["../casca_oca.py", "../cilindro_macico.py", "../orbita_alpha.py", "construtores.py", "renderizar.py"]
+CODIGO = sorted(f"../{p.name}" for p in AQUI.parent.glob("*.py")) + ["construtores.py", "renderizar.py", "animar.py", "abrir_no_blender.py"]
 
 
 def validar_estilo():

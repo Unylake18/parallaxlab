@@ -1,0 +1,94 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "fisica4/estrutura_atomica"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/otica_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "atomo_bohr",
+  "nome": "Átomo de Bohr: salto e fóton",
+  "descricao": "Núcleo (esfera), órbitas tracejadas (violeta) de raio ∝ n² e um elétron. No instante `instante` o elétron salta de n_inicial para n_final (com uma transição suave) e emite um fóton (esfera com uma onda atrás) que se afasta na direção do salto. Ciclo único.",
+  "leitura_visual": "Órbitas concêntricas tracejadas, um ponto que muda de órbita e um pequeno pulso ondulado que sai: lê-se como salto quântico com emissão de fóton.",
+  "usar_quando": [
+    "modelo de Bohr e os níveis de energia",
+    "emissão e absorção de fótons: E_fóton = E_ni − E_nf",
+    "série de Balmer (nf = 2)"
+  ],
+  "nao_usar_quando": [
+    "orbitais e a nuvem de probabilidade (use orbital_atomico)",
+    "mais de um elétron"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, rótulos (n, θ, λ, ...) e o padrão de franjas/difração são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): raios de luz = branco, campo E = ciano, objetos transparentes = vidro azul-claro, construções = violeta tracejado",
+    "as órbitas são de raio ∝ n² (a mesma lei do modelo de Bohr), mas o tamanho é visual",
+    "o elétron gira com velocidade angular constante (sem a lei de v ∝ 1/n)",
+    "a energia, os valores e as séries são do Manim"
+  ],
+  "construtor": "atomo_bohr",
+  "parametros": {
+    "n_inicial": {
+      "valor": 3,
+      "unidade": "n",
+      "descricao": "órbita inicial"
+    },
+    "n_final": {
+      "valor": 2,
+      "unidade": "n",
+      "descricao": "órbita final"
+    },
+    "escala": {
+      "valor": 0.55,
+      "unidade": "u",
+      "descricao": "raio da primeira órbita"
+    },
+    "instante": {
+      "valor": 0.5,
+      "unidade": "0-1",
+      "descricao": "fase em que ocorre o salto"
+    },
+    "voltas": {
+      "valor": 2,
+      "unidade": "n",
+      "descricao": "voltas do elétron no ciclo"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -20,
+    "elevacao": 52,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/atomo_bohr.png",
+  "animacao": {
+    "tipo": "salto",
+    "liga": "movimento",
+    "ciclo": "unico",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "ciclo único: o elétron orbita, salta e o fóton sai; a fase 1 NÃO repete a fase 0",
+    "custo_1080p_s_por_frame": 0.4,
+    "peso_mb_por_frame": 0.57,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.62"
+  ]
+}

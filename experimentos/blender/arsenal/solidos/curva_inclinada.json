@@ -1,0 +1,87 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "mecanica/movimento_circular"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/mecanica_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "curva_inclinada",
+  "nome": "Curva inclinada (pista com inclinação)",
+  "descricao": "Pista circular inclinada para dentro (vidro azul) com um carro de vidro, sem atrito: peso (para baixo), normal (perpendicular à pista) e resultante centrípeta (horizontal, para o centro), setas brancas, com N cos θ = P e N sen θ = P tan θ · cos θ. fase 0 a 1 = uma volta.",
+  "leitura_visual": "Um carro numa pista inclinada com três setas brancas: lê-se como a componente horizontal da normal sendo a força centrípeta.",
+  "usar_quando": [
+    "curvas inclinadas sem atrito e a velocidade ideal v² = g R tan θ",
+    "decomposição da normal em vertical e horizontal",
+    "contraste com a curva plana (atrito como força centrípeta)"
+  ],
+  "nao_usar_quando": [
+    "curvas com atrito estático (este modelo é sem atrito)",
+    "pistas com perfil variável"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): vetores físicos = branco, construções = violeta tracejado, corpos = vidro azul",
+    "a inclinação é fixa ao longo da volta e o carro é um bloco, sem rodas",
+    "os módulos das setas seguem as relações geométricas (P = 1,6), não unidades físicas"
+  ],
+  "construtor": "curva_inclinada",
+  "parametros": {
+    "raio": {
+      "valor": 2.6,
+      "unidade": "u",
+      "descricao": "raio da pista"
+    },
+    "angulo_graus": {
+      "valor": 22.0,
+      "unidade": "graus",
+      "descricao": "inclinação θ"
+    },
+    "semi_largura": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "meia largura da pista"
+    },
+    "vetores": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "peso, normal e resultante"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 28,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/curva_inclinada.png",
+  "animacao": {
+    "tipo": "percurso",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.73,
+    "peso_mb_por_frame": 0.75,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.1"
+  ]
+}

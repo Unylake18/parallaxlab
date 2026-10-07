@@ -1,0 +1,103 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "calculo/campos_vetoriais"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/calculo_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "divergencia_local",
+  "nome": "Divergência local (cubo elementar)",
+  "descricao": "Cubo elementar (violeta, arestas tracejadas) num campo vetorial (ciano). Em cada uma das seis faces uma seta sai do centro da face com o campo ali: no campo radial as setas das faces de fora são maiores que as de dentro (divergência positiva); no rotacional elas se compensam (divergência nula). Com movimento o cubo vai e volta ao longo de X.",
+  "leitura_visual": "Uma caixinha violeta num campo de setas ciano, com uma seta saindo de cada face: lê-se como fluxo líquido e divergência.",
+  "usar_quando": [
+    "divergência como fluxo líquido por unidade de volume",
+    "fonte, sumidouro e campo solenoidal",
+    "ponte para o teorema de Gauss (gaussiana_caixa)"
+  ],
+  "nao_usar_quando": [
+    "a definição formal de limite (o cubo é de tamanho fixo)",
+    "campos que dependem do tempo"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, matrizes, resultados e rótulos são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): superfícies = vidro azul, curvas = azul-claro, construções = violeta, vetores = branco, normal e ∇g = azul, campo = ciano",
+    "as setas das faces mostram o campo (não o fluxo F · n): a componente normal é para o Manim",
+    "o campo de fundo é uma grade esparsa (4×4×4) e sua escala é visual",
+    "os campos disponíveis são radial, rotacional, sela e uniforme"
+  ],
+  "construtor": "divergencia_local",
+  "parametros": {
+    "campo": {
+      "valor": "radial",
+      "unidade": "texto",
+      "descricao": "radial, rotacional, sela ou uniforme"
+    },
+    "lado": {
+      "valor": 1.5,
+      "unidade": "u",
+      "descricao": "aresta do cubo elementar"
+    },
+    "px": {
+      "valor": 1.1,
+      "unidade": "u",
+      "descricao": "posição do centro, x"
+    },
+    "py": {
+      "valor": 0.5,
+      "unidade": "u",
+      "descricao": "posição do centro, y"
+    },
+    "pz": {
+      "valor": 0.0,
+      "unidade": "u",
+      "descricao": "posição do centro, z"
+    },
+    "n_fundo": {
+      "valor": 4,
+      "unidade": "n",
+      "descricao": "grade do campo de fundo (0 = sem fundo)"
+    },
+    "extensao": {
+      "valor": 2.4,
+      "unidade": "u",
+      "descricao": "meia largura do campo"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 28,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/divergencia_local.png",
+  "animacao": {
+    "tipo": "translacao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.6,
+    "peso_mb_por_frame": 0.74,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.25"
+  ]
+}

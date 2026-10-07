@@ -6,7 +6,7 @@ Rodar (sem abrir a interface), a partir da raiz do repositório:
 Gera out/gaussiana_esfera_v1.png, gaussiana_cilindro_v1.png e gaussiana_caixa_v1.png: cada superfície sobre uma
 fonte aprovada do arsenal, para validar a leitura do violeta tracejado sobre o vidro azul.
 
-Gramática (arsenal/estilo.json): superfície gaussiana = violeta #9C8CFF, TRACEJADA ou translúcida, nunca sólida.
+Gramática (arsenal/estilo.json): superfície gaussiana = violeta, TRACEJADA ou translúcida, nunca sólida.
 Traço contínuo = parte que contribui ao fluxo; tracejado = parte que não contribui / só construção.
 """
 

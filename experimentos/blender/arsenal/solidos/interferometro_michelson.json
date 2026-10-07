@@ -1,0 +1,84 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "otica/interferencia",
+    "fisica4/relatividade_especial"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/otica_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "interferometro_michelson",
+  "nome": "Interferômetro de Michelson",
+  "descricao": "Fonte (esfera branca), divisor de feixe a 45° (vidro), dois espelhos (um deles móvel) e um detector (disco) cujo brilho segue cos²(2π · 2Δ/λ), Δ = diferença dos braços. Os feixes são brancos. Com movimento o espelho 2 vai e volta e o detector pisca (franjas).",
+  "leitura_visual": "Uma cruz de feixes com um espelho em cada ponta e um disco no fim que acende e apaga: lê-se como interferômetro de Michelson.",
+  "usar_quando": [
+    "interferência por divisão de amplitude",
+    "medida de comprimentos de onda e do comprimento de coerência",
+    "experimento de Michelson-Morley (relatividade)"
+  ],
+  "nao_usar_quando": [
+    "difração e fendas",
+    "franjas circulares (o detector é um ponto)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, rótulos (n, θ, λ, ...) e o padrão de franjas/difração são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): raios de luz = branco, campo E = ciano, objetos transparentes = vidro azul-claro, construções = violeta tracejado",
+    "o detector pisca no centro: o padrão de franjas circulares é do Manim",
+    "o amplitude do espelho (0,34) é uma fração visual do comprimento de onda λ = 0,32",
+    "feixes sem espessura física"
+  ],
+  "construtor": "interferometro_michelson",
+  "parametros": {
+    "braco": {
+      "valor": 2.4,
+      "unidade": "u",
+      "descricao": "comprimento dos braços"
+    },
+    "lambda": {
+      "valor": 0.32,
+      "unidade": "u",
+      "descricao": "comprimento de onda visual"
+    },
+    "amplitude": {
+      "valor": 0.34,
+      "unidade": "u",
+      "descricao": "curso do espelho 2 com movimento"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -60,
+    "elevacao": 40,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/interferometro_michelson.png",
+  "animacao": {
+    "tipo": "interferencia",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.57,
+    "peso_mb_por_frame": 0.59,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.25"
+  ]
+}

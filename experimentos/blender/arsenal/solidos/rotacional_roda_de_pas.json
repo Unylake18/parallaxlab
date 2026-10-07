@@ -1,0 +1,88 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "calculo/campos_vetoriais"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/calculo_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "rotacional_roda_de_pas",
+  "nome": "Rotacional local (roda de pás)",
+  "descricao": "Roda de pás (duas placas em cruz, com uma ponta marcada em branco) sobre o plano z = 0 num campo de setas ciano. `campo`: rotacional (a roda gira no sentido anti-horário), cisalhamento (gira no horário) ou irrotacional (campo ∝ r/r²: não gira). Com movimento a roda dá uma volta (loop), no sentido do rotacional; a rapidez é visual.",
+  "leitura_visual": "Uma cruz azul no centro de um redemoinho de setas ciano, girando com ele (ou parada, se não há rotação): lê-se como rotacional.",
+  "usar_quando": [
+    "rotacional como tendência a girar (roda de pás)",
+    "campos com e sem rotacional",
+    "ponte para o teorema de Stokes (teorema_stokes)"
+  ],
+  "nao_usar_quando": [
+    "rotacional em 3D com os três componentes (o campo é plano)",
+    "valores do rotacional (são do Manim)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, matrizes, resultados e rótulos são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): superfícies = vidro azul, curvas = azul-claro, construções = violeta, vetores = branco, normal e ∇g = azul, campo = ciano",
+    "a rapidez da roda é a mesma em todos os campos (uma volta por ciclo): só o sentido é o do rotacional",
+    "o campo é plano e a roda gira só em torno de Z",
+    "a roda não é arrastada pelo campo (fica na origem)"
+  ],
+  "construtor": "rotacional_roda_de_pas",
+  "parametros": {
+    "campo": {
+      "valor": "rotacional",
+      "unidade": "texto",
+      "descricao": "rotacional, cisalhamento ou irrotacional"
+    },
+    "n_campo": {
+      "valor": 7,
+      "unidade": "n",
+      "descricao": "setas por lado"
+    },
+    "extensao": {
+      "valor": 2.8,
+      "unidade": "u",
+      "descricao": "meia largura do campo"
+    },
+    "angulo_graus": {
+      "valor": 0.0,
+      "unidade": "graus",
+      "descricao": "ângulo da roda (sem movimento)"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -25,
+    "elevacao": 50,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/rotacional_roda_de_pas.png",
+  "animacao": {
+    "tipo": "rotacao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.41,
+    "peso_mb_por_frame": 0.66,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.1"
+  ]
+}

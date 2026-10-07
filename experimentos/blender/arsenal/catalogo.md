@@ -13,25 +13,37 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 | `anel_carregado` | Anel carregado (aro) | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
 | `anteparo_fenda_dupla` | Anteparo de fenda dupla | aprovado | otica/interferencia, otica/difracao |
 | `aro_rolando` | Aro rolando sem deslizar | aprovado | mecanica/rolamento, mecanica/momento_de_inercia |
+| `atomo_bohr` | Átomo de Bohr: salto e fóton | aprovado | fisica4/estrutura_atomica |
+| `autovetores_elipsoide` | Autovetores e elipsoide de uma matriz simétrica | aprovado | algebra_linear/autovalores_e_autovetores |
 | `barra_trilhos_fem_movimento` | Barra em trilhos num campo B (fem de movimento) | aprovado | eletromagnetismo/inducao_eletromagnetica |
 | `biot_savart_espira` | Biot–Savart numa espira | aprovado | eletromagnetismo/biot_savart |
 | `caixa_gas_cinetica` | Gás ideal em recipiente com êmbolo (teoria cinética) | aprovado | termodinamica/teoria_cinetica, termodinamica/processos_em_gases |
 | `campo_vetorial` | Campo vetorial (setas) | aprovado | calculo/campos_vetoriais, eletromagnetismo/campo_eletrico |
 | `capacitor_esferico` | Capacitor esférico (esferas concêntricas, em corte) | aprovado | eletromagnetismo/condutores_e_capacitores |
 | `capacitor_placas_paralelas` | Capacitor de placas paralelas | aprovado | eletromagnetismo/condutores_e_capacitores |
+| `cargas_pontuais` | Cargas pontuais e forças de Coulomb | aprovado | eletromagnetismo/lei_de_coulomb |
 | `casca_cilindrica_oca` | Casca cilíndrica oca | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `casca_esferica_oca` | Casca esférica oca (com corte em octante) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `cilindro_coaxial` | Cilindro coaxial (condutor maciço + casca externa, em corte) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `cilindro_macico_isolante` | Cilindro maciço isolante com cargas no volume | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `cilindro_rolando` | Cilindro rolando sem deslizar | aprovado | mecanica/rolamento, mecanica/momento_de_inercia |
 | `colisao_1d` | Colisão unidimensional entre dois blocos | aprovado | mecanica/colisoes |
+| `colisao_2d` | Colisão elástica em 2D | aprovado | mecanica/colisoes |
+| `condutor_com_cavidade` | Condutor com cavidade e cargas induzidas | aprovado | eletromagnetismo/condutores_e_capacitores |
 | `cone_de_luz` | Cone de luz no espaço-tempo | aprovado | fisica4/relatividade_especial |
+| `curva_inclinada` | Curva inclinada (pista com inclinação) | aprovado | mecanica/movimento_circular |
+| `dioptro_plano` | Dioptro plano: refração e reflexão interna total | aprovado | otica/otica_geometrica |
+| `dipolo_eletrico` | Dipolo elétrico e seu campo | aprovado | eletromagnetismo/campo_eletrico |
 | `disco_carregado` | Disco carregado | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
+| `divergencia_local` | Divergência local (cubo elementar) | aprovado | calculo/campos_vetoriais |
 | `elemento_volume` | Elemento de volume dV (cartesiano, cilíndrico, esférico) | aprovado | calculo/integrais_triplas, calculo/jacobiano |
 | `equipotenciais` | Superfícies equipotenciais (carga pontual e dipolo) | aprovado | eletromagnetismo/potencial_eletrico |
 | `esfera_macica_isolante` | Esfera maciça isolante com cargas no volume | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `esfera_rolando` | Esfera rolando sem deslizar | aprovado | mecanica/rolamento, mecanica/momento_de_inercia |
+| `espelho_esferico` | Espelho esférico (côncavo e convexo) | aprovado | otica/otica_geometrica |
 | `espira_em_campo_magnetico` | Espira de corrente num campo magnético (torque) | aprovado | eletromagnetismo/forca_magnetica, eletromagnetismo/dipolo_magnetico |
+| `explosao` | Explosão em três fragmentos | aprovado | mecanica/colisoes, mecanica/momento_linear |
+| `filme_fino` | Filme fino e interferência | aprovado | otica/interferencia |
 | `fio_infinito` | Fio infinito (retilíneo) | aprovado | eletromagnetismo/lei_de_ampere |
 | `gaussiana_caixa` | Superfície gaussiana em caixa (pillbox) | aprovado | eletromagnetismo/lei_de_gauss |
 | `gaussiana_cilindrica` | Superfície gaussiana cilíndrica (fechada) | aprovado | eletromagnetismo/lei_de_gauss |
@@ -39,10 +51,16 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 | `giroscopio_precessao` | Giroscópio e precessão | aprovado | mecanica/momento_angular, mecanica/torque |
 | `gradiente_colina` | Gradiente numa colina (curvas de nível) | aprovado | calculo/gradiente, calculo/funcoes_de_varias_variaveis |
 | `haste_carregada` | Haste carregada | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
-| `ima_espira_inducao` | Ímã atravessando uma espira (Faraday e Lenz) | estudo | eletromagnetismo/inducao_eletromagnetica |
+| `ima_espira_inducao` | Ímã atravessando uma espira (Faraday e Lenz) | aprovado | eletromagnetismo/inducao_eletromagnetica |
+| `integral_de_linha` | Integral de linha (trabalho) | aprovado | calculo/integrais_de_linha |
 | `integral_dupla_colunas` | Soma de Riemann dupla (colunas) | aprovado | calculo/integrais_duplas |
+| `interferometro_michelson` | Interferômetro de Michelson | aprovado | otica/interferencia, fisica4/relatividade_especial |
+| `lagrange_restricao` | Multiplicadores de Lagrange | aprovado | calculo/extremos_varias_variaveis |
 | `lente_delgada` | Lente delgada (biconvexa ou biconcava) | aprovado | otica/otica_geometrica |
+| `linhas_de_campo_3d` | Linhas de campo em 3D | aprovado | eletromagnetismo/campo_eletrico |
 | `massa_mola` | Sistema massa-mola horizontal (MHS) | aprovado | fisica2/mhs |
+| `membrana_modos` | Modos de vibração de uma membrana | aprovado | edp/equacao_da_onda |
+| `movimento_circular` | Movimento circular uniforme | aprovado | mecanica/movimento_circular |
 | `onda_corda` | Onda numa corda (progressiva e estacionária) | aprovado | fisica2/ondas_mecanicas, fisica2/ondas_estacionarias |
 | `onda_eletromagnetica` | Onda eletromagnética plana | aprovado | eletromagnetismo/maxwell_e_ondas, fisica4/ondas_eletromagneticas |
 | `ondas_duas_fontes` | Ondas na superfície com duas fontes (interferência) | aprovado | fisica2/superposicao_e_interferencia, otica/interferencia |
@@ -52,19 +70,31 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 | `particula_em_campo_magnetico` | Partícula carregada em campo magnético uniforme | aprovado | eletromagnetismo/forca_magnetica |
 | `pendulo_simples` | Pêndulo simples (pequenas oscilações) | aprovado | fisica2/mhs |
 | `placa_infinita_carregada` | Placa infinita carregada (plano com cargas na superfície) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
+| `plano_e_reta_r3` | Plano e reta em R³ | aprovado | calculo/vetores_r3 |
+| `plano_inclinado` | Plano inclinado com forças | aprovado | mecanica/leis_de_newton, mecanica/atrito |
 | `plano_tangente` | Plano tangente a uma superfície | aprovado | calculo/derivadas_parciais, calculo/linearizacao |
 | `poco_gravitacional` | Poço gravitacional (potencial) | aprovado | mecanica/gravitacao |
+| `polarizador_malus` | Polarizadores e lei de Malus | aprovado | otica/polarizacao, fisica4/ondas_eletromagneticas |
 | `pontos_criticos` | Pontos críticos (máximo, mínimo e sela) | aprovado | calculo/extremos_varias_variaveis |
+| `prensa_hidraulica` | Prensa hidráulica (Pascal) | aprovado | fluidos/fluidos_em_repouso |
 | `prisma_triangular` | Prisma triangular | aprovado | otica/otica_geometrica |
 | `produto_vetorial` | Produto vetorial a × b | aprovado | calculo/vetores_r3, eletromagnetismo/forca_magnetica |
+| `rampa_rolamento` | Corrida de esfera, cilindro e aro numa rampa | aprovado | mecanica/rolamento, mecanica/rotacao |
+| `rede_de_difracao` | Rede de difração | aprovado | otica/difracao, otica/interferencia |
+| `relogio_de_luz` | Relógio de luz e dilatação do tempo | aprovado | fisica4/relatividade_especial |
+| `rotacional_roda_de_pas` | Rotacional local (roda de pás) | aprovado | calculo/campos_vetoriais |
 | `solenoide_corrente` | Solenoide (hélice de fio) | aprovado | eletromagnetismo/lei_de_ampere |
 | `solido_revolucao_arruela` | Sólido de revolução: método das arruelas | aprovado | calculo/volumes_de_revolucao |
 | `solido_revolucao_cascas` | Sólido de revolução: método das cascas | aprovado | calculo/volumes_de_revolucao |
 | `solido_revolucao_disco` | Sólido de revolução: método dos discos | aprovado | calculo/volumes_de_revolucao |
 | `superficie_parametrizada` | Superfície parametrizada com remendo dS | aprovado | calculo/superficies_parametrizadas, calculo/integrais_de_superficie |
 | `superficie_quadrica` | Superfícies quádricas | aprovado | calculo/vetores_r3, calculo/superficies_quadricas |
+| `tanque_hidrostatico` | Tanque com pressão e empuxo | aprovado | fluidos/fluidos_em_repouso |
+| `tanque_torricelli` | Jato de Torricelli | aprovado | fluidos/fluidos_em_movimento |
 | `teorema_stokes` | Teorema de Stokes (hemisfério e contorno) | aprovado | calculo/stokes, eletromagnetismo/lei_de_ampere |
 | `toroide_corrente` | Toroide (fio enrolado em anel) | aprovado | eletromagnetismo/lei_de_ampere |
+| `transformacao_linear_3d` | Transformação linear em R³ | aprovado | algebra_linear/transformacoes_lineares |
+| `trilho_looping` | Looping (pista com laço vertical) | aprovado | mecanica/movimento_circular, mecanica/energia_potencial |
 | `tubo_escoamento` | Tubo com estrangulamento (continuidade) | aprovado | fluidos/fluidos_em_movimento |
 
 ## Padrão visual
@@ -360,6 +390,114 @@ img = Solido3D("aro_rolando").mobject(cena=self, altura=5)   # cargas em loop; i
 ```
 
 Ficha: `solidos/aro_rolando.json`
+
+### `atomo_bohr` — Átomo de Bohr: salto e fóton
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Núcleo (esfera), órbitas tracejadas (violeta) de raio ∝ n² e um elétron. No instante `instante` o elétron salta de n_inicial para n_final (com uma transição suave) e emite um fóton (esfera com uma onda atrás) que se afasta na direção do salto. Ciclo único.
+
+![Átomo de Bohr: salto e fóton](previews/atomo_bohr.png)
+
+**Como se lê:** Órbitas concêntricas tracejadas, um ponto que muda de órbita e um pequeno pulso ondulado que sai: lê-se como salto quântico com emissão de fóton.
+
+**Usar quando**
+- modelo de Bohr e os níveis de energia
+- emissão e absorção de fótons: E_fóton = E_ni − E_nf
+- série de Balmer (nf = 2)
+
+**Não usar quando**
+- orbitais e a nuvem de probabilidade (use orbital_atomico)
+- mais de um elétron
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, rótulos (n, θ, λ, ...) e o padrão de franjas/difração são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): raios de luz = branco, campo E = ciano, objetos transparentes = vidro azul-claro, construções = violeta tracejado
+- as órbitas são de raio ∝ n² (a mesma lei do modelo de Bohr), mas o tamanho é visual
+- o elétron gira com velocidade angular constante (sem a lei de v ∝ 1/n)
+- a energia, os valores e as séries são do Manim
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `n_inicial` | 3 | n | órbita inicial |
+| `n_final` | 2 | n | órbita final |
+| `escala` | 0.55 | u | raio da primeira órbita |
+| `instante` | 0.5 | 0-1 | fase em que ocorre o salto |
+| `voltas` | 2 | n | voltas do elétron no ciclo |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `salto` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.4 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- atomo_bohr --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("atomo_bohr").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/atomo_bohr.json`
+
+### `autovetores_elipsoide` — Autovetores e elipsoide de uma matriz simétrica
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Esfera unitária (três círculos máximos violeta, parados) e a sua imagem por uma matriz simétrica A = Q Λ Qᵀ: um elipsoide (vidro azul) cujos semi-eixos têm comprimento |λ| e estão ao longo dos autovetores (setas brancas e eixos tracejados). Com movimento o elipsoide sai da esfera, chega a A e volta (loop).
+
+![Autovetores e elipsoide de uma matriz simétrica](previews/autovetores_elipsoide.png)
+
+**Como se lê:** Uma esfera tracejada que se estica num elipsoide inclinado, com três setas brancas ao longo dos eixos: lê-se como autovalores e autovetores.
+
+**Usar quando**
+- autovetores como direções que só são esticadas
+- teorema espectral: eixos ortogonais da matriz simétrica
+- formas quadráticas e quádricas (superficie_quadrica)
+
+**Não usar quando**
+- matrizes não simétricas (eixos oblíquos ou complexos)
+- autovalores negativos (o elipsoide ignora o sinal)
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, matrizes, resultados e rótulos são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): superfícies = vidro azul, curvas = azul-claro, construções = violeta, vetores = branco, normal e ∇g = azul, campo = ciano
+- só matrizes simétricas definidas por (λ1, λ2, λ3) e os ângulos de Q
+- os semi-eixos são |λ|: o sinal do autovalor não aparece (as setas de comprimento λ inverteriam)
+- a escala é visual
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `lambda1` | 2.0 | n | autovalor 1 |
+| `lambda2` | 1.25 | n | autovalor 2 |
+| `lambda3` | 0.6 | n | autovalor 3 |
+| `angulo_z` | 35.0 | graus | rotação de Q em torno de Z |
+| `angulo_x` | 25.0 | graus | rotação de Q em torno de X |
+| `escala` | 1.0 | x | escala do desenho |
+| `intensidade` | 1.0 | 0-1 | fração da esfera ao elipsoide (sem movimento) |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `deformacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.74 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- autovetores_elipsoide --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("autovetores_elipsoide").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/autovetores_elipsoide.json`
 
 ### `barra_trilhos_fem_movimento` — Barra em trilhos num campo B (fem de movimento)
 
@@ -660,6 +798,61 @@ img = Solido3D("capacitor_placas_paralelas").mobject(altura=5)   # estático: um
 ```
 
 Ficha: `solidos/capacitor_placas_paralelas.json`
+
+### `cargas_pontuais` — Cargas pontuais e forças de Coulomb
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Duas ou três cargas de sinal esculpido (+ ou −) e as forças de Coulomb sobre cada uma (setas brancas, módulo visual ∝ |F|·d²). Com movimento a carga 2 vai e volta ao longo de X e a força varia com 1/r² (o loop fecha).
+
+![Cargas pontuais e forças de Coulomb](previews/cargas_pontuais.png)
+
+**Como se lê:** Esferas com + e −, com setas entre as cargas de sinais opostos (atração) ou afastando as de sinais iguais (repulsão).
+
+**Usar quando**
+- lei de Coulomb, atração e repulsão
+- superposição das forças com três cargas
+- dependência da força com 1/r²
+
+**Não usar quando**
+- campos e potenciais de distribuições contínuas
+- mais de três cargas
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, vetores físicos = branco, construções = violeta, sinal da carga esculpido
+- o módulo das setas é limitado a 2,8 u: forças muito grandes são mostradas truncadas
+- as cargas estão num plano (z = 0) e o `sinais` por parâmetro vale para até 3 cargas
+- q e k são do Manim
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `config` | duas | texto | duas ou tres |
+| `sinal1` | 1 | ±1 | sinal da carga 1 |
+| `sinal2` | -1 | ±1 | sinal da carga 2 |
+| `sinal3` | 1 | ±1 | sinal da carga 3 (só em tres) |
+| `distancia` | 2.6 | u | distância (ou lado do triângulo) |
+| `raio` | 0.3 | u | raio de cada carga |
+| `forcas` | 1 | 0/1 | setas de força |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `oscilacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.42 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- cargas_pontuais --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("cargas_pontuais").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/cargas_pontuais.json`
 
 ### `casca_cilindrica_oca` — Casca cilíndrica oca
 
@@ -970,6 +1163,109 @@ img = Solido3D("colisao_1d").mobject(cena=self, altura=5)   # cargas em loop; im
 
 Ficha: `solidos/colisao_1d.json`
 
+### `colisao_2d` — Colisão elástica em 2D
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Dois discos de vidro numa mesa de vidro: o disco 1 (azul) vem em +X e atinge o disco 2 (azul-claro, em repouso) com parâmetro de impacto b. O impulso é só ao longo da normal do contato (sem atrito). Velocidades em branco, centro de massa neutro, trajetórias em violeta tracejado. Ciclo único.
+
+![Colisão elástica em 2D](previews/colisao_2d.png)
+
+**Como se lê:** Dois discos que se afastam em ângulo depois do choque, com o centro de massa seguindo em linha reta: lê-se como conservação do momento em 2D.
+
+**Usar quando**
+- colisões em duas dimensões: o momento se conserva por componentes
+- caso de massas iguais (os discos saem a 90°) e massas diferentes
+- o centro de massa não é afetado pela colisão
+
+**Não usar quando**
+- colisões 1D (use colisao_1d)
+- discos com rotação e atrito de contato
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): vetores físicos = branco, construções = violeta tracejado, corpos = vidro azul
+- o disco alvo começa em repouso e o impulso é só ao longo da normal
+- a mesa é plana e sem atrito; discos sem rotação
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `m1` | 2.0 | u | massa do disco 1 |
+| `m2` | 1.0 | u | massa do disco 2 |
+| `v1` | 3.0 | u | velocidade inicial do disco 1 |
+| `parametro_impacto` | 0.55 | u | parâmetro de impacto b (deslocamento lateral da linha de movimento) |
+| `restituicao` | 1.0 | 0-1 | coeficiente de restituição |
+| `instante` | 0.4 | 0-1 | instante da colisão |
+| `mostrar_cm` | 1 | 0/1 | marca do centro de massa |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `colisao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.75 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- colisao_2d --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("colisao_2d").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/colisao_2d.json`
+
+### `condutor_com_cavidade` — Condutor com cavidade e cargas induzidas
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Casca condutora esférica (com um octante removido para ver dentro) com uma cavidade concêntrica contendo uma carga + no centro: cargas induzidas − na parede da cavidade e + na superfície externa, todas com sinal esculpido. No equilíbrio eletrostático o campo dentro do material do condutor é zero (leitura do Manim).
+
+![Condutor com cavidade e cargas induzidas](previews/condutor_com_cavidade.png)
+
+**Como se lê:** Uma esfera aberta com um + no centro, vários − dentro da parede da cavidade e vários + por fora: lê-se como indução eletrostática.
+
+**Usar quando**
+- condutores em equilíbrio, cavidades e a carga induzida (−q na cavidade, +q fora)
+- blindagem e a gaiola de Faraday
+- aplicação da Lei de Gauss com um condutor
+
+**Não usar quando**
+- cavidades não concêntricas (o arranjo uniforme da carga induzida seria distorcido)
+- condutores sem cavidade (use casca_esferica_oca)
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, vetores físicos = branco, construções = violeta, sinal da carga esculpido
+- as cargas induzidas são pontos numa distribuição de Fibonacci: a densidade real não é pontual
+- as cargas das regiões removidas pelo corte não aparecem, então a contagem visível é menor que a nominal
+- só a cavidade concêntrica
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `raio_externo` | 1.9 | u | raio externo b |
+| `raio_cavidade` | 1.0 | u | raio da cavidade a |
+| `n_cargas` | 14 | n | cargas induzidas na cavidade (a externa tem n + 4) |
+| `raio_carga` | 0.14 | u | raio das cargas induzidas |
+| `corte` | 1 | 0/1 | remove o octante voltado para a câmera |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- condutor_com_cavidade --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("condutor_com_cavidade").mobject(altura=5)   # estático: um quadro PNG com alpha
+```
+
+Ficha: `solidos/condutor_com_cavidade.json`
+
 ### `cone_de_luz` — Cone de luz no espaço-tempo
 
 **Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
@@ -1019,6 +1315,163 @@ img = Solido3D("cone_de_luz").mobject(cena=self, altura=5)   # cargas em loop; i
 ```
 
 Ficha: `solidos/cone_de_luz.json`
+
+### `curva_inclinada` — Curva inclinada (pista com inclinação)
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Pista circular inclinada para dentro (vidro azul) com um carro de vidro, sem atrito: peso (para baixo), normal (perpendicular à pista) e resultante centrípeta (horizontal, para o centro), setas brancas, com N cos θ = P e N sen θ = P tan θ · cos θ. fase 0 a 1 = uma volta.
+
+![Curva inclinada (pista com inclinação)](previews/curva_inclinada.png)
+
+**Como se lê:** Um carro numa pista inclinada com três setas brancas: lê-se como a componente horizontal da normal sendo a força centrípeta.
+
+**Usar quando**
+- curvas inclinadas sem atrito e a velocidade ideal v² = g R tan θ
+- decomposição da normal em vertical e horizontal
+- contraste com a curva plana (atrito como força centrípeta)
+
+**Não usar quando**
+- curvas com atrito estático (este modelo é sem atrito)
+- pistas com perfil variável
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): vetores físicos = branco, construções = violeta tracejado, corpos = vidro azul
+- a inclinação é fixa ao longo da volta e o carro é um bloco, sem rodas
+- os módulos das setas seguem as relações geométricas (P = 1,6), não unidades físicas
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `raio` | 2.6 | u | raio da pista |
+| `angulo_graus` | 22.0 | graus | inclinação θ |
+| `semi_largura` | 1.0 | u | meia largura da pista |
+| `vetores` | 1 | 0/1 | peso, normal e resultante |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `percurso` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.73 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- curva_inclinada --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("curva_inclinada").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/curva_inclinada.json`
+
+### `dioptro_plano` — Dioptro plano: refração e reflexão interna total
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Bloco de vidro (n2) em contato com o meio n1 e a normal tracejada. Três raios brancos: incidente, refletido (mais fraco) e refratado, pela lei de Snell n1 sen θ1 = n2 sen θ2. Se sen θ2 > 1 só resta o refletido (reflexão interna total). `sentido`: ar_vidro ou vidro_ar. Com movimento θ1 varre de 5° a 85° e volta (loop).
+
+![Dioptro plano: refração e reflexão interna total](previews/dioptro_plano.png)
+
+**Como se lê:** Um raio chegando numa fronteira, um refletido e outro que muda de direção ao entrar no vidro (ou some, na reflexão total).
+
+**Usar quando**
+- lei de Snell e o desvio do raio
+- ângulo crítico e reflexão interna total (fibra óptica)
+- reflexão e refração simultâneas
+
+**Não usar quando**
+- lentes e prismas (a geometria é uma fronteira plana)
+- dispersão (n não depende da cor)
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, rótulos (n, θ, λ, ...) e o padrão de franjas/difração são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): raios de luz = branco, campo E = ciano, objetos transparentes = vidro azul-claro, construções = violeta tracejado
+- os raios têm intensidade visual fixa (o raio refletido é só mais fino): as fórmulas de Fresnel não estão representadas
+- o ângulo é medido da normal; os rótulos θ1, θ2, n1, n2 são do Manim
+- meio único e uniforme
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `n1` | 1.0 | n | índice do meio de incidência (ar_vidro) ou do vidro (vidro_ar) |
+| `n2` | 1.5 | n | índice do outro meio |
+| `angulo_graus` | 40.0 | graus | ângulo de incidência (sem movimento) |
+| `sentido` | ar_vidro | texto | ar_vidro ou vidro_ar |
+| `comprimento_raio` | 2.3 | u | comprimento de cada raio |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `angulo` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.72 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- dioptro_plano --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("dioptro_plano").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/dioptro_plano.json`
+
+### `dipolo_eletrico` — Dipolo elétrico e seu campo
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Duas cargas de sinal esculpido (+q e −q) e o campo E (setas ciano numa grade no plano da figura, calculado por superposição), com o momento de dipolo p (branco, de − para +). Com movimento o dipolo gira uma volta em torno de Z e o campo acompanha.
+
+![Dipolo elétrico e seu campo](previews/dipolo_eletrico.png)
+
+**Como se lê:** Um par + e − com setas ciano saindo de uma e chegando na outra, desenhando o padrão do dipolo: lê-se como campo de dipolo e momento p.
+
+**Usar quando**
+- campo de um dipolo (linhas saindo de + e chegando em −)
+- momento de dipolo p = q d e o torque num campo uniforme (use com a espira)
+- campo no eixo e na mediatriz
+
+**Não usar quando**
+- distribuições contínuas (use anel, disco e haste)
+- campo tridimensional completo (a grade está num plano)
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, vetores físicos = branco, construções = violeta, sinal da carga esculpido
+- o campo é desenhado numa grade plana (z = 0) com comprimento saturante (não proporcional ao módulo)
+- as setas perto das cargas (a menos de 0,65) ficam ocultas
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `distancia` | 1.8 | u | distância entre as cargas |
+| `n_grade` | 8 | n | setas por lado da grade |
+| `extensao` | 2.7 | u | meia largura da grade |
+| `raio` | 0.3 | u | raio das cargas |
+| `angulo_graus` | 0.0 | graus | orientação do dipolo (sem movimento) |
+| `momento` | 1 | 0/1 | seta do momento p |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `rotacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.43 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- dipolo_eletrico --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("dipolo_eletrico").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/dipolo_eletrico.json`
 
 ### `disco_carregado` — Disco carregado
 
@@ -1079,6 +1532,61 @@ img = Solido3D("disco_carregado").mobject(cena=self, altura=5)   # cargas em loo
 ```
 
 Ficha: `solidos/disco_carregado.json`
+
+### `divergencia_local` — Divergência local (cubo elementar)
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Cubo elementar (violeta, arestas tracejadas) num campo vetorial (ciano). Em cada uma das seis faces uma seta sai do centro da face com o campo ali: no campo radial as setas das faces de fora são maiores que as de dentro (divergência positiva); no rotacional elas se compensam (divergência nula). Com movimento o cubo vai e volta ao longo de X.
+
+![Divergência local (cubo elementar)](previews/divergencia_local.png)
+
+**Como se lê:** Uma caixinha violeta num campo de setas ciano, com uma seta saindo de cada face: lê-se como fluxo líquido e divergência.
+
+**Usar quando**
+- divergência como fluxo líquido por unidade de volume
+- fonte, sumidouro e campo solenoidal
+- ponte para o teorema de Gauss (gaussiana_caixa)
+
+**Não usar quando**
+- a definição formal de limite (o cubo é de tamanho fixo)
+- campos que dependem do tempo
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, matrizes, resultados e rótulos são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): superfícies = vidro azul, curvas = azul-claro, construções = violeta, vetores = branco, normal e ∇g = azul, campo = ciano
+- as setas das faces mostram o campo (não o fluxo F · n): a componente normal é para o Manim
+- o campo de fundo é uma grade esparsa (4×4×4) e sua escala é visual
+- os campos disponíveis são radial, rotacional, sela e uniforme
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `campo` | radial | texto | radial, rotacional, sela ou uniforme |
+| `lado` | 1.5 | u | aresta do cubo elementar |
+| `px` | 1.1 | u | posição do centro, x |
+| `py` | 0.5 | u | posição do centro, y |
+| `pz` | 0.0 | u | posição do centro, z |
+| `n_fundo` | 4 | n | grade do campo de fundo (0 = sem fundo) |
+| `extensao` | 2.4 | u | meia largura do campo |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `translacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.6 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- divergencia_local --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("divergencia_local").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/divergencia_local.json`
 
 ### `elemento_volume` — Elemento de volume dV (cartesiano, cilíndrico, esférico)
 
@@ -1283,6 +1791,55 @@ img = Solido3D("esfera_rolando").mobject(cena=self, altura=5)   # cargas em loop
 
 Ficha: `solidos/esfera_rolando.json`
 
+### `espelho_esferico` — Espelho esférico (côncavo e convexo)
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Calota esférica de vidro (côncava ou convexa) de raio de curvatura R e diâmetro D, com a face refletora voltada para +X, o eixo óptico tracejado e três marcas brancas: vértice V, foco F = R/2 e centro de curvatura C = R (no convexo, atrás do espelho: virtuais).
+
+![Espelho esférico (côncavo e convexo)](previews/espelho_esferico.png)
+
+**Como se lê:** Uma calota curva com um eixo tracejado e três pontos sobre ele: lê-se como espelho esférico com V, F e C.
+
+**Usar quando**
+- espelhos côncavos e convexos, foco e centro de curvatura
+- equação dos espelhos 1/f = 1/p + 1/p' (o Manim desenha os raios e a imagem)
+- aberração esférica (raios paraxiais)
+
+**Não usar quando**
+- lentes (o vidro daqui não é lente)
+- imagens e raios: são do Manim (2D)
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, rótulos (n, θ, λ, ...) e o padrão de franjas/difração são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): raios de luz = branco, campo E = ciano, objetos transparentes = vidro azul-claro, construções = violeta tracejado
+- só a geometria do espelho: os raios principais e a imagem ficam por conta do Manim
+- o espelho é vidro translúcido (não reflete a cena)
+- o R mostrado é visual: o foco é sempre R/2 (aproximação paraxial)
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `tipo` | concavo | texto | concavo ou convexo |
+| `raio_curvatura` | 3.0 | u | raio de curvatura R |
+| `diametro` | 2.6 | u | diâmetro da calota |
+| `marcas` | 1 | 0/1 | marcas V, F e C |
+| `eixo` | 1 | 0/1 | eixo óptico tracejado |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- espelho_esferico --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("espelho_esferico").mobject(altura=5)   # estático: um quadro PNG com alpha
+```
+
+Ficha: `solidos/espelho_esferico.json`
+
 ### `espira_em_campo_magnetico` — Espira de corrente num campo magnético (torque)
 
 **Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
@@ -1332,6 +1889,111 @@ img = Solido3D("espira_em_campo_magnetico").mobject(cena=self, altura=5)   # car
 ```
 
 Ficha: `solidos/espira_em_campo_magnetico.json`
+
+### `explosao` — Explosão em três fragmentos
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Uma esfera se parte em três fragmentos (massas m1, m2, m3) que saem a 120° conservando o momento linear: no referencial do centro de massa Σ m v = 0. Velocidades em branco, centro de massa neutro (anda a v0 constante). Ciclo único.
+
+![Explosão em três fragmentos](previews/explosao.png)
+
+**Como se lê:** Uma esfera que vira três esferas se afastando em direções opostas, com o centro de massa seguindo reto: lê-se como a explosão não mudando o movimento do CM.
+
+**Usar quando**
+- explosões e a conservação do momento linear
+- o CM não é afetado por forças internas
+- energia cinética liberada por forças internas (a conta é do Manim)
+
+**Não usar quando**
+- fragmentos com direções arbitrárias (aqui são três, a 120°)
+- movimento em 3D
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): vetores físicos = branco, construções = violeta tracejado, corpos = vidro azul
+- os fragmentos saem exatamente a 120° (as velocidades se ajustam às massas), é uma escolha de simetria
+- plano XY visto de cima: não há altura
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `m1` | 2.0 | u | massa do fragmento 1 |
+| `m2` | 1.0 | u | massa do fragmento 2 |
+| `m3` | 1.5 | u | massa do fragmento 3 |
+| `energia` | 14.0 | u | energia cinética liberada (no referencial do CM) |
+| `v0` | 1.0 | u | velocidade do centro de massa |
+| `instante` | 0.35 | 0-1 | instante da explosão |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `explosao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.74 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- explosao --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("explosao").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/explosao.json`
+
+### `filme_fino` — Filme fino e interferência
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Película de vidro (n > 1) sobre um substrato: um raio incidente produz dois raios refletidos (na face de cima e na de baixo). A esfera no alto brilha como cos²(2π · 2 n t cos θ₂ / λ): com movimento a espessura t oscila e o brilho vai e volta (construtiva e destrutiva).
+
+![Filme fino e interferência](previews/filme_fino.png)
+
+**Como se lê:** Um raio se dividindo em dois ao bater numa película, e uma esfera que acende e apaga: lê-se como interferência por reflexão.
+
+**Usar quando**
+- interferência em filmes finos (bolhas, óleo)
+- condições de máximo e mínimo 2 n t cos θ = m λ
+- defasagem de π na reflexão
+
+**Não usar quando**
+- interferência de fendas (use anteparo_fenda_dupla ou rede_de_difracao)
+- cores reais (o brilho é monocromático)
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, rótulos (n, θ, λ, ...) e o padrão de franjas/difração são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): raios de luz = branco, campo E = ciano, objetos transparentes = vidro azul-claro, construções = violeta tracejado
+- o brilho é monocromático (λ = 0,62 nas unidades do sólido) e a amplitude da oscilação de t é visual
+- a defasagem de π da reflexão não é representada: a leitura da fase é do Manim
+- dois raios apenas (sem reflexões múltiplas)
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `n_filme` | 1.4 | n | índice do filme |
+| `espessura` | 0.55 | u | espessura t |
+| `angulo_graus` | 28.0 | graus | ângulo de incidência |
+| `amplitude` | 0.45 | frac | variação relativa de t com movimento |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `interferencia` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.92 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- filme_fino --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("filme_fino").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/filme_fino.json`
 
 ### `fio_infinito` — Fio infinito (retilíneo)
 
@@ -1707,7 +2369,7 @@ Ficha: `solidos/haste_carregada.json`
 
 ### `ima_espira_inducao` — Ímã atravessando uma espira (Faraday e Lenz)
 
-**Status:** estudo · Ímã tornado sólido opaco e anel maior, a pedido do usuário (parecia passar por trás); aguardando nova aprovação.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Ímã de barra sólido (polo N em azul, polo S em magenta, o N na frente) que atravessa uma espira fixa de fio azul com um disco violeta (a superfície do fluxo). Setas brancas na espira mostram a corrente induzida, calculada pelo fluxo de dois polos magnéticos de face finita: ε = −dΦ/dt é pequena ao aproximar, tem um PICO quando o polo N cruza o plano da espira (anti-horário visto de +X), é ~0 com o ímã centrado, tem um pico oposto (horário) quando o S cruza e é pequena ao afastar. Ciclo único.
 
@@ -1758,6 +2420,60 @@ img = Solido3D("ima_espira_inducao").mobject(cena=self, altura=5)   # cargas em 
 ```
 
 Ficha: `solidos/ima_espira_inducao.json`
+
+### `integral_de_linha` — Integral de linha (trabalho)
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Campo vetorial (setas ciano no plano z = 0) e uma curva C em hélice (azul-claro). Um ponto (branco) percorre a curva com a tangente dr (branca) e o campo F ali (ciano); o trecho já percorrido fica em destaque (branco espesso). Ciclo único: a fase 1 é o fim da curva.
+
+![Integral de linha (trabalho)](previews/integral_de_linha.png)
+
+**Como se lê:** Um redemoinho de setas ciano com uma espiral que sobe, um ponto que a percorre e duas setas (dr e F) sobre ele: lê-se como trabalho ∫ F · dr.
+
+**Usar quando**
+- integral de linha de um campo vetorial (trabalho)
+- o produto escalar F · dr (tangente contra campo)
+- campos conservativos e dependência do caminho (compare dois trajetos no Manim)
+
+**Não usar quando**
+- integrais de linha de funções escalares
+- curvas fechadas (a hélice é aberta)
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, matrizes, resultados e rótulos são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): superfícies = vidro azul, curvas = azul-claro, construções = violeta, vetores = branco, normal e ∇g = azul, campo = ciano
+- o campo é plano (z = 0) e é avaliado nas coordenadas (x, y) do ponto: a componente z da curva só afeta a altura
+- o comprimento das setas é visual (limitado a 1,4 u)
+- o valor da integral e o gráfico F · dr são do Manim
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `campo` | rotacional | texto | radial, rotacional, sela ou espiral |
+| `raio` | 1.5 | u | raio da hélice |
+| `passo_z` | 0.3 | u/rad | subida por radiano |
+| `extensao` | 2.8 | u | meia largura do campo |
+| `n_campo` | 7 | n | setas por lado do campo |
+| `arco` | 1.5 | π rad | comprimento do arco em múltiplos de π |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `percurso` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.41 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- integral_de_linha --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("integral_de_linha").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/integral_de_linha.json`
 
 ### `integral_dupla_colunas` — Soma de Riemann dupla (colunas)
 
@@ -1810,6 +2526,109 @@ img = Solido3D("integral_dupla_colunas").mobject(cena=self, altura=5)   # cargas
 
 Ficha: `solidos/integral_dupla_colunas.json`
 
+### `interferometro_michelson` — Interferômetro de Michelson
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Fonte (esfera branca), divisor de feixe a 45° (vidro), dois espelhos (um deles móvel) e um detector (disco) cujo brilho segue cos²(2π · 2Δ/λ), Δ = diferença dos braços. Os feixes são brancos. Com movimento o espelho 2 vai e volta e o detector pisca (franjas).
+
+![Interferômetro de Michelson](previews/interferometro_michelson.png)
+
+**Como se lê:** Uma cruz de feixes com um espelho em cada ponta e um disco no fim que acende e apaga: lê-se como interferômetro de Michelson.
+
+**Usar quando**
+- interferência por divisão de amplitude
+- medida de comprimentos de onda e do comprimento de coerência
+- experimento de Michelson-Morley (relatividade)
+
+**Não usar quando**
+- difração e fendas
+- franjas circulares (o detector é um ponto)
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, rótulos (n, θ, λ, ...) e o padrão de franjas/difração são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): raios de luz = branco, campo E = ciano, objetos transparentes = vidro azul-claro, construções = violeta tracejado
+- o detector pisca no centro: o padrão de franjas circulares é do Manim
+- o amplitude do espelho (0,34) é uma fração visual do comprimento de onda λ = 0,32
+- feixes sem espessura física
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `braco` | 2.4 | u | comprimento dos braços |
+| `lambda` | 0.32 | u | comprimento de onda visual |
+| `amplitude` | 0.34 | u | curso do espelho 2 com movimento |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `interferencia` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.57 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- interferometro_michelson --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("interferometro_michelson").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/interferometro_michelson.json`
+
+### `lagrange_restricao` — Multiplicadores de Lagrange
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Superfície z = f(x, y) (vidro azul), a restrição g = x² + y² − r² = 0 (círculo violeta tracejado no piso e a curva correspondente sobre a superfície) e um ponto que a percorre, com ∇f (branco) e ∇g (azul) no piso, ligados à superfície por um fio tracejado. Os pontos de extremo restrito (∇f ∥ ∇g) ficam marcados. Com movimento o ponto dá uma volta e as duas setas ficam paralelas nos extremos.
+
+![Multiplicadores de Lagrange](previews/lagrange_restricao.png)
+
+**Como se lê:** Uma superfície ondulada, um círculo tracejado no piso e a curva na superfície, com um ponto que gira e duas setas que ora divergem ora se alinham: lê-se como Lagrange.
+
+**Usar quando**
+- extremos com restrição: ∇f = λ ∇g
+- a curva de nível tangente à restrição no extremo
+- contraste com os pontos críticos livres (pontos_criticos)
+
+**Não usar quando**
+- restrições múltiplas
+- mais de duas variáveis
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, matrizes, resultados e rótulos são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): superfícies = vidro azul, curvas = azul-claro, construções = violeta, vetores = branco, normal e ∇g = azul, campo = ciano
+- f(x, y) = 1 + 0,3x + 0,2y + 0,15(x² − y²) é fixa nesta ficha: troque no Manim só a leitura (os valores são do Manim)
+- o comprimento de ∇f é visual (escala `escala_grad`) e o de ∇g é fixo em 1 u
+- só a restrição circular
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `raio` | 1.5 | u | raio da restrição |
+| `angulo_graus` | 40.0 | graus | posição do ponto (sem movimento) |
+| `extensao` | 2.4 | u | meia largura da superfície |
+| `escala_grad` | 2.4 | x | escala visual de ∇f |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `percurso` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.76 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- lagrange_restricao --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("lagrange_restricao").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/lagrange_restricao.json`
+
 ### `lente_delgada` — Lente delgada (biconvexa ou biconcava)
 
 **Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
@@ -1861,6 +2680,60 @@ img = Solido3D("lente_delgada").mobject(altura=5)   # estático: um quadro PNG c
 ```
 
 Ficha: `solidos/lente_delgada.json`
+
+### `linhas_de_campo_3d` — Linhas de campo em 3D
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Linhas de campo (curvas ciano) saindo da carga + e chegando à carga − (`tipo=dipolo`) ou indo ao infinito (`tipo=carga_pontual`), por integração numérica do campo a partir de uma esfera em volta da carga, com setas de sentido. Com movimento contas percorrem as linhas no sentido do campo.
+
+![Linhas de campo em 3D](previews/linhas_de_campo_3d.png)
+
+**Como se lê:** Um feixe de curvas ciano que sai de uma esfera + e se fecha na esfera −, com setinhas: lê-se como as linhas do campo de um dipolo.
+
+**Usar quando**
+- linhas de campo de uma carga pontual e de um dipolo
+- o sentido do campo (de + para −) e a densidade das linhas
+- relação entre linhas de campo e o fluxo
+
+**Não usar quando**
+- campos de distribuições contínuas
+- densidade de linhas proporcional ao módulo (o número é fixo)
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, vetores físicos = branco, construções = violeta, sinal da carga esculpido
+- as linhas saem de uma distribuição uniforme de direções (Fibonacci), então a densidade perto da carga não é proporcional ao campo
+- as linhas que se afastam do dipolo são cortadas a 3,4 u de distância, então parecem abertas
+- cada linha é uma curva com muitos pontos: o render é mais pesado com muitas linhas
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `tipo` | dipolo | texto | dipolo ou carga_pontual |
+| `n_linhas` | 16 | n | linhas saindo da carga + |
+| `distancia` | 2.0 | u | distância entre as cargas (dipolo) |
+| `raio_carga` | 0.3 | u | raio das cargas |
+| `setas` | 1 | 0/1 | setas de sentido |
+| `n_contas` | 3 | n | contas por linha (com movimento) |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `escoamento` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.46 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- linhas_de_campo_3d --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("linhas_de_campo_3d").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/linhas_de_campo_3d.json`
 
 ### `massa_mola` — Sistema massa-mola horizontal (MHS)
 
@@ -1915,6 +2788,111 @@ img = Solido3D("massa_mola").mobject(cena=self, altura=5)   # cargas em loop; im
 ```
 
 Ficha: `solidos/massa_mola.json`
+
+### `membrana_modos` — Modos de vibração de uma membrana
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Membrana quadrada fixa nas quatro bordas (moldura branca tracejada) vibrando no modo (m, n): z = A sen(mπx/L) sen(nπy/L) cos(2π fase). As linhas nodais (violeta tracejado) ficam paradas sobre a membrana. Com movimento dá um período completo (loop).
+
+![Modos de vibração de uma membrana](previews/membrana_modos.png)
+
+**Como se lê:** Uma folha azul presa numa moldura, ondulando em cristas e vales separados por linhas tracejadas: lê-se como modo normal de uma membrana.
+
+**Usar quando**
+- modos normais de uma membrana quadrada e as linhas nodais
+- separação de variáveis na equação da onda 2D
+- analogia com as ondas estacionárias na corda (onda_corda)
+
+**Não usar quando**
+- membranas circulares (modos de Bessel)
+- superposição de modos (um modo por vez)
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, matrizes, resultados e rótulos são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): superfícies = vidro azul, curvas = azul-claro, construções = violeta, vetores = branco, normal e ∇g = azul, campo = ciano
+- um modo por vez e o tempo é só cosseno (sem amortecimento)
+- a amplitude vertical é exagerada para ser vista
+- as frequências ω_mn são do Manim
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `m` | 2 | n | modo em x |
+| `n` | 1 | n | modo em y |
+| `lado` | 4.0 | u | lado da membrana |
+| `amplitude` | 0.7 | u | amplitude |
+| `instante` | 0.0 | 0-1 | instante da fase (sem movimento) |
+| `nos` | 1 | 0/1 | linhas nodais |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `oscilacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.81 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- membrana_modos --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("membrana_modos").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/membrana_modos.json`
+
+### `movimento_circular` — Movimento circular uniforme
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Bola presa por um fio a um poste central, numa mesa de vidro redonda, com a trajetória tracejada (violeta). A velocidade v (tangente) e a aceleração centrípeta a_c (para o centro) são setas brancas. fase 0 a 1 = uma volta.
+
+![Movimento circular uniforme](previews/movimento_circular.png)
+
+**Como se lê:** Uma bola girando com uma seta tangente e uma seta para o centro: lê-se como v tangente e a_c para o centro.
+
+**Usar quando**
+- aceleração centrípeta e a origem geométrica de a_c = v²/R
+- tração do fio como força centrípeta
+- velocidade angular e período
+
+**Não usar quando**
+- movimento circular não uniforme (a velocidade aqui é constante)
+- movimento vertical (use trilho_looping)
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): vetores físicos = branco, construções = violeta tracejado, corpos = vidro azul
+- o módulo de v e de a_c é visual (1,7 e 1,1 u), sem relação numérica entre eles
+- a bola gira numa mesa sem atrito: não há gravidade vertical nem fio inclinado
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `raio` | 1.8 | u | raio da trajetória |
+| `vetores` | 1 | 0/1 | v e a_c |
+| `trajetoria` | 1 | 0/1 | trajetória tracejada |
+| `raio_bola` | 0.22 | u | raio da bola |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `percurso` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.73 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- movimento_circular --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("movimento_circular").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/movimento_circular.json`
 
 ### `onda_corda` — Onda numa corda (progressiva e estacionária)
 
@@ -2402,6 +3380,115 @@ img = Solido3D("placa_infinita_carregada").mobject(cena=self, altura=5)   # carg
 
 Ficha: `solidos/placa_infinita_carregada.json`
 
+### `plano_e_reta_r3` — Plano e reta em R³
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Plano n · x = 0 (violeta translúcido, arestas tracejadas) com a normal n (azul), uma reta (azul-claro) que o atravessa num ponto I (branco) e um ponto P a uma distância d do plano, com o pé Q da perpendicular e o segmento PQ (violeta tracejado). Com movimento P sobe e desce ao longo de n̂ e a distância varia.
+
+![Plano e reta em R³](previews/plano_e_reta_r3.png)
+
+**Como se lê:** Uma folha inclinada com uma seta azul perpendicular, uma reta que a fura e um ponto com um fio tracejado até ela: lê-se como plano, normal, interseção e distância ponto-plano.
+
+**Usar quando**
+- equação do plano (n · (x − x0) = 0) e a normal
+- interseção de reta e plano
+- distância de ponto a plano |n · (P − x0)| / |n|
+
+**Não usar quando**
+- planos tangentes a superfícies (use plano_tangente)
+- duas retas reversas ou dois planos
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, matrizes, resultados e rótulos são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): superfícies = vidro azul, curvas = azul-claro, construções = violeta, vetores = branco, normal e ∇g = azul, campo = ciano
+- o plano passa pela origem: para um plano deslocado, desloque a cena no Manim
+- o ponto P e a reta têm valores fixos de exemplo: as coordenadas e as fórmulas são do Manim
+- a normal está desenhada com comprimento fixo (1,3 u)
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `nx` | 1.0 | n | normal, x |
+| `ny` | 0.6 | n | normal, y |
+| `nz` | 2.0 | n | normal, z |
+| `distancia` | 1.4 | u | altura de P sobre o plano |
+| `dx` | 0.55 | n | direção da reta, x |
+| `dy` | 0.45 | n | direção da reta, y |
+| `dz` | 1.0 | n | direção da reta, z |
+| `tamanho` | 2.4 | u | meia-aresta do plano desenhado |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `distancia` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.81 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- plano_e_reta_r3 --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("plano_e_reta_r3").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/plano_e_reta_r3.json`
+
+### `plano_inclinado` — Plano inclinado com forças
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Rampa de vidro (cunha) com um bloco de vidro: peso, normal e atrito (setas brancas) e as componentes do peso (violeta tracejado), com o arco do ângulo θ. Se tan θ > μ o bloco desce com aceleração constante (ciclo único); senão fica parado e o atrito é estático (f = P sen θ).
+
+![Plano inclinado com forças](previews/plano_inclinado.png)
+
+**Como se lê:** Um bloco numa rampa com três setas brancas e duas linhas tracejadas: lê-se como a decomposição do peso em P∥ e P⊥.
+
+**Usar quando**
+- diagrama de corpo livre num plano inclinado e a decomposição do peso
+- atrito estático × cinético e o limite de escorregamento (tan θ = μ)
+- preparar a conta da aceleração a = g (sen θ − μ cos θ) no Manim
+
+**Não usar quando**
+- polias e sistemas conectados (só um bloco)
+- rampas curvas
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): vetores físicos = branco, construções = violeta tracejado, corpos = vidro azul
+- o bloco desliza sem rotação e as setas têm módulo visual (peso fixo em 1,7 u), proporcional entre si mas sem escala numérica
+- a rampa é uma cunha (triângulo retângulo) fixa: só θ e o comprimento mudam
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `angulo_graus` | 28.0 | graus | ângulo θ da rampa |
+| `comprimento` | 5.2 | u | comprimento da rampa |
+| `mu` | 0.25 | 0-1 | coeficiente de atrito cinético |
+| `lado` | 0.8 | u | lado do bloco |
+| `forcas` | 1 | 0/1 | forças e componentes |
+| `posicao` | 0.6 | 0-1 | posição do bloco na rampa (sem movimento) |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `deslizamento` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.73 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- plano_inclinado --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("plano_inclinado").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/plano_inclinado.json`
+
 ### `plano_tangente` — Plano tangente a uma superfície
 
 **Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
@@ -2505,6 +3592,57 @@ img = Solido3D("poco_gravitacional").mobject(cena=self, altura=5)   # cargas em 
 
 Ficha: `solidos/poco_gravitacional.json`
 
+### `polarizador_malus` — Polarizadores e lei de Malus
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Dois discos de vidro com o eixo de transmissão em linha branca. Antes do primeiro, setas ciano em várias direções (luz não polarizada); depois do primeiro, uma seta vertical (E0); depois do analisador (que gira de θ), E0 |cos θ| ao longo do eixo dele. A intensidade é ∝ cos²θ (Malus). Com movimento θ dá uma volta (loop).
+
+![Polarizadores e lei de Malus](previews/polarizador_malus.png)
+
+**Como se lê:** Setas ciano em várias direções entrando num disco, uma seta vertical saindo, e depois uma segunda que diminui conforme o segundo disco gira.
+
+**Usar quando**
+- luz polarizada e a lei de Malus I = I0 cos²θ
+- polarização por absorção e por reflexão (ângulo de Brewster)
+- campo E ao longo do eixo de transmissão
+
+**Não usar quando**
+- polarização circular ou elíptica
+- luz com fase relativa (use onda_eletromagnetica)
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, rótulos (n, θ, λ, ...) e o padrão de franjas/difração são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): raios de luz = branco, campo E = ciano, objetos transparentes = vidro azul-claro, construções = violeta tracejado
+- as setas não oscilam no tempo: mostram apenas a amplitude do campo, não a onda
+- o eixo do primeiro polarizador é fixo (vertical)
+- a amplitude é |cos θ|: o sinal (inversão do sentido) não é mostrado
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `raio` | 1.15 | u | raio dos discos |
+| `separacao` | 2.6 | u | distância entre os polarizadores |
+| `angulo_graus` | 40.0 | graus | ângulo θ do analisador (sem movimento) |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `rotacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.69 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- polarizador_malus --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("polarizador_malus").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/polarizador_malus.json`
+
 ### `pontos_criticos` — Pontos críticos (máximo, mínimo e sela)
 
 **Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
@@ -2551,6 +3689,58 @@ img = Solido3D("pontos_criticos").mobject(altura=5)   # estático: um quadro PNG
 ```
 
 Ficha: `solidos/pontos_criticos.json`
+
+### `prensa_hidraulica` — Prensa hidráulica (Pascal)
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Dois cilindros de vidro ligados por baixo e cheios de líquido, com êmbolos de áreas A1 e A2. Empurrar o êmbolo pequeno com F1 desce d1 e levanta o grande d2 = d1 A1/A2; F2 = F1 A2/A1 (setas brancas, a do êmbolo grande na escala `escala_forca`). fase 0 a 1 = um ciclo (desce e sobe).
+
+![Prensa hidráulica (Pascal)](previews/prensa_hidraulica.png)
+
+**Como se lê:** Um êmbolo pequeno descendo muito e um grande subindo pouco, com uma seta pequena e uma grande: lê-se como multiplicação de força.
+
+**Usar quando**
+- princípio de Pascal e a multiplicação de força F2 = F1 A2/A1
+- conservação do volume (d1 A1 = d2 A2)
+- freios e macacos hidráulicos
+
+**Não usar quando**
+- fluidos em movimento
+- vasos comunicantes sem êmbolos
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, vetores físicos = branco, construções = violeta, sinal da carga esculpido
+- a seta F2 é desenhada na escala `escala_forca` (0,32), por isso o comprimento não é a razão exata das áreas
+- os êmbolos são discos, sem vazamento nem atrito
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `raio1` | 0.45 | u | raio do êmbolo pequeno |
+| `raio2` | 1.1 | u | raio do êmbolo grande |
+| `altura` | 2.0 | u | altura inicial do líquido em cada coluna |
+| `curso` | 0.55 | u | descida máxima do êmbolo pequeno |
+| `escala_forca` | 0.32 | x | escala de desenho de F2 |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `oscilacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.77 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- prensa_hidraulica --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("prensa_hidraulica").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/prensa_hidraulica.json`
 
 ### `prisma_triangular` — Prisma triangular
 
@@ -2648,6 +3838,208 @@ img = Solido3D("produto_vetorial").mobject(cena=self, altura=5)   # cargas em lo
 ```
 
 Ficha: `solidos/produto_vetorial.json`
+
+### `rampa_rolamento` — Corrida de esfera, cilindro e aro numa rampa
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Esfera, cilindro e aro (mesmo raio) descem uma rampa a partir do repouso, lado a lado, com rolamento sem deslizamento: a = g sen θ/(1 + k) com k = 2/5, 1/2 e 1. A esfera chega primeiro, depois o cilindro e por fim o aro; a linha de chegada é tracejada em violeta. Ciclo único.
+
+![Corrida de esfera, cilindro e aro numa rampa](previews/rampa_rolamento.png)
+
+**Como se lê:** Três corpos descendo lado a lado, a esfera na frente e o aro atrás: lê-se como quanto maior o momento de inércia, mais devagar.
+
+**Usar quando**
+- rolamento em plano inclinado e a dependência da aceleração com o momento de inércia
+- esfera × cilindro × aro: quem chega primeiro e por quê
+- energia no rolamento (a conta é do Manim)
+
+**Não usar quando**
+- rolamento em chão plano (use esfera_rolando e companhia)
+- corpos de massas ou raios diferentes
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): vetores físicos = branco, construções = violeta tracejado, corpos = vidro azul
+- os três corpos são de vidro de mesma aparência: a distinção maciço × oco vem só da forma e do rótulo
+- a corrida termina quando o aro chega ao fim (a esfera e o cilindro esperam na linha)
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `angulo_graus` | 22.0 | graus | ângulo da rampa |
+| `comprimento` | 5.2 | u | comprimento da rampa |
+| `raio` | 0.62 | u | raio dos corpos |
+| `linha_chegada` | 1 | 0/1 | linha de chegada |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `corrida` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.86 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- rampa_rolamento --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("rampa_rolamento").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/rampa_rolamento.json`
+
+### `rede_de_difracao` — Rede de difração
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Anteparo opaco azul com `n_fendas` fendas verticais de largura `fenda` e período `separacao`, com as bordas em azul-claro: a generalização do anteparo_fenda_dupla. O padrão de difração é desenhado pelo Manim.
+
+![Rede de difração](previews/rede_de_difracao.png)
+
+**Como se lê:** Uma placa com várias frestas verticais regularmente espaçadas: lê-se como rede de difração (ou fenda múltipla).
+
+**Usar quando**
+- rede de difração e a condição d sen θ = m λ
+- fenda dupla (n_fendas = 2) e fenda múltipla
+- resolução de uma rede com mais fendas
+
+**Não usar quando**
+- fenda simples (use n_fendas = 1)
+- o padrão em si (do Manim)
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, rótulos (n, θ, λ, ...) e o padrão de franjas/difração são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): raios de luz = branco, campo E = ciano, objetos transparentes = vidro azul-claro, construções = violeta tracejado
+- só o anteparo: a luz, os máximos e a intensidade ficam por conta do Manim
+- as fendas são retângulos (sem rugosidade ou profundidade real)
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `n_fendas` | 5 | n | número de fendas |
+| `largura` | 4.0 | u | largura do anteparo |
+| `altura` | 3.0 | u | altura do anteparo |
+| `espessura` | 0.12 | u | espessura do anteparo |
+| `fenda` | 0.16 | u | largura de cada fenda |
+| `separacao` | 0.5 | u | período (distância entre fendas) |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- rede_de_difracao --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("rede_de_difracao").mobject(altura=5)   # estático: um quadro PNG com alpha
+```
+
+Ficha: `solidos/rede_de_difracao.json`
+
+### `relogio_de_luz` — Relógio de luz e dilatação do tempo
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Dois espelhos (vidro) separados de L e um fóton (esfera) entre eles. Visto num referencial em que o relógio se move com velocidade v (seta branca), o fóton percorre a diagonal: (c Δt)² = L² + (v Δt)² (triângulo violeta tracejado), Δt = γ L/c. Ciclo único: o relógio vai de x = 0 a x = v Δt enquanto o fóton sobe de um espelho ao outro.
+
+![Relógio de luz e dilatação do tempo](previews/relogio_de_luz.png)
+
+**Como se lê:** Um fóton subindo na diagonal entre dois espelhos que andam para a direita, com um triângulo tracejado: lê-se como dilatação do tempo.
+
+**Usar quando**
+- dilatação do tempo e o fator γ = 1/√(1 − v²/c²)
+- o triângulo (c Δt)² = L² + (v Δt)²
+- simultaneidade e referenciais (compare com o relógio parado)
+
+**Não usar quando**
+- contração do comprimento
+- o relógio parado visto no seu referencial (só a diagonal é mostrada)
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, rótulos (n, θ, λ, ...) e o padrão de franjas/difração são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): raios de luz = branco, campo E = ciano, objetos transparentes = vidro azul-claro, construções = violeta tracejado
+- c = 1 nas unidades do sólido e o valor de v é visual: o γ é do Manim
+- a seta do vetor v tem comprimento fixo
+- o triângulo mostra a metade do ciclo (só a subida)
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `altura` | 2.0 | u | distância entre os espelhos (L) |
+| `velocidade` | 0.65 | c | velocidade v/c do relógio |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `deslocamento` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.63 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- relogio_de_luz --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("relogio_de_luz").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/relogio_de_luz.json`
+
+### `rotacional_roda_de_pas` — Rotacional local (roda de pás)
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Roda de pás (duas placas em cruz, com uma ponta marcada em branco) sobre o plano z = 0 num campo de setas ciano. `campo`: rotacional (a roda gira no sentido anti-horário), cisalhamento (gira no horário) ou irrotacional (campo ∝ r/r²: não gira). Com movimento a roda dá uma volta (loop), no sentido do rotacional; a rapidez é visual.
+
+![Rotacional local (roda de pás)](previews/rotacional_roda_de_pas.png)
+
+**Como se lê:** Uma cruz azul no centro de um redemoinho de setas ciano, girando com ele (ou parada, se não há rotação): lê-se como rotacional.
+
+**Usar quando**
+- rotacional como tendência a girar (roda de pás)
+- campos com e sem rotacional
+- ponte para o teorema de Stokes (teorema_stokes)
+
+**Não usar quando**
+- rotacional em 3D com os três componentes (o campo é plano)
+- valores do rotacional (são do Manim)
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, matrizes, resultados e rótulos são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): superfícies = vidro azul, curvas = azul-claro, construções = violeta, vetores = branco, normal e ∇g = azul, campo = ciano
+- a rapidez da roda é a mesma em todos os campos (uma volta por ciclo): só o sentido é o do rotacional
+- o campo é plano e a roda gira só em torno de Z
+- a roda não é arrastada pelo campo (fica na origem)
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `campo` | rotacional | texto | rotacional, cisalhamento ou irrotacional |
+| `n_campo` | 7 | n | setas por lado |
+| `extensao` | 2.8 | u | meia largura do campo |
+| `angulo_graus` | 0.0 | graus | ângulo da roda (sem movimento) |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `rotacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.41 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- rotacional_roda_de_pas --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("rotacional_roda_de_pas").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/rotacional_roda_de_pas.json`
 
 ### `solenoide_corrente` — Solenoide (hélice de fio)
 
@@ -2981,6 +4373,114 @@ img = Solido3D("superficie_quadrica").mobject(altura=5)   # estático: um quadro
 
 Ficha: `solidos/superficie_quadrica.json`
 
+### `tanque_hidrostatico` — Tanque com pressão e empuxo
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Tanque de vidro com líquido até `nivel`, a superfície livre (violeta tracejado) e um bloco flutuante (fração submersa = densidade do bloco / densidade do líquido). Setas brancas horizontais na parede mostram a pressão crescendo com a profundidade; peso e empuxo (brancos) são iguais no equilíbrio. Com movimento o bloco oscila e o empuxo acompanha o volume submerso.
+
+![Tanque com pressão e empuxo](previews/tanque_hidrostatico.png)
+
+**Como se lê:** Um bloco boiando num tanque, com setas de pressão que crescem para baixo e duas setas verticais iguais: lê-se como pressão hidrostática e princípio de Arquimedes.
+
+**Usar quando**
+- pressão hidrostática p = ρ g h (as setas crescem com a profundidade)
+- empuxo e flutuação: fração submersa = ρ_bloco/ρ_líquido
+- oscilação vertical de um bloco flutuante (MHS, pequena amplitude)
+
+**Não usar quando**
+- fluidos em movimento (use tubo_escoamento ou tanque_torricelli)
+- corpos de forma que não seja um cubo
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, vetores físicos = branco, construções = violeta, sinal da carga esculpido
+- o líquido é vidro translúcido: a transparência esconde a distinção entre ele e o ar quando visto de cima
+- o módulo das setas é visual (peso fixo em 1,7 u)
+- a oscilação é prescrita (cosseno), sem amortecimento
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `largura` | 3.2 | u | largura do tanque |
+| `profundidade` | 2.2 | u | profundidade do tanque |
+| `altura_tanque` | 2.8 | u | altura do tanque |
+| `nivel` | 1.9 | u | altura do líquido |
+| `densidade_bloco` | 0.6 | 0-1 | densidade do bloco / densidade do líquido (fração submersa) |
+| `lado` | 0.95 | u | lado do bloco |
+| `setas` | 1 | 0/1 | pressão, peso e empuxo |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `oscilacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.87 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- tanque_hidrostatico --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("tanque_hidrostatico").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/tanque_hidrostatico.json`
+
+### `tanque_torricelli` — Jato de Torricelli
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Tanque com líquido até `nivel` e um furo a `altura_furo` do fundo: o jato sai com v = √(2 g h), h = nivel − altura_furo, e descreve uma parábola (violeta tracejado) até o chão; partículas marcadoras percorrem o jato continuamente (g = 1 nas unidades do sólido). fase 0 a 1 = um ciclo de emissão.
+
+![Jato de Torricelli](previews/tanque_torricelli.png)
+
+**Como se lê:** Um tanque com um jato curvo saindo de um furo, marcado por pontos: lê-se como velocidade de saída √(2gh) e o alcance parabólico.
+
+**Usar quando**
+- velocidade de saída (Torricelli) e o alcance do jato
+- alcance máximo com o furo na metade da altura
+- contraste com a continuidade (tubo_escoamento)
+
+**Não usar quando**
+- tanques que esvaziam (o nível é constante aqui)
+- viscosidade ou turbulência
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, vetores físicos = branco, construções = violeta, sinal da carga esculpido
+- o nível do líquido é constante (reservatório grande)
+- o jato é uma parábola perfeita, sem arrasto nem dispersão
+- g = 1 nas unidades do sólido: as escalas são qualitativas
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `largura` | 2.4 | u | largura do tanque |
+| `nivel` | 2.2 | u | altura do líquido |
+| `altura_furo` | 0.7 | u | altura do furo |
+| `n_particulas` | 26 | n | partículas marcadoras do jato |
+| `setas` | 1 | 0/1 | seta da velocidade de saída |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `escoamento` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 1.09 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- tanque_torricelli --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("tanque_torricelli").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/tanque_torricelli.json`
+
 ### `teorema_stokes` — Teorema de Stokes (hemisfério e contorno)
 
 **Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
@@ -3090,6 +4590,118 @@ img = Solido3D("toroide_corrente").mobject(cena=self, altura=5)   # cargas em lo
 ```
 
 Ficha: `solidos/toroide_corrente.json`
+
+### `transformacao_linear_3d` — Transformação linear em R³
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Cubo unitário (violeta, tracejado, parado) e a sua imagem pela matriz A (vidro azul, arestas azul-claro), com os vetores A e1, A e2, A e3 (as colunas de A) em branco. Com movimento o cubo vai de I até A e volta (interpolação linear I → A → I): a fase 0 e a fase 1 são o cubo original.
+
+![Transformação linear em R³](previews/transformacao_linear_3d.png)
+
+**Como se lê:** Uma caixa que se deforma a partir de uma caixa tracejada, com três setas brancas nas arestas: lê-se como a ação de uma matriz e suas colunas.
+
+**Usar quando**
+- a matriz como transformação linear (colunas = imagens da base)
+- determinante como razão de volumes
+- composição e inversa (compare no Manim)
+
+**Não usar quando**
+- transformações afins (a origem é fixa)
+- mais que um cubo (não há uma grade completa)
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, matrizes, resultados e rótulos são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): superfícies = vidro azul, curvas = azul-claro, construções = violeta, vetores = branco, normal e ∇g = azul, campo = ciano
+- a deformação é interpolada linearmente de I até A: o caminho intermediário não é uma transformação de mesma natureza
+- a matriz tem de ser não singular para o cubo ter volume
+- os elementos de A são parâmetros (a11 ... a33)
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `lado` | 1.5 | u | aresta do cubo unitário |
+| `intensidade` | 1.0 | 0-1 | fração de I até A (sem movimento) |
+| `a11` | 1.2 | n | elemento A[1][1] da matriz (linha 1, coluna 1) |
+| `a12` | 0.5 | n | elemento A[1][2] da matriz (linha 1, coluna 2) |
+| `a13` | 0.0 | n | elemento A[1][3] da matriz (linha 1, coluna 3) |
+| `a21` | 0.0 | n | elemento A[2][1] da matriz (linha 2, coluna 1) |
+| `a22` | 0.9 | n | elemento A[2][2] da matriz (linha 2, coluna 2) |
+| `a23` | 0.4 | n | elemento A[2][3] da matriz (linha 2, coluna 3) |
+| `a31` | 0.3 | n | elemento A[3][1] da matriz (linha 3, coluna 1) |
+| `a32` | 0.0 | n | elemento A[3][2] da matriz (linha 3, coluna 2) |
+| `a33` | 1.1 | n | elemento A[3][3] da matriz (linha 3, coluna 3) |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `transformacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.66 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- transformacao_linear_3d --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("transformacao_linear_3d").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/transformacao_linear_3d.json`
+
+### `trilho_looping` — Looping (pista com laço vertical)
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
+
+Pista de vidro com uma rampa, uma concordância suave e um laço vertical (a pista se desloca lateralmente para não se cruzar). A bola parte do repouso na altura h0 (linha tracejada violeta) e a velocidade vem da energia, v = √(2 g (h0 − z)). Ciclo único.
+
+![Looping (pista com laço vertical)](previews/trilho_looping.png)
+
+**Como se lê:** Uma bola descendo uma rampa, subindo o laço e saindo: lê-se como energia potencial virando cinética, e a condição para completar o looping.
+
+**Usar quando**
+- looping e a altura mínima h0 ≥ 2,5 R
+- conservação da energia mecânica numa pista
+- condições de contato (a normal no topo)
+
+**Não usar quando**
+- rolamento com rotação (a bola aqui desliza sem atrito)
+- pistas que não sejam laço
+
+**Limitações**
+- só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim
+- a gramática de cor segue o padrão do arsenal (estilo.json): vetores físicos = branco, construções = violeta tracejado, corpos = vidro azul
+- a bola desliza sem atrito e sem rotação (g = 1 nas unidades do sólido): a velocidade é qualitativa
+- o deslocamento lateral do laço é uma convenção de desenho
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `raio_loop` | 1.4 | u | raio do laço |
+| `altura_inicial` | 0.0 | u | altura h0 (0 = automática: 3,2 R) |
+| `largura` | 0.9 | u | largura da pista |
+| `deslocamento_y` | 1.0 | u | deslocamento lateral do laço |
+| `raio_bola` | 0.16 | u | raio da bola |
+| `linha_energia` | 1 | 0/1 | linha do nível h0 |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `descida` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.72 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- trilho_looping --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("trilho_looping").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/trilho_looping.json`
 
 ### `tubo_escoamento` — Tubo com estrangulamento (continuidade)
 

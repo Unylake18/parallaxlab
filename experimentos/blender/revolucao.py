@@ -4,7 +4,7 @@ Rodar (sem abrir a interface), a partir da raiz do repositório:
     blender.exe -b -P experimentos/blender/revolucao.py
 
 Gera out/revolucao_v1.png (disco, arruela e cascas lado a lado). O corpo é vidro azul (a "física" da gramática); a
-FATIA ELEMENTAR (disco, arruela ou casca, de espessura dx) é construção matemática em violeta (#9C8CFF), com arestas
+FATIA ELEMENTAR (disco, arruela ou casca, de espessura dx) é construção matemática em violeta, com arestas
 tracejadas; a curva geratriz é azul-claro. Com movimento, a fatia varre o sólido em vaivém suave (fase de 0 a 1;
 fase=1 reproduz a fase 0).
 

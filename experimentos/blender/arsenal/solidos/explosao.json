@@ -1,0 +1,99 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "mecanica/colisoes",
+    "mecanica/momento_linear"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/mecanica_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "explosao",
+  "nome": "Explosão em três fragmentos",
+  "descricao": "Uma esfera se parte em três fragmentos (massas m1, m2, m3) que saem a 120° conservando o momento linear: no referencial do centro de massa Σ m v = 0. Velocidades em branco, centro de massa neutro (anda a v0 constante). Ciclo único.",
+  "leitura_visual": "Uma esfera que vira três esferas se afastando em direções opostas, com o centro de massa seguindo reto: lê-se como a explosão não mudando o movimento do CM.",
+  "usar_quando": [
+    "explosões e a conservação do momento linear",
+    "o CM não é afetado por forças internas",
+    "energia cinética liberada por forças internas (a conta é do Manim)"
+  ],
+  "nao_usar_quando": [
+    "fragmentos com direções arbitrárias (aqui são três, a 120°)",
+    "movimento em 3D"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): vetores físicos = branco, construções = violeta tracejado, corpos = vidro azul",
+    "os fragmentos saem exatamente a 120° (as velocidades se ajustam às massas), é uma escolha de simetria",
+    "plano XY visto de cima: não há altura"
+  ],
+  "construtor": "explosao",
+  "parametros": {
+    "m1": {
+      "valor": 2.0,
+      "unidade": "u",
+      "descricao": "massa do fragmento 1"
+    },
+    "m2": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "massa do fragmento 2"
+    },
+    "m3": {
+      "valor": 1.5,
+      "unidade": "u",
+      "descricao": "massa do fragmento 3"
+    },
+    "energia": {
+      "valor": 14.0,
+      "unidade": "u",
+      "descricao": "energia cinética liberada (no referencial do CM)"
+    },
+    "v0": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "velocidade do centro de massa"
+    },
+    "instante": {
+      "valor": 0.35,
+      "unidade": "0-1",
+      "descricao": "instante da explosão"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -20,
+    "elevacao": 62,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/explosao.png",
+  "animacao": {
+    "tipo": "explosao",
+    "liga": "movimento",
+    "ciclo": "unico",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "ciclo único: antes e depois da explosão; a fase 1 NÃO repete a fase 0",
+    "custo_1080p_s_por_frame": 0.74,
+    "peso_mb_por_frame": 0.91,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.75"
+  ]
+}

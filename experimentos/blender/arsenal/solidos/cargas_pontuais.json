@@ -1,0 +1,103 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "eletromagnetismo/lei_de_coulomb"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/eletro_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "cargas_pontuais",
+  "nome": "Cargas pontuais e forças de Coulomb",
+  "descricao": "Duas ou três cargas de sinal esculpido (+ ou −) e as forças de Coulomb sobre cada uma (setas brancas, módulo visual ∝ |F|·d²). Com movimento a carga 2 vai e volta ao longo de X e a força varia com 1/r² (o loop fecha).",
+  "leitura_visual": "Esferas com + e −, com setas entre as cargas de sinais opostos (atração) ou afastando as de sinais iguais (repulsão).",
+  "usar_quando": [
+    "lei de Coulomb, atração e repulsão",
+    "superposição das forças com três cargas",
+    "dependência da força com 1/r²"
+  ],
+  "nao_usar_quando": [
+    "campos e potenciais de distribuições contínuas",
+    "mais de três cargas"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, vetores físicos = branco, construções = violeta, sinal da carga esculpido",
+    "o módulo das setas é limitado a 2,8 u: forças muito grandes são mostradas truncadas",
+    "as cargas estão num plano (z = 0) e o `sinais` por parâmetro vale para até 3 cargas",
+    "q e k são do Manim"
+  ],
+  "construtor": "cargas_pontuais",
+  "parametros": {
+    "config": {
+      "valor": "duas",
+      "unidade": "texto",
+      "descricao": "duas ou tres"
+    },
+    "sinal1": {
+      "valor": 1,
+      "unidade": "±1",
+      "descricao": "sinal da carga 1"
+    },
+    "sinal2": {
+      "valor": -1,
+      "unidade": "±1",
+      "descricao": "sinal da carga 2"
+    },
+    "sinal3": {
+      "valor": 1,
+      "unidade": "±1",
+      "descricao": "sinal da carga 3 (só em tres)"
+    },
+    "distancia": {
+      "valor": 2.6,
+      "unidade": "u",
+      "descricao": "distância (ou lado do triângulo)"
+    },
+    "raio": {
+      "valor": 0.3,
+      "unidade": "u",
+      "descricao": "raio de cada carga"
+    },
+    "forcas": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "setas de força"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -30,
+    "elevacao": 40,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/cargas_pontuais.png",
+  "animacao": {
+    "tipo": "oscilacao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.42,
+    "peso_mb_por_frame": 0.51,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.0"
+  ]
+}

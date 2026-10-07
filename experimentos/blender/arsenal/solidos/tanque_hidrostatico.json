@@ -1,0 +1,103 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "fluidos/fluidos_em_repouso"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/fluidos3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "tanque_hidrostatico",
+  "nome": "Tanque com pressão e empuxo",
+  "descricao": "Tanque de vidro com líquido até `nivel`, a superfície livre (violeta tracejado) e um bloco flutuante (fração submersa = densidade do bloco / densidade do líquido). Setas brancas horizontais na parede mostram a pressão crescendo com a profundidade; peso e empuxo (brancos) são iguais no equilíbrio. Com movimento o bloco oscila e o empuxo acompanha o volume submerso.",
+  "leitura_visual": "Um bloco boiando num tanque, com setas de pressão que crescem para baixo e duas setas verticais iguais: lê-se como pressão hidrostática e princípio de Arquimedes.",
+  "usar_quando": [
+    "pressão hidrostática p = ρ g h (as setas crescem com a profundidade)",
+    "empuxo e flutuação: fração submersa = ρ_bloco/ρ_líquido",
+    "oscilação vertical de um bloco flutuante (MHS, pequena amplitude)"
+  ],
+  "nao_usar_quando": [
+    "fluidos em movimento (use tubo_escoamento ou tanque_torricelli)",
+    "corpos de forma que não seja um cubo"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, vetores físicos = branco, construções = violeta, sinal da carga esculpido",
+    "o líquido é vidro translúcido: a transparência esconde a distinção entre ele e o ar quando visto de cima",
+    "o módulo das setas é visual (peso fixo em 1,7 u)",
+    "a oscilação é prescrita (cosseno), sem amortecimento"
+  ],
+  "construtor": "tanque_hidrostatico",
+  "parametros": {
+    "largura": {
+      "valor": 3.2,
+      "unidade": "u",
+      "descricao": "largura do tanque"
+    },
+    "profundidade": {
+      "valor": 2.2,
+      "unidade": "u",
+      "descricao": "profundidade do tanque"
+    },
+    "altura_tanque": {
+      "valor": 2.8,
+      "unidade": "u",
+      "descricao": "altura do tanque"
+    },
+    "nivel": {
+      "valor": 1.9,
+      "unidade": "u",
+      "descricao": "altura do líquido"
+    },
+    "densidade_bloco": {
+      "valor": 0.6,
+      "unidade": "0-1",
+      "descricao": "densidade do bloco / densidade do líquido (fração submersa)"
+    },
+    "lado": {
+      "valor": 0.95,
+      "unidade": "u",
+      "descricao": "lado do bloco"
+    },
+    "setas": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "pressão, peso e empuxo"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -65,
+    "elevacao": 16,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/tanque_hidrostatico.png",
+  "animacao": {
+    "tipo": "oscilacao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.87,
+    "peso_mb_por_frame": 0.96,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.0"
+  ]
+}

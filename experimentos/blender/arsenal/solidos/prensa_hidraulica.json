@@ -1,0 +1,92 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "fluidos/fluidos_em_repouso"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/fluidos3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "prensa_hidraulica",
+  "nome": "Prensa hidráulica (Pascal)",
+  "descricao": "Dois cilindros de vidro ligados por baixo e cheios de líquido, com êmbolos de áreas A1 e A2. Empurrar o êmbolo pequeno com F1 desce d1 e levanta o grande d2 = d1 A1/A2; F2 = F1 A2/A1 (setas brancas, a do êmbolo grande na escala `escala_forca`). fase 0 a 1 = um ciclo (desce e sobe).",
+  "leitura_visual": "Um êmbolo pequeno descendo muito e um grande subindo pouco, com uma seta pequena e uma grande: lê-se como multiplicação de força.",
+  "usar_quando": [
+    "princípio de Pascal e a multiplicação de força F2 = F1 A2/A1",
+    "conservação do volume (d1 A1 = d2 A2)",
+    "freios e macacos hidráulicos"
+  ],
+  "nao_usar_quando": [
+    "fluidos em movimento",
+    "vasos comunicantes sem êmbolos"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, vetores físicos = branco, construções = violeta, sinal da carga esculpido",
+    "a seta F2 é desenhada na escala `escala_forca` (0,32), por isso o comprimento não é a razão exata das áreas",
+    "os êmbolos são discos, sem vazamento nem atrito"
+  ],
+  "construtor": "prensa_hidraulica",
+  "parametros": {
+    "raio1": {
+      "valor": 0.45,
+      "unidade": "u",
+      "descricao": "raio do êmbolo pequeno"
+    },
+    "raio2": {
+      "valor": 1.1,
+      "unidade": "u",
+      "descricao": "raio do êmbolo grande"
+    },
+    "altura": {
+      "valor": 2.0,
+      "unidade": "u",
+      "descricao": "altura inicial do líquido em cada coluna"
+    },
+    "curso": {
+      "valor": 0.55,
+      "unidade": "u",
+      "descricao": "descida máxima do êmbolo pequeno"
+    },
+    "escala_forca": {
+      "valor": 0.32,
+      "unidade": "x",
+      "descricao": "escala de desenho de F2"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -88,
+    "elevacao": 8,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/prensa_hidraulica.png",
+  "animacao": {
+    "tipo": "oscilacao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.77,
+    "peso_mb_por_frame": 0.82,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.5"
+  ]
+}

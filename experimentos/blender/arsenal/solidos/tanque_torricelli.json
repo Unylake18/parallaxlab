@@ -1,0 +1,93 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "fluidos/fluidos_em_movimento"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/fluidos3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "tanque_torricelli",
+  "nome": "Jato de Torricelli",
+  "descricao": "Tanque com líquido até `nivel` e um furo a `altura_furo` do fundo: o jato sai com v = √(2 g h), h = nivel − altura_furo, e descreve uma parábola (violeta tracejado) até o chão; partículas marcadoras percorrem o jato continuamente (g = 1 nas unidades do sólido). fase 0 a 1 = um ciclo de emissão.",
+  "leitura_visual": "Um tanque com um jato curvo saindo de um furo, marcado por pontos: lê-se como velocidade de saída √(2gh) e o alcance parabólico.",
+  "usar_quando": [
+    "velocidade de saída (Torricelli) e o alcance do jato",
+    "alcance máximo com o furo na metade da altura",
+    "contraste com a continuidade (tubo_escoamento)"
+  ],
+  "nao_usar_quando": [
+    "tanques que esvaziam (o nível é constante aqui)",
+    "viscosidade ou turbulência"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, vetores físicos = branco, construções = violeta, sinal da carga esculpido",
+    "o nível do líquido é constante (reservatório grande)",
+    "o jato é uma parábola perfeita, sem arrasto nem dispersão",
+    "g = 1 nas unidades do sólido: as escalas são qualitativas"
+  ],
+  "construtor": "tanque_torricelli",
+  "parametros": {
+    "largura": {
+      "valor": 2.4,
+      "unidade": "u",
+      "descricao": "largura do tanque"
+    },
+    "nivel": {
+      "valor": 2.2,
+      "unidade": "u",
+      "descricao": "altura do líquido"
+    },
+    "altura_furo": {
+      "valor": 0.7,
+      "unidade": "u",
+      "descricao": "altura do furo"
+    },
+    "n_particulas": {
+      "valor": 26,
+      "unidade": "n",
+      "descricao": "partículas marcadoras do jato"
+    },
+    "setas": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "seta da velocidade de saída"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -75,
+    "elevacao": 14,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/tanque_torricelli.png",
+  "animacao": {
+    "tipo": "escoamento",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 1.09,
+    "peso_mb_por_frame": 1.08,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.3"
+  ]
+}

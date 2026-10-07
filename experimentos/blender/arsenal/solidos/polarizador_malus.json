@@ -1,0 +1,84 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "otica/polarizacao",
+    "fisica4/ondas_eletromagneticas"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/otica_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "polarizador_malus",
+  "nome": "Polarizadores e lei de Malus",
+  "descricao": "Dois discos de vidro com o eixo de transmissão em linha branca. Antes do primeiro, setas ciano em várias direções (luz não polarizada); depois do primeiro, uma seta vertical (E0); depois do analisador (que gira de θ), E0 |cos θ| ao longo do eixo dele. A intensidade é ∝ cos²θ (Malus). Com movimento θ dá uma volta (loop).",
+  "leitura_visual": "Setas ciano em várias direções entrando num disco, uma seta vertical saindo, e depois uma segunda que diminui conforme o segundo disco gira.",
+  "usar_quando": [
+    "luz polarizada e a lei de Malus I = I0 cos²θ",
+    "polarização por absorção e por reflexão (ângulo de Brewster)",
+    "campo E ao longo do eixo de transmissão"
+  ],
+  "nao_usar_quando": [
+    "polarização circular ou elíptica",
+    "luz com fase relativa (use onda_eletromagnetica)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, rótulos (n, θ, λ, ...) e o padrão de franjas/difração são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): raios de luz = branco, campo E = ciano, objetos transparentes = vidro azul-claro, construções = violeta tracejado",
+    "as setas não oscilam no tempo: mostram apenas a amplitude do campo, não a onda",
+    "o eixo do primeiro polarizador é fixo (vertical)",
+    "a amplitude é |cos θ|: o sinal (inversão do sentido) não é mostrado"
+  ],
+  "construtor": "polarizador_malus",
+  "parametros": {
+    "raio": {
+      "valor": 1.15,
+      "unidade": "u",
+      "descricao": "raio dos discos"
+    },
+    "separacao": {
+      "valor": 2.6,
+      "unidade": "u",
+      "descricao": "distância entre os polarizadores"
+    },
+    "angulo_graus": {
+      "valor": 40.0,
+      "unidade": "graus",
+      "descricao": "ângulo θ do analisador (sem movimento)"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -30,
+    "elevacao": 14,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/polarizador_malus.png",
+  "animacao": {
+    "tipo": "rotacao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.69,
+    "peso_mb_por_frame": 0.75,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.11"
+  ]
+}

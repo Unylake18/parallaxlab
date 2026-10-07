@@ -1,0 +1,99 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "mecanica/leis_de_newton",
+    "mecanica/atrito"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/mecanica_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "plano_inclinado",
+  "nome": "Plano inclinado com forças",
+  "descricao": "Rampa de vidro (cunha) com um bloco de vidro: peso, normal e atrito (setas brancas) e as componentes do peso (violeta tracejado), com o arco do ângulo θ. Se tan θ > μ o bloco desce com aceleração constante (ciclo único); senão fica parado e o atrito é estático (f = P sen θ).",
+  "leitura_visual": "Um bloco numa rampa com três setas brancas e duas linhas tracejadas: lê-se como a decomposição do peso em P∥ e P⊥.",
+  "usar_quando": [
+    "diagrama de corpo livre num plano inclinado e a decomposição do peso",
+    "atrito estático × cinético e o limite de escorregamento (tan θ = μ)",
+    "preparar a conta da aceleração a = g (sen θ − μ cos θ) no Manim"
+  ],
+  "nao_usar_quando": [
+    "polias e sistemas conectados (só um bloco)",
+    "rampas curvas"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): vetores físicos = branco, construções = violeta tracejado, corpos = vidro azul",
+    "o bloco desliza sem rotação e as setas têm módulo visual (peso fixo em 1,7 u), proporcional entre si mas sem escala numérica",
+    "a rampa é uma cunha (triângulo retângulo) fixa: só θ e o comprimento mudam"
+  ],
+  "construtor": "plano_inclinado",
+  "parametros": {
+    "angulo_graus": {
+      "valor": 28.0,
+      "unidade": "graus",
+      "descricao": "ângulo θ da rampa"
+    },
+    "comprimento": {
+      "valor": 5.2,
+      "unidade": "u",
+      "descricao": "comprimento da rampa"
+    },
+    "mu": {
+      "valor": 0.25,
+      "unidade": "0-1",
+      "descricao": "coeficiente de atrito cinético"
+    },
+    "lado": {
+      "valor": 0.8,
+      "unidade": "u",
+      "descricao": "lado do bloco"
+    },
+    "forcas": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "forças e componentes"
+    },
+    "posicao": {
+      "valor": 0.6,
+      "unidade": "0-1",
+      "descricao": "posição do bloco na rampa (sem movimento)"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -75,
+    "elevacao": 14,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/plano_inclinado.png",
+  "animacao": {
+    "tipo": "deslizamento",
+    "liga": "movimento",
+    "ciclo": "unico",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "ciclo único: o bloco desce do topo até a base com aceleração constante; a fase 1 NÃO repete a fase 0",
+    "custo_1080p_s_por_frame": 0.73,
+    "peso_mb_por_frame": 0.81,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.3"
+  ]
+}

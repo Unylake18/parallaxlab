@@ -1,0 +1,87 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "mecanica/movimento_circular"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/mecanica_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "movimento_circular",
+  "nome": "Movimento circular uniforme",
+  "descricao": "Bola presa por um fio a um poste central, numa mesa de vidro redonda, com a trajetória tracejada (violeta). A velocidade v (tangente) e a aceleração centrípeta a_c (para o centro) são setas brancas. fase 0 a 1 = uma volta.",
+  "leitura_visual": "Uma bola girando com uma seta tangente e uma seta para o centro: lê-se como v tangente e a_c para o centro.",
+  "usar_quando": [
+    "aceleração centrípeta e a origem geométrica de a_c = v²/R",
+    "tração do fio como força centrípeta",
+    "velocidade angular e período"
+  ],
+  "nao_usar_quando": [
+    "movimento circular não uniforme (a velocidade aqui é constante)",
+    "movimento vertical (use trilho_looping)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): vetores físicos = branco, construções = violeta tracejado, corpos = vidro azul",
+    "o módulo de v e de a_c é visual (1,7 e 1,1 u), sem relação numérica entre eles",
+    "a bola gira numa mesa sem atrito: não há gravidade vertical nem fio inclinado"
+  ],
+  "construtor": "movimento_circular",
+  "parametros": {
+    "raio": {
+      "valor": 1.8,
+      "unidade": "u",
+      "descricao": "raio da trajetória"
+    },
+    "vetores": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "v e a_c"
+    },
+    "trajetoria": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "trajetória tracejada"
+    },
+    "raio_bola": {
+      "valor": 0.22,
+      "unidade": "u",
+      "descricao": "raio da bola"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 38,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/movimento_circular.png",
+  "animacao": {
+    "tipo": "percurso",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.73,
+    "peso_mb_por_frame": 0.77,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.15"
+  ]
+}

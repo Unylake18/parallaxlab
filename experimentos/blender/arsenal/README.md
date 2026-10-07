@@ -14,6 +14,17 @@ serve **antes** de modelar algo novo. Fase atual: sandbox (`experimentos/blender
 | `renderizar.py` | Constrói e renderiza qualquer sólido a partir da ficha |
 | `gerar_catalogo.py` | Valida as fichas e regera `catalogo.md` (Python puro, sem Blender) |
 | `gerar_cobertura.py` | Gera `cobertura.md`: o que existe e o que falta por capítulo do mapa curricular |
+| `abrir/<id>.bat` | Atalho de dois cliques: abre o sólido já montado na janela do Blender (loop tocando, se animado); índice em `abrir/LEIA-ME.md` |
+| `abrir_no_blender.py` | Script que os atalhos chamam (monta o sólido na interface, câmera + modo Renderizado) |
+| `gerar_atalhos.py` | Gera `abrir/*.bat` e `abrir/LEIA-ME.md` a partir das fichas (rode de novo ao criar sólidos) |
+
+## Abrir no Blender para ver
+
+Dois cliques em `abrir/<id>.bat` (ou `abrir/_escolher.bat`, que pergunta o id): o Blender abre com o sólido montado, na câmera do
+enquadramento da ficha, em modo Renderizado, e o loop já toca (espaço pausa, setas ← → andam um quadro). Vale o estado do preview
+(`preview_set`); para outro estado: `blender.exe -P experimentos/blender/arsenal/abrir_no_blender.py -- <id> --set nome=valor`. Se o
+Blender não estiver em `C:\Program Files\Blender Foundation\Blender 5.2`, defina a variável de ambiente `BLENDER_EXE`. Nada é
+salvo: para guardar a cena, use Arquivo → Salvar (os `.blend` ficam fora do Git).
 
 ## Fluxo
 
@@ -105,10 +116,9 @@ Aprovados pelo usuário em 2026-10-07: todos os 41 sólidos atuais. Promover um 
 A lista completa, por capítulo do mapa curricular, com o status de cada sólido, o que falta, o assunto e a limitação, está
 em **`cobertura.md`** (gerado por `gerar_cobertura.py`: o status vem das fichas, as lacunas ficam no script).
 
-A fila A do levantamento de 2026-10-07 (17 sólidos de alto valor) foi construída e aprovada em 2026-10-07 (o `ima_espira_inducao` foi ajustado depois e aguarda nova aprovação): onda
-eletromagnética, partícula e espira em B, ímã com espira, barra em trilhos, equipotenciais, giroscópio, Biot–Savart, produto
-vetorial, plano tangente, quádricas, pontos críticos, soma de Riemann dupla, elemento de volume, orbital atômico, cone de luz e
-paisagem de potencial. O que sobra (fila B) está em `cobertura.md`, seção 2a.
+A fila A do levantamento de 2026-10-07 (17 sólidos de alto valor) foi construída e aprovada em 2026-10-07 (o `ima_espira_inducao` foi ajustado depois e aprovado). A **fila B** (30 sólidos: mecânica, fluidos, eletricidade, óptica, física moderna, cálculo,
+álgebra linear e EDP) foi construída e aprovada no mesmo dia. Sobram só duas lacunas 3D (centro de massa e campos
+conservativos): veja `cobertura.md`, seção 2a.
 
 ### Convenções visuais decididas pelo usuário (2026-10-07)
 

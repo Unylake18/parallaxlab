@@ -1,0 +1,108 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "calculo/vetores_r3"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/calculo_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "plano_e_reta_r3",
+  "nome": "Plano e reta em R³",
+  "descricao": "Plano n · x = 0 (violeta translúcido, arestas tracejadas) com a normal n (azul), uma reta (azul-claro) que o atravessa num ponto I (branco) e um ponto P a uma distância d do plano, com o pé Q da perpendicular e o segmento PQ (violeta tracejado). Com movimento P sobe e desce ao longo de n̂ e a distância varia.",
+  "leitura_visual": "Uma folha inclinada com uma seta azul perpendicular, uma reta que a fura e um ponto com um fio tracejado até ela: lê-se como plano, normal, interseção e distância ponto-plano.",
+  "usar_quando": [
+    "equação do plano (n · (x − x0) = 0) e a normal",
+    "interseção de reta e plano",
+    "distância de ponto a plano |n · (P − x0)| / |n|"
+  ],
+  "nao_usar_quando": [
+    "planos tangentes a superfícies (use plano_tangente)",
+    "duas retas reversas ou dois planos"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, matrizes, resultados e rótulos são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): superfícies = vidro azul, curvas = azul-claro, construções = violeta, vetores = branco, normal e ∇g = azul, campo = ciano",
+    "o plano passa pela origem: para um plano deslocado, desloque a cena no Manim",
+    "o ponto P e a reta têm valores fixos de exemplo: as coordenadas e as fórmulas são do Manim",
+    "a normal está desenhada com comprimento fixo (1,3 u)"
+  ],
+  "construtor": "plano_e_reta_r3",
+  "parametros": {
+    "nx": {
+      "valor": 1.0,
+      "unidade": "n",
+      "descricao": "normal, x"
+    },
+    "ny": {
+      "valor": 0.6,
+      "unidade": "n",
+      "descricao": "normal, y"
+    },
+    "nz": {
+      "valor": 2.0,
+      "unidade": "n",
+      "descricao": "normal, z"
+    },
+    "distancia": {
+      "valor": 1.4,
+      "unidade": "u",
+      "descricao": "altura de P sobre o plano"
+    },
+    "dx": {
+      "valor": 0.55,
+      "unidade": "n",
+      "descricao": "direção da reta, x"
+    },
+    "dy": {
+      "valor": 0.45,
+      "unidade": "n",
+      "descricao": "direção da reta, y"
+    },
+    "dz": {
+      "valor": 1.0,
+      "unidade": "n",
+      "descricao": "direção da reta, z"
+    },
+    "tamanho": {
+      "valor": 2.4,
+      "unidade": "u",
+      "descricao": "meia-aresta do plano desenhado"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -40,
+    "elevacao": 22,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/plano_e_reta_r3.png",
+  "animacao": {
+    "tipo": "distancia",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.81,
+    "peso_mb_por_frame": 0.73,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.25"
+  ]
+}

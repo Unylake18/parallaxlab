@@ -1,0 +1,103 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "mecanica/colisoes"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/mecanica_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "colisao_2d",
+  "nome": "Colisão elástica em 2D",
+  "descricao": "Dois discos de vidro numa mesa de vidro: o disco 1 (azul) vem em +X e atinge o disco 2 (azul-claro, em repouso) com parâmetro de impacto b. O impulso é só ao longo da normal do contato (sem atrito). Velocidades em branco, centro de massa neutro, trajetórias em violeta tracejado. Ciclo único.",
+  "leitura_visual": "Dois discos que se afastam em ângulo depois do choque, com o centro de massa seguindo em linha reta: lê-se como conservação do momento em 2D.",
+  "usar_quando": [
+    "colisões em duas dimensões: o momento se conserva por componentes",
+    "caso de massas iguais (os discos saem a 90°) e massas diferentes",
+    "o centro de massa não é afetado pela colisão"
+  ],
+  "nao_usar_quando": [
+    "colisões 1D (use colisao_1d)",
+    "discos com rotação e atrito de contato"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): vetores físicos = branco, construções = violeta tracejado, corpos = vidro azul",
+    "o disco alvo começa em repouso e o impulso é só ao longo da normal",
+    "a mesa é plana e sem atrito; discos sem rotação"
+  ],
+  "construtor": "colisao_2d",
+  "parametros": {
+    "m1": {
+      "valor": 2.0,
+      "unidade": "u",
+      "descricao": "massa do disco 1"
+    },
+    "m2": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "massa do disco 2"
+    },
+    "v1": {
+      "valor": 3.0,
+      "unidade": "u",
+      "descricao": "velocidade inicial do disco 1"
+    },
+    "parametro_impacto": {
+      "valor": 0.55,
+      "unidade": "u",
+      "descricao": "parâmetro de impacto b (deslocamento lateral da linha de movimento)"
+    },
+    "restituicao": {
+      "valor": 1.0,
+      "unidade": "0-1",
+      "descricao": "coeficiente de restituição"
+    },
+    "instante": {
+      "valor": 0.4,
+      "unidade": "0-1",
+      "descricao": "instante da colisão"
+    },
+    "mostrar_cm": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "marca do centro de massa"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -20,
+    "elevacao": 62,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/colisao_2d.png",
+  "animacao": {
+    "tipo": "colisao",
+    "liga": "movimento",
+    "ciclo": "unico",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "ciclo único: antes, durante e depois do choque; a fase 1 NÃO repete a fase 0",
+    "custo_1080p_s_por_frame": 0.75,
+    "peso_mb_por_frame": 0.92,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.75"
+  ]
+}

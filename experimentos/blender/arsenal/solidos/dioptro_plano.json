@@ -1,0 +1,93 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "otica/otica_geometrica"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/otica_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "dioptro_plano",
+  "nome": "Dioptro plano: refração e reflexão interna total",
+  "descricao": "Bloco de vidro (n2) em contato com o meio n1 e a normal tracejada. Três raios brancos: incidente, refletido (mais fraco) e refratado, pela lei de Snell n1 sen θ1 = n2 sen θ2. Se sen θ2 > 1 só resta o refletido (reflexão interna total). `sentido`: ar_vidro ou vidro_ar. Com movimento θ1 varre de 5° a 85° e volta (loop).",
+  "leitura_visual": "Um raio chegando numa fronteira, um refletido e outro que muda de direção ao entrar no vidro (ou some, na reflexão total).",
+  "usar_quando": [
+    "lei de Snell e o desvio do raio",
+    "ângulo crítico e reflexão interna total (fibra óptica)",
+    "reflexão e refração simultâneas"
+  ],
+  "nao_usar_quando": [
+    "lentes e prismas (a geometria é uma fronteira plana)",
+    "dispersão (n não depende da cor)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, rótulos (n, θ, λ, ...) e o padrão de franjas/difração são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): raios de luz = branco, campo E = ciano, objetos transparentes = vidro azul-claro, construções = violeta tracejado",
+    "os raios têm intensidade visual fixa (o raio refletido é só mais fino): as fórmulas de Fresnel não estão representadas",
+    "o ângulo é medido da normal; os rótulos θ1, θ2, n1, n2 são do Manim",
+    "meio único e uniforme"
+  ],
+  "construtor": "dioptro_plano",
+  "parametros": {
+    "n1": {
+      "valor": 1.0,
+      "unidade": "n",
+      "descricao": "índice do meio de incidência (ar_vidro) ou do vidro (vidro_ar)"
+    },
+    "n2": {
+      "valor": 1.5,
+      "unidade": "n",
+      "descricao": "índice do outro meio"
+    },
+    "angulo_graus": {
+      "valor": 40.0,
+      "unidade": "graus",
+      "descricao": "ângulo de incidência (sem movimento)"
+    },
+    "sentido": {
+      "valor": "ar_vidro",
+      "unidade": "texto",
+      "descricao": "ar_vidro ou vidro_ar"
+    },
+    "comprimento_raio": {
+      "valor": 2.3,
+      "unidade": "u",
+      "descricao": "comprimento de cada raio"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -90,
+    "elevacao": 6,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/dioptro_plano.png",
+  "animacao": {
+    "tipo": "angulo",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.72,
+    "peso_mb_por_frame": 0.78,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.2"
+  ]
+}

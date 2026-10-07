@@ -1,0 +1,88 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "otica/interferencia"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/otica_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "filme_fino",
+  "nome": "Filme fino e interferência",
+  "descricao": "Película de vidro (n > 1) sobre um substrato: um raio incidente produz dois raios refletidos (na face de cima e na de baixo). A esfera no alto brilha como cos²(2π · 2 n t cos θ₂ / λ): com movimento a espessura t oscila e o brilho vai e volta (construtiva e destrutiva).",
+  "leitura_visual": "Um raio se dividindo em dois ao bater numa película, e uma esfera que acende e apaga: lê-se como interferência por reflexão.",
+  "usar_quando": [
+    "interferência em filmes finos (bolhas, óleo)",
+    "condições de máximo e mínimo 2 n t cos θ = m λ",
+    "defasagem de π na reflexão"
+  ],
+  "nao_usar_quando": [
+    "interferência de fendas (use anteparo_fenda_dupla ou rede_de_difracao)",
+    "cores reais (o brilho é monocromático)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, rótulos (n, θ, λ, ...) e o padrão de franjas/difração são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): raios de luz = branco, campo E = ciano, objetos transparentes = vidro azul-claro, construções = violeta tracejado",
+    "o brilho é monocromático (λ = 0,62 nas unidades do sólido) e a amplitude da oscilação de t é visual",
+    "a defasagem de π da reflexão não é representada: a leitura da fase é do Manim",
+    "dois raios apenas (sem reflexões múltiplas)"
+  ],
+  "construtor": "filme_fino",
+  "parametros": {
+    "n_filme": {
+      "valor": 1.4,
+      "unidade": "n",
+      "descricao": "índice do filme"
+    },
+    "espessura": {
+      "valor": 0.55,
+      "unidade": "u",
+      "descricao": "espessura t"
+    },
+    "angulo_graus": {
+      "valor": 28.0,
+      "unidade": "graus",
+      "descricao": "ângulo de incidência"
+    },
+    "amplitude": {
+      "valor": 0.45,
+      "unidade": "frac",
+      "descricao": "variação relativa de t com movimento"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -90,
+    "elevacao": 8,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/filme_fino.png",
+  "animacao": {
+    "tipo": "interferencia",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.92,
+    "peso_mb_por_frame": 0.83,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.25"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "otica/otica_geometrica"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/otica_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "estático: não cronometrado (um quadro, ordem de 1 s)"
+  },
+  "id": "espelho_esferico",
+  "nome": "Espelho esférico (côncavo e convexo)",
+  "descricao": "Calota esférica de vidro (côncava ou convexa) de raio de curvatura R e diâmetro D, com a face refletora voltada para +X, o eixo óptico tracejado e três marcas brancas: vértice V, foco F = R/2 e centro de curvatura C = R (no convexo, atrás do espelho: virtuais).",
+  "leitura_visual": "Uma calota curva com um eixo tracejado e três pontos sobre ele: lê-se como espelho esférico com V, F e C.",
+  "usar_quando": [
+    "espelhos côncavos e convexos, foco e centro de curvatura",
+    "equação dos espelhos 1/f = 1/p + 1/p' (o Manim desenha os raios e a imagem)",
+    "aberração esférica (raios paraxiais)"
+  ],
+  "nao_usar_quando": [
+    "lentes (o vidro daqui não é lente)",
+    "imagens e raios: são do Manim (2D)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, rótulos (n, θ, λ, ...) e o padrão de franjas/difração são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): raios de luz = branco, campo E = ciano, objetos transparentes = vidro azul-claro, construções = violeta tracejado",
+    "só a geometria do espelho: os raios principais e a imagem ficam por conta do Manim",
+    "o espelho é vidro translúcido (não reflete a cena)",
+    "o R mostrado é visual: o foco é sempre R/2 (aproximação paraxial)"
+  ],
+  "construtor": "espelho_esferico",
+  "parametros": {
+    "tipo": {
+      "valor": "concavo",
+      "unidade": "texto",
+      "descricao": "concavo ou convexo"
+    },
+    "raio_curvatura": {
+      "valor": 3.0,
+      "unidade": "u",
+      "descricao": "raio de curvatura R"
+    },
+    "diametro": {
+      "valor": 2.6,
+      "unidade": "u",
+      "descricao": "diâmetro da calota"
+    },
+    "marcas": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "marcas V, F e C"
+    },
+    "eixo": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "eixo óptico tracejado"
+    }
+  },
+  "enquadramento": {
+    "azimute": -60,
+    "elevacao": 24,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/espelho_esferico.png"
+}

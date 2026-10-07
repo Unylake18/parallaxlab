@@ -1,0 +1,79 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "fisica4/relatividade_especial"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/otica_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "relogio_de_luz",
+  "nome": "Relógio de luz e dilatação do tempo",
+  "descricao": "Dois espelhos (vidro) separados de L e um fóton (esfera) entre eles. Visto num referencial em que o relógio se move com velocidade v (seta branca), o fóton percorre a diagonal: (c Δt)² = L² + (v Δt)² (triângulo violeta tracejado), Δt = γ L/c. Ciclo único: o relógio vai de x = 0 a x = v Δt enquanto o fóton sobe de um espelho ao outro.",
+  "leitura_visual": "Um fóton subindo na diagonal entre dois espelhos que andam para a direita, com um triângulo tracejado: lê-se como dilatação do tempo.",
+  "usar_quando": [
+    "dilatação do tempo e o fator γ = 1/√(1 − v²/c²)",
+    "o triângulo (c Δt)² = L² + (v Δt)²",
+    "simultaneidade e referenciais (compare com o relógio parado)"
+  ],
+  "nao_usar_quando": [
+    "contração do comprimento",
+    "o relógio parado visto no seu referencial (só a diagonal é mostrada)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, rótulos (n, θ, λ, ...) e o padrão de franjas/difração são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): raios de luz = branco, campo E = ciano, objetos transparentes = vidro azul-claro, construções = violeta tracejado",
+    "c = 1 nas unidades do sólido e o valor de v é visual: o γ é do Manim",
+    "a seta do vetor v tem comprimento fixo",
+    "o triângulo mostra a metade do ciclo (só a subida)"
+  ],
+  "construtor": "relogio_de_luz",
+  "parametros": {
+    "altura": {
+      "valor": 2.0,
+      "unidade": "u",
+      "descricao": "distância entre os espelhos (L)"
+    },
+    "velocidade": {
+      "valor": 0.65,
+      "unidade": "c",
+      "descricao": "velocidade v/c do relógio"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -90,
+    "elevacao": 16,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/relogio_de_luz.png",
+  "animacao": {
+    "tipo": "deslocamento",
+    "liga": "movimento",
+    "ciclo": "unico",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "ciclo único: o relógio vai de x = 0 a x = v Δt; a fase 1 NÃO repete a fase 0",
+    "custo_1080p_s_por_frame": 0.63,
+    "peso_mb_por_frame": 0.65,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.5"
+  ]
+}

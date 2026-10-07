@@ -1,0 +1,98 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "edp/equacao_da_onda"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/calculo_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "membrana_modos",
+  "nome": "Modos de vibração de uma membrana",
+  "descricao": "Membrana quadrada fixa nas quatro bordas (moldura branca tracejada) vibrando no modo (m, n): z = A sen(mπx/L) sen(nπy/L) cos(2π fase). As linhas nodais (violeta tracejado) ficam paradas sobre a membrana. Com movimento dá um período completo (loop).",
+  "leitura_visual": "Uma folha azul presa numa moldura, ondulando em cristas e vales separados por linhas tracejadas: lê-se como modo normal de uma membrana.",
+  "usar_quando": [
+    "modos normais de uma membrana quadrada e as linhas nodais",
+    "separação de variáveis na equação da onda 2D",
+    "analogia com as ondas estacionárias na corda (onda_corda)"
+  ],
+  "nao_usar_quando": [
+    "membranas circulares (modos de Bessel)",
+    "superposição de modos (um modo por vez)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, matrizes, resultados e rótulos são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): superfícies = vidro azul, curvas = azul-claro, construções = violeta, vetores = branco, normal e ∇g = azul, campo = ciano",
+    "um modo por vez e o tempo é só cosseno (sem amortecimento)",
+    "a amplitude vertical é exagerada para ser vista",
+    "as frequências ω_mn são do Manim"
+  ],
+  "construtor": "membrana_modos",
+  "parametros": {
+    "m": {
+      "valor": 2,
+      "unidade": "n",
+      "descricao": "modo em x"
+    },
+    "n": {
+      "valor": 1,
+      "unidade": "n",
+      "descricao": "modo em y"
+    },
+    "lado": {
+      "valor": 4.0,
+      "unidade": "u",
+      "descricao": "lado da membrana"
+    },
+    "amplitude": {
+      "valor": 0.7,
+      "unidade": "u",
+      "descricao": "amplitude"
+    },
+    "instante": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "instante da fase (sem movimento)"
+    },
+    "nos": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "linhas nodais"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 28,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/membrana_modos.png",
+  "animacao": {
+    "tipo": "oscilacao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.81,
+    "peso_mb_por_frame": 0.75,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.0"
+  ]
+}

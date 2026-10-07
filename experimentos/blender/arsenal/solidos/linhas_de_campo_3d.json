@@ -1,0 +1,98 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "eletromagnetismo/campo_eletrico"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/eletro_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "linhas_de_campo_3d",
+  "nome": "Linhas de campo em 3D",
+  "descricao": "Linhas de campo (curvas ciano) saindo da carga + e chegando à carga − (`tipo=dipolo`) ou indo ao infinito (`tipo=carga_pontual`), por integração numérica do campo a partir de uma esfera em volta da carga, com setas de sentido. Com movimento contas percorrem as linhas no sentido do campo.",
+  "leitura_visual": "Um feixe de curvas ciano que sai de uma esfera + e se fecha na esfera −, com setinhas: lê-se como as linhas do campo de um dipolo.",
+  "usar_quando": [
+    "linhas de campo de uma carga pontual e de um dipolo",
+    "o sentido do campo (de + para −) e a densidade das linhas",
+    "relação entre linhas de campo e o fluxo"
+  ],
+  "nao_usar_quando": [
+    "campos de distribuições contínuas",
+    "densidade de linhas proporcional ao módulo (o número é fixo)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, vetores físicos = branco, construções = violeta, sinal da carga esculpido",
+    "as linhas saem de uma distribuição uniforme de direções (Fibonacci), então a densidade perto da carga não é proporcional ao campo",
+    "as linhas que se afastam do dipolo são cortadas a 3,4 u de distância, então parecem abertas",
+    "cada linha é uma curva com muitos pontos: o render é mais pesado com muitas linhas"
+  ],
+  "construtor": "linhas_de_campo_3d",
+  "parametros": {
+    "tipo": {
+      "valor": "dipolo",
+      "unidade": "texto",
+      "descricao": "dipolo ou carga_pontual"
+    },
+    "n_linhas": {
+      "valor": 16,
+      "unidade": "n",
+      "descricao": "linhas saindo da carga +"
+    },
+    "distancia": {
+      "valor": 2.0,
+      "unidade": "u",
+      "descricao": "distância entre as cargas (dipolo)"
+    },
+    "raio_carga": {
+      "valor": 0.3,
+      "unidade": "u",
+      "descricao": "raio das cargas"
+    },
+    "setas": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "setas de sentido"
+    },
+    "n_contas": {
+      "valor": 3,
+      "unidade": "n",
+      "descricao": "contas por linha (com movimento)"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -20,
+    "elevacao": 60,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/linhas_de_campo_3d.png",
+  "animacao": {
+    "tipo": "escoamento",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.46,
+    "peso_mb_por_frame": 0.63,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.1"
+  ]
+}

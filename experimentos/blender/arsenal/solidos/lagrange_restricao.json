@@ -1,0 +1,88 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "calculo/extremos_varias_variaveis"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/calculo_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "lagrange_restricao",
+  "nome": "Multiplicadores de Lagrange",
+  "descricao": "Superfície z = f(x, y) (vidro azul), a restrição g = x² + y² − r² = 0 (círculo violeta tracejado no piso e a curva correspondente sobre a superfície) e um ponto que a percorre, com ∇f (branco) e ∇g (azul) no piso, ligados à superfície por um fio tracejado. Os pontos de extremo restrito (∇f ∥ ∇g) ficam marcados. Com movimento o ponto dá uma volta e as duas setas ficam paralelas nos extremos.",
+  "leitura_visual": "Uma superfície ondulada, um círculo tracejado no piso e a curva na superfície, com um ponto que gira e duas setas que ora divergem ora se alinham: lê-se como Lagrange.",
+  "usar_quando": [
+    "extremos com restrição: ∇f = λ ∇g",
+    "a curva de nível tangente à restrição no extremo",
+    "contraste com os pontos críticos livres (pontos_criticos)"
+  ],
+  "nao_usar_quando": [
+    "restrições múltiplas",
+    "mais de duas variáveis"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, matrizes, resultados e rótulos são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): superfícies = vidro azul, curvas = azul-claro, construções = violeta, vetores = branco, normal e ∇g = azul, campo = ciano",
+    "f(x, y) = 1 + 0,3x + 0,2y + 0,15(x² − y²) é fixa nesta ficha: troque no Manim só a leitura (os valores são do Manim)",
+    "o comprimento de ∇f é visual (escala `escala_grad`) e o de ∇g é fixo em 1 u",
+    "só a restrição circular"
+  ],
+  "construtor": "lagrange_restricao",
+  "parametros": {
+    "raio": {
+      "valor": 1.5,
+      "unidade": "u",
+      "descricao": "raio da restrição"
+    },
+    "angulo_graus": {
+      "valor": 40.0,
+      "unidade": "graus",
+      "descricao": "posição do ponto (sem movimento)"
+    },
+    "extensao": {
+      "valor": 2.4,
+      "unidade": "u",
+      "descricao": "meia largura da superfície"
+    },
+    "escala_grad": {
+      "valor": 2.4,
+      "unidade": "x",
+      "descricao": "escala visual de ∇f"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -40,
+    "elevacao": 30,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/lagrange_restricao.png",
+  "animacao": {
+    "tipo": "percurso",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.76,
+    "peso_mb_por_frame": 0.75,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.1"
+  ]
+}

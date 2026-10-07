@@ -1,0 +1,89 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.",
+  "area": [
+    "mecanica/rolamento",
+    "mecanica/rotacao"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/mecanica_b.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "rampa_rolamento",
+  "nome": "Corrida de esfera, cilindro e aro numa rampa",
+  "descricao": "Esfera, cilindro e aro (mesmo raio) descem uma rampa a partir do repouso, lado a lado, com rolamento sem deslizamento: a = g sen θ/(1 + k) com k = 2/5, 1/2 e 1. A esfera chega primeiro, depois o cilindro e por fim o aro; a linha de chegada é tracejada em violeta. Ciclo único.",
+  "leitura_visual": "Três corpos descendo lado a lado, a esfera na frente e o aro atrás: lê-se como quanto maior o momento de inércia, mais devagar.",
+  "usar_quando": [
+    "rolamento em plano inclinado e a dependência da aceleração com o momento de inércia",
+    "esfera × cilindro × aro: quem chega primeiro e por quê",
+    "energia no rolamento (a conta é do Manim)"
+  ],
+  "nao_usar_quando": [
+    "rolamento em chão plano (use esfera_rolando e companhia)",
+    "corpos de massas ou raios diferentes"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: valores, fórmulas, gráficos e os nomes dos vetores são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): vetores físicos = branco, construções = violeta tracejado, corpos = vidro azul",
+    "os três corpos são de vidro de mesma aparência: a distinção maciço × oco vem só da forma e do rótulo",
+    "a corrida termina quando o aro chega ao fim (a esfera e o cilindro esperam na linha)"
+  ],
+  "construtor": "rampa_rolamento",
+  "parametros": {
+    "angulo_graus": {
+      "valor": 22.0,
+      "unidade": "graus",
+      "descricao": "ângulo da rampa"
+    },
+    "comprimento": {
+      "valor": 5.2,
+      "unidade": "u",
+      "descricao": "comprimento da rampa"
+    },
+    "raio": {
+      "valor": 0.62,
+      "unidade": "u",
+      "descricao": "raio dos corpos"
+    },
+    "linha_chegada": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "linha de chegada"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -50,
+    "elevacao": 22,
+    "lente": 50,
+    "margem": 0.06
+  },
+  "preview": "previews/rampa_rolamento.png",
+  "animacao": {
+    "tipo": "corrida",
+    "liga": "movimento",
+    "ciclo": "unico",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "ciclo único: do repouso até o aro chegar; a fase 1 NÃO repete a fase 0",
+    "custo_1080p_s_por_frame": 0.86,
+    "peso_mb_por_frame": 0.88,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.55"
+  ]
+}
