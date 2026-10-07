@@ -1,0 +1,83 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "eletromagnetismo/forca_magnetica",
+    "eletromagnetismo/dipolo_magnetico"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/eletromag3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.41,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "espira_em_campo_magnetico",
+  "nome": "Espira de corrente num campo magnético (torque)",
+  "descricao": "Espira de fio azul que gira em torno de Z num B uniforme (+Y, setas magenta), com o momento de dipolo μ = I A n̂ (branco, normal à espira), o torque τ = μ × B (branco, ao longo de Z, ∝ sen θ) e uma seta de corrente. Com movimento a espira oscila em torno do alinhamento (μ ∥ B).",
+  "leitura_visual": "Uma espira circular inclinada em relação às setas magenta, com uma seta normal e uma seta de torque: lê-se como 'o campo gira a espira até alinhar μ com B'.",
+  "usar_quando": [
+    "torque numa espira, momento de dipolo magnético e alinhamento com B",
+    "energia do dipolo (a energia é do Manim)",
+    "base para motores elétricos"
+  ],
+  "nao_usar_quando": [
+    "campos não uniformes (há força líquida)",
+    "rotação contínua de um motor (sem comutador)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
+    "o movimento é a oscilação de pequenas amplitudes θ = θ0 cos(2π fase), prescrita (sem atrito)",
+    "o módulo do torque é desenhado ∝ sen θ numa escala visual"
+  ],
+  "construtor": "espira_em_campo_magnetico",
+  "parametros": {
+    "raio": {
+      "valor": 1.5,
+      "unidade": "u",
+      "descricao": "raio da espira"
+    },
+    "amplitude_graus": {
+      "valor": 70.0,
+      "unidade": "graus",
+      "descricao": "amplitude da oscilação de θ (com movimento)"
+    },
+    "angulo_graus": {
+      "valor": 40.0,
+      "unidade": "graus",
+      "descricao": "ângulo entre μ e B (sem movimento)"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": 0,
+    "elevacao": 25,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/espira_em_campo_magnetico.png",
+  "animacao": {
+    "tipo": "oscilacao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.41,
+    "peso_mb_por_frame": 0.59,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.08"
+  ]
+}

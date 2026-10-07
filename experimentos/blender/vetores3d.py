@@ -166,3 +166,77 @@ def remover(objetos):
         if d is not None and d.users == 0 and not d.get("compartilhada"):
             (bpy.data.meshes if isinstance(d, bpy.types.Mesh) else bpy.data.curves).remove(d)
     objetos.clear()
+
+
+def ajustar_seta(o, origem, vetor, comprimento=None):
+    """Reposiciona uma seta já criada por `seta` (movimento sem recriar objetos). Vetor nulo = seta invisível."""
+    v = Vector(vetor)
+    comp = v.length if comprimento is None else comprimento
+    o.location = origem
+    if v.length < 1e-6 or comp < 1e-4:
+        o.scale = (1e-4, 1e-4, 1e-4)
+        return
+    o.rotation_quaternion = Vector((0, 0, 1)).rotation_difference(v.normalized())
+    o.scale = (comp, comp, comp)
+
+
+def quad_translucido(cantos, cor="gaussiana", espessura=0.015, base=None, ganho=None, brilho=None):
+    """Polígono de vidro translúcido (cantos em ordem) na cor `cor`, com Solidify fino. Devolve o objeto."""
+    me = bpy.data.meshes.new("Poligono")
+    me.from_pydata([tuple(c) for c in cantos], [], [tuple(range(len(cantos)))])
+    me.update()
+    o = bpy.data.objects.new("Poligono", me)
+    bpy.context.collection.objects.link(o)
+    bpy.context.view_layer.objects.active = o
+    o.select_set(True)
+    sol = o.modifiers.new("e", "SOLIDIFY")
+    sol.thickness = espessura
+    cv_ = co.ST["materiais"]["calculo_vetorial"]
+    cm.material_vidro(o, cor=cor, base=cv_["remendo_base"] if base is None else base,
+                      ganho=cv_["remendo_ganho"] if ganho is None else ganho,
+                      brilho_borda=cv_["remendo_brilho"] if brilho is None else brilho)
+    return o
+
+
+def esfera_pt(pos, raio, mat, nome="Ponto"):
+    bpy.ops.mesh.primitive_uv_sphere_add(radius=raio, segments=32, ring_count=16, location=pos)
+    o = bpy.context.active_object
+    o.name = nome
+    bpy.ops.object.shade_smooth()
+    o.data.materials.append(mat)
+    return o
+
+
+def carga_sinal(pos, sinal=1, raio=None, glifos=None):
+    """Carga com o sinal ESCULPIDO: esfera com degradê e um '+' ou '−' em relevo (branco) virado para a câmera.
+    O glifo só encara a câmera depois de `orientar_glifos(cam, glifos)`; passe uma lista em `glifos` e chame-a
+    no gancho `apos_camera`. Devolve a esfera."""
+    CS = co.ST["materiais"]["carga_sinal"]
+    r = CS["raio"] if raio is None else raio
+    mat = material_degrade("CargaSinal", CS["cor_perto"], CS["cor_longe"], CS["emissao"], 0.7)
+    esf = esfera_pt(pos, r, mat, "CargaSinal")
+    mat_g = material_cor("GlifoSinal", CS["glifo_cor"], CS["glifo_emissao"])
+    emp = bpy.data.objects.new("GlifoSinal", None)
+    bpy.context.collection.objects.link(emp)
+    emp.location = pos
+    lado, esp, rel = CS["glifo_lado"] * r / 0.22, CS["glifo_espessura"] * r / 0.22, 0.06 * r / 0.22
+    partes = [(lado, esp)] + ([(esp, lado)] if sinal > 0 else [])
+    for (sx, sy) in partes:
+        bpy.ops.mesh.primitive_cube_add(size=1)
+        g = bpy.context.active_object
+        g.scale = (sx, sy, rel)
+        bpy.ops.object.transform_apply(scale=True)
+        g.data.materials.append(mat_g)
+        g.parent = emp
+        g.location = (0, 0, r - 0.02 * r / 0.22)           # face da frente 0,01·s acima da esfera no centro: relevo visível
+    if glifos is not None:
+        glifos.append(emp)
+    return esf
+
+
+def orientar_glifos(cam, glifos):
+    for emp in glifos:
+        c = emp.constraints.new("TRACK_TO")
+        c.target = cam
+        c.track_axis = "TRACK_Z"
+        c.up_axis = "UP_Y"

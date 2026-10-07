@@ -1,0 +1,97 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "eletromagnetismo/inducao_eletromagnetica"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/eletromag3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.64,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "barra_trilhos_fem_movimento",
+  "nome": "Barra em trilhos num campo B (fem de movimento)",
+  "descricao": "Duas trilhas paralelas fechadas à esquerda e uma barra que desliza num B uniforme (+Z, setas magenta). A área do circuito (violeta translúcido) é o fluxo e as setas brancas são a corrente induzida (sentido de Lenz, módulo ∝ v). Com movimento a barra oscila: o sentido da corrente inverte com a velocidade.",
+  "leitura_visual": "Um retângulo violeta que cresce e encolhe com uma barra, e setinhas que giram e invertem: lê-se como 'fem de movimento = B L v'.",
+  "usar_quando": [
+    "fem de movimento (ε = B L v) e o fluxo que varia pela área",
+    "lei de Lenz num circuito deslizante",
+    "corrente induzida e potência dissipada (no Manim)"
+  ],
+  "nao_usar_quando": [
+    "campos não uniformes ou barras que giram",
+    "circuitos com resistências desenhadas"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
+    "a velocidade da barra é senoidal (prescrita), a fem acompanha sem atraso",
+    "o módulo das setas de corrente é ∝ |v| numa escala visual"
+  ],
+  "construtor": "barra_trilhos_fem_movimento",
+  "parametros": {
+    "largura": {
+      "valor": 1.3,
+      "unidade": "u",
+      "descricao": "meia distância entre os trilhos"
+    },
+    "comprimento": {
+      "valor": 6.2,
+      "unidade": "u",
+      "descricao": "comprimento dos trilhos"
+    },
+    "centro": {
+      "valor": 3.2,
+      "unidade": "u",
+      "descricao": "posição central da barra"
+    },
+    "amplitude": {
+      "valor": 1.5,
+      "unidade": "u",
+      "descricao": "amplitude do movimento (com movimento)"
+    },
+    "posicao": {
+      "valor": 3.6,
+      "unidade": "u",
+      "descricao": "posição da barra (sem movimento)"
+    },
+    "campo": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "setas de B"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -50,
+    "elevacao": 40,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/barra_trilhos_fem_movimento.png",
+  "animacao": {
+    "tipo": "oscilacao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.64,
+    "peso_mb_por_frame": 0.71,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.12"
+  ]
+}

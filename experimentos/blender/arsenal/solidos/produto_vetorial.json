@@ -1,0 +1,88 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "calculo/vetores_r3",
+    "eletromagnetismo/forca_magnetica"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/matematica3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.55,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "produto_vetorial",
+  "nome": "Produto vetorial a × b",
+  "descricao": "Vetores a (ao longo de X) e b (no plano XY) em branco, o paralelogramo que formam (violeta translúcido, arestas tracejadas) e a × b (azul, ao longo de +Z, comprimento ∝ área). Com movimento o ângulo entre a e b oscila entre 25° e 155°.",
+  "leitura_visual": "Dois vetores brancos, um paralelogramo violeta e uma seta azul perpendicular: lê-se como 'a × b é perpendicular ao plano e mede a área'.",
+  "usar_quando": [
+    "produto vetorial: direção (regra da mão direita) e módulo (área do paralelogramo)",
+    "torque r × F, força magnética q v × B e Biot–Savart",
+    "ver como a × b cresce e some quando o ângulo muda (movimento=1)"
+  ],
+  "nao_usar_quando": [
+    "produto escalar e projeções",
+    "vetores fora do plano XY: o plano de a e b é fixo"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
+    "a é fixo ao longo de X e b gira no plano XY: não representa vetores quaisquer",
+    "o comprimento de a × b é ∝ à área (fator `escala_axb`), não igual a ela"
+  ],
+  "construtor": "produto_vetorial",
+  "parametros": {
+    "a": {
+      "valor": 2.2,
+      "unidade": "u",
+      "descricao": "módulo de a"
+    },
+    "b": {
+      "valor": 1.8,
+      "unidade": "u",
+      "descricao": "módulo de b"
+    },
+    "angulo_graus": {
+      "valor": 70.0,
+      "unidade": "graus",
+      "descricao": "ângulo entre a e b (sem movimento)"
+    },
+    "paralelogramo": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = paralelogramo violeta"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -40,
+    "elevacao": 26,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/produto_vetorial.png",
+  "animacao": {
+    "tipo": "oscilacao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.55,
+    "peso_mb_por_frame": 0.56,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.1"
+  ]
+}

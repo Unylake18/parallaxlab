@@ -1,0 +1,78 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "calculo/integrais_triplas",
+    "calculo/jacobiano"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/matematica3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.56,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "elemento_volume",
+  "nome": "Elemento de volume dV (cartesiano, cilíndrico, esférico)",
+  "descricao": "Elemento de volume em violeta translúcido com arestas tracejadas: caixa dx dy dz (cartesiano), cunha r dr dθ dz (cilíndrico) ou r² sen θ dr dθ dφ (esférico), com os eixos x, y, z, o raio ao elemento e a projeção no plano xy (guias). Com movimento o elemento dá uma volta em torno de z.",
+  "leitura_visual": "Uma pequena cunha violeta flutuando perto da origem, com as guias tracejadas até ela: lê-se como 'este é o elemento dV nesse sistema'.",
+  "usar_quando": [
+    "de onde vem o fator r (ou r² sen θ) nas integrais triplas",
+    "comparar os três sistemas pela forma do elemento",
+    "origem geométrica do Jacobiano"
+  ],
+  "nao_usar_quando": [
+    "integrais de superfície (use superficie_parametrizada)",
+    "sistemas gerais (só os três clássicos)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
+    "o elemento é grande de propósito (dr, dθ, dz de 0,5 a 0,8), não infinitesimal",
+    "só um elemento por vez, num ponto fixo"
+  ],
+  "construtor": "elemento_volume",
+  "parametros": {
+    "sistema": {
+      "valor": "cilindrico",
+      "unidade": "texto",
+      "descricao": "cartesiano, cilindrico ou esferico"
+    },
+    "guias": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "raio e projeção tracejados"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 26,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/elemento_volume.png",
+  "animacao": {
+    "tipo": "percurso",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.56,
+    "peso_mb_por_frame": 0.56,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.1"
+  ]
+}

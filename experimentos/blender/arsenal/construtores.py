@@ -20,11 +20,15 @@ import ampere as am  # noqa: E402
 import coaxial as cx  # noqa: E402
 import distribuicoes as ds  # noqa: E402
 import placa as pl  # noqa: E402
+import vetores3d as v3  # noqa: E402
 import capacitores as cp  # noqa: E402
 import otica as ot  # noqa: E402
 import revolucao as rv  # noqa: E402
 import calc_vetorial as cv  # noqa: E402
 import colisoes as cl  # noqa: E402
+import eletromag3d as em3  # noqa: E402
+import matematica3d as m3  # noqa: E402
+import mecanica3d as mec  # noqa: E402
 import gravitacao as gr  # noqa: E402
 import ondas as on  # noqa: E402
 import oscilacoes as osc  # noqa: E402
@@ -370,6 +374,103 @@ def colisao_1d(p):
     return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
 
 
+def _glifos(res, glifos):
+    """Os sinais esculpidos só encaram a câmera depois que ela existe: gancho apos_camera."""
+    res["apos_camera"] = lambda cam: v3.orientar_glifos(cam, glifos)
+    return res
+
+
+def biot_savart_espira(p):
+    proxy, atu = em3.biot_savart_espira(p["raio"], p["distancia"], p["theta0"], int(p["movimento"]), p["fase"])
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
+def produto_vetorial(p):
+    proxy, atu = m3.produto_vetorial(p["a"], p["b"], p["angulo_graus"], int(p["paralelogramo"]), int(p["movimento"]), p["fase"])
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
+def plano_tangente(p):
+    corpo, atu = m3.plano_tangente(p["tipo"], p["u0"], p["v0"], p["tamanho"], int(p["movimento"]), p["fase"], int(p["linhas"]))
+    return _mov({"enquadrar": [corpo], "apos_camera": None}, atu, p)
+
+
+def superficie_quadrica(p):
+    proxy = m3.superficie_quadrica(p["tipo"], p["a"], p["b"], p["c"], int(p["eixo"]), int(p["linhas"]))
+    return {"enquadrar": [proxy], "apos_camera": None}
+
+
+def pontos_criticos(p):
+    corpo = m3.pontos_criticos(p["altura"], p["k"], p["extensao"], int(p["planos"]))
+    return {"enquadrar": [corpo], "apos_camera": None}
+
+
+def integral_dupla_colunas(p):
+    proxy, atu = m3.soma_riemann_dupla(p["extensao"], int(p["n_max"]), int(p["n_unico"]), p["fase"], int(p["movimento"]))
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
+def elemento_volume(p):
+    proxy, atu = m3.elemento_volume(p["sistema"], int(p["movimento"]), p["fase"], int(p["guias"]))
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
+def cone_de_luz(p):
+    proxy, atu = m3.cone_de_luz(p["raio_max"], p["altura_plano"], int(p["movimento"]), p["fase"], int(p["linhas"]))
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
+def orbital_atomico(p):
+    proxy, atu = mec.criar_orbital(p["orbital"], int(p["n_pontos"]), p["escala"] or None, p["tamanho_ponto"], int(p["semente"]),
+                                   int(p["movimento"]), p["fase"], int(p["eixo"]))
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
+def paisagem_potencial(p):
+    proxy, atu = mec.criar_paisagem(p["tipo"], p["energia"], int(p["lado"]), p["meia_largura"], p["largura"], int(p["movimento"]),
+                                    p["fase"], p["raio_bola"])
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
+def giroscopio_precessao(p):
+    proxy, atu = mec.criar_giroscopio(p["inclinacao_graus"], p["comprimento_eixo"], p["raio_rotor"], int(p["voltas_spin"]),
+                                      int(p["vetores"]), int(p["rastro"]), int(p["movimento"]), p["fase"])
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
+def onda_eletromagnetica(p):
+    proxy, atu = em3.onda_eletromagnetica(p["comprimento"], int(p["n_setas"]), int(p["n_ondas"]), p["amplitude"], int(p["poynting"]),
+                                          int(p["planos"]), p["fase"])
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
+def particula_em_campo_magnetico(p):
+    proxy, atu, gl = em3.particula_em_B(int(p["sinal"]), p["raio_giro"], p["passo"], p["voltas"], int(p["campo"]), int(p["trajetoria"]), p["fase"])
+    return _glifos(_mov({"enquadrar": [proxy], "apos_camera": None}, atu, p), gl)
+
+
+def espira_em_campo_magnetico(p):
+    proxy, atu = em3.espira_em_B(p["raio"], p["amplitude_graus"], int(p["movimento"]), p["angulo_graus"], p["fase"])
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
+def ima_espira_inducao(p):
+    proxy, atu = em3.ima_espira(p["raio"], p["comprimento_ima"], p["lado_ima"], int(p["movimento"]), p["posicao"], p["fase"], int(p["setas"]))
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
+def barra_trilhos_fem_movimento(p):
+    proxy, atu = em3.barra_trilhos(p["largura"], p["comprimento"], p["centro"], p["amplitude"], int(p["movimento"]), p["posicao"], p["fase"], int(p["campo"]))
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
+def equipotenciais(p):
+    n = max(1, int(p["n_niveis"]))
+    niveis = [p["nivel_min"] * (p["nivel_max"] / p["nivel_min"]) ** (i / max(1, n - 1)) for i in range(n)]
+    proxy, gl = em3.equipotenciais(p["tipo"], tuple(niveis), p["distancia"], int(p["sinal"]), int(p["plano"]))
+    return _glifos({"enquadrar": [proxy], "apos_camera": None}, gl)
+
+
 CONSTRUTORES = {
     "casca_cilindrica_oca": casca_cilindrica_oca,
     "cilindro_macico_isolante": cilindro_macico_isolante,
@@ -412,4 +513,21 @@ CONSTRUTORES = {
     "onda_corda": onda_corda,
     "ondas_duas_fontes": ondas_duas_fontes,
     "colisao_1d": colisao_1d,
+    "biot_savart_espira": biot_savart_espira,
+    "produto_vetorial": produto_vetorial,
+    "plano_tangente": plano_tangente,
+    "superficie_quadrica": superficie_quadrica,
+    "pontos_criticos": pontos_criticos,
+    "integral_dupla_colunas": integral_dupla_colunas,
+    "elemento_volume": elemento_volume,
+    "cone_de_luz": cone_de_luz,
+    "orbital_atomico": orbital_atomico,
+    "paisagem_potencial": paisagem_potencial,
+    "giroscopio_precessao": giroscopio_precessao,
+    "onda_eletromagnetica": onda_eletromagnetica,
+    "particula_em_campo_magnetico": particula_em_campo_magnetico,
+    "espira_em_campo_magnetico": espira_em_campo_magnetico,
+    "ima_espira_inducao": ima_espira_inducao,
+    "barra_trilhos_fem_movimento": barra_trilhos_fem_movimento,
+    "equipotenciais": equipotenciais,
 }

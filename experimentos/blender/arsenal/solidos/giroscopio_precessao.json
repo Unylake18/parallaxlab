@@ -1,0 +1,98 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "mecanica/momento_angular",
+    "mecanica/torque"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/mecanica3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.62,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "giroscopio_precessao",
+  "nome": "Giroscópio e precessão",
+  "descricao": "Rotor de vidro com quatro raios claros, preso a um eixo que gira em torno de z (precessão, rastro violeta tracejado) enquanto o rotor gira em torno do próprio eixo (`voltas_spin` por volta de precessão). O momento angular L ao longo do eixo, o peso e o torque (tangente ao cone) são brancos.",
+  "leitura_visual": "Pião inclinado com um rastro circular tracejado e três setas brancas: lê-se como 'torque horizontal faz o eixo precessionar'.",
+  "usar_quando": [
+    "momento angular L, torque τ = r × F e a precessão (dL/dt = τ)",
+    "por que o pião não cai: o torque muda a direção de L, não o módulo",
+    "comparar rotação e precessão"
+  ],
+  "nao_usar_quando": [
+    "nutação e movimento geral do pião (só precessão estacionária)",
+    "o giroscópio de três anéis"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
+    "a precessão é prescrita (velocidade angular fixa), não calculada pela física; a taxa real é do Manim",
+    "a gramática de cor de Mecânica segue o arsenal (vetores em branco)"
+  ],
+  "construtor": "giroscopio_precessao",
+  "parametros": {
+    "inclinacao_graus": {
+      "valor": 38.0,
+      "unidade": "graus",
+      "descricao": "ângulo do eixo com a vertical"
+    },
+    "comprimento_eixo": {
+      "valor": 1.9,
+      "unidade": "u",
+      "descricao": "distância do pivô ao rotor"
+    },
+    "raio_rotor": {
+      "valor": 0.8,
+      "unidade": "u",
+      "descricao": "raio do rotor"
+    },
+    "voltas_spin": {
+      "valor": 7,
+      "unidade": "n",
+      "descricao": "voltas do rotor por volta de precessão (inteiro)"
+    },
+    "vetores": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "L, peso e torque"
+    },
+    "rastro": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "rastro do rotor"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 18,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/giroscopio_precessao.png",
+  "animacao": {
+    "tipo": "precessao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.62,
+    "peso_mb_por_frame": 0.62,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.1"
+  ]
+}

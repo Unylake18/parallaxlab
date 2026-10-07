@@ -13,6 +13,7 @@ serve **antes** de modelar algo novo. Fase atual: sandbox (`experimentos/blender
 | `construtores.py` | id da ficha → função que cria o sólido no Blender |
 | `renderizar.py` | Constrói e renderiza qualquer sólido a partir da ficha |
 | `gerar_catalogo.py` | Valida as fichas e regera `catalogo.md` (Python puro, sem Blender) |
+| `gerar_cobertura.py` | Gera `cobertura.md`: o que existe e o que falta por capítulo do mapa curricular |
 
 ## Fluxo
 
@@ -99,66 +100,24 @@ Aprovados pelo usuário em 2026-10-07: todos os 41 sólidos atuais. Promover um 
 3. Rodar `renderizar.py -- <id>` para gerar o preview.
 4. Rodar `gerar_catalogo.py`: ele recusa fichas incompletas, sem construtor ou sem preview.
 
-## Fila: o que falta de 3D (levantamento de 2026-10-07)
+## O que falta de 3D e a cobertura por capítulo
 
-Fonte: leitura integral de `docs/mapa_curricular.md` contra os 41 sólidos existentes. Nada desta lista está construído.
-Critério para entrar: o objeto tem de **ganhar** com a terceira dimensão ou com a ponte (movimento sincronizado); o que
-é gráfico, equação ou diagrama plano fica no Manim. **Antes de começar os itens marcados com ⚠, decidir a convenção
-visual pendente** (ver "Decisões pendentes").
+A lista completa, por capítulo do mapa curricular, com o status de cada sólido, o que falta, o assunto e a limitação, está
+em **`cobertura.md`** (gerado por `gerar_cobertura.py`: o status vem das fichas, as lacunas ficam no script).
 
-### A. Alto valor (3D essencial; reaproveita o que já existe)
+A fila A do levantamento de 2026-10-07 (17 sólidos de alto valor) foi construída em 2026-10-07 e está em `estudo`: onda
+eletromagnética, partícula e espira em B, ímã com espira, barra em trilhos, equipotenciais, giroscópio, Biot–Savart, produto
+vetorial, plano tangente, quádricas, pontos críticos, soma de Riemann dupla, elemento de volume, orbital atômico, cone de luz e
+paisagem de potencial. O que sobra (fila B) está em `cobertura.md`, seção 2a.
 
-| id sugerido | Capítulo do mapa | O que mostra | Reuso / observação |
-|---|---|---|---|
-| `onda_eletromagnetica` ⚠ | 6.12, 7.1 | E e B perpendiculares oscilando e a direção de propagação (Poynting) | setas de `vetores3d`, loop por fase; precisa da cor de B |
-| `particula_em_campo_magnetico` ⚠ | 6.7 | hélice de uma partícula em B uniforme (raio ciclotrônico, passo) | curva viva + campo ciano; sinal da carga |
-| `espira_em_campo_magnetico` ⚠ | 6.7 | torque e momento de dipolo de uma espira girando em B | `anel_carregado` + setas |
-| `ima_espira_inducao` ⚠ | 6.10 | ímã atravessando uma espira (fluxo, Lenz) | polos N/S; loop de ida e volta |
-| `barra_trilhos_fem_movimento` ⚠ | 6.10 | barra deslizando em trilhos num campo B | `colisao_1d` (trilho) + setas |
-| `biot_savart_espira` | 6.8 | dl, r, P no eixo e dB numa espira | `anel_carregado` + setas |
-| `equipotenciais` ⚠ | 6.4 | superfícies de potencial (esferas concêntricas; dipolo) em violeta translúcido | construção violeta como as gaussianas; dipolo precisa do sinal |
-| `produto_vetorial` | 10.1 | a, b, a×b e o paralelogramo (área) | `vetores3d` |
-| `plano_tangente` | 10.3 | superfície, plano tangente e linearização | `superficie_parametrizada` |
-| `superficie_quadrica` | 10.1 | elipsoide, hiperboloides, paraboloides e cone | `malha_param` |
-| `pontos_criticos` | 10.6 | máximo, mínimo e sela com o plano tangente horizontal | `gradiente_colina` |
-| `integral_dupla_colunas` | 10.7 | soma de Riemann 3D (colunas sob a superfície) | novo; refinamento por fase |
-| `elemento_volume` | 10.8, 10.9 | elemento dV em cartesianas, cilíndricas e esféricas | novo |
-| `orbital_atomico` | 7.11 | nuvens de probabilidade s, p e d | novo: amostragem de pontos |
-| `paisagem_potencial` | 4.8 | bola numa pista U(x): poço simples, duplo, barreira | `poco_gravitacional`; liga ao `vid_0013` |
-| `giroscopio_precessao` ⚠ | 4.11 | pião girando com precessão e L, torque | vetor de momento angular |
-| `cone_de_luz` | 7.6 | cone de luz no espaço-tempo (2+1) | superfície de revolução |
+### Convenções visuais decididas pelo usuário (2026-10-07)
 
-### B. Valor médio (úteis; entram conforme a pauta pedir)
-
-| Capítulo | Candidatos |
-|---|---|
-| 4.4, 4.5, 4.12 Mecânica | `plano_inclinado` (bloco numa rampa), `rampa_rolamento` (corpos descendo), `trilho_looping` |
-| 4.6 | `movimento_circular` (massa num fio), `curva_inclinada` (pista com inclinação) |
-| 4.10 | `colisao_2d`, `explosao` (fragmentos e centro de massa) |
-| 5.6, 5.7 Fluidos | `tanque_hidrostatico` com empuxo, `prensa_hidraulica`, `tanque_torricelli` (jato) |
-| 7.2 a 7.5 Óptica | `espelho_esferico`, `dioptro_plano` (Snell e reflexão interna), `rede_de_difracao` (generalizar a fenda dupla para N fendas), `filme_fino`, `interferometro_michelson`, `polarizador_malus` |
-| 6.1, 6.2, 6.5 | `cargas_pontuais` ⚠, `dipolo_eletrico` ⚠, `linhas_de_campo_3d`, `condutor_com_cavidade` |
-| 11.2, 11.8 | `integral_de_linha` (trabalho num caminho 3D), `divergencia_local` (cubo elementar), `rotacional_roda_de_pas` |
-| 10.6 | `lagrange_restricao` |
-| 7.6, 7.11 | `relogio_de_luz`, `atomo_bohr` |
-| Futuros (13 a 15) | `transformacao_linear_3d` (cubo → paralelepípedo, determinante), `autovetores_elipsoide`, `membrana_modos` (modos de um tambor) |
-
-### C. Não recomendado em 3D (melhor no Manim)
-
-Cinemática 1D, lançamentos e envoltórias, diagramas de corpo livre, polias, trabalho e potência, circuitos DC, RC, RL e
-RLC, diagramas P×V, ciclo de Carnot e entropia, condução térmica (exigiria uma escala de cor de temperatura), limites,
-derivadas, integrais e séries, curvas paramétricas e polares planas, EDOs e planos de fase, funções de onda 1D (poço
-infinito, tunelamento), Planck e efeito fotoelétrico, decaimento radioativo.
-
-### Decisões pendentes (bloqueiam os itens com ⚠)
-
-1. **Sinal da carga (+ e −)**: o padrão não codifica o sinal em cor. Opções: sinal em geometria (um "+" e um "−"
-   esculpidos na esfera), ou só por rótulo no Manim. Afeta dipolo, Coulomb, equipotenciais do dipolo e partícula em B.
-2. **Cor do campo magnético B**: o ciano é o campo E. Proposta: B em magenta `#EA63FF` (já na paleta, sem uso 3D) e
-   o ciano para E.
-3. **Vetores de velocidade, força e momento angular**: proposta de branco neutro `#F5F7FF`, como as tangentes do
-   cálculo vetorial, deixando o ciano só para campos.
-4. **Polos N e S do ímã**: proposta de duas metades de azuis diferentes, com N e S por rótulo no Manim.
+1. **Sinal da carga**: esculpido na geometria (um "+" ou "−" em relevo na esfera, virado para a câmera): `carga_sinal` em
+   `vetores3d.py`. Sólidos com cargas de sinal chamam `orientar_glifos` no gancho `apos_camera`.
+2. **Campo magnético B = magenta `#EA63FF`**; o ciano segue só para o campo elétrico E.
+3. **Velocidade, força, torque e momento angular = branco neutro** `#F5F7FF`.
+4. **Polos do ímã**: N = azul, S = magenta (o nome N/S vai por rótulo no Manim). Atenção: o magenta serve ao B e ao polo S;
+   no `ima_espira_inducao` não há linhas de B justamente para não confundir as duas leituras.
 
 
 ## Registro nos `.md` globais (aplicado em 2026-10-07)

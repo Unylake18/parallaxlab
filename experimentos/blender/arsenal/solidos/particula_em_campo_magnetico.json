@@ -1,0 +1,99 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "eletromagnetismo/forca_magnetica"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/eletromag3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.42,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "particula_em_campo_magnetico",
+  "nome": "Partícula carregada em campo magnético uniforme",
+  "descricao": "Hélice de uma carga num B uniforme (+Z, setas magenta em duas camadas). A carga tem o sinal esculpido (+ ou −), a trajetória é tracejada violeta, a velocidade v e a força F = q v × B (apontando para o eixo) são brancas. O sentido da hélice inverte com o sinal da carga. Ciclo único: a partícula percorre `voltas` voltas.",
+  "leitura_visual": "Uma esfera com + ou − girando numa hélice no meio de setas magenta: lê-se como 'movimento circular + deriva ao longo de B'.",
+  "usar_quando": [
+    "força de Lorentz, raio ciclotrônico e passo da hélice",
+    "comparar cargas positivas e negativas (sentido oposto)",
+    "movimento helicoidal com v∥ ≠ 0"
+  ],
+  "nao_usar_quando": [
+    "campo elétrico junto (E × B): só B",
+    "campos não uniformes (garrafa magnética)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
+    "a hélice é uma curva prescrita, não calculada: R e passo são parâmetros livres",
+    "a força é desenhada com módulo fixo (não proporcional a q v B)",
+    "o sinal esculpido só aparece de frente: com câmeras muito rasantes ele pode ficar de lado"
+  ],
+  "construtor": "particula_em_campo_magnetico",
+  "parametros": {
+    "sinal": {
+      "valor": 1,
+      "unidade": "±1",
+      "descricao": "sinal da carga (1 ou −1)"
+    },
+    "raio_giro": {
+      "valor": 1.2,
+      "unidade": "u",
+      "descricao": "raio da hélice"
+    },
+    "passo": {
+      "valor": 1.5,
+      "unidade": "u",
+      "descricao": "avanço por volta"
+    },
+    "voltas": {
+      "valor": 2.5,
+      "unidade": "n",
+      "descricao": "voltas da hélice"
+    },
+    "campo": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "setas de B"
+    },
+    "trajetoria": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "hélice tracejada"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 14,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/particula_em_campo_magnetico.png",
+  "animacao": {
+    "tipo": "helice",
+    "liga": "movimento",
+    "ciclo": "unico",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "ciclo único: a partícula vai do começo ao fim da hélice; a fase 1 NÃO repete a fase 0",
+    "custo_1080p_s_por_frame": 0.42,
+    "peso_mb_por_frame": 0.65,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.45"
+  ]
+}

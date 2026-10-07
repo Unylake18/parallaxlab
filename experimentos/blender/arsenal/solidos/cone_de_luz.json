@@ -1,0 +1,83 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "fisica4/relatividade_especial"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/matematica3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 1.05,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "cone_de_luz",
+  "nome": "Cone de luz no espaço-tempo",
+  "descricao": "Espaço-tempo (x, y, ct): cones do futuro e do passado (vidro azul) com curvas coordenadas, o eixo ct tracejado, uma linha de universo (azul-claro) dentro do cone e um evento (branco) subindo por ela. O plano de simultaneidade (violeta) passa pelo evento e corta o cone num círculo azul-claro: a frente de luz. Com movimento (ciclo único) o evento sobe.",
+  "leitura_visual": "Dois cones, uma curva dentro deles e um disco violeta que corta o cone num círculo: lê-se como 'cone de luz e a frente de luz num instante'.",
+  "usar_quando": [
+    "cone de luz, passado, futuro e 'fora do cone' (separação do tipo espaço)",
+    "linha de universo e a restrição v < c",
+    "plano de simultaneidade (que não é o mesmo em outro referencial: isso é do Manim)"
+  ],
+  "nao_usar_quando": [
+    "transformações de Lorentz e diagramas 1+1 (são melhores em 2D)",
+    "efeitos de dilatação do tempo (precisam de dois referenciais)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
+    "o eixo vertical é ct (as unidades de x e ct são iguais): o cone tem 45°",
+    "a linha de universo é uma curva fixa; só o evento se move"
+  ],
+  "construtor": "cone_de_luz",
+  "parametros": {
+    "raio_max": {
+      "valor": 2.6,
+      "unidade": "u",
+      "descricao": "altura e raio máximos do cone"
+    },
+    "altura_plano": {
+      "valor": 0.0,
+      "unidade": "u",
+      "descricao": "ct do plano de simultaneidade (sem movimento)"
+    },
+    "linhas": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "curvas coordenadas nos cones"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 18,
+    "lente": 50,
+    "margem": 0.05
+  },
+  "preview": "previews/cone_de_luz.png",
+  "animacao": {
+    "tipo": "subida",
+    "liga": "movimento",
+    "ciclo": "unico",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "ciclo único: o evento sobe de ct = −2,3 até +2,3; a fase 1 NÃO repete a fase 0",
+    "custo_1080p_s_por_frame": 1.05,
+    "peso_mb_por_frame": 1.14,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.7"
+  ]
+}

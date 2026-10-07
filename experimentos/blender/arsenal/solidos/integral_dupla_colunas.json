@@ -1,0 +1,84 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "calculo/integrais_duplas"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/matematica3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 1.67,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "integral_dupla_colunas",
+  "nome": "Soma de Riemann dupla (colunas)",
+  "descricao": "Colunas de vidro azul de altura f(centro) sobre uma grade n×n do quadrado [−E, E]², com a superfície z = f em azul-claro por cima e o quadrado da base tracejado em violeta. Com movimento (ciclo único) n cresce de 2 a `n_max` e as colunas passam a preencher o volume.",
+  "leitura_visual": "Um bloco de colunas que fica cada vez mais fino e se ajusta à superfície: lê-se como 'a soma de Riemann converge ao volume'.",
+  "usar_quando": [
+    "definição da integral dupla como soma de volumes de colunas",
+    "refinar a partição e ver a convergência",
+    "volume sob uma superfície"
+  ],
+  "nao_usar_quando": [
+    "regiões não retangulares",
+    "colunas com altura no ponto extremo (aqui é o centro da célula)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
+    "a altura é f no centro de cada célula (ponto médio), não o máximo nem o mínimo",
+    "n sobe em passos discretos (2, 3, 4, 6, 8, 12, 16), não continuamente",
+    "a superfície é fixa: f = 1,2 + 0,7 sen(1,3x) cos(1,1y)"
+  ],
+  "construtor": "integral_dupla_colunas",
+  "parametros": {
+    "extensao": {
+      "valor": 2.0,
+      "unidade": "u",
+      "descricao": "meia largura do quadrado"
+    },
+    "n_max": {
+      "valor": 16,
+      "unidade": "n",
+      "descricao": "maior número de divisões por lado"
+    },
+    "n_unico": {
+      "valor": 0,
+      "unidade": "n",
+      "descricao": "se maior que 0, fixa n (ignora a animação)"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 30,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/integral_dupla_colunas.png",
+  "animacao": {
+    "tipo": "refinamento",
+    "liga": "movimento",
+    "ciclo": "unico",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "ciclo único: n cresce de 2 até `n_max` ao longo da fase 0 a 1; a fase 1 NÃO repete a fase 0",
+    "custo_1080p_s_por_frame": 1.67,
+    "peso_mb_por_frame": 1.25,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.5"
+  ]
+}

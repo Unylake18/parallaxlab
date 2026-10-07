@@ -1,0 +1,98 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "mecanica/energia_potencial"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/mecanica3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.75,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "paisagem_potencial",
+  "nome": "Bola numa paisagem de energia potencial",
+  "descricao": "Pista de vidro azul com o perfil U(x) (`tipo`: poco_simples, poco_duplo ou barreira) e uma reta de energia E tracejada (violeta). Uma bola neutra oscila conservando E (integração numérica) e uma barra violeta mostra K = E − U. Com movimento a bola percorre um período.",
+  "leitura_visual": "Bola descendo e subindo numa pista em forma de poço duplo, com a reta da energia total: lê-se como 'K = E − U, pontos de retorno, regiões permitidas'.",
+  "usar_quando": [
+    "energia potencial e a leitura qualitativa do movimento (pontos de retorno, equilíbrio, estabilidade)",
+    "poços simples e duplos, barreiras de potencial",
+    "escolher o poço de partida no poço duplo (parâmetro `lado`)"
+  ],
+  "nao_usar_quando": [
+    "potenciais dependentes do tempo",
+    "movimento sem energia conservada (atrito)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
+    "a pista é uma curva U(x) com paredes de confinamento em ±`meia_largura`, só para a órbita ser periódica",
+    "a bola desliza sem rolar e sem atrito (é uma partícula de massa 1)",
+    "a energia E é escolhida pelo usuário e deve estar acima do mínimo de U"
+  ],
+  "construtor": "paisagem_potencial",
+  "parametros": {
+    "tipo": {
+      "valor": "poco_duplo",
+      "unidade": "texto",
+      "descricao": "poco_simples, poco_duplo ou barreira"
+    },
+    "energia": {
+      "valor": 0.35,
+      "unidade": "u",
+      "descricao": "energia total E"
+    },
+    "lado": {
+      "valor": 0,
+      "unidade": "-1/0/1",
+      "descricao": "poço de partida do poço duplo com E abaixo da barreira: −1 esquerda, 1 direita"
+    },
+    "meia_largura": {
+      "valor": 2.6,
+      "unidade": "u",
+      "descricao": "meia largura da pista"
+    },
+    "largura": {
+      "valor": 1.2,
+      "unidade": "u",
+      "descricao": "largura da pista (eixo y)"
+    },
+    "raio_bola": {
+      "valor": 0.14,
+      "unidade": "u",
+      "descricao": "raio da bola"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -60,
+    "elevacao": 14,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/paisagem_potencial.png",
+  "animacao": {
+    "tipo": "oscilacao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.75,
+    "peso_mb_por_frame": 0.93,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.08"
+  ]
+}

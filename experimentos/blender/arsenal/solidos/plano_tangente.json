@@ -1,0 +1,92 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "calculo/derivadas_parciais",
+    "calculo/linearizacao"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/matematica3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.97,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "plano_tangente",
+  "nome": "Plano tangente a uma superfície",
+  "descricao": "Superfície de vidro azul (`tipo`: onda, sela ou esfera) com curvas coordenadas, o ponto P (branco), o plano tangente em P (violeta translúcido, arestas tracejadas) e a normal n̂ (azul). Com movimento P percorre uma pequena volta e o plano acompanha.",
+  "leitura_visual": "Superfície com um quadrilátero violeta encostado e uma seta azul perpendicular: lê-se como 'plano tangente e normal'.",
+  "usar_quando": [
+    "plano tangente e linearização de f(x, y)",
+    "derivadas parciais como inclinações no plano tangente",
+    "plano que corta a superfície na sela"
+  ],
+  "nao_usar_quando": [
+    "tangente a curvas (use as curvas do Manim)",
+    "superfícies fechadas na esfera inteira: o domínio é cortado perto dos polos"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
+    "o plano tangente é um quadrado de lado `tamanho` e não mostra o erro da aproximação"
+  ],
+  "construtor": "plano_tangente",
+  "parametros": {
+    "tipo": {
+      "valor": "sela",
+      "unidade": "texto",
+      "descricao": "onda, sela ou esfera"
+    },
+    "u0": {
+      "valor": 0.4,
+      "unidade": "0-1",
+      "descricao": "posição de u no domínio"
+    },
+    "v0": {
+      "valor": 0.55,
+      "unidade": "0-1",
+      "descricao": "posição de v no domínio"
+    },
+    "tamanho": {
+      "valor": 1.1,
+      "unidade": "u",
+      "descricao": "meia largura do plano tangente"
+    },
+    "linhas": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "curvas coordenadas"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 30,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/plano_tangente.png",
+  "animacao": {
+    "tipo": "percurso",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.97,
+    "peso_mb_por_frame": 1.07,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.15"
+  ]
+}

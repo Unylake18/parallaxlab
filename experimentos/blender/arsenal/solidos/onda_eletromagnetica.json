@@ -1,0 +1,99 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "eletromagnetismo/maxwell_e_ondas",
+    "fisica4/ondas_eletromagneticas"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/eletromag3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.93,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "onda_eletromagnetica",
+  "nome": "Onda eletromagnética plana",
+  "descricao": "Onda plana linearmente polarizada que se propaga em +X: E (setas ciano, ao longo de Z) e B (setas magenta, ao longo de Y), em fase, com as curvas das pontas, a direção de propagação S = E × B (seta branca) e os planos do campo E e do campo B em tom translúcido. fase 0 a 1 = um período.",
+  "leitura_visual": "Dois campos perpendiculares oscilando juntos ao longo de um eixo: lê-se como 'E e B ⟂ entre si e ⟂ à propagação'.",
+  "usar_quando": [
+    "onda eletromagnética: E ⟂ B ⟂ direção de propagação, em fase",
+    "vetor de Poynting e energia",
+    "polarização linear (o plano do E)"
+  ],
+  "nao_usar_quando": [
+    "ondas circularmente polarizadas ou com atrasos de fase",
+    "ondas esféricas ou guiadas"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
+    "a onda é plana e infinita, mostrada num trecho",
+    "as amplitudes de E e B são iguais por conveniência visual (a razão real é c)",
+    "28 setas por campo: ficam densas em ângulos rasantes"
+  ],
+  "construtor": "onda_eletromagnetica",
+  "parametros": {
+    "comprimento": {
+      "valor": 9.0,
+      "unidade": "u",
+      "descricao": "extensão mostrada ao longo de X"
+    },
+    "n_setas": {
+      "valor": 28,
+      "unidade": "n",
+      "descricao": "setas por campo"
+    },
+    "n_ondas": {
+      "valor": 2,
+      "unidade": "n",
+      "descricao": "comprimentos de onda no trecho (inteiro)"
+    },
+    "amplitude": {
+      "valor": 1.1,
+      "unidade": "u",
+      "descricao": "amplitude"
+    },
+    "poynting": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "seta de propagação"
+    },
+    "planos": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "planos de E e de B"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -55,
+    "elevacao": 22,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/onda_eletromagnetica.png",
+  "animacao": {
+    "tipo": "onda",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.93,
+    "peso_mb_por_frame": 1.04,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.15"
+  ]
+}

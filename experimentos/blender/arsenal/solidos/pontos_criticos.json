@@ -1,0 +1,63 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "calculo/extremos_varias_variaveis"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/matematica3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 1.17,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060"
+  },
+  "id": "pontos_criticos",
+  "nome": "Pontos críticos (máximo, mínimo e sela)",
+  "descricao": "Superfície z = h sen(kx) sen(ky) de vidro azul com um máximo, um mínimo e uma sela, cada um marcado com um ponto branco e um plano tangente horizontal violeta translúcido.",
+  "leitura_visual": "Superfície ondulada com três planos horizontais violeta encostados: lê-se como 'ponto crítico = plano tangente horizontal'.",
+  "usar_quando": [
+    "pontos críticos de f(x, y) e a Hessiana (a classificação é do Manim)",
+    "distinguir máximo, mínimo e sela pela forma",
+    "otimização em duas variáveis"
+  ],
+  "nao_usar_quando": [
+    "máximos com restrição (use lagrange quando existir)",
+    "funções com mais de três pontos críticos: a superfície é fixa"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
+    "a superfície é fixa (seno × seno); só altura e frequência mudam",
+    "os pontos são em posições fixas (±π/2k e a origem)"
+  ],
+  "construtor": "pontos_criticos",
+  "parametros": {
+    "altura": {
+      "valor": 0.7,
+      "unidade": "u",
+      "descricao": "amplitude h"
+    },
+    "k": {
+      "valor": 1.1,
+      "unidade": "1/u",
+      "descricao": "frequência k"
+    },
+    "extensao": {
+      "valor": 2.9,
+      "unidade": "u",
+      "descricao": "meia largura da região"
+    },
+    "planos": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "planos tangentes horizontais"
+    }
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 30,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/pontos_criticos.png"
+}

@@ -1,70 +1,326 @@
 {
   "fonte": "Identidade: docs/identidade_visual.md. Gramática visual da série Lei de Gauss: constantes de cor em videos_longos/yt_0001_lei_gauss/cena.py e yt_0002_lei_gauss_casos_classicos/cena.py (o 3D segue o 2D, não o contrário).",
   "cores": {
-    "fundo": {"hex": "#050816", "papel": "fundo da cena (muito escuro, bastante espaço negativo)"},
-    "texto_neutro": {"hex": "#F5F7FF", "papel": "matemática neutra; luz principal"},
-    "campo_eletrico": {"hex": "#35D9FF", "papel": "E⃗ e linhas de campo. RESERVADA ao campo: nunca em fontes, cargas ou superfícies"},
-    "fonte_fisica": {"hex": "#267BFF", "papel": "distribuição física: preenchimento do corpo, n̂"},
-    "fonte_contorno": {"hex": "#7FB2FF", "papel": "contorno/aro da distribuição física, cargas próximas, R, Q; luz de contorno"},
-    "gaussiana": {"hex": "#9C8CFF", "papel": "superfície gaussiana, contorno amperiano e r: construção matemática, tracejada ou translúcida, nunca sólida"},
-    "area_vetor": {"hex": "#745CFF", "papel": "vetor área d⃗A e seleção matemática translúcida"},
-    "apoio_magenta": {"hex": "#EA63FF", "papel": "apoio pontual de identidade; sem uso 3D definido"},
-    "fonte_escura": {"hex": "#0B2A7A", "papel": "DERIVADA de fonte_fisica, escurecida à mão: interior de cascas (profundidade)", "derivada": true}
+    "fundo": {
+      "hex": "#050816",
+      "papel": "fundo da cena (muito escuro, bastante espaço negativo)"
+    },
+    "texto_neutro": {
+      "hex": "#F5F7FF",
+      "papel": "matemática neutra; luz principal"
+    },
+    "campo_eletrico": {
+      "hex": "#35D9FF",
+      "papel": "E⃗ e linhas de campo. RESERVADA ao campo: nunca em fontes, cargas ou superfícies"
+    },
+    "fonte_fisica": {
+      "hex": "#267BFF",
+      "papel": "distribuição física: preenchimento do corpo, n̂"
+    },
+    "fonte_contorno": {
+      "hex": "#7FB2FF",
+      "papel": "contorno/aro da distribuição física, cargas próximas, R, Q; luz de contorno"
+    },
+    "gaussiana": {
+      "hex": "#9C8CFF",
+      "papel": "superfície gaussiana, contorno amperiano e r: construção matemática, tracejada ou translúcida, nunca sólida"
+    },
+    "area_vetor": {
+      "hex": "#745CFF",
+      "papel": "vetor área d⃗A e seleção matemática translúcida"
+    },
+    "apoio_magenta": {
+      "hex": "#EA63FF",
+      "papel": "mesmo valor de campo_magnetico; use `campo_magnetico` para B⃗ e para o polo sul"
+    },
+    "fonte_escura": {
+      "hex": "#0B2A7A",
+      "papel": "DERIVADA de fonte_fisica, escurecida à mão: interior de cascas (profundidade)",
+      "derivada": true
+    },
+    "campo_magnetico": {
+      "hex": "#EA63FF",
+      "papel": "campo magnético B⃗ (e polo sul do ímã). Decisão do usuário em 2026-10-07: o ciano segue sendo só o campo elétrico E⃗"
+    },
+    "vetor_fisico": {
+      "hex": "#F5F7FF",
+      "papel": "velocidade, força, torque e momento angular: branco neutro (decisão do usuário, 2026-10-07; os vídeos antigos divergem, ex.: v em ciano no vid_0005 e em azul no vid_0014)"
+    }
   },
   "materiais": {
-    "casca_exterior": {"cor": "fonte_fisica", "emissao": 0.25, "rugosidade": 0.4, "metalico": 0.2},
-    "casca_interior": {"cor": "fonte_escura", "emissao": 0.05, "rugosidade": 0.6},
-    "casca_aro": {"cor": "fonte_contorno", "emissao": 1.2, "rugosidade": 0.3},
-    "vidro": {"cor": "fonte_fisica", "modo": "culling", "rugosidade": 0.15, "base": 0.16, "ganho": 0.60, "brilho_borda": 2.2, "blend": 0.35},
-    "carga": {"cor_perto": "fonte_contorno", "cor_longe": "fonte_fisica", "brilho_min": 0.5, "brilho_ganho": 1.4, "tamanho": 0.04},
-    "placa": {"cor": "fonte_fisica", "modo": "culling", "rugosidade": 0.15, "base": 0.14, "ganho": 0.5, "brilho_borda": 1.4, "blend": 0.35,
-              "fade_inicio": 0.5, "grade_passo": 1.0, "grade_largura": 0.03, "grade_alfa": 0.3, "grade_brilho": 0.6},
-    "gaussiana": {"cor": "gaussiana", "emissao_traco": 1.8, "espessura_traco": 0.014, "periodo_traco": 0.3, "razao_traco": 0.6,
-                  "vidro_base": 0.03, "vidro_ganho": 0.22, "vidro_brilho_borda": 0.8},
-    "distribuicao": {"vidro_base": 0.3, "vidro_ganho": 0.6, "vidro_brilho_borda": 2.2, "jitter": 0.12},
-    "eixo": {"cor": "texto_neutro", "emissao": 0.8, "espessura": 0.01, "periodo": 0.3, "razao": 0.6},
-    "bobina": {"cor": "fonte_fisica", "emissao": 0.7, "rugosidade": 0.35, "metalico": 0.1, "raio_fio": 0.04, "pts_por_espira": 48},
-    "rolamento": {"marca_cor": "texto_neutro", "marca_emissao": 2.2, "marca_raio": 0.07, "risco_cor": "fonte_contorno",
-                  "risco_emissao": 1.0, "risco_espessura": 0.012, "chao_cor": "texto_neutro", "chao_vidro_base": 0.02,
-                  "chao_vidro_ganho": 0.08, "chao_vidro_brilho": 0.25, "marca_chao_emissao": 0.7, "marca_chao_espessura": 0.02,
-                  "marcas_por_volta": 4, "chao_comprimento": 14.0},
-    "revolucao": {"perfil_cor": "fonte_contorno", "perfil_emissao": 1.4, "perfil_espessura": 0.02, "fatia_cor": "gaussiana",
-                  "fatia_vidro_base": 0.16, "fatia_vidro_ganho": 0.5, "fatia_vidro_brilho": 1.6, "eixo_emissao": 0.8},
-    "vetor": {"campo_cor": "campo_eletrico", "campo_emissao": 1.6, "normal_cor": "fonte_fisica", "normal_emissao": 1.2,
-              "haste_raio": 0.022, "cabeca_raio": 0.07, "cabeca_comp": 0.2},
-    "otica": {"vidro_cor": "fonte_contorno", "vidro_base": 0.10, "vidro_ganho": 0.55, "vidro_brilho": 1.8,
-              "anteparo_emissao": 0.3, "aresta_espessura": 0.012},
-    "gravitacao": {"centro_cor": "texto_neutro", "centro_borda": "fonte_fisica", "centro_blend": 0.75, "centro_emissao": 0.85, "corpo_cor": "fonte_contorno", "corpo_emissao": 1.2,
-                   "orbita_espessura": 0.014, "vetor_cor": "fonte_contorno", "vetor_emissao": 1.0, "vetor_espessura": 0.02,
-                   "setor_base": 0.32, "setor_ganho": 0.5, "setor_brilho": 1.6, "grade_cor": "fonte_contorno",
-                   "grade_emissao": 0.9, "grade_espessura": 0.012},
-    "calculo_vetorial": {"tangente_cor": "texto_neutro", "tangente_emissao": 1.2, "curva_cor": "fonte_contorno",
-                         "curva_emissao": 0.9, "curva_espessura": 0.012, "remendo_base": 0.34, "remendo_ganho": 0.5,
-                         "remendo_brilho": 1.6, "espessura_casca": 0.03},
-    "oscilacoes": {"mola_cor": "fonte_fisica", "mola_emissao": 0.7, "mola_fio": 0.035, "marca_espessura": 0.014,
-                   "fio_cor": "fonte_contorno", "fio_emissao": 1.0, "fio_espessura": 0.02, "corpo_cor": "fonte_contorno",
-                   "corpo_borda": "fonte_fisica", "corpo_emissao": 0.9, "estrutura_base": 0.2, "estrutura_ganho": 0.5,
-                   "estrutura_brilho": 1.2},
-    "ondas": {"corda_cor": "fonte_contorno", "corda_emissao": 1.5, "corda_espessura": 0.035, "conta_cor": "texto_neutro",
-              "conta_emissao": 2.0, "conta_raio": 0.1, "no_raio": 0.1, "malha_cor": "fonte_contorno", "malha_emissao": 0.8,
-              "malha_espessura": 0.016, "fonte_raio": 0.12},
-    "colisoes": {"bloco1_cor": "fonte_fisica", "bloco2_cor": "fonte_contorno", "bloco_base": 0.28, "bloco_ganho": 0.6,
-                 "bloco_brilho": 2.0, "cm_raio": 0.1, "cm_emissao": 2.0, "trilho_base": 0.05, "trilho_ganho": 0.16,
-                 "trilho_brilho": 0.5},
-    "fio": {"cor": "fonte_fisica", "raio": 0.05, "alpha": 0.95, "emissao_base": 0.6, "emissao_borda": 1.2, "fade_inicio": 0.5,
-            "halo_escala": 2.4, "halo_alpha": 0.14, "halo_emissao": 0.7}
+    "casca_exterior": {
+      "cor": "fonte_fisica",
+      "emissao": 0.25,
+      "rugosidade": 0.4,
+      "metalico": 0.2
+    },
+    "casca_interior": {
+      "cor": "fonte_escura",
+      "emissao": 0.05,
+      "rugosidade": 0.6
+    },
+    "casca_aro": {
+      "cor": "fonte_contorno",
+      "emissao": 1.2,
+      "rugosidade": 0.3
+    },
+    "vidro": {
+      "cor": "fonte_fisica",
+      "modo": "culling",
+      "rugosidade": 0.15,
+      "base": 0.16,
+      "ganho": 0.6,
+      "brilho_borda": 2.2,
+      "blend": 0.35
+    },
+    "carga": {
+      "cor_perto": "fonte_contorno",
+      "cor_longe": "fonte_fisica",
+      "brilho_min": 0.5,
+      "brilho_ganho": 1.4,
+      "tamanho": 0.04
+    },
+    "placa": {
+      "cor": "fonte_fisica",
+      "modo": "culling",
+      "rugosidade": 0.15,
+      "base": 0.14,
+      "ganho": 0.5,
+      "brilho_borda": 1.4,
+      "blend": 0.35,
+      "fade_inicio": 0.5,
+      "grade_passo": 1.0,
+      "grade_largura": 0.03,
+      "grade_alfa": 0.3,
+      "grade_brilho": 0.6
+    },
+    "gaussiana": {
+      "cor": "gaussiana",
+      "emissao_traco": 1.8,
+      "espessura_traco": 0.014,
+      "periodo_traco": 0.3,
+      "razao_traco": 0.6,
+      "vidro_base": 0.03,
+      "vidro_ganho": 0.22,
+      "vidro_brilho_borda": 0.8
+    },
+    "distribuicao": {
+      "vidro_base": 0.3,
+      "vidro_ganho": 0.6,
+      "vidro_brilho_borda": 2.2,
+      "jitter": 0.12
+    },
+    "eixo": {
+      "cor": "texto_neutro",
+      "emissao": 0.8,
+      "espessura": 0.01,
+      "periodo": 0.3,
+      "razao": 0.6
+    },
+    "bobina": {
+      "cor": "fonte_fisica",
+      "emissao": 0.7,
+      "rugosidade": 0.35,
+      "metalico": 0.1,
+      "raio_fio": 0.04,
+      "pts_por_espira": 48
+    },
+    "rolamento": {
+      "marca_cor": "texto_neutro",
+      "marca_emissao": 2.2,
+      "marca_raio": 0.07,
+      "risco_cor": "fonte_contorno",
+      "risco_emissao": 1.0,
+      "risco_espessura": 0.012,
+      "chao_cor": "texto_neutro",
+      "chao_vidro_base": 0.02,
+      "chao_vidro_ganho": 0.08,
+      "chao_vidro_brilho": 0.25,
+      "marca_chao_emissao": 0.7,
+      "marca_chao_espessura": 0.02,
+      "marcas_por_volta": 4,
+      "chao_comprimento": 14.0
+    },
+    "revolucao": {
+      "perfil_cor": "fonte_contorno",
+      "perfil_emissao": 1.4,
+      "perfil_espessura": 0.02,
+      "fatia_cor": "gaussiana",
+      "fatia_vidro_base": 0.16,
+      "fatia_vidro_ganho": 0.5,
+      "fatia_vidro_brilho": 1.6,
+      "eixo_emissao": 0.8
+    },
+    "vetor": {
+      "campo_cor": "campo_eletrico",
+      "campo_emissao": 1.6,
+      "normal_cor": "fonte_fisica",
+      "normal_emissao": 1.2,
+      "haste_raio": 0.022,
+      "cabeca_raio": 0.07,
+      "cabeca_comp": 0.2
+    },
+    "otica": {
+      "vidro_cor": "fonte_contorno",
+      "vidro_base": 0.1,
+      "vidro_ganho": 0.55,
+      "vidro_brilho": 1.8,
+      "anteparo_emissao": 0.3,
+      "aresta_espessura": 0.012
+    },
+    "gravitacao": {
+      "centro_cor": "texto_neutro",
+      "centro_borda": "fonte_fisica",
+      "centro_blend": 0.75,
+      "centro_emissao": 0.85,
+      "corpo_cor": "fonte_contorno",
+      "corpo_emissao": 1.2,
+      "orbita_espessura": 0.014,
+      "vetor_cor": "fonte_contorno",
+      "vetor_emissao": 1.0,
+      "vetor_espessura": 0.02,
+      "setor_base": 0.32,
+      "setor_ganho": 0.5,
+      "setor_brilho": 1.6,
+      "grade_cor": "fonte_contorno",
+      "grade_emissao": 0.9,
+      "grade_espessura": 0.012
+    },
+    "calculo_vetorial": {
+      "tangente_cor": "texto_neutro",
+      "tangente_emissao": 1.2,
+      "curva_cor": "fonte_contorno",
+      "curva_emissao": 0.9,
+      "curva_espessura": 0.012,
+      "remendo_base": 0.34,
+      "remendo_ganho": 0.5,
+      "remendo_brilho": 1.6,
+      "espessura_casca": 0.03
+    },
+    "oscilacoes": {
+      "mola_cor": "fonte_fisica",
+      "mola_emissao": 0.7,
+      "mola_fio": 0.035,
+      "marca_espessura": 0.014,
+      "fio_cor": "fonte_contorno",
+      "fio_emissao": 1.0,
+      "fio_espessura": 0.02,
+      "corpo_cor": "fonte_contorno",
+      "corpo_borda": "fonte_fisica",
+      "corpo_emissao": 0.9,
+      "estrutura_base": 0.2,
+      "estrutura_ganho": 0.5,
+      "estrutura_brilho": 1.2
+    },
+    "ondas": {
+      "corda_cor": "fonte_contorno",
+      "corda_emissao": 1.5,
+      "corda_espessura": 0.035,
+      "conta_cor": "texto_neutro",
+      "conta_emissao": 2.0,
+      "conta_raio": 0.1,
+      "no_raio": 0.1,
+      "malha_cor": "fonte_contorno",
+      "malha_emissao": 0.8,
+      "malha_espessura": 0.016,
+      "fonte_raio": 0.12
+    },
+    "colisoes": {
+      "bloco1_cor": "fonte_fisica",
+      "bloco2_cor": "fonte_contorno",
+      "bloco_base": 0.28,
+      "bloco_ganho": 0.6,
+      "bloco_brilho": 2.0,
+      "cm_raio": 0.1,
+      "cm_emissao": 2.0,
+      "trilho_base": 0.05,
+      "trilho_ganho": 0.16,
+      "trilho_brilho": 0.5
+    },
+    "fio": {
+      "cor": "fonte_fisica",
+      "raio": 0.05,
+      "alpha": 0.95,
+      "emissao_base": 0.6,
+      "emissao_borda": 1.2,
+      "fade_inicio": 0.5,
+      "halo_escala": 2.4,
+      "halo_alpha": 0.14,
+      "halo_emissao": 0.7
+    },
+    "vetor_fisico": {
+      "cor": "vetor_fisico",
+      "emissao": 1.3
+    },
+    "magnetismo": {
+      "campo_cor": "campo_magnetico",
+      "campo_emissao": 1.6,
+      "polo_norte_cor": "fonte_fisica",
+      "polo_sul_cor": "campo_magnetico",
+      "ima_base": 0.3,
+      "ima_ganho": 0.55,
+      "ima_brilho": 1.8
+    },
+    "carga_sinal": {
+      "raio": 0.22,
+      "cor_perto": "fonte_contorno",
+      "cor_longe": "fonte_fisica",
+      "emissao": 0.9,
+      "glifo_cor": "texto_neutro",
+      "glifo_emissao": 2.2,
+      "glifo_espessura": 0.045,
+      "glifo_lado": 0.22,
+      "glifo_relevo": 0.03
+    },
+    "equipotencial": {
+      "cor": "gaussiana",
+      "base": 0.05,
+      "ganho": 0.3,
+      "brilho": 1.2
+    }
   },
   "iluminacao": {
-    "principal": {"loc": [4, -4, 5], "cor": "texto_neutro", "energia": 350, "tamanho": 4},
-    "contorno": {"loc": [-4, 4, 3], "cor": "fonte_contorno", "energia": 350, "tamanho": 3}
+    "principal": {
+      "loc": [
+        4,
+        -4,
+        5
+      ],
+      "cor": "texto_neutro",
+      "energia": 350,
+      "tamanho": 4
+    },
+    "contorno": {
+      "loc": [
+        -4,
+        4,
+        3
+      ],
+      "cor": "fonte_contorno",
+      "energia": 350,
+      "tamanho": 3
+    }
   },
-  "camera": {"azimute": -23, "elevacao": 17, "lente": 50, "margem": 0.09},
+  "camera": {
+    "azimute": -23,
+    "elevacao": 17,
+    "lente": 50,
+    "margem": 0.09
+  },
   "render": {
     "motor": "Eevee",
     "amostras": 64,
     "view_transform": "Standard",
-    "preview": {"largura": 960, "altura": 540, "fps": 15},
-    "final": {"largura": 1920, "altura": 1080, "fps": 30}
+    "preview": {
+      "largura": 960,
+      "altura": 540,
+      "fps": 15
+    },
+    "final": {
+      "largura": 1920,
+      "altura": 1080,
+      "fps": 30
+    }
   },
   "regras": [
     "Ciano é só do campo elétrico: cargas e fontes são azul (#267BFF preenchimento, #7FB2FF contorno).",
@@ -72,6 +328,8 @@
     "Sem bloom e sem estética gamer: a emissão máxima do arsenal é 2,2 (borda do vidro); nenhum sólido compete com texto e equações.",
     "Fundo #050816 e view transform Standard: as cores renderizadas têm de bater com a paleta do 2D.",
     "Legibilidade antes de efeito: ao desenhar um sólido novo, a distinção entre sólidos vizinhos (ex.: casca x maciço) deve valer sem rótulo.",
-    "Nenhum hexadecimal ou parâmetro de material solto no código: tudo vem deste arquivo (gerar_catalogo.py recusa literais)."
+    "Nenhum hexadecimal ou parâmetro de material solto no código: tudo vem deste arquivo (gerar_catalogo.py recusa literais).",
+    "Sinal da carga: esculpido na geometria (um '+' ou um '−' em relevo na esfera, virado para a câmera), nunca por cor. Esferas de carga com sinal são maiores que as cargas pontuais (raio 0,22).",
+    "Campo magnético B⃗ = magenta #EA63FF; campo elétrico E⃗ = ciano #35D9FF. Polos do ímã: N = azul, S = magenta (nomes N e S por rótulo no Manim). Velocidade, força, torque e momento angular = branco."
   ]
 }

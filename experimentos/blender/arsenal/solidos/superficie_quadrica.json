@@ -1,0 +1,74 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "calculo/vetores_r3",
+    "calculo/superficies_quadricas"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/matematica3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.75,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060"
+  },
+  "id": "superficie_quadrica",
+  "nome": "Superfícies quádricas",
+  "descricao": "Quádrica de vidro azul com curvas coordenadas e os eixos x, y, z tracejados em branco neutro. `tipo`: elipsoide, hiperboloide_uma_folha, hiperboloide_duas_folhas, paraboloide_eliptico, paraboloide_hiperbolico ou cone (duas folhas).",
+  "leitura_visual": "Superfície de vidro com a malha: lê-se como 'a forma da quádrica', e a diferença entre os seis tipos é clara pela silhueta.",
+  "usar_quando": [
+    "reconhecer e comparar as seis quádricas",
+    "cortes e traços de uma superfície em R³",
+    "preparar integrais triplas e coordenadas adaptadas"
+  ],
+  "nao_usar_quando": [
+    "superfícies que não são quádricas",
+    "cortes por planos (as seções não são desenhadas)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
+    "os semieixos a, b, c são parâmetros globais: a mesma tripla vale para todos os tipos",
+    "o hiperboloide de duas folhas e o cone aparecem em duas folhas, sem a seção que as une"
+  ],
+  "construtor": "superficie_quadrica",
+  "parametros": {
+    "tipo": {
+      "valor": "elipsoide",
+      "unidade": "texto",
+      "descricao": "elipsoide, hiperboloide_uma_folha, hiperboloide_duas_folhas, paraboloide_eliptico, paraboloide_hiperbolico ou cone"
+    },
+    "a": {
+      "valor": 2.0,
+      "unidade": "u",
+      "descricao": "semieixo em x"
+    },
+    "b": {
+      "valor": 1.5,
+      "unidade": "u",
+      "descricao": "semieixo em y"
+    },
+    "c": {
+      "valor": 1.3,
+      "unidade": "u",
+      "descricao": "semieixo em z"
+    },
+    "eixo": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = eixos coordenados"
+    },
+    "linhas": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "curvas coordenadas"
+    }
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 24,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/superficie_quadrica.png"
+}

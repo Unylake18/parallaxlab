@@ -1,0 +1,81 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "eletromagnetismo/biot_savart"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/eletromag3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.4,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "biot_savart_espira",
+  "nome": "Biot–Savart numa espira",
+  "descricao": "Espira de fio azul no plano YZ, ponto P no eixo, o elemento dl (seta branca), o vetor r de dl até P (violeta tracejado) e a contribuição dB em P (seta magenta, direção dl × r). Com movimento o elemento percorre a espira.",
+  "leitura_visual": "Anel com uma seta branca no fio e uma seta magenta em P: lê-se como 'cada elemento de corrente contribui com um dB'.",
+  "usar_quando": [
+    "campo no eixo de uma espira por Biot–Savart (soma dos dB, componentes que se cancelam)",
+    "mostrar a geometria dl, r e dB antes da integral",
+    "contraste com Ampère (simetria) e com o solenoide"
+  ],
+  "nao_usar_quando": [
+    "campos de fios retos ou arcos (a geometria é outra)",
+    "campo fora do eixo"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
+    "só um elemento dl por vez; a soma sobre a espira é do Manim"
+  ],
+  "construtor": "biot_savart_espira",
+  "parametros": {
+    "raio": {
+      "valor": 1.5,
+      "unidade": "u",
+      "descricao": "raio da espira"
+    },
+    "distancia": {
+      "valor": 2.4,
+      "unidade": "u",
+      "descricao": "distância do ponto P ao plano da espira"
+    },
+    "theta0": {
+      "valor": 2.2,
+      "unidade": "rad",
+      "descricao": "posição angular do elemento (sem movimento)"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -70,
+    "elevacao": 30,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/biot_savart_espira.png",
+  "animacao": {
+    "tipo": "percurso",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.4,
+    "peso_mb_por_frame": 0.6,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.1"
+  ]
+}

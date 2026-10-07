@@ -1,0 +1,79 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "eletromagnetismo/potencial_eletrico"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/eletromag3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.91,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060"
+  },
+  "id": "equipotenciais",
+  "nome": "Superfícies equipotenciais (carga pontual e dipolo)",
+  "descricao": "Superfícies equipotenciais em violeta translúcido, aninhadas: esferas concêntricas ao redor de uma carga pontual (`tipo=carga_pontual`) ou superfícies fechadas ao redor das duas cargas de um dipolo (`tipo=dipolo`, com o plano V = 0). As cargas têm o sinal esculpido (+ ou −).",
+  "leitura_visual": "Cascas violeta aninhadas em torno de uma esfera com + ou −: lê-se como 'superfícies de mesmo potencial'. No dipolo, bolhas distintas em volta de cada carga.",
+  "usar_quando": [
+    "superfícies equipotenciais e a relação com o campo (E ⟂ equipotencial)",
+    "carga pontual (esferas) e dipolo (superfícies deformadas)",
+    "potencial em cada ponto: V = k q / r"
+  ],
+  "nao_usar_quando": [
+    "potenciais de distribuições contínuas (use as fontes do arsenal e o Manim)",
+    "mais de duas cargas"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
+    "no dipolo, só os níveis fechados em torno de cada carga (|V| ≥ nivel_min); o plano V = 0 é o plano mediador",
+    "cada superfície é uma casca de vidro fina e ruído/transparência aparecem ao sobrepor muitas",
+    "o sinal esculpido só aparece de frente"
+  ],
+  "construtor": "equipotenciais",
+  "parametros": {
+    "tipo": {
+      "valor": "dipolo",
+      "unidade": "texto",
+      "descricao": "carga_pontual ou dipolo"
+    },
+    "sinal": {
+      "valor": 1,
+      "unidade": "±1",
+      "descricao": "sinal da carga (no dipolo, da carga em +X)"
+    },
+    "distancia": {
+      "valor": 2.0,
+      "unidade": "u",
+      "descricao": "distância entre as cargas do dipolo"
+    },
+    "n_niveis": {
+      "valor": 3,
+      "unidade": "n",
+      "descricao": "superfícies por carga"
+    },
+    "nivel_min": {
+      "valor": 0.5,
+      "unidade": "u",
+      "descricao": "menor |V| (a superfície mais externa)"
+    },
+    "nivel_max": {
+      "valor": 1.3,
+      "unidade": "u",
+      "descricao": "maior |V| (a mais interna)"
+    },
+    "plano": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "plano V = 0 do dipolo"
+    }
+  },
+  "enquadramento": {
+    "azimute": -55,
+    "elevacao": 16,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/equipotenciais.png"
+}

@@ -1,0 +1,98 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "fisica4/estrutura_atomica"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/mecanica3d.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.47,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "orbital_atomico",
+  "nome": "Orbitais atômicos (nuvens de probabilidade)",
+  "descricao": "Nuvem de pontos da densidade |ψ|² de um orbital do hidrogênio (`orbital`: 1s, 2s, 2p ou 3d), em dois tons de azul conforme o sinal de ψ, com o núcleo branco no centro e o eixo z tracejado. Com movimento a nuvem gira uma volta em torno de z.",
+  "leitura_visual": "Uma nuvem de pontos com forma característica: esfera (s), dois lóbulos de tons opostos (p) ou lóbulos mais um anel (d).",
+  "usar_quando": [
+    "forma dos orbitais s, p e d e o sinal de ψ (fases)",
+    "nodos (o 2s tem uma casca interna e outra externa)",
+    "preparar a leitura de números quânticos (n, l, m)"
+  ],
+  "nao_usar_quando": [
+    "energia dos níveis e espectros (são do Manim)",
+    "orbitais com n > 3 ou m ≠ 0 (só estes quatro)"
+  ],
+  "limitacoes": [
+    "só o objeto geométrico: fórmulas, valores, gráficos e rótulos (inclusive N/S, +/−, nomes de vetores) são do Manim",
+    "a gramática de cor segue o padrão do arsenal (estilo.json): E = ciano, B = magenta, vetores físicos = branco, normal = azul, construções = violeta",
+    "amostragem estatística: poucos pontos deixam a forma ruidosa (5000 por padrão); a nuvem muda um pouco com a semente",
+    "unidades atômicas arbitrárias: a escala só serve para caber no quadro",
+    "a cor distingue o sinal de ψ, não o sinal de carga"
+  ],
+  "construtor": "orbital_atomico",
+  "parametros": {
+    "orbital": {
+      "valor": "2p",
+      "unidade": "texto",
+      "descricao": "1s, 2s, 2p ou 3d"
+    },
+    "n_pontos": {
+      "valor": 5000,
+      "unidade": "n",
+      "descricao": "pontos da nuvem"
+    },
+    "escala": {
+      "valor": 0,
+      "unidade": "x",
+      "descricao": "escala (0 = automática por orbital)"
+    },
+    "tamanho_ponto": {
+      "valor": 0.034,
+      "unidade": "u",
+      "descricao": "raio de cada ponto"
+    },
+    "semente": {
+      "valor": 7,
+      "unidade": "n",
+      "descricao": "semente do sorteio"
+    },
+    "eixo": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "eixo z tracejado"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase da animação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 22,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/orbital_atomico.png",
+  "animacao": {
+    "tipo": "rotacao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um ciclo; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.47,
+    "peso_mb_por_frame": 0.91,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.12"
+  ]
+}
