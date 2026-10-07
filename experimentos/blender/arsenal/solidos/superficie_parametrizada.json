@@ -1,0 +1,99 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "calculo/superficies_parametrizadas",
+    "calculo/integrais_de_superficie"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/calc_vetorial.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 1.06,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "superficie_parametrizada",
+  "nome": "Superfície parametrizada com remendo dS",
+  "descricao": "Superfície de vidro azul (`tipo`: onda, sela ou esfera) com as curvas coordenadas u = cte e v = cte em azul-claro, um remendo elementar dS em violeta tracejado, os vetores tangentes r_u e r_v (brancos) e a normal n̂ = r_u × r_v (azul) no ponto (`u0`, `v0`). Com `movimento=1` o ponto percorre uma pequena volta.",
+  "leitura_visual": "Superfície de vidro com malha, um quadrilátero violeta e três setas (duas brancas no plano tangente, uma azul normal). Lê-se como 'parametrização: elemento de área e orientação'.",
+  "usar_quando": [
+    "superfícies parametrizadas: vetores tangentes, elemento de área |r_u × r_v| du dv e orientação (Cálculo IV 11.6)",
+    "integral de superfície e fluxo (o remendo é o dS)",
+    "contraste entre onda, sela e esfera"
+  ],
+  "nao_usar_quando": [
+    "superfícies de revolução com fatias (use solido_revolucao_*)",
+    "superfícies fechadas com gaussianas (use as gaussianas)"
+  ],
+  "limitacoes": [
+    "a gramática de cor segue o padrão do arsenal: campo vetorial = ciano (reservado ao campo), normal n̂ = azul, tangentes = branco, construções (remendo, contorno) = violeta, nunca sólidas",
+    "só o objeto geométrico: integrais, fórmulas e o sinal da circulação/fluxo são do Manim",
+    "superfície fina de vidro com Solidify (espessura 0,03): vista de lado o vidro quase some",
+    "sobre a esfera os vetores tangentes e a normal dependem do ponto: perto dos polos a parametrização é degenerada (domínio cortado em 5%)",
+    "o remendo é plano (quadrilátero); a curvatura dentro dele não aparece"
+  ],
+  "construtor": "superficie_parametrizada",
+  "parametros": {
+    "tipo": {
+      "valor": "onda",
+      "unidade": "texto",
+      "descricao": "onda, sela ou esfera"
+    },
+    "u0": {
+      "valor": 0.5,
+      "unidade": "0-1",
+      "descricao": "posição de u no domínio"
+    },
+    "v0": {
+      "valor": 0.5,
+      "unidade": "0-1",
+      "descricao": "posição de v no domínio"
+    },
+    "tamanho_remendo": {
+      "valor": 1.0,
+      "unidade": "x",
+      "descricao": "tamanho relativo do remendo dS"
+    },
+    "vetores": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = r_u, r_v e n̂"
+    },
+    "linhas": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = curvas coordenadas"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação em loop (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do loop; fase=1 repete o quadro da fase 0 (loop perfeito)"
+    }
+  },
+  "animacao": {
+    "tipo": "percurso",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = uma volta do ponto; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 1.06,
+    "peso_mb_por_frame": 1.17,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 36,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.15"
+  ],
+  "preview": "previews/superficie_parametrizada.png"
+}

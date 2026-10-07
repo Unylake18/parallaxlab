@@ -1,0 +1,64 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "calculo/campos_vetoriais",
+    "eletromagnetismo/campo_eletrico"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/calc_vetorial.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.41,
+    "custo_origem": "still 1920x1080 com alpha, Eevee 64 amostras, média de 6 renders aquecidos, RTX 2060"
+  },
+  "id": "campo_vetorial",
+  "nome": "Campo vetorial (setas)",
+  "descricao": "Campo vetorial como setas ciano numa grade (plano z = 0 com `dim=2`; cubo com `dim=3`). `tipo`: radial (fonte), rotacional (circulação), sela ou espiral (fonte + circulação). O comprimento da seta cresce com o módulo do campo.",
+  "leitura_visual": "Grade de setas ciano: para fora (radial), em círculos (rotacional), ao longo de eixos (sela) ou em espiral. Lê-se como 'campo de vetores'; a divergência e o rotacional se leem na forma.",
+  "usar_quando": [
+    "visualizar campos escalares e vetoriais, linhas e padrões (Cálculo IV 11.1)",
+    "divergência (fonte/sumidouro) e rotacional (circulação) pela forma do campo",
+    "campo elétrico ou de velocidades de fluido como setas (o ciano é reservado ao campo)"
+  ],
+  "nao_usar_quando": [
+    "campos que variam no tempo ou com singularidades (o preview não evita o centro)",
+    "linhas de campo contínuas (as setas são amostras)"
+  ],
+  "limitacoes": [
+    "a gramática de cor segue o padrão do arsenal: campo vetorial = ciano (reservado ao campo), normal n̂ = azul, tangentes = branco, construções (remendo, contorno) = violeta, nunca sólidas",
+    "só o objeto geométrico: integrais, fórmulas e o sinal da circulação/fluxo são do Manim",
+    "campo amostrado numa grade de n×n (ou n×n×4 em 3D); o comprimento é normalizado entre 28% e 100% do máximo, então não é proporcional ao módulo absoluto",
+    "só 4 campos prontos (radial, rotacional, sela, espiral); outro exige alterar CAMPOS em calc_vetorial.py"
+  ],
+  "construtor": "campo_vetorial",
+  "parametros": {
+    "tipo": {
+      "valor": "rotacional",
+      "unidade": "texto",
+      "descricao": "radial, rotacional, sela ou espiral"
+    },
+    "dim": {
+      "valor": 2,
+      "unidade": "n",
+      "descricao": "2 = plano; 3 = cubo (mais setas)"
+    },
+    "n": {
+      "valor": 7,
+      "unidade": "n",
+      "descricao": "setas por lado da grade"
+    },
+    "extensao": {
+      "valor": 3.0,
+      "unidade": "u",
+      "descricao": "meia largura da região"
+    }
+  },
+  "enquadramento": {
+    "azimute": -30,
+    "elevacao": 40,
+    "lente": 50,
+    "margem": 0.07
+  },
+  "preview": "previews/campo_vetorial.png"
+}

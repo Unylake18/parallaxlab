@@ -1,0 +1,92 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "mecanica/gravitacao"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/gravitacao.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 1.15,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "poco_gravitacional",
+  "nome": "Poço gravitacional (potencial)",
+  "descricao": "Superfície de vidro azulado de revolução z = −P·s/√(r²+s²) com anéis e raios em azul-claro e uma bola azul-claro em órbita circular sobre ela. Representa o poço de potencial gravitacional (o mais fundo no centro).",
+  "leitura_visual": "Funil de vidro com grade e uma bola circulando: lê-se como 'potencial gravitacional: a bola orbita no poço'.",
+  "usar_quando": [
+    "potencial gravitacional e energia potencial negativa (o poço é mais profundo perto do corpo)",
+    "velocidade de escape: sair do poço (a escala de energia é do Manim)",
+    "satélites e órbitas circulares como bolas no poço (analogia)"
+  ],
+  "nao_usar_quando": [
+    "curvatura do espaço-tempo da relatividade geral (é só uma analogia de potencial)",
+    "órbitas elípticas (use orbita_kepleriana)"
+  ],
+  "limitacoes": [
+    "é uma analogia visual: a bola gira sobre uma superfície, mas a força real é central no plano, não gravidade vertical sobre o funil",
+    "a profundidade do poço é um parâmetro visual, não uma escala de energia",
+    "o poço é suavizado pelo raio do núcleo `raio_nucleo` (evita a singularidade em r = 0)",
+    "só a órbita circular é animada"
+  ],
+  "construtor": "poco_gravitacional",
+  "parametros": {
+    "raio_max": {
+      "valor": 3.2,
+      "unidade": "u",
+      "descricao": "raio da borda do poço"
+    },
+    "profundidade": {
+      "valor": 1.8,
+      "unidade": "u",
+      "descricao": "profundidade no centro"
+    },
+    "raio_nucleo": {
+      "valor": 0.9,
+      "unidade": "u",
+      "descricao": "raio de suavização do centro"
+    },
+    "bola": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = bola orbitando sobre a superfície"
+    },
+    "raio_bola": {
+      "valor": 1.9,
+      "unidade": "u",
+      "descricao": "raio da órbita circular da bola"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação em loop (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do loop; fase=1 repete o quadro da fase 0 (loop perfeito)"
+    }
+  },
+  "animacao": {
+    "tipo": "orbita",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = uma volta; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 1.15,
+    "peso_mb_por_frame": 0.98,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "enquadramento": {
+    "azimute": -30,
+    "elevacao": 24,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.12"
+  ],
+  "preview": "previews/poco_gravitacional.png"
+}

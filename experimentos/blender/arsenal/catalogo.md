@@ -11,33 +11,39 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 | `amperiano_circular` | Contorno amperiano circular | aprovado | eletromagnetismo/lei_de_ampere |
 | `amperiano_retangular` | Contorno amperiano retangular | aprovado | eletromagnetismo/lei_de_ampere |
 | `anel_carregado` | Anel carregado (aro) | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
-| `anteparo_fenda_dupla` | Anteparo de fenda dupla | estudo | otica/interferencia, otica/difracao |
-| `aro_rolando` | Aro rolando sem deslizar | estudo | mecanica/rolamento, mecanica/momento_de_inercia |
-| `caixa_gas_cinetica` | Gás ideal em recipiente com êmbolo (teoria cinética) | estudo | termodinamica/teoria_cinetica, termodinamica/processos_em_gases |
-| `capacitor_esferico` | Capacitor esférico (esferas concêntricas, em corte) | estudo | eletromagnetismo/condutores_e_capacitores |
-| `capacitor_placas_paralelas` | Capacitor de placas paralelas | estudo | eletromagnetismo/condutores_e_capacitores |
+| `anteparo_fenda_dupla` | Anteparo de fenda dupla | aprovado | otica/interferencia, otica/difracao |
+| `aro_rolando` | Aro rolando sem deslizar | aprovado | mecanica/rolamento, mecanica/momento_de_inercia |
+| `caixa_gas_cinetica` | Gás ideal em recipiente com êmbolo (teoria cinética) | aprovado | termodinamica/teoria_cinetica, termodinamica/processos_em_gases |
+| `campo_vetorial` | Campo vetorial (setas) | estudo | calculo/campos_vetoriais, eletromagnetismo/campo_eletrico |
+| `capacitor_esferico` | Capacitor esférico (esferas concêntricas, em corte) | aprovado | eletromagnetismo/condutores_e_capacitores |
+| `capacitor_placas_paralelas` | Capacitor de placas paralelas | aprovado | eletromagnetismo/condutores_e_capacitores |
 | `casca_cilindrica_oca` | Casca cilíndrica oca | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `casca_esferica_oca` | Casca esférica oca (com corte em octante) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `cilindro_coaxial` | Cilindro coaxial (condutor maciço + casca externa, em corte) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
 | `cilindro_macico_isolante` | Cilindro maciço isolante com cargas no volume | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
-| `cilindro_rolando` | Cilindro rolando sem deslizar | estudo | mecanica/rolamento, mecanica/momento_de_inercia |
+| `cilindro_rolando` | Cilindro rolando sem deslizar | aprovado | mecanica/rolamento, mecanica/momento_de_inercia |
 | `disco_carregado` | Disco carregado | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
 | `esfera_macica_isolante` | Esfera maciça isolante com cargas no volume | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
-| `esfera_rolando` | Esfera rolando sem deslizar | estudo | mecanica/rolamento, mecanica/momento_de_inercia |
+| `esfera_rolando` | Esfera rolando sem deslizar | aprovado | mecanica/rolamento, mecanica/momento_de_inercia |
 | `fio_infinito` | Fio infinito (retilíneo) | aprovado | eletromagnetismo/lei_de_ampere |
 | `gaussiana_caixa` | Superfície gaussiana em caixa (pillbox) | aprovado | eletromagnetismo/lei_de_gauss |
 | `gaussiana_cilindrica` | Superfície gaussiana cilíndrica (fechada) | aprovado | eletromagnetismo/lei_de_gauss |
 | `gaussiana_esferica` | Superfície gaussiana esférica | aprovado | eletromagnetismo/lei_de_gauss |
+| `gradiente_colina` | Gradiente numa colina (curvas de nível) | estudo | calculo/gradiente, calculo/funcoes_de_varias_variaveis |
 | `haste_carregada` | Haste carregada | aprovado | eletromagnetismo/campo_eletrico, mecanica/momento_de_inercia |
-| `lente_delgada` | Lente delgada (biconvexa ou biconcava) | estudo | otica/otica_geometrica |
+| `lente_delgada` | Lente delgada (biconvexa ou biconcava) | aprovado | otica/otica_geometrica |
+| `orbita_kepleriana` | Órbita kepleriana com setores de áreas iguais | estudo | mecanica/gravitacao |
 | `placa_infinita_carregada` | Placa infinita carregada (plano com cargas na superfície) | aprovado | eletromagnetismo/lei_de_gauss, eletromagnetismo/campo_eletrico |
-| `prisma_triangular` | Prisma triangular | estudo | otica/otica_geometrica |
+| `poco_gravitacional` | Poço gravitacional (potencial) | estudo | mecanica/gravitacao |
+| `prisma_triangular` | Prisma triangular | aprovado | otica/otica_geometrica |
 | `solenoide_corrente` | Solenoide (hélice de fio) | aprovado | eletromagnetismo/lei_de_ampere |
-| `solido_revolucao_arruela` | Sólido de revolução: método das arruelas | estudo | calculo/volumes_de_revolucao |
-| `solido_revolucao_cascas` | Sólido de revolução: método das cascas | estudo | calculo/volumes_de_revolucao |
-| `solido_revolucao_disco` | Sólido de revolução: método dos discos | estudo | calculo/volumes_de_revolucao |
+| `solido_revolucao_arruela` | Sólido de revolução: método das arruelas | aprovado | calculo/volumes_de_revolucao |
+| `solido_revolucao_cascas` | Sólido de revolução: método das cascas | aprovado | calculo/volumes_de_revolucao |
+| `solido_revolucao_disco` | Sólido de revolução: método dos discos | aprovado | calculo/volumes_de_revolucao |
+| `superficie_parametrizada` | Superfície parametrizada com remendo dS | estudo | calculo/superficies_parametrizadas, calculo/integrais_de_superficie |
+| `teorema_stokes` | Teorema de Stokes (hemisfério e contorno) | estudo | calculo/stokes, eletromagnetismo/lei_de_ampere |
 | `toroide_corrente` | Toroide (fio enrolado em anel) | aprovado | eletromagnetismo/lei_de_ampere |
-| `tubo_escoamento` | Tubo com estrangulamento (continuidade) | estudo | fluidos/fluidos_em_movimento |
+| `tubo_escoamento` | Tubo com estrangulamento (continuidade) | aprovado | fluidos/fluidos_em_movimento |
 
 ## Padrão visual
 
@@ -229,7 +235,7 @@ Ficha: `solidos/anel_carregado.json`
 
 ### `anteparo_fenda_dupla` — Anteparo de fenda dupla
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Anteparo opaco azul (normal X) com duas fendas verticais (ao longo de Z) de largura `fenda`, separadas de `separacao` entre centros; as bordas das fendas em azul-claro. Nada atrás dele: a onda, as frentes e a figura de interferência são do Manim.
 
@@ -276,7 +282,7 @@ Ficha: `solidos/anteparo_fenda_dupla.json`
 
 ### `aro_rolando` — Aro rolando sem deslizar
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Aro (toro fino de vidro azulado, eixo ao longo de Y) com 3 marcas a 120° e a do centro de massa, sobre o chão que corre. Eixo instantâneo violeta tracejado no contato.
 
@@ -331,7 +337,7 @@ Ficha: `solidos/aro_rolando.json`
 
 ### `caixa_gas_cinetica` — Gás ideal em recipiente com êmbolo (teoria cinética)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Recipiente de vidro (arestas azul-claro) com um êmbolo e moléculas neutras (brancas perto, azul-claro longe) ricocheteando nas paredes e no êmbolo. `pistao` = fração do comprimento ocupada pelo gás; `temperatura` multiplica a velocidade das moléculas; `amplitude_pistao` faz o êmbolo oscilar (compressão e expansão) ao longo do loop.
 
@@ -383,9 +389,56 @@ img = Solido3D("caixa_gas_cinetica").mobject(cena=self, altura=5)   # cargas em 
 
 Ficha: `solidos/caixa_gas_cinetica.json`
 
-### `capacitor_esferico` — Capacitor esférico (esferas concêntricas, em corte)
+### `campo_vetorial` — Campo vetorial (setas)
 
 **Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Campo vetorial como setas ciano numa grade (plano z = 0 com `dim=2`; cubo com `dim=3`). `tipo`: radial (fonte), rotacional (circulação), sela ou espiral (fonte + circulação). O comprimento da seta cresce com o módulo do campo.
+
+![Campo vetorial (setas)](previews/campo_vetorial.png)
+
+**Como se lê:** Grade de setas ciano: para fora (radial), em círculos (rotacional), ao longo de eixos (sela) ou em espiral. Lê-se como 'campo de vetores'; a divergência e o rotacional se leem na forma.
+
+**Usar quando**
+- visualizar campos escalares e vetoriais, linhas e padrões (Cálculo IV 11.1)
+- divergência (fonte/sumidouro) e rotacional (circulação) pela forma do campo
+- campo elétrico ou de velocidades de fluido como setas (o ciano é reservado ao campo)
+
+**Não usar quando**
+- campos que variam no tempo ou com singularidades (o preview não evita o centro)
+- linhas de campo contínuas (as setas são amostras)
+
+**Limitações**
+- a gramática de cor segue o padrão do arsenal: campo vetorial = ciano (reservado ao campo), normal n̂ = azul, tangentes = branco, construções (remendo, contorno) = violeta, nunca sólidas
+- só o objeto geométrico: integrais, fórmulas e o sinal da circulação/fluxo são do Manim
+- campo amostrado numa grade de n×n (ou n×n×4 em 3D); o comprimento é normalizado entre 28% e 100% do máximo, então não é proporcional ao módulo absoluto
+- só 4 campos prontos (radial, rotacional, sela, espiral); outro exige alterar CAMPOS em calc_vetorial.py
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `tipo` | rotacional | texto | radial, rotacional, sela ou espiral |
+| `dim` | 2 | n | 2 = plano; 3 = cubo (mais setas) |
+| `n` | 7 | n | setas por lado da grade |
+| `extensao` | 3.0 | u | meia largura da região |
+
+**Integração:** `png_seq_alpha` · custo 0.41 s/frame (1080p, Eevee)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- campo_vetorial --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("campo_vetorial").mobject(altura=5)   # estático: um quadro PNG com alpha
+```
+
+Ficha: `solidos/campo_vetorial.json`
+
+### `capacitor_esferico` — Capacitor esférico (esferas concêntricas, em corte)
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Esfera condutora interna de raio `raio_a` (vidro, cargas na superfície) dentro de uma casca esférica externa de raio `raio_b`, com um octante removido voltado para a câmera (como a casca esférica do arsenal). O mesmo número de cargas nas duas superfícies.
 
@@ -433,7 +486,7 @@ Ficha: `solidos/capacitor_esferico.json`
 
 ### `capacitor_placas_paralelas` — Capacitor de placas paralelas
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Duas placas de vidro azulado quadradas e paralelas (normal X) separadas por `distancia`, com o mesmo número de cargas pontuais nas faces internas. Dielétrico opcional (vidro azul-claro enchendo o vão).
 
@@ -680,7 +733,7 @@ Ficha: `solidos/cilindro_macico_isolante.json`
 
 ### `cilindro_rolando` — Cilindro rolando sem deslizar
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Cilindro de vidro azulado (eixo ao longo de Y) com bordas circulares e 4 geratrizes em azul-claro, uma marca na borda e a do centro de massa, sobre o chão que corre. Eixo instantâneo violeta tracejado no contato.
 
@@ -844,7 +897,7 @@ Ficha: `solidos/esfera_macica_isolante.json`
 
 ### `esfera_rolando` — Esfera rolando sem deslizar
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Esfera de vidro azulado com 3 meridianos e o equador em azul-claro, uma marca de superfície e a marca do centro de massa, sobre um chão de vidro com marcas transversais que corre sob ela (câmera acompanha). Eixo instantâneo de rotação tracejado violeta no contato.
 
@@ -1104,6 +1157,58 @@ img = Solido3D("gaussiana_esferica").mobject(altura=5)   # estático: um quadro 
 
 Ficha: `solidos/gaussiana_esferica.json`
 
+### `gradiente_colina` — Gradiente numa colina (curvas de nível)
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Colina gaussiana f(x, y) = h e^(−r²/2σ²) (vidro azul) com curvas de nível em azul-claro, um ponto P (branco) sobre a superfície, o vetor gradiente ∇f (ciano, horizontal, apontando para o topo) e a projeção vertical de P no plano (violeta tracejada). Com `movimento=1` o ponto circunda a colina e o gradiente gira com ele.
+
+![Gradiente numa colina (curvas de nível)](previews/gradiente_colina.png)
+
+**Como se lê:** Colina de vidro com anéis e um ponto com uma seta ciano perpendicular ao anel, apontando para o topo. Lê-se como 'o gradiente é perpendicular às curvas de nível e aponta para a maior subida'.
+
+**Usar quando**
+- gradiente e derivada direcional (Cálculo III 10.5): ∇f ⟂ curvas de nível
+- extremos em várias variáveis (o topo da colina)
+- relação do gradiente com o campo conservativo (potencial)
+
+**Não usar quando**
+- funções com pontos de sela (use superficie_parametrizada, tipo sela)
+- mais de uma colina
+
+**Limitações**
+- a gramática de cor segue o padrão do arsenal: campo vetorial = ciano (reservado ao campo), normal n̂ = azul, tangentes = branco, construções (remendo, contorno) = violeta, nunca sólidas
+- só o objeto geométrico: integrais, fórmulas e o sinal da circulação/fluxo são do Manim
+- a seta do gradiente é horizontal (no plano xy) e normalizada em comprimento (0,35 + 0,9|∇f|, no máximo 1,6)
+- a colina é fixa (gaussiana), só altura e abertura mudam
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `altura` | 2.0 | u | altura h do topo |
+| `abertura` | 1.0 | u | largura σ da colina |
+| `extensao` | 3.0 | u | meia largura da região |
+| `n_niveis` | 5 | n | curvas de nível |
+| `raio_ponto` | 1.4 | u | distância de P ao eixo da colina |
+| `movimento` | 0 | 0/1 | 1 = animação em loop (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase do loop; fase=1 repete o quadro da fase 0 (loop perfeito) |
+
+**Integração:** `png_seq_alpha` · custo 1.03 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `percurso` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 1.03 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- gradiente_colina --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("gradiente_colina").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/gradiente_colina.json`
+
 ### `haste_carregada` — Haste carregada
 
 **Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
@@ -1166,7 +1271,7 @@ Ficha: `solidos/haste_carregada.json`
 
 ### `lente_delgada` — Lente delgada (biconvexa ou biconcava)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Lente de vidro azul-claro de revolução em torno do eixo óptico X, com faces esféricas de raios `raio1` e `raio2`. `forma` = biconvexa (converge) ou biconcava (diverge). Eixo óptico tracejado neutro e os dois focos (marcas neutras) pela equação dos fabricantes de lentes, 1/f = (n−1)(1/R₁+1/R₂).
 
@@ -1215,6 +1320,59 @@ img = Solido3D("lente_delgada").mobject(altura=5)   # estático: um quadro PNG c
 ```
 
 Ficha: `solidos/lente_delgada.json`
+
+### `orbita_kepleriana` — Órbita kepleriana com setores de áreas iguais
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Órbita elíptica num plano: corpo central branco no foco, corpo orbitante azul-claro, trajetória tracejada violeta, vetor posição e `setores` fatias violeta translúcidas varridas em intervalos de tempo iguais (fração `fracao_setor` do período). Com `movimento=1` o corpo percorre a órbita (fase = um período, velocidade de Kepler).
+
+![Órbita kepleriana com setores de áreas iguais](previews/orbita_kepleriana.png)
+
+**Como se lê:** Elipse tracejada com o corpo central num foco e fatias violeta: a do periélio é larga e curta, a do afélio fina e longa, mas de mesma área. Lê-se como 'áreas iguais em tempos iguais'.
+
+**Usar quando**
+- leis de Kepler: 1ª (elipse com o Sol no foco), 2ª (áreas iguais) e 3ª (T² ∝ a³ no Manim)
+- energia orbital e velocidade maior no periélio (a velocidade é do Manim)
+- órbitas circulares (excentricidade 0) como caso particular
+
+**Não usar quando**
+- problemas de dois corpos com massas comparáveis (o centro é fixo)
+- órbitas abertas (parábola, hipérbole): só elipses (0 ≤ e < 1)
+- precessão ou perturbações
+
+**Limitações**
+- o corpo central é fixo no foco: não há movimento do centro de massa
+- o plano da órbita é XY; a câmera padrão olha de cima (elevação 34)
+- a equação de Kepler é resolvida por Newton para cada quadro: a velocidade é a real (variável) ao longo do loop
+- o setor é uma fatia plana colorida com bordas retas, aproximando o setor elíptico com 24 pontos
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `semi_eixo` | 2.6 | u | semi-eixo maior a |
+| `excentricidade` | 0.55 | 0-1 | excentricidade e (0 = círculo) |
+| `setores` | 2 | n | número de setores de áreas iguais (distribuídos em fase) |
+| `fracao_setor` | 0.125 | 0-1 | fração do período varrida por cada setor |
+| `vetor` | 1 | 0/1 | 1 = vetor posição (do centro ao corpo) |
+| `movimento` | 0 | 0/1 | 1 = animação em loop (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase do loop; fase=1 repete o quadro da fase 0 (loop perfeito) |
+
+**Integração:** `png_seq_alpha` · custo 0.67 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `orbita` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 0.67 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- orbita_kepleriana --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("orbita_kepleriana").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/orbita_kepleriana.json`
 
 ### `placa_infinita_carregada` — Placa infinita carregada (plano com cargas na superfície)
 
@@ -1277,9 +1435,61 @@ img = Solido3D("placa_infinita_carregada").mobject(cena=self, altura=5)   # carg
 
 Ficha: `solidos/placa_infinita_carregada.json`
 
-### `prisma_triangular` — Prisma triangular
+### `poco_gravitacional` — Poço gravitacional (potencial)
 
 **Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Superfície de vidro azulado de revolução z = −P·s/√(r²+s²) com anéis e raios em azul-claro e uma bola azul-claro em órbita circular sobre ela. Representa o poço de potencial gravitacional (o mais fundo no centro).
+
+![Poço gravitacional (potencial)](previews/poco_gravitacional.png)
+
+**Como se lê:** Funil de vidro com grade e uma bola circulando: lê-se como 'potencial gravitacional: a bola orbita no poço'.
+
+**Usar quando**
+- potencial gravitacional e energia potencial negativa (o poço é mais profundo perto do corpo)
+- velocidade de escape: sair do poço (a escala de energia é do Manim)
+- satélites e órbitas circulares como bolas no poço (analogia)
+
+**Não usar quando**
+- curvatura do espaço-tempo da relatividade geral (é só uma analogia de potencial)
+- órbitas elípticas (use orbita_kepleriana)
+
+**Limitações**
+- é uma analogia visual: a bola gira sobre uma superfície, mas a força real é central no plano, não gravidade vertical sobre o funil
+- a profundidade do poço é um parâmetro visual, não uma escala de energia
+- o poço é suavizado pelo raio do núcleo `raio_nucleo` (evita a singularidade em r = 0)
+- só a órbita circular é animada
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `raio_max` | 3.2 | u | raio da borda do poço |
+| `profundidade` | 1.8 | u | profundidade no centro |
+| `raio_nucleo` | 0.9 | u | raio de suavização do centro |
+| `bola` | 1 | 0/1 | 1 = bola orbitando sobre a superfície |
+| `raio_bola` | 1.9 | u | raio da órbita circular da bola |
+| `movimento` | 0 | 0/1 | 1 = animação em loop (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase do loop; fase=1 repete o quadro da fase 0 (loop perfeito) |
+
+**Integração:** `png_seq_alpha` · custo 1.15 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `orbita` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 1.15 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- poco_gravitacional --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("poco_gravitacional").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/poco_gravitacional.json`
+
+### `prisma_triangular` — Prisma triangular
+
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Prisma de vidro azul-claro de seção triangular isósceles (ângulo de ápice `angulo_apice`), com a seção no plano XY e extrusão ao longo de Z, apoiado na base. As nove arestas em azul-claro.
 
@@ -1386,7 +1596,7 @@ Ficha: `solidos/solenoide_corrente.json`
 
 ### `solido_revolucao_arruela` — Sólido de revolução: método das arruelas
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Sólido de vidro azulado gerado pela rotação, em torno do eixo X, da região entre y = √x e y = x² (as duas curvas em azul-claro; o corpo fica oco por dentro), com o eixo tracejado e a fatia elementar (uma arruela, de raio externo f e interno g, espessura dx) em violeta com arestas tracejadas. Com movimento, a arruela varre o sólido e volta.
 
@@ -1441,7 +1651,7 @@ Ficha: `solidos/solido_revolucao_arruela.json`
 
 ### `solido_revolucao_cascas` — Sólido de revolução: método das cascas
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Sólido de vidro azulado (uma tigela) gerado pela rotação da região sob y = H (1 − (x/a)²) em torno do eixo Z (vertical), com a curva geratriz em azul-claro, o eixo tracejado e a fatia elementar (uma casca cilíndrica de raio r, altura f(r) e espessura dr) em violeta com arestas tracejadas. Com movimento, a casca cresce de dentro para fora e volta.
 
@@ -1497,7 +1707,7 @@ Ficha: `solidos/solido_revolucao_cascas.json`
 
 ### `solido_revolucao_disco` — Sólido de revolução: método dos discos
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Sólido de vidro azulado gerado pela rotação de uma curva y = f(x) em torno do eixo X (4 perfis: raiz, parábola, cone, elipsoide), com a curva geratriz em azul-claro, o eixo tracejado e a fatia elementar (um disco de espessura dx) em violeta com arestas tracejadas. Com movimento, o disco varre o sólido de uma ponta à outra e volta.
 
@@ -1551,6 +1761,111 @@ img = Solido3D("solido_revolucao_disco").mobject(cena=self, altura=5)   # cargas
 ```
 
 Ficha: `solidos/solido_revolucao_disco.json`
+
+### `superficie_parametrizada` — Superfície parametrizada com remendo dS
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Superfície de vidro azul (`tipo`: onda, sela ou esfera) com as curvas coordenadas u = cte e v = cte em azul-claro, um remendo elementar dS em violeta tracejado, os vetores tangentes r_u e r_v (brancos) e a normal n̂ = r_u × r_v (azul) no ponto (`u0`, `v0`). Com `movimento=1` o ponto percorre uma pequena volta.
+
+![Superfície parametrizada com remendo dS](previews/superficie_parametrizada.png)
+
+**Como se lê:** Superfície de vidro com malha, um quadrilátero violeta e três setas (duas brancas no plano tangente, uma azul normal). Lê-se como 'parametrização: elemento de área e orientação'.
+
+**Usar quando**
+- superfícies parametrizadas: vetores tangentes, elemento de área |r_u × r_v| du dv e orientação (Cálculo IV 11.6)
+- integral de superfície e fluxo (o remendo é o dS)
+- contraste entre onda, sela e esfera
+
+**Não usar quando**
+- superfícies de revolução com fatias (use solido_revolucao_*)
+- superfícies fechadas com gaussianas (use as gaussianas)
+
+**Limitações**
+- a gramática de cor segue o padrão do arsenal: campo vetorial = ciano (reservado ao campo), normal n̂ = azul, tangentes = branco, construções (remendo, contorno) = violeta, nunca sólidas
+- só o objeto geométrico: integrais, fórmulas e o sinal da circulação/fluxo são do Manim
+- superfície fina de vidro com Solidify (espessura 0,03): vista de lado o vidro quase some
+- sobre a esfera os vetores tangentes e a normal dependem do ponto: perto dos polos a parametrização é degenerada (domínio cortado em 5%)
+- o remendo é plano (quadrilátero); a curvatura dentro dele não aparece
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `tipo` | onda | texto | onda, sela ou esfera |
+| `u0` | 0.5 | 0-1 | posição de u no domínio |
+| `v0` | 0.5 | 0-1 | posição de v no domínio |
+| `tamanho_remendo` | 1.0 | x | tamanho relativo do remendo dS |
+| `vetores` | 1 | 0/1 | 1 = r_u, r_v e n̂ |
+| `linhas` | 1 | 0/1 | 1 = curvas coordenadas |
+| `movimento` | 0 | 0/1 | 1 = animação em loop (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase do loop; fase=1 repete o quadro da fase 0 (loop perfeito) |
+
+**Integração:** `png_seq_alpha` · custo 1.06 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `percurso` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 1.06 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- superficie_parametrizada --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("superficie_parametrizada").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/superficie_parametrizada.json`
+
+### `teorema_stokes` — Teorema de Stokes (hemisfério e contorno)
+
+**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+
+Hemisfério de vidro azul (a superfície S) com o contorno ∂S no plano z = 0 em violeta contínuo, normais n̂ para fora (azuis), setas do campo rotacional (ciano) e uma seta branca percorrendo ∂S no sentido anti-horário (regra da mão direita com n̂ para cima). Com `movimento=1` a seta percorre o contorno.
+
+![Teorema de Stokes (hemisfério e contorno)](previews/teorema_stokes.png)
+
+**Como se lê:** Cúpula de vidro com anel violeta na base, normais azuis para fora e setas ciano girando: lê-se como 'circulação no contorno = fluxo do rotacional pela superfície'.
+
+**Usar quando**
+- teorema de Stokes: ∮ F·dr = ∬ (∇×F)·dS (circulação e fluxo do rotacional)
+- orientação: sentido do percurso × normal (regra da mão direita)
+- relação com a lei de Ampère (superfície que apoia o contorno amperiano)
+
+**Não usar quando**
+- superfícies fechadas (use o teorema da divergência com as gaussianas)
+- superfícies com buracos ou mais de um contorno
+
+**Limitações**
+- a gramática de cor segue o padrão do arsenal: campo vetorial = ciano (reservado ao campo), normal n̂ = azul, tangentes = branco, construções (remendo, contorno) = violeta, nunca sólidas
+- só o objeto geométrico: integrais, fórmulas e o sinal da circulação/fluxo são do Manim
+- a superfície é um hemisfério fixo (z ≥ 0) e o contorno é o equador; outra superfície com o mesmo contorno (um disco) não está no arsenal
+- o campo desenhado é o rotacional (−y, x, 0) em 6 pontos: é ilustrativo, não é o ∇×F
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `raio` | 1.8 | u | raio do hemisfério |
+| `com_campo` | 1 | 0/1 | 1 = setas ciano do campo rotacional |
+| `normais` | 1 | 0/1 | 1 = normais n̂ para fora |
+| `contorno_continuo` | 1 | 0/1 | 1 = contorno contínuo (circulação calculada); 0 = tracejado |
+| `movimento` | 0 | 0/1 | 1 = animação em loop (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase do loop; fase=1 repete o quadro da fase 0 (loop perfeito) |
+
+**Integração:** `png_seq_alpha` · custo 1.02 s/frame (1080p, Eevee)
+
+**Animação (cargas em movimento):** `circulacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo 1.02 s/frame (1080p, com alpha)
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- teorema_stokes --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("teorema_stokes").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/teorema_stokes.json`
 
 ### `toroide_corrente` — Toroide (fio enrolado em anel)
 
@@ -1613,7 +1928,7 @@ Ficha: `solidos/toroide_corrente.json`
 
 ### `tubo_escoamento` — Tubo com estrangulamento (continuidade)
 
-**Status:** estudo · Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.
+**Status:** aprovado · Aparência aprovada pelo usuário em 2026-10-07 (padrão visual de estilo.json); validado em 960x540 e 1080p.
 
 Tubo de vidro azulado (eixo X) que se estreita no meio até `razao` do raio, com partículas marcadoras (brancas perto, azul-claro longe) fluindo em +X com v ∝ 1/r². As partículas são igualmente espaçadas no tempo, então ficam mais afastadas e mais rápidas no gargalo.
 

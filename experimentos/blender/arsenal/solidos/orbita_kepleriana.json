@@ -1,0 +1,93 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "mecanica/gravitacao"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/gravitacao.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 0.67,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "orbita_kepleriana",
+  "nome": "Órbita kepleriana com setores de áreas iguais",
+  "descricao": "Órbita elíptica num plano: corpo central branco no foco, corpo orbitante azul-claro, trajetória tracejada violeta, vetor posição e `setores` fatias violeta translúcidas varridas em intervalos de tempo iguais (fração `fracao_setor` do período). Com `movimento=1` o corpo percorre a órbita (fase = um período, velocidade de Kepler).",
+  "leitura_visual": "Elipse tracejada com o corpo central num foco e fatias violeta: a do periélio é larga e curta, a do afélio fina e longa, mas de mesma área. Lê-se como 'áreas iguais em tempos iguais'.",
+  "usar_quando": [
+    "leis de Kepler: 1ª (elipse com o Sol no foco), 2ª (áreas iguais) e 3ª (T² ∝ a³ no Manim)",
+    "energia orbital e velocidade maior no periélio (a velocidade é do Manim)",
+    "órbitas circulares (excentricidade 0) como caso particular"
+  ],
+  "nao_usar_quando": [
+    "problemas de dois corpos com massas comparáveis (o centro é fixo)",
+    "órbitas abertas (parábola, hipérbole): só elipses (0 ≤ e < 1)",
+    "precessão ou perturbações"
+  ],
+  "limitacoes": [
+    "o corpo central é fixo no foco: não há movimento do centro de massa",
+    "o plano da órbita é XY; a câmera padrão olha de cima (elevação 34)",
+    "a equação de Kepler é resolvida por Newton para cada quadro: a velocidade é a real (variável) ao longo do loop",
+    "o setor é uma fatia plana colorida com bordas retas, aproximando o setor elíptico com 24 pontos"
+  ],
+  "construtor": "orbita_kepleriana",
+  "parametros": {
+    "semi_eixo": {
+      "valor": 2.6,
+      "unidade": "u",
+      "descricao": "semi-eixo maior a"
+    },
+    "excentricidade": {
+      "valor": 0.55,
+      "unidade": "0-1",
+      "descricao": "excentricidade e (0 = círculo)"
+    },
+    "setores": {
+      "valor": 2,
+      "unidade": "n",
+      "descricao": "número de setores de áreas iguais (distribuídos em fase)"
+    },
+    "fracao_setor": {
+      "valor": 0.125,
+      "unidade": "0-1",
+      "descricao": "fração do período varrida por cada setor"
+    },
+    "vetor": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = vetor posição (do centro ao corpo)"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação em loop (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do loop; fase=1 repete o quadro da fase 0 (loop perfeito)"
+    }
+  },
+  "animacao": {
+    "tipo": "orbita",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = um período; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 0.67,
+    "peso_mb_por_frame": 0.62,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "enquadramento": {
+    "azimute": -30,
+    "elevacao": 34,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.08"
+  ],
+  "preview": "previews/orbita_kepleriana.png"
+}

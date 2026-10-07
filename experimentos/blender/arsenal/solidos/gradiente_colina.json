@@ -1,0 +1,93 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "calculo/gradiente",
+    "calculo/funcoes_de_varias_variaveis"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/calc_vetorial.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 1.03,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "gradiente_colina",
+  "nome": "Gradiente numa colina (curvas de nível)",
+  "descricao": "Colina gaussiana f(x, y) = h e^(−r²/2σ²) (vidro azul) com curvas de nível em azul-claro, um ponto P (branco) sobre a superfície, o vetor gradiente ∇f (ciano, horizontal, apontando para o topo) e a projeção vertical de P no plano (violeta tracejada). Com `movimento=1` o ponto circunda a colina e o gradiente gira com ele.",
+  "leitura_visual": "Colina de vidro com anéis e um ponto com uma seta ciano perpendicular ao anel, apontando para o topo. Lê-se como 'o gradiente é perpendicular às curvas de nível e aponta para a maior subida'.",
+  "usar_quando": [
+    "gradiente e derivada direcional (Cálculo III 10.5): ∇f ⟂ curvas de nível",
+    "extremos em várias variáveis (o topo da colina)",
+    "relação do gradiente com o campo conservativo (potencial)"
+  ],
+  "nao_usar_quando": [
+    "funções com pontos de sela (use superficie_parametrizada, tipo sela)",
+    "mais de uma colina"
+  ],
+  "limitacoes": [
+    "a gramática de cor segue o padrão do arsenal: campo vetorial = ciano (reservado ao campo), normal n̂ = azul, tangentes = branco, construções (remendo, contorno) = violeta, nunca sólidas",
+    "só o objeto geométrico: integrais, fórmulas e o sinal da circulação/fluxo são do Manim",
+    "a seta do gradiente é horizontal (no plano xy) e normalizada em comprimento (0,35 + 0,9|∇f|, no máximo 1,6)",
+    "a colina é fixa (gaussiana), só altura e abertura mudam"
+  ],
+  "construtor": "gradiente_colina",
+  "parametros": {
+    "altura": {
+      "valor": 2.0,
+      "unidade": "u",
+      "descricao": "altura h do topo"
+    },
+    "abertura": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "largura σ da colina"
+    },
+    "extensao": {
+      "valor": 3.0,
+      "unidade": "u",
+      "descricao": "meia largura da região"
+    },
+    "n_niveis": {
+      "valor": 5,
+      "unidade": "n",
+      "descricao": "curvas de nível"
+    },
+    "raio_ponto": {
+      "valor": 1.4,
+      "unidade": "u",
+      "descricao": "distância de P ao eixo da colina"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação em loop (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do loop; fase=1 repete o quadro da fase 0 (loop perfeito)"
+    }
+  },
+  "animacao": {
+    "tipo": "percurso",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = uma volta em torno da colina; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 1.03,
+    "peso_mb_por_frame": 0.97,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 28,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.1"
+  ],
+  "preview": "previews/gradiente_colina.png"
+}

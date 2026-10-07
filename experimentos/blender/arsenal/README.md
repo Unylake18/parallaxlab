@@ -89,7 +89,7 @@ Pontos que importam:
 - `estudo`: funciona e foi renderizado, aparência ainda não aprovada.
 - `aprovado`: pode entrar em vídeo.
 
-Aprovados (2026-10-07): `casca_cilindrica_oca`, `cilindro_macico_isolante`, `casca_esferica_oca`, `esfera_macica_isolante`, `placa_infinita_carregada`, `cilindro_coaxial`, `gaussiana_esferica`, `gaussiana_cilindrica`, `gaussiana_caixa`, `anel_carregado`, `disco_carregado`, `haste_carregada`, `solenoide_corrente`, `toroide_corrente`, `fio_infinito`, `amperiano_circular` e `amperiano_retangular`. Promover um sólido é decisão do usuário.
+Aprovados pelo usuário em 2026-10-07: os 30 primeiros sólidos (Gauss, Ampère, distribuições, rolamento, revolução, capacitores, óptica, gás e fluidos). Os 6 de gravitação e cálculo vetorial estão em `estudo` até a aprovação. Promover um sólido é decisão do usuário; a lista viva está no `catalogo.md`.
 
 ## Como adicionar um sólido
 

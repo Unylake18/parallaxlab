@@ -1,0 +1,88 @@
+{
+  "status": "estudo",
+  "status_nota": "Tecnicamente validado (render 960x540); aparência aguardando aprovação do usuário.",
+  "area": [
+    "calculo/stokes",
+    "eletromagnetismo/lei_de_ampere"
+  ],
+  "validado_em": "2026-10-07",
+  "origem": "experimentos/blender/calc_vetorial.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": 1.02,
+    "custo_origem": "aproximado pelo custo por quadro da animação (6 quadros), RTX 2060"
+  },
+  "id": "teorema_stokes",
+  "nome": "Teorema de Stokes (hemisfério e contorno)",
+  "descricao": "Hemisfério de vidro azul (a superfície S) com o contorno ∂S no plano z = 0 em violeta contínuo, normais n̂ para fora (azuis), setas do campo rotacional (ciano) e uma seta branca percorrendo ∂S no sentido anti-horário (regra da mão direita com n̂ para cima). Com `movimento=1` a seta percorre o contorno.",
+  "leitura_visual": "Cúpula de vidro com anel violeta na base, normais azuis para fora e setas ciano girando: lê-se como 'circulação no contorno = fluxo do rotacional pela superfície'.",
+  "usar_quando": [
+    "teorema de Stokes: ∮ F·dr = ∬ (∇×F)·dS (circulação e fluxo do rotacional)",
+    "orientação: sentido do percurso × normal (regra da mão direita)",
+    "relação com a lei de Ampère (superfície que apoia o contorno amperiano)"
+  ],
+  "nao_usar_quando": [
+    "superfícies fechadas (use o teorema da divergência com as gaussianas)",
+    "superfícies com buracos ou mais de um contorno"
+  ],
+  "limitacoes": [
+    "a gramática de cor segue o padrão do arsenal: campo vetorial = ciano (reservado ao campo), normal n̂ = azul, tangentes = branco, construções (remendo, contorno) = violeta, nunca sólidas",
+    "só o objeto geométrico: integrais, fórmulas e o sinal da circulação/fluxo são do Manim",
+    "a superfície é um hemisfério fixo (z ≥ 0) e o contorno é o equador; outra superfície com o mesmo contorno (um disco) não está no arsenal",
+    "o campo desenhado é o rotacional (−y, x, 0) em 6 pontos: é ilustrativo, não é o ∇×F"
+  ],
+  "construtor": "teorema_stokes",
+  "parametros": {
+    "raio": {
+      "valor": 1.8,
+      "unidade": "u",
+      "descricao": "raio do hemisfério"
+    },
+    "com_campo": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = setas ciano do campo rotacional"
+    },
+    "normais": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = normais n̂ para fora"
+    },
+    "contorno_continuo": {
+      "valor": 1,
+      "unidade": "0/1",
+      "descricao": "1 = contorno contínuo (circulação calculada); 0 = tracejado"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação em loop (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do loop; fase=1 repete o quadro da fase 0 (loop perfeito)"
+    }
+  },
+  "animacao": {
+    "tipo": "circulacao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase de 0 a 1 = uma volta pelo contorno; fase=1 reproduz a fase 0",
+    "custo_1080p_s_por_frame": 1.02,
+    "peso_mb_por_frame": 0.96,
+    "custo_origem": "animar.py, 1920x1080 com alpha, Eevee 64 amostras, RTX 2060, 6 quadros"
+  },
+  "enquadramento": {
+    "azimute": -35,
+    "elevacao": 26,
+    "lente": 50,
+    "margem": 0.1
+  },
+  "preview_set": [
+    "movimento=1",
+    "fase=0.12"
+  ],
+  "preview": "previews/teorema_stokes.png"
+}

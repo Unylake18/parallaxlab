@@ -23,6 +23,8 @@ import placa as pl  # noqa: E402
 import capacitores as cp  # noqa: E402
 import otica as ot  # noqa: E402
 import revolucao as rv  # noqa: E402
+import calc_vetorial as cv  # noqa: E402
+import gravitacao as gr  # noqa: E402
 import termo_fluidos as tf  # noqa: E402
 import rolamento as rl  # noqa: E402
 
@@ -297,6 +299,46 @@ def tubo_escoamento(p):
     return res
 
 
+def _mov(res, atualizar, p):
+    if int(p["movimento"]):
+        res["atualizar"] = atualizar
+    return res
+
+
+def orbita_kepleriana(p):
+    proxy, atu = gr.criar_orbita(p["semi_eixo"], p["excentricidade"], int(p["setores"]), p["fracao_setor"], 0.42, 0.17,
+                                 int(p["vetor"]), p["fase"])
+    return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
+
+
+def poco_gravitacional(p):
+    corpo, atu = gr.criar_poco(p["raio_max"], p["profundidade"], p["raio_nucleo"], int(p["bola"]), p["raio_bola"], p["fase"])
+    return _mov({"enquadrar": [corpo], "apos_camera": None}, atu, p)
+
+
+def campo_vetorial(p):
+    proxy = cv.criar_campo(p["tipo"], int(p["dim"]), int(p["n"]), p["extensao"])
+    return {"enquadrar": [proxy], "apos_camera": None}
+
+
+def superficie_parametrizada(p):
+    corpo, atu = cv.criar_superficie_param(p["tipo"], p["u0"], p["v0"], p["tamanho_remendo"], int(p["vetores"]),
+                                           int(p["linhas"]), int(p["movimento"]), p["fase"])
+    return _mov({"enquadrar": [corpo], "apos_camera": None}, atu, p)
+
+
+def teorema_stokes(p):
+    corpo, atu = cv.criar_stokes(p["raio"], int(p["com_campo"]), int(p["normais"]), int(p["contorno_continuo"]),
+                                 int(p["movimento"]), p["fase"])
+    return _mov({"enquadrar": [corpo], "apos_camera": None}, atu, p)
+
+
+def gradiente_colina(p):
+    corpo, atu = cv.criar_gradiente(p["altura"], p["abertura"], p["extensao"], int(p["n_niveis"]), p["raio_ponto"],
+                                    int(p["movimento"]), p["fase"])
+    return _mov({"enquadrar": [corpo], "apos_camera": None}, atu, p)
+
+
 CONSTRUTORES = {
     "casca_cilindrica_oca": casca_cilindrica_oca,
     "cilindro_macico_isolante": cilindro_macico_isolante,
@@ -328,4 +370,10 @@ CONSTRUTORES = {
     "anteparo_fenda_dupla": anteparo_fenda_dupla,
     "caixa_gas_cinetica": caixa_gas_cinetica,
     "tubo_escoamento": tubo_escoamento,
+    "orbita_kepleriana": orbita_kepleriana,
+    "poco_gravitacional": poco_gravitacional,
+    "campo_vetorial": campo_vetorial,
+    "superficie_parametrizada": superficie_parametrizada,
+    "teorema_stokes": teorema_stokes,
+    "gradiente_colina": gradiente_colina,
 }
