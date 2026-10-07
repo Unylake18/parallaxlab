@@ -130,14 +130,20 @@ horizontal, não fundo obrigatório da aula; o cosmos continua atmosfera sutil.
 ## Ficha padrão (Markdown, sem automação)
 
 **Curto:** id · série · `formato: curto_vertical` · assunto · pergunta central · solução verificada ·
-payoff · duração alvo · storyboard · QA.
+payoff · duração alvo · storyboard · QA · `solido_3d:` (opcional, ver abaixo).
 
 **Longo:** id · `formato: longo_horizontal` · `natureza:` (`teoria_visual` | `exercicio_resolvido` |
 `derivacao_aplicada`) · `macroassunto:` (calculo, mecanica, eletromagnetismo, termodinamica,
 ondas_optica, outro) · `modulo:` (texto curto, ex.: energia_e_potencial) · título de trabalho ·
 `pergunta_central:` · `pre_requisitos:` · solução/teoria verificada · arquitetura didática ·
-`payoff_principal:` · aplicações/exemplos · `duracao_alvo:` · storyboard · QA · possíveis derivados
-curtos (opcional).
+`payoff_principal:` · aplicações/exemplos · `duracao_alvo:` · storyboard · QA · `solido_3d:` (opcional,
+ver abaixo) · possíveis derivados curtos (opcional).
+
+**`solido_3d:` (curto e longo, opcional).** Ao planejar o vídeo, consulte
+`experimentos/blender/arsenal/catalogo.md` (arsenal de sólidos 3D em Blender, com padrão visual em
+`experimentos/blender/arsenal/estilo.json`). Registre o `id` do sólido escolhido (só `status: aprovado`) ou
+`nenhum`, com uma linha de justificativa pelos critérios "usar quando / não usar quando" da ficha do
+sólido. Registrar o campo não autoriza integrar: a integração com o Manim exige handoff explícito.
 
 ## Comandos
 

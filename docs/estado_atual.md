@@ -1,6 +1,6 @@
 # Estado atual — Parallax Lab
 
-**Atualizado em:** 2026-10-06 (reconciliação dos vídeos 12–15 e do primeiro vídeo longo; segundo PC); antes, 2026-10-03 (suporte horizontal integrado; reconciliação dos vídeos 11–13) e 2026-10-01 (adoção do MF-Tools; reconciliação do `vid_0010`)
+**Atualizado em:** 2026-10-07 (arsenal de sólidos 3D em Blender, em sandbox); antes, 2026-10-06 (reconciliação dos vídeos 12–15 e do primeiro vídeo longo; segundo PC); antes, 2026-10-03 (suporte horizontal integrado; reconciliação dos vídeos 11–13) e 2026-10-01 (adoção do MF-Tools; reconciliação do `vid_0010`)
 
 ## Formatos: curto vertical + longo horizontal (2026-10-03)
 
@@ -31,6 +31,17 @@
 - **MF-Tools 1.4.9 adotado oficialmente (2026-10-01)** como dependência utilitária seletiva (`MF-Tools[manimce]==1.4.9`), compatível com Python 3.12.4 + Manim CE 0.21.0; presente em `pyproject.toml` e `uv.lock`. O fluxo de render continua `uv run python -m manim ...`. Uso seletivo: `TransformMatchingTex` segue padrão, `TransformByGlyphMap` só com ganho didático real, glyph maps depois de estabilizar o LaTeX; ver `AGENTS.md` e `docs/decisoes.md`.
 - MVP: trabalhar em `main`, com commits pequenos; branch/PR para alterações maiores ou arriscadas.
 - `AGENTS.md` é a instrução operacional vigente para agentes de código: contexto mínimo suficiente, validação proporcional ao que mudou e nenhuma expansão espontânea de escopo.
+
+## Arsenal de sólidos 3D (Blender) — sandbox, sem uso em vídeo (2026-10-07)
+
+- **O que é:** biblioteca de sólidos 3D reutilizáveis em `experimentos/blender/arsenal/`, descritos por fichas JSON (`solidos/<id>.json`) com "usar quando / não usar quando", parâmetros, enquadramento, custo de render e status. Índice legível e gerado: `experimentos/blender/arsenal/catalogo.md` (regerar com `python experimentos/blender/arsenal/gerar_catalogo.py`, que também valida as fichas). Padrão visual único em `experimentos/blender/arsenal/estilo.json`, derivado de `docs/identidade_visual.md` e da gramática de cor do 2D de `yt_0001`/`yt_0002`: ciano reservado ao campo elétrico, azul `#267BFF` (preenchimento) e `#7FB2FF` (contorno) para fontes físicas, violeta `#9C8CFF` tracejado/translúcido para superfícies gaussianas, branco para o neutro.
+- **Estado:** **12 sólidos, todos `aprovado` pelo usuário em 2026-10-07** — Lei de Gauss: `casca_cilindrica_oca`, `cilindro_macico_isolante`, `casca_esferica_oca`, `esfera_macica_isolante`, `placa_infinita_carregada`, `cilindro_coaxial`, `gaussiana_esferica`, `gaussiana_cilindrica`, `gaussiana_caixa`; campo elétrico de distribuições contínuas: `anel_carregado`, `disco_carregado`, `haste_carregada` (anel, disco e haste têm `com_cargas=0` para uso em momento de inércia).
+- **Como consultar:** `AGENTS.md` ("Consulte conforme necessidade") manda ler o catálogo antes de modelar um sólido novo; a ficha do vídeo ganhou o campo opcional `solido_3d:` (`docs/formatos.md`). Só `aprovado` serve, e registrar o campo não autoriza integrar.
+- **Ferramentas e custo:** Blender 5.2.2 LTS (winget, `C:\Program Files\Blender Foundation\Blender 5.2\blender.exe`), Eevee, 64 amostras, via `renderizar.py` (`blender -b -P ... -- <id>`). Custo medido em RTX 2060: **0,45 a 1,38 s por frame em 1920×1080 com alpha** (11 dos 12 sólidos medidos), cerca de 0,7 a 1,8 MB por PNG. Medido só neste PC (o segundo PC, pessoal).
+- **Integração com o Manim: não implementada.** Em protótipo (fora do repositório), uma sequência PNG RGBA do Blender entrou numa cena Manim a 1920×1080 e 30 fps, lida quadro a quadro do disco. A forma recomendada é sequência PNG com alpha, só em shots que exigem 3D; **não existe helper** e usar um sólido num vídeo exige handoff explícito. Frames de 1080p são pesados (cerca de 33 MB por segundo de vídeo) e precisam ficar fora do Git.
+- **Não verificado:** uso em vídeo real; a gramática de cor de Mecânica e de Cálculo (o azul de "fonte física" é de Eletromagnetismo); funcionamento do Blender no outro PC (`C:\Users\KaioOrtiz\...`).
+- **Git:** nada foi commitado. `experimentos/` está **não rastreada** e não ignorada (inclui renders em `out/` e arquivos `.blend`); decidir o que entra no repositório antes de commitar.
+- **Fila não construída** (de `docs/mapa_curricular.md`): solenoide e toroide (Ampère); esfera/cilindro/aro rolando (Mecânica); sólidos de revolução, discos/anéis e cascas (Cálculo).
 
 ## Identidade: aprovado × implementado
 

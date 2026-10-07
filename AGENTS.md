@@ -32,7 +32,8 @@ Consulte conforme necessidade:
 - `docs/identidade_visual.md` — identidade e marca;
 - `docs/decisoes.md` — decisões permanentes;
 - `docs/guia_mestre.md` — estratégia ampla;
-- `docs/mapa_curricular.md` — arquitetura curricular/editorial; usar para localizar uma pauta dentro de Física/Cálculo e entender como ela se conecta à biblioteca futura.
+- `docs/mapa_curricular.md` — arquitetura curricular/editorial; usar para localizar uma pauta dentro de Física/Cálculo e entender como ela se conecta à biblioteca futura;
+- `experimentos/blender/arsenal/catalogo.md` — arsenal de sólidos 3D (Blender) e seu padrão visual. Ao planejar um vídeo que precise de um sólido 3D (cilindro, casca, esfera etc.), consulte o catálogo ANTES de modelar algo novo: confira "usar quando / não usar quando" e o status (só `aprovado` serve). O arsenal ainda não tem helper de integração com o Manim: usar um sólido num vídeo exige handoff explícito.
 
 Não leia automaticamente todos esses documentos.
 
