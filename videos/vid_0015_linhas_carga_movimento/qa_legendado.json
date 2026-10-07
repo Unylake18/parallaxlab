@@ -1,0 +1,31 @@
+{
+  "vid_0015_preview_sync_master.mp4": {
+    "width": 540,
+    "height": 960,
+    "fps": "15",
+    "video_s": 178.66666666666666,
+    "audio_s": 178.64,
+    "audio_codec": "aac",
+    "audio_sr": 44100,
+    "audio_channels": 2,
+    "frames_decodificados": 2680
+  },
+  "vid_0015_preview_sync_legendado.mp4": {
+    "width": 540,
+    "height": 960,
+    "fps": "15",
+    "video_s": 178.66666666666666,
+    "audio_s": 178.64,
+    "audio_codec": "aac",
+    "audio_sr": 44100,
+    "audio_channels": 2,
+    "frames_decodificados": 2680
+  },
+  "legendas": 72,
+  "palavras": 477,
+  "wav_original_preservado": true,
+  "metodo_tempo_palavras": "pausas do WAV + pesos silabicos, sem ASR",
+  "fonte": "Arial Bold 29",
+  "posicao": "faixa segura abaixo de y=-5.7",
+  "pranchas": 18
+}

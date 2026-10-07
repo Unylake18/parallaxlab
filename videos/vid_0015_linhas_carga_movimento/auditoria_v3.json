@@ -1,0 +1,179 @@
+{
+  "fonte_texto_tela": "Space Grotesk Medium via template.fonts.screen_text",
+  "construtores_textuais_diretos": [],
+  "texto_em_MathTex": false,
+  "matematica": "MathTex; DecimalNumber para valores numéricos",
+  "spans_verificados": [
+    {
+      "linha": 302,
+      "tex": "E(2\\pi d\\ell) = \\frac{\\lambda\\ell}{\\varepsilon_0}",
+      "glifos": 13
+    },
+    {
+      "linha": 311,
+      "tex": "E(2\\pi d) = \\frac{\\lambda}{\\varepsilon_0}",
+      "glifos": 11
+    },
+    {
+      "linha": 315,
+      "tex": "E(d) = \\frac{\\lambda}{2\\pi\\varepsilon_0d}",
+      "glifos": 12
+    },
+    {
+      "linha": 338,
+      "tex": "F_E = \\lambda\\ell \\frac{\\lambda}{2\\pi\\varepsilon_0d}",
+      "glifos": 12
+    },
+    {
+      "linha": 341,
+      "tex": "F_E = \\frac{\\lambda^2\\ell}{2\\pi\\varepsilon_0d}",
+      "glifos": 12
+    },
+    {
+      "linha": 346,
+      "tex": "\\frac{F_E}{\\ell} = \\frac{\\lambda^2}{2\\pi\\varepsilon_0d}",
+      "glifos": 13
+    },
+    {
+      "linha": 406,
+      "tex": "B(d) (2\\pi d) = \\mu_0I",
+      "glifos": 13
+    },
+    {
+      "linha": 408,
+      "tex": "B(d) = \\frac{\\mu_0I}{2\\pi d}",
+      "glifos": 12
+    },
+    {
+      "linha": 453,
+      "tex": "F_B = I\\ell \\frac{\\mu_0I}{2\\pi d}",
+      "glifos": 12
+    },
+    {
+      "linha": 456,
+      "tex": "F_B = \\frac{\\mu_0I^2\\ell}{2\\pi d}",
+      "glifos": 12
+    },
+    {
+      "linha": 461,
+      "tex": "\\frac{F_B}{\\ell} = \\frac{\\mu_0I^2}{2\\pi d}",
+      "glifos": 13
+    },
+    {
+      "linha": 471,
+      "tex": "\\frac{F_E}{\\ell} = \\frac{\\lambda^2}{2\\pi\\varepsilon_0d}",
+      "glifos": 13
+    },
+    {
+      "linha": 477,
+      "tex": "\\frac{\\lambda^2}{2\\pi\\varepsilon_0d} = \\frac{\\mu_0I^2}{2\\pi d}",
+      "glifos": 17
+    },
+    {
+      "linha": 493,
+      "tex": "\\frac{\\lambda^2}{\\varepsilon_0} = \\mu_0I^2",
+      "glifos": 10
+    },
+    {
+      "linha": 497,
+      "tex": "\\lambda^2 = \\mu_0\\varepsilon_0I^2",
+      "glifos": 9
+    },
+    {
+      "linha": 503,
+      "tex": "\\frac{I^2}{\\lambda^2} = \\frac{1}{\\mu_0\\varepsilon_0}",
+      "glifos": 12
+    },
+    {
+      "linha": 509,
+      "tex": "\\frac{|I|}{|\\lambda|} = \\frac{1}{\\sqrt{\\mu_0\\varepsilon_0}}",
+      "glifos": 16
+    },
+    {
+      "linha": 518,
+      "tex": "\\frac{|I|}{|\\lambda|} = c",
+      "glifos": 9
+    },
+    {
+      "linha": 548,
+      "tex": "I = \\frac{\\lambda v\\Delta t}{\\Delta t}",
+      "glifos": 9
+    },
+    {
+      "linha": 554,
+      "tex": "I = \\lambda v",
+      "glifos": 4
+    },
+    {
+      "linha": 558,
+      "tex": "|I| = |\\lambda|v",
+      "glifos": 8
+    },
+    {
+      "linha": 565,
+      "tex": "\\frac{|I|}{|\\lambda|} = v",
+      "glifos": 9
+    },
+    {
+      "linha": 570,
+      "tex": "\\frac{|I|}{|\\lambda|} = c",
+      "glifos": 9
+    },
+    {
+      "linha": 574,
+      "tex": "v = \\frac{|I|}{|\\lambda|} = c",
+      "glifos": 11
+    },
+    {
+      "linha": 578,
+      "tex": "v = c",
+      "glifos": 3
+    },
+    {
+      "linha": 587,
+      "tex": "\\frac{F_B}{F_E} = \\dfrac{\\dfrac{\\mu_0I^2}{2\\pi d}}{\\dfrac{\\lambda^2}{2\\pi\\varepsilon_0d}}",
+      "glifos": 23
+    },
+    {
+      "linha": 594,
+      "tex": "\\frac{F_B}{F_E} = \\mu_0\\varepsilon_0 \\frac{I^2}{\\lambda^2}",
+      "glifos": 15
+    },
+    {
+      "linha": 599,
+      "tex": "\\frac{|I|}{|\\lambda|} = v",
+      "glifos": 9
+    },
+    {
+      "linha": 602,
+      "tex": "\\frac{I^2}{\\lambda^2} = v^2",
+      "glifos": 8
+    },
+    {
+      "linha": 607,
+      "tex": "\\frac{F_B}{F_E} = \\mu_0\\varepsilon_0 v^2",
+      "glifos": 12
+    },
+    {
+      "linha": 614,
+      "tex": "\\frac{F_B}{F_E} = \\frac{1}{c^2} v^2",
+      "glifos": 12
+    },
+    {
+      "linha": 619,
+      "tex": "\\frac{F_B}{F_E} = \\frac{v^2}{c^2}",
+      "glifos": 11
+    },
+    {
+      "linha": 627,
+      "tex": "F_B/F_E = (v/c)^2",
+      "glifos": 12
+    },
+    {
+      "linha": 705,
+      "tex": "\\frac{F_B}{F_E} = \\frac{v^2}{c^2} <1",
+      "glifos": 13
+    }
+  ],
+  "fonte_runtime": "Space Grotesk"
+}

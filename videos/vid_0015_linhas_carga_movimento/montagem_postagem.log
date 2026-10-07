@@ -1,0 +1,13 @@
+Montagem: 0/5360 quadros
+Montagem: 900/5360 quadros
+Montagem: 1800/5360 quadros
+Montagem: 2700/5360 quadros
+Montagem: 3600/5360 quadros
+Montagem: 4500/5360 quadros
+Traceback (most recent call last):
+  File "C:\Users\Pichau\PycharmProjects\manim-fisica\videos\vid_0015_linhas_carga_movimento\montar_postagem.py", line 143, in <module>
+    main()
+  File "C:\Users\Pichau\PycharmProjects\manim-fisica\videos\vid_0015_linhas_carga_movimento\montar_postagem.py", line 109, in main
+    for before,after in zip(original["estados"],current["estados"])]
+                                                ~~~~~~~^^^^^^^^^^^
+TypeError: 'av.video.frame.VideoFrame' object is not subscriptable

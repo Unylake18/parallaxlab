@@ -1,0 +1,107 @@
+{
+  "metodo": "image_gen incorporado; 10 gerações e quatro correções locais",
+  "referencia": "frames_postagem/estado_01.jpg",
+  "base": "Use case: scientific-educational / ads-marketing. Create ONE finished vertical cover image, portrait 9:16, for Parallax Lab physics video vid_0015. Output one separate cover, not a collage, not a mockup. Reference image is STYLE/BRANDING REFERENCE ONLY, not an edit target. Match its very dark navy #050816 background, minimal cosmic specks, clean mathematical illustration and restrained glass-like blue positive charge beads. Use strong, very large Space Grotesk Bold style headline, white with selective cyan #35D9FF emphasis, correctly spelled Brazilian Portuguese. Small restrained header \"EXERCÍCIO RESOLVIDO · EP. 06\" and small PARALLAX LAB wordmark. Keep all vital content inside the central 80% width, with generous margin at top and bottom, readable as a mobile thumbnail. Main graphic much larger than a normal lesson screenshot. No subtitles, no watermark over formulas, no people, no wires/real metal conductors, no childish clipart or busy neon effects. Two infinitely long parallel CHARGED LINES represented as horizontal blue lines containing evenly spaced POSITIVE charge circles with '+' signs. They are always one ABOVE the other. Motion of BOTH lines is to the RIGHT (+x), with blue v arrows. Electric repulsion CYAN: on lower line force points DOWN, on upper line UP. Magnetic attraction MAGENTA #EA63FF: on lower line force points UP toward upper line, on upper line DOWN toward lower line. Whenever both forces are drawn, magnetic magnitude must remain SMALLER than electric for massive moving charges. Draw force arrows from distinct origin locations to avoid visual overlap while keeping directions unmistakable. Mathematical labels should have clean typeset italic variables and real subscripts. No accidental equality claiming actual force cancellation below light speed. No headline saying 'entre duas cargas'. Everything polished, precise, uncluttered and high contrast. Exact headline and concept follow.\nCritical arrow-origin rule: the TAIL of each force arrow must lie exactly on its charged line, with the arrowhead away from that origin. On UPPER line magnetic F_B must begin ON upper line and extend DOWN INTO THE GAP between lines, never appear above upper line pointing into it. On LOWER line magnetic F_B begins ON lower line and extends UP INTO GAP. Electric force extends out of gap. If not required by this concept, draw force arrows ONLY on LOWER line for a cleaner composition. Do not add extra force arrows to the velocity-only concept.",
+  "conceitos": [
+    [
+      "AS FORÇAS SE CANCELAM?",
+      "Split the huge headline over 3 short lines at upper third. Main two charged lines around middle. On lower line, clearly opposing very large cyan downward F_E arrow and shorter magenta upward F_B arrow. A large white question mark below diagram, in the dark negative space. A question about exact cancellation, no equality statement."
+    ],
+    [
+      "QUAL VELOCIDADE?",
+      "Huge two-line headline. Two parallel charged lines through center with identical rightward velocity arrows. Large boxed 'v = ?' in lower middle, highlighted cyan. Few symbols, emphasize speed and separation d."
+    ],
+    [
+      "ATRAÇÃO OU REPULSÃO?",
+      "Headline 3 lines; central two charged lines. On each line magnetic magenta arrows point toward the other line, electric cyan arrows point away from the other line, electric always longer. At bottom small legible label 'duas linhas carregadas'. Symmetric force conflict illustration."
+    ],
+    [
+      "ELÉTRICA × MAGNÉTICA",
+      "Large headline in two lines with 'ELÉTRICA' cyan and 'MAGNÉTICA' magenta. Oversized typeset 'F_E × F_B' at center, a comparison of forces, not a vector equation. Below it draw two positive charged lines and opposed cyan DOWN / shorter magenta UP arrows on the lower line. Avoid lightning bolts or physical magnet icons."
+    ],
+    [
+      "SÓ NA VELOCIDADE DA LUZ?",
+      "Headline in 3 short lines. Oversized clean boxed 'v = c' is focal point in middle, with v blue and c violet. Two charged lines below it, moving right. Small supporting label 'cancelamento exato?' beneath diagram, leave spacious lower margin. Present equality as the required limit, not achievable motion for massive charges."
+    ],
+    [
+      "A CORRENTE PODE VENCER?",
+      "Huge headline in 3 lines. Two positive charged lines with clear rightward MAGENTA conventional current arrows labelled I. On lower line a shorter magenta upward attraction arrow and longer cyan downward electric arrow. Strong dynamic composition but all clean 2D textbook geometry; no field ellipses or magnet objects."
+    ],
+    [
+      "QUASE… MAS NÃO!",
+      "Headline 'QUASE…' white and 'MAS NÃO!' cyan, very large, dramatic ample space. Two charged lines centered. Lower line has magenta attraction UP and electric repulsion DOWN with nearly equal lengths; magenta distinctly a tiny bit SHORTER. A small WHITE resultant arrow down in a separate position, labelled 'F_liq > 0' with proper subscript. Small tag 'MODELO IDEAL'. Do not draw equal lengths or magnetic victory."
+    ],
+    [
+      "MOVER AS CARGAS MUDA TUDO?",
+      "Large headline in 4 short lines with 'MOVER' blue. Main two horizontal positive charged lines with strong blue velocity arrows to RIGHT, subtle short trail behind charge beads suggesting movement right. A magenta upward force on lower line toward upper line, cyan downward longer force repelling. No before/after panels; one cohesive composition."
+    ],
+    [
+      "POR QUE NÃO CANCELA?",
+      "Huge 3-line headline. Very large correctly typeset inequality 'F_B < F_E' at center, F_B magenta, F_E cyan. Beneath it two positive charged lines, with a WHITE net force on LOWER line pointing DOWN, away from upper line. Small bottom tag 'REPULSÃO LÍQUIDA'. Clear dramatic hierarchy."
+    ],
+    [
+      "DUAS LINHAS. UM LIMITE.",
+      "Headline in 3 short lines. Two positive charged lines across middle moving right. Lower half contains a simple clean cyan graph showing a concave-up parabola from (0,0) toward (1,1). End at (1,1) is an unmistakable OPEN VIOLET CIRCLE (no filled dot there), labelled 'v = c'. Horizontal axis labelled 'v/c'. Small tag 'MODELO IDEAL'. No filled point covering the open endpoint; no values above 1."
+    ]
+  ],
+  "prompts_de_correcao": [
+    {
+      "index": 1,
+      "prompt": "Edit this cover. Change ONLY the MAGENTA force arrow labelled F_B1 on the UPPER charged line. It must START with its TAIL exactly on the upper horizontal charged line and extend DOWN INTO THE GAP toward the lower charged line, with its arrowhead below the upper line. Move its magenta F_B1 label beside this corrected arrow in the gap. Remove the old magenta arrow above the upper line. Do not move or alter any other arrows, positive charges, diagrams, headline, brand, colors, style, formula or proportions. The corrected magnetic arrow remains shorter than the cyan electric arrow. Preserve the existing vertical 9:16 layout and every letter of existing text."
+    },
+    {
+      "index": 2,
+      "prompt": "Edit this cover. Change ONLY the MAGENTA force arrow labelled F_B1 on the UPPER charged line. It must START with its TAIL exactly on the upper horizontal charged line and extend DOWN INTO THE GAP toward the lower charged line, with its arrowhead below the upper line. Move its magenta F_B1 label beside this corrected arrow in the gap. Remove the old magenta arrow above the upper line. Do not move or alter any other arrows, positive charges, diagrams, headline, brand, colors, style, formula or proportions. The corrected magnetic arrow remains shorter than the cyan electric arrow. Preserve the existing vertical 9:16 layout and every letter of existing text."
+    },
+    {
+      "index": 5,
+      "prompt": "Edit this cover with ONLY these local changes: remove ALL cyan and magenta FORCE arrows and their F_E/F_B text labels beside the charged lines. There are arrows above/below the upper line and above/below the lower line; erase all four force arrows/labels, including the incorrect double-headed cyan arrow. Keep every positive charge bead and reconstruct the horizontal blue charged line continuously at each removed arrow origin. Preserve both blue rightward velocity arrows with their v labels, both lambda labels, the vertical distance d arrow, both lines, the huge 'v = c' box, exact headline 'SÓ NA VELOCIDADE DA LUZ?', small text 'cancelamento exato?', exact branding, background, typography, layout, 9:16 aspect ratio. The cover should focus on the required velocity limit, with NO force arrows anywhere. Also set the letter c in the central formula to VIOLET #9C8CFF, distinct from magenta magnetic force color; everything else unchanged."
+    },
+    {
+      "index": 7,
+      "prompt": "Edit this cover with ONLY two proportional-length adjustments. The MAGENTA F_B arrow on the LOWER charged line must start exactly on that line and point UP. Increase its length until it is almost as long as the existing CYAN downward F_E arrow, but still about 3% SHORTER. Never make magenta equal or longer than cyan. The separate WHITE downward resultant arrow labelled 'F_liq > 0' must be shortened to a small clean arrow around one quarter its current length, still pointing DOWN, clearly showing a positive nonzero repulsive result. Preserve all charge beads, both blue rightward velocity arrows, two horizontal charged lines, all labels, distance d, exact headline 'QUASE… MAS NÃO!', MODELO IDEAL tag, brand, colors, typography, layout and 9:16 aspect ratio. No other changes."
+    }
+  ],
+  "arquivos_fonte": [
+    {
+      "id": 1,
+      "path": "C:\\Users\\Pichau\\.codex\\generated_images\\01a10f84-d854-7e12-85c9-6f5a9ef7f366\\exec-05c38ac6-f203-46da-8a9d-4fac7182de96.png"
+    },
+    {
+      "id": 2,
+      "path": "C:\\Users\\Pichau\\.codex\\generated_images\\01a10f84-d854-7e12-85c9-6f5a9ef7f366\\exec-c7c5e08b-1a05-496d-b932-c18afec3a9e1.png"
+    },
+    {
+      "id": 3,
+      "path": "C:\\Users\\Pichau\\.codex\\generated_images\\01a10f84-d854-7e12-85c9-6f5a9ef7f366\\exec-335f2fc4-ecc1-4316-9f8c-03aa365310f6.png"
+    },
+    {
+      "id": 4,
+      "path": "C:\\Users\\Pichau\\.codex\\generated_images\\01a10f84-d854-7e12-85c9-6f5a9ef7f366\\exec-ac319566-098e-4f3e-999f-91e593b55c61.png"
+    },
+    {
+      "id": 5,
+      "path": "C:\\Users\\Pichau\\.codex\\generated_images\\01a10f84-d854-7e12-85c9-6f5a9ef7f366\\exec-810d9c45-7f8f-4a21-a8f4-d8c91f510564.png"
+    },
+    {
+      "id": 6,
+      "path": "C:\\Users\\Pichau\\.codex\\generated_images\\01a10f84-d854-7e12-85c9-6f5a9ef7f366\\exec-7701eb39-59fd-4d3c-b6bd-a2c3deae2d66.png"
+    },
+    {
+      "id": 7,
+      "path": "C:\\Users\\Pichau\\.codex\\generated_images\\01a10f84-d854-7e12-85c9-6f5a9ef7f366\\exec-b346c34f-77b4-4857-a594-087eaa1f01d6.png"
+    },
+    {
+      "id": 8,
+      "path": "C:\\Users\\Pichau\\.codex\\generated_images\\01a10f84-d854-7e12-85c9-6f5a9ef7f366\\exec-90b0226b-f166-4e07-986f-925b165d3748.png"
+    },
+    {
+      "id": 9,
+      "path": "C:\\Users\\Pichau\\.codex\\generated_images\\01a10f84-d854-7e12-85c9-6f5a9ef7f366\\exec-e7370097-02ea-417a-8f1b-949524d3ec40.png"
+    },
+    {
+      "id": 10,
+      "path": "C:\\Users\\Pichau\\.codex\\generated_images\\01a10f84-d854-7e12-85c9-6f5a9ef7f366\\exec-07ec2313-760e-49be-847b-08a7dabecd77.png"
+    }
+  ]
+}

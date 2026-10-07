@@ -1,0 +1,208 @@
+{
+  "duracao_cena_s": 198.467,
+  "referencia_visual": "vid_0014 — build_stage",
+  "MF_Tools": [
+    {
+      "de": "E(2\\pi d\\ell) = \\frac{\\lambda\\ell}{\\varepsilon_0}",
+      "para": "E(2\\pi d) = \\frac{\\lambda}{\\varepsilon_0}"
+    },
+    {
+      "de": "E(2\\pi d) = \\frac{\\lambda}{\\varepsilon_0}",
+      "para": "E(d) = \\frac{\\lambda}{2\\pi\\varepsilon_0d}"
+    },
+    {
+      "de": "B(d) (2\\pi d) = \\mu_0I",
+      "para": "B(d) = \\frac{\\mu_0I}{2\\pi d}"
+    },
+    {
+      "de": "\\frac{\\lambda^2}{2\\pi\\varepsilon_0d} = \\frac{\\mu_0I^2}{2\\pi d}",
+      "para": "\\frac{\\lambda^2}{\\varepsilon_0} = \\mu_0I^2"
+    },
+    {
+      "de": "\\frac{\\lambda^2}{\\varepsilon_0} = \\mu_0I^2",
+      "para": "\\frac{I^2}{\\lambda^2} = \\frac{1}{\\mu_0\\varepsilon_0}"
+    },
+    {
+      "de": "\\frac{I^2}{\\lambda^2} = \\frac{1}{\\mu_0\\varepsilon_0}",
+      "para": "\\frac{|I|}{|\\lambda|} = \\frac{1}{\\sqrt{\\mu_0\\varepsilon_0}}"
+    },
+    {
+      "de": "\\frac{|I|}{|\\lambda|} = \\frac{1}{\\sqrt{\\mu_0\\varepsilon_0}}",
+      "para": "\\frac{|I|}{|\\lambda|} = c"
+    },
+    {
+      "de": "\\frac{|I|}{|\\lambda|} = c",
+      "para": "\\frac{|\\lambda|v}{|\\lambda|} = c"
+    },
+    {
+      "de": "\\frac{|\\lambda|v}{|\\lambda|} = c",
+      "para": "v = c"
+    },
+    {
+      "de": "\\frac{F_B}{F_E} = \\mu_0\\varepsilon_0 \\frac{I^2}{\\lambda^2}",
+      "para": "\\frac{F_B}{F_E} = \\mu_0\\varepsilon_0 v^2"
+    },
+    {
+      "de": "\\frac{F_B}{F_E} = \\mu_0\\varepsilon_0 v^2",
+      "para": "\\frac{F_B}{F_E} = \\frac{1}{c^2} v^2"
+    },
+    {
+      "de": "\\frac{F_B}{F_E} = \\frac{1}{c^2} v^2",
+      "para": "\\frac{F_B}{F_E} = \\frac{v^2}{c^2}"
+    },
+    {
+      "de": "\\frac{F_B}{F_E} = \\frac{v^2}{c^2}",
+      "para": "\\frac{F_B}{F_E} = \\frac{v^2}{c^2} <1"
+    }
+  ],
+  "estados": [
+    {
+      "estado": "01_enunciado_horizontal",
+      "tempo_s": 2.833
+    },
+    {
+      "estado": "02_repulsao_eletrica",
+      "tempo_s": 6.867
+    },
+    {
+      "estado": "03_forcas_coexistindo_abertura",
+      "tempo_s": 12.9
+    },
+    {
+      "estado": "04_cilindro_horizontal",
+      "tempo_s": 18.933
+    },
+    {
+      "estado": "05_campo_radial",
+      "tempo_s": 22.133
+    },
+    {
+      "estado": "06_lateral_E_paralelo_dA",
+      "tempo_s": 25.7
+    },
+    {
+      "estado": "07_tampa_esquerda_normal_90graus",
+      "tempo_s": 30.267
+    },
+    {
+      "estado": "08_duas_tampas_zero_individual",
+      "tempo_s": 34.233
+    },
+    {
+      "estado": "09_fluxo_reduz_a_lateral",
+      "tempo_s": 41.567
+    },
+    {
+      "estado": "10_cancelar_ell_Gauss",
+      "tempo_s": 46.067
+    },
+    {
+      "estado": "11_campo_E_d",
+      "tempo_s": 52.233
+    },
+    {
+      "estado": "12_campo_externo_e_carga_trecho",
+      "tempo_s": 57.333
+    },
+    {
+      "estado": "13_forca_eletrica",
+      "tempo_s": 62.767
+    },
+    {
+      "estado": "14_secao_perpendicular_superficie",
+      "tempo_s": 68.933
+    },
+    {
+      "estado": "15_superficie_para_curva",
+      "tempo_s": 72.133
+    },
+    {
+      "estado": "16_curva_amperiana_B_tangente",
+      "tempo_s": 78.633
+    },
+    {
+      "estado": "17_regra_mao_direita_enrolamento",
+      "tempo_s": 84.6
+    },
+    {
+      "estado": "18_campo_B_d",
+      "tempo_s": 90.0
+    },
+    {
+      "estado": "19_B_entra_sem_sobreposicao",
+      "tempo_s": 95.633
+    },
+    {
+      "estado": "20_produto_vetorial_atracao",
+      "tempo_s": 102.767
+    },
+    {
+      "estado": "21_forca_magnetica",
+      "tempo_s": 109.367
+    },
+    {
+      "estado": "22_comparacao_forcas_origem_comum",
+      "tempo_s": 113.9
+    },
+    {
+      "estado": "23_cancelamento_2pi_d",
+      "tempo_s": 119.2
+    },
+    {
+      "estado": "24_termos_sobreviventes",
+      "tempo_s": 122.667
+    },
+    {
+      "estado": "25_reorganizacao_I2_lambda2",
+      "tempo_s": 126.467
+    },
+    {
+      "estado": "26_payoff_I_lambda_c",
+      "tempo_s": 133.867
+    },
+    {
+      "estado": "27_retorno_movimento_cargas",
+      "tempo_s": 140.633
+    },
+    {
+      "estado": "28_corrente_lambda_v",
+      "tempo_s": 144.567
+    },
+    {
+      "estado": "29_payoff_v_c",
+      "tempo_s": 152.6
+    },
+    {
+      "estado": "30_grafico_beta_zero",
+      "tempo_s": 165.2
+    },
+    {
+      "estado": "31_grafico_beta_baixo",
+      "tempo_s": 169.267
+    },
+    {
+      "estado": "32_grafico_beta_intermediario",
+      "tempo_s": 173.867
+    },
+    {
+      "estado": "33_grafico_beta_085",
+      "tempo_s": 178.133
+    },
+    {
+      "estado": "34_grafico_proximo_1",
+      "tempo_s": 182.4
+    },
+    {
+      "estado": "35_grafico_beta_0995",
+      "tempo_s": 186.267
+    },
+    {
+      "estado": "36_particulas_massivas_v_menor_c",
+      "tempo_s": 189.367
+    },
+    {
+      "estado": "37_repulsao_liquida_final",
+      "tempo_s": 195.967
+    }
+  ]
+}
