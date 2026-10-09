@@ -1,0 +1,63 @@
+{
+  "anterior_master": {
+    "resolucao": [
+      1080,
+      1920
+    ],
+    "fps": 30.003510069218564,
+    "frames": 3339,
+    "pix_fmt": "yuv420p",
+    "bytes": 7484284,
+    "encoder": {
+      "subme": "7",
+      "rc": "crf",
+      "crf": "23.0"
+    }
+  },
+  "anterior_legendado": {
+    "resolucao": [
+      1080,
+      1920
+    ],
+    "fps": 30.0,
+    "frames": 3339,
+    "pix_fmt": "yuv420p",
+    "bytes": 7244575,
+    "encoder": {
+      "subme": "2",
+      "chroma_qp_offset": "0",
+      "rc": "crf",
+      "crf": "18.0"
+    }
+  },
+  "novo_master": {
+    "resolucao": [
+      1080,
+      1920
+    ],
+    "fps": 30.0,
+    "frames": 3339,
+    "pix_fmt": "yuv444p",
+    "bytes": 21279395,
+    "encoder": {
+      "subme": "7",
+      "chroma_qp_offset": "0",
+      "rc": "cqp",
+      "qp": "0"
+    }
+  },
+  "vid_0015_linhas_carga_movimento": {
+    "resolucao": [
+      1080,
+      1920
+    ],
+    "fps": 30.0
+  },
+  "vid_0016_torricelli_alcance": {
+    "resolucao": [
+      1080,
+      1920
+    ],
+    "fps": 30.0
+  }
+}

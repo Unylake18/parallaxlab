@@ -1,0 +1,344 @@
+1
+00:00:00,030 --> 00:00:03,070
+Mesma barra, mesma massa,
+mesmo comprimento.
+
+2
+00:00:03,390 --> 00:00:05,665
+O momento de inércia
+mostra como essa massa
+
+3
+00:00:05,685 --> 00:00:08,050
+se distribui em torno
+do eixo de rotação.
+
+4
+00:00:08,230 --> 00:00:12,030
+Só que, do centro para a ponta,
+ele quadruplica. Por quê?
+
+5
+00:00:12,210 --> 00:00:13,700
+Vamos descobrir
+de onde vêm o raio
+
+6
+00:00:13,720 --> 00:00:16,180
+ao quadrado e o acréscimo
+ao mudar o eixo.
+
+7
+00:00:16,510 --> 00:00:17,640
+Pega um pedacinho
+da barra.
+
+8
+00:00:17,860 --> 00:00:20,200
+Todos giram com a mesma
+velocidade angular.
+
+9
+00:00:20,310 --> 00:00:22,526
+Mas a velocidade de
+cada pedaço cresce
+
+10
+00:00:22,546 --> 00:00:24,810
+com sua distância
+perpendicular ao eixo.
+
+11
+00:00:25,060 --> 00:00:26,630
+Essa distância
+é o raio.
+
+12
+00:00:26,830 --> 00:00:29,550
+Agora, a energia cinética
+desse pedacinho:
+
+13
+00:00:29,680 --> 00:00:32,170
+metade da massa vezes a
+velocidade ao quadrado.
+
+14
+00:00:32,340 --> 00:00:34,710
+Como a velocidade é
+a velocidade angular
+
+15
+00:00:34,730 --> 00:00:37,310
+vezes o raio, o raio
+também fica ao quadrado.
+
+16
+00:00:37,440 --> 00:00:40,930
+Mantendo a massa e
+a velocidade angular,
+
+17
+00:00:41,070 --> 00:00:41,970
+dobrar o raio
+quadruplica a energia.
+
+18
+00:00:42,110 --> 00:00:44,830
+Triplicar o raio multiplica
+a energia por nove.
+
+19
+00:00:45,070 --> 00:00:47,380
+Para a barra
+inteira,
+
+20
+00:00:47,540 --> 00:00:48,450
+somamos as energias
+de todos os pedacinhos.
+
+21
+00:00:48,730 --> 00:00:52,010
+Com pedaços cada vez
+menores, a soma vira integral.
+
+22
+00:00:52,080 --> 00:00:54,471
+Integrar o raio ao quadrado
+em relação à massa dá
+
+23
+00:00:54,491 --> 00:00:57,420
+o momento de inércia em
+relação ao eixo escolhido.
+
+24
+00:00:57,620 --> 00:00:59,423
+A energia é metade
+desse momento
+
+25
+00:00:59,443 --> 00:01:01,830
+vezes a velocidade
+angular ao quadrado.
+
+26
+00:01:02,010 --> 00:01:04,988
+Na barra uniforme,
+com o eixo no centro,
+
+27
+00:01:05,008 --> 00:01:06,220
+o raio é o módulo
+da posição.
+
+28
+00:01:06,340 --> 00:01:09,870
+Como a massa se
+distribui por igual,
+
+29
+00:01:10,010 --> 00:01:11,648
+cada pedacinho tem a
+massa total dividida pelo
+
+30
+00:01:11,668 --> 00:01:13,250
+comprimento, vezes seu
+pequeno comprimento.
+
+31
+00:01:13,440 --> 00:01:16,148
+Integramos a posição
+ao quadrado entre
+
+32
+00:01:16,168 --> 00:01:18,210
+as extremidades: comprimento
+ao cubo sobre doze.
+
+33
+00:01:18,410 --> 00:01:20,682
+Multiplicando
+pela massa
+
+34
+00:01:20,702 --> 00:01:23,381
+sobre o comprimento,
+obtemos um doze avos
+
+35
+00:01:23,401 --> 00:01:24,390
+da massa vezes o
+comprimento ao quadrado.
+
+36
+00:01:24,570 --> 00:01:27,230
+Perto do eixo a massa pesa
+pouco; longe, pesa muito mais.
+
+37
+00:01:27,380 --> 00:01:30,600
+E se deslocarmos o
+eixo paralelamente?
+
+38
+00:01:30,890 --> 00:01:32,910
+Precisamos refazer
+a integral? Não.
+
+39
+00:01:33,070 --> 00:01:34,780
+A nova posição,
+com sinal,
+
+40
+00:01:34,940 --> 00:01:37,780
+é a posição antiga menos
+a distância entre os eixos.
+
+41
+00:01:38,090 --> 00:01:41,060
+A distância ao novo eixo é
+o módulo dessa posição.
+
+42
+00:01:41,240 --> 00:01:43,430
+Substituímos a nova
+posição na integral.
+
+43
+00:01:43,520 --> 00:01:47,220
+Expandindo
+o quadrado,
+
+44
+00:01:47,370 --> 00:01:49,237
+surgem três termos: posição
+ao quadrado, menos duas
+
+45
+00:01:49,257 --> 00:01:51,800
+vezes posição vezes distância,
+mais distância ao quadrado.
+
+46
+00:01:51,960 --> 00:01:54,870
+Cada termo ganha
+sua integral,
+
+47
+00:01:55,250 --> 00:01:56,550
+e a distância entre os
+eixos, constante, sai delas.
+
+48
+00:01:56,830 --> 00:01:59,650
+O primeiro termo é o
+momento pelo centro;
+
+49
+00:01:59,850 --> 00:02:01,810
+o último, massa vezes
+distância ao quadrado.
+
+50
+00:02:02,020 --> 00:02:02,900
+E o termo
+do meio?
+
+51
+00:02:03,030 --> 00:02:05,932
+A integral da posição em
+relação à massa é a massa
+
+52
+00:02:05,952 --> 00:02:08,430
+total vezes a posição
+do centro de massa.
+
+53
+00:02:08,650 --> 00:02:11,670
+Como escolhemos a origem
+nele, essa posição é zero.
+
+54
+00:02:11,770 --> 00:02:13,990
+O cancelamento
+independe de simetria.
+
+55
+00:02:14,130 --> 00:02:16,986
+Sobra o momento pelo
+centro de massa, mais massa
+
+56
+00:02:17,006 --> 00:02:20,700
+vezes distância ao quadrado: o
+Teorema dos Eixos Paralelos.
+
+57
+00:02:21,080 --> 00:02:23,360
+Vale para
+qualquer corpo,
+
+58
+00:02:23,480 --> 00:02:24,830
+com um dos eixos passando
+pelo centro de massa.
+
+59
+00:02:25,090 --> 00:02:27,780
+Na ponta, a distância é
+metade do comprimento.
+
+60
+00:02:28,040 --> 00:02:30,296
+O acréscimo é um
+quarto da massa vezes
+
+61
+00:02:30,316 --> 00:02:33,130
+o comprimento ao
+quadrado: três doze avos.
+
+62
+00:02:33,480 --> 00:02:36,340
+Somando ao primeiro doze
+avos, obtemos um terço.
+
+63
+00:02:36,580 --> 00:02:38,264
+Cada bloco vale
+um doze avos
+
+64
+00:02:38,284 --> 00:02:40,760
+da massa vezes o
+comprimento ao quadrado.
+
+65
+00:02:40,910 --> 00:02:44,110
+Um ciano pelo centro, mais
+três violetas do deslocamento:
+
+66
+00:02:44,420 --> 00:02:46,940
+quatro vezes o momento
+de inércia pelo centro.
+
+67
+00:02:47,150 --> 00:02:49,770
+O raio ao quadrado vem
+da energia de rotação.
+
+68
+00:02:49,870 --> 00:02:52,280
+O acréscimo vem do
+deslocamento entre os eixos.
+
+69
+00:02:52,670 --> 00:02:53,840
+Segue o
+Parallax Lab!

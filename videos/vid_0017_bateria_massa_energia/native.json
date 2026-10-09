@@ -1,0 +1,1239 @@
+{
+  "fps": 15,
+  "plays": [
+    {
+      "indice": 0,
+      "inicio": 0.0,
+      "duracao": 0.8,
+      "eventos": []
+    },
+    {
+      "indice": 1,
+      "inicio": 0.8,
+      "duracao": 2.0,
+      "eventos": [
+        "01_pergunta"
+      ]
+    },
+    {
+      "indice": 2,
+      "inicio": 2.8,
+      "duracao": 1.6,
+      "eventos": [
+        "carga_em_quatro_etapas"
+      ]
+    },
+    {
+      "indice": 3,
+      "inicio": 4.4,
+      "duracao": 0.2,
+      "eventos": []
+    },
+    {
+      "indice": 4,
+      "inicio": 4.6,
+      "duracao": 0.3333333333333333,
+      "eventos": []
+    },
+    {
+      "indice": 5,
+      "inicio": 4.933333333333334,
+      "duracao": 0.3333333333333333,
+      "eventos": []
+    },
+    {
+      "indice": 6,
+      "inicio": 5.266666666666667,
+      "duracao": 0.6,
+      "eventos": []
+    },
+    {
+      "indice": 7,
+      "inicio": 5.866666666666666,
+      "duracao": 0.26666666666666666,
+      "eventos": []
+    },
+    {
+      "indice": 8,
+      "inicio": 6.133333333333334,
+      "duracao": 0.5333333333333333,
+      "eventos": []
+    },
+    {
+      "indice": 9,
+      "inicio": 6.666666666666667,
+      "duracao": 2.466666666666667,
+      "eventos": [
+        "02_massa_total"
+      ]
+    },
+    {
+      "indice": 10,
+      "inicio": 9.133333333333333,
+      "duracao": 0.7333333333333333,
+      "eventos": []
+    },
+    {
+      "indice": 11,
+      "inicio": 9.866666666666667,
+      "duracao": 2.466666666666667,
+      "eventos": [
+        "03_formulacao"
+      ]
+    },
+    {
+      "indice": 12,
+      "inicio": 12.333333333333334,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 13,
+      "inicio": 12.8,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 14,
+      "inicio": 13.266666666666667,
+      "duracao": 0.6,
+      "eventos": []
+    },
+    {
+      "indice": 15,
+      "inicio": 13.866666666666667,
+      "duracao": 1.1333333333333333,
+      "eventos": [
+        "dados_saindo_da_bateria"
+      ]
+    },
+    {
+      "indice": 16,
+      "inicio": 15.0,
+      "duracao": 0.6666666666666666,
+      "eventos": []
+    },
+    {
+      "indice": 17,
+      "inicio": 15.666666666666666,
+      "duracao": 0.4,
+      "eventos": []
+    },
+    {
+      "indice": 18,
+      "inicio": 16.066666666666666,
+      "duracao": 1.0,
+      "eventos": [
+        "mAh_para_Ah"
+      ]
+    },
+    {
+      "indice": 19,
+      "inicio": 17.066666666666666,
+      "duracao": 2.0,
+      "eventos": [
+        "04_mAh_Ah"
+      ]
+    },
+    {
+      "indice": 20,
+      "inicio": 19.066666666666666,
+      "duracao": 0.7333333333333333,
+      "eventos": [
+        "convergencia_V_e_Ah"
+      ]
+    },
+    {
+      "indice": 21,
+      "inicio": 19.8,
+      "duracao": 0.8,
+      "eventos": [
+        "especificacoes_para_produto"
+      ]
+    },
+    {
+      "indice": 22,
+      "inicio": 20.6,
+      "duracao": 0.6,
+      "eventos": []
+    },
+    {
+      "indice": 23,
+      "inicio": 21.2,
+      "duracao": 2.0,
+      "eventos": [
+        "05_V_Ah"
+      ]
+    },
+    {
+      "indice": 24,
+      "inicio": 23.2,
+      "duracao": 1.1333333333333333,
+      "eventos": [
+        "produto_para_15_2_Wh"
+      ]
+    },
+    {
+      "indice": 25,
+      "inicio": 24.333333333333332,
+      "duracao": 0.4,
+      "eventos": []
+    },
+    {
+      "indice": 26,
+      "inicio": 24.733333333333334,
+      "duracao": 3.0,
+      "eventos": [
+        "06_15_2_Wh"
+      ]
+    },
+    {
+      "indice": 27,
+      "inicio": 27.733333333333334,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 28,
+      "inicio": 28.2,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 29,
+      "inicio": 28.666666666666668,
+      "duracao": 0.8,
+      "eventos": [
+        "Wh_entrada_no_conversor"
+      ]
+    },
+    {
+      "indice": 30,
+      "inicio": 29.466666666666665,
+      "duracao": 0.6666666666666666,
+      "eventos": []
+    },
+    {
+      "indice": 31,
+      "inicio": 30.133333333333333,
+      "duracao": 0.8,
+      "eventos": [
+        "conversor_Wh_J"
+      ]
+    },
+    {
+      "indice": 32,
+      "inicio": 30.933333333333334,
+      "duracao": 1.0666666666666667,
+      "eventos": [
+        "06b_conversor_Wh_J"
+      ]
+    },
+    {
+      "indice": 33,
+      "inicio": 32.0,
+      "duracao": 0.6,
+      "eventos": []
+    },
+    {
+      "indice": 34,
+      "inicio": 32.6,
+      "duracao": 0.4,
+      "eventos": []
+    },
+    {
+      "indice": 35,
+      "inicio": 33.0,
+      "duracao": 0.4,
+      "eventos": []
+    },
+    {
+      "indice": 36,
+      "inicio": 33.4,
+      "duracao": 3.0,
+      "eventos": [
+        "07_54_720_J"
+      ]
+    },
+    {
+      "indice": 37,
+      "inicio": 36.4,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 38,
+      "inicio": 36.86666666666667,
+      "duracao": 0.7333333333333333,
+      "eventos": [
+        "etiqueta_J_alimenta_delta_E"
+      ]
+    },
+    {
+      "indice": 39,
+      "inicio": 37.6,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 40,
+      "inicio": 38.06666666666667,
+      "duracao": 0.9333333333333333,
+      "eventos": []
+    },
+    {
+      "indice": 41,
+      "inicio": 39.0,
+      "duracao": 0.4,
+      "eventos": []
+    },
+    {
+      "indice": 42,
+      "inicio": 39.4,
+      "duracao": 0.6,
+      "eventos": []
+    },
+    {
+      "indice": 43,
+      "inicio": 40.0,
+      "duracao": 3.0,
+      "eventos": [
+        "08_relacao_massa_energia"
+      ]
+    },
+    {
+      "indice": 44,
+      "inicio": 43.0,
+      "duracao": 1.3333333333333333,
+      "eventos": [
+        "c_quadrado_para_denominador"
+      ]
+    },
+    {
+      "indice": 45,
+      "inicio": 44.333333333333336,
+      "duracao": 0.4,
+      "eventos": []
+    },
+    {
+      "indice": 46,
+      "inicio": 44.733333333333334,
+      "duracao": 2.0,
+      "eventos": [
+        "09_isolamento"
+      ]
+    },
+    {
+      "indice": 47,
+      "inicio": 46.733333333333334,
+      "duracao": 1.1333333333333333,
+      "eventos": [
+        "substituicao_energia_e_c"
+      ]
+    },
+    {
+      "indice": 48,
+      "inicio": 47.86666666666667,
+      "duracao": 2.466666666666667,
+      "eventos": [
+        "10_substituicao"
+      ]
+    },
+    {
+      "indice": 49,
+      "inicio": 50.333333333333336,
+      "duracao": 1.1333333333333333,
+      "eventos": [
+        "avaliacao_massa_kg"
+      ]
+    },
+    {
+      "indice": 50,
+      "inicio": 51.46666666666667,
+      "duracao": 1.8,
+      "eventos": [
+        "11_massa_kg"
+      ]
+    },
+    {
+      "indice": 51,
+      "inicio": 53.266666666666666,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 52,
+      "inicio": 53.733333333333334,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 53,
+      "inicio": 54.2,
+      "duracao": 0.8,
+      "eventos": [
+        "massa_para_regua"
+      ]
+    },
+    {
+      "indice": 54,
+      "inicio": 55.0,
+      "duracao": 0.5333333333333333,
+      "eventos": []
+    },
+    {
+      "indice": 55,
+      "inicio": 55.53333333333333,
+      "duracao": 0.26666666666666666,
+      "eventos": []
+    },
+    {
+      "indice": 56,
+      "inicio": 55.8,
+      "duracao": 0.6,
+      "eventos": [
+        "regua_construida_kg_ate_ng"
+      ]
+    },
+    {
+      "indice": 57,
+      "inicio": 56.4,
+      "duracao": 0.6,
+      "eventos": []
+    },
+    {
+      "indice": 58,
+      "inicio": 57.0,
+      "duracao": 0.6,
+      "eventos": []
+    },
+    {
+      "indice": 59,
+      "inicio": 57.6,
+      "duracao": 0.6,
+      "eventos": []
+    },
+    {
+      "indice": 60,
+      "inicio": 58.2,
+      "duracao": 0.9333333333333333,
+      "eventos": [
+        "regua_para_0_6_ng"
+      ]
+    },
+    {
+      "indice": 61,
+      "inicio": 59.13333333333333,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 62,
+      "inicio": 59.6,
+      "duracao": 4.0,
+      "eventos": [
+        "12_0_6_ng"
+      ]
+    },
+    {
+      "indice": 63,
+      "inicio": 63.6,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 64,
+      "inicio": 64.06666666666666,
+      "duracao": 0.8,
+      "eventos": [
+        "ng_recua_para_rehook"
+      ]
+    },
+    {
+      "indice": 65,
+      "inicio": 64.86666666666666,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 66,
+      "inicio": 65.33333333333333,
+      "duracao": 0.2,
+      "eventos": []
+    },
+    {
+      "indice": 67,
+      "inicio": 65.53333333333333,
+      "duracao": 0.8,
+      "eventos": []
+    },
+    {
+      "indice": 68,
+      "inicio": 66.33333333333333,
+      "duracao": 0.6666666666666666,
+      "eventos": [
+        "inversao_massa_energia"
+      ]
+    },
+    {
+      "indice": 69,
+      "inicio": 67.0,
+      "duracao": 0.2,
+      "eventos": []
+    },
+    {
+      "indice": 70,
+      "inicio": 67.2,
+      "duracao": 1.2,
+      "eventos": [
+        "13_rehook_1_g"
+      ]
+    },
+    {
+      "indice": 71,
+      "inicio": 68.4,
+      "duracao": 0.4,
+      "eventos": []
+    },
+    {
+      "indice": 72,
+      "inicio": 68.8,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 73,
+      "inicio": 69.26666666666667,
+      "duracao": 0.8,
+      "eventos": []
+    },
+    {
+      "indice": 74,
+      "inicio": 70.06666666666666,
+      "duracao": 0.4,
+      "eventos": []
+    },
+    {
+      "indice": 75,
+      "inicio": 70.46666666666667,
+      "duracao": 0.6,
+      "eventos": [
+        "14_1_g_kg"
+      ]
+    },
+    {
+      "indice": 76,
+      "inicio": 71.06666666666666,
+      "duracao": 0.3333333333333333,
+      "eventos": []
+    },
+    {
+      "indice": 77,
+      "inicio": 71.4,
+      "duracao": 0.9333333333333333,
+      "eventos": [
+        "energia_para_um_grama"
+      ]
+    },
+    {
+      "indice": 78,
+      "inicio": 72.33333333333333,
+      "duracao": 0.8,
+      "eventos": [
+        "15_energia_1_g_J"
+      ]
+    },
+    {
+      "indice": 79,
+      "inicio": 73.13333333333334,
+      "duracao": 0.4,
+      "eventos": []
+    },
+    {
+      "indice": 80,
+      "inicio": 73.53333333333333,
+      "duracao": 0.9333333333333333,
+      "eventos": [
+        "25_GWh"
+      ]
+    },
+    {
+      "indice": 81,
+      "inicio": 74.46666666666667,
+      "duracao": 0.4,
+      "eventos": []
+    },
+    {
+      "indice": 82,
+      "inicio": 74.86666666666666,
+      "duracao": 0.4,
+      "eventos": []
+    },
+    {
+      "indice": 83,
+      "inicio": 75.26666666666667,
+      "duracao": 0.4,
+      "eventos": []
+    },
+    {
+      "indice": 84,
+      "inicio": 75.66666666666667,
+      "duracao": 1.4,
+      "eventos": [
+        "17_25_GWh"
+      ]
+    },
+    {
+      "indice": 85,
+      "inicio": 77.06666666666666,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 86,
+      "inicio": 77.53333333333333,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 87,
+      "inicio": 78.0,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 88,
+      "inicio": 78.46666666666667,
+      "duracao": 0.8,
+      "eventos": []
+    },
+    {
+      "indice": 89,
+      "inicio": 79.26666666666667,
+      "duracao": 0.8666666666666667,
+      "eventos": [
+        "18_bateria_15_2_Wh"
+      ]
+    },
+    {
+      "indice": 90,
+      "inicio": 80.13333333333334,
+      "duracao": 0.4,
+      "eventos": []
+    },
+    {
+      "indice": 91,
+      "inicio": 80.53333333333333,
+      "duracao": 0.4,
+      "eventos": []
+    },
+    {
+      "indice": 92,
+      "inicio": 80.93333333333334,
+      "duracao": 0.6,
+      "eventos": [
+        "contagem_uma_para_quatro"
+      ]
+    },
+    {
+      "indice": 93,
+      "inicio": 81.53333333333333,
+      "duracao": 0.2,
+      "eventos": [
+        "19a_quatro_baterias"
+      ]
+    },
+    {
+      "indice": 94,
+      "inicio": 81.73333333333333,
+      "duracao": 0.6,
+      "eventos": [
+        "contagem_quatro_para_dezesseis"
+      ]
+    },
+    {
+      "indice": 95,
+      "inicio": 82.33333333333333,
+      "duracao": 0.2,
+      "eventos": [
+        "19b_dezesseis_baterias"
+      ]
+    },
+    {
+      "indice": 96,
+      "inicio": 82.53333333333333,
+      "duracao": 0.8,
+      "eventos": [
+        "grade_para_1_6_bilhao"
+      ]
+    },
+    {
+      "indice": 97,
+      "inicio": 83.33333333333333,
+      "duracao": 2.6,
+      "eventos": [
+        "20_1_6_bilhao"
+      ]
+    },
+    {
+      "indice": 98,
+      "inicio": 85.93333333333334,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 99,
+      "inicio": 86.4,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 100,
+      "inicio": 86.86666666666666,
+      "duracao": 0.5333333333333333,
+      "eventos": []
+    },
+    {
+      "indice": 101,
+      "inicio": 87.4,
+      "duracao": 0.6,
+      "eventos": []
+    },
+    {
+      "indice": 102,
+      "inicio": 88.0,
+      "duracao": 0.7333333333333333,
+      "eventos": []
+    },
+    {
+      "indice": 103,
+      "inicio": 88.73333333333333,
+      "duracao": 0.8,
+      "eventos": [
+        "21_hipotese_massa"
+      ]
+    },
+    {
+      "indice": 104,
+      "inicio": 89.53333333333333,
+      "duracao": 0.3333333333333333,
+      "eventos": []
+    },
+    {
+      "indice": 105,
+      "inicio": 89.86666666666666,
+      "duracao": 0.2,
+      "eventos": []
+    },
+    {
+      "indice": 106,
+      "inicio": 90.06666666666666,
+      "duracao": 0.7333333333333333,
+      "eventos": [
+        "divisao_para_100_milhoes_kg"
+      ]
+    },
+    {
+      "indice": 107,
+      "inicio": 90.8,
+      "duracao": 1.0,
+      "eventos": [
+        "22_100_milhoes_kg"
+      ]
+    },
+    {
+      "indice": 108,
+      "inicio": 91.8,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 109,
+      "inicio": 92.26666666666667,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 110,
+      "inicio": 92.73333333333333,
+      "duracao": 0.8,
+      "eventos": [
+        "25_GWh_para_cidade"
+      ]
+    },
+    {
+      "indice": 111,
+      "inicio": 93.53333333333333,
+      "duracao": 0.5333333333333333,
+      "eventos": []
+    },
+    {
+      "indice": 112,
+      "inicio": 94.06666666666666,
+      "duracao": 0.4666666666666667,
+      "eventos": [
+        "23_skyline_SP_0_h"
+      ]
+    },
+    {
+      "indice": 113,
+      "inicio": 94.53333333333333,
+      "duracao": 0.4,
+      "eventos": []
+    },
+    {
+      "indice": 114,
+      "inicio": 94.93333333333334,
+      "duracao": 0.6,
+      "eventos": [
+        "SP_2_h"
+      ]
+    },
+    {
+      "indice": 115,
+      "inicio": 95.53333333333333,
+      "duracao": 0.6,
+      "eventos": [
+        "SP_4_h"
+      ]
+    },
+    {
+      "indice": 116,
+      "inicio": 96.13333333333334,
+      "duracao": 0.6,
+      "eventos": [
+        "SP_6_h"
+      ]
+    },
+    {
+      "indice": 117,
+      "inicio": 96.73333333333333,
+      "duracao": 0.6,
+      "eventos": [
+        "SP_8_h"
+      ]
+    },
+    {
+      "indice": 118,
+      "inicio": 97.33333333333333,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 119,
+      "inicio": 97.8,
+      "duracao": 3.2,
+      "eventos": [
+        "24_8_horas_SP"
+      ]
+    },
+    {
+      "indice": 120,
+      "inicio": 101.0,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 121,
+      "inicio": 101.46666666666667,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 122,
+      "inicio": 101.93333333333334,
+      "duracao": 0.6666666666666666,
+      "eventos": [
+        "cidade_recua_bateria_original"
+      ]
+    },
+    {
+      "indice": 123,
+      "inicio": 102.6,
+      "duracao": 0.4666666666666667,
+      "eventos": []
+    },
+    {
+      "indice": 124,
+      "inicio": 103.06666666666666,
+      "duracao": 0.5333333333333333,
+      "eventos": []
+    },
+    {
+      "indice": 125,
+      "inicio": 103.6,
+      "duracao": 2.0,
+      "eventos": [
+        "25_retorno_0_6_ng"
+      ]
+    },
+    {
+      "indice": 126,
+      "inicio": 105.6,
+      "duracao": 0.4,
+      "eventos": []
+    },
+    {
+      "indice": 127,
+      "inicio": 106.0,
+      "duracao": 0.6,
+      "eventos": []
+    },
+    {
+      "indice": 128,
+      "inicio": 106.6,
+      "duracao": 0.4,
+      "eventos": []
+    },
+    {
+      "indice": 129,
+      "inicio": 107.0,
+      "duracao": 1.6,
+      "eventos": [
+        "26_CTA"
+      ]
+    }
+  ],
+  "estados": [
+    {
+      "nome": "01_pergunta",
+      "t": 1.8,
+      "play_index": 1
+    },
+    {
+      "nome": "02_massa_total",
+      "t": 7.917,
+      "play_index": 9
+    },
+    {
+      "nome": "03_formulacao",
+      "t": 11.117,
+      "play_index": 11
+    },
+    {
+      "nome": "04_mAh_Ah",
+      "t": 18.067,
+      "play_index": 19
+    },
+    {
+      "nome": "05_V_Ah",
+      "t": 22.2,
+      "play_index": 23
+    },
+    {
+      "nome": "06_15_2_Wh",
+      "t": 26.233,
+      "play_index": 26
+    },
+    {
+      "nome": "06b_conversor_Wh_J",
+      "t": 31.483,
+      "play_index": 32
+    },
+    {
+      "nome": "07_54_720_J",
+      "t": 34.9,
+      "play_index": 36
+    },
+    {
+      "nome": "08_relacao_massa_energia",
+      "t": 41.5,
+      "play_index": 43
+    },
+    {
+      "nome": "09_isolamento",
+      "t": 45.733,
+      "play_index": 46
+    },
+    {
+      "nome": "10_substituicao",
+      "t": 49.117,
+      "play_index": 48
+    },
+    {
+      "nome": "11_massa_kg",
+      "t": 52.367,
+      "play_index": 50
+    },
+    {
+      "nome": "12_0_6_ng",
+      "t": 61.6,
+      "play_index": 62
+    },
+    {
+      "nome": "13_rehook_1_g",
+      "t": 67.75,
+      "play_index": 70
+    },
+    {
+      "nome": "14_1_g_kg",
+      "t": 70.65,
+      "play_index": 75
+    },
+    {
+      "nome": "15_energia_1_g_J",
+      "t": 72.583,
+      "play_index": 78
+    },
+    {
+      "nome": "17_25_GWh",
+      "t": 76.167,
+      "play_index": 84
+    },
+    {
+      "nome": "18_bateria_15_2_Wh",
+      "t": 79.417,
+      "play_index": 89
+    },
+    {
+      "nome": "19a_quatro_baterias",
+      "t": 81.267,
+      "play_index": 93
+    },
+    {
+      "nome": "19b_dezesseis_baterias",
+      "t": 82.067,
+      "play_index": 95
+    },
+    {
+      "nome": "20_1_6_bilhao",
+      "t": 84.217,
+      "play_index": 97
+    },
+    {
+      "nome": "21_hipotese_massa",
+      "t": 88.567,
+      "play_index": 103
+    },
+    {
+      "nome": "22_100_milhoes_kg",
+      "t": 90.717,
+      "play_index": 107
+    },
+    {
+      "nome": "23_skyline_SP_0_h",
+      "t": 93.617,
+      "play_index": 112
+    },
+    {
+      "nome": "24_8_horas_SP",
+      "t": 98.667,
+      "play_index": 119
+    },
+    {
+      "nome": "25_retorno_0_6_ng",
+      "t": 103.767,
+      "play_index": 125
+    },
+    {
+      "nome": "26_CTA",
+      "t": 106.867,
+      "play_index": 129
+    }
+  ],
+  "transicoes": [
+    {
+      "nome": "carga_em_quatro_etapas",
+      "t": 3.6,
+      "tipo": "segmentos_e_brilho",
+      "play_index": 2,
+      "duration": 1.6
+    },
+    {
+      "nome": "dados_saindo_da_bateria",
+      "t": 14.417,
+      "tipo": "rotulos_extraidos",
+      "play_index": 15,
+      "duration": 1.1
+    },
+    {
+      "nome": "mAh_para_Ah",
+      "t": 16.567,
+      "tipo": "TransformMatchingTex",
+      "play_index": 18,
+      "duration": 1
+    },
+    {
+      "nome": "convergencia_V_e_Ah",
+      "t": 19.417,
+      "tipo": "aproximacao_dos_fatores",
+      "play_index": 20,
+      "duration": 0.7
+    },
+    {
+      "nome": "especificacoes_para_produto",
+      "t": 20.2,
+      "tipo": "TransformMatchingTex",
+      "play_index": 21,
+      "duration": 0.8
+    },
+    {
+      "nome": "produto_para_15_2_Wh",
+      "t": 23.75,
+      "tipo": "TransformMatchingTex",
+      "play_index": 24,
+      "duration": 1.1
+    },
+    {
+      "nome": "Wh_entrada_no_conversor",
+      "t": 29.042,
+      "tipo": "TransformMatchingTex",
+      "play_index": 29,
+      "duration": 0.75
+    },
+    {
+      "nome": "conversor_Wh_J",
+      "t": 30.508,
+      "tipo": "origem_conversor_saida",
+      "play_index": 31,
+      "duration": 0.75
+    },
+    {
+      "nome": "etiqueta_J_alimenta_delta_E",
+      "t": 37.217,
+      "tipo": "continuidade_da_etiqueta",
+      "play_index": 38,
+      "duration": 0.7
+    },
+    {
+      "nome": "c_quadrado_para_denominador",
+      "t": 43.65,
+      "tipo": "TransformByGlyphMap",
+      "play_index": 44,
+      "duration": 1.3
+    },
+    {
+      "nome": "substituicao_energia_e_c",
+      "t": 47.283,
+      "tipo": "TransformByGlyphMap",
+      "play_index": 47,
+      "duration": 1.1
+    },
+    {
+      "nome": "avaliacao_massa_kg",
+      "t": 50.883,
+      "tipo": "TransformByGlyphMap",
+      "play_index": 49,
+      "duration": 1.1
+    },
+    {
+      "nome": "massa_para_regua",
+      "t": 54.6,
+      "tipo": "TransformByGlyphMap",
+      "play_index": 53,
+      "duration": 0.8
+    },
+    {
+      "nome": "regua_construida_kg_ate_ng",
+      "t": 56.9,
+      "tipo": "rotulos_nascem_na_chegada",
+      "play_index": 56,
+      "duration": 2.2
+    },
+    {
+      "nome": "regua_para_0_6_ng",
+      "t": 58.65,
+      "tipo": "copia_da_unidade_e_fade_numerico",
+      "play_index": 60,
+      "duration": 0.9
+    },
+    {
+      "nome": "ng_recua_para_rehook",
+      "t": 64.425,
+      "tipo": "resultado_vira_contexto",
+      "play_index": 64,
+      "duration": 0.75
+    },
+    {
+      "nome": "inversao_massa_energia",
+      "t": 66.725,
+      "tipo": "seta_inverte_sentido",
+      "play_index": 68,
+      "duration": 0.85
+    },
+    {
+      "nome": "energia_para_um_grama",
+      "t": 71.7,
+      "tipo": "TransformMatchingTex",
+      "play_index": 77,
+      "duration": 0.9
+    },
+    {
+      "nome": "25_GWh",
+      "t": 73.783,
+      "tipo": "TransformMatchingTex",
+      "play_index": 80,
+      "duration": 0.9
+    },
+    {
+      "nome": "contagem_uma_para_quatro",
+      "t": 80.892,
+      "tipo": "multiplicacao_simbolica",
+      "play_index": 92,
+      "duration": 0.55
+    },
+    {
+      "nome": "contagem_quatro_para_dezesseis",
+      "t": 81.667,
+      "tipo": "multiplicacao_simbolica",
+      "play_index": 94,
+      "duration": 0.6
+    },
+    {
+      "nome": "grade_para_1_6_bilhao",
+      "t": 82.542,
+      "tipo": "grade_amplia_e_payoff",
+      "play_index": 96,
+      "duration": 0.75
+    },
+    {
+      "nome": "divisao_para_100_milhoes_kg",
+      "t": 89.867,
+      "tipo": "resultado_arredondado",
+      "play_index": 106,
+      "duration": 0.7
+    },
+    {
+      "nome": "25_GWh_para_cidade",
+      "t": 92.492,
+      "tipo": "energia_como_origem_da_comparacao",
+      "play_index": 110,
+      "duration": 0.75
+    },
+    {
+      "nome": "SP_2_h",
+      "t": 94.517,
+      "tipo": "TransformMatchingTex",
+      "play_index": 114,
+      "duration": 0.6
+    },
+    {
+      "nome": "SP_4_h",
+      "t": 95.117,
+      "tipo": "TransformMatchingTex",
+      "play_index": 115,
+      "duration": 0.6
+    },
+    {
+      "nome": "SP_6_h",
+      "t": 95.717,
+      "tipo": "TransformMatchingTex",
+      "play_index": 116,
+      "duration": 0.6
+    },
+    {
+      "nome": "SP_8_h",
+      "t": 96.317,
+      "tipo": "TransformMatchingTex",
+      "play_index": 117,
+      "duration": 0.6
+    },
+    {
+      "nome": "cidade_recua_bateria_original",
+      "t": 101.492,
+      "tipo": "retorno_ao_exemplo",
+      "play_index": 122,
+      "duration": 0.65
+    }
+  ]
+}

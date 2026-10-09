@@ -1,0 +1,1449 @@
+{
+  "duracao_s": 174.967,
+  "estados": {
+    "tubo_3d": 15.933,
+    "duas_secoes": 20.667,
+    "forca_PA": 29.4,
+    "area_deslocamento_volume": 41.867,
+    "trabalho_entrada": 46.8,
+    "trabalho_saida": 61.8,
+    "trabalho_liquido": 69.367,
+    "massa": 76.333,
+    "energia_cinetica": 85.05,
+    "energia_gravitacional": 93.5,
+    "balanco_completo": 101.767,
+    "cancelamento_volume": 113.367,
+    "balanco_por_volume": 116.5,
+    "diferencas_abertas": 122.867,
+    "reorganizacao": 131.733,
+    "bernoulli": 138.3,
+    "significado_unidades": 151.767,
+    "estreitamento_continuidade": 157.033,
+    "estreitamento_bernoulli": 163.3,
+    "hipoteses_finais": 170.233
+  },
+  "layout": [
+    {
+      "estado": "De onde vem Bernoulli?",
+      "limites": [
+        -2.725,
+        2.725,
+        5.423,
+        5.777
+      ]
+    },
+    {
+      "estado": "Vamos acompanhar um pequeno volume de fluido.",
+      "limites": [
+        -3.8,
+        3.8,
+        -5.041,
+        -4.759
+      ]
+    },
+    {
+      "estado": "Um mesmo volume",
+      "limites": [
+        -2.132,
+        2.132,
+        5.426,
+        5.774
+      ]
+    },
+    {
+      "estado": "Uma linha de corrente.\nOs pontos são marcadores do movimento.",
+      "limites": [
+        -3.63,
+        3.63,
+        -5.274,
+        -4.526
+      ]
+    },
+    {
+      "estado": "tubo_3d",
+      "limites": [
+        -2.132,
+        2.132,
+        5.426,
+        5.774
+      ]
+    },
+    {
+      "estado": "tubo_3d",
+      "limites": [
+        -3.63,
+        3.63,
+        -5.274,
+        -4.526
+      ]
+    },
+    {
+      "estado": "Incompressível: o volume que entra\ncorresponde ao volume que sai.",
+      "limites": [
+        -3.049,
+        3.049,
+        -5.305,
+        -4.495
+      ]
+    },
+    {
+      "estado": "duas_secoes",
+      "limites": [
+        -2.132,
+        2.132,
+        5.426,
+        5.774
+      ]
+    },
+    {
+      "estado": "duas_secoes",
+      "limites": [
+        -3.65,
+        3.695,
+        0.2,
+        4.601
+      ]
+    },
+    {
+      "estado": "duas_secoes",
+      "limites": [
+        -2.291,
+        2.291,
+        -1.693,
+        -1.307
+      ]
+    },
+    {
+      "estado": "duas_secoes",
+      "limites": [
+        -3.049,
+        3.049,
+        -5.305,
+        -4.495
+      ]
+    },
+    {
+      "estado": "Pressão produz força",
+      "limites": [
+        -2.46,
+        2.46,
+        5.379,
+        5.821
+      ]
+    },
+    {
+      "estado": "A pressão atua sobre a área da seção.",
+      "limites": [
+        -3.286,
+        3.286,
+        -5.064,
+        -4.736
+      ]
+    },
+    {
+      "estado": "Na entrada, a força aponta\nno sentido do avanço.",
+      "limites": [
+        -2.318,
+        2.318,
+        -5.309,
+        -4.491
+      ]
+    },
+    {
+      "estado": "forca_PA",
+      "limites": [
+        -2.46,
+        2.46,
+        5.379,
+        5.821
+      ]
+    },
+    {
+      "estado": "forca_PA",
+      "limites": [
+        -2.6,
+        1.944,
+        1.4,
+        3.6
+      ]
+    },
+    {
+      "estado": "forca_PA",
+      "limites": [
+        -1.538,
+        1.538,
+        -0.892,
+        -0.308
+      ]
+    },
+    {
+      "estado": "forca_PA",
+      "limites": [
+        -2.318,
+        2.318,
+        -5.309,
+        -4.491
+      ]
+    },
+    {
+      "estado": "Entrada: trabalho positivo",
+      "limites": [
+        -3.025,
+        3.025,
+        5.381,
+        5.819
+      ]
+    },
+    {
+      "estado": "Força e deslocamento no mesmo sentido: +",
+      "limites": [
+        -3.749,
+        3.749,
+        -5.064,
+        -4.736
+      ]
+    },
+    {
+      "estado": "equação",
+      "limites": [
+        -1.842,
+        1.842,
+        -0.838,
+        -0.362
+      ]
+    },
+    {
+      "estado": "A face varreu um volume: área × deslocamento.",
+      "limites": [
+        -3.8,
+        3.8,
+        -5.02,
+        -4.78
+      ]
+    },
+    {
+      "estado": "area_deslocamento_volume",
+      "limites": [
+        -3.025,
+        3.025,
+        5.381,
+        5.819
+      ]
+    },
+    {
+      "estado": "area_deslocamento_volume",
+      "limites": [
+        -3.3,
+        1.8,
+        1.143,
+        4.689
+      ]
+    },
+    {
+      "estado": "area_deslocamento_volume",
+      "limites": [
+        -1.4,
+        -0.075,
+        1.65,
+        3.35
+      ]
+    },
+    {
+      "estado": "area_deslocamento_volume",
+      "limites": [
+        -1.4,
+        -0.25,
+        0.621,
+        1.3
+      ]
+    },
+    {
+      "estado": "area_deslocamento_volume",
+      "limites": [
+        -1.842,
+        1.842,
+        -0.838,
+        -0.362
+      ]
+    },
+    {
+      "estado": "area_deslocamento_volume",
+      "limites": [
+        -1.737,
+        1.737,
+        -2.844,
+        -1.756
+      ]
+    },
+    {
+      "estado": "area_deslocamento_volume",
+      "limites": [
+        -3.8,
+        3.8,
+        -5.02,
+        -4.78
+      ]
+    },
+    {
+      "estado": "equação",
+      "limites": [
+        -1.726,
+        1.726,
+        -0.879,
+        -0.321
+      ]
+    },
+    {
+      "estado": "trabalho_entrada",
+      "limites": [
+        -3.025,
+        3.025,
+        5.381,
+        5.819
+      ]
+    },
+    {
+      "estado": "trabalho_entrada",
+      "limites": [
+        -3.3,
+        1.8,
+        1.143,
+        4.689
+      ]
+    },
+    {
+      "estado": "trabalho_entrada",
+      "limites": [
+        -1.4,
+        -0.075,
+        1.65,
+        3.35
+      ]
+    },
+    {
+      "estado": "trabalho_entrada",
+      "limites": [
+        -1.4,
+        -0.25,
+        0.621,
+        1.3
+      ]
+    },
+    {
+      "estado": "trabalho_entrada",
+      "limites": [
+        -1.737,
+        1.737,
+        -2.844,
+        -1.756
+      ]
+    },
+    {
+      "estado": "trabalho_entrada",
+      "limites": [
+        -3.8,
+        3.8,
+        -5.02,
+        -4.78
+      ]
+    },
+    {
+      "estado": "trabalho_entrada",
+      "limites": [
+        -1.726,
+        1.726,
+        -0.879,
+        -0.321
+      ]
+    },
+    {
+      "estado": "Saída: trabalho negativo",
+      "limites": [
+        -2.846,
+        2.846,
+        5.378,
+        5.822
+      ]
+    },
+    {
+      "estado": "O fluido avança; a pressão externa resiste.",
+      "limites": [
+        -3.667,
+        3.667,
+        -5.067,
+        -4.733
+      ]
+    },
+    {
+      "estado": "equação",
+      "limites": [
+        -1.867,
+        1.867,
+        -1.916,
+        -1.484
+      ]
+    },
+    {
+      "estado": "Mesmo volume transferido.\nForça contra o deslocamento: −",
+      "limites": [
+        -2.737,
+        2.737,
+        -5.273,
+        -4.527
+      ]
+    },
+    {
+      "estado": "equação",
+      "limites": [
+        -1.88,
+        1.88,
+        -1.965,
+        -1.435
+      ]
+    },
+    {
+      "estado": "trabalho_saida",
+      "limites": [
+        -2.846,
+        2.846,
+        5.378,
+        5.822
+      ]
+    },
+    {
+      "estado": "trabalho_saida",
+      "limites": [
+        -2.194,
+        2.832,
+        1.403,
+        4.689
+      ]
+    },
+    {
+      "estado": "trabalho_saida",
+      "limites": [
+        -1.165,
+        1.165,
+        -0.62,
+        -0.18
+      ]
+    },
+    {
+      "estado": "trabalho_saida",
+      "limites": [
+        -1.4,
+        0.425,
+        1.91,
+        3.09
+      ]
+    },
+    {
+      "estado": "trabalho_saida",
+      "limites": [
+        -1.4,
+        0.25,
+        0.881,
+        1.56
+      ]
+    },
+    {
+      "estado": "trabalho_saida",
+      "limites": [
+        -1.297,
+        1.297,
+        -3.389,
+        -3.011
+      ]
+    },
+    {
+      "estado": "trabalho_saida",
+      "limites": [
+        -2.737,
+        2.737,
+        -5.273,
+        -4.527
+      ]
+    },
+    {
+      "estado": "trabalho_saida",
+      "limites": [
+        -1.88,
+        1.88,
+        -1.965,
+        -1.435
+      ]
+    },
+    {
+      "estado": "O trabalho líquido",
+      "limites": [
+        -2.061,
+        2.061,
+        5.378,
+        5.822
+      ]
+    },
+    {
+      "estado": "equação",
+      "limites": [
+        -2.424,
+        2.424,
+        -0.42,
+        0.02
+      ]
+    },
+    {
+      "estado": "equação",
+      "limites": [
+        -2.34,
+        2.34,
+        -0.47,
+        0.07
+      ]
+    },
+    {
+      "estado": "Entrada ajuda. Saída resiste.\nO volume é conservado.",
+      "limites": [
+        -2.452,
+        2.452,
+        -5.277,
+        -4.523
+      ]
+    },
+    {
+      "estado": "trabalho_liquido",
+      "limites": [
+        -2.061,
+        2.061,
+        5.378,
+        5.822
+      ]
+    },
+    {
+      "estado": "trabalho_liquido",
+      "limites": [
+        -1.498,
+        1.498,
+        2.889,
+        3.311
+      ]
+    },
+    {
+      "estado": "trabalho_liquido",
+      "limites": [
+        -1.498,
+        1.498,
+        1.489,
+        1.911
+      ]
+    },
+    {
+      "estado": "trabalho_liquido",
+      "limites": [
+        -2.34,
+        2.34,
+        -0.47,
+        0.07
+      ]
+    },
+    {
+      "estado": "trabalho_liquido",
+      "limites": [
+        -2.131,
+        2.131,
+        -2.38,
+        -2.02
+      ]
+    },
+    {
+      "estado": "trabalho_liquido",
+      "limites": [
+        -2.452,
+        2.452,
+        -5.277,
+        -4.523
+      ]
+    },
+    {
+      "estado": "Para onde vai esse trabalho?",
+      "limites": [
+        -3.344,
+        3.344,
+        5.423,
+        5.777
+      ]
+    },
+    {
+      "estado": "equação",
+      "limites": [
+        -1.451,
+        1.451,
+        -0.814,
+        -0.186
+      ]
+    },
+    {
+      "estado": "Densidade constante: o mesmo ΔV\ntransporta a mesma massa.",
+      "limites": [
+        -2.999,
+        2.999,
+        -5.263,
+        -4.537
+      ]
+    },
+    {
+      "estado": "massa",
+      "limites": [
+        -3.344,
+        3.344,
+        5.423,
+        5.777
+      ]
+    },
+    {
+      "estado": "massa",
+      "limites": [
+        -2.174,
+        2.174,
+        2.317,
+        2.883
+      ]
+    },
+    {
+      "estado": "massa",
+      "limites": [
+        -2.839,
+        2.839,
+        1.111,
+        1.389
+      ]
+    },
+    {
+      "estado": "massa",
+      "limites": [
+        -1.451,
+        1.451,
+        -0.814,
+        -0.186
+      ]
+    },
+    {
+      "estado": "massa",
+      "limites": [
+        -2.999,
+        2.999,
+        -5.263,
+        -4.537
+      ]
+    },
+    {
+      "estado": "Mudar a velocidade",
+      "limites": [
+        -2.263,
+        2.263,
+        5.426,
+        5.774
+      ]
+    },
+    {
+      "estado": "equação",
+      "limites": [
+        -2.16,
+        2.16,
+        -0.666,
+        0.366
+      ]
+    },
+    {
+      "estado": "equação",
+      "limites": [
+        -2.333,
+        2.333,
+        -0.634,
+        0.334
+      ]
+    },
+    {
+      "estado": "Variação = estado final − estado inicial.",
+      "limites": [
+        -3.373,
+        3.373,
+        -5.064,
+        -4.736
+      ]
+    },
+    {
+      "estado": "energia_cinetica",
+      "limites": [
+        -2.263,
+        2.263,
+        5.426,
+        5.774
+      ]
+    },
+    {
+      "estado": "energia_cinetica",
+      "limites": [
+        -1.344,
+        1.344,
+        2.821,
+        3.979
+      ]
+    },
+    {
+      "estado": "energia_cinetica",
+      "limites": [
+        -2.464,
+        2.464,
+        1.368,
+        2.232
+      ]
+    },
+    {
+      "estado": "energia_cinetica",
+      "limites": [
+        -0.915,
+        0.915,
+        -1.798,
+        -1.402
+      ]
+    },
+    {
+      "estado": "energia_cinetica",
+      "limites": [
+        -2.333,
+        2.333,
+        -0.634,
+        0.334
+      ]
+    },
+    {
+      "estado": "energia_cinetica",
+      "limites": [
+        -3.373,
+        3.373,
+        -5.064,
+        -4.736
+      ]
+    },
+    {
+      "estado": "Mudar a altura",
+      "limites": [
+        -1.685,
+        1.685,
+        5.426,
+        5.774
+      ]
+    },
+    {
+      "estado": "equação",
+      "limites": [
+        -2.189,
+        2.189,
+        -0.765,
+        -0.235
+      ]
+    },
+    {
+      "estado": "equação",
+      "limites": [
+        -2.411,
+        2.411,
+        -0.754,
+        -0.246
+      ]
+    },
+    {
+      "estado": "Subir aumenta a energia potencial gravitacional.",
+      "limites": [
+        -3.8,
+        3.8,
+        -5.05,
+        -4.75
+      ]
+    },
+    {
+      "estado": "energia_gravitacional",
+      "limites": [
+        -1.685,
+        1.685,
+        5.426,
+        5.774
+      ]
+    },
+    {
+      "estado": "energia_gravitacional",
+      "limites": [
+        -3.65,
+        3.695,
+        0.2,
+        3.8
+      ]
+    },
+    {
+      "estado": "energia_gravitacional",
+      "limites": [
+        -0.915,
+        0.915,
+        -2.198,
+        -1.802
+      ]
+    },
+    {
+      "estado": "energia_gravitacional",
+      "limites": [
+        -2.411,
+        2.411,
+        -0.754,
+        -0.246
+      ]
+    },
+    {
+      "estado": "energia_gravitacional",
+      "limites": [
+        -3.8,
+        3.8,
+        -5.05,
+        -4.75
+      ]
+    },
+    {
+      "estado": "Um único balanço de energia",
+      "limites": [
+        -3.374,
+        3.374,
+        5.379,
+        5.821
+      ]
+    },
+    {
+      "estado": "Trabalho líquido das pressões\n= variação cinética + variação gravitacional.",
+      "limites": [
+        -3.759,
+        3.759,
+        -5.307,
+        -4.493
+      ]
+    },
+    {
+      "estado": "balanco_completo",
+      "limites": [
+        -3.374,
+        3.374,
+        5.379,
+        5.821
+      ]
+    },
+    {
+      "estado": "balanco_completo",
+      "limites": [
+        -1.942,
+        1.942,
+        -1.465,
+        2.865
+      ]
+    },
+    {
+      "estado": "balanco_completo",
+      "limites": [
+        -3.759,
+        3.759,
+        -5.307,
+        -4.493
+      ]
+    },
+    {
+      "estado": "Dividir pelo mesmo volume",
+      "limites": [
+        -3.075,
+        3.075,
+        5.381,
+        5.819
+      ]
+    },
+    {
+      "estado": "cancelamento_volume",
+      "limites": [
+        -1.942,
+        1.942,
+        -1.465,
+        2.865
+      ]
+    },
+    {
+      "estado": "cancelamento_volume",
+      "limites": [
+        -3.759,
+        3.759,
+        -5.307,
+        -4.493
+      ]
+    },
+    {
+      "estado": "cancelamento_volume",
+      "limites": [
+        -3.075,
+        3.075,
+        5.381,
+        5.819
+      ]
+    },
+    {
+      "estado": "cancelamento_volume",
+      "limites": [
+        -1.224,
+        1.33,
+        -1.444,
+        2.947
+      ]
+    },
+    {
+      "estado": "cancelamento_volume",
+      "limites": [
+        -1.801,
+        1.801,
+        -2.708,
+        -2.292
+      ]
+    },
+    {
+      "estado": "cancelamento_volume",
+      "limites": [
+        -1.224,
+        1.33,
+        -1.444,
+        2.947
+      ]
+    },
+    {
+      "estado": "O resultado não depende do tamanho\ndo pequeno volume escolhido.",
+      "limites": [
+        -3.285,
+        3.285,
+        -5.308,
+        -4.492
+      ]
+    },
+    {
+      "estado": "balanco_por_volume",
+      "limites": [
+        -3.075,
+        3.075,
+        5.381,
+        5.819
+      ]
+    },
+    {
+      "estado": "balanco_por_volume",
+      "limites": [
+        -1.509,
+        1.509,
+        -1.465,
+        2.865
+      ]
+    },
+    {
+      "estado": "balanco_por_volume",
+      "limites": [
+        -3.285,
+        3.285,
+        -5.308,
+        -4.492
+      ]
+    },
+    {
+      "estado": "Abrir as diferenças",
+      "limites": [
+        -2.187,
+        2.187,
+        5.379,
+        5.821
+      ]
+    },
+    {
+      "estado": "Estado 2 menos estado 1,\nem cada variação de energia.",
+      "limites": [
+        -2.512,
+        2.512,
+        -5.298,
+        -4.502
+      ]
+    },
+    {
+      "estado": "diferencas_abertas",
+      "limites": [
+        -2.187,
+        2.187,
+        5.379,
+        5.821
+      ]
+    },
+    {
+      "estado": "diferencas_abertas",
+      "limites": [
+        -1.313,
+        1.313,
+        2.949,
+        3.451
+      ]
+    },
+    {
+      "estado": "diferencas_abertas",
+      "limites": [
+        -1.473,
+        1.473,
+        0.953,
+        2.047
+      ]
+    },
+    {
+      "estado": "diferencas_abertas",
+      "limites": [
+        -1.602,
+        1.602,
+        -0.346,
+        0.146
+      ]
+    },
+    {
+      "estado": "diferencas_abertas",
+      "limites": [
+        -2.512,
+        2.512,
+        -5.298,
+        -4.502
+      ]
+    },
+    {
+      "estado": "Reunir cada estado",
+      "limites": [
+        -2.25,
+        2.25,
+        5.426,
+        5.774
+      ]
+    },
+    {
+      "estado": "Ao atravessar a igualdade, o sinal muda.",
+      "limites": [
+        -3.454,
+        3.454,
+        -5.062,
+        -4.738
+      ]
+    },
+    {
+      "estado": "reorganizacao",
+      "limites": [
+        -2.25,
+        2.25,
+        5.426,
+        5.774
+      ]
+    },
+    {
+      "estado": "reorganizacao",
+      "limites": [
+        -0.2,
+        0.2,
+        1.23,
+        1.37
+      ]
+    },
+    {
+      "estado": "reorganizacao",
+      "limites": [
+        -0.661,
+        0.661,
+        -1.461,
+        4.111
+      ]
+    },
+    {
+      "estado": "reorganizacao",
+      "limites": [
+        -0.811,
+        2.152,
+        -0.768,
+        0.368
+      ]
+    },
+    {
+      "estado": "reorganizacao",
+      "limites": [
+        -3.454,
+        3.454,
+        -5.062,
+        -4.738
+      ]
+    },
+    {
+      "estado": "reorganizacao",
+      "limites": [
+        -1.401,
+        0.322,
+        2.232,
+        3.368
+      ]
+    },
+    {
+      "estado": "reorganizacao",
+      "limites": [
+        0.531,
+        2.146,
+        2.495,
+        3.005
+      ]
+    },
+    {
+      "estado": "A mesma combinação",
+      "limites": [
+        -2.513,
+        2.513,
+        5.379,
+        5.821
+      ]
+    },
+    {
+      "estado": "…essa combinação tem o mesmo valor.",
+      "limites": [
+        -3.342,
+        3.342,
+        -5.064,
+        -4.736
+      ]
+    },
+    {
+      "estado": "bernoulli",
+      "limites": [
+        -2.513,
+        2.513,
+        5.379,
+        5.821
+      ]
+    },
+    {
+      "estado": "bernoulli",
+      "limites": [
+        -3.017,
+        3.017,
+        3.073,
+        3.927
+      ]
+    },
+    {
+      "estado": "bernoulli",
+      "limites": [
+        -3.105,
+        3.105,
+        0.095,
+        1.105
+      ]
+    },
+    {
+      "estado": "bernoulli",
+      "limites": [
+        -3.342,
+        3.342,
+        -5.064,
+        -4.736
+      ]
+    },
+    {
+      "estado": "Um orçamento por volume",
+      "limites": [
+        -3.032,
+        3.032,
+        5.379,
+        5.821
+      ]
+    },
+    {
+      "estado": "Os três termos podem ser somados:\ntodos têm unidade de energia por volume.",
+      "limites": [
+        -3.679,
+        3.679,
+        -5.308,
+        -4.492
+      ]
+    },
+    {
+      "estado": "significado_unidades",
+      "limites": [
+        -3.032,
+        3.032,
+        5.379,
+        5.821
+      ]
+    },
+    {
+      "estado": "significado_unidades",
+      "limites": [
+        -2.82,
+        -2.48,
+        3.537,
+        3.863
+      ]
+    },
+    {
+      "estado": "significado_unidades",
+      "limites": [
+        -1.598,
+        3.198,
+        3.331,
+        4.069
+      ]
+    },
+    {
+      "estado": "significado_unidades",
+      "limites": [
+        -3.13,
+        -2.17,
+        1.216,
+        2.184
+      ]
+    },
+    {
+      "estado": "significado_unidades",
+      "limites": [
+        -0.948,
+        2.548,
+        1.333,
+        2.068
+      ]
+    },
+    {
+      "estado": "significado_unidades",
+      "limites": [
+        -3.019,
+        -2.281,
+        -0.517,
+        -0.083
+      ]
+    },
+    {
+      "estado": "significado_unidades",
+      "limites": [
+        -1.586,
+        3.186,
+        -0.667,
+        0.068
+      ]
+    },
+    {
+      "estado": "significado_unidades",
+      "limites": [
+        -1.519,
+        1.519,
+        -2.556,
+        -1.644
+      ]
+    },
+    {
+      "estado": "significado_unidades",
+      "limites": [
+        -3.679,
+        3.679,
+        -5.308,
+        -4.492
+      ]
+    },
+    {
+      "estado": "significado_unidades",
+      "limites": [
+        -3.5,
+        3.5,
+        -3.41,
+        -3.09
+      ]
+    },
+    {
+      "estado": "Estreitamento: duas leis",
+      "limites": [
+        -2.799,
+        2.799,
+        5.426,
+        5.774
+      ]
+    },
+    {
+      "estado": "Continuidade explica o aumento da velocidade.",
+      "limites": [
+        -3.8,
+        3.8,
+        -5.053,
+        -4.747
+      ]
+    },
+    {
+      "estado": "estreitamento_continuidade",
+      "limites": [
+        -2.799,
+        2.799,
+        5.426,
+        5.774
+      ]
+    },
+    {
+      "estado": "estreitamento_continuidade",
+      "limites": [
+        -1.397,
+        1.397,
+        0.369,
+        0.631
+      ]
+    },
+    {
+      "estado": "estreitamento_continuidade",
+      "limites": [
+        -3.367,
+        1.782,
+        1.356,
+        4.846
+      ]
+    },
+    {
+      "estado": "estreitamento_continuidade",
+      "limites": [
+        -1.362,
+        1.362,
+        -0.666,
+        -0.234
+      ]
+    },
+    {
+      "estado": "estreitamento_continuidade",
+      "limites": [
+        -2.306,
+        2.306,
+        -1.843,
+        -1.457
+      ]
+    },
+    {
+      "estado": "estreitamento_continuidade",
+      "limites": [
+        -3.8,
+        3.8,
+        -5.053,
+        -4.747
+      ]
+    },
+    {
+      "estado": "Neste caso ideal e à mesma altura,\nBernoulli relaciona velocidade e pressão.",
+      "limites": [
+        -3.519,
+        3.519,
+        -5.293,
+        -4.507
+      ]
+    },
+    {
+      "estado": "estreitamento_bernoulli",
+      "limites": [
+        -2.799,
+        2.799,
+        5.426,
+        5.774
+      ]
+    },
+    {
+      "estado": "estreitamento_bernoulli",
+      "limites": [
+        -3.367,
+        1.782,
+        1.356,
+        4.846
+      ]
+    },
+    {
+      "estado": "estreitamento_bernoulli",
+      "limites": [
+        -1.771,
+        1.771,
+        0.335,
+        0.665
+      ]
+    },
+    {
+      "estado": "estreitamento_bernoulli",
+      "limites": [
+        -2.346,
+        2.346,
+        -1.063,
+        -0.137
+      ]
+    },
+    {
+      "estado": "estreitamento_bernoulli",
+      "limites": [
+        -2.311,
+        2.311,
+        -2.34,
+        -1.96
+      ]
+    },
+    {
+      "estado": "estreitamento_bernoulli",
+      "limites": [
+        -3.519,
+        3.519,
+        -5.293,
+        -4.507
+      ]
+    },
+    {
+      "estado": "Quando essa conta vale?",
+      "limites": [
+        -2.904,
+        2.904,
+        5.385,
+        5.815
+      ]
+    },
+    {
+      "estado": "Um balanço de trabalho e energia,\nsob essas hipóteses.",
+      "limites": [
+        -2.964,
+        2.964,
+        -5.307,
+        -4.493
+      ]
+    },
+    {
+      "estado": "hipoteses_finais",
+      "limites": [
+        -2.904,
+        2.904,
+        5.385,
+        5.815
+      ]
+    },
+    {
+      "estado": "hipoteses_finais",
+      "limites": [
+        -3.316,
+        3.316,
+        1.807,
+        3.593
+      ]
+    },
+    {
+      "estado": "hipoteses_finais",
+      "limites": [
+        -3.105,
+        3.105,
+        -1.155,
+        -0.145
+      ]
+    },
+    {
+      "estado": "hipoteses_finais",
+      "limites": [
+        -2.964,
+        2.964,
+        -5.307,
+        -4.493
+      ]
+    }
+  ]
+}

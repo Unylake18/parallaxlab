@@ -1,0 +1,2116 @@
+{
+  "classe": "BateriaMassaEnergiaFinal",
+  "duracao_provisoria_s": 111.33333333333324,
+  "resolucao": [
+    540,
+    960
+  ],
+  "fps": 15.0,
+  "estados": [
+    {
+      "nome": "01_pergunta",
+      "t": 1.667,
+      "play_index": 1
+    },
+    {
+      "nome": "02_massa_total",
+      "t": 6.183,
+      "play_index": 9
+    },
+    {
+      "nome": "03_formulacao",
+      "t": 12.583,
+      "play_index": 11
+    },
+    {
+      "nome": "04_mAh_Ah",
+      "t": 28.4,
+      "play_index": 21
+    },
+    {
+      "nome": "05_V_Ah",
+      "t": 30.933,
+      "play_index": 25
+    },
+    {
+      "nome": "06_15_2_Wh",
+      "t": 33.833,
+      "play_index": 28
+    },
+    {
+      "nome": "06b_conversor_Wh_J",
+      "t": 36.55,
+      "play_index": 34
+    },
+    {
+      "nome": "07_54_720_J",
+      "t": 38.367,
+      "play_index": 38
+    },
+    {
+      "nome": "08_relacao_massa_energia",
+      "t": 41.233,
+      "play_index": 45
+    },
+    {
+      "nome": "09_isolamento",
+      "t": 46.933,
+      "play_index": 48
+    },
+    {
+      "nome": "10_substituicao",
+      "t": 50.583,
+      "play_index": 50
+    },
+    {
+      "nome": "11_massa_kg",
+      "t": 51.633,
+      "play_index": 52
+    },
+    {
+      "nome": "12_0_6_ng",
+      "t": 56.533,
+      "play_index": 64
+    },
+    {
+      "nome": "13_rehook_1_g",
+      "t": 62.8,
+      "play_index": 72
+    },
+    {
+      "nome": "14_1_g_kg",
+      "t": 65.3,
+      "play_index": 77
+    },
+    {
+      "nome": "15_energia_1_g_J",
+      "t": 66.333,
+      "play_index": 80
+    },
+    {
+      "nome": "17_25_GWh",
+      "t": 68.633,
+      "play_index": 86
+    },
+    {
+      "nome": "18_bateria_15_2_Wh",
+      "t": 75.183,
+      "play_index": 91
+    },
+    {
+      "nome": "19a_quatro_baterias",
+      "t": 75.833,
+      "play_index": 95
+    },
+    {
+      "nome": "19b_dezesseis_baterias",
+      "t": 76.167,
+      "play_index": 97
+    },
+    {
+      "nome": "20_1_6_bilhao",
+      "t": 77.967,
+      "play_index": 99
+    },
+    {
+      "nome": "21_hipotese_massa",
+      "t": 82.267,
+      "play_index": 105
+    },
+    {
+      "nome": "22_100_milhoes_kg",
+      "t": 85.1,
+      "play_index": 109
+    },
+    {
+      "nome": "23_skyline_SP_0_h",
+      "t": 89.583,
+      "play_index": 114
+    },
+    {
+      "nome": "24_8_horas_SP",
+      "t": 93.133,
+      "play_index": 121
+    },
+    {
+      "nome": "25_retorno_0_6_ng",
+      "t": 102.8,
+      "play_index": 125
+    },
+    {
+      "nome": "26_CTA",
+      "t": 110.333,
+      "play_index": 134
+    }
+  ],
+  "transicoes": [
+    {
+      "nome": "carga_em_quatro_etapas",
+      "t": 2.233,
+      "tipo": "segmentos_e_brilho",
+      "play_index": 2,
+      "duration": 1.5333333333333334
+    },
+    {
+      "nome": "dados_saindo_da_bateria",
+      "t": 18.918,
+      "tipo": "rotulos_extraidos",
+      "play_index": 15,
+      "duration": 1.303333
+    },
+    {
+      "nome": "mAh_para_Ah",
+      "t": 26.9,
+      "tipo": "TransformMatchingTex",
+      "play_index": 20,
+      "duration": 1.0
+    },
+    {
+      "nome": "convergencia_V_e_Ah",
+      "t": 28.8,
+      "tipo": "aproximacao_dos_fatores",
+      "play_index": 22,
+      "duration": 0.5333333333333333
+    },
+    {
+      "nome": "especificacoes_para_produto",
+      "t": 29.3,
+      "tipo": "TransformMatchingTex",
+      "play_index": 23,
+      "duration": 0.4666666666666667
+    },
+    {
+      "nome": "produto_para_15_2_Wh",
+      "t": 31.5,
+      "tipo": "TransformMatchingTex",
+      "play_index": 26,
+      "duration": 1.0
+    },
+    {
+      "nome": "Wh_entrada_no_conversor",
+      "t": 34.867,
+      "tipo": "TransformMatchingTex",
+      "play_index": 31,
+      "duration": 0.4
+    },
+    {
+      "nome": "conversor_Wh_J",
+      "t": 35.733,
+      "tipo": "origem_conversor_saida",
+      "play_index": 33,
+      "duration": 0.5333333333333333
+    },
+    {
+      "nome": "etiqueta_J_alimenta_delta_E",
+      "t": 37.967,
+      "tipo": "continuidade_da_etiqueta",
+      "play_index": 40,
+      "duration": 0.4666666666666667
+    },
+    {
+      "nome": "c_quadrado_para_denominador",
+      "t": 45.2,
+      "tipo": "TransformByGlyphMap",
+      "play_index": 46,
+      "duration": 0.9333333333333333
+    },
+    {
+      "nome": "substituicao_energia_e_c",
+      "t": 48.833,
+      "tipo": "TransformByGlyphMap",
+      "play_index": 49,
+      "duration": 1.0
+    },
+    {
+      "nome": "avaliacao_massa_kg",
+      "t": 50.433,
+      "tipo": "TransformByGlyphMap",
+      "play_index": 51,
+      "duration": 0.6
+    },
+    {
+      "nome": "massa_para_regua",
+      "t": 51.833,
+      "tipo": "TransformByGlyphMap",
+      "play_index": 55,
+      "duration": 0.4666666666666667
+    },
+    {
+      "nome": "regua_construida_kg_ate_ng",
+      "t": 52.533,
+      "tipo": "rotulos_nascem_na_chegada",
+      "play_index": 58,
+      "duration": 0.26666666666666666
+    },
+    {
+      "nome": "regua_para_0_6_ng",
+      "t": 53.933,
+      "tipo": "copia_da_unidade_e_fade_numerico",
+      "play_index": 62,
+      "duration": 0.6666666666666666
+    },
+    {
+      "nome": "ng_recua_para_rehook",
+      "t": 60.4,
+      "tipo": "resultado_vira_contexto",
+      "play_index": 66,
+      "duration": 0.5333333333333333
+    },
+    {
+      "nome": "inversao_massa_energia",
+      "t": 61.833,
+      "tipo": "seta_inverte_sentido",
+      "play_index": 70,
+      "duration": 0.4666666666666667
+    },
+    {
+      "nome": "energia_para_um_grama",
+      "t": 65.7,
+      "tipo": "TransformMatchingTex",
+      "play_index": 79,
+      "duration": 0.4666666666666667
+    },
+    {
+      "nome": "25_GWh",
+      "t": 66.967,
+      "tipo": "TransformMatchingTex",
+      "play_index": 82,
+      "duration": 0.7333333333333333
+    },
+    {
+      "nome": "contagem_uma_para_quatro",
+      "t": 75.6,
+      "tipo": "multiplicacao_simbolica",
+      "play_index": 94,
+      "duration": 0.26666666666666666
+    },
+    {
+      "nome": "contagem_quatro_para_dezesseis",
+      "t": 75.933,
+      "tipo": "multiplicacao_simbolica",
+      "play_index": 96,
+      "duration": 0.26666666666666666
+    },
+    {
+      "nome": "grade_para_1_6_bilhao",
+      "t": 76.4,
+      "tipo": "grade_amplia_e_payoff",
+      "play_index": 98,
+      "duration": 0.5333333333333333
+    },
+    {
+      "nome": "divisao_para_100_milhoes_kg",
+      "t": 84.155,
+      "tipo": "resultado_arredondado",
+      "play_index": 108,
+      "duration": 0.843333
+    },
+    {
+      "nome": "25_GWh_para_cidade",
+      "t": 88.633,
+      "tipo": "energia_como_origem_da_comparacao",
+      "play_index": 112,
+      "duration": 0.6
+    },
+    {
+      "nome": "SP_2_h",
+      "t": 89.933,
+      "tipo": "TransformMatchingTex",
+      "play_index": 116,
+      "duration": 0.4
+    },
+    {
+      "nome": "SP_4_h",
+      "t": 90.3,
+      "tipo": "TransformMatchingTex",
+      "play_index": 117,
+      "duration": 0.3333333333333333
+    },
+    {
+      "nome": "SP_6_h",
+      "t": 90.633,
+      "tipo": "TransformMatchingTex",
+      "play_index": 118,
+      "duration": 0.3333333333333333
+    },
+    {
+      "nome": "SP_8_h",
+      "t": 90.967,
+      "tipo": "TransformMatchingTex",
+      "play_index": 119,
+      "duration": 0.3333333333333333
+    },
+    {
+      "nome": "cidade_recua_bateria_original",
+      "t": 100.533,
+      "tipo": "retorno_ao_exemplo",
+      "play_index": 124,
+      "duration": 0.5333333333333333
+    }
+  ],
+  "blocos": [
+    {
+      "nome": "caso_1_g",
+      "inicio": 59.867,
+      "fim": 87.867,
+      "duracao": 28.0,
+      "play_start": 65,
+      "play_end": 110
+    },
+    {
+      "nome": "comparacao_SP",
+      "inicio": 87.867,
+      "fim": 99.733,
+      "duracao": 11.867,
+      "play_start": 110,
+      "play_end": 122
+    },
+    {
+      "nome": "conclusao_CTA",
+      "inicio": 99.733,
+      "fim": 111.333,
+      "duracao": 11.6,
+      "play_start": 122,
+      "play_end": 135
+    }
+  ],
+  "numeros_verificados": {
+    "bateria_Wh": 15.2,
+    "bateria_J": 54720.0,
+    "bateria_delta_kg": 6.0884211067254e-13,
+    "bateria_delta_ng": 0.60884211067254,
+    "1g_J": 89875517873681.77,
+    "1g_Wh": 24965421631.57827,
+    "1g_GWh": 24.96542163157827,
+    "baterias": 1642461949.4459388,
+    "massa_sistema_kg": 99861686.52631308,
+    "SP_media_GWh_h": 3.0719178082191783,
+    "SP_equivalencia_h": 8.126982292553906
+  },
+  "fonte_SP": {
+    "instituicao": "SEMIL — Secretaria de Meio Ambiente, Infraestrutura e Logística",
+    "titulo": "Anuário de Energéticos por Município 2024 — ano-base 2023",
+    "pagina": 8,
+    "municipio": "São Paulo",
+    "consumo_TWh_2023": 26.91,
+    "url": "https://smastr16.blob.core.windows.net/home/2025/04/Anuario-de-Energeticos-por-Municipios-do-Estado-de-Sao-Paulo-2024-ano-base-2023.pdf"
+  },
+  "partial_files": [
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\81802292_1794786541_3960346600.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3668739887_1656546226.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3858353125_1014963485.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2672833425_2624706439.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1410513251_889439152.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_466899340_2416198115.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2872190980_1599756975.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_953147177_3436111481.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2219780167_1711227611.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2464591133_1531799779.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2912221990_1335866130.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3686529702_413011848.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2547054659_1030931359.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2591573788_3960346600.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3810334600_168294122.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1465180632_3042367000.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1826799619_3657261154.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_231711790_798086174.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_4127154844_3142178120.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3801465414_3728858948.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1826689503_825918858.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_4282251204_3721789728.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_882547997_3482254468.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2756147222_2906281896.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_189896716_691090831.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1867541152_141862063.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1759682587_467272697.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2885096038_2811209924.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1584702862_2392816352.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_4081308635_2611658125.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3543550750_2943339323.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_4117326854_4087195121.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1376563163_3091996391.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_4055619039_3570008658.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_4178213453_2120607367.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1751305523_171742152.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_520945784_1418563395.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3245109631_3129518907.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2282436953_3749230147.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_770962185_1735727747.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1002153420_1288378782.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_607458867_1753900152.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2956123544_4064200274.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1338826051_1766961363.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_397394879_2532389479.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2920716451_405901091.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3815446536_84300798.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_458597962_3238951046.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_287802542_1146682249.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1212066101_706882167.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2258256856_1904434987.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2224056561_4107429588.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2960559716_3750547849.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_30844507_3484462345.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1212173186_1132890579.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_189425522_1850681215.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1068029649_2242040008.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_908808222_2797991390.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3643860252_2969307689.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3816461804_3587348340.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2190109508_3555165965.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3921578032_3276975543.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3694247189_2413000532.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3655017523_364012906.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1990093682_1592624452.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2851258900_2901268267.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1500767686_3408438370.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3874599711_2076541953.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_966451229_2379530126.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1819639797_3587033829.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3794359747_1949016595.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3445692536_1949016595.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2421250957_2260855384.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1966682499_1457430231.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2358136102_4037533058.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2344454146_1259836639.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3100134187_448653083.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3999009199_3441526290.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3270815210_4242618139.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1567168692_737738882.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2762259017_3476468667.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1019575622_1577828813.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_530375880_3268799015.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2465968879_2462393402.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_333541091_1829627633.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_548290339_146156997.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3519488929_3184407482.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2027186485_877624649.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2956032162_1213162317.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_137869023_1789927739.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1215116897_2227230460.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2818677256_3866528924.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1421802400_2817797989.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_4074124696_1382391965.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3990665995_2402744366.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_4266233833_2610572774.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1503775326_674580039.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_4266233833_596058121.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2895501873_1782626737.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_356917596_3269255869.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1915098889_3172780587.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3696470181_4124975507.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_825587355_3718786802.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_4171158983_326096805.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_374939206_2933616487.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1037098905_1532872272.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3390504573_2403888512.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_966451229_3601617424.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1878230929_1639619031.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1199414943_3326552600.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1546560095_2050527117.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_654169756_3960346600.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3776930620_618166588.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1121607844_1420571253.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2265805987_2780333698.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1125812027_902660019.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1009091255_3219062132.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2589017094_2921524499.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2846808751_1312874901.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_4256106764_423649619.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3019291281_618413686.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_4010467469_3632034899.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3405124970_3952412487.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1587770847_1313089814.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3392006033_834170116.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_4161631824_3218955237.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1349717200_3277846033.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2514930366_852739502.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_4038324551_3806130007.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_789240973_1201470867.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3410581309_889256865.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3491779615_1805404971.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_1023392355_2636224039.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_2529090188_187091258.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_sync\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergiaFinal\\2130283231_3550365845_2109566517.mp4"
+  ],
+  "sincronizacao": {
+    "audio_offset_s": 0.4,
+    "audio_s": 110.48,
+    "metodo": "frases ancoradas nas pausas medidas do WAV; palavras internas estimadas por silabas; sem ASR",
+    "agenda": [
+      {
+        "indice": 0,
+        "inicio": 0,
+        "fim": 0.7,
+        "animacao_max_s": 0.92
+      },
+      {
+        "indice": 1,
+        "inicio": 0.7,
+        "fim": 1.5,
+        "animacao_max_s": 2.3
+      },
+      {
+        "indice": 2,
+        "inicio": 1.5,
+        "fim": 3,
+        "animacao_max_s": 1.84
+      },
+      {
+        "indice": 3,
+        "inicio": 3,
+        "fim": 3.15,
+        "animacao_max_s": 0.23
+      },
+      {
+        "indice": 4,
+        "inicio": 3.15,
+        "fim": 3.35,
+        "animacao_max_s": 0.383333
+      },
+      {
+        "indice": 5,
+        "inicio": 3.35,
+        "fim": 3.7,
+        "animacao_max_s": 0.383333
+      },
+      {
+        "indice": 6,
+        "inicio": 3.7,
+        "fim": 4.1,
+        "animacao_max_s": 0.69
+      },
+      {
+        "indice": 7,
+        "inicio": 4.1,
+        "fim": 4.4,
+        "animacao_max_s": 0.306667
+      },
+      {
+        "indice": 8,
+        "inicio": 4.4,
+        "fim": 4.9,
+        "animacao_max_s": 0.613333
+      },
+      {
+        "indice": 9,
+        "inicio": 4.9,
+        "fim": 10.66,
+        "animacao_max_s": 2.836667
+      },
+      {
+        "indice": 10,
+        "inicio": 10.66,
+        "fim": 11.36,
+        "animacao_max_s": 0.843333
+      },
+      {
+        "indice": 11,
+        "inicio": 11.36,
+        "fim": 17.25,
+        "animacao_max_s": 2.836667
+      },
+      {
+        "indice": 12,
+        "inicio": 17.25,
+        "fim": 17.55,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 13,
+        "inicio": 17.55,
+        "fim": 17.85,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 14,
+        "inicio": 17.85,
+        "fim": 18.25,
+        "animacao_max_s": 0.69
+      },
+      {
+        "indice": 15,
+        "inicio": 18.25,
+        "fim": 21.9,
+        "animacao_max_s": 1.303333
+      },
+      {
+        "indice": 16,
+        "inicio": 21.9,
+        "fim": 22.55,
+        "animacao_max_s": 0.766667
+      },
+      {
+        "indice": 17,
+        "inicio": 22.55,
+        "fim": 26.4,
+        "animacao_max_s": 0.46
+      },
+      {
+        "indice": 18,
+        "inicio": 26.4,
+        "fim": 27.4,
+        "animacao_max_s": 1.15
+      },
+      {
+        "indice": 19,
+        "inicio": 27.4,
+        "fim": 28.5,
+        "animacao_max_s": 2.3
+      },
+      {
+        "indice": 20,
+        "inicio": 28.5,
+        "fim": 29.05,
+        "animacao_max_s": 0.843333
+      },
+      {
+        "indice": 21,
+        "inicio": 29.05,
+        "fim": 29.55,
+        "animacao_max_s": 0.92
+      },
+      {
+        "indice": 22,
+        "inicio": 29.55,
+        "fim": 29.95,
+        "animacao_max_s": 0.69
+      },
+      {
+        "indice": 23,
+        "inicio": 29.95,
+        "fim": 31,
+        "animacao_max_s": 2.3
+      },
+      {
+        "indice": 24,
+        "inicio": 31,
+        "fim": 32,
+        "animacao_max_s": 1.303333
+      },
+      {
+        "indice": 25,
+        "inicio": 32,
+        "fim": 32.35,
+        "animacao_max_s": 0.46
+      },
+      {
+        "indice": 26,
+        "inicio": 32.35,
+        "fim": 34.15,
+        "animacao_max_s": 3.45
+      },
+      {
+        "indice": 27,
+        "inicio": 34.15,
+        "fim": 34.4,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 28,
+        "inicio": 34.4,
+        "fim": 34.65,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 29,
+        "inicio": 34.65,
+        "fim": 35.1,
+        "animacao_max_s": 0.92
+      },
+      {
+        "indice": 30,
+        "inicio": 35.1,
+        "fim": 35.5,
+        "animacao_max_s": 0.766667
+      },
+      {
+        "indice": 31,
+        "inicio": 35.5,
+        "fim": 36,
+        "animacao_max_s": 0.92
+      },
+      {
+        "indice": 32,
+        "inicio": 36,
+        "fim": 36.2,
+        "animacao_max_s": 1.226667
+      },
+      {
+        "indice": 33,
+        "inicio": 36.2,
+        "fim": 36.45,
+        "animacao_max_s": 0.69
+      },
+      {
+        "indice": 34,
+        "inicio": 36.45,
+        "fim": 36.65,
+        "animacao_max_s": 0.46
+      },
+      {
+        "indice": 35,
+        "inicio": 36.65,
+        "fim": 36.85,
+        "animacao_max_s": 0.46
+      },
+      {
+        "indice": 36,
+        "inicio": 36.85,
+        "fim": 37.5,
+        "animacao_max_s": 3.45
+      },
+      {
+        "indice": 37,
+        "inicio": 37.5,
+        "fim": 37.75,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 38,
+        "inicio": 37.75,
+        "fim": 38.2,
+        "animacao_max_s": 0.843333
+      },
+      {
+        "indice": 39,
+        "inicio": 38.2,
+        "fim": 38.45,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 40,
+        "inicio": 38.45,
+        "fim": 39.15,
+        "animacao_max_s": 1.073333
+      },
+      {
+        "indice": 41,
+        "inicio": 39.15,
+        "fim": 39.4,
+        "animacao_max_s": 0.46
+      },
+      {
+        "indice": 42,
+        "inicio": 39.4,
+        "fim": 39.75,
+        "animacao_max_s": 0.69
+      },
+      {
+        "indice": 43,
+        "inicio": 39.75,
+        "fim": 44.75,
+        "animacao_max_s": 3.45
+      },
+      {
+        "indice": 44,
+        "inicio": 44.75,
+        "fim": 45.65,
+        "animacao_max_s": 1.533333
+      },
+      {
+        "indice": 45,
+        "inicio": 45.65,
+        "fim": 45.95,
+        "animacao_max_s": 0.46
+      },
+      {
+        "indice": 46,
+        "inicio": 45.95,
+        "fim": 48.35,
+        "animacao_max_s": 2.3
+      },
+      {
+        "indice": 47,
+        "inicio": 48.35,
+        "fim": 49.3,
+        "animacao_max_s": 1.303333
+      },
+      {
+        "indice": 48,
+        "inicio": 49.3,
+        "fim": 50.1,
+        "animacao_max_s": 2.836667
+      },
+      {
+        "indice": 49,
+        "inicio": 50.1,
+        "fim": 50.75,
+        "animacao_max_s": 1.303333
+      },
+      {
+        "indice": 50,
+        "inicio": 50.75,
+        "fim": 51.2,
+        "animacao_max_s": 2.07
+      },
+      {
+        "indice": 51,
+        "inicio": 51.2,
+        "fim": 51.4,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 52,
+        "inicio": 51.4,
+        "fim": 51.6,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 53,
+        "inicio": 51.6,
+        "fim": 52.05,
+        "animacao_max_s": 0.92
+      },
+      {
+        "indice": 54,
+        "inicio": 52.05,
+        "fim": 52.3,
+        "animacao_max_s": 0.613333
+      },
+      {
+        "indice": 55,
+        "inicio": 52.3,
+        "fim": 52.4,
+        "animacao_max_s": 0.306667
+      },
+      {
+        "indice": 56,
+        "inicio": 52.4,
+        "fim": 52.7,
+        "animacao_max_s": 0.69
+      },
+      {
+        "indice": 57,
+        "inicio": 52.7,
+        "fim": 53,
+        "animacao_max_s": 0.69
+      },
+      {
+        "indice": 58,
+        "inicio": 53,
+        "fim": 53.3,
+        "animacao_max_s": 0.69
+      },
+      {
+        "indice": 59,
+        "inicio": 53.3,
+        "fim": 53.6,
+        "animacao_max_s": 0.69
+      },
+      {
+        "indice": 60,
+        "inicio": 53.6,
+        "fim": 54.25,
+        "animacao_max_s": 1.073333
+      },
+      {
+        "indice": 61,
+        "inicio": 54.25,
+        "fim": 54.5,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 62,
+        "inicio": 54.5,
+        "fim": 59.85,
+        "animacao_max_s": 4.6
+      },
+      {
+        "indice": 63,
+        "inicio": 59.85,
+        "fim": 60.1,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 64,
+        "inicio": 60.1,
+        "fim": 60.7,
+        "animacao_max_s": 0.92
+      },
+      {
+        "indice": 65,
+        "inicio": 60.7,
+        "fim": 61,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 66,
+        "inicio": 61,
+        "fim": 61.15,
+        "animacao_max_s": 0.23
+      },
+      {
+        "indice": 67,
+        "inicio": 61.15,
+        "fim": 61.6,
+        "animacao_max_s": 0.92
+      },
+      {
+        "indice": 68,
+        "inicio": 61.6,
+        "fim": 62.05,
+        "animacao_max_s": 0.766667
+      },
+      {
+        "indice": 69,
+        "inicio": 62.05,
+        "fim": 62.2,
+        "animacao_max_s": 0.23
+      },
+      {
+        "indice": 70,
+        "inicio": 62.2,
+        "fim": 63.75,
+        "animacao_max_s": 1.38
+      },
+      {
+        "indice": 71,
+        "inicio": 63.75,
+        "fim": 63.95,
+        "animacao_max_s": 0.46
+      },
+      {
+        "indice": 72,
+        "inicio": 63.95,
+        "fim": 64.25,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 73,
+        "inicio": 64.25,
+        "fim": 64.8,
+        "animacao_max_s": 0.92
+      },
+      {
+        "indice": 74,
+        "inicio": 64.8,
+        "fim": 65,
+        "animacao_max_s": 0.46
+      },
+      {
+        "indice": 75,
+        "inicio": 65,
+        "fim": 65.3,
+        "animacao_max_s": 0.69
+      },
+      {
+        "indice": 76,
+        "inicio": 65.3,
+        "fim": 65.45,
+        "animacao_max_s": 0.383333
+      },
+      {
+        "indice": 77,
+        "inicio": 65.45,
+        "fim": 65.9,
+        "animacao_max_s": 1.073333
+      },
+      {
+        "indice": 78,
+        "inicio": 65.9,
+        "fim": 66.35,
+        "animacao_max_s": 0.92
+      },
+      {
+        "indice": 79,
+        "inicio": 66.35,
+        "fim": 66.6,
+        "animacao_max_s": 0.46
+      },
+      {
+        "indice": 80,
+        "inicio": 66.6,
+        "fim": 67.3,
+        "animacao_max_s": 1.073333
+      },
+      {
+        "indice": 81,
+        "inicio": 67.3,
+        "fim": 67.5,
+        "animacao_max_s": 0.46
+      },
+      {
+        "indice": 82,
+        "inicio": 67.5,
+        "fim": 67.7,
+        "animacao_max_s": 0.46
+      },
+      {
+        "indice": 83,
+        "inicio": 67.7,
+        "fim": 67.9,
+        "animacao_max_s": 0.46
+      },
+      {
+        "indice": 84,
+        "inicio": 67.9,
+        "fim": 73.7,
+        "animacao_max_s": 1.61
+      },
+      {
+        "indice": 85,
+        "inicio": 73.7,
+        "fim": 73.9,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 86,
+        "inicio": 73.9,
+        "fim": 74.1,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 87,
+        "inicio": 74.1,
+        "fim": 74.35,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 88,
+        "inicio": 74.35,
+        "fim": 74.75,
+        "animacao_max_s": 0.92
+      },
+      {
+        "indice": 89,
+        "inicio": 74.75,
+        "fim": 74.9,
+        "animacao_max_s": 0.996667
+      },
+      {
+        "indice": 90,
+        "inicio": 74.9,
+        "fim": 75.2,
+        "animacao_max_s": 0.46
+      },
+      {
+        "indice": 91,
+        "inicio": 75.2,
+        "fim": 75.45,
+        "animacao_max_s": 0.46
+      },
+      {
+        "indice": 92,
+        "inicio": 75.45,
+        "fim": 75.7,
+        "animacao_max_s": 0.69
+      },
+      {
+        "indice": 93,
+        "inicio": 75.7,
+        "fim": 75.766667,
+        "animacao_max_s": 0.23
+      },
+      {
+        "indice": 94,
+        "inicio": 75.766667,
+        "fim": 76.066667,
+        "animacao_max_s": 0.69
+      },
+      {
+        "indice": 95,
+        "inicio": 76.066667,
+        "fim": 76.133334,
+        "animacao_max_s": 0.23
+      },
+      {
+        "indice": 96,
+        "inicio": 76.133334,
+        "fim": 76.633334,
+        "animacao_max_s": 0.92
+      },
+      {
+        "indice": 97,
+        "inicio": 76.633334,
+        "fim": 80.2,
+        "animacao_max_s": 2.99
+      },
+      {
+        "indice": 98,
+        "inicio": 80.2,
+        "fim": 80.4,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 99,
+        "inicio": 80.4,
+        "fim": 80.6,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 100,
+        "inicio": 80.6,
+        "fim": 80.95,
+        "animacao_max_s": 0.613333
+      },
+      {
+        "indice": 101,
+        "inicio": 80.95,
+        "fim": 81.35,
+        "animacao_max_s": 0.69
+      },
+      {
+        "indice": 102,
+        "inicio": 81.35,
+        "fim": 81.9,
+        "animacao_max_s": 0.843333
+      },
+      {
+        "indice": 103,
+        "inicio": 81.9,
+        "fim": 83.4,
+        "animacao_max_s": 0.92
+      },
+      {
+        "indice": 104,
+        "inicio": 83.4,
+        "fim": 83.6,
+        "animacao_max_s": 0.383333
+      },
+      {
+        "indice": 105,
+        "inicio": 83.6,
+        "fim": 83.7,
+        "animacao_max_s": 0.23
+      },
+      {
+        "indice": 106,
+        "inicio": 83.7,
+        "fim": 84.6,
+        "animacao_max_s": 0.843333
+      },
+      {
+        "indice": 107,
+        "inicio": 84.6,
+        "fim": 87.85,
+        "animacao_max_s": 1.15
+      },
+      {
+        "indice": 108,
+        "inicio": 87.85,
+        "fim": 88.1,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 109,
+        "inicio": 88.1,
+        "fim": 88.35,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 110,
+        "inicio": 88.35,
+        "fim": 88.95,
+        "animacao_max_s": 0.92
+      },
+      {
+        "indice": 111,
+        "inicio": 88.95,
+        "fim": 89.3,
+        "animacao_max_s": 0.613333
+      },
+      {
+        "indice": 112,
+        "inicio": 89.3,
+        "fim": 89.5,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 113,
+        "inicio": 89.5,
+        "fim": 89.75,
+        "animacao_max_s": 0.46
+      },
+      {
+        "indice": 114,
+        "inicio": 89.75,
+        "fim": 90.1,
+        "animacao_max_s": 0.69
+      },
+      {
+        "indice": 115,
+        "inicio": 90.1,
+        "fim": 90.45,
+        "animacao_max_s": 0.69
+      },
+      {
+        "indice": 116,
+        "inicio": 90.45,
+        "fim": 90.8,
+        "animacao_max_s": 0.69
+      },
+      {
+        "indice": 117,
+        "inicio": 90.8,
+        "fim": 91.15,
+        "animacao_max_s": 0.69
+      },
+      {
+        "indice": 118,
+        "inicio": 91.15,
+        "fim": 91.55,
+        "animacao_max_s": 0.536667
+      },
+      {
+        "indice": 119,
+        "inicio": 91.55,
+        "fim": 99.75,
+        "animacao_max_s": 3.68
+      },
+      {
+        "indice": 120,
+        "inicio": 99.75,
+        "fim": 100,
+        "animacao_max_s": 0.25
+      },
+      {
+        "indice": 121,
+        "inicio": 100,
+        "fim": 100.25,
+        "animacao_max_s": 0.25
+      },
+      {
+        "indice": 122,
+        "inicio": 100.25,
+        "fim": 100.8,
+        "animacao_max_s": 0.55
+      },
+      {
+        "indice": 123,
+        "inicio": 100.8,
+        "fim": 104.95,
+        "animacao_max_s": 4.15
+      },
+      {
+        "indice": 124,
+        "inicio": 104.95,
+        "fim": 105.35,
+        "animacao_max_s": 0.4
+      },
+      {
+        "indice": 125,
+        "inicio": 105.35,
+        "fim": 107.85,
+        "animacao_max_s": 2.5
+      },
+      {
+        "indice": 126,
+        "inicio": 107.85,
+        "fim": 108.15,
+        "animacao_max_s": 0.3
+      },
+      {
+        "indice": 127,
+        "inicio": 108.15,
+        "fim": 108.45,
+        "animacao_max_s": 0.3
+      },
+      {
+        "indice": 128,
+        "inicio": 108.45,
+        "fim": 108.95,
+        "animacao_max_s": 0.5
+      },
+      {
+        "indice": 129,
+        "inicio": 108.95,
+        "fim": 109.3,
+        "animacao_max_s": 0.35
+      },
+      {
+        "indice": 130,
+        "inicio": 109.3,
+        "fim": 111.3,
+        "animacao_max_s": 2
+      }
+    ],
+    "execucao": [
+      {
+        "cue": 0,
+        "play_index": 0,
+        "duracao_animacao": 0.6666666666666666,
+        "duracao_total": 0.6666666666666666
+      },
+      {
+        "cue": 1,
+        "play_index": 1,
+        "duracao_animacao": 0.8,
+        "duracao_total": 0.8
+      },
+      {
+        "cue": 2,
+        "play_index": 2,
+        "duracao_animacao": 1.5333333333333334,
+        "duracao_total": 1.5333333333333334
+      },
+      {
+        "cue": 3,
+        "play_index": 3,
+        "duracao_animacao": 0.13333333333333333,
+        "duracao_total": 0.13333333333333333
+      },
+      {
+        "cue": 4,
+        "play_index": 4,
+        "duracao_animacao": 0.2,
+        "duracao_total": 0.2
+      },
+      {
+        "cue": 5,
+        "play_index": 5,
+        "duracao_animacao": 0.4,
+        "duracao_total": 0.4
+      },
+      {
+        "cue": 6,
+        "play_index": 6,
+        "duracao_animacao": 0.3333333333333333,
+        "duracao_total": 0.3333333333333333
+      },
+      {
+        "cue": 7,
+        "play_index": 7,
+        "duracao_animacao": 0.3333333333333333,
+        "duracao_total": 0.3333333333333333
+      },
+      {
+        "cue": 8,
+        "play_index": 8,
+        "duracao_animacao": 0.5333333333333333,
+        "duracao_total": 0.5333333333333333
+      },
+      {
+        "cue": 9,
+        "play_index": 9,
+        "duracao_animacao": 5.733333333333333,
+        "duracao_total": 5.733333333333333
+      },
+      {
+        "cue": 10,
+        "play_index": 10,
+        "duracao_animacao": 0.6666666666666666,
+        "duracao_total": 0.6666666666666666
+      },
+      {
+        "cue": 11,
+        "play_index": 11,
+        "duracao_animacao": 5.933333333333334,
+        "duracao_total": 5.933333333333334
+      },
+      {
+        "cue": 12,
+        "play_index": 12,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 13,
+        "play_index": 13,
+        "duracao_animacao": 0.3333333333333333,
+        "duracao_total": 0.3333333333333333
+      },
+      {
+        "cue": 14,
+        "play_index": 14,
+        "duracao_animacao": 0.4,
+        "duracao_total": 0.4
+      },
+      {
+        "cue": 15,
+        "play_index": 15,
+        "duracao_animacao": 1.3333333333333333,
+        "duracao_total": 3.6
+      },
+      {
+        "cue": 16,
+        "play_index": 17,
+        "duracao_animacao": 0.6666666666666666,
+        "duracao_total": 0.6666666666666666
+      },
+      {
+        "cue": 17,
+        "play_index": 18,
+        "duracao_animacao": 0.4666666666666667,
+        "duracao_total": 3.8666666666666667
+      },
+      {
+        "cue": 18,
+        "play_index": 20,
+        "duracao_animacao": 1.0,
+        "duracao_total": 1.0
+      },
+      {
+        "cue": 19,
+        "play_index": 21,
+        "duracao_animacao": 1.1333333333333333,
+        "duracao_total": 1.1333333333333333
+      },
+      {
+        "cue": 20,
+        "play_index": 22,
+        "duracao_animacao": 0.5333333333333333,
+        "duracao_total": 0.5333333333333333
+      },
+      {
+        "cue": 21,
+        "play_index": 23,
+        "duracao_animacao": 0.4666666666666667,
+        "duracao_total": 0.4666666666666667
+      },
+      {
+        "cue": 22,
+        "play_index": 24,
+        "duracao_animacao": 0.4,
+        "duracao_total": 0.4
+      },
+      {
+        "cue": 23,
+        "play_index": 25,
+        "duracao_animacao": 1.0666666666666667,
+        "duracao_total": 1.0666666666666667
+      },
+      {
+        "cue": 24,
+        "play_index": 26,
+        "duracao_animacao": 1.0,
+        "duracao_total": 1.0
+      },
+      {
+        "cue": 25,
+        "play_index": 27,
+        "duracao_animacao": 0.3333333333333333,
+        "duracao_total": 0.3333333333333333
+      },
+      {
+        "cue": 26,
+        "play_index": 28,
+        "duracao_animacao": 1.8,
+        "duracao_total": 1.8
+      },
+      {
+        "cue": 27,
+        "play_index": 29,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 28,
+        "play_index": 30,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 29,
+        "play_index": 31,
+        "duracao_animacao": 0.4,
+        "duracao_total": 0.4
+      },
+      {
+        "cue": 30,
+        "play_index": 32,
+        "duracao_animacao": 0.4,
+        "duracao_total": 0.4
+      },
+      {
+        "cue": 31,
+        "play_index": 33,
+        "duracao_animacao": 0.5333333333333333,
+        "duracao_total": 0.5333333333333333
+      },
+      {
+        "cue": 32,
+        "play_index": 34,
+        "duracao_animacao": 0.2,
+        "duracao_total": 0.2
+      },
+      {
+        "cue": 33,
+        "play_index": 35,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 34,
+        "play_index": 36,
+        "duracao_animacao": 0.2,
+        "duracao_total": 0.2
+      },
+      {
+        "cue": 35,
+        "play_index": 37,
+        "duracao_animacao": 0.2,
+        "duracao_total": 0.2
+      },
+      {
+        "cue": 36,
+        "play_index": 38,
+        "duracao_animacao": 0.6,
+        "duracao_total": 0.6
+      },
+      {
+        "cue": 37,
+        "play_index": 39,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 38,
+        "play_index": 40,
+        "duracao_animacao": 0.4666666666666667,
+        "duracao_total": 0.4666666666666667
+      },
+      {
+        "cue": 39,
+        "play_index": 41,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 40,
+        "play_index": 42,
+        "duracao_animacao": 0.6666666666666666,
+        "duracao_total": 0.6666666666666666
+      },
+      {
+        "cue": 41,
+        "play_index": 43,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 42,
+        "play_index": 44,
+        "duracao_animacao": 0.3333333333333333,
+        "duracao_total": 0.3333333333333333
+      },
+      {
+        "cue": 43,
+        "play_index": 45,
+        "duracao_animacao": 5.0,
+        "duracao_total": 5.0
+      },
+      {
+        "cue": 44,
+        "play_index": 46,
+        "duracao_animacao": 0.9333333333333333,
+        "duracao_total": 0.9333333333333333
+      },
+      {
+        "cue": 45,
+        "play_index": 47,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 46,
+        "play_index": 48,
+        "duracao_animacao": 2.4,
+        "duracao_total": 2.4
+      },
+      {
+        "cue": 47,
+        "play_index": 49,
+        "duracao_animacao": 1.0,
+        "duracao_total": 1.0
+      },
+      {
+        "cue": 48,
+        "play_index": 50,
+        "duracao_animacao": 0.8,
+        "duracao_total": 0.8
+      },
+      {
+        "cue": 49,
+        "play_index": 51,
+        "duracao_animacao": 0.6,
+        "duracao_total": 0.6
+      },
+      {
+        "cue": 50,
+        "play_index": 52,
+        "duracao_animacao": 0.4666666666666667,
+        "duracao_total": 0.4666666666666667
+      },
+      {
+        "cue": 51,
+        "play_index": 53,
+        "duracao_animacao": 0.2,
+        "duracao_total": 0.2
+      },
+      {
+        "cue": 52,
+        "play_index": 54,
+        "duracao_animacao": 0.2,
+        "duracao_total": 0.2
+      },
+      {
+        "cue": 53,
+        "play_index": 55,
+        "duracao_animacao": 0.4666666666666667,
+        "duracao_total": 0.4666666666666667
+      },
+      {
+        "cue": 54,
+        "play_index": 56,
+        "duracao_animacao": 0.2,
+        "duracao_total": 0.2
+      },
+      {
+        "cue": 55,
+        "play_index": 57,
+        "duracao_animacao": 0.13333333333333333,
+        "duracao_total": 0.13333333333333333
+      },
+      {
+        "cue": 56,
+        "play_index": 58,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 57,
+        "play_index": 59,
+        "duracao_animacao": 0.3333333333333333,
+        "duracao_total": 0.3333333333333333
+      },
+      {
+        "cue": 58,
+        "play_index": 60,
+        "duracao_animacao": 0.3333333333333333,
+        "duracao_total": 0.3333333333333333
+      },
+      {
+        "cue": 59,
+        "play_index": 61,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 60,
+        "play_index": 62,
+        "duracao_animacao": 0.6666666666666666,
+        "duracao_total": 0.6666666666666666
+      },
+      {
+        "cue": 61,
+        "play_index": 63,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 62,
+        "play_index": 64,
+        "duracao_animacao": 5.333333333333333,
+        "duracao_total": 5.333333333333333
+      },
+      {
+        "cue": 63,
+        "play_index": 65,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 64,
+        "play_index": 66,
+        "duracao_animacao": 0.5333333333333333,
+        "duracao_total": 0.5333333333333333
+      },
+      {
+        "cue": 65,
+        "play_index": 67,
+        "duracao_animacao": 0.3333333333333333,
+        "duracao_total": 0.3333333333333333
+      },
+      {
+        "cue": 66,
+        "play_index": 68,
+        "duracao_animacao": 0.13333333333333333,
+        "duracao_total": 0.13333333333333333
+      },
+      {
+        "cue": 67,
+        "play_index": 69,
+        "duracao_animacao": 0.4666666666666667,
+        "duracao_total": 0.4666666666666667
+      },
+      {
+        "cue": 68,
+        "play_index": 70,
+        "duracao_animacao": 0.4666666666666667,
+        "duracao_total": 0.4666666666666667
+      },
+      {
+        "cue": 69,
+        "play_index": 71,
+        "duracao_animacao": 0.13333333333333333,
+        "duracao_total": 0.13333333333333333
+      },
+      {
+        "cue": 70,
+        "play_index": 72,
+        "duracao_animacao": 1.5333333333333334,
+        "duracao_total": 1.5333333333333334
+      },
+      {
+        "cue": 71,
+        "play_index": 73,
+        "duracao_animacao": 0.2,
+        "duracao_total": 0.2
+      },
+      {
+        "cue": 72,
+        "play_index": 74,
+        "duracao_animacao": 0.3333333333333333,
+        "duracao_total": 0.3333333333333333
+      },
+      {
+        "cue": 73,
+        "play_index": 75,
+        "duracao_animacao": 0.5333333333333333,
+        "duracao_total": 0.5333333333333333
+      },
+      {
+        "cue": 74,
+        "play_index": 76,
+        "duracao_animacao": 0.2,
+        "duracao_total": 0.2
+      },
+      {
+        "cue": 75,
+        "play_index": 77,
+        "duracao_animacao": 0.3333333333333333,
+        "duracao_total": 0.3333333333333333
+      },
+      {
+        "cue": 76,
+        "play_index": 78,
+        "duracao_animacao": 0.13333333333333333,
+        "duracao_total": 0.13333333333333333
+      },
+      {
+        "cue": 77,
+        "play_index": 79,
+        "duracao_animacao": 0.4666666666666667,
+        "duracao_total": 0.4666666666666667
+      },
+      {
+        "cue": 78,
+        "play_index": 80,
+        "duracao_animacao": 0.4,
+        "duracao_total": 0.4
+      },
+      {
+        "cue": 79,
+        "play_index": 81,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 80,
+        "play_index": 82,
+        "duracao_animacao": 0.7333333333333333,
+        "duracao_total": 0.7333333333333333
+      },
+      {
+        "cue": 81,
+        "play_index": 83,
+        "duracao_animacao": 0.13333333333333333,
+        "duracao_total": 0.13333333333333333
+      },
+      {
+        "cue": 82,
+        "play_index": 84,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 83,
+        "play_index": 85,
+        "duracao_animacao": 0.2,
+        "duracao_total": 0.2
+      },
+      {
+        "cue": 84,
+        "play_index": 86,
+        "duracao_animacao": 5.8,
+        "duracao_total": 5.8
+      },
+      {
+        "cue": 85,
+        "play_index": 87,
+        "duracao_animacao": 0.13333333333333333,
+        "duracao_total": 0.13333333333333333
+      },
+      {
+        "cue": 86,
+        "play_index": 88,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 87,
+        "play_index": 89,
+        "duracao_animacao": 0.2,
+        "duracao_total": 0.2
+      },
+      {
+        "cue": 88,
+        "play_index": 90,
+        "duracao_animacao": 0.4,
+        "duracao_total": 0.4
+      },
+      {
+        "cue": 89,
+        "play_index": 91,
+        "duracao_animacao": 0.2,
+        "duracao_total": 0.2
+      },
+      {
+        "cue": 90,
+        "play_index": 92,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 91,
+        "play_index": 93,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 92,
+        "play_index": 94,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 93,
+        "play_index": 95,
+        "duracao_animacao": 0.06666666666666667,
+        "duracao_total": 0.06666666666666667
+      },
+      {
+        "cue": 94,
+        "play_index": 96,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 95,
+        "play_index": 97,
+        "duracao_animacao": 0.06666666666666667,
+        "duracao_total": 0.06666666666666667
+      },
+      {
+        "cue": 96,
+        "play_index": 98,
+        "duracao_animacao": 0.5333333333333333,
+        "duracao_total": 0.5333333333333333
+      },
+      {
+        "cue": 97,
+        "play_index": 99,
+        "duracao_animacao": 3.533333333333333,
+        "duracao_total": 3.533333333333333
+      },
+      {
+        "cue": 98,
+        "play_index": 100,
+        "duracao_animacao": 0.2,
+        "duracao_total": 0.2
+      },
+      {
+        "cue": 99,
+        "play_index": 101,
+        "duracao_animacao": 0.2,
+        "duracao_total": 0.2
+      },
+      {
+        "cue": 100,
+        "play_index": 102,
+        "duracao_animacao": 0.3333333333333333,
+        "duracao_total": 0.3333333333333333
+      },
+      {
+        "cue": 101,
+        "play_index": 103,
+        "duracao_animacao": 0.4,
+        "duracao_total": 0.4
+      },
+      {
+        "cue": 102,
+        "play_index": 104,
+        "duracao_animacao": 0.5333333333333333,
+        "duracao_total": 0.5333333333333333
+      },
+      {
+        "cue": 103,
+        "play_index": 105,
+        "duracao_animacao": 1.5333333333333334,
+        "duracao_total": 1.5333333333333334
+      },
+      {
+        "cue": 104,
+        "play_index": 106,
+        "duracao_animacao": 0.2,
+        "duracao_total": 0.2
+      },
+      {
+        "cue": 105,
+        "play_index": 107,
+        "duracao_animacao": 0.13333333333333333,
+        "duracao_total": 0.13333333333333333
+      },
+      {
+        "cue": 106,
+        "play_index": 108,
+        "duracao_animacao": 0.8666666666666667,
+        "duracao_total": 0.8666666666666667
+      },
+      {
+        "cue": 107,
+        "play_index": 109,
+        "duracao_animacao": 3.2666666666666666,
+        "duracao_total": 3.2666666666666666
+      },
+      {
+        "cue": 108,
+        "play_index": 110,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 109,
+        "play_index": 111,
+        "duracao_animacao": 0.2,
+        "duracao_total": 0.2
+      },
+      {
+        "cue": 110,
+        "play_index": 112,
+        "duracao_animacao": 0.6,
+        "duracao_total": 0.6
+      },
+      {
+        "cue": 111,
+        "play_index": 113,
+        "duracao_animacao": 0.4,
+        "duracao_total": 0.4
+      },
+      {
+        "cue": 112,
+        "play_index": 114,
+        "duracao_animacao": 0.13333333333333333,
+        "duracao_total": 0.13333333333333333
+      },
+      {
+        "cue": 113,
+        "play_index": 115,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 114,
+        "play_index": 116,
+        "duracao_animacao": 0.4,
+        "duracao_total": 0.4
+      },
+      {
+        "cue": 115,
+        "play_index": 117,
+        "duracao_animacao": 0.3333333333333333,
+        "duracao_total": 0.3333333333333333
+      },
+      {
+        "cue": 116,
+        "play_index": 118,
+        "duracao_animacao": 0.3333333333333333,
+        "duracao_total": 0.3333333333333333
+      },
+      {
+        "cue": 117,
+        "play_index": 119,
+        "duracao_animacao": 0.3333333333333333,
+        "duracao_total": 0.3333333333333333
+      },
+      {
+        "cue": 118,
+        "play_index": 120,
+        "duracao_animacao": 0.4,
+        "duracao_total": 0.4
+      },
+      {
+        "cue": 119,
+        "play_index": 121,
+        "duracao_animacao": 8.2,
+        "duracao_total": 8.2
+      },
+      {
+        "cue": 120,
+        "play_index": 122,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 121,
+        "play_index": 123,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 122,
+        "play_index": 124,
+        "duracao_animacao": 0.5333333333333333,
+        "duracao_total": 0.5333333333333333
+      },
+      {
+        "cue": 123,
+        "play_index": 125,
+        "duracao_animacao": 4.133333333333334,
+        "duracao_total": 4.133333333333334
+      },
+      {
+        "cue": 124,
+        "play_index": 126,
+        "duracao_animacao": 0.4,
+        "duracao_total": 0.4
+      },
+      {
+        "cue": 125,
+        "play_index": 127,
+        "duracao_animacao": 2.533333333333333,
+        "duracao_total": 2.533333333333333
+      },
+      {
+        "cue": 126,
+        "play_index": 128,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.26666666666666666
+      },
+      {
+        "cue": 127,
+        "play_index": 129,
+        "duracao_animacao": 0.26666666666666666,
+        "duracao_total": 0.3333333333333333
+      },
+      {
+        "cue": 128,
+        "play_index": 131,
+        "duracao_animacao": 0.4666666666666667,
+        "duracao_total": 0.4666666666666667
+      },
+      {
+        "cue": 129,
+        "play_index": 132,
+        "duracao_animacao": 0.3333333333333333,
+        "duracao_total": 0.4
+      },
+      {
+        "cue": 130,
+        "play_index": 134,
+        "duracao_animacao": 2.0,
+        "duracao_total": 2.0
+      }
+    ]
+  }
+}

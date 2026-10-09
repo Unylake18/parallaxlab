@@ -1,0 +1,315 @@
+{
+  "classe": "BateriaMassaEnergia",
+  "duracao_provisoria_s": 112.04999999999993,
+  "resolucao": [
+    540,
+    960
+  ],
+  "fps": 15.0,
+  "estados": [
+    {
+      "nome": "01_pergunta",
+      "t": 1.8
+    },
+    {
+      "nome": "02_massa_total",
+      "t": 7.917
+    },
+    {
+      "nome": "03_formulacao",
+      "t": 11.117
+    },
+    {
+      "nome": "04_mAh_Ah",
+      "t": 18.067
+    },
+    {
+      "nome": "05_V_Ah",
+      "t": 22.2
+    },
+    {
+      "nome": "06_15_2_Wh",
+      "t": 26.233
+    },
+    {
+      "nome": "06b_conversor_Wh_J",
+      "t": 31.483
+    },
+    {
+      "nome": "07_54_720_J",
+      "t": 34.9
+    },
+    {
+      "nome": "08_relacao_massa_energia",
+      "t": 41.45
+    },
+    {
+      "nome": "09_isolamento",
+      "t": 45.65
+    },
+    {
+      "nome": "10_substituicao",
+      "t": 49.0
+    },
+    {
+      "nome": "11_massa_kg",
+      "t": 52.25
+    },
+    {
+      "nome": "12_0_6_ng",
+      "t": 61.2
+    },
+    {
+      "nome": "13_rehook_1_g",
+      "t": 67.35
+    },
+    {
+      "nome": "14_1_g_kg",
+      "t": 70.25
+    },
+    {
+      "nome": "15_energia_1_g_J",
+      "t": 72.183
+    },
+    {
+      "nome": "16_energia_1_g_Wh",
+      "t": 74.033
+    },
+    {
+      "nome": "17_25_GWh",
+      "t": 77.167
+    },
+    {
+      "nome": "18_bateria_15_2_Wh",
+      "t": 80.417
+    },
+    {
+      "nome": "19a_quatro_baterias",
+      "t": 82.267
+    },
+    {
+      "nome": "19b_dezesseis_baterias",
+      "t": 83.067
+    },
+    {
+      "nome": "20_1_6_bilhao",
+      "t": 84.967
+    },
+    {
+      "nome": "21_hipotese_massa",
+      "t": 89.217
+    },
+    {
+      "nome": "22_100_milhoes_kg",
+      "t": 91.667
+    },
+    {
+      "nome": "23_100_mil_toneladas",
+      "t": 93.367
+    },
+    {
+      "nome": "24_1_superporta_avioes",
+      "t": 97.0
+    },
+    {
+      "nome": "25_1_kg_vezes_1000",
+      "t": 99.975
+    },
+    {
+      "nome": "26_1_6_trilhao",
+      "t": 101.3
+    },
+    {
+      "nome": "27a_dez_navios",
+      "t": 102.975
+    },
+    {
+      "nome": "27b_cem_navios_vezes_dez",
+      "t": 104.075
+    },
+    {
+      "nome": "28_1000_superporta_avioes",
+      "t": 105.4
+    },
+    {
+      "nome": "29_sim_massa_minúscula",
+      "t": 109.2
+    },
+    {
+      "nome": "30_CTA",
+      "t": 111.3
+    }
+  ],
+  "transicoes": [
+    {
+      "nome": "carga_em_quatro_etapas",
+      "t": 3.6,
+      "tipo": "segmentos_e_brilho"
+    },
+    {
+      "nome": "dados_saindo_da_bateria",
+      "t": 14.417,
+      "tipo": "rotulos_extraidos"
+    },
+    {
+      "nome": "mAh_para_Ah",
+      "t": 16.567,
+      "tipo": "TransformMatchingTex"
+    },
+    {
+      "nome": "convergencia_V_e_Ah",
+      "t": 19.417,
+      "tipo": "aproximacao_dos_fatores"
+    },
+    {
+      "nome": "especificacoes_para_produto",
+      "t": 20.2,
+      "tipo": "TransformMatchingTex"
+    },
+    {
+      "nome": "produto_para_15_2_Wh",
+      "t": 23.75,
+      "tipo": "TransformMatchingTex"
+    },
+    {
+      "nome": "Wh_entrada_no_conversor",
+      "t": 29.042,
+      "tipo": "TransformMatchingTex"
+    },
+    {
+      "nome": "conversor_Wh_J",
+      "t": 30.508,
+      "tipo": "origem_conversor_saida"
+    },
+    {
+      "nome": "etiqueta_J_alimenta_delta_E",
+      "t": 37.217,
+      "tipo": "continuidade_da_etiqueta"
+    },
+    {
+      "nome": "c_quadrado_para_denominador",
+      "t": 43.6,
+      "tipo": "TransformByGlyphMap"
+    },
+    {
+      "nome": "substituicao_energia_e_c",
+      "t": 47.2,
+      "tipo": "TransformByGlyphMap"
+    },
+    {
+      "nome": "avaliacao_massa_kg",
+      "t": 50.8,
+      "tipo": "TransformByGlyphMap"
+    },
+    {
+      "nome": "massa_para_regua",
+      "t": 54.45,
+      "tipo": "TransformByGlyphMap"
+    },
+    {
+      "nome": "regua_construida_kg_ate_ng",
+      "t": 56.75,
+      "tipo": "rotulos_nascem_na_chegada"
+    },
+    {
+      "nome": "regua_para_0_6_ng",
+      "t": 58.3,
+      "tipo": "copia_da_unidade_e_fade_numerico"
+    },
+    {
+      "nome": "ng_recua_para_rehook",
+      "t": 64.025,
+      "tipo": "resultado_vira_contexto"
+    },
+    {
+      "nome": "inversao_massa_energia",
+      "t": 66.325,
+      "tipo": "seta_inverte_sentido"
+    },
+    {
+      "nome": "energia_para_um_grama",
+      "t": 71.3,
+      "tipo": "TransformMatchingTex"
+    },
+    {
+      "nome": "energia_de_J_para_Wh",
+      "t": 73.308,
+      "tipo": "TransformMatchingTex"
+    },
+    {
+      "nome": "25_GWh",
+      "t": 75.183,
+      "tipo": "TransformMatchingTex"
+    },
+    {
+      "nome": "contagem_uma_para_quatro",
+      "t": 81.892,
+      "tipo": "multiplicacao_simbolica"
+    },
+    {
+      "nome": "contagem_quatro_para_dezesseis",
+      "t": 82.667,
+      "tipo": "multiplicacao_simbolica"
+    },
+    {
+      "nome": "grade_para_1_6_bilhao",
+      "t": 83.542,
+      "tipo": "grade_amplia_e_payoff"
+    },
+    {
+      "nome": "divisao_para_100_milhoes_kg",
+      "t": 90.667,
+      "tipo": "resultado_arredondado"
+    },
+    {
+      "nome": "kg_para_toneladas",
+      "t": 92.642,
+      "tipo": "conversao_da_unidade"
+    },
+    {
+      "nome": "baterias_recuam_navio_entra",
+      "t": 95.017,
+      "tipo": "troca_da_representacao"
+    },
+    {
+      "nome": "bilhao_para_trilhao",
+      "t": 100.525,
+      "tipo": "escala_linear_vezes_1000"
+    },
+    {
+      "nome": "navio_para_dez",
+      "t": 102.575,
+      "tipo": "fileira_representativa"
+    },
+    {
+      "nome": "dez_para_cem_navios",
+      "t": 103.375,
+      "tipo": "grade_representativa"
+    },
+    {
+      "nome": "frota_colapsa_para_bateria",
+      "t": 107.375,
+      "tipo": "retorno_ao_exemplo"
+    }
+  ],
+  "blocos": [
+    {
+      "nome": "caso_1_g",
+      "inicio": 63.2,
+      "fim": 98.0,
+      "duracao": 34.8
+    },
+    {
+      "nome": "escalada_1_kg",
+      "inicio": 98.0,
+      "fim": 106.15,
+      "duracao": 8.15
+    },
+    {
+      "nome": "conclusao_CTA",
+      "inicio": 106.15,
+      "fim": 112.05,
+      "duracao": 5.9
+    }
+  ]
+}

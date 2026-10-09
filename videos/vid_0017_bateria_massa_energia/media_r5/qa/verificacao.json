@@ -1,0 +1,122 @@
+{
+  "resolucao": [
+    540,
+    960
+  ],
+  "fps_nominal": "15",
+  "duracao_s": 108.597721,
+  "audio": 0,
+  "bytes": 2939628,
+  "estados": 27,
+  "frames": 1629,
+  "estados_iniciais_identicos_r4": [
+    "01_pergunta",
+    "02_massa_total",
+    "03_formulacao",
+    "04_mAh_Ah",
+    "05_V_Ah",
+    "06_15_2_Wh",
+    "06b_conversor_Wh_J",
+    "07_54_720_J",
+    "08_relacao_massa_energia",
+    "09_isolamento",
+    "10_substituicao",
+    "11_massa_kg",
+    "12_0_6_ng"
+  ],
+  "estados_tempo_MP4": {
+    "01_pergunta": 1.8,
+    "02_massa_total": 7.9,
+    "03_formulacao": 11.1,
+    "04_mAh_Ah": 18.067,
+    "05_V_Ah": 22.2,
+    "06_15_2_Wh": 26.233,
+    "06b_conversor_Wh_J": 31.467,
+    "07_54_720_J": 34.9,
+    "08_relacao_massa_energia": 41.5,
+    "09_isolamento": 45.733,
+    "10_substituicao": 49.1,
+    "11_massa_kg": 52.367,
+    "12_0_6_ng": 61.6,
+    "13_rehook_1_g": 67.8,
+    "14_1_g_kg": 70.767,
+    "15_energia_1_g_J": 72.733,
+    "17_25_GWh": 76.367,
+    "18_bateria_15_2_Wh": 79.7,
+    "19a_quatro_baterias": 81.633,
+    "19b_dezesseis_baterias": 82.433,
+    "20_1_6_bilhao": 84.633,
+    "21_hipotese_massa": 89.133,
+    "22_100_milhoes_kg": 91.3,
+    "23_skyline_SP_0_h": 94.3,
+    "24_8_horas_SP": 99.4,
+    "25_retorno_0_6_ng": 104.6,
+    "26_CTA": 107.8
+  },
+  "blocos_tempo_MP4": [
+    {
+      "nome": "caso_1_g",
+      "inicio": 63.6,
+      "fim": 91.8,
+      "duracao": 28.2
+    },
+    {
+      "nome": "comparacao_SP",
+      "inicio": 91.8,
+      "fim": 101.0,
+      "duracao": 9.2
+    },
+    {
+      "nome": "conclusao_CTA",
+      "inicio": 101.0,
+      "fim": 108.6,
+      "duracao": 7.6
+    }
+  ],
+  "transicoes_inspecionadas": [
+    "ng_recua_para_rehook",
+    "25_GWh",
+    "contagem_uma_para_quatro",
+    "contagem_quatro_para_dezesseis",
+    "grade_para_1_6_bilhao",
+    "divisao_para_100_milhoes_kg",
+    "25_GWh_para_cidade",
+    "SP_2_h",
+    "SP_4_h",
+    "SP_6_h",
+    "SP_8_h",
+    "cidade_recua_bateria_original"
+  ],
+  "quadros_de_movimento": 48,
+  "numeros_verificados": {
+    "bateria_Wh": 15.2,
+    "bateria_J": 54720.0,
+    "bateria_delta_kg": 6.0884211067254e-13,
+    "bateria_delta_ng": 0.60884211067254,
+    "1g_J": 89875517873681.77,
+    "1g_Wh": 24965421631.57827,
+    "1g_GWh": 24.96542163157827,
+    "baterias": 1642461949.4459388,
+    "massa_sistema_kg": 99861686.52631308,
+    "SP_media_GWh_h": 3.0719178082191783,
+    "SP_equivalencia_h": 8.126982292553906
+  },
+  "fonte_SP": {
+    "instituicao": "SEMIL — Secretaria de Meio Ambiente, Infraestrutura e Logística",
+    "titulo": "Anuário de Energéticos por Município 2024 — ano-base 2023",
+    "pagina": 8,
+    "municipio": "São Paulo",
+    "consumo_TWh_2023": 26.91,
+    "url": "https://smastr16.blob.core.windows.net/home/2025/04/Anuario-de-Energeticos-por-Municipios-do-Estado-de-Sao-Paulo-2024-ano-base-2023.pdf"
+  },
+  "duracao_anterior_s": 113.130729,
+  "timestamps_entrega_s": {
+    "novo_bloco_1_g": 63.6,
+    "1_6_bilhao_inicio_entrada": 82.98333333333333,
+    "1_6_bilhao_estabilizado": 83.33333333333333,
+    "8_horas_inicio_entrada": 97.60333333333332,
+    "8_horas_estabilizado": 97.8,
+    "CTA_inicio_entrada": 106.6,
+    "CTA_estabilizado": 107.0
+  }
+}

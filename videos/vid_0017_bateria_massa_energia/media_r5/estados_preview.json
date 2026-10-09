@@ -1,0 +1,530 @@
+{
+  "classe": "BateriaMassaEnergia",
+  "duracao_provisoria_s": 107.66666666666725,
+  "resolucao": [
+    540,
+    960
+  ],
+  "fps": 15.0,
+  "estados": [
+    {
+      "nome": "01_pergunta",
+      "t": 1.8,
+      "play_index": 1
+    },
+    {
+      "nome": "02_massa_total",
+      "t": 7.917,
+      "play_index": 9
+    },
+    {
+      "nome": "03_formulacao",
+      "t": 11.117,
+      "play_index": 11
+    },
+    {
+      "nome": "04_mAh_Ah",
+      "t": 18.067,
+      "play_index": 19
+    },
+    {
+      "nome": "05_V_Ah",
+      "t": 22.2,
+      "play_index": 23
+    },
+    {
+      "nome": "06_15_2_Wh",
+      "t": 26.233,
+      "play_index": 26
+    },
+    {
+      "nome": "06b_conversor_Wh_J",
+      "t": 31.483,
+      "play_index": 32
+    },
+    {
+      "nome": "07_54_720_J",
+      "t": 34.9,
+      "play_index": 36
+    },
+    {
+      "nome": "08_relacao_massa_energia",
+      "t": 41.5,
+      "play_index": 43
+    },
+    {
+      "nome": "09_isolamento",
+      "t": 45.733,
+      "play_index": 46
+    },
+    {
+      "nome": "10_substituicao",
+      "t": 49.117,
+      "play_index": 48
+    },
+    {
+      "nome": "11_massa_kg",
+      "t": 52.367,
+      "play_index": 50
+    },
+    {
+      "nome": "12_0_6_ng",
+      "t": 61.6,
+      "play_index": 62
+    },
+    {
+      "nome": "13_rehook_1_g",
+      "t": 67.75,
+      "play_index": 70
+    },
+    {
+      "nome": "14_1_g_kg",
+      "t": 70.65,
+      "play_index": 75
+    },
+    {
+      "nome": "15_energia_1_g_J",
+      "t": 72.583,
+      "play_index": 78
+    },
+    {
+      "nome": "17_25_GWh",
+      "t": 76.167,
+      "play_index": 84
+    },
+    {
+      "nome": "18_bateria_15_2_Wh",
+      "t": 79.417,
+      "play_index": 89
+    },
+    {
+      "nome": "19a_quatro_baterias",
+      "t": 81.267,
+      "play_index": 93
+    },
+    {
+      "nome": "19b_dezesseis_baterias",
+      "t": 82.067,
+      "play_index": 95
+    },
+    {
+      "nome": "20_1_6_bilhao",
+      "t": 84.217,
+      "play_index": 97
+    },
+    {
+      "nome": "21_hipotese_massa",
+      "t": 88.567,
+      "play_index": 103
+    },
+    {
+      "nome": "22_100_milhoes_kg",
+      "t": 90.717,
+      "play_index": 107
+    },
+    {
+      "nome": "23_skyline_SP_0_h",
+      "t": 93.617,
+      "play_index": 112
+    },
+    {
+      "nome": "24_8_horas_SP",
+      "t": 98.667,
+      "play_index": 119
+    },
+    {
+      "nome": "25_retorno_0_6_ng",
+      "t": 103.767,
+      "play_index": 125
+    },
+    {
+      "nome": "26_CTA",
+      "t": 106.867,
+      "play_index": 129
+    }
+  ],
+  "transicoes": [
+    {
+      "nome": "carga_em_quatro_etapas",
+      "t": 3.6,
+      "tipo": "segmentos_e_brilho",
+      "play_index": 2,
+      "duration": 1.6
+    },
+    {
+      "nome": "dados_saindo_da_bateria",
+      "t": 14.417,
+      "tipo": "rotulos_extraidos",
+      "play_index": 15,
+      "duration": 1.1
+    },
+    {
+      "nome": "mAh_para_Ah",
+      "t": 16.567,
+      "tipo": "TransformMatchingTex",
+      "play_index": 18,
+      "duration": 1
+    },
+    {
+      "nome": "convergencia_V_e_Ah",
+      "t": 19.417,
+      "tipo": "aproximacao_dos_fatores",
+      "play_index": 20,
+      "duration": 0.7
+    },
+    {
+      "nome": "especificacoes_para_produto",
+      "t": 20.2,
+      "tipo": "TransformMatchingTex",
+      "play_index": 21,
+      "duration": 0.8
+    },
+    {
+      "nome": "produto_para_15_2_Wh",
+      "t": 23.75,
+      "tipo": "TransformMatchingTex",
+      "play_index": 24,
+      "duration": 1.1
+    },
+    {
+      "nome": "Wh_entrada_no_conversor",
+      "t": 29.042,
+      "tipo": "TransformMatchingTex",
+      "play_index": 29,
+      "duration": 0.75
+    },
+    {
+      "nome": "conversor_Wh_J",
+      "t": 30.508,
+      "tipo": "origem_conversor_saida",
+      "play_index": 31,
+      "duration": 0.75
+    },
+    {
+      "nome": "etiqueta_J_alimenta_delta_E",
+      "t": 37.217,
+      "tipo": "continuidade_da_etiqueta",
+      "play_index": 38,
+      "duration": 0.7
+    },
+    {
+      "nome": "c_quadrado_para_denominador",
+      "t": 43.65,
+      "tipo": "TransformByGlyphMap",
+      "play_index": 44,
+      "duration": 1.3
+    },
+    {
+      "nome": "substituicao_energia_e_c",
+      "t": 47.283,
+      "tipo": "TransformByGlyphMap",
+      "play_index": 47,
+      "duration": 1.1
+    },
+    {
+      "nome": "avaliacao_massa_kg",
+      "t": 50.883,
+      "tipo": "TransformByGlyphMap",
+      "play_index": 49,
+      "duration": 1.1
+    },
+    {
+      "nome": "massa_para_regua",
+      "t": 54.6,
+      "tipo": "TransformByGlyphMap",
+      "play_index": 53,
+      "duration": 0.8
+    },
+    {
+      "nome": "regua_construida_kg_ate_ng",
+      "t": 56.9,
+      "tipo": "rotulos_nascem_na_chegada",
+      "play_index": 56,
+      "duration": 2.2
+    },
+    {
+      "nome": "regua_para_0_6_ng",
+      "t": 58.65,
+      "tipo": "copia_da_unidade_e_fade_numerico",
+      "play_index": 60,
+      "duration": 0.9
+    },
+    {
+      "nome": "ng_recua_para_rehook",
+      "t": 64.425,
+      "tipo": "resultado_vira_contexto",
+      "play_index": 64,
+      "duration": 0.75
+    },
+    {
+      "nome": "inversao_massa_energia",
+      "t": 66.725,
+      "tipo": "seta_inverte_sentido",
+      "play_index": 68,
+      "duration": 0.85
+    },
+    {
+      "nome": "energia_para_um_grama",
+      "t": 71.7,
+      "tipo": "TransformMatchingTex",
+      "play_index": 77,
+      "duration": 0.9
+    },
+    {
+      "nome": "25_GWh",
+      "t": 73.783,
+      "tipo": "TransformMatchingTex",
+      "play_index": 80,
+      "duration": 0.9
+    },
+    {
+      "nome": "contagem_uma_para_quatro",
+      "t": 80.892,
+      "tipo": "multiplicacao_simbolica",
+      "play_index": 92,
+      "duration": 0.55
+    },
+    {
+      "nome": "contagem_quatro_para_dezesseis",
+      "t": 81.667,
+      "tipo": "multiplicacao_simbolica",
+      "play_index": 94,
+      "duration": 0.6
+    },
+    {
+      "nome": "grade_para_1_6_bilhao",
+      "t": 82.542,
+      "tipo": "grade_amplia_e_payoff",
+      "play_index": 96,
+      "duration": 0.75
+    },
+    {
+      "nome": "divisao_para_100_milhoes_kg",
+      "t": 89.867,
+      "tipo": "resultado_arredondado",
+      "play_index": 106,
+      "duration": 0.7
+    },
+    {
+      "nome": "25_GWh_para_cidade",
+      "t": 92.492,
+      "tipo": "energia_como_origem_da_comparacao",
+      "play_index": 110,
+      "duration": 0.75
+    },
+    {
+      "nome": "SP_2_h",
+      "t": 94.517,
+      "tipo": "TransformMatchingTex",
+      "play_index": 114,
+      "duration": 0.6
+    },
+    {
+      "nome": "SP_4_h",
+      "t": 95.117,
+      "tipo": "TransformMatchingTex",
+      "play_index": 115,
+      "duration": 0.6
+    },
+    {
+      "nome": "SP_6_h",
+      "t": 95.717,
+      "tipo": "TransformMatchingTex",
+      "play_index": 116,
+      "duration": 0.6
+    },
+    {
+      "nome": "SP_8_h",
+      "t": 96.317,
+      "tipo": "TransformMatchingTex",
+      "play_index": 117,
+      "duration": 0.6
+    },
+    {
+      "nome": "cidade_recua_bateria_original",
+      "t": 101.492,
+      "tipo": "retorno_ao_exemplo",
+      "play_index": 122,
+      "duration": 0.65
+    }
+  ],
+  "blocos": [
+    {
+      "nome": "caso_1_g",
+      "inicio": 63.6,
+      "fim": 91.217,
+      "duracao": 27.617,
+      "play_start": 63,
+      "play_end": 108
+    },
+    {
+      "nome": "comparacao_SP",
+      "inicio": 91.217,
+      "fim": 100.267,
+      "duracao": 9.05,
+      "play_start": 108,
+      "play_end": 120
+    },
+    {
+      "nome": "conclusao_CTA",
+      "inicio": 100.267,
+      "fim": 107.667,
+      "duracao": 7.4,
+      "play_start": 120,
+      "play_end": 130
+    }
+  ],
+  "numeros_verificados": {
+    "bateria_Wh": 15.2,
+    "bateria_J": 54720.0,
+    "bateria_delta_kg": 6.0884211067254e-13,
+    "bateria_delta_ng": 0.60884211067254,
+    "1g_J": 89875517873681.77,
+    "1g_Wh": 24965421631.57827,
+    "1g_GWh": 24.96542163157827,
+    "baterias": 1642461949.4459388,
+    "massa_sistema_kg": 99861686.52631308,
+    "SP_media_GWh_h": 3.0719178082191783,
+    "SP_equivalencia_h": 8.126982292553906
+  },
+  "fonte_SP": {
+    "instituicao": "SEMIL — Secretaria de Meio Ambiente, Infraestrutura e Logística",
+    "titulo": "Anuário de Energéticos por Município 2024 — ano-base 2023",
+    "pagina": 8,
+    "municipio": "São Paulo",
+    "consumo_TWh_2023": 26.91,
+    "url": "https://smastr16.blob.core.windows.net/home/2025/04/Anuario-de-Energeticos-por-Municipios-do-Estado-de-Sao-Paulo-2024-ano-base-2023.pdf"
+  },
+  "partial_files": [
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\81802292_4181642320_3960346600.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2645707024_1656546226.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2949155350_1014963485.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1202503558_2624706439.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1547677069_889439152.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3197081273_2416198115.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_630996293_1599756975.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_4235033027_3436111481.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2674285749_1711227611.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3873173991_1531799779.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3567676767_1335866130.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3873173991_413011848.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1300358634_1030931359.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3175706064_3960346600.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2034501110_168294122.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1819256882_3042367000.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1029339425_2518980242.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3180933672_2506105597.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_4235746148_3370512611.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2645707024_1451792139.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3608246173_2728932904.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1139923649_2696767777.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1557192340_4241886426.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2645707024_2819312499.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_590411646_844128123.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3614144540_2299395133.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_4176908490_209069456.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_501344757_606823493.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_843728564_2943339323.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1736032725_4087195121.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1801305750_3091996391.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1948524085_3570008658.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_402916648_2120607367.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3832314237_171742152.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3547900841_1418563395.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3830912281_3129518907.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_4176908490_3749230147.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_690352871_1735727747.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1920165955_1288378782.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_917019573_1753900152.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1799214269_4064200274.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2962741905_1766961363.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3836106521_2532389479.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_4176908490_405901091.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1411101982_84300798.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3813371588_3238951046.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2645707024_1146682249.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3580538520_706882167.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3873173991_1904434987.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1696673633_4107429588.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3580093213_3750547849.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2692644448_3484462345.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2901649248_1132890579.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3145892224_1850681215.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_15999317_2242040008.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_4235033027_2797991390.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_4105570685_2969307689.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3963684503_3587348340.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3908485906_3555165965.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3047000808_3276975543.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2881008072_2413000532.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1075577096_364012906.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_425302925_1592624452.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3993719525_2901268267.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3548510925_3408438370.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1733525960_2076541953.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3114361405_2379530126.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_4142248920_3587033829.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_832688951_1949016595.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2167188422_1949016595.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_4163062370_2260855384.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2681201427_1457430231.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3229600787_4037533058.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2870747986_1259836639.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3812245916_448653083.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_125152860_3441526290.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3495502996_4242618139.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2541252028_737738882.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_941615173_3476468667.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_46812697_1577828813.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2553401227_3268799015.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1543324758_2462393402.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3971639601_1829627633.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2984259111_146156997.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3810316983_3184407482.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_509417636_877624649.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_919998276_1213162317.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1146334250_1789927739.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_35698257_2227230460.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3509440700_3866528924.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1360139051_2817797989.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1651927691_1382391965.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3456486202_2402744366.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_358564154_2610572774.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3604821187_674580039.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_358564154_596058121.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1342669054_1782626737.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_117227181_3269255869.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3465125594_3172780587.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3609339660_4124975507.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3616908235_3718786802.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1236194034_326096805.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1098183144_2933616487.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_941615173_1532872272.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2514586443_2403888512.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3114361405_3601617424.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1836424772_1639619031.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_4046863825_3326552600.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1192954532_2050527117.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_18391090_3960346600.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2730775965_618166588.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_729098719_1420571253.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3880968470_2780333698.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_723207508_902660019.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3456051597_3219062132.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1174893659_2921524499.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_4138987125_1312874901.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_4285271926_423649619.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1312839790_618413686.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_4188691091_3632034899.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_968255504_3952412487.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3598638763_1313089814.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2151035400_834170116.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3440069579_1854410125.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_1953166366_3614394427.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_499328632_445860522.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3257855244_565108586.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_125152860_1958069946.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_2738256670_3393585139.mp4",
+    "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\media_r5\\videos\\cena\\960p15\\partial_movie_files\\BateriaMassaEnergia\\2130283231_3926500612_2908222931.mp4"
+  ]
+}

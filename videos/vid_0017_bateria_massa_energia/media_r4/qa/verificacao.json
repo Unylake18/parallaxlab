@@ -1,0 +1,80 @@
+{
+  "resolucao": [
+    540,
+    960
+  ],
+  "fps_nominal": "15",
+  "duracao_s": 113.130729,
+  "audio": 0,
+  "bytes": 3118261,
+  "estados": 33,
+  "transicoes_amostradas": 12,
+  "blocos": [
+    {
+      "nome": "caso_1_g",
+      "inicio": 63.6,
+      "fim": 98.933,
+      "duracao": 35.333
+    },
+    {
+      "nome": "escalada_1_kg",
+      "inicio": 98.933,
+      "fim": 107.133,
+      "duracao": 8.2
+    },
+    {
+      "nome": "conclusao_CTA",
+      "inicio": 107.133,
+      "fim": 113.133,
+      "duracao": 6.0
+    }
+  ],
+  "frames": 1697,
+  "tempos_metadata_cache_aproximados": [
+    {
+      "nome": "caso_1_g",
+      "inicio": 63.2,
+      "fim": 98.0,
+      "duracao": 34.8
+    },
+    {
+      "nome": "escalada_1_kg",
+      "inicio": 98.0,
+      "fim": 106.15,
+      "duracao": 8.15
+    },
+    {
+      "nome": "conclusao_CTA",
+      "inicio": 106.15,
+      "fim": 112.05,
+      "duracao": 5.9
+    }
+  ],
+  "quadros_de_movimento": 56,
+  "estados_iniciais_identicos_r3": [
+    "01_pergunta",
+    "02_massa_total",
+    "03_formulacao",
+    "04_mAh_Ah",
+    "05_V_Ah",
+    "06_15_2_Wh",
+    "06b_conversor_Wh_J",
+    "07_54_720_J",
+    "08_relacao_massa_energia",
+    "09_isolamento",
+    "10_substituicao",
+    "11_massa_kg",
+    "12_0_6_ng"
+  ],
+  "QA_numerico": {
+    "bateria_Wh": 15.2,
+    "bateria_J": 54720.0,
+    "bateria_ng": 0.60884211067254,
+    "1g_J": 89875517873681.77,
+    "1g_GWh": 24.96542163157827,
+    "1g_baterias": 1642461949.4459388,
+    "1g_kg": 99861686.52631308,
+    "1kg_baterias": 1642461949445.9387,
+    "1kg_kg": 99861686526.31308
+  }
+}

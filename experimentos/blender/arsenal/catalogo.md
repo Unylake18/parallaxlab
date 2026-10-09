@@ -4580,6 +4580,7 @@ Tanque com líquido até `nivel` e um furo a `altura_furo` do fundo: o jato sai 
 | `faixa_max` | 0.9 | frac | maior altura do furo na varredura, em fração do nível |
 | `estilo_jato` | 0 | 0-2 | 0 = original (26 contas contínuas); 1 = contas espaçadas que nascem no furo, afinam e somem no impacto; 2 = estilo 1 com rastro de duas contas menores e um pulso (anel) no ponto de impacto |
 | `contas_jato` | 12 | n | número de contas do jato nos estilos 1 e 2 (espaçadas além do diâmetro) |
+| `voltas_jato` | 1 | n | estilos 1 e 2: voltas das contas pela trajetória por ciclo de fase (inteiro ≥ 1); use valores altos com varrer_furo para as contas fluírem em ritmo natural durante uma varredura longa |
 | `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
 | `fase` | 0.0 | 0-1 | fase da animação |
 

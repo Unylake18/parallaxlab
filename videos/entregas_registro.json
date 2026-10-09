@@ -1,0 +1,21 @@
+{
+  "_leia_me": "Série, episódio e assunto de cada unidade, para nomear as pastas de entregas/. Unidades novas dispensam entrada aqui se a ficha.md tiver 'Série pública: NOME · EP. N' e um título '# Assunto'. 'inferido': true = série/episódio deduzidos (confirmar). 'master'/'legendado'/'capa' (caminhos relativos à raiz do repositório) fixam o arquivo quando houver mais de uma versão.",
+  "vid_0001_integracao_por_partes": {"serie": "EXERCÍCIO RESOLVIDO", "ep": 1, "assunto": "Integração por partes"},
+  "vid_0002_integral_substituicao": {"serie": "EXERCÍCIO RESOLVIDO", "ep": 2, "assunto": "Integral por substituição"},
+  "vid_0003_origem_integracao_por_partes": {"serie": "POR TRÁS DA FÓRMULA", "ep": 1, "assunto": "A origem da integração por partes"},
+  "vid_0004_velocidade_instantanea": {"serie": "DA EQUAÇÃO AO FENÔMENO", "ep": 1, "assunto": "Velocidade instantânea"},
+  "vid_0005_aceleracao_centripeta": {"serie": "POR TRÁS DA FÓRMULA", "ep": 2, "assunto": "Aceleração centrípeta"},
+  "vid_0006_cancelamento_ruido": {"serie": "DA EQUAÇÃO AO FENÔMENO", "ep": 2, "assunto": "Cancelamento de ruído"},
+  "vid_0007_campo_anel_carregado": {"serie": "EXERCÍCIO RESOLVIDO", "ep": 3, "assunto": "Campo de um anel carregado"},
+  "vid_0008_campo_espira": {"serie": "POR TRÁS DA FÓRMULA", "ep": 3, "assunto": "Campo de uma espira"},
+  "vid_0009_campo_solenoide": {"serie": "DA EQUAÇÃO AO FENÔMENO", "ep": 3, "assunto": "Campo de um solenoide"},
+  "vid_0010_looping_esfera": {"serie": "EXERCÍCIO RESOLVIDO", "ep": 4, "assunto": "Looping da esfera"},
+  "vid_0011_adiabatica_pv_gama": {"serie": "POR TRÁS DA FÓRMULA", "ep": 4, "assunto": "Adiabática, a origem de PV elevado a gama"},
+  "vid_0012_campo_esfera_nao_uniforme": {"serie": "EXERCÍCIO RESOLVIDO", "ep": 5, "assunto": "Campo de uma esfera não uniforme"},
+  "vid_0013_potencial_poco_duplo": {"serie": "DA EQUAÇÃO AO FENÔMENO", "ep": 4, "assunto": "Potencial de poço duplo"},
+  "vid_0014_momento_inercia_eixos_paralelos": {"serie": "POR TRÁS DA FÓRMULA", "ep": 5, "assunto": "Momento de inércia e eixos paralelos"},
+  "vid_0015_linhas_carga_movimento": {"serie": "EXERCÍCIO RESOLVIDO", "ep": 6, "assunto": "Linhas de carga em movimento"},
+  "vid_0016_torricelli_alcance": {"serie": "DA EQUAÇÃO AO FENÔMENO", "ep": 5, "assunto": "Torricelli, onde furar para o jato ir mais longe"},
+  "vid_0017_bateria_massa_energia": {"serie": "ABSURDO CALCULÁVEL", "ep": 1, "assunto": "Uma bateria carregada pesa mais",
+                                      "legendado": "videos/vid_0017_bateria_massa_energia/renders/vid_0017_bateria_massa_energia_legendado_sem_perdas_v2.mp4"}
+}

@@ -18,6 +18,7 @@ marcos de tempo escritos em um bloco; os demais blocos usam tempos absolutos.
 Cores: ciano = I_CM / x² / eixo; violeta = Md² / d; magenta = termo cruzado; azul = barra; branco = texto.
 """
 
+import json
 import os
 import sys
 from contextlib import contextmanager
@@ -40,6 +41,8 @@ from template.fonts import screen_text
 ICON_PATH = Path(__file__).resolve().parents[2] / "assets" / "branding" / "master" / "parallax_lab_icon_transparent.png"
 
 ATE = int(os.environ.get("ATE", "99"))
+PASTA = Path(__file__).resolve().parent
+CAL = os.environ.get("SYNC_CAL") == "1"        # calibragem: mede o tempo NATIVO de cada âncora
 
 # ── Paleta ──────────────────────────────────────────────────────────────────
 WHITE = TEXT_COLOR
@@ -58,23 +61,34 @@ KV = 0.8                           # comprimento da seta de velocidade = KV · �
 S1, S3 = 0.85, 2.55                # elementos r, 3r (o de 2r é o dm móvel, s = sdm)
 ELEM_COL = {1: CYAN, 2: VIOLET, 3: MAGENTA}
 
+# Cores dos termos na legenda queimada (montar_legendado.py --color-module); mesmos significados da cena
+SUBTITLE_TERM_COLORS = {
+    "momento de inércia": CYAN, "raio": CYAN, "centro de massa": CYAN, "Teorema dos Eixos Paralelos": CYAN,
+    "ciano": CYAN, "velocidade angular": BLUE, "velocidade": BLUE,
+    "distância entre os eixos": VIOLET, "violetas": VIOLET, "termo do meio": MAGENTA,
+}
+
 # ── Giro: rampa, velocidade constante, desaceleração até parar na horizontal ─
-RAMP, TA, TD = 1.5, 47.0, 3.5
-OM = 2 * PI * 6 / (0.5 * RAMP + (TA - RAMP) + 0.5 * TD)    # th final = 6 voltas exatas
-TH_F = 2 * PI * 6
+# TA (fim da fase constante) vem da sincronia: a barra para na horizontal pouco antes de "Na barra uniforme".
+RAMP, TD, TA_DEF = 1.5, 3.5, 47.0
+TH_F = 2 * PI * 6                                             # 6 voltas exatas
 
 
-def spin_state(t):
+def spin_omega(ta):
+    return 2 * PI * 6 / (0.5 * RAMP + (ta - RAMP) + 0.5 * TD)
+
+
+def spin_state(t, ta, om):
     """(theta, omega) em função do tempo desde o início do giro."""
     if t <= 0:
         return 0.0, 0.0
     if t < RAMP:
-        return OM * t * t / (2 * RAMP), OM * t / RAMP
-    if t < TA:
-        return OM * (0.5 * RAMP + t - RAMP), OM
-    if t < TA + TD:
-        u = t - TA
-        return OM * (0.5 * RAMP + TA - RAMP) + OM * (u - u * u / (2 * TD)), OM * (1 - u / TD)
+        return om * t * t / (2 * RAMP), om * t / RAMP
+    if t < ta:
+        return om * (0.5 * RAMP + t - RAMP), om
+    if t < ta + TD:
+        u = t - ta
+        return om * (0.5 * RAMP + ta - RAMP) + om * (u - u * u / (2 * TD)), om * (1 - u / TD)
     return TH_F, 0.0
 
 
@@ -179,18 +193,73 @@ def CG(src, gb, **kw):
 
 class MomentoInercia014(Scene):
     # ── utilidades de tempo e geometria ─────────────────────────────────────
-    def seg(self, o0, o1, n0, n1):
-        """Mapa linear de tempo do bloco: marcos escritos em [o0, o1] valem [n0, n1] (identidade: seg(0, 1, 0, 1))."""
-        self._map = (o0, o1, n0, n1)
+    def seg(self, *a):
+        """Legado do preview silencioso (marcos absolutos); a sincronia agora é por âncoras."""
 
     def until(self, t):
-        o0, o1, n0, n1 = getattr(self, "_map", (0, 1, 0, 1))
-        t = n0 + (t - o0) * (n1 - n0) / (o1 - o0)
-        gap = t - self.time
-        if gap > 0.02:
-            self.wait(gap)
-        elif gap < -0.4:
-            print(f"ATRASO {-gap:.2f}s antes de t={t}")
+        """Legado: sem efeito. O tempo é conduzido por ancora() e pelas esperas explícitas."""
+
+    # Sincronia com a narração: self.ancora("x") casa um ponto do código com um instante da fala (sync.json).
+    # Entre âncoras, play/wait são escalados para o trecho durar o que a fala dura; native.json guarda o tempo
+    # nominal de cada âncora (SYNC_CAL=1 regenera). Sem sync.json/native.json a cena roda em tempo nominal.
+    def sync_init(self):
+        self.tscale, self.ntime, self.nativos = 1.0, 0.0, {}
+        arq = PASTA / "sync.json"
+        dados = json.load(open(arq)) if arq.exists() else {}
+        self.anc = dados.get("anchors", [])
+        nat = PASTA / "native.json"
+        self.nat = json.load(open(nat)) if nat.exists() and not CAL else {}
+
+    def _quadro(self, t):
+        fps = config.frame_rate
+        return max(1, round(t * fps)) / fps
+
+    def play(self, *args, **kwargs):
+        if args and not getattr(self, "_cru", False):
+            anims = self.compile_animations(*args, **kwargs)
+            self.ntime += max(a.run_time for a in anims)
+            if abs(self.tscale - 1.0) > 1e-6:
+                for a in anims:
+                    a.run_time = self._quadro(a.run_time * self.tscale)
+            return super().play(*anims)
+        return super().play(*args, **kwargs)
+
+    def esperar_cru(self, duracao):
+        """Espera SEM escala: Scene.wait chama self.play, que escalaria de novo."""
+        self._cru = True
+        try:
+            Scene.wait(self, duracao)
+        finally:
+            self._cru = False
+
+    def wait(self, duration=1.0, *a, **k):
+        self.ntime += duration
+        self.esperar_cru(self._quadro(duration * self.tscale))
+
+    def ancora(self, nome):
+        agora = self.time
+        if CAL:
+            self.nativos[nome] = round(agora, 3)
+            if nome == "fim":
+                json.dump(self.nativos, open(PASTA / "native.json", "w"), indent=1)
+            return
+        nomes = [n for n, _ in self.anc]
+        if not self.anc or nome not in self.nat or nome not in nomes:
+            return
+        i = nomes.index(nome)
+        t_a = self.anc[i][1]
+        if agora < t_a:
+            self.esperar_cru(t_a - agora)
+            agora = t_a
+        elif agora - t_a > 0.25:
+            print("SYNC atraso %.2f s em %s" % (agora - t_a, nome))
+        self.ntime = self.nat[nome]
+        if i + 1 < len(self.anc):
+            prox, t_prox = self.anc[i + 1]
+            gap_nat = max(0.2, self.nat[prox] - self.nat[nome])
+            self.tscale = float(np.clip((t_prox - agora) / gap_nat * 0.985, 0.45, 2.0))
+        else:
+            self.tscale = 1.0
 
     def A(self):
         return C + RIGHT * self.axx.get_value()
@@ -254,16 +323,22 @@ class MomentoInercia014(Scene):
         self.play(*[FadeIn(new[j]) for j in range(k, len(new))], run_time=t_in)
         self.settle(new)
 
-    def mm(self, old, new, *moves, y=None, rt=1.2, extra=()):
-        """old (Eq) -> new (Eq) por TransformByGlyphMap; o que não for citado entra/sai por fade."""
+    def mm(self, old, new, *moves, y=None, x=None, align="C", rt=1.2, extra=()):
+        """old (Eq) -> new (Eq) por TransformByGlyphMap; o que não for citado entra/sai por fade.
+        align "L"/"R" mantém a borda esquerda/direita da equação onde estava (o resto só se acomoda)."""
         c = old.mob.get_center()
-        new.mob.move_to([c[0], c[1] if y is None else y, 0])
+        new.mob.move_to([c[0] if x is None else x, c[1] if y is None else y, 0])
+        if x is None and align == "L":
+            new.mob.shift(RIGHT * (old.mob.get_left()[0] - new.mob.get_left()[0]))
+        elif x is None and align == "R":
+            new.mob.shift(RIGHT * (old.mob.get_right()[0] - new.mob.get_right()[0]))
         self.play(TransformByGlyphMap(old.mob, new.mob, *moves, auto_fade=True), *extra, run_time=rt)
         self.remove(old.mob)
 
     # ── construção do palco ─────────────────────────────────────────────────
     def construct(self):
         self.camera.background_color = BACKGROUND_COLOR
+        self.sync_init()
         self.build_stage()
         for k, seg in enumerate([self.b1, self.b2, self.b3, self.b4, self.b5, self.b6, self.b7, self.b8,
                                  self.b9, self.b10, self.b11, self.b12, self.b13, self.b14, self.b15], 1):
@@ -330,6 +405,7 @@ class MomentoInercia014(Scene):
 
         # giro: o relógio usa Scene.time (avança só no fim de cada play) + dt acumulado dentro do play
         self.spin_t0 = None
+        self.spin_ta, self.spin_om = TA_DEF, spin_omega(TA_DEF)
         self._seen_time, self._acc = -1.0, 0.0
 
         def spin_upd(m, dt):
@@ -339,7 +415,7 @@ class MomentoInercia014(Scene):
             if now != self._seen_time:
                 self._seen_time, self._acc = now, 0.0
             self._acc += dt
-            t, o = spin_state(now - self.spin_t0 + self._acc)
+            t, o = spin_state(now - self.spin_t0 + self._acc, self.spin_ta, self.spin_om)
             d = t - m.get_value()
             m.set_value(t)
             self.om.set_value(o)
@@ -521,7 +597,7 @@ class MomentoInercia014(Scene):
             v = self.vv(f"a{k}")
             ln = max(KV * self.om.get_value() * (sfn() - self.axx.get_value()), 0.12)
             p = self.P(sfn())
-            return Arrow(p, p + self.Tg() * ln, buff=0, color=interpolate_color(ManimColor(BLUE), ManimColor(col), self.vv("case")),
+            return Arrow(p, p + self.Tg() * ln, buff=0, color=BLUE,
                          stroke_width=6, tip_length=min(0.28, ln * 0.45),
                          max_tip_length_to_length_ratio=0.5).set_opacity(v)
         self.add(always_redraw(sq).set_z_index(5), always_redraw(arr).set_z_index(5))
@@ -531,7 +607,7 @@ class MomentoInercia014(Scene):
             return self.P(sfn()) + self.Tg() * (ln + 0.36)
         lab_v = {1: "v", 2: "2v", 3: "3v"}[k]
         lab_r = {1: "r", 2: "2r", 3: "3r"}[k]
-        setattr(self, f"lv{k}_m", halo(self.follow(MathTex(lab_v, font_size=44, color=col), tip, f"lv{k}")))
+        setattr(self, f"lv{k}_m", halo(self.follow(MathTex(lab_v, font_size=44, color=BLUE), tip, f"lv{k}")))
         setattr(self, f"lr{k}_m", halo(self.follow(MathTex(lab_r, font_size=44, color=col),
                                                    lambda: self.P(sfn()) - 0.55 * self.Tg(), f"lr{k}")))
         if k == 2:
@@ -539,7 +615,7 @@ class MomentoInercia014(Scene):
 
     # ── BLOCO 1 · 0–15 s · abertura: assunto, mesma barra, mistério e mapa do vídeo ─
     def b1(self):
-        self.seg(0, 1, 0, 1)
+        self.ancora("b1a")
         self.play(FadeIn(self.bar), *self.show("axis", "cm", "lcm"), run_time=0.9)
         lL = VGroup(Line([-HALF, 5.0, 0], [HALF, 5.0, 0], stroke_width=3, color=WHITE),
                     Line([-HALF, 4.88, 0], [-HALF, 5.12, 0], stroke_width=3, color=WHITE),
@@ -553,21 +629,23 @@ class MomentoInercia014(Scene):
         # 0–3,6 s: o assunto, antes de qualquer fórmula (quadro parado)
         self.play(FadeIn(lL), FadeIn(lLt), FadeIn(lM), FadeIn(eixo_cm, shift=UP * 0.1),
                   FadeIn(title, shift=UP * 0.12), run_time=1.1)
-        self.until(3.6)
+        self.wait(1.5)
         # 3,6–7,3 s: a mesma barra; só o eixo se move (a animação já diz "só o eixo mudou")
         cap = text("mesma barra • mesma M • mesmo L", 28).move_to([0, 2.0, 0])
         cap2 = text("centro → ponta", 32, CYAN).move_to([0, 1.1, 0])
         self.play(FadeOut(title), FadeOut(eixo_cm), FadeIn(cap, shift=UP * 0.1), FadeIn(cap2, shift=UP * 0.1),
                   run_time=0.7)
-        self.until(4.3)
+        self.ancora("b1b")
         self.play(self.axx.animate.set_value(HALF), run_time=3.0, rate_func=smooth)
-        self.until(7.3)
         # 7,3–10,6 s: o mistério, parado para leitura
-        q = mt("I_{\\rm ponta}", "=", "4", "I_{CM}", r"\;?", size=64, w=6.6, colors={3: CYAN, 4: MAGENTA}
+        q = mt("I_{\\rm ponta}", "=", "4", "I_{CM}", r"\;?", size=64, w=6.6, colors={2: CYAN, 3: CYAN, 4: MAGENTA}
                ).move_to([0, -1.0, 0])
         q2 = text("de onde vem esse 4?", 34).move_to([0, -2.3, 0])
-        self.play(FadeIn(q, shift=UP * 0.12), FadeIn(q2, shift=UP * 0.12), run_time=0.8)
-        self.until(10.6)
+        self.ancora("b1q")
+        self.play(FadeIn(q, shift=UP * 0.12), run_time=0.7)
+        self.ancora("b1c")
+        self.play(FadeIn(q2, shift=UP * 0.12), run_time=0.5)
+        self.ancora("b1d")
         self.play(FadeOut(q), FadeOut(q2), FadeOut(cap), FadeOut(cap2), FadeOut(lL),
                   FadeOut(lLt), FadeOut(lM), run_time=0.6)
         # 11,2–14 s: o mapa do vídeo entra completo
@@ -580,7 +658,7 @@ class MomentoInercia014(Scene):
             road.scale_to_fit_width(7.8)
         self.road = road
         self.play(FadeIn(road, shift=UP * 0.1), run_time=0.8)
-        self.until(14.0)
+        self.ancora("b1e")
         # vamos responder à primeira: o eixo volta ao CM e a barra começa a girar (bloco 2)
         self.play(r2.animate.set_opacity(0.3), Indicate(r1[2], color=CYAN, scale_factor=1.2),
                   self.axx.animate.set_value(0.0), *self.hide("cm", "lcm"), run_time=0.9, rate_func=smooth)
@@ -588,42 +666,42 @@ class MomentoInercia014(Scene):
 
     # ── BLOCO 2 · 11–22 s · v = ωr com um dm que se afasta ──────────────────
     def b2(self):
-        self.seg(11, 22, 15, 27)
+        self.ancora("b2a")
+        tb6 = dict(self.anc).get("b6a") if (self.anc and not CAL) else None
+        self.spin_ta = max((tb6 - 0.4 - TD - self.time) if tb6 else TA_DEF, 20.0)
+        self.spin_om = spin_omega(self.spin_ta)
         self.spin_t0 = self.time
         self.sdm.set_value(1.0)
         self.selw.set_value(0.3)
         self.play(*self.show("ring"), FadeOut(self.road), run_time=0.8)
-        self.until(12.0)
         self.play(*self.show("e2", "ldm2"), run_time=0.7)
-        self.until(13.0)
         cap_r = VGroup(MathTex(r"r_\perp", font_size=46, color=CYAN), text("= distância perpendicular ao eixo", 28)
-                       ).arrange(RIGHT, buff=0.2).move_to([0, 0.5, 0])
-        self.play(*self.show("rdim", "lrr"), FadeIn(cap_r, shift=UP * 0.1), run_time=0.8)
-        self.until(14.0)
-        self.play(*self.show("a2", "lva"), run_time=0.8)
-        self.until(15.0)
-        self.play(FadeOut(cap_r), run_time=0.4)
+                       ).arrange(RIGHT, buff=0.2).move_to([0, -2.4, 0])
         veq = self.veq = Eq("v", "=", r"\omega", r"r_\perp", size=72, colors={0: BLUE, 2: CYAN, 3: CYAN})
         veq.mob.move_to([0, -1.2, 0])
-        # o dm se afasta com ω constante: r↑ ⇒ v↑ (a seta e o rótulo v acompanham)
         up = mt(r"r\uparrow", r"\Rightarrow", r"v\uparrow", size=56, colors={0: CYAN, 2: BLUE}).move_to([0, 0.4, 0])
-        self.play(self.sdm.animate.set_value(2.4), FadeIn(up, shift=UP * 0.1), FadeIn(veq.mob), run_time=3.2,
+        # a velocidade cresce com a distância: o dm se afasta com ω constante (seta e rótulo v acompanham)
+        self.ancora("b2c")
+        self.play(*self.show("a2", "lva"), run_time=0.8)
+        self.play(self.sdm.animate.set_value(2.4), FadeIn(up, shift=UP * 0.1), FadeIn(veq.mob), run_time=1.8,
                   rate_func=smooth)
-        self.play(self.sdm.animate.set_value(0.9), run_time=2.2, rate_func=smooth)
-        self.play(self.sdm.animate.set_value(1.7), run_time=1.2, rate_func=smooth)
-        self.until(21.5)
-        self.play(FadeOut(up), *self.hide("rdim", "lrr"), run_time=0.5)
-        self.until(22.0)
+        self.play(self.sdm.animate.set_value(0.9), run_time=1.6, rate_func=smooth)
+        # essa distância é o raio
+        self.ancora("b2d")
+        self.play(*self.show("rdim", "lrr"), FadeIn(cap_r, shift=UP * 0.1), run_time=0.8)
+        self.play(self.sdm.animate.set_value(1.7), run_time=0.9, rate_func=smooth)
+        self.wait(0.3)
+        self.play(FadeOut(up), FadeOut(cap_r), *self.hide("rdim", "lrr"), run_time=0.5)
 
     # ── BLOCO 3 · 22–36 s · o r² nasce: v² → (ωr)² → ω²r² ───────────────────
     def b3(self):
-        self.seg(22, 36, 27, 39)
+        self.ancora("b3a")
         veq = self.veq
         self.play(veq.mob.animate.scale(0.62).move_to([0, 0.75, 0]), run_time=0.9)
         P1 = Eq("dK", "=", r"\frac12", "v^2", "dm", size=66, w=6.2, colors={3: BLUE})
         P1.mob.move_to([0, -0.8, 0])
         self.play(FadeIn(P1.mob, shift=UP * 0.1), run_time=1.4)
-        self.until(26.2)
+        self.ancora("b3b")
         # 1) v² → (ωr)²: o ωr_⊥ de v = ωr_⊥ é copiado para dentro do quadrado que substitui v
         P2 = Eq("dK", "=", r"\frac12", "(", r"\omega", r"r_\perp", ")^2", "dm", size=66, w=6.2,
                 colors={3: BLUE, 4: CYAN, 5: CYAN, 6: BLUE})
@@ -632,7 +710,7 @@ class MomentoInercia014(Scene):
         self.mm(P1, P2, M(P1, [0, 1, 2], P2, [0, 1, 2]), M(P1, [4], P2, [7]),
                 MG([P1.p(3)[0]], [P2.p(3)[0]]), MG([P1.p(3)[1]], [P2.p(6)[1]]),
                 CG(wr_src, P2.p(4) + P2.p(5)), rt=1.8)
-        self.until(30.2)
+        self.ancora("b3c")
         # 2) (ωr)² → ω²r²: o expoente 2 vale para cada fator
         P3 = Eq("dK", "=", r"\frac12", r"\omega^2", r"r_\perp^2", "dm", size=66, w=6.2, colors={3: CYAN, 4: CYAN})
         close_i, two_i = P2.p(6)
@@ -650,7 +728,7 @@ class MomentoInercia014(Scene):
 
     # ── BLOCO 4 · 37–46 s · 1 : 4 : 9 (mesmo dm, mesma ω) ───────────────────
     def b4(self):
-        self.seg(0, 1, 2.4, 3.4)
+        self.ancora("b4a")
         self.play(FadeOut(self.P3.mob), FadeOut(self.boxP3), FadeOut(self.veq.mob),
                   self.prop.animate.move_to([0, -3.75, 0]).scale(0.8),
                   *self.show("e1", "e3", "a1", "a3", "lr1", "lr2", "lr3", "lv1", "lv2", "lv3"),
@@ -661,6 +739,8 @@ class MomentoInercia014(Scene):
         self.bars4 = VGroup()
         self.until(38.8)
         for k in (1, 2, 3):
+            if k == 3:
+                self.ancora("b4b")
             n = units[k]
             h = UNIT * n
             bar = Rectangle(width=0.9, height=h, fill_color=ELEM_COL[k], fill_opacity=0.65, stroke_color=ELEM_COL[k],
@@ -686,7 +766,7 @@ class MomentoInercia014(Scene):
 
     # ── BLOCO 5 · 44–60 s · soma discreta → integral → I ────────────────────
     def b5(self):
-        self.seg(44, 60, 48, 65.5)
+        self.ancora("b5a")
         L6 = self.levels[6]
 
         def tint(n, stroke=0.7):
@@ -708,7 +788,7 @@ class MomentoInercia014(Scene):
                 colors={3: CYAN, 5: CYAN})
         e2.mob.move_to([0, 0.2, 0])
         self.play(FadeIn(e2.mob, shift=UP * 0.1), run_time=1.2)
-        self.until(50.8)
+        self.ancora("b5b")
         cnt = text("mais pedaços, cada Δm menor", 28).move_to([0, -0.8, 0])
         self.play(FadeIn(cnt, shift=UP * 0.1), run_time=0.5)
         prev = 6
@@ -718,15 +798,16 @@ class MomentoInercia014(Scene):
             self.play(*untint(prev), *tint(n), self.sdm.animate.set_value(s_n), self.selw.animate.set_value(L / n),
                       run_time=0.8)
             prev = n
-            self.until(t_ + 0.9)
+            self.wait(0.3)
         # Σ → ∫, r_i² → r_⊥², Δm_i → dm; ½ω² permanece no lugar
+        self.ancora("b5c")
         e3 = Eq("K", "=", r"\frac12", r"\omega^2", r"\int", r"r_\perp^2", "dm", size=54, w=6.2,
                 colors={3: CYAN, 5: CYAN})
         self.mm(e2, e3, M(e2, [0, 1, 2, 3], e3, [0, 1, 2, 3]), M(e2, [4], e3, [4]), M(e2, [5], e3, [5]),
                 M(e2, [6], e3, [6]), rt=1.4,
                 extra=(FadeOut(cnt), self.lvs[48].animate.set_value(0.0),
                        *self.hide("lsel", "lri", "rdim", "sel")))
-        self.until(56.0)
+        self.ancora("b5d")
         # I nasce da integral: o fator ∫r_⊥²dm é destacado e copiado para baixo
         eqI = Eq("I", "=", r"\int", r"r_\perp^2", "dm", size=62, w=5.0, colors={0: CYAN, 3: CYAN})
         eqI.mob.move_to([0, -1.55, 0])
@@ -738,6 +819,7 @@ class MomentoInercia014(Scene):
         self.boxI = box(eqI.mob, CYAN)
         self.play(Create(self.boxI), run_time=0.4)
         # K = ½ I ω²: o I vem da definição; ½ω² se reorganiza
+        self.ancora("b5e")
         eqK = Eq("K", "=", r"\frac12", "I", r"\omega^2", size=54, w=6.2, colors={3: CYAN, 4: CYAN})
         self.mm(e3, eqK, M(e3, [0, 1, 2], eqK, [0, 1, 2]), M(e3, [3], eqK, [4]), CG(eqI.g(0), eqK.p(3)), rt=1.2)
         self.eqE3, self.eqI, self.eqIE, self.eqK, self.lastlevel = eqK.mob, eqI.mob, eqI, VGroup(), prev
@@ -745,7 +827,7 @@ class MomentoInercia014(Scene):
 
     # ── BLOCO 6 · 65,5–77,5 s · r_perp = |x|; barra uniforme: dm = (M/L)dx; perfil x²dm ──
     def b6(self):
-        self.seg(0, 1, 1.5, 2.5)
+        self.ancora("b6a")
         self.play(FadeOut(self.eqE3), FadeOut(self.boxI),
                   self.lvf[48].animate.set_value(0.0), *self.hide("ring"),
                   self.eqI.animate.scale(0.8).move_to([0, -2.4, 0]), run_time=1.0)
@@ -765,11 +847,11 @@ class MomentoInercia014(Scene):
         br1 = Eq("r_\\perp", "=", "|x|", size=60, w=5.0, colors={0: CYAN, 2: CYAN})
         br1.mob.move_to([0, 1.7, 0])
         self.play(FadeIn(br1.mob, shift=UP * 0.1), run_time=0.8)
-        self.until(67.4)
+        self.wait(0.8)
         br2 = Eq("r_\\perp^2", "=", "x^2", size=60, w=5.0, colors={0: CYAN, 2: CYAN})
         self.mm(br1, br2, MG(br1.p(0), br2.p(0)[:2]), M(br1, [1], br2, [1]),
                 MG([br1.p(2)[1]], [br2.p(2)[0]]), rt=1.0)
-        self.until(68.8)
+        self.ancora("b6b")
         lam = Eq("dm", "=", r"\lambda", "dx", size=60, w=5.0, colors={2: BLUE_L})
         lam.mob.move_to([0, 1.7, 0])
         self.play(FadeOut(br2.mob), run_time=0.4)
@@ -779,12 +861,12 @@ class MomentoInercia014(Scene):
         self.play(self.xm.animate.set_value(HALF - 0.1), self.pr.animate.set_value(HALF + 0.2), FadeIn(lab),
                   run_time=2.6, rate_func=smooth)
         self.lab6 = lab
-        self.until(72.8)
+        self.ancora("b6c")
         # λ = M/L: a fração é copiada para o lugar de λ
         lameq = Eq(r"\lambda", "=", r"\frac ML", size=42, colors={0: BLUE_L, 2: BLUE_L})
         lameq.mob.move_to([0, 0.2, 0])
         self.play(FadeIn(lameq.mob, shift=UP * 0.1), run_time=0.7)
-        self.until(74.2)
+        self.wait(0.5)
         dmeq = Eq("dm", "=", r"\frac ML", "dx", size=60, w=5.0, colors={2: BLUE_L})
         self.mm(lam, dmeq, M(lam, [0, 1], dmeq, [0, 1]), M(lam, [3], dmeq, [3]), CG(lameq.g(2), dmeq.p(2)),
                 rt=1.2, extra=(FadeOut(lameq.mob),))
@@ -793,41 +875,47 @@ class MomentoInercia014(Scene):
 
     # ── BLOCO 7 · 77,5–90,5 s · I_CM: dm entra na integral, M/L sai, primitiva, avaliação ──
     def b7(self):
-        self.seg(0, 1, 1.5, 2.5)
+        self.ancora("b7b")
         self.play(self.dmeq.mob.animate.scale(0.7).move_to([0, 2.3, 0]), run_time=0.7)
         S1 = Eq("I_{CM}", "=", r"\int", "x^2", "dm", size=62, w=5.4, colors={0: CYAN, 3: CYAN})
         self.mm(self.eqIE, S1, M(self.eqIE, [0], S1, [0]), M(self.eqIE, [1], S1, [1]), M(self.eqIE, [2], S1, [2]),
                 M(self.eqIE, [3], S1, [3]), M(self.eqIE, [4], S1, [4]), y=0.35, rt=1.2)
         self.until(78.8)
         # destaque: dm = (M/L)dx é o que entra na integral
-        self.play(Indicate(self.dmeq.mob, color=BLUE_L, scale_factor=1.15), run_time=0.9)
+        self.wait(0.2)
         self.until(80.0)
-        # dm → dx; M/L é constante e sai da integral; os limites vêm do eixo x
+        # 1) dm → dx e M/L (constante) sai da integral; a integral ainda sem limites
+        S3a = Eq("I_{CM}", "=", r"\frac ML", r"\int", "x^2", "dx", size=58, w=6.2, colors={0: CYAN, 2: BLUE_L, 4: CYAN})
+        self.mm(S1, S3a, M(S1, [0, 1], S3a, [0, 1]), M(S1, [2], S3a, [3]), M(S1, [3], S3a, [4]), M(S1, [4], S3a, [5]),
+                CG(self.dmeq.g(2), S3a.p(2)), rt=1.3)
+        self.play(FadeOut(self.dmeq.mob), run_time=0.4)
+        self.ancora("b7c")
+        # 2) só então os limites vêm do eixo x (trajetória livre, sem a equação auxiliar no caminho)
         S3 = Eq("I_{CM}", "=", r"\frac ML", r"\int", r"{}_{-L/2}^{L/2}", "x^2", "dx", size=58, w=6.2,
                 colors={0: CYAN, 2: BLUE_L, 5: CYAN})
         lo, hi = limit_glyphs(S3, 4)
-        self.mm(S1, S3, M(S1, [0, 1], S3, [0, 1]), M(S1, [2], S3, [3]), M(S1, [3], S3, [5]), M(S1, [4], S3, [6]),
-                CG(self.dmeq.g(2), S3.p(2)), CG(list(self.xlabs[0][0]), lo), CG(list(self.xlabs[2][0]), hi),
-                rt=1.6)
-        self.until(82.8)
+        self.mm(S3a, S3, M(S3a, [0, 1, 2, 3], S3, [0, 1, 2, 3]), M(S3a, [4], S3, [5]), M(S3a, [5], S3, [6]),
+                CG(list(self.xlabs[0][0]), lo, delay=0.0), CG(list(self.xlabs[2][0]), hi, delay=0.0), rt=1.2)
+        self.ancora("b7d")
         # a primitiva: x² → x³/3, ∫ vira colchete, os limites seguem
         S4 = Eq("I_{CM}", "=", r"\frac ML", r"\Big[", r"\frac{x^3}{3}", r"\Big]", r"{}_{-L/2}^{L/2}", size=58,
                 w=6.2, colors={0: CYAN, 2: BLUE_L, 4: CYAN})
         self.mm(S3, S4, M(S3, [0, 1, 2], S4, [0, 1, 2]), M(S3, [5], S4, [4]), M(S3, [4], S4, [6]), rt=1.2)
-        self.until(85.2)
+        self.ancora("b7e")
         S7 = Eq("I_{CM}", "=", r"\frac1{12}ML^2", size=80, w=6.0, colors={0: CYAN, 2: CYAN})
-        self.mm(S4, S7, M(S4, [0, 1], S7, [0, 1]), M(S4, [2, 3, 4, 5, 6], S7, [2]), rt=1.2,
-                extra=(FadeOut(self.dmeq.mob),))
+        self.mm(S4, S7, M(S4, [0, 1], S7, [0, 1]), rt=1.3)
         self.S7box = box(S7.mob, CYAN)
         c2 = text2("massa perto do eixo contribui pouco", "massa longe contribui muito mais", 32
                    ).move_to([0, -1.5, 0])
-        self.play(Create(self.S7box), FadeIn(c2, shift=UP * 0.1), run_time=0.7)
+        self.play(Create(self.S7box), run_time=0.5)
+        self.ancora("b7f")
+        self.play(FadeIn(c2, shift=UP * 0.1), run_time=0.7)
         self.S7, self.c7 = S7.mob, c2
         self.until(89.0)
 
     # ── BLOCO 8 · 90,5–102,5 s · o eixo desliza por d (CM fixo); x' = x − d ─
     def b8(self):
-        self.seg(0, 1, 1.5, 2.5)
+        self.ancora("b8a")
         Eref = self.Eref = VGroup(self.S7, self.S7box)
         self.play(FadeOut(self.c7), FadeOut(self.lab6), FadeOut(self.xline), FadeOut(self.xlabs),
                   *self.hide("prof", "ldx"), run_time=0.4)
@@ -837,27 +925,28 @@ class MomentoInercia014(Scene):
         self.play(*self.show("dm", "ldm", "guides", "rx", "lcm", "lxx"), run_time=0.9)
         q = text2("E se o eixo mudar?", "Preciso refazer toda a integral?", 30).move_to([0, 0.5, 0])
         self.play(FadeIn(q, shift=UP * 0.1), run_time=0.7)
-        self.until(92.6)
+        self.ancora("b8b")
         self.d_val = 0.9
-        self.play(FadeOut(q), run_time=0.4)
         self.play(*self.show("rd", "rdl"), self.axx.animate.set_value(self.d_val), run_time=2.6, rate_func=smooth)
-        self.play(*self.show("rxd", "lxp"), run_time=0.8)
-        self.until(96.6)
+        self.ancora("b8d")
+        self.play(FadeOut(q), *self.show("rxd", "lxp"), run_time=0.8)
         # só a relação que será usada: x' = x − d (a geometria já mostra x = d + x')
         xe2 = Eq("x'", "=", "x", "-", "d", size=66, colors={2: CYAN, 4: VIOLET})
         xe2.mob.move_to([0, 0.6, 0])
         self.play(FadeIn(xe2.mob, shift=UP * 0.1), run_time=1.0)
         self.xe2 = xe2
-        self.until(98.4)
-        note = text2("x' é coordenada com sinal", "distância ao eixo = |x'|", 30).move_to([0, -0.5, 0])
+        self.ancora("b8e")
+        note = text2("x' é coordenada com sinal", "distância ao eixo = |x'|", 34).move_to([0, -0.7, 0])
         self.play(FadeIn(note, shift=UP * 0.1), self.xm.animate.set_value(-0.3), run_time=1.0, rate_func=smooth)
+        self.wait(0.5)
         self.play(self.xm.animate.set_value(2.1), run_time=0.9, rate_func=smooth)
+        self.wait(0.6)
         self.play(FadeOut(note), run_time=0.3)
         self.until(101.0)
 
     # ── BLOCO 9 · 102,5–121,5 s · x−d entra na integral; expansão; distribuição; I_CM e M ──
     def b9(self):
-        self.seg(0, 1, 0.5, 1.5)
+        self.ancora("b9a")
         # o box de I_CM já cumpriu o papel: a próxima equação carrega I_CM
         self.play(*self.hide("rxd", "rx", "lxp", "lxx", "guides", "dm", "ldm", "lcm"), FadeOut(self.Eref),
                   self.xe2.mob.animate.scale(0.7).move_to([0, 1.8, 0]), run_time=0.9)
@@ -874,13 +963,15 @@ class MomentoInercia014(Scene):
                 extra=(FadeOut(self.xe2.mob),))
         self.until(106.8)
         # (x − d)² sozinho; só depois a igualdade nasce completa
+        self.ancora("b9b")
         binom0 = Eq("(x-d)^2", size=42, w=5.0)
         binom0.mob.move_to([0, -1.0, 0])
         self.play(TransformFromCopy(VGroup(*E1.g(3, 4, 5, 6, 7)), VGroup(*binom0.g(0))), run_time=0.8)
         self.settle(binom0.mob)
         binom = Eq("(x-d)^2", "=", "x^2", "-2dx", "+d^2", size=42, w=5.0, colors={2: CYAN, 3: MAGENTA, 4: VIOLET})
         binom.mob[0][binom.p(3)[2]].set_color(VIOLET)
-        self.mm(binom0, binom, M(binom0, [0], binom, [0]), rt=1.0)
+        binom.mob.move_to([0, -1.0, 0])
+        self.swap(binom0.mob, binom.mob, 0.3, 0.7)
         self.until(109.0)
         # a expansão entra na integral
         E2 = Eq("I'", "=", r"\int", "(", "x^2", "-2dx", "+d^2", ")", "dm", size=54, w=6.2,
@@ -890,48 +981,72 @@ class MomentoInercia014(Scene):
                 M(E1, [8], E2, [8]), CG(binom.g(2), E2.p(4)), CG(binom.g(3), E2.p(5)), CG(binom.g(4), E2.p(6)),
                 rt=1.4, extra=(FadeOut(binom.mob),))
         self.until(110.8)
+        self.ancora("b9c")
         # linearidade: os três termos se afastam e cada um ganha a sua integral (d ainda dentro)
         cc = {0: CYAN, 3: CYAN, 5: MAGENTA, 6: MAGENTA, 7: MAGENTA, 9: MAGENTA, 11: MAGENTA, 12: MAGENTA,
               13: VIOLET}
         E2c = Eq("I'", "=", r"\int", "x^2", "dm", "-", r"\int", "2", "d", "x", "dm", "+", r"\int", "d^2", "dm",
                  size=48, w=6.8, colors={0: CYAN, 3: CYAN, 5: MAGENTA, 6: MAGENTA, 7: MAGENTA, 8: VIOLET,
                                          9: MAGENTA, 10: MAGENTA, 11: VIOLET, 12: VIOLET, 13: VIOLET})
-        i_src, dm_src = E2.g(2), E2.g(8)
+        # (a) só abre espaço entre as três parcelas; nada mais se move
+        E2s = Eq("I'", "=", r"\int", "(", "x^2", r"\qquad -2dx", r"\qquad +d^2", ")", "dm", size=48, w=7.4,
+                 colors={0: CYAN, 4: CYAN, 5: MAGENTA, 6: VIOLET})
+        E2s.mob[0][E2s.p(5)[2]].set_color(VIOLET)
+        E2s.mob[0][E2s.p(6)[1]].set_color(VIOLET)
+        E2s.mob[0][E2s.p(6)[2]].set_color(VIOLET)
+        self.mm(E2, E2s, M(E2, [0, 1, 2, 3, 4, 5, 6, 7, 8], E2s, [0, 1, 2, 3, 4, 5, 6, 7, 8]), rt=0.8)
+        # (b) cada parcela recebe a sua integral; os termos já estão no lugar
+        E2 = E2s
         self.mm(E2, E2c, M(E2, [0, 1, 2], E2c, [0, 1, 2]), M(E2, [4], E2c, [3]), M(E2, [8], E2c, [4]),
                 MG([E2.p(5)[0]], E2c.p(5)), MG([E2.p(5)[1]], E2c.p(7)), MG([E2.p(5)[2]], E2c.p(8)),
                 MG([E2.p(5)[3]], E2c.p(9)), MG([E2.p(6)[0]], E2c.p(11)), MG(E2.p(6)[1:], E2c.p(13)),
-                CG(i_src, E2c.p(6)), CG(i_src, E2c.p(12)), CG(dm_src, E2c.p(10)), CG(dm_src, E2c.p(14)), rt=1.5)
+                rt=1.3)
         self.until(112.8)
         # d é constante: 2d e d² saem das integrais
+        self.ancora("b9d")
         E3 = Eq("I'", "=", r"\int", "x^2", "dm", "-", "2", "d", r"\int", "x", r"\,dm", "+", "d^2", r"\int", "dm",
-                size=48, w=6.8,
+                size=52, w=7.4,
                 colors={0: CYAN, 3: CYAN, 5: MAGENTA, 6: MAGENTA, 7: VIOLET, 8: MAGENTA, 9: MAGENTA, 10: MAGENTA,
                         11: VIOLET, 12: VIOLET})
-        cons = text("d é constante", 32, color=VIOLET).move_to([0, -1.4, 0])
+        cons = text("d é constante", 34, color=VIOLET).move_to([0, -1.6, 0])
         self.mm(E2c, E3, M(E2c, [0, 1, 2, 3, 4, 5], E3, [0, 1, 2, 3, 4, 5]), M(E2c, [6], E3, [8]),
                 M(E2c, [7], E3, [6]), M(E2c, [8], E3, [7]), M(E2c, [9], E3, [9]), M(E2c, [10], E3, [10]),
                 M(E2c, [11], E3, [11]), M(E2c, [12], E3, [13]), M(E2c, [13], E3, [12]), M(E2c, [14], E3, [14]),
                 rt=1.3, extra=(FadeIn(cons, shift=UP * 0.1),))
         self.until(115.0)
+        self.ancora("b9e")
         # identificar: ∫x²dm é I_CM e ∫dm é M (rótulos nascem das próprias integrais)
         br1 = Brace(VGroup(*E3.g(2, 3, 4)), DOWN, color=CYAN, buff=0.12)
         br2 = Brace(VGroup(*E3.g(13, 14)), DOWN, color=VIOLET, buff=0.12)
-        t1 = MathTex("I_{CM}", font_size=38, color=CYAN).next_to(br1, DOWN, buff=0.1)
-        t2 = MathTex("M", font_size=38, color=VIOLET).next_to(br2, DOWN, buff=0.1)
+        t1 = MathTex("I_{CM}", font_size=46, color=CYAN).next_to(br1, DOWN, buff=0.1)
+        t2 = MathTex("M", font_size=46, color=VIOLET).next_to(br2, DOWN, buff=0.1)
         self.play(FadeOut(cons), GrowFromCenter(br1), GrowFromCenter(br2),
                   TransformFromCopy(VGroup(*E3.g(2, 3, 4)), t1), TransformFromCopy(VGroup(*E3.g(13, 14)), t2),
                   run_time=1.2)
         self.until(117.0)
-        # depois substituir: as integrais viram I_CM e M
+        # depois substituir, uma de cada vez: primeiro ∫x²dm vira I_CM e assenta
+        E4 = Eq("I'", "=", "I_{CM}", "-", "2", "d", r"\int", "x", r"\,dm", "+", "d^2", r"\int", "dm", size=50, w=7.0,
+                colors={0: CYAN, 2: CYAN, 3: MAGENTA, 4: MAGENTA, 5: VIOLET, 6: MAGENTA, 7: MAGENTA, 8: MAGENTA,
+                        9: VIOLET, 10: VIOLET})
+        self.mm(E3, E4, M(E3, [0, 1], E4, [0, 1]), MG(E3.p(2) + E3.p(3) + E3.p(4), E4.p(2)),
+                M(E3, [5], E4, [3]), M(E3, [6], E4, [4]), M(E3, [7], E4, [5]), M(E3, [8], E4, [6]),
+                M(E3, [9], E4, [7]), M(E3, [10], E4, [8]), M(E3, [11], E4, [9]), M(E3, [12], E4, [10]),
+                M(E3, [13], E4, [11]), M(E3, [14], E4, [12]), align="R", rt=1.2,
+                extra=(FadeOut(br1), FadeOut(t1), FadeOut(br2), FadeOut(t2)))
+        self.until(117.0)
+        # depois ∫dm vira M e vai para junto de d²
+        self.ancora("b9f")
+        br2b = Brace(VGroup(*E4.g(11, 12)), DOWN, color=VIOLET, buff=0.12)
+        t2b = MathTex("M", font_size=44, color=VIOLET).next_to(br2b, DOWN, buff=0.1)
+        self.play(GrowFromCenter(br2b), TransformFromCopy(VGroup(*E4.g(11, 12)), t2b), run_time=0.7)
         E5 = Eq("I'", "=", "I_{CM}", "-", "2", "d", r"\int", "x", r"\,dm", "+", "M", "d^2", size=56, w=6.6,
                 colors={0: CYAN, 2: CYAN, 3: MAGENTA, 4: MAGENTA, 5: VIOLET, 6: MAGENTA, 7: MAGENTA, 8: MAGENTA,
                         9: VIOLET, 10: VIOLET, 11: VIOLET})
-        self.mm(E3, E5, M(E3, [0, 1], E5, [0, 1]), MG(E3.p(2) + E3.p(3) + E3.p(4), E5.p(2)),
-                M(E3, [5], E5, [3]), M(E3, [6], E5, [4]), M(E3, [7], E5, [5]), M(E3, [8], E5, [6]),
-                M(E3, [9], E5, [7]), M(E3, [10], E5, [8]), M(E3, [11], E5, [9]),
-                MG(E3.p(13) + E3.p(14), E5.p(10)), M(E3, [12], E5, [11]), rt=1.3,
-                extra=(FadeOut(br1), FadeOut(br2), FadeOut(t1), FadeOut(t2)))
+        self.mm(E4, E5, M(E4, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], E5, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]),
+                MG(E4.p(11) + E4.p(12), E5.p(10)), M(E4, [10], E5, [11]), x=0.0, rt=1.1,
+                extra=(FadeOut(br2b), FadeOut(t2b)))
         self.E5 = E5
+        self.ancora("b10a")
         self.rb2 = box(VGroup(*E5.g(3, 4, 5, 6, 7, 8)), MAGENTA, buff=0.11)
         q = text("e o termo do meio?", 28, MAGENTA).move_to([0, -1.1, 0])
         self.play(Create(self.rb2), FadeIn(q, shift=UP * 0.1), run_time=0.7)
@@ -940,7 +1055,7 @@ class MomentoInercia014(Scene):
 
     # ── BLOCO 10 · 121,5–135,5 s · o termo que zera: ∫x dm = M x_CM = 0 ────
     def b10(self):
-        self.seg(0, 1, 0.5, 1.5)
+        self.ancora("b10b")
         E5 = self.E5
         self.play(FadeOut(self.q9), *self.show("sg", "lcm", "cm"), run_time=0.5)
         self.xm.set_value(-HALF + 0.1)
@@ -951,7 +1066,7 @@ class MomentoInercia014(Scene):
         self.play(self.xm.animate.set_value(HALF - 0.1), self.pr2.animate.set_value(HALF + 0.2), run_time=3.0,
                   rate_func=smooth)
         self.play(*self.hide("dm", "ldx"), run_time=0.3)
-        self.until(125.6)
+        self.ancora("b10c")
         # o termo cruzado desce como ∫x dm; a identidade se constrói a partir dele
         eq0 = Eq(r"\int", "x", r"\,dm", size=56, w=6.0, colors={0: MAGENTA, 1: MAGENTA, 2: MAGENTA})
         eq0.mob.move_to([0, -1.7, 0])
@@ -962,17 +1077,16 @@ class MomentoInercia014(Scene):
         self.mm(eq0, eq1, M(eq0, [0, 1, 2], eq1, [0, 1, 2]),
                 CG([eq0.mob[0][eq0.p(2)[1]]], eq1.p(4)), CG([eq0.mob[0][eq0.p(1)[0]]], eq1.p(5)), rt=1.1,
                 extra=(Indicate(self.lcm_t, color=WHITE, scale_factor=1.3),))
-        self.until(128.4)
         # a origem foi escolhida no CM: x_CM = 0 aparece junto ao marcador e o 0 vai para a identidade
-        cmlab = halo(MathTex(r"x_{CM}=0", font_size=40).move_to(C + np.array([-1.75, -0.62, 0])))
-        self.play(FadeIn(cmlab), self.sgk.animate.set_value(0.0), run_time=0.8)
+        self.ancora("b10d")
+        cmlab = halo(MathTex(r"x_{CM}=0", font_size=42).move_to(C + np.array([2.0, -0.62, 0])))
+        why = text("origem escolhida no CM", 30, CYAN).move_to([0, -2.7, 0])
+        self.play(FadeIn(cmlab), FadeIn(why, shift=UP * 0.1), self.sgk.animate.set_value(0.0), run_time=0.9)
+        self.ancora("b10e")
         eq2 = Eq(r"\int", "x", r"\,dm", "=", "M", "x_{CM}", "=", "0", size=56, w=6.0,
                  colors={0: MAGENTA, 1: MAGENTA, 2: MAGENTA, 7: MAGENTA})
         zero_src = [cmlab[0][-1]]
         self.mm(eq1, eq2, M(eq1, [0, 1, 2, 3, 4, 5], eq2, [0, 1, 2, 3, 4, 5]), CG(zero_src, eq2.p(7)), rt=1.0)
-        why = text("origem escolhida no CM", 30, CYAN).move_to([0, -2.7, 0])
-        self.play(FadeIn(why, shift=UP * 0.1), run_time=0.6)
-        self.until(131.0)
         # só agora o termo cruzado vira zero: o 0 da identidade é copiado para a equação principal
         E6 = Eq("I'", "=", "I_{CM}", "-", "2", "d", r"\cdot", "0", "+", "M", "d^2", size=52, w=6.6,
                 colors={0: CYAN, 2: CYAN, 3: MAGENTA, 4: MAGENTA, 5: VIOLET, 6: MAGENTA, 7: MAGENTA, 8: VIOLET,
@@ -980,13 +1094,13 @@ class MomentoInercia014(Scene):
         self.mm(E5, E6, M(E5, [0, 1, 2, 3, 4, 5], E6, [0, 1, 2, 3, 4, 5]), M(E5, [9, 10, 11], E6, [8, 9, 10]),
                 CG([eq2.mob[0][eq2.p(7)[0]]], E6.p(7)), rt=1.3, extra=(FadeOut(self.rb2),))
         self.E6 = E6
-        self.until(132.8)
+        self.ancora("b10f")
         self.play(FadeOut(eq2.mob), FadeOut(why), FadeOut(cmlab), *self.hide("sg"), run_time=0.7)
         self.until(135.0)
 
     # ── BLOCO 11 · 135,5–143 s · Teorema dos Eixos Paralelos ────────────────
     def b11(self):
-        self.seg(0, 1, 0.5, 1.5)
+        self.ancora("b11a")
         F = Eq("I'", "=", "I_{CM}", "+", "M", "d^2", size=76, w=6.4,
                colors={0: CYAN, 2: CYAN, 4: VIOLET, 5: VIOLET})
         # −2d·0 some; I_CM e +Md² deslizam para fechar o espaço
@@ -994,14 +1108,19 @@ class MomentoInercia014(Scene):
         self.F = F
         self.Fbox = box(F.mob, WHITE)
         c1 = text("Teorema dos Eixos Paralelos", 34, CYAN).move_to([0, -1.0, 0])
-        c2 = text2("eixos paralelos", "um passa pelo CM • distância d", 30).move_to([0, -2.2, 0])
-        self.play(Create(self.Fbox), FadeIn(c1, shift=UP * 0.1), FadeIn(c2, shift=UP * 0.1), run_time=0.9)
+        c2a = text("eixos paralelos", 30)
+        c2b = VGroup(text("um passa pelo ", 30), text("CM", 30, CYAN), text(" • distância ", 30),
+                     text("d", 30, VIOLET)).arrange(RIGHT, buff=0.17)
+        c2 = VGroup(c2a, c2b).arrange(DOWN, buff=0.14).move_to([0, -2.2, 0])
+        self.play(Create(self.Fbox), FadeIn(c1, shift=UP * 0.1), run_time=0.8)
+        self.ancora("b11b")
+        self.play(FadeIn(c2, shift=UP * 0.1), run_time=0.8)
         self.c11 = VGroup(c1, c2)
         self.until(142.0)
 
     # ── BLOCO 12 · 143–154,5 s · o eixo vai à ponta: d = L/2 ────────────────
     def b12(self):
-        self.seg(0, 1, 0.5, 1.5)
+        self.ancora("b12a")
         self.play(FadeOut(self.c11), FadeOut(self.Fbox), run_time=0.5)
         self.play(self.axx.animate.set_value(HALF), *self.hide("rdl"), *self.show("lcap"),
                   self.F.mob.animate.move_to([0, 0.6, 0]), run_time=2.4, rate_func=smooth)
@@ -1012,7 +1131,7 @@ class MomentoInercia014(Scene):
         lab_src = list(self.lab_d2[0])[2:]
         self.mm(F, H1, MG(F.p(0), H1.p(0)), M(F, [1, 2, 3, 4], H1, [1, 2, 3, 4]), MG([F.p(5)[1]], H1.p(8)),
                 CG(lab_src, H1.p(6)), rt=1.4)
-        self.until(147.0)
+        self.ancora("b12b")
         # I_CM → 1/12 ML²; M(L/2)² → 1/4 ML²
         H2 = Eq("I_{\\rm ponta}", "=", r"\frac1{12}", "ML^2", "+", r"\frac14", "ML^2", size=52, w=6.2,
                 colors={0: CYAN, 2: CYAN, 3: CYAN, 5: VIOLET, 6: VIOLET})
@@ -1026,92 +1145,111 @@ class MomentoInercia014(Scene):
         n3, b3_, d3 = H3.frac(5)
         self.mm(H2, H3, M(H2, [0, 1, 2, 3, 4, 6], H3, [0, 1, 2, 3, 4, 6]), MG(n2, n3), MG([b2], [b3_]),
                 MG(d2, d3), rt=1.1)
-        self.until(150.3)
+        self.ancora("b12c")
         # os numeradores se somam: 1 + 3
         H4 = Eq("I_{\\rm ponta}", "=", r"\frac{1+3}{12}", "ML^2", size=52, w=6.0, colors={0: CYAN})
+        H4.mob[0][H4.frac(2)[0][0]].set_color(CYAN)
+        H4.mob[0][H4.frac(2)[0][2]].set_color(VIOLET)
         na, ba, da = H3.frac(2)
         nb, bb, db = H3.frac(5)
         n4, b4, d4 = H4.frac(2)
-        self.mm(H3, H4, M(H3, [0, 1], H4, [0, 1]), MG(na + [H3.p(4)[0]] + nb, n4), MG([ba, bb], [b4]),
-                MG(da + db, d4), MG(H3.p(3) + H3.p(6), H4.p(3)), rt=1.1)
+        # o primeiro ML² é o fator comum (destino); só os coeficientes se movem para ele
+        self.mm(H3, H4, M(H3, [0, 1], H4, [0, 1]), MG(na + [H3.p(4)[0]] + nb, n4), MG([ba], [b4]),
+                MG(da, d4), M(H3, [3], H4, [3]), align="L", rt=1.2)
         self.until(151.6)
-        H5a = Eq("I_{\\rm ponta}", "=", r"\frac4{12}", "ML^2", size=52, w=6.0, colors={0: CYAN})
+        H5a = Eq("I_{\\rm ponta}", "=", r"\frac4{12}", "ML^2", size=60, w=6.0, colors={0: CYAN})
         n5, b5, d5 = H5a.frac(2)
         self.mm(H4, H5a, M(H4, [0, 1], H5a, [0, 1]), MG(n4, n5), MG([b4], [b5]), MG(d4, d5), M(H4, [3], H5a, [3]),
                 rt=0.9)
         self.until(152.7)
-        # 4/12 → 1/3: a conta fecha
+        # 4/12 → 1/3: só a fração se transforma; I_ponta e ML² ficam parados
         H5 = Eq("I_{\\rm ponta}", "=", r"\frac4{12}", "ML^2", "=", r"\frac13", "ML^2", size=60, w=6.6,
                 colors={0: CYAN, 5: CYAN})
-        self.mm(H5a, H5, M(H5a, [0, 1, 2, 3], H5, [0, 1, 2, 3]), CG(H5a.g(2), H5.p(5)), CG(H5a.g(3), H5.p(6)),
-                rt=1.1)
+        H5.mob.move_to([0, 0.6, 0])
+        self.play(H5a.mob.animate.shift(RIGHT * (H5.mob.get_left()[0] - H5a.mob.get_left()[0])), run_time=0.4)
+        self.mm(H5a, H5, M(H5a, [0, 1, 2, 3], H5, [0, 1, 2, 3]), CG(H5a.g(2), H5.p(5), delay=0.1),
+                CG(H5a.g(3), H5.p(6), delay=0.1), align="L", rt=1.0)
         self.H5 = H5
         self.until(153.8)
 
     # ── BLOCO 13 · 154,5–162,5 s · fechamento: Steiner vira blocos ──────────
     def b13(self):
-        self.seg(0, 1, 0.5, 1.5)
+        self.ancora("b13a")
         self.play(FadeOut(self.H5.mob), *self.hide("rd", "lcap"), run_time=0.5)
-        u, X0, YB = 0.9, -1.8, 0.1
+        u, X0, YB = 0.9, -1.8, 0.45
         # a fórmula de Steiner reaparece e gera os blocos
         Fr = Eq("I_{\\rm ponta}", "=", "I_{CM}", "+", "Md^2", size=48, w=5.0,
                 colors={0: CYAN, 2: CYAN, 4: VIOLET})
-        Fr.mob.move_to([0, 2.7, 0])
+        Fr.mob.move_to([0, 2.75, 0])
         unit_sq = Rectangle(width=0.5, height=0.4, fill_opacity=0, stroke_color=WHITE, stroke_width=3)
-        unit = VGroup(text("cada bloco", 30), unit_sq, MathTex("=", font_size=44),
-                      MathTex(r"\frac1{12}ML^2", font_size=48)).arrange(RIGHT, buff=0.22).move_to([0, 1.55, 0])
+        unit = VGroup(text("cada bloco, de qualquer cor", 28), unit_sq, MathTex("=", font_size=44),
+                      MathTex(r"\frac1{12}ML^2", font_size=48)).arrange(RIGHT, buff=0.2).move_to([0, 1.7, 0])
+        if unit.width > 8.0:
+            unit.scale_to_fit_width(8.0)
         self.play(FadeIn(Fr.mob, shift=DOWN * 0.1), FadeIn(unit, shift=DOWN * 0.1), run_time=0.8)
         self.until(156.0)
         blkA = Rectangle(width=u, height=0.55, fill_color=CYAN, fill_opacity=0.9, stroke_width=0
                          ).move_to([X0 + u / 2, YB, 0])
         blkB = VGroup(*[Rectangle(width=u, height=0.55, fill_color=VIOLET, fill_opacity=0.9, stroke_width=0
                                   ).move_to([X0 + u / 2 + (i + 1) * u, YB, 0]) for i in range(3)])
+        divs = VGroup(*[Line([X0 + i * u, YB - 0.275, 0], [X0 + i * u, YB + 0.275, 0], stroke_width=3,
+                             color=BACKGROUND_COLOR) for i in range(1, 4)])
         braceA = Brace(blkA, DOWN, color=CYAN, buff=0.1)
         braceB = Brace(blkB, DOWN, color=VIOLET, buff=0.1)
-        labA = VGroup(MathTex("I_{CM}", font_size=38, color=CYAN), MathTex(r"\frac1{12}ML^2", font_size=36, color=CYAN)
-                      ).arrange(DOWN, buff=0.08).next_to(braceA, DOWN, buff=0.08)
-        labB = VGroup(MathTex("Md^2", font_size=38, color=VIOLET), MathTex(r"\frac3{12}ML^2", font_size=36,
+        labA = VGroup(MathTex("I_{CM}", font_size=50, color=CYAN), MathTex(r"\frac1{12}ML^2", font_size=44, color=CYAN)
+                      ).arrange(DOWN, buff=0.1).next_to(braceA, DOWN, buff=0.1)
+        labB = VGroup(MathTex("Md^2", font_size=50, color=VIOLET), MathTex(r"\frac3{12}ML^2", font_size=44,
                                                                            color=VIOLET)
-                      ).arrange(DOWN, buff=0.08).next_to(braceB, DOWN, buff=0.08)
+                      ).arrange(DOWN, buff=0.1).next_to(braceB, DOWN, buff=0.1)
+        labA.shift(LEFT * 0.35)
+        labB.shift(RIGHT * 0.15)
+        self.ancora("b13b")
         self.play(TransformFromCopy(VGroup(*Fr.g(2)), blkA), GrowFromCenter(braceA), FadeIn(labA), run_time=1.0)
         self.until(157.2)
-        self.play(TransformFromCopy(VGroup(*Fr.g(4)), blkB), GrowFromCenter(braceB), FadeIn(labB), run_time=1.1)
+        self.ancora("b13c")
+        self.play(TransformFromCopy(VGroup(*Fr.g(4)), blkB), GrowFromCenter(braceB), FadeIn(labB), FadeIn(divs),
+                  run_time=1.1)
         self.until(158.6)
         # total: quatro blocos iguais
+        self.ancora("b13d")
         tot = Eq("I_{\\rm ponta}", "=", r"\frac4{12}", "ML^2", size=44, w=4.8, colors={0: CYAN})
-        tot.mob.move_to([0, -2.1, 0])
-        self.play(FadeIn(tot.mob, shift=UP * 0.1), labA.animate.set_opacity(0.45), labB.animate.set_opacity(0.45),
-                  braceA.animate.set_opacity(0.45), braceB.animate.set_opacity(0.45), run_time=0.8)
+        tot.mob.move_to([0, -2.55, 0])
+        self.play(FadeIn(tot.mob, shift=UP * 0.1), run_time=0.8)
         self.until(159.8)
         fin = mt("I_{\\rm ponta}", "=", "4", "I_{CM}", size=68, w=6.4, colors={0: CYAN, 3: CYAN}
-                 ).move_to([0, -3.35, 0])
+                 ).move_to([0, -3.0, 0])
         self.finbox = box(fin, CYAN)
+        # o resultado final entra e a linha intermediária 4/12 já cumpriu o papel
+        self.play(FadeOut(tot.mob), run_time=0.3)
         self.play(FadeIn(VGroup(fin, self.finbox), shift=UP * 0.1), run_time=0.8)
-        self.fin13 = VGroup(Fr.mob, unit, blkA, blkB, braceA, braceB, labA, labB, tot.mob, fin, self.finbox)
+        self.fin13 = VGroup(Fr.mob, unit, blkA, blkB, divs, braceA, braceB, labA, labB, fin, self.finbox)
         self.until(161.8)
 
     # ── BLOCO 14 · síntese (sem barra) ──────────────────────────────────────
     def b14(self):
-        self.seg(0, 1, 0.5, 1.5)
+        self.ancora("b14a")
         self.play(FadeOut(self.fin13), FadeOut(self.bar),
                   *self.hide("axis", "cm", "lcm", "rd", "rdl", "lcap", "guides", "ring"), run_time=0.8)
+        s1l2 = VGroup(text("a distância ", 30), text("ao quadrado", 30, CYAN)).arrange(RIGHT, buff=0.17)
         s1 = VGroup(MathTex(r"r_\perp^2", font_size=64, color=CYAN),
-                    text2("a contribuição cresce com", "a distância ao quadrado", 30)).arrange(DOWN, buff=0.3
-                                                                                                 ).move_to([0, 2.2, 0])
+                    VGroup(text("a contribuição cresce com", 30), s1l2).arrange(DOWN, buff=0.14)
+                    ).arrange(DOWN, buff=0.3).move_to([0, 2.2, 0])
+        s2l2 = VGroup(text("exatamente ", 30), text("Md²", 30, VIOLET)).arrange(RIGHT, buff=0.17)
         s2 = VGroup(MathTex("Md^2", font_size=64, color=VIOLET),
-                    text2("deslocar o eixo adiciona", "exatamente Md²", 30)).arrange(DOWN, buff=0.3
-                                                                                      ).move_to([0, -0.9, 0])
+                    VGroup(text("deslocar o eixo adiciona", 30), s2l2).arrange(DOWN, buff=0.14)
+                    ).arrange(DOWN, buff=0.3).move_to([0, -0.9, 0])
         self.play(FadeIn(s1, shift=UP * 0.1), run_time=0.7)
-        self.until(163.2)
+        self.ancora("b14b")
         self.play(FadeIn(s2, shift=UP * 0.1), run_time=0.8)
         self.s14 = VGroup(s1, s2)
         self.until(166.0)
 
     # ── BLOCO 15 · CTA: só o símbolo e @labparallax ─────────────────────────
     def b15(self):
-        self.seg(0, 1, 0.5, 1.5)
+        self.ancora("b15a")
         icon = ImageMobject(str(ICON_PATH)).set_width(2.1).move_to([0, 0.4, 0])
         handle = text("@labparallax", 36, CYAN).move_to([0, -1.5, 0])
         self.play(FadeOut(self.s14), FadeIn(icon, scale=0.95), FadeIn(handle, shift=UP * 0.1), run_time=0.6)
-        self.wait(1.4)
+        self.wait(1.0)
+        self.ancora("fim")
         self.play(FadeOut(icon), FadeOut(handle), run_time=0.4)

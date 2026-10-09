@@ -29,3 +29,7 @@ videos_longos/*/audio/partes/
 # Sistema operacional
 .DS_Store
 Thumbs.db
+
+# Entregas finais organizadas por videos/entregar.py (cópias dos MP4/áudio; ficam fora do Git)
+entregas/*
+!entregas/.gitkeep

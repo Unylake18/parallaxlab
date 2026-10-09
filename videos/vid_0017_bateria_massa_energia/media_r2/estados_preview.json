@@ -1,0 +1,179 @@
+{
+  "classe": "BateriaMassaEnergia",
+  "duracao_provisoria_s": 116.9833333333332,
+  "resolucao": [
+    540,
+    960
+  ],
+  "fps": 15.0,
+  "estados": [
+    {
+      "nome": "01_pergunta",
+      "t": 1.8
+    },
+    {
+      "nome": "02_massa_total",
+      "t": 6.35
+    },
+    {
+      "nome": "03_formulacao",
+      "t": 9.55
+    },
+    {
+      "nome": "04_mAh_Ah",
+      "t": 15.45
+    },
+    {
+      "nome": "05_V_Ah",
+      "t": 18.8
+    },
+    {
+      "nome": "06_15_2_Wh",
+      "t": 22.7
+    },
+    {
+      "nome": "07_54_720_J",
+      "t": 31.0
+    },
+    {
+      "nome": "08_relacao_massa_energia",
+      "t": 36.9
+    },
+    {
+      "nome": "09_isolamento",
+      "t": 41.1
+    },
+    {
+      "nome": "10_substituicao",
+      "t": 44.45
+    },
+    {
+      "nome": "11_massa_kg",
+      "t": 48.05
+    },
+    {
+      "nome": "12_0_6_ng",
+      "t": 57.25
+    },
+    {
+      "nome": "13_rehook_1_g",
+      "t": 64.7
+    },
+    {
+      "nome": "14_1_g_kg",
+      "t": 68.85
+    },
+    {
+      "nome": "15_energia_1_g_J",
+      "t": 72.1
+    },
+    {
+      "nome": "16_energia_1_g_Wh",
+      "t": 76.0
+    },
+    {
+      "nome": "17_25_GWh",
+      "t": 81.133
+    },
+    {
+      "nome": "18_hipotese",
+      "t": 85.933
+    },
+    {
+      "nome": "19_divisao_bateria",
+      "t": 89.683
+    },
+    {
+      "nome": "19b_cancelamento_Wh",
+      "t": 92.033
+    },
+    {
+      "nome": "20_10_8_kg",
+      "t": 94.633
+    },
+    {
+      "nome": "21_100_mil_toneladas",
+      "t": 101.083
+    },
+    {
+      "nome": "22_fechamento_comparacao",
+      "t": 107.533
+    },
+    {
+      "nome": "23_fechamento_sintese",
+      "t": 114.483
+    }
+  ],
+  "transicoes": [
+    {
+      "nome": "mAh_para_Ah",
+      "t": 13.95,
+      "tipo": "TransformMatchingTex"
+    },
+    {
+      "nome": "especificacoes_para_produto",
+      "t": 17.3,
+      "tipo": "TransformMatchingTex"
+    },
+    {
+      "nome": "produto_para_15_2_Wh",
+      "t": 20.3,
+      "tipo": "TransformMatchingTex"
+    },
+    {
+      "nome": "c_quadrado_para_denominador",
+      "t": 39.05,
+      "tipo": "TransformByGlyphMap"
+    },
+    {
+      "nome": "substituicao_energia_e_c",
+      "t": 42.65,
+      "tipo": "TransformByGlyphMap"
+    },
+    {
+      "nome": "avaliacao_massa_kg",
+      "t": 46.25,
+      "tipo": "TransformByGlyphMap"
+    },
+    {
+      "nome": "massa_para_regua",
+      "t": 50.6,
+      "tipo": "TransformByGlyphMap"
+    },
+    {
+      "nome": "regua_para_0_6_ng",
+      "t": 54.4,
+      "tipo": "copia_da_unidade_e_fade_numerico"
+    },
+    {
+      "nome": "inversao_massa_energia",
+      "t": 62.7,
+      "tipo": "troca_de_posicao_por_arcos"
+    },
+    {
+      "nome": "energia_para_um_grama",
+      "t": 70.35,
+      "tipo": "TransformMatchingTex"
+    },
+    {
+      "nome": "energia_de_J_para_Wh",
+      "t": 74.5,
+      "tipo": "TransformMatchingTex"
+    },
+    {
+      "nome": "25_GWh",
+      "t": 77.85,
+      "tipo": "TransformMatchingTex"
+    },
+    {
+      "nome": "divisao_para_10_8_kg",
+      "t": 93.033,
+      "tipo": "TransformByGlyphMap"
+    },
+    {
+      "nome": "kg_por_extenso",
+      "t": 97.558,
+      "tipo": "TransformByGlyphMap"
+    }
+  ]
+}

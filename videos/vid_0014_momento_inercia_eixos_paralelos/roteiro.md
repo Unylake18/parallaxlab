@@ -74,7 +74,7 @@ A fórmula não precisava ser decorada: ela já estava escondida na própria def
 
 Se curtiu entender de onde a fórmula vem, segue o Parallax Lab pra mais Física e Matemática assim.
 
-## Storyboard por bloco (V5)
+## Storyboard por bloco (V6)
 
 Marcos nominais do preview silencioso (a voz ainda não existe). A V5 é polimento de ritmo e escala: abertura em 15 s com um estado por vez (título → centro→ponta → `I_ponta = 4I_CM ?` → mapa das duas perguntas), hierarquia tipográfica normalizada, comparação final enxuta (sem repetir `1/3 ML²`), síntese sem barra e end card curto.
 
@@ -96,4 +96,4 @@ Marcos nominais do preview silencioso (a voz ainda não existe). A V5 é polimen
 | 14 | 162–166,5 | Síntese limpa, sem barra | `r_⊥²` — a contribuição cresce com a distância ao quadrado; `Md²` — deslocar o eixo adiciona exatamente `Md²` | Mensagem final |
 | 15 | 166,5–169 | Só o símbolo oficial e `@labparallax` | — | Assinatura |
 
-Duração nominal do preview V5: ≈169 s. Textos de tela novos (título, "só o eixo mudou", mapa do vídeo, "cada bloco = 1/12 ML²") complementam a narração e podem ser ajustados quando a voz existir.
+Duração nominal do preview V6: ≈169 s. A V6 mantém tempos e conteúdo da V5 e troca fades por movimento termo a termo nas passagens algébricas. Textos de tela novos (título, "só o eixo mudou", mapa do vídeo, "cada bloco = 1/12 ML²") complementam a narração e podem ser ajustados quando a voz existir.

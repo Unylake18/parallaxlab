@@ -1,0 +1,535 @@
+{
+  "duracao_cena_s": 154.367,
+  "estados": {
+    "hook_2d": 4.983,
+    "mesmo_volume": 12.65,
+    "forca_entrada": 18.45,
+    "face_varrendo_entrada": 20.4,
+    "avanco_entrada": 25.517,
+    "volume_varrido": 30.117,
+    "trabalho_entrada": 32.917,
+    "trabalho_entrada_guardado": 36.05,
+    "pacote_em_transito": 39.167,
+    "pacote_mudou_velocidade_altura": 41.517,
+    "saida_sinal_negativo": 45.383,
+    "trabalho_saida": 48.25,
+    "dois_trabalhos_guardados": 51.25,
+    "trabalho_liquido": 60.05,
+    "massa_volume": 66.183,
+    "energias_dos_estados": 70.85,
+    "variacao_cinetica": 77.65,
+    "variacao_gravitacional": 86.383,
+    "tres_resultados_guardados": 89.717,
+    "balanco_simbolico": 95.583,
+    "balanco_em_montagem": 98.633,
+    "balanco_completo": 100.983,
+    "cancelamento_volume": 107.117,
+    "balanco_por_volume": 110.783,
+    "diferencas_abertas": 113.85,
+    "agrupamento_em_movimento": 118.733,
+    "agrupamento_por_estado": 123.717,
+    "bernoulli": 128.917,
+    "significado_pressao": 131.917,
+    "significado_cinetica": 133.717,
+    "significado_gravitacional": 135.517,
+    "unidades": 137.183,
+    "continuidade_2d": 144.65,
+    "bernoulli_estreitamento": 149.05,
+    "hipoteses_finais": 152.983
+  },
+  "layout": [
+    [
+      -3.558,
+      3.558,
+      -1.729,
+      -0.571
+    ],
+    [
+      -2.77,
+      2.77,
+      -1.384,
+      -0.916
+    ],
+    [
+      -2.77,
+      2.77,
+      -1.384,
+      -0.916
+    ],
+    [
+      -1.467,
+      1.467,
+      -1.429,
+      -0.871
+    ],
+    [
+      -1.467,
+      1.467,
+      -1.429,
+      -0.871
+    ],
+    [
+      -1.683,
+      1.683,
+      -1.415,
+      -0.885
+    ],
+    [
+      -1.683,
+      1.683,
+      -1.415,
+      -0.885
+    ],
+    [
+      -1.981,
+      1.981,
+      -1.406,
+      -0.894
+    ],
+    [
+      -1.981,
+      1.981,
+      -1.406,
+      -0.894
+    ],
+    [
+      -1.754,
+      1.754,
+      -1.433,
+      -0.867
+    ],
+    [
+      -1.754,
+      1.754,
+      -1.433,
+      -0.867
+    ],
+    [
+      -3.32,
+      -1.04,
+      0.896,
+      1.264
+    ],
+    [
+      -1.896,
+      1.896,
+      -1.411,
+      -0.889
+    ],
+    [
+      -1.896,
+      1.896,
+      -1.411,
+      -0.889
+    ],
+    [
+      -2.139,
+      2.139,
+      -1.397,
+      -0.903
+    ],
+    [
+      -1.944,
+      1.944,
+      -1.424,
+      -0.876
+    ],
+    [
+      -1.944,
+      1.944,
+      -1.424,
+      -0.876
+    ],
+    [
+      0.916,
+      3.444,
+      0.902,
+      1.258
+    ],
+    [
+      -2.047,
+      2.047,
+      -1.401,
+      -0.899
+    ],
+    [
+      -2.721,
+      2.721,
+      -1.397,
+      -0.903
+    ],
+    [
+      -2.565,
+      2.565,
+      -1.446,
+      -0.854
+    ],
+    [
+      -2.565,
+      2.565,
+      -1.446,
+      -0.854
+    ],
+    [
+      -1.667,
+      1.667,
+      0.828,
+      1.212
+    ],
+    [
+      -0.834,
+      0.834,
+      -1.69,
+      -0.61
+    ],
+    [
+      -1.339,
+      1.339,
+      -1.44,
+      -0.86
+    ],
+    [
+      -1.339,
+      1.339,
+      -1.44,
+      -0.86
+    ],
+    [
+      1.746,
+      3.354,
+      -3.774,
+      -3.426
+    ],
+    [
+      -3.317,
+      3.317,
+      -1.705,
+      -0.695
+    ],
+    [
+      -3.317,
+      3.317,
+      -1.705,
+      -0.695
+    ],
+    [
+      -2.029,
+      2.029,
+      -1.411,
+      -0.889
+    ],
+    [
+      -2.425,
+      2.425,
+      -1.729,
+      -0.571
+    ],
+    [
+      -2.739,
+      2.739,
+      -2.168,
+      -1.032
+    ],
+    [
+      -2.739,
+      2.739,
+      -2.168,
+      -1.032
+    ],
+    [
+      -1.862,
+      1.862,
+      -0.246,
+      0.526
+    ],
+    [
+      -2.546,
+      2.546,
+      -1.908,
+      -1.292
+    ],
+    [
+      -2.821,
+      2.821,
+      -1.898,
+      -1.302
+    ],
+    [
+      -2.821,
+      2.821,
+      -1.898,
+      -1.302
+    ],
+    [
+      -1.919,
+      1.919,
+      -0.942,
+      -0.538
+    ],
+    [
+      -2.214,
+      2.214,
+      -2.488,
+      -1.912
+    ],
+    [
+      -2.214,
+      2.214,
+      -2.488,
+      -1.912
+    ],
+    [
+      -2.001,
+      2.001,
+      -2.515,
+      0.815
+    ],
+    [
+      -2.001,
+      2.001,
+      -2.515,
+      0.815
+    ],
+    [
+      -1.568,
+      1.568,
+      -2.515,
+      0.815
+    ],
+    [
+      -1.568,
+      1.568,
+      -2.515,
+      0.815
+    ],
+    [
+      -1.63,
+      1.63,
+      -2.491,
+      0.77
+    ],
+    [
+      -1.63,
+      1.63,
+      -2.491,
+      0.77
+    ],
+    [
+      -2.352,
+      2.886,
+      -3.777,
+      0.757
+    ],
+    [
+      -2.95,
+      2.95,
+      -2.496,
+      0.775
+    ],
+    [
+      -2.95,
+      2.95,
+      -2.496,
+      0.775
+    ],
+    [
+      -3.558,
+      3.558,
+      -1.729,
+      -0.571
+    ],
+    [
+      -3.558,
+      3.558,
+      -1.729,
+      -0.571
+    ],
+    [
+      -3.558,
+      3.558,
+      -1.729,
+      -0.571
+    ],
+    [
+      -3.558,
+      3.558,
+      -1.729,
+      -0.571
+    ],
+    [
+      -3.558,
+      3.558,
+      -1.729,
+      -0.571
+    ],
+    [
+      -3.558,
+      3.558,
+      -1.729,
+      -0.571
+    ],
+    [
+      -1.645,
+      1.645,
+      -1.411,
+      -0.889
+    ],
+    [
+      -1.645,
+      1.645,
+      -1.411,
+      -0.889
+    ],
+    [
+      -2.719,
+      2.719,
+      -1.687,
+      -0.613
+    ],
+    [
+      -2.719,
+      2.719,
+      -1.687,
+      -0.613
+    ],
+    [
+      -3.558,
+      3.558,
+      -1.729,
+      -0.571
+    ],
+    [
+      -3.558,
+      3.558,
+      -1.729,
+      -0.571
+    ]
+  ],
+  "glyph_maps": [
+    {
+      "transformacao": "F1 para P1 A1",
+      "tempo": 27.367
+    },
+    {
+      "transformacao": "A1 dx1 para volume",
+      "tempo": 32.233
+    },
+    {
+      "transformacao": "F2 para P2 A2",
+      "tempo": 46.9
+    },
+    {
+      "transformacao": "A2 dx2 para volume",
+      "tempo": 47.9
+    },
+    {
+      "transformacao": "Fatorar mesmo volume nos trabalhos",
+      "tempo": 59.3
+    },
+    {
+      "transformacao": "Densidade para massa do pacote",
+      "tempo": 65.1
+    },
+    {
+      "transformacao": "m para rho volume em Delta K",
+      "tempo": 76.3
+    },
+    {
+      "transformacao": "m para rho volume em Delta Ug",
+      "tempo": 84.633
+    },
+    {
+      "transformacao": "Cancelar os tres volumes",
+      "tempo": 109.7
+    },
+    {
+      "transformacao": "Abrir diferencas copiando coeficientes",
+      "tempo": 113.5
+    },
+    {
+      "transformacao": "P2 cruza a igualdade e separa os blocos",
+      "tempo": 117.633
+    },
+    {
+      "transformacao": "Reorganizar estados com sinais rastreaveis",
+      "tempo": 121.633
+    },
+    {
+      "transformacao": "Remover indices na generalizacao",
+      "tempo": 127.767
+    }
+  ],
+  "reutilizacoes": [
+    {
+      "resultado": "W1",
+      "destino": "equacao_atual",
+      "tempo": 54.033
+    },
+    {
+      "resultado": "W2",
+      "destino": "equacao_atual",
+      "tempo": 55.033
+    },
+    {
+      "resultado": "W1",
+      "destino": "equacao_atual",
+      "tempo": 56.967
+    },
+    {
+      "resultado": "W2",
+      "destino": "equacao_atual",
+      "tempo": 57.967
+    },
+    {
+      "resultado": "m",
+      "destino": "equacao_atual",
+      "tempo": 77.3
+    },
+    {
+      "resultado": "m",
+      "destino": "equacao_atual",
+      "tempo": 85.633
+    },
+    {
+      "resultado": "WP",
+      "destino": "equacao_atual",
+      "tempo": 93.233
+    },
+    {
+      "resultado": "K",
+      "destino": "equacao_atual",
+      "tempo": 94.233
+    },
+    {
+      "resultado": "U",
+      "destino": "equacao_atual",
+      "tempo": 95.233
+    },
+    {
+      "resultado": "WP",
+      "destino": "balanco_expandido",
+      "tempo": 100.633
+    },
+    {
+      "resultado": "K",
+      "destino": "balanco_expandido",
+      "tempo": 100.633
+    },
+    {
+      "resultado": "U",
+      "destino": "balanco_expandido",
+      "tempo": 100.633
+    }
+  ],
+  "paleta": [
+    "#050816",
+    "#F5F7FF",
+    "#35D9FF",
+    "#267BFF",
+    "#745CFF",
+    "#EA63FF"
+  ],
+  "solido_3d": "nenhum",
+  "faixa_inferior_livre_ate_y": -4.25,
+  "cabecalho": "vid_0014.build_stage; somente EP alterado"
+}

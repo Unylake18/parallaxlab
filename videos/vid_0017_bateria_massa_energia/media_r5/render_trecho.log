@@ -1,0 +1,1553 @@
+Manim Community v0.21.0
+
+[10/08/26 16:04:39] INFO     No end scene number specified in -n   utils.py:817
+                             option. Rendering from 62 onwards...              
+
+Animation 0: FadeIn(Text('Uma bateria carregada')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                               
+
+Animation 2: LaggedStart(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                      
+
+Animation 3: _MethodAnimation(RoundedRectangle):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                      
+
+Animation 4: _MethodAnimation(RoundedRectangle):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                      
+
+Animation 6: FadeIn(Text('SIM.')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                        
+
+Animation 8: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 10: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 12: FadeOut(Text('Uma bateria carregada')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                 
+
+Animation 13: FadeIn(Text('QUANTA ENERGIA?')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+[10/08/26 16:05:01] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4000                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique001'>}\,\mathrm{                        
+                             mAh}\special{dvisvgm:raw                          
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\6                        
+                             fb5b56c9f5ad511.tex                               
+[10/08/26 16:05:02] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}3{,}8                             
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique001'>}\,\mathrm                         
+                             V\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\0                        
+                             b76a5ada89767dc.tex                               
+
+Animation 14: FadeIn(Text('MODELO FICT�CIO')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 15: LaggedStart(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                       
+[10/08/26 16:05:07] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4                                 
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}000                            
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}\,\mathrm{                        
+                             m} \special{dvisvgm:raw                           
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique003'>}\mathrm{Ah                        
+                             }\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\f                        
+                             e5bb8444e2ee4d5.tex                               
+[10/08/26 16:05:08] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4                                 
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique001'>}\mathrm{Ah                        
+                             }\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\4                        
+                             2558669dad9bc3d.tex                               
+
+Animation 16: TransformFromCopy(MathTex('4 000 \\,\\mathrm{m} \\mathrm{Ah}')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                    
+
+Animation 17: FadeIn(Text('� 1000')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 18: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                
+[10/08/26 16:05:11] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}E                                 
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}=                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique002'>}3{,}8                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique003'>}\,\mathrm                         
+                             V \special{dvisvgm:raw                            
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique004'>}\times                         
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique005'>}4                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique006'>}\mathrm{Ah                        
+                             }\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\4                        
+                             4aa6a27b641e00c.tex                               
+
+Animation 20: _MethodAnimation(MathTex('3{,}8 \\,\\mathrm V')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                           
+
+Animation 21: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                
+
+Animation 22: Indicate(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                            
+[10/08/26 16:05:12] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}E                                 
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}=                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique002'>}15{,}2                         
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique003'>}\,\mathrm{                        
+                             Wh}\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\d                        
+                             4dc63beb41c678e.tex                               
+
+Animation 24: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                
+
+Animation 25: Create(SurroundingRectangle):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 27: FadeOut(Text('QUANTA ENERGIA?')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 28: FadeIn(Text('ESSA ENERGIA, EM JOULES')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                            
+[10/08/26 16:05:16] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}15{,}2                            
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique001'>}\,\mathrm{                        
+                             Wh}\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\0                        
+                             b8570f50d3db413.tex                               
+
+Animation 29: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}1                                 
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique001'>}\,\mathrm{                        
+                             Wh} \special{dvisvgm:raw                          
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique002'>}=                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique003'>}3600                           
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique004'>}\,\mathrm                         
+                             J\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\2                        
+                             2f0b8c63a5ba543.tex                               
+
+Animation 30: GrowArrow(Arrow), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                           
+[10/08/26 16:05:17] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}54\,720                           
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique001'>}\,\mathrm                         
+                             J\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\3                        
+                             4623c2d1a1c7a2b.tex                               
+
+Animation 31: GrowArrow(Arrow), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                           
+
+Animation 33: FadeOut(MathTex('15{,}2 \\,\\mathrm{Wh}')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                     
+
+Animation 34: Create(SurroundingRectangle):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 35: FadeIn(Text('ENERGIA ARMAZENADA')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                       
+
+Animation 37: FadeOut(Text('ESSA ENERGIA, EM JOULES')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                   
+
+Animation 38: _MethodAnimation(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                              
+
+Animation 39: FadeIn(Text('E QUANTA MASSA?')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+[10/08/26 16:05:31] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Delta E                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}=                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique002'>}\Delta                         
+                             m \special{dvisvgm:raw                            
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique003'>}c^2\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\6                        
+                             2fff8ee6dbbdc08.tex                               
+[10/08/26 16:05:32] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Delta E =                        
+                             \Delta m                                          
+                             c^2\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\7                        
+                             20d8792b54cf78e.tex                               
+
+Animation 40: FadeIn(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 41: Create(SurroundingRectangle):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 42: ShowPassingFlash(Arrow):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                            
+[10/08/26 16:05:33] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Delta m                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}=                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}\frac{\Del                        
+                             ta                                                
+                             E}{c^2}\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\e                        
+                             c44fd0547c6d068.tex                               
+[10/08/26 16:05:34] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Delta m =                        
+                             \frac{\Delta                                      
+                             E}{c^2}\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\b                        
+                             a0719c039ab7094.tex                               
+
+Animation 44: TransformByGlyphMap(Group), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                     
+[10/08/26 16:05:35] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}c                                 
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\approx                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}3\times10^                        
+                             8 \special{dvisvgm:raw                            
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique003'>}\                              
+                             \mathrm{m/s}\special{dvisv                        
+                             gm:raw </g>} to                                   
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\5                        
+                             d83b55da28beb19.tex                               
+
+Animation 45: FadeIn(MathTex('c \\approx 3\\times10^8 \\ \\mathrm{m/s}')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                
+[10/08/26 16:05:36] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Delta m                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\approx                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}\frac{54\,                        
+                             720}{(3\times10^8)^2}\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\b                        
+                             9e608487fa8cbfe.tex                               
+[10/08/26 16:05:37] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Delta m                          
+                             \approx                                           
+                             \frac{54\,720}{(3\times10^                        
+                             8)^2}\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\f                        
+                             51e385d44cbc433.tex                               
+
+Animation 47: TransformByGlyphMap(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                               
+[10/08/26 16:05:38] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Delta m                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\approx                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}6{,}1\time                        
+                             s10^{-13}                                         
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique003'>}\                              
+                             \mathrm{kg}\special{dvisvg                        
+                             m:raw </g>} to                                    
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\e                        
+                             5421d3489815839.tex                               
+[10/08/26 16:05:39] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Delta m                          
+                             \approx                                           
+                             6{,}1\times10^{-13} \                             
+                             \mathrm{kg}\special{dvisvg                        
+                             m:raw </g>} to                                    
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\7                        
+                             3fc83a02d4835ee.tex                               
+
+Animation 49: TransformByGlyphMap(Group), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 51: FadeOut(Text('E QUANTA MASSA?')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 52: FadeIn(Text('UMA MASSA MIN�SCULA')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                        
+[10/08/26 16:05:43] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}6{,}1\time                        
+                             s10^{-13}                                         
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\                              
+                             \mathrm{kg}\special{dvisvg                        
+                             m:raw </g>} to                                    
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\f                        
+                             b65ce0525b92223.tex                               
+[10/08/26 16:05:44] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}6{,}1\time                        
+                             s10^{-13} \                                       
+                             \mathrm{kg}\special{dvisvg                        
+                             m:raw </g>} to                                    
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\f                        
+                             325ebe9949a6a52.tex                               
+
+Animation 53: TransformByGlyphMap(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                               
+[10/08/26 16:05:45] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\mathrm{kg                        
+                             }\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\4                        
+                             162440a841a1920.tex                               
+[10/08/26 16:05:46] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\mathrm                           
+                             g\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\5                        
+                             a94096f66c17e76.tex                               
+[10/08/26 16:05:47] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\mathrm{mg                        
+                             }\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\e                        
+                             d254cd91049b54a.tex                               
+[10/08/26 16:05:48] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\mu\mathrm                        
+                             g\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\0                        
+                             252434044e55758.tex                               
+[10/08/26 16:05:49] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\mathrm{ng                        
+                             }\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\4                        
+                             8b67da637002f21.tex                               
+
+Animation 54: Create(Line), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                       
+
+Animation 56: FadeIn(MathTex('\\mathrm g')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                        
+
+Animation 57: FadeIn(MathTex('\\mathrm{mg}')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 58: FadeIn(MathTex('\\mu\\mathrm g')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                            
+
+Animation 59: FadeIn(MathTex('\\mathrm{ng}')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                          
+[10/08/26 16:05:50] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\approx                           
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}0{,}6                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}\,\mathrm{                        
+                             ng}\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\f                        
+                             3668e8dd6e12a70.tex                               
+
+Animation 60: FadeOut(MathTex('6{,}1\\times10^{-13} \\ \\mathrm{kg}')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                   
+
+Animation 61: Create(SurroundingRectangle), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                       
+[10/08/26 16:05:51] INFO     Animation 62 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_425302925_15                         
+                             92624452.mp4'                                     
+
+Animation 63: FadeOut(Text('UMA MASSA MIN�SCULA')), etc.:   0%|          | 0/7 [00:00<?, ?it/s]
+                                                                                               
+                    INFO     Animation 63 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3993719525_2                         
+                             901268267.mp4'                                    
+
+Animation 64: _MethodAnimation(MathTex('\\approx 0{,}6 \\,\\mathrm{ng}')):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                                                 
+[10/08/26 16:05:52] INFO     Animation 64 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3548510925_3                         
+                             408438370.mp4'                                    
+
+Animation 65: FadeIn(VGroup of 3 submobjects), etc.:   0%|          | 0/7 [00:00<?, ?it/s]
+                                                                                          
+[10/08/26 16:05:58] INFO     Animation 65 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_1733525960_2                         
+                             076541953.mp4'                                    
+                    INFO     Animation 66 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3114361405_2                         
+                             379530126.mp4'                                    
+[10/08/26 16:06:00] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}1\ \mathrm                        
+                             g\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\1                        
+                             f90e8a65ddb4dbd.tex                               
+
+Animation 67: FadeIn(Text('E PARA ACRESCENTAR')), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                              
+[10/08/26 16:06:03] INFO     Animation 67 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_4142248920_3                         
+                             587033829.mp4'                                    
+
+Animation 68: Rotate(Arrow):   0%|          | 0/10 [00:00<?, ?it/s]
+                                                                   
+                    INFO     Animation 68 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_832688951_19                         
+                             49016595.mp4'                                     
+
+Animation 69: _MethodAnimation(Arrow):   0%|          | 0/3 [00:00<?, ?it/s]
+                                                                            
+                    INFO     Animation 69 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_2167188422_1                         
+                             949016595.mp4'                                    
+                    INFO     Animation 70 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_4163062370_2                         
+                             260855384.mp4'                                    
+
+Animation 71: FadeOut(MathTex('\\approx 0{,}6 \\,\\mathrm{ng}')), etc.:   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                                             
+[10/08/26 16:06:04] INFO     Animation 71 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_2681201427_1                         
+                             457430231.mp4'                                    
+
+Animation 72: FadeIn(Text('PARA ACRESCENTAR 1 g')):   0%|          | 0/7 [00:00<?, ?it/s]
+                                                                                         
+[10/08/26 16:06:06] INFO     Animation 72 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3229600787_4                         
+                             037533058.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}1\ \mathrm                        
+                             g \special{dvisvgm:raw                            
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}=                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}10^{-3}\                          
+                             \mathrm{kg}\special{dvisvg                        
+                             m:raw </g>} to                                    
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\2                        
+                             48e9bb33f505f68.tex                               
+
+Animation 73: FadeIn(MathTex('1\\ \\mathrm g = 10^{-3}\\ \\mathrm{kg}')), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                                                      
+[10/08/26 16:06:07] INFO     Animation 73 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_2870747986_1                         
+                             259836639.mp4'                                    
+
+Animation 74: GrowArrow(Arrow):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                     
+                    INFO     Animation 74 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3812245916_4                         
+                             48653083.mp4'                                     
+[10/08/26 16:06:08] INFO     Animation 75 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_125152860_34                         
+                             41526290.mp4'                                     
+
+Animation 76: FadeOut(MathTex('1\\ \\mathrm g = 10^{-3}\\ \\mathrm{kg}')), etc.:   0%|          | 0/5 [00:00<?, ?it/s]
+                                                                                                                      
+                    INFO     Animation 76 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3495502996_4                         
+                             242618139.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Delta E                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\approx                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}8{,}99\tim                        
+                             es10^{13}                                         
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique003'>}\                              
+                             \mathrm                                           
+                             J\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\3                        
+                             6873e32f1098e8d.tex                               
+
+Animation 77: TransformMatchingTex(Group):   0%|          | 0/14 [00:00<?, ?it/s]
+                                                                                 
+[10/08/26 16:06:09] INFO     Animation 77 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_1268744684_7                         
+                             37738882.mp4'                                     
+                    INFO     Animation 78 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_941615173_34                         
+                             76468667.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}1\                                
+                             \mathrm{Wh}=3600\ \mathrm                         
+                             J\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\1                        
+                             fc3029a4cab4544.tex                               
+
+Animation 79: FadeIn(MathTex('1\\ \\mathrm{Wh}=3600\\ \\mathrm J')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                                          
+[10/08/26 16:06:10] INFO     Animation 79 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_46812697_157                         
+                             7828813.mp4'                                      
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\approx                           
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}25                             
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique002'>}\                              
+                             \mathrm{GWh}\special{dvisv                        
+                             gm:raw </g>} to                                   
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\2                        
+                             5b3df57fb5d4e89.tex                               
+
+Animation 80: TransformMatchingTex(Group):   0%|          | 0/14 [00:00<?, ?it/s]
+                                                                                 
+[10/08/26 16:06:12] INFO     Animation 80 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_1288095732_3                         
+                             268799015.mp4'                                    
+
+Animation 81: FadeOut(VGroup of 3 submobjects), etc.:   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                           
+                    INFO     Animation 81 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_1543324758_2                         
+                             462393402.mp4'                                    
+
+Animation 82: Create(SurroundingRectangle):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                 
+                    INFO     Animation 82 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3971639601_1                         
+                             829627633.mp4'                                    
+
+Animation 83: FadeIn(VGroup of 2 submobjects):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                    
+[10/08/26 16:06:16] INFO     Animation 83 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_2984259111_1                         
+                             46156997.mp4'                                     
+                    INFO     Animation 84 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3810316983_3                         
+                             184407482.mp4'                                    
+
+Animation 85: FadeOut(Mobject), etc.:   0%|          | 0/7 [00:00<?, ?it/s]
+                                                                           
+[10/08/26 16:06:17] INFO     Animation 85 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_509417636_87                         
+                             7624649.mp4'                                      
+
+Animation 86: FadeIn(Text('QUANTAS BATERIAS?')):   0%|          | 0/7 [00:00<?, ?it/s]
+                                                                                      
+[10/08/26 16:06:19] INFO     Animation 86 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_919998276_12                         
+                             13162317.mp4'                                     
+
+Animation 87: _MethodAnimation(MathTex('\\approx 25 \\ \\mathrm{GWh}')):   0%|          | 0/7 [00:00<?, ?it/s]
+                                                                                                              
+                    INFO     Animation 87 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_1146334250_1                         
+                             789927739.mp4'                                    
+[10/08/26 16:06:21] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}N                                 
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\approx                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}\frac{25\t                        
+                             imes10^9\,\mathrm{Wh}}{15{                        
+                             ,}2\,\mathrm{Wh}}\special{                        
+                             dvisvgm:raw </g>} to                              
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\0                        
+                             6a5fb8a824ebdb0.tex                               
+
+Animation 88: FadeIn(VGroup of 3 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 88: FadeIn(VGroup of 3 submobjects), etc.:  83%|########3 | 10/12 [00:00<00:00, 99.45it/s]
+                                                                                                    
+[10/08/26 16:06:23] INFO     Animation 88 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_35698257_222                         
+                             7230460.mp4'                                      
+                    INFO     Animation 89 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3509440700_3                         
+                             866528924.mp4'                                    
+
+Animation 90: FadeOut(MathTex('\\approx 25 \\ \\mathrm{GWh}')), etc.:   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                                           
+                    INFO     Animation 90 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_1360139051_2                         
+                             817797989.mp4'                                    
+
+Animation 91: FadeIn(Text('QUANTIDADE SIMB�LICA')), etc.:   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                               
+[10/08/26 16:06:27] INFO     Animation 91 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_1651927691_1                         
+                             382391965.mp4'                                    
+
+Animation 92: LaggedStart(Group):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                       
+                    INFO     Animation 92 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3456486202_2                         
+                             402744366.mp4'                                    
+                    INFO     Animation 93 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_358564154_26                         
+                             10572774.mp4'                                     
+
+Animation 94: LaggedStart(Group):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                       
+                    INFO     Animation 94 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3604821187_6                         
+                             74580039.mp4'                                     
+[10/08/26 16:06:28] INFO     Animation 95 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_358564154_59                         
+                             6058121.mp4'                                      
+
+Animation 96: LaggedStart(Group), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 96: LaggedStart(Group), etc.:  25%|##5       | 3/12 [00:00<00:00, 27.27it/s]
+Animation 96: LaggedStart(Group), etc.:  50%|#####     | 6/12 [00:00<00:00, 25.20it/s]
+Animation 96: LaggedStart(Group), etc.:  75%|#######5  | 9/12 [00:00<00:00, 24.00it/s]
+Animation 96: LaggedStart(Group), etc.: 100%|##########| 12/12 [00:00<00:00, 23.55it/s]
+                                                                                       
+[10/08/26 16:06:35] INFO     Animation 96 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_1342669054_1                         
+                             782626737.mp4'                                    
+[10/08/26 16:06:36] INFO     Animation 97 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_117227181_32                         
+                             69255869.mp4'                                     
+
+Animation 98: FadeOut(Text('QUANTAS BATERIAS?')), etc.:   0%|          | 0/7 [00:00<?, ?it/s]
+Animation 98: FadeOut(Text('QUANTAS BATERIAS?')), etc.:  43%|####2     | 3/7 [00:00<00:00, 25.20it/s]
+Animation 98: FadeOut(Text('QUANTAS BATERIAS?')), etc.:  86%|########5 | 6/7 [00:00<00:00, 25.45it/s]
+                                                                                                     
+                    INFO     Animation 98 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3465125594_3                         
+                             172780587.mp4'                                    
+
+Animation 99: FadeIn(Text('MASSA DO SISTEMA')):   0%|          | 0/7 [00:00<?, ?it/s]
+                                                                                     
+[10/08/26 16:06:39] INFO     Animation 99 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3609339660_4                         
+                             124975507.mp4'                                    
+
+Animation 100: _MethodAnimation(VGroup of 48 submobjects), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+Animation 100: _MethodAnimation(VGroup of 48 submobjects), etc.:  38%|###7      | 3/8 [00:00<00:00, 28.42it/s]
+Animation 100: _MethodAnimation(VGroup of 48 submobjects), etc.:  75%|#######5  | 6/8 [00:00<00:00, 28.34it/s]
+                                                                                                              
+                    INFO     Animation 100 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3616908235_3                         
+                             718786802.mp4'                                    
+[10/08/26 16:06:41] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}250\                              
+                             \mathrm{Wh/kg}\special{dvi                        
+                             svgm:raw </g>} to                                 
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\8                        
+                             7efedf2f14a2287.tex                               
+
+Animation 101: FadeIn(Text('HIP�TESE DO MODELO')), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                              
+[10/08/26 16:06:43] INFO     Animation 101 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_1236194034_3                         
+                             26096805.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}M                                 
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}=                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}\frac{25\t                        
+                             imes10^9\,\mathrm{Wh}}{250                        
+                             \,\mathrm{Wh/kg}}\special{                        
+                             dvisvgm:raw </g>} to                              
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\4                        
+                             ab6e3453baa238f.tex                               
+[10/08/26 16:06:44] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}M =                               
+                             \frac{25\times10^9\,\mathr                        
+                             m{Wh}}{250\,\mathrm{Wh/kg}                        
+                             }\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\2                        
+                             93e907173c5ee0c.tex                               
+
+Animation 102: Write(MathTex('M = \\frac{25\\times10^9\\,\\mathrm{Wh}}{250\\,\\mathrm{Wh/kg}}')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 102: Write(MathTex('M = \\frac{25\\times10^9\\,\\mathrm{Wh}}{250\\,\\mathrm{Wh/kg}}')), etc.:  82%|########1 | 9/11 [00:00<00:00, 84.89it/s]
+                                                                                                                                                      
+[10/08/26 16:06:49] INFO     Animation 102 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_1098183144_2                         
+                             933616487.mp4'                                    
+[10/08/26 16:06:50] INFO     Animation 103 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_941615173_15                         
+                             32872272.mp4'                                     
+
+Animation 104: Create(VGroup of 2 submobjects):   0%|          | 0/5 [00:00<?, ?it/s]
+                                                                                     
+                    INFO     Animation 104 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_2514586443_2                         
+                             403888512.mp4'                                    
+                    INFO     Animation 105 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3114361405_3                         
+                             601617424.mp4'                                    
+
+Animation 106: FadeOut(MathTex('M = \\frac{25\\times10^9\\,\\mathrm{Wh}}{250\\,\\mathrm{Wh/kg}}')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 106: FadeOut(MathTex('M = \\frac{25\\times10^9\\,\\mathrm{Wh}}{250\\,\\mathrm{Wh/kg}}')), etc.:  64%|######3   | 7/11 [00:00<00:00, 66.49it/s]
+                                                                                                                                                        
+[10/08/26 16:06:55] INFO     Animation 106 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_1836424772_1                         
+                             639619031.mp4'                                    
+                    INFO     Animation 107 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_4046863825_3                         
+                             326552600.mp4'                                    
+
+Animation 108: FadeOut(Text('\u2248 1,6 BILH�O')), etc.:   0%|          | 0/7 [00:00<?, ?it/s]
+Animation 108: FadeOut(Text('\u2248 1,6 BILH�O')), etc.:  43%|####2     | 3/7 [00:00<00:00, 23.80it/s]
+Animation 108: FadeOut(Text('\u2248 1,6 BILH�O')), etc.:  86%|########5 | 6/7 [00:00<00:00, 23.43it/s]
+                                                                                                 
+[10/08/26 16:06:56] INFO     Animation 108 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_1192954532_2                         
+                             050527117.mp4'                                    
+
+Animation 109: FadeIn(Text('MUNIC�PIO DE S�O PAULO')):   0%|          | 0/7 [00:00<?, ?it/s]
+                                                                                            
+[10/08/26 16:06:59] INFO     Animation 109 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_18391090_396                         
+                             0346600.mp4'                                      
+
+Animation 110: FadeIn(MathTex('\\approx 25 \\ \\mathrm{GWh}')), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 110: FadeIn(MathTex('\\approx 25 \\ \\mathrm{GWh}')), etc.:  42%|####1     | 5/12 [00:00<00:00, 48.06it/s]
+Animation 110: FadeIn(MathTex('\\approx 25 \\ \\mathrm{GWh}')), etc.:  83%|########3 | 10/12 [00:00<00:00, 48.33it/s]
+                                                                                                                     
+[10/08/26 16:07:01] INFO     Animation 110 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_2730775965_6                         
+                             18166588.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}0                                 
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique001'>}\,\mathrm                         
+                             h\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\2                        
+                             63746e243ba062e.tex                               
+
+Animation 111: FadeIn(MathTex('0 \\,\\mathrm h')), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+Animation 111: FadeIn(MathTex('0 \\,\\mathrm h')), etc.:  88%|########7 | 7/8 [00:00<00:00, 64.68it/s]
+                                                                                                      
+[10/08/26 16:07:10] INFO     Animation 111 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_729098719_14                         
+                             20571253.mp4'                                     
+[10/08/26 16:07:11] INFO     Animation 112 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3880968470_2                         
+                             780333698.mp4'                                    
+
+Animation 113: _MethodAnimation(MathTex('\\approx 25 \\ \\mathrm{GWh}')):   0%|          | 0/6 [00:00<?, ?it/s]
+Animation 113: _MethodAnimation(MathTex('\\approx 25 \\ \\mathrm{GWh}')):  67%|######6   | 4/6 [00:00<00:00, 38.08it/s]
+                                                                                                                       
+                    INFO     Animation 113 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_723207508_90                         
+                             2660019.mp4'                                      
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}2                                 
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique001'>}\,\mathrm                         
+                             h\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\d                        
+                             8975d17708edf3e.tex                               
+
+Animation 114: TransformMatchingTex(Group), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 114: TransformMatchingTex(Group), etc.:  56%|#####5    | 5/9 [00:00<00:00, 41.82it/s]
+                                                                                               
+[10/08/26 16:07:13] INFO     Animation 114 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3456051597_3                         
+                             219062132.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4                                 
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique001'>}\,\mathrm                         
+                             h\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\c                        
+                             95a1eb8013091f1.tex                               
+
+Animation 115: TransformMatchingTex(Group), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 115: TransformMatchingTex(Group), etc.:  56%|#####5    | 5/9 [00:00<00:00, 44.63it/s]
+                                                                                               
+[10/08/26 16:07:14] INFO     Animation 115 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_1174893659_2                         
+                             921524499.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}6                                 
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique001'>}\,\mathrm                         
+                             h\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\1                        
+                             ffe2525627aca74.tex                               
+
+Animation 116: TransformMatchingTex(Group), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 116: TransformMatchingTex(Group), etc.:  56%|#####5    | 5/9 [00:00<00:00, 48.51it/s]
+                                                                                               
+[10/08/26 16:07:16] INFO     Animation 116 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_4138987125_1                         
+                             312874901.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}8                                 
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique001'>}\,\mathrm                         
+                             h\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\a                        
+                             47fbbd08e5b09d9.tex                               
+
+Animation 117: TransformMatchingTex(Group), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 117: TransformMatchingTex(Group), etc.:  78%|#######7  | 7/9 [00:00<00:00, 62.18it/s]
+                                                                                               
+[10/08/26 16:07:17] INFO     Animation 117 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_4285271926_4                         
+                             23649619.mp4'                                     
+
+Animation 118: FadeOut(MathTex('8 \\,\\mathrm h')), etc.:   0%|          | 0/7 [00:00<?, ?it/s]
+                                                                                               
+[10/08/26 16:07:19] INFO     Animation 118 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_1312839790_6                         
+                             18413686.mp4'                                     
+[10/08/26 16:07:20] INFO     Animation 119 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_4188691091_3                         
+                             632034899.mp4'                                    
+
+Animation 120: FadeOut(Text('MUNIC�PIO DE S�O PAULO')), etc.:   0%|          | 0/7 [00:00<?, ?it/s]
+Animation 120: FadeOut(Text('MUNIC�PIO DE S�O PAULO')), etc.:  57%|#####7    | 4/7 [00:00<00:00, 31.48it/s]
+                                                                                                           
+[10/08/26 16:07:21] INFO     Animation 120 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_968255504_39                         
+                             52412487.mp4'                                     
+
+Animation 121: FadeIn(Text('UMA BATERIA CARREGADA')):   0%|          | 0/7 [00:00<?, ?it/s]
+                                                                                           
+[10/08/26 16:07:23] INFO     Animation 121 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3598638763_1                         
+                             313089814.mp4'                                    
+
+Animation 122: FadeOut(VGroup of 3 submobjects), etc.:   0%|          | 0/10 [00:00<?, ?it/s]
+Animation 122: FadeOut(VGroup of 3 submobjects), etc.:  50%|#####     | 5/10 [00:00<00:00, 46.24it/s]
+Animation 122: FadeOut(VGroup of 3 submobjects), etc.: 100%|##########| 10/10 [00:00<00:00, 45.51it/s]
+                                                                                                      
+[10/08/26 16:07:28] INFO     Animation 122 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_2151035400_8                         
+                             34170116.mp4'                                     
+[10/08/26 16:07:32] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}+                                 
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\approx                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique002'>}0{,}6                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique003'>}\,\mathrm{                        
+                             ng}\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             videos\vid_0017_bateria_ma                        
+                             ssa_energia\media_r5\Tex\f                        
+                             63b2845fe331883.tex                               
+
+Animation 123: FadeIn(Text('SIM.')):   0%|          | 0/7 [00:00<?, ?it/s]
+                                                                          
+[10/08/26 16:07:39] INFO     Animation 123 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3440069579_1                         
+                             854410125.mp4'                                    
+
+Animation 124: FadeIn(Text('MAS QUASE NADA.')), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                           
+                    INFO     Animation 124 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_1953166366_3                         
+                             614394427.mp4'                                    
+[10/08/26 16:07:40] INFO     Animation 125 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_499328632_44                         
+                             5860522.mp4'                                      
+
+Animation 126: FadeIn(Text('Tudo aquilo para acrescentar 1 g.')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                                       
+[10/08/26 16:07:47] INFO     Animation 126 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3257855244_5                         
+                             65108586.mp4'                                     
+                    INFO     Animation 127 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_125152860_19                         
+                             58069946.mp4'                                     
+
+Animation 128: FadeIn(VGroup of 2 submobjects):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                     
+[10/08/26 16:08:03] INFO     Animation 128 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_2738256670_3                         
+                             393585139.mp4'                                    
+                    INFO     Animation 129 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\vide                         
+                             os\vid_0017_bateria_massa                         
+                             _energia\media_r5\videos\                         
+                             cena\960p15\partial_movie                         
+                             _files\BateriaMassaEnergi                         
+                             a\2130283231_3926500612_2                         
+                             908222931.mp4'                                    
+                    INFO     Combining to Movie file.  scene_file_writer.py:952
+[10/08/26 16:08:04] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'C:\Users\Pichau\Pycharm                          
+                             Projects\manim-fisica\vi                          
+                             deos\vid_0017_bateria_ma                          
+                             ssa_energia\media_r5\vid                          
+                             eos\cena\960p15\TrechoFi                          
+                             nal.mp4'                                          
+                                                                               
+                    INFO     Rendered BateriaMassaEnergia          scene.py:290
+                             Played 130 animations                             
+You are using manim version v0.21.0, but version v0.22.0 is available.
+You should consider upgrading via pip install -U manim

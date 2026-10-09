@@ -1,0 +1,93 @@
+{
+  "arquivo": "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\renders\\vid_0017_bateria_massa_energia_final_legendado_v2.mp4",
+  "resolucao": [
+    1080,
+    1920
+  ],
+  "fps": 30.0,
+  "duracao_s": 111.3,
+  "frames": 3339,
+  "audio_codec": "aac",
+  "audio_hz": 48000,
+  "audio_canais": 2,
+  "audio_fim_s": 110.91199999999999,
+  "audio_original_sha256": "72437a68a8eb7d5ce14784343d2b931824fc6d9157ca5e003d106e470c38c0e2",
+  "audio_envelope_correlacao": 0.9949863814800681,
+  "fala_inicio_s": 0.47000000000000003,
+  "fala_fim_s": 110.60000000000001,
+  "audio_offset_medido_s": 0.42,
+  "cues": 45,
+  "amostras": 69,
+  "legenda_grafia_numerica_verificada": true,
+  "estados_s": {
+    "01_pergunta": 1.1,
+    "02_massa_total": 7.783333333333333,
+    "03_formulacao": 14.316666666666666,
+    "04_mAh_Ah": 27.95,
+    "05_V_Ah": 30.466666666666665,
+    "06_15_2_Wh": 33.233333333333334,
+    "06b_conversor_Wh_J": 36.1,
+    "07_54_720_J": 37.18333333333333,
+    "08_relacao_massa_energia": 42.233333333333334,
+    "09_isolamento": 47.13333333333333,
+    "10_substituicao": 49.7,
+    "11_massa_kg": 50.96666666666667,
+    "12_0_6_ng": 57.18333333333333,
+    "13_rehook_1_g": 62.96666666666667,
+    "14_1_g_kg": 65.15,
+    "15_energia_1_g_J": 66.11666666666666,
+    "17_25_GWh": 70.8,
+    "18_bateria_15_2_Wh": 74.81666666666666,
+    "19a_quatro_baterias": 75.73333333333333,
+    "19b_dezesseis_baterias": 76.1,
+    "20_1_6_bilhao": 78.41666666666667,
+    "21_hipotese_massa": 82.65,
+    "22_100_milhoes_kg": 86.23333333333333,
+    "23_skyline_SP_0_h": 89.4,
+    "24_8_horas_SP": 95.63333333333334,
+    "25_retorno_0_6_ng": 102.86666666666666,
+    "26_CTA": 110.3
+  },
+  "numeros_verificados": {
+    "bateria_Wh": 15.2,
+    "bateria_J": 54720.0,
+    "bateria_delta_kg": 6.0884211067254e-13,
+    "bateria_delta_ng": 0.60884211067254,
+    "1g_J": 89875517873681.77,
+    "1g_Wh": 24965421631.57827,
+    "1g_GWh": 24.96542163157827,
+    "baterias": 1642461949.4459388,
+    "massa_sistema_kg": 99861686.52631308,
+    "SP_media_GWh_h": 3.0719178082191783,
+    "SP_equivalencia_h": 8.126982292553906
+  },
+  "metodo_sincronia": "frases ancoradas nas pausas medidas do WAV; palavras internas estimadas por silabas; sem ASR",
+  "qualidade": {
+    "master_yuv444p_sem_perdas_de_compressao": {
+      "subme": "7",
+      "chroma_qp_offset": "0",
+      "rc": "cqp",
+      "qp": "0"
+    },
+    "entrega_yuv420p": {
+      "subme": "8",
+      "rc": "crf",
+      "crf": "14.0"
+    },
+    "render_nativo": [
+      1080,
+      1920
+    ],
+    "legendado_sem_perdas": {
+      "arquivo": "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0017_bateria_massa_energia\\renders\\vid_0017_bateria_massa_energia_legendado_sem_perdas_v2.mp4",
+      "encoder": {
+        "subme": "7",
+        "chroma_qp_offset": "0",
+        "rc": "cqp",
+        "qp": "0"
+      },
+      "quadros_decodificados": 3339,
+      "pacotes_audio_sha256": "88a9743ea9421a78e671c5148d91a0314777bdb4a8f1642645941c1c7348fc4e"
+    }
+  }
+}

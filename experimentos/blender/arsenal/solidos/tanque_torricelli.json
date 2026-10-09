@@ -90,6 +90,11 @@
       "unidade": "n",
       "descricao": "número de contas do jato nos estilos 1 e 2 (espaçadas além do diâmetro)"
     },
+    "voltas_jato": {
+      "valor": 1,
+      "unidade": "n",
+      "descricao": "estilos 1 e 2: voltas das contas pela trajetória por ciclo de fase (inteiro ≥ 1); use valores altos com varrer_furo para as contas fluírem em ritmo natural durante uma varredura longa"
+    },
     "movimento": {
       "valor": 0,
       "unidade": "0/1",

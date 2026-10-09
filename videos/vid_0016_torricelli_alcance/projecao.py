@@ -3,7 +3,7 @@
 Rodar a partir da raiz do repositório (usa o Blender só para ler a câmera; não renderiza nada e não altera o arsenal):
     blender.exe -b -P videos/vid_0016_torricelli_alcance/projecao.py
 
-Grava `projecao.json`: para cada u = y/H, as coordenadas normalizadas (0–1, origem embaixo à esquerda) de cada ponto na imagem
+Grava `projecao.json`: para cada u = y/H (estados 0,2/0,35/0,8 e uma tabela fina de 0,05 a 0,95 para furo e pouso), as coordenadas normalizadas (0–1, origem embaixo à esquerda) de cada ponto na imagem
 540×960 que `Solido3D` usa (mesmo enquadramento da ficha, `enquadramento_fixo=1`). A cena converte para unidades do Manim.
 """
 
@@ -62,5 +62,28 @@ for u in US:
         "cota_superficie": proj(cx, 0, H),
         "chao_fim": proj(xf + 2.6, 0, 0),
     }
+
+# Tabela fina u -> furo e pouso (para overlays que acompanham u continuamente: interpolação linear na cena)
+tab = {"u": [], "furo": [], "pouso": []}
+for k in range(5, 96):
+    u = k / 100
+    p = R.parametros(ficha, [])
+    H, W = p["nivel"], p["largura"]
+    p.update(altura_furo=u * H, enquadramento_fixo=1, setas=0, movimento=1, estilo_jato=1)
+    co.limpar_cena()
+    res = CONSTRUTORES["tanque_torricelli"](p)
+    co.mundo()
+    co.luzes()
+    e = ficha["enquadramento"]
+    cam = co.camera_enquadrada(co.cantos(res["enquadrar"]), azimute=e["azimute"], elevacao=e["elevacao"], lente=e["lente"],
+                               margem=e["margem"], largura=LARGURA, altura=ALTURA)
+    cena = bpy.context.scene
+    y, xf = u * H, W / 2
+    alc = 2 * (y * (H - y)) ** 0.5
+    for chave, pt in (("furo", (xf, 0, y)), ("pouso", (xf + alc, 0, 0))):
+        v = world_to_camera_view(cena, cam, Vector(pt))
+        tab[chave].append([round(v.x, 5), round(v.y, 5)])
+    tab["u"].append(u)
+saida["tabela"] = tab
 (UNIDADE / "projecao.json").write_text(json.dumps(saida, indent=1), encoding="utf-8")
 print("PROJECAO ok:", UNIDADE / "projecao.json")
