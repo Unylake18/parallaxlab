@@ -85,6 +85,34 @@ Não atualize documentação global automaticamente após cada alteração.
 
 Edite somente os documentos explicitamente pedidos ou aqueles que ficariam factualmente incorretos por causa da própria mudança.
 
+## Qualidade de render e codificação (padrão único, desde 2026-10-09)
+
+Um padrão só para master e legendado: **H.264, yuv420p, CRF 14**. Medido num trecho denso (linhas finas): abaixo de 14 o ganho é desprezível e o
+arquivo cresce 12–25%; acima de 14 as linhas finas degradam (pior bloco SSIM: 0,88 em 14 · 0,78 em 16 · 0,56 em 20 · 0,48 em 23). Vale para Codex, Claude Code e qualquer CLI.
+
+- **Render final do Manim (1080p ou maior):** não precisa configurar nada. `template/config.py` chama `template/qualidade.py`, que troca o CRF 23 do Manim por 14
+  automaticamente (todo `cena.py` importa o template). Preview 540p fica no padrão do Manim (CRF 23, mais rápido).
+  Sobrescrever só com a variável `CRF` (`CRF=0` fonte sem perdas; `CRF=18` teste). O número mora em `template/qualidade.py` (`CRF_PADRAO`).
+- **Conferir um arquivo:** o x264 grava `crf=` no stream (`uv run python -c "import av,re;c=av.open('ARQ.mp4');d=b''.join(bytes(p) for _,p in zip(range(4),c.demux(c.streams.video[0])));print(re.search(rb'crf=([0-9.]+)',d).group(1))"`). Master final esperado: `14.0`.
+- **Master:** é o render do Manim com a voz colada sem recompressão (`videos/montar_master.py`, `montar_final.py`). A qualidade do master é a do render: master em CRF 23 não melhora recodificando; só re-renderizando.
+- **Legendado (`videos/montar_legendado.py`):** recodifica com `--crf auto` (padrão) = `max(14, CRF do master − 5)`: master em 14 → legendado em 14; master antigo em 23 → 18 (14 só incharia o arquivo). Preset `medium`. `--crf N` força.
+- **Encoders próprios de montagem/postagem:** CRF 14, preset `medium` ou `slow`, nunca abaixo de 14 sem motivo. Fonte arquivística sem perdas (CRF 0) só quando pedida.
+- **Vídeos longos com legenda `.srt` separada:** não há legendado embutido; o master em CRF 14 é o único vídeo final.
+- Não "melhorar" qualidade acima do necessário: CRF menor que 14 só com evidência medida.
+
+## Entregas finais (pasta única)
+
+Toda versão final de vídeo vai para `entregas/`, uma pasta por vídeo: `Série - EP NN - Assunto - NNNN`, com `master`,
+`legendado`, `legenda`, `capa` (só a escolhida), `audio/`, `texto/` e `manifesto`; o número do vídeo (`0016`) vai no fim de todo nome de
+arquivo (`master - 0016.mp4`). Vale para qualquer agente.
+
+- Ao fechar uma versão final: `uv run python videos/entregar.py vid_NNNN` (cópia; não move nem apaga origens) e informar no
+  relatório o caminho da pasta em `entregas/`.
+- Não deixar finais soltos em `renders/` nem em `videos/vid_NNNN/renders/` como destino definitivo; previews e
+  intermediários podem continuar lá.
+- Série, EP e assunto vêm da `ficha.md` (`Série pública: **NOME · EP. N**` e `# Assunto`) ou de
+  `videos/entregas_registro.json`. Detalhes em `docs/entregas.md`.
+
 ## Git
 
 Nos primeiros dez vídeos, o trabalho normal ocorre em `main`.

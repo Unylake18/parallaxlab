@@ -1,0 +1,1454 @@
+1
+00:00:00,883 --> 00:00:03,893
+Uma linha de carga,
+uma esfera e duas placas.
+
+2
+00:00:04,223 --> 00:00:07,173
+Na linha, o campo cai
+como um sobre a distância.
+
+3
+00:00:07,343 --> 00:00:10,373
+Na esfera, como um sobre
+a distância ao quadrado.
+
+4
+00:00:10,413 --> 00:00:12,973
+Entre placas ideais,
+ele fica constante.
+
+5
+00:00:13,033 --> 00:00:16,223
+Três perfis diferentes,
+uma só Lei de Gauss.
+
+6
+00:00:16,413 --> 00:00:18,233
+Então, o que muda de verdade?
+
+7
+00:00:18,701 --> 00:00:19,561
+Fala, pessoal!
+
+8
+00:00:19,601 --> 00:00:21,771
+Bem-vindos de volta
+ao Parallax Lab.
+
+9
+00:00:21,811 --> 00:00:25,311
+No vídeo anterior, a simetria
+transformou fluxo em campo.
+
+10
+00:00:25,381 --> 00:00:27,648
+Hoje a gente pega
+essa ideia e resolve
+
+11
+00:00:27,688 --> 00:00:31,121
+os casos clássicos sem decorar
+uma fórmula pra cada desenho.
+
+12
+00:00:31,171 --> 00:00:34,851
+A Lei de Gauss vale pra qualquer
+superfície fechada que você desenhar:
+
+13
+00:00:35,001 --> 00:00:37,721
+o fluxo líquido do campo
+é a carga envolvida,
+
+14
+00:00:37,881 --> 00:00:40,721
+só a que está lá dentro,
+dividida por épsilon zero.
+
+15
+00:00:40,761 --> 00:00:43,811
+Uma carga que ficou fora não
+entra na carga envolvida,
+
+16
+00:00:43,931 --> 00:00:46,411
+mas ainda pode criar
+campo sobre a superfície.
+
+17
+00:00:46,491 --> 00:00:51,701
+O campo dela entra de um lado e sai
+do outro, e o fluxo líquido dá zero.
+
+18
+00:00:51,741 --> 00:00:54,641
+Por isso, fluxo zero não
+significa campo zero.
+
+19
+00:00:54,701 --> 00:00:57,851
+Pra achar o campo direto,
+a gente precisa de simetria.
+
+20
+00:00:57,891 --> 00:01:02,741
+É ela que diz a direção do campo e onde
+o módulo pode ser tratado como constante.
+
+21
+00:01:02,781 --> 00:01:07,571
+A superfície é só uma moldura:
+organiza a conta, mas não cria simetria.
+
+22
+00:01:07,611 --> 00:01:11,481
+Daí vem o método: identifica
+a fonte, reconhece a simetria,
+
+23
+00:01:11,581 --> 00:01:15,798
+descobre a direção do campo,
+escolhe a gaussiana, simplifica o fluxo
+
+24
+00:01:15,838 --> 00:01:19,741
+e calcula a carga envolvida,
+dividindo em regiões quando precisar.
+
+25
+00:01:19,781 --> 00:01:22,101
+Vamos começar pela
+simetria cilíndrica.
+
+26
+00:01:22,191 --> 00:01:25,521
+Essa linha tem a mesma carga
+por comprimento em todo lugar:
+
+27
+00:01:25,661 --> 00:01:27,501
+a densidade linear
+de carga, lambda.
+
+28
+00:01:27,541 --> 00:01:32,391
+E ela é infinita, uma idealização que
+tira da conta o efeito das pontas.
+
+29
+00:01:32,611 --> 00:01:34,571
+Imagina que você anda
+ao longo da linha,
+
+30
+00:01:34,711 --> 00:01:37,701
+ou gira em volta dela:
+a fonte parece a mesma.
+
+31
+00:01:37,741 --> 00:01:41,201
+Então o campo não pode preferir
+uma posição ao longo da linha,
+
+32
+00:01:41,271 --> 00:01:43,101
+nem uma direção ao redor dela.
+
+33
+00:01:43,141 --> 00:01:45,701
+Agora pega um ponto e
+duas cargas da linha,
+
+34
+00:01:45,871 --> 00:01:48,751
+uma acima e outra abaixo,
+à mesma distância.
+
+35
+00:01:48,881 --> 00:01:51,201
+As componentes ao longo
+da linha se cancelam,
+
+36
+00:01:51,301 --> 00:01:53,741
+e o mesmo vale pra
+todos os outros pares.
+
+37
+00:01:53,931 --> 00:01:55,701
+Sobra só a direção radial.
+
+38
+00:01:55,741 --> 00:01:58,031
+Pra carga positiva,
+ela aponta pra fora,
+
+39
+00:01:58,151 --> 00:02:01,351
+e o módulo só pode depender
+da distância até a linha.
+
+40
+00:02:01,391 --> 00:02:04,851
+Agora escolhe um cilindro fechado,
+com o mesmo eixo da linha.
+
+41
+00:02:04,891 --> 00:02:07,691
+O raio dele é a distância
+onde você quer o campo.
+
+42
+00:02:07,761 --> 00:02:10,601
+O comprimento é um trecho
+qualquer: escolha nossa.
+
+43
+00:02:10,731 --> 00:02:14,181
+Na lateral, todos os pontos
+estão à mesma distância da linha,
+
+44
+00:02:14,301 --> 00:02:18,011
+então o campo tem o mesmo módulo
+e aponta na direção da normal.
+
+45
+00:02:18,051 --> 00:02:21,331
+O fluxo lateral vira o
+campo vezes a área lateral.
+
+46
+00:02:21,371 --> 00:02:22,851
+Nas tampas é diferente.
+
+47
+00:02:22,891 --> 00:02:27,301
+O campo continua radial, mas a normal
+da tampa aponta ao longo do eixo.
+
+48
+00:02:27,411 --> 00:02:31,711
+Os dois ficam perpendiculares, e o
+produto escalar entre eles dá zero.
+
+49
+00:02:31,751 --> 00:02:35,681
+O campo ali não é nulo, mas a
+tampa não contribui pro fluxo.
+
+50
+00:02:35,891 --> 00:02:38,801
+Repara nisso: o campo
+não sumiu nas tampas.
+
+51
+00:02:38,851 --> 00:02:41,581
+Quem some é a contribuição
+delas pro fluxo.
+
+52
+00:02:41,621 --> 00:02:44,241
+E é isso que deixa só
+a lateral na conta.
+
+53
+00:02:44,281 --> 00:02:48,681
+O fluxo é o campo vezes dois pi,
+vezes o raio, vezes o comprimento.
+
+54
+00:02:48,741 --> 00:02:52,481
+E a carga envolvida é a densidade
+linear vezes o comprimento:
+
+55
+00:02:52,721 --> 00:02:54,771
+só o pedaço da linha
+que está dentro.
+
+56
+00:02:54,831 --> 00:02:58,511
+Na Lei de Gauss, o comprimento
+aparece dos dois lados e cancela.
+
+57
+00:02:58,551 --> 00:03:00,392
+Faz sentido: foi
+uma escolha nossa,
+
+58
+00:03:00,432 --> 00:03:02,801
+não pode mandar no campo
+de uma linha infinita.
+
+59
+00:03:02,841 --> 00:03:05,711
+O campo vale lambda sobre
+o produto de dois pi,
+
+60
+00:03:05,841 --> 00:03:09,711
+épsilon zero e a distância à linha:
+cai como um sobre a distância.
+
+61
+00:03:09,751 --> 00:03:11,301
+Testa: dobra a distância.
+
+62
+00:03:11,411 --> 00:03:12,751
+A área lateral dobra.
+
+63
+00:03:12,791 --> 00:03:16,571
+Como a carga envolvida não mudou,
+o fluxo total também não muda.
+
+64
+00:03:16,611 --> 00:03:19,001
+Então o campo precisa
+cair pela metade.
+
+65
+00:03:19,071 --> 00:03:21,181
+Essa é a nossa primeira ferramenta.
+
+66
+00:03:21,251 --> 00:03:25,211
+O cilindro gaussiano fica; o que
+vai mudar é onde a carga está.
+
+67
+00:03:25,251 --> 00:03:29,091
+Agora a carga deixa de estar num
+fio e vai pra uma casca cilíndrica:
+
+68
+00:03:29,351 --> 00:03:32,271
+fina, uniforme e infinita
+ao longo do eixo.
+
+69
+00:03:32,391 --> 00:03:35,521
+Lambda continua sendo a
+carga total por comprimento.
+
+70
+00:03:35,611 --> 00:03:39,371
+Com a gaussiana por dentro da
+casca, a carga envolvida é zero.
+
+71
+00:03:39,411 --> 00:03:43,341
+E, pela simetria cilíndrica,
+o campo lá dentro também é zero.
+
+72
+00:03:43,381 --> 00:03:47,801
+Só a carga envolvida zero não bastaria:
+a simetria completa o argumento.
+
+73
+00:03:47,891 --> 00:03:51,291
+Por fora, a gaussiana envolve
+toda a carga daquele comprimento,
+
+74
+00:03:51,511 --> 00:03:53,881
+e o resultado é exatamente o da linha.
+
+75
+00:03:53,921 --> 00:03:56,521
+Mas olha: ao atravessar
+a camada carregada,
+
+76
+00:03:56,591 --> 00:03:59,991
+o campo salta de zero pra
+um valor diferente de zero.
+
+77
+00:04:00,031 --> 00:04:04,741
+Uma casca não tem o perfil de um cilindro
+maciço, e já já a gente vê a diferença.
+
+78
+00:04:05,771 --> 00:04:08,551
+Agora preenche o interior:
+em vez de uma casca,
+
+79
+00:04:08,651 --> 00:04:11,621
+a carga fica espalhada por
+todo o volume de um isolante.
+
+80
+00:04:11,661 --> 00:04:15,261
+A densidade passa a ser volumétrica,
+carga por volume: rô.
+
+81
+00:04:15,371 --> 00:04:18,191
+Com a gaussiana menor
+que o cilindro de carga,
+
+82
+00:04:18,361 --> 00:04:21,151
+só entra na conta o pedaço
+que ficou dentro dela.
+
+83
+00:04:21,191 --> 00:04:25,301
+Então, no volume, vale o raio da
+gaussiana, não o raio da fonte.
+
+84
+00:04:25,421 --> 00:04:28,091
+A carga envolvida cresce
+com o raio ao quadrado,
+
+85
+00:04:28,211 --> 00:04:33,201
+a área lateral cresce com o raio, e sobra
+o raio: o campo cresce em linha reta.
+
+86
+00:04:33,271 --> 00:04:36,951
+Quando a gaussiana passa pra fora,
+a carga envolvida para de crescer,
+
+87
+00:04:37,051 --> 00:04:38,761
+porque já pegou o
+cilindro inteiro.
+
+88
+00:04:38,801 --> 00:04:41,881
+Aí o raio da fonte, que
+é fixo, entra na carga,
+
+89
+00:04:41,991 --> 00:04:44,531
+e o raio da gaussiana
+continua só na área.
+
+90
+00:04:44,571 --> 00:04:47,461
+Dois raios diferentes,
+dois papéis diferentes.
+
+91
+00:04:47,671 --> 00:04:50,381
+E o campo volta a cair
+como um sobre a distância.
+
+92
+00:04:50,621 --> 00:04:53,871
+Juntando tudo num gráfico:
+no eixo, o campo é zero.
+
+93
+00:04:53,911 --> 00:04:55,778
+Ele sobe em linha reta por dentro
+
+94
+00:04:55,818 --> 00:04:59,431
+do cilindro e encontra a curva
+de fora exatamente na borda.
+
+95
+00:04:59,471 --> 00:05:03,721
+A inclinação muda ali, mas o valor
+é o mesmo: o campo não salta.
+
+96
+00:05:03,761 --> 00:05:06,541
+A gente não colocou nenhuma
+camada de carga na superfície,
+
+97
+00:05:06,731 --> 00:05:08,251
+então não existe salto.
+
+98
+00:05:08,381 --> 00:05:10,961
+Compara com a casca:
+a gaussiana é a mesma,
+
+99
+00:05:11,051 --> 00:05:13,781
+e o que muda é como a
+carga está distribuída.
+
+100
+00:05:13,821 --> 00:05:16,471
+Agora troca o isolante
+por um condutor maciço,
+
+101
+00:05:16,541 --> 00:05:19,281
+com uma casca condutora
+em volta, no mesmo eixo.
+
+102
+00:05:19,441 --> 00:05:23,391
+No equilíbrio, a carga do condutor
+de dentro fica na superfície dele,
+
+103
+00:05:23,511 --> 00:05:26,281
+e as cargas por comprimento
+são iguais e opostas.
+
+104
+00:05:26,541 --> 00:05:29,111
+Dentro de um condutor em
+equilíbrio, o campo é zero;
+
+105
+00:05:29,261 --> 00:05:32,511
+e uma gaussiana nessa região
+também não envolve carga.
+
+106
+00:05:32,551 --> 00:05:34,501
+No vão, entre os
+dois condutores,
+
+107
+00:05:34,631 --> 00:05:38,041
+a gaussiana envolve a carga
+positiva do condutor de dentro.
+
+108
+00:05:38,081 --> 00:05:42,281
+O campo é radial e cai como um sobre
+a distância, igual ao da linha.
+
+109
+00:05:42,321 --> 00:05:46,731
+O raio da gaussiana, aqui, fica entre
+o raio interno e o raio externo.
+
+110
+00:05:46,771 --> 00:05:50,201
+Por fora das duas camadas,
+as cargas envolvidas se cancelam e,
+
+111
+00:05:50,281 --> 00:05:52,591
+com essa simetria,
+o campo é zero.
+
+112
+00:05:52,631 --> 00:05:56,741
+O campo fica preso no vão,
+apontando do positivo pro negativo.
+
+113
+00:05:56,891 --> 00:05:59,961
+Um único cilindro gaussiano
+resolveu quatro fontes:
+
+114
+00:06:00,151 --> 00:06:04,021
+a linha, a casca, o cilindro
+maciço e o cabo coaxial.
+
+115
+00:06:04,061 --> 00:06:06,521
+Mudou só a carga
+envolvida em cada região.
+
+116
+00:06:06,621 --> 00:06:08,481
+E se a fonte for
+um plano inteiro?
+
+117
+00:06:08,541 --> 00:06:11,751
+Essa chapa não condutora
+tem carga uniforme por área:
+
+118
+00:06:11,891 --> 00:06:14,491
+a densidade superficial
+de carga, sigma.
+
+119
+00:06:14,531 --> 00:06:16,971
+Ela é infinita nas
+duas direções do plano,
+
+120
+00:06:17,051 --> 00:06:19,871
+então não tem borda pra
+distinguir um ponto de outro.
+
+121
+00:06:19,981 --> 00:06:25,171
+Anda paralelo à chapa, ou gira dentro
+do plano: a fonte, vista daí, não muda.
+
+122
+00:06:25,211 --> 00:06:28,821
+Por simetria, as componentes
+paralelas ao plano se cancelam,
+
+123
+00:06:28,961 --> 00:06:30,601
+por pares de cargas simétricas.
+
+124
+00:06:30,971 --> 00:06:36,061
+Sobra só a componente perpendicular:
+o campo só pode ser perpendicular à chapa.
+
+125
+00:06:36,101 --> 00:06:39,241
+Pra carga positiva, ele aponta
+pra fora dos dois lados:
+
+126
+00:06:39,571 --> 00:06:43,901
+sentidos opostos, módulos iguais,
+porque os dois lados são equivalentes.
+
+127
+00:06:44,141 --> 00:06:47,218
+Como superfície, um cilindro
+curto atravessando a chapa,
+
+128
+00:06:47,258 --> 00:06:48,571
+uma caixinha fechada.
+
+129
+00:06:48,611 --> 00:06:52,401
+Na lateral, o campo é tangente,
+então não contribui pro fluxo.
+
+130
+00:06:52,551 --> 00:06:56,691
+Nas duas tampas, o campo e a normal
+exterior apontam pro mesmo lado,
+
+131
+00:06:56,831 --> 00:06:58,021
+e as duas contribuem.
+
+132
+00:06:58,061 --> 00:07:01,291
+O fluxo é o campo vezes a
+área da tampa de um lado,
+
+133
+00:07:01,371 --> 00:07:06,341
+mais o campo vezes a área da tampa do
+outro: duas vezes o campo vezes a área.
+
+134
+00:07:06,381 --> 00:07:08,091
+É daí que vem o fator dois.
+
+135
+00:07:08,131 --> 00:07:11,871
+Ele não é uma regra decorada:
+é o número de tampas que contribuem.
+
+136
+00:07:11,911 --> 00:07:15,041
+A carga envolvida é sigma
+vezes essa mesma área,
+
+137
+00:07:15,171 --> 00:07:17,271
+a do pedaço de chapa
+dentro da caixa.
+
+138
+00:07:17,361 --> 00:07:19,901
+Na Lei de Gauss, a área
+cancela dos dois lados,
+
+139
+00:07:20,111 --> 00:07:23,511
+e o campo vale sigma sobre
+duas vezes épsilon zero.
+
+140
+00:07:23,551 --> 00:07:26,671
+Repara: não aparece distância
+nenhuma no resultado.
+
+141
+00:07:26,711 --> 00:07:29,991
+Afasta as tampas: a área e
+a carga envolvida não mudam,
+
+142
+00:07:30,131 --> 00:07:31,861
+então o campo não diminui.
+
+143
+00:07:31,901 --> 00:07:33,731
+Isso vale pra chapa infinita.
+
+144
+00:07:33,771 --> 00:07:37,201
+Numa placa real, o campo cai
+quando você se afasta bastante;
+
+145
+00:07:37,361 --> 00:07:40,491
+por isso a gente não transfere
+essa conclusão automaticamente.
+
+146
+00:07:41,561 --> 00:07:43,801
+Agora a folha ganha espessura.
+
+147
+00:07:43,841 --> 00:07:46,121
+A carga não está mais
+sobre uma superfície:
+
+148
+00:07:46,351 --> 00:07:50,191
+está espalhada pelo volume,
+com densidade volumétrica, rô.
+
+149
+00:07:50,231 --> 00:07:52,181
+O plano do meio vira nossa origem,
+
+150
+00:07:52,271 --> 00:07:56,361
+e as duas faces ficam à mesma
+distância dele: a meia espessura.
+
+151
+00:07:56,401 --> 00:07:59,371
+Começa com um ponto à direita,
+ainda dentro da placa.
+
+152
+00:07:59,481 --> 00:08:03,891
+A caixa gaussiana é simétrica, com uma
+tampa de cada lado do plano do meio.
+
+153
+00:08:03,931 --> 00:08:05,015
+Então a espessura
+
+154
+00:08:05,055 --> 00:08:09,001
+que ela envolve é duas vezes a
+distância do ponto ao plano do meio.
+
+155
+00:08:09,041 --> 00:08:13,351
+A carga envolvida cresce com essa
+distância, e o campo cresce em linha reta.
+
+156
+00:08:13,491 --> 00:08:16,091
+No centro, por simetria,
+o campo é zero.
+
+157
+00:08:16,131 --> 00:08:18,151
+Do outro lado,
+o sentido se inverte:
+
+158
+00:08:18,341 --> 00:08:21,701
+por isso o gráfico mostra a
+componente do campo, com sinal.
+
+159
+00:08:21,741 --> 00:08:26,111
+Quando a gaussiana passa das faces,
+ela já envolve toda a espessura da placa.
+
+160
+00:08:26,201 --> 00:08:29,681
+A carga envolvida para de crescer,
+e o campo fica constante.
+
+161
+00:08:29,841 --> 00:08:33,561
+Na passagem pelas faces, não
+existe camada de carga concentrada:
+
+162
+00:08:33,701 --> 00:08:35,841
+só o fim da densidade volumétrica.
+
+163
+00:08:35,931 --> 00:08:38,631
+Por isso o campo é
+contínuo ali, sem salto.
+
+164
+00:08:38,811 --> 00:08:41,571
+Agora troca a placa por
+duas chapas paralelas,
+
+165
+00:08:41,741 --> 00:08:44,091
+com densidades iguais
+e de sinais opostos.
+
+166
+00:08:44,331 --> 00:08:48,811
+Cada uma, sozinha, você já sabe
+resolver: é o campo da folha infinita.
+
+167
+00:08:48,851 --> 00:08:50,251
+Por fora das duas chapas,
+
+168
+00:08:50,321 --> 00:08:54,191
+os campos têm sentidos opostos
+e o mesmo módulo, e se cancelam.
+
+169
+00:08:54,231 --> 00:08:57,311
+O campo total, ali,
+é zero, dos dois lados.
+
+170
+00:08:57,511 --> 00:09:00,981
+Entre as chapas, o campo da
+positiva aponta pra negativa,
+
+171
+00:09:01,091 --> 00:09:02,491
+e o da negativa também.
+
+172
+00:09:02,531 --> 00:09:06,531
+Os dois se somam: o dobro do
+campo de uma chapa só, uniforme,
+
+173
+00:09:06,611 --> 00:09:08,371
+do positivo pro negativo.
+
+174
+00:09:08,431 --> 00:09:12,131
+Esse é o campo do capacitor
+plano ideal, sem as bordas.
+
+175
+00:09:12,251 --> 00:09:16,931
+A gente não vai calcular capacitância:
+o objetivo é entender onde o campo existe.
+
+176
+00:09:17,141 --> 00:09:20,151
+Tem uma consequência curta
+que evita uma confusão comum.
+
+177
+00:09:20,191 --> 00:09:22,671
+Junto à superfície de um
+condutor em equilíbrio,
+
+178
+00:09:22,751 --> 00:09:24,961
+o campo dentro do metal é zero.
+
+179
+00:09:25,001 --> 00:09:27,051
+Metal de um lado,
+vácuo do outro.
+
+180
+00:09:27,211 --> 00:09:30,201
+Pega uma caixa gaussiana
+pequena, atravessando a face.
+
+181
+00:09:30,331 --> 00:09:34,531
+A tampa de dentro está no metal, onde
+o campo é zero, então não contribui.
+
+182
+00:09:34,571 --> 00:09:38,161
+A lateral também não contribui,
+quando a caixa fica bem achatada.
+
+183
+00:09:38,201 --> 00:09:39,901
+Só sobra a tampa de fora.
+
+184
+00:09:39,941 --> 00:09:43,871
+Então o fluxo é só o campo
+vezes a área, sem fator dois.
+
+185
+00:09:44,001 --> 00:09:48,361
+Repara na diferença pra folha isolante:
+lá, as duas tampas contribuíam.
+
+186
+00:09:48,401 --> 00:09:52,071
+O campo logo fora vale a densidade
+superficial daquela face,
+
+187
+00:09:52,141 --> 00:09:53,641
+dividida por épsilon zero.
+
+188
+00:09:53,681 --> 00:09:55,241
+Cuidado com a palavra face:
+
+189
+00:09:55,421 --> 00:09:59,391
+essa densidade é local, não é a
+carga total dividida pela área.
+
+190
+00:09:59,431 --> 00:10:01,951
+Mudaram as hipóteses,
+não a Lei de Gauss.
+
+191
+00:10:02,101 --> 00:10:04,421
+A mesma caixa atravessou a chapa,
+
+192
+00:10:04,491 --> 00:10:07,861
+a placa grossa, as duas
+chapas e a face do condutor.
+
+193
+00:10:07,901 --> 00:10:11,411
+Em cada caso, mudou só a
+carga envolvida e a região.
+
+194
+00:10:11,461 --> 00:10:15,101
+Falta a geometria que trata todas as
+direções igualmente ao redor de um centro:
+
+195
+00:10:15,141 --> 00:10:15,951
+a esfera.
+
+196
+00:10:16,121 --> 00:10:17,711
+Vamos pra ela.
+
+197
+00:10:17,841 --> 00:10:22,111
+Agora distribui uma carga total,
+uniformemente, numa casca esférica.
+
+198
+00:10:22,211 --> 00:10:26,741
+Gira a esfera em torno do centro, em
+qualquer direção: a distribuição não muda.
+
+199
+00:10:26,781 --> 00:10:28,541
+Nenhuma direção é especial.
+
+200
+00:10:28,581 --> 00:10:33,501
+Então o campo só pode ser radial, e o
+módulo só depende da distância ao centro.
+
+201
+00:10:33,541 --> 00:10:36,141
+A gaussiana é uma esfera
+com o mesmo centro.
+
+202
+00:10:36,241 --> 00:10:37,499
+Em todos os pontos dela,
+
+203
+00:10:37,539 --> 00:10:41,091
+o campo tem o mesmo módulo e
+aponta na direção da normal.
+
+204
+00:10:41,131 --> 00:10:44,131
+Então o fluxo é o campo
+vezes a área da esfera:
+
+205
+00:10:44,321 --> 00:10:46,461
+quatro pi vezes o
+raio ao quadrado.
+
+206
+00:10:46,501 --> 00:10:50,311
+A superfície inteira contribui,
+sem tampas e sem laterais.
+
+207
+00:10:50,391 --> 00:10:52,471
+É a mesma construção
+do primeiro vídeo.
+
+208
+00:10:52,511 --> 00:10:54,331
+A pergunta que decide tudo agora:
+
+209
+00:10:54,521 --> 00:10:58,091
+a gaussiana envolve a casca,
+ou ainda está dentro dela?
+
+210
+00:10:58,161 --> 00:11:00,381
+A carga envolvida
+depende da resposta.
+
+211
+00:11:00,491 --> 00:11:04,159
+Por dentro, a carga envolvida é
+zero e, pela simetria esférica,
+
+212
+00:11:04,199 --> 00:11:05,661
+o campo também é zero.
+
+213
+00:11:05,701 --> 00:11:09,671
+Isso não vale pra qualquer superfície
+vazia: precisa da simetria.
+
+214
+00:11:09,711 --> 00:11:12,941
+Por fora, a carga envolvida
+é a carga total da casca.
+
+215
+00:11:13,111 --> 00:11:16,411
+O campo vale a carga total
+sobre o produto de quatro pi,
+
+216
+00:11:16,561 --> 00:11:20,701
+épsilon zero e o raio ao quadrado:
+cai com um sobre o raio ao quadrado.
+
+217
+00:11:20,741 --> 00:11:25,611
+É igual ao campo de uma carga pontual, com
+toda a carga da casca, colocada no centro.
+
+218
+00:11:25,681 --> 00:11:26,851
+Mas só por fora.
+
+219
+00:11:26,891 --> 00:11:29,151
+Por dentro, essa
+equivalência não vale.
+
+220
+00:11:29,191 --> 00:11:32,100
+E aqui também tem um salto,
+como na casca cilíndrica:
+
+221
+00:11:32,140 --> 00:11:35,861
+logo por dentro, zero; logo
+por fora, diferente de zero.
+
+222
+00:11:35,901 --> 00:11:39,761
+É a camada de carga na superfície
+que faz o campo mudar de repente.
+
+223
+00:11:40,791 --> 00:11:44,221
+Agora preenche a esfera com
+carga uniforme num isolante.
+
+224
+00:11:44,291 --> 00:11:48,351
+A gente já fez esse caso no primeiro
+vídeo, então só recupera o raciocínio.
+
+225
+00:11:48,441 --> 00:11:51,691
+Por dentro, a carga envolvida
+cresce com o cubo do raio,
+
+226
+00:11:51,881 --> 00:11:54,931
+e a área da gaussiana cresce
+com o raio ao quadrado.
+
+227
+00:11:54,971 --> 00:11:57,131
+Divide uma pela outra,
+e sobra o raio:
+
+228
+00:11:57,321 --> 00:12:00,681
+o campo cresce em linha reta,
+a partir de zero no centro.
+
+229
+00:12:00,841 --> 00:12:05,201
+Por fora, a carga envolvida para de
+crescer, porque já pegou a esfera inteira.
+
+230
+00:12:05,241 --> 00:12:07,991
+A área continua crescendo
+com o raio ao quadrado.
+
+231
+00:12:08,031 --> 00:12:11,491
+Então o campo passa a cair com
+um sobre o raio ao quadrado,
+
+232
+00:12:11,621 --> 00:12:13,111
+como o de uma carga pontual.
+
+233
+00:12:13,151 --> 00:12:16,471
+No gráfico, os dois ramos se
+encontram na borda, sem salto:
+
+234
+00:12:16,771 --> 00:12:21,671
+não existe camada de carga na superfície
+da esfera maciça, ao contrário da casca.
+
+235
+00:12:21,861 --> 00:12:26,322
+Comparando com o cilindro maciço: os dois
+crescem em linha reta por dentro, mas
+
+236
+00:12:26,362 --> 00:12:31,341
+a cauda do cilindro é um sobre o raio, e
+a da esfera, um sobre o raio ao quadrado.
+
+237
+00:12:31,381 --> 00:12:34,341
+Cada gráfico está normalizado
+pelo valor na borda:
+
+238
+00:12:34,521 --> 00:12:37,191
+dá pra comparar o formato,
+não a intensidade.
+
+239
+00:12:37,321 --> 00:12:41,091
+Agora troca a esfera isolante
+por uma esfera condutora maciça,
+
+240
+00:12:41,171 --> 00:12:44,321
+em equilíbrio: a carga
+positiva vai pra superfície.
+
+241
+00:12:44,451 --> 00:12:48,681
+Em volta, uma casca condutora com
+o mesmo centro e a carga oposta.
+
+242
+00:12:48,861 --> 00:12:53,621
+Dentro do condutor central, o campo é
+zero, e a gaussiana ali não envolve carga.
+
+243
+00:12:53,661 --> 00:12:57,701
+No vão, entre os dois condutores,
+ela envolve só a carga positiva,
+
+244
+00:12:57,821 --> 00:13:00,461
+e o campo cai com um
+sobre o raio ao quadrado.
+
+245
+00:13:00,521 --> 00:13:04,011
+Depois da casca externa,
+a carga total envolvida é zero e,
+
+246
+00:13:04,131 --> 00:13:07,721
+com a simetria esférica,
+o campo externo também é zero.
+
+247
+00:13:07,761 --> 00:13:10,591
+De novo, o campo fica
+preso entre os condutores.
+
+248
+00:13:10,631 --> 00:13:14,431
+Mas o perfil não é o do coaxial,
+nem o das placas: a mesma lei,
+
+249
+00:13:14,591 --> 00:13:17,141
+uma assinatura diferente
+em cada geometria.
+
+250
+00:13:17,181 --> 00:13:21,481
+Ela vem de como a área da gaussiana
+cresce e de quanta carga ela envolve.
+
+251
+00:13:21,571 --> 00:13:23,761
+Os três capacitores, lado a lado.
+
+252
+00:13:23,861 --> 00:13:26,791
+Nas placas paralelas,
+o campo no vão é constante.
+
+253
+00:13:26,921 --> 00:13:30,081
+No coaxial, ele cai com um
+sobre a distância ao eixo.
+
+254
+00:13:30,241 --> 00:13:33,101
+No esférico, cai com um
+sobre o raio ao quadrado.
+
+255
+00:13:33,181 --> 00:13:35,131
+Isso vale entre os condutores.
+
+256
+00:13:35,271 --> 00:13:37,209
+Por fora, o campo é
+zero nesses modelos:
+
+257
+00:13:37,249 --> 00:13:39,401
+cargas iguais e opostas,
+sem fonte externa.
+
+258
+00:13:39,441 --> 00:13:40,621
+Não são três leis.
+
+259
+00:13:40,701 --> 00:13:43,471
+São três formas de aplicar
+a mesma Lei de Gauss.
+
+260
+00:13:43,511 --> 00:13:47,168
+O que muda é como cresce a área da
+superfície compatível com a simetria,
+
+261
+00:13:47,208 --> 00:13:49,611
+enquanto a carga envolvida
+no vão fica fixa.
+
+262
+00:13:49,651 --> 00:13:52,161
+É isso que dá perfis diferentes.
+
+263
+00:13:52,201 --> 00:13:54,071
+Lembra do começo do vídeo?
+
+264
+00:13:54,211 --> 00:13:55,541
+Era essa a pergunta.
+
+265
+00:13:55,581 --> 00:13:58,141
+Olha de novo essas potências.
+
+266
+00:13:58,381 --> 00:14:01,971
+Na esfera, a área da gaussiana
+cresce com o raio ao quadrado.
+
+267
+00:14:02,021 --> 00:14:03,511
+Com a carga envolvida fixa,
+
+268
+00:14:03,631 --> 00:14:07,631
+o campo precisa cair na mesma
+proporção pra manter o fluxo constante.
+
+269
+00:14:07,731 --> 00:14:12,331
+No cilindro, pra um comprimento escolhido,
+a área lateral cresce só com o raio.
+
+270
+00:14:12,371 --> 00:14:15,331
+Então, com a carga envolvida
+fixa naquele trecho,
+
+271
+00:14:15,451 --> 00:14:19,081
+o campo cai com um sobre o raio,
+mais devagar que na esfera.
+
+272
+00:14:19,121 --> 00:14:23,861
+No plano, afastar as tampas não aumenta
+a área delas, nem a carga envolvida.
+
+273
+00:14:23,901 --> 00:14:25,691
+Então o campo fica constante.
+
+274
+00:14:25,781 --> 00:14:28,771
+Mas isso não é regra de
+espalhamento pra qualquer fonte.
+
+275
+00:14:28,821 --> 00:14:32,211
+Quem permite usar um único
+valor de campo é a simetria.
+
+276
+00:14:32,251 --> 00:14:36,061
+E, por dentro dos maciços,
+a carga envolvida também cresce:
+
+277
+00:14:36,261 --> 00:14:38,441
+olha sempre os dois
+lados da equação.
+
+278
+00:14:38,481 --> 00:14:40,661
+Antes de integrar,
+faz seis perguntas.
+
+279
+00:14:40,901 --> 00:14:43,081
+Primeira: qual é a
+simetria da fonte?
+
+280
+00:14:43,221 --> 00:14:46,141
+Segunda: em que direção
+o campo pode apontar?
+
+281
+00:14:46,181 --> 00:14:50,061
+Terceira: de quais coordenadas
+o módulo do campo pode depender?
+
+282
+00:14:50,101 --> 00:14:53,341
+Essas três vêm da fonte,
+antes de qualquer superfície.
+
+283
+00:14:53,451 --> 00:14:56,198
+Quarta: qual superfície
+fechada deixa o campo
+
+284
+00:14:56,238 --> 00:14:59,841
+constante onde ele contribui
+e tangente onde não contribui?
+
+285
+00:14:59,881 --> 00:15:04,141
+Esfera concêntrica na família esférica,
+cilindro coaxial na cilíndrica,
+
+286
+00:15:04,241 --> 00:15:06,831
+caixa curta atravessando
+o plano na planar.
+
+287
+00:15:06,871 --> 00:15:09,681
+Quinta: quanta carga
+ela realmente envolve?
+
+288
+00:15:09,771 --> 00:15:12,851
+Sexta: o problema precisa
+ser dividido em regiões?
+
+289
+00:15:12,941 --> 00:15:17,251
+No cilindro maciço, por dentro,
+o raio da gaussiana entra no volume.
+
+290
+00:15:17,291 --> 00:15:19,381
+Por fora, entra o raio da fonte.
+
+291
+00:15:19,421 --> 00:15:21,001
+A superfície foi a mesma.
+
+292
+00:15:21,041 --> 00:15:22,011
+A carga mudou.
+
+293
+00:15:22,051 --> 00:15:25,941
+É isso que você precisa reconhecer
+antes de procurar uma fórmula pronta.
+
+294
+00:15:26,001 --> 00:15:29,521
+Você não precisa decorar um
+campo diferente pra cada desenho.
+
+295
+00:15:29,561 --> 00:15:32,743
+Identifica a simetria da fonte,
+escolhe uma superfície
+
+296
+00:15:32,783 --> 00:15:36,391
+onde o fluxo simplifica e calcula
+a carga envolvida na região.
+
+297
+00:15:36,431 --> 00:15:40,641
+Esfera, cilindro e plano são
+três versões do mesmo raciocínio.
+
+298
+00:15:42,651 --> 00:15:46,731
+No próximo vídeo de Gauss, a gente leva
+esse método pra problemas menos diretos,
+
+299
+00:15:47,071 --> 00:15:50,661
+em que reconhecer a estratégia
+é justamente a parte difícil.
+
+300
+00:15:50,771 --> 00:15:55,471
+Se esse vídeo te ajudou, deixa o like,
+compartilha e se inscreve no Parallax Lab.
+
+301
+00:15:55,511 --> 00:15:56,651
+A gente se vê no próximo.

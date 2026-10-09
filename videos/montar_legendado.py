@@ -151,6 +151,26 @@ def load_term_colors(path: Path | None) -> dict[str, str]:
     return colors
 
 
+def crf_do_master(path):
+    """CRF gravado pelo x264 no próprio master (SEI dos primeiros pacotes); None se não houver."""
+    import re
+    with av.open(str(path)) as c:
+        dados = b""
+        for i, pacote in enumerate(c.demux(c.streams.video[0])):
+            dados += bytes(pacote)
+            if i >= 3:
+                break
+    m = re.search(rb"crf=([0-9.]+)", dados)
+    return float(m.group(1)) if m else None
+
+
+def crf_alvo(valor, master):
+    if valor != "auto":
+        return str(valor)
+    c = crf_do_master(master)
+    return "14" if c is None else str(max(14, round(c - 5)))
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("master", type=Path)
@@ -158,6 +178,9 @@ def main() -> None:
     parser.add_argument("output", type=Path)
     parser.add_argument("--style", choices=("standard", "piloto", "solid"), default="standard")
     parser.add_argument("--color-module", type=Path)
+    parser.add_argument("--crf", default="auto", help="qualidade do H.264 (menor = melhor/maior). Padrão 'auto': 14 (joelho medido: abaixo disso o ganho é desprezível; acima, as linhas finas degradam), "
+                        "mas nunca mais exigente que o necessário: max(14, CRF do master − 5). Antes era 18/19 fixo.")
+    parser.add_argument("--preset", default="medium", help="preset do libx264 (padrão medium; veryfast era o anterior)")
     args = parser.parse_args()
     master, srt, output = (path.resolve() for path in (args.master, args.srt, args.output))
     if len({master, srt, output}) != 3 or not master.is_file() or not srt.is_file():
@@ -180,7 +203,9 @@ def main() -> None:
             with av.open(str(silent), "w") as out:
                 stream = out.add_stream("libx264", rate=fps)
                 stream.width, stream.height, stream.pix_fmt = width, height, "yuv420p"
-                stream.options = {"crf": "18" if width == 1080 else "19", "preset": "veryfast"}
+                crf = crf_alvo(args.crf, master)
+                print(f"crf do legendado: {crf} (preset {args.preset})")
+                stream.options = {"crf": crf, "preset": args.preset}
                 cue_index = 0
                 for count, frame in enumerate(clean.decode(video)):
                     at = float(frame.pts * frame.time_base)

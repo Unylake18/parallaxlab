@@ -19,6 +19,7 @@ Preview:  uv run python -m manim -r 960,540 --fps 15 videos_longos/yt_0002_lei_g
 SO=4 (ou SO=4,5) renderiza só esses blocos (os outros rodam sem gerar quadros). GUIAS=1 mostra a safe area.
 """
 
+import json
 import math
 import os
 import sys
@@ -40,7 +41,47 @@ from template.fonts import DISPLAY_FONT, official_text, screen_text  # noqa: E40
 from template.layout_horizontal import GUIAS, safe_guides, split  # noqa: E402
 from MF_Tools import TransformByGlyphMap  # noqa: E402
 
+PASTA = Path(__file__).resolve().parent
 SO = {int(s) for s in os.environ.get("SO", "").split(",") if s.strip()}
+
+
+def _qualidade_final(crf):
+    """Render final: o Manim grava os trechos com crf 23 fixo; aqui só o crf muda (codec, pix_fmt e fps iguais)."""
+    import av as _av
+    import manim.scene.scene_file_writer as _sfw
+
+    class _Saida:
+        def __init__(self, c):
+            self._c = c
+
+        def add_stream(self, codec, *a, options=None, **k):
+            if options and "crf" in options:
+                options = {**options, "crf": crf}
+            return self._c.add_stream(codec, *a, options=options, **k)
+
+        def __getattr__(self, n):
+            return getattr(self._c, n)
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *e):
+            return self._c.__exit__(*e)
+
+    class _AV:
+        def __getattr__(self, n):
+            return getattr(_av, n)
+
+        def open(self, *a, **k):
+            c = _av.open(*a, **k)
+            return _Saida(c) if k.get("mode", a[1] if len(a) > 1 else "r") == "w" else c
+
+    _sfw.av = _AV()
+
+
+if os.environ.get("CRF"):
+    _qualidade_final(os.environ["CRF"])
+
 LOGO_PATH = Path(__file__).resolve().parents[2] / "assets" / "branding" / "overlays" / "parallax_lab_logo_horizontal.png"
 
 # ── Paleta e parâmetros de série (idênticos ao yt_0001) ─────────────────────
@@ -78,6 +119,27 @@ P_OBS = np.array([AX + RV, 0.0, 0.0])   # ponto de observação (e depois, ponto
 T_N02, T_N03, T_N04, T_N05, T_N06, T_N07, T_N08, T_N09, T_N10, T_N11, T_N12, T_N13, T_N14, T_N15, T_N20, T_N21, T_N22, T_N23, T_N24, T_N25, T_N26, T_N27, T_N28, T_N29, T_FIM = (
     22.0, 36.0, 77.0, 123.0, 172.0, 216.0, 262.0, 314.0, 341.0, 382.0, 392.0, 504.0, 574.0, 616.0,
     681.0, 731.0, 776.0, 840.0, 886.0, 928.0, 980.0, 1038.0, 1056.0, 1058.0, 1081.0)
+
+# ── Ritmo: a voz manda (mesmo mecanismo do yt_0001; ver gerar_sync.py) ──────
+# Os marcos editoriais at(t) abaixo (segundos do orçamento de 18:01) são convertidos pelo mapa linear por partes `knots` de sync.json
+# no instante da fala (áudio original) que corresponde a eles. Quando uma animação não cabe até o marco seguinte, a cena registra a
+# espera que a voz precisa ganhar (pads.json); `gerar_sync.py montar` insere essas esperas em pausas reais da fala
+# (audio/narracao_montagem.wav) e gera a legenda. Sem sync.json (ou com SEM_VOZ=1) a cena roda como o preview sem voz.
+VOZ = (PASTA / "sync.json").exists() and os.environ.get("SEM_VOZ") != "1"
+KNOTS = np.array(json.loads((PASTA / "sync.json").read_text(encoding="utf-8"))["knots"]) if VOZ else None
+TOL = 0.1                                       # atraso tolerado num marco antes de pedir espera à voz
+# Ritmo por trecho (entre dois marcos): onde a animação desenhada não cabe na fala, o trecho é comprimido antes de pedir espera à voz:
+# primeiro as esperas explícitas (até P_ESPERA), depois as animações (até P_ANIM da duração). AJUSTAR=1 numa passada a seco recalcula ritmo.json.
+RITMO_ARQ = PASTA / "ritmo.json"
+AJUSTAR = os.environ.get("AJUSTAR") == "1"
+RITMO = {} if (AJUSTAR or not VOZ or not RITMO_ARQ.exists()) else json.loads(RITMO_ARQ.read_text(encoding="utf-8"))
+P_ESPERA, P_ANIM, FOLGA = 0.4, 0.62, 0.04
+
+
+def voz(t):
+    """Instante da fala (áudio original) que corresponde ao marco editorial t."""
+    return float(np.interp(t, KNOTS[:, 0], KNOTS[:, 1])) if VOZ else t
+
 
 
 # ── Texto e matemática (mesmos helpers do yt_0001) ──────────────────────────
@@ -822,7 +884,9 @@ class LeiGaussCasosClassicos002(Scene):
 
     def setup(self):
         self.camera.background_color = BACKGROUND_COLOR
-        self.T = 0.0
+        # relógio: T = tempo do vídeo (quadros exatos); shift = esperas já pedidas à voz; trecho corrente: chave "bloco.i", início e durações desenhadas
+        self.T, self.shift, self.pads, self.blocos = 0.0, 0.0, [], {}
+        self.k, self.si, self.seg, self.s0, self.base_a, self.base_w, self.na_at, self.ritmo = 0, 0, "0.0", 0.0, 0.0, 0.0, False, {}
 
     @staticmethod
     def _curto(m):
@@ -865,21 +929,70 @@ class LeiGaussCasosClassicos002(Scene):
         if len(anims) == 1 and isinstance(anims[0], Wait):
             self.animations = anims
             static = not self.should_update_mobjects()
+        espera = isinstance(anims[0], Wait)
         m = max(a.run_time for a in anims)
-        n = max(1, int(round(m * fps)))
+        rt = m
+        if VOZ and not self.na_at:
+            fa, fw = RITMO.get(self.seg, (1.0, 1.0))
+            if espera:
+                self.base_w += m
+            else:
+                self.base_a += m
+            rt = m * (fw if espera else fa)
+        n = max(1, int(round(rt * fps)))
         real = (n + 0.25) / fps if static else (n - 0.5) / fps
         for a in anims:
             a.run_time = real * a.run_time / m
         self.T += n / fps
         return super().play(*anims)
 
+    def _espera(self, tv, d):
+        self.pads.append([round(tv, 3), round(d, 3)])
+        self.shift += d
+
+    def respiro(self, tv, d):
+        """Pausa deliberada na voz antes do instante tv da fala (sem atraso de animação)."""
+        self._espera(tv, d)
+
+    def _ajusta(self, livre):
+        """Fatores (animação, espera) para que o trecho desenhado caiba em `livre` segundos de fala."""
+        a, w = self.base_a, self.base_w
+        sobra = a + w - (livre - FOLGA)
+        if sobra <= 0 or a + w == 0:
+            return
+        fw = max(P_ESPERA, 1 - sobra / w) if w else 1.0
+        sobra -= w * (1 - fw)
+        fa = max(P_ANIM, 1 - sobra / a) if a and sobra > 0 else 1.0
+        self.ritmo[self.seg] = [round(fa, 3), round(fw, 3)]
+
     def at(self, t):
-        d = t - self.T
-        if d > 0.03:
+        """Marco editorial t (s do orçamento de 18:01): espera, ou pede espera à voz, até o instante da fala correspondente."""
+        if not VOZ:
+            d = t - self.T
+            if d > 0.03:
+                self.wait(d)
+            return
+        tv = voz(t)
+        alvo = tv + self.shift
+        self._ajusta(alvo - self.s0)
+        d = alvo - self.T
+        if d > 0.5 / config.frame_rate:
+            self.update_mobjects(0)                     # Scene.wait congela o quadro sem updaters dependentes do tempo
+            self.na_at = True
             self.wait(d)
+            self.na_at = False
+        elif d < -TOL:
+            self._espera(tv, -d)                        # a voz espera a animação neste ponto
+        self.si += 1
+        self.seg, self.s0, self.base_a, self.base_w = f"{self.k}.{self.si}", self.T, 0.0, 0.0
 
     def begin(self, k, name):
         self.next_section(f"{k:02d}_{name}", skip_animations=bool(SO) and k not in SO)
+        self.k, self.si = k, 0
+        self.seg, self.s0, self.base_a, self.base_w = f"{k}.0", self.T, 0.0, 0.0
+        self.blocos[k] = round(self.T, 3)
+        if VOZ:
+            print(f"bloco {k:02d} {name}: início no vídeo {self.T:7.2f}s (esperas pedidas à voz até aqui: {self.shift:5.1f}s)")
 
     def construct(self):
         if GUIAS:
@@ -907,6 +1020,14 @@ class LeiGaussCasosClassicos002(Scene):
         self.n25_areas()
         self.n26_checklist()
         self.n27_payoff_outro()
+        if VOZ:
+            if AJUSTAR:
+                RITMO_ARQ.write_text(json.dumps(self.ritmo, indent=0), encoding="utf-8")
+                print(f"ritmo.json: {len(self.ritmo)} trechos comprimidos")
+            (PASTA / "pads.json").write_text(json.dumps({"fps": config.frame_rate, "pads": self.pads}, indent=0), encoding="utf-8")
+            self.blocos["fim"] = round(self.T, 3)
+            (PASTA / "blocos.json").write_text(json.dumps(self.blocos, indent=0), encoding="utf-8")
+            print(f"duração total: {self.T:.2f}s · esperas pedidas à voz: {len(self.pads)} (+{self.shift:.2f}s)")
 
     # ═══ N01 · cold open (0:00–0:22) · FOCUS → COMPARE · sem marca, header nem watermark ═══
     def n01_cold_open(self):
@@ -2737,8 +2858,11 @@ class LeiGaussCasosClassicos002(Scene):
         self.at(t0 + 5.0)
         self.play(FadeIn(p2, shift=0.12 * UP), run_time=1.4)
         self.at(T_N28)
-        # pausa de 2 s sem conteúdo novo
-        self.wait(2.0)
+        # pausa de 2 s sem conteúdo novo: com voz, o áudio ganha 2 s de silêncio antes do CTA (pads.json); sem voz, a cena espera
+        if VOZ:
+            self.respiro(voz(T_N29), 2.0)
+        else:
+            self.wait(2.0)
         # outro: logo horizontal oficial centralizado, mensagem curta e anéis tracejados com movimento discreto
         self.at(T_N29)
         oc = P(0, 0.2)

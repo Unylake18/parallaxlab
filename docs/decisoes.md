@@ -188,3 +188,10 @@ Render, QA, documentação e ações de Git devem ser proporcionais à etapa e a
 - A visualização não substitui validação matemática ou física. A futura frente de física exigirá checagem explícita de unidades, sinais, hipóteses, condições iniciais, leis de conservação, comportamento em limites e plausibilidade, conforme aplicável.
 - O MVP, o piloto `vid_0001` e os dez primeiros vídeos permanecem integralmente preservados. A expansão não é pendência atual, backlog, cronograma, requisito técnico nem autorização de implementação imediata.
 - A ordem estratégica permanece: primeiro piloto → dez vídeos → métricas → evolução posterior.
+
+## 2026-10-09 — Qualidade de render e codificação: padrão único CRF 14
+
+- Master e legendado usam o mesmo padrão alto: H.264, yuv420p, **CRF 14** (limiar medido: abaixo disso o ganho é desprezível; acima, as linhas finas degradam).
+- Render final do Manim (≥ 1080p) aplica CRF 14 automaticamente via `template/qualidade.py` (chamado por `template/config.py`); preview 540p mantém o padrão do Manim. Variável `CRF` sobrescreve.
+- `videos/montar_legendado.py` usa `--crf auto` = `max(14, CRF do master − 5)` (não recodifica um master em CRF 23 com CRF 14: só incha o arquivo). Anterior: CRF 18/19 fixo, preset `veryfast`.
+- Vale daqui pra frente; entregas antigas (por exemplo, masters em CRF 23) só mudam se forem re-renderizadas. Detalhes operacionais em `AGENTS.md` (seção "Qualidade de render e codificação").

@@ -17,3 +17,8 @@ WATERMARK_PATH = (
     / "overlays"
     / "parallax_lab_watermark.png"
 )
+
+# Qualidade de render padrão (CRF 14 em 1080p+; ver template/qualidade.py). Vale para todo cena.py que importa o template.
+from template import qualidade  # noqa: E402
+
+qualidade.aplicar()
