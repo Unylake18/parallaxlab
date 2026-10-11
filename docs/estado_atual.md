@@ -2,6 +2,30 @@
 
 **Atualizado em:** 2026-10-07 (arsenal de sólidos 3D em Blender, em sandbox); antes, 2026-10-06 (reconciliação dos vídeos 12–15 e do primeiro vídeo longo; segundo PC); antes, 2026-10-03 (suporte horizontal integrado; reconciliação dos vídeos 11–13) e 2026-10-01 (adoção do MF-Tools; reconciliação do `vid_0010`)
 
+## Resumo rápido — leia primeiro (atualizado em 2026-10-11, PC pessoal `Pichau`)
+
+- **Dois computadores, um repositório.** Trabalho: `C:\Users\KaioOrtiz\PycharmProjects\manim-fisica`; pessoal: `C:\Users\Pichau\PycharmProjects\manim-fisica`. Só o Git (`origin/main`) sincroniza. Regra: **antes de trocar de PC, commit + push; ao chegar, `git pull`.** Fora do Git (copiar à parte): WAV de narração dos vídeos longos (`videos_longos/*/audio/`), `renders/`, `entregas/`, `media/`.
+- **Vídeos curtos `vid_0001`–`vid_0018`:** todos com master e legendado entregues (`uv run python videos/entregar.py --listar`). O mais recente aqui é `vid_0018` (Bernoulli, Por Trás da Fórmula · EP. 06): final 1080p com voz e legendas coloridas, QA concluído, pronto para postagem.
+- **`vid_0019`–`vid_0021`:** feitos no PC de trabalho; **em 2026-10-11 ainda não estavam no remoto** (só chegam ao `origin` depois de commit + push de lá; ver "Sincronizar os dois PCs" abaixo).
+- **Longo `yt_0001` (Lei de Gauss):** revisão 2.1, sincronizado à voz (`sync.json`, `legenda.srt`); master/entrega formal não registrados nesta máquina.
+- **Longo `yt_0002` (Lei de Gauss, casos clássicos):** versão 2D fechada; narração v2.2 (`narracao_sugestao.md`, 2.862 palavras), voz ElevenLabs em 4 partes (15:51), sincronização sem ASR, **master 1080p/30 fps de 15:58 renderizado** (`renders/yt_0002_final/master_yt0002.mp4`), legenda em `.srt` separado (301 cues) e capítulos. Passo a passo e como refazer: `videos_longos/yt_0002_lei_gauss_casos_classicos/LEIA-ME_RENDER_FINAL.md`. Pendências: entrega formal em `entregas/` (falta série/EP/assunto) e uma revisão futura de áudio/sincronização em alguns trechos, a pedido.
+- **Padrão de qualidade (2026-10-09):** H.264 yuv420p **CRF 14** em master e legendado; render ≥ 1080p já sai em 14 por `template/qualidade.py`; legendado com `--crf auto`. Detalhes em `AGENTS.md` e `docs/decisoes.md`.
+- **Experimentos Blender + Manim (sandbox, fora dos vídeos):** `experimentos/blender/preview_*` (3D permanente + corte 2D, setas planas, coroas nos cilindros; um `LEIA-ME.md` em cada). Não integrados ao `yt_0002`; n̂/dA e "E = 0 por E ⟂ n̂" ficam para uma integração futura.
+- **Memória do Claude:** `docs/memoria_claude/` espelha a memória local (restauração no `LEIA-ME.md` da pasta). A fonte de verdade do estado é este arquivo e o `AGENTS.md`.
+
+### Sincronizar os dois PCs (quando um deles estiver atrás)
+
+No PC que tem trabalho ainda fora do remoto (por exemplo, vid_0019–0021), sem risco de conflito:
+
+```bash
+git status                                   # conferir o que há
+git add -A && git commit -m "vids 19–21 (PC de trabalho)"
+git push origin HEAD:refs/heads/pc-trabalho  # sobe numa branch própria, sem mexer na main
+```
+
+Depois, no outro PC: `git fetch` e integrar a branch `pc-trabalho` na `main` (resolvendo conflitos em `docs/` e `AGENTS.md`, se houver); então `git push origin main` e, no PC de trabalho, `git pull`.
+
+
 ## Formatos: curto vertical + longo horizontal (2026-10-03)
 
 - Trilha de YouTube longo aprovada para teste e **disponível tecnicamente** (decisão em `docs/decisoes.md`; regras em `docs/formatos.md`). **Primeiro vídeo longo: `yt_0001` — LEI DE GAUSS** (“O segredo não é a integral — é a simetria”), em `videos_longos/yt_0001_lei_gauss/`, **publicado segundo o usuário (2026-10-06)**. Foi desenvolvido na branch `video/long-0001`, num worktree em `C:\Users\Pichau\PycharmProjects\parallax-long`, e **integrado à `main` em 2026-10-06** (merge); a branch continua em `origin/video/long-0001` para ajustes. Final local: `renders/yt_0001_lei_gauss_final_1080p30.mp4` (1920×1080, 30 fps, 69,4 MB, 2026-10-05; `renders/` é ignorado pelo Git), com `.srt` ao lado. Segundo a `ficha.md`, a etapa final de 2026-10-05 foi voz ElevenLabs em 3 partes, sincronia por âncoras, legenda SRT e render 1080p. Os WAV da unidade (`narracao_final`, `narracao_montagem` e `partes/`, de 26 a 122 MB cada) **não são versionados**: passam do limite de 100 MB por arquivo do GitHub e estão no `.gitignore` (`videos_longos/*/audio/*.wav` e `partes/`); existem só no PC onde foram gerados, e o backup externo deles não está confirmado. **Segundo longo: `yt_0002_lei_gauss_casos_classicos`** — três simetrias e aplicações clássicas, continuação do `yt_0001`; pacote do Work aprovado como fonte canônica de Produção em 2026-10-06, com `ficha.md`, `narracao.md`, `producao.md` e `storyboard.md` na unidade, sem implementação. A pauta anterior de energia potencial foi descartada editorialmente e sua pasta removida por autorização do usuário. Próximo longo do módulo: exercícios mais elaborados de Gauss, com ID a definir; a implementação do `yt_0002` aguarda handoff específico, começando somente por N01–N03.

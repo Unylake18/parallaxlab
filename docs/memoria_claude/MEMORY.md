@@ -1,0 +1,7 @@
+- [Enviar frames do preview](feedback-enviar-frames.md) — sempre mandar pranchas de quadros ao usuário (ele repassa ao GPT)
+- [yt_0002: estado e convenções](projeto-yt0002-gauss.md) — N01–N29 (vídeo completo) em cena.py; sistema visual, armadilhas de render (cache, concorrência)
+- [Arsenal 3D segue o padrão Gauss](feedback-arsenal-padrao-gauss.md) — sólidos Blender usam estilo.json; ignorar cores dos vídeos antigos
+- [Arsenal 3D + ponte Manim](projeto-arsenal-3d-blender.md) — estado, commits, armadilhas medidas (updater 2x, codec, barras em heredoc)
+- [Decisões visuais do arsenal](feedback-arsenal-decisoes-visuais.md) — sinal esculpido, B magenta, vetores brancos, polos N azul/S magenta
+- [Teste coaxial Blender](projeto-teste-coaxial-blender.md) — experimento 3D isolado (v1/v2), comandos e armadilhas
+- [Qualidade padrão CRF 14](feedback-qualidade-crf14.md) — master e legendado no mesmo CRF 14 (limiar medido); render ≥1080p automático
