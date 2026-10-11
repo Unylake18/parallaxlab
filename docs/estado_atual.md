@@ -6,7 +6,7 @@
 
 - **Dois computadores, um repositório.** Trabalho: `C:\Users\KaioOrtiz\PycharmProjects\manim-fisica`; pessoal: `C:\Users\Pichau\PycharmProjects\manim-fisica`. Só o Git (`origin/main`) sincroniza. Regra: **antes de trocar de PC, commit + push; ao chegar, `git pull`.** Fora do Git (copiar à parte): WAV de narração dos vídeos longos (`videos_longos/*/audio/`), `renders/`, `entregas/`, `media/`.
 - **Vídeos curtos `vid_0001`–`vid_0018`:** todos com master e legendado entregues (`uv run python videos/entregar.py --listar`). O mais recente aqui é `vid_0018` (Bernoulli, Por Trás da Fórmula · EP. 06): final 1080p com voz e legendas coloridas, QA concluído, pronto para postagem.
-- **`vid_0019`–`vid_0021`:** feitos no PC de trabalho; **em 2026-10-11 ainda não estavam no remoto** (só chegam ao `origin` depois de commit + push de lá; ver "Sincronizar os dois PCs" abaixo).
+- **`vid_0019`–`vid_0021` (feitos no PC de trabalho, integrados à `main` em 2026-10-11 pela branch `pc-trabalho`):** `vid_0019` Absurdo Calculável · EP. 02, "E se o ar parasse de frear a chuva?" (V1.1 conceitualmente aprovada e congelada); `vid_0020` Por Trás da Fórmula · EP. 07, "Por que uma integral dupla calcula volume?" (final legendado renderizado e conferido em 1080×1920/30 fps, 171,8 s); `vid_0021` ciclo termodinâmico (preview silencioso refinado, em revisão visual/didática). Os arquivos de mídia pesados (finais em MP4) podem estar só no PC de trabalho.
 - **Longo `yt_0001` (Lei de Gauss):** revisão 2.1, sincronizado à voz (`sync.json`, `legenda.srt`); master/entrega formal não registrados nesta máquina.
 - **Longo `yt_0002` (Lei de Gauss, casos clássicos):** versão 2D fechada; narração v2.2 (`narracao_sugestao.md`, 2.862 palavras), voz ElevenLabs em 4 partes (15:51), sincronização sem ASR, **master 1080p/30 fps de 15:58 renderizado** (`renders/yt_0002_final/master_yt0002.mp4`), legenda em `.srt` separado (301 cues) e capítulos. Passo a passo e como refazer: `videos_longos/yt_0002_lei_gauss_casos_classicos/LEIA-ME_RENDER_FINAL.md`. Pendências: entrega formal em `entregas/` (falta série/EP/assunto) e uma revisão futura de áudio/sincronização em alguns trechos, a pedido.
 - **Padrão de qualidade (2026-10-09):** H.264 yuv420p **CRF 14** em master e legendado; render ≥ 1080p já sai em 14 por `template/qualidade.py`; legendado com `--crf auto`. Detalhes em `AGENTS.md` e `docs/decisoes.md`.
@@ -15,7 +15,11 @@
 
 ### Sincronizar os dois PCs (quando um deles estiver atrás)
 
-No PC que tem trabalho ainda fora do remoto (por exemplo, vid_0019–0021), sem risco de conflito:
+Histórico: em 2026-10-11 o PC de trabalho estava atrás (clone da época do vid_0012) e tinha o vid_0019–0021 fora do remoto; subiram pela branch `pc-trabalho`, integrada sem conflito. O PC de trabalho precisa de `git pull origin main` para ficar igual.
+
+Procedimento geral:
+
+No PC que tem trabalho ainda fora do remoto , sem risco de conflito:
 
 ```bash
 git status                                   # conferir o que há
