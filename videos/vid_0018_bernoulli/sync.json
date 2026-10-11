@@ -1,0 +1,1566 @@
+{
+  "anchors": [
+    [
+      "hook",
+      0.07
+    ],
+    [
+      "mesmo_volume",
+      8.1
+    ],
+    [
+      "area_entrada",
+      12.6
+    ],
+    [
+      "area_saida",
+      16.52
+    ],
+    [
+      "incompressivel",
+      20.02
+    ],
+    [
+      "forca",
+      24.2
+    ],
+    [
+      "trabalho",
+      28.42
+    ],
+    [
+      "volume_varrido",
+      31.63
+    ],
+    [
+      "trabalho_entrada",
+      38.11
+    ],
+    [
+      "saida",
+      43.29
+    ],
+    [
+      "sinal_negativo",
+      48.91
+    ],
+    [
+      "liquido",
+      52.31
+    ],
+    [
+      "energia",
+      58.91
+    ],
+    [
+      "massa",
+      62.04
+    ],
+    [
+      "cinetica",
+      65.91
+    ],
+    [
+      "gravitacional",
+      69.91
+    ],
+    [
+      "balanco",
+      74.42
+    ],
+    [
+      "cancelar",
+      83.25
+    ],
+    [
+      "volume_comum",
+      85.87
+    ],
+    [
+      "por_volume",
+      88.55
+    ],
+    [
+      "reorganizar",
+      93.33
+    ],
+    [
+      "constante",
+      103.46
+    ],
+    [
+      "unidades",
+      107.29
+    ],
+    [
+      "pressao_significado",
+      113.35
+    ],
+    [
+      "estreitamento",
+      118.59
+    ],
+    [
+      "continuidade",
+      121.84
+    ],
+    [
+      "velocidade_aumenta",
+      123.71
+    ],
+    [
+      "continuidade_fim",
+      130.42
+    ],
+    [
+      "bernoulli_caso",
+      133.2
+    ],
+    [
+      "altura_igual",
+      134.58
+    ],
+    [
+      "compensacao",
+      139.71
+    ],
+    [
+      "conclusao",
+      146.45
+    ],
+    [
+      "hipoteses",
+      151.94
+    ],
+    [
+      "condicoes",
+      154.02
+    ],
+    [
+      "sintese",
+      161.36
+    ],
+    [
+      "CTA",
+      166.12
+    ],
+    [
+      "fim",
+      167.52
+    ]
+  ],
+  "extras": {},
+  "agenda": [
+    {
+      "indice": 0,
+      "inicio": 0.0,
+      "fim": 2.2666666666666666,
+      "animacao_max_s": 1.4,
+      "pausa": false
+    },
+    {
+      "indice": 1,
+      "inicio": 2.2666666666666666,
+      "fim": 3.4,
+      "animacao_max_s": 0.6999999999999997,
+      "pausa": false
+    },
+    {
+      "indice": 2,
+      "inicio": 3.4,
+      "fim": 4.866666666666666,
+      "animacao_max_s": 0.8999999999999999,
+      "pausa": false
+    },
+    {
+      "indice": 3,
+      "inicio": 4.866666666666666,
+      "fim": 6.0,
+      "animacao_max_s": 0.6999999999999997,
+      "pausa": false
+    },
+    {
+      "indice": 4,
+      "inicio": 6.0,
+      "fim": 7.933333333333334,
+      "animacao_max_s": 1.2000000000000002,
+      "pausa": true
+    },
+    {
+      "indice": 5,
+      "inicio": 7.933333333333334,
+      "fim": 8.533333333333333,
+      "animacao_max_s": 0.34999999999999964,
+      "pausa": false
+    },
+    {
+      "indice": 6,
+      "inicio": 8.533333333333333,
+      "fim": 9.133333333333333,
+      "animacao_max_s": 0.34999999999999964,
+      "pausa": false
+    },
+    {
+      "indice": 7,
+      "inicio": 9.133333333333333,
+      "fim": 10.133333333333333,
+      "animacao_max_s": 0.5999999999999996,
+      "pausa": false
+    },
+    {
+      "indice": 8,
+      "inicio": 10.133333333333333,
+      "fim": 11.666666666666666,
+      "animacao_max_s": 0.9000000000000004,
+      "pausa": false
+    },
+    {
+      "indice": 9,
+      "inicio": 11.666666666666666,
+      "fim": 13.266666666666667,
+      "animacao_max_s": 0.9000000000000004,
+      "pausa": false
+    },
+    {
+      "indice": 10,
+      "inicio": 13.266666666666667,
+      "fim": 14.933333333333334,
+      "animacao_max_s": 1.0000000000000009,
+      "pausa": false
+    },
+    {
+      "indice": 11,
+      "inicio": 14.933333333333334,
+      "fim": 16.666666666666668,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 12,
+      "inicio": 16.666666666666668,
+      "fim": 18.4,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 13,
+      "inicio": 18.4,
+      "fim": 20.466666666666665,
+      "animacao_max_s": 1.1999999999999993,
+      "pausa": false
+    },
+    {
+      "indice": 14,
+      "inicio": 20.466666666666665,
+      "fim": 21.866666666666667,
+      "animacao_max_s": 0.8000000000000007,
+      "pausa": false
+    },
+    {
+      "indice": 15,
+      "inicio": 21.866666666666667,
+      "fim": 24.6,
+      "animacao_max_s": 1.5999999999999996,
+      "pausa": true
+    },
+    {
+      "indice": 16,
+      "inicio": 24.6,
+      "fim": 24.866666666666667,
+      "animacao_max_s": 0.34999999999999964,
+      "pausa": false
+    },
+    {
+      "indice": 17,
+      "inicio": 24.866666666666667,
+      "fim": 25.133333333333333,
+      "animacao_max_s": 0.3000000000000007,
+      "pausa": false
+    },
+    {
+      "indice": 18,
+      "inicio": 25.133333333333333,
+      "fim": 25.866666666666667,
+      "animacao_max_s": 0.8999999999999986,
+      "pausa": false
+    },
+    {
+      "indice": 19,
+      "inicio": 25.866666666666667,
+      "fim": 26.466666666666665,
+      "animacao_max_s": 0.6999999999999993,
+      "pausa": false
+    },
+    {
+      "indice": 20,
+      "inicio": 26.466666666666665,
+      "fim": 27.266666666666666,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 21,
+      "inicio": 27.266666666666666,
+      "fim": 27.933333333333334,
+      "animacao_max_s": 0.75,
+      "pausa": false
+    },
+    {
+      "indice": 22,
+      "inicio": 27.933333333333334,
+      "fim": 28.666666666666668,
+      "animacao_max_s": 1.3999999999999986,
+      "pausa": true
+    },
+    {
+      "indice": 23,
+      "inicio": 28.666666666666668,
+      "fim": 30.333333333333332,
+      "animacao_max_s": 3.0,
+      "pausa": false
+    },
+    {
+      "indice": 24,
+      "inicio": 30.333333333333332,
+      "fim": 30.6,
+      "animacao_max_s": 0.3999999999999986,
+      "pausa": false
+    },
+    {
+      "indice": 25,
+      "inicio": 30.6,
+      "fim": 31.066666666666666,
+      "animacao_max_s": 0.8999999999999986,
+      "pausa": false
+    },
+    {
+      "indice": 26,
+      "inicio": 31.066666666666666,
+      "fim": 31.666666666666668,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 27,
+      "inicio": 31.666666666666668,
+      "fim": 32.0,
+      "animacao_max_s": 0.6999999999999993,
+      "pausa": false
+    },
+    {
+      "indice": 28,
+      "inicio": 32.0,
+      "fim": 32.93333333333333,
+      "animacao_max_s": 1.0,
+      "pausa": true
+    },
+    {
+      "indice": 29,
+      "inicio": 32.93333333333333,
+      "fim": 34.2,
+      "animacao_max_s": 1.4499999999999993,
+      "pausa": false
+    },
+    {
+      "indice": 30,
+      "inicio": 34.2,
+      "fim": 34.53333333333333,
+      "animacao_max_s": 0.3500000000000014,
+      "pausa": false
+    },
+    {
+      "indice": 31,
+      "inicio": 34.53333333333333,
+      "fim": 35.46666666666667,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 32,
+      "inicio": 35.46666666666667,
+      "fim": 35.86666666666667,
+      "animacao_max_s": 0.5,
+      "pausa": false
+    },
+    {
+      "indice": 33,
+      "inicio": 35.86666666666667,
+      "fim": 36.53333333333333,
+      "animacao_max_s": 0.6999999999999993,
+      "pausa": false
+    },
+    {
+      "indice": 34,
+      "inicio": 36.53333333333333,
+      "fim": 37.13333333333333,
+      "animacao_max_s": 0.6499999999999986,
+      "pausa": false
+    },
+    {
+      "indice": 35,
+      "inicio": 37.13333333333333,
+      "fim": 37.93333333333333,
+      "animacao_max_s": 0.5,
+      "pausa": true
+    },
+    {
+      "indice": 36,
+      "inicio": 37.93333333333333,
+      "fim": 40.0,
+      "animacao_max_s": 1.2999999999999972,
+      "pausa": false
+    },
+    {
+      "indice": 37,
+      "inicio": 40.0,
+      "fim": 40.6,
+      "animacao_max_s": 1.3999999999999986,
+      "pausa": true
+    },
+    {
+      "indice": 38,
+      "inicio": 40.6,
+      "fim": 40.93333333333333,
+      "animacao_max_s": 0.7000000000000028,
+      "pausa": false
+    },
+    {
+      "indice": 39,
+      "inicio": 40.93333333333333,
+      "fim": 41.333333333333336,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 40,
+      "inicio": 41.333333333333336,
+      "fim": 41.666666666666664,
+      "animacao_max_s": 0.7999999999999972,
+      "pausa": true
+    },
+    {
+      "indice": 41,
+      "inicio": 41.666666666666664,
+      "fim": 41.8,
+      "animacao_max_s": 0.3500000000000014,
+      "pausa": false
+    },
+    {
+      "indice": 42,
+      "inicio": 41.8,
+      "fim": 41.93333333333333,
+      "animacao_max_s": 0.25,
+      "pausa": false
+    },
+    {
+      "indice": 43,
+      "inicio": 41.93333333333333,
+      "fim": 43.4,
+      "animacao_max_s": 4.0,
+      "pausa": false
+    },
+    {
+      "indice": 44,
+      "inicio": 43.4,
+      "fim": 43.666666666666664,
+      "animacao_max_s": 0.7999999999999972,
+      "pausa": true
+    },
+    {
+      "indice": 45,
+      "inicio": 43.666666666666664,
+      "fim": 44.4,
+      "animacao_max_s": 0.3500000000000014,
+      "pausa": false
+    },
+    {
+      "indice": 46,
+      "inicio": 44.4,
+      "fim": 45.8,
+      "animacao_max_s": 0.7000000000000028,
+      "pausa": false
+    },
+    {
+      "indice": 47,
+      "inicio": 45.8,
+      "fim": 47.6,
+      "animacao_max_s": 0.8999999999999986,
+      "pausa": false
+    },
+    {
+      "indice": 48,
+      "inicio": 47.6,
+      "fim": 49.6,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 49,
+      "inicio": 49.6,
+      "fim": 50.2,
+      "animacao_max_s": 0.8999999999999986,
+      "pausa": true
+    },
+    {
+      "indice": 50,
+      "inicio": 50.2,
+      "fim": 51.0,
+      "animacao_max_s": 1.2000000000000028,
+      "pausa": false
+    },
+    {
+      "indice": 51,
+      "inicio": 51.0,
+      "fim": 51.733333333333334,
+      "animacao_max_s": 1.1000000000000014,
+      "pausa": false
+    },
+    {
+      "indice": 52,
+      "inicio": 51.733333333333334,
+      "fim": 51.93333333333333,
+      "animacao_max_s": 0.8999999999999986,
+      "pausa": true
+    },
+    {
+      "indice": 53,
+      "inicio": 51.93333333333333,
+      "fim": 52.13333333333333,
+      "animacao_max_s": 0.7000000000000028,
+      "pausa": false
+    },
+    {
+      "indice": 54,
+      "inicio": 52.13333333333333,
+      "fim": 52.4,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 55,
+      "inicio": 52.4,
+      "fim": 52.46666666666667,
+      "animacao_max_s": 0.29999999999999716,
+      "pausa": false
+    },
+    {
+      "indice": 56,
+      "inicio": 52.46666666666667,
+      "fim": 52.733333333333334,
+      "animacao_max_s": 0.7999999999999972,
+      "pausa": true
+    },
+    {
+      "indice": 57,
+      "inicio": 52.733333333333334,
+      "fim": 52.93333333333333,
+      "animacao_max_s": 0.3500000000000014,
+      "pausa": false
+    },
+    {
+      "indice": 58,
+      "inicio": 52.93333333333333,
+      "fim": 53.46666666666667,
+      "animacao_max_s": 0.8999999999999986,
+      "pausa": false
+    },
+    {
+      "indice": 59,
+      "inicio": 53.46666666666667,
+      "fim": 54.06666666666667,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 60,
+      "inicio": 54.06666666666667,
+      "fim": 54.733333333333334,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 61,
+      "inicio": 54.733333333333334,
+      "fim": 55.266666666666666,
+      "animacao_max_s": 0.8999999999999986,
+      "pausa": false
+    },
+    {
+      "indice": 62,
+      "inicio": 55.266666666666666,
+      "fim": 55.86666666666667,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 63,
+      "inicio": 55.86666666666667,
+      "fim": 56.46666666666667,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 64,
+      "inicio": 56.46666666666667,
+      "fim": 57.266666666666666,
+      "animacao_max_s": 1.2999999999999972,
+      "pausa": false
+    },
+    {
+      "indice": 65,
+      "inicio": 57.266666666666666,
+      "fim": 57.53333333333333,
+      "animacao_max_s": 0.3500000000000014,
+      "pausa": false
+    },
+    {
+      "indice": 66,
+      "inicio": 57.53333333333333,
+      "fim": 58.266666666666666,
+      "animacao_max_s": 1.2000000000000028,
+      "pausa": true
+    },
+    {
+      "indice": 67,
+      "inicio": 58.266666666666666,
+      "fim": 58.666666666666664,
+      "animacao_max_s": 0.7000000000000028,
+      "pausa": false
+    },
+    {
+      "indice": 68,
+      "inicio": 58.666666666666664,
+      "fim": 59.333333333333336,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 69,
+      "inicio": 59.333333333333336,
+      "fim": 60.06666666666667,
+      "animacao_max_s": 0.3500000000000014,
+      "pausa": false
+    },
+    {
+      "indice": 70,
+      "inicio": 60.06666666666667,
+      "fim": 61.4,
+      "animacao_max_s": 0.6500000000000057,
+      "pausa": false
+    },
+    {
+      "indice": 71,
+      "inicio": 61.4,
+      "fim": 62.46666666666667,
+      "animacao_max_s": 0.5,
+      "pausa": false
+    },
+    {
+      "indice": 72,
+      "inicio": 62.46666666666667,
+      "fim": 64.33333333333333,
+      "animacao_max_s": 0.9000000000000057,
+      "pausa": false
+    },
+    {
+      "indice": 73,
+      "inicio": 64.33333333333333,
+      "fim": 64.73333333333333,
+      "animacao_max_s": 0.20000000000000284,
+      "pausa": false
+    },
+    {
+      "indice": 74,
+      "inicio": 64.73333333333333,
+      "fim": 65.2,
+      "animacao_max_s": 0.7999999999999972,
+      "pausa": true
+    },
+    {
+      "indice": 75,
+      "inicio": 65.2,
+      "fim": 65.46666666666667,
+      "animacao_max_s": 0.4000000000000057,
+      "pausa": false
+    },
+    {
+      "indice": 76,
+      "inicio": 65.46666666666667,
+      "fim": 65.93333333333334,
+      "animacao_max_s": 0.7999999999999972,
+      "pausa": false
+    },
+    {
+      "indice": 77,
+      "inicio": 65.93333333333334,
+      "fim": 66.46666666666667,
+      "animacao_max_s": 0.9000000000000057,
+      "pausa": false
+    },
+    {
+      "indice": 78,
+      "inicio": 66.46666666666667,
+      "fim": 66.73333333333333,
+      "animacao_max_s": 0.45000000000000284,
+      "pausa": false
+    },
+    {
+      "indice": 79,
+      "inicio": 66.73333333333333,
+      "fim": 67.33333333333333,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 80,
+      "inicio": 67.33333333333333,
+      "fim": 67.93333333333334,
+      "animacao_max_s": 1.5999999999999943,
+      "pausa": true
+    },
+    {
+      "indice": 81,
+      "inicio": 67.93333333333334,
+      "fim": 68.33333333333333,
+      "animacao_max_s": 0.9000000000000057,
+      "pausa": false
+    },
+    {
+      "indice": 82,
+      "inicio": 68.33333333333333,
+      "fim": 68.73333333333333,
+      "animacao_max_s": 0.9000000000000057,
+      "pausa": false
+    },
+    {
+      "indice": 83,
+      "inicio": 68.73333333333333,
+      "fim": 69.13333333333334,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 84,
+      "inicio": 69.13333333333334,
+      "fim": 69.8,
+      "animacao_max_s": 1.7000000000000028,
+      "pausa": false
+    },
+    {
+      "indice": 85,
+      "inicio": 69.8,
+      "fim": 70.66666666666667,
+      "animacao_max_s": 1.5999999999999943,
+      "pausa": true
+    },
+    {
+      "indice": 86,
+      "inicio": 70.66666666666667,
+      "fim": 71.06666666666666,
+      "animacao_max_s": 0.7000000000000028,
+      "pausa": false
+    },
+    {
+      "indice": 87,
+      "inicio": 71.06666666666666,
+      "fim": 71.6,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 88,
+      "inicio": 71.6,
+      "fim": 72.13333333333334,
+      "animacao_max_s": 0.9000000000000057,
+      "pausa": false
+    },
+    {
+      "indice": 89,
+      "inicio": 72.13333333333334,
+      "fim": 72.46666666666667,
+      "animacao_max_s": 0.5999999999999943,
+      "pausa": false
+    },
+    {
+      "indice": 90,
+      "inicio": 72.46666666666667,
+      "fim": 73.0,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 91,
+      "inicio": 73.0,
+      "fim": 73.93333333333334,
+      "animacao_max_s": 1.7000000000000028,
+      "pausa": false
+    },
+    {
+      "indice": 92,
+      "inicio": 73.93333333333334,
+      "fim": 74.13333333333334,
+      "animacao_max_s": 0.3499999999999943,
+      "pausa": false
+    },
+    {
+      "indice": 93,
+      "inicio": 74.13333333333334,
+      "fim": 74.33333333333333,
+      "animacao_max_s": 1.5999999999999943,
+      "pausa": true
+    },
+    {
+      "indice": 94,
+      "inicio": 74.33333333333333,
+      "fim": 74.46666666666667,
+      "animacao_max_s": 0.7000000000000028,
+      "pausa": false
+    },
+    {
+      "indice": 95,
+      "inicio": 74.46666666666667,
+      "fim": 74.6,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 96,
+      "inicio": 74.6,
+      "fim": 74.8,
+      "animacao_max_s": 1.5,
+      "pausa": true
+    },
+    {
+      "indice": 97,
+      "inicio": 74.8,
+      "fim": 75.0,
+      "animacao_max_s": 0.3499999999999943,
+      "pausa": false
+    },
+    {
+      "indice": 98,
+      "inicio": 75.0,
+      "fim": 75.33333333333333,
+      "animacao_max_s": 0.9000000000000057,
+      "pausa": false
+    },
+    {
+      "indice": 99,
+      "inicio": 75.33333333333333,
+      "fim": 75.8,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 100,
+      "inicio": 75.8,
+      "fim": 76.2,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 101,
+      "inicio": 76.2,
+      "fim": 76.6,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 102,
+      "inicio": 76.6,
+      "fim": 78.26666666666667,
+      "animacao_max_s": 1.4000000000000057,
+      "pausa": true
+    },
+    {
+      "indice": 103,
+      "inicio": 78.26666666666667,
+      "fim": 81.66666666666667,
+      "animacao_max_s": 2.799999999999997,
+      "pausa": false
+    },
+    {
+      "indice": 104,
+      "inicio": 81.66666666666667,
+      "fim": 83.66666666666667,
+      "animacao_max_s": 2.5999999999999943,
+      "pausa": true
+    },
+    {
+      "indice": 105,
+      "inicio": 83.66666666666667,
+      "fim": 84.46666666666667,
+      "animacao_max_s": 0.3499999999999943,
+      "pausa": false
+    },
+    {
+      "indice": 106,
+      "inicio": 84.46666666666667,
+      "fim": 86.8,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 107,
+      "inicio": 86.8,
+      "fim": 87.93333333333334,
+      "animacao_max_s": 0.7999999999999972,
+      "pausa": true
+    },
+    {
+      "indice": 108,
+      "inicio": 87.93333333333334,
+      "fim": 90.0,
+      "animacao_max_s": 1.4000000000000057,
+      "pausa": false
+    },
+    {
+      "indice": 109,
+      "inicio": 90.0,
+      "fim": 90.33333333333333,
+      "animacao_max_s": 0.25,
+      "pausa": false
+    },
+    {
+      "indice": 110,
+      "inicio": 90.33333333333333,
+      "fim": 90.66666666666667,
+      "animacao_max_s": 1.2999999999999972,
+      "pausa": true
+    },
+    {
+      "indice": 111,
+      "inicio": 90.66666666666667,
+      "fim": 90.8,
+      "animacao_max_s": 0.6500000000000057,
+      "pausa": false
+    },
+    {
+      "indice": 112,
+      "inicio": 90.8,
+      "fim": 90.93333333333334,
+      "animacao_max_s": 0.5,
+      "pausa": false
+    },
+    {
+      "indice": 113,
+      "inicio": 90.93333333333334,
+      "fim": 91.33333333333333,
+      "animacao_max_s": 1.7000000000000028,
+      "pausa": false
+    },
+    {
+      "indice": 114,
+      "inicio": 91.33333333333333,
+      "fim": 91.66666666666667,
+      "animacao_max_s": 1.2000000000000028,
+      "pausa": true
+    },
+    {
+      "indice": 115,
+      "inicio": 91.66666666666667,
+      "fim": 92.0,
+      "animacao_max_s": 1.2999999999999972,
+      "pausa": false
+    },
+    {
+      "indice": 116,
+      "inicio": 92.0,
+      "fim": 92.26666666666667,
+      "animacao_max_s": 0.9000000000000057,
+      "pausa": false
+    },
+    {
+      "indice": 117,
+      "inicio": 92.26666666666667,
+      "fim": 92.4,
+      "animacao_max_s": 0.5999999999999943,
+      "pausa": false
+    },
+    {
+      "indice": 118,
+      "inicio": 92.4,
+      "fim": 92.73333333333333,
+      "animacao_max_s": 1.2999999999999972,
+      "pausa": false
+    },
+    {
+      "indice": 119,
+      "inicio": 92.73333333333333,
+      "fim": 93.2,
+      "animacao_max_s": 1.7000000000000028,
+      "pausa": false
+    },
+    {
+      "indice": 120,
+      "inicio": 93.2,
+      "fim": 93.66666666666667,
+      "animacao_max_s": 1.7000000000000028,
+      "pausa": false
+    },
+    {
+      "indice": 121,
+      "inicio": 93.66666666666667,
+      "fim": 93.8,
+      "animacao_max_s": 0.6500000000000057,
+      "pausa": false
+    },
+    {
+      "indice": 122,
+      "inicio": 93.8,
+      "fim": 94.0,
+      "animacao_max_s": 0.7000000000000028,
+      "pausa": false
+    },
+    {
+      "indice": 123,
+      "inicio": 94.0,
+      "fim": 94.4,
+      "animacao_max_s": 1.7999999999999972,
+      "pausa": true
+    },
+    {
+      "indice": 124,
+      "inicio": 94.4,
+      "fim": 94.46666666666667,
+      "animacao_max_s": 0.3499999999999943,
+      "pausa": false
+    },
+    {
+      "indice": 125,
+      "inicio": 94.46666666666667,
+      "fim": 94.6,
+      "animacao_max_s": 0.29999999999999716,
+      "pausa": false
+    },
+    {
+      "indice": 126,
+      "inicio": 94.6,
+      "fim": 94.93333333333334,
+      "animacao_max_s": 1.2999999999999972,
+      "pausa": false
+    },
+    {
+      "indice": 127,
+      "inicio": 94.93333333333334,
+      "fim": 95.2,
+      "animacao_max_s": 1.2000000000000028,
+      "pausa": false
+    },
+    {
+      "indice": 128,
+      "inicio": 95.2,
+      "fim": 95.4,
+      "animacao_max_s": 0.7000000000000028,
+      "pausa": false
+    },
+    {
+      "indice": 129,
+      "inicio": 95.4,
+      "fim": 95.6,
+      "animacao_max_s": 0.7999999999999972,
+      "pausa": false
+    },
+    {
+      "indice": 130,
+      "inicio": 95.6,
+      "fim": 95.73333333333333,
+      "animacao_max_s": 1.2999999999999972,
+      "pausa": true
+    },
+    {
+      "indice": 131,
+      "inicio": 95.73333333333333,
+      "fim": 95.86666666666666,
+      "animacao_max_s": 0.3499999999999943,
+      "pausa": false
+    },
+    {
+      "indice": 132,
+      "inicio": 95.86666666666666,
+      "fim": 96.26666666666667,
+      "animacao_max_s": 0.75,
+      "pausa": false
+    },
+    {
+      "indice": 133,
+      "inicio": 96.26666666666667,
+      "fim": 97.0,
+      "animacao_max_s": 1.0,
+      "pausa": true
+    },
+    {
+      "indice": 134,
+      "inicio": 97.0,
+      "fim": 97.46666666666667,
+      "animacao_max_s": 0.75,
+      "pausa": false
+    },
+    {
+      "indice": 135,
+      "inicio": 97.46666666666667,
+      "fim": 99.33333333333333,
+      "animacao_max_s": 1.0,
+      "pausa": true
+    },
+    {
+      "indice": 136,
+      "inicio": 99.33333333333333,
+      "fim": 100.66666666666667,
+      "animacao_max_s": 0.75,
+      "pausa": false
+    },
+    {
+      "indice": 137,
+      "inicio": 100.66666666666667,
+      "fim": 105.26666666666667,
+      "animacao_max_s": 1.0,
+      "pausa": true
+    },
+    {
+      "indice": 138,
+      "inicio": 105.26666666666667,
+      "fim": 108.46666666666667,
+      "animacao_max_s": 0.6999999999999886,
+      "pausa": false
+    },
+    {
+      "indice": 139,
+      "inicio": 108.46666666666667,
+      "fim": 113.73333333333333,
+      "animacao_max_s": 1.0,
+      "pausa": true
+    },
+    {
+      "indice": 140,
+      "inicio": 113.73333333333333,
+      "fim": 115.06666666666666,
+      "animacao_max_s": 0.5999999999999943,
+      "pausa": false
+    },
+    {
+      "indice": 141,
+      "inicio": 115.06666666666666,
+      "fim": 118.33333333333333,
+      "animacao_max_s": 1.5,
+      "pausa": true
+    },
+    {
+      "indice": 142,
+      "inicio": 118.33333333333333,
+      "fim": 119.0,
+      "animacao_max_s": 0.30000000000001137,
+      "pausa": false
+    },
+    {
+      "indice": 143,
+      "inicio": 119.0,
+      "fim": 119.33333333333333,
+      "animacao_max_s": 0.3499999999999943,
+      "pausa": false
+    },
+    {
+      "indice": 144,
+      "inicio": 119.33333333333333,
+      "fim": 121.73333333333333,
+      "animacao_max_s": 2.5,
+      "pausa": false
+    },
+    {
+      "indice": 145,
+      "inicio": 121.73333333333333,
+      "fim": 122.6,
+      "animacao_max_s": 0.9000000000000057,
+      "pausa": false
+    },
+    {
+      "indice": 146,
+      "inicio": 122.6,
+      "fim": 123.6,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 147,
+      "inicio": 123.6,
+      "fim": 124.53333333333333,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 148,
+      "inicio": 124.53333333333333,
+      "fim": 125.33333333333333,
+      "animacao_max_s": 0.8000000000000114,
+      "pausa": false
+    },
+    {
+      "indice": 149,
+      "inicio": 125.33333333333333,
+      "fim": 130.93333333333334,
+      "animacao_max_s": 1.5,
+      "pausa": true
+    },
+    {
+      "indice": 150,
+      "inicio": 130.93333333333334,
+      "fim": 131.86666666666667,
+      "animacao_max_s": 0.25,
+      "pausa": false
+    },
+    {
+      "indice": 151,
+      "inicio": 131.86666666666667,
+      "fim": 134.13333333333333,
+      "animacao_max_s": 0.5999999999999943,
+      "pausa": false
+    },
+    {
+      "indice": 152,
+      "inicio": 134.13333333333333,
+      "fim": 136.53333333333333,
+      "animacao_max_s": 0.6500000000000057,
+      "pausa": false
+    },
+    {
+      "indice": 153,
+      "inicio": 136.53333333333333,
+      "fim": 138.8,
+      "animacao_max_s": 0.5999999999999943,
+      "pausa": false
+    },
+    {
+      "indice": 154,
+      "inicio": 138.8,
+      "fim": 140.46666666666667,
+      "animacao_max_s": 0.8000000000000114,
+      "pausa": false
+    },
+    {
+      "indice": 155,
+      "inicio": 140.46666666666667,
+      "fim": 141.26666666666668,
+      "animacao_max_s": 0.4000000000000057,
+      "pausa": false
+    },
+    {
+      "indice": 156,
+      "inicio": 141.26666666666668,
+      "fim": 146.06666666666666,
+      "animacao_max_s": 2.3000000000000114,
+      "pausa": false
+    },
+    {
+      "indice": 157,
+      "inicio": 146.06666666666666,
+      "fim": 147.53333333333333,
+      "animacao_max_s": 0.6999999999999886,
+      "pausa": false
+    },
+    {
+      "indice": 158,
+      "inicio": 147.53333333333333,
+      "fim": 152.33333333333334,
+      "animacao_max_s": 2.4000000000000057,
+      "pausa": true
+    },
+    {
+      "indice": 159,
+      "inicio": 152.33333333333334,
+      "fim": 152.73333333333332,
+      "animacao_max_s": 0.3499999999999943,
+      "pausa": false
+    },
+    {
+      "indice": 160,
+      "inicio": 152.73333333333332,
+      "fim": 153.2,
+      "animacao_max_s": 0.3499999999999943,
+      "pausa": false
+    },
+    {
+      "indice": 161,
+      "inicio": 153.2,
+      "fim": 154.4,
+      "animacao_max_s": 1.0,
+      "pausa": false
+    },
+    {
+      "indice": 162,
+      "inicio": 154.4,
+      "fim": 155.13333333333333,
+      "animacao_max_s": 0.5999999999999943,
+      "pausa": false
+    },
+    {
+      "indice": 163,
+      "inicio": 155.13333333333333,
+      "fim": 163.93333333333334,
+      "animacao_max_s": 3.0,
+      "pausa": true
+    },
+    {
+      "indice": 164,
+      "inicio": 163.93333333333334,
+      "fim": 167.13333333333333,
+      "animacao_max_s": 1.0999999999999943,
+      "pausa": false
+    },
+    {
+      "indice": 165,
+      "inicio": 167.13333333333333,
+      "fim": 168.8,
+      "animacao_max_s": 3.5,
+      "pausa": true
+    }
+  ],
+  "audio_offset_s": 0.4,
+  "audio_s": 167.52,
+  "video_s": 168.8,
+  "audio_sha256": "ef4e1c54d97f386150557902099e0225da6aa822e7c9169f8789d647ebc90573",
+  "metodo": "pausas do WAV + pesos silabicos; sem ASR",
+  "pontos_visuais": [
+    {
+      "tipo": "fase",
+      "nome": "Um mesmo volume de fluido",
+      "cue": 6,
+      "alvo_s": 8.5
+    },
+    {
+      "tipo": "fase",
+      "nome": "A pressão empurra o fluido",
+      "cue": 16,
+      "alvo_s": 24.599999999999998
+    },
+    {
+      "tipo": "estado",
+      "nome": "forca_entrada",
+      "cue": 22,
+      "alvo_s": 27.92
+    },
+    {
+      "tipo": "estado",
+      "nome": "avanco_entrada",
+      "cue": 28,
+      "alvo_s": 32.03
+    },
+    {
+      "tipo": "estado",
+      "nome": "volume_varrido",
+      "cue": 35,
+      "alvo_s": 37.11
+    },
+    {
+      "tipo": "estado",
+      "nome": "trabalho_entrada",
+      "cue": 37,
+      "alvo_s": 40.01
+    },
+    {
+      "tipo": "fase",
+      "nome": "Da entrada à saída",
+      "cue": 41,
+      "alvo_s": 41.69
+    },
+    {
+      "tipo": "fase",
+      "nome": "Na saída, a pressão resiste",
+      "cue": 45,
+      "alvo_s": 43.69
+    },
+    {
+      "tipo": "estado",
+      "nome": "saida_sinal_negativo",
+      "cue": 49,
+      "alvo_s": 49.60999999999999
+    },
+    {
+      "tipo": "estado",
+      "nome": "trabalho_saida",
+      "cue": 52,
+      "alvo_s": 51.71
+    },
+    {
+      "tipo": "fase",
+      "nome": "As duas pressões fazem trabalho",
+      "cue": 57,
+      "alvo_s": 52.71
+    },
+    {
+      "tipo": "estado",
+      "nome": "trabalho_liquido",
+      "cue": 66,
+      "alvo_s": 57.51
+    },
+    {
+      "tipo": "fase",
+      "nome": "O trabalho muda a energia mecânica",
+      "cue": 69,
+      "alvo_s": 59.309999999999995
+    },
+    {
+      "tipo": "estado",
+      "nome": "massa_volume",
+      "cue": 74,
+      "alvo_s": 64.74
+    },
+    {
+      "tipo": "estado",
+      "nome": "energias_dos_estados",
+      "cue": 80,
+      "alvo_s": 67.31
+    },
+    {
+      "tipo": "estado",
+      "nome": "variacao_cinetica",
+      "cue": 85,
+      "alvo_s": 69.81
+    },
+    {
+      "tipo": "estado",
+      "nome": "variacao_gravitacional",
+      "cue": 93,
+      "alvo_s": 74.12
+    },
+    {
+      "tipo": "fase",
+      "nome": "Um balanço de energia",
+      "cue": 97,
+      "alvo_s": 74.82000000000001
+    },
+    {
+      "tipo": "estado",
+      "nome": "balanco_simbolico",
+      "cue": 102,
+      "alvo_s": 76.62
+    },
+    {
+      "tipo": "estado",
+      "nome": "balanco_completo",
+      "cue": 104,
+      "alvo_s": 81.65
+    },
+    {
+      "tipo": "fase",
+      "nome": "Um balanço por unidade de volume",
+      "cue": 105,
+      "alvo_s": 83.65
+    },
+    {
+      "tipo": "estado",
+      "nome": "cancelamento_volume",
+      "cue": 107,
+      "alvo_s": 86.77000000000001
+    },
+    {
+      "tipo": "estado",
+      "nome": "balanco_por_volume",
+      "cue": 110,
+      "alvo_s": 90.35000000000001
+    },
+    {
+      "tipo": "estado",
+      "nome": "diferencas_abertas",
+      "cue": 114,
+      "alvo_s": 91.35000000000001
+    },
+    {
+      "tipo": "estado",
+      "nome": "agrupamento_por_estado",
+      "cue": 123,
+      "alvo_s": 94.0
+    },
+    {
+      "tipo": "fase",
+      "nome": "A mesma combinação ao longo da linha de corrente",
+      "cue": 124,
+      "alvo_s": 94.4
+    },
+    {
+      "tipo": "estado",
+      "nome": "bernoulli",
+      "cue": 130,
+      "alvo_s": 95.60000000000001
+    },
+    {
+      "tipo": "fase",
+      "nome": "Três termos, uma unidade",
+      "cue": 131,
+      "alvo_s": 95.7
+    },
+    {
+      "tipo": "estado",
+      "nome": "significado_pressao",
+      "cue": 133,
+      "alvo_s": 96.3
+    },
+    {
+      "tipo": "estado",
+      "nome": "significado_cinetica",
+      "cue": 135,
+      "alvo_s": 97.5
+    },
+    {
+      "tipo": "estado",
+      "nome": "significado_gravitacional",
+      "cue": 137,
+      "alvo_s": 100.7
+    },
+    {
+      "tipo": "estado",
+      "nome": "unidades",
+      "cue": 139,
+      "alvo_s": 108.49000000000001
+    },
+    {
+      "tipo": "extra",
+      "nome": "pressao_apos_unidades",
+      "cue": 140,
+      "alvo_s": 113.75
+    },
+    {
+      "tipo": "fase",
+      "nome": "Duas leis no estreitamento",
+      "cue": 143,
+      "alvo_s": 118.99000000000001
+    },
+    {
+      "tipo": "estado",
+      "nome": "continuidade_2d",
+      "cue": 149,
+      "alvo_s": 125.31
+    },
+    {
+      "tipo": "morf",
+      "nome": "alturas_iguais",
+      "cue": 154,
+      "alvo_s": 138.78000000000003
+    },
+    {
+      "tipo": "estado",
+      "nome": "bernoulli_estreitamento",
+      "cue": 158,
+      "alvo_s": 147.54999999999998
+    },
+    {
+      "tipo": "fase",
+      "nome": "Quando Bernoulli vale?",
+      "cue": 159,
+      "alvo_s": 152.34
+    },
+    {
+      "tipo": "estado",
+      "nome": "hipoteses_finais",
+      "cue": 163,
+      "alvo_s": 155.12
+    },
+    {
+      "tipo": "estado",
+      "nome": "cta_final",
+      "cue": 165,
+      "alvo_s": 167.12
+    }
+  ],
+  "voz_preservada": true,
+  "variacao_velocidade_voz": 1.0
+}

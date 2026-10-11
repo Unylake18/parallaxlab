@@ -1,0 +1,703 @@
+{
+  "video": "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0018_bernoulli\\media_v5\\videos\\cena\\960p15\\preview_silencioso_v5.mp4",
+  "largura": 540,
+  "altura": 960,
+  "fps_nominal": "15",
+  "fps_medio_mp4": 15.000539446312304,
+  "audio_streams": 0,
+  "duracao_s": 162.92747395833334,
+  "estados_extraidos": {
+    "hook_2d": {
+      "pedido_s": 4.2,
+      "quadro_s": 4.2
+    },
+    "mesmo_volume": {
+      "pedido_s": 13.667,
+      "quadro_s": 13.733
+    },
+    "forca_entrada": {
+      "pedido_s": 19.467,
+      "quadro_s": 19.533
+    },
+    "face_varrendo_entrada": {
+      "pedido_s": 21.267,
+      "quadro_s": 21.333
+    },
+    "avanco_entrada": {
+      "pedido_s": 26.933,
+      "quadro_s": 26.999
+    },
+    "morph_01_25": {
+      "pedido_s": 27.787000000000003,
+      "quadro_s": 27.799
+    },
+    "morph_01_meio": {
+      "pedido_s": 28.158,
+      "quadro_s": 28.199
+    },
+    "morph_01_75": {
+      "pedido_s": 28.529,
+      "quadro_s": 28.533
+    },
+    "volume_varrido": {
+      "pedido_s": 32.733,
+      "quadro_s": 32.799
+    },
+    "morph_02_25": {
+      "pedido_s": 33.075500000000005,
+      "quadro_s": 33.132
+    },
+    "morph_02_meio": {
+      "pedido_s": 33.417,
+      "quadro_s": 33.466
+    },
+    "morph_02_75": {
+      "pedido_s": 33.7585,
+      "quadro_s": 33.799
+    },
+    "trabalho_entrada": {
+      "pedido_s": 34.6,
+      "quadro_s": 34.666
+    },
+    "trabalho_entrada_guardado": {
+      "pedido_s": 37.733,
+      "quadro_s": 37.799
+    },
+    "pacote_em_transito": {
+      "pedido_s": 40.7,
+      "quadro_s": 40.732
+    },
+    "pacote_mudou_velocidade_altura": {
+      "pedido_s": 43.199999999999996,
+      "quadro_s": 43.266
+    },
+    "saida_sinal_negativo": {
+      "pedido_s": 47.067,
+      "quadro_s": 47.132
+    },
+    "morph_03_25": {
+      "pedido_s": 47.8,
+      "quadro_s": 47.865
+    },
+    "morph_03_meio": {
+      "pedido_s": 48.1,
+      "quadro_s": 48.132
+    },
+    "morph_03_75": {
+      "pedido_s": 48.400000000000006,
+      "quadro_s": 48.465
+    },
+    "morph_04_25": {
+      "pedido_s": 48.9585,
+      "quadro_s": 48.998
+    },
+    "morph_04_meio": {
+      "pedido_s": 49.25,
+      "quadro_s": 49.265
+    },
+    "morph_04_75": {
+      "pedido_s": 49.5415,
+      "quadro_s": 49.598
+    },
+    "trabalho_saida": {
+      "pedido_s": 50.333,
+      "quadro_s": 50.398
+    },
+    "dois_trabalhos_guardados": {
+      "pedido_s": 53.333,
+      "quadro_s": 53.398
+    },
+    "morph_05_25": {
+      "pedido_s": 60.2085,
+      "quadro_s": 60.265
+    },
+    "morph_05_meio": {
+      "pedido_s": 60.55,
+      "quadro_s": 60.598
+    },
+    "morph_05_75": {
+      "pedido_s": 60.89149999999999,
+      "quadro_s": 60.931
+    },
+    "trabalho_liquido": {
+      "pedido_s": 62.132999999999996,
+      "quadro_s": 62.198
+    },
+    "massa_volume": {
+      "pedido_s": 67.80000000000001,
+      "quadro_s": 67.864
+    },
+    "energias_dos_estados": {
+      "pedido_s": 72.2,
+      "quadro_s": 72.264
+    },
+    "morph_06_25": {
+      "pedido_s": 76.57549999999999,
+      "quadro_s": 76.597
+    },
+    "morph_06_meio": {
+      "pedido_s": 77.017,
+      "quadro_s": 77.064
+    },
+    "morph_06_75": {
+      "pedido_s": 77.4585,
+      "quadro_s": 77.464
+    },
+    "variacao_cinetica": {
+      "pedido_s": 78.4,
+      "quadro_s": 78.464
+    },
+    "morph_07_25": {
+      "pedido_s": 84.1755,
+      "quadro_s": 84.197
+    },
+    "morph_07_meio": {
+      "pedido_s": 84.617,
+      "quadro_s": 84.664
+    },
+    "morph_07_75": {
+      "pedido_s": 85.05850000000001,
+      "quadro_s": 85.064
+    },
+    "variacao_gravitacional": {
+      "pedido_s": 86.4,
+      "quadro_s": 86.464
+    },
+    "tres_resultados_guardados": {
+      "pedido_s": 89.733,
+      "quadro_s": 89.797
+    },
+    "balanco_simbolico": {
+      "pedido_s": 95.60000000000001,
+      "quadro_s": 95.664
+    },
+    "balanco_em_montagem": {
+      "pedido_s": 98.05000000000001,
+      "quadro_s": 98.064
+    },
+    "balanco_completo": {
+      "pedido_s": 99.80000000000001,
+      "quadro_s": 99.864
+    },
+    "cancelamento_volume": {
+      "pedido_s": 103.80000000000001,
+      "quadro_s": 103.864
+    },
+    "morph_08_25": {
+      "pedido_s": 104.44999999999999,
+      "quadro_s": 104.464
+    },
+    "volumes_encolhendo": {
+      "pedido_s": 104.75,
+      "quadro_s": 104.797
+    },
+    "morph_08_meio": {
+      "pedido_s": 104.8,
+      "quadro_s": 104.864
+    },
+    "morph_08_75": {
+      "pedido_s": 105.15,
+      "quadro_s": 105.197
+    },
+    "balanco_por_volume": {
+      "pedido_s": 106.26700000000001,
+      "quadro_s": 106.33
+    },
+    "morph_09_25": {
+      "pedido_s": 107.25399999999999,
+      "quadro_s": 107.264
+    },
+    "morph_09_meio": {
+      "pedido_s": 107.425,
+      "quadro_s": 107.464
+    },
+    "morph_09_75": {
+      "pedido_s": 107.596,
+      "quadro_s": 107.597
+    },
+    "morph_10_25": {
+      "pedido_s": 107.87549999999999,
+      "quadro_s": 107.93
+    },
+    "morph_10_meio": {
+      "pedido_s": 108.017,
+      "quadro_s": 108.064
+    },
+    "morph_10_75": {
+      "pedido_s": 108.1585,
+      "quadro_s": 108.197
+    },
+    "morph_11_25": {
+      "pedido_s": 108.70850000000002,
+      "quadro_s": 108.73
+    },
+    "morph_11_meio": {
+      "pedido_s": 109.15,
+      "quadro_s": 109.197
+    },
+    "morph_11_75": {
+      "pedido_s": 109.5915,
+      "quadro_s": 109.597
+    },
+    "diferencas_abertas": {
+      "pedido_s": 110.533,
+      "quadro_s": 110.597
+    },
+    "morph_12_25": {
+      "pedido_s": 111.541,
+      "quadro_s": 111.597
+    },
+    "morph_12_meio": {
+      "pedido_s": 111.883,
+      "quadro_s": 111.93
+    },
+    "morph_12_75": {
+      "pedido_s": 112.225,
+      "quadro_s": 112.263
+    },
+    "morph_13_25": {
+      "pedido_s": 112.7755,
+      "quadro_s": 112.796
+    },
+    "morph_13_meio": {
+      "pedido_s": 113.017,
+      "quadro_s": 113.063
+    },
+    "morph_13_75": {
+      "pedido_s": 113.2585,
+      "quadro_s": 113.263
+    },
+    "morph_14_25": {
+      "pedido_s": 114.4085,
+      "quadro_s": 114.463
+    },
+    "morph_14_meio": {
+      "pedido_s": 114.75,
+      "quadro_s": 114.796
+    },
+    "P2_atravessando": {
+      "pedido_s": 114.9,
+      "quadro_s": 114.929
+    },
+    "morph_14_75": {
+      "pedido_s": 115.0915,
+      "quadro_s": 115.129
+    },
+    "morph_15_25": {
+      "pedido_s": 115.84100000000001,
+      "quadro_s": 115.862
+    },
+    "morph_15_meio": {
+      "pedido_s": 116.283,
+      "quadro_s": 116.329
+    },
+    "agrupamento_em_movimento": {
+      "pedido_s": 116.333,
+      "quadro_s": 116.396
+    },
+    "morph_15_75": {
+      "pedido_s": 116.725,
+      "quadro_s": 116.729
+    },
+    "morph_16_25": {
+      "pedido_s": 117.57549999999999,
+      "quadro_s": 117.595
+    },
+    "morph_16_meio": {
+      "pedido_s": 118.017,
+      "quadro_s": 118.062
+    },
+    "altura_atravessando": {
+      "pedido_s": 118.217,
+      "quadro_s": 118.262
+    },
+    "morph_16_75": {
+      "pedido_s": 118.4585,
+      "quadro_s": 118.462
+    },
+    "morph_17_25": {
+      "pedido_s": 119.054,
+      "quadro_s": 119.062
+    },
+    "morph_17_meio": {
+      "pedido_s": 119.225,
+      "quadro_s": 119.262
+    },
+    "morph_17_75": {
+      "pedido_s": 119.39599999999999,
+      "quadro_s": 119.462
+    },
+    "agrupamento_por_estado": {
+      "pedido_s": 120.80000000000001,
+      "quadro_s": 120.862
+    },
+    "morph_18_25": {
+      "pedido_s": 123.141,
+      "quadro_s": 123.195
+    },
+    "morph_18_meio": {
+      "pedido_s": 123.483,
+      "quadro_s": 123.529
+    },
+    "morph_18_75": {
+      "pedido_s": 123.825,
+      "quadro_s": 123.862
+    },
+    "morph_19_25": {
+      "pedido_s": 124.46699999999998,
+      "quadro_s": 124.529
+    },
+    "morph_19_meio": {
+      "pedido_s": 124.767,
+      "quadro_s": 124.795
+    },
+    "morph_19_75": {
+      "pedido_s": 125.06700000000001,
+      "quadro_s": 125.129
+    },
+    "morph_20_25": {
+      "pedido_s": 125.5255,
+      "quadro_s": 125.529
+    },
+    "morph_20_meio": {
+      "pedido_s": 125.717,
+      "quadro_s": 125.729
+    },
+    "morph_20_75": {
+      "pedido_s": 125.9085,
+      "quadro_s": 125.929
+    },
+    "bernoulli": {
+      "pedido_s": 127.4,
+      "quadro_s": 127.462
+    },
+    "significado_pressao": {
+      "pedido_s": 129.933,
+      "quadro_s": 129.995
+    },
+    "significado_cinetica": {
+      "pedido_s": 131.733,
+      "quadro_s": 131.795
+    },
+    "significado_gravitacional": {
+      "pedido_s": 133.53300000000002,
+      "quadro_s": 133.595
+    },
+    "unidades": {
+      "pedido_s": 135.267,
+      "quadro_s": 135.329
+    },
+    "tubo_em_estreitamento": {
+      "pedido_s": 137.517,
+      "quadro_s": 137.529
+    },
+    "continuidade_2d": {
+      "pedido_s": 142.933,
+      "quadro_s": 142.995
+    },
+    "morph_21_25": {
+      "pedido_s": 146.3,
+      "quadro_s": 146.328
+    },
+    "morph_21_meio": {
+      "pedido_s": 146.5,
+      "quadro_s": 146.528
+    },
+    "morph_21_75": {
+      "pedido_s": 146.7,
+      "quadro_s": 146.728
+    },
+    "compensacao_pressao_cinetica": {
+      "pedido_s": 148.6,
+      "quadro_s": 148.662
+    },
+    "barras_compensadas": {
+      "pedido_s": 150.133,
+      "quadro_s": 150.195
+    },
+    "bernoulli_estreitamento": {
+      "pedido_s": 150.86700000000002,
+      "quadro_s": 150.928
+    },
+    "hipoteses_finais": {
+      "pedido_s": 155.667,
+      "quadro_s": 155.728
+    },
+    "cta_final": {
+      "pedido_s": 159.8,
+      "quadro_s": 159.861
+    }
+  },
+  "quadros_decodificados": 2444,
+  "faixa_legenda": {
+    "y_px": [
+      735,
+      855
+    ],
+    "ocupacao_por_estado": {
+      "hook_2d": 0.0,
+      "mesmo_volume": 0.0,
+      "forca_entrada": 0.0,
+      "face_varrendo_entrada": 0.0,
+      "avanco_entrada": 0.0,
+      "morph_01_25": 0.0,
+      "morph_01_meio": 0.0,
+      "morph_01_75": 0.0,
+      "volume_varrido": 0.0,
+      "morph_02_25": 0.0,
+      "morph_02_meio": 0.0,
+      "morph_02_75": 0.0,
+      "trabalho_entrada": 0.0,
+      "trabalho_entrada_guardado": 0.0,
+      "pacote_em_transito": 0.0,
+      "pacote_mudou_velocidade_altura": 0.0,
+      "saida_sinal_negativo": 0.0,
+      "morph_03_25": 0.0,
+      "morph_03_meio": 0.0,
+      "morph_03_75": 0.0,
+      "morph_04_25": 0.0,
+      "morph_04_meio": 0.0,
+      "morph_04_75": 0.0,
+      "trabalho_saida": 0.0,
+      "dois_trabalhos_guardados": 0.0,
+      "morph_05_25": 0.0,
+      "morph_05_meio": 0.0,
+      "morph_05_75": 0.0,
+      "trabalho_liquido": 0.0,
+      "massa_volume": 0.0,
+      "energias_dos_estados": 0.0,
+      "morph_06_25": 0.0,
+      "morph_06_meio": 0.0,
+      "morph_06_75": 0.0,
+      "variacao_cinetica": 0.0,
+      "morph_07_25": 0.0,
+      "morph_07_meio": 0.0,
+      "morph_07_75": 0.0,
+      "variacao_gravitacional": 0.0,
+      "tres_resultados_guardados": 0.0,
+      "balanco_simbolico": 0.0,
+      "balanco_em_montagem": 0.0,
+      "balanco_completo": 0.0,
+      "cancelamento_volume": 0.0,
+      "morph_08_25": 0.0,
+      "volumes_encolhendo": 0.0,
+      "morph_08_meio": 0.0,
+      "morph_08_75": 0.0,
+      "balanco_por_volume": 0.0,
+      "morph_09_25": 0.0,
+      "morph_09_meio": 0.0,
+      "morph_09_75": 0.0,
+      "morph_10_25": 0.0,
+      "morph_10_meio": 0.0,
+      "morph_10_75": 0.0,
+      "morph_11_25": 0.0,
+      "morph_11_meio": 0.0,
+      "morph_11_75": 0.0,
+      "diferencas_abertas": 0.0,
+      "morph_12_25": 0.0,
+      "morph_12_meio": 0.0,
+      "morph_12_75": 0.0,
+      "morph_13_25": 0.0,
+      "morph_13_meio": 0.0,
+      "morph_13_75": 0.0,
+      "morph_14_25": 0.0,
+      "morph_14_meio": 0.0,
+      "P2_atravessando": 0.0,
+      "morph_14_75": 0.0,
+      "morph_15_25": 0.0,
+      "morph_15_meio": 0.0,
+      "agrupamento_em_movimento": 0.0,
+      "morph_15_75": 0.0,
+      "morph_16_25": 0.0,
+      "morph_16_meio": 0.0,
+      "altura_atravessando": 0.0,
+      "morph_16_75": 0.0,
+      "morph_17_25": 0.0,
+      "morph_17_meio": 0.0,
+      "morph_17_75": 0.0,
+      "agrupamento_por_estado": 0.0,
+      "morph_18_25": 0.0,
+      "morph_18_meio": 0.0,
+      "morph_18_75": 0.0,
+      "morph_19_25": 0.0,
+      "morph_19_meio": 0.0,
+      "morph_19_75": 0.0,
+      "morph_20_25": 0.0,
+      "morph_20_meio": 0.0,
+      "morph_20_75": 0.0,
+      "bernoulli": 0.0,
+      "significado_pressao": 0.0,
+      "significado_cinetica": 0.0,
+      "significado_gravitacional": 0.0,
+      "unidades": 0.0,
+      "tubo_em_estreitamento": 0.0,
+      "continuidade_2d": 0.0,
+      "morph_21_25": 0.0,
+      "morph_21_meio": 0.0,
+      "morph_21_75": 0.0,
+      "compensacao_pressao_cinetica": 0.0,
+      "barras_compensadas": 0.0,
+      "bernoulli_estreitamento": 0.0,
+      "hipoteses_finais": 0.0,
+      "cta_final": 0.0
+    }
+  },
+  "tipo": "verificação de preview; sem QA final de master",
+  "glyph_maps": [
+    {
+      "transformacao": "F1 recebe P1 A1 da face de entrada",
+      "tempo": 28.9
+    },
+    {
+      "transformacao": "O fragmento A1 dx1 fecha em Delta V preservando Delta sem deformar A em V",
+      "tempo": 34.1
+    },
+    {
+      "transformacao": "F2 recebe P2 A2 da face de saida",
+      "tempo": 48.7
+    },
+    {
+      "transformacao": "A2 dx2 recebe o mesmo volume",
+      "tempo": 49.833
+    },
+    {
+      "transformacao": "Fatorar volume por uma rota abaixo da expressao",
+      "tempo": 61.233
+    },
+    {
+      "transformacao": "Massa guardada substitui m em Delta K",
+      "tempo": 77.9
+    },
+    {
+      "transformacao": "Massa guardada substitui m em Delta Ug",
+      "tempo": 85.5
+    },
+    {
+      "transformacao": "Tres volumes saem juntos; a igualdade fecha em uma linha",
+      "tempo": 105.5
+    },
+    {
+      "transformacao": "Abrir a segunda linha gravitacional antes de distribuir",
+      "tempo": 107.767
+    },
+    {
+      "transformacao": "Alinhar a origem gravitacional para distribuir sem cruzamentos",
+      "tempo": 108.3
+    },
+    {
+      "transformacao": "Distribuir coeficientes por rotas separadas das velocidades e alturas",
+      "tempo": 110.033
+    },
+    {
+      "transformacao": "Abrir as filas de espera sem cruzar cinetica e gravidade",
+      "tempo": 112.567
+    },
+    {
+      "transformacao": "Preparar destinos livres por estado; igualdade fixa daqui em diante",
+      "tempo": 113.5
+    },
+    {
+      "transformacao": "P2 atravessa: menos P2 vira mais P2 no estado 2",
+      "tempo": 115.433
+    },
+    {
+      "transformacao": "Cinetica 1 atravessa sozinha e muda de sinal",
+      "tempo": 117.167
+    },
+    {
+      "transformacao": "Gravitacional 1 atravessa sozinha e muda de sinal",
+      "tempo": 118.9
+    },
+    {
+      "transformacao": "Encaixar termos nos slots definitivos",
+      "tempo": 119.567
+    },
+    {
+      "transformacao": "Indices desaparecem; a outra soma representa C",
+      "tempo": 124.167
+    },
+    {
+      "transformacao": "A quantidade conservada ocupa uma unica linha sem cruzar parcelas",
+      "tempo": 125.367
+    },
+    {
+      "transformacao": "C recebe o nome constante",
+      "tempo": 126.1
+    },
+    {
+      "transformacao": "Alturas iguais: parcelas gravitacionais iguais se retiram",
+      "tempo": 146.9
+    }
+  ],
+  "reutilizacoes": [
+    {
+      "resultado": "W1",
+      "destino": "equacao_atual",
+      "tempo": 55.967
+    },
+    {
+      "resultado": "W2",
+      "destino": "equacao_atual",
+      "tempo": 56.967
+    },
+    {
+      "resultado": "W1",
+      "destino": "equacao_atual",
+      "tempo": 58.9
+    },
+    {
+      "resultado": "W2",
+      "destino": "equacao_atual",
+      "tempo": 59.9
+    },
+    {
+      "resultado": "m",
+      "destino": "substituicao_simultanea",
+      "tempo": 77.9
+    },
+    {
+      "resultado": "m",
+      "destino": "substituicao_simultanea",
+      "tempo": 85.5
+    },
+    {
+      "resultado": "WP",
+      "destino": "equacao_atual",
+      "tempo": 93.1
+    },
+    {
+      "resultado": "K",
+      "destino": "equacao_atual",
+      "tempo": 94.1
+    },
+    {
+      "resultado": "U",
+      "destino": "equacao_atual",
+      "tempo": 95.1
+    },
+    {
+      "resultado": "WP",
+      "destino": "balanco_expandido",
+      "tempo": 99.3
+    },
+    {
+      "resultado": "K",
+      "destino": "balanco_expandido",
+      "tempo": 99.3
+    },
+    {
+      "resultado": "U",
+      "destino": "balanco_expandido",
+      "tempo": 99.3
+    }
+  ],
+  "solido_3d": "nenhum",
+  "paleta": [
+    "#050816",
+    "#F5F7FF",
+    "#35D9FF",
+    "#267BFF",
+    "#745CFF",
+    "#EA63FF"
+  ]
+}

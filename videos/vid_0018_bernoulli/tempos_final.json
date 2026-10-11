@@ -1,0 +1,665 @@
+{
+  "duracao_cena_s": 168.8,
+  "estados": {
+    "hook_2d": 6.149999999999989,
+    "mesmo_volume": 22.01666666666691,
+    "forca_entrada": 28.08333333333388,
+    "face_varrendo_entrada": 29.166851851852112,
+    "avanco_entrada": 32.150000000000745,
+    "morph_01_meio": 33.56666666666736,
+    "volume_varrido": 37.283333333333786,
+    "morph_02_meio": 38.58333333333374,
+    "trabalho_entrada": 40.15000000000029,
+    "trabalho_entrada_guardado": 41.48333333333355,
+    "pacote_em_transito": 42.66654444444456,
+    "pacote_mudou_velocidade_altura": 43.533333333333424,
+    "saida_sinal_negativo": 49.749999999999744,
+    "morph_03_meio": 50.59999999999971,
+    "morph_04_meio": 51.36666666666633,
+    "trabalho_saida": 51.83333333333295,
+    "dois_trabalhos_guardados": 52.599999999999575,
+    "morph_05_meio": 56.86666666666602,
+    "trabalho_liquido": 57.68333333333263,
+    "massa_volume": 64.88333333333223,
+    "energias_dos_estados": 67.48333333333208,
+    "morph_06_meio": 69.4666666666653,
+    "variacao_cinetica": 69.94999999999861,
+    "morph_07_meio": 73.46666666666509,
+    "variacao_gravitacional": 74.23333333333169,
+    "tres_resultados_guardados": 74.69999999999833,
+    "balanco_simbolico": 76.74999999999822,
+    "balanco_em_montagem": 79.667,
+    "balanco_completo": 81.8166666666646,
+    "cancelamento_volume": 86.94999999999764,
+    "volumes_encolhendo": 88.433,
+    "morph_08_meio": 88.63333333333091,
+    "balanco_por_volume": 90.48333333333078,
+    "morph_09_meio": 90.73333333333075,
+    "morph_10_meio": 90.86666666666407,
+    "morph_11_meio": 91.13333333333074,
+    "diferencas_abertas": 91.48333333333072,
+    "morph_12_meio": 91.8333333333307,
+    "morph_13_meio": 92.13333333333068,
+    "P2_atravessando": 92.56666666666467,
+    "morph_14_meio": 92.56666666666399,
+    "agrupamento_em_movimento": 92.9803006535928,
+    "morph_15_meio": 92.96666666666397,
+    "altura_atravessando": 93.44705882352743,
+    "morph_16_meio": 93.43333333333061,
+    "morph_17_meio": 93.73333333333058,
+    "agrupamento_por_estado": 94.14999999999723,
+    "morph_18_meio": 94.76666666666387,
+    "morph_19_meio": 95.06666666666385,
+    "morph_20_meio": 95.29999999999715,
+    "bernoulli": 95.6666666666638,
+    "significado_pressao": 96.41666666666377,
+    "significado_cinetica": 97.6166666666637,
+    "significado_gravitacional": 100.81666666666352,
+    "unidades": 108.61666666666308,
+    "tubo_em_estreitamento": 120.48501333333317,
+    "continuidade_2d": 125.48333333332879,
+    "morph_21_meio": 139.1999999999947,
+    "compensacao_pressao_cinetica": 142.417,
+    "barras_compensadas": 146.417,
+    "bernoulli_estreitamento": 147.68333333332754,
+    "hipoteses_finais": 155.2833333333271,
+    "cta_final": 167.28333333332642
+  },
+  "layout": [
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ],
+    [
+      -2.77,
+      2.77,
+      -1.384,
+      -0.916
+    ],
+    [
+      -2.77,
+      2.77,
+      -1.384,
+      -0.916
+    ],
+    [
+      -1.467,
+      1.467,
+      -1.429,
+      -0.871
+    ],
+    [
+      -1.467,
+      1.467,
+      -1.429,
+      -0.871
+    ],
+    [
+      -1.683,
+      1.683,
+      -1.415,
+      -0.885
+    ],
+    [
+      -1.683,
+      1.683,
+      -1.415,
+      -0.885
+    ],
+    [
+      -1.981,
+      1.981,
+      -1.406,
+      -0.894
+    ],
+    [
+      -1.981,
+      1.981,
+      -1.406,
+      -0.894
+    ],
+    [
+      -1.754,
+      1.754,
+      -1.433,
+      -0.867
+    ],
+    [
+      -1.754,
+      1.754,
+      -1.433,
+      -0.867
+    ],
+    [
+      -3.32,
+      -1.04,
+      0.896,
+      1.264
+    ],
+    [
+      -1.896,
+      1.896,
+      -1.411,
+      -0.889
+    ],
+    [
+      -1.896,
+      1.896,
+      -1.411,
+      -0.889
+    ],
+    [
+      -2.139,
+      2.139,
+      -1.397,
+      -0.903
+    ],
+    [
+      -1.944,
+      1.944,
+      -1.424,
+      -0.876
+    ],
+    [
+      -1.944,
+      1.944,
+      -1.424,
+      -0.876
+    ],
+    [
+      0.916,
+      3.444,
+      0.902,
+      1.258
+    ],
+    [
+      -2.047,
+      2.047,
+      -1.401,
+      -0.899
+    ],
+    [
+      -2.721,
+      2.721,
+      -1.397,
+      -0.903
+    ],
+    [
+      -2.565,
+      2.565,
+      -1.446,
+      -0.854
+    ],
+    [
+      -2.565,
+      2.565,
+      -1.446,
+      -0.854
+    ],
+    [
+      -1.667,
+      1.667,
+      0.828,
+      1.212
+    ],
+    [
+      -1.339,
+      1.339,
+      -1.44,
+      -0.86
+    ],
+    [
+      -1.339,
+      1.339,
+      -1.44,
+      -0.86
+    ],
+    [
+      1.379,
+      3.121,
+      0.831,
+      1.209
+    ],
+    [
+      -3.317,
+      3.317,
+      -1.705,
+      -0.695
+    ],
+    [
+      -3.317,
+      3.317,
+      -1.705,
+      -0.695
+    ],
+    [
+      -2.029,
+      2.029,
+      -1.411,
+      -0.889
+    ],
+    [
+      -2.425,
+      2.425,
+      -1.729,
+      -0.571
+    ],
+    [
+      -2.739,
+      2.739,
+      -2.168,
+      -1.032
+    ],
+    [
+      -2.739,
+      2.739,
+      -2.168,
+      -1.032
+    ],
+    [
+      -1.862,
+      1.862,
+      -0.246,
+      0.526
+    ],
+    [
+      -2.546,
+      2.546,
+      -1.908,
+      -1.292
+    ],
+    [
+      -2.821,
+      2.821,
+      -1.898,
+      -1.302
+    ],
+    [
+      -2.821,
+      2.821,
+      -1.898,
+      -1.302
+    ],
+    [
+      -1.919,
+      1.919,
+      -0.942,
+      -0.538
+    ],
+    [
+      -2.214,
+      2.214,
+      -2.488,
+      -1.912
+    ],
+    [
+      -2.214,
+      2.214,
+      -2.488,
+      -1.912
+    ],
+    [
+      -4.0,
+      4.0,
+      -2.21,
+      -0.007
+    ],
+    [
+      -4.0,
+      4.0,
+      -2.21,
+      -0.007
+    ],
+    [
+      -3.925,
+      3.925,
+      -1.295,
+      -0.305
+    ],
+    [
+      -3.925,
+      3.925,
+      -1.295,
+      -0.305
+    ],
+    [
+      -3.925,
+      3.925,
+      -2.394,
+      -0.305
+    ],
+    [
+      -3.925,
+      2.709,
+      -2.394,
+      -0.305
+    ],
+    [
+      -2.879,
+      3.271,
+      -2.405,
+      0.018
+    ],
+    [
+      -2.879,
+      3.271,
+      -2.405,
+      0.018
+    ],
+    [
+      -2.879,
+      2.974,
+      -3.805,
+      0.018
+    ],
+    [
+      -3.002,
+      2.942,
+      -3.796,
+      0.975
+    ],
+    [
+      -2.372,
+      3.25,
+      -3.796,
+      0.975
+    ],
+    [
+      -2.95,
+      3.25,
+      -3.796,
+      0.975
+    ],
+    [
+      -2.95,
+      3.25,
+      -2.846,
+      0.975
+    ],
+    [
+      -3.014,
+      3.014,
+      -2.114,
+      0.992
+    ],
+    [
+      -3.014,
+      3.014,
+      -2.114,
+      0.992
+    ],
+    [
+      -3.077,
+      2.341,
+      -2.133,
+      0.963
+    ],
+    [
+      -2.837,
+      2.837,
+      -1.432,
+      -0.168
+    ],
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ],
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ],
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ],
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ],
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ],
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ],
+    [
+      -1.645,
+      1.645,
+      -1.411,
+      -0.889
+    ],
+    [
+      -1.645,
+      1.645,
+      -1.411,
+      -0.889
+    ],
+    [
+      -3.014,
+      3.014,
+      -2.114,
+      0.992
+    ],
+    [
+      -3.014,
+      3.014,
+      -1.139,
+      0.992
+    ],
+    [
+      -3.014,
+      3.014,
+      -1.139,
+      0.992
+    ],
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ],
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ],
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ]
+  ],
+  "glyph_maps": [
+    {
+      "transformacao": "F1 recebe P1 A1 da face de entrada",
+      "tempo": 34.2
+    },
+    {
+      "transformacao": "O fragmento A1 dx1 fecha em Delta V preservando Delta sem deformar A em V",
+      "tempo": 40.0
+    },
+    {
+      "transformacao": "F2 recebe P2 A2 da face de saida",
+      "tempo": 51.0
+    },
+    {
+      "transformacao": "A2 dx2 recebe o mesmo volume",
+      "tempo": 51.733
+    },
+    {
+      "transformacao": "Fatorar volume por uma rota abaixo da expressao",
+      "tempo": 57.267
+    },
+    {
+      "transformacao": "Massa guardada substitui m em Delta K",
+      "tempo": 69.8
+    },
+    {
+      "transformacao": "Massa guardada substitui m em Delta Ug",
+      "tempo": 73.933
+    },
+    {
+      "transformacao": "Tres volumes saem juntos; a igualdade fecha em uma linha",
+      "tempo": 90.0
+    },
+    {
+      "transformacao": "Abrir a segunda linha gravitacional antes de distribuir",
+      "tempo": 90.8
+    },
+    {
+      "transformacao": "Alinhar a origem gravitacional para distribuir sem cruzamentos",
+      "tempo": 90.933
+    },
+    {
+      "transformacao": "Distribuir coeficientes por rotas separadas das velocidades e alturas",
+      "tempo": 91.333
+    },
+    {
+      "transformacao": "Abrir as filas de espera sem cruzar cinetica e gravidade",
+      "tempo": 92.0
+    },
+    {
+      "transformacao": "Preparar destinos livres por estado; igualdade fixa daqui em diante",
+      "tempo": 92.267
+    },
+    {
+      "transformacao": "P2 atravessa: menos P2 vira mais P2 no estado 2",
+      "tempo": 92.733
+    },
+    {
+      "transformacao": "Cinetica 1 atravessa sozinha e muda de sinal",
+      "tempo": 93.2
+    },
+    {
+      "transformacao": "Gravitacional 1 atravessa sozinha e muda de sinal",
+      "tempo": 93.667
+    },
+    {
+      "transformacao": "Encaixar termos nos slots definitivos",
+      "tempo": 93.8
+    },
+    {
+      "transformacao": "Indices desaparecem; a outra soma representa C",
+      "tempo": 94.933
+    },
+    {
+      "transformacao": "A quantidade conservada ocupa uma unica linha sem cruzar parcelas",
+      "tempo": 95.2
+    },
+    {
+      "transformacao": "C recebe o nome constante",
+      "tempo": 95.4
+    },
+    {
+      "transformacao": "Alturas iguais: parcelas gravitacionais iguais se retiram",
+      "tempo": 140.467
+    }
+  ],
+  "reutilizacoes": [
+    {
+      "resultado": "W1",
+      "destino": "equacao_atual",
+      "tempo": 54.067
+    },
+    {
+      "resultado": "W2",
+      "destino": "equacao_atual",
+      "tempo": 54.733
+    },
+    {
+      "resultado": "W1",
+      "destino": "equacao_atual",
+      "tempo": 55.867
+    },
+    {
+      "resultado": "W2",
+      "destino": "equacao_atual",
+      "tempo": 56.467
+    },
+    {
+      "resultado": "m",
+      "destino": "substituicao_simultanea",
+      "tempo": 69.8
+    },
+    {
+      "resultado": "m",
+      "destino": "substituicao_simultanea",
+      "tempo": 73.933
+    },
+    {
+      "resultado": "WP",
+      "destino": "equacao_atual",
+      "tempo": 75.8
+    },
+    {
+      "resultado": "K",
+      "destino": "equacao_atual",
+      "tempo": 76.2
+    },
+    {
+      "resultado": "U",
+      "destino": "equacao_atual",
+      "tempo": 76.6
+    },
+    {
+      "resultado": "WP",
+      "destino": "balanco_expandido",
+      "tempo": 81.667
+    },
+    {
+      "resultado": "K",
+      "destino": "balanco_expandido",
+      "tempo": 81.667
+    },
+    {
+      "resultado": "U",
+      "destino": "balanco_expandido",
+      "tempo": 81.667
+    }
+  ],
+  "paleta": [
+    "#050816",
+    "#F5F7FF",
+    "#35D9FF",
+    "#267BFF",
+    "#745CFF",
+    "#EA63FF"
+  ],
+  "solido_3d": "nenhum",
+  "faixa_inferior_livre_ate_y": -4.25,
+  "cabecalho": "vid_0014.build_stage; somente EP alterado",
+  "composicao": {
+    "balanco_completo_linhas": 2,
+    "apos_cancelamento_linhas": 1,
+    "diferencas_abertas_linhas": 2,
+    "estados": "colunas com significado fisico",
+    "fonte_estados": 56,
+    "fonte_bernoulli": 60
+  },
+  "barras": {
+    "comprimento_total": 3.5,
+    "P1": 2.2,
+    "K1_por_V": 1.3,
+    "P2": 1.05,
+    "K2_por_V": 2.45,
+    "escala": "qualitativa; sem valores fisicos numericos"
+  }
+}

@@ -1,0 +1,665 @@
+{
+  "duracao_cena_s": 162.833,
+  "estados": {
+    "hook_2d": 4.05,
+    "mesmo_volume": 13.517,
+    "forca_entrada": 19.317,
+    "face_varrendo_entrada": 21.267,
+    "avanco_entrada": 26.783,
+    "morph_01_meio": 28.158,
+    "volume_varrido": 32.583,
+    "morph_02_meio": 33.417,
+    "trabalho_entrada": 34.45,
+    "trabalho_entrada_guardado": 37.583,
+    "pacote_em_transito": 40.7,
+    "pacote_mudou_velocidade_altura": 43.05,
+    "saida_sinal_negativo": 46.917,
+    "morph_03_meio": 48.1,
+    "morph_04_meio": 49.25,
+    "trabalho_saida": 50.183,
+    "dois_trabalhos_guardados": 53.183,
+    "morph_05_meio": 60.55,
+    "trabalho_liquido": 61.983,
+    "massa_volume": 67.65,
+    "energias_dos_estados": 72.05,
+    "morph_06_meio": 77.017,
+    "variacao_cinetica": 78.25,
+    "morph_07_meio": 84.617,
+    "variacao_gravitacional": 86.25,
+    "tres_resultados_guardados": 89.583,
+    "balanco_simbolico": 95.45,
+    "balanco_em_montagem": 97.9,
+    "balanco_completo": 99.65,
+    "cancelamento_volume": 103.65,
+    "volumes_encolhendo": 104.6,
+    "morph_08_meio": 104.8,
+    "balanco_por_volume": 106.117,
+    "morph_09_meio": 107.425,
+    "morph_10_meio": 108.017,
+    "morph_11_meio": 109.15,
+    "diferencas_abertas": 110.383,
+    "morph_12_meio": 111.883,
+    "morph_13_meio": 113.017,
+    "P2_atravessando": 114.75,
+    "morph_14_meio": 114.75,
+    "agrupamento_em_movimento": 116.333,
+    "morph_15_meio": 116.283,
+    "altura_atravessando": 118.067,
+    "morph_16_meio": 118.017,
+    "morph_17_meio": 119.225,
+    "agrupamento_por_estado": 120.65,
+    "morph_18_meio": 123.483,
+    "morph_19_meio": 124.767,
+    "morph_20_meio": 125.717,
+    "bernoulli": 127.25,
+    "significado_pressao": 129.783,
+    "significado_cinetica": 131.583,
+    "significado_gravitacional": 133.383,
+    "unidades": 135.117,
+    "tubo_em_estreitamento": 137.367,
+    "continuidade_2d": 142.783,
+    "morph_21_meio": 146.5,
+    "compensacao_pressao_cinetica": 148.45,
+    "barras_compensadas": 149.983,
+    "bernoulli_estreitamento": 150.717,
+    "hipoteses_finais": 155.517,
+    "cta_final": 159.65
+  },
+  "layout": [
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ],
+    [
+      -2.77,
+      2.77,
+      -1.384,
+      -0.916
+    ],
+    [
+      -2.77,
+      2.77,
+      -1.384,
+      -0.916
+    ],
+    [
+      -1.467,
+      1.467,
+      -1.429,
+      -0.871
+    ],
+    [
+      -1.467,
+      1.467,
+      -1.429,
+      -0.871
+    ],
+    [
+      -1.683,
+      1.683,
+      -1.415,
+      -0.885
+    ],
+    [
+      -1.683,
+      1.683,
+      -1.415,
+      -0.885
+    ],
+    [
+      -1.981,
+      1.981,
+      -1.406,
+      -0.894
+    ],
+    [
+      -1.981,
+      1.981,
+      -1.406,
+      -0.894
+    ],
+    [
+      -1.754,
+      1.754,
+      -1.433,
+      -0.867
+    ],
+    [
+      -1.754,
+      1.754,
+      -1.433,
+      -0.867
+    ],
+    [
+      -3.32,
+      -1.04,
+      0.896,
+      1.264
+    ],
+    [
+      -1.896,
+      1.896,
+      -1.411,
+      -0.889
+    ],
+    [
+      -1.896,
+      1.896,
+      -1.411,
+      -0.889
+    ],
+    [
+      -2.139,
+      2.139,
+      -1.397,
+      -0.903
+    ],
+    [
+      -1.944,
+      1.944,
+      -1.424,
+      -0.876
+    ],
+    [
+      -1.944,
+      1.944,
+      -1.424,
+      -0.876
+    ],
+    [
+      0.916,
+      3.444,
+      0.902,
+      1.258
+    ],
+    [
+      -2.047,
+      2.047,
+      -1.401,
+      -0.899
+    ],
+    [
+      -2.721,
+      2.721,
+      -1.397,
+      -0.903
+    ],
+    [
+      -2.565,
+      2.565,
+      -1.446,
+      -0.854
+    ],
+    [
+      -2.565,
+      2.565,
+      -1.446,
+      -0.854
+    ],
+    [
+      -1.667,
+      1.667,
+      0.828,
+      1.212
+    ],
+    [
+      -1.339,
+      1.339,
+      -1.44,
+      -0.86
+    ],
+    [
+      -1.339,
+      1.339,
+      -1.44,
+      -0.86
+    ],
+    [
+      1.379,
+      3.121,
+      0.831,
+      1.209
+    ],
+    [
+      -3.317,
+      3.317,
+      -1.705,
+      -0.695
+    ],
+    [
+      -3.317,
+      3.317,
+      -1.705,
+      -0.695
+    ],
+    [
+      -2.029,
+      2.029,
+      -1.411,
+      -0.889
+    ],
+    [
+      -2.425,
+      2.425,
+      -1.729,
+      -0.571
+    ],
+    [
+      -2.739,
+      2.739,
+      -2.168,
+      -1.032
+    ],
+    [
+      -2.739,
+      2.739,
+      -2.168,
+      -1.032
+    ],
+    [
+      -1.862,
+      1.862,
+      -0.246,
+      0.526
+    ],
+    [
+      -2.546,
+      2.546,
+      -1.908,
+      -1.292
+    ],
+    [
+      -2.821,
+      2.821,
+      -1.898,
+      -1.302
+    ],
+    [
+      -2.821,
+      2.821,
+      -1.898,
+      -1.302
+    ],
+    [
+      -1.919,
+      1.919,
+      -0.942,
+      -0.538
+    ],
+    [
+      -2.214,
+      2.214,
+      -2.488,
+      -1.912
+    ],
+    [
+      -2.214,
+      2.214,
+      -2.488,
+      -1.912
+    ],
+    [
+      -4.0,
+      4.0,
+      -2.21,
+      -0.007
+    ],
+    [
+      -4.0,
+      4.0,
+      -2.21,
+      -0.007
+    ],
+    [
+      -3.925,
+      3.925,
+      -1.295,
+      -0.305
+    ],
+    [
+      -3.925,
+      3.925,
+      -1.295,
+      -0.305
+    ],
+    [
+      -3.925,
+      3.925,
+      -2.394,
+      -0.305
+    ],
+    [
+      -3.925,
+      2.709,
+      -2.394,
+      -0.305
+    ],
+    [
+      -2.879,
+      3.271,
+      -2.405,
+      0.018
+    ],
+    [
+      -2.879,
+      3.271,
+      -2.405,
+      0.018
+    ],
+    [
+      -2.879,
+      2.974,
+      -3.805,
+      0.018
+    ],
+    [
+      -3.002,
+      2.942,
+      -3.796,
+      0.975
+    ],
+    [
+      -2.372,
+      3.25,
+      -3.796,
+      0.975
+    ],
+    [
+      -2.95,
+      3.25,
+      -3.796,
+      0.975
+    ],
+    [
+      -2.95,
+      3.25,
+      -2.846,
+      0.975
+    ],
+    [
+      -3.014,
+      3.014,
+      -2.114,
+      0.992
+    ],
+    [
+      -3.014,
+      3.014,
+      -2.114,
+      0.992
+    ],
+    [
+      -3.077,
+      2.341,
+      -2.133,
+      0.963
+    ],
+    [
+      -2.837,
+      2.837,
+      -1.432,
+      -0.168
+    ],
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ],
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ],
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ],
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ],
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ],
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ],
+    [
+      -1.645,
+      1.645,
+      -1.411,
+      -0.889
+    ],
+    [
+      -1.645,
+      1.645,
+      -1.411,
+      -0.889
+    ],
+    [
+      -3.014,
+      3.014,
+      -2.114,
+      0.992
+    ],
+    [
+      -3.014,
+      3.014,
+      -1.139,
+      0.992
+    ],
+    [
+      -3.014,
+      3.014,
+      -1.139,
+      0.992
+    ],
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ],
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ],
+    [
+      -3.881,
+      3.881,
+      -1.432,
+      -0.168
+    ]
+  ],
+  "glyph_maps": [
+    {
+      "transformacao": "F1 recebe P1 A1 da face de entrada",
+      "tempo": 28.9
+    },
+    {
+      "transformacao": "O fragmento A1 dx1 fecha em Delta V preservando Delta sem deformar A em V",
+      "tempo": 34.1
+    },
+    {
+      "transformacao": "F2 recebe P2 A2 da face de saida",
+      "tempo": 48.7
+    },
+    {
+      "transformacao": "A2 dx2 recebe o mesmo volume",
+      "tempo": 49.833
+    },
+    {
+      "transformacao": "Fatorar volume por uma rota abaixo da expressao",
+      "tempo": 61.233
+    },
+    {
+      "transformacao": "Massa guardada substitui m em Delta K",
+      "tempo": 77.9
+    },
+    {
+      "transformacao": "Massa guardada substitui m em Delta Ug",
+      "tempo": 85.5
+    },
+    {
+      "transformacao": "Tres volumes saem juntos; a igualdade fecha em uma linha",
+      "tempo": 105.5
+    },
+    {
+      "transformacao": "Abrir a segunda linha gravitacional antes de distribuir",
+      "tempo": 107.767
+    },
+    {
+      "transformacao": "Alinhar a origem gravitacional para distribuir sem cruzamentos",
+      "tempo": 108.3
+    },
+    {
+      "transformacao": "Distribuir coeficientes por rotas separadas das velocidades e alturas",
+      "tempo": 110.033
+    },
+    {
+      "transformacao": "Abrir as filas de espera sem cruzar cinetica e gravidade",
+      "tempo": 112.567
+    },
+    {
+      "transformacao": "Preparar destinos livres por estado; igualdade fixa daqui em diante",
+      "tempo": 113.5
+    },
+    {
+      "transformacao": "P2 atravessa: menos P2 vira mais P2 no estado 2",
+      "tempo": 115.433
+    },
+    {
+      "transformacao": "Cinetica 1 atravessa sozinha e muda de sinal",
+      "tempo": 117.167
+    },
+    {
+      "transformacao": "Gravitacional 1 atravessa sozinha e muda de sinal",
+      "tempo": 118.9
+    },
+    {
+      "transformacao": "Encaixar termos nos slots definitivos",
+      "tempo": 119.567
+    },
+    {
+      "transformacao": "Indices desaparecem; a outra soma representa C",
+      "tempo": 124.167
+    },
+    {
+      "transformacao": "A quantidade conservada ocupa uma unica linha sem cruzar parcelas",
+      "tempo": 125.367
+    },
+    {
+      "transformacao": "C recebe o nome constante",
+      "tempo": 126.1
+    },
+    {
+      "transformacao": "Alturas iguais: parcelas gravitacionais iguais se retiram",
+      "tempo": 146.9
+    }
+  ],
+  "reutilizacoes": [
+    {
+      "resultado": "W1",
+      "destino": "equacao_atual",
+      "tempo": 55.967
+    },
+    {
+      "resultado": "W2",
+      "destino": "equacao_atual",
+      "tempo": 56.967
+    },
+    {
+      "resultado": "W1",
+      "destino": "equacao_atual",
+      "tempo": 58.9
+    },
+    {
+      "resultado": "W2",
+      "destino": "equacao_atual",
+      "tempo": 59.9
+    },
+    {
+      "resultado": "m",
+      "destino": "substituicao_simultanea",
+      "tempo": 77.9
+    },
+    {
+      "resultado": "m",
+      "destino": "substituicao_simultanea",
+      "tempo": 85.5
+    },
+    {
+      "resultado": "WP",
+      "destino": "equacao_atual",
+      "tempo": 93.1
+    },
+    {
+      "resultado": "K",
+      "destino": "equacao_atual",
+      "tempo": 94.1
+    },
+    {
+      "resultado": "U",
+      "destino": "equacao_atual",
+      "tempo": 95.1
+    },
+    {
+      "resultado": "WP",
+      "destino": "balanco_expandido",
+      "tempo": 99.3
+    },
+    {
+      "resultado": "K",
+      "destino": "balanco_expandido",
+      "tempo": 99.3
+    },
+    {
+      "resultado": "U",
+      "destino": "balanco_expandido",
+      "tempo": 99.3
+    }
+  ],
+  "paleta": [
+    "#050816",
+    "#F5F7FF",
+    "#35D9FF",
+    "#267BFF",
+    "#745CFF",
+    "#EA63FF"
+  ],
+  "solido_3d": "nenhum",
+  "faixa_inferior_livre_ate_y": -4.25,
+  "cabecalho": "vid_0014.build_stage; somente EP alterado",
+  "composicao": {
+    "balanco_completo_linhas": 2,
+    "apos_cancelamento_linhas": 1,
+    "diferencas_abertas_linhas": 2,
+    "estados": "colunas com significado fisico",
+    "fonte_estados": 56,
+    "fonte_bernoulli": 60
+  },
+  "barras": {
+    "comprimento_total": 3.5,
+    "P1": 2.2,
+    "K1_por_V": 1.3,
+    "P2": 1.05,
+    "K2_por_V": 2.45,
+    "escala": "qualitativa; sem valores fisicos numericos"
+  }
+}

@@ -1,0 +1,25 @@
+Pressão, velocidade e altura aparecem somadas na equação de Bernoulli. Mas por quê?  
+A resposta é conservação de energia. E dá para enxergar de onde cada termo vem.
+Vamos acompanhar o mesmo pequeno volume de fluido enquanto ele atravessa o tubo. Vamos chamar esse volume de delta V. Na seção um, ele ocupa uma área maior e percorre uma certa distância. Na seção dois, a área pode ser diferente, e a distância percorrida também. Mas, para um fluido incompressível, o volume transportado é o mesmo.
+Agora olha para a entrada. A pressão na seção um atua sobre a área da seção e produz uma força. Essa força vale pressão vezes área.
+Enquanto a face do fluido avança, essa força realiza trabalho. Trabalho é força vezes deslocamento. E área vezes deslocamento é justamente o volume varrido.
+Por isso, o trabalho feito pela pressão de entrada é a pressão na seção um multiplicada pelo volume deslocado.
+Na saída acontece algo parecido, mas com uma diferença importante. A pressão na seção dois empurra contra o sentido em que o fluido avança. Então o trabalho dessa pressão é negativo.
+Juntando as duas contribuições, o trabalho líquido das pressões é a diferença entre as pressões, multiplicada pelo mesmo volume.
+E para onde vai esse trabalho?
+Ele altera a energia mecânica do fluido.
+A massa desse pequeno volume é a densidade do fluido multiplicada pelo volume. Então, se a velocidade muda da seção um para a seção dois, a energia cinética muda. E se o fluido também muda de altura, sua energia potencial gravitacional muda.
+O balanço é este: o trabalho líquido das pressões é igual à variação da energia cinética mais a variação da energia potencial gravitacional.
+Repara agora em uma coisa importante: o mesmo volume aparece em todos os termos. Dividindo todo o balanço por esse volume, ele desaparece.
+Quando reorganizamos os termos, tudo que pertence à seção um fica de um lado, e tudo que pertence à seção dois fica do outro.
+Em cada ponto aparece exatamente a mesma combinação: pressão, mais energia cinética por unidade de volume, mais energia potencial gravitacional por unidade de volume.
+É daí que nasce Bernoulli.
+A pressão representa o trabalho das forças de pressão por unidade de volume. O termo com a velocidade representa a energia cinética por unidade de volume. E o termo com a altura representa a energia potencial gravitacional por unidade de volume.
+Todos eles têm a mesma unidade: joules por metro cúbico. Por isso podem fazer parte do mesmo balanço.
+Agora olha o que acontece quando o tubo fica mais estreito.
+Pela continuidade, se a área diminui, a velocidade precisa aumentar para manter o mesmo fluxo de um fluido incompressível.
+E, se os dois pontos estão aproximadamente na mesma altura, Bernoulli diz que pressão e energia cinética por volume precisam se compensar. Então, quando a velocidade aumenta, a parcela cinética cresce e a pressão diminui.
+Mas atenção: isso não é uma regra universal dizendo que velocidade maior sempre significa pressão menor. Essa conclusão vale aqui, sob essas condições.
+A forma de Bernoulli que usamos vale para um fluido incompressível, sem viscosidade, em escoamento estacionário e ao longo de uma linha de corrente.
+No fundo, a fórmula inteira é só um balanço de trabalho e energia escrito por unidade de volume.
+Se curtiu esse tipo de explicação, segue o Parallax Lab, arroba labparallax.

@@ -1,6 +1,6 @@
-"""V4 silenciosa de Bernoulli: símbolos físicos e destinos algébricos estáveis.
+"""V5 silenciosa de Bernoulli: fechamento de composição e orçamento P + K/V.
 
-uv run python -m manim -r 540,960 --fps 15 --media_dir videos/vid_0018_bernoulli/media_v4 -o preview_silencioso_v4 videos/vid_0018_bernoulli/cena.py BernoulliV4
+uv run python -m manim -r 540,960 --fps 15 --media_dir videos/vid_0018_bernoulli/media_v5 -o preview_silencioso_v5 videos/vid_0018_bernoulli/cena.py BernoulliV5
 
 Cabeçalho literal do vid_0014, trocando apenas EP. 05 → 06.
 Glyph maps sobre MathTex de string única, sem índices/debug no vídeo.
@@ -233,7 +233,7 @@ class FlowDiagram(VGroup):
         return VGroup(brace, lab)
 
 
-class BernoulliV4(Scene):
+class BernoulliV5(Scene):
     def construct(self):
         self.camera.background_color = BACKGROUND_COLOR
         config.tex_dir = UNIT / "media_preview/Tex"
@@ -262,7 +262,7 @@ class BernoulliV4(Scene):
 
         self.play(Create(self.diagram.walls), FadeIn(VGroup(*list(self.diagram)[1:])), run_time=1.4)
         self.drop(self.diagram.walls, *list(self.diagram)[1:])
-        self.add(self.diagram, self.flowdots, self.packet, self.dv_label, self.dv_link)
+        self.add(self.diagram, self.flowdots, self.packet)
         self.current = self.general()
         question = note("Por que pressão, velocidade e altura\naparecem somadas?", 30)
         for key in ("P", "k", "g"):
@@ -276,6 +276,7 @@ class BernoulliV4(Scene):
         self.play(FadeOut(question), run_time=.35)
 
         self.phase("Um mesmo volume de fluido")
+        self.play(FadeIn(self.dv_label), Create(self.dv_link), run_time=.6)
         dx1, dx2 = self.diagram.displacement(1), self.diagram.displacement(2)
         self.play(Create(dx1), Create(dx2), run_time=.9)
         relation = f(("DV", r"\Delta V"), ("eq", "="), ("A1", r"A_1"), ("dx1", r"\Delta x_1"),
@@ -284,11 +285,17 @@ class BernoulliV4(Scene):
         self.fly(self.dv_label, relation.term("DV"))
         self.fly(self.diagram.areas[0], relation.term("A1"), dx1[1], relation.term("dx1"))
         self.fly(self.diagram.areas[1], relation.term("A2"), dx2[1], relation.term("dx2"))
-        self.play(Indicate(self.packet, color=INK), Indicate(VGroup(dx1, dx2), color=INK), run_time=.8)
+        # Duas representações do mesmo ΔV, com a mesma aparência e volume.
+        comparison = self.packet.copy().clear_updaters()
+        self.add(comparison)
+        self.play(Transform(comparison, self.diagram.parcel(1)), run_time=1.2)
+        self.play(Indicate(self.packet, color=BLUE, scale_factor=1.04),
+                  Indicate(comparison, color=BLUE, scale_factor=1.04), Indicate(VGroup(dx1, dx2), color=INK), run_time=.8)
         self.record("mesmo_volume", hold=1.6)
 
         self.phase("A pressão empurra o fluido")
-        self.play(FadeOut(dx2), run_time=.3)
+        self.play(FadeOut(dx2), FadeOut(comparison), run_time=.3)
+        self.drop(comparison)
         force = f(("F1", r"F_1"), ("eq", "="), ("P1", r"P_1"), ("A1", r"A_1"), size=62)
         self.match(force, hidden=("P1", "A1"))
         pressure_arrows = VGroup(*(Arrow([-4.10, self.diagram.cy(-3.15) + d, 0], [-3.30, self.diagram.cy(-3.15) + d, 0],
@@ -318,7 +325,7 @@ class BernoulliV4(Scene):
         work = f(("W1", r"W_1"), ("eq", "="), ("P1", r"P_1"), ("A1", r"A_1"), ("dx1", r"\Delta x_1"), size=57)
         self.substitute(work, "F1", [(self.diagram.pressures[0], "P1"), (self.diagram.areas[0], "A1")],
                         "F1 recebe P1 A1 da face de entrada", duration=1.45)
-        geom = f(("A1", r"A_1"), ("dx1", r"\Delta x_1"), ("eq", "="), ("DV", r"\Delta V"), size=48, y=-3.05)
+        geom = f(("A1", r"A_1"), ("dx1", r"\Delta x_1"), ("eq", "="), ("DV", r"\Delta V"), size=40, y=-2.75)
         for key in ("A1", "dx1", "DV"):
             geom.term(key).set_opacity(0)
         self.add(geom)
@@ -326,11 +333,19 @@ class BernoulliV4(Scene):
         self.fly(self.diagram.areas[0], geom.term("A1"), dx1[1], geom.term("dx1"))
         self.play(Indicate(self.packet, color=BLUE, scale_factor=1.04), run_time=.5)
         self.fly(self.dv_label, geom.term("DV"), duration=.7)
-        self.record("volume_varrido", hold=1.1)
+        self.play(Indicate(self.current.term(["A1", "dx1"]), color=BLUE, scale_factor=1.06),
+                  Indicate(self.packet, color=BLUE, scale_factor=1.04), run_time=.65)
+        self.record("volume_varrido", hold=.5)
+        old = self.current
         work = f(("W1", r"W_1"), ("eq", "="), ("P1", r"P_1"), ("DV", r"\Delta V"), size=63)
-        self.substitute(work, ["A1", "dx1"], [(geom.term("DV"), "DV")],
-                        "A1 dx1 recebe o volume varrido", duration=1.3)
-        self.play(FadeOut(geom), run_time=.3)
+        area_ids, dx_ids, dv_ids = old.indices("A1"), old.indices("dx1"), work.indices("DV")
+        # Δ continua visível; A não se deforma em V (esse matching seria falso).
+        self.glyph(work, [([dx_ids[0]], [dv_ids[0]]),
+                          (area_ids + dx_ids[1:], None, {"scale": .1, "shift": ORIGIN, "run_time": .35}),
+                          (None, [dv_ids[1]], {"delay": .35, "run_time": .65, "shift": ORIGIN})],
+                   "O fragmento A1 dx1 fecha em Delta V preservando Delta sem deformar A em V", duration=1.3,
+                   extra=[AnimationGroup(FadeOut(geom, run_time=.35), Wait(.95), lag_ratio=1)])
+        self.drop(geom)
         self.record("trabalho_entrada", hold=1.4)
         self.store("W1", [-2.18, 1.08, 0], 3.9, PRESSURE)
         self.record("trabalho_entrada_guardado", hold=.8)
@@ -389,21 +404,22 @@ class BernoulliV4(Scene):
 
         self.phase("O trabalho muda a energia mecânica")
         density = label(r"\rho", .85, 5.95, size=46)
-        self.play(FadeIn(density), Indicate(self.packet, color=BLUE, scale_factor=1.04), run_time=.65)
+        self.play(FadeIn(density), Indicate(self.packet, color=BLUE, scale_factor=1.04),
+                  self.saved["WP"].animate.move_to([-1.85, 1.02, 0]), run_time=.65)
         mass = f(("m", "m"), ("eq", "="), ("rho", r"\rho"), ("DV", r"\Delta V"), size=60)
         self.match(mass, hidden=("rho", "DV"), duration=.5)
         self.fly(density, mass.term("rho"), self.dv_label, mass.term("DV"), duration=.9)
         self.play(FadeOut(density), run_time=.2)
-        self.record("massa_volume", hold=1.0)
+        self.record("massa_volume", hold=.8)
         # A ferramenta de massa fica junto ao pacote, acima das energias.
-        self.play(self.saved["WP"].animate.move_to([-1.85, 1.02, 0]), run_time=.5)
-        self.store("m", [2.25, 1.02, 0], 3.4, INK)
+        self.store("m", [2.25, 1.02, 0], 3.4, INK, highlight_time=.4, move_time=.8)
 
         kin_states = f(("K1", r"K_1"), ("eq1", "="), ("kc1", r"\frac12m"), ("v1", r"v_1^2"),
                        ("K2", r"K_2"), ("eq2", "="), ("kc2", r"\frac12m"), ("v2", r"v_2^2"), width=None, size=48)
         kin_states.rows([(["K1", "eq1", "kc1", "v1"], -2.05, -1.2, 3.8),
                          (["K2", "eq2", "kc2", "v2"], 2.05, -1.2, 3.8)])
         self.match(kin_states, hidden=("v1", "v2"))
+        self.play(Indicate(self.diagram.vlabels, color=KINETIC, scale_factor=1.07), run_time=.45)
         self.fly(self.diagram.vlabels[0], kin_states.term("v1"), self.diagram.vlabels[1], kin_states.term("v2"))
         self.record("energias_dos_estados", hold=1.6)
         self.match(f(("K", r"\Delta K"), ("eq", "="), ("K2", r"K_2"), ("minus", "-"), ("K1", r"K_1"), size=58))
@@ -420,8 +436,9 @@ class BernoulliV4(Scene):
         potential = f(("U", r"\Delta U_g"), ("eq", "="), ("m", "m"), ("gc", "g"), ("lp", "("),
                       ("h2", r"h_2"), ("minus", "-"), ("h1", r"h_1"), ("rp", ")"), size=57, color=GRAVITY, y=-1.6)
         self.match(potential, hidden=("h1", "h2"))
+        self.play(Indicate(self.diagram.hlabels, color=GRAVITY, scale_factor=1.07),
+                  Indicate(self.diagram.height_lines, color=GRAVITY, scale_factor=1.04), run_time=.6)
         self.fly(self.diagram.hlabels[0], potential.term("h1"), self.diagram.hlabels[1], potential.term("h2"))
-        self.play(Indicate(self.diagram.height_lines, color=GRAVITY), run_time=.7)
         potential = self.potential()
         self.substitute(potential, "m", [(self.saved["m"].term(["rho", "DV"]), ["rho", "DV"])],
                         "Massa guardada substitui m em Delta Ug", duration=1.7, memory="m")
@@ -449,8 +466,7 @@ class BernoulliV4(Scene):
             destinations.append(full.term(target_keys).copy())
             full.term(target_keys).set_opacity(0)
             self.drop(source)
-        # As três cópias descem juntas, preservando sua ordem vertical.
-        # Os originais já consumidos não ficam sobrepostos aos objetos em voo.
+        # K e Ug abrem espaço antes de WP entrar na mesma primeira linha.
         symbols = balance.copy()
         signs = full.term(["eq", "plus"]).copy()
         self.drop(balance)
@@ -461,7 +477,9 @@ class BernoulliV4(Scene):
             # Mover = pela diagonal cruzaria a expressão cinética. Os dois
             # operadores conhecidos reaparecem no encaixe ao fim das cópias.
             Succession(Wait(2.2), FadeIn(signs, run_time=.6)),
-            *(Transform(source, dest, run_time=2.8) for source, dest in zip(travelers, destinations)),
+            Succession(Wait(.8), Transform(travelers[0], destinations[0], run_time=2.0)),
+            Transform(travelers[1], destinations[1], run_time=2.8),
+            Transform(travelers[2], destinations[2], run_time=2.8),
             lag_ratio=0), run_time=2.8)
         self.drop(symbols, signs, *travelers, full)
         full.set_opacity(1)
@@ -472,34 +490,52 @@ class BernoulliV4(Scene):
 
         self.phase("Um balanço por unidade de volume")
         dvs = [full.term(key) for key in ("DVp", "DVk", "DVu")]
-        common = VGroup(*(Line(a.get_bottom() + DOWN * .08, b.get_top() + UP * .08,
-                              color=INK, stroke_width=1.0, stroke_opacity=.25)
-                          for a, b in zip(dvs, dvs[1:])))
-        division = note("Mesmo ΔV > 0: dividimos todo o balanço.", 27, y=-3.55)
-        self.play(Create(common), FadeIn(division),
+        division = note("O mesmo ΔV aparece em todos os termos.", 27, y=-3.3)
+        self.play(FadeIn(division),
                   *(Indicate(t, color=INK, scale_factor=1.12) for t in dvs),
                   Indicate(self.packet, color=BLUE, scale_factor=1.04),
                   Indicate(self.dv_label, color=INK), run_time=1.0)
         self.record("cancelamento_volume", hold=.8)
-        self.play(FadeOut(common), run_time=.25)
         self.marks["volumes_encolhendo"] = round(self.time + .5, 3)
-        self.glyph(self.balance(False), [(key, None, {"scale": .05}) for key in ("DVp", "DVk", "DVu")],
-                   "Dividir pelo mesmo volume: tres fatores encolhem juntos", duration=1.1)
+        p_keys = ["P1", "pm", "P2", "eq"]
+        k_keys = ["kc", "kl", "v2", "km", "v1", "kr"]
+        g_keys = ["plus", "gc", "gl", "h2", "gm", "h1", "gr"]
+        self.glyph(self.balance(False), [
+            *((key, None, {"scale": .05, "run_time": .35}) for key in ("DVp", "DVk", "DVu")),
+            (["lp", "rp"], None, {"scale": .1, "run_time": .35}),
+            (p_keys, p_keys), (k_keys, k_keys), (g_keys, g_keys, {"path_arc": PI / 4}),
+        ], "Tres volumes saem juntos; a igualdade fecha em uma linha", duration=1.4)
         self.play(FadeOut(division), run_time=.25)
         self.record("balanco_por_volume", hold=1.3)
 
+        # A gravidade desce primeiro: copiar coeficientes nunca cruza os
+        # termos cinéticos. A relação continua em apenas duas linhas.
         expanded = self.expanded()
-        expanded.term(["k2", "km", "k1"]).move_to([0, -1.35, 0])
-        expanded.term(["plus", "g2", "gm", "g1"]).move_to([0, -3.05, 0])
+        before_expansion = self.current.copy()
+        gravity_x = before_expansion.term(g_keys).get_center()[0]
+        before_expansion.term(g_keys).move_to([gravity_x, -2.15, 0])
+        self.glyph(before_expansion, [(g_keys, g_keys)], "Abrir a segunda linha gravitacional antes de distribuir", duration=.65)
+        aligned = self.current.copy()
+        aligned.term(g_keys).align_to(expanded.term(["plus", "g2", "gm", "g1"]), LEFT)
+        self.glyph(aligned, [(g_keys, g_keys)], "Alinhar a origem gravitacional para distribuir sem cruzamentos", duration=.5)
+
+        def lifted_path(height):
+            def path(start, end, alpha):
+                # A cópia se afasta da origem antes de avançar sobre os termos.
+                lift = smooth(min(alpha / .12, (1 - alpha) / .12, 1.0))
+                advance = smooth(float(np.clip((alpha - .12) / .76, 0, 1)))
+                return (1 - advance) * start + advance * end + UP * height * lift
+            return path
+
         distribution = []
         for coefficient, left, right, left_target, right_target in (("kc", "v2", "v1", "k2", "k1"), ("gc", "h2", "h1", "g2", "g1")):
             count = len(self.current.indices(coefficient))
             left_ids, right_ids = expanded.indices(left_target), expanded.indices(right_target)
             distribution.extend([(self.current.indices(coefficient), left_ids[:count]),
                                  (self.current.indices(left), left_ids[count:]),
-                                 (self.current.indices(coefficient), right_ids[:count], {"path_arc": -PI / 1.1 if coefficient == "kc" else PI / 2}),
+                                 (self.current.indices(coefficient), right_ids[:count], {"path_func": lifted_path(1.15 if coefficient == "kc" else -.75), "rate_func": linear}),
                                  (self.current.indices(right), right_ids[count:])])
-        distribution.extend((key, None, {"run_time": .25}) for key in ("lp", "rp", "kl", "kr", "gl", "gr"))
+        distribution.extend((key, None, {"run_time": .25}) for key in ("kl", "kr", "gl", "gr"))
         self.glyph(expanded, distribution, "Distribuir coeficientes por rotas separadas das velocidades e alturas", duration=1.7)
         self.record("diferencas_abertas", hold=1.2)
         links = VGroup(Line([-3.35, 2.30, 0], [-2.12, 1.40, 0], color=BLUE, stroke_width=1.2, stroke_opacity=.5),
@@ -507,15 +543,18 @@ class BernoulliV4(Scene):
         states_text = VGroup(text("ESTADO 1", 24).move_to([-2.12, 1.24, 0]), text("ESTADO 2", 24).move_to([2.12, 1.24, 0]))
         slots = VGroup(*(Line([x - 1.58, y - .39, 0], [x + 1.58, y - .39, 0],
                               color=BLUE, stroke_width=1.0, stroke_opacity=.25)
-                         for x in (-2.12, 2.12) for y in (.55, -.85, -2.25)))
-        self.play(Create(links), FadeIn(states_text), Create(slots), run_time=.6)
+                         for x in (-2.12, 2.12) for y in (.75, -.75, -1.85)))
         pending = self.expanded()
-        pending.term(["km", "k1"]).move_to([2.12, -1.62, 0])
+        pending.term(["km", "k1"]).move_to([2.12, -1.50, 0])
+        pending.term(["plus", "g2"]).move_to([2.12, -2.60, 0])
         pending.term(["gm", "g1"]).move_to([2.12, -3.55, 0])
-        self.glyph(pending, [(["km", "k1"], ["km", "k1"]), (["gm", "g1"], ["gm", "g1"])],
-                   "Separar primeiro os termos negativos em espera", duration=.8)
+        self.glyph(pending, [(["gm", "g1"], ["gm", "g1"], {"run_time": .6}),
+                             (["plus", "g2"], ["plus", "g2"], {"delay": .3, "run_time": .6}),
+                             (["km", "k1"], ["km", "k1"], {"delay": .5, "run_time": .7})],
+                   "Abrir as filas de espera sem cruzar cinetica e gravidade", duration=1.3)
         self.glyph(self.state_stage(0), [("eq", "eq"), ("k2", "k2", {"path_arc": -PI / 3}), (["plus", "g2"], ["plus", "g2"])],
                    "Preparar destinos livres por estado; igualdade fixa daqui em diante", duration=.9)
+        self.play(Create(links), FadeIn(states_text), Create(slots), run_time=.6)
         self.marks["P2_atravessando"] = round(self.time + .65, 3)
         self.glyph(self.state_stage(1), [("P2", "P2", {"path_arc": PI / 9}),
                                         ("pm", None, {"scale": .1}),
@@ -536,7 +575,7 @@ class BernoulliV4(Scene):
                   Indicate(self.current.term(["P2", "k2", "g2"]), color=INK, scale_factor=1.04), run_time=.7)
         self.record("agrupamento_por_estado", hold=1.8)
 
-        self.phase("A mesma combinação ao longo do escoamento")
+        self.phase("A mesma combinação ao longo da linha de corrente")
         self.play(FadeOut(links), FadeOut(states_text), FadeOut(slots), run_time=.3)
         columns = self.general_columns()
         maps = [("lpk", "pk"), ("lpg", "pg"),
@@ -558,10 +597,8 @@ class BernoulliV4(Scene):
         self.glyph(self.general(), [("constant", None, {"scale": .1}), (None, "constant", {"delay": .35})],
                    "C recebe o nome constante", duration=.7)
         self.drop(tracer)
-        line_note = note("A mesma combinação em qualquer ponto\nda mesma linha de corrente.", 27, y=-3.05)
-        self.play(FadeIn(line_note), Circumscribe(self.current, color=INK), run_time=.8)
-        self.record("bernoulli", hold=1.0)
-        self.play(FadeOut(line_note), run_time=.3)
+        self.play(Circumscribe(self.current, color=INK), run_time=.8)
+        self.record("bernoulli", hold=1.3)
 
         self.phase("Três termos, uma unidade")
         caption = note("Trabalho das forças de pressão\npor unidade de volume", 29, PRESSURE, y=-2.8)
@@ -574,14 +611,15 @@ class BernoulliV4(Scene):
             self.play(Indicate(self.current.term(key), color=color), Indicate(physical, color=color, scale_factor=1.07),
                       Transform(caption, note(words, 29, color, y=-2.8)), run_time=.75)
             self.record(mark, hold=1.0)
-        units = label(r"[P]=\frac{\mathrm N}{\mathrm m^2}=\frac{\mathrm J}{\mathrm m^3}", 0, -2.65, size=54)
-        unit_note = note("Todos os termos são energia por volume.", 28, y=-3.7)
-        self.play(FadeOut(caption), Write(units), FadeIn(unit_note), run_time=.7)
+        units = label(r"[P]=\frac{\mathrm N}{\mathrm m^2}=\frac{\mathrm J}{\mathrm m^3}", 0, -2.65, size=58)
+        self.play(FadeOut(caption), Write(units),
+                  *(Indicate(self.current.term(key), color=color, scale_factor=1.06)
+                    for key, color in (("P", PRESSURE), ("k", KINETIC), ("g", GRAVITY))), run_time=.7)
         self.record("unidades", hold=1.0)
 
         self.phase("Duas leis no estreitamento")
         self.marks["tubo_em_estreitamento"] = round(self.time + 1.2, 3)
-        self.play(FadeOut(units), FadeOut(unit_note), self.diagram.lift.animate.set_value(0), self.diagram.r2.animate.set_value(.44), run_time=2.5)
+        self.play(FadeOut(units), self.diagram.lift.animate.set_value(0), self.diagram.r2.animate.set_value(.44), run_time=2.5)
         continuity = f(("A1", r"A_1"), ("v1", r"v_1"), ("eq", "="), ("A2", r"A_2"), ("v2", r"v_2"), size=58)
         self.match(continuity, hidden=("A1", "v1", "A2", "v2"))
         self.fly(self.diagram.areas[0], continuity.term("A1"), self.diagram.vlabels[0], continuity.term("v1"))
@@ -589,61 +627,72 @@ class BernoulliV4(Scene):
         continuity_title = text("CONTINUIDADE", 26).move_to([0, .25, 0])
         narrow = label(r"A_2<A_1\;\Rightarrow\;v_2>v_1", 0, -2.65, size=43, color=KINETIC)
         self.play(FadeIn(continuity_title), Write(narrow), Indicate(self.diagram.velocities[1], color=KINETIC), run_time=.8)
-        continuity_note = note("Continuidade explica o aumento da velocidade.", 25, y=-3.65)
-        self.play(FadeIn(continuity_note), run_time=.3)
-        self.record("continuidade_2d", hold=1.3)
-        self.play(FadeOut(continuity_title), FadeOut(narrow), FadeOut(continuity_note), run_time=.25)
+        self.record("continuidade_2d", hold=1.5)
+        self.play(FadeOut(continuity_title), FadeOut(narrow), run_time=.25)
         same_height = label(r"h_1\simeq h_2", 0, .25, size=38, color=GRAVITY)
         self.play(Write(same_height), Indicate(self.diagram.height_lines, color=GRAVITY), run_time=.6)
         same_height.move_to([0, 1.12, 0])
         self.match(self.states(), duration=.65)
         self.play(Indicate(self.current.term("g1"), color=GRAVITY), Indicate(self.current.term("g2"), color=GRAVITY), run_time=.6)
         horizontal = f(("P1", r"P_1"), ("lpk", "+"), ("k1", r"\frac12\rho v_1^2"), ("eq", "="),
-                       ("P2", r"P_2"), ("rpk", "+"), ("k2", r"\frac12\rho v_2^2"), size=52, width=None)
-        horizontal.rows([(["P1"], -2.12, .35, 3.65), (["lpk", "k1"], -2.12, -.85, 3.65),
-                         (["eq"], 0, -.85, 1), (["P2"], 2.12, .35, 3.65), (["rpk", "k2"], 2.12, -.85, 3.65)])
+                       ("P2", r"P_2"), ("rpk", "+"), ("k2", r"\frac12\rho v_2^2"), size=56, width=None)
+        horizontal.rows([(["P1"], -2.12, .75, 3.65), (["lpk", "k1"], -2.12, -.55, 3.65),
+                         (["eq"], 0, -.55, 1), (["P2"], 2.12, .75, 3.65), (["rpk", "k2"], 2.12, -.55, 3.65)])
         self.glyph(horizontal, [(["lpg", "g1"], None, {"scale": .1}), (["rpg", "g2"], None, {"scale": .1})],
                    "Alturas iguais: parcelas gravitacionais iguais se retiram", duration=.8)
-        bernoulli_title = text("BERNOULLI · caso ideal à mesma altura", 24).move_to([0, -1.75, 0])
+        bernoulli_title = text("BERNOULLI · caso ideal à mesma altura", 24).move_to([0, -1.45, 0])
         # Comprimento total fixo: a repartição qualitativa responde à fórmula.
-        share = ValueTracker(.65)
+        total_bar = 3.5
+        share = ValueTracker(2.20)
+        bar_labels = [(label("P", 0, 0, size=25, color=PRESSURE),
+                       label(r"K/V", 0, 0, size=25, color=KINETIC)) for _ in range(2)]
         bars = VGroup()
         def energy_bars(m):
             groups = []
-            for x, pressure_length in ((-2.12, 1.05), (2.12, share.get_value())):
-                left = x - .85
-                p = Rectangle(width=pressure_length, height=.13, stroke_width=0, fill_color=PRESSURE, fill_opacity=.85).move_to([left + pressure_length / 2, -2.35, 0])
-                k = Rectangle(width=1.70 - pressure_length, height=.13, stroke_width=0, fill_color=KINETIC, fill_opacity=.85).move_to([left + pressure_length + (1.70 - pressure_length) / 2, -2.35, 0])
-                groups.append(VGroup(p, k))
+            for i, (x, pressure_length) in enumerate(((-2.12, 2.20), (2.12, share.get_value()))):
+                left, kinetic_length = x - total_bar / 2, total_bar - pressure_length
+                px, kx = left + pressure_length / 2, left + pressure_length + kinetic_length / 2
+                p = Rectangle(width=pressure_length, height=.34, stroke_width=0, fill_color=PRESSURE, fill_opacity=.9).move_to([px, -2.35, 0])
+                k = Rectangle(width=kinetic_length, height=.34, stroke_width=0, fill_color=KINETIC, fill_opacity=.9).move_to([kx, -2.35, 0])
+                border = Rectangle(width=total_bar, height=.38, color=INK, stroke_width=1, stroke_opacity=.3).move_to([x, -2.35, 0])
+                ptext, ktext = bar_labels[i][0].copy(), bar_labels[i][1].copy()
+                ptext.move_to([px, -2.85, 0])
+                ktext.move_to([kx, -2.85, 0])
+                groups.append(VGroup(p, k, border, ptext, ktext))
             m.become(VGroup(*groups))
-        share.set_value(1.05)
         energy_bars(bars)
         bars.add_updater(energy_bars)
         self.play(FadeIn(bernoulli_title), FadeIn(bars), run_time=.4)
-        self.marks["compensacao_pressao_cinetica"] = round(self.time + .8, 3)
-        self.play(share.animate.set_value(.50), Indicate(horizontal.term("k2"), color=KINETIC),
-                  Indicate(self.diagram.velocities[1], color=KINETIC), run_time=1.3)
-        conclusion = label(r"v_2>v_1\;\Rightarrow\;P_2<P_1", 0, -3.05, size=47, color=PRESSURE)
+        self.marks["compensacao_pressao_cinetica"] = round(self.time + 1.15, 3)
+        self.play(share.animate.set_value(1.05), Indicate(horizontal.term("k2"), color=KINETIC),
+                  Indicate(self.diagram.velocities[1], color=KINETIC), run_time=2.3)
+        self.marks["barras_compensadas"] = round(self.time + .35, 3)
+        conclusion = label(r"v_2>v_1\;\Rightarrow\;P_2<P_1", 0, -3.55, size=47, color=PRESSURE)
         self.play(Write(conclusion), Indicate(horizontal.term("P2"), color=PRESSURE),
                   Indicate(self.diagram.pressures[1], color=PRESSURE), run_time=.7)
-        self.record("bernoulli_estreitamento", hold=1.2)
+        self.record("bernoulli_estreitamento", hold=2.4)
 
         self.phase("Quando Bernoulli vale?")
         bars.clear_updaters()
         self.play(FadeOut(bernoulli_title), FadeOut(conclusion), FadeOut(same_height), FadeOut(bars), run_time=.35)
         self.match(self.general(), duration=1.0)
-        hypotheses = note("Incompressível · sem viscosidade\nEscoamento estacionário\nAo longo de uma linha de corrente", 29, y=-2.65)
+        hypotheses = note("Incompressível · sem viscosidade\nEscoamento estacionário\nAo longo de uma linha de corrente", 29, y=-2.3)
         self.play(FadeIn(hypotheses), run_time=.6)
-        self.record("hipoteses_finais", hold=2.7)
-        cta = text("Segue o Parallax Lab / @labparallax", 23).set_color_by_gradient(PRESSURE, KINETIC, GRAVITY).move_to([0, -3.93, 0])
+        self.record("hipoteses_finais", hold=3.0)
+        cta = text("Segue o Parallax Lab / @labparallax", 23).set_color_by_gradient(PRESSURE, KINETIC, GRAVITY).move_to([0, -3.5, 0])
         self.play(FadeIn(cta, shift=UP * .08), run_time=1.1)
-        self.record("cta_final", hold=3.0)
+        self.record("cta_final", hold=3.5)
         assert self.time < 180, self.time
-        (UNIT / "tempos_preview_v4.json").write_text(json.dumps({
+        (UNIT / getattr(self, "timeline_filename", "tempos_preview_v5.json")).write_text(json.dumps({
             "duracao_cena_s": round(self.time, 3), "estados": self.marks,
             "layout": self.qa, "glyph_maps": self.glyph_steps, "reutilizacoes": self.reuses,
             "paleta": PALETTE, "solido_3d": "nenhum", "faixa_inferior_livre_ate_y": -4.25,
             "cabecalho": "vid_0014.build_stage; somente EP alterado",
+            "composicao": {"balanco_completo_linhas": 2, "apos_cancelamento_linhas": 1,
+                           "diferencas_abertas_linhas": 2, "estados": "colunas com significado fisico",
+                           "fonte_estados": 56, "fonte_bernoulli": 60},
+            "barras": {"comprimento_total": total_bar, "P1": 2.20, "K1_por_V": 1.30,
+                       "P2": 1.05, "K2_por_V": 2.45, "escala": "qualitativa; sem valores fisicos numericos"},
         }, ensure_ascii=False, indent=2), encoding="utf-8")
 
     def drop(self, *mobs):
@@ -755,14 +804,14 @@ class BernoulliV4(Scene):
         if memory:
             self.reuses.append({"resultado": memory, "destino": "substituicao_simultanea", "tempo": round(self.time, 3)})
 
-    def store(self, name, position, width, color, scale=.65):
+    def store(self, name, position, width, color, scale=.65, highlight_time=.7, move_time=1.0):
         mob = self.current
-        self.play(Circumscribe(mob, color=color, stroke_width=1.8), run_time=.7)
+        self.play(Circumscribe(mob, color=color, stroke_width=1.8), run_time=highlight_time)
         target = mob.copy().scale(scale)
         if target.width > width:
             target.scale_to_fit_width(width)
         target.move_to(position)
-        self.play(Transform(mob, target), run_time=1.0)
+        self.play(Transform(mob, target), run_time=move_time)
         self.saved[name], self.current = mob, None
         self.check_math(mob)
 
@@ -798,49 +847,59 @@ class BernoulliV4(Scene):
         pv = [("DVp", r"\Delta V")] if volume else []
         kv = [("DVk", r"\Delta V")] if volume else []
         gv = [("DVu", r"\Delta V")] if volume else []
-        p = ["lp", "P1", "pm", "P2", "rp"] + (["DVp"] if volume else []) + ["eq"]
+        left = [("lp", "("), ("P1", r"P_1"), ("pm", "-"), ("P2", r"P_2"), ("rp", ")")] if volume else [("P1", r"P_1"), ("pm", "-"), ("P2", r"P_2")]
+        p = (["lp", "P1", "pm", "P2", "rp", "DVp"] if volume else ["P1", "pm", "P2"]) + ["eq"]
         k = ["kc"] + (["DVk"] if volume else []) + ["kl", "v2", "km", "v1", "kr"]
         g = ["plus", "gc"] + (["DVu"] if volume else []) + ["gl", "h2", "gm", "h1", "gr"]
-        result = f(("lp", "("), ("P1", r"P_1"), ("pm", "-"), ("P2", r"P_2"), ("rp", ")"), *pv, ("eq", "="),
+        result = f(*left, *pv, ("eq", "="),
                    ("kc", r"\frac12\rho"), *kv, ("kl", "("), ("v2", r"v_2^2"), ("km", "-"), ("v1", r"v_1^2"), ("kr", ")"),
                    ("plus", "+"), ("gc", r"\rho g"), *gv, ("gl", "("), ("h2", r"h_2"), ("gm", "-"), ("h1", r"h_1"), ("gr", ")"),
-                   size=51, width=None)
-        return result.rows([(p, 0, .55, 7.9), (k, 0, -.85 if volume else -1.35, 7.9), (g, 0, -2.25 if volume else -3.05, 7.9)])
+                   size=53 if volume else 47, width=None if volume else 8.0, y=-.8)
+        if volume:
+            main = result.term(p + k)
+            if main.width > 8.0:
+                result.scale(8.0 / main.width)
+            main.move_to([0, -.55, 0])
+            result.term(g).align_to(result.term(k), LEFT).set_y(-1.95)
+            if result.width > 8.0:
+                result.scale(8.0 / result.width)
+            result.shift(LEFT * result.get_center()[0])
+        return result
 
     def expanded(self):
         result = f(("P1", r"P_1"), ("pm", "-"), ("P2", r"P_2"), ("eq", "="),
                    ("k2", r"\frac12\rho v_2^2"), ("km", "-"), ("k1", r"\frac12\rho v_1^2"),
-                   ("plus", "+"), ("g2", r"\rho gh_2"), ("gm", "-"), ("g1", r"\rho gh_1"), size=51, width=None)
-        return result.rows([(["P1", "pm", "P2", "eq"], 0, .55, 7.9),
-                            (["k2", "km", "k1"], 0, -.85, 7.9),
-                            (["plus", "g2", "gm", "g1"], 0, -2.25, 7.9)])
+                   ("plus", "+"), ("g2", r"\rho gh_2"), ("gm", "-"), ("g1", r"\rho gh_1"), size=54, width=None)
+        result.term(["P1", "pm", "P2", "eq", "k2", "km", "k1"]).move_to([0, -.55, 0])
+        result.term(["plus", "g2", "gm", "g1"]).align_to(result.term("k2"), LEFT).set_y(-2.15)
+        return result
 
     def states(self):
         result = f(("P1", r"P_1"), ("lpk", "+"), ("k1", r"\frac12\rho v_1^2"), ("lpg", "+"), ("g1", r"\rho gh_1"),
-                   ("eq", "="), ("P2", r"P_2"), ("rpk", "+"), ("k2", r"\frac12\rho v_2^2"), ("rpg", "+"), ("g2", r"\rho gh_2"), size=52, width=None)
-        return result.rows([(["P1"], -2.12, .55, 3.65), (["lpk", "k1"], -2.12, -.85, 3.65), (["lpg", "g1"], -2.12, -2.25, 3.65),
-                            (["eq"], 0, -.85, 1), (["P2"], 2.12, .55, 3.65), (["rpk", "k2"], 2.12, -.85, 3.65), (["rpg", "g2"], 2.12, -2.25, 3.65)])
+                   ("eq", "="), ("P2", r"P_2"), ("rpk", "+"), ("k2", r"\frac12\rho v_2^2"), ("rpg", "+"), ("g2", r"\rho gh_2"), size=56, width=None)
+        return result.rows([(["P1"], -2.12, .75, 3.65), (["lpk", "k1"], -2.12, -.55, 3.65), (["lpg", "g1"], -2.12, -1.85, 3.65),
+                            (["eq"], 0, -.55, 1), (["P2"], 2.12, .75, 3.65), (["rpk", "k2"], 2.12, -.55, 3.65), (["rpg", "g2"], 2.12, -1.85, 3.65)])
 
     def state_stage(self, stage):
         pressure = [("P1", r"P_1"), ("pm", "-"), ("P2", r"P_2")] if stage == 0 else [("P1", r"P_1"), ("P2", r"P_2"), ("rpk", "+")]
         kinetic_sign = ("km", "-") if stage < 2 else ("lpk", "+")
         gravity_sign = ("gm", "-") if stage < 3 else ("lpg", "+")
         result = f(*pressure, ("eq", "="), ("k2", r"\frac12\rho v_2^2"), kinetic_sign, ("k1", r"\frac12\rho v_1^2"),
-                   ("plus", "+"), ("g2", r"\rho gh_2"), gravity_sign, ("g1", r"\rho gh_1"), size=48, width=None)
-        rows = [(["eq"], 0, -.85, 1), (["plus", "g2"], 2.12, -2.60, 3.65)]
+                   ("plus", "+"), ("g2", r"\rho gh_2"), gravity_sign, ("g1", r"\rho gh_1"), size=52, width=None)
+        rows = [(["eq"], 0, -.55, 1), (["plus", "g2"], 2.12, -2.60, 3.65)]
         if stage == 0:
-            rows += [(["P1", "pm", "P2"], -2.12, .55, 3.65), (["k2"], 2.12, -.55, 3.65)]
+            rows += [(["P1", "pm", "P2"], -2.12, .75, 3.65), (["k2"], 2.12, -.25, 3.65)]
         else:
-            rows += [(["P1"], -2.12, .55, 3.65), (["P2"], 2.12, .55, 3.65), (["rpk", "k2"], 2.12, -.55, 3.65)]
-        rows += [([kinetic_sign[0], "k1"], -2.12 if stage >= 2 else 2.12, -.85 if stage >= 2 else -1.62, 3.65),
-                 ([gravity_sign[0], "g1"], -2.12 if stage >= 3 else 2.12, -2.25 if stage >= 3 else -3.55, 3.65)]
+            rows += [(["P1"], -2.12, .75, 3.65), (["P2"], 2.12, .75, 3.65), (["rpk", "k2"], 2.12, -.25, 3.65)]
+        rows += [([kinetic_sign[0], "k1"], -2.12 if stage >= 2 else 2.12, -.55 if stage >= 2 else -1.50, 3.65),
+                 ([gravity_sign[0], "g1"], -2.12 if stage >= 3 else 2.12, -1.85 if stage >= 3 else -3.55, 3.65)]
         return result.rows(rows)
 
     def general(self, constant=r"\text{constante}"):
         return f(("P", "P"), ("pk", "+"), ("k", r"\frac12\rho v^2"), ("pg", "+"), ("g", r"\rho gh"),
-                 ("eq", "="), ("constant", constant), size=55)
+                 ("eq", "="), ("constant", constant), size=60, y=-.8)
 
     def general_columns(self):
-        return self.general("C").rows([(["P"], -2.12, .55, 3.65), (["pk", "k"], -2.12, -.85, 3.65),
-                                       (["pg", "g"], -2.12, -2.25, 3.65), (["eq"], 0, -.85, 1),
-                                       (["constant"], 2.12, -.85, 3.65)])
+        return self.general("C").rows([(["P"], -2.12, .75, 3.65), (["pk", "k"], -2.12, -.55, 3.65),
+                                       (["pg", "g"], -2.12, -1.85, 3.65), (["eq"], 0, -.55, 1),
+                                       (["constant"], 2.12, -.55, 3.65)])

@@ -1,0 +1,48 @@
+{
+  "video": "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0018_bernoulli\\renders\\vid_0018_bernoulli_final_legendado.mp4",
+  "resolucao": [
+    1080,
+    1920
+  ],
+  "fps": 30.0,
+  "duracao_s": 168.8,
+  "quadros_decodificados": 5064,
+  "formato_pixel": "yuv420p",
+  "cues_srt": 66,
+  "palavras": 447,
+  "amostras": 120,
+  "correlacao_envoltoria_audio": 0.9999161652638685,
+  "audio_sha256": "ef4e1c54d97f386150557902099e0225da6aa822e7c9169f8789d647ebc90573",
+  "priming_aac_s": 0.021333333333333333,
+  "voz_velocidade": 1.0,
+  "ocupacao_faixa_legenda_base": 0.0,
+  "metodo_tempos": "pausas do WAV + pesos silabicos; sem ASR",
+  "validacao_master": {
+    "arquivos": [
+      {
+        "arquivo": "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0018_bernoulli\\media_final\\videos\\cena_final\\1920p30\\BernoulliFinal.mp4",
+        "quadros": 5064,
+        "codec": "h264",
+        "audio": "aac",
+        "pixel": "yuv444p"
+      },
+      {
+        "arquivo": "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0018_bernoulli\\renders\\vid_0018_bernoulli_final_master_limpo.mp4",
+        "quadros": 5064,
+        "codec": "h264",
+        "audio": "aac",
+        "pixel": "yuv420p"
+      },
+      {
+        "arquivo": "videos\\vid_0018_bernoulli\\renders\\vid_0018_bernoulli_final_legendado.mp4",
+        "quadros": 5064,
+        "codec": "h264",
+        "audio": "aac",
+        "pixel": "yuv420p"
+      }
+    ],
+    "pacotes_aac_sha256": "ea5d1552fdbb62dfa11ef42c87a6f0e091f3fab31bf8e951d4e32d529023af49",
+    "aac_identico_nativo_master_legendado": true,
+    "master_decode_integral": true
+  }
+}

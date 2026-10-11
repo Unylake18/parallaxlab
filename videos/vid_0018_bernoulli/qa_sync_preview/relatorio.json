@@ -1,0 +1,318 @@
+{
+  "video": "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0018_bernoulli\\media_sync_preview\\videos\\cena_final\\960p15\\preview_sincronizado.mp4",
+  "resolucao": [
+    540,
+    960
+  ],
+  "fps": 15.0,
+  "duracao_s": 168.79641927083333,
+  "quadros_decodificados": 2532,
+  "formato_pixel": "yuv420p",
+  "cues_srt": 66,
+  "palavras": 447,
+  "amostras": 120,
+  "correlacao_envoltoria_audio": 0.9999161652638685,
+  "audio_sha256": "ef4e1c54d97f386150557902099e0225da6aa822e7c9169f8789d647ebc90573",
+  "priming_aac_s": 0.021333333333333333,
+  "voz_velocidade": 1.0,
+  "cores": {
+    "pressão": "#35D9FF",
+    "Pressão": "#35D9FF",
+    "PRESSÃO": "#35D9FF",
+    "pressões": "#35D9FF",
+    "Pressões": "#35D9FF",
+    "PRESSÕES": "#35D9FF",
+    "força": "#35D9FF",
+    "Força": "#35D9FF",
+    "FORÇA": "#35D9FF",
+    "forças": "#35D9FF",
+    "Forças": "#35D9FF",
+    "FORÇAS": "#35D9FF",
+    "trabalho": "#35D9FF",
+    "Trabalho": "#35D9FF",
+    "TRABALHO": "#35D9FF",
+    "trabalho líquido": "#35D9FF",
+    "Trabalho líquido": "#35D9FF",
+    "TRABALHO LÍQUIDO": "#35D9FF",
+    "velocidade": "#745CFF",
+    "Velocidade": "#745CFF",
+    "VELOCIDADE": "#745CFF",
+    "velocidades": "#745CFF",
+    "Velocidades": "#745CFF",
+    "VELOCIDADES": "#745CFF",
+    "energia cinética": "#745CFF",
+    "Energia cinética": "#745CFF",
+    "ENERGIA CINÉTICA": "#745CFF",
+    "cinética": "#745CFF",
+    "Cinética": "#745CFF",
+    "CINÉTICA": "#745CFF",
+    "parcela cinética": "#745CFF",
+    "Parcela cinética": "#745CFF",
+    "PARCELA CINÉTICA": "#745CFF",
+    "altura": "#EA63FF",
+    "Altura": "#EA63FF",
+    "ALTURA": "#EA63FF",
+    "alturas": "#EA63FF",
+    "Alturas": "#EA63FF",
+    "ALTURAS": "#EA63FF",
+    "energia potencial gravitacional": "#EA63FF",
+    "Energia potencial gravitacional": "#EA63FF",
+    "ENERGIA POTENCIAL GRAVITACIONAL": "#EA63FF",
+    "potencial gravitacional": "#EA63FF",
+    "Potencial gravitacional": "#EA63FF",
+    "POTENCIAL GRAVITACIONAL": "#EA63FF",
+    "gravitacional": "#EA63FF",
+    "Gravitacional": "#EA63FF",
+    "GRAVITACIONAL": "#EA63FF",
+    "área": "#267BFF",
+    "Área": "#267BFF",
+    "ÁREA": "#267BFF",
+    "áreas": "#267BFF",
+    "Áreas": "#267BFF",
+    "ÁREAS": "#267BFF"
+  },
+  "ocupacao_faixa_legenda_base": 0.0,
+  "metodo_tempos": "pausas do WAV + pesos silabicos; sem ASR",
+  "pontos_visuais": [
+    {
+      "tipo": "fase",
+      "nome": "Um mesmo volume de fluido",
+      "cue": 6,
+      "alvo_s": 8.5
+    },
+    {
+      "tipo": "fase",
+      "nome": "A pressão empurra o fluido",
+      "cue": 16,
+      "alvo_s": 24.599999999999998
+    },
+    {
+      "tipo": "estado",
+      "nome": "forca_entrada",
+      "cue": 22,
+      "alvo_s": 27.92
+    },
+    {
+      "tipo": "estado",
+      "nome": "avanco_entrada",
+      "cue": 28,
+      "alvo_s": 32.03
+    },
+    {
+      "tipo": "estado",
+      "nome": "volume_varrido",
+      "cue": 35,
+      "alvo_s": 37.11
+    },
+    {
+      "tipo": "estado",
+      "nome": "trabalho_entrada",
+      "cue": 37,
+      "alvo_s": 40.01
+    },
+    {
+      "tipo": "fase",
+      "nome": "Da entrada à saída",
+      "cue": 41,
+      "alvo_s": 41.69
+    },
+    {
+      "tipo": "fase",
+      "nome": "Na saída, a pressão resiste",
+      "cue": 45,
+      "alvo_s": 43.69
+    },
+    {
+      "tipo": "estado",
+      "nome": "saida_sinal_negativo",
+      "cue": 49,
+      "alvo_s": 49.60999999999999
+    },
+    {
+      "tipo": "estado",
+      "nome": "trabalho_saida",
+      "cue": 52,
+      "alvo_s": 51.71
+    },
+    {
+      "tipo": "fase",
+      "nome": "As duas pressões fazem trabalho",
+      "cue": 57,
+      "alvo_s": 52.71
+    },
+    {
+      "tipo": "estado",
+      "nome": "trabalho_liquido",
+      "cue": 66,
+      "alvo_s": 57.51
+    },
+    {
+      "tipo": "fase",
+      "nome": "O trabalho muda a energia mecânica",
+      "cue": 69,
+      "alvo_s": 59.309999999999995
+    },
+    {
+      "tipo": "estado",
+      "nome": "massa_volume",
+      "cue": 74,
+      "alvo_s": 64.74
+    },
+    {
+      "tipo": "estado",
+      "nome": "energias_dos_estados",
+      "cue": 80,
+      "alvo_s": 67.31
+    },
+    {
+      "tipo": "estado",
+      "nome": "variacao_cinetica",
+      "cue": 85,
+      "alvo_s": 69.81
+    },
+    {
+      "tipo": "estado",
+      "nome": "variacao_gravitacional",
+      "cue": 93,
+      "alvo_s": 74.12
+    },
+    {
+      "tipo": "fase",
+      "nome": "Um balanço de energia",
+      "cue": 97,
+      "alvo_s": 74.82000000000001
+    },
+    {
+      "tipo": "estado",
+      "nome": "balanco_simbolico",
+      "cue": 102,
+      "alvo_s": 76.62
+    },
+    {
+      "tipo": "estado",
+      "nome": "balanco_completo",
+      "cue": 104,
+      "alvo_s": 81.65
+    },
+    {
+      "tipo": "fase",
+      "nome": "Um balanço por unidade de volume",
+      "cue": 105,
+      "alvo_s": 83.65
+    },
+    {
+      "tipo": "estado",
+      "nome": "cancelamento_volume",
+      "cue": 107,
+      "alvo_s": 86.77000000000001
+    },
+    {
+      "tipo": "estado",
+      "nome": "balanco_por_volume",
+      "cue": 110,
+      "alvo_s": 90.35000000000001
+    },
+    {
+      "tipo": "estado",
+      "nome": "diferencas_abertas",
+      "cue": 114,
+      "alvo_s": 91.35000000000001
+    },
+    {
+      "tipo": "estado",
+      "nome": "agrupamento_por_estado",
+      "cue": 123,
+      "alvo_s": 94.53
+    },
+    {
+      "tipo": "fase",
+      "nome": "A mesma combinação ao longo da linha de corrente",
+      "cue": 124,
+      "alvo_s": 94.93
+    },
+    {
+      "tipo": "estado",
+      "nome": "bernoulli",
+      "cue": 130,
+      "alvo_s": 97.33
+    },
+    {
+      "tipo": "fase",
+      "nome": "Três termos, uma unidade",
+      "cue": 131,
+      "alvo_s": 97.63000000000001
+    },
+    {
+      "tipo": "estado",
+      "nome": "significado_pressao",
+      "cue": 133,
+      "alvo_s": 98.13000000000001
+    },
+    {
+      "tipo": "estado",
+      "nome": "significado_cinetica",
+      "cue": 135,
+      "alvo_s": 100.03
+    },
+    {
+      "tipo": "estado",
+      "nome": "significado_gravitacional",
+      "cue": 137,
+      "alvo_s": 102.33
+    },
+    {
+      "tipo": "estado",
+      "nome": "unidades",
+      "cue": 139,
+      "alvo_s": 108.49000000000001
+    },
+    {
+      "tipo": "extra",
+      "nome": "pressao_apos_unidades",
+      "cue": 140,
+      "alvo_s": 113.75
+    },
+    {
+      "tipo": "fase",
+      "nome": "Duas leis no estreitamento",
+      "cue": 143,
+      "alvo_s": 118.99000000000001
+    },
+    {
+      "tipo": "estado",
+      "nome": "continuidade_2d",
+      "cue": 149,
+      "alvo_s": 125.31
+    },
+    {
+      "tipo": "morf",
+      "nome": "alturas_iguais",
+      "cue": 154,
+      "alvo_s": 138.78000000000003
+    },
+    {
+      "tipo": "estado",
+      "nome": "bernoulli_estreitamento",
+      "cue": 158,
+      "alvo_s": 147.54999999999998
+    },
+    {
+      "tipo": "fase",
+      "nome": "Quando Bernoulli vale?",
+      "cue": 159,
+      "alvo_s": 152.34
+    },
+    {
+      "tipo": "estado",
+      "nome": "hipoteses_finais",
+      "cue": 163,
+      "alvo_s": 155.12
+    },
+    {
+      "tipo": "estado",
+      "nome": "cta_final",
+      "cue": 165,
+      "alvo_s": 167.12
+    }
+  ]
+}

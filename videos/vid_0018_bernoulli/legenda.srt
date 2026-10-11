@@ -1,0 +1,329 @@
+1
+00:00:00,491 --> 00:00:04,341
+A equação de Bernoulli junta
+pressão, velocidade e altura.
+
+2
+00:00:04,541 --> 00:00:06,007
+Mas por que essas
+três grandezas
+
+3
+00:00:06,027 --> 00:00:08,361
+aparecem somadas
+na mesma fórmula?
+
+4
+00:00:08,521 --> 00:00:10,542
+Vamos acompanhar o
+mesmo pequeno volume
+
+5
+00:00:10,562 --> 00:00:12,831
+de fluido durante a
+passagem pelo tubo.
+
+6
+00:00:13,021 --> 00:00:14,266
+Na entrada,
+esse volume
+
+7
+00:00:14,286 --> 00:00:16,651
+ocupa uma área e
+avança uma distância.
+
+8
+00:00:16,941 --> 00:00:20,281
+Na saída, área e deslocamento
+podem ser diferentes.
+
+9
+00:00:20,441 --> 00:00:22,265
+Mas, para um fluido
+incompressível,
+
+10
+00:00:22,285 --> 00:00:24,391
+o volume transportado
+é o mesmo.
+
+11
+00:00:24,621 --> 00:00:26,319
+Na entrada, a
+pressão atua sobre
+
+12
+00:00:26,339 --> 00:00:28,591
+a área da seção e
+produz uma força.
+
+13
+00:00:28,841 --> 00:00:31,931
+Enquanto o fluido avança,
+essa força realiza trabalho.
+
+14
+00:00:32,051 --> 00:00:35,024
+E aqui aparece a conexão
+importante: área vezes
+
+15
+00:00:35,044 --> 00:00:38,411
+deslocamento é o volume
+varrido pela face do fluido.
+
+16
+00:00:38,531 --> 00:00:40,871
+Por isso, o trabalho
+da pressão de entrada
+
+17
+00:00:40,891 --> 00:00:43,561
+pode ser escrito como
+pressão vezes volume.
+
+18
+00:00:43,711 --> 00:00:46,239
+Na saída acontece algo
+parecido, mas a pressão
+
+19
+00:00:46,259 --> 00:00:49,051
+empurra contra o sentido
+em que o fluido avança.
+
+20
+00:00:49,331 --> 00:00:52,481
+Por isso, o trabalho da saída
+entra com sinal negativo.
+
+21
+00:00:52,731 --> 00:00:53,974
+Somando as
+contribuições,
+
+22
+00:00:53,994 --> 00:00:56,435
+o trabalho líquido depende
+da diferença entre
+
+23
+00:00:56,455 --> 00:00:59,061
+as pressões, multiplicada
+pelo mesmo volume.
+
+24
+00:00:59,331 --> 00:01:02,321
+Esse trabalho altera a
+energia mecânica do fluido.
+
+25
+00:01:02,461 --> 00:01:03,561
+A massa
+desse volume
+
+26
+00:01:03,581 --> 00:01:06,061
+é a densidade
+multiplicada pelo volume.
+
+27
+00:01:06,331 --> 00:01:08,536
+Se a velocidade muda
+entre as duas seções,
+
+28
+00:01:08,556 --> 00:01:10,231
+muda a energia
+cinética.
+
+29
+00:01:10,331 --> 00:01:12,281
+E, se o fluido
+muda de altura,
+
+30
+00:01:12,301 --> 00:01:14,681
+muda a energia
+potencial gravitacional.
+
+31
+00:01:14,841 --> 00:01:17,346
+O balanço fica assim:
+trabalho líquido
+
+32
+00:01:17,366 --> 00:01:20,261
+das pressões igual à
+variação da energia cinética
+
+33
+00:01:20,281 --> 00:01:23,511
+mais a variação da energia
+potencial gravitacional.
+
+34
+00:01:23,671 --> 00:01:26,111
+Agora vem o passo que
+dá forma à equação.
+
+35
+00:01:26,291 --> 00:01:28,621
+O mesmo volume aparece
+em todos os termos.
+
+36
+00:01:28,971 --> 00:01:30,921
+Dividindo o balanço
+por esse volume,
+
+37
+00:01:30,941 --> 00:01:33,501
+obtemos uma relação
+por unidade de volume.
+
+38
+00:01:33,751 --> 00:01:36,606
+Depois de reorganizar,
+surge Bernoulli: pressão,
+
+39
+00:01:36,626 --> 00:01:39,898
+mais energia cinética por
+unidade de volume, mais
+
+40
+00:01:39,918 --> 00:01:43,701
+energia potencial gravitacional
+por unidade de volume.
+
+41
+00:01:43,881 --> 00:01:45,551
+Ao longo de uma
+linha de corrente,
+
+42
+00:01:45,571 --> 00:01:47,471
+essa combinação
+permanece constante.
+
+43
+00:01:47,711 --> 00:01:50,039
+E os termos podem ser
+somados porque todos têm
+
+44
+00:01:50,059 --> 00:01:53,521
+unidade de energia por volume,
+joules por metro cúbico.
+
+45
+00:01:53,771 --> 00:01:56,273
+A pressão, nesse balanço,
+representa o trabalho
+
+46
+00:01:56,293 --> 00:01:58,821
+das forças de pressão
+por unidade de volume.
+
+47
+00:01:59,011 --> 00:02:01,971
+Agora olha um caso comum:
+o tubo fica mais estreito.
+
+48
+00:02:02,261 --> 00:02:03,901
+Primeiro entra
+a continuidade.
+
+49
+00:02:04,131 --> 00:02:06,146
+Para manter o mesmo
+volume atravessando
+
+50
+00:02:06,166 --> 00:02:08,084
+o tubo a cada
+intervalo de tempo,
+
+51
+00:02:08,104 --> 00:02:10,731
+uma área menor exige
+uma velocidade maior.
+
+52
+00:02:10,841 --> 00:02:13,601
+É a continuidade que
+explica esse aumento.
+
+53
+00:02:13,621 --> 00:02:14,811
+Só depois
+entra Bernoulli.
+
+54
+00:02:15,001 --> 00:02:17,018
+Se os dois pontos
+estiverem praticamente
+
+55
+00:02:17,038 --> 00:02:19,981
+na mesma altura, o termo
+gravitacional não muda.
+
+56
+00:02:20,131 --> 00:02:23,646
+Então, se a parcela cinética
+aumenta, a parcela associada
+
+57
+00:02:23,666 --> 00:02:26,761
+à pressão precisa diminuir
+para manter o mesmo total.
+
+58
+00:02:26,871 --> 00:02:29,254
+Por isso, nesse caso
+idealizado, maior
+
+59
+00:02:29,274 --> 00:02:32,201
+velocidade vem acompanhada
+de menor pressão.
+
+60
+00:02:32,361 --> 00:02:34,371
+Mas isso não é uma
+regra universal.
+
+61
+00:02:34,441 --> 00:02:36,380
+Aqui assumimos
+fluido incompressível,
+
+62
+00:02:36,400 --> 00:02:38,598
+sem viscosidade,
+escoamento estacionário
+
+63
+00:02:38,618 --> 00:02:41,501
+e análise ao longo de
+uma linha de corrente.
+
+64
+00:02:41,781 --> 00:02:43,535
+No fundo, Bernoulli
+é conservação
+
+65
+00:02:43,555 --> 00:02:46,281
+de energia escrita por
+unidade de volume.
+
+66
+00:02:46,541 --> 00:02:47,791
+Siga o
+Parallax Lab.
