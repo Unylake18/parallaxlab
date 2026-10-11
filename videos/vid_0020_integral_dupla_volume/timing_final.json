@@ -1,0 +1,2416 @@
+{
+  "fps": 30,
+  "lead_frames": 2,
+  "tail_frames": 13,
+  "total_frames": 5154,
+  "anchors": [
+    {
+      "name": "abertura_eixos",
+      "boundary": 0,
+      "frame": 2
+    },
+    {
+      "name": "superficie",
+      "boundary": 1,
+      "frame": 57
+    },
+    {
+      "name": "regiao_particao",
+      "boundary": 4,
+      "frame": 229
+    },
+    {
+      "name": "celula_selecionada",
+      "boundary": 7,
+      "frame": 332
+    },
+    {
+      "name": "delta_A",
+      "boundary": 13,
+      "frame": 441
+    },
+    {
+      "name": "vertical_determina_altura",
+      "boundary": 15,
+      "frame": 527
+    },
+    {
+      "name": "extrusao_celula",
+      "boundary": 20,
+      "frame": 706
+    },
+    {
+      "name": "coluna_crescida",
+      "boundary": 21,
+      "frame": 772
+    },
+    {
+      "name": "formula_nasce_da_geometria",
+      "boundary": 23,
+      "frame": 820
+    },
+    {
+      "name": "geracao_16_colunas",
+      "boundary": 26,
+      "frame": 1067
+    },
+    {
+      "name": "soma_colunas",
+      "boundary": 30,
+      "frame": 1212
+    },
+    {
+      "name": "subdivisao_4_para_8",
+      "boundary": 34,
+      "frame": 1338
+    },
+    {
+      "name": "malha_8",
+      "boundary": 36,
+      "frame": 1377
+    },
+    {
+      "name": "limite_explicito",
+      "boundary": 44,
+      "frame": 1539
+    },
+    {
+      "name": "soma_para_integral",
+      "boundary": 46,
+      "frame": 1672
+    },
+    {
+      "name": "secao_x_fixo",
+      "boundary": 48,
+      "frame": 1712
+    },
+    {
+      "name": "secao_percorre_x",
+      "boundary": 57,
+      "frame": 2045
+    },
+    {
+      "name": "integral_das_secoes",
+      "boundary": 63,
+      "frame": 2387
+    },
+    {
+      "name": "integral_iterada",
+      "boundary": 66,
+      "frame": 2444
+    },
+    {
+      "name": "integral_iterada_explicita",
+      "boundary": 69,
+      "frame": 2563
+    },
+    {
+      "name": "integral_y_isolada",
+      "boundary": 73,
+      "frame": 2696
+    },
+    {
+      "name": "separacao_inicio",
+      "boundary": 74,
+      "frame": 3063
+    },
+    {
+      "name": "separacao_integral_y",
+      "boundary": 75,
+      "frame": 3106
+    },
+    {
+      "name": "regra_potencia_y",
+      "boundary": 81,
+      "frame": 3292
+    },
+    {
+      "name": "primitiva_y_montada",
+      "boundary": 83,
+      "frame": 3314
+    },
+    {
+      "name": "primitiva_interna",
+      "boundary": 85,
+      "frame": 3369
+    },
+    {
+      "name": "subtracao_limites_y",
+      "boundary": 95,
+      "frame": 3533
+    },
+    {
+      "name": "area_calculada",
+      "boundary": 101,
+      "frame": 3598
+    },
+    {
+      "name": "payoff_area_secao",
+      "boundary": 105,
+      "frame": 3648
+    },
+    {
+      "name": "primitiva_externa",
+      "boundary": 107,
+      "frame": 3716
+    },
+    {
+      "name": "integral_x_de_area",
+      "boundary": 109,
+      "frame": 3800
+    },
+    {
+      "name": "substituicao_area_integral_x",
+      "boundary": 111,
+      "frame": 3865
+    },
+    {
+      "name": "separacao_integral_x",
+      "boundary": 113,
+      "frame": 3953
+    },
+    {
+      "name": "regra_potencia_x",
+      "boundary": 117,
+      "frame": 4183
+    },
+    {
+      "name": "primitiva_x_montada",
+      "boundary": 119,
+      "frame": 4226
+    },
+    {
+      "name": "substituicao_x_mais_1",
+      "boundary": 124,
+      "frame": 4388
+    },
+    {
+      "name": "valores_limites_x",
+      "boundary": 129,
+      "frame": 4468
+    },
+    {
+      "name": "subtracao_limites_x",
+      "boundary": 131,
+      "frame": 4580
+    },
+    {
+      "name": "resultado_exato",
+      "boundary": 135,
+      "frame": 4694
+    },
+    {
+      "name": "resultado_decimal",
+      "boundary": 137,
+      "frame": 4733
+    },
+    {
+      "name": "payoff",
+      "boundary": 138,
+      "frame": 4849
+    },
+    {
+      "name": "mensagem_final",
+      "boundary": 142,
+      "frame": 5082
+    },
+    {
+      "name": "fim",
+      "boundary": 144,
+      "frame": 5141
+    }
+  ],
+  "operations": [
+    {
+      "index": 0,
+      "start": 0.0,
+      "end": 2.4,
+      "duration": 2.4,
+      "pause": false,
+      "types": [
+        "ShowPassingFlash",
+        "Indicate"
+      ],
+      "frames": 55,
+      "hold_after": 0
+    },
+    {
+      "index": 1,
+      "start": 2.4,
+      "end": 3.3,
+      "duration": 0.8999999999999999,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 103,
+      "hold_after": 0
+    },
+    {
+      "index": 2,
+      "start": 3.3,
+      "end": 4.8,
+      "duration": 1.5,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "Write",
+        "GrowArrow"
+      ],
+      "frames": 45,
+      "hold_after": 0
+    },
+    {
+      "index": 3,
+      "start": 4.8,
+      "end": 5.6,
+      "duration": 0.7999999999999998,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 24,
+      "hold_after": 0
+    },
+    {
+      "index": 4,
+      "start": 5.6,
+      "end": 7.3999999999999995,
+      "duration": 1.7999999999999998,
+      "pause": false,
+      "types": [
+        "Write",
+        "LaggedStart"
+      ],
+      "frames": 54,
+      "hold_after": 0
+    },
+    {
+      "index": 5,
+      "start": 7.3999999999999995,
+      "end": 7.949999999999999,
+      "duration": 0.5499999999999998,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 16,
+      "hold_after": 0
+    },
+    {
+      "index": 6,
+      "start": 7.949999999999999,
+      "end": 8.95,
+      "duration": 1.0,
+      "pause": false,
+      "types": [
+        "DrawBorderThenFill"
+      ],
+      "frames": 30,
+      "hold_after": 3
+    },
+    {
+      "index": 7,
+      "start": 8.95,
+      "end": 9.5,
+      "duration": 0.5500000000000007,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeIn"
+      ],
+      "frames": 9,
+      "hold_after": 0
+    },
+    {
+      "index": 8,
+      "start": 9.5,
+      "end": 10.8,
+      "duration": 1.3000000000000007,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "Create",
+        "FadeOut"
+      ],
+      "frames": 20,
+      "hold_after": 0
+    },
+    {
+      "index": 9,
+      "start": 10.8,
+      "end": 11.5,
+      "duration": 0.6999999999999993,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 11,
+      "hold_after": 0
+    },
+    {
+      "index": 10,
+      "start": 11.5,
+      "end": 12.8,
+      "duration": 1.3000000000000007,
+      "pause": false,
+      "types": [
+        "Create",
+        "Create",
+        "Write",
+        "Write"
+      ],
+      "frames": 20,
+      "hold_after": 0
+    },
+    {
+      "index": 11,
+      "start": 12.8,
+      "end": 14.4,
+      "duration": 1.5999999999999996,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "TransformFromCopy"
+      ],
+      "frames": 25,
+      "hold_after": 0
+    },
+    {
+      "index": 12,
+      "start": 14.4,
+      "end": 15.9,
+      "duration": 1.5,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "Write"
+      ],
+      "frames": 24,
+      "hold_after": 0
+    },
+    {
+      "index": 13,
+      "start": 15.9,
+      "end": 16.6,
+      "duration": 0.7000000000000011,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 44,
+      "hold_after": 0
+    },
+    {
+      "index": 14,
+      "start": 16.6,
+      "end": 18.0,
+      "duration": 1.3999999999999986,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "GrowArrow",
+        "FadeOut"
+      ],
+      "frames": 42,
+      "hold_after": 0
+    },
+    {
+      "index": 15,
+      "start": 18.0,
+      "end": 18.55,
+      "duration": 0.5500000000000007,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeIn"
+      ],
+      "frames": 15,
+      "hold_after": 0
+    },
+    {
+      "index": 16,
+      "start": 18.55,
+      "end": 19.85,
+      "duration": 1.3000000000000007,
+      "pause": false,
+      "types": [
+        "FadeIn",
+        "Write",
+        "GrowArrow"
+      ],
+      "frames": 34,
+      "hold_after": 0
+    },
+    {
+      "index": 17,
+      "start": 19.85,
+      "end": 22.25,
+      "duration": 2.3999999999999986,
+      "pause": false,
+      "types": [
+        "Create",
+        "_AnimationBuilder"
+      ],
+      "frames": 62,
+      "hold_after": 0
+    },
+    {
+      "index": 18,
+      "start": 22.25,
+      "end": 23.35,
+      "duration": 1.1000000000000014,
+      "pause": false,
+      "types": [
+        "Indicate",
+        "Indicate"
+      ],
+      "frames": 29,
+      "hold_after": 0
+    },
+    {
+      "index": 19,
+      "start": 23.35,
+      "end": 24.85,
+      "duration": 1.5,
+      "pause": false,
+      "types": [
+        "GrowArrow",
+        "Create",
+        "TransformFromCopy",
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 39,
+      "hold_after": 0
+    },
+    {
+      "index": 20,
+      "start": 24.85,
+      "end": 27.650000000000002,
+      "duration": 2.8000000000000007,
+      "pause": false,
+      "types": [
+        "Transform"
+      ],
+      "frames": 66,
+      "hold_after": 0
+    },
+    {
+      "index": 21,
+      "start": 27.650000000000002,
+      "end": 29.05,
+      "duration": 1.3999999999999986,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "Write"
+      ],
+      "frames": 21,
+      "hold_after": 0
+    },
+    {
+      "index": 22,
+      "start": 29.05,
+      "end": 30.85,
+      "duration": 1.8000000000000007,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "TransformFromCopy"
+      ],
+      "frames": 27,
+      "hold_after": 0
+    },
+    {
+      "index": 23,
+      "start": 30.85,
+      "end": 31.950000000000003,
+      "duration": 1.1000000000000014,
+      "pause": false,
+      "types": [
+        "Indicate",
+        "Indicate"
+      ],
+      "frames": 33,
+      "hold_after": 0
+    },
+    {
+      "index": 24,
+      "start": 31.950000000000003,
+      "end": 33.050000000000004,
+      "duration": 1.1000000000000014,
+      "pause": false,
+      "types": [
+        "Indicate",
+        "Indicate"
+      ],
+      "frames": 33,
+      "hold_after": 0
+    },
+    {
+      "index": 25,
+      "start": 33.050000000000004,
+      "end": 33.75000000000001,
+      "duration": 0.7000000000000028,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 181,
+      "hold_after": 0
+    },
+    {
+      "index": 26,
+      "start": 33.75000000000001,
+      "end": 34.300000000000004,
+      "duration": 0.5499999999999972,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeIn"
+      ],
+      "frames": 10,
+      "hold_after": 0
+    },
+    {
+      "index": 27,
+      "start": 34.300000000000004,
+      "end": 35.1,
+      "duration": 0.7999999999999972,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 16,
+      "hold_after": 0
+    },
+    {
+      "index": 28,
+      "start": 35.1,
+      "end": 40.1,
+      "duration": 5.0,
+      "pause": false,
+      "types": [
+        "LaggedStart"
+      ],
+      "frames": 96,
+      "hold_after": 0
+    },
+    {
+      "index": 29,
+      "start": 40.1,
+      "end": 41.300000000000004,
+      "duration": 1.2000000000000028,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeIn"
+      ],
+      "frames": 23,
+      "hold_after": 0
+    },
+    {
+      "index": 30,
+      "start": 41.300000000000004,
+      "end": 42.800000000000004,
+      "duration": 1.5,
+      "pause": false,
+      "types": [
+        "Transform"
+      ],
+      "frames": 44,
+      "hold_after": 0
+    },
+    {
+      "index": 31,
+      "start": 42.800000000000004,
+      "end": 44.300000000000004,
+      "duration": 1.5,
+      "pause": false,
+      "types": [
+        "FadeIn",
+        "Write",
+        "GrowArrow"
+      ],
+      "frames": 44,
+      "hold_after": 0
+    },
+    {
+      "index": 32,
+      "start": 44.300000000000004,
+      "end": 44.85,
+      "duration": 0.5499999999999972,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeIn"
+      ],
+      "frames": 15,
+      "hold_after": 0
+    },
+    {
+      "index": 33,
+      "start": 44.85,
+      "end": 45.65,
+      "duration": 0.7999999999999972,
+      "pause": false,
+      "types": [
+        "Write",
+        "Write"
+      ],
+      "frames": 23,
+      "hold_after": 0
+    },
+    {
+      "index": 34,
+      "start": 45.65,
+      "end": 46.25,
+      "duration": 0.6000000000000014,
+      "pause": false,
+      "types": [
+        "Create",
+        "Create"
+      ],
+      "frames": 13,
+      "hold_after": 0
+    },
+    {
+      "index": 35,
+      "start": 46.25,
+      "end": 47.45,
+      "duration": 1.2000000000000028,
+      "pause": false,
+      "types": [
+        "Transform"
+      ],
+      "frames": 26,
+      "hold_after": 0
+    },
+    {
+      "index": 36,
+      "start": 47.45,
+      "end": 47.95,
+      "duration": 0.5,
+      "pause": false,
+      "types": [
+        "Create",
+        "Create"
+      ],
+      "frames": 15,
+      "hold_after": 0
+    },
+    {
+      "index": 37,
+      "start": 47.95,
+      "end": 49.050000000000004,
+      "duration": 1.1000000000000014,
+      "pause": false,
+      "types": [
+        "Transform"
+      ],
+      "frames": 33,
+      "hold_after": 0
+    },
+    {
+      "index": 38,
+      "start": 49.050000000000004,
+      "end": 49.45,
+      "duration": 0.3999999999999986,
+      "pause": false,
+      "types": [
+        "Create",
+        "Create"
+      ],
+      "frames": 12,
+      "hold_after": 0
+    },
+    {
+      "index": 39,
+      "start": 49.45,
+      "end": 50.45,
+      "duration": 1.0,
+      "pause": false,
+      "types": [
+        "Transform"
+      ],
+      "frames": 30,
+      "hold_after": 0
+    },
+    {
+      "index": 40,
+      "start": 50.45,
+      "end": 50.7,
+      "duration": 0.25,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 8,
+      "hold_after": 0
+    },
+    {
+      "index": 41,
+      "start": 50.7,
+      "end": 51.25,
+      "duration": 0.5499999999999972,
+      "pause": false,
+      "types": [
+        "FadeIn",
+        "FadeIn",
+        "FadeIn",
+        "FadeIn"
+      ],
+      "frames": 16,
+      "hold_after": 0
+    },
+    {
+      "index": 42,
+      "start": 51.25,
+      "end": 51.95,
+      "duration": 0.7000000000000028,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 27,
+      "hold_after": 0
+    },
+    {
+      "index": 43,
+      "start": 51.95,
+      "end": 52.650000000000006,
+      "duration": 0.7000000000000028,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeOut",
+        "Write"
+      ],
+      "frames": 21,
+      "hold_after": 0
+    },
+    {
+      "index": 44,
+      "start": 52.650000000000006,
+      "end": 53.050000000000004,
+      "duration": 0.3999999999999986,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 73,
+      "hold_after": 0
+    },
+    {
+      "index": 45,
+      "start": 53.050000000000004,
+      "end": 55.050000000000004,
+      "duration": 2.0,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 60,
+      "hold_after": 0
+    },
+    {
+      "index": 46,
+      "start": 55.050000000000004,
+      "end": 55.6,
+      "duration": 0.5499999999999972,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeIn"
+      ],
+      "frames": 16,
+      "hold_after": 0
+    },
+    {
+      "index": 47,
+      "start": 55.6,
+      "end": 56.2,
+      "duration": 0.6000000000000014,
+      "pause": false,
+      "types": [
+        "Indicate"
+      ],
+      "frames": 18,
+      "hold_after": 6
+    },
+    {
+      "index": 48,
+      "start": 56.2,
+      "end": 56.75,
+      "duration": 0.5499999999999972,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeIn"
+      ],
+      "frames": 15,
+      "hold_after": 0
+    },
+    {
+      "index": 49,
+      "start": 56.75,
+      "end": 58.15,
+      "duration": 1.3999999999999986,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeIn",
+        "FadeOut",
+        "_AnimationBuilder",
+        "Write",
+        "Create"
+      ],
+      "frames": 39,
+      "hold_after": 0
+    },
+    {
+      "index": 50,
+      "start": 58.15,
+      "end": 59.75,
+      "duration": 1.6000000000000014,
+      "pause": false,
+      "types": [
+        "Create",
+        "Create"
+      ],
+      "frames": 45,
+      "hold_after": 0
+    },
+    {
+      "index": 51,
+      "start": 59.75,
+      "end": 60.3,
+      "duration": 0.5499999999999972,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeIn"
+      ],
+      "frames": 15,
+      "hold_after": 0
+    },
+    {
+      "index": 52,
+      "start": 60.3,
+      "end": 63.3,
+      "duration": 3.0,
+      "pause": false,
+      "types": [
+        "Write",
+        "_AnimationBuilder"
+      ],
+      "frames": 84,
+      "hold_after": 0
+    },
+    {
+      "index": 53,
+      "start": 63.3,
+      "end": 63.8,
+      "duration": 0.5,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 14,
+      "hold_after": 0
+    },
+    {
+      "index": 54,
+      "start": 63.8,
+      "end": 65.39999999999999,
+      "duration": 1.5999999999999943,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "GrowArrow"
+      ],
+      "frames": 45,
+      "hold_after": 0
+    },
+    {
+      "index": 55,
+      "start": 65.39999999999999,
+      "end": 67.1,
+      "duration": 1.7000000000000028,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "Write"
+      ],
+      "frames": 48,
+      "hold_after": 0
+    },
+    {
+      "index": 56,
+      "start": 67.1,
+      "end": 68.1,
+      "duration": 1.0,
+      "pause": false,
+      "types": [
+        "Circumscribe"
+      ],
+      "frames": 28,
+      "hold_after": 0
+    },
+    {
+      "index": 57,
+      "start": 68.1,
+      "end": 69.39999999999999,
+      "duration": 1.2999999999999972,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 39,
+      "hold_after": 0
+    },
+    {
+      "index": 58,
+      "start": 69.39999999999999,
+      "end": 70.3,
+      "duration": 0.9000000000000057,
+      "pause": false,
+      "types": [
+        "_AnimationBuilder"
+      ],
+      "frames": 27,
+      "hold_after": 0
+    },
+    {
+      "index": 59,
+      "start": 70.3,
+      "end": 70.85,
+      "duration": 0.5499999999999972,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeIn"
+      ],
+      "frames": 16,
+      "hold_after": 0
+    },
+    {
+      "index": 60,
+      "start": 70.85,
+      "end": 71.85,
+      "duration": 1.0,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "Write"
+      ],
+      "frames": 30,
+      "hold_after": 0
+    },
+    {
+      "index": 61,
+      "start": 71.85,
+      "end": 75.44999999999999,
+      "duration": 3.5999999999999943,
+      "pause": false,
+      "types": [
+        "_AnimationBuilder"
+      ],
+      "frames": 108,
+      "hold_after": 0
+    },
+    {
+      "index": 62,
+      "start": 75.44999999999999,
+      "end": 76.44999999999999,
+      "duration": 1.0,
+      "pause": false,
+      "types": [
+        "Circumscribe"
+      ],
+      "frames": 30,
+      "hold_after": 92
+    },
+    {
+      "index": 63,
+      "start": 76.44999999999999,
+      "end": 76.99999999999999,
+      "duration": 0.5499999999999972,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeIn"
+      ],
+      "frames": 8,
+      "hold_after": 0
+    },
+    {
+      "index": 64,
+      "start": 76.99999999999999,
+      "end": 77.79999999999998,
+      "duration": 0.7999999999999972,
+      "pause": false,
+      "types": [
+        "Indicate"
+      ],
+      "frames": 12,
+      "hold_after": 0
+    },
+    {
+      "index": 65,
+      "start": 77.79999999999998,
+      "end": 80.29999999999998,
+      "duration": 2.5,
+      "pause": false,
+      "types": [
+        "ReplacementTransform",
+        "ReplacementTransform",
+        "ReplacementTransform",
+        "TransformFromCopy",
+        "FadeIn",
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 37,
+      "hold_after": 0
+    },
+    {
+      "index": 66,
+      "start": 80.29999999999998,
+      "end": 80.99999999999999,
+      "duration": 0.7000000000000028,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 21,
+      "hold_after": 0
+    },
+    {
+      "index": 67,
+      "start": 80.99999999999999,
+      "end": 81.54999999999998,
+      "duration": 0.5499999999999972,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeIn"
+      ],
+      "frames": 16,
+      "hold_after": 0
+    },
+    {
+      "index": 68,
+      "start": 81.54999999999998,
+      "end": 83.14999999999998,
+      "duration": 1.5999999999999943,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 37,
+      "hold_after": 45
+    },
+    {
+      "index": 69,
+      "start": 83.14999999999998,
+      "end": 83.64999999999998,
+      "duration": 0.5,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 36,
+      "hold_after": 0
+    },
+    {
+      "index": 70,
+      "start": 83.64999999999998,
+      "end": 84.64999999999998,
+      "duration": 1.0,
+      "pause": false,
+      "types": [
+        "_AnimationBuilder"
+      ],
+      "frames": 30,
+      "hold_after": 0
+    },
+    {
+      "index": 71,
+      "start": 84.64999999999998,
+      "end": 86.44999999999997,
+      "duration": 1.7999999999999972,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 37,
+      "hold_after": 0
+    },
+    {
+      "index": 72,
+      "start": 86.44999999999997,
+      "end": 87.44999999999997,
+      "duration": 1.0,
+      "pause": false,
+      "types": [
+        "FadeIn",
+        "FadeIn",
+        "Circumscribe"
+      ],
+      "frames": 30,
+      "hold_after": 0
+    },
+    {
+      "index": 73,
+      "start": 87.44999999999997,
+      "end": 88.14999999999998,
+      "duration": 0.7000000000000028,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 367,
+      "hold_after": 0
+    },
+    {
+      "index": 74,
+      "start": 88.14999999999998,
+      "end": 90.24999999999997,
+      "duration": 2.0999999999999943,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 37,
+      "hold_after": 6
+    },
+    {
+      "index": 75,
+      "start": 90.24999999999997,
+      "end": 90.84999999999997,
+      "duration": 0.5999999999999943,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 33,
+      "hold_after": 0
+    },
+    {
+      "index": 76,
+      "start": 90.84999999999997,
+      "end": 91.84999999999997,
+      "duration": 1.0,
+      "pause": false,
+      "types": [
+        "Write",
+        "TransformFromCopy"
+      ],
+      "frames": 30,
+      "hold_after": 0
+    },
+    {
+      "index": 77,
+      "start": 91.84999999999997,
+      "end": 93.14999999999996,
+      "duration": 1.2999999999999972,
+      "pause": false,
+      "types": [
+        "TransformFromCopy"
+      ],
+      "frames": 37,
+      "hold_after": 0
+    },
+    {
+      "index": 78,
+      "start": 93.14999999999996,
+      "end": 93.69999999999996,
+      "duration": 0.5499999999999972,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeIn"
+      ],
+      "frames": 16,
+      "hold_after": 0
+    },
+    {
+      "index": 79,
+      "start": 93.69999999999996,
+      "end": 94.79999999999995,
+      "duration": 1.0999999999999943,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "Write"
+      ],
+      "frames": 33,
+      "hold_after": 0
+    },
+    {
+      "index": 80,
+      "start": 94.79999999999995,
+      "end": 96.59999999999995,
+      "duration": 1.7999999999999972,
+      "pause": false,
+      "types": [
+        "TransformFromCopy"
+      ],
+      "frames": 37,
+      "hold_after": 0
+    },
+    {
+      "index": 81,
+      "start": 96.59999999999995,
+      "end": 97.39999999999995,
+      "duration": 0.7999999999999972,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 9,
+      "hold_after": 0
+    },
+    {
+      "index": 82,
+      "start": 97.39999999999995,
+      "end": 99.49999999999994,
+      "duration": 2.0999999999999943,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 13,
+      "hold_after": 0
+    },
+    {
+      "index": 83,
+      "start": 99.49999999999994,
+      "end": 100.19999999999995,
+      "duration": 0.7000000000000028,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 20,
+      "hold_after": 0
+    },
+    {
+      "index": 84,
+      "start": 100.19999999999995,
+      "end": 101.39999999999995,
+      "duration": 1.2000000000000028,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 35,
+      "hold_after": 0
+    },
+    {
+      "index": 85,
+      "start": 101.39999999999995,
+      "end": 101.94999999999995,
+      "duration": 0.5499999999999972,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeIn"
+      ],
+      "frames": 9,
+      "hold_after": 0
+    },
+    {
+      "index": 86,
+      "start": 101.94999999999995,
+      "end": 102.74999999999994,
+      "duration": 0.7999999999999972,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "Circumscribe"
+      ],
+      "frames": 14,
+      "hold_after": 0
+    },
+    {
+      "index": 87,
+      "start": 102.74999999999994,
+      "end": 104.54999999999994,
+      "duration": 1.7999999999999972,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 22,
+      "hold_after": 0
+    },
+    {
+      "index": 88,
+      "start": 104.54999999999994,
+      "end": 105.14999999999993,
+      "duration": 0.5999999999999943,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 11,
+      "hold_after": 0
+    },
+    {
+      "index": 89,
+      "start": 105.14999999999993,
+      "end": 106.94999999999993,
+      "duration": 1.7999999999999972,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 22,
+      "hold_after": 0
+    },
+    {
+      "index": 90,
+      "start": 106.94999999999993,
+      "end": 107.64999999999993,
+      "duration": 0.7000000000000028,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 12,
+      "hold_after": 0
+    },
+    {
+      "index": 91,
+      "start": 107.64999999999993,
+      "end": 108.84999999999994,
+      "duration": 1.2000000000000028,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 21,
+      "hold_after": 0
+    },
+    {
+      "index": 92,
+      "start": 108.84999999999994,
+      "end": 110.04999999999994,
+      "duration": 1.2000000000000028,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 21,
+      "hold_after": 0
+    },
+    {
+      "index": 93,
+      "start": 110.04999999999994,
+      "end": 110.59999999999994,
+      "duration": 0.5499999999999972,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeIn"
+      ],
+      "frames": 10,
+      "hold_after": 0
+    },
+    {
+      "index": 94,
+      "start": 110.59999999999994,
+      "end": 112.59999999999994,
+      "duration": 2.0,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "FadeIn",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 22,
+      "hold_after": 0
+    },
+    {
+      "index": 95,
+      "start": 112.59999999999994,
+      "end": 113.39999999999993,
+      "duration": 0.7999999999999972,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 9,
+      "hold_after": 0
+    },
+    {
+      "index": 96,
+      "start": 113.39999999999993,
+      "end": 115.19999999999993,
+      "duration": 1.7999999999999972,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 14,
+      "hold_after": 0
+    },
+    {
+      "index": 97,
+      "start": 115.19999999999993,
+      "end": 115.79999999999993,
+      "duration": 0.5999999999999943,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 7,
+      "hold_after": 0
+    },
+    {
+      "index": 98,
+      "start": 115.79999999999993,
+      "end": 117.39999999999992,
+      "duration": 1.5999999999999943,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 14,
+      "hold_after": 0
+    },
+    {
+      "index": 99,
+      "start": 117.39999999999992,
+      "end": 117.99999999999991,
+      "duration": 0.5999999999999943,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 7,
+      "hold_after": 0
+    },
+    {
+      "index": 100,
+      "start": 117.99999999999991,
+      "end": 119.59999999999991,
+      "duration": 1.5999999999999943,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 14,
+      "hold_after": 0
+    },
+    {
+      "index": 101,
+      "start": 119.59999999999991,
+      "end": 120.29999999999991,
+      "duration": 0.7000000000000028,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 11,
+      "hold_after": 0
+    },
+    {
+      "index": 102,
+      "start": 120.29999999999991,
+      "end": 120.69999999999992,
+      "duration": 0.4000000000000057,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 7,
+      "hold_after": 0
+    },
+    {
+      "index": 103,
+      "start": 120.69999999999992,
+      "end": 121.49999999999991,
+      "duration": 0.7999999999999972,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 13,
+      "hold_after": 0
+    },
+    {
+      "index": 104,
+      "start": 121.49999999999991,
+      "end": 122.79999999999991,
+      "duration": 1.2999999999999972,
+      "pause": false,
+      "types": [
+        "Indicate",
+        "Indicate"
+      ],
+      "frames": 19,
+      "hold_after": 0
+    },
+    {
+      "index": 105,
+      "start": 122.79999999999991,
+      "end": 123.59999999999991,
+      "duration": 0.7999999999999972,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 44,
+      "hold_after": 0
+    },
+    {
+      "index": 106,
+      "start": 123.59999999999991,
+      "end": 124.3999999999999,
+      "duration": 0.7999999999999972,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeOut",
+        "_AnimationBuilder"
+      ],
+      "frames": 24,
+      "hold_after": 0
+    },
+    {
+      "index": 107,
+      "start": 124.3999999999999,
+      "end": 124.9499999999999,
+      "duration": 0.5499999999999972,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 16,
+      "hold_after": 0
+    },
+    {
+      "index": 108,
+      "start": 124.9499999999999,
+      "end": 126.5499999999999,
+      "duration": 1.5999999999999943,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 37,
+      "hold_after": 31
+    },
+    {
+      "index": 109,
+      "start": 126.5499999999999,
+      "end": 127.14999999999989,
+      "duration": 0.5999999999999943,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 28,
+      "hold_after": 0
+    },
+    {
+      "index": 110,
+      "start": 127.14999999999989,
+      "end": 129.1499999999999,
+      "duration": 2.0,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "FadeIn",
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 37,
+      "hold_after": 0
+    },
+    {
+      "index": 111,
+      "start": 129.1499999999999,
+      "end": 129.9499999999999,
+      "duration": 0.8000000000000114,
+      "pause": false,
+      "types": [
+        "Circumscribe"
+      ],
+      "frames": 24,
+      "hold_after": 0
+    },
+    {
+      "index": 112,
+      "start": 129.9499999999999,
+      "end": 131.74999999999991,
+      "duration": 1.8000000000000114,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 37,
+      "hold_after": 27
+    },
+    {
+      "index": 113,
+      "start": 131.74999999999991,
+      "end": 132.74999999999991,
+      "duration": 1.0,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "Write"
+      ],
+      "frames": 30,
+      "hold_after": 0
+    },
+    {
+      "index": 114,
+      "start": 132.74999999999991,
+      "end": 134.24999999999991,
+      "duration": 1.5,
+      "pause": false,
+      "types": [
+        "TransformFromCopy"
+      ],
+      "frames": 37,
+      "hold_after": 0
+    },
+    {
+      "index": 115,
+      "start": 134.24999999999991,
+      "end": 135.24999999999991,
+      "duration": 1.0,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "Write"
+      ],
+      "frames": 30,
+      "hold_after": 0
+    },
+    {
+      "index": 116,
+      "start": 135.24999999999991,
+      "end": 137.04999999999993,
+      "duration": 1.8000000000000114,
+      "pause": false,
+      "types": [
+        "TransformFromCopy"
+      ],
+      "frames": 37,
+      "hold_after": 96
+    },
+    {
+      "index": 117,
+      "start": 137.04999999999993,
+      "end": 137.84999999999994,
+      "duration": 0.8000000000000114,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 17,
+      "hold_after": 0
+    },
+    {
+      "index": 118,
+      "start": 137.84999999999994,
+      "end": 139.84999999999994,
+      "duration": 2.0,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 26,
+      "hold_after": 0
+    },
+    {
+      "index": 119,
+      "start": 139.84999999999994,
+      "end": 140.54999999999993,
+      "duration": 0.6999999999999886,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 48,
+      "hold_after": 0
+    },
+    {
+      "index": 120,
+      "start": 140.54999999999993,
+      "end": 141.74999999999991,
+      "duration": 1.1999999999999886,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 36,
+      "hold_after": 0
+    },
+    {
+      "index": 121,
+      "start": 141.74999999999991,
+      "end": 142.29999999999993,
+      "duration": 0.5500000000000114,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeIn"
+      ],
+      "frames": 17,
+      "hold_after": 0
+    },
+    {
+      "index": 122,
+      "start": 142.29999999999993,
+      "end": 143.09999999999994,
+      "duration": 0.8000000000000114,
+      "pause": false,
+      "types": [
+        "Circumscribe"
+      ],
+      "frames": 24,
+      "hold_after": 0
+    },
+    {
+      "index": 123,
+      "start": 143.09999999999994,
+      "end": 144.79999999999993,
+      "duration": 1.6999999999999886,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 37,
+      "hold_after": 0
+    },
+    {
+      "index": 124,
+      "start": 144.79999999999993,
+      "end": 145.39999999999992,
+      "duration": 0.5999999999999943,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 10,
+      "hold_after": 0
+    },
+    {
+      "index": 125,
+      "start": 145.39999999999992,
+      "end": 147.0999999999999,
+      "duration": 1.6999999999999886,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 20,
+      "hold_after": 0
+    },
+    {
+      "index": 126,
+      "start": 147.0999999999999,
+      "end": 147.7999999999999,
+      "duration": 0.6999999999999886,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 12,
+      "hold_after": 0
+    },
+    {
+      "index": 127,
+      "start": 147.7999999999999,
+      "end": 148.9999999999999,
+      "duration": 1.1999999999999886,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 19,
+      "hold_after": 0
+    },
+    {
+      "index": 128,
+      "start": 148.9999999999999,
+      "end": 150.19999999999987,
+      "duration": 1.1999999999999886,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 19,
+      "hold_after": 0
+    },
+    {
+      "index": 129,
+      "start": 150.19999999999987,
+      "end": 150.89999999999986,
+      "duration": 0.6999999999999886,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 75,
+      "hold_after": 0
+    },
+    {
+      "index": 130,
+      "start": 150.89999999999986,
+      "end": 152.59999999999985,
+      "duration": 1.6999999999999886,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "FadeIn",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 37,
+      "hold_after": 0
+    },
+    {
+      "index": 131,
+      "start": 152.59999999999985,
+      "end": 153.29999999999984,
+      "duration": 0.6999999999999886,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 22,
+      "hold_after": 0
+    },
+    {
+      "index": 132,
+      "start": 153.29999999999984,
+      "end": 154.79999999999984,
+      "duration": 1.5,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 37,
+      "hold_after": 0
+    },
+    {
+      "index": 133,
+      "start": 154.79999999999984,
+      "end": 155.39999999999984,
+      "duration": 0.5999999999999943,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 18,
+      "hold_after": 0
+    },
+    {
+      "index": 134,
+      "start": 155.39999999999984,
+      "end": 156.79999999999984,
+      "duration": 1.4000000000000057,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 37,
+      "hold_after": 0
+    },
+    {
+      "index": 135,
+      "start": 156.79999999999984,
+      "end": 157.49999999999983,
+      "duration": 0.6999999999999886,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 14,
+      "hold_after": 0
+    },
+    {
+      "index": 136,
+      "start": 157.49999999999983,
+      "end": 158.69999999999982,
+      "duration": 1.1999999999999886,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 25,
+      "hold_after": 0
+    },
+    {
+      "index": 137,
+      "start": 158.69999999999982,
+      "end": 159.49999999999983,
+      "duration": 0.8000000000000114,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 116,
+      "hold_after": 0
+    },
+    {
+      "index": 138,
+      "start": 159.49999999999983,
+      "end": 159.89999999999984,
+      "duration": 0.4000000000000057,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 12,
+      "hold_after": 0
+    },
+    {
+      "index": 139,
+      "start": 159.89999999999984,
+      "end": 160.89999999999984,
+      "duration": 1.0,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "Restore"
+      ],
+      "frames": 30,
+      "hold_after": 0
+    },
+    {
+      "index": 140,
+      "start": 160.89999999999984,
+      "end": 162.49999999999983,
+      "duration": 1.5999999999999943,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeIn",
+        "ShowPassingFlash"
+      ],
+      "frames": 48,
+      "hold_after": 0
+    },
+    {
+      "index": 141,
+      "start": 162.49999999999983,
+      "end": 164.09999999999982,
+      "duration": 1.5999999999999943,
+      "pause": false,
+      "types": [
+        "Write",
+        "TransformFromCopy",
+        "TransformFromCopy"
+      ],
+      "frames": 48,
+      "hold_after": 95
+    },
+    {
+      "index": 142,
+      "start": 164.09999999999982,
+      "end": 165.09999999999982,
+      "duration": 1.0,
+      "pause": false,
+      "types": [
+        "FadeIn",
+        "Indicate"
+      ],
+      "frames": 28,
+      "hold_after": 0
+    },
+    {
+      "index": 143,
+      "start": 165.09999999999982,
+      "end": 166.19999999999982,
+      "duration": 1.0999999999999943,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 31,
+      "hold_after": 0
+    }
+  ],
+  "intervals": [
+    {
+      "from_anchor": "abertura_eixos",
+      "to_anchor": "superficie",
+      "start": 0.06666666666666667,
+      "end": 1.9,
+      "motion_seconds": 1.8333333333333333,
+      "pause_seconds": 0.0
+    },
+    {
+      "from_anchor": "superficie",
+      "to_anchor": "regiao_particao",
+      "start": 1.9,
+      "end": 7.633333333333334,
+      "motion_seconds": 2.3,
+      "pause_seconds": 3.433333333333333
+    },
+    {
+      "from_anchor": "regiao_particao",
+      "to_anchor": "celula_selecionada",
+      "start": 7.633333333333334,
+      "end": 11.066666666666666,
+      "motion_seconds": 3.3333333333333335,
+      "pause_seconds": 0.1
+    },
+    {
+      "from_anchor": "celula_selecionada",
+      "to_anchor": "delta_A",
+      "start": 11.066666666666666,
+      "end": 14.7,
+      "motion_seconds": 3.6333333333333333,
+      "pause_seconds": 0.0
+    },
+    {
+      "from_anchor": "delta_A",
+      "to_anchor": "vertical_determina_altura",
+      "start": 14.7,
+      "end": 17.566666666666666,
+      "motion_seconds": 1.4,
+      "pause_seconds": 1.4666666666666666
+    },
+    {
+      "from_anchor": "vertical_determina_altura",
+      "to_anchor": "extrusao_celula",
+      "start": 17.566666666666666,
+      "end": 23.533333333333335,
+      "motion_seconds": 5.966666666666667,
+      "pause_seconds": 0.0
+    },
+    {
+      "from_anchor": "extrusao_celula",
+      "to_anchor": "coluna_crescida",
+      "start": 23.533333333333335,
+      "end": 25.733333333333334,
+      "motion_seconds": 2.2,
+      "pause_seconds": 0.0
+    },
+    {
+      "from_anchor": "coluna_crescida",
+      "to_anchor": "formula_nasce_da_geometria",
+      "start": 25.733333333333334,
+      "end": 27.333333333333332,
+      "motion_seconds": 1.6,
+      "pause_seconds": 0.0
+    },
+    {
+      "from_anchor": "formula_nasce_da_geometria",
+      "to_anchor": "geracao_16_colunas",
+      "start": 27.333333333333332,
+      "end": 35.56666666666667,
+      "motion_seconds": 2.2,
+      "pause_seconds": 6.033333333333333
+    },
+    {
+      "from_anchor": "geracao_16_colunas",
+      "to_anchor": "soma_colunas",
+      "start": 35.56666666666667,
+      "end": 40.4,
+      "motion_seconds": 4.833333333333333,
+      "pause_seconds": 0.0
+    },
+    {
+      "from_anchor": "soma_colunas",
+      "to_anchor": "subdivisao_4_para_8",
+      "start": 40.4,
+      "end": 44.6,
+      "motion_seconds": 4.2,
+      "pause_seconds": 0.0
+    },
+    {
+      "from_anchor": "subdivisao_4_para_8",
+      "to_anchor": "malha_8",
+      "start": 44.6,
+      "end": 45.9,
+      "motion_seconds": 1.3,
+      "pause_seconds": 0.0
+    },
+    {
+      "from_anchor": "malha_8",
+      "to_anchor": "limite_explicito",
+      "start": 45.9,
+      "end": 51.3,
+      "motion_seconds": 4.5,
+      "pause_seconds": 0.9
+    },
+    {
+      "from_anchor": "limite_explicito",
+      "to_anchor": "soma_para_integral",
+      "start": 51.3,
+      "end": 55.733333333333334,
+      "motion_seconds": 2.0,
+      "pause_seconds": 2.433333333333333
+    },
+    {
+      "from_anchor": "soma_para_integral",
+      "to_anchor": "secao_x_fixo",
+      "start": 55.733333333333334,
+      "end": 57.06666666666667,
+      "motion_seconds": 1.1333333333333333,
+      "pause_seconds": 0.2
+    },
+    {
+      "from_anchor": "secao_x_fixo",
+      "to_anchor": "secao_percorre_x",
+      "start": 57.06666666666667,
+      "end": 68.16666666666667,
+      "motion_seconds": 11.1,
+      "pause_seconds": 0.0
+    },
+    {
+      "from_anchor": "secao_percorre_x",
+      "to_anchor": "integral_das_secoes",
+      "start": 68.16666666666667,
+      "end": 79.56666666666666,
+      "motion_seconds": 8.333333333333334,
+      "pause_seconds": 3.066666666666667
+    },
+    {
+      "from_anchor": "integral_das_secoes",
+      "to_anchor": "integral_iterada",
+      "start": 79.56666666666666,
+      "end": 81.46666666666667,
+      "motion_seconds": 1.9,
+      "pause_seconds": 0.0
+    },
+    {
+      "from_anchor": "integral_iterada",
+      "to_anchor": "integral_iterada_explicita",
+      "start": 81.46666666666667,
+      "end": 85.43333333333334,
+      "motion_seconds": 2.466666666666667,
+      "pause_seconds": 1.5
+    },
+    {
+      "from_anchor": "integral_iterada_explicita",
+      "to_anchor": "integral_y_isolada",
+      "start": 85.43333333333334,
+      "end": 89.86666666666666,
+      "motion_seconds": 3.2333333333333334,
+      "pause_seconds": 1.2
+    },
+    {
+      "from_anchor": "integral_y_isolada",
+      "to_anchor": "separacao_inicio",
+      "start": 89.86666666666666,
+      "end": 102.1,
+      "motion_seconds": 0.0,
+      "pause_seconds": 12.233333333333333
+    },
+    {
+      "from_anchor": "separacao_inicio",
+      "to_anchor": "separacao_integral_y",
+      "start": 102.1,
+      "end": 103.53333333333333,
+      "motion_seconds": 1.2333333333333334,
+      "pause_seconds": 0.2
+    },
+    {
+      "from_anchor": "separacao_integral_y",
+      "to_anchor": "regra_potencia_y",
+      "start": 103.53333333333333,
+      "end": 109.73333333333333,
+      "motion_seconds": 5.1,
+      "pause_seconds": 1.1
+    },
+    {
+      "from_anchor": "regra_potencia_y",
+      "to_anchor": "primitiva_y_montada",
+      "start": 109.73333333333333,
+      "end": 110.46666666666667,
+      "motion_seconds": 0.43333333333333335,
+      "pause_seconds": 0.3
+    },
+    {
+      "from_anchor": "primitiva_y_montada",
+      "to_anchor": "primitiva_interna",
+      "start": 110.46666666666667,
+      "end": 112.3,
+      "motion_seconds": 1.1666666666666667,
+      "pause_seconds": 0.6666666666666666
+    },
+    {
+      "from_anchor": "primitiva_interna",
+      "to_anchor": "subtracao_limites_y",
+      "start": 112.3,
+      "end": 117.76666666666667,
+      "motion_seconds": 4.7,
+      "pause_seconds": 0.7666666666666667
+    },
+    {
+      "from_anchor": "subtracao_limites_y",
+      "to_anchor": "area_calculada",
+      "start": 117.76666666666667,
+      "end": 119.93333333333334,
+      "motion_seconds": 1.4,
+      "pause_seconds": 0.7666666666666667
+    },
+    {
+      "from_anchor": "area_calculada",
+      "to_anchor": "payoff_area_secao",
+      "start": 119.93333333333334,
+      "end": 121.6,
+      "motion_seconds": 1.3,
+      "pause_seconds": 0.36666666666666664
+    },
+    {
+      "from_anchor": "payoff_area_secao",
+      "to_anchor": "primitiva_externa",
+      "start": 121.6,
+      "end": 123.86666666666666,
+      "motion_seconds": 0.8,
+      "pause_seconds": 1.4666666666666666
+    },
+    {
+      "from_anchor": "primitiva_externa",
+      "to_anchor": "integral_x_de_area",
+      "start": 123.86666666666666,
+      "end": 126.66666666666667,
+      "motion_seconds": 1.7666666666666666,
+      "pause_seconds": 1.0333333333333334
+    },
+    {
+      "from_anchor": "integral_x_de_area",
+      "to_anchor": "substituicao_area_integral_x",
+      "start": 126.66666666666667,
+      "end": 128.83333333333334,
+      "motion_seconds": 1.2333333333333334,
+      "pause_seconds": 0.9333333333333333
+    },
+    {
+      "from_anchor": "substituicao_area_integral_x",
+      "to_anchor": "separacao_integral_x",
+      "start": 128.83333333333334,
+      "end": 131.76666666666668,
+      "motion_seconds": 2.033333333333333,
+      "pause_seconds": 0.9
+    },
+    {
+      "from_anchor": "separacao_integral_x",
+      "to_anchor": "regra_potencia_x",
+      "start": 131.76666666666668,
+      "end": 139.43333333333334,
+      "motion_seconds": 4.466666666666667,
+      "pause_seconds": 3.2
+    },
+    {
+      "from_anchor": "regra_potencia_x",
+      "to_anchor": "primitiva_x_montada",
+      "start": 139.43333333333334,
+      "end": 140.86666666666667,
+      "motion_seconds": 0.8666666666666667,
+      "pause_seconds": 0.5666666666666667
+    },
+    {
+      "from_anchor": "primitiva_x_montada",
+      "to_anchor": "substituicao_x_mais_1",
+      "start": 140.86666666666667,
+      "end": 146.26666666666668,
+      "motion_seconds": 3.8,
+      "pause_seconds": 1.6
+    },
+    {
+      "from_anchor": "substituicao_x_mais_1",
+      "to_anchor": "valores_limites_x",
+      "start": 146.26666666666668,
+      "end": 148.93333333333334,
+      "motion_seconds": 1.9333333333333333,
+      "pause_seconds": 0.7333333333333333
+    },
+    {
+      "from_anchor": "valores_limites_x",
+      "to_anchor": "subtracao_limites_x",
+      "start": 148.93333333333334,
+      "end": 152.66666666666666,
+      "motion_seconds": 1.2333333333333334,
+      "pause_seconds": 2.5
+    },
+    {
+      "from_anchor": "subtracao_limites_x",
+      "to_anchor": "resultado_exato",
+      "start": 152.66666666666666,
+      "end": 156.46666666666667,
+      "motion_seconds": 2.466666666666667,
+      "pause_seconds": 1.3333333333333333
+    },
+    {
+      "from_anchor": "resultado_exato",
+      "to_anchor": "resultado_decimal",
+      "start": 156.46666666666667,
+      "end": 157.76666666666668,
+      "motion_seconds": 0.8333333333333334,
+      "pause_seconds": 0.4666666666666667
+    },
+    {
+      "from_anchor": "resultado_decimal",
+      "to_anchor": "payoff",
+      "start": 157.76666666666668,
+      "end": 161.63333333333333,
+      "motion_seconds": 0.0,
+      "pause_seconds": 3.8666666666666667
+    },
+    {
+      "from_anchor": "payoff",
+      "to_anchor": "mensagem_final",
+      "start": 161.63333333333333,
+      "end": 169.4,
+      "motion_seconds": 4.6,
+      "pause_seconds": 3.1666666666666665
+    },
+    {
+      "from_anchor": "mensagem_final",
+      "to_anchor": "fim",
+      "start": 169.4,
+      "end": 171.36666666666667,
+      "motion_seconds": 0.9333333333333333,
+      "pause_seconds": 1.0333333333333334
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+O que essa fórmula está somando? Pequenos volumes distribuídos sobre a base, até reconstruir o volume sob esta superfície curva.
+
+Começamos dividindo a base quadrada em células menores. Cada célula tem comprimento e largura. Multiplicando os dois, encontramos a área da base de uma pequena coluna.
+
+Escolhemos o centro da célula como referência. Nesse ponto, a função fornece a altura da superfície.
+
+A coluna sobe até essa altura. Área da base vezes altura fornece seu volume. Como a superfície é curva e o topo é plano, essa coluna aproxima a pequena contribuição de volume daquela região.
+
+Repetimos isso em todas as células. Cada posição recebe uma altura diferente. Somando os volumes das colunas, aproximamos o volume do sólido inteiro.
+
+Refinamos a divisão. As bases diminuem e os degraus acompanham melhor a superfície. Quando a área de cada célula tende a zero e o número de células cresce sem limite, essa soma se transforma na integral dupla.
+
+Para calcular, fazemos um corte vertical. Mantemos sua posição fixa e percorremos a seção de uma borda até a outra. Integrando as alturas nesse percurso, encontramos a área da seção.
+
+Depois deslocamos o corte pela base. Sua área muda a cada posição. Área vezes uma pequena espessura produz uma contribuição de volume. A segunda integração acumula essas contribuições e recupera o volume total.
+
+É por isso que a conta tem duas etapas: primeiro calculamos a área de cada seção; depois acumulamos essas áreas enquanto o corte avança.
+
+Na primeira integração, a posição do corte fica constante. Por isso, a parte que depende apenas dessa posição funciona como constante. O termo que varia é o termo ao quadrado ligado ao percurso pela seção.
+
+Separamos os termos. Para integrar esse termo ao quadrado, usamos a regra de potência: aumentamos o expoente para três e dividimos por três. Assim montamos a primitiva.
+
+Agora substituímos os dois limites da seção e subtraímos o valor inferior do superior. Organizando os sinais e simplificando, obtemos a área da seção. Ela ainda depende da posição do corte.
+
+Agora essa área entra na segunda integral. O corte percorre toda a base, e acumulamos as áreas das seções para obter o volume.
+
+Novamente usamos a regra de potência. A parte constante gera um termo linear; o termo ao quadrado restante vira um termo ao cubo dividido por três.
+
+Aplicamos os limites na segunda direção do mesmo jeito: calculamos nas duas extremidades e subtraímos o valor inferior do superior. Os resultados são vinte terços e menos vinte terços.
+
+Subtrair um número negativo vira soma. Portanto, o volume é quarenta terços, aproximadamente treze vírgula trinta e três unidades cúbicas.
+
+Agora a fórmula deixa de ser abstrata: a integral dupla é o limite da soma dessas pequenas contribuições de volume sobre toda a área. É assim que reconstruímos o sólido.

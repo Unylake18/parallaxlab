@@ -1,0 +1,1992 @@
+Manim Community v0.21.0
+
+[10/11/26 00:02:57] INFO     Animation 0 : Using cached    cairo_renderer.py:92
+                             data (hash :                                      
+                             81802292_722503007_3891412038                     
+                             )                                                 
+
+Animation 0: FadeIn(Text('Qual � o calor total\nabsorvido pelo g�s\ndurante o ciclo?')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                              
+                    INFO     Animation 1 : Using cached    cairo_renderer.py:92
+                             data (hash :                                      
+                             2130283231_349589963_18669303                     
+                             09)                                               
+[10/11/26 00:02:58] INFO     Animation 2 : Using cached    cairo_renderer.py:92
+                             data (hash :                                      
+                             2130283231_1790408557_3875486                     
+                             542)                                              
+
+Animation 2: FadeOut(Text('Qual � o calor total\nabsorvido pelo g�s\ndurante o ciclo?')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                                     
+[10/11/26 00:02:59] INFO     Animation 3 : Using cached    cairo_renderer.py:92
+                             data (hash :                                      
+                             2130283231_2003109338_1329924                     
+                             866)                                              
+
+Animation 3: Create(Axes of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                       
+[10/11/26 00:03:06] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}T\propto                          
+                             PV\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\4b207e9e92                        
+                             66e4e2.tex                                        
+
+Animation 4: FadeIn(Group), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 4: FadeIn(Group), etc.:  36%|###6      | 4/11 [00:00<00:00, 35.95it/s]
+Animation 4: FadeIn(Group), etc.:  73%|#######2  | 8/11 [00:00<00:00, 37.73it/s]
+                                                                                
+[10/11/26 00:03:09] INFO     Animation 4 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1807133227_4                         
+                             281275327.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}A=(V_0,P_0                        
+                             )\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\195655b415                        
+                             bbf9d9.tex                                        
+
+Animation 5: Write(MathTex('A=(V_0,P_0)')):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 5: Write(MathTex('A=(V_0,P_0)')):  44%|####4     | 4/9 [00:00<00:00, 37.68it/s]
+Animation 5: Write(MathTex('A=(V_0,P_0)')):  89%|########8 | 8/9 [00:00<00:00, 38.15it/s]
+                                                                                         
+[10/11/26 00:03:12] INFO     Animation 5 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1307997318_5                         
+                             57081412.mp4'                                     
+                    INFO     Animation 6 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_941615173_11                         
+                             81924649.mp4'                                     
+
+Animation 7: FadeOut(MathTex('A=(V_0,P_0)')), etc.:   0%|          | 0/6 [00:00<?, ?it/s]
+Animation 7: FadeOut(MathTex('A=(V_0,P_0)')), etc.:  67%|######6   | 4/6 [00:00<00:00, 33.89it/s]
+                                                                                                 
+[10/11/26 00:03:18] INFO     Animation 7 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3602918392_2                         
+                             907208429.mp4'                                    
+
+Animation 8: Create(Line), etc.:   0%|          | 0/47 [00:00<?, ?it/s]
+Animation 8: Create(Line), etc.:   9%|8         | 4/47 [00:00<00:01, 36.15it/s]
+Animation 8: Create(Line), etc.:  17%|#7        | 8/47 [00:00<00:01, 35.98it/s]
+Animation 8: Create(Line), etc.:  26%|##5       | 12/47 [00:00<00:01, 33.37it/s]
+Animation 8: Create(Line), etc.:  34%|###4      | 16/47 [00:00<00:00, 32.76it/s]
+Animation 8: Create(Line), etc.:  43%|####2     | 20/47 [00:00<00:00, 31.71it/s]
+Animation 8: Create(Line), etc.:  51%|#####1    | 24/47 [00:00<00:00, 31.56it/s]
+Animation 8: Create(Line), etc.:  60%|#####9    | 28/47 [00:00<00:00, 30.04it/s]
+Animation 8: Create(Line), etc.:  68%|######8   | 32/47 [00:01<00:00, 28.88it/s]
+Animation 8: Create(Line), etc.:  74%|#######4  | 35/47 [00:01<00:00, 28.26it/s]
+Animation 8: Create(Line), etc.:  81%|########  | 38/47 [00:01<00:00, 28.07it/s]
+Animation 8: Create(Line), etc.:  87%|########7 | 41/47 [00:01<00:00, 27.91it/s]
+Animation 8: Create(Line), etc.:  94%|#########3| 44/47 [00:01<00:00, 26.87it/s]
+Animation 8: Create(Line), etc.: 100%|##########| 47/47 [00:01<00:00, 26.67it/s]
+                                                                                
+[10/11/26 00:03:21] INFO     Animation 8 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_2344363822_3                         
+                             309215164.mp4'                                    
+
+Animation 9: FadeIn(Dot), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+Animation 9: FadeIn(Dot), etc.:  38%|###7      | 3/8 [00:00<00:00, 21.87it/s]
+Animation 9: FadeIn(Dot), etc.:  75%|#######5  | 6/8 [00:00<00:00, 22.18it/s]
+                                                                             
+[10/11/26 00:03:22] INFO     Animation 9 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1617453844_1                         
+                             350678689.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}B=(4V_0,P_                        
+                             0)\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\3167e55f32                        
+                             8adf3f.tex                                        
+
+Animation 10: FadeIn(MathTex('B=(4V_0,P_0)')):   0%|          | 0/6 [00:00<?, ?it/s]
+Animation 10: FadeIn(MathTex('B=(4V_0,P_0)')):  67%|######6   | 4/6 [00:00<00:00, 38.74it/s]
+                                                                                            
+[10/11/26 00:03:25] INFO     Animation 10 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3065722353_3                         
+                             693625811.mp4'                                    
+[10/11/26 00:03:26] INFO     Animation 11 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_941615173_17                         
+                             19074523.mp4'                                     
+
+Animation 12: FadeOut(Text('A \u2192 B  �  expans�o isob�rica')), etc.:   0%|          | 0/6 [00:00<?, ?it/s]
+Animation 12: FadeOut(Text('A \u2192 B  �  expans�o isob�rica')), etc.:  50%|#####     | 3/6 [00:00<00:00, 26.56it/s]
+Animation 12: FadeOut(Text('A \u2192 B  �  expans�o isob�rica')), etc.: 100%|##########| 6/6 [00:00<00:00, 27.21it/s]
+                                                                                                                
+[10/11/26 00:03:32] INFO     Animation 12 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_4261748020_8                         
+                             98214457.mp4'                                     
+
+Animation 13: Create(Line), etc.:   0%|          | 0/42 [00:00<?, ?it/s]
+Animation 13: Create(Line), etc.:  12%|#1        | 5/42 [00:00<00:00, 47.07it/s]
+Animation 13: Create(Line), etc.:  26%|##6       | 11/42 [00:00<00:00, 49.26it/s]
+Animation 13: Create(Line), etc.:  38%|###8      | 16/42 [00:00<00:00, 48.77it/s]
+Animation 13: Create(Line), etc.:  50%|#####     | 21/42 [00:00<00:00, 48.27it/s]
+Animation 13: Create(Line), etc.:  62%|######1   | 26/42 [00:00<00:00, 47.69it/s]
+Animation 13: Create(Line), etc.:  74%|#######3  | 31/42 [00:00<00:00, 47.06it/s]
+Animation 13: Create(Line), etc.:  86%|########5 | 36/42 [00:00<00:00, 47.29it/s]
+Animation 13: Create(Line), etc.:  98%|#########7| 41/42 [00:00<00:00, 46.90it/s]
+                                                                                 
+[10/11/26 00:03:33] INFO     Animation 13 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1923492382_3                         
+                             754523444.mp4'                                    
+
+Animation 14: FadeIn(Dot), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+Animation 14: FadeIn(Dot), etc.:  62%|######2   | 5/8 [00:00<00:00, 42.59it/s]
+                                                                              
+[10/11/26 00:03:34] INFO     Animation 14 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1110591976_3                         
+                             283087502.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}C=(4V_0,4P                        
+                             _0)\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\72f2c15c94                        
+                             9c4056.tex                                        
+
+Animation 15: FadeIn(MathTex('C=(4V_0,4P_0)')):   0%|          | 0/6 [00:00<?, ?it/s]
+Animation 15: FadeIn(MathTex('C=(4V_0,4P_0)')):  67%|######6   | 4/6 [00:00<00:00, 36.99it/s]
+                                                                                             
+[10/11/26 00:03:37] INFO     Animation 15 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_90482466_181                         
+                             4494864.mp4'                                      
+                    INFO     Animation 16 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_941615173_54                         
+                             211591.mp4'                                       
+
+Animation 17: FadeOut(Text('B \u2192 C  �  volume constante')), etc.:   0%|          | 0/6 [00:00<?, ?it/s]
+Animation 17: FadeOut(Text('B \u2192 C  �  volume constante')), etc.:  33%|###3      | 2/6 [00:00<00:00, 15.44it/s]
+Animation 17: FadeOut(Text('B \u2192 C  �  volume constante')), etc.:  67%|######6   | 4/6 [00:00<00:00, 13.60it/s]
+Animation 17: FadeOut(Text('B \u2192 C  �  volume constante')), etc.: 100%|##########| 6/6 [00:00<00:00, 14.79it/s]
+                                                                                                              
+[10/11/26 00:03:44] INFO     Animation 17 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_143803493_28                         
+                             43335430.mp4'                                     
+
+Animation 18: Create(Line), etc.:   0%|          | 0/42 [00:00<?, ?it/s]
+Animation 18: Create(Line), etc.:   7%|7         | 3/42 [00:00<00:01, 25.78it/s]
+Animation 18: Create(Line), etc.:  14%|#4        | 6/42 [00:00<00:01, 27.99it/s]
+Animation 18: Create(Line), etc.:  21%|##1       | 9/42 [00:00<00:01, 28.34it/s]
+Animation 18: Create(Line), etc.:  29%|##8       | 12/42 [00:00<00:01, 28.83it/s]
+Animation 18: Create(Line), etc.:  38%|###8      | 16/42 [00:00<00:00, 31.46it/s]
+Animation 18: Create(Line), etc.:  50%|#####     | 21/42 [00:00<00:00, 35.37it/s]
+Animation 18: Create(Line), etc.:  62%|######1   | 26/42 [00:00<00:00, 37.65it/s]
+Animation 18: Create(Line), etc.:  71%|#######1  | 30/42 [00:00<00:00, 37.72it/s]
+Animation 18: Create(Line), etc.:  81%|########  | 34/42 [00:01<00:00, 35.89it/s]
+Animation 18: Create(Line), etc.:  90%|######### | 38/42 [00:01<00:00, 34.85it/s]
+Animation 18: Create(Line), etc.: 100%|##########| 42/42 [00:01<00:00, 33.64it/s]
+                                                                                 
+[10/11/26 00:03:46] INFO     Animation 18 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1005507627_2                         
+                             625538315.mp4'                                    
+
+Animation 19: FadeIn(Arrow):   0%|          | 0/5 [00:00<?, ?it/s]
+Animation 19: FadeIn(Arrow):  80%|########  | 4/5 [00:00<00:00, 36.25it/s]
+                                                                          
+[10/11/26 00:03:47] INFO     Animation 19 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_2595077653_2                         
+                             312341297.mp4'                                    
+[10/11/26 00:03:48] INFO     Animation 20 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3578298453_4                         
+                             192569503.mp4'                                    
+
+Animation 21: FadeOut(Group), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 21: FadeOut(Group), etc.:  33%|###3      | 3/9 [00:00<00:00, 24.41it/s]
+Animation 21: FadeOut(Group), etc.:  67%|######6   | 6/9 [00:00<00:00, 24.48it/s]
+Animation 21: FadeOut(Group), etc.: 100%|##########| 9/9 [00:00<00:00, 24.50it/s]
+                                                                                 
+[10/11/26 00:03:50] INFO     Animation 21 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1355344840_5                         
+                             63995174.mp4'                                     
+
+Animation 22: FadeOut(Text('Um ciclo, tr�s processos')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 22: FadeOut(Text('Um ciclo, tr�s processos')), etc.:  64%|######3   | 7/11 [00:00<00:00, 64.02it/s]
+                                                                                                             
+[10/11/26 00:04:00] INFO     Animation 22 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_945976634_11                         
+                             18959371.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}U=\frac{3}                        
+                             {2}nRT\special{dvisvgm:raw                        
+                              </g>} to                                         
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\9fa2372d38                        
+                             a4f034.tex                                        
+[10/11/26 00:04:01] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}PV=nRT\spe                        
+                             cial{dvisvgm:raw </g>} to                         
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\6e8bd57115                        
+                             cf50ce.tex                                        
+
+Animation 23: Write(MathTex('U=\\frac{3}{2}nRT')):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                         
+[10/11/26 00:04:03] INFO     Animation 23 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1278827301_2                         
+                             590953911.mp4'                                    
+
+Animation 24: Write(MathTex('PV=nRT')):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                              
+                    INFO     Animation 24 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3503903767_2                         
+                             082488532.mp4'                                    
+                    INFO     Animation 25 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_4046863825_5                         
+                             85532861.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}U=\frac{3}                        
+                             {2}PV\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\5afd305905                        
+                             be8f04.tex                                        
+
+Animation 26: TransformMatchingTex(Group):   0%|          | 0/20 [00:00<?, ?it/s]
+Animation 26: TransformMatchingTex(Group):  55%|#####5    | 11/20 [00:00<00:00, 102.28it/s]
+                                                                                           
+[10/11/26 00:04:06] INFO     Animation 26 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_2657260716_3                         
+                             253270690.mp4'                                    
+
+Animation 27: FadeOut(MathTex('PV=nRT')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                               
+                    INFO     Animation 27 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_2635807310_2                         
+                             210223176.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}Q=\Delta                          
+                             U+W\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\2d8837495b                        
+                             a02c2a.tex                                        
+
+Animation 28: Write(MathTex('Q=\\Delta U+W')):   0%|          | 0/15 [00:00<?, ?it/s]
+Animation 28: Write(MathTex('Q=\\Delta U+W')):  67%|######6   | 10/15 [00:00<00:00, 90.57it/s]
+                                                                                              
+[10/11/26 00:04:10] INFO     Animation 28 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_2885665580_2                         
+                             430811950.mp4'                                    
+
+Animation 29: FadeIn(Text('W > 0: trabalho realizado pelo g�s')):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                                       
+[10/11/26 00:04:15] INFO     Animation 29 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_926614167_36                         
+                             05621065.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}W=\int                            
+                             P\,dV\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\51a5935c52                        
+                             f10dd9.tex                                        
+
+Animation 30: Write(MathTex('W=\\int P\\,dV')):   0%|          | 0/15 [00:00<?, ?it/s]
+                                                                                      
+[10/11/26 00:04:17] INFO     Animation 30 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_2165230525_2                         
+                             239927782.mp4'                                    
+[10/11/26 00:04:18] INFO     Animation 31 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1259536631_4                         
+                             087944622.mp4'                                    
+
+Animation 32: FadeOut(VGroup of 4 submobjects), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 32: FadeOut(VGroup of 4 submobjects), etc.:  67%|######6   | 6/9 [00:00<00:00, 51.16it/s]
+                                                                                                   
+[10/11/26 00:04:19] INFO     Animation 32 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3113249175_3                         
+                             082185743.mp4'                                    
+
+Animation 33: FadeOut(Text('As ferramentas')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 33: FadeOut(Text('As ferramentas')), etc.:  36%|###6      | 4/11 [00:00<00:00, 38.99it/s]
+Animation 33: FadeOut(Text('As ferramentas')), etc.:  82%|########1 | 9/11 [00:00<00:00, 42.62it/s]
+                                                                                                   
+[10/11/26 00:04:32] INFO     Animation 33 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_677982224_25                         
+                             11768555.mp4'                                     
+
+Animation 34: _MethodAnimation(Line), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 34: _MethodAnimation(Line), etc.:  75%|#######5  | 9/12 [00:00<00:00, 81.19it/s]
+                                                                                          
+                    INFO     Animation 34 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1044895663_1                         
+                             312910460.mp4'                                    
+
+Animation 35: Write(MathTex('W=\\int P\\,dV')):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                      
+                    INFO     Animation 35 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_769931258_23                         
+                             82615086.mp4'                                     
+
+Animation 36: GrowFromEdge(Polygon), etc.:   0%|          | 0/36 [00:00<?, ?it/s]
+Animation 36: GrowFromEdge(Polygon), etc.:  11%|#1        | 4/36 [00:00<00:00, 32.13it/s]
+Animation 36: GrowFromEdge(Polygon), etc.:  22%|##2       | 8/36 [00:00<00:00, 32.77it/s]
+Animation 36: GrowFromEdge(Polygon), etc.:  33%|###3      | 12/36 [00:00<00:00, 33.60it/s]
+Animation 36: GrowFromEdge(Polygon), etc.:  44%|####4     | 16/36 [00:00<00:00, 33.77it/s]
+Animation 36: GrowFromEdge(Polygon), etc.:  56%|#####5    | 20/36 [00:00<00:00, 32.87it/s]
+Animation 36: GrowFromEdge(Polygon), etc.:  67%|######6   | 24/36 [00:00<00:00, 32.44it/s]
+Animation 36: GrowFromEdge(Polygon), etc.:  78%|#######7  | 28/36 [00:00<00:00, 32.25it/s]
+Animation 36: GrowFromEdge(Polygon), etc.:  89%|########8 | 32/36 [00:00<00:00, 32.21it/s]
+Animation 36: GrowFromEdge(Polygon), etc.: 100%|##########| 36/36 [00:01<00:00, 32.50it/s]
+                                                                                          
+[10/11/26 00:04:34] INFO     Animation 36 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3671493155_3                         
+                             815563772.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}W_{AB}=P_0                        
+                             (4V_0-V_0)\special{dvisvgm                        
+                             :raw </g>} to                                     
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\758dedc62c                        
+                             60bea8.tex                                        
+
+Animation 37: Write(MathTex('W_{AB}=P_0(4V_0-V_0)')):   0%|          | 0/18 [00:00<?, ?it/s]
+Animation 37: Write(MathTex('W_{AB}=P_0(4V_0-V_0)')):  78%|#######7  | 14/18 [00:00<00:00, 131.08it/s]
+                                                                                                      
+[10/11/26 00:04:36] INFO     Animation 37 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_533677924_37                         
+                             05458923.mp4'                                     
+                    INFO     Animation 38 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_170846798_34                         
+                             87232606.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}W_{AB}=3P_                        
+                             0V_0\special{dvisvgm:raw                          
+                             </g>} to                                          
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\7a62b61a9a                        
+                             6341bc.tex                                        
+
+Animation 39: TransformMatchingTex(Group):   0%|          | 0/20 [00:00<?, ?it/s]
+Animation 39: TransformMatchingTex(Group):  35%|###5      | 7/20 [00:00<00:00, 65.60it/s]
+Animation 39: TransformMatchingTex(Group):  75%|#######5  | 15/20 [00:00<00:00, 72.37it/s]
+                                                                                          
+[10/11/26 00:04:38] INFO     Animation 39 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_2315907933_9                         
+                             53909352.mp4'                                     
+[10/11/26 00:04:39] INFO     Animation 40 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_499328632_70                         
+                             4112742.mp4'                                      
+
+Animation 41: FadeOut(MathTex('W=\\int P\\,dV')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 41: FadeOut(MathTex('W=\\int P\\,dV')), etc.:  18%|#8        | 2/11 [00:00<00:00, 18.12it/s]
+Animation 41: FadeOut(MathTex('W=\\int P\\,dV')), etc.:  36%|###6      | 4/11 [00:00<00:00, 17.82it/s]
+Animation 41: FadeOut(MathTex('W=\\int P\\,dV')), etc.:  55%|#####4    | 6/11 [00:00<00:00, 16.96it/s]
+Animation 41: FadeOut(MathTex('W=\\int P\\,dV')), etc.:  73%|#######2  | 8/11 [00:00<00:00, 16.28it/s]
+Animation 41: FadeOut(MathTex('W=\\int P\\,dV')), etc.:  91%|######### | 10/11 [00:00<00:00, 17.36it/s]
+                                                                                                       
+[10/11/26 00:04:40] INFO     Animation 41 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1743216394_7                         
+                             02810435.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Delta                            
+                             U_{AB}=\frac32(P_BV_B-P_AV                        
+                             _A)\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\fc9228a875                        
+                             f4e891.tex                                        
+
+Animation 42: Indicate(Dot), etc.:   0%|          | 0/21 [00:00<?, ?it/s]
+Animation 42: Indicate(Dot), etc.:  24%|##3       | 5/21 [00:00<00:00, 47.05it/s]
+Animation 42: Indicate(Dot), etc.:  48%|####7     | 10/21 [00:00<00:00, 44.10it/s]
+Animation 42: Indicate(Dot), etc.:  71%|#######1  | 15/21 [00:00<00:00, 44.92it/s]
+Animation 42: Indicate(Dot), etc.:  95%|#########5| 20/21 [00:00<00:00, 46.23it/s]
+                                                                                  
+[10/11/26 00:04:43] INFO     Animation 42 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1192159351_1                         
+                             181059677.mp4'                                    
+                    INFO     Animation 43 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_499328632_38                         
+                             24057694.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Delta                            
+                             U_{AB}=\frac32(4-1)P_0V_0\                        
+                             special{dvisvgm:raw </g>}                         
+                             to                                                
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\3f9ebf2356                        
+                             bf9081.tex                                        
+
+Animation 44: TransformMatchingTex(Group):   0%|          | 0/20 [00:00<?, ?it/s]
+Animation 44: TransformMatchingTex(Group):  55%|#####5    | 11/20 [00:00<00:00, 103.96it/s]
+                                                                                           
+[10/11/26 00:04:45] INFO     Animation 44 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_256947859_20                         
+                             58708283.mp4'                                     
+[10/11/26 00:04:46] INFO     Animation 45 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3810316983_3                         
+                             351194231.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Delta                            
+                             U_{AB}=\frac92P_0V_0\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\0e681fbd79                        
+                             1205f0.tex                                        
+
+Animation 46: TransformMatchingTex(Group):   0%|          | 0/20 [00:00<?, ?it/s]
+Animation 46: TransformMatchingTex(Group):  50%|#####     | 10/20 [00:00<00:00, 96.22it/s]
+                                                                                          
+[10/11/26 00:04:48] INFO     Animation 46 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_433700676_48                         
+                             7876235.mp4'                                      
+                    INFO     Animation 47 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_499328632_30                         
+                             16077507.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}Q_{AB}=\De                        
+                             lta                                               
+                             U_{AB}+W_{AB}\special{dvis                        
+                             vgm:raw </g>} to                                  
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\dc19463a7d                        
+                             f6a5f4.tex                                        
+
+Animation 48: Write(MathTex('Q_{AB}=\\Delta U_{AB}+W_{AB}')):   0%|          | 0/18 [00:00<?, ?it/s]
+Animation 48: Write(MathTex('Q_{AB}=\\Delta U_{AB}+W_{AB}')):  89%|########8 | 16/18 [00:00<00:00, 152.98it/s]
+                                                                                                              
+[10/11/26 00:04:50] INFO     Animation 48 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_124845944_32                         
+                             33639421.mp4'                                     
+                    INFO     Animation 49 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3810316983_3                         
+                             3528128.mp4'                                      
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}Q_{AB}=\fr                        
+                             ac{15}{2}P_0V_0>0\special{                        
+                             dvisvgm:raw </g>} to                              
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\07c741c068                        
+                             4f3757.tex                                        
+
+Animation 50: TransformMatchingTex(Group):   0%|          | 0/20 [00:00<?, ?it/s]
+Animation 50: TransformMatchingTex(Group):  55%|#####5    | 11/20 [00:00<00:00, 109.20it/s]
+                                                                                           
+[10/11/26 00:04:52] INFO     Animation 50 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_4172295738_2                         
+                             155084672.mp4'                                    
+
+Animation 51: GrowArrow(Arrow), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                            
+[10/11/26 00:04:58] INFO     Animation 51 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3650460133_1                         
+                             215181613.mp4'                                    
+[10/11/26 00:04:59] INFO     Animation 52 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_251713949_33                         
+                             20757964.mp4'                                     
+
+Animation 53: FadeOut(VGroup of 5 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+Animation 53: FadeOut(VGroup of 5 submobjects):  62%|######2   | 5/8 [00:00<00:00, 46.81it/s]
+                                                                                             
+[10/11/26 00:05:01] INFO     Animation 53 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3214206164_4                         
+                             12464324.mp4'                                     
+
+Animation 54: FadeOut(Text('A \u2192 B: expans�o isob�rica')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 54: FadeOut(Text('A \u2192 B: expans�o isob�rica')), etc.:  36%|###6      | 4/11 [00:00<00:00, 37.05it/s]
+Animation 54: FadeOut(Text('A \u2192 B: expans�o isob�rica')), etc.:  82%|########1 | 9/11 [00:00<00:00, 41.65it/s]
+                                                                                                              
+[10/11/26 00:05:13] INFO     Animation 54 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1006527180_2                         
+                             182026604.mp4'                                    
+
+Animation 55: _MethodAnimation(Line), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 55: _MethodAnimation(Line), etc.:  67%|######6   | 8/12 [00:00<00:00, 73.42it/s]
+                                                                                          
+                    INFO     Animation 55 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1107396677_4                         
+                             163611437.mp4'                                    
+
+Animation 56: Create(DashedLine), etc.:   0%|          | 0/35 [00:00<?, ?it/s]
+Animation 56: Create(DashedLine), etc.:  49%|####8     | 17/35 [00:00<00:00, 162.02it/s]
+Animation 56: Create(DashedLine), etc.:  97%|#########7| 34/35 [00:00<00:00, 161.75it/s]
+                                                                                        
+[10/11/26 00:05:14] INFO     Animation 56 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1615958809_2                         
+                             444059434.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}dV=0\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\15c5cc9a60                        
+                             f917b9.tex                                        
+
+Animation 57: Write(MathTex('dV=0')):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                            
+[10/11/26 00:05:15] INFO     Animation 57 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_2905656201_2                         
+                             284247499.mp4'                                    
+[10/11/26 00:05:16] INFO     Animation 58 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_4046863825_3                         
+                             976862354.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}W_{BC}=\in                        
+                             t                                                 
+                             P\,dV=0\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\11f335a258                        
+                             4fa35a.tex                                        
+
+Animation 59: TransformMatchingTex(Group):   0%|          | 0/20 [00:00<?, ?it/s]
+Animation 59: TransformMatchingTex(Group):  65%|######5   | 13/20 [00:00<00:00, 122.24it/s]
+                                                                                           
+[10/11/26 00:05:18] INFO     Animation 59 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_273421866_33                         
+                             62512079.mp4'                                     
+                    INFO     Animation 60 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_286356123_27                         
+                             02086885.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Delta                            
+                             U_{BC}=\frac32(16P_0V_0-4P                        
+                             _0V_0)\special{dvisvgm:raw                        
+                              </g>} to                                         
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\68b96416a5                        
+                             850005.tex                                        
+
+Animation 61: Write(MathTex('\\Delta U_{BC}=\\frac32(16P_0V_0-4P_0V_0)')):   0%|          | 0/20 [00:00<?, ?it/s]
+Animation 61: Write(MathTex('\\Delta U_{BC}=\\frac32(16P_0V_0-4P_0V_0)')):  60%|######    | 12/20 [00:00<00:00, 114.90it/s]
+                                                                                                                           
+[10/11/26 00:05:21] INFO     Animation 61 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_963727292_94                         
+                             5152312.mp4'                                      
+                    INFO     Animation 62 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_499328632_15                         
+                             75059113.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Delta                            
+                             U_{BC}=18P_0V_0\special{dv                        
+                             isvgm:raw </g>} to                                
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\bad467e527                        
+                             af0e1e.tex                                        
+
+Animation 63: TransformMatchingTex(Group):   0%|          | 0/20 [00:00<?, ?it/s]
+Animation 63: TransformMatchingTex(Group):  50%|#####     | 10/20 [00:00<00:00, 95.16it/s]
+                                                                                          
+[10/11/26 00:05:23] INFO     Animation 63 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1163309635_3                         
+                             113581439.mp4'                                    
+[10/11/26 00:05:24] INFO     Animation 64 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_170846798_93                         
+                             4854044.mp4'                                      
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}Q_{BC}=\De                        
+                             lta                                               
+                             U_{BC}+0\special{dvisvgm:r                        
+                             aw </g>} to                                       
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\23a703e269                        
+                             9bbbd3.tex                                        
+
+Animation 65: Write(MathTex('Q_{BC}=\\Delta U_{BC}+0')):   0%|          | 0/15 [00:00<?, ?it/s]
+                                                                                               
+[10/11/26 00:05:25] INFO     Animation 65 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3655364894_1                         
+                             602359897.mp4'                                    
+[10/11/26 00:05:26] INFO     Animation 66 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_4046863825_4                         
+                             155827065.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}Q_{BC}=18P                        
+                             _0V_0>0\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\70b5a7b02e                        
+                             2f25cf.tex                                        
+
+Animation 67: TransformMatchingTex(Group):   0%|          | 0/20 [00:00<?, ?it/s]
+Animation 67: TransformMatchingTex(Group):  55%|#####5    | 11/20 [00:00<00:00, 106.38it/s]
+                                                                                           
+[10/11/26 00:05:28] INFO     Animation 67 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_889597015_13                         
+                             4103168.mp4'                                      
+
+Animation 68: FadeIn(Text('calor entra')):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                
+                    INFO     Animation 68 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_762030374_26                         
+                             27193409.mp4'                                     
+[10/11/26 00:05:29] INFO     Animation 69 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3102776378_1                         
+                             840008004.mp4'                                    
+
+Animation 70: FadeOut(VGroup of 5 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+Animation 70: FadeOut(VGroup of 5 submobjects):  88%|########7 | 7/8 [00:00<00:00, 67.26it/s]
+                                                                                             
+[10/11/26 00:05:30] INFO     Animation 70 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3435151840_2                         
+                             485879570.mp4'                                    
+
+Animation 71: FadeOut(Text('B \u2192 C: processo isoc�rico')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 71: FadeOut(Text('B \u2192 C: processo isoc�rico')), etc.:  55%|#####4    | 6/11 [00:00<00:00, 53.33it/s]
+                                                                                                              
+[10/11/26 00:05:38] INFO     Animation 71 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_9830490_1639                         
+                             724186.mp4'                                       
+
+Animation 72: _MethodAnimation(Line), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 72: _MethodAnimation(Line), etc.:  75%|#######5  | 9/12 [00:00<00:00, 89.16it/s]
+                                                                                          
+                    INFO     Animation 72 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3907943876_4                         
+                             191031936.mp4'                                    
+
+Animation 73: _MethodAnimation(Dot):   0%|          | 0/38 [00:00<?, ?it/s]
+Animation 73: _MethodAnimation(Dot):  92%|#########2| 35/38 [00:00<00:00, 335.11it/s]
+                                                                                     
+[10/11/26 00:05:39] INFO     Animation 73 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3011952190_1                         
+                             445906658.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}PV:\                              
+                             16P_0V_0\longrightarrow                           
+                             P_0V_0\special{dvisvgm:raw                        
+                             </g>} to                                          
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\edc67d5703                        
+                             c5dd01.tex                                        
+
+Animation 74: Write(MathTex('PV:\\ 16P_0V_0\\longrightarrow P_0V_0')):   0%|          | 0/15 [00:00<?, ?it/s]
+Animation 74: Write(MathTex('PV:\\ 16P_0V_0\\longrightarrow P_0V_0')):  93%|#########3| 14/15 [00:00<00:00, 135.87it/s]
+                                                                                                                       
+[10/11/26 00:05:41] INFO     Animation 74 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1808248423_4                         
+                             253009189.mp4'                                    
+                    INFO     Animation 75 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3997669029_3                         
+                             260019379.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}PV\downarr                        
+                             ow\quad\Rightarrow\quad\De                        
+                             lta                                               
+                             U_{CA}<0\special{dvisvgm:r                        
+                             aw </g>} to                                       
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\b5d832ca6f                        
+                             3e257c.tex                                        
+
+Animation 76: TransformMatchingTex(Group):   0%|          | 0/20 [00:00<?, ?it/s]
+Animation 76: TransformMatchingTex(Group):  65%|######5   | 13/20 [00:00<00:00, 121.00it/s]
+                                                                                           
+[10/11/26 00:05:43] INFO     Animation 76 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1585952720_3                         
+                             53367004.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}V:\                               
+                             4V_0\longrightarrow                               
+                             V_0\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\24af7f2c68                        
+                             ff25a7.tex                                        
+
+Animation 77: Write(MathTex('V:\\ 4V_0\\longrightarrow V_0')):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                                     
+[10/11/26 00:05:45] INFO     Animation 77 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_2194495405_2                         
+                             425736477.mp4'                                    
+                    INFO     Animation 78 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3997669029_2                         
+                             511139027.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}V\downarro                        
+                             w\quad\Rightarrow\quad                            
+                             W_{CA}<0\special{dvisvgm:r                        
+                             aw </g>} to                                       
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\1fe69818fd                        
+                             25ac68.tex                                        
+
+Animation 79: TransformMatchingTex(Group):   0%|          | 0/20 [00:00<?, ?it/s]
+Animation 79: TransformMatchingTex(Group):  60%|######    | 12/20 [00:00<00:00, 115.63it/s]
+                                                                                           
+[10/11/26 00:05:47] INFO     Animation 79 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_2684057216_4                         
+                             232695425.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}Q_{CA}=\De                        
+                             lta                                               
+                             U_{CA}+W_{CA}\special{dvis                        
+                             vgm:raw </g>} to                                  
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\deabbf49c4                        
+                             67e3b9.tex                                        
+
+Animation 80: Write(MathTex('Q_{CA}=\\Delta U_{CA}+W_{CA}')):   0%|          | 0/14 [00:00<?, ?it/s]
+Animation 80: Write(MathTex('Q_{CA}=\\Delta U_{CA}+W_{CA}')): 100%|##########| 14/14 [00:00<00:00, 130.72it/s]
+                                                                                                              
+[10/11/26 00:05:49] INFO     Animation 80 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_2302519056_2                         
+                             33843376.mp4'                                     
+[10/11/26 00:05:50] INFO     Animation 81 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_941615173_22                         
+                             20442011.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}Q_{CA}<0\s                        
+                             pecial{dvisvgm:raw </g>}                          
+                             to                                                
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\7df588740b                        
+                             e7af89.tex                                        
+
+Animation 82: TransformMatchingTex(Group):   0%|          | 0/20 [00:00<?, ?it/s]
+Animation 82: TransformMatchingTex(Group):  70%|#######   | 14/20 [00:00<00:00, 139.95it/s]
+                                                                                           
+[10/11/26 00:05:52] INFO     Animation 82 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_149134681_39                         
+                             98574190.mp4'                                     
+
+Animation 83: FadeIn(Text('calor sai  �  n�o entra em Q absorvido')):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 83: FadeIn(Text('calor sai  �  n�o entra em Q absorvido')): 100%|##########| 9/9 [00:00<00:00, 83.89it/s]
+                                                                                                                   
+[10/11/26 00:05:57] INFO     Animation 83 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3984379282_2                         
+                             815042180.mp4'                                    
+[10/11/26 00:05:58] INFO     Animation 84 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1497311742_1                         
+                             960856591.mp4'                                    
+
+Animation 85: FadeOut(VGroup of 4 submobjects), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 85: FadeOut(VGroup of 4 submobjects), etc.:  33%|###3      | 3/9 [00:00<00:00, 26.68it/s]
+Animation 85: FadeOut(VGroup of 4 submobjects), etc.:  67%|######6   | 6/9 [00:00<00:00, 27.21it/s]
+                                                                                                   
+[10/11/26 00:06:00] INFO     Animation 85 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_2718995253_6                         
+                             52333218.mp4'                                     
+
+Animation 86: FadeOut(Text('C \u2192 A: compress�o')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 86: FadeOut(Text('C \u2192 A: compress�o')), etc.:  45%|####5     | 5/11 [00:00<00:00, 44.97it/s]
+Animation 86: FadeOut(Text('C \u2192 A: compress�o')), etc.: 100%|##########| 11/11 [00:00<00:00, 50.65it/s]
+                                                                                                       
+[10/11/26 00:06:12] INFO     Animation 86 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1683498867_2                         
+                             177224736.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}Q_{AB}=\fr                        
+                             ac{15}{2}P_0V_0\special{dv                        
+                             isvgm:raw </g>} to                                
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\214ab9afb5                        
+                             fd2f50.tex                                        
+[10/11/26 00:06:13] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}Q_{BC}=18P                        
+                             _0V_0\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\155dcd5a01                        
+                             8c71bd.tex                                        
+
+Animation 87: Write(VGroup of 2 submobjects):   0%|          | 0/15 [00:00<?, ?it/s]
+Animation 87: Write(VGroup of 2 submobjects):  93%|#########3| 14/15 [00:00<00:00, 135.30it/s]
+                                                                                              
+[10/11/26 00:06:15] INFO     Animation 87 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1606325663_1                         
+                             338472830.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}Q_{\mathrm                        
+                             {abs}}=Q_{AB}+Q_{BC}\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\2d4b1543c1                        
+                             2ea635.tex                                        
+
+Animation 88: Write(MathTex('Q_{\\mathrm{abs}}=Q_{AB}+Q_{BC}')):   0%|          | 0/14 [00:00<?, ?it/s]
+                                                                                                       
+[10/11/26 00:06:17] INFO     Animation 88 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1588369139_2                         
+                             849417068.mp4'                                    
+                    INFO     Animation 89 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_4163062370_2                         
+                             558086363.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}Q_{\mathrm                        
+                             {abs}}=\frac{15}{2}P_0V_0+                        
+                             18P_0V_0\special{dvisvgm:r                        
+                             aw </g>} to                                       
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\ccac16aea8                        
+                             1645ea.tex                                        
+
+Animation 90: TransformMatchingTex(Group):   0%|          | 0/20 [00:00<?, ?it/s]
+Animation 90: TransformMatchingTex(Group):  65%|######5   | 13/20 [00:00<00:00, 120.18it/s]
+                                                                                           
+[10/11/26 00:06:19] INFO     Animation 90 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3476055973_8                         
+                             36061621.mp4'                                     
+                    INFO     Animation 91 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_4046863825_5                         
+                             81710347.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}Q_{\mathrm                        
+                             {abs}}=\frac{51}{2}P_0V_0\                        
+                             special{dvisvgm:raw </g>}                         
+                             to                                                
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\c197de5db7                        
+                             5e3641.tex                                        
+
+Animation 92: TransformMatchingTex(Group):   0%|          | 0/20 [00:00<?, ?it/s]
+Animation 92: TransformMatchingTex(Group):  60%|######    | 12/20 [00:00<00:00, 114.79it/s]
+                                                                                           
+[10/11/26 00:06:21] INFO     Animation 92 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1479307704_3                         
+                             921758837.mp4'                                    
+
+Animation 93: Create(SurroundingRectangle), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                        
+                    INFO     Animation 93 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_653332938_19                         
+                             43568488.mp4'                                     
+[10/11/26 00:06:22] INFO     Animation 94 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_147576002_77                         
+                             5123096.mp4'                                      
+
+Animation 95: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 95: FadeOut(VGroup of 2 submobjects), etc.:  89%|########8 | 8/9 [00:00<00:00, 72.70it/s]
+                                                                                                   
+                    INFO     Animation 95 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1680169769_9                         
+                             41916083.mp4'                                     
+
+Animation 96: FadeOut(Text('Calor total absorvido')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 96: FadeOut(Text('Calor total absorvido')), etc.:  45%|####5     | 5/11 [00:00<00:00, 45.44it/s]
+Animation 96: FadeOut(Text('Calor total absorvido')), etc.:  91%|######### | 10/11 [00:00<00:00, 45.15it/s]
+                                                                                                           
+[10/11/26 00:06:32] INFO     Animation 96 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3875003907_1                         
+                             244174881.mp4'                                    
+
+Animation 97: _MethodAnimation(Line), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 97: _MethodAnimation(Line), etc.:  33%|###3      | 4/12 [00:00<00:00, 33.28it/s]
+Animation 97: _MethodAnimation(Line), etc.:  67%|######6   | 8/12 [00:00<00:00, 36.43it/s]
+Animation 97: _MethodAnimation(Line), etc.: 100%|##########| 12/12 [00:00<00:00, 34.99it/s]
+                                                                                           
+                    INFO     Animation 97 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_465176323_21                         
+                             70608068.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}3V_0\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\bf9dac09f6                        
+                             46aff2.tex                                        
+[10/11/26 00:06:34] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}3P_0\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\990deaaaaa                        
+                             592141.tex                                        
+
+Animation 98: GrowFromCenter(BraceBetweenPoints), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 98: GrowFromCenter(BraceBetweenPoints), etc.: 100%|##########| 12/12 [00:00<00:00, 110.38it/s]
+                                                                                                        
+[10/11/26 00:06:36] INFO     Animation 98 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1305946511_3                         
+                             169021616.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}A_{\triang                        
+                             le}=\frac12(3V_0)(3P_0)\sp                        
+                             ecial{dvisvgm:raw </g>} to                        
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\bcda3f6345                        
+                             8305cf.tex                                        
+
+Animation 99: Write(MathTex('A_{\\triangle}=\\frac12(3V_0)(3P_0)')):   0%|          | 0/15 [00:00<?, ?it/s]
+Animation 99: Write(MathTex('A_{\\triangle}=\\frac12(3V_0)(3P_0)')):  40%|####      | 6/15 [00:00<00:00, 53.99it/s]
+Animation 99: Write(MathTex('A_{\\triangle}=\\frac12(3V_0)(3P_0)')):  87%|########6 | 13/15 [00:00<00:00, 57.44it/s]
+                                                                                                                    
+[10/11/26 00:06:39] INFO     Animation 99 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_363369908_39                         
+                             52743192.mp4'                                     
+[10/11/26 00:06:40] INFO     Animation 100 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_4046863825_7                         
+                             29728705.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}A_{\triang                        
+                             le}=\frac92P_0V_0\special{                        
+                             dvisvgm:raw </g>} to                              
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\0035109ece                        
+                             8bd803.tex                                        
+
+Animation 101: TransformMatchingTex(Group):   0%|          | 0/20 [00:00<?, ?it/s]
+Animation 101: TransformMatchingTex(Group):  35%|###5      | 7/20 [00:00<00:00, 67.76it/s]
+Animation 101: TransformMatchingTex(Group):  75%|#######5  | 15/20 [00:00<00:00, 72.33it/s]
+                                                                                           
+[10/11/26 00:06:43] INFO     Animation 101 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_535833253_29                         
+                             69568943.mp4'                                     
+                    INFO     Animation 102 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3997669029_4                         
+                             88196756.mp4'                                     
+
+Animation 103: MoveAlongPath(Dot):   0%|          | 0/50 [00:00<?, ?it/s]
+Animation 103: MoveAlongPath(Dot):  58%|#####8    | 29/50 [00:00<00:00, 280.09it/s]
+                                                                                   
+[10/11/26 00:06:44] INFO     Animation 103 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_2061736521_4                         
+                             221423195.mp4'                                    
+
+Animation 104: FadeIn(Text('anti-hor�rio  \u2192  trabalho l�quido negativo')):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                                                
+[10/11/26 00:06:49] INFO     Animation 104 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_4226854065_3                         
+                             479564149.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}W_{\mathrm                        
+                             {ciclo}}=-\frac92P_0V_0\sp                        
+                             ecial{dvisvgm:raw </g>} to                        
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\cfe7052b4e                        
+                             026b61.tex                                        
+
+Animation 105: Write(MathTex('W_{\\mathrm{ciclo}}=-\\frac92P_0V_0')):   0%|          | 0/15 [00:00<?, ?it/s]
+                                                                                                            
+[10/11/26 00:06:51] INFO     Animation 105 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_2521810138_2                         
+                             62010607.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}W_{\mathrm                        
+                             {ciclo}}=\oint                                    
+                             P\,dV\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\24459c23af                        
+                             59454a.tex                                        
+
+Animation 106: FadeIn(MathTex('W_{\\mathrm{ciclo}}=\\oint P\\,dV')):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                                          
+[10/11/26 00:06:53] INFO     Animation 106 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1335353859_4                         
+                             42167784.mp4'                                     
+[10/11/26 00:06:54] INFO     Animation 107 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1021757501_3                         
+                             395711965.mp4'                                    
+
+Animation 108: FadeOut(VGroup of 8 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+Animation 108: FadeOut(VGroup of 8 submobjects):  75%|#######5  | 6/8 [00:00<00:00, 53.81it/s]
+                                                                                              
+[10/11/26 00:06:55] INFO     Animation 108 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_1969552187_1                         
+                             210393936.mp4'                                    
+
+Animation 109: FadeOut(Text('Trabalho l�quido do ciclo')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 109: FadeOut(Text('Trabalho l�quido do ciclo')), etc.:  45%|####5     | 5/11 [00:00<00:00, 41.01it/s]
+Animation 109: FadeOut(Text('Trabalho l�quido do ciclo')), etc.:  91%|######### | 10/11 [00:00<00:00, 37.57it/s]
+                                                                                                                
+[10/11/26 00:07:05] INFO     Animation 109 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3650951164_9                         
+                             27503825.mp4'                                     
+
+Animation 110: Indicate(Dot):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 110: Indicate(Dot):  89%|########8 | 8/9 [00:00<00:00, 79.39it/s]
+                                                                           
+[10/11/26 00:07:06] INFO     Animation 110 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3952507687_7                         
+                             07586538.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Delta                            
+                             U_{\mathrm{ciclo}}=0\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\fe1a1ecfdd                        
+                             99b3d1.tex                                        
+
+Animation 111: Write(MathTex('\\Delta U_{\\mathrm{ciclo}}=0')):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                                     
+[10/11/26 00:07:08] INFO     Animation 111 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_2402599718_4                         
+                             195612321.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}Q_{\mathrm                        
+                             {l\acute                                          
+                             iquido}}=W_{\mathrm{ciclo}                        
+                             }\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\befc808830                        
+                             a94f01.tex                                        
+
+Animation 112: Write(MathTex('Q_{\\mathrm{l\\acute iquido}}=W_{\\mathrm{ciclo}}')):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                                                         
+[10/11/26 00:07:11] INFO     Animation 112 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_3280475673_3                         
+                             495571347.mp4'                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}Q_{\mathrm                        
+                             {l\acute                                          
+                             iquido}}=W_{\mathrm{ciclo}                        
+                             }=-\frac92P_0V_0\special{d                        
+                             visvgm:raw </g>} to                               
+                             C:\Users\KaioOrtiz\Pycharm                        
+                             Projects\manim-fisica\vide                        
+                             os\vid_0021_ciclo_termodin                        
+                             amico\media\Tex\c4e684bd90                        
+                             dbaf8a.tex                                        
+
+Animation 113: TransformMatchingTex(Group):   0%|          | 0/20 [00:00<?, ?it/s]
+Animation 113: TransformMatchingTex(Group):  50%|#####     | 10/20 [00:00<00:00, 93.96it/s]
+Animation 113: TransformMatchingTex(Group): 100%|##########| 20/20 [00:00<00:00, 96.02it/s]
+                                                                                           
+[10/11/26 00:07:13] INFO     Animation 113 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_2917000722_2                         
+                             456801931.mp4'                                    
+
+Animation 114: FadeIn(Text('No ciclo, o g�s cede mais calor\ndo que absorve.')):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                                                      
+[10/11/26 00:07:19] INFO     Animation 114 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_418085320_18                         
+                             71586821.mp4'                                     
+
+Animation 115: FadeIn(Text('A diferen�a � o trabalho l�quido.')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                                       
+[10/11/26 00:07:25] INFO     Animation 115 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_283259725_12                         
+                             93834380.mp4'                                     
+[10/11/26 00:07:26] INFO     Animation 116 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0021_ciclo_term                         
+                             odinamico\media\videos\ce                         
+                             na\960p15\partial_movie_f                         
+                             iles\CicloTermodinamico02                         
+                             1\2130283231_4089227837_2                         
+                             894615374.mp4'                                    
+                    INFO     Combining to Movie file.  scene_file_writer.py:952
+[10/11/26 00:07:27] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'C:\Users\KaioOrtiz\Pych                          
+                             armProjects\manim-fisica                          
+                             \videos\vid_0021_ciclo_t                          
+                             ermodinamico\media\video                          
+                             s\cena\960p15\CicloTermo                          
+                             dinamico021.mp4'                                  
+                                                                               
+                    INFO     The partial movie        scene_file_writer.py:1073
+                             directory is full (> 100                          
+                             files). Therefore, manim                          
+                             has removed the 19                                
+                             oldest file(s). You can                           
+                             change this behaviour by                          
+                             changing                                          
+                             max_files_cached in                               
+                             config.                                           
+                    INFO     Rendered CicloTermodinamico021        scene.py:290
+                             Played 117 animations                             
+You are using manim version v0.21.0, but version v0.22.0 is available.
+You should consider upgrading via pip install -U manim
