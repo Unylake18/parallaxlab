@@ -1,0 +1,39 @@
+O que essa fórmula está somando? Pequenos volumes, sob esta superfície curva.
+
+Dividimos a base quadrada em pequenas células.
+
+Cada célula ocupa uma pequena parte da área total. Multiplicando seu comprimento pela largura, encontramos a área da base de uma coluna.
+
+Escolhemos o centro da célula como ponto de referência. A função informa a altura da superfície naquele ponto.
+
+A coluna sobe até essa altura. Área da base vezes altura dá seu volume: uma aproximação para a contribuição sob a superfície.
+
+Repetimos isso em todas as células. Cada coluna acompanha a altura da superfície. Os topos são planos, mas a superfície é curva. Somando os volumes, aproximamos o volume inteiro.
+
+Refinamos a divisão. As bases diminuem, e os topos acompanham melhor a superfície. No limite, essa soma se torna a integral dupla: o volume exato.
+
+Para calcular, começamos com um corte vertical. Mantemos sua posição fixa e percorremos o corte entre as duas bordas. Integrando as alturas nesse percurso, encontramos a área da seção destacada.
+
+Depois, deslocamos o corte pela base. Sua área muda a cada posição. Área vezes uma pequena espessura dá um volume. A integral externa acumula essas contribuições e encontra o volume total.
+
+A conta segue essas duas etapas. Primeiro, calculamos a área do corte. Sua posição fica constante durante essa primeira integração; só a coordenada ao longo dele varia.
+
+A parte constante sai da integral. No termo ao quadrado, usamos a regra de potência: aumentamos o expoente para três e dividimos por três.
+
+Montamos a primitiva, cuja derivada devolve a expressão inicial. Aplicamos os limites: substituímos a coordenada por um e por menos um. Subtraímos o valor do limite inferior do valor do limite superior.
+
+Subtraímos o resultado inteiro, com atenção aos sinais. Agrupamos os termos constantes e simplificamos a expressão.
+
+Encontramos a área da seção. Ela depende da posição do corte.
+
+Agora, integramos as áreas para obter o volume. Substituímos a área encontrada na integral externa e separamos os termos.
+
+A constante é multiplicada pela coordenada. O fator dois permanece; a potência aumenta para três e dividimos por três.
+
+Aplicamos os limites também na segunda direção. Substituímos primeiro por um e depois por menos um, como no corte.
+
+Os resultados são vinte terços e menos vinte terços. Subtraímos o segundo do primeiro.
+
+Subtrair o negativo vira soma. O volume é quarenta terços, aproximadamente treze vírgula trinta e três unidades cúbicas.
+
+A integral dupla soma pequenas contribuições de volume sobre toda a área. Assim, recuperamos o sólido.
