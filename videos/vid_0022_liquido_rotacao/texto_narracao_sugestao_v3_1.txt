@@ -1,0 +1,45 @@
+Por que a superfície de um líquido girando vira uma parábola? Analisamos de fora o líquido estabilizado, girando com o recipiente. Todos compartilham a mesma velocidade angular.
+
+Para entender, cortamos pelo eixo e isolamos este elemento no líquido. Sua posição é a distância ao eixo; para fora é positivo. Aproximando: área da face vezes espessura dá o volume.
+
+Massa é densidade vezes volume. Velocidade é velocidade angular vezes distância. Já a aceleração centrípeta aponta para o eixo.
+
+A pressão empurra as duas faces, mas a face externa recebe uma força maior.
+
+Pressão vezes área dá cada força. A interna menos a externa dá a resultante.
+
+A derivada mede a variação da pressão por distância. Vezes espessura, aproxima a diferença. Cancelamos as parcelas iguais.
+
+O negativo indica força para dentro. A aceleração, em módulo, vale velocidade angular ao quadrado vezes distância.
+
+Newton: força é massa vezes aceleração. Cancelamos área, espessura e sinais negativos. A densidade permanece.
+
+Restou densidade vezes velocidade angular ao quadrado, vezes distância. Portanto, na mesma altura, a pressão cresce para fora.
+
+Na vertical, a pressão inferior empurra para cima. A superior e o peso, para baixo. As forças se equilibram.
+
+Subindo, a pressão diminui: sua derivada é menos densidade vezes aceleração da gravidade.
+
+Na superfície livre, a pressão é atmosférica. Assim, todos os pontos destacados têm a mesma pressão.
+
+Extraímos a seção. Percorrendo a curva, variam distância ao eixo e altura: são os deslocamentos horizontal e vertical.
+
+Mas a pressão não muda: variação total zero. A regra da cadeia soma os efeitos horizontal e vertical.
+
+O efeito vertical depende da inclinação. Substituímos as taxas e cancelamos a densidade.
+
+A inclinação é velocidade angular ao quadrado, vezes distância, dividida pela aceleração da gravidade. Ela mede aumento de altura por avanço horizontal. A projeção cresce, e a tangente fica mais inclinada.
+
+Multiplicando pelo deslocamento horizontal, obtemos um aumento de altura. A integral soma esses aumentos.
+
+A soma começa na altura final no eixo. Integrar a distância dá seu quadrado dividido por dois.
+
+Somamos esse acréscimo à altura central. O acréscimo cresce com a distância ao quadrado: uma parábola! Espelhando, completamos a seção.
+
+Recapitulando: a pressão cresce para fora. A superfície sobe mantendo a pressão. A inclinação cresce com a distância; o acréscimo de altura, com seu quadrado.
+
+Essa parábola é uma seção do paraboloide. Na borda, usamos o raio do recipiente. Subtraindo a altura central, encontramos o desnível indicado.
+
+Portanto: inclinação proporcional à distância, acréscimo de altura proporcional ao quadrado.
+
+A forma é consequência da dinâmica.

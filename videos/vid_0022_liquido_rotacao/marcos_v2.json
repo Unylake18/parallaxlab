@@ -1,0 +1,135 @@
+{
+  "duracao": 168.0,
+  "eventos": [
+    {
+      "t": 0.0,
+      "nome": "fenomeno"
+    },
+    {
+      "t": 12.0,
+      "nome": "extracao_3d"
+    },
+    {
+      "t": 24.4,
+      "nome": "elemento_ampliado"
+    },
+    {
+      "t": 48.467,
+      "nome": "gradiente_construido"
+    },
+    {
+      "t": 62.333,
+      "nome": "pressao_cresce"
+    },
+    {
+      "t": 75.933,
+      "nome": "vertical"
+    },
+    {
+      "t": 85.533,
+      "nome": "isobarica_3d"
+    },
+    {
+      "t": 95.4,
+      "nome": "regra_cadeia"
+    },
+    {
+      "t": 112.467,
+      "nome": "tangente_na_borda"
+    },
+    {
+      "t": 128.0,
+      "nome": "parabola_integrada"
+    },
+    {
+      "t": 134.333,
+      "nome": "secao_espelhada"
+    },
+    {
+      "t": 149.4,
+      "nome": "payoff_match"
+    },
+    {
+      "t": 158.467,
+      "nome": "delta_h"
+    },
+    {
+      "t": 165.533,
+      "nome": "branding"
+    }
+  ],
+  "mapas_mf_tools": [
+    {
+      "t": 45.067,
+      "de": "fontes combinadas",
+      "para": "F_r \\approx p(r)A - p(r) A - \\frac{\\partial p}{\\partial r} A dr",
+      "ligacoes": 10
+    },
+    {
+      "t": 48.467,
+      "de": "F_r \\approx p(r)A - p(r) A - \\frac{\\partial p}{\\partial r} A dr",
+      "para": "F_r \\approx - \\frac{\\partial p}{\\partial r} A dr",
+      "ligacoes": 6
+    },
+    {
+      "t": 58.067,
+      "de": "fontes combinadas",
+      "para": "- \\frac{\\partial p}{\\partial r} A dr = - \\rho A dr \\omega^2r",
+      "ligacoes": 10
+    },
+    {
+      "t": 60.6,
+      "de": "- \\frac{\\partial p}{\\partial r} A dr = - \\rho A dr \\omega^2r",
+      "para": "\\frac{\\partial p}{\\partial r} = \\rho \\omega^2r",
+      "ligacoes": 4
+    },
+    {
+      "t": 74.533,
+      "de": "p(z)A - p(z+dz)A - dm\\,g =0",
+      "para": "- \\frac{\\partial p}{\\partial z} A\\,dz - \\rho A\\,dz g =0",
+      "ligacoes": 5
+    },
+    {
+      "t": 75.933,
+      "de": "- \\frac{\\partial p}{\\partial z} A\\,dz - \\rho A\\,dz g =0",
+      "para": "\\frac{\\partial p}{\\partial z} = - \\rho g",
+      "ligacoes": 5
+    },
+    {
+      "t": 95.4,
+      "de": "0 = \\frac{d}{dr} p(r,z(r))",
+      "para": "0 = \\frac{\\partial p}{\\partial r} + \\frac{\\partial p}{\\partial z} \\frac{dz}{dr}",
+      "ligacoes": 5
+    },
+    {
+      "t": 103.933,
+      "de": "0 = \\frac{\\partial p}{\\partial r} + \\frac{\\partial p}{\\partial z} \\frac{dz}{dr}",
+      "para": "0 = \\rho \\omega^2r - \\rho g \\frac{dz}{dr}",
+      "ligacoes": 6
+    },
+    {
+      "t": 106.467,
+      "de": "0 = \\rho \\omega^2r - \\rho g \\frac{dz}{dr}",
+      "para": "\\frac{dz}{dr} = \\frac{\\omega^2}{g} r",
+      "ligacoes": 4
+    },
+    {
+      "t": 121.933,
+      "de": "\\frac{dz}{dr} = \\frac{\\omega^2}{g} r",
+      "para": "dz = \\frac{\\omega^2}{g} r dr",
+      "ligacoes": 5
+    },
+    {
+      "t": 124.467,
+      "de": "dz = \\frac{\\omega^2}{g} r dr",
+      "para": "\\int_{z_0}^{z(r)} dz = \\frac{\\omega^2}{g} \\int_0^r s ds",
+      "ligacoes": 5
+    },
+    {
+      "t": 128.0,
+      "de": "\\int_{z_0}^{z(r)} dz = \\frac{\\omega^2}{g} \\int_0^r s ds",
+      "para": "z(r) = z_0 + \\frac{\\omega^2}{2g} r^2",
+      "ligacoes": 4
+    }
+  ]
+}

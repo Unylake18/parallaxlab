@@ -1,0 +1,79 @@
+﻿[Script Info]
+Title: POR TRÁS DA FÓRMULA · EP. 08 — Líquido em rotação
+ScriptType: v4.00+
+PlayResX: 540
+PlayResY: 960
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,27,&H00FFFFFF,&H00FFFFFF,&H00160805,&H00160805,-1,0,0,0,100,100,0,0,1,2,0,2,46,46,33,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.07,0:00:01.94,Default,,0,0,0,,Quando um {\c&HFFBD75&}líquido{\c&HFFFFFF&}\Ncomeça a girar,
+Dialogue: 0,0:00:01.96,0:00:04.82,Default,,0,0,0,,a {\c&HFFBD75&}superfície{\c&HFFFFFF&} afunda no\Ncentro e sobe nas bordas.
+Dialogue: 0,0:00:05.05,0:00:06.17,Default,,0,0,0,,Mas por que ela assume
+Dialogue: 0,0:00:06.19,0:00:08.41,Default,,0,0,0,,justamente a forma\Nde uma {\c&HFFBD75&}parábola{\c&HFFFFFF&}?
+Dialogue: 0,0:00:08.60,0:00:10.58,Default,,0,0,0,,Depois que o\Nmovimento se estabiliza,
+Dialogue: 0,0:00:10.60,0:00:13.26,Default,,0,0,0,,o {\c&HFFBD75&}líquido{\c&HFFFFFF&} gira praticamente\Ncomo um corpo rígido:
+Dialogue: 0,0:00:13.28,0:00:15.87,Default,,0,0,0,,seus elementos têm a\Nmesma {\c&HFFD935&}velocidade angular{\c&HFFFFFF&}.
+Dialogue: 0,0:00:16.00,0:00:17.00,Default,,0,0,0,,Num corte pelo {\c&HFFD935&}eixo{\c&HFFFFFF&},
+Dialogue: 0,0:00:17.02,0:00:19.33,Default,,0,0,0,,isolamos um pequeno\Nelemento do {\c&HFFBD75&}líquido{\c&HFFFFFF&}.
+Dialogue: 0,0:00:19.46,0:00:20.83,Default,,0,0,0,,Para fora é positivo.
+Dialogue: 0,0:00:21.04,0:00:22.51,Default,,0,0,0,,Medimos sua {\c&HFFD935&}distância{\c&HFFFFFF&} ao {\c&HFFD935&}eixo{\c&HFFFFFF&}.
+Dialogue: 0,0:00:22.81,0:00:25.41,Default,,0,0,0,,Área da face vezes\N{\c&HFFD935&}espessura{\c&HFFFFFF&} dá o volume,
+Dialogue: 0,0:00:25.43,0:00:27.77,Default,,0,0,0,,e massa é densidade\Nvezes volume.
+Dialogue: 0,0:00:27.95,0:00:30.82,Default,,0,0,0,,A {\c&HFFD935&}velocidade{\c&HFFFFFF&} {\c&HFFD935&}tangencial{\c&HFFFFFF&} cresce\Ncom a {\c&HFFD935&}distância{\c&HFFFFFF&} ao {\c&HFFD935&}eixo{\c&HFFFFFF&},
+Dialogue: 0,0:00:30.84,0:00:34.00,Default,,0,0,0,,enquanto a aceleração\Ncentrípeta aponta para dentro.
+Dialogue: 0,0:00:34.20,0:00:35.94,Default,,0,0,0,,A {\c&HFF7CD7&}pressão{\c&HFFFFFF&} age nas duas faces,
+Dialogue: 0,0:00:35.96,0:00:39.02,Default,,0,0,0,,mas a força na face\Nexterna é um pouco maior.
+Dialogue: 0,0:00:39.18,0:00:42.06,Default,,0,0,0,,Cada força é {\c&HFF7CD7&}pressão{\c&HFFFFFF&}\Nvezes área, e a resultante
+Dialogue: 0,0:00:42.08,0:00:45.19,Default,,0,0,0,,radial é a força interna\Nmenos a força externa.
+Dialogue: 0,0:00:45.39,0:00:47.68,Default,,0,0,0,,Para um elemento muito\Npequeno, escrevemos
+Dialogue: 0,0:00:47.70,0:00:50.28,Default,,0,0,0,,essa diferença de {\c&HFF7CD7&}pressão{\c&HFFFFFF&}\Nem termos do {\c&HFF7CD7&}gradiente{\c&HFFFFFF&}.
+Dialogue: 0,0:00:50.59,0:00:53.35,Default,,0,0,0,,As parcelas iguais se\Ncancelam, e o sinal negativo
+Dialogue: 0,0:00:53.37,0:00:55.79,Default,,0,0,0,,confirma que a resultante\Naponta para dentro,
+Dialogue: 0,0:00:55.81,0:00:58.13,Default,,0,0,0,,na direção da\Naceleração centrípeta.
+Dialogue: 0,0:00:58.32,0:01:00.98,Default,,0,0,0,,Essa diferença de {\c&HFF7CD7&}pressão{\c&HFFFFFF&}\Né justamente o que fornece
+Dialogue: 0,0:01:01.00,0:01:04.64,Default,,0,0,0,,a força necessária para manter o\Nelemento em movimento circular.
+Dialogue: 0,0:01:04.75,0:01:08.56,Default,,0,0,0,,Pela segunda lei de Newton,\Nforça é massa vezes aceleração.
+Dialogue: 0,0:01:08.66,0:01:11.44,Default,,0,0,0,,Cancelamos área, {\c&HFFD935&}espessura{\c&HFFFFFF&}\Ne sinais negativos.
+Dialogue: 0,0:01:11.78,0:01:13.97,Default,,0,0,0,,O resultado mostra\Nque, na mesma {\c&HFFBD75&}altura{\c&HFFFFFF&},
+Dialogue: 0,0:01:13.99,0:01:15.61,Default,,0,0,0,,a {\c&HFF7CD7&}pressão{\c&HFFFFFF&} cresce para fora.
+Dialogue: 0,0:01:15.76,0:01:18.47,Default,,0,0,0,,Na {\c&HFFBD75&}vertical{\c&HFFFFFF&}, a {\c&HFF7CD7&}pressão{\c&HFFFFFF&}\Ninferior empurra para cima,
+Dialogue: 0,0:01:18.49,0:01:21.35,Default,,0,0,0,,enquanto a superior e o\Npeso atuam para baixo.
+Dialogue: 0,0:01:21.63,0:01:23.37,Default,,0,0,0,,Em equilíbrio, elas\Nse compensam.
+Dialogue: 0,0:01:23.48,0:01:25.70,Default,,0,0,0,,Por isso, ao subir,\Na {\c&HFF7CD7&}pressão{\c&HFFFFFF&} diminui.
+Dialogue: 0,0:01:25.82,0:01:27.95,Default,,0,0,0,,Temos então duas\Ntendências: radialmente
+Dialogue: 0,0:01:27.97,0:01:31.29,Default,,0,0,0,,a {\c&HFF7CD7&}pressão{\c&HFFFFFF&} aumenta, e\Nverticalmente ela diminui.
+Dialogue: 0,0:01:31.43,0:01:33.52,Default,,0,0,0,,Agora vem a ligação decisiva.
+Dialogue: 0,0:01:33.63,0:01:36.84,Default,,0,0,0,,Toda a {\c&HFFBD75&}superfície{\c&HFFFFFF&} livre está à\Nmesma {\c&HFF7CD7&}pressão{\c&HFFFFFF&} {\c&HFF7CD7&}atmosférica{\c&HFFFFFF&}.
+Dialogue: 0,0:01:37.03,0:01:39.80,Default,,0,0,0,,Ao avançar para fora, a\N{\c&HFF7CD7&}pressão{\c&HFFFFFF&} tende a aumentar;
+Dialogue: 0,0:01:39.82,0:01:41.62,Default,,0,0,0,,ao subir, tende a diminuir.
+Dialogue: 0,0:01:41.76,0:01:44.83,Default,,0,0,0,,Na {\c&HFFBD75&}superfície{\c&HFFFFFF&}, esses efeitos\Nprecisam se compensar.
+Dialogue: 0,0:01:44.97,0:01:47.73,Default,,0,0,0,,Substituindo as duas taxas\Nde variação, a densidade
+Dialogue: 0,0:01:47.75,0:01:50.88,Default,,0,0,0,,se cancela e obtemos a\N{\c&HFFD935&}inclinação{\c&HFFFFFF&} da {\c&HFFBD75&}superfície{\c&HFFFFFF&}.
+Dialogue: 0,0:01:51.14,0:01:53.40,Default,,0,0,0,,Ela é proporcional\Nà {\c&HFFD935&}distância{\c&HFFFFFF&} ao {\c&HFFD935&}eixo{\c&HFFFFFF&}:
+Dialogue: 0,0:01:53.42,0:01:56.32,Default,,0,0,0,,quanto mais longe, mais\N{\c&HFFD935&}inclinada{\c&HFFFFFF&} fica a tangente.
+Dialogue: 0,0:01:56.55,0:01:58.68,Default,,0,0,0,,Multiplicando essa\N{\c&HFFD935&}inclinação{\c&HFFFFFF&} por um pequeno
+Dialogue: 0,0:01:58.70,0:02:01.55,Default,,0,0,0,,avanço {\c&HFFD935&}horizontal{\c&HFFFFFF&}, obtemos\Num aumento de {\c&HFFBD75&}altura{\c&HFFFFFF&}.
+Dialogue: 0,0:02:01.64,0:02:03.41,Default,,0,0,0,,A integral soma esses aumentos.
+Dialogue: 0,0:02:03.77,0:02:06.22,Default,,0,0,0,,Tomamos a {\c&HFFBD75&}altura{\c&HFFFFFF&} final\Nno {\c&HFFD935&}eixo{\c&HFFFFFF&} como referência.
+Dialogue: 0,0:02:06.45,0:02:09.72,Default,,0,0,0,,Integrar a {\c&HFFD935&}distância{\c&HFFFFFF&} produz seu\Nquadrado dividido por dois.
+Dialogue: 0,0:02:09.93,0:02:10.85,Default,,0,0,0,,É esse crescimento
+Dialogue: 0,0:02:10.87,0:02:13.46,Default,,0,0,0,,quadrático que determina\Na forma da {\c&HFFBD75&}superfície{\c&HFFFFFF&}.
+Dialogue: 0,0:02:13.73,0:02:16.09,Default,,0,0,0,,Espelhando a curva,\Ncompletamos a {\c&HFFBD75&}seção{\c&HFFFFFF&}.
+Dialogue: 0,0:02:16.19,0:02:18.56,Default,,0,0,0,,A partir da {\c&HFFBD75&}altura{\c&HFFFFFF&} central,\No acréscimo cresce
+Dialogue: 0,0:02:18.58,0:02:21.14,Default,,0,0,0,,com a {\c&HFFD935&}distância{\c&HFFFFFF&} ao\Nquadrado: uma {\c&HFFBD75&}parábola{\c&HFFFFFF&}.
+Dialogue: 0,0:02:21.23,0:02:23.36,Default,,0,0,0,,E ao girar essa {\c&HFFBD75&}seção{\c&HFFFFFF&}\Nem torno do {\c&HFFD935&}eixo{\c&HFFFFFF&},
+Dialogue: 0,0:02:23.38,0:02:26.03,Default,,0,0,0,,obtemos o {\c&HFFBD75&}paraboloide{\c&HFFFFFF&}\Nque vemos no recipiente.
+Dialogue: 0,0:02:26.29,0:02:27.92,Default,,0,0,0,,Usando o {\c&HFFD935&}raio{\c&HFFFFFF&} do recipiente,
+Dialogue: 0,0:02:27.94,0:02:30.88,Default,,0,0,0,,encontramos o {\c&HFFBD75&}desnível{\c&HFFFFFF&}\Nentre a borda e o centro.
+Dialogue: 0,0:02:31.02,0:02:34.19,Default,,0,0,0,,A cadeia completa é esta:\Na {\c&HFF7CD7&}pressão{\c&HFFFFFF&} cresce para fora,
+Dialogue: 0,0:02:34.21,0:02:37.43,Default,,0,0,0,,a {\c&HFFBD75&}superfície{\c&HFFFFFF&} sobe para continuar\Nà {\c&HFF7CD7&}pressão{\c&HFFFFFF&} {\c&HFF7CD7&}atmosférica{\c&HFFFFFF&},
+Dialogue: 0,0:02:37.45,0:02:39.35,Default,,0,0,0,,a {\c&HFFD935&}inclinação{\c&HFFFFFF&} cresce\Ncom a {\c&HFFD935&}distância{\c&HFFFFFF&}
+Dialogue: 0,0:02:39.37,0:02:42.45,Default,,0,0,0,,e a {\c&HFFBD75&}altura{\c&HFFFFFF&} cresce com o\Nquadrado dessa {\c&HFFD935&}distância{\c&HFFFFFF&}.
+Dialogue: 0,0:02:42.74,0:02:45.12,Default,,0,0,0,,A forma é consequência\Nda dinâmica.
+Dialogue: 0,0:02:45.26,0:02:46.65,Default,,0,0,0,,Siga o Parallax Lab.

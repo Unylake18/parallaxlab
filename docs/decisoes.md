@@ -6,6 +6,13 @@ Registro das decisões estáveis do projeto.
 
 As decisões aprovadas serão registradas aqui conforme o projeto evoluir.
 
+## 2026-10-14 — Separação entre Coriolis e sua aplicação à queda
+
+- `vid_0023_coriolis`: origem, interpretação e derivação visual de Coriolis; planejado, não iniciado.
+- `vid_0024_queda_coriolis_leste`: aplicação à queda, unidade anteriormente chamada 0023; produção atual continua nela.
+- Produzir o 0023 somente após terminar tecnicamente o 0024. Publicação pretendida: 0023 → 0024.
+- A derivação completa de Coriolis não pertence ao 0024; seu recap permite assistir à aplicação isoladamente. O número público EP. 06 permanece.
+
 ## Uso de agentes de código
 
 Agentes de código devem operar com o menor contexto suficiente para a tarefa. Decisões matemáticas, físicas, didáticas e editoriais aprovadas no chat de Produção são tratadas como especificação de implementação, salvo inconsistência objetiva.

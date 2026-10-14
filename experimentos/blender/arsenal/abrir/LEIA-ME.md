@@ -100,6 +100,7 @@
 
 | Atalho | Sólido | Status | Movimento |
 |---|---|---|---|
+| [`liquido_rotacao.bat`](liquido_rotacao.bat) | Líquido em rotação (plano → paraboloide) | estudo | loop |
 | [`prensa_hidraulica.bat`](prensa_hidraulica.bat) | Prensa hidráulica (Pascal) | aprovado | loop |
 | [`tanque_hidrostatico.bat`](tanque_hidrostatico.bat) | Tanque com pressão e empuxo | aprovado | loop |
 | [`tanque_torricelli.bat`](tanque_torricelli.bat) | Jato de Torricelli | aprovado | loop |

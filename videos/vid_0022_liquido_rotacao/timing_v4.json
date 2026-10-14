@@ -1,0 +1,2474 @@
+{
+  "fps": 30,
+  "operations": [
+    {
+      "index": 0,
+      "start": 0.0,
+      "end": 0.7999999999999999,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 11,
+      "hold_after": 0
+    },
+    {
+      "index": 1,
+      "start": 0.7999999999999999,
+      "end": 3.800000000000005,
+      "pause": false,
+      "types": [
+        "FadeIn",
+        "_AnimationBuilder"
+      ],
+      "frames": 42,
+      "hold_after": 0
+    },
+    {
+      "index": 2,
+      "start": 3.800000000000005,
+      "end": 4.200000000000005,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 6,
+      "hold_after": 0
+    },
+    {
+      "index": 3,
+      "start": 4.200000000000005,
+      "end": 10.199999999999983,
+      "pause": false,
+      "types": [
+        "_AnimationBuilder"
+      ],
+      "frames": 92,
+      "hold_after": 0
+    },
+    {
+      "index": 4,
+      "start": 10.199999999999983,
+      "end": 10.99999999999998,
+      "pause": false,
+      "types": [
+        "Create",
+        "_AnimationBuilder"
+      ],
+      "frames": 107,
+      "hold_after": 0
+    },
+    {
+      "index": 5,
+      "start": 10.99999999999998,
+      "end": 11.999999999999977,
+      "pause": false,
+      "types": [
+        "_AnimationBuilder"
+      ],
+      "frames": 222,
+      "hold_after": 0
+    },
+    {
+      "index": 6,
+      "start": 11.999999999999977,
+      "end": 12.733333333333308,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeIn"
+      ],
+      "frames": 18,
+      "hold_after": 0
+    },
+    {
+      "index": 7,
+      "start": 12.733333333333308,
+      "end": 13.133333333333306,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 12,
+      "hold_after": 0
+    },
+    {
+      "index": 8,
+      "start": 13.133333333333306,
+      "end": 14.333333333333302,
+      "pause": false,
+      "types": [
+        "Create",
+        "Create",
+        "Create"
+      ],
+      "frames": 9,
+      "hold_after": 0
+    },
+    {
+      "index": 9,
+      "start": 14.333333333333302,
+      "end": 15.133333333333299,
+      "pause": false,
+      "types": [
+        "FadeIn",
+        "FadeIn"
+      ],
+      "frames": 21,
+      "hold_after": 0
+    },
+    {
+      "index": 10,
+      "start": 15.133333333333299,
+      "end": 16.133333333333297,
+      "pause": false,
+      "types": [
+        "Indicate"
+      ],
+      "frames": 15,
+      "hold_after": 0
+    },
+    {
+      "index": 11,
+      "start": 16.133333333333297,
+      "end": 17.46666666666663,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 24,
+      "hold_after": 0
+    },
+    {
+      "index": 12,
+      "start": 17.46666666666663,
+      "end": 19.466666666666622,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "Transform",
+        "Transform",
+        "Transform",
+        "Transform",
+        "_AnimationBuilder",
+        "GrowArrow",
+        "FadeIn"
+      ],
+      "frames": 45,
+      "hold_after": 0
+    },
+    {
+      "index": 13,
+      "start": 19.466666666666622,
+      "end": 20.199999999999953,
+      "pause": false,
+      "types": [
+        "Create",
+        "FadeIn",
+        "GrowArrow",
+        "FadeIn"
+      ],
+      "frames": 7,
+      "hold_after": 0
+    },
+    {
+      "index": 14,
+      "start": 20.199999999999953,
+      "end": 21.999999999999954,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 23,
+      "hold_after": 0
+    },
+    {
+      "index": 15,
+      "start": 21.999999999999954,
+      "end": 22.399999999999952,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 4,
+      "hold_after": 0
+    },
+    {
+      "index": 16,
+      "start": 22.399999999999952,
+      "end": 24.399999999999945,
+      "pause": false,
+      "types": [
+        "Transform",
+        "Transform",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 22,
+      "hold_after": 0
+    },
+    {
+      "index": 17,
+      "start": 24.399999999999945,
+      "end": 24.799999999999944,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 4,
+      "hold_after": 0
+    },
+    {
+      "index": 18,
+      "start": 24.799999999999944,
+      "end": 25.199999999999942,
+      "pause": false,
+      "types": [
+        "FadeIn",
+        "Create"
+      ],
+      "frames": 34,
+      "hold_after": 0
+    },
+    {
+      "index": 19,
+      "start": 25.199999999999942,
+      "end": 25.59999999999994,
+      "pause": false,
+      "types": [
+        "GrowArrow",
+        "FadeIn",
+        "TransformFromCopy"
+      ],
+      "frames": 44,
+      "hold_after": 0
+    },
+    {
+      "index": 20,
+      "start": 25.59999999999994,
+      "end": 25.99999999999994,
+      "pause": false,
+      "types": [
+        "GrowArrow",
+        "FadeIn"
+      ],
+      "frames": 4,
+      "hold_after": 0
+    },
+    {
+      "index": 21,
+      "start": 25.99999999999994,
+      "end": 26.066666666666606,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 2,
+      "hold_after": 0
+    },
+    {
+      "index": 22,
+      "start": 26.066666666666606,
+      "end": 26.999999999999936,
+      "pause": false,
+      "types": [
+        "ReplacementTransform",
+        "FadeIn"
+      ],
+      "frames": 32,
+      "hold_after": 0
+    },
+    {
+      "index": 23,
+      "start": 26.999999999999936,
+      "end": 27.399999999999935,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 14,
+      "hold_after": 0
+    },
+    {
+      "index": 24,
+      "start": 27.399999999999935,
+      "end": 28.066666666666602,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 23,
+      "hold_after": 0
+    },
+    {
+      "index": 25,
+      "start": 28.066666666666602,
+      "end": 28.999999999999932,
+      "pause": false,
+      "types": [
+        "Create",
+        "FadeIn",
+        "FadeIn",
+        "TransformFromCopy"
+      ],
+      "frames": 47,
+      "hold_after": 0
+    },
+    {
+      "index": 26,
+      "start": 28.999999999999932,
+      "end": 29.866666666666596,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 44,
+      "hold_after": 0
+    },
+    {
+      "index": 27,
+      "start": 29.866666666666596,
+      "end": 30.799999999999926,
+      "pause": false,
+      "types": [
+        "GrowArrow",
+        "FadeIn",
+        "Write",
+        "_AnimationBuilder"
+      ],
+      "frames": 43,
+      "hold_after": 0
+    },
+    {
+      "index": 28,
+      "start": 30.799999999999926,
+      "end": 32.06666666666659,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 57,
+      "hold_after": 0
+    },
+    {
+      "index": 29,
+      "start": 32.06666666666659,
+      "end": 32.46666666666661,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 12,
+      "hold_after": 0
+    },
+    {
+      "index": 30,
+      "start": 32.46666666666661,
+      "end": 32.99999999999997,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 16,
+      "hold_after": 0
+    },
+    {
+      "index": 31,
+      "start": 32.99999999999997,
+      "end": 34.20000000000003,
+      "pause": false,
+      "types": [
+        "GrowArrow",
+        "GrowArrow",
+        "FadeIn",
+        "FadeIn",
+        "FadeIn"
+      ],
+      "frames": 36,
+      "hold_after": 0
+    },
+    {
+      "index": 32,
+      "start": 34.20000000000003,
+      "end": 34.40000000000004,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 6,
+      "hold_after": 0
+    },
+    {
+      "index": 33,
+      "start": 34.40000000000004,
+      "end": 34.66666666666672,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 8,
+      "hold_after": 0
+    },
+    {
+      "index": 34,
+      "start": 34.66666666666672,
+      "end": 35.46666666666676,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "Indicate"
+      ],
+      "frames": 24,
+      "hold_after": 0
+    },
+    {
+      "index": 35,
+      "start": 35.46666666666676,
+      "end": 36.20000000000013,
+      "pause": false,
+      "types": [
+        "Write"
+      ],
+      "frames": 21,
+      "hold_after": 0
+    },
+    {
+      "index": 36,
+      "start": 36.20000000000013,
+      "end": 37.00000000000017,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 24,
+      "hold_after": 0
+    },
+    {
+      "index": 37,
+      "start": 37.00000000000017,
+      "end": 38.20000000000023,
+      "pause": false,
+      "types": [
+        "Write",
+        "TransformFromCopy",
+        "TransformFromCopy"
+      ],
+      "frames": 55,
+      "hold_after": 0
+    },
+    {
+      "index": 38,
+      "start": 38.20000000000023,
+      "end": 38.60000000000025,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "_AnimationBuilder"
+      ],
+      "frames": 24,
+      "hold_after": 0
+    },
+    {
+      "index": 39,
+      "start": 38.60000000000025,
+      "end": 38.80000000000026,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 15,
+      "hold_after": 0
+    },
+    {
+      "index": 40,
+      "start": 38.80000000000026,
+      "end": 39.06666666666694,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 21,
+      "hold_after": 0
+    },
+    {
+      "index": 41,
+      "start": 39.06666666666694,
+      "end": 40.60000000000035,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "Write"
+      ],
+      "frames": 87,
+      "hold_after": 0
+    },
+    {
+      "index": 42,
+      "start": 40.60000000000035,
+      "end": 43.00000000000047,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 59,
+      "hold_after": 0
+    },
+    {
+      "index": 43,
+      "start": 43.00000000000047,
+      "end": 43.40000000000049,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 10,
+      "hold_after": 0
+    },
+    {
+      "index": 44,
+      "start": 43.40000000000049,
+      "end": 45.53333333333393,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 42,
+      "hold_after": 11
+    },
+    {
+      "index": 45,
+      "start": 45.53333333333393,
+      "end": 46.33333333333397,
+      "pause": false,
+      "types": [
+        "Create"
+      ],
+      "frames": 20,
+      "hold_after": 0
+    },
+    {
+      "index": 46,
+      "start": 46.33333333333397,
+      "end": 47.13333333333401,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 16,
+      "hold_after": 0
+    },
+    {
+      "index": 47,
+      "start": 47.13333333333401,
+      "end": 48.9333333333341,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap",
+        "FadeOut"
+      ],
+      "frames": 38,
+      "hold_after": 0
+    },
+    {
+      "index": 48,
+      "start": 48.9333333333341,
+      "end": 49.66666666666747,
+      "pause": false,
+      "types": [
+        "Indicate",
+        "ShowPassingFlash"
+      ],
+      "frames": 25,
+      "hold_after": 0
+    },
+    {
+      "index": 49,
+      "start": 49.66666666666747,
+      "end": 55.000000000001066,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 345,
+      "hold_after": 0
+    },
+    {
+      "index": 50,
+      "start": 55.000000000001066,
+      "end": 55.400000000001086,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 11,
+      "hold_after": 0
+    },
+    {
+      "index": 51,
+      "start": 55.400000000001086,
+      "end": 56.133333333334456,
+      "pause": false,
+      "types": [
+        "GrowArrow",
+        "FadeIn"
+      ],
+      "frames": 20,
+      "hold_after": 0
+    },
+    {
+      "index": 52,
+      "start": 56.133333333334456,
+      "end": 56.866666666667825,
+      "pause": false,
+      "types": [
+        "Write"
+      ],
+      "frames": 21,
+      "hold_after": 0
+    },
+    {
+      "index": 53,
+      "start": 56.866666666667825,
+      "end": 58.866666666667925,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap",
+        "FadeOut"
+      ],
+      "frames": 42,
+      "hold_after": 13
+    },
+    {
+      "index": 54,
+      "start": 58.866666666667925,
+      "end": 59.266666666667945,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 12,
+      "hold_after": 0
+    },
+    {
+      "index": 55,
+      "start": 59.266666666667945,
+      "end": 60.066666666667984,
+      "pause": false,
+      "types": [
+        "Create"
+      ],
+      "frames": 30,
+      "hold_after": 0
+    },
+    {
+      "index": 56,
+      "start": 60.066666666667984,
+      "end": 61.800000000001404,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap",
+        "FadeOut"
+      ],
+      "frames": 42,
+      "hold_after": 23
+    },
+    {
+      "index": 57,
+      "start": 61.800000000001404,
+      "end": 63.133333333334804,
+      "pause": false,
+      "types": [
+        "LaggedStart",
+        "GrowArrow",
+        "Write",
+        "FadeIn"
+      ],
+      "frames": 63,
+      "hold_after": 0
+    },
+    {
+      "index": 58,
+      "start": 63.133333333334804,
+      "end": 63.466666666668154,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 3,
+      "hold_after": 0
+    },
+    {
+      "index": 59,
+      "start": 63.466666666668154,
+      "end": 64.80000000000146,
+      "pause": false,
+      "types": [
+        "_AnimationBuilder"
+      ],
+      "frames": 12,
+      "hold_after": 0
+    },
+    {
+      "index": 60,
+      "start": 64.80000000000146,
+      "end": 65.13333333333478,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 3,
+      "hold_after": 0
+    },
+    {
+      "index": 61,
+      "start": 65.13333333333478,
+      "end": 69.00000000000122,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 35,
+      "hold_after": 0
+    },
+    {
+      "index": 62,
+      "start": 69.00000000000122,
+      "end": 69.4000000000012,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 13,
+      "hold_after": 0
+    },
+    {
+      "index": 63,
+      "start": 69.4000000000012,
+      "end": 70.00000000000117,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 21,
+      "hold_after": 0
+    },
+    {
+      "index": 64,
+      "start": 70.00000000000117,
+      "end": 71.53333333333441,
+      "pause": false,
+      "types": [
+        "Rotate",
+        "Rotate",
+        "Transform",
+        "Transform",
+        "Transform",
+        "Transform"
+      ],
+      "frames": 56,
+      "hold_after": 0
+    },
+    {
+      "index": 65,
+      "start": 71.53333333333441,
+      "end": 72.2666666666677,
+      "pause": false,
+      "types": [
+        "GrowArrow",
+        "FadeIn",
+        "GrowArrow",
+        "FadeIn"
+      ],
+      "frames": 43,
+      "hold_after": 0
+    },
+    {
+      "index": 66,
+      "start": 72.2666666666677,
+      "end": 73.26666666666765,
+      "pause": false,
+      "types": [
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "TransformFromCopy",
+        "Write"
+      ],
+      "frames": 48,
+      "hold_after": 0
+    },
+    {
+      "index": 67,
+      "start": 73.26666666666765,
+      "end": 74.6000000000009,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 25,
+      "hold_after": 0
+    },
+    {
+      "index": 68,
+      "start": 74.6000000000009,
+      "end": 76.00000000000082,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 28,
+      "hold_after": 0
+    },
+    {
+      "index": 69,
+      "start": 76.00000000000082,
+      "end": 76.46666666666746,
+      "pause": false,
+      "types": [
+        "Indicate"
+      ],
+      "frames": 16,
+      "hold_after": 0
+    },
+    {
+      "index": 70,
+      "start": 76.46666666666746,
+      "end": 76.9333333333341,
+      "pause": false,
+      "types": [
+        "Indicate",
+        "Indicate"
+      ],
+      "frames": 15,
+      "hold_after": 0
+    },
+    {
+      "index": 71,
+      "start": 76.9333333333341,
+      "end": 77.40000000000074,
+      "pause": false,
+      "types": [
+        "Indicate"
+      ],
+      "frames": 16,
+      "hold_after": 0
+    },
+    {
+      "index": 72,
+      "start": 77.40000000000074,
+      "end": 80.93333333333408,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 246,
+      "hold_after": 0
+    },
+    {
+      "index": 73,
+      "start": 80.93333333333408,
+      "end": 81.13333333333406,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 11,
+      "hold_after": 0
+    },
+    {
+      "index": 74,
+      "start": 81.13333333333406,
+      "end": 81.40000000000072,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 5,
+      "hold_after": 0
+    },
+    {
+      "index": 75,
+      "start": 81.40000000000072,
+      "end": 82.00000000000068,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 10,
+      "hold_after": 0
+    },
+    {
+      "index": 76,
+      "start": 82.00000000000068,
+      "end": 82.80000000000064,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 14,
+      "hold_after": 0
+    },
+    {
+      "index": 77,
+      "start": 82.80000000000064,
+      "end": 84.20000000000056,
+      "pause": false,
+      "types": [
+        "Create",
+        "FadeIn",
+        "FadeIn"
+      ],
+      "frames": 23,
+      "hold_after": 0
+    },
+    {
+      "index": 78,
+      "start": 84.20000000000056,
+      "end": 85.60000000000048,
+      "pause": false,
+      "types": [
+        "ShowPassingFlash"
+      ],
+      "frames": 24,
+      "hold_after": 0
+    },
+    {
+      "index": 79,
+      "start": 85.60000000000048,
+      "end": 86.9333333333338,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 23,
+      "hold_after": 0
+    },
+    {
+      "index": 80,
+      "start": 86.9333333333338,
+      "end": 88.13333333333374,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 39,
+      "hold_after": 0
+    },
+    {
+      "index": 81,
+      "start": 88.13333333333374,
+      "end": 88.53333333333374,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 13,
+      "hold_after": 0
+    },
+    {
+      "index": 82,
+      "start": 88.53333333333374,
+      "end": 89.53333333333369,
+      "pause": false,
+      "types": [
+        "Transform",
+        "Create"
+      ],
+      "frames": 33,
+      "hold_after": 0
+    },
+    {
+      "index": 83,
+      "start": 89.53333333333369,
+      "end": 89.93333333333366,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 5,
+      "hold_after": 0
+    },
+    {
+      "index": 84,
+      "start": 89.93333333333366,
+      "end": 90.26666666666698,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 5,
+      "hold_after": 0
+    },
+    {
+      "index": 85,
+      "start": 90.26666666666698,
+      "end": 93.26666666666681,
+      "pause": false,
+      "types": [
+        "_AnimationBuilder"
+      ],
+      "frames": 38,
+      "hold_after": 0
+    },
+    {
+      "index": 86,
+      "start": 93.26666666666681,
+      "end": 93.86666666666677,
+      "pause": false,
+      "types": [
+        "Write"
+      ],
+      "frames": 8,
+      "hold_after": 0
+    },
+    {
+      "index": 87,
+      "start": 93.86666666666677,
+      "end": 94.60000000000007,
+      "pause": false,
+      "types": [
+        "Write"
+      ],
+      "frames": 10,
+      "hold_after": 0
+    },
+    {
+      "index": 88,
+      "start": 94.60000000000007,
+      "end": 96.19999999999997,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap",
+        "Indicate",
+        "Indicate"
+      ],
+      "frames": 22,
+      "hold_after": 0
+    },
+    {
+      "index": 89,
+      "start": 96.19999999999997,
+      "end": 100.99999999999997,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 66,
+      "hold_after": 0
+    },
+    {
+      "index": 90,
+      "start": 100.99999999999997,
+      "end": 101.39999999999995,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 8,
+      "hold_after": 0
+    },
+    {
+      "index": 91,
+      "start": 101.39999999999995,
+      "end": 101.93333333333325,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 11,
+      "hold_after": 0
+    },
+    {
+      "index": 92,
+      "start": 101.93333333333325,
+      "end": 103.93333333333314,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "frames": 40,
+      "hold_after": 0
+    },
+    {
+      "index": 93,
+      "start": 103.93333333333314,
+      "end": 104.66666666666643,
+      "pause": false,
+      "types": [
+        "Create"
+      ],
+      "frames": 14,
+      "hold_after": 0
+    },
+    {
+      "index": 94,
+      "start": 104.66666666666643,
+      "end": 106.46666666666633,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap",
+        "FadeOut"
+      ],
+      "frames": 35,
+      "hold_after": 0
+    },
+    {
+      "index": 95,
+      "start": 106.46666666666633,
+      "end": 112.46666666666599,
+      "pause": false,
+      "types": [
+        "_AnimationBuilder",
+        "Indicate",
+        "FadeIn"
+      ],
+      "frames": 171,
+      "hold_after": 0
+    },
+    {
+      "index": 96,
+      "start": 112.46666666666599,
+      "end": 113.99999999999923,
+      "pause": false,
+      "types": [
+        "_AnimationBuilder"
+      ],
+      "frames": 16,
+      "hold_after": 0
+    },
+    {
+      "index": 97,
+      "start": 113.99999999999923,
+      "end": 115.53333333333248,
+      "pause": false,
+      "types": [
+        "_AnimationBuilder"
+      ],
+      "frames": 16,
+      "hold_after": 0
+    },
+    {
+      "index": 98,
+      "start": 115.53333333333248,
+      "end": 118.99999999999915,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 36,
+      "hold_after": 0
+    },
+    {
+      "index": 99,
+      "start": 118.99999999999915,
+      "end": 119.19999999999914,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 6,
+      "hold_after": 0
+    },
+    {
+      "index": 100,
+      "start": 119.19999999999914,
+      "end": 119.46666666666579,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 7,
+      "hold_after": 0
+    },
+    {
+      "index": 101,
+      "start": 119.46666666666579,
+      "end": 119.99999999999909,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 15,
+      "hold_after": 0
+    },
+    {
+      "index": 102,
+      "start": 119.99999999999909,
+      "end": 121.99999999999898,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap",
+        "_AnimationBuilder"
+      ],
+      "frames": 42,
+      "hold_after": 13
+    },
+    {
+      "index": 103,
+      "start": 121.99999999999898,
+      "end": 124.53333333333217,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap",
+        "_AnimationBuilder"
+      ],
+      "frames": 42,
+      "hold_after": 28
+    },
+    {
+      "index": 104,
+      "start": 124.53333333333217,
+      "end": 124.93333333333214,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 29,
+      "hold_after": 0
+    },
+    {
+      "index": 105,
+      "start": 124.93333333333214,
+      "end": 125.46666666666545,
+      "pause": false,
+      "types": [
+        "Create",
+        "FadeIn"
+      ],
+      "frames": 40,
+      "hold_after": 0
+    },
+    {
+      "index": 106,
+      "start": 125.46666666666545,
+      "end": 128.46666666666528,
+      "pause": false,
+      "types": [
+        "TransformByGlyphMap",
+        "_AnimationBuilder"
+      ],
+      "frames": 42,
+      "hold_after": 138
+    },
+    {
+      "index": 107,
+      "start": 128.46666666666528,
+      "end": 129.06666666666524,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 27,
+      "hold_after": 0
+    },
+    {
+      "index": 108,
+      "start": 129.06666666666524,
+      "end": 130.99999999999858,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 87,
+      "hold_after": 0
+    },
+    {
+      "index": 109,
+      "start": 130.99999999999858,
+      "end": 132.1999999999985,
+      "pause": false,
+      "types": [
+        "Transform",
+        "FadeOut",
+        "FadeOut",
+        "_AnimationBuilder",
+        "_AnimationBuilder"
+      ],
+      "frames": 26,
+      "hold_after": 0
+    },
+    {
+      "index": 110,
+      "start": 132.1999999999985,
+      "end": 133.59999999999843,
+      "pause": false,
+      "types": [
+        "Create"
+      ],
+      "frames": 31,
+      "hold_after": 0
+    },
+    {
+      "index": 111,
+      "start": 133.59999999999843,
+      "end": 134.33333333333172,
+      "pause": false,
+      "types": [
+        "Write"
+      ],
+      "frames": 17,
+      "hold_after": 0
+    },
+    {
+      "index": 112,
+      "start": 134.33333333333172,
+      "end": 139.99999999999838,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 151,
+      "hold_after": 0
+    },
+    {
+      "index": 113,
+      "start": 139.99999999999838,
+      "end": 140.39999999999836,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 12,
+      "hold_after": 0
+    },
+    {
+      "index": 114,
+      "start": 140.39999999999836,
+      "end": 140.79999999999833,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 13,
+      "hold_after": 0
+    },
+    {
+      "index": 115,
+      "start": 140.79999999999833,
+      "end": 141.53333333333163,
+      "pause": false,
+      "types": [
+        "LaggedStart",
+        "Write"
+      ],
+      "frames": 23,
+      "hold_after": 0
+    },
+    {
+      "index": 116,
+      "start": 141.53333333333163,
+      "end": 142.53333333333157,
+      "pause": false,
+      "types": [
+        "ReplacementTransform",
+        "TransformMatchingTex"
+      ],
+      "frames": 42,
+      "hold_after": 5
+    },
+    {
+      "index": 117,
+      "start": 142.53333333333157,
+      "end": 143.33333333333152,
+      "pause": false,
+      "types": [
+        "ReplacementTransform",
+        "TransformMatchingTex"
+      ],
+      "frames": 28,
+      "hold_after": 0
+    },
+    {
+      "index": 118,
+      "start": 143.33333333333152,
+      "end": 145.3333333333314,
+      "pause": false,
+      "types": [
+        "_AnimationBuilder"
+      ],
+      "frames": 69,
+      "hold_after": 0
+    },
+    {
+      "index": 119,
+      "start": 145.3333333333314,
+      "end": 146.13333333333136,
+      "pause": false,
+      "types": [
+        "TransformMatchingTex",
+        "FadeOut",
+        "Create"
+      ],
+      "frames": 42,
+      "hold_after": 21
+    },
+    {
+      "index": 120,
+      "start": 146.13333333333136,
+      "end": 148.39999999999804,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 76,
+      "hold_after": 0
+    },
+    {
+      "index": 121,
+      "start": 148.39999999999804,
+      "end": 148.79999999999802,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 14,
+      "hold_after": 0
+    },
+    {
+      "index": 122,
+      "start": 148.79999999999802,
+      "end": 148.999999999998,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 6,
+      "hold_after": 0
+    },
+    {
+      "index": 123,
+      "start": 148.999999999998,
+      "end": 149.199999999998,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 6,
+      "hold_after": 0
+    },
+    {
+      "index": 124,
+      "start": 149.199999999998,
+      "end": 149.46666666666465,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 8,
+      "hold_after": 0
+    },
+    {
+      "index": 125,
+      "start": 149.46666666666465,
+      "end": 150.4666666666646,
+      "pause": false,
+      "types": [
+        "Transform",
+        "Create"
+      ],
+      "frames": 33,
+      "hold_after": 0
+    },
+    {
+      "index": 126,
+      "start": 150.4666666666646,
+      "end": 153.6666666666644,
+      "pause": false,
+      "types": [
+        "_AnimationBuilder",
+        "FadeOut"
+      ],
+      "frames": 105,
+      "hold_after": 0
+    },
+    {
+      "index": 127,
+      "start": 153.6666666666644,
+      "end": 154.0666666666644,
+      "pause": false,
+      "types": [
+        "FadeOut"
+      ],
+      "frames": 14,
+      "hold_after": 0
+    },
+    {
+      "index": 128,
+      "start": 154.0666666666644,
+      "end": 154.86666666666434,
+      "pause": false,
+      "types": [
+        "Create",
+        "Create",
+        "Write"
+      ],
+      "frames": 49,
+      "hold_after": 0
+    },
+    {
+      "index": 129,
+      "start": 154.86666666666434,
+      "end": 156.99999999999767,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 93,
+      "hold_after": 0
+    },
+    {
+      "index": 130,
+      "start": 156.99999999999767,
+      "end": 157.59999999999764,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "_AnimationBuilder",
+        "Create"
+      ],
+      "frames": 18,
+      "hold_after": 0
+    },
+    {
+      "index": 131,
+      "start": 157.59999999999764,
+      "end": 158.13333333333094,
+      "pause": false,
+      "types": [
+        "Write"
+      ],
+      "frames": 16,
+      "hold_after": 0
+    },
+    {
+      "index": 132,
+      "start": 158.13333333333094,
+      "end": 158.39999999999762,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 8,
+      "hold_after": 0
+    },
+    {
+      "index": 133,
+      "start": 158.39999999999762,
+      "end": 159.1333333333309,
+      "pause": false,
+      "types": [
+        "TransformMatchingTex"
+      ],
+      "frames": 22,
+      "hold_after": 0
+    },
+    {
+      "index": 134,
+      "start": 159.1333333333309,
+      "end": 160.19999999999757,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 32,
+      "hold_after": 0
+    },
+    {
+      "index": 135,
+      "start": 160.19999999999757,
+      "end": 160.79999999999754,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeOut",
+        "_AnimationBuilder"
+      ],
+      "frames": 18,
+      "hold_after": 0
+    },
+    {
+      "index": 136,
+      "start": 160.79999999999754,
+      "end": 161.3999999999975,
+      "pause": false,
+      "types": [
+        "FadeIn"
+      ],
+      "frames": 6,
+      "hold_after": 0
+    },
+    {
+      "index": 137,
+      "start": 161.3999999999975,
+      "end": 163.9999999999975,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 25,
+      "hold_after": 0
+    },
+    {
+      "index": 138,
+      "start": 163.9999999999975,
+      "end": 164.7333333333308,
+      "pause": false,
+      "types": [
+        "FadeOut",
+        "FadeOut",
+        "FadeOut",
+        "FadeOut"
+      ],
+      "frames": 21,
+      "hold_after": 0
+    },
+    {
+      "index": 139,
+      "start": 164.7333333333308,
+      "end": 165.53333333333075,
+      "pause": false,
+      "types": [
+        "FadeIn",
+        "FadeIn"
+      ],
+      "frames": 24,
+      "hold_after": 0
+    },
+    {
+      "index": 140,
+      "start": 165.53333333333075,
+      "end": 167.9999999999974,
+      "pause": true,
+      "types": [
+        "Wait"
+      ],
+      "frames": 166,
+      "hold_after": 0
+    }
+  ],
+  "intervals": [
+    {
+      "source": [
+        0,
+        140
+      ],
+      "frames": [
+        0,
+        4237
+      ],
+      "keep": true,
+      "group": 0,
+      "points": [
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 0,
+          "audio": 0
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 4.2,
+          "audio": 1.9606
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 10.2,
+          "audio": 5.05
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 11,
+          "audio": 8.6
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 12,
+          "audio": 16
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 12.733333,
+          "audio": 16.6
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 13.133333,
+          "audio": 17.0
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 14.333333,
+          "audio": 17.3
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 15.133333,
+          "audio": 18.0
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 16.133333,
+          "audio": 18.5
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 17.466667,
+          "audio": 19.3
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 19.466667,
+          "audio": 20.8
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 20.2,
+          "audio": 21.04
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 22,
+          "audio": 21.8
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 24.8,
+          "audio": 22.81
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 25.2,
+          "audio": 23.92
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 25.6,
+          "audio": 25.4
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 26,
+          "audio": 25.55
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 26.1,
+          "audio": 25.6028
+        },
+        {
+          "marco": "V4: construção sincronizada",
+          "visual": 28.1,
+          "audio": 27.95
+        },
+        {
+          "marco": "enquanto a aceleração",
+          "visual": 29.8,
+          "audio": 30.8446
+        },
+        {
+          "marco": "A pressão age",
+          "visual": 32,
+          "audio": 34.2
+        },
+        {
+          "marco": "Cada força",
+          "visual": 37,
+          "audio": 39.18
+        },
+        {
+          "marco": "a resultante radial",
+          "visual": 38.4,
+          "audio": 41.2886
+        },
+        {
+          "marco": "Para um elemento",
+          "visual": 40,
+          "audio": 45.39
+        },
+        {
+          "marco": "As parcelas",
+          "visual": 46.267,
+          "audio": 50.59
+        },
+        {
+          "marco": "o sinal negativo",
+          "visual": 48.867,
+          "audio": 52.3518
+        },
+        {
+          "marco": "Essa diferença de pressão",
+          "visual": 54,
+          "audio": 58.32
+        },
+        {
+          "marco": "Pela segunda lei",
+          "visual": 55,
+          "audio": 64.75
+        },
+        {
+          "marco": "Cancelamos área",
+          "visual": 59.2,
+          "audio": 68.66
+        },
+        {
+          "marco": "O resultado mostra",
+          "visual": 61.733,
+          "audio": 71.78
+        },
+        {
+          "marco": "a pressão cresce para fora",
+          "visual": 63.067,
+          "audio": 73.9936
+        },
+        {
+          "marco": "Na vertical",
+          "visual": 69,
+          "audio": 75.76
+        },
+        {
+          "marco": "enquanto a superior",
+          "visual": 71.4,
+          "audio": 78.4886
+        },
+        {
+          "marco": "Em equilíbrio",
+          "visual": 73,
+          "audio": 81.63
+        },
+        {
+          "marco": "Por isso, ao subir",
+          "visual": 75.933,
+          "audio": 83.48
+        },
+        {
+          "marco": "Temos então duas tendências",
+          "visual": 78,
+          "audio": 85.82
+        },
+        {
+          "marco": "Agora vem a ligação",
+          "visual": 80.5,
+          "audio": 91.43
+        },
+        {
+          "marco": "Toda a superfície",
+          "visual": 81,
+          "audio": 93.63
+        },
+        {
+          "marco": "Ao avançar para fora",
+          "visual": 87,
+          "audio": 97.03
+        },
+        {
+          "marco": "ao subir, tende",
+          "visual": 89.5,
+          "audio": 99.8205
+        },
+        {
+          "marco": "Na superfície",
+          "visual": 94,
+          "audio": 101.76
+        },
+        {
+          "marco": "Substituindo as duas taxas",
+          "visual": 101,
+          "audio": 104.97
+        },
+        {
+          "marco": "a densidade se cancela",
+          "visual": 104,
+          "audio": 106.9821
+        },
+        {
+          "marco": "obtemos a inclinação",
+          "visual": 106.467,
+          "audio": 108.5562
+        },
+        {
+          "marco": "Ela é proporcional",
+          "visual": 107,
+          "audio": 111.14
+        },
+        {
+          "marco": "quanto mais longe",
+          "visual": 110,
+          "audio": 113.417
+        },
+        {
+          "marco": "Multiplicando essa inclinação",
+          "visual": 119,
+          "audio": 116.55
+        },
+        {
+          "marco": "A integral soma",
+          "visual": 124.533,
+          "audio": 121.64
+        },
+        {
+          "marco": "Tomamos a altura",
+          "visual": 125.433,
+          "audio": 123.77
+        },
+        {
+          "marco": "Integrar a distância",
+          "visual": 126,
+          "audio": 126.45
+        },
+        {
+          "marco": "É esse crescimento quadrático",
+          "visual": 128.467,
+          "audio": 129.93
+        },
+        {
+          "marco": "Espelhando",
+          "visual": 131,
+          "audio": 133.73
+        },
+        {
+          "marco": "A partir da altura central",
+          "visual": 134.333,
+          "audio": 136.19
+        },
+        {
+          "marco": "fim_secao",
+          "visual": 140,
+          "audio": 141.23
+        }
+      ]
+    },
+    {
+      "source": [
+        140,
+        149
+      ],
+      "frames": [
+        4237,
+        4588
+      ],
+      "keep": true,
+      "group": 2,
+      "points": [
+        {
+          "marco": "sintese",
+          "visual": 140,
+          "audio": 151.02
+        },
+        {
+          "marco": "a pressão cresce para fora",
+          "visual": 141.533,
+          "audio": 152.6198
+        },
+        {
+          "marco": "a superfície sobe",
+          "visual": 142.533,
+          "audio": 154.2057
+        },
+        {
+          "marco": "a inclinação cresce",
+          "visual": 145.333,
+          "audio": 157.4471
+        },
+        {
+          "marco": "a altura cresce",
+          "visual": 146.133,
+          "audio": 159.5477
+        },
+        {
+          "marco": "fim_sintese",
+          "visual": 149,
+          "audio": 162.74
+        }
+      ]
+    },
+    {
+      "source": [
+        149,
+        149.467
+      ],
+      "frames": [
+        4588,
+        4602
+      ],
+      "keep": false
+    },
+    {
+      "source": [
+        149.467,
+        157
+      ],
+      "frames": [
+        4602,
+        4896
+      ],
+      "keep": true,
+      "group": 1,
+      "points": [
+        {
+          "marco": "paraboloide",
+          "visual": 149.467,
+          "audio": 141.23
+        },
+        {
+          "marco": "Usando o raio",
+          "visual": 154.067,
+          "audio": 146.29
+        },
+        {
+          "marco": "encontramos o desnível",
+          "visual": 154.867,
+          "audio": 147.9347
+        },
+        {
+          "marco": "fim_desnivel",
+          "visual": 157,
+          "audio": 151.02
+        }
+      ]
+    },
+    {
+      "source": [
+        157,
+        160.8
+      ],
+      "frames": [
+        4896,
+        5010
+      ],
+      "keep": false
+    },
+    {
+      "source": [
+        160.8,
+        168
+      ],
+      "frames": [
+        5010,
+        5252
+      ],
+      "keep": true,
+      "group": 3,
+      "points": [
+        {
+          "marco": "frase_final",
+          "visual": 160.8,
+          "audio": 162.74
+        },
+        {
+          "marco": "retirada_cena",
+          "visual": 164,
+          "audio": 163.76
+        },
+        {
+          "marco": "logo_no_cta",
+          "visual": 165.533,
+          "audio": 165.26
+        },
+        {
+          "marco": "fim_logo",
+          "visual": 168,
+          "audio": 170.8
+        }
+      ]
+    }
+  ],
+  "assembly": [
+    {
+      "source": [
+        0,
+        140
+      ],
+      "frames": [
+        0,
+        4237
+      ],
+      "keep": true,
+      "group": 0,
+      "points": [
+        {
+          "marco": "inicio",
+          "visual": 0,
+          "audio": 0
+        },
+        {
+          "marco": "a superfície afunda",
+          "visual": 4.2,
+          "audio": 1.9606
+        },
+        {
+          "marco": "Mas por que",
+          "visual": 10.2,
+          "audio": 5.05
+        },
+        {
+          "marco": "Depois que o movimento",
+          "visual": 11,
+          "audio": 8.6
+        },
+        {
+          "marco": "Num corte",
+          "visual": 12,
+          "audio": 16.0
+        },
+        {
+          "marco": "um pequeno elemento",
+          "visual": 20.2,
+          "audio": 17.5093
+        },
+        {
+          "marco": "Área da face",
+          "visual": 25.2,
+          "audio": 22.81
+        },
+        {
+          "marco": "espessura dá",
+          "visual": 25.6,
+          "audio": 23.9217
+        },
+        {
+          "marco": "massa é",
+          "visual": 26.1,
+          "audio": 25.6028
+        },
+        {
+          "marco": "A velocidade tangencial",
+          "visual": 28.1,
+          "audio": 27.95
+        },
+        {
+          "marco": "enquanto a aceleração",
+          "visual": 29.8,
+          "audio": 30.8446
+        },
+        {
+          "marco": "A pressão age",
+          "visual": 32,
+          "audio": 34.2
+        },
+        {
+          "marco": "Cada força",
+          "visual": 37,
+          "audio": 39.18
+        },
+        {
+          "marco": "a resultante radial",
+          "visual": 38.4,
+          "audio": 41.2886
+        },
+        {
+          "marco": "Para um elemento",
+          "visual": 40,
+          "audio": 45.39
+        },
+        {
+          "marco": "As parcelas",
+          "visual": 46.267,
+          "audio": 50.59
+        },
+        {
+          "marco": "o sinal negativo",
+          "visual": 48.867,
+          "audio": 52.3518
+        },
+        {
+          "marco": "Essa diferença de pressão",
+          "visual": 54,
+          "audio": 58.32
+        },
+        {
+          "marco": "Pela segunda lei",
+          "visual": 55,
+          "audio": 64.75
+        },
+        {
+          "marco": "Cancelamos área",
+          "visual": 59.2,
+          "audio": 68.66
+        },
+        {
+          "marco": "O resultado mostra",
+          "visual": 61.733,
+          "audio": 71.78
+        },
+        {
+          "marco": "a pressão cresce para fora",
+          "visual": 63.067,
+          "audio": 73.9936
+        },
+        {
+          "marco": "Na vertical",
+          "visual": 69,
+          "audio": 75.76
+        },
+        {
+          "marco": "enquanto a superior",
+          "visual": 71.4,
+          "audio": 78.4886
+        },
+        {
+          "marco": "Em equilíbrio",
+          "visual": 73,
+          "audio": 81.63
+        },
+        {
+          "marco": "Por isso, ao subir",
+          "visual": 75.933,
+          "audio": 83.48
+        },
+        {
+          "marco": "Temos então duas tendências",
+          "visual": 78,
+          "audio": 85.82
+        },
+        {
+          "marco": "Agora vem a ligação",
+          "visual": 80.5,
+          "audio": 91.43
+        },
+        {
+          "marco": "Toda a superfície",
+          "visual": 81,
+          "audio": 93.63
+        },
+        {
+          "marco": "Ao avançar para fora",
+          "visual": 87,
+          "audio": 97.03
+        },
+        {
+          "marco": "ao subir, tende",
+          "visual": 89.5,
+          "audio": 99.8205
+        },
+        {
+          "marco": "Na superfície",
+          "visual": 94,
+          "audio": 101.76
+        },
+        {
+          "marco": "Substituindo as duas taxas",
+          "visual": 101,
+          "audio": 104.97
+        },
+        {
+          "marco": "a densidade se cancela",
+          "visual": 104,
+          "audio": 106.9821
+        },
+        {
+          "marco": "obtemos a inclinação",
+          "visual": 106.467,
+          "audio": 108.5562
+        },
+        {
+          "marco": "Ela é proporcional",
+          "visual": 107,
+          "audio": 111.14
+        },
+        {
+          "marco": "quanto mais longe",
+          "visual": 110,
+          "audio": 113.417
+        },
+        {
+          "marco": "Multiplicando essa inclinação",
+          "visual": 119,
+          "audio": 116.55
+        },
+        {
+          "marco": "A integral soma",
+          "visual": 124.533,
+          "audio": 121.64
+        },
+        {
+          "marco": "Tomamos a altura",
+          "visual": 125.433,
+          "audio": 123.77
+        },
+        {
+          "marco": "Integrar a distância",
+          "visual": 126,
+          "audio": 126.45
+        },
+        {
+          "marco": "É esse crescimento quadrático",
+          "visual": 128.467,
+          "audio": 129.93
+        },
+        {
+          "marco": "Espelhando",
+          "visual": 131,
+          "audio": 133.73
+        },
+        {
+          "marco": "A partir da altura central",
+          "visual": 134.333,
+          "audio": 136.19
+        },
+        {
+          "marco": "fim_secao",
+          "visual": 140,
+          "audio": 141.23
+        }
+      ]
+    },
+    {
+      "source": [
+        149.467,
+        157
+      ],
+      "frames": [
+        4602,
+        4896
+      ],
+      "keep": true,
+      "group": 1,
+      "points": [
+        {
+          "marco": "paraboloide",
+          "visual": 149.467,
+          "audio": 141.23
+        },
+        {
+          "marco": "Usando o raio",
+          "visual": 154.067,
+          "audio": 146.29
+        },
+        {
+          "marco": "encontramos o desnível",
+          "visual": 154.867,
+          "audio": 147.9347
+        },
+        {
+          "marco": "fim_desnivel",
+          "visual": 157,
+          "audio": 151.02
+        }
+      ]
+    },
+    {
+      "source": [
+        140,
+        149
+      ],
+      "frames": [
+        4237,
+        4588
+      ],
+      "keep": true,
+      "group": 2,
+      "points": [
+        {
+          "marco": "sintese",
+          "visual": 140,
+          "audio": 151.02
+        },
+        {
+          "marco": "a pressão cresce para fora",
+          "visual": 141.533,
+          "audio": 152.6198
+        },
+        {
+          "marco": "a superfície sobe",
+          "visual": 142.533,
+          "audio": 154.2057
+        },
+        {
+          "marco": "a inclinação cresce",
+          "visual": 145.333,
+          "audio": 157.4471
+        },
+        {
+          "marco": "a altura cresce",
+          "visual": 146.133,
+          "audio": 159.5477
+        },
+        {
+          "marco": "fim_sintese",
+          "visual": 149,
+          "audio": 162.74
+        }
+      ]
+    },
+    {
+      "source": [
+        160.8,
+        168
+      ],
+      "frames": [
+        5010,
+        5252
+      ],
+      "keep": true,
+      "group": 3,
+      "points": [
+        {
+          "marco": "frase_final",
+          "visual": 160.8,
+          "audio": 162.74
+        },
+        {
+          "marco": "retirada_cena",
+          "visual": 164,
+          "audio": 163.76
+        },
+        {
+          "marco": "logo_no_cta",
+          "visual": 165.533,
+          "audio": 165.26
+        },
+        {
+          "marco": "fim_logo",
+          "visual": 168,
+          "audio": 170.8
+        }
+      ]
+    }
+  ],
+  "render_frames": 5252,
+  "total_frames": 5124,
+  "duration": 170.8,
+  "math_motion_max": 1.4,
+  "opening_patch_frames": 1028
+}

@@ -1,0 +1,167 @@
+{
+  "duracao": 168.0,
+  "eventos": [
+    {
+      "t": 0.0,
+      "nome": "fenomeno"
+    },
+    {
+      "t": 12.0,
+      "nome": "extracao_3d"
+    },
+    {
+      "t": 20.2,
+      "nome": "elemento_dentro_da_agua"
+    },
+    {
+      "t": 24.467,
+      "nome": "elemento_ampliado"
+    },
+    {
+      "t": 48.467,
+      "nome": "gradiente_construido"
+    },
+    {
+      "t": 63.2,
+      "nome": "pressao_cresce"
+    },
+    {
+      "t": 76.0,
+      "nome": "vertical"
+    },
+    {
+      "t": 85.6,
+      "nome": "isobarica_3d"
+    },
+    {
+      "t": 88.133,
+      "nome": "meridiana_extraida_imovel"
+    },
+    {
+      "t": 95.933,
+      "nome": "regra_cadeia"
+    },
+    {
+      "t": 112.533,
+      "nome": "tangente_na_borda"
+    },
+    {
+      "t": 128.067,
+      "nome": "parabola_integrada"
+    },
+    {
+      "t": 134.333,
+      "nome": "secao_espelhada"
+    },
+    {
+      "t": 141.6,
+      "nome": "sintese_gradiente"
+    },
+    {
+      "t": 142.6,
+      "nome": "sintese_subida"
+    },
+    {
+      "t": 145.4,
+      "nome": "sintese_tangente"
+    },
+    {
+      "t": 146.2,
+      "nome": "sintese_parabola"
+    },
+    {
+      "t": 148.8,
+      "nome": "sintese_causal"
+    },
+    {
+      "t": 149.467,
+      "nome": "payoff_match"
+    },
+    {
+      "t": 155.667,
+      "nome": "delta_h"
+    },
+    {
+      "t": 158.6,
+      "nome": "conclusao"
+    },
+    {
+      "t": 165.533,
+      "nome": "branding"
+    }
+  ],
+  "mapas_mf_tools": [
+    {
+      "t": 45.067,
+      "de": "fontes combinadas",
+      "para": "F_r \\approx p(r)A - p(r) A - \\frac{\\partial p}{\\partial r} A dr",
+      "ligacoes": 10
+    },
+    {
+      "t": 48.467,
+      "de": "F_r \\approx p(r)A - p(r) A - \\frac{\\partial p}{\\partial r} A dr",
+      "para": "F_r \\approx - \\frac{\\partial p}{\\partial r} A dr",
+      "ligacoes": 6
+    },
+    {
+      "t": 58.867,
+      "de": "fontes combinadas",
+      "para": "- \\frac{\\partial p}{\\partial r} A dr = - \\rho A dr \\omega^2r",
+      "ligacoes": 10
+    },
+    {
+      "t": 61.4,
+      "de": "- \\frac{\\partial p}{\\partial r} A dr = - \\rho A dr \\omega^2r",
+      "para": "\\frac{\\partial p}{\\partial r} = \\rho \\omega^2r",
+      "ligacoes": 4
+    },
+    {
+      "t": 74.6,
+      "de": "p(z)A - p(z+dz)A - dm\\,g =0",
+      "para": "- \\frac{\\partial p}{\\partial z} A\\,dz - \\rho A\\,dz g =0",
+      "ligacoes": 5
+    },
+    {
+      "t": 76.0,
+      "de": "- \\frac{\\partial p}{\\partial z} A\\,dz - \\rho A\\,dz g =0",
+      "para": "\\frac{\\partial p}{\\partial z} = - \\rho g",
+      "ligacoes": 5
+    },
+    {
+      "t": 95.933,
+      "de": "0 = \\frac{d}{dr} p(r,z(r))",
+      "para": "0 = \\frac{\\partial p}{\\partial r} + \\frac{\\partial p}{\\partial z} \\frac{dz}{dr}",
+      "ligacoes": 5
+    },
+    {
+      "t": 104.0,
+      "de": "0 = \\frac{\\partial p}{\\partial r} + \\frac{\\partial p}{\\partial z} \\frac{dz}{dr}",
+      "para": "0 = \\rho \\omega^2r - \\rho g \\frac{dz}{dr}",
+      "ligacoes": 6
+    },
+    {
+      "t": 106.533,
+      "de": "0 = \\rho \\omega^2r - \\rho g \\frac{dz}{dr}",
+      "para": "\\frac{dz}{dr} = \\frac{\\omega^2}{g} r",
+      "ligacoes": 4
+    },
+    {
+      "t": 122.0,
+      "de": "\\frac{dz}{dr} = \\frac{\\omega^2}{g} r",
+      "para": "dz = \\frac{\\omega^2}{g} r dr",
+      "ligacoes": 5
+    },
+    {
+      "t": 124.533,
+      "de": "dz = \\frac{\\omega^2}{g} r dr",
+      "para": "\\int_{z_0}^{z(r)} dz = \\frac{\\omega^2}{g} \\int_0^r s ds",
+      "ligacoes": 5
+    },
+    {
+      "t": 128.067,
+      "de": "\\int_{z_0}^{z(r)} dz = \\frac{\\omega^2}{g} \\int_0^r s ds",
+      "para": "z(r) = z_0 + \\frac{\\omega^2}{2g} r^2",
+      "ligacoes": 4
+    }
+  ]
+}

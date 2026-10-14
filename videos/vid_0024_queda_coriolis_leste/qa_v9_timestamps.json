@@ -1,0 +1,132 @@
+[
+  {
+    "estado": "01 gancho",
+    "t": 6.2
+  },
+  {
+    "estado": "02 P exatamente no equador",
+    "t": 13.133
+  },
+  {
+    "estado": "03 torre radial / raios medidos desde o eixo",
+    "t": 14.933
+  },
+  {
+    "estado": "04 velocidades tangenciais para leste / mesmo omega",
+    "t": 22.067
+  },
+  {
+    "estado": "05 triedro oblíquo / norte paralelo ao eixo terrestre",
+    "t": 25.733
+  },
+  {
+    "estado": "06 omega global copiado para norte local",
+    "t": 28.0
+  },
+  {
+    "estado": "07 vista final / norte entra e sul sai da tela",
+    "t": 31.4
+  },
+  {
+    "estado": "08 P ampliado / torre perpendicular e eixos locais",
+    "t": 37.2
+  },
+  {
+    "estado": "09 h nasce da distância solo -> soltura",
+    "t": 38.8
+  },
+  {
+    "estado": "10 gravidade para baixo / menos z",
+    "t": 41.267
+  },
+  {
+    "estado": "11 soltura / t=0 e condições iniciais",
+    "t": 45.667,
+    "tempo_fisico": 0.0
+  },
+  {
+    "estado": "12 bola já cai / velocidade azul para menos z",
+    "t": 48.2,
+    "tempo_fisico": 0.8
+  },
+  {
+    "estado": "13 velocidade lida da seta / v=-gt z",
+    "t": 50.0,
+    "tempo_fisico": 0.8
+  },
+  {
+    "estado": "14 fórmula vem dos vetores / Coriolis nulo na soltura",
+    "t": 54.867,
+    "tempo_fisico": 0.8
+  },
+  {
+    "estado": "15 substituição dos vetores locais",
+    "t": 57.533,
+    "tempo_fisico": 0.8
+  },
+  {
+    "estado": "16 sinais positivos / produto y por z preservado",
+    "t": 60.267,
+    "tempo_fisico": 0.8
+  },
+  {
+    "estado": "17 produto vetorial / mais x é leste",
+    "t": 64.133,
+    "tempo_fisico": 1.0
+  },
+  {
+    "estado": "18 a_x cresce linearmente com o mesmo t",
+    "t": 69.733,
+    "tempo_fisico": 1.4
+  },
+  {
+    "estado": "19 cancelamento dos fatores 2",
+    "t": 77.867,
+    "tempo_fisico": 1.4
+  },
+  {
+    "estado": "20 primeira integral / velocidade horizontal adquirida",
+    "t": 83.333,
+    "tempo_fisico": 2.1
+  },
+  {
+    "estado": "21 x(t) é distância à vertical original",
+    "t": 93.133,
+    "tempo_fisico": 2.1
+  },
+  {
+    "estado": "22 impacto / relógio e trajetória no mesmo estado",
+    "t": 97.133,
+    "tempo_fisico": 3.19438
+  },
+  {
+    "estado": "23 tempo de queda / h e g da figura",
+    "t": 109.2,
+    "tempo_fisico": 3.19438
+  },
+  {
+    "estado": "24 valores entram na fórmula",
+    "t": 118.067,
+    "tempo_fisico": 3.19438
+  },
+  {
+    "estado": "25 trajetória colapsa para a escala física real",
+    "t": 126.4,
+    "tempo_fisico": 3.19438
+  },
+  {
+    "estado": "26 payoff físico após escala real",
+    "t": 130.4,
+    "tempo_fisico": 3.19438
+  },
+  {
+    "estado": "27 ampliação ligada ao impacto real",
+    "t": 134.667,
+    "tempo_fisico": 3.19438
+  },
+  {
+    "estado": "28 fechamento",
+    "t": 143.667,
+    "tempo_fisico": 3.19438
+  }
+]

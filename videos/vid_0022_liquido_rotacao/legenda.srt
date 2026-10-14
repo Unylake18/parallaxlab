@@ -1,0 +1,312 @@
+1
+00:00:00,070 --> 00:00:01,941
+Quando um líquido
+começa a girar,
+
+2
+00:00:01,961 --> 00:00:04,820
+a superfície afunda no
+centro e sobe nas bordas.
+
+3
+00:00:05,050 --> 00:00:06,174
+Mas por que ela assume
+
+4
+00:00:06,194 --> 00:00:08,410
+justamente a forma
+de uma parábola?
+
+5
+00:00:08,600 --> 00:00:10,577
+Depois que o
+movimento se estabiliza,
+
+6
+00:00:10,597 --> 00:00:13,255
+o líquido gira praticamente
+como um corpo rígido:
+
+7
+00:00:13,275 --> 00:00:15,870
+seus elementos têm a
+mesma velocidade angular.
+
+8
+00:00:16,000 --> 00:00:17,005
+Num corte pelo eixo,
+
+9
+00:00:17,025 --> 00:00:19,330
+isolamos um pequeno
+elemento do líquido.
+
+10
+00:00:19,460 --> 00:00:20,830
+Para fora é positivo.
+
+11
+00:00:21,040 --> 00:00:22,510
+Medimos sua distância ao eixo.
+
+12
+00:00:22,810 --> 00:00:25,407
+Área da face vezes
+espessura dá o volume,
+
+13
+00:00:25,427 --> 00:00:27,770
+e massa é densidade
+vezes volume.
+
+14
+00:00:27,950 --> 00:00:30,825
+A velocidade tangencial cresce
+com a distância ao eixo,
+
+15
+00:00:30,845 --> 00:00:34,000
+enquanto a aceleração
+centrípeta aponta para dentro.
+
+16
+00:00:34,200 --> 00:00:35,937
+A pressão age nas duas faces,
+
+17
+00:00:35,957 --> 00:00:39,020
+mas a força na face
+externa é um pouco maior.
+
+18
+00:00:39,180 --> 00:00:42,056
+Cada força é pressão
+vezes área, e a resultante
+
+19
+00:00:42,076 --> 00:00:45,190
+radial é a força interna
+menos a força externa.
+
+20
+00:00:45,390 --> 00:00:47,675
+Para um elemento muito
+pequeno, escrevemos
+
+21
+00:00:47,695 --> 00:00:50,280
+essa diferença de pressão
+em termos do gradiente.
+
+22
+00:00:50,590 --> 00:00:53,348
+As parcelas iguais se
+cancelam, e o sinal negativo
+
+23
+00:00:53,368 --> 00:00:55,791
+confirma que a resultante
+aponta para dentro,
+
+24
+00:00:55,811 --> 00:00:58,130
+na direção da
+aceleração centrípeta.
+
+25
+00:00:58,320 --> 00:01:00,975
+Essa diferença de pressão
+é justamente o que fornece
+
+26
+00:01:00,995 --> 00:01:04,640
+a força necessária para manter o
+elemento em movimento circular.
+
+27
+00:01:04,750 --> 00:01:08,560
+Pela segunda lei de Newton,
+força é massa vezes aceleração.
+
+28
+00:01:08,660 --> 00:01:11,440
+Cancelamos área, espessura
+e sinais negativos.
+
+29
+00:01:11,780 --> 00:01:13,974
+O resultado mostra
+que, na mesma altura,
+
+30
+00:01:13,994 --> 00:01:15,610
+a pressão cresce para fora.
+
+31
+00:01:15,760 --> 00:01:18,469
+Na vertical, a pressão
+inferior empurra para cima,
+
+32
+00:01:18,489 --> 00:01:21,350
+enquanto a superior e o
+peso atuam para baixo.
+
+33
+00:01:21,630 --> 00:01:23,370
+Em equilíbrio, elas
+se compensam.
+
+34
+00:01:23,480 --> 00:01:25,700
+Por isso, ao subir,
+a pressão diminui.
+
+35
+00:01:25,820 --> 00:01:27,949
+Temos então duas
+tendências: radialmente
+
+36
+00:01:27,969 --> 00:01:31,290
+a pressão aumenta, e
+verticalmente ela diminui.
+
+37
+00:01:31,430 --> 00:01:33,520
+Agora vem a ligação decisiva.
+
+38
+00:01:33,630 --> 00:01:36,840
+Toda a superfície livre está à
+mesma pressão atmosférica.
+
+39
+00:01:37,030 --> 00:01:39,801
+Ao avançar para fora, a
+pressão tende a aumentar;
+
+40
+00:01:39,821 --> 00:01:41,620
+ao subir, tende a diminuir.
+
+41
+00:01:41,760 --> 00:01:44,830
+Na superfície, esses efeitos
+precisam se compensar.
+
+42
+00:01:44,970 --> 00:01:47,729
+Substituindo as duas taxas
+de variação, a densidade
+
+43
+00:01:47,749 --> 00:01:50,880
+se cancela e obtemos a
+inclinação da superfície.
+
+44
+00:01:51,140 --> 00:01:53,397
+Ela é proporcional
+à distância ao eixo:
+
+45
+00:01:53,417 --> 00:01:56,320
+quanto mais longe, mais
+inclinada fica a tangente.
+
+46
+00:01:56,550 --> 00:01:58,680
+Multiplicando essa
+inclinação por um pequeno
+
+47
+00:01:58,700 --> 00:02:01,550
+avanço horizontal, obtemos
+um aumento de altura.
+
+48
+00:02:01,640 --> 00:02:03,410
+A integral soma esses aumentos.
+
+49
+00:02:03,770 --> 00:02:06,220
+Tomamos a altura final
+no eixo como referência.
+
+50
+00:02:06,450 --> 00:02:09,720
+Integrar a distância produz seu
+quadrado dividido por dois.
+
+51
+00:02:09,930 --> 00:02:10,852
+É esse crescimento
+
+52
+00:02:10,872 --> 00:02:13,460
+quadrático que determina
+a forma da superfície.
+
+53
+00:02:13,730 --> 00:02:16,090
+Espelhando a curva,
+completamos a seção.
+
+54
+00:02:16,190 --> 00:02:18,560
+A partir da altura central,
+o acréscimo cresce
+
+55
+00:02:18,580 --> 00:02:21,140
+com a distância ao
+quadrado: uma parábola.
+
+56
+00:02:21,230 --> 00:02:23,361
+E ao girar essa seção
+em torno do eixo,
+
+57
+00:02:23,381 --> 00:02:26,030
+obtemos o paraboloide
+que vemos no recipiente.
+
+58
+00:02:26,290 --> 00:02:27,915
+Usando o raio do recipiente,
+
+59
+00:02:27,935 --> 00:02:30,880
+encontramos o desnível
+entre a borda e o centro.
+
+60
+00:02:31,020 --> 00:02:34,186
+A cadeia completa é esta:
+a pressão cresce para fora,
+
+61
+00:02:34,206 --> 00:02:37,427
+a superfície sobe para continuar
+à pressão atmosférica,
+
+62
+00:02:37,447 --> 00:02:39,347
+a inclinação cresce
+com a distância
+
+63
+00:02:39,367 --> 00:02:42,450
+e a altura cresce com o
+quadrado dessa distância.
+
+64
+00:02:42,740 --> 00:02:45,120
+A forma é consequência
+da dinâmica.
+
+65
+00:02:45,260 --> 00:02:46,650
+Siga o Parallax Lab.

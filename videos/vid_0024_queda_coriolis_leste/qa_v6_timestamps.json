@@ -1,0 +1,94 @@
+[
+  {
+    "estado": "01 gancho",
+    "t": 6.2
+  },
+  {
+    "estado": "02 globo: vetor axial separado do arco de giro",
+    "t": 13.6
+  },
+  {
+    "estado": "03 ds = r dtheta -> velocidade -> omega r",
+    "t": 28.467
+  },
+  {
+    "estado": "04 topo mais rápido / bola em repouso relativo",
+    "t": 36.2
+  },
+  {
+    "estado": "05 Lz conservado: r diminui, vphi aumenta",
+    "t": 42.8
+  },
+  {
+    "estado": "06 contribuição A: bola ganha omega u",
+    "t": 57.4
+  },
+  {
+    "estado": "07 contribuição B: malha perde omega u",
+    "t": 68.2
+  },
+  {
+    "estado": "08 fator 2 nasce da bola e da malha terrestre",
+    "t": 78.933
+  },
+  {
+    "estado": "09 câmera acompanha Terra; solo fixo, curva para leste",
+    "t": 85.333
+  },
+  {
+    "estado": "10 fórmula vetorial: duas contribuições, perpendicularidade e sinal",
+    "t": 92.667
+  },
+  {
+    "estado": "11 zoom da borda gera chão, vertical z, leste x e norte y",
+    "t": 99.333
+  },
+  {
+    "estado": "12 soltura sem aceleração lateral",
+    "t": 104.267
+  },
+  {
+    "estado": "13 queda / 14 termos físicos copiados",
+    "t": 108.0
+  },
+  {
+    "estado": "15 direção leste nasce da geometria",
+    "t": 111.667
+  },
+  {
+    "estado": "16 trajetória e vetores sincronizados",
+    "t": 118.2
+  },
+  {
+    "estado": "17 primeira integração",
+    "t": 128.533
+  },
+  {
+    "estado": "18 segunda integração",
+    "t": 137.6
+  },
+  {
+    "estado": "19 tempo de queda",
+    "t": 148.933
+  },
+  {
+    "estado": "20 substituição numérica",
+    "t": 155.6
+  },
+  {
+    "estado": "21 payoff",
+    "t": 163.6
+  },
+  {
+    "estado": "22 escala física real",
+    "t": 167.4
+  },
+  {
+    "estado": "23 ampliação ligada ao impacto",
+    "t": 170.6
+  },
+  {
+    "estado": "24 fechamento",
+    "t": 178.6
+  }
+]

@@ -1,0 +1,606 @@
+Manim Community v0.21.0
+
+
+Animation 0: FadeIn(VGroup of 8 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                         
+
+Animation 1: Create(DashedLine), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                            
+
+Animation 2: Write(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                        
+
+Animation 4: FadeOut(VGroup of 8 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+Animation 4: FadeOut(VGroup of 8 submobjects), etc.: 100%|##########| 1/1 [00:00<00:00,  2.50it/s]
+                                                                                                  
+
+Animation 5: _MethodAnimation(ValueTracker):   0%|          | 0/1 [00:00<?, ?it/s]
+Animation 5: _MethodAnimation(ValueTracker): 100%|##########| 1/1 [00:00<00:00,  4.74it/s]
+                                                                                          
+
+Animation 7: _MethodAnimation(ValueTracker), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+Animation 7: _MethodAnimation(ValueTracker), etc.: 100%|##########| 1/1 [00:00<00:00,  4.03it/s]
+                                                                                                
+
+Animation 8: ReplacementTransform(ParametricFunction), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                  
+
+Animation 9: ReplacementTransform(Dot), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 10: Write(MathTex('R')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                              
+
+Animation 11: _MethodAnimation(ValueTracker), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                         
+
+Animation 12: TransformFromCopy(MathTexPart('ds')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                               
+
+Animation 13: TransformFromCopy(MathTexPart('\\frac{ds}{dt}')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                           
+
+Animation 14: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                
+
+Animation 16: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                
+
+Animation 18: TransformFromCopy(MathTexPart('\\omega_T')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                      
+
+Animation 19: TransformFromCopy(MathTexPart('\\omega_T')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                      
+
+Animation 21: FadeOut(MathTex('\\omega_T = \\frac{d\\theta}{dt}')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                               
+
+Animation 22: Create(Arrow), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                        
+
+Animation 23: TransformFromCopy(MathTexPart('\\omega_T')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                      
+
+Animation 24: TransformFromCopy(MathTexPart('\\omega_T')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                      
+
+Animation 25: Write(MathTex('v_{\\rm topo} > v_{\\text{ch�o}}')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                             
+
+Animation 26: ReplacementTransform(Dot):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                              
+
+Animation 27: FadeIn(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 29: FadeOut(MathTex('v_{\\rm rot} = \\omega_T r')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                         
+
+Animation 30: FadeIn(Text('VISTA DO ESPA�O')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 31: TransformFromCopy(MathTexPart('r')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                              
+
+Animation 32: FadeIn(Text('sem torque \u2192 momento angular conservado')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                  
+
+Animation 34: FadeOut(Text('sem torque \u2192 momento angular conservado')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                   
+
+Animation 35: Create(Arrow), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                        
+
+Animation 36: TransformFromCopy(MathTexPart('-u')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                               
+
+Animation 37: TransformFromCopy(MathTexPart('\\frac{d}{dt}(rv_\\phi)')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                    
+
+Animation 38: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                
+
+Animation 40: TransformFromCopy(MathTexPart('v_\\phi')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                    
+
+Animation 41: FadeOut(MathTexPart('\\dot r')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                          
+[10/13/26 02:04:15] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}0                                 
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\approx                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique002'>}(-u)                           
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique003'>}(\omega_T                         
+                             r) \special{dvisvgm:raw                           
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique004'>}+                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique005'>}r                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique006'>}\dot                           
+                             v_\phi\special{dvisvgm:raw                        
+                             </g>} to                                          
+                             C:\Users\Pichau\PycharmPro                        
+                             jects\manim-fisica\videos\                        
+                             vid_0024_queda_coriolis_le                        
+                             ste\media_v7\Tex\55865cab6                        
+                             ef2a576.tex                                       
+
+Animation 42: FadeOut(MathTexPart('v_\\phi')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 43: _MethodAnimation(ValueTracker):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                   
+[10/13/26 02:04:17] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}r                                 
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\dot                           
+                             v_\phi                                            
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique002'>}\approx                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique003'>}u                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique004'>}\omega_T                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique005'>}r\special{                        
+                             dvisvgm:raw </g>} to                              
+                             C:\Users\Pichau\PycharmPro                        
+                             jects\manim-fisica\videos\                        
+                             vid_0024_queda_coriolis_le                        
+                             ste\media_v7\Tex\4911b5c08                        
+                             339fda6.tex                                       
+
+Animation 44: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                
+[10/13/26 02:04:18] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dot                              
+                             v_\phi                                            
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\approx                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}\omega_T                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique003'>}u\special{                        
+                             dvisvgm:raw </g>} to                              
+                             C:\Users\Pichau\PycharmPro                        
+                             jects\manim-fisica\videos\                        
+                             vid_0024_queda_coriolis_le                        
+                             ste\media_v7\Tex\e0a52a1ba                        
+                             5f92422.tex                                       
+
+Animation 46: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                
+
+Animation 48: Transform(Text('VISTA DO ESPA�O')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                             
+
+Animation 50: FadeOut(MathTex('L_{\\rm eixo} = m r v_\\phi \\approx \\text{constante}')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                                     
+
+Animation 51: _MethodAnimation(MathTex('\\dot v_\\phi \\approx \\omega_T u')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                          
+
+Animation 52: FadeIn(Dot), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                      
+
+Animation 53: TransformFromCopy(MathTexPart('v_{\\rm ref}')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                         
+
+Animation 54: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                
+
+Animation 56: FadeOut(MathTexPart('\\dot r')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 57: _MethodAnimation(ValueTracker):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 58: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                
+
+Animation 60: Transform(Text('VISTA DO ESPA�O')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                             
+[10/13/26 02:04:23] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Delta                            
+                             v\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Pichau\PycharmPro                        
+                             jects\manim-fisica\videos\                        
+                             vid_0024_queda_coriolis_le                        
+                             ste\media_v7\Tex\4de9fddc4                        
+                             470f1a6.tex                                       
+
+Animation 61: FadeIn(VGroup of 4 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 63: FadeOut(MathTex('\\dot r = -u')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 64: _MethodAnimation(MathTex('\\dot v_\\phi \\approx \\omega_T u')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                          
+
+Animation 65: TransformFromCopy(MathTexPart('\\dot v_\\phi')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                          
+[10/13/26 02:04:25] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}a_{\rm                            
+                             rel} \special{dvisvgm:raw                         
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\approx                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}\omega_T                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique003'>}u                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique004'>}-                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique005'>}(                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique006'>}-\omega_T                         
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique007'>}u                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique008'>})\special{                        
+                             dvisvgm:raw </g>} to                              
+                             C:\Users\Pichau\PycharmPro                        
+                             jects\manim-fisica\videos\                        
+                             vid_0024_queda_coriolis_le                        
+                             ste\media_v7\Tex\d99ab96ea                        
+                             5e0828a.tex                                       
+
+Animation 66: FadeOut(MathTex('a_{\\rm rel} = \\dot v_\\phi - \\dot v_{\\rm ref}')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                                
+[10/13/26 02:04:26] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}a_{\rm                            
+                             rel} \special{dvisvgm:raw                         
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\approx                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}\omega_T                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique003'>}u                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique004'>}+                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique005'>}\omega_T                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique006'>}u\special{                        
+                             dvisvgm:raw </g>} to                              
+                             C:\Users\Pichau\PycharmPro                        
+                             jects\manim-fisica\videos\                        
+                             vid_0024_queda_coriolis_le                        
+                             ste\media_v7\Tex\2358faef2                        
+                             595199a.tex                                       
+
+Animation 67: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                
+[10/13/26 02:04:28] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}a_{\rm                            
+                             rel}\approx\omega_Tu+\omeg                        
+                             a_Tu\special{dvisvgm:raw                          
+                             </g>} to                                          
+                             C:\Users\Pichau\PycharmPro                        
+                             jects\manim-fisica\videos\                        
+                             vid_0024_queda_coriolis_le                        
+                             ste\media_v7\Tex\5104e7c4b                        
+                             a84458c.tex                                       
+
+Animation 69: ReplacementTransform(MathTex('a_{\\rm rel} \\approx \\omega_T u + \\omega_T u')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                                     
+[10/13/26 02:04:29] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}a_{\rm                            
+                             rel}\approx2\omega_Tu\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             C:\Users\Pichau\PycharmPro                        
+                             jects\manim-fisica\videos\                        
+                             vid_0024_queda_coriolis_le                        
+                             ste\media_v7\Tex\031aafd38                        
+                             36531da.tex                                       
+
+Animation 70: TransformByGlyphMap(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                               
+
+Animation 71: Indicate(VMobjectFromSVGPath):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                  
+
+Animation 72: FadeIn(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 74: FadeOut(MathTex('\\dot v_\\phi \\approx \\omega_T u')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                 
+
+Animation 75: _MethodAnimation(MathTex('a_{\\rm rel}\\approx2\\omega_Tu')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                       
+
+Animation 76: _MethodAnimation(ValueTracker):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 77: _MethodAnimation(ValueTracker), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                         
+
+Animation 78: _MethodAnimation(ValueTracker):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 80: FadeOut(Arrow), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                         
+
+Animation 81: Write(Text('CORIOLIS')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                  
+
+Animation 82: Create(Arrow), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                        
+
+Animation 83: TransformFromCopy(MathTexPart('\\vec\\omega')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                         
+
+Animation 84: Write(MathTex('-')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                              
+
+Animation 85: FadeOut(Text('CORIOLIS')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 86: TransformFromCopy(MathTexPart('\\vec a_C')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                      
+
+Animation 88: FadeOut(MathTex('a_{\\rm rel}\\approx2\\omega_Tu')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                              
+
+Animation 89: _MethodAnimation(Circle), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 90: ReplacementTransform(Circle), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                       
+
+Animation 91: ReplacementTransform(ArcBetweenPoints):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 92: Write(VGroup of 3 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 93: Create(DashedLine), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                             
+
+Animation 95: Write(MathTex('\\vec\\omega_T = \\omega_T\\hat y')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                              
+
+Animation 96: TransformFromCopy(MathTexPart('\\vec a_C')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                      
+
+Animation 97: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                
+
+Animation 99: FadeIn(Text('sem velocidade relativa \u2192 sem Coriolis')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                           
+
+Animation 101: FadeOut(MathTex('\\vec v(0) = 0')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                              
+
+Animation 102: _MethodAnimation(ValueTracker), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 103: TransformFromCopy(MathTexPart('\\omega_T\\hat y')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                              
+
+Animation 105: TransformFromCopy(MathTex('(-2)(-gt) \\longrightarrow +2gt')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                   
+
+Animation 106: Write(MathTex('\\hat y \\times \\hat z = \\hat x')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                               
+
+Animation 107: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 110: FadeOut(MathTex('(-2)(-gt) \\longrightarrow +2gt')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                               
+
+Animation 111: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 113: FadeIn(Text('DESVIO EXAGERADO')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                      
+
+Animation 114: _MethodAnimation(ValueTracker):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 116: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                            
+
+Animation 117: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 119: Write(MathTex('v_x(0) = 0')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                  
+
+Animation 120: TransformFromCopy(MathTexPart('2\\omega_Tg\\tau')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                              
+
+Animation 121: Indicate(MathTexPart('v_x(0)')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 122: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 124: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 126: Create(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 128: ReplacementTransform(MathTex('v_x(t) = 2\\omega_Tg \\frac{t^2}{2}')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                          
+
+Animation 129: TransformByGlyphMap(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                
+
+Animation 132: FadeOut(MathTex('a_x = \\frac{dv_x}{dt} = 2 \\omega_T g t')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                        
+
+Animation 133: _MethodAnimation(MathTex('v_x(t) = \\omega_T g t^2')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                           
+
+Animation 134: TransformFromCopy(MathTexPart('v_x(t)')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                    
+
+Animation 135: Write(MathTex('x(0) = 0')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                
+
+Animation 136: TransformFromCopy(MathTexPart('\\omega_Tg\\tau^2')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                               
+
+Animation 137: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 139: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 141: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 144: FadeOut(MathTex('v_x(t) = \\omega_T g t^2')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                        
+
+Animation 145: _MethodAnimation(MathTex('x(t) = \\frac13 \\omega_T g t^3')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                  
+
+Animation 146: GrowFromCenter(BraceBetweenPoints), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                              
+
+Animation 147: TransformFromCopy(MathTexPart('h')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                               
+
+Animation 148: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 150: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 152: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 154: Write(MathTex('g = 9{,}8 \\,\\mathrm{m/s^2}')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                    
+
+Animation 155: Write(VGroup of 7 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 156: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 159: FadeOut(BraceBetweenPoints), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                       
+
+Animation 160: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 162: Write(MathTex('\\omega_T = 7{,}29\\times10^{-5} \\,\\mathrm{s^{-1}}')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                                  
+
+Animation 163: TransformFromCopy(MathTexPart('x_f')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                 
+
+Animation 164: FadeOut(MathTexPart('g')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 165: FadeOut(MathTexPart('t_f^3')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                         
+
+Animation 167: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 169: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 171: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 173: FadeOut(MathTex('x_f = \\frac13 \\omega_T g t_f^3')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                
+
+Animation 174: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 176: Create(SurroundingRectangle), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                        
+
+Animation 178: FadeOut(MathTex('x_f \\approx 0{,}77 \\,\\mathrm{cm}')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                   
+
+Animation 179: _MethodAnimation(ValueTracker), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 181: Create(VMobject), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                            
+
+Animation 183: FadeOut(VGroup of 11 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                             
+
+Animation 184: _MethodAnimation(VGroup of 8 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                               
+
+Animation 185: Write(Text('A OLHO NU,')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 186: Write(Text('MAS ELA TERMINA')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 187: Write(MathTex('50\\,\\mathrm m \\longrightarrow 0{,}77\\,\\mathrm{cm\\ para\\ leste}')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                                             
+[10/13/26 02:04:44] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'C:\Users\Pichau\Pycharm                          
+                             Projects\manim-fisica\vi                          
+                             deos\vid_0024_queda_cori                          
+                             olis_leste\media_v7\imag                          
+                             es\cena\QuedaCoriolis024                          
+                             _ManimCE_v0.21.0.png'                             
+                                                                               
+                    INFO     Rendered QuedaCoriolis024             scene.py:290
+                             Played 189 animations                             
+You are using manim version v0.21.0, but version v0.22.0 is available.
+You should consider upgrading via pip install -U manim
