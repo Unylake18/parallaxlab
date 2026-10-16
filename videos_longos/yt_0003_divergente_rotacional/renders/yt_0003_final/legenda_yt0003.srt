@@ -1,0 +1,2197 @@
+1
+00:00:00,000 --> 00:00:04,070
+Tem duas expressões que aparecem o tempo
+todo quando a gente começa a escrever o
+
+2
+00:00:04,110 --> 00:00:06,290
+eletromagnetismo na forma diferencial.
+
+3
+00:00:06,330 --> 00:00:10,090
+À primeira vista, elas parecem
+só operações de cálculo vetorial.
+
+4
+00:00:10,130 --> 00:00:15,090
+Mas fisicamente elas respondem duas
+perguntas muito concretas sobre o campo em
+
+5
+00:00:15,130 --> 00:00:16,370
+cada ponto do espaço.
+
+6
+00:00:16,570 --> 00:00:19,350
+A primeira pergunta é:
+existe uma fonte aqui?
+
+7
+00:00:19,390 --> 00:00:22,990
+Em torno desse ponto, está saindo
+mais campo do que entrando?
+
+8
+00:00:23,030 --> 00:00:26,650
+A quantidade que mede isso é o
+divergente do campo elétrico,
+
+9
+00:00:26,690 --> 00:00:29,170
+escrito nabla produto escalar E.
+
+10
+00:00:29,210 --> 00:00:32,990
+A segunda pergunta é diferente:
+existe circulação local?
+
+11
+00:00:33,050 --> 00:00:36,250
+Se eu colocasse uma pequena
+sonda geométrica nesse campo,
+
+12
+00:00:36,290 --> 00:00:38,110
+existiria uma tendência de giro?
+
+13
+00:00:38,150 --> 00:00:41,190
+A quantidade que mede essa
+estrutura é o rotacional.
+
+14
+00:00:41,230 --> 00:00:43,550
+Por enquanto eu escrevo o rotacional de F,
+
+15
+00:00:43,590 --> 00:00:46,370
+porque F representa um
+campo vetorial genérico.
+
+16
+00:00:46,410 --> 00:00:50,630
+E o interessante é que essas duas
+informações locais vão nascer de leis que,
+
+17
+00:00:50,670 --> 00:00:53,330
+originalmente, falam de objetos inteiros.
+
+18
+00:00:53,370 --> 00:00:57,090
+A Lei de Gauss fala do fluxo
+através de uma superfície fechada.
+
+19
+00:00:57,130 --> 00:01:00,730
+A circulação fala do campo
+acumulado ao longo de um caminho.
+
+20
+00:01:00,790 --> 00:01:03,530
+Hoje a gente vai fazer
+justamente essa passagem:
+
+21
+00:01:03,570 --> 00:01:08,750
+sair do global, aproximar cada vez mais o
+olhar e descobrir o que essas leis dizem
+
+22
+00:01:08,790 --> 00:01:09,710
+ponto a ponto.
+
+23
+00:01:09,750 --> 00:01:11,290
+Começa pela Lei de Gauss.
+
+24
+00:01:11,350 --> 00:01:14,450
+Imagine uma superfície
+fechada envolvendo a carga.
+
+25
+00:01:14,490 --> 00:01:17,030
+Essa superfície é uma
+construção matemática;
+
+26
+00:01:17,070 --> 00:01:19,050
+ela não precisa ser uma casca material.
+
+27
+00:01:19,130 --> 00:01:23,470
+A gente escolhe essa superfície para medir
+quanto campo elétrico atravessa a sua
+
+28
+00:01:23,510 --> 00:01:23,990
+fronteira.
+
+29
+00:01:24,030 --> 00:01:26,670
+Pegue um pedacinho muito
+pequeno da superfície.
+
+30
+00:01:26,710 --> 00:01:29,290
+A área desse pedacinho
+é o elemento de área,
+
+31
+00:01:29,330 --> 00:01:29,910
+dA.
+
+32
+00:01:29,950 --> 00:01:34,130
+Mas a área, sozinha, não diz para
+que lado a superfície está orientada.
+
+33
+00:01:34,170 --> 00:01:38,790
+Por isso associamos a esse pedacinho
+uma seta perpendicular à superfície:
+
+34
+00:01:38,830 --> 00:01:40,010
+a normal externa.
+
+35
+00:01:40,050 --> 00:01:42,850
+Quando juntamos o tamanho
+da área com essa direção,
+
+36
+00:01:42,890 --> 00:01:45,290
+obtemos o elemento de área vetorial.
+
+37
+00:01:45,330 --> 00:01:50,050
+O vetor dA aponta para fora e tem
+módulo igual à área do pedacinho.
+
+38
+00:01:50,090 --> 00:01:52,330
+No mesmo ponto existe o campo elétrico.
+
+39
+00:01:52,370 --> 00:01:57,430
+O produto escalar entre o campo elétrico e
+o elemento de área vetorial mede quanto do
+
+40
+00:01:57,470 --> 00:02:00,110
+campo atravessa aquele
+pedaço de superfície.
+
+41
+00:02:00,150 --> 00:02:03,350
+Se o campo atravessa de frente,
+a contribuição é máxima.
+
+42
+00:02:03,390 --> 00:02:05,710
+Se o campo corre tangente à superfície,
+
+43
+00:02:05,750 --> 00:02:07,290
+essa contribuição é zero.
+
+44
+00:02:08,610 --> 00:02:11,830
+Fazemos isso para todos
+os pedacinhos e somamos.
+
+45
+00:02:11,890 --> 00:02:14,330
+No limite de pedacinhos infinitesimais,
+
+46
+00:02:14,370 --> 00:02:17,410
+a soma vira uma integral
+sobre a superfície fechada.
+
+47
+00:02:17,450 --> 00:02:21,290
+Essa integral é o fluxo elétrico
+total através da superfície.
+
+48
+00:02:21,330 --> 00:02:25,770
+A Lei de Gauss conecta esse fluxo a
+uma quantidade física muito simples:
+
+49
+00:02:25,810 --> 00:02:27,110
+a carga envolvida.
+
+50
+00:02:27,150 --> 00:02:31,030
+Não importa como essa carga está
+distribuída dentro da superfície;
+
+51
+00:02:31,070 --> 00:02:35,170
+o fluxo líquido total depende da
+carga líquida que ficou lá dentro.
+
+52
+00:02:35,210 --> 00:02:37,710
+Se a carga estiver
+espalhada continuamente,
+
+53
+00:02:37,750 --> 00:02:42,490
+em vez de somar partículas uma por uma
+usamos a densidade volumétrica de carga,
+
+54
+00:02:42,530 --> 00:02:43,084
+rô.
+
+55
+00:02:43,124 --> 00:02:48,170
+Rô responde: quanta carga existe por
+unidade de volume em torno daquele ponto?
+
+56
+00:02:48,210 --> 00:02:53,690
+Num elemento de volume dV, a carga
+é aproximadamente rô vezes dV.
+
+57
+00:02:53,730 --> 00:02:58,170
+Somando o volume inteiro, a carga
+envolvida vira a integral de rô dV.
+
+58
+00:02:58,210 --> 00:03:03,410
+Então a Lei de Gauss diz: o fluxo do campo
+elétrico pela superfície fechada é igual a
+
+59
+00:03:03,450 --> 00:03:07,770
+um sobre epsilon zero vezes a
+carga distribuída dentro do volume.
+
+60
+00:03:07,810 --> 00:03:10,090
+Só que isso ainda é uma afirmação global.
+
+61
+00:03:10,230 --> 00:03:11,710
+Ela fala do volume inteiro.
+
+62
+00:03:11,830 --> 00:03:16,550
+O próximo passo é perguntar: como extrair
+dessa conta uma informação sobre um único
+
+63
+00:03:16,590 --> 00:03:17,290
+ponto P?
+
+64
+00:03:17,330 --> 00:03:19,770
+Para enxergar o que acontece localmente,
+
+65
+00:03:19,810 --> 00:03:22,990
+vamos construir um pequeno
+volume centrado no ponto P.
+
+66
+00:03:23,030 --> 00:03:24,850
+Comece só pela direção x.
+
+67
+00:03:24,990 --> 00:03:30,170
+O ponto P tem coordenada x, e ao redor
+dele escolhemos um intervalo muito pequeno
+
+68
+00:03:30,210 --> 00:03:31,510
+de comprimento dx.
+
+69
+00:03:31,770 --> 00:03:36,110
+Como o ponto está no centro, metade
+desse comprimento fica para cada lado.
+
+70
+00:03:36,150 --> 00:03:39,910
+Por isso a face da esquerda
+está em x menos dx sobre dois,
+
+71
+00:03:39,950 --> 00:03:43,230
+e a face da direita está
+em x mais dx sobre dois.
+
+72
+00:03:43,270 --> 00:03:46,010
+Essas expressões não
+são um truque algébrico;
+
+73
+00:03:46,050 --> 00:03:50,550
+são simplesmente as coordenadas das
+duas faces de um cubo centrado em P.
+
+74
+00:03:50,590 --> 00:03:54,350
+Agora dê espessura ao
+intervalo nas direções y e z.
+
+75
+00:03:54,390 --> 00:03:56,230
+Nasce um cubinho diferencial.
+
+76
+00:03:56,270 --> 00:04:00,370
+A face perpendicular ao
+eixo x tem lados dy e dz;
+
+77
+00:04:00,410 --> 00:04:03,390
+portanto sua área é dy vezes dz.
+
+78
+00:04:03,430 --> 00:04:05,210
+Repara nas normais externas.
+
+79
+00:04:05,250 --> 00:04:09,110
+Na face direita, a normal
+aponta no sentido positivo de x.
+
+80
+00:04:09,250 --> 00:04:12,130
+Na face esquerda, aponta
+no sentido negativo.
+
+81
+00:04:12,170 --> 00:04:15,590
+É a mesma direção geométrica,
+mas com sentidos opostos.
+
+82
+00:04:15,630 --> 00:04:18,970
+Esse detalhe vai produzir o
+sinal de menos no fluxo líquido.
+
+83
+00:04:19,010 --> 00:04:20,730
+Comecemos pela face direita.
+
+84
+00:04:20,770 --> 00:04:25,230
+O fluxo através dela é o produto escalar
+do campo elétrico pelo elemento de área
+
+85
+00:04:25,270 --> 00:04:25,930
+vetorial.
+
+86
+00:04:25,970 --> 00:04:28,110
+Como a normal dessa face aponta em x,
+
+87
+00:04:28,210 --> 00:04:32,610
+o produto escalar seleciona justamente
+a componente x do campo elétrico.
+
+88
+00:04:32,650 --> 00:04:35,490
+As outras componentes
+não atravessam essa face;
+
+89
+00:04:35,530 --> 00:04:37,410
+elas correm paralelas a ela.
+
+90
+00:04:37,450 --> 00:04:40,150
+E em que posição devemos
+avaliar essa componente?
+
+91
+00:04:40,190 --> 00:04:42,050
+Na posição da própria face.
+
+92
+00:04:42,170 --> 00:04:45,350
+A face direita está em
+x mais dx sobre dois.
+
+93
+00:04:45,390 --> 00:04:50,850
+Por isso aparece a componente x do campo
+elétrico avaliada em x mais dx sobre dois,
+
+94
+00:04:50,890 --> 00:04:53,410
+multiplicada pela área dy dz.
+
+95
+00:04:53,490 --> 00:04:58,310
+Na face esquerda acontece o mesmo, mas
+a normal externa aponta para menos x.
+
+96
+00:04:58,390 --> 00:05:01,010
+O produto escalar traz um sinal negativo.
+
+97
+00:05:01,050 --> 00:05:05,890
+A componente do campo é avaliada
+agora em x menos dx sobre dois,
+
+98
+00:05:05,930 --> 00:05:07,670
+que é a posição dessa face.
+
+99
+00:05:08,210 --> 00:05:13,950
+O fluxo líquido associado ao par de faces
+em x é a contribuição da direita mais
+
+100
+00:05:13,990 --> 00:05:15,510
+a contribuição da esquerda.
+
+101
+00:05:15,550 --> 00:05:17,970
+Como a esquerda já
+carrega o sinal da normal,
+
+102
+00:05:18,010 --> 00:05:22,670
+o resultado fica como a diferença entre os
+valores da componente x do campo nas duas
+
+103
+00:05:22,710 --> 00:05:23,150
+faces,
+
+104
+00:05:23,190 --> 00:05:24,930
+vezes dy dz.
+
+105
+00:05:24,970 --> 00:05:28,510
+Agora vem o passo que
+transforma geometria em cálculo.
+
+106
+00:05:28,670 --> 00:05:31,370
+Multiplique e divida
+essa diferença por dx.
+
+107
+00:05:31,530 --> 00:05:36,770
+O que aparece no numerador é a variação da
+componente x do campo entre duas posições
+
+108
+00:05:36,810 --> 00:05:37,950
+muito próximas.
+
+109
+00:05:37,990 --> 00:05:41,030
+No denominador está a
+distância entre essas posições.
+
+110
+00:05:41,130 --> 00:05:44,370
+No gráfico da componente
+x do campo em função de x,
+
+111
+00:05:44,430 --> 00:05:47,630
+essa razão é a inclinação
+média entre as duas faces:
+
+112
+00:05:47,670 --> 00:05:49,310
+a inclinação de uma secante.
+
+113
+00:05:49,350 --> 00:05:54,010
+Quando fazemos dx tender a zero, as
+duas faces se aproximam do ponto P,
+
+114
+00:05:54,050 --> 00:05:57,930
+a secante vira tangente, e a
+inclinação média vira uma derivada.
+
+115
+00:05:57,970 --> 00:06:03,250
+É uma derivada parcial porque estamos
+variando x enquanto mantemos y e z fixos.
+
+116
+00:06:03,290 --> 00:06:08,030
+Então essa razão de diferenças tende à
+derivada parcial da componente x do campo
+
+117
+00:06:08,070 --> 00:06:09,770
+elétrico em relação a x.
+
+118
+00:06:09,870 --> 00:06:13,990
+O resto da expressão é
+dx vezes dy vezes dz.
+
+119
+00:06:14,050 --> 00:06:17,110
+Mas isso é exatamente o
+pequeno volume do cubo:
+
+120
+00:06:17,150 --> 00:06:17,850
+dV.
+
+121
+00:06:17,890 --> 00:06:23,170
+Portanto, a contribuição das faces x para
+o fluxo líquido é a derivada parcial de E
+
+122
+00:06:23,210 --> 00:06:25,890
+x em relação a x, vezes dV.
+
+123
+00:06:25,930 --> 00:06:29,690
+Agora repita o mesmo raciocínio
+nos outros dois pares de faces.
+
+124
+00:06:29,770 --> 00:06:33,750
+Nas faces perpendiculares a y, a
+contribuição depende de quanto a
+
+125
+00:06:33,790 --> 00:06:36,610
+componente y do campo muda na direção y.
+
+126
+00:06:36,650 --> 00:06:42,090
+Nas faces perpendiculares a z, depende de
+quanto a componente z muda na direção z.
+
+127
+00:06:42,130 --> 00:06:46,370
+O fluxo líquido total do cubinho é
+a soma dessas três contribuições.
+
+128
+00:06:46,450 --> 00:06:50,410
+Isso é importante: não estamos
+somando “as componentes do campo”.
+
+129
+00:06:50,450 --> 00:06:54,330
+Estamos somando as taxas de
+saída associadas a cada direção.
+
+130
+00:06:54,370 --> 00:06:58,050
+Essa soma recebe um nome:
+divergente do campo elétrico.
+
+131
+00:06:58,090 --> 00:07:02,250
+Em coordenadas cartesianas, ele é a
+derivada parcial da componente x em
+
+132
+00:07:02,290 --> 00:07:06,990
+relação a x, mais a derivada parcial
+da componente y em relação a y,
+
+133
+00:07:07,030 --> 00:07:10,530
+mais a derivada parcial da
+componente z em relação a z.
+
+134
+00:07:10,570 --> 00:07:14,050
+Mas a interpretação física é
+mais importante que essa fórmula:
+
+135
+00:07:14,090 --> 00:07:18,950
+o divergente mede quanto fluxo líquido
+nasce ou desaparece localmente,
+
+136
+00:07:18,990 --> 00:07:20,270
+por unidade de volume.
+
+137
+00:07:20,330 --> 00:07:24,330
+Essa interpretação é mais importante
+que decorar a fórmula em coordenadas.
+
+138
+00:07:24,370 --> 00:07:26,570
+Pegue um volume pequeno em torno do ponto,
+
+139
+00:07:26,630 --> 00:07:29,450
+calcule quanto campo líquido
+sai pela sua fronteira,
+
+140
+00:07:29,490 --> 00:07:32,210
+divida pelo volume e
+faça o volume encolher.
+
+141
+00:07:32,250 --> 00:07:34,690
+O limite é o divergente naquele ponto.
+
+142
+00:07:34,750 --> 00:07:37,930
+Se sai mais campo do que
+entra, o divergente é positivo:
+
+143
+00:07:38,130 --> 00:07:39,490
+comportamento de fonte.
+
+144
+00:07:39,530 --> 00:07:42,150
+Se entra mais do que sai, é negativo:
+
+145
+00:07:42,190 --> 00:07:43,870
+comportamento de sumidouro.
+
+146
+00:07:43,910 --> 00:07:47,590
+Se entra exatamente o que
+sai, o divergente é zero.
+
+147
+00:07:47,630 --> 00:07:51,890
+E cuidado: divergente zero não
+quer dizer campo elétrico zero.
+
+148
+00:07:51,930 --> 00:07:56,570
+Um campo uniforme pode atravessar o cubo
+inteiro com intensidade diferente de zero
+
+149
+00:07:56,610 --> 00:07:56,850
+e,
+
+150
+00:07:56,890 --> 00:07:59,210
+mesmo assim, ter fluxo líquido nulo,
+
+151
+00:07:59,250 --> 00:08:01,870
+porque tudo o que entra
+de um lado sai do outro.
+
+152
+00:08:01,910 --> 00:08:04,890
+Agora coloque dois pequenos
+volumes lado a lado.
+
+153
+00:08:04,930 --> 00:08:07,270
+Eles compartilham a mesma face interna.
+
+154
+00:08:07,310 --> 00:08:11,230
+Para o volume da esquerda, essa face
+tem normal apontando para um lado.
+
+155
+00:08:11,270 --> 00:08:16,010
+Para o volume da direita, a normal externa
+aponta exatamente para o lado oposto.
+
+156
+00:08:16,050 --> 00:08:18,690
+O campo atravessando
+essa interface é o mesmo.
+
+157
+00:08:18,730 --> 00:08:23,530
+O que conta como fluxo saindo de um volume
+conta como fluxo entrando no vizinho.
+
+158
+00:08:23,570 --> 00:08:28,650
+Por isso a mesma contribuição aparece uma
+vez com sinal positivo e outra com sinal
+
+159
+00:08:28,690 --> 00:08:29,330
+negativo.
+
+160
+00:08:29,370 --> 00:08:30,710
+Na soma, cancela.
+
+161
+00:08:30,750 --> 00:08:33,850
+Se dividirmos um volume
+grande em muitos cubinhos,
+
+162
+00:08:33,890 --> 00:08:36,650
+isso acontece em todas
+as interfaces internas.
+
+163
+00:08:36,690 --> 00:08:39,650
+Cada face compartilhada
+aparece duas vezes,
+
+164
+00:08:39,690 --> 00:08:40,990
+com normais opostas.
+
+165
+00:08:41,030 --> 00:08:44,950
+Uma a uma, as contribuições
+internas desaparecem da soma.
+
+166
+00:08:44,990 --> 00:08:47,030
+O que não tem parceiro para cancelar?
+
+167
+00:08:47,070 --> 00:08:48,450
+Só a fronteira externa.
+
+168
+00:08:48,490 --> 00:08:53,330
+Então somar o divergente em todos os
+pequenos volumes internos é equivalente a
+
+169
+00:08:53,370 --> 00:08:57,210
+somar o fluxo apenas pela
+superfície externa do volume total.
+
+170
+00:08:57,270 --> 00:08:59,610
+Quando as células ficam infinitesimais,
+
+171
+00:08:59,650 --> 00:09:04,410
+a soma do divergente vezes o pequeno
+volume vira uma integral de volume.
+
+172
+00:09:04,450 --> 00:09:09,690
+E a soma do fluxo pelas faces externas
+vira a integral de superfície fechada do
+
+173
+00:09:09,730 --> 00:09:12,790
+produto escalar do campo
+elétrico pelo elemento de área.
+
+174
+00:09:12,830 --> 00:09:15,530
+Essa igualdade é o teorema da divergência:
+
+175
+00:09:15,570 --> 00:09:18,450
+o fluxo através da
+fronteira é igual à soma,
+
+176
+00:09:18,490 --> 00:09:23,150
+no interior, de todas as fontes e
+sumidouros locais medidos pelo divergente.
+
+177
+00:09:23,190 --> 00:09:26,130
+É uma ponte direta entre
+o global e o local.
+
+178
+00:09:26,170 --> 00:09:29,430
+Agora temos duas maneiras
+de escrever o mesmo fluxo.
+
+179
+00:09:29,470 --> 00:09:33,350
+Pela matemática, o fluxo é a
+integral do divergente no volume.
+
+180
+00:09:33,390 --> 00:09:38,130
+Pela Lei de Gauss, o mesmo fluxo é a
+integral da densidade de carga dividida
+
+181
+00:09:38,170 --> 00:09:39,090
+por epsilon zero.
+
+182
+00:09:39,130 --> 00:09:41,830
+Como os dois lados representam
+a mesma quantidade,
+
+183
+00:09:42,030 --> 00:09:44,170
+podemos igualar as integrais de volume.
+
+184
+00:09:44,210 --> 00:09:47,430
+E essa igualdade não depende
+de um volume específico:
+
+185
+00:09:47,470 --> 00:09:50,330
+ela vale para qualquer volume
+regular que escolhermos.
+
+186
+00:09:50,370 --> 00:09:52,130
+Agora vem a passagem local.
+
+187
+00:09:52,310 --> 00:09:54,530
+Numa região onde os campos são regulares,
+
+188
+00:09:54,590 --> 00:09:58,730
+essa igualdade vale para qualquer volume
+que escolhermos — inclusive volumes
+
+189
+00:09:58,770 --> 00:10:02,070
+arbitrariamente pequenos
+em torno de qualquer ponto.
+
+190
+00:10:02,130 --> 00:10:07,230
+Então a integral da diferença só pode ser
+zero para todos esses volumes se a própria
+
+191
+00:10:07,270 --> 00:10:09,530
+diferença for zero ponto a ponto.
+
+192
+00:10:09,570 --> 00:10:13,510
+É exatamente aqui que a lei
+global vira uma equação local.
+
+193
+00:10:14,570 --> 00:10:17,430
+Chegamos à Lei de Gauss
+na forma diferencial:
+
+194
+00:10:17,470 --> 00:10:19,990
+o divergente do campo
+elétrico, em cada ponto,
+
+195
+00:10:20,030 --> 00:10:25,230
+é igual à densidade volumétrica de carga
+naquele ponto dividida por epsilon zero.
+
+196
+00:10:25,270 --> 00:10:27,850
+Carga positiva produz divergente positivo.
+
+197
+00:10:28,130 --> 00:10:31,150
+Carga negativa produz divergente negativo.
+
+198
+00:10:31,190 --> 00:10:33,850
+A carga é a fonte local do campo elétrico.
+
+199
+00:10:33,890 --> 00:10:35,070
+Veja um exemplo simples.
+
+200
+00:10:35,270 --> 00:10:38,370
+O campo elétrico é kappa
+vezes x na direção x,
+
+201
+00:10:38,410 --> 00:10:43,810
+mais kappa vezes y na direção y,
+mais kappa vezes z na direção z.
+
+202
+00:10:43,850 --> 00:10:48,150
+Kappa é uma constante escalar: ela
+controla o quanto o campo cresce quando
+
+203
+00:10:48,190 --> 00:10:49,610
+nos afastamos da origem.
+
+204
+00:10:49,650 --> 00:10:54,930
+A componente x é kappa x, então sua
+derivada parcial em relação a x é kappa.
+
+205
+00:10:54,970 --> 00:10:59,610
+A componente y é kappa y, então
+a derivada em y também é kappa.
+
+206
+00:10:59,650 --> 00:11:01,130
+E o mesmo vale para z.
+
+207
+00:11:01,190 --> 00:11:05,750
+Somando as três contribuições, o
+divergente vale três kappa em todo ponto.
+
+208
+00:11:05,930 --> 00:11:09,490
+Pela Lei de Gauss diferencial, isso
+corresponde a uma densidade de carga
+
+209
+00:11:09,530 --> 00:11:10,370
+uniforme,
+
+210
+00:11:10,410 --> 00:11:12,790
+rô igual a três epsilon zero kappa.
+
+211
+00:11:12,830 --> 00:11:17,130
+O exemplo mostra que o divergente não
+é uma abstração separada da física:
+
+212
+00:11:17,170 --> 00:11:21,950
+ele mede diretamente a densidade de fonte
+necessária para produzir aquele padrão de
+
+213
+00:11:21,990 --> 00:11:22,410
+campo.
+
+214
+00:11:22,450 --> 00:11:25,670
+Agora vem o caso que força a
+gente a ser mais cuidadoso:
+
+215
+00:11:25,710 --> 00:11:27,190
+uma carga pontual.
+
+216
+00:11:27,230 --> 00:11:30,910
+O campo elétrico de Coulomb é
+q sobre quatro pi epsilon zero,
+
+217
+00:11:30,950 --> 00:11:34,630
+vezes o vetor radial unitário
+dividido por r ao quadrado.
+
+218
+00:11:34,670 --> 00:11:37,950
+Fora da origem, se calcularmos
+o divergente desse campo,
+
+219
+00:11:37,990 --> 00:11:39,150
+o resultado é zero.
+
+220
+00:11:39,190 --> 00:11:40,810
+Isso faz sentido localmente.
+
+221
+00:11:40,850 --> 00:11:44,330
+Coloque um cubinho em qualquer ponto
+que não seja a posição da carga.
+
+222
+00:11:44,370 --> 00:11:47,630
+O campo pode ser forte,
+fraco, variar de direção,
+
+223
+00:11:47,670 --> 00:11:50,590
+mas o fluxo líquido daquele
+cubinho tende a zero.
+
+224
+00:11:50,630 --> 00:11:52,310
+Não existe carga dentro dele.
+
+225
+00:11:52,350 --> 00:11:57,110
+Só que uma superfície fechada que envolve
+a carga sempre tem fluxo q sobre epsilon
+
+226
+00:11:57,150 --> 00:11:57,730
+zero.
+
+227
+00:11:57,770 --> 00:12:00,970
+E isso continua verdadeiro se
+a esfera for ficando menor.
+
+228
+00:12:01,010 --> 00:12:05,170
+Quando o raio diminui, o campo na
+superfície aumenta como um sobre r ao
+
+229
+00:12:05,210 --> 00:12:05,770
+quadrado.
+
+230
+00:12:05,810 --> 00:12:09,370
+Ao mesmo tempo, a área da esfera
+diminui como r ao quadrado.
+
+231
+00:12:09,410 --> 00:12:11,850
+Um efeito compensa exatamente o outro.
+
+232
+00:12:11,890 --> 00:12:16,470
+O fluxo permanece constante, mesmo quando
+a superfície é comprimida em torno da
+
+233
+00:12:16,510 --> 00:12:16,990
+carga.
+
+234
+00:12:17,030 --> 00:12:21,710
+Então aparece o conflito: o divergente é
+zero em todos os pontos fora da origem,
+
+235
+00:12:21,750 --> 00:12:26,070
+mas qualquer superfície que envolva
+a origem detecta uma fonte finita.
+
+236
+00:12:26,110 --> 00:12:28,950
+A fonte inteira foi
+concentrada num único ponto.
+
+237
+00:12:28,990 --> 00:12:33,150
+Então precisamos de um objeto matemático
+capaz de representar uma quantidade
+
+238
+00:12:33,190 --> 00:12:35,690
+completamente concentrada num ponto.
+
+239
+00:12:35,730 --> 00:12:38,270
+Fora desse ponto, ele não deve contribuir.
+
+240
+00:12:38,310 --> 00:12:41,450
+Mas, quando integramos uma
+região que contém o ponto,
+
+241
+00:12:41,490 --> 00:12:43,850
+ele precisa guardar uma quantidade finita.
+
+242
+00:12:43,890 --> 00:12:46,930
+Esse objeto é a delta
+de Dirac tridimensional,
+
+243
+00:12:46,970 --> 00:12:50,690
+escrita delta de Dirac
+tridimensional de r vetor.
+
+244
+00:12:50,730 --> 00:12:55,710
+A delta de Dirac não é uma função comum e
+não precisamos perguntar qual seria o seu
+
+245
+00:12:55,750 --> 00:12:58,510
+"valor" ordinário exatamente na origem.
+
+246
+00:12:58,550 --> 00:13:03,250
+Ela é uma distribuição, definida pelo
+efeito que produz quando aparece dentro de
+
+247
+00:13:03,290 --> 00:13:03,830
+integrais.
+
+248
+00:13:03,870 --> 00:13:06,450
+Se a origem não está no
+volume de integração,
+
+249
+00:13:06,490 --> 00:13:07,510
+a integral é zero.
+
+250
+00:13:07,550 --> 00:13:09,930
+Se a origem está no interior desse volume,
+
+251
+00:13:09,970 --> 00:13:11,030
+a integral vale um.
+
+252
+00:13:11,070 --> 00:13:13,730
+Existe uma propriedade
+ainda mais poderosa.
+
+253
+00:13:13,770 --> 00:13:18,670
+Pegue uma função regular, f de r,
+multiplique pela delta e integre sobre um
+
+254
+00:13:18,710 --> 00:13:20,310
+volume que contém a origem.
+
+255
+00:13:20,350 --> 00:13:24,030
+A delta seleciona justamente o
+valor da função naquele ponto:
+
+256
+00:13:24,070 --> 00:13:25,770
+o resultado é f de zero.
+
+257
+00:13:25,810 --> 00:13:28,970
+Por isso ela funciona como
+um seletor ideal de posição.
+
+258
+00:13:29,130 --> 00:13:33,490
+Toda a integral ignora o restante do
+espaço e recolhe a informação exatamente
+
+259
+00:13:33,530 --> 00:13:35,570
+onde a delta está concentrada.
+
+260
+00:13:35,750 --> 00:13:38,930
+Agora multiplique essa
+distribuição pela carga q.
+
+261
+00:13:38,970 --> 00:13:44,550
+A densidade de carga fica rô de r igual
+a q vezes delta de Dirac tridimensional.
+
+262
+00:13:44,590 --> 00:13:46,730
+Fora da origem, a densidade é zero.
+
+263
+00:13:46,770 --> 00:13:49,970
+Mas se integrarmos em qualquer
+volume que contenha a origem,
+
+264
+00:13:50,010 --> 00:13:52,750
+recuperamos exatamente a carga total q.
+
+265
+00:13:52,910 --> 00:13:55,770
+Substituindo essa densidade
+na Lei de Gauss diferencial,
+
+266
+00:13:55,810 --> 00:14:01,410
+o divergente do campo da carga pontual é q
+sobre epsilon zero vezes a delta de Dirac
+
+267
+00:14:01,450 --> 00:14:02,390
+tridimensional.
+
+268
+00:14:02,430 --> 00:14:07,310
+O aparente paradoxo desaparece: o
+divergente é zero em todo lugar regular e
+
+269
+00:14:07,350 --> 00:14:09,890
+toda a fonte fica concentrada na origem.
+
+270
+00:14:09,930 --> 00:14:12,650
+Essa ideia aparece em
+muitos lugares da física.
+
+271
+00:14:12,730 --> 00:14:16,190
+Uma massa pontual em gravitação
+pode usar uma delta espacial;
+
+272
+00:14:16,230 --> 00:14:19,990
+uma força concentrada num instante
+pode usar uma delta no tempo;
+
+273
+00:14:20,050 --> 00:14:24,070
+fontes idealizadas e modelos de
+localização usam a mesma lógica
+
+274
+00:14:24,110 --> 00:14:24,670
+matemática.
+
+275
+00:14:24,710 --> 00:14:27,850
+A dimensionalidade muda,
+mas o princípio é o mesmo:
+
+276
+00:14:27,890 --> 00:14:32,250
+algo concentrado numa região de medida
+zero ainda pode produzir um efeito
+
+277
+00:14:32,290 --> 00:14:33,410
+integral finito.
+
+278
+00:14:33,450 --> 00:14:37,670
+Saber o divergente ainda não conta
+toda a história geométrica de um campo.
+
+279
+00:14:37,710 --> 00:14:39,710
+Considere primeiro um campo uniforme,
+
+280
+00:14:39,750 --> 00:14:43,930
+F um: todas as setas têm o mesmo
+tamanho e apontam na direção x.
+
+281
+00:14:44,090 --> 00:14:47,270
+O que entra em um pequeno
+volume é exatamente o que sai.
+
+282
+00:14:47,310 --> 00:14:48,710
+O divergente é zero.
+
+283
+00:14:48,750 --> 00:14:51,210
+Agora construa um campo
+completamente diferente.
+
+284
+00:14:51,250 --> 00:14:55,470
+Em cada ponto, a seta é tangente
+a um círculo em torno da origem.
+
+285
+00:14:55,510 --> 00:14:59,330
+O parâmetro ômega maiúsculo é uma
+constante escalar que controla a
+
+286
+00:14:59,370 --> 00:15:01,350
+intensidade desse campo giratório.
+
+287
+00:15:01,390 --> 00:15:05,150
+Se F fosse um campo de velocidades
+de um corpo em rotação rígida,
+
+288
+00:15:05,190 --> 00:15:07,410
+ômega teria o papel de
+uma velocidade angular.
+
+289
+00:15:07,450 --> 00:15:10,630
+Olha os quatro pontos principais.
+
+290
+00:15:10,670 --> 00:15:13,550
+À direita da origem, o
+vetor aponta para cima.
+
+291
+00:15:13,810 --> 00:15:15,650
+Acima, aponta para a esquerda.
+
+292
+00:15:15,690 --> 00:15:17,710
+À esquerda, aponta para baixo.
+
+293
+00:15:17,930 --> 00:15:19,670
+Abaixo, aponta para a direita.
+
+294
+00:15:19,710 --> 00:15:25,450
+É exatamente o padrão produzido por
+menos y na direção x mais x na direção y:
+
+295
+00:15:25,490 --> 00:15:27,510
+sempre tangente aos círculos.
+
+296
+00:15:27,570 --> 00:15:31,990
+E aqui está a surpresa: o divergente
+desse campo também é zero.
+
+297
+00:15:32,030 --> 00:15:36,470
+Então dois campos com geometrias
+completamente diferentes podem ter o mesmo
+
+298
+00:15:36,510 --> 00:15:37,330
+divergente.
+
+299
+00:15:37,370 --> 00:15:40,090
+O divergente detecta fonte e sumidouro;
+
+300
+00:15:40,130 --> 00:15:41,330
+ele não mede giro.
+
+301
+00:15:41,370 --> 00:15:45,630
+Para enxergar a diferença, imagine uma
+pequena roda de pás usada apenas como
+
+302
+00:15:45,670 --> 00:15:46,610
+sonda geométrica.
+
+303
+00:15:46,650 --> 00:15:50,250
+No campo uniforme, não existe
+tendência líquida de rotação.
+
+304
+00:15:50,290 --> 00:15:52,870
+No campo giratório, a roda tende a girar.
+
+305
+00:15:52,910 --> 00:15:55,670
+Precisamos de um segundo
+operador para medir isso.
+
+306
+00:15:55,710 --> 00:15:59,270
+Esse segundo operador é o
+rotacional do campo vetorial F.
+
+307
+00:15:59,310 --> 00:16:02,930
+Ele transforma a circulação
+local numa quantidade vetorial.
+
+308
+00:16:02,990 --> 00:16:07,910
+A direção do rotacional fornece o eixo e
+a orientação desse giro pela regra da mão
+
+309
+00:16:07,950 --> 00:16:08,450
+direita;
+
+310
+00:16:08,490 --> 00:16:12,370
+o módulo mede a intensidade da
+circulação local por unidade de área.
+
+311
+00:16:12,410 --> 00:16:16,910
+É por isso que uma pequena roda de pás
+funciona tão bem como imagem mental para
+
+312
+00:16:16,950 --> 00:16:17,710
+esse conceito.
+
+313
+00:16:17,750 --> 00:16:22,710
+Para o campo que construímos, o rotacional
+vale dois ômega na direção z positiva.
+
+314
+00:16:22,750 --> 00:16:25,450
+Aqui o fator dois não
+é um detalhe acidental:
+
+315
+00:16:25,510 --> 00:16:28,810
+se F fosse um campo de
+velocidades de uma rotação rígida,
+
+316
+00:16:28,850 --> 00:16:33,650
+ômega seria a velocidade angular e o
+rotacional seria duas vezes esse vetor de
+
+317
+00:16:33,690 --> 00:16:34,210
+rotação.
+
+318
+00:16:34,250 --> 00:16:36,770
+O ponto principal, porém, é geométrico:
+
+319
+00:16:36,810 --> 00:16:40,490
+o campo uniforme e o campo
+giratório tinham o mesmo divergente,
+
+320
+00:16:40,530 --> 00:16:44,190
+zero, mas o rotacional
+distingue imediatamente os dois.
+
+321
+00:16:44,250 --> 00:16:46,590
+Agora podemos fazer a pergunta física:
+
+322
+00:16:46,630 --> 00:16:50,190
+e o campo elétrico eletrostático,
+produzido por cargas paradas?
+
+323
+00:16:50,230 --> 00:16:53,690
+Ele pode ter circulação local,
+ou o seu rotacional é zero?
+
+324
+00:16:53,730 --> 00:16:57,670
+Para responder, vamos primeiro estudar
+a circulação ao longo de um caminho.
+
+325
+00:16:57,710 --> 00:17:00,030
+Pegue uma carga pontual e dois pontos,
+
+326
+00:17:00,090 --> 00:17:00,990
+a e b.
+
+327
+00:17:01,030 --> 00:17:05,430
+A distância da carga até
+a é r a; até b é r b.
+
+328
+00:17:05,470 --> 00:17:09,030
+Agora escolha qualquer caminho
+C um ligando esses dois pontos.
+
+329
+00:17:09,070 --> 00:17:12,510
+Ao caminhar pela curva, o
+deslocamento infinitesimal,
+
+330
+00:17:12,550 --> 00:17:14,930
+dl, é sempre tangente ao caminho.
+
+331
+00:17:14,970 --> 00:17:18,950
+Em cada ponto fazemos o produto
+escalar entre o campo elétrico e esse
+
+332
+00:17:18,990 --> 00:17:19,810
+deslocamento.
+
+333
+00:17:19,850 --> 00:17:23,970
+Esse produto mede a contribuição do
+campo na direção em que estamos andando.
+
+334
+00:17:24,010 --> 00:17:27,290
+Quando acumulamos essas contribuições
+ao longo de todo o caminho,
+
+335
+00:17:27,350 --> 00:17:29,990
+obtemos a integral de
+linha do campo elétrico.
+
+336
+00:17:30,030 --> 00:17:34,470
+Fisicamente, ela representa o trabalho
+realizado pelo campo por unidade de carga
+
+337
+00:17:34,510 --> 00:17:35,570
+entre os dois pontos.
+
+338
+00:17:35,610 --> 00:17:39,850
+No campo de uma carga pontual, o
+campo elétrico aponta radialmente.
+
+339
+00:17:39,890 --> 00:17:43,830
+Então só a componente radial do
+deslocamento contribui para o produto
+
+340
+00:17:43,870 --> 00:17:44,410
+escalar.
+
+341
+00:17:44,450 --> 00:17:48,790
+A parte transversal é perpendicular
+ao campo e tem produto escalar zero.
+
+342
+00:17:48,850 --> 00:17:51,570
+A componente radial é simplesmente dr,
+
+343
+00:17:51,730 --> 00:17:54,410
+a pequena variação da
+distância até a carga.
+
+344
+00:17:54,450 --> 00:17:57,850
+Por isso o produto escalar vira
+q sobre quatro pi epsilon zero,
+
+345
+00:17:57,890 --> 00:18:00,150
+vezes dr sobre r ao quadrado.
+
+346
+00:18:00,190 --> 00:18:03,150
+Ao integrar do ponto a até o ponto b,
+
+347
+00:18:03,190 --> 00:18:06,670
+a variável radial vai de r a até r b.
+
+348
+00:18:06,710 --> 00:18:10,690
+A primitiva de um sobre r ao
+quadrado é menos um sobre r.
+
+349
+00:18:10,730 --> 00:18:16,230
+Avaliando nos extremos, o resultado fica
+proporcional a um sobre r a menos um sobre
+
+350
+00:18:16,270 --> 00:18:16,750
+r b.
+
+351
+00:18:16,790 --> 00:18:20,430
+Repara no que desapareceu: a
+forma detalhada do caminho.
+
+352
+00:18:20,530 --> 00:18:23,830
+Escolha agora um segundo
+caminho, completamente diferente,
+
+353
+00:18:23,870 --> 00:18:26,410
+mas com os mesmos pontos inicial e final.
+
+354
+00:18:26,450 --> 00:18:31,130
+Como r a e r b são os mesmos, o
+valor da integral também é o mesmo.
+
+355
+00:18:31,170 --> 00:18:35,050
+Essa independência do caminho é
+a marca de um campo conservativo.
+
+356
+00:18:35,090 --> 00:18:39,690
+Em mecânica, é a mesma ideia da força
+gravitacional ou da força elástica ideal:
+
+357
+00:18:39,790 --> 00:18:42,690
+o trabalho entre dois
+pontos depende dos extremos,
+
+358
+00:18:42,730 --> 00:18:44,970
+não do trajeto usado para chegar lá.
+
+359
+00:18:45,010 --> 00:18:49,590
+Faça então a ida por C um e a volta pelo
+caminho C dois percorrido no sentido
+
+360
+00:18:49,630 --> 00:18:50,570
+contrário.
+
+361
+00:18:50,610 --> 00:18:52,870
+Juntos, eles formam uma curva fechada.
+
+362
+00:18:52,910 --> 00:18:58,030
+A contribuição da volta entra com sinal
+oposto e cancela a contribuição da ida.
+
+363
+00:18:58,110 --> 00:19:02,190
+Portanto, em eletrostática, a circulação
+do campo elétrico ao redor de qualquer
+
+364
+00:19:02,230 --> 00:19:04,690
+caminho fechado regular é zero.
+
+365
+00:19:04,730 --> 00:19:07,570
+Em linguagem de trabalho:
+depois de uma volta completa,
+
+366
+00:19:07,690 --> 00:19:11,130
+o campo não fornece trabalho
+líquido por unidade de carga.
+
+367
+00:19:11,170 --> 00:19:14,150
+Guarda essa conclusão, porque
+ela vai reaparecer no final:
+
+368
+00:19:14,190 --> 00:19:17,130
+se a integral entre dois
+pontos independe do caminho,
+
+369
+00:19:17,170 --> 00:19:20,510
+podemos descrever essa diferença
+usando um potencial escalar.
+
+370
+00:19:20,550 --> 00:19:24,850
+Antes de voltar ao campo elétrico, vamos
+formular a ponte matemática para um campo
+
+371
+00:19:24,890 --> 00:19:26,530
+vetorial qualquer F.
+
+372
+00:19:26,590 --> 00:19:31,250
+Na borda C, a circulação é a integral
+do produto escalar de F por dl,
+
+373
+00:19:31,290 --> 00:19:33,150
+ao longo da curva fechada.
+
+374
+00:19:33,190 --> 00:19:36,150
+Agora preencha essa curva
+com uma superfície S.
+
+375
+00:19:36,290 --> 00:19:38,650
+Pense numa película esticada sobre um aro.
+
+376
+00:19:38,690 --> 00:19:41,710
+A curva é a borda; a
+superfície é o interior.
+
+377
+00:19:41,830 --> 00:19:45,230
+Divida mentalmente essa
+superfície em muitos pedacinhos.
+
+378
+00:19:45,270 --> 00:19:49,810
+Em cada pedacinho, uma circulação
+microscópica mede a tendência local de
+
+379
+00:19:49,850 --> 00:19:50,130
+giro.
+
+380
+00:19:50,170 --> 00:19:52,610
+Quando colocamos os
+pedacinhos lado a lado,
+
+381
+00:19:52,650 --> 00:19:55,130
+as bordas internas aparecem duas vezes,
+
+382
+00:19:55,170 --> 00:19:57,170
+percorridas em sentidos opostos.
+
+383
+00:19:57,210 --> 00:19:58,370
+Elas se cancelam.
+
+384
+00:19:58,410 --> 00:20:02,630
+Exatamente como as faces internas se
+cancelaram no teorema da divergência,
+
+385
+00:20:02,670 --> 00:20:06,670
+aqui as bordas internas das
+pequenas células cancelam entre si.
+
+386
+00:20:07,350 --> 00:20:11,810
+O rotacional é justamente a quantidade
+que resume esse comportamento local.
+
+387
+00:20:11,890 --> 00:20:14,730
+Imagine um laço muito
+pequeno ao redor de um ponto.
+
+388
+00:20:14,770 --> 00:20:18,470
+Pegue a circulação do campo nesse
+laço e divida pela área delimitada.
+
+389
+00:20:18,510 --> 00:20:22,690
+No limite em que o laço encolhe, essa
+razão fornece a componente do rotacional
+
+390
+00:20:22,730 --> 00:20:24,610
+perpendicular à superfície.
+
+391
+00:20:24,650 --> 00:20:29,330
+Por isso o eixo do pequeno giro, o vetor
+rotacional e a normal do pedacinho de
+
+392
+00:20:29,370 --> 00:20:31,770
+superfície aparecem todos alinhados.
+
+393
+00:20:31,810 --> 00:20:35,690
+Para um pequeno elemento de área, a
+contribuição é o produto escalar do
+
+394
+00:20:35,730 --> 00:20:38,150
+rotacional pelo elemento de área vetorial.
+
+395
+00:20:38,190 --> 00:20:42,730
+O produto escalar seleciona justamente a
+parte do rotacional que atravessa aquele
+
+396
+00:20:42,770 --> 00:20:44,590
+pedacinho na direção da normal.
+
+397
+00:20:44,630 --> 00:20:47,290
+Somando todos os pedacinhos
+e tomando o limite,
+
+398
+00:20:47,350 --> 00:20:50,130
+obtemos a integral de
+superfície do rotacional.
+
+399
+00:20:50,170 --> 00:20:53,030
+As bordas internas
+desapareceram por cancelamento;
+
+400
+00:20:53,070 --> 00:20:55,810
+sobra apenas a circulação
+na borda externa C.
+
+401
+00:20:55,850 --> 00:20:57,750
+Esse é o teorema de Stokes.
+
+402
+00:20:57,830 --> 00:21:02,850
+A circulação do campo ao longo da borda C
+é igual ao fluxo do rotacional através de
+
+403
+00:21:02,890 --> 00:21:05,630
+uma superfície S limitada por essa borda.
+
+404
+00:21:05,670 --> 00:21:10,270
+E existe uma hipótese importante: o campo
+precisa ser regular na região em que
+
+405
+00:21:10,310 --> 00:21:11,710
+estamos aplicando o teorema.
+
+406
+00:21:11,750 --> 00:21:15,470
+Borda e interior estão codificando
+a mesma estrutura geométrica,
+
+407
+00:21:15,510 --> 00:21:17,390
+só que de duas perspectivas diferentes.
+
+408
+00:21:17,650 --> 00:21:21,850
+Agora troque o campo genérico F
+pelo campo elétrico eletrostático.
+
+409
+00:21:21,890 --> 00:21:25,390
+A gente acabou de demonstrar que a
+circulação do campo elétrico em qualquer
+
+410
+00:21:25,430 --> 00:21:27,130
+curva fechada é zero.
+
+411
+00:21:27,170 --> 00:21:31,570
+Portanto, a integral de superfície do
+rotacional do campo elétrico também é
+
+412
+00:21:31,610 --> 00:21:31,950
+zero.
+
+413
+00:21:31,990 --> 00:21:36,230
+Escolha uma superfície muito pequena
+numa região onde o campo é regular — sem
+
+414
+00:21:36,270 --> 00:21:39,010
+atravessar a posição singular
+de uma carga pontual.
+
+415
+00:21:39,050 --> 00:21:43,310
+Se a integral é zero para qualquer pequeno
+pedacinho de superfície e para qualquer
+
+416
+00:21:43,350 --> 00:21:47,410
+orientação da normal, não basta uma
+componente do rotacional ser zero:
+
+417
+00:21:47,450 --> 00:21:49,630
+o vetor inteiro precisa ser zero.
+
+418
+00:21:49,670 --> 00:21:52,650
+Chegamos à segunda equação
+local da eletrostática:
+
+419
+00:21:52,690 --> 00:21:55,150
+o rotacional do campo elétrico é zero.
+
+420
+00:21:55,190 --> 00:21:57,790
+O campo eletrostático é irrotacional.
+
+421
+00:21:57,890 --> 00:22:00,670
+Isso não quer dizer que suas
+linhas precisam ser retas;
+
+422
+00:22:00,710 --> 00:22:03,910
+quer dizer que não existe
+circulação local líquida.
+
+423
+00:22:03,950 --> 00:22:07,190
+Agora dá para resumir a
+eletrostática em duas perguntas.
+
+424
+00:22:07,230 --> 00:22:09,190
+Primeira: existe fonte local?
+
+425
+00:22:09,290 --> 00:22:11,350
+A resposta está no divergente.
+
+426
+00:22:11,390 --> 00:22:15,470
+A Lei de Gauss diferencial diz que o
+divergente do campo elétrico é a densidade
+
+427
+00:22:15,510 --> 00:22:17,850
+de carga dividida por epsilon zero.
+
+428
+00:22:17,890 --> 00:22:20,110
+Segunda: existe circulação local?
+
+429
+00:22:20,190 --> 00:22:22,250
+A resposta está no rotacional.
+
+430
+00:22:22,290 --> 00:22:25,750
+Em eletrostática, o rotacional
+do campo elétrico é zero.
+
+431
+00:22:25,790 --> 00:22:27,850
+E repara na simetria do raciocínio.
+
+432
+00:22:27,890 --> 00:22:32,670
+Gauss transforma uma informação de fluxo
+na fronteira em uma afirmação sobre fontes
+
+433
+00:22:32,710 --> 00:22:33,390
+no interior.
+
+434
+00:22:33,430 --> 00:22:37,930
+Stokes transforma uma informação de
+circulação na borda em uma afirmação sobre
+
+435
+00:22:37,970 --> 00:22:39,330
+giro local no interior.
+
+436
+00:22:39,430 --> 00:22:42,830
+Nos dois casos, uma lei
+global ganha uma forma local.
+
+437
+00:22:42,870 --> 00:22:47,510
+Mas o rotacional do campo elétrico não é
+zero em toda situação da eletrodinâmica.
+
+438
+00:22:47,550 --> 00:22:51,870
+A forma geral é a lei de Faraday: o
+rotacional do campo elétrico é igual a
+
+439
+00:22:51,910 --> 00:22:54,730
+menos a derivada temporal
+do campo magnético.
+
+440
+00:22:54,770 --> 00:22:59,310
+Um campo magnético que muda com o tempo
+produz um campo elétrico com circulação.
+
+441
+00:22:59,350 --> 00:23:01,470
+É a base da indução eletromagnética.
+
+442
+00:23:01,510 --> 00:23:04,990
+No regime eletrostático, os
+campos não variam no tempo.
+
+443
+00:23:05,030 --> 00:23:09,310
+Em particular, a derivada do campo
+magnético em relação ao tempo é zero.
+
+444
+00:23:09,350 --> 00:23:13,070
+A lei de Faraday então reduz exatamente
+ao resultado que encontramos:
+
+445
+00:23:13,250 --> 00:23:15,790
+rotacional do campo elétrico igual a zero.
+
+446
+00:23:15,830 --> 00:23:18,470
+E agora volta aquela
+independência do caminho.
+
+447
+00:23:18,550 --> 00:23:22,730
+Como a integral do campo elétrico entre
+dois pontos depende apenas dos extremos,
+
+448
+00:23:22,770 --> 00:23:26,050
+podemos usar essa integral para
+definir uma grandeza escalar:
+
+449
+00:23:26,090 --> 00:23:27,530
+o potencial elétrico.
+
+450
+00:23:27,570 --> 00:23:31,510
+Se chamarmos os pontos de a e
+b, a diferença de potencial,
+
+451
+00:23:31,590 --> 00:23:36,870
+V de b menos V de a, é definida como o
+negativo da integral do campo elétrico de
+
+452
+00:23:36,910 --> 00:23:37,870
+a até b.
+
+453
+00:23:37,910 --> 00:23:41,170
+O potencial atribui um número
+a cada ponto do espaço.
+
+454
+00:23:41,390 --> 00:23:45,210
+As superfícies em que esse número
+é constante são as equipotenciais.
+
+455
+00:23:45,250 --> 00:23:49,670
+O gradiente do potencial aponta para a
+direção em que o potencial cresce mais
+
+456
+00:23:49,710 --> 00:23:50,530
+rapidamente.
+
+457
+00:23:50,570 --> 00:23:52,990
+O campo elétrico aponta no sentido oposto,
+
+458
+00:23:53,030 --> 00:23:55,230
+para onde o potencial
+cai mais rapidamente.
+
+459
+00:23:55,270 --> 00:23:59,770
+Por isso o campo elétrico pode ser escrito
+como menos o gradiente do potencial.
+
+460
+00:23:59,970 --> 00:24:04,570
+É uma simplificação poderosa: em vez de
+procurar diretamente um vetor com três
+
+461
+00:24:04,610 --> 00:24:05,450
+componentes,
+
+462
+00:24:05,490 --> 00:24:09,150
+muitas vezes podemos primeiro
+encontrar um único campo escalar.
+
+463
+00:24:09,190 --> 00:24:12,270
+E essa é a próxima ideia que
+vale construir com calma:
+
+464
+00:24:12,310 --> 00:24:13,910
+o potencial elétrico.
+
+465
+00:24:13,950 --> 00:24:18,610
+Hoje a gente saiu de duas perguntas
+geométricas e chegou às duas leis locais
+
+466
+00:24:18,650 --> 00:24:19,650
+da eletrostática.
+
+467
+00:24:19,890 --> 00:24:21,750
+Divergente mede fonte local.
+
+468
+00:24:21,870 --> 00:24:24,070
+Rotacional mede circulação local.
+
+469
+00:24:24,110 --> 00:24:26,230
+Para o campo elétrico eletrostático,
+
+470
+00:24:26,270 --> 00:24:30,330
+a fonte é a densidade de carga
+e a circulação local é zero.
+
+471
+00:24:30,370 --> 00:24:34,770
+Se essa construção te ajudou a enxergar o
+que essas equações realmente querem dizer,
+
+472
+00:24:34,810 --> 00:24:35,970
+se inscreve no canal.
+
+473
+00:24:36,010 --> 00:24:40,970
+No próximo passo, a gente usa exatamente
+esse caráter conservativo para construir o
+
+474
+00:24:41,010 --> 00:24:42,110
+potencial elétrico.
+
+475
+00:24:42,150 --> 00:24:43,150
+Até a próxima.

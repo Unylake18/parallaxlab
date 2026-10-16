@@ -1,0 +1,45 @@
+{
+ "blocos": [
+  {
+   "id": "K01",
+   "inicio": 0.65,
+   "voz_s": 15.93,
+   "animacao_s": 12.73,
+   "excesso_s": 0,
+   "atraso_inicio_s": 0.0
+  },
+  {
+   "id": "K02",
+   "inicio": 16.58,
+   "voz_s": 11.62,
+   "animacao_s": 11.67,
+   "excesso_s": 0.05,
+   "atraso_inicio_s": 0.0
+  },
+  {
+   "id": "K03",
+   "inicio": 28.25,
+   "voz_s": 20.82,
+   "animacao_s": 9.6,
+   "excesso_s": 0,
+   "atraso_inicio_s": 0.05
+  }
+ ],
+ "marcos": [
+  {
+   "alvo_s": 665.9,
+   "atraso_s": 0.0,
+   "bloco": "K03"
+  },
+  {
+   "alvo_s": 668.4,
+   "atraso_s": 0.0,
+   "bloco": "K03"
+  },
+  {
+   "alvo_s": 670.6,
+   "atraso_s": 0.0,
+   "bloco": "K03"
+  }
+ ]
+}

@@ -1,7 +1,0 @@
-<!doctype html><html lang="pt-BR"><meta charset="utf-8">
-<title>QA — Coriolis V6</title><style>body{margin:0;background:#050816;color:#f5f7ff;font:14px sans-serif;text-align:center}
-video{display:block;height:calc(100vh - 48px);max-width:100vw;margin:auto}button{padding:6px 14px}span{margin:20px}</style>
-<video id="v" muted controls preload="auto" src="../media_v6/videos/cena/960p15/QuedaCoriolis024.mp4"></video>
-<button onclick="v.currentTime=0;v.play()">Reproduzir do início</button><span id="t">Pronto</span>
-<script>const v=document.getElementById('v');v.addEventListener('timeupdate',()=>document.getElementById('t').textContent=v.currentTime.toFixed(1)+' / '+v.duration.toFixed(1)+' s');
-v.addEventListener('ended',()=>document.getElementById('t').textContent='Reprodução concluída — '+v.duration.toFixed(1)+' s');</script></html>

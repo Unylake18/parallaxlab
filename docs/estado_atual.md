@@ -4,8 +4,7 @@
 
 ## Resumo rápido — leia primeiro (atualizado em 2026-10-14, PC pessoal `Pichau`)
 
-- **`vid_0024_queda_coriolis_leste`: em produção**, preview silencioso V8 renderizado (2min02,7s; 540×960 / 15 fps); corresponde à unidade anteriormente chamada `vid_0023_queda_coriolis_leste`. Mantido DA EQUAÇÃO AO FENÔMENO · EP. 06. Preview: `videos/vid_0024_queda_coriolis_leste/media_v8/videos/cena/960p15/QuedaCoriolis024.mp4`. Inspeção por quadros concluída; reprodução contínua em tempo real não confirmada por indisponibilidade do player.
-- **`vid_0023_coriolis`: PLANEJADO — NÃO INICIADO**, apenas ficha. Produção após terminar tecnicamente o 0024; publicação pretendida 0023 → 0024. Derivação completa no 0023; aplicação à queda no 0024.
+- **Projetos de Coriolis 0023 e 0024 cancelados em 14/10/2026**, por decisão do usuário. As pastas `vid_0023_coriolis` e `vid_0024_queda_coriolis_leste`, incluindo previews e avaliações, foram excluídas. O próximo assunto do 0023 será escolhido pelo usuário com o Master, com preferência por algo mais simples e cotidiano.
 
 - **Dois computadores, um repositório.** Trabalho: `C:\Users\KaioOrtiz\PycharmProjects\manim-fisica`; pessoal: `C:\Users\Pichau\PycharmProjects\manim-fisica`. Só o Git (`origin/main`) sincroniza. Regra: **antes de trocar de PC, commit + push; ao chegar, `git pull`.** Fora do Git (copiar à parte): WAV de narração dos vídeos longos (`videos_longos/*/audio/`), `renders/`, `entregas/`, `media/`.
 - **Vídeos curtos `vid_0001`–`vid_0018`:** todos com master e legendado entregues em `entregas/` (`uv run python videos/entregar.py --listar`). O mais recente aqui é `vid_0018` (Bernoulli, Por Trás da Fórmula · EP. 06): final 1080p com voz e legendas coloridas, QA concluído, pronto para postagem.

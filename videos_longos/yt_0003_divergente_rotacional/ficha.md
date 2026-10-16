@@ -7,8 +7,43 @@
 - módulo: Lei de Gauss / eletrostática
 - tema: divergente e rotacional do campo eletrostático
 - duração-alvo: aproximadamente 11:15
-- status: preview visual silencioso V1.5 concluído para avaliação, 960×540 / 15 fps
+- status: preview visual silencioso V3.1 (temporizado pela narração estimada) concluído para avaliação, 960×540 / 15 fps (V1.5 abaixo é histórico)
 - solido_3d: nenhum na V1.5; geometria em Manim conforme autorização explícita do handoff V1.5
+
+## Master e legenda — 15/10/2026
+
+- Master: `renders/yt_0003_final/master_yt0003.mp4` — 1920×1080, 30 fps, H.264 CRF 14,0, AAC 48 kHz estéreo; vídeo 24:45,79, voz 24:44,56 (a cauda do CTA termina depois da voz). Render em 6 grupos de animações (`render_final_v3_1.py`, `-n a,b`) com relógio quantizado `vt` (mesma contagem de quadros em qualquer grupo/modo); quadros por grupo = previsão da passada seca (9.084/6.262/6.080/8.742/8.254/6.152).
+- Verificação: posição das trocas de título do master vs. clipes aprovados (alinhados ao ASR): desvios de −0,3 a +0,8 s, sem deriva ao longo do vídeo.
+- Legenda: `legenda_yt0003.srt` (475 cues, ≤2 linhas de 42 caracteres, sem sobreposição) — texto do roteiro V3.1, tempos do ASR (faster-whisper large-v3) para 97,3% das palavras, restante interpolado. Arquivo separado (não embutido).
+- Entrega em `entregas/`: pendente de série/EP (não constam na ficha nem no registro).
+
+## Sincronização com a voz real — 14/10/2026
+
+- Voz: 5 WAV do ElevenLabs (`audio/partes/`, 24:41), alinhados sem ASR (`gerar_sync_v3_1.py alinhar`): 92 blocos/âncoras em `sync_v3_1.json`; todos os inícios de bloco caem após pausa detectada; 3 frases em 297 fora de ±30% do ritmo mediano.
+- Cena: `self.ancora("ID")` usa tempos absolutos da voz (`duracoes_v3_1.json`); ritmo por bloco em `rs_v3_1.json` (`ajustar_ritmo_v3_1.py`, modo `-s`); pausas de áudio só em G04, P08 e CTA02 (`pads_v3_1.json` → `audio/narracao_montagem.wav`).
+- Preview com voz (avaliação, não é master): `renders/videos/cena/540p15/preview_v3_1_com_voz.mp4` (24:46). Residuais: atraso de início ≤ 1,05 s (K03), demais ≤ 0,67 s. Sem SRT, master ou final.
+
+## Entrega da V3.1 — 14/10/2026
+
+- Narração congelada `narracao_v3_1.md` (92 âncoras, 4.104 palavras ≈ 25,6 min a 2,75 palavras/s); `cena.py` remodelada em torno dela: `self.ancora("ID")` espera o fim da fala estimada (`duracoes_v3_1.json`), `self.pace(f)` distribui microbeats dentro de cada bloco, animações 30% mais lentas (`RS`).
+- Visuais novos/ajustes: D14, P08 (amostragem da delta), C10, ΔV = −∫E·dℓ, ρ = 3ε₀κ, trabalho por unidade de carga, bordas internas em Stokes, campo regular na região; correções de sobreposição no fluxo x±dx/2 e no gráfico da secante.
+- Preview temporizado: `renders/videos/cena/540p15/preview_v3_1.mp4` (26:39, 960×540 @ 15 fps). Por bloco: `renders/blocos_v3_1_completo.json` (animação × voz). Sem voz, SRT, master ou final.
+- Revisão pós-parecer (14/10/2026): S03–S04 (células contíguas, bordas opostas, limite circulação/área), S09 (aproximação e limite), R06–R07, C06, P07–P08, D13, F03–F04, P02 (duas posições), títulos sem morph, símbolos tipografados em legendas (`mix`). Preview final: 26:33 (1.593 s). Fechamento visual (V3.1c): Faraday com B em ⊙ e E induzido, F04 compacto, S09 em duas linhas, microbeats H04/D16/P11/R02, acabamentos S05/C06. Preview 26:33. Opcionais feitos (G04 vetor de teste, K03 campo + carga uniforme, S03 sem ícones após cancelamento) e sinal de Faraday corrigido (B↑ → E horário). Preview final por estimativa: 26:35; CTA02 mantido como cauda. Próxima etapa: voz real e ajuste automático das esperas.
+
+## Entrega da V1.7 — 14/10/2026
+
+- Polimento cirúrgico da V1.6 em `cena.py`: hierarquia tipográfica (prosa ≤30 reduzida), dx/2 sem corte, fusão de fluxo em dois estágios, gráfico secante→tangente, rótulos de direção, anotações sem fundo opaco, κ definido, delta aprofundada (sem I(V)), Ω definido, rotacional com medidor "GIRO LOCAL", circulação com dℓ/E/r_a/r_b e derivação de 1/r_a−1/r_b, rastreador único (`Track`), Stokes com dℓ na borda e mini-rotores, Faraday B(t)→0, potencial V escalar, CTA copiado de yt_0002, novo hook.
+- Preview completo: `renders/videos/cena/540p15/preview_v1_7.mp4` (769,3 s, 11540 quadros); cortes `trecho_{A,B,C,K,D,E,F}_v1_7_do_completo.mp4`.
+- QA de layout: `renders/qa_layout_completo_v1_6.json` (nome herdado); restam sinalizações transitórias (fusão de equações, margens de campos).
+
+## Entrega da V1.6 — 14/10/2026
+
+Refinamento didático/visual sobre a V1.5, com `yt_0001`/`yt_0002` como referência de gramática (term coloring, header, escala, construção progressiva). Sem âmbar; ∇× e circulação em branco, Ω em lavanda, C₁ violeta, C₂ lavanda, V do potencial em branco. Prosa sempre branca/cinza (`text()` força a cor).
+
+- Alterados: `cena.py`, `ficha.md`. Criados: `narracao_microedicoes_v1_6.md` (frases novas), `renders/comparar_serie_v1_6.py`, `renders/cortar_v1_6.py`.
+- Preview completo: `renders/videos/cena/540p15/preview_v1_6.mp4` (941,5 s ≈ 15:41; 14.123 quadros, 960×540, 15 fps, sem áudio). Cortes A–F e K: `trecho_<X>_v1_6_do_completo.mp4` na mesma pasta. Tempos de seção: `renders/secoes_v1_6_completo.json`; layout: `renders/qa_layout_completo_v1_6.json`; comparação: `renders/comparacao_serie_v1_6.png`.
+- Duração: ~4,5 min acima dos ~11:15 congelados, por causa das construções novas (divergente 3:36, delta, Ω, Stokes). Cerca de 440 s são esperas de marcos (`espera` no JSON) e podem ser enxugadas quando houver voz.
+- Sem voz, SRT, master, render 1080p, commit, push, branch ou PR. Arsenal Blender não usado.
 
 ## Rodada atual — V1.5
 
