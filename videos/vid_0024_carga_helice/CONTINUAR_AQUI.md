@@ -36,9 +36,14 @@ continuar: renderizar a cena completa a partir do código quando houver uma muda
 ## Abrir e continuar em outro computador
 
 Repositório: https://github.com/Unylake18/parallaxlab
-Branch: `main`. Unidade: `videos/vid_0024_carga_helice`.
-Em um checkout existente, salvar o trabalho local e atualizar com `git pull --ff-only origin main`.
-Em um computador novo, usar `git clone https://github.com/Unylake18/parallaxlab.git`.
+Branch de continuidade: `codex/vid-0024-continuidade`. Unidade: `videos/vid_0024_carga_helice`.
+Esta branch preserva a base local validada; a `main` remota recebeu atualizações de outros
+trabalhos e não foi mesclada nesta entrega.
+Em um checkout existente, salvar o trabalho local, executar `git fetch origin` e, na
+primeira abertura, `git switch --track origin/codex/vid-0024-continuidade`. Se a branch
+já existir localmente: `git switch codex/vid-0024-continuidade` seguido de
+`git pull --ff-only origin codex/vid-0024-continuidade`.
+Em um computador novo: `git clone --single-branch --branch codex/vid-0024-continuidade https://github.com/Unylake18/parallaxlab.git`.
 
 Ler o `AGENTS.md` da raiz, este guia e o briefing mais recente. Assistir ao MP4 acima.
 Preservar física, narrativa, glyph maps existentes e a fase de preview.
