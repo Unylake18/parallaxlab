@@ -1,0 +1,222 @@
+[
+  {
+    "estado": "abertura_campo_montado",
+    "segundos": 1.1
+  },
+  {
+    "estado": "abertura_perpendicular",
+    "segundos": 6.233
+  },
+  {
+    "estado": "abertura_obliqua",
+    "segundos": 10.567
+  },
+  {
+    "estado": "graficos_sincronizados_inicio",
+    "segundos": 24.033
+  },
+  {
+    "estado": "graficos_ultimo_ciclo",
+    "segundos": 34.967
+  },
+  {
+    "estado": "decomposicao_construida",
+    "segundos": 42.3
+  },
+  {
+    "estado": "raio_retirar_barra_inicio",
+    "segundos": 64.9
+  },
+  {
+    "estado": "raio_retirar_barra_fim",
+    "segundos": 65.3
+  },
+  {
+    "estado": "raio_multiplicar_r_inicio",
+    "segundos": 65.3
+  },
+  {
+    "estado": "raio_multiplicar_r_fim",
+    "segundos": 66.833
+  },
+  {
+    "estado": "raio_expoente_inicio",
+    "segundos": 67.433
+  },
+  {
+    "estado": "raio_expoente_fim",
+    "segundos": 67.767
+  },
+  {
+    "estado": "raio_abrir_quadrado_inicio",
+    "segundos": 67.767
+  },
+  {
+    "estado": "raio_abrir_quadrado_fim",
+    "segundos": 68.967
+  },
+  {
+    "estado": "raio_cancelar_vperp_inicio",
+    "segundos": 70.967
+  },
+  {
+    "estado": "raio_cancelar_vperp_fim",
+    "segundos": 71.967
+  },
+  {
+    "estado": "raio_compactar_inicio",
+    "segundos": 72.3
+  },
+  {
+    "estado": "raio_compactar_fim",
+    "segundos": 73.3
+  },
+  {
+    "estado": "raio_isolar_r_inicio",
+    "segundos": 73.7
+  },
+  {
+    "estado": "raio_isolar_r_fim",
+    "segundos": 75.3
+  },
+  {
+    "estado": "raio_resultado",
+    "segundos": 75.833
+  },
+  {
+    "estado": "omega_substituir_raio_saida_inicio",
+    "segundos": 80.233
+  },
+  {
+    "estado": "omega_substituir_raio_saida_fim",
+    "segundos": 80.633
+  },
+  {
+    "estado": "omega_substituir_raio_inicio",
+    "segundos": 80.633
+  },
+  {
+    "estado": "omega_substituir_raio_fim",
+    "segundos": 81.567
+  },
+  {
+    "estado": "omega_cancelar_vperp_inicio",
+    "segundos": 83.767
+  },
+  {
+    "estado": "omega_cancelar_vperp_fim",
+    "segundos": 84.567
+  },
+  {
+    "estado": "omega_limpar_divisao_inicio",
+    "segundos": 84.967
+  },
+  {
+    "estado": "omega_limpar_divisao_fim",
+    "segundos": 85.367
+  },
+  {
+    "estado": "omega_simplificar_inicio",
+    "segundos": 85.367
+  },
+  {
+    "estado": "omega_simplificar_fim",
+    "segundos": 86.767
+  },
+  {
+    "estado": "periodo_substituir_omega_saida_inicio",
+    "segundos": 90.5
+  },
+  {
+    "estado": "periodo_substituir_omega_saida_fim",
+    "segundos": 90.9
+  },
+  {
+    "estado": "periodo_substituir_omega_inicio",
+    "segundos": 90.9
+  },
+  {
+    "estado": "periodo_substituir_omega_fim",
+    "segundos": 92.033
+  },
+  {
+    "estado": "periodo_resultado",
+    "segundos": 92.5
+  },
+  {
+    "estado": "composicao_volta_inicio",
+    "segundos": 97.033
+  },
+  {
+    "estado": "composicao_volta_T",
+    "segundos": 103.033
+  },
+  {
+    "estado": "passo_p_construido",
+    "segundos": 104.833
+  },
+  {
+    "estado": "comparacao_B_geometria",
+    "segundos": 115.5
+  },
+  {
+    "estado": "comparacao_B_tempo_T0",
+    "segundos": 119.633
+  },
+  {
+    "estado": "comparacao_B_baseline",
+    "segundos": 120.767
+  },
+  {
+    "estado": "comparacao_vp_geometria",
+    "segundos": 125.367
+  },
+  {
+    "estado": "comparacao_vp_tempo_T0",
+    "segundos": 129.9
+  },
+  {
+    "estado": "comparacao_vp_baseline",
+    "segundos": 131.033
+  },
+  {
+    "estado": "comparacao_vz_geometria",
+    "segundos": 135.633
+  },
+  {
+    "estado": "comparacao_vz_tempo_T0",
+    "segundos": 140.167
+  },
+  {
+    "estado": "comparacao_vz_baseline",
+    "segundos": 141.3
+  },
+  {
+    "estado": "q_positivo_mesma_entrada",
+    "segundos": 144.767
+  },
+  {
+    "estado": "q_forca_inverte_inicio",
+    "segundos": 148.7
+  },
+  {
+    "estado": "q_negativo_mesma_entrada",
+    "segundos": 149.5
+  },
+  {
+    "estado": "sintese_final",
+    "segundos": 170.767
+  },
+  {
+    "estado": "sintese_leitura_fim",
+    "segundos": 173.5
+  },
+  {
+    "estado": "endcard_handle",
+    "segundos": 174.567
+  },
+  {
+    "estado": "fim",
+    "segundos": 176.567
+  }
+]

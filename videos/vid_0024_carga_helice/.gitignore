@@ -1,0 +1,27 @@
+# Continuidade do vid_0024: manter codigo, briefings, preview atual e resultados de QA.
+__pycache__/
+.uv_cache/
+analise_temporaria_*/
+analise_temporaria_*.zip
+*.log
+/media/
+/media_refinado/
+/media_polimento/
+/qa_preview/
+/qa_refinado/
+/qa_polimento/
+/media_layout_ritmo/*
+!/media_layout_ritmo/estados.json
+!/media_layout_ritmo/qa/
+!/media_layout_ritmo/videos/
+/media_layout_ritmo/qa/*
+!/media_layout_ritmo/qa/estados_video.json
+!/media_layout_ritmo/qa/metadados.json
+!/media_layout_ritmo/qa/fisica.json
+!/media_layout_ritmo/qa/ritmo.json
+/media_layout_ritmo/videos/*
+!/media_layout_ritmo/videos/cena/
+/media_layout_ritmo/videos/cena/*
+!/media_layout_ritmo/videos/cena/960p15/
+/media_layout_ritmo/videos/cena/960p15/*
+!/media_layout_ritmo/videos/cena/960p15/CargaHelice024.mp4
