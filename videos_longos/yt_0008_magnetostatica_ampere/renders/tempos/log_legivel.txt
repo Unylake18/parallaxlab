@@ -1,0 +1,434 @@
+# duracoes grupos [219.5, 334.9, 240.5, 285.1, 72.9] offsets [0.0, 3.53, 8.52, 11.49, 15.79] total 1152.9
+
+=== SECAO pergunta | None | code 0.0 prev 0:00.00
+0:02.00 LEG: Um fio longo, retilíneo, com corrente $I$
+0:05.55 LEG: O campo de Biot–Savart circula em volta do fio; o sentido vem da mão direita
+0:07.22 EQ[H]: \mathbf J\ \longrightarrow\ \text{Biot--Savart}\ \longrightarrow\ \mathbf B
+0:09.62 MARCA: n01_um_circulo
+0:11.42 LEG: O mesmo padrão se repete em qualquer altura: o fio infinito é igual ao longo do seu eixo
+0:12.09 MARCA: n01_simetria_axial
+0:14.09 LEG: Agora a pergunta se inverte: dado $\mathbf B$, o que a geometria dele revela?
+0:14.76 EQ[H]: \mathbf B\ \longrightarrow\ \text{?}
+0:17.56 TITULO: O que a geometria de B revela?
+0:18.06 MARCA: n01_pergunta
+
+=== SECAO paradoxo | None | code 20.06 prev 0:20.06
+0:20.66 LEG: Para ver como $B$ muda com a distância, olhe de cima
+0:27.53 LEG: Em $P$, $\mathbf B$ é tangente ao círculo de raio $s$: direção $\hat{\boldsymbol\phi}$
+0:28.20 EQ[A]: \mathbf B=\frac{\mu_0 I}{2\pi s}\,\hat{\boldsymbol\phi}
+0:31.00 MARCA: n02_vista_de_cima
+0:32.20 LEG: Mais longe, mais fraco: o comprimento de $\mathbf B$ cai como $1/s$
+0:35.87 LEG: O rotacional desse campo: em cilíndricas, a componente ao longo do fio é
+0:36.54 EQ[H]: (\nabla\times\mathbf B)_z=\frac{1}{s}\frac{d}{ds}\left(s\,B_\phi\right)
+0:40.89 LEG: Entra o valor de Biot–Savart no lugar de $B_\phi$
+0:41.56 EQ[H]: (\nabla\times\mathbf B)_z=\frac{1}{s}\frac{d}{ds}\left(s\,\frac{\mu_0 I}{2\pi\,s}\right)
+0:45.36 LEG: O $s$ que multiplica cancela o $s$ do denominador
+0:47.33 EQ[H]: (\nabla\times\mathbf B)_z=\frac{1}{s}\frac{d}{ds}\left(\frac{\mu_0 I}{2\pi}\right)
+0:50.13 MARCA: n02_cancela_s
+0:50.13 LEG: $s\,B_\phi$ não depende de $s$: afaste $P$ do raio inicial $s_0$ (com $B_0=\mu_0 I/2\pi s_0$) e veja o produto ficar constante
+1:00.50 MARCA: n02_sB_constante
+1:01.10 LEG: A derivada de uma constante é zero
+1:01.77 EQ[H]: (\nabla\times\mathbf B)_z=\frac{1}{s}\cdot 0
+1:04.57 EQ[H]: (\nabla\times\mathbf B)_z=0
+1:06.77 LEG: $\mathbf B$ só tem componente $\phi$ e só depende de $s$: as outras componentes já são nulas
+1:09.44 EQ[H]: \nabla\times\mathbf B=\mathbf 0\qquad(s>0)
+1:12.24 LEG: Linhas de campo curvas e, mesmo assim, rotacional zero em todo ponto fora do fio
+1:12.91 MARCA: n02_paradoxo_rot_zero
+
+=== SECAO sonda | None | code 77.01 prev 1:17.01
+1:17.61 TITULO: Rotacional: uma medida local
+1:22.56 LEG: Uma sonda: um laço pequeno de área $A$ em torno de $P$, com normal $\hat{\mathbf n}$ pela mão direita
+1:25.23 LEG: A circulação por unidade de área, com o laço encolhendo, mede o rotacional naquele ponto
+1:25.90 EQ[H]: (\nabla\times\mathbf B)\cdot\hat{\mathbf n}=\lim_{A\to0}\frac{1}{A}\oint_{\partial A}\mathbf B\cdot d\boldsymbol\ell
+1:31.70 MARCA: n03_definicao_local
+1:31.70 LEG: Por que zero aqui? Deforme a sonda em dois arcos e dois raios, e olhe de cima
+1:38.27 LEG: Dentro o campo é mais forte, mas o arco é mais curto; fora, o contrário
+1:38.94 EQ[A]: \oint\mathbf B\cdot d\boldsymbol\ell=\left(s\,B_\phi\right)_{\rm fora}\Delta\phi-\left(s\,B_\phi\right)_{\rm dentro}\Delta\phi
+1:42.64 LEG: Como $s\,B_\phi$ é o mesmo nos dois arcos, as duas parcelas se anulam
+1:43.31 EQ[A]: \oint\mathbf B\cdot d\boldsymbol\ell=0
+1:46.61 MARCA: n03_setor_anula
+1:51.11 LEG: Gire a sonda: cada orientação de $\hat{\mathbf n}$ mede uma componente do rotacional
+2:01.78 LEG: Três orientações, três componentes, todas nulas: o vetor rotacional em $P$ é $\mathbf 0$
+2:02.45 MARCA: n03_sonda_gira
+
+=== SECAO circulacao | None | code 128.15 prev 2:08.15
+2:08.15 TITULO: Do laço local ao laço global
+2:11.70 EQ[A]: \oint\mathbf B\cdot d\boldsymbol\ell=0
+2:13.40 LEG: Aumente o laço até o eixo: enquanto o fio fica de fora, nenhuma corrente o atravessa
+2:19.27 LEG: Sobre o próprio fio $\mathbf B$ diverge: a circulação não está definida. Valem os laços de antes e de depois
+2:20.94 EQ[A]: \oint\mathbf B\cdot d\boldsymbol\ell=\text{indefinida}
+2:22.34 LEG: Passado o eixo, a corrente $I$ atravessa o laço
+2:24.61 EQ[A]: \oint\mathbf B\cdot d\boldsymbol\ell=\mu_0 I
+2:26.31 MARCA: n04_salto_circulacao
+2:28.31 LEG: Envolvendo o fio, a circulação vale $\mu_0 I$ — qualquer que seja o laço
+2:31.48 LEG: No círculo centrado, $B_\phi$ é o mesmo em todo ponto e acompanha o caminho
+2:32.15 EQ[H]: B_\phi(s)\,2\pi s=\mu_0 I
+2:35.25 MARCA: n04_circulacao_global
+2:37.75 LEG: Rotacional zero em todo ponto fora do fio, circulação global $\neq 0$: como?
+2:42.32 MARCA: n04_zoom_eixo
+
+=== SECAO divergente | Outra sonda: um volume fechado | code 166.42 prev 2:46.42
+2:49.82 LEG: De perto, numa região pequena, o campo do fio é quase uniforme. Envolva-a com uma caixa fechada
+2:53.27 LEG: As normais $\hat{\mathbf n}$ apontam para fora do volume, em cada face
+2:56.24 LEG: Na face de entrada, $\mathbf B$ aponta contra $\hat{\mathbf n}$: o fluxo é negativo
+2:59.71 LEG: Na face de saída, $\mathbf B$ acompanha $\hat{\mathbf n}$: o mesmo fluxo, positivo
+3:02.38 LEG: Nas outras quatro faces, $\mathbf B$ corre paralelo a elas: fluxo zero
+3:05.05 EQ[A]: -\Phi_B+\Phi_B=0
+3:08.05 EQ[H]: \oint_S\mathbf B\cdot d\mathbf a=0
+3:10.45 LEG: Somando todas as faces, o fluxo líquido que sai do volume é zero: lei de Gauss para o magnetismo
+3:11.12 MARCA: n05_fluxo_faces
+3:11.12 EQ[H]: \nabla\cdot\mathbf B=\lim_{V\to0}\frac{1}{V}\oint_S\mathbf B\cdot d\mathbf a
+3:14.32 LEG: Encolhendo o volume, o fluxo por volume vira o divergente no ponto
+3:14.99 EQ[H]: \nabla\cdot\mathbf B=0
+3:17.49 MARCA: n05_div_zero
+3:25.19 LEG: Compare com uma carga: as linhas de $\mathbf E$ só saem da superfície em volta dela
+3:25.86 EQ[H]: \oint_S\mathbf E\cdot d\mathbf a=\frac{Q}{\varepsilon_0}>0
+3:29.46 MARCA: n05_contraste_carga
+3:29.46 LEG: A carga é fonte de $\mathbf E$. Para $\mathbf B$ não existe fonte nem sumidouro (eletromagnetismo clássico)
+3:30.13 EQ[H]: \nabla\cdot\mathbf B=0
+
+=== SECAO div_formal | Divergente de B a partir de Biot–Savart | code 215.93 prev 3:39.46
+3:43.26 LEG: Uma distribuição de corrente $\mathbf J$ localizada: ponto-fonte $\mathbf r'$ dentro dela, observador $\mathbf r$ fora
+3:47.11 EQ[H]: \mathbf B(\mathbf r)=\frac{\mu_0}{4\pi}\int\mathbf J(\mathbf r')\times\frac{\mathbf R}{R^3}\,d\tau'
+3:51.01 LEG: Biot–Savart soma cada $d\tau'$ (elemento de volume da fonte), com densidade de corrente $\mathbf J$ (A/m²)
+3:51.68 EQ[A]: \mathbf R=\mathbf r-\mathbf r'\qquad\mathbf F\equiv\frac{\mathbf R}{R^3}
+3:54.68 LEG: Cor separa os papéis: $\mathbf r$ do observador (ciano), $\mathbf r'$ da fonte (verde)
+3:58.80 EQ[H]: \mathbf B(\mathbf r)=\frac{\mu_0}{4\pi}\int\mathbf J(\mathbf r')\times\mathbf F\,d\tau'
+4:01.80 MARCA: n06_biot_savart
+4:01.80 LEG: Tome o divergente dos dois lados
+4:02.47 EQ[H]: \nabla\cdot\mathbf B(\mathbf r)=\frac{\mu_0}{4\pi}\,\nabla\cdot\!\int\mathbf J(\mathbf r')\times\mathbf F\,d\tau'
+4:05.07 LEG: $\nabla$ deriva em $\mathbf r$; a integral percorre $\mathbf r'$: o operador entra na integral
+4:05.74 EQ[H]: \nabla\cdot\mathbf B(\mathbf r)=\frac{\mu_0}{4\pi}\int\nabla\cdot\big(\mathbf J(\mathbf r')\times\mathbf F\big)\,d\tau'
+4:09.24 MARCA: n06_nabla_entra
+4:10.24 EQ[A]: \nabla\cdot(\mathbf A\times\mathbf C)=\mathbf C\cdot(\nabla\times\mathbf A)-\mathbf A\cdot(\nabla\times\mathbf C)
+4:12.64 LEG: O divergente de um produto vetorial se abre em dois termos
+4:14.81 EQ[H]: \nabla\cdot\mathbf B(\mathbf r)&=\frac{\mu_0}{4\pi}\int\Big[\mathbf F\cdot\big(\nabla\times\mathbf J(\mathbf r')\big)\\&\qquad-\mathbf J(\mathbf r')\cdot\big(\nabla\times\mathbf F\big)\Big]d\tau'
+4:21.71 MARCA: n06_identidade
+4:23.56 EQ[A]: \nabla\times\mathbf J(\mathbf r')=\mathbf 0
+4:25.76 LEG: $\nabla$ deriva em relação a $\mathbf r$, e $\mathbf J(\mathbf r')$ só depende de $\mathbf r'$ (não é continuidade)
+4:28.93 EQ[H]: \nabla\cdot\mathbf B(\mathbf r)=-\frac{\mu_0}{4\pi}\int\mathbf J(\mathbf r')\cdot\big(\nabla\times\mathbf F\big)\,d\tau'
+4:33.43 MARCA: n06_primeiro_termo_some
+4:36.63 LEG: $1/R$ diminui para longe de $\mathbf r'$; $\mathbf F$ aponta exatamente para onde ela diminui
+4:37.30 EQ[A]: \mathbf F=\frac{\mathbf R}{R^3}=-\nabla\frac{1}{R}
+4:40.40 LEG: $\mathbf F$ é um gradiente; e o rotacional de um gradiente é sempre zero
+4:41.07 EQ[A]: \nabla\times\mathbf F=-\nabla\times\nabla\frac{1}{R}=\mathbf 0
+4:45.92 EQ[H]: \nabla\cdot\mathbf B(\mathbf r)=-\frac{\mu_0}{4\pi}\int\mathbf J(\mathbf r')\cdot\mathbf 0\,d\tau'
+4:49.72 EQ[H]: \nabla\cdot\mathbf B=0
+4:52.32 LEG: Da própria lei de Biot–Savart: $\nabla\cdot\mathbf B=0$
+4:52.99 MARCA: n06_div_B_zero
+
+=== SECAO dois_nablas | Dois pontos, dois operadores | code 293.66 prev 4:57.19
+5:00.29 LEG: $\nabla$ deriva movendo o observador $\mathbf r$, com a fonte parada
+5:00.74 EQ[H]: \nabla\ \longleftrightarrow\ \mathbf r
+5:08.14 LEG: $\mathbf R$ e $\mathbf F$ mudam; $\mathbf J(\mathbf r')$ não muda
+5:08.81 EQ[H]: \nabla\,\mathbf J(\mathbf r')=0
+5:11.21 MARCA: n07_nabla_observador
+5:13.21 LEG: $\nabla'$ deriva movendo a fonte $\mathbf r'$: aí $\mathbf J$ muda de um ponto a outro
+5:13.88 EQ[A]: \nabla'\ \longleftrightarrow\ \mathbf r'
+5:22.28 LEG: $\mathbf J$ é estacionário: as cargas percorrem as linhas de corrente e o campo não muda
+5:26.05 LEG: Escolha uma célula tão pequena que $\mathbf J$ seja quase uniforme nela, e amplie
+5:32.52 LEG: Aqui $\mathbf J$ é quase uniforme, e as cargas se movem sobre as linhas de corrente
+5:35.29 LEG: Normais para fora em cada face: a corrente entra por uma face e sai pela oposta
+5:38.26 LEG: O que entra é igual ao que sai: nenhuma carga se acumula na célula
+5:38.93 EQ[A]: \nabla'\cdot\mathbf J=0
+5:41.33 LEG: São afirmações diferentes: a de cima é sobre variáveis; a de baixo é física
+5:42.00 MARCA: n07_dois_nablas
+
+=== SECAO rot_formal | O rotacional de B a partir de Biot–Savart | code 346.07 prev 5:49.60
+5:51.70 EQ[H]: \mathbf B(\mathbf r)=\frac{\mu_0}{4\pi}\int\mathbf J(\mathbf r')\times\mathbf F\,d\tau'
+5:53.90 LEG: Agora o rotacional dos dois lados; de novo o operador entra na integral
+5:54.35 EQ[H]: \nabla\times\mathbf B(\mathbf r)=\frac{\mu_0}{4\pi}\,\nabla\times\!\int\mathbf J(\mathbf r')\times\mathbf F\,d\tau'
+5:56.35 EQ[H]: \nabla\times\mathbf B(\mathbf r)=\frac{\mu_0}{4\pi}\int\nabla\times\big(\mathbf J(\mathbf r')\times\mathbf F\big)\,d\tau'
+5:59.15 MARCA: n08_rot_entra
+6:00.15 EQ[A]: \nabla\times(\mathbf A\times\mathbf C)&=\mathbf A(\nabla\cdot\mathbf C)-\mathbf C(\nabla\cdot\mathbf A)\\&\quad+(\mathbf C\cdot\nabla)\mathbf A-(\mathbf A\cdot\nabla)\mathbf C
+6:01.85 LEG: O rotacional de um produto vetorial se abre em quatro termos
+6:05.52 EQ[H]: \nabla\times\mathbf B(\mathbf r)&=\frac{\mu_0}{4\pi}\int\Big[\mathbf J(\nabla\cdot\mathbf F)-\mathbf F(\nabla\cdot\mathbf J)\\&\qquad+(\mathbf F\cdot\nabla)\mathbf J-(\mathbf J\cdot\nabla)\mathbf F\Big]d\tau'
+6:13.42 MARCA: n08_quatro_termos
+6:13.72 LEG: Dois termos derivam $\mathbf J(\mathbf r')$ em relação a $\mathbf r$
+6:16.14 EQ[A]: \nabla\cdot\mathbf J(\mathbf r')=0\qquad(\mathbf F\cdot\nabla)\,\mathbf J(\mathbf r')=\mathbf 0
+6:18.24 LEG: Como $\mathbf J(\mathbf r')$ não muda quando $\mathbf r$ se move, esses dois termos são zero
+6:22.51 EQ[H]: \nabla\times\mathbf B(\mathbf r)=\frac{\mu_0}{4\pi}\int\Big[\mathbf J(\nabla\cdot\mathbf F)-(\mathbf J\cdot\nabla)\mathbf F\Big]d\tau'
+6:27.41 LEG: Separe em dois termos e trate cada um
+6:28.08 EQ[H]: \nabla\times\mathbf B(\mathbf r)&=\frac{\mu_0}{4\pi}\int\mathbf J(\nabla\cdot\mathbf F)\,d\tau'\\&\quad-\frac{\mu_0}{4\pi}\int(\mathbf J\cdot\nabla)\mathbf F\,d\tau'
+6:32.28 MARCA: n08_dois_termos
+
+=== SECAO delta | Primeiro termo: o delta de Dirac | code 390.25 prev 6:33.78
+6:38.43 LEG: $\mathbf F=\mathbf R/R^3$, com $R=|\mathbf R|$, é o núcleo de Biot–Savart (não é $\mathbf B$): aponta radialmente; $|\mathbf F|=1/R^2$
+6:39.38 EQ[A]: \nabla\cdot\mathbf F=0\quad(\mathbf r\neq\mathbf r')
+6:41.28 LEG: Longe de $\mathbf r'$, o que entra numa célula sai: divergente zero
+6:44.95 EQ[A]: \oint\mathbf F\cdot d\mathbf a=\frac{1}{R^2}\,4\pi R^2=4\pi
+6:47.05 LEG: Mas uma esfera em volta de $\mathbf r'$ recebe fluxo $4\pi$, qualquer que seja o raio
+6:51.92 LEG: Divergente zero fora da singularidade; todo o fluxo $4\pi$ está concentrado em $\mathbf r=\mathbf r'$
+6:52.59 EQ[A]: \nabla\cdot\mathbf F=4\pi\,\delta^3(\mathbf r-\mathbf r')
+6:55.89 MARCA: n09_div_F_delta
+6:56.69 EQ[H]: \nabla\times\mathbf B(\mathbf r)&=\frac{\mu_0}{4\pi}\int\mathbf J(\mathbf r')\,4\pi\,\delta^3(\mathbf r-\mathbf r')\,d\tau'\\&\quad-\frac{\mu_0}{4\pi}\int(\mathbf J\cdot\nabla)\mathbf F\,d\tau'
+7:02.24 LEG: Os dois $4\pi$ se cancelam
+7:02.91 EQ[H]: \nabla\times\mathbf B(\mathbf r)&=\mu_0\int\mathbf J(\mathbf r')\,\delta^3(\mathbf r-\mathbf r')\,d\tau'\\&\quad-\frac{\mu_0}{4\pi}\int(\mathbf J\cdot\nabla)\mathbf F\,d\tau'
+7:05.91 MARCA: n09_cancela_4pi
+7:05.91 LEG: Para o rotacional dentro da corrente, leve o observador $\mathbf r$ para dentro dela
+7:12.08 LEG: Cada ponto-fonte $\mathbf r'$ contribui com $\mathbf J(\mathbf r')$
+7:16.45 LEG: O delta é um pico em $\mathbf r'=\mathbf r$, com integral 1
+7:18.62 LEG: No integrando, cada $\mathbf J(\mathbf r')$ é pesado pelo delta: longe do pico, peso quase zero
+7:22.79 LEG: Estreite o pico: as contribuições somem uma a uma, de fora para dentro
+7:31.96 MARCA: n09_pico_delta
+7:31.96 LEG: Sobrevive uma única contribuição: a do ponto-fonte que coincide com o observador, $\mathbf r'=\mathbf r$
+7:35.53 MARCA: n09_delta_seleciona
+7:36.13 EQ[H]: \nabla\times\mathbf B(\mathbf r)&=\mu_0\,\mathbf J(\mathbf r)\\&\quad-\frac{\mu_0}{4\pi}\int(\mathbf J\cdot\nabla)\mathbf F\,d\tau'
+7:39.53 LEG: Primeiro termo: $\mu_0\,\mathbf J(\mathbf r)$, a corrente no próprio ponto
+7:40.20 MARCA: n09_primeiro_termo
+
+=== SECAO segundo_termo | Segundo termo: por que ele se anula | code 462.47 prev 7:46.00
+7:48.95 LEG: $\mathbf F$ depende só da diferença $\mathbf r-\mathbf r'$
+7:49.40 EQ[A]: \mathbf F=\mathbf F(\mathbf r-\mathbf r')
+7:53.30 LEG: Mover observador e fonte juntos não muda $\mathbf R$
+7:58.17 LEG: Afastar $\mathbf r$ de $+dx$ muda $\mathbf R$ como aproximar $\mathbf r'$ de $-dx$
+8:02.44 EQ[A]: \frac{\partial\mathbf F}{\partial x}=-\frac{\partial\mathbf F}{\partial x'}
+8:05.04 LEG: Vale para cada coordenada: $\nabla$ agindo em $\mathbf F$ é $-\nabla'$
+8:05.71 EQ[A]: \nabla\mathbf F=-\nabla'\mathbf F
+8:08.51 MARCA: n10_nabla_menos_nabla_linha
+8:08.51 LEG: Troque o $\nabla$ que age em $\mathbf F$ por $-\nabla'$
+8:11.03 EQ[H]: \nabla\times\mathbf B(\mathbf r)&=\mu_0\,\mathbf J(\mathbf r)\\&\quad-\frac{\mu_0}{4\pi}\int(\mathbf J\cdot(-\nabla'))\mathbf F\,d\tau'
+8:14.23 LEG: Os dois sinais negativos se cancelam
+8:14.90 EQ[H]: \nabla\times\mathbf B(\mathbf r)&=\mu_0\,\mathbf J(\mathbf r)\\&\quad+\frac{\mu_0}{4\pi}\int(\mathbf J\cdot\nabla')\mathbf F\,d\tau'
+8:18.40 MARCA: n10_sinal
+8:18.40 LEG: Regra do produto, para cada componente $F_i$
+8:19.07 EQ[A]: (\mathbf J\cdot\nabla')F_i=\nabla'\cdot(F_i\,\mathbf J)-F_i\,(\nabla'\cdot\mathbf J)
+8:22.17 LEG: Pelo teorema da divergência, o termo de divergente vira fluxo numa superfície que envolve a corrente
+8:22.84 EQ[A]: \int(\mathbf J\cdot\nabla')F_i\,d\tau'&=\oint_\infty F_i\,\mathbf J\cdot d\mathbf a'\\&\quad-\int F_i\,(\nabla'\cdot\mathbf J)\,d\tau'
+8:25.84 MARCA: n10_partes
+8:30.09 LEG: Corrente localizada: na superfície distante não passa corrente, então o termo de superfície é zero
+8:30.76 EQ[A]: \int(\mathbf J\cdot\nabla')F_i\,d\tau'&=0\\&\quad-\int F_i\,(\nabla'\cdot\mathbf J)\,d\tau'
+8:34.06 MARCA: n10_superficie_zero
+8:36.96 LEG: Escolha uma célula tão pequena que $\mathbf J$ seja quase uniforme nela, e amplie
+8:43.43 LEG: Aqui $\mathbf J$ é quase uniforme, e as cargas se movem sobre as linhas de corrente
+8:46.20 LEG: Normais para fora em cada face: a corrente entra por uma face e sai pela oposta
+8:49.17 LEG: O que entra é igual ao que sai: nenhuma carga se acumula na célula
+8:50.64 LEG: Continuidade com $\rho$ constante (magnetostática): $\nabla'\cdot\mathbf J=0$, e o termo restante também é zero
+8:52.76 EQ[A]: \int(\mathbf J\cdot\nabla')F_i\,d\tau'=0-0=0
+8:56.06 MARCA: n10_continuidade
+8:58.06 LEG: Com as duas razões, e só agora, o segundo termo some
+8:58.73 EQ[H]: \nabla\times\mathbf B(\mathbf r)&=\mu_0\,\mathbf J(\mathbf r)\\&\quad+0
+9:02.33 EQ[H]: \nabla\times\mathbf B=\mu_0\mathbf J
+9:04.93 LEG: A lei local da magnetostática: o rotacional de $\mathbf B$ é a corrente no ponto
+9:05.60 MARCA: n10_rot_B_mu0_J
+
+=== SECAO fio_finito | Um fio de verdade tem espessura | code 545.87 prev 9:14.39
+9:18.19 LEG: Agora a corrente ocupa um cilindro de raio $a$, com densidade de corrente $\mathbf J$ uniforme (A/m²)
+9:18.64 EQ[H]: \mathbf J=J\,\hat{\mathbf z}\quad(s<a)
+9:21.24 LEG: A simetria é a mesma do fio fino: $\mathbf B$ circula e só depende de $s$
+9:21.91 EQ[A]: \mathbf B=B_\phi(s)\,\hat{\boldsymbol\phi}
+9:25.01 MARCA: n11_cilindro
+9:25.01 LEG: Para raciocinar, corte o fio e olhe a seção de cima: $\mathbf J$ sai da tela
+9:32.38 LEG: A sonda dentro do fio mede $\mu_0 J$: onde há corrente, o rotacional de $\mathbf B$ não é zero
+9:36.55 LEG: Quando a sonda cruza a borda, só parte dela fica no condutor: a leitura cai de $\mu_0 J$ até zero
+9:40.72 LEG: Fora do fio a mesma sonda mede zero
+9:41.39 MARCA: n11_sonda_dentro_fora
+9:46.49 LEG: Dentro: a componente axial de $\nabla\times\mathbf B=\mu_0\mathbf J$ em cilíndricas
+9:47.16 EQ[H]: \frac{1}{s}\frac{d}{ds}\left(s\,B_\phi\right)=\mu_0 J
+9:50.26 LEG: Multiplicar por $s$ isola a derivada de $s\,B_\phi$
+9:50.93 EQ[H]: \frac{d}{ds}\left(s\,B_\phi\right)=\mu_0 J\,s
+9:53.93 LEG: Integrar em $s$ deixa uma constante $C$ que ainda não sabemos qual é
+9:54.60 EQ[H]: s\,B_\phi=\frac{\mu_0 J}{2}\,s^2+C
+9:57.60 EQ[H]: B_\phi=\frac{\mu_0 J}{2}\,s+\frac{C}{s}
+10:01.65 LEG: Com $C\neq0$, o termo $C/s$ explode em $s=0$: o campo no eixo seria infinito
+10:04.72 LEG: Regularidade no eixo: o campo em $s=0$ é finito, o que elimina o termo $C/s$
+10:05.79 EQ[H]: B_\phi=\frac{\mu_0 J}{2}\,s
+10:08.09 LEG: A reta nasce na origem e cresce até a fronteira: dentro do fio, $B$ cresce linearmente com $s$
+10:10.76 LEG: A sonda e o gráfico andam juntos
+10:13.93 MARCA: n11_dentro_linear
+
+=== SECAO fio_externo | Fora do fio | code 607.21 prev 10:15.73
+10:16.83 LEG: Fora, $J=0$: o rotacional de $\mathbf B$ se anula
+10:17.28 EQ[H]: \frac{1}{s}\frac{d}{ds}\left(s\,B_\phi\right)=0
+10:20.08 LEG: Derivada nula: $s\,B_\phi$ é uma constante fora do fio
+10:20.75 EQ[H]: s\,B_\phi=C_{\rm ext}
+10:23.35 EQ[H]: B_\phi=\frac{C_{\rm ext}}{s}
+10:25.45 LEG: $C$ ainda é livre: cada valor dá uma solução $C/s$
+10:28.62 LEG: A continuidade em $s=a$ seleciona uma
+10:32.79 LEG: Sem corrente superficial em $s=a$, $B_\phi$ é contínuo: a curva de fora passa pelo ponto de dentro
+10:33.46 MARCA: n12_continuidade_seleciona
+10:34.96 EQ[H]: \frac{C_{\rm ext}}{a}=\frac{\mu_0 J}{2}\,a
+10:37.96 EQ[H]: C_{\rm ext}=\frac{\mu_0 J}{2}\,a^2
+10:40.56 LEG: Em termos da corrente total $I=J\pi a^2$, a constante deixa de depender do raio
+10:41.23 EQ[H]: C_{\rm ext}=\frac{\mu_0 I}{2\pi}
+10:44.03 EQ[H]: B_\phi=\frac{\mu_0 I}{2\pi s}\quad(s>a)
+10:46.73 LEG: A sonda atravessa a fronteira: o campo cresce até $s=a$ e depois cai como $1/s$
+10:50.40 MARCA: n12_dentro_fora
+
+=== SECAO limite | Comprimindo o fio: a → 0 com I fixo | code 644.28 prev 10:52.80
+10:56.50 LEG: Pilar: altura $J$, base $\pi a^2$, volume $I$ ($J_0$, $I_0$: valores iniciais). Mantenha $I$ fixo e diminua $a$
+11:02.95 LEG: Fora do fio nada muda; o pico de $B$ sobe e se aproxima do eixo
+11:09.12 LEG: A região onde o rotacional não é zero fica cada vez mais estreita e mais intensa
+11:09.79 MARCA: n13_compressao
+11:12.39 EQ[H]: \mathbf J\ \longrightarrow\ I\,\delta(x)\,\delta(y)\,\hat{\mathbf z}
+11:15.19 LEG: No limite, a corrente vive só sobre o eixo: um delta bidimensional com integral $I$
+11:15.86 EQ[H]: \nabla\times\mathbf B=\mu_0 I\,\delta(x)\,\delta(y)\,\hat{\mathbf z}
+11:18.36 MARCA: n13_rot_delta
+11:23.46 LEG: Fora do eixo o rotacional é zero; ele inteiro está concentrado no eixo. O paradoxo se desfaz
+11:24.13 MARCA: n13_paradoxo_resolvido
+
+=== SECAO superficie | Da lei local a uma lei sobre superfícies | code 680.21 prev 11:28.73
+11:32.33 EQ[H]: \nabla\times\mathbf B=\mu_0\mathbf J
+11:34.53 LEG: A lei local vale em cada ponto. Some ela sobre uma superfície
+11:36.98 LEG: Primeiro a borda $C$, com um sentido de percurso
+11:42.25 LEG: A superfície $S$ nasce da borda: $\partial S=C$
+11:42.92 MARCA: n14_superficie_da_borda
+11:45.22 LEG: Mão direita: dedos no sentido de $C$, polegar na normal de $S$
+11:45.89 MARCA: n14_mao_direita
+11:48.39 LEG: Integre os dois lados sobre $S$
+11:49.06 EQ[H]: \int_S(\nabla\times\mathbf B)\cdot d\mathbf a=\mu_0\int_S\mathbf J\cdot d\mathbf a
+11:53.36 LEG: $\mathbf J\cdot d\mathbf a$ só não é zero onde a corrente fura $S$; o sinal vem do sentido
+11:55.53 EQ[A]: \int_S\mathbf J\cdot d\mathbf a=I_1+I_2-I_3
+12:01.03 EQ[A]: \int_S\mathbf J\cdot d\mathbf a=I_{\rm enc}
+12:03.93 EQ[H]: \int_S(\nabla\times\mathbf B)\cdot d\mathbf a=\mu_0 I_{\rm enc}
+12:07.53 MARCA: n14_corrente_encerrada
+
+=== SECAO stokes | Stokes: do interior para a borda | code 719.01 prev 12:07.53
+12:09.03 LEG: Comece com duas sondas vizinhas, ambas circulando no sentido de $C$
+12:15.18 LEG: O lado comum é percorrido uma vez para dentro e outra para fora: as contribuições se cancelam
+12:18.15 LEG: Somadas, as duas sondas equivalem a uma só, contornando apenas a borda de fora
+12:18.82 MARCA: n15_duas_celulas
+12:25.82 LEG: Agora a superfície inteira: cada sonda mede o rotacional vezes a sua área
+12:26.49 EQ[A]: \int_S(\nabla\times\mathbf B)\cdot d\mathbf a=\sum_{\rm sondas}\oint\mathbf B\cdot d\boldsymbol\ell
+12:29.09 MARCA: n15_sondas
+12:29.09 LEG: Todos os lados internos se cancelam aos pares, como nas duas células
+12:32.56 LEG: Só sobra a borda: a circulação em $C$
+12:35.43 EQ[A]: \int_S(\nabla\times\mathbf B)\cdot d\mathbf a=\oint_C\mathbf B\cdot d\boldsymbol\ell
+12:38.33 MARCA: n15_stokes
+12:41.33 EQ[H]: \oint_C\mathbf B\cdot d\boldsymbol\ell=\mu_0 I_{\rm enc}
+12:45.33 LEG: Agora sim: a Lei de Ampère, nascida de $\nabla\times\mathbf B=\mu_0\mathbf J$ e de Stokes
+12:46.00 MARCA: n15_ampere
+12:49.80 LEG: Troque $S$ por outra superfície com a mesma borda $C$
+12:53.97 LEG: As mesmas correntes atravessam a cúpula $S_2$
+12:54.64 EQ[A]: I_{S_1}=I_1+I_2-I_3=I_{S_2}
+12:57.74 MARCA: n15_cupula
+12:57.74 LEG: Juntas, $S_1$ e $S_2$ fecham um volume $V$: o que entra por $S_1$ sai por $S_2$
+13:00.71 EQ[A]: \oint_{S_1-S_2}\mathbf J\cdot d\mathbf a=\int_V\nabla\cdot\mathbf J\,d\tau=0
+13:03.81 LEG: Corrente estacionária: $\nabla\cdot\mathbf J=0$, nada se acumula dentro. Logo a corrente encerrada não depende de $S$
+13:04.48 EQ[A]: I_{S_1}=I_{S_2}
+13:06.38 MARCA: n15_mesma_corrente
+
+=== SECAO validade | Verdadeira não é o mesmo que útil | code 783.36 prev 13:14.85
+13:18.65 LEG: Um contorno qualquer em volta do fio: $\mathbf B$ (magenta) e $d\boldsymbol\ell$ (branco) mudam de um ponto a outro
+13:19.10 EQ[H]: \oint_C\mathbf B\cdot d\boldsymbol\ell=\mu_0 I
+13:22.70 LEG: Mas $\mathbf B\cdot d\boldsymbol\ell$ varia ao longo de $C$: não há como tirar $B$ da integral
+13:23.37 EQ[A]: \mathbf B\cdot d\boldsymbol\ell\ \text{varia em}\ C\ \Rightarrow\ B=\,?
+13:26.77 MARCA: n16_contorno_qualquer
+13:26.77 LEG: Ampère ser verdadeira $\neq$ Ampère ser útil para calcular $\mathbf B$
+13:29.94 LEG: Com simetria, escolha o caminho: um círculo centrado no fio
+13:34.11 LEG: Agora $\mathbf B$ é paralelo a $d\boldsymbol\ell$ e tem o mesmo módulo em todo o caminho
+13:34.78 EQ[A]: \oint_C\mathbf B\cdot d\boldsymbol\ell=B\oint_C d\ell
+13:37.38 LEG: $B$ sai da integral: a lei verdadeira virou ferramenta
+13:38.05 MARCA: n16_circulo_simetrico
+13:47.40 LEG: Com simetria, Ampère vira método: cada passo da barra prepara a integral para ficar simples
+13:48.07 MARCA: n16_estrategia
+
+=== SECAO amp_fio | None | code 820.18 prev 13:51.67
+13:53.87 LEG: Geometria: um fio reto, infinito, com corrente $I$
+14:00.32 LEG: Girar em torno do fio ou deslizar ao longo dele não muda nada: $B$ só depende de $s$
+14:06.89 EQ[H]: \mathbf B=B(s)\,\hat{\boldsymbol\phi}
+14:09.09 LEG: Direção: tangente ao círculo em torno do fio
+14:11.66 LEG: Caminho: o círculo de raio $s$ centrado no fio, onde $|\mathbf B|$ é o mesmo em todo ponto
+14:12.33 EQ[H]: \oint_C\mathbf B\cdot d\boldsymbol\ell=\mu_0 I_{\rm enc}
+14:16.13 LEG: Em cada ponto do caminho, $\mathbf B$ e $d\boldsymbol\ell$ são paralelos: $\mathbf B\cdot d\boldsymbol\ell=B\,d\ell$
+14:20.70 LEG: O mesmo vale em todo o círculo, e $B$ tem o mesmo valor: sai da integral
+14:21.37 EQ[H]: B\oint_C d\ell=\mu_0 I_{\rm enc}
+14:24.57 LEG: Desenrole o círculo: o comprimento do caminho é $2\pi s$
+14:28.04 EQ[H]: B\,(2\pi s)=\mu_0 I_{\rm enc}
+14:32.34 LEG: Corrente encerrada: só o fio atravessa o disco, $I_{\rm enc}=I$
+14:33.01 EQ[H]: B\,(2\pi s)=\mu_0 I
+14:35.61 EQ[H]: B=\frac{\mu_0 I}{2\pi s}
+14:38.21 LEG: Campo do fio retilíneo infinito: a integral inteira de Biot–Savart sai aqui em uma linha
+14:38.88 MARCA: n17_fio_ampere
+
+=== SECAO amp_lamina | None | code 871.19 prev 14:42.68
+14:46.13 LEG: Lâmina plana infinita com corrente superficial $K$ (A/m: corrente por unidade de largura)
+14:48.58 LEG: Simetria: deslizar ao longo da lâmina, em qualquer direção, não muda nada
+14:52.45 LEG: Gire para ver a lâmina de perfil: a corrente sai da tela
+14:58.32 LEG: Direção: paralelo à lâmina e perpendicular a $K$; acima para a esquerda, abaixo para a direita
+14:58.99 EQ[H]: \mathbf B=\mp B\,\hat{\mathbf x}\quad(\text{acima}/\text{abaixo})
+15:01.39 MARCA: n18_lamina_direcao
+15:03.29 LEG: Caminho: retângulo que atravessa a lâmina; $L$ é a largura que ele cobre, em lados paralelos a ela
+15:03.96 EQ[H]: \oint\mathbf B\cdot d\boldsymbol\ell=\mu_0 I_{\rm enc}
+15:07.26 LEG: Nos lados curtos $\mathbf B$ é perpendicular ao caminho: não contribuem
+15:10.03 LEG: Nos lados longos $\mathbf B$ acompanha o sentido do percurso, acima e abaixo
+15:10.70 EQ[H]: \oint\mathbf B\cdot d\boldsymbol\ell=BL+BL=2BL
+15:14.80 LEG: A faixa de largura $L$ dentro do retângulo carrega $I_{\rm enc}=KL$
+15:15.47 EQ[A]: I_{\rm enc}=KL
+15:17.87 EQ[H]: 2B\,L=\mu_0 K\,L
+15:21.27 LEG: $L$ aparece dos dois lados e cancela: o campo não depende da distância à lâmina
+15:21.94 EQ[H]: B=\frac{\mu_0 K}{2}
+15:24.54 MARCA: n18_lamina_resultado
+
+=== SECAO amp_solenoide | None | code 916.85 prev 15:28.34
+15:32.39 LEG: Geometria: um enrolamento longo, $n$ espiras por unidade de comprimento, corrente $I$
+15:35.34 LEG: Simetria do solenoide infinito ideal: o campo é só axial e só depende de $s$
+15:36.01 EQ[H]: \mathbf B=B(s)\,\hat{\mathbf z}
+15:39.31 MARCA: n19_axial
+15:45.91 LEG: Corte lateral: a corrente sai em cima e entra embaixo. $B(s)$ ainda é desconhecido, dentro e fora
+15:50.98 LEG: Primeiro caminho: retângulo todo fora, com lados a distâncias $a$ e $b$ do eixo
+15:53.15 LEG: Aqui $a$ e $b$ são essas distâncias, não os raios do toroide
+15:56.42 LEG: Lados verticais: $\mathbf B\perp d\boldsymbol\ell$. Sobram os dois lados de comprimento $L$, em sentidos opostos
+15:57.09 EQ[H]: \oint\mathbf B\cdot d\boldsymbol\ell=B(a)L-B(b)L
+16:00.59 LEG: Sem corrente encerrada, Ampère compara os campos nos dois lados
+16:01.26 EQ[H]: B(a)L-B(b)L=0
+16:03.86 EQ[H]: B(a)=B(b)
+16:06.16 MARCA: n19_fora_constante
+16:06.16 LEG: Deslize o retângulo: fora, $B$ não depende da distância ao eixo
+16:11.13 LEG: Ampère deixa uma constante; longe do solenoide o campo dele vai a zero, e a constante é zero
+16:11.80 EQ[A]: B(s)\to0\quad(s\to\infty)
+16:14.40 EQ[H]: B_{\rm fora}=0
+16:16.90 LEG: $B_{\rm fora}=0$ é resultado: veio de Ampère e da condição no infinito
+16:17.57 MARCA: n19_fora_zero
+16:24.07 LEG: Segundo caminho: um lado dentro do solenoide, o outro fora
+16:26.44 LEG: Fora, $B=0$; nos lados verticais, $\mathbf B\perp d\boldsymbol\ell$. Só o lado de dentro contribui
+16:27.11 EQ[H]: \oint\mathbf B\cdot d\boldsymbol\ell=B\,L
+16:32.21 LEG: Espiras atravessadas: $n$ por unidade de comprimento; em $L$ são $nL$ (aqui 4)
+16:32.88 EQ[A]: I_{\rm enc}=(nL)\,I
+16:35.28 EQ[H]: B\,L=\mu_0\,(nL)\,I
+16:38.98 LEG: $L$ cancela: dentro, o campo vale $\mu_0 n I$
+16:39.65 EQ[H]: B_{\rm dentro}=\mu_0\,n\,I
+16:42.15 MARCA: n19_dentro
+16:42.95 LEG: O lado de dentro pode deslizar sem mudar o resultado: dentro, o campo é uniforme
+16:52.12 LEG: Solenoide real finito: o campo se espalha nas pontas e fora é pequeno, mas não exatamente zero
+16:52.79 MARCA: n19_finito
+
+=== SECAO amp_toroide | None | code 1005.6 prev 16:57.09
+17:01.54 LEG: Geometria: $N$ espiras enroladas num anel. A corrente sobe pela face interna e desce pela externa
+17:08.79 LEG: Simetria do toroide ideal: $\mathbf B$ circula em torno do eixo, $\mathbf B=B(s)\,\hat{\boldsymbol\phi}$
+17:09.46 EQ[H]: \mathbf B=B(s)\,\hat{\boldsymbol\phi}
+17:16.56 LEG: Visto de cima: $N$ correntes saem da tela em $s=a$ e $N$ entram em $s=b$
+17:21.63 LEG: Região $s<a$: o círculo não envolve nenhuma corrente
+17:22.30 EQ[H]: B\,(2\pi s)=0\ \Rightarrow\ B=0\quad(s<a)
+17:25.20 LEG: Região $a<s<b$: o círculo envolve as $N$ correntes da face interna, todas no mesmo sentido
+17:28.77 EQ[H]: B\,(2\pi s)=\mu_0 NI
+17:31.37 EQ[H]: B=\frac{\mu_0 NI}{2\pi s}\quad(a<s<b)
+17:35.27 MARCA: n20_interior
+17:35.27 LEG: Região $s>b$: envolve $N$ correntes saindo e $N$ entrando — corrente líquida zero
+17:38.34 EQ[H]: B\,(2\pi s)=\mu_0(NI-NI)=0\ \Rightarrow\ B=0\quad(s>b)
+17:41.44 MARCA: n20_exterior
+17:42.04 EQ[H]: B(s)=\begin{cases}0,& s<a\\[2pt] \dfrac{\mu_0 NI}{2\pi s},& a<s<b\\[6pt] 0,& s>b\end{cases}
+17:44.84 LEG: O mesmo amperiano percorre as três regiões: o gráfico acompanha
+17:51.51 LEG: Toroide ideal: o campo fica confinado dentro do enrolamento
+17:52.18 MARCA: n20_toroide_resultado
+
+=== SECAO comparacao | Eletrostática × magnetostática | code 1064.19 prev 17:59.98
+18:09.38 LEG: Divergente: carga elétrica é fonte de $\mathbf E$; não existe fonte de $\mathbf B$
+18:13.03 LEG: Rotacional: $\mathbf E$ eletrostático não circula; $\mathbf B$ circula em torno da corrente
+18:16.90 LEG: Estas formas do rotacional valem para campos que não variam no tempo
+18:17.57 MARCA: n21_comparacao
+
+=== SECAO sintese | Quatro geometrias, uma estratégia | code 1086.58 prev 18:22.37
+18:26.47 LEG: Fio, lâmina, solenoide, toroide: em todos, a simetria escolheu o caminho
+18:26.92 MARCA: n22_quatro
+18:34.12 LEG: Não é decorar quatro campos: é ver por que existe um caminho que simplifica a integral
+18:34.79 MARCA: n22_estrategia
+
+=== SECAO gancho | Um campo com divergente sempre zero | code 1105.0 prev 18:40.79
+18:42.89 LEG: Como construir, automaticamente, um campo cujo divergente é sempre zero?
+18:46.84 LEG: Qualquer rotacional tem divergente zero
+18:55.81 LEG: $\mathbf A$ é o potencial vetor magnético
+18:56.48 MARCA: n23_potencial_vetor
+
+=== SECAO cta | None | code 1126.04 prev 19:01.83
+19:07.23 MARCA: cta
