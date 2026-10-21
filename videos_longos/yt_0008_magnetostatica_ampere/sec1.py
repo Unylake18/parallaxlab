@@ -19,6 +19,7 @@ from fisica import circulacao, b_fio, TAU
 S0 = 1.6          # raio canônico: círculo de B que passa por P
 RHO = 0.5         # raio da sonda
 HS = (-1.35, 0.0, 1.35)
+ABERTURA_S = 100.0   # gancho + saudação (≈ 100 s de fala a 2,8 palavras/s)
 VIEW_FIO = dict(x=-3.9, y=-0.35, scale=0.95, beta=0, tau=-22)
 
 
@@ -97,6 +98,26 @@ class Sec1:
         self.play(FadeOut(old), FadeIn(self.wire), *anims, run_time=rt, **kw)
         self.purge(old)
         self.purge(oldf)
+
+    # ── abertura (gancho + saudação): o fio parado em cena enquanto a voz apresenta o paradoxo e o canal ───────────
+    def abertura(self):
+        self.section("abertura")
+        t0 = float(self.time)
+        self.reset_view(**VIEW_FIO)
+        self.wire = self.cached(self.view_key, lambda: self.wire_y(-2.4, 2.4))
+        self.play(Create(self.wire), run_time=1.2)
+        self.wflow = self.flow_y(-2.4, 2.4, count=8)
+        self.add(self.wflow)
+        rings = VGroup(*[self.fio_ring(h) for h in HS])
+        self.play(Create(rings), run_time=2.0)
+        self.caption("As linhas de campo dão voltas completas em volta da corrente")
+        self.hold(10.0)
+        self.show(E(r"\nabla\times\mathbf B=\mathbf 0\qquad(s>0)", r"\nabla\times\mathbf B", r"\mathbf 0", r"(s>0)", size=M_XL), rt=1.6, wait=1.0)
+        self.caption("Fora do fio, o rotacional é zero. Como pode?")
+        # segura o quadro durante o restante da fala de abertura (ABERTURA_S = estimativa; ajustar à voz real)
+        self.hold(max(0.0, ABERTURA_S - (float(self.time) - t0) - 1.0))
+        self.mark("n00_abertura")
+        self.clear()
 
     # ── N01 ─────────────────────────────────────────────────────────────────────────────────────────────────
     def pergunta(self):
@@ -353,7 +374,7 @@ class Sec1:
         g_star = (S0 - RHO) / (2 * S0 - RHO)          # instante em que o laço passa pelo eixo
         st = lambda g: dict(pc=g, rho=RHO + g * (S0 - RHO))
         self.show(E(r"\oint\mathbf B\cdot d\boldsymbol\ell=0", r"\oint", r"\mathbf B\cdot d\boldsymbol\ell", "0", size=M_L), slot="A", rt=1.0, wait=0.2)
-        ie = E(r"I_{\rm enc}=0", r"I_{\rm enc}", "0", size=M_M).next_to(self.slots["A"]["card"], DOWN, buff=0.15)
+        ie = E(r"I_{\rm env}=0", r"I_{\rm env}", "0", size=M_M).next_to(self.slots["A"]["card"], DOWN, buff=0.15)
         self.play(FadeIn(ie), run_time=0.5)
         self.caption("Aumente o laço até o eixo: enquanto o fio fica de fora, nenhuma corrente o atravessa")
         g1 = 0.85 * g_star
@@ -361,7 +382,7 @@ class Sec1:
         self.hold(1.0)
         self.play(self.pc.animate.set_value(st(g_star)["pc"]), self.prho.animate.set_value(st(g_star)["rho"]), run_time=1.2, rate_func=linear)
         self.caption("Sobre o próprio fio $\\mathbf B$ diverge: a circulação não está definida. Valem os laços de antes e de depois")
-        iq = E(r"I_{\rm enc}:\ \text{laço sobre o fio}", size=M_M).move_to(ie)
+        iq = E(r"I_{\rm env}:\ \text{laço sobre o fio}", size=M_M).move_to(ie)
         self.play(Flash(W([0, 0, 0]), color=GREEN, line_length=0.35, num_lines=10, flash_radius=0.35), Indicate(self.wire, color=GREEN, scale_factor=1.0),
                   ReplacementTransform(ie, iq), run_time=1.0)
         self.show(E(r"\oint\mathbf B\cdot d\boldsymbol\ell=\text{indefinida}", r"\oint", r"\mathbf B\cdot d\boldsymbol\ell", r"\text{indefinida}", size=M_L),
@@ -369,7 +390,7 @@ class Sec1:
         self.caption("Passado o eixo, a corrente $I$ atravessa o laço")
         g2 = min(1.0, g_star + 0.06)
         self.play(self.pc.animate.set_value(st(g2)["pc"]), self.prho.animate.set_value(st(g2)["rho"]), run_time=0.8)
-        ie2 = E(r"I_{\rm enc}=I", r"I_{\rm enc}", "I", size=M_M).move_to(iq)
+        ie2 = E(r"I_{\rm env}=I", r"I_{\rm env}", "I", size=M_M).move_to(iq)
         self.play(ReplacementTransform(iq, ie2), run_time=0.8)
         self.show(E(r"\oint\mathbf B\cdot d\boldsymbol\ell=\mu_0 I", r"\oint", r"\mathbf B\cdot d\boldsymbol\ell", r"\mu_0 I", size=M_L),
                   (r"\text{indefinida}", None), slot="A", rt=1.2, wait=0.5)

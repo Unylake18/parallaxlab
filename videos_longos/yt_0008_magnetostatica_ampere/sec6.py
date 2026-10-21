@@ -1,5 +1,5 @@
 """N17–N20 (V2): fio, lâmina, solenoide (dois amperianos) e toroide ideal — sempre geometria → simetria → caminho → B·dℓ →
-corrente encerrada → álgebra, com a barra de estratégia acendendo o passo atual.
+corrente envolvida → álgebra, com a barra de estratégia acendendo o passo atual.
 
 Política 2.5D × 2D: o objeto é estabelecido em 2.5D; o raciocínio com caminho amperiano acontece em 2D (vista de cima para
 fio e toroide, corte frontal para lâmina e solenoide).
@@ -91,7 +91,7 @@ class Sec6:
         sl = self.lab("s", W([S / 2, 0, 0]) + np.array([0, -0.3, 0]), "s", size=M_M)
         self.play(Create(circ), Create(rad), FadeIn(sl), run_time=1.4)
         self.caption("Caminho: o círculo de raio $s$ centrado no fio, onde $|\\mathbf B|$ é o mesmo em todo ponto")
-        self.show(E(r"\oint_C\mathbf B\cdot d\boldsymbol\ell=\mu_0 I_{\rm enc}", r"\oint_C", r"\mathbf B\cdot d\boldsymbol\ell", r"\mu_0", r"I_{\rm enc}", size=M_L),
+        self.show(E(r"\oint_C\mathbf B\cdot d\boldsymbol\ell=\mu_0 I_{\rm env}", r"\oint_C", r"\mathbf B\cdot d\boldsymbol\ell", r"\mu_0", r"I_{\rm env}", size=M_L),
                   rt=1.6, wait=0.8)
         # 3 · B·dℓ: primeiro um dℓ grande, paralelo a B; depois o mesmo em todo o círculo
         self.light(self.bar, 3)
@@ -107,7 +107,7 @@ class Sec6:
             reps.add(arrow(q, q + 1.15 * d, MAG, 7, tip=0.28), arrow(q + 0.3 * np.array([d[1], -d[0], 0]), q + 0.3 * np.array([d[1], -d[0], 0]) + 0.62 * d, WHITE, 4, tip=0.2))
         self.play(LaggedStart(*[TransformFromCopy(VGroup(bv, dl), VGroup(reps[2 * k], reps[2 * k + 1])) for k in range(7)], lag_ratio=0.15), run_time=2.4)
         self.caption("O mesmo vale em todo o círculo, e $B$ tem o mesmo valor: sai da integral")
-        self.show(E(r"B\oint_C d\ell=\mu_0 I_{\rm enc}", "B", r"\oint_C", r"d\ell", r"\mu_0", r"I_{\rm enc}", size=M_L, colors=CI),
+        self.show(E(r"B\oint_C d\ell=\mu_0 I_{\rm env}", "B", r"\oint_C", r"d\ell", r"\mu_0", r"I_{\rm env}", size=M_L, colors=CI),
                   (r"\mathbf B\cdot d\boldsymbol\ell", r"d\ell"), src={("B", 0): bL}, rt=1.8, wait=1.0)
         # o perímetro 2πs nasce do círculo: ele se desenrola
         self.out(reps, dl, dL, rt=0.4)
@@ -123,14 +123,14 @@ class Sec6:
         self.remove(ghost)
         pl = self.lab(r"2\pi s", [-6.9 + L / 2, y0 + 0.38, 0], r"2\pi s", size=M_M, colors=CI)
         self.play(FadeIn(tick), FadeIn(pl), run_time=0.6)
-        self.show(E(r"B\,(2\pi s)=\mu_0 I_{\rm enc}", "B", r"(2\pi s)", r"\mu_0", r"I_{\rm enc}", size=M_L, colors=CI),
+        self.show(E(r"B\,(2\pi s)=\mu_0 I_{\rm env}", "B", r"(2\pi s)", r"\mu_0", r"I_{\rm env}", size=M_L, colors=CI),
                   (r"\oint_C", None), (r"d\ell", None), src={(r"(2\pi s)", 0): pl}, rt=1.8, wait=1.0)
-        # 4 · corrente encerrada
+        # 4 · corrente envolvida
         self.light(self.bar, 4)
         disk = Circle(radius=S * self.gs.get_value(), stroke_width=0).set_fill(VIOLET, 0.12).move_to(W([0, 0, 0])).set_z_index(1)
         self.play(FadeIn(disk), Indicate(sym, color=WHITE, scale_factor=1.4), run_time=1.0)
-        self.caption("Corrente encerrada: só o fio atravessa o disco, $I_{\\rm enc}=I$")
-        self.show(E(r"B\,(2\pi s)=\mu_0 I", "B", r"(2\pi s)", r"\mu_0", "I", size=M_L, colors=CI), (r"I_{\rm enc}", "I"), rt=1.6, wait=1.0)
+        self.caption("Corrente envolvida: só o fio atravessa o disco, $I_{\\rm env}=I$")
+        self.show(E(r"B\,(2\pi s)=\mu_0 I", "B", r"(2\pi s)", r"\mu_0", "I", size=M_L, colors=CI), (r"I_{\rm env}", "I"), rt=1.6, wait=1.0)
         self.show(E(r"B=\frac{\mu_0 I}{2\pi s}", "B", r"\mu_0", "I", r"2\pi s", size=M_XL, colors=CI), (r"(2\pi s)", r"2\pi s"), rt=1.8, wait=0.3)
         bx = box(self.slots["H"]["eq"], MAG)
         self.play(FadeIn(bx), run_time=0.5)
@@ -186,7 +186,7 @@ class Sec6:
         Ll = self.lab("L", W([0, y1, 0]) + np.array([0, 0.32, 0]), "L", size=M_M, color=WHITE)
         self.play(Create(rect), FadeIn(Ll), run_time=1.4)
         self.caption("Caminho: retângulo que atravessa a lâmina; $L$ é a largura que ele cobre, em lados paralelos a ela")
-        self.show(E(r"\oint\mathbf B\cdot d\boldsymbol\ell=\mu_0 I_{\rm enc}", r"\mathbf B\cdot d\boldsymbol\ell", r"\mu_0", r"I_{\rm enc}", size=M_L), rt=1.4, wait=0.8)
+        self.show(E(r"\oint\mathbf B\cdot d\boldsymbol\ell=\mu_0 I_{\rm env}", r"\mathbf B\cdot d\boldsymbol\ell", r"\mu_0", r"I_{\rm env}", size=M_L), rt=1.4, wait=0.8)
         # 3 · B·dℓ: lados curtos dão zero, longos dão BL cada
         self.light(self.bar, 3)
         zl = rich("$\\mathbf B\\perp d\\boldsymbol\\ell\\ \\Rightarrow\\ 0$", T_NOTE)
@@ -202,13 +202,13 @@ class Sec6:
         self.caption("Nos lados longos $\\mathbf B$ acompanha o sentido do percurso, acima e abaixo")
         self.show(E(r"\oint\mathbf B\cdot d\boldsymbol\ell=BL+BL=2BL", r"\mathbf B\cdot d\boldsymbol\ell", "BL", "2BL", size=M_L, colors={"BL": MAG, "2BL": MAG}),
                   src={("BL", 0): lt, ("BL", 1): lb}, rt=1.8, wait=1.0)
-        # 4 · corrente encerrada: a faixa de largura L na própria lâmina
+        # 4 · corrente envolvida: a faixa de largura L na própria lâmina
         self.light(self.bar, 4)
         strip = Line(W([x0, 0, 0]), W([x1, 0, 0]), color=GREEN, stroke_width=14).set_opacity(0.55).set_z_index(3)
         sL = self.lab("L", W([0, 0, 0]) + np.array([0, -0.45, 0]), "L", size=M_M, color=WHITE)
         self.play(Create(strip), FadeIn(sL), run_time=0.8)
-        self.caption("A faixa de largura $L$ dentro do retângulo carrega $I_{\\rm enc}=KL$")
-        self.show(E(r"I_{\rm enc}=KL", r"I_{\rm enc}", "K", "L", size=M_L), slot="A", src={("K", 0): kl2, ("L", 0): sL}, rt=1.4, wait=1.0)
+        self.caption("A faixa de largura $L$ dentro do retângulo carrega $I_{\\rm env}=KL$")
+        self.show(E(r"I_{\rm env}=KL", r"I_{\rm env}", "K", "L", size=M_L), slot="A", src={("K", 0): kl2, ("L", 0): sL}, rt=1.4, wait=1.0)
         self.show(E(r"2B\,L=\mu_0 K\,L", "2B", r"\,L", r"\mu_0 K", size=M_L, colors=CI), ("2BL", "2B"), rt=1.8, wait=1.0)
         self.drop("A", keep_card=False)
         self.caption("$L$ aparece dos dois lados e cancela: o campo não depende da distância à lâmina")
@@ -291,7 +291,7 @@ class Sec6:
         self.show(E(r"\oint\mathbf B\cdot d\boldsymbol\ell=B(a)L-B(b)L", r"\mathbf B\cdot d\boldsymbol\ell", r"B(a)", r"B(b)", size=M_L),
                   src={(r"B(a)", 0): la, (r"B(b)", 0): lb_}, rt=1.8, wait=1.2)
         self.light(self.bar, 4)
-        self.caption("Sem corrente encerrada, Ampère compara os campos nos dois lados")
+        self.caption("Sem corrente envolvida, Ampère compara os campos nos dois lados")
         self.show(E(r"B(a)L-B(b)L=0", r"B(a)", r"B(b)", "0", size=M_L), (r"\mathbf B\cdot d\boldsymbol\ell", None), rt=1.6, wait=1.0)
         self.show(E(r"B(a)=B(b)", r"B(a)", r"B(b)", size=M_XL), ("0", None), rt=1.6, wait=0.3)
         bx = box(self.slots["H"]["eq"], MAG)
@@ -337,7 +337,7 @@ class Sec6:
         self.play(LaggedStart(*[AnimationGroup(Indicate(d, color=WHITE, scale_factor=1.7), FadeIn(c)) for d, c in zip(inside, cnt)], lag_ratio=0.4),
                   run_time=2.0)
         self.caption(f"Espiras atravessadas: $n$ por unidade de comprimento; em $L$ são $nL$ (aqui {len(inside)})")
-        self.show(E(r"I_{\rm enc}=(nL)\,I", r"I_{\rm enc}", "(nL)", r"\,I", size=M_L, colors={r"(nL)": VIOLET, r"\,I": GREEN}), slot="A", rt=1.4, wait=1.0)
+        self.show(E(r"I_{\rm env}=(nL)\,I", r"I_{\rm env}", "(nL)", r"\,I", size=M_L, colors={r"(nL)": VIOLET, r"\,I": GREEN}), slot="A", rt=1.4, wait=1.0)
         self.show(E(r"B\,L=\mu_0\,(nL)\,I", "B", r"\,L", r"\mu_0", "(nL)", r"\,I", size=M_L, colors=CI),
                   src={(r"(nL)", 0): glyphs(self.slots["A"]["eq"], "(nL)", 0)}, rt=1.8, wait=1.0)
         self.drop("A", keep_card=False)
@@ -462,7 +462,7 @@ class Sec6:
             Line(c0, c0 + self.sr.get_value() * self.gs.get_value() * np.array([math.cos(0.35), math.sin(0.35), 0]), color=VIOLET, stroke_width=2.5)))
         sl = self.pin(self.lab("s", [0, 0, 0], "s", size=M_M), lambda: c0 + 0.55 * self.sr.get_value() * np.array([math.cos(0.35), math.sin(0.35), 0]) + np.array([0, 0.25, 0]))
         self.play(Create(amp), FadeIn(sl), run_time=1.2)
-        lhs = E(r"I_{\rm enc}=", r"I_{\rm enc}", size=M_L)
+        lhs = E(r"I_{\rm env}=", r"I_{\rm env}", size=M_L)
         v0, v1 = E("0", size=M_L), E(r"NI", "NI", size=M_L)
         reg = lambda: 0 if self.sr.get_value() < a else (1 if self.sr.get_value() < b else 2)
         g = VGroup(lhs, v0).arrange(RIGHT, buff=0.15)

@@ -157,7 +157,7 @@ class Geo:
     # ── estratégia de Ampère (N16–N20): barra de passos que acende ───────────────────────────────────────────
     def strategy_bar(self, y=2.72):
         items = [("simetria", None), ("direção de", r"\mathbf B"), ("caminho", None), (None, r"\mathbf B\cdot d\boldsymbol\ell"),
-                 (None, r"I_{\rm enc}")]
+                 (None, r"I_{\rm env}")]
         steps = VGroup()
         for t, m in items:
             g = VGroup()

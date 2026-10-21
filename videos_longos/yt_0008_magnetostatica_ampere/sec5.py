@@ -123,16 +123,16 @@ class Sec5:
         self.play(FadeIn(n4), Indicate(labs["I_4"], color=WHITE), run_time=0.8)
         self.hold(1.5)
         old = self.slots["A"]["eq"]
-        self.show(E(r"\int_S\mathbf J\cdot d\mathbf a=I_{\rm enc}", r"\mathbf J", r"\cdot d\mathbf a", r"\int_S", r"I_{\rm enc}", size=M_L),
+        self.show(E(r"\int_S\mathbf J\cdot d\mathbf a=I_{\rm env}", r"\mathbf J", r"\cdot d\mathbf a", r"\int_S", r"I_{\rm env}", size=M_L),
                   ("I_1", None), ("I_2", None), ("I_3", None), slot="A",
-                  src={(r"I_{\rm enc}", 0): VGroup(glyphs(old, "I_1", 0), glyphs(old, "I_2", 0), glyphs(old, "I_3", 0))}, rt=1.6, wait=1.0)
+                  src={(r"I_{\rm env}", 0): VGroup(glyphs(old, "I_1", 0), glyphs(old, "I_2", 0), glyphs(old, "I_3", 0))}, rt=1.6, wait=1.0)
         self.play(FadeOut(n4), run_time=0.3)
         aux = self.slots["A"]["eq"]
-        self.show(E(r"\int_S(\nabla\times\mathbf B)\cdot d\mathbf a=\mu_0 I_{\rm enc}", r"\int_S", r"(\nabla\times\mathbf B)", r"\mu_0", r"I_{\rm enc}", r"\cdot d\mathbf a",
+        self.show(E(r"\int_S(\nabla\times\mathbf B)\cdot d\mathbf a=\mu_0 I_{\rm env}", r"\int_S", r"(\nabla\times\mathbf B)", r"\mu_0", r"I_{\rm env}", r"\cdot d\mathbf a",
                     size=M_M), (r"\int_S", None, 1), (r"\cdot d\mathbf a", None, 1), (r"\mathbf J", None),
-                  src={(r"I_{\rm enc}", 0): glyphs(aux, r"I_{\rm enc}", 0)}, rt=2.0, wait=1.0)
+                  src={(r"I_{\rm env}", 0): glyphs(aux, r"I_{\rm env}", 0)}, rt=2.0, wait=1.0)
         self.drop("A", keep_card=False)
-        self.mark("n14_corrente_encerrada")
+        self.mark("n14_corrente_envolvida")
         self.st = dict(tb=tb, fl=fl, fl2=fl2, labs=labs, cC=cC, cL=cL, S=S, sL=sL, nn=nn, daL=daL, pc=pc)
 
     # ── N15 ─────────────────────────────────────────────────────────────────────────────────────────────────
@@ -222,7 +222,7 @@ class Sec5:
         self.play(Create(hb1), run_time=0.6)
         self.hold(0.6)
         self.out(hb1, rt=0.3)
-        self.show(E(r"\oint_C\mathbf B\cdot d\boldsymbol\ell=\mu_0 I_{\rm enc}", r"\oint_C", r"\mathbf B\cdot d\boldsymbol\ell", r"\mu_0", r"I_{\rm enc}", size=M_XL),
+        self.show(E(r"\oint_C\mathbf B\cdot d\boldsymbol\ell=\mu_0 I_{\rm env}", r"\oint_C", r"\mathbf B\cdot d\boldsymbol\ell", r"\mu_0", r"I_{\rm env}", size=M_XL),
                   (r"\int_S", None), (r"(\nabla\times\mathbf B)", None), (r"\cdot d\mathbf a", None),
                   src={((r"\oint_C", 0), (r"\mathbf B\cdot d\boldsymbol\ell", 0)): VGroup(glyphs(aux, r"\oint_C", 0), glyphs(aux, r"\mathbf B\cdot d\boldsymbol\ell", 0))},
                   rt=2.2, wait=0.3)
@@ -254,7 +254,7 @@ class Sec5:
         self.hold(1.0)
         self.show(E(r"\oint_{S_1-S_2}\mathbf J\cdot d\mathbf a=\int_V\nabla\cdot\mathbf J\,d\tau=0", r"\mathbf J", r"\nabla\cdot\mathbf J", size=M_M,
                     colors={r"\nabla\cdot\mathbf J": GREEN}), slot="A", rt=1.6, wait=1.5)
-        self.caption("Corrente estacionária: $\\nabla\\cdot\\mathbf J=0$, nada se acumula dentro. Logo a corrente encerrada não depende de $S$")
+        self.caption("Corrente estacionária: $\\nabla\\cdot\\mathbf J=0$, nada se acumula dentro. Logo a corrente envolvida não depende de $S$")
         self.show(E(r"I_{S_1}=I_{S_2}", r"I_{S_1}", r"I_{S_2}", size=M_XL, colors={r"I_{S_1}": GREEN, r"I_{S_2}": GREEN}), slot="A", rt=1.4, wait=0.5)
         self.mark("n15_mesma_corrente")
         self.hold(3.0)

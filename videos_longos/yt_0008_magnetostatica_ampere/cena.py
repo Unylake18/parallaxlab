@@ -21,7 +21,7 @@ from sec5 import Sec5
 from sec6 import Sec6
 from sec7 import Sec7
 
-SECOES = ("pergunta", "paradoxo", "sonda", "circulacao_global", "divergente",            # N01–N05
+SECOES = ("abertura", "pergunta", "paradoxo", "sonda", "circulacao_global", "divergente",            # N01–N05
           "div_formal", "dois_nablas", "rot_formal", "delta", "segundo_termo",           # N06–N10
           "fio_finito", "fio_externo", "limite_filamentar", "superficie", "stokes",      # N11–N15
           "validade", "amp_fio", "amp_lamina", "amp_solenoide", "amp_toroide",           # N16–N20

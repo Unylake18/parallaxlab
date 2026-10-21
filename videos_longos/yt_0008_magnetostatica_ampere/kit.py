@@ -69,7 +69,7 @@ TOKCOL.update({r"\mathbf B_{\rm total}": MAG, r"\mathbf B_{\rm trecho}": MAG, r"
 # Famílias das derivações (N06–N10): observador r, ∇ → ciano (OBS); fonte r', ∇', J(r'), dτ' → verde (SRC).
 TOKCOL.update({r"\mathbf F": VIOLET, r"d\boldsymbol\ell": WHITE, r"d\ell": WHITE, r"\mathbf 0": WHITE,
                r"\mathbf r": CYAN, r"(\mathbf r)": CYAN, r"\mathbf r'": GREEN, r"(\mathbf r')": GREEN, r"\nabla'": GREEN,
-               r"d\tau'": GREEN, r"\mathbf J(\mathbf r')": GREEN, r"\mathbf J(\mathbf r)": GREEN, r"I_{\rm enc}": GREEN,
+               r"d\tau'": GREEN, r"\mathbf J(\mathbf r')": GREEN, r"\mathbf J(\mathbf r)": GREEN, r"I_{\rm env}": GREEN,
                "nLI": GREEN, "NI": GREEN, "KL": GREEN,
                r"B_\phi": MAG, r"B(s)": MAG, r"B(a)": MAG, r"B(b)": MAG, r"\mathbf E": CYAN,
                r"\nabla\times\mathbf B": MAG, r"\nabla\cdot\mathbf B": MAG, r"(\nabla\times\mathbf B)_z": MAG,
