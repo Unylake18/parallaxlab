@@ -105,6 +105,11 @@ class Sec2:
         self.caption("Uma distribuição de corrente $\\mathbf J$ localizada: ponto-fonte $\\mathbf r'$ dentro dela, observador $\\mathbf r$ fora")
         self.play(FadeIn(L["r"]), FadeIn(L["rp"]), FadeIn(L["J"]), FadeIn(L["dt"]), FadeIn(L["B"]), FadeIn(L["R"]), run_time=1.0)
         self.hold(2.0)
+        # a voz leva ~45 s nomeando os papéis: cada rótulo pulsa quando é dito (sem isso o diagrama ficaria parado)
+        for rx, k, cor in (("densidade volumetrica de corrente", "J", GREEN), ("elemento de volume", "dt", GREEN), ("posicao da fonte", "rp", GREEN),
+                           ("onde queremos calcular", "B", MAG), ("posicao do observador", "r", CYAN), ("vetor que liga", "R", VIOLET)):
+            if self.na_fala(rx, antes=0.2):
+                self.destaque(L[k], cor)
         self.play(FadeOut(L["fonte"]), FadeOut(L["obs"]), run_time=0.4)      # papéis já nomeados: libera a região densa
         self.relayout("alg", 0.8)
         T = (r"\mathbf B(\mathbf r)", r"\frac{\mu_0}{4\pi}", r"\int", r"\mathbf J(\mathbf r')", r"\frac{\mathbf R}{R^3}", r"d\tau'")

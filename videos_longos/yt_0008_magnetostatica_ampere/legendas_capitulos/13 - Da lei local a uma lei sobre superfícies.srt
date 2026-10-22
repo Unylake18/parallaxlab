@@ -1,0 +1,83 @@
+1
+00:00:00,000 --> 00:00:05,518
+Agora temos uma lei local: rotacional do campo magnético
+igual a mi zero vezes densidade
+
+2
+00:00:05,558 --> 00:00:06,558
+de corrente.
+
+3
+00:00:06,690 --> 00:00:09,470
+Vamos transformá-la numa relação para a
+corrente total.
+
+4
+00:00:09,510 --> 00:00:11,140
+Escolhemos um caminho fechado.
+
+5
+00:00:11,240 --> 00:00:12,980
+Chamemos esse contorno de cê.
+
+6
+00:00:13,020 --> 00:00:17,220
+E escolhemos uma superfície esse maiúsculo
+apoiada nessa mesma borda.
+
+7
+00:00:17,260 --> 00:00:21,408
+A orientação do percurso e a normal da
+superfície estão ligadas pela regra da mão
+
+8
+00:00:21,448 --> 00:00:22,160
+direita.
+
+9
+00:00:22,200 --> 00:00:25,960
+Integramos a componente normal do
+rotacional sobre toda a superfície.
+
+10
+00:00:26,090 --> 00:00:30,600
+Do outro lado, integramos a densidade de
+corrente através dessa mesma superfície.
+
+11
+00:00:30,750 --> 00:00:34,390
+Cada pequeno elemento de área conta quanto
+de corrente o atravessa.
+
+12
+00:00:34,530 --> 00:00:36,810
+Se a corrente atravessa no sentido da
+normal,
+
+13
+00:00:36,850 --> 00:00:38,470
+sua contribuição é positiva.
+
+14
+00:00:38,510 --> 00:00:40,950
+Se atravessa no sentido oposto, é
+negativa.
+
+15
+00:00:41,010 --> 00:00:44,460
+Correntes que não atravessam a superfície
+não entram nessa soma.
+
+16
+00:00:44,540 --> 00:00:47,940
+A soma algébrica dessas contribuições é a
+corrente envolvida.
+
+17
+00:00:47,980 --> 00:00:52,651
+Assim, a integral do rotacional sobre a superfície é igual à
+permeabilidade do vácuo
+
+18
+00:00:52,691 --> 00:00:54,440
+vezes a corrente envolvida.

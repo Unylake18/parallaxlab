@@ -31,6 +31,7 @@ def bl(s):
 class Sec1:
     # ── utilitários locais ──────────────────────────────────────────────────────────────────────────────────
     def header(self, title):
+        self.evento("titulo", title)
         new = txt(title, T_HEAD).move_to([0, 3.3, 0])
         if self.head is not None:
             self.play(FadeOut(self.head), run_time=0.25)
@@ -99,23 +100,87 @@ class Sec1:
         self.purge(old)
         self.purge(oldf)
 
-    # ── abertura (gancho + saudação): o fio parado em cena enquanto a voz apresenta o paradoxo e o canal ───────────
+    # ── abertura (gancho + saudação): a tela acompanha a fala, sem texto que repita a narração ──────────────────────
+    def cartao(self, conteudo, pos, w, h):
+        """Cartão de abertura (painel + conteúdo); não emite evento de sincronismo."""
+        conteudo.move_to(pos)
+        return VGroup(panel(w, h, pos), conteudo)
+
     def abertura(self):
         self.section("abertura")
         t0 = float(self.time)
         self.reset_view(**VIEW_FIO)
+        ttl = txt("Divergente e rotacional de B: a Lei de Ampère", T_HEAD).move_to([0, 3.3, 0])
+        self.head = ttl
         self.wire = self.cached(self.view_key, lambda: self.wire_y(-2.4, 2.4))
-        self.play(Create(self.wire), run_time=1.2)
+        self.play(Create(self.wire), FadeIn(ttl), run_time=1.2)
         self.wflow = self.flow_y(-2.4, 2.4, count=8)
         self.add(self.wflow)
         rings = VGroup(*[self.fio_ring(h) for h in HS])
+        self.caption("As linhas de campo dão voltas completas em volta da corrente")       # alvo da voz: «As linhas de campo»
         self.play(Create(rings), run_time=2.0)
-        self.caption("As linhas de campo dão voltas completas em volta da corrente")
-        self.hold(10.0)
+        if self.na_fala("tudo parece estar girando"):
+            self.destaque(rings, WHITE, 1.0, 1.2)
         self.show(E(r"\nabla\times\mathbf B=\mathbf 0\qquad(s>0)", r"\nabla\times\mathbf B", r"\mathbf 0", r"(s>0)", size=M_XL), rt=1.6, wait=1.0)
-        self.caption("Fora do fio, o rotacional é zero. Como pode?")
-        # segura o quadro durante o restante da fala de abertura (ABERTURA_S = estimativa; ajustar à voz real)
-        self.hold(max(0.0, ABERTURA_S - (float(self.time) - t0) - 1.0))
+        self.caption("Fora do fio, o rotacional é zero. Como pode?")                          # alvo da voz: «Como um campo pode circular»
+        if self.na_fala("em torno de uma corrente"):
+            self.destaque(rings, WHITE, 1.0, 1.2)
+        if self.na_fala("rotacional nulo"):
+            eq = self.slots["H"]["eq"]
+            bx = box(glyphs(eq, r"\mathbf 0", 0), WHITE, buff=0.12, width=3)
+            self.play(FadeIn(bx), run_time=0.3)
+            self.hold(1.4)
+            self.out(bx, rt=0.25)
+        if self.na_fala("aparente contradicao"):
+            self.destaque(rings, WHITE, 1.0, 1.0)
+            self.destaque(self.slots["H"]["eq"], WHITE, 1.06, 1.0)
+        if SYNC is not None:
+            # saudação: o fio sai e entra a marca; depois os dois episódios anteriores; depois o caminho que o 5.3 vai seguir
+            marca = jb = bj = c51 = c52 = None
+            if self.na_fala("fala pessoal"):
+                self.out(self.wire, self.wflow, rings, rt=0.7)
+                self.drop("H", keep_card=False, rt=0.5)
+                marca = VGroup(txt("PARALLAX LAB", 58), txt("MAGNETOSTÁTICA · DIVERGENTE E ROTACIONAL DE B · LEI DE AMPÈRE", 24, DIM)).arrange(DOWN, buff=0.35).move_to([0, 0.2, 0])
+                self.play(FadeIn(marca, shift=UP * 0.12), run_time=0.9)
+            if self.na_fala("nos videos anteriores") and marca is not None:
+                self.out(marca, rt=0.5)
+            if self.na_fala("forca magnetica"):
+                c51 = self.cartao(txt("Força magnética", 38), [-3.7, 0.3, 0], 5.6, 2.4)
+                self.play(FadeIn(c51, shift=UP * 0.1), run_time=0.7)
+            if self.na_fala("lei de biot"):
+                c52 = self.cartao(txt("Lei de Biot–Savart", 38), [3.7, 0.3, 0], 5.6, 2.4)
+                self.play(FadeIn(c52, shift=UP * 0.1), run_time=0.7)
+            if self.na_fala("mudar a pergunta") and c52 is not None:
+                self.play(Indicate(c52, color=WHITE, scale_factor=1.04), run_time=1.0)
+            if self.na_fala("em vez de comecar pela corrente"):
+                self.out(*[m for m in (c51, c52) if m is not None], rt=0.5)
+                jb = self.cartao(E(r"\mathbf J\ \longrightarrow\ \mathbf B", r"\mathbf J", r"\mathbf B", size=M_XL), [0, 0.4, 0], 6.4, 1.9)
+                self.play(FadeIn(jb), run_time=0.7)
+            if self.na_fala("olhar para o proprio campo") and jb is not None:
+                self.out(jb, rt=0.4)
+                bj = self.cartao(E(r"\mathbf B\ \longrightarrow\ \text{?}", r"\mathbf B", r"\text{?}", size=M_XL), [0, 0.4, 0], 6.4, 1.9)
+                self.play(FadeIn(bj), run_time=0.7)
+            if self.na_fala("geometria revela") and bj is not None:
+                self.out(bj, rt=0.4)
+                bj = self.cartao(E(r"\mathbf B\ \longrightarrow\ \mathbf J\ \text{?}", r"\mathbf B", r"\mathbf J", r"\text{?}", size=M_XL), [0, 0.4, 0], 6.4, 1.9)
+                self.play(FadeIn(bj), run_time=0.7)
+            # os três chips do caminho: mesma altura, intervalos iguais e o conjunto centrado na tela (x = 0); cores do vídeo (B magenta, J/I verde, dℓ branco)
+            chips = (("ao divergente", r"\nabla\cdot\mathbf B", (r"\nabla\cdot\mathbf B",), 3.0),
+                     ("ao seu rotacional", r"\nabla\times\mathbf B", (r"\nabla\times\mathbf B",), 3.0),
+                     ("finalmente", r"\oint\mathbf B\cdot d\boldsymbol\ell=\mu_0 I_{\rm env}", (r"\mathbf B", r"d\boldsymbol\ell", r"I_{\rm env}"), 5.6))
+            gap, x = 0.45, -(sum(c[3] for c in chips) + 0.45 * (len(chips) - 1)) / 2
+            for rx, tex, iso, w in chips:
+                cx, x = x + w / 2, x + w + gap
+                if self.na_fala(rx):
+                    eq = E(tex, *iso, size=M_M)
+                    if eq.width > w - 0.4:
+                        eq.scale_to_fit_width(w - 0.4)
+                    cc = self.cartao(eq, [cx, -2.0, 0], w, 1.5)
+                    self.play(FadeIn(cc, shift=UP * 0.1), run_time=0.5)
+            self.hold_ate(SYNC["abertura"]["pergunta"] - 0.9)
+            self.head = None      # o título sai junto com o resto, no clear() (0,9 s) que termina na fala «Comecemos»
+        else:
+            self.hold(max(0.0, ABERTURA_S - (float(self.time) - t0) - 1.0))
         self.mark("n00_abertura")
         self.clear()
 

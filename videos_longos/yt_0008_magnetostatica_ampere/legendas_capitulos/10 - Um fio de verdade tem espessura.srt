@@ -1,0 +1,105 @@
+1
+00:00:00,000 --> 00:00:02,830
+Em vez de um fio matematicamente sem
+espessura,
+
+2
+00:00:02,870 --> 00:00:05,310
+considere agora um cilindro de raio
+finito.
+
+3
+00:00:05,450 --> 00:00:09,880
+Dentro dele, a densidade de corrente é
+uniforme e aponta ao longo do eixo.
+
+4
+00:00:10,030 --> 00:00:14,230
+Por simetria, o campo magnético continua
+circulando em torno desse eixo.
+
+5
+00:00:14,330 --> 00:00:18,270
+Agora podemos usar diretamente a lei local
+que acabamos de demonstrar.
+
+6
+00:00:18,310 --> 00:00:23,304
+Uma pequena sonda inteiramente dentro do
+condutor mede rotacional igual a mi zero
+
+7
+00:00:23,344 --> 00:00:25,450
+vezes a densidade de corrente.
+
+8
+00:00:25,610 --> 00:00:28,450
+Quando essa sonda atravessa parcialmente a
+fronteira,
+
+9
+00:00:28,490 --> 00:00:32,050
+apenas parte de sua área contém corrente,
+e a leitura diminui.
+
+10
+00:00:32,090 --> 00:00:35,690
+Quando fica completamente fora, a leitura
+local vai a zero.
+
+11
+00:00:35,730 --> 00:00:40,140
+Agora escrevemos a equação diferencial
+para a componente azimutal do campo.
+
+12
+00:00:40,300 --> 00:00:43,040
+Multiplicando pela distância radial e
+integrando,
+
+13
+00:00:43,080 --> 00:00:45,140
+aparece uma constante de integração.
+
+14
+00:00:45,180 --> 00:00:49,494
+Ao dividir novamente pela distância, essa
+constante produz um termo proporcional
+
+15
+00:00:49,534 --> 00:00:51,140
+a um sobre a distância.
+
+16
+00:00:51,350 --> 00:00:53,340
+Mas esse termo explodiria no eixo.
+
+17
+00:00:53,510 --> 00:00:57,050
+Para um fio com densidade de corrente
+distribuída de maneira regular,
+
+18
+00:00:57,090 --> 00:01:00,320
+não existe motivo físico para o campo
+divergir no centro.
+
+19
+00:01:00,360 --> 00:01:04,330
+Portanto, a regularidade exige que essa
+constante seja zero.
+
+20
+00:01:04,400 --> 00:01:08,390
+Dentro do condutor, o campo cresce
+linearmente com a distância ao eixo.
+
+21
+00:01:08,540 --> 00:01:12,470
+Ele começa em zero no centro e atinge seu
+maior valor na superfície.
+
+22
+00:01:12,610 --> 00:01:15,640
+E o gráfico acompanha exatamente esse
+comportamento.

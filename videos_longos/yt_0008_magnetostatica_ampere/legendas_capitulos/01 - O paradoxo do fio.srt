@@ -1,0 +1,122 @@
+1
+00:00:00,000 --> 00:00:02,540
+Visto de cima, o fio aparece como um
+ponto.
+
+2
+00:00:02,640 --> 00:00:06,370
+O símbolo com um ponto no centro indica
+uma corrente saindo da tela.
+
+3
+00:00:06,410 --> 00:00:10,673
+Escolhemos um ponto onde queremos observar
+o campo e medimos sua distância ao eixo
+
+4
+00:00:10,713 --> 00:00:11,210
+do fio.
+
+5
+00:00:11,250 --> 00:00:13,720
+Vamos chamar essa distância radial de
+ésse.
+
+6
+00:00:13,760 --> 00:00:18,098
+Para um fio retilíneo infinito, Biot–Savart fornece um campo
+tangente às circunferências
+
+7
+00:00:18,138 --> 00:00:19,340
+em torno do eixo.
+
+8
+00:00:19,470 --> 00:00:22,970
+Sua intensidade é igual à permeabilidade
+magnética do vácuo,
+
+9
+00:00:23,010 --> 00:00:26,810
+vezes a corrente, dividida por dois pi
+vezes a distância ao eixo.
+
+10
+00:00:26,930 --> 00:00:30,920
+A permeabilidade magnética do vácuo é a
+constante indicada por mi zero.
+
+11
+00:00:30,960 --> 00:00:32,690
+Agora calculamos o rotacional.
+
+12
+00:00:32,730 --> 00:00:37,155
+Na geometria cilíndrica, a componente relevante contém a
+derivada do produto entre
+
+13
+00:00:37,195 --> 00:00:40,200
+a distância radial e a componente azimutal
+do campo.
+
+14
+00:00:40,430 --> 00:00:42,330
+Substituímos o campo do fio.
+
+15
+00:00:42,370 --> 00:00:46,800
+A distância ésse cancela com o fator
+inversamente proporcional a ésse.
+
+16
+00:00:46,900 --> 00:00:48,440
+Sobra apenas uma constante.
+
+17
+00:00:48,480 --> 00:00:50,300
+Isso também aparece no desenho.
+
+18
+00:00:50,380 --> 00:00:54,610
+Se dobramos a distância ao fio, a
+intensidade do campo cai pela metade.
+
+19
+00:00:54,770 --> 00:00:57,780
+Se triplicamos a distância, ela cai para
+um terço.
+
+20
+00:00:57,900 --> 00:01:01,700
+O produto entre distância e intensidade
+continua constante.
+
+21
+00:01:01,960 --> 00:01:07,040
+Como a derivada de uma constante é zero,
+essa componente do rotacional desaparece.
+
+22
+00:01:07,110 --> 00:01:09,550
+E as demais componentes também são nulas.
+
+23
+00:01:09,730 --> 00:01:14,140
+Portanto, em qualquer ponto fora do eixo,
+o campo magnético existe,
+
+24
+00:01:14,180 --> 00:01:17,420
+suas linhas são curvas, mas seu rotacional
+é zero.
+
+25
+00:01:17,490 --> 00:01:20,170
+Essa é a primeira ideia importante do
+vídeo:
+
+26
+00:01:20,240 --> 00:01:24,460
+curvatura de uma linha de campo e
+rotacional não são a mesma coisa.

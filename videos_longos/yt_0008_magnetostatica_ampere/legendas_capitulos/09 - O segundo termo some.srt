@@ -1,0 +1,137 @@
+1
+00:00:00,000 --> 00:00:02,020
+Ainda precisamos verificar a segunda.
+
+2
+00:00:02,060 --> 00:00:06,276
+O fator geométrico depende apenas da diferença entre a
+posição do observador e a
+
+3
+00:00:06,316 --> 00:00:07,400
+posição da fonte.
+
+4
+00:00:07,600 --> 00:00:10,060
+Se deslocamos os dois pontos juntos da
+mesma forma,
+
+5
+00:00:10,100 --> 00:00:11,900
+essa diferença não muda.
+
+6
+00:00:11,940 --> 00:00:16,403
+Por isso, derivar o fator em relação ao
+observador equivale a derivá-lo em relação
+
+7
+00:00:16,443 --> 00:00:17,990
+à fonte com sinal oposto.
+
+8
+00:00:18,180 --> 00:00:20,350
+Fazemos essa troca na segunda parcela.
+
+9
+00:00:20,390 --> 00:00:24,880
+O sinal negativo que já estava presente se
+combina com o novo sinal negativo.
+
+10
+00:00:24,990 --> 00:00:28,610
+Agora usamos a regra do produto e uma
+integração por partes,
+
+11
+00:00:28,840 --> 00:00:30,370
+componente por componente.
+
+12
+00:00:30,590 --> 00:00:33,140
+O resultado se separa em duas
+contribuições.
+
+13
+00:00:33,310 --> 00:00:35,370
+A primeira é um termo de superfície.
+
+14
+00:00:35,530 --> 00:00:39,020
+Como estamos considerando uma distribuição
+de corrente localizada,
+
+15
+00:00:39,060 --> 00:00:43,295
+podemos escolher essa superfície suficientemente distante
+para que nenhuma corrente
+
+16
+00:00:43,335 --> 00:00:44,290
+a atravesse.
+
+17
+00:00:44,330 --> 00:00:46,130
+Esse termo então desaparece.
+
+18
+00:00:46,330 --> 00:00:51,260
+A segunda contribuição contém o divergente
+da densidade de corrente.
+
+19
+00:00:51,400 --> 00:00:54,320
+Aqui, finalmente, entra a equação da
+continuidade.
+
+20
+00:00:54,490 --> 00:00:59,400
+Ela relaciona o divergente da corrente à
+variação temporal da densidade de carga.
+
+21
+00:00:59,440 --> 00:01:03,765
+No regime estacionário, a densidade de carga não está se
+acumulando nem diminuindo
+
+22
+00:01:03,805 --> 00:01:04,700
+com o tempo.
+
+23
+00:01:04,740 --> 00:01:08,020
+Logo, o divergente da densidade de
+corrente é zero.
+
+24
+00:01:08,060 --> 00:01:10,060
+As duas contribuições desaparecem.
+
+25
+00:01:10,320 --> 00:01:16,056
+E sobra a relação local fundamental: o rotacional do campo
+magnético é igual à permeabilidade
+
+26
+00:01:16,096 --> 00:01:19,060
+magnética do vácuo vezes a densidade de
+corrente.
+
+27
+00:01:19,340 --> 00:01:22,860
+Essa é a forma local da lei de Ampère na
+magnetostática.
+
+28
+00:01:23,120 --> 00:01:24,780
+É uma relação ponto a ponto.
+
+29
+00:01:24,890 --> 00:01:29,180
+Daqui a pouco vamos transformá-la numa
+relação global usando o teorema de Stokes.
+
+30
+00:01:29,450 --> 00:01:32,180
+Mas antes podemos voltar ao paradoxo do
+fio.

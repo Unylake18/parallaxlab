@@ -1,0 +1,184 @@
+1
+00:00:00,000 --> 00:00:04,586
+Agora vamos mostrar que esse resultado já
+está escondido dentro da própria lei de
+
+2
+00:00:04,626 --> 00:00:05,350
+Biot–Savart.
+
+3
+00:00:05,390 --> 00:00:07,430
+Considere uma distribuição de corrente.
+
+4
+00:00:07,620 --> 00:00:11,060
+A densidade volumétrica de corrente,
+representada por jota,
+
+5
+00:00:11,100 --> 00:00:16,340
+informa a direção da corrente e a quantidade de corrente por
+unidade de área transversal.
+
+6
+00:00:16,380 --> 00:00:18,970
+Sua unidade é ampère por metro quadrado.
+
+7
+00:00:19,010 --> 00:00:22,730
+Escolhemos um pequeno elemento de volume
+dentro dessa distribuição.
+
+8
+00:00:22,770 --> 00:00:26,770
+Sua posição é a posição da fonte,
+representada por erre linha,
+
+9
+00:00:26,810 --> 00:00:27,930
+ou "erre linha".
+
+10
+00:00:27,970 --> 00:00:30,910
+Também escolhemos o ponto onde queremos
+calcular o campo.
+
+11
+00:00:30,980 --> 00:00:34,460
+Essa é a posição do observador,
+representada por erre.
+
+12
+00:00:34,500 --> 00:00:38,160
+O vetor que liga a fonte ao observador é
+erre maiúsculo,
+
+13
+00:00:38,200 --> 00:00:40,240
+igual a erre menos erre linha.
+
+14
+00:00:40,280 --> 00:00:42,530
+Ele aponta da fonte para o observador.
+
+15
+00:00:42,570 --> 00:00:47,620
+Já erre maiúsculo, sem caráter vetorial,
+representa apenas o módulo desse vetor:
+
+16
+00:00:47,660 --> 00:00:49,360
+a distância entre os dois pontos.
+
+17
+00:00:49,560 --> 00:00:54,257
+Biot–Savart soma as contribuições de todos os pequenos
+elementos de volume da distribuição
+
+18
+00:00:54,297 --> 00:00:55,250
+de corrente.
+
+19
+00:00:55,290 --> 00:01:00,334
+Para simplificar a notação, vamos chamar o fator geométrico
+o vetor separação dividido
+
+20
+00:01:00,374 --> 00:01:02,300
+pela distância ao cubo de efe.
+
+21
+00:01:02,340 --> 00:01:05,320
+Esse símbolo é apenas uma abreviação
+matemática.
+
+22
+00:01:05,420 --> 00:01:06,700
+Não representa força.
+
+23
+00:01:06,870 --> 00:01:11,880
+Agora calculamos o divergente do campo magnético em relação
+à posição do observador.
+
+24
+00:01:11,920 --> 00:01:16,590
+Como estamos derivando em relação ao observador e integrando
+sobre a posição da fonte,
+
+25
+00:01:16,630 --> 00:01:20,960
+podemos levar esse operador para dentro da
+integral nas condições consideradas.
+
+26
+00:01:21,070 --> 00:01:25,670
+Usamos então uma identidade vetorial para
+o divergente de um produto vetorial.
+
+27
+00:01:25,710 --> 00:01:27,180
+Ela produz dois termos.
+
+28
+00:01:27,360 --> 00:01:32,005
+No primeiro, aparece uma derivada da densidade de corrente
+da fonte em relação à
+
+29
+00:01:32,045 --> 00:01:33,400
+posição do observador.
+
+30
+00:01:33,440 --> 00:01:37,440
+Mas a densidade jota de erre linha depende
+da posição da fonte.
+
+31
+00:01:37,560 --> 00:01:41,110
+Mudar o observador não altera a corrente
+naquele ponto-fonte.
+
+32
+00:01:41,180 --> 00:01:42,750
+Por isso esse termo é zero.
+
+33
+00:01:42,790 --> 00:01:45,640
+Isso é apenas independência entre as duas
+variáveis.
+
+34
+00:01:45,720 --> 00:01:48,970
+O segundo termo contém o rotacional do
+fator geométrico.
+
+35
+00:01:49,200 --> 00:01:54,100
+Mas esse fator pode ser escrito como menos
+o gradiente do inverso da distância.
+
+36
+00:01:54,200 --> 00:01:56,500
+E o rotacional de um gradiente é nulo.
+
+37
+00:01:56,540 --> 00:02:01,687
+Assim, os dois termos desaparecem e recuperamos o divergente
+do campo magnético igual
+
+38
+00:02:01,727 --> 00:02:02,560
+a zero.
+
+39
+00:02:02,600 --> 00:02:07,150
+Existe uma sutileza na singularidade em
+que fonte e observador coincidem,
+
+40
+00:02:07,190 --> 00:02:09,650
+e vamos tratá-la explicitamente daqui a
+pouco.

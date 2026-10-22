@@ -1,0 +1,96 @@
+1
+00:00:00,000 --> 00:00:01,990
+Agora vamos comprimir esse fio.
+
+2
+00:00:02,030 --> 00:00:05,260
+Diminuímos seu raio, mas mantemos a
+corrente total fixa.
+
+3
+00:00:05,300 --> 00:00:07,210
+A área da seção fica menor.
+
+4
+00:00:07,250 --> 00:00:11,370
+Para conservar a mesma corrente, a
+densidade de corrente precisa aumentar.
+
+5
+00:00:11,410 --> 00:00:13,610
+No gráfico, o campo externo não muda.
+
+6
+00:00:13,650 --> 00:00:16,220
+Já o valor máximo, localizado na
+superfície,
+
+7
+00:00:16,260 --> 00:00:19,040
+cresce e se aproxima cada vez mais do
+eixo.
+
+8
+00:00:19,140 --> 00:00:23,315
+No limite em que o raio tende a zero, toda
+a corrente fica concentrada sobre uma
+
+9
+00:00:23,355 --> 00:00:23,790
+linha.
+
+10
+00:00:23,830 --> 00:00:27,160
+Agora usamos uma delta de Dirac em duas
+dimensões,
+
+11
+00:00:27,220 --> 00:00:29,200
+nas direções transversais ao fio.
+
+12
+00:00:29,240 --> 00:00:33,370
+Ela é diferente da delta tridimensional
+que apareceu no núcleo de Biot–Savart.
+
+13
+00:00:33,410 --> 00:00:36,130
+Aqui o eixo do fio continua se estendendo.
+
+14
+00:00:36,170 --> 00:00:39,690
+Quando integramos essa densidade singular
+sobre a seção transversal,
+
+15
+00:00:39,730 --> 00:00:41,420
+recuperamos a corrente total.
+
+16
+00:00:41,460 --> 00:00:44,740
+E finalmente resolvemos o paradoxo da
+abertura.
+
+17
+00:00:44,810 --> 00:00:46,860
+Fora do eixo, o rotacional é zero.
+
+18
+00:00:46,900 --> 00:00:50,450
+Mas no eixo existe uma contribuição
+singular concentrada.
+
+19
+00:00:50,490 --> 00:00:55,680
+Portanto, um laço que envolve o fio não
+está simplesmente "somando zeros".
+
+20
+00:00:55,920 --> 00:00:59,300
+Ele envolve a região singular onde a
+corrente está localizada.
+
+21
+00:00:59,360 --> 00:01:02,750
+É por isso que a circulação global pode
+ser diferente de zero.

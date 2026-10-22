@@ -39,8 +39,11 @@ class YT0008Ampere(Sec7, Sec6, Sec5, Sec4, Sec3, Sec2, Sec1, Geo, Base):
             getattr(self, nome)()
             if nome == ATE:
                 break
+        if not ATE:
+            self.fim_sync()
         out = Path(config.media_dir) / "qa_timeline.json"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(json.dumps({"sections": self.sections, "checkpoints": self.checkpoints,
-                                   "layout_issues": self.layout_issues, "duration": float(self.time),
+                                   "layout_issues": self.layout_issues, "duration": float(self.time), "eventos": self.eventos,
+                                   "estado_secoes": self.estado_secoes, "fim_estado": [self.agora(), self._ev, self._win], "atrasos": self.atrasos, "t0": self._t0,
                                    "plays": self.renderer.num_plays}, ensure_ascii=False, indent=2), encoding="utf-8")

@@ -1,0 +1,2405 @@
+1
+00:00:00,060 --> 00:00:03,520
+Existe uma coisa estranha no campo
+magnético de um fio infinito.
+
+2
+00:00:03,720 --> 00:00:07,050
+As linhas de campo dão voltas completas ao
+redor da corrente.
+
+3
+00:00:07,220 --> 00:00:09,370
+Tudo parece estar girando.
+
+4
+00:00:09,410 --> 00:00:12,240
+Mas, fora do fio, o rotacional desse campo
+é zero.
+
+5
+00:00:12,320 --> 00:00:15,049
+Como um campo pode circular em torno de
+uma corrente e,
+
+6
+00:00:15,089 --> 00:00:18,670
+ao mesmo tempo, ter rotacional nulo quase
+em toda parte?
+
+7
+00:00:18,880 --> 00:00:21,680
+É essa aparente contradição que vamos
+resolver hoje.
+
+8
+00:00:21,880 --> 00:00:24,400
+Fala, pessoal!
+
+9
+00:00:24,460 --> 00:00:26,010
+Bem-vindos ao Parallax Lab.
+
+10
+00:00:26,050 --> 00:00:30,555
+Nos vídeos anteriores, vimos a força magnética e aprendemos
+a calcular campos usando
+
+11
+00:00:30,595 --> 00:00:31,810
+a lei de Biot–Savart.
+
+12
+00:00:31,980 --> 00:00:34,100
+Agora vamos mudar a pergunta.
+
+13
+00:00:34,140 --> 00:00:36,653
+Em vez de começar pela corrente e
+perguntar qual campo ela produz,
+
+14
+00:00:36,693 --> 00:00:38,817
+vamos olhar para o próprio campo magnético
+e perguntar:
+
+15
+00:00:38,857 --> 00:00:41,650
+o que a sua geometria revela sobre as
+correntes que o produziram?
+
+16
+00:00:41,690 --> 00:00:44,922
+Esse caminho vai nos levar ao divergente
+do campo magnético,
+
+17
+00:00:44,962 --> 00:00:47,860
+ao seu rotacional e, finalmente, à lei de
+Ampère.
+
+18
+00:00:47,900 --> 00:00:49,690
+Comecemos pelo exemplo mais simples.
+
+19
+00:00:49,920 --> 00:00:52,090
+Este fio conduz uma corrente constante.
+
+20
+00:00:52,230 --> 00:00:55,570
+Os marcadores verdes indicam o sentido
+convencional da corrente.
+
+21
+00:00:55,680 --> 00:00:59,722
+O movimento desses marcadores é apenas uma
+representação visual do transporte de
+
+22
+00:00:59,762 --> 00:01:04,081
+carga; sua velocidade no desenho não corresponde à
+velocidade real das cargas no
+
+23
+00:01:04,121 --> 00:01:04,720
+material.
+
+24
+00:01:04,760 --> 00:01:07,940
+Ao redor do fio, o campo magnético forma
+circunferências.
+
+25
+00:01:08,110 --> 00:01:10,390
+O sentido é dado pela regra da mão
+direita.
+
+26
+00:01:10,500 --> 00:01:12,890
+Se apontamos o polegar no sentido da
+corrente,
+
+27
+00:01:12,930 --> 00:01:15,940
+os dedos indicam o sentido em que o campo
+contorna o fio.
+
+28
+00:01:15,980 --> 00:01:18,490
+Até aqui, seguimos o caminho que já
+conhecemos:
+
+29
+00:01:18,600 --> 00:01:23,180
+uma distribuição de corrente é dada, usamos Biot–Savart e
+obtemos o campo magnético.
+
+30
+00:01:23,340 --> 00:01:25,600
+Mas agora vamos inverter o raciocínio.
+
+31
+00:01:25,660 --> 00:01:26,960
+As linhas são curvas.
+
+32
+00:01:27,130 --> 00:01:30,680
+Será que isso significa que o rotacional
+do campo é diferente de zero?
+
+33
+00:01:30,720 --> 00:01:31,610
+Vamos verificar.
+
+34
+00:01:31,650 --> 00:01:34,190
+Visto de cima, o fio aparece como um
+ponto.
+
+35
+00:01:34,290 --> 00:01:38,020
+O símbolo com um ponto no centro indica
+uma corrente saindo da tela.
+
+36
+00:01:38,060 --> 00:01:42,323
+Escolhemos um ponto onde queremos observar
+o campo e medimos sua distância ao eixo
+
+37
+00:01:42,363 --> 00:01:42,860
+do fio.
+
+38
+00:01:42,900 --> 00:01:45,370
+Vamos chamar essa distância radial de
+ésse.
+
+39
+00:01:45,410 --> 00:01:49,748
+Para um fio retilíneo infinito, Biot–Savart fornece um campo
+tangente às circunferências
+
+40
+00:01:49,788 --> 00:01:50,990
+em torno do eixo.
+
+41
+00:01:51,120 --> 00:01:54,620
+Sua intensidade é igual à permeabilidade
+magnética do vácuo,
+
+42
+00:01:54,660 --> 00:01:58,460
+vezes a corrente, dividida por dois pi
+vezes a distância ao eixo.
+
+43
+00:01:58,580 --> 00:02:02,570
+A permeabilidade magnética do vácuo é a
+constante indicada por mi zero.
+
+44
+00:02:02,610 --> 00:02:04,340
+Agora calculamos o rotacional.
+
+45
+00:02:04,380 --> 00:02:08,805
+Na geometria cilíndrica, a componente relevante contém a
+derivada do produto entre
+
+46
+00:02:08,845 --> 00:02:11,850
+a distância radial e a componente azimutal
+do campo.
+
+47
+00:02:12,080 --> 00:02:13,980
+Substituímos o campo do fio.
+
+48
+00:02:14,020 --> 00:02:18,450
+A distância ésse cancela com o fator
+inversamente proporcional a ésse.
+
+49
+00:02:18,550 --> 00:02:20,090
+Sobra apenas uma constante.
+
+50
+00:02:20,130 --> 00:02:21,950
+Isso também aparece no desenho.
+
+51
+00:02:22,030 --> 00:02:26,260
+Se dobramos a distância ao fio, a
+intensidade do campo cai pela metade.
+
+52
+00:02:26,420 --> 00:02:29,430
+Se triplicamos a distância, ela cai para
+um terço.
+
+53
+00:02:29,550 --> 00:02:33,350
+O produto entre distância e intensidade
+continua constante.
+
+54
+00:02:33,610 --> 00:02:38,690
+Como a derivada de uma constante é zero,
+essa componente do rotacional desaparece.
+
+55
+00:02:38,760 --> 00:02:41,200
+E as demais componentes também são nulas.
+
+56
+00:02:41,380 --> 00:02:45,790
+Portanto, em qualquer ponto fora do eixo,
+o campo magnético existe,
+
+57
+00:02:45,830 --> 00:02:49,070
+suas linhas são curvas, mas seu rotacional
+é zero.
+
+58
+00:02:49,140 --> 00:02:51,820
+Essa é a primeira ideia importante do
+vídeo:
+
+59
+00:02:51,890 --> 00:02:56,110
+curvatura de uma linha de campo e
+rotacional não são a mesma coisa.
+
+60
+00:02:56,270 --> 00:02:58,790
+Para entender o que o rotacional realmente
+mede,
+
+61
+00:02:58,830 --> 00:03:00,740
+vamos olhar localmente para o campo.
+
+62
+00:03:00,880 --> 00:03:05,537
+Imagine uma pequena sonda formada por um caminho fechado em
+torno do ponto que estamos
+
+63
+00:03:05,577 --> 00:03:06,370
+observando.
+
+64
+00:03:06,410 --> 00:03:09,350
+Essa sonda possui uma área e uma direção
+normal,
+
+65
+00:03:09,390 --> 00:03:11,150
+perpendicular à sua superfície.
+
+66
+00:03:11,270 --> 00:03:16,030
+A orientação entre o percurso da borda e
+essa normal segue a regra da mão direita.
+
+67
+00:03:16,140 --> 00:03:19,020
+Agora percorremos a borda da sonda e
+somamos,
+
+68
+00:03:19,060 --> 00:03:24,023
+em cada pequeno trecho, a componente tangencial do campo
+magnético multiplicada pelo
+
+69
+00:03:24,063 --> 00:03:25,930
+pequeno comprimento percorrido.
+
+70
+00:03:25,970 --> 00:03:27,910
+Essa soma é a circulação.
+
+71
+00:03:27,950 --> 00:03:31,120
+Depois dividimos essa circulação pela área
+da sonda.
+
+72
+00:03:31,160 --> 00:03:33,080
+E fazemos a área tender a zero.
+
+73
+00:03:33,120 --> 00:03:37,180
+O resultado fornece a componente do
+rotacional na direção da normal.
+
+74
+00:03:37,220 --> 00:03:40,880
+Isso explica por que simplesmente olhar
+uma linha curva não basta.
+
+75
+00:03:40,920 --> 00:03:44,670
+O rotacional mede uma circulação local,
+infinitesimal.
+
+76
+00:03:44,750 --> 00:03:48,450
+Neste campo do fio, podemos enxergar o
+cancelamento diretamente.
+
+77
+00:03:48,550 --> 00:03:53,153
+Nos trechos radiais da pequena sonda, o campo magnético e o
+elemento de caminho são
+
+78
+00:03:53,193 --> 00:03:54,330
+perpendiculares.
+
+79
+00:03:54,390 --> 00:03:56,160
+O produto escalar é zero.
+
+80
+00:03:56,200 --> 00:03:58,500
+Já nos dois arcos, há contribuição.
+
+81
+00:03:58,540 --> 00:04:01,620
+No arco mais próximo do fio, o campo é
+mais intenso,
+
+82
+00:04:01,740 --> 00:04:03,240
+mas o arco é mais curto.
+
+83
+00:04:03,330 --> 00:04:05,940
+No arco mais distante, o campo é mais
+fraco,
+
+84
+00:04:05,980 --> 00:04:07,670
+mas o percurso é mais longo.
+
+85
+00:04:07,840 --> 00:04:11,040
+Como a intensidade varia inversamente com
+a distância,
+
+86
+00:04:11,080 --> 00:04:14,950
+essas duas contribuições possuem o mesmo
+módulo e sinais opostos.
+
+87
+00:04:15,220 --> 00:04:16,340
+Elas se cancelam.
+
+88
+00:04:16,460 --> 00:04:20,330
+Se girarmos a sonda para verificar outras
+orientações independentes,
+
+89
+00:04:20,370 --> 00:04:22,080
+o resultado continua zero.
+
+90
+00:04:22,120 --> 00:04:25,530
+Portanto, o vetor rotacional é realmente
+nulo naquele ponto.
+
+91
+00:04:25,570 --> 00:04:27,940
+Mas agora vem a parte interessante.
+
+92
+00:04:28,100 --> 00:04:30,480
+O que acontece se aumentarmos o laço?
+
+93
+00:04:30,660 --> 00:04:34,350
+Enquanto o caminho não envolve o fio, a
+circulação continua nula.
+
+94
+00:04:34,390 --> 00:04:39,030
+Mas, no instante em que tentamos passar o
+caminho exatamente sobre o fio ideal,
+
+95
+00:04:39,070 --> 00:04:41,350
+encontramos a singularidade do modelo.
+
+96
+00:04:41,390 --> 00:04:45,790
+O campo de um fio infinitamente fino não
+está definido no próprio eixo.
+
+97
+00:04:45,930 --> 00:04:48,400
+Depois que o laço passa a envolver a
+corrente,
+
+98
+00:04:48,440 --> 00:04:49,520
+a situação muda.
+
+99
+00:04:49,560 --> 00:04:51,590
+A circulação deixa de ser zero.
+
+100
+00:04:51,630 --> 00:04:56,009
+Para um círculo centrado no fio, o campo é
+tangente em todos os pontos e possui a
+
+101
+00:04:56,049 --> 00:04:58,790
+mesma intensidade ao longo de todo o
+caminho.
+
+102
+00:04:58,830 --> 00:05:03,320
+Então basta multiplicar a intensidade do
+campo pelo comprimento da circunferência.
+
+103
+00:05:03,410 --> 00:05:06,120
+O resultado é mi zero vezes a corrente.
+
+104
+00:05:06,370 --> 00:05:10,720
+É importante notar que ainda não estamos usando a lei de
+Ampère como ponto de partida.
+
+105
+00:05:10,760 --> 00:05:15,050
+Obtivemos esse resultado diretamente do
+campo calculado por Biot–Savart.
+
+106
+00:05:15,090 --> 00:05:19,630
+E surge a pergunta: se o rotacional é zero
+em todos os pontos fora do fio,
+
+107
+00:05:19,670 --> 00:05:22,440
+de onde vem essa circulação global não
+nula?
+
+108
+00:05:22,510 --> 00:05:25,722
+A resposta está exatamente na região que
+deixamos de fora:
+
+109
+00:05:25,762 --> 00:05:26,570
+o eixo.
+
+110
+00:05:26,610 --> 00:05:31,608
+Antes de resolver essa singularidade, vamos investigar outra
+propriedade do campo
+
+111
+00:05:31,648 --> 00:05:32,648
+magnético.
+
+112
+00:05:32,690 --> 00:05:36,190
+Será que o campo magnético possui fontes
+ou sumidouros?
+
+113
+00:05:36,350 --> 00:05:40,970
+Para responder, envolvemos uma pequena região do espaço com
+uma superfície fechada.
+
+114
+00:05:41,010 --> 00:05:45,350
+Nessa região pequena, podemos tratar o
+campo como aproximadamente uniforme.
+
+115
+00:05:45,420 --> 00:05:49,850
+Como nos vídeos sobre a lei de Gauss, as
+normais da superfície apontam para fora.
+
+116
+00:05:49,890 --> 00:05:53,710
+Onde o campo entra na caixa, o produto com
+a normal é negativo.
+
+117
+00:05:53,770 --> 00:05:55,930
+Onde ele sai, o produto é positivo.
+
+118
+00:05:56,000 --> 00:05:59,540
+Nas faces em que o campo é tangente, a
+contribuição é zero.
+
+119
+00:05:59,580 --> 00:06:02,850
+Somando todas as faces, o fluxo líquido se
+anula.
+
+120
+00:06:02,890 --> 00:06:07,440
+Se dividimos esse fluxo pelo volume e
+fazemos a região encolher até um ponto,
+
+121
+00:06:07,480 --> 00:06:09,930
+encontramos o divergente do campo
+magnético.
+
+122
+00:06:10,100 --> 00:06:11,640
+O resultado é zero.
+
+123
+00:06:11,700 --> 00:06:15,530
+Essa é a forma diferencial da lei de Gauss
+para o magnetismo.
+
+124
+00:06:15,720 --> 00:06:18,070
+O contraste com o campo elétrico é
+importante.
+
+125
+00:06:18,170 --> 00:06:23,086
+Uma carga elétrica positiva isolada produz
+fluxo elétrico líquido para fora de uma
+
+126
+00:06:23,126 --> 00:06:24,290
+superfície fechada.
+
+127
+00:06:24,330 --> 00:06:26,660
+Ela funciona como uma fonte do campo
+elétrico.
+
+128
+00:06:26,850 --> 00:06:29,880
+Para o campo magnético, não aparece um
+termo equivalente.
+
+129
+00:06:30,060 --> 00:06:32,970
+No eletromagnetismo clássico que estamos
+estudando,
+
+130
+00:06:33,010 --> 00:06:37,855
+não existem cargas magnéticas isoladas funcionando como
+fontes ou sumidouros de campo
+
+131
+00:06:37,895 --> 00:06:38,895
+magnético.
+
+132
+00:06:39,010 --> 00:06:43,596
+Agora vamos mostrar que esse resultado já
+está escondido dentro da própria lei de
+
+133
+00:06:43,636 --> 00:06:44,360
+Biot–Savart.
+
+134
+00:06:44,400 --> 00:06:46,440
+Considere uma distribuição de corrente.
+
+135
+00:06:46,630 --> 00:06:50,070
+A densidade volumétrica de corrente,
+representada por jota,
+
+136
+00:06:50,110 --> 00:06:55,350
+informa a direção da corrente e a quantidade de corrente por
+unidade de área transversal.
+
+137
+00:06:55,390 --> 00:06:57,980
+Sua unidade é ampère por metro quadrado.
+
+138
+00:06:58,020 --> 00:07:01,740
+Escolhemos um pequeno elemento de volume
+dentro dessa distribuição.
+
+139
+00:07:01,780 --> 00:07:05,780
+Sua posição é a posição da fonte,
+representada por erre linha,
+
+140
+00:07:05,820 --> 00:07:06,940
+ou "erre linha".
+
+141
+00:07:06,980 --> 00:07:09,920
+Também escolhemos o ponto onde queremos
+calcular o campo.
+
+142
+00:07:09,990 --> 00:07:13,470
+Essa é a posição do observador,
+representada por erre.
+
+143
+00:07:13,510 --> 00:07:17,170
+O vetor que liga a fonte ao observador é
+erre maiúsculo,
+
+144
+00:07:17,210 --> 00:07:19,250
+igual a erre menos erre linha.
+
+145
+00:07:19,290 --> 00:07:21,540
+Ele aponta da fonte para o observador.
+
+146
+00:07:21,580 --> 00:07:26,630
+Já erre maiúsculo, sem caráter vetorial,
+representa apenas o módulo desse vetor:
+
+147
+00:07:26,670 --> 00:07:28,370
+a distância entre os dois pontos.
+
+148
+00:07:28,570 --> 00:07:33,267
+Biot–Savart soma as contribuições de todos os pequenos
+elementos de volume da distribuição
+
+149
+00:07:33,307 --> 00:07:34,260
+de corrente.
+
+150
+00:07:34,300 --> 00:07:39,344
+Para simplificar a notação, vamos chamar o fator geométrico
+o vetor separação dividido
+
+151
+00:07:39,384 --> 00:07:41,310
+pela distância ao cubo de efe.
+
+152
+00:07:41,350 --> 00:07:44,330
+Esse símbolo é apenas uma abreviação
+matemática.
+
+153
+00:07:44,430 --> 00:07:45,710
+Não representa força.
+
+154
+00:07:45,880 --> 00:07:50,890
+Agora calculamos o divergente do campo magnético em relação
+à posição do observador.
+
+155
+00:07:50,930 --> 00:07:55,600
+Como estamos derivando em relação ao observador e integrando
+sobre a posição da fonte,
+
+156
+00:07:55,640 --> 00:07:59,970
+podemos levar esse operador para dentro da
+integral nas condições consideradas.
+
+157
+00:08:00,080 --> 00:08:04,680
+Usamos então uma identidade vetorial para
+o divergente de um produto vetorial.
+
+158
+00:08:04,720 --> 00:08:06,190
+Ela produz dois termos.
+
+159
+00:08:06,370 --> 00:08:11,015
+No primeiro, aparece uma derivada da densidade de corrente
+da fonte em relação à
+
+160
+00:08:11,055 --> 00:08:12,410
+posição do observador.
+
+161
+00:08:12,450 --> 00:08:16,450
+Mas a densidade jota de erre linha depende
+da posição da fonte.
+
+162
+00:08:16,570 --> 00:08:20,120
+Mudar o observador não altera a corrente
+naquele ponto-fonte.
+
+163
+00:08:20,190 --> 00:08:21,760
+Por isso esse termo é zero.
+
+164
+00:08:21,800 --> 00:08:24,650
+Isso é apenas independência entre as duas
+variáveis.
+
+165
+00:08:24,730 --> 00:08:27,980
+O segundo termo contém o rotacional do
+fator geométrico.
+
+166
+00:08:28,210 --> 00:08:33,110
+Mas esse fator pode ser escrito como menos
+o gradiente do inverso da distância.
+
+167
+00:08:33,210 --> 00:08:35,510
+E o rotacional de um gradiente é nulo.
+
+168
+00:08:35,550 --> 00:08:40,697
+Assim, os dois termos desaparecem e recuperamos o divergente
+do campo magnético igual
+
+169
+00:08:40,737 --> 00:08:41,570
+a zero.
+
+170
+00:08:41,610 --> 00:08:46,160
+Existe uma sutileza na singularidade em
+que fonte e observador coincidem,
+
+171
+00:08:46,200 --> 00:08:48,660
+e vamos tratá-la explicitamente daqui a
+pouco.
+
+172
+00:08:48,870 --> 00:08:54,070
+Antes, vale separar muito bem duas ideias
+que parecem semelhantes na notação,
+
+173
+00:08:54,110 --> 00:08:56,900
+mas têm justificativas completamente
+diferentes.
+
+174
+00:08:57,190 --> 00:09:01,850
+O operador nabla sem marca deriva em
+relação à posição do observador.
+
+175
+00:09:01,910 --> 00:09:04,940
+Se movemos o observador e mantemos a fonte
+fixa,
+
+176
+00:09:04,980 --> 00:09:09,990
+a separação muda, mas a densidade de corrente naquele ponto-
+fonte permanece a mesma.
+
+177
+00:09:10,030 --> 00:09:14,490
+Por isso uma derivada de jota de erre
+linha em relação a erre é zero.
+
+178
+00:09:14,590 --> 00:09:17,060
+Agora considere o operador nabla linha.
+
+179
+00:09:17,100 --> 00:09:20,090
+Ele deriva em relação à posição da própria
+fonte.
+
+180
+00:09:20,130 --> 00:09:23,300
+Nesse caso, quando percorremos a
+distribuição de corrente,
+
+181
+00:09:23,340 --> 00:09:25,820
+jota pode mudar de um ponto para outro.
+
+182
+00:09:25,860 --> 00:09:28,970
+Esse campo pode variar espacialmente e,
+ainda assim,
+
+183
+00:09:29,010 --> 00:09:30,830
+permanecer estacionário no tempo.
+
+184
+00:09:31,060 --> 00:09:33,620
+As linhas verdes mostram linhas de
+corrente.
+
+185
+00:09:33,660 --> 00:09:38,180
+Os marcadores representam convencionalmente o transporte de
+carga ao longo delas.
+
+186
+00:09:38,330 --> 00:09:43,330
+Agora escolhemos uma célula muito pequena dentro desse campo
+e ampliamos essa região.
+
+187
+00:09:43,390 --> 00:09:46,650
+Nesse pequeno volume, entra tanta corrente
+quanto sai.
+
+188
+00:09:46,690 --> 00:09:48,820
+Não existe acúmulo líquido de carga.
+
+189
+00:09:48,860 --> 00:09:53,680
+Por isso, em magnetostática, o divergente
+da densidade de corrente é zero.
+
+190
+00:09:53,760 --> 00:09:56,790
+Perceba que agora a justificativa é
+física.
+
+191
+00:09:57,000 --> 00:10:02,140
+Antes, a derivada zerava porque fonte e
+observador eram variáveis independentes.
+
+192
+00:10:02,350 --> 00:10:07,540
+Agora, o divergente da corrente zera por conservação de
+carga no regime estacionário.
+
+193
+00:10:07,580 --> 00:10:10,990
+Com essa diferença clara, podemos voltar à
+lei de Biot–Savart.
+
+194
+00:10:11,080 --> 00:10:15,670
+Desta vez, em vez do divergente, calculamos o rotacional do
+campo magnético.
+
+195
+00:10:15,890 --> 00:10:21,100
+Nosso objetivo é descobrir como a circulação local do campo
+está relacionada à corrente.
+
+196
+00:10:21,300 --> 00:10:25,430
+A identidade vetorial correspondente
+expande o produto em quatro termos.
+
+197
+00:10:25,630 --> 00:10:30,522
+Dois deles envolvem derivadas da densidade
+de corrente da fonte em relação à posição
+
+198
+00:10:30,562 --> 00:10:31,590
+do observador.
+
+199
+00:10:31,630 --> 00:10:33,790
+Pela independência que acabamos de
+discutir,
+
+200
+00:10:33,830 --> 00:10:35,610
+esses dois termos desaparecem.
+
+201
+00:10:35,780 --> 00:10:38,210
+Ainda não usamos conservação de carga
+aqui.
+
+202
+00:10:38,260 --> 00:10:39,570
+Sobram duas parcelas.
+
+203
+00:10:39,740 --> 00:10:44,940
+A primeira contém a densidade de corrente multiplicada pelo
+divergente do fator geométrico.
+
+204
+00:10:45,160 --> 00:10:49,100
+A segunda envolve a variação desse fator
+na direção da corrente.
+
+205
+00:10:49,280 --> 00:10:50,700
+Vamos começar pela primeira.
+
+206
+00:10:50,740 --> 00:10:55,530
+O fator geométrico efe aponta radialmente
+para fora da posição da fonte.
+
+207
+00:10:55,770 --> 00:10:58,810
+Sua intensidade diminui com o quadrado da
+distância.
+
+208
+00:10:58,940 --> 00:11:01,330
+Em qualquer região que não contenha a
+fonte,
+
+209
+00:11:01,370 --> 00:11:02,800
+seu divergente é zero.
+
+210
+00:11:02,840 --> 00:11:07,170
+Mas algo especial acontece quando
+envolvemos a fonte com uma esfera.
+
+211
+00:11:07,210 --> 00:11:11,790
+Na superfície dessa esfera, a intensidade
+cai como um sobre o raio ao quadrado.
+
+212
+00:11:11,860 --> 00:11:16,320
+Ao mesmo tempo, a área cresce como quatro
+pi vezes o raio ao quadrado.
+
+213
+00:11:16,360 --> 00:11:18,050
+Os dois fatores se cancelam.
+
+214
+00:11:18,090 --> 00:11:19,820
+O fluxo total é sempre quatro pi.
+
+215
+00:11:19,860 --> 00:11:24,400
+Mesmo se fizermos a esfera encolher cada
+vez mais em torno da fonte,
+
+216
+00:11:24,440 --> 00:11:26,160
+esse fluxo não desaparece.
+
+217
+00:11:26,270 --> 00:11:29,860
+Temos então uma contribuição concentrada
+em um único ponto.
+
+218
+00:11:30,030 --> 00:11:34,460
+E é exatamente esse tipo de objeto que a
+delta de Dirac descreve.
+
+219
+00:11:34,560 --> 00:11:39,445
+Em três dimensões, escrevemos uma delta centrada quando a
+posição da fonte coincide
+
+220
+00:11:39,485 --> 00:11:41,360
+com a posição do observador.
+
+221
+00:11:41,400 --> 00:11:46,290
+A delta de Dirac não deve ser pensada como
+uma função comum com um "valor infinito".
+
+222
+00:11:46,410 --> 00:11:50,780
+Ela é uma distribuição definida pela
+maneira como atua dentro de uma integral.
+
+223
+00:11:50,820 --> 00:11:54,880
+Depois que o fator quatro pi cancela o
+quatro pi presente em Biot–Savart,
+
+224
+00:11:54,920 --> 00:11:58,450
+sobra uma integral envolvendo a densidade
+de corrente e a delta.
+
+225
+00:11:58,610 --> 00:12:00,020
+Fixamos o observador.
+
+226
+00:12:00,060 --> 00:12:04,760
+Agora imagine pesos cada vez mais concentrados nas fontes
+próximas desse ponto.
+
+227
+00:12:04,910 --> 00:12:07,900
+As contribuições mais afastadas perdem
+importância.
+
+228
+00:12:08,000 --> 00:12:12,514
+No limite, apenas a contribuição em que a
+posição da fonte coincide com a posição
+
+229
+00:12:12,554 --> 00:12:14,110
+do observador sobrevive.
+
+230
+00:12:14,170 --> 00:12:16,920
+A delta seleciona exatamente esse valor.
+
+231
+00:12:16,960 --> 00:12:21,050
+A integral se reduz à densidade de
+corrente no próprio ponto observado.
+
+232
+00:12:21,150 --> 00:12:26,810
+Portanto, a primeira parcela do rotacional produz mi zero
+vezes a densidade de corrente.
+
+233
+00:12:27,060 --> 00:12:29,080
+Ainda precisamos verificar a segunda.
+
+234
+00:12:29,120 --> 00:12:33,336
+O fator geométrico depende apenas da diferença entre a
+posição do observador e a
+
+235
+00:12:33,376 --> 00:12:34,460
+posição da fonte.
+
+236
+00:12:34,660 --> 00:12:37,120
+Se deslocamos os dois pontos juntos da
+mesma forma,
+
+237
+00:12:37,160 --> 00:12:38,960
+essa diferença não muda.
+
+238
+00:12:39,000 --> 00:12:43,463
+Por isso, derivar o fator em relação ao
+observador equivale a derivá-lo em relação
+
+239
+00:12:43,503 --> 00:12:45,050
+à fonte com sinal oposto.
+
+240
+00:12:45,240 --> 00:12:47,410
+Fazemos essa troca na segunda parcela.
+
+241
+00:12:47,450 --> 00:12:51,940
+O sinal negativo que já estava presente se
+combina com o novo sinal negativo.
+
+242
+00:12:52,050 --> 00:12:55,670
+Agora usamos a regra do produto e uma
+integração por partes,
+
+243
+00:12:55,900 --> 00:12:57,430
+componente por componente.
+
+244
+00:12:57,650 --> 00:13:00,200
+O resultado se separa em duas
+contribuições.
+
+245
+00:13:00,370 --> 00:13:02,430
+A primeira é um termo de superfície.
+
+246
+00:13:02,590 --> 00:13:06,080
+Como estamos considerando uma distribuição
+de corrente localizada,
+
+247
+00:13:06,120 --> 00:13:10,355
+podemos escolher essa superfície suficientemente distante
+para que nenhuma corrente
+
+248
+00:13:10,395 --> 00:13:11,350
+a atravesse.
+
+249
+00:13:11,390 --> 00:13:13,190
+Esse termo então desaparece.
+
+250
+00:13:13,390 --> 00:13:18,320
+A segunda contribuição contém o divergente
+da densidade de corrente.
+
+251
+00:13:18,460 --> 00:13:21,380
+Aqui, finalmente, entra a equação da
+continuidade.
+
+252
+00:13:21,550 --> 00:13:26,460
+Ela relaciona o divergente da corrente à
+variação temporal da densidade de carga.
+
+253
+00:13:26,500 --> 00:13:30,825
+No regime estacionário, a densidade de carga não está se
+acumulando nem diminuindo
+
+254
+00:13:30,865 --> 00:13:31,760
+com o tempo.
+
+255
+00:13:31,800 --> 00:13:35,080
+Logo, o divergente da densidade de
+corrente é zero.
+
+256
+00:13:35,120 --> 00:13:37,120
+As duas contribuições desaparecem.
+
+257
+00:13:37,380 --> 00:13:43,116
+E sobra a relação local fundamental: o rotacional do campo
+magnético é igual à permeabilidade
+
+258
+00:13:43,156 --> 00:13:46,120
+magnética do vácuo vezes a densidade de
+corrente.
+
+259
+00:13:46,400 --> 00:13:49,920
+Essa é a forma local da lei de Ampère na
+magnetostática.
+
+260
+00:13:50,180 --> 00:13:51,840
+É uma relação ponto a ponto.
+
+261
+00:13:51,950 --> 00:13:56,240
+Daqui a pouco vamos transformá-la numa
+relação global usando o teorema de Stokes.
+
+262
+00:13:56,510 --> 00:13:59,240
+Mas antes podemos voltar ao paradoxo do
+fio.
+
+263
+00:13:59,320 --> 00:14:02,150
+Em vez de um fio matematicamente sem
+espessura,
+
+264
+00:14:02,190 --> 00:14:04,630
+considere agora um cilindro de raio
+finito.
+
+265
+00:14:04,770 --> 00:14:09,200
+Dentro dele, a densidade de corrente é
+uniforme e aponta ao longo do eixo.
+
+266
+00:14:09,350 --> 00:14:13,550
+Por simetria, o campo magnético continua
+circulando em torno desse eixo.
+
+267
+00:14:13,650 --> 00:14:17,590
+Agora podemos usar diretamente a lei local
+que acabamos de demonstrar.
+
+268
+00:14:17,630 --> 00:14:22,624
+Uma pequena sonda inteiramente dentro do
+condutor mede rotacional igual a mi zero
+
+269
+00:14:22,664 --> 00:14:24,770
+vezes a densidade de corrente.
+
+270
+00:14:24,930 --> 00:14:27,770
+Quando essa sonda atravessa parcialmente a
+fronteira,
+
+271
+00:14:27,810 --> 00:14:31,370
+apenas parte de sua área contém corrente,
+e a leitura diminui.
+
+272
+00:14:31,410 --> 00:14:35,010
+Quando fica completamente fora, a leitura
+local vai a zero.
+
+273
+00:14:35,050 --> 00:14:39,460
+Agora escrevemos a equação diferencial
+para a componente azimutal do campo.
+
+274
+00:14:39,620 --> 00:14:42,360
+Multiplicando pela distância radial e
+integrando,
+
+275
+00:14:42,400 --> 00:14:44,460
+aparece uma constante de integração.
+
+276
+00:14:44,500 --> 00:14:48,814
+Ao dividir novamente pela distância, essa
+constante produz um termo proporcional
+
+277
+00:14:48,854 --> 00:14:50,460
+a um sobre a distância.
+
+278
+00:14:50,670 --> 00:14:52,660
+Mas esse termo explodiria no eixo.
+
+279
+00:14:52,830 --> 00:14:56,370
+Para um fio com densidade de corrente
+distribuída de maneira regular,
+
+280
+00:14:56,410 --> 00:14:59,640
+não existe motivo físico para o campo
+divergir no centro.
+
+281
+00:14:59,680 --> 00:15:03,650
+Portanto, a regularidade exige que essa
+constante seja zero.
+
+282
+00:15:03,720 --> 00:15:07,710
+Dentro do condutor, o campo cresce
+linearmente com a distância ao eixo.
+
+283
+00:15:07,860 --> 00:15:11,790
+Ele começa em zero no centro e atinge seu
+maior valor na superfície.
+
+284
+00:15:11,930 --> 00:15:14,960
+E o gráfico acompanha exatamente esse
+comportamento.
+
+285
+00:15:15,100 --> 00:15:17,260
+Agora vamos para fora do cilindro.
+
+286
+00:15:17,300 --> 00:15:19,400
+Ali não há densidade de corrente.
+
+287
+00:15:19,470 --> 00:15:23,820
+A solução assume a forma de uma constante
+dividida pela distância radial.
+
+288
+00:15:23,860 --> 00:15:26,520
+Mas ainda não sabemos o valor dessa
+constante.
+
+289
+00:15:26,590 --> 00:15:29,280
+Para escolhê-la, usamos a fronteira do
+condutor.
+
+290
+00:15:29,320 --> 00:15:34,296
+Nosso modelo possui corrente volumétrica no interior e
+nenhuma camada singular adicional
+
+291
+00:15:34,336 --> 00:15:36,710
+de corrente exatamente na superfície.
+
+292
+00:15:36,800 --> 00:15:40,990
+Nessas condições, o campo deve se
+encontrar continuamente dos dois lados.
+
+293
+00:15:41,120 --> 00:15:45,320
+O ramo externo precisa passar pelo mesmo
+ponto em que termina a reta interna.
+
+294
+00:15:45,360 --> 00:15:47,360
+Essa condição fixa a constante.
+
+295
+00:15:47,470 --> 00:15:52,036
+A corrente total é igual à densidade de
+corrente multiplicada pela área da seção
+
+296
+00:15:52,076 --> 00:15:52,740
+circular.
+
+297
+00:15:52,780 --> 00:15:56,820
+Substituindo esse resultado, recuperamos
+novamente o campo do fio fino:
+
+298
+00:15:56,860 --> 00:16:01,760
+mi zero vezes a corrente, dividido por
+dois pi vezes a distância ao eixo.
+
+299
+00:16:01,960 --> 00:16:03,930
+Agora temos o perfil completo.
+
+300
+00:16:04,130 --> 00:16:06,720
+Dentro do fio, o campo cresce linearmente.
+
+301
+00:16:07,000 --> 00:16:09,540
+Fora, diminui inversamente com a
+distância.
+
+302
+00:16:09,610 --> 00:16:11,810
+O valor máximo ocorre na superfície.
+
+303
+00:16:11,930 --> 00:16:15,810
+E, mesmo onde não existe corrente local e
+o rotacional é zero,
+
+304
+00:16:15,850 --> 00:16:18,270
+o campo magnético continua existindo.
+
+305
+00:16:18,350 --> 00:16:20,340
+Agora vamos comprimir esse fio.
+
+306
+00:16:20,380 --> 00:16:23,610
+Diminuímos seu raio, mas mantemos a
+corrente total fixa.
+
+307
+00:16:23,650 --> 00:16:25,560
+A área da seção fica menor.
+
+308
+00:16:25,600 --> 00:16:29,720
+Para conservar a mesma corrente, a
+densidade de corrente precisa aumentar.
+
+309
+00:16:29,760 --> 00:16:31,960
+No gráfico, o campo externo não muda.
+
+310
+00:16:32,000 --> 00:16:34,570
+Já o valor máximo, localizado na
+superfície,
+
+311
+00:16:34,610 --> 00:16:37,390
+cresce e se aproxima cada vez mais do
+eixo.
+
+312
+00:16:37,490 --> 00:16:41,665
+No limite em que o raio tende a zero, toda
+a corrente fica concentrada sobre uma
+
+313
+00:16:41,705 --> 00:16:42,140
+linha.
+
+314
+00:16:42,180 --> 00:16:45,510
+Agora usamos uma delta de Dirac em duas
+dimensões,
+
+315
+00:16:45,570 --> 00:16:47,550
+nas direções transversais ao fio.
+
+316
+00:16:47,590 --> 00:16:51,720
+Ela é diferente da delta tridimensional
+que apareceu no núcleo de Biot–Savart.
+
+317
+00:16:51,760 --> 00:16:54,480
+Aqui o eixo do fio continua se estendendo.
+
+318
+00:16:54,520 --> 00:16:58,040
+Quando integramos essa densidade singular
+sobre a seção transversal,
+
+319
+00:16:58,080 --> 00:16:59,770
+recuperamos a corrente total.
+
+320
+00:16:59,810 --> 00:17:03,090
+E finalmente resolvemos o paradoxo da
+abertura.
+
+321
+00:17:03,160 --> 00:17:05,210
+Fora do eixo, o rotacional é zero.
+
+322
+00:17:05,250 --> 00:17:08,800
+Mas no eixo existe uma contribuição
+singular concentrada.
+
+323
+00:17:08,840 --> 00:17:14,030
+Portanto, um laço que envolve o fio não
+está simplesmente "somando zeros".
+
+324
+00:17:14,270 --> 00:17:17,650
+Ele envolve a região singular onde a
+corrente está localizada.
+
+325
+00:17:17,710 --> 00:17:21,100
+É por isso que a circulação global pode
+ser diferente de zero.
+
+326
+00:17:21,250 --> 00:17:26,768
+Agora temos uma lei local: rotacional do campo magnético
+igual a mi zero vezes densidade
+
+327
+00:17:26,808 --> 00:17:27,808
+de corrente.
+
+328
+00:17:27,940 --> 00:17:30,720
+Vamos transformá-la numa relação para a
+corrente total.
+
+329
+00:17:30,760 --> 00:17:32,390
+Escolhemos um caminho fechado.
+
+330
+00:17:32,490 --> 00:17:34,230
+Chamemos esse contorno de cê.
+
+331
+00:17:34,270 --> 00:17:38,470
+E escolhemos uma superfície esse maiúsculo
+apoiada nessa mesma borda.
+
+332
+00:17:38,510 --> 00:17:42,658
+A orientação do percurso e a normal da
+superfície estão ligadas pela regra da mão
+
+333
+00:17:42,698 --> 00:17:43,410
+direita.
+
+334
+00:17:43,450 --> 00:17:47,210
+Integramos a componente normal do
+rotacional sobre toda a superfície.
+
+335
+00:17:47,340 --> 00:17:51,850
+Do outro lado, integramos a densidade de
+corrente através dessa mesma superfície.
+
+336
+00:17:52,000 --> 00:17:55,640
+Cada pequeno elemento de área conta quanto
+de corrente o atravessa.
+
+337
+00:17:55,780 --> 00:17:58,060
+Se a corrente atravessa no sentido da
+normal,
+
+338
+00:17:58,100 --> 00:17:59,720
+sua contribuição é positiva.
+
+339
+00:17:59,760 --> 00:18:02,200
+Se atravessa no sentido oposto, é
+negativa.
+
+340
+00:18:02,260 --> 00:18:05,710
+Correntes que não atravessam a superfície
+não entram nessa soma.
+
+341
+00:18:05,790 --> 00:18:09,190
+A soma algébrica dessas contribuições é a
+corrente envolvida.
+
+342
+00:18:09,230 --> 00:18:13,901
+Assim, a integral do rotacional sobre a superfície é igual à
+permeabilidade do vácuo
+
+343
+00:18:13,941 --> 00:18:15,690
+vezes a corrente envolvida.
+
+344
+00:18:15,730 --> 00:18:18,530
+Agora falta transformar a superfície em
+sua borda.
+
+345
+00:18:18,570 --> 00:18:21,430
+E é exatamente isso que faz o teorema de
+Stokes.
+
+346
+00:18:21,620 --> 00:18:24,120
+Comecemos com duas pequenas células
+vizinhas.
+
+347
+00:18:24,260 --> 00:18:27,770
+Percorremos ambas com orientações
+compatíveis com a mesma normal.
+
+348
+00:18:27,810 --> 00:18:32,433
+Na aresta compartilhada, uma célula percorre o trecho num
+sentido e a outra percorre
+
+349
+00:18:32,473 --> 00:18:33,650
+no sentido contrário.
+
+350
+00:18:33,690 --> 00:18:35,820
+Essas duas contribuições se cancelam.
+
+351
+00:18:35,860 --> 00:18:38,210
+Quando repetimos isso por toda a
+superfície,
+
+352
+00:18:38,250 --> 00:18:42,020
+todas as bordas internas aparecem duas
+vezes com sentidos opostos.
+
+353
+00:18:42,210 --> 00:18:43,830
+Elas se cancelam aos pares.
+
+354
+00:18:43,940 --> 00:18:46,410
+No limite de uma divisão cada vez mais
+fina,
+
+355
+00:18:46,450 --> 00:18:50,731
+a soma das pequenas circulações locais se
+transforma na integral do rotacional sobre
+
+356
+00:18:50,771 --> 00:18:51,780
+a superfície.
+
+357
+00:18:51,850 --> 00:18:54,300
+E depois de todos os cancelamentos
+internos,
+
+358
+00:18:54,370 --> 00:18:56,160
+sobra apenas o contorno externo.
+
+359
+00:18:56,340 --> 00:18:58,670
+Esse é o teorema de Stokes.
+
+360
+00:18:58,760 --> 00:19:03,370
+Aplicando-o à lei local que encontramos, chegamos à forma
+integral da lei de Ampère:
+
+361
+00:19:03,410 --> 00:19:08,306
+a circulação do campo magnético ao longo de um caminho
+fechado é igual à permeabilidade
+
+362
+00:19:08,346 --> 00:19:11,100
+magnética do vácuo vezes a corrente
+envolvida.
+
+363
+00:19:11,140 --> 00:19:13,090
+Continuamos falando de magnetostática.
+
+364
+00:19:13,130 --> 00:19:15,490
+E existe ainda uma pergunta importante.
+
+365
+00:19:15,530 --> 00:19:20,058
+Se mantemos a mesma borda, podemos trocar
+uma superfície plana por uma superfície
+
+366
+00:19:20,098 --> 00:19:20,590
+curva?
+
+367
+00:19:20,630 --> 00:19:21,150
+Sim.
+
+368
+00:19:21,190 --> 00:19:24,880
+Considere duas superfícies diferentes
+apoiadas no mesmo contorno.
+
+369
+00:19:24,920 --> 00:19:27,540
+Juntas, elas formam uma superfície
+fechada.
+
+370
+00:19:27,580 --> 00:19:31,670
+No regime estacionário, o divergente da
+densidade de corrente é zero.
+
+371
+00:19:31,710 --> 00:19:36,940
+Portanto, o fluxo líquido de corrente através dessa
+superfície fechada também é zero.
+
+372
+00:19:36,980 --> 00:19:41,484
+Isso significa que a corrente líquida que
+atravessa uma superfície é exatamente a
+
+373
+00:19:41,524 --> 00:19:43,140
+mesma que atravessa a outra.
+
+374
+00:19:43,180 --> 00:19:47,523
+Então a corrente envolvida pelo contorno
+não depende de qual superfície escolhemos
+
+375
+00:19:47,563 --> 00:19:48,700
+para calculá-la.
+
+376
+00:19:48,760 --> 00:19:50,950
+Agora temos uma lei poderosa.
+
+377
+00:19:51,190 --> 00:19:53,150
+Mas é importante separar duas coisas.
+
+378
+00:19:53,370 --> 00:19:57,920
+A lei de Ampère é verdadeira na magnetostática mesmo para um
+contorno complicado.
+
+379
+00:19:57,960 --> 00:20:01,630
+Isso não significa que ela sempre seja
+útil para calcular o campo.
+
+380
+00:20:01,720 --> 00:20:05,890
+Se direção e intensidade variam de forma
+desconhecida ao longo do caminho,
+
+381
+00:20:05,930 --> 00:20:10,130
+conhecer apenas a circulação não permite
+descobrir o campo ponto a ponto.
+
+382
+00:20:10,230 --> 00:20:14,389
+Como já vimos com a lei de Gauss, é a simetria que
+transforma a lei numa ferramenta
+
+383
+00:20:14,429 --> 00:20:15,300
+de cálculo.
+
+384
+00:20:15,340 --> 00:20:19,190
+A estratégia é: primeiro, reconhecer as
+simetrias da fonte.
+
+385
+00:20:19,390 --> 00:20:22,420
+Depois, determinar a direção possível do
+campo.
+
+386
+00:20:22,520 --> 00:20:25,920
+Em seguida, escolher um caminho que
+explore essas simetrias.
+
+387
+00:20:25,990 --> 00:20:28,700
+E finalmente calcular a corrente
+envolvida.
+
+388
+00:20:28,740 --> 00:20:31,390
+Vamos aplicar esse método a quatro
+geometrias.
+
+389
+00:20:31,550 --> 00:20:33,650
+Primeiro, o fio reto e infinito.
+
+390
+00:20:33,780 --> 00:20:36,380
+A fonte não muda se girarmos ao redor do
+fio.
+
+391
+00:20:36,420 --> 00:20:39,180
+Também não muda se deslocarmos ao longo de
+seu eixo.
+
+392
+00:20:39,290 --> 00:20:43,836
+Por isso, o campo depende apenas da distância radial e
+aponta tangencialmente às
+
+393
+00:20:43,876 --> 00:20:44,880
+circunferências.
+
+394
+00:20:45,150 --> 00:20:48,170
+Escolhemos então uma circunferência
+centrada no fio.
+
+395
+00:20:48,210 --> 00:20:52,720
+Em todos os seus pontos, campo magnético e
+elemento de caminho são paralelos.
+
+396
+00:20:52,890 --> 00:20:56,730
+Além disso, a intensidade do campo é
+constante ao longo do percurso.
+
+397
+00:20:56,840 --> 00:20:58,410
+Ela pode sair da integral.
+
+398
+00:20:58,450 --> 00:21:03,160
+A circulação se torna intensidade do campo
+vezes comprimento da circunferência.
+
+399
+00:21:03,250 --> 00:21:06,660
+Esse comprimento é dois pi vezes a
+distância radial.
+
+400
+00:21:06,700 --> 00:21:09,730
+A corrente envolvida é simplesmente a
+corrente do fio.
+
+401
+00:21:09,770 --> 00:21:14,280
+Então obtemos novamente o campo igual a mi
+zero vezes a corrente,
+
+402
+00:21:14,320 --> 00:21:16,860
+dividido por dois pi vezes a distância.
+
+403
+00:21:16,970 --> 00:21:19,560
+É exatamente o resultado de Biot–Savart.
+
+404
+00:21:19,650 --> 00:21:24,100
+Mas agora ele apareceu com uma conta muito
+mais curta graças à simetria.
+
+405
+00:21:24,250 --> 00:21:27,250
+Segundo exemplo: uma lâmina infinita de
+corrente.
+
+406
+00:21:27,390 --> 00:21:30,340
+Aqui a corrente está distribuída sobre uma
+superfície.
+
+407
+00:21:30,420 --> 00:21:32,910
+Usamos uma densidade superficial de
+corrente,
+
+408
+00:21:32,950 --> 00:21:34,210
+em ampères por metro.
+
+409
+00:21:34,250 --> 00:21:38,600
+Ela nos diz quanta corrente atravessa uma
+largura perpendicular ao movimento.
+
+410
+00:21:38,710 --> 00:21:41,120
+Vista de perfil, a corrente sai da tela.
+
+411
+00:21:41,160 --> 00:21:45,559
+Pela regra da mão direita, o campo aponta para um lado acima
+da lâmina e para o sentido
+
+412
+00:21:45,599 --> 00:21:46,599
+oposto abaixo.
+
+413
+00:21:46,660 --> 00:21:47,940
+Os módulos são iguais.
+
+414
+00:21:48,050 --> 00:21:50,910
+Escolhemos um caminho retangular que
+atravessa a lâmina.
+
+415
+00:21:50,960 --> 00:21:54,360
+Nos lados perpendiculares ao campo, o
+produto escalar é zero.
+
+416
+00:21:54,400 --> 00:21:57,900
+Nos dois lados paralelos, campo e caminho
+têm a mesma direção.
+
+417
+00:21:57,940 --> 00:22:01,140
+Cada trecho contribui com intensidade
+vezes comprimento.
+
+418
+00:22:01,180 --> 00:22:03,670
+Por isso aparecem duas contribuições
+iguais.
+
+419
+00:22:03,790 --> 00:22:06,070
+Agora calculamos a corrente envolvida.
+
+420
+00:22:06,110 --> 00:22:10,660
+Se a densidade superficial vale cá e o
+caminho cobre uma largura ele maiúsculo,
+
+421
+00:22:10,700 --> 00:22:13,750
+a corrente envolvida vale cá vezes ele
+maiúsculo.
+
+422
+00:22:13,790 --> 00:22:17,640
+Esse mesmo comprimento aparece dos dois
+lados da equação e cancela.
+
+423
+00:22:17,680 --> 00:22:22,600
+O resultado é: o campo vale mi zero vezes
+a densidade superficial de corrente,
+
+424
+00:22:22,640 --> 00:22:23,660
+dividido por dois.
+
+425
+00:22:23,750 --> 00:22:27,980
+No modelo de lâmina infinita, esse campo
+não depende da distância à superfície.
+
+426
+00:22:28,190 --> 00:22:31,410
+Terceiro caso: o solenoide ideal infinito.
+
+427
+00:22:31,460 --> 00:22:35,580
+Um solenoide é formado por muitas espiras
+distribuídas ao longo de um eixo.
+
+428
+00:22:35,710 --> 00:22:39,300
+Chamamos de ene o número de espiras por
+unidade de comprimento.
+
+429
+00:22:39,370 --> 00:22:41,280
+Todas conduzem a mesma corrente.
+
+430
+00:22:41,390 --> 00:22:45,760
+Pela simetria do modelo infinito ideal, o
+campo deve apontar ao longo do eixo.
+
+431
+00:22:45,860 --> 00:22:49,120
+Mas ainda não vamos assumir seu valor nem
+dentro nem fora.
+
+432
+00:22:49,160 --> 00:22:52,140
+Primeiro escolhemos um retângulo
+completamente externo.
+
+433
+00:22:52,180 --> 00:22:54,280
+Os lados transversais não contribuem.
+
+434
+00:22:54,320 --> 00:22:58,600
+Nos dois lados paralelos ao eixo, as
+contribuições entram com sentidos opostos.
+
+435
+00:22:58,790 --> 00:23:00,810
+E esse caminho não envolve corrente.
+
+436
+00:23:00,920 --> 00:23:05,102
+A lei de Ampère mostra então que o campo
+externo possui o mesmo valor em diferentes
+
+437
+00:23:05,142 --> 00:23:06,260
+distâncias do eixo.
+
+438
+00:23:06,300 --> 00:23:08,530
+Ou seja, é constante nessa região.
+
+439
+00:23:08,570 --> 00:23:11,130
+Agora usamos a condição física no
+infinito.
+
+440
+00:23:11,230 --> 00:23:14,100
+Considerando apenas o campo produzido pelo
+enrolamento,
+
+441
+00:23:14,140 --> 00:23:17,510
+ele deve tender a zero quando nos
+afastamos indefinidamente.
+
+442
+00:23:17,610 --> 00:23:20,850
+A única constante compatível com esse
+limite é zero.
+
+443
+00:23:20,890 --> 00:23:23,240
+Portanto, para o solenoide infinito ideal,
+
+444
+00:23:23,280 --> 00:23:24,950
+o campo externo é nulo.
+
+445
+00:23:24,990 --> 00:23:27,070
+Só agora usamos um segundo caminho.
+
+446
+00:23:27,110 --> 00:23:29,130
+Um lado fica dentro do solenoide.
+
+447
+00:23:29,170 --> 00:23:30,350
+O outro fica fora.
+
+448
+00:23:30,390 --> 00:23:34,750
+O trecho externo não contribui porque acabamos de mostrar
+que o campo ali é zero.
+
+449
+00:23:34,790 --> 00:23:37,190
+Os lados transversais também não
+contribuem.
+
+450
+00:23:37,230 --> 00:23:38,980
+Sobra apenas o trecho interno.
+
+451
+00:23:39,110 --> 00:23:42,150
+Se existem ene espiras por unidade de
+comprimento,
+
+452
+00:23:42,190 --> 00:23:47,140
+um trecho de comprimento ele maiúsculo
+intercepta ene vezes ele espiras.
+
+453
+00:23:47,210 --> 00:23:49,380
+Cada uma transporta a mesma corrente.
+
+454
+00:23:49,440 --> 00:23:54,850
+Logo, a corrente envolvida é ene vezes ele
+vezes a corrente de cada espira.
+
+455
+00:23:54,890 --> 00:23:57,650
+Substituindo na lei de Ampère, o
+comprimento cancela.
+
+456
+00:23:57,690 --> 00:24:02,688
+O campo interno é igual a mi zero vezes o número de espiras
+por unidade de comprimento
+
+457
+00:24:02,728 --> 00:24:03,880
+vezes a corrente.
+
+458
+00:24:03,920 --> 00:24:05,920
+E ele é uniforme no modelo ideal.
+
+459
+00:24:05,970 --> 00:24:09,210
+Num solenoide real e finito, a situação é
+diferente.
+
+460
+00:24:09,280 --> 00:24:13,030
+Existem efeitos nas extremidades e um
+campo de retorno no exterior.
+
+461
+00:24:13,070 --> 00:24:17,680
+O resultado de campo externo exatamente
+zero pertence ao modelo infinito ideal.
+
+462
+00:24:17,730 --> 00:24:19,650
+Nosso último exemplo é o toroide.
+
+463
+00:24:19,710 --> 00:24:23,460
+Podemos pensar nele como um solenoide
+curvado até formar um anel.
+
+464
+00:24:23,500 --> 00:24:27,730
+Aqui usamos ene maiúsculo para representar
+o número total de espiras.
+
+465
+00:24:27,820 --> 00:24:32,240
+Pela simetria do toroide ideal, escolhemos
+caminhos circulares centrados no eixo.
+
+466
+00:24:32,340 --> 00:24:36,670
+Na seção mostrada, as correntes aparecem
+saindo da tela de um lado e entrando pelo
+
+467
+00:24:36,710 --> 00:24:37,280
+outro.
+
+468
+00:24:37,320 --> 00:24:41,360
+O campo é tangente a esses círculos e tem
+módulo constante em cada um.
+
+469
+00:24:41,400 --> 00:24:42,790
+Existem três regiões.
+
+470
+00:24:42,960 --> 00:24:44,590
+Primeiro, o vazio central.
+
+471
+00:24:44,630 --> 00:24:47,430
+Um caminho nessa região não envolve
+corrente líquida.
+
+472
+00:24:47,470 --> 00:24:50,740
+Com a simetria do toroide ideal, isso
+implica campo nulo.
+
+473
+00:24:50,780 --> 00:24:54,010
+Agora escolhemos um caminho dentro da
+região do enrolamento,
+
+474
+00:24:54,090 --> 00:24:56,130
+entre o raio interno e o raio externo.
+
+475
+00:24:56,170 --> 00:25:00,696
+Esse caminho envolve uma contribuição de
+corrente para cada uma das ene maiúsculo
+
+476
+00:25:00,736 --> 00:25:01,480
+espiras.
+
+477
+00:25:01,520 --> 00:25:06,630
+Portanto, a corrente envolvida vale ene
+maiúsculo vezes a corrente de cada espira.
+
+478
+00:25:06,670 --> 00:25:12,610
+A circulação fornece então um campo igual a mi zero vezes
+ene maiúsculo vezes a corrente,
+
+479
+00:25:12,650 --> 00:25:15,740
+dividido por dois pi vezes a distância
+radial.
+
+480
+00:25:15,780 --> 00:25:18,860
+Finalmente, considere um caminho além do
+raio externo.
+
+481
+00:25:18,900 --> 00:25:22,260
+A superfície é atravessada por correntes
+em sentidos opostos.
+
+482
+00:25:22,460 --> 00:25:24,200
+A soma algébrica se cancela.
+
+483
+00:25:24,240 --> 00:25:26,340
+A corrente envolvida líquida é zero.
+
+484
+00:25:26,380 --> 00:25:29,390
+No toroide ideal, o campo externo também é
+zero.
+
+485
+00:25:29,430 --> 00:25:33,000
+O gráfico reúne as três regiões: zero no
+vazio central,
+
+486
+00:25:33,040 --> 00:25:35,640
+queda inversa dentro do enrolamento, e
+zero fora.
+
+487
+00:25:35,680 --> 00:25:38,600
+Agora podemos enxergar a estrutura
+completa.
+
+488
+00:25:38,790 --> 00:25:43,820
+Na eletrostática, o divergente do campo elétrico é
+proporcional à densidade de carga.
+
+489
+00:25:43,860 --> 00:25:46,320
+E o rotacional do campo elétrico é zero.
+
+490
+00:25:46,360 --> 00:25:50,110
+Na magnetostática, o divergente do campo
+magnético é zero.
+
+491
+00:25:50,150 --> 00:25:54,410
+E o rotacional do campo magnético é
+proporcional à densidade de corrente.
+
+492
+00:25:54,490 --> 00:25:56,570
+Esses qualificadores são importantes.
+
+493
+00:25:56,860 --> 00:26:00,030
+Estamos falando de eletrostática e
+magnetostática.
+
+494
+00:26:00,260 --> 00:26:04,683
+Quando os campos variam no tempo, as equações completas de
+Maxwell acrescentam novos
+
+495
+00:26:04,723 --> 00:26:05,500
+termos.
+
+496
+00:26:05,540 --> 00:26:08,890
+Então, se você quiser guardar uma ideia
+central deste vídeo,
+
+497
+00:26:08,930 --> 00:26:11,530
+não tente decorar quatro fórmulas
+separadas.
+
+498
+00:26:11,840 --> 00:26:15,710
+Fio, lâmina, solenoide e toroide obedecem
+à mesma lei.
+
+499
+00:26:15,750 --> 00:26:17,470
+O que muda é a simetria.
+
+500
+00:26:17,510 --> 00:26:18,760
+Reconheça a fonte.
+
+501
+00:26:18,800 --> 00:26:21,060
+Descubra que direção o campo pode ter.
+
+502
+00:26:21,100 --> 00:26:23,490
+Escolha um caminho que explore essa
+simetria.
+
+503
+00:26:23,530 --> 00:26:25,310
+E determine a corrente envolvida.
+
+504
+00:26:25,350 --> 00:26:27,360
+Essa é a lógica da lei de Ampère.
+
+505
+00:26:27,450 --> 00:26:29,200
+Mas ainda ficou uma última pergunta.
+
+506
+00:26:29,340 --> 00:26:32,420
+Vimos que o divergente do campo magnético
+é sempre zero.
+
+507
+00:26:32,460 --> 00:26:36,890
+Existe uma forma de construir um campo que
+já tenha essa propriedade automaticamente?
+
+508
+00:26:37,000 --> 00:26:37,670
+Existe.
+
+509
+00:26:37,710 --> 00:26:41,260
+O divergente de qualquer rotacional é
+identicamente zero.
+
+510
+00:26:41,300 --> 00:26:45,490
+Isso sugere representar o campo magnético
+como o rotacional de outro campo:
+
+511
+00:26:45,530 --> 00:26:47,330
+o potencial vetor magnético.
+
+512
+00:26:47,470 --> 00:26:50,010
+E essa será a próxima etapa da nossa
+sequência.
+
+513
+00:26:50,190 --> 00:26:53,835
+Se esse vídeo te ajudou a entender não
+apenas como usar a lei de Ampère,
+
+514
+00:26:53,875 --> 00:26:56,180
+mas de onde ela vem e por que ela
+funciona,
+
+515
+00:26:56,220 --> 00:27:00,270
+deixa o like e se inscreve no Parallax Lab
+para acompanhar os próximos capítulos.
+
+516
+00:27:00,310 --> 00:27:01,720
+Nos vemos no próximo vídeo.

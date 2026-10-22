@@ -1,0 +1,126 @@
+1
+00:00:00,000 --> 00:00:04,790
+O fator geométrico efe aponta radialmente
+para fora da posição da fonte.
+
+2
+00:00:05,030 --> 00:00:08,070
+Sua intensidade diminui com o quadrado da
+distância.
+
+3
+00:00:08,200 --> 00:00:10,590
+Em qualquer região que não contenha a
+fonte,
+
+4
+00:00:10,630 --> 00:00:12,060
+seu divergente é zero.
+
+5
+00:00:12,100 --> 00:00:16,430
+Mas algo especial acontece quando
+envolvemos a fonte com uma esfera.
+
+6
+00:00:16,470 --> 00:00:21,050
+Na superfície dessa esfera, a intensidade
+cai como um sobre o raio ao quadrado.
+
+7
+00:00:21,120 --> 00:00:25,580
+Ao mesmo tempo, a área cresce como quatro
+pi vezes o raio ao quadrado.
+
+8
+00:00:25,620 --> 00:00:27,310
+Os dois fatores se cancelam.
+
+9
+00:00:27,350 --> 00:00:29,080
+O fluxo total é sempre quatro pi.
+
+10
+00:00:29,120 --> 00:00:33,660
+Mesmo se fizermos a esfera encolher cada
+vez mais em torno da fonte,
+
+11
+00:00:33,700 --> 00:00:35,420
+esse fluxo não desaparece.
+
+12
+00:00:35,530 --> 00:00:39,120
+Temos então uma contribuição concentrada
+em um único ponto.
+
+13
+00:00:39,290 --> 00:00:43,720
+E é exatamente esse tipo de objeto que a
+delta de Dirac descreve.
+
+14
+00:00:43,820 --> 00:00:48,705
+Em três dimensões, escrevemos uma delta centrada quando a
+posição da fonte coincide
+
+15
+00:00:48,745 --> 00:00:50,620
+com a posição do observador.
+
+16
+00:00:50,660 --> 00:00:55,550
+A delta de Dirac não deve ser pensada como
+uma função comum com um "valor infinito".
+
+17
+00:00:55,670 --> 00:01:00,040
+Ela é uma distribuição definida pela
+maneira como atua dentro de uma integral.
+
+18
+00:01:00,080 --> 00:01:04,140
+Depois que o fator quatro pi cancela o
+quatro pi presente em Biot–Savart,
+
+19
+00:01:04,180 --> 00:01:07,710
+sobra uma integral envolvendo a densidade
+de corrente e a delta.
+
+20
+00:01:07,870 --> 00:01:09,280
+Fixamos o observador.
+
+21
+00:01:09,320 --> 00:01:14,020
+Agora imagine pesos cada vez mais concentrados nas fontes
+próximas desse ponto.
+
+22
+00:01:14,170 --> 00:01:17,160
+As contribuições mais afastadas perdem
+importância.
+
+23
+00:01:17,260 --> 00:01:21,774
+No limite, apenas a contribuição em que a
+posição da fonte coincide com a posição
+
+24
+00:01:21,814 --> 00:01:23,370
+do observador sobrevive.
+
+25
+00:01:23,430 --> 00:01:26,180
+A delta seleciona exatamente esse valor.
+
+26
+00:01:26,220 --> 00:01:30,310
+A integral se reduz à densidade de
+corrente no próprio ponto observado.
+
+27
+00:01:30,410 --> 00:01:36,070
+Portanto, a primeira parcela do rotacional produz mi zero
+vezes a densidade de corrente.

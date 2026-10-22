@@ -1,0 +1,1370 @@
+{
+ "abertura": {
+  "leg1": 3.72,
+  "eq": 9.41,
+  "leg2": 12.32,
+  "pergunta": 47.9
+ },
+ "eventos": {
+  "5": {
+   "alvo": 47.9,
+   "janela": 5.55,
+   "prox": 64.76,
+   "tipo": "secao",
+   "texto": "pergunta"
+  },
+  "7": {
+   "alvo": 64.76,
+   "janela": 1.67,
+   "prox": 75.98,
+   "tipo": "LE",
+   "texto": "O campo de Biot–Savart circula em volta do fio; o sentido ve"
+  },
+  "8": {
+   "alvo": 75.98,
+   "janela": 6.87,
+   "prox": 83.34,
+   "tipo": "EQ",
+   "texto": "\\mathbf J\\ \\longrightarrow\\ \\text{Biot--Savart}\\ \\longrighta"
+  },
+  "12": {
+   "alvo": 83.34,
+   "janela": 3.47,
+   "prox": 85.66,
+   "tipo": "LE",
+   "texto": "Agora a pergunta se inverte: dado $\\mathbf B$, o que a geome"
+  },
+  "14": {
+   "alvo": 85.66,
+   "janela": 3.1,
+   "prox": 91.65,
+   "tipo": "TI",
+   "texto": "O que a geometria de B revela?"
+  },
+  "17": {
+   "alvo": 91.65,
+   "janela": 6.87,
+   "prox": 98.06,
+   "tipo": "LE",
+   "texto": "Para ver como $B$ muda com a distância, olhe de cima"
+  },
+  "18": {
+   "alvo": 98.06,
+   "janela": 0.67,
+   "prox": 105.41,
+   "tipo": "LE",
+   "texto": "Em $P$, $\\mathbf B$ é tangente ao círculo de raio $s$: direç"
+  },
+  "19": {
+   "alvo": 105.41,
+   "janela": 7.67,
+   "prox": 122.61,
+   "tipo": "EQ",
+   "texto": "\\mathbf B=\\frac{\\mu_0 I}{2\\pi s}\\,\\hat{\\boldsymbol\\phi}"
+  },
+  "22": {
+   "alvo": 122.61,
+   "janela": 5.02,
+   "prox": 132.08,
+   "tipo": "LE",
+   "texto": "O rotacional desse campo: em cilíndricas, a componente ao lo"
+  },
+  "24": {
+   "alvo": 132.08,
+   "janela": 4.47,
+   "prox": 134.02,
+   "tipo": "LE",
+   "texto": "Entra o valor de Biot–Savart no lugar de $B_\\phi$"
+  },
+  "26": {
+   "alvo": 134.02,
+   "janela": 1.97,
+   "prox": 138.55,
+   "tipo": "LE",
+   "texto": "O $s$ que multiplica cancela o $s$ do denominador"
+  },
+  "27": {
+   "alvo": 138.55,
+   "janela": 2.8,
+   "prox": 140.13,
+   "tipo": "EQ",
+   "texto": "(\\nabla\\times\\mathbf B)_z=\\frac{1}{s}\\frac{d}{ds}\\left(\\frac"
+  },
+  "29": {
+   "alvo": 140.13,
+   "janela": 10.97,
+   "prox": 153.61,
+   "tipo": "LE",
+   "texto": "$s\\,B_\\phi$ não depende de $s$: afaste $P$ do raio inicial $"
+  },
+  "31": {
+   "alvo": 153.61,
+   "janela": 5.67,
+   "prox": 158.76,
+   "tipo": "LE",
+   "texto": "A derivada de uma constante é zero"
+  },
+  "34": {
+   "alvo": 158.76,
+   "janela": 2.67,
+   "prox": 161.38,
+   "tipo": "LE",
+   "texto": "$\\mathbf B$ só tem componente $\\phi$ e só depende de $s$: as"
+  },
+  "35": {
+   "alvo": 161.38,
+   "janela": 2.8,
+   "prox": 169.14,
+   "tipo": "EQ",
+   "texto": "\\nabla\\times\\mathbf B=\\mathbf 0\\qquad(s>0)"
+  },
+  "36": {
+   "alvo": 169.14,
+   "janela": 5.37,
+   "prox": 176.27,
+   "tipo": "LE",
+   "texto": "Linhas de campo curvas e, mesmo assim, rotacional zero em to"
+  },
+  "39": {
+   "alvo": 176.27,
+   "janela": 4.95,
+   "prox": 180.88,
+   "tipo": "TI",
+   "texto": "Rotacional: uma medida local"
+  },
+  "40": {
+   "alvo": 180.88,
+   "janela": 2.67,
+   "prox": 196.14,
+   "tipo": "LE",
+   "texto": "Uma sonda: um laço pequeno de área $A$ em torno de $P$, com "
+  },
+  "41": {
+   "alvo": 196.14,
+   "janela": 6.47,
+   "prox": 217.22,
+   "tipo": "LE",
+   "texto": "A circulação por unidade de área, com o laço encolhendo, med"
+  },
+  "44": {
+   "alvo": 217.22,
+   "janela": 6.57,
+   "prox": 224.75,
+   "tipo": "LE",
+   "texto": "Por que zero aqui? Deforme a sonda em dois arcos e dois raio"
+  },
+  "45": {
+   "alvo": 224.75,
+   "janela": 0.67,
+   "prox": 238.54,
+   "tipo": "LE",
+   "texto": "Dentro o campo é mais forte, mas o arco é mais curto; fora, "
+  },
+  "46": {
+   "alvo": 238.54,
+   "janela": 3.7,
+   "prox": 247.84,
+   "tipo": "EQ",
+   "texto": "\\oint\\mathbf B\\cdot d\\boldsymbol\\ell=\\left(s\\,B_\\phi\\right)_"
+  },
+  "47": {
+   "alvo": 247.84,
+   "janela": 8.47,
+   "prox": 256.46,
+   "tipo": "LE",
+   "texto": "Como $s\\,B_\\phi$ é o mesmo nos dois arcos, as duas parcelas "
+  },
+  "50": {
+   "alvo": 256.46,
+   "janela": 10.67,
+   "prox": 262.12,
+   "tipo": "LE",
+   "texto": "Gire a sonda: cada orientação de $\\hat{\\mathbf n}$ mede uma "
+  },
+  "51": {
+   "alvo": 262.12,
+   "janela": 6.37,
+   "prox": 265.57,
+   "tipo": "LE",
+   "texto": "Três orientações, três componentes, todas nulas: o vetor rot"
+  },
+  "54": {
+   "alvo": 265.57,
+   "janela": 5.25,
+   "prox": 270.66,
+   "tipo": "TI",
+   "texto": "Do laço local ao laço global"
+  },
+  "56": {
+   "alvo": 270.66,
+   "janela": 5.87,
+   "prox": 274.39,
+   "tipo": "LE",
+   "texto": "Aumente o laço até o eixo: enquanto o fio fica de fora, nenh"
+  },
+  "57": {
+   "alvo": 274.39,
+   "janela": 3.07,
+   "prox": 285.93,
+   "tipo": "LE",
+   "texto": "Sobre o próprio fio $\\mathbf B$ diverge: a circulação não es"
+  },
+  "59": {
+   "alvo": 285.93,
+   "janela": 9.14,
+   "prox": 291.63,
+   "tipo": "LE",
+   "texto": "Passado o eixo, a corrente $I$ atravessa o laço"
+  },
+  "63": {
+   "alvo": 291.63,
+   "janela": 0.67,
+   "prox": 306.37,
+   "tipo": "LE",
+   "texto": "No círculo centrado, $B_\\phi$ é o mesmo em todo ponto e acom"
+  },
+  "64": {
+   "alvo": 306.37,
+   "janela": 5.6,
+   "prox": 315.09,
+   "tipo": "EQ",
+   "texto": "B_\\phi(s)\\,2\\pi s=\\mu_0 I"
+  },
+  "66": {
+   "alvo": 315.09,
+   "janela": 4.57,
+   "prox": 322.51,
+   "tipo": "LE",
+   "texto": "Rotacional zero em todo ponto fora do fio, circulação global"
+  },
+  "67": {
+   "alvo": 322.51,
+   "janela": 4.1,
+   "prox": 326.61,
+   "tipo": "MA",
+   "texto": "n04_zoom_eixo"
+  },
+  "68": {
+   "alvo": 326.61,
+   "janela": 3.4,
+   "prox": 341.01,
+   "tipo": "secao",
+   "texto": "divergente"
+  },
+  "70": {
+   "alvo": 341.01,
+   "janela": 3.45,
+   "prox": 345.42,
+   "tipo": "LE",
+   "texto": "De perto, numa região pequena, o campo do fio é quase unifor"
+  },
+  "71": {
+   "alvo": 345.42,
+   "janela": 2.97,
+   "prox": 349.89,
+   "tipo": "LE",
+   "texto": "As normais $\\hat{\\mathbf n}$ apontam para fora do volume, em"
+  },
+  "72": {
+   "alvo": 349.89,
+   "janela": 6.14,
+   "prox": 356.0,
+   "tipo": "LE",
+   "texto": "Na face de entrada, $\\mathbf B$ aponta contra $\\hat{\\mathbf "
+  },
+  "74": {
+   "alvo": 356.0,
+   "janela": 2.67,
+   "prox": 359.58,
+   "tipo": "LE",
+   "texto": "Nas outras quatro faces, $\\mathbf B$ corre paralelo a elas: "
+  },
+  "75": {
+   "alvo": 359.58,
+   "janela": 6.07,
+   "prox": 362.89,
+   "tipo": "EQ",
+   "texto": "-\\Phi_B+\\Phi_B=0"
+  },
+  "79": {
+   "alvo": 362.89,
+   "janela": 3.87,
+   "prox": 371.7,
+   "tipo": "EQ",
+   "texto": "\\nabla\\cdot\\mathbf B=\\lim_{V\\to0}\\frac{1}{V}\\oint_S\\mathbf B"
+  },
+  "81": {
+   "alvo": 371.7,
+   "janela": 10.2,
+   "prox": 375.72,
+   "tipo": "EQ",
+   "texto": "\\nabla\\cdot\\mathbf B=0"
+  },
+  "83": {
+   "alvo": 375.72,
+   "janela": 4.27,
+   "prox": 386.85,
+   "tipo": "LE",
+   "texto": "Compare com uma carga: as linhas de $\\mathbf E$ só saem da s"
+  },
+  "86": {
+   "alvo": 386.85,
+   "janela": 13.8,
+   "prox": 399.01,
+   "tipo": "LE",
+   "texto": "A carga é fonte de $\\mathbf E$. Para $\\mathbf B$ não existe "
+  },
+  "90": {
+   "alvo": 399.01,
+   "janela": 3.85,
+   "prox": 448.57,
+   "tipo": "LE",
+   "texto": "Uma distribuição de corrente $\\mathbf J$ localizada: ponto-f"
+  },
+  "91": {
+   "alvo": 448.57,
+   "janela": 4.57,
+   "prox": 454.3,
+   "tipo": "EQ",
+   "texto": "\\mathbf B(\\mathbf r)=\\frac{\\mu_0}{4\\pi}\\int\\mathbf J(\\mathbf"
+  },
+  "93": {
+   "alvo": 454.3,
+   "janela": 10.12,
+   "prox": 465.88,
+   "tipo": "EQ",
+   "texto": "\\mathbf R=\\mathbf r-\\mathbf r'\\qquad\\mathbf F\\equiv\\frac{\\ma"
+  },
+  "97": {
+   "alvo": 465.88,
+   "janela": 8.44,
+   "prox": 480.08,
+   "tipo": "LE",
+   "texto": "Tome o divergente dos dois lados"
+  },
+  "102": {
+   "alvo": 480.08,
+   "janela": 2.4,
+   "prox": 484.72,
+   "tipo": "EQ",
+   "texto": "\\nabla\\cdot(\\mathbf A\\times\\mathbf C)=\\mathbf C\\cdot(\\nabla\\"
+  },
+  "103": {
+   "alvo": 484.72,
+   "janela": 2.17,
+   "prox": 486.37,
+   "tipo": "LE",
+   "texto": "O divergente de um produto vetorial se abre em dois termos"
+  },
+  "104": {
+   "alvo": 486.37,
+   "janela": 8.75,
+   "prox": 492.45,
+   "tipo": "EQ",
+   "texto": "\\nabla\\cdot\\mathbf B(\\mathbf r)&=\\frac{\\mu_0}{4\\pi}\\int\\Big["
+  },
+  "106": {
+   "alvo": 492.45,
+   "janela": 5.37,
+   "prox": 504.73,
+   "tipo": "EQ",
+   "texto": "\\nabla\\times\\mathbf J(\\mathbf r')=\\mathbf 0"
+  },
+  "108": {
+   "alvo": 504.73,
+   "janela": 8.37,
+   "prox": 508.21,
+   "tipo": "EQ",
+   "texto": "\\nabla\\cdot\\mathbf B(\\mathbf r)=-\\frac{\\mu_0}{4\\pi}\\int\\math"
+  },
+  "111": {
+   "alvo": 508.21,
+   "janela": 8.62,
+   "prox": 515.55,
+   "tipo": "EQ",
+   "texto": "\\mathbf F=\\frac{\\mathbf R}{R^3}=-\\nabla\\frac{1}{R}"
+  },
+  "114": {
+   "alvo": 515.55,
+   "janela": 6.4,
+   "prox": 521.61,
+   "tipo": "EQ",
+   "texto": "\\nabla\\cdot\\mathbf B(\\mathbf r)=-\\frac{\\mu_0}{4\\pi}\\int\\math"
+  },
+  "116": {
+   "alvo": 521.61,
+   "janela": 7.97,
+   "prox": 528.87,
+   "tipo": "LE",
+   "texto": "Da própria lei de Biot–Savart: $\\nabla\\cdot\\mathbf B=0$"
+  },
+  "120": {
+   "alvo": 528.87,
+   "janela": 7.85,
+   "prox": 541.91,
+   "tipo": "LE",
+   "texto": "$\\nabla$ deriva movendo o observador $\\mathbf r$, com a font"
+  },
+  "122": {
+   "alvo": 541.91,
+   "janela": 5.07,
+   "prox": 554.59,
+   "tipo": "LE",
+   "texto": "$\\mathbf R$ e $\\mathbf F$ mudam; $\\mathbf J(\\mathbf r')$ não"
+  },
+  "125": {
+   "alvo": 554.59,
+   "janela": 9.07,
+   "prox": 571.06,
+   "tipo": "LE",
+   "texto": "$\\nabla'$ deriva movendo a fonte $\\mathbf r'$: aí $\\mathbf J"
+  },
+  "127": {
+   "alvo": 571.06,
+   "janela": 3.77,
+   "prox": 578.33,
+   "tipo": "LE",
+   "texto": "$\\mathbf J$ é estacionário: as cargas percorrem as linhas de"
+  },
+  "128": {
+   "alvo": 578.33,
+   "janela": 9.24,
+   "prox": 583.39,
+   "tipo": "LE",
+   "texto": "Escolha uma célula tão pequena que $\\mathbf J$ seja quase un"
+  },
+  "130": {
+   "alvo": 583.39,
+   "janela": 2.97,
+   "prox": 593.76,
+   "tipo": "LE",
+   "texto": "Normais para fora em cada face: a corrente entra por uma fac"
+  },
+  "131": {
+   "alvo": 593.76,
+   "janela": 13.44,
+   "prox": 607.58,
+   "tipo": "LE",
+   "texto": "O que entra é igual ao que sai: nenhuma carga se acumula na "
+  },
+  "137": {
+   "alvo": 607.58,
+   "janela": 8.45,
+   "prox": 621.3,
+   "tipo": "EQ",
+   "texto": "\\mathbf B(\\mathbf r)=\\frac{\\mu_0}{4\\pi}\\int\\mathbf J(\\mathbf"
+  },
+  "142": {
+   "alvo": 621.3,
+   "janela": 13.57,
+   "prox": 625.63,
+   "tipo": "EQ",
+   "texto": "\\nabla\\times(\\mathbf A\\times\\mathbf C)&=\\mathbf A(\\nabla\\cdo"
+  },
+  "146": {
+   "alvo": 625.63,
+   "janela": 8.79,
+   "prox": 638.26,
+   "tipo": "LE",
+   "texto": "Dois termos derivam $\\mathbf J(\\mathbf r')$ em relação a $\\m"
+  },
+  "149": {
+   "alvo": 638.26,
+   "janela": 15.92,
+   "prox": 650.74,
+   "tipo": "EQ",
+   "texto": "\\nabla\\times\\mathbf B(\\mathbf r)=\\frac{\\mu_0}{4\\pi}\\int\\Big["
+  },
+  "155": {
+   "alvo": 650.74,
+   "janela": 6.52,
+   "prox": 662.84,
+   "tipo": "LE",
+   "texto": "$\\mathbf F=\\mathbf R/R^3$, com $R=|\\mathbf R|$, é o núcleo d"
+  },
+  "158": {
+   "alvo": 662.84,
+   "janela": 2.1,
+   "prox": 679.86,
+   "tipo": "EQ",
+   "texto": "\\oint\\mathbf F\\cdot d\\mathbf a=\\frac{1}{R^2}\\,4\\pi R^2=4\\pi"
+  },
+  "159": {
+   "alvo": 679.86,
+   "janela": 5.54,
+   "prox": 690.03,
+   "tipo": "LE",
+   "texto": "Mas uma esfera em volta de $\\mathbf r'$ recebe fluxo $4\\pi$,"
+  },
+  "161": {
+   "alvo": 690.03,
+   "janela": 4.1,
+   "prox": 701.4,
+   "tipo": "EQ",
+   "texto": "\\nabla\\cdot\\mathbf F=4\\pi\\,\\delta^3(\\mathbf r-\\mathbf r')"
+  },
+  "163": {
+   "alvo": 701.4,
+   "janela": 5.55,
+   "prox": 710.82,
+   "tipo": "EQ",
+   "texto": "\\nabla\\times\\mathbf B(\\mathbf r)&=\\frac{\\mu_0}{4\\pi}\\int\\mat"
+  },
+  "164": {
+   "alvo": 710.82,
+   "janela": 9.84,
+   "prox": 718.61,
+   "tipo": "LE",
+   "texto": "Os dois $4\\pi$ se cancelam"
+  },
+  "168": {
+   "alvo": 718.61,
+   "janela": 4.37,
+   "prox": 720.06,
+   "tipo": "LE",
+   "texto": "Cada ponto-fonte $\\mathbf r'$ contribui com $\\mathbf J(\\math"
+  },
+  "169": {
+   "alvo": 720.06,
+   "janela": 6.34,
+   "prox": 728.0,
+   "tipo": "LE",
+   "texto": "O delta é um pico em $\\mathbf r'=\\mathbf r$, com integral 1"
+  },
+  "171": {
+   "alvo": 728.0,
+   "janela": 9.17,
+   "prox": 736.96,
+   "tipo": "LE",
+   "texto": "Estreite o pico: as contribuições somem uma a uma, de fora p"
+  },
+  "173": {
+   "alvo": 736.96,
+   "janela": 4.17,
+   "prox": 741.15,
+   "tipo": "LE",
+   "texto": "Sobrevive uma única contribuição: a do ponto-fonte que coinc"
+  },
+  "175": {
+   "alvo": 741.15,
+   "janela": 12.82,
+   "prox": 747.06,
+   "tipo": "EQ",
+   "texto": "\\nabla\\times\\mathbf B(\\mathbf r)&=\\mu_0\\,\\mathbf J(\\mathbf r"
+  },
+  "180": {
+   "alvo": 747.06,
+   "janela": 4.35,
+   "prox": 754.66,
+   "tipo": "LE",
+   "texto": "$\\mathbf F$ depende só da diferença $\\mathbf r-\\mathbf r'$"
+  },
+  "182": {
+   "alvo": 754.66,
+   "janela": 9.14,
+   "prox": 759.0,
+   "tipo": "LE",
+   "texto": "Mover observador e fonte juntos não muda $\\mathbf R$"
+  },
+  "184": {
+   "alvo": 759.0,
+   "janela": 8.59,
+   "prox": 765.24,
+   "tipo": "EQ",
+   "texto": "\\frac{\\partial\\mathbf F}{\\partial x}=-\\frac{\\partial\\mathbf "
+  },
+  "189": {
+   "alvo": 765.24,
+   "janela": 7.37,
+   "prox": 772.05,
+   "tipo": "EQ",
+   "texto": "\\nabla\\times\\mathbf B(\\mathbf r)&=\\mu_0\\,\\mathbf J(\\mathbf r"
+  },
+  "193": {
+   "alvo": 772.05,
+   "janela": 4.44,
+   "prox": 777.65,
+   "tipo": "LE",
+   "texto": "Regra do produto, para cada componente $F_i$"
+  },
+  "196": {
+   "alvo": 777.65,
+   "janela": 7.25,
+   "prox": 782.59,
+   "tipo": "EQ",
+   "texto": "\\int(\\mathbf J\\cdot\\nabla')F_i\\,d\\tau'&=\\oint_\\infty F_i\\,\\m"
+  },
+  "198": {
+   "alvo": 782.59,
+   "janela": 6.87,
+   "prox": 793.39,
+   "tipo": "LE",
+   "texto": "Corrente localizada: na superfície distante não passa corren"
+  },
+  "201": {
+   "alvo": 793.39,
+   "janela": 13.68,
+   "prox": 798.46,
+   "tipo": "LE",
+   "texto": "Escolha uma célula tão pequena que $\\mathbf J$ seja quase un"
+  },
+  "205": {
+   "alvo": 798.46,
+   "janela": 2.12,
+   "prox": 806.5,
+   "tipo": "LE",
+   "texto": "Continuidade com $\\rho$ constante (magnetostática): $\\nabla'"
+  },
+  "206": {
+   "alvo": 806.5,
+   "janela": 5.3,
+   "prox": 815.12,
+   "tipo": "EQ",
+   "texto": "\\int(\\mathbf J\\cdot\\nabla')F_i\\,d\\tau'=0-0=0"
+  },
+  "208": {
+   "alvo": 815.12,
+   "janela": 4.27,
+   "prox": 817.38,
+   "tipo": "LE",
+   "texto": "Com as duas razões, e só agora, o segundo termo some"
+  },
+  "210": {
+   "alvo": 817.38,
+   "janela": 2.6,
+   "prox": 826.4,
+   "tipo": "EQ",
+   "texto": "\\nabla\\times\\mathbf B=\\mu_0\\mathbf J"
+  },
+  "211": {
+   "alvo": 826.4,
+   "janela": 13.26,
+   "prox": 839.32,
+   "tipo": "LE",
+   "texto": "A lei local da magnetostática: o rotacional de $\\mathbf B$ é"
+  },
+  "215": {
+   "alvo": 839.32,
+   "janela": 3.72,
+   "prox": 849.35,
+   "tipo": "LE",
+   "texto": "Agora a corrente ocupa um cilindro de raio $a$, com densidad"
+  },
+  "218": {
+   "alvo": 849.35,
+   "janela": 10.47,
+   "prox": 853.65,
+   "tipo": "EQ",
+   "texto": "\\mathbf B=B_\\phi(s)\\,\\hat{\\boldsymbol\\phi}"
+  },
+  "221": {
+   "alvo": 853.65,
+   "janela": 4.17,
+   "prox": 864.93,
+   "tipo": "LE",
+   "texto": "A sonda dentro do fio mede $\\mu_0 J$: onde há corrente, o ro"
+  },
+  "222": {
+   "alvo": 864.93,
+   "janela": 4.17,
+   "prox": 871.41,
+   "tipo": "LE",
+   "texto": "Quando a sonda cruza a borda, só parte dela fica no condutor"
+  },
+  "223": {
+   "alvo": 871.41,
+   "janela": 5.77,
+   "prox": 875.05,
+   "tipo": "LE",
+   "texto": "Fora do fio a mesma sonda mede zero"
+  },
+  "225": {
+   "alvo": 875.05,
+   "janela": 7.44,
+   "prox": 879.62,
+   "tipo": "LE",
+   "texto": "Dentro: a componente axial de $\\nabla\\times\\mathbf B=\\mu_0\\m"
+  },
+  "229": {
+   "alvo": 879.62,
+   "janela": 3.67,
+   "prox": 884.5,
+   "tipo": "LE",
+   "texto": "Integrar em $s$ deixa uma constante $C$ que ainda não sabemo"
+  },
+  "231": {
+   "alvo": 884.5,
+   "janela": 4.05,
+   "prox": 890.67,
+   "tipo": "EQ",
+   "texto": "B_\\phi=\\frac{\\mu_0 J}{2}\\,s+\\frac{C}{s}"
+  },
+  "232": {
+   "alvo": 890.67,
+   "janela": 3.07,
+   "prox": 899.68,
+   "tipo": "LE",
+   "texto": "Com $C\\neq0$, o termo $C/s$ explode em $s=0$: o campo no eix"
+  },
+  "233": {
+   "alvo": 899.68,
+   "janela": 1.07,
+   "prox": 903.72,
+   "tipo": "LE",
+   "texto": "Regularidade no eixo: o campo em $s=0$ é finito, o que elimi"
+  },
+  "234": {
+   "alvo": 903.72,
+   "janela": 4.97,
+   "prox": 911.93,
+   "tipo": "EQ",
+   "texto": "B_\\phi=\\frac{\\mu_0 J}{2}\\,s"
+  },
+  "236": {
+   "alvo": 911.93,
+   "janela": 6.07,
+   "prox": 915.1,
+   "tipo": "LE",
+   "texto": "A sonda e o gráfico andam juntos"
+  },
+  "240": {
+   "alvo": 915.1,
+   "janela": 6.52,
+   "prox": 919.47,
+   "tipo": "LE",
+   "texto": "Fora, $J=0$: o rotacional de $\\mathbf B$ se anula"
+  },
+  "244": {
+   "alvo": 919.47,
+   "janela": 2.1,
+   "prox": 923.86,
+   "tipo": "EQ",
+   "texto": "B_\\phi=\\frac{C_{\\rm ext}}{s}"
+  },
+  "245": {
+   "alvo": 923.86,
+   "janela": 3.17,
+   "prox": 929.32,
+   "tipo": "LE",
+   "texto": "$C$ ainda é livre: cada valor dá uma solução $C/s$"
+  },
+  "246": {
+   "alvo": 929.32,
+   "janela": 4.17,
+   "prox": 941.12,
+   "tipo": "LE",
+   "texto": "A continuidade em $s=a$ seleciona uma"
+  },
+  "247": {
+   "alvo": 941.12,
+   "janela": 7.77,
+   "prox": 947.47,
+   "tipo": "LE",
+   "texto": "Sem corrente superficial em $s=a$, $B_\\phi$ é contínuo: a cu"
+  },
+  "251": {
+   "alvo": 947.47,
+   "janela": 0.67,
+   "prox": 952.78,
+   "tipo": "LE",
+   "texto": "Em termos da corrente total $I=J\\pi a^2$, a constante deixa "
+  },
+  "252": {
+   "alvo": 952.78,
+   "janela": 5.5,
+   "prox": 961.96,
+   "tipo": "EQ",
+   "texto": "C_{\\rm ext}=\\frac{\\mu_0 I}{2\\pi}"
+  },
+  "254": {
+   "alvo": 961.96,
+   "janela": 9.77,
+   "prox": 978.35,
+   "tipo": "LE",
+   "texto": "A sonda atravessa a fronteira: o campo cresce até $s=a$ e de"
+  },
+  "258": {
+   "alvo": 978.35,
+   "janela": 6.45,
+   "prox": 985.6,
+   "tipo": "LE",
+   "texto": "Pilar: altura $J$, base $\\pi a^2$, volume $I$ ($J_0$, $I_0$:"
+  },
+  "259": {
+   "alvo": 985.6,
+   "janela": 6.17,
+   "prox": 997.49,
+   "tipo": "LE",
+   "texto": "Fora do fio nada muda; o pico de $B$ sobe e se aproxima do e"
+  },
+  "260": {
+   "alvo": 997.49,
+   "janela": 3.27,
+   "prox": 1002.18,
+   "tipo": "LE",
+   "texto": "A região onde o rotacional não é zero fica cada vez mais est"
+  },
+  "262": {
+   "alvo": 1002.18,
+   "janela": 2.8,
+   "prox": 1014.52,
+   "tipo": "EQ",
+   "texto": "\\mathbf J\\ \\longrightarrow\\ I\\,\\delta(x)\\,\\delta(y)\\,\\hat{\\m"
+  },
+  "263": {
+   "alvo": 1014.52,
+   "janela": 0.67,
+   "prox": 1019.81,
+   "tipo": "LE",
+   "texto": "No limite, a corrente vive só sobre o eixo: um delta bidimen"
+  },
+  "264": {
+   "alvo": 1019.81,
+   "janela": 7.6,
+   "prox": 1028.84,
+   "tipo": "EQ",
+   "texto": "\\nabla\\times\\mathbf B=\\mu_0 I\\,\\delta(x)\\,\\delta(y)\\,\\hat{\\m"
+  },
+  "266": {
+   "alvo": 1028.84,
+   "janela": 8.87,
+   "prox": 1041.25,
+   "tipo": "LE",
+   "texto": "Fora do eixo o rotacional é zero; ele inteiro está concentra"
+  },
+  "270": {
+   "alvo": 1041.25,
+   "janela": 4.65,
+   "prox": 1050.76,
+   "tipo": "EQ",
+   "texto": "\\nabla\\times\\mathbf B=\\mu_0\\mathbf J"
+  },
+  "272": {
+   "alvo": 1050.76,
+   "janela": 5.27,
+   "prox": 1054.27,
+   "tipo": "LE",
+   "texto": "Primeiro a borda $C$, com um sentido de percurso"
+  },
+  "273": {
+   "alvo": 1054.27,
+   "janela": 2.97,
+   "prox": 1058.51,
+   "tipo": "LE",
+   "texto": "A superfície $S$ nasce da borda: $\\partial S=C$"
+  },
+  "275": {
+   "alvo": 1058.51,
+   "janela": 3.17,
+   "prox": 1063.45,
+   "tipo": "LE",
+   "texto": "Mão direita: dedos no sentido de $C$, polegar na normal de $"
+  },
+  "277": {
+   "alvo": 1063.45,
+   "janela": 4.97,
+   "prox": 1072.0,
+   "tipo": "LE",
+   "texto": "Integre os dois lados sobre $S$"
+  },
+  "279": {
+   "alvo": 1072.0,
+   "janela": 7.67,
+   "prox": 1085.79,
+   "tipo": "LE",
+   "texto": "$\\mathbf J\\cdot d\\mathbf a$ só não é zero onde a corrente fu"
+  },
+  "281": {
+   "alvo": 1085.79,
+   "janela": 2.9,
+   "prox": 1089.23,
+   "tipo": "EQ",
+   "texto": "\\int_S\\mathbf J\\cdot d\\mathbf a=I_{\\rm enc}"
+  },
+  "282": {
+   "alvo": 1089.23,
+   "janela": 5.1,
+   "prox": 1095.73,
+   "tipo": "EQ",
+   "texto": "\\int_S(\\nabla\\times\\mathbf B)\\cdot d\\mathbf a=\\mu_0 I_{\\rm e"
+  },
+  "286": {
+   "alvo": 1095.73,
+   "janela": 6.15,
+   "prox": 1107.81,
+   "tipo": "LE",
+   "texto": "Comece com duas sondas vizinhas, ambas circulando no sentido"
+  },
+  "287": {
+   "alvo": 1107.81,
+   "janela": 10.64,
+   "prox": 1115.86,
+   "tipo": "LE",
+   "texto": "O lado comum é percorrido uma vez para dentro e outra para f"
+  },
+  "290": {
+   "alvo": 1115.86,
+   "janela": 0.67,
+   "prox": 1123.94,
+   "tipo": "LE",
+   "texto": "Agora a superfície inteira: cada sonda mede o rotacional vez"
+  },
+  "291": {
+   "alvo": 1123.94,
+   "janela": 6.07,
+   "prox": 1131.85,
+   "tipo": "EQ",
+   "texto": "\\int_S(\\nabla\\times\\mathbf B)\\cdot d\\mathbf a=\\sum_{\\rm sond"
+  },
+  "294": {
+   "alvo": 1131.85,
+   "janela": 2.87,
+   "prox": 1136.34,
+   "tipo": "LE",
+   "texto": "Só sobra a borda: a circulação em $C$"
+  },
+  "295": {
+   "alvo": 1136.34,
+   "janela": 5.9,
+   "prox": 1138.76,
+   "tipo": "EQ",
+   "texto": "\\int_S(\\nabla\\times\\mathbf B)\\cdot d\\mathbf a=\\oint_C\\mathbf"
+  },
+  "297": {
+   "alvo": 1138.76,
+   "janela": 4.0,
+   "prox": 1151.14,
+   "tipo": "EQ",
+   "texto": "\\oint_C\\mathbf B\\cdot d\\boldsymbol\\ell=\\mu_0 I_{\\rm enc}"
+  },
+  "298": {
+   "alvo": 1151.14,
+   "janela": 4.47,
+   "prox": 1155.53,
+   "tipo": "LE",
+   "texto": "Agora sim: a Lei de Ampère, nascida de $\\nabla\\times\\mathbf "
+  },
+  "300": {
+   "alvo": 1155.53,
+   "janela": 4.17,
+   "prox": 1161.19,
+   "tipo": "LE",
+   "texto": "Troque $S$ por outra superfície com a mesma borda $C$"
+  },
+  "301": {
+   "alvo": 1161.19,
+   "janela": 3.77,
+   "prox": 1164.92,
+   "tipo": "LE",
+   "texto": "As mesmas correntes atravessam a cúpula $S_2$"
+  },
+  "304": {
+   "alvo": 1164.92,
+   "janela": 2.97,
+   "prox": 1167.58,
+   "tipo": "LE",
+   "texto": "Juntas, $S_1$ e $S_2$ fecham um volume $V$: o que entra por "
+  },
+  "305": {
+   "alvo": 1167.58,
+   "janela": 3.77,
+   "prox": 1176.98,
+   "tipo": "EQ",
+   "texto": "\\oint_{S_1-S_2}\\mathbf J\\cdot d\\mathbf a=\\int_V\\nabla\\cdot\\m"
+  },
+  "307": {
+   "alvo": 1176.98,
+   "janela": 14.17,
+   "prox": 1188.76,
+   "tipo": "EQ",
+   "texto": "I_{S_1}=I_{S_2}"
+  },
+  "311": {
+   "alvo": 1188.76,
+   "janela": 4.05,
+   "prox": 1201.72,
+   "tipo": "LE",
+   "texto": "Um contorno qualquer em volta do fio: $\\mathbf B$ (magenta) "
+  },
+  "313": {
+   "alvo": 1201.72,
+   "janela": 4.07,
+   "prox": 1210.23,
+   "tipo": "LE",
+   "texto": "Mas $\\mathbf B\\cdot d\\boldsymbol\\ell$ varia ao longo de $C$:"
+  },
+  "316": {
+   "alvo": 1210.23,
+   "janela": 20.63,
+   "prox": 1215.34,
+   "tipo": "LE",
+   "texto": "Ampère ser verdadeira $\\neq$ Ampère ser útil para calcular $"
+  },
+  "322": {
+   "alvo": 1215.34,
+   "janela": 6.47,
+   "prox": 1228.74,
+   "tipo": "LE",
+   "texto": "Com simetria, Ampère vira método: cada passo da barra prepar"
+  },
+  "325": {
+   "alvo": 1228.74,
+   "janela": 6.45,
+   "prox": 1233.78,
+   "tipo": "LE",
+   "texto": "Geometria: um fio reto, infinito, com corrente $I$"
+  },
+  "326": {
+   "alvo": 1233.78,
+   "janela": 6.57,
+   "prox": 1239.29,
+   "tipo": "LE",
+   "texto": "Girar em torno do fio ou deslizar ao longo dele não muda nad"
+  },
+  "327": {
+   "alvo": 1239.29,
+   "janela": 4.77,
+   "prox": 1245.15,
+   "tipo": "EQ",
+   "texto": "\\mathbf B=B(s)\\,\\hat{\\boldsymbol\\phi}"
+  },
+  "329": {
+   "alvo": 1245.15,
+   "janela": 4.47,
+   "prox": 1248.21,
+   "tipo": "LE",
+   "texto": "Caminho: o círculo de raio $s$ centrado no fio, onde $|\\math"
+  },
+  "331": {
+   "alvo": 1248.21,
+   "janela": 5.24,
+   "prox": 1258.45,
+   "tipo": "LE",
+   "texto": "Em cada ponto do caminho, $\\mathbf B$ e $d\\boldsymbol\\ell$ s"
+  },
+  "333": {
+   "alvo": 1258.45,
+   "janela": 3.2,
+   "prox": 1263.25,
+   "tipo": "EQ",
+   "texto": "B\\oint_C d\\ell=\\mu_0 I_{\\rm enc}"
+  },
+  "334": {
+   "alvo": 1263.25,
+   "janela": 7.77,
+   "prox": 1266.7,
+   "tipo": "LE",
+   "texto": "Desenrole o círculo: o comprimento do caminho é $2\\pi s$"
+  },
+  "336": {
+   "alvo": 1266.7,
+   "janela": 3.27,
+   "prox": 1269.77,
+   "tipo": "LE",
+   "texto": "Corrente encerrada: só o fio atravessa o disco, $I_{\\rm enc}"
+  },
+  "338": {
+   "alvo": 1269.77,
+   "janela": 2.6,
+   "prox": 1276.97,
+   "tipo": "EQ",
+   "texto": "B=\\frac{\\mu_0 I}{2\\pi s}"
+  },
+  "339": {
+   "alvo": 1276.97,
+   "janela": 7.92,
+   "prox": 1284.25,
+   "tipo": "LE",
+   "texto": "Campo do fio retilíneo infinito: a integral inteira de Biot–"
+  },
+  "342": {
+   "alvo": 1284.25,
+   "janela": 6.32,
+   "prox": 1298.71,
+   "tipo": "LE",
+   "texto": "Lâmina plana infinita com corrente superficial $K$ (A/m: cor"
+  },
+  "344": {
+   "alvo": 1298.71,
+   "janela": 5.87,
+   "prox": 1301.16,
+   "tipo": "LE",
+   "texto": "Gire para ver a lâmina de perfil: a corrente sai da tela"
+  },
+  "345": {
+   "alvo": 1301.16,
+   "janela": 4.97,
+   "prox": 1308.05,
+   "tipo": "LE",
+   "texto": "Direção: paralelo à lâmina e perpendicular a $K$; acima para"
+  },
+  "348": {
+   "alvo": 1308.05,
+   "janela": 3.97,
+   "prox": 1310.96,
+   "tipo": "LE",
+   "texto": "Caminho: retângulo que atravessa a lâmina; $L$ é a largura q"
+  },
+  "350": {
+   "alvo": 1310.96,
+   "janela": 2.77,
+   "prox": 1314.4,
+   "tipo": "LE",
+   "texto": "Nos lados curtos $\\mathbf B$ é perpendicular ao caminho: não"
+  },
+  "351": {
+   "alvo": 1314.4,
+   "janela": 4.77,
+   "prox": 1323.79,
+   "tipo": "LE",
+   "texto": "Nos lados longos $\\mathbf B$ acompanha o sentido do percurso"
+  },
+  "353": {
+   "alvo": 1323.79,
+   "janela": 3.07,
+   "prox": 1333.79,
+   "tipo": "LE",
+   "texto": "A faixa de largura $L$ dentro do retângulo carrega $I_{\\rm e"
+  },
+  "355": {
+   "alvo": 1333.79,
+   "janela": 4.07,
+   "prox": 1337.68,
+   "tipo": "EQ",
+   "texto": "2B\\,L=\\mu_0 K\\,L"
+  },
+  "357": {
+   "alvo": 1337.68,
+   "janela": 10.45,
+   "prox": 1348.19,
+   "tipo": "EQ",
+   "texto": "B=\\frac{\\mu_0 K}{2}"
+  },
+  "360": {
+   "alvo": 1348.19,
+   "janela": 2.95,
+   "prox": 1361.39,
+   "tipo": "LE",
+   "texto": "Geometria: um enrolamento longo, $n$ espiras por unidade de "
+  },
+  "361": {
+   "alvo": 1361.39,
+   "janela": 3.97,
+   "prox": 1365.86,
+   "tipo": "LE",
+   "texto": "Simetria do solenoide infinito ideal: o campo é só axial e s"
+  },
+  "363": {
+   "alvo": 1365.86,
+   "janela": 11.67,
+   "prox": 1369.16,
+   "tipo": "MA",
+   "texto": "n19_axial"
+  },
+  "365": {
+   "alvo": 1369.16,
+   "janela": 5.44,
+   "prox": 1372.18,
+   "tipo": "LE",
+   "texto": "Primeiro caminho: retângulo todo fora, com lados a distância"
+  },
+  "367": {
+   "alvo": 1372.18,
+   "janela": 4.84,
+   "prox": 1380.92,
+   "tipo": "LE",
+   "texto": "Lados verticais: $\\mathbf B\\perp d\\boldsymbol\\ell$. Sobram o"
+  },
+  "370": {
+   "alvo": 1380.92,
+   "janela": 9.87,
+   "prox": 1388.57,
+   "tipo": "EQ",
+   "texto": "B(a)L-B(b)L=0"
+  },
+  "374": {
+   "alvo": 1388.57,
+   "janela": 3.27,
+   "prox": 1400.89,
+   "tipo": "LE",
+   "texto": "Ampère deixa uma constante; longe do solenoide o campo dele "
+  },
+  "376": {
+   "alvo": 1400.89,
+   "janela": 9.67,
+   "prox": 1404.99,
+   "tipo": "EQ",
+   "texto": "B_{\\rm fora}=0"
+  },
+  "379": {
+   "alvo": 1404.99,
+   "janela": 2.37,
+   "prox": 1410.39,
+   "tipo": "LE",
+   "texto": "Segundo caminho: um lado dentro do solenoide, o outro fora"
+  },
+  "380": {
+   "alvo": 1410.39,
+   "janela": 5.77,
+   "prox": 1419.11,
+   "tipo": "LE",
+   "texto": "Fora, $B=0$; nos lados verticais, $\\mathbf B\\perp d\\boldsymb"
+  },
+  "382": {
+   "alvo": 1419.11,
+   "janela": 3.07,
+   "prox": 1434.89,
+   "tipo": "LE",
+   "texto": "Espiras atravessadas: $n$ por unidade de comprimento; em $L$"
+  },
+  "384": {
+   "alvo": 1434.89,
+   "janela": 4.37,
+   "prox": 1437.69,
+   "tipo": "EQ",
+   "texto": "B\\,L=\\mu_0\\,(nL)\\,I"
+  },
+  "386": {
+   "alvo": 1437.69,
+   "janela": 12.47,
+   "prox": 1445.97,
+   "tipo": "EQ",
+   "texto": "B_{\\rm dentro}=\\mu_0\\,n\\,I"
+  },
+  "389": {
+   "alvo": 1445.97,
+   "janela": 9.42,
+   "prox": 1457.73,
+   "tipo": "LE",
+   "texto": "Solenoide real finito: o campo se espalha nas pontas e fora "
+  },
+  "392": {
+   "alvo": 1457.73,
+   "janela": 7.25,
+   "prox": 1467.82,
+   "tipo": "LE",
+   "texto": "Geometria: $N$ espiras enroladas num anel. A corrente sobe p"
+  },
+  "393": {
+   "alvo": 1467.82,
+   "janela": 7.77,
+   "prox": 1472.34,
+   "tipo": "LE",
+   "texto": "Simetria do toroide ideal: $\\mathbf B$ circula em torno do e"
+  },
+  "395": {
+   "alvo": 1472.34,
+   "janela": 5.07,
+   "prox": 1482.96,
+   "tipo": "LE",
+   "texto": "Visto de cima: $N$ correntes saem da tela em $s=a$ e $N$ ent"
+  },
+  "396": {
+   "alvo": 1482.96,
+   "janela": 3.57,
+   "prox": 1490.78,
+   "tipo": "LE",
+   "texto": "Região $s<a$: o círculo não envolve nenhuma corrente"
+  },
+  "398": {
+   "alvo": 1490.78,
+   "janela": 3.57,
+   "prox": 1501.52,
+   "tipo": "LE",
+   "texto": "Região $a<s<b$: o círculo envolve as $N$ correntes da face i"
+  },
+  "399": {
+   "alvo": 1501.52,
+   "janela": 6.5,
+   "prox": 1515.78,
+   "tipo": "EQ",
+   "texto": "B\\,(2\\pi s)=\\mu_0 NI"
+  },
+  "402": {
+   "alvo": 1515.78,
+   "janela": 3.07,
+   "prox": 1518.9,
+   "tipo": "LE",
+   "texto": "Região $s>b$: envolve $N$ correntes saindo e $N$ entrando — "
+  },
+  "403": {
+   "alvo": 1518.9,
+   "janela": 6.5,
+   "prox": 1529.43,
+   "tipo": "EQ",
+   "texto": "B\\,(2\\pi s)=\\mu_0(NI-NI)=0\\ \\Rightarrow\\ B=0\\quad(s>b)"
+  },
+  "406": {
+   "alvo": 1529.43,
+   "janela": 24.54,
+   "prox": 1535.68,
+   "tipo": "LE",
+   "texto": "O mesmo amperiano percorre as três regiões: o gráfico acompa"
+  },
+  "411": {
+   "alvo": 1535.68,
+   "janela": 3.65,
+   "prox": 1546.36,
+   "tipo": "LE",
+   "texto": "Divergente: carga elétrica é fonte de $\\mathbf E$; não exist"
+  },
+  "412": {
+   "alvo": 1546.36,
+   "janela": 3.87,
+   "prox": 1554.49,
+   "tipo": "LE",
+   "texto": "Rotacional: $\\mathbf E$ eletrostático não circula; $\\mathbf "
+  },
+  "413": {
+   "alvo": 1554.49,
+   "janela": 9.57,
+   "prox": 1565.54,
+   "tipo": "LE",
+   "texto": "Estas formas do rotacional valem para campos que não variam "
+  },
+  "417": {
+   "alvo": 1565.54,
+   "janela": 7.65,
+   "prox": 1577.51,
+   "tipo": "LE",
+   "texto": "Fio, lâmina, solenoide, toroide: em todos, a simetria escolh"
+  },
+  "419": {
+   "alvo": 1577.51,
+   "janela": 8.77,
+   "prox": 1587.45,
+   "tipo": "LE",
+   "texto": "Não é decorar quatro campos: é ver por que existe um caminho"
+  },
+  "423": {
+   "alvo": 1587.45,
+   "janela": 3.95,
+   "prox": 1597.0,
+   "tipo": "LE",
+   "texto": "Como construir, automaticamente, um campo cujo divergente é "
+  },
+  "424": {
+   "alvo": 1597.0,
+   "janela": 8.97,
+   "prox": 1601.3,
+   "tipo": "LE",
+   "texto": "Qualquer rotacional tem divergente zero"
+  },
+  "425": {
+   "alvo": 1601.3,
+   "janela": 6.02,
+   "prox": 1610.19,
+   "tipo": "LE",
+   "texto": "$\\mathbf A$ é o potencial vetor magnético"
+  },
+  "427": {
+   "alvo": 1610.19,
+   "janela": null,
+   "prox": null,
+   "tipo": "secao",
+   "texto": "cta"
+  }
+ },
+ "n_eventos_v6": 409,
+ "dur": 1621.84
+}

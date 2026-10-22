@@ -1,0 +1,90 @@
+1
+00:00:00,000 --> 00:00:02,160
+Agora vamos para fora do cilindro.
+
+2
+00:00:02,200 --> 00:00:04,300
+Ali não há densidade de corrente.
+
+3
+00:00:04,370 --> 00:00:08,720
+A solução assume a forma de uma constante
+dividida pela distância radial.
+
+4
+00:00:08,760 --> 00:00:11,420
+Mas ainda não sabemos o valor dessa
+constante.
+
+5
+00:00:11,490 --> 00:00:14,180
+Para escolhê-la, usamos a fronteira do
+condutor.
+
+6
+00:00:14,220 --> 00:00:19,196
+Nosso modelo possui corrente volumétrica no interior e
+nenhuma camada singular adicional
+
+7
+00:00:19,236 --> 00:00:21,610
+de corrente exatamente na superfície.
+
+8
+00:00:21,700 --> 00:00:25,890
+Nessas condições, o campo deve se
+encontrar continuamente dos dois lados.
+
+9
+00:00:26,020 --> 00:00:30,220
+O ramo externo precisa passar pelo mesmo
+ponto em que termina a reta interna.
+
+10
+00:00:30,260 --> 00:00:32,260
+Essa condição fixa a constante.
+
+11
+00:00:32,370 --> 00:00:36,936
+A corrente total é igual à densidade de
+corrente multiplicada pela área da seção
+
+12
+00:00:36,976 --> 00:00:37,640
+circular.
+
+13
+00:00:37,680 --> 00:00:41,720
+Substituindo esse resultado, recuperamos
+novamente o campo do fio fino:
+
+14
+00:00:41,760 --> 00:00:46,660
+mi zero vezes a corrente, dividido por
+dois pi vezes a distância ao eixo.
+
+15
+00:00:46,860 --> 00:00:48,830
+Agora temos o perfil completo.
+
+16
+00:00:49,030 --> 00:00:51,620
+Dentro do fio, o campo cresce linearmente.
+
+17
+00:00:51,900 --> 00:00:54,440
+Fora, diminui inversamente com a
+distância.
+
+18
+00:00:54,510 --> 00:00:56,710
+O valor máximo ocorre na superfície.
+
+19
+00:00:56,830 --> 00:01:00,710
+E, mesmo onde não existe corrente local e
+o rotacional é zero,
+
+20
+00:01:00,750 --> 00:01:03,170
+o campo magnético continua existindo.

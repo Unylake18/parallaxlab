@@ -1,0 +1,100 @@
+1
+00:00:00,000 --> 00:00:05,200
+Antes, vale separar muito bem duas ideias
+que parecem semelhantes na notação,
+
+2
+00:00:05,240 --> 00:00:08,030
+mas têm justificativas completamente
+diferentes.
+
+3
+00:00:08,320 --> 00:00:12,980
+O operador nabla sem marca deriva em
+relação à posição do observador.
+
+4
+00:00:13,040 --> 00:00:16,070
+Se movemos o observador e mantemos a fonte
+fixa,
+
+5
+00:00:16,110 --> 00:00:21,120
+a separação muda, mas a densidade de corrente naquele ponto-
+fonte permanece a mesma.
+
+6
+00:00:21,160 --> 00:00:25,620
+Por isso uma derivada de jota de erre
+linha em relação a erre é zero.
+
+7
+00:00:25,720 --> 00:00:28,190
+Agora considere o operador nabla linha.
+
+8
+00:00:28,230 --> 00:00:31,220
+Ele deriva em relação à posição da própria
+fonte.
+
+9
+00:00:31,260 --> 00:00:34,430
+Nesse caso, quando percorremos a
+distribuição de corrente,
+
+10
+00:00:34,470 --> 00:00:36,950
+jota pode mudar de um ponto para outro.
+
+11
+00:00:36,990 --> 00:00:40,100
+Esse campo pode variar espacialmente e,
+ainda assim,
+
+12
+00:00:40,140 --> 00:00:41,960
+permanecer estacionário no tempo.
+
+13
+00:00:42,190 --> 00:00:44,750
+As linhas verdes mostram linhas de
+corrente.
+
+14
+00:00:44,790 --> 00:00:49,310
+Os marcadores representam convencionalmente o transporte de
+carga ao longo delas.
+
+15
+00:00:49,460 --> 00:00:54,460
+Agora escolhemos uma célula muito pequena dentro desse campo
+e ampliamos essa região.
+
+16
+00:00:54,520 --> 00:00:57,780
+Nesse pequeno volume, entra tanta corrente
+quanto sai.
+
+17
+00:00:57,820 --> 00:00:59,950
+Não existe acúmulo líquido de carga.
+
+18
+00:00:59,990 --> 00:01:04,810
+Por isso, em magnetostática, o divergente
+da densidade de corrente é zero.
+
+19
+00:01:04,890 --> 00:01:07,920
+Perceba que agora a justificativa é
+física.
+
+20
+00:01:08,130 --> 00:01:13,270
+Antes, a derivada zerava porque fonte e
+observador eram variáveis independentes.
+
+21
+00:01:13,480 --> 00:01:18,670
+Agora, o divergente da corrente zera por conservação de
+carga no regime estacionário.

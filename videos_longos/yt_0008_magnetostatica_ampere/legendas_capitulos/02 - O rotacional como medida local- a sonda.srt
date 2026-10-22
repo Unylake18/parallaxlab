@@ -1,0 +1,141 @@
+1
+00:00:00,000 --> 00:00:02,520
+Para entender o que o rotacional realmente
+mede,
+
+2
+00:00:02,560 --> 00:00:04,470
+vamos olhar localmente para o campo.
+
+3
+00:00:04,610 --> 00:00:09,267
+Imagine uma pequena sonda formada por um caminho fechado em
+torno do ponto que estamos
+
+4
+00:00:09,307 --> 00:00:10,100
+observando.
+
+5
+00:00:10,140 --> 00:00:13,080
+Essa sonda possui uma área e uma direção
+normal,
+
+6
+00:00:13,120 --> 00:00:14,880
+perpendicular à sua superfície.
+
+7
+00:00:15,000 --> 00:00:19,760
+A orientação entre o percurso da borda e
+essa normal segue a regra da mão direita.
+
+8
+00:00:19,870 --> 00:00:22,750
+Agora percorremos a borda da sonda e
+somamos,
+
+9
+00:00:22,790 --> 00:00:27,753
+em cada pequeno trecho, a componente tangencial do campo
+magnético multiplicada pelo
+
+10
+00:00:27,793 --> 00:00:29,660
+pequeno comprimento percorrido.
+
+11
+00:00:29,700 --> 00:00:31,640
+Essa soma é a circulação.
+
+12
+00:00:31,680 --> 00:00:34,850
+Depois dividimos essa circulação pela área
+da sonda.
+
+13
+00:00:34,890 --> 00:00:36,810
+E fazemos a área tender a zero.
+
+14
+00:00:36,850 --> 00:00:40,910
+O resultado fornece a componente do
+rotacional na direção da normal.
+
+15
+00:00:40,950 --> 00:00:44,610
+Isso explica por que simplesmente olhar
+uma linha curva não basta.
+
+16
+00:00:44,650 --> 00:00:48,400
+O rotacional mede uma circulação local,
+infinitesimal.
+
+17
+00:00:48,480 --> 00:00:52,180
+Neste campo do fio, podemos enxergar o
+cancelamento diretamente.
+
+18
+00:00:52,280 --> 00:00:56,883
+Nos trechos radiais da pequena sonda, o campo magnético e o
+elemento de caminho são
+
+19
+00:00:56,923 --> 00:00:58,060
+perpendiculares.
+
+20
+00:00:58,120 --> 00:00:59,890
+O produto escalar é zero.
+
+21
+00:00:59,930 --> 00:01:02,230
+Já nos dois arcos, há contribuição.
+
+22
+00:01:02,270 --> 00:01:05,350
+No arco mais próximo do fio, o campo é
+mais intenso,
+
+23
+00:01:05,470 --> 00:01:06,970
+mas o arco é mais curto.
+
+24
+00:01:07,060 --> 00:01:09,670
+No arco mais distante, o campo é mais
+fraco,
+
+25
+00:01:09,710 --> 00:01:11,400
+mas o percurso é mais longo.
+
+26
+00:01:11,570 --> 00:01:14,770
+Como a intensidade varia inversamente com
+a distância,
+
+27
+00:01:14,810 --> 00:01:18,680
+essas duas contribuições possuem o mesmo
+módulo e sinais opostos.
+
+28
+00:01:18,950 --> 00:01:20,070
+Elas se cancelam.
+
+29
+00:01:20,190 --> 00:01:24,060
+Se girarmos a sonda para verificar outras
+orientações independentes,
+
+30
+00:01:24,100 --> 00:01:25,810
+o resultado continua zero.
+
+31
+00:01:25,850 --> 00:01:29,260
+Portanto, o vetor rotacional é realmente
+nulo naquele ponto.

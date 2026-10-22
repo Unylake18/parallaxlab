@@ -1,0 +1,153 @@
+1
+00:00:00,060 --> 00:00:03,520
+Existe uma coisa estranha no campo
+magnético de um fio infinito.
+
+2
+00:00:03,720 --> 00:00:07,050
+As linhas de campo dão voltas completas ao
+redor da corrente.
+
+3
+00:00:07,220 --> 00:00:09,370
+Tudo parece estar girando.
+
+4
+00:00:09,410 --> 00:00:12,240
+Mas, fora do fio, o rotacional desse campo
+é zero.
+
+5
+00:00:12,320 --> 00:00:15,049
+Como um campo pode circular em torno de
+uma corrente e,
+
+6
+00:00:15,089 --> 00:00:18,670
+ao mesmo tempo, ter rotacional nulo quase
+em toda parte?
+
+7
+00:00:18,880 --> 00:00:21,680
+É essa aparente contradição que vamos
+resolver hoje.
+
+8
+00:00:21,880 --> 00:00:24,400
+Fala, pessoal!
+
+9
+00:00:24,460 --> 00:00:26,010
+Bem-vindos ao Parallax Lab.
+
+10
+00:00:26,050 --> 00:00:30,555
+Nos vídeos anteriores, vimos a força magnética e aprendemos
+a calcular campos usando
+
+11
+00:00:30,595 --> 00:00:31,810
+a lei de Biot–Savart.
+
+12
+00:00:31,980 --> 00:00:34,100
+Agora vamos mudar a pergunta.
+
+13
+00:00:34,140 --> 00:00:36,653
+Em vez de começar pela corrente e
+perguntar qual campo ela produz,
+
+14
+00:00:36,693 --> 00:00:38,817
+vamos olhar para o próprio campo magnético
+e perguntar:
+
+15
+00:00:38,857 --> 00:00:41,650
+o que a sua geometria revela sobre as
+correntes que o produziram?
+
+16
+00:00:41,690 --> 00:00:44,922
+Esse caminho vai nos levar ao divergente
+do campo magnético,
+
+17
+00:00:44,962 --> 00:00:47,860
+ao seu rotacional e, finalmente, à lei de
+Ampère.
+
+18
+00:00:47,900 --> 00:00:49,690
+Comecemos pelo exemplo mais simples.
+
+19
+00:00:49,920 --> 00:00:52,090
+Este fio conduz uma corrente constante.
+
+20
+00:00:52,230 --> 00:00:55,570
+Os marcadores verdes indicam o sentido
+convencional da corrente.
+
+21
+00:00:55,680 --> 00:00:59,722
+O movimento desses marcadores é apenas uma
+representação visual do transporte de
+
+22
+00:00:59,762 --> 00:01:04,081
+carga; sua velocidade no desenho não corresponde à
+velocidade real das cargas no
+
+23
+00:01:04,121 --> 00:01:04,720
+material.
+
+24
+00:01:04,760 --> 00:01:07,940
+Ao redor do fio, o campo magnético forma
+circunferências.
+
+25
+00:01:08,110 --> 00:01:10,390
+O sentido é dado pela regra da mão
+direita.
+
+26
+00:01:10,500 --> 00:01:12,890
+Se apontamos o polegar no sentido da
+corrente,
+
+27
+00:01:12,930 --> 00:01:15,940
+os dedos indicam o sentido em que o campo
+contorna o fio.
+
+28
+00:01:15,980 --> 00:01:18,490
+Até aqui, seguimos o caminho que já
+conhecemos:
+
+29
+00:01:18,600 --> 00:01:23,180
+uma distribuição de corrente é dada, usamos Biot–Savart e
+obtemos o campo magnético.
+
+30
+00:01:23,340 --> 00:01:25,600
+Mas agora vamos inverter o raciocínio.
+
+31
+00:01:25,660 --> 00:01:26,960
+As linhas são curvas.
+
+32
+00:01:27,130 --> 00:01:30,680
+Será que isso significa que o rotacional
+do campo é diferente de zero?
+
+33
+00:01:30,720 --> 00:01:31,610
+Vamos verificar.

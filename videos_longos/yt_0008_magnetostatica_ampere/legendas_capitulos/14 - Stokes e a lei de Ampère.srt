@@ -1,0 +1,147 @@
+1
+00:00:00,000 --> 00:00:02,800
+Agora falta transformar a superfície em
+sua borda.
+
+2
+00:00:02,840 --> 00:00:05,700
+E é exatamente isso que faz o teorema de
+Stokes.
+
+3
+00:00:05,890 --> 00:00:08,390
+Comecemos com duas pequenas células
+vizinhas.
+
+4
+00:00:08,530 --> 00:00:12,040
+Percorremos ambas com orientações
+compatíveis com a mesma normal.
+
+5
+00:00:12,080 --> 00:00:16,703
+Na aresta compartilhada, uma célula percorre o trecho num
+sentido e a outra percorre
+
+6
+00:00:16,743 --> 00:00:17,920
+no sentido contrário.
+
+7
+00:00:17,960 --> 00:00:20,090
+Essas duas contribuições se cancelam.
+
+8
+00:00:20,130 --> 00:00:22,480
+Quando repetimos isso por toda a
+superfície,
+
+9
+00:00:22,520 --> 00:00:26,290
+todas as bordas internas aparecem duas
+vezes com sentidos opostos.
+
+10
+00:00:26,480 --> 00:00:28,100
+Elas se cancelam aos pares.
+
+11
+00:00:28,210 --> 00:00:30,680
+No limite de uma divisão cada vez mais
+fina,
+
+12
+00:00:30,720 --> 00:00:35,001
+a soma das pequenas circulações locais se
+transforma na integral do rotacional sobre
+
+13
+00:00:35,041 --> 00:00:36,050
+a superfície.
+
+14
+00:00:36,120 --> 00:00:38,570
+E depois de todos os cancelamentos
+internos,
+
+15
+00:00:38,640 --> 00:00:40,430
+sobra apenas o contorno externo.
+
+16
+00:00:40,610 --> 00:00:42,940
+Esse é o teorema de Stokes.
+
+17
+00:00:43,030 --> 00:00:47,640
+Aplicando-o à lei local que encontramos, chegamos à forma
+integral da lei de Ampère:
+
+18
+00:00:47,680 --> 00:00:52,576
+a circulação do campo magnético ao longo de um caminho
+fechado é igual à permeabilidade
+
+19
+00:00:52,616 --> 00:00:55,370
+magnética do vácuo vezes a corrente
+envolvida.
+
+20
+00:00:55,410 --> 00:00:57,360
+Continuamos falando de magnetostática.
+
+21
+00:00:57,400 --> 00:00:59,760
+E existe ainda uma pergunta importante.
+
+22
+00:00:59,800 --> 00:01:04,328
+Se mantemos a mesma borda, podemos trocar
+uma superfície plana por uma superfície
+
+23
+00:01:04,368 --> 00:01:04,860
+curva?
+
+24
+00:01:04,900 --> 00:01:05,420
+Sim.
+
+25
+00:01:05,460 --> 00:01:09,150
+Considere duas superfícies diferentes
+apoiadas no mesmo contorno.
+
+26
+00:01:09,190 --> 00:01:11,810
+Juntas, elas formam uma superfície
+fechada.
+
+27
+00:01:11,850 --> 00:01:15,940
+No regime estacionário, o divergente da
+densidade de corrente é zero.
+
+28
+00:01:15,980 --> 00:01:21,210
+Portanto, o fluxo líquido de corrente através dessa
+superfície fechada também é zero.
+
+29
+00:01:21,250 --> 00:01:25,754
+Isso significa que a corrente líquida que
+atravessa uma superfície é exatamente a
+
+30
+00:01:25,794 --> 00:01:27,410
+mesma que atravessa a outra.
+
+31
+00:01:27,450 --> 00:01:31,793
+Então a corrente envolvida pelo contorno
+não depende de qual superfície escolhemos
+
+32
+00:01:31,833 --> 00:01:32,970
+para calculá-la.

@@ -85,21 +85,45 @@ class Sec4:
         return self.gax.c2p(s, b / BREF)
 
     def curve_capped(self, f, s0, s1, color=MAG, width=4.5, op=1.0, n=90, dashed=False):
-        """Curva b = f(s); acima do teto é CORTADA (nunca achatada): uma seta para cima marca onde ela continua fora da escala."""
+        """Curva b = f(s); acima do teto é CORTADA (nunca achatada): uma seta para cima marca onde ela continua fora da escala.
+        O ponto onde a curva cruza o teto é achado por bisseção: o início/fim do traço não pula de amostra em amostra quando a muda."""
         g, run = VGroup(), []
-        for s in list(np.linspace(s0, s1, n)) + [None]:
-            b = None if s is None else f(s)
-            yv = None if b is None else b / BREF
-            if yv is not None and 0 <= yv <= YMAX:
-                run.append(self.gP(s, b))
-                continue
+
+        def inside(s):
+            return 0 <= f(s) / BREF <= YMAX
+
+        def cross(s_in, s_out):
+            for _ in range(26):
+                mid = (s_in + s_out) / 2
+                s_in, s_out = (mid, s_out) if inside(mid) else (s_in, mid)
+            return s_in
+
+        def flush(arrow_end=False, arrow_start=False):
             if len(run) > 1:
                 m = VMobject(stroke_color=color, stroke_width=width, stroke_opacity=op).set_points_as_corners(run)
                 g.add(DashedVMobject(m, num_dashes=18) if dashed else m)
-            if yv is not None and yv > YMAX and run:
-                top = run[-1]
-                g.add(arrow(top - [0, 0.18, 0], top + [0, 0.16, 0], color, 3, tip=0.11).set_opacity(op))
-            run = []
+            if arrow_end and run:
+                g.add(arrow(run[-1] - [0, 0.18, 0], run[-1] + [0, 0.16, 0], color, 3, tip=0.11).set_opacity(op))
+            if arrow_start and run:
+                g.add(arrow(run[0] + [0, 0.02, 0], run[0] + [0, 0.34, 0], color, 3, tip=0.11).set_opacity(op))
+
+        start_arrow, prev = False, None
+        for s in np.linspace(s0, s1, n):
+            ok, above = inside(s), f(s) / BREF > YMAX
+            if prev is not None and ok != prev[1]:
+                if ok:                      # entra na escala (a curva vinha de cima): começa exatamente no teto
+                    sc = cross(s, prev[0])
+                    run = [self.gP(sc, f(sc))]
+                    start_arrow = prev[2]
+                else:                       # sai da escala: termina exatamente no teto, com a seta
+                    sc = cross(prev[0], s)
+                    run.append(self.gP(sc, f(sc)))
+                    flush(arrow_end=above, arrow_start=start_arrow)
+                    run, start_arrow = [], False
+            if ok:
+                run.append(self.gP(s, f(s)))
+            prev = (s, ok, above)
+        flush(arrow_start=start_arrow)
         return g
 
     def bgraph(self):
