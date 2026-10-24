@@ -39,6 +39,7 @@ Fonte: documentação do ElevenLabs, seção "Prompting Eleven v4" (best practic
 - **Uma tag por frase.** Tags contrastantes nas mesmas palavras prejudicam a entrega.
 - Prefira tags **descritivas** de entrega: `[slow, measured pace]`, `[calm, satisfied]`. Tags ambíguas podem ser lidas em voz alta.
 - Tags validadas pela documentação: `[curious]`, `[excited]`, `[thoughtful]`, `[whispers]`, `[sighs]`, `[short pause]`, `[long pause]`, `[happy]`, `[sad]`, `[surprised]`, `[clears throat]`. `[playful]` vem só da lista do blog: testar.
+- **Longos:** regras específicas em `docs/padrao_video_longo.md` §5 (sem `[slowly]`/`[slow, measured pace]`, nunca a letra solta).
 - Para narração didática, a base é `[thoughtful]` e `[curious]`; `[excited]` só no momento da descoberta (o resultado, o ponto ótimo); `[slow, measured pace]` no conceito-chave; `[calm, satisfied]` no fechamento.
 - Não usar tags de postura ou ação (`[standing]`, `[grinning]`), música nem efeitos sonoros: estragam a voz e não pertencem à narração.
 - **Não existe `<break>`** no v4. Pausa com `[short pause]`/`[long pause]`, reticências (`...`) ou quebra de frase.
