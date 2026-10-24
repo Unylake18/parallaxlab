@@ -31,8 +31,9 @@ Entregues em `entregas/Vídeos Longos/` (pasta `Eletromagnetismo - <módulo> - <
 | `yt_0008` | Magnetostática | Divergente, rotacional e Lei de Ampère | 27,0 min |
 | `yt_0009` | Eletrodinâmica | Lei de Ohm e força eletromotriz ("Quem empurra as cargas?") | 14,9 min |
 | `yt_0010` | Eletrodinâmica | FEM de movimento e regra do fluxo magnético | 16,1 min |
+| `yt_0011` | Eletrodinâmica | Lei de Faraday e campo elétrico induzido (Griffiths 7.2.1–7.2.2; rótulo na tela "Indução") | 13,0 min |
 
-- **Não estão neste PC:** `yt_0004` e `yt_0007` (não há pasta nem entrega aqui; situação não verificada) e `yt_0011` (ocupado no PC de trabalho, segundo a ficha do `yt_0012`). O `yt_0008` foi entregue, mas a unidade dele não está em `videos_longos/` deste PC.
+- **Não estão neste PC:** `yt_0004` e `yt_0007` (não há pasta nem entrega aqui; situação não verificada). O `yt_0011` foi feito no PC de trabalho e trazido em 24/10 (unidade pela branch `video/long-0011`; master e WAV copiados à parte). O `yt_0008` foi entregue, mas a unidade dele não está em `videos_longos/` deste PC.
 - **Em produção, fase de preview silencioso (sem voz, SRT nem master):**
   - `yt_0012`: Indutância e energia magnética ("Por que a corrente resiste a mudar?"), mapa 6.11. V2 do preview C01–C20, 960×540/15 fps.
   - `yt_0013`: Colisões em 1D. Primeiro longo de Mecânica, mapa §4.10. V2, C01–C12 em Manim 2D/2.5D desde 24/10; a v1 com Blender foi preservada em `cena_v1_backup.py`.

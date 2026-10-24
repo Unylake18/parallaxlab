@@ -1,6 +1,8 @@
 # Lei de Faraday — Como um campo magnético cria um campo elétrico?
 
-**STATUS: CENA (18 estados) E PREVIEW SILENCIOSO V4 (paleta da série, texto enxuto, end card) 960×540 / 15 fps PRONTOS (7:13) — SEM VOZ.** Preview: `media/videos/cena/540p15/LeiFaraday011.mp4`. Data: 2026-10-23. Física, ordem didática, storyboard e narração conceitual aprovados pelo chat de Produção. Não há voz, SRT, master, 1080p, capa nem publicação.
+**STATUS (2026-10-24): ENTREGUE.** Master 1920×1080 / 30 fps, CRF 14, 13:00, sincronizado com a voz (`narracao_v3_teste.wav`, ElevenLabs v4) por alinhamento forçado; legenda `final/legenda - 0011.srt` (293 cues); 17 capítulos. Pasta: `entregas/Vídeos Longos/Eletromagnetismo - Eletrodinâmica - Lei de Faraday e campo elétrico induzido/` (montada por `entregar_yt0011.py`). Rótulo do canto na tela: `ELETROMAGNETISMO · INDUÇÃO`. Cobre Griffiths 7.2.1 e 7.2.2. Capa e publicação não registradas.
+
+Histórico: cena (18 estados) e preview silencioso V4 960×540 / 15 fps (7:13), 2026-10-23. Física, ordem didática, storyboard e narração conceitual aprovados pelo chat de Produção. Não há voz, SRT, master, 1080p, capa nem publicação.
 
 ## Identificação
 
