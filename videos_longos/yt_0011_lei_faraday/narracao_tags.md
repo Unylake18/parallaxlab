@@ -1,0 +1,433 @@
+# yt_0011 — Narração com audio tags (Eleven v4) — teste de voz v3
+
+Cópia de `narracao_sugestao_v3.md`: o texto falado é idêntico, só com tags `[ ]` inseridas. As marcas de pausa da v3 viraram `[short pause]` / `[long pause]`.
+Regras: uma tag por frase, em inglês, fora da legenda; base `[thoughtful]`/`[curious]`; `[slow, measured pace]` nos conceitos-chave; `[calm, satisfied]` no fechamento.
+Status: **teste de voz (v3). Gerado por `montar_texto.py`; não editar à mão.**
+
+## Texto corrido (para gravação)
+
+[curious] Olha para esse circuito.
+
+A espira está parada. O fio está parado. Ninguém está girando, puxando ou empurrando nada.
+
+Agora presta atenção no campo magnético, aqui em magenta.
+
+Ele começa a variar...
+
+e o amperímetro responde.
+
+Apareceu corrente.
+
+[short pause]
+
+[curious] E aí tem um problema.
+
+Se o fio inteiro está parado, a explicação da força eletromotriz de movimento não serve.
+
+As cargas se movem dentro do fio, claro. A pergunta é outra.
+
+[short pause]
+
+Quem está empurrando essas cargas?
+
+[curious] Bem-vindos ao Parallax Lab!
+
+Hoje a gente vai entender como a variação de um campo magnético está ligada ao surgimento de um campo elétrico induzido.
+
+E, no caminho, vamos encontrar um resultado bem estranho: existe campo elétrico num lugar onde o campo magnético é praticamente zero.
+
+Parece errado.
+
+Não é.
+
+[thoughtful] Primeiro, vamos eliminar uma possibilidade.
+
+Quando o próprio condutor se move dentro de um campo magnético, aparece uma força magnética por causa desse movimento: a carga vezes o produto vetorial entre a velocidade do condutor e o campo magnético.
+
+Foi esse o mecanismo da força eletromotriz de movimento, a famosa fem.
+
+[thoughtful] Só que agora a velocidade do condutor é zero.
+
+Atenção: a velocidade do fio inteiro, não a das cargas lá dentro.
+
+O fio não se desloca, então essa contribuição some.
+
+Mas a corrente continua ali.
+
+Ótimo. Agora o problema ficou interessante.
+
+[curious] A força eletromotriz de movimento é zero...
+
+mas a força eletromotriz medida no circuito não é.
+
+[long pause]
+
+Então alguma outra coisa está empurrando as cargas.
+
+[curious] E essa é a pergunta que guia o resto do vídeo: se não é o fio se movendo através do campo magnético, qual é o mecanismo agora?
+
+[thoughtful] A lei de Faraday já prevê o resultado, antes mesmo de a gente entender o mecanismo: uma variação do fluxo magnético está associada a uma força eletromotriz.
+
+Vamos montar isso olhando para a figura.
+
+[thoughtful] O campo magnético atravessa a espira.
+
+Como ele é uniforme e perpendicular à área, o fluxo magnético é o campo magnético vezes a área da espira.
+
+E repara: a espira está parada. A área não muda, a orientação não muda.
+
+Quem muda é o campo magnético.
+
+[thoughtful] Colocando isso na lei de Faraday, a derivada atua só no campo magnético, e a área sai de dentro dela.
+
+A força eletromotriz fica igual a menos a área da espira vezes a taxa de variação do campo magnético no tempo.
+
+Em palavras: o que importa não é o tamanho do campo, é a rapidez com que ele muda.
+
+Quanto mais rápido muda, maior a força eletromotriz.
+
+[thoughtful] Só que isso responde quanto.
+
+Não responde como.
+
+A equação sabe o valor da força eletromotriz, mas não nos contou o que empurra cada carga.
+
+[curious] Vamos destacar uma carga no fio.
+
+O circuito continua parado, e a contribuição magnética do movimento continua zero.
+
+Então precisa existir uma força por unidade de carga que não dependa de mexer a espira.
+
+[curious] Que força é essa?
+
+[curious] A peça que faltava é o campo elétrico.
+
+Numa espira parada, a força eletromotriz pode ser escrita como a circulação do campo elétrico ao longo do circuito: em cada pedacinho do caminho, a gente pega quanto do campo aponta ao longo dele, e soma a volta inteira.
+
+[thoughtful] E isso tem leitura física direta.
+
+Se existe campo elétrico ali, a carga sente uma força elétrica: a carga vezes o campo elétrico.
+
+Para essa força existir, ninguém precisa mover o fio.
+
+[thoughtful] Agora juntamos as duas descrições da mesma força eletromotriz.
+
+De um lado, a circulação do campo elétrico.
+
+Do outro, menos a taxa de variação do fluxo magnético.
+
+Logo, a circulação do campo elétrico ao redor de um caminho fechado é igual a menos a derivada do fluxo magnético no tempo.
+
+Essa é a lei de Faraday na forma integral.
+
+[thoughtful] E aqui está a primeira grande virada do vídeo:
+
+[slow, measured pace] um campo magnético que varia no tempo está associado a um campo elétrico, mesmo sem nenhum movimento mecânico do circuito.
+
+[long pause]
+
+O fio só tornou esse campo fácil de detectar.
+
+[curious] Mas segura, antes de desenhar círculos por toda parte.
+
+Essa equação nos deu a circulação do campo elétrico.
+
+Ela não determinou, sozinha, a geometria do campo.
+
+E o caminho da integral é uma escolha nossa. Não é, automaticamente, uma linha de campo.
+
+[thoughtful] Em cada ponto existe um campo elétrico, e um pedacinho orientado do caminho.
+
+Na integral, entra só a parte do campo que aponta ao longo desse pedacinho.
+
+É o produto escalar que aparece na tela.
+
+[curious] Então Faraday respondeu uma pergunta global: quanto vale a soma dessas contribuições ao redor da volta?
+
+Para descobrir a forma do campo ponto a ponto, falta uma ferramenta: a simetria.
+
+Mas, antes, uma comparação com a eletrostática.
+
+[thoughtful] Na eletrostática, a circulação ao longo de qualquer caminho fechado é zero.
+
+Algumas contribuições são positivas, outras negativas, e a soma se cancela.
+
+Você volta ao ponto de partida sem acumular nada.
+
+[curious] Quando o fluxo magnético varia, essa soma não precisa ser zero.
+
+E isso muda a natureza do campo: o campo elétrico induzido, em geral, não é conservativo como o eletrostático.
+
+Se você passou anos achando que campo elétrico só vem de carga parada...
+
+o eletromagnetismo acabou de complicar essa amizade.
+
+[thoughtful] Agora vamos escolher uma geometria em que dá para resolver tudo: um solenoide ideal, muito longo, sem efeitos de extremidade.
+
+Olhamos o corte transversal.
+
+Dentro do raio do solenoide, o campo magnético é aproximadamente uniforme.
+
+Fora, nesse modelo ideal, vamos tratá-lo como desprezível.
+
+[thoughtful] O eixo que sai da tela é a direção positiva.
+
+O campo magnético aponta para fora e está aumentando.
+
+E, para percorrer os caminhos, escolhemos o sentido anti-horário como positivo.
+
+Guarda essa convenção: o sinal da conta depende dela.
+
+[thoughtful] Agora entra a simetria.
+
+Pontos à mesma distância do eixo são equivalentes por rotação.
+
+Então, neste modelo ideal, o campo elétrico induzido dá a volta no eixo.
+
+Estamos considerando só o campo induzido pela variação do campo magnético, sem somar um campo eletrostático independente.
+
+E a componente que dá a volta depende só da distância ao centro.
+
+[thoughtful] Só agora aparecem os círculos.
+
+E só porque esta geometria tem essa simetria: o campo elétrico induzido não é sempre circular.
+
+Aqui, ele é.
+
+Como o campo magnético, para fora da tela, está aumentando, a componente no sentido anti-horário sai negativa.
+
+[slow, measured pace] Ou seja: o campo real gira no sentido horário.
+
+[long pause]
+
+A conta vai provar.
+
+[thoughtful] Começamos com um círculo de raio menor que o raio do solenoide.
+
+Por simetria, o campo elétrico é tangente ao caminho, com o mesmo módulo em todos os pontos.
+
+A circulação, então, é a componente tangencial vezes o comprimento do círculo: dois pi vezes o raio.
+
+[thoughtful] Do outro lado da lei, o fluxo magnético.
+
+O círculo está inteiro dentro da região magnética, então a área atravessada é pi vezes o raio ao quadrado.
+
+É essa área que acende na animação.
+
+[thoughtful] Aplicando Faraday, a componente tangencial vezes dois pi vezes o raio é menos pi vezes o raio ao quadrado, vezes a taxa de variação do campo magnético.
+
+A física acabou.
+
+O resto é álgebra.
+
+[thoughtful] Divide pelo comprimento do caminho.
+
+Os pi se cancelam, e um dos fatores de raio também.
+
+Sobra: menos metade do raio, vezes a taxa de variação do campo magnético.
+
+[thoughtful] O sinal negativo confirma o sentido horário.
+
+E o módulo cresce com a distância ao eixo: zero no centro, e em linha reta enquanto a gente se afasta, ainda dentro da região magnética.
+
+[thoughtful] Agora chegamos ao raio do solenoide, e vale separar três coisas.
+
+O caminho que a gente percorre.
+
+A superfície que ele limita.
+
+E a parte dessa superfície onde existe campo magnético.
+
+Enquanto o círculo está dentro, as duas áreas crescem juntas.
+
+[thoughtful] Passou da borda, isso muda.
+
+O caminho continua crescendo, a superfície também.
+
+Mas a região atravessada pelo campo magnético não cresce mais: ficou presa ao tamanho do solenoide.
+
+É essa mudança geométrica que vai inverter o comportamento do campo elétrico.
+
+[thoughtful] Agora o círculo é maior que o solenoide.
+
+O fluxo magnético não usa mais a área do círculo: usa só a área da região magnética, pi vezes o raio do solenoide ao quadrado.
+
+[thoughtful] A circulação continua usando o caminho inteiro: dois pi vezes o raio do círculo.
+
+E a lei de Faraday liga os dois lados, do mesmo jeito que antes.
+
+[thoughtful] Dividimos de novo pelo comprimento do caminho.
+
+Os pi se cancelam.
+
+Só que agora o raio do solenoide fica fixo, em cima, e o raio do caminho fica embaixo.
+
+A componente tangencial é menos o raio do solenoide ao quadrado, sobre duas vezes o raio do caminho, vezes a taxa de variação do campo magnético.
+
+[thoughtful] Esse resultado conta uma história simples.
+
+Dentro, aumentar o caminho também aumentava o fluxo.
+
+Fora, o caminho cresce, mas o fluxo não.
+
+Por isso o campo deixa de crescer e passa a cair como o inverso da distância.
+
+[thoughtful] Agora junta os dois casos.
+
+O ponto do gráfico e o círculo da esquerda mostram exatamente a mesma distância ao eixo.
+
+Não são duas ilustrações: é a mesma situação física, vista de dois jeitos.
+
+[thoughtful] No centro, o campo elétrico é zero.
+
+Dentro, o módulo cresce em linha reta.
+
+[long pause]
+
+[slow, measured pace] Na borda, as duas expressões dão o mesmo valor, então o campo é contínuo.
+
+Mas a inclinação muda de repente: o gráfico faz uma quina.
+
+[thoughtful] Depois da borda, o módulo cai como o inverso da distância.
+
+O perfil é este: sobe em linha reta, atinge o máximo na borda e vai diminuindo.
+
+E agora vem a parte realmente estranha.
+
+[curious] Escolhe um ponto fora do solenoide.
+
+Ali, o campo magnético é desprezível.
+
+[slow, measured pace] Mas o campo elétrico induzido não é zero.
+
+[long pause]
+
+Parece defeito da conta, até você perceber que é justamente o contrário: a física está dizendo algo importante.
+
+[thoughtful] A lei de Faraday não diz que o campo elétrico num ponto depende só do campo magnético naquele ponto.
+
+Na forma integral, o que importa é a variação do fluxo através da superfície que o caminho limita.
+
+O ponto está fora, mas o caminho que passa por ele ainda envolve a região onde o fluxo muda.
+
+[curious] Até aqui, a descrição foi global: uma volta inteira, relacionada ao fluxo pela superfície.
+
+Só que aparece uma pergunta natural.
+
+[curious] O que essa lei diz localmente, em cada pequena região do espaço?
+
+[thoughtful] Entra o teorema de Stokes.
+
+Temos uma superfície, o contorno dela e uma orientação.
+
+O sentido positivo do contorno é anti-horário. O campo elétrico real, neste exemplo, é horário.
+
+São coisas diferentes: uma é convenção, a outra é o campo físico.
+
+[thoughtful] Stokes transforma a circulação ao longo da borda numa integral do rotacional do campo elétrico sobre a superfície.
+
+Do outro lado, como a superfície está parada, a derivada no tempo entra na integral do fluxo.
+
+Agora as duas integrais estão sobre a mesma superfície.
+
+[thoughtful] E vem o passo conceitual.
+
+Essa relação vale para qualquer superfície fixa que a gente escolha.
+
+Como essa igualdade vale para qualquer superfície fixa apropriada, a relação precisa valer localmente, ponto a ponto.
+
+[long pause]
+
+[slow, measured pace] O rotacional do campo elétrico é igual a menos a derivada parcial do campo magnético em relação ao tempo.
+
+Essa é a equação de Maxwell–Faraday.
+
+[calm, satisfied] A gente não começou com ela.
+
+A gente chegou nela.
+
+[thoughtful] O próprio solenoide impede uma leitura errada dessa equação.
+
+Dentro da região magnética, o campo magnético varia no tempo, então o rotacional do campo elétrico não é zero.
+
+Até aqui, tranquilo.
+
+[thoughtful] Agora olha uma pequena volta inteiramente fora do solenoide.
+
+No modelo ideal, a derivada do campo magnético ali é zero, então o rotacional do campo elétrico também.
+
+A circulação dessa pequena volta é zero.
+
+E, mesmo assim, o campo elétrico naquele lugar não é zero.
+
+[thoughtful] Agora aumenta o caminho até envolver o solenoide.
+
+A circulação dessa volta grande não é zero, porque a superfície que ela limita atravessa a região onde o fluxo varia.
+
+Duas afirmações, ao mesmo tempo.
+
+Localmente, o rotacional pode ser zero...
+
+e uma volta que envolve a região de fluxo variável pode ter circulação diferente de zero.
+
+[long pause]
+
+[slow, measured pace] Não há contradição.
+
+A forma diferencial responde uma pergunta local.
+
+A forma integral responde sobre a volta inteira.
+
+O paradoxo só aparece quando misturamos as duas escalas.
+
+[long pause]
+
+[thoughtful] Volta ao circuito do começo.
+
+A gente colocou uma espira ali porque ela tem cargas livres e deixa a gente observar corrente.
+
+Mas ela não é a origem do campo.
+
+Tira a espira.
+
+Tira o amperímetro.
+
+O campo magnético continua variando.
+
+E o campo elétrico induzido continua lá.
+
+[slow, measured pace] O fio não cria esse campo.
+
+O fio apenas revela a existência dele.
+
+[long pause]
+
+[long pause]
+
+[calm, satisfied] Então fica com as duas versões da mesma lei.
+
+Globalmente: a variação do fluxo magnético está ligada à circulação do campo elétrico ao redor de um caminho fechado.
+
+Localmente: o rotacional do campo elétrico é menos a derivada parcial do campo magnético em relação ao tempo.
+
+E o solenoide mostrou por que precisamos das duas.
+
+[calm, satisfied] Se esse vídeo te ajudou, deixa o like e se inscreve no Parallax Lab.
+
+Ajuda muito o canal.
+
+[curious] E essa história continua no próximo vídeo.
+
+Até agora, vimos como a variação de um campo magnético produz uma força eletromotriz e revela um campo elétrico induzido.
+
+Mas e quando o fluxo magnético é criado pela própria corrente do circuito?
+
+O que acontece quando essa corrente tenta mudar?
+
+É aí que aparece a indutância, e com ela uma pergunta:
+
+[curious] onde fica armazenada a energia de um campo magnético?
+
+Valeu, pessoal.
+
+E até o próximo vídeo.

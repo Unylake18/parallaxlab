@@ -1,0 +1,1770 @@
+"""yt_0011 — Lei de Faraday: como um campo magnético cria um campo elétrico. Preview silencioso, 18 estados (V4: paleta da série).
+
+Fonte de verdade: storyboard.md, narracao.md, producao.md e ficha.md desta pasta. solido_3d: nenhum (Manim 2D/2.5D).
+
+Dois estados soberanos:
+  tau (tempo físico)  — B(tau), dB/dt, fluxo, fem/circulação e intensidade do campo induzido derivam só dele.
+                        Pausa editorial = tau parado: B, portadores e geometria congelam juntos (uma fotografia da evolução).
+  rT  (espacial)      — raio do círculo de integração, área, E_phi(r), setas de E e ponto do gráfico E(r).
+
+Modelo temporal: dB/dt = BETA·s(tau), com s uma subida suave (smoothstep) de 0 a 1 em tau ∈ [0, W];
+B(tau) = B0 + ∫ dB/dt (forma fechada, em `bfun`). `bdot` é a derivada exata de `bfun` (verificado em _checagem_temporal).
+Portadores (corrente CONVENCIONAL, portadores positivos fictícios; movem-se no sentido de E): deslocamento ∝ ∫I dt ∝ B − B0,
+logo a posição deles é função de tau (nunca do dt de apresentação). Representação qualitativa.
+
+Paleta e gramática da série (idênticas a yt_0005/0006/0009): B magenta · E, ℰ (fem) e V ciano · I e J verde · carga azul
+(BLUE/BLUE_L) · força FC azul-claro · fluxo FLUX lilás-claro (yt_0003) · geometria, dℓ, S, C, r, R, A, u violeta · matéria STEEL.
+Convenção: +z para fora da tela (⊙), +phi anti-horário, dB/dt > 0 ⇒ E_phi < 0 ⇒ E horário.
+
+Texto de tela: Space Grotesk em CAIXA ALTA; minúsculas só ao DEFINIR uma variável (índice). Pouco texto: a narração explica.
+
+Preview:  uv run python -m manim -r 960,540 --fps 15 --media_dir videos_longos/yt_0011_lei_faraday/media videos_longos/yt_0011_lei_faraday/cena.py LeiFaraday011
+SO=10 (ou SO=10,11) renderiza só esses estados (os outros rodam sem gerar quadros). GUIAS=1 mostra a safe area em toda a cena.
+"""
+
+import json
+import math
+import os
+import re
+import sys
+from contextlib import contextmanager
+from pathlib import Path
+
+import numpy as np
+from manim import (
+    BOLD, DOWN, LEFT, PI, RIGHT, UP, Arc, Arrow, Axes, Brace, Circle, Create, DashedLine, DashedVMobject, Dot, FadeIn, FadeOut,
+    ImageMobject, Indicate, LaggedStart, Line, MathTex, ParametricFunction, Rectangle, ReplacementTransform, Rotate, Scene, CurvedArrow, TAU, SurroundingRectangle, TexTemplate, Text,
+    TransformMatchingTex, ValueTracker, VGroup, VMobject, always_redraw, config, linear,
+)
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+from template.config_horizontal import BACKGROUND_COLOR, PRIMARY_COLOR, TEXT_COLOR, WATERMARK_PATH  # noqa: E402
+from template.fonts import DISPLAY_FONT, official_text, screen_text  # noqa: E402
+from template.layout_horizontal import GUIAS, safe_guides  # noqa: E402
+from MF_Tools import TransformByGlyphMap  # noqa: E402
+
+LOGO_PATH = ROOT / "assets" / "branding" / "overlays" / "parallax_lab_logo_horizontal.png"
+SO = {int(s) for s in os.environ.get("SO", "").split(",") if s.strip()}
+AUDIT = os.environ.get("QA") == "1"
+
+
+# ── Voz: tempos exatos de cada palavra (alinhamento forçado do áudio aprovado) ──────────────────────
+def _n(w):
+    return re.sub(r"[^\wáéíóúâêôãõàçü]", "", w.lower())
+
+
+_VOZ_ARQ = Path(__file__).resolve().parent / "audio" / "alinhamento_forcado.json"
+VOZ = {c["chave"]: [(_n(p[0]), p[1], p[2]) for p in c["palavras"]] for c in json.loads(_VOZ_ARQ.read_text(encoding="utf-8"))["celulas"]}
+VOZ_DUR = 778.9
+_ALV_ARQ = Path(__file__).resolve().parent / "audio" / "ancoras_alvos.json"
+ALVOS = json.loads(_ALV_ARQ.read_text(encoding="utf-8")) if _ALV_ARQ.exists() and os.environ.get("GRAVAR") != "1" else []
+
+
+def vt(N, frase=None, fim=False):
+    """Instante (s) em que a fala `frase` começa (ou termina, com fim=True) dentro da unidade N. Sem frase: a unidade inteira."""
+    ws = VOZ[N]
+    if frase is None:
+        return ws[-1][2] if fim else ws[0][1]
+    toks = [_n(x) for x in frase.split()]
+    seq = [w[0] for w in ws]
+    for i in range(len(seq) - len(toks) + 1):
+        if seq[i:i + len(toks)] == toks:
+            return ws[i + len(toks) - 1][2] if fim else ws[i][1]
+    raise KeyError(f"frase âncora {frase!r} não encontrada em {N}: {' '.join(seq)}")
+
+# ── Paleta da série (a mesma do yt_0005/0006/0009) ──────────────────────────
+WHITE = TEXT_COLOR
+CYAN = PRIMARY_COLOR      # E, V, ℰ (fem), energia
+MAG = "#EA63FF"           # B
+GREEN = "#3FE08B"         # corrente I, J
+BLUE = "#267BFF"          # carga
+BLUE_L = "#7FB2FF"        # carga (rótulos / corpo)
+FC = "#5AA2FF"            # força
+FLUX = "#D6CCFF"          # fluxo (yt_0003)
+VIOLET = "#9C8CFF"        # geometria, dℓ, S, C, r, R, A, u
+STEEL = "#7A8696"         # matéria (fio, amperímetro)
+DIM = "#8FA3C4"           # texto secundário
+HEADER = "ELETROMAGNETISMO · INDUÇÃO"
+WM_W, WM_OP = 1.92, 0.45
+
+# ── Áreas (frame lógico 16 × 9; safe |x| ≤ 7,2; conteúdo entre y = −3,0 e 2,6) ─
+LC = np.array([-3.75, -0.2, 0.0])     # centro do lado esquerdo (SPLIT 50/50)
+CEN = np.array([0.0, -0.2, 0.0])      # centro de FOCUS
+RX = 3.75                             # centro da coluna direita
+RW = 6.5                              # largura útil da coluna direita
+RB = 1.5                              # raio R do solenoide ideal (exemplo cilíndrico)
+EMAX = RB / 2                         # |E| máximo em r = R (unidades de dB/dt = 1)
+
+T_BODY, T_NOTE, T_LEG = 28, 24, 20
+M_L, M_M, M_S = 52, 42, 34
+
+TEX = TexTemplate()
+TEX.add_to_preamble(r"\usepackage{xcolor}")
+
+
+def paint(tex, color):
+    return r"{\color[HTML]{%s}%s}" % (color.lstrip("#"), tex)
+
+
+BV = paint(r"\mathbf B", MAG)         # vetor B
+EV = paint(r"\mathbf E", CYAN)        # vetor E
+BD = paint(r"\frac{dB}{dt}", MAG)     # dB/dt
+BDA = r"\left|" + BD + r"\right|"     # |dB/dt|
+BDS = r"\," + BD                      # dB/dt com respiro, quando multiplica outra fração
+BS = paint("B", MAG)
+EPHI = paint(r"E_\phi", CYAN)
+EM = paint(r"\mathcal E", CYAN)       # força eletromotriz
+PHI = paint(r"\Phi_B", MAG)          # fluxo magnético
+DPHI = paint(r"\frac{d\Phi_B}{dt}", MAG)
+QQ = paint("q", BLUE_L)               # carga
+II = paint("I", GREEN)                # corrente
+UU = paint(r"\mathbf u", VIOLET)      # velocidade do condutor
+AA = paint("A", VIOLET)               # área
+RR = paint("r", VIOLET)               # raio do caminho
+RRR = paint("R", VIOLET)              # raio da região magnética
+DL = r"\cdot " + paint(r"d\boldsymbol\ell", VIOLET)
+DA = r"\cdot " + paint(r"d\mathbf a", VIOLET)
+NABE = r"\nabla\times " + EV
+
+
+# ── Física: tempo (B, dB/dt) ────────────────────────────────────────────────
+B0, BETA, W = 0.2, 0.4, 0.15          # B(0), taxa máxima dB/dt, duração da subida suave de dB/dt
+LOOPS = 2.0                           # voltas dos portadores por unidade de (B − B0)/BETA
+TAU_MAX = 2.2                         # maior tau usado pela cena (drift() recusa valores acima)
+
+
+def sfun(t):
+    """dB/dt normalizado (0..1): smoothstep em [0, W], constante depois."""
+    x = min(max(t / W, 0.0), 1.0)
+    return 3 * x ** 2 - 2 * x ** 3
+
+
+def bdot(t):
+    return BETA * sfun(t)
+
+
+def bfun(t):
+    """B(tau) = B0 + ∫0^tau dB/dt (forma fechada da integral de bdot)."""
+    t = max(t, 0.0)
+    if t <= W:
+        x = t / W
+        return B0 + BETA * W * (x ** 3 - x ** 4 / 2)
+    return B0 + BETA * (W / 2 + (t - W))
+
+
+B_VIS_MAX = bfun(TAU_MAX)             # normalização VISUAL: B físico /B_VIS_MAX ∈ [0,1] (não altera B(tau))
+
+
+def carrier_phase(t):
+    """Posição angular dos portadores (rad): ∝ carga deslocada ∝ ∫I dt ∝ B − B0. Só depende de tau."""
+    return 2 * PI * LOOPS * (bfun(t) - B0) / BETA
+
+
+# ── Física: perfil de E(r) (unidades de dB/dt = 1) ──────────────────────────
+def eabs(r):
+    """|E_phi|(r) com dB/dt = 1: (r/2) dentro, (R²/2r) fora."""
+    return r / 2 if r < RB else RB ** 2 / (2 * r)
+
+
+def eph(r):
+    """E_phi(r) com dB/dt > 0: sempre negativo (sentido horário)."""
+    return -eabs(r)
+
+
+def _checagem_fisica():
+    assert eabs(0.0) == 0.0 and eabs(1e9) < 1e-8                          # r→0 e r→∞
+    assert abs(eabs(RB - 1e-9) - eabs(RB + 1e-9)) < 1e-8                  # continuidade em R
+    assert abs(eabs(RB) - EMAX) < 1e-12                                   # máximo em R
+    assert abs(eabs(RB / 2) - RB / 4) < 1e-12 and abs(eabs(2 * RB) - RB / 4) < 1e-12   # |E(R/2)| = |E(2R)| = R/4
+    assert abs(eabs(RB / 2) - eabs(2 * RB)) < 1e-12
+    h = 1e-6
+    for r in np.linspace(0.05, 5.0, 300):
+        flux = math.pi * min(r, RB) ** 2                                  # Φ_B/B (área com B)
+        assert eph(r) < 0                                                 # E_phi < 0 (horário)
+        assert abs(2 * math.pi * r * eph(r) + flux) < 1e-9                # ∮E·dl = −dΦ/dt
+        assert abs(-(math.pi * min(r, RB) ** 2) / (2 * math.pi * r) + eabs(r)) < 1e-12   # forma por passos mostrada na tela
+    for r in (0.4, 0.9, 1.3, 1.7, 2.2, 2.6):
+        rot = ((r + h) * eph(r + h) - (r - h) * eph(r - h)) / (2 * h) / r  # (∇×E)_z = (1/r) d(r E_phi)/dr
+        assert abs(rot - (-1 if r < RB else 0)) < 1e-4                    # −dB/dt dentro, 0 fora
+    # unidades: [r · dB/dt] = m·T/s = V/m  (T = V·s/m²)
+
+
+def _checagem_temporal():
+    """bdot é a derivada de bfun; fluxo usa B real; fem e E usam dB/dt; portadores só dependem de tau."""
+    h = 1e-6
+    for t in np.linspace(0.02, TAU_MAX, 200):                                    # toda a faixa de tau usada pela cena
+        assert abs((bfun(t + h) - bfun(t - h)) / (2 * h) - bdot(t)) < 1e-6      # Bdot == dB/dtau
+        assert 0 <= bdot(t) <= BETA + 1e-12
+        dfase = (carrier_phase(t + h) - carrier_phase(t - h)) / (2 * h)
+        assert abs(dfase - 2 * PI * LOOPS * sfun(t)) < 1e-4                     # d(fase)/dtau ∝ I ∝ dB/dt
+        assert bfun(t) <= B_VIS_MAX + 1e-12                                     # a normalização visual nunca satura antes do fim
+    for t in (0.3, 0.8, 1.5):                                                    # trecho linear: Bdot = BETA
+        assert abs(bdot(t) - BETA) < 1e-12 and abs((bfun(t + 0.1) - bfun(t)) / 0.1 - BETA) < 1e-9
+    assert bfun(0.0) == B0 and bdot(0.0) == 0.0
+    assert carrier_phase(1.0) == carrier_phase(1.0)                              # só depende de tau: tau parado ⇒ portadores parados
+    for t in (0.5, 1.2):                                                         # fem (−A dB/dt) e E (r/2 dB/dt) usam a mesma taxa
+        A, r = math.pi * 1.45 ** 2, 0.9
+        assert abs(-A * bdot(t) - (-(A * BETA * sfun(t)))) < 1e-12
+        assert abs(eph(r) * bdot(t) / BETA + r / 2 * sfun(t)) < 1e-12
+
+
+_checagem_fisica()
+_checagem_temporal()
+
+
+# ── Texto e matemática ──────────────────────────────────────────────────────
+@contextmanager
+def wide_pango():
+    pw, ph = config.pixel_width, config.pixel_height
+    config.pixel_width, config.pixel_height = 4000, 4000
+    try:
+        yield
+    finally:
+        config.pixel_width, config.pixel_height = pw, ph
+
+
+def text(content, size=24, color=WHITE, op=1.0, caps=True):
+    """Texto de tela: Space Grotesk, CAIXA ALTA por padrão; caps=False só para definir variáveis (índice)."""
+    with wide_pango():
+        t = screen_text(content.upper() if caps else content, size)
+    return t.set_color(color).set_opacity(op)
+
+
+def display(content, size=36, color=WHITE, bold=False):
+    with wide_pango():
+        c = content.upper()
+        t = official_text(c, DISPLAY_FONT, BOLD, size, oversample=2) if bold else screen_text(c, size, oversample=2)
+    return t.set_color(color)
+
+
+def eq(*parts, size=M_M, color=WHITE):
+    return MathTex(*parts, font_size=size, color=color, tex_template=TEX)
+
+
+def lines(*strs, size=T_NOTE, color=WHITE, op=0.92, gap=0.14):
+    return VGroup(*[text(s, size, color, op) for s in strs]).arrange(DOWN, buff=gap)
+
+
+def box(m, color=WHITE, buff=0.2):
+    return SurroundingRectangle(m, color=color, buff=buff, stroke_width=3, corner_radius=0.08)
+
+
+def P3(x, y):
+    return np.array([x, y, 0.0])
+
+
+def pol(c, r, a):
+    return np.asarray(c, float) + r * np.array([math.cos(a), math.sin(a), 0.0])
+
+
+def fit(m, w):
+    if m.width > w:
+        m.scale(w / m.width)
+    return m
+
+
+def at_col(m, y, w=RW):
+    """Posiciona na coluna direita, reduzindo (nunca ampliando) se passar da largura."""
+    return fit(m, w).move_to(P3(RX, y))
+
+
+def arrow(p0, p1, color=CYAN, w=5, tip=0.17, z=5):
+    return Arrow(p0, p1, buff=0, color=color, stroke_width=w, tip_length=tip, max_tip_length_to_length_ratio=0.6,
+                 max_stroke_width_to_length_ratio=14).set_z_index(z)
+
+
+def tang(c, r, n, length, a0=0.0, color=CYAN, w=5, op=1.0, z=5, ccw=False):
+    """n setas tangentes à circunferência, centradas nos pontos da circunferência; por padrão HORÁRIO (−φ̂)."""
+    g = VGroup()
+    sg = -1 if ccw else 1
+    for k in range(n):
+        a = a0 + 2 * PI * k / n
+        p = pol(c, r, a)
+        t = sg * np.array([math.sin(a), -math.cos(a), 0.0])
+        g.add(arrow(p - t * length / 2, p + t * length / 2, color, w, tip=min(0.18, length * 0.55), z=z))
+    return g.set_opacity(op)
+
+
+N_E, L_E = 12, 0.7   # nº fixo de amostras angulares e comprimento máximo (em |E| = EMAX)
+
+
+def e_circle(c, r, g=1.0, s=1.0, a0=0.2, z=5):
+    """Setas quantitativas de E sobre a circunferência de raio r: nº FIXO de setas e comprimento ∝ |E_phi|(r)·dB/dt.
+
+    Some continuamente (opacidade) quando o comprimento tende a zero (centro)."""
+    L = L_E * eabs(r) / EMAX * s
+    op = g * float(np.clip((L - 0.05) / 0.1, 0.0, 1.0))
+    return tang(c, max(r, 0.03), N_E, max(L, 0.06), a0=a0, color=CYAN, w=4.5, op=op, z=z)
+
+
+def static_rings(c, radii, g=1.0, ph=0.0):
+    """Linhas de E do exemplo cilíndrico: círculos concêntricos, setas horárias, intensidade ∝ |E|(r)."""
+    out = VGroup()
+    for r in radii:
+        op = (0.22 + 0.6 * eabs(r) / EMAX) * g
+        ring = Circle(radius=r, stroke_color=CYAN, stroke_width=2.6, stroke_opacity=op).move_to(c).set_z_index(2)
+        out.add(ring, tang(c, r, 3, 0.34, a0=0.5 - ph * (0.5 + eabs(r) / EMAX), color=CYAN, w=4, op=min(1.0, op + 0.2), z=3))
+    return out
+
+
+def charge(pos, scale=1.0, z=6):
+    """Carga 2.5D: halo azul, corpo azul-claro com brilho especular (esfera)."""
+    glow = Circle(radius=0.2 * scale, stroke_width=0).set_fill(BLUE, 0.28)
+    body = Circle(radius=0.085 * scale, stroke_width=0).set_fill(BLUE_L, 1.0)
+    spec = Circle(radius=0.03 * scale, stroke_width=0).set_fill(WHITE, 0.85).shift(np.array([-0.03, 0.035, 0]) * scale)
+    return VGroup(glow, body, spec).move_to(pos).set_z_index(z)
+
+
+RINGS = [0.45, 0.9, 1.3, 1.9, 2.4]
+FLOW = 1.5                 # rad/s dos portadores na espira quando dB/dt > 0
+W_E = 0.9                  # rad/s base de circulação das setas de E (horário)
+
+
+# ── Circuito / região magnética (dinâmico, função de tau e de gates de visibilidade) ──────────────
+class Circuit:
+    """Região magnética (⊙ = B para fora) e, opcionalmente, o detector (espira + amperímetro + portadores).
+
+    Gates independentes: `visB` (região magnética) e `det` (detector). Tudo o mais é função de tau.
+    Retirar o detector = animar só `det`; B e o estado físico permanecem."""
+
+    def __init__(self, sc, c, reg_r=2.3, loop_r=1.45, wire=True, sp=0.5):
+        self.sc, self.c, self.wire = sc, np.asarray(c, float), wire
+        self.visB, self.det = ValueTracker(0.0), ValueTracker(0.0)
+        self.hl, self.ql = ValueTracker(0.0), ValueTracker(0.0)        # carga destacada e rótulo q
+        self.disk = Circle(radius=reg_r, stroke_width=3).move_to(self.c).set_z_index(1)
+        self.rings, self.dots_in, sym = [], [], VGroup()
+        n_i, n_j = int(reg_r / sp) + 2, int(reg_r / (sp * 0.866)) + 2
+        for j in range(-n_j, n_j + 1):
+            for i in range(-n_i, n_i + 1):
+                p = self.c + sp * np.array([i + (0.5 if j % 2 else 0.0), j * 0.866, 0.0])
+                if np.linalg.norm(p - self.c) < reg_r - 0.18:
+                    ring, dot = Circle(radius=0.085, stroke_width=2.2).move_to(p), Dot(p, radius=0.03)
+                    self.rings.append(ring)
+                    self.dots_in.append(dot)
+                    sym.add(VGroup(ring, dot))
+        self.sym = sym.set_z_index(1)
+        self.acc, self.last = 0.0, None                       # fase acumulada dos portadores e relógio do último passo
+        self.anchor = Dot(radius=0.001).set_opacity(0)
+        self.anchor.add_updater(lambda m: self.step())
+        self.mobsB = [self.disk, self.sym, self.anchor]
+        self.mobsD = []
+        if wire:
+            am_c = self.c + loop_r * DOWN
+            # fio em tubo (matéria STEEL): sombra larga, corpo e realce fino
+            self.tube = [Circle(radius=loop_r, stroke_width=w).move_to(self.c).set_z_index(z) for w, z in ((13, 2.6), (8, 2.8), (2.2, 3.0))]
+            self.tube[2].shift(np.array([-0.02, 0.025, 0]))
+            self.amm = Circle(radius=0.42, stroke_width=5).move_to(am_c).set_z_index(6)
+            self.amm_in = Circle(radius=0.33, stroke_width=1.5).move_to(am_c).set_z_index(6.1)
+            self.ticks = [Line(am_c + 0.1 * DOWN + 0.27 * np.array([math.cos(math.radians(a)), math.sin(math.radians(a)), 0]),
+                               am_c + 0.1 * DOWN + 0.31 * np.array([math.cos(math.radians(a)), math.sin(math.radians(a)), 0]), stroke_width=2).set_z_index(6.2)
+                          for a in (150, 120, 90, 60, 30)]
+            self.pivot = Dot(am_c + 0.1 * DOWN, radius=0.045).set_z_index(8)
+            self.needle = Line(am_c, am_c + 0.1 * UP, stroke_width=4).set_z_index(7)
+            self.ammA = text("A", 14, caps=False).move_to(am_c + 0.26 * DOWN).set_z_index(8)
+            self.charges = [charge(self.c) for _ in range(9)]
+            self.trails = [Line(self.c, self.c + RIGHT * 0.1, stroke_width=5).set_z_index(5.5) for _ in range(9)]     # pulso de corrente (verde)
+            self.hlc = charge(self.c, scale=1.55, z=9)                                                              # carga destacada
+            self.ring_hl = Circle(radius=0.27, stroke_width=3).set_z_index(9)
+            self.qlab = eq("q", size=34, color=BLUE_L).set_z_index(9)
+            self.mobsD = [*self.tube, self.amm, self.amm_in, *self.ticks, self.pivot, self.needle, self.ammA,
+                          *self.trails, *self.charges, self.hlc, self.ring_hl, self.qlab]
+        self.step()
+        sc.add(*self.mobsB, *self.mobsD)
+        sc.reg.append((self.visB, self.mobsB))
+        if wire:
+            sc.reg.append((self.det, self.mobsD))
+
+    def charge_pos(self, i):
+        return self.charges[i].get_center()
+
+    def on(self, B=True, det=True):
+        return ([self.visB.animate.set_value(1)] if B else []) + ([self.det.animate.set_value(1)] if det and self.wire else [])
+
+    def off(self):
+        return [self.visB.animate.set_value(0)] + ([self.det.animate.set_value(0)] if self.wire else [])
+
+    def step(self):
+        t = self.sc.tau.get_value()
+        v, d, b, s = self.visB.get_value(), self.det.get_value(), min(bfun(t) / B_VIS_MAX, 1.0), sfun(t)
+        self.disk.set_stroke(MAG, opacity=v * (0.35 + 0.5 * b)).set_fill(MAG, opacity=v * (0.04 + 0.16 * b))
+        clk = float(self.sc.renderer.time)
+        dtc = 0.0 if self.last is None else max(clk - self.last, 0.0)
+        self.last = clk
+        self.acc += FLOW * s * dtc                              # portadores circulam enquanto dB/dt > 0 (nunca congelam)
+        o = v * (0.18 + 0.75 * b)
+        for k, (ring, dot) in enumerate(zip(self.rings, self.dots_in)):
+            ob = o * (0.88 + 0.12 * math.sin(2.4 * clk - 0.55 * k))          # B 'respira': onda lenta atravessando a região
+            ring.set_stroke(MAG, opacity=ob)
+            dot.set_fill(MAG, opacity=ob)
+        if not self.wire:
+            return
+        for tb, op in zip(self.tube, (0.35, 0.9, 0.7)):
+            tb.set_stroke(STEEL if tb is not self.tube[2] else "#C9D3E2", opacity=d * op)
+        self.amm.set_stroke(STEEL, opacity=d).set_fill(BACKGROUND_COLOR, opacity=d)
+        self.amm_in.set_stroke(STEEL, opacity=d * 0.5)
+        for tk in self.ticks:
+            tk.set_stroke(STEEL, opacity=d * 0.9)
+        self.ammA.set_opacity(d * 0.8)
+        self.pivot.set_fill(STEEL, opacity=d)
+        pc = self.pivot.get_center()
+        th = math.radians(150 - 120 * s)                       # ponteiro ∝ corrente ∝ dB/dt
+        self.needle.put_start_and_end_on(pc, pc + 0.27 * np.array([math.cos(th), math.sin(th), 0.0]))
+        self.needle.set_stroke(GREEN, opacity=d)
+        c, r, n, h = self.c, self.tube[0].width / 2, len(self.charges), self.hl.get_value()
+        ph = self.acc
+        for i, (dm, tr) in enumerate(zip(self.charges, self.trails)):
+            ang = PI / 2 - ph - 2 * PI * i / n                 # decrescente = sentido horário = sentido de E (corrente convencional)
+            pos = c + r * np.array([math.cos(ang), math.sin(ang), 0.0])
+            back = c + r * np.array([math.cos(ang + 0.2), math.sin(ang + 0.2), 0.0])
+            dm.move_to(pos)
+            dm[0].set_fill(BLUE, opacity=0.28 * d)
+            dm[1].set_fill(BLUE_L, opacity=d)
+            dm[2].set_fill(WHITE, opacity=0.85 * d)
+            tr.put_start_and_end_on(back, pos)
+            tr.set_stroke(GREEN, opacity=0.6 * d * min(1.0, s * 1.5))
+        p0 = self.charges[0].get_center()
+        self.hlc.move_to(p0)
+        self.hlc[0].set_fill(BLUE, opacity=0.3 * d * h)
+        self.hlc[1].set_fill(BLUE_L, opacity=d * h)
+        self.hlc[2].set_fill(WHITE, opacity=0.85 * d * h)
+        self.ring_hl.move_to(p0).set_stroke(BLUE_L, opacity=d * h)
+        out = (p0 - c) / max(np.linalg.norm(p0 - c), 1e-6)
+        ang = math.degrees(math.atan2(p0[1] - c[1], p0[0] - c[0]))
+        near_amm = float(np.clip((abs((ang + 270) % 360 - 180) - 22) / 20, 0.0, 1.0))      # esconde q quando a carga passa pelo amperímetro
+        self.qlab.move_to(p0 + 0.45 * out).set_opacity(d * self.ql.get_value() * near_amm)
+
+
+class LeiFaraday011(Scene):
+    def setup(self):
+        self.camera.background_color = BACKGROUND_COLOR
+        self.tau = ValueTracker(0.5)         # tempo físico
+        self.rT = ValueTracker(0.9)          # raio do círculo de integração
+        self.wm = self.tag = self.guias = self.head_m = None
+        self.reg = []                        # (gate, mobjects) dos objetos dinâmicos
+        self.rcol = []                       # itens da coluna direita
+        self.ck = None
+        self.upd = []                        # mobjects com updater de opacidade (limpar antes do fade)
+        self.tprog = []                      # programa do tempo físico: (instante de cena, tau)
+        self.rprog = []                      # programa do raio do círculo: (instante de cena, rT)
+        self.alvos = []                      # (estado, N, frase, alvo, real) de cada âncora
+        self.ns, self.cortes = 0, []         # nº de âncoras já passadas e animações encurtadas
+        self.driver = Dot(radius=0.001).set_opacity(0)
+        self.driver.add_updater(lambda m, dt: self._tau_do_relogio())     # com dt: conta como updater de tempo, então as esperas renderizam quadros (nada congela)
+        self.add(self.driver)
+
+    def _tau_do_relogio(self):
+        t = self.renderer.time
+        if self.tprog:
+            ts, vs = zip(*self.tprog)
+            self.tau.set_value(float(np.interp(t, ts, vs)))
+        if self.rprog:
+            ts, vs = zip(*self.rprog)
+            self.rT.set_value(float(np.interp(t, ts, vs)))
+
+    def tau_key(self, *pares):
+        """Programa do tempo físico: tau segue por interpolação linear entre as chaves (instante de cena, valor)."""
+        self.tprog = sorted(self.tprog + list(pares))
+
+    def rt_key(self, *pares):
+        """Programa do raio do círculo de integração: rT segue por interpolação linear entre as chaves (instante, raio)."""
+        self.rprog = sorted(self.rprog + list(pares))
+
+    def rev(self, *ms, rt=0.6):
+        """Revela objetos já adicionados com opacidade 0 (usado quando uma peça entra em uma palavra específica)."""
+        self.play(*[m.animate.set_opacity(1) for m in ms], run_time=rt)
+
+    def oculto(self, m):
+        m.set_opacity(0)
+        self.add(m)
+        return m
+
+    # ── infraestrutura ──────────────────────────────────────────────────────
+    def begin(self, k, name):
+        self.state = k
+        self.next_section(f"{k:02d}_{name}", skip_animations=bool(SO) and k not in SO)
+
+    def sync(self, N, frase=None, fim=False, dt=0.0):
+        """Espera o relógio da cena chegar ao instante da fala (âncora). Registra o atraso quando a cena já passou do alvo."""
+        alvo = vt(N, frase, fim) + dt
+        agora = float(self.renderer.time)
+        if alvo - agora > 0.03:
+            self.wait(alvo - agora)
+        self.alvos.append((getattr(self, "state", 0), N, frase or "", round(alvo, 2), round(float(self.renderer.time), 2)))
+        self.ns += 1
+        return alvo
+
+    def play(self, *anims, run_time=None, **kw):
+        """Corta o run_time para a animação terminar antes da próxima âncora (atraso máx. ~0,1 s); registra os cortes grandes."""
+        rt = run_time if run_time is not None else max([getattr(a, "run_time", 1.0) for a in anims] or [1.0])
+        if ALVOS and self.ns < len(ALVOS):
+            resta = ALVOS[self.ns] - float(self.renderer.time) - 0.03
+            if rt > resta:
+                novo = max(resta, 0.07)
+                if rt - novo > 0.35:
+                    self.cortes.append((getattr(self, "state", 0), self.ns, round(rt, 2), round(novo, 2), round(float(self.renderer.time), 1)))
+                run_time = novo
+        if run_time is not None:
+            kw["run_time"] = run_time
+        super().play(*anims, **kw)
+        if AUDIT:
+            self.audit()
+
+    def estado(self, k, name, N, dt=-0.7, wipe=True, rt=0.7):
+        """Abre o estado k pouco antes da primeira fala N (a limpeza e o título entram no intervalo entre falas)."""
+        self.sync(N, dt=dt)
+        self.begin(k, name)
+        if wipe:
+            self.wipe(rt=rt)
+
+    # ── auditoria de sobreposição (QA=1 com --dry_run): roda a cada espera ≥ 0,9 s, antes de qualquer render de vídeo ──
+    def wait(self, duration=1.0, *a, **k):
+        super().wait(duration, *a, **k)
+        if AUDIT and duration >= 0.9:
+            self.audit()
+
+    @staticmethod
+    def _label(m):
+        if isinstance(m, MathTex):
+            return "tex:" + m.get_tex_string()[:38].replace("\\color[HTML]", "")
+        if isinstance(m, Text):
+            return "txt:" + m.text[:30]
+        if isinstance(m, SurroundingRectangle):
+            return "caixa"
+        return "grupo:" + "|".join(LeiFaraday011._label(s) for s in m.submobjects[:3])
+
+    def audit(self):
+        """Compara as caixas de texto/fórmula/moldura em cena: aponta interseções parciais e conteúdo fora da área útil."""
+        keep = self.keep()
+        cand = []
+
+        def folhas(m):                       # MathTex/Text/moldura em qualquer profundidade (inclui objetos redesenhados e gráficos)
+            if isinstance(m, (MathTex, Text, SurroundingRectangle)):
+                return [m]
+            out = []
+            if isinstance(m, Axes):                                    # eixos: as duas linhas finas contam como obstáculo
+                out += [m.x_axis, m.y_axis]
+            for sub in m.submobjects:
+                if isinstance(sub, (DashedLine, Line)) and not isinstance(sub, Arrow) and isinstance(m, (Axes, VGroup)) and (sub.width < 0.06 or sub.height < 0.06) and max(sub.width, sub.height) > 0.5:
+                    out.append(sub)                                    # tracejados/linhas alinhados aos eixos (vR, hR…)
+                out += folhas(sub)
+            return out
+
+        for m in self.mobjects:
+            if id(m) not in keep:
+                cand += [f for f in folhas(m) if f.width + f.height > 0 and max(f.get_fill_opacity(), f.get_stroke_opacity()) > 0.02]
+        cand += [m for m in self.mobjects if isinstance(m, Line) and not isinstance(m, Arrow) and (m.width < 0.06 or m.height < 0.06)
+                 and max(m.width, m.height) > 0.5 and max(m.get_fill_opacity(), m.get_stroke_opacity()) > 0.02 and id(m) not in keep]
+        box = lambda m: (m.get_left()[0], m.get_right()[0], m.get_bottom()[1], m.get_top()[1])
+        seen = getattr(self, "_aud", set())
+        self._aud = seen
+        for i, a in enumerate(cand):
+            xa0, xa1, ya0, ya1 = box(a)
+            if xa0 < -7.2 or xa1 > 7.2 or ya1 > 3.8 or (ya0 < -3.0 and not isinstance(a, SurroundingRectangle)):
+                key = (self.state, "fora", self._label(a))
+                if key not in seen:
+                    seen.add(key)
+                    print(f"AUDIT estado {self.state}: FORA da área útil {self._label(a)}  x[{xa0:.2f},{xa1:.2f}] y[{ya0:.2f},{ya1:.2f}]")
+            for b in cand[i + 1:]:
+                xb0, xb1, yb0, yb1 = box(b)
+                w, h = min(xa1, xb1) - max(xa0, xb0), min(ya1, yb1) - max(ya0, yb0)
+                if w < 0.03 or h < 0.03:
+                    continue
+                if isinstance(a, Line) and isinstance(b, Line):
+                    continue
+                for outer, inner, (o, n) in ((a, b, (box(a), box(b))), (b, a, (box(b), box(a)))):
+                    if isinstance(outer, SurroundingRectangle) and o[0] <= n[0] + 0.02 and o[1] >= n[1] - 0.02 and o[2] <= n[2] + 0.02 and o[3] >= n[3] - 0.02:
+                        break                      # moldura contendo o seu conteúdo: ok
+                else:
+                    key = (self.state, tuple(sorted((self._label(a), self._label(b)))))
+                    if key not in seen:
+                        seen.add(key)
+                        print(f"AUDIT estado {self.state}: SOBREPÕE {self._label(a)}  ×  {self._label(b)}  ({w:.2f}×{h:.2f})")
+
+    def drift(self, to, T):
+        """Avança o tempo físico de forma linear (a cena continua evoluindo; nunca move nada por dt)."""
+        assert to <= TAU_MAX + 1e-9
+        self.play(self.tau.animate.set_value(to), run_time=T, rate_func=linear)
+
+    def dyn(self, fn):
+        """Objeto redesenhado a cada quadro, com gate de opacidade (anime o retorno para entrar/sair)."""
+        gate = ValueTracker(0.0)
+        m = always_redraw(lambda: fn(gate.get_value()))
+        self.add(m)
+        self.reg.append((gate, [m]))
+        return gate
+
+    def keep(self):
+        return {id(m) for m in (self.wm, self.tag, self.guias, self.driver) if m is not None}
+
+    def wipe(self, rt=0.8):
+        owned = {id(m) for _, ms in self.reg for m in ms}
+        for m in self.upd:
+            m.clear_updaters()
+        self.upd = []
+        anims = [g.animate.set_value(0) for g, _ in self.reg]
+        keep = self.keep()
+        anims += [FadeOut(m) for m in self.mobjects if id(m) not in owned and id(m) not in keep]
+        if anims:
+            self.play(*anims, run_time=rt)
+        for _, ms in self.reg:
+            self.remove(*ms)
+        self.reg, self.rcol, self.head_m, self.ck = [], [], None, None
+
+    def head(self, s, *anims, rt=0.8):
+        new = text(s, 30, WHITE, 0.92).move_to(P3(0, 3.15))
+        fit(new, 11)
+        if self.head_m is not None:          # sequencial: o título antigo sai antes de o novo entrar (sem frases coexistindo)
+            self.play(FadeOut(self.head_m), run_time=0.35)
+        self.play(FadeIn(new), *anims, run_time=rt)
+        self.head_m = new
+
+    def R(self, *ms):
+        self.rcol += list(ms)
+        return ms[0] if len(ms) == 1 else ms
+
+    def clear_R(self, rt=0.6, *extra):
+        for m in self.upd:
+            m.clear_updaters()
+        self.upd = []
+        ms = [m for m in self.rcol if m in self.mobjects] + [m for m in extra if m in self.mobjects]
+        if ms:
+            self.play(*[FadeOut(m) for m in ms], run_time=rt)
+        self.rcol = []
+
+    def marca(self):
+        if GUIAS:
+            self.guias = safe_guides()
+            self.add(self.guias)
+        self.wm = ImageMobject(str(WATERMARK_PATH)).set_width(WM_W).set_opacity(WM_OP).to_corner(UP + RIGHT, buff=0.3)
+        self.tag = text(HEADER, 18, op=0.6).to_corner(UP + LEFT, buff=0.38)
+
+    def b_label(self, c=LC, dx=-2.55, dy=1.85, size=34):
+        return eq(BV + "(t)", size=size).move_to(np.asarray(c) + P3(dx, dy))
+
+    def defs(self, *rows, y=2.5):
+        """Índice de variáveis (definições em minúsculas): símbolo colorido = significado. Fica no topo da coluna direita."""
+        items = [VGroup(eq(sym, size=30), text(desc, 22, DIM, caps=False)).arrange(RIGHT, buff=0.2) for sym, desc in rows]
+        g = VGroup(text("índice", 16, DIM), *items).arrange(DOWN, buff=0.13, aligned_edge=LEFT)
+        g.move_to(P3(0, 0)).align_to(P3(0.55, 0), LEFT).align_to(P3(0, y), UP)
+        self.R(g)
+        return g
+
+    def pulse(self, m, rt=0.9):
+        self.play(FadeIn(m), run_time=rt * 0.4)
+        self.play(FadeOut(m), run_time=rt * 0.6)
+
+    def ring_flash(self, c, r, color=WHITE):
+        return Circle(radius=r, stroke_color=color, stroke_width=11, stroke_opacity=0.9).move_to(c).set_z_index(9)
+
+    def disk_flash(self, c, r, color=VIOLET):
+        return Circle(radius=r, stroke_color=color, stroke_width=2, fill_color=color, fill_opacity=0.4).move_to(c).set_z_index(9)
+
+    def gm(self, A, B, pairs, rt=1.8):
+        """Transformação de glifos (MF-Tools): mapa explícito + auto_fade. A e B: MathTex de string única."""
+        self.play(TransformByGlyphMap(A, B, *[(list(a), list(b)) for a, b in pairs], auto_fade=True, run_time=rt))
+
+    def aneis(self, c, radii, dim=1.0):
+        """Linhas de E que circulam (horário) o tempo todo: função do relógio da cena; gate anima entrada/saída."""
+        return self.dyn(lambda g: static_rings(c, radii, g * dim, ph=W_E * float(self.renderer.time)))
+
+    def giro(self, c, r, n, length, color=CYAN, w=4.5, ccw=False, rate=1.0, a0=0.2, z=5, dim=1.0):
+        """Setas tangentes que giram sobre uma circunferência (horário por padrão); gate anima entrada/saída."""
+        sg = 1 if ccw else -1
+        return self.dyn(lambda g: tang(c, r, n, length, a0=a0 + sg * W_E * rate * float(self.renderer.time), color=color, w=w, op=g * dim, z=z, ccw=ccw))
+
+    def pa(self, c, r=0.3, rate=-1.8, color=WHITE):
+        """Pá (indicador de rotacional): gira em torno de c; rate < 0 horário, 0 = parada. Retorna o gate."""
+        def f(g):
+            a = rate * float(self.renderer.time)
+            out = VGroup(Circle(radius=r, stroke_color=color, stroke_width=3, stroke_opacity=g).move_to(c))
+            for k in range(4):
+                th = a + k * PI / 2
+                out.add(Line(c, pol(c, r, th), stroke_width=3.5, color=color, stroke_opacity=g))
+            out.add(Dot(pol(c, r, a), radius=0.06, color=CYAN).set_opacity(g), Dot(c, radius=0.04, color=color).set_opacity(g))
+            return out.set_z_index(9)
+        return self.dyn(f)
+
+    def respira(self, *ms, lo=0.45):
+        """Contorno que pulsa suavemente (nunca fica parado) depois de entrar."""
+        for m in ms:
+            m.add_updater(lambda mm, dt: mm.set_stroke(opacity=lo + (1 - lo) * (0.5 + 0.5 * math.sin(3.2 * float(self.renderer.time)))))
+            self.upd.append(m)
+
+    def rig_r(self, c=LC):
+        """Círculo de integração (raio rT), setas quantitativas de E e raio r: tudo função do mesmo rT (esconde-se em r → 0)."""
+        def f(g):
+            r = max(self.rT.get_value(), 0.03)
+            g = g * float(np.clip(self.rT.get_value() / 0.08, 0.0, 1.0))
+            circ = Circle(radius=r, stroke_color=VIOLET, stroke_width=4.5, stroke_opacity=g, fill_color=VIOLET,
+                          fill_opacity=0.10 * g).move_to(c).set_z_index(2)
+            rad = Line(c, pol(c, r, math.radians(28)), stroke_width=2.5, color=WHITE, stroke_opacity=0.85 * g).set_z_index(4)
+            return VGroup(circ, rad, e_circle(c, r, g, sfun(self.tau.get_value()), a0=0.2 - W_E * (0.5 + eabs(r) / EMAX) * float(self.renderer.time)))
+        gate = self.dyn(f)
+        lab = eq("r", size=34, color=VIOLET).set_z_index(6)
+        lab.add_updater(lambda m: m.move_to(pol(c, max(self.rT.get_value(), 0.05) / 2, math.radians(28)) + 0.26 * np.array([-0.5, 0.87, 0.0]))
+                        .set_opacity(gate.get_value() * float(np.clip(self.rT.get_value() / 0.3, 0, 1))))
+        self.add(lab)
+        self.reg.append((gate, [lab]))
+        return gate
+
+    # ── roteiro ─────────────────────────────────────────────────────────────
+    def construct(self):
+        self.marca()
+        # tempo físico (tau) e raio do círculo (rT) seguem o relógio da voz; estados 9–16 ficam em fotografia (tau = 0,5)
+        self.tau_key((0.0, 0.0), (10.5, 0.0), (18.0, 0.8), (76.0, 0.8), (76.5, 0.2), (92.0, 0.2), (221.8, 2.2), (222.2, 0.5),
+                     (716.5, 0.5), (717.3, 0.5), (727.0, 1.3), (900.0, 1.3))
+        self.rt_key((0.0, 0.9), (392.6, 0.9), (396.0, 0.55), (402.0, 1.25), (417.2, 1.25), (419.74, 0.4), (424.5, 1.45), (428.5, RB),
+                    (439.6, RB), (447.0, 2.35), (455.0, 2.35), (459.0, 1.75), (470.0, 1.75), (476.0, 2.2), (494.9, 2.2), (496.5, 1.2),
+                    (498.3, 1.2), (500.6, 2.5), (505.0, 2.5), (507.0, 0.0), (519.7, 0.0), (523.0, RB), (531.5, RB), (540.5, 2.7),
+                    (543.0, 2.7), (545.5, 2.15), (900.0, 2.15))
+        for k in range(1, 19):
+            getattr(self, f"s{k:02d}")()
+        self.sync("N053", "e até o próximo vídeo", fim=True, dt=1.5)
+        if AUDIT:
+            if os.environ.get("GRAVAR") == "1":
+                _ALV_ARQ.write_text(json.dumps([a[3] for a in self.alvos]), encoding="utf-8")
+            atrasos = [a for a in self.alvos if a[4] - a[3] > 0.2]
+            print(f"AUDIT âncoras: {len(self.alvos)} registradas; {len(atrasos)} com atraso > 0,2 s; {len(self.cortes)} animações encurtadas > 0,35 s; duração da cena {self.renderer.time:.1f} s (voz {VOZ_DUR} s)")
+            for c in self.cortes:
+                print(f"AUDIT CORTE estado {c[0]} âncora#{c[1]} em {c[4]} s: {c[2]} s -> {c[3]} s")
+            for a in atrasos:
+                print(f"AUDIT ATRASO estado {a[0]} {a[1]} «{a[2]}» alvo {a[3]} s, real {a[4]} s")
+
+    # ─── cena extra (estado 2): barra condutora que se move dentro de B, com a força magnética de movimento ───
+    def rod_scene(self, c):
+        """Barra condutora que oscila dentro de B durante a fala N004 (portadores deslizando pela barra, u e F_mov seguem a velocidade)
+        e para antes de 'só que agora a velocidade'. Tudo função do relógio da cena (nunca congela)."""
+        A, w = 1.25, 2 * PI / 4.2
+        ts, tf = vt("N004") - 1.0, vt("N005", "só que agora a velocidade")
+
+        def sm(x):
+            x = min(max(x, 0.0), 1.0)
+            return x * x * (3 - 2 * x)
+
+        def xs(t):
+            env = sm((t - ts) / 1.2) * (1.0 - sm((t - (tf - 2.4)) / 2.2))
+            return c[0] + A * env * math.sin(w * (t - ts))
+
+        def estado(t):
+            x = xs(t)
+            v = (xs(t + 0.01) - xs(t - 0.01)) / 0.02 / (A * w)
+            return x, float(np.clip(v, -1.0, 1.0))
+
+        def f(g):
+            x, v = estado(float(self.renderer.time))
+            top, bot = c[1] + 0.95, c[1] - 0.95
+            tubo = VGroup(Line(P3(x, bot), P3(x, top), stroke_width=13, color=STEEL, stroke_opacity=0.35 * g),
+                          Line(P3(x, bot), P3(x, top), stroke_width=8, color=STEEL, stroke_opacity=0.9 * g),
+                          Line(P3(x - 0.02, bot), P3(x - 0.02, top), stroke_width=2.2, color="#C9D3E2", stroke_opacity=0.7 * g)).set_z_index(3)
+            cargas = VGroup()
+            off = -0.3 * (x - c[0]) / A * 0.9                      # portadores deslizam ao longo da barra (força magnética de movimento)
+            for yy in (-0.6, -0.2, 0.2, 0.6):
+                cargas.add(Circle(radius=0.2, stroke_width=0).set_fill(BLUE, 0.28 * g).move_to(P3(x, c[1] + yy + off)),
+                           Circle(radius=0.085, stroke_width=0).set_fill(BLUE_L, g).move_to(P3(x, c[1] + yy + off)))
+            cargas.set_z_index(5)
+            out = [tubo, cargas]
+            if abs(v) > 0.06:
+                sg = 1.0 if v > 0 else -1.0
+                out.append(arrow(P3(x + 0.15 * sg, c[1] + 0.05), P3(x + 0.15 * sg + 1.0 * v, c[1] + 0.05), VIOLET, 6, tip=0.2, z=8).set_opacity(g))
+                out.append(arrow(P3(x - 0.4, c[1] + 0.4), P3(x - 0.4, c[1] + 0.4 - 0.9 * v), FC, 7, tip=0.22, z=8).set_opacity(g))
+            return VGroup(*out)
+
+        gate = self.dyn(f)
+        lu, lf = eq(UU, size=32), eq(paint(r"\mathbf F_{\rm mov}", FC), size=30)
+
+        def pos_u(m):
+            x, v = estado(float(self.renderer.time))
+            sg = 1.0 if v > 0 else -1.0
+            m.move_to(P3(x + sg * (0.38 + abs(v)), c[1] + 0.36)).set_opacity(gate.get_value() * float(np.clip((abs(v) - 0.1) / 0.3, 0, 1)))
+
+        def pos_f(m):
+            x, v = estado(float(self.renderer.time))
+            m.move_to(P3(x - 1.2, c[1] + 0.4 - 0.5 * v)).set_opacity(gate.get_value() * float(np.clip((abs(v) - 0.1) / 0.3, 0, 1)))
+
+        for lab, fn in ((lu, pos_u), (lf, pos_f)):
+            lab.add_updater(fn)
+            self.add(lab)
+            self.reg.append((gate, [lab]))
+            self.upd.append(lab)
+        return gate
+
+    def solenoide(self, c, L=5.4, Rr=0.78, N=12, tilt=0.42):
+        """Solenoide em vista lateral pseudo-3D: hélice (frente nítida, fundo apagado), corrente fluindo pelas espiras,
+        B (magenta) atravessando o interior e voltando por fora. Tudo função do relógio; o gate anima entrada/saída."""
+        pitch = L / N
+        a_out, b_out = L / 2 + 0.55, 1.55
+
+        def pt(u):
+            ph = 2 * PI * u
+            return P3(c[0] - L / 2 + pitch * u + tilt * Rr * math.sin(ph), c[1] + Rr * math.cos(ph))
+
+        def f(g):
+            clk = float(self.renderer.time)
+            out = VGroup()
+            for sg in (1, -1):                       # linhas de B do exterior (retorno): apagadas, com pontos que andam
+                th = np.linspace(0, PI, 40)
+                pts = [P3(c[0] + a_out * math.cos(t), c[1] + sg * b_out * math.sin(t)) for t in th]
+                out.add(VMobject().set_points_smoothly(pts).set_stroke(MAG, 2, 0.22 * g))
+                for k in range(5):
+                    ph = ((clk * 0.16 + k / 5.0) % 1.0) * PI
+                    out.add(Dot(P3(c[0] + a_out * math.cos(ph), c[1] + sg * b_out * math.sin(ph)), radius=0.045, color=MAG).set_opacity(0.8 * g * math.sin(ph)))
+            body = [P3(c[0] - L / 2, c[1] + Rr), P3(c[0] + L / 2, c[1] + Rr), P3(c[0] + L / 2, c[1] - Rr), P3(c[0] - L / 2, c[1] - Rr)]
+            out.add(VMobject().set_points_as_corners(body + [body[0]]).set_stroke(width=0).set_fill(MAG, 0.05 * g).set_z_index(1))
+            for k in range(2 * N):                   # meia-volta: frente (sin>0) nítida e larga, fundo fino e apagado
+                u = np.linspace(k / 2, (k + 1) / 2, 12)
+                front = math.sin(2 * PI * (u[0] + u[-1]) / 2) > 0
+                seg = VMobject().set_points_as_corners([pt(x) for x in u])
+                out.add(seg.set_stroke(STEEL if front else "#4C5870", 7 if front else 3.5, (0.95 if front else 0.45) * g).set_z_index(4 if front else 2))
+                if front:
+                    out.add(VMobject().set_points_as_corners([pt(x) + P3(-0.02, 0.03) for x in u]).set_stroke("#C9D3E2", 1.6, 0.55 * g).set_z_index(4.1))
+            for k in range(22):                      # portadores na hélice (corrente), sentido: desce pela frente
+                u = (k * N / 22.0 + clk * 1.15) % N
+                ph = 2 * PI * u
+                fr = math.sin(ph) > 0
+                p = pt(u)
+                out.add(Circle(radius=0.17, stroke_width=0).set_fill(BLUE, (0.26 if fr else 0.1) * g).move_to(p).set_z_index(5 if fr else 2.2),
+                        Circle(radius=0.075, stroke_width=0).set_fill(BLUE_L, (1.0 if fr else 0.35) * g).move_to(p).set_z_index(5.1 if fr else 2.3))
+            for yy in (-0.38, 0.0, 0.38):            # B no interior: setas que avançam e reaparecem
+                for k in range(4):
+                    x0 = ((clk * 0.55 + k / 4.0) % 1.0)
+                    x = c[0] - L / 2 + 0.45 + x0 * (L - 0.9)
+                    op = g * math.sin(PI * x0) ** 0.6
+                    out.add(arrow(P3(x - 0.3, c[1] + yy), P3(x + 0.3, c[1] + yy), MAG, 4.5, tip=0.16, z=6).set_opacity(op))
+            return out
+        return self.dyn(f)
+
+    # ═══ 1 · Corrente sem movimento (FOCUS) + identidade + promessa  (N001–N003) ═══
+    def s01(self):
+        self.begin(1, "corrente_sem_movimento")
+        ck = self.ck = Circuit(self, CEN)
+        lb = self.b_label(CEN, 2.7, 1.5, 40)
+        par = text("espira parada · fio parado", 28).move_to(P3(0, 3.1))
+        ine = eq(II + r"\neq0", size=56).move_to(P3(4.3, -1.2))
+        self.play(*ck.on(), run_time=1.2)
+        self.sync("N001", "a espira está parada")
+        self.play(FadeIn(par), run_time=0.7)
+        self.sync("N001", "o fio está parado")
+        self.pulse(self.ring_flash(CEN, 1.45, WHITE), rt=1.0)
+        self.sync("N001", "agora presta atenção")
+        self.play(FadeIn(lb), run_time=0.6)
+        self.sync("N001", "aqui em magenta")
+        self.pulse(self.disk_flash(CEN, 2.3, MAG), rt=1.4)
+        self.sync("N001", "apareceu corrente")
+        self.play(FadeIn(ine, shift=0.15 * UP), run_time=0.7)
+        self.sync("N002", "quem está empurrando")
+        self.play(ck.hl.animate.set_value(1), ck.ql.animate.set_value(1), run_time=0.8)
+        # identidade + promessa (mesmo desenho do yt_0009)
+        logo = ImageMobject(str(WATERMARK_PATH)).set_width(2.6).move_to(P3(0, 2.15))
+        welcome = text("bem-vindos ao parallax lab", 30, DIM).move_to(P3(0, 1.0))
+        l1 = VGroup(display("Como um campo", 50, bold=True), display("magnético", 50, MAG, bold=True)).arrange(RIGHT, buff=0.3)
+        l2 = VGroup(display("cria um campo", 50, bold=True), display("elétrico?", 50, CYAN, bold=True)).arrange(RIGHT, buff=0.3)
+        title = VGroup(l1, l2).arrange(DOWN, buff=0.28).move_to(P3(0, -0.45))
+        sub = text("lei de faraday", 26, DIM).move_to(P3(0, -1.75))
+        tz = VGroup(eq(BS + r"\approx0", size=32), text("mas", 26, DIM), eq(EV + r"\neq0", size=32)).arrange(RIGHT, buff=0.5).move_to(P3(0, -2.65))
+        self.sync("N003", dt=-0.55)
+        self.play(*ck.off(), *[FadeOut(m) for m in (lb, ine, par)], run_time=0.5)
+        self.remove(*ck.mobsB, *ck.mobsD)
+        self.reg = []
+        self.sync("N003")
+        self.play(FadeIn(logo, shift=0.1 * UP), FadeIn(welcome, shift=0.1 * UP), run_time=1.0)
+        self.sync("N003", "hoje a gente vai entender")
+        self.play(FadeIn(title, shift=0.12 * DOWN), run_time=1.2)
+        self.sync("N003", "e no caminho")
+        self.play(FadeIn(sub), run_time=0.7)
+        self.sync("N003", "existe campo elétrico num lugar")
+        self.play(FadeIn(tz, shift=0.1 * UP), run_time=0.8)
+
+    # ═══ 2 · Tirando o mecanismo anterior do caminho  (N004–N005) ═══
+    def s02(self):
+        self.estado(2, "remover_mecanismo", "N004", dt=-1.4)
+        ck = self.ck = Circuit(self, LC)
+        lb = self.b_label(LC, 1.95, 1.95, 36)
+        gate_rod = self.rod_scene(LC)
+        d = self.defs((UU, "velocidade do condutor"), (QQ, "carga"))
+        d.set_opacity(0)
+        self.add(d)
+        n1 = self.oculto(at_col(text("força magnética do movimento", 22, DIM), 0.75))
+        FM = paint(r"\mathbf F_{\rm mov}", FC) + "="
+        Q, X = QQ + r"\,", r"\times"
+        r2 = self.oculto(at_col(eq(FM, Q, UU, X, BV, size=M_L), 0.1))
+        r3 = at_col(eq(UU + "=0", size=M_L), -1.0)
+        b3 = box(r3)
+        self.R(n1, r2, r3, b3)
+        cap = text("condutor parado", 22, DIM).move_to(LC + P3(0, -2.65))
+        self.head("removendo o mecanismo anterior", ck.visB.animate.set_value(1), gate_rod.animate.set_value(1), FadeIn(lb),
+                  FadeIn(self.wm), FadeIn(self.tag), rt=0.7)
+        self.sync("N004", "a carga vezes")
+        self.rev(d, n1, r2, rt=0.8)
+        self.sync("N005", "só que agora a velocidade")
+        self.play(FadeIn(r3, shift=0.1 * UP), Create(b3), FadeIn(cap), run_time=0.8)
+        self.sync("N005", "atenção")
+        self.play(Indicate(r3, color=WHITE, scale_factor=1.12), run_time=0.8)
+        self.sync("N005", "o fio não se desloca")
+        r4 = at_col(eq(FM, Q, UU, X, BV, "=0", size=M_L), 0.1)
+        self.rcol.append(r4)
+        self.add(r2.set_opacity(1))
+        self.play(TransformMatchingTex(r2, r4), run_time=1.3)
+        self.sync("N005", "mas a corrente continua")
+        self.play(gate_rod.animate.set_value(0), ck.det.animate.set_value(1), run_time=1.4)
+
+    # ═══ 3 · Paradoxo (FOCUS)  (N006) ═══
+    def s03(self):
+        self.estado(3, "paradoxo", "N006", dt=-1.4)
+        a = eq(UU + r"\times" + BV + "=0", size=60)
+        m = text("mas", 40, DIM)
+        c = eq(EM + r"\neq0", size=60)
+        f = VGroup(a, m, c).arrange(RIGHT, buff=0.55).move_to(P3(0, 0.3))
+        b = box(f, buff=0.35)
+        f.set_opacity(0)
+        self.add(f)
+        q = self.oculto(display("mecanismo?", 44, DIM).move_to(P3(0, -1.6)))
+        self.sync("N006")
+        self.rev(a, rt=0.8)
+        self.sync("N006", "mas a força eletromotriz medida")
+        self.play(m.animate.set_opacity(1), c.animate.set_opacity(1), Create(b), run_time=0.9)
+        self.respira(b)
+        self.sync("N006", "então alguma outra coisa")
+        self.play(Indicate(c, color=WHITE, scale_factor=1.12), run_time=0.6)
+        self.sync("N006", "qual é o mecanismo agora")
+        self.rev(q, rt=0.4)
+
+    # ═══ 4 · Faraday ainda prevê a fem (N007–N010) ═══
+    def s04(self):
+        self.estado(4, "faraday_preve_fem", "N007", dt=-1.4)
+        ck = self.ck = Circuit(self, LC)
+        lb = self.b_label(LC, 1.95, 1.95, 36)
+        area = Circle(radius=1.45, stroke_width=0, fill_color=FLUX, fill_opacity=0.14).move_to(LC).set_z_index(2)
+        la = eq("A", size=44, color=VIOLET).move_to(LC + P3(0.0, 0.25)).set_z_index(4)
+        d = self.defs((PHI, "fluxo magnético"), (AA, "área da espira"), (EM, "força eletromotriz (fem)"))
+        d.set_opacity(0)
+        self.add(d)
+        l1 = self.oculto(at_col(eq(PHI, "=", BS + "(t)", r"\," + AA, size=M_L), 0.05))
+        e1 = at_col(eq(EM, "=", "-" + DPHI, size=M_M), -0.75)
+        e2 = at_col(eq(EM, "=", r"-\frac{d}{dt}[", BS + "(t)", AA, "]", size=M_M), -0.75)
+        e3 = at_col(eq(EM, "=", "-", AA, r"\frac{d" + BS + "}{dt}", size=M_L), -2.2)
+        b3 = box(e3)
+        self.R(l1, e1, e2, e3, b3)
+        self.head("faraday ainda prevê a fem", *ck.on(), rt=0.7)
+        self.sync("N007", "uma variação do fluxo magnético")
+        self.rev(d, rt=0.8)
+        self.sync("N008", "o campo magnético atravessa")
+        self.play(FadeIn(lb), run_time=0.5)
+        self.pulse(self.disk_flash(LC, 2.3, MAG), rt=1.2)
+        self.sync("N008", "o fluxo magnético é")
+        self.rev(l1[0], l1[1], rt=0.5)
+        self.sync("N008", "o campo magnético vezes")
+        self.play(l1[2].animate.set_opacity(1), Indicate(lb, color=MAG, scale_factor=1.2), run_time=0.8)
+        self.sync("N008", "a área da espira")
+        self.play(l1[3].animate.set_opacity(1), FadeIn(area), FadeIn(la), run_time=0.8)
+        self.sync("N008", "e repara")
+        self.pulse(self.ring_flash(LC, 1.45, WHITE), rt=1.2)
+        self.sync("N008", "a área não muda")
+        self.play(Indicate(la, color=WHITE, scale_factor=1.25), run_time=0.9)
+        self.sync("N008", "quem muda é o campo")
+        self.play(Indicate(lb, color=MAG, scale_factor=1.25), run_time=0.9)
+        self.sync("N009", "colocando isso na lei de faraday")
+        self.play(FadeIn(e1, shift=0.1 * UP), run_time=0.8)
+        self.sync("N009", "a derivada atua só")
+        self.play(TransformMatchingTex(e1, e2), run_time=1.4)
+        self.sync("N009", "a força eletromotriz fica igual")
+        self.play(TransformMatchingTex(e2.copy(), e3), Create(b3), run_time=1.6)
+        self.respira(b3)
+        self.sync("N009", "vezes a taxa de variação")
+        self.play(Indicate(e3[4], color=WHITE, scale_factor=1.15), run_time=0.9)
+        self.sync("N009", "é a rapidez com que ele muda")
+        self.play(Indicate(e3[4], color=MAG, scale_factor=1.25), run_time=1.0)
+        self.sync("N010", "só que isso responde quanto")
+        self.play(Indicate(e3[0], color=WHITE, scale_factor=1.3), run_time=0.9)
+        self.sync("N010", "o que empurra cada carga")
+        self.play(ck.hl.animate.set_value(1), run_time=0.4)
+        self.extra = [lb, area, la]
+
+    # ═══ 5 · Quanto não é mecanismo (N011) ═══
+    def s05(self):
+        self.sync("N011", dt=-1.6)
+        self.begin(5, "quanto_nao_e_mecanismo")
+        ck = self.ck
+        self.clear_R(0.5)
+        k1 = self.oculto(at_col(text("força por unidade de carga", 22, DIM), 1.2))
+        f = self.oculto(at_col(eq(r"\frac{" + paint(r"\mathbf F", FC) + "}{" + QQ + "}", "=", r"\;?", size=64), 0.0))
+        self.R(k1, f)
+        self.head("quanto não é o mesmo que mecanismo", ck.ql.animate.set_value(1), *[FadeOut(m) for m in self.extra if m in self.mobjects], rt=0.6)
+        self.extra = []
+        self.sync("N011", "então precisa existir")
+        self.rev(k1, rt=0.7)
+        self.sync("N011", "que força é essa")
+        self.play(f.animate.set_opacity(1), run_time=0.6)
+
+    # ═══ 6 · O campo elétrico induzido (N012–N015) ═══
+    def s06(self):
+        self.sync("N012", dt=-1.0)
+        self.begin(6, "campo_eletrico_induzido")
+        ck = self.ck
+        self.clear_R(0.3)
+
+        def setas(g):
+            return tang(ck.tube[0].get_center(), ck.tube[0].width / 2 + 0.26, 8, 0.5, a0=PI / 8 - W_E * float(self.renderer.time), color=CYAN, w=3.5, op=g * sfun(self.tau.get_value()))
+
+        def forca(g):                   # força sobre a carga destacada: tangente, sentido horário, mais grossa e mais longa
+            p, c = ck.charge_pos(0), ck.tube[0].get_center()
+            a = math.atan2(p[1] - c[1], p[0] - c[0])
+            t = np.array([math.sin(a), -math.cos(a), 0.0])
+            return VGroup(arrow(p, p + 0.9 * t, FC, 8, tip=0.26, z=10)).set_opacity(g * sfun(self.tau.get_value()))
+
+        gE, gF = self.dyn(setas), self.dyn(forca)
+        fl = eq(paint(r"\mathbf F_E", FC) + "=" + QQ + EV, size=30).set_z_index(11)
+
+        def pos_fl(m):                  # rótulo fora da espira e fora das setas finas de E (r+0,26)
+            p, c = ck.charge_pos(0), ck.tube[0].get_center()
+            out = (p - c) / max(np.linalg.norm(p - c), 1e-6)
+            half = (abs(out[0]) * fl.width + abs(out[1]) * fl.height) / 2
+            m.move_to(p + out * (0.62 + half)).set_opacity(gF.get_value())
+
+        fl.add_updater(pos_fl)
+        self.add(fl)
+        self.reg.append((gF, [fl]))
+        self.upd.append(fl)
+        # varredura do pedacinho orientado do caminho (dℓ positivo, anti-horário) durante "soma a volta inteira"
+        t_a, t_b = vt("N012", "em cada pedacinho"), vt("N012", "soma a volta inteira", fim=True)
+
+        def varre(g):
+            th = PI / 2 + float(np.clip((self.renderer.time - t_a) / (t_b - t_a), 0, 1)) * 2 * PI
+            c, r = ck.tube[0].get_center(), ck.tube[0].width / 2
+            p = pol(c, r, th)
+            tg = np.array([-math.sin(th), math.cos(th), 0.0])
+            return VGroup(arrow(p - tg * 0.22, p + tg * 0.22, VIOLET, 8, tip=0.22, z=12)).set_opacity(g)
+
+        gS = self.dyn(varre)
+        ldl = eq(paint(r"d\boldsymbol\ell", VIOLET), size=26).set_z_index(12)
+
+        def pos_ldl(m):
+            th = PI / 2 + float(np.clip((self.renderer.time - t_a) / (t_b - t_a), 0, 1)) * 2 * PI
+            c, r = ck.tube[0].get_center(), ck.tube[0].width / 2
+            m.move_to(pol(c, r + 0.7, th)).set_opacity(gS.get_value())
+
+        ldl.add_updater(pos_ldl)
+        self.add(ldl)
+        self.reg.append((gS, [ldl]))
+        self.upd.append(ldl)
+        d = self.defs((EV, "campo elétrico"), (paint("C", VIOLET), "caminho (a espira)"), (paint(r"d\boldsymbol\ell", VIOLET), "elemento do caminho"))
+        d.set_opacity(0)
+        self.add(d)
+        FQ = r"\frac{" + paint(r"\mathbf F", FC) + "}{" + QQ + "}"
+        a1 = self.oculto(at_col(eq(EM, "=", r"\oint_C", FQ, DL, size=M_M), -0.05))
+        a2 = at_col(eq(EM, "=", r"\oint_C", EV, DL, size=M_M), -0.05)
+        a3 = at_col(eq(EM, "=", "-" + DPHI, size=M_M), -1.1)
+        a4 = at_col(eq(r"\oint_C", EV, DL, "=", "-" + DPHI, size=M_L), -2.05)
+        b4 = box(a4, CYAN)
+        nm = at_col(text("lei de faraday", 22, DIM), -1.1)
+        self.R(a1, a2, a3, a4, b4, nm)
+        self.head("o campo elétrico induzido", ck.ql.animate.set_value(0), rt=0.4)
+        self.sync("N012", "a peça que faltava")
+        self.rev(d, a1, rt=0.8)
+        self.sync("N012", "a circulação do campo elétrico")
+        self.rcol.append(a2)
+        self.add(a1.set_opacity(1))
+        self.play(gE.animate.set_value(1), TransformMatchingTex(a1, a2), run_time=1.6)
+        self.sync("N012", "em cada pedacinho")
+        self.play(gS.animate.set_value(1), run_time=0.4)
+        self.sync("N012", "soma a volta inteira", fim=True)
+        self.play(gS.animate.set_value(0), run_time=0.5)
+        self.sync("N013", "se existe campo elétrico ali")
+        self.play(gF.animate.set_value(1), run_time=0.8)
+        self.sync("N013", "a carga vezes o campo elétrico")
+        self.play(Indicate(fl, color=WHITE, scale_factor=1.15), run_time=0.9)
+        self.sync("N014", "de um lado")
+        self.play(Indicate(a2, color=WHITE, scale_factor=1.06), run_time=0.8)
+        self.sync("N014", "do outro")
+        self.play(FadeIn(a3, shift=0.1 * UP), run_time=0.8)
+        self.sync("N014", "logo a circulação")
+        self.play(TransformMatchingTex(a2.copy(), a4), FadeOut(a3, target_position=a4), Create(b4), run_time=1.6)
+        self.respira(b4)
+        self.sync("N014", "essa é a lei de faraday")
+        self.play(FadeIn(nm), run_time=0.7)
+        self.sync("N015", "um campo magnético que varia")
+        self.play(Indicate(a4, color=CYAN, scale_factor=1.06), run_time=1.2)
+
+    # ═══ 7 · Circulação antes da geometria (N016–N018) ═══
+    def s07(self):
+        self.estado(7, "circulacao_antes_da_geometria", "N016", dt=-1.4)
+
+        def curva(t):
+            r = 1.75 + 0.30 * math.cos(2 * t) + 0.22 * math.sin(3 * t + 1)
+            return LC + P3(r * math.cos(t), 0.9 * r * math.sin(t))
+
+        C = ParametricFunction(curva, t_range=[0, 2 * PI], color=VIOLET, stroke_width=4.5).set_z_index(3)
+        blob = ParametricFunction(lambda t: LC + 0.55 * (curva(t) - LC), t_range=[0, 2 * PI], color=MAG, stroke_width=2,
+                                  fill_color=MAG, fill_opacity=0.14).set_z_index(1)
+        lb = eq(BV + "(t)", size=34).move_to(LC)
+        lc = eq("C", size=40, color=VIOLET).move_to(LC + P3(-2.45, -1.15))
+        pontos, rotulo = [], None
+        for k, (t, psi) in enumerate(((0.55, PI - 0.7), (2.45, PI - 0.45), (4.3, PI + 0.55))):
+            p, p2 = curva(t), curva(t + 0.01)
+            T = (p2 - p) / np.linalg.norm(p2 - p)                       # dℓ: sentido de t crescente (anti-horário)
+            N = np.array([-T[1], T[0], 0.0])
+            Ev = 0.95 * (math.cos(psi) * T + math.sin(psi) * N)         # E local: NÃO é tangente ao caminho
+            Et = float(np.dot(Ev, T)) * T                               # componente tangencial (a que conta em E·dℓ)
+            tip = p + Ev
+            base = VGroup(arrow(p, tip, CYAN, 5, tip=0.17, z=6), arrow(p, p + 0.5 * T, VIOLET, 6, tip=0.17, z=7))
+            proj = VGroup(DashedLine(tip, p + Et, dash_length=0.06, color=CYAN, stroke_width=2, stroke_opacity=0.7).set_z_index(5),
+                          Line(p, p + Et, stroke_width=6, color=WHITE, stroke_opacity=0.85).set_z_index(6))
+            pontos.append((base, proj))
+            if k == 0:
+                u = Ev / np.linalg.norm(Ev)
+                rotulo = (eq(EV, size=28).move_to(tip + 0.3 * u),
+                          eq(paint(r"d\boldsymbol\ell", VIOLET), size=26).move_to(p + 0.72 * T - 0.3 * N),
+                          eq(EV + DL, size=26).move_to(p + 0.5 * Et - 0.58 * N))
+        f = self.oculto(at_col(eq(r"\oint_C", EV, DL, r"\neq0", size=M_M), 1.6))
+        bf = box(f, CYAN)
+        t0 = self.oculto(at_col(text("caminho escolhido · não é linha de campo", 22, DIM), 0.5))
+        lg = text("E·dℓ: parte de E ao longo do caminho × dℓ", T_LEG, DIM, caps=False).move_to(LC + P3(0, -2.65))
+        self.R(f, bf, t0)
+        self.head("circulação antes da geometria", FadeIn(C), FadeIn(blob), FadeIn(lb), rt=0.7)
+        self.sync("N016", "essa equação nos deu")
+        self.play(f.animate.set_opacity(1), Create(bf), run_time=0.9)
+        self.sync("N016", "o caminho da integral")
+        self.play(FadeIn(lc), run_time=0.5)
+        self.pulse(Circle(radius=1.0, stroke_width=0).set_opacity(0), rt=0.1)
+        self.sync("N016", "não é automaticamente")
+        self.play(t0.animate.set_opacity(1), run_time=0.7)
+        self.sync("N017", "em cada ponto existe")
+        self.play(FadeIn(pontos[0][0]), run_time=0.8)
+        self.play(FadeIn(rotulo[0]), FadeIn(rotulo[1]), run_time=0.6)
+        self.sync("N017", "na integral entra só")
+        self.play(FadeIn(pontos[0][1]), FadeIn(rotulo[2]), run_time=0.9)
+        self.sync("N017", "é o produto escalar")
+        self.play(FadeIn(lg), LaggedStart(*[FadeIn(g) for p in pontos[1:] for g in p], lag_ratio=0.25), run_time=1.6)
+        self.sync("N018", "quanto vale a soma")
+        self.play(Indicate(f, color=CYAN, scale_factor=1.06), run_time=1.0)
+
+    # ═══ 8 · Eletrostática × indução (N019–N020) ═══
+    def s08(self):
+        self.estado(8, "eletrostatica_x_inducao", "N019", dt=-1.4)
+        xl, xr, y0 = -3.75, 3.75, 0.8
+        div = Line(P3(0, 2.4), P3(0, -1.95), stroke_width=1.5, color=WHITE, stroke_opacity=0.3)
+        hl = text("eletrostática", 26, op=0.9).move_to(P3(xl, 2.3))
+        hr = text("indução", 26, op=0.9).move_to(P3(xr, 2.3))
+        q = P3(xl - 0.45, y0)
+        ch = charge(q, scale=1.7, z=4)
+        sgn = eq("+", size=24, color=BACKGROUND_COLOR).move_to(q).set_z_index(5)
+        pc, pr = P3(xl + 0.4, y0 - 0.1), 0.95
+        cam = Circle(radius=pr, stroke_color=VIOLET, stroke_width=3.5).move_to(pc).set_z_index(3)
+        marks_l, vec_l = VGroup(), VGroup()
+        for k in range(10):
+            a = 2 * PI * k / 10 + 0.2
+            p = pol(pc, pr, a)
+            T = np.array([-math.sin(a), math.cos(a), 0.0])
+            d = p - q
+            Ev = d / np.linalg.norm(d) ** 3
+            s = float(np.dot(Ev, T))
+            L = float(np.clip(0.18 / np.linalg.norm(d) ** 2, 0.18, 0.5))
+            vec_l.add(arrow(p, p + L * d / np.linalg.norm(d), CYAN, 3.5, tip=0.12, z=5))
+            marks_l.add(eq("+" if s > 0 else "-", size=26).move_to(pol(pc, pr + 0.32, a)))
+        pc2 = P3(xr, y0)
+        mg = Circle(radius=0.55, stroke_color=MAG, stroke_width=2, fill_color=MAG, fill_opacity=0.18).move_to(pc2)
+        mb = eq(BS, size=30).move_to(pc2)
+        cr = Circle(radius=1.0, stroke_color=VIOLET, stroke_width=3.5).move_to(pc2).set_z_index(3)
+        sr = self.giro(pc2, 1.0, 10, 0.4, a0=0.2, w=4)
+        marks_r = VGroup(*[eq("-", size=26).move_to(pol(pc2, 1.32, 0.2 + 2 * PI * k / 10)) for k in range(10)])
+        dl_l = arrow(pol(pc, pr, -0.9), pol(pc, pr, -0.9) + 0.45 * np.array([math.sin(0.9), math.cos(0.9), 0.0]), VIOLET, 5, tip=0.16, z=6)
+        dl_r = arrow(pol(pc2, 1.0, -0.9), pol(pc2, 1.0, -0.9) + 0.45 * np.array([math.sin(0.9), math.cos(0.9), 0.0]), VIOLET, 5, tip=0.16, z=6)
+        dlt_l = eq(paint(r"d\boldsymbol\ell", VIOLET), size=24).move_to(pol(pc, pr, -0.9) + P3(0.55, -0.1))
+        dlt_r = eq(paint(r"d\boldsymbol\ell", VIOLET), size=24).move_to(pol(pc2, 1.0, -0.9) + P3(0.55, -0.1))
+        el = at_col(eq(r"\oint", EV, DL, "=0", size=M_M), -1.3, 6.2).set_x(xl)
+        er = at_col(eq(r"\oint", EV, DL, r"\neq0", size=M_M), -1.3, 6.2).set_x(xr)
+        self.head("eletrostática × indução", FadeIn(div), FadeIn(hl), FadeIn(hr), rt=0.7)
+        self.sync("N019", "na eletrostática")
+        self.play(FadeIn(ch), FadeIn(sgn), Create(cam), FadeIn(dl_l), FadeIn(dlt_l), run_time=1.2)
+        self.play(LaggedStart(*[FadeIn(a) for a in vec_l], lag_ratio=0.1), run_time=2.0)
+        self.sync("N019", "algumas contribuições")
+        self.play(LaggedStart(*[FadeIn(m) for m in marks_l], lag_ratio=0.12), run_time=3.2)
+        self.sync("N019", "você volta ao ponto")
+        self.play(FadeIn(el, shift=0.1 * UP), run_time=0.8)
+        self.sync("N020", "quando o fluxo magnético varia")
+        self.play(FadeIn(mg), FadeIn(mb), Create(cr), FadeIn(dl_r), FadeIn(dlt_r), run_time=1.2)
+        self.play(sr.animate.set_value(1), run_time=1.5)
+        self.sync("N020", "e isso muda a natureza")
+        self.play(LaggedStart(*[FadeIn(m) for m in marks_r], lag_ratio=0.08), run_time=1.6)
+        self.sync("N020", "não é conservativo")
+        self.play(FadeIn(er, shift=0.1 * UP), run_time=0.8)
+
+    # ═══ 9 · O solenoide ideal e a simetria (N021–N024) ═══
+    def s09(self):
+        self.estado(9, "geometria_cilindrica", "N021", dt=-1.4)
+        ck = self.ck = Circuit(self, LC, reg_r=RB, wire=False)
+        lb = self.b_label(LC, -2.55, 1.85, 34)
+        Rl = VGroup(DashedLine(LC, pol(LC, RB, math.radians(210)), dash_length=0.1, color=VIOLET, stroke_width=3),
+                    eq("R", size=32, color=VIOLET).move_to(pol(LC, RB * 0.55, math.radians(210)) + P3(-0.1, -0.3))).set_z_index(5)
+        axis = Dot(LC, radius=0.055, color=WHITE).set_z_index(6)
+        axl = text("eixo", 18, DIM).move_to(LC + P3(0.4, -0.3)).set_z_index(6)
+        bout = eq(BS + r"\approx0", size=28).move_to(LC + P3(-2.75, -1.3))
+        zleg = VGroup(Circle(radius=0.16, stroke_width=2.6, color=MAG), Dot(radius=0.05, color=MAG)).move_to(P3(-6.6, 2.45))
+        zt = eq(r"+\hat z", size=30).next_to(zleg, RIGHT, buff=0.15)
+        zn = text("fora da tela", T_LEG, DIM, caps=False).next_to(zt, RIGHT, buff=0.15)
+        lado = self.solenoide(LC)                 # vista lateral pseudo-3D (cena extra) que dá lugar ao corte transversal
+        corte = DashedLine(LC + P3(0, 1.3), LC + P3(0, -1.3), dash_length=0.1, color=WHITE, stroke_width=3).set_z_index(8)
+        d = self.defs((RRR, "raio do solenoide"), (BD, "taxa de variação de B no tempo"))
+        d.set_opacity(0)
+        self.add(d)
+        f1 = self.oculto(at_col(eq(BV + "=" + BS + r"(t)\,\hat z", size=M_M), 0.4))
+        f1b = self.oculto(at_col(eq(BD + ">0", size=M_M), -0.45))
+        pht = eq(r"+\hat\phi", size=M_S, color=VIOLET)
+        phn = text("anti-horário", T_LEG, DIM, caps=False)
+        pg = at_col(VGroup(pht, phn).arrange(RIGHT, buff=0.25), -1.5)
+        arc = Arc(radius=2.15, arc_center=LC, start_angle=math.radians(-35), angle=math.radians(110), color=VIOLET, stroke_width=4)
+        arc.add_tip(tip_length=0.22)
+        phl = eq(r"+\hat\phi", size=34, color=VIOLET).move_to(pol(LC, 2.55, math.radians(25)))
+        s1 = at_col(text("simetria de rotação", 24, DIM), 1.5)
+        eqc = Circle(radius=1.9, stroke_color=WHITE, stroke_width=2, stroke_opacity=0.35).move_to(LC).set_z_index(2)
+        rl = Line(LC, pol(LC, 1.9, math.radians(120)), stroke_width=3, color=WHITE, stroke_opacity=0.8).set_z_index(5)
+        pt = Dot(pol(LC, 1.9, math.radians(120)), radius=0.08, color=WHITE).set_z_index(6)
+        tangr = self.giro(LC, 1.9, 2, 0.55, a0=0.9, w=4, z=4, dim=0.9)
+        f2c = self.oculto(at_col(eq(EV + "=", EPHI + r"(r)\,\hat\phi", size=M_L), 0.4))
+        b2 = box(f2c, CYAN)
+        sg = self.oculto(at_col(VGroup(eq(EPHI + "<0", size=M_S), text("→ horário", T_NOTE, CYAN)).arrange(RIGHT, buff=0.3), -1.0))
+        dE = self.oculto(at_col(VGroup(eq(EPHI, size=26), text("componente de E ao longo de", 20, DIM, caps=False), eq(r"\hat\phi", size=26)).arrange(RIGHT, buff=0.2), -2.2))
+        self.R(f1, f1b, pg, s1, f2c, b2, sg, dE)
+        self.head("o solenoide ideal", rt=0.7)
+        self.sync("N021", "um solenoide ideal")
+        self.play(lado.animate.set_value(1), run_time=1.0)
+        self.sync("N021", "olhamos o corte transversal")
+        self.play(Create(corte), run_time=0.5)
+        self.play(lado.animate.set_value(0), FadeOut(corte), ck.visB.animate.set_value(1), FadeIn(axis), FadeIn(axl), run_time=1.0)
+        self.sync("N021", "dentro do raio do solenoide")
+        self.play(FadeIn(Rl), d[0].animate.set_opacity(1), d[1].animate.set_opacity(1), run_time=0.8)
+        self.sync("N021", "fora nesse modelo ideal")
+        self.play(FadeIn(bout), run_time=0.7)
+        self.sync("N022", "o eixo que sai da tela")
+        self.play(FadeIn(zleg), FadeIn(zt), FadeIn(zn), run_time=0.8)
+        self.sync("N022", "o campo magnético aponta")
+        self.play(FadeIn(lb), f1.animate.set_opacity(1), run_time=0.8)
+        self.sync("N022", "e está aumentando")
+        self.play(f1b.animate.set_opacity(1), d[2].animate.set_opacity(1), run_time=0.8)
+        self.sync("N022", "e para percorrer os caminhos")
+        self.play(Create(arc), FadeIn(phl), pg.animate.set_opacity(1) if False else FadeIn(pg), run_time=1.2)
+        self.sync("N022", "guarda essa convenção")
+        self.play(Indicate(arc, color=WHITE, scale_factor=1.04), run_time=1.0)
+        self.sync("N023", "agora entra a simetria")
+        self.play(*[FadeOut(m) for m in (f1, f1b, pg, d)], FadeIn(s1), run_time=0.6)
+        self.sync("N023", "pontos à mesma distância")
+        self.play(FadeIn(rl), FadeIn(pt), FadeIn(eqc), run_time=0.4)
+        self.play(Rotate(VGroup(rl, pt), angle=-2 * PI, about_point=LC), run_time=3.0)
+        self.sync("N023", "então neste modelo ideal")
+        self.play(FadeOut(rl), FadeOut(pt), FadeOut(eqc), tangr.animate.set_value(1), run_time=0.8)
+        self.sync("N023", "e a componente que dá a volta")
+        self.play(f2c.animate.set_opacity(1), Create(b2), run_time=0.9)
+        rings = self.aneis(LC, RINGS)
+        self.sync("N024", "só agora aparecem os círculos")
+        self.play(rings.animate.set_value(1), FadeOut(arc), FadeOut(phl), tangr.animate.set_value(0), run_time=2.4)
+        self.sync("N024", "sai negativa")
+        self.play(sg[0].animate.set_opacity(1), run_time=0.8)
+        self.sync("N024", "ou seja")
+        self.play(sg[1].animate.set_opacity(1), run_time=0.8)
+        self.sync("N024", "a conta vai provar")
+        self.play(dE.animate.set_opacity(1), run_time=0.4)
+        self.rings9 = rings
+        self.extra = [zleg, zt, zn, bout, axl, axis]
+        self.Rl = Rl
+        self.lb9 = lb
+
+    # ═══ 10 · Dentro (r < R): a álgebra nasce da geometria (N025–N029) ═══
+    def s10(self):
+        self.sync("N025", dt=-1.6)
+        self.begin(10, "dentro")
+        ck = self.ck
+        self.clear_R(0.5)
+        c = LC
+        r1 = self.oculto(at_col(eq(r"\oint_C", EV, DL, "=", EPHI, r"(2\pi " + RR + ")", size=M_S), 2.1))
+        r2 = self.oculto(at_col(eq(PHI, "=", BS, r"\,\pi " + RR + "^2", size=M_S), 1.25))
+        t1 = at_col(eq(EPHI, r"(2\pi " + RR + ")", "=", "-" + DPHI, size=M_M), 0.2)
+        t2 = at_col(eq(EPHI, r"(2\pi " + RR + ")", "=", r"-\pi " + RR + "^2", BDS, size=M_M), 0.2)
+        t2b = at_col(eq(EPHI, "=", r"-\frac{\pi " + RR + r"^2}{2\pi " + RR + "}", BDS, size=M_L), -0.15)
+        G1 = eq(EPHI + "=-" + r"\frac{\pi " + RR + r"^2}{2\pi " + RR + "}" + BDS, size=M_L).move_to(t2b)
+        G2 = eq(EPHI + "=-" + r"\frac{" + RR + "}{2}" + BDS, size=M_L).move_to(t2b)
+        b3 = box(G2, CYAN)
+        rr = eq(r"(" + RR + "<" + RRR + ")", size=M_S).next_to(b3, RIGHT, buff=0.25)
+        pr = self.oculto(at_col(eq(r"|" + EV + r"|\propto " + RR, size=M_L), -1.6))
+        self.R(r1, r2, t1, t2, t2b, G1, G2, b3, rr, pr)
+        gR = self.gR = self.rig_r()
+        self.head("dentro da região magnética", *[FadeOut(m) for m in self.extra], self.rings9.animate.set_value(0), gR.animate.set_value(1), rt=0.7)
+        self.extra = []
+        self.sync("N025", "por simetria")
+        self.pulse(self.ring_flash(c, 0.9, VIOLET), rt=1.2)
+        self.sync("N025", "a circulação então")
+        self.play(r1.animate.set_opacity(1), run_time=0.8)
+        self.sync("N025", "dois pi vezes o raio")
+        self.pulse(self.ring_flash(c, 0.9, VIOLET), rt=1.2)
+        self.sync("N026", "do outro lado da lei")
+        self.play(r2.animate.set_opacity(1), run_time=0.8)
+        self.sync("N026", "é essa área que acende")
+        self.pulse(self.disk_flash(c, 0.9, FLUX), rt=1.4)
+        self.sync("N027", "aplicando faraday")
+        self.play(FadeIn(t1, shift=0.1 * UP), run_time=0.8)
+        self.sync("N027", "é menos pi vezes")
+        self.play(TransformMatchingTex(t1, t2), run_time=1.4)
+        self.sync("N028", "divide pelo comprimento")
+        self.play(TransformMatchingTex(t2, t2b), run_time=1.2)
+        self.sync("N028", "os pi se cancelam")
+        self.remove(t2b)
+        self.add(G1)
+        self.gm(G1, G2, [([0], [0]), ([1], [1]), ([2], [2]), ([3], [3]), ([5], [4]), ([7], [5]), ([8], [6]), ([11], [7]), ([12], [8]), ([13], [9]), ([14], [10]), ([15], [11])], rt=2.6)
+        self.sync("N028", "menos metade do raio")
+        self.play(Create(b3), FadeIn(rr), run_time=0.8)
+        self.respira(b3)
+        self.sync("N029", "o sinal negativo confirma")
+        self.play(Indicate(G2[0][3], color=WHITE, scale_factor=1.6), run_time=0.9)
+        self.sync("N029", "e o módulo cresce")
+        self.play(pr.animate.set_opacity(1), run_time=0.8)
+
+    # ═══ 11 · A borda: C, S e a parte de S com B (N030–N031) ═══
+    def s11(self):
+        self.sync("N030", dt=-1.6)
+        self.begin(11, "chegada_a_R")
+        self.clear_R(0.5)
+
+        def icons():
+            iC = Circle(radius=0.16, stroke_color=VIOLET, stroke_width=4)
+            iS = Circle(radius=0.16, stroke_color=VIOLET, stroke_width=2, fill_color=VIOLET, fill_opacity=0.35)
+            iB = Circle(radius=0.16, stroke_color=MAG, stroke_width=2, fill_color=MAG, fill_opacity=0.5)
+            return iC, iS, iB
+
+        def row(icon, label, value, y):
+            g = VGroup(icon, text(label, 20, DIM, caps=False), eq(value, size=M_S)).arrange(RIGHT, buff=0.25)
+            return at_col(g, y)
+
+        iC, iS, iB = icons()
+        rowC, rowS, rowB = (self.oculto(row(iC, "C: caminho", r"2\pi " + RRR, 1.8)), self.oculto(row(iS, "S: superfície", r"\pi " + RRR + "^2", 0.9)),
+                            self.oculto(row(iB, "parte de S com B", r"\pi " + RRR + "^2", 0.0)))
+        iC2, iS2, iB2 = icons()
+        rowC2, rowS2, rowB2 = (self.oculto(row(iC2, "C: caminho", r"2\pi " + RR + r"\;\uparrow", 1.8)),
+                               self.oculto(row(iS2, "S: superfície", r"\pi " + RR + r"^2\;\uparrow", 0.9)),
+                               self.oculto(row(iB2, "parte de S com B", r"\pi " + RRR + r"^2\;=", 0.0)))
+        self.R(rowC, rowS, rowB, rowC2, rowS2, rowB2)
+        self.head("na borda da região", rt=0.6)
+        self.sync("N030", "o caminho que a gente percorre")
+        self.play(rowC.animate.set_opacity(1), run_time=0.5)
+        self.pulse(self.ring_flash(LC, RB, VIOLET), rt=1.0)
+        self.sync("N030", "a superfície que ele limita")
+        self.play(rowS.animate.set_opacity(1), run_time=0.5)
+        self.pulse(self.disk_flash(LC, RB, VIOLET), rt=1.0)
+        self.sync("N030", "e a parte dessa superfície")
+        self.play(rowB.animate.set_opacity(1), run_time=0.5)
+        self.pulse(self.ring_flash(LC, RB, MAG), rt=1.2)
+        self.sync("N031", "passou da borda")
+        self.play(FadeOut(rowC), FadeOut(rowS), FadeIn(rowC2), FadeIn(rowS2), run_time=0.9)
+        for m in (rowC2, rowS2):
+            m.set_opacity(1)
+        self.sync("N031", "mas a região atravessada")
+        self.play(FadeOut(rowB), FadeIn(rowB2), run_time=0.8)
+        rowB2.set_opacity(1)
+        self.pulse(self.ring_flash(LC, RB, MAG), rt=1.2)
+        self.sync("N031", "ficou presa ao tamanho")
+        self.pulse(self.ring_flash(LC, RB, MAG), rt=1.2)
+
+    # ═══ 12 · Fora (r > R): a álgebra nasce da geometria (N032–N035) ═══
+    def s12(self):
+        self.sync("N032", dt=-1.6)
+        self.begin(12, "fora")
+        self.clear_R(0.5)
+        c = LC
+        r1 = self.oculto(at_col(eq(PHI, "=", BS, r"\,\pi " + RRR + "^2", size=M_S), 2.1))
+        t1 = at_col(eq(EPHI, r"(2\pi " + RR + ")", "=", "-" + DPHI, size=M_M), 1.1)
+        t2 = at_col(eq(EPHI, r"(2\pi " + RR + ")", "=", r"-\pi " + RRR + "^2", BDS, size=M_M), 1.1)
+        t2b = at_col(eq(EPHI, "=", r"-\frac{\pi " + RRR + r"^2}{2\pi " + RR + "}", BDS, size=M_L), 0.3)
+        G3 = eq(EPHI + "=-" + r"\frac{\pi " + RRR + r"^2}{2\pi " + RR + "}" + BDS, size=M_L).move_to(t2b)
+        G4 = eq(EPHI + "=-" + r"\frac{" + RRR + "^2}{2" + RR + "}" + BDS, size=M_L).move_to(t2b)
+        b3 = box(G4, CYAN)
+        rr = eq(r"(" + RR + ">" + RRR + ")", size=M_S).next_to(b3, RIGHT, buff=0.25)
+        tg1 = self.oculto(at_col(VGroup(eq("R^2", size=M_S, color=VIOLET), text("tamanho fixo da região magnética", T_LEG, DIM, caps=False)).arrange(RIGHT, buff=0.25), -0.75))
+        tg2 = self.oculto(at_col(VGroup(eq("r", size=M_S, color=VIOLET), text("tamanho variável do caminho", T_LEG, DIM, caps=False)).arrange(RIGHT, buff=0.25), -1.3))
+        pr = self.oculto(at_col(eq(r"|" + EV + r"|\propto\frac1" + RR, size=M_L), -2.35))
+        self.R(r1, t1, t2, t2b, G3, G4, b3, rr, tg1, tg2, pr)
+        self.head("fora da região magnética", rt=0.6)
+        self.sync("N032", "usa só a área")
+        self.play(r1.animate.set_opacity(1), run_time=0.7)
+        self.pulse(self.disk_flash(c, RB, MAG), rt=1.4)
+        self.sync("N033", "a circulação continua")
+        self.pulse(self.ring_flash(c, 1.75, VIOLET), rt=1.0)
+        self.play(FadeIn(t1, shift=0.1 * UP), run_time=0.7)
+        self.sync("N033", "e a lei de faraday liga")
+        self.play(TransformMatchingTex(t1, t2), run_time=1.4)
+        self.sync("N034", "dividimos de novo")
+        self.play(TransformMatchingTex(t2, t2b), run_time=1.2)
+        self.sync("N034", "os pi se cancelam")
+        self.remove(t2b)
+        self.add(G3)
+        self.gm(G3, G4, [([0], [0]), ([1], [1]), ([2], [2]), ([3], [3]), ([5], [4]), ([6], [5]), ([7], [6]), ([8], [7]), ([10], [8]), ([11], [9]), ([12], [10]), ([13], [11]), ([14], [12]), ([15], [13])], rt=1.4)
+        self.sync("N034", "só que agora o raio do solenoide")
+        self.play(tg1.animate.set_opacity(1), Indicate(r1, color=MAG, scale_factor=1.05), run_time=0.9)
+        self.sync("N034", "e o raio do caminho fica embaixo")
+        self.play(tg2.animate.set_opacity(1), run_time=0.8)
+        self.sync("N034", "a componente tangencial é menos")
+        self.play(Create(b3), FadeIn(rr), run_time=0.8)
+        self.respira(b3)
+        self.sync("N035", "por isso o campo deixa")
+        self.play(pr.animate.set_opacity(1), run_time=0.9)
+
+    # ═══ 13 · Gráfico sincronizado (N036–N038) ═══
+    def s13(self):
+        self.sync("N036", dt=-1.6)
+        self.begin(13, "grafico_sincronizado")
+        self.clear_R(0.5)
+        rin = eq(r"\dfrac{" + RR + r"}{2}\," + BDA, r"\;(" + RR + r"\le " + RRR + ")", size=34)
+        rout = eq(r"\dfrac{" + RRR + "^2}{2" + RR + r"}\," + BDA, r"\;(" + RR + r"\ge " + RRR + ")", size=34)
+        rows = VGroup(rin, rout).arrange(DOWN, aligned_edge=LEFT, buff=0.3)
+        brace = Brace(rows, LEFT, buff=0.15)
+        lab = eq(r"|" + EV + r"|=", size=38)
+        cases = self.oculto(at_col(VGroup(lab, brace, rows).arrange(RIGHT, buff=0.2), 1.6))
+        ax = Axes(x_range=[0, 2.8, 1], y_range=[0, 0.9, 0.3], x_length=5.6, y_length=2.1,
+                  axis_config={"color": WHITE, "stroke_width": 2.5, "include_ticks": False, "include_tip": True, "tip_length": 0.18},
+                  ).move_to(P3(RX + 0.35, -1.55))
+        c2p = ax.c2p
+        xr_lab = eq("r", size=30, color=VIOLET).next_to(ax.x_axis.get_end(), DOWN, buff=0.12)
+        ye_lab = eq(r"|" + EV + r"|", size=30).next_to(ax.y_axis.get_end(), UP, buff=0.1)
+        vR = DashedLine(c2p(RB, 0), c2p(RB, eabs(RB)), dash_length=0.08, color=VIOLET, stroke_width=2.5)
+        vRl = eq("R", size=30, color=VIOLET).next_to(c2p(RB, 0), DOWN, buff=0.12)
+        pk = eq(r"\frac R2" + BDA, size=24).next_to(c2p(0, eabs(RB)), LEFT, buff=0.3)
+        hR = DashedLine(c2p(0, eabs(RB)), c2p(RB, eabs(RB)), dash_length=0.08, color=WHITE, stroke_width=1.5, stroke_opacity=0.5)
+        grafico = VGroup(ax, xr_lab, ye_lab, vR, vRl, pk, hR)
+        self.R(cases, *grafico)
+
+        def xs_to(r):
+            xs = list(np.linspace(0.0, r, max(2, int(r * 30) + 1)))
+            return sorted(set(xs + [RB])) if r > RB else xs
+
+        def curva(g):          # trecho já percorrido: ramo interno em ciano, externo em ciano claro
+            r = self.rT.get_value()
+            if r < 0.02:
+                return VGroup()
+            xs = xs_to(r)
+            inn = [x for x in xs if x <= RB]
+            out = [x for x in xs if x >= RB]
+            m = VGroup(VMobject(stroke_color=CYAN, stroke_width=5, stroke_opacity=g).set_points_as_corners([c2p(x, eabs(x)) for x in inn]))
+            if len(out) > 1:
+                m.add(VMobject(stroke_color="#9FEBFF", stroke_width=5, stroke_opacity=g).set_points_as_corners([c2p(x, eabs(x)) for x in out]))
+            return m
+
+        def ponto(g):
+            r = self.rT.get_value()
+            d = Dot(c2p(r, eabs(r)), radius=0.1, color=WHITE).set_opacity(g).set_z_index(8)
+            ha = Circle(radius=0.17, stroke_color=CYAN, stroke_width=3, stroke_opacity=g).move_to(d).set_z_index(8)
+            dl = DashedLine(c2p(r, 0), c2p(r, eabs(r)), dash_length=0.06, color=WHITE, stroke_width=1.5, stroke_opacity=0.55 * g)
+            return VGroup(d, ha, dl)
+
+        gc, gp = self.dyn(curva), self.dyn(ponto)
+
+        def ramo_ativo():       # ramo ativo em destaque (opacidade conforme o ramo em que o ponto está)
+            rin.add_updater(lambda m: m.set_opacity(1.0 if self.rT.get_value() <= RB else 0.4))
+            rout.add_updater(lambda m: m.set_opacity(1.0 if self.rT.get_value() >= RB else 0.4))
+            self.upd += [rin, rout]
+
+        c1 = at_col(eq(r"|" + EV + r"(R^-)|", "=", r"\tfrac R2" + BDA, size=28), 2.5)
+        c2 = at_col(eq(r"|" + EV + r"(R^+)|", "=", r"\tfrac{R^2}{2R}" + BDA, "=", r"\tfrac R2" + BDA, size=28), 1.65)
+        c3 = at_col(eq(r"|" + EV + r"(R^-)|=|" + EV + r"(R^+)|", size=38), 0.7)
+        c3b = box(c3, CYAN, buff=0.12)
+        m1 = at_col(text("contínuo em R", 22, DIM), 0.0)
+        m2 = at_col(text("quina em R", 22, DIM), 0.0)
+        self.R(c1, c2, c3, c3b, m1, m2)
+        self.head("o perfil completo do campo", cases.animate.set_opacity(1), rt=0.7)
+        ramo_ativo()
+        self.sync("N036", "o ponto do gráfico")
+        self.play(Create(ax), FadeIn(xr_lab), FadeIn(ye_lab), run_time=1.2)
+        self.play(Create(vR), FadeIn(vRl), Create(hR), FadeIn(pk), gc.animate.set_value(1), gp.animate.set_value(1), run_time=1.0)
+        self.sync("N036", "é a mesma situação física")
+        self.pulse(self.ring_flash(LC, 0.01, WHITE).set_opacity(0), rt=0.1)
+        self.play(Indicate(gp.__class__ and cases, color=WHITE, scale_factor=1.0), run_time=0.5)
+        # N037: o ponto percorre centro → ramo linear → borda (rT segue o programa do relógio)
+        self.sync("N037", "na borda")
+        rin.clear_updaters()
+        rout.clear_updaters()
+        self.upd = []
+        rin.set_opacity(1.0)
+        rout.set_opacity(1.0)
+        self.play(FadeOut(cases), run_time=0.4)
+        self.play(FadeIn(c1, shift=0.1 * UP), run_time=0.7)
+        self.sync("N037", "então o campo é contínuo")
+        self.play(FadeIn(c2, shift=0.1 * UP), run_time=0.7)
+        self.play(FadeIn(c3, shift=0.1 * UP), Create(c3b), FadeIn(m1), run_time=0.8)
+        self.sync("N037", "mas a inclinação muda")
+        self.play(FadeOut(m1), run_time=0.3)
+        self.play(FadeIn(m2), run_time=0.5)
+        self.sync("N038", "depois da borda", dt=-0.4)
+        self.play(FadeOut(c1), FadeOut(c2), FadeOut(c3), FadeOut(c3b), FadeOut(m2), run_time=0.5)
+        self.play(FadeIn(cases), run_time=0.5)
+        ramo_ativo()
+        self.gcurve = (gc, gp)
+
+    # ═══ 14 · Resultado contraintuitivo (N039–N040) ═══
+    def s14(self):
+        self.sync("N039", dt=-1.6)
+        self.begin(14, "b_local_zero_e_nao_zero")
+        gc, gp = self.gcurve
+        self.clear_R(0.5)
+        self.play(gc.animate.set_value(0), gp.animate.set_value(0), run_time=0.4)
+        a = math.radians(38)
+        Pp = pol(LC, 2.15, a)
+        lupa = Circle(radius=0.5, stroke_color=WHITE, stroke_width=3.5, fill_color=BACKGROUND_COLOR, fill_opacity=1).move_to(Pp).set_z_index(10)
+        tg = np.array([math.sin(a), -math.cos(a), 0.0])
+        def fluxo(g):                                       # E no ponto: setas que atravessam a lupa sem parar
+            clk = float(self.renderer.time)
+            o = VGroup()
+            for k in range(3):
+                x0 = (clk * 0.5 + k / 3.0) % 1.0
+                c0 = Pp + tg * (x0 - 0.5) * 0.9
+                o.add(arrow(c0 - tg * 0.16, c0 + tg * 0.16, CYAN, 6, tip=0.15, z=12).set_opacity(g * math.sin(PI * x0) ** 0.7))
+            return o
+        ea = self.dyn(fluxo)
+        pd = Dot(Pp, radius=0.06, color=WHITE).set_z_index(13)
+        bl = eq(BS + r"\approx0", size=M_S).move_to(Pp + P3(1.45, 0.6)).set_z_index(14)
+        el = eq(EV + r"\neq0", size=M_S).move_to(Pp + P3(1.45, -0.25)).set_z_index(14)
+        t1 = self.oculto(at_col(eq(BS + r"(\text{ponto})\approx0", size=M_M), 0.9))
+        t2 = self.oculto(at_col(text("mas", 30, DIM), 0.0))
+        t3 = self.oculto(at_col(eq(EV + r"(\text{ponto})\neq0", size=M_M), -0.9))
+        b = box(VGroup(t1, t2, t3), WHITE, buff=0.3)
+        self.R(t1, t2, t3, b)
+        self.head("resultado contraintuitivo", rt=0.6)
+        self.sync("N039", "escolhe um ponto")
+        self.play(FadeIn(lupa, scale=0.6), FadeIn(pd), ea.animate.set_value(1), run_time=1.2)
+        self.sync("N039", "ali o campo magnético é desprezível")
+        self.play(FadeIn(bl), run_time=0.7)
+        self.sync("N039", "mas o campo elétrico induzido")
+        self.play(FadeIn(el), Indicate(lupa, color=CYAN, scale_factor=1.15), run_time=1.0)
+        self.sync("N039", "parece defeito da conta")
+        self.play(t1.animate.set_opacity(1), run_time=0.8)
+        self.sync("N039", "a física está dizendo")
+        self.play(t2.animate.set_opacity(1), t3.animate.set_opacity(1), Create(b), run_time=0.9)
+        self.respira(b)
+        self.sync("N040", "a lei de faraday não diz")
+        self.play(Indicate(lupa, color=WHITE, scale_factor=1.2), run_time=1.0)
+        self.sync("N040", "na forma integral")
+        self.pulse(self.disk_flash(LC, 2.15, FLUX), rt=1.8)
+        self.sync("N040", "o ponto está fora")
+        self.pulse(self.ring_flash(LC, 2.15, VIOLET), rt=1.2)
+        self.sync("N040", "ainda envolve a região")
+        self.pulse(self.disk_flash(LC, RB, MAG), rt=0.9)
+
+    # ═══ 15 · Integral → diferencial (Stokes) (N041–N044) ═══
+    def s15(self):
+        self.estado(15, "integral_para_diferencial", "N041", dt=-1.4)
+        cI = P3(-5.15, 0.45)
+        S = Circle(radius=1.0, stroke_width=0, fill_color=VIOLET, fill_opacity=0.14).move_to(cI)
+        Cc = Circle(radius=1.0, stroke_color=VIOLET, stroke_width=4.5).move_to(cI)
+        bdots = VGroup(*[VGroup(Circle(radius=0.07, stroke_width=2, color=MAG), Dot(radius=0.025, color=MAG)).move_to(cI + P3(dx, dy))
+                         for dx, dy in ((-0.35, 0.3), (0.3, 0.35), (0.0, -0.05), (-0.3, -0.4), (0.4, -0.3))])
+        sl = eq("S", size=34, color=VIOLET).move_to(cI + P3(-0.15, 0.62))
+        cl = eq(paint("C=\\partial S", VIOLET), size=30).move_to(cI + P3(0.0, 1.85))
+        dlr = self.giro(cI, 1.0, 4, 0.38, color=VIOLET, w=5, ccw=True, a0=0.5, z=6)      # dℓ positivo: anti-horário (gira)
+        ecc = self.giro(cI, 1.42, 6, 0.4, a0=0.3, w=4)                                   # E real: horário (gira)
+        gpa, gpb = self.pa(cI + P3(-0.25, -0.2), 0.22, -2.0), self.pa(P3(2.1, 1.7), 0.42, -1.6)
+        lg1 = VGroup(arrow(P3(0, 0), P3(0.45, 0), VIOLET, 4, tip=0.14), text("dℓ: positivo (anti-horário)", 18, DIM, caps=False)).arrange(RIGHT, buff=0.15)
+        lg2 = VGroup(arrow(P3(0, 0), P3(0.45, 0), CYAN, 4, tip=0.14), text("E: real (horário)", 18, DIM, caps=False)).arrange(RIGHT, buff=0.15)
+        lg3 = VGroup(VGroup(Circle(radius=0.12, stroke_width=2.2, color=WHITE), Dot(radius=0.04, color=WHITE)),
+                     text("normal: +z (fora da tela)", 18, DIM, caps=False)).arrange(RIGHT, buff=0.15)
+        leg = VGroup(lg1, lg2, lg3).arrange(DOWN, buff=0.18, aligned_edge=LEFT).move_to(P3(-5.1, -1.95))
+        cx, ey, sy = 2.1, 0.3, 2.0
+
+        def step(s, old=None):
+            new = fit(text(s, T_NOTE, DIM), 9.0).move_to(P3(cx, sy))
+            if old is not None:                      # sequencial: a frase antiga sai por completo antes da nova entrar
+                self.play(FadeOut(old), run_time=0.35)
+            self.play(FadeIn(new), run_time=0.5)
+            return new
+
+        A = fit(eq(r"\oint_C", EV, DL, "=", r"-\frac{d}{dt}", r"\int_S", BV + DA, size=M_M), 9.2).move_to(P3(cx, ey))
+        B_ = fit(eq(r"\int_S(", NABE, ")" + DA, "=", r"-\frac{d}{dt}", r"\int_S", BV + DA, size=M_M), 9.2).move_to(P3(cx, ey))
+        Cq = fit(eq(r"\int_S(", NABE, ")" + DA, "=", "-", r"\int_S", r"\frac{\partial " + BV + r"}{\partial t}", DA, size=M_M), 9.2).move_to(P3(cx, ey))
+        Dq = fit(eq(r"\int_S(", NABE, "+", r"\frac{\partial " + BV + r"}{\partial t}", ")" + DA, "=0", size=M_M), 9.2).move_to(P3(cx, ey))
+        D = fit(eq(NABE, "=", "-", r"\frac{\partial " + BV + r"}{\partial t}", size=60), 9.2).move_to(P3(cx, ey))
+        bD = box(D, CYAN, buff=0.3)
+        lab = text("maxwell–faraday (forma local)", T_BODY, WHITE).move_to(P3(cx, -1.3))
+        patch = Circle(radius=0.5, stroke_color=WHITE, stroke_width=4).move_to(cI + P3(0.2, 0.25)).set_z_index(8)
+        self.head("da forma global à forma local", FadeIn(S), Create(Cc), FadeIn(bdots), FadeIn(sl), FadeIn(cl), rt=0.8)
+        self.sync("N041", "uma volta inteira")
+        st = step("lei de faraday")
+        self.play(FadeIn(A, shift=0.1 * UP), FadeIn(leg), run_time=0.9)
+        self.sync("N041", "o que essa lei diz localmente")
+        self.play(Create(patch), run_time=0.6)
+        self.play(patch.animate.move_to(cI + P3(-0.25, -0.2)).scale(0.5), gpa.animate.set_value(1), run_time=1.2)
+        self.sync("N042", "entra o teorema de stokes")
+        self.play(FadeOut(patch), run_time=0.3)
+        st = step("teorema de stokes", st)
+        self.sync("N042", "temos uma superfície")
+        self.play(dlr.animate.set_value(1), ecc.animate.set_value(1), Indicate(S, color=VIOLET, scale_factor=1.05), run_time=0.9)
+        self.sync("N042", "o sentido positivo do contorno")
+        self.play(Indicate(Cc, color=VIOLET, scale_factor=1.12), run_time=1.0)
+        self.sync("N042", "o campo elétrico real")
+        self.play(Indicate(Cc, color=CYAN, scale_factor=1.12), run_time=1.0)
+        self.sync("N043", "stokes transforma")
+        self.play(Indicate(Cc, color=WHITE, scale_factor=1.08), TransformMatchingTex(A, B_), run_time=2.2)
+        self.sync("N043", "do outro lado")
+        st = step("superfície fixa", st)
+        self.play(TransformMatchingTex(B_, Cq), run_time=2.0)
+        self.sync("N043", "agora as duas integrais")
+        st = step("agrupando", st)
+        self.play(TransformMatchingTex(Cq, Dq), run_time=2.0)
+        self.sync("N044", "essa relação vale")
+        st = step("vale para qualquer s fixa", st)
+        self.play(Create(patch.move_to(cI + P3(0.2, 0.25)).scale(2.0)), run_time=0.6)
+        self.sync("N044", "como essa igualdade vale")
+        self.play(patch.animate.scale(0.25), run_time=1.6)
+        self.play(patch.animate.move_to(cI + P3(-0.25, -0.2)), run_time=0.9)
+        self.sync("N044", "a relação precisa valer")
+        st = step("logo, ponto a ponto", st)
+        self.play(patch.animate.move_to(cI + P3(0.3, -0.35)), run_time=0.9)
+        self.sync("N044", "o rotacional do campo elétrico é igual")
+        self.play(FadeOut(patch), TransformMatchingTex(Dq, D), run_time=2.0)
+        self.play(Create(bD), run_time=0.6)
+        self.respira(bD)
+        self.sync("N044", "essa é a equação")
+        self.play(FadeOut(st), FadeIn(lab, shift=0.1 * UP), run_time=0.8)
+        self.sync("N044", "a gente chegou nela")
+        self.play(Indicate(bD, color=CYAN, scale_factor=1.05), gpb.animate.set_value(1), run_time=0.6)
+
+    # ═══ 16 · Local não é global (N045–N048) ═══
+    def s16(self):
+        self.estado(16, "local_nao_e_global", "N045", dt=-1.3)
+        ck = self.ck = Circuit(self, LC, reg_r=RB, wire=False)
+        rings = self.aneis(LC, RINGS)
+        rings_d = self.aneis(LC, RINGS, 0.4)
+        lb = self.b_label(LC, -2.55, 1.85, 34)
+        pin = LC + P3(-0.55, 0.45)
+        pout = pol(LC, 2.4, math.radians(-35))
+        rin = Circle(radius=0.3, stroke_color=WHITE, stroke_width=3.5, fill_color=BACKGROUND_COLOR, fill_opacity=0.5).move_to(pin).set_z_index(8)
+        rout = Circle(radius=0.3, stroke_color=WHITE, stroke_width=3.5, fill_color=BACKGROUND_COLOR, fill_opacity=0.5).move_to(pout).set_z_index(8)
+        d0 = text("dentro", T_NOTE, MAG)
+        d1 = eq(r"\partial_t " + BV + r"\neq0", size=M_S)
+        d2 = eq(NABE + r"\neq0", size=M_S)
+        dg = VGroup(d0, d1, d2).arrange(DOWN, buff=0.15)
+        f0 = text("fora", T_NOTE, WHITE)
+        f1 = eq(r"\partial_t " + BV + "=0", size=M_S)
+        f2 = eq(NABE + "=0", size=M_S)
+        f3 = eq(EV + r"\neq0", size=M_S)
+        fg = VGroup(f0, f1, f2, f3).arrange(DOWN, buff=0.36)
+        dg.move_to(P3(RX, 1.85))
+        fg.move_to(P3(RX, -0.35))
+        lpeq = eq(r"C_{\rm peq}", size=26, color=VIOLET).move_to(pout + P3(0.1, -0.58))
+        peq = at_col(eq(r"\oint_{C_{\rm peq}}", EV, DL, "=0", size=M_M), -2.4)
+        peqb = box(peq, CYAN, buff=0.12)
+        bx = box(f2, CYAN, buff=0.1)
+        b3 = box(f3, CYAN, buff=0.1)
+        Cbig = Circle(radius=2.15, stroke_color=VIOLET, stroke_width=5).move_to(LC).set_z_index(6)
+        Cl = eq(r"C_{\rm env}", size=34, color=VIOLET).move_to(pol(LC, 2.7, math.radians(120)))
+        cs = self.giro(LC, 2.15, 8, 0.6, a0=0.2, w=5, z=7)
+        gpi, gpo = self.pa(pin, 0.2, -2.0), self.pa(pout, 0.2, 0.0)       # pá: gira onde ∇×E ≠ 0; fora, é arrastada mas não gira
+        g1 = at_col(eq(r"\oint_{C_{\rm env}}", EV, DL, "=", r"-\pi " + RRR + "^2", BD, size=M_M), 1.2)
+        g2 = at_col(eq(r"\neq0", size=M_L), 0.3)
+        gb = box(VGroup(g1, g2), CYAN, buff=0.3)
+        chip_l = at_col(VGroup(text("local", 20, DIM), eq(NABE + "=0", size=30)).arrange(RIGHT, buff=0.3), -1.5)
+        chip_g = at_col(VGroup(text("global", 20, DIM), eq(r"\oint_{C_{\rm env}}\neq0", size=30)).arrange(RIGHT, buff=0.3), -2.3)
+        self.R(dg, fg, bx, b3, peq, peqb, g1, g2, gb, chip_l, chip_g)
+        self.head("local não é global", *ck.on(), rings.animate.set_value(1), FadeIn(lb), rt=0.9)
+        self.sync("N045", "dentro da região magnética")
+        self.play(FadeIn(rin), gpi.animate.set_value(1), FadeIn(dg, shift=0.1 * UP), run_time=0.9)
+        self.sync("N046", "agora olha uma pequena volta")
+        self.play(rings.animate.set_value(0), rings_d.animate.set_value(1), FadeIn(rout), gpo.animate.set_value(1), run_time=0.9)
+        self.sync("N046", "no modelo ideal")
+        self.play(FadeIn(fg[:3], shift=0.1 * UP), Create(bx), run_time=1.0)
+        self.sync("N046", "a circulação dessa pequena volta")
+        self.play(FadeIn(lpeq), FadeIn(peq, shift=0.1 * UP), Create(peqb), run_time=0.9)
+        self.sync("N046", "e mesmo assim")
+        self.play(FadeIn(f3, shift=0.1 * UP), Create(b3), Indicate(f3, color=CYAN, scale_factor=1.15), run_time=1.0)
+        self.sync("N047", "agora aumenta o caminho")
+        self.play(FadeOut(dg), FadeOut(fg), FadeOut(bx), FadeOut(b3), FadeOut(rin), FadeOut(peq), FadeOut(peqb), FadeOut(lpeq), gpi.animate.set_value(0), gpo.animate.set_value(0),
+                  ReplacementTransform(rout, Cbig), FadeIn(Cl), run_time=1.6)
+        self.sync("N047", "a circulação dessa volta grande")
+        self.play(cs.animate.set_value(1), FadeIn(g1, shift=0.1 * UP), run_time=0.9)
+        self.play(FadeIn(g2, shift=0.1 * UP), Create(gb), run_time=0.8)
+        self.respira(gb)
+        self.sync("N047", "porque a superfície que ela limita")
+        self.pulse(self.disk_flash(LC, 2.15, FLUX), rt=1.8)
+        self.sync("N047", "localmente o rotacional pode ser zero")
+        self.play(FadeIn(chip_l, shift=0.1 * UP), run_time=0.8)
+        self.sync("N047", "e uma volta que envolve")
+        self.play(FadeIn(chip_g, shift=0.1 * UP), run_time=0.8)
+        self.sync("N048", "a forma diferencial responde")
+        self.play(Indicate(chip_l, color=WHITE, scale_factor=1.08), run_time=0.9)
+        self.sync("N048", "a forma integral responde")
+        self.play(Indicate(chip_g, color=WHITE, scale_factor=1.08), run_time=0.9)
+
+    # ═══ 17 · Retirar o detector SEM apagar B nem E (N049–N050) ═══
+    def s17(self):
+        self.estado(17, "retirar_o_detector", "N049", dt=-1.4)
+        C17 = P3(0.0, 0.1)
+        ck = self.ck = Circuit(self, C17, reg_r=RB, loop_r=1.3, wire=True)
+        rings = self.aneis(C17, [0.55, 0.95, 1.3, 1.9, 2.3])
+        lb = self.b_label(C17, 3.1, 1.7, 36)
+        self.head("retirando o detector", *ck.on(), rings.animate.set_value(1), FadeIn(lb), rt=0.7)
+        self.sync("N049", "a gente colocou uma espira")
+        self.play(ck.hl.animate.set_value(1), run_time=0.8)
+        self.sync("N049", "mas ela não é a origem")
+        self.play(ck.hl.animate.set_value(0), run_time=0.6)
+        self.sync("N049", "tira a espira")
+        self.play(ck.det.animate.set_value(0), run_time=1.8)        # só o detector sai; visB e os anéis de E não são tocados
+        self.remove(*ck.mobsD)
+        self.reg = [(g, ms) for g, ms in self.reg if g is not ck.det]
+        self.sync("N049", "e o campo elétrico induzido continua")
+        self.pulse(self.ring_flash(C17, 1.9, CYAN), rt=1.4)
+
+    # ═══ 18 · Síntese + end card da série (N051–N053) ═══
+    def s18(self):
+        self.estado(18, "sintese_e_proximo", "N051", dt=-1.3, rt=0.8)
+        self.head("síntese", rt=0.6)
+        gl = text("global · forma integral", T_NOTE, DIM).move_to(P3(-3.75, 1.4))
+        lo = text("local · forma diferencial", T_NOTE, DIM).move_to(P3(3.75, 1.4))
+        fg = fit(eq(r"\oint_C", EV, DL, "=", "-" + DPHI, size=M_M), 6.6).move_to(P3(-3.75, 0.0))
+        fl = fit(eq(NABE, "=", "-", r"\frac{\partial " + BV + r"}{\partial t}", size=M_M), 6.6).move_to(P3(3.75, 0.0))
+        dv = Line(P3(0, 1.9), P3(0, -1.2), stroke_width=1.5, color=WHITE, stroke_opacity=0.3)
+        bg_, bl_ = box(fg, CYAN), box(fl, CYAN)
+        self.sync("N051", "globalmente")
+        self.play(FadeIn(dv), FadeIn(gl), FadeIn(fg, shift=0.1 * UP), Create(bg_), run_time=1.2)
+        self.respira(bg_)
+        self.sync("N051", "localmente")
+        self.play(FadeIn(lo), FadeIn(fl, shift=0.1 * UP), Create(bl_), run_time=1.2)
+        self.respira(bl_)
+        self.sync("N051", "e o solenoide mostrou")
+        self.play(Indicate(bg_, color=WHITE, scale_factor=1.05), Indicate(bl_, color=WHITE, scale_factor=1.05), run_time=1.2)
+        self.sync("N052", dt=-0.6)
+        keep = self.keep()
+        self.play(*[FadeOut(m) for m in self.mobjects if id(m) not in keep], run_time=0.8)
+        self.end_card()
+
+    def end_card(self):
+        """End card da série (padrão yt_0005/Gauss): anéis tracejados, logo Parallax Lab centralizado e o próximo vídeo."""
+        oc = np.array([0.0, 0.5, 0.0])
+        rings = VGroup(*[DashedVMobject(Circle(radius=r, arc_center=oc), num_dashes=max(12, int(14 * r)), dashed_ratio=0.6).set_stroke(VIOLET, 3.5, 0.16)
+                         for r in (2.0, 3.0, 4.0)])
+        for i, r_ in enumerate(rings):
+            r_.add_updater(lambda m, dt, s=(1 if i % 2 == 0 else -1) * (0.06 - 0.01 * i): m.rotate(s * dt, about_point=oc))
+        logo = ImageMobject(str(LOGO_PATH)).set_width(6.0).move_to(oc + np.array([0.0, 0.5, 0.0]))
+        nxt = VGroup(text("próximo vídeo", 22, DIM), text("indutância e energia magnética", 34, WHITE)).arrange(DOWN, buff=0.18).move_to(oc + np.array([0.0, -1.6, 0.0]))
+
+        def ripple():
+            w = DashedVMobject(Circle(radius=1.6, arc_center=oc), num_dashes=24, dashed_ratio=0.6).set_stroke(VIOLET, 3.5, 0.35)
+            self.play(w.animate.scale(2.6, about_point=oc).set_stroke(opacity=0.0), run_time=2.6)
+            self.remove(w)
+
+        self.play(FadeOut(self.wm), FadeOut(self.tag), run_time=0.6)
+        self.play(LaggedStart(*[FadeIn(r_, scale=0.85) for r_ in rings], lag_ratio=0.3), FadeIn(logo, scale=0.92), run_time=1.8)
+        self.sync("N053", "e essa história continua")
+        self.play(logo.animate.set_width(3.0).move_to(P3(0, 2.75)), FadeOut(rings), run_time=1.2)
+        # gancho: a corrente cria B, B cria fluxo, o fluxo variável induz fem de volta no próprio circuito
+        xs = [-4.5, -1.5, 1.5, 4.5]
+        nos = [eq(t, size=44, color=c).move_to(P3(x, 0.4)) for t, c, x in ((II, GREEN, xs[0]), (BS, MAG, xs[1]), (PHI, MAG, xs[2]), (EM, CYAN, xs[3]))]
+        lig = [arrow(P3(xs[i] + 0.55, 0.4), P3(xs[i + 1] - 0.55, 0.4), WHITE, 4, tip=0.2) for i in range(3)]
+        volta = CurvedArrow(P3(xs[3], -0.2), P3(xs[0], -0.2), angle=-TAU / 14, color=WHITE, stroke_width=4)
+        li = text("indutância", 40, MAG).move_to(P3(0, -1.3))
+        ue = VGroup(text("onde fica a energia", 28, DIM), text("do campo magnético?", 28, WHITE)).arrange(DOWN, buff=0.12).move_to(P3(0, -1.3))
+        nxt.move_to(P3(0, -2.5))
+        self.sync("N053", "mas e quando o fluxo")
+        self.play(FadeIn(nos[0]), run_time=0.5)
+        self.play(*[FadeIn(m) for m in (lig[0], nos[1], lig[1], nos[2])], run_time=1.4)
+        self.sync("N053", "o que acontece quando essa corrente")
+        self.play(FadeIn(lig[2]), FadeIn(nos[3]), Create(volta), run_time=1.4)
+        self.sync("N053", "é aí que aparece")
+        self.play(FadeIn(li, shift=0.1 * UP), Indicate(volta, color=MAG, scale_factor=1.05), run_time=1.0)
+        self.sync("N053", "onde fica armazenada")
+        self.play(FadeOut(li), FadeIn(ue, shift=0.1 * UP), run_time=0.9)
+        self.sync("N053", "valeu, pessoal")
+        self.play(FadeIn(nxt, shift=0.1 * UP), run_time=1.0)
+        ripple()
