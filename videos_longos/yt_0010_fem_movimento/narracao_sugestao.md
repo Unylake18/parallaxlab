@@ -1,0 +1,331 @@
+# FEM DE MOVIMENTO E REGRA DO FLUXO MAGNÉTICO
+
+### N00
+
+Fala, pessoal! Bem-vindos ao Parallax Lab! Hoje vamos entender como uma barra em movimento produz corrente elétrica e de onde vem a energia desse processo.
+
+Olha o experimento: a barra desliza sobre dois trilhos, o circuito está fechado e o resistor dissipa energia. Sem bateria.
+
+Só que a força magnética sobre uma carga é perpendicular à velocidade dela e não realiza trabalho. Então quem fornece a energia ao resistor? Vamos ligar força, fluxo magnético e conservação da energia para responder.
+
+### N01
+
+A barra é puxada para a direita com velocidade constante. O destaque laranja representa a potência dissipada no resistor.
+
+Vamos começar pelas cargas e depois acompanhar o balanço de energia desse mesmo aparato.
+
+### N02
+
+Vamos combinar os sentidos: horizontal positiva para a direita, vertical positiva para cima e a terceira direção para fora da tela.
+
+As cruzinhas representam o campo magnético entrando na tela. Ele é uniforme e constante no tempo. A distância entre os trilhos é o comprimento ativo da barra.
+
+A resistência total está concentrada no resistor. Desprezamos a resistência da barra e dos trilhos, além do atrito mecânico.
+
+### N03
+
+Vamos aproximar a barra. Os marcadores representam cargas positivas de prova e ajudam a acompanhar a corrente convencional. Não são uma afirmação sobre o sinal dos portadores reais do metal.
+
+Como a barra se move para a direita, ela carrega os portadores junto. Essa é a contribuição da velocidade do material.
+
+### N04
+
+Escolhe uma carga positiva. Primeiro, vamos olhar a parcela da força magnética associada à velocidade da barra.
+
+Ela é a carga multiplicada pelo produto vetorial entre essa velocidade e o campo magnético. Velocidade para a direita, campo entrando na tela: pela regra da mão direita, o resultado aponta para cima, ao longo da barra.
+
+### N05
+
+A força eletromotriz de movimento é a circulação da força magnética de movimento por unidade de carga: integramos sua componente ao longo do circuito fechado.
+
+Apesar do nome, não é força em newtons. Sua unidade é volt: joule por coulomb, energia por unidade de carga.
+
+Na integral, a velocidade é a do material. Trilhos e resistor estão parados; só a barra contribui. Nela, velocidade e campo são uniformes e perpendiculares. A integral fica igual a campo magnético vezes comprimento ativo vezes velocidade da barra.
+
+### N06
+
+Com o circuito fechado, a redistribuição de cargas estabelece um campo elétrico. No resistor, esse campo transfere energia aos portadores, que é dissipada no material.
+
+No nosso modelo resistivo, a corrente é a força eletromotriz dividida pela resistência: campo vezes comprimento vezes velocidade, tudo dividido pela resistência total.
+
+A corrente convencional sobe pela barra, segue pelo trilho superior, desce pelo resistor e retorna pelo trilho inferior. É o sentido anti-horário.
+
+### N07
+
+A potência dissipada é a resistência vezes a corrente ao quadrado. Ela não pode ser negativa.
+
+O brilho laranja representa essa potência instantânea: maior potência, maior destaque. Não é uma simulação da temperatura nem do resfriamento do resistor.
+
+### N08
+
+Agora distingue duas velocidades. O portador acompanha a barra, mas também tem uma velocidade média em relação ao material: a velocidade de deriva, associada à corrente.
+
+Na representação positiva, a deriva aponta para cima na barra. A velocidade ordenada total soma o movimento do material e a deriva.
+
+### N09
+
+A força magnética completa usa essa velocidade total, e não apenas a da barra. Ela é a carga vezes o produto vetorial entre velocidade total e campo.
+
+Quando não é nula, essa força é perpendicular à velocidade total. Portanto, o produto escalar entre força e velocidade é zero. Esse produto escalar é a potência da força magnética sobre a carga: trabalho magnético nulo.
+
+### N10
+
+Coloca as duas informações lado a lado: o resistor dissipa energia, mas a força magnética não realiza trabalho sobre a carga.
+
+Falta olhar para quem mantém a barra andando.
+
+### N11
+
+Uma barra com corrente sofre força magnética. A força é a corrente vezes o produto vetorial entre o vetor comprimento e o campo.
+
+O vetor comprimento acompanha a corrente, para cima. O campo entra na tela. O produto aponta para a esquerda, contra o movimento.
+
+Como os vetores são perpendiculares, o módulo é corrente vezes comprimento vezes campo magnético. É o arrasto sobre a barra.
+
+### N12
+
+Para manter a velocidade constante, precisamos de uma força externa para a direita, com o mesmo módulo do arrasto. A resultante horizontal é zero.
+
+Tem alguém puxando essa barra! E esse alguém entra na conta de energia.
+
+### N13
+
+A potência externa é o módulo da força externa vezes a velocidade, porque elas têm o mesmo sentido.
+
+Substituímos a força por corrente vezes comprimento vezes campo. Agrupando campo, comprimento e velocidade, reconhecemos a força eletromotriz. Ficamos com corrente vezes força eletromotriz, ou corrente ao quadrado vezes resistência: a potência dissipada.
+
+Quem puxa fornece a energia.
+
+E o paradoxo? O trabalho magnético total sobre o portador é zero, mas sua velocidade reúne movimento da barra e deriva. As contribuições magnéticas associadas a esses movimentos se compensam no trabalho total. Isso permite arrasto mecânico sobre a barra sem trabalho magnético total sobre a carga. O campo faz o acoplamento; o agente externo fornece a energia.
+
+### N14
+
+Agora vamos descrever o fenômeno pelo fluxo magnético. A área do circuito é o comprimento da barra vezes a distância horizontal entre ela e o resistor.
+
+Conforme a barra avança, essa distância aumenta, e a área também.
+
+### N15
+
+O fluxo é a integral do produto escalar entre o campo e o elemento de área orientado.
+
+Escolhemos o percurso anti-horário. Pela regra da mão direita, a normal aponta para fora da tela. Como o campo entra, o produto escalar é negativo.
+
+Com campo uniforme, o fluxo é menos campo vezes área: menos campo vezes comprimento da barra vezes distância horizontal.
+
+### N16
+
+A derivada dessa distância em relação ao tempo é a velocidade da barra. Campo e comprimento são constantes; portanto, a derivada do fluxo é menos campo vezes comprimento vezes velocidade.
+
+A área aumenta, mas o fluxo fica mais negativo, porque a normal escolhida aponta contra o campo.
+
+### N17
+
+Compara: a força eletromotriz é campo vezes comprimento vezes velocidade. A derivada do fluxo é o negativo desse produto. Uma expressão é o oposto da outra.
+
+### N18
+
+Chegamos à regra do fluxo: a força eletromotriz é menos a taxa de variação do fluxo magnético.
+
+Aqui, o campo é estacionário. O fluxo muda porque a barra altera a área do circuito. Ainda não estamos tratando de um campo que varia no tempo.
+
+### N19
+
+Será que isso depende do retângulo? Vamos considerar um contorno fechado de outra forma, que pode se mover e se deformar.
+
+Mantemos a orientação do percurso e a normal correspondente. Cada trecho pode ter sua própria velocidade, inclusive zero.
+
+### N20
+
+A linha contínua mostra o contorno antes; a tracejada, um pequeno intervalo de tempo depois.
+
+Entre elas está a faixa varrida pelo movimento. Como o campo permanece estacionário, essa mudança de superfície produz a variação do fluxo.
+
+### N21
+
+Amplia um pedacinho. Temos um elemento de comprimento orientado ao longo do contorno. Durante um pequeno intervalo de tempo, ele sofre um deslocamento igual à velocidade local vezes esse intervalo.
+
+Deslocamento e elemento de comprimento formam o paralelogramo da figura. Seu elemento de área orientado é o produto vetorial entre deslocamento e elemento de comprimento, nessa ordem.
+
+Substituindo o deslocamento, fica velocidade em produto vetorial com elemento de comprimento, multiplicado pelo intervalo de tempo.
+
+### N22
+
+Confere na barra: velocidade para a direita e elemento de comprimento para cima. O produto vetorial aponta para fora da tela, como a normal da faixa acrescentada.
+
+O campo entra na tela. Então seu produto escalar com esse elemento de área é negativo. O sinal está na geometria.
+
+### N23
+
+Somamos as contribuições ao longo da faixa inteira, dividimos pelo intervalo de tempo e tomamos o limite.
+
+A taxa de variação do fluxo vira uma integral sobre o contorno fechado. Dentro dela temos o campo em produto escalar com o produto vetorial entre velocidade e elemento de comprimento.
+
+### N24
+
+Usamos agora uma identidade do produto misto. Podemos reescrever essa combinação como campo em produto vetorial com velocidade, e o resultado em produto escalar com o elemento de comprimento.
+
+Mas queremos a ordem velocidade em produto vetorial com campo. Inverter os fatores desse produto vetorial troca o sinal. É daí que aparece o sinal de menos.
+
+### N25
+
+A integral restante é justamente a força eletromotriz de movimento. Assim, a taxa de variação do fluxo é menos a força eletromotriz.
+
+Demonstramos a regra para um contorno móvel geral em campo estacionário. O caso de campo variável fica para a continuação.
+
+### N26
+
+De volta aos trilhos: corrente, dissipação e força externa equilibrando o arrasto. Vamos mudar uma condição: parar de puxar a barra.
+
+### N27
+
+Soltamos a barra com a velocidade inicial indicada na tela. Vamos congelar a imagem nesse instante enquanto deduzimos sua evolução.
+
+Também desprezamos a autoindutância do circuito. Nessa aproximação, a corrente acompanha a força eletromotriz pela relação resistiva. Não precisamos incluir a dinâmica de energia armazenada pela autoindutância.
+
+### N28
+
+Soltar a barra não zera sua velocidade. Enquanto ela se move, continua existindo força eletromotriz, corrente e arrasto magnético.
+
+Agora ninguém compensa esse arrasto. A barra desacelera.
+
+### N29
+
+A força horizontal tem sinal negativo, porque aponta para a esquerda. Seu módulo é corrente vezes comprimento vezes campo.
+
+Substituímos a corrente por campo vezes comprimento vezes velocidade, dividido pela resistência. Juntando os fatores, fica menos campo ao quadrado vezes comprimento ao quadrado, dividido pela resistência, multiplicando a velocidade.
+
+O arrasto é proporcional à velocidade: ele enfraquece conforme a barra desacelera.
+
+### N30
+
+Pela segunda lei de Newton, massa da barra vezes taxa de variação da velocidade é igual à força resultante.
+
+Substituindo o arrasto, obtemos a equação da tela. A taxa de variação da velocidade é negativa e proporcional à própria velocidade. Vamos resolvê-la com a condição inicial.
+
+### N31
+
+Consideramos velocidade inicial positiva. Enquanto a velocidade permanece positiva, dividimos pela massa e pela velocidade. Depois multiplicamos pelo diferencial de tempo.
+
+À esquerda fica o diferencial da velocidade dividido pela velocidade. À direita, menos campo ao quadrado vezes comprimento ao quadrado, dividido por massa vezes resistência, multiplicando o diferencial de tempo.
+
+As variáveis estão separadas; podemos integrar.
+
+### N32
+
+Integramos a velocidade do valor inicial até o atual, e o tempo de zero até o instante considerado.
+
+A integral do diferencial da velocidade dividido pela velocidade dá o logaritmo natural da razão entre velocidade atual e inicial.
+
+Do outro lado, os parâmetros são constantes. Sobra o coeficiente negativo multiplicando o tempo decorrido.
+
+### N33
+
+Esse coeficiente, em módulo, tem unidade de inverso de tempo. Definimos seu inverso como a constante de tempo: massa vezes resistência, dividido por campo ao quadrado vezes comprimento ao quadrado.
+
+Agora o logaritmo da razão entre as velocidades é igual a menos o tempo dividido pela constante de tempo.
+
+Aplicamos a exponencial aos dois lados para desfazer o logaritmo. Depois multiplicamos pela velocidade inicial.
+
+A solução é a velocidade inicial vezes a exponencial de menos o tempo dividido pela constante de tempo.
+
+### N34
+
+Depois de uma constante de tempo, a velocidade vale um sobre o número de Euler do valor inicial: aproximadamente trinta e sete por cento.
+
+Quanto maior a constante de tempo, mais lenta é a queda. A curva se aproxima de zero sem alcançá-lo em tempo finito, dentro do nosso modelo ideal.
+
+### N35
+
+Agora liberamos o relógio. À esquerda, a barra; à direita, a velocidade dividida pela velocidade inicial. O mesmo tempo controla os dois.
+
+A barra avança cada vez menos durante intervalos iguais. O ponto no gráfico acompanha essa desaceleração.
+
+### N36
+
+Vamos repetir a soltura para acompanhar a corrente. A corrente inicial é campo vezes comprimento vezes velocidade inicial, dividido pela resistência.
+
+Como esses parâmetros são constantes, a corrente é proporcional à velocidade. Ela também decai exponencialmente, com a mesma constante de tempo: corrente inicial vezes a mesma exponencial da velocidade.
+
+### N37
+
+Dividindo velocidade e corrente pelos respectivos valores iniciais, obtemos razões sem unidade. Ambas começam em um e seguem a mesma curva.
+
+As grandezas são diferentes, mas diminuem na mesma proporção em relação aos seus valores iniciais.
+
+### N38
+
+A potência inicial é a resistência vezes a corrente inicial ao quadrado.
+
+Ao elevar a exponencial da corrente ao quadrado, dobramos o expoente. A potência decai com menos duas vezes o tempo dividido pela constante de tempo no expoente.
+
+Por isso, a curva laranja cai mais rápido. O marcador e o brilho do resistor acompanham agora essa potência.
+
+### N39
+
+Depois de uma constante de tempo, a corrente está em cerca de trinta e sete por cento do valor inicial. A potência está em catorze por cento: é o quadrado da corrente aparecendo na imagem.
+
+### N40
+
+Para obter a energia dissipada, integramos a potência no tempo.
+
+O eixo vertical mostra potência dividida pela potência inicial. Por isso, a área sob essa curva tem unidade de tempo. Multiplicada pela potência inicial, ela dá energia: watt vezes segundo é joule.
+
+O preenchimento até um instante representa a energia já dissipada dividida pela potência inicial. A área total, até o limite de tempo infinito, fornece a energia dissipada total após essa multiplicação.
+
+### N41
+
+Substituímos a potência pela potência inicial vezes a exponencial de menos duas vezes o tempo dividido pela constante de tempo. A potência inicial sai da integral porque é constante.
+
+Sua expressão é campo ao quadrado vezes comprimento ao quadrado vezes velocidade inicial ao quadrado, dividido pela resistência. Vamos integrar a exponencial de zero até infinito.
+
+### N42
+
+Uma primitiva é menos a constante de tempo dividida por dois, multiplicando a própria exponencial. Derivando, o fator que vem do expoente cancela o da frente e recupera o integrando.
+
+No limite superior, a exponencial tende a zero. No inferior, vale um. Subtrair o valor inferior transforma o sinal negativo em positivo.
+
+A integral vale a constante de tempo dividida por dois. Portanto, a energia total é a potência inicial vezes a constante de tempo dividida por dois.
+
+### N43
+
+Substituímos a potência inicial e a constante de tempo. Separamos os fatores que sobrevivem: um meio, massa e velocidade inicial ao quadrado.
+
+Os demais formam razões. Resistência dividida por resistência: um. Campo ao quadrado dividido por campo ao quadrado: um. Comprimento ao quadrado dividido por comprimento ao quadrado: um.
+
+Resta um meio vezes massa vezes velocidade inicial ao quadrado. Campo, comprimento e resistência mudam o ritmo da dissipação, mas não a energia inicialmente disponível.
+
+### N44
+
+Reconhece a expressão? É a energia cinética inicial da barra.
+
+No limite de tempo infinito, a energia dissipada no resistor é igual à energia cinética que a barra tinha na soltura. Depois da soltura, não houve trabalho externo fornecendo energia.
+
+### N45
+
+Vamos comparar os regimes. Com velocidade constante, a energia cinética não muda. A força externa equilibra o arrasto e sua potência é igual à potência dissipada. A energia vem de quem puxa.
+
+### N46
+
+Na barra livre, a fonte é a energia cinética inicial. Olha a coluna: no começo, toda a energia é ciano e nada foi dissipado. Depois, a parte ciano diminui e a laranja aumenta.
+
+A soma permanece constante: energia cinética atual mais energia já dissipada é igual à energia cinética inicial.
+
+Em tempo finito, ainda resta energia cinética. Só no limite de tempo infinito ela tende a zero, e a energia dissipada tende à energia inicial inteira.
+
+### N47
+
+A pergunta inicial está respondida: com velocidade imposta, quem puxa fornece a energia dissipada no resistor. A igualdade entre potência externa e potência dissipada mostra esse caminho.
+
+### N48
+
+Na barra livre, a energia vem do movimento que ela já tinha. O campo magnético estacionário acopla movimento, corrente e arrasto; ele não é a fonte dessa energia.
+
+Trabalho externo no primeiro caso, energia cinética inicial no segundo. Nos dois, o balanço fecha.
+
+### N49
+
+Hoje ligamos força sobre as cargas, regra do fluxo e conservação da energia. Se essas conexões ajudaram você, se inscreve no Parallax Lab para acompanhar os próximos vídeos.
+
+E se o circuito ficar parado e o campo magnético mudar no tempo? Aí entra o campo elétrico induzido. É o próximo passo: lei de Faraday e campo magnético variável.
+
+Até a próxima!
