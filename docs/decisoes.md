@@ -6,7 +6,20 @@ Registro das decisões estáveis do projeto.
 
 As decisões aprovadas serão registradas aqui conforme o projeto evoluir.
 
-## 2026-10-14 — Separação entre Coriolis e sua aplicação à queda
+## 2026-10-24 — Padrão do vídeo longo
+
+- Todo `longo_horizontal` novo segue `docs/padrao_video_longo.md` (base yt_0008–yt_0010): hook → bem-vindos → título; tag
+  `MÓDULO · TÍTULO` no canto superior esquerdo; pouca escrita; texto de tela em Space Grotesk maiúscula (definição de variável pode
+  ficar minúscula; MathTex não muda); CTA com logo e prévia do próximo vídeo.
+- Cores: geometria em cinza `GEO #B8C4DA`; violeta `#9C8CFF` só para velocidade. Vídeos anteriores não são refeitos por isso.
+- Narração: nunca a letra solta, sempre o nome da grandeza; explicar tudo e esticar a animação. Tags v4 sem `[slowly]` nem
+  `[slow, measured pace]`, em curtos e longos.
+
+## 2026-10-14 — Separação entre Coriolis e sua aplicação à queda (SUPERADA)
+
+> **Cancelada em 14/10/2026 pelo usuário.** As duas unidades de Coriolis foram excluídas e os números foram reaproveitados:
+> `vid_0023` = "Qual o melhor ângulo para puxar uma caixa?" e `vid_0024` = "Por que uma carga faz uma hélice?" (ver
+> `docs/estado_atual.md`). O texto abaixo fica só como histórico.
 
 - `vid_0023_coriolis`: origem, interpretação e derivação visual de Coriolis; planejado, não iniciado.
 - `vid_0024_queda_coriolis_leste`: aplicação à queda, unidade anteriormente chamada 0023; produção atual continua nela.

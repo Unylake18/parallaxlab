@@ -37,10 +37,11 @@ Fonte: documentação do ElevenLabs, seção "Prompting Eleven v4" (best practic
 
 - A tag vai entre colchetes, antes (ou depois) do trecho que ela afeta. Vale até a próxima tag.
 - **Uma tag por frase.** Tags contrastantes nas mesmas palavras prejudicam a entrega.
-- Prefira tags **descritivas** de entrega: `[slow, measured pace]`, `[calm, satisfied]`. Tags ambíguas podem ser lidas em voz alta.
+- Prefira tags **descritivas** de entrega: `[thoughtful, emphatic]`, `[calm, satisfied]`. Tags ambíguas podem ser lidas em voz alta.
 - Tags validadas pela documentação: `[curious]`, `[excited]`, `[thoughtful]`, `[whispers]`, `[sighs]`, `[short pause]`, `[long pause]`, `[happy]`, `[sad]`, `[surprised]`, `[clears throat]`. `[playful]` vem só da lista do blog: testar.
 - **Longos:** regras específicas em `docs/padrao_video_longo.md` §5 (sem `[slowly]`/`[slow, measured pace]`, nunca a letra solta).
-- Para narração didática, a base é `[thoughtful]` e `[curious]`; `[excited]` só no momento da descoberta (o resultado, o ponto ótimo); `[slow, measured pace]` no conceito-chave; `[calm, satisfied]` no fechamento.
+- Para narração didática, a base é `[thoughtful]` e `[curious]`; `[excited]` só no momento da descoberta (o resultado, o ponto ótimo); `[thoughtful, emphatic]` no conceito-chave; `[calm, satisfied]` no fechamento.
+- **Não usar `[slowly]`, `[slow, measured pace]` nem `[pause]`** (decisão de 2026-10-24, curtos e longos): deixam a voz arrastada. Pausa com `[short pause]` ou reticências.
 - Não usar tags de postura ou ação (`[standing]`, `[grinning]`), música nem efeitos sonoros: estragam a voz e não pertencem à narração.
 - **Não existe `<break>`** no v4. Pausa com `[short pause]`/`[long pause]`, reticências (`...`) ou quebra de frase.
 - Ênfase: maiúsculas em uma palavra ("o MÁXIMO do denominador") e pontuação. Com parcimônia.
