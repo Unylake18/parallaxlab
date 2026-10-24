@@ -1,0 +1,1323 @@
+1
+00:00:00,100 --> 00:00:01,450
+Olha para esse circuito.
+
+2
+00:00:01,580 --> 00:00:03,050
+A espira está parada.
+
+3
+00:00:03,080 --> 00:00:04,380
+O fio está parado.
+
+4
+00:00:04,400 --> 00:00:07,330
+Ninguém está girando, puxando ou
+empurrando nada.
+
+5
+00:00:07,400 --> 00:00:10,500
+Agora presta atenção no campo magnético,
+aqui em magenta.
+
+6
+00:00:10,520 --> 00:00:11,810
+Ele começa a variar...
+
+7
+00:00:11,880 --> 00:00:13,390
+e o amperímetro responde.
+
+8
+00:00:13,440 --> 00:00:14,710
+Apareceu corrente.
+
+9
+00:00:14,900 --> 00:00:16,510
+E aí tem um problema.
+
+10
+00:00:16,540 --> 00:00:20,060
+Se o fio inteiro está parado, a explicação
+da força eletromotriz de
+
+11
+00:00:20,080 --> 00:00:21,480
+movimento não serve.
+
+12
+00:00:21,500 --> 00:00:23,800
+As cargas se movem dentro do fio, claro.
+
+13
+00:00:23,820 --> 00:00:24,990
+A pergunta é outra.
+
+14
+00:00:25,080 --> 00:00:27,050
+Quem está empurrando essas cargas?
+
+15
+00:00:27,180 --> 00:00:29,000
+Bem-vindos ao Parallax Lab!
+
+16
+00:00:29,020 --> 00:00:32,380
+Hoje a gente vai entender como a variação
+de um campo magnético está
+
+17
+00:00:32,400 --> 00:00:35,180
+ligada ao surgimento de um campo elétrico
+induzido.
+
+18
+00:00:35,200 --> 00:00:38,440
+E, no caminho, vamos encontrar um
+resultado bem estranho:
+
+19
+00:00:38,460 --> 00:00:42,340
+existe campo elétrico num lugar onde o
+campo magnético é praticamente
+
+20
+00:00:42,360 --> 00:00:42,860
+zero.
+
+21
+00:00:42,880 --> 00:00:43,830
+Parece errado.
+
+22
+00:00:43,960 --> 00:00:44,500
+Não é.
+
+23
+00:00:44,520 --> 00:00:46,920
+Primeiro, vamos eliminar uma
+possibilidade.
+
+24
+00:00:46,940 --> 00:00:50,140
+Quando o próprio condutor se move dentro
+de um campo magnético,
+
+25
+00:00:50,160 --> 00:00:53,280
+aparece uma força magnética por causa
+desse movimento:
+
+26
+00:00:53,300 --> 00:00:57,040
+a carga vezes o produto vetorial entre a
+velocidade do condutor e
+
+27
+00:00:57,060 --> 00:00:58,160
+o campo magnético.
+
+28
+00:00:58,180 --> 00:01:01,020
+Foi esse o mecanismo da força eletromotriz
+de movimento,
+
+29
+00:01:01,040 --> 00:01:02,580
+a famosa fem.
+
+30
+00:01:02,600 --> 00:01:05,370
+Só que agora a velocidade do condutor é
+zero.
+
+31
+00:01:05,400 --> 00:01:06,040
+Atenção:
+
+32
+00:01:06,060 --> 00:01:09,240
+a velocidade do fio inteiro, não a das
+cargas lá dentro.
+
+33
+00:01:09,260 --> 00:01:12,480
+O fio não se desloca, então essa
+contribuição some.
+
+34
+00:01:12,500 --> 00:01:14,030
+Mas a corrente continua ali.
+
+35
+00:01:14,120 --> 00:01:14,730
+Ótimo.
+
+36
+00:01:14,760 --> 00:01:16,700
+Agora o problema ficou interessante.
+
+37
+00:01:16,720 --> 00:01:19,160
+A força eletromotriz de movimento é
+zero...
+
+38
+00:01:19,180 --> 00:01:22,290
+mas a força eletromotriz medida no
+circuito não é.
+
+39
+00:01:22,340 --> 00:01:25,510
+Então alguma outra coisa está empurrando
+as cargas.
+
+40
+00:01:25,580 --> 00:01:27,980
+E essa é a pergunta que guia o resto do
+vídeo:
+
+41
+00:01:28,000 --> 00:01:30,920
+se não é o fio se movendo através do campo
+magnético,
+
+42
+00:01:30,940 --> 00:01:32,350
+qual é o mecanismo agora?
+
+43
+00:01:32,400 --> 00:01:36,060
+A lei de Faraday já prevê o resultado,
+antes mesmo de a gente entender
+
+44
+00:01:36,080 --> 00:01:36,840
+o mecanismo:
+
+45
+00:01:36,860 --> 00:01:41,220
+uma variação do fluxo magnético está
+associada a uma força eletromotriz.
+
+46
+00:01:41,240 --> 00:01:43,150
+Vamos montar isso olhando para a figura.
+
+47
+00:01:43,180 --> 00:01:45,360
+O campo magnético atravessa a espira.
+
+48
+00:01:45,380 --> 00:01:49,340
+Como ele é uniforme e perpendicular à
+área, o fluxo magnético é o
+
+49
+00:01:49,360 --> 00:01:51,760
+campo magnético vezes a área da espira.
+
+50
+00:01:51,780 --> 00:01:52,460
+E repara:
+
+51
+00:01:52,480 --> 00:01:53,930
+a espira está parada.
+
+52
+00:01:53,960 --> 00:01:56,340
+A área não muda, a orientação não muda.
+
+53
+00:01:56,360 --> 00:01:58,360
+Quem muda é o campo magnético.
+
+54
+00:01:58,380 --> 00:02:02,600
+Colocando isso na lei de Faraday, a
+derivada atua só no campo magnético,
+
+55
+00:02:02,620 --> 00:02:04,340
+e a área sai de dentro dela.
+
+56
+00:02:04,360 --> 00:02:08,500
+A força eletromotriz fica igual a menos a
+área da espira vezes a taxa
+
+57
+00:02:08,520 --> 00:02:10,820
+de variação do campo magnético no tempo.
+
+58
+00:02:10,840 --> 00:02:11,640
+Em palavras:
+
+59
+00:02:11,660 --> 00:02:15,590
+o que importa não é o tamanho do campo, é
+a rapidez com que ele muda.
+
+60
+00:02:15,740 --> 00:02:19,290
+Quanto mais rápido muda, maior a força
+eletromotriz.
+
+61
+00:02:19,460 --> 00:02:21,360
+Só que isso responde quanto.
+
+62
+00:02:21,380 --> 00:02:22,640
+Não responde como.
+
+63
+00:02:22,660 --> 00:02:26,540
+A equação sabe o valor da força
+eletromotriz, mas não nos contou o
+
+64
+00:02:26,560 --> 00:02:28,080
+que empurra cada carga.
+
+65
+00:02:28,100 --> 00:02:29,940
+Vamos destacar uma carga no fio.
+
+66
+00:02:29,960 --> 00:02:33,720
+O circuito continua parado, e a
+contribuição magnética do movimento
+
+67
+00:02:33,740 --> 00:02:34,680
+continua zero.
+
+68
+00:02:34,700 --> 00:02:38,760
+Então precisa existir uma força por
+unidade de carga que não dependa
+
+69
+00:02:38,780 --> 00:02:39,860
+de mexer a espira.
+
+70
+00:02:39,880 --> 00:02:41,070
+Que força é essa?
+
+71
+00:02:41,100 --> 00:02:43,640
+A peça que faltava é o campo elétrico.
+
+72
+00:02:43,660 --> 00:02:48,000
+Numa espira parada, a força eletromotriz
+pode ser escrita como a circulação
+
+73
+00:02:48,020 --> 00:02:50,300
+do campo elétrico ao longo do circuito:
+
+74
+00:02:50,320 --> 00:02:54,080
+em cada pedacinho do caminho, a gente pega
+quanto do campo aponta
+
+75
+00:02:54,100 --> 00:02:56,500
+ao longo dele, e soma a volta inteira.
+
+76
+00:02:56,520 --> 00:02:58,600
+E isso tem leitura física direta.
+
+77
+00:02:58,620 --> 00:03:02,380
+Se existe campo elétrico ali, a carga
+sente uma força elétrica:
+
+78
+00:03:02,400 --> 00:03:04,420
+a carga vezes o campo elétrico.
+
+79
+00:03:04,440 --> 00:03:07,730
+Para essa força existir, ninguém precisa
+mover o fio.
+
+80
+00:03:07,760 --> 00:03:11,620
+Agora juntamos as duas descrições da mesma
+força eletromotriz.
+
+81
+00:03:11,640 --> 00:03:14,080
+De um lado, a circulação do campo
+elétrico.
+
+82
+00:03:14,100 --> 00:03:17,700
+Do outro, menos a taxa de variação do
+fluxo magnético.
+
+83
+00:03:17,720 --> 00:03:21,540
+Logo, a circulação do campo elétrico ao
+redor de um caminho fechado
+
+84
+00:03:21,560 --> 00:03:25,040
+é igual a menos a derivada do fluxo
+magnético no tempo.
+
+85
+00:03:25,060 --> 00:03:27,880
+Essa é a lei de Faraday na forma integral.
+
+86
+00:03:27,900 --> 00:03:30,660
+E aqui está a primeira grande virada do
+vídeo:
+
+87
+00:03:30,680 --> 00:03:35,460
+um campo magnético que varia no tempo está
+associado a um campo elétrico,
+
+88
+00:03:35,480 --> 00:03:38,630
+mesmo sem nenhum movimento mecânico do
+circuito.
+
+89
+00:03:38,680 --> 00:03:42,020
+O fio só tornou esse campo fácil de
+detectar.
+
+90
+00:03:42,040 --> 00:03:45,000
+Mas segura, antes de desenhar círculos por
+toda parte.
+
+91
+00:03:45,020 --> 00:03:47,960
+Essa equação nos deu a circulação do campo
+elétrico.
+
+92
+00:03:47,980 --> 00:03:51,280
+Ela não determinou, sozinha, a geometria
+do campo.
+
+93
+00:03:51,300 --> 00:03:53,760
+E o caminho da integral é uma escolha
+nossa.
+
+94
+00:03:53,780 --> 00:03:56,480
+Não é, automaticamente, uma linha de
+campo.
+
+95
+00:03:56,500 --> 00:04:00,440
+Em cada ponto existe um campo elétrico, e
+um pedacinho orientado do
+
+96
+00:04:00,460 --> 00:04:01,040
+caminho.
+
+97
+00:04:01,060 --> 00:04:05,460
+Na integral, entra só a parte do campo que
+aponta ao longo desse pedacinho.
+
+98
+00:04:05,480 --> 00:04:07,740
+É o produto escalar que aparece na tela.
+
+99
+00:04:07,760 --> 00:04:10,360
+Então Faraday respondeu uma pergunta
+global:
+
+100
+00:04:10,380 --> 00:04:13,760
+quanto vale a soma dessas contribuições ao
+redor da volta?
+
+101
+00:04:13,780 --> 00:04:16,499
+Para descobrir a forma do campo ponto a
+ponto,
+
+102
+00:04:16,519 --> 00:04:17,860
+falta uma ferramenta:
+
+103
+00:04:17,880 --> 00:04:18,920
+a simetria.
+
+104
+00:04:18,940 --> 00:04:21,819
+Mas, antes, uma comparação com a
+eletrostática.
+
+105
+00:04:21,839 --> 00:04:25,740
+Na eletrostática, a circulação ao longo de
+qualquer caminho fechado
+
+106
+00:04:25,760 --> 00:04:26,460
+é zero.
+
+107
+00:04:26,480 --> 00:04:30,040
+Algumas contribuições são positivas,
+outras negativas,
+
+108
+00:04:30,060 --> 00:04:31,560
+e a soma se cancela.
+
+109
+00:04:31,580 --> 00:04:34,650
+Você volta ao ponto de partida sem
+acumular nada.
+
+110
+00:04:34,680 --> 00:04:38,680
+Quando o fluxo magnético varia, essa soma
+não precisa ser zero.
+
+111
+00:04:38,700 --> 00:04:40,620
+E isso muda a natureza do campo:
+
+112
+00:04:40,640 --> 00:04:45,350
+o campo elétrico induzido, em geral, não é
+conservativo como o eletrostático.
+
+113
+00:04:45,400 --> 00:04:49,560
+Se você passou anos achando que campo
+elétrico só vem de carga parada...
+
+114
+00:04:49,580 --> 00:04:52,730
+o eletromagnetismo acabou de complicar
+essa amizade.
+
+115
+00:04:52,800 --> 00:04:56,240
+Agora vamos escolher uma geometria em que
+dá para resolver tudo:
+
+116
+00:04:56,260 --> 00:05:00,220
+um solenoide ideal, muito longo, sem
+efeitos de extremidade.
+
+117
+00:05:00,240 --> 00:05:02,010
+Olhamos o corte transversal.
+
+118
+00:05:02,040 --> 00:05:06,490
+Dentro do raio do solenoide, o campo
+magnético é aproximadamente uniforme.
+
+119
+00:05:06,540 --> 00:05:10,240
+Fora, nesse modelo ideal, vamos tratá-lo
+como desprezível.
+
+120
+00:05:10,260 --> 00:05:13,000
+O eixo que sai da tela é a direção
+positiva.
+
+121
+00:05:13,020 --> 00:05:16,420
+O campo magnético aponta para fora e está
+aumentando.
+
+122
+00:05:16,440 --> 00:05:20,140
+E, para percorrer os caminhos, escolhemos
+o sentido anti-horário como
+
+123
+00:05:20,160 --> 00:05:20,920
+positivo.
+
+124
+00:05:20,940 --> 00:05:22,100
+Guarda essa convenção:
+
+125
+00:05:22,120 --> 00:05:24,290
+o sinal da conta depende dela.
+
+126
+00:05:24,320 --> 00:05:25,840
+Agora entra a simetria.
+
+127
+00:05:25,860 --> 00:05:29,420
+Pontos à mesma distância do eixo são
+equivalentes por rotação.
+
+128
+00:05:29,440 --> 00:05:33,440
+Então, neste modelo ideal, o campo
+elétrico induzido dá a volta no
+
+129
+00:05:33,460 --> 00:05:33,900
+eixo.
+
+130
+00:05:33,920 --> 00:05:38,140
+Estamos considerando só o campo induzido
+pela variação do campo magnético,
+
+131
+00:05:38,160 --> 00:05:40,620
+sem somar um campo eletrostático
+independente.
+
+132
+00:05:40,640 --> 00:05:44,350
+E a componente que dá a volta depende só
+da distância ao centro.
+
+133
+00:05:44,420 --> 00:05:46,320
+Só agora aparecem os círculos.
+
+134
+00:05:46,340 --> 00:05:49,360
+E só porque esta geometria tem essa
+simetria:
+
+135
+00:05:49,380 --> 00:05:52,300
+o campo elétrico induzido não é sempre
+circular.
+
+136
+00:05:52,320 --> 00:05:53,400
+Aqui, ele é.
+
+137
+00:05:53,420 --> 00:05:56,600
+Como o campo magnético, para fora da tela,
+está aumentando,
+
+138
+00:05:56,620 --> 00:05:59,840
+a componente no sentido anti-horário sai
+negativa.
+
+139
+00:05:59,860 --> 00:06:00,640
+Ou seja:
+
+140
+00:06:00,660 --> 00:06:03,730
+o campo real gira no sentido horário.
+
+141
+00:06:04,680 --> 00:06:05,930
+A conta vai provar.
+
+142
+00:06:06,060 --> 00:06:09,520
+Começamos com um círculo de raio menor que
+o raio do solenoide.
+
+143
+00:06:09,540 --> 00:06:12,660
+Por simetria, o campo elétrico é tangente
+ao caminho,
+
+144
+00:06:12,680 --> 00:06:15,120
+com o mesmo módulo em todos os pontos.
+
+145
+00:06:15,140 --> 00:06:19,140
+A circulação, então, é a componente
+tangencial vezes o comprimento
+
+146
+00:06:19,160 --> 00:06:19,900
+do círculo:
+
+147
+00:06:19,920 --> 00:06:21,520
+dois pi vezes o raio.
+
+148
+00:06:21,540 --> 00:06:24,060
+Do outro lado da lei, o fluxo magnético.
+
+149
+00:06:24,080 --> 00:06:26,960
+O círculo está inteiro dentro da região
+magnética,
+
+150
+00:06:26,980 --> 00:06:30,440
+então a área atravessada é pi vezes o raio
+ao quadrado.
+
+151
+00:06:30,460 --> 00:06:32,540
+É essa área que acende na animação.
+
+152
+00:06:32,560 --> 00:06:37,120
+Aplicando Faraday, a componente tangencial
+vezes dois pi vezes o raio
+
+153
+00:06:37,140 --> 00:06:41,320
+é menos pi vezes o raio ao quadrado, vezes
+a taxa de variação do campo
+
+154
+00:06:41,340 --> 00:06:42,100
+magnético.
+
+155
+00:06:42,120 --> 00:06:43,260
+A física acabou.
+
+156
+00:06:43,280 --> 00:06:44,420
+O resto é álgebra.
+
+157
+00:06:44,440 --> 00:06:46,320
+Divide pelo comprimento do caminho.
+
+158
+00:06:46,340 --> 00:06:49,370
+Os pi se cancelam, e um dos fatores de
+raio também.
+
+159
+00:06:49,400 --> 00:06:49,950
+Sobra:
+
+160
+00:06:49,980 --> 00:06:54,520
+menos metade do raio, vezes a taxa de
+variação do campo magnético.
+
+161
+00:06:54,540 --> 00:06:57,240
+O sinal negativo confirma o sentido
+horário.
+
+162
+00:06:57,260 --> 00:06:59,690
+E o módulo cresce com a distância ao eixo:
+
+163
+00:06:59,740 --> 00:07:03,020
+zero no centro, e em linha reta enquanto a
+gente se afasta,
+
+164
+00:07:03,040 --> 00:07:04,960
+ainda dentro da região magnética.
+
+165
+00:07:04,980 --> 00:07:09,080
+Agora chegamos ao raio do solenoide, e
+vale separar três coisas.
+
+166
+00:07:09,100 --> 00:07:10,740
+O caminho que a gente percorre.
+
+167
+00:07:10,760 --> 00:07:12,600
+A superfície que ele limita.
+
+168
+00:07:12,620 --> 00:07:16,020
+E a parte dessa superfície onde existe
+campo magnético.
+
+169
+00:07:16,040 --> 00:07:19,600
+Enquanto o círculo está dentro, as duas
+áreas crescem juntas.
+
+170
+00:07:19,620 --> 00:07:21,520
+Passou da borda, isso muda.
+
+171
+00:07:21,540 --> 00:07:24,640
+O caminho continua crescendo, a superfície
+também.
+
+172
+00:07:24,660 --> 00:07:28,340
+Mas a região atravessada pelo campo
+magnético não cresce mais:
+
+173
+00:07:28,360 --> 00:07:30,590
+ficou presa ao tamanho do solenoide.
+
+174
+00:07:30,640 --> 00:07:34,300
+É essa mudança geométrica que vai inverter
+o comportamento do campo
+
+175
+00:07:34,320 --> 00:07:35,020
+elétrico.
+
+176
+00:07:35,040 --> 00:07:37,460
+Agora o círculo é maior que o solenoide.
+
+177
+00:07:37,480 --> 00:07:40,520
+O fluxo magnético não usa mais a área do
+círculo:
+
+178
+00:07:40,540 --> 00:07:44,680
+usa só a área da região magnética, pi
+vezes o raio do solenoide ao
+
+179
+00:07:44,700 --> 00:07:45,380
+quadrado.
+
+180
+00:07:45,400 --> 00:07:48,150
+A circulação continua usando o caminho
+inteiro:
+
+181
+00:07:48,200 --> 00:07:50,400
+dois pi vezes o raio do círculo.
+
+182
+00:07:50,420 --> 00:07:54,120
+E a lei de Faraday liga os dois lados, do
+mesmo jeito que antes.
+
+183
+00:07:54,140 --> 00:07:56,740
+Dividimos de novo pelo comprimento do
+caminho.
+
+184
+00:07:56,760 --> 00:07:58,040
+Os pi se cancelam.
+
+185
+00:07:58,060 --> 00:08:01,400
+Só que agora o raio do solenoide fica
+fixo, em cima,
+
+186
+00:08:01,420 --> 00:08:03,420
+e o raio do caminho fica embaixo.
+
+187
+00:08:03,440 --> 00:08:07,340
+A componente tangencial é menos o raio do
+solenoide ao quadrado,
+
+188
+00:08:07,360 --> 00:08:11,640
+sobre duas vezes o raio do caminho, vezes
+a taxa de variação do campo
+
+189
+00:08:11,660 --> 00:08:12,460
+magnético.
+
+190
+00:08:12,480 --> 00:08:14,850
+Esse resultado conta uma história simples.
+
+191
+00:08:14,880 --> 00:08:18,270
+Dentro, aumentar o caminho também
+aumentava o fluxo.
+
+192
+00:08:18,320 --> 00:08:20,980
+Fora, o caminho cresce, mas o fluxo não.
+
+193
+00:08:21,000 --> 00:08:24,760
+Por isso o campo deixa de crescer e passa
+a cair como o inverso da
+
+194
+00:08:24,780 --> 00:08:25,520
+distância.
+
+195
+00:08:25,540 --> 00:08:27,240
+Agora junta os dois casos.
+
+196
+00:08:27,260 --> 00:08:31,400
+O ponto do gráfico e o círculo da esquerda
+mostram exatamente a mesma
+
+197
+00:08:31,420 --> 00:08:32,480
+distância ao eixo.
+
+198
+00:08:32,500 --> 00:08:34,139
+Não são duas ilustrações:
+
+199
+00:08:34,159 --> 00:08:37,440
+é a mesma situação física, vista de dois
+jeitos.
+
+200
+00:08:37,460 --> 00:08:39,710
+No centro, o campo elétrico é zero.
+
+201
+00:08:39,740 --> 00:08:42,270
+Dentro, o módulo cresce em linha reta.
+
+202
+00:08:43,039 --> 00:08:46,350
+Na borda, as duas expressões dão o mesmo
+valor,
+
+203
+00:08:46,380 --> 00:08:48,130
+então o campo é contínuo.
+
+204
+00:08:48,160 --> 00:08:50,230
+Mas a inclinação muda de repente:
+
+205
+00:08:50,260 --> 00:08:51,860
+o gráfico faz uma quina.
+
+206
+00:08:51,880 --> 00:08:55,420
+Depois da borda, o módulo cai como o
+inverso da distância.
+
+207
+00:08:55,440 --> 00:08:56,630
+O perfil é este:
+
+208
+00:08:56,680 --> 00:09:00,740
+sobe em linha reta, atinge o máximo na
+borda e vai diminuindo.
+
+209
+00:09:00,760 --> 00:09:03,430
+E agora vem a parte realmente estranha.
+
+210
+00:09:03,520 --> 00:09:05,850
+Escolhe um ponto fora do solenoide.
+
+211
+00:09:05,920 --> 00:09:08,430
+Ali, o campo magnético é desprezível.
+
+212
+00:09:08,560 --> 00:09:11,770
+Mas o campo elétrico induzido não é zero.
+
+213
+00:09:12,700 --> 00:09:17,030
+Parece defeito da conta, até você perceber
+que é justamente o contrário:
+
+214
+00:09:17,080 --> 00:09:19,470
+a física está dizendo algo importante.
+
+215
+00:09:19,600 --> 00:09:23,340
+A lei de Faraday não diz que o campo
+elétrico num ponto depende só
+
+216
+00:09:23,360 --> 00:09:25,280
+do campo magnético naquele ponto.
+
+217
+00:09:25,300 --> 00:09:29,360
+Na forma integral, o que importa é a
+variação do fluxo através da
+
+218
+00:09:29,380 --> 00:09:31,180
+superfície que o caminho limita.
+
+219
+00:09:31,200 --> 00:09:35,000
+O ponto está fora, mas o caminho que passa
+por ele ainda envolve a
+
+220
+00:09:35,020 --> 00:09:36,630
+região onde o fluxo muda.
+
+221
+00:09:36,720 --> 00:09:38,760
+Até aqui, a descrição foi global:
+
+222
+00:09:38,780 --> 00:09:42,040
+uma volta inteira, relacionada ao fluxo
+pela superfície.
+
+223
+00:09:42,060 --> 00:09:43,940
+Só que aparece uma pergunta natural.
+
+224
+00:09:43,960 --> 00:09:48,030
+O que essa lei diz localmente, em cada
+pequena região do espaço?
+
+225
+00:09:48,080 --> 00:09:49,910
+Entra o teorema de Stokes.
+
+226
+00:09:49,940 --> 00:09:53,540
+Temos uma superfície, o contorno dela e
+uma orientação.
+
+227
+00:09:53,560 --> 00:09:56,360
+O sentido positivo do contorno é anti-
+horário.
+
+228
+00:09:56,380 --> 00:09:59,060
+O campo elétrico real, neste exemplo, é
+horário.
+
+229
+00:09:59,080 --> 00:10:00,400
+São coisas diferentes:
+
+230
+00:10:00,420 --> 00:10:03,330
+uma é convenção, a outra é o campo físico.
+
+231
+00:10:03,520 --> 00:10:07,020
+Stokes transforma a circulação ao longo da
+borda numa integral do
+
+232
+00:10:07,040 --> 00:10:09,680
+rotacional do campo elétrico sobre a
+superfície.
+
+233
+00:10:09,700 --> 00:10:13,420
+Do outro lado, como a superfície está
+parada, a derivada no tempo
+
+234
+00:10:13,440 --> 00:10:14,980
+entra na integral do fluxo.
+
+235
+00:10:15,000 --> 00:10:18,320
+Agora as duas integrais estão sobre a
+mesma superfície.
+
+236
+00:10:18,340 --> 00:10:19,960
+E vem o passo conceitual.
+
+237
+00:10:19,980 --> 00:10:23,720
+Essa relação vale para qualquer superfície
+fixa que a gente escolha.
+
+238
+00:10:23,740 --> 00:10:27,380
+Como essa igualdade vale para qualquer
+superfície fixa apropriada,
+
+239
+00:10:27,400 --> 00:10:30,590
+a relação precisa valer localmente, ponto
+a ponto.
+
+240
+00:10:30,780 --> 00:10:34,900
+O rotacional do campo elétrico é igual a
+menos a derivada parcial
+
+241
+00:10:34,920 --> 00:10:37,410
+do campo magnético em relação ao tempo.
+
+242
+00:10:37,500 --> 00:10:39,910
+Essa é a equação de Maxwell–Faraday.
+
+243
+00:10:39,960 --> 00:10:41,610
+A gente não começou com ela.
+
+244
+00:10:41,680 --> 00:10:43,070
+A gente chegou nela.
+
+245
+00:10:43,120 --> 00:10:46,560
+O próprio solenoide impede uma leitura
+errada dessa equação.
+
+246
+00:10:46,580 --> 00:10:50,020
+Dentro da região magnética, o campo
+magnético varia no tempo,
+
+247
+00:10:50,040 --> 00:10:52,940
+então o rotacional do campo elétrico não é
+zero.
+
+248
+00:10:52,960 --> 00:10:54,310
+Até aqui, tranquilo.
+
+249
+00:10:54,380 --> 00:10:58,140
+Agora olha uma pequena volta inteiramente
+fora do solenoide.
+
+250
+00:10:58,160 --> 00:11:01,680
+No modelo ideal, a derivada do campo
+magnético ali é zero,
+
+251
+00:11:01,700 --> 00:11:04,240
+então o rotacional do campo elétrico
+também.
+
+252
+00:11:04,260 --> 00:11:06,910
+A circulação dessa pequena volta é zero.
+
+253
+00:11:06,940 --> 00:11:10,770
+E, mesmo assim, o campo elétrico naquele
+lugar não é zero.
+
+254
+00:11:10,840 --> 00:11:14,050
+Agora aumenta o caminho até envolver o
+solenoide.
+
+255
+00:11:14,100 --> 00:11:18,040
+A circulação dessa volta grande não é
+zero, porque a superfície que
+
+256
+00:11:18,060 --> 00:11:21,430
+ela limita atravessa a região onde o fluxo
+varia.
+
+257
+00:11:21,560 --> 00:11:23,850
+Duas afirmações, ao mesmo tempo.
+
+258
+00:11:23,960 --> 00:11:26,680
+Localmente, o rotacional pode ser zero...
+
+259
+00:11:26,700 --> 00:11:31,020
+e uma volta que envolve a região de fluxo
+variável pode ter circulação
+
+260
+00:11:31,040 --> 00:11:32,350
+diferente de zero.
+
+261
+00:11:33,740 --> 00:11:35,350
+Não há contradição.
+
+262
+00:11:35,480 --> 00:11:38,610
+A forma diferencial responde uma pergunta
+local.
+
+263
+00:11:38,700 --> 00:11:41,450
+A forma integral responde sobre a volta
+inteira.
+
+264
+00:11:41,520 --> 00:11:45,450
+O paradoxo só aparece quando misturamos as
+duas escalas.
+
+265
+00:11:46,660 --> 00:11:48,170
+Volta ao circuito do começo.
+
+266
+00:11:48,300 --> 00:11:51,760
+A gente colocou uma espira ali porque ela
+tem cargas livres e deixa
+
+267
+00:11:51,780 --> 00:11:53,200
+a gente observar corrente.
+
+268
+00:11:53,220 --> 00:11:55,190
+Mas ela não é a origem do campo.
+
+269
+00:11:55,220 --> 00:11:56,090
+Tira a espira.
+
+270
+00:11:56,180 --> 00:11:57,220
+Tira o amperímetro.
+
+271
+00:11:57,240 --> 00:11:59,660
+O campo magnético continua variando.
+
+272
+00:11:59,680 --> 00:12:02,150
+E o campo elétrico induzido continua lá.
+
+273
+00:12:02,260 --> 00:12:04,400
+O fio não cria esse campo.
+
+274
+00:12:04,420 --> 00:12:07,450
+O fio apenas revela a existência dele.
+
+275
+00:12:09,060 --> 00:12:11,650
+Então fica com as duas versões da mesma
+lei.
+
+276
+00:12:11,680 --> 00:12:12,570
+Globalmente:
+
+277
+00:12:12,600 --> 00:12:16,860
+a variação do fluxo magnético está ligada
+à circulação do campo elétrico
+
+278
+00:12:16,880 --> 00:12:18,650
+ao redor de um caminho fechado.
+
+279
+00:12:18,700 --> 00:12:19,590
+Localmente:
+
+280
+00:12:19,620 --> 00:12:23,600
+o rotacional do campo elétrico é menos a
+derivada parcial do campo
+
+281
+00:12:23,620 --> 00:12:25,500
+magnético em relação ao tempo.
+
+282
+00:12:25,520 --> 00:12:28,530
+E o solenoide mostrou por que precisamos
+das duas.
+
+283
+00:12:28,640 --> 00:12:32,340
+Se esse vídeo te ajudou, deixa o like e se
+inscreve no Parallax Lab.
+
+284
+00:12:32,360 --> 00:12:33,690
+Ajuda muito o canal.
+
+285
+00:12:33,720 --> 00:12:36,010
+E essa história continua no próximo vídeo.
+
+286
+00:12:36,220 --> 00:12:39,960
+Até agora, vimos como a variação de um
+campo magnético produz uma
+
+287
+00:12:39,980 --> 00:12:43,160
+força eletromotriz e revela um campo
+elétrico induzido.
+
+288
+00:12:43,180 --> 00:12:47,380
+Mas e quando o fluxo magnético é criado
+pela própria corrente do circuito?
+
+289
+00:12:47,400 --> 00:12:49,910
+O que acontece quando essa corrente tenta
+mudar?
+
+290
+00:12:50,000 --> 00:12:53,320
+É aí que aparece a indutância, e com ela
+uma pergunta:
+
+291
+00:12:53,340 --> 00:12:56,690
+onde fica armazenada a energia de um campo
+magnético?
+
+292
+00:12:56,740 --> 00:12:57,580
+Valeu, pessoal.
+
+293
+00:12:57,600 --> 00:12:58,990
+E até o próximo vídeo.
