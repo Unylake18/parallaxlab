@@ -1,0 +1,1655 @@
+1
+00:00:00,080 --> 00:00:01,310
+Olha essa colisão.
+
+2
+00:00:01,440 --> 00:00:04,270
+Dois blocos num trilho, um vindo de cada
+lado.
+
+3
+00:00:04,300 --> 00:00:05,290
+Eles batem...
+
+4
+00:00:05,420 --> 00:00:06,310
+e rebatem.
+
+5
+00:00:06,400 --> 00:00:07,740
+Agora o mesmo começo:
+
+6
+00:00:07,760 --> 00:00:10,440
+as mesmas massas, as mesmas velocidades.
+
+7
+00:00:10,460 --> 00:00:13,040
+E dessa vez eles se separam de outro
+jeito.
+
+8
+00:00:13,060 --> 00:00:14,010
+Mais uma vez:
+
+9
+00:00:14,040 --> 00:00:16,980
+mesmas massas, mesmas velocidades
+iniciais...
+
+10
+00:00:17,000 --> 00:00:19,470
+e agora eles grudam e seguem juntos.
+
+11
+00:00:19,560 --> 00:00:23,040
+Mesmo começo, três finais completamente
+diferentes.
+
+12
+00:00:23,060 --> 00:00:23,650
+Por quê?
+
+13
+00:00:23,700 --> 00:00:25,510
+É isso que a gente vai responder hoje.
+
+14
+00:00:25,560 --> 00:00:26,480
+Fala, pessoal!
+
+15
+00:00:26,500 --> 00:00:28,240
+Bem-vindos ao Parallax Lab!
+
+16
+00:00:28,260 --> 00:00:31,940
+Vamos para a mecânica, começando por
+colisões em uma dimensão.
+
+17
+00:00:31,960 --> 00:00:35,460
+A ideia é sair daqui sabendo, diante de
+qualquer colisão,
+
+18
+00:00:35,480 --> 00:00:38,820
+o que você precisa saber para prever o que
+acontece depois.
+
+19
+00:00:38,840 --> 00:00:40,320
+Primeiro, uma ferramenta.
+
+20
+00:00:40,340 --> 00:00:44,000
+O momento linear, que também aparece como
+quantidade de movimento,
+
+21
+00:00:44,020 --> 00:00:46,020
+é a massa vezes a velocidade.
+
+22
+00:00:46,040 --> 00:00:49,380
+Por isso o momento aponta para o mesmo
+lado que a velocidade:
+
+23
+00:00:49,400 --> 00:00:51,260
+a massa é sempre positiva.
+
+24
+00:00:51,280 --> 00:00:55,020
+Com a mesma velocidade, mais massa
+significa mais momento.
+
+25
+00:00:55,040 --> 00:00:59,280
+E com a mesma massa, mais velocidade
+também significa mais momento.
+
+26
+00:00:59,300 --> 00:01:01,460
+Agora voltamos aos nossos dois blocos.
+
+27
+00:01:01,480 --> 00:01:02,960
+Cada um tem o seu momento:
+
+28
+00:01:02,980 --> 00:01:05,700
+o momento do corpo um e o momento do corpo
+dois.
+
+29
+00:01:05,720 --> 00:01:09,060
+E aqui entra um detalhe que derruba muita
+gente em prova:
+
+30
+00:01:09,080 --> 00:01:09,920
+o sinal.
+
+31
+00:01:09,940 --> 00:01:12,600
+A gente combina que para a direita é
+positivo.
+
+32
+00:01:12,620 --> 00:01:15,680
+Então a velocidade inicial do corpo um é
+positiva,
+
+33
+00:01:15,700 --> 00:01:18,800
+e a velocidade inicial do corpo dois, que
+vem para a esquerda,
+
+34
+00:01:18,820 --> 00:01:19,780
+é negativa.
+
+35
+00:01:19,800 --> 00:01:23,540
+Defina o eixo antes de qualquer conta e
+respeite os sinais.
+
+36
+00:01:23,560 --> 00:01:26,280
+Para somar os momentos, a gente soma com
+sinal:
+
+37
+00:01:26,300 --> 00:01:29,660
+a seta do corpo dois começa onde termina a
+do corpo um.
+
+38
+00:01:29,680 --> 00:01:32,240
+O que sobra é o momento total do sistema.
+
+39
+00:01:32,260 --> 00:01:34,600
+Daqui para frente, uma convenção de nomes.
+
+40
+00:01:34,620 --> 00:01:38,080
+O índice i quer dizer inicial, antes da
+colisão;
+
+41
+00:01:38,100 --> 00:01:40,900
+o índice f quer dizer final, depois.
+
+42
+00:01:40,920 --> 00:01:45,220
+Então temos a velocidade inicial e a
+velocidade final de cada corpo.
+
+43
+00:01:45,240 --> 00:01:48,680
+Se o momento total se conserva na colisão,
+e a gente já vai ver por
+
+44
+00:01:48,700 --> 00:01:52,580
+quê, o momento total antes é igual ao
+momento total depois.
+
+45
+00:01:52,600 --> 00:01:53,520
+Só que repara:
+
+46
+00:01:53,540 --> 00:01:56,600
+as massas e as velocidades iniciais a
+gente conhece.
+
+47
+00:01:56,620 --> 00:01:59,560
+As incógnitas são as duas velocidades
+finais.
+
+48
+00:01:59,580 --> 00:02:01,640
+Uma equação, duas incógnitas.
+
+49
+00:02:01,660 --> 00:02:04,420
+Com uma equação só, não dá para achar duas
+coisas.
+
+50
+00:02:04,440 --> 00:02:05,180
+Então...
+
+51
+00:02:05,200 --> 00:02:06,330
+o que está faltando?
+
+52
+00:02:07,302 --> 00:02:11,172
+Antes de responder, vamos entender por que
+o momento total se conserva.
+
+53
+00:02:11,202 --> 00:02:11,902
+Lembrando:
+
+54
+00:02:11,922 --> 00:02:15,382
+a variação do momento de um corpo é o
+impulso que ele recebe,
+
+55
+00:02:15,402 --> 00:02:18,462
+e o impulso é a força acumulada ao longo
+do tempo,
+
+56
+00:02:18,482 --> 00:02:20,332
+a área sob o gráfico da força.
+
+57
+00:02:20,382 --> 00:02:23,292
+Em cima, a força de contato ao longo do
+tempo;
+
+58
+00:02:23,342 --> 00:02:27,622
+embaixo, o momento de cada bloco e o
+total, no caso em que eles rebatem.
+
+59
+00:02:27,642 --> 00:02:31,192
+A forma da curva é um esquema; o que
+importa é a área.
+
+60
+00:02:31,222 --> 00:02:35,022
+No contato, o bloco um empurra o bloco
+dois e o bloco dois empurra
+
+61
+00:02:35,042 --> 00:02:35,702
+de volta:
+
+62
+00:02:35,722 --> 00:02:38,582
+forças iguais e opostas, ação e reação.
+
+63
+00:02:38,602 --> 00:02:42,242
+Enquanto a área cresce, o momento do corpo
+um diminui e o do corpo
+
+64
+00:02:42,262 --> 00:02:43,122
+dois aumenta.
+
+65
+00:02:43,142 --> 00:02:44,152
+Mas olha o total...
+
+66
+00:02:44,262 --> 00:02:45,272
+não se mexe.
+
+67
+00:02:45,302 --> 00:02:49,602
+As variações de momento dos dois blocos
+são iguais em módulo e opostas:
+
+68
+00:02:49,622 --> 00:02:53,012
+a variação do corpo um é menos a variação
+do corpo dois.
+
+69
+00:02:53,042 --> 00:02:56,122
+As forças internas trocam momento entre os
+corpos...
+
+70
+00:02:56,142 --> 00:02:57,782
+mas o total não muda.
+
+71
+00:02:57,802 --> 00:03:00,232
+Por isso é tão importante escolher o
+sistema.
+
+72
+00:03:00,262 --> 00:03:02,862
+Aqui, o sistema são os dois blocos juntos:
+
+73
+00:03:02,882 --> 00:03:05,342
+as forças entre eles ficam do lado de
+dentro.
+
+74
+00:03:05,362 --> 00:03:06,562
+E as forças de fora?
+
+75
+00:03:06,582 --> 00:03:09,082
+Atrito com o trilho, resistência do ar...
+
+76
+00:03:09,102 --> 00:03:11,902
+Na direção do trilho, durante um contato
+tão curto,
+
+77
+00:03:11,922 --> 00:03:13,902
+o impulso externo é desprezível.
+
+78
+00:03:13,922 --> 00:03:18,122
+Então a variação do momento total nessa
+direção é praticamente zero.
+
+79
+00:03:18,142 --> 00:03:21,522
+No modelo ideal, a gente toma esse impulso
+externo como zero.
+
+80
+00:03:21,542 --> 00:03:23,282
+E aí sim escreve a igualdade:
+
+81
+00:03:23,302 --> 00:03:26,512
+momento total inicial igual a momento
+total final.
+
+82
+00:03:26,542 --> 00:03:29,582
+Agora vamos rever os três finais com dois
+medidores:
+
+83
+00:03:29,602 --> 00:03:32,402
+o momento total e a energia cinética
+total.
+
+84
+00:03:32,422 --> 00:03:36,662
+Lembrando que a energia cinética é meio
+vezes a massa vezes a velocidade
+
+85
+00:03:36,682 --> 00:03:38,862
+ao quadrado, e nunca é negativa.
+
+86
+00:03:38,882 --> 00:03:42,502
+No primeiro caso, o momento total fica
+igual, e a energia cinética
+
+87
+00:03:42,522 --> 00:03:43,522
+total também.
+
+88
+00:03:43,542 --> 00:03:44,382
+Isso tem nome:
+
+89
+00:03:44,402 --> 00:03:45,682
+colisão elástica.
+
+90
+00:03:45,702 --> 00:03:48,802
+Momento conservado e energia cinética
+conservada.
+
+91
+00:03:48,822 --> 00:03:51,502
+No segundo, o momento total continua o
+mesmo.
+
+92
+00:03:51,522 --> 00:03:53,402
+Só que a energia cinética diminui.
+
+93
+00:03:53,422 --> 00:03:54,372
+Para onde ela foi?
+
+94
+00:03:54,402 --> 00:03:55,802
+Virou energia interna:
+
+95
+00:03:55,822 --> 00:03:59,002
+deformação, aquecimento, vibração dos
+blocos.
+
+96
+00:03:59,022 --> 00:04:01,052
+Ela não some; muda de forma.
+
+97
+00:04:01,102 --> 00:04:03,162
+Essa é uma colisão inelástica:
+
+98
+00:04:03,182 --> 00:04:06,382
+o momento se conserva e, nas colisões que
+estamos estudando,
+
+99
+00:04:06,402 --> 00:04:08,202
+a energia cinética diminui.
+
+100
+00:04:08,222 --> 00:04:10,332
+E no terceiro, os blocos grudam.
+
+101
+00:04:10,362 --> 00:04:14,602
+O momento continua conservado, e a energia
+cinética cai ainda mais.
+
+102
+00:04:14,622 --> 00:04:18,682
+É a colisão completamente inelástica, e a
+marca dela é que os dois
+
+103
+00:04:18,702 --> 00:04:20,662
+saem com a mesma velocidade final.
+
+104
+00:04:20,682 --> 00:04:21,452
+Resumindo:
+
+105
+00:04:21,962 --> 00:04:24,082
+o momento se conserva nas três.
+
+106
+00:04:24,102 --> 00:04:26,322
+O que muda é a informação extra.
+
+107
+00:04:26,342 --> 00:04:29,062
+Na elástica, a energia cinética se
+conserva:
+
+108
+00:04:29,082 --> 00:04:30,342
+é uma segunda equação.
+
+109
+00:04:30,362 --> 00:04:33,042
+Na que gruda, as velocidades finais são
+iguais:
+
+110
+00:04:33,062 --> 00:04:34,722
+também é uma segunda equação.
+
+111
+00:04:34,742 --> 00:04:36,522
+Mas repara na inelástica comum:
+
+112
+00:04:36,542 --> 00:04:39,622
+dizer só que a energia diminuiu é uma
+desigualdade.
+
+113
+00:04:39,642 --> 00:04:42,482
+Ela restringe, mas não fecha a conta
+sozinha.
+
+114
+00:04:42,502 --> 00:04:45,122
+Aí o problema precisa dar algum dado a
+mais.
+
+115
+00:04:45,142 --> 00:04:48,602
+O estado inicial é o mesmo; o que mudou
+foi a interação durante o
+
+116
+00:04:48,622 --> 00:04:49,302
+contato.
+
+117
+00:04:49,322 --> 00:04:51,862
+Então, respondendo à pergunta lá do
+começo:
+
+118
+00:04:51,882 --> 00:04:54,082
+o que falta é o tipo de colisão.
+
+119
+00:04:54,102 --> 00:04:56,222
+Momento mais tipo de colisão.
+
+120
+00:04:56,242 --> 00:04:58,182
+Vamos começar pelo caso mais simples:
+
+121
+00:04:58,202 --> 00:04:59,922
+quando os blocos ficam juntos.
+
+122
+00:04:59,942 --> 00:05:01,362
+Repara nas velocidades:
+
+123
+00:05:01,382 --> 00:05:03,762
+no contato, as duas viram uma só.
+
+124
+00:05:03,782 --> 00:05:06,342
+Ficar junto quer dizer exatamente isto:
+
+125
+00:05:06,362 --> 00:05:09,682
+a velocidade final do corpo um é igual à
+do corpo dois.
+
+126
+00:05:09,702 --> 00:05:12,062
+Vamos chamar de velocidade final comum.
+
+127
+00:05:12,082 --> 00:05:15,422
+Antes, o momento total é a soma dos dois
+momentos.
+
+128
+00:05:15,442 --> 00:05:18,462
+Depois, é como um bloco só, com a massa
+total,
+
+129
+00:05:18,482 --> 00:05:20,402
+andando com a velocidade final comum.
+
+130
+00:05:20,422 --> 00:05:23,302
+Igualando os dois, sai a velocidade final
+comum:
+
+131
+00:05:23,322 --> 00:05:26,042
+o momento total dividido pela massa total.
+
+132
+00:05:26,062 --> 00:05:28,342
+E dá para ler essa fórmula de um jeito
+bonito.
+
+133
+00:05:28,362 --> 00:05:31,782
+Separando os termos, ela vira uma média
+ponderada das velocidades
+
+134
+00:05:31,802 --> 00:05:32,562
+iniciais:
+
+135
+00:05:32,582 --> 00:05:35,622
+cada velocidade pesa conforme a fração da
+massa.
+
+136
+00:05:35,642 --> 00:05:38,362
+Esse eixo aqui embaixo é um eixo de
+velocidades,
+
+137
+00:05:38,382 --> 00:05:39,242
+não é o trilho.
+
+138
+00:05:39,262 --> 00:05:40,942
+Olha o ponto da velocidade final.
+
+139
+00:05:40,962 --> 00:05:44,482
+Quando a massa um aumenta, ele vai para
+perto da velocidade inicial
+
+140
+00:05:44,502 --> 00:05:48,432
+do corpo um; quando a massa dois aumenta,
+para perto da do corpo dois.
+
+141
+00:05:48,632 --> 00:05:52,492
+E ele nunca sai do intervalo entre as
+duas, podendo até ser negativo.
+
+142
+00:05:52,512 --> 00:05:54,992
+A massa maior pesa mais no resultado.
+
+143
+00:05:55,012 --> 00:05:57,072
+Agora uma pergunta que parece fácil.
+
+144
+00:05:57,092 --> 00:06:00,012
+Dois blocos de massas iguais, o segundo
+parado.
+
+145
+00:06:00,032 --> 00:06:01,512
+Eles batem e grudam.
+
+146
+00:06:01,532 --> 00:06:05,352
+Se a velocidade cair pela metade, a
+energia cinética também cai pela
+
+147
+00:06:05,372 --> 00:06:06,012
+metade?
+
+148
+00:06:06,032 --> 00:06:06,842
+Olha a barra.
+
+149
+00:06:08,341 --> 00:06:12,241
+No contato, a energia cinética cai, e o
+que sai dela vira energia
+
+150
+00:06:12,261 --> 00:06:12,901
+interna.
+
+151
+00:06:12,921 --> 00:06:16,881
+Pelo momento, os dois saem juntos com
+metade da velocidade inicial:
+
+152
+00:06:16,901 --> 00:06:20,541
+o dobro da massa com metade da velocidade
+dá o mesmo momento.
+
+153
+00:06:20,561 --> 00:06:21,721
+Vamos fazer a conta.
+
+154
+00:06:21,741 --> 00:06:25,981
+Antes, a energia cinética é meio vezes a
+massa vezes a velocidade
+
+155
+00:06:26,001 --> 00:06:27,241
+inicial ao quadrado.
+
+156
+00:06:27,261 --> 00:06:29,581
+Depois, a massa que se move dobrou...
+
+157
+00:06:29,601 --> 00:06:31,611
+e a velocidade caiu pela metade.
+
+158
+00:06:31,701 --> 00:06:34,151
+Só que a velocidade entra ao quadrado:
+
+159
+00:06:34,241 --> 00:06:36,231
+metade ao quadrado é um quarto.
+
+160
+00:06:36,301 --> 00:06:38,571
+Dobro da massa vezes um quarto...
+
+161
+00:06:38,661 --> 00:06:39,451
+dá metade.
+
+162
+00:06:39,481 --> 00:06:42,761
+Então a energia cinética final é metade da
+inicial.
+
+163
+00:06:42,781 --> 00:06:44,981
+A outra metade virou energia interna.
+
+164
+00:06:45,001 --> 00:06:46,021
+E fica a lição:
+
+165
+00:06:46,041 --> 00:06:49,761
+momento conservado não implica energia
+cinética conservada.
+
+166
+00:06:49,781 --> 00:06:53,451
+São duas conservações diferentes; uma não
+garante a outra.
+
+167
+00:06:53,521 --> 00:06:55,861
+Agora a colisão elástica, num exemplo
+novo:
+
+168
+00:06:55,881 --> 00:06:57,661
+o bloco dois começa parado.
+
+169
+00:06:57,681 --> 00:06:58,961
+Repara nos medidores:
+
+170
+00:06:58,981 --> 00:07:02,341
+momento total e energia cinética total
+ficam iguais.
+
+171
+00:07:02,361 --> 00:07:04,261
+Por isso temos duas equações.
+
+172
+00:07:04,281 --> 00:07:05,761
+A primeira vem do momento.
+
+173
+00:07:05,781 --> 00:07:08,001
+Separando o que é de cada corpo, fica:
+
+174
+00:07:08,021 --> 00:07:11,801
+a massa um vezes a diferença entre a
+velocidade inicial e a final
+
+175
+00:07:11,821 --> 00:07:15,801
+do corpo um é igual à massa dois vezes a
+diferença entre a velocidade
+
+176
+00:07:15,821 --> 00:07:17,971
+final e a inicial do corpo dois.
+
+177
+00:07:18,021 --> 00:07:19,361
+Essa é a equação um.
+
+178
+00:07:19,381 --> 00:07:21,421
+A segunda vem da energia cinética.
+
+179
+00:07:21,441 --> 00:07:22,561
+E aqui está a ideia:
+
+180
+00:07:22,581 --> 00:07:26,081
+queremos fazer a equação da energia
+conversar com a do momento.
+
+181
+00:07:26,101 --> 00:07:29,721
+Por isso a gente reorganiza do mesmo
+jeito, separando os corpos,
+
+182
+00:07:29,741 --> 00:07:32,121
+até aparecerem diferenças de quadrados.
+
+183
+00:07:32,141 --> 00:07:35,941
+Fatorando essas diferenças, surgem
+exatamente os mesmos fatores da
+
+184
+00:07:35,961 --> 00:07:36,981
+primeira equação.
+
+185
+00:07:37,001 --> 00:07:40,941
+Essa é a equação dois, e agora as duas
+falam a mesma língua.
+
+186
+00:07:40,961 --> 00:07:42,101
+Agora, cuidado.
+
+187
+00:07:42,121 --> 00:07:44,721
+A tentação é dividir uma equação pela
+outra.
+
+188
+00:07:44,741 --> 00:07:48,321
+Mas esse fator pode ser zero, e dividir
+por zero não pode.
+
+189
+00:07:48,341 --> 00:07:49,821
+Então a gente faz diferente.
+
+190
+00:07:49,841 --> 00:07:50,481
+Repara:
+
+191
+00:07:50,501 --> 00:07:54,221
+esse bloco da equação dois é o mesmo que
+aparece na equação um.
+
+192
+00:07:54,241 --> 00:07:57,061
+Então a gente usa uma equação dentro da
+outra.
+
+193
+00:07:57,081 --> 00:08:00,436
+Organizando, aparece um produto igual a
+zero.
+
+194
+00:08:00,456 --> 00:08:01,936
+A massa não é zero.
+
+195
+00:08:01,956 --> 00:08:05,366
+Então ou o primeiro fator é zero, ou o
+colchete é zero.
+
+196
+00:08:05,396 --> 00:08:08,776
+Se o primeiro fator for zero, as
+velocidades finais são iguais às
+
+197
+00:08:08,796 --> 00:08:09,616
+iniciais.
+
+198
+00:08:09,636 --> 00:08:10,376
+Nada mudou:
+
+199
+00:08:10,396 --> 00:08:13,116
+não houve mudança líquida nos momentos dos
+corpos.
+
+200
+00:08:13,136 --> 00:08:15,836
+Não é o encontro com interação que a gente
+quer resolver.
+
+201
+00:08:15,856 --> 00:08:16,876
+Então fica o outro:
+
+202
+00:08:16,896 --> 00:08:18,136
+o colchete é zero.
+
+203
+00:08:18,156 --> 00:08:22,256
+Rearrumando, a diferença entre as
+velocidades iniciais é igual a menos
+
+204
+00:08:22,276 --> 00:08:24,476
+a diferença entre as velocidades finais.
+
+205
+00:08:24,496 --> 00:08:28,586
+Guarda essa relação, porque ela tem um
+significado físico muito bonito.
+
+206
+00:08:28,716 --> 00:08:31,256
+Olha a distância entre os centros dos dois
+blocos.
+
+207
+00:08:31,276 --> 00:08:33,716
+Vamos acompanhar essa distância ao longo
+do tempo,
+
+208
+00:08:33,736 --> 00:08:34,966
+no gráfico da direita.
+
+209
+00:08:35,036 --> 00:08:37,276
+Antes do contato, a distância diminui.
+
+210
+00:08:37,296 --> 00:08:40,936
+A inclinação dessa reta é quanto a
+distância muda por segundo:
+
+211
+00:08:40,956 --> 00:08:44,096
+aqui, a distância diminui a três metros
+por segundo.
+
+212
+00:08:44,116 --> 00:08:46,396
+É a rapidez com que os blocos se
+aproximam.
+
+213
+00:08:46,416 --> 00:08:49,326
+Depois do contato, a distância volta a
+crescer,
+
+214
+00:08:49,475 --> 00:08:50,815
+e repara na inclinação:
+
+215
+00:08:50,835 --> 00:08:53,495
+agora ela aumenta a três metros por
+segundo.
+
+216
+00:08:53,515 --> 00:08:56,945
+Os blocos se afastam com a mesma rapidez
+com que se aproximaram.
+
+217
+00:08:57,015 --> 00:08:58,955
+Essa é a relação que saiu da álgebra:
+
+218
+00:08:58,975 --> 00:09:02,535
+numa colisão elástica, a velocidade
+relativa inverte.
+
+219
+00:09:02,555 --> 00:09:05,595
+Cada bloco não precisa inverter a própria
+velocidade;
+
+220
+00:09:05,615 --> 00:09:09,005
+o que inverte é a velocidade de um em
+relação ao outro.
+
+221
+00:09:09,035 --> 00:09:12,995
+Com o momento e a velocidade relativa, dá
+para achar as duas velocidades
+
+222
+00:09:13,015 --> 00:09:16,155
+finais de qualquer colisão elástica em uma
+dimensão.
+
+223
+00:09:16,175 --> 00:09:17,295
+O caminho é simples:
+
+224
+00:09:17,315 --> 00:09:21,505
+substituímos uma relação na outra e
+isolamos cada velocidade final.
+
+225
+00:09:22,095 --> 00:09:24,445
+Aí está a velocidade final do corpo um.
+
+226
+00:09:24,475 --> 00:09:27,585
+E, pela velocidade relativa, sai a do
+corpo dois.
+
+227
+00:09:27,675 --> 00:09:29,395
+Agora, uma coisa importante:
+
+228
+00:09:29,415 --> 00:09:32,315
+essas fórmulas são um resultado, não o
+método.
+
+229
+00:09:32,335 --> 00:09:35,335
+Elas valem para colisão elástica em uma
+dimensão,
+
+230
+00:09:35,355 --> 00:09:35,935
+e só.
+
+231
+00:09:35,955 --> 00:09:37,775
+O método é sempre o mesmo:
+
+232
+00:09:37,795 --> 00:09:40,095
+momento mais a condição da colisão.
+
+233
+00:09:40,115 --> 00:09:43,215
+Se você entende isso, nem precisa decorar
+as fórmulas.
+
+234
+00:09:43,235 --> 00:09:45,295
+Mas vamos testar se elas fazem sentido.
+
+235
+00:09:45,315 --> 00:09:48,475
+Com o segundo bloco parado, as fórmulas
+ficam mais simples.
+
+236
+00:09:48,495 --> 00:09:50,855
+E a gente vai olhar três casos extremos.
+
+237
+00:09:50,875 --> 00:09:51,525
+Primeiro:
+
+238
+00:09:51,555 --> 00:09:52,555
+massas iguais.
+
+239
+00:09:52,575 --> 00:09:53,455
+Pensa um pouco...
+
+240
+00:09:53,475 --> 00:09:55,075
+o que você espera que aconteça?
+
+241
+00:09:55,095 --> 00:09:58,815
+O primeiro para, e o segundo sai com a
+velocidade que o primeiro tinha.
+
+242
+00:09:58,835 --> 00:10:01,555
+É a famosa troca de velocidades da sinuca.
+
+243
+00:10:01,575 --> 00:10:03,675
+As fórmulas dão exatamente isso:
+
+244
+00:10:03,695 --> 00:10:04,385
+confere.
+
+245
+00:10:05,305 --> 00:10:08,125
+Agora um bloco leve batendo num muito
+pesado.
+
+246
+00:10:08,145 --> 00:10:11,585
+Na animação, o pesado tem trinta vezes a
+massa do leve.
+
+247
+00:10:11,605 --> 00:10:15,105
+O tamanho dos blocos só ajuda a ver; não é
+a escala da massa.
+
+248
+00:10:15,125 --> 00:10:18,225
+O leve volta praticamente com a mesma
+velocidade,
+
+249
+00:10:18,245 --> 00:10:20,085
+e o pesado mal se mexe.
+
+250
+00:10:20,105 --> 00:10:21,465
+Mal, mas se mexe:
+
+251
+00:10:21,485 --> 00:10:23,185
+repara na marquinha embaixo dele.
+
+252
+00:10:23,205 --> 00:10:26,845
+Por isso está escrito "aproximadamente
+zero", e não zero.
+
+253
+00:10:26,865 --> 00:10:29,085
+É como uma bolinha batendo numa parede:
+
+254
+00:10:29,105 --> 00:10:29,835
+rebate.
+
+255
+00:10:30,715 --> 00:10:31,555
+E o contrário:
+
+256
+00:10:31,575 --> 00:10:34,215
+um bloco pesado batendo num leve parado.
+
+257
+00:10:34,235 --> 00:10:37,535
+O pesado segue quase como se nada tivesse
+acontecido,
+
+258
+00:10:37,555 --> 00:10:40,775
+e o leve sai com quase o dobro da
+velocidade do pesado.
+
+259
+00:10:40,795 --> 00:10:43,475
+Parece estranho, mas não cria energia
+nenhuma:
+
+260
+00:10:43,495 --> 00:10:46,185
+a energia que o leve ganha sai do pesado.
+
+261
+00:10:46,295 --> 00:10:48,165
+Esse é o valor dos casos-limite:
+
+262
+00:10:48,195 --> 00:10:50,195
+são testes de plausibilidade.
+
+263
+00:10:50,215 --> 00:10:51,755
+Achou uma fórmula numa prova?
+
+264
+00:10:51,775 --> 00:10:55,175
+Testa massas iguais, testa uma massa muito
+maior que a outra.
+
+265
+00:10:55,195 --> 00:10:58,385
+Se não der o que você espera, alguma coisa
+está errada.
+
+266
+00:10:58,435 --> 00:11:01,195
+Agora um problema clássico, que mistura
+tudo isso:
+
+267
+00:11:01,215 --> 00:11:02,715
+o pêndulo balístico.
+
+268
+00:11:02,735 --> 00:11:06,015
+Um projétil, com uma velocidade inicial
+que a gente quer descobrir,
+
+269
+00:11:06,035 --> 00:11:07,715
+vai bater num bloco pendurado.
+
+270
+00:11:07,735 --> 00:11:09,695
+Ele entra no bloco e fica preso.
+
+271
+00:11:09,715 --> 00:11:13,795
+Logo depois, o conjunto, projétil mais
+bloco, sai com uma velocidade
+
+272
+00:11:13,815 --> 00:11:16,315
+que a gente vai chamar de velocidade do
+conjunto.
+
+273
+00:11:16,335 --> 00:11:20,115
+E aí o conjunto sobe, até parar por um
+instante a uma certa altura.
+
+274
+00:11:20,135 --> 00:11:21,575
+A altura é fácil de medir.
+
+275
+00:11:21,595 --> 00:11:22,555
+A pergunta é:
+
+276
+00:11:22,575 --> 00:11:26,125
+dá para descobrir a velocidade do projétil
+só medindo essa altura?
+
+277
+00:11:26,175 --> 00:11:29,895
+O segredo é perceber que uma única lei não
+vale do começo ao fim.
+
+278
+00:11:29,915 --> 00:11:31,705
+Vamos dividir em três instantes:
+
+279
+00:11:31,795 --> 00:11:36,445
+A, antes do impacto; B, logo depois; e C,
+na altura máxima.
+
+280
+00:11:37,052 --> 00:11:38,932
+Primeiro, do instante A para o B:
+
+281
+00:11:38,952 --> 00:11:39,772
+o impacto.
+
+282
+00:11:39,792 --> 00:11:43,052
+As forças externas aqui, o peso e as
+tensões nos fios,
+
+283
+00:11:43,072 --> 00:11:44,872
+são verticais naquele instante.
+
+284
+00:11:44,892 --> 00:11:47,612
+Na horizontal, o impulso externo é
+desprezível.
+
+285
+00:11:47,632 --> 00:11:51,232
+Então, no impacto, o que se conserva é o
+momento horizontal.
+
+286
+00:11:51,252 --> 00:11:53,272
+Antes, só o projétil se move:
+
+287
+00:11:53,292 --> 00:11:57,272
+momento horizontal igual à massa do
+projétil vezes a velocidade inicial
+
+288
+00:11:57,292 --> 00:11:57,692
+dele.
+
+289
+00:11:57,712 --> 00:12:00,592
+Logo depois, projétil e bloco andam
+juntos:
+
+290
+00:12:00,612 --> 00:12:03,412
+a massa total vezes a velocidade do
+conjunto.
+
+291
+00:12:03,432 --> 00:12:07,172
+É uma colisão completamente inelástica,
+igual à que a gente viu antes.
+
+292
+00:12:07,192 --> 00:12:07,912
+Igualando:
+
+293
+00:12:07,932 --> 00:12:11,932
+massa do projétil vezes a velocidade
+inicial é igual à massa total
+
+294
+00:12:11,952 --> 00:12:13,632
+vezes a velocidade do conjunto.
+
+295
+00:12:13,652 --> 00:12:14,952
+E a energia cinética?
+
+296
+00:12:14,972 --> 00:12:15,812
+Despenca.
+
+297
+00:12:15,832 --> 00:12:19,172
+Com um projétil de vinte gramas e um bloco
+de novecentos e oitenta,
+
+298
+00:12:19,192 --> 00:12:20,732
+sobram só dois por cento.
+
+299
+00:12:20,752 --> 00:12:24,292
+Por isso, no impacto, não dá para
+conservar a energia cinética.
+
+300
+00:12:24,312 --> 00:12:25,872
+Agora, do B para o C:
+
+301
+00:12:25,892 --> 00:12:26,672
+a subida.
+
+302
+00:12:26,692 --> 00:12:27,972
+Aqui é outra história.
+
+303
+00:12:27,992 --> 00:12:31,572
+Desprezando o ar e o atrito nos suportes,
+e com fios ideais,
+
+304
+00:12:31,592 --> 00:12:35,512
+a tensão é sempre perpendicular ao
+movimento e não realiza trabalho.
+
+305
+00:12:35,532 --> 00:12:37,882
+Então a energia mecânica se conserva.
+
+306
+00:12:37,912 --> 00:12:41,252
+Vamos tomar a energia potencial como zero
+lá embaixo,
+
+307
+00:12:41,272 --> 00:12:42,072
+no ponto B.
+
+308
+00:12:42,092 --> 00:12:43,292
+Repara nas barras:
+
+309
+00:12:43,312 --> 00:12:47,552
+conforme o conjunto sobe, a energia
+cinética vai virando energia potencial
+
+310
+00:12:47,572 --> 00:12:48,472
+gravitacional.
+
+311
+00:12:48,492 --> 00:12:52,412
+No topo, a velocidade é zero, e tudo virou
+energia potencial.
+
+312
+00:12:52,432 --> 00:12:56,152
+E repara que aqui o momento linear do
+conjunto não se conserva:
+
+313
+00:12:56,172 --> 00:12:58,672
+durante a subida existe impulso externo.
+
+314
+00:12:58,692 --> 00:13:02,652
+Então a energia cinética lá embaixo é
+igual à energia potencial lá
+
+315
+00:13:02,672 --> 00:13:03,292
+em cima.
+
+316
+00:13:03,312 --> 00:13:07,392
+A massa total cancela, e a velocidade do
+conjunto fica a raiz quadrada
+
+317
+00:13:07,412 --> 00:13:10,052
+de duas vezes a gravidade vezes a altura.
+
+318
+00:13:10,072 --> 00:13:12,902
+A raiz positiva, porque é o módulo da
+velocidade.
+
+319
+00:13:12,932 --> 00:13:15,822
+Agora a gente volta para o impacto e
+substitui.
+
+320
+00:13:15,872 --> 00:13:16,652
+Chegamos lá:
+
+321
+00:13:16,672 --> 00:13:20,252
+dá para descobrir a velocidade do projétil
+medindo só as massas e
+
+322
+00:13:20,272 --> 00:13:20,952
+a altura.
+
+323
+00:13:20,972 --> 00:13:23,012
+Mas o mais importante não é a fórmula.
+
+324
+00:13:23,032 --> 00:13:23,992
+É o caminho:
+
+325
+00:13:24,012 --> 00:13:27,152
+no impacto, momento; na subida, energia.
+
+326
+00:13:27,172 --> 00:13:29,692
+Leis diferentes para intervalos
+diferentes.
+
+327
+00:13:29,712 --> 00:13:32,732
+Misturar as duas é o erro mais comum nesse
+problema.
+
+328
+00:13:32,752 --> 00:13:34,712
+Então vamos juntar tudo num método.
+
+329
+00:13:34,732 --> 00:13:35,352
+Primeiro:
+
+330
+00:13:35,372 --> 00:13:38,972
+qual é o sistema e qual é o intervalo de
+tempo que você está olhando?
+
+331
+00:13:38,992 --> 00:13:39,672
+Segundo:
+
+332
+00:13:39,692 --> 00:13:41,992
+defina o eixo e cuide dos sinais.
+
+333
+00:13:42,012 --> 00:13:42,692
+Terceiro:
+
+334
+00:13:42,712 --> 00:13:45,362
+o impulso externo é desprezível nesse
+intervalo?
+
+335
+00:13:45,392 --> 00:13:47,672
+Se for, o momento total se conserva.
+
+336
+00:13:47,692 --> 00:13:48,272
+Quarto:
+
+337
+00:13:48,292 --> 00:13:49,762
+qual é a condição extra?
+
+338
+00:13:49,812 --> 00:13:52,452
+Se é elástica, conserva a energia
+cinética.
+
+339
+00:13:52,472 --> 00:13:55,132
+Se gruda, as velocidades finais são
+iguais.
+
+340
+00:13:55,152 --> 00:13:59,352
+Se for outra, alguma informação física
+adicional precisa ser fornecida.
+
+341
+00:13:59,372 --> 00:14:00,012
+E quinto:
+
+342
+00:14:00,032 --> 00:14:02,372
+começou outro processo depois da colisão?
+
+343
+00:14:02,392 --> 00:14:04,892
+Então separe os intervalos, como no
+pêndulo.
+
+344
+00:14:04,912 --> 00:14:07,702
+E agora a pergunta lá do começo está
+respondida.
+
+345
+00:14:07,732 --> 00:14:12,372
+Mesmo começo, três finais, porque cada
+colisão tem uma condição diferente:
+
+346
+00:14:12,392 --> 00:14:16,332
+na elástica, a energia cinética se
+conserva; quando se separam perdendo
+
+347
+00:14:16,352 --> 00:14:19,312
+energia, precisa de um dado extra; quando
+grudam,
+
+348
+00:14:19,332 --> 00:14:21,332
+as velocidades finais são iguais.
+
+349
+00:14:21,352 --> 00:14:25,652
+O momento é o mesmo nas três; quem decide
+o final é o tipo de colisão.
+
+350
+00:14:25,672 --> 00:14:28,652
+Então, na próxima vez que você encontrar
+uma colisão:
+
+351
+00:14:28,672 --> 00:14:29,992
+modele o processo.
+
+352
+00:14:30,012 --> 00:14:31,422
+Não procure uma fórmula.
+
+353
+00:14:32,259 --> 00:14:34,839
+E repara num detalhe que a gente escondeu
+até aqui:
+
+354
+00:14:34,859 --> 00:14:36,479
+o momento é um vetor.
+
+355
+00:14:36,499 --> 00:14:39,359
+Em uma dimensão, tudo acontece numa linha
+só.
+
+356
+00:14:39,379 --> 00:14:42,179
+Mas se os corpos puderem sair em direções
+diferentes,
+
+357
+00:14:42,199 --> 00:14:44,219
+o momento total continua o mesmo...
+
+358
+00:14:44,239 --> 00:14:45,719
+só que agora como vetor.
+
+359
+00:14:45,739 --> 00:14:50,039
+Hoje a gente ligou momento, energia e o
+tipo de colisão para prever
+
+360
+00:14:50,059 --> 00:14:52,019
+o que acontece depois de um choque.
+
+361
+00:14:52,039 --> 00:14:55,919
+Se essas ideias ajudaram você, se inscreve
+no Parallax Lab para acompanhar
+
+362
+00:14:55,939 --> 00:14:57,159
+os próximos vídeos.
+
+363
+00:14:57,179 --> 00:14:58,349
+E fica a pergunta:
+
+364
+00:14:58,419 --> 00:15:00,909
+e se a colisão não acontecer em uma linha?
+
+365
+00:15:01,019 --> 00:15:03,299
+É isso que a gente vai ver no próximo
+vídeo:
+
+366
+00:15:03,319 --> 00:15:05,339
+colisões em duas dimensões.
+
+367
+00:15:05,359 --> 00:15:06,739
+Me conta aqui nos comentários:
+
+368
+00:15:06,759 --> 00:15:09,299
+qual foi o caso-limite que mais te
+surpreendeu?
+
+369
+00:15:09,319 --> 00:15:12,049
+Valeu demais por assistir, e até a
+próxima!
