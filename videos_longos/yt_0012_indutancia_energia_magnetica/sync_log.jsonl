@@ -1,0 +1,1067 @@
+{"anchor": "Olha esse circuito", "i": 1}
+{"i": 0, "kind": "hold", "e0": 0.0, "nom": 0.0667}
+{"i": 1, "kind": "anim", "e0": 0.0667, "nom": 1.8}
+{"i": 2, "kind": "anim", "e0": 1.8667, "nom": 0.45}
+{"i": 3, "kind": "anim", "e0": 2.3167, "nom": 0.9}
+{"i": 4, "kind": "hold", "e0": 3.2167, "nom": 4.5}
+{"i": 5, "kind": "anim", "e0": 7.7167, "nom": 0.5}
+{"anchor": "Com a chave aberta", "i": 7}
+{"i": 6, "kind": "hold", "e0": 8.2167, "nom": 0.0667}
+{"i": 7, "kind": "anim", "e0": 8.2833, "nom": 0.3}
+{"i": 8, "kind": "anim", "e0": 8.5833, "nom": 0.45}
+{"i": 9, "kind": "anim", "e0": 9.0333, "nom": 1.2}
+{"i": 10, "kind": "anim", "e0": 10.2333, "nom": 0.8}
+{"i": 11, "kind": "hold", "e0": 11.0333, "nom": 3.0}
+{"anchor": "Agora eu fecho a chave", "i": 13}
+{"i": 12, "kind": "hold", "e0": 14.0333, "nom": 0.0667}
+{"i": 13, "kind": "anim", "e0": 14.1, "nom": 0.3}
+{"i": 14, "kind": "anim", "e0": 14.4, "nom": 0.45}
+{"anchor": "A corrente iria direto", "i": 16}
+{"i": 15, "kind": "hold", "e0": 14.85, "nom": 0.0667}
+{"i": 16, "kind": "anim", "e0": 14.9167, "nom": 2.0}
+{"anchor": "No gráfico, seria um degrau", "i": 18}
+{"i": 17, "kind": "hold", "e0": 16.9167, "nom": 0.0667}
+{"i": 18, "kind": "anim", "e0": 16.9833, "nom": 1.6}
+{"i": 19, "kind": "hold", "e0": 18.5833, "nom": 3.0}
+{"anchor": "Vamos testar", "i": 21}
+{"i": 20, "kind": "hold", "e0": 21.5833, "nom": 0.0667}
+{"i": 21, "kind": "anim", "e0": 21.65, "nom": 0.3}
+{"i": 22, "kind": "anim", "e0": 21.95, "nom": 0.45}
+{"i": 23, "kind": "anim", "e0": 22.4, "nom": 0.9}
+{"anchor": "Só que não acontece isso", "i": 25}
+{"i": 24, "kind": "hold", "e0": 23.3, "nom": 0.0667}
+{"i": 25, "kind": "anim", "e0": 23.3667, "nom": 0.6}
+{"i": 26, "kind": "anim", "e0": 23.9667, "nom": 1.8}
+{"anchor": "A corrente começa em zero", "i": 28}
+{"i": 27, "kind": "hold", "e0": 25.7667, "nom": 0.0667}
+{"i": 28, "kind": "anim", "e0": 25.8333, "nom": 0.3}
+{"i": 29, "kind": "anim", "e0": 26.1333, "nom": 0.45}
+{"i": 30, "kind": "anim", "e0": 26.5833, "nom": 3.6}
+{"anchor": "Ela vai se aproximando", "i": 32}
+{"i": 31, "kind": "hold", "e0": 30.1833, "nom": 0.0667}
+{"i": 32, "kind": "anim", "e0": 30.25, "nom": 2.0}
+{"i": 33, "kind": "anim", "e0": 32.25, "nom": 2.7}
+{"anchor": "E olha o solenoide", "i": 35}
+{"i": 34, "kind": "hold", "e0": 34.95, "nom": 0.0667}
+{"i": 35, "kind": "anim", "e0": 35.0167, "nom": 0.3}
+{"i": 36, "kind": "anim", "e0": 35.3167, "nom": 0.45}
+{"i": 37, "kind": "anim", "e0": 35.7667, "nom": 0.6}
+{"i": 38, "kind": "anim", "e0": 36.3667, "nom": 0.5}
+{"i": 39, "kind": "anim", "e0": 36.8667, "nom": 3.6}
+{"anchor": "Então temos um problema", "i": 41}
+{"i": 40, "kind": "hold", "e0": 40.4667, "nom": 0.0667}
+{"i": 41, "kind": "anim", "e0": 40.5333, "nom": 0.3}
+{"i": 42, "kind": "anim", "e0": 40.8333, "nom": 0.45}
+{"i": 43, "kind": "hold", "e0": 41.2833, "nom": 4.5}
+{"i": 44, "kind": "anim", "e0": 45.7833, "nom": 0.35}
+{"i": 45, "kind": "anim", "e0": 46.1333, "nom": 0.6}
+{"i": 46, "kind": "anim", "e0": 46.7333, "nom": 1.8}
+{"anchor": "Fala, pessoal", "i": 48}
+{"i": 47, "kind": "hold", "e0": 48.5333, "nom": 0.0667}
+{"i": 48, "kind": "anim", "e0": 48.6, "nom": 1.2}
+{"i": 49, "kind": "hold", "e0": 49.8, "nom": 2.0}
+{"i": 50, "kind": "anim", "e0": 51.8, "nom": 0.6}
+{"anchor": "No vídeo passado", "i": 52}
+{"i": 51, "kind": "hold", "e0": 52.4, "nom": 0.0667}
+{"i": 52, "kind": "anim", "e0": 52.4667, "nom": 1.2}
+{"i": 53, "kind": "hold", "e0": 53.6667, "nom": 3.0}
+{"anchor": "por que a corrente resiste", "i": 55}
+{"i": 54, "kind": "hold", "e0": 56.6667, "nom": 0.0667}
+{"i": 55, "kind": "anim", "e0": 56.7333, "nom": 0.6}
+{"anchor": "resolver o circuito", "i": 57}
+{"i": 56, "kind": "hold", "e0": 57.3333, "nom": 0.0667}
+{"i": 57, "kind": "anim", "e0": 57.4, "nom": 0.6}
+{"anchor": "descobrir onde fica a energia", "i": 59}
+{"i": 58, "kind": "hold", "e0": 58.0, "nom": 0.0667}
+{"i": 59, "kind": "anim", "e0": 58.0667, "nom": 0.6}
+{"anchor": "desligar a bateria", "i": 61}
+{"i": 60, "kind": "hold", "e0": 58.6667, "nom": 0.0667}
+{"i": 61, "kind": "anim", "e0": 58.7333, "nom": 0.6}
+{"anchor": "Spoiler", "i": 63}
+{"i": 62, "kind": "hold", "e0": 59.3333, "nom": 0.0667}
+{"i": 63, "kind": "anim", "e0": 59.4, "nom": 0.7}
+{"i": 64, "kind": "anim", "e0": 60.1, "nom": 1.0}
+{"anchor": "Antes de fazer uma bobina", "i": 66}
+{"i": 65, "kind": "hold", "e0": 61.1, "nom": 0.0667}
+{"i": 66, "kind": "anim", "e0": 61.1667, "nom": 0.45}
+{"anchor": "Em volta do solenoide eu coloco", "i": 68}
+{"i": 67, "kind": "hold", "e0": 61.6167, "nom": 0.0667}
+{"i": 68, "kind": "anim", "e0": 61.6833, "nom": 1.8}
+{"anchor": "Ela não tem contato elétrico", "i": 70}
+{"i": 69, "kind": "hold", "e0": 63.4833, "nom": 0.0667}
+{"i": 70, "kind": "anim", "e0": 63.55, "nom": 0.3}
+{"i": 71, "kind": "anim", "e0": 63.85, "nom": 0.45}
+{"i": 72, "kind": "anim", "e0": 64.3, "nom": 0.9}
+{"i": 73, "kind": "hold", "e0": 65.2, "nom": 4.5}
+{"anchor": "Agora olha a sequência", "i": 75}
+{"i": 74, "kind": "hold", "e0": 69.7, "nom": 0.0667}
+{"i": 75, "kind": "anim", "e0": 69.7667, "nom": 0.5}
+{"i": 76, "kind": "anim", "e0": 70.2667, "nom": 0.9}
+{"anchor": "A corrente no solenoide começa", "i": 78}
+{"i": 77, "kind": "hold", "e0": 71.1667, "nom": 0.0667}
+{"i": 78, "kind": "anim", "e0": 71.2333, "nom": 0.3}
+{"i": 79, "kind": "anim", "e0": 71.5333, "nom": 0.45}
+{"i": 80, "kind": "anim", "e0": 71.9833, "nom": 2.6}
+{"anchor": "O campo magnético produzido por ela", "i": 82}
+{"i": 81, "kind": "hold", "e0": 74.5833, "nom": 0.0667}
+{"i": 82, "kind": "anim", "e0": 74.65, "nom": 0.3}
+{"i": 83, "kind": "anim", "e0": 74.95, "nom": 0.45}
+{"i": 84, "kind": "anim", "e0": 75.4, "nom": 2.6}
+{"anchor": "Esse campo atravessa as espiras", "i": 86}
+{"i": 85, "kind": "hold", "e0": 78.0, "nom": 0.0667}
+{"i": 86, "kind": "anim", "e0": 78.0667, "nom": 0.3}
+{"i": 87, "kind": "anim", "e0": 78.3667, "nom": 0.45}
+{"i": 88, "kind": "anim", "e0": 78.8167, "nom": 2.6}
+{"anchor": "E o medidor acusa", "i": 90}
+{"i": 89, "kind": "hold", "e0": 81.4167, "nom": 0.0667}
+{"i": 90, "kind": "anim", "e0": 81.4833, "nom": 0.3}
+{"i": 91, "kind": "anim", "e0": 81.7833, "nom": 0.45}
+{"i": 92, "kind": "anim", "e0": 82.2333, "nom": 2.6}
+{"anchor": "Corrente muda", "i": 94}
+{"i": 93, "kind": "hold", "e0": 84.8333, "nom": 0.0667}
+{"i": 94, "kind": "anim", "e0": 84.9, "nom": 2.0}
+{"i": 95, "kind": "anim", "e0": 86.9, "nom": 2.0}
+{"anchor": "Para contar o efeito em todas", "i": 97}
+{"i": 96, "kind": "hold", "e0": 88.9, "nom": 0.0667}
+{"i": 97, "kind": "anim", "e0": 88.9667, "nom": 1.0}
+{"i": 98, "kind": "anim", "e0": 89.9667, "nom": 3.0}
+{"anchor": "Agora segura a corrente", "i": 100}
+{"i": 99, "kind": "hold", "e0": 92.9667, "nom": 0.0667}
+{"i": 100, "kind": "anim", "e0": 93.0333, "nom": 0.3}
+{"i": 101, "kind": "anim", "e0": 93.3333, "nom": 0.45}
+{"i": 102, "kind": "anim", "e0": 93.7833, "nom": 9.0}
+{"anchor": "A segunda bobina não responde", "i": 104}
+{"i": 103, "kind": "hold", "e0": 102.7833, "nom": 0.0667}
+{"i": 104, "kind": "anim", "e0": 102.85, "nom": 0.3}
+{"i": 105, "kind": "anim", "e0": 103.15, "nom": 0.45}
+{"i": 106, "kind": "hold", "e0": 103.6, "nom": 3.0}
+{"anchor": "Para esta geometria fixa", "i": 108}
+{"i": 107, "kind": "hold", "e0": 106.6, "nom": 0.0667}
+{"i": 108, "kind": "anim", "e0": 106.6667, "nom": 2.0}
+{"i": 109, "kind": "hold", "e0": 108.6667, "nom": 3.0}
+{"anchor": "E quando derivamos isso", "i": 111}
+{"i": 110, "kind": "hold", "e0": 111.6667, "nom": 0.0667}
+{"i": 111, "kind": "anim", "e0": 111.7333, "nom": 2.0}
+{"i": 112, "kind": "anim", "e0": 113.7333, "nom": 0.3}
+{"i": 113, "kind": "anim", "e0": 114.0333, "nom": 0.45}
+{"i": 114, "kind": "hold", "e0": 114.4833, "nom": 4.5}
+{"anchor": "E de onde vem a indutância mútua", "i": 116}
+{"i": 115, "kind": "hold", "e0": 118.9833, "nom": 0.0667}
+{"i": 116, "kind": "anim", "e0": 119.05, "nom": 0.3}
+{"i": 117, "kind": "anim", "e0": 119.35, "nom": 0.45}
+{"i": 118, "kind": "anim", "e0": 119.8, "nom": 0.8}
+{"anchor": "O fluxo concatenado é o número", "i": 120}
+{"i": 119, "kind": "hold", "e0": 120.6, "nom": 0.0667}
+{"i": 120, "kind": "anim", "e0": 120.6667, "nom": 2.0}
+{"i": 121, "kind": "hold", "e0": 122.6667, "nom": 3.0}
+{"anchor": "E aqui existe uma pegadinha", "i": 123}
+{"i": 122, "kind": "hold", "e0": 125.6667, "nom": 0.0667}
+{"i": 123, "kind": "anim", "e0": 125.7333, "nom": 0.3}
+{"i": 124, "kind": "anim", "e0": 126.0333, "nom": 0.45}
+{"i": 125, "kind": "hold", "e0": 126.4833, "nom": 3.0}
+{"anchor": "Substituindo o campo do solenoide", "i": 127}
+{"i": 126, "kind": "hold", "e0": 129.4833, "nom": 0.0667}
+{"i": 127, "kind": "anim", "e0": 129.55, "nom": 2.0}
+{"i": 128, "kind": "hold", "e0": 131.55, "nom": 3.0}
+{"anchor": "Tudo o que sobra multiplicando", "i": 130}
+{"i": 129, "kind": "hold", "e0": 134.55, "nom": 0.0667}
+{"i": 130, "kind": "anim", "e0": 134.6167, "nom": 2.0}
+{"i": 131, "kind": "hold", "e0": 136.6167, "nom": 3.0}
+{"anchor": "Aqui, como estamos no vácuo", "i": 133}
+{"i": 132, "kind": "hold", "e0": 139.6167, "nom": 0.0667}
+{"i": 133, "kind": "anim", "e0": 139.6833, "nom": 0.3}
+{"i": 134, "kind": "anim", "e0": 139.9833, "nom": 0.45}
+{"i": 135, "kind": "hold", "e0": 140.4333, "nom": 4.5}
+{"anchor": "Agora vamos inverter o experimento", "i": 137}
+{"i": 136, "kind": "hold", "e0": 144.9333, "nom": 0.0667}
+{"i": 137, "kind": "anim", "e0": 145.0, "nom": 0.3}
+{"i": 138, "kind": "anim", "e0": 145.3, "nom": 0.45}
+{"i": 139, "kind": "anim", "e0": 145.75, "nom": 0.6}
+{"i": 140, "kind": "anim", "e0": 146.35, "nom": 0.6}
+{"i": 141, "kind": "anim", "e0": 146.95, "nom": 1.2}
+{"anchor": "A segunda bobina recebe a fonte", "i": 143}
+{"i": 142, "kind": "hold", "e0": 148.15, "nom": 0.0667}
+{"i": 143, "kind": "anim", "e0": 148.2167, "nom": 0.3}
+{"i": 144, "kind": "anim", "e0": 148.5167, "nom": 0.45}
+{"i": 145, "kind": "anim", "e0": 148.9667, "nom": 2.0}
+{"anchor": "A corrente nela começa a mudar", "i": 147}
+{"i": 146, "kind": "hold", "e0": 150.9667, "nom": 0.0667}
+{"i": 147, "kind": "anim", "e0": 151.0333, "nom": 2.6}
+{"anchor": "E agora quem sente", "i": 149}
+{"i": 148, "kind": "hold", "e0": 153.6333, "nom": 0.0667}
+{"i": 149, "kind": "anim", "e0": 153.7, "nom": 0.3}
+{"i": 150, "kind": "anim", "e0": 154.0, "nom": 0.45}
+{"i": 151, "kind": "anim", "e0": 154.45, "nom": 1.6}
+{"i": 152, "kind": "anim", "e0": 156.05, "nom": 2.6}
+{"anchor": "No nosso modelo linear", "i": 154}
+{"i": 153, "kind": "hold", "e0": 158.65, "nom": 0.0667}
+{"i": 154, "kind": "anim", "e0": 158.7167, "nom": 2.0}
+{"i": 155, "kind": "anim", "e0": 160.7167, "nom": 0.3}
+{"i": 156, "kind": "anim", "e0": 161.0167, "nom": 0.45}
+{"i": 157, "kind": "hold", "e0": 161.4667, "nom": 4.5}
+{"anchor": "Só que agora vem a pergunta", "i": 159}
+{"i": 158, "kind": "hold", "e0": 165.9667, "nom": 0.0667}
+{"i": 159, "kind": "anim", "e0": 166.0333, "nom": 0.3}
+{"i": 160, "kind": "anim", "e0": 166.3333, "nom": 0.45}
+{"i": 161, "kind": "hold", "e0": 166.7833, "nom": 3.0}
+{"i": 162, "kind": "anim", "e0": 169.7833, "nom": 0.6}
+{"i": 163, "kind": "anim", "e0": 170.3833, "nom": 1.8}
+{"i": 164, "kind": "anim", "e0": 172.1833, "nom": 1.8}
+{"i": 165, "kind": "anim", "e0": 173.9833, "nom": 2.0}
+{"i": 166, "kind": "anim", "e0": 175.9833, "nom": 2.0}
+{"anchor": "Tiramos a segunda bobina", "i": 168}
+{"i": 167, "kind": "hold", "e0": 177.9833, "nom": 0.0667}
+{"i": 168, "kind": "anim", "e0": 178.05, "nom": 0.3}
+{"i": 169, "kind": "anim", "e0": 178.35, "nom": 0.45}
+{"i": 170, "kind": "anim", "e0": 178.8, "nom": 2.6}
+{"anchor": "E esse campo atravessa as próprias", "i": 172}
+{"i": 171, "kind": "hold", "e0": 181.4, "nom": 0.0667}
+{"i": 172, "kind": "anim", "e0": 181.4667, "nom": 0.3}
+{"i": 173, "kind": "anim", "e0": 181.7667, "nom": 0.45}
+{"i": 174, "kind": "anim", "e0": 182.2167, "nom": 2.6}
+{"anchor": "Então a mesma lógica vale", "i": 176}
+{"i": 175, "kind": "hold", "e0": 184.8167, "nom": 0.0667}
+{"i": 176, "kind": "anim", "e0": 184.8833, "nom": 2.0}
+{"anchor": "Na tela, ela aparece como", "i": 178}
+{"i": 177, "kind": "hold", "e0": 186.8833, "nom": 0.0667}
+{"i": 178, "kind": "anim", "e0": 186.95, "nom": 0.8}
+{"i": 179, "kind": "hold", "e0": 187.75, "nom": 3.0}
+{"anchor": "E se a corrente muda, o fluxo próprio", "i": 181}
+{"i": 180, "kind": "hold", "e0": 190.75, "nom": 0.0667}
+{"i": 181, "kind": "anim", "e0": 190.8167, "nom": 0.3}
+{"i": 182, "kind": "anim", "e0": 191.1167, "nom": 0.45}
+{"i": 183, "kind": "anim", "e0": 191.5667, "nom": 0.8}
+{"anchor": "A força eletromotriz autoinduzida é menos", "i": 185}
+{"i": 184, "kind": "hold", "e0": 192.3667, "nom": 0.0667}
+{"i": 185, "kind": "anim", "e0": 192.4333, "nom": 2.0}
+{"i": 186, "kind": "anim", "e0": 194.4333, "nom": 3.0}
+{"anchor": "A seta ciano mostra", "i": 188}
+{"i": 187, "kind": "hold", "e0": 197.4333, "nom": 0.0667}
+{"i": 188, "kind": "anim", "e0": 197.5, "nom": 0.3}
+{"i": 189, "kind": "anim", "e0": 197.8, "nom": 0.45}
+{"i": 190, "kind": "anim", "e0": 198.25, "nom": 2.0}
+{"i": 191, "kind": "anim", "e0": 200.25, "nom": 3.0}
+{"anchor": "Para enxergar o sinal negativo", "i": 193}
+{"i": 192, "kind": "hold", "e0": 203.25, "nom": 0.0667}
+{"i": 193, "kind": "anim", "e0": 203.3167, "nom": 0.3}
+{"i": 194, "kind": "anim", "e0": 203.6167, "nom": 0.45}
+{"i": 195, "kind": "anim", "e0": 204.0667, "nom": 0.6}
+{"i": 196, "kind": "anim", "e0": 204.6667, "nom": 0.6}
+{"i": 197, "kind": "anim", "e0": 205.2667, "nom": 1.8}
+{"anchor": "Primeiro ela aumenta", "i": 199}
+{"i": 198, "kind": "hold", "e0": 207.0667, "nom": 0.0667}
+{"i": 199, "kind": "anim", "e0": 207.1333, "nom": 0.3}
+{"i": 200, "kind": "anim", "e0": 207.4333, "nom": 0.45}
+{"anchor": "E ao lado, o gráfico", "i": 202}
+{"i": 201, "kind": "hold", "e0": 207.8833, "nom": 0.0667}
+{"i": 202, "kind": "anim", "e0": 207.95, "nom": 0.8}
+{"i": 203, "kind": "hold", "e0": 208.75, "nom": 1.0}
+{"anchor": "Quando a corrente aumenta", "i": 205}
+{"i": 204, "kind": "hold", "e0": 209.75, "nom": 0.0667}
+{"i": 205, "kind": "anim", "e0": 209.8167, "nom": 3.0}
+{"anchor": "A força eletromotriz induzida aponta contra", "i": 207}
+{"i": 206, "kind": "hold", "e0": 212.8167, "nom": 0.0667}
+{"i": 207, "kind": "anim", "e0": 212.8833, "nom": 1.4}
+{"i": 208, "kind": "anim", "e0": 214.2833, "nom": 0.3}
+{"i": 209, "kind": "anim", "e0": 214.5833, "nom": 0.45}
+{"i": 210, "kind": "anim", "e0": 215.0333, "nom": 3.0}
+{"anchor": "Agora a corrente fica constante", "i": 212}
+{"i": 211, "kind": "hold", "e0": 218.0333, "nom": 0.0667}
+{"i": 212, "kind": "anim", "e0": 218.1, "nom": 4.0}
+{"anchor": "Depois a corrente começa a cair", "i": 214}
+{"i": 213, "kind": "hold", "e0": 222.1, "nom": 0.0667}
+{"i": 214, "kind": "anim", "e0": 222.1667, "nom": 3.0}
+{"anchor": "e a força eletromotriz troca de sentido", "i": 216}
+{"i": 215, "kind": "hold", "e0": 225.1667, "nom": 0.0667}
+{"i": 216, "kind": "anim", "e0": 225.2333, "nom": 1.4}
+{"i": 217, "kind": "anim", "e0": 226.6333, "nom": 0.3}
+{"i": 218, "kind": "anim", "e0": 226.9333, "nom": 0.45}
+{"i": 219, "kind": "anim", "e0": 227.3833, "nom": 3.0}
+{"anchor": "O indutor é aquele amigo", "i": 221}
+{"i": 220, "kind": "hold", "e0": 230.3833, "nom": 0.0667}
+{"i": 221, "kind": "anim", "e0": 230.45, "nom": 2.4}
+{"anchor": "Então guarda esta frase", "i": 223}
+{"i": 222, "kind": "hold", "e0": 232.85, "nom": 0.0667}
+{"i": 223, "kind": "anim", "e0": 232.9167, "nom": 0.35}
+{"i": 224, "kind": "anim", "e0": 233.2667, "nom": 0.6}
+{"i": 225, "kind": "anim", "e0": 233.8667, "nom": 0.4}
+{"anchor": "O indutor não se opõe", "i": 227}
+{"i": 226, "kind": "hold", "e0": 234.2667, "nom": 0.0667}
+{"i": 227, "kind": "anim", "e0": 234.3333, "nom": 1.0}
+{"i": 228, "kind": "hold", "e0": 235.3333, "nom": 3.0}
+{"i": 229, "kind": "anim", "e0": 238.3333, "nom": 0.6}
+{"anchor": "Ele se opõe à mudança", "i": 231}
+{"i": 230, "kind": "hold", "e0": 238.9333, "nom": 0.0667}
+{"i": 231, "kind": "anim", "e0": 239.0, "nom": 0.8}
+{"i": 232, "kind": "anim", "e0": 239.8, "nom": 0.45}
+{"i": 233, "kind": "anim", "e0": 240.25, "nom": 0.45}
+{"i": 234, "kind": "hold", "e0": 240.7, "nom": 4.5}
+{"anchor": "E isso resolve uma confusão", "i": 236}
+{"i": 235, "kind": "hold", "e0": 245.2, "nom": 0.0667}
+{"i": 236, "kind": "anim", "e0": 245.2667, "nom": 0.8}
+{"i": 237, "kind": "anim", "e0": 246.0667, "nom": 0.45}
+{"anchor": "Podemos ter corrente constante", "i": 239}
+{"i": 238, "kind": "hold", "e0": 246.5167, "nom": 0.0667}
+{"i": 239, "kind": "anim", "e0": 246.5833, "nom": 4.5}
+{"anchor": "E mesmo assim a força eletromotriz", "i": 241}
+{"i": 240, "kind": "hold", "e0": 251.0833, "nom": 0.0667}
+{"i": 241, "kind": "anim", "e0": 251.15, "nom": 1.4}
+{"i": 242, "kind": "hold", "e0": 252.55, "nom": 4.5}
+{"anchor": "Agora voltamos ao circuito do começo", "i": 244}
+{"i": 243, "kind": "hold", "e0": 257.05, "nom": 0.0667}
+{"i": 244, "kind": "anim", "e0": 257.1167, "nom": 0.3}
+{"i": 245, "kind": "anim", "e0": 257.4167, "nom": 0.45}
+{"i": 246, "kind": "anim", "e0": 257.8667, "nom": 0.6}
+{"i": 247, "kind": "anim", "e0": 258.4667, "nom": 0.7}
+{"i": 248, "kind": "anim", "e0": 259.1667, "nom": 1.8}
+{"anchor": "Fonte, resistor e indutor", "i": 250}
+{"i": 249, "kind": "hold", "e0": 260.9667, "nom": 0.0667}
+{"i": 250, "kind": "anim", "e0": 261.0333, "nom": 0.8}
+{"anchor": "Vamos escolher o sentido da corrente", "i": 252}
+{"i": 251, "kind": "hold", "e0": 261.8333, "nom": 0.0667}
+{"i": 252, "kind": "anim", "e0": 261.9, "nom": 0.3}
+{"i": 253, "kind": "anim", "e0": 262.2, "nom": 0.45}
+{"i": 254, "kind": "hold", "e0": 262.65, "nom": 2.0}
+{"anchor": "A bateria fornece uma força eletromotriz positiva", "i": 256}
+{"i": 255, "kind": "hold", "e0": 264.65, "nom": 0.0667}
+{"i": 256, "kind": "anim", "e0": 264.7167, "nom": 0.3}
+{"i": 257, "kind": "anim", "e0": 265.0167, "nom": 0.45}
+{"i": 258, "kind": "anim", "e0": 265.4667, "nom": 0.6}
+{"i": 259, "kind": "anim", "e0": 266.0667, "nom": 0.5}
+{"i": 260, "kind": "anim", "e0": 266.5667, "nom": 0.8}
+{"i": 261, "kind": "hold", "e0": 267.3667, "nom": 1.5}
+{"anchor": "A força eletromotriz autoinduzida vale menos", "i": 263}
+{"i": 262, "kind": "hold", "e0": 268.8667, "nom": 0.0667}
+{"i": 263, "kind": "anim", "e0": 268.9333, "nom": 0.3}
+{"i": 264, "kind": "anim", "e0": 269.2333, "nom": 0.45}
+{"i": 265, "kind": "anim", "e0": 269.6833, "nom": 0.6}
+{"i": 266, "kind": "anim", "e0": 270.2833, "nom": 0.5}
+{"i": 267, "kind": "anim", "e0": 270.7833, "nom": 0.8}
+{"i": 268, "kind": "hold", "e0": 271.5833, "nom": 1.5}
+{"anchor": "E o resistor produz a queda", "i": 270}
+{"i": 269, "kind": "hold", "e0": 273.0833, "nom": 0.0667}
+{"i": 270, "kind": "anim", "e0": 273.15, "nom": 0.3}
+{"i": 271, "kind": "anim", "e0": 273.45, "nom": 0.45}
+{"i": 272, "kind": "anim", "e0": 273.9, "nom": 0.6}
+{"i": 273, "kind": "anim", "e0": 274.5, "nom": 0.5}
+{"i": 274, "kind": "anim", "e0": 275.0, "nom": 0.8}
+{"i": 275, "kind": "hold", "e0": 275.8, "nom": 1.5}
+{"anchor": "A soma na malha precisa fechar", "i": 277}
+{"i": 276, "kind": "hold", "e0": 277.3, "nom": 0.0667}
+{"i": 277, "kind": "anim", "e0": 277.3667, "nom": 0.3}
+{"i": 278, "kind": "anim", "e0": 277.6667, "nom": 0.45}
+{"i": 279, "kind": "anim", "e0": 278.1167, "nom": 2.4}
+{"i": 280, "kind": "hold", "e0": 280.5167, "nom": 3.0}
+{"anchor": "Substituindo a expressão do indutor", "i": 282}
+{"i": 281, "kind": "hold", "e0": 283.5167, "nom": 0.0667}
+{"i": 282, "kind": "anim", "e0": 283.5833, "nom": 2.2}
+{"i": 283, "kind": "hold", "e0": 285.7833, "nom": 1.2}
+{"i": 284, "kind": "anim", "e0": 286.9833, "nom": 0.6}
+{"i": 285, "kind": "anim", "e0": 287.5833, "nom": 0.3}
+{"i": 286, "kind": "anim", "e0": 287.8833, "nom": 0.45}
+{"i": 287, "kind": "anim", "e0": 288.3333, "nom": 2.0}
+{"anchor": "E aqui aparece o motivo matemático", "i": 289}
+{"i": 288, "kind": "hold", "e0": 290.3333, "nom": 0.0667}
+{"i": 289, "kind": "anim", "e0": 290.4, "nom": 1.2}
+{"i": 290, "kind": "hold", "e0": 291.6, "nom": 4.5}
+{"anchor": "Vamos resolver", "i": 292}
+{"i": 291, "kind": "hold", "e0": 296.1, "nom": 0.0667}
+{"i": 292, "kind": "anim", "e0": 296.1667, "nom": 0.3}
+{"i": 293, "kind": "anim", "e0": 296.4667, "nom": 0.45}
+{"i": 294, "kind": "hold", "e0": 296.9167, "nom": 2.0}
+{"anchor": "Primeiro isolamos a taxa", "i": 296}
+{"i": 295, "kind": "hold", "e0": 298.9167, "nom": 0.0667}
+{"i": 296, "kind": "anim", "e0": 298.9833, "nom": 0.3}
+{"i": 297, "kind": "anim", "e0": 299.2833, "nom": 0.45}
+{"i": 298, "kind": "anim", "e0": 299.7333, "nom": 2.0}
+{"i": 299, "kind": "hold", "e0": 301.7333, "nom": 1.0}
+{"anchor": "Agora aparecem duas combinações", "i": 301}
+{"i": 300, "kind": "hold", "e0": 302.7333, "nom": 0.0667}
+{"i": 301, "kind": "anim", "e0": 302.8, "nom": 0.3}
+{"i": 302, "kind": "anim", "e0": 303.1, "nom": 0.45}
+{"i": 303, "kind": "anim", "e0": 303.55, "nom": 1.6}
+{"i": 304, "kind": "hold", "e0": 305.15, "nom": 0.6}
+{"anchor": "A força eletromotriz da bateria dividida pela resistência é a corrente final", "i": 306}
+{"i": 305, "kind": "hold", "e0": 305.75, "nom": 0.0667}
+{"i": 306, "kind": "anim", "e0": 305.8167, "nom": 2.0}
+{"i": 307, "kind": "hold", "e0": 307.8167, "nom": 3.0}
+{"anchor": "Já a autoindutância dividida", "i": 309}
+{"i": 308, "kind": "hold", "e0": 310.8167, "nom": 0.0667}
+{"i": 309, "kind": "anim", "e0": 310.8833, "nom": 1.2}
+{"i": 310, "kind": "hold", "e0": 312.0833, "nom": 3.0}
+{"anchor": "Com esses nomes", "i": 312}
+{"i": 311, "kind": "hold", "e0": 315.0833, "nom": 0.0667}
+{"i": 312, "kind": "anim", "e0": 315.15, "nom": 2.0}
+{"i": 313, "kind": "hold", "e0": 317.15, "nom": 3.0}
+{"anchor": "Longe do final", "i": 315}
+{"i": 314, "kind": "hold", "e0": 320.15, "nom": 0.0667}
+{"i": 315, "kind": "anim", "e0": 320.2167, "nom": 0.3}
+{"i": 316, "kind": "anim", "e0": 320.5167, "nom": 0.45}
+{"i": 317, "kind": "hold", "e0": 320.9667, "nom": 3.0}
+{"anchor": "Agora separamos as variáveis", "i": 319}
+{"i": 318, "kind": "hold", "e0": 323.9667, "nom": 0.0667}
+{"i": 319, "kind": "anim", "e0": 324.0333, "nom": 0.3}
+{"i": 320, "kind": "anim", "e0": 324.3333, "nom": 0.45}
+{"i": 321, "kind": "anim", "e0": 324.7833, "nom": 2.0}
+{"i": 322, "kind": "hold", "e0": 326.7833, "nom": 3.0}
+{"anchor": "Integramos desde o instante", "i": 324}
+{"i": 323, "kind": "hold", "e0": 329.7833, "nom": 0.0667}
+{"i": 324, "kind": "anim", "e0": 329.85, "nom": 0.3}
+{"i": 325, "kind": "anim", "e0": 330.15, "nom": 0.45}
+{"i": 326, "kind": "anim", "e0": 330.6, "nom": 2.0}
+{"i": 327, "kind": "hold", "e0": 332.6, "nom": 3.0}
+{"anchor": "A integral do lado da corrente", "i": 329}
+{"i": 328, "kind": "hold", "e0": 335.6, "nom": 0.0667}
+{"i": 329, "kind": "anim", "e0": 335.6667, "nom": 0.3}
+{"i": 330, "kind": "anim", "e0": 335.9667, "nom": 0.45}
+{"i": 331, "kind": "anim", "e0": 336.4167, "nom": 2.0}
+{"i": 332, "kind": "hold", "e0": 338.4167, "nom": 3.0}
+{"anchor": "Exponenciando, eliminamos", "i": 334}
+{"i": 333, "kind": "hold", "e0": 341.4167, "nom": 0.0667}
+{"i": 334, "kind": "anim", "e0": 341.4833, "nom": 0.3}
+{"i": 335, "kind": "anim", "e0": 341.7833, "nom": 0.45}
+{"i": 336, "kind": "anim", "e0": 342.2333, "nom": 2.0}
+{"i": 337, "kind": "hold", "e0": 344.2333, "nom": 3.0}
+{"anchor": "E isolando a corrente", "i": 339}
+{"i": 338, "kind": "hold", "e0": 347.2333, "nom": 0.0667}
+{"i": 339, "kind": "anim", "e0": 347.3, "nom": 0.3}
+{"i": 340, "kind": "anim", "e0": 347.6, "nom": 0.45}
+{"i": 341, "kind": "anim", "e0": 348.05, "nom": 2.0}
+{"i": 342, "kind": "hold", "e0": 350.05, "nom": 3.0}
+{"anchor": "Confere os extremos", "i": 344}
+{"i": 343, "kind": "hold", "e0": 353.05, "nom": 0.0667}
+{"i": 344, "kind": "anim", "e0": 353.1167, "nom": 1.0}
+{"i": 345, "kind": "hold", "e0": 354.1167, "nom": 4.5}
+{"anchor": "Agora vamos rodar essa carga", "i": 347}
+{"i": 346, "kind": "hold", "e0": 358.6167, "nom": 0.0667}
+{"i": 347, "kind": "anim", "e0": 358.6833, "nom": 0.3}
+{"i": 348, "kind": "anim", "e0": 358.9833, "nom": 0.45}
+{"i": 349, "kind": "anim", "e0": 359.4333, "nom": 0.6}
+{"i": 350, "kind": "anim", "e0": 360.0333, "nom": 1.8}
+{"anchor": "Circuito, gráfico, campo magnético", "i": 352}
+{"i": 351, "kind": "hold", "e0": 361.8333, "nom": 0.0667}
+{"i": 352, "kind": "anim", "e0": 361.9, "nom": 0.5}
+{"i": 353, "kind": "anim", "e0": 362.4, "nom": 0.6}
+{"i": 354, "kind": "anim", "e0": 363.0, "nom": 0.5}
+{"anchor": "No instante zero, a corrente ainda", "i": 356}
+{"i": 355, "kind": "hold", "e0": 363.5, "nom": 0.0667}
+{"i": 356, "kind": "anim", "e0": 363.5667, "nom": 0.3}
+{"i": 357, "kind": "anim", "e0": 363.8667, "nom": 0.45}
+{"i": 358, "kind": "anim", "e0": 364.3167, "nom": 1.4}
+{"anchor": "A taxa inicial de crescimento", "i": 360}
+{"i": 359, "kind": "hold", "e0": 365.7167, "nom": 0.0667}
+{"i": 360, "kind": "anim", "e0": 365.7833, "nom": 0.8}
+{"i": 361, "kind": "hold", "e0": 366.5833, "nom": 3.0}
+{"anchor": "Agora anda exatamente uma constante", "i": 363}
+{"i": 362, "kind": "hold", "e0": 369.5833, "nom": 0.0667}
+{"i": 363, "kind": "anim", "e0": 369.65, "nom": 4.5}
+{"anchor": "Substituindo na solução", "i": 365}
+{"i": 364, "kind": "hold", "e0": 374.15, "nom": 0.0667}
+{"i": 365, "kind": "anim", "e0": 374.2167, "nom": 0.8}
+{"i": 366, "kind": "anim", "e0": 375.0167, "nom": 0.3}
+{"i": 367, "kind": "anim", "e0": 375.3167, "nom": 0.45}
+{"i": 368, "kind": "anim", "e0": 375.7667, "nom": 1.4}
+{"i": 369, "kind": "hold", "e0": 377.1667, "nom": 3.0}
+{"anchor": "Depois de umas cinco constantes", "i": 371}
+{"i": 370, "kind": "hold", "e0": 380.1667, "nom": 0.0667}
+{"i": 371, "kind": "anim", "e0": 380.2333, "nom": 0.4}
+{"i": 372, "kind": "anim", "e0": 380.6333, "nom": 5.0}
+{"i": 373, "kind": "anim", "e0": 385.6333, "nom": 0.6}
+{"anchor": "Na prática, o transiente acabou", "i": 375}
+{"i": 374, "kind": "hold", "e0": 386.2333, "nom": 0.0667}
+{"i": 375, "kind": "anim", "e0": 386.3, "nom": 0.3}
+{"i": 376, "kind": "anim", "e0": 386.6, "nom": 0.45}
+{"i": 377, "kind": "anim", "e0": 387.05, "nom": 1.4}
+{"anchor": "Mas o campo magnético continua aceso", "i": 379}
+{"i": 378, "kind": "hold", "e0": 388.45, "nom": 0.0667}
+{"i": 379, "kind": "anim", "e0": 388.5167, "nom": 0.6}
+{"i": 380, "kind": "anim", "e0": 389.1167, "nom": 0.5}
+{"i": 381, "kind": "hold", "e0": 389.6167, "nom": 4.5}
+{"i": 382, "kind": "anim", "e0": 394.1167, "nom": 0.5}
+{"anchor": "Agora vamos olhar fisicamente", "i": 384}
+{"i": 383, "kind": "hold", "e0": 394.6167, "nom": 0.0667}
+{"i": 384, "kind": "anim", "e0": 394.6833, "nom": 0.3}
+{"i": 385, "kind": "anim", "e0": 394.9833, "nom": 0.45}
+{"i": 386, "kind": "anim", "e0": 395.4333, "nom": 0.6}
+{"i": 387, "kind": "anim", "e0": 396.0333, "nom": 1.8}
+{"anchor": "Giramos o solenoide", "i": 389}
+{"i": 388, "kind": "hold", "e0": 397.8333, "nom": 0.0667}
+{"i": 389, "kind": "anim", "e0": 397.9, "nom": 0.3}
+{"i": 390, "kind": "anim", "e0": 398.2, "nom": 0.45}
+{"i": 391, "kind": "anim", "e0": 398.65, "nom": 3.2}
+{"anchor": "Os pontos magenta", "i": 393}
+{"i": 392, "kind": "hold", "e0": 401.85, "nom": 0.0667}
+{"i": 393, "kind": "anim", "e0": 401.9167, "nom": 0.8}
+{"i": 394, "kind": "anim", "e0": 402.7167, "nom": 0.9}
+{"i": 395, "kind": "hold", "e0": 403.6167, "nom": 4.5}
+{"anchor": "Dentro do solenoide ideal", "i": 397}
+{"i": 396, "kind": "hold", "e0": 408.1167, "nom": 0.0667}
+{"i": 397, "kind": "anim", "e0": 408.1833, "nom": 0.5}
+{"i": 398, "kind": "anim", "e0": 408.6833, "nom": 2.0}
+{"anchor": "Então, enquanto a corrente cresce", "i": 400}
+{"i": 399, "kind": "hold", "e0": 410.6833, "nom": 0.0667}
+{"i": 400, "kind": "anim", "e0": 410.75, "nom": 0.5}
+{"i": 401, "kind": "anim", "e0": 411.25, "nom": 0.6}
+{"anchor": "Só que, enquanto esse campo está mudando", "i": 403}
+{"i": 402, "kind": "hold", "e0": 411.85, "nom": 0.0667}
+{"i": 403, "kind": "anim", "e0": 411.9167, "nom": 0.3}
+{"i": 404, "kind": "anim", "e0": 412.2167, "nom": 0.45}
+{"i": 405, "kind": "anim", "e0": 412.6667, "nom": 1.6}
+{"anchor": "Dentro do solenoide, a intensidade", "i": 407}
+{"i": 406, "kind": "hold", "e0": 414.2667, "nom": 0.0667}
+{"i": 407, "kind": "anim", "e0": 414.3333, "nom": 1.4}
+{"i": 408, "kind": "anim", "e0": 415.7333, "nom": 2.0}
+{"anchor": "Fora, ela diminui", "i": 410}
+{"i": 409, "kind": "hold", "e0": 417.7333, "nom": 0.0667}
+{"i": 410, "kind": "anim", "e0": 417.8, "nom": 1.4}
+{"i": 411, "kind": "anim", "e0": 419.2, "nom": 1.5}
+{"anchor": "E o sentido dos anéis", "i": 413}
+{"i": 412, "kind": "hold", "e0": 420.7, "nom": 0.0667}
+{"i": 413, "kind": "anim", "e0": 420.7667, "nom": 0.3}
+{"i": 414, "kind": "anim", "e0": 421.0667, "nom": 0.45}
+{"i": 415, "kind": "anim", "e0": 421.5167, "nom": 3.0}
+{"anchor": "Agora olha o que acontece no final", "i": 417}
+{"i": 416, "kind": "hold", "e0": 424.5167, "nom": 0.0667}
+{"i": 417, "kind": "anim", "e0": 424.5833, "nom": 0.3}
+{"i": 418, "kind": "anim", "e0": 424.8833, "nom": 0.45}
+{"i": 419, "kind": "anim", "e0": 425.3333, "nom": 9.0}
+{"anchor": "Esse é um ponto importante", "i": 421}
+{"i": 420, "kind": "hold", "e0": 434.3333, "nom": 0.0667}
+{"i": 421, "kind": "anim", "e0": 434.4, "nom": 1.4}
+{"i": 422, "kind": "hold", "e0": 435.8, "nom": 4.5}
+{"anchor": "Agora entra a segunda pergunta", "i": 424}
+{"i": 423, "kind": "hold", "e0": 440.3, "nom": 0.0667}
+{"i": 424, "kind": "anim", "e0": 440.3667, "nom": 0.3}
+{"i": 425, "kind": "anim", "e0": 440.6667, "nom": 0.45}
+{"i": 426, "kind": "anim", "e0": 441.1167, "nom": 0.6}
+{"i": 427, "kind": "anim", "e0": 441.7167, "nom": 0.6}
+{"i": 428, "kind": "anim", "e0": 442.3167, "nom": 0.6}
+{"i": 429, "kind": "anim", "e0": 442.9167, "nom": 3.0}
+{"i": 430, "kind": "anim", "e0": 445.9167, "nom": 0.8}
+{"anchor": "Enquanto a corrente cresce, a fonte", "i": 432}
+{"i": 431, "kind": "hold", "e0": 446.7167, "nom": 0.0667}
+{"i": 432, "kind": "anim", "e0": 446.7833, "nom": 0.5}
+{"i": 433, "kind": "anim", "e0": 447.2833, "nom": 0.6}
+{"i": 434, "kind": "anim", "e0": 447.8833, "nom": 1.5}
+{"anchor": "A bateria fornece potência", "i": 436}
+{"i": 435, "kind": "hold", "e0": 449.3833, "nom": 0.0667}
+{"i": 436, "kind": "anim", "e0": 449.45, "nom": 0.3}
+{"i": 437, "kind": "anim", "e0": 449.75, "nom": 0.45}
+{"i": 438, "kind": "anim", "e0": 450.2, "nom": 2.4}
+{"anchor": "Uma parte é dissipada", "i": 440}
+{"i": 439, "kind": "hold", "e0": 452.6, "nom": 0.0667}
+{"i": 440, "kind": "anim", "e0": 452.6667, "nom": 0.3}
+{"i": 441, "kind": "anim", "e0": 452.9667, "nom": 0.45}
+{"i": 442, "kind": "anim", "e0": 453.4167, "nom": 2.4}
+{"anchor": "E outra parte está associada", "i": 444}
+{"i": 443, "kind": "hold", "e0": 455.8167, "nom": 0.0667}
+{"i": 444, "kind": "anim", "e0": 455.8833, "nom": 0.3}
+{"i": 445, "kind": "anim", "e0": 456.1833, "nom": 0.45}
+{"i": 446, "kind": "anim", "e0": 456.6333, "nom": 2.4}
+{"i": 447, "kind": "anim", "e0": 459.0333, "nom": 0.9}
+{"i": 448, "kind": "anim", "e0": 459.9333, "nom": 2.5}
+{"anchor": "Pegamos a equação da malha", "i": 450}
+{"i": 449, "kind": "hold", "e0": 462.4333, "nom": 0.0667}
+{"i": 450, "kind": "anim", "e0": 462.5, "nom": 0.5}
+{"i": 451, "kind": "anim", "e0": 463.0, "nom": 0.3}
+{"i": 452, "kind": "anim", "e0": 463.3, "nom": 0.45}
+{"i": 453, "kind": "anim", "e0": 463.75, "nom": 1.6}
+{"i": 454, "kind": "anim", "e0": 465.35, "nom": 1.0}
+{"anchor": "Porque tensão vezes corrente", "i": 456}
+{"i": 455, "kind": "hold", "e0": 466.35, "nom": 0.0667}
+{"i": 456, "kind": "anim", "e0": 466.4167, "nom": 2.0}
+{"i": 457, "kind": "anim", "e0": 468.4167, "nom": 1.0}
+{"anchor": "O primeiro termo é a potência", "i": 459}
+{"i": 458, "kind": "hold", "e0": 469.4167, "nom": 0.0667}
+{"i": 459, "kind": "anim", "e0": 469.4833, "nom": 0.3}
+{"i": 460, "kind": "anim", "e0": 469.7833, "nom": 0.45}
+{"i": 461, "kind": "anim", "e0": 470.2333, "nom": 2.2}
+{"i": 462, "kind": "anim", "e0": 472.4333, "nom": 1.0}
+{"anchor": "O segundo é corrente ao quadrado", "i": 464}
+{"i": 463, "kind": "hold", "e0": 473.4333, "nom": 0.0667}
+{"i": 464, "kind": "anim", "e0": 473.5, "nom": 1.0}
+{"i": 465, "kind": "hold", "e0": 474.5, "nom": 1.5}
+{"anchor": "E sobra o termo do indutor", "i": 467}
+{"i": 466, "kind": "hold", "e0": 476.0, "nom": 0.0667}
+{"i": 467, "kind": "anim", "e0": 476.0667, "nom": 1.0}
+{"anchor": "E esse termo esconde uma derivada", "i": 469}
+{"i": 468, "kind": "hold", "e0": 477.0667, "nom": 0.0667}
+{"i": 469, "kind": "anim", "e0": 477.1333, "nom": 0.3}
+{"i": 470, "kind": "anim", "e0": 477.4333, "nom": 0.45}
+{"i": 471, "kind": "anim", "e0": 477.8833, "nom": 2.0}
+{"i": 472, "kind": "hold", "e0": 479.8833, "nom": 3.0}
+{"anchor": "Então o termo do indutor pode", "i": 474}
+{"i": 473, "kind": "hold", "e0": 482.8833, "nom": 0.0667}
+{"i": 474, "kind": "anim", "e0": 482.95, "nom": 2.2}
+{"i": 475, "kind": "hold", "e0": 485.15, "nom": 1.5}
+{"anchor": "Agora a conta ganha significado", "i": 477}
+{"i": 476, "kind": "hold", "e0": 486.65, "nom": 0.0667}
+{"i": 477, "kind": "anim", "e0": 486.7167, "nom": 0.6}
+{"i": 478, "kind": "anim", "e0": 487.3167, "nom": 0.3}
+{"i": 479, "kind": "anim", "e0": 487.6167, "nom": 0.45}
+{"i": 480, "kind": "anim", "e0": 488.0667, "nom": 2.2}
+{"i": 481, "kind": "hold", "e0": 490.2667, "nom": 3.0}
+{"anchor": "E aí aparece uma das fórmulas", "i": 483}
+{"i": 482, "kind": "hold", "e0": 493.2667, "nom": 0.0667}
+{"i": 483, "kind": "anim", "e0": 493.3333, "nom": 0.3}
+{"i": 484, "kind": "anim", "e0": 493.6333, "nom": 0.45}
+{"i": 485, "kind": "anim", "e0": 494.0833, "nom": 2.0}
+{"i": 486, "kind": "hold", "e0": 496.0833, "nom": 4.5}
+{"anchor": "Vamos conferir durante a carga", "i": 488}
+{"i": 487, "kind": "hold", "e0": 500.5833, "nom": 0.0667}
+{"i": 488, "kind": "anim", "e0": 500.65, "nom": 0.3}
+{"i": 489, "kind": "anim", "e0": 500.95, "nom": 0.45}
+{"i": 490, "kind": "anim", "e0": 501.4, "nom": 0.5}
+{"i": 491, "kind": "anim", "e0": 501.9, "nom": 0.6}
+{"anchor": "Mas imediatamente depois", "i": 493}
+{"i": 492, "kind": "hold", "e0": 502.5, "nom": 0.0667}
+{"i": 493, "kind": "anim", "e0": 502.5667, "nom": 3.0}
+{"anchor": "À medida que a corrente cresce", "i": 495}
+{"i": 494, "kind": "hold", "e0": 505.5667, "nom": 0.0667}
+{"i": 495, "kind": "anim", "e0": 505.6333, "nom": 3.5}
+{"anchor": "E no regime estacionário", "i": 497}
+{"i": 496, "kind": "hold", "e0": 509.1333, "nom": 0.0667}
+{"i": 497, "kind": "anim", "e0": 509.2, "nom": 5.4}
+{"i": 498, "kind": "hold", "e0": 514.6, "nom": 3.0}
+{"anchor": "Beleza", "i": 500}
+{"i": 499, "kind": "hold", "e0": 517.6, "nom": 0.0667}
+{"i": 500, "kind": "anim", "e0": 517.6667, "nom": 0.3}
+{"i": 501, "kind": "anim", "e0": 517.9667, "nom": 0.45}
+{"i": 502, "kind": "anim", "e0": 518.4167, "nom": 0.6}
+{"i": 503, "kind": "anim", "e0": 519.0167, "nom": 0.35}
+{"i": 504, "kind": "anim", "e0": 519.3667, "nom": 0.8}
+{"i": 505, "kind": "anim", "e0": 520.1667, "nom": 1.0}
+{"anchor": "No fio", "i": 507}
+{"i": 506, "kind": "hold", "e0": 521.1667, "nom": 0.0667}
+{"i": 507, "kind": "anim", "e0": 521.2333, "nom": 0.45}
+{"i": 508, "kind": "anim", "e0": 521.6833, "nom": 2.2}
+{"anchor": "Ou no campo magnético espalhado", "i": 510}
+{"i": 509, "kind": "hold", "e0": 523.8833, "nom": 0.0667}
+{"i": 510, "kind": "anim", "e0": 523.95, "nom": 1.5}
+{"anchor": "A fórmula que encontramos mistura", "i": 512}
+{"i": 511, "kind": "hold", "e0": 525.45, "nom": 0.0667}
+{"i": 512, "kind": "anim", "e0": 525.5167, "nom": 1.2}
+{"i": 513, "kind": "hold", "e0": 526.7167, "nom": 4.5}
+{"anchor": "Mas dá para reescrever", "i": 515}
+{"i": 514, "kind": "hold", "e0": 531.2167, "nom": 0.0667}
+{"i": 515, "kind": "anim", "e0": 531.2833, "nom": 0.3}
+{"i": 516, "kind": "anim", "e0": 531.5833, "nom": 0.45}
+{"i": 517, "kind": "anim", "e0": 532.0333, "nom": 0.6}
+{"anchor": "Vamos usar o solenoide justamente", "i": 519}
+{"i": 518, "kind": "hold", "e0": 532.6333, "nom": 0.0667}
+{"i": 519, "kind": "anim", "e0": 532.7, "nom": 1.8}
+{"anchor": "Temos uma área de seção", "i": 521}
+{"i": 520, "kind": "hold", "e0": 534.5, "nom": 0.0667}
+{"i": 521, "kind": "anim", "e0": 534.5667, "nom": 0.3}
+{"i": 522, "kind": "anim", "e0": 534.8667, "nom": 0.45}
+{"i": 523, "kind": "anim", "e0": 535.3167, "nom": 1.2}
+{"anchor": "Temos um comprimento", "i": 525}
+{"i": 524, "kind": "hold", "e0": 536.5167, "nom": 0.0667}
+{"i": 525, "kind": "anim", "e0": 536.5833, "nom": 0.3}
+{"i": 526, "kind": "anim", "e0": 536.8833, "nom": 0.45}
+{"i": 527, "kind": "anim", "e0": 537.3333, "nom": 1.2}
+{"anchor": "Quando essa área varre", "i": 529}
+{"i": 528, "kind": "hold", "e0": 538.5333, "nom": 0.0667}
+{"i": 529, "kind": "anim", "e0": 538.6, "nom": 0.3}
+{"i": 530, "kind": "anim", "e0": 538.9, "nom": 0.45}
+{"i": 531, "kind": "anim", "e0": 539.35, "nom": 3.5}
+{"anchor": "Área vezes comprimento", "i": 533}
+{"i": 532, "kind": "hold", "e0": 542.85, "nom": 0.0667}
+{"i": 533, "kind": "anim", "e0": 542.9167, "nom": 1.4}
+{"i": 534, "kind": "hold", "e0": 544.3167, "nom": 3.0}
+{"anchor": "Para o solenoide ideal", "i": 536}
+{"i": 535, "kind": "hold", "e0": 547.3167, "nom": 0.0667}
+{"i": 536, "kind": "anim", "e0": 547.3833, "nom": 1.0}
+{"i": 537, "kind": "anim", "e0": 548.3833, "nom": 0.6}
+{"i": 538, "kind": "anim", "e0": 548.9833, "nom": 0.9}
+{"i": 539, "kind": "anim", "e0": 549.8833, "nom": 0.3}
+{"i": 540, "kind": "anim", "e0": 550.1833, "nom": 0.45}
+{"i": 541, "kind": "anim", "e0": 550.6333, "nom": 2.0}
+{"i": 542, "kind": "hold", "e0": 552.6333, "nom": 3.0}
+{"anchor": "Substituímos a autoindutância", "i": 544}
+{"i": 543, "kind": "hold", "e0": 555.6333, "nom": 0.0667}
+{"i": 544, "kind": "anim", "e0": 555.7, "nom": 0.3}
+{"i": 545, "kind": "anim", "e0": 556.0, "nom": 0.45}
+{"i": 546, "kind": "anim", "e0": 556.45, "nom": 2.0}
+{"i": 547, "kind": "hold", "e0": 558.45, "nom": 1.0}
+{"anchor": "E agora olha o agrupamento", "i": 549}
+{"i": 548, "kind": "hold", "e0": 559.45, "nom": 0.0667}
+{"i": 549, "kind": "anim", "e0": 559.5167, "nom": 0.3}
+{"i": 550, "kind": "anim", "e0": 559.8167, "nom": 0.45}
+{"i": 551, "kind": "anim", "e0": 560.2667, "nom": 2.0}
+{"anchor": "é exatamente o campo magnético", "i": 553}
+{"i": 552, "kind": "hold", "e0": 562.2667, "nom": 0.0667}
+{"i": 553, "kind": "anim", "e0": 562.3333, "nom": 1.0}
+{"anchor": "Então toda aquela expressão", "i": 555}
+{"i": 554, "kind": "hold", "e0": 563.3333, "nom": 0.0667}
+{"i": 555, "kind": "anim", "e0": 563.4, "nom": 2.0}
+{"anchor": "dividido por duas vezes", "i": 557}
+{"i": 556, "kind": "hold", "e0": 565.4, "nom": 0.0667}
+{"i": 557, "kind": "anim", "e0": 565.4667, "nom": 0.5}
+{"anchor": "multiplicado pelo volume", "i": 559}
+{"i": 558, "kind": "hold", "e0": 565.9667, "nom": 0.0667}
+{"i": 559, "kind": "anim", "e0": 566.0333, "nom": 0.3}
+{"i": 560, "kind": "anim", "e0": 566.3333, "nom": 0.45}
+{"i": 561, "kind": "anim", "e0": 566.7833, "nom": 0.7}
+{"i": 562, "kind": "anim", "e0": 567.4833, "nom": 1.3}
+{"anchor": "Então, no vácuo, a energia por unidade", "i": 564}
+{"i": 563, "kind": "hold", "e0": 568.7833, "nom": 0.0667}
+{"i": 564, "kind": "anim", "e0": 568.85, "nom": 0.6}
+{"i": 565, "kind": "anim", "e0": 569.45, "nom": 0.3}
+{"i": 566, "kind": "anim", "e0": 569.75, "nom": 0.45}
+{"i": 567, "kind": "anim", "e0": 570.2, "nom": 2.0}
+{"anchor": "E agora olha o que aconteceu", "i": 569}
+{"i": 568, "kind": "hold", "e0": 572.2, "nom": 0.0667}
+{"i": 569, "kind": "anim", "e0": 572.2667, "nom": 1.2}
+{"anchor": "É nesse sentido que a energia", "i": 571}
+{"i": 570, "kind": "hold", "e0": 573.4667, "nom": 0.0667}
+{"i": 571, "kind": "anim", "e0": 573.5333, "nom": 0.3}
+{"i": 572, "kind": "anim", "e0": 573.8333, "nom": 0.45}
+{"i": 573, "kind": "hold", "e0": 574.2833, "nom": 4.5}
+{"anchor": "E no vácuo essa ideia", "i": 575}
+{"i": 574, "kind": "hold", "e0": 578.7833, "nom": 0.0667}
+{"i": 575, "kind": "anim", "e0": 578.85, "nom": 0.3}
+{"i": 576, "kind": "anim", "e0": 579.15, "nom": 0.45}
+{"i": 577, "kind": "anim", "e0": 579.6, "nom": 1.8}
+{"anchor": "Num solenoide real", "i": 579}
+{"i": 578, "kind": "hold", "e0": 581.4, "nom": 0.0667}
+{"i": 579, "kind": "anim", "e0": 581.4667, "nom": 0.3}
+{"i": 580, "kind": "anim", "e0": 581.7667, "nom": 0.45}
+{"i": 581, "kind": "anim", "e0": 582.2167, "nom": 2.5}
+{"i": 582, "kind": "hold", "e0": 584.7167, "nom": 3.0}
+{"anchor": "Pegamos um pedacinho pequeno", "i": 584}
+{"i": 583, "kind": "hold", "e0": 587.7167, "nom": 0.0667}
+{"i": 584, "kind": "anim", "e0": 587.7833, "nom": 0.8}
+{"anchor": "Calculamos a energia naquele", "i": 586}
+{"i": 585, "kind": "hold", "e0": 588.5833, "nom": 0.0667}
+{"i": 586, "kind": "anim", "e0": 588.65, "nom": 0.3}
+{"i": 587, "kind": "anim", "e0": 588.95, "nom": 0.45}
+{"i": 588, "kind": "anim", "e0": 589.4, "nom": 2.0}
+{"i": 589, "kind": "hold", "e0": 591.4, "nom": 3.0}
+{"anchor": "E somamos todos os pedacinhos", "i": 591}
+{"i": 590, "kind": "hold", "e0": 594.4, "nom": 0.0667}
+{"i": 591, "kind": "anim", "e0": 594.4667, "nom": 0.3}
+{"i": 592, "kind": "anim", "e0": 594.7667, "nom": 0.45}
+{"i": 593, "kind": "anim", "e0": 595.2167, "nom": 2.4}
+{"anchor": "No limite contínuo", "i": 595}
+{"i": 594, "kind": "hold", "e0": 597.6167, "nom": 0.0667}
+{"i": 595, "kind": "anim", "e0": 597.6833, "nom": 2.2}
+{"i": 596, "kind": "anim", "e0": 599.8833, "nom": 0.6}
+{"i": 597, "kind": "hold", "e0": 600.4833, "nom": 4.5}
+{"anchor": "Agora temos uma descrição espacial", "i": 599}
+{"i": 598, "kind": "hold", "e0": 604.9833, "nom": 0.0667}
+{"i": 599, "kind": "anim", "e0": 605.05, "nom": 0.8}
+{"i": 600, "kind": "hold", "e0": 605.85, "nom": 1.0}
+{"anchor": "Vamos fazer o teste", "i": 602}
+{"i": 601, "kind": "hold", "e0": 606.85, "nom": 0.0667}
+{"i": 602, "kind": "anim", "e0": 606.9167, "nom": 0.3}
+{"i": 603, "kind": "anim", "e0": 607.2167, "nom": 0.45}
+{"i": 604, "kind": "anim", "e0": 607.6667, "nom": 0.6}
+{"i": 605, "kind": "anim", "e0": 608.2667, "nom": 0.6}
+{"anchor": "A corrente já chegou ao regime", "i": 607}
+{"i": 606, "kind": "hold", "e0": 608.8667, "nom": 0.0667}
+{"i": 607, "kind": "anim", "e0": 608.9333, "nom": 1.8}
+{"anchor": "Existe energia armazenada", "i": 609}
+{"i": 608, "kind": "hold", "e0": 610.7333, "nom": 0.0667}
+{"i": 609, "kind": "anim", "e0": 610.8, "nom": 0.3}
+{"i": 610, "kind": "anim", "e0": 611.1, "nom": 0.45}
+{"i": 611, "kind": "anim", "e0": 611.55, "nom": 2.0}
+{"i": 612, "kind": "hold", "e0": 613.55, "nom": 3.0}
+{"anchor": "Mas não vamos simplesmente abrir", "i": 614}
+{"i": 613, "kind": "hold", "e0": 616.55, "nom": 0.0667}
+{"i": 614, "kind": "anim", "e0": 616.6167, "nom": 0.3}
+{"i": 615, "kind": "anim", "e0": 616.9167, "nom": 0.45}
+{"i": 616, "kind": "hold", "e0": 617.3667, "nom": 1.5}
+{"anchor": "o modelo exigiria uma variação enorme", "i": 618}
+{"i": 617, "kind": "hold", "e0": 618.8667, "nom": 0.0667}
+{"i": 618, "kind": "anim", "e0": 618.9333, "nom": 0.6}
+{"i": 619, "kind": "anim", "e0": 619.5333, "nom": 0.5}
+{"i": 620, "kind": "anim", "e0": 620.0333, "nom": 1.4}
+{"i": 621, "kind": "hold", "e0": 621.4333, "nom": 3.0}
+{"anchor": "Em vez disso, a chave comuta", "i": 623}
+{"i": 622, "kind": "hold", "e0": 624.4333, "nom": 0.0667}
+{"i": 623, "kind": "anim", "e0": 624.5, "nom": 0.6}
+{"i": 624, "kind": "anim", "e0": 625.1, "nom": 0.3}
+{"i": 625, "kind": "anim", "e0": 625.4, "nom": 0.45}
+{"i": 626, "kind": "anim", "e0": 625.85, "nom": 2.0}
+{"i": 627, "kind": "anim", "e0": 627.85, "nom": 0.6}
+{"i": 628, "kind": "anim", "e0": 628.45, "nom": 0.5}
+{"anchor": "A bateria sai", "i": 630}
+{"i": 629, "kind": "hold", "e0": 628.95, "nom": 0.0667}
+{"i": 630, "kind": "anim", "e0": 629.0167, "nom": 0.3}
+{"i": 631, "kind": "anim", "e0": 629.3167, "nom": 0.45}
+{"i": 632, "kind": "anim", "e0": 629.7667, "nom": 1.4}
+{"i": 633, "kind": "anim", "e0": 631.1667, "nom": 2.0}
+{"anchor": "E olha a corrente no instante", "i": 635}
+{"i": 634, "kind": "hold", "e0": 633.1667, "nom": 0.0667}
+{"i": 635, "kind": "anim", "e0": 633.2333, "nom": 0.3}
+{"i": 636, "kind": "anim", "e0": 633.5333, "nom": 0.45}
+{"i": 637, "kind": "hold", "e0": 633.9833, "nom": 3.0}
+{"anchor": "Agora a equação da malha não tem", "i": 639}
+{"i": 638, "kind": "hold", "e0": 636.9833, "nom": 0.0667}
+{"i": 639, "kind": "anim", "e0": 637.05, "nom": 0.3}
+{"i": 640, "kind": "anim", "e0": 637.35, "nom": 0.45}
+{"i": 641, "kind": "anim", "e0": 637.8, "nom": 0.3}
+{"i": 642, "kind": "anim", "e0": 638.1, "nom": 0.45}
+{"i": 643, "kind": "anim", "e0": 638.55, "nom": 0.6}
+{"anchor": "Sobra autoindutância vezes", "i": 645}
+{"i": 644, "kind": "hold", "e0": 639.15, "nom": 0.0667}
+{"i": 645, "kind": "anim", "e0": 639.2167, "nom": 2.0}
+{"i": 646, "kind": "hold", "e0": 641.2167, "nom": 1.0}
+{"anchor": "A solução é um decaimento", "i": 648}
+{"i": 647, "kind": "hold", "e0": 642.2167, "nom": 0.0667}
+{"i": 648, "kind": "anim", "e0": 642.2833, "nom": 2.0}
+{"anchor": "A corrente começa no valor inicial", "i": 650}
+{"i": 649, "kind": "hold", "e0": 644.2833, "nom": 0.0667}
+{"i": 650, "kind": "anim", "e0": 644.35, "nom": 0.8}
+{"i": 651, "kind": "anim", "e0": 645.15, "nom": 2.0}
+{"anchor": "E olha a força eletromotriz do indutor", "i": 653}
+{"i": 652, "kind": "hold", "e0": 647.15, "nom": 0.0667}
+{"i": 653, "kind": "anim", "e0": 647.2167, "nom": 0.3}
+{"i": 654, "kind": "anim", "e0": 647.5167, "nom": 0.45}
+{"i": 655, "kind": "anim", "e0": 647.9667, "nom": 0.8}
+{"anchor": "Então a força eletromotriz muda de sentido", "i": 657}
+{"i": 656, "kind": "hold", "e0": 648.7667, "nom": 0.0667}
+{"i": 657, "kind": "anim", "e0": 648.8333, "nom": 0.3}
+{"i": 658, "kind": "anim", "e0": 649.1333, "nom": 0.45}
+{"i": 659, "kind": "anim", "e0": 649.5833, "nom": 3.0}
+{"anchor": "Lembra do amigo do contra", "i": 661}
+{"i": 660, "kind": "hold", "e0": 652.5833, "nom": 0.0667}
+{"i": 661, "kind": "anim", "e0": 652.65, "nom": 3.0}
+{"anchor": "Só que agora não existe bateria", "i": 663}
+{"i": 662, "kind": "hold", "e0": 655.65, "nom": 0.0667}
+{"i": 663, "kind": "anim", "e0": 655.7167, "nom": 9.0}
+{"i": 664, "kind": "hold", "e0": 664.7167, "nom": 3.0}
+{"anchor": "A corrente cai como uma exponencial", "i": 666}
+{"i": 665, "kind": "hold", "e0": 667.7167, "nom": 0.0667}
+{"i": 666, "kind": "anim", "e0": 667.7833, "nom": 0.3}
+{"i": 667, "kind": "anim", "e0": 668.0833, "nom": 0.45}
+{"i": 668, "kind": "anim", "e0": 668.5333, "nom": 0.6}
+{"i": 669, "kind": "anim", "e0": 669.1333, "nom": 0.8}
+{"anchor": "Como a energia magnética depende", "i": 671}
+{"i": 670, "kind": "hold", "e0": 669.9333, "nom": 0.0667}
+{"i": 671, "kind": "anim", "e0": 670.0, "nom": 2.0}
+{"anchor": "A potência dissipada no resistor também", "i": 673}
+{"i": 672, "kind": "hold", "e0": 672.0, "nom": 0.0667}
+{"i": 673, "kind": "anim", "e0": 672.0667, "nom": 2.0}
+{"i": 674, "kind": "hold", "e0": 674.0667, "nom": 1.0}
+{"anchor": "O campo enfraquece", "i": 676}
+{"i": 675, "kind": "hold", "e0": 675.0667, "nom": 0.0667}
+{"i": 676, "kind": "anim", "e0": 675.1333, "nom": 0.5}
+{"i": 677, "kind": "anim", "e0": 675.6333, "nom": 0.6}
+{"i": 678, "kind": "anim", "e0": 676.2333, "nom": 0.5}
+{"i": 679, "kind": "anim", "e0": 676.7333, "nom": 0.3}
+{"i": 680, "kind": "anim", "e0": 677.0333, "nom": 0.45}
+{"i": 681, "kind": "anim", "e0": 677.4833, "nom": 4.5}
+{"i": 682, "kind": "hold", "e0": 681.9833, "nom": 1.0}
+{"anchor": "E potência é energia por unidade", "i": 684}
+{"i": 683, "kind": "hold", "e0": 682.9833, "nom": 0.0667}
+{"i": 684, "kind": "anim", "e0": 683.05, "nom": 0.3}
+{"i": 685, "kind": "anim", "e0": 683.35, "nom": 0.45}
+{"i": 686, "kind": "anim", "e0": 683.8, "nom": 0.5}
+{"i": 687, "kind": "anim", "e0": 684.3, "nom": 0.6}
+{"i": 688, "kind": "anim", "e0": 684.9, "nom": 0.5}
+{"anchor": "Então a energia total transformada", "i": 690}
+{"i": 689, "kind": "hold", "e0": 685.4, "nom": 0.0667}
+{"i": 690, "kind": "anim", "e0": 685.4667, "nom": 5.0}
+{"anchor": "Essa área é a integral", "i": 692}
+{"i": 691, "kind": "hold", "e0": 690.4667, "nom": 0.0667}
+{"i": 692, "kind": "anim", "e0": 690.5333, "nom": 0.8}
+{"i": 693, "kind": "hold", "e0": 691.3333, "nom": 3.0}
+{"anchor": "Agora podemos fazer a conta final", "i": 695}
+{"i": 694, "kind": "hold", "e0": 694.3333, "nom": 0.0667}
+{"i": 695, "kind": "anim", "e0": 694.4, "nom": 0.8}
+{"anchor": "Quanto de calor aparece", "i": 697}
+{"i": 696, "kind": "hold", "e0": 695.2, "nom": 0.0667}
+{"i": 697, "kind": "anim", "e0": 695.2667, "nom": 0.3}
+{"i": 698, "kind": "anim", "e0": 695.5667, "nom": 0.45}
+{"anchor": "Integramos a potência dissipada", "i": 700}
+{"i": 699, "kind": "hold", "e0": 696.0167, "nom": 0.0667}
+{"i": 700, "kind": "anim", "e0": 696.0833, "nom": 0.3}
+{"i": 701, "kind": "anim", "e0": 696.3833, "nom": 0.45}
+{"i": 702, "kind": "anim", "e0": 696.8333, "nom": 2.0}
+{"i": 703, "kind": "hold", "e0": 698.8333, "nom": 1.0}
+{"anchor": "Substituímos a corrente exponencial", "i": 705}
+{"i": 704, "kind": "hold", "e0": 699.8333, "nom": 0.0667}
+{"i": 705, "kind": "anim", "e0": 699.9, "nom": 1.2}
+{"i": 706, "kind": "anim", "e0": 701.1, "nom": 0.3}
+{"i": 707, "kind": "anim", "e0": 701.4, "nom": 0.45}
+{"i": 708, "kind": "anim", "e0": 701.85, "nom": 2.2}
+{"anchor": "A integral que sobra vale", "i": 710}
+{"i": 709, "kind": "hold", "e0": 704.05, "nom": 0.0667}
+{"i": 710, "kind": "anim", "e0": 704.1167, "nom": 0.3}
+{"i": 711, "kind": "anim", "e0": 704.4167, "nom": 0.45}
+{"i": 712, "kind": "anim", "e0": 704.8667, "nom": 2.2}
+{"i": 713, "kind": "hold", "e0": 707.0667, "nom": 3.0}
+{"anchor": "Agora substituímos a constante de tempo", "i": 715}
+{"i": 714, "kind": "hold", "e0": 710.0667, "nom": 0.0667}
+{"i": 715, "kind": "anim", "e0": 710.1333, "nom": 1.2}
+{"i": 716, "kind": "anim", "e0": 711.3333, "nom": 0.3}
+{"i": 717, "kind": "anim", "e0": 711.6333, "nom": 0.45}
+{"i": 718, "kind": "anim", "e0": 712.0833, "nom": 2.2}
+{"anchor": "A resistência cancela", "i": 720}
+{"i": 719, "kind": "hold", "e0": 714.2833, "nom": 0.0667}
+{"i": 720, "kind": "anim", "e0": 714.35, "nom": 0.3}
+{"i": 721, "kind": "anim", "e0": 714.65, "nom": 0.45}
+{"i": 722, "kind": "anim", "e0": 715.1, "nom": 0.8}
+{"i": 723, "kind": "hold", "e0": 715.9, "nom": 0.6}
+{"anchor": "E sobra meio vezes", "i": 725}
+{"i": 724, "kind": "hold", "e0": 716.5, "nom": 0.0667}
+{"i": 725, "kind": "anim", "e0": 716.5667, "nom": 0.7}
+{"i": 726, "kind": "anim", "e0": 717.2667, "nom": 2.2}
+{"i": 727, "kind": "anim", "e0": 719.4667, "nom": 0.6}
+{"i": 728, "kind": "hold", "e0": 720.0667, "nom": 3.0}
+{"anchor": "E a resistência desapareceu", "i": 730}
+{"i": 729, "kind": "hold", "e0": 723.0667, "nom": 0.0667}
+{"i": 730, "kind": "anim", "e0": 723.1333, "nom": 0.3}
+{"i": 731, "kind": "anim", "e0": 723.4333, "nom": 0.45}
+{"i": 732, "kind": "hold", "e0": 723.8833, "nom": 1.5}
+{"anchor": "Resistência maior significa", "i": 734}
+{"i": 733, "kind": "hold", "e0": 725.3833, "nom": 0.0667}
+{"i": 734, "kind": "anim", "e0": 725.45, "nom": 1.2}
+{"i": 735, "kind": "hold", "e0": 726.65, "nom": 3.0}
+{"anchor": "E dá para ver a conservação", "i": 737}
+{"i": 736, "kind": "hold", "e0": 729.65, "nom": 0.0667}
+{"i": 737, "kind": "anim", "e0": 729.7167, "nom": 0.6}
+{"i": 738, "kind": "anim", "e0": 730.3167, "nom": 0.8}
+{"i": 739, "kind": "anim", "e0": 731.1167, "nom": 0.3}
+{"i": 740, "kind": "anim", "e0": 731.4167, "nom": 0.45}
+{"i": 741, "kind": "anim", "e0": 731.8667, "nom": 2.0}
+{"anchor": "A energia magnética diminui", "i": 743}
+{"i": 742, "kind": "hold", "e0": 733.8667, "nom": 0.0667}
+{"i": 743, "kind": "anim", "e0": 733.9333, "nom": 0.8}
+{"i": 744, "kind": "anim", "e0": 734.7333, "nom": 0.5}
+{"i": 745, "kind": "anim", "e0": 735.2333, "nom": 0.6}
+{"i": 746, "kind": "anim", "e0": 735.8333, "nom": 0.5}
+{"i": 747, "kind": "anim", "e0": 736.3333, "nom": 10.8}
+{"i": 748, "kind": "hold", "e0": 747.1333, "nom": 4.5}
+{"anchor": "Então agora dá para responder", "i": 750}
+{"i": 749, "kind": "hold", "e0": 751.6333, "nom": 0.0667}
+{"i": 750, "kind": "anim", "e0": 751.7, "nom": 0.3}
+{"i": 751, "kind": "anim", "e0": 752.0, "nom": 0.45}
+{"i": 752, "kind": "anim", "e0": 752.45, "nom": 0.6}
+{"i": 753, "kind": "anim", "e0": 753.05, "nom": 0.8}
+{"i": 754, "kind": "anim", "e0": 753.85, "nom": 0.9}
+{"anchor": "Porque mudar a corrente", "i": 756}
+{"i": 755, "kind": "hold", "e0": 754.75, "nom": 0.0667}
+{"i": 756, "kind": "anim", "e0": 754.8167, "nom": 0.4}
+{"i": 757, "kind": "anim", "e0": 755.2167, "nom": 0.3}
+{"i": 758, "kind": "anim", "e0": 755.5167, "nom": 0.45}
+{"anchor": "E, pela lei de Faraday", "i": 760}
+{"i": 759, "kind": "hold", "e0": 755.9667, "nom": 0.0667}
+{"i": 760, "kind": "anim", "e0": 756.0333, "nom": 1.4}
+{"anchor": "Com uma fonte de tensão finita", "i": 762}
+{"i": 761, "kind": "hold", "e0": 757.4333, "nom": 0.0667}
+{"i": 762, "kind": "anim", "e0": 757.5, "nom": 3.0}
+{"anchor": "E, ao mesmo tempo, construir", "i": 764}
+{"i": 763, "kind": "hold", "e0": 760.5, "nom": 0.0667}
+{"i": 764, "kind": "anim", "e0": 760.5667, "nom": 0.3}
+{"i": 765, "kind": "anim", "e0": 760.8667, "nom": 0.45}
+{"anchor": "Essa energia pode ser escrita", "i": 767}
+{"i": 766, "kind": "hold", "e0": 761.3167, "nom": 0.0667}
+{"i": 767, "kind": "anim", "e0": 761.3833, "nom": 1.4}
+{"i": 768, "kind": "anim", "e0": 762.7833, "nom": 3.0}
+{"anchor": "No vácuo, ela pode ser vista", "i": 770}
+{"i": 769, "kind": "hold", "e0": 765.7833, "nom": 0.0667}
+{"i": 770, "kind": "anim", "e0": 765.85, "nom": 0.3}
+{"i": 771, "kind": "anim", "e0": 766.15, "nom": 0.45}
+{"i": 772, "kind": "anim", "e0": 766.6, "nom": 1.4}
+{"i": 773, "kind": "anim", "e0": 768.0, "nom": 0.8}
+{"i": 774, "kind": "anim", "e0": 768.8, "nom": 0.8}
+{"anchor": "E quando retiramos a bateria", "i": 776}
+{"i": 775, "kind": "hold", "e0": 769.6, "nom": 0.0667}
+{"i": 776, "kind": "anim", "e0": 769.6667, "nom": 0.3}
+{"i": 777, "kind": "anim", "e0": 769.9667, "nom": 0.45}
+{"i": 778, "kind": "anim", "e0": 770.4167, "nom": 0.5}
+{"i": 779, "kind": "anim", "e0": 770.9167, "nom": 0.9}
+{"anchor": "O campo diminui", "i": 781}
+{"i": 780, "kind": "hold", "e0": 771.8167, "nom": 0.0667}
+{"i": 781, "kind": "anim", "e0": 771.8833, "nom": 3.0}
+{"anchor": "E a energia magnética reaparece", "i": 783}
+{"i": 782, "kind": "hold", "e0": 774.8833, "nom": 0.0667}
+{"i": 783, "kind": "anim", "e0": 774.95, "nom": 1.4}
+{"i": 784, "kind": "anim", "e0": 776.35, "nom": 4.0}
+{"i": 785, "kind": "hold", "e0": 780.35, "nom": 3.0}
+{"anchor": "Só que a eletrodinâmica", "i": 787}
+{"i": 786, "kind": "hold", "e0": 783.35, "nom": 0.0667}
+{"i": 787, "kind": "anim", "e0": 783.4167, "nom": 0.3}
+{"i": 788, "kind": "anim", "e0": 783.7167, "nom": 0.45}
+{"i": 789, "kind": "anim", "e0": 784.1667, "nom": 0.6}
+{"i": 790, "kind": "anim", "e0": 784.7667, "nom": 0.6}
+{"i": 791, "kind": "anim", "e0": 785.3667, "nom": 0.4}
+{"anchor": "Troca agora o indutor", "i": 793}
+{"i": 792, "kind": "hold", "e0": 785.7667, "nom": 0.0667}
+{"i": 793, "kind": "anim", "e0": 785.8333, "nom": 0.3}
+{"i": 794, "kind": "anim", "e0": 786.1333, "nom": 0.45}
+{"i": 795, "kind": "anim", "e0": 786.5833, "nom": 1.8}
+{"anchor": "A corrente percorre os fios", "i": 797}
+{"i": 796, "kind": "hold", "e0": 788.3833, "nom": 0.0667}
+{"i": 797, "kind": "anim", "e0": 788.45, "nom": 0.9}
+{"i": 798, "kind": "anim", "e0": 789.35, "nom": 0.3}
+{"i": 799, "kind": "anim", "e0": 789.65, "nom": 0.45}
+{"i": 800, "kind": "anim", "e0": 790.1, "nom": 2.8}
+{"anchor": "Mas carga nenhuma atravessa", "i": 802}
+{"i": 801, "kind": "hold", "e0": 792.9, "nom": 0.0667}
+{"i": 802, "kind": "anim", "e0": 792.9667, "nom": 0.3}
+{"i": 803, "kind": "anim", "e0": 793.2667, "nom": 0.45}
+{"i": 804, "kind": "anim", "e0": 793.7167, "nom": 0.8}
+{"i": 805, "kind": "anim", "e0": 794.5167, "nom": 3.0}
+{"anchor": "Agora desenha um mesmo contorno", "i": 807}
+{"i": 806, "kind": "hold", "e0": 797.5167, "nom": 0.0667}
+{"i": 807, "kind": "anim", "e0": 797.5833, "nom": 0.3}
+{"i": 808, "kind": "anim", "e0": 797.8833, "nom": 0.45}
+{"i": 809, "kind": "anim", "e0": 798.3333, "nom": 2.0}
+{"anchor": "Pela lei de Ampère original", "i": 811}
+{"i": 810, "kind": "hold", "e0": 800.3333, "nom": 0.0667}
+{"i": 811, "kind": "anim", "e0": 800.4, "nom": 1.6}
+{"i": 812, "kind": "anim", "e0": 802.0, "nom": 3.0}
+{"anchor": "Se escolhemos uma superfície", "i": 814}
+{"i": 813, "kind": "hold", "e0": 805.0, "nom": 0.0667}
+{"i": 814, "kind": "anim", "e0": 805.0667, "nom": 0.3}
+{"i": 815, "kind": "anim", "e0": 805.3667, "nom": 0.45}
+{"i": 816, "kind": "anim", "e0": 805.8167, "nom": 2.0}
+{"i": 817, "kind": "anim", "e0": 807.8167, "nom": 1.4}
+{"anchor": "Mas eu posso escolher outra", "i": 819}
+{"i": 818, "kind": "hold", "e0": 809.2167, "nom": 0.0667}
+{"i": 819, "kind": "anim", "e0": 809.2833, "nom": 0.3}
+{"i": 820, "kind": "anim", "e0": 809.5833, "nom": 0.45}
+{"i": 821, "kind": "anim", "e0": 810.0333, "nom": 2.0}
+{"anchor": "Ali não existe corrente", "i": 823}
+{"i": 822, "kind": "hold", "e0": 812.0333, "nom": 0.0667}
+{"i": 823, "kind": "anim", "e0": 812.1, "nom": 1.4}
+{"i": 824, "kind": "anim", "e0": 813.5, "nom": 3.0}
+{"anchor": "Mesmo contorno", "i": 826}
+{"i": 825, "kind": "hold", "e0": 816.5, "nom": 0.0667}
+{"i": 826, "kind": "anim", "e0": 816.5667, "nom": 0.3}
+{"i": 827, "kind": "anim", "e0": 816.8667, "nom": 0.45}
+{"i": 828, "kind": "anim", "e0": 817.3167, "nom": 3.0}
+{"anchor": "Então fica a pergunta", "i": 830}
+{"i": 829, "kind": "hold", "e0": 820.3167, "nom": 0.0667}
+{"i": 830, "kind": "anim", "e0": 820.3833, "nom": 0.35}
+{"i": 831, "kind": "anim", "e0": 820.7333, "nom": 0.6}
+{"i": 832, "kind": "anim", "e0": 821.3333, "nom": 0.6}
+{"anchor": "como o campo magnético sabe", "i": 834}
+{"i": 833, "kind": "hold", "e0": 821.9333, "nom": 0.0667}
+{"i": 834, "kind": "anim", "e0": 822.0, "nom": 1.2}
+{"i": 835, "kind": "anim", "e0": 823.2, "nom": 4.5}
+{"anchor": "Se essas conexões ajudaram", "i": 837}
+{"i": 836, "kind": "hold", "e0": 827.7, "nom": 0.0667}
+{"i": 837, "kind": "anim", "e0": 827.7667, "nom": 1.8}
+{"i": 838, "kind": "anim", "e0": 829.5667, "nom": 0.9}
+{"i": 839, "kind": "anim", "e0": 830.4667, "nom": 1.8}
+{"anchor": "se inscreve no Parallax Lab", "i": 841}
+{"i": 840, "kind": "hold", "e0": 832.2667, "nom": 0.0667}
+{"i": 841, "kind": "anim", "e0": 832.3333, "nom": 1.0}
+{"i": 842, "kind": "anim", "e0": 833.3333, "nom": 1.0}
+{"i": 843, "kind": "hold", "e0": 834.3333, "nom": 2.0}
+{"i": 844, "kind": "anim", "e0": 836.3333, "nom": 0.6}
+{"anchor": "No próximo, a gente vai descobrir", "i": 846}
+{"i": 845, "kind": "hold", "e0": 836.9333, "nom": 0.0667}
+{"i": 846, "kind": "anim", "e0": 837.0, "nom": 0.8}
+{"anchor": "e por que essa correção", "i": 848}
+{"i": 847, "kind": "hold", "e0": 837.8, "nom": 0.0667}
+{"i": 848, "kind": "anim", "e0": 837.8667, "nom": 0.8}
+{"anchor": "Valeu, pessoal", "i": 850}
+{"i": 849, "kind": "hold", "e0": 838.6667, "nom": 0.0667}
+{"i": 850, "kind": "anim", "e0": 838.7333, "nom": 2.6}
+{"i": 851, "kind": "hold", "e0": 841.3333, "nom": 1.0}

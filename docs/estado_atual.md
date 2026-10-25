@@ -1,6 +1,6 @@
 # Estado atual — Parallax Lab
 
-**Atualizado em:** 2026-10-24 (reconciliação de `vid_0021`–`vid_0024` e dos longos `yt_0003`–`yt_0013` pelo conteúdo de `entregas/` e das fichas); antes, 2026-10-14 (separação Coriolis/queda); antes, 2026-10-07 (arsenal de sólidos 3D em Blender, em sandbox); antes, 2026-10-06 (reconciliação dos vídeos 12–15 e do primeiro vídeo longo; segundo PC); antes, 2026-10-03 (suporte horizontal integrado; reconciliação dos vídeos 11–13) e 2026-10-01 (adoção do MF-Tools; reconciliação do `vid_0010`)
+**Atualizado em:** 2026-10-25 (entrega do `yt_0012`; `yt_0013` já entregue); antes, 2026-10-24 (reconciliação de `vid_0021`–`vid_0024` e dos longos `yt_0003`–`yt_0013` pelo conteúdo de `entregas/` e das fichas); antes, 2026-10-14 (separação Coriolis/queda); antes, 2026-10-07 (arsenal de sólidos 3D em Blender, em sandbox); antes, 2026-10-06 (reconciliação dos vídeos 12–15 e do primeiro vídeo longo; segundo PC); antes, 2026-10-03 (suporte horizontal integrado; reconciliação dos vídeos 11–13) e 2026-10-01 (adoção do MF-Tools; reconciliação do `vid_0010`)
 
 ## Resumo rápido — leia primeiro (atualizado em 2026-10-24, PC pessoal `Pichau`)
 
@@ -32,13 +32,14 @@ Entregues em `entregas/Vídeos Longos/` (pasta `Eletromagnetismo - <módulo> - <
 | `yt_0009` | Eletrodinâmica | Lei de Ohm e força eletromotriz ("Quem empurra as cargas?") | 14,9 min |
 | `yt_0010` | Eletrodinâmica | FEM de movimento e regra do fluxo magnético | 16,1 min |
 | `yt_0011` | Eletrodinâmica | Lei de Faraday e campo elétrico induzido (Griffiths 7.2.1–7.2.2; rótulo na tela "Indução") | 13,0 min |
+| `yt_0012` | Eletrodinâmica | Indutância e energia magnética ("Por que a corrente resiste a mudar?", mapa 6.11) | 20,7 min |
+| `yt_0013` | Mecânica (Colisões) | Colisões em 1D (pasta `Mecânica - Colisões - Colisões em 1D`) | 15,2 min |
 
+- **`yt_0012` (entregue em 25/10):** voz ElevenLabs v4 a partir da narração v2 (texto revisado pelo GPT); sincronia por 215 âncoras `an(frase)` com alinhamento forçado (desvio medido no master entre −0,05 e +0,01 s); render 1080p30 CRF 14 em 4 grupos. Pipeline e comandos na `ficha.md` da unidade. Sem capa.
 - **Não estão neste PC:** `yt_0004` e `yt_0007` (não há pasta nem entrega aqui; situação não verificada). O `yt_0011` foi feito no PC de trabalho e trazido em 24/10 (unidade pela branch `video/long-0011`; master e WAV copiados à parte). O `yt_0008` foi entregue, mas a unidade dele não está em `videos_longos/` deste PC.
-- **Em produção, fase de preview silencioso (sem voz, SRT nem master):**
-  - `yt_0012`: Indutância e energia magnética ("Por que a corrente resiste a mudar?"), mapa 6.11. V2 do preview C01–C20, 960×540/15 fps.
-  - `yt_0013`: Colisões em 1D. Primeiro longo de Mecânica, mapa §4.10. V2, C01–C12 em Manim 2D/2.5D desde 24/10; a v1 com Blender foi preservada em `cena_v1_backup.py`.
+- **Em produção:** `yt_0014` (Colisões em 2D), preview silencioso; a unidade ainda não está versionada.
 - **Alterações não commitadas** (em 24/10): ajustes em `yt_0005` (`cena.py`, receita de narração) e `yt_0006` (`base.py`, `kit.py`, `sec1`–`sec7.py`), além de vários logs/JSON de âncoras do `yt_0005`. Conferir com `git status` antes de mexer nessas unidades.
-- **Pipeline de voz consolidado:** ElevenLabs v4 com audio tags (`docs/roteiro_voz_elevenlabs_v4.md`, skill `gerar-narracao`); sincronização por âncoras de evento visual, sem ASR; master 1080p30 renderizado sequencialmente.
+- **Pipeline de voz consolidado:** ElevenLabs v4 com audio tags (`docs/roteiro_voz_elevenlabs_v4.md`, skill `gerar-narracao`); sincronização por âncoras de evento visual com alinhamento forçado do ElevenLabs (palavra a palavra; `yt_0013`, `yt_0012`); master 1080p30 renderizado sequencialmente.
 
 ### Geral
 
