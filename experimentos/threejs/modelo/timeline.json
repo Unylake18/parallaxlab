@@ -1,0 +1,36 @@
+{
+  "_leia_me": "Fonte única de tempos. Lido pelo cena3d.js (via render3d.js) e pelo cena.py (Manim). Depois da voz, só este arquivo muda e os dois são re-renderizados. Tempos em segundos; posições em unidades do Manim (quadro 9 × 16, y de −8 a 8).",
+  "duracao_s": 8.0,
+  "geometria": {
+    "raio_objeto": 1.6,
+    "fator_3d_manim": 1.875,
+    "centro_topo_manim": [0.0, 3.3],
+    "centro_orbita_manim_y": 3.3
+  },
+  "beats": [
+    {"id": "B01", "nome": "orbita", "inicio_s": 0.0, "fim_s": 3.0},
+    {"id": "B02", "nome": "vista_de_cima", "inicio_s": 3.0, "fim_s": 8.0}
+  ],
+  "eventos": {
+    "surge": 0.0,
+    "corrente_liga": 0.6,
+    "campo_acende": 1.2,
+    "topo_pousa": 4.5,
+    "manim_entra": 4.8
+  },
+  "rastros": {"quantidade": 2, "periodo_s": 3.0, "cauda": 0.12},
+  "camera": [
+    {"t": 0.0, "modo": "orbita"},
+    {"t": 3.0, "modo": "orbita"},
+    {"t": 4.5, "modo": "topo"},
+    {"t": 8.0, "modo": "topo"}
+  ],
+  "realce_3d": [
+    {"t": 0.0, "v": 0},
+    {"t": 4.8, "v": 0},
+    {"t": 5.4, "v": 1},
+    {"t": 8.0, "v": 1}
+  ],
+  "legenda": {"_nota": "faixa reservada para a legenda queimada (540×960): nada da cena entra aqui", "y_px": [760, 840], "y_manim": [-4.67, -6.0]},
+  "qa_alinhamento": {"quadro": 100, "raio_3d": 1.6, "n_pontos": 24}
+}

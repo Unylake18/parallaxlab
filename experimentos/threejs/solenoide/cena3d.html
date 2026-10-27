@@ -1,0 +1,100 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Solenoide 3D (render por frame)</title>
+<style>html,body{margin:0;background:#050816;overflow:hidden}canvas{display:block}</style>
+<body>
+<script src="../vendor/three-r128/three.min.js"></script>
+<script src="../vendor/three-r128/RoomEnvironment.js"></script>
+<script>
+// Cena 3D do solenoide para o curto vertical (1080×1920, 30 fps).
+// Tudo é função do frame: window.setFrame(f) desenha o quadro f (determinístico, sem relógio).
+// Cores (padrao_video_longo.md): fio = aço #7A8696, corrente = verde #3FE08B, campo magnético = magenta #EA63FF.
+// Eixo do solenoide = y (vertical na tela). Último quadro = vista frontal quase ortográfica: 16 unidades de altura
+// no plano z = 0, o mesmo sistema de coordenadas do Manim (frame 9 × 16), para a cena 2D continuar por cima.
+(function(){
+  var W=1080,H=1920,FPS=30,TOTAL=270;
+  var R=1.5,LEN=6,TURNS=12,SEG=64,N=TURNS*SEG;
+
+  // ---------- hélice e Biot–Savart (unidades de μ0 I / 4π) ----------
+  // p(φ) = (R cos φ, -LEN/2 + kφ, -R sin φ): em x = +R a corrente entra na tela (⊗), em x = -R sai (⊙) → B no interior aponta +y.
+  var k=LEN/(TURNS*2*Math.PI), wire=[];
+  for(var i=0;i<=N;i++){var ph=i/N*TURNS*2*Math.PI;wire.push(new THREE.Vector3(R*Math.cos(ph),-LEN/2+k*ph,-R*Math.sin(ph)));}
+  var mid=[],dl=[];
+  for(i=0;i<N;i++){mid.push(wire[i].clone().add(wire[i+1]).multiplyScalar(.5));dl.push(wire[i+1].clone().sub(wire[i]));}
+  function B(p,o){var bx=0,by=0,bz=0;
+    for(var j=0;j<N;j++){var m=mid[j],d=dl[j],rx=p.x-m.x,ry=p.y-m.y,rz=p.z-m.z,r2=rx*rx+ry*ry+rz*rz+1e-4,iv=1/(r2*Math.sqrt(r2));
+      bx+=(d.y*rz-d.z*ry)*iv;by+=(d.z*rx-d.x*rz)*iv;bz+=(d.x*ry-d.y*rx)*iv;}
+    return o.set(bx,by,bz);}
+  window.B_centro=B(new THREE.Vector3(),new THREE.Vector3()).toArray(); // conferência do sentido: y > 0
+
+  // traça a linha a partir da semente no sentido de B (sg = +1) ou contra (sg = -1), até voltar ao plano y = 0 por fora ou sair da cena
+  function trace(seed,sg){var pts=[seed.clone()],p=seed.clone(),ds=.06*sg,a=new THREE.Vector3(),b=new THREE.Vector3(),c=new THREE.Vector3(),e=new THREE.Vector3(),q=new THREE.Vector3();
+    function dir(x,o){return B(x,o).normalize();}
+    for(var s=0;s<1500;s++){dir(p,a);dir(q.copy(p).addScaledVector(a,ds/2),b);dir(q.copy(p).addScaledVector(b,ds/2),c);dir(q.copy(p).addScaledVector(c,ds),e);
+      var prev=p.clone();p.addScaledVector(a,ds/6).addScaledVector(b,ds/3).addScaledVector(c,ds/3).addScaledVector(e,ds/6);pts.push(p.clone());
+      if(s>30&&prev.y*p.y<=0&&Math.hypot(p.x,p.z)>R*1.05)break;
+      if(Math.abs(p.y)>9.5||Math.hypot(p.x,p.z)>6)break;}
+    return pts;}
+
+  // ---------- cena ----------
+  var renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+  renderer.setPixelRatio(1);renderer.setSize(W,H);
+  renderer.outputEncoding=THREE.sRGBEncoding;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1;
+  document.body.appendChild(renderer.domElement);
+  var scene=new THREE.Scene();scene.background=new THREE.Color(0x050816);
+  scene.environment=new THREE.PMREMGenerator(renderer).fromScene(new THREE.RoomEnvironment(),.04).texture;
+  var cam=new THREE.PerspectiveCamera(40,W/H,.1,200);
+  var key=new THREE.DirectionalLight(0xffffff,1.3);key.position.set(-3,6,8);scene.add(key);
+  var rimM=new THREE.DirectionalLight(0xEA63FF,.9);rimM.position.set(5,2,-6);scene.add(rimM);
+  var rimC=new THREE.DirectionalLight(0x35D9FF,.5);rimC.position.set(-6,-3,-3);scene.add(rimC);
+
+  var steel=new THREE.MeshStandardMaterial({color:0x7A8696,roughness:.3,metalness:.9,envMapIntensity:.8,transparent:true});
+  var full=[new THREE.Vector3(R,-LEN/2-1,0)].concat(wire,[wire[N].clone().add(new THREE.Vector3(0,1,0))]);
+  var wireMesh=new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(full),N+40,.052,10,false),steel);scene.add(wireMesh);
+
+  // estrelas determinísticas
+  (function(){var g=new THREE.BufferGeometry(),a=[],s=7;function rnd(){s=(s*16807)%2147483647;return s/2147483647;}
+    for(var i=0;i<500;i++){var u=rnd()*2*Math.PI,v=Math.acos(2*rnd()-1),r=60+rnd()*20;a.push(r*Math.sin(v)*Math.cos(u),r*Math.sin(v)*Math.sin(u),r*Math.cos(v));}
+    g.setAttribute('position',new THREE.Float32BufferAttribute(a,3));scene.add(new THREE.Points(g,new THREE.PointsMaterial({color:0x8FA3C4,size:.18,transparent:true,opacity:.6})));})();
+
+  // linhas de campo: tubo fino + halo aditivo; as do plano z = 0 seguem até o fim, as de fora do plano esmaecem na vista frontal
+  var magenta=new THREE.Color(0xEA63FF),lines=[];
+  var seeds=[];[0,.45,.9,1.2].forEach(function(r){[0,Math.PI].forEach(function(a){if(r===0&&a)return;seeds.push({p:new THREE.Vector3(r*Math.cos(a),0,r*Math.sin(a)),plano:true});});});
+  [.6,1.1].forEach(function(r){[Math.PI/2,-Math.PI/2,Math.PI/4,3*Math.PI/4,-Math.PI/4,-3*Math.PI/4].forEach(function(a){seeds.push({p:new THREE.Vector3(r*Math.cos(a),0,r*Math.sin(a)),plano:false});});});
+  seeds.forEach(function(sd){[1,-1].forEach(function(sg){
+    var pts=trace(sd.p,sg),curve=new THREE.CatmullRomCurve3(pts),segs=pts.length;
+    var core=new THREE.Mesh(new THREE.TubeGeometry(curve,segs,.016,6,false),new THREE.MeshBasicMaterial({color:magenta,transparent:true,toneMapped:false}));
+    var glow=new THREE.Mesh(new THREE.TubeGeometry(curve,segs,.05,6,false),new THREE.MeshBasicMaterial({color:magenta,transparent:true,opacity:.12,blending:THREE.AdditiveBlending,depthWrite:false,toneMapped:false}));
+    scene.add(core);scene.add(glow);lines.push({core:core,glow:glow,plano:sd.plano,n:core.geometry.index.count});});});
+
+  // cargas de prova positivas (corrente convencional) em verde, deslizando no sentido de φ crescente
+  var NC=101,qm=new THREE.MeshBasicMaterial({color:0x3FE08B,transparent:true,toneMapped:false});
+  var qi=new THREE.InstancedMesh(new THREE.SphereGeometry(.075,14,10),qm,NC);qi.frustumCulled=false;scene.add(qi);
+  var qh=new THREE.InstancedMesh(new THREE.SphereGeometry(.16,14,10),new THREE.MeshBasicMaterial({color:0x3FE08B,transparent:true,opacity:.18,blending:THREE.AdditiveBlending,depthWrite:false,toneMapped:false}),NC);
+  qh.frustumCulled=false;scene.add(qh);var mtx=new THREE.Matrix4();
+
+  // r128 trata hex como linear: converte uma vez para a saída sRGB bater com a paleta
+  scene.traverse(function(o){if(o.material&&o.material.color)o.material.color.convertSRGBToLinear();});
+
+  function cl(x){return x<0?0:x>1?1:x;}
+  function ease(x){x=cl(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;}
+  function seg(f,a,b){return ease((f-a)/(b-a));}
+
+  window.setFrame=function(f){
+    // 0–45: o fio aparece; 30–150: o campo nasce; 0–270: as cargas andam; 200–262: câmera vai à vista frontal
+    var sW=seg(f,0,45),sF=seg(f,30,150),sT=seg(f,200,262);
+    steel.opacity=sW;
+    for(var i=0;i<NC;i++){var u=((i/NC+f/TOTAL*.5)%1),ph=u*TURNS*2*Math.PI;mtx.makeTranslation(R*Math.cos(ph),-LEN/2+k*ph,-R*Math.sin(ph));qi.setMatrixAt(i,mtx);qh.setMatrixAt(i,mtx);}
+    qi.instanceMatrix.needsUpdate=qh.instanceMatrix.needsUpdate=true;qm.opacity=seg(f,20,60);qh.material.opacity=.18*qm.opacity;
+    lines.forEach(function(l){var c=Math.floor(l.n/3)*3,dr=Math.floor(c*sF/3)*3;l.core.geometry.setDrawRange(0,dr);l.glow.geometry.setDrawRange(0,dr);
+      var fade=l.plano?1:1-.85*sT;l.core.material.opacity=fade;l.glow.material.opacity=.12*fade;});
+    // câmera: órbita lenta → vista frontal (dolly-zoom mantendo 16 u de altura visível no plano z = 0)
+    var az=-.9+f*.0042,el=.42;var azF=0,elF=0;
+    var azC=az+(azF-az)*sT,elC=el+(elF-el)*sT;
+    var fov=40+(14-40)*sT,hVis=12.5+(16-12.5)*sT,D=(hVis/2)/Math.tan(fov*Math.PI/360);
+    cam.fov=fov;cam.updateProjectionMatrix();
+    cam.position.set(D*Math.cos(elC)*Math.sin(azC),D*Math.sin(elC),D*Math.cos(elC)*Math.cos(azC));cam.lookAt(0,0,0);
+    renderer.render(scene,cam);};
+  window.TOTAL=TOTAL;window.FPS=FPS;window.ready=true;
+})();
+</script>

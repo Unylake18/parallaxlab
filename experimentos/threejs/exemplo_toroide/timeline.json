@@ -1,0 +1,82 @@
+{
+  "_leia_me": "Fonte única de tempos do vid_0029 (v2). Lido por cena.py (Manim) e por render3d.js/cena3d (Three.js). Depois da voz, só este arquivo muda e os dois são re-renderizados. Tempos em segundos absolutos; raios do amperiano em unidades do Manim (vista de cima). Easing entre chaves: 'suave' (smoothstep, padrão) ou 'linear', definido na chave de chegada. Contagens: a espira k (0..23) acende em t_k = inicio + dur * (k/23)^expoente, no 3D e no Manim.",
+  "duracao_s": 185.0,
+  "geometria": {
+    "raio_maior": 1.6,
+    "raio_menor": 0.5,
+    "raio_fio": 0.04,
+    "n_espiras": 24,
+    "phi0": 0.0,
+    "fator_3d_manim": 1.7142857142857142,
+    "centro_topo_manim": [0.0, 2.2],
+    "centro_orbita_manim_y": 2.5
+  },
+  "beats": [
+    {"id": "B01", "nome": "gancho", "inicio_s": 0.0, "fim_s": 12.0},
+    {"id": "B02", "nome": "objeto", "inicio_s": 12.0, "fim_s": 26.0},
+    {"id": "B03", "nome": "simetria", "inicio_s": 26.0, "fim_s": 50.0},
+    {"id": "B04", "nome": "ampere", "inicio_s": 50.0, "fim_s": 72.0},
+    {"id": "B05", "nome": "buraco", "inicio_s": 72.0, "fim_s": 85.0},
+    {"id": "B06", "nome": "dentro", "inicio_s": 85.0, "fim_s": 113.0},
+    {"id": "B07", "nome": "fora", "inicio_s": 113.0, "fim_s": 135.0},
+    {"id": "B08", "nome": "grafico", "inicio_s": 135.0, "fim_s": 161.0},
+    {"id": "B09", "nome": "conferencia", "inicio_s": 161.0, "fim_s": 175.0},
+    {"id": "B10", "nome": "fechamento", "inicio_s": 175.0, "fim_s": 185.0}
+  ],
+  "eventos": {
+    "toroide_surge": 0.0,
+    "corrente_liga": 3.0,
+    "campo_acende": 4.6,
+    "camera_topo": 26.5,
+    "camera_topo_pousa": 29.5,
+    "desenrola_circulo": 59.5,
+    "varredura_inicio": 139.0,
+    "varredura_fim": 147.0,
+    "camera_solenoide": 162.0,
+    "camera_volta": 170.0,
+    "camera_livre": 173.0,
+    "endcard": 182.0
+  },
+  "rastros": {"quantidade": 3, "periodo_s": 8.0, "liga_dur_s": 2.0, "cauda_espiras": 1.2, "entrada_s": 0.8},
+  "giro_setas": {"inicio_s": 34.5, "fim_s": 49.0, "omega_rad_s": 0.12},
+  "desenrola_circulo": {"inicio_s": 59.5, "dur_s": 2.6, "escala": 0.35},
+  "contagem_dentro": {"inicio_s": 88.5, "dur_s": 2.5, "expoente": 0.6, "apaga_s": 92.5},
+  "contagem_fora": {"todos_dentro_s": 117.5, "inicio_s": 119.0, "dur_s": 2.0, "expoente": 0.6, "apaga_s": 122.6},
+  "realce_3d": [
+    {"t": 0.0, "v": 0.0},
+    {"t": 49.5, "v": 0.0},
+    {"t": 50.1, "v": 1.0},
+    {"t": 160.9, "v": 1.0},
+    {"t": 161.5, "v": 0.0}
+  ],
+  "camera": [
+    {"t": 0.0, "modo": "orbita"},
+    {"t": 26.5, "modo": "orbita"},
+    {"t": 29.5, "modo": "topo"},
+    {"t": 161.5, "modo": "topo"},
+    {"t": 164.5, "modo": "solenoide"},
+    {"t": 170.0, "modo": "solenoide"},
+    {"t": 173.0, "modo": "orbita"},
+    {"t": 182.0, "modo": "orbita"},
+    {"t": 182.6, "modo": "preto"},
+    {"t": 185.0, "modo": "preto"}
+  ],
+  "amperiano": [
+    {"t": 0.0, "r": 2.743, "alpha": 0.0},
+    {"t": 32.5, "r": 2.743, "alpha": 0.0},
+    {"t": 33.3, "r": 2.743, "alpha": 1.0},
+    {"t": 72.5, "r": 2.743, "alpha": 1.0},
+    {"t": 74.5, "r": 1.2, "alpha": 1.0},
+    {"t": 85.5, "r": 1.2, "alpha": 1.0},
+    {"t": 87.0, "r": 2.743, "alpha": 1.0},
+    {"t": 114.5, "r": 2.743, "alpha": 1.0},
+    {"t": 116.5, "r": 4.1, "alpha": 1.0},
+    {"t": 135.6, "r": 4.1, "alpha": 1.0},
+    {"t": 136.2, "r": 4.1, "alpha": 0.0},
+    {"t": 138.8, "r": 0.0, "alpha": 0.0},
+    {"t": 139.0, "r": 0.0, "alpha": 1.0, "ease": "linear"},
+    {"t": 147.0, "r": 4.3, "alpha": 1.0, "ease": "linear"},
+    {"t": 160.2, "r": 4.3, "alpha": 1.0},
+    {"t": 161.0, "r": 4.3, "alpha": 0.0}
+  ]
+}

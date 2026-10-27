@@ -1,0 +1,43 @@
+vid_0029 — Por que o campo não escapa do toroide? (POR TRÁS DA FÓRMULA · EP. 09) — PREVIEW v2
+Teste do pipeline Three.js (3D dinâmico) + Manim (passo a passo 2D e álgebra), rodada de correções do handoff v2.
+Fase: PREVIEW VISUAL SILENCIOSO, 540×960 / 15 fps, 185,0 s (2775 quadros). Sem voz, SRT, master ou entrega.
+
+ASSISTIR
+- vid_0029_campo_toroide/renders/preview_v2_540x960.mp4  → composto (3D de fundo + Manim por cima)
+- vid_0029_campo_toroide/renders/parte3d_v2_540x960.mp4  → só o 3D (Three.js)
+- vid_0029_campo_toroide/qa/prancha_v2_a.png, _b.png     → quadros-chave B01–B10 (antes das correções finais de layout)
+- vid_0029_campo_toroide/qa/prancha_v2_correcoes.png      → os mesmos pontos depois das correções (B04, B07, B08, B09)
+
+BEATS (s): B01 0–12 · B02 12–26 · B03 26–50 · B04 50–72 · B05 72–85 · B06 85–113 · B07 113–135 · B08 135–161 · B09 161–175 · B10 175–185
+
+O QUE MUDOU NO v2
+3D (cena3d/cena3d.js)
+- Corrente: sem tracinhos; 3 rastros de luz verdes (cauda 1,2 espira, cabeça 30% mais clara), volta completa em 8 s.
+- Ligar (B01): um rastro único percorre o fio em 2 s e deixa o fio aceso por um instante.
+- Contagens: B06 acende os 24 trechos de dentro um a um; B07 acende os 24 de dentro juntos e depois os 24 de fora um a um.
+- Campo: 3 raios × 3 alturas, pulsos magenta correndo no sentido de B, velocidade e brilho ∝ 1/r. Sem setas 3D.
+- Modo "contagem" (realce_3d, B04–B08): fio 55%, campo 35%, rastros 40%; flashes de contagem a 100%.
+- Aço menos lilás (contraluz magenta 0,08, reflexo de ambiente menor). B09: close-up com ~5–6 espiras na frente.
+Manim (cena.py)
+- B02: MODELO IDEAL + definições N e I (corpo 40). B03: seta R e segmento a na vista de cima + definições;
+  8 setas B iguais e 8 setas dℓ, girando rigidamente com o círculo; chips B ∥ dℓ e MESMO B NO CÍRCULO TODO.
+- B04: B·dℓ → B dℓ (setas piscam), B sai da integral em arco, o círculo rola e se desenrola em 2πr, e o rótulo voa
+  para o lugar de ∮dℓ. Resultado vira linha de referência.
+- B05: setas encolhem até sumir. B06: ⊙ e contador sobem juntos (pontinhos voando), 24 I → N I, 2πr atravessa a
+  igualdade, r indicado, setas voltam ∝ 1/r. B07: ⊗ em sincronia, risco nos dois N I e colapso no 0, setas encolhem.
+- B08: eixo r do gráfico na mesma escala e origem da vista de cima; bordas do anel descem tracejadas até o gráfico;
+  setas no círculo = mesma função do cursor; saltos tracejados; duas setas de comparação + chip ≈ 1,9×.
+- B09: colapso N/2πR → n junto com a definição "n: espiras por metro".
+- Toda passagem algébrica: TransformByGlyphMap com mapa explícito (índices em qa/glifos.py); nada de índices no vídeo.
+timeline.json: novos rastros, realce_3d, contagem_dentro, contagem_fora, desenrola_circulo, giro_setas.
+
+QA
+- Alinhamento 3D ↔ Manim (qa/alinhamento.js): 0 px em B06 (t = 89 s) e B08 (t = 144 s); eixo r do gráfico em x = r.
+- Contagem: t = 89,4 s → contador 5 e 5 ⊙ acesos (t_4 = 89,37 s), mesma fórmula no shader e no Manim.
+- Marcos de cada passo: media_preview/estados.json. Custo do 3D: custo3d.json.
+- Custo: 3D 0,136 s/quadro (6 min 16 s; v1 0,127); Manim 8 min 29 s; composição 5 min 55 s.
+
+PENDÊNCIAS
+- 2πr desenrolado em 0,35 da escala real (na escala da vista de cima teria 17,2 unid., quase o dobro da largura do quadro).
+- R e a ficam 1,5 s, como pedido; o rótulo a sai pequeno e meio coberto pelo fio.
+- Trocas do glyph map (2πr descendo, NI − NI colapsando) têm 1–2 quadros embolados no meio do movimento.
