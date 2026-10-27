@@ -215,3 +215,13 @@ Render, QA, documentação e ações de Git devem ser proporcionais à etapa e a
 - Render final do Manim (≥ 1080p) aplica CRF 14 automaticamente via `template/qualidade.py` (chamado por `template/config.py`); preview 540p mantém o padrão do Manim. Variável `CRF` sobrescreve.
 - `videos/montar_legendado.py` usa `--crf auto` = `max(14, CRF do master − 5)` (não recodifica um master em CRF 23 com CRF 14: só incha o arquivo). Anterior: CRF 18/19 fixo, preset `veryfast`.
 - Vale daqui pra frente; entregas antigas (por exemplo, masters em CRF 23) só mudam se forem re-renderizadas. Detalhes operacionais em `AGENTS.md` (seção "Qualidade de render e codificação").
+
+## 2026-10-27 — Mapa curricular v2
+
+- `docs/mapa_curricular.md` passa a ser a v2; a v1 fica em `docs/mapa_curricular_old.md`.
+- Escopo ampliado: Física I–IV, Eletromagnetismo como disciplina própria (Griffiths, 4ª ed.; ID `EM x.y` = seção do livro), Cálculo I–IV, Álgebra Linear, EDO e EDP, além de disciplinas avançadas possíveis.
+- A ordem do mapa é a da grade curricular, subindo de nível assunto por assunto. Produção e publicação continuam em qualquer ordem.
+- Organização: disciplina → bloco → módulo → vídeo autossuficiente. IDs da v1 não mudam; módulo novo recebe o próximo número livre.
+- Referências: Física I–IV com Moysés Nussenzveig e Sears (Young & Freedman), não Halliday; Feynman (*Lições de Física*) como consulta teórica e discursiva; EM com Griffiths.
+- Um endereço principal por vídeo (ID, tag do canto, pasta de entrega); o vídeo pode entrar em mais de uma playlist (uma playlist por bloco).
+- Ficha: `disciplina:`, `bloco:`, `modulo:` e `referencia:` substituem `macroassunto:` (`docs/formatos.md`). Fichas antigas não são reescritas.

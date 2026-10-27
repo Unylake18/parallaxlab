@@ -23,7 +23,7 @@ CAPITULOS = [
     ("4.13", "Gravitação", ["orbita_kepleriana", "poco_gravitacional"], ""),
     ("5.1", "Movimento harmônico simples", ["massa_mola", "pendulo_simples"], ""),
     ("5.3–5.4", "Ondas mecânicas, superposição e estacionárias", ["onda_corda", "ondas_duas_fontes"], ""),
-    ("5.6", "Fluidos em repouso", ["tanque_hidrostatico", "prensa_hidraulica"], "pressão, empuxo e Pascal"),
+    ("5.6", "Fluidos em repouso", ["tanque_hidrostatico", "prensa_hidraulica", "liquido_rotacao"], "pressão, empuxo, Pascal e líquido girando (paraboloide; ponte com 4.14)"),
     ("5.7", "Fluidos em movimento", ["tubo_escoamento", "tanque_torricelli"], "continuidade e Torricelli"),
     ("5.8–5.10", "Teoria cinética e gases ideais", ["caixa_gas_cinetica"], "êmbolo oscilante"),
     ("6.1", "Lei de Coulomb", ["cargas_pontuais", "dipolo_eletrico"], ""),
@@ -78,6 +78,30 @@ LACUNAS = [
 ]
 
 
+# capítulo do mapa -> módulo equivalente no Eletromagnetismo (Griffiths), pelo Anexo B do mapa
+EM = {
+    "6.1": "EM 2.1",
+    "6.2": "EM 2.1",
+    "6.3": "EM 2.2",
+    "6.4": "EM 2.3",
+    "6.5": "EM 2.5, EM 4",
+    "6.7": "EM 5.1, EM 6.1",
+    "6.8": "EM 5.2",
+    "6.9": "EM 5.3",
+    "6.10": "EM 7.1.3, EM 7.2",
+    "6.12 e 7.1": "EM 7.3, EM 9.2",
+    "7.2": "EM 9.3.3",
+    "7.5": "EM 9.1.4, EM 9.3.3",
+    "7.6": "EM 12.1–12.2",
+    "11.1 e 11.8": "EM 1.2",
+    "11.2–11.3": "EM 1.3.2",
+    "11.4": "EM 1.6",
+    "11.6–11.7": "EM 1.3.1, EM 1.4",
+    "11.9": "EM 1.3.5",
+    "11.10": "EM 1.3.4",
+}
+
+
 def ler_fichas():
     return {f.stem: json.loads(f.read_text(encoding="utf-8")) for f in sorted((AQUI / "solidos").glob("*.json"))}
 
@@ -87,6 +111,9 @@ def main():
     erros = []
     linhas = []
     usados = set()
+    for cap in EM:
+        if cap not in {c[0] for c in CAPITULOS}:
+            erros.append(f"EM: capítulo {cap} não está em CAPITULOS")
     for cap, titulo, ids, nota in CAPITULOS:
         for i in ids:
             if i not in fichas:
@@ -94,7 +121,7 @@ def main():
             usados.add(i)
         sts = {i: fichas[i]["status"] for i in ids if i in fichas}
         cels = ", ".join(f"`{i}` ({sts.get(i, '?')}{', anima' if 'animacao' in fichas.get(i, {}) else ''})" for i in ids)
-        linhas.append(f"| {cap} | {titulo} | {cels} | {nota} |")
+        linhas.append(f"| {cap} | {EM.get(cap, '')} | {titulo} | {cels} | {nota} |")
     if erros:
         print("ERROS:\n  " + "\n  ".join(erros))
         sys.exit(1)
@@ -111,12 +138,13 @@ def main():
     texto = f"""# Cobertura do arsenal 3D por capítulo do mapa curricular
 
 > Arquivo **gerado** por `gerar_cobertura.py`. O status vem das fichas (`solidos/*.json`); as lacunas são mantidas no script.
-> Total: **{len(fichas)} sólidos** ({resumo}); **{n_anim}** têm animação (loop ou ciclo único). Fonte dos capítulos: `docs/mapa_curricular.md`.
+> Total: **{len(fichas)} sólidos** ({resumo}); **{n_anim}** têm animação (loop ou ciclo único). Fonte dos capítulos: `docs/mapa_curricular.md`;
+> a coluna EM dá o módulo equivalente no Eletromagnetismo (Griffiths), pelo Anexo B do mapa.
 
 ## 1. O que temos, por assunto do curso
 
-| Capítulo | Assunto | Sólidos (status, animação) | Observação |
-|---|---|---|---|
+| Capítulo | EM | Assunto | Sólidos (status, animação) | Observação |
+|---|---|---|---|---|
 {chr(10).join(linhas)}
 
 {f"Sólidos que não aparecem em nenhum capítulo acima: {', '.join(nao_listados)}." if nao_listados else "Todos os sólidos aparecem em pelo menos um capítulo."}
