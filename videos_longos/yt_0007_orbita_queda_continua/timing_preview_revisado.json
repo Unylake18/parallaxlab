@@ -1,0 +1,357 @@
+{
+  "blocos": [
+    {
+      "bloco": "N01",
+      "inicio": 0.0,
+      "fim": 41.6
+    },
+    {
+      "bloco": "N02",
+      "inicio": 41.6,
+      "fim": 57.2
+    },
+    {
+      "bloco": "N03",
+      "inicio": 57.2,
+      "fim": 71.4
+    },
+    {
+      "bloco": "N04",
+      "inicio": 71.4,
+      "fim": 95.6
+    },
+    {
+      "bloco": "N05",
+      "inicio": 95.6,
+      "fim": 112.8
+    },
+    {
+      "bloco": "N06",
+      "inicio": 112.8,
+      "fim": 130.06666666666666
+    },
+    {
+      "bloco": "N07",
+      "inicio": 130.06666666666666,
+      "fim": 152.8
+    },
+    {
+      "bloco": "N08",
+      "inicio": 152.8,
+      "fim": 171.4
+    },
+    {
+      "bloco": "N09",
+      "inicio": 171.4,
+      "fim": 194.0
+    },
+    {
+      "bloco": "N10",
+      "inicio": 194.0,
+      "fim": 211.6
+    },
+    {
+      "bloco": "N11",
+      "inicio": 211.6,
+      "fim": 233.8
+    },
+    {
+      "bloco": "N12",
+      "inicio": 233.8,
+      "fim": 254.0
+    },
+    {
+      "bloco": "N13",
+      "inicio": 254.0,
+      "fim": 286.46666666666664
+    },
+    {
+      "bloco": "N14",
+      "inicio": 286.46666666666664,
+      "fim": 304.06666666666666
+    },
+    {
+      "bloco": "N15",
+      "inicio": 304.06666666666666,
+      "fim": 317.26666666666665
+    },
+    {
+      "bloco": "N16",
+      "inicio": 317.26666666666665,
+      "fim": 338.8666666666667
+    },
+    {
+      "bloco": "N17",
+      "inicio": 338.8666666666667,
+      "fim": 363.06666666666666
+    },
+    {
+      "bloco": "N18",
+      "inicio": 363.06666666666666,
+      "fim": 386.6666666666667
+    }
+  ],
+  "marcos": [
+    {
+      "nome": "N01_lancamento_1",
+      "tempo": 10.266666666666652
+    },
+    {
+      "nome": "N01_lancamento_2",
+      "tempo": 18.333333333333293
+    },
+    {
+      "nome": "N01_lancamento_3",
+      "tempo": 27.866666666666596
+    },
+    {
+      "nome": "N01_lancamento_4",
+      "tempo": 37.400000000000155
+    },
+    {
+      "nome": "N02_gravidade_unica",
+      "tempo": 53.20000000000061
+    },
+    {
+      "nome": "N04_origem_comum_1",
+      "tempo": 75.99999999999972
+    },
+    {
+      "nome": "N04_origem_comum_2",
+      "tempo": 82.53333333333279
+    },
+    {
+      "nome": "N04_origem_comum_3",
+      "tempo": 89.06666666666587
+    },
+    {
+      "nome": "N06_payoff",
+      "tempo": 125.06666666666622
+    },
+    {
+      "nome": "N07_queda_curvatura_avisos",
+      "tempo": 147.79999999999933
+    },
+    {
+      "nome": "N09_queda_conjunta",
+      "tempo": 183.59999999999997
+    },
+    {
+      "nome": "N10_raio_velocidade",
+      "tempo": 208.59999999999914
+    },
+    {
+      "nome": "N11_kepler_circular",
+      "tempo": 229.79999999999924
+    },
+    {
+      "nome": "N12_transicao_conceitual",
+      "tempo": 236.5333333333332
+    },
+    {
+      "nome": "N12_elipse_foco_a",
+      "tempo": 248.99999999999935
+    },
+    {
+      "nome": "N13_impacto_ligado",
+      "tempo": 258.2
+    },
+    {
+      "nome": "N13_ligada",
+      "tempo": 264.2666666666665
+    },
+    {
+      "nome": "N13_circular",
+      "tempo": 270.33333333333303
+    },
+    {
+      "nome": "N13_eliptica",
+      "tempo": 276.3999999999995
+    },
+    {
+      "nome": "N13_aberta",
+      "tempo": 282.4666666666661
+    },
+    {
+      "nome": "N14_primeiro_impacto",
+      "tempo": 294.06666666666615
+    },
+    {
+      "nome": "N14_continuacao_tracejada",
+      "tempo": 299.066666666666
+    },
+    {
+      "nome": "N17_baricentro_dentro_terra",
+      "tempo": 344.0666666666667
+    },
+    {
+      "nome": "N18_fechamento",
+      "tempo": 380.66666666666606
+    }
+  ],
+  "fps": 15,
+  "segmentos": [
+    {
+      "bloco": "N01",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_revisao\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 0.0,
+      "fim": 41.600000000000215,
+      "quadros": 624
+    },
+    {
+      "bloco": "N02",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_preview\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 42.200000000000216,
+      "fim": 57.80000000000082,
+      "quadros": 234
+    },
+    {
+      "bloco": "N03",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_preview\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 57.80000000000082,
+      "fim": 58.40000000000082,
+      "quadros": 9
+    },
+    {
+      "bloco": "N03",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_revisao\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 42.200000000000216,
+      "fim": 55.80000000000072,
+      "quadros": 204
+    },
+    {
+      "bloco": "N04",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_preview\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 72.60000000000089,
+      "fim": 96.8,
+      "quadros": 363
+    },
+    {
+      "bloco": "N05",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_preview\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 96.8,
+      "fim": 113.99999999999925,
+      "quadros": 258
+    },
+    {
+      "bloco": "N06",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_preview\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 113.99999999999925,
+      "fim": 131.2666666666654,
+      "quadros": 259
+    },
+    {
+      "bloco": "N07",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_preview\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 131.2666666666654,
+      "fim": 153.99999999999807,
+      "quadros": 341
+    },
+    {
+      "bloco": "N08",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_preview\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 153.99999999999807,
+      "fim": 172.59999999999724,
+      "quadros": 279
+    },
+    {
+      "bloco": "N09",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_preview\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 172.59999999999724,
+      "fim": 173.19999999999723,
+      "quadros": 9
+    },
+    {
+      "bloco": "N09",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_ajuste09\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 0.0,
+      "fim": 21.99999999999997,
+      "quadros": 330
+    },
+    {
+      "bloco": "N10",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_preview\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 195.7999999999964,
+      "fim": 213.39999999999537,
+      "quadros": 264
+    },
+    {
+      "bloco": "N11",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_preview\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 213.39999999999537,
+      "fim": 235.59999999999462,
+      "quadros": 333
+    },
+    {
+      "bloco": "N12",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_preview\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 235.59999999999462,
+      "fim": 255.79999999999396,
+      "quadros": 303
+    },
+    {
+      "bloco": "N13",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_preview\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 255.79999999999396,
+      "fim": 256.39999999999395,
+      "quadros": 9
+    },
+    {
+      "bloco": "N13",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_revisao\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 79.00000000000064,
+      "fim": 110.86666666666663,
+      "quadros": 478
+    },
+    {
+      "bloco": "N14",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_preview\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 288.86666666665985,
+      "fim": 306.4666666666592,
+      "quadros": 264
+    },
+    {
+      "bloco": "N15",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_preview\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 306.4666666666592,
+      "fim": 307.0666666666592,
+      "quadros": 9
+    },
+    {
+      "bloco": "N15",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_revisao\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 111.46666666666663,
+      "fim": 124.06666666666611,
+      "quadros": 189
+    },
+    {
+      "bloco": "N16",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_preview\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 320.2666666666587,
+      "fim": 341.8666666666576,
+      "quadros": 324
+    },
+    {
+      "bloco": "N17",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_preview\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 341.8666666666576,
+      "fim": 342.4666666666576,
+      "quadros": 9
+    },
+    {
+      "bloco": "N17",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_ajuste17\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 0.0,
+      "fim": 23.59999999999996,
+      "quadros": 354
+    },
+    {
+      "bloco": "N18",
+      "fonte": "C:\\Users\\KaioOrtiz\\PycharmProjects\\manim-fisica\\videos_longos\\yt_0007_orbita_queda_continua\\media_revisao\\videos\\cena\\540p15\\OrbitaQuedaContinua007.mp4",
+      "inicio": 124.6666666666661,
+      "fim": 148.26666666666546,
+      "quadros": 354
+    }
+  ],
+  "duracao": 386.6666666666667
+}

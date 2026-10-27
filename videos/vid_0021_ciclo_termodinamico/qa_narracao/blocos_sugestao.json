@@ -1,0 +1,183 @@
+{
+  "versao": 2,
+  "status": "Base textual fornecida pelo usuário, congelada para a futura voz; janelas do preview são referência visual, não sincronização final.",
+  "palavras": 355,
+  "velocidade_fala_efetiva_palavras_minuto": 150,
+  "fala_estimada_s": 142,
+  "respiro_global_estimado_s": 23,
+  "blocos": [
+    {
+      "id": 1,
+      "bloco": "Introdução e construção do ciclo",
+      "inicio_frame": 0,
+      "fim_frame": 375,
+      "inicio_s": 0,
+      "fim_s": 25,
+      "duracao_s": 25,
+      "texto": "Quanto calor esse gás realmente absorve?\n\nCalor absorvido não é calor líquido. Vamos seguir o ciclo.\n\nPrimeiro, o gás se expande a pressão constante até quadruplicar o volume.\n\nDepois, o volume fica fixo enquanto a pressão quadruplica.\n\nPor fim, ele retorna ao estado inicial.",
+      "paragrafos": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "palavras": 44,
+      "palavras_por_minuto_da_janela": 105.6,
+      "velocidade_fala_adotada_palavras_minuto": 150,
+      "fala_estimada_s": 17.6,
+      "saldo_da_janela_s": 7.399999999999999,
+      "status": "margem estimada; aguardar áudio real"
+    },
+    {
+      "id": 2,
+      "bloco": "Ferramentas e convenção de sinal",
+      "inicio_frame": 375,
+      "fim_frame": 600,
+      "inicio_s": 25,
+      "fim_s": 40,
+      "duracao_s": 15,
+      "texto": "Para um gás ideal monoatômico, a energia interna é três meios de P vezes V.\n\nE, com trabalho positivo quando realizado pelo gás, a primeira lei fica Q igual a delta U mais W.\n\nNo diagrama P por V, o trabalho é a área sob o caminho.",
+      "paragrafos": [
+        6,
+        7,
+        8
+      ],
+      "palavras": 47,
+      "palavras_por_minuto_da_janela": 188.0,
+      "velocidade_fala_adotada_palavras_minuto": 150,
+      "fala_estimada_s": 18.8,
+      "saldo_da_janela_s": -3.8000000000000007,
+      "status": "requer redistribuição de tempo"
+    },
+    {
+      "id": 3,
+      "bloco": "A → B: expansão",
+      "inicio_frame": 600,
+      "fim_frame": 1125,
+      "inicio_s": 40,
+      "fim_s": 75,
+      "duracao_s": 35,
+      "texto": "Em A para B, a pressão é constante. A área do retângulo dá três P zero V zero.\n\nA energia interna também aumenta: nove meios de P zero V zero.\n\nSomando os dois, o calor recebido é quinze meios de P zero V zero.\n\nComo Q é positivo, calor entra no gás.",
+      "paragrafos": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "palavras": 52,
+      "palavras_por_minuto_da_janela": 89.14285714285714,
+      "velocidade_fala_adotada_palavras_minuto": 150,
+      "fala_estimada_s": 20.8,
+      "saldo_da_janela_s": 14.2,
+      "status": "margem estimada; aguardar áudio real"
+    },
+    {
+      "id": 4,
+      "bloco": "B → C: volume constante",
+      "inicio_frame": 1125,
+      "fim_frame": 1500,
+      "inicio_s": 75,
+      "fim_s": 100,
+      "duracao_s": 25,
+      "texto": "De B para C, o pistão fica parado. Sem variação de volume, o trabalho é zero.\n\nMas a pressão aumenta, então P vezes V aumenta e a energia interna também.\n\nLogo, o calor recebido é dezoito P zero V zero.\n\nMais uma vez, calor entra no gás.",
+      "paragrafos": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "palavras": 47,
+      "palavras_por_minuto_da_janela": 112.8,
+      "velocidade_fala_adotada_palavras_minuto": 150,
+      "fala_estimada_s": 18.8,
+      "saldo_da_janela_s": 6.199999999999999,
+      "status": "margem estimada; aguardar áudio real"
+    },
+    {
+      "id": 5,
+      "bloco": "C → A: compressão e calor cedido",
+      "inicio_frame": 1500,
+      "fim_frame": 1800,
+      "inicio_s": 100,
+      "fim_s": 120,
+      "duracao_s": 20,
+      "texto": "No retorno, pressão e volume diminuem. Então P vezes V diminui e a energia interna cai.\n\nAlém disso, o gás é comprimido, então o trabalho realizado por ele é negativo.\n\nCom delta U negativo e W negativo, Q também é negativo: calor sai do gás.\n\nEsse trecho não entra na soma do calor absorvido.",
+      "paragrafos": [
+        17,
+        18,
+        19,
+        20
+      ],
+      "palavras": 54,
+      "palavras_por_minuto_da_janela": 162.0,
+      "velocidade_fala_adotada_palavras_minuto": 150,
+      "fala_estimada_s": 21.6,
+      "saldo_da_janela_s": -1.6000000000000014,
+      "status": "requer redistribuição de tempo"
+    },
+    {
+      "id": 6,
+      "bloco": "Calor total absorvido",
+      "inicio_frame": 1800,
+      "fim_frame": 2025,
+      "inicio_s": 120,
+      "fim_s": 135,
+      "duracao_s": 15,
+      "texto": "Então somamos apenas os dois trechos com Q positivo.\n\nO resultado é cinquenta e um meios de P zero V zero.",
+      "paragrafos": [
+        21,
+        22
+      ],
+      "palavras": 21,
+      "palavras_por_minuto_da_janela": 84.0,
+      "velocidade_fala_adotada_palavras_minuto": 150,
+      "fala_estimada_s": 8.4,
+      "saldo_da_janela_s": 6.6,
+      "status": "margem estimada; aguardar áudio real"
+    },
+    {
+      "id": 7,
+      "bloco": "Área, sentido e trabalho líquido",
+      "inicio_frame": 2025,
+      "fim_frame": 2295,
+      "inicio_s": 135,
+      "fim_s": 153,
+      "duracao_s": 18,
+      "texto": "Agora olhe para o ciclo inteiro.\n\nO módulo do trabalho líquido é a área do triângulo: metade de três V zero vezes três P zero.\n\nIsso dá nove meios de P zero V zero.\n\nMas o percurso é anti-horário, então o trabalho líquido é negativo.",
+      "paragrafos": [
+        23,
+        24,
+        25,
+        26
+      ],
+      "palavras": 45,
+      "palavras_por_minuto_da_janela": 150.0,
+      "velocidade_fala_adotada_palavras_minuto": 150,
+      "fala_estimada_s": 18.0,
+      "saldo_da_janela_s": 0.0,
+      "status": "margem estimada; aguardar áudio real"
+    },
+    {
+      "id": 8,
+      "bloco": "Fechamento e CTA",
+      "inicio_frame": 2295,
+      "fim_frame": 2475,
+      "inicio_s": 153,
+      "fim_s": 165,
+      "duracao_s": 12,
+      "texto": "Como o gás termina no mesmo estado em que começou, a variação total da energia interna é zero.\n\nAssim, calor líquido e trabalho líquido são iguais: no ciclo completo, o gás cede mais calor do que absorve.\n\nSiga o Parallax Lab para entender a física.",
+      "paragrafos": [
+        27,
+        28,
+        29
+      ],
+      "palavras": 45,
+      "palavras_por_minuto_da_janela": 225.0,
+      "velocidade_fala_adotada_palavras_minuto": 150,
+      "fala_estimada_s": 18.0,
+      "saldo_da_janela_s": -6.0,
+      "status": "requer redistribuição de tempo"
+    }
+  ]
+}

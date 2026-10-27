@@ -1,0 +1,59 @@
+{
+  "blocos": [
+    {
+      "bloco": "N01",
+      "inicio": 0.0,
+      "fim": 54.06666666666756
+    },
+    {
+      "bloco": "N07",
+      "inicio": 54.06666666666756,
+      "fim": 78.00000000000081
+    },
+    {
+      "bloco": "N08",
+      "inicio": 78.00000000000081,
+      "fim": 90.86666666666683
+    }
+  ],
+  "marcos": [
+    {
+      "nome": "N01_canhao_proximo",
+      "tempo": 3.333333333333333
+    },
+    {
+      "nome": "N01_lancamento_1",
+      "tempo": 9.933333333333312
+    },
+    {
+      "nome": "N01_lancamento_2",
+      "tempo": 20.799999999999947
+    },
+    {
+      "nome": "N01_lancamento_3",
+      "tempo": 33.666666666666664
+    },
+    {
+      "nome": "N01_lancamento_4",
+      "tempo": 46.00000000000053
+    },
+    {
+      "nome": "N01_vista_obliqua",
+      "tempo": 51.73333333333411
+    },
+    {
+      "nome": "N07_trecho_na_orbita",
+      "tempo": 57.06666666666771
+    },
+    {
+      "nome": "N07_um_segundo_ampliado",
+      "tempo": 74.00000000000081
+    },
+    {
+      "nome": "N08_detalhe_reintegrado",
+      "tempo": 89.40000000000016
+    }
+  ],
+  "duracao": 90.86666666666683,
+  "fps": 15.0
+}

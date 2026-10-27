@@ -1,0 +1,8 @@
+{
+  "name": "vid-0029-cena3d",
+  "private": true,
+  "description": "Render determinístico do 3D (Three.js r128) do vid_0029 via Playwright; usa o Chromium já instalado em ms-playwright.",
+  "dependencies": {
+    "playwright-core": "1.55.0"
+  }
+}

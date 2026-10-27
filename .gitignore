@@ -42,3 +42,7 @@ entregas/*
 *.zip
 videos/*/media*/
 videos_longos/*/media*/
+
+# Frames 3D intermediários (Blender) e dependências Node ficam só no PC
+videos/*/frames3d_*/
+node_modules/

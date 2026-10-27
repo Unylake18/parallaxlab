@@ -1,0 +1,270 @@
+{
+  "duration": 167.733333333331,
+  "fps": 15.0,
+  "events": [
+    {
+      "cue": "estado_A",
+      "target": 5.26,
+      "actual": 5.2,
+      "lag": -0.06
+    },
+    {
+      "cue": "intro_AB",
+      "target": 9.37,
+      "actual": 9.333333333333321,
+      "lag": -0.0367
+    },
+    {
+      "cue": "intro_BC",
+      "target": 14.18,
+      "actual": 14.19999999999997,
+      "lag": 0.02
+    },
+    {
+      "cue": "intro_CA",
+      "target": 18.81,
+      "actual": 18.799999999999955,
+      "lag": -0.01
+    },
+    {
+      "cue": "ferramentas",
+      "target": 23.08,
+      "actual": 23.066666666666606,
+      "lag": -0.0133
+    },
+    {
+      "cue": "u_pv",
+      "target": 27.371000000000002,
+      "actual": 27.33333333333326,
+      "lag": -0.0377
+    },
+    {
+      "cue": "primeira_lei",
+      "target": 30.51,
+      "actual": 30.466666666666587,
+      "lag": -0.0433
+    },
+    {
+      "cue": "lei_equacao",
+      "target": 33.36,
+      "actual": 33.33333333333325,
+      "lag": -0.0267
+    },
+    {
+      "cue": "integral",
+      "target": 38.68,
+      "actual": 38.666666666666636,
+      "lag": -0.0133
+    },
+    {
+      "cue": "geometria",
+      "target": 44.0,
+      "actual": 43.93333333333335,
+      "lag": -0.0667
+    },
+    {
+      "cue": "AB",
+      "target": 45.980000000000004,
+      "actual": 45.93333333333338,
+      "lag": -0.0467
+    },
+    {
+      "cue": "w_ab_valor",
+      "target": 53.86,
+      "actual": 53.80000000000042,
+      "lag": -0.06
+    },
+    {
+      "cue": "DU_AB",
+      "target": 57.44,
+      "actual": 57.40000000000056,
+      "lag": -0.04
+    },
+    {
+      "cue": "du_ab_valor",
+      "target": 60.63,
+      "actual": 60.60000000000063,
+      "lag": -0.03
+    },
+    {
+      "cue": "du_ab_valor",
+      "target": 62.330000000000005,
+      "actual": 62.26666666666736,
+      "lag": -0.0633
+    },
+    {
+      "cue": "Q_AB",
+      "target": 66.27,
+      "actual": 66.26666666666743,
+      "lag": -0.0033
+    },
+    {
+      "cue": "q_ab_valor",
+      "target": 68.762,
+      "actual": 68.73333333333403,
+      "lag": -0.0287
+    },
+    {
+      "cue": "calor_entra_AB",
+      "target": 70.16,
+      "actual": 70.13333333333395,
+      "lag": -0.0267
+    },
+    {
+      "cue": "BC",
+      "target": 71.9,
+      "actual": 71.86666666666724,
+      "lag": -0.0333
+    },
+    {
+      "cue": "W_BC",
+      "target": 78.39999999999999,
+      "actual": 78.33333333333364,
+      "lag": -0.0667
+    },
+    {
+      "cue": "DU_BC",
+      "target": 84.55,
+      "actual": 84.53333333333349,
+      "lag": -0.0167
+    },
+    {
+      "cue": "du_bc_valor",
+      "target": 86.673,
+      "actual": 86.66666666666674,
+      "lag": -0.0063
+    },
+    {
+      "cue": "Q_BC",
+      "target": 90.25999999999999,
+      "actual": 90.2,
+      "lag": -0.06
+    },
+    {
+      "cue": "calor_entra_BC",
+      "target": 92.31,
+      "actual": 92.26666666666661,
+      "lag": -0.0433
+    },
+    {
+      "cue": "calor_entra_BC",
+      "target": 93.81,
+      "actual": 93.79999999999987,
+      "lag": -0.01
+    },
+    {
+      "cue": "CA",
+      "target": 95.02,
+      "actual": 94.99999999999984,
+      "lag": -0.02
+    },
+    {
+      "cue": "w_ca_negativo",
+      "target": 104.297,
+      "actual": 104.26666666666601,
+      "lag": -0.0303
+    },
+    {
+      "cue": "Q_CA",
+      "target": 107.08,
+      "actual": 107.06666666666594,
+      "lag": -0.0133
+    },
+    {
+      "cue": "q_ca_negativo",
+      "target": 110.69,
+      "actual": 110.66666666666589,
+      "lag": -0.0233
+    },
+    {
+      "cue": "excluir_CA",
+      "target": 114.23,
+      "actual": 114.19999999999911,
+      "lag": -0.03
+    },
+    {
+      "cue": "soma_abs",
+      "target": 115.86,
+      "actual": 115.79999999999909,
+      "lag": -0.06
+    },
+    {
+      "cue": "abs_valor",
+      "target": 122.077,
+      "actual": 122.06666666666545,
+      "lag": -0.0103
+    },
+    {
+      "cue": "triangulo",
+      "target": 125.21000000000001,
+      "actual": 125.19999999999867,
+      "lag": -0.01
+    },
+    {
+      "cue": "area_triangulo",
+      "target": 128.73,
+      "actual": 128.6666666666652,
+      "lag": -0.0633
+    },
+    {
+      "cue": "base_altura",
+      "target": 134.05,
+      "actual": 133.9999999999985,
+      "lag": -0.05
+    },
+    {
+      "cue": "resultado_area",
+      "target": 139.29,
+      "actual": 139.26666666666503,
+      "lag": -0.0233
+    },
+    {
+      "cue": "sentido",
+      "target": 142.06,
+      "actual": 141.9999999999983,
+      "lag": -0.06
+    },
+    {
+      "cue": "w_liquido_negativo",
+      "target": 145.77,
+      "actual": 145.79999999999808,
+      "lag": 0.03
+    },
+    {
+      "cue": "conferencia",
+      "target": 148.37,
+      "actual": 148.33333333333132,
+      "lag": -0.0367
+    },
+    {
+      "cue": "zero_ciclo",
+      "target": 156.75,
+      "actual": 156.73333333333122,
+      "lag": -0.0167
+    },
+    {
+      "cue": "Q_liquido",
+      "target": 158.3,
+      "actual": 158.26666666666452,
+      "lag": -0.0333
+    },
+    {
+      "cue": "q_liquido_igual",
+      "target": 159.77,
+      "actual": 159.73333333333116,
+      "lag": -0.0367
+    },
+    {
+      "cue": "cedido",
+      "target": 162.52,
+      "actual": 162.46666666666442,
+      "lag": -0.0533
+    },
+    {
+      "cue": "CTA",
+      "target": 165.83,
+      "actual": 165.7999999999977,
+      "lag": -0.03
+    }
+  ]
+}

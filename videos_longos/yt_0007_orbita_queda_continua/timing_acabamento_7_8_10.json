@@ -1,0 +1,47 @@
+{
+  "blocos": [
+    {
+      "bloco": "N07",
+      "inicio": 0.0,
+      "fim": 29.59999999999994
+    },
+    {
+      "bloco": "N08",
+      "inicio": 29.59999999999994,
+      "fim": 42.466666666667045
+    },
+    {
+      "bloco": "N10",
+      "inicio": 42.466666666667045,
+      "fim": 60.46666666666784
+    }
+  ],
+  "marcos": [
+    {
+      "nome": "N07_trecho_na_orbita",
+      "tempo": 3.0000000000000027
+    },
+    {
+      "nome": "N07_medidas_antes_das_contas",
+      "tempo": 17.333333333333293
+    },
+    {
+      "nome": "N07_queda_e_curvatura",
+      "tempo": 22.799999999999947
+    },
+    {
+      "nome": "N07_um_segundo_ampliado",
+      "tempo": 25.59999999999994
+    },
+    {
+      "nome": "N08_detalhe_reintegrado",
+      "tempo": 41.00000000000038
+    },
+    {
+      "nome": "N10_mesmo_tempo",
+      "tempo": 57.06666666666777
+    }
+  ],
+  "duracao": 60.46666666666784,
+  "fps": 15.0
+}

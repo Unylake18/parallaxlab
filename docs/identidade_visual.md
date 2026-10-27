@@ -115,9 +115,26 @@ comprovada. O estado atual e os caminhos finais estão em `docs/estado_atual.md`
 
 ## Uso de logo, avatar e watermark
 
+### Cabeçalho e CTA dos episódios (padrão confirmado em 2026-10-11)
+
+- **Canto superior esquerdo:** nome da série e episódio no formato
+  `NOME DA SÉRIE · EP. NN`, conforme o campo `Série pública` da ficha.
+  A numeração pertence à série; nunca usar o índice interno `vid_NNNN` como
+  número do episódio. Exemplo: `vid_0021` é `EXERCÍCIO RESOLVIDO · EP. 07`.
+- **Canto superior direito:** marca oficial existente, via `WATERMARK_PATH`.
+  No vertical, preservar o padrão dos episódios anteriores: largura lógica
+  1,8, opacidade 0,35 e `to_corner(UP + RIGHT, buff=0.28)`. A série usa
+  `screen_text(..., 20, oversample=2)`, opacidade 0,65 e
+  `to_corner(UP + LEFT, buff=0.4)`.
+- **CTA final:** somente `@labparallax`, com degradê ciano (`#35D9FF`) →
+  violeta (`#745CFF`) → magenta (`#EA63FF`). Não acrescentar a linha
+  `PARALLAX LAB` ao CTA. A marca discreta do cabeçalho permanece.
+
+### Aplicação dos assets
+
 - **Logo:** usar a variante adequada ao contexto, preservar proporção e reservar espaço ao redor. Dimensões mínimas e área de proteção ainda precisam ser definidas; não há medidas oficiais aprovadas.
 - **Avatar:** usar o ícone de perfil; validar leitura em tamanho pequeno e recorte circular antes de aplicar. Não tratar presença do arquivo como confirmação de perfil atualizado.
-- **Watermark:** pequeno e discreto, sem disputar atenção com a conta, cobrir sinais ou ocupar a faixa segura inferior. Canto, tamanho e opacidade serão definidos ao integrar e testar o template.
+- **Watermark:** pequeno e discreto, sem disputar atenção com a conta, cobrir sinais ou ocupar a faixa segura inferior. Para episódios, usar canto, tamanho e opacidade definidos acima.
 - **Logo horizontal e monocromático:** usar conforme as funções acima, sem substituir ou redesenhar o símbolo oficial.
 
 ## Thumbnails e capas

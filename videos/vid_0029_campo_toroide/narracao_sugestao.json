@@ -1,0 +1,112 @@
+[
+  {
+    "beat": "B01",
+    "inicio": 0.0,
+    "fim": 12.0,
+    "tag": "curious",
+    "palavras": 32,
+    "fala_s": 11.9,
+    "fala_s_a_2_5": 12.8,
+    "respiro_s": 0.1,
+    "texto": "Esse anel de fio PRENDE o próprio campo magnético. Liga a corrente... e o campo fica só aqui dentro. No buraco do meio? Zero. E fora? Zero também. [short pause] Como ele faz isso?"
+  },
+  {
+    "beat": "B02",
+    "inicio": 12.0,
+    "fim": 26.0,
+    "tag": "thoughtful",
+    "palavras": 35,
+    "fala_s": 13.0,
+    "fala_s_a_2_5": 14.0,
+    "respiro_s": 1.0,
+    "texto": "Isso é um toroide: um solenoide dobrado até as pontas se encontrarem. No modelo ideal, as espiras são bem juntinhas. O número de espiras é o N; a corrente, igual em todas, é o I."
+  },
+  {
+    "beat": "B03",
+    "inicio": 26.0,
+    "fim": 49.0,
+    "tag": "thoughtful",
+    "palavras": 61,
+    "fala_s": 22.6,
+    "fala_s_a_2_5": 24.4,
+    "respiro_s": 0.4,
+    "texto": "Agora, de cima. O raio médio do anel é o R; o raio do tubo, o a. Desenha um caminho: um círculo em volta do eixo, com raio r, o raio do caminho. [thoughtful, emphatic] No toroide ideal, a simetria faz o campo acompanhar esse círculo, com o mesmo módulo em todo ponto. E a gente percorre o caminho no sentido do campo."
+  },
+  {
+    "beat": "B04",
+    "inicio": 49.0,
+    "fim": 74.0,
+    "tag": "thoughtful",
+    "palavras": 61,
+    "fala_s": 22.6,
+    "fala_s_a_2_5": 24.4,
+    "respiro_s": 2.4,
+    "texto": "Aí entra a Lei de Ampère: a circulação do campo magnético no caminho é mi zero vezes a corrente que atravessa o disco. Campo e caminho apontam juntos: o produto escalar vira multiplicação simples. E, como o campo vale o mesmo no círculo todo, ele sai da integral. Sobra o tamanho do caminho... [short pause] desenrola: dois pi vezes o raio do caminho."
+  },
+  {
+    "beat": "B05",
+    "inicio": 74.0,
+    "fim": 84.0,
+    "tag": "curious",
+    "palavras": 23,
+    "fala_s": 8.5,
+    "fala_s_a_2_5": 9.2,
+    "respiro_s": 1.5,
+    "texto": "Primeiro teste: o caminho no buraco do anel. Quantos fios atravessam esse disco? [short pause] Nenhum. Corrente atravessando, zero... então o campo aqui é zero."
+  },
+  {
+    "beat": "B06",
+    "inicio": 84.0,
+    "fim": 115.0,
+    "tag": "thoughtful",
+    "palavras": 81,
+    "fala_s": 30.0,
+    "fala_s_a_2_5": 32.4,
+    "respiro_s": 1.0,
+    "texto": "Segundo teste: o caminho por dentro do enrolamento. Cada espira fura o disco uma vez, pelo lado de dentro, todas no mesmo sentido. A corrente que atravessa é o número de espiras vezes a corrente. Passa o dois pi vezes o raio para o outro lado... [short pause] [excited] e o campo é mi zero vezes o número de espiras vezes a corrente, dividido por dois pi vezes o raio do caminho. [curious] Repara: o campo não é uniforme. Mais perto do buraco, mais forte."
+  },
+  {
+    "beat": "B07",
+    "inicio": 115.0,
+    "fim": 133.0,
+    "tag": "curious",
+    "palavras": 46,
+    "fala_s": 17.0,
+    "fala_s_a_2_5": 18.4,
+    "respiro_s": 1.0,
+    "texto": "E o terceiro: o caminho por fora do anel. Agora cada espira fura o disco DUAS vezes: sobe pelo lado de dentro... e desce pelo lado de fora. Uma corrente cancela a outra. [short pause] [thoughtful, emphatic] Corrente atravessando, zero. Campo, zero. É por isso que o campo não escapa."
+  },
+  {
+    "beat": "B08",
+    "inicio": 133.0,
+    "fim": 151.0,
+    "tag": "thoughtful",
+    "palavras": 44,
+    "fala_s": 16.3,
+    "fala_s_a_2_5": 17.6,
+    "respiro_s": 1.7,
+    "texto": "Agora, o gráfico, aumentando o raio do caminho. No buraco, zero. Entrou no enrolamento, o campo salta. Lá dentro, cai como um sobre o raio. Saiu, zero de novo. [curious] E na borda de dentro, o campo é quase o DOBRO da borda de fora."
+  },
+  {
+    "beat": "B09",
+    "inicio": 151.0,
+    "fim": 166.0,
+    "tag": "thoughtful",
+    "palavras": 38,
+    "fala_s": 14.1,
+    "fala_s_a_2_5": 15.2,
+    "respiro_s": 0.9,
+    "texto": "E dá pra conferir. Se o anel for grande perto do tubo, o raio quase não muda lá dentro. Aí, número de espiras dividido pela volta do anel vira espiras por metro... [excited] e aparece o campo do solenoide."
+  },
+  {
+    "beat": "B10",
+    "inicio": 166.0,
+    "fim": 180.0,
+    "tag": "calm, satisfied",
+    "palavras": 36,
+    "fala_s": 13.3,
+    "fala_s_a_2_5": 14.4,
+    "respiro_s": 0.7,
+    "texto": "Resumindo: dentro do enrolamento, o campo cai como um sobre o raio. No buraco e fora, zero, no modelo ideal. É assim que um solenoide fechado em anel confina o próprio campo. [short pause] Siga o Parallax Lab."
+  }
+]

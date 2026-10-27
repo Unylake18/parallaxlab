@@ -1,0 +1,139 @@
+{
+  "blocos": [
+    {
+      "bloco": "N05",
+      "inicio": 0.0,
+      "fim": 12.666666666666654
+    },
+    {
+      "bloco": "N06",
+      "inicio": 12.666666666666654,
+      "fim": 40.60000000000026
+    },
+    {
+      "bloco": "N07",
+      "inicio": 40.60000000000026,
+      "fim": 70.20000000000118
+    },
+    {
+      "bloco": "N08",
+      "inicio": 70.20000000000118,
+      "fim": 83.0666666666672
+    },
+    {
+      "bloco": "N11",
+      "inicio": 83.0666666666672,
+      "fim": 118.799999999999
+    },
+    {
+      "bloco": "N12",
+      "inicio": 118.799999999999,
+      "fim": 130.99999999999847
+    },
+    {
+      "bloco": "N13",
+      "inicio": 130.99999999999847,
+      "fim": 208.13333333332824
+    }
+  ],
+  "marcos": [
+    {
+      "nome": "N05_lei_gravitacional",
+      "tempo": 6.6666666666666625
+    },
+    {
+      "nome": "N05_raio_e_vetores",
+      "tempo": 10.666666666666654
+    },
+    {
+      "nome": "N06_condicao_com_massa",
+      "tempo": 16.46666666666664
+    },
+    {
+      "nome": "N06_cancelamento_m",
+      "tempo": 21.133333333333294
+    },
+    {
+      "nome": "N06_cancelamento_r",
+      "tempo": 30.799999999999933
+    },
+    {
+      "nome": "N06_raiz_e_raio",
+      "tempo": 36.40000000000015
+    },
+    {
+      "nome": "N07_trecho_na_orbita",
+      "tempo": 43.600000000000406
+    },
+    {
+      "nome": "N07_medidas_antes_das_contas",
+      "tempo": 57.93333333333445
+    },
+    {
+      "nome": "N07_queda_e_curvatura",
+      "tempo": 63.40000000000126
+    },
+    {
+      "nome": "N07_um_segundo_ampliado",
+      "tempo": 66.20000000000118
+    },
+    {
+      "nome": "N08_detalhe_reintegrado",
+      "tempo": 81.60000000000053
+    },
+    {
+      "nome": "N11_substituicao_v",
+      "tempo": 104.59999999999951
+    },
+    {
+      "nome": "N11_periodo_circular",
+      "tempo": 116.799999999999
+    },
+    {
+      "nome": "N12_foco_semieixo",
+      "tempo": 126.06666666666526
+    },
+    {
+      "nome": "N13_ajuste_1",
+      "tempo": 135.73333333333153
+    },
+    {
+      "nome": "N13_voo_1",
+      "tempo": 143.5999999999978
+    },
+    {
+      "nome": "N13_ajuste_2",
+      "tempo": 151.39999999999748
+    },
+    {
+      "nome": "N13_voo_2",
+      "tempo": 159.26666666666375
+    },
+    {
+      "nome": "N13_ajuste_3",
+      "tempo": 167.06666666666342
+    },
+    {
+      "nome": "N13_voo_3",
+      "tempo": 174.9333333333297
+    },
+    {
+      "nome": "N13_ajuste_4",
+      "tempo": 182.73333333332937
+    },
+    {
+      "nome": "N13_voo_4",
+      "tempo": 190.59999999999565
+    },
+    {
+      "nome": "N13_ajuste_5",
+      "tempo": 198.39999999999532
+    },
+    {
+      "nome": "N13_voo_5",
+      "tempo": 206.2666666666616
+    }
+  ],
+  "duracao": 208.13333333332824,
+  "fps": 15.0
+}
