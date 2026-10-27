@@ -2597,7 +2597,7 @@ Fontes: fichas do repositório, `docs/estado_atual.md` (25/10), as pautas do pro
 | `yt_0004` | EM 2.2 | Griffiths 2.2.3 e 2.1.3 (superposição) | Exercícios resolvidos: configurações estranhas e não simétricas, por superposição | entregue (`exercicio_resolvido`) |
 | `yt_0005` | EM 5.1 | Griffiths 5.1 | Força de Lorentz | entregue |
 | `yt_0006` | EM 5.2 | Griffiths 5.2 | Lei de Biot–Savart | entregue |
-| `yt_0007` | 4.13 | Moysés vol. 1, Sears *Física I* (gravitação) | Por que uma órbita nunca termina? | em preview, a terminar |
+| `yt_0007` | 4.13 | Moysés vol. 1, Sears *Física I* (gravitação) | Por que uma órbita é uma queda que nunca termina? | em preview, a terminar |
 | `yt_0008` | EM 5.3 | Griffiths 5.3 | Divergente, rotacional e Lei de Ampère | entregue |
 | `yt_0009` | EM 7.1 | Griffiths 7.1.1–7.1.2 | Quem empurra as cargas? (Lei de Ohm e força eletromotriz) | entregue |
 | `yt_0010` | EM 7.1 | Griffiths 7.1.3 | FEM de movimento e regra do fluxo magnético | entregue |
@@ -2723,7 +2723,7 @@ O Kaio aprovou a v2 em 2026-10-27. Ficou decidido:
 3. **Playlists:** uma por bloco, juntando Física III e EM na ordem da grade, com um endereço principal por vídeo e entrada em mais de uma playlist quando servir (§0.3).
 4. **Anexo A:** fica dentro do mapa, como retrato datado. Atualizar quando for útil, não a cada vídeo.
 5. **Referências:** Física I–IV usam Moysés Nussenzveig e Sears (Young & Freedman), pelas aplicações e problemas; o Halliday sai como referência. Feynman (*Lições de Física*) é consulta teórica e discursiva em todas as Físicas e no EM. EM = Griffiths, 4ª ed.
-6. **`yt_0007`:** é de 4.13 Gravitação ("Por que uma órbita nunca termina?"), em preview.
+6. **`yt_0007`:** é de 4.13 Gravitação ("Por que uma órbita é uma queda que nunca termina?"), em preview.
 7. **Duração dos longos:** `formatos.md` passa a registrar a duração observada (12–27 min); a duração sai da explicação.
 8. **Adoção:** a v2 substitui `docs/mapa_curricular.md`; a v1 fica em `docs/mapa_curricular_old.md`; a decisão entra em `docs/decisoes.md`; o `cobertura.md` do arsenal ganhou a coluna com o módulo equivalente do EM.
 
