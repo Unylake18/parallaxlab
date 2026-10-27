@@ -1,0 +1,333 @@
+{
+ "hook": {
+  "ini": 0.06,
+  "fim": 3.34,
+  "texto": "Todo indutor guarda energia. Mas onde ela fica?"
+ },
+ "fio": {
+  "ini": 3.62,
+  "fim": 4.26,
+  "texto": "No fio..."
+ },
+ "espaco": {
+  "ini": 4.58,
+  "fim": 6.72,
+  "texto": "ou no espaço aí dentro, onde só tem ar?"
+ },
+ "palpite": {
+  "ini": 7.02,
+  "fim": 7.88,
+  "texto": "Guarda o seu palpite."
+ },
+ "cenario": {
+  "ini": 8.18,
+  "fim": 11.08,
+  "texto": "Vamos descobrir com um solenoide longo, de núcleo de ar."
+ },
+ "sentidos": {
+  "ini": 11.32,
+  "fim": 14.48,
+  "texto": "Em cima, a corrente sai da tela; embaixo, entra."
+ },
+ "raio": {
+  "ini": 14.68,
+  "fim": 15.46,
+  "texto": "Ele tem raio"
+ },
+ "espiras": {
+  "ini": 15.52,
+  "fim": 16.62,
+  "texto": "e espiras por metro,"
+ },
+ "trecho": {
+  "ini": 16.78,
+  "fim": 18.72,
+  "texto": "e olhamos um trecho longe das pontas."
+ },
+ "campo_q": {
+  "ini": 18.98,
+  "fim": 21.58,
+  "texto": "Primeiro: quanto vale o campo magnético aí dentro?"
+ },
+ "ampere": {
+  "ini": 21.94,
+  "fim": 26.68,
+  "texto": "Lei de Ampère: a soma do campo ao longo de um caminho fechado é a permeabilidade do vácuo,"
+ },
+ "mi0": {
+  "ini": 26.82,
+  "fim": 28.16,
+  "texto": "que na tela é mi zero,"
+ },
+ "iint": {
+  "ini": 28.48,
+  "fim": 30.8,
+  "texto": "vezes a corrente total que atravessa esse caminho."
+ },
+ "retangulo": {
+  "ini": 30.98,
+  "fim": 31.58,
+  "texto": "No retângulo,"
+ },
+ "dentro": {
+  "ini": 31.78,
+  "fim": 35.08,
+  "texto": "só o lado de dentro conta, porque lá o campo acompanha o caminho."
+ },
+ "verticais": {
+  "ini": 35.22,
+  "fim": 37.14,
+  "texto": "Nos lados verticais ele é perpendicular;"
+ },
+ "fora": {
+  "ini": 37.42,
+  "fim": 38.78,
+  "texto": "fora, praticamente zero."
+ },
+ "bl": {
+  "ini": 39.04,
+  "fim": 41.72,
+  "texto": "A soma vira campo vezes o comprimento do lado."
+ },
+ "corrente_q": {
+  "ini": 41.92,
+  "fim": 42.5,
+  "texto": "E a corrente?"
+ },
+ "cada_espira": {
+  "ini": 42.8,
+  "fim": 44.48,
+  "texto": "Cada espira dentro do retângulo."
+ },
+ "comprimento": {
+  "ini": 44.66,
+  "fim": 46.6,
+  "texto": "O comprimento aparece dos dois lados..."
+ },
+ "corta": {
+  "ini": 46.82,
+  "fim": 47.34,
+  "texto": "e corta!"
+ },
+ "campo_res": {
+  "ini": 47.6,
+  "fim": 51.92,
+  "texto": "O campo é a permeabilidade do vácuo, vezes espiras por metro, vezes corrente."
+ },
+ "fluxo": {
+  "ini": 52.22,
+  "fim": 53.84,
+  "texto": "Agora, o fluxo numa espira:"
+ },
+ "soma_disco": {
+  "ini": 54.1,
+  "fim": 56.1,
+  "texto": "a soma do campo que atravessa o disco."
+ },
+ "uniforme": {
+  "ini": 56.26,
+  "fim": 58.38,
+  "texto": "Como o campo é uniforme e entra de frente,"
+ },
+ "sai_integral": {
+  "ini": 58.56,
+  "fim": 59.54,
+  "texto": "ele sai da integral:"
+ },
+ "sobra_area": {
+  "ini": 59.82,
+  "fim": 60.42,
+  "texto": "sobra a área."
+ },
+ "fluxo_ba": {
+  "ini": 60.68,
+  "fim": 62.44,
+  "texto": "Fluxo é campo vezes área."
+ },
+ "muitas": {
+  "ini": 62.72,
+  "fim": 65.64,
+  "texto": "Só que são muitas espiras, todas com o mesmo fluxo."
+ },
+ "concat": {
+  "ini": 65.82,
+  "fim": 70.0,
+  "texto": "O fluxo concatenado, que na tela é a letra grega lambda, é a soma de todos:"
+ },
+ "nphi": {
+  "ini": 70.22,
+  "fim": 72.38,
+  "texto": "número de espiras vezes o fluxo de uma."
+ },
+ "numero": {
+  "ini": 72.58,
+  "fim": 75.42,
+  "texto": "Esse número é espiras por metro vezes o comprimento."
+ },
+ "indutancia": {
+  "ini": 75.68,
+  "fim": 80.0,
+  "texto": "A indutância é o fluxo concatenado dividido pela corrente, medida em henry."
+ },
+ "cancela": {
+  "ini": 80.18,
+  "fim": 81.12,
+  "texto": "A corrente cancela,"
+ },
+ "geometria": {
+  "ini": 81.26,
+  "fim": 82.48,
+  "texto": "e sobra só geometria."
+ },
+ "repara": {
+  "ini": 82.66,
+  "fim": 84.58,
+  "texto": "Repara nas espiras por metro ao quadrado:"
+ },
+ "fator_campo": {
+  "ini": 84.82,
+  "fim": 86.0,
+  "texto": "um fator vem do campo;"
+ },
+ "fator_contagem": {
+  "ini": 86.24,
+  "fim": 87.44,
+  "texto": "o outro, da contagem."
+ },
+ "energia": {
+  "ini": 87.7,
+  "fim": 90.66,
+  "texto": "Agora, a energia. Primeiro jeito: pelo circuito."
+ },
+ "fem": {
+  "ini": 90.94,
+  "fim": 94.56,
+  "texto": "Enquanto a corrente sobe, o indutor reage com uma força eletromotriz,"
+ },
+ "potencia": {
+  "ini": 94.7,
+  "fim": 96.78,
+  "texto": "e a fonte entrega potência para vencê-la."
+ },
+ "du": {
+  "ini": 97.0,
+  "fim": 102.7,
+  "texto": "A cada pedacinho de tempo, a energia cresce indutância vezes corrente vezes um pedacinho de corrente."
+ },
+ "somando": {
+  "ini": 102.96,
+  "fim": 104.92,
+  "texto": "Somando de zero até o valor final:"
+ },
+ "meio": {
+  "ini": 105.2,
+  "fim": 107.9,
+  "texto": "meio vezes indutância vezes corrente ao quadrado."
+ },
+ "guardada": {
+  "ini": 108.14,
+  "fim": 113.04,
+  "texto": "É a energia guardada quando a corrente chega a esse valor; ela entrou enquanto a corrente subia."
+ },
+ "com_L": {
+  "ini": 113.26,
+  "fim": 114.64,
+  "texto": "Com a indutância do solenoide,"
+ },
+ "topo": {
+  "ini": 114.8,
+  "fim": 116.24,
+  "texto": "essa expressão vai para o topo."
+ },
+ "segundo": {
+  "ini": 116.52,
+  "fim": 117.96,
+  "texto": "Segundo jeito: pelo campo."
+ },
+ "densidade": {
+  "ini": 118.22,
+  "fim": 120.86,
+  "texto": "A densidade de energia é a energia por volume,"
+ },
+ "geral": {
+  "ini": 121.0,
+  "fim": 126.06,
+  "texto": "e tem um resultado geral: campo ao quadrado, dividido por duas vezes a permeabilidade do vácuo."
+ },
+ "brilho": {
+  "ini": 126.28,
+  "fim": 128.74,
+  "texto": "Dentro, brilho uniforme; fora, escuro."
+ },
+ "somando_vol": {
+  "ini": 128.96,
+  "fim": 129.88,
+  "texto": "Somando no volume:"
+ },
+ "uv": {
+  "ini": 130.039,
+  "fim": 131.48,
+  "texto": "densidade vezes volume,"
+ },
+ "arrastada": {
+  "ini": 131.66,
+  "fim": 133.98,
+  "texto": "que é a área do disco arrastada ao longo do trecho."
+ },
+ "trocando": {
+  "ini": 134.3,
+  "fim": 136.24,
+  "texto": "Trocando o campo pelo que achamos"
+ },
+ "elevando": {
+  "ini": 136.28,
+  "fim": 137.62,
+  "texto": "e elevando ao quadrado..."
+ },
+ "cancela_mu": {
+  "ini": 138.02,
+  "fim": 141.34,
+  "texto": "uma permeabilidade do vácuo de cima cancela com a de baixo."
+ },
+ "mesma": {
+  "ini": 141.64,
+  "fim": 143.48,
+  "texto": "Sobrou a mesma expressão lá de cima!"
+ },
+ "conferem": {
+  "ini": 143.7,
+  "fim": 145.02,
+  "texto": "As duas contas conferem:"
+ },
+ "dois_jeitos": {
+  "ini": 145.2,
+  "fim": 147.7,
+  "texto": "é a mesma energia, contada de dois jeitos."
+ },
+ "pergunta": {
+  "ini": 148.02,
+  "fim": 149.06,
+  "texto": "E a pergunta do começo?"
+ },
+ "fio_conduz": {
+  "ini": 149.34,
+  "fim": 151.08,
+  "texto": "O fio só conduz a corrente."
+ },
+ "campo_final": {
+  "ini": 151.3,
+  "fim": 154.6,
+  "texto": "A energia está guardada no campo magnético, dentro do solenoide."
+ },
+ "chutou": {
+  "ini": 154.8,
+  "fim": 157.46,
+  "texto": "Chutou \"no fio\"? Relaxa, é um palpite natural."
+ },
+ "cta": {
+  "ini": 157.78,
+  "fim": 159.64,
+  "texto": "Se curtiu, siga o Parallax Lab."
+ },
+ "_fim_voz": 159.64
+}
