@@ -90,8 +90,10 @@ re-renderizar os dois.
    inclinar a câmera. Fov pequeno (8°) na vista de cima = quase ortográfico, o círculo do Manim casa com o anel.
    Confira sempre com `qa/alinhamento.js` (usa `window.projeta`).
 5. **Estrelas numa cena separada**, desenhada antes, para não "zoomarem" durante o dolly.
-6. **Cores do Three r128:** ele trata hex como linear e a saída como sRGB; sem conversão as cores saem lavadas. O
-   modelo converte com `new THREE.Color(hex).convertSRGBToLinear()` e mantém `envMapIntensity` baixo.
+6. **Cores do Three r128:** o modelo deixa o `outputEncoding` no padrão (linear), então o hex vai direto para a tela
+   e os `ShaderMaterial` (rastro, campo) saem na cor exata da paleta. Se ligar `renderer.outputEncoding =
+   THREE.sRGBEncoding`, converta cada cor com `new THREE.Color(hex).convertSRGBToLinear()`, senão elas saem lavadas
+   (aconteceu no demo do solenoide). Mantenha `envMapIntensity` baixo no aço para ele não clarear demais.
 7. **Determinismo do render:** `preserveDrawingBuffer: true`, `setPixelRatio(1)`, `deviceScaleFactor: 1`.
 
 ## Receitas visuais (decididas nas avaliações)
