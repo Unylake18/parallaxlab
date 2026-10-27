@@ -15,7 +15,7 @@ formato na `ficha.md`; o agente lê a ficha antes de escolher configuração e l
 | Final | 1080×1920, 30 fps | 1920×1080, 30 fps (planejado) |
 | Configuração | `template/config.py` | `template/config_horizontal.py` + `template/layout_horizontal.py` |
 | Pasta | `videos/vid_NNNN_*` | `videos_longos/yt_NNNN_*` |
-| Duração | ~1–3 min | alvo 8–10 min; ~8–12 min quando a clareza exigir |
+| Duração | ~1–3 min | observada 12–27 min; sai da explicação, não o contrário |
 | Princípio | uma ideia forte → construção visual → payoff | compreensão profunda, Manim-first |
 
 Os valores do longo são **decisão de produção interna inicial**, não regra de plataforma.
@@ -67,14 +67,15 @@ limites de validade. Versão longa de “Por Trás da Fórmula / Da Equação ao
 
 ### Organização da biblioteca
 
-CURSO/EIXO → MACROASSUNTO → MÓDULO → VÍDEO AUTOSSUFICIENTE. Não estruturar como “Aula 1, Aula 2, Aula 3”;
-playlists ordenam depois. Cada vídeo funciona sozinho, pertence a um módulo e tem título baseado
+DISCIPLINA → BLOCO → MÓDULO → VÍDEO AUTOSSUFICIENTE. Não estruturar como “Aula 1, Aula 2, Aula 3”;
+playlists (uma por bloco) ordenam depois. Cada vídeo funciona sozinho, pertence a um módulo e tem título baseado
 na pergunta real, sem depender de numeração.
 
-Exemplos: Mecânica → Energia e potencial → “Como prever o movimento usando apenas o potencial?”;
-Física I → Mecânica → Lançamentos → “Por que o lançamento ótimo de uma altura não é a 45°?”.
+Exemplos: Física I → Energia → 4.8 Energia potencial e conservação de energia → “Como prever o movimento usando
+apenas o potencial?”; Eletromagnetismo → Eletrodinâmica → EM 7.2 Indução eletromagnética → “Como um campo magnético
+cria um campo elétrico?”.
 
-Onde cada conteúdo se encaixa (curso/eixo → macroassunto → módulo) está em `docs/mapa_curricular.md`.
+Onde cada conteúdo se encaixa (disciplina → bloco → módulo, com IDs estáveis) está em `docs/mapa_curricular.md`.
 Este documento define **como** o vídeo longo é produzido; o mapa define **onde** ele entra na biblioteca.
 A publicação pode ocorrer fora da ordem curricular.
 
@@ -133,12 +134,14 @@ horizontal, não fundo obrigatório da aula; o cosmos continua atmosfera sutil.
 
 ## Ficha padrão (Markdown, sem automação)
 
-**Curto:** id · série · `formato: curto_vertical` · assunto · pergunta central · solução verificada ·
+**Curto:** id · série · `formato: curto_vertical` · `disciplina:` · `modulo:` (ID do mapa, ex.: `6.2 Campo elétrico`) ·
+assunto · pergunta central · solução verificada ·
 payoff · duração alvo · storyboard · QA · `solido_3d:` (opcional, ver abaixo).
 
 **Longo:** id · `formato: longo_horizontal` · `natureza:` (`teoria_visual` | `exercicio_resolvido` |
-`derivacao_aplicada`) · `macroassunto:` (calculo, mecanica, eletromagnetismo, termodinamica,
-ondas_optica, outro) · `modulo:` (texto curto, ex.: energia_e_potencial) · título de trabalho ·
+`derivacao_aplicada`) · `disciplina:` (linha da grade, ex.: Eletromagnetismo) · `bloco:` (ex.: Eletrodinâmica) ·
+`modulo:` (ID e nome do mapa, ex.: `EM 7.2 Indução eletromagnética`) · `referencia:` (livro e seções, ex.: Griffiths
+7.2.1–7.2.2) · título de trabalho ·
 `pergunta_central:` · `pre_requisitos:` · solução/teoria verificada · arquitetura didática ·
 `payoff_principal:` · aplicações/exemplos · `duracao_alvo:` · storyboard · QA · `solido_3d:` (opcional,
 ver abaixo) · possíveis derivados curtos (opcional).

@@ -36,7 +36,8 @@ ordens funcionam, mas a padrão é com o hook primeiro.
 
 - **Tag do canto superior esquerdo**, presente o vídeo todo: `MÓDULO/SÉRIE · TÍTULO DO VÍDEO` (ex.: `ELETROMAGNETISMO · FEM DE MOVIMENTO
   E REGRA DO FLUXO MAGNÉTICO`), `to_corner(UL, buff≈0.32)`, corpo 24, opacidade 0,78 na abertura. Depois do título, ela encolhe (×0,84)
-  e baixa para opacidade ~0,58 para não competir com o conteúdo.
+  e baixa para opacidade ~0,58 para não competir com o conteúdo. O primeiro termo é a área do vídeo no `docs/mapa_curricular.md`
+  (ELETROMAGNETISMO, MECÂNICA...), não o ID do módulo.
 - **Watermark** no canto superior direito: `WATERMARK_PATH`, largura ~1,9, opacidade 0,45.
 - **Manchete** (`H(...)`): uma linha no topo (y ≈ 3,4), corpo 30, opacidade 0,9, largura máx. 11,5. Nomeia a etapa
   ("SEGUNDA LEI DE NEWTON", "PUXE A BARRA: O RESISTOR ESQUENTA"). Troca por `FadeOut` + `FadeIn`; nunca duas manchetes juntas.
@@ -140,9 +141,11 @@ Geração, voz, modelo e regras gerais das tags: `docs/roteiro_voz_elevenlabs_v4
 
 ## 6. Ficha, sincronia e entrega
 
-- Ficha (`ficha.md`): título acadêmico (vai na tag do canto) e pergunta narrativa interna; pergunta central; pré-requisitos; payoff;
+- Ficha (`ficha.md`): endereço no mapa (`disciplina:`, `bloco:`, `modulo:` com o ID, `referencia:`, ex.: Eletromagnetismo · Eletrodinâmica ·
+  EM 7.2 · Griffiths 7.2.1–7.2.2); título acadêmico (vai na tag do canto) e pergunta narrativa interna; pergunta central; pré-requisitos; payoff;
   aparato; **física congelada** (convenções de eixo, sinais, fórmulas); **hipóteses do modelo**; storyboard em blocos N01–NNN; convenção
   de cores da cena; checklist de QA físico. Campos obrigatórios em `docs/formatos.md`.
 - Sincronia: âncoras de evento visual por frase (`an(n, k)`, a imagem começa ~0,15 s antes da frase), sem ASR; a voz é a régua.
-- Entrega: master 1080p30, CRF 14, `.srt` separado, `capitulos_youtube.txt`, via `videos/entregar.py` (`docs/entregas.md`).
+- Entrega: master 1080p30, CRF 14, `.srt` separado, `capitulos_youtube.txt`, via `videos/entregar.py` (`docs/entregas.md`). A pasta em
+  `entregas/Vídeos Longos/` segue `<Área> - <Bloco> - <Assunto>`, com área e bloco do mapa.
 - Duração observada: 12–27 min. A duração sai da explicação, não o contrário.
