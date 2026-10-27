@@ -1,0 +1,166 @@
+﻿segundo_inicio;segundo_fim;frame_nominal_inicio;frame_nominal_fim_exclusivo;blocos_narracao;eventos_cena
+0;1;0;15;01: Gancho;L241 self.play(FadeIn(self.title),FadeIn(opening_vessel),FadeIn(opening_state),run_time=0.8) | L242 self.wait(2.2)
+1;2;15;30;01: Gancho;L242 self.wait(2.2)
+2;3;30;45;01: Gancho;L242 self.wait(2.2)
+3;4;45;60;02: Promessa;"L243 self.play(FadeOut(opening_vessel),FadeOut(opening_state),run_time=0.4) | L244 self.heading(""Um ciclo, três processos"", ""Gás ideal monoatômico"")"
+4;5;60;75;02: Promessa;"L244 self.heading(""Um ciclo, três processos"", ""Gás ideal monoatômico"") | L246 self.play(Create(self.axes), FadeIn(self.grid[1:]), run_time=1.2)"
+5;6;75;90;02: Promessa;L246 self.play(Create(self.axes), FadeIn(self.grid[1:]), run_time=1.2) | L271 self.play(FadeIn(physical), FadeIn(self.dots[0]), Write(self.labels[0]), FadeIn(self.marker), run_time=0.7)
+6;7;90;105;02: Promessa;L271 self.play(FadeIn(physical), FadeIn(self.dots[0]), Write(self.labels[0]), FadeIn(self.marker), run_time=0.7) | L273 self.play(Write(caption), run_time=0.6) | L274 self.wait(0.8)
+7;8;105;120;02: Promessa | 03: Apresentação da expansão;"L274 self.wait(0.8) | L276 self.play(FadeOut(caption), FadeIn(next_caption), run_time=0.4) | L277 self.state_trend(intro_state,""AB"")"
+8;9;120;135;03: Apresentação da expansão;"L277 self.state_trend(intro_state,""AB"") | L278 self.play(Create(self.ab), self.marker.animate.move_to(self.b), volume.animate.set_value(4),                   temperature.animate.set_value(4), run_time=3"
+9;10;135;150;03: Apresentação da expansão;L278 self.play(Create(self.ab), self.marker.animate.move_to(self.b), volume.animate.set_value(4),                   temperature.animate.set_value(4), run_time=3
+10;11;150;165;03: Apresentação da expansão;L278 self.play(Create(self.ab), self.marker.animate.move_to(self.b), volume.animate.set_value(4),                   temperature.animate.set_value(4), run_time=3
+11;12;165;180;03: Apresentação da expansão;L278 self.play(Create(self.ab), self.marker.animate.move_to(self.b), volume.animate.set_value(4),                   temperature.animate.set_value(4), run_time=3 | L280 self.play(FadeIn(self.dots[1]), Write(self.labels[1]), FadeIn(self.arrows[0]), run_time=0.5) | L282 self.play(FadeIn(state_b), run_time=0.4)
+12;13;180;195;03: Apresentação da expansão;L282 self.play(FadeIn(state_b), run_time=0.4) | L283 self.wait(0.8)
+13;14;195;210;03: Apresentação da expansão | 04: Apresentação do volume fixo;"L283 self.wait(0.8) | L285 self.play(FadeOut(next_caption), FadeOut(state_b), FadeIn(caption_c), run_time=0.4) | L286 self.state_trend(intro_state,""BC"") | L287 self.play(Create(self.bc),self.marker.animate.move_to(self.c),pressure.animate.set_value(4),temperature.animate.set_value(16),                   run_time=2"
+14;15;210;225;04: Apresentação do volume fixo;L287 self.play(Create(self.bc),self.marker.animate.move_to(self.c),pressure.animate.set_value(4),temperature.animate.set_value(16),                   run_time=2
+15;16;225;240;04: Apresentação do volume fixo;L287 self.play(Create(self.bc),self.marker.animate.move_to(self.c),pressure.animate.set_value(4),temperature.animate.set_value(16),                   run_time=2
+16;17;240;255;04: Apresentação do volume fixo;L287 self.play(Create(self.bc),self.marker.animate.move_to(self.c),pressure.animate.set_value(4),temperature.animate.set_value(16),                   run_time=2 | L289 self.play(FadeIn(self.dots[2]), Write(self.labels[2]), FadeIn(self.arrows[1]), run_time=0.5)
+17;18;255;270;04: Apresentação do volume fixo;L289 self.play(FadeIn(self.dots[2]), Write(self.labels[2]), FadeIn(self.arrows[1]), run_time=0.5) | L291 self.play(FadeIn(state_c), run_time=0.4) | L292 self.wait(0.8)
+18;19;270;285;04: Apresentação do volume fixo | 05: Apresentação do retorno;"L292 self.wait(0.8) | L294 self.play(FadeOut(caption_c), FadeOut(state_c), FadeIn(caption_a), run_time=0.4) | L295 self.state_trend(intro_state,""CA"")"
+19;20;285;300;05: Apresentação do retorno;"L295 self.state_trend(intro_state,""CA"") | L299 self.play(Create(self.ca), self.marker.animate.move_to(self.a), volume.animate.set_value(1),                   run_time=2.8, rate_func=linear)"
+20;21;300;315;05: Apresentação do retorno;L299 self.play(Create(self.ca), self.marker.animate.move_to(self.a), volume.animate.set_value(1),                   run_time=2.8, rate_func=linear)
+21;22;315;330;05: Apresentação do retorno;L299 self.play(Create(self.ca), self.marker.animate.move_to(self.a), volume.animate.set_value(1),                   run_time=2.8, rate_func=linear)
+22;23;330;345;05: Apresentação do retorno;L299 self.play(Create(self.ca), self.marker.animate.move_to(self.a), volume.animate.set_value(1),                   run_time=2.8, rate_func=linear) | L303 self.play(FadeIn(self.arrows[2]), run_time=0.3) | L304 self.finish_block(25)
+23;24;345;360;05: Apresentação do retorno;L304 self.finish_block(25)
+24;25;360;375;05: Apresentação do retorno;L304 self.finish_block(25)
+25;26;375;390;06: Energia interna;"L310 self.play(FadeOut(physical), FadeOut(caption_a),                   graph_all.animate.scale(0.76).move_to([-1.25,2.7,0]),FadeIn(compact),run_time=0.6) | L313 self.heading(""As ferramentas"", ""Para este gás ideal monoatômico"")"
+26;27;390;405;06: Energia interna;"L313 self.heading(""As ferramentas"", ""Para este gás ideal monoatômico"") | L316 self.play(Write(u), run_time=0.8)"
+27;28;405;420;06: Energia interna;L316 self.play(Write(u), run_time=0.8) | L317 self.play(Write(ideal), run_time=0.7) | L318 self.wait(1.0)
+28;29;420;435;06: Energia interna;"L318 self.wait(1.0) | L319 self.equation_change(u, r""U=\frac{3}{2}PV"", size=46)"
+29;30;435;450;06: Energia interna;"L319 self.equation_change(u, r""U=\frac{3}{2}PV"", size=46)"
+30;31;450;465;06: Energia interna | 07: Primeira lei;"L319 self.equation_change(u, r""U=\frac{3}{2}PV"", size=46) | L320 self.play(FadeOut(ideal), run_time=0.4) | L322 self.play(Write(law), run_time=1.0)"
+31;32;465;480;07: Primeira lei;L322 self.play(Write(law), run_time=1.0) | L324 self.play(FadeIn(sign), run_time=0.5)
+32;33;480;495;07: Primeira lei;L324 self.play(FadeIn(sign), run_time=0.5) | L326 self.play(Write(work), run_time=1.0)
+33;34;495;510;07: Primeira lei;L326 self.play(Write(work), run_time=1.0) | L327 self.finish_block(40)
+34;35;510;525;07: Primeira lei;L327 self.finish_block(40)
+35;36;525;540;07: Primeira lei | 08: Trabalho no gráfico;L327 self.finish_block(40)
+36;37;540;555;08: Trabalho no gráfico;L327 self.finish_block(40)
+37;38;555;570;08: Trabalho no gráfico;L327 self.finish_block(40)
+38;39;570;585;08: Trabalho no gráfico;L327 self.finish_block(40)
+39;40;585;600;08: Trabalho no gráfico;L327 self.finish_block(40)
+40;41;600;615;09: Trabalho na expansão;"L330 self.play(FadeOut(VGroup(u, law, sign, work)),                   run_time=0.6) | L334 self.heading(""A → B: expansão isobárica"", ""O gás se expande e realiza trabalho"")"
+41;42;615;630;09: Trabalho na expansão;"L334 self.heading(""A → B: expansão isobárica"", ""O gás se expande e realiza trabalho"") | L335 self.play(FadeIn(work_physical),run_time=0.6) | L336 self.focus(self.ab, self.a)"
+42;43;630;645;09: Trabalho na expansão;"L336 self.focus(self.ab, self.a) | L337 self.state_trend(self.compact_state,""AB"")"
+43;44;645;660;09: Trabalho na expansão;"L337 self.state_trend(self.compact_state,""AB"") | L339 self.play(Write(integral), run_time=0.8) | L342 self.play(GrowFromEdge(area_ab, LEFT), self.marker.animate.move_to(self.b),                   volume.animate.set_value(4),temperature.animate.set_value(4),"
+44;45;660;675;09: Trabalho na expansão;L342 self.play(GrowFromEdge(area_ab, LEFT), self.marker.animate.move_to(self.b),                   volume.animate.set_value(4),temperature.animate.set_value(4),
+45;46;675;690;09: Trabalho na expansão;L342 self.play(GrowFromEdge(area_ab, LEFT), self.marker.animate.move_to(self.b),                   volume.animate.set_value(4),temperature.animate.set_value(4),
+46;47;690;705;09: Trabalho na expansão | 10: Resultado do trabalho;L342 self.play(GrowFromEdge(area_ab, LEFT), self.marker.animate.move_to(self.b),                   volume.animate.set_value(4),temperature.animate.set_value(4), | L346 self.play(Write(w_ab), run_time=1.2)
+47;48;705;720;10: Resultado do trabalho;L346 self.play(Write(w_ab), run_time=1.2) | L347 self.wait(1.5)
+48;49;720;735;10: Resultado do trabalho;L347 self.wait(1.5)
+49;50;735;750;10: Resultado do trabalho;"L347 self.wait(1.5) | L348 self.equation_change(w_ab, r""W_{AB}=3P_0V_0"", color=CYAN)"
+50;51;750;765;10: Resultado do trabalho;"L348 self.equation_change(w_ab, r""W_{AB}=3P_0V_0"", color=CYAN) | L349 self.play(area_ab.animate.set_fill(opacity=0.42),rate_func=there_and_back,run_time=0.7)"
+51;52;765;780;10: Resultado do trabalho;L349 self.play(area_ab.animate.set_fill(opacity=0.42),rate_func=there_and_back,run_time=0.7) | L350 self.wait(1.3)
+52;53;780;795;10: Resultado do trabalho | 11: Variação da energia interna;L350 self.wait(1.3) | L351 self.play(FadeOut(integral), w_ab.animate.move_to([0,-1.05,0]), run_time=0.7)
+53;54;795;810;11: Variação da energia interna;L351 self.play(FadeOut(integral), w_ab.animate.move_to([0,-1.05,0]), run_time=0.7) | L354 self.play(Indicate(self.dots[0],color=VIOLET), Indicate(self.dots[1],color=VIOLET),                   Indicate(self.thermal,color=VIOLET),FadeIn(du_badge),
+54;55;810;825;11: Variação da energia interna;L354 self.play(Indicate(self.dots[0],color=VIOLET), Indicate(self.dots[1],color=VIOLET),                   Indicate(self.thermal,color=VIOLET),FadeIn(du_badge), | L356 self.wait(2.0)
+55;56;825;840;11: Variação da energia interna;L356 self.wait(2.0)
+56;57;840;855;11: Variação da energia interna;"L356 self.wait(2.0) | L357 self.equation_change(du_ab, r""\Delta U_{AB}=\frac32(4-1)P_0V_0"", size=40)"
+57;58;855;870;11: Variação da energia interna;"L357 self.equation_change(du_ab, r""\Delta U_{AB}=\frac32(4-1)P_0V_0"", size=40) | L358 self.wait(1.4)"
+58;59;870;885;11: Variação da energia interna;L358 self.wait(1.4)
+59;60;885;900;11: Variação da energia interna | 12: Sinal da energia interna;"L358 self.wait(1.4) | L359 self.equation_change(du_ab, r""\Delta U_{AB}=\frac92P_0V_0"")"
+60;61;900;915;12: Sinal da energia interna;"L359 self.equation_change(du_ab, r""\Delta U_{AB}=\frac92P_0V_0"") | L360 self.wait(2.0)"
+61;62;915;930;12: Sinal da energia interna;L360 self.wait(2.0)
+62;63;930;945;12: Sinal da energia interna | 13: Calor na expansão;L360 self.wait(2.0) | L363 self.play(Write(q_ab),GrowArrow(heat_in[0]),FadeIn(heat_in[1]),run_time=1.2)
+63;64;945;960;13: Calor na expansão;L363 self.play(Write(q_ab),GrowArrow(heat_in[0]),FadeIn(heat_in[1]),run_time=1.2) | L364 self.wait(1.4)
+64;65;960;975;13: Calor na expansão;L364 self.wait(1.4)
+65;66;975;990;13: Calor na expansão;"L364 self.wait(1.4) | L365 self.equation_change(q_ab, r""Q_{AB}=\frac{15}{2}P_0V_0>0"", color=CYAN)"
+66;67;990;1005;13: Calor na expansão;"L365 self.equation_change(q_ab, r""Q_{AB}=\frac{15}{2}P_0V_0>0"", color=CYAN) | L367 self.play(Indicate(heat_in[0],color=MAGENTA), FadeIn(heat_note), run_time=0.8)"
+67;68;1005;1020;13: Calor na expansão | 14: Resultado do calor na expansão;L367 self.play(Indicate(heat_in[0],color=MAGENTA), FadeIn(heat_note), run_time=0.8) | L368 self.finish_block(75)
+68;69;1020;1035;14: Resultado do calor na expansão;L368 self.finish_block(75)
+69;70;1035;1050;14: Resultado do calor na expansão;L368 self.finish_block(75)
+70;71;1050;1065;14: Resultado do calor na expansão;L368 self.finish_block(75)
+71;72;1065;1080;14: Resultado do calor na expansão;L368 self.finish_block(75)
+72;73;1080;1095;14: Resultado do calor na expansão;L368 self.finish_block(75)
+73;74;1095;1110;14: Resultado do calor na expansão;L368 self.finish_block(75)
+74;75;1110;1125;14: Resultado do calor na expansão;L368 self.finish_block(75)
+75;76;1125;1140;15: Trabalho com volume fixo;"L371 self.play(FadeOut(VGroup(w_ab,du_ab,q_ab,heat_in,heat_note,du_badge,work_physical,area_ab)),run_time=0.5) | L372 self.heading(""B → C: processo isocórico"", ""O volume permanece constante"")"
+76;77;1140;1155;15: Trabalho com volume fixo;"L372 self.heading(""B → C: processo isocórico"", ""O volume permanece constante"") | L373 self.focus(self.bc, self.b)"
+77;78;1155;1170;15: Trabalho com volume fixo;"L373 self.focus(self.bc, self.b) | L374 self.state_trend(self.compact_state,""BC"") | L377 self.play(Create(fixed),self.marker.animate.move_to(self.c),pressure.animate.set_value(4),temperature.animate.set_value(16),                   FadeIn(zero_"
+78;79;1170;1185;15: Trabalho com volume fixo;L377 self.play(Create(fixed),self.marker.animate.move_to(self.c),pressure.animate.set_value(4),temperature.animate.set_value(16),                   FadeIn(zero_
+79;80;1185;1200;15: Trabalho com volume fixo;L377 self.play(Create(fixed),self.marker.animate.move_to(self.c),pressure.animate.set_value(4),temperature.animate.set_value(16),                   FadeIn(zero_ | L380 self.play(Write(dv),Indicate(self.small_piston,color=CYAN,scale_factor=1),run_time=0.8)
+80;81;1200;1215;15: Trabalho com volume fixo;L380 self.play(Write(dv),Indicate(self.small_piston,color=CYAN,scale_factor=1),run_time=0.8) | L381 self.wait(1.0)
+81;82;1215;1230;15: Trabalho com volume fixo;"L381 self.wait(1.0) | L382 self.equation_change(dv, r""W_{BC}=\int P\,dV=0"", color=CYAN)"
+82;83;1230;1245;15: Trabalho com volume fixo;"L382 self.equation_change(dv, r""W_{BC}=\int P\,dV=0"", color=CYAN) | L384 self.play(TransformMatchingTex(zero_work,zero_status),run_time=0.5)"
+83;84;1245;1260;15: Trabalho com volume fixo;L384 self.play(TransformMatchingTex(zero_work,zero_status),run_time=0.5) | L385 self.wait(1.3)
+84;85;1260;1275;15: Trabalho com volume fixo | 16: Energia interna com volume fixo;L385 self.wait(1.3) | L388 self.play(Write(du_bc),Indicate(self.thermal,color=VIOLET),FadeIn(du_badge),run_time=1.3)
+85;86;1275;1290;16: Energia interna com volume fixo;L388 self.play(Write(du_bc),Indicate(self.thermal,color=VIOLET),FadeIn(du_badge),run_time=1.3)
+86;87;1290;1305;16: Energia interna com volume fixo;L388 self.play(Write(du_bc),Indicate(self.thermal,color=VIOLET),FadeIn(du_badge),run_time=1.3) | L389 self.wait(2.0)
+87;88;1305;1320;16: Energia interna com volume fixo;L389 self.wait(2.0)
+88;89;1320;1335;16: Energia interna com volume fixo;"L389 self.wait(2.0) | L390 self.equation_change(du_bc, r""\Delta U_{BC}=18P_0V_0"")"
+89;90;1335;1350;16: Energia interna com volume fixo;"L390 self.equation_change(du_bc, r""\Delta U_{BC}=18P_0V_0"") | L391 self.wait(1.5)"
+90;91;1350;1365;16: Energia interna com volume fixo;L391 self.wait(1.5)
+91;92;1365;1380;17: Calor com volume fixo;L394 self.play(Write(q_bc),GrowArrow(heat_in[0]),FadeIn(heat_in[1]),run_time=1.0)
+92;93;1380;1395;17: Calor com volume fixo;L395 self.wait(1.0)
+93;94;1395;1410;17: Calor com volume fixo;"L396 self.equation_change(q_bc, r""Q_{BC}=18P_0V_0>0"", color=CYAN)"
+94;95;1410;1425;17: Calor com volume fixo;"L396 self.equation_change(q_bc, r""Q_{BC}=18P_0V_0>0"", color=CYAN) | L398 self.play(FadeIn(bc_note), run_time=0.5) | L399 self.finish_block(100)"
+95;96;1425;1440;17: Calor com volume fixo;L399 self.finish_block(100)
+96;97;1440;1455;17: Calor com volume fixo;L399 self.finish_block(100)
+97;98;1455;1470;17: Calor com volume fixo;L399 self.finish_block(100)
+98;99;1470;1485;17: Calor com volume fixo;L399 self.finish_block(100)
+99;100;1485;1500;17: Calor com volume fixo;L399 self.finish_block(100)
+100;101;1500;1515;18: Energia interna no retorno;"L402 self.play(FadeOut(VGroup(dv,du_bc,q_bc,bc_note,fixed,heat_in,du_badge,zero_status)),run_time=0.5) | L403 self.heading(""C → A: retorno linear"", ""Compressão  •  trabalho sobre o gás"")"
+101;102;1515;1530;18: Energia interna no retorno;"L403 self.heading(""C → A: retorno linear"", ""Compressão  •  trabalho sobre o gás"") | L404 self.focus(self.ca, self.c)"
+102;103;1530;1545;18: Energia interna no retorno;"L404 self.focus(self.ca, self.c) | L405 self.state_trend(self.compact_state,""CA"") | L409 self.play(self.marker.animate.move_to(self.a),volume.animate.set_value(1),FadeIn(work_physical),                   run_time=2.5,rate_func=linear)"
+103;104;1545;1560;18: Energia interna no retorno;L409 self.play(self.marker.animate.move_to(self.a),volume.animate.set_value(1),FadeIn(work_physical),                   run_time=2.5,rate_func=linear)
+104;105;1560;1575;18: Energia interna no retorno;L409 self.play(self.marker.animate.move_to(self.a),volume.animate.set_value(1),FadeIn(work_physical),                   run_time=2.5,rate_func=linear)
+105;106;1575;1590;18: Energia interna no retorno;L414 self.play(Write(pv), run_time=1.0)
+106;107;1590;1605;18: Energia interna no retorno;"L415 self.wait(0.7) | L416 self.equation_change(pv, r""PV\downarrow\quad\Rightarrow\quad\Delta U_{CA}<0"")"
+107;108;1605;1620;18: Energia interna no retorno;"L416 self.equation_change(pv, r""PV\downarrow\quad\Rightarrow\quad\Delta U_{CA}<0"")"
+108;109;1620;1635;18: Energia interna no retorno | 19: Trabalho e calor no retorno;"L416 self.equation_change(pv, r""PV\downarrow\quad\Rightarrow\quad\Delta U_{CA}<0"") | L418 self.play(FadeIn(du_badge),Indicate(self.thermal,color=VIOLET),run_time=0.5) | L420 self.play(Write(v), run_time=0.8)"
+109;110;1635;1650;19: Trabalho e calor no retorno;L420 self.play(Write(v), run_time=0.8) | L421 self.wait(0.7)
+110;111;1650;1665;19: Trabalho e calor no retorno;"L421 self.wait(0.7) | L422 self.equation_change(v, r""V\downarrow\quad\Rightarrow\quad W_{CA}<0"")"
+111;112;1665;1680;19: Trabalho e calor no retorno;"L422 self.equation_change(v, r""V\downarrow\quad\Rightarrow\quad W_{CA}<0"") | L424 self.play(Write(q_ca), run_time=0.9)"
+112;113;1680;1695;19: Trabalho e calor no retorno;L424 self.play(Write(q_ca), run_time=0.9) | L425 self.wait(0.8)
+113;114;1695;1710;19: Trabalho e calor no retorno;"L425 self.wait(0.8) | L426 self.equation_change(q_ca, r""Q_{CA}<0"", size=49)"
+114;115;1710;1725;19: Trabalho e calor no retorno;"L426 self.equation_change(q_ca, r""Q_{CA}<0"", size=49) | L429 self.play(FadeIn(out_note),GrowArrow(heat_out[0]),FadeIn(heat_out[1]),run_time=0.6)"
+115;116;1725;1740;19: Trabalho e calor no retorno | 20: Excluir o calor cedido;L429 self.play(FadeIn(out_note),GrowArrow(heat_out[0]),FadeIn(heat_out[1]),run_time=0.6) | L430 self.finish_block(120)
+116;117;1740;1755;20: Excluir o calor cedido;L430 self.finish_block(120)
+117;118;1755;1770;20: Excluir o calor cedido;L430 self.finish_block(120)
+118;119;1770;1785;20: Excluir o calor cedido;L430 self.finish_block(120)
+119;120;1785;1800;20: Excluir o calor cedido;L430 self.finish_block(120)
+120;121;1800;1815;21: Soma dos calores positivos;"L433 self.play(FadeOut(VGroup(pv,v,q_ca,out_note,heat_out,work_physical,du_badge)),                   FadeOut(compact),graph_all.animate.scale(0.8/0.76).move_to | L436 self.heading(""Calor total absorvido"", ""Somamos somente os trechos com Q > 0"")"
+121;122;1815;1830;21: Soma dos calores positivos;"L436 self.heading(""Calor total absorvido"", ""Somamos somente os trechos com Q > 0"") | L437 self.play(self.ab.animate.set_color(MAGENTA).set_opacity(1),                   self.bc.animate.set_color(MAGENTA).set_opacity(1),                   self.ca | L447 self.play(Write(positives), run_time=1.0)"
+122;123;1830;1845;21: Soma dos calores positivos;L447 self.play(Write(positives), run_time=1.0) | L449 self.play(Write(total), run_time=0.9)
+123;124;1845;1860;21: Soma dos calores positivos;L449 self.play(Write(total), run_time=0.9) | L450 self.wait(1.2)
+124;125;1860;1875;21: Soma dos calores positivos;L450 self.wait(1.2)
+125;126;1875;1890;21: Soma dos calores positivos;"L450 self.wait(1.2) | L451 self.equation_change(total, r""Q_{\mathrm{abs}}=\frac{15}{2}P_0V_0+18P_0V_0"", size=43)"
+126;127;1890;1905;21: Soma dos calores positivos;"L451 self.equation_change(total, r""Q_{\mathrm{abs}}=\frac{15}{2}P_0V_0+18P_0V_0"", size=43) | L452 self.wait(1.0)"
+127;128;1905;1920;21: Soma dos calores positivos | 22: Resposta ao exercício;"L452 self.wait(1.0) | L453 self.equation_change(total, r""Q_{\mathrm{abs}}=\frac{51}{2}P_0V_0"", y=-3.5, size=58)"
+128;129;1920;1935;22: Resposta ao exercício;"L453 self.equation_change(total, r""Q_{\mathrm{abs}}=\frac{51}{2}P_0V_0"", y=-3.5, size=58) | L455 self.play(Create(answer_box), FadeOut(positives), run_time=0.8)"
+129;130;1935;1950;22: Resposta ao exercício;L455 self.play(Create(answer_box), FadeOut(positives), run_time=0.8) | L456 self.finish_block(135)
+130;131;1950;1965;22: Resposta ao exercício;L456 self.finish_block(135)
+131;132;1965;1980;22: Resposta ao exercício;L456 self.finish_block(135)
+132;133;1980;1995;22: Resposta ao exercício;L456 self.finish_block(135)
+133;134;1995;2010;22: Resposta ao exercício;L456 self.finish_block(135)
+134;135;2010;2025;22: Resposta ao exercício;L456 self.finish_block(135)
+135;136;2025;2040;23: Área e trabalho líquido;"L459 self.play(FadeOut(VGroup(total,answer_box)),                   graph_all.animate.scale(1/0.8).move_to([-0.25,2.7,0]),run_time=0.6) | L462 self.heading(""Trabalho líquido do ciclo"", ""O módulo vem da área interna"")"
+136;137;2040;2055;23: Área e trabalho líquido;"L462 self.heading(""Trabalho líquido do ciclo"", ""O módulo vem da área interna"") | L465 self.play(*[path.animate.set_color(CYAN).set_opacity(1) for path in self.paths],                   self.arrows.animate.set_color(CYAN).set_opacity(1),     "
+137;138;2055;2070;23: Área e trabalho líquido;L465 self.play(*[path.animate.set_color(CYAN).set_opacity(1) for path in self.paths],                   self.arrows.animate.set_color(CYAN).set_opacity(1),      | L472 self.play(GrowFromCenter(base),GrowFromCenter(height),Write(base_text),Write(height_text),run_time=0.8) | L474 self.play(Write(area),run_time=1.0)
+138;139;2070;2085;23: Área e trabalho líquido;L474 self.play(Write(area),run_time=1.0) | L475 self.wait(1.0)
+139;140;2085;2100;23: Área e trabalho líquido;"L475 self.wait(1.0) | L476 self.equation_change(area,r""A_{\triangle}=\frac92P_0V_0"")"
+140;141;2100;2115;23: Área e trabalho líquido;"L476 self.equation_change(area,r""A_{\triangle}=\frac92P_0V_0"")"
+141;142;2115;2130;23: Área e trabalho líquido;"L476 self.equation_change(area,r""A_{\triangle}=\frac92P_0V_0"") | L477 self.wait(0.7)"
+142;143;2130;2145;24: Sentido e sinal;L481 self.play(MoveAlongPath(self.marker,trace),run_time=3.3,rate_func=linear)
+143;144;2145;2160;24: Sentido e sinal;L481 self.play(MoveAlongPath(self.marker,trace),run_time=3.3,rate_func=linear)
+144;145;2160;2175;24: Sentido e sinal;L481 self.play(MoveAlongPath(self.marker,trace),run_time=3.3,rate_func=linear)
+145;146;2175;2190;24: Sentido e sinal;L481 self.play(MoveAlongPath(self.marker,trace),run_time=3.3,rate_func=linear) | L483 self.play(FadeIn(sense),run_time=0.6) | L485 self.play(Write(net_w),run_time=1.0)
+146;147;2190;2205;24: Sentido e sinal;L485 self.play(Write(net_w),run_time=1.0) | L487 self.play(FadeIn(integral_note),run_time=0.5)
+147;148;2205;2220;24: Sentido e sinal;L487 self.play(FadeIn(integral_note),run_time=0.5) | L488 self.finish_block(153)
+148;149;2220;2235;24: Sentido e sinal;L488 self.finish_block(153)
+149;150;2235;2250;24: Sentido e sinal;L488 self.finish_block(153)
+150;151;2250;2265;24: Sentido e sinal;L488 self.finish_block(153)
+151;152;2265;2280;24: Sentido e sinal;L488 self.finish_block(153)
+152;153;2280;2295;24: Sentido e sinal;L488 self.finish_block(153)
+153;154;2295;2310;25: Fechamento conceitual;"L491 self.play(FadeOut(VGroup(area,sense,net_w,integral_note,base,height,base_text,height_text)),run_time=0.5) | L492 self.heading(""De volta ao estado A"", ""Estado final = estado inicial"")"
+154;155;2310;2325;25: Fechamento conceitual;"L492 self.heading(""De volta ao estado A"", ""Estado final = estado inicial"") | L493 self.play(Indicate(self.dots[0],color=CYAN),run_time=0.6) | L495 self.play(Write(zero_u),run_time=0.6)"
+155;156;2325;2340;25: Fechamento conceitual;L495 self.play(Write(zero_u),run_time=0.6) | L497 self.play(Write(net_q),run_time=0.6)
+156;157;2340;2355;25: Fechamento conceitual;"L497 self.play(Write(net_q),run_time=0.6) | L498 self.equation_change(net_q,r""Q_{\mathrm{l\acute iquido}}=W_{\mathrm{ciclo}}=-\frac92P_0V_0"",size=42,color=CYAN)"
+157;158;2355;2370;25: Fechamento conceitual;"L498 self.equation_change(net_q,r""Q_{\mathrm{l\acute iquido}}=W_{\mathrm{ciclo}}=-\frac92P_0V_0"",size=42,color=CYAN) | L500 self.play(FadeIn(closing),run_time=0.6)"
+158;159;2370;2385;25: Fechamento conceitual;L502 self.play(FadeIn(closing2),run_time=0.4) | L503 self.wait(3.0)
+159;160;2385;2400;25: Fechamento conceitual;L503 self.wait(3.0)
+160;161;2400;2415;25: Fechamento conceitual;L503 self.wait(3.0)
+161;162;2415;2430;25: Fechamento conceitual | 26: CTA;L503 self.wait(3.0) | L505 self.play(FadeOut(closing),FadeOut(closing2),run_time=0.5) | L507 self.play(FadeIn(handle),run_time=0.6)
+162;163;2430;2445;26: CTA;L507 self.play(FadeIn(handle),run_time=0.6) | L508 self.finish_block(165)
+163;164;2445;2460;26: CTA;L508 self.finish_block(165)
+164;165;2460;2475;26: CTA;L508 self.finish_block(165)

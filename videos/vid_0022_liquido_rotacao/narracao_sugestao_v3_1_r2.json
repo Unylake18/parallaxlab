@@ -1,0 +1,146 @@
+[
+  {
+    "inicio": 0,
+    "fim": 12,
+    "bloco": "Pergunta e estado estabilizado",
+    "texto": "Por que a superfície de um líquido girando vira uma parábola? Observamos de fora: depois de estabilizado, o líquido gira praticamente como um corpo rígido. Seus elementos têm a mesma velocidade angular."
+  },
+  {
+    "inicio": 12,
+    "fim": 24.8,
+    "bloco": "Corte e origem do elemento",
+    "texto": "Num corte pelo eixo, isolamos este elemento. Para fora é positivo. Medimos a distância ao eixo. Área da face vezes espessura dá o volume."
+  },
+  {
+    "inicio": 24.8,
+    "fim": 32,
+    "bloco": "Dimensões, massa e movimento",
+    "texto": "Massa é densidade vezes volume. Velocidade é velocidade angular vezes distância. Já a aceleração centrípeta aponta para o eixo."
+  },
+  {
+    "inicio": 32,
+    "fim": 38,
+    "bloco": "Pressões nas faces",
+    "texto": "A pressão age nas duas faces, mas a força de pressão na face externa é maior."
+  },
+  {
+    "inicio": 38,
+    "fim": 42,
+    "bloco": "Resultante e variação local",
+    "texto": "Cada força é pressão vezes área. Subtraímos a externa da interna."
+  },
+  {
+    "inicio": 42,
+    "fim": 49,
+    "bloco": "Taylor e cancelamento",
+    "texto": "Para um elemento muito pequeno, escrevemos essa diferença de pressão em termos do gradiente. As parcelas iguais se cancelam."
+  },
+  {
+    "inicio": 49,
+    "fim": 55,
+    "bloco": "Significado da derivada radial",
+    "texto": "O sinal negativo confirma: a resultante aponta para dentro, na direção da aceleração centrípeta."
+  },
+  {
+    "inicio": 55,
+    "fim": 61.8,
+    "bloco": "Newton e cancelamentos",
+    "texto": "Pela segunda lei de Newton, força é massa vezes aceleração. Cancelamos área, espessura e sinais negativos. A densidade permanece."
+  },
+  {
+    "inicio": 61.8,
+    "fim": 69,
+    "bloco": "Resultado radial",
+    "texto": "Restou densidade vezes velocidade angular ao quadrado, vezes distância. Na mesma altura, a pressão cresce para fora."
+  },
+  {
+    "inicio": 69,
+    "fim": 76,
+    "bloco": "Balanço vertical",
+    "texto": "Na vertical, a pressão inferior empurra para cima. A superior e o peso, para baixo. As forças se equilibram."
+  },
+  {
+    "inicio": 76,
+    "fim": 81,
+    "bloco": "Resultado hidrostático",
+    "texto": "Subindo, a pressão diminui: sua derivada é menos densidade vezes aceleração da gravidade."
+  },
+  {
+    "inicio": 81,
+    "fim": 87,
+    "bloco": "Superfície isobárica",
+    "texto": "Toda a superfície livre está à mesma pressão atmosférica."
+  },
+  {
+    "inicio": 87,
+    "fim": 94,
+    "bloco": "Meridiana e deslocamentos",
+    "texto": "Extraímos a seção. Pela curva, variam distância ao eixo e altura: os pequenos deslocamentos horizontal e vertical."
+  },
+  {
+    "inicio": 94,
+    "fim": 102,
+    "bloco": "Derivada total e regra da cadeia",
+    "texto": "A pressão pode variar ao avançarmos para fora e ao subirmos. Na superfície, ela continua constante: essas duas variações precisam se compensar."
+  },
+  {
+    "inicio": 102,
+    "fim": 107,
+    "bloco": "Substituição dos gradientes",
+    "texto": "Por isso, substituímos as duas taxas de variação e cancelamos a densidade."
+  },
+  {
+    "inicio": 107,
+    "fim": 119,
+    "bloco": "Ponto, projeção e tangente",
+    "texto": "Inclinação é velocidade angular ao quadrado, vezes distância, dividida pela aceleração da gravidade. É aumento de altura por avanço horizontal. Mais longe, a tangente fica mais inclinada."
+  },
+  {
+    "inicio": 119,
+    "fim": 125,
+    "bloco": "Diferencial e integração",
+    "texto": "Multiplicando pelo deslocamento horizontal, obtemos um aumento de altura. A integral soma esses aumentos."
+  },
+  {
+    "inicio": 125,
+    "fim": 132,
+    "bloco": "Limites e altura central",
+    "texto": "Tomamos a altura final no eixo como referência. Integrar a distância produz seu quadrado dividido por dois."
+  },
+  {
+    "inicio": 132,
+    "fim": 140,
+    "bloco": "Solução e espelhamento",
+    "texto": "Espelhando, completamos a seção. A altura central recebe um acréscimo proporcional à distância ao quadrado: uma parábola!"
+  },
+  {
+    "inicio": 140,
+    "fim": 149,
+    "bloco": "Síntese causal",
+    "texto": "Agora vemos a cadeia completa: a pressão cresce para fora; para continuar à pressão atmosférica, a superfície sobe. Mais longe do eixo, maior inclinação."
+  },
+  {
+    "inicio": 149,
+    "fim": 157,
+    "bloco": "Paraboloide e desnível",
+    "texto": "Essa parábola é uma seção do paraboloide. Usando o raio do recipiente, calculamos o desnível entre borda e centro."
+  },
+  {
+    "inicio": 157,
+    "fim": 161,
+    "bloco": "Razão matemática da forma",
+    "texto": "Inclinação proporcional à distância: acréscimo de altura proporcional ao quadrado."
+  },
+  {
+    "inicio": 161,
+    "fim": 164,
+    "bloco": "Mensagem central",
+    "texto": "A forma é consequência da dinâmica."
+  },
+  {
+    "inicio": 164,
+    "fim": 168,
+    "bloco": "Cartão final",
+    "texto": ""
+  }
+]

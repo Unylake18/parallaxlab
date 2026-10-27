@@ -33,3 +33,16 @@ Thumbs.db
 # Entregas finais organizadas por videos/entregar.py (cópias dos MP4/áudio; ficam fora do Git)
 entregas/*
 !entregas/.gitkeep
+
+# Mídia pesada fica só no PC (vídeo, áudio, zips de frames/capas, renders do Manim); o repositório guarda código e parâmetros
+*.mp4
+*.mov
+*.webm
+*.wav
+*.zip
+videos/*/media*/
+videos_longos/*/media*/
+
+# Frames 3D intermediários (Blender) e dependências Node ficam só no PC
+videos/*/frames3d_*/
+node_modules/

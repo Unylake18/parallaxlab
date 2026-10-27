@@ -1,0 +1,250 @@
+{
+  "duracao": 175.067,
+  "eventos": [
+    {
+      "t": 0.0,
+      "nome": "fenomeno"
+    },
+    {
+      "t": 16.0,
+      "nome": "extracao_3d"
+    },
+    {
+      "t": 17.5,
+      "nome": "elemento_dentro_da_agua"
+    },
+    {
+      "t": 22.4,
+      "nome": "elemento_ampliado"
+    },
+    {
+      "t": 52.367,
+      "nome": "gradiente_construido"
+    },
+    {
+      "t": 74.0,
+      "nome": "pressao_cresce"
+    },
+    {
+      "t": 83.467,
+      "nome": "vertical"
+    },
+    {
+      "t": 96.233,
+      "nome": "isobarica_3d"
+    },
+    {
+      "t": 98.3,
+      "nome": "meridiana_extraida_imovel"
+    },
+    {
+      "t": 102.767,
+      "nome": "regra_cadeia"
+    },
+    {
+      "t": 114.267,
+      "nome": "tangente_na_borda"
+    },
+    {
+      "t": 129.933,
+      "nome": "parabola_integrada"
+    },
+    {
+      "t": 136.2,
+      "nome": "secao_espelhada"
+    },
+    {
+      "t": 142.833,
+      "nome": "sintese_gradiente"
+    },
+    {
+      "t": 144.4,
+      "nome": "sintese_subida"
+    },
+    {
+      "t": 147.633,
+      "nome": "sintese_tangente"
+    },
+    {
+      "t": 149.733,
+      "nome": "sintese_parabola"
+    },
+    {
+      "t": 152.733,
+      "nome": "sintese_causal"
+    },
+    {
+      "t": 153.4,
+      "nome": "payoff_match"
+    },
+    {
+      "t": 160.1,
+      "nome": "delta_h"
+    },
+    {
+      "t": 165.333,
+      "nome": "conclusao_parabola"
+    },
+    {
+      "t": 167.2,
+      "nome": "conclusao_limpa"
+    },
+    {
+      "t": 169.533,
+      "nome": "branding"
+    }
+  ],
+  "mapas_mf_tools": [
+    {
+      "t": 49.567,
+      "de": "fontes combinadas",
+      "para": "F_r \\approx p(r)A - p(r) A - \\frac{\\partial p}{\\partial r} A dr",
+      "ligacoes": 10
+    },
+    {
+      "t": 52.367,
+      "de": "F_r \\approx p(r)A - p(r) A - \\frac{\\partial p}{\\partial r} A dr",
+      "para": "F_r \\approx - \\frac{\\partial p}{\\partial r} A dr",
+      "ligacoes": 6
+    },
+    {
+      "t": 67.833,
+      "de": "fontes combinadas",
+      "para": "- \\frac{\\partial p}{\\partial r} A dr = - \\rho A dr \\omega^2r",
+      "ligacoes": 10
+    },
+    {
+      "t": 71.033,
+      "de": "- \\frac{\\partial p}{\\partial r} A dr = - \\rho A dr \\omega^2r",
+      "para": "\\frac{\\partial p}{\\partial r} = \\rho \\omega^2r",
+      "ligacoes": 4
+    },
+    {
+      "t": 82.6,
+      "de": "p(z)A - p(z+dz)A - dm\\,g =0",
+      "para": "- \\frac{\\partial p}{\\partial z} A\\,dz - \\rho A\\,dz g =0",
+      "ligacoes": 5
+    },
+    {
+      "t": 83.467,
+      "de": "- \\frac{\\partial p}{\\partial z} A\\,dz - \\rho A\\,dz g =0",
+      "para": "\\frac{\\partial p}{\\partial z} = - \\rho g",
+      "ligacoes": 5
+    },
+    {
+      "t": 102.767,
+      "de": "0 = \\frac{d}{dr} p(r,z(r))",
+      "para": "0 = \\frac{\\partial p}{\\partial r} + \\frac{\\partial p}{\\partial z} \\frac{dz}{dr}",
+      "ligacoes": 5
+    },
+    {
+      "t": 106.933,
+      "de": "0 = \\frac{\\partial p}{\\partial r} + \\frac{\\partial p}{\\partial z} \\frac{dz}{dr}",
+      "para": "0 = \\rho \\omega^2r - \\rho g \\frac{dz}{dr}",
+      "ligacoes": 6
+    },
+    {
+      "t": 108.567,
+      "de": "0 = \\rho \\omega^2r - \\rho g \\frac{dz}{dr}",
+      "para": "\\frac{dz}{dr} = \\frac{\\omega^2}{g} r",
+      "ligacoes": 4
+    },
+    {
+      "t": 118.867,
+      "de": "\\frac{dz}{dr} = \\frac{\\omega^2}{g} r",
+      "para": "dz = \\frac{\\omega^2}{g} r dr",
+      "ligacoes": 5
+    },
+    {
+      "t": 120.7,
+      "de": "dz = \\frac{\\omega^2}{g} r dr",
+      "para": "\\int_{z_0}^{z(r)} dz = \\frac{\\omega^2}{g} \\int_0^r s ds",
+      "ligacoes": 5
+    },
+    {
+      "t": 125.333,
+      "de": "\\int_{z_0}^{z(r)} dz = \\frac{\\omega^2}{g} \\int_0^r s ds",
+      "para": "z(r) = z_0 + \\frac{\\omega^2}{2g} r^2",
+      "ligacoes": 4
+    }
+  ],
+  "headlines": [
+    {
+      "t": 16.133,
+      "texto": "Veja o líquido em uma seção pelo eixo",
+      "x": 0.0,
+      "y": 5.65,
+      "largura": 7.0854
+    },
+    {
+      "t": 34.2,
+      "texto": "A pressão age nas duas faces",
+      "x": 0.0,
+      "y": 5.65,
+      "largura": 5.5785
+    },
+    {
+      "t": 36.333,
+      "texto": "A pressão é maior na face externa",
+      "x": 0.0,
+      "y": 5.65,
+      "largura": 6.4064
+    },
+    {
+      "t": 41.633,
+      "texto": "Essa diferença fornece a força centrípeta",
+      "x": 0.0,
+      "y": 5.65,
+      "largura": 7.4
+    },
+    {
+      "t": 64.333,
+      "texto": "A pressão fornece a força centrípeta",
+      "x": 0.0,
+      "y": 5.65,
+      "largura": 6.9564
+    },
+    {
+      "t": 75.733,
+      "texto": "Na vertical, a pressão precisa equilibrar o peso",
+      "x": 0.0,
+      "y": 5.65,
+      "largura": 7.4
+    },
+    {
+      "t": 93.333,
+      "texto": "Em toda a superfície: p = p_atm",
+      "x": 0.0,
+      "y": 5.65,
+      "largura": 5.4599
+    },
+    {
+      "t": 104.967,
+      "texto": "A inclinação cresce com r",
+      "x": 0.0,
+      "y": 5.65,
+      "largura": 4.7799
+    },
+    {
+      "t": 116.533,
+      "texto": "Integrar a inclinação revela a forma",
+      "x": 0.0,
+      "y": 5.65,
+      "largura": 6.6116
+    },
+    {
+      "t": 141.233,
+      "texto": "Da pressão à forma da superfície",
+      "x": 0.0,
+      "y": 5.65,
+      "largura": 6.1652
+    },
+    {
+      "t": 152.933,
+      "texto": "Esta parábola é uma seção da superfície 3D",
+      "x": 0.0,
+      "y": 5.65,
+      "largura": 7.4
+    }
+  ]
+}

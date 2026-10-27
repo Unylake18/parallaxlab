@@ -1,0 +1,1248 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 0.36666666666666664,
+    "types": [
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 1,
+    "start": 0.36666666666666664,
+    "end": 1.7666666666666688,
+    "types": [
+      "FadeIn",
+      "_AnimationBuilder"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 2,
+    "start": 1.7666666666666688,
+    "end": 1.9666666666666694,
+    "types": [
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 3,
+    "start": 1.9666666666666694,
+    "end": 5.033333333333325,
+    "types": [
+      "_AnimationBuilder"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 4,
+    "start": 5.033333333333325,
+    "end": 15.999999999999954,
+    "types": [
+      "_AnimationBuilder"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 5,
+    "start": 15.999999999999954,
+    "end": 16.133333333333294,
+    "types": [
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 6,
+    "start": 16.133333333333294,
+    "end": 16.199999999999964,
+    "types": [
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 7,
+    "start": 16.199999999999964,
+    "end": 16.43333333333331,
+    "types": [
+      "Create",
+      "Create",
+      "Create"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 8,
+    "start": 16.43333333333331,
+    "end": 16.56666666666665,
+    "types": [
+      "FadeIn",
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 9,
+    "start": 16.56666666666665,
+    "end": 16.76666666666666,
+    "types": [
+      "Indicate"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 10,
+    "start": 16.76666666666666,
+    "end": 16.999999999999993,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 11,
+    "start": 16.999999999999993,
+    "end": 17.366666666666678,
+    "types": [
+      "FadeOut",
+      "Transform",
+      "Transform",
+      "Transform",
+      "Transform",
+      "_AnimationBuilder"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 12,
+    "start": 17.366666666666678,
+    "end": 17.500000000000018,
+    "types": [
+      "Create",
+      "FadeIn",
+      "GrowArrow",
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 13,
+    "start": 17.500000000000018,
+    "end": 19.43333333333335,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 14,
+    "start": 19.43333333333335,
+    "end": 19.83333333333337,
+    "types": [
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 15,
+    "start": 19.83333333333337,
+    "end": 21.96666666666681,
+    "types": [
+      "Transform",
+      "Transform",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 16,
+    "start": 21.96666666666681,
+    "end": 22.400000000000166,
+    "types": [
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 17,
+    "start": 22.400000000000166,
+    "end": 22.800000000000185,
+    "types": [
+      "FadeIn",
+      "Create"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 18,
+    "start": 22.800000000000185,
+    "end": 23.933333333333575,
+    "types": [
+      "GrowArrow",
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 19,
+    "start": 23.933333333333575,
+    "end": 25.266666666666975,
+    "types": [
+      "GrowArrow",
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 20,
+    "start": 25.266666666666975,
+    "end": 27.133333333333734,
+    "types": [
+      "Write",
+      "Write",
+      "GrowArrow",
+      "FadeIn",
+      "Write"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 21,
+    "start": 27.133333333333734,
+    "end": 34.2000000000004,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 22,
+    "start": 34.2000000000004,
+    "end": 34.60000000000038,
+    "types": [
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 23,
+    "start": 34.60000000000038,
+    "end": 35.13333333333368,
+    "types": [
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 24,
+    "start": 35.13333333333368,
+    "end": 36.33333333333361,
+    "types": [
+      "GrowArrow",
+      "GrowArrow",
+      "FadeIn",
+      "FadeIn",
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 25,
+    "start": 36.33333333333361,
+    "end": 36.5333333333336,
+    "types": [
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 26,
+    "start": 36.5333333333336,
+    "end": 36.80000000000025,
+    "types": [
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 27,
+    "start": 36.80000000000025,
+    "end": 37.60000000000021,
+    "types": [
+      "FadeOut",
+      "Indicate"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 28,
+    "start": 37.60000000000021,
+    "end": 38.3333333333335,
+    "types": [
+      "Write"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 29,
+    "start": 38.3333333333335,
+    "end": 39.100000000000165,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 30,
+    "start": 39.100000000000165,
+    "end": 40.90000000000006,
+    "types": [
+      "Write",
+      "TransformFromCopy",
+      "TransformFromCopy"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 31,
+    "start": 40.90000000000006,
+    "end": 41.633333333333354,
+    "types": [
+      "FadeOut",
+      "_AnimationBuilder"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 32,
+    "start": 41.633333333333354,
+    "end": 42.133333333333326,
+    "types": [
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 33,
+    "start": 42.133333333333326,
+    "end": 42.833333333333286,
+    "types": [
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 34,
+    "start": 42.833333333333286,
+    "end": 45.833333333333115,
+    "types": [
+      "TransformFromCopy",
+      "Write"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 35,
+    "start": 45.833333333333115,
+    "end": 47.833333333333115,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 36,
+    "start": 47.833333333333115,
+    "end": 48.16666666666643,
+    "types": [
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 37,
+    "start": 48.16666666666643,
+    "end": 49.56666666666635,
+    "types": [
+      "TransformByGlyphMap"
+    ],
+    "hold_after": 11
+  },
+  {
+    "index": 38,
+    "start": 49.93333333333302,
+    "end": 50.599999999999646,
+    "types": [
+      "Create"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 39,
+    "start": 50.599999999999646,
+    "end": 51.13333333333298,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 40,
+    "start": 51.13333333333298,
+    "end": 52.36666666666624,
+    "types": [
+      "TransformByGlyphMap",
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 41,
+    "start": 52.36666666666624,
+    "end": 64.3333333333329,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 42,
+    "start": 64.3333333333329,
+    "end": 65.0666666666662,
+    "types": [
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 43,
+    "start": 65.0666666666662,
+    "end": 65.73333333333282,
+    "types": [
+      "GrowArrow",
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 44,
+    "start": 65.73333333333282,
+    "end": 66.43333333333278,
+    "types": [
+      "Write"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 45,
+    "start": 66.43333333333278,
+    "end": 67.8333333333327,
+    "types": [
+      "TransformByGlyphMap",
+      "FadeOut"
+    ],
+    "hold_after": 14
+  },
+  {
+    "index": 46,
+    "start": 68.29999999999937,
+    "end": 68.66666666666602,
+    "types": [
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 47,
+    "start": 68.66666666666602,
+    "end": 69.63333333333263,
+    "types": [
+      "Create"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 48,
+    "start": 69.63333333333263,
+    "end": 71.03333333333255,
+    "types": [
+      "TransformByGlyphMap",
+      "FadeOut"
+    ],
+    "hold_after": 22
+  },
+  {
+    "index": 49,
+    "start": 71.76666666666588,
+    "end": 73.99999999999909,
+    "types": [
+      "LaggedStart",
+      "GrowArrow",
+      "Write",
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 50,
+    "start": 73.99999999999909,
+    "end": 75.73333333333242,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 51,
+    "start": 75.73333333333242,
+    "end": 76.1333333333324,
+    "types": [
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 52,
+    "start": 76.1333333333324,
+    "end": 76.83333333333236,
+    "types": [
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 53,
+    "start": 76.83333333333236,
+    "end": 78.63333333333226,
+    "types": [
+      "Rotate",
+      "Rotate",
+      "Transform",
+      "Transform",
+      "Transform",
+      "Transform"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 54,
+    "start": 78.63333333333226,
+    "end": 80.06666666666551,
+    "types": [
+      "GrowArrow",
+      "FadeIn",
+      "GrowArrow",
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 55,
+    "start": 80.06666666666551,
+    "end": 81.76666666666542,
+    "types": [
+      "Write"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 56,
+    "start": 81.76666666666542,
+    "end": 82.5999999999987,
+    "types": [
+      "TransformByGlyphMap"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 57,
+    "start": 82.5999999999987,
+    "end": 83.46666666666532,
+    "types": [
+      "TransformByGlyphMap"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 58,
+    "start": 83.46666666666532,
+    "end": 93.33333333333198,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 59,
+    "start": 93.33333333333198,
+    "end": 93.69999999999862,
+    "types": [
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 60,
+    "start": 93.69999999999862,
+    "end": 93.86666666666528,
+    "types": [
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 61,
+    "start": 93.86666666666528,
+    "end": 94.1999999999986,
+    "types": [
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 62,
+    "start": 94.1999999999986,
+    "end": 94.66666666666524,
+    "types": [
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 63,
+    "start": 94.66666666666524,
+    "end": 95.43333333333186,
+    "types": [
+      "Create",
+      "FadeIn",
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 64,
+    "start": 95.43333333333186,
+    "end": 96.23333333333181,
+    "types": [
+      "ShowPassingFlash"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 65,
+    "start": 96.23333333333181,
+    "end": 96.99999999999848,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 66,
+    "start": 96.99999999999848,
+    "end": 98.2999999999984,
+    "types": [
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 67,
+    "start": 98.2999999999984,
+    "end": 98.73333333333174,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 68,
+    "start": 98.73333333333174,
+    "end": 99.83333333333168,
+    "types": [
+      "Transform",
+      "Create"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 69,
+    "start": 99.83333333333168,
+    "end": 99.99999999999834,
+    "types": [
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 70,
+    "start": 99.99999999999834,
+    "end": 100.166666666665,
+    "types": [
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 71,
+    "start": 100.166666666665,
+    "end": 101.43333333333159,
+    "types": [
+      "_AnimationBuilder"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 72,
+    "start": 101.43333333333159,
+    "end": 101.69999999999824,
+    "types": [
+      "Write"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 73,
+    "start": 101.69999999999824,
+    "end": 102.03333333333156,
+    "types": [
+      "Write"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 74,
+    "start": 102.03333333333156,
+    "end": 102.76666666666485,
+    "types": [
+      "TransformByGlyphMap",
+      "Indicate",
+      "Indicate"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 75,
+    "start": 102.76666666666485,
+    "end": 104.96666666666485,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 76,
+    "start": 104.96666666666485,
+    "end": 105.2333333333315,
+    "types": [
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 77,
+    "start": 105.2333333333315,
+    "end": 105.59999999999815,
+    "types": [
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 78,
+    "start": 105.59999999999815,
+    "end": 106.9333333333314,
+    "types": [
+      "TransformByGlyphMap"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 79,
+    "start": 106.9333333333314,
+    "end": 107.39999999999804,
+    "types": [
+      "Create"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 80,
+    "start": 107.39999999999804,
+    "end": 108.56666666666464,
+    "types": [
+      "TransformByGlyphMap",
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 81,
+    "start": 108.56666666666464,
+    "end": 114.26666666666432,
+    "types": [
+      "_AnimationBuilder",
+      "Indicate",
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 82,
+    "start": 114.26666666666432,
+    "end": 116.53333333333099,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 83,
+    "start": 116.53333333333099,
+    "end": 116.73333333333098,
+    "types": [
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 84,
+    "start": 116.73333333333098,
+    "end": 116.9666666666643,
+    "types": [
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 85,
+    "start": 116.9666666666643,
+    "end": 117.46666666666427,
+    "types": [
+      "FadeOut",
+      "FadeOut",
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 86,
+    "start": 117.46666666666427,
+    "end": 118.86666666666419,
+    "types": [
+      "TransformByGlyphMap",
+      "_AnimationBuilder"
+    ],
+    "hold_after": 13
+  },
+  {
+    "index": 87,
+    "start": 119.29999999999752,
+    "end": 120.69999999999744,
+    "types": [
+      "TransformByGlyphMap",
+      "_AnimationBuilder"
+    ],
+    "hold_after": 28
+  },
+  {
+    "index": 88,
+    "start": 121.63333333333078,
+    "end": 122.5999999999974,
+    "types": [
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 89,
+    "start": 122.5999999999974,
+    "end": 123.93333333333065,
+    "types": [
+      "Create",
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 90,
+    "start": 123.93333333333065,
+    "end": 125.33333333333057,
+    "types": [
+      "TransformByGlyphMap",
+      "_AnimationBuilder"
+    ],
+    "hold_after": 138
+  },
+  {
+    "index": 91,
+    "start": 129.93333333333058,
+    "end": 130.83333333333053,
+    "types": [
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 92,
+    "start": 130.83333333333053,
+    "end": 133.73333333333053,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 93,
+    "start": 133.73333333333053,
+    "end": 134.59999999999715,
+    "types": [
+      "Transform",
+      "FadeOut",
+      "FadeOut",
+      "_AnimationBuilder",
+      "_AnimationBuilder"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 94,
+    "start": 134.59999999999715,
+    "end": 135.63333333333043,
+    "types": [
+      "Create"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 95,
+    "start": 135.63333333333043,
+    "end": 136.19999999999706,
+    "types": [
+      "Write"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 96,
+    "start": 136.19999999999706,
+    "end": 141.2333333333304,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 97,
+    "start": 141.2333333333304,
+    "end": 141.63333333333037,
+    "types": [
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 98,
+    "start": 141.63333333333037,
+    "end": 142.06666666666368,
+    "types": [
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 99,
+    "start": 142.06666666666368,
+    "end": 142.8333333333303,
+    "types": [
+      "LaggedStart",
+      "Write"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 100,
+    "start": 142.8333333333303,
+    "end": 144.23333333333022,
+    "types": [
+      "ReplacementTransform",
+      "TransformMatchingTex"
+    ],
+    "hold_after": 5
+  },
+  {
+    "index": 101,
+    "start": 144.39999999999688,
+    "end": 145.33333333333016,
+    "types": [
+      "ReplacementTransform",
+      "TransformMatchingTex"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 102,
+    "start": 145.33333333333016,
+    "end": 147.63333333333003,
+    "types": [
+      "_AnimationBuilder"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 103,
+    "start": 147.63333333333003,
+    "end": 149.03333333332995,
+    "types": [
+      "TransformMatchingTex",
+      "FadeOut",
+      "Create"
+    ],
+    "hold_after": 21
+  },
+  {
+    "index": 104,
+    "start": 149.73333333332994,
+    "end": 152.26666666666327,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 105,
+    "start": 152.26666666666327,
+    "end": 152.7333333333299,
+    "types": [
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 106,
+    "start": 152.7333333333299,
+    "end": 152.9333333333299,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 107,
+    "start": 152.9333333333299,
+    "end": 153.1333333333299,
+    "types": [
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 108,
+    "start": 153.1333333333299,
+    "end": 153.39999999999654,
+    "types": [
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 109,
+    "start": 153.39999999999654,
+    "end": 154.49999999999648,
+    "types": [
+      "Transform",
+      "Create"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 110,
+    "start": 154.49999999999648,
+    "end": 157.99999999999628,
+    "types": [
+      "_AnimationBuilder",
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 111,
+    "start": 157.99999999999628,
+    "end": 158.46666666666292,
+    "types": [
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 112,
+    "start": 158.46666666666292,
+    "end": 160.09999999999616,
+    "types": [
+      "Create",
+      "Create",
+      "Write"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 113,
+    "start": 160.09999999999616,
+    "end": 163.19999999999615,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 114,
+    "start": 163.19999999999615,
+    "end": 163.79999999999612,
+    "types": [
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "_AnimationBuilder",
+      "Create"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 115,
+    "start": 163.79999999999612,
+    "end": 164.33333333332942,
+    "types": [
+      "Write"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 116,
+    "start": 164.33333333332942,
+    "end": 164.5999999999961,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 117,
+    "start": 164.5999999999961,
+    "end": 165.3333333333294,
+    "types": [
+      "TransformMatchingTex"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 118,
+    "start": 165.3333333333294,
+    "end": 166.39999999999606,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 119,
+    "start": 166.39999999999606,
+    "end": 166.99999999999602,
+    "types": [
+      "FadeOut",
+      "FadeOut",
+      "_AnimationBuilder"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 120,
+    "start": 166.99999999999602,
+    "end": 167.199999999996,
+    "types": [
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 121,
+    "start": 167.199999999996,
+    "end": 168.03333333332935,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 122,
+    "start": 168.03333333332935,
+    "end": 168.7333333333293,
+    "types": [
+      "FadeOut",
+      "FadeOut",
+      "FadeOut",
+      "FadeOut"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 123,
+    "start": 168.7333333333293,
+    "end": 169.53333333332927,
+    "types": [
+      "FadeIn",
+      "FadeIn"
+    ],
+    "hold_after": 0
+  },
+  {
+    "index": 124,
+    "start": 169.53333333332927,
+    "end": 175.0666666666626,
+    "types": [
+      "Wait"
+    ],
+    "hold_after": 0
+  }
+]

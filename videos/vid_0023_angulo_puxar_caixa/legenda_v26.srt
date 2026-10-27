@@ -1,0 +1,320 @@
+1
+00:00:00,050 --> 00:00:01,967
+Imagine que você precisa
+arrastar uma caixa pesada,
+
+2
+00:00:01,987 --> 00:00:02,730
+com uma corda.
+
+3
+00:00:02,880 --> 00:00:05,270
+Qual é o melhor
+ângulo para puxar?
+
+4
+00:00:05,340 --> 00:00:08,001
+A corda puxa a caixa com uma
+força, formando um ângulo
+
+5
+00:00:08,021 --> 00:00:11,540
+com o chão. Horizontal?
+Inclinado? Vamos descobrir.
+
+6
+00:00:11,560 --> 00:00:13,703
+Primeiro, vamos separar
+essa força em duas partes:
+
+7
+00:00:13,723 --> 00:00:15,888
+a horizontal, que puxa
+a caixa para a frente,
+
+8
+00:00:15,908 --> 00:00:18,180
+e a vertical, que puxa
+a caixa para cima.
+
+9
+00:00:18,220 --> 00:00:20,120
+Mudando o ângulo,
+muda a divisão.
+
+10
+00:00:20,140 --> 00:00:21,540
+Agora, olha a vertical.
+
+11
+00:00:21,570 --> 00:00:24,524
+O peso da caixa não muda, e
+ele é equilibrado pela normal,
+
+12
+00:00:24,544 --> 00:00:27,280
+que é o empurrão do chão,
+mais a parte vertical da força.
+
+13
+00:00:27,430 --> 00:00:30,380
+Ou seja: a normal é o peso
+menos a parte vertical.
+
+14
+00:00:30,430 --> 00:00:34,020
+Quanto mais inclinamos a
+corda, menor fica a normal.
+
+15
+00:00:34,070 --> 00:00:34,860
+E o atrito?
+
+16
+00:00:34,900 --> 00:00:36,369
+O atrito estático
+
+17
+00:00:36,389 --> 00:00:40,220
+máximo é o coeficiente
+de atrito vezes a normal.
+
+18
+00:00:40,240 --> 00:00:41,636
+Então, se a normal diminui,
+
+19
+00:00:41,656 --> 00:00:44,160
+o limite do atrito estático
+também diminui.
+
+20
+00:00:44,220 --> 00:00:45,143
+Mas precisamos considerar
+
+21
+00:00:45,163 --> 00:00:46,730
+também a parte
+horizontal da força.
+
+22
+00:00:46,750 --> 00:00:47,968
+No limiar de deslizamento,
+
+23
+00:00:47,988 --> 00:00:51,330
+a parte horizontal da força é
+igual ao atrito estático máximo.
+
+24
+00:00:51,380 --> 00:00:55,120
+É o momento em que a caixa
+está prestes a escorregar.
+
+25
+00:00:55,150 --> 00:00:56,072
+Então, trocamos o atrito
+
+26
+00:00:56,092 --> 00:00:58,080
+máximo pelo coeficiente
+de atrito vezes a normal.
+
+27
+00:00:58,130 --> 00:01:00,700
+Lembrando: a normal é o
+peso menos a parte vertical.
+
+28
+00:01:00,810 --> 00:01:03,350
+Agora, distribuímos o
+coeficiente nos dois termos.
+
+29
+00:01:03,390 --> 00:01:05,740
+Depois, passamos o termo
+que tem a força para o lado
+
+30
+00:01:05,760 --> 00:01:08,090
+esquerdo… e colocamos
+a força em evidência.
+
+31
+00:01:08,180 --> 00:01:10,846
+Por fim, dividimos pelo que
+ficou entre parênteses…
+
+32
+00:01:10,866 --> 00:01:13,760
+e chegamos à força
+necessária para cada ângulo.
+
+33
+00:01:13,810 --> 00:01:15,384
+Para enxergar isso,
+vamos ao gráfico:
+
+34
+00:01:15,404 --> 00:01:17,930
+o ângulo na horizontal, a
+força necessária na vertical.
+
+35
+00:01:18,050 --> 00:01:20,770
+Na horizontal, o ângulo é
+zero: cosseno um, seno zero.
+
+36
+00:01:20,790 --> 00:01:22,794
+Com vinte quilos e
+coeficiente zero vírgula cinco,
+
+37
+00:01:22,814 --> 00:01:24,140
+dá noventa e oito newtons.
+
+38
+00:01:24,170 --> 00:01:25,910
+Agora, aumentamos o ângulo.
+
+39
+00:01:25,960 --> 00:01:27,930
+No começo, a força
+necessária cai.
+
+40
+00:01:27,950 --> 00:01:30,094
+Ao inclinar a corda, acontecem
+duas coisas ao mesmo tempo:
+
+41
+00:01:30,114 --> 00:01:32,493
+a normal diminui, reduzindo
+o limite do atrito estático,
+
+42
+00:01:32,513 --> 00:01:34,860
+mas uma fração menor da força
+fica na direção horizontal.
+
+43
+00:01:34,880 --> 00:01:37,000
+O melhor ângulo equilibra
+esses dois efeitos.
+
+44
+00:01:37,220 --> 00:01:39,137
+Por isso, puxar cada
+vez mais para cima
+
+45
+00:01:39,157 --> 00:01:41,560
+não é sempre melhor:
+a força volta a subir.
+
+46
+00:01:41,580 --> 00:01:44,103
+Então existe um ponto
+mais baixo: o ângulo ideal,
+
+47
+00:01:44,123 --> 00:01:46,280
+de cerca de vinte e
+seis vírgula seis graus.
+
+48
+00:01:46,400 --> 00:01:48,567
+Para achar esse ponto,
+olhamos a fórmula:
+
+49
+00:01:48,587 --> 00:01:50,823
+o numerador permanece
+constante, porque massa,
+
+50
+00:01:50,843 --> 00:01:53,230
+gravidade e coeficiente
+de atrito não mudam.
+
+51
+00:01:53,260 --> 00:01:54,917
+Então, quanto maior
+o denominador,
+
+52
+00:01:54,937 --> 00:01:56,440
+menor a força necessária.
+
+53
+00:01:56,460 --> 00:01:58,542
+Por isso procuramos o
+máximo do denominador,
+
+54
+00:01:58,562 --> 00:02:00,300
+para encontrar o
+mínimo da força.
+
+55
+00:02:00,350 --> 00:02:02,830
+No máximo do denominador,
+sua derivada é zero.
+
+56
+00:02:02,880 --> 00:02:05,380
+Isso dá: seno igual a
+coeficiente vezes cosseno.
+
+57
+00:02:05,400 --> 00:02:07,860
+Dividindo por cosseno,
+aparece a tangente.
+
+58
+00:02:08,040 --> 00:02:11,000
+A tangente do ângulo ideal é
+igual ao coeficiente de atrito.
+
+59
+00:02:11,200 --> 00:02:12,921
+Com coeficiente
+zero vírgula cinco:
+
+60
+00:02:12,941 --> 00:02:14,550
+vinte e seis vírgula seis graus.
+
+61
+00:02:16,360 --> 00:02:18,920
+Puxando na horizontal:
+noventa e oito newtons.
+
+62
+00:02:19,030 --> 00:02:20,266
+No ângulo ideal: oitenta
+
+63
+00:02:20,286 --> 00:02:22,390
+e sete vírgula sessenta
+e cinco newtons.
+
+64
+00:02:22,530 --> 00:02:24,206
+Uma redução de
+cerca de dez vírgula
+
+65
+00:02:24,226 --> 00:02:26,480
+cinquenta e seis por
+cento na força necessária.
+
+66
+00:02:26,530 --> 00:02:29,620
+Inclinar a corda ajuda, mas
+só até esse ponto. Gostou?
+
+67
+00:02:29,730 --> 00:02:30,830
+Siga o Parallax Lab.

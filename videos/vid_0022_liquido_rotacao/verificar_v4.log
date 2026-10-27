@@ -1,0 +1,265 @@
+{
+  "videos": [
+    {
+      "file": "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0022_liquido_rotacao\\preview_v4_sincronizado.mp4",
+      "resolution": [
+        540,
+        960
+      ],
+      "fps": 30.0,
+      "video_seconds": 170.8,
+      "audio_seconds": 166.8,
+      "codec": "h264",
+      "pix_fmt": "yuv420p",
+      "audio_codec": "aac",
+      "audio_bitrate": 229399,
+      "bytes": 8266970,
+      "crf": 20.0,
+      "decoded_frames": 5124,
+      "decoded_audio_samples": 7356416
+    },
+    {
+      "file": "C:\\Users\\Pichau\\PycharmProjects\\manim-fisica\\videos\\vid_0022_liquido_rotacao\\preview_v4_legendado.mp4",
+      "resolution": [
+        540,
+        960
+      ],
+      "fps": 30.0,
+      "video_seconds": 170.8,
+      "audio_seconds": 166.8,
+      "codec": "h264",
+      "pix_fmt": "yuv420p",
+      "audio_codec": "aac",
+      "audio_bitrate": 229399,
+      "bytes": 8741969,
+      "crf": 20.0,
+      "decoded_frames": 5124,
+      "decoded_audio_samples": 7356416
+    }
+  ],
+  "words": 458,
+  "captions": 65,
+  "visual_samples": [
+    2.0,
+    3.0,
+    5.0,
+    8.0,
+    10.0,
+    12.0,
+    14.0,
+    16.0,
+    17.0,
+    18.0,
+    19.0,
+    20.0,
+    21.0,
+    22.0,
+    23.0,
+    24.0,
+    25.0,
+    26.0,
+    28.0,
+    29.0,
+    31.0,
+    33.0,
+    36.0,
+    40.0,
+    43.0,
+    48.0,
+    51.0,
+    55.0,
+    60.0,
+    66.0,
+    70.0,
+    74.0,
+    79.0,
+    84.0,
+    90.0,
+    95.0,
+    100.0,
+    105.0,
+    109.0,
+    114.0,
+    119.0,
+    124.0,
+    128.0,
+    131.0,
+    135.0,
+    139.0,
+    143.0,
+    148.0,
+    152.0,
+    156.0,
+    161.0,
+    163.0,
+    165.0,
+    166.0,
+    169.0
+  ],
+  "math_motions": [
+    {
+      "operation": 44,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "target_frame": 1446,
+      "frames": 42,
+      "mean_motion_difference": 0.6122548970229486,
+      "longest_near_static_run_frames": 0
+    },
+    {
+      "operation": 47,
+      "types": [
+        "TransformByGlyphMap",
+        "FadeOut"
+      ],
+      "target_frame": 1535,
+      "frames": 38,
+      "mean_motion_difference": 0.6387723155319691,
+      "longest_near_static_run_frames": 0
+    },
+    {
+      "operation": 53,
+      "types": [
+        "TransformByGlyphMap",
+        "FadeOut"
+      ],
+      "target_frame": 1995,
+      "frames": 42,
+      "mean_motion_difference": 1.0031286442981047,
+      "longest_near_static_run_frames": 0
+    },
+    {
+      "operation": 56,
+      "types": [
+        "TransformByGlyphMap",
+        "FadeOut"
+      ],
+      "target_frame": 2092,
+      "frames": 42,
+      "mean_motion_difference": 0.2896518997628899,
+      "longest_near_static_run_frames": 0
+    },
+    {
+      "operation": 67,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "target_frame": 2454,
+      "frames": 25,
+      "mean_motion_difference": 0.584983369883369,
+      "longest_near_static_run_frames": 0
+    },
+    {
+      "operation": 68,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "target_frame": 2479,
+      "frames": 28,
+      "mean_motion_difference": 0.3925297636538744,
+      "longest_near_static_run_frames": 0
+    },
+    {
+      "operation": 88,
+      "types": [
+        "TransformByGlyphMap",
+        "Indicate",
+        "Indicate"
+      ],
+      "target_frame": 3061,
+      "frames": 22,
+      "mean_motion_difference": 0.768115792955671,
+      "longest_near_static_run_frames": 0
+    },
+    {
+      "operation": 92,
+      "types": [
+        "TransformByGlyphMap"
+      ],
+      "target_frame": 3168,
+      "frames": 40,
+      "mean_motion_difference": 0.24565584573429078,
+      "longest_near_static_run_frames": 0
+    },
+    {
+      "operation": 94,
+      "types": [
+        "TransformByGlyphMap",
+        "FadeOut"
+      ],
+      "target_frame": 3222,
+      "frames": 35,
+      "mean_motion_difference": 0.5574753902576588,
+      "longest_near_static_run_frames": 0
+    },
+    {
+      "operation": 102,
+      "types": [
+        "TransformByGlyphMap",
+        "_AnimationBuilder"
+      ],
+      "target_frame": 3524,
+      "frames": 42,
+      "mean_motion_difference": 0.274737396660973,
+      "longest_near_static_run_frames": 0
+    },
+    {
+      "operation": 103,
+      "types": [
+        "TransformByGlyphMap",
+        "_AnimationBuilder"
+      ],
+      "target_frame": 3579,
+      "frames": 42,
+      "mean_motion_difference": 0.19912027217009487,
+      "longest_near_static_run_frames": 0
+    },
+    {
+      "operation": 106,
+      "types": [
+        "TransformByGlyphMap",
+        "_AnimationBuilder"
+      ],
+      "target_frame": 3718,
+      "frames": 42,
+      "mean_motion_difference": 0.40239626848522353,
+      "longest_near_static_run_frames": 0
+    },
+    {
+      "operation": 116,
+      "types": [
+        "ReplacementTransform",
+        "TransformMatchingTex"
+      ],
+      "target_frame": 4579,
+      "frames": 42,
+      "mean_motion_difference": 0.016464606786244344,
+      "longest_near_static_run_frames": 4
+    },
+    {
+      "operation": 117,
+      "types": [
+        "ReplacementTransform",
+        "TransformMatchingTex"
+      ],
+      "target_frame": 4626,
+      "frames": 28,
+      "mean_motion_difference": 0.025073164614150302,
+      "longest_near_static_run_frames": 1
+    },
+    {
+      "operation": 119,
+      "types": [
+        "TransformMatchingTex",
+        "FadeOut",
+        "Create"
+      ],
+      "target_frame": 4723,
+      "frames": 42,
+      "mean_motion_difference": 0.015968575004508774,
+      "longest_near_static_run_frames": 4
+    }
+  ],
+  "method": "Preview V4 a 30 fps nativos; abertura reconstru�da nos tempos de fala; elemento em �rbita; montagem sem retimagem."
+}

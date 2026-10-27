@@ -1,0 +1,799 @@
+{
+  "source": "Leitura das durações da cena, quantizadas a 15 fps; validar marcos no MP4.",
+  "fps": 15,
+  "duration": 164.99999999999991,
+  "events": [
+    {
+      "start": 0,
+      "end": 0.8,
+      "line": 241,
+      "action": "self.play(FadeIn(self.title),FadeIn(opening_vessel),FadeIn(opening_state),run_time=0.8)"
+    },
+    {
+      "start": 0.8,
+      "end": 3.0,
+      "line": 242,
+      "action": "self.wait(2.2)"
+    },
+    {
+      "start": 3.0,
+      "end": 3.4,
+      "line": 243,
+      "action": "self.play(FadeOut(opening_vessel),FadeOut(opening_state),run_time=0.4)"
+    },
+    {
+      "start": 3.4,
+      "end": 4.133,
+      "line": 244,
+      "action": "self.heading(\"Um ciclo, três processos\", \"Gás ideal monoatômico\")"
+    },
+    {
+      "start": 4.133,
+      "end": 5.333,
+      "line": 246,
+      "action": "self.play(Create(self.axes), FadeIn(self.grid[1:]), run_time=1.2)"
+    },
+    {
+      "start": 5.333,
+      "end": 6.067,
+      "line": 271,
+      "action": "self.play(FadeIn(physical), FadeIn(self.dots[0]), Write(self.labels[0]), FadeIn(self.marker), run_time=0.7)"
+    },
+    {
+      "start": 6.067,
+      "end": 6.667,
+      "line": 273,
+      "action": "self.play(Write(caption), run_time=0.6)"
+    },
+    {
+      "start": 6.667,
+      "end": 7.467,
+      "line": 274,
+      "action": "self.wait(0.8)"
+    },
+    {
+      "start": 7.467,
+      "end": 7.867,
+      "line": 276,
+      "action": "self.play(FadeOut(caption), FadeIn(next_caption), run_time=0.4)"
+    },
+    {
+      "start": 7.867,
+      "end": 8.267,
+      "line": 277,
+      "action": "self.state_trend(intro_state,\"AB\")"
+    },
+    {
+      "start": 8.267,
+      "end": 11.4,
+      "line": 278,
+      "action": "self.play(Create(self.ab), self.marker.animate.move_to(self.b), volume.animate.set_value(4),                   temperature.animate.set_value(4), run_time=3"
+    },
+    {
+      "start": 11.4,
+      "end": 11.933,
+      "line": 280,
+      "action": "self.play(FadeIn(self.dots[1]), Write(self.labels[1]), FadeIn(self.arrows[0]), run_time=0.5)"
+    },
+    {
+      "start": 11.933,
+      "end": 12.333,
+      "line": 282,
+      "action": "self.play(FadeIn(state_b), run_time=0.4)"
+    },
+    {
+      "start": 12.333,
+      "end": 13.133,
+      "line": 283,
+      "action": "self.wait(0.8)"
+    },
+    {
+      "start": 13.133,
+      "end": 13.533,
+      "line": 285,
+      "action": "self.play(FadeOut(next_caption), FadeOut(state_b), FadeIn(caption_c), run_time=0.4)"
+    },
+    {
+      "start": 13.533,
+      "end": 13.933,
+      "line": 286,
+      "action": "self.state_trend(intro_state,\"BC\")"
+    },
+    {
+      "start": 13.933,
+      "end": 16.733,
+      "line": 287,
+      "action": "self.play(Create(self.bc),self.marker.animate.move_to(self.c),pressure.animate.set_value(4),temperature.animate.set_value(16),                   run_time=2"
+    },
+    {
+      "start": 16.733,
+      "end": 17.267,
+      "line": 289,
+      "action": "self.play(FadeIn(self.dots[2]), Write(self.labels[2]), FadeIn(self.arrows[1]), run_time=0.5)"
+    },
+    {
+      "start": 17.267,
+      "end": 17.667,
+      "line": 291,
+      "action": "self.play(FadeIn(state_c), run_time=0.4)"
+    },
+    {
+      "start": 17.667,
+      "end": 18.467,
+      "line": 292,
+      "action": "self.wait(0.8)"
+    },
+    {
+      "start": 18.467,
+      "end": 18.867,
+      "line": 294,
+      "action": "self.play(FadeOut(caption_c), FadeOut(state_c), FadeIn(caption_a), run_time=0.4)"
+    },
+    {
+      "start": 18.867,
+      "end": 19.267,
+      "line": 295,
+      "action": "self.state_trend(intro_state,\"CA\")"
+    },
+    {
+      "start": 19.267,
+      "end": 22.067,
+      "line": 299,
+      "action": "self.play(Create(self.ca), self.marker.animate.move_to(self.a), volume.animate.set_value(1),                   run_time=2.8, rate_func=linear)"
+    },
+    {
+      "start": 22.067,
+      "end": 22.4,
+      "line": 303,
+      "action": "self.play(FadeIn(self.arrows[2]), run_time=0.3)"
+    },
+    {
+      "start": 22.4,
+      "end": 25.0,
+      "line": 304,
+      "action": "self.finish_block(25)"
+    },
+    {
+      "start": 25.0,
+      "end": 25.6,
+      "line": 310,
+      "action": "self.play(FadeOut(physical), FadeOut(caption_a),                   graph_all.animate.scale(0.76).move_to([-1.25,2.7,0]),FadeIn(compact),run_time=0.6)"
+    },
+    {
+      "start": 25.6,
+      "end": 26.333,
+      "line": 313,
+      "action": "self.heading(\"As ferramentas\", \"Para este gás ideal monoatômico\")"
+    },
+    {
+      "start": 26.333,
+      "end": 27.133,
+      "line": 316,
+      "action": "self.play(Write(u), run_time=0.8)"
+    },
+    {
+      "start": 27.133,
+      "end": 27.867,
+      "line": 317,
+      "action": "self.play(Write(ideal), run_time=0.7)"
+    },
+    {
+      "start": 27.867,
+      "end": 28.867,
+      "line": 318,
+      "action": "self.wait(1.0)"
+    },
+    {
+      "start": 28.867,
+      "end": 30.2,
+      "line": 319,
+      "action": "self.equation_change(u, r\"U=\\frac{3}{2}PV\", size=46)"
+    },
+    {
+      "start": 30.2,
+      "end": 30.6,
+      "line": 320,
+      "action": "self.play(FadeOut(ideal), run_time=0.4)"
+    },
+    {
+      "start": 30.6,
+      "end": 31.6,
+      "line": 322,
+      "action": "self.play(Write(law), run_time=1.0)"
+    },
+    {
+      "start": 31.6,
+      "end": 32.133,
+      "line": 324,
+      "action": "self.play(FadeIn(sign), run_time=0.5)"
+    },
+    {
+      "start": 32.133,
+      "end": 33.133,
+      "line": 326,
+      "action": "self.play(Write(work), run_time=1.0)"
+    },
+    {
+      "start": 33.133,
+      "end": 40.0,
+      "line": 327,
+      "action": "self.finish_block(40)"
+    },
+    {
+      "start": 40.0,
+      "end": 40.6,
+      "line": 330,
+      "action": "self.play(FadeOut(VGroup(u, law, sign, work)),                   run_time=0.6)"
+    },
+    {
+      "start": 40.6,
+      "end": 41.333,
+      "line": 334,
+      "action": "self.heading(\"A → B: expansão isobárica\", \"O gás se expande e realiza trabalho\")"
+    },
+    {
+      "start": 41.333,
+      "end": 41.933,
+      "line": 335,
+      "action": "self.play(FadeIn(work_physical),run_time=0.6)"
+    },
+    {
+      "start": 41.933,
+      "end": 42.733,
+      "line": 336,
+      "action": "self.focus(self.ab, self.a)"
+    },
+    {
+      "start": 42.733,
+      "end": 43.133,
+      "line": 337,
+      "action": "self.state_trend(self.compact_state,\"AB\")"
+    },
+    {
+      "start": 43.133,
+      "end": 43.933,
+      "line": 339,
+      "action": "self.play(Write(integral), run_time=0.8)"
+    },
+    {
+      "start": 43.933,
+      "end": 46.333,
+      "line": 342,
+      "action": "self.play(GrowFromEdge(area_ab, LEFT), self.marker.animate.move_to(self.b),                   volume.animate.set_value(4),temperature.animate.set_value(4),"
+    },
+    {
+      "start": 46.333,
+      "end": 47.533,
+      "line": 346,
+      "action": "self.play(Write(w_ab), run_time=1.2)"
+    },
+    {
+      "start": 47.533,
+      "end": 49.067,
+      "line": 347,
+      "action": "self.wait(1.5)"
+    },
+    {
+      "start": 49.067,
+      "end": 50.4,
+      "line": 348,
+      "action": "self.equation_change(w_ab, r\"W_{AB}=3P_0V_0\", color=CYAN)"
+    },
+    {
+      "start": 50.4,
+      "end": 51.133,
+      "line": 349,
+      "action": "self.play(area_ab.animate.set_fill(opacity=0.42),rate_func=there_and_back,run_time=0.7)"
+    },
+    {
+      "start": 51.133,
+      "end": 52.467,
+      "line": 350,
+      "action": "self.wait(1.3)"
+    },
+    {
+      "start": 52.467,
+      "end": 53.2,
+      "line": 351,
+      "action": "self.play(FadeOut(integral), w_ab.animate.move_to([0,-1.05,0]), run_time=0.7)"
+    },
+    {
+      "start": 53.2,
+      "end": 54.6,
+      "line": 354,
+      "action": "self.play(Indicate(self.dots[0],color=VIOLET), Indicate(self.dots[1],color=VIOLET),                   Indicate(self.thermal,color=VIOLET),FadeIn(du_badge),"
+    },
+    {
+      "start": 54.6,
+      "end": 56.6,
+      "line": 356,
+      "action": "self.wait(2.0)"
+    },
+    {
+      "start": 56.6,
+      "end": 57.933,
+      "line": 357,
+      "action": "self.equation_change(du_ab, r\"\\Delta U_{AB}=\\frac32(4-1)P_0V_0\", size=40)"
+    },
+    {
+      "start": 57.933,
+      "end": 59.333,
+      "line": 358,
+      "action": "self.wait(1.4)"
+    },
+    {
+      "start": 59.333,
+      "end": 60.667,
+      "line": 359,
+      "action": "self.equation_change(du_ab, r\"\\Delta U_{AB}=\\frac92P_0V_0\")"
+    },
+    {
+      "start": 60.667,
+      "end": 62.667,
+      "line": 360,
+      "action": "self.wait(2.0)"
+    },
+    {
+      "start": 62.667,
+      "end": 63.867,
+      "line": 363,
+      "action": "self.play(Write(q_ab),GrowArrow(heat_in[0]),FadeIn(heat_in[1]),run_time=1.2)"
+    },
+    {
+      "start": 63.867,
+      "end": 65.267,
+      "line": 364,
+      "action": "self.wait(1.4)"
+    },
+    {
+      "start": 65.267,
+      "end": 66.6,
+      "line": 365,
+      "action": "self.equation_change(q_ab, r\"Q_{AB}=\\frac{15}{2}P_0V_0>0\", color=CYAN)"
+    },
+    {
+      "start": 66.6,
+      "end": 67.4,
+      "line": 367,
+      "action": "self.play(Indicate(heat_in[0],color=MAGENTA), FadeIn(heat_note), run_time=0.8)"
+    },
+    {
+      "start": 67.4,
+      "end": 75.0,
+      "line": 368,
+      "action": "self.finish_block(75)"
+    },
+    {
+      "start": 75.0,
+      "end": 75.533,
+      "line": 371,
+      "action": "self.play(FadeOut(VGroup(w_ab,du_ab,q_ab,heat_in,heat_note,du_badge,work_physical,area_ab)),run_time=0.5)"
+    },
+    {
+      "start": 75.533,
+      "end": 76.267,
+      "line": 372,
+      "action": "self.heading(\"B → C: processo isocórico\", \"O volume permanece constante\")"
+    },
+    {
+      "start": 76.267,
+      "end": 77.067,
+      "line": 373,
+      "action": "self.focus(self.bc, self.b)"
+    },
+    {
+      "start": 77.067,
+      "end": 77.467,
+      "line": 374,
+      "action": "self.state_trend(self.compact_state,\"BC\")"
+    },
+    {
+      "start": 77.467,
+      "end": 79.8,
+      "line": 377,
+      "action": "self.play(Create(fixed),self.marker.animate.move_to(self.c),pressure.animate.set_value(4),temperature.animate.set_value(16),                   FadeIn(zero_"
+    },
+    {
+      "start": 79.8,
+      "end": 80.6,
+      "line": 380,
+      "action": "self.play(Write(dv),Indicate(self.small_piston,color=CYAN,scale_factor=1),run_time=0.8)"
+    },
+    {
+      "start": 80.6,
+      "end": 81.6,
+      "line": 381,
+      "action": "self.wait(1.0)"
+    },
+    {
+      "start": 81.6,
+      "end": 82.933,
+      "line": 382,
+      "action": "self.equation_change(dv, r\"W_{BC}=\\int P\\,dV=0\", color=CYAN)"
+    },
+    {
+      "start": 82.933,
+      "end": 83.467,
+      "line": 384,
+      "action": "self.play(TransformMatchingTex(zero_work,zero_status),run_time=0.5)"
+    },
+    {
+      "start": 83.467,
+      "end": 84.8,
+      "line": 385,
+      "action": "self.wait(1.3)"
+    },
+    {
+      "start": 84.8,
+      "end": 86.133,
+      "line": 388,
+      "action": "self.play(Write(du_bc),Indicate(self.thermal,color=VIOLET),FadeIn(du_badge),run_time=1.3)"
+    },
+    {
+      "start": 86.133,
+      "end": 88.133,
+      "line": 389,
+      "action": "self.wait(2.0)"
+    },
+    {
+      "start": 88.133,
+      "end": 89.467,
+      "line": 390,
+      "action": "self.equation_change(du_bc, r\"\\Delta U_{BC}=18P_0V_0\")"
+    },
+    {
+      "start": 89.467,
+      "end": 91.0,
+      "line": 391,
+      "action": "self.wait(1.5)"
+    },
+    {
+      "start": 91.0,
+      "end": 92.0,
+      "line": 394,
+      "action": "self.play(Write(q_bc),GrowArrow(heat_in[0]),FadeIn(heat_in[1]),run_time=1.0)"
+    },
+    {
+      "start": 92.0,
+      "end": 93.0,
+      "line": 395,
+      "action": "self.wait(1.0)"
+    },
+    {
+      "start": 93.0,
+      "end": 94.333,
+      "line": 396,
+      "action": "self.equation_change(q_bc, r\"Q_{BC}=18P_0V_0>0\", color=CYAN)"
+    },
+    {
+      "start": 94.333,
+      "end": 94.867,
+      "line": 398,
+      "action": "self.play(FadeIn(bc_note), run_time=0.5)"
+    },
+    {
+      "start": 94.867,
+      "end": 100.0,
+      "line": 399,
+      "action": "self.finish_block(100)"
+    },
+    {
+      "start": 100.0,
+      "end": 100.533,
+      "line": 402,
+      "action": "self.play(FadeOut(VGroup(dv,du_bc,q_bc,bc_note,fixed,heat_in,du_badge,zero_status)),run_time=0.5)"
+    },
+    {
+      "start": 100.533,
+      "end": 101.267,
+      "line": 403,
+      "action": "self.heading(\"C → A: retorno linear\", \"Compressão  •  trabalho sobre o gás\")"
+    },
+    {
+      "start": 101.267,
+      "end": 102.067,
+      "line": 404,
+      "action": "self.focus(self.ca, self.c)"
+    },
+    {
+      "start": 102.067,
+      "end": 102.467,
+      "line": 405,
+      "action": "self.state_trend(self.compact_state,\"CA\")"
+    },
+    {
+      "start": 102.467,
+      "end": 105.0,
+      "line": 409,
+      "action": "self.play(self.marker.animate.move_to(self.a),volume.animate.set_value(1),FadeIn(work_physical),                   run_time=2.5,rate_func=linear)"
+    },
+    {
+      "start": 105.0,
+      "end": 106.0,
+      "line": 414,
+      "action": "self.play(Write(pv), run_time=1.0)"
+    },
+    {
+      "start": 106.0,
+      "end": 106.733,
+      "line": 415,
+      "action": "self.wait(0.7)"
+    },
+    {
+      "start": 106.733,
+      "end": 108.067,
+      "line": 416,
+      "action": "self.equation_change(pv, r\"PV\\downarrow\\quad\\Rightarrow\\quad\\Delta U_{CA}<0\")"
+    },
+    {
+      "start": 108.067,
+      "end": 108.6,
+      "line": 418,
+      "action": "self.play(FadeIn(du_badge),Indicate(self.thermal,color=VIOLET),run_time=0.5)"
+    },
+    {
+      "start": 108.6,
+      "end": 109.4,
+      "line": 420,
+      "action": "self.play(Write(v), run_time=0.8)"
+    },
+    {
+      "start": 109.4,
+      "end": 110.133,
+      "line": 421,
+      "action": "self.wait(0.7)"
+    },
+    {
+      "start": 110.133,
+      "end": 111.467,
+      "line": 422,
+      "action": "self.equation_change(v, r\"V\\downarrow\\quad\\Rightarrow\\quad W_{CA}<0\")"
+    },
+    {
+      "start": 111.467,
+      "end": 112.4,
+      "line": 424,
+      "action": "self.play(Write(q_ca), run_time=0.9)"
+    },
+    {
+      "start": 112.4,
+      "end": 113.2,
+      "line": 425,
+      "action": "self.wait(0.8)"
+    },
+    {
+      "start": 113.2,
+      "end": 114.533,
+      "line": 426,
+      "action": "self.equation_change(q_ca, r\"Q_{CA}<0\", size=49)"
+    },
+    {
+      "start": 114.533,
+      "end": 115.133,
+      "line": 429,
+      "action": "self.play(FadeIn(out_note),GrowArrow(heat_out[0]),FadeIn(heat_out[1]),run_time=0.6)"
+    },
+    {
+      "start": 115.133,
+      "end": 120.0,
+      "line": 430,
+      "action": "self.finish_block(120)"
+    },
+    {
+      "start": 120.0,
+      "end": 120.6,
+      "line": 433,
+      "action": "self.play(FadeOut(VGroup(pv,v,q_ca,out_note,heat_out,work_physical,du_badge)),                   FadeOut(compact),graph_all.animate.scale(0.8/0.76).move_to"
+    },
+    {
+      "start": 120.6,
+      "end": 121.333,
+      "line": 436,
+      "action": "self.heading(\"Calor total absorvido\", \"Somamos somente os trechos com Q > 0\")"
+    },
+    {
+      "start": 121.333,
+      "end": 121.933,
+      "line": 437,
+      "action": "self.play(self.ab.animate.set_color(MAGENTA).set_opacity(1),                   self.bc.animate.set_color(MAGENTA).set_opacity(1),                   self.ca"
+    },
+    {
+      "start": 121.933,
+      "end": 122.933,
+      "line": 447,
+      "action": "self.play(Write(positives), run_time=1.0)"
+    },
+    {
+      "start": 122.933,
+      "end": 123.867,
+      "line": 449,
+      "action": "self.play(Write(total), run_time=0.9)"
+    },
+    {
+      "start": 123.867,
+      "end": 125.067,
+      "line": 450,
+      "action": "self.wait(1.2)"
+    },
+    {
+      "start": 125.067,
+      "end": 126.4,
+      "line": 451,
+      "action": "self.equation_change(total, r\"Q_{\\mathrm{abs}}=\\frac{15}{2}P_0V_0+18P_0V_0\", size=43)"
+    },
+    {
+      "start": 126.4,
+      "end": 127.4,
+      "line": 452,
+      "action": "self.wait(1.0)"
+    },
+    {
+      "start": 127.4,
+      "end": 128.733,
+      "line": 453,
+      "action": "self.equation_change(total, r\"Q_{\\mathrm{abs}}=\\frac{51}{2}P_0V_0\", y=-3.5, size=58)"
+    },
+    {
+      "start": 128.733,
+      "end": 129.533,
+      "line": 455,
+      "action": "self.play(Create(answer_box), FadeOut(positives), run_time=0.8)"
+    },
+    {
+      "start": 129.533,
+      "end": 135.0,
+      "line": 456,
+      "action": "self.finish_block(135)"
+    },
+    {
+      "start": 135.0,
+      "end": 135.6,
+      "line": 459,
+      "action": "self.play(FadeOut(VGroup(total,answer_box)),                   graph_all.animate.scale(1/0.8).move_to([-0.25,2.7,0]),run_time=0.6)"
+    },
+    {
+      "start": 135.6,
+      "end": 136.333,
+      "line": 462,
+      "action": "self.heading(\"Trabalho líquido do ciclo\", \"O módulo vem da área interna\")"
+    },
+    {
+      "start": 136.333,
+      "end": 137.133,
+      "line": 465,
+      "action": "self.play(*[path.animate.set_color(CYAN).set_opacity(1) for path in self.paths],                   self.arrows.animate.set_color(CYAN).set_opacity(1),     "
+    },
+    {
+      "start": 137.133,
+      "end": 137.933,
+      "line": 472,
+      "action": "self.play(GrowFromCenter(base),GrowFromCenter(height),Write(base_text),Write(height_text),run_time=0.8)"
+    },
+    {
+      "start": 137.933,
+      "end": 138.933,
+      "line": 474,
+      "action": "self.play(Write(area),run_time=1.0)"
+    },
+    {
+      "start": 138.933,
+      "end": 139.933,
+      "line": 475,
+      "action": "self.wait(1.0)"
+    },
+    {
+      "start": 139.933,
+      "end": 141.267,
+      "line": 476,
+      "action": "self.equation_change(area,r\"A_{\\triangle}=\\frac92P_0V_0\")"
+    },
+    {
+      "start": 141.267,
+      "end": 142.0,
+      "line": 477,
+      "action": "self.wait(0.7)"
+    },
+    {
+      "start": 142.0,
+      "end": 145.333,
+      "line": 481,
+      "action": "self.play(MoveAlongPath(self.marker,trace),run_time=3.3,rate_func=linear)"
+    },
+    {
+      "start": 145.333,
+      "end": 145.933,
+      "line": 483,
+      "action": "self.play(FadeIn(sense),run_time=0.6)"
+    },
+    {
+      "start": 145.933,
+      "end": 146.933,
+      "line": 485,
+      "action": "self.play(Write(net_w),run_time=1.0)"
+    },
+    {
+      "start": 146.933,
+      "end": 147.467,
+      "line": 487,
+      "action": "self.play(FadeIn(integral_note),run_time=0.5)"
+    },
+    {
+      "start": 147.467,
+      "end": 153.0,
+      "line": 488,
+      "action": "self.finish_block(153)"
+    },
+    {
+      "start": 153.0,
+      "end": 153.533,
+      "line": 491,
+      "action": "self.play(FadeOut(VGroup(area,sense,net_w,integral_note,base,height,base_text,height_text)),run_time=0.5)"
+    },
+    {
+      "start": 153.533,
+      "end": 154.267,
+      "line": 492,
+      "action": "self.heading(\"De volta ao estado A\", \"Estado final = estado inicial\")"
+    },
+    {
+      "start": 154.267,
+      "end": 154.867,
+      "line": 493,
+      "action": "self.play(Indicate(self.dots[0],color=CYAN),run_time=0.6)"
+    },
+    {
+      "start": 154.867,
+      "end": 155.467,
+      "line": 495,
+      "action": "self.play(Write(zero_u),run_time=0.6)"
+    },
+    {
+      "start": 155.467,
+      "end": 156.067,
+      "line": 497,
+      "action": "self.play(Write(net_q),run_time=0.6)"
+    },
+    {
+      "start": 156.067,
+      "end": 157.4,
+      "line": 498,
+      "action": "self.equation_change(net_q,r\"Q_{\\mathrm{l\\acute iquido}}=W_{\\mathrm{ciclo}}=-\\frac92P_0V_0\",size=42,color=CYAN)"
+    },
+    {
+      "start": 157.4,
+      "end": 158.0,
+      "line": 500,
+      "action": "self.play(FadeIn(closing),run_time=0.6)"
+    },
+    {
+      "start": 158.0,
+      "end": 158.4,
+      "line": 502,
+      "action": "self.play(FadeIn(closing2),run_time=0.4)"
+    },
+    {
+      "start": 158.4,
+      "end": 161.4,
+      "line": 503,
+      "action": "self.wait(3.0)"
+    },
+    {
+      "start": 161.4,
+      "end": 161.933,
+      "line": 505,
+      "action": "self.play(FadeOut(closing),FadeOut(closing2),run_time=0.5)"
+    },
+    {
+      "start": 161.933,
+      "end": 162.533,
+      "line": 507,
+      "action": "self.play(FadeIn(handle),run_time=0.6)"
+    },
+    {
+      "start": 162.533,
+      "end": 165.0,
+      "line": 508,
+      "action": "self.finish_block(165)"
+    }
+  ]
+}

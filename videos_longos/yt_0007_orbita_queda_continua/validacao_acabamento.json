@@ -1,0 +1,182 @@
+{
+  "v_400km_m_s": 7672.598648385013,
+  "g_400km_m_s2": 8.694250482823737,
+  "periodo_min": 92.41425159967986,
+  "queda_local_m": 4.347125241411868,
+  "queda_exata_m": 4.347124776051925,
+  "diferenca_local_m": 4.6535994346896814e-07,
+  "deriva_relativa_raio": 6.420209082147466e-07,
+  "deriva_relativa_energia": 4.070077608275824e-13,
+  "angulos_impacto_N01_graus": [
+    13.099366587452646,
+    26.70486965819311,
+    162.77250872942196
+  ],
+  "estados_N13": {
+    "0.7": {
+      "energia": -31490957.31271909,
+      "ligada": true,
+      "colide": true,
+      "periastro": 3101115.8940397343,
+      "rotulo": "impacto"
+    },
+    "0.92": {
+      "energia": -24058257.189372677,
+      "ligada": true,
+      "colide": false,
+      "periastro": 7011634.535367546,
+      "rotulo": "ligada"
+    },
+    "1.0": {
+      "energia": -20854938.61769476,
+      "ligada": true,
+      "colide": false,
+      "periastro": 9556500.0,
+      "rotulo": "circular"
+    },
+    "1.2": {
+      "energia": -11678765.625909071,
+      "ligada": true,
+      "colide": false,
+      "periastro": 9556500.0,
+      "rotulo": "elíptica"
+    },
+    "1.44": {
+      "energia": 1534923.4822623357,
+      "ligada": false,
+      "colide": false,
+      "periastro": 9556500.0,
+      "rotulo": "aberta"
+    }
+  },
+  "impacto_N14_erro_m": 0.0,
+  "voos_completos_N13": {
+    "0.7": {
+      "impacto": true,
+      "duracao_s": 1648.9120145947888,
+      "energia": -31490957.31271909,
+      "raio_minimo_m": 6371000.0
+    },
+    "0.92": {
+      "impacto": false,
+      "duracao_s": 7503.716295389358,
+      "energia": -24058257.189372677,
+      "raio_minimo_m": 7011636.981343392
+    },
+    "1.0": {
+      "impacto": false,
+      "duracao_s": 9297.352062865159,
+      "energia": -20854938.61769476,
+      "raio_minimo_m": 9556499.999999898
+    },
+    "1.2": {
+      "impacto": false,
+      "duracao_s": 22185.90945373556,
+      "energia": -11678765.625909071,
+      "raio_minimo_m": 9556500.0
+    },
+    "1.44": {
+      "impacto": false,
+      "duracao_s": 9297.352062865159,
+      "energia": 1534923.4822623357,
+      "raio_minimo_m": 9556500.0
+    }
+  },
+  "oclusao": "aprovada",
+  "projecao_independente_SI": "aprovada",
+  "limite_segmentos": 599,
+  "baricentro_sobre_raio": 0.7330089467901428,
+  "material_nativo": [
+    {
+      "resolucao": "960x540",
+      "raio_logico": 2,
+      "recorte": [
+        244,
+        244,
+        4
+      ],
+      "bytes": 238144,
+      "ms": 57.82
+    },
+    {
+      "resolucao": "960x540",
+      "raio_logico": 12,
+      "recorte": [
+        302,
+        960,
+        4
+      ],
+      "bytes": 1159680,
+      "ms": 357.56
+    },
+    {
+      "resolucao": "960x540",
+      "raio_logico": 26,
+      "recorte": [
+        218,
+        960,
+        4
+      ],
+      "bytes": 837120,
+      "ms": 131.05
+    },
+    {
+      "resolucao": "960x540",
+      "raio_logico": 1000000.0,
+      "recorte": [
+        272,
+        960,
+        4
+      ],
+      "bytes": 1044480,
+      "ms": 142.32
+    },
+    {
+      "resolucao": "1920x1080",
+      "raio_logico": 2,
+      "recorte": [
+        484,
+        484,
+        4
+      ],
+      "bytes": 937024,
+      "ms": 302.87
+    },
+    {
+      "resolucao": "1920x1080",
+      "raio_logico": 12,
+      "recorte": [
+        602,
+        1920,
+        4
+      ],
+      "bytes": 4623360,
+      "ms": 1663.55
+    },
+    {
+      "resolucao": "1920x1080",
+      "raio_logico": 26,
+      "recorte": [
+        433,
+        1920,
+        4
+      ],
+      "bytes": 3325440,
+      "ms": 532.83
+    },
+    {
+      "resolucao": "1920x1080",
+      "raio_logico": 1000000.0,
+      "recorte": [
+        542,
+        1920,
+        4
+      ],
+      "bytes": 4162560,
+      "ms": 648.15
+    }
+  ],
+  "cache_recortes": 2,
+  "continuidade_antigo_limiar": "aprovada",
+  "escala_imagem_por_pixel": 1
+}

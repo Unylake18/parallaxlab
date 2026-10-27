@@ -1,0 +1,197 @@
+"""Encadeamento físico e algébrico da rodada de acabamento."""
+import math
+import numpy as np
+from manim import *
+from modelo_orbital import R_T, lancamento, periodo
+from matematica_visual import formula, valor_tempo, BLUE, CYAN, VIOLET, MAGENTA, WHITE
+from cena_v1 import texto
+from template.config_horizontal import BACKGROUND_COLOR
+
+
+class EquacoesOrbitais:
+    def n05(self):
+        self.titulo('A gravidade fornece a aceleração.')
+        self.play(self.cam.ax.animate.set_value(-3.9),run_time=.8)
+        self.olhar(0,0,7.2,dur=1)
+        self.g=self.vetor_g(1.1); self.v=self.vetor_v(1.2)
+        self.raio=always_redraw(lambda:DashedLine(self.cam.p((0,0)),self.pos(),color=VIOLET,dash_length=.10,stroke_width=3).set_z_index(24))
+        def placa(m): return m.add_background_rectangle(color=BACKGROUND_COLOR,opacity=.8,buff=.07)
+        centro=always_redraw(lambda:Dot(self.cam.p((0,0)),.07,color=WHITE).set_z_index(50))
+        M=VGroup(formula('M',40),texto('massa da Terra',22,WHITE)).arrange(RIGHT,buff=.14).move_to([-5.6,-2.35,0]).set_z_index(100)
+        M[0].set_color(BLUE)
+        lm=always_redraw(lambda:Line([-5.0,-2.05,0],self.cam.p((0,0)),color=WHITE,stroke_width=1.2).set_z_index(49))
+        m=formula('m',34); r=formula('r',36)
+        def fora(): 
+            u=self.pos()-self.cam.p((0,0)); return u/max(np.linalg.norm(u),1e-8)
+        m.add_updater(lambda q:q.move_to(self.pos()+.42*fora()))
+        r.add_updater(lambda q:q.move_to((self.cam.p((0,0))+self.pos())/2+.34*np.array([-fora()[1],fora()[0],0])))
+        placa(m); placa(r)
+        self.grandezas=VGroup(centro,M,lm,m,r); self.mass_label=m
+        self.add(self.g,self.v,self.raio,self.grandezas)
+        self.play(self.earth_alpha.animate.set_value(.7),run_time=.5)
+        self.nota_equacao('A Terra (M) atrai a pedra (m).\nr é medido a partir do centro.')
+        self.play(Indicate(M[0],color=BLUE,scale_factor=1.4),Indicate(m,color=WHITE,scale_factor=1.4),Indicate(r,color=VIOLET,scale_factor=1.4),run_time=1.2)
+        self.forca=self.math(r'F_g=\frac{GMm}{r^2}',(2.8,1.0),49)
+        fg=formula('F_g',31); placa(fg)
+        fg.add_updater(lambda q:q.move_to((self.g.get_start()+self.g.get_end())/2-.4*np.array([-fora()[1],fora()[0],0])),call_updater=True)
+        self.add(fg); self.fg_label=fg
+        self.play(Indicate(self.g,color=CYAN),Circumscribe(self.forca[0][:2],color=CYAN),
+                  Indicate(self.raio,color=VIOLET),Indicate(r,color=VIOLET),run_time=1.3)
+        self.marco('N05_lei_gravitacional'); self.wait(1.5)
+        self.nota_equacao('Para seguir o círculo, a aceleração\ndeve apontar para o centro.')
+        self.ac=self.math(r'a_c=\frac{v^2}{r}',(2.8,-.45),45)
+        self.play(Indicate(self.v,color=WHITE),Indicate(self.raio,color=VIOLET),run_time=1.2)
+        self.marco('N05_raio_e_vetores'); self.wait(2)
+
+    def n06(self):
+        self.titulo('Qual velocidade mantém a órbita circular?')
+        self.nota_equacao('A gravidade fornece essa aceleração.\nA força é massa × aceleração.')
+        cond=formula(r'\frac{GMm}{r^2}=\frac{mv^2}{r}',49,6.7).move_to([2.8,.5,0])
+        assert len(cond[0])==12 and len(self.forca[0])==9 and len(self.ac[0])==7
+        left=VGroup(*cond[0][:6]); right=VGroup(*cond[0][8:]); sinais=VGroup(cond[0][6],cond[0][7])
+        self.play(TransformFromCopy(VGroup(*self.forca[0][3:]),left),
+                  TransformFromCopy(VGroup(*self.ac[0][3:]),right),
+                  TransformFromCopy(self.mass_label,cond[0][7]),FadeIn(cond[0][6]),run_time=2)
+        self.remove(left,right,sinais,*cond[0]); self.add(cond)
+        self.play(FadeOut(self.forca),FadeOut(self.ac),run_time=.6)
+        self.overlays.remove(self.forca); self.overlays.remove(self.ac)
+        self.marco('N06_condicao_com_massa'); self.wait(1)
+        self.nota_equacao('A massa da pedra se cancela\nnos dois lados (m > 0).')
+        riscos=VGroup(*[Line(cond[0][i].get_corner(DL),cond[0][i].get_corner(UR),color=WHITE,stroke_width=3) for i in (2,7)])
+        self.play(Circumscribe(cond[0][2],color=WHITE),Circumscribe(cond[0][7],color=WHITE),Create(riscos),run_time=1)
+        sem_m=formula(r'\frac{GM}{r^2}=\frac{v^2}{r}',49,6.7).move_to(cond)
+        self.play(FadeOut(riscos),run_time=.3)
+        self.glifos(cond,sem_m,([0,1,3,4,5,6,8,9,10,11],list(range(10))),([2,7],[]),dur=1.8)
+        self.marco('N06_cancelamento_m'); self.wait(1)
+        self.nota_equacao('Obtemos a aceleração gravitacional:\nforça dividida pela massa da pedra.')
+        origem_g=self.math(r'g=\frac{F_g}{m}=\frac{GM}{r^2}',(2.8,-.95),36)
+        self.play(Indicate(self.g,color=CYAN),Circumscribe(VGroup(*sem_m[0][:5]),color=CYAN),run_time=1)
+        self.wait(1.2); self.play(FadeOut(origem_g),run_time=.5); self.overlays.remove(origem_g)
+        self.nota_equacao('Multiplicamos os dois lados por r\ne cancelamos um fator de raio.')
+        fatores=formula(r'\frac{GM}{r\,r}=\frac{v^2}{r}',49,6.7).move_to(sem_m)
+        self.play(TransformMatchingTex(sem_m,fatores),run_time=1.2)
+        riscos=VGroup(*[Line(fatores[0][i].get_corner(DL),fatores[0][i].get_corner(UR),color=VIOLET,stroke_width=3) for i in (4,9)])
+        self.play(Create(riscos),Indicate(self.raio,color=VIOLET),run_time=.8)
+        isolada=formula(r'\frac{GM}{r}=v^2',49,6.7).move_to(fatores)
+        self.play(FadeOut(riscos),run_time=.3)
+        self.glifos(fatores,isolada,([0,1,2,3,5,6,7],list(range(7))),([4,8,9],[]),dur=1.7)
+        self.marco('N06_cancelamento_r'); self.wait(1)
+        quadrado=formula(r'v^2=\frac{GM}{r}',49,6.7).move_to(isolada)
+        self.glifos(isolada,quadrado,([0,1,2,3],[3,4,5,6],dict(path_arc=PI*.9)),([4],[2]),([5,6],[0,1],dict(path_arc=PI*.9)),dur=2)
+        self.nota_equacao('Raiz positiva: a velocidade necessária\npara a órbita circular deste raio.')
+        raiz=formula(r'v_{\mathrm{orb}}=\sqrt{\frac{GM}{r}}',51,6.7).move_to(quadrado)
+        self.play(TransformMatchingTex(quadrado,raiz),run_time=1.7)
+        self.overlays.append(raiz); self.vorb_referencia=raiz.copy()
+        self.play(Indicate(self.v,color=WHITE),Indicate(self.raio,color=VIOLET),run_time=1)
+        self.marco('N06_raiz_e_raio'); self.wait(2)
+        self.limpar(); self.nota_atual=None
+        self.play(*[FadeOut(x) for x in (self.g,self.v,self.raio,self.grandezas,self.fg_label)],self.earth_alpha.animate.set_value(1),run_time=.8)
+        self.play(self.cam.ax.animate.set_value(0),run_time=.8)
+
+    def n11(self):
+        self.titulo('Quanto tempo dura uma volta?')
+        self.play(self.cam.ax.animate.set_value(-3.8),run_time=.8)
+        self.olhar(0,0,9.0,dur=1); self.tau.set_value(0)
+        partida=Dot(self.pos(),.075,color=MAGENTA).set_z_index(40)
+        plabel=texto('partida / retorno',23,MAGENTA).move_to([-3.8,1.95,0]).set_z_index(100)
+        clock=DecimalNumber(0,num_decimal_places=0,group_with_commas=False,unit=r'\,\mathrm s',font_size=29,color=MAGENTA).move_to([2.8,1.45,0]).set_z_index(100)
+        clock.add_updater(lambda m:valor_tempo(m,self.tau.get_value()))
+        arco=always_redraw(lambda:self.cam.linha(self.orb.r[:max(2,np.searchsorted(self.orb.t,self.tau.get_value())):4]/R_T,MAGENTA,5,ocultar=False))
+        self.add(partida,plabel,clock,arco)
+        self.play(self.tau.animate.set_value(self.orb.t[-1]),run_time=7,rate_func=linear)
+        clock.clear_updaters()
+        uma=texto('uma volta',30,MAGENTA).move_to([2.8,.3,0]).set_z_index(100)
+        comprimento=formula(r'2\pi r',42).move_to([-3.8,-2.35,0])
+        perimetro=Line(comprimento.get_top()+.05*UP,self.cam.p((0,-1.0)),color=VIOLET,stroke_width=1.4).set_z_index(60)
+        self.play(FadeIn(uma),Indicate(partida,color=MAGENTA),run_time=.6)
+        self.play(Create(perimetro),FadeIn(comprimento),Indicate(arco,color=VIOLET),run_time=.9)
+        self.wait(1)
+        a=formula(r'T=\frac{2\pi r}{v}',48,6.6).move_to([2.8,.75,0])
+        self.play(TransformFromCopy(uma,a[0][0]),TransformFromCopy(comprimento,VGroup(*a[0][2:5])),FadeIn(VGroup(a[0][1],*a[0][5:])),run_time=1.6)
+        self.remove(*a[0]); self.add(a)
+        self.play(*[FadeOut(x) for x in (uma,clock,arco,partida,plabel,perimetro,comprimento)],run_time=.6)
+        self.nota_equacao('O período é o comprimento da volta\ndividido pela velocidade.')
+        self.wait(1.5)
+        vel=formula(r'v=\sqrt{\frac{GM}{r}}',39,6.6).move_to([2.8,-.7,0])
+        self.play(FadeIn(vel)); self.wait(1)
+        self.nota_equacao('Usamos a velocidade circular\nno denominador.')
+        sub=formula(r'T=\frac{2\pi r}{\sqrt{\frac{GM}{r}}}',48,6.6).move_to(a)
+        # Preserva o numerador; copia apenas o radical da relação de velocidade.
+        vazio=sub.copy()
+        vazio[0].remove(*list(vazio[0][6:]))
+        self.glifos(a,vazio,(list(range(6)),list(range(6))),([6],[]),dur=1)
+        denominador=VGroup(VGroup(*sub[0][6:])).set_z_index(100)
+        copia=vel.copy(); self.add(copia)
+        assert len(vel[0])==8 and len(sub[0])==12
+        self.glifos(copia,denominador,(list(range(2,8)),list(range(6))),([0,1],[]),dur=2)
+        self.remove(vazio,denominador); self.add(sub)
+        self.play(FadeOut(vel),run_time=.5)
+        self.marco('N11_substituicao_v'); self.wait(1.2)
+        self.nota_equacao('Dividir por uma raiz é multiplicar\npela raiz da razão inversa.')
+        produto=formula(r'T=2\pi r\sqrt{\frac{r}{GM}}',48,6.6).move_to(sub)
+        self.glifos(sub,produto,([0,1,2,3,4],[0,1,2,3,4]),([6,7],[5,6]),([8,9],[9,10]),([10,11],[8,7]),([5],[]),dur=2)
+        self.wait(1)
+        self.nota_equacao('O raio entra ao quadrado no radical.\nCombinamos os fatores de raio.')
+        dentro=formula(r'T=2\pi\sqrt{\frac{r^2r}{GM}}',48,6.6).move_to(produto)
+        self.glifos(produto,dentro,([0,1,2,3],[0,1,2,3]),([4],[6]),([5,6],[4,5]),([7,8,9,10],[8,9,10,11]),([], [7]),dur=1.8)
+        b=formula(r'T=2\pi\sqrt{\frac{r^3}{GM}}',48,6.6).move_to(dentro)
+        self.glifos(dentro,b,([0,1,2,3,4,5],[0,1,2,3,4,5]),([6,7,8],[6,7]),([9,10,11],[8,9,10]),dur=1.8)
+        self.wait(1)
+        self.nota_equacao('Elevamos os dois lados ao quadrado.')
+        c=formula(r'T^2=\frac{4\pi^2}{GM}r^3',48,6.6).move_to(b)
+        self.play(TransformMatchingTex(b,c),run_time=1.8)
+        self.lei3=c; self.overlays.append(c)
+        self.marco('N11_periodo_circular'); self.wait(2)
+
+    def n12(self):
+        self.titulo('E quando a órbita é uma elipse?')
+        self.overlays.remove(self.lei3); self.limpar(); self.nota_atual=None
+        self.overlays.append(self.lei3)
+        # 1) encerra o caso circular: a = r
+        cc=lambda:self.cam.p((0,0))
+        raio=always_redraw(lambda:Line(cc(),self.pos(),color=VIOLET,stroke_width=3.5).set_z_index(45))
+        ar=formula('a=r',36); ar.add_background_rectangle(color=BACKGROUND_COLOR,opacity=.8,buff=.07)
+        def pos_ar(q):
+            u=self.pos()-cc(); q.move_to(self.pos()+.55*u/max(np.linalg.norm(u),1e-8))
+        ar.add_updater(pos_ar,call_updater=True)
+        self.add(raio,ar)
+        self.nota_equacao('No círculo, o semieixo é o próprio raio:\na = r.')
+        self.play(Create(raio),FadeIn(ar),run_time=.8); self.wait(1.6)
+        self.play(FadeOut(raio),FadeOut(ar),self.path_alpha.animate.set_value(0),self.bola_alpha.animate.set_value(0),run_time=.8)
+        ar.clear_updaters(); self.remove(raio,ar)
+        # 2) generalização: nova trajetória só depois de reenquadrar
+        self.nota_equacao('Generalização: a Terra fica em um foco\ne o semieixo maior é a.')
+        a=3.6; ecc=.6; rp=a*(1-ecc)*R_T
+        self.configurar(rp,math.sqrt(1+ecc),periodo(a*R_T)); self.tracar=True; self.mostrar_bola=True
+        self.olhar(0,-a*ecc,17,roll=np.pi/2,dur=2)
+        self.play(self.path_alpha.animate.set_value(1),self.bola_alpha.animate.set_value(1),run_time=.4)
+        self.play(self.tau.animate.set_value(self.orb.t[-1]),run_time=5,rate_func=linear)
+        self.tracar=False; self.loop=True
+        centro=np.array([0,-a*ecc]); ponta=np.array([0,-a*(1+ecc)])
+        P=self.cam.p; ponto=lambda q,c:Dot(q,.07,color=c).set_z_index(50)
+        eixo=always_redraw(lambda:DoubleArrow(P(centro),P(ponta),buff=0,color=VIOLET,stroke_width=3.5,tip_length=.14).set_z_index(40))
+        resto=always_redraw(lambda:DashedLine(P((0,a*(1-ecc))),P(centro),color=VIOLET,dash_length=.1,stroke_width=1.2).set_stroke(opacity=.45).set_z_index(30))
+        alabel=always_redraw(lambda:formula('a',38).move_to((P(centro)+P(ponta))/2+[0,.38,0]))
+        dc=always_redraw(lambda:ponto(P(centro),WHITE)); dt=always_redraw(lambda:ponto(P((0,0)),WHITE))
+        tc=texto('centro da elipse',22,WHITE).set_z_index(100)
+        tt=texto('Terra em um foco',22,BLUE).set_z_index(100)
+        tc.add_updater(lambda m:m.move_to(P(centro)+[.0,-.95,0]),call_updater=True)
+        tt.add_updater(lambda m:m.move_to(P((0,0))+[1.0,1.2,0]),call_updater=True)
+        lc=always_redraw(lambda:Line(P(centro)+[0,-.14,0],P(centro)+[0,-.7,0],color=WHITE,stroke_width=1.2).set_z_index(49))
+        lt=always_redraw(lambda:Line(P((0,0))+[.04,.1,0],P((0,0))+[.62,1.0,0],color=WHITE,stroke_width=1.2).set_z_index(49))
+        self.extra=[eixo,resto,alabel,dc,dt,tc,tt,lc,lt]
+        self.add(*self.extra)
+        self.play(FadeIn(dt),FadeIn(tt),FadeIn(lt),run_time=.5); self.wait(.6)
+        self.play(FadeIn(dc),FadeIn(tc),FadeIn(lc),run_time=.5); self.wait(.6)
+        self.play(FadeIn(resto),Create(eixo),FadeIn(alabel),self.tau.animate.increment_value(.3*self.orb.t[-1]),run_time=1.5,rate_func=linear)
+        self.nota_equacao('No círculo, usávamos r.\nNa elipse, usamos o semieixo maior.')
+        novo=formula(r'T^2=\frac{4\pi^2}{GM}a^3',48,6.6).move_to(self.lei3)
+        self.play(Indicate(eixo,color=VIOLET),Indicate(alabel,color=VIOLET),self.tau.animate.increment_value(.1*self.orb.t[-1]),run_time=1)
+        self.glifos(self.lei3,novo,*[([i],[i]) for i in range(11)],dur=1.8)
+        self.overlays.remove(self.lei3); self.overlays.append(novo)
+        self.marco('N12_foco_semieixo')
+        self.play(self.tau.animate.increment_value(.4*self.orb.t[-1]),run_time=3,rate_func=linear)
+        for m in self.extra: m.clear_updaters(recursive=True)
+        self.play(*[FadeOut(x) for x in self.extra],run_time=.5); self.extra=[]
+        self.limpar(); self.nota_atual=None
+        self.play(self.cam.ax.animate.set_value(0),run_time=.8)

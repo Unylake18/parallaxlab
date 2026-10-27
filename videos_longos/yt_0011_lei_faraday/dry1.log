@@ -1,0 +1,58 @@
+Manim Community v0.21.0
+
+[10/24/26 12:41:57] WARNING  The original total run_time of       scene.py:1131
+                             LeiFaraday011.play(), 0.04 seconds,               
+                             is too short for the current frame                
+                             rate of 15 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[10/24/26 12:41:58] WARNING  The original total run_time of       scene.py:1131
+                             LeiFaraday011.play(), 0.04 seconds,               
+                             is too short for the current frame                
+                             rate of 15 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    WARNING  The original total run_time of       scene.py:1131
+                             LeiFaraday011.play(), 0.06 seconds,               
+                             is too short for the current frame                
+                             rate of 15 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    WARNING  The original total run_time of       scene.py:1131
+                             LeiFaraday011.play(), 0.06 seconds,               
+                             is too short for the current frame                
+                             rate of 15 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[10/24/26 12:48:00] WARNING  The original total run_time of       scene.py:1131
+                             LeiFaraday011.play(), 0.04 seconds,               
+                             is too short for the current frame                
+                             rate of 15 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    WARNING  The original total run_time of       scene.py:1131
+                             LeiFaraday011.play(), 0.04 seconds,               
+                             is too short for the current frame                
+                             rate of 15 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[10/24/26 12:48:01] WARNING  The original total run_time of       scene.py:1131
+                             LeiFaraday011.play(), 0.06 seconds,               
+                             is too short for the current frame                
+                             rate of 15 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    WARNING  The original total run_time of       scene.py:1131
+                             LeiFaraday011.play(), 0.06 seconds,               
+                             is too short for the current frame                
+                             rate of 15 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+AUDIT estado 18: FORA da área útil txt:INDUTÂNCIAEENERGIAMAGNÉTICA  x[-3.85,3.85] y[-3.09,-2.67]
+AUDIT âncoras: 179 registradas; 2 com atraso > 0,2 s; 0 animações encurtadas > 0,35 s; duração da cena 398.1 s (voz 778.9 s)
+AUDIT ATRASO estado 1 N001 «a espira está parada» alvo 1.58 s, real 2.2 s
+AUDIT ATRASO estado 1 N001 «o fio está parado» alvo 3.08 s, real 3.93 s
+[10/24/26 12:53:48] INFO     Rendered LeiFaraday011                scene.py:290
+                             Played 441 animations                             
+You are using manim version v0.21.0, but version v0.22.0 is available.
+You should consider upgrading via pip install -U manim

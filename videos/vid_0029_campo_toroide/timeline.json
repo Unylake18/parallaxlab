@@ -1,0 +1,365 @@
+{
+  "_leia_me": "Fonte única de tempos do vid_0029, SINCRONIZADA com a voz aprovada (gerada por sincronizar.py; não editar à mão). \"ancoras\": instante de cada evento visual (LEAD s antes da palavra). Tempos na montagem do áudio (audio/narracao_montagem.wav). Contagens: t_k = inicio + dur * (k/23)^expoente.",
+  "duracao_s": 144.9,
+  "geometria": {
+    "raio_maior": 1.6,
+    "raio_menor": 0.5,
+    "raio_fio": 0.04,
+    "n_espiras": 24,
+    "phi0": 0.0,
+    "fator_3d_manim": 1.4285714285714286,
+    "centro_topo_manim": [
+      0.0,
+      3.3
+    ],
+    "centro_orbita_manim_y": 3.3
+  },
+  "layout": {
+    "legenda_y": [
+      -6.0,
+      -4.67
+    ],
+    "conteudo_min_y": -4.5
+  },
+  "beats": [
+    {
+      "id": "B01",
+      "inicio_s": 0.0,
+      "fim_s": 10.72
+    },
+    {
+      "id": "B02",
+      "inicio_s": 10.72,
+      "fim_s": 21.52
+    },
+    {
+      "id": "B03",
+      "inicio_s": 21.52,
+      "fim_s": 38.5
+    },
+    {
+      "id": "B04",
+      "inicio_s": 38.5,
+      "fim_s": 58.44
+    },
+    {
+      "id": "B05",
+      "inicio_s": 58.44,
+      "fim_s": 66.98
+    },
+    {
+      "id": "B06",
+      "inicio_s": 66.98,
+      "fim_s": 91.3
+    },
+    {
+      "id": "B07",
+      "inicio_s": 91.3,
+      "fim_s": 105.78
+    },
+    {
+      "id": "B08",
+      "inicio_s": 105.78,
+      "fim_s": 119.14
+    },
+    {
+      "id": "B09",
+      "inicio_s": 119.14,
+      "fim_s": 130.32
+    },
+    {
+      "id": "B10",
+      "inicio_s": 130.32,
+      "fim_s": 144.9
+    }
+  ],
+  "eventos": {
+    "toroide_surge": 0.0,
+    "corrente_liga": 3.04,
+    "campo_acende": 4.1,
+    "camera_topo": 19.52,
+    "camera_topo_pousa": 22.52,
+    "desenrola_circulo": 54.46,
+    "varredura_inicio": 108.58,
+    "varredura_fim": 115.72,
+    "camera_solenoide": 119.14,
+    "camera_volta": 130.32,
+    "endcard": 141.32
+  },
+  "rastros": {
+    "quantidade": 3,
+    "periodo_s": 8.0,
+    "liga_dur_s": 2.0,
+    "cauda_espiras": 1.2,
+    "entrada_s": 0.8
+  },
+  "giro_setas": {
+    "inicio_s": 32.62,
+    "fim_s": 38.5,
+    "omega_rad_s": 0.12
+  },
+  "desenrola_circulo": {
+    "inicio_s": 52.82,
+    "dur_s": 2.36,
+    "escala": 0.25
+  },
+  "contagem_dentro": {
+    "inicio_s": 69.78,
+    "dur_s": 4.2,
+    "expoente": 0.6,
+    "apaga_s": 77.82
+  },
+  "contagem_fora": {
+    "todos_dentro_s": 96.6,
+    "inicio_s": 98.14,
+    "dur_s": 1.12,
+    "expoente": 0.6,
+    "apaga_s": 102.4
+  },
+  "realce_3d": [
+    {
+      "t": 0.0,
+      "v": 0.0
+    },
+    {
+      "t": 38.2,
+      "v": 0.0
+    },
+    {
+      "t": 38.8,
+      "v": 1.0
+    },
+    {
+      "t": 118.94,
+      "v": 1.0
+    },
+    {
+      "t": 119.54,
+      "v": 0.0
+    }
+  ],
+  "camera": [
+    {
+      "t": 0.0,
+      "modo": "orbita"
+    },
+    {
+      "t": 19.52,
+      "modo": "orbita"
+    },
+    {
+      "t": 22.52,
+      "modo": "topo"
+    },
+    {
+      "t": 119.14,
+      "modo": "topo"
+    },
+    {
+      "t": 121.94,
+      "modo": "solenoide"
+    },
+    {
+      "t": 130.32,
+      "modo": "solenoide"
+    },
+    {
+      "t": 132.92,
+      "modo": "orbita"
+    },
+    {
+      "t": 141.08,
+      "modo": "orbita"
+    },
+    {
+      "t": 141.58,
+      "modo": "preto"
+    },
+    {
+      "t": 144.9,
+      "modo": "preto"
+    }
+  ],
+  "amperiano": [
+    {
+      "t": 0.0,
+      "r": 2.286,
+      "alpha": 0.0
+    },
+    {
+      "t": 26.9,
+      "r": 2.286,
+      "alpha": 0.0
+    },
+    {
+      "t": 27.6,
+      "r": 2.286,
+      "alpha": 1.0
+    },
+    {
+      "t": 59.34,
+      "r": 2.286,
+      "alpha": 1.0
+    },
+    {
+      "t": 60.84,
+      "r": 1.0,
+      "alpha": 1.0
+    },
+    {
+      "t": 67.9,
+      "r": 1.0,
+      "alpha": 1.0
+    },
+    {
+      "t": 69.3,
+      "r": 2.286,
+      "alpha": 1.0
+    },
+    {
+      "t": 92.12,
+      "r": 2.286,
+      "alpha": 1.0
+    },
+    {
+      "t": 93.62,
+      "r": 3.3,
+      "alpha": 1.0
+    },
+    {
+      "t": 105.78,
+      "r": 3.3,
+      "alpha": 1.0
+    },
+    {
+      "t": 106.28,
+      "r": 3.3,
+      "alpha": 0.0
+    },
+    {
+      "t": 108.28,
+      "r": 0.0,
+      "alpha": 0.0
+    },
+    {
+      "t": 108.58,
+      "r": 0.0,
+      "alpha": 1.0,
+      "ease": "linear"
+    },
+    {
+      "t": 110.0,
+      "r": 1.571,
+      "alpha": 1.0,
+      "ease": "linear"
+    },
+    {
+      "t": 114.36,
+      "r": 3.0,
+      "alpha": 1.0,
+      "ease": "linear"
+    },
+    {
+      "t": 115.72,
+      "r": 3.55,
+      "alpha": 1.0,
+      "ease": "linear"
+    },
+    {
+      "t": 119.14,
+      "r": 3.55,
+      "alpha": 1.0
+    },
+    {
+      "t": 119.64,
+      "r": 3.55,
+      "alpha": 0.0
+    }
+  ],
+  "ancoras": {
+    "b01_manchete": 0.3,
+    "liga": 3.04,
+    "campo_acende": 4.1,
+    "chip_fora": 7.7,
+    "b02_inicio": 10.72,
+    "modelo_ideal": 14.98,
+    "def_N": 17.66,
+    "def_I": 19.4,
+    "b03_inicio": 21.52,
+    "def_R": 22.7,
+    "def_a": 24.54,
+    "desenha": 25.92,
+    "circulo": 26.9,
+    "raio_r": 28.44,
+    "simetria": 31.38,
+    "acompanhar": 32.62,
+    "mesmo_modulo": 34.32,
+    "percorre": 36.36,
+    "b04_inicio": 38.5,
+    "ampere": 39.08,
+    "elo_B": 40.72,
+    "elo_dl": 41.52,
+    "atravessa_disco": 43.22,
+    "apontam_juntos": 45.66,
+    "escalar": 47.62,
+    "sai_integral": 51.88,
+    "sobra": 52.82,
+    "desenrola": 54.46,
+    "dois_pi": 55.18,
+    "raio_caminho_b04": 56.28,
+    "b05_inicio": 58.44,
+    "buraco": 59.34,
+    "corrente_zero": 63.38,
+    "campo_zero_b05": 65.52,
+    "b06_inicio": 66.98,
+    "por_dentro": 67.9,
+    "cada_espira": 69.78,
+    "mesmo_sentido_fim": 74.28,
+    "corrente_atravessa_b06": 74.34,
+    "numero_espiras": 75.66,
+    "vezes_corrente": 76.8,
+    "passa": 77.82,
+    "campo_e": 80.52,
+    "raio_denominador": 86.18,
+    "repara": 87.1,
+    "nao_uniforme": 88.22,
+    "mais_forte": 90.5,
+    "b07_inicio": 91.3,
+    "por_fora": 92.12,
+    "duas_vezes": 95.6,
+    "sobe": 96.6,
+    "desce": 98.14,
+    "cancela": 100.14,
+    "corrente_zero_b07": 102.4,
+    "campo_zero_b07": 102.84,
+    "por_isso": 103.96,
+    "b08_inicio": 105.78,
+    "aumentando": 106.98,
+    "no_buraco_zero": 108.58,
+    "zero_buraco": 109.42,
+    "entrou": 110.0,
+    "cai_1_r": 112.72,
+    "saiu": 114.36,
+    "zero_de_novo": 114.88,
+    "novo_fim": 115.72,
+    "borda_dentro": 115.66,
+    "dobro": 117.82,
+    "b09_inicio": 119.14,
+    "raio_nao_muda": 122.04,
+    "volta_anel": 124.32,
+    "espiras_por_metro": 126.82,
+    "solenoide": 129.0,
+    "b10_inicio": 130.32,
+    "dentro_enrolamento": 131.28,
+    "buraco_e_fora": 134.8,
+    "confina_fim": 141.08,
+    "siga": 141.32
+  },
+  "gaps_inseridos": [
+    {
+      "antes_de": "Primeiro teste",
+      "em_s": 57.23,
+      "dur_s": 1.2
+    }
+  ]
+}
