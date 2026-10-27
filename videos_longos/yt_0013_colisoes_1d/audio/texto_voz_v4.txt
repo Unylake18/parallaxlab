@@ -1,0 +1,203 @@
+Olha essa colisão. Dois blocos num trilho, um vindo de cada lado. Eles batem... e rebatem.
+
+Agora o mesmo começo: as mesmas massas, as mesmas velocidades. E dessa vez eles se separam de outro jeito.
+
+Mais uma vez: mesmas massas, mesmas velocidades iniciais... e agora eles grudam e seguem juntos.
+
+Mesmo começo, três finais completamente diferentes. Por quê? É isso que a gente vai responder hoje.
+
+Fala, pessoal! Bem-vindos ao Parallax Lab!
+
+Vamos para a mecânica, começando por colisões em uma dimensão. A ideia é sair daqui sabendo, diante de qualquer colisão, o que você precisa saber para prever o que acontece depois.
+
+Primeiro, uma ferramenta. O momento linear, que também aparece como quantidade de movimento, é a massa vezes a velocidade. Por isso o momento aponta para o mesmo lado que a velocidade: a massa é sempre positiva.
+
+Com a mesma velocidade, mais massa significa mais momento.
+
+E com a mesma massa, mais velocidade também significa mais momento.
+
+Agora voltamos aos nossos dois blocos. Cada um tem o seu momento: o momento do corpo um e o momento do corpo dois.
+
+E aqui entra um detalhe que derruba muita gente em prova: o sinal. A gente combina que para a direita é positivo. Então a velocidade inicial do corpo um é positiva, e a velocidade inicial do corpo dois, que vem para a esquerda, é negativa. Defina o eixo antes de qualquer conta e respeite os sinais.
+
+Para somar os momentos, a gente soma com sinal: a seta do corpo dois começa onde termina a do corpo um. O que sobra é o momento total do sistema.
+
+Daqui para frente, uma convenção de nomes. O índice i quer dizer inicial, antes da colisão; o índice f quer dizer final, depois. Então temos a velocidade inicial e a velocidade final de cada corpo.
+
+Se o momento total se conserva na colisão, e a gente já vai ver por quê, o momento total antes é igual ao momento total depois.
+
+Só que repara: as massas e as velocidades iniciais a gente conhece. As incógnitas são as duas velocidades finais. Uma equação, duas incógnitas.
+
+Com uma equação só, não dá para achar duas coisas. Então... o que está faltando?
+
+Antes de responder, vamos entender por que o momento total se conserva. Lembrando: a variação do momento de um corpo é o impulso que ele recebe, e o impulso é a força acumulada ao longo do tempo, a área sob o gráfico da força.
+
+Em cima, a força de contato ao longo do tempo; embaixo, o momento de cada bloco e o total, no caso em que eles rebatem. A forma da curva é um esquema; o que importa é a área.
+
+No contato, o bloco um empurra o bloco dois e o bloco dois empurra de volta: forças iguais e opostas, ação e reação. Enquanto a área cresce, o momento do corpo um diminui e o do corpo dois aumenta. Mas olha o total... não se mexe.
+
+As variações de momento dos dois blocos são iguais em módulo e opostas: a variação do corpo um é menos a variação do corpo dois.
+
+As forças internas trocam momento entre os corpos... mas o total não muda.
+
+Por isso é tão importante escolher o sistema. Aqui, o sistema são os dois blocos juntos: as forças entre eles ficam do lado de dentro.
+
+E as forças de fora? Atrito com o trilho, resistência do ar... Na direção do trilho, durante um contato tão curto, o impulso externo é desprezível. Então a variação do momento total nessa direção é praticamente zero.
+
+No modelo ideal, a gente toma esse impulso externo como zero. E aí sim escreve a igualdade: momento total inicial igual a momento total final.
+
+Agora vamos rever os três finais com dois medidores: o momento total e a energia cinética total. Lembrando que a energia cinética é meio vezes a massa vezes a velocidade ao quadrado, e nunca é negativa.
+
+No primeiro caso, o momento total fica igual, e a energia cinética total também. Isso tem nome: colisão elástica. Momento conservado e energia cinética conservada.
+
+No segundo, o momento total continua o mesmo. Só que a energia cinética diminui. Para onde ela foi? Virou energia interna: deformação, aquecimento, vibração dos blocos. Ela não some; muda de forma.
+
+Essa é uma colisão inelástica: o momento se conserva e, nas colisões que estamos estudando, a energia cinética diminui.
+
+E no terceiro, os blocos grudam. O momento continua conservado, e a energia cinética cai ainda mais. É a colisão completamente inelástica, e a marca dela é que os dois saem com a mesma velocidade final.
+
+Resumindo: o momento se conserva nas três. O que muda é a informação extra. Na elástica, a energia cinética se conserva: é uma segunda equação. Na que gruda, as velocidades finais são iguais: também é uma segunda equação. Mas repara na inelástica comum: dizer só que a energia diminuiu é uma desigualdade. Ela restringe, mas não fecha a conta sozinha. Aí o problema precisa dar algum dado a mais.
+
+O estado inicial é o mesmo; o que mudou foi a interação durante o contato. Então, respondendo à pergunta lá do começo: o que falta é o tipo de colisão. Momento mais tipo de colisão.
+
+Vamos começar pelo caso mais simples: quando os blocos ficam juntos. Repara nas velocidades: no contato, as duas viram uma só.
+
+Ficar junto quer dizer exatamente isto: a velocidade final do corpo um é igual à do corpo dois. Vamos chamar de velocidade final comum.
+
+Antes, o momento total é a soma dos dois momentos. Depois, é como um bloco só, com a massa total, andando com a velocidade final comum.
+
+Igualando os dois, sai a velocidade final comum: o momento total dividido pela massa total.
+
+E dá para ler essa fórmula de um jeito bonito. Separando os termos, ela vira uma média ponderada das velocidades iniciais: cada velocidade pesa conforme a fração da massa. Esse eixo aqui embaixo é um eixo de velocidades, não é o trilho.
+
+Olha o ponto da velocidade final. Quando a massa um aumenta, ele vai para perto da velocidade inicial do corpo um; quando a massa dois aumenta, para perto da do corpo dois. E ele nunca sai do intervalo entre as duas, podendo até ser negativo.
+
+A massa maior pesa mais no resultado.
+
+Agora uma pergunta que parece fácil. Dois blocos de massas iguais, o segundo parado. Eles batem e grudam. Se a velocidade cair pela metade, a energia cinética também cai pela metade?
+
+Olha a barra. No contato, a energia cinética cai, e o que sai dela vira energia interna. Pelo momento, os dois saem juntos com metade da velocidade inicial: o dobro da massa com metade da velocidade dá o mesmo momento.
+
+Vamos fazer a conta. Antes, a energia cinética é meio vezes a massa vezes a velocidade inicial ao quadrado.
+
+Depois, a massa que se move dobrou... e a velocidade caiu pela metade.
+
+Só que a velocidade entra ao quadrado: metade ao quadrado é um quarto. Dobro da massa vezes um quarto... dá metade.
+
+Então a energia cinética final é metade da inicial. A outra metade virou energia interna.
+
+E fica a lição: momento conservado não implica energia cinética conservada. São duas conservações diferentes; uma não garante a outra.
+
+Agora a colisão elástica, num exemplo novo: o bloco dois começa parado. Repara nos medidores: momento total e energia cinética total ficam iguais. Por isso temos duas equações.
+
+A primeira vem do momento.
+
+Separando o que é de cada corpo, fica: a massa um vezes a diferença entre a velocidade inicial e a final do corpo um é igual à massa dois vezes a diferença entre a velocidade final e a inicial do corpo dois. Essa é a equação um.
+
+A segunda vem da energia cinética. E aqui está a ideia: queremos fazer a equação da energia conversar com a do momento.
+
+Por isso a gente reorganiza do mesmo jeito, separando os corpos, até aparecerem diferenças de quadrados.
+
+Fatorando essas diferenças, surgem exatamente os mesmos fatores da primeira equação.
+
+Essa é a equação dois, e agora as duas falam a mesma língua.
+
+Agora, cuidado. A tentação é dividir uma equação pela outra. Mas esse fator pode ser zero, e dividir por zero não pode. Então a gente faz diferente.
+
+Repara: esse bloco da equação dois é o mesmo que aparece na equação um. Então a gente usa uma equação dentro da outra.
+
+Organizando, aparece um produto igual a zero. A massa não é zero. Então ou o primeiro fator é zero, ou o colchete é zero.
+
+Se o primeiro fator for zero, as velocidades finais são iguais às iniciais. Nada mudou: não houve mudança líquida nos momentos dos corpos. Não é o encontro com interação que a gente quer resolver.
+
+Então fica o outro: o colchete é zero. Rearrumando, a diferença entre as velocidades iniciais é igual a menos a diferença entre as velocidades finais. Guarda essa relação, porque ela tem um significado físico muito bonito.
+
+Olha a distância entre os centros dos dois blocos. Vamos acompanhar essa distância ao longo do tempo, no gráfico da direita.
+
+Antes do contato, a distância diminui. A inclinação dessa reta é quanto a distância muda por segundo: aqui, a distância diminui a três metros por segundo. É a rapidez com que os blocos se aproximam.
+
+Depois do contato, a distância volta a crescer, e repara na inclinação: agora ela aumenta a três metros por segundo.
+
+Os blocos se afastam com a mesma rapidez com que se aproximaram.
+
+Essa é a relação que saiu da álgebra: numa colisão elástica, a velocidade relativa inverte. Cada bloco não precisa inverter a própria velocidade; o que inverte é a velocidade de um em relação ao outro.
+
+Com o momento e a velocidade relativa, dá para achar as duas velocidades finais de qualquer colisão elástica em uma dimensão.
+
+O caminho é simples: substituímos uma relação na outra e isolamos cada velocidade final.
+
+Aí está a velocidade final do corpo um.
+
+E, pela velocidade relativa, sai a do corpo dois.
+
+Agora, uma coisa importante: essas fórmulas são um resultado, não o método. Elas valem para colisão elástica em uma dimensão, e só. O método é sempre o mesmo: momento mais a condição da colisão. Se você entende isso, nem precisa decorar as fórmulas.
+
+Mas vamos testar se elas fazem sentido. Com o segundo bloco parado, as fórmulas ficam mais simples. E a gente vai olhar três casos extremos.
+
+Primeiro: massas iguais. Pensa um pouco... o que você espera que aconteça?
+
+O primeiro para, e o segundo sai com a velocidade que o primeiro tinha. É a famosa troca de velocidades da sinuca. As fórmulas dão exatamente isso: confere.
+
+Agora um bloco leve batendo num muito pesado. Na animação, o pesado tem trinta vezes a massa do leve. O tamanho dos blocos só ajuda a ver; não é a escala da massa.
+
+O leve volta praticamente com a mesma velocidade, e o pesado mal se mexe. Mal, mas se mexe: repara na marquinha embaixo dele. Por isso está escrito "aproximadamente zero", e não zero. É como uma bolinha batendo numa parede: rebate.
+
+E o contrário: um bloco pesado batendo num leve parado.
+
+O pesado segue quase como se nada tivesse acontecido, e o leve sai com quase o dobro da velocidade do pesado. Parece estranho, mas não cria energia nenhuma: a energia que o leve ganha sai do pesado.
+
+Esse é o valor dos casos-limite: são testes de plausibilidade. Achou uma fórmula numa prova? Testa massas iguais, testa uma massa muito maior que a outra. Se não der o que você espera, alguma coisa está errada.
+
+Agora um problema clássico, que mistura tudo isso: o pêndulo balístico. Um projétil, com uma velocidade inicial que a gente quer descobrir, vai bater num bloco pendurado.
+
+Ele entra no bloco e fica preso. Logo depois, o conjunto, projétil mais bloco, sai com uma velocidade que a gente vai chamar de velocidade do conjunto.
+
+E aí o conjunto sobe, até parar por um instante a uma certa altura. A altura é fácil de medir. A pergunta é: dá para descobrir a velocidade do projétil só medindo essa altura?
+
+O segredo é perceber que uma única lei não vale do começo ao fim. Vamos dividir em três instantes: A, antes do impacto; B, logo depois; e C, na altura máxima.
+
+Primeiro, do instante A para o B: o impacto.
+
+As forças externas aqui, o peso e as tensões nos fios, são verticais naquele instante. Na horizontal, o impulso externo é desprezível. Então, no impacto, o que se conserva é o momento horizontal.
+
+Antes, só o projétil se move: momento horizontal igual à massa do projétil vezes a velocidade inicial dele.
+
+Logo depois, projétil e bloco andam juntos: a massa total vezes a velocidade do conjunto. É uma colisão completamente inelástica, igual à que a gente viu antes.
+
+Igualando: massa do projétil vezes a velocidade inicial é igual à massa total vezes a velocidade do conjunto.
+
+E a energia cinética? Despenca. Com um projétil de vinte gramas e um bloco de novecentos e oitenta, sobram só dois por cento. Por isso, no impacto, não dá para conservar a energia cinética.
+
+Agora, do B para o C: a subida. Aqui é outra história. Desprezando o ar e o atrito nos suportes, e com fios ideais, a tensão é sempre perpendicular ao movimento e não realiza trabalho. Então a energia mecânica se conserva. Vamos tomar a energia potencial como zero lá embaixo, no ponto B.
+
+Repara nas barras: conforme o conjunto sobe, a energia cinética vai virando energia potencial gravitacional. No topo, a velocidade é zero, e tudo virou energia potencial. E repara que aqui o momento linear do conjunto não se conserva: durante a subida existe impulso externo.
+
+Então a energia cinética lá embaixo é igual à energia potencial lá em cima.
+
+A massa total cancela, e a velocidade do conjunto fica a raiz quadrada de duas vezes a gravidade vezes a altura. A raiz positiva, porque é o módulo da velocidade.
+
+Agora a gente volta para o impacto e substitui. Chegamos lá: dá para descobrir a velocidade do projétil medindo só as massas e a altura.
+
+Mas o mais importante não é a fórmula. É o caminho: no impacto, momento; na subida, energia. Leis diferentes para intervalos diferentes. Misturar as duas é o erro mais comum nesse problema.
+
+Então vamos juntar tudo num método. Primeiro: qual é o sistema e qual é o intervalo de tempo que você está olhando?
+
+Segundo: defina o eixo e cuide dos sinais.
+
+Terceiro: o impulso externo é desprezível nesse intervalo? Se for, o momento total se conserva.
+
+Quarto: qual é a condição extra? Se é elástica, conserva a energia cinética. Se gruda, as velocidades finais são iguais. Se for outra, alguma informação física adicional precisa ser fornecida.
+
+E quinto: começou outro processo depois da colisão? Então separe os intervalos, como no pêndulo.
+
+E agora a pergunta lá do começo está respondida. Mesmo começo, três finais, porque cada colisão tem uma condição diferente: na elástica, a energia cinética se conserva; quando se separam perdendo energia, precisa de um dado extra; quando grudam, as velocidades finais são iguais. O momento é o mesmo nas três; quem decide o final é o tipo de colisão.
+
+Então, na próxima vez que você encontrar uma colisão: modele o processo. Não procure uma fórmula.
+
+E repara num detalhe que a gente escondeu até aqui: o momento é um vetor. Em uma dimensão, tudo acontece numa linha só. Mas se os corpos puderem sair em direções diferentes, o momento total continua o mesmo... só que agora como vetor.
+
+Hoje a gente ligou momento, energia e o tipo de colisão para prever o que acontece depois de um choque. Se essas ideias ajudaram você, se inscreve no Parallax Lab para acompanhar os próximos vídeos.
+
+E fica a pergunta: e se a colisão não acontecer em uma linha?
+
+É isso que a gente vai ver no próximo vídeo: colisões em duas dimensões. Me conta aqui nos comentários: qual foi o caso-limite que mais te surpreendeu? Valeu demais por assistir, e até a próxima!

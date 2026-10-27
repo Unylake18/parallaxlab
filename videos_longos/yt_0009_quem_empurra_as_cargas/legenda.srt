@@ -1,0 +1,1412 @@
+1
+00:00:00,040 --> 00:00:01,280
+Olha este circuito.
+
+2
+00:00:01,730 --> 00:00:04,910
+A bateria está aqui,
+o resistor está do outro lado.
+
+3
+00:00:05,180 --> 00:00:07,710
+Agora acompanha o fio até este ponto,
+
+4
+00:00:07,850 --> 00:00:08,880
+bem longe dos dois.
+
+5
+00:00:09,310 --> 00:00:11,640
+É justamente aqui que aparece o problema.
+
+6
+00:00:11,920 --> 00:00:15,810
+Se existe uma carga neste trecho
+e existe corrente passando por aqui,
+
+7
+00:00:15,990 --> 00:00:19,600
+alguma coisa está agindo sobre
+essa carga neste exato instante.
+
+8
+00:00:20,040 --> 00:00:20,820
+Mas o quê?
+
+9
+00:00:20,840 --> 00:00:23,820
+A bateria não está puxando
+essa carga de longe.
+
+10
+00:00:24,040 --> 00:00:25,940
+Então, afinal, quem empurra as cargas?
+
+11
+00:00:26,420 --> 00:00:27,900
+Bem-vindos ao Parallax Lab.
+
+12
+00:00:28,230 --> 00:00:30,220
+Hoje a gente vai
+responder essa pergunta e,
+
+13
+00:00:30,390 --> 00:00:35,322
+no caminho, entender de onde vem a Lei de Ohm
+e o que a força eletromotriz realmente
+
+14
+00:00:35,342 --> 00:00:36,142
+significa.
+
+15
+00:00:36,360 --> 00:00:37,780
+A resposta tem três partes.
+
+16
+00:00:38,340 --> 00:00:42,300
+Primeiro: que força age localmente
+sobre as cargas dentro do fio?
+
+17
+00:00:42,560 --> 00:00:46,420
+Depois: quem estabelece o campo
+elétrico ao longo de todo o circuito?
+
+18
+00:00:46,800 --> 00:00:49,340
+E, por fim: se o resistor dissipa energia,
+
+19
+00:00:49,560 --> 00:00:50,900
+quem repõe essa energia?
+
+20
+00:00:51,200 --> 00:00:53,130
+Quando essas três peças se encaixarem,
+
+21
+00:00:53,300 --> 00:00:58,145
+a Lei de Ohm deixa de parecer uma fórmula
+decorada e o papel da bateria fica muito
+
+22
+00:00:58,165 --> 00:00:58,870
+mais claro.
+
+23
+00:00:58,890 --> 00:01:00,870
+Vamos começar entrando no próprio fio.
+
+24
+00:01:02,830 --> 00:01:05,460
+Por dentro, um metal
+é uma rede de íons fixos,
+
+25
+00:01:06,000 --> 00:01:08,050
+com elétrons livres passeando entre eles.
+
+26
+00:01:08,460 --> 00:01:11,350
+Sem campo, esses elétrons
+se movem para todos os lados,
+
+27
+00:01:11,720 --> 00:01:14,860
+colidem, mudam de rumo,
+tudo de forma desordenada.
+
+28
+00:01:15,120 --> 00:01:17,010
+Em média, ninguém vai a lugar nenhum.
+
+29
+00:01:17,300 --> 00:01:19,650
+Agora existe um campo
+elétrico neste trecho:
+
+30
+00:01:20,020 --> 00:01:21,010
+é a seta ciano.
+
+31
+00:01:21,280 --> 00:01:23,670
+E é esse campo que age, localmente,
+
+32
+00:01:23,800 --> 00:01:24,860
+sobre cada portador.
+
+33
+00:01:25,120 --> 00:01:27,810
+A carga não precisa saber
+onde está a bateria;
+
+34
+00:01:28,020 --> 00:01:31,210
+ela só sente o campo que existe
+exatamente onde ela está.
+
+35
+00:01:31,560 --> 00:01:36,290
+A força sobre um portador é a carga
+dele vezes o campo elétrico.
+
+36
+00:01:36,750 --> 00:01:38,820
+Para um elétron, a carga é negativa,
+
+37
+00:01:39,030 --> 00:01:41,570
+então a força sobre ele
+aponta contra o campo.
+
+38
+00:01:41,950 --> 00:01:44,720
+Mas não é uma fila de elétrons
+disparando pelo fio.
+
+39
+00:01:44,990 --> 00:01:46,410
+Eles continuam desordenados.
+
+40
+00:01:46,760 --> 00:01:49,440
+O campo só acrescenta,
+por cima da bagunça,
+
+41
+00:01:49,640 --> 00:01:52,370
+uma velocidade média,
+a velocidade de deriva,
+
+42
+00:01:52,540 --> 00:01:53,850
+no sentido oposto ao campo.
+
+43
+00:01:54,220 --> 00:01:55,640
+A marca violeta mostra isso:
+
+44
+00:01:56,010 --> 00:01:58,330
+o conjunto escorrega, mas escorrega pouco.
+
+45
+00:01:58,740 --> 00:02:01,180
+Em escala maior, essa
+deriva vira corrente.
+
+46
+00:02:01,550 --> 00:02:04,930
+A densidade de corrente é o número
+de portadores por volume,
+
+47
+00:02:05,110 --> 00:02:08,550
+vezes a carga de cada um,
+vezes a velocidade de deriva.
+
+48
+00:02:08,810 --> 00:02:10,720
+Como a carga do elétron é negativa,
+
+49
+00:02:10,910 --> 00:02:12,430
+a deriva é oposta ao campo,
+
+50
+00:02:12,780 --> 00:02:16,000
+mas a densidade de corrente
+aponta no mesmo sentido do campo.
+
+51
+00:02:16,370 --> 00:02:19,970
+É por isso que a corrente convencional
+é desenhada no sentido do campo.
+
+52
+00:02:20,360 --> 00:02:23,610
+Agora uma definição que vai
+nos acompanhar o vídeo inteiro:
+
+53
+00:02:23,790 --> 00:02:27,560
+a força por unidade de carga
+é a força dividida pela carga.
+
+54
+00:02:27,820 --> 00:02:29,320
+No trecho de um resistor comum,
+
+55
+00:02:29,470 --> 00:02:31,300
+ela é simplesmente o campo elétrico.
+
+56
+00:02:31,750 --> 00:02:33,550
+E o material responde de forma simples,
+
+57
+00:02:33,680 --> 00:02:39,543
+no modelo ôhmico: a densidade de corrente
+é a condutividade vezes a força por unidade
+
+58
+00:02:39,563 --> 00:02:43,140
+de carga, ou seja, a condutividade
+vezes o campo elétrico.
+
+59
+00:02:43,650 --> 00:02:47,040
+Guarda essa relação: ela já carrega
+dentro dela a Lei de Ohm.
+
+60
+00:02:47,380 --> 00:02:50,350
+Vamos afastar a câmera e olhar
+o fio como um cilindro,
+
+61
+00:02:50,550 --> 00:02:53,310
+com um comprimento e uma
+área de seção transversal.
+
+62
+00:02:53,580 --> 00:02:55,160
+A corrente entra por uma ponta.
+
+63
+00:02:55,550 --> 00:02:59,380
+A corrente é o fluxo da densidade
+de corrente através da seção.
+
+64
+00:02:59,670 --> 00:03:01,150
+Se a densidade for uniforme,
+
+65
+00:03:01,310 --> 00:03:05,910
+a integral fica direta: a corrente
+é a densidade de corrente vezes a área.
+
+66
+00:03:06,190 --> 00:03:10,200
+Isolando, a densidade de corrente
+é a corrente dividida pela área.
+
+67
+00:03:10,420 --> 00:03:13,010
+Isso vale como boa
+aproximação para um fio comum.
+
+68
+00:03:13,330 --> 00:03:14,130
+Agora o campo.
+
+69
+00:03:14,350 --> 00:03:18,859
+O módulo da queda de potencial entre
+as duas pontas vem da integral do campo ao
+
+70
+00:03:18,879 --> 00:03:19,679
+longo do fio.
+
+71
+00:03:19,850 --> 00:03:22,220
+Com campo uniforme e paralelo ao caminho,
+
+72
+00:03:22,370 --> 00:03:24,850
+esse módulo é o campo vezes o comprimento.
+
+73
+00:03:25,220 --> 00:03:29,340
+Então o campo é o módulo da queda
+de potencial dividido pelo comprimento.
+
+74
+00:03:29,730 --> 00:03:33,730
+Resumindo: a densidade de corrente
+é a corrente dividida pela área;
+
+75
+00:03:33,940 --> 00:03:37,350
+o campo é a queda de potencial
+dividida pelo comprimento;
+
+76
+00:03:37,560 --> 00:03:41,060
+e a densidade de corrente
+é a condutividade vezes o campo.
+
+77
+00:03:41,450 --> 00:03:43,450
+As duas primeiras falam do fio inteiro,
+
+78
+00:03:43,680 --> 00:03:45,440
+a terceira vale em cada ponto.
+
+79
+00:03:45,850 --> 00:03:47,150
+Agora vamos juntar as três.
+
+80
+00:03:47,550 --> 00:03:49,260
+Começa pela relação do material:
+
+81
+00:03:49,480 --> 00:03:52,160
+a densidade de corrente
+é a condutividade vezes o campo.
+
+82
+00:03:52,300 --> 00:03:54,380
+Agora olha o que acontece.
+
+83
+00:03:54,780 --> 00:03:58,850
+No lugar da densidade de corrente
+entra a corrente dividida pela área.
+
+84
+00:03:59,070 --> 00:04:03,130
+E no lugar do campo entra a queda
+de potencial dividida pelo comprimento.
+
+85
+00:04:03,470 --> 00:04:05,420
+Nada de novo, só substituição:
+
+86
+00:04:05,690 --> 00:04:10,610
+a corrente dividida pela área é a condutividade
+vezes a razão entre a queda de
+
+87
+00:04:10,630 --> 00:04:12,050
+potencial e o comprimento.
+
+88
+00:04:12,430 --> 00:04:14,690
+Agora é álgebra, uma operação de cada vez.
+
+89
+00:04:15,050 --> 00:04:18,100
+Multiplicamos os dois lados
+pela área vezes o comprimento.
+
+90
+00:04:18,500 --> 00:04:21,300
+Do lado esquerdo sobra
+a corrente vezes o comprimento;
+
+91
+00:04:21,700 --> 00:04:26,130
+do direito, a condutividade vezes
+a área vezes a queda de potencial.
+
+92
+00:04:26,340 --> 00:04:27,960
+Isolando a queda de potencial,
+
+93
+00:04:28,110 --> 00:04:30,440
+ela é a corrente vezes o comprimento,
+
+94
+00:04:30,590 --> 00:04:35,350
+dividida pelo produto
+da condutividade pela área.
+
+95
+00:04:35,880 --> 00:04:40,840
+Repara neste bloco: o comprimento dividido
+pelo produto da condutividade pela área.
+
+96
+00:04:41,160 --> 00:04:43,520
+Ele junta o material e a geometria.
+
+97
+00:04:43,780 --> 00:04:45,510
+E, no modelo ôhmico linear,
+
+98
+00:04:45,650 --> 00:04:47,930
+com material, geometria
+e temperatura fixos,
+
+99
+00:04:48,090 --> 00:04:51,650
+não depende nem da corrente
+nem da queda de potencial.
+
+100
+00:04:51,950 --> 00:04:55,320
+Esse bloco tem nome:
+é a resistência desse trecho de fio,
+
+101
+00:04:55,470 --> 00:04:57,830
+um parâmetro macroscópico efetivo.
+
+102
+00:04:58,160 --> 00:04:59,920
+E a Lei de Ohm aparece sozinha:
+
+103
+00:05:00,160 --> 00:05:03,450
+a queda de potencial
+é a resistência vezes a corrente.
+
+104
+00:05:03,900 --> 00:05:05,440
+A Lei de Ohm não caiu do céu:
+
+105
+00:05:05,640 --> 00:05:08,210
+ela nasce da lei local mais a geometria.
+
+106
+00:05:08,450 --> 00:05:10,320
+Mais comprimento, mais resistência;
+
+107
+00:05:10,690 --> 00:05:13,460
+mais área, menos; mais condutividade,
+
+108
+00:05:13,700 --> 00:05:14,390
+menos.
+
+109
+00:05:14,410 --> 00:05:17,500
+E a unidade fecha:
+resistência é volt por ampère,
+
+110
+00:05:17,690 --> 00:05:19,030
+o que a gente chama de ohm.
+
+111
+00:05:19,360 --> 00:05:23,530
+No circuito, antecipando o regime estacionário
+que vamos justificar daqui a pouco,
+
+112
+00:05:23,690 --> 00:05:26,750
+a mesma corrente total
+atravessa os elementos em série.
+
+113
+00:05:27,020 --> 00:05:29,190
+Nos fios a resistência é muito pequena,
+
+114
+00:05:29,370 --> 00:05:30,750
+então o potencial cai pouco.
+
+115
+00:05:31,150 --> 00:05:32,900
+No resistor ela é muito maior,
+
+116
+00:05:33,120 --> 00:05:35,890
+e é ali que cai quase toda
+a queda de potencial.
+
+117
+00:05:36,300 --> 00:05:37,510
+De volta ao circuito inteiro:
+
+118
+00:05:37,750 --> 00:05:39,390
+o campo existe em todo trecho,
+
+119
+00:05:39,770 --> 00:05:42,000
+pequeno nos fios e grande no resistor.
+
+120
+00:05:42,250 --> 00:05:45,280
+A fita azul mostra o potencial
+ao longo do caminho:
+
+121
+00:05:45,400 --> 00:05:47,580
+cai pouco nos fios, muito no resistor,
+
+122
+00:05:47,760 --> 00:05:49,320
+e sobe de novo dentro da fonte.
+
+123
+00:05:49,760 --> 00:05:51,020
+O campo, na direção do fio,
+
+124
+00:05:51,180 --> 00:05:52,830
+é a inclinação dessa fita.
+
+125
+00:05:53,280 --> 00:05:56,400
+Mas quem estabelece esse campo
+ao longo do circuito inteiro?
+
+126
+00:05:56,870 --> 00:05:59,210
+Para responder, precisamos de uma ideia:
+
+127
+00:05:59,390 --> 00:06:00,470
+a carga se conserva.
+
+128
+00:06:00,880 --> 00:06:02,810
+Imagina um volume pequeno dentro do fio.
+
+129
+00:06:03,080 --> 00:06:04,880
+Se entra mais corrente do que sai,
+
+130
+00:06:05,060 --> 00:06:07,180
+a carga dentro dele só pode aumentar.
+
+131
+00:06:07,440 --> 00:06:09,840
+Em forma local, é a equação
+da continuidade:
+
+132
+00:06:10,160 --> 00:06:12,750
+a variação, no tempo,
+da densidade de carga,
+
+133
+00:06:12,880 --> 00:06:15,250
+mais o divergente
+da densidade de corrente,
+
+134
+00:06:15,480 --> 00:06:16,150
+é zero.
+
+135
+00:06:16,170 --> 00:06:19,060
+O divergente mede, numa
+vizinhança muito pequena,
+
+136
+00:06:19,280 --> 00:06:21,500
+se sai mais fluxo
+de corrente do que entra.
+
+137
+00:06:21,820 --> 00:06:25,960
+Integrando no volume, a primeira parcela
+vira a variação da carga dentro dele.
+
+138
+00:06:26,270 --> 00:06:30,690
+Na segunda, o teorema da divergência
+transforma a integral do divergente no fluxo
+
+139
+00:06:30,710 --> 00:06:34,190
+da densidade de corrente pela
+superfície que fecha o volume.
+
+140
+00:06:34,440 --> 00:06:36,450
+Neste trecho quase unidimensional,
+
+141
+00:06:36,610 --> 00:06:38,410
+as faces laterais não contribuem;
+
+142
+00:06:38,760 --> 00:06:40,870
+sobram a face de entrada e a de saída.
+
+143
+00:06:41,120 --> 00:06:45,761
+No fim, a variação da carga no tempo
+é a corrente que entra menos a corrente que
+
+144
+00:06:45,781 --> 00:06:46,160
+sai.
+
+145
+00:06:46,180 --> 00:06:48,830
+É exatamente a contabilidade
+que a gente imaginou.
+
+146
+00:06:49,180 --> 00:06:51,590
+Agora vem a parte mais importante,
+
+147
+00:06:51,860 --> 00:06:53,080
+então vamos devagar.
+
+148
+00:06:53,470 --> 00:06:55,290
+A ordem que você vai ver é didática:
+
+149
+00:06:55,720 --> 00:06:58,550
+separamos os passos para
+enxergar causa e consequência.
+
+150
+00:06:59,060 --> 00:07:00,620
+Suponha que, por um instante,
+
+151
+00:07:00,770 --> 00:07:02,390
+entre mais corrente do que sai.
+
+152
+00:07:02,650 --> 00:07:03,990
+Repara nas duas setas verdes:
+
+153
+00:07:04,400 --> 00:07:06,420
+a de entrada é maior que a de saída.
+
+154
+00:07:06,630 --> 00:07:08,910
+Então a carga dentro do volume aumenta,
+
+155
+00:07:09,100 --> 00:07:10,470
+e o medidor azul mostra isso.
+
+156
+00:07:10,920 --> 00:07:14,420
+É só contabilidade: o que
+entra e não sai fica guardado.
+
+157
+00:07:14,660 --> 00:07:15,820
+E onde essa carga fica?
+
+158
+00:07:16,100 --> 00:07:20,640
+Num bom condutor, a redistribuição que
+importa aqui aparece principalmente como
+
+159
+00:07:20,660 --> 00:07:23,240
+uma pequena quantidade
+de carga na superfície,
+
+160
+00:07:23,390 --> 00:07:26,540
+na casca do condutor, e não como
+um fluido enchendo o volume.
+
+161
+00:07:26,830 --> 00:07:29,400
+Essas cargas mudam
+o potencial ao redor delas.
+
+162
+00:07:29,780 --> 00:07:32,800
+Olha a curva do potencial
+se deformando junto do acúmulo.
+
+163
+00:07:33,050 --> 00:07:34,320
+O campo, na direção do fio,
+
+164
+00:07:34,470 --> 00:07:37,970
+é menos a derivada do potencial
+em relação à posição:
+
+165
+00:07:38,180 --> 00:07:40,230
+quando a inclinação muda, o campo muda.
+
+166
+00:07:40,440 --> 00:07:45,041
+A redistribuição altera o campo de um jeito
+que reduz o desbalanço entre a corrente
+
+167
+00:07:45,061 --> 00:07:46,810
+que entra e a que sai; aqui,
+
+168
+00:07:46,960 --> 00:07:49,620
+o campo de entrada diminui
+e o de saída aumenta.
+
+169
+00:07:49,880 --> 00:07:51,250
+E por que a corrente muda junto?
+
+170
+00:07:51,620 --> 00:07:52,960
+Porque, no material ôhmico,
+
+171
+00:07:53,090 --> 00:07:56,850
+a densidade de corrente
+é a condutividade vezes o campo.
+
+172
+00:07:57,160 --> 00:07:59,450
+Mudou o campo, mudou
+a densidade de corrente.
+
+173
+00:07:59,780 --> 00:08:02,600
+É por isso que, na tela,
+mostramos primeiro a carga,
+
+174
+00:08:02,740 --> 00:08:04,850
+depois o potencial, depois o campo,
+
+175
+00:08:05,010 --> 00:08:06,160
+e só então a corrente.
+
+176
+00:08:06,540 --> 00:08:08,430
+Funciona como um mecanismo de ajuste,
+
+177
+00:08:08,600 --> 00:08:10,370
+uma realimentação eletrostática:
+
+178
+00:08:10,810 --> 00:08:13,810
+o acúmulo reduz justamente
+o desbalanço que o criou.
+
+179
+00:08:14,010 --> 00:08:16,189
+Quando a corrente que
+entra iguala a que sai,
+
+180
+00:08:16,209 --> 00:08:17,190
+o acúmulo para.
+
+181
+00:08:17,470 --> 00:08:20,610
+Mas repara: as cargas que
+se acumularam continuam lá.
+
+182
+00:08:22,430 --> 00:08:24,030
+Isso não acontece só num ponto.
+
+183
+00:08:24,370 --> 00:08:27,430
+Quando a câmera abre, vemos que
+o circuito inteiro se ajustou:
+
+184
+00:08:27,620 --> 00:08:31,050
+existe uma distribuição de cargas
+na superfície dos condutores,
+
+185
+00:08:31,230 --> 00:08:36,150
+já estabelecida, que produz em cada região
+um campo compatível com a geometria,
+
+186
+00:08:36,280 --> 00:08:38,310
+os materiais e o regime estacionário.
+
+187
+00:08:38,540 --> 00:08:41,540
+Não é uma onda de cargas
+viajando a partir deste ponto;
+
+188
+00:08:41,880 --> 00:08:42,880
+é o estado final.
+
+189
+00:08:43,090 --> 00:08:44,690
+A imagem é qualitativa.
+
+190
+00:08:44,910 --> 00:08:46,840
+Repara no que muda
+de um trecho para outro.
+
+191
+00:08:47,230 --> 00:08:49,540
+Num circuito em série,
+no regime estacionário,
+
+192
+00:08:49,710 --> 00:08:52,270
+a corrente total é a mesma
+em todas as seções.
+
+193
+00:08:52,640 --> 00:08:55,960
+Mas a densidade de corrente
+é a corrente dividida pela área,
+
+194
+00:08:56,130 --> 00:08:58,080
+então pode mudar quando a área muda.
+
+195
+00:08:58,270 --> 00:09:02,950
+E o campo local é a corrente dividida
+pelo produto da condutividade pela área.
+
+196
+00:09:03,180 --> 00:09:05,220
+Por isso, para a mesma corrente total,
+
+197
+00:09:05,360 --> 00:09:09,310
+o campo é maior onde o produto
+da condutividade pela área é menor:
+
+198
+00:09:09,540 --> 00:09:11,620
+pequeno nos fios, grande no resistor.
+
+199
+00:09:11,870 --> 00:09:14,290
+Olha o marcador percorrendo
+a fita de potencial:
+
+200
+00:09:14,590 --> 00:09:17,000
+o campo na direção do fio é a inclinação,
+
+201
+00:09:17,240 --> 00:09:20,020
+com sinal de menos, do potencial
+ao longo do caminho.
+
+202
+00:09:20,280 --> 00:09:24,971
+E a distribuição superficial de cargas
+estabelece como o potencial varia ao longo
+
+203
+00:09:24,991 --> 00:09:25,791
+do circuito.
+
+204
+00:09:26,000 --> 00:09:29,060
+Durante o ajuste, a densidade
+de carga muda no tempo.
+
+205
+00:09:29,390 --> 00:09:31,910
+Quando ele termina,
+essa variação é zero e,
+
+206
+00:09:32,040 --> 00:09:33,711
+pela equação da continuidade,
+
+207
+00:09:33,731 --> 00:09:36,740
+o divergente da densidade
+de corrente também é zero:
+
+208
+00:09:36,990 --> 00:09:40,720
+tudo o que entra em cada pedacinho sai.
+
+209
+00:09:41,070 --> 00:09:43,450
+Mas atenção: as cargas
+na superfície não sumiram.
+
+210
+00:09:43,790 --> 00:09:45,850
+Elas só pararam de se redistribuir.
+
+211
+00:09:46,190 --> 00:09:49,530
+Regime estacionário não é ausência
+de cargas superficiais.
+
+212
+00:09:49,860 --> 00:09:52,180
+Tudo está em movimento, mas nada muda:
+
+213
+00:09:52,460 --> 00:09:54,100
+é isso que estacionário quer dizer.
+
+214
+00:09:54,410 --> 00:09:55,790
+Compara com o que você já conhece.
+
+215
+00:09:56,200 --> 00:09:57,760
+No equilíbrio eletrostático,
+
+216
+00:09:57,900 --> 00:10:00,940
+o campo dentro do condutor
+é zero e não existe corrente.
+
+217
+00:10:01,270 --> 00:10:03,940
+Já num fio resistivo com
+corrente estacionária,
+
+218
+00:10:04,060 --> 00:10:06,150
+o campo dentro do material não é zero,
+
+219
+00:10:06,330 --> 00:10:10,480
+e a densidade de corrente continua
+sendo a condutividade vezes o campo.
+
+220
+00:10:10,830 --> 00:10:14,790
+Para sustentar corrente num condutor
+resistivo como esse é preciso campo,
+
+221
+00:10:14,910 --> 00:10:17,130
+estabelecido pelas cargas na superfície.
+
+222
+00:10:17,550 --> 00:10:19,830
+Então estacionário não é eletrostático.
+
+223
+00:10:21,160 --> 00:10:22,210
+Falta a última pergunta.
+
+224
+00:10:22,640 --> 00:10:26,040
+No resistor, energia elétrica
+é dissipada em forma de calor.
+
+225
+00:10:26,280 --> 00:10:27,980
+Então quem repõe essa energia?
+
+226
+00:10:28,260 --> 00:10:29,050
+A fonte.
+
+227
+00:10:29,070 --> 00:10:31,600
+E esse mecanismo precisa
+ser não eletrostático,
+
+228
+00:10:31,990 --> 00:10:34,155
+porque o campo elétrico conservativo,
+
+229
+00:10:34,175 --> 00:10:37,210
+sozinho, não fornece energia
+líquida numa volta completa:
+
+230
+00:10:37,550 --> 00:10:40,550
+tudo o que dá num trecho, toma
+de volta no resto do caminho.
+
+231
+00:10:40,860 --> 00:10:43,240
+Dentro da bateria, além do campo elétrico,
+
+232
+00:10:43,380 --> 00:10:45,750
+existe uma força que não é eletrostática,
+
+233
+00:10:45,890 --> 00:10:47,340
+ligada ao mecanismo da fonte.
+
+234
+00:10:47,730 --> 00:10:49,250
+Chamamos de força da fonte,
+
+235
+00:10:49,570 --> 00:10:50,570
+por unidade de carga.
+
+236
+00:10:50,930 --> 00:10:53,135
+A bateria aqui é só um modelo esquemático;
+
+237
+00:10:53,155 --> 00:10:54,210
+não entramos na química.
+
+238
+00:10:54,660 --> 00:10:56,230
+Repara que os dois coexistem.
+
+239
+00:10:56,540 --> 00:10:59,940
+Dentro da fonte, o campo elétrico
+continua existindo e aponta,
+
+240
+00:11:00,070 --> 00:11:02,160
+do positivo para o negativo,
+
+241
+00:11:02,290 --> 00:11:04,150
+tentando empurrar a carga para baixo.
+
+242
+00:11:04,500 --> 00:11:07,620
+A força da fonte atua
+no sentido oposto e vence.
+
+243
+00:11:08,020 --> 00:11:12,600
+A força total por unidade de carga
+é o campo elétrico mais a força da fonte.
+
+244
+00:11:12,990 --> 00:11:16,550
+Para enxergar o balanço, vamos
+acompanhar uma carga de prova positiva.
+
+245
+00:11:16,870 --> 00:11:19,794
+Veja ela subindo, contra
+a tendência eletrostática:
+
+246
+00:11:19,814 --> 00:11:22,030
+a régua de energia por
+carga vai crescendo.
+
+247
+00:11:23,210 --> 00:11:25,430
+E é aqui que entra a força eletromotriz.
+
+248
+00:11:25,850 --> 00:11:27,850
+Apesar do nome, ela não é uma força.
+
+249
+00:11:28,220 --> 00:11:31,300
+Ela é a integral, ao longo
+do circuito fechado,
+
+250
+00:11:31,480 --> 00:11:32,920
+da força por unidade de carga.
+
+251
+00:11:33,160 --> 00:11:35,090
+Newton por coulomb, vezes metro,
+
+252
+00:11:35,220 --> 00:11:37,060
+é joule por coulomb, que é volt:
+
+253
+00:11:37,440 --> 00:11:39,781
+neste caso, de uma fonte estacionária,
+
+254
+00:11:39,801 --> 00:11:42,590
+ela mede energia entregue
+por unidade de carga.
+
+255
+00:11:42,900 --> 00:11:47,250
+Separando a força por unidade de carga
+em campo elétrico e força da fonte,
+
+256
+00:11:47,390 --> 00:11:51,720
+a força eletromotriz é a integral do campo
+mais a integral da força da fonte.
+
+257
+00:11:52,120 --> 00:11:54,550
+Neste circuito de corrente
+contínua estacionária,
+
+258
+00:11:54,690 --> 00:11:57,540
+sem indução magnética e sem
+movimento do circuito,
+
+259
+00:11:57,710 --> 00:11:59,480
+o campo elétrico é conservativo.
+
+260
+00:11:59,780 --> 00:12:02,890
+Então a integral do campo
+numa volta completa é zero.
+
+261
+00:12:03,140 --> 00:12:07,030
+Acompanha o marcador: o campo realiza
+trabalho nos fios e no resistor,
+
+262
+00:12:07,250 --> 00:12:09,700
+mas dentro da fonte contribui
+com sinal contrário,
+
+263
+00:12:09,820 --> 00:12:11,850
+e a barra dele volta a zero.
+
+264
+00:12:12,060 --> 00:12:15,230
+Já a força da fonte
+só contribui dentro da bateria,
+
+265
+00:12:15,430 --> 00:12:18,090
+e a barra dela fica no valor
+da força eletromotriz.
+
+266
+00:12:18,490 --> 00:12:20,130
+Cancelou o termo do campo,
+
+267
+00:12:20,760 --> 00:12:23,560
+sobra: a força eletromotriz é a integral,
+
+268
+00:12:23,730 --> 00:12:26,040
+ao redor do circuito, da força da fonte.
+
+269
+00:12:26,420 --> 00:12:30,860
+É a fonte realizando trabalho não
+eletrostático e repondo energia nas cargas.
+
+270
+00:12:31,180 --> 00:12:33,800
+O campo dirige a condução
+nos trechos passivos;
+
+271
+00:12:34,220 --> 00:12:35,990
+quem repõe a energia é a fonte.
+
+272
+00:12:36,600 --> 00:12:38,180
+E agora a energia fecha.
+
+273
+00:12:38,510 --> 00:12:42,831
+Numa escala local, a densidade de potência
+transferida pelo campo para a matéria
+
+274
+00:12:42,851 --> 00:12:46,270
+é o produto escalar da densidade
+de corrente pelo campo elétrico.
+
+275
+00:12:46,700 --> 00:12:49,390
+No resistor ôhmico, isso
+aparece como dissipação.
+
+276
+00:12:49,640 --> 00:12:54,025
+A potência total no resistor é a integral
+dessa densidade de potência ao longo
+
+277
+00:12:54,045 --> 00:12:54,670
+dele.
+
+278
+00:12:54,690 --> 00:12:59,570
+Se o resistor é uniforme, a densidade
+de corrente e o campo são constantes e paralelos:
+
+279
+00:12:59,890 --> 00:13:04,210
+a potência é a densidade de corrente
+vezes o campo vezes o volume,
+
+280
+00:13:04,470 --> 00:13:05,970
+que é a área vezes o comprimento.
+
+281
+00:13:06,360 --> 00:13:09,800
+Reagrupando: densidade de corrente
+vezes área é a corrente,
+
+282
+00:13:10,140 --> 00:13:13,010
+e campo vezes comprimento
+é a queda de potencial.
+
+283
+00:13:13,220 --> 00:13:16,200
+A potência é a queda
+de potencial vezes a corrente.
+
+284
+00:13:16,580 --> 00:13:19,840
+Com a Lei de Ohm, é a resistência
+vezes a corrente ao quadrado.
+
+285
+00:13:20,140 --> 00:13:24,770
+Do lado da fonte, a potência fornecida
+é a força eletromotriz vezes a corrente.
+
+286
+00:13:25,160 --> 00:13:28,040
+Num modelo ideal, com toda
+a resistência concentrada,
+
+287
+00:13:28,200 --> 00:13:31,320
+a força eletromotriz
+é a resistência vezes a corrente.
+
+288
+00:13:31,730 --> 00:13:36,260
+Substituindo, a potência da fonte
+é a resistência vezes a corrente ao quadrado:
+
+289
+00:13:36,560 --> 00:13:39,730
+exatamente a potência dissipada
+pelos elementos resistivos.
+
+290
+00:13:40,180 --> 00:13:44,770
+É um balanço esquemático; não existem pacotes
+de energia viajando dentro dos elétrons.
+
+291
+00:13:45,320 --> 00:13:47,100
+Então, quem empurra as cargas?
+
+292
+00:13:47,560 --> 00:13:49,680
+A bateria não empurra as cargas de longe.
+
+293
+00:13:49,970 --> 00:13:53,460
+A fonte fornece energia e mantém
+a diferença de potencial.
+
+294
+00:13:53,700 --> 00:13:58,021
+A distribuição superficial de cargas
+estabelece o campo elétrico ao longo de todo
+
+295
+00:13:58,041 --> 00:13:58,841
+o circuito.
+
+296
+00:13:58,990 --> 00:14:00,634
+E esse campo atua, localmente,
+
+297
+00:14:00,654 --> 00:14:03,480
+sobre os portadores e, no material ôhmico,
+
+298
+00:14:03,660 --> 00:14:05,490
+estabelece a densidade de corrente.
+
+299
+00:14:05,960 --> 00:14:07,610
+Vale guardar quatro distinções.
+
+300
+00:14:08,050 --> 00:14:11,210
+A bateria não cria a corrente
+diretamente em todo lugar.
+
+301
+00:14:11,460 --> 00:14:15,010
+O divergente da densidade de corrente
+ser zero não cria o campo.
+
+302
+00:14:15,400 --> 00:14:18,220
+As cargas superficiais
+não fornecem a energia.
+
+303
+00:14:18,510 --> 00:14:20,600
+E força eletromotriz não é força.
+
+304
+00:14:21,080 --> 00:14:23,090
+Se isso mudou a sua imagem de um circuito,
+
+305
+00:14:23,270 --> 00:14:24,690
+inscreva-se no Parallax Lab.
+
+306
+00:14:24,930 --> 00:14:28,680
+E conta nos comentários: você já conhecia
+o papel das cargas superficiais?
+
+307
+00:14:29,580 --> 00:14:33,031
+No próximo vídeo, a fonte
+deixa de ser uma bateria.
+
+308
+00:14:33,051 --> 00:14:36,114
+Imagina uma barra deslizando
+sobre dois trilhos,
+
+309
+00:14:36,134 --> 00:14:38,088
+dentro de um campo magnético.
+
+310
+00:14:38,108 --> 00:14:40,766
+Ela empurra as cargas só porque se move.
+
+311
+00:14:40,786 --> 00:14:43,620
+Mas a força magnética
+não realiza trabalho.
+
+312
+00:14:43,640 --> 00:14:46,563
+Então, de onde vem
+a energia dessa corrente?
+
+313
+00:14:46,583 --> 00:14:48,536
+Te espero no próximo vídeo:
+
+314
+00:14:48,556 --> 00:14:50,882
+força eletromotriz de movimento.

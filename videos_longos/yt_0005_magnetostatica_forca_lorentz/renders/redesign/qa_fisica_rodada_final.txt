@@ -1,0 +1,23 @@
+OK    q>0: v_y = +v⊥ sen(ωt), v_z = v⊥ cos(ωt) (erro máx 5.6e-13)
+OK    q>0: |v| constante (erro 2.9e-15)
+OK    q>0: y−y0 = +R(1−cos), z−z0 = R sen (erro 4.5e-13)
+OK    Orbit(s=+1) coerente com a solução, o módulo e F = q v×B (erro 7.8e-16)
+OK    R = m v⊥/(|q|B) e T = 2π m/(|q|B) (s=+1) 
+OK    q<0: v_y = -v⊥ sen(ωt), v_z = v⊥ cos(ωt) (erro máx 5.6e-13)
+OK    q<0: |v| constante (erro 2.9e-15)
+OK    q<0: y−y0 = -R(1−cos), z−z0 = R sen (erro 4.5e-13)
+OK    Orbit(s=-1) coerente com a solução, o módulo e F = q v×B (erro 4.4e-16)
+OK    R = m v⊥/(|q|B) e T = 2π m/(|q|B) (s=-1) 
+OK    passo p = 2π m v∥/(|q|B) (p = 2.500)
+OK    primitiva: d/dt[−cos(ωt)/ω + C] = sen(ωt) 
+OK    ∫0^t v⊥ sen = (v⊥/ω)(1−cos ωt) 
+OK    B08 q>0: arco inteiramente dentro da região 
+OK    B08 q>0: trecho reto fora do campo 
+OK    B08 q>0: saída em x=−1.5, y = -2.0 (semicircunferência de raio R) 
+OK    B08 q>0: curva para baixo (centro do lado de F = q v×B) 
+OK    B08 q<0: arco inteiramente dentro da região 
+OK    B08 q<0: trecho reto fora do campo 
+OK    B08 q<0: saída em x=−1.5, y = +2.0 (semicircunferência de raio R) 
+OK    B08 q<0: curva para cima (centro do lado de F = q v×B) 
+
+RESULTADO: TUDO OK

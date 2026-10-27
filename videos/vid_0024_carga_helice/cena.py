@@ -1,5 +1,5 @@
 """VID24 — layout, legibilidade e ritmo; preview silencioso Manim 2.5D.
-Previews anteriores preservados. Novo render em media_layout_ritmo/.
+Previews anteriores preservados. Novo render em media_ajustes_didaticos/.
 """
 from pathlib import Path
 import json
@@ -13,11 +13,13 @@ sys.path.insert(0, str(ROOT))
 from template.config import BACKGROUND_COLOR, PRIMARY_COLOR, TEXT_COLOR, WATERMARK_PATH
 from template.fonts import screen_text
 
-UNIT = Path(__file__).resolve().parent
-config.media_dir = str(UNIT / 'media_layout_ritmo')
+UNIT = Path(__file__).absolute().parent
+import os
+config.media_dir = os.environ.get('MEDIA_DIR', str(UNIT / 'media_ajustes_didaticos'))
 config.background_color = BACKGROUND_COLOR
 config.max_files_cached = 240
 CYAN, VIOLET, PINK, BLUE, DIM = PRIMARY_COLOR, '#9C8CFF', '#EA63FF', '#267BFF', '#8492AE'
+OLD = '#B4C0DA'
 PARALLEL = '#63E6BE'  # Escolha específica desta rodada para a componente paralela.
 LAYOUT = {
     'title': 6.1, 'subtitle': 5.25, 'equation': -4.8, 'note': -5.65,
@@ -241,12 +243,12 @@ class CargaHelice024(Scene):
         curves=[]
         for row,(label,color) in enumerate([('v_x',VIOLET),('F_x',PINK)]):
             y=-2.55-row*1.55
-            ax=Axes(x_range=[0,1.25,1],y_range=[-1.2,1.2,1],x_length=5.7,y_length=1.1,
+            ax=Axes(x_range=[0,1.5,1],y_range=[-1.2,1.2,1],x_length=5.7,y_length=1.1,
                     tips=False,axis_config={'include_ticks':False,'color':DIM,'stroke_width':1.1})
             ax.move_to([.2,y,0]); axes.append(ax)
             curve=VMobject(color=color,stroke_width=2.8)
             curve.set_points_as_corners([ax.c2p(t,graph_components(t)[row]/(1.15 if row==0 else 1.15))
-                                         for t in np.linspace(0,1.25,101)])
+                                         for t in np.linspace(0,1.5,121)])
             tag=math(label+'(t)',y=y,size=31,color=color).set_x(-3.4)
             zero=math('0',y=y-.73,size=20,color=DIM).set_x(ax.c2p(0,0)[0])
             panels.add(ax,curve,tag,zero)
@@ -264,12 +266,13 @@ class CargaHelice024(Scene):
             g[0].move_to(axes[0].c2p(t,vx/self.v_perp_tracker.get_value()))
             g[1].move_to(axes[1].c2p(t,fx/(self.B_tracker.get_value()*self.v_perp_tracker.get_value())))
         dots.add_updater(refresh_dots); refresh_dots(dots)
-        modules=words('x: direção perpendicular a B • T: tempo de uma volta'+chr(10)+'Componentes normalizadas; os módulos permanecem constantes.',-1.72,22,DIM)
+        modules=words('Cada componente oscila; o módulo de v e de F permanece constante.',-1.8,22,DIM)
         constant_B=math('B','=','B_0',y=4.15,size=29,color=BLUE).set_x(2.75)
         border=RoundedRectangle(width=7.9,height=LAYOUT['graph_height'],corner_radius=.12,
                                 stroke_color=DIM,stroke_width=1,stroke_opacity=.22,
                                 fill_color=BLUE,fill_opacity=.018).move_to([0,LAYOUT['graph_center'],0]).set_z_index(-8)
-        group=VGroup(border,panels,ticks,time,cursor,dots,modules,constant_B)
+        legend=words('T = tempo de uma volta  •  x é perpendicular a B  •  curvas normalizadas',-5.75,21,DIM)
+        group=VGroup(border,panels,ticks,time,cursor,dots,modules,constant_B,legend)
         group.curves=VGroup(*curves)
         return group
 
@@ -279,20 +282,20 @@ class CargaHelice024(Scene):
         if radius:
             y=LAYOUT['measure_rows'][1 if shift else 0]
             a=np.array([-.4,y,0]); b=a+RIGHT*(1.3*self.view_scale.get_value()*r)
-            group.add(DoubleArrow(a,b,buff=0,color=color,stroke_width=2.4,max_tip_length_to_length_ratio=.14),
-                      math('r_'+suffix,size=28,color=color).move_to(a+LEFT*.65))
+            group.add(DoubleArrow(a,b,buff=0,color=color,stroke_width=3.2,max_tip_length_to_length_ratio=.14),
+                      math('r_'+suffix,size=36,color=color).move_to(a+LEFT*.65))
         if pitch:
-            ink=DIM if suffix=='0' else PARALLEL
+            ink=OLD if suffix=='0' else PARALLEL
             a=np.array([-3.9+(.7 if shift else 0),-2.1,0])
             b=a+self.project([0,0,p])-self.project([0,0,0])
-            group.add(DoubleArrow(a,b,buff=0,color=ink,stroke_width=2.4,max_tip_length_to_length_ratio=.1),
-                      math('p_'+suffix,size=28,color=ink).move_to((a+b)/2+LEFT*.35))
+            group.add(DoubleArrow(a,b,buff=0,color=ink,stroke_width=3.2,max_tip_length_to_length_ratio=.1),
+                      math('p_'+suffix,size=36,color=ink).move_to((a+b)/2+LEFT*.35))
         return group.set_z_index(18)
 
     def compare(self,variable,target,title,subtitle,formula,badge,radius,pitch,end=None):
         self.heading(title,subtitle); self.equation(*formula,duration=.8)
         baseline=(1.,1.15,.34,1,False)
-        ghost=self.curve(parameters=baseline).set_stroke(color=DIM,opacity=.32,width=2).set_fill(opacity=0).set_z_index(-7)
+        ghost=self.curve(parameters=baseline).set_stroke(color=OLD,opacity=.55,width=2.4).set_fill(opacity=0).set_z_index(-7)
         self.play(FadeIn(ghost),FadeOut(self.particle),FadeOut(self.halo),run_time=.4)
         self.reveal.set_value(4*PI); self.phase_tracker.set_value(3.35*PI); self.sync_particle()
         self.velocity_scale.set_value(2)
@@ -312,7 +315,7 @@ class CargaHelice024(Scene):
         self.play(FadeIn(self.particle),FadeIn(self.halo),*([FadeIn(comp)] if comp is not None else []),run_time=.4)
         tracker={'B':self.B_tracker,'vp':self.v_perp_tracker,'vz':self.v_parallel_tracker}[variable]
         self.play(tracker.animate.set_value(target),run_time=1.4)
-        oldmeasure=self.radius_pitch(baseline,DIM,'0',radius=radius,pitch=pitch)
+        oldmeasure=self.radius_pitch(baseline,OLD,'0',radius=radius,pitch=pitch)
         params=list(baseline);params[{'B':0,'vp':1,'vz':2}[variable]]=target
         newmeasure=self.radius_pitch(tuple(params),CYAN if variable!='vp' else VIOLET,'1',shift=.34,radius=radius,pitch=pitch)
         self.play(FadeIn(oldmeasure),FadeIn(newmeasure),run_time=.45)
@@ -358,8 +361,8 @@ class CargaHelice024(Scene):
 
     def guides(self):
         p,vt,vl,v,_=self.physical();k=self.velocity_scale.get_value()
-        return VGroup(DashedLine(self.project(p),self.project(p+k*vt),color=VIOLET,stroke_width=1.1,stroke_opacity=.35,dash_length=.10),
-                      DashedLine(self.project(p+k*vt),self.project(p+k*v),color=PARALLEL,stroke_width=1.1,stroke_opacity=.35,dash_length=.10)).set_z_index(12)
+        return VGroup(DashedLine(self.project(p),self.project(p+k*vt),color=VIOLET,stroke_width=1.8,stroke_opacity=.7,dash_length=.10),
+                      DashedLine(self.project(p+k*vt),self.project(p+k*v),color=PARALLEL,stroke_width=1.8,stroke_opacity=.7,dash_length=.10)).set_z_index(12)
 
     def glyph_formula(self,key,size=43):
         data={
@@ -369,7 +372,8 @@ class CargaHelice024(Scene):
             'D':(r'|q|Br=mv_\perp',9,[7,8],[3]),
             'E':(r'r=\frac{mv_\perp}{|q|B}',10,[3,4],[9]),
             'W0':(r'\omega_c=\frac{v_\perp}{r}',7,[3,4],[]),
-            'W1':(r'\omega_c=\frac{v_\perp|q|B}{mv_\perp}',13,[3,4,11,12],[8]),
+            'W1':(r'\omega_c=\frac{v_\perp}{\frac{mv_\perp}{|q|B}}',14,[3,4,7,8],[13]),
+            'W1b':(r'\omega_c=v_\perp\cdot\frac{|q|B}{mv_\perp}',14,[3,4,12,13],[9]),
             'W2':(r'\omega_c=\frac{|q|B}{m}',9,[],[6]),
             'T0':(r'T=\frac{2\pi}{\omega_c}',7,[],[]),
             'T1':(r'T=\frac{2\pi m}{|q|B}',10,[],[9]),
@@ -403,8 +407,8 @@ class CargaHelice024(Scene):
         self.glyph_transfer(self.glyph_formula('B'),[([0,1,2],[0,1,2]),([3,4],[3,4]),([5],[5]),([6],[7]),
                             ([7],[8]),([8,10],[9,11]),([9],[10]),([11],[6],{'path_arc':-.7})],1.5,'raio_multiplicar_r')
         self.wait(.65)
-        self.glyph_transfer(self.glyph_formula('C'),[(list(range(9)),list(range(9))),([9,11],[9,10]),
-                            ([9,11],[12,13],{'path_arc':PI/2}),([],[11],{'delay':.3})],1.5,'raio_abrir_quadrado')
+        self.glyph_transfer(self.glyph_formula('C'),[([0,1,2,3,4,5,6,7,8],[0,1,2,3,4,5,6,7,8]),
+                            ([9,11],[9,10]),([9,11],[12,13],{'path_arc':PI/2}),([10],[]),([],[11],{'delay':.4})],1.5,'raio_abrir_quadrado')
         self.wait(.35)
         factors=VGroup(*[self.eq[0][i] for i in (3,4,12,13)])
         self.play(factors.animate.set_color(TEXT_COLOR),run_time=.4)
@@ -437,19 +441,21 @@ class CargaHelice024(Scene):
         self.wait(.65)
         gap=self.eq.copy();gap[0].remove(gap[0][6])
         self.glyph_transfer(gap,[(list(range(6)),list(range(6))),([6],[])],.4,'omega_substituir_raio_saida')
-        self.glyph_transfer(self.glyph_formula('W1'),[(list(range(5)),list(range(5))),([5],[9])],.9,'omega_substituir_raio')
+        self.glyph_transfer(self.glyph_formula('W1'),[(list(range(6)),list(range(6)))],.9,'omega_substituir_raio')
         self.wait(.65)
-        factors=VGroup(*[self.eq[0][i] for i in (3,4,11,12)])
+        recip=words('Dividir por uma fração = multiplicar pelo inverso',LAYOUT['note'],23,DIM)
+        self.glyph_transfer(self.glyph_formula('W1b'),[([0,1,2],[0,1,2]),([3,4],[3,4]),([9],[10]),([6,7,8],[11,12,13]),
+                            ([10,11,12,13],[6,7,8,9]),([5],[]),([],[5],{'delay':.5})],1.2,'omega_multiplicar_inverso',
+                            extras=(Succession(FadeOut(self.note),FadeIn(recip)),));self.note=recip
+        self.wait(.6)
+        factors=VGroup(*[self.eq[0][i] for i in (3,4,12,13)])
         self.play(factors.animate.set_color(TEXT_COLOR),run_time=.4)
         strikes=VGroup(*[Line(VGroup(*[self.eq[0][i] for i in pair]).get_corner(DL)+DL*.04,
                               VGroup(*[self.eq[0][i] for i in pair]).get_corner(UR)+UR*.04,
-                              color=PINK,stroke_width=2.3) for pair in ((3,4),(11,12))])
+                              color=PINK,stroke_width=2.3) for pair in ((3,4),(12,13))])
         self.play(Create(strikes),run_time=.4);self.wait(.7)
-        gap=self.eq.copy();gap[0].remove(*[gap[0][i] for i in (3,4,11,12)])
-        kept=[0,1,2,5,6,7,8,9,10]
-        self.glyph_transfer(gap,[(kept,list(range(9))),([3,4,11,12],[])],.8,'omega_cancelar_vperp',extras=(FadeOut(strikes),))
-        self.wait(.35)
-        self.glyph_transfer(self.glyph_formula('W2'),[(list(range(9)),list(range(9)))],1.4,'omega_simplificar')
+        self.glyph_transfer(self.glyph_formula('W2'),[([0,1,2],[0,1,2]),([6,7,8,9],[3,4,5,6]),([10],[7]),([11],[8]),
+                            ([3,4,5,12,13],[])],1.4,'omega_simplificar',extras=(FadeOut(strikes),))
         omega_box=SurroundingRectangle(self.eq,buff=.20,color=VIOLET,stroke_width=1.6,corner_radius=.10)
         self.play(Create(omega_box),run_time=.4);self.wait(.8)
         self.play(FadeOut(radius_reference),FadeOut(omega_box),run_time=.4)
@@ -510,38 +516,42 @@ class CargaHelice024(Scene):
 
         # B — fase comum ao fenômeno, vetores, cursores e pontos nas curvas.
         self.heading('A força muda a direção','Somente força magnética • regime não relativístico',plane=0)
-        self.equation(r'\vec F','=','q',r'\vec v',r'\times',r'\vec B',note='B = B₀ • uniforme e constante',duration=.8)
+        self.equation(r'\vec F','=','q',r'\vec v',r'\times',r'\vec B',note='B = B₀ • uniforme e constante • neste exemplo, q > 0',duration=.8)
         self.reset_run()
         if self.reference is not None:self.play(FadeOut(self.reference),run_time=.4);self.reference=None
         self.play(self.view_scale.animate.set_value(LAYOUT['graph_scale']),self.view_lift.animate.set_value(LAYOUT['graph_lift']),run_time=.8)
         total.update(0);force.update(0);self.play(FadeIn(total),FadeIn(force),run_time=.6)
-        self.turn(.5*PI,2.5)
+        self.turn(.35*PI,2.5)
         self.equation(r'\vec F',r'\cdot',r'\vec v','=0',duration=.8)
         graphs=self.graphs()
+        xaxis=always_redraw(lambda:VGroup(
+            DashedLine(self.project([-.2,0,0]),self.project([2.1,0,0]),color=VIOLET,stroke_width=1.3,stroke_opacity=.7,dash_length=.09),
+            Arrow(self.project([1.7,0,0]),self.project([2.3,0,0]),buff=0,color=VIOLET,stroke_width=3,max_tip_length_to_length_ratio=.35),
+            math('x',size=26,color=VIOLET).move_to(self.project([2.55,0,0])+UP*.12)).set_z_index(15))
         focused_eq=self.eq.copy().scale(.82).move_to([-1.2,4.15,0])
         self.play(Succession(FadeOut(self.eq,run_time=.2),
-                             AnimationGroup(FadeIn(graphs),FadeIn(focused_eq),run_time=.4)),run_time=.6)
+                             AnimationGroup(FadeIn(graphs),FadeIn(focused_eq),FadeIn(xaxis),run_time=.4)),run_time=.6)
         self.remove(*self.eq.get_family());self.eq=focused_eq
         self.mark('graficos_sincronizados_inicio');self.wait(.6)
-        self.turn(2.1*PI,8.1);self.turn(2.5*PI,1.8);self.wait(.4)
+        self.turn(1.986*PI,8.1);self.turn(2.35*PI,1.8);self.wait(.4)
         self.mark('graficos_ultimo_ciclo')
         self.play(graphs.curves.animate.set_stroke(opacity=.16),run_time=.4)
-        self.play(FadeOut(graphs,shift=DOWN*.10),run_time=.7)
+        self.play(FadeOut(graphs,shift=DOWN*.10),FadeOut(xaxis),run_time=.7)
         restored_eq=self.eq.copy().scale(1/.82).move_to([0,LAYOUT['equation'],0])
         self.play(self.view_scale.animate.set_value(LAYOUT['geometry_scale']),
                   self.view_lift.animate.set_value(LAYOUT['geometry_lift']),
                   Succession(FadeOut(self.eq,run_time=.3),FadeIn(restored_eq,run_time=.6)),run_time=.9)
         self.remove(*self.eq.get_family());self.eq=restored_eq
         self.play(FadeOut(force),run_time=.4)
-        self.live_until(38,end_phase=2.55*PI)
+        self.live_until(38,end_phase=2.35*PI)
 
         # C — construção geométrica primeiro; a equação entra como síntese.
         self.heading('Uma velocidade, duas componentes','A soma fecha no próprio espaço')
         self.play(self.velocity_scale.animate.set_value(2),run_time=.8)
         self.grow_vector(parallel);self.grow_vector(transverse)
-        guides=always_redraw(self.guides);self.play(FadeIn(guides),run_time=.5)
+        self.wait(.9);guides=always_redraw(self.guides);self.play(FadeIn(guides),run_time=.7);self.wait(.5)
         self.equation(r'\vec v','=',r'\vec v_\parallel','+',r'\vec v_\perp',duration=.8)
-        self.mark('decomposicao_construida');self.live_until(44,end_phase=2.65*PI)
+        self.mark('decomposicao_construida');self.live_until(46,end_phase=2.55*PI)
         self.equation(r'\vec v_\parallel',r'\times',r'\vec B','=0',note='A componente paralela produz avanço',duration=.8)
         self.play(Indicate(parallel,color=PARALLEL),run_time=.7);self.turn(2.85*PI,2.4)
         self.equation(r'\vec F','=','q',r'\vec v_\perp',r'\times',r'\vec B',note='A componente transversal produz curvatura',duration=.8)
@@ -609,17 +619,17 @@ class CargaHelice024(Scene):
         self.play(FadeIn(endpoint),Create(pitch[0]),Create(pitch[1]),run_time=.4)
         self.play(GrowFromPoint(pitch[2],self.project(aa)),FadeIn(pitch[3]),run_time=.6)
         self.phase_tracker.add_updater(lambda m,dt:m.increment_value(dt*PI*.08))
-        self.equation('p','=',r'|v_\parallel|','T',note='Passo: deslocamento longitudinal em uma volta',duration=.8)
-        self.mark('passo_p_construido');self.wait(2.5)
+        self.equation('p','=',r'|v_\parallel|','T',note='Uma volta leva T; nesse tempo, o avanço paralelo é constante',duration=.8)
+        self.mark('passo_p_construido');self.wait(2.4)
         self.equation('p','=',r'\frac{2\pi m|v_\parallel|}{|q|B}',duration=.8)
-        self.phase_tracker.clear_updaters();self.turn(4*PI,max(110.8-self.time,.5))
+        self.phase_tracker.clear_updaters();self.turn(4*PI,2.6)
         self.live_until(110.8)
         self.play(FadeOut(t0),FadeOut(endpoint),FadeOut(pitch),FadeOut(connectors),FadeOut(longitudinal),FadeOut(shadow),
                   FadeOut(circle),FadeOut(circle_label),FadeOut(revolution),FadeOut(timebadge),run_time=.4)
 
         # F — baseline contínuo; os rótulos entram depois de a geometria se estabelecer.
         self.compare('B',1.6,'Campo mais intenso','Mesmas velocidades, massa e módulo da carga',
-                     [r'r\propto\frac1B',r'\quad',r'p\propto\frac1B'],r'B_1>B_0\quad(\Delta t=T_0)',True,True)
+                     [r'r\propto\frac1B',r'\quad',r'T\propto\frac1B',r'\quad',r'p\propto\frac1B'],r'B_1>B_0\quad(\Delta t=T_0)',True,True)
         self.compare('vp',1.5,'Mais velocidade transversal','Mesmo B, avanço paralelo, massa e módulo da carga',
                      ['r',r'\propto',r'v_\perp',r'\qquad T=\mathrm{const.}'],r'v_{\perp1}>v_{\perp0}\quad T_1=T_0',True,False)
         self.compare('vz',.48,'Mais velocidade paralela','Mesmo B, giro transversal, massa e módulo da carga',
@@ -650,7 +660,7 @@ class CargaHelice024(Scene):
         f0.resume_updating();badge=new_badge;self.path_alpha.set_value(1)
         self.mark('q_negativo_mesma_entrada');self.wait(.3)
         self.play(FadeOut(v0),FadeOut(f0),run_time=.4);self.turn(4*PI,2.3)
-        self.equation(r'r,\quad T,\quad |p|\quad\text{iguais}',note='Força invertida → curvatura invertida',duration=.8)
+        self.equation(r'r,\quad T,\quad |p|\quad\text{iguais}',note='Inverter o sinal inverte a curvatura; os módulos não mudam',duration=.8)
         self.wait(.3);self.play(FadeOut(badge),FadeOut(positive),run_time=.4);self.clear_equation(.4)
 
         # G — a mesma partícula e as duas projeções recompõem a hélice no fim.

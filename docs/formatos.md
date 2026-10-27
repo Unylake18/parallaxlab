@@ -39,6 +39,10 @@ históricos continuam importando `template/config.py`.
 
 ## 2. Longo horizontal (`longo_horizontal`)
 
+> **Padrão de forma vigente (2026-10-24):** `docs/padrao_video_longo.md`, com abertura (hook, bem-vindos, título), tag do canto,
+> pouca escrita, maiúsculas, cores das grandezas, narração e CTA com prévia do próximo vídeo. Ele vale sobre as descrições abaixo
+> quando houver diferença de forma.
+
 Objetivo: compreensão profunda, biblioteca didática modular, derivação completa quando necessária,
 espaço para verificação, limites, comparação e aplicações.
 

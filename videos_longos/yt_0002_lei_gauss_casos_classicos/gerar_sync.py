@@ -34,6 +34,7 @@ assert len(PARTE_DE) == len(PARAGRAFOS), "blocos_texto.json não bate com texto_
 assert len(PARTES) == len(_cortes) - 1, f"{len(PARTES)} WAV em audio/partes, mas o texto tem {len(_cortes) - 1} blocos"
 T_FIM_EDITORIAL = 1081.0                    # fim do orçamento editorial (T_FIM da cena)
 CAUDA_FINAL = 1.5                           # s de cena depois da última palavra
+LEAD = 0.3                                  # a fala começa LEAD s antes do evento correspondente na tela
 
 
 def linhas_roteiro():
@@ -209,22 +210,35 @@ def alinhar():
         w.setnchannels(full.shape[1]); w.setsampwidth(2); w.setframerate(sr0)
         w.writeframes(full.tobytes())
 
-    # nós do mapa: início de cada linha do roteiro (tempo editorial) ↔ início da primeira palavra dela na voz
-    linhas = linhas_roteiro()
-    assert sum(n for _, n in linhas) == len(palavras), f"roteiro tem {sum(n for _, n in linhas)} palavras; texto_narracao.txt tem {len(palavras)}"
-    knots, w0 = [], 0
-    for t_ed, n in linhas:
-        knots.append([float(t_ed), round(float(ini[w0]), 3)])
-        w0 += n
-    knots.append([T_FIM_EDITORIAL, round(float(fim[-1]) + CAUDA_FINAL, 3)])
-    assert all(a[0] < b[0] and a[1] < b[1] for a, b in zip(knots, knots[1:])), "nós fora de ordem"
-    json.dump({"audio": FINAL.name, "dur": round(len(full) / sr0, 3), "knots": knots,
+    # nós do mapa: cada âncora (marco real da cena `at(t)`, trecho da fala que começa ali; ver ancoras_voz.py)
+    from ancoras_voz import ANCORAS
+    low = [NORM(p) for p in palavras]
+
+    def acha(trecho, pos):
+        alvo = [NORM(q) for q in trecho.split()]
+        for j in range(pos, len(low) - len(alvo) + 1):
+            if low[j:j + len(alvo)] == alvo:
+                return j
+        raise SystemExit(f"Trecho não encontrado (a partir da palavra {pos}): {trecho!r}")
+
+    knots, pos = [], 0
+    for t_ed, trecho in ANCORAS:
+        j = acha(trecho, pos)
+        pos = j + 1
+        knots.append([float(t_ed), round(float(ini[j]) + LEAD, 3), trecho, j])
+    knots.append([T_FIM_EDITORIAL, round(float(fim[-1]) + CAUDA_FINAL, 3), "(fim)", len(palavras)])
+    assert all(a[0] < b[0] for a, b in zip(knots, knots[1:])), "âncoras fora de ordem (tempo editorial)"
+    assert all(a[1] < b[1] for a, b in zip(knots, knots[1:])), "âncoras fora de ordem (voz)"
+    print(f"{len(knots) - 1} âncoras; voz/cena por trecho (Δvoz ÷ Δcena), extremos:")
+    razao = [((b[1] - a[1]) / (b[0] - a[0]), a, b) for a, b in zip(knots, knots[1:])]
+    for r, a, b in sorted(razao, key=lambda x: x[0])[:6] + sorted(razao, key=lambda x: x[0])[-6:]:
+        print(f"  {r:5.2f}  cena {a[0]:7.1f}→{b[0]:7.1f} ({b[0] - a[0]:5.1f} s) voz {b[1] - a[1]:5.1f} s  «{a[2]}»")
+    knots_json = [[k[0], k[1]] for k in knots]
+    json.dump({"audio": FINAL.name, "dur": round(len(full) / sr0, 3), "knots": knots_json,
                "words": [[p, round(float(x), 3), round(float(y), 3)] for p, x, y in zip(palavras, ini, fim)],
                "pauses": [[round(a, 3), round(b, 3)] for a, b in pausas_abs]},
               open(PASTA / "sync.json", "w", encoding="utf-8"), ensure_ascii=False, indent=0)
     print(f"narracao_final.wav: {len(full) / sr0:.2f} s; sync.json: {len(knots)} nós")
-    razao = [(b[1] - a[1]) / (b[0] - a[0]) for a, b in zip(knots, knots[1:])]
-    print(f"voz / orçamento editorial por trecho: min {min(razao):.2f}, mediana {sorted(razao)[len(razao) // 2]:.2f}, máx {max(razao):.2f}")
     ini_f = 0
     for i, p in enumerate(palavras):
         if p[-1] in ".?!":

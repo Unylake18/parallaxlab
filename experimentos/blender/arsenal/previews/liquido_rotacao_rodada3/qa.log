@@ -1,0 +1,102 @@
+1. Volume analítico V(λ) = 2π ∫ z r dr  vs  π R² h0
+  ok   λ=0.0   V=6.107256118579  π R² h0=6.107256118579  erro rel=0.00e+00
+  ok   λ=0.1   V=6.107256118579  π R² h0=6.107256118579  erro rel=0.00e+00
+  ok   λ=0.25  V=6.107256118579  π R² h0=6.107256118579  erro rel=0.00e+00
+  ok   λ=0.5   V=6.107256118579  π R² h0=6.107256118579  erro rel=0.00e+00
+  ok   λ=0.75  V=6.107256118579  π R² h0=6.107256118579  erro rel=4.36e-16
+  ok   λ=0.9   V=6.107256118579  π R² h0=6.107256118579  erro rel=0.00e+00
+  ok   λ=1.0   V=6.107256118579  π R² h0=6.107256118579  erro rel=0.00e+00
+2. Termo em λ de ∫0^R z r dr (forma fechada): −λαR⁴/4 + λαR⁴/4
+  ok   ∫0^R (−αR²/2 + α r²) r dr = -3.615e-17  (esperado 0)
+3/4. Malha do Blender (corpo do líquido)
+  ok   λ=0.0: corpo fechado, sem bordas abertas
+  ok   λ=0.0: normais do topo para fora (+z)
+  λ=0.0   V_malha=6.104804  centro z=1.350000  borda z=1.350000
+  ok   λ=0.1: corpo fechado, sem bordas abertas
+  ok   λ=0.1: normais do topo para fora (+z)
+  λ=0.1   V_malha=6.104877  centro z=1.300000  borda z=1.400000
+  ok   λ=0.25: corpo fechado, sem bordas abertas
+  ok   λ=0.25: normais do topo para fora (+z)
+  λ=0.25  V_malha=6.104988  centro z=1.225000  borda z=1.475000
+  ok   λ=0.5: corpo fechado, sem bordas abertas
+  ok   λ=0.5: normais do topo para fora (+z)
+  λ=0.5   V_malha=6.105172  centro z=1.100000  borda z=1.600000
+  ok   λ=0.75: corpo fechado, sem bordas abertas
+  ok   λ=0.75: normais do topo para fora (+z)
+  λ=0.75  V_malha=6.105356  centro z=0.975000  borda z=1.725000
+  ok   λ=0.9: corpo fechado, sem bordas abertas
+  ok   λ=0.9: normais do topo para fora (+z)
+  λ=0.9   V_malha=6.105466  centro z=0.900000  borda z=1.800000
+  ok   λ=1.0: corpo fechado, sem bordas abertas
+  ok   λ=1.0: normais do topo para fora (+z)
+  λ=1.0   V_malha=6.105540  centro z=0.850000  borda z=1.850000
+  ok   volume da malha constante em λ: variação máx rel = 1.21e-04 (tolerância 5e-4, discretização radial)
+  ok   λ=0: V_malha=6.104804 = π R² h0 × fator do polígono = 6.104804
+  ok   λ=1: V_malha=6.105540 vs π R² h0 × polígono = 6.104804 (rel 1.21e-04)
+  ok   λ=0: centro e borda em z=h0 (superfície plana)
+  ok   λ=1: centro z=0.850000 = h0 − Δh/2 = 0.850000
+  ok   λ=1: borda z=1.850000 = h0 + Δh/2 = 1.850000
+  ok   o centro desce monotonicamente com λ
+  ok   a borda sobe monotonicamente com λ
+  ok   desnível borda − centro = Δh = 1.0
+5. Tracers e independência dos controles
+  ok   8+10 tracers uniformes: 18
+  ok   fase=1 reproduz fase=0 (loop fecha sem emenda)
+  ok   fase 0 → 0,25: giro anti-horário de 90°
+  ok   r e z permanecem constantes durante a rotação
+  ok   fase_rotacao não altera a malha
+  ok   λ=0.0 não altera r/z/φ dos tracers
+  ok   λ=0.0: tracers dentro do líquido
+  ok   λ=0.1 não altera r/z/φ dos tracers
+  ok   λ=0.1: tracers dentro do líquido
+  ok   λ=0.25 não altera r/z/φ dos tracers
+  ok   λ=0.25: tracers dentro do líquido
+  ok   λ=0.5 não altera r/z/φ dos tracers
+  ok   λ=0.5: tracers dentro do líquido
+  ok   λ=0.75 não altera r/z/φ dos tracers
+  ok   λ=0.75: tracers dentro do líquido
+  ok   λ=0.9 não altera r/z/φ dos tracers
+  ok   λ=0.9: tracers dentro do líquido
+  ok   λ=1.0 não altera r/z/φ dos tracers
+  ok   λ=1.0: tracers dentro do líquido
+6. Modos, morph editorial e payoff
+  ok   fenomeno: grade/meridiana/referência/setor/tracers = (False, False, False, True, False)
+  ok   geometria: grade/meridiana/referência/setor/tracers = (True, True, False, False, False)
+  ok   qa: grade/meridiana/referência/setor/tracers = (True, True, True, True, True)
+  ok   fenomeno: tracers bloqueados mesmo com marcadores=1
+  ok   geometria: tracers bloqueados mesmo com marcadores=1
+  ok   qa: tracers continuam ocultáveis
+  ok   morph cresce monotonicamente de 0 a 1
+  ok   hold no último quarto; não retorna ao plano
+  ok   morph não controla rotação
+  ok   payoff revela superfície de 0 a 1
+  ok   loop QA preservado: fase 0, λ=0
+  ok   loop QA preservado: fase 0.5, λ=1
+  ok   loop QA preservado: fase 1, λ=0
+7. Adaptador do arsenal com a ficha atual
+  ok   ficha e construtor compatíveis
+8. Setor angular preso à superfície e rotação rígida
+  ok   um único setor angular
+  ok   um quarto de fase gira setor 90°
+  ok   rotação do setor não modifica o líquido
+  ok   rotação rígida: coordenadas locais do setor invariantes
+  ok   λ=0.0: azimute do setor preservado
+  ok   λ=0.0: setor acompanha a superfície, sem salto de altura
+  ok   λ=0.1: azimute do setor preservado
+  ok   λ=0.1: setor acompanha a superfície, sem salto de altura
+  ok   λ=0.25: azimute do setor preservado
+  ok   λ=0.25: setor acompanha a superfície, sem salto de altura
+  ok   λ=0.5: azimute do setor preservado
+  ok   λ=0.5: setor acompanha a superfície, sem salto de altura
+  ok   λ=0.75: azimute do setor preservado
+  ok   λ=0.75: setor acompanha a superfície, sem salto de altura
+  ok   λ=0.9: azimute do setor preservado
+  ok   λ=0.9: setor acompanha a superfície, sem salto de altura
+  ok   λ=1.0: azimute do setor preservado
+  ok   λ=1.0: setor acompanha a superfície, sem salto de altura
+  ok   uma volta fecha a orientação do setor
+
+RESULTADO: OK
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

@@ -60,6 +60,7 @@ não aprovada), `aprovado` (pode entrar em vídeo).
 | `lagrange_restricao` | Multiplicadores de Lagrange | aprovado | calculo/extremos_varias_variaveis |
 | `lente_delgada` | Lente delgada (biconvexa ou biconcava) | aprovado | otica/otica_geometrica |
 | `linhas_de_campo_3d` | Linhas de campo em 3D | aprovado | eletromagnetismo/campo_eletrico |
+| `liquido_rotacao` | Líquido em rotação (plano → paraboloide) | estudo | fluidos/fluidos_em_repouso |
 | `massa_mola` | Sistema massa-mola horizontal (MHS) | aprovado | fisica2/mhs |
 | `membrana_modos` | Modos de vibração de uma membrana | aprovado | edp/equacao_da_onda |
 | `movimento_circular` | Movimento circular uniforme | aprovado | mecanica/movimento_circular |
@@ -2845,6 +2846,72 @@ img = Solido3D("linhas_de_campo_3d").mobject(cena=self, altura=5)   # cargas em 
 ```
 
 Ficha: `solidos/linhas_de_campo_3d.json`
+
+### `liquido_rotacao` — Líquido em rotação (plano → paraboloide)
+
+**Status:** estudo · Candidato de sandbox criado em 2026-10-11 para o vid_0022; aguardando aprovação humana. Não promovido a aprovado e não integrado a nenhum vídeo.
+
+Copo cilíndrico de vidro com líquido translúcido. A superfície livre é a família z(r, λ) = h0 − λαR²/2 + λαr², com α = ω²/(2g) e Δh = αR²: λ=0 é o plano z=h0; λ=1 é o paraboloide estacionário (centro em h0 − Δh/2, borda em h0 + Δh/2). A fórmula é a própria geometria e conserva o volume para todo λ (nenhuma correção de altura). Dois anéis de contas, com rastro e uma conta-guia por anel, giram em azimute e mostram a co-rotação (o cilindro e o paraboloide são axissimétricos: girar o objeto não mostraria nada). Círculo violeta tracejado em z=h0 no vidro como referência; círculos e meridianos na superfície mostram o paraboloide.
+
+![Líquido em rotação (plano → paraboloide)](previews/liquido_rotacao.png)
+
+**Como se lê:** Um copo de vidro com líquido azul, uma superfície clara com grade e contas brancas girando sobre ela: com λ=0 a superfície é um plano na altura do tracejado violeta; com λ=1 o centro desce abaixo do tracejado e a borda sobe acima dele, formando um paraboloide.
+
+**Usar quando**
+- superfície livre de um líquido em rotação rígida (paraboloide z = ω²r²/(2g))
+- mostrar a passagem do plano ao paraboloide com volume conservado (λ de 0 a 1)
+- equilíbrio relativo de um fluido num referencial girante (força centrífuga + gravidade)
+- recipiente cilíndrico em rotação uniforme em torno do eixo vertical
+
+**Não usar quando**
+- dinâmica do fluido (ondas, spin-up transitório, vórtice, viscosidade): é só a família geométrica, não uma simulação
+- fluido em movimento relativo à parede (use tubo_escoamento ou tanque_torricelli)
+- pressão e empuxo num tanque em repouso (use tanque_hidrostatico)
+- rotação em torno de eixo que não seja o do cilindro
+
+**Limitações**
+- candidato de sandbox: status estudo, aguardando aprovação humana
+- só o objeto geométrico: valores, fórmulas, o sentido ω e os rótulos (h0, Δh, R, r) são do Manim
+- λ é parâmetro geométrico (homotopia), não tempo físico: o intermediário não é um transiente real do líquido
+- a velocidade angular das contas é visual (voltas por ciclo de fase), desacoplada de λ e de ω
+- as contas ficam sobre a superfície livre (seguem z(r, λ)); não são partículas dentro do volume
+- o líquido é vidro translúcido: a parede de trás fica mais fraca por causa do culling; visto de cima, o líquido e o ar se confundem mais
+- o volume da malha reproduz o analítico até a discretização (96 segmentos × 28 anéis, variação de volume entre λ=0 e λ=1 de 0,016%, medida na malha)
+- Δh é limitado pela altura do copo: no estado final o centro não pode expor o fundo nem a borda transbordar (o construtor recusa)
+
+| Parâmetro | Padrão | Unid. | Descrição |
+|---|---|---|---|
+| `raio` | 1.2 | u | raio interno R do copo (e do líquido) |
+| `altura_recipiente` | 2.6 | u | altura do copo |
+| `nivel` | 1.35 | u | h0: altura do líquido em repouso (λ=0) e da superfície plana |
+| `delta_h` | 1.0 | u | Δh = αR² no estado final (λ=1); α = ω²/(2g) = Δh/R² |
+| `lambda` | 1.0 | 0-1 | deformação λ: 0 = plano, 1 = paraboloide (z = h0 − λαR²/2 + λαr²) |
+| `marcadores` | 1 | 0/1 | contas de co-rotação em dois anéis sobre a superfície |
+| `n_marc_interno` | 6 | contas | contas no anel interno (r = 0,46 R) |
+| `n_marc_externo` | 12 | contas | contas no anel externo (r = 0,82 R) |
+| `voltas` | 1 | voltas | voltas completas das contas por ciclo de fase (inteiro; o loop fecha) |
+| `referencia` | 1 | 0/1 | círculo violeta tracejado em z = h0 no vidro |
+| `grade` | 1 | 0/1 | círculos e meridianos sobre a superfície livre |
+| `varrer_lambda` | 0 | 0/1 | com movimento=1: λ sobe e desce em cosseno (0 → 1 → 0) ao longo do ciclo de fase |
+| `movimento` | 0 | 0/1 | 1 = animação (use animar.py ou a ponte com o Manim) |
+| `fase` | 0.0 | 0-1 | fase da animação (posição azimutal das contas) |
+
+**Integração:** `png_seq_alpha` · custo não medido
+
+**Animação (cargas em movimento):** `rotacao` · loop sem emenda (`fase` de 0 a 1) · 60 quadros sugeridos · custo não medido
+
+```powershell
+& "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe" -b -P experimentos\blender\arsenal\renderizar.py -- liquido_rotacao --res 1920x1080 --alpha
+```
+
+**No Manim:**
+
+```python
+from manim_solido3d import Solido3D   # sys.path: experimentos/blender/arsenal
+img = Solido3D("liquido_rotacao").mobject(cena=self, altura=5)   # cargas em loop; img.pausar() / img.retomar()
+```
+
+Ficha: `solidos/liquido_rotacao.json`
 
 ### `massa_mola` — Sistema massa-mola horizontal (MHS)
 

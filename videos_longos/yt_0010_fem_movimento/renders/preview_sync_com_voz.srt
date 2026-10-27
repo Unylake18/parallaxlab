@@ -1,0 +1,923 @@
+1
+00:00:00,120 --> 00:00:00,930
+Fala, pessoal!
+
+2
+00:00:00,950 --> 00:00:02,640
+Bem-vindos ao Parallax Lab!
+
+3
+00:00:02,750 --> 00:00:08,990
+Hoje vamos entender como uma barra em movimento produz corrente elétrica e de onde vem a energia desse processo.
+
+4
+00:00:09,240 --> 00:00:15,490
+Olha o experimento: a barra desliza sobre dois trilhos, o circuito está fechado e o resistor dissipa energia.
+
+5
+00:00:15,610 --> 00:00:16,390
+Sem bateria.
+
+6
+00:00:16,520 --> 00:00:22,230
+Só que a força magnética sobre uma carga é perpendicular à velocidade dela e não realiza trabalho.
+
+7
+00:00:22,330 --> 00:00:24,880
+Então quem fornece a energia ao resistor?
+
+8
+00:00:25,060 --> 00:00:29,460
+Vamos ligar força, fluxo magnético e conservação da energia para responder.
+
+9
+00:00:29,630 --> 00:00:32,610
+A barra é puxada para a direita com velocidade constante.
+
+10
+00:00:32,800 --> 00:00:36,130
+O destaque laranja representa a potência dissipada no resistor.
+
+11
+00:00:36,260 --> 00:00:40,870
+Vamos começar pelas cargas e depois acompanhar o balanço de energia desse mesmo aparato.
+
+12
+00:00:41,140 --> 00:00:48,560
+Vamos combinar os sentidos: horizontal positiva para a direita, vertical positiva para cima e a terceira direção para fora da tela.
+
+13
+00:00:48,740 --> 00:00:51,980
+As cruzinhas representam o campo magnético entrando na tela.
+
+14
+00:00:52,060 --> 00:00:54,090
+Ele é uniforme e constante no tempo.
+
+15
+00:00:54,330 --> 00:00:57,250
+A distância entre os trilhos é o comprimento ativo da barra.
+
+16
+00:00:57,360 --> 00:01:00,160
+A resistência total está concentrada no resistor.
+
+17
+00:01:00,250 --> 00:01:04,100
+Desprezamos a resistência da barra e dos trilhos, além do atrito mecânico.
+
+18
+00:01:04,330 --> 00:01:05,530
+Vamos aproximar a barra.
+
+19
+00:01:05,680 --> 00:01:11,060
+Os marcadores representam cargas positivas de prova e ajudam a acompanhar a corrente convencional.
+
+20
+00:01:11,080 --> 00:01:14,690
+Não são uma afirmação sobre o sinal dos portadores reais do metal.
+
+21
+00:01:14,810 --> 00:01:18,300
+Como a barra se move para a direita, ela carrega os portadores junto.
+
+22
+00:01:18,450 --> 00:01:21,270
+Essa é a contribuição da velocidade do material.
+
+23
+00:01:21,370 --> 00:01:22,790
+Escolhe uma carga positiva.
+
+24
+00:01:23,020 --> 00:01:27,690
+Primeiro, vamos olhar a parcela da força magnética associada à velocidade da barra.
+
+25
+00:01:27,790 --> 00:01:33,030
+Ela é a carga multiplicada pelo produto vetorial entre essa velocidade e o campo magnético.
+
+26
+00:01:33,310 --> 00:01:39,970
+Velocidade para a direita, campo entrando na tela: pela regra da mão direita, o resultado aponta para cima, ao longo da barra.
+
+27
+00:01:40,140 --> 00:01:48,890
+A força eletromotriz de movimento é a circulação da força magnética de movimento por unidade de carga: integramos sua componente ao longo do circuito fechado.
+
+28
+00:01:49,020 --> 00:01:51,250
+Apesar do nome, não é força em newtons.
+
+29
+00:01:51,510 --> 00:01:56,010
+Sua unidade é volt: joule por coulomb, energia por unidade de carga.
+
+30
+00:01:56,120 --> 00:01:58,540
+Na integral, a velocidade é a do material.
+
+31
+00:01:58,610 --> 00:02:01,770
+Trilhos e resistor estão parados; só a barra contribui.
+
+32
+00:02:01,800 --> 00:02:05,410
+Nela, velocidade e campo são uniformes e perpendiculares.
+
+33
+00:02:05,590 --> 00:02:10,750
+A integral fica igual a campo magnético vezes comprimento ativo vezes velocidade da barra.
+
+34
+00:02:10,940 --> 00:02:15,010
+Com o circuito fechado, a redistribuição de cargas estabelece um campo elétrico.
+
+35
+00:02:15,440 --> 00:02:20,440
+No resistor, esse campo transfere energia aos portadores, que é dissipada no material.
+
+36
+00:02:20,530 --> 00:02:30,590
+No nosso modelo resistivo, a corrente é a força eletromotriz dividida pela resistência: campo vezes comprimento vezes velocidade, tudo dividido pela resistência total.
+
+37
+00:02:30,700 --> 00:02:38,060
+A corrente convencional sobe pela barra, segue pelo trilho superior, desce pelo resistor e retorna pelo trilho inferior.
+
+38
+00:02:38,080 --> 00:02:39,560
+É o sentido anti-horário.
+
+39
+00:02:39,740 --> 00:02:43,660
+A potência dissipada é a resistência vezes a corrente ao quadrado.
+
+40
+00:02:43,800 --> 00:02:45,460
+Ela não pode ser negativa.
+
+41
+00:02:45,550 --> 00:02:50,490
+O brilho laranja representa essa potência instantânea: maior potência, maior destaque.
+
+42
+00:02:50,690 --> 00:02:54,420
+Não é uma simulação da temperatura nem do resfriamento do resistor.
+
+43
+00:02:54,540 --> 00:02:56,450
+Agora distingue duas velocidades.
+
+44
+00:02:56,740 --> 00:03:04,330
+O portador acompanha a barra, mas também tem uma velocidade média em relação ao material: a velocidade de deriva, associada à corrente.
+
+45
+00:03:04,590 --> 00:03:08,200
+Na representação positiva, a deriva aponta para cima na barra.
+
+46
+00:03:08,370 --> 00:03:12,720
+A velocidade ordenada total soma o movimento do material e a deriva.
+
+47
+00:03:12,830 --> 00:03:17,910
+A força magnética completa usa essa velocidade total, e não apenas a da barra.
+
+48
+00:03:17,990 --> 00:03:22,520
+Ela é a carga vezes o produto vetorial entre velocidade total e campo.
+
+49
+00:03:22,750 --> 00:03:26,600
+Quando não é nula, essa força é perpendicular à velocidade total.
+
+50
+00:03:26,660 --> 00:03:30,410
+Portanto, o produto escalar entre força e velocidade é zero.
+
+51
+00:03:30,470 --> 00:03:36,210
+Esse produto escalar é a potência da força magnética sobre a carga: trabalho magnético nulo.
+
+52
+00:03:36,350 --> 00:03:43,640
+Coloca as duas informações lado a lado: o resistor dissipa energia, mas a força magnética não realiza trabalho sobre a carga.
+
+53
+00:03:43,740 --> 00:03:46,200
+Falta olhar para quem mantém a barra andando.
+
+54
+00:03:46,300 --> 00:03:48,930
+Uma barra com corrente sofre força magnética.
+
+55
+00:03:49,200 --> 00:03:54,210
+A força é a corrente vezes o produto vetorial entre o vetor comprimento e o campo.
+
+56
+00:03:54,420 --> 00:03:57,460
+O vetor comprimento acompanha a corrente, para cima.
+
+57
+00:03:57,540 --> 00:03:59,090
+O campo entra na tela.
+
+58
+00:03:59,180 --> 00:04:02,000
+O produto aponta para a esquerda, contra o movimento.
+
+59
+00:04:02,220 --> 00:04:08,080
+Como os vetores são perpendiculares, o módulo é corrente vezes comprimento vezes campo magnético.
+
+60
+00:04:08,330 --> 00:04:09,720
+É o arrasto sobre a barra.
+
+61
+00:04:09,890 --> 00:04:15,940
+Para manter a velocidade constante, precisamos de uma força externa para a direita, com o mesmo módulo do arrasto.
+
+62
+00:04:16,190 --> 00:04:18,080
+A resultante horizontal é zero.
+
+63
+00:04:18,180 --> 00:04:19,900
+Tem alguém puxando essa barra!
+
+64
+00:04:19,920 --> 00:04:22,300
+E esse alguém entra na conta de energia.
+
+65
+00:04:22,430 --> 00:04:28,060
+A potência externa é o módulo da força externa vezes a velocidade, porque elas têm o mesmo sentido.
+
+66
+00:04:28,180 --> 00:04:32,060
+Substituímos a força por corrente vezes comprimento vezes campo.
+
+67
+00:04:32,260 --> 00:04:36,760
+Agrupando campo, comprimento e velocidade, reconhecemos a força eletromotriz.
+
+68
+00:04:36,990 --> 00:04:42,890
+Ficamos com corrente vezes força eletromotriz, ou corrente ao quadrado vezes resistência: a potência dissipada.
+
+69
+00:04:42,910 --> 00:04:44,910
+Quem puxa fornece a energia.
+
+70
+00:04:44,940 --> 00:04:46,080
+E o paradoxo?
+
+71
+00:04:46,200 --> 00:04:53,500
+O trabalho magnético total sobre o portador é zero, mas sua velocidade reúne movimento da barra e deriva.
+
+72
+00:04:53,560 --> 00:04:58,430
+As contribuições magnéticas associadas a esses movimentos se compensam no trabalho total.
+
+73
+00:04:58,490 --> 00:05:03,450
+Isso permite arrasto mecânico sobre a barra sem trabalho magnético total sobre a carga.
+
+74
+00:05:03,490 --> 00:05:07,230
+O campo faz o acoplamento; o agente externo fornece a energia.
+
+75
+00:05:07,350 --> 00:05:10,210
+Agora vamos descrever o fenômeno pelo fluxo magnético.
+
+76
+00:05:10,490 --> 00:05:15,910
+A área do circuito é o comprimento da barra vezes a distância horizontal entre ela e o resistor.
+
+77
+00:05:15,990 --> 00:05:19,460
+Conforme a barra avança, essa distância aumenta, e a área também.
+
+78
+00:05:19,540 --> 00:05:24,340
+O fluxo é a integral do produto escalar entre o campo e o elemento de área orientado.
+
+79
+00:05:24,490 --> 00:05:26,410
+Escolhemos o percurso anti-horário.
+
+80
+00:05:26,560 --> 00:05:29,950
+Pela regra da mão direita, a normal aponta para fora da tela.
+
+81
+00:05:30,030 --> 00:05:32,780
+Como o campo entra, o produto escalar é negativo.
+
+82
+00:05:32,930 --> 00:05:40,400
+Com campo uniforme, o fluxo é menos campo vezes área: menos campo vezes comprimento da barra vezes distância horizontal.
+
+83
+00:05:40,500 --> 00:05:44,370
+A derivada dessa distância em relação ao tempo é a velocidade da barra.
+
+84
+00:05:44,540 --> 00:05:51,460
+Campo e comprimento são constantes; portanto, a derivada do fluxo é menos campo vezes comprimento vezes velocidade.
+
+85
+00:05:51,620 --> 00:05:57,040
+A área aumenta, mas o fluxo fica mais negativo, porque a normal escolhida aponta contra o campo.
+
+86
+00:05:57,230 --> 00:06:01,850
+Compara: a força eletromotriz é campo vezes comprimento vezes velocidade.
+
+87
+00:06:01,990 --> 00:06:04,770
+A derivada do fluxo é o negativo desse produto.
+
+88
+00:06:04,900 --> 00:06:06,890
+Uma expressão é o oposto da outra.
+
+89
+00:06:07,020 --> 00:06:12,890
+Chegamos à regra do fluxo: a força eletromotriz é menos a taxa de variação do fluxo magnético.
+
+90
+00:06:13,130 --> 00:06:14,960
+Aqui, o campo é estacionário.
+
+91
+00:06:14,990 --> 00:06:17,950
+O fluxo muda porque a barra altera a área do circuito.
+
+92
+00:06:18,120 --> 00:06:21,000
+Ainda não estamos tratando de um campo que varia no tempo.
+
+93
+00:06:21,260 --> 00:06:22,920
+Será que isso depende do retângulo?
+
+94
+00:06:23,020 --> 00:06:27,680
+Vamos considerar um contorno fechado de outra forma, que pode se mover e se deformar.
+
+95
+00:06:27,810 --> 00:06:31,180
+Mantemos a orientação do percurso e a normal correspondente.
+
+96
+00:06:31,380 --> 00:06:35,000
+Cada trecho pode ter sua própria velocidade, inclusive zero.
+
+97
+00:06:35,100 --> 00:06:40,740
+A linha contínua mostra o contorno antes; a tracejada, um pequeno intervalo de tempo depois.
+
+98
+00:06:40,920 --> 00:06:43,500
+Entre elas está a faixa varrida pelo movimento.
+
+99
+00:06:43,690 --> 00:06:48,610
+Como o campo permanece estacionário, essa mudança de superfície produz a variação do fluxo.
+
+100
+00:06:48,910 --> 00:06:49,960
+Amplia um pedacinho.
+
+101
+00:06:50,040 --> 00:06:53,340
+Temos um elemento de comprimento orientado ao longo do contorno.
+
+102
+00:06:53,450 --> 00:06:59,360
+Durante um pequeno intervalo de tempo, ele sofre um deslocamento igual à velocidade local vezes esse intervalo.
+
+103
+00:06:59,450 --> 00:07:03,470
+Deslocamento e elemento de comprimento formam o paralelogramo da figura.
+
+104
+00:07:03,560 --> 00:07:09,580
+Seu elemento de área orientado é o produto vetorial entre deslocamento e elemento de comprimento, nessa ordem.
+
+105
+00:07:09,780 --> 00:07:17,170
+Substituindo o deslocamento, fica velocidade em produto vetorial com elemento de comprimento, multiplicado pelo intervalo de tempo.
+
+106
+00:07:17,390 --> 00:07:22,040
+Confere na barra: velocidade para a direita e elemento de comprimento para cima.
+
+107
+00:07:22,080 --> 00:07:26,680
+O produto vetorial aponta para fora da tela, como a normal da faixa acrescentada.
+
+108
+00:07:26,710 --> 00:07:28,190
+O campo entra na tela.
+
+109
+00:07:28,310 --> 00:07:31,760
+Então seu produto escalar com esse elemento de área é negativo.
+
+110
+00:07:31,870 --> 00:07:33,420
+O sinal está na geometria.
+
+111
+00:07:33,530 --> 00:07:39,140
+Somamos as contribuições ao longo da faixa inteira, dividimos pelo intervalo de tempo e tomamos o limite.
+
+112
+00:07:39,380 --> 00:07:43,260
+A taxa de variação do fluxo vira uma integral sobre o contorno fechado.
+
+113
+00:07:43,400 --> 00:07:49,360
+Dentro dela temos o campo em produto escalar com o produto vetorial entre velocidade e elemento de comprimento.
+
+114
+00:07:49,540 --> 00:07:51,910
+Usamos agora uma identidade do produto misto.
+
+115
+00:07:52,170 --> 00:08:00,140
+Podemos reescrever essa combinação como campo em produto vetorial com velocidade, e o resultado em produto escalar com o elemento de comprimento.
+
+116
+00:08:00,330 --> 00:08:03,880
+Mas queremos a ordem velocidade em produto vetorial com campo.
+
+117
+00:08:04,050 --> 00:08:07,230
+Inverter os fatores desse produto vetorial troca o sinal.
+
+118
+00:08:07,270 --> 00:08:09,040
+É daí que aparece o sinal de menos.
+
+119
+00:08:09,270 --> 00:08:13,270
+A integral restante é justamente a força eletromotriz de movimento.
+
+120
+00:08:13,420 --> 00:08:17,620
+Assim, a taxa de variação do fluxo é menos a força eletromotriz.
+
+121
+00:08:17,900 --> 00:08:21,880
+Demonstramos a regra para um contorno móvel geral em campo estacionário.
+
+122
+00:08:22,000 --> 00:08:24,680
+O caso de campo variável fica para a continuação.
+
+123
+00:08:24,930 --> 00:08:29,780
+De volta aos trilhos: corrente, dissipação e força externa equilibrando o arrasto.
+
+124
+00:08:30,030 --> 00:08:32,690
+Vamos mudar uma condição: parar de puxar a barra.
+
+125
+00:08:32,950 --> 00:08:36,210
+Soltamos a barra com a velocidade inicial indicada na tela.
+
+126
+00:08:36,340 --> 00:08:40,220
+Vamos congelar a imagem nesse instante enquanto deduzimos sua evolução.
+
+127
+00:08:40,340 --> 00:08:42,900
+Também desprezamos a autoindutância do circuito.
+
+128
+00:08:43,110 --> 00:08:47,830
+Nessa aproximação, a corrente acompanha a força eletromotriz pela relação resistiva.
+
+129
+00:08:47,890 --> 00:08:51,850
+Não precisamos incluir a dinâmica de energia armazenada pela autoindutância.
+
+130
+00:08:52,150 --> 00:08:54,470
+Soltar a barra não zera sua velocidade.
+
+131
+00:08:54,640 --> 00:08:59,910
+Enquanto ela se move, continua existindo força eletromotriz, corrente e arrasto magnético.
+
+132
+00:09:00,160 --> 00:09:02,030
+Agora ninguém compensa esse arrasto.
+
+133
+00:09:02,260 --> 00:09:03,490
+A barra desacelera.
+
+134
+00:09:03,630 --> 00:09:07,350
+A força horizontal tem sinal negativo, porque aponta para a esquerda.
+
+135
+00:09:07,440 --> 00:09:10,770
+Seu módulo é corrente vezes comprimento vezes campo.
+
+136
+00:09:11,000 --> 00:09:16,630
+Substituímos a corrente por campo vezes comprimento vezes velocidade, dividido pela resistência.
+
+137
+00:09:16,790 --> 00:09:24,450
+Juntando os fatores, fica menos campo ao quadrado vezes comprimento ao quadrado, dividido pela resistência, multiplicando a velocidade.
+
+138
+00:09:24,590 --> 00:09:29,420
+O arrasto é proporcional à velocidade: ele enfraquece conforme a barra desacelera.
+
+139
+00:09:29,520 --> 00:09:35,570
+Pela segunda lei de Newton, massa da barra vezes taxa de variação da velocidade é igual à força resultante.
+
+140
+00:09:35,760 --> 00:09:38,680
+Substituindo o arrasto, obtemos a equação da tela.
+
+141
+00:09:38,740 --> 00:09:43,440
+A taxa de variação da velocidade é negativa e proporcional à própria velocidade.
+
+142
+00:09:43,600 --> 00:09:45,640
+Vamos resolvê-la com a condição inicial.
+
+143
+00:09:45,700 --> 00:09:48,140
+Consideramos velocidade inicial positiva.
+
+144
+00:09:48,320 --> 00:09:53,030
+Enquanto a velocidade permanece positiva, dividimos pela massa e pela velocidade.
+
+145
+00:09:53,210 --> 00:09:55,760
+Depois multiplicamos pelo diferencial de tempo.
+
+146
+00:09:55,940 --> 00:10:00,000
+À esquerda fica o diferencial da velocidade dividido pela velocidade.
+
+147
+00:10:00,140 --> 00:10:08,170
+À direita, menos campo ao quadrado vezes comprimento ao quadrado, dividido por massa vezes resistência, multiplicando o diferencial de tempo.
+
+148
+00:10:08,340 --> 00:10:11,050
+As variáveis estão separadas; podemos integrar.
+
+149
+00:10:11,120 --> 00:10:17,150
+Integramos a velocidade do valor inicial até o atual, e o tempo de zero até o instante considerado.
+
+150
+00:10:17,270 --> 00:10:24,880
+A integral do diferencial da velocidade dividido pela velocidade dá o logaritmo natural da razão entre velocidade atual e inicial.
+
+151
+00:10:24,950 --> 00:10:27,220
+Do outro lado, os parâmetros são constantes.
+
+152
+00:10:27,550 --> 00:10:31,010
+Sobra o coeficiente negativo multiplicando o tempo decorrido.
+
+153
+00:10:31,150 --> 00:10:35,190
+Esse coeficiente, em módulo, tem unidade de inverso de tempo.
+
+154
+00:10:35,470 --> 00:10:43,560
+Definimos seu inverso como a constante de tempo: massa vezes resistência, dividido por campo ao quadrado vezes comprimento ao quadrado.
+
+155
+00:10:43,720 --> 00:10:49,740
+Agora o logaritmo da razão entre as velocidades é igual a menos o tempo dividido pela constante de tempo.
+
+156
+00:10:49,970 --> 00:10:53,510
+Aplicamos a exponencial aos dois lados para desfazer o logaritmo.
+
+157
+00:10:53,790 --> 00:10:56,420
+Depois multiplicamos pela velocidade inicial.
+
+158
+00:10:56,530 --> 00:11:02,900
+A solução é a velocidade inicial vezes a exponencial de menos o tempo dividido pela constante de tempo.
+
+159
+00:11:03,190 --> 00:11:10,950
+Depois de uma constante de tempo, a velocidade vale um sobre o número de Euler do valor inicial: aproximadamente trinta e sete por cento.
+
+160
+00:11:11,210 --> 00:11:14,610
+Quanto maior a constante de tempo, mais lenta é a queda.
+
+161
+00:11:14,670 --> 00:11:19,640
+A curva se aproxima de zero sem alcançá-lo em tempo finito, dentro do nosso modelo ideal.
+
+162
+00:11:19,780 --> 00:11:21,290
+Agora liberamos o relógio.
+
+163
+00:11:21,470 --> 00:11:26,450
+À esquerda, a barra; à direita, a velocidade dividida pela velocidade inicial.
+
+164
+00:11:26,520 --> 00:11:28,370
+O mesmo tempo controla os dois.
+
+165
+00:11:28,600 --> 00:11:31,800
+A barra avança cada vez menos durante intervalos iguais.
+
+166
+00:11:32,010 --> 00:11:34,850
+O ponto no gráfico acompanha essa desaceleração.
+
+167
+00:11:35,020 --> 00:11:37,510
+Vamos repetir a soltura para acompanhar a corrente.
+
+168
+00:11:37,820 --> 00:11:43,690
+A corrente inicial é campo vezes comprimento vezes velocidade inicial, dividido pela resistência.
+
+169
+00:11:43,940 --> 00:11:48,010
+Como esses parâmetros são constantes, a corrente é proporcional à velocidade.
+
+170
+00:11:48,180 --> 00:11:55,340
+Ela também decai exponencialmente, com a mesma constante de tempo: corrente inicial vezes a mesma exponencial da velocidade.
+
+171
+00:11:55,540 --> 00:12:01,140
+Dividindo velocidade e corrente pelos respectivos valores iniciais, obtemos razões sem unidade.
+
+172
+00:12:01,290 --> 00:12:04,080
+Ambas começam em um e seguem a mesma curva.
+
+173
+00:12:04,190 --> 00:12:09,470
+As grandezas são diferentes, mas diminuem na mesma proporção em relação aos seus valores iniciais.
+
+174
+00:12:09,720 --> 00:12:13,970
+A potência inicial é a resistência vezes a corrente inicial ao quadrado.
+
+175
+00:12:14,130 --> 00:12:17,690
+Ao elevar a exponencial da corrente ao quadrado, dobramos o expoente.
+
+176
+00:12:17,940 --> 00:12:23,350
+A potência decai com menos duas vezes o tempo dividido pela constante de tempo no expoente.
+
+177
+00:12:23,550 --> 00:12:25,840
+Por isso, a curva laranja cai mais rápido.
+
+178
+00:12:26,010 --> 00:12:29,440
+O marcador e o brilho do resistor acompanham agora essa potência.
+
+179
+00:12:29,730 --> 00:12:35,320
+Depois de uma constante de tempo, a corrente está em cerca de trinta e sete por cento do valor inicial.
+
+180
+00:12:35,400 --> 00:12:39,820
+A potência está em catorze por cento: é o quadrado da corrente aparecendo na imagem.
+
+181
+00:12:40,110 --> 00:12:43,660
+Para obter a energia dissipada, integramos a potência no tempo.
+
+182
+00:12:43,890 --> 00:12:47,510
+O eixo vertical mostra potência dividida pela potência inicial.
+
+183
+00:12:47,570 --> 00:12:50,500
+Por isso, a área sob essa curva tem unidade de tempo.
+
+184
+00:12:50,660 --> 00:12:55,540
+Multiplicada pela potência inicial, ela dá energia: watt vezes segundo é joule.
+
+185
+00:12:55,600 --> 00:13:01,090
+O preenchimento até um instante representa a energia já dissipada dividida pela potência inicial.
+
+186
+00:13:01,110 --> 00:13:07,320
+A área total, até o limite de tempo infinito, fornece a energia dissipada total após essa multiplicação.
+
+187
+00:13:07,500 --> 00:13:14,920
+Substituímos a potência pela potência inicial vezes a exponencial de menos duas vezes o tempo dividido pela constante de tempo.
+
+188
+00:13:15,140 --> 00:13:17,930
+A potência inicial sai da integral porque é constante.
+
+189
+00:13:18,120 --> 00:13:25,260
+Sua expressão é campo ao quadrado vezes comprimento ao quadrado vezes velocidade inicial ao quadrado, dividido pela resistência.
+
+190
+00:13:25,450 --> 00:13:28,050
+Vamos integrar a exponencial de zero até infinito.
+
+191
+00:13:28,330 --> 00:13:33,890
+Uma primitiva é menos a constante de tempo dividida por dois, multiplicando a própria exponencial.
+
+192
+00:13:33,910 --> 00:13:38,510
+Derivando, o fator que vem do expoente cancela o da frente e recupera o integrando.
+
+193
+00:13:38,570 --> 00:13:41,350
+No limite superior, a exponencial tende a zero.
+
+194
+00:13:41,370 --> 00:13:42,760
+No inferior, vale um.
+
+195
+00:13:42,810 --> 00:13:46,630
+Subtrair o valor inferior transforma o sinal negativo em positivo.
+
+196
+00:13:46,710 --> 00:13:49,660
+A integral vale a constante de tempo dividida por dois.
+
+197
+00:13:49,850 --> 00:13:55,360
+Portanto, a energia total é a potência inicial vezes a constante de tempo dividida por dois.
+
+198
+00:13:55,740 --> 00:13:58,760
+Substituímos a potência inicial e a constante de tempo.
+
+199
+00:13:58,950 --> 00:14:04,070
+Separamos os fatores que sobrevivem: um meio, massa e velocidade inicial ao quadrado.
+
+200
+00:14:04,150 --> 00:14:05,680
+Os demais formam razões.
+
+201
+00:14:05,870 --> 00:14:07,900
+Resistência dividida por resistência: um.
+
+202
+00:14:07,990 --> 00:14:10,850
+Campo ao quadrado dividido por campo ao quadrado: um.
+
+203
+00:14:11,010 --> 00:14:14,830
+Comprimento ao quadrado dividido por comprimento ao quadrado: um.
+
+204
+00:14:14,900 --> 00:14:18,810
+Resta um meio vezes massa vezes velocidade inicial ao quadrado.
+
+205
+00:14:18,950 --> 00:14:25,030
+Campo, comprimento e resistência mudam o ritmo da dissipação, mas não a energia inicialmente disponível.
+
+206
+00:14:25,100 --> 00:14:26,210
+Reconhece a expressão?
+
+207
+00:14:26,250 --> 00:14:28,610
+É a energia cinética inicial da barra.
+
+208
+00:14:28,630 --> 00:14:35,120
+No limite de tempo infinito, a energia dissipada no resistor é igual à energia cinética que a barra tinha na soltura.
+
+209
+00:14:35,180 --> 00:14:38,670
+Depois da soltura, não houve trabalho externo fornecendo energia.
+
+210
+00:14:38,810 --> 00:14:40,130
+Vamos comparar os regimes.
+
+211
+00:14:40,410 --> 00:14:43,570
+Com velocidade constante, a energia cinética não muda.
+
+212
+00:14:43,610 --> 00:14:48,370
+A força externa equilibra o arrasto e sua potência é igual à potência dissipada.
+
+213
+00:14:48,430 --> 00:14:50,530
+A energia vem de quem puxa.
+
+214
+00:14:50,710 --> 00:14:54,210
+Na barra livre, a fonte é a energia cinética inicial.
+
+215
+00:14:54,300 --> 00:14:58,840
+Olha a coluna: no começo, toda a energia é ciano e nada foi dissipado.
+
+216
+00:14:58,960 --> 00:15:02,290
+Depois, a parte ciano diminui e a laranja aumenta.
+
+217
+00:15:02,320 --> 00:15:09,440
+A soma permanece constante: energia cinética atual mais energia já dissipada é igual à energia cinética inicial.
+
+218
+00:15:09,480 --> 00:15:12,160
+Em tempo finito, ainda resta energia cinética.
+
+219
+00:15:12,210 --> 00:15:18,600
+Só no limite de tempo infinito ela tende a zero, e a energia dissipada tende à energia inicial inteira.
+
+220
+00:15:18,740 --> 00:15:25,220
+A pergunta inicial está respondida: com velocidade imposta, quem puxa fornece a energia dissipada no resistor.
+
+221
+00:15:25,240 --> 00:15:29,400
+A igualdade entre potência externa e potência dissipada mostra esse caminho.
+
+222
+00:15:29,540 --> 00:15:33,170
+Na barra livre, a energia vem do movimento que ela já tinha.
+
+223
+00:15:33,200 --> 00:15:39,380
+O campo magnético estacionário acopla movimento, corrente e arrasto; ele não é a fonte dessa energia.
+
+224
+00:15:39,470 --> 00:15:43,280
+Trabalho externo no primeiro caso, energia cinética inicial no segundo.
+
+225
+00:15:43,360 --> 00:15:45,000
+Nos dois, o balanço fecha.
+
+226
+00:15:45,230 --> 00:15:49,710
+Hoje ligamos força sobre as cargas, regra do fluxo e conservação da energia.
+
+227
+00:15:49,800 --> 00:15:54,540
+Se essas conexões ajudaram você, se inscreve no Parallax Lab para acompanhar os próximos vídeos.
+
+228
+00:15:54,830 --> 00:15:58,360
+E se o circuito ficar parado e o campo magnético mudar no tempo?
+
+229
+00:15:58,510 --> 00:16:00,880
+Aí entra o campo elétrico induzido.
+
+230
+00:16:00,910 --> 00:16:04,570
+É o próximo passo: lei de Faraday e campo magnético variável.
+
+231
+00:16:04,760 --> 00:16:05,660
+Até a próxima!

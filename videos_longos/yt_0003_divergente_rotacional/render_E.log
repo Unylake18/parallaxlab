@@ -1,0 +1,103 @@
+Manim Community v0.21.0
+
+[10/12/26 15:17:55] INFO     Animation 0 : Using cached    cairo_renderer.py:92
+                             data (hash :                                      
+                             2046598328_2218757485_2069484                     
+                             372)                                              
+
+Animation 0: FadeIn(Text('UM CAMPO QUE CRESCE COM A DIST�NCIA')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                       
+[10/12/26 15:17:56] INFO     Animation 1 : Using cached    cairo_renderer.py:92
+                             data (hash :                                      
+                             419837192_2457159714_13401708                     
+                             6)                                                
+
+Animation 1: LaggedStart(Group), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                            
+                    INFO     Animation 2 : Using cached    cairo_renderer.py:92
+                             data (hash :                                      
+                             419837192_2848358964_35442556                     
+                             45)                                               
+
+Animation 2: FadeIn(Dot):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                               
+
+Animation 3: _MethodAnimation(Dot), etc.:   0%|          | 0/30 [00:00<?, ?it/s]
+                                                                                
+                    INFO     Animation 3 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\medi                         
+                             a\videos\cena\540p15\part                         
+                             ial_movie_files\Divergent                         
+                             eRotacional\419837192_125                         
+                             6460862_1764619358.mp4'                           
+
+Animation 4: TransformByGlyphMap(Group):   0%|          | 0/21 [00:00<?, ?it/s]
+                                                                               
+                    INFO     Animation 4 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\medi                         
+                             a\videos\cena\540p15\part                         
+                             ial_movie_files\Divergent                         
+                             eRotacional\419837192_108                         
+                             6583638_2010127932.mp4'                           
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla\cdo                        
+                             t\mathbf                                          
+                             E=3\kappa\special{dvisvgm:                        
+                             raw </g>} to                                      
+                             media\Tex\86f2969b3fc2afca                        
+                             .tex                                              
+
+Animation 5: TransformMatchingTex(Group):   0%|          | 0/21 [00:00<?, ?it/s]
+                                                                                
+[10/12/26 15:17:57] INFO     Animation 5 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\medi                         
+                             a\videos\cena\540p15\part                         
+                             ial_movie_files\Divergent                         
+                             eRotacional\419837192_316                         
+                             2295315_2010127932.mp4'                           
+
+Animation 6: Indicate(MathTex('\\nabla\\cdot\\mathbf E=3\\kappa')):   0%|          | 0/235 [00:00<?, ?it/s]
+Animation 6: Indicate(MathTex('\\nabla\\cdot\\mathbf E=3\\kappa')):  14%|#4        | 33/235 [00:00<00:00, 321.99it/s]
+Animation 6: Indicate(MathTex('\\nabla\\cdot\\mathbf E=3\\kappa')):  30%|##9       | 70/235 [00:00<00:00, 349.92it/s]
+Animation 6: Indicate(MathTex('\\nabla\\cdot\\mathbf E=3\\kappa')):  45%|####5     | 106/235 [00:00<00:00, 326.54it/s]
+Animation 6: Indicate(MathTex('\\nabla\\cdot\\mathbf E=3\\kappa')):  59%|#####9    | 139/235 [00:00<00:00, 321.82it/s]
+Animation 6: Indicate(MathTex('\\nabla\\cdot\\mathbf E=3\\kappa')):  73%|#######3  | 172/235 [00:00<00:00, 306.67it/s]
+Animation 6: Indicate(MathTex('\\nabla\\cdot\\mathbf E=3\\kappa')):  86%|########6 | 203/235 [00:00<00:00, 305.79it/s]
+Animation 6: Indicate(MathTex('\\nabla\\cdot\\mathbf E=3\\kappa')): 100%|##########| 235/235 [00:00<00:00, 309.32it/s]
+                                                                                                                      
+[10/12/26 15:17:58] INFO     Animation 6 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\Pichau\PycharmP                         
+                             rojects\manim-fisica\medi                         
+                             a\videos\cena\540p15\part                         
+                             ial_movie_files\Divergent                         
+                             eRotacional\419837192_349                         
+                             3826321_2915747624.mp4'                           
+                    INFO     Combining to Movie file.  scene_file_writer.py:952
+                    INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'C:\Users\Pichau\Pycharm                          
+                             Projects\manim-fisica\me                          
+                             dia\videos\cena\540p15\e                          
+                             xemplo_v1_3.mp4'                                  
+                                                                               
+                    INFO     The partial movie        scene_file_writer.py:1073
+                             directory is full (> 100                          
+                             files). Therefore, manim                          
+                             has removed the 47                                
+                             oldest file(s). You can                           
+                             change this behaviour by                          
+                             changing                                          
+                             max_files_cached in                               
+                             config.                                           
+                    INFO     Rendered DivergenteRotacional         scene.py:290
+                             Played 7 animations                               
+You are using manim version v0.21.0, but version v0.22.0 is available.
+You should consider upgrading via pip install -U manim

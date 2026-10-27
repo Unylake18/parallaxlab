@@ -1,7 +1,7 @@
 # Por que uma carga faz uma hélice?
 
 - ID: `vid_0024`
-- Série pública: **DA EQUAÇÃO AO FENÔMENO · EP. 06** (episódio provisório)
+- Série pública: **DA EQUAÇÃO AO FENÔMENO · EP. 06** (confirmado pelo usuário em 18/10/2026)
 - formato: `curto_vertical`
 - solido_3d: nenhum — Manim 2.5D aprovado para esta implementação.
 - Subtítulo: campo magnético uniforme

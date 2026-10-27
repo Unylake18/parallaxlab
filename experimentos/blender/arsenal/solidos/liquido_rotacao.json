@@ -1,0 +1,200 @@
+{
+  "status": "aprovado",
+  "status_nota": "Aprovação visual e física explicitamente confirmada no handoff de implementação do vid_0022. Uso autorizado na abertura e no payoff.",
+  "area": [
+    "fluidos/fluidos_em_repouso"
+  ],
+  "validado_em": "2026-10-11",
+  "origem": "experimentos/blender/arsenal/liquido_rotacao.py",
+  "integracao": {
+    "formato_recomendado": "png_seq_alpha",
+    "custo_1080p_s_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "id": "liquido_rotacao",
+  "nome": "Líquido em rotação (plano → paraboloide)",
+  "descricao": "Volume líquido fechado com superfície z(r, λ) = h0 − λαR²/2 + λαr². No modo fenomeno, um único setor angular translúcido acompanha a superfície e gira rigidamente com fase_rotacao. Geometria prioriza grade e seção meridiana; tracers pontuais são permitidos apenas no modo qa.",
+  "leitura_visual": "Líquido azul com interface fina e um setor angular discreto indicando co-rotação. Sem partículas nos modos editoriais. Em geometria, seção meridiana branca e grid azul discreto, sem setor por padrão.",
+  "usar_quando": [
+    "superfície livre de um líquido em rotação rígida (paraboloide z = ω²r²/(2g))",
+    "mostrar a passagem do plano ao paraboloide com volume conservado (λ de 0 a 1)",
+    "equilíbrio relativo de um fluido num referencial girante (força centrífuga + gravidade)",
+    "recipiente cilíndrico em rotação uniforme em torno do eixo vertical"
+  ],
+  "nao_usar_quando": [
+    "dinâmica do fluido (ondas, spin-up transitório, vórtice, viscosidade): é só a família geométrica, não uma simulação",
+    "fluido em movimento relativo à parede (use tubo_escoamento ou tanque_torricelli)",
+    "pressão e empuxo num tanque em repouso (use tanque_hidrostatico)",
+    "rotação em torno de eixo que não seja o do cilindro"
+  ],
+  "limitacoes": [
+    "candidato de sandbox: status estudo, aguardando avaliação humana",
+    "λ é interpolação didática da forma; não representa a dinâmica do transiente",
+    "fase_rotacao controla só azimute do setor (e tracers opcionais de QA); velocidade visual não é inferida de λ",
+    "setor é um indicador angular preso à superfície, sem espessura física; tracers internos somente em QA",
+    "volume analítico conservado exatamente; malha linear aproxima a superfície (128 segmentos × 32 anéis)",
+    "prévia vertical em 540×960; suavidade em render 1080×1920 ainda não avaliada",
+    "Δh limitado por altura e nível; construtor recusa fundo exposto ou transbordamento"
+  ],
+  "construtor": "liquido_rotacao",
+  "parametros": {
+    "raio": {
+      "valor": 1.2,
+      "unidade": "u",
+      "descricao": "raio interno R do copo (e do líquido)"
+    },
+    "altura_recipiente": {
+      "valor": 2.6,
+      "unidade": "u",
+      "descricao": "altura do copo"
+    },
+    "nivel": {
+      "valor": 1.35,
+      "unidade": "u",
+      "descricao": "h0: altura do líquido em repouso (λ=0) e da superfície plana"
+    },
+    "delta_h": {
+      "valor": 1.0,
+      "unidade": "u",
+      "descricao": "Δh = αR² no estado final (λ=1); α = ω²/(2g) = Δh/R²"
+    },
+    "lambda": {
+      "valor": 1.0,
+      "unidade": "0-1",
+      "descricao": "deformação λ: 0 = plano, 1 = paraboloide (z = h0 − λαR²/2 + λαr²)"
+    },
+    "marcadores": {
+      "valor": -1,
+      "unidade": "-1/0/1",
+      "descricao": "tracers pontuais exclusivos de qa; ignorados em fenomeno/geometria, inclusive com valor 1"
+    },
+    "n_marc_interno": {
+      "valor": 8,
+      "unidade": "tracers",
+      "descricao": "anel r=0,50R"
+    },
+    "n_marc_externo": {
+      "valor": 10,
+      "unidade": "tracers",
+      "descricao": "anel r=0,85R"
+    },
+    "voltas": {
+      "valor": 1,
+      "unidade": "voltas",
+      "descricao": "voltas completas do setor por ciclo de fase; no QA também controla tracers opcionais"
+    },
+    "referencia": {
+      "valor": -1,
+      "unidade": "-1/0/1",
+      "descricao": "anel magenta em h0; padrão só qa"
+    },
+    "grade": {
+      "valor": -1,
+      "unidade": "-1/0/1",
+      "descricao": "grid discreto; padrão geometria/qa"
+    },
+    "varrer_lambda": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "com movimento=1: λ sobe e desce em cosseno (0 → 1 → 0) ao longo do ciclo de fase"
+    },
+    "movimento": {
+      "valor": 0,
+      "unidade": "0/1",
+      "descricao": "1 = animação (use animar.py ou a ponte com o Manim)"
+    },
+    "fase": {
+      "valor": 0.0,
+      "unidade": "0-1",
+      "descricao": "fase do loop; gira setor e opcionalmente tracers QA; varrer_lambda habilita deformação separada"
+    },
+    "estado_visual": {
+      "valor": "fenomeno",
+      "unidade": "modo",
+      "descricao": "fenomeno | geometria | qa; define flags em -1"
+    },
+    "prof_marcador": {
+      "valor": 0.08,
+      "unidade": "u",
+      "descricao": "profundidade abaixo de min(h0, z(r,1)); z constante"
+    },
+    "meridiana": {
+      "valor": -1,
+      "unidade": "-1/0/1",
+      "descricao": "seção parabólica destacada; padrão geometria/qa"
+    },
+    "fi_meridiana": {
+      "valor": 30.0,
+      "unidade": "graus",
+      "descricao": "azimute da seção; perpendicular à câmera nominal"
+    },
+    "fase_rotacao": {
+      "valor": 0.0,
+      "unidade": "voltas",
+      "descricao": "azimute do setor, independente da forma λ; no QA também gira tracers opcionais"
+    },
+    "setor": {
+      "valor": -1,
+      "unidade": "-1/0/1",
+      "descricao": "setor translúcido: padrão visível em fenomeno/qa, oculto em geometria"
+    },
+    "angulo_setor": {
+      "valor": 24.0,
+      "unidade": "graus",
+      "descricao": "abertura do único setor angular (0 < ângulo <= 90)"
+    },
+    "fi_setor": {
+      "valor": -35.0,
+      "unidade": "graus",
+      "descricao": "azimute inicial do setor antes da fase de rotação"
+    }
+  },
+  "enquadramento": {
+    "azimute": -60,
+    "elevacao": 27,
+    "lente": 50,
+    "margem": 0.08
+  },
+  "preview": "previews/liquido_rotacao_rodada3/fenomeno_lambda1.png",
+  "animacao": {
+    "tipo": "rotacao",
+    "liga": "movimento",
+    "frames_sugeridos": 60,
+    "parametro": "fase",
+    "loop": "fase 0 a 1 fecha uma volta do setor; varrer_lambda=1 mantém o teste 0→1→0. Tracers somente no modo qa.",
+    "custo_1080p_s_por_frame": null,
+    "peso_mb_por_frame": null,
+    "custo_origem": "não medido"
+  },
+  "preview_set": [
+    "lambda=1.0",
+    "fase=0.0"
+  ],
+  "previews_rodada2": {
+    "script": "preview_liquido_rotacao.py",
+    "resolucao": [
+      540,
+      960
+    ],
+    "editoriais": [
+      "morph: easing monotônico e hold final",
+      "rotacao: λ=1 fixo",
+      "payoff: seção fixa, fade do volume/grid, paralaxe de 4°"
+    ],
+    "qa": "loop_qa: 0→1→0"
+  },
+  "previews_rodada3": {
+    "pasta": "previews/liquido_rotacao_rodada3",
+    "mudanca": "setor angular único; tracers apenas em qa",
+    "resolucao": [
+      540,
+      960
+    ],
+    "setor": {
+      "abertura_graus": 24,
+      "opacidade": 0.18,
+      "azimute_inicial_graus": -35,
+      "visivel_dos_dois_lados": true
+    }
+  }
+}

@@ -1,0 +1,332 @@
+1
+00:00:00,060 --> 00:00:02,070
+Todo indutor guarda energia.
+
+2
+00:00:02,200 --> 00:00:03,590
+Mas onde ela fica?
+
+3
+00:00:03,620 --> 00:00:06,970
+No fio... ou no espaço aí
+dentro, onde só tem ar?
+
+4
+00:00:07,020 --> 00:00:08,130
+Guarda o seu palpite.
+
+5
+00:00:08,180 --> 00:00:10,270
+Vamos descobrir com
+um solenoide longo,
+
+6
+00:00:10,300 --> 00:00:11,290
+de núcleo de ar.
+
+7
+00:00:11,320 --> 00:00:14,170
+Em cima, a corrente
+sai da tela; embaixo,
+
+8
+00:00:14,200 --> 00:00:16,750
+entra. Ele tem raio
+e espiras por metro,
+
+9
+00:00:16,780 --> 00:00:18,950
+e olhamos um trecho
+longe das pontas.
+
+10
+00:00:18,980 --> 00:00:21,830
+Primeiro: quanto vale o
+campo magnético aí dentro?
+
+11
+00:00:21,940 --> 00:00:22,750
+Lei de Ampère:
+
+12
+00:00:22,780 --> 00:00:25,350
+a soma do campo ao longo
+de um caminho fechado é a
+
+13
+00:00:25,380 --> 00:00:26,790
+permeabilidade do vácuo,
+
+14
+00:00:26,820 --> 00:00:30,230
+que na tela é mi zero, vezes
+a corrente total que atravessa
+
+15
+00:00:30,260 --> 00:00:33,190
+esse caminho. No retângulo,
+só o lado de dentro conta,
+
+16
+00:00:33,220 --> 00:00:35,190
+porque lá o campo
+acompanha o caminho.
+
+17
+00:00:35,220 --> 00:00:37,850
+Nos lados verticais ele
+é perpendicular; fora,
+
+18
+00:00:37,880 --> 00:00:39,010
+praticamente zero.
+
+19
+00:00:39,040 --> 00:00:41,890
+A soma vira campo vezes
+o comprimento do lado.
+
+20
+00:00:41,920 --> 00:00:44,630
+E a corrente? Cada espira
+dentro do retângulo.
+
+21
+00:00:44,660 --> 00:00:46,790
+O comprimento aparece
+dos dois lados...
+
+22
+00:00:46,820 --> 00:00:49,710
+e corta! O campo é a
+permeabilidade do vácuo,
+
+23
+00:00:49,740 --> 00:00:51,130
+vezes espiras por metro,
+
+24
+00:00:51,160 --> 00:00:52,170
+vezes corrente.
+
+25
+00:00:52,220 --> 00:00:54,070
+Agora, o fluxo numa espira:
+
+26
+00:00:54,100 --> 00:00:56,230
+a soma do campo que
+atravessa o disco.
+
+27
+00:00:56,260 --> 00:00:58,530
+Como o campo é uniforme
+e entra de frente,
+
+28
+00:00:58,560 --> 00:00:59,790
+ele sai da integral:
+
+29
+00:00:59,820 --> 00:01:02,690
+sobra a área. Fluxo
+é campo vezes área.
+
+30
+00:01:02,720 --> 00:01:04,270
+Só que são muitas espiras,
+
+31
+00:01:04,300 --> 00:01:05,790
+todas com o mesmo fluxo.
+
+32
+00:01:05,820 --> 00:01:08,910
+O fluxo concatenado, que na
+tela é a letra grega lambda,
+
+33
+00:01:08,940 --> 00:01:10,190
+é a soma de todos:
+
+34
+00:01:10,220 --> 00:01:12,550
+número de espiras
+vezes o fluxo de uma.
+
+35
+00:01:12,580 --> 00:01:15,650
+Esse número é espiras por
+metro vezes o comprimento.
+
+36
+00:01:15,680 --> 00:01:18,490
+A indutância é o fluxo
+concatenado dividido pela
+
+37
+00:01:18,520 --> 00:01:20,150
+corrente, medida em henry.
+
+38
+00:01:20,180 --> 00:01:22,630
+A corrente cancela,
+e sobra só geometria.
+
+39
+00:01:22,660 --> 00:01:24,790
+Repara nas espiras
+por metro ao quadrado:
+
+40
+00:01:24,820 --> 00:01:26,770
+um fator vem do campo; o outro,
+
+41
+00:01:26,800 --> 00:01:29,070
+da contagem. Agora, a energia.
+
+42
+00:01:29,100 --> 00:01:30,910
+Primeiro jeito: pelo circuito.
+
+43
+00:01:30,940 --> 00:01:32,170
+Enquanto a corrente sobe,
+
+44
+00:01:32,200 --> 00:01:34,670
+o indutor reage com
+uma força eletromotriz,
+
+45
+00:01:34,700 --> 00:01:36,970
+e a fonte entrega
+potência para vencê-la.
+
+46
+00:01:37,000 --> 00:01:38,410
+A cada pedacinho de tempo,
+
+47
+00:01:38,440 --> 00:01:41,550
+a energia cresce indutância
+vezes corrente vezes um
+
+48
+00:01:41,580 --> 00:01:42,930
+pedacinho de corrente.
+
+49
+00:01:42,960 --> 00:01:45,170
+Somando de zero
+até o valor final:
+
+50
+00:01:45,200 --> 00:01:48,110
+meio vezes indutância
+vezes corrente ao quadrado.
+
+51
+00:01:48,140 --> 00:01:51,290
+É a energia guardada quando a
+corrente chega a esse valor; ela
+
+52
+00:01:51,320 --> 00:01:53,230
+entrou enquanto
+a corrente subia.
+
+53
+00:01:53,260 --> 00:01:54,770
+Com a indutância do solenoide,
+
+54
+00:01:54,800 --> 00:01:56,490
+essa expressão vai para o topo.
+
+55
+00:01:56,520 --> 00:01:58,190
+Segundo jeito: pelo campo.
+
+56
+00:01:58,220 --> 00:02:00,970
+A densidade de energia
+é a energia por volume,
+
+57
+00:02:01,000 --> 00:02:02,310
+e tem um resultado geral:
+
+58
+00:02:02,340 --> 00:02:05,730
+campo ao quadrado, dividido por
+duas vezes a permeabilidade do
+
+59
+00:02:05,760 --> 00:02:08,270
+vácuo. Dentro, brilho
+uniforme; fora,
+
+60
+00:02:08,300 --> 00:02:10,009
+escuro. Somando no volume:
+
+61
+00:02:10,039 --> 00:02:13,490
+densidade vezes volume, que é a
+área do disco arrastada ao longo
+
+62
+00:02:13,520 --> 00:02:16,910
+do trecho. Trocando o campo
+pelo que achamos e elevando ao
+
+63
+00:02:16,940 --> 00:02:17,870
+quadrado...
+
+64
+00:02:18,020 --> 00:02:21,590
+uma permeabilidade do vácuo de
+cima cancela com a de baixo.
+
+65
+00:02:21,640 --> 00:02:23,670
+Sobrou a mesma
+expressão lá de cima!
+
+66
+00:02:23,700 --> 00:02:25,170
+As duas contas conferem:
+
+67
+00:02:25,200 --> 00:02:27,950
+é a mesma energia,
+contada de dois jeitos.
+
+68
+00:02:28,020 --> 00:02:29,310
+E a pergunta do começo?
+
+69
+00:02:29,340 --> 00:02:31,270
+O fio só conduz a corrente.
+
+70
+00:02:31,300 --> 00:02:33,650
+A energia está guardada
+no campo magnético,
+
+71
+00:02:33,680 --> 00:02:34,770
+dentro do solenoide.
+
+72
+00:02:34,800 --> 00:02:37,710
+Chutou "no fio"? Relaxa,
+é um palpite natural.
+
+73
+00:02:37,780 --> 00:02:39,890
+Se curtiu, siga o Parallax Lab.

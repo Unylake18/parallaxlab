@@ -4,13 +4,13 @@ Tudo o que dependia de decisão editorial e de sincronização **já está pront
 
 ## Estado (verificado)
 
-- **Vídeo:** `LeiGaussCasosClassicos002` em `cena.py`, **versão 2D fechada** (sem a parte 3D/Blender; esses experimentos são separados). Duração sincronizada: **957,9 s (15:58)**.
+- **Vídeo:** `LeiGaussCasosClassicos002` em `cena.py`, **versão 2D fechada** (sem a parte 3D/Blender; esses experimentos são separados). Duração sincronizada: **967,1 s (16:07)**.
 - **Voz:** 4 WAV do ElevenLabs em `audio/partes/narracao_parte{1,2,3,4}.wav` (243,8 + 214,9 + 238,3 + 254,1 s; ~3,0 palavras/s). **Fora do Git** (`.gitignore` ignora `videos_longos/*/audio/`). Texto falado: `texto_narracao.txt` e `texto_narracao_bloco1..4.txt` (2.862 palavras; Markdown canônico: `narracao_sugestao.md`, v2.2). A voz antiga (12:56) está em `audio/partes/_v2.1_12min/`.
-- **Sincronização** (sem ASR, mesmo método do yt_0001): `gerar_sync.py alinhar` → `audio/narracao_final.wav` (953,8 s) e `sync.json` (palavras, pausas e 88 nós `[tempo editorial, tempo da voz]`, um por linha do roteiro). A cena converte cada `at(t)` editorial pelo mapa linear por partes desses nós.
-- **Ritmo:** `ritmo.json` (40 trechos comprimidos onde a animação não cabia na fala) e `pads.json` (**4 esperas pedidas à voz, +2,99 s**: um silêncio de 0,84 s antes da primeira palavra, 0,15 s em 17,4 s e os **2,0 s de silêncio antes do CTA**).
-- **Áudio de montagem:** `audio/narracao_montagem.wav` (**956,81 s**: fala intacta + as esperas). Fora do Git.
+- **Sincronização** (sem ASR, mesmo método do yt_0001): `gerar_sync.py alinhar` → `audio/narracao_final.wav` (953,8 s) e `sync.json` (palavras, pausas e **194 nós** `[tempo editorial, tempo da voz]`). Os nós vêm de `ancoras_voz.py`: cada marco real `at(t)` da cena (vetor, passo de equação, gráfico) ligado à frase que o descreve; a fala começa 0,3 s antes do evento. A cena converte os demais `at(t)` por interpolação. Para mudar o alinhamento, edite `ancoras_voz.py` e refaça os passos de "Se algo mudar".
+- **Ritmo:** `ritmo.json` (70 trechos comprimidos onde a animação não cabia na fala) e `pads.json` (**4 esperas pedidas à voz, +2,99 s**: um silêncio de 0,84 s antes da primeira palavra, 0,15 s em 17,4 s e os **2,0 s de silêncio antes do CTA**).
+- **Áudio de montagem:** `audio/narracao_montagem.wav` (**966,0 s**: fala intacta + as esperas). Fora do Git.
 - **Legenda:** `legenda.srt` (**301 cues**, até 2 linhas de 42 caracteres, no tempo do vídeo final, sem sobreposição, maior cue 5,2 s). Arquivo separado para subir no YouTube (**não embutida**, como no yt_0001).
-- **Capítulos:** `capitulos_youtube.txt` (16 capítulos, derivados de `blocos.json`). `blocos.json`: início de cada bloco no vídeo final e `fim` = 957,9 s.
+- **Capítulos:** `capitulos_youtube.txt` (16 capítulos, derivados de `blocos.json`). `blocos.json`: início de cada bloco no vídeo final e `fim` = 967,1 s.
 - **Teste prévio:** o bloco 27 foi renderizado em 1080p/30 fps/CRF 14 com o `render_final.py`: 1920×1080, H.264, duração exata esperada. O pipeline de grupos paralelos, CRF e contagem de quadros está validado.
 
 ## O que o Codex precisa rodar (nesta ordem)
@@ -19,7 +19,7 @@ Tudo o que dependia de decisão editorial e de sincronização **já está pront
    ```bash
    uv run --no-sync python -c "import json;d='videos_longos/yt_0002_lei_gauss_casos_classicos/';p=json.load(open(d+'pads.json'))['pads'];b=json.load(open(d+'blocos.json'));print(len(p),'esperas',round(sum(x for _,x in p),2),'s; fim',b['fim'],'s')"
    ```
-   Esperado: `4 esperas 2.99 s; fim 957.9 s`.
+   Esperado: `23 esperas 12.2 s; fim 967.1 s`.
 
 2. **Render final em grupos paralelos + junção + voz** (um comando):
    ```bash
@@ -31,7 +31,7 @@ Tudo o que dependia de decisão editorial e de sincronização **já está pront
    - Se um grupo falhar: `renders/yt_0002_final/gN.log`; corrigir e repetir só a junção com `--montar-apenas`.
 
 3. **Verificar** o master:
-   - vídeo ≈ **957,9 s** e áudio ≈ **956,8 s** (o vídeo termina ~1,1 s depois da voz, de propósito);
+   - vídeo ≈ **967,1 s** e áudio ≈ **966,0 s** (o vídeo termina ~1,1 s depois da voz, de propósito);
    - 1920×1080, 30 fps, H.264 + AAC;
    - quadros em instantes-chave e texto da cena batendo com a fala. Instantes de referência no vídeo final: início de cada capítulo em `capitulos_youtube.txt`; por exemplo, a fala "o campo vale sigma sobre duas vezes épsilon zero" cai em ~07:21 (capítulo "Folha infinita", 06:08–07:41) e a fala do CTA ("No próximo vídeo de Gauss…") começa em ~15:43.
 

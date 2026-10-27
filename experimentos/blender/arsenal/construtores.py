@@ -40,6 +40,9 @@ import otica_b as ob  # noqa: E402
 import termo_fluidos as tf  # noqa: E402
 import rolamento as rl  # noqa: E402
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import liquido_rotacao as lr  # noqa: E402  (candidato em sandbox; mora em arsenal/)
+
 
 def casca_cilindrica_oca(p):
     obj = co.criar_casca_oca(p["raio"], p["comprimento"], p["espessura"], p["lados"])
@@ -516,6 +519,15 @@ def tanque_hidrostatico(p):
     return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
 
 
+def liquido_rotacao(p):
+    proxy, atu, apos, _ = lr.liquido_rotacao(
+        raio=p["raio"], altura_recipiente=p["altura_recipiente"], nivel=p["nivel"], delta_h=p["delta_h"], lam=p["lambda"],
+        **{k: p[k] for k in ("estado_visual", "marcadores", "n_marc_interno", "n_marc_externo", "voltas", "prof_marcador",
+                            "referencia", "grade", "meridiana", "fi_meridiana", "movimento", "fase", "fase_rotacao", "varrer_lambda",
+                            "setor", "angulo_setor", "fi_setor")})
+    return _mov({"enquadrar": [proxy], "apos_camera": apos}, atu, p)
+
+
 def prensa_hidraulica(p):
     proxy, atu = fl3.prensa_hidraulica(p["raio1"], p["raio2"], p["altura"], p["curso"], p["escala_forca"], int(p["movimento"]), p["fase"])
     return _mov({"enquadrar": [proxy], "apos_camera": None}, atu, p)
@@ -708,6 +720,7 @@ CONSTRUTORES = {
     "tanque_hidrostatico": tanque_hidrostatico,
     "prensa_hidraulica": prensa_hidraulica,
     "tanque_torricelli": tanque_torricelli,
+    "liquido_rotacao": liquido_rotacao,
     "cargas_pontuais": cargas_pontuais,
     "dipolo_eletrico": dipolo_eletrico,
     "linhas_de_campo_3d": linhas_de_campo_3d,

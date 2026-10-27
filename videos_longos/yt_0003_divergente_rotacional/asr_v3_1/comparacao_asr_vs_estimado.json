@@ -1,0 +1,559 @@
+{
+ "meta": "comparação ASR (faster-whisper large-v3) x tempos estimados por pausas",
+ "casadas_pct": 97.3,
+ "offset_mediano_s": 0.188,
+ "por_bloco": [
+  {
+   "id": "H01",
+   "offset_inicio_s": 0.05,
+   "offset_mediano_s": 0.11,
+   "palavras_casadas": 45
+  },
+  {
+   "id": "H02",
+   "offset_inicio_s": 0.25,
+   "offset_mediano_s": 0.17,
+   "palavras_casadas": 35
+  },
+  {
+   "id": "H03",
+   "offset_inicio_s": 0.19,
+   "offset_mediano_s": 0.19,
+   "palavras_casadas": 45
+  },
+  {
+   "id": "H04",
+   "offset_inicio_s": 0.32,
+   "offset_mediano_s": 0.21,
+   "palavras_casadas": 69
+  },
+  {
+   "id": "G01",
+   "offset_inicio_s": 0.25,
+   "offset_mediano_s": 0.21,
+   "palavras_casadas": 39
+  },
+  {
+   "id": "G02",
+   "offset_inicio_s": 0.23,
+   "offset_mediano_s": 0.17,
+   "palavras_casadas": 30
+  },
+  {
+   "id": "G03",
+   "offset_inicio_s": 0.12,
+   "offset_mediano_s": 0.19,
+   "palavras_casadas": 43
+  },
+  {
+   "id": "G04",
+   "offset_inicio_s": 0.13,
+   "offset_mediano_s": 0.19,
+   "palavras_casadas": 50
+  },
+  {
+   "id": "G05",
+   "offset_inicio_s": 0.23,
+   "offset_mediano_s": 0.18,
+   "palavras_casadas": 32
+  },
+  {
+   "id": "G06",
+   "offset_inicio_s": 0.21,
+   "offset_mediano_s": 0.15,
+   "palavras_casadas": 38
+  },
+  {
+   "id": "G07",
+   "offset_inicio_s": 0.25,
+   "offset_mediano_s": 0.2,
+   "palavras_casadas": 54
+  },
+  {
+   "id": "G08",
+   "offset_inicio_s": 0.21,
+   "offset_mediano_s": 0.22,
+   "palavras_casadas": 54
+  },
+  {
+   "id": "D01",
+   "offset_inicio_s": 0.34,
+   "offset_mediano_s": 0.26,
+   "palavras_casadas": 38
+  },
+  {
+   "id": "D02",
+   "offset_inicio_s": 0.22,
+   "offset_mediano_s": 0.21,
+   "palavras_casadas": 56
+  },
+  {
+   "id": "D03",
+   "offset_inicio_s": 0.23,
+   "offset_mediano_s": 0.36,
+   "palavras_casadas": 32
+  },
+  {
+   "id": "D04",
+   "offset_inicio_s": 0.17,
+   "offset_mediano_s": 0.17,
+   "palavras_casadas": 42
+  },
+  {
+   "id": "D05",
+   "offset_inicio_s": 0.36,
+   "offset_mediano_s": 0.18,
+   "palavras_casadas": 51
+  },
+  {
+   "id": "D06",
+   "offset_inicio_s": 0.19,
+   "offset_mediano_s": 0.3,
+   "palavras_casadas": 42
+  },
+  {
+   "id": "D07",
+   "offset_inicio_s": 0.19,
+   "offset_mediano_s": 0.22,
+   "palavras_casadas": 39
+  },
+  {
+   "id": "D08",
+   "offset_inicio_s": 0.22,
+   "offset_mediano_s": 0.26,
+   "palavras_casadas": 47
+  },
+  {
+   "id": "D09",
+   "offset_inicio_s": 0.3,
+   "offset_mediano_s": 0.26,
+   "palavras_casadas": 42
+  },
+  {
+   "id": "D10",
+   "offset_inicio_s": 0.25,
+   "offset_mediano_s": 0.19,
+   "palavras_casadas": 51
+  },
+  {
+   "id": "D11",
+   "offset_inicio_s": 0.4,
+   "offset_mediano_s": 0.48,
+   "palavras_casadas": 33
+  },
+  {
+   "id": "D12",
+   "offset_inicio_s": 1.47,
+   "offset_mediano_s": 0.49,
+   "palavras_casadas": 41
+  },
+  {
+   "id": "D13",
+   "offset_inicio_s": 0.3,
+   "offset_mediano_s": 0.22,
+   "palavras_casadas": 45
+  },
+  {
+   "id": "D14",
+   "offset_inicio_s": 0.22,
+   "offset_mediano_s": 0.22,
+   "palavras_casadas": 32
+  },
+  {
+   "id": "D15",
+   "offset_inicio_s": 0.1,
+   "offset_mediano_s": 0.11,
+   "palavras_casadas": 70
+  },
+  {
+   "id": "D16",
+   "offset_inicio_s": 0.13,
+   "offset_mediano_s": 0.09,
+   "palavras_casadas": 42
+  },
+  {
+   "id": "D17",
+   "offset_inicio_s": 0.11,
+   "offset_mediano_s": 0.17,
+   "palavras_casadas": 35
+  },
+  {
+   "id": "D18",
+   "offset_inicio_s": 0.2,
+   "offset_mediano_s": 0.21,
+   "palavras_casadas": 40
+  },
+  {
+   "id": "T01",
+   "offset_inicio_s": 0.22,
+   "offset_mediano_s": 0.22,
+   "palavras_casadas": 41
+  },
+  {
+   "id": "T02",
+   "offset_inicio_s": 0.17,
+   "offset_mediano_s": 0.17,
+   "palavras_casadas": 42
+  },
+  {
+   "id": "T03",
+   "offset_inicio_s": 0.27,
+   "offset_mediano_s": 0.2,
+   "palavras_casadas": 33
+  },
+  {
+   "id": "T04",
+   "offset_inicio_s": 0.18,
+   "offset_mediano_s": 0.06,
+   "palavras_casadas": 34
+  },
+  {
+   "id": "T05",
+   "offset_inicio_s": 0.25,
+   "offset_mediano_s": 0.11,
+   "palavras_casadas": 42
+  },
+  {
+   "id": "T06",
+   "offset_inicio_s": 0.26,
+   "offset_mediano_s": 0.22,
+   "palavras_casadas": 38
+  },
+  {
+   "id": "L01",
+   "offset_inicio_s": 0.23,
+   "offset_mediano_s": 0.14,
+   "palavras_casadas": 36
+  },
+  {
+   "id": "L02",
+   "offset_inicio_s": 0.3,
+   "offset_mediano_s": 0.17,
+   "palavras_casadas": 31
+  },
+  {
+   "id": "L03",
+   "offset_inicio_s": 0.19,
+   "offset_mediano_s": 0.24,
+   "palavras_casadas": 62
+  },
+  {
+   "id": "L04",
+   "offset_inicio_s": 0.2,
+   "offset_mediano_s": 0.22,
+   "palavras_casadas": 46
+  },
+  {
+   "id": "K01",
+   "offset_inicio_s": 1.55,
+   "offset_mediano_s": 0.42,
+   "palavras_casadas": 41
+  },
+  {
+   "id": "K02",
+   "offset_inicio_s": 0.26,
+   "offset_mediano_s": 0.21,
+   "palavras_casadas": 30
+  },
+  {
+   "id": "K03",
+   "offset_inicio_s": 0.23,
+   "offset_mediano_s": 0.2,
+   "palavras_casadas": 52
+  },
+  {
+   "id": "P01",
+   "offset_inicio_s": 0.27,
+   "offset_mediano_s": 0.26,
+   "palavras_casadas": 44
+  },
+  {
+   "id": "P02",
+   "offset_inicio_s": 0.19,
+   "offset_mediano_s": 0.1,
+   "palavras_casadas": 40
+  },
+  {
+   "id": "P03",
+   "offset_inicio_s": 0.28,
+   "offset_mediano_s": 0.25,
+   "palavras_casadas": 25
+  },
+  {
+   "id": "P04",
+   "offset_inicio_s": 0.23,
+   "offset_mediano_s": 0.16,
+   "palavras_casadas": 40
+  },
+  {
+   "id": "P05",
+   "offset_inicio_s": 0.18,
+   "offset_mediano_s": 0.15,
+   "palavras_casadas": 34
+  },
+  {
+   "id": "P06",
+   "offset_inicio_s": 0.06,
+   "offset_mediano_s": 0.15,
+   "palavras_casadas": 53
+  },
+  {
+   "id": "P07",
+   "offset_inicio_s": 0.27,
+   "offset_mediano_s": 0.2,
+   "palavras_casadas": 60
+  },
+  {
+   "id": "P08",
+   "offset_inicio_s": 0.3,
+   "offset_mediano_s": 0.13,
+   "palavras_casadas": 68
+  },
+  {
+   "id": "P09",
+   "offset_inicio_s": 0.26,
+   "offset_mediano_s": 0.22,
+   "palavras_casadas": 43
+  },
+  {
+   "id": "P10",
+   "offset_inicio_s": 0.27,
+   "offset_mediano_s": 0.18,
+   "palavras_casadas": 44
+  },
+  {
+   "id": "P11",
+   "offset_inicio_s": 0.19,
+   "offset_mediano_s": 0.09,
+   "palavras_casadas": 63
+  },
+  {
+   "id": "R01",
+   "offset_inicio_s": 0.14,
+   "offset_mediano_s": 0.15,
+   "palavras_casadas": 46
+  },
+  {
+   "id": "R02",
+   "offset_inicio_s": 0.07,
+   "offset_mediano_s": 0.1,
+   "palavras_casadas": 56
+  },
+  {
+   "id": "R03",
+   "offset_inicio_s": 0.26,
+   "offset_mediano_s": 0.18,
+   "palavras_casadas": 48
+  },
+  {
+   "id": "R04",
+   "offset_inicio_s": 0.18,
+   "offset_mediano_s": 0.18,
+   "palavras_casadas": 34
+  },
+  {
+   "id": "R05",
+   "offset_inicio_s": 0.19,
+   "offset_mediano_s": 0.16,
+   "palavras_casadas": 39
+  },
+  {
+   "id": "R06",
+   "offset_inicio_s": 0.28,
+   "offset_mediano_s": 0.17,
+   "palavras_casadas": 64
+  },
+  {
+   "id": "R07",
+   "offset_inicio_s": 0.28,
+   "offset_mediano_s": 0.19,
+   "palavras_casadas": 70
+  },
+  {
+   "id": "R08",
+   "offset_inicio_s": 0.24,
+   "offset_mediano_s": 0.16,
+   "palavras_casadas": 38
+  },
+  {
+   "id": "C01",
+   "offset_inicio_s": 0.24,
+   "offset_mediano_s": 0.27,
+   "palavras_casadas": 28
+  },
+  {
+   "id": "C02",
+   "offset_inicio_s": 0.18,
+   "offset_mediano_s": 0.08,
+   "palavras_casadas": 74
+  },
+  {
+   "id": "C03",
+   "offset_inicio_s": 0.2,
+   "offset_mediano_s": 0.17,
+   "palavras_casadas": 49
+  },
+  {
+   "id": "C04",
+   "offset_inicio_s": 0.21,
+   "offset_mediano_s": 0.32,
+   "palavras_casadas": 26
+  },
+  {
+   "id": "C05",
+   "offset_inicio_s": 0.23,
+   "offset_mediano_s": 0.23,
+   "palavras_casadas": 30
+  },
+  {
+   "id": "C06",
+   "offset_inicio_s": 0.21,
+   "offset_mediano_s": 0.2,
+   "palavras_casadas": 28
+  },
+  {
+   "id": "C07",
+   "offset_inicio_s": 0.2,
+   "offset_mediano_s": 0.18,
+   "palavras_casadas": 40
+  },
+  {
+   "id": "C08",
+   "offset_inicio_s": 0.22,
+   "offset_mediano_s": 0.15,
+   "palavras_casadas": 34
+  },
+  {
+   "id": "C09",
+   "offset_inicio_s": -0.02,
+   "offset_mediano_s": 0.14,
+   "palavras_casadas": 36
+  },
+  {
+   "id": "C10",
+   "offset_inicio_s": 0.21,
+   "offset_mediano_s": 0.24,
+   "palavras_casadas": 26
+  },
+  {
+   "id": "S01",
+   "offset_inicio_s": 0.25,
+   "offset_mediano_s": 0.36,
+   "palavras_casadas": 37
+  },
+  {
+   "id": "S02",
+   "offset_inicio_s": 0.2,
+   "offset_mediano_s": 0.2,
+   "palavras_casadas": 25
+  },
+  {
+   "id": "S03",
+   "offset_inicio_s": 0.13,
+   "offset_mediano_s": 0.19,
+   "palavras_casadas": 60
+  },
+  {
+   "id": "S04",
+   "offset_inicio_s": 0.21,
+   "offset_mediano_s": 0.14,
+   "palavras_casadas": 70
+  },
+  {
+   "id": "S05",
+   "offset_inicio_s": 0.3,
+   "offset_mediano_s": 0.21,
+   "palavras_casadas": 36
+  },
+  {
+   "id": "S06",
+   "offset_inicio_s": 0.06,
+   "offset_mediano_s": 0.11,
+   "palavras_casadas": 29
+  },
+  {
+   "id": "S07",
+   "offset_inicio_s": 0.14,
+   "offset_mediano_s": 0.18,
+   "palavras_casadas": 63
+  },
+  {
+   "id": "S08",
+   "offset_inicio_s": 0.15,
+   "offset_mediano_s": 0.23,
+   "palavras_casadas": 40
+  },
+  {
+   "id": "S09",
+   "offset_inicio_s": 0.23,
+   "offset_mediano_s": 0.18,
+   "palavras_casadas": 52
+  },
+  {
+   "id": "S10",
+   "offset_inicio_s": 0.07,
+   "offset_mediano_s": 0.2,
+   "palavras_casadas": 37
+  },
+  {
+   "id": "M01",
+   "offset_inicio_s": 0.18,
+   "offset_mediano_s": 0.18,
+   "palavras_casadas": 37
+  },
+  {
+   "id": "M02",
+   "offset_inicio_s": 0.22,
+   "offset_mediano_s": 0.18,
+   "palavras_casadas": 18
+  },
+  {
+   "id": "M03",
+   "offset_inicio_s": 0.17,
+   "offset_mediano_s": 0.09,
+   "palavras_casadas": 47
+  },
+  {
+   "id": "F01",
+   "offset_inicio_s": -0.59,
+   "offset_mediano_s": 0.13,
+   "palavras_casadas": 57
+  },
+  {
+   "id": "F02",
+   "offset_inicio_s": 0.27,
+   "offset_mediano_s": 0.16,
+   "palavras_casadas": 40
+  },
+  {
+   "id": "F03",
+   "offset_inicio_s": 0.18,
+   "offset_mediano_s": 0.26,
+   "palavras_casadas": 61
+  },
+  {
+   "id": "F04",
+   "offset_inicio_s": 0.15,
+   "offset_mediano_s": 0.16,
+   "palavras_casadas": 50
+  },
+  {
+   "id": "F05",
+   "offset_inicio_s": 0.27,
+   "offset_mediano_s": 0.21,
+   "palavras_casadas": 51
+  },
+  {
+   "id": "CTA01",
+   "offset_inicio_s": 0.18,
+   "offset_mediano_s": 0.19,
+   "palavras_casadas": 42
+  },
+  {
+   "id": "CTA02",
+   "offset_inicio_s": 0.19,
+   "offset_mediano_s": 0.19,
+   "palavras_casadas": 36
+  }
+ ]
+}
