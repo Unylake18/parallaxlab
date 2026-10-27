@@ -1,0 +1,8 @@
+{
+  "name": "cena3d-parallax",
+  "private": true,
+  "description": "Render determinístico do 3D (Three.js r128) via Playwright. Instale com: npm install (na pasta da unidade).",
+  "dependencies": {
+    "playwright-core": "1.55.0"
+  }
+}
