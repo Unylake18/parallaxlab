@@ -1,0 +1,92 @@
+{
+ "_leia_me": "Fonte \u00fanica de tempos do trecho C13 (T2).",
+ "duracao_s": 72.22,
+ "ancoras": {
+  "C13-2": 0.0,
+  "C13-3": 17.04,
+  "C13-4": 40.37,
+  "C13-5": 55.18
+ },
+ "geometria": {
+  "fator_3d_manim": 1.0,
+  "centro_manim": [
+   -2.6,
+   0.3
+  ],
+  "fov_frente": 14,
+  "el_frente": 0,
+  "obl": {
+   "az": -70,
+   "d_az": 0.6,
+   "el": 14,
+   "fov": 26,
+   "alt": 9.5,
+   "alvo": [
+    0,
+    0,
+    -1.2
+   ],
+   "yc": 0.0,
+   "xc": 0.0
+  }
+ },
+ "raio": {
+  "theta1": 50.0,
+  "n": 1.333,
+  "v1": 2.4,
+  "L": 3.6,
+  "periodo": 0.3,
+  "t_troca": 18.04,
+  "z_fundo": -3.8
+ },
+ "tanque": {
+  "x0": -4.9,
+  "x1": 4.1
+ },
+ "camera": [
+  {
+   "t": 0.0,
+   "modo": "obl"
+  },
+  {
+   "t": 3.0,
+   "modo": "obl"
+  },
+  {
+   "t": 7.0,
+   "modo": "frente"
+  },
+  {
+   "t": 72.22,
+   "modo": "frente"
+  }
+ ],
+ "fade_out": [
+  {
+   "t": 0.0,
+   "v": 0.0
+  },
+  {
+   "t": 70.62,
+   "v": 0.0
+  },
+  {
+   "t": 72.22,
+   "v": 1.0
+  }
+ ],
+ "eventos": {
+  "espelho": 0.0,
+  "troca_espelho_agua": 18.04,
+  "equacao_snell": 27.04,
+  "constante": 40.37,
+  "aproxima_normal": 55.18
+ },
+ "qa_alinhamento": {
+  "quadros": [
+   180,
+   345,
+   887
+  ]
+ }
+}

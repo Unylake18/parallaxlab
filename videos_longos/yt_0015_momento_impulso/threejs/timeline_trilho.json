@@ -1,0 +1,184 @@
+{
+ "_leia_me": "Fonte \u00fanica de tempos do trecho T2 (trilho de ar). Quadro do Manim 16\u00d79 (x \u22128..8, y \u22124,5..4,5).",
+ "duracao_s": 71.11,
+ "ancoras": {
+  "T2-1": 0.0,
+  "T2-2": 22.96,
+  "T2-3": 31.48,
+  "T2-4": 48.89
+ },
+ "geometria": {
+  "fator_3d_manim": 1.0,
+  "centro_manim": [
+   0.0,
+   -0.3
+  ],
+  "carrinho_meia_largura": 1.0,
+  "fov_frente": 22,
+  "el_frente": 7,
+  "obl": {
+   "az": -62,
+   "d_az": 1.0,
+   "el": 16,
+   "fov": 26,
+   "alt": 8.0,
+   "alvo": [
+    0,
+    0,
+    0.25
+   ],
+   "yc": 0.0,
+   "xc": 0.0
+  }
+ },
+ "ensaios": [
+  {
+   "tipo": "explosao",
+   "vis": [
+    0.0,
+    22.66
+   ],
+   "t_evento": 14.2,
+   "x0": 1.4,
+   "v": 0.9
+  },
+  {
+   "tipo": "colisao",
+   "vis": [
+    22.76,
+    31.08
+   ],
+   "t_move": 23.36,
+   "x0": 6.0,
+   "v": 0.9
+  },
+  {
+   "tipo": "colisao",
+   "vis": [
+    31.68,
+    44.18
+   ],
+   "t_move": 31.68,
+   "x0": 6.0,
+   "v": 0.9,
+   "visao_do_carro": true
+  },
+  {
+   "tipo": "colisao",
+   "vis": [
+    49.29,
+    71.11
+   ],
+   "t_move": 49.29,
+   "x0": 6.0,
+   "v": 0.9,
+   "visao_do_carro": true
+  }
+ ],
+ "camera": [
+  {
+   "t": 0.0,
+   "modo": "obl"
+  },
+  {
+   "t": 6.0,
+   "modo": "obl"
+  },
+  {
+   "t": 11.0,
+   "modo": "frente"
+  },
+  {
+   "t": 71.11,
+   "modo": "frente"
+  }
+ ],
+ "cam_x": [
+  {
+   "t": 0.0,
+   "x": 0.0
+  },
+  {
+   "t": 30.48,
+   "x": 0.0
+  },
+  {
+   "t": 31.68,
+   "x": -6.0
+  },
+  {
+   "t": 44.18,
+   "x": 5.25,
+   "ease": "linear"
+  },
+  {
+   "t": 48.99,
+   "x": -6.0
+  },
+  {
+   "t": 49.29,
+   "x": -6.0
+  },
+  {
+   "t": 71.11,
+   "x": 13.638,
+   "ease": "linear"
+  }
+ ],
+ "realce_3d": [
+  {
+   "t": 0.0,
+   "v": 0.0
+  },
+  {
+   "t": 50.29,
+   "v": 0.0
+  },
+  {
+   "t": 51.69,
+   "v": 0.7
+  },
+  {
+   "t": 71.11,
+   "v": 0.7
+  }
+ ],
+ "fade_out": [
+  {
+   "t": 0.0,
+   "v": 1.0
+  },
+  {
+   "t": 0.45,
+   "v": 0.0
+  },
+  {
+   "t": 59.09,
+   "v": 0.0
+  },
+  {
+   "t": 59.89,
+   "v": 1.0
+  },
+  {
+   "t": 71.11,
+   "v": 1.0
+  }
+ ],
+ "eventos": {
+  "explosao": 14.2,
+  "visao_do_carro_1": 31.68,
+  "visao_do_carro_2": 49.29,
+  "equacao_entra": 55.49,
+  "casos": 59.89
+ },
+ "qa_alinhamento": {
+  "quadros": [
+   270,
+   395,
+   520,
+   610,
+   859
+  ]
+ }
+}

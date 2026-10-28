@@ -1,0 +1,253 @@
+"""Lote PF: T6 — momento ou energia? (Sears §8.1). v3: DOIS PAINÉIS que entram com o conteúdo; K = p²/(2m) no CENTRO por
+substituição; mãos abertas de perfil recebendo as bolas na palma (recuo d e 5d); barcos opacos em raias de gelo, F⃗ na popa,
+m/2m acima do barco, setas p e √2 p na CONTA; DICA."""
+from MF_Tools import TransformByGlyphMap
+
+from kit import *  # noqa: F401,F403
+
+
+def tex(s, cor=WHITE_, size=M_MID):
+    return MathTex(s, font_size=size, color=cor)
+
+
+def mao(esc=1.0):
+    """Mão aberta de perfil, palma voltada para a esquerda (recebe a bola em x = palma_x). Origem no centro da palma."""
+    k = esc
+    peca = lambda m: m.set_stroke(GEO, 2).set_fill(STEEL, 1)
+    braco = capsula2d(P3(0.15 * k, -0.38 * k), P3(1.35 * k, -0.62 * k), 0.19 * k, STEEL, borda=GEO)
+    palma = peca(RoundedRectangle(corner_radius=0.2 * k, width=0.46 * k, height=1.05 * k))
+    dedos = VGroup(*[capsula2d(P3((0.06 - 0.07 * i) * k, (0.42 - 0.02 * i) * k), P3((-0.2 - 0.1 * i) * k, (1.05 - 0.07 * i) * k),
+                               0.075 * k, STEEL, borda=GEO) for i in range(4)])
+    polegar = capsula2d(P3(-0.12 * k, -0.22 * k), P3(-0.58 * k, 0.12 * k), 0.085 * k, STEEL, borda=GEO)
+    g = VGroup(braco, dedos[::-1], palma, polegar)
+    g.palma_x = -0.23 * k
+    return g
+
+
+def barco(esc=1.0):
+    k = esc
+    casco = Polygon(P3(-0.9, 0), P3(0.95, 0), P3(0.7, -0.28), P3(-0.75, -0.28)).scale(k, about_point=ORIGIN) \
+        .set_stroke(GEO, 2).set_fill(STEEL, 1)
+    mastro = Rectangle(width=0.07 * k, height=1.5 * k).set_stroke(width=0).set_fill(GEO, 1).move_to(P3(0.0, 0.75 * k))
+    vela = Polygon(P3(0.05, 1.45), P3(0.05, 0.12), P3(0.85, 0.12)).scale(k, about_point=ORIGIN).set_stroke(GEO, 1.5).set_fill("#C9D2E2", 1)
+    patins = VGroup(*[RoundedRectangle(corner_radius=0.03 * k, width=0.5 * k, height=0.07 * k).set_stroke(width=0).set_fill(GEO, 1)
+                      .move_to(P3(x * k, -0.36 * k)) for x in (-0.5, 0.55)])
+    return VGroup(patins, casco, mastro, vela)
+
+
+class LoteT6(Base):
+    def construct(self):
+        self.setup_base(cap="MOMENTO OU ENERGIA?", selo="SEARS §8.1")
+        self.t6_1()
+        self.t6_2()
+        self.t6_3()
+        self.t6_4()
+        self.t6_5()
+        self.fim()
+        self.relatorio()
+
+    # ── T6-1 · a mesma força em cima; DOIS PAINÉIS (tempo → impulso → Δp; distância → trabalho → ΔK) ─────────────
+    def t6_1(self):
+        self.an("T6-1")
+        chao = Line(P3(-2.6, 1.35), P3(2.6, 1.35)).set_stroke(GEO, 2.5, opacity=0.6)
+        blk = Corpo("m", STEEL, 0.95, size=38).at(-0.9, 1.35)
+        fa = arrow(P3(-0.42, 1.82), P3(1.5, 1.82), color=FC, width=9, tip=0.26)
+        fl = tex(r"\vec F_{res}", FC, 42).next_to(fa, RIGHT, buff=0.18)
+        self.play(Create(chao), FadeIn(blk), run_time=0.6)
+        self.play(GrowArrow(fa), run_time=0.6)
+        self.play(FadeIn(fl), run_time=0.4)
+        paineis = VGroup()
+        for lado, op, nome, res, cor in ((-1, r"\times\,\Delta t", "IMPULSO", r"\Delta\vec p", MAG),
+                                         (1, r"\times\,d", "TRABALHO", r"\Delta K", WHITE_)):
+            x = lado * PAINEL_X
+            pl = painel(lado, 3.85, topo=0.95)
+            a = tex(op, WHITE_, 56).move_to(P3(x, 0.25))
+            s1 = tex(r"\downarrow", DIM, 42).move_to(P3(x, -0.4))
+            b = txt(nome, T_MAIN, color=JC if nome == "IMPULSO" else WHITE_, bold=True).move_to(P3(x, -1.0))
+            s2 = tex(r"\downarrow", DIM, 42).move_to(P3(x, -1.6))
+            c = tex(res, cor, 60).move_to(P3(x, -2.3))
+            paineis.add(VGroup(pl, a, s1, b, s2, c))
+        self.ate(0.33)
+        self.play(*[FadeIn(p[0]) for p in paineis], *[Write(p[1]) for p in paineis], run_time=0.9)
+        for k, frac in ((0, 0.48), (1, 0.74)):
+            self.ate(frac)
+            p = paineis[k]
+            self.play(FadeIn(p[2]), FadeIn(p[3], shift=0.1 * DOWN), run_time=0.6)
+            self.play(FadeIn(p[4]), Write(p[5]), run_time=0.7)
+            self.play(Indicate(p[5], color=WHITE_, scale_factor=1.15), run_time=0.6)
+        self.ate(0.97)
+        self.t61 = VGroup(blk, fa, fl, chao, paineis)
+
+    # ── T6-2 · CENTRO: K = ½mv² e p = mv → v = p/m → K = p²/(2m) ──────────────────────────────────────────────
+    def t6_2(self):
+        self.an("T6-2")
+        self.play(FadeOut(self.t61), run_time=0.5)
+        a = MathTex(r"K=\frac{1}{2}m v^{2}", font_size=68).move_to(P3(-3.3, 1.3))
+        b = MathTex(r"p=m v", font_size=68).move_to(P3(3.3, 1.3))
+        b[0][0].set_color(MAG)
+        b[0][3].set_color(VEL)
+        a[0][6].set_color(VEL)
+        self.play(Write(a), Write(b), run_time=0.9)
+        b2 = MathTex(r"v=\frac{p}{m}", font_size=68).move_to(P3(3.3, 1.3))
+        b2[0][0].set_color(VEL)
+        b2[0][2].set_color(MAG)
+        self.play(TransformByGlyphMap(b, b2, ([0], [2]), ([1], [1]), ([2], [4]), ([3], [0]), ([], [3])), run_time=1.0)
+        c = centro(MathTex(r"K=\frac{1}{2}m\left(\frac{p}{m}\right)^{2}", font_size=72), -0.9)
+        c[0][7].set_color(MAG)
+        assert len(a[0]) == 8 and len(b2[0]) == 5 and len(c[0]) == 12, (len(a[0]), len(b2[0]), len(c[0]))
+        self.play(*[ReplacementTransform(a[0][i].copy(), c[0][i]) for i in range(6)], ReplacementTransform(a[0][7].copy(), c[0][11]),
+                  FadeIn(c[0][6]), FadeIn(c[0][10]),
+                  ReplacementTransform(b2[0][2].copy(), c[0][7]), ReplacementTransform(b2[0][3].copy(), c[0][8]),
+                  ReplacementTransform(b2[0][4].copy(), c[0][9]), a[0][6].animate.set_opacity(0.25), run_time=1.3)
+        d = centro(MathTex(r"K=\frac{p^{2}}{2m}", font_size=96), -0.4)
+        d[0][2].set_color(MAG)
+        d[0][3].set_color(MAG)
+        assert len(d[0]) == 7, len(d[0])
+        self.play(FadeOut(a), FadeOut(b2), run_time=0.4)
+        self.play(TransformByGlyphMap(c, d, ([0], [0]), ([1], [1]), ([7], [2]), ([11], [3]), ([8], [4]), ([4], [5]), ([9], [6]),
+                                      ([2, 3, 5, 6, 10], [])), run_time=1.3)
+        cx = SurroundingRectangle(d, color=MAG, buff=0.3, stroke_width=3, corner_radius=0.12)
+        self.play(Create(cx), run_time=0.6)
+        self.play(Indicate(d, color=WHITE_, scale_factor=1.05), run_time=0.7)
+        self.ate(0.97)
+        self.kd = VGroup(d, cx)
+
+    # ── T6-3 · PALCO: bolas chegando às mãos (recuo d e 5d); CONTA: p e K por linha ─────────────────────────────
+    def t6_3(self):
+        self.an("T6-3")
+        self.play(FadeOut(self.kd), run_time=0.5)
+        linhas = []
+        for y, r, mt, vt, kt, rec in ((1.15, 0.36, r"0{,}50\ \mathrm{kg}", r"4{,}0\ \mathrm{m/s}", r"K=4\ \mathrm{J}", 0.5),
+                                     (-1.65, 0.2, r"0{,}10\ \mathrm{kg}", r"20\ \mathrm{m/s}", r"K=20\ \mathrm{J}", 2.5)):
+            m = mao(1.0)
+            linhas.append(dict(y=y, r=r, b=bola(r, GEO if r > 0.3 else STEEL), m=tex(mt, WHITE_, 36), v=tex(vt, VEL, 36),
+                               lv=0.35 if r > 0.3 else 1.75, mao=m, rec=rec,
+                               p=tex(r"p=2{,}0\ \mathrm{kg\cdot m/s}", MAG, 40), k=tex(kt, WHITE_, 44)))
+        XM = -3.3                                              # centro da palma antes do recuo
+        for L in linhas:
+            y = L["y"]
+            L["b"].move_to(P3(-6.2, y))
+            L["mao"].move_to(P3(XM + 0.2, y + 0.05))
+            L["mao"].shift(P3(XM - (L["mao"][2].get_center()[0]), 0))
+            L["m"].next_to(L["b"], DOWN, buff=0.25)
+            L["va"] = arrow(P3(-6.2 + L["r"] + 0.1, y + 0.62), P3(-6.2 + L["r"] + 0.1 + L["lv"], y + 0.62), color=VEL, width=6)
+            L["v"].next_to(L["va"], UP, buff=0.1)
+            grp = VGroup(L["p"], L["k"]).arrange(DOWN, buff=0.22, aligned_edge=LEFT)
+            grp.align_to(P3(CONTA["x0"], 0), LEFT).set_y(y + 0.1)
+        self.play(*[FadeIn(L[k]) for L in linhas for k in ("b", "m", "mao")], run_time=0.8)
+        self.play(*[GrowArrow(L["va"]) for L in linhas], *[FadeIn(L["v"]) for L in linhas], *[Write(L["p"]) for L in linhas], run_time=0.9)
+        self.ate(0.25)
+        self.play(*[Indicate(L["v"], color=WHITE_) for L in linhas], run_time=0.8)
+        self.play(*[Indicate(L["p"], color=MAG) for L in linhas], run_time=0.7)
+        self.ate(0.45)
+        # chegam à palma e param no mesmo tempo (mesmo impulso, mesma força média); a mão recua d e 5d
+        u = ValueTracker(0.0)
+
+        def pos_bola(L):
+            s = u.get_value()
+            px = XM + L["mao"].palma_x
+            if s <= 1:
+                return -6.2 + (px - L["r"] + 6.2) * s
+            w = min(s - 1, 1.0)
+            return px - L["r"] + L["rec"] * (2 * w - w * w)
+
+        def pos_mao(L):
+            w = min(max(u.get_value() - 1, 0), 1.0)
+            return L["rec"] * (2 * w - w * w)
+        for L in linhas:
+            L["b"].add_updater(lambda m, L=L: m.move_to(P3(pos_bola(L), L["y"] + 0.1)))
+            L["x0m"] = L["mao"].get_center()[0]
+            L["mao"].add_updater(lambda m, L=L: m.set_x(L["x0m"] + pos_mao(L)))
+        self.play(*[FadeOut(L[k]) for L in linhas for k in ("va", "v", "m")], run_time=0.3)
+        self.play(u.animate.set_value(1.0), run_time=1.0, rate_func=linear)
+        self.play(u.animate.set_value(2.0), run_time=1.6, rate_func=linear)
+        for L in linhas:
+            L["b"].clear_updaters()
+            L["mao"].clear_updaters()
+        mesmo = txt("MESMO TEMPO PARA PARAR", T_SMALL, color=DIM).move_to(P3(0, -0.25)).align_to(P3(CONTA["x0"], 0), LEFT)
+        self.play(FadeIn(mesmo), run_time=0.5)
+        self.ate(0.62)
+        self.play(*[Write(L["k"]) for L in linhas], run_time=0.9)
+        self.ate(0.8)
+        recs = VGroup()
+        for L, rot in zip(linhas, ("d", "5d")):
+            yb = L["y"] - 1.45
+            a0, a1 = P3(XM, yb), P3(XM + L["rec"], yb)
+            recs.add(DoubleArrow(a0, a1, buff=0, color=GEO, stroke_width=3, tip_length=0.13),
+                     tex(rot, GEO, 38).next_to((a0 + a1) / 2, DOWN, buff=0.1))
+        self.play(Create(recs), run_time=0.8)
+        self.play(Indicate(linhas[1]["k"], color=WHITE_, scale_factor=1.15), run_time=0.7)
+        self.ate(0.97)
+        self.t63 = VGroup(*[L[k] for L in linhas for k in ("b", "mao", "p", "k")], mesmo, recs)
+
+    # ── T6-4 · PALCO: raias de gelo e barcos; CONTA: p e √2 p ──────────────────────────────────────────────────
+    def t6_4(self):
+        self.an("T6-4")
+        self.play(FadeOut(self.t63), run_time=0.5)
+        X0, XF = -5.2, 0.4
+        raias = VGroup(*[Rectangle(width=XF + 0.4 - (-6.8), height=0.42).set_stroke(GEO, 1.5, opacity=0.6).set_fill("#2A3754", 1)
+                         .move_to(P3((XF + 0.4 - 6.8) / 2, y)) for y in (0.35, -2.25)])
+        linha_ch = DashedLine(P3(XF, 2.35), P3(XF, -2.6), color=GEO, stroke_width=2.5)
+        ch_l = txt("CHEGADA", T_SMALL, color=GEO).next_to(linha_ch, UP, buff=0.12)
+        b1, b2 = barco(0.75), barco(1.0)
+        for b, y in ((b1, 0.35), (b2, -2.25)):
+            b.move_to(P3(X0, 0)).shift(UP * (y + 0.21 - b[0].get_bottom()[1]))
+        l1, l2 = tex("m", WHITE_, 40), tex("2m", WHITE_, 40)
+        l1.add_updater(lambda m: m.next_to(b1, UP, buff=0.15))
+        l2.add_updater(lambda m: m.next_to(b2, UP, buff=0.15))
+        T1 = 2.6
+        t = ValueTracker(0.0)
+        x1b, x2b = b1.get_center()[0], b2.get_center()[0]
+        D = XF - 0.75 - X0
+
+        def x_de(tt, Tch):
+            return D * min(tt / Tch, 1.0) ** 2
+        b1.add_updater(lambda m: m.set_x(x1b + x_de(t.get_value(), T1)))
+        b2.add_updater(lambda m: m.set_x(x2b + x_de(t.get_value(), T1 * math.sqrt(2))))
+        ventos = VGroup(always_redraw(lambda: arrow(b1[1].get_left() + P3(-1.0, 0.2), b1[1].get_left() + P3(-0.02, 0.2), color=FC, width=7)),
+                        always_redraw(lambda: arrow(b2[1].get_left() + P3(-1.0, 0.2), b2[1].get_left() + P3(-0.02, 0.2), color=FC, width=7)))
+        vl = VGroup(always_redraw(lambda: tex(r"\vec F", FC, 36).next_to(ventos[0], UP, buff=0.1)),
+                    always_redraw(lambda: tex(r"\vec F", FC, 36).next_to(ventos[1], UP, buff=0.1)))
+        vento_t = legenda("MESMO VENTO, MESMA DISTÂNCIA", x=-3.0)
+        self.play(FadeIn(raias), Create(linha_ch), FadeIn(ch_l), FadeIn(b1), FadeIn(b2), FadeIn(l1), FadeIn(l2), run_time=0.8)
+        self.play(FadeIn(ventos), FadeIn(vl), FadeIn(vento_t), run_time=0.6)
+        self.ate(0.18)
+        self.play(t.animate.set_value(T1 * math.sqrt(2)), run_time=T1 * math.sqrt(2) * 1.4, rate_func=linear)
+        for m in (b1, b2, l1, l2, *ventos, *vl):
+            m.clear_updaters()
+        self.play(FadeOut(ventos), FadeOut(vl), run_time=0.4)
+        k_ = txt("MESMA ENERGIA", T_MAIN, bold=True)
+        L = 1.6
+        p1 = arrow(P3(0, 0), P3(L, 0), color=MAG, width=8)
+        p2 = arrow(P3(0, 0), P3(L * math.sqrt(2), 0), color=MAG, width=8)
+        lp1 = tex(r"p", MAG, 44)
+        lp2 = tex(r"\sqrt{2}\,p", MAG, 44)
+        r1 = VGroup(tex("m", WHITE_, 38), p1, lp1).arrange(RIGHT, buff=0.25)
+        r2 = VGroup(tex("2m", WHITE_, 38), p2, lp2).arrange(RIGHT, buff=0.25)
+        mm = linha(txt("MOMENTO", T_LAB, color=MAG, bold=True), MathTex(r"\sqrt{2}", font_size=40, color=MAG),
+                   txt("VEZES MAIOR", T_LAB, color=MAG, bold=True), buff=0.15)
+        conta(k_, r1, r2, mm, topo=1.9, buff=0.55, x0=1.3)
+        self.play(FadeOut(vento_t), Write(k_), run_time=0.7)
+        self.ate(0.6)
+        self.play(FadeIn(r1[0]), GrowArrow(p1), FadeIn(lp1), run_time=0.7)
+        self.play(FadeIn(r2[0]), GrowArrow(p2), FadeIn(lp2), run_time=0.7)
+        self.play(FadeIn(mm, shift=0.1 * UP), run_time=0.7)
+        print(f"[QA] T6-4 mesma F e mesma d → mesma K; p = √(2mK) → p(2m)/p(m) = {math.sqrt(2 * 2) / math.sqrt(2 * 1):.4f} (√2)")
+        self.ate(0.97)
+        self.t64 = VGroup(raias, linha_ch, ch_l, b1, b2, l1, l2, k_, r1, r2, mm)
+
+    # ── T6-5 · CENTRO: as duas equações; DICA no canto ───────────────────────────────────────────────────────
+    def t6_5(self):
+        self.an("T6-5")
+        self.play(FadeOut(self.t64), run_time=0.5)
+        e1 = Mc((r"\vec F_{res}", FC), (r"\,\Delta t", WHITE_), "=", (r"\Delta\vec p", MAG), size=M_MAIN)
+        e2 = Mc((r"\vec F_{res}", FC), (r"\,d", WHITE_), "=", (r"\Delta K", WHITE_), size=M_MAIN)
+        n1 = txt("FORÇA CONSTANTE", T_SMALL, color=DIM)
+        g = VGroup(e1, e2, n1).arrange(DOWN, buff=0.6)
+        centro(g, 0.45)
+        self.play(Write(e1), run_time=0.8)
+        self.play(Write(e2), FadeIn(n1), run_time=0.8)
+        sa = lambda: MathTex(r"\to", font_size=26, color=WHITE_)
+        self.dica_entra(dica(["TEMPO", sa(), "IMPULSO", sa(), "MOMENTO"], ["DISTÂNCIA", sa(), "TRABALHO", sa(), "ENERGIA"]))
+        self.ate(0.96)
+        self.clear(rt=0.5)
