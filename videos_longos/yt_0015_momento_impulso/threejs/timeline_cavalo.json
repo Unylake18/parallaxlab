@@ -1,0 +1,57 @@
+{
+ "_leia_me": "F2: cavalo CC0 (assets_unidade/cavalo) puxando a pedra; vista lateral alinhada ao Manim (plano y = 0).",
+ "duracao_s": 15.84,
+ "geometria": {
+  "fator_3d_manim": 1.0,
+  "centro_manim": [
+   0.0,
+   -2.55
+  ],
+  "fov_frente": 18,
+  "el_frente": 4
+ },
+ "camera": [
+  {
+   "t": 0.0,
+   "modo": "frente"
+  },
+  {
+   "t": 15.84,
+   "modo": "frente"
+  }
+ ],
+ "cavalo": {
+  "comprimento": 6.3,
+  "x_cavalo": 1.6,
+  "x_pedra": -5.2,
+  "pedra_r": 0.72,
+  "yaw": 1.5708,
+  "incl": 0.07,
+  "ritmo": 0.55,
+  "tau0": 0.0,
+  "v_ini": 0.02,
+  "t_desliza": 11.09,
+  "a_desliza": 0.07,
+  "peito_fx": -0.41,
+  "peito_fz": 0.56
+ },
+ "fade_out": [
+  {
+   "t": 0.0,
+   "v": 1.0
+  },
+  {
+   "t": 0.5,
+   "v": 0.0
+  },
+  {
+   "t": 15.24,
+   "v": 0.0
+  },
+  {
+   "t": 15.84,
+   "v": 1.0
+  }
+ ],
+ "proj_todos": true
+}

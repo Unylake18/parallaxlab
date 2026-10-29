@@ -1,0 +1,15 @@
+{
+ "entrada": "narracao_v4.wav",
+ "saida": "narracao_master.wav",
+ "antes": {
+  "lufs": -21.73,
+  "pico_real_dbtp": -0.42
+ },
+ "depois": {
+  "lufs": -14.1,
+  "pico_real_dbtp": -1.4
+ },
+ "ganho_db": 9.89,
+ "alvo": -14.0,
+ "teto": -1.0
+}

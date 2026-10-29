@@ -1,0 +1,325 @@
+"""Lote PE: E1 (bola na parede), E2 (chute em 2D), E3 (força que cresce com o tempo). v3: PALCO (figura grande) + CONTA (dados,
+álgebra, resultado em coluna), equações por Write, F⃗ saindo do ponto de contato, triângulo grande com F⃗_méd paralela por fora,
+Riemann antes da primitiva no E3, DICAs."""
+from kit import *  # noqa: F401,F403
+from sec_teoria import foguete as foguete_t4
+
+KP = 0.17                                   # u por kg·m/s no E1
+
+
+def tex(s, cor=WHITE_, size=M_MID):
+    return MathTex(s, font_size=size, color=cor)
+
+
+def eixo_x(x0, y, comp=1.2):
+    return VGroup(Arrow(P3(x0, y), P3(x0 + comp, y), buff=0, color=DIM, stroke_width=3, tip_length=0.16),
+                  tex("+x", DIM, 34).move_to(P3(x0 + comp + 0.4, y)))
+
+
+def alvo_conta(*mobs, **kw):
+    """Posições que os mobjects teriam numa coluna da CONTA (sem mexer nos originais)."""
+    return [m.get_center() for m in conta(*[x.copy() for x in mobs], **kw)]
+
+
+class LoteEx(Base):
+    def construct(self):
+        self.setup_base()
+        self.e1()
+        self.e2()
+        self.e3()
+        self.fim()
+        self.relatorio()
+
+    def bola_vel(self, x, y, comp, cor=VEL, w=6, r=0.38):
+        b = bola(r).move_to(P3(x, y))
+        a = arrow(P3(x, y), P3(x + comp[0], y + comp[1]), color=cor, width=w)
+        return b, a
+
+    # ── E1 ──────────────────────────────────────────────────────────────────────────────────────────────────
+    def e1(self):
+        self.secao("EXERCÍCIO 1 · BOLA NA PAREDE", "TEOREMA DO IMPULSO · COM SINAL")
+        self.an("E1-1")
+        PX = -6.3
+        parede = Rectangle(width=0.55, height=5.0).set_stroke(GEO, 2.5).set_fill(STEEL, 1).move_to(P3(PX - 0.28, -0.25))
+        ex = eixo_x(-2.4, 2.15)
+        r1 = txt("ANTES", T_LAB, color=GEO).move_to(P3(-4.7, 1.95))
+        r2 = txt("DEPOIS", T_LAB, color=GEO).move_to(P3(-4.7, -0.65))
+        b1, a1 = self.bola_vel(-1.0, 1.1, (-2.9, 0))
+        b2, a2 = self.bola_vel(-4.9, -1.5, (1.95, 0))
+        t1 = tex(r"30\ \mathrm{m/s}", VEL, 40).next_to(a1, UP, buff=0.18)
+        t2 = tex(r"20\ \mathrm{m/s}", VEL, 40).next_to(a2, UP, buff=0.18)
+        d1, d2 = tex(r"m=0{,}40\ \mathrm{kg}", WHITE_, 46), tex(r"\Delta t=0{,}010\ \mathrm{s}", WHITE_, 46)
+        conta(d1, d2, topo=2.2, buff=0.35)
+        self.play(FadeIn(parede, shift=0.2 * RIGHT), FadeIn(ex), run_time=0.7)
+        self.play(FadeIn(r1), FadeIn(b1, shift=0.4 * LEFT), run_time=0.6)
+        self.play(GrowArrow(a1), FadeIn(t1), Write(d1), run_time=0.8)
+        self.ate(0.35)
+        self.play(FadeIn(r2), FadeIn(b2, shift=0.4 * RIGHT), run_time=0.6)
+        self.play(GrowArrow(a2), FadeIn(t2), run_time=0.6)
+        self.ate(0.6)
+        self.play(Write(d2), run_time=0.7)
+        self.ate(0.97)
+        # E1-2 ------------------------------------------------------------------------------------------------
+        self.an("E1-2")
+        vi = Mc((r"v_i", VEL), "=", (r"-30\ \mathrm{m/s}", VEL), size=46)
+        vf = Mc((r"v_f", VEL), "=", (r"+20\ \mathrm{m/s}", VEL), size=46)
+        eqJ = Mc((r"J", JC), "=", r"0{,}40\,(20-(-30))", "=", (r"20\ \mathrm{N\cdot s}", JC), size=42)
+        conta(d1, d2, vi, vf, eqJ, topo=2.2, buff=0.35)
+        self.play(Write(vi), run_time=0.8)
+        self.play(Indicate(vi[2], color=WHITE_, scale_factor=1.15), Indicate(ex, color=WHITE_), run_time=0.9)
+        self.play(Write(vf), run_time=0.8)
+        self.ate(0.3)
+        o = P3(-1.0, -2.05)
+        pi_ = arrow(o, o + P3(-12 * KP, 0), color=MAG, width=8)
+        pf_ = arrow(o, o + P3(8 * KP, 0), color=MAG, width=8)
+        o2 = o + P3(-12 * KP, -0.72)
+        dp = arrow(o2, o2 + P3(20 * KP, 0), color=MAG, width=10)
+        lpi = tex(r"\vec p_i", MAG, 42).next_to(pi_, UP, buff=0.1)
+        lpf = tex(r"\vec p_f", MAG, 42).next_to(pf_, UP, buff=0.1)
+        ldp = tex(r"\Delta\vec p", MAG, 42).next_to(dp, RIGHT, buff=0.15)
+        zero = DashedLine(o + P3(0, 0.3), o + P3(0, -0.95), color=DIM, stroke_width=2)
+        liga = VGroup(DashedLine(o + P3(-12 * KP, 0), o2, color=DIM, stroke_width=2),
+                      DashedLine(o + P3(8 * KP, 0), o2 + P3(20 * KP, 0), color=DIM, stroke_width=2))
+        self.play(GrowArrow(pi_), GrowArrow(pf_), FadeIn(zero), run_time=0.8)
+        self.play(FadeIn(lpi), FadeIn(lpf), run_time=0.4)
+        self.play(FadeIn(liga), GrowArrow(dp), run_time=0.8)
+        self.play(FadeIn(ldp), run_time=0.4)
+        self.ate(0.62)
+        self.play(Write(eqJ), run_time=1.1)
+        self.play(Indicate(eqJ[4], color=WHITE_, scale_factor=1.2), run_time=0.8)
+        self.ate(0.97)
+        # E1-3 ------------------------------------------------------------------------------------------------
+        self.an("E1-3")
+        errada = tex(r"0{,}40\,(20-30)=-4\ \mathrm{N\cdot s}", APAGADO, 42).next_to(eqJ, DOWN, buff=0.45, aligned_edge=LEFT)
+        pq = legenda("A PAREDE PUXOU A BOLA?", T_MAIN, color=WHITE_)
+        self.play(Write(errada), run_time=0.9)
+        rsc = risco(errada, w=5)
+        self.play(Create(rsc), run_time=0.6)
+        self.play(FadeIn(pq), run_time=0.6)
+        self.ate(0.97)
+        # E1-4 · F⃗ sai do ponto de contato; peso minúsculo; conta na CONTA ---------------------------------------------
+        self.an("E1-4")
+        esq = VGroup(r1, r2, b1, a1, t1, b2, a2, t2)
+        self.play(*[FadeOut(m) for m in (errada, rsc, pq, pi_, pf_, dp, lpi, lpf, ldp, zero, liga, vi, vf, eqJ)], UpdateFromAlphaFunc(esq, lambda m, a: opac_rel(m, 1 - 0.7 * a)), run_time=0.5)
+        bb = bola(0.48).move_to(P3(PX + 0.48, 0.2))
+        contato = P3(PX, 0.2)
+        fa = arrow(contato, contato + P3(4.2, 0), color=FC, width=10, tip=0.3)
+        fl = tex(r"\vec F_{\mathrm{m\acute{e}d}}", FC, 48).next_to(fa.get_end(), UP, buff=0.18)
+        peso = arrow(bb.get_center(), bb.get_center() + P3(0, -0.42), color=FC, width=4, tip=0.12)
+        pl = tex(r"m g=3{,}9\ \mathrm{N}", FC, 38).next_to(bb, UR, buff=0.2)
+        fm = Mc((r"F_{\mathrm{m\acute{e}d}}", FC), "=", (r"\frac{20}{0{,}010}", JC), "=", (r"2.000\ \mathrm{N}", FC), size=50)
+        q = txt("UMAS 500 VEZES O PESO", T_SMALL, color=DIM)
+        conta(d1, d2, fm, q, topo=2.2, buff=0.45)
+        self.play(FadeIn(bb), run_time=0.4)
+        self.play(GrowArrow(fa), run_time=0.8)
+        self.play(FadeIn(fl), Write(fm), run_time=1.0)
+        self.ate(0.55)
+        self.play(GrowArrow(peso), FadeIn(pl), FadeIn(q), run_time=0.8)
+        self.play(Indicate(fm[4], color=WHITE_, scale_factor=1.15), run_time=0.8)
+        self.ate(0.97)
+        # E1-5 · parar × rebater + DICA --------------------------------------------------------------------------------
+        self.an("E1-5")
+        self.play(*[FadeOut(m) for m in (fa, fl, peso, pl, fm, q, d1, d2)], run_time=0.5)
+        zx, k = 4.6, KP
+        grp = VGroup()
+        for y, nome, extra in ((1.55, "PARAR", False), (-0.35, "REBATER", True)):
+            r = txt(nome, T_LAB, bold=True).move_to(P3(1.75, y))
+            pin = arrow(P3(zx, y + 0.5), P3(zx - 12 * k, y + 0.5), color=MAG, width=7)
+            dpa = arrow(P3(zx - 12 * k, y - 0.25), P3(zx + (8 * k if extra else 0), y - 0.25), color=MAG, width=9)
+            z = DashedLine(P3(zx, y + 0.95), P3(zx, y - 0.7), color=DIM, stroke_width=2)
+            ld = tex(r"\Delta\vec p", MAG, 42).next_to(dpa, DOWN, buff=0.12)
+            grp.add(VGroup(r, pin, dpa, z, ld))
+        nota = VGroup(tex(r"|\Delta\vec p|:", MAG, 44), tex(r"12\ \to\ 20\ \mathrm{kg\cdot m/s}", MAG, 44)).arrange(RIGHT, buff=0.3).move_to(P3(3.8, -1.75))
+        self.play(FadeIn(grp[0][0]), GrowArrow(grp[0][1]), FadeIn(grp[0][3]), run_time=0.6)
+        self.play(GrowArrow(grp[0][2]), FadeIn(grp[0][4]), run_time=0.6)
+        self.ate(0.4)
+        self.play(FadeIn(grp[1][0]), GrowArrow(grp[1][1]), FadeIn(grp[1][3]), run_time=0.6)
+        self.play(GrowArrow(grp[1][2]), FadeIn(grp[1][4]), run_time=0.6)
+        self.ate(0.6)
+        self.play(Write(nota), run_time=0.8)
+        self.dica_entra(dica("REBATER PEDE MAIS IMPULSO QUE PARAR"))
+        self.ate(0.97)
+
+    # ── E2 ──────────────────────────────────────────────────────────────────────────────────────────────────
+    def e2(self):
+        self.clear(rt=0.5)
+        self.secao("EXERCÍCIO 2 · CHUTE EM 2D", "IMPULSO POR COMPONENTES")
+        self.an("E2-1")
+        r1 = txt("ANTES", T_LAB, color=GEO).move_to(P3(-5.6, 1.9))
+        r2 = txt("DEPOIS", T_LAB, color=GEO).move_to(P3(-5.6, -0.7))
+        b1, a1 = self.bola_vel(-1.2, 1.3, (-2.6, 0))
+        b2, a2 = self.bola_vel(-4.6, -2.3, (3.2 * math.cos(PI / 4), 3.2 * math.sin(PI / 4)))
+        t1 = tex(r"20\ \mathrm{m/s}", VEL, 40).next_to(a1, UP, buff=0.18)
+        t2 = tex(r"30\ \mathrm{m/s}", VEL, 40).next_to(a2.get_end(), RIGHT, buff=0.2)
+        arc = Arc(radius=0.9, start_angle=0, angle=PI / 4, arc_center=P3(-4.6, -2.3), color=WHITE_, stroke_width=2)
+        a45 = tex(r"45^\circ", WHITE_, 34).move_to(P3(-4.6, -2.3) + P3(1.25, 0.42))
+        hor = DashedLine(P3(-4.6, -2.3), P3(-2.9, -2.3), color=DIM, stroke_width=2)
+        pe = RoundedRectangle(corner_radius=0.14, width=1.4, height=0.44).set_stroke(GEO, 2).set_fill(STEEL, 1.0) \
+            .rotate(-PI / 6).move_to(P3(-5.5, -2.85))
+        d1, d2 = tex(r"m=0{,}40\ \mathrm{kg}", WHITE_, 46), tex(r"\Delta t=0{,}010\ \mathrm{s}", WHITE_, 46)
+        conta(d1, d2, topo=2.2, buff=0.35)
+        self.play(FadeIn(r1), FadeIn(b1, shift=0.4 * LEFT), run_time=0.6)
+        self.play(GrowArrow(a1), FadeIn(t1), Write(d1), run_time=0.8)
+        self.ate(0.3)
+        self.play(FadeIn(pe, shift=0.3 * UR), run_time=0.5)
+        self.play(FadeIn(r2), FadeIn(b2), run_time=0.5)
+        self.play(GrowArrow(a2), FadeIn(t2), FadeIn(hor), Create(arc), FadeIn(a45), run_time=0.9)
+        self.ate(0.6)
+        self.play(Write(d2), run_time=0.7)
+        self.ate(0.97)
+        # E2-2 ------------------------------------------------------------------------------------------------
+        self.an("E2-2")
+        c = 3.2 * math.cos(PI / 4)
+        cx_ = DashedLine(P3(-4.6, -2.3), P3(-4.6 + c, -2.3), color=VEL, stroke_width=3)
+        cy_ = DashedLine(P3(-4.6 + c, -2.3), P3(-4.6 + c, -2.3 + c), color=VEL, stroke_width=3)
+        vfx = Mc((r"v_{f,x}=v_{f,y}=21{,}2\ \mathrm{m/s}", VEL), size=40)
+        jx = Mc((r"J_x", JC), "=", r"0{,}40\,(21{,}2+20)", "=", (r"16{,}5\ \mathrm{N\cdot s}", JC), size=40)
+        jy = Mc((r"J_y", JC), "=", r"0{,}40\cdot 21{,}2", "=", (r"8{,}5\ \mathrm{N\cdot s}", JC), size=40)
+        conta(d1, d2, vfx, jx, jy, topo=2.2, buff=0.38)
+        self.play(FadeOut(hor), FadeOut(arc), FadeOut(a45), Create(cx_), Create(cy_), run_time=0.9)
+        self.play(Write(vfx), run_time=0.9)
+        self.ate(0.45)
+        self.play(Write(jx), run_time=1.0)
+        self.ate(0.8)
+        self.play(Write(jy), run_time=1.0)
+        self.ate(0.97)
+        # E2-3 · triângulo grande; F⃗_méd paralela a Δp⃗, por fora ---------------------------------------------------------
+        self.an("E2-3")
+        esq = VGroup(r1, r2, b1, a1, t1, b2, a2, t2, pe, cx_, cy_)
+        self.play(*[FadeOut(m) for m in (vfx, jx, jy, d1, d2)], esq.animate.scale(0.42).move_to(P3(-5.35, 1.35)), run_time=0.7)
+        s = 0.27
+        o = P3(-2.5, -1.6)                                     # origem comum de p_i e p_f
+        pi_v, pf_v = np.array([-8.0, 0, 0]) * s, np.array([8.49, 8.49, 0]) * s
+        pi_a = arrow(o, o + pi_v, color=MAG, width=7)
+        pf_a = arrow(o, o + pf_v, color=MAG, width=7)
+        dp_a = arrow(o + pi_v, o + pf_v, color=MAG, width=10, tip=0.26)
+        l1 = tex(r"\vec p_i", MAG, 42).next_to(pi_a, DOWN, buff=0.2)
+        l2 = tex(r"\vec p_f", MAG, 42).next_to(pf_a.point_from_proportion(0.55), RIGHT, buff=0.25)
+        dd = (pf_v - pi_v) / np.linalg.norm(pf_v - pi_v)
+        nrm = np.array([-dd[1], dd[0], 0])                    # normal para fora (lado de cima/esquerda)
+        l3 = tex(r"\Delta\vec p", MAG, 42).move_to(o + pi_v + (pf_v - pi_v) * 0.42 + nrm * 0.45)
+        off = nrm * 1.25
+        fmed = arrow(o + pi_v + (pf_v - pi_v) * 0.08 + off, o + pi_v + (pf_v - pi_v) * 0.78 + off, color=FC, width=8, tip=0.24)
+        fl = tex(r"\vec F_{\mathrm{m\acute{e}d}}", FC, 42).next_to(fmed.get_end(), UP, buff=0.15)
+        res = Mc((r"F_{\mathrm{m\acute{e}d}}", FC), "=", (r"\frac{\Delta p}{\Delta t}", MAG), size=50)
+        res2 = Mc((r"1{,}9\times10^{3}\ \mathrm{N}\ \text{a}\ 27^\circ", FC), size=44)
+        n1 = Mc((r"\vec F_{\mathrm{m\acute{e}d}}\ \parallel\ \Delta\vec p", FC), size=50)
+        n2 = Mc((r"\neq\ \vec v_f", VEL), size=50)
+        conta(res, res2, n1, n2, topo=2.0, buff=0.45)
+        self.play(GrowArrow(pi_a), GrowArrow(pf_a), Write(res), run_time=0.9)
+        self.play(FadeIn(l1), FadeIn(l2), run_time=0.4)
+        self.play(GrowArrow(dp_a), run_time=0.9)
+        self.play(FadeIn(l3), run_time=0.4)
+        self.ate(0.3)
+        self.play(GrowArrow(fmed), FadeIn(fl), Indicate(res, color=WHITE_, scale_factor=1.08), run_time=1.0)
+        self.play(Write(res2), run_time=0.8)
+        ang_dp = math.degrees(math.atan2(8.49, 16.49))
+        arco1 = Arc(radius=1.0, start_angle=0, angle=math.radians(ang_dp), arc_center=o + pi_v, color=WHITE_, stroke_width=2)
+        a27 = tex(r"27^\circ", WHITE_, 36).move_to(o + pi_v + P3(1.5, 0.32))
+        hor = DashedLine(o + pi_v, o + pi_v + P3(2.4, 0), color=DIM, stroke_width=2)
+        arco2 = Arc(radius=1.0, start_angle=0, angle=PI / 4, arc_center=o, color=WHITE_, stroke_width=2)
+        a45 = tex(r"45^\circ", WHITE_, 36).move_to(o + P3(1.45, 0.45))
+        hor2 = DashedLine(o, o + P3(2.4, 0), color=DIM, stroke_width=2)
+        self.ate(0.45)
+        self.play(FadeIn(hor), Create(arco1), FadeIn(a27), run_time=0.9)
+        self.play(FadeIn(hor2), Create(arco2), FadeIn(a45), run_time=0.9)
+        self.ate(0.6)
+        self.play(Write(n1), run_time=0.8)
+        self.ate(0.8)
+        self.play(Write(n2), run_time=0.7)
+        self.ate(0.97)
+        # E2-4 · DICA -----------------------------------------------------------------------------------------------
+        self.an("E2-4")
+        self.play(Indicate(dp_a, color=WHITE_), Indicate(fmed, color=WHITE_), run_time=0.6)
+        self.dica_entra(dica([MathTex(r"F_{\mathrm{m\acute{e}d}}", font_size=30), "APONTA PARA", MathTex(r"\Delta\vec p", font_size=30), ","],
+                             "NÃO PARA A VELOCIDADE FINAL"))
+        self.ate(0.97)
+
+    # ── E3 ──────────────────────────────────────────────────────────────────────────────────────────────────
+    def e3(self):
+        self.clear(rt=0.6)
+        self.secao("EXERCÍCIO 3 · FORÇA QUE CRESCE COM O TEMPO", "IMPULSO COMO INTEGRAL")
+        self.an("E3-1")
+        G = Graf(-6.1, -2.8, 6.4, 5.0, 4.0, 8000, MathTex(r"F", font_size=42, color=FC))
+        A = 500.0
+        fun = lambda t: A * t * t
+        curva = G.curva(fun, 0.0, 3.9, n=200)
+        pto = Dot(G.pt(1.25, fun(1.25)), radius=0.09, color=WHITE_).set_z_index(9)
+        lab = tex(r"(1{,}25\ \mathrm{s};\ 781{,}25\ \mathrm{N})", WHITE_, 32).next_to(pto, DR, buff=0.18).shift(DOWN * 0.15 + RIGHT * 0.1)
+        foguete = foguete_t4(0.85)
+        chama = Polygon(P3(-0.13, 0), P3(0.13, 0), P3(0, -0.5)).set_stroke(WHITE_, 2).set_fill(WHITE_, 0.55).next_to(foguete[2], DOWN, buff=0.0)
+        foguete.add(chama).move_to(P3(-4.6, 1.0))
+        msg = tex(r"m=2.150\ \mathrm{kg}", WHITE_, 46)
+        feq = Mc((r"F", FC), "=", "A", (r"t^{2}", WHITE_), size=M_MID)
+        aeq = Mc((r"A", WHITE_), "=", r"\frac{781{,}25}{1{,}25^{2}}", "=", r"500\ \mathrm{N/s^{2}}", size=44)
+        conta(msg, feq, aeq, topo=2.2, buff=0.45)
+        self.play(Create(G.eixos), FadeIn(foguete, shift=0.2 * UP), run_time=0.9)
+        self.play(Write(msg), run_time=0.7)
+        self.play(Create(curva), run_time=2.0)
+        cur3 = cursor(self, G, 0.0, 3.9, 5.0, fun)
+        self.add(cur3)
+        self.ate(0.25)
+        self.play(Write(feq), run_time=0.8)
+        self.ate(0.6)
+        self.play(FadeIn(pto, scale=0.5), FadeIn(lab), run_time=0.7)
+        self.ate(0.8)
+        self.play(Write(aeq), run_time=1.0)
+        self.ate(0.97)
+        # E3-2 · Riemann e depois a primitiva -----------------------------------------------------------------------
+        self.an("E3-2")
+        self.play(FadeOut(lab), FadeOut(cur3), run_time=0.4)
+        cur3.clear_updaters()
+        t2l = tex(r"2{,}0", DIM, 32).next_to(G.pt(2.0, 0), DOWN, buff=0.12)
+        t35 = tex(r"3{,}5", DIM, 32).next_to(G.pt(3.5, 0), DOWN, buff=0.12)
+        self.play(FadeIn(t2l), FadeIn(t35), run_time=0.5)
+        cur4 = cursor(self, G, 2.0, 3.5, 3.0, fun)
+        self.add(cur4)
+
+        def ret(n):
+            dx = 1.5 / n
+            g = VGroup()
+            for k in range(n):
+                t0 = 2.0 + k * dx
+                h = fun(t0 + dx / 2)
+                g.add(Rectangle(width=G.w * dx / G.tmax, height=G.h * h / G.fmax).move_to((G.pt(t0, 0) + G.pt(t0 + dx, h)) / 2)
+                      .set_stroke(FC, 1.5 if n < 24 else 0.8).set_fill(JC, 0.5).set_z_index(4))
+            return g, sum(fun(2.0 + (k + 0.5) * 1.5 / n) * 1.5 / n for k in range(n))
+        rr, s3 = ret(3)
+        self.play(LaggedStart(*[GrowFromEdge(r, DOWN) for r in rr], lag_ratio=0.2), run_time=1.0)
+        somas = [s3]
+        for n in (6, 24):
+            novo, sn = ret(n)
+            somas.append(sn)
+            self.play(ReplacementTransform(rr, novo), run_time=0.9)
+            rr = novo
+        print("[QA] E3-2 Riemann (3, 6, 24):", ", ".join(f"{x:.1f}" for x in somas), "N·s (alvo 5812,5)")
+        area = G.area(fun, 2.0, 3.5, n=100)
+        self.play(FadeTransform(rr, area), run_time=0.8)
+        jeq = Mc((r"J", JC), "=", (r"\int_{2{,}0}^{3{,}5}500\,t^{2}\,dt", JC), size=42)
+        jeq2 = Mc("=", r"\frac{500}{3}\,(3{,}5^{3}-2{,}0^{3})", size=42)
+        res = Mc((r"J\approx5{,}81\times10^{3}\ \mathrm{N\cdot s}", JC), size=44)
+        self.play(FadeOut(feq), FadeOut(aeq), run_time=0.4)
+        conta(msg, jeq, jeq2, res, topo=2.2, buff=0.4)
+        self.play(Write(jeq), run_time=1.0)
+        self.ate(0.65)
+        self.play(Write(jeq2), run_time=0.9)
+        self.ate(0.85)
+        self.play(Write(res), run_time=0.8)
+        self.play(Indicate(res, color=WHITE_, scale_factor=1.08), run_time=0.7)
+        self.ate(0.97)
+        # E3-3 ------------------------------------------------------------------------------------------------
+        self.an("E3-3")
+        j = area_num(fun, 2.0, 3.5)
+        print(f"[QA] E3 J = {j:.2f} N·s (alvo 5812,5); F_med = {j / 1.5:.1f} N; Δv = {j / 2150:.3f} m/s")
+        r = G.retangulo(2.0, 3.5, 3875.0)
+        dv = Mc((r"\Delta v=\frac{J}{m}=2{,}70\ \mathrm{m/s}", VEL), size=44)
+        fm = Mc((r"F_{\mathrm{m\acute{e}d}}=3.875\ \mathrm{N}", FC), size=44)
+        pos = alvo_conta(msg, res, dv, fm, topo=2.2, buff=0.5)
+        dv.move_to(pos[2])
+        fm.move_to(pos[3])
+        self.play(FadeOut(jeq), FadeOut(jeq2), res.animate.move_to(pos[1]), run_time=0.6)
+        self.play(Write(dv), run_time=0.9)
+        self.ate(0.55)
+        self.play(Create(r), Write(fm), run_time=1.2)
+        self.play(Indicate(r, color=WHITE_, scale_factor=1.0), run_time=0.8)
+        self.ate(0.97)
