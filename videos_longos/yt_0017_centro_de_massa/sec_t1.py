@@ -243,7 +243,7 @@ class LoteT1(Camadas):
         r2 = seta(O, Pw(4, 0) + 0.34 * LEFT, GEO, 4, tip=0.22, z=5)
         r3e = Pw(2, 4)
         r3 = seta(O, r3e - (r3e - O) / np.linalg.norm(r3e - O) * 0.36, GEO, 4, tip=0.22, z=5)
-        self.vets = VGroup(r2, r3, mtex(r"\vec r_2", GEO, 38).move_to(Pw(2.2, 0) + 0.4 * DOWN),
+        self.vets = VGroup(r2, r3, mtex(r"\vec r_2", GEO, 38).move_to(Pw(3.0, 0) + 0.4 * DOWN),   # longe do tique "2"
                            mtex(r"\vec r_3", GEO, 38).move_to(Pw(0.75, 2.2) + 0.25 * LEFT),
                            mtex(r"\vec r_1=\vec 0", GEO, 36).move_to(O + P3(0.45, -1.15)))
         ex, _ = eqp("X", "=", r"\frac{\sum_i m_i x_i}{M}", size=48, cores={0: CMC})
@@ -463,7 +463,7 @@ class LoteT1(Camadas):
         selo = txt("POR PARTES", 30, bold=True)
         selo.move_to(P3(-1.2, 2.55))                                    # à direita do eixo y, acima das massas
         lem, il = eqp(r"\sum_i m_i\vec r_i", "=", r"(6,\,4)", size=46)
-        lem.set_opacity(0.4)
+        lem.set_opacity(OP_FUNDO)
         tag6 = txt("DO T1-6:", 24, color=DIM)
         VGroup(tag6, lem).arrange(RIGHT, buff=0.25)
         na_conta(VGroup(tag6, lem), 2.8)
@@ -532,7 +532,7 @@ class LoteT1(Camadas):
         self.ate(0.6)
         self.play(FadeIn(Bq[0][ib[0][0]]), TransformFromCopy(kgs[0][0], g_(0)), TransformFromCopy(coords[0][0], g_(2, 3, 4, 5, 6)),
                   TransformFromCopy(k2[0], g_(8)), TransformFromCopy(c32[0], g_(10, 11, 12, 13, 14)), FadeIn(g_(1, 7, 9, 15, 16)), run_time=1.3)
-        Cq, ic = eqp("=", r"\frac{(6,\,4)}{4}", "=", r"(1{,}5;\ 1{,}0)", size=48, cores={3: CMC})
+        Cq, ic = eqp("=", r"\frac{(6,\,4)}{4}", r"=\ ", r"(1{,}5;\ 1{,}0)", size=48, cores={3: CMC})
         Cq.move_to(P3(XC0 + 0.55 + Cq.width / 2, -1.1))
         fc = ic[1]                                       # ( 6 , 4 ) barra 4
         self.ate(0.66)

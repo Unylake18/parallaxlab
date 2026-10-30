@@ -13,8 +13,8 @@
   T2-1/2), molas (T2-4), gelo (T2-9) e, no lote 2/3, colisão, barra, placa e canoa. Pipeline por estado do yt_0016 (`threejs/r3d.js` +
   `render3d.sh`); o Manim prende ⊕, setas, eixos e rótulos pelas coordenadas projetadas (`projeta3d`, conferido com `pontos.json`).
   Volumes e centroides dos cacos: `threejs/cena3d/granada_medidas.json` (exportado do Three.js; lido por `pecas3d.py`).
-- **Status:** preview silencioso 960×540 / 15 fps do lote 1 no visual novo (handoff v3 de 2026-10-29: hook, abertura, T1 com o T1-8, T2:
-  `renders/preview_yt0017_lote1_960x540.mp4`); lote 2 (T3, T4) e lote 3 (E1, E2, síntese, encerramento) a seguir (sem voz, SRT, master nem entrega).
+- **Status:** preview silencioso 960×540 / 15 fps do vídeo inteiro (handoff v4 de 2026-10-29, narração v3.1: hook, abertura, T1–T4, E1, E2,
+  síntese, encerramento; 18:58): `renders/preview_yt0017_completo_960x540.mp4`, QA em `renders/qa.txt` (sem voz, SRT, master nem entrega).
 - **Tag do canto:** `MECÂNICA · CENTRO DE MASSA`
 - **Pergunta narrativa:** "Se a granada explode no meio do voo, o que continua na mesma parábola?"
 - **Pergunta central:** existe um ponto do sistema que só obedece às forças externas? Onde ele está e como se calcula?

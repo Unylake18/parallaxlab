@@ -22,6 +22,19 @@ sys.path.insert(0, str(ROOT))
 from template.config_horizontal import BACKGROUND_COLOR, PRIMARY_COLOR, TEXT_COLOR, WATERMARK_PATH  # noqa: E402
 from template.fonts import DISPLAY_FONT, official_text, screen_text  # noqa: E402
 
+# a álgebra (LaTeX, traço fino) ganha um contorno leve da própria cor: no 540p o glifo fino ficava acinzentado ao lado do título
+TRACO_TEX = 0.8
+_mathtex_init = MathTex.__init__
+
+
+def _mathtex_com_traco(self, *a, **k):
+    _mathtex_init(self, *a, **k)
+    self.set_stroke(width=TRACO_TEX, family=True)
+
+
+MathTex.__init__ = _mathtex_com_traco
+OP_FUNDO = 0.6                # equação "de fundo" (já usada, ou sob a DICA): 0,6 mantém contraste ≥ 4,5:1 no céu
+
 config.media_dir = os.environ.get("MEDIA_DIR", str(AQUI / "media"))
 
 # ── paleta (padrão de Mecânica, docs/padrao_video_longo.md §4 + handoff §4) ─────────────────────────────────
@@ -1087,13 +1100,13 @@ class Base(Scene):
         return txt(s, size, color=color, bold=bold).move_to(P3(x, y))
 
     def dica_entra(self, d, apagar=True):
-        """DICA entra; as equações soltas em cena vão a 40% (G7: uma frase na tela por vez)."""
+        """DICA entra; as equações soltas em cena vão a 60% (G7: uma frase na tela por vez)."""
         self.dica_atual = d
         (a0, b0), (a1, b1) = d.get_corner(DL)[:2] - 0.1, d.get_corner(UR)[:2] + 0.1
         cobre = lambda m: m.get_left()[0] < a1 and m.get_right()[0] > a0 and m.get_bottom()[1] < b1 and m.get_top()[1] > b0
         self._cobertos = [m for m in self.mobjects if m not in self.fixos() and (hasattr(m, "_tam") or isinstance(m, MathTex)) and cobre(m)]   # a DICA nunca cobre texto
         self._apagadas = [m for m in self.mobjects if isinstance(m, MathTex) and m not in self.fixos() and m not in self._cobertos] if apagar else []
-        self.play(FadeIn(d, shift=0.15 * UP), *[m.animate.set_opacity(0.4) for m in self._apagadas], *[FadeOut(m) for m in self._cobertos], run_time=0.6)
+        self.play(FadeIn(d, shift=0.15 * UP), *[m.animate.set_opacity(OP_FUNDO) for m in self._apagadas], *[FadeOut(m) for m in self._cobertos], run_time=0.6)
 
     def dica_sai(self):
         if self.dica_atual is not None:
@@ -1278,8 +1291,8 @@ class Base(Scene):
             cx0, cy0, cx1, cy1 = bb(c_)
             for a in itens:                                  # glifo a glifo: parte da equação pode estar na caixa, o vizinho não pode encostar
                 for gl in a.family_members_with_points():
-                    x0, y0, x1, y1 = bb(gl)
-                    cruza = min(x1, cx1) - max(x0, cx0) > 0.02 and min(y1, cy1) - max(y0, cy0) > 0.02
+                    (x0, y0, _), (x1, y1, _) = gl.get_critical_point(DL), gl.get_critical_point(UR)    # contorno real, sem o recuo de bb()
+                    cruza = min(x1, cx1 + 0.07) - max(x0, cx0 - 0.07) > 0 and min(y1, cy1 + 0.07) - max(y0, cy0 - 0.07) > 0   # folga mínima 0,04
                     dentro = x0 >= cx0 - 0.01 and x1 <= cx1 + 0.01 and y0 >= cy0 - 0.01 and y1 <= cy1 + 0.01
                     if cruza and not dentro:
                         print(f"[audit] {t:7.1f}s TEXTO SOBRE CAIXA {nome(a)}")

@@ -132,7 +132,7 @@ class LoteFinal(Camadas):
         self.play(TransformByGlyphMap(A.copy(), B, (J(ia, 1), J(ib, 0)), (J(ia, 2), J(ib, 1)), (J(ia, 5), J(ib, 2)), (J(ia, 6), J(ib, 3)), (J(ia, 9), J(ib, 4)),
                                       (J(ia, 10), J(ib, 5)), (J(ia, 13), J(ib, 6)), (J(ia, 14), J(ib, 7)), (J(ia, 15), J(ib, 8)),
                                       (J(ia, 0, 3, 4, 7, 8, 11, 12, 16), []), ([], J(ib, 9)), auto_fade=True), run_time=1.5)   # o ¼ comum cancela
-        C, ic = eqp("=", r"\tfrac{7/6}{3}", r"=\ ", F(7, 18), r"\ \mathrm{m}", r"\approx", r"0{,}39\ \mathrm{m}", size=48, cores={3: X_, 6: X_})
+        C, ic = eqp("=", r"\tfrac{7/6}{3}", r"=\ ", F(7, 18), r"\ \mathrm{m}", r"\ \approx", r"0{,}39\ \mathrm{m}", size=48, cores={3: X_, 6: X_})
         C.move_to(P3(XC0 + 0.55 + C.width / 2, -1.35))
         self.ate(0.72)
         self.play(FadeIn(C, shift=0.1 * DOWN), run_time=0.9)
@@ -193,8 +193,8 @@ class LoteFinal(Camadas):
         # ── E1-4: foge do furo; desafio ──
         self.an("E1-4")
         fg = seta(Pw(0.5, 0.5) + 0.06 * DOWN, Pw(0.5, Y7) + 0.25 * UP, WHITE_, 5, tip=0.2)
-        lfg = VGroup(txt("FOGE", 28, bold=True), txt("DO FURO", 28, bold=True)).arrange(DOWN, buff=0.08, aligned_edge=LEFT).next_to(Pw(0.5, 0.47), RIGHT, buff=0.55)
-        self.play(FadeOut(VGroup(D1, D2, D3, bx3, selo, Xe, ps)), run_time=0.5)
+        lfg = VGroup(txt("FOGE", 26, bold=True), txt("DO FURO", 26, bold=True)).arrange(DOWN, buff=0.08, aligned_edge=LEFT).next_to(Pw(0.5, 0.5), RIGHT, buff=0.55)
+        self.play(FadeOut(VGroup(D1, D2, D3, bx3, selo, Xe, ps, p_sq)), run_time=0.5)   # a massa 1 do quadrado já entrou na conta
         self.ate(0.06)
         self.play(GrowArrow(fg[0]) if False else Create(fg), FadeIn(lfg), run_time=0.8)
         self.ate(0.14)
@@ -266,7 +266,7 @@ class LoteFinal(Camadas):
             c_._degrade = "aco"
             refl = c_.copy().flip(RIGHT, about_point=P3(0, YW)).set_fill(opacity=0.12).set_stroke(opacity=0.0)
             refl._degrade = "aco"
-            xr = 2.7 - 2.45 * s                                            # remador sobre o convés (m, na canoa)
+            xr = 3.0 - 3.0 * s                                              # remador de ponta a ponta (3 m na canoa): X_cm fica em 2 m
             p_ = pessoa(self.fase.get_value(), s).copy()
             p_.move_to(P3(PX(xr + xc), YW + S * 0.36 + p_.height / 2))
             xs = (75 * (xr + xc) + 150 * (1.5 + xc)) / 225                  # ⊕ do sistema (m)
@@ -323,7 +323,7 @@ class LoteFinal(Camadas):
             s = self.s_.get_value()
             g = VGroup()
             if s > 0.02:
-                xr0, xr1 = 2.7, 2.7 - 2.45 * s + self.xc.get_value()
+                xr0, xr1 = 3.0, 3.0 - 3.0 * s + self.xc.get_value()
                 g.add(seta(P3(PX(xr0), YW + 3.35), P3(PX(xr1), YW + 3.35), VEL, 6, tip=0.22),
                       seta(P3(PX(0), YW - 0.55), P3(PX(self.xc.get_value()), YW - 0.55), VEL, 6, tip=0.22))
             return g
@@ -362,7 +362,7 @@ class LoteFinal(Camadas):
                   self.fase.animate(rate_func=linear).set_value(8 * PI), run_time=1.2)
         self.fase.set_value(0.0)
         bx5 = caixa(VGroup(A5, A6), cor=VEL)
-        l2 = rot("2,0 m", 30, VEL).next_to(P3(PX(2.7), YW + 3.35), RIGHT, buff=0.15)
+        l2 = rot("2,0 m", 30, VEL).next_to(P3(PX(3.0), YW + 3.35), RIGHT, buff=0.15)
         l1 = rot("1,0 m", 30, VEL).next_to(P3(PX(0.5), YW - 0.55), DOWN, buff=0.24)
         ver = mtex(r"75\cdot 2=150\cdot 1", WHITE_, 46)
         na_conta(ver, -2.6)
@@ -379,6 +379,7 @@ class LoteFinal(Camadas):
         Lc.clear_updaters()
         self.play(FadeOut(Lc), FadeIn(d1), run_time=0.6)
         self.s_.set_value(1.0)                                                          # o braço estica (pose de alcance)
+        self.xc.set_value(1.0)                                                          # a canoa no fim exato do recuo (X_cm = 2 m)
         braco = VGroup(Line(P3(PX(1.0), YW + 0.9), P3(PX(0.2), YW + 0.9)).set_stroke(VREL, 3), Line(P3(PX(0.2), YW + 0.8), P3(PX(0.2), YW + 1.0)).set_stroke(VREL, 3),
                        rot("0,80 m", 28, VREL).next_to(P3(PX(0.6), YW + 0.9), DOWN, buff=0.2).shift(0.2 * LEFT))
         falta = VGroup(Line(P3(PX(0.2), YW + 0.9), P3(PX(0.0), YW + 0.9)).set_stroke(HEAT, 6), rot("0,20 m", 30, HEAT).next_to(P3(PX(0.1), YW + 0.9), UP, buff=0.45))

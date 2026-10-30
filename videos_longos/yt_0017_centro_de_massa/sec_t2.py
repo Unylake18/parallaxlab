@@ -376,7 +376,7 @@ class LoteT2(Camadas):
         Lz.move_to(P3(XC0 + 0.55 + Lz.width / 2, -2.05))
         self.ate(0.78)
         self.play(FadeIn(mp(Lz, iL, [0, 1, 2, 4, 6])), *[TransformFromCopy(mp(z0, iz, [1]), mp(Lz, iL, [3 + 2 * k])) for k, (_, z0, iz) in enumerate(zeros)],
-                  VGroup(*[VGroup(p_, z_) for p_, z_, _ in zeros], selo3).animate.set_opacity(0.4), run_time=0.9)
+                  VGroup(*[VGroup(p_, z_) for p_, z_, _ in zeros], selo3).animate.set_opacity(OP_FUNDO), run_time=0.9)
         Lz1, i1z = eqp("=", r"\vec F^{\,ext}", "+", r"\vec 0", size=48, cores={1: FC})
         Lz1.move_to(Lz, aligned_edge=LEFT)
         self.play(TransformByGlyphMap(Lz, Lz1, (J(iL, 0, 1, 2), J(i1z, 0, 1, 2)), (J(iL, 3, 5, 7), J(i1z, 3)), (J(iL, 4, 6), [])), run_time=0.9)
@@ -405,7 +405,7 @@ class LoteT2(Camadas):
         self.play(ReplacementTransform(q, lug), run_time=0.9)
         nt = txt("AS FORÇAS DE DENTRO NÃO CHEGAM AO CENTRO DE MASSA", 30, bold=True).move_to(P3(0, -3.55))
         self.ate(0.75)
-        self.play(FadeIn(nt, shift=0.1 * UP), selo.animate.set_opacity(0.4), run_time=0.7)
+        self.play(FadeIn(nt, shift=0.1 * UP), selo.animate.set_opacity(OP_FUNDO), run_time=0.7)
         self.ate(0.97)
         self.c45 = VGroup(E3, bx, velha, selo, lug, nt)
 
@@ -483,7 +483,7 @@ class LoteT2(Camadas):
         self.ate_mov(0.87, g.tau, g.ttoque[1] - 1.2)
         resp = VGroup(txt("QUEM CONTINUA NA PARÁBOLA É O", 34, bold=True), marcador_cm(r=0.17)).arrange(RIGHT, buff=0.2)
         resp.move_to(P3(-1.9, 2.75)).set_z_index(30)
-        self.play(FadeIn(resp, shift=0.1 * UP), VGroup(f1, B, Rt).animate.set_opacity(0.4), self.g_pul.animate(rate_func=there_and_back).set_value(1.0),
+        self.play(FadeIn(resp, shift=0.1 * UP), VGroup(f1, B, Rt).animate.set_opacity(OP_FUNDO), self.g_pul.animate(rate_func=there_and_back).set_value(1.0),
                   g.tau.animate(rate_func=linear).set_value(g.ttoque[1] - 1.0), run_time=0.9)            # o pagamento do hook
         self.ate(0.97)
         # T2-8 — o primeiro toque

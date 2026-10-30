@@ -419,7 +419,7 @@ class Camadas(Base):
         painel._fundo = True
         painel.set_z_index(18)
         SQ = 0.066                                                        # ΔV⃗_cm ≥ 0,6 na tela
-        o_ = P3(-4.6, 2.45)                                               # PALCO, céu livre sobre o braço de subida (longe do J⃗, do pico e dos cacos)
+        o_ = P3(-5.6, 2.5)                                               # PALCO, céu livre sobre o braço de subida (longe do J⃗, do pico e dos cacos)
         ta, td = o_ + P3(*v_antes) * SQ, o_ + P3(*v_dep) * SQ
         sa = seta(o_, ta, VREL, 7, tip=0.24).set_z_index(22)
         sd = seta(o_, td, VEL, 7, tip=0.24).set_z_index(22)
@@ -427,14 +427,14 @@ class Camadas(Base):
         fa = seta(da_borda(cm0, UP, 0.3) + 0.2 * UP, da_borda(cm0, UP, 0.3) + 0.2 * UP + P3(*v_antes) * SQ, VREL, 6, tip=0.22).set_z_index(25)
         fd = seta(da_borda(cm0, UP, 0.3) + 0.2 * UP, da_borda(cm0, UP, 0.3) + 0.2 * UP + P3(*v_dep) * SQ, VEL, 6, tip=0.22).set_z_index(25)
         dv = DashedLine(ta, td, dash_length=0.07).set_stroke(VEL, 4).set_z_index(22)
-        def fora(m_, a_, b_, lado):                                           # centro do rótulo a 0,15 da seta, contando o tamanho da caixa
+        def fora(m_, a_, b_, lado, f_=0.5):                                           # centro do rótulo a 0,15 da seta, contando o tamanho da caixa
             u_ = (b_ - a_) / np.linalg.norm(b_ - a_)
             n_ = P3(-u_[1], u_[0]) * lado
-            return m_.move_to(a_ + (b_ - a_) * 0.5 + n_ * (0.15 + abs(n_[0]) * m_.width / 2 + abs(n_[1]) * m_.height / 2))
-        la = fora(txt("ANTES", 28, color=VREL), o_, ta, -1).set_z_index(22)        # do lado de fora de cada seta
+            return m_.move_to(a_ + (b_ - a_) * f_ + n_ * (0.15 + abs(n_[0]) * m_.width / 2 + abs(n_[1]) * m_.height / 2))
+        la = fora(txt("ANTES", 28, color=VREL), o_, ta, -1, 0.75).set_z_index(22)        # do lado de fora de cada seta
         ld = fora(txt("DEPOIS", 28, color=VEL), o_, td, 1).set_z_index(22)
         ldv = mtex(r"\Delta\vec V_{cm}", VEL, 40).set_z_index(22)
-        ldv.move_to((ta + td) / 2 + P3(0.2 + ldv.width / 2, -0.12))
+        ldv.move_to(td + P3(0.2 + ldv.width / 2, 0.12))                     # à direita da ponta do DEPOIS (embaixo passam as marcas de tempo)
         X0 = 1.75
         L1, i1 = eqp(r"\vec J", "=", "m", r"\,(", r"\vec 0", "-", r"\vec v", ")", size=46, cores={0: JC, 6: VEL})
         L2, i2 = eqp("=", "1", r"\cdot", "(", "-", r"4{,}02", ";", r"\ 42{,}72", ")", r"\ \mathrm{N\cdot s}", size=46)
@@ -576,7 +576,8 @@ class Camadas(Base):
                         g.add(seta(a, a + vec, MAG, 6, tip=0.22, op=orl))
                         if o30 > 0.01:                                     # o mesmo tamanho: 30 N·s cada
                             perp = P3(-d[1], d[0])
-                            g.add(mrot("30 N·s", 26, MAG, op=o30 * orl).move_to(a + vec / 2 + perp * 0.32))
+                            l30 = mrot("30 N·s", 26, MAG, op=o30 * orl)
+                            g.add(l30.move_to(a + vec / 2 + perp * (0.16 + abs(perp[0]) * l30.width / 2 + abs(perp[1]) * l30.height / 2)))
             if 0 < T["w"].get_value():
                 w = suave(T["w"].get_value())
                 a0 = da_borda(cmv, RIGHT, 0.26)

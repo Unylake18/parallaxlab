@@ -91,7 +91,7 @@ class LoteT3(Camadas):
         self.an("T3-3")
         tau = e.tau.get_value()
         E, ie = self.E32
-        self.play(T["op_vel"].animate.set_value(0.0), T["op_rel"].animate.set_value(1.0), E.animate.set_opacity(0.4).move_to(P3(E.get_center()[0], 2.65)),
+        self.play(T["op_vel"].animate.set_value(0.0), T["op_rel"].animate.set_value(1.0), E.animate.set_opacity(OP_FUNDO).move_to(P3(E.get_center()[0], 2.9)),
                   e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.08), run_time=1.0)
         self.ate(0.1)
         self.play(onda(e.cm(), r=0.3), e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.16), run_time=1.0)   # "se afastam de um ponto parado"
@@ -106,7 +106,7 @@ class LoteT3(Camadas):
         B, ib = eqp("=", r"\sum_i", r"m_i\vec v_i", "-", "M", r"\vec V_{cm}", size=52, cores={2: MAG, 5: VEL})
         C, ic = eqp("=", r"\vec P", "-", r"\vec P", size=52, cores={1: MAG, 3: MAG})
         D, id_ = eqp("=", r"\vec 0", size=52)
-        na_conta(A, 1.75)
+        na_conta(A, 1.85)
         for M_, y_ in ((B, 0.5), (C, -0.6), (D, -1.5)):
             M_.move_to(P3(XC0 + 0.55 + M_.width / 2, y_))
         self.ate(0.56)
@@ -164,7 +164,7 @@ class LoteT3(Camadas):
         e, T = self.e, self.ex
         self.an("T3-4")
         tau = e.tau.get_value()
-        self.play(FadeOut(self.c33), self.zero.animate.set_opacity(0.45).move_to(P3(6.75, 3.05)), self.E32[0].animate.set_opacity(0.0),
+        self.play(FadeOut(self.c33), self.zero.animate.set_opacity(OP_FUNDO).move_to(P3(6.75, 3.25)), self.E32[0].animate.set_opacity(0.0),
                   e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.04), run_time=0.7)
         self.remove(self.E32[0])
         K1, i1 = eqp("K", "=", r"\tfrac{1}{2}", r"\sum_i", "m_i", r"\big(", r"\vec V_{cm}", "+", r"\vec v_i'", r"\big)^2", size=50,
@@ -190,7 +190,7 @@ class LoteT3(Camadas):
         na_conta(K3, -1.2, x0=1.3)
         self.ate(0.3)
         self.play(FadeIn(mp(K3, i3, [0])), TransformFromCopy(mp(K2, i2, [0, 1, 2, 3]), mp(K3, i3, [1, 2, 3, 4])),
-                  TransformFromCopy(mp(K2b, i2b, [0, 1, 2]), mp(K3, i3, [5, 6, 7])), mp(K2, i2, [4, 5, 6, 7]).animate.set_opacity(0.25),
+                  TransformFromCopy(mp(K2b, i2b, [0, 1, 2]), mp(K3, i3, [5, 6, 7])), mp(K2, i2, [4, 5, 6, 7]).animate.set_opacity(0.4),
                   e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.34), run_time=1.4)          # o termo do meio fica para trás
         K4, i4 = eqp("K", "=", r"\tfrac{1}{2}", "M", r"V_{cm}^2", "+", r"K_{rel}", size=56, cores={0: KC, 4: VEL, 6: KC})
         na_conta(K4, -2.45, x0=XC0 + 0.2)
@@ -212,7 +212,7 @@ class LoteT3(Camadas):
         nota = cartao("TUDO ENERGIA DE MOVIMENTO:", "NÃO É A ENERGIA INTERNA", "DA TERMODINÂMICA", size=26)
         nota.move_to(P3(PALCO_C[0], -2.75))
         self.ate(0.74)
-        self.play(FadeIn(nota), K3.animate.set_opacity(0.4), run_time=0.8)
+        self.play(FadeIn(nota), K3.animate.set_opacity(OP_FUNDO), run_time=0.8)
         self.ate(0.97)
         self.c34 = VGroup(K3, defi, nota, self.zero)
         self.K4, self.bx4 = K4, bx
@@ -357,7 +357,7 @@ class LoteT3(Camadas):
         self.ate(0.12)
         self.play(FadeIn(f1), run_time=0.8)
         # "Na granada, a gravidade é externa e faz trabalho": miniatura da granada com o peso; o cadeado abre
-        gx = P3(4.4, -0.2)
+        gx = P3(4.4, 0.1)
         gran = VGroup(Ellipse(width=0.62, height=0.78).set_fill(["#9AA6B8", "#3A4252"], 1).set_sheen_direction(UP).set_stroke("#7FB2FF", 2, opacity=0.6))
         gran[0]._degrade = "aco"
         for k in (-1, 0, 1):
@@ -366,7 +366,7 @@ class LoteT3(Camadas):
         gran.move_to(gx)
         peso = VGroup(seta(gx + 0.42 * DOWN, gx + 1.2 * DOWN, FC, 7, tip=0.24), mtex(r"M\vec g", FC, 40).next_to(gx + 0.75 * DOWN, RIGHT, buff=0.28))
         cad2 = cadeado(aberto=True, s=1.0).move_to(gx + P3(-1.4, -0.3))
-        cg = VGroup(txt("COM GRAVIDADE,", 28), txt("O CADEADO ABRE", 28)).arrange(DOWN, buff=0.1).move_to(P3(CONTA_C[0], -2.0))
+        cg = VGroup(txt("COM GRAVIDADE,", 28), txt("O CADEADO ABRE", 28)).arrange(DOWN, buff=0.1).move_to(P3(CONTA_C[0], -1.7))
         self.ate(0.6)
         self.play(FadeIn(gran), FadeIn(peso), run_time=0.8)
         self.ate(0.72)
