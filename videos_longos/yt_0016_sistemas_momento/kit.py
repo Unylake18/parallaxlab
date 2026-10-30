@@ -800,14 +800,15 @@ class Base(Scene):
         """v4: espera longa (≥ 3,4 s) vira espera + realce do último termo da conta a cada ~2,3 s (o estado final fica, mas a tela
         nunca para ≥ 4 s; a duração total não muda)."""
         n = max(1, round(duration * FPS))
-        if n >= 51 and STILL is None:                    # ≥ 3,4 s
+        # final: limiares em segundos (eram quadros de 15 fps; a 30 fps cada realce somava 0,5 s e o lote saía mais longo que a voz)
+        if n >= round(3.4 * FPS) and STILL is None:      # ≥ 3,4 s
             alvo = self._realce_ok()
             if alvo is not None:
-                n1 = 34                                  # 2,3 s parado, 1,0 s de realce, e o resto
+                n1 = round(2.3 * FPS)                    # 2,3 s parado, 1,0 s de realce, e o resto
                 self._espera(n1)
                 if self._realce_ok() is alvo:
                     self.play(Indicate(alvo, color=WHITE_, scale_factor=1.03), run_time=1.0)
-                    self.wait((n - n1 - 15) / FPS)
+                    self.wait((n - n1 - FPS) / FPS)
                 else:
                     self.wait((n - n1) / FPS)
                 return
