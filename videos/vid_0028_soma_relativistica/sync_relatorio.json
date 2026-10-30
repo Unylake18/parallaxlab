@@ -1,0 +1,508 @@
+{
+ "pausas": {
+  "cada": 0.05,
+  "Na": 0.25,
+  "as": 0.14,
+  "a": 0.43,
+  "o": 0.96,
+  "Divide": 0.39,
+  "os": 1.16,
+  "Em": 0.71,
+  "produto": 0.21,
+  "um": 0.22,
+  "quarenta": 0.07,
+  "Com": 1.35,
+  "Perto": 0.19
+ },
+ "ancoras": [
+  {
+   "evento": "setas",
+   "palavra": "Para",
+   "voz_s": 2.62,
+   "evento_s": 2.52,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "setup",
+   "palavra": "cada",
+   "voz_s": 3.47,
+   "evento_s": 3.37,
+   "pausa_antes": 0.05,
+   "menor_fator": 0.77
+  },
+  {
+   "evento": "pergunta",
+   "palavra": "Que",
+   "voz_s": 6.57,
+   "evento_s": 6.47,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "palpite",
+   "palavra": "O",
+   "voz_s": 9.71,
+   "evento_s": 9.61,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "nao_e_16",
+   "palavra": "mas",
+   "voz_s": 13.27,
+   "evento_s": 13.17,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "promessa",
+   "palavra": "Neste",
+   "voz_s": 15.37,
+   "evento_s": 15.27,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "chips",
+   "palavra": "em",
+   "voz_s": 19.91,
+   "evento_s": 19.81,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "c02",
+   "palavra": "Passo",
+   "voz_s": 23.51,
+   "evento_s": 23.41,
+   "pausa_antes": 0.0,
+   "menor_fator": 0.984
+  },
+  {
+   "evento": "troca_A",
+   "palavra": "Para",
+   "voz_s": 25.29,
+   "evento_s": 25.19,
+   "pausa_antes": 0.0,
+   "menor_fator": 0.723
+  },
+  {
+   "evento": "nota",
+   "palavra": "e",
+   "voz_s": 26.95,
+   "evento_s": 26.85,
+   "pausa_antes": 0.0,
+   "menor_fator": 0.78
+  },
+  {
+   "evento": "slot_pulsa",
+   "palavra": "Queremos",
+   "voz_s": 28.75,
+   "evento_s": 28.65,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "regua",
+   "palavra": "Na",
+   "voz_s": 31.48,
+   "evento_s": 31.38,
+   "pausa_antes": 0.25,
+   "menor_fator": 0.724
+  },
+  {
+   "evento": "fecha",
+   "palavra": "dão",
+   "voz_s": 33.64,
+   "evento_s": 33.54,
+   "pausa_antes": 0.14,
+   "menor_fator": 0.73
+  },
+  {
+   "evento": "na_terra",
+   "palavra": "é",
+   "voz_s": 36.52,
+   "evento_s": 36.42,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "nao_e",
+   "palavra": "Não",
+   "voz_s": 40.16,
+   "evento_s": 40.06,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "origem",
+   "palavra": "Passo",
+   "voz_s": 41.82,
+   "evento_s": 41.72,
+   "pausa_antes": 0.0,
+   "menor_fator": 0.875
+  },
+  {
+   "evento": "anda_txt",
+   "palavra": "Na",
+   "voz_s": 43.6,
+   "evento_s": 43.5,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "anda",
+   "palavra": "percorre",
+   "voz_s": 44.58,
+   "evento_s": 44.48,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "vb_def",
+   "palavra": "a",
+   "voz_s": 47.45,
+   "evento_s": 47.35,
+   "pausa_antes": 0.43,
+   "menor_fator": 0.732
+  },
+  {
+   "evento": "a_anda",
+   "palavra": "A",
+   "voz_s": 49.95,
+   "evento_s": 49.85,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "rel_gal",
+   "palavra": "então,",
+   "voz_s": 52.75,
+   "evento_s": 52.65,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "mistura",
+   "palavra": "Isso",
+   "voz_s": 55.49,
+   "evento_s": 55.39,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "defs",
+   "palavra": "Para",
+   "voz_s": 59.61,
+   "evento_s": 59.51,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "lorentz",
+   "palavra": "Entra",
+   "voz_s": 64.43,
+   "evento_s": 64.33,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "gama_def",
+   "palavra": "e",
+   "voz_s": 66.61,
+   "evento_s": 66.51,
+   "pausa_antes": 0.0,
+   "menor_fator": 0.955
+  },
+  {
+   "evento": "razao",
+   "palavra": "Monta",
+   "voz_s": 69.69,
+   "evento_s": 69.59,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "gama",
+   "palavra": "o",
+   "voz_s": 72.2,
+   "evento_s": 72.1,
+   "pausa_antes": 1.63,
+   "menor_fator": 0.733
+  },
+  {
+   "evento": "gama_cancela",
+   "palavra": "e",
+   "voz_s": 74.44,
+   "evento_s": 74.34,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "dt_hint",
+   "palavra": "Divide",
+   "voz_s": 75.65,
+   "evento_s": 75.55,
+   "pausa_antes": 0.39,
+   "menor_fator": 0.753
+  },
+  {
+   "evento": "dt_divide",
+   "palavra": "pelo",
+   "voz_s": 76.07,
+   "evento_s": 75.97,
+   "pausa_antes": 0.0,
+   "menor_fator": 0.68
+  },
+  {
+   "evento": "distribui",
+   "palavra": "sobra",
+   "voz_s": 77.43,
+   "evento_s": 77.33,
+   "pausa_antes": 0.0,
+   "menor_fator": 0.914
+  },
+  {
+   "evento": "vb",
+   "palavra": "a",
+   "voz_s": 79.29,
+   "evento_s": 79.19,
+   "pausa_antes": 0.0,
+   "menor_fator": 0.809
+  },
+  {
+   "evento": "formula",
+   "palavra": "Chegamos",
+   "voz_s": 80.53,
+   "evento_s": 80.43,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "c05",
+   "palavra": "Passo",
+   "voz_s": 87.55,
+   "evento_s": 87.45,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "viajam",
+   "palavra": "os",
+   "voz_s": 89.63,
+   "evento_s": 89.53,
+   "pausa_antes": 1.16,
+   "menor_fator": 0.737
+  },
+  {
+   "evento": "numerador",
+   "palavra": "Em",
+   "voz_s": 91.24,
+   "evento_s": 91.14,
+   "pausa_antes": 0.71,
+   "menor_fator": 0.746
+  },
+  {
+   "evento": "sinais",
+   "palavra": "Embaixo,",
+   "voz_s": 94.52,
+   "evento_s": 94.42,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "produto",
+   "palavra": "produto",
+   "voz_s": 95.37,
+   "evento_s": 95.27,
+   "pausa_antes": 0.21,
+   "menor_fator": 0.77
+  },
+  {
+   "evento": "sinal_nota2",
+   "palavra": "o",
+   "voz_s": 97.53,
+   "evento_s": 97.43,
+   "pausa_antes": 0.96,
+   "menor_fator": 0.736
+  },
+  {
+   "evento": "um64",
+   "palavra": "um",
+   "voz_s": 99.11,
+   "evento_s": 99.01,
+   "pausa_antes": 0.22,
+   "menor_fator": 0.747
+  },
+  {
+   "evento": "fracao",
+   "palavra": "Dividindo:",
+   "voz_s": 100.63,
+   "evento_s": 100.53,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "q4041",
+   "palavra": "quarenta",
+   "voz_s": 101.48,
+   "evento_s": 101.38,
+   "pausa_antes": 0.07,
+   "menor_fator": 0.77
+  },
+  {
+   "evento": "sentido",
+   "palavra": "O",
+   "voz_s": 105.82,
+   "evento_s": 105.72,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "carros",
+   "palavra": "Com",
+   "voz_s": 108.93,
+   "evento_s": 108.83,
+   "pausa_antes": 1.35,
+   "menor_fator": 0.725
+  },
+  {
+   "evento": "g1",
+   "palavra": "esse",
+   "voz_s": 111.01,
+   "evento_s": 110.91,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "g2",
+   "palavra": "o",
+   "voz_s": 112.37,
+   "evento_s": 112.27,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "g3",
+   "palavra": "e",
+   "voz_s": 113.69,
+   "evento_s": 113.59,
+   "pausa_antes": 0.0,
+   "menor_fator": 0.765
+  },
+  {
+   "evento": "galileu",
+   "palavra": "Galileu",
+   "voz_s": 115.27,
+   "evento_s": 115.17,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "regua8",
+   "palavra": "Com",
+   "voz_s": 117.91,
+   "evento_s": 117.81,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "soma_simples",
+   "palavra": "a",
+   "voz_s": 119.89,
+   "evento_s": 119.79,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "rel1",
+   "palavra": "medido",
+   "voz_s": 121.21,
+   "evento_s": 121.11,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "acelera",
+   "palavra": "Com",
+   "voz_s": 123.17,
+   "evento_s": 123.07,
+   "pausa_antes": 0.0,
+   "menor_fator": 0.934
+  },
+  {
+   "evento": "cls2",
+   "palavra": "quase",
+   "voz_s": 124.29,
+   "evento_s": 124.19,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "rel2",
+   "palavra": "medido",
+   "voz_s": 125.23,
+   "evento_s": 125.13,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "menor_c",
+   "palavra": "nove",
+   "voz_s": 127.77,
+   "evento_s": 127.67,
+   "pausa_antes": 0.0,
+   "menor_fator": 0.846
+  },
+  {
+   "evento": "c09",
+   "palavra": "Resumindo:",
+   "voz_s": 128.69,
+   "evento_s": 128.59,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "fecha9",
+   "palavra": "a",
+   "voz_s": 130.21,
+   "evento_s": 130.11,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "troca9A",
+   "palavra": "mas",
+   "voz_s": 133.33,
+   "evento_s": 133.23,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "fecho1",
+   "palavra": "Perto",
+   "voz_s": 137.56,
+   "evento_s": 137.46,
+   "pausa_antes": 0.19,
+   "menor_fator": 0.72
+  },
+  {
+   "evento": "fecho2",
+   "palavra": "Corpo",
+   "voz_s": 141.84,
+   "evento_s": 141.74,
+   "pausa_antes": 0.0,
+   "menor_fator": 1
+  },
+  {
+   "evento": "cta",
+   "palavra": "Se",
+   "voz_s": 144.84,
+   "evento_s": 144.74,
+   "pausa_antes": 0.0,
+   "menor_fator": 0.928
+  }
+ ],
+ "duracao_s": 150.76
+}

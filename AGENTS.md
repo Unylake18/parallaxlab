@@ -36,7 +36,7 @@ Consulte conforme necessidade:
 - `docs/padrao_video_longo.md` — padrão de forma dos longos (abertura, tag do canto, pouca escrita, maiúsculas Space Grotesk, cores das grandezas, narração, tags sem "slowly", CTA com prévia); ler ao implementar ou roteirizar um `longo_horizontal`;
 - `docs/roteiro_voz_elevenlabs_v4.md` — como escrever a fala (estilo professor de cursinho, variáveis pelo nome, conectivos) e gerar a voz com ElevenLabs v4 e audio tags `[ ]`; usar ao escrever roteiro ou gerar narração;
 - `docs/mapa_curricular.md` — arquitetura curricular/editorial (v2: Física I–IV, Eletromagnetismo/Griffiths, Cálculo, Álgebra Linear, EDO, EDP); usar para localizar uma pauta e preencher `disciplina:`/`bloco:`/`modulo:`/`referencia:` da ficha;
-- `experimentos/blender/arsenal/catalogo.md` — arsenal de sólidos 3D (Blender) e seu padrão visual. Ao planejar um vídeo que precise de um sólido 3D (cilindro, casca, esfera etc.), consulte o catálogo ANTES de modelar algo novo: confira "usar quando / não usar quando" e o status (só `aprovado` serve); `experimentos/blender/arsenal/cobertura.md` mostra, por capítulo do mapa curricular, o que existe e o que falta. Ponte com o Manim pronta (sandbox): `Solido3D` em `experimentos/blender/arsenal/manim_solido3d.py` (uso e cuidados no `README.md` do arsenal); prepare as sequências antes do render final com `ponte.py`. Usar um sólido num vídeo continua exigindo handoff explícito. Para ver um sólido no Blender: `experimentos/blender/arsenal/abrir/<id>.bat`. O arsenal deve ser testado nos próximos vídeos (curtos e longos): ver `docs/formatos.md`.
+- **3D é Three.js** (ver seção "3D: Three.js primeiro"); modelos em `videos_longos/yt_0015_momento_impulso/threejs/` e `videos_longos/yt_0016_sistemas_momento/threejs/`. `experimentos/blender/arsenal/catalogo.md`, `indice_producao.md` e `cobertura.md` servem só de referência de geometria (sólidos 3D catalogados); não use o Blender nem a ponte `Solido3D` salvo pedido explícito.
 
 Não leia automaticamente todos esses documentos.
 
@@ -159,15 +159,16 @@ Regras:
 - `SurroundingRectangleUnion` exige `unbuff=0` (falha com numpy 2.x); não é padrão.
 - Não refaça vídeos anteriores só por causa da biblioteca.
 
-## Arsenal 3D em vídeos novos (teste em andamento)
+## 3D: Three.js primeiro (desde 2026-10-28)
 
-O arsenal de sólidos 3D (90 sólidos aprovados) está em fase de **teste em vídeos reais**, curtos e longos. Ao receber o briefing de um vídeo novo:
+O 3D dos vídeos é feito em **Three.js**, não no Blender. Decisão do usuário: o Three.js é mais fluido e é o pipeline que funciona nas máquinas de produção (o Blender não está instalado e o cache `renders/arsenal3d/` não vai para o Git).
 
-0. Índice enxuto de consulta rápida: `experimentos/blender/arsenal/indice_producao.md` (gerado por `gerar_indice.py`; regerar ao criar ou editar sólidos). O briefing de Produção também o consulta para preencher `solido_3d:`.
-1. Leia o campo `solido_3d:` da `ficha.md`/briefing. Se houver um `id`, ele é a especificação: integre só nessa unidade.
-2. Se o campo faltar ou for `nenhum` sem justificativa, **avalie antes de implementar**: consulte `experimentos/blender/arsenal/catalogo.md` e `cobertura.md` (usar quando / não usar quando; só `aprovado`) e **reporte** o candidato (ou "nenhum, porque ...") sem integrar por conta própria. O briefing de Produção continua soberano. O 3D só dá a geometria: valores, fórmulas, rótulos, sinais e setas de sentido são do Manim; não force 3D onde o 2D explica melhor.
-3. Com o `id` definido, siga o checklist de `experimentos/blender/arsenal/README.md` (seção "Uso no Manim"): `Solido3D` na `cena.py` da unidade, sequências preparadas com `ponte.py` antes do render final, quadros conferidos no preview, e nada em `template/`. Não invente sólido nem parâmetro fora do catálogo: se faltar algo, registre como "ajuste desejado" no relatório em vez de improvisar.
-4. No relatório de entrega, inclua o **"Teste do arsenal"**: sólido usado, resolução, custo/peso, o que funcionou e o que faltou (formato em `docs/formatos.md`). Isso alimenta os ajustes do arsenal.
+1. **Padrão:** cena Three.js na própria unidade (`videos_longos/yt_NNNN_*/threejs/` ou `videos/vid_NNNN_*/threejs/`), renderizada por quadro com câmera controlada, mais um `timeline.json` com as coordenadas de tela dos pontos que o Manim precisa prender (rótulos, vetores, marcadores). Alinhamento 3D × Manim ≤ 2 px. Modelos de referência: `videos_longos/yt_0015_momento_impulso/threejs/` e `videos_longos/yt_0016_sistemas_momento/threejs/` (copie; não altere unidades de outros vídeos).
+2. **Divisão de papéis:** Three.js dá o objeto e o fenômeno 3D; valores, fórmulas, rótulos, sinais e setas de sentido são do Manim. Não force 3D onde o 2D explica melhor.
+3. **Câmera a serviço da leitura:** escolha a câmera pela física que precisa aparecer (ex.: vista frontal ao plano do movimento quando setas devem ter o mesmo comprimento na tela; parar a rotação exatamente no quadro da transição para o 2D).
+4. **Arsenal do Blender = referência de geometria.** As fichas em `experimentos/blender/arsenal/` (`indice_producao.md`, `catalogo.md`, `cobertura.md`, `solidos/*.json`) continuam úteis para consultar formas, parâmetros e "usar quando / não usar quando", mas **não instale o Blender nem use `ponte.py`/`Solido3D`** salvo pedido explícito. Se a ficha/briefing trouxer um `id` do arsenal, porte a geometria daquela ficha para Three.js na unidade, com os mesmos parâmetros.
+5. Ficha: `3d_threejs:` lista as cenas 3D; `solido_3d:` fica `nenhum do arsenal Blender` ou indica a ficha usada como referência ("geometria de `<id>` portada para Three.js").
+6. **Relatório:** em vez do "Teste do arsenal", informe as cenas Three.js, o que foi portado de cada ficha, resolução, custo por quadro, alinhamento medido (px) e o que faltou.
 
 ## Formatos e paralelismo
 

@@ -1,0 +1,208 @@
+# yt_0017 · vídeo inteiro (handoff v4 de 2026-10-29) · QA do preview 960×540 / 15 fps
+
+## Alinhamento Manim × Three.js (quadro a quadro)
+PH: [qa] gra: camada Manim × Three.js no mesmo quadro: 706 quadros, pior 0.406 px
+P1: [qa] hal: camada 2D (sem fundo 3D), 1543 quadros registrados
+P1: [qa] band: camada Manim × Three.js no mesmo quadro: 722 quadros, pior 0.000 px
+P1: [qa] haltere (último quadro): ocupa 63% da largura do PALCO; folga esquerda 115 px, direita 65 px; ⊕ a 0.7500 da haste a partir da leve
+P2: [qa] hal2d: camada 2D (sem fundo 3D), 1019 quadros registrados
+P2: [qa] molas: camada 2D (sem fundo 3D), 858 quadros registrados
+P2: [qa] exp: camada Manim × Three.js no mesmo quadro: 388 quadros, pior 0.294 px
+P2: [qa] gra: camada Manim × Three.js no mesmo quadro: 1144 quadros, pior 12.206 px
+P2: [qa] gelo: camada 2D (sem fundo 3D), 519 quadros registrados
+P3: [qa] exp: camada Manim × Three.js no mesmo quadro: 1815 quadros, pior 0.248 px
+P3: [qa] blocos: camada 2D (sem fundo 3D), 925 quadros registrados
+P5: [qa] canoa: camada 2D (sem fundo 3D), 1517 quadros registrados
+P5: [qa] gra: camada Manim × Three.js no mesmo quadro: 269 quadros, pior 0.001 px
+P5: [qa] en2: camada 2D (sem fundo 3D), 364 quadros registrados
+P5: [qa] cubo: camada Manim × Three.js no mesmo quadro: 213 quadros, pior 0.000 px
+
+## Cacos da granada (VOLUME DOS CACOS e CENTROIDE × FÍSICA)
+[cacos] VOLUME DOS CACOS: 2 kg 0.4441 (alvo 0.4444; -0.08%) · 1 kg 0.2222 (alvo 0.2222; -0.02%) · 1.5 kg 0.3331 (alvo 0.3333; -0.08%) · soma 0.9993
+[cacos] VOLUME DOS CACOS: dentro da tolerância de ±3%
+[cacos] CENTROIDE × FÍSICA PH/gra voo: 1700 amostras (caco × quadro), pior 0.00 px
+[cacos] CENTROIDE × FÍSICA PH/gra encaixe: 174 amostras (caco × quadro), pior 19.22 px
+[cacos] CENTROIDE × FÍSICA PH/gra apoio: 4 amostras (caco × quadro), pior 1.80 px
+[cacos] CENTROIDE × FÍSICA P2/gra voo: 1399 amostras (caco × quadro), pior 0.00 px
+[cacos] CENTROIDE × FÍSICA P2/gra encaixe: 66 amostras (caco × quadro), pior 6.39 px
+[cacos] CENTROIDE × FÍSICA P2/gra apoio: 659 amostras (caco × quadro), pior 13.13 px
+[cacos] CENTROIDE × FÍSICA P2/exp voo: 978 amostras (caco × quadro), pior 0.00 px
+[cacos] CENTROIDE × FÍSICA P3/exp voo: 5178 amostras (caco × quadro), pior 0.00 px
+[cacos] CENTROIDE × FÍSICA P5/gra voo: 399 amostras (caco × quadro), pior 0.00 px
+[cacos] CENTROIDE × FÍSICA P5/gra encaixe: 27 amostras (caco × quadro), pior 6.36 px
+
+## EN2 ⊕ × MÉDIA (⊕ da cena × média ponderada das posições dos blocos, todo quadro)
+364 quadros; pior 0.0000 px
+T3-6 (blocos): 925 quadros; pior 0.0000 px
+E2 (canoa): X_cm do sistema em 1517 quadros: 2.000000 a 2.000000 m (fixo em 2 m)
+
+## Degradê e cor por token (G15, G12)
+PH: [degrade] objetos com degradê por marca: {'cm': 4909, 'rastro': 360}
+PH: [cor] tokens conferidos: 3; fora da tabela: 0
+P1: [degrade] objetos com degradê por marca: {'aco': 5862, 'cm': 6336}
+P1: [cor] tokens conferidos: 93; fora da tabela: 0
+P2: [degrade] objetos com degradê por marca: {'aco': 3764, 'cm': 20711, 'rastro': 2716}
+P2: [cor] tokens conferidos: 165; fora da tabela: 0
+P3: [degrade] objetos com degradê por marca: {'cm': 4136, 'aco': 92}
+P3: [cor] tokens conferidos: 97; fora da tabela: 0
+P4: [degrade] objetos com degradê por marca: {'aco': 543, 'cm': 2596}
+P4: [cor] tokens conferidos: 9; fora da tabela: 0
+P5: [degrade] objetos com degradê por marca: {'aco': 2129, 'cm': 14408, 'rastro': 786}
+P5: [cor] tokens conferidos: 50; fora da tabela: 0
+
+## Física (números de conferência)
+explosão: t_e = 4.082 s em (122.45; 81.63) m
+velocidades logo após (m/s): 2 kg (30.00; 15.00); 1 kg (4.02; -15.00); 1.5 kg (47.32; -10.00)
+toques após a explosão (s): 2 kg 5.890 s em x = 299.1 m, 1 kg 2.829 s em x = 133.8 m, 1.5 kg 3.187 s em x = 273.3 m
+⊕ calculado dos fragmentos × parábola ideal, da explosão ao primeiro toque: desvio máximo 0.0000 px (câmera do hook)
+conferência 1 s após a explosão: ⊕ em (152.45; 76.73) m (esperado 152,45; 76,73)
+toque do 1 kg: salto de posição do ⊕ 0.0001 px; V_cm antes (30.00; -27.72) → depois (29.11; -18.23); ΔV_cm = (-0.89; 9.49) m/s (esperado −0,89; +9,49)
+descolamento 0,35 s depois do toque: ⊕ a 10.5 px da parábola tracejada
+explosão (T2-6): soma ponta com ponta dos mᵢv⃗ᵢ = (4.5000; -0.0000) × P = M V0 = (4.5000; 0): diferença 0.000%
+momentos relativos (T3-2/T3-3): 0.800, 0.800, 0.800 (iguais)
+T2-9 gelo: ⊕ = (60·0 + 40·10)/100 = 4.0 m da pessoa de 60 kg; ao fim (0,88 do caminho) mãos a 1,2 m e ⊕ em 4.00 m
+T2-9 gelo (v3): ao fim (0,85 do caminho) pessoas em 3.40 m e 4.90 m; ⊕ = (60·3.40 + 40·4.90)/100 = 4.00 m (FIXO em 4 m)
+T1-6 bandeja: Σ mᵢ r⃗ᵢ = (6; 4) kg·m; ÷ 4 kg → R⃗_cm = (1.5; 1) m (Bandeja3D.CM = [1.5, 1.0])
+T1-7: Σ mᵢ (r⃗ᵢ − R⃗_cm) = (0.0e+00; 0.0e+00) (zero); centro geométrico [2.0, 1.333] ≠ ⊕
+T2-8: v⃗ do 1 kg no toque = (4.02; -42.72) m/s; J⃗ = m(0⃗ − v⃗) = (-4.02; 42.72) N·s; ΔV⃗ = J⃗/M = (-0.89; 9.49) m/s (na tela: −4,02; 42,72 e −0,89; 9,49)
+T1-8: as duas de 1 kg viram 2 kg no ponto médio (3; 2); (2·(0, 0) + 2·(3, 2))/4 = (1.5; 1) = R⃗_cm do T1-6
+cacos: Σ mᵢ cᵢ / M = (+0.00006; +0.00002; +0.00004) em unidades do corpo (raio equivalente 1.1376): no gráfico inteiro (R_TELA = 0,2) isso dá 0.001 px
+T3-6: K antes = ½·2·6² = 36 J; V_cm = 2·6/3 = 4 m/s; ½·3·4² = 24 J; K_rel = 12 J
+T4-4: X = (L³/3)/(L²/2) = 2L/3 = 1.3333 m com L = 2 m
+E1 (três triângulos): Y = (¼·⅙ + ¼·½ + ¼·½)/¾ = 7/18 m
+E1 (massa negativa): Y = (1·½ − ¼·⅚)/(1 − ¼) = 7/18 m (o mesmo ponto); desafio: ⊕ a 1/12 m do centro (não falado)
+E2: X_cm = (75·3 + 150·1,5)/225 = 2 m; 75(−3 + Δx_c) + 150 Δx_c = 0 → Δx_c = 1 m; Δx_r = -2 m; falta 0.20 m
+EN2: V_cm = (2·2 + 1·(−2))/3 = 0.6667 m/s = v_f
+
+## Duração por âncora (narração v3.1: palavras e duração a 2,7 palavras/s × duração real da cena)
+âncora   palavras   fala (s)   cena (s)   diferença
+H1             25       9.26       9.27      +0.01
+H2             24       8.89       8.86      -0.03
+H3             34      12.59      12.60      +0.01
+A1              7       2.59       2.54      -0.05
+A2             17       6.30       6.26      -0.04
+A3             45      16.67      16.67      +0.00
+A4             42      15.56      15.53      -0.03
+T1-1           62      22.96      22.93      -0.03
+T1-2           52      19.26      19.27      +0.01
+T1-3           48      17.78      17.80      +0.02
+T1-4           72      26.67      26.67      +0.00
+T1-5           45      16.67      16.66      -0.01
+T1-6           94      34.81      34.80      -0.01
+T1-7          129      47.78      47.80      +0.02
+T1-8          104      38.52      38.54      +0.02
+T2-1           83      30.74      30.73      -0.01
+T2-2           47      17.41      17.40      -0.01
+T2-3           55      20.37      20.40      +0.03
+T2-4           91      33.70      33.74      +0.04
+T2-5           64      23.70      23.66      -0.04
+T2-6           69      25.56      25.54      -0.02
+T2-7          112      41.48      41.46      -0.02
+T2-8           93      34.44      34.47      +0.03
+T2-9           94      34.81      34.80      -0.01
+T3-1           35      12.96      12.93      -0.03
+T3-2           56      20.74      20.74      +0.00
+T3-3          108      40.00      40.00      +0.00
+T3-4           85      31.48      31.46      -0.02
+T3-5           42      15.56      15.54      -0.02
+T3-6          100      37.04      37.06      +0.02
+T3-7           69      25.56      25.54      -0.02
+T4-1           64      23.70      23.67      -0.03
+T4-2           39      14.44      14.46      +0.02
+T4-3           39      14.44      14.47      +0.03
+T4-4           60      22.22      22.20      -0.02
+E1-1           60      22.22      22.20      -0.02
+E1-2           90      33.33      33.33      +0.00
+E1-3           91      33.70      33.74      +0.04
+E1-4           68      25.19      25.20      +0.01
+E2-1           63      23.33      23.33      +0.00
+E2-2           49      18.15      18.13      -0.02
+E2-3           94      34.81      34.80      -0.01
+E2-4           67      24.81      24.80      -0.01
+S1             49      18.15      18.14      -0.01
+S2             91      33.70      33.73      +0.03
+EN1            21       7.78       7.80      +0.02
+EN2            68      25.19      25.20      +0.01
+EN3            56      20.74      20.73      -0.01
+total                1137.76    1137.60      -0.16
+
+## Tempo: âncoras em que a cena passa da fala (> 0,2 s)
+nenhuma
+
+## PAUSAS (trechos parados ≥ 4 s, com âncora)
+[pausa] P1 T1-6  114.5– 118.9 s (4.5 s)
+[pausa] P1 T1-6  119.9– 124.1 s (4.2 s)
+[pausa] P1 T1-7  149.6– 155.3 s (5.7 s)
+[pausa] P2 T2-9  257.3– 262.1 s (4.9 s)
+[pausa] P3 T3-2   15.7–  22.3 s (6.6 s)
+[pausa] P3 T3-3   42.5–  48.1 s (5.6 s)
+[pausa] P3 T3-4   97.7– 105.1 s (7.4 s)
+[pausa] P3 T3-6  147.1– 153.3 s (6.1 s)
+[pausa] P3 T3-7  161.6– 173.2 s (11.6 s)
+[pausa] P5 E1-1    4.3–  12.0 s (7.7 s)
+[pausa] P5 E1-2   31.4–  36.2 s (4.8 s)
+[pausa] P5 E1-3   62.9–  68.5 s (5.5 s)
+[pausa] P5 E1-4   93.4– 101.4 s (8.0 s)
+[pausa] P5 E2-1  119.9– 126.3 s (6.4 s)
+[pausa] P5 E2-1  126.9– 134.3 s (7.4 s)
+[pausa] P5 E2-2  141.2– 145.3 s (4.1 s)
+[pausa] P5 E2-3  159.1– 166.4 s (7.3 s)
+[pausa] P5 E2-3  167.4– 172.6 s (5.2 s)
+[pausa] P5 E2-4  205.4– 211.7 s (6.3 s)
+[pausa] P5 S2  234.3– 242.9 s (8.5 s)
+[pausa] P5 S2  243.5– 251.3 s (7.8 s)
+[pausa] P5 S2  252.0– 260.7 s (8.7 s)
+[pausa] P5 S2  261.4– 267.4 s (6.0 s)
+[pausa] total de trechos parados ≥ 4 s: 23
+
+## FUNDO (quadros com > 40% dos pixels abaixo de luminância 0,03; fora do A1/EN1)
+0 quadro(s) fora
+transição A4 → T1-1 (luminância média): último quadro do A4 0.153 · meio do crossfade (o céu do laboratório) 0.079 · primeiro quadro do T1-1 0.087
+
+## Auditorias por lote (TEXTO PEQUENO, FORA DA MARGEM, SOBREPOSICAO, SEM PALCO, TEXTO SOBRE OBJETO, OBJETO FORA DA MARGEM, PAR FORA DE SINCRONIA, DEGRADÊ FORA DO ⊕, COR POR TOKEN)
+PH (hook + abertura): 4 linha(s) · TEXTO SOBRE OBJETO ×2, SEM PALCO ×2
+[audit]    18.0s TEXTO SOBRE OBJETO '5s' x corpo 3D em (-1.2; 1.2)
+[audit]    18.1s TEXTO SOBRE OBJETO '5s' x corpo 3D em (-1.2; 1.2)
+[audit]    31.7s SEM PALCO
+[audit]    33.3s SEM PALCO
+P1 (T1): 0 linha(s) · zero
+P2 (T2): 6 linha(s) · TEXTO SOBRE OBJETO ×6
+[audit]    24.7s TEXTO SOBRE OBJETO '\vec R_{cm}' x Line em (-5.8; -1.9)
+[audit]    29.8s TEXTO SOBRE OBJETO '\vec R_{cm}' x VMobject em (-4.4; -0.0)
+[audit]    30.7s TEXTO SOBRE OBJETO '\vec R_{cm}' x VMobject em (-4.4; -0.0)
+[audit]   145.1s TEXTO SOBRE OBJETO 'NOESPAÇO,SEMGRAVIDADE' x corpo 3D em (-2.2; 1.8)
+[audit]   146.4s TEXTO SOBRE OBJETO 'NOESPAÇO,SEMGRAVIDADE' x corpo 3D em (-2.1; 1.9)
+[audit]   148.2s TEXTO SOBRE OBJETO 'NOESPAÇO,SEMGRAVIDADE' x corpo 3D em (-1.9; 2.0)
+P3 (T3): 3 linha(s) · SEM PALCO ×1, TEXTO SOBRE OBJETO ×2
+[audit]     0.0s SEM PALCO
+[audit]     8.1s TEXTO SOBRE OBJETO '\vec V_{cm}' x corpo 3D em (-2.9; 0.8)
+[audit]     8.9s TEXTO SOBRE OBJETO '\vec V_{cm}' x corpo 3D em (-2.8; 0.9)
+P4 (T4): 1 linha(s) · SEM PALCO ×1
+[audit]     0.0s SEM PALCO
+P5 (E1, E2, síntese, encerramento): 3 linha(s) · SEM PALCO ×3
+[audit]     0.0s SEM PALCO
+[audit]   301.1s SEM PALCO
+[audit]   304.1s SEM PALCO
+
+### Exceções justificadas (o resto zerou)
+- PH, P3, P4 e P5, SEM PALCO: cartões de título (A1, início do A2, aberturas de lote) e o logo do EN1 (G5).
+- P2 24,7 s, R⃗_cm × haste: primeiro quadro do fade-in da decomposição; a origem ainda está colada no ⊕ (R⃗_cm com comprimento quase zero), com o rótulo ainda entrando.
+- P2 29,8 s e 30,7 s, R⃗_cm × rastro: o rótulo encosta no laço já apagado (35%) na saída do zoom; a seta e o rótulo continuam legíveis.
+- P2 T2-6 (≈145–148 s), NO ESPAÇO, SEM GRAVIDADE × caco de 2 kg: na 1ª passada o caco de 2 kg sobe e passa por trás do selo DIM do topo (~3 s) antes de sair do quadro; o texto fica por cima do 3D e legível. (No T3 os selos foram para o rodapé do PALCO.)
+- P3 8,1–8,9 s, V⃗_cm × caco: transição de 0,8 s em que o V⃗_cm sai do ⊕ e desliza para o canto, passando sobre o caco de 2 kg.
+- CENTROIDE × FÍSICA, categoria "encaixe" (PH até 19,2 px; P2 até 6,4 px): nos 0,25 s de física depois da fratura o caco sai do encaixe no corpo (T_SEP) até a posição da física pontual; fora dessa janela o voo dá 0,00 px.
+- CENTROIDE × FÍSICA e alinhamento do ⊕, categoria "apoio" (T2-8, cacos parados na linha de contato; até ~13 px no P2): no gráfico os cacos têm tamanho de ícone constante na tela (R_TELA) e a malha é erguida para não atravessar o chão (G4); o ⊕ e os pontos físicos ficam na linha de contato com os números do roteiro.
+- Transições: cópias em voo de TransformFromCopy/TransformByGlyphMap passam por cima de outros glifos durante a animação (não contam como estado parado).
+- Riscos de cancelamento (T1-7, T2-7, T3-3, T4-4) ficam sobre o texto de propósito: marcados como risco, fora da auditoria.
+- PH 18,0–18,1 s, "5 s" × corpo 3D: dois quadros do recuo da câmera no H3, quando a marca de tempo ainda está saindo e o corpo passa por ela.
+
+## Capítulos
+0:00 ABERTURA
+1:11 ONDE ESTÁ O CENTRO DE MASSA?
+4:56 COMO ELE SE MOVE?
+9:18 QUE ENERGIA É DO MOVIMENTO RELATIVO?
+12:21 COMO ACHAR O CENTRO DE MASSA DE UM CORPO INTEIRO?
+13:36 EXERCÍCIO 1 · PLACA COM ENTALHE
+15:30 EXERCÍCIO 2 · REMADOR E ESTACA
+17:12 RESUMO
+18:03 ENCERRAMENTO

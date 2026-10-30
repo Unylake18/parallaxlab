@@ -1,0 +1,16 @@
+explosão: t_e = 4.082 s em (122.45; 81.63) m
+velocidades logo após (m/s): 2 kg (30.00; 15.00); 1 kg (4.02; -15.00); 1.5 kg (47.32; -10.00)
+toques após a explosão (s): 2 kg 5.890 s em x = 299.1 m, 1 kg 2.829 s em x = 133.8 m, 1.5 kg 3.187 s em x = 273.3 m
+⊕ calculado dos fragmentos × parábola ideal, da explosão ao primeiro toque: desvio máximo 0.0000 px (câmera do hook)
+conferência 1 s após a explosão: ⊕ em (152.45; 76.73) m (esperado 152,45; 76,73)
+toque do 1 kg: salto de posição do ⊕ 0.0001 px; V_cm antes (30.00; -27.72) → depois (29.11; -18.23); ΔV_cm = (-0.89; 9.49) m/s (esperado −0,89; +9,49)
+descolamento 0,35 s depois do toque: ⊕ a 10.5 px da parábola tracejada
+explosão (T2-6): soma ponta com ponta dos mᵢv⃗ᵢ = (4.5000; -0.0000) × P = M V0 = (4.5000; 0): diferença 0.000%
+momentos relativos (T3-2/T3-3): 0.800, 0.800, 0.800 (iguais)
+T2-9 gelo: ⊕ = (60·0 + 40·10)/100 = 4.0 m da pessoa de 60 kg; ao fim (0,88 do caminho) mãos a 1,2 m e ⊕ em 4.00 m
+T2-9 gelo (v3): ao fim (0,85 do caminho) pessoas em 3.40 m e 4.90 m; ⊕ = (60·3.40 + 40·4.90)/100 = 4.00 m (FIXO em 4 m)
+T1-6 bandeja: Σ mᵢ r⃗ᵢ = (6; 4) kg·m; ÷ 4 kg → R⃗_cm = (1.5; 1) m (Bandeja3D.CM = [1.5, 1.0])
+T1-7: Σ mᵢ (r⃗ᵢ − R⃗_cm) = (0.0e+00; 0.0e+00) (zero); centro geométrico [2.0, 1.333] ≠ ⊕
+T2-8: v⃗ do 1 kg no toque = (4.02; -42.72) m/s; J⃗ = m(0⃗ − v⃗) = (-4.02; 42.72) N·s; ΔV⃗ = J⃗/M = (-0.89; 9.49) m/s (na tela: −4,02; 42,72 e −0,89; 9,49)
+T1-8: as duas de 1 kg viram 2 kg no ponto médio (3; 2); (2·(0, 0) + 2·(3, 2))/4 = (1.5; 1) = R⃗_cm do T1-6
+cacos: Σ mᵢ cᵢ / M = (+0.00006; +0.00002; +0.00004) em unidades do corpo (raio equivalente 1.1376): no gráfico inteiro (R_TELA = 0,2) isso dá 0.001 px
