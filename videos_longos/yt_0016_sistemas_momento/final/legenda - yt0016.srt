@@ -1,0 +1,2339 @@
+1
+00:00:00,150 --> 00:00:02,560
+O cavalo puxa a pedra por uma corda.
+
+2
+00:00:02,610 --> 00:00:03,710
+E olha a pegadinha:
+
+3
+00:00:03,730 --> 00:00:07,150
+numa corda ideal, a tensão é a mesma nas
+duas pontas.
+
+4
+00:00:07,170 --> 00:00:10,510
+Ela puxa a pedra para a frente e puxa o
+cavalo para trás...
+
+5
+00:00:10,530 --> 00:00:12,440
+com forças do mesmo tamanho.
+
+6
+00:00:13,010 --> 00:00:14,710
+Forças iguais e opostas:
+
+7
+00:00:14,730 --> 00:00:15,960
+era para dar empate.
+
+8
+00:00:15,990 --> 00:00:19,320
+Então como é que o cavalo anda, e ainda
+leva a pedra junto?
+
+9
+00:00:19,870 --> 00:00:21,790
+A resposta cabe em duas ideias:
+
+10
+00:00:21,810 --> 00:00:24,860
+o que é um sistema, e o que muda o momento
+dele.
+
+11
+00:00:25,510 --> 00:00:26,490
+Fala, pessoal!
+
+12
+00:00:26,510 --> 00:00:28,360
+Bem-vindos ao Parallax Lab!
+
+13
+00:00:28,850 --> 00:00:31,910
+Hoje o assunto é o momento de vários
+corpos juntos.
+
+14
+00:00:31,930 --> 00:00:34,130
+E a gente começa onde o vídeo anterior
+parou:
+
+15
+00:00:34,150 --> 00:00:36,650
+com esse cavalo teimoso e essa pergunta.
+
+16
+00:00:36,670 --> 00:00:38,880
+Até o final, ela vai estar respondida.
+
+17
+00:00:39,370 --> 00:00:41,050
+Primeiro, uma lembrança rápida.
+
+18
+00:00:41,070 --> 00:00:43,570
+No vídeo anterior, a gente olhou para um
+corpo só.
+
+19
+00:00:43,590 --> 00:00:46,760
+A força resultante é a taxa de variação do
+momento.
+
+20
+00:00:46,790 --> 00:00:50,810
+E, somando essa força ao longo do tempo,
+aparece o impulso resultante,
+
+21
+00:00:50,830 --> 00:00:52,370
+que é a variação do momento:
+
+22
+00:00:52,390 --> 00:00:54,400
+a área embaixo da curva da força.
+
+23
+00:00:54,910 --> 00:00:56,850
+Depois, dois discos batendo.
+
+24
+00:00:56,870 --> 00:01:00,590
+Durante o choque, um empurra o outro com
+forças iguais e opostas.
+
+25
+00:01:00,610 --> 00:01:04,070
+Então o momento que um ganha é exatamente
+o que o outro perde.
+
+26
+00:01:04,090 --> 00:01:06,950
+Dois corpos sozinhos, sem ninguém de fora
+mexendo,
+
+27
+00:01:06,970 --> 00:01:08,860
+têm momento total constante.
+
+28
+00:01:09,450 --> 00:01:12,050
+Só que o mundo real quase nunca é tão
+limpinho.
+
+29
+00:01:12,070 --> 00:01:16,470
+O cavalo pisa no chão, a pedra raspa no
+chão, e a corda liga os dois.
+
+30
+00:01:16,490 --> 00:01:18,070
+Repara na caixa tracejada.
+
+31
+00:01:18,090 --> 00:01:21,790
+Se você olha só para o cavalo, a força da
+corda é uma força como outra
+
+32
+00:01:21,810 --> 00:01:22,390
+qualquer:
+
+33
+00:01:22,410 --> 00:01:25,990
+ela puxa o cavalo para trás e entra na
+força resultante dele.
+
+34
+00:01:26,010 --> 00:01:30,050
+Agora a caixa cresce e engole o cavalo, a
+corda e a pedra.
+
+35
+00:01:30,070 --> 00:01:32,770
+A mesma força passa a ser uma força de
+dentro,
+
+36
+00:01:32,790 --> 00:01:34,170
+uma força interna.
+
+37
+00:01:34,190 --> 00:01:35,710
+Então a pergunta de hoje é:
+
+38
+00:01:35,730 --> 00:01:39,040
+as forças de dentro conseguem mudar o
+momento do conjunto?
+
+39
+00:01:39,590 --> 00:01:40,990
+Então o mapa é este.
+
+40
+00:01:41,010 --> 00:01:43,090
+Um corpo só, a gente já resolveu.
+
+41
+00:01:43,110 --> 00:01:46,870
+Hoje são muitos corpos, e aquela
+interrogação no canto vai virar uma
+
+42
+00:01:46,890 --> 00:01:47,650
+equação.
+
+43
+00:01:47,670 --> 00:01:51,450
+No caminho, a conservação do momento deixa
+de ser um fato sobre dois
+
+44
+00:01:51,470 --> 00:01:54,660
+discos e vira uma ferramenta para qualquer
+sistema.
+
+45
+00:01:55,690 --> 00:01:57,190
+Vamos combinar as palavras.
+
+46
+00:01:57,210 --> 00:02:00,550
+Um sistema é o grupo de corpos que a gente
+escolhe acompanhar,
+
+47
+00:02:00,570 --> 00:02:03,070
+dentro de uma fronteira que a gente mesmo
+desenha,
+
+48
+00:02:03,090 --> 00:02:04,590
+como essa caixa tracejada.
+
+49
+00:02:04,610 --> 00:02:07,550
+As forças que os corpos de dentro fazem
+uns nos outros,
+
+50
+00:02:07,570 --> 00:02:10,030
+como as molas, são forças internas.
+
+51
+00:02:10,050 --> 00:02:13,230
+As que vêm de fora da fronteira, como o
+peso de cada esfera,
+
+52
+00:02:13,250 --> 00:02:14,910
+são forças externas.
+
+53
+00:02:14,930 --> 00:02:18,470
+Quem escolhe a fronteira é você, e essa
+escolha decide o problema
+
+54
+00:02:18,490 --> 00:02:19,240
+inteiro.
+
+55
+00:02:19,770 --> 00:02:21,660
+E o que muda o momento do sistema?
+
+56
+00:02:22,070 --> 00:02:25,160
+Vamos por partes, com só duas esferas e
+uma mola.
+
+57
+00:02:25,250 --> 00:02:29,090
+Sobre a primeira esfera agem a força da
+mola, que vem da segunda,
+
+58
+00:02:29,110 --> 00:02:30,650
+e o peso, que é externo.
+
+59
+00:02:30,670 --> 00:02:34,590
+Pela segunda lei, a taxa de variação do
+momento da primeira esfera
+
+60
+00:02:34,610 --> 00:02:36,590
+é a soma dessas duas forças.
+
+61
+00:02:36,610 --> 00:02:38,650
+Na segunda esfera, é a mesma história:
+
+62
+00:02:38,670 --> 00:02:42,480
+a força da mola, que agora vem da
+primeira, mais o peso dela.
+
+63
+00:02:42,990 --> 00:02:44,160
+Agora vem o truque:
+
+64
+00:02:44,270 --> 00:02:45,930
+soma as duas equações.
+
+65
+00:02:45,950 --> 00:02:49,370
+À esquerda, aparece a taxa de variação do
+momento total.
+
+66
+00:02:49,390 --> 00:02:51,670
+À direita, as duas forças da mola.
+
+67
+00:02:51,690 --> 00:02:55,510
+Só que, pela terceira lei, a força que a
+primeira esfera recebe da
+
+68
+00:02:55,530 --> 00:02:59,450
+segunda é igual e oposta à que a segunda
+recebe da primeira.
+
+69
+00:02:59,470 --> 00:03:02,290
+Somadas, elas dão zero e somem da conta.
+
+70
+00:03:02,310 --> 00:03:04,050
+Sobra só a força externa.
+
+71
+00:03:04,070 --> 00:03:04,710
+Ou seja:
+
+72
+00:03:04,730 --> 00:03:08,030
+a mola estica, encolhe, sacode as
+esferas...
+
+73
+00:03:08,050 --> 00:03:11,020
+mas o momento total só escuta o que vem de
+fora.
+
+74
+00:03:11,590 --> 00:03:12,980
+Com dois funcionou.
+
+75
+00:03:13,130 --> 00:03:14,440
+E com muitos corpos?
+
+76
+00:03:14,890 --> 00:03:17,030
+Pega uma esfera qualquer, essa que
+acendeu.
+
+77
+00:03:17,050 --> 00:03:20,970
+A taxa de variação do momento dela é a
+soma das forças que todas as
+
+78
+00:03:20,990 --> 00:03:24,580
+outras esferas fazem nela, mais a força
+externa sobre ela.
+
+79
+00:03:25,070 --> 00:03:28,170
+Agora a gente soma essa equação para todas
+as esferas.
+
+80
+00:03:28,190 --> 00:03:32,190
+À esquerda, a soma dos momentos vira o
+momento total do sistema,
+
+81
+00:03:32,210 --> 00:03:33,390
+essa seta magenta.
+
+82
+00:03:33,410 --> 00:03:35,350
+À direita, sobram duas partes:
+
+83
+00:03:35,370 --> 00:03:39,820
+uma soma dupla, com todas as forças
+internas, e a força externa total.
+
+84
+00:03:40,330 --> 00:03:42,100
+Essa soma dupla assusta?
+
+85
+00:03:42,530 --> 00:03:44,230
+Calma, ela é só uma tabela.
+
+86
+00:03:44,250 --> 00:03:48,130
+Cada linha é quem recebe a força, e cada
+coluna é quem faz.
+
+87
+00:03:48,150 --> 00:03:51,430
+Aqui está a força que a esfera um recebe
+da esfera dois,
+
+88
+00:03:51,450 --> 00:03:54,650
+e, do outro lado da diagonal, a que a dois
+recebe da um.
+
+89
+00:03:54,670 --> 00:03:57,930
+É o par da mola, e pela terceira lei ele
+soma zero.
+
+90
+00:03:57,950 --> 00:03:59,930
+O mesmo vale para os outros pares.
+
+91
+00:03:59,950 --> 00:04:03,070
+A diagonal fica vazia, porque ninguém
+empurra a si mesmo.
+
+92
+00:04:03,090 --> 00:04:07,540
+As células se apagam duas a duas, e a soma
+dupla inteira vale zero.
+
+93
+00:04:07,990 --> 00:04:09,330
+E sobra só isto:
+
+94
+00:04:09,350 --> 00:04:13,950
+a taxa de variação do momento total é
+igual à força externa resultante.
+
+95
+00:04:13,970 --> 00:04:17,560
+As forças internas, por maiores que sejam,
+não aparecem.
+
+96
+00:04:17,630 --> 00:04:21,070
+Só uma força de fora muda o momento total
+de um sistema.
+
+97
+00:04:21,090 --> 00:04:23,800
+A interrogação do canto virou esta
+equação.
+
+98
+00:04:24,570 --> 00:04:26,389
+Agora, uma sutileza.
+
+99
+00:04:26,409 --> 00:04:30,050
+Para o momento total ficar constante, o
+sistema não precisa estar
+
+100
+00:04:30,070 --> 00:04:30,790
+isolado:
+
+101
+00:04:30,810 --> 00:04:33,340
+basta a força externa resultante ser zero.
+
+102
+00:04:33,410 --> 00:04:37,210
+Olha esse disco no gelo, com duas forças
+externas iguais e opostas
+
+103
+00:04:37,230 --> 00:04:38,560
+em pontos diferentes.
+
+104
+00:04:38,590 --> 00:04:41,370
+A soma delas é zero, então o momento não
+muda,
+
+105
+00:04:41,390 --> 00:04:43,630
+e o centro do disco não sai do lugar.
+
+106
+00:04:43,650 --> 00:04:44,880
+Mas o disco gira!
+
+107
+00:04:44,910 --> 00:04:47,370
+Esse giro fica para o módulo de rotação.
+
+108
+00:04:47,390 --> 00:04:50,820
+Momento constante não quer dizer que nada
+está acontecendo.
+
+109
+00:04:51,310 --> 00:04:54,060
+E essa equação vale componente por
+componente.
+
+110
+00:04:54,110 --> 00:04:57,130
+Na bola em parábola, o peso só puxa na
+vertical.
+
+111
+00:04:57,150 --> 00:05:00,730
+Então o momento horizontal fica constante,
+e o vertical muda.
+
+112
+00:05:00,750 --> 00:05:03,280
+Uma direção pode conservar e a outra não.
+
+113
+00:05:03,350 --> 00:05:04,690
+E, para os curiosos:
+
+114
+00:05:04,710 --> 00:05:08,210
+quando a terceira lei falha, como entre
+cargas elétricas em movimento,
+
+115
+00:05:08,230 --> 00:05:12,230
+a conservação continua valendo, desde que
+a gente conte também o momento
+
+116
+00:05:12,250 --> 00:05:12,920
+do campo.
+
+117
+00:05:13,970 --> 00:05:17,390
+Agora sim, de volta ao cavalo, com a
+ferramenta nova na mão.
+
+118
+00:05:17,410 --> 00:05:18,930
+Primeiro passo, sempre:
+
+119
+00:05:18,950 --> 00:05:20,230
+definir o sistema.
+
+120
+00:05:20,250 --> 00:05:23,430
+A fronteira envolve o cavalo, a corda e a
+pedra.
+
+121
+00:05:23,450 --> 00:05:27,270
+A corda puxa os dois, mas as duas pontas
+estão dentro da caixa,
+
+122
+00:05:27,290 --> 00:05:29,970
+então a força dela é interna e sai da
+conta.
+
+123
+00:05:29,990 --> 00:05:32,130
+Sobram as forças externas na horizontal:
+
+124
+00:05:32,150 --> 00:05:34,790
+o chão empurrando as patas do cavalo para
+a frente,
+
+125
+00:05:34,810 --> 00:05:37,130
+e o chão raspando na pedra, para trás.
+
+126
+00:05:37,150 --> 00:05:40,240
+O peso e a normal ficam na vertical e se
+cancelam.
+
+127
+00:05:40,730 --> 00:05:41,730
+Vamos aos números.
+
+128
+00:05:41,750 --> 00:05:44,550
+O cavalo tem seiscentos quilogramas, e a
+pedra,
+
+129
+00:05:44,570 --> 00:05:45,430
+oitocentos.
+
+130
+00:05:45,450 --> 00:05:48,670
+Como a pedra já está deslizando, vale o
+atrito cinético,
+
+131
+00:05:48,690 --> 00:05:50,870
+com coeficiente zero vírgula três.
+
+132
+00:05:50,890 --> 00:05:54,870
+Então o atrito na pedra é zero vírgula
+três, vezes oitocentos,
+
+133
+00:05:54,890 --> 00:05:56,370
+vezes nove vírgula oito:
+
+134
+00:05:56,390 --> 00:05:58,910
+dois mil trezentos e cinquenta e dois
+newtons,
+
+135
+00:05:58,930 --> 00:05:59,750
+para trás.
+
+136
+00:05:59,770 --> 00:06:03,130
+E vamos supor que o chão empurre o cavalo
+para a frente com dois mil
+
+137
+00:06:03,150 --> 00:06:04,560
+e oitocentos newtons.
+
+138
+00:06:05,050 --> 00:06:05,860
+E a corda?
+
+139
+00:06:06,250 --> 00:06:07,790
+Ela nem aparece na conta!
+
+140
+00:06:07,810 --> 00:06:11,570
+A força externa resultante é dois mil e
+oitocentos menos dois mil
+
+141
+00:06:11,590 --> 00:06:13,010
+trezentos e cinquenta e dois:
+
+142
+00:06:13,030 --> 00:06:15,310
+quatrocentos e quarenta e oito newtons.
+
+143
+00:06:15,330 --> 00:06:19,210
+Essa força acelera a massa total, mil e
+quatrocentos quilogramas.
+
+144
+00:06:19,230 --> 00:06:22,990
+Então a aceleração do conjunto é zero
+vírgula trinta e dois metros
+
+145
+00:06:23,010 --> 00:06:24,300
+por segundo ao quadrado.
+
+146
+00:06:24,770 --> 00:06:25,610
+Olha o mostrador:
+
+147
+00:06:25,630 --> 00:06:27,920
+a velocidade vai subindo devagarinho.
+
+148
+00:06:28,510 --> 00:06:31,930
+Agora, para desconfiar da gente mesmo,
+separa os corpos.
+
+149
+00:06:31,950 --> 00:06:32,690
+Na pedra:
+
+150
+00:06:32,710 --> 00:06:36,710
+a tensão menos o atrito dá a massa da
+pedra vezes a aceleração,
+
+151
+00:06:36,730 --> 00:06:40,190
+então a corda puxa com dois mil seiscentos
+e oito newtons.
+
+152
+00:06:40,210 --> 00:06:40,990
+No cavalo:
+
+153
+00:06:41,010 --> 00:06:44,730
+o empurrão do chão menos essa mesma tensão
+sobra cento e noventa e
+
+154
+00:06:44,750 --> 00:06:45,650
+dois newtons.
+
+155
+00:06:45,670 --> 00:06:48,520
+E a massa do cavalo vezes a aceleração
+dá...
+
+156
+00:06:48,710 --> 00:06:49,980
+cento e noventa e dois.
+
+157
+00:06:50,010 --> 00:06:51,220
+Fecha certinho.
+
+158
+00:06:51,750 --> 00:06:56,370
+Numa corda ideal, de massa desprezível, a
+tensão é a mesma nas duas
+
+159
+00:06:56,390 --> 00:06:57,040
+pontas.
+
+160
+00:06:57,570 --> 00:07:00,340
+E aqui está a resposta da pergunta do
+começo.
+
+161
+00:07:00,410 --> 00:07:04,870
+Sim, a corda puxa o cavalo para trás com
+dois mil seiscentos e oito
+
+162
+00:07:04,890 --> 00:07:05,630
+newtons.
+
+163
+00:07:05,650 --> 00:07:09,450
+Só que o chão empurra o cavalo para a
+frente com dois mil e oitocentos.
+
+164
+00:07:09,470 --> 00:07:12,230
+O cavalo não anda porque ganha a briga com
+a pedra:
+
+165
+00:07:12,250 --> 00:07:14,840
+ele anda porque ganha a briga com o chão.
+
+166
+00:07:15,350 --> 00:07:18,060
+E se o chão embaixo das patas virasse
+gelo?
+
+167
+00:07:18,510 --> 00:07:19,970
+Vira um cavalo de patins.
+
+168
+00:07:19,990 --> 00:07:24,010
+As patas começam a escorregar para trás, e
+aí o que vale é o atrito
+
+169
+00:07:24,030 --> 00:07:24,750
+cinético.
+
+170
+00:07:24,770 --> 00:07:28,430
+Vamos supor um coeficiente de atrito
+cinético de zero vírgula um:
+
+171
+00:07:28,450 --> 00:07:31,790
+o chão empurra o cavalo para a frente com
+zero vírgula um,
+
+172
+00:07:31,810 --> 00:07:35,790
+vezes seiscentos, vezes nove vírgula oito,
+quinhentos e oitenta e
+
+173
+00:07:35,810 --> 00:07:36,830
+oito newtons.
+
+174
+00:07:36,850 --> 00:07:40,390
+Só que a pedra continua raspando com dois
+mil trezentos e cinquenta
+
+175
+00:07:40,410 --> 00:07:41,810
+e dois, para trás.
+
+176
+00:07:41,830 --> 00:07:45,710
+A força externa resultante aponta para
+trás, e o conjunto freia,
+
+177
+00:07:45,730 --> 00:07:49,510
+com uma desaceleração de cerca de um
+vírgula vinte e seis metros por
+
+178
+00:07:49,530 --> 00:07:51,460
+segundo ao quadrado, até parar.
+
+179
+00:07:51,910 --> 00:07:52,790
+Olha as barras:
+
+180
+00:07:52,810 --> 00:07:55,470
+o cavalo é o mesmo, a corda é a mesma.
+
+181
+00:07:55,490 --> 00:07:57,660
+O que mudou foi a força do chão.
+
+182
+00:07:58,170 --> 00:08:01,230
+O Cyrano de Bergerac tinha um plano para
+chegar à Lua:
+
+183
+00:08:01,250 --> 00:08:04,350
+sentar numa placa de ferro e jogar um ímã
+para cima.
+
+184
+00:08:04,370 --> 00:08:08,400
+O ímã puxa a placa, você joga o ímã de
+novo, e assim vai subindo.
+
+185
+00:08:08,430 --> 00:08:09,360
+Genial, né?
+
+186
+00:08:09,770 --> 00:08:10,970
+Pena que não funciona.
+
+187
+00:08:10,990 --> 00:08:14,910
+Coloca a pessoa, a placa e o ímã dentro da
+mesma fronteira:
+
+188
+00:08:14,930 --> 00:08:18,030
+a atração entre o ímã e a placa vira força
+interna,
+
+189
+00:08:18,050 --> 00:08:20,730
+e força interna não muda o momento do
+conjunto.
+
+190
+00:08:20,750 --> 00:08:22,790
+Ela não consegue levantar o conjunto.
+
+191
+00:08:22,810 --> 00:08:26,830
+E a gravidade, que é externa, continua
+puxando tudo para baixo.
+
+192
+00:08:26,850 --> 00:08:28,220
+A Lua vai ter que esperar.
+
+193
+00:08:28,730 --> 00:08:30,890
+Até o jeito como você anda é isso.
+
+194
+00:08:30,910 --> 00:08:33,790
+A cada passo, o seu pé empurra o chão para
+trás,
+
+195
+00:08:33,810 --> 00:08:36,450
+e o atrito do chão empurra você para a
+frente.
+
+196
+00:08:36,470 --> 00:08:39,610
+Quem acelera você é o chão, uma força
+externa.
+
+197
+00:08:39,630 --> 00:08:41,750
+Por isso andar no gelo é tão difícil.
+
+198
+00:08:41,770 --> 00:08:44,100
+Guarda essa ideia, que daqui a pouco ela
+volta.
+
+199
+00:08:45,350 --> 00:08:47,400
+Agora a segunda grande ideia:
+
+200
+00:08:47,510 --> 00:08:49,060
+a escolha do sistema.
+
+201
+00:08:49,130 --> 00:08:51,910
+Uma bola de um quilograma cai de dez
+metros.
+
+202
+00:08:51,930 --> 00:08:55,910
+A velocidade de chegada é a raiz quadrada
+de duas vezes a aceleração
+
+203
+00:08:55,930 --> 00:08:57,749
+da gravidade vezes a altura:
+
+204
+00:08:57,769 --> 00:08:59,499
+catorze metros por segundo.
+
+205
+00:08:59,530 --> 00:09:03,110
+Se o sistema é só a bola, o momento dela
+cresce o tempo todo.
+
+206
+00:09:03,130 --> 00:09:04,010
+E está certo:
+
+207
+00:09:04,030 --> 00:09:06,570
+o peso vem da Terra, que está fora da
+fronteira,
+
+208
+00:09:06,590 --> 00:09:08,520
+e força externa muda o momento.
+
+209
+00:09:09,110 --> 00:09:10,760
+Agora aumenta o sistema:
+
+210
+00:09:10,810 --> 00:09:12,150
+bola mais Terra.
+
+211
+00:09:12,170 --> 00:09:15,970
+A atração entre as duas vira força
+interna, e o momento total fica
+
+212
+00:09:15,990 --> 00:09:17,310
+zero a todo instante.
+
+213
+00:09:17,330 --> 00:09:21,010
+A bola ganha momento para baixo, e a Terra
+ganha o mesmo tanto para
+
+214
+00:09:21,030 --> 00:09:21,530
+cima.
+
+215
+00:09:21,550 --> 00:09:25,670
+Só que a Terra tem uns seis vezes dez
+elevado a vinte e quatro quilogramas,
+
+216
+00:09:25,690 --> 00:09:29,610
+então a velocidade dela fica em uns dois
+vírgula três vezes dez elevado
+
+217
+00:09:29,630 --> 00:09:31,900
+a menos vinte e quatro metros por segundo.
+
+218
+00:09:32,370 --> 00:09:34,270
+Ninguém percebe, nem a Terra.
+
+219
+00:09:34,290 --> 00:09:35,480
+Mas a conta fecha.
+
+220
+00:09:36,050 --> 00:09:37,940
+Agora um exemplo mais esperto.
+
+221
+00:09:37,970 --> 00:09:41,830
+Dois blocos num chão com atrito, com uma
+mola comprimida entre eles:
+
+222
+00:09:41,850 --> 00:09:44,830
+o leve, de um quilograma, e o pesado, de
+dois.
+
+223
+00:09:44,850 --> 00:09:46,950
+O sentido positivo é para a direita.
+
+224
+00:09:46,970 --> 00:09:50,790
+A mola dispara os dois num intervalo tão
+curto que o impulso do atrito
+
+225
+00:09:50,810 --> 00:09:52,610
+nesse instante é desprezível:
+
+226
+00:09:52,630 --> 00:09:55,590
+o leve sai para a esquerda a dois metros
+por segundo,
+
+227
+00:09:55,610 --> 00:09:58,690
+e o pesado sai para a direita a um metro
+por segundo.
+
+228
+00:09:58,710 --> 00:10:01,950
+Logo depois do disparo, o momento total
+continua zero:
+
+229
+00:10:01,970 --> 00:10:04,380
+menos dois de um lado, mais dois do outro.
+
+230
+00:10:04,930 --> 00:10:06,720
+Antes, um caso para comparar:
+
+231
+00:10:06,750 --> 00:10:07,890
+massas iguais.
+
+232
+00:10:07,910 --> 00:10:11,430
+Os blocos saem com a mesma velocidade, em
+sentidos opostos,
+
+233
+00:10:11,450 --> 00:10:13,990
+e os atritos também são iguais e opostos.
+
+234
+00:10:14,010 --> 00:10:17,750
+A força externa resultante é zero, o
+momento total fica zero,
+
+235
+00:10:17,770 --> 00:10:19,240
+e os dois param juntos.
+
+236
+00:10:19,270 --> 00:10:20,180
+Sem graça, né?
+
+237
+00:10:20,690 --> 00:10:23,550
+Com massas diferentes, o atrito não se
+cancela.
+
+238
+00:10:23,570 --> 00:10:26,310
+O coeficiente de atrito é zero vírgula
+dois.
+
+239
+00:10:26,330 --> 00:10:29,830
+O bloco leve vai para a esquerda, então o
+atrito nele aponta para
+
+240
+00:10:29,850 --> 00:10:30,590
+a direita:
+
+241
+00:10:30,610 --> 00:10:32,590
+um vírgula noventa e seis newtons.
+
+242
+00:10:32,610 --> 00:10:36,290
+O pesado vai para a direita, e o atrito
+nele aponta para a esquerda,
+
+243
+00:10:36,310 --> 00:10:37,630
+com o dobro do tamanho:
+
+244
+00:10:37,650 --> 00:10:39,790
+três vírgula noventa e dois newtons.
+
+245
+00:10:39,810 --> 00:10:43,390
+A força externa resultante fica em um
+vírgula noventa e seis newtons
+
+246
+00:10:43,410 --> 00:10:46,350
+para a esquerda, e o momento total, que
+começou em zero,
+
+247
+00:10:46,370 --> 00:10:47,420
+começa a descer.
+
+248
+00:10:47,910 --> 00:10:51,690
+O pesado para primeiro, em uns cinquenta e
+um centésimos de segundo.
+
+249
+00:10:51,710 --> 00:10:55,450
+Nesse instante, o momento total chega a
+menos um quilograma metro
+
+250
+00:10:55,470 --> 00:10:58,030
+por segundo, o ponto mais baixo do
+gráfico.
+
+251
+00:10:58,050 --> 00:11:01,570
+Depois, só sobra o atrito no leve, que
+aponta para a direita,
+
+252
+00:11:01,590 --> 00:11:03,550
+e o momento total sobe de volta.
+
+253
+00:11:03,570 --> 00:11:06,870
+Quando o leve também para, em um vírgula
+zero dois segundo,
+
+254
+00:11:06,890 --> 00:11:07,980
+ele volta a zero.
+
+255
+00:11:09,010 --> 00:11:09,920
+Mas espera aí:
+
+256
+00:11:09,950 --> 00:11:12,630
+o momento total foi até menos um e voltou.
+
+257
+00:11:12,650 --> 00:11:14,380
+Para onde ele foi nesse meio-tempo?
+
+258
+00:11:14,790 --> 00:11:15,830
+Para a Terra!
+
+259
+00:11:15,850 --> 00:11:18,410
+O atrito é a força entre os blocos e o
+chão.
+
+260
+00:11:18,430 --> 00:11:21,830
+Com a Terra dentro do sistema, o atrito
+vira força interna,
+
+261
+00:11:21,850 --> 00:11:24,390
+e o momento total é zero a todo instante.
+
+262
+00:11:24,410 --> 00:11:26,790
+O gráfico de baixo é o espelho do de cima:
+
+263
+00:11:26,810 --> 00:11:29,230
+o chão ganha momento, e depois devolve.
+
+264
+00:11:29,250 --> 00:11:30,290
+Então fica a dica:
+
+265
+00:11:30,310 --> 00:11:33,750
+quando a conta do momento não fecha, a
+primeira pergunta é...
+
+266
+00:11:33,770 --> 00:11:35,560
+quem eu deixei de fora do sistema?
+
+267
+00:11:36,650 --> 00:11:39,950
+Agora uma consequência que vai ser muito
+útil nos exercícios.
+
+268
+00:11:39,970 --> 00:11:42,590
+Os mesmos dois blocos, só que sem atrito.
+
+269
+00:11:42,610 --> 00:11:46,370
+A mola dispara os dois a partir do
+repouso, em sentidos opostos.
+
+270
+00:11:46,390 --> 00:11:50,090
+Antes de qualquer um bater num batente, a
+única força na horizontal
+
+271
+00:11:50,110 --> 00:11:51,790
+é a da mola, que é interna.
+
+272
+00:11:51,810 --> 00:11:54,030
+Então o momento total continua zero:
+
+273
+00:11:54,050 --> 00:11:57,390
+os dois momentos têm o mesmo tamanho e
+sentidos opostos.
+
+274
+00:11:57,410 --> 00:12:01,450
+Em tamanho, a massa do primeiro bloco
+vezes a velocidade dele é igual
+
+275
+00:12:01,470 --> 00:12:04,110
+à massa do segundo vezes a velocidade
+dele.
+
+276
+00:12:04,130 --> 00:12:05,250
+Repara nas barras:
+
+277
+00:12:05,270 --> 00:12:06,770
+os momentos são iguais.
+
+278
+00:12:06,790 --> 00:12:08,160
+Mas as energias...
+
+279
+00:12:08,290 --> 00:12:08,740
+não.
+
+280
+00:12:09,250 --> 00:12:09,840
+Por quê?
+
+281
+00:12:10,330 --> 00:12:14,270
+Do vídeo anterior, a energia cinética é o
+momento ao quadrado dividido
+
+282
+00:12:14,290 --> 00:12:15,770
+por duas vezes a massa.
+
+283
+00:12:15,790 --> 00:12:19,930
+Com o mesmo momento, a energia fica
+inversamente proporcional à massa.
+
+284
+00:12:19,950 --> 00:12:20,770
+Passo a passo:
+
+285
+00:12:20,790 --> 00:12:24,050
+a razão entre as velocidades é a razão
+inversa das massas,
+
+286
+00:12:24,070 --> 00:12:25,830
+e o mais leve anda mais rápido.
+
+287
+00:12:25,850 --> 00:12:29,010
+Na razão das energias, a velocidade entra
+ao quadrado,
+
+288
+00:12:29,030 --> 00:12:30,790
+e sobra uma coisa bem simples:
+
+289
+00:12:30,810 --> 00:12:34,750
+a energia do primeiro dividida pela do
+segundo é a massa do segundo
+
+290
+00:12:34,770 --> 00:12:36,500
+dividida pela massa do primeiro.
+
+291
+00:12:36,970 --> 00:12:37,650
+Ou seja:
+
+292
+00:12:37,670 --> 00:12:40,760
+os momentos têm o mesmo tamanho, mas as
+energias,
+
+293
+00:12:40,790 --> 00:12:41,190
+não.
+
+294
+00:12:41,210 --> 00:12:44,850
+O leve sai a dois metros por segundo e
+fica com dois joules;
+
+295
+00:12:44,870 --> 00:12:48,430
+o pesado sai a um metro por segundo e fica
+com um joule.
+
+296
+00:12:48,450 --> 00:12:51,500
+Dois terços da energia cinética ficam com
+o mais leve.
+
+297
+00:12:51,930 --> 00:12:54,190
+Com massas iguais, seria meio a meio.
+
+298
+00:12:54,210 --> 00:12:58,130
+E quanto maior a diferença entre as
+massas, maior a fração da energia
+
+299
+00:12:58,150 --> 00:12:59,370
+que fica com o mais leve.
+
+300
+00:12:59,390 --> 00:13:00,150
+Guarda isso:
+
+301
+00:13:00,170 --> 00:13:03,630
+daqui a pouco explica por que a bala sai
+tão rápida enquanto quem
+
+302
+00:13:03,650 --> 00:13:05,480
+atira recua tão devagar.
+
+303
+00:13:05,950 --> 00:13:08,400
+Com a teoria na mão, bora para os
+exercícios!
+
+304
+00:13:09,630 --> 00:13:10,820
+Primeiro exercício.
+
+305
+00:13:10,950 --> 00:13:15,050
+Você, com setenta quilogramas, está parado
+num gelo sem atrito.
+
+306
+00:13:15,070 --> 00:13:18,090
+Um amigo joga em você uma bola de
+seiscentos gramas,
+
+307
+00:13:18,110 --> 00:13:19,750
+a dez metros por segundo.
+
+308
+00:13:19,770 --> 00:13:22,950
+O sistema é você mais a bola, e, na
+horizontal,
+
+309
+00:13:22,970 --> 00:13:24,750
+não tem nenhuma força externa.
+
+310
+00:13:24,770 --> 00:13:26,940
+Então o momento horizontal se conserva.
+
+311
+00:13:27,470 --> 00:13:28,410
+Primeiro caso:
+
+312
+00:13:28,430 --> 00:13:29,860
+você agarra a bola.
+
+313
+00:13:29,910 --> 00:13:31,950
+Antes, só a bola tinha momento:
+
+314
+00:13:31,970 --> 00:13:35,680
+zero vírgula seis vezes dez, seis
+quilogramas metro por segundo.
+
+315
+00:13:35,710 --> 00:13:39,770
+Depois, você e a bola seguem juntos, e
+esse momento se divide pela
+
+316
+00:13:39,790 --> 00:13:42,610
+massa total, setenta vírgula seis
+quilogramas.
+
+317
+00:13:42,630 --> 00:13:45,620
+Você sai a uns oito centímetros e meio por
+segundo.
+
+318
+00:13:45,670 --> 00:13:46,740
+Bem devagarinho.
+
+319
+00:13:47,730 --> 00:13:51,440
+E se a bola bate no seu peito e volta a
+oito metros por segundo?
+
+320
+00:13:51,870 --> 00:13:55,550
+Agora ela perde todo o momento que tinha e
+ainda ganha momento para
+
+321
+00:13:55,570 --> 00:13:56,450
+o outro lado.
+
+322
+00:13:56,470 --> 00:13:58,090
+E tudo isso vai para você:
+
+323
+00:13:58,110 --> 00:14:02,410
+a sua massa vezes a sua velocidade é a
+massa da bola vezes dez mais
+
+324
+00:14:02,430 --> 00:14:02,850
+oito.
+
+325
+00:14:02,870 --> 00:14:05,980
+Dá uns quinze centímetros por segundo,
+quase o dobro.
+
+326
+00:14:06,450 --> 00:14:08,790
+É o mesmo efeito da parede do vídeo
+anterior:
+
+327
+00:14:08,810 --> 00:14:11,660
+rebater transfere mais momento do que
+agarrar.
+
+328
+00:14:12,170 --> 00:14:13,080
+E a energia?
+
+329
+00:14:13,490 --> 00:14:15,430
+A bola chegou com trinta joules.
+
+330
+00:14:15,450 --> 00:14:18,970
+Quando você agarra, sobram uns zero
+vírgula vinte e cinco joules:
+
+331
+00:14:18,990 --> 00:14:22,090
+quase trinta viram energia interna, em
+deformação,
+
+332
+00:14:22,110 --> 00:14:23,830
+aquecimento e um pouco de som.
+
+333
+00:14:23,850 --> 00:14:27,270
+Quando você rebate, sobram uns vinte, e
+uns dez se perdem.
+
+334
+00:14:27,290 --> 00:14:30,730
+O momento se conservou nos dois casos; a
+energia cinética,
+
+335
+00:14:30,750 --> 00:14:31,460
+em nenhum.
+
+336
+00:14:31,490 --> 00:14:34,200
+Ela só se conserva se a colisão for
+elástica.
+
+337
+00:14:35,310 --> 00:14:36,520
+Segundo exercício.
+
+338
+00:14:36,550 --> 00:14:40,050
+Um caçador está parado num lago congelado,
+sem atrito.
+
+339
+00:14:40,070 --> 00:14:43,640
+Não me pergunte o que ele caça ali; a
+física só quer saber do recuo.
+
+340
+00:14:43,730 --> 00:14:47,730
+Ele e a arma têm, juntos, setenta e dois
+vírgula cinco quilogramas.
+
+341
+00:14:47,750 --> 00:14:51,430
+A bala tem quatro vírgula dois gramas e
+sai a novecentos e sessenta
+
+342
+00:14:51,450 --> 00:14:53,040
+e cinco metros por segundo.
+
+343
+00:14:53,530 --> 00:14:55,380
+Primeiro, o tiro na horizontal.
+
+344
+00:14:55,470 --> 00:14:56,850
+Antes, tudo parado:
+
+345
+00:14:56,870 --> 00:14:58,430
+o momento total é zero.
+
+346
+00:14:58,450 --> 00:15:02,630
+Depois, continua zero, então o momento da
+bala para a frente é igual
+
+347
+00:15:02,650 --> 00:15:04,570
+ao momento do caçador para trás.
+
+348
+00:15:04,590 --> 00:15:08,830
+A velocidade de recuo é o momento da bala
+dividido pela massa do caçador:
+
+349
+00:15:08,850 --> 00:15:11,270
+uns cinco vírgula seis centímetros por
+segundo.
+
+350
+00:15:11,290 --> 00:15:12,840
+Pouquinho, mas dá para ver.
+
+351
+00:15:13,850 --> 00:15:17,490
+Agora ele atira para cima, a cinquenta e
+seis graus da horizontal.
+
+352
+00:15:17,510 --> 00:15:19,520
+A bala leva momento para cima...
+
+353
+00:15:19,590 --> 00:15:23,450
+e, pela conservação, o caçador deveria
+ganhar momento para baixo.
+
+354
+00:15:23,470 --> 00:15:25,070
+Só que ele não afunda no gelo.
+
+355
+00:15:25,090 --> 00:15:26,500
+Então quem segurou ele?
+
+356
+00:15:27,050 --> 00:15:27,970
+Foi o gelo!
+
+357
+00:15:27,990 --> 00:15:32,230
+Durante o disparo, a normal do gelo cresce
+de repente e segura o momento
+
+358
+00:15:32,250 --> 00:15:32,970
+vertical.
+
+359
+00:15:32,990 --> 00:15:34,830
+Ela é externa e impulsiva:
+
+360
+00:15:34,850 --> 00:15:36,390
+grande e bem rápida.
+
+361
+00:15:36,410 --> 00:15:39,400
+Então, na vertical, o momento não se
+conserva.
+
+362
+00:15:39,430 --> 00:15:43,720
+Mas na horizontal não tem atrito, e o
+momento horizontal se conserva.
+
+363
+00:15:43,810 --> 00:15:47,370
+Só a parte horizontal do momento da bala
+volta para o caçador:
+
+364
+00:15:47,390 --> 00:15:51,730
+a massa dele vezes a velocidade de recuo é
+a massa da bala vezes a
+
+365
+00:15:51,750 --> 00:15:55,410
+velocidade dela vezes o cosseno de
+cinquenta e seis graus.
+
+366
+00:15:55,430 --> 00:15:58,380
+O recuo cai para uns três centímetros por
+segundo.
+
+367
+00:15:59,350 --> 00:16:00,280
+E a energia?
+
+368
+00:16:00,750 --> 00:16:01,730
+Lembra da teoria:
+
+369
+00:16:01,750 --> 00:16:05,810
+momentos do mesmo tamanho, e quem tem
+menos massa fica com mais energia
+
+370
+00:16:05,830 --> 00:16:06,530
+cinética.
+
+371
+00:16:06,550 --> 00:16:07,470
+Olha as barras.
+
+372
+00:16:07,490 --> 00:16:11,850
+A bala sai com quase dois mil joules; o
+caçador recua com uns onze
+
+373
+00:16:11,870 --> 00:16:13,170
+centésimos de joule.
+
+374
+00:16:13,190 --> 00:16:16,750
+A energia da bala é umas dezessete mil
+vezes maior,
+
+375
+00:16:16,770 --> 00:16:20,740
+que é exatamente a massa do caçador
+dividida pela massa da bala.
+
+376
+00:16:21,190 --> 00:16:25,170
+Uns noventa e nove vírgula nove nove por
+cento da energia cinética
+
+377
+00:16:25,190 --> 00:16:26,190
+ficam na bala.
+
+378
+00:16:26,210 --> 00:16:28,450
+Por isso o caçador recua tão devagar.
+
+379
+00:16:28,470 --> 00:16:29,330
+Mas cuidado:
+
+380
+00:16:29,350 --> 00:16:31,810
+isso não quer dizer que o coice seja
+fraco.
+
+381
+00:16:31,830 --> 00:16:35,820
+A força do recuo depende também de quanto
+tempo dura o impulso.
+
+382
+00:16:36,790 --> 00:16:39,170
+Mais um tiro, agora com uma pegadinha.
+
+383
+00:16:39,190 --> 00:16:42,530
+Um rifle de dois vírgula oito quilogramas,
+num apoio frouxo,
+
+384
+00:16:42,550 --> 00:16:44,970
+que quase não segura o rifle durante o
+disparo,
+
+385
+00:16:44,990 --> 00:16:47,850
+dispara uma bala de sete vírgula dois
+gramas.
+
+386
+00:16:47,870 --> 00:16:50,780
+A bala sai a seiscentos e um metros por
+segundo...
+
+387
+00:16:50,830 --> 00:16:51,930
+em relação ao cano.
+
+388
+00:16:51,950 --> 00:16:55,750
+E o rifle recua a um vírgula oitenta e
+cinco metros por segundo,
+
+389
+00:16:55,770 --> 00:16:56,890
+em relação ao chão.
+
+390
+00:16:56,910 --> 00:16:59,480
+Os gases da explosão carregam algum
+momento?
+
+391
+00:16:59,950 --> 00:17:02,430
+Primeiro, cuidado com a velocidade da
+bala.
+
+392
+00:17:02,450 --> 00:17:06,110
+Os seiscentos e um são em relação ao cano,
+e o cano está andando para
+
+393
+00:17:06,130 --> 00:17:06,670
+trás.
+
+394
+00:17:06,690 --> 00:17:10,930
+Em relação ao chão, a bala anda seiscentos
+e um menos um vírgula oitenta
+
+395
+00:17:10,950 --> 00:17:11,590
+e cinco:
+
+396
+00:17:11,610 --> 00:17:14,990
+quinhentos e noventa e nove vírgula quinze
+metros por segundo.
+
+397
+00:17:15,010 --> 00:17:19,030
+Então o momento da bala é quatro vírgula
+trinta e um quilogramas metro
+
+398
+00:17:19,050 --> 00:17:22,890
+por segundo, para a frente, e o do rifle,
+cinco vírgula dezoito,
+
+399
+00:17:22,910 --> 00:17:23,780
+para trás.
+
+400
+00:17:24,570 --> 00:17:28,010
+Só que, antes do tiro, o momento total era
+zero,
+
+401
+00:17:28,030 --> 00:17:30,310
+e essas duas setas não se cancelam:
+
+402
+00:17:30,330 --> 00:17:31,620
+a do rifle é maior.
+
+403
+00:17:31,710 --> 00:17:32,950
+Falta alguém na conta.
+
+404
+00:17:32,970 --> 00:17:33,990
+São os gases!
+
+405
+00:17:34,010 --> 00:17:37,270
+Aqueles convidados que ninguém chamou, mas
+que aparecem na foto.
+
+406
+00:17:37,290 --> 00:17:41,070
+Eles levam uns zero vírgula oitenta e sete
+quilogramas metro por segundo
+
+407
+00:17:41,090 --> 00:17:41,939
+para a frente.
+
+408
+00:17:41,970 --> 00:17:44,040
+Agora sim, a soma dá zero.
+
+409
+00:17:45,010 --> 00:17:47,290
+É a mesma lição dos blocos com a Terra.
+
+410
+00:17:47,310 --> 00:17:50,669
+O sistema certo aqui é bala, rifle e
+gases.
+
+411
+00:17:50,689 --> 00:17:54,189
+Se a conta do momento não fecha, quase
+sempre tem alguém escondido
+
+412
+00:17:54,209 --> 00:17:55,439
+que você deixou de fora.
+
+413
+00:17:56,449 --> 00:18:00,310
+Para fechar os exercícios, um problema que
+mistura física e história.
+
+414
+00:18:00,330 --> 00:18:03,830
+No fim do século dezessete, o Newton
+defendia que a luz era feita
+
+415
+00:18:03,850 --> 00:18:04,929
+de corpúsculos:
+
+416
+00:18:04,949 --> 00:18:07,330
+bolinhas minúsculas e muito rápidas.
+
+417
+00:18:07,350 --> 00:18:11,000
+Será que o impulso explica a reflexão e a
+refração nesse modelo?
+
+418
+00:18:11,450 --> 00:18:14,050
+Começa pela reflexão, num espelho ideal.
+
+419
+00:18:14,070 --> 00:18:17,930
+O espelho só consegue empurrar na direção
+perpendicular à superfície,
+
+420
+00:18:17,950 --> 00:18:18,870
+a direção normal.
+
+421
+00:18:18,890 --> 00:18:21,510
+Então o impulso no corpúsculo é todo
+normal:
+
+422
+00:18:21,530 --> 00:18:25,490
+ele inverte a parte normal da velocidade e
+não mexe na parte paralela
+
+423
+00:18:25,510 --> 00:18:26,170
+ao espelho.
+
+424
+00:18:26,190 --> 00:18:27,410
+Repara nas setinhas:
+
+425
+00:18:27,430 --> 00:18:30,890
+a parte paralela fica igual, e a normal
+troca de sentido.
+
+426
+00:18:30,910 --> 00:18:31,670
+Resultado:
+
+427
+00:18:31,690 --> 00:18:34,910
+o ângulo de reflexão é igual ao ângulo de
+incidência.
+
+428
+00:18:34,930 --> 00:18:36,980
+Até aqui, o Newton está mandando bem.
+
+429
+00:18:37,510 --> 00:18:39,570
+Agora a passagem do ar para a água.
+
+430
+00:18:39,590 --> 00:18:43,050
+No modelo de Newton, a água também dá um
+impulso só normal,
+
+431
+00:18:43,070 --> 00:18:44,850
+puxando o corpúsculo para dentro.
+
+432
+00:18:44,870 --> 00:18:48,730
+De novo, a parte da velocidade paralela à
+superfície se conserva.
+
+433
+00:18:48,750 --> 00:18:50,950
+Com os ângulos medidos a partir da normal:
+
+434
+00:18:50,970 --> 00:18:55,070
+a velocidade no ar vezes o seno do ângulo
+no ar é igual à velocidade
+
+435
+00:18:55,090 --> 00:18:57,620
+na água vezes o seno do ângulo na água.
+
+436
+00:18:58,070 --> 00:19:00,910
+Arrumando essa igualdade, aparece uma
+coisa conhecida:
+
+437
+00:19:00,930 --> 00:19:04,830
+o seno do ângulo no ar dividido pelo seno
+do ângulo na água é uma
+
+438
+00:19:04,850 --> 00:19:05,630
+constante.
+
+439
+00:19:05,650 --> 00:19:07,280
+É a forma da lei de Snell!
+
+440
+00:19:07,310 --> 00:19:11,050
+Só que, no modelo de Newton, essa
+constante é a velocidade na água
+
+441
+00:19:11,070 --> 00:19:12,970
+dividida pela velocidade no ar.
+
+442
+00:19:12,990 --> 00:19:14,020
+Guarda essa ordem.
+
+443
+00:19:14,510 --> 00:19:16,740
+Agora olha o que acontece de verdade:
+
+444
+00:19:16,770 --> 00:19:19,170
+na água, a luz se aproxima da normal.
+
+445
+00:19:19,190 --> 00:19:23,170
+O ângulo na água é menor que o ângulo no
+ar, então a razão dos senos
+
+446
+00:19:23,190 --> 00:19:24,170
+é maior que um.
+
+447
+00:19:24,190 --> 00:19:27,950
+Pelo modelo, a velocidade na água teria
+que ser maior que a velocidade
+
+448
+00:19:27,970 --> 00:19:28,430
+no ar.
+
+449
+00:19:28,450 --> 00:19:31,120
+Os corpúsculos acelerariam ao entrar na
+água.
+
+450
+00:19:31,630 --> 00:19:35,050
+E, por mais de um século, ninguém
+conseguiu medir isso.
+
+451
+00:19:35,070 --> 00:19:38,930
+Até que, em mil oitocentos e cinquenta, o
+Foucault mediu a velocidade
+
+452
+00:19:38,950 --> 00:19:39,910
+da luz na água...
+
+453
+00:19:39,930 --> 00:19:41,500
+e ela era mais lenta!
+
+454
+00:19:41,990 --> 00:19:44,580
+A previsão do modelo corpuscular caiu.
+
+455
+00:19:44,650 --> 00:19:47,960
+Na descrição ondulatória, a relação vem
+invertida:
+
+456
+00:19:47,990 --> 00:19:52,130
+a razão dos senos é a velocidade no ar
+dividida pela velocidade na
+
+457
+00:19:52,150 --> 00:19:52,570
+água.
+
+458
+00:19:52,590 --> 00:19:54,480
+E é essa que a natureza segue.
+
+459
+00:19:55,050 --> 00:19:56,740
+E repara numa coisa bonita:
+
+460
+00:19:56,790 --> 00:20:00,170
+o raciocínio do impulso estava certo
+dentro das hipóteses.
+
+461
+00:20:00,190 --> 00:20:03,650
+O que falhou foi o modelo da luz como
+bolinhas clássicas.
+
+462
+00:20:03,670 --> 00:20:07,290
+Uma ideia física correta, aplicada num
+modelo inadequado,
+
+463
+00:20:07,310 --> 00:20:10,690
+fez uma previsão que dava para testar, e o
+experimento mostrou onde
+
+464
+00:20:10,710 --> 00:20:11,600
+estava o erro.
+
+465
+00:20:11,630 --> 00:20:15,860
+Até o Newton errou, o que, convenhamos, é
+um alívio para todo mundo.
+
+466
+00:20:16,910 --> 00:20:18,660
+Só que a história tem uma virada:
+
+467
+00:20:18,690 --> 00:20:21,130
+a luz carrega momento de verdade.
+
+468
+00:20:21,150 --> 00:20:25,470
+O momento de um pulso de luz é a energia
+dele dividida pela velocidade
+
+469
+00:20:25,490 --> 00:20:26,140
+da luz.
+
+470
+00:20:26,190 --> 00:20:28,830
+Olha as duas placas, com a luz batendo de
+frente.
+
+471
+00:20:28,850 --> 00:20:32,810
+Na preta, a luz é absorvida, e a placa
+recebe o momento dela.
+
+472
+00:20:32,830 --> 00:20:36,770
+No espelho, a luz volta, e a placa recebe
+o momento de ida e o de
+
+473
+00:20:36,790 --> 00:20:37,350
+volta:
+
+474
+00:20:37,370 --> 00:20:38,070
+o dobro.
+
+475
+00:20:38,090 --> 00:20:42,250
+Como a luz chega o tempo todo, a placa
+recebe momento a cada segundo,
+
+476
+00:20:42,270 --> 00:20:44,390
+e momento por segundo é força.
+
+477
+00:20:44,410 --> 00:20:47,360
+Por isso o espelho é empurrado com o dobro
+da força.
+
+478
+00:20:47,890 --> 00:20:49,860
+Só que é uma força pequenininha.
+
+479
+00:20:49,890 --> 00:20:53,670
+A luz do Sol chega aqui com mil trezentos
+e sessenta e um watts por
+
+480
+00:20:53,690 --> 00:20:57,570
+metro quadrado, e empurra com uns quatro
+vírgula cinco micropascais
+
+481
+00:20:57,590 --> 00:21:01,370
+se for absorvida, e com o dobro, uns nove,
+se for refletida.
+
+482
+00:21:01,390 --> 00:21:05,730
+Uma vela solar refletora de cem metros
+quadrados recebe uns nove décimos
+
+483
+00:21:05,750 --> 00:21:09,250
+de milinewton, o peso de três ou quatro
+grãos de arroz.
+
+484
+00:21:09,270 --> 00:21:13,150
+Mas, no vácuo, não tem atrito, e a luz
+empurra sem parar.
+
+485
+00:21:13,170 --> 00:21:15,710
+Com paciência, dá para navegar no espaço.
+
+486
+00:21:15,730 --> 00:21:18,710
+E um laser de um watt, numa superfície que
+absorve,
+
+487
+00:21:18,730 --> 00:21:21,760
+empurra com uns três vírgula três
+nanonewtons.
+
+488
+00:21:22,810 --> 00:21:25,760
+Então, o modelo corpuscular do Newton
+caiu.
+
+489
+00:21:25,830 --> 00:21:28,000
+Mas a conservação do momento ficou.
+
+490
+00:21:28,050 --> 00:21:31,510
+Ela vale para a luz, que carrega momento
+mesmo sem ter massa,
+
+491
+00:21:31,530 --> 00:21:35,930
+vale na física quântica, onde o momento
+nem é mais massa vezes velocidade,
+
+492
+00:21:35,950 --> 00:21:38,420
+e vale em tudo o que a gente sabe medir.
+
+493
+00:21:39,670 --> 00:21:42,060
+Então, voltando à pergunta do começo.
+
+494
+00:21:42,170 --> 00:21:44,890
+A corda puxa, sim, o cavalo para trás.
+
+495
+00:21:44,910 --> 00:21:48,830
+Mas, no sistema cavalo, corda e pedra, ela
+é uma força interna,
+
+496
+00:21:48,850 --> 00:21:51,450
+e força interna não muda o momento do
+sistema.
+
+497
+00:21:51,470 --> 00:21:55,230
+Quem acelera o cavalo e a pedra é o chão,
+uma força externa.
+
+498
+00:21:55,250 --> 00:21:57,340
+A pergunta inicial está respondida.
+
+499
+00:21:57,890 --> 00:21:59,530
+Resumindo em três ideias.
+
+500
+00:21:59,550 --> 00:22:00,170
+Primeira:
+
+501
+00:22:00,190 --> 00:22:03,350
+o momento total muda pela força externa
+resultante,
+
+502
+00:22:03,370 --> 00:22:04,960
+componente por componente.
+
+503
+00:22:05,010 --> 00:22:05,630
+Segunda:
+
+504
+00:22:05,650 --> 00:22:09,470
+quando dois corpos partem do repouso e se
+separam por forças internas,
+
+505
+00:22:09,490 --> 00:22:12,890
+os momentos ficam iguais em tamanho e
+opostos em sentido,
+
+506
+00:22:12,910 --> 00:22:16,190
+mas a energia cinética fica principalmente
+com o mais leve.
+
+507
+00:22:16,210 --> 00:22:17,020
+E terceira:
+
+508
+00:22:17,050 --> 00:22:20,630
+se o momento não está se conservando,
+procure as forças externas e
+
+509
+00:22:20,650 --> 00:22:22,900
+confira quem ficou de fora do sistema.
+
+510
+00:22:23,930 --> 00:22:27,270
+Se essas conexões ajudaram você, se
+inscreve no Parallax Lab para
+
+511
+00:22:27,290 --> 00:22:28,960
+acompanhar os próximos vídeos.
+
+512
+00:22:29,450 --> 00:22:31,130
+E fica a pergunta para o próximo:
+
+513
+00:22:31,150 --> 00:22:34,590
+se uma granada explode no meio do voo,
+desprezando a resistência do
+
+514
+00:22:34,610 --> 00:22:36,930
+ar, os pedaços voam para todo lado...
+
+515
+00:22:36,950 --> 00:22:40,310
+mas uma coisa continua exatamente na mesma
+parábola.
+
+516
+00:22:40,330 --> 00:22:40,900
+O quê?
+
+517
+00:22:41,350 --> 00:22:42,520
+No próximo vídeo:
+
+518
+00:22:42,590 --> 00:22:43,640
+centro de massa.
+
+519
+00:22:43,670 --> 00:22:44,620
+Até a próxima!

@@ -1,0 +1,31 @@
+[curious] O cavalo puxa a pedra por uma corda. E olha a pegadinha: numa corda ideal, a tensão é a mesma nas duas pontas. Ela puxa a pedra para a frente e puxa o cavalo para trás... com forças do mesmo tamanho.
+
+Forças iguais e opostas: era para dar empate. Então como é que o cavalo anda, e ainda leva a pedra junto?
+
+A resposta cabe em duas ideias: o que é um sistema, e o que muda o momento dele.
+
+[happy] Fala, pessoal! Bem-vindos ao Parallax Lab!
+
+[thoughtful] Hoje o assunto é o momento de vários corpos juntos. E a gente começa onde o vídeo anterior parou: com esse cavalo teimoso e essa pergunta. Até o final, ela vai estar respondida.
+
+[thoughtful] Primeiro, uma lembrança rápida. No vídeo anterior, a gente olhou para um corpo só. A força resultante é a taxa de variação do momento. E, somando essa força ao longo do tempo, aparece o impulso resultante, que é a variação do momento: a área embaixo da curva da força.
+
+Depois, dois discos batendo. Durante o choque, um empurra o outro com forças iguais e opostas. Então o momento que um ganha é exatamente o que o outro perde. Dois corpos sozinhos, sem ninguém de fora mexendo, têm momento total constante.
+
+[curious] Só que o mundo real quase nunca é tão limpinho. O cavalo pisa no chão, a pedra raspa no chão, e a corda liga os dois. Repara na caixa tracejada. Se você olha só para o cavalo, a força da corda é uma força como outra qualquer: ela puxa o cavalo para trás e entra na força resultante dele. Agora a caixa cresce e engole o cavalo, a corda e a pedra. A mesma força passa a ser uma força de dentro, uma força interna. Então a pergunta de hoje é: as forças de dentro conseguem mudar o momento do conjunto?
+
+[thoughtful] Então o mapa é este. Um corpo só, a gente já resolveu. Hoje são muitos corpos, e aquela interrogação no canto vai virar uma equação. No caminho, a conservação do momento deixa de ser um fato sobre dois discos e vira uma ferramenta para qualquer sistema.
+
+[thoughtful] Vamos combinar as palavras. Um sistema é o grupo de corpos que a gente escolhe acompanhar, dentro de uma fronteira que a gente mesmo desenha, como essa caixa tracejada. As forças que os corpos de dentro fazem uns nos outros, como as molas, são forças internas. As que vêm de fora da fronteira, como o peso de cada esfera, são forças externas. Quem escolhe a fronteira é você, e essa escolha decide o problema inteiro.
+
+[curious] E o que muda o momento do sistema? Vamos por partes, com só duas esferas e uma mola. Sobre a primeira esfera agem a força da mola, que vem da segunda, e o peso, que é externo. Pela segunda lei, a taxa de variação do momento da primeira esfera é a soma dessas duas forças. Na segunda esfera, é a mesma história: a força da mola, que agora vem da primeira, mais o peso dela.
+
+Agora vem o truque: soma as duas equações. À esquerda, aparece a taxa de variação do momento total. À direita, as duas forças da mola. Só que, pela terceira lei, a força que a primeira esfera recebe da segunda é igual e oposta à que a segunda recebe da primeira. Somadas, elas dão zero e somem da conta. Sobra só a força externa. Ou seja: a mola estica, encolhe, sacode as esferas... mas o momento total só escuta o que vem de fora.
+
+[thoughtful] Com dois funcionou. E com muitos corpos? Pega uma esfera qualquer, essa que acendeu. A taxa de variação do momento dela é a soma das forças que todas as outras esferas fazem nela, mais a força externa sobre ela.
+
+Agora a gente soma essa equação para todas as esferas. À esquerda, a soma dos momentos vira o momento total do sistema, essa seta magenta. À direita, sobram duas partes: uma soma dupla, com todas as forças internas, e a força externa total.
+
+[curious] Essa soma dupla assusta? Calma, ela é só uma tabela. Cada linha é quem recebe a força, e cada coluna é quem faz. Aqui está a força que a esfera um recebe da esfera dois, e, do outro lado da diagonal, a que a dois recebe da um. É o par da mola, e pela terceira lei ele soma zero. O mesmo vale para os outros pares. A diagonal fica vazia, porque ninguém empurra a si mesmo. As células se apagam duas a duas, e a soma dupla inteira vale zero.
+
+[thoughtful, emphatic] E sobra só isto: a taxa de variação do momento total é igual à força externa resultante. As forças internas, por maiores que sejam, não aparecem. Só uma força de fora muda o momento total de um sistema. A interrogação do canto virou esta equação.

@@ -1,0 +1,11 @@
+# gerados (quadros 3D, renders, backups locais de rodada, logs e auditorias): regeneráveis, ficam só no PC
+threejs/q3d/
+renders/
+_v*/
+media_*/
+log*.txt
+audit_*.txt
+contr_*.txt
+assets_unidade/sprites/raw_*.png
+audio/**/*.mp3
+audio/*.mp3
