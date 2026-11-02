@@ -8,7 +8,7 @@ contínuo** (`narracao_tags_v3.md` → `audio/narracao_v3.wav`, 150,7 s, 463 pal
 `alinhar_voz.py` (forced alignment) → `sync_voz.py` reescreve o `timeline.json` com cada evento 0,12 s antes da palavra que o narra
 (pior atraso medido no render a 30 fps: +0,09 s). 3D: Three.js (`render3d.js`, 1080×1920/30 fps, 0,37 s/quadro); Manim: render em 6 faixas de animações
 (`-n`, uma pasta `media_fN` cada) e composição por `compor.py --midia media_f0,...`. Legenda `gerar_legenda.py` + `legenda_cores.py`
-(`montar_legendado.py --style compacto`). Preview 540×960 com voz: `renders/preview_v5_540x960.mp4`.
+(`montar_legendado.py`, estilo padrão como vid_0027 e vid_0028). Preview 540×960 com voz: `renders/preview_v5_540x960.mp4`.
 disciplina: Física II
 bloco: Oscilações e ondas
 modulo: 5.4 Superposição, interferência e ondas estacionárias (ponte: 6.12 / 7.1, velocidade da luz)
