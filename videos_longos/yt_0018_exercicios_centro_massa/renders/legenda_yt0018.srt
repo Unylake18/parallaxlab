@@ -1,0 +1,1322 @@
+1
+00:00:00,133 --> 00:00:04,220
+Olha esse gafanhoto, parado na ponta
+de uma folha que boia num lago.
+
+2
+00:00:04,260 --> 00:00:08,093
+Ele quer pular para a outra ponta,
+que está a só trinta centímetros dele.
+
+3
+00:00:08,133 --> 00:00:12,300
+E repara que a folha não é leve:
+ela tem quatro vezes a massa dele.
+
+4
+00:00:12,340 --> 00:00:13,427
+Ele salta…
+
+5
+00:00:13,467 --> 00:00:14,520
+e passa direto.
+
+6
+00:00:14,560 --> 00:00:16,600
+Cai na água, bem longe da folha.
+
+7
+00:00:16,640 --> 00:00:19,907
+Agora, olha de novo o instante
+do salto, em câmera lenta.
+
+8
+00:00:19,947 --> 00:00:23,500
+Repara que a folha não fica
+parada: ela escorrega para trás.
+
+9
+00:00:23,540 --> 00:00:27,680
+Então, em que ângulo ele precisa
+pular para cair de volta na folha?
+
+10
+00:00:27,720 --> 00:00:29,427
+Parece que falta informação.
+
+11
+00:00:29,467 --> 00:00:34,493
+Mas o centro de massa resolve isso, e mais
+cinco problemas que parecem impossíveis.
+
+12
+00:00:34,533 --> 00:00:39,800
+Fica comigo: no quarto problema, a gente volta
+nesse gafanhoto e fecha a conta direitinho.
+
+13
+00:00:39,840 --> 00:00:40,840
+Fala, pessoal!
+
+14
+00:00:40,880 --> 00:00:42,550
+Bem-vindos ao Parallax Lab!
+
+15
+00:00:42,590 --> 00:00:45,520
+Hoje é dia de problema
+difícil de centro de massa.
+
+16
+00:00:45,560 --> 00:00:48,520
+Seis problemas que parecem não
+ter nada a ver um com o outro,
+
+17
+00:00:48,560 --> 00:00:50,910
+mas que saem das mesmas poucas ideias.
+
+18
+00:00:50,950 --> 00:00:53,960
+Lembrando: o centro de massa
+é a média das posições,
+
+19
+00:00:54,000 --> 00:00:55,280
+pesada pelas massas.
+
+20
+00:00:55,320 --> 00:00:58,720
+E ele se move como uma partícula
+com toda a massa do sistema,
+
+21
+00:00:58,760 --> 00:01:00,813
+empurrada só pelas forças de fora.
+
+22
+00:01:00,853 --> 00:01:03,400
+Se não tem força externa
+e tudo começa parado,
+
+23
+00:01:03,440 --> 00:01:04,787
+ele não sai do lugar.
+
+24
+00:01:04,827 --> 00:01:07,710
+É só isso que a gente vai
+usar hoje, do jeito certo.
+
+25
+00:01:07,750 --> 00:01:10,227
+E antes de qualquer conta, três perguntas.
+
+26
+00:01:10,267 --> 00:01:11,267
+Qual é o sistema?
+
+27
+00:01:11,307 --> 00:01:13,373
+Tem força externa, e em que direção?
+
+28
+00:01:13,413 --> 00:01:15,507
+E de qual referencial eu estou olhando?
+
+29
+00:01:15,547 --> 00:01:18,173
+Em quase todo problema
+difícil de centro de massa,
+
+30
+00:01:18,213 --> 00:01:20,360
+o difícil é responder bem essas três.
+
+31
+00:01:20,400 --> 00:01:22,474
+A conta que vem depois é curta.
+
+32
+00:01:22,514 --> 00:01:25,933
+Primeiro, um clássico: o disco
+com um furo fora do centro.
+
+33
+00:01:25,973 --> 00:01:27,560
+Onde fica o centro de massa?
+
+34
+00:01:27,600 --> 00:01:32,093
+O raio do furo é metade do raio do
+disco, então a área dele é um quarto.
+
+35
+00:01:32,133 --> 00:01:35,347
+A gente conta o disco inteiro,
+com o centro de massa no centro,
+
+36
+00:01:35,387 --> 00:01:38,600
+e soma o furo com massa
+negativa: menos um quarto,
+
+37
+00:01:38,640 --> 00:01:40,680
+sentado a vinte e cinco centímetros.
+
+38
+00:01:40,720 --> 00:01:44,413
+Dá menos um doze avos de metro,
+uns oito centímetros e pouco,
+
+39
+00:01:44,453 --> 00:01:45,773
+do lado oposto ao furo.
+
+40
+00:01:45,813 --> 00:01:48,490
+E atenção: ninguém tem massa negativa.
+
+41
+00:01:48,540 --> 00:01:51,160
+É só a conta de tirar um
+material que não está lá.
+
+42
+00:01:51,200 --> 00:01:55,133
+Confere: se o furo estivesse no meio,
+o centro de massa ficaria no meio,
+
+43
+00:01:55,173 --> 00:01:56,733
+e a conta dá zero mesmo.
+
+44
+00:01:56,773 --> 00:01:59,777
+E a dica: o centro de massa foge do furo.
+
+45
+00:01:59,817 --> 00:02:01,320
+Agora em duas dimensões.
+
+46
+00:02:01,360 --> 00:02:04,627
+Uma placa quadrada, com um
+furo redondo fora do centro,
+
+47
+00:02:04,667 --> 00:02:06,040
+deslocado na diagonal.
+
+48
+00:02:06,080 --> 00:02:11,400
+A placa tem espessura uniforme, então a massa
+de cada pedaço é proporcional à área dele.
+
+49
+00:02:11,440 --> 00:02:14,200
+Antes de qualquer conta,
+procura a simetria.
+
+50
+00:02:14,240 --> 00:02:19,720
+A diagonal que passa pelo centro da placa e
+pelo centro do furo divide tudo em duas metades
+
+51
+00:02:19,760 --> 00:02:21,280
+iguais, espelhadas.
+
+52
+00:02:21,320 --> 00:02:26,020
+Então o centro de massa está nessa
+diagonal, e as duas coordenadas são iguais.
+
+53
+00:02:26,060 --> 00:02:27,370
+Basta calcular uma.
+
+54
+00:02:27,450 --> 00:02:31,180
+De novo, placa inteira mais
+furo com massa negativa.
+
+55
+00:02:31,220 --> 00:02:34,080
+A placa tem mil e seiscentos
+centímetros quadrados,
+
+56
+00:02:34,120 --> 00:02:35,730
+com o centro de massa no meio.
+
+57
+00:02:35,770 --> 00:02:39,910
+O furo tem cem pi, uns trezentos
+e catorze centímetros quadrados,
+
+58
+00:02:39,950 --> 00:02:43,650
+com o centro oito centímetros
+para a direita e oito para cima.
+
+59
+00:02:43,690 --> 00:02:48,787
+Fazendo a conta, a coordenada horizontal dá
+menos um vírgula noventa e cinco centímetros.
+
+60
+00:02:48,827 --> 00:02:51,000
+E a vertical é igual, pela simetria.
+
+61
+00:02:51,040 --> 00:02:54,480
+O centro de massa fica a quase
+três centímetros do centro,
+
+62
+00:02:54,520 --> 00:02:56,780
+na diagonal, do lado oposto ao furo.
+
+63
+00:02:56,820 --> 00:02:58,950
+E se o furo encolhesse até sumir?
+
+64
+00:02:58,990 --> 00:03:01,200
+O centro de massa voltaria para o meio.
+
+65
+00:03:01,240 --> 00:03:03,360
+E por que aqui ele andou tão pouco?
+
+66
+00:03:03,400 --> 00:03:07,330
+O furo tira só um quinto da placa,
+e ainda está perto do centro.
+
+67
+00:03:07,370 --> 00:03:10,400
+A dica: procura a simetria
+antes de calcular.
+
+68
+00:03:10,440 --> 00:03:14,640
+Ela corta a conta pela metade e ainda
+diz para que lado a resposta vai.
+
+69
+00:03:14,680 --> 00:03:16,490
+Agora em três dimensões.
+
+70
+00:03:16,530 --> 00:03:21,480
+Um fio uniforme, dobrado ao longo de três
+arestas seguidas de um cubo de um metro:
+
+71
+00:03:21,520 --> 00:03:24,960
+primeiro no comprimento, depois
+na largura, depois na altura.
+
+72
+00:03:25,000 --> 00:03:27,210
+Onde fica o centro de massa desse fio?
+
+73
+00:03:27,310 --> 00:03:29,920
+A ferramenta aqui é a
+de montar por partes.
+
+74
+00:03:29,960 --> 00:03:33,080
+Cada aresta é um pedaço
+reto e uniforme, então,
+
+75
+00:03:33,120 --> 00:03:36,960
+por simetria, o centro de massa
+de cada uma está no meio dela.
+
+76
+00:03:37,000 --> 00:03:39,640
+E cada pedaço tem um terço da massa.
+
+77
+00:03:39,680 --> 00:03:42,700
+Então a gente troca o fio
+por três partículas iguais,
+
+78
+00:03:42,740 --> 00:03:44,600
+uma no meio de cada aresta.
+
+79
+00:03:44,640 --> 00:03:49,720
+Como as três massas são iguais, cada coordenada
+do centro de massa é uma média simples,
+
+80
+00:03:49,760 --> 00:03:52,493
+e cada uma é uma conta de uma dimensão só.
+
+81
+00:03:52,533 --> 00:03:57,340
+Na direção do comprimento: meio, um
+e um, média cinco sextos de metro.
+
+82
+00:03:57,380 --> 00:04:01,010
+Na largura: zero, meio
+e um, média meio metro.
+
+83
+00:04:01,050 --> 00:04:05,370
+Na altura: zero, zero e meio,
+média um sexto de metro.
+
+84
+00:04:05,470 --> 00:04:07,245
+E cuidado com uma pegadinha.
+
+85
+00:04:07,285 --> 00:04:10,658
+Muita gente pega os quatro
+cantos do fio e tira a média.
+
+86
+00:04:10,698 --> 00:04:14,285
+Dá três quartos, meio e um
+quarto, que é outro ponto.
+
+87
+00:04:14,325 --> 00:04:17,165
+Está errado, porque a
+massa não está nos cantos:
+
+88
+00:04:17,205 --> 00:04:19,245
+está espalhada ao longo das arestas.
+
+89
+00:04:19,285 --> 00:04:23,165
+Quem representa cada pedaço
+é o meio dele, não as pontas.
+
+90
+00:04:23,205 --> 00:04:26,178
+E olha onde ele foi parar:
+dentro do cubo, no ar,
+
+91
+00:04:26,218 --> 00:04:29,592
+a uns vinte e quatro centímetros
+do pedaço de fio mais próximo.
+
+92
+00:04:29,632 --> 00:04:32,720
+O centro de massa não precisa
+estar em cima do material.
+
+93
+00:04:32,760 --> 00:04:35,885
+Confere: as três coordenadas
+estão entre zero e um,
+
+94
+00:04:35,925 --> 00:04:37,765
+então ele está dentro do cubo.
+
+95
+00:04:37,805 --> 00:04:41,085
+E a dica: em três dimensões,
+separa as coordenadas.
+
+96
+00:04:41,125 --> 00:04:43,645
+Cada uma é um problema de uma dimensão.
+
+97
+00:04:43,685 --> 00:04:45,512
+Agora, a resposta do começo.
+
+98
+00:04:45,552 --> 00:04:48,445
+A folha tem quatro vezes
+a massa do gafanhoto.
+
+99
+00:04:48,485 --> 00:04:51,405
+Ele salta a quatro metros
+por segundo, e repara:
+
+100
+00:04:51,445 --> 00:04:54,925
+essa velocidade é em relação à
+água, não em relação à folha.
+
+101
+00:04:54,965 --> 00:04:58,045
+E a gente supõe que a água não
+segura a folha na horizontal,
+
+102
+00:04:58,085 --> 00:05:00,925
+que a folha é rígida, e
+que a decolagem é rápida.
+
+103
+00:05:00,965 --> 00:05:03,032
+Primeiro, que momento se conserva?
+
+104
+00:05:03,072 --> 00:05:06,765
+Na vertical, tem força externa:
+os pesos e o empuxo da água,
+
+105
+00:05:06,805 --> 00:05:09,165
+que segura a folha quando
+ele empurra para baixo.
+
+106
+00:05:09,205 --> 00:05:11,592
+Então o momento vertical não se conserva.
+
+107
+00:05:11,632 --> 00:05:14,152
+Mas na horizontal, nenhuma força de fora.
+
+108
+00:05:14,192 --> 00:05:18,885
+Por isso, só a componente horizontal do
+momento total fica igual a zero do começo ao
+
+109
+00:05:18,925 --> 00:05:19,325
+fim.
+
+110
+00:05:19,285 --> 00:05:22,552
+Então, se o gafanhoto ganha
+momento horizontal para a frente,
+
+111
+00:05:22,592 --> 00:05:24,978
+a folha ganha o mesmo momento para trás.
+
+112
+00:05:25,018 --> 00:05:30,125
+A massa do gafanhoto vezes a parte horizontal
+da velocidade dele é igual à massa da folha
+
+113
+00:05:30,165 --> 00:05:31,752
+vezes a velocidade da folha.
+
+114
+00:05:31,792 --> 00:05:36,565
+Como a folha tem quatro vezes a massa, ela
+recua com um quarto da velocidade horizontal
+
+115
+00:05:36,605 --> 00:05:37,485
+do gafanhoto.
+
+116
+00:05:37,525 --> 00:05:39,165
+E quanto tempo ele fica no ar?
+
+117
+00:05:39,205 --> 00:05:42,232
+Isso só depende da parte
+vertical da velocidade:
+
+118
+00:05:42,272 --> 00:05:46,045
+o tempo de voo é duas vezes a
+parte vertical da velocidade,
+
+119
+00:05:46,085 --> 00:05:48,178
+dividido pela aceleração da gravidade.
+
+120
+00:05:48,218 --> 00:05:50,034
+É o mesmo de qualquer lançamento.
+
+121
+00:05:50,074 --> 00:05:53,352
+Só que a pergunta é sobre a
+folha, e a folha está andando.
+
+122
+00:05:53,392 --> 00:05:54,605
+Então troca de régua.
+
+123
+00:05:54,645 --> 00:05:58,525
+Vista da água, o gafanhoto vai
+para a frente e a folha para trás.
+
+124
+00:05:58,565 --> 00:06:01,900
+Agora, vista da folha,
+as duas coisas se somam:
+
+125
+00:06:01,940 --> 00:06:07,005
+em relação à folha, o gafanhoto anda com a
+parte horizontal da velocidade dele mais a
+
+126
+00:06:07,045 --> 00:06:08,885
+velocidade de recuo da folha.
+
+127
+00:06:08,925 --> 00:06:09,695
+Ou seja,
+
+128
+00:06:10,350 --> 00:06:14,015
+um vírgula vinte e cinco vezes a
+parte horizontal da velocidade.
+
+129
+00:06:14,080 --> 00:06:16,950
+Dá para ver isso também pelo
+centro de massa do sistema,
+
+130
+00:06:16,990 --> 00:06:18,600
+gafanhoto mais folha.
+
+131
+00:06:18,640 --> 00:06:22,645
+Ele sobe e desce durante o voo,
+porque na vertical tem força externa.
+
+132
+00:06:22,685 --> 00:06:25,005
+Mas ele nunca sai dessa linha vertical.
+
+133
+00:06:25,045 --> 00:06:28,045
+Então a massa do gafanhoto
+vezes o deslocamento dele,
+
+134
+00:06:28,085 --> 00:06:30,978
+mais a massa da folha
+vezes o dela, dá zero.
+
+135
+00:06:31,018 --> 00:06:34,765
+A folha anda para trás um quarto do
+que o gafanhoto anda para a frente,
+
+136
+00:06:34,805 --> 00:06:38,845
+e, em relação à folha, ele anda um
+vírgula vinte e cinco vezes mais.
+
+137
+00:06:38,885 --> 00:06:41,570
+É o mesmo um vírgula vinte
+e cinco, por outro caminho.
+
+138
+00:06:41,610 --> 00:06:44,765
+Multiplicando essa velocidade
+relativa pelo tempo de voo,
+
+139
+00:06:44,805 --> 00:06:46,898
+sai o quanto ele anda em relação à folha.
+
+140
+00:06:46,938 --> 00:06:49,352
+E aparece o seno do dobro do ângulo.
+
+141
+00:06:49,392 --> 00:06:54,205
+Com os números, dá dois vírgula zero quatro
+metros vezes o seno do dobro do ângulo,
+
+142
+00:06:54,245 --> 00:06:57,245
+e isso não pode passar dos
+trinta centímetros da folha.
+
+143
+00:06:57,285 --> 00:07:02,525
+Então o seno do dobro do ângulo tem que
+ser no máximo zero vírgula um quatro sete.
+
+144
+00:07:02,565 --> 00:07:05,298
+E aí vem a surpresa: dá duas faixas.
+
+145
+00:07:05,338 --> 00:07:09,165
+Ou ele pula quase rasante, com no
+máximo quatro vírgula dois graus,
+
+146
+00:07:09,205 --> 00:07:13,645
+ou quase na vertical, com pelo menos
+oitenta e cinco vírgula oito graus.
+
+147
+00:07:13,685 --> 00:07:15,298
+Olha os dois saltos-limite.
+
+148
+00:07:15,338 --> 00:07:20,205
+No rasante, ele fica seis centésimos de
+segundo no ar e sobe só quatro milímetros.
+
+149
+00:07:20,245 --> 00:07:25,165
+No quase vertical, sobe oitenta centímetros
+e fica oito décimos de segundo no ar.
+
+150
+00:07:25,205 --> 00:07:29,725
+E os dois chegam exatamente ao mesmo
+lugar: a ponta oposta da folha.
+
+151
+00:07:29,765 --> 00:07:34,245
+Confere nas réguas: em relação à água, ele
+anda vinte e quatro centímetros e a folha
+
+152
+00:07:34,285 --> 00:07:35,165
+recua seis.
+
+153
+00:07:35,205 --> 00:07:37,645
+Vinte e quatro mais
+seis, os trinta da folha.
+
+154
+00:07:37,685 --> 00:07:39,538
+E se a folha fosse pesadíssima?
+
+155
+00:07:39,578 --> 00:07:42,738
+O recuo sumiria, o um vírgula
+vinte e cinco viraria um,
+
+156
+00:07:42,778 --> 00:07:45,218
+e voltaria o alcance
+de qualquer lançamento.
+
+157
+00:07:45,258 --> 00:07:48,325
+É o mesmo problema do remador
+na canoa, só que voando.
+
+158
+00:07:48,365 --> 00:07:51,538
+E a dica: ângulos complementares
+dão o mesmo alcance,
+
+159
+00:07:51,578 --> 00:07:53,325
+e aqui isso vira a resposta.
+
+160
+00:07:53,365 --> 00:07:55,325
+E repara como o enunciado importa.
+
+161
+00:07:55,365 --> 00:07:58,418
+Se os quatro metros por segundo
+fossem em relação à folha,
+
+162
+00:07:58,458 --> 00:08:02,418
+o recuo já estaria embutido, o fator
+um vírgula vinte e cinco sumiria,
+
+163
+00:08:02,458 --> 00:08:06,445
+e o ângulo rasante máximo subiria
+para uns cinco vírgula três graus.
+
+164
+00:08:06,485 --> 00:08:08,738
+Mesmo gafanhoto, outra resposta.
+
+165
+00:08:08,778 --> 00:08:12,477
+Por isso a primeira coisa é perguntar:
+velocidade em relação a quê?
+
+166
+00:08:12,517 --> 00:08:14,660
+E a pergunta do começo está respondida.
+
+167
+00:08:14,700 --> 00:08:18,120
+Ele só continua na folha de
+dois jeitos: quase rasante,
+
+168
+00:08:18,160 --> 00:08:19,520
+ou quase na vertical.
+
+169
+00:08:19,560 --> 00:08:23,250
+Nos dois ângulos-limite, chega
+exatamente à ponta oposta;
+
+170
+00:08:23,290 --> 00:08:25,680
+dentro dessas faixas, cai antes dela.
+
+171
+00:08:25,720 --> 00:08:28,860
+No meio, passa direto,
+porque a folha foge dele.
+
+172
+00:08:28,950 --> 00:08:30,517
+Agora, no espaço.
+
+173
+00:08:30,557 --> 00:08:34,730
+Duas naves acopladas, uma de mil
+quilos e outra com o dobro da massa,
+
+174
+00:08:34,770 --> 00:08:37,870
+dois mil, paradas no
+referencial do centro de massa.
+
+175
+00:08:37,910 --> 00:08:42,250
+Entre elas, uma carga que, ao disparar,
+dá energia cinética ao conjunto:
+
+176
+00:08:42,290 --> 00:08:43,477
+três mil joules.
+
+177
+00:08:43,517 --> 00:08:45,580
+Com que velocidade cada uma sai?
+
+178
+00:08:45,650 --> 00:08:47,023
+Primeiro, o momento.
+
+179
+00:08:47,063 --> 00:08:50,170
+O momento total era zero,
+e a carga é interna.
+
+180
+00:08:50,210 --> 00:08:54,730
+Então, depois, os momentos das duas
+naves têm que ser iguais e opostos.
+
+181
+00:08:54,770 --> 00:08:56,770
+Mesmo tamanho, sentidos contrários.
+
+182
+00:08:56,810 --> 00:08:58,879
+E o centro de massa continua parado.
+
+183
+00:08:58,919 --> 00:09:01,743
+Só que olha as energias:
+elas não saem iguais.
+
+184
+00:09:01,783 --> 00:09:04,870
+Se os momentos são iguais,
+por que as energias não são?
+
+185
+00:09:04,910 --> 00:09:08,570
+Porque a energia cinética escrita com
+o momento é o momento ao quadrado,
+
+186
+00:09:08,610 --> 00:09:10,623
+dividido por duas vezes a massa.
+
+187
+00:09:10,663 --> 00:09:14,490
+Com o mesmo momento, quem tem
+menos massa leva mais energia.
+
+188
+00:09:14,530 --> 00:09:17,210
+Somando as duas e igualando
+a três mil joules,
+
+189
+00:09:17,250 --> 00:09:21,130
+o momento de cada uma dá dois mil
+quilogramas metro por segundo.
+
+190
+00:09:21,170 --> 00:09:25,130
+Então a nave leve sai a dois
+metros por segundo e a pesada a um.
+
+191
+00:09:25,170 --> 00:09:27,583
+Elas se afastam a três metros por segundo.
+
+192
+00:09:27,623 --> 00:09:32,240
+E a energia fica dividida: dois mil
+joules para a leve e mil para a pesada.
+
+193
+00:09:32,280 --> 00:09:34,010
+E se as massas fossem iguais?
+
+194
+00:09:34,050 --> 00:09:34,730
+Meio a meio.
+
+195
+00:09:34,770 --> 00:09:38,330
+E com uma nave pesadíssima,
+a outra levaria quase tudo.
+
+196
+00:09:38,370 --> 00:09:43,877
+A dica: no referencial do centro de massa, a
+energia se divide na razão inversa das massas.
+
+197
+00:09:43,917 --> 00:09:47,370
+Mas o total que a carga libera
+não depende de onde você olha.
+
+198
+00:09:47,410 --> 00:09:51,210
+Imagina que as naves já viajassem
+juntas a dez metros por segundo.
+
+199
+00:09:51,250 --> 00:09:53,450
+Antes, cento e cinquenta mil joules.
+
+200
+00:09:53,490 --> 00:09:58,970
+Depois, a leve sai a doze e a pesada a nove,
+e a soma dá cento e cinquenta e três mil.
+
+201
+00:09:59,010 --> 00:10:02,943
+A diferença continua sendo três
+mil joules: é a parte relativa,
+
+202
+00:10:02,983 --> 00:10:05,210
+e essa nenhum referencial muda.
+
+203
+00:10:05,250 --> 00:10:06,170
+Último problema.
+
+204
+00:10:06,210 --> 00:10:09,450
+Uma balança, um suporte de
+dois quilos com uma polia,
+
+205
+00:10:09,490 --> 00:10:13,263
+e dois blocos, de três e de um
+quilo, pendurados por um fio,
+
+206
+00:10:13,303 --> 00:10:14,060
+travados.
+
+207
+00:10:14,100 --> 00:10:17,460
+Parada, ela marca a soma
+de tudo: seis quilos.
+
+208
+00:10:17,500 --> 00:10:19,120
+Agora a gente solta a trava.
+
+209
+00:10:19,160 --> 00:10:23,730
+Os blocos começam a se mover, mas
+nenhuma massa saiu de cima da balança.
+
+210
+00:10:23,770 --> 00:10:26,570
+E mesmo assim ela passa
+a marcar cinco quilos.
+
+211
+00:10:26,610 --> 00:10:27,230
+Por quê?
+
+212
+00:10:27,270 --> 00:10:28,900
+Primeiro, qual é o sistema?
+
+213
+00:10:28,940 --> 00:10:32,160
+Tudo que está em cima da
+balança: suporte, polia,
+
+214
+00:10:32,200 --> 00:10:33,570
+fio e os dois blocos.
+
+215
+00:10:33,610 --> 00:10:37,210
+O fio puxa os blocos e a polia,
+mas isso é força interna.
+
+216
+00:10:37,250 --> 00:10:41,880
+De fora, só duas: o peso de tudo,
+para baixo, e a força da balança,
+
+217
+00:10:41,920 --> 00:10:42,610
+para cima.
+
+218
+00:10:42,650 --> 00:10:48,090
+Então a força da balança menos o peso é a
+massa total vezes a aceleração do centro de
+
+219
+00:10:48,130 --> 00:10:48,570
+massa.
+
+220
+00:10:48,610 --> 00:10:51,090
+Mas quanto acelera esse centro de massa?
+
+221
+00:10:51,130 --> 00:10:52,970
+Antes, a aceleração dos blocos.
+
+222
+00:10:53,010 --> 00:10:56,320
+No bloco pesado, o peso
+menos a tração; no leve,
+
+223
+00:10:56,360 --> 00:10:57,940
+a tração menos o peso.
+
+224
+00:10:57,980 --> 00:11:01,520
+Somando as duas, a tração
+some, como toda força interna.
+
+225
+00:11:01,560 --> 00:11:05,200
+Sobra a diferença dos pesos
+acelerando as duas massas juntas:
+
+226
+00:11:05,240 --> 00:11:10,040
+metade da aceleração da gravidade, quatro
+vírgula nove metros por segundo ao quadrado.
+
+227
+00:11:10,080 --> 00:11:12,130
+Agora repara no centro de massa.
+
+228
+00:11:12,170 --> 00:11:13,717
+O suporte fica parado.
+
+229
+00:11:13,757 --> 00:11:17,470
+O bloco pesado desce e o leve
+sobe, com a mesma aceleração.
+
+230
+00:11:17,510 --> 00:11:21,890
+Só que o pesado conta mais na média:
+o centro de massa do sistema desce,
+
+231
+00:11:21,930 --> 00:11:22,570
+acelerando.
+
+232
+00:11:22,610 --> 00:11:25,790
+Um vírgula sessenta e três
+metros por segundo ao quadrado,
+
+233
+00:11:25,830 --> 00:11:26,660
+para baixo.
+
+234
+00:11:26,700 --> 00:11:28,090
+E aí sai a balança.
+
+235
+00:11:28,130 --> 00:11:33,010
+A força dela é o peso total menos a
+massa vezes essa aceleração para baixo:
+
+236
+00:11:33,050 --> 00:11:34,770
+quarenta e nove newtons.
+
+237
+00:11:34,810 --> 00:11:37,150
+A balança mostra isso como cinco quilos.
+
+238
+00:11:37,190 --> 00:11:40,050
+Um quilo a menos, sem
+nenhuma massa ir embora,
+
+239
+00:11:40,090 --> 00:11:42,930
+só porque o centro de massa
+está acelerando para baixo.
+
+240
+00:11:42,970 --> 00:11:47,450
+Confere por outro caminho: a tração no
+fio dá catorze vírgula sete newtons,
+
+241
+00:11:47,490 --> 00:11:50,850
+a polia é puxada para baixo
+pelos dois lados do fio,
+
+242
+00:11:50,890 --> 00:11:54,340
+e a balança tem que segurar o
+suporte mais essas duas trações.
+
+243
+00:11:54,380 --> 00:11:56,370
+Quarenta e nove newtons de novo.
+
+244
+00:11:56,410 --> 00:11:59,717
+E os casos-limite: com
+blocos iguais, nada acelera,
+
+245
+00:11:59,757 --> 00:12:01,530
+e a balança volta aos seis quilos.
+
+246
+00:12:01,570 --> 00:12:04,850
+Se o bloco leve fosse sumindo,
+o pesado cairia livre,
+
+247
+00:12:04,890 --> 00:12:06,970
+e a balança marcaria só o suporte.
+
+248
+00:12:07,010 --> 00:12:10,400
+A dica: quem está de fora só
+enxerga o centro de massa.
+
+249
+00:12:10,440 --> 00:12:13,370
+Se ele acelera para baixo,
+o apoio empurra menos;
+
+250
+00:12:13,410 --> 00:12:15,540
+se acelera para cima, empurra mais.
+
+251
+00:12:15,580 --> 00:12:18,400
+É o mesmo do elevador, e
+do cavalo puxando a pedra:
+
+252
+00:12:18,440 --> 00:12:21,970
+a força externa sai da
+aceleração do centro de massa,
+
+253
+00:12:22,010 --> 00:12:23,620
+sem precisar olhar para dentro.
+
+254
+00:12:23,660 --> 00:12:25,780
+Uma última ideia, para levar para casa.
+
+255
+00:12:25,820 --> 00:12:27,648
+Uma caixa parada no espaço.
+
+256
+00:12:27,688 --> 00:12:32,848
+De uma parede, sai um pulso de luz, que
+atravessa a caixa e é absorvido na outra parede.
+
+257
+00:12:32,888 --> 00:12:34,715
+Só que a luz carrega momento.
+
+258
+00:12:34,755 --> 00:12:38,662
+Então, quando ela sai, a caixa recua,
+e quando ela chega do outro lado,
+
+259
+00:12:38,702 --> 00:12:39,595
+a caixa para.
+
+260
+00:12:39,635 --> 00:12:44,155
+Mas só houve forças internas, então o
+centro de massa não podia ter andado.
+
+261
+00:12:44,195 --> 00:12:45,648
+A caixa foi para a esquerda…
+
+262
+00:12:45,688 --> 00:12:46,875
+o que foi para a direita?
+
+263
+00:12:46,915 --> 00:12:50,555
+Einstein fez exatamente essa
+pergunta, em mil novecentos e seis,
+
+264
+00:12:50,595 --> 00:12:54,182
+e a resposta exige que a própria
+energia carregue inércia.
+
+265
+00:12:54,222 --> 00:12:58,955
+Isso não é uma demonstração: é uma pista,
+e a porta de entrada da relatividade.
+
+266
+00:12:58,995 --> 00:13:00,582
+Resumindo as ferramentas.
+
+267
+00:13:00,622 --> 00:13:02,635
+Um buraco é massa negativa.
+
+268
+00:13:02,675 --> 00:13:07,675
+Um corpo complicado vira algumas partículas,
+uma no centro de massa de cada pedaço.
+
+269
+00:13:07,715 --> 00:13:10,555
+Sem força externa, o centro
+de massa fica parado,
+
+270
+00:13:10,595 --> 00:13:12,208
+e aí vale trocar de régua.
+
+271
+00:13:12,248 --> 00:13:17,115
+No referencial do centro de massa, os
+momentos se cancelam e a energia que sobra é a
+
+272
+00:13:17,155 --> 00:13:17,915
+relativa.
+
+273
+00:13:17,955 --> 00:13:21,635
+E, quando o centro de massa acelera,
+ele entrega a força externa.
+
+274
+00:13:21,675 --> 00:13:24,475
+E as três perguntas do começo
+valem para qualquer um:
+
+275
+00:13:24,515 --> 00:13:27,795
+qual é o sistema, tem força
+externa e em que direção,
+
+276
+00:13:27,835 --> 00:13:29,515
+e de qual referencial eu olho.
+
+277
+00:13:29,555 --> 00:13:34,875
+Em todos os seis, o mais difícil sumiu quando
+a gente escolheu bem o sistema e o referencial.
+
+278
+00:13:34,915 --> 00:13:38,608
+Se esses problemas mudaram o jeito
+como você enxerga o centro de massa,
+
+279
+00:13:38,648 --> 00:13:41,915
+se inscreve no Parallax Lab para
+acompanhar os próximos vídeos.
+
+280
+00:13:41,955 --> 00:13:45,555
+Aqui no canal a gente pega a
+física que parece difícil e mostra,
+
+281
+00:13:45,595 --> 00:13:49,915
+com animação e conta feita passo a
+passo, de onde cada resultado vem.
+
+282
+00:13:49,955 --> 00:13:52,662
+Ativa o sininho, deixa o
+seu like se isso te ajudou,
+
+283
+00:13:52,702 --> 00:13:56,464
+e conta nos comentários qual desses
+seis problemas foi o seu favorito.
+
+284
+00:13:56,504 --> 00:13:59,595
+E até aqui, a massa de
+cada corpo nunca mudou.
+
+285
+00:13:59,635 --> 00:14:00,635
+E quando ela muda?
+
+286
+00:14:00,675 --> 00:14:04,315
+Como um foguete acelera no vácuo,
+sem se apoiar em nada de fora?
+
+287
+00:14:04,355 --> 00:14:07,462
+Esse problema pede um
+vídeo só dele: o foguete.
+
+288
+00:14:07,502 --> 00:14:08,445
+Até a próxima!

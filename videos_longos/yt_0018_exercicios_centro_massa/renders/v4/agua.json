@@ -1,0 +1,119 @@
+{
+ "agua": {
+  "PH H1": {
+   "quadros": 50,
+   "media_baixo": 0.1533,
+   "min_media": 0.1498,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PH H2": {
+   "quadros": 63,
+   "media_baixo": 0.1401,
+   "min_media": 0.1301,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0001
+  },
+  "PH H3": {
+   "quadros": 56,
+   "media_baixo": 0.1319,
+   "min_media": 0.1286,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PH A1": {
+   "quadros": 2,
+   "media_baixo": 0.1006,
+   "min_media": 0.0718,
+   "frac_escuro": 0.0001,
+   "max_frac": 0.0002
+  },
+  "PX3 X3-1": {
+   "quadros": 110,
+   "media_baixo": 0.1171,
+   "min_media": 0.1125,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PX3 X3-2": {
+   "quadros": 105,
+   "media_baixo": 0.1152,
+   "min_media": 0.1116,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PX3 X3-3": {
+   "quadros": 108,
+   "media_baixo": 0.118,
+   "min_media": 0.1132,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PX3 X3-4": {
+   "quadros": 70,
+   "media_baixo": 0.1182,
+   "min_media": 0.1151,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PX3 X3-5": {
+   "quadros": 137,
+   "media_baixo": 0.11,
+   "min_media": 0.1083,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PX3 X3-5b": {
+   "quadros": 172,
+   "media_baixo": 0.1195,
+   "min_media": 0.1098,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0001
+  },
+  "PX3 X3-6": {
+   "quadros": 187,
+   "media_baixo": 0.1206,
+   "min_media": 0.1144,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0001
+  },
+  "PX3 X3-7": {
+   "quadros": 132,
+   "media_baixo": 0.1171,
+   "min_media": 0.1115,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PX3 X3-8": {
+   "quadros": 100,
+   "media_baixo": 0.1186,
+   "min_media": 0.1143,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0001
+  },
+  "PX3 X3-9": {
+   "quadros": 107,
+   "media_baixo": 0.1142,
+   "min_media": 0.1069,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PX3 X3-10": {
+   "quadros": 60,
+   "media_baixo": 0.1091,
+   "min_media": 0.1051,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  }
+ },
+ "lua": {
+  "quadros": 151,
+  "p99_max": 234.0,
+  "t_pior": 15.87,
+  "rgb_medio_faixa_pior": [
+   68,
+   90,
+   149
+  ]
+ }
+}

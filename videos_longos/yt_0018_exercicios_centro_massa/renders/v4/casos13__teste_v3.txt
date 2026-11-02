@@ -1,0 +1,40 @@
+# 1 PX4 23.6–79.6s ACUSOU (CALHA, ENCOSTADO) · p⃗₁ encosta no início da CONTA ('p⃗₁P⃗ = 0⃗')
+      ex.: CALHA texto '\vec p_1' em x 0.09…0.45
+      na janela: {'CALHA texto': 595, 'TRÂNSITO glifo de glifo em (3.': 20, 'ENCOSTADO (folga 0.15 < 0,15)': 1, 'ENCOSTADO (folga 0.10 < 0,15)': 1, 'TRÂNSITO glifo de glifo em (2.': 14, 'CALHA caixa em x 0.65…3.11': 2, 'CALHA caixa em x 0.60…3.16': 1, 'TRÂNSITO glifo de': 15, 'ENCOSTADO no selo do referenci': 62, 'CALHA caixa em x 0.65…4.65': 2, 'CALHA caixa em x 0.60…4.70': 1}
+# 2 PX4   61.3s ACUSOU (ENCOSTADO no selo do referencial) · '1 m/s' colado embaixo do selo VISTO DO CENTRO DE MASSA
+      ex.: ENCOSTADO no selo do referencial '1m/s' (< 0,3)
+      na janela: {'CALHA texto': 30, 'ENCOSTADO no selo do referenci': 15}
+# 3 PX4   67.4s ACUSOU (CALHA) · 2.000 J e 3.000 J empilhados ao lado da barra
+      ex.: CALHA texto '3.000J' em x -1.26…0.26
+      na janela: {'CALHA texto': 29, 'ENCOSTADO no selo do referenci': 19}
+# 4 PX4 93.6–103.6s ACUSOU (CALHA) · '12 m/s' em cima de 'DEPOIS:'
+      ex.: CALHA texto '12m/s' em x 0.08…1.26
+      na janela: {'CALHA texto': 94}
+# 5 PX5   85.7s ACUSOU (ENCOSTADO, TEXTO SOBRE OBJETO) · −4,9 sobre a plataforma, no mostrador
+      ex.: TEXTO SOBRE OBJETO '−4,9' no meio de outro corpo (RoundedRectangle)
+      na janela: {'TRÂNSITO glifo de': 1, 'TEXTO SOBRE OBJETO': 18, 'ENCOSTADO no tracejado': 54, 'TRÂNSITO glifo de glifo em (3.': 13}
+# 6 PX5   35.7s ACUSOU (ENCOSTADO) · M = 6 kg sobre o tracejado do SISTEMA
+      ex.: ENCOSTADO no tracejado 'M=6kg' (folga 0.10 < 0,2)
+      na janela: {'CALHA texto': 18, 'ENCOSTADO no tracejado': 40}
+# 7 PX3  120.0s ACUSOU (TRÂNSITO) · m Δx_g + M Δx_f = 0: glifos pousando uns sobre os outros
+      ex.: TRÂNSITO glifo de 'M' cruza '+=0' por mais de 2 quadros
+      na janela: {'PALCO 3D folha ilegível (1.55 ': 19, 'PALCO 3D folha sem contraste c': 19, 'ENCOSTADO no selo do referenci': 19, 'TRÂNSITO glifo de': 1}
+# 8 PX0   22.6s ACUSOU (TRÂNSITO) · substituição m₁ → 1, x₁ → 0… vira sopa de glifos
+      ex.: TRÂNSITO glifo de glifo em (2.9; 1.1) cruza 'X=\frac{m_1\,x_1+m_2\,x_2}{m_1' por mais de 2 quadros
+      na janela: {'TRÂNSITO glifo de glifo em (2.': 14}
+# 9 PX0 98.6–102.6s ACUSOU (TRÂNSITO) · cópia ≈ −1,95 cm atravessa a linha de baixo e a caixa
+      ex.: TRÂNSITO glifo de glifo em (3.5; -2.0) cruza '=-\tfrac{2513}{1286}\approx-1{' por mais de 2 quadros
+      na janela: {'TRÂNSITO glifo de glifo em (3.': 1}
+#10 PX3  170.9s ACUSOU (TRÂNSITO) · intervalos de θ se sobrepõem ao entrar na caixa
+      ex.: TRÂNSITO glifo de '0^\circ<\theta\le 4{,}23^\circ' cruza '0^\circ<\theta\le 4{,}23^\circ' por mais de 2 quadros
+      na janela: {'TRÂNSITO glifo de': 5}
+#11 PX2   70.5s ACUSOU (MARCADORES COLADOS) · ⊗ da média dos cantos encosta no ⊕
+      ex.: MARCADORES COLADOS ⊕ e Circle a 0.39
+      na janela: {'MARCADORES COLADOS ⊕ e Circle ': 18, 'FORA DA ZONA cubo 3D embaixo d': 18}
+#12 PX2 87.7–99.7s ACUSOU (CALHA, FORA DA ZONA cubo, FORA DA ZONA texto do ESQUEMA embaixo) · eixo x e rótulo y na margem de baixo com o cubo girando
+      ex.: FORA DA ZONA cubo 3D embaixo do ESQUEMA (y -3.74)
+      na janela: {'FORA DA ZONA cubo 3D embaixo d': 4, 'CALHA texto': 49, 'FORA DA ZONA texto do ESQUEMA ': 11, 'CALHA caixa em x 0.62…6.98': 4, 'CALHA caixa em x 0.54…7.06': 2}
+#13 PX3 14.3–59.3s ACUSOU (RÓTULO SOLTO) · m = 1 g e M = 4 g longe do gafanhoto e da folha
+      ex.: RÓTULO SOLTO 'M' a 1.33 do dono
+      na janela: {'RÓTULO SOLTO': 224, 'TRÂNSITO glifo de glifo em (1.': 2, 'CALHA texto': 127, 'TRÂNSITO glifo de glifo em (2.': 7}
+TOTAL: 13/13 casos acusados

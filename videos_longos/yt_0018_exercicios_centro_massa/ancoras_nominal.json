@@ -1,0 +1,294 @@
+{
+ "ordem": [
+  "H1",
+  "H2",
+  "H3",
+  "A1",
+  "A2",
+  "A3",
+  "A4",
+  "X0-1",
+  "X0-2",
+  "X0-3",
+  "X1-1",
+  "X1-2",
+  "X1-3",
+  "X1-4",
+  "X2-1",
+  "X2-2",
+  "X2-3",
+  "X2-3b",
+  "X2-4",
+  "X3-1",
+  "X3-2",
+  "X3-3",
+  "X3-4",
+  "X3-5",
+  "X3-5b",
+  "X3-6",
+  "X3-7",
+  "X3-8",
+  "X3-9",
+  "X3-10",
+  "X4-1",
+  "X4-2",
+  "X4-3",
+  "X4-4",
+  "X4-5",
+  "X5-1",
+  "X5-2",
+  "X5-3",
+  "X5-4",
+  "X5-5",
+  "X5-6",
+  "X5-7",
+  "X5-8",
+  "EP1",
+  "EP2",
+  "S2",
+  "EN1",
+  "EN2"
+ ],
+ "ancoras": {
+  "H1": {
+   "palavras": 27,
+   "dur": 10.0,
+   "fala": "olha esse gafanhoto parado na ponta de uma folha que boia num lago ele quer pular para a outra ponta que está a só trinta centímetros dele"
+  },
+  "H2": {
+   "palavras": 34,
+   "dur": 12.59,
+   "fala": "ele salta e passa direto cai na água bem longe da folha agora olha de novo o instante do salto em câmera lenta repara que a folha não fica parada ela escorrega para trás"
+  },
+  "H3": {
+   "palavras": 31,
+   "dur": 11.48,
+   "fala": "então em que ângulo ele precisa pular para cair de volta na folha parece que falta informação mas o centro de massa resolve isso e mais cinco problemas que parecem impossíveis"
+  },
+  "A1": {
+   "palavras": 7,
+   "dur": 2.59,
+   "fala": "fala pessoal bem vindos ao parallax lab"
+  },
+  "A2": {
+   "palavras": 21,
+   "dur": 7.78,
+   "fala": "hoje é dia de problema difícil de centro de massa seis deles e cada um pede uma ferramenta diferente da teoria"
+  },
+  "A3": {
+   "palavras": 58,
+   "dur": 21.48,
+   "fala": "lembrando o centro de massa é a média das posições pesada pelas massas e ele se move como uma partícula com toda a massa do sistema empurrada só pelas forças de fora se não tem força externa e tudo começa parado ele não sai do lugar é só isso que a gente vai usar hoje do jeito certo"
+  },
+  "A4": {
+   "palavras": 48,
+   "dur": 17.78,
+   "fala": "e antes de qualquer conta três perguntas qual é o sistema tem força externa e em que direção e de qual referencial eu estou olhando em quase todo problema difícil de centro de massa o difícil é responder bem essas três a conta que vem depois é curta"
+  },
+  "X0-1": {
+   "palavras": 17,
+   "dur": 6.3,
+   "fala": "primeiro um clássico o disco com um furo fora do centro onde fica o centro de massa"
+  },
+  "X0-2": {
+   "palavras": 81,
+   "dur": 30.0,
+   "fala": "o raio do furo é metade do raio do disco então a área dele é um quarto a gente conta o disco inteiro com o centro de massa no centro e soma o furo com massa negativa menos um quarto sentado a vinte e cinco centímetros dá menos um doze avos de metro uns oito centímetros e pouco do lado oposto ao furo e atenção ninguém tem massa negativa é só a conta de tirar um material que não está lá"
+  },
+  "X0-3": {
+   "palavras": 30,
+   "dur": 11.11,
+   "fala": "confere se o furo estivesse no meio o centro de massa ficaria no meio e a conta dá zero mesmo e a dica o centro de massa foge do furo"
+  },
+  "X1-1": {
+   "palavras": 33,
+   "dur": 12.22,
+   "fala": "agora em duas dimensões uma placa quadrada com um furo redondo fora do centro deslocado na diagonal a placa tem espessura uniforme então a massa de cada pedaço é proporcional à área dele"
+  },
+  "X1-2": {
+   "palavras": 44,
+   "dur": 16.3,
+   "fala": "antes de qualquer conta procura a simetria a diagonal que passa pelo centro da placa e pelo centro do furo divide tudo em duas metades iguais espelhadas então o centro de massa está nessa diagonal e as duas coordenadas são iguais basta calcular uma"
+  },
+  "X1-3": {
+   "palavras": 86,
+   "dur": 31.85,
+   "fala": "de novo placa inteira mais furo com massa negativa a placa tem mil e seiscentos centímetros quadrados com o centro de massa no meio o furo tem cem pi uns trezentos e catorze centímetros quadrados com o centro oito centímetros para a direita e oito para cima fazendo a conta a coordenada horizontal dá menos um vírgula noventa e cinco centímetros e a vertical é igual pela simetria o centro de massa fica a quase três centímetros do centro na diagonal do lado oposto ao furo"
+  },
+  "X1-4": {
+   "palavras": 61,
+   "dur": 22.59,
+   "fala": "confere se o furo encolhe até sumir o centro de massa volta para o meio e repara por que aqui ele andou pouco o furo tira só um quinto da placa e ainda está perto do centro e a dica procura a simetria antes de calcular ela corta a conta pela metade e ainda diz para que lado a resposta vai"
+  },
+  "X2-1": {
+   "palavras": 37,
+   "dur": 13.7,
+   "fala": "agora em três dimensões um fio uniforme dobrado ao longo de três arestas seguidas de um cubo de um metro primeiro no comprimento depois na largura depois na altura onde fica o centro de massa desse fio"
+  },
+  "X2-2": {
+   "palavras": 55,
+   "dur": 20.37,
+   "fala": "a ferramenta aqui é a de montar por partes cada aresta é um pedaço reto e uniforme então por simetria o centro de massa de cada uma está no meio dela e cada pedaço tem um terço da massa então a gente troca o fio por três partículas iguais uma no meio de cada aresta"
+  },
+  "X2-3": {
+   "palavras": 59,
+   "dur": 21.85,
+   "fala": "como as três massas são iguais cada coordenada do centro de massa é uma média simples e cada uma é uma conta de uma dimensão só na direção do comprimento meio um e um média cinco sextos de metro na largura zero meio e um média meio metro na altura zero zero e meio média um sexto de metro"
+  },
+  "X2-3b": {
+   "palavras": 54,
+   "dur": 20.0,
+   "fala": "e cuidado com uma pegadinha muita gente pega os quatro cantos do fio e tira a média dá três quartos meio e um quarto que é outro ponto está errado porque a massa não está nos cantos está espalhada ao longo das arestas quem representa cada pedaço é o meio dele não as pontas"
+  },
+  "X2-4": {
+   "palavras": 66,
+   "dur": 24.44,
+   "fala": "e olha onde ele foi parar dentro do cubo no ar a uns vinte e quatro centímetros do pedaço de fio mais próximo o centro de massa não precisa estar em cima do material confere as três coordenadas estão entre zero e um então ele está dentro do cubo e a dica em três dimensões separa as coordenadas cada uma é um problema de uma dimensão"
+  },
+  "X3-1": {
+   "palavras": 59,
+   "dur": 21.85,
+   "fala": "agora a resposta do começo a folha tem quatro vezes a massa do gafanhoto ele salta a quatro metros por segundo e repara essa velocidade é em relação à água não em relação à folha e a gente supõe que a água não segura a folha na horizontal que a folha é rígida e que a decolagem é rápida"
+  },
+  "X3-2": {
+   "palavras": 57,
+   "dur": 21.11,
+   "fala": "primeiro que momento se conserva na vertical tem força externa os pesos e o empuxo da água que segura a folha quando ele empurra para baixo então o momento vertical não se conserva mas na horizontal nenhuma força de fora por isso só a componente horizontal do momento total fica igual a zero do começo ao fim"
+  },
+  "X3-3": {
+   "palavras": 58,
+   "dur": 21.48,
+   "fala": "então se o gafanhoto ganha momento horizontal para a frente a folha ganha o mesmo momento para trás a massa do gafanhoto vezes a parte horizontal da velocidade dele é igual à massa da folha vezes a velocidade da folha como a folha tem quatro vezes a massa ela recua com um quarto da velocidade horizontal do gafanhoto"
+  },
+  "X3-4": {
+   "palavras": 38,
+   "dur": 14.07,
+   "fala": "e quanto tempo ele fica no ar isso só depende da parte vertical da velocidade o tempo de voo é duas vezes a parte vertical da velocidade dividido pela aceleração da gravidade é o mesmo de qualquer lançamento"
+  },
+  "X3-5": {
+   "palavras": 74,
+   "dur": 27.41,
+   "fala": "só que a pergunta é sobre a folha e a folha está andando então troca de régua vista da água o gafanhoto vai para a frente e a folha para trás agora vista da folha as duas coisas se somam em relação à folha o gafanhoto anda com a parte horizontal da velocidade dele mais a velocidade de recuo da folha ou seja um vírgula vinte e cinco vezes a parte horizontal da velocidade"
+  },
+  "X3-5b": {
+   "palavras": 93,
+   "dur": 34.44,
+   "fala": "dá para ver isso também pelo centro de massa do sistema gafanhoto mais folha ele sobe e desce durante o voo porque na vertical tem força externa mas ele nunca sai dessa linha vertical então a massa do gafanhoto vezes o deslocamento dele mais a massa da folha vezes o dela dá zero a folha anda para trás um quarto do que o gafanhoto anda para a frente e em relação à folha ele anda um vírgula vinte e cinco vezes mais é o mesmo um vírgula vinte e cinco por outro caminho"
+  },
+  "X3-6": {
+   "palavras": 101,
+   "dur": 37.41,
+   "fala": "multiplicando essa velocidade relativa pelo tempo de voo sai o quanto ele anda em relação à folha e aparece o seno do dobro do ângulo com os números dá dois vírgula zero quatro metros vezes o seno do dobro do ângulo e isso não pode passar dos trinta centímetros da folha então o seno do dobro do ângulo tem que ser no máximo zero vírgula um quatro sete e aí vem a surpresa dá duas faixas ou ele pula quase rasante com no máximo quatro vírgula dois graus ou quase na vertical com pelo menos oitenta e cinco vírgula oito graus"
+  },
+  "X3-7": {
+   "palavras": 71,
+   "dur": 26.3,
+   "fala": "olha os dois saltos limite no rasante ele voa seis centésimos de segundo a quatro milímetros da folha no quase vertical sobe oitenta centímetros e fica oito décimos de segundo no ar e os dois terminam no mesmo lugar a ponta oposta da folha confere nas réguas em relação à água ele anda vinte e quatro centímetros e a folha recua seis vinte e quatro mais seis os trinta da folha"
+  },
+  "X3-8": {
+   "palavras": 54,
+   "dur": 20.0,
+   "fala": "mais uma conferência se a folha fosse pesadíssima o recuo sumiria o um vírgula vinte e cinco viraria um e voltaria o alcance de qualquer lançamento e repara que é o mesmo problema do remador na canoa só que voando a dica ângulos complementares dão o mesmo alcance e aqui isso vira a resposta"
+  },
+  "X3-9": {
+   "palavras": 58,
+   "dur": 21.48,
+   "fala": "e repara como o enunciado importa se os quatro metros por segundo fossem em relação à folha o recuo já estaria embutido o fator um vírgula vinte e cinco sumiria e o ângulo rasante máximo subiria para uns cinco vírgula três graus mesmo gafanhoto outra resposta por isso a primeira coisa é perguntar velocidade em relação a quê"
+  },
+  "X3-10": {
+   "palavras": 32,
+   "dur": 11.85,
+   "fala": "e a pergunta do começo está respondida só o salto quase rasante ou quase na vertical cai de volta na folha qualquer coisa no meio passa direto porque a folha foge dele"
+  },
+  "X4-1": {
+   "palavras": 47,
+   "dur": 17.41,
+   "fala": "agora no espaço duas naves acopladas uma de mil quilos e outra com o dobro da massa dois mil paradas no referencial do centro de massa entre elas uma carga que ao disparar dá energia cinética ao conjunto três mil joules com que velocidade cada uma sai"
+  },
+  "X4-2": {
+   "palavras": 37,
+   "dur": 13.7,
+   "fala": "primeiro o momento o momento total era zero e a carga é interna então depois os momentos das duas naves têm que ser iguais e opostos mesmo tamanho sentidos contrários e o centro de massa continua parado"
+  },
+  "X4-3": {
+   "palavras": 20,
+   "dur": 7.41,
+   "fala": "só que olha as energias elas não saem iguais se os momentos são iguais por que as energias não são"
+  },
+  "X4-4": {
+   "palavras": 90,
+   "dur": 33.33,
+   "fala": "porque a energia cinética escrita com o momento é o momento ao quadrado dividido por duas vezes a massa com o mesmo momento quem tem menos massa leva mais energia somando as duas e igualando a três mil joules o momento de cada uma dá dois mil quilogramas metro por segundo então a nave leve sai a dois metros por segundo e a pesada a um elas se afastam a três metros por segundo e a energia fica dividida dois mil joules para a leve e mil para a pesada"
+  },
+  "X4-5": {
+   "palavras": 102,
+   "dur": 37.78,
+   "fala": "confere com massas iguais seria meio a meio com uma nave pesadíssima a outra levaria quase tudo a dica no referencial do centro de massa a energia se divide na razão inversa das massas mas o total que a carga libera não depende de onde você olha imagina que as naves já viajassem juntas a dez metros por segundo antes cento e cinquenta mil joules depois a leve sai a doze e a pesada a nove e a soma dá cento e cinquenta e três mil a diferença continua sendo três mil joules é a parte relativa e essa nenhum referencial muda"
+  },
+  "X5-1": {
+   "palavras": 41,
+   "dur": 15.19,
+   "fala": "último problema uma balança um suporte de dois quilos com uma polia e dois blocos de três e de um quilo pendurados por um fio travados parada ela marca a soma de tudo seis quilos agora a gente solta a trava"
+  },
+  "X5-2": {
+   "palavras": 25,
+   "dur": 9.26,
+   "fala": "os blocos começam a se mover mas nenhuma massa saiu de cima da balança e mesmo assim ela passa a marcar cinco quilos por quê"
+  },
+  "X5-3": {
+   "palavras": 68,
+   "dur": 25.19,
+   "fala": "primeiro qual é o sistema tudo que está em cima da balança suporte polia fio e os dois blocos o fio puxa os blocos e a polia mas isso é força interna de fora só duas o peso de tudo para baixo e a força da balança para cima então a força da balança menos o peso é a massa total vezes a aceleração do centro de massa"
+  },
+  "X5-4": {
+   "palavras": 60,
+   "dur": 22.22,
+   "fala": "mas quanto acelera esse centro de massa antes a aceleração dos blocos no bloco pesado o peso menos a tração no leve a tração menos o peso somando as duas a tração some como toda força interna sobra a diferença dos pesos acelerando as duas massas juntas metade da aceleração da gravidade quatro vírgula nove metros por segundo ao quadrado"
+  },
+  "X5-5": {
+   "palavras": 50,
+   "dur": 18.52,
+   "fala": "agora repara no centro de massa o suporte fica parado o bloco pesado desce e o leve sobe com a mesma aceleração só que o pesado conta mais na média o centro de massa do sistema desce acelerando um vírgula sessenta e três metros por segundo ao quadrado para baixo"
+  },
+  "X5-6": {
+   "palavras": 50,
+   "dur": 18.52,
+   "fala": "e aí sai a balança a força dela é o peso total menos a massa vezes essa aceleração para baixo quarenta e nove newtons a balança mostra isso como cinco quilos um quilo a menos sem nenhuma massa ir embora só porque o centro de massa está acelerando para baixo"
+  },
+  "X5-7": {
+   "palavras": 75,
+   "dur": 27.78,
+   "fala": "confere por outro caminho a tração no fio dá catorze vírgula sete newtons a polia é puxada para baixo pelos dois lados do fio e a balança tem que segurar o suporte mais essas duas trações quarenta e nove newtons de novo e os casos limite com blocos iguais nada acelera e a balança volta aos seis quilos se o bloco leve fosse sumindo o pesado cairia livre e a balança marcaria só o suporte"
+  },
+  "X5-8": {
+   "palavras": 53,
+   "dur": 19.63,
+   "fala": "a dica quem está de fora só enxerga o centro de massa se ele acelera para baixo o apoio empurra menos se acelera para cima empurra mais é o mesmo do elevador e do cavalo puxando a pedra a força externa sai da aceleração do centro de massa sem precisar olhar para dentro"
+  },
+  "EP1": {
+   "palavras": 53,
+   "dur": 19.63,
+   "fala": "uma última ideia para levar para casa uma caixa parada no espaço de uma parede sai um pulso de luz que atravessa a caixa e é absorvido na outra parede só que a luz carrega momento então quando ela sai a caixa recua e quando ela chega do outro lado a caixa para"
+  },
+  "EP2": {
+   "palavras": 61,
+   "dur": 22.59,
+   "fala": "mas só houve forças internas então o centro de massa não podia ter andado a caixa foi para a esquerda o que foi para a direita einstein fez exatamente essa pergunta em mil novecentos e seis e a resposta exige que a própria energia carregue inércia isso não é uma demonstração é uma pista e a porta de entrada da relatividade"
+  },
+  "S2": {
+   "palavras": 112,
+   "dur": 41.48,
+   "fala": "resumindo as ferramentas um buraco é massa negativa um corpo complicado vira algumas partículas uma no centro de massa de cada pedaço sem força externa o centro de massa fica parado e aí vale trocar de régua no referencial do centro de massa os momentos se cancelam e a energia que sobra é a relativa e quando o centro de massa acelera ele entrega a força externa e as três perguntas do começo valem para qualquer um qual é o sistema tem força externa e em que direção e de qual referencial eu olho em todos os seis o mais difícil sumiu quando a gente escolheu bem o sistema e o referencial"
+  },
+  "EN1": {
+   "palavras": 23,
+   "dur": 8.52,
+   "fala": "se esses problemas mudaram o jeito como você enxerga o centro de massa se inscreve no parallax lab para acompanhar os próximos vídeos"
+  },
+  "EN2": {
+   "palavras": 36,
+   "dur": 13.33,
+   "fala": "e até aqui a massa de cada corpo nunca mudou e quando ela muda um foguete no espaço acelera sem ter nada para empurrar esse problema pede um vídeo só dele o foguete até a próxima"
+  }
+ }
+}

@@ -1,0 +1,1052 @@
+[
+{
+"aid": "H1",
+"t": 0.133,
+"frase": "Olha esse gafanhoto, parado na ponta de uma folha que boia num lago."
+},
+{
+"aid": "H1",
+"t": 4.26,
+"frase": "Ele quer pular para a outra ponta, que está a só trinta centímetros dele."
+},
+{
+"aid": "H1",
+"t": 8.133,
+"frase": "E repara que a folha não é leve: ela tem quatro vezes a massa dele."
+},
+{
+"aid": "H2",
+"t": 12.34,
+"frase": "Ele salta…"
+},
+{
+"aid": "H2",
+"t": 13.467,
+"frase": "e passa direto."
+},
+{
+"aid": "H2",
+"t": 14.56,
+"frase": "Cai na água, bem longe da folha."
+},
+{
+"aid": "H2",
+"t": 16.64,
+"frase": "Agora, olha de novo o instante do salto, em câmera lenta."
+},
+{
+"aid": "H2",
+"t": 19.947,
+"frase": "Repara que a folha não fica parada: ela escorrega para trás."
+},
+{
+"aid": "H3",
+"t": 23.54,
+"frase": "Então, em que ângulo ele precisa pular para cair de volta na folha?"
+},
+{
+"aid": "H3",
+"t": 27.72,
+"frase": "Parece que falta informação."
+},
+{
+"aid": "H3",
+"t": 29.467,
+"frase": "Mas o centro de massa resolve isso, e mais cinco problemas que parecem impossíveis."
+},
+{
+"aid": "H3",
+"t": 34.533,
+"frase": "Fica comigo: no quarto problema, a gente volta nesse gafanhoto e fecha a conta direitinho."
+},
+{
+"aid": "A1",
+"t": 39.84,
+"frase": "Fala, pessoal!"
+},
+{
+"aid": "A1",
+"t": 40.88,
+"frase": "Bem-vindos ao Parallax Lab!"
+},
+{
+"aid": "A2",
+"t": 42.59,
+"frase": "Hoje é dia de problema difícil de centro de massa."
+},
+{
+"aid": "A2",
+"t": 45.56,
+"frase": "Seis problemas que parecem não ter nada a ver um com o outro, mas que saem das mesmas poucas ideias."
+},
+{
+"aid": "A3",
+"t": 50.95,
+"frase": "Lembrando: o centro de massa é a média das posições, pesada pelas massas."
+},
+{
+"aid": "A3",
+"t": 55.32,
+"frase": "E ele se move como uma partícula com toda a massa do sistema, empurrada só pelas forças de fora."
+},
+{
+"aid": "A3",
+"t": 60.853,
+"frase": "Se não tem força externa e tudo começa parado, ele não sai do lugar."
+},
+{
+"aid": "A3",
+"t": 64.827,
+"frase": "É só isso que a gente vai usar hoje, do jeito certo."
+},
+{
+"aid": "A4",
+"t": 67.75,
+"frase": "E antes de qualquer conta, três perguntas."
+},
+{
+"aid": "A4",
+"t": 70.267,
+"frase": "Qual é o sistema?"
+},
+{
+"aid": "A4",
+"t": 71.307,
+"frase": "Tem força externa, e em que direção?"
+},
+{
+"aid": "A4",
+"t": 73.413,
+"frase": "E de qual referencial eu estou olhando?"
+},
+{
+"aid": "A4",
+"t": 75.547,
+"frase": "Em quase todo problema difícil de centro de massa, o difícil é responder bem essas três."
+},
+{
+"aid": "A4",
+"t": 80.4,
+"frase": "A conta que vem depois é curta."
+},
+{
+"aid": "X0-1",
+"t": 82.514,
+"frase": "Primeiro, um clássico: o disco com um furo fora do centro."
+},
+{
+"aid": "X0-1",
+"t": 85.973,
+"frase": "Onde fica o centro de massa?"
+},
+{
+"aid": "X0-2",
+"t": 87.6,
+"frase": "O raio do furo é metade do raio do disco, então a área dele é um quarto."
+},
+{
+"aid": "X0-2",
+"t": 92.133,
+"frase": "A gente conta o disco inteiro, com o centro de massa no centro, e soma o furo com massa negativa: menos um quarto, sentado a vinte e cinco centímetros."
+},
+{
+"aid": "X0-2",
+"t": 100.72,
+"frase": "Dá menos um doze avos de metro, uns oito centímetros e pouco, do lado oposto ao furo."
+},
+{
+"aid": "X0-2",
+"t": 105.813,
+"frase": "E atenção: ninguém tem massa negativa."
+},
+{
+"aid": "X0-2",
+"t": 108.54,
+"frase": "É só a conta de tirar um material que não está lá."
+},
+{
+"aid": "X0-3",
+"t": 111.2,
+"frase": "Confere: se o furo estivesse no meio, o centro de massa ficaria no meio, e a conta dá zero mesmo."
+},
+{
+"aid": "X0-3",
+"t": 116.773,
+"frase": "E a dica: o centro de massa foge do furo."
+},
+{
+"aid": "X1-1",
+"t": 119.817,
+"frase": "Agora em duas dimensões."
+},
+{
+"aid": "X1-1",
+"t": 121.36,
+"frase": "Uma placa quadrada, com um furo redondo fora do centro, deslocado na diagonal."
+},
+{
+"aid": "X1-1",
+"t": 126.08,
+"frase": "A placa tem espessura uniforme, então a massa de cada pedaço é proporcional à área dele."
+},
+{
+"aid": "X1-2",
+"t": 131.44,
+"frase": "Antes de qualquer conta, procura a simetria."
+},
+{
+"aid": "X1-2",
+"t": 134.24,
+"frase": "A diagonal que passa pelo centro da placa e pelo centro do furo divide tudo em duas metades iguais, espelhadas."
+},
+{
+"aid": "X1-2",
+"t": 141.32,
+"frase": "Então o centro de massa está nessa diagonal, e as duas coordenadas são iguais."
+},
+{
+"aid": "X1-2",
+"t": 146.06,
+"frase": "Basta calcular uma."
+},
+{
+"aid": "X1-3",
+"t": 147.45,
+"frase": "De novo, placa inteira mais furo com massa negativa."
+},
+{
+"aid": "X1-3",
+"t": 151.22,
+"frase": "A placa tem mil e seiscentos centímetros quadrados, com o centro de massa no meio."
+},
+{
+"aid": "X1-3",
+"t": 155.77,
+"frase": "O furo tem cem pi, uns trezentos e catorze centímetros quadrados, com o centro oito centímetros para a direita e oito para cima."
+},
+{
+"aid": "X1-3",
+"t": 163.69,
+"frase": "Fazendo a conta, a coordenada horizontal dá menos um vírgula noventa e cinco centímetros."
+},
+{
+"aid": "X1-3",
+"t": 168.827,
+"frase": "E a vertical é igual, pela simetria."
+},
+{
+"aid": "X1-3",
+"t": 171.04,
+"frase": "O centro de massa fica a quase três centímetros do centro, na diagonal, do lado oposto ao furo."
+},
+{
+"aid": "X1-4",
+"t": 176.82,
+"frase": "E se o furo encolhesse até sumir?"
+},
+{
+"aid": "X1-4",
+"t": 178.99,
+"frase": "O centro de massa voltaria para o meio."
+},
+{
+"aid": "X1-4",
+"t": 181.24,
+"frase": "E por que aqui ele andou tão pouco?"
+},
+{
+"aid": "X1-4",
+"t": 183.4,
+"frase": "O furo tira só um quinto da placa, e ainda está perto do centro."
+},
+{
+"aid": "X1-4",
+"t": 187.37,
+"frase": "A dica: procura a simetria antes de calcular."
+},
+{
+"aid": "X1-4",
+"t": 190.44,
+"frase": "Ela corta a conta pela metade e ainda diz para que lado a resposta vai."
+},
+{
+"aid": "X2-1",
+"t": 194.68,
+"frase": "Agora em três dimensões."
+},
+{
+"aid": "X2-1",
+"t": 196.53,
+"frase": "Um fio uniforme, dobrado ao longo de três arestas seguidas de um cubo de um metro: primeiro no comprimento, depois na largura, depois na altura."
+},
+{
+"aid": "X2-1",
+"t": 205.0,
+"frase": "Onde fica o centro de massa desse fio?"
+},
+{
+"aid": "X2-2",
+"t": 207.31,
+"frase": "A ferramenta aqui é a de montar por partes."
+},
+{
+"aid": "X2-2",
+"t": 209.96,
+"frase": "Cada aresta é um pedaço reto e uniforme, então, por simetria, o centro de massa de cada uma está no meio dela."
+},
+{
+"aid": "X2-2",
+"t": 217.0,
+"frase": "E cada pedaço tem um terço da massa."
+},
+{
+"aid": "X2-2",
+"t": 219.68,
+"frase": "Então a gente troca o fio por três partículas iguais, uma no meio de cada aresta."
+},
+{
+"aid": "X2-3",
+"t": 224.64,
+"frase": "Como as três massas são iguais, cada coordenada do centro de massa é uma média simples, e cada uma é uma conta de uma dimensão só."
+},
+{
+"aid": "X2-3",
+"t": 232.533,
+"frase": "Na direção do comprimento: meio, um e um, média cinco sextos de metro."
+},
+{
+"aid": "X2-3",
+"t": 237.38,
+"frase": "Na largura: zero, meio e um, média meio metro."
+},
+{
+"aid": "X2-3",
+"t": 241.05,
+"frase": "Na altura: zero, zero e meio, média um sexto de metro."
+},
+{
+"aid": "X2-3b",
+"t": 245.47,
+"frase": "E cuidado com uma pegadinha."
+},
+{
+"aid": "X2-3b",
+"t": 247.285,
+"frase": "Muita gente pega os quatro cantos do fio e tira a média."
+},
+{
+"aid": "X2-3b",
+"t": 250.698,
+"frase": "Dá três quartos, meio e um quarto, que é outro ponto."
+},
+{
+"aid": "X2-3b",
+"t": 254.325,
+"frase": "Está errado, porque a massa não está nos cantos: está espalhada ao longo das arestas."
+},
+{
+"aid": "X2-3b",
+"t": 259.285,
+"frase": "Quem representa cada pedaço é o meio dele, não as pontas."
+},
+{
+"aid": "X2-4",
+"t": 263.205,
+"frase": "E olha onde ele foi parar: dentro do cubo, no ar, a uns vinte e quatro centímetros do pedaço de fio mais próximo."
+},
+{
+"aid": "X2-4",
+"t": 269.632,
+"frase": "O centro de massa não precisa estar em cima do material."
+},
+{
+"aid": "X2-4",
+"t": 272.76,
+"frase": "Confere: as três coordenadas estão entre zero e um, então ele está dentro do cubo."
+},
+{
+"aid": "X2-4",
+"t": 277.805,
+"frase": "E a dica: em três dimensões, separa as coordenadas."
+},
+{
+"aid": "X2-4",
+"t": 281.125,
+"frase": "Cada uma é um problema de uma dimensão."
+},
+{
+"aid": "X3-1",
+"t": 283.685,
+"frase": "Agora, a resposta do começo."
+},
+{
+"aid": "X3-1",
+"t": 285.552,
+"frase": "A folha tem quatro vezes a massa do gafanhoto."
+},
+{
+"aid": "X3-1",
+"t": 288.485,
+"frase": "Ele salta a quatro metros por segundo, e repara: essa velocidade é em relação à água, não em relação à folha."
+},
+{
+"aid": "X3-1",
+"t": 294.965,
+"frase": "E a gente supõe que a água não segura a folha na horizontal, que a folha é rígida, e que a decolagem é rápida."
+},
+{
+"aid": "X3-2",
+"t": 300.965,
+"frase": "Primeiro, que momento se conserva?"
+},
+{
+"aid": "X3-2",
+"t": 303.072,
+"frase": "Na vertical, tem força externa: os pesos e o empuxo da água, que segura a folha quando ele empurra para baixo."
+},
+{
+"aid": "X3-2",
+"t": 309.205,
+"frase": "Então o momento vertical não se conserva."
+},
+{
+"aid": "X3-2",
+"t": 311.632,
+"frase": "Mas na horizontal, nenhuma força de fora."
+},
+{
+"aid": "X3-2",
+"t": 314.192,
+"frase": "Por isso, só a componente horizontal do momento total fica igual a zero do começo ao fim."
+},
+{
+"aid": "X3-3",
+"t": 319.285,
+"frase": "Então, se o gafanhoto ganha momento horizontal para a frente, a folha ganha o mesmo momento para trás."
+},
+{
+"aid": "X3-3",
+"t": 325.018,
+"frase": "A massa do gafanhoto vezes a parte horizontal da velocidade dele é igual à massa da folha vezes a velocidade da folha."
+},
+{
+"aid": "X3-3",
+"t": 331.792,
+"frase": "Como a folha tem quatro vezes a massa, ela recua com um quarto da velocidade horizontal do gafanhoto."
+},
+{
+"aid": "X3-4",
+"t": 337.525,
+"frase": "E quanto tempo ele fica no ar?"
+},
+{
+"aid": "X3-4",
+"t": 339.205,
+"frase": "Isso só depende da parte vertical da velocidade: o tempo de voo é duas vezes a parte vertical da velocidade, dividido pela aceleração da gravidade."
+},
+{
+"aid": "X3-4",
+"t": 348.218,
+"frase": "É o mesmo de qualquer lançamento."
+},
+{
+"aid": "X3-5",
+"t": 350.074,
+"frase": "Só que a pergunta é sobre a folha, e a folha está andando."
+},
+{
+"aid": "X3-5",
+"t": 353.392,
+"frase": "Então troca de régua."
+},
+{
+"aid": "X3-5",
+"t": 354.645,
+"frase": "Vista da água, o gafanhoto vai para a frente e a folha para trás."
+},
+{
+"aid": "X3-5",
+"t": 358.565,
+"frase": "Agora, vista da folha, as duas coisas se somam: em relação à folha, o gafanhoto anda com a parte horizontal da velocidade dele mais a velocidade de recuo da folha."
+},
+{
+"aid": "X3-5",
+"t": 368.925,
+"frase": "Ou seja, um vírgula vinte e cinco vezes a parte horizontal da velocidade."
+},
+{
+"aid": "X3-5b",
+"t": 374.08,
+"frase": "Dá para ver isso também pelo centro de massa do sistema, gafanhoto mais folha."
+},
+{
+"aid": "X3-5b",
+"t": 378.64,
+"frase": "Ele sobe e desce durante o voo, porque na vertical tem força externa."
+},
+{
+"aid": "X3-5b",
+"t": 382.685,
+"frase": "Mas ele nunca sai dessa linha vertical."
+},
+{
+"aid": "X3-5b",
+"t": 385.045,
+"frase": "Então a massa do gafanhoto vezes o deslocamento dele, mais a massa da folha vezes o dela, dá zero."
+},
+{
+"aid": "X3-5b",
+"t": 391.018,
+"frase": "A folha anda para trás um quarto do que o gafanhoto anda para a frente, e, em relação à folha, ele anda um vírgula vinte e cinco vezes mais."
+},
+{
+"aid": "X3-5b",
+"t": 398.885,
+"frase": "É o mesmo um vírgula vinte e cinco, por outro caminho."
+},
+{
+"aid": "X3-6",
+"t": 401.61,
+"frase": "Multiplicando essa velocidade relativa pelo tempo de voo, sai o quanto ele anda em relação à folha."
+},
+{
+"aid": "X3-6",
+"t": 406.938,
+"frase": "E aparece o seno do dobro do ângulo."
+},
+{
+"aid": "X3-6",
+"t": 409.392,
+"frase": "Com os números, dá dois vírgula zero quatro metros vezes o seno do dobro do ângulo, e isso não pode passar dos trinta centímetros da folha."
+},
+{
+"aid": "X3-6",
+"t": 417.285,
+"frase": "Então o seno do dobro do ângulo tem que ser no máximo zero vírgula um quatro sete."
+},
+{
+"aid": "X3-6",
+"t": 422.565,
+"frase": "E aí vem a surpresa: dá duas faixas."
+},
+{
+"aid": "X3-6",
+"t": 425.338,
+"frase": "Ou ele pula quase rasante, com no máximo quatro vírgula dois graus, ou quase na vertical, com pelo menos oitenta e cinco vírgula oito graus."
+},
+{
+"aid": "X3-7",
+"t": 433.685,
+"frase": "Olha os dois saltos-limite."
+},
+{
+"aid": "X3-7",
+"t": 435.338,
+"frase": "No rasante, ele fica seis centésimos de segundo no ar e sobe só quatro milímetros."
+},
+{
+"aid": "X3-7",
+"t": 440.245,
+"frase": "No quase vertical, sobe oitenta centímetros e fica oito décimos de segundo no ar."
+},
+{
+"aid": "X3-7",
+"t": 445.205,
+"frase": "E os dois chegam exatamente ao mesmo lugar: a ponta oposta da folha."
+},
+{
+"aid": "X3-7",
+"t": 449.765,
+"frase": "Confere nas réguas: em relação à água, ele anda vinte e quatro centímetros e a folha recua seis."
+},
+{
+"aid": "X3-7",
+"t": 455.205,
+"frase": "Vinte e quatro mais seis, os trinta da folha."
+},
+{
+"aid": "X3-8",
+"t": 457.685,
+"frase": "E se a folha fosse pesadíssima?"
+},
+{
+"aid": "X3-8",
+"t": 459.578,
+"frase": "O recuo sumiria, o um vírgula vinte e cinco viraria um, e voltaria o alcance de qualquer lançamento."
+},
+{
+"aid": "X3-8",
+"t": 465.258,
+"frase": "É o mesmo problema do remador na canoa, só que voando."
+},
+{
+"aid": "X3-8",
+"t": 468.365,
+"frase": "E a dica: ângulos complementares dão o mesmo alcance, e aqui isso vira a resposta."
+},
+{
+"aid": "X3-9",
+"t": 473.365,
+"frase": "E repara como o enunciado importa."
+},
+{
+"aid": "X3-9",
+"t": 475.365,
+"frase": "Se os quatro metros por segundo fossem em relação à folha, o recuo já estaria embutido, o fator um vírgula vinte e cinco sumiria, e o ângulo rasante máximo subiria para uns cinco vírgula três graus."
+},
+{
+"aid": "X3-9",
+"t": 486.485,
+"frase": "Mesmo gafanhoto, outra resposta."
+},
+{
+"aid": "X3-9",
+"t": 488.778,
+"frase": "Por isso a primeira coisa é perguntar: velocidade em relação a quê?"
+},
+{
+"aid": "X3-10",
+"t": 492.517,
+"frase": "E a pergunta do começo está respondida."
+},
+{
+"aid": "X3-10",
+"t": 494.7,
+"frase": "Ele só continua na folha de dois jeitos: quase rasante, ou quase na vertical."
+},
+{
+"aid": "X3-10",
+"t": 499.56,
+"frase": "Nos dois ângulos-limite, chega exatamente à ponta oposta; dentro dessas faixas, cai antes dela."
+},
+{
+"aid": "X3-10",
+"t": 505.72,
+"frase": "No meio, passa direto, porque a folha foge dele."
+},
+{
+"aid": "X4-1",
+"t": 508.95,
+"frase": "Agora, no espaço."
+},
+{
+"aid": "X4-1",
+"t": 510.557,
+"frase": "Duas naves acopladas, uma de mil quilos e outra com o dobro da massa, dois mil, paradas no referencial do centro de massa."
+},
+{
+"aid": "X4-1",
+"t": 517.91,
+"frase": "Entre elas, uma carga que, ao disparar, dá energia cinética ao conjunto: três mil joules."
+},
+{
+"aid": "X4-1",
+"t": 523.517,
+"frase": "Com que velocidade cada uma sai?"
+},
+{
+"aid": "X4-2",
+"t": 525.65,
+"frase": "Primeiro, o momento."
+},
+{
+"aid": "X4-2",
+"t": 527.063,
+"frase": "O momento total era zero, e a carga é interna."
+},
+{
+"aid": "X4-2",
+"t": 530.21,
+"frase": "Então, depois, os momentos das duas naves têm que ser iguais e opostos."
+},
+{
+"aid": "X4-2",
+"t": 534.77,
+"frase": "Mesmo tamanho, sentidos contrários."
+},
+{
+"aid": "X4-2",
+"t": 536.81,
+"frase": "E o centro de massa continua parado."
+},
+{
+"aid": "X4-3",
+"t": 538.919,
+"frase": "Só que olha as energias: elas não saem iguais."
+},
+{
+"aid": "X4-3",
+"t": 541.783,
+"frase": "Se os momentos são iguais, por que as energias não são?"
+},
+{
+"aid": "X4-4",
+"t": 544.91,
+"frase": "Porque a energia cinética escrita com o momento é o momento ao quadrado, dividido por duas vezes a massa."
+},
+{
+"aid": "X4-4",
+"t": 550.663,
+"frase": "Com o mesmo momento, quem tem menos massa leva mais energia."
+},
+{
+"aid": "X4-4",
+"t": 554.53,
+"frase": "Somando as duas e igualando a três mil joules, o momento de cada uma dá dois mil quilogramas metro por segundo."
+},
+{
+"aid": "X4-4",
+"t": 561.17,
+"frase": "Então a nave leve sai a dois metros por segundo e a pesada a um."
+},
+{
+"aid": "X4-4",
+"t": 565.17,
+"frase": "Elas se afastam a três metros por segundo."
+},
+{
+"aid": "X4-4",
+"t": 567.623,
+"frase": "E a energia fica dividida: dois mil joules para a leve e mil para a pesada."
+},
+{
+"aid": "X4-5",
+"t": 572.28,
+"frase": "E se as massas fossem iguais?"
+},
+{
+"aid": "X4-5",
+"t": 574.05,
+"frase": "Meio a meio."
+},
+{
+"aid": "X4-5",
+"t": 574.77,
+"frase": "E com uma nave pesadíssima, a outra levaria quase tudo."
+},
+{
+"aid": "X4-5",
+"t": 578.37,
+"frase": "A dica: no referencial do centro de massa, a energia se divide na razão inversa das massas."
+},
+{
+"aid": "X4-5",
+"t": 583.917,
+"frase": "Mas o total que a carga libera não depende de onde você olha."
+},
+{
+"aid": "X4-5",
+"t": 587.41,
+"frase": "Imagina que as naves já viajassem juntas a dez metros por segundo."
+},
+{
+"aid": "X4-5",
+"t": 591.25,
+"frase": "Antes, cento e cinquenta mil joules."
+},
+{
+"aid": "X4-5",
+"t": 593.49,
+"frase": "Depois, a leve sai a doze e a pesada a nove, e a soma dá cento e cinquenta e três mil."
+},
+{
+"aid": "X4-5",
+"t": 599.01,
+"frase": "A diferença continua sendo três mil joules: é a parte relativa, e essa nenhum referencial muda."
+},
+{
+"aid": "X5-1",
+"t": 605.25,
+"frase": "Último problema."
+},
+{
+"aid": "X5-1",
+"t": 606.21,
+"frase": "Uma balança, um suporte de dois quilos com uma polia, e dois blocos, de três e de um quilo, pendurados por um fio, travados."
+},
+{
+"aid": "X5-1",
+"t": 614.1,
+"frase": "Parada, ela marca a soma de tudo: seis quilos."
+},
+{
+"aid": "X5-1",
+"t": 617.5,
+"frase": "Agora a gente solta a trava."
+},
+{
+"aid": "X5-2",
+"t": 619.16,
+"frase": "Os blocos começam a se mover, mas nenhuma massa saiu de cima da balança."
+},
+{
+"aid": "X5-2",
+"t": 623.77,
+"frase": "E mesmo assim ela passa a marcar cinco quilos."
+},
+{
+"aid": "X5-2",
+"t": 626.61,
+"frase": "Por quê?"
+},
+{
+"aid": "X5-3",
+"t": 627.27,
+"frase": "Primeiro, qual é o sistema?"
+},
+{
+"aid": "X5-3",
+"t": 628.94,
+"frase": "Tudo que está em cima da balança: suporte, polia, fio e os dois blocos."
+},
+{
+"aid": "X5-3",
+"t": 633.61,
+"frase": "O fio puxa os blocos e a polia, mas isso é força interna."
+},
+{
+"aid": "X5-3",
+"t": 637.25,
+"frase": "De fora, só duas: o peso de tudo, para baixo, e a força da balança, para cima."
+},
+{
+"aid": "X5-3",
+"t": 642.65,
+"frase": "Então a força da balança menos o peso é a massa total vezes a aceleração do centro de massa."
+},
+{
+"aid": "X5-4",
+"t": 648.61,
+"frase": "Mas quanto acelera esse centro de massa?"
+},
+{
+"aid": "X5-4",
+"t": 651.13,
+"frase": "Antes, a aceleração dos blocos."
+},
+{
+"aid": "X5-4",
+"t": 653.01,
+"frase": "No bloco pesado, o peso menos a tração; no leve, a tração menos o peso."
+},
+{
+"aid": "X5-4",
+"t": 657.98,
+"frase": "Somando as duas, a tração some, como toda força interna."
+},
+{
+"aid": "X5-4",
+"t": 661.56,
+"frase": "Sobra a diferença dos pesos acelerando as duas massas juntas: metade da aceleração da gravidade, quatro vírgula nove metros por segundo ao quadrado."
+},
+{
+"aid": "X5-5",
+"t": 670.08,
+"frase": "Agora repara no centro de massa."
+},
+{
+"aid": "X5-5",
+"t": 672.17,
+"frase": "O suporte fica parado."
+},
+{
+"aid": "X5-5",
+"t": 673.757,
+"frase": "O bloco pesado desce e o leve sobe, com a mesma aceleração."
+},
+{
+"aid": "X5-5",
+"t": 677.51,
+"frase": "Só que o pesado conta mais na média: o centro de massa do sistema desce, acelerando."
+},
+{
+"aid": "X5-5",
+"t": 682.61,
+"frase": "Um vírgula sessenta e três metros por segundo ao quadrado, para baixo."
+},
+{
+"aid": "X5-6",
+"t": 686.7,
+"frase": "E aí sai a balança."
+},
+{
+"aid": "X5-6",
+"t": 688.13,
+"frase": "A força dela é o peso total menos a massa vezes essa aceleração para baixo: quarenta e nove newtons."
+},
+{
+"aid": "X5-6",
+"t": 694.81,
+"frase": "A balança mostra isso como cinco quilos."
+},
+{
+"aid": "X5-6",
+"t": 697.19,
+"frase": "Um quilo a menos, sem nenhuma massa ir embora, só porque o centro de massa está acelerando para baixo."
+},
+{
+"aid": "X5-7",
+"t": 702.97,
+"frase": "Confere por outro caminho: a tração no fio dá catorze vírgula sete newtons, a polia é puxada para baixo pelos dois lados do fio, e a balança tem que segurar o suporte mais essas duas trações."
+},
+{
+"aid": "X5-7",
+"t": 714.38,
+"frase": "Quarenta e nove newtons de novo."
+},
+{
+"aid": "X5-7",
+"t": 716.41,
+"frase": "E os casos-limite: com blocos iguais, nada acelera, e a balança volta aos seis quilos."
+},
+{
+"aid": "X5-7",
+"t": 721.57,
+"frase": "Se o bloco leve fosse sumindo, o pesado cairia livre, e a balança marcaria só o suporte."
+},
+{
+"aid": "X5-8",
+"t": 727.01,
+"frase": "A dica: quem está de fora só enxerga o centro de massa."
+},
+{
+"aid": "X5-8",
+"t": 730.44,
+"frase": "Se ele acelera para baixo, o apoio empurra menos; se acelera para cima, empurra mais."
+},
+{
+"aid": "X5-8",
+"t": 735.58,
+"frase": "É o mesmo do elevador, e do cavalo puxando a pedra: a força externa sai da aceleração do centro de massa, sem precisar olhar para dentro."
+},
+{
+"aid": "EP1",
+"t": 743.66,
+"frase": "Uma última ideia, para levar para casa."
+},
+{
+"aid": "EP1",
+"t": 745.82,
+"frase": "Uma caixa parada no espaço."
+},
+{
+"aid": "EP1",
+"t": 747.688,
+"frase": "De uma parede, sai um pulso de luz, que atravessa a caixa e é absorvido na outra parede."
+},
+{
+"aid": "EP1",
+"t": 752.888,
+"frase": "Só que a luz carrega momento."
+},
+{
+"aid": "EP1",
+"t": 754.755,
+"frase": "Então, quando ela sai, a caixa recua, e quando ela chega do outro lado, a caixa para."
+},
+{
+"aid": "EP2",
+"t": 759.635,
+"frase": "Mas só houve forças internas, então o centro de massa não podia ter andado."
+},
+{
+"aid": "EP2",
+"t": 764.195,
+"frase": "A caixa foi para a esquerda…"
+},
+{
+"aid": "EP2",
+"t": 765.688,
+"frase": "o que foi para a direita?"
+},
+{
+"aid": "EP2",
+"t": 766.915,
+"frase": "Einstein fez exatamente essa pergunta, em mil novecentos e seis, e a resposta exige que a própria energia carregue inércia."
+},
+{
+"aid": "EP2",
+"t": 774.222,
+"frase": "Isso não é uma demonstração: é uma pista, e a porta de entrada da relatividade."
+},
+{
+"aid": "S2",
+"t": 778.995,
+"frase": "Resumindo as ferramentas."
+},
+{
+"aid": "S2",
+"t": 780.622,
+"frase": "Um buraco é massa negativa."
+},
+{
+"aid": "S2",
+"t": 782.675,
+"frase": "Um corpo complicado vira algumas partículas, uma no centro de massa de cada pedaço."
+},
+{
+"aid": "S2",
+"t": 787.715,
+"frase": "Sem força externa, o centro de massa fica parado, e aí vale trocar de régua."
+},
+{
+"aid": "S2",
+"t": 792.248,
+"frase": "No referencial do centro de massa, os momentos se cancelam e a energia que sobra é a relativa."
+},
+{
+"aid": "S2",
+"t": 797.955,
+"frase": "E, quando o centro de massa acelera, ele entrega a força externa."
+},
+{
+"aid": "S2",
+"t": 801.675,
+"frase": "E as três perguntas do começo valem para qualquer um: qual é o sistema, tem força externa e em que direção, e de qual referencial eu olho."
+},
+{
+"aid": "S2",
+"t": 809.555,
+"frase": "Em todos os seis, o mais difícil sumiu quando a gente escolheu bem o sistema e o referencial."
+},
+{
+"aid": "EN1",
+"t": 814.915,
+"frase": "Se esses problemas mudaram o jeito como você enxerga o centro de massa, se inscreve no Parallax Lab para acompanhar os próximos vídeos."
+},
+{
+"aid": "EN1",
+"t": 821.955,
+"frase": "Aqui no canal a gente pega a física que parece difícil e mostra, com animação e conta feita passo a passo, de onde cada resultado vem."
+},
+{
+"aid": "EN1",
+"t": 829.955,
+"frase": "Ativa o sininho, deixa o seu like se isso te ajudou, e conta nos comentários qual desses seis problemas foi o seu favorito."
+},
+{
+"aid": "EN2",
+"t": 836.504,
+"frase": "E até aqui, a massa de cada corpo nunca mudou."
+},
+{
+"aid": "EN2",
+"t": 839.635,
+"frase": "E quando ela muda?"
+},
+{
+"aid": "EN2",
+"t": 840.675,
+"frase": "Como um foguete acelera no vácuo, sem se apoiar em nada de fora?"
+},
+{
+"aid": "EN2",
+"t": 844.355,
+"frase": "Esse problema pede um vídeo só dele: o foguete."
+},
+{
+"aid": "EN2",
+"t": 847.502,
+"frase": "Até a próxima!"
+}
+]

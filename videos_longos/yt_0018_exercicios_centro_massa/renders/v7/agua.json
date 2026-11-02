@@ -1,0 +1,112 @@
+{
+ "agua": {
+  "PH H1": {
+   "quadros": 61,
+   "media_baixo": 0.1633,
+   "min_media": 0.1513,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PH H2": {
+   "quadros": 56,
+   "media_baixo": 0.1293,
+   "min_media": 0.1034,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PH H3": {
+   "quadros": 82,
+   "media_baixo": 0.1058,
+   "min_media": 0.1039,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PX3 X3-1": {
+   "quadros": 87,
+   "media_baixo": 0.1168,
+   "min_media": 0.1121,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PX3 X3-2": {
+   "quadros": 91,
+   "media_baixo": 0.1229,
+   "min_media": 0.1115,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PX3 X3-3": {
+   "quadros": 92,
+   "media_baixo": 0.1295,
+   "min_media": 0.118,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PX3 X3-4": {
+   "quadros": 62,
+   "media_baixo": 0.1268,
+   "min_media": 0.1156,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PX3 X3-5": {
+   "quadros": 120,
+   "media_baixo": 0.1098,
+   "min_media": 0.1079,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PX3 X3-5b": {
+   "quadros": 138,
+   "media_baixo": 0.1199,
+   "min_media": 0.1067,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0001
+  },
+  "PX3 X3-6": {
+   "quadros": 160,
+   "media_baixo": 0.1257,
+   "min_media": 0.1136,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0001
+  },
+  "PX3 X3-7": {
+   "quadros": 120,
+   "media_baixo": 0.1192,
+   "min_media": 0.1113,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PX3 X3-8": {
+   "quadros": 79,
+   "media_baixo": 0.1227,
+   "min_media": 0.1165,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PX3 X3-9": {
+   "quadros": 96,
+   "media_baixo": 0.1148,
+   "min_media": 0.107,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  },
+  "PX3 X3-10": {
+   "quadros": 82,
+   "media_baixo": 0.127,
+   "min_media": 0.1054,
+   "frac_escuro": 0.0,
+   "max_frac": 0.0
+  }
+ },
+ "lua": {
+  "quadros": 151,
+  "p99_max": 214.0,
+  "t_pior": 17.33,
+  "rgb_medio_faixa_pior": [
+   80,
+   106,
+   174
+  ]
+ }
+}

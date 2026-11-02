@@ -1,0 +1,168 @@
+====================================================================================================
+1. AUDITORIAS DO yt_0017 (instantes distintos com ocorrência; zero = limpo)
+====================================================================================================
+PH   render ok · SEM PALCO: 12
+      ex. SEM PALCO: 0.0 s: SEM PALCO
+      COR POR TOKEN: 5 tokens conferidos, 0 fora da tabela
+PX0  render ok · SEM PALCO: 2, TEXTO SOBRE OBJETO: 71
+      ex. SEM PALCO: 0.0 s: SEM PALCO
+      ex. TEXTO SOBRE OBJETO: 8.0 s: TEXTO SOBRE OBJETO 'r=0,5m' x Difference em (-3.8; -0.5)
+      COR POR TOKEN: 24 tokens conferidos, 0 fora da tabela
+PX2  render ok · SEM PALCO: 2, TEXTO SOBRE OBJETO: 11
+      ex. SEM PALCO: 0.0 s: SEM PALCO
+      ex. TEXTO SOBRE OBJETO: 45.6 s: TEXTO SOBRE OBJETO '0' x DashedLine em (-5.7; -2.5)
+      COR POR TOKEN: 179 tokens conferidos, 0 fora da tabela
+PX3  render ok · COR POR TOKEN: 2, FORA DA MARGEM: 15, SEM PALCO: 2, TEXTO SOBRE CAIXA: 38, TEXTO SOBRE OBJETO: 62, TEXTO SOBRE TRAJETÓRIA: 2
+      ex. SEM PALCO: 0.0 s: SEM PALCO
+      ex. TEXTO SOBRE OBJETO: 30.9 s: TEXTO SOBRE OBJETO 'M\vec g' x VMobject em (-4.9; -3.9)
+      ex. FORA DA MARGEM: 30.9 s: FORA DA MARGEM 'M\vec g'
+      ex. TEXTO SOBRE CAIXA: 85.1 s: TEXTO SOBRE CAIXA 'REFERENCIAIS'
+      ex. COR POR TOKEN: 137.4 s: COR POR TOKEN '\Delta x_{rel}' em #C4BAFF (esperado #9C8CFF)
+      ex. TEXTO SOBRE TRAJETÓRIA: 242.0 s: TEXTO SOBRE TRAJETÓRIA 'VISTODAFOLHA'
+      COR POR TOKEN: 56 tokens conferidos, 2 fora da tabela
+PX4  render ok · FORA DA MARGEM: 3, SEM PALCO: 2, TEXTO SOBRE CAIXA: 2
+      ex. SEM PALCO: 0.0 s: SEM PALCO
+      ex. FORA DA MARGEM: 15.1 s: FORA DA MARGEM 'COMQUEVELOCIDADECADAUMASAI?'
+      ex. TEXTO SOBRE CAIXA: 43.8 s: TEXTO SOBRE CAIXA 'K=\tfrac{1}{2}mv^2\ ,\ \ v=\tf'
+      COR POR TOKEN: 107 tokens conferidos, 0 fora da tabela
+PX5  render ok · FORA DA MARGEM: 11, OBJETO FORA DA MARGEM: 12, SEM PALCO: 2, SOBREPOSICAO: 19, TEXTO SOBRE OBJETO: 43
+      ex. SEM PALCO: 0.0 s: SEM PALCO
+      ex. TEXTO SOBRE OBJETO: 13.3 s: TEXTO SOBRE OBJETO '100g' x VMobject em (-3.4; -0.5)
+      ex. SOBREPOSICAO: 80.5 s: SOBREPOSICAO '2,0s' x '100g' (0.04x0.04)
+      ex. OBJETO FORA DA MARGEM: 83.5 s: OBJETO FORA DA MARGEM VMobjectFromSVGPath em (7.5; 1.3)
+      ex. FORA DA MARGEM: 99.3 s: FORA DA MARGEM 'MASÉESSEPONTOQUECOMANDAACONTA'
+      COR POR TOKEN: 92 tokens conferidos, 0 fora da tabela
+PEP  render ok · SEM PALCO: 3
+      ex. SEM PALCO: 0.0 s: SEM PALCO
+      COR POR TOKEN: 0 tokens conferidos, 0 fora da tabela
+TOTAL: {'SEM PALCO': 25, 'TEXTO SOBRE OBJETO': 187, 'FORA DA MARGEM': 29, 'TEXTO SOBRE CAIXA': 40, 'COR POR TOKEN': 2, 'TEXTO SOBRE TRAJETÓRIA': 2, 'SOBREPOSICAO': 19, 'OBJETO FORA DA MARGEM': 12}
+
+====================================================================================================
+2. AUDITORIAS NOVAS
+====================================================================================================
+GAFANHOTO × FÍSICA (hook, X3, S1): posição dos pés e da ponta da folha × fórmulas (≤ 2 px); x do ⊕ constante no ar (≤ 1 px)
+  PH: 511 quadros · erro máx. gafanhoto 0.00 px, folha 0.00 px · ⊕ no ar em 71 quadros: x = 0.1200 m (esperado 0,12), variação 0.000 px  → OK
+  PX3: 3752 quadros · erro máx. gafanhoto 0.00 px, folha 0.00 px · ⊕ no ar em 461 quadros: x = 0.1200 m (esperado 0,12), variação 0.000 px  → OK
+  PEP: 180 quadros · erro máx. gafanhoto 0.00 px, folha 0.00 px  → OK
+ROJÃO (X5): toque no mesmo quadro · ⊕ sobre a parábola até 100 m (≤ 2 px) · nenhum pedaço para a esquerda no chão
+  diferença máx. de altura entre os pedaços: 0.00e+00 m · primeiro quadro com z ≤ 5 cm: {0: 842, 1: 842} → mesmo quadro · ⊕ × parábola: erro máx. 0.000 px · velocidades para a esquerda no chão: 0  → OK
+REFERENCIAL (G20): cada seta de velocidade × selo ativo no quadro
+  PX3: seta 'FOLHA' com selo VISTO DA FOLHA: 178 quadros; seta 'ÁGUA' com selo —: 1093 quadros  → OK
+  PX4: seta 'NAVE-MÃE' com selo VISTO DA NAVE-MÃE: 722 quadros  → OK
+  PX5: seta 'CENTRO DE MASSA' com selo VISTO DO CENTRO DE MASSA: 682 quadros; seta 'CHÃO' com selo VISTO DO CHÃO: 471 quadros  → OK
+CUBO (X2): ⊕ do Manim × (5/6; 1/2; 1/6) projetado pelo Three.js (pontos.json), ≤ 2 px
+  6096 pontos (⊕ e meios das arestas): erro máx. 0.000 px, médio 0.000 px  → OK
+VOLUME DOS PEDAÇOS (X5): frações medidas na malha do Three.js (alvo 0,667 / 0,333, ±3%)
+  pedaço de trás (100 g): 0.6662 · da frente (50 g): 0.3338 · volumes [0.014094, 0.007063] (soma da malha × integral do perfil: 0.021157 × 0.021211)  → OK
+
+ALINHAMENTO Three.js × Manim (pedidos3d → projeta3d em Python × pontos.json do Three.js)
+  PX2/cubo: 1524 pontos, erro máx. 0.000 px, médio 0.000 px  → OK
+  PX5/roj: 3712 pontos, erro máx. 0.000 px, médio 0.000 px  → OK
+  PEP/fog: 186 pontos, erro máx. 0.000 px, médio 0.000 px  → OK
+  PH/gra: 328 quadros 3D (granada do yt_0017 sem pontos do ⊕ por quadro: alinhamento herdado do yt_0017)
+
+====================================================================================================
+3. DURAÇÃO POR ÂNCORA (narração v1 a 2,7 palavras/s × cena)
+====================================================================================================
+  PH   H1     narração  10.00 s · cena  10.00 s · + 0.00 s
+  PH   H2     narração  12.59 s · cena  12.60 s · + 0.01 s
+  PH   H3     narração  11.11 s · cena  11.13 s · + 0.02 s
+  PH   A1     narração   2.59 s · cena   2.54 s · -0.05 s
+  PH   A2     narração  10.00 s · cena  10.00 s · + 0.00 s
+  PH   A3     narração  21.48 s · cena  21.46 s · -0.02 s
+  PH   A4     narração  17.78 s · cena  17.80 s · + 0.02 s
+  PX0  X0-1   narração  15.19 s · cena  15.20 s · + 0.01 s
+  PX0  X0-2   narração  30.00 s · cena  30.00 s · -0.00 s
+  PX0  X0-3   narração  12.59 s · cena  12.60 s · + 0.01 s
+  PX0  X1-1   narração  20.00 s · cena  20.00 s · + 0.00 s
+  PX0  X1-2   narração  16.30 s · cena  16.34 s · + 0.04 s
+  PX0  X1-3   narração  28.89 s · cena  28.86 s · -0.03 s
+  PX0  X1-4   narração  22.96 s · cena  22.94 s · -0.02 s
+  PX2  X2-1   narração  14.81 s · cena  14.80 s · -0.01 s
+  PX2  X2-2   narração  20.37 s · cena  20.40 s · + 0.03 s
+  PX2  X2-3   narração  21.85 s · cena  21.87 s · + 0.02 s
+  PX2  X2-3b  narração  20.00 s · cena  20.00 s · -0.00 s
+  PX2  X2-4   narração  24.44 s · cena  24.47 s · + 0.03 s
+  PX3  X3-1   narração  27.04 s · cena  27.07 s · + 0.03 s
+  PX3  X3-2   narração  21.11 s · cena  21.13 s · + 0.02 s
+  PX3  X3-3   narração  21.48 s · cena  21.47 s · -0.01 s
+  PX3  X3-4   narração  14.07 s · cena  14.07 s · -0.00 s
+  PX3  X3-5   narração  27.41 s · cena  27.40 s · -0.01 s
+  PX3  X3-5b  narração  34.44 s · cena  34.46 s · + 0.02 s
+  PX3  X3-6   narração  37.41 s · cena  37.40 s · -0.01 s
+  PX3  X3-7   narração  26.30 s · cena  26.34 s · + 0.04 s
+  PX3  X3-8   narração  19.26 s · cena  19.26 s · -0.00 s
+  PX3  X3-9   narração  21.48 s · cena  21.47 s · -0.01 s
+  PX4  X4-1   narração  16.30 s · cena  16.34 s · + 0.04 s
+  PX4  X4-2   narração  13.70 s · cena  13.66 s · -0.04 s
+  PX4  X4-3   narração   7.41 s · cena   7.40 s · -0.01 s
+  PX4  X4-4   narração  33.33 s · cena  33.34 s · + 0.01 s
+  PX4  X4-5   narração  37.78 s · cena  37.80 s · + 0.02 s
+  PX5  X5-1   narração  22.22 s · cena  22.20 s · -0.02 s
+  PX5  X5-2   narração  27.04 s · cena  27.07 s · + 0.03 s
+  PX5  X5-3   narração  29.63 s · cena  29.60 s · -0.03 s
+  PX5  X5-4   narração  22.96 s · cena  22.93 s · -0.03 s
+  PX5  X5-5   narração  17.04 s · cena  17.07 s · + 0.03 s
+  PX5  X5-6   narração  24.44 s · cena  24.47 s · + 0.03 s
+  PX5  X5-7   narração  20.37 s · cena  20.40 s · + 0.03 s
+  PEP  EP1    narração  19.63 s · cena  19.60 s · -0.03 s
+  PEP  EP2    narração  24.81 s · cena  24.80 s · -0.01 s
+  PEP  S1     narração  12.22 s · cena  12.20 s · -0.02 s
+  PEP  S2     narração  37.78 s · cena  37.80 s · + 0.02 s
+  PEP  EN1    narração   8.52 s · cena   8.53 s · + 0.01 s
+  PEP  EN2    narração  11.85 s · cena  12.34 s · + 0.49 s
+  TOTAL narração 16.17 min · cena 16.18 min
+
+PAUSAS (trechos ≥ 4 s sem pixel novo):
+  [pausa] PH H1    4.9–  10.1 s (5.1 s)
+  [pausa] PH H3   23.4–  29.2 s (5.8 s)
+  [pausa] PH A2   41.8–  45.9 s (4.1 s)
+  [pausa] PX0 X0-2   41.0–  45.7 s (4.7 s)
+  [pausa] PX0 X0-3   54.1–  58.3 s (4.2 s)
+  [pausa] PX0 X1-1   73.7–  80.5 s (6.8 s)
+  [pausa] PX0 X1-2   87.9–  94.7 s (6.8 s)
+  [pausa] PX0 X1-4  132.9– 137.4 s (4.5 s)
+  [pausa] PX0 X1-4  137.9– 146.4 s (8.5 s)
+  [pausa] PX2 X2-3b   68.7–  72.7 s (4.1 s)
+  [pausa] PX2 X2-3b   73.4–  77.7 s (4.3 s)
+  [pausa] PX3 X3-1    9.8–  15.3 s (5.5 s)
+  [pausa] PX3 X3-1   19.3–  27.5 s (8.3 s)
+  [pausa] PX3 X3-2   30.7–  39.3 s (8.5 s)
+  [pausa] PX3 X3-5   85.6–  89.7 s (4.1 s)
+  [pausa] PX3 X3-5   98.1– 103.8 s (5.7 s)
+  [pausa] PX3 X3-5b  120.7– 125.7 s (5.0 s)
+  [pausa] PX3 X3-5b  132.3– 136.7 s (4.5 s)
+  [pausa] PX3 X3-6  168.5– 172.5 s (4.1 s)
+  [pausa] PX3 X3-6  177.3– 182.3 s (5.0 s)
+  [pausa] PX3 X3-7  188.1– 194.5 s (6.5 s)
+  [pausa] PX3 X3-7  196.8– 201.4 s (4.6 s)
+  [pausa] PX3 X3-8  223.5– 229.1 s (5.6 s)
+  [pausa] PX4 X4-4   43.7–  47.9 s (4.3 s)
+  [pausa] PX4 X4-5   80.9–  87.2 s (6.3 s)
+  [pausa] PX5 X5-1   18.7–  22.8 s (4.1 s)
+  [pausa] PX5 X5-2   23.9–  30.9 s (7.1 s)
+  [pausa] PX5 X5-2   42.9–  49.9 s (7.0 s)
+  [pausa] PX5 X5-3   60.1–  71.1 s (10.9 s)
+  [pausa] PX5 X5-3   72.0–  78.5 s (6.5 s)
+  [pausa] PX5 X5-4   83.5–  88.5 s (5.0 s)
+  [pausa] PX5 X5-6  130.2– 134.7 s (4.5 s)
+  [pausa] PEP EP1    2.9–   7.9 s (5.0 s)
+  [pausa] PEP EP1   18.3–  24.7 s (6.4 s)
+  [pausa] PEP EP2   25.3–  35.2 s (9.9 s)
+  [pausa] PEP EP2   35.8–  44.4 s (8.6 s)
+  [pausa] PEP S2   65.6–  70.3 s (4.7 s)
+  [pausa] PEP S2   70.9–  75.5 s (4.7 s)
+  [pausa] PEP S2   76.1–  81.5 s (5.4 s)
+  [pausa] PEP S2   82.5–  89.0 s (6.5 s)
+  [pausa] PEP S2   89.7–  94.4 s (4.7 s)
+  [pausa] total de trechos parados ≥ 4 s: 41
+FUNDO (preview_yt0018_v1_960x540.mp4): 4867 quadros amostrados (1 a cada 3), com > 40% abaixo de 0,03 (fora do A1/EN1): 0 []
+
+NOTAS
+- COR POR TOKEN (PX3, 2 ocorrências): Δx_rel em violeta clareado (deslocamento relativo à folha, como v_rel); a tabela esperava violeta puro.
+  A regra foi corrigida em kit.py depois do render (Δx_rel e v_rel → VREL); o quadro não muda.
+- TEXTO SOBRE OBJETO / CAIXA restantes: rótulos encostando em linhas finas (r = 0,5 m e "10 cm" na borda tracejada do furo; ½ e 0 nas
+  linhas de projeção do cubo; marcas de tempo da estroboscopia no rastro do rojão; selo de 2 linhas tocando a caixa de T no X3-5).
+- SEM PALCO: telas de título (A1 logo, A4 checklist, EN1) e o primeiro quadro de cada lote (fade de entrada).
+- PAUSAS: trechos ≥ 4 s sem pixel novo, quase todos explicação sobre uma conta já montada (preview sem voz, duração nominal
+  2,7 palavras/s). Pendente de decisão: animar o ESQUEMA nesses trechos ou aceitar como pausa útil.

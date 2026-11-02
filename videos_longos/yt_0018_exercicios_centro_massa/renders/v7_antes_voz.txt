@@ -1,0 +1,9 @@
+narracao_v6.wav: 896.07 s; fala de 0.05 a 895.15 s
+VOZ CONTÍNUA: 66 trechos de silêncio digital >= 50 ms: 12.37s(830ms), 20.88s(2000ms), 26.40s(470ms), 42.39s(120ms), 42.53s(1270ms), 46.48s(110ms), 46.71s(580ms), 58.21s(1060ms), 75.75s(720ms), 91.15s(980ms), 97.06s(670ms), 120.78s(680ms), 129.71s(1150ms), 142.39s(670ms), 157.63s(700ms), 161.56s(110ms), 187.63s(590ms), 205.94s(1260ms), 208.84s(90ms), 219.60s(80ms), 219.73s(670ms), 237.88s(590ms), 259.22s(660ms), 277.12s(140ms), 277.35s(720ms), 298.17s(140ms), 298.45s(1080ms), 316.60s(150ms), 316.96s(500ms), 335.75s(710ms)
+BORDA ABRUPTA: 149 ocorrências (salto >= 35 dB em 10 ms): 12.55s(114dB), 13.19s(184dB), 14.44s(36dB), 18.12s(36dB), 20.87s(197dB), 22.87s(197dB), 26.39s(146dB), 26.86s(131dB), 42.54s(101dB), 43.79s(158dB), 46.61s(37dB), 46.70s(170dB), 47.26s(115dB), 47.28s(49dB), 58.46s(110dB), 59.26s(183dB), 75.74s(180dB), 76.46s(182dB), 78.89s(40dB), 91.14s(179dB), 92.12s(174dB), 95.47s(43dB), 97.05s(178dB), 97.72s(178dB), 102.55s(37dB), 120.77s(152dB), 121.45s(157dB), 129.60s(37dB), 129.70s(173dB), 130.85s(172dB), 133.60s(38dB), 142.38s(169dB), 143.05s(184dB), 157.62s(163dB), 158.32s(174dB), 171.40s(36dB), 187.50s(41dB), 187.62s(170dB), 188.19s(114dB), 206.03s(120dB)
+  maior salto: 197.4 dB em 22.87 s
+silêncios: 16289 janelas < -45 dBFS; piso mediano -65.1 dBFS, mínimo -210.3, p5 -210.3
+JUNÇÕES: 3
+  245.46 s bloco_01→bloco_02: crossfade 25 ms, silêncio natural 0.34 s
+  492.46 s bloco_02→bloco_03: crossfade 25 ms, silêncio natural 0.34 s
+  743.65 s bloco_03→bloco_04: crossfade 25 ms, silêncio natural 0.34 s

@@ -1,0 +1,1532 @@
+1
+00:00:00,083 --> 00:00:01,640
+Olha esse foguete na rampa.
+
+2
+00:00:01,720 --> 00:00:03,560
+Dezenas de metros de altura...
+
+3
+00:00:03,790 --> 00:00:05,640
+e quase tudo isso é tanque.
+
+4
+00:00:05,830 --> 00:00:10,520
+Se você colocar tudo na balança, perto
+de nove décimos da massa é propelente:
+
+5
+00:00:10,610 --> 00:00:13,080
+o combustível mais o
+oxidante que ele queima.
+
+6
+00:00:13,160 --> 00:00:17,850
+A carga que de fato vai para a órbita,
+o satélite ou a cápsula, é uma fatia de
+
+7
+00:00:17,870 --> 00:00:19,800
+poucos por cento, lá no topo.
+
+8
+00:00:19,890 --> 00:00:24,010
+E aí vem a pergunta. Se precisa ir
+mais rápido, por que não é só dobrar o
+
+9
+00:00:24,030 --> 00:00:28,917
+combustível? Porque dobrar o combustível
+não dobra a velocidade, nem de longe.
+
+10
+00:00:28,937 --> 00:00:32,680
+E para entender por quê, a gente
+precisa responder outra coisa antes:
+
+11
+00:00:32,760 --> 00:00:36,840
+como um foguete acelera no espaço,
+se lá não tem nada para ele empurrar?
+
+12
+00:00:36,970 --> 00:00:38,730
+Fala, pessoal! Bem-vindos ao
+
+13
+00:00:38,750 --> 00:00:41,480
+Parallax Lab! Hoje o assunto é o foguete:
+
+14
+00:00:41,510 --> 00:00:43,880
+um corpo que perde massa enquanto anda.
+
+15
+00:00:43,960 --> 00:00:46,890
+Primeiro, de onde vem a
+força que empurra o foguete.
+
+16
+00:00:46,910 --> 00:00:51,530
+Depois, quanta velocidade cada quilo
+de combustível compra, e aí aparece um
+
+17
+00:00:51,550 --> 00:00:54,520
+logaritmo que manda no
+projeto de qualquer foguete.
+
+18
+00:00:54,600 --> 00:00:58,810
+E no fim, por que os foguetes que vão
+para a órbita quase sempre são feitos em
+
+19
+00:00:58,830 --> 00:01:01,080
+estágios. Lembrando a base de tudo:
+
+20
+00:01:01,170 --> 00:01:05,610
+para um sistema de partículas, a força
+externa resultante é a taxa de variação do
+
+21
+00:01:05,630 --> 00:01:09,160
+momento total. Sem força externa,
+o momento total não muda.
+
+22
+00:01:09,190 --> 00:01:13,717
+Dois patinadores parados que se empurram
+saem com momentos iguais e opostos,
+
+23
+00:01:13,737 --> 00:01:16,200
+e o centro de massa dos
+dois fica onde estava.
+
+24
+00:01:16,240 --> 00:01:20,810
+Guarda essa cena, porque o foguete é exatamente isso, só que com um dos patinadores
+
+25
+00:01:20,830 --> 00:01:24,330
+virando gás. Começa com uma
+situação mais simples que o foguete.
+
+26
+00:01:24,350 --> 00:01:27,630
+Um carrinho anda num trilho
+sem atrito, carregado de areia.
+
+27
+00:01:27,650 --> 00:01:30,760
+No fundo da caçamba tem um
+furo, e a areia vai vazando.
+
+28
+00:01:30,850 --> 00:01:32,680
+Pergunta: o carrinho acelera?
+
+29
+00:01:32,760 --> 00:01:37,690
+Uma tentação é pegar a segunda lei na forma de momento, força igual à derivada de
+
+30
+00:01:37,710 --> 00:01:40,260
+massa vezes velocidade,
+e derivar o produto:
+
+31
+00:01:40,280 --> 00:01:45,450
+massa vezes a derivada da velocidade,
+mais velocidade vezes a derivada da massa.
+
+32
+00:01:45,470 --> 00:01:47,880
+Não tem força horizontal,
+então isso dá zero.
+
+33
+00:01:47,910 --> 00:01:52,770
+E aí sairia que a derivada da velocidade
+é menos a velocidade dividida pela massa,
+
+34
+00:01:52,790 --> 00:01:54,750
+vezes a taxa com que a massa muda.
+
+35
+00:01:54,770 --> 00:01:59,400
+Como a massa está diminuindo, essa taxa
+é negativa, e a aceleração dá positiva.
+
+36
+00:01:59,450 --> 00:02:02,600
+Ou seja, o carrinho aceleraria
+só por perder areia.
+
+37
+00:02:02,650 --> 00:02:04,320
+Só que isso não acontece.
+
+38
+00:02:04,340 --> 00:02:08,950
+Olha os grãos: cada um sai do furo com a
+mesma velocidade horizontal do carrinho.
+
+39
+00:02:08,970 --> 00:02:10,360
+Ninguém empurra ninguém.
+
+40
+00:02:10,410 --> 00:02:14,730
+O grão cai em parábola, sempre embaixo do
+carrinho, e o carrinho segue com a mesma
+
+41
+00:02:14,750 --> 00:02:16,970
+velocidade. A conta estava errada.
+
+42
+00:02:16,990 --> 00:02:19,320
+E o erro está na escolha do sistema.
+
+43
+00:02:19,350 --> 00:02:24,410
+A lei "força externa igual à derivada do
+momento" vale para um sistema fechado,
+
+44
+00:02:24,430 --> 00:02:26,570
+que é sempre feito da mesma matéria.
+
+45
+00:02:26,590 --> 00:02:29,090
+O carrinho sozinho não
+é um sistema fechado:
+
+46
+00:02:29,110 --> 00:02:31,130
+ele perde pedaço o tempo todo.
+
+47
+00:02:31,150 --> 00:02:34,010
+Então a gente inclui na
+conta a areia que já saiu.
+
+48
+00:02:34,030 --> 00:02:39,130
+Carrinho mais areia: aí sim, sem força
+externa horizontal, o momento horizontal
+
+49
+00:02:39,150 --> 00:02:44,090
+total fica constante. E como cada grão sai
+com a velocidade horizontal do carrinho,
+
+50
+00:02:44,110 --> 00:02:46,020
+o carrinho não precisa mudar a sua.
+
+51
+00:02:46,040 --> 00:02:47,980
+Essa é a dica do vídeo inteiro.
+
+52
+00:02:48,000 --> 00:02:51,200
+Em problema de massa variável,
+não existe uma lei nova.
+
+53
+00:02:51,220 --> 00:02:53,080
+Existe escolha de sistema:
+
+54
+00:02:53,110 --> 00:02:55,790
+você sempre inclui o
+que entra ou o que sai.
+
+55
+00:02:55,810 --> 00:03:01,460
+Agora sim, o foguete. Ele está no espaço,
+longe de tudo, sem força externa nenhuma.
+
+56
+00:03:01,480 --> 00:03:04,910
+E não tem ar, nem chão, nem
+nada atrás dele para empurrar.
+
+57
+00:03:04,930 --> 00:03:06,580
+Então de onde vem a força?
+
+58
+00:03:06,600 --> 00:03:07,930
+Olha os dois lado a lado.
+
+59
+00:03:07,950 --> 00:03:10,703
+O carrinho perde massa,
+e o foguete também.
+
+60
+00:03:10,723 --> 00:03:12,530
+A diferença está numa coisa só:
+
+61
+00:03:12,550 --> 00:03:16,080
+com que velocidade, em
+relação ao corpo, a massa sai.
+
+62
+00:03:16,100 --> 00:03:20,170
+No carrinho, a areia sai sem
+velocidade horizontal em relação a ele,
+
+63
+00:03:20,190 --> 00:03:22,210
+e ninguém empurra ninguém na horizontal.
+
+64
+00:03:22,230 --> 00:03:25,380
+No foguete, o gás é jogado
+para trás com força.
+
+65
+00:03:25,400 --> 00:03:26,760
+Então já dá para apostar:
+
+66
+00:03:26,780 --> 00:03:31,130
+se o foguete empurra o gás para trás,
+o gás empurra o foguete para a frente.
+
+67
+00:03:31,150 --> 00:03:32,520
+Vamos ver isso na conta.
+
+68
+00:03:32,590 --> 00:03:35,285
+Vamos escolher bem o
+sistema, como no carrinho.
+
+69
+00:03:35,380 --> 00:03:39,125
+Num instante qualquer, o foguete
+tem uma massa e uma velocidade.
+
+70
+00:03:39,210 --> 00:03:40,645
+Esse é o nosso sistema:
+
+71
+00:03:40,730 --> 00:03:44,162
+o foguete com todo o propelente
+que ainda está dentro dele.
+
+72
+00:03:44,182 --> 00:03:45,765
+E duas hipóteses do modelo:
+
+73
+00:03:45,850 --> 00:03:50,695
+o gás sai sempre com a mesma velocidade em
+relação ao foguete, e a gente despreza a
+
+74
+00:03:50,715 --> 00:03:53,605
+contribuição da diferença de
+pressão na saída do bocal.
+
+75
+00:03:53,710 --> 00:03:57,365
+Um instante depois, o motor jogou
+para trás um pouquinho de gás.
+
+76
+00:03:57,450 --> 00:03:59,045
+Aqui tem um detalhe de sinal.
+
+77
+00:03:59,075 --> 00:04:03,815
+A variação da massa do foguete, que
+na tela aparece como dm, é negativa,
+
+78
+00:04:03,835 --> 00:04:05,120
+porque ele perdeu massa.
+
+79
+00:04:05,140 --> 00:04:10,415
+Então o foguete agora tem massa m mais dm,
+que é menor, e a velocidade aumentou um
+
+80
+00:04:10,435 --> 00:04:14,405
+pouquinho. E o gás tem massa
+menos dm, que é positiva.
+
+81
+00:04:14,490 --> 00:04:18,165
+Esse gás sai com uma velocidade
+bem definida em relação ao foguete:
+
+82
+00:04:18,240 --> 00:04:22,805
+a velocidade de exaustão, que na
+tela aparece como v com índice ex.
+
+83
+00:04:22,900 --> 00:04:27,415
+Para quem olha de fora, a velocidade do
+gás é a velocidade do foguete menos a
+
+84
+00:04:27,435 --> 00:04:28,725
+velocidade de exaustão.
+
+85
+00:04:28,790 --> 00:04:33,525
+Sem força externa, o momento desse
+sistema antes é igual ao momento depois.
+
+86
+00:04:33,620 --> 00:04:36,005
+Antes: massa vezes velocidade.
+
+87
+00:04:36,050 --> 00:04:42,485
+Depois: o foguete, massa mais dm vezes
+velocidade mais dv, somado com o gás,
+
+88
+00:04:42,510 --> 00:04:45,205
+menos dm vezes a velocidade dele.
+
+89
+00:04:45,280 --> 00:04:50,480
+Abrindo os parênteses, a massa vezes a velocidade aparece dos dois lados e cancela.
+
+90
+00:04:50,500 --> 00:04:54,000
+Os termos com velocidade
+vezes dm também se cancelam.
+
+91
+00:04:54,020 --> 00:04:58,710
+Sobra um termo dm vezes dv, que é o
+produto de duas coisas minúsculas,
+
+92
+00:04:58,730 --> 00:05:01,365
+muito menor que o resto,
+e some no limite...
+
+93
+00:05:01,540 --> 00:05:06,935
+E fica isso: a massa vezes a variação da
+velocidade é igual a menos a velocidade de
+
+94
+00:05:06,955 --> 00:05:09,205
+exaustão vezes a variação da massa.
+
+95
+00:05:09,310 --> 00:05:11,468
+Divide tudo pelo intervalo de tempo.
+
+96
+00:05:11,488 --> 00:05:14,268
+Do lado esquerdo, massa vezes aceleração.
+
+97
+00:05:14,288 --> 00:05:18,775
+Do lado direito, a velocidade de exaustão
+vezes a taxa com que o foguete perde
+
+98
+00:05:18,795 --> 00:05:23,362
+massa, a vazão, que fica positiva
+porque o sinal de menos já cuidou disso.
+
+99
+00:05:23,382 --> 00:05:25,788
+Esse lado direito faz
+o papel de uma força.
+
+100
+00:05:25,808 --> 00:05:29,525
+É o empuxo: velocidade de
+exaustão vezes a vazão de massa.
+
+101
+00:05:29,560 --> 00:05:34,935
+E as unidades fecham: metros por segundo vezes quilogramas por segundo dá quilograma
+
+102
+00:05:34,955 --> 00:05:37,480
+metro por segundo ao
+quadrado, que é newton.
+
+103
+00:05:37,500 --> 00:05:39,255
+E repara no que isso quer dizer.
+
+104
+00:05:39,275 --> 00:05:41,760
+O foguete não empurra o espaço nem o ar.
+
+105
+00:05:41,780 --> 00:05:46,160
+Ele empurra o próprio gás para trás, e
+o gás empurra o foguete para a frente:
+
+106
+00:05:46,180 --> 00:05:49,285
+ação e reação, força interna do sistema.
+
+107
+00:05:49,315 --> 00:05:51,125
+É a cena dos patinadores de novo.
+
+108
+00:05:51,155 --> 00:05:55,655
+Se o foguete começou parado, o centro de
+massa do foguete mais todo o gás que já
+
+109
+00:05:55,675 --> 00:06:00,375
+saiu continua parado, enquanto o foguete
+dispara para um lado e a nuvem se espalha
+
+110
+00:06:00,395 --> 00:06:04,335
+para o outro. Dá para escrever isso de
+um jeito que vale para qualquer corpo que
+
+111
+00:06:04,355 --> 00:06:09,495
+ganha ou perde massa. Massa vezes
+aceleração é igual à força externa mais a
+
+112
+00:06:09,515 --> 00:06:14,550
+velocidade relativa da massa que entra ou
+sai, vezes a taxa de variação da massa.
+
+113
+00:06:14,570 --> 00:06:19,790
+No foguete, a velocidade relativa é a de
+exaustão, para trás, e aparece o empuxo.
+
+114
+00:06:19,810 --> 00:06:23,850
+No carrinho, a areia sai sem
+velocidade horizontal em relação a ele,
+
+115
+00:06:23,870 --> 00:06:26,370
+então, na horizontal, o termo some:
+
+116
+00:06:26,390 --> 00:06:27,845
+por isso ele não acelera.
+
+117
+00:06:27,875 --> 00:06:29,670
+Uma equação, os dois casos.
+
+118
+00:06:29,690 --> 00:06:32,485
+Agora a pergunta que interessa
+para o começo do vídeo:
+
+119
+00:06:32,515 --> 00:06:35,930
+quanta velocidade o foguete ganha
+queimando todo o propelente?
+
+120
+00:06:35,950 --> 00:06:41,830
+Volta na equação: massa vezes dv igual a
+menos a velocidade de exaustão vezes dm.
+
+121
+00:06:41,850 --> 00:06:43,522
+Passa a massa para o outro lado:
+
+122
+00:06:43,542 --> 00:06:48,695
+a variação da velocidade é menos a velocidade de exaustão vezes dm dividido pela
+
+123
+00:06:48,715 --> 00:06:50,565
+massa. Repara no que isso diz:
+
+124
+00:06:50,595 --> 00:06:55,045
+o ganho com um quilo de gás depende
+da massa do foguete naquele momento.
+
+125
+00:06:55,075 --> 00:06:59,445
+No começo, esse quilo empurra o
+foguete inteiro, cheio, e rende pouco.
+
+126
+00:06:59,475 --> 00:07:03,280
+No fim, empurra só a estrutura
+e a carga útil, e rende muito.
+
+127
+00:07:03,300 --> 00:07:08,170
+É essa massa no denominador que pede a integral, e é dela que vai sair o logaritmo.
+
+128
+00:07:08,190 --> 00:07:11,522
+Então integra, da massa
+inicial até a massa final.
+
+129
+00:07:11,542 --> 00:07:15,122
+A integral de dm sobre a
+massa é o logaritmo natural.
+
+130
+00:07:15,142 --> 00:07:17,170
+E o sinal de menos inverte a fração.
+
+131
+00:07:17,190 --> 00:07:20,810
+E chegamos à equação do foguete,
+a equação de Tsiolkovsky:
+
+132
+00:07:20,830 --> 00:07:25,975
+o ganho de velocidade é a velocidade de exaustão vezes o logaritmo da razão entre a
+
+133
+00:07:25,995 --> 00:07:27,740
+massa inicial e a massa final.
+
+134
+00:07:27,760 --> 00:07:30,390
+Essa razão tem nome: razão de massas.
+
+135
+00:07:30,410 --> 00:07:34,855
+Confere: se o foguete não queima
+nada, a massa final é igual à inicial,
+
+136
+00:07:34,875 --> 00:07:38,095
+o logaritmo de um é zero,
+e ele não ganha velocidade.
+
+137
+00:07:38,115 --> 00:07:41,930
+E se o gás sai cada vez mais
+devagar, o ganho também vai a zero.
+
+138
+00:07:41,950 --> 00:07:45,103
+Faz sentido. E repara no
+que não está na fórmula:
+
+139
+00:07:45,123 --> 00:07:49,690
+a vazão. Um foguete que queima tudo em
+dez segundos e outro que queima em dez
+
+140
+00:07:49,710 --> 00:07:54,090
+minutos, com a mesma velocidade de
+exaustão e a mesma razão de massas,
+
+141
+00:07:54,110 --> 00:07:56,063
+chegam na mesma velocidade final.
+
+142
+00:07:56,083 --> 00:08:01,080
+No espaço, a pressa não muda o resultado;
+só muda quanto tempo ele leva para chegar
+
+143
+00:08:01,150 --> 00:08:05,720
+lá. Agora o gráfico do ganho de velocidade, medido em velocidades de exaustão,
+
+144
+00:08:05,750 --> 00:08:07,157
+contra a razão de massas.
+
+145
+00:08:07,177 --> 00:08:10,010
+A curva é um logaritmo,
+e ela deita rápido.
+
+146
+00:08:10,030 --> 00:08:14,010
+Para ganhar uma velocidade de exaustão,
+a razão de massas é o número e,
+
+147
+00:08:14,030 --> 00:08:17,690
+uns dois vírgula sete. Para
+ganhar duas, a razão não dobra:
+
+148
+00:08:17,710 --> 00:08:20,570
+vai a e ao quadrado,
+uns sete vírgula quatro.
+
+149
+00:08:20,590 --> 00:08:23,170
+Para três, e ao cubo, uns vinte.
+
+150
+00:08:23,190 --> 00:08:27,930
+Cada degrau a mais de velocidade multiplica a razão de massas por dois vírgula sete.
+
+151
+00:08:27,950 --> 00:08:31,679
+É por isso que dobrar o combustível
+nunca dobra a velocidade.
+
+152
+00:08:31,699 --> 00:08:36,090
+Vamos colocar números. Um bom motor químico joga o gás a uns três quilômetros por
+
+153
+00:08:36,110 --> 00:08:40,410
+segundo. Para ficar em órbita baixa, a
+velocidade é de uns sete vírgula oito
+
+154
+00:08:40,430 --> 00:08:41,663
+quilômetros por segundo.
+
+155
+00:08:41,683 --> 00:08:46,290
+Só que no caminho a gravidade e o ar ainda
+cobram a parte deles, então a gente adota
+
+156
+00:08:46,310 --> 00:08:50,090
+um orçamento de nove quilômetros
+por segundo de ganho de velocidade.
+
+157
+00:08:50,110 --> 00:08:53,610
+Nove dividido por três dá
+três velocidades de exaustão.
+
+158
+00:08:53,630 --> 00:08:56,680
+Então a razão de massas
+é e ao cubo, uns vinte...
+
+159
+00:08:56,870 --> 00:09:00,490
+Ou seja, no fim da queima
+sobra um vigésimo da massa.
+
+160
+00:09:00,510 --> 00:09:03,690
+Noventa e cinco por cento do
+foguete tem que ser propelente.
+
+161
+00:09:03,710 --> 00:09:06,170
+Aí está a primeira metade da resposta.
+
+162
+00:09:06,190 --> 00:09:08,010
+E tem uma consequência estranha.
+
+163
+00:09:08,030 --> 00:09:12,850
+Se o foguete partiu do repouso, sem gravidade, quando a razão de massas passa de e,
+
+164
+00:09:12,870 --> 00:09:16,623
+ou seja, depois de queimar sessenta
+e três por cento da massa inicial,
+
+165
+00:09:16,643 --> 00:09:20,890
+o foguete já ganhou mais velocidade do
+que a própria velocidade de exaustão.
+
+166
+00:09:20,910 --> 00:09:24,170
+E aí acontece algo estranho
+com o gás recém-expelido.
+
+167
+00:09:24,190 --> 00:09:28,930
+E aí, no referencial em que o foguete começou parado, o gás recém-expelido não vai
+
+168
+00:09:28,950 --> 00:09:33,157
+mais para trás. Ele anda para a frente,
+só que mais devagar que o foguete.
+
+169
+00:09:33,177 --> 00:09:37,930
+E mesmo assim empurra. Porque o que importa para o empuxo é a velocidade do gás em
+
+170
+00:09:37,950 --> 00:09:42,650
+relação ao foguete, e essa continua sendo
+a velocidade de exaustão, para trás.
+
+171
+00:09:42,670 --> 00:09:46,570
+Visto do foguete, esse gás
+continua sendo lançado para trás.
+
+172
+00:09:46,590 --> 00:09:48,760
+Até aqui, o foguete estava no espaço.
+
+173
+00:09:48,800 --> 00:09:52,280
+Na rampa, tem uma força externa
+que não dá para ignorar:
+
+174
+00:09:52,350 --> 00:09:57,800
+o peso. Vamos supor subida vertical, gravidade constante e sem resistência do ar.
+
+175
+00:09:57,820 --> 00:09:59,560
+A equação ganha um termo:
+
+176
+00:09:59,710 --> 00:10:03,450
+massa vezes aceleração é
+igual ao empuxo menos o peso.
+
+177
+00:10:03,470 --> 00:10:05,310
+E já sai a primeira condição:
+
+178
+00:10:05,330 --> 00:10:10,200
+para sair do chão logo na largada, o empuxo tem que ser maior que o peso inicial.
+
+179
+00:10:10,230 --> 00:10:14,420
+Se não for, o foguete continua apoiado
+na rampa enquanto queima propelente:
+
+180
+00:10:14,440 --> 00:10:16,400
+a massa cai e o peso diminui.
+
+181
+00:10:16,420 --> 00:10:21,080
+Ele só decola se o empuxo superar o
+peso antes que o propelente acabe.
+
+182
+00:10:21,110 --> 00:10:24,570
+E daqui para a frente as contas valem
+depois que ele sai do chão, quando a
+
+183
+00:10:24,590 --> 00:10:26,310
+plataforma já não empurra mais.
+
+184
+00:10:26,330 --> 00:10:31,130
+Integrando de novo, contando a queima a partir da decolagem e para qualquer jeito de
+
+185
+00:10:31,150 --> 00:10:36,330
+queimar, o resultado é o mesmo logaritmo,
+menos a aceleração da gravidade vezes o
+
+186
+00:10:36,350 --> 00:10:39,690
+tempo de queima. Esse último
+termo é a perda por gravidade:
+
+187
+00:10:39,710 --> 00:10:44,040
+durante todo o tempo em que o motor funciona, a gravidade vai tirando velocidade.
+
+188
+00:10:44,060 --> 00:10:46,090
+E agora a vazão importa, sim.
+
+189
+00:10:46,110 --> 00:10:49,600
+Queimar mais rápido deixa menos
+tempo para a gravidade cobrar.
+
+190
+00:10:49,620 --> 00:10:53,930
+E olha a aceleração. Se a vazão de
+massa e a velocidade de exaustão forem
+
+191
+00:10:53,950 --> 00:10:55,983
+constantes, o empuxo também é.
+
+192
+00:10:56,003 --> 00:10:58,330
+Só que a massa do foguete vai diminuindo.
+
+193
+00:10:58,350 --> 00:11:02,730
+Então a aceleração cresce durante a queima, e pode ficar muito grande no final,
+
+194
+00:11:02,750 --> 00:11:04,520
+quando o tanque está quase vazio.
+
+195
+00:11:04,610 --> 00:11:09,170
+Primeiro exercício. Um foguete de vinte
+toneladas, das quais dezesseis são
+
+196
+00:11:09,190 --> 00:11:10,880
+propelente, sobe na vertical.
+
+197
+00:11:10,900 --> 00:11:15,770
+O gás sai a dois mil e quinhentos metros por segundo, e o motor queima cento e vinte
+
+198
+00:11:15,790 --> 00:11:19,430
+quilos por segundo. Gravidade
+constante e sem resistência do ar.
+
+199
+00:11:19,450 --> 00:11:21,550
+Ele decola? Com que aceleração?
+
+200
+00:11:21,570 --> 00:11:23,800
+E com que velocidade termina a queima?
+
+201
+00:11:23,870 --> 00:11:26,085
+Primeiro, empuxo contra peso.
+
+202
+00:11:26,180 --> 00:11:31,095
+Empuxo: velocidade de exaustão vezes
+vazão, dois mil e quinhentos vezes cento e
+
+203
+00:11:31,115 --> 00:11:33,125
+vinte, trezentos mil newtons.
+
+204
+00:11:33,210 --> 00:11:38,485
+Peso: vinte mil quilos vezes nove vírgula
+oito, cento e noventa e seis mil newtons.
+
+205
+00:11:38,560 --> 00:11:40,840
+O empuxo ganha, então ele decola.
+
+206
+00:11:40,860 --> 00:11:44,725
+A aceleração inicial é a força
+resultante dividida pela massa:
+
+207
+00:11:44,750 --> 00:11:49,575
+cento e quatro mil newtons sobre vinte
+mil quilos, cinco vírgula dois metros por
+
+208
+00:11:49,595 --> 00:11:52,085
+segundo ao quadrado.
+Agora o tempo de queima:
+
+209
+00:11:52,130 --> 00:11:56,535
+dezesseis mil quilos a cento e vinte
+por segundo, uns cento e trinta e três
+
+210
+00:11:56,555 --> 00:12:01,845
+segundos. A massa final é de quatro mil
+quilos, então a razão de massas é cinco.
+
+211
+00:12:01,890 --> 00:12:06,165
+No espaço, isso daria dois mil e
+quinhentos vezes o logaritmo de cinco:
+
+212
+00:12:06,200 --> 00:12:08,725
+uns quatro mil e vinte metros por segundo.
+
+213
+00:12:08,760 --> 00:12:13,125
+Só que aqui a gravidade cobra nove
+vírgula oito vezes cento e trinta e três,
+
+214
+00:12:13,280 --> 00:12:15,765
+uns mil e trezentos metros por segundo.
+
+215
+00:12:15,800 --> 00:12:18,860
+Sobram uns dois mil e
+setecentos metros por segundo.
+
+216
+00:12:18,880 --> 00:12:22,645
+Quase um terço do ganho foi
+embora só para vencer a gravidade.
+
+217
+00:12:22,700 --> 00:12:24,325
+E no último instante da queima?
+
+218
+00:12:24,350 --> 00:12:28,820
+Empuxo de trezentos mil newtons,
+agora empurrando só quatro mil quilos:
+
+219
+00:12:28,840 --> 00:12:33,470
+a aceleração resultante vai a uns sessenta
+e cinco metros por segundo ao quadrado,
+
+220
+00:12:33,490 --> 00:12:35,605
+quase sete vezes a gravidade.
+
+221
+00:12:35,635 --> 00:12:37,880
+E o que a carga sente é ainda mais.
+
+222
+00:12:37,900 --> 00:12:42,482
+A gravidade puxa tudo junto, por igual,
+e não aperta ninguém contra o assento:
+
+223
+00:12:42,502 --> 00:12:44,310
+quem aperta é só o empuxo.
+
+224
+00:12:44,330 --> 00:12:49,295
+Então a carga sente o empuxo dividido pela
+massa, setenta e cinco metros por segundo
+
+225
+00:12:49,315 --> 00:12:52,965
+ao quadrado, mais de sete
+vezes e meia o próprio peso.
+
+226
+00:12:53,000 --> 00:12:56,860
+Por isso muitos foguetes reduzem
+o motor em certas fases do voo.
+
+227
+00:12:56,880 --> 00:12:58,322
+Confere com o que a gente viu:
+
+228
+00:12:58,342 --> 00:13:03,575
+a razão de massas é cinco, maior que e,
+então no espaço esse foguete passaria da
+
+229
+00:13:03,595 --> 00:13:05,300
+velocidade do próprio gás.
+
+230
+00:13:05,320 --> 00:13:08,565
+E passa mesmo: quatro mil
+contra dois mil e quinhentos.
+
+231
+00:13:08,590 --> 00:13:12,565
+E a dica: compara empuxo com
+peso antes de qualquer conta.
+
+232
+00:13:12,640 --> 00:13:15,525
+Agora, a segunda metade
+da pergunta do começo.
+
+233
+00:13:15,550 --> 00:13:17,490
+Um foguete não é só propelente:
+
+234
+00:13:17,510 --> 00:13:19,750
+tem tanque, motor, estrutura.
+
+235
+00:13:19,770 --> 00:13:24,150
+Vamos supor que essa estrutura pese dez
+por cento do propelente que ela carrega.
+
+236
+00:13:24,170 --> 00:13:29,415
+Gás a três quilômetros por segundo, e o
+orçamento, de novo, é de nove quilômetros
+
+237
+00:13:29,435 --> 00:13:32,170
+por segundo, com as perdas
+já incluídas nesse número.
+
+238
+00:13:32,190 --> 00:13:35,442
+Esses nove são três vezes
+a velocidade do gás.
+
+239
+00:13:35,462 --> 00:13:37,360
+Dá para fazer com um estágio só?
+
+240
+00:13:37,380 --> 00:13:41,260
+No começo, o foguete tem a carga,
+o propelente e a estrutura:
+
+241
+00:13:41,280 --> 00:13:44,360
+a carga mais um vírgula
+um vezes o propelente.
+
+242
+00:13:44,380 --> 00:13:47,180
+No fim, sobram a carga
+e a estrutura vazia:
+
+243
+00:13:47,200 --> 00:13:50,320
+a carga mais zero vírgula
+um vezes o propelente.
+
+244
+00:13:50,340 --> 00:13:52,860
+Agora pega o caso mais generoso possível:
+
+245
+00:13:52,880 --> 00:13:57,855
+carga zero. A razão de massas fica um
+vírgula um dividido por zero vírgula um,
+
+246
+00:13:57,875 --> 00:14:02,935
+que é onze. E três vezes o logaritmo de
+onze dá sete vírgula dois quilômetros por
+
+247
+00:14:02,955 --> 00:14:05,890
+segundo... Não chega.
+Nem sem carga nenhuma.
+
+248
+00:14:05,910 --> 00:14:09,500
+O tanque vazio é peso morto que
+o foguete carrega até o fim.
+
+249
+00:14:09,520 --> 00:14:11,980
+A saída é não carregar o tanque vazio.
+
+250
+00:14:12,000 --> 00:14:13,450
+Divide o foguete em dois.
+
+251
+00:14:13,470 --> 00:14:17,900
+O primeiro estágio queima, e quando
+esvazia, é jogado fora, com motor e tudo.
+
+252
+00:14:17,920 --> 00:14:22,550
+Aí o segundo estágio acende, bem mais
+leve, e começa uma razão de massas nova.
+
+253
+00:14:22,570 --> 00:14:24,725
+Vamos dividir o orçamento meio a meio:
+
+254
+00:14:24,755 --> 00:14:27,990
+quatro vírgula cinco quilômetros
+por segundo para cada estágio.
+
+255
+00:14:28,010 --> 00:14:32,615
+Isso é uma vez e meia a velocidade de exaustão, então cada estágio precisa de uma
+
+256
+00:14:32,635 --> 00:14:37,490
+razão de massas de e elevado a um vírgula
+cinco, uns quatro vírgula quarenta e oito.
+
+257
+00:14:37,510 --> 00:14:41,790
+Começa pelo de cima. A conta é a mesma
+de antes, só que agora ela fecha:
+
+258
+00:14:41,810 --> 00:14:45,975
+o propelente do segundo estágio sai
+cinco vírgula três vezes a carga,
+
+259
+00:14:45,995 --> 00:14:50,560
+e o segundo estágio inteiro, cheio,
+pesa seis vírgula nove vezes a carga.
+
+260
+00:14:50,580 --> 00:14:55,362
+Agora o truque: para o primeiro estágio,
+o segundo estágio inteiro é a carga.
+
+261
+00:14:55,382 --> 00:15:00,725
+A conta se repete igualzinha, e o foguete
+completo na rampa pesa seis vírgula nove
+
+262
+00:15:00,760 --> 00:15:02,250
+vezes seis vírgula nove...
+
+263
+00:15:02,270 --> 00:15:04,965
+uns quarenta e sete vezes a carga útil.
+
+264
+00:15:05,030 --> 00:15:10,030
+E olha o que saiu. Com esse orçamento e essas hipóteses, para cada tonelada de carga
+
+265
+00:15:10,050 --> 00:15:13,100
+útil, quarenta e sete toneladas na rampa.
+
+266
+00:15:13,130 --> 00:15:18,150
+A carga é dois por cento do foguete, e
+o propelente, quase noventa por cento.
+
+267
+00:15:18,170 --> 00:15:20,860
+É exatamente o retrato
+do foguete do começo:
+
+268
+00:15:20,910 --> 00:15:22,780
+quase todo combustível.
+
+269
+00:15:22,860 --> 00:15:27,750
+Confere: se a estrutura não pesasse nada,
+um estágio só bastaria, com aquela razão
+
+270
+00:15:27,770 --> 00:15:31,840
+de massas de vinte. Com essa massa
+estrutural e esse orçamento de velocidade,
+
+271
+00:15:31,860 --> 00:15:33,657
+um estágio só não basta.
+
+272
+00:15:33,677 --> 00:15:35,090
+E uma observação honesta:
+
+273
+00:15:35,110 --> 00:15:39,390
+dividir a velocidade meio a meio entre
+os estágios foi uma escolha para deixar a
+
+274
+00:15:39,410 --> 00:15:44,230
+conta limpa. Na engenharia, essa divisão
+é otimizada, e os estágios de verdade têm
+
+275
+00:15:44,250 --> 00:15:46,100
+motores e tamanhos diferentes.
+
+276
+00:15:46,120 --> 00:15:51,550
+A dica fica: o logaritmo cobra pela razão
+de massas, e cada estágio começa uma razão
+
+277
+00:15:51,570 --> 00:15:53,650
+nova. Agora o foguete ao contrário:
+
+278
+00:15:53,670 --> 00:15:58,730
+massa entrando. Um funil despeja areia
+numa esteira, vinte quilos por segundo.
+
+279
+00:15:58,750 --> 00:16:02,700
+A esteira anda a um vírgula cinco
+metros por segundo, constante.
+
+280
+00:16:02,730 --> 00:16:05,880
+A areia cai na vertical,
+sem velocidade horizontal.
+
+281
+00:16:05,900 --> 00:16:08,217
+Que força o motor da
+esteira precisa fazer?
+
+282
+00:16:08,237 --> 00:16:11,530
+E com que potência? Escolhe
+o sistema seguindo a areia.
+
+283
+00:16:11,550 --> 00:16:15,630
+A cada segundo, chegam vinte quilos
+de areia sem velocidade horizontal.
+
+284
+00:16:15,650 --> 00:16:20,163
+Depois de escorregar um pouco, esses mesmos vinte quilos saem andando junto com a
+
+285
+00:16:20,183 --> 00:16:22,680
+esteira, a um vírgula
+cinco metros por segundo.
+
+286
+00:16:22,700 --> 00:16:27,070
+Então a esteira precisa entregar à areia
+trinta quilogramas metro por segundo de
+
+287
+00:16:27,090 --> 00:16:28,860
+momento, a cada segundo.
+
+288
+00:16:28,890 --> 00:16:32,990
+Isso é uma força de trinta newtons,
+que a esteira faz na areia pelo atrito.
+
+289
+00:16:33,010 --> 00:16:37,870
+Por ação e reação, a areia puxa a esteira
+para trás com os mesmos trinta newtons.
+
+290
+00:16:37,890 --> 00:16:41,660
+E, para a esteira não perder
+velocidade, o motor tem que compensar:
+
+291
+00:16:41,710 --> 00:16:45,400
+trinta newtons. A potência
+é força vezes velocidade:
+
+292
+00:16:45,420 --> 00:16:48,780
+trinta vezes um vírgula
+cinco, quarenta e cinco watts.
+
+293
+00:16:48,800 --> 00:16:52,010
+Agora a energia cinética que
+a areia ganha por segundo:
+
+294
+00:16:52,030 --> 00:16:57,100
+metade da vazão vezes a velocidade ao quadrado, vinte e dois vírgula cinco watts...
+
+295
+00:16:57,150 --> 00:17:02,350
+Exatamente a metade. O motor paga quarenta
+e cinco, e a areia só leva vinte e dois e
+
+296
+00:17:02,370 --> 00:17:04,020
+meio. Para onde foi o resto?
+
+297
+00:17:04,040 --> 00:17:05,603
+Vai para o escorregamento.
+
+298
+00:17:05,623 --> 00:17:09,790
+Quando o grão cai na esteira, ele ainda
+está parado, e a esteira passa por baixo
+
+299
+00:17:09,810 --> 00:17:13,630
+dele. Ele escorrega até pegar a
+velocidade da esteira, e o atrito nesse
+
+300
+00:17:13,650 --> 00:17:15,443
+escorregamento esquenta tudo.
+
+301
+00:17:15,463 --> 00:17:17,310
+Agora olha do referencial da esteira:
+
+302
+00:17:17,330 --> 00:17:22,110
+ali, cada grão chega a um vírgula cinco metros por segundo para trás e escorrega até
+
+303
+00:17:22,130 --> 00:17:25,710
+parar. Ele perde toda a energia
+cinética que tinha nesse referencial,
+
+304
+00:17:25,730 --> 00:17:29,470
+metade da massa vezes a velocidade
+ao quadrado, e isso vira calor.
+
+305
+00:17:29,490 --> 00:17:32,137
+É a mesma quantidade que
+ele ganha visto do chão.
+
+306
+00:17:32,157 --> 00:17:36,510
+Por isso é metade. Nesse modelo, desde que
+a areia alcance a velocidade da esteira,
+
+307
+00:17:36,530 --> 00:17:40,590
+a energia dissipada no escorregamento
+não depende do coeficiente de atrito.
+
+308
+00:17:40,610 --> 00:17:44,750
+Um atrito maior faz o grão acelerar
+mais rápido, mas o resultado energético
+
+309
+00:17:44,770 --> 00:17:46,430
+permanece igual. Confere:
+
+310
+00:17:46,450 --> 00:17:50,803
+quilogramas por segundo vezes metros por
+segundo ao quadrado dá joule por segundo,
+
+311
+00:17:50,823 --> 00:17:55,630
+que é watt. E a dica: nesse modelo, sem outras perdas, quando a massa entra parada e
+
+312
+00:17:55,650 --> 00:17:59,950
+a esteira não muda de velocidade, o motor
+paga o dobro da energia cinética que
+
+313
+00:17:59,970 --> 00:18:02,723
+entrega. Então, voltando
+à pergunta do começo.
+
+314
+00:18:02,743 --> 00:18:07,470
+O foguete acelera empurrando o próprio
+gás, e o empuxo é a velocidade de exaustão
+
+315
+00:18:07,490 --> 00:18:12,110
+vezes a vazão. Só que a velocidade que ele
+ganha cresce com o logaritmo da razão de
+
+316
+00:18:12,130 --> 00:18:14,083
+massas, e o logaritmo cobra caro:
+
+317
+00:18:14,103 --> 00:18:18,670
+cada velocidade de exaustão a mais
+multiplica a razão por dois vírgula sete.
+
+318
+00:18:18,690 --> 00:18:22,830
+Com o gás a três quilômetros por segundo
+e nove quilômetros por segundo para chegar
+
+319
+00:18:22,850 --> 00:18:27,350
+à órbita, a conta pede um foguete que é
+quase todo propelente, e ainda dividido em
+
+320
+00:18:27,370 --> 00:18:29,577
+estágios para jogar fora o tanque vazio.
+
+321
+00:18:29,597 --> 00:18:31,710
+E tudo isso saiu de uma ideia só:
+
+322
+00:18:31,730 --> 00:18:34,220
+escolher o sistema que inclui o que sai.
+
+323
+00:18:34,365 --> 00:18:36,185
+E fica um desafio para os comentários:
+
+324
+00:18:36,205 --> 00:18:40,345
+um foguete de um estágio só, sem contar
+a estrutura, precisa ganhar o dobro da
+
+325
+00:18:40,365 --> 00:18:41,732
+velocidade de exaustão.
+
+326
+00:18:41,752 --> 00:18:44,345
+Que fração da massa inicial
+tem que ser propelente?
+
+327
+00:18:44,365 --> 00:18:47,640
+Até a próxima! Lembra da areia na esteira?
+
+328
+00:18:47,770 --> 00:18:53,010
+Metade da energia virou calor, porque o grão bate e escorrega até pegar a velocidade
+
+329
+00:18:53,030 --> 00:18:56,703
+da esteira. Esse tipo de perda tem
+um vídeo só dele aqui no canal:
+
+330
+00:18:56,723 --> 00:19:01,663
+o das colisões. Lá a gente vê quando a energia se conserva, quando ela vira calor,
+
+331
+00:19:01,683 --> 00:19:04,360
+e o que o momento garante nos dois casos.
+
+332
+00:19:04,720 --> 00:19:08,915
+Se essa conta mudou o jeito como você
+olha para um foguete, se inscreva no
+
+333
+00:19:08,935 --> 00:19:12,425
+Parallax Lab. E o vídeo de
+colisões está logo aqui do lado.

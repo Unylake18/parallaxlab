@@ -1,0 +1,145 @@
+# yt_0019 — QA do preview v6 (960×540 / 15 fps, sem voz)
+
+## 1. Portão G28 (linhas [audit] da auditoria a cada 3 quadros)
+- PH: 209 ocorrências, 532 passadas (completa): TEXTO SOBRE OBJETO 199; SEM PALCO 10
+- PT1: 1950 ocorrências, 584 passadas (completa): FORA DA ZONA 898; TEXTO SOBRE OBJETO 722; FORA DA MARGEM 188; ENCOSTADO 142
+- PT2: 4247 ocorrências, 1309 passadas (completa): ENCOSTADO 3299; FORA DA ZONA 337; TEXTO SOBRE OBJETO 331; CALHA 152; TEXTO PEQUENO 85; FORA DA MARGEM 42; SEM PALCO 1
+- PT3: 962 ocorrências, 1245 passadas (completa): CALHA 374; FORA DA ZONA 294; TEXTO PEQUENO 157; TEXTO SOBRE OBJETO 74; ENCOSTADO 61; SOBREPOSICAO 1; COR POR TOKEN 1
+- PT4: 95 ocorrências, 447 passadas (completa): FORA DA MARGEM 81; TEXTO SOBRE OBJETO 13; SEM PALCO 1
+- PE1: 1992 ocorrências, 778 passadas (completa): TEXTO PEQUENO 687; CALHA 520; CHAMADA CRUZA CORPO 466; ENCOSTADO 170; LINHA ÓRFÃ 104; RÓTULO SOLTO 23; SELO DUPLO 19; TEXTO SOBRE OBJETO 2
+- PE2: 3028 ocorrências, 951 passadas (completa): FORA DA ZONA 2151; CALHA 450; TEXTO PEQUENO 336; SELO DUPLO 33; SOBREPOSICAO 22; ENCOSTADO 12; TEXTO SOBRE OBJETO 11; TRÂNSITO 10
+- PE3: 1161 ocorrências, 763 passadas (completa): TEXTO SOBRE OBJETO 889; TEXTO PEQUENO 212; SELO DUPLO 51; ENCOSTADO 5; SOBREPOSICAO 2; OPACIDADE 1; FORA DA ZONA 1
+- PS: 17 ocorrências, 348 passadas (completa): DEGRADÊ FORA DO ⊕ 17
+
+## 2. Auditorias de física
+- CM FOGUETE + GÁS (PT2, 451 quadros): x do ⊕ calculado das 3200 partículas varia no máx. 1.12e-13 px (limite 1 px); momento total máx. 5.2e-16 · m₀ v_ex (limite 1e-6)
+- CM FOGUETE + GÁS (PT3, 712 quadros): x do ⊕ calculado das 3200 partículas varia no máx. 1.09e-13 px (limite 1 px); momento total máx. 5.2e-16 · m₀ v_ex (limite 1e-6)
+- CM transversal: máx. 0.0e+00 m (pares simétricos) → 0 px
+- VELOCIDADE RELATIVA: toda partícula nasce com v_foguete − v_ex: erro relativo máx. 0.0e+00 (limite 1e-9)
+  cruzamento v = v_ex: 1ª parcela branca em t = 63.20 s de simulação; exato 63.212 s → 0.05 quadro (FAT3 = 3.333 s/s; limite ±1)
+  partículas que mudam de cor depois de nascer (PT3, 717 quadros): 0 quadros com mudança
+  v final da simulação (Δt = 0.05 s): 4021.1 m/s × v_ex ln 5 = 4023.6 m/s (-0.06%)
+- CARRINHO: v do carrinho 0.3300…0.3300 u/s (variação 0.00%, limite 0,5%)
+  grãos em queda × vertical do furo: máx. 4.26e-13 px (limite 1 px)
+  fantasma × v₀ m₀/m: erro máx. 0.0e+00 u/s (356 quadros)
+- ESTÁGIOS: 1º estágio depois da separação (visto de fora): v = 0.7700…0.7700 (constante); dx/dt medido 0.0000…0.7700
+  barras: hook 89.0 / 8.9 / 2.1; E2-5 89.0 / 8.9 / 2.1; S1 89.0 / 8.9 / 2.1 (o mesmo objeto, FR_HOOK)
+- SETAS PROPORCIONAIS: E1-2 empuxo : peso = 1.800 : 1.176 = 1.5306 (alvo 300/196 = 1.5306)
+  T3-1 inset: setas dv 0.500 : 2.500 = 1 : 5.00 (alvo 1 : 5)
+  H3: setas de Δv 2.278 : 2.892 = 1 : 1.270 (alvo ln 21 / ln 11 = 1.270)
+  E1-4: força do assento : resultante = 2.000 : 1.739 = 1.150 (alvo 75/65,2 = 1.150)
+- REFERENCIAL (G20): cada seta de velocidade com o referencial dela e o selo ativo no quadro
+  PT2: 'v_ex' em 'EM RELAÇÃO AO FOGUETE' · selo/rótulo: 'rótulo junto da seta' (2 registros) ok
+  PT2: 'v carrinho' em 'DE FORA' · selo/rótulo: 'DE FORA' (1 registros) ok
+  PT2: 'v foguete' em 'DE FORA' · selo/rótulo: 'DE FORA' (1 registros) ok
+  PT3: 'gás novo' em 'DE FORA (O FOGUETE PARTIU DO REPOUSO)' · selo/rótulo: 'DE FORA (O FOGUETE PARTIU DO REPOUSO)' (403 registros) ok
+  PT3: 'v_ex' em 'EM RELAÇÃO AO FOGUETE' · selo/rótulo: 'rótulo junto da seta' (1 registros) ok
+  PE1: 'v_ex' em 'EM RELAÇÃO AO FOGUETE' · selo/rótulo: 'rótulo junto da seta' (1 registros) ok
+  PE2: 'v_ex' em 'EM RELAÇÃO AO FOGUETE' · selo/rótulo: 'seta no bocal (dado do exercício)' (1 registros) ok
+- NÚMEROS (Anexo A, exatos com g = 9,8):
+  e, e², e³: 2.7183; 7.3891; 20.0855 (tabela: 2,7183; 7,3891; 20,0855)
+  95%: 0.9502 (tabela: 0,9502)
+  63%: 0.6321 (tabela: 0,6321)
+  E1 empuxo, peso, a₀: 300000; 196000; 5.20 (tabela: 300000; 196000; 5,2)
+  E1 t_q, 4.024, perda, Δv: 133.33; 4023.6; 1306.7; 2716.9 (tabela: 133,33; 4023,6; 1306,7; 2716,9)
+  E1 a_f, a_sentida: 65.2; 75 (7.65 g) (tabela: 65,2; 75 (7,65 g))
+  E2 R = 11, Δv: 11; 7.194 (tabela: 11; 7,194)
+  E2 e^1,5, f₂, m₀₂, m₀₁: 4.4817; 5.3414; 6.8755; 47.273 (tabela: 4,4817; 5,3414; 6,8755; 47,273)
+  E2 barras: 89.0; 8.9; 2.1 (tabela: 89,0; 8,9; 2,1)
+  E2 conferência 1º estágio: 4.500 km/s (tabela: 4,500)
+  E3 30 N, 45 W, 22,5 W: 30; 45.0; 22.5 (tabela: 30; 45; 22,5)
+  EN2 (não falado): 0.8647 (tabela: 0,8647)
+  T4-3 finais 240 e 120 kg/s: 3370; 2717 (tabela: 3.370; 2.717)
+  T4-4 a(0), a(t_q): 5.2; 65.2 (tabela: 5,2; 65,2)
+
+## 3. Alinhamento Three.js × Manim (bocal do foguete: projeção do Manim × pontos.json do Three.js)
+- PH/rampa: 657 quadros, erro máx. 0.000 px, médio 0.000 px (limite 2 px)
+  custo: {"lote":"PH","res":"960x540","renderizados":244,"copiados":413,"segundos":23.1,"s_por_quadro":0.0945}
+- PT2/esp: 647 quadros, erro máx. 0.000 px, médio 0.000 px (limite 2 px)
+  custo: {"lote":"PT2","res":"960x540","renderizados":618,"copiados":29,"segundos":54.1,"s_por_quadro":0.0875}
+- PT3/esp: 717 quadros, erro máx. 0.000 px, médio 0.000 px (limite 2 px)
+  custo: {"lote":"PT3","res":"960x540","renderizados":672,"copiados":45,"segundos":66.9,"s_por_quadro":0.0996}
+- PT4/rampa: 635 quadros, erro máx. 0.000 px, médio 0.000 px (limite 2 px)
+  custo: {"lote":"PT4","res":"960x540","renderizados":341,"copiados":294,"segundos":32,"s_por_quadro":0.094}
+- PE2/esp: 213 quadros, erro máx. 0.000 px, médio 0.000 px (limite 2 px)
+  custo: {"lote":"PE2","res":"960x540","renderizados":170,"copiados":43,"segundos":13.1,"s_por_quadro":0.0773}
+- PS/rampa: 628 quadros, erro máx. 0.000 px, médio 0.000 px (limite 2 px)
+  custo: {"lote":"PS","res":"960x540","renderizados":74,"copiados":554,"segundos":7.4,"s_por_quadro":0.1005}
+
+## 4. Duração por âncora (narração v1.2: 2,7 palavras/s; a cena estica para a fala)
+- PH H1: narração 5.9 s · cena 5.9 s
+- PH H2: narração 17.0 s · cena 17.1 s
+- PH H3: narração 20.4 s · cena 20.4 s
+- PH A1: narração 2.6 s · cena 2.5 s
+- PH A2: narração 22.6 s · cena 22.6 s
+- PH A3: narração 25.6 s · cena 25.5 s
+- PT1 T1-1: narração 13.0 s · cena 12.9 s
+- PT1 T1-2: narração 33.3 s · cena 33.3 s
+- PT1 T1-3: narração 16.3 s · cena 16.3 s
+- PT1 T1-4: narração 32.2 s · cena 32.2 s
+- PT1 T1-5: narração 11.5 s · cena 11.5 s
+- PT2 T2-1: narração 12.2 s · cena 12.2 s
+- PT2 T2-1b: narração 31.1 s · cena 31.1 s
+- PT2 T2-2: narração 24.4 s · cena 24.5 s
+- PT2 T2-3: narração 40.0 s · cena 40.0 s
+- PT2 T2-4: narração 39.3 s · cena 39.3 s
+- PT2 T2-5: narração 30.4 s · cena 30.4 s
+- PT2 T2-6: narração 30.0 s · cena 30.0 s
+- PT2 T2-7: narração 31.5 s · cena 31.5 s
+- PT3 T3-1: narração 53.7 s · cena 53.7 s
+- PT3 T3-2: narração 14.4 s · cena 14.5 s
+- PT3 T3-3: narração 15.6 s · cena 15.5 s
+- PT3 T3-4: narração 21.9 s · cena 21.9 s
+- PT3 T3-5: narração 34.4 s · cena 34.5 s
+- PT3 T3-6: narração 40.7 s · cena 40.7 s
+- PT3 T3-7: narração 20.4 s · cena 21.5 s  ← cena mais longa
+- PT3 T3-8: narração 26.3 s · cena 26.3 s
+- PT4 T4-1: narração 11.5 s · cena 11.5 s
+- PT4 T4-2: narração 30.4 s · cena 30.4 s
+- PT4 T4-3: narração 25.9 s · cena 26.1 s
+- PT4 T4-4: narração 11.8 s · cena 11.9 s
+- PE1 E1-1: narração 20.4 s · cena 20.4 s
+- PE1 E1-2: narração 25.6 s · cena 25.5 s
+- PE1 E1-3: narração 37.0 s · cena 37.1 s
+- PE1 E1-4: narração 55.9 s · cena 55.9 s
+- PE2 E2-1: narração 23.3 s · cena 23.3 s
+- PE2 E2-2: narração 35.9 s · cena 35.9 s
+- PE2 E2-3: narração 15.6 s · cena 15.5 s
+- PE2 E2-4: narração 48.1 s · cena 48.1 s
+- PE2 E2-5: narração 18.1 s · cena 18.1 s
+- PE2 E2-6: narração 29.3 s · cena 29.3 s
+- PE3 E3-1: narração 17.8 s · cena 17.8 s
+- PE3 E3-2: narração 37.4 s · cena 37.4 s
+- PE3 E3-3: narração 23.3 s · cena 23.3 s
+- PE3 E3-4: narração 45.2 s · cena 45.2 s
+- PE3 E3-5: narração 15.9 s · cena 15.9 s
+- PS S1: narração 41.1 s · cena 41.1 s
+- PS EN1: narração 8.2 s · cena 8.1 s
+- PS EN2: narração 13.7 s · cena 13.7 s
+- total: narração 20.97 min · cena 20.99 min
+- compressão das simulações: T2-6 a queima de 80 s em 12 s de tela (FAT = 6.667); T3-7/T3-8 em 24 s (FAT3 = 3.333), para o cruzamento cair no fim do T3-7 com o empuxo ainda ligado no começo do T3-8 (com 12 s a queima acabaria antes do T3-8)
+
+## 5. Auditorias do handoff v2 (G29–G34)
+- SISTEMA T2-3: contorno ['0.50', '-0.62', '5.70', '1.28'] contém o foguete ['2.50', '-0.20', '5.70', '0.86'] e a nuvem −dm ['1.17', '0.05', '1.78', '0.48']: ok
+- FORÇA NO CORPO (G33), origem da seta × ponto de aplicação, máx. em px (limite 6): E1-2 0.0; T2-6 5.4; T3-8 20.4; T4-1 0.0
+- POPULAÇÕES T3-7/T3-8: luminância 0.18 (frente: âmbar 25% com anel branco) × 0.71 (trás: âmbar cheio): contraste (L_max+0,05)/(L_min+0,05) = 7.50 (limite FIXO 3,0: ok); tamanho 1,0
+- QUEIMA DO T3-8: corte do motor 1.97 s antes do fim do bloco (limite 1,5…3,0): ok; inset EM RELAÇÃO AO FOGUETE presente durante a queima
+  inset T3-8: todas as parcelas novas saem para trás em 395/395 quadros
+- FOGUETE ÚNICO (G29): construtores de foguete 2D nos sec_*.py: 22 chamadas, todas via FogueteMestre; Polygon avulsos nos sec_*.py: 4 (funil da esteira e balão; nenhum é foguete); 3D: um só modelo (f19.js, montaFoguete)
+- SELO (G32): selos com mais de uma linha: nenhum
+- ESCALA DE LINHA da CONTA (mínimo 0,96): 10 linhas ajustadas, menor escala 0.886 ← ABAIXO DE 0,96
+- linhas da CONTA mais largas que a Pilha (+4%): 0
+- ÁREA MORTA (G30) e QUADRO VAZIO (G31): ver renders/area_morta.txt: 11 trechos de ÁREA MORTA (> 4 s com mais de 6 das 12 células vazias) e 7 QUADROS VAZIOS em 1260 amostras (1 por segundo)
+
+## 6. Auditorias do handoff v3 (§2 e §4)
+- OPACIDADE (nenhum texto < 100% depois da entrada): 1 textos distintos:
+  PE3: 'SISTEMA' em 0.20 (< 1,00 depois de entrar)
+- ROTULO NA LINHA DE TÍTULO (quadro t e t + dt do T2-3, inset do T3-8): 0 ocorrências
+- SELO EM CIMA DE OBJETO 3D (T2-6, T3-7, T3-8): 0 passadas com sobreposição
+- G30 (células 4 × 3) e G31: 11 trechos de ÁREA MORTA (> 4 s com mais de 6 das 12 células vazias) e 7 QUADROS VAZIOS em 1260 amostras (1 por segundo);   ÁREA MORTA 0:03–0:12 (9 s): células vazias em média 8.3/12;   ÁREA MORTA 0:39–0:47 (8 s): células vazias em média 7.5/12;   ÁREA MORTA 1:34–1:47 (13 s): células vazias em média 7.5/12;   ÁREA MORTA 3:21–3:35 (14 s): células vazias em média 9.9/12;   ÁREA MORTA 4:04–4:17 (13 s): células vazias em média 8.3/12;   ÁREA MORTA 7:20–7:48 (28 s): células vazias em média 8.7/12;   ÁREA MORTA 7:59–8:08 (9 s): células vazias em média 7.0/12;   ÁREA MORTA 8:44–8:50 (6 s): células vazias em média 8.2/12;   ÁREA MORTA 9:06–9:28 (22 s): células vazias em média 7.1/12;   ÁREA MORTA 11:08–11:16 (8 s): células vazias em média 7.0/12;   ÁREA MORTA 20:46–20:53 (7 s): células vazias em média 8.6/12;   QUADRO VAZIO 1:34 (ocupação 0.00%);   QUADRO VAZIO 3:33 (ocupação 0.12%)
+
+## 7. Auditorias do handoff v4 (G35–G40)
+- G36 DICA na Pilha: 4 DICAs; PT1 borda esq. 0.0 px, vão 0.35 u (alvo 0,35); PE1 borda esq. 0.0 px, vão 0.35 u (alvo 0,35); PE2 borda esq. 0.0 px, vão 0.35 u (alvo 0,35); PE3 borda esq. 0.0 px, vão 0.35 u (alvo 0,35)
+- G35 selo numa linha de base: tag e frase alinhadas por `linha_base()` (base das maiúsculas, descidas Ç/Q/vírgula compensadas); conferido a olho nos recortes ampliados 3× de renders/v4/extra_dicas_3x.png
+- G40 fade de texto ≤ 0,35 s: kit.play limita o rate_func de todo FadeIn de texto/MathTex com run_time > 0,36 s (satura em 0,35 s); a auditoria OPACIDADE (seção 6) lista o que ficou abaixo de 100% depois de entrar
+- G39 troca de cena: cena velha sai inteira (0,4 s) e a nova entra depois (0,4 s); emendas entre lotes apagam até o céu em 6 quadros e acendem em 6

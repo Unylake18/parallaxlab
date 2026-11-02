@@ -1,0 +1,43 @@
+# 1 PX0   -0.1s ACUSOU (SEM PALCO) · quadro vazio no começo do X0
+      ex.: SEM PALCO
+      ±1,5 s: {'SEM PALCO': 1, 'ENCOSTADO empilhado': 16, 'FORA DA ZONA texto do ESQUEM': 16, 'FORA DA ZONA desenho acima d': 112, 'TEXTO SOBRE OBJETO': 1}
+# 2 PX0   38.3s ACUSOU (LINHA ÓRFÃ) · linha órfã '= (−1/16)/(¾)'
+      ex.: LINHA ÓRFÃ '=\frac{-\tfrac{1}{16}}{\tfrac{' sem a linha-mãe
+      ±1,5 s: {'TEXTO SOBRE OBJETO': 39, 'ENCOSTADO': 10, 'LINHA ÓRFÃ': 14, 'FORA DA ZONA texto do ESQUEM': 10, 'CHAMADA CRUZA CORPO linha de': 20, 'TEXTO SOBRE CAIXA': 1, 'SOBREPOSICAO': 4, 'SELO DUPLO 2 selos': 1}
+# 3 PX0   38.3s ACUSOU (CHAMADA CRUZA CORPO, ENCOSTADO, TEXTO SOBRE OBJETO) · 'O' e '0,25 m' encostados; MASSA −¼ na borda do furo
+      ex.: TEXTO SOBRE OBJETO '0,25m' x Line em (-3.8; -3.0) 
+      ±1,5 s: {'TEXTO SOBRE OBJETO': 39, 'ENCOSTADO': 10, 'LINHA ÓRFÃ': 14, 'FORA DA ZONA texto do ESQUEM': 10, 'CHAMADA CRUZA CORPO linha de': 20, 'TEXTO SOBRE CAIXA': 1, 'SOBREPOSICAO': 4, 'SELO DUPLO 2 selos': 1}
+# 4 PX0   46.1s ACUSOU (SELO DUPLO) · dois selos no crossfade
+      ex.: SELO DUPLO 2 selos 'faixa' visíveis
+      ±1,5 s: {'TEXTO SOBRE OBJETO': 21, 'SOBREPOSICAO': 3, 'ENCOSTADO': 4, 'SELO DUPLO 2 selos': 1}
+# 5 PX0   53.7s ACUSOU (ENCOSTADO, FORA DA ZONA, TEXTO SOBRE OBJETO) · chip sobre o rótulo y; '10 cm' encostado
+      ex.: ENCOSTADO empilhado 'QUALÉOSISTEMA?' x 'y' (folga 0.13)
+      ±1,5 s: {'TEXTO SOBRE OBJETO': 41, 'ENCOSTADO empilhado': 17, 'FORA DA ZONA texto do ESQUEM': 34, 'FORA DA ZONA desenho acima d': 238, 'CHAMADA CRUZA CORPO linha de': 7}
+# 6 PX0   92.3s ACUSOU (CHAMADA CRUZA CORPO, ENCOSTADO, TEXTO SOBRE OBJETO) · MASSA ∝ 1600 sobre o y; chamadas cruzam a placa
+      ex.: TEXTO SOBRE OBJETO '\propto -100\pi' x Square em (-3.8; -0.4) 
+      ±1,5 s: {'TEXTO SOBRE OBJETO': 128, 'ENCOSTADO': 16, 'CHAMADA CRUZA CORPO linha de': 32}
+# 7 PX3   74.8s ACUSOU (PALCO 3D) · folha e gafanhoto sumiram
+      ex.: PALCO 3D gafanhoto ilegível (0.44 de comprimento na tela)
+      ±1,5 s: {'LINHA ÓRFÃ': 15, 'PALCO 3D gafanhoto ilegível ': 15}
+# 8 PX3   89.8s ACUSOU (FORA DA ZONA, SELO DUPLO) · VISTO DA ÁGUA duplicado; trajetória no topo
+      ex.: FORA DA ZONA gafanhoto 3D acima do ESQUEMA
+      ±1,5 s: {'RÉGUA DUPLA duas fileiras de': 19, 'FORA DA ZONA gafanhoto 3D ac': 8, 'SOBREPOSICAO': 2, 'SELO DUPLO 2 selos': 2}
+# 9 PX3  120.0s ACUSOU (ENCOSTADO, TEXTO SOBRE OBJETO) · m = 1 g sobre m; Δx sobre o 70
+      ex.: TEXTO SOBRE OBJETO '\Delta x_g' x VMobject em (-1.1; -3.3) 
+      ±1,5 s: {'TEXTO SOBRE OBJETO': 54, 'ENCOSTADO': 18, 'LINHA ÓRFÃ caixa sem lado es': 18, 'ENCOSTADO empilhado': 18, 'FORA DA ZONA desenho acima d': 90, 'COR POR TOKEN': 2}
+#10 PX3  135.2s ACUSOU (LINHA ÓRFÃ) · caixa órfã '= 1,25 v cos θ'
+      ex.: LINHA ÓRFÃ caixa sem lado esquerdo '=1{,}25\,v\cos\theta'
+      ±1,5 s: {'TEXTO SOBRE OBJETO': 67, 'ENCOSTADO': 18, 'LINHA ÓRFÃ caixa sem lado es': 18, 'LINHA ÓRFÃ': 18, 'ENCOSTADO empilhado': 18, 'FORA DA ZONA desenho acima d': 90, 'TEXTO SOBRE TRAJETÓRIA': 1}
+#11 PX3  180.4s ACUSOU (RÉGUA DUPLA) · réguas empilhadas; M → ∞ sobre a folha
+      ex.: RÉGUA DUPLA duas fileiras de números de régua na tela
+      ±1,5 s: {'RÉGUA DUPLA duas fileiras de': 18, 'FORA DA ZONA texto do ESQUEM': 32, 'FORA DA ZONA texto da CONTA': 16, 'TEXTO SOBRE OBJETO': 8}
+#12 PX5   35.1s ACUSOU (TEXTO SOBRE OBJETO) · M g⃗ no fio e no ⊕; INTERNA na coluna
+      ex.: TEXTO SOBRE OBJETO 'INTERNA' x Rectangle em (-6.4; -0.3) 
+      ±1,5 s: {'TEXTO SOBRE OBJETO': 89, 'FORA DA ZONA texto do ESQUEM': 29, 'FORA DA ZONA desenho acima d': 306, 'SOBREPOSICAO': 15}
+#13 PX5   53.1s ACUSOU (ESPREMIDO, TEXTO SOBRE OBJETO) · T, a, 3g, 1g espremidos
+      ex.: TEXTO SOBRE OBJETO '3g' x VMobject em (-5.0; -1.9) 
+      ±1,5 s: {'TEXTO SOBRE OBJETO': 120, 'ESPREMIDO': 30, 'FORA DA ZONA texto do ESQUEM': 30, 'FORA DA ZONA desenho acima d': 270}
+#14 PX5   80.1s ACUSOU (ENCOSTADO) · '2 kg0'; ±4,9 sobre os rótulos
+      ex.: ENCOSTADO na mesma linha '2kg' x '0' (folga 0.10)
+      ±1,5 s: {'TEXTO SOBRE OBJETO': 48, 'ENCOSTADO na mesma linha': 16, 'ENCOSTADO empilhado': 32, 'FORA DA ZONA texto do ESQUEM': 32, 'FORA DA ZONA desenho acima d': 288}
+TOTAL: 14/14 casos acusados

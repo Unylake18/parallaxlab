@@ -1,0 +1,332 @@
+// yt_0018 v4 (handoff v4 §4; v3 §5): o lago do gafanhoto em Three.js, por estado (sem relógio próprio). Unidade 3D: 1 = 1 m.
+// Eixos: x ao longo do salto, z para cima, y profundidade (o plano do movimento é y = 0). Água em z = 0.
+//   gafanhoto (comprimento do corpo = 1 → 0,07 m): cabeça em cápsula alta com a face quase vertical ("cara de cavalo"), olho composto grande e
+//     oval na lateral (#2A3140, brilho especular), antenas curtas (≤ 0,4) curvas para trás; pronoto em sela (casca que desce pelos lados, borda
+//     traseira em ângulo); abdome cônico de 9 anéis, comprimido dos lados, ponta curvada para cima; tégminas em telhado (±20°) do pronoto até
+//     ~0,1 depois da ponta do abdome; pernas traseiras com o fêmur em clava saindo da lateral baixa do tórax (fora das asas, ~30° para trás e
+//     para cima, joelho no ponto mais alto), tíbia fina com espinhos dobrada rente por baixo do fêmur ("V" deitado), tarso apoiado atrás do
+//     corpo; pernas da frente e do meio curtas, três segmentos. Grafite-aço #5E6878 (roughness 0,45, metalness 0,7) com a luz B de contorno.
+//     Poses por `pose` ∈ [0, 3]: 0 agachado (fêmur–tíbia fechado) · 1 impulso (tíbia a ~160°) · 2 voo (traseiras esticadas para trás, da frente
+//     recolhidas) · 3 parado/pouso. Ponto físico = os tarsos traseiros (origem do modelo); `esc` = escala de leitura em torno dos pés.
+//   folha: lâmina lanceolada, ponta virada para cima, corte côncavo (colher), pecíolo curto, nervura central em relevo, secundárias alternadas e
+//     irregulares (35–55°, curvas, afinando para a borda), borda ondulada; aço claro #8A96A8 (roughness 0,55, metalness 0,6).
+//   luz: ambiente NEUTRO (RoomEnvironment) no gafanhoto e na folha; o magenta fica só no céu e na água. ACES, exposição 0,8; lua a meia força.
+//   água (v4 §4): cor base do mesmo degradê do céu do laboratório (#0B1A3A no alto da tela → #0A1030 embaixo, ×1,35), ondulação procedural
+//     animada por `tw`, estrelas refletidas e o reflexo (lua, recorte) azulado e com joelho suave: a coluna da lua nunca estoura (p99 < 235).
+//     Sem tone mapping na água (a saída é a cor do céu); o gafanhoto e a folha continuam em ACES. Anéis, esteira em V e gotas são objetos do estado.
+// Estado: {g: {x, z, esc, pose, pitch, vis}, f: {x, bal, vis}, tw, aneis: [[x, r, op]], esteira: [x, comp, op], gotas: [[x, z, op]...],
+//          fant: [[x, z, pose]...], cam}
+(function () {
+  const B = B3D, T3 = THREE, PI = Math.PI;
+  const v3 = (x, y, z) => new T3.Vector3(x, y, z);
+  const cl = (x, a, b) => Math.min(b, Math.max(a, x));
+  const sm = (a, b, x) => { const t = cl((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); };
+  B.renderer.toneMapping = T3.ACESFilmicToneMapping; B.renderer.toneMappingExposure = 0.8;
+  const envNeutro = B.scene.environment;                  // RoomEnvironment do b3d.js: reflexo sem cor para o gafanhoto e a folha
+
+  // ── ambiente: céu do laboratório em degradê (reflexo da água) ────────────────────────────────────────────────────────────
+  const env = (() => {
+    const s = new T3.Scene();
+    const g = new T3.SphereGeometry(60, 48, 24), cor = [], pos = g.attributes.position;
+    for (let i = 0; i < pos.count; i++) {
+      const el = pos.getY(i) / 60;
+      const c = new T3.Color(0x0B1A3A).lerp(new T3.Color(0x08122B), cl(el * 2, 0, 1));
+      c.lerp(new T3.Color(0xEA63FF), 0.35 * Math.exp(-Math.abs(el) / 0.08));     // brilho magenta no horizonte (só no céu e na água)
+      cor.push(c.r, c.g, c.b);
+    }
+    g.setAttribute('color', new T3.Float32BufferAttribute(cor, 3));
+    s.add(new T3.Mesh(g, new T3.MeshBasicMaterial({ vertexColors: true, side: T3.BackSide })));
+    const painel = (w, h, c, k, x, y, z) => { const m = new T3.Mesh(new T3.PlaneGeometry(w, h), new T3.MeshBasicMaterial({ color: new T3.Color(c).multiplyScalar(k), side: T3.DoubleSide }));
+      m.position.set(x, y, z); m.lookAt(0, 0, 0); s.add(m); };
+    painel(8, 8, 0xDCE6FF, 0.35, -8, 38, -15);              // a lua (v4: mais fraca; a coluna azulada, sem estourar)
+    painel(26, 30, 0x7FB2FF, 0.55, -10, 37.7, 18);           // recorte azul (v3: o reflexo dele era o clarão na água)
+    painel(12, 20, 0xEA63FF, 0.6, 38, 8, 18);               // toque magenta
+    const sp = [];
+    let sd = 3; const rnd = () => { sd = (sd * 16807) % 2147483647; return sd / 2147483647; };
+    for (let i = 0; i < 900; i++) { const u = rnd() * 0.9 + 0.05, th = 2 * PI * rnd(), q = Math.sqrt(1 - u * u); sp.push(55 * q * Math.cos(th), 55 * u, 55 * q * Math.sin(th)); }
+    const pg = new T3.BufferGeometry(); pg.setAttribute('position', new T3.Float32BufferAttribute(sp, 3));
+    s.add(new T3.Points(pg, new T3.PointsMaterial({ color: 0xffffff, size: 0.35 })));
+    return new T3.PMREMGenerator(B.renderer).fromScene(s, 0.02).texture;
+  })();
+  B.scene.environment = env;
+  B.luz.chave.color.set(0xC8D6F2); B.luz.chave.intensity = 0.9; B.luz.chave.position.set(-4, -3, 6);     // lua fria, de frente
+  B.luz.rim.color.set(0x7FB2FF); B.luz.rim.intensity = 0.8; B.luz.rim.position.set(-1.5, 5, 6);          // luz B de contorno (por trás)
+  B.luz.amb.intensity = 0.14;
+  const recA = new T3.DirectionalLight(0x7FB2FF, 0.45); recA.position.set(-3, 5, 7); B.scene.add(recA);
+  const lua = new T3.DirectionalLight(0xDCE6FF, 0.05); lua.position.set(-2.3, 7.8, 2.2); B.scene.add(lua);   // brilho da lua na água: trilha à direita da folha no H1, fora do quadro no X3
+
+  // ── água ────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  const U = { tw: { value: 0 }, zona: { value: 0 }, res: { value: new T3.Vector2(innerWidth, innerHeight) } };
+  const matAgua = new T3.MeshStandardMaterial({ color: 0x050B1C, metalness: 0.92, roughness: 0.14, envMapIntensity: 0.22, toneMapped: false });
+  matAgua.extensions = { derivatives: true };
+  matAgua.onBeforeCompile = sh => {
+    sh.uniforms.uTw = U.tw; sh.uniforms.uRes = U.res; sh.uniforms.uZona = U.zona;
+    sh.vertexShader = 'varying vec3 vMundo;\n' + sh.vertexShader.replace('#include <worldpos_vertex>', '#include <worldpos_vertex>\n vMundo = (modelMatrix * vec4(transformed, 1.0)).xyz;');
+    sh.fragmentShader = 'uniform float uTw;\nuniform float uZona;\nuniform vec2 uRes;\nvarying vec3 vMundo;\n'
+      + 'float hs(vec2 c, vec2 k) { return fract(sin(dot(c, k)) * 43758.5453); }\n'
+      + sh.fragmentShader.replace('#include <normal_fragment_maps>', `#include <normal_fragment_maps>
+      vec2 p = vMundo.xy;
+      float dx = 0.020 * cos(p.x * 31.0 + uTw * 1.3) + 0.012 * cos(p.x * 57.0 - p.y * 23.0 + uTw * 2.1) + 0.007 * cos(p.x * 97.0 + p.y * 71.0 - uTw * 2.9);
+      float dy = 0.016 * cos(p.y * 29.0 - uTw * 1.1) + 0.010 * cos(p.y * 63.0 + p.x * 19.0 + uTw * 1.7) + 0.006 * cos(p.y * 101.0 - p.x * 43.0 + uTw * 3.1);
+      normal = normalize(normal + (viewMatrix * vec4(dx, dy, 0.0, 0.0)).xyz);
+      float rip = clamp(0.5 + 9.0 * (0.6 * dx + 0.8 * dy), 0.0, 1.0);`).replace('gl_FragColor = vec4( outgoingLight, diffuseColor.a );', `
+      vec2 sc = gl_FragCoord.xy / uRes;
+      vec3 base = mix(vec3(10.0, 16.0, 48.0), vec3(11.0, 26.0, 58.0), smoothstep(0.0, 1.0, sc.y)) / 255.0 * 1.22 * (0.86 + 0.28 * rip);
+      vec2 q = vMundo.xy / 0.01, cel = floor(q), fr = fract(q) - 0.5;
+      float h = hs(cel, vec2(127.1, 311.7));
+      vec2 off = (vec2(hs(cel, vec2(269.5, 183.3)), hs(cel, vec2(419.2, 371.9))) - 0.5) * 0.5;
+      float pxc = length(fwidth(q));
+      float rr = max(0.05, 1.2 * pxc);
+      float est = step(0.9965, h) * (1.0 - smoothstep(0.35 * rr, rr, length(fr - off))) * (0.55 + 0.45 * sin(uTw * 2.3 + h * 300.0)) * (0.55 + 0.45 * rip);
+      vec3 refl = outgoingLight;
+      refl = refl / (1.0 + refl / 0.6) * vec3(0.66, 0.8, 1.0);
+      float zp = uZona * smoothstep(0.505, 0.525, sc.x);
+      base = mix(base, vec3(11.0, 26.0, 58.0) / 255.0, 0.35 * zp);
+      gl_FragColor = vec4(base + refl * (1.0 - 0.3 * zp) + est * (1.0 - 0.8 * zp) * vec3(0.50, 0.58, 0.74), 1.0);`);
+  };
+  const agua = new T3.Mesh(new T3.PlaneGeometry(80, 80, 1, 1), matAgua);
+  agua.position.set(10, 30, -0.002); B.scene.add(agua);
+
+  const curva = pts => new T3.CatmullRomCurve3(pts.map(p => v3(...p)));
+  let sd2 = 11; const rnd2 = () => { sd2 = (sd2 * 16807) % 2147483647; return sd2 / 2147483647; };
+
+  // ── folha ───────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  const LF = 0.30, WF = 0.042;                              // comprimento e meia-largura máxima (m)
+  const larg = u => WF * Math.pow(Math.max(0, Math.sin(PI * Math.pow(cl(u, 0, 1), 0.78))), 0.9) * (1 + 0.012 * Math.sin(17 * PI * u + 0.6)) * (u < 0.03 ? u / 0.03 : 1);
+  const alt = (u, v) => 0.0065 * v * v * larg(u) / WF + 0.020 * sm(0.80, 1.0, u) * (1 - 0.3 * v * v) + 0.0007 * Math.sin(17 * PI * u) * sm(0.7, 1, Math.abs(v))
+    + 0.0022 * Math.exp(-v * v / 0.003);                    // colher, ponta virada, borda ondulada, nervura central
+  function folhaGeo() {
+    const NU = 140, NV = 30, pos = [], cor = [], idx = [];
+    const c0 = new T3.Color(0x8A96A8), cB = new T3.Color(0xA6B1C2);
+    for (let i = 0; i <= NU; i++) for (let j = 0; j <= NV; j++) {
+      const u = i / NU, v = -1 + 2 * j / NV, w = larg(u);
+      pos.push(u * LF, v * w, alt(u, v));
+      const c = c0.clone().lerp(cB, 0.35 * sm(0.8, 1.0, Math.abs(v)));
+      cor.push(c.r, c.g, c.b);
+    }
+    for (let i = 0; i < NU; i++) for (let j = 0; j < NV; j++) {
+      const a = i * (NV + 1) + j, b = a + NV + 1;
+      idx.push(a, b, a + 1, b, b + 1, a + 1);
+    }
+    const g = new T3.BufferGeometry();
+    g.setAttribute('position', new T3.Float32BufferAttribute(pos, 3)); g.setAttribute('color', new T3.Float32BufferAttribute(cor, 3));
+    g.setIndex(idx); g.computeVertexNormals(); return g;
+  }
+  const matFolha = new T3.MeshStandardMaterial({ vertexColors: true, metalness: 0.45, roughness: 0.55, envMap: envNeutro, envMapIntensity: 0.5, side: T3.DoubleSide });   // v4: aço claro, bem mais claro que o gafanhoto
+  const matNer = new T3.MeshStandardMaterial({ color: 0x9DA9BB, metalness: 0.45, roughness: 0.5, envMap: envNeutro, envMapIntensity: 0.55 });
+  const folha = new T3.Group();
+  folha.add(new T3.Mesh(folhaGeo(), matFolha));
+  // nervura central em relevo (afina para a ponta) e o pecíolo curto
+  for (const [u0, u1, r] of [[0.0, 0.35, 0.0016], [0.35, 0.7, 0.0012], [0.7, 0.97, 0.0008]]) {
+    const pts = [...Array(8)].map((_, k) => { const u = u0 + (u1 - u0) * k / 7; return [u * LF, 0, alt(u, 0) + 0.0006]; });
+    folha.add(new T3.Mesh(new T3.TubeGeometry(curva(pts), 24, r, 6, false), matNer));
+  }
+  folha.add(new T3.Mesh(new T3.TubeGeometry(curva([[0.004, 0, 0.0025], [-0.010, 0.001, 0.0032], [-0.022, 0.003, 0.0055]]), 10, 0.0016, 6, false), matNer));
+  // secundárias alternadas (esquerda e direita defasadas), ângulo 35–55° com ruído, curvas para a ponta, afinando até a borda
+  for (let k = 0; k < 9; k++) for (const s of [1, -1]) {
+    const x0 = LF * (0.10 + 0.088 * k + (s < 0 ? 0.044 : 0) + 0.012 * (rnd2() - 0.5));
+    if (x0 > LF * 0.9) continue;
+    let ang = (35 + 20 * rnd2()) * PI / 180, x = x0, y = 0;
+    const pts = [[x, 0, alt(x / LF, 0) + 0.0005]];
+    for (let q = 0; q < 30; q++) {
+      const w = larg(x / LF);
+      if (Math.abs(y) > 0.88 * w) break;
+      x += 0.0035 * Math.cos(ang); y += s * 0.0035 * Math.sin(ang);
+      ang = Math.max(0.12, ang - 0.035 - 0.02 * rnd2());                  // curva para a ponta
+      pts.push([x, y, alt(x / LF, y / Math.max(w, 1e-4)) + 0.0005]);
+    }
+    if (pts.length < 3) continue;
+    const n = pts.length, meio = Math.floor(n / 2);
+    folha.add(new T3.Mesh(new T3.TubeGeometry(curva(pts.slice(0, meio + 1)), 12, 0.0007, 4, false), matNer));
+    folha.add(new T3.Mesh(new T3.TubeGeometry(curva(pts.slice(meio)), 12, 0.00042, 4, false), matNer));
+  }
+  B.scene.add(folha);
+
+  // ── gafanhoto (unidades de corpo; o grupo `gaf` escala por 0,07·esc) ───────────────────────────────────────────────────────
+  const matG = new T3.MeshStandardMaterial({ color: 0x5E6878, metalness: 0.6, roughness: 0.48, envMap: envNeutro, envMapIntensity: 0.38 });   // v4: grafite-aço escuro (contraste com a folha)
+  const matAsa = new T3.MeshStandardMaterial({ color: 0x626D7E, metalness: 0.6, roughness: 0.45, envMap: envNeutro, envMapIntensity: 0.4, side: T3.DoubleSide });
+  const matOlho = new T3.MeshStandardMaterial({ color: 0x2A3140, metalness: 0.5, roughness: 0.12, envMap: envNeutro, envMapIntensity: 1.4 });
+  const texEsp = (cor, linha) => {                         // espinha de peixe do fêmur: v4 o padrão é ESCURO (−30%), não um relevo claro
+    const c = document.createElement('canvas'); c.width = 128; c.height = 32; const g = c.getContext('2d');
+    g.fillStyle = cor; g.fillRect(0, 0, 128, 32); g.strokeStyle = linha; g.lineWidth = 3;
+    for (let x = -32; x < 160; x += 12) { g.beginPath(); g.moveTo(x, 0); g.lineTo(x + 10, 16); g.lineTo(x, 32); g.stroke(); }
+    const t = new T3.CanvasTexture(c); t.wrapS = t.wrapT = T3.RepeatWrapping; t.repeat.set(1, 5); return t;
+  };
+  const matFemur = new T3.MeshStandardMaterial({ color: 0x5E6878, map: texEsp('#ffffff', '#b3b3b3'), metalness: 0.6, roughness: 0.48, envMap: envNeutro, envMapIntensity: 0.38,
+    bumpMap: texEsp('#808080', '#5a5a5a'), bumpScale: 0.0012 });
+  const ovo = (rx, ry, rz, m) => { const e = new T3.Mesh(new T3.SphereGeometry(1, 28, 18), m || matG); e.scale.set(rx, ry, rz); return e; };
+  const haste = (a, b, r0, r1, m, seg) => {
+    const A = v3(...a), Bv = v3(...b), L = A.distanceTo(Bv), c = new T3.Mesh(new T3.CylinderGeometry(r1, r0, L, seg || 10), m || matG);
+    c.position.copy(A.clone().add(Bv).multiplyScalar(0.5)); c.quaternion.setFromUnitVectors(v3(0, 1, 0), Bv.clone().sub(A).normalize()); return c;
+  };
+  const gaf = new T3.Group(), corpo = new T3.Group(); gaf.add(corpo);
+  // origem do `corpo` = quadril das pernas traseiras (x para a frente, z para cima)
+  const ZA = 0.03;                                          // eixo do abdome acima do quadril
+  // abdome: 9 anéis, comprimido dos lados, afinando, ponta curvada para cima
+  for (let k = 0; k < 9; k++) {
+    const u = k / 8, x = -0.02 - 0.072 * k, ry = 0.046 * (1 - 0.42 * u), rz = 0.074 * (1 - 0.45 * u);
+    corpo.add(ovo(0.046, ry, rz).translateX(x).translateZ(ZA + 0.07 * u * u));
+  }
+  corpo.add(ovo(0.03, 0.016, 0.02).translateX(-0.63).translateZ(ZA + 0.085));        // cercos
+  // tórax
+  corpo.add(ovo(0.12, 0.062, 0.078).translateX(0.08).translateZ(0.035));
+  // pronoto em sela: casca que cobre o tórax por cima e desce pelos lados; borda traseira em ângulo (mais comprida no dorso)
+  {
+    const NU = 24, NF = 40, pos = [], idx = [];
+    for (let i = 0; i <= NU; i++) for (let j = 0; j <= NF; j++) {
+      const u = i / NU, f = -1.95 + 3.9 * j / NF;
+      const r = 0.092 * (1 - 0.12 * Math.sin(PI * u) + 0.10 * u * u);
+      const x = 0.22 - 0.24 * u - 0.085 * u * Math.cos(f / 1.6) ** 2;                     // a borda de trás avança no dorso (ângulo)
+      const lobo = 1.0 + 0.22 * Math.sin(PI * u) * sm(0.9, 1.9, Math.abs(f));             // lobos laterais descem mais no meio
+      pos.push(x, r * Math.sin(f) * 1.02, 0.05 + 1.08 * r * Math.cos(f) * (Math.cos(f) < 0 ? lobo : 1));
+    }
+    for (let i = 0; i < NU; i++) for (let j = 0; j < NF; j++) { const a = i * (NF + 1) + j, b = a + NF + 1; idx.push(a, b, a + 1, b, b + 1, a + 1); }
+    const g = new T3.BufferGeometry(); g.setAttribute('position', new T3.Float32BufferAttribute(pos, 3)); g.setIndex(idx); g.computeVertexNormals();
+    const m = matG.clone(); m.side = T3.DoubleSide;
+    corpo.add(new T3.Mesh(g, m));
+    corpo.add(new T3.Mesh(new T3.TubeGeometry(curva([...Array(9)].map((_, k) => { const u = k / 8; return [0.22 - 0.31 * u, 0, 0.05 + 1.08 * 0.092 * (1 - 0.12 * Math.sin(PI * u * 0.97) + 0.10 * u * u) + 0.003]; })), 20, 0.006, 6, false), matG));   // carena
+  }
+  // cabeça: cápsula alta, face quase vertical; olho composto oval; boca embaixo; antenas curtas curvas para trás
+  const cab = new T3.Group(); cab.position.set(0.255, 0, 0.065); corpo.add(cab);
+  { const c = ovo(0.062, 0.058, 0.108); c.rotation.y = -0.22; cab.add(c);
+    const face = ovo(0.03, 0.05, 0.085); face.position.set(0.04, 0, -0.012); face.rotation.y = -0.12; cab.add(face);
+    cab.add(ovo(0.026, 0.034, 0.024).translateX(0.05).translateZ(-0.092)); }
+  for (const s of [-1, 1]) {
+    const o = ovo(0.034, 0.016, 0.05, matOlho); o.position.set(0.012, s * 0.05, 0.035); o.rotation.y = -0.25; cab.add(o);
+    const pts = [[0.04, s * 0.022, 0.095], [0.055, s * 0.035, 0.17], [0.03, s * 0.05, 0.25], [-0.03, s * 0.065, 0.31], [-0.09, s * 0.075, 0.34]];
+    cab.add(new T3.Mesh(new T3.TubeGeometry(curva(pts), 30, 0.0055, 5, false), matG));
+  }
+  // tégminas em telhado: dobradiça no dorso, cada lâmina a 20° do plano de simetria, do pronoto até ~0,1 além da ponta do abdome
+  for (const s of [-1, 1]) {
+    const NU = 30, NT = 6, pos = [], idx = [], A20 = 20 * PI / 180;
+    for (let i = 0; i <= NU; i++) for (let j = 0; j <= NT; j++) {
+      const u = i / NU, t = j / NT;
+      const x = 0.12 - 0.84 * u;
+      const prof = 0.135 * (1 - 0.55 * Math.pow(u, 2.2)) * Math.sqrt(Math.max(0, Math.sin(PI * Math.min(1, 0.06 + 0.97 * u)))) + 0.01;
+      const zt = ZA + 0.112 + 0.04 * u * u;               // dorso acompanha a ponta do abdome que sobe
+      const d = t * prof;
+      pos.push(x, s * (0.012 + d * Math.sin(A20) + 0.004 * Math.sin(PI * t)), zt - d * Math.cos(A20));
+    }
+    for (let i = 0; i < NU; i++) for (let j = 0; j < NT; j++) { const a = i * (NT + 1) + j, b = a + NT + 1; idx.push(a, b, a + 1, b, b + 1, a + 1); }
+    const g = new T3.BufferGeometry(); g.setAttribute('position', new T3.Float32BufferAttribute(pos, 3)); g.setIndex(idx); g.computeVertexNormals();
+    corpo.add(new T3.Mesh(g, matAsa));
+  }
+  // pernas da frente e do meio: três segmentos finos
+  const pernasF = [];
+  for (const [xa, s, fr] of [[0.17, -1, 1], [0.17, 1, 1], [0.05, -1, 0], [0.05, 1, 0]]) {
+    const hip = new T3.Group(); hip.position.set(xa, s * 0.05, -0.035); corpo.add(hip);
+    const fem = new T3.Group(); hip.add(fem);
+    fem.add(haste([0, 0, 0], [0.05, s * 0.06, -0.07], 0.013, 0.011));
+    const jo = new T3.Group(); jo.position.set(0.05, s * 0.06, -0.07); fem.add(jo);
+    jo.add(ovo(0.012, 0.012, 0.012));
+    jo.add(haste([0, 0, 0], [0.035 * (fr ? 1 : -0.4), s * 0.03, -0.085], 0.010, 0.008));
+    const ta = new T3.Group(); ta.position.set(0.035 * (fr ? 1 : -0.4), s * 0.03, -0.085); jo.add(ta);
+    ta.add(haste([0, 0, 0], [0.05, s * 0.01, -0.006], 0.007, 0.005));
+    pernasF.push({ hip, fem, jo, s, fr });
+  }
+  // pernas traseiras: fêmur em clava (lateral baixa do tórax, fora das asas), tíbia fina com espinhos, tarso
+  const LFE = 0.55, LTI = 0.5;
+  function femurGeo() {
+    const pts = [];
+    for (let k = 0; k <= 24; k++) { const s = k / 24; pts.push(new T3.Vector2(0.025 + 0.028 * (1 - s) + 0.004 * Math.sin(PI * s), -s * LFE)); }   // v4: metade do corpo 1,4× a do joelho
+    pts.push(new T3.Vector2(0.001, -LFE));
+    const g = new T3.LatheGeometry(pts.reverse(), 20); g.rotateZ(-PI / 2); g.scale(1, 0.72, 1);     // ao longo de −x, achatado dos lados
+    return g;
+  }
+  const saltad = [];
+  for (const s of [-1, 1]) {
+    const hip = new T3.Group(); hip.position.set(0.0, s * 0.072, -0.035); corpo.add(hip);
+    const fem = new T3.Group(); hip.add(fem);
+    fem.add(new T3.Mesh(femurGeo(), matFemur));
+    const jo = new T3.Group(); jo.position.x = -LFE; fem.add(jo);
+    jo.add(ovo(0.022, 0.02, 0.022));
+    const tib = new T3.Group(); jo.add(tib);
+    tib.add(haste([0, 0, 0], [LTI, 0, 0], 0.012, 0.009));
+    for (let q = 0; q < 8; q++) { const e = new T3.Mesh(new T3.ConeGeometry(0.0045, 0.025, 5), matG); e.position.set(0.12 + 0.045 * q, 0, -0.011); e.rotation.z = -PI * 0.78; tib.add(e); }
+    const ta = new T3.Group(); ta.position.x = LTI; tib.add(ta);
+    ta.add(haste([0, 0, 0], [0.11, 0, 0], 0.008, 0.006)); ta.add(ovo(0.014, 0.008, 0.006).translateX(0.115));
+    saltad.push({ hip, fem, jo, tib, ta, s });
+  }
+  // poses: pitch do corpo (rad, + = cabeça para cima), alfa do fêmur (elevação para trás), beta (abertura fêmur–tíbia), tarso, pernas finas
+  const D = PI / 180;
+  const POSES = [
+    { pitch: 0.04, af: 36 * D, be: 7 * D, ta: 83 * D, pf: 0.0 },          // 0 agachado (v4: joelho acima do dorso)
+    { pitch: 0.42, af: 14 * D, be: 160 * D, ta: 0, pf: 0.4 },        // 1 impulso: a tíbia estica a ~160°
+    { pitch: 0.12, af: -6 * D, be: 166 * D, ta: 5 * D, pf: 1.0 },             // 2 voo: traseiras esticadas para trás, da frente recolhidas
+    { pitch: 0.0, af: 30 * D, be: 14 * D, ta: 76 * D, pf: 0.0 },          // 3 parado / pouso (v4: joelho um pouco acima da linha do dorso)
+  ];
+  function aplicaPose(p) {
+    const k = Math.min(2, Math.floor(cl(p, 0, 3))), t = cl(p, 0, 3) - k, A = POSES[k], Bp = POSES[Math.min(3, k + 1)];
+    const w = t * t * (3 - 2 * t), L = key => A[key] + (Bp[key] - A[key]) * w;
+    corpo.rotation.y = -L('pitch');
+    saltad.forEach(h => { h.hip.rotation.set(0, 0, -h.s * 0.05); h.fem.rotation.y = L('af'); h.tib.rotation.y = L('be'); h.ta.rotation.y = L('ta'); });
+    pernasF.forEach(f => { const pf = L('pf'); f.fem.rotation.y = (f.fr ? -0.15 : 0.25) - 0.9 * pf; f.jo.rotation.y = 1.1 * pf; });
+    const of = OFS[k].clone().lerp(OFS[Math.min(3, k + 1)], w);
+    corpo.position.copy(of);
+  }
+  // âncora: em cada pose de chão (0, 1, 3) os tarsos traseiros ficam na origem; no voo (2) vale o deslocamento do impulso
+  const OFS = [v3(0, 0, 0), v3(0, 0, 0), v3(0, 0, 0), v3(0, 0, 0)];
+  B.scene.add(gaf);
+  const pe = () => { const a = saltad.map(h => h.ta.localToWorld(v3(0.11, 0, 0))); return a[0].add(a[1]).multiplyScalar(0.5); };
+  for (const k of [0, 1, 3]) {
+    gaf.position.set(0, 0, 0); gaf.scale.setScalar(1); gaf.rotation.set(0, 0, 0);
+    corpo.position.set(0, 0, 0); corpo.rotation.y = -POSES[k].pitch;
+    saltad.forEach(h => { h.hip.rotation.set(0, 0, -h.s * 0.05); h.fem.rotation.y = POSES[k].af; h.tib.rotation.y = POSES[k].be; h.ta.rotation.y = POSES[k].ta; });
+    gaf.updateMatrixWorld(true);
+    const q = pe(); OFS[k] = v3(-q.x, 0, -q.z + 0.012);    // tarso apoiado (meio tarso de espessura acima da folha)
+  }
+  OFS[2] = OFS[1].clone();
+  const fant = [...Array(6)].map(() => { const c = gaf.clone(true); c.traverse(o => { if (o.isMesh) { o.material = o.material.clone(); o.material.transparent = true; o.material.opacity = 0.28; o.material.depthWrite = false; } }); B.scene.add(c); c.visible = false; return c; });
+
+  // ── anéis, esteira, gotas ────────────────────────────────────────────────────────────────────────────────────────────────────
+  const matAnel = new T3.MeshBasicMaterial({ color: 0xA9C4F0, transparent: true, opacity: 0.5, depthWrite: false });
+  const aneis = [...Array(8)].map(() => { const m = new T3.Mesh(new T3.RingGeometry(0.97, 1.0, 96), matAnel.clone()); m.position.z = 0.0006; B.scene.add(m); m.visible = false; return m; });
+  const esteira = new T3.Group(); B.scene.add(esteira);
+  const matEst = new T3.MeshBasicMaterial({ color: 0xBCD2F5, transparent: true, opacity: 0.4, depthWrite: false, side: T3.DoubleSide });
+  for (const s of [-1, 1]) { const m = new T3.Mesh(new T3.PlaneGeometry(1, 0.004), matEst); m.userData.s = s; esteira.add(m); }
+  const gotasG = new T3.BufferGeometry(), gotasP = new Float32Array(3 * 40);
+  gotasG.setAttribute('position', new T3.BufferAttribute(gotasP, 3));
+  const gotas = new T3.Points(gotasG, new T3.PointsMaterial({ color: 0xD8E6FF, size: 3.0, sizeAttenuation: false, transparent: true, opacity: 0.9, depthWrite: false }));
+  B.scene.add(gotas);
+
+  const ESC0 = 0.07;                                         // comprimento real do corpo (m)
+  function poeGaf(obj, x, z, esc, pose, extra) {
+    aplicaPose(pose);
+    obj.position.set(x, 0, z); obj.scale.setScalar(ESC0 * esc); obj.rotation.y = -(extra || 0);
+    if (obj !== gaf) {                                          // fantasmas: copia a pose atual do original
+      const a = [], b = [];
+      gaf.traverse(o => a.push(o)); obj.traverse(o => b.push(o));
+      a.forEach((o, i) => { if (b[i] && b[i] !== obj) { b[i].position.copy(o.position); b[i].quaternion.copy(o.quaternion); b[i].scale.copy(o.scale); } });
+    }
+  }
+
+  window.CENA = { atualiza: e => {
+    U.tw.value = e.tw || 0; U.zona.value = e.zona || 0;
+    const g = e.g || {}, f = e.f || {};
+    const fs = e.fant || [];
+    fant.forEach((c, i) => { const q = fs[i]; c.visible = !!q; if (q) poeGaf(c, q[0], q[1], g.esc || 1.5, q[2], 0); });
+    gaf.visible = g.vis !== 0; poeGaf(gaf, g.x || 0, g.z || 0, g.esc || 1.5, g.pose == null ? 3 : g.pose, g.pitch || 0);
+    if (e.turn != null) { gaf.rotation.z = e.turn; }              // turntable (só nas sondas)
+    else gaf.rotation.z = 0;
+    folha.visible = f.vis !== 0; folha.position.set(f.x || 0, 0, -0.0015 + 0.0010 * Math.sin(f.bal || 0));
+    folha.rotation.x = 0.012 * Math.sin((f.bal || 0) * 0.7); folha.rotation.y = 0.006 * Math.sin((f.bal || 0) * 1.3);
+    agua.visible = e.agua !== 0;
+    const an = e.aneis || [];
+    aneis.forEach((m, i) => { const q = an[i]; m.visible = !!q && q[2] > 0.01; if (m.visible) { m.position.x = q[0]; m.position.y = q[3] || 0; m.scale.setScalar(Math.max(q[1], 0.002)); m.material.opacity = 0.55 * q[2]; } });
+    const es = e.esteira;
+    esteira.visible = !!es && es[2] > 0.01;
+    if (esteira.visible) esteira.children.forEach(m => { const L = es[1]; m.scale.x = L; m.rotation.z = m.userData.s * 0.32; m.position.set(es[0] + 0.5 * L * Math.cos(0.32), m.userData.s * 0.5 * L * Math.sin(0.32), 0.0005); m.material.opacity = 0.45 * es[2]; });
+    const gs = e.gotas || [];
+    for (let i = 0; i < 40; i++) { const q = gs[i]; if (q) gotasP.set([q[0], q[2] || 0, q[1]], 3 * i); else gotasP.set([0, 0, -9], 3 * i); }
+    gotas.material.opacity = gs.length ? (gs[0][3] != null ? gs[0][3] : 0.9) : 0; gotasG.attributes.position.needsUpdate = true;
+    // máscaras (QA de exposição): só a folha ou só o gafanhoto
+    if (e.mascara) {
+      const so = e.mascara;
+      agua.visible = false; aneis.forEach(m => m.visible = false); esteira.visible = false; gotas.visible = false; fant.forEach(c => c.visible = false);
+      folha.visible = so === 'folha'; gaf.visible = so === 'gaf';
+    } else gotas.visible = true;
+  } };
+  window.pontos3d = e => { const g = e.g || {}, f = e.f || {}; return { pe: B.projeta([g.x || 0, 0, g.z || 0]), folha: B.projeta([f.x || 0, 0, 0]), ponta: B.projeta([(f.x || 0) + LF, 0, 0]) }; };
+  window.medidas = () => ({ LF, WF });
+  window.cenaPronta = true;
+})();

@@ -1,0 +1,265 @@
+====================================================================================================
+1. AUDITORIAS DO yt_0017 (instantes distintos com ocorrência; zero = limpo)
+====================================================================================================
+PH   render ok · SEM PALCO (A1/EN1, isento): 10
+      ex. SEM PALCO (A1/EN1, isento): 41.0 s: SEM PALCO
+      COR POR TOKEN: 0 tokens conferidos, 0 fora da tabela
+      COR DE ORIGEM (número herda a cor do símbolo): 0 pares conferidos, 0 fora
+      passadas da auditoria (a cada 3 quadros + fim de cada play): 477
+PX0  render ok · TRÂNSITO: 1
+      ex. TRÂNSITO: 78.5 s: TRÂNSITO glifo de glifo em (0.4; -0.6) cruza glifo em (2.9; -0.1) por mais de 2 quadros (c
+      COR POR TOKEN: 269 tokens conferidos, 0 fora da tabela
+      COR DE ORIGEM (número herda a cor do símbolo): 5 pares conferidos, 0 fora
+      passadas da auditoria (a cada 3 quadros + fim de cada play): 694
+PX2  render FALTA · nenhuma ocorrência
+      passadas da auditoria (a cada 3 quadros + fim de cada play): 189
+PX3  render ok · 3D × TEXTO: 1, FORA DA MARGEM: 1, PALCO 3D: 1
+      ex. FORA DA MARGEM: 29.8 s: FORA DA MARGEM 'm\vec g'
+      ex. PALCO 3D: 155.1 s: PALCO 3D folha sem contraste com a água (0.067 < 0,08)
+      ex. 3D × TEXTO: 203.3 s: 3D × TEXTO folha cruza '0' (3D x -6.02…-3.40 y -2.29…-2.13 · texto x -6.11…-5.93 y -2.63…-
+      COR POR TOKEN: 128 tokens conferidos, 0 fora da tabela
+      COR DE ORIGEM (número herda a cor do símbolo): 1 pares conferidos, 0 fora
+      passadas da auditoria (a cada 3 quadros + fim de cada play): 1320
+PX4  render ok · nenhuma ocorrência
+      COR POR TOKEN: 723 tokens conferidos, 0 fora da tabela
+      COR DE ORIGEM (número herda a cor do símbolo): 3 pares conferidos, 0 fora
+      passadas da auditoria (a cada 3 quadros + fim de cada play): 584
+PX5  render ok · ENCOSTADO: 1, FORA DA ZONA: 1
+      ex. ENCOSTADO: 35.3 s: ENCOSTADO no tracejado 'M=6kg' (folga 0.19 < 0,2)
+      ex. FORA DA ZONA: 123.2 s: FORA DA ZONA texto da CONTA 'DICA' (0.82…1.54; 3.30…3.54)
+      COR POR TOKEN: 185 tokens conferidos, 0 fora da tabela
+      COR DE ORIGEM (número herda a cor do símbolo): 12 pares conferidos, 0 fora
+      passadas da auditoria (a cada 3 quadros + fim de cada play): 820
+PEP  render ok · nenhuma ocorrência
+      COR POR TOKEN: 39 tokens conferidos, 0 fora da tabela
+      COR DE ORIGEM (número herda a cor do símbolo): 0 pares conferidos, 0 fora
+      passadas da auditoria (a cada 3 quadros + fim de cada play): 581
+TOTAL: {'SEM PALCO (A1/EN1, isento)': 10, 'TRÂNSITO': 1, 'FORA DA MARGEM': 1, 'PALCO 3D': 1, '3D × TEXTO': 1, 'ENCOSTADO': 1, 'FORA DA ZONA': 1}
+
+====================================================================================================
+2. AUDITORIAS NOVAS
+====================================================================================================
+GAFANHOTO × FÍSICA (hook, X3; lago Three.js): pés e folha do estado 3D × fórmulas, projetados (≤ 2 px); x do ⊕ constante no ar
+  PH: 1211 quadros · erro máx. gafanhoto 0.194 px, folha 0.042 px · ⊕ no ar em 348 quadros: x = 0.1200 m, variação 0.181 px  → OK
+  PX3: 6759 quadros · erro máx. gafanhoto 0.117 px, folha 0.033 px · ⊕ no ar em 1539 quadros: x = 0.1200 m, variação 0.074 px  → OK
+BALANÇA (X5): mostrador × N/g em todo quadro · ⊕ × média ponderada (≤ 1 px) · a medida nas posições = 4,9 m/s²
+  3336 quadros (+ 784 dos casos-limite; 61 da montagem, com o mostrador subindo 0,0 → 2,0 → 6,0 com a massa) · mostrador × N/g: diferença máx. 0.046 kg · ⊕ × média: 0.000 px · a medida: 4.9000 m/s² (esperado 4.9000)  → OK
+REFERENCIAL (G20): cada seta de velocidade × selo ativo no quadro
+  PX3: seta 'FOLHA' com selo VISTO DA FOLHA: 137 quadros; seta 'ÁGUA' com selo —: 1528 quadros  → OK
+  PX4: seta 'CENTRO DE MASSA' com selo VISTO DO CENTRO DE MASSA: 340 quadros; seta 'NAVE-MÃE' com selo VISTO DA NAVE-MÃE: 560 quadros  → OK
+CUBO (X2): ⊕ do Manim × (5/6; 1/2; 1/6) projetado pelo Three.js (pontos.json), ≤ 2 px
+  5284 pontos (⊕ e meios das arestas): erro máx. 102.621 px, médio 20.644 px  → FALHA
+
+ALINHAMENTO Three.js × Manim (pedidos3d → projeta3d em Python × pontos.json do Three.js, ≤ 2 px)
+  PX2/cubo: 1336 pontos, erro máx. 92.757 px, médio 18.947 px  → FALHA
+  PH/lago: 1818 pontos, erro máx. 660.487 px, médio 151.627 px  → FALHA
+  PX3/lago: 10140 pontos, erro máx. 252.916 px, médio 75.681 px  → FALHA
+  PEP/fog: 403 quadros 3D (granada do yt_0017 sem pontos do ⊕ por quadro: alinhamento herdado do yt_0017)
+  PH/gra: 528 quadros 3D (granada do yt_0017 sem pontos do ⊕ por quadro: alinhamento herdado do yt_0017)
+
+G28 v5 PORTÃO (auditoria zerada E prancha humana anexada): SOBREPOSICAO: 0, TEXTO SOBRE OBJETO: 0, TEXTO SOBRE CAIXA: 0, FORA DA MARGEM: 1, OBJETO FORA DA MARGEM: 0, ENCOSTADO: 1, SELO DUPLO: 0, LINHA ÓRFÃ: 0, FORA DA ZONA: 1, CHAMADA CRUZA CORPO: 0, ESPREMIDO: 0, RÉGUA DUPLA: 0, PALCO 3D: 1, FORA DO QUADRO 3D: 0, SEM PALCO: 0, TEXTO SOBRE TRAJETÓRIA: 0, CAIXA SEM LADO ESQUERDO: 0, CALHA: 0, TRÂNSITO: 1, RÓTULO SOLTO: 0, MARCADORES COLADOS: 0, ESQUELETO: 0, 3D × TEXTO: 1, DUPLICATA: 0, VAZIO: 0 · justificativas escritas: 7
+  JUSTIFICADA PX0 78.5 s TRÂNSITO: amostra única durante uma transição (o item não é flagrado em nenhuma das amostras vizinhas): um termo em voo cruza outro por poucos quadros; quadro conferido na prancha de resíduos, voo lento do plano() da voz
+  JUSTIFICADA PX2 48.3 s TRÂNSITO: amostra única durante uma transição (o item não é flagrado em nenhuma das amostras vizinhas): o 5/6 em voo passa sobre o 1/2; quadro conferido (renders/v7/_dbg_residuais.png)
+  JUSTIFICADA PX3 29.8 s FORA DA MARGEM: amostra única durante uma transição (o item não é flagrado em nenhuma das amostras vizinhas): o rótulo m g⃗ está em fade de entrada; quadro conferido (renders/v7/_dbg_residuais.png)
+  JUSTIFICADA PX3 155.1 s PALCO 3D: amostra única durante uma transição (o item não é flagrado em nenhuma das amostras vizinhas): contraste da folha 0,067 (meta 0,08) durante o movimento de câmera
+  JUSTIFICADA PX3 203.3 s 3D × TEXTO: amostra única durante uma transição (o item não é flagrado em nenhuma das amostras vizinhas): a folha cruza o '0' da régua durante o movimento de câmera
+  JUSTIFICADA PX5 35.3 s ENCOSTADO: amostra única durante uma transição (o item não é flagrado em nenhuma das amostras vizinhas): o rótulo M = 6 kg está pousando (folga 0,19 contra 0,20)
+  JUSTIFICADA PX5 123.2 s FORA DA ZONA: amostra única durante uma transição (o item não é flagrado em nenhuma das amostras vizinhas): o selo DICA está em fade de entrada; quadro conferido (renders/v7/_dbg_residuais.png)
+  prancha humana (24 quadros de maior densidade de texto): renders/v7/prancha_humana_24.png
+  FUNDO (preview_yt0018_v7_960x540.mp4): 4119 quadros amostrados (1 a cada 3, fora do A1/EN1), com > 40% abaixo de 0,03: 0 (0.0%; limite 5%) []  → OK
+  → PORTÃO ABERTO
+
+====================================================================================================
+3. DURAÇÃO POR ÂNCORA (voz real × janela da cena)
+====================================================================================================
+  PH   H1     narração  12.20 s · cena  12.20 s · + 0.00 s
+  PH   H2     narração  11.20 s · cena  11.20 s · + 0.00 s
+  PH   H3     narração  16.27 s · cena  16.27 s · + 0.00 s
+  PH   A1     narração   2.80 s · cena   2.80 s · -0.00 s
+  PH   A2     narração   8.33 s · cena   8.33 s · -0.00 s
+  PH   A3     narração  16.80 s · cena  16.80 s · -0.00 s
+  PH   A4     narração  14.73 s · cena  14.73 s · -0.00 s
+  PX0  X0-1   narração   5.13 s · cena   5.13 s · -0.00 s
+  PX0  X0-2   narração  23.60 s · cena  23.60 s · + 0.00 s
+  PX0  X0-3   narração   8.60 s · cena   8.60 s · -0.00 s
+  PX0  X1-1   narração  11.60 s · cena  11.60 s · + 0.00 s
+  PX0  X1-2   narração  16.00 s · cena  16.00 s · + 0.00 s
+  PX0  X1-3   narração  29.40 s · cena  29.40 s · -0.00 s
+  PX0  X1-4   narração  17.87 s · cena  17.87 s · + 0.00 s
+  PX2  X2-1   narração  12.60 s · cena  12.60 s · + 0.00 s
+  PX2  X2-2   narração  17.33 s · cena  17.33 s · -0.00 s
+  PX2  X2-3   narração  20.87 s · cena  20.87 s · + 0.00 s
+  PX2  X2-3b  narração  17.73 s · cena  17.73 s · -0.00 s
+  PX2  X2-4   narração  20.47 s · cena  20.47 s · + 0.00 s
+  PX3  X3-1   narração  17.27 s · cena  17.27 s · + 0.00 s
+  PX3  X3-2   narração  18.33 s · cena  18.33 s · -0.00 s
+  PX3  X3-3   narração  18.27 s · cena  18.27 s · + 0.00 s
+  PX3  X3-4   narração  12.53 s · cena  12.53 s · -0.00 s
+  PX3  X3-5   narração  24.00 s · cena  24.00 s · + 0.00 s
+  PX3  X3-5b  narração  27.53 s · cena  27.53 s · -0.00 s
+  PX3  X3-6   narração  32.07 s · cena  32.07 s · + 0.00 s
+  PX3  X3-7   narração  24.00 s · cena  24.00 s · + 0.00 s
+  PX3  X3-8   narração  15.67 s · cena  15.67 s · + 0.00 s
+  PX3  X3-9   narração  19.20 s · cena  19.20 s · + 0.00 s
+  PX3  X3-10  narração  16.40 s · cena  16.40 s · + 0.00 s
+  PX4  X4-1   narração  16.67 s · cena  16.67 s · + 0.00 s
+  PX4  X4-2   narração  13.33 s · cena  13.33 s · -0.00 s
+  PX4  X4-3   narração   5.93 s · cena   5.93 s · -0.00 s
+  PX4  X4-4   narração  27.40 s · cena  27.40 s · + 0.00 s
+  PX4  X4-5   narração  32.93 s · cena  32.94 s · + 0.01 s
+  PX5  X5-1   narração  13.93 s · cena  13.93 s · -0.00 s
+  PX5  X5-2   narração   8.13 s · cena   8.14 s · + 0.01 s
+  PX5  X5-3   narração  21.33 s · cena  21.33 s · -0.00 s
+  PX5  X5-4   narração  21.47 s · cena  21.47 s · + 0.00 s
+  PX5  X5-5   narração  16.60 s · cena  16.60 s · -0.00 s
+  PX5  X5-6   narração  16.27 s · cena  16.26 s · -0.01 s
+  PX5  X5-7   narração  24.07 s · cena  24.07 s · + 0.00 s
+  PX5  X5-8   narração  16.67 s · cena  16.67 s · + 0.00 s
+  PEP  EP1    narração  15.93 s · cena  15.93 s · -0.00 s
+  PEP  EP2    narração  19.40 s · cena  19.40 s · + 0.00 s
+  PEP  S2     narração  35.87 s · cena  35.87 s · + 0.00 s
+  PEP  EN1    narração  21.60 s · cena  21.60 s · -0.00 s
+  PEP  EN2    narração  13.40 s · cena  13.40 s · + 0.00 s
+  TOTAL narração 14.16 min · cena 14.16 min
+
+====================================================================================================
+4. ATRASO DOS GATILHOS (instante da imagem − início da palavra no alinhamento da voz contínua; tolerância -0,15 s … +0,20 s)
+====================================================================================================
+  PH   H1     'trinta centímetros': palavra   6.72 s · imagem   6.67 s · -0.05 s
+  PH   H1     'quatro vezes a massa dele': palavra  10.48 s · imagem  10.40 s · -0.08 s
+  PH   H2     'olha de novo': palavra   4.97 s · imagem   4.87 s · -0.10 s
+  PH   H2     'instante do salto': palavra   5.64 s · imagem   5.53 s · -0.11 s
+  PH   H2     'em câmera lenta': palavra   6.71 s · imagem   6.60 s · -0.11 s
+  PH   H3     'o centro de massa resolve isso': palavra   6.20 s · imagem   6.13 s · -0.07 s
+  PH   A3     'média das posições': palavra   2.16 s · imagem   2.07 s · -0.09 s
+  PH   A3     'pesada pelas massas': palavra   3.20 s · imagem   3.07 s · -0.13 s
+  PH   A3     'se move': palavra   4.80 s · imagem   4.73 s · -0.07 s
+  PH   A3     'forças de fora': palavra   9.12 s · imagem   9.13 s · +0.01 s
+  PX0  X1-2   'a diagonal que passa': palavra   2.97 s · imagem   2.87 s · -0.10 s
+  PX0  X1-2   'duas metades iguais': palavra   7.69 s · imagem   7.60 s · -0.09 s
+  PX0  X1-2   'nessa diagonal': palavra  11.93 s · imagem  11.87 s · -0.06 s
+  PX2  X2-1   'dobrado ao longo': palavra   3.20 s · imagem   3.13 s · -0.07 s
+  PX2  X2-1   'comprimento': palavra   7.55 s · imagem   7.47 s · -0.08 s
+  PX2  X2-1   'largura': palavra   8.87 s · imagem   8.80 s · -0.07 s
+  PX2  X2-1   'altura': palavra   9.87 s · imagem   9.80 s · -0.07 s
+  PX3  X3-1   'quatro vezes a massa': palavra   2.79 s · imagem   2.73 s · -0.06 s
+  PX3  X3-1   'quatro metros por segundo': palavra   5.75 s · imagem   5.67 s · -0.08 s
+  PX3  X3-1   'em relação à água': palavra   8.93 s · imagem   8.87 s · -0.06 s
+  PX3  X3-2   'os pesos e o empuxo': palavra   4.17 s · imagem   4.07 s · -0.09 s
+  PX3  X3-2   'nenhuma força de fora': palavra  11.85 s · imagem  11.73 s · -0.12 s
+  PX3  X3-3   'a folha ganha o mesmo momento para trás': palavra   3.46 s · imagem   3.40 s · -0.06 s
+  PX3  X3-3   'um quarto da velocidade': palavra  15.71 s · imagem  15.60 s · -0.11 s
+  PX3  X3-4   'o tempo de voo': palavra   4.87 s · imagem   4.80 s · -0.07 s
+  PX3  X3-5   'vista da água': palavra   4.71 s · imagem   4.60 s · -0.11 s
+  PX3  X3-5   'vista da folha': palavra   9.20 s · imagem   9.13 s · -0.07 s
+  PX3  X3-5   'um vírgula vinte e cinco vezes': palavra  20.42 s · imagem  20.33 s · -0.09 s
+  PX3  X3-5b  'ele sobe e desce': palavra   4.71 s · imagem   4.60 s · -0.11 s
+  PX3  X3-5b  'a massa do gafanhoto vezes o deslocamento': palavra  11.27 s · imagem  11.27 s · -0.00 s
+  PX3  X3-5b  'um quarto do que o gafanhoto anda': palavra  18.47 s · imagem  18.40 s · -0.07 s
+  PX3  X3-5b  'o mesmo um vírgula vinte e cinco': palavra  25.03 s · imagem  24.93 s · -0.10 s
+  PX3  X3-6   'multiplicando essa velocidade relativa': palavra   0.14 s · imagem   0.00 s · -0.14 s
+  PX3  X3-6   'o seno do dobro do ângulo': palavra   6.14 s · imagem   6.07 s · -0.07 s
+  PX3  X3-6   'trinta centímetros da folha': palavra  14.30 s · imagem  14.20 s · -0.10 s
+  PX3  X3-6   'dá duas faixas': palavra  22.43 s · imagem  22.33 s · -0.10 s
+  PX3  X3-7   'no rasante': palavra   1.80 s · imagem   1.73 s · -0.07 s
+  PX3  X3-7   'no quase vertical': palavra   6.71 s · imagem   6.60 s · -0.11 s
+  PX3  X3-7   'vinte e quatro centímetros': palavra  18.79 s · imagem  18.73 s · -0.06 s
+  PX3  X3-8   'pesadíssima': palavra   1.15 s · imagem   1.07 s · -0.08 s
+  PX3  X3-8   'o alcance de qualquer lançamento': palavra   5.83 s · imagem   5.73 s · -0.10 s
+  PX3  X3-9   'em relação à folha': palavra   4.08 s · imagem   4.00 s · -0.08 s
+  PX3  X3-9   'cinco vírgula três graus': palavra  11.69 s · imagem  11.60 s · -0.09 s
+  PX3  X3-9   'velocidade em relação a quê': palavra  17.55 s · imagem  17.47 s · -0.08 s
+  PX3  X3-10  'quase rasante, ou quase na vertical': palavra   4.73 s · imagem   4.67 s · -0.06 s
+  PX3  X3-10  'nos dois ângulos limite': palavra   7.16 s · imagem   7.07 s · -0.09 s
+  PX3  X3-10  'a folha foge dele': palavra  15.12 s · imagem  15.07 s · -0.05 s
+  PX4  X4-1   'o dobro da massa': palavra   4.85 s · imagem   4.80 s · -0.05 s
+  PX4  X4-1   'dá energia cinética ao conjunto': palavra  11.62 s · imagem  11.53 s · -0.09 s
+  PX4  X4-4   'a nave leve sai': palavra  16.60 s · imagem  16.53 s · -0.07 s
+  PX4  X4-4   'a pesada a um': palavra  19.24 s · imagem  19.13 s · -0.11 s
+  PX4  X4-4   'três metros por segundo': palavra  21.48 s · imagem  21.40 s · -0.08 s
+  PX4  X4-4   'dois mil joules para a leve': palavra  24.66 s · imagem  24.60 s · -0.06 s
+  PX4  X4-4   'mil para a pesada': palavra  26.36 s · imagem  26.27 s · -0.09 s
+  PX4  X4-5   'cento e cinquenta mil joules': palavra  19.68 s · imagem  19.60 s · -0.08 s
+  PX5  X5-1   'seis quilos': palavra  11.32 s · imagem  11.27 s · -0.05 s
+  PX5  X5-2   'cinco quilos': palavra   6.65 s · imagem   6.60 s · -0.05 s
+  PX5  X5-3   'qual é o sistema': palavra   0.77 s · imagem   0.67 s · -0.10 s
+  PX5  X5-3   'força interna': palavra   9.32 s · imagem   9.27 s · -0.05 s
+  PX5  X5-3   'o peso de tudo': palavra  11.59 s · imagem  11.53 s · -0.06 s
+  PX5  X5-4   'no bloco pesado': palavra   4.54 s · imagem   4.47 s · -0.07 s
+  PX5  X5-4   'a tração some': palavra  10.62 s · imagem  10.53 s · -0.09 s
+  PX5  X5-4   'quatro vírgula nove': palavra  18.84 s · imagem  18.73 s · -0.11 s
+  PX5  X5-5   'um vírgula sessenta e três': palavra  12.68 s · imagem  12.60 s · -0.08 s
+  PX5  X5-6   'quarenta e nove newtons': palavra   6.52 s · imagem   6.47 s · -0.05 s
+  PX5  X5-6   'cinco quilos': palavra   9.76 s · imagem   9.67 s · -0.09 s
+  PX5  X5-7   'a tração no fio': palavra   1.53 s · imagem   1.47 s · -0.06 s
+  PX5  X5-7   'quarenta e nove newtons de novo': palavra  11.58 s · imagem  11.53 s · -0.05 s
+  PX5  X5-7   'com blocos iguais': palavra  14.70 s · imagem  14.60 s · -0.10 s
+  PX5  X5-7   'se o bloco leve fosse sumindo': palavra  18.77 s · imagem  18.67 s · -0.10 s
+  PX5  X5-8   'acelera para baixo': palavra   3.98 s · imagem   3.93 s · -0.05 s
+  PX5  X5-8   'acelera para cima': palavra   6.78 s · imagem   6.73 s · -0.05 s
+  PX5  X5-8   'do elevador': palavra   9.34 s · imagem   9.27 s · -0.07 s
+  PX5  X5-8   'do cavalo': palavra  10.18 s · imagem  10.13 s · -0.05 s
+  PEP  EP1    'caixa parada': palavra   2.58 s · imagem   2.53 s · -0.05 s
+  PEP  EP1    'no espaço': palavra   3.34 s · imagem   3.27 s · -0.07 s
+  PEP  EP1    'sai um pulso': palavra   4.98 s · imagem   4.93 s · -0.05 s
+  PEP  EP1    'a caixa recua': palavra  12.45 s · imagem  12.40 s · -0.05 s
+  PEP  EP2    'não podia ter andado': palavra   3.42 s · imagem   3.33 s · -0.09 s
+  PEP  EP2    'o que foi para a direita': palavra   6.22 s · imagem   6.13 s · -0.09 s
+  PEP  EP2    'a própria energia carregue inércia': palavra  12.53 s · imagem  12.47 s · -0.06 s
+  PEP  S2     'um buraco': palavra   1.75 s · imagem   1.67 s · -0.08 s
+  PEP  S2     'um corpo complicado': palavra   3.81 s · imagem   3.73 s · -0.08 s
+  PEP  S2     'sem força externa': palavra   8.85 s · imagem   8.80 s · -0.05 s
+  PEP  S2     'trocar de régua': palavra  12.45 s · imagem  12.40 s · -0.05 s
+  PEP  S2     'quando o centro de massa acelera': palavra  19.38 s · imagem  19.33 s · -0.05 s
+  PEP  S2     'as três perguntas': palavra  22.85 s · imagem  22.80 s · -0.05 s
+  PEP  S2     'o mais difícil sumiu': palavra  31.81 s · imagem  31.73 s · -0.08 s
+  PEP  EN1    'se inscreve no parallax lab': palavra   3.92 s · imagem   3.87 s · -0.04 s
+  PEP  EN1    'aqui no canal': palavra   7.22 s · imagem   7.13 s · -0.09 s
+  PEP  EN1    'ativa o sininho': palavra  15.22 s · imagem  15.13 s · -0.09 s
+  PEP  EN1    'conta nos comentários': palavra  18.14 s · imagem  18.07 s · -0.07 s
+  PEP  EN2    'como um foguete acelera': palavra   4.34 s · imagem   4.27 s · -0.07 s
+  PEP  EN2    'o foguete': palavra  10.23 s · imagem  10.13 s · -0.10 s
+  TOTAL: 94 gatilhos, 0 fora de [-0,15; +0,20] s · maior atraso +0.01 s · maior adiantamento -0.14 s · média -0.076 s
+
+EXPOSIÇÃO (percentil 99 do canal mais claro, pixels da máscara; meta < 235): PH q150: folha 228, gafanhoto 201; PH q30: folha 228, gafanhoto 201; PH q330: folha 227, gafanhoto 170; PH q90: folha 229, gafanhoto 199; PX3 q1200: folha 222, gafanhoto 152; PX3 q1900: folha 228, gafanhoto 193; PX3 q2700: folha 228, gafanhoto 193; PX3 q300: folha 227, gafanhoto 193; PX3 q700: folha 228, gafanhoto 193  → OK
+
+ÁGUA (metade de baixo dos quadros do lago, por âncora; meta: média ≥ 0,09 e ≤ 5% dos pixels abaixo de 0,03):
+  PH H1        61 quadros · média 0.163 (mín. 0.151) · abaixo de 0,03: 0.0% (máx. 0.0%)
+  PH H2        56 quadros · média 0.129 (mín. 0.103) · abaixo de 0,03: 0.0% (máx. 0.0%)
+  PH H3        82 quadros · média 0.106 (mín. 0.104) · abaixo de 0,03: 0.0% (máx. 0.0%)
+  PX3 X3-1     87 quadros · média 0.117 (mín. 0.112) · abaixo de 0,03: 0.0% (máx. 0.0%)
+  PX3 X3-2     91 quadros · média 0.123 (mín. 0.112) · abaixo de 0,03: 0.0% (máx. 0.0%)
+  PX3 X3-3     92 quadros · média 0.130 (mín. 0.118) · abaixo de 0,03: 0.0% (máx. 0.0%)
+  PX3 X3-4     62 quadros · média 0.127 (mín. 0.116) · abaixo de 0,03: 0.0% (máx. 0.0%)
+  PX3 X3-5    120 quadros · média 0.110 (mín. 0.108) · abaixo de 0,03: 0.0% (máx. 0.0%)
+  PX3 X3-5b   138 quadros · média 0.120 (mín. 0.107) · abaixo de 0,03: 0.0% (máx. 0.0%)
+  PX3 X3-6    160 quadros · média 0.126 (mín. 0.114) · abaixo de 0,03: 0.0% (máx. 0.0%)
+  PX3 X3-7    120 quadros · média 0.119 (mín. 0.111) · abaixo de 0,03: 0.0% (máx. 0.0%)
+  PX3 X3-8     79 quadros · média 0.123 (mín. 0.117) · abaixo de 0,03: 0.0% (máx. 0.0%)
+  PX3 X3-9     96 quadros · média 0.115 (mín. 0.107) · abaixo de 0,03: 0.0% (máx. 0.0%)
+  PX3 X3-10    82 quadros · média 0.127 (mín. 0.105) · abaixo de 0,03: 0.0% (máx. 0.0%)
+  → OK
+LUA (hook, 0–20 s): p99 da faixa mais clara da água = 214 (t = 17.33 s; RGB médio da faixa [80, 106, 174])  → OK
+
+PAUSAS (trechos ≥ 4 s sem pixel novo):
+  [pausa] total de trechos parados ≥ 4 s: 0
+FUNDO (preview_yt0018_v7_960x540.mp4): 4119 quadros amostrados (1 a cada 3, fora do A1/EN1), com > 40% abaixo de 0,03: 0 (0.0%; limite 5%) []  → OK
+VAZIO (quadro com < 3% de conteúdo por > 1,0 s; A1–A4 e EN1–EN2 isentos): 0 trecho(s)  → OK
+
+VOZ CONTÍNUA / BORDA ABRUPTA / JUNÇÕES (auditoria_voz.py no audio/narracao_v7.wav):
+  narracao_v7.wav: 848.36 s; fala de 0.03 a 848.18 s
+  VOZ CONTÍNUA: 0 trechos de silêncio digital >= 50 ms
+  BORDA ABRUPTA: 0 ocorrências (salto >= 35 dB em 10 ms)
+    maior salto: 31.9 dB em 627.89 s
+  silêncios: 12160 janelas < -45 dBFS; piso mediano -59.5 dBFS, mínimo -76.6, p5 -72.7
+  JUNÇÕES: 3
+    245.46 s bloco_01→bloco_02: crossfade 25 ms, silêncio natural 0.34 s
+    492.46 s bloco_02→bloco_03: crossfade 25 ms, silêncio natural 0.34 s
+    743.65 s bloco_03→bloco_04: crossfade 25 ms, silêncio natural 0.34 s
+  → OK
+
+CONGELAMENTO (freezedetect n = 0,0005, d = 1,5 s com fala ativa; no 3D, diferença só nos objetos):
+  tela inteira: 13 trechos parados >= 1.5 s no vídeo todo; 12 com fala ativa: [(70.5, 1.7), (76.4, 1.5), (144.9, 1.6), (280.0, 1.5), (509.9, 1.7), (577.3, 1.5), (582.5, 1.8), (613.3, 1.9), (646.1, 1.5), (661.1, 1.5), (691.1, 1.5), (796.7, 1.5)]
+    tempo parado com fala: 19.2 s de 848 s (2.3%); maior 1.9 s
+  objetos 3D (sem a água): 1 trechos com o estado 3D parado >= 1.5 s: [('PX3', 'lago', 461.8, 2.6)]
+    → FALHA
