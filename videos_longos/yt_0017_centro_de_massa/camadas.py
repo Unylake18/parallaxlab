@@ -419,22 +419,25 @@ class Camadas(Base):
         painel._fundo = True
         painel.set_z_index(18)
         SQ = 0.066                                                        # ΔV⃗_cm ≥ 0,6 na tela
-        o_ = P3(-5.6, 2.5)                                               # PALCO, céu livre sobre o braço de subida (longe do J⃗, do pico e dos cacos)
+        o_ = g.m((150.0, 64.0), cam)                                    # PALCO, embaixo da parábola (x de 150 a 205 m, acima do chão), perto do ⊕
         ta, td = o_ + P3(*v_antes) * SQ, o_ + P3(*v_dep) * SQ
-        sa = seta(o_, ta, VREL, 7, tip=0.24).set_z_index(22)
+        def tracejada(s_):                                                   # ANTES: violeta a 50%, tracejada (DEPOIS: violeta cheia)
+            s_.submobjects[0] = DashedVMobject(s_[0], num_dashes=max(4, int(s_[0].get_arc_length() / 0.16)), dashed_ratio=0.55)
+            return s_
+        sa = tracejada(seta(o_, ta, VEL, 7, tip=0.24, op=0.5)).set_z_index(22)
         sd = seta(o_, td, VEL, 7, tip=0.24).set_z_index(22)
         cm0 = g.cm()
-        fa = seta(da_borda(cm0, UP, 0.3) + 0.2 * UP, da_borda(cm0, UP, 0.3) + 0.2 * UP + P3(*v_antes) * SQ, VREL, 6, tip=0.22).set_z_index(25)
+        fa = tracejada(seta(da_borda(cm0, UP, 0.3) + 0.2 * UP, da_borda(cm0, UP, 0.3) + 0.2 * UP + P3(*v_antes) * SQ, VEL, 6, tip=0.22, op=0.5)).set_z_index(25)
         fd = seta(da_borda(cm0, UP, 0.3) + 0.2 * UP, da_borda(cm0, UP, 0.3) + 0.2 * UP + P3(*v_dep) * SQ, VEL, 6, tip=0.22).set_z_index(25)
-        dv = DashedLine(ta, td, dash_length=0.07).set_stroke(VEL, 4).set_z_index(22)
-        def fora(m_, a_, b_, lado, f_=0.5):                                           # centro do rótulo a 0,15 da seta, contando o tamanho da caixa
-            u_ = (b_ - a_) / np.linalg.norm(b_ - a_)
-            n_ = P3(-u_[1], u_[0]) * lado
-            return m_.move_to(a_ + (b_ - a_) * f_ + n_ * (0.15 + abs(n_[0]) * m_.width / 2 + abs(n_[1]) * m_.height / 2))
-        la = fora(txt("ANTES", 28, color=VREL), o_, ta, -1, 0.75).set_z_index(22)        # do lado de fora de cada seta
-        ld = fora(txt("DEPOIS", 28, color=VEL), o_, td, 1).set_z_index(22)
+        dv = seta(ta, td, mix(VEL, 0.45), 6, tip=0.16).set_z_index(23)                # ΔV⃗_cm: seta cheia curta (G8′: a proporção é a real)
+        la = VGroup(tracejada(seta(ORIGIN, 0.6 * RIGHT, VEL, 6, tip=0.16, op=0.5)), txt("ANTES", 28, color=VEL, op=0.75)).arrange(RIGHT, buff=0.14)   # legenda: os mesmos estilos
+        ld = VGroup(seta(ORIGIN, 0.5 * RIGHT, VEL, 6, tip=0.16), txt("DEPOIS", 28, color=VEL)).arrange(RIGHT, buff=0.14)
+        la.move_to(P3(-2.2 + la.width / 2, 2.3)).set_z_index(22)                # céu livre acima do pico
+        ld.move_to(P3(-2.2 + ld.width / 2, 1.88)).set_z_index(22)
         ldv = mtex(r"\Delta\vec V_{cm}", VEL, 40).set_z_index(22)
-        ldv.move_to(td + P3(0.2 + ldv.width / 2, 0.12))                     # à direita da ponta do DEPOIS (embaixo passam as marcas de tempo)
+        ldv = VGroup(ldv.next_to(ta, LEFT, buff=0.45).shift(0.3 * DOWN))                   # fora da ponta, com linha-guia fina até a seta ΔV
+        ldv.add(Line(ldv[0].get_corner(UR) + 0.04 * RIGHT, ta + (td - ta) * 0.3, stroke_width=1.4).set_stroke(mix(VEL, 0.45), 1.4, opacity=0.8))
+        guia = vivo(lambda: DashedLine(o_, g.cm(), dash_length=0.06).set_stroke(WHITE_, 1.4, opacity=0.5))   # linha-guia fina até o ⊕
         X0 = 1.75
         L1, i1 = eqp(r"\vec J", "=", "m", r"\,(", r"\vec 0", "-", r"\vec v", ")", size=46, cores={0: JC, 6: VEL})
         L2, i2 = eqp("=", "1", r"\cdot", "(", "-", r"4{,}02", ";", r"\ 42{,}72", ")", r"\ \mathrm{N\cdot s}", size=46)
@@ -460,7 +463,7 @@ class Camadas(Base):
         self.g_evita = [m for m in self.g_evita if m is not vlab]
         self.play(TransformFromCopy(fa, sa), TransformFromCopy(fd, sd), FadeIn(fa), FadeIn(fd), g.tau.animate(rate_func=linear).set_value(t1 + 0.17),
                   run_time=0.9)
-        self.play(FadeOut(fa), FadeOut(fd), Create(dv), FadeIn(la), FadeIn(ld), FadeIn(ldv), FadeIn(L3), g.tau.animate(rate_func=linear).set_value(t1 + 0.24),
+        self.play(FadeOut(fa), FadeOut(fd), GrowFromPoint(dv, ta), FadeIn(la), FadeIn(ld), FadeIn(ldv), FadeIn(guia), FadeIn(L3), g.tau.animate(rate_func=linear).set_value(t1 + 0.24),
                   run_time=0.9)
         self.play(FadeIn(L4, shift=0.1 * DOWN), g.tau.animate(rate_func=linear).set_value(t1 + 0.32), run_time=0.8)   # segura no descolamento
         rt = (g.ttoque[0] + 0.05 - t1 - 0.32) / 0.5
@@ -473,7 +476,7 @@ class Camadas(Base):
         else:
             self.wait(0.5)
         self.g_evita = []
-        return VGroup(painel, sa, sd, dv, la, ld, ldv, L1, L2, L3, L4, aviso)                      # triângulo no PALCO, conta no painel
+        return VGroup(painel, sa, sd, dv, la, ld, ldv, guia, L1, L2, L3, L4, aviso)                      # triângulo no PALCO, conta no painel
 
     # ── haltere 2D (T1; v3: sem 3D, §1.5) ─────────────────────────────────────────────────────────────────
     def haltere_giro(self, giro=3.0):
@@ -554,7 +557,8 @@ class Camadas(Base):
                         perp = P3(-d[1], d[0])
                         if perp @ P3(*(m * v)) > 0:                       # do lado oposto à seta do pedaço
                             perp = -perp
-                        g.add(rot((f"{m:g}".replace(".", ",")) + " kg", 32, WHITE_, op=ol).move_to(c + perp * (r + 0.55)))
+                        lk = mrot((f"{m:g}".replace(".", ",")) + " kg", 34, WHITE_, op=ol).set_stroke(WHITE_, 0.9, opacity=ol)
+                        g.add(lk.move_to(c + perp * (r + 0.12 + abs(perp[0]) * lk.width / 2 + abs(perp[1]) * lk.height / 2)))   # branco cheio, 0,12 do caco
                 # T3-1/T3-2: velocidades (chão → relativas: a parte comum sai)
                 ov, w = T["op_vel"].get_value(), suave(T["w"].get_value())
                 if ov > 0.01:
@@ -577,7 +581,12 @@ class Camadas(Base):
                         if o30 > 0.01:                                     # o mesmo tamanho: 30 N·s cada
                             perp = P3(-d[1], d[0])
                             l30 = mrot("30 N·s", 26, MAG, op=o30 * orl)
-                            g.add(l30.move_to(a + vec / 2 + perp * (0.16 + abs(perp[0]) * l30.width / 2 + abs(perp[1]) * l30.height / 2)))
+                            if d[1] < 0:                                   # setas para baixo: rótulo acima da ponta (o rodapé tem o selo)
+                                q_ = a + vec + UP * (0.22 + l30.height / 2) + RIGHT * np.sign(d[0]) * (l30.width / 2 + 0.05)   # do lado de fora da haste
+                                l30.move_to(P3(min(max(q_[0], -7.4 + l30.width / 2), 0.6 - l30.width / 2), q_[1]))
+                            else:
+                                l30.move_to(a + vec / 2 + perp * (0.16 + abs(perp[0]) * l30.width / 2 + abs(perp[1]) * l30.height / 2))
+                            g.add(l30)
             if 0 < T["w"].get_value():
                 w = suave(T["w"].get_value())
                 a0 = da_borda(cmv, RIGHT, 0.26)
@@ -591,8 +600,8 @@ class Camadas(Base):
                 g.fade(1 - o_)
             return g.set_z_index(8)
         self._refs = {k: txt(k, 26, color=DIM, op=0.95) for k in ("VISTO DO CHÃO", "VISTO DO CENTRO DE MASSA")}
-        for m in self._refs.values():
-            m.move_to(P3(-7.0 + m.width / 2, 2.95))
+        for m in self._refs.values():                       # rodapé do PALCO: no topo, o caco de 2 kg (que sobe) passava por trás
+            m.move_to(P3(PALCO_C[0], -3.0))
         ref_ = self._refs["VISTO DO CHÃO"]
         return vivo(camada), ref_
 
@@ -612,7 +621,7 @@ class Camadas(Base):
         cam, rot = self._explosao_camadas(e)
         self._corpos3d = [lambda: [(c_, r_) for c_, r_, _ in e.corpos()] if e.f3d in self.mobjects and e.f3d.op.get_value() > 0.15 else []]
         selo = self.selo_esp = txt("NO ESPAÇO, SEM GRAVIDADE", 24, color=DIM, op=0.95)
-        selo.move_to(P3(-7.0 + selo.width / 2, 2.55))
+        selo.move_to(P3(PALCO_C[0], -3.38))
         self.add(cam)
         T = self.ex
         if frac:
@@ -650,8 +659,7 @@ class Camadas(Base):
         self.play(e.tau.animate(rate_func=linear).set_value(4.0), self.ex["op_lab"].animate.set_value(1.0), run_time=1.6)
         if frac:
             self.ate_mov(0.8, e.tau, 4.25)
-        self.play(e.tau.animate(rate_func=linear).set_value(4.6), self.ex["u"].animate.set_value(1.0), self.ex["op_lab"].animate.set_value(0.0),
-                  run_time=1.8)
+        self.play(e.tau.animate(rate_func=linear).set_value(4.6), self.ex["u"].animate.set_value(1.0), run_time=1.8)   # os rótulos ficam (brancos) enquanto as setas deslizam
         self.play(e.tau.animate(rate_func=linear).set_value(4.75), self.ex["pul"].animate(rate_func=there_and_back).set_value(1.0),
                   run_time=0.6)                                     # a cadeia fecha na ponta da P de antes
         if frac:

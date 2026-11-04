@@ -1,5 +1,5 @@
 """Quadros de conferência rápida (handoff v4, §5.3): um quadro de cada estado-chave, localizado pela âncora (log do lote) + fração.
-uso: python conferencia.py → renders/conferencia_v4.png (e um PNG por estado em renders/conferencia/)"""
+uso: python conferencia.py → renders/conferencia_v6.png (e um PNG por estado em renders/conferencia/)"""
 import re
 from pathlib import Path
 
@@ -9,11 +9,10 @@ from PIL import Image, ImageDraw
 from kit import ANC
 
 U = Path(__file__).resolve().parent
-ESTADOS = [("P1", "T1-1", 0.5, "T1-1 haltere (aço com luz B)"), ("P2", "T2-4", 0.72, "T2-4 molas e ⊕"), ("P2", "T2-6", 0.84, "T2-6 soma ponta com ponta"),
-           ("P2", "T2-8", 0.8, "T2-8 triângulo no PALCO"), ("P3", "T3-2", 0.8, "T3-2 troca de referencial"), ("P3", "T3-3", 0.5, "T3-3 triângulo"),
-           ("P3", "T3-4", 0.27, "T3-4 termo do meio sumindo"), ("P3", "T3-6", 0.75, "T3-6 barras"), ("P4", "T4-3", 0.8, "T4-3 anel"),
-           ("P4", "T4-4", 0.78, "T4-4 densidade crescente"), ("P5", "E1-2", 0.85, "E1-2 três triângulos"), ("P5", "E1-3", 0.9, "E1-3 os dois no mesmo ponto"),
-           ("P5", "E2-2", 0.8, "E2-2 ⊕ parado"), ("P5", "E2-4", 0.5, "E2-4 não alcança"), ("P5", "EN2", 0.75, "EN2 colisão com o ⊕"), ("P5", "EN3", 0.95, "EN3 prévias")]
+ESTADOS = [("P3", "T3-4", 0.215, "T3-4 a chave do 0⃗ no termo do meio"), ("P3", "T3-4", 0.27, "T3-4 logo depois do sumiço"),
+           ("P2", "T2-8", 0.8, "T2-8 triângulo: ANTES tracejada, DEPOIS cheia, ΔV⃗_cm"), ("P2", "T2-6", 0.84, "T2-6 rótulos de massa"),
+           ("P5", "EN1", 0.43, "EN1 passo 1: v_f = V_cm"), ("P5", "EN1", 0.5, "EN1 passo 3: (m₁v₁ᵢ + m₂v₂ᵢ)/(m₁ + m₂)"),
+           ("P5", "EN1", 0.54, "EN1 passo 4: ⅔ m/s"), ("P5", "EN1", 0.17, "EN1 grudados: 3 kg")]
 inicio = {}
 for lote in {e[0] for e in ESTADOS}:
     for m in re.finditer(r"\[ancora\] (\S+) ([0-9.]+)", (U / f"log_{lote}.txt").read_text(encoding="utf-8", errors="replace")):
@@ -37,5 +36,5 @@ for k, (nome, q, im) in enumerate(ims):
     x, y = (k % 2) * W, (k // 2) * (H + 20)
     pr.paste(im.resize((W, H)), (x, y + 20))
     d.text((x + 4, y + 4), f"{nome} · q{q}", fill="yellow")
-pr.save(U / "renders" / "conferencia_v4.png")
+pr.save(U / "renders" / "conferencia_v6.png")
 print("ok", [(n, q) for n, q, _ in ims])

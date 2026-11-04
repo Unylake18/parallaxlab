@@ -256,22 +256,26 @@ class LoteT1(Camadas):
         ph = DashedLine(Pw(2, 4) + 0.34 * LEFT, Pw(0, 4), dash_length=0.08).set_stroke(GEO, 2, opacity=0.7)
         tx = VGroup(Line(Pw(2, 0) + 0.1 * DOWN, Pw(2, 0) + 0.1 * UP).set_stroke(GEO, 2.4), rot("2", 28, GEO).next_to(Pw(2, 0), DOWN, buff=0.16))
         ty = VGroup(Line(Pw(0, 4) + 0.1 * LEFT, Pw(0, 4) + 0.1 * RIGHT).set_stroke(GEO, 2.4), rot("4", 28, GEO).next_to(Pw(0, 4), LEFT, buff=0.16))
-        self.ate(0.07)
-        self.play(Create(pv), FadeIn(tx), run_time=0.7)                  # a coordenada horizontal
-        self.ate(0.13)
-        self.play(Create(ph), FadeIn(ty), run_time=0.7)                  # a vertical
-        self.ate(0.2)
-        self.play(LaggedStart(*[Indicate(cd, color=WHITE_, scale_factor=1.2) for cd in self.coords], lag_ratio=0.4), run_time=1.8)
-        self.ate(0.3)
-        self.play(FadeIn(ey), run_time=0.7)
+        self.em("coordenada por coordenada")
+        self.play(LaggedStart(*[Indicate(cd, color=WHITE_, scale_factor=1.2) for cd in self.coords], lag_ratio=0.4), run_time=1.5)
+        self.em("A coordenada horizontal")
+        self.play(Create(pv), FadeIn(tx), run_time=0.8)                  # a coordenada horizontal
+        self.em("a média pesada das coordenadas horizontais")
+        self.play(Indicate(ex, color=WHITE_, scale_factor=1.1), run_time=0.8)
+        self.em("a vertical, das verticais")
+        self.play(Create(ph), FadeIn(ty), FadeIn(ey), run_time=0.8)                 # a vertical
         ez = VGroup(DashedLine(O, O + P3(-0.75, -0.62), dash_length=0.08).set_stroke(GEO, 2, opacity=0.6),
                     mtex("z", GEO, 36).set_opacity(0.8).move_to(O + P3(-0.98, -0.62)))
-        self.ate(0.37)
+        self.em("e a de profundidade")
         self.play(Create(ez[0]), FadeIn(ez[1]), run_time=0.8)          # "e a de profundidade, igual"
         R, ir = eqp(r"\vec R_{cm}", "=", r"\frac{\sum_i m_i\vec r_i}{M}", size=56, cores={0: CMC})
         na_conta(R, 1.2)
-        self.ate(0.45)
+        self.em("Juntando tudo num vetor")
         self.play(TransformMatchingTex(VGroup(ex, ey).copy(), R), run_time=1.2)
+        self.em("a soma das massas vezes")
+        self.play(Circumscribe(R[0][len(ir[0]) + 1:-2], color=CYAN, buff=0.05), run_time=1.0)   # o numerador: Σ mᵢ r⃗ᵢ
+        self.em("dividida pela massa total")
+        self.play(Indicate(R[0][-1], color=WHITE_, scale_factor=1.4), run_time=0.8)              # o M
         # Σ mᵢ r⃗ᵢ = 2 (0, 0) + 1 (4, 0) + 1 (2, 4) = (6, 4): cada massa e cada par saem do desenho
         S, i_s = eqp(r"\sum_i m_i\vec r_i", "=", "2", r"\,(0,\,0)", "+", "1", r"\,(4,\,0)", size=46)
         S[0][0:len(i_s[0])][-3:].set_color(GEO)
@@ -280,7 +284,7 @@ class LoteT1(Camadas):
         Sb.move_to(P3(XC0 + 1.3 + Sb.width / 2, -0.8))
         S2, _ = eqp("=", r"(6,\,4)", size=46, cores={1: GEO})
         S2.next_to(Sb, RIGHT, buff=0.2)
-        self.ate(0.6)
+        self.em("Com essas três massas")
         anims = [FadeIn(mp(S, i_s, [0, 1, 4])), FadeIn(mp(Sb, i_b, [0]))]
         for i, (E_, ix_, km, kp) in enumerate(((S, i_s, 2, 3), (S, i_s, 5, 6), (Sb, i_b, 1, 2))):
             anims += [TransformFromCopy(self.kgs[i][0], mp(E_, ix_, [km])), TransformFromCopy(self.coords[i][0], mp(E_, ix_, [kp]))]
@@ -289,24 +293,28 @@ class LoteT1(Camadas):
         r3b = seta(Pw(4, 0), Pw(6, 4), GEO, 4, tip=0.22, z=5)
         soma = seta(O, Pw(6, 4), GEO, 6, tip=0.26, z=7)
         ls = mtex(r"\sum_i m_i\vec r_i", GEO, 38).move_to(Pw(6, 4) + P3(-1.45, 0.22))       # à esquerda da ponta (longe da CONTA)
+        self.em("dá seis na horizontal")
         self.play(TransformFromCopy(r3, r3b), run_time=0.9)
         self.play(Create(soma), FadeIn(ls), FadeIn(S2), run_time=0.9)
-        self.ate(0.77)                                                 # "seis na horizontal e quatro na vertical"
+        self.em("e quatro na vertical")
         self.play(Indicate(S2, color=WHITE_, scale_factor=1.15), Indicate(ls, color=WHITE_, scale_factor=1.15), run_time=0.9)
         # ÷ 4: a seta encolhe até o ⊕
         F, i_f = eqp(r"\vec R_{cm}", "=", r"\frac{(6,\,4)}{4}", "=", r"(1{,}5;\ 1{,}0)", size=50, cores={0: CMC, 4: CMC})
         na_conta(F, -2.15)
         rcm = seta(O, Pw(1.5, 1.0) - (Pw(1.5, 1.0) - O) / np.linalg.norm(Pw(1.5, 1.0) - O) * 0.24, GEO, 6, tip=0.24, z=7)
         self.cm6 = marcador_cm(Pw(1.5, 1.0))
-        self.ate(0.88)
+        self.em("Dividindo pela massa total")
         self.play(ReplacementTransform(soma, rcm), FadeOut(ls), FadeOut(r3b), FadeIn(F), run_time=1.2)
         cxF = caixa(F, cor=CMC)
+        self.em("ele fica a um metro e meio")
         c = self.cm6.get_center()
         cotas = VGroup(DashedLine(c, P3(c[0], O[1]), dash_length=0.08).set_stroke(WHITE_, 1.8, opacity=0.7),
                        DashedLine(c, P3(O[0], c[1]), dash_length=0.08).set_stroke(WHITE_, 1.8, opacity=0.7),
                        rot("1,5", 28).next_to(P3(c[0], O[1]), DOWN, buff=0.14),
                        rot("1,0", 28).next_to(P3(O[0], c[1]), LEFT, buff=0.14))
         self.play(FadeIn(self.cm6, scale=1.4), FadeIn(cxF), Create(cotas[0]), Create(cotas[1]), FadeIn(cotas[2:]), run_time=0.8)
+        self.em("e um metro na vertical")
+        self.play(Indicate(cotas[3], color=WHITE_, scale_factor=1.3), Indicate(cotas[2], color=WHITE_, scale_factor=1.3), run_time=0.9)
         self.ate(0.97)
         self.t16 = VGroup(ax, self.vets, self.coords, cotas, ex, ey, S, Sb, S2, F, cxF, rcm, self.kgs, pv, ph, tx, ty, ez)
         self.R = R
@@ -338,7 +346,9 @@ class LoteT1(Camadas):
         self.play(bd.px.animate.set_value(1.5), bd.py.animate.set_value(1.0), run_time=0.9)
         self.play(bd.pz.animate.set_value(0.0), run_time=0.6)
         parada = txt("PARADA", 28, bold=True).move_to(cmt + P3(2.2, 1.6))
-        self.play(FadeIn(parada), run_time=0.4)
+        pt_, pb_ = bd.p((1.5, 1.0, -0.08)), bd.p((1.5, 1.0, -1.0))                          # a ponta do apoio encosta sob o ⊕
+        apoio = Polygon(pt_, pb_ + 0.11 * LEFT, pb_ + 0.11 * RIGHT).set_fill(WHITE_, 0.92).set_stroke(CYAN, 2).set_z_index(11)
+        self.play(FadeIn(parada), FadeIn(apoio), run_time=0.4)
         # a conta: Σ mᵢ (r⃗ᵢ − R⃗_cm) = Σ mᵢ r⃗ᵢ − M R⃗_cm = M R⃗_cm − M R⃗_cm = 0⃗ ; no PALCO as setas r⃗ᵢ − R⃗_cm saem do ⊕
         G = GEO
         B1, i1 = eqp(r"\sum_i", "m_i", "(", r"\vec r_i", "-", r"\vec R_{cm}", ")", size=48, cores={3: G, 5: CMC})
@@ -363,14 +373,16 @@ class LoteT1(Camadas):
             return g.set_z_index(12)
         relv = vivo(relativas)
         self.add(relv)
-        self.ate(0.22)
+        self.em("medindo cada posição")
         self.play(FadeOut(parada), FadeIn(B1), rel.animate.set_value(1.0), run_time=0.9)
+        self.em("a soma de massa vezes posição dá zero")
+        self.play(Circumscribe(B1, color=GEO, buff=0.08), run_time=1.1)
         J = lambda idx, *ks: [j for k in ks for j in idx[k]]
-        self.ate(0.36)
+        self.em("porque é a soma")
         self.play(TransformByGlyphMap(B1.copy(), B2, ([], J(i2, 0)), (J(i1, 0), J(i2, 1)), (J(i1, 1), J(i2, 2)), (J(i1, 3), J(i2, 3)),
                                       (J(i1, 4), J(i2, 4)), (J(i1, 5), J(i2, 6)), ([], J(i2, 5)), (J(i1, 2, 6), []), auto_fade=True), run_time=1.3)
         # Σ mᵢ r⃗ᵢ vira M R⃗_cm (da fórmula do T1-6, no alto da CONTA)
-        self.ate(0.44)
+        self.em("menos a massa total vezes")
         self.play(FadeIn(mp(B3, i3, [0])), TransformFromCopy(self.R, mp(B3, i3, [1, 2])), TransformFromCopy(mp(B2, i2, [4, 5, 6]), mp(B3, i3, [3, 4, 5])),
                   run_time=1.2)
         riscos = VGroup(risco(mp(B3, i3, [1, 2]), WHITE_, 3), risco(mp(B3, i3, [4, 5]), WHITE_, 3))
@@ -464,8 +476,8 @@ class LoteT1(Camadas):
         selo.move_to(P3(-1.2, 2.55))                                    # à direita do eixo y, acima das massas
         lem, il = eqp(r"\sum_i m_i\vec r_i", "=", r"(6,\,4)", size=46)
         lem.set_opacity(OP_FUNDO)
-        tag6 = txt("DO T1-6:", 24, color=DIM)
-        VGroup(tag6, lem).arrange(RIGHT, buff=0.25)
+        tag6 = txt("DA CONTA DE ANTES:", 24, color=DIM)
+        VGroup(tag6, lem).arrange(DOWN, aligned_edge=LEFT, buff=0.1)
         na_conta(VGroup(tag6, lem), 2.8)
         self.troca(velhos, FadeIn(ax), *[FadeIn(b) for b in bolas], *[FadeIn(l_) for l_ in kgs + coords], FadeIn(cm), FadeIn(selo),
                    FadeIn(tag6), FadeIn(lem), seq=True)
@@ -475,12 +487,14 @@ class LoteT1(Camadas):
         n_ = P3(-u_[1], u_[0])
         seg1 = DashedLine(a_, b_, dash_length=0.1).set_stroke(GEO, 2.2, opacity=0.8).set_z_index(3)
         mid = Circle(radius=0.1).move_to(Pw(3, 2)).set_stroke(GEO, 2.4)
-        self.ate(0.1)
+        self.em("Qualquer pedaço do sistema")
         self.play(onda(a_, r=0.36), onda(b_, r=0.36), Create(seg1), FadeOut(coords[1]), FadeOut(coords[2]), run_time=0.9)   # "qualquer pedaço"
-        self.ate(0.2)
+        self.em("com a massa daquele pedaço")
+        self.play(Indicate(VGroup(bolas[1], bolas[2]), color=WHITE_, scale_factor=1.12), run_time=0.8)
+        self.em("sentada no centro de massa dele")
         self.play(FadeIn(mid, scale=1.5), run_time=0.5)
         # "as duas de um quilograma viram uma de dois, no ponto médio, em (3, 2)"
-        self.ate(0.31)
+        self.em("as duas massas de um quilograma")
         b2 = esfera2d(0.32 * 2 ** (1 / 3)).move_to(Pw(3, 2)).set_z_index(6)
         k2 = rot("2 kg", 30).next_to(b2, UP, buff=0.16)
         src = VGroup(*kgs[1].copy(), *kgs[2].copy())
@@ -500,11 +514,13 @@ class LoteT1(Camadas):
         tII.next_to(b2, DR, buff=0.12).shift(0.15 * RIGHT)
         pm = mtex(r"\frac{(4,\,0)+(2,\,4)}{2}=(3,\,2)", GEO, 46)
         na_conta(pm, 1.45)
-        self.ate(0.37)
+        self.em("no ponto médio entre elas")
         self.play(FadeIn(pm, shift=0.1 * DOWN), run_time=0.7)                      # "no ponto médio entre elas, em três e dois"
-        self.ate(0.47)
+        self.em("a três metros na horizontal")
+        self.play(Indicate(c32, color=WHITE_, scale_factor=1.2), run_time=0.8)
+        self.em("Agora temos duas massas iguais")
         self.play(FadeOut(pm), run_time=0.4)
-        self.ate(0.48)
+        self.em("uma na origem")
         self.play(Create(seg2), FadeIn(tI), FadeIn(tII), run_time=0.8)
         self.play(onda(cm.get_center()), Indicate(cm, color=WHITE_, scale_factor=1.25), run_time=0.9)
         # a CONTA, cada símbolo saindo do desenho
@@ -519,7 +535,7 @@ class LoteT1(Camadas):
             A[0][j].set_color(GEO)
         A._partes += [(r"\vec R_{\rm I}", GEO), (r"\vec R_{\rm II}", GEO)]
         na_conta(A, 1.45)
-        self.ate(0.53)
+        self.em("O centro de massa fica exatamente")
         dI, dII = num[0], num[3]
         self.play(FadeIn(VGroup(*[A[0][j] for j in ia[0] + ia[1]])),
                   TransformFromCopy(tI[0][0], VGroup(*[A[0][j] for j in dI])), TransformFromCopy(tI[2][0], VGroup(*[A[0][j] for j in num[1]])),
@@ -529,13 +545,13 @@ class LoteT1(Camadas):
         Bq.move_to(P3(XC0 + 0.55 + Bq.width / 2, 0.15))
         fb = ib[1]                                       # 2 · ( 0 , 0 ) + 2 · ( 3 , 2 ) barra 4
         g_ = lambda *js: VGroup(*[Bq[0][fb[j]] for j in js])
-        self.ate(0.6)
+        self.em("a um metro e meio na horizontal")
         self.play(FadeIn(Bq[0][ib[0][0]]), TransformFromCopy(kgs[0][0], g_(0)), TransformFromCopy(coords[0][0], g_(2, 3, 4, 5, 6)),
                   TransformFromCopy(k2[0], g_(8)), TransformFromCopy(c32[0], g_(10, 11, 12, 13, 14)), FadeIn(g_(1, 7, 9, 15, 16)), run_time=1.3)
         Cq, ic = eqp("=", r"\frac{(6,\,4)}{4}", r"=\ ", r"(1{,}5;\ 1{,}0)", size=48, cores={3: CMC})
         Cq.move_to(P3(XC0 + 0.55 + Cq.width / 2, -1.1))
         fc = ic[1]                                       # ( 6 , 4 ) barra 4
-        self.ate(0.66)
+        self.em("É o mesmo resultado de antes")
         self.play(Indicate(lem, color=WHITE_, scale_factor=1.12), run_time=0.6)
         self.play(FadeIn(Cq[0][ic[0][0]]), TransformFromCopy(lem[0][il[2][0]:il[2][-1] + 1], VGroup(*[Cq[0][j] for j in fc[:5]])),
                   FadeIn(VGroup(*[Cq[0][j] for j in fc[5:]])), run_time=1.0)            # "dá o mesmo": o (6, 4) é o do T1-6
@@ -555,16 +571,16 @@ class LoteT1(Camadas):
                    Line(cb - nn * 0.08, cb + nn * 0.08).set_stroke(GEO, 2.2), mtex("d", GEO, 36).move_to((ca + cb) / 2 + nn * 0.6))
         nt = cartao("MASSAS IGUAIS: BEM NO MEIO", "SENÃO, NA RAZÃO INVERSA", "DAS MASSAS")
         na_conta(nt, -2.55)
-        self.ate(0.76)
+        self.em("divide a distância")
         self.play(FadeIn(dd), run_time=0.8)
-        self.ate(0.86)
+        self.em("na razão inversa das massas")
         self.play(FadeIn(nt), run_time=0.6)
         iguais = VGroup()                                                          # "massas iguais, bem no meio": marcas de segmentos iguais
         for a0, a1 in ((Pw(0, 0), meio), (meio, Pw(3, 2))):
             c_ = (a0 + a1) / 2
             for k_ in (-1, 1):
                 iguais.add(Line(c_ + u2 * 0.05 * k_ - nn * 0.13, c_ + u2 * 0.05 * k_ + nn * 0.13).set_stroke(WHITE_, 2.6))
-        self.ate(0.9)
+        self.em("Massas iguais, bem no meio")
         self.play(Create(iguais), onda(meio), run_time=0.8)
         self.ate(0.97)
 

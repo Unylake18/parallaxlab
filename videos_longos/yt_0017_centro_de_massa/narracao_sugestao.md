@@ -1,5 +1,6 @@
-# yt_0017 — CENTRO DE MASSA · roteiro com narração v3.1 (sujeita a aprovação)
+# yt_0017 — CENTRO DE MASSA · roteiro com narração v3.2 (sujeita a aprovação)
 
+> v3.2 (2026-10-30, após o preview completo): **nenhuma referência a vídeo futuro nem a outro vídeo da série que ainda não foi publicado** (decisão do Kaio: ele faz estoque e pode publicar fora de ordem). Sai a ponte "vídeo de colisões" e sai a prévia do vídeo de exercícios; a cena dos blocos que grudam fica, como aplicação da teoria deste vídeo, com a batida vista do centro de massa, e só cita "o módulo de colisões". O desafio do disco vai para os comentários. Encerramento em duas âncoras: EN1 colisões, EN2 inscrição.
 > v3 (2026-10-29, após o lote 1 v3 e a crítica do Kaio): o vídeo foi **dividido**. O yt_0017 fica com a teoria completa e dois exercícios ilustrativos (~19–20 min). Os exercícios difíceis (quadrado com furo, fio dobrado no cubo, naves no referencial do CM, rojão, gafanhoto, caixa de Einstein) vão para o vídeo seguinte, e o foguete vem depois dele.
 > O que mudou em relação à v2.3: visual novo do hook e da granada (campo de provas em vácuo, granada de fragmentação que se estilhaça em cacos do próprio corpo, parábolas como gráfico); o ⊕ passou a ser **degradê ciano→magenta**; T1-8 novo (por partes); E1–E4 antigos saem e entram E1 placa com entalhe (dois caminhos, massa negativa) e E2 remador e estaca; síntese em quatro perguntas; EN2 com gancho para o vídeo de exercícios. HOOK → T2 mantém a fala da v2.3 (só "ponto branco" virou "ponto brilhando"); T3 e T4 mantêm a fala da v2 (sem o joão-bobo, que saiu com o E4 antigo).
 
@@ -144,8 +145,8 @@ Primeiro jeito: o que sobrou se divide em três triângulos iguais, cada um com 
 ### E1-3 — tela: ESQUEMA: os três triângulos se apagam; volta o quadrado inteiro (partícula de massa 1 em (½; ½), contorno ciano-claro) e, por cima, o triângulo recortado em magenta-escuro tracejado com o rótulo MASSA −¼ e o centroide dele em (½; ⅚); CONTA: Y = (M_□ Y_□ + M_△ Y_△)/(M_□ + M_△) → (1·½ + (−¼)·⅚)/(1 − ¼) → (½ − 5/24)/(¾) → (7/24)/(¾) = 7/18 m; o resultado cai **no mesmo ponto** do E1-2 (o ⊕ não pula; um anel pisca em volta dele); selo OS DOIS JEITOS DÃO O MESMO
 [curious] Segundo jeito, e esse é um truque de verdade: massa negativa. O que sobrou é o quadrado inteiro menos o triângulo. Então a gente conta o quadrado inteiro, com massa um e centro de massa no meio, e soma o triângulo com massa negativa. O triângulo tem um quarto da área, e o centro de massa dele está a cinco sextos de altura, na média dos vértices. Meio, menos um quarto vezes cinco sextos, dividido por três quartos. E sai, de novo, sete dezoito avos. O mesmo ponto, por outro caminho.
 
-### E1-4 — tela: ESQUEMA: a seta do centro do quadrado (½; ½) até o ⊕ (½; 7/18), rotulada FOGE DO FURO; selo DICA: BURACO = MASSA NEGATIVA. O CENTRO DE MASSA FOGE DO FURO; depois, à direita, miniatura do DESAFIO: disco de raio 1 m com furo de raio 0,5 m, centro do furo a 0,25 m do centro do disco; texto ONDE FICA O CENTRO DE MASSA? (sem resposta na tela)
-[thoughtful] Guarda essa dica: um buraco funciona como massa negativa, e o centro de massa sempre foge do furo, para o lado onde sobrou mais material. E fica um desafio: um disco de um metro de raio, com um furo de meio metro de raio, cujo centro está a vinte e cinco centímetros do centro do disco. Onde fica o centro de massa? A resposta sai no próximo vídeo.
+### E1-4 — tela: ESQUEMA: a seta do centro do quadrado (½; ½) até o ⊕ (½; 7/18), rotulada FOGE DO FURO; selo DICA: BURACO = MASSA NEGATIVA. O CENTRO DE MASSA FOGE DO FURO; depois, à direita, miniatura do DESAFIO: disco de raio 1 m com furo de raio 0,5 m, centro do furo a 0,25 m do centro do disco; texto ONDE FICA O CENTRO DE MASSA? (sem resposta na tela) e, embaixo, DEIXE SUA RESPOSTA NOS COMENTÁRIOS; o furo **deslocado** 0,25 m para cima (um quarto do raio do disco), com a cota 0,25 m entre os dois centros
+[thoughtful] Guarda essa dica: um buraco funciona como massa negativa, e o centro de massa sempre foge do furo, para o lado onde sobrou mais material. E fica um desafio: um disco de um metro de raio, com um furo de meio metro de raio, cujo centro está a vinte e cinco centímetros do centro do disco. Onde fica o centro de massa? Usa a massa negativa e deixa a sua resposta nos comentários.
 
 ## E2 — REMADOR E ESTACA (O CENTRO DE MASSA NÃO SE MOVE)
 
@@ -171,14 +172,11 @@ Resumindo em quatro perguntas. Onde está: na média das posições, pesada pela
 
 ## ENCERRAMENTO
 
-### EN1 — tela: FadeOut geral; logo com anéis; INSCREVA-SE PARA ACOMPANHAR OS PRÓXIMOS VÍDEOS
-Se esse ponto mudou o jeito como você vê uma explosão, se inscreve no Parallax Lab para acompanhar os próximos vídeos.
+### EN1 — tela: canto linha 2 CENTRO DE MASSA NAS COLISÕES; trilho 2D com dois blocos de aço (2 kg a +2 m/s e 1 kg a −2 m/s, setas violeta), o ⊕ em degradê **sobre os blocos**, na altura do centro deles, em x_cm = (2x₁ + 1x₂)/3, andando reto a ⅔ m/s com rastro em degradê; eles batem, grudam e seguem com o ⊕; CONTA: v_f = (m₁v₁ᵢ + m₂v₂ᵢ)/(m₁ + m₂) = V_cm → (2·2 + 1·(−2))/3 = ⅔ m/s; depois, a troca de referencial do T3-2: a câmera passa a andar com o ⊕ (o ⊕ para no centro), os blocos chegam com setas de momento magenta **iguais e opostas** (8/3 kg·m/s cada), grudam e **param**; rótulo VISTO DO CENTRO DE MASSA: P⃗ = 0⃗ ANTES E DEPOIS; a barra K RELATIVA (ciano) esvazia em laranja, a K DO CENTRO DE MASSA fica; no fim, selo pequeno NO MÓDULO DE COLISÕES
+[curious] E isso já diz muito sobre colisões. Dois blocos vêm um contra o outro, batem e grudam. A batida é interna, então o centro de massa nem percebe: segue reto, com a mesma velocidade. E, grudados, os dois só podem andar junto com ele. Então a velocidade final é a do centro de massa: dois terços de metro por segundo. Agora olha a mesma batida andando junto com o centro de massa. Os dois chegam com momentos iguais e opostos, e param. Toda a energia relativa vira outra coisa, e a do centro de massa fica. É isso que a gente vai explorar no módulo de colisões.
 
-### EN2 — tela: selo DO VÍDEO DE COLISÕES EM 1D; a cena C04 do vídeo de colisões (re-renderizada a partir do código daquele vídeo, mesma cor e notação: 2 kg a +2 m/s, 1 kg a −2 m/s, eles grudam e seguem a +⅔ m/s); **agora com o ⊕ em degradê** em x_cm = (2x₁ + 1x₂)/3, andando a ⅔ m/s **o tempo todo**, antes, durante e depois da batida, com rastro em degradê; a fórmula daquele vídeo v_f = (m₁v₁ᵢ + m₂v₂ᵢ)/(m₁ + m₂) aparece e ganha embaixo "= V_cm" (TransformByGlyphMap), com V_cm violeta; selo JÁ ESTÁ NO CANAL: COLISÕES EM 1D (cartão final do YouTube no mesmo canto)
-[curious] E lembra do vídeo de colisões, quando os dois blocos batem e grudam? A velocidade final era uma média ponderada das velocidades, pesada pelas massas. Agora ela tem nome: é a velocidade do centro de massa. Ele já andava assim antes da batida, e continua igual depois, porque a batida é interna. Se você ainda não viu, o vídeo de colisões em uma dimensão já está no canal.
-
-### EN3 — tela: três prévias rápidas (~1,5 s cada), no visual do vídeo: (1) a placa quadrada com um furo redondo fora do centro e o ⊕ fugindo do furo; (2) Three.js: um fio dobrado em três arestas de um cubo, girando devagar, com o ⊕ em degradê **flutuando fora do fio**, dentro do cubo; (3) um gafanhoto 2D saltando de uma folha que recua na água; depois, PRÓXIMO VÍDEO: CENTRO DE MASSA · EXERCÍCIOS (ciano)
-[excited] E no próximo vídeo, só exercícios, e dos difíceis. A placa com um furo redondo, o fio dobrado nas arestas de um cubo, com o centro de massa flutuando fora do fio, e um gafanhoto que salta de uma folha boiando, enquanto a folha foge dele. E a resposta do desafio do disco. Até a próxima!
+### EN2 — tela: FadeOut geral; logo com anéis; INSCREVA-SE PARA ACOMPANHAR OS PRÓXIMOS VÍDEOS
+[happy] Se esse ponto mudou o jeito como você vê uma explosão, se inscreve no Parallax Lab para acompanhar os próximos vídeos. Até a próxima!
 
 ---
 
@@ -201,7 +199,7 @@ Se esse ponto mudou o jeito como você vê uma explosão, se inscreve no Paralla
 | E1 | x = ½ m; Y = 7/18 m ≈ 39 cm; centroides (½; ⅙), (⅙; ½), (⅚; ½); recorte (½; ⅚), área ¼ | 0,3889 |
 | E1 desafio | não falar a resposta: ⊕ a 1/12 m ≈ 8,3 cm do centro, do lado oposto ao furo | −0,25·0,25/0,75 = −1/12 |
 | E2 | X_cm = 2 m; canoa +1,0 m; remador −2,0 m; faltam 20 cm | 75·3/225 = 1,0 |
-| EN2 | 2 kg a +2 m/s e 1 kg a −2 m/s (exemplo do vídeo de colisões); V_cm = v_f = ⅔ m/s (só na tela) | (2·2 − 1·2)/3 = 0,667 |
+| EN1 | 2 kg a +2 m/s e 1 kg a −2 m/s; V_cm = v_f = ⅔ m/s (falado); no referencial do CM: v₁′ = +4/3, v₂′ = −8/3 m/s, momentos ±8/3 kg·m/s (só na tela); K = 6 J = ⅔ J (CM) + 16/3 J (relativa, perdida) — não falar números de energia | (2·2 − 1·2)/3 = 0,667 |
 
 ## Fontes (só para a descrição do YouTube)
 Sears, Física I, 14ª ed., §8.5 (centro de massa); Moysés Nussenzveig, Curso de Física Básica 1, cap. 8 (centro de massa, substituição por partes); Feynman, Lições de Física I, cap. 19. Números dos exemplos: construção do Parallax Lab.

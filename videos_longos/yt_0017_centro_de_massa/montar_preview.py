@@ -18,7 +18,7 @@ partes = [("PH", None), ("P1", "ONDE ESTÁ O CENTRO DE MASSA?"), ("P2", "COMO EL
           ("P4", "COMO ACHAR O CENTRO DE MASSA DE UM CORPO INTEIRO?"), ("P5", "EXERCÍCIO 1 · PLACA COM ENTALHE")]
 if RODADA == "lote1":
     partes = partes[:3]
-DENTRO = {"P5": {"E2-1": "EXERCÍCIO 2 · REMADOR E ESTACA", "S1": "RESUMO", "EN1": "ENCERRAMENTO"}}   # capítulos dentro de um lote
+DENTRO = {"P5": {"E2-1": "EXERCÍCIO 2 · REMADOR E ESTACA", "S1": "RESUMO", "EN1": "CENTRO DE MASSA NAS COLISÕES", "EN2": "ENCERRAMENTO"}}   # capítulos dentro de um lote
 SAI = 5
 from PIL import Image
 FUNDO = np.asarray(Image.open(U / "fundo_lab.png").convert("RGB").resize((960, 540)), dtype=np.float32)   # v4: apaga até o céu do laboratório

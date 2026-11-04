@@ -14,7 +14,7 @@ for bloco in re.split(r"^### ", t, flags=re.M)[1:]:
     fala = " ".join(l for l in resto if l.strip() and not l.startswith(("---", "## ", "**")))   # o rodapé (**Palavras faladas**…) não é fala
     fala = re.sub(r"\[[^\]]*\]", "", fala)
     n = len(re.findall(r"\w+", fala))
-    out[aid] = {"palavras": n, "dur": round(n / VEL, 2)}
+    out[aid] = {"palavras": n, "dur": round(n / VEL, 2), "fala": " ".join(fala.split())}       # a fala: self.em("trecho") ancora na palavra
     ordem.append(aid)
 (AQUI / "ancoras.json").write_text(json.dumps({"ordem": ordem, "ancoras": out}, ensure_ascii=False, indent=1), encoding="utf-8")
 print(sum(v["palavras"] for v in out.values()), "palavras;", round(sum(v["dur"] for v in out.values()) / 60, 1), "min")

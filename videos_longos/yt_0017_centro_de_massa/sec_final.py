@@ -1,10 +1,10 @@
-"""Lote P5 (handoff v4, lote 3): E1, E2, síntese, encerramento. Regra G19 nos exercícios: ESQUEMA fixo à esquerda (~45%), CONTA à direita;
-tudo que entra na conta sai do esquema. Céu dos exercícios com metade das estrelas (fundo_lab_ex.png); a síntese volta ao céu do vídeo.
-E1 placa de 1 m com o triângulo de cima recortado: três triângulos (centroide na média dos vértices) → 7/18 m; massa negativa → o mesmo
-ponto (o ⊕ não pula); FOGE DO FURO; desafio do disco (sem resposta) · E2 remador (75 kg) e canoa (150 kg, 3 m): ⊕ parado em 2 m; canoa
-+1,0 m; faltam 20 cm · S1 a granada de novo no campo de provas · S2 as quatro perguntas · EN1 inscrição · EN2 a cena C04 do vídeo de
-colisões (exemplo-base 2 kg a +2 m/s e 1 kg a −2 m/s, grudam a +⅔ m/s) com o ⊕ andando reto a ⅔ m/s antes, durante e depois da batida;
-v_f = … = V_cm · EN3 três prévias (placa com furo, fio no cubo em Three.js, gafanhoto) e PRÓXIMO VÍDEO."""
+"""Lote P5 (handoff v5, narração v3.2): E1, E2, síntese, encerramento. Regra G19 nos exercícios: ESQUEMA fixo à esquerda, CONTA à direita;
+tudo que entra na conta sai do esquema; cada entrada ancorada na palavra da fala (self.em). Céu dos exercícios com metade das estrelas
+(fundo_lab_ex.png); a síntese volta ao céu do vídeo.
+E1 placa de 1 m com o triângulo de cima recortado: três triângulos → 7/18 m; massa negativa → o mesmo ponto; seta FOGE DO FURO; desafio do
+disco com o furo deslocado 0,25 m (resposta nos comentários) · E2 remador (75 kg) e canoa (150 kg, 3 m): ⊕ parado em 2 m; canoa +1,0 m;
+faltam 20 cm · S1 a granada de novo · S2 as quatro perguntas, cada miniatura repetindo a ação-chave · EN1 o centro de massa nas colisões
+(blocos que grudam, vistos do chão e do ⊕) · EN2 inscrição. Nenhuma referência a vídeo que ainda não está no canal."""
 from MF_Tools import TransformByGlyphMap
 
 from camadas import *  # noqa: F401,F403
@@ -17,25 +17,6 @@ def mp(m, idx, partes):
 
 J = lambda idx, *ks: [j for k in ks for j in idx[k]]
 F = lambda a, b: rf"\tfrac{{{a}}}{{{b}}}"
-
-
-class Cubo3D:
-    """Fio de aço dobrado em três arestas de um cubo de 1 m (x, depois y, depois z); a câmera gira em volta. ⊕ em (5/6; 1/2; 1/6)."""
-    CM = (5 / 6, 1 / 2, 1 / 6)
-
-    def __init__(self, cena, K=2.1, xc=0.0, yc=0.0, op=0.0):
-        self.cena, self.K, self.xc, self.yc = cena, K, xc, yc
-        self.az = ValueTracker(-55.0)
-        self.f3d = Fundo3D(cena, "cubo", self.estado, op=op)
-
-    def cam(self):
-        return cam_obl(self.az.get_value(), 24.0, (0.5, 0.5, 0.5), K=self.K, xc=self.xc, yc=self.yc, fov=16)
-
-    def estado(self, t):
-        return r4({"cubo": 1, "cam": self.cam()})
-
-    def p(self, q):
-        return projeta3d(self.f3d.e["cam"], q)
 
 
 class LoteFinal(Camadas):
@@ -52,11 +33,13 @@ class LoteFinal(Camadas):
         self.gravar_reg()
 
     # ════════════════════════════════════════ E1 — placa com entalhe ════════════════════════════════════════
+    # v5: cada entrada ancorada na palavra da fala (self.em); ESQUEMA maior (S = 4,8); coordenadas e massas ≥ 46; ⊕ no tamanho normal
     def e1(self):
-        S, O = 4.2, P3(-6.35, -2.75)
+        S, O = 4.8, P3(-6.4, -2.6)
         Pw = lambda x, y: O + S * P3(x, y)
         self.Pw = Pw
         G, X_ = GEO, CMC
+        Y7 = 7 / 18
         # ── E1-1 ──
         self.an("E1-1")
         sobra = Polygon(Pw(0, 0), Pw(1, 0), Pw(1, 1), Pw(0.5, 0.5), Pw(0, 1))
@@ -67,28 +50,40 @@ class LoteFinal(Camadas):
         vazio = DashedVMobject(Polygon(Pw(0, 1), Pw(1, 1), Pw(0.5, 0.5)).set_stroke(WHITE_, 2.2, opacity=0.7), num_dashes=36, dashed_ratio=0.55)
         ax = VGroup(Line(O + 0.3 * LEFT, O + (S + 0.55) * RIGHT).set_stroke(G, 2, opacity=0.8), Line(O + 0.3 * DOWN, O + (S + 0.55) * UP).set_stroke(G, 2, opacity=0.8),
                     mtex("x", G, 36).next_to(O + (S + 0.55) * RIGHT, DOWN, buff=0.12), mtex("y", G, 36).next_to(O + (S + 0.55) * UP, LEFT, buff=0.12))
-        nt_ = lambda v: mtex(F(1, 2), G, 36) if v < 1 else rot("1", 30, G)
+        nt_ = lambda v: mtex(F(1, 2), G, 40) if v < 1 else rot("1", 30, G)
         for v in (0.5, 1):
             ax.add(Line(Pw(v, 0) + 0.09 * DOWN, Pw(v, 0) + 0.09 * UP).set_stroke(G, 2), nt_(v).next_to(Pw(v, 0), DOWN, buff=0.16),
                    Line(Pw(0, v) + 0.09 * LEFT, Pw(0, v) + 0.09 * RIGHT).set_stroke(G, 2), nt_(v).next_to(Pw(0, v), LEFT, buff=0.16))
         ax.set_z_index(-1)
+        uns = VGroup(ax[9], ax[11])                                                                 # os dois "1" dos eixos
         self.play(FadeIn(ax), FadeIn(sobra), FadeIn(tri), run_time=0.8)
-        self.ate(0.15)
-        self.play(tri.animate.shift(0.9 * UP).set_opacity(0.0), Create(vazio), run_time=1.2)      # "recortou um triângulo em cima"
+        self.em("de um metro de lado")
+        self.play(Indicate(uns, color=WHITE_, scale_factor=1.35), run_time=0.8)
+        self.em("recortou um triângulo")
+        self.play(tri.animate.shift(0.9 * UP).set_opacity(0.0), Create(vazio), run_time=1.2)       # o triângulo se solta e sai
         self.remove(tri)
+        ponta = Dot(Pw(0.5, 0.5), radius=0.065, color=WHITE_)
+        self.em("com a ponta no centro")
+        self.play(FadeIn(ponta, scale=2.0), Flash(Pw(0.5, 0.5), color=WHITE_, line_length=0.18, flash_radius=0.14, num_lines=10), run_time=0.7)
+        self.em("Onde fica o centro")
+        self.play(ShowPassingFlash(sobra.copy().set_fill(opacity=0).set_stroke(CYAN, 5), time_width=0.6), run_time=1.2)   # "o que sobrou"
         sim = DashedLine(Pw(0.5, 0.0), Pw(0.5, 1.0), dash_length=0.1).set_stroke(WHITE_, 2, opacity=0.6)
         Xe, ix = eqp("X", "=", F(1, 2), r"\ \mathrm{m}", size=52, cores={0: X_})
         na_conta(Xe, 1.8)
         ps = txt("POR SIMETRIA", 28).next_to(Xe, RIGHT, buff=0.35)
         Ye, iy = eqp("Y", "=", "?", size=52, cores={0: X_})
         na_conta(Ye, 0.75)
-        self.ate(0.5)
+        self.em("Por simetria")
         self.play(Create(sim), run_time=0.8)
+        self.em("na vertical do meio")
+        self.play(sim.animate.set_stroke(CYAN, 4, opacity=1.0), run_time=0.5)
+        self.play(sim.animate.set_stroke(WHITE_, 2, opacity=0.6), run_time=0.6)
+        self.em("a meio metro de cada lado")
         self.play(FadeIn(Xe), FadeIn(ps), run_time=0.7)
-        self.ate(0.72)
+        self.em("Falta a altura")
         self.play(FadeIn(Ye), run_time=0.6)
-        self.ate(0.88)
-        self.play(Indicate(Ye, color=WHITE_, scale_factor=1.15), run_time=0.8)                     # "e dá para fazer de dois jeitos"
+        self.em("dois jeitos")
+        self.play(Indicate(Ye, color=WHITE_, scale_factor=1.15), run_time=0.8)
         self.ate(0.97)
         # ── E1-2: três triângulos ──
         self.an("E1-2")
@@ -99,52 +94,61 @@ class LoteFinal(Camadas):
         for p_ in pecas:
             p_._degrade = "aco"
         cents = [np.mean(np.array(t_), axis=0) for t_ in tris]                                    # (½; ⅙), (⅙; ½), (⅚; ½)
-        quartos = VGroup(*[mtex(F(1, 4), WHITE_, 40).move_to(Pw(*c_) + (P3(0.42, -0.28) if k == 0 else P3(0, -0.45))) for k, c_ in enumerate(cents)])
-        self.play(FadeOut(sobra), FadeIn(pecas), run_time=0.8)
-        self.ate(0.1)
-        self.play(FadeIn(quartos), run_time=0.6)                                                  # "um quarto da área"
-        self.ate(0.2)
+        quartos = VGroup(*[mtex(F(1, 4), WHITE_, 46).move_to(Pw(*c_) + (P3(0.5, -0.3) if k == 0 else P3(0, -0.5))) for k, c_ in enumerate(cents)])
+        self.em("se divide em três")
+        self.play(FadeOut(sobra), FadeOut(ponta), FadeIn(pecas), run_time=0.8)
+        self.em("um quarto da área")
+        self.play(FadeIn(quartos), run_time=0.6)
+        self.em("de um triângulo uniforme")
+        self.play(LaggedStart(*[ShowPassingFlash(p_.copy().set_fill(opacity=0).set_stroke(c_, 5), time_width=0.6) for p_, c_ in zip(pecas, bordas)],
+                              lag_ratio=0.3), run_time=1.4)
+        self.em("na média dos três vértices")
+        pontos = VGroup()
         for k, t_ in enumerate(tris):                                                              # os vértices piscam; o centroide nasce na média
             vs = VGroup(*[Dot(Pw(*v), radius=0.08, color=bordas[k]) for v in t_])
-            self.play(FadeIn(vs, scale=1.6), run_time=0.35)
-            self.play(*[d_.animate.move_to(Pw(*cents[k])).scale(0.6) for d_ in vs], run_time=0.55)
+            self.play(FadeIn(vs, scale=1.6), run_time=0.25)
+            self.play(*[d_.animate.move_to(Pw(*cents[k])).scale(0.6) for d_ in vs], run_time=0.4)
             self.remove(vs)
-            self.add(Dot(Pw(*cents[k]), radius=0.06, color=bordas[k]))
-        coords = VGroup(mtex(rf"({F(1, 2)};\ {F(1, 6)})", G, 36).next_to(Pw(*cents[0]), RIGHT, buff=0.32),
-                        mtex(rf"({F(1, 6)};\ {F(1, 2)})", G, 36).next_to(Pw(*cents[1]), UP, buff=0.25),
-                        mtex(rf"({F(5, 6)};\ {F(1, 2)})", G, 36).next_to(Pw(*cents[2]), UP, buff=0.25))
-        # as placas somem, ficam as três partículas de massa ¼
+            pontos.add(Dot(Pw(*cents[k]), radius=0.06, color=bordas[k]))
+            self.add(pontos[-1])
+        coords = VGroup(mtex(rf"({F(1, 2)};\ {F(1, 6)})", G, 46).next_to(Pw(*cents[0]), RIGHT, buff=0.34),
+                        mtex(rf"({F(1, 6)};\ {F(1, 2)})", G, 46).next_to(Pw(*cents[1]), DOWN, buff=0.32),
+                        mtex(rf"({F(5, 6)};\ {F(1, 2)})", G, 46).next_to(Pw(*cents[2]), DOWN, buff=0.32))
         parts = VGroup(*[esfera_aco(0.17).move_to(Pw(*c_)) for c_ in cents])
-        self.ate(0.42)
-        self.play(FadeOut(pecas), FadeIn(parts), FadeIn(coords), *[q_.animate.next_to(p_, LEFT if k == 0 else RIGHT, buff=0.1) for k, (q_, p_) in enumerate(zip(quartos, parts))],
-                  run_time=0.9)   # as coordenadas só entram sem as bordas das peças
+        self.em("Trocando cada triângulo")
+        self.play(FadeOut(pecas), FadeOut(pontos), FadeIn(parts),
+                  *[q_.animate.next_to(p_, LEFT if k == 0 else RIGHT, buff=0.12) for k, (q_, p_) in enumerate(zip(quartos, parts))], run_time=0.9)
+        self.em("no centro dele")
+        self.play(FadeIn(coords), run_time=0.6)                                                   # as coordenadas só entram sem as bordas das peças
         A, ia = eqp("Y", "=", r"\Big(", F(1, 4), r"\cdot", F(1, 6), "+", F(1, 4), r"\cdot", F(1, 2), "+", F(1, 4), r"\cdot", F(1, 2), r"\Big)", "/", F(3, 4),
                     size=46, cores={0: X_, 5: G, 9: G, 13: G})
         na_conta(A, 0.75, x0=1.25)
-        self.ate(0.5)
+        self.em("as alturas dão")
         self.play(FadeOut(Ye), FadeIn(mp(A, ia, [0, 1, 2, 4, 6, 8, 10, 12, 14, 15, 16])),
                   *[TransformFromCopy(quartos[k], mp(A, ia, [3 + 4 * k])) for k in range(3)],
-                  TransformFromCopy(coords[0][0][3:6], mp(A, ia, [5])), TransformFromCopy(coords[1][0][1:4], mp(A, ia, [9])),
-                  TransformFromCopy(coords[2][0][5:8], mp(A, ia, [13])), run_time=1.5)
+                  TransformFromCopy(coords[0][0][5:8], mp(A, ia, [5])), TransformFromCopy(coords[1][0][5:8], mp(A, ia, [9])),
+                  TransformFromCopy(coords[2][0][5:8], mp(A, ia, [13])), run_time=1.5)              # cada altura sai da coordenada dela
         B, ib = eqp("=", r"\big(", F(1, 6), "+", F(1, 2), "+", F(1, 2), r"\big)", "/", "3", size=48)
         B.move_to(P3(XC0 + 0.55 + B.width / 2, -0.3))
-        self.ate(0.62)                                                                              # "as três massas são iguais"
+        self.em("o centro de massa é a média simples")
         self.play(TransformByGlyphMap(A.copy(), B, (J(ia, 1), J(ib, 0)), (J(ia, 2), J(ib, 1)), (J(ia, 5), J(ib, 2)), (J(ia, 6), J(ib, 3)), (J(ia, 9), J(ib, 4)),
                                       (J(ia, 10), J(ib, 5)), (J(ia, 13), J(ib, 6)), (J(ia, 14), J(ib, 7)), (J(ia, 15), J(ib, 8)),
                                       (J(ia, 0, 3, 4, 7, 8, 11, 12, 16), []), ([], J(ib, 9)), auto_fade=True), run_time=1.5)   # o ¼ comum cancela
         C, ic = eqp("=", r"\tfrac{7/6}{3}", r"=\ ", F(7, 18), r"\ \mathrm{m}", r"\ \approx", r"0{,}39\ \mathrm{m}", size=48, cores={3: X_, 6: X_})
         C.move_to(P3(XC0 + 0.55 + C.width / 2, -1.35))
-        self.ate(0.72)
+        self.em("sete dezoito avos")
         self.play(FadeIn(C, shift=0.1 * DOWN), run_time=0.9)
         bx = caixa(mp(C, ic, [3, 4]), cor=X_)
-        Y7 = 7 / 18
-        cm = self.cm_e1 = marcador_cm(Pw(0.5, Y7))
-        self.ate(0.78)
+        cm = marcador_cm(Pw(0.5, Y7))
+        self.em("uns trinta e nove")
         self.play(FadeIn(bx), FadeIn(cm, scale=1.5), run_time=0.7)
-        meio = Dot(Pw(0.5, 0.5), radius=0.05, color=WHITE_)
-        nota = txt("ABAIXO DO MEIO", 26).next_to(Pw(0.5, Y7), RIGHT, buff=0.55)
-        self.ate(0.88)
+        meio = Dot(Pw(0.5, 0.5), radius=0.065, color=WHITE_)
+        nota = txt("ABAIXO DO MEIO", 28, bold=True)
+        na_conta(nota, -2.35)
+        self.em("abaixo do meio")
         self.play(FadeIn(meio), FadeIn(nota), run_time=0.7)                                       # "ficou abaixo do meio"
+        self.em("o recorte tirou massa")
+        self.play(ShowPassingFlash(Polygon(Pw(0, 1), Pw(1, 1), Pw(0.5, 0.5)).set_stroke(MAG, 5), time_width=0.6), run_time=1.1)
         self.ate(0.97)
         # ── E1-3: massa negativa ──
         self.an("E1-3")
@@ -152,18 +156,17 @@ class LoteFinal(Camadas):
         sq._degrade = "aco"
         neg = DashedVMobject(Polygon(Pw(0, 1), Pw(1, 1), Pw(0.5, 0.5)).set_stroke(escuro(MAG, 0.35), 3.5), num_dashes=36, dashed_ratio=0.6)
         negf = Polygon(Pw(0, 1), Pw(1, 1), Pw(0.5, 0.5)).set_stroke(width=0).set_fill(escuro(MAG, 0.55), 0.35)
-        lneg = txt("MASSA −¼", 26, color=mix(MAG, 0.2)).move_to(Pw(0.5, 1) + P3(0, 0.42))
-        p_sq = VGroup(esfera_aco(0.2).move_to(Pw(0.5, 0.5)), mtex("1", WHITE_, 40).next_to(Pw(0.5, 0.5), RIGHT, buff=0.45).shift(0.15 * UP))
-        p_tr = VGroup(Dot(Pw(0.5, 5 / 6), radius=0.07, color=mix(MAG, 0.2)), mtex(F(5, 6), G, 36).next_to(Pw(0.5, 5 / 6), RIGHT, buff=0.2))
-        velhos = VGroup(parts, quartos, coords, A, B, *self.mobjects_dots(), meio, nota)
-        self.play(FadeOut(velhos), VGroup(C, bx).animate.set_opacity(0.0), FadeIn(sq), cm.animate.set_opacity(0.0), VGroup(Xe, ps).animate.shift(0.65 * UP), run_time=0.8)
-        self.remove(C, bx)
-        self.ate(0.1)
+        lneg = txt("MASSA −¼", 28, color=mix(MAG, 0.2)).move_to(Pw(0.5, 1) + P3(0, 0.42))
+        p_sq = VGroup(esfera_aco(0.2).move_to(Pw(0.5, 0.5)), mtex("1", WHITE_, 46).next_to(Pw(0.5, 0.5), RIGHT, buff=0.58).shift(0.12 * UP))
+        p_tr = VGroup(Dot(Pw(0.5, 5 / 6), radius=0.07, color=mix(MAG, 0.2)), mtex(F(5, 6), G, 46).next_to(Pw(0.5, 5 / 6), RIGHT, buff=0.2))
+        velhos = VGroup(parts, quartos, coords, A, B, meio, nota, C, bx, cm)
+        self.play(FadeOut(velhos), FadeIn(sq), VGroup(Xe, ps).animate.shift(0.65 * UP), run_time=0.8)
+        self.em("massa negativa")
+        self.play(Create(neg), FadeIn(negf), FadeIn(lneg), run_time=0.9)                           # o triângulo vira massa negativa
+        self.em("menos o triângulo")
+        self.play(ShowPassingFlash(sq.copy().set_fill(opacity=0).set_stroke(X_, 5), time_width=0.6), Indicate(negf, color=MAG, scale_factor=1.0), run_time=1.1)
+        self.em("com massa um")
         self.play(FadeIn(p_sq), run_time=0.6)                                                     # "o quadrado inteiro, massa um, no meio"
-        self.ate(0.2)
-        self.play(Create(neg), FadeIn(negf), FadeIn(lneg), run_time=0.9)                           # "e soma o triângulo com massa negativa"
-        self.ate(0.38)
-        self.play(FadeIn(p_tr), run_time=0.6)                                                     # "a cinco sextos de altura"
         D1, d1 = eqp("Y", "=", r"\dfrac{M_\square Y_\square+M_\triangle Y_\triangle}{M_\square+M_\triangle}", size=46, cores={0: X_})
         D2, d2 = eqp("=", r"\big(", "1", r"\cdot", F(1, 2), "+", r"(-\tfrac{1}{4})", r"\cdot", F(5, 6), r"\big)", "/", r"\big(", "1", "-", F(1, 4), r"\big)",
                      size=46, cores={4: G, 8: G})
@@ -171,66 +174,108 @@ class LoteFinal(Camadas):
         na_conta(D1, 1.3)
         na_conta(D2, 0.2)
         na_conta(D3, -0.8, x0=1.15)
-        self.ate(0.48)
+        self.em("e soma o triângulo")
         self.play(FadeIn(D1), run_time=0.8)
-        self.ate(0.55)
+        self.em("Não é que exista")
+        self.play(Indicate(VGroup(negf, lneg), color=MAG, scale_factor=1.04), run_time=0.9)
+        self.em("artifício matemático")
+        self.play(Circumscribe(lneg, color=MAG, buff=0.08), run_time=1.0)
+        self.em("um quarto da área")
+        self.play(Indicate(lneg, color=WHITE_, scale_factor=1.15), run_time=0.7)
+        self.em("cinco sextos de altura")
+        self.play(FadeIn(p_tr), run_time=0.6)
+        self.em("Meio, menos")
         self.play(FadeIn(mp(D2, d2, [0, 1, 3, 5, 7, 9, 10, 11, 13, 15])), TransformFromCopy(p_sq[1], mp(D2, d2, [2])), TransformFromCopy(p_sq[1], mp(D2, d2, [12])),
                   TransformFromCopy(lneg, mp(D2, d2, [6])), TransformFromCopy(lneg, mp(D2, d2, [14])), TransformFromCopy(p_tr[1], mp(D2, d2, [8])),
                   FadeIn(mp(D2, d2, [4])), run_time=1.5)                                           # o −¼ sai do rótulo MASSA −¼
-        self.ate(0.7)
+        self.em("dividido por três quartos")
         self.play(FadeIn(D3, shift=0.1 * DOWN), run_time=1.0)
         bx3 = caixa(mp(D3, d3, [11, 12]), cor=X_)
-        cm.set_opacity(1.0)
-        anel = Circle(radius=0.36).move_to(Pw(0.5, Y7)).set_stroke(WHITE_, 3)
-        self.ate(0.82)
+        cm = marcador_cm(Pw(0.5, Y7))                                                              # o ⊕ volta inteiro (tamanho normal)
+        self.em("sete dezoito avos")
         self.play(FadeIn(bx3), FadeIn(cm), run_time=0.6)                                          # o mesmo ponto: o ⊕ não pula
-        self.play(FadeOut(anel, scale=2.2), run_time=0.8)
+        anel = Circle(radius=0.36).move_to(Pw(0.5, Y7)).set_stroke(WHITE_, 3)
         selo = txt("OS DOIS JEITOS DÃO O MESMO", 28, bold=True)
         na_conta(selo, -1.8)
-        self.ate(0.9)
-        self.play(FadeIn(selo, shift=0.1 * UP), run_time=0.6)
+        self.em("O mesmo ponto")
+        self.play(FadeOut(anel, scale=2.2), FadeIn(selo, shift=0.1 * UP), run_time=0.8)
         self.ate(0.97)
         # ── E1-4: foge do furo; desafio ──
         self.an("E1-4")
-        fg = seta(Pw(0.5, 0.5) + 0.06 * DOWN, Pw(0.5, Y7) + 0.25 * UP, WHITE_, 5, tip=0.2)
-        lfg = VGroup(txt("FOGE", 26, bold=True), txt("DO FURO", 26, bold=True)).arrange(DOWN, buff=0.08, aligned_edge=LEFT).next_to(Pw(0.5, 0.5), RIGHT, buff=0.55)
         self.play(FadeOut(VGroup(D1, D2, D3, bx3, selo, Xe, ps, p_sq)), run_time=0.5)   # a massa 1 do quadrado já entrou na conta
-        self.ate(0.06)
-        self.play(GrowArrow(fg[0]) if False else Create(fg), FadeIn(lfg), run_time=0.8)
-        self.ate(0.14)
+        centro = Dot(Pw(0.5, 0.5), radius=0.06, color=WHITE_)
+        fg = Arrow(Pw(0.5, 0.5), Pw(0.5, Y7) + 0.18 * UP, buff=0, stroke_width=9, color=WHITE_, max_tip_length_to_length_ratio=0.5, tip_length=0.18)
+        lfg = VGroup(txt("FOGE", 26, bold=True), txt("DO FURO", 26, bold=True)).arrange(DOWN, buff=0.08, aligned_edge=LEFT)
+        lfg.move_to(P3(Pw(0.5, 0)[0] + 0.55 + lfg.width / 2, Pw(0.5, 0.5)[1] + 0.05))          # à direita da seta, acima do anel do ⊕
+        self.em("Guarda essa dica")
         self.dica_entra(dica("BURACO = MASSA NEGATIVA.", "O CENTRO DE MASSA FOGE DO FURO"))
-        self.ate(0.48)
-        self.dica_sai()
-        # desafio: disco R = 1 m com furo de 0,5 m, centro do furo a 0,25 m do centro do disco
-        Cd, Rd = P3(4.3, 0.15), 1.65
-        furo_c = Cd + P3(0.25 * Rd, 0.0)
-        disco = Difference(Circle(radius=Rd).move_to(Cd), Circle(radius=0.5 * Rd).move_to(furo_c))
-        disco.set_fill(["#9AA6B8", "#3A4252"], 1).set_sheen_direction(UP).set_stroke("#7FB2FF", 2, opacity=0.7)
-        disco._degrade = "aco"
-        bfuro = DashedVMobject(Circle(radius=0.5 * Rd).move_to(furo_c).set_stroke(WHITE_, 2, opacity=0.7), num_dashes=28)
-        tit = txt("DESAFIO", 30, bold=True, color=CYAN).move_to(Cd + P3(0, Rd + 0.85))
-        dados = VGroup(rot("R = 1 m", 28), rot("furo: r = 0,5 m", 28), rot("a 0,25 m do centro", 28)).arrange(DOWN, buff=0.08, aligned_edge=LEFT)
-        dados.move_to(Cd + P3(0, -Rd - 0.75))
-        q = txt("ONDE FICA O CENTRO DE MASSA?", 30, bold=True).move_to(P3(Cd[0] - 0.2, -3.45))
-        self.ate(0.55)
-        self.play(FadeIn(tit), FadeIn(disco), Create(bfuro), run_time=1.0)
-        self.ate(0.68)
-        self.play(FadeIn(dados), run_time=0.8)
-        self.ate(0.82)
-        self.play(FadeIn(q, shift=0.1 * UP), run_time=0.7)
-        self.ate(0.97)
+        self.em("um buraco funciona")
+        self.play(Indicate(VGroup(negf, lneg), color=MAG, scale_factor=1.04), run_time=0.9)
+        self.em("o centro de massa sempre")
+        self.play(Flash(Pw(0.5, Y7), color=CYAN, line_length=0.16, flash_radius=0.3, num_lines=12), run_time=0.7)
+        self.em("foge do furo")
+        self.play(FadeIn(centro), GrowArrow(fg), FadeIn(lfg), run_time=0.8)
+        self.em("para o lado onde sobrou")
+        self.play(ShowPassingFlash(Polygon(Pw(0, 0), Pw(1, 0), Pw(1, 1), Pw(0.5, 0.5), Pw(0, 1)).set_stroke(CYAN, 5), time_width=0.6), run_time=1.2)
+        # desafio: disco R = 1 m com furo de 0,5 m; o furo nasce no centro e sobe 0,25 m (um quarto do raio) quando a fala diz "vinte e cinco centímetros"
+        Cd, Rd = P3(2.1, 0.3), 1.65
+        hr, hy = ValueTracker(0.0), ValueTracker(0.0)
+        self.add(hr, hy)
 
-    def mobjects_dots(self):
-        """Os pontinhos dos centroides (Dot) que ficaram soltos na cena."""
-        return [m for m in self.mobjects if isinstance(m, Dot)]
+        def disco_cena():
+            r_, cf = 0.5 * Rd * hr.get_value(), Cd + UP * 0.25 * Rd * hy.get_value()
+            d_ = Circle(radius=Rd).move_to(Cd)
+            if r_ > 0.02:
+                d_ = Difference(d_, Circle(radius=r_).move_to(cf))
+            d_.set_fill(["#9AA6B8", "#3A4252"], 1).set_sheen_direction(UP).set_stroke("#7FB2FF", 2, opacity=0.7)
+            d_._degrade = "aco"
+            g = VGroup(d_)
+            if r_ > 0.02:
+                g.add(DashedVMobject(Circle(radius=r_).move_to(cf).set_stroke(WHITE_, 2, opacity=0.7), num_dashes=28))
+            return g
+        dv_ = vivo(disco_cena)
+        tit = txt("DESAFIO", 30, bold=True, color=CYAN).move_to(Cd + P3(0, Rd + 0.5))
+        dados = VGroup(rot("R = 1 m", 26), rot("furo: r = 0,5 m", 26), rot("a 0,25 m do centro", 26)).arrange(DOWN, buff=0.16, aligned_edge=LEFT)
+        dados.move_to(Cd + P3(Rd + 0.3 + dados.width / 2, 0))
+        cf1 = Cd + UP * 0.25 * Rd
+        xe = Cd[0] - Rd - 0.3
+        cota_f = VGroup(DashedLine(Cd, P3(xe - 0.1, Cd[1]), dash_length=0.07).set_stroke(WHITE_, 1.4, opacity=0.55),
+                        DashedLine(cf1, P3(xe - 0.1, cf1[1]), dash_length=0.07).set_stroke(WHITE_, 1.4, opacity=0.55),
+                        Line(P3(xe, Cd[1]), P3(xe, cf1[1])).set_stroke(GEO, 2.4), Line(P3(xe - 0.1, Cd[1]), P3(xe + 0.1, Cd[1])).set_stroke(GEO, 2.4),
+                        Line(P3(xe - 0.1, cf1[1]), P3(xe + 0.1, cf1[1])).set_stroke(GEO, 2.4))
+        cota_f.add(rot("0,25 m", 28, GEO).next_to(P3(xe, (Cd[1] + cf1[1]) / 2), LEFT, buff=0.15))
+        ctr = VGroup(Dot(Cd, radius=0.055, color=WHITE_), Dot(cf1, radius=0.055, color=CYAN))
+        q = txt("ONDE FICA O CENTRO DE MASSA?", 30, bold=True).move_to(P3(Cd[0], -2.05))
+        com = VGroup(txt("DEIXE SUA RESPOSTA", 26, color=CYAN), txt("NOS COMENTÁRIOS", 26, color=CYAN)).arrange(DOWN, buff=0.08).move_to(P3(Cd[0], -2.85))
+        self.em("E fica um desafio")
+        self.dica_sai()
+        self.play(FadeIn(tit), run_time=0.5)
+        self.em("um disco de um metro")
+        d0 = disco_cena()                                                                          # entra parado; depois vira a camada viva
+        self.play(FadeIn(d0), FadeIn(dados[0]), run_time=0.8)
+        self.remove(d0)
+        self.add(dv_)
+        self.em("com um furo de meio")
+        self.play(hr.animate.set_value(1.0), FadeIn(dados[1]), run_time=0.9)
+        self.em("vinte e cinco centímetros")
+        self.play(hy.animate.set_value(1.0), run_time=1.0)                                        # o furo sai do centro: 0,25 m para cima
+        self.play(FadeIn(ctr), FadeIn(cota_f), FadeIn(dados[2]), run_time=0.7)
+        self.em("Onde fica o centro")
+        self.play(FadeIn(q, shift=0.1 * UP), run_time=0.7)
+        self.em("deixa a sua resposta")
+        self.play(FadeIn(com, shift=0.1 * UP), run_time=0.7)
+        self.ate(0.97)
+        dv_.clear_updaters()
 
     # ════════════════════════════════════════ E2 — remador e estaca ════════════════════════════════════════
+    # v5: entradas ancoradas na fala; amarra solta (E2-1) e amarrada em fantasma (E2-4); cotas do E2-4 cada uma na sua altura; DICA na CONTA
     def e2(self):
         self.an("E2-1")
         velhos = self.snap()
         self.secao("EXERCÍCIO 2 · REMADOR E ESTACA", selo="SEM FORÇA EXTERNA, O CENTRO DE MASSA NÃO SE MOVE")
         S, X0, YW = 1.45, -6.35, -1.05                    # tela por metro; estaca; linha d'água
         PX = lambda x: X0 + S * x
+        YA = YW + 2.15                                    # altura do braço esticado
         self.xc = ValueTracker(0.0)                       # deslocamento da canoa (m)
         self.s_ = ValueTracker(0.0)                       # 0 = remador na popa … 1 = na proa
         self.fase = ValueTracker(0.0)
@@ -281,26 +326,39 @@ class LoteFinal(Camadas):
         eixo.add(VGroup(mtex("x", GEO, 36), rot("(m)", 28, GEO)).arrange(RIGHT, buff=0.08).next_to(P3(PX(4.4), YW - 2.25), RIGHT, buff=0.1))
         Lc0 = cota(PX(0), PX(3), YW + 2.65, rot_cota("3 m"), lado=UP)
         Lc = vivo(lambda: Lc0.copy().shift(S * self.xc.get_value() * RIGHT))      # a cota do comprimento anda com a canoa
-        ya = YW + 1.55                                                               # acima da cabeça da estaca
-        alc = VGroup(Line(P3(PX(0), ya), P3(PX(-0.8), ya)).set_stroke(VREL, 2.6), Line(P3(PX(-0.8), ya - 0.1), P3(PX(-0.8), ya + 0.1)).set_stroke(VREL, 2.6),
-                     rot("0,80 m", 28, VREL).next_to(P3(PX(-0.4), ya), UP, buff=0.2))
+        # amarra solta na proa (pendurada na água) e o fantasma do remador na proa com o braço esticado
+        corda = VMobject().set_points_smoothly([P3(PX(0.06), YW + 0.5), P3(PX(-0.08), YW + 0.25), P3(PX(-0.02), YW + 0.02), P3(PX(0.18), YW - 0.3)])
+        corda.set_stroke("#C9A27A", 3.2)
+        fant = pessoa(0.0, 1.0).copy().set_opacity(0.3)
+        fant.move_to(P3(PX(0.0), YW + S * 0.36 + fant.height / 2))
+        alc = VGroup(Line(P3(PX(0), YA), P3(PX(-0.8), YA)).set_stroke(VREL, 2.6), Line(P3(PX(-0.8), YA - 0.1), P3(PX(-0.8), YA + 0.1)).set_stroke(VREL, 2.6),
+                     rot("0,80 m", 26, VREL).next_to(P3(PX(-0.45), YA), UP, buff=0.14))
         self.troca(velhos, FadeIn(agua), FadeIn(margem), FadeIn(estaca), FadeIn(cv), FadeIn(eixo), seq=True)
         dd = VGroup(eqp("m", "=", r"75\ \mathrm{kg}", size=46)[0], eqp(r"M_c", "=", r"150\ \mathrm{kg}", size=46)[0], eqp("L", "=", r"3\ \mathrm{m}", size=46)[0],
                     VGroup(txt("ALCANCE", 28), rot("= 0,80 m", 32)).arrange(RIGHT, buff=0.14))
         for k, d_ in enumerate(dd):
             na_conta(d_, 2.3 - 0.72 * k)
-        self.ate(0.08)
-        self.play(FadeIn(dd[0]), Indicate(cv, color=WHITE_, scale_factor=1.0) if False else Wait(0.01), run_time=0.6)
-        self.ate(0.2)
-        self.play(FadeIn(dd[1]), FadeIn(Lc0), FadeIn(dd[2]), run_time=0.8)
+        self.em("setenta e cinco")
+        self.play(FadeIn(dd[0]), run_time=0.6)
+        self.em("cento e cinquenta")
+        self.play(FadeIn(dd[1]), run_time=0.6)
+        self.em("e três metros")
+        self.play(FadeIn(Lc0), FadeIn(dd[2]), run_time=0.7)
         self.remove(Lc0)
         self.add(Lc)
-        self.ate(0.5)
-        self.play(FadeIn(alc), FadeIn(dd[3]), run_time=0.8)                     # "o braço alcança oitenta centímetros"
+        self.em("encostada numa estaca")
+        self.play(Indicate(estaca, color=CYAN, scale_factor=1.12), run_time=0.8)
+        self.em("esqueceu de amarrar")
+        self.play(Create(corda), run_time=0.7)
+        self.play(Indicate(corda, color=HEAT, scale_factor=1.1), run_time=0.7)                     # a amarra solta pisca
+        self.em("anda até a proa")
+        self.play(FadeIn(fant), run_time=0.7)                                                     # o remador (fantasma) na proa, braço esticado
+        self.em("alcança oitenta")
+        self.play(Create(alc[:2]), FadeIn(alc[2]), FadeIn(dd[3]), run_time=0.9)                   # a cota do alcance se desenha
         q = txt("ALCANÇA A ESTACA?", 32, bold=True)
         na_conta(q, -0.75)
-        self.ate(0.85)
-        self.play(FadeIn(q, shift=0.1 * UP), run_time=0.6)
+        self.em("consegue pegar a estaca")
+        self.play(FadeIn(q, shift=0.1 * UP), Indicate(estaca, color=CYAN, scale_factor=1.15), run_time=0.8)   # a estaca acende
         self.ate(0.97)
         # ── E2-2: o ⊕ não se mexe ──
         self.an("E2-2")
@@ -308,16 +366,20 @@ class LoteFinal(Camadas):
         na_conta(E, -0.75)
         L3 = VGroup(eqp(r"\Rightarrow\ ", r"X_{cm}", size=46, cores={1: CMC})[0], txt("FIXO", 30, bold=True)).arrange(RIGHT, buff=0.18)
         na_conta(L3, -1.65)
-        self.play(FadeOut(q), FadeOut(alc), run_time=0.4)
-        self.ate(0.15)
-        self.play(FadeIn(E), run_time=0.7)
-        self.ate(0.42)
+        self.play(FadeOut(q), FadeOut(alc), FadeOut(fant), FadeOut(corda), run_time=0.4)
+        self.em("vamos desprezar a resistência")
+        self.play(ShowPassingFlash(Line(P3(X0, YW), P3(PX(4.6), YW)).set_stroke(CYAN, 5), time_width=0.6), run_time=1.0)   # a água
+        self.em("remador mais canoa")
+        self.play(Flash(P3(PX(3.0), YW + 1.6), color=WHITE_, line_length=0.18, flash_radius=0.5, num_lines=12),
+                  Flash(P3(PX(1.5), YW + 0.2), color=WHITE_, line_length=0.18, flash_radius=0.7, num_lines=12), run_time=0.8)
+        self.em("a força externa resultante")
+        self.play(FadeIn(mp(E, ie, [0, 1, 2])), run_time=0.7)
+        self.em("E tudo começa parado")
+        self.play(FadeIn(mp(E, ie, [3, 4, 5, 6])), run_time=0.6)
+        self.em("o centro de massa do sistema")
         self.play(FadeIn(L3), onda(P3(PX(2.0), YW + 1.25)), run_time=0.8)
-        self.ate(0.55)
-        dur = max(2.5, self.resta() - 1.2)
-        self.play(self.s_.animate(rate_func=linear).set_value(0.999), self.xc.animate(rate_func=linear).set_value(0.999),
-                  self.fase.animate(rate_func=linear).set_value(2 * PI * 3), run_time=dur)          # ele anda, a canoa recua; o ⊕ fica
-        self.fase.set_value(0.0)
+        self.em("não pode sair do lugar")
+        self.play(onda(P3(PX(2.0), YW + 1.25)), Indicate(L3, color=WHITE_, scale_factor=1.08), run_time=0.9)
 
         def deslocs():
             s = self.s_.get_value()
@@ -328,7 +390,12 @@ class LoteFinal(Camadas):
                       seta(P3(PX(0), YW - 0.55), P3(PX(self.xc.get_value()), YW - 0.55), VEL, 6, tip=0.22))
             return g
         self.dv = vivo(deslocs)
-        self.play(FadeIn(self.dv), run_time=0.6)
+        self.add(self.dv)
+        self.em("Quando ele anda")
+        dur = max(2.5, self.resta() - 0.6)
+        self.play(self.s_.animate(rate_func=linear).set_value(0.999), self.xc.animate(rate_func=linear).set_value(0.999),
+                  self.fase.animate(rate_func=linear).set_value(2 * PI * 3), run_time=dur)          # ele anda, a canoa recua; o ⊕ fica
+        self.fase.set_value(0.0)
         self.ate(0.97)
         # ── E2-3: a conta ──
         self.an("E2-3")
@@ -343,65 +410,91 @@ class LoteFinal(Camadas):
             na_conta(M_, y_, x0=1.25 if M_ is A3 else XC0)
         # o PALCO revive: o mesmo passeio de novo, devagar, enquanto a conta corre
         self.s_.set_value(0.0); self.xc.set_value(0.0)
-        self.ate(0.06)
-        self.play(FadeIn(mp(A1, a1, [0, 1, 3, 4])), TransformFromCopy(Lc[0][1], mp(A1, a1, [2])), run_time=1.1)   # o −3 sai da cota da canoa
-        self.ate(0.3)
-        self.play(FadeIn(A2), self.s_.animate(rate_func=linear).set_value(0.35), self.xc.animate(rate_func=linear).set_value(0.35),
-                  self.fase.animate(rate_func=linear).set_value(2 * PI), run_time=1.0)
-        self.ate(0.48)
+        passo = lambda v, f: (self.s_.animate(rate_func=linear).set_value(v), self.xc.animate(rate_func=linear).set_value(v),
+                              self.fase.animate(rate_func=linear).set_value(f))
+        self.em("três metros em relação à canoa")
+        self.play(FadeIn(mp(A1, a1, [0, 1])), TransformFromCopy(Lc[0][1], mp(A1, a1, [2])), run_time=1.1)   # o −3 sai da cota da canoa
+        self.em("na direção da estaca")
+        self.play(ShowPassingFlash(Line(P3(PX(4.0), YW - 2.25), P3(PX(1.0), YW - 2.25)).set_stroke(VEL, 6), time_width=0.7), run_time=1.0)
+        self.em("em relação à água")
+        self.play(ShowPassingFlash(Line(P3(X0, YW), P3(PX(4.6), YW)).set_stroke(CYAN, 5), time_width=0.6), run_time=1.0)
+        self.em("esses três metros")
+        self.play(Indicate(mp(A1, a1, [2]), color=WHITE_, scale_factor=1.25), run_time=0.7)
+        self.em("mais o que a canoa andou")
+        self.play(FadeIn(mp(A1, a1, [3, 4])), *passo(0.2, PI), run_time=0.9)
+        self.em("O centro de massa fixo")
+        self.play(FadeIn(A2), *passo(0.4, 2 * PI), run_time=1.0)
+        self.em("a massa do remador vezes")
+        self.play(Indicate(mp(A2, a2, [0, 1]), color=WHITE_, scale_factor=1.2), *passo(0.47, 2.5 * PI), run_time=0.9)
+        self.em("mais a massa da canoa")
+        self.play(Indicate(mp(A2, a2, [3, 4]), color=WHITE_, scale_factor=1.2), *passo(0.53, 3 * PI), run_time=0.9)
+        self.em("dá zero")
         self.play(TransformByGlyphMap(A2.copy(), A3, (J(a2, 0), J(a3, 0)), (J(a2, 1), J(a3, 1)), (J(a2, 2), J(a3, 2)), (J(a2, 3), J(a3, 3)),
-                                      (J(a2, 4), J(a3, 4)), (J(a2, 5, 6), J(a3, 5, 6))),
-                  self.s_.animate(rate_func=linear).set_value(0.6), self.xc.animate(rate_func=linear).set_value(0.6), self.fase.animate(rate_func=linear).set_value(4 * PI),
-                  run_time=1.4)
-        self.ate(0.62)
+                                      (J(a2, 4), J(a3, 4)), (J(a2, 5, 6), J(a3, 5, 6))), *passo(0.6, 4 * PI), run_time=1.4)
+        self.em("Resolvendo")
         self.play(TransformByGlyphMap(A3.copy(), A4, (J(a3, 0, 2, 3), J(a4, 0)), (J(a3, 1, 4), J(a4, 1)), (J(a3, 5), J(a4, 2)), (J(a3, 6), J(a4, 3)), auto_fade=True),
-                  self.s_.animate(rate_func=linear).set_value(0.8), self.xc.animate(rate_func=linear).set_value(0.8), self.fase.animate(rate_func=linear).set_value(6 * PI),
-                  run_time=1.4)                                                         # junta e o −225 atravessa
-        self.ate(0.74)
-        self.play(FadeIn(VGroup(A5, A6), shift=0.1 * DOWN), self.s_.animate(rate_func=linear).set_value(0.999), self.xc.animate(rate_func=linear).set_value(0.999),
-                  self.fase.animate(rate_func=linear).set_value(8 * PI), run_time=1.2)
-        self.fase.set_value(0.0)
-        bx5 = caixa(VGroup(A5, A6), cor=VEL)
-        l2 = rot("2,0 m", 30, VEL).next_to(P3(PX(3.0), YW + 3.35), RIGHT, buff=0.15)
+                  *passo(0.8, 6 * PI), run_time=1.2)                                                # junta e o −225 atravessa
         l1 = rot("1,0 m", 30, VEL).next_to(P3(PX(0.5), YW - 0.55), DOWN, buff=0.24)
+        l2 = rot("2,0 m", 30, VEL).next_to(P3(PX(3.0), YW + 3.35), RIGHT, buff=0.15)
+        self.em("a canoa anda um metro")
+        self.play(FadeIn(A5, shift=0.1 * DOWN), *passo(0.999, 8 * PI), run_time=1.0)
+        self.fase.set_value(0.0)
+        self.play(FadeIn(l1), run_time=0.5)                                                       # a seta da canoa ganha o valor
+        self.em("o remador anda só dois")
+        bx5 = caixa(VGroup(A5, A6), cor=VEL)
+        self.play(FadeIn(A6, shift=0.1 * DOWN), FadeIn(l2), run_time=0.8)
+        self.play(FadeIn(bx5), run_time=0.4)
         ver = mtex(r"75\cdot 2=150\cdot 1", WHITE_, 46)
         na_conta(ver, -2.6)
-        self.ate(0.84)
-        self.play(FadeIn(bx5), FadeIn(l2), FadeIn(l1), run_time=0.8)
-        self.ate(0.9)
+        self.em("Confere")
         self.play(FadeIn(ver, shift=0.1 * UP), run_time=0.6)
+        self.em("setenta e cinco vezes dois")
+        self.play(Indicate(VGroup(ver[0][:4], l2), color=WHITE_, scale_factor=1.2), run_time=0.9)   # o remador: 75 · 2
+        self.em("cento e cinquenta vezes um")
+        self.play(Indicate(VGroup(ver[0][5:], l1), color=WHITE_, scale_factor=1.2), run_time=0.9)   # a canoa: 150 · 1
         self.ate(0.97)
         # ── E2-4: não alcança ──
         self.an("E2-4")
-        self.play(FadeOut(VGroup(A1, A2, A3, A4, ver)), VGroup(A5, A6, bx5).animate.move_to(P3(CONTA_C[0], 2.1)), FadeOut(self.dv), FadeOut(l2), FadeOut(l1), run_time=0.6)
         self.dv.clear_updaters()
-        d1 = cota(PX(0), PX(1.0), YW + 2.65, rot_cota("1,0 m"), lado=UP)
         Lc.clear_updaters()
-        self.play(FadeOut(Lc), FadeIn(d1), run_time=0.6)
+        self.play(FadeOut(VGroup(A1, A2, A3, A4, ver)), VGroup(A5, A6, bx5).animate.move_to(P3(CONTA_C[0], 2.1)), FadeOut(self.dv), FadeOut(l2), FadeOut(l1),
+                  FadeOut(Lc), run_time=0.6)
         self.s_.set_value(1.0)                                                          # o braço estica (pose de alcance)
         self.xc.set_value(1.0)                                                          # a canoa no fim exato do recuo (X_cm = 2 m)
-        braco = VGroup(Line(P3(PX(1.0), YW + 0.9), P3(PX(0.2), YW + 0.9)).set_stroke(VREL, 3), Line(P3(PX(0.2), YW + 0.8), P3(PX(0.2), YW + 1.0)).set_stroke(VREL, 3),
-                       rot("0,80 m", 28, VREL).next_to(P3(PX(0.6), YW + 0.9), DOWN, buff=0.2).shift(0.2 * LEFT))
-        falta = VGroup(Line(P3(PX(0.2), YW + 0.9), P3(PX(0.0), YW + 0.9)).set_stroke(HEAT, 6), rot("0,20 m", 30, HEAT).next_to(P3(PX(0.1), YW + 0.9), UP, buff=0.45))
-        self.ate(0.08)
-        self.play(Create(braco), run_time=0.9)
-        self.ate(0.2)
-        self.play(FadeIn(falta), run_time=0.7)
+        d1 = cota(PX(0), PX(1.0), YW + 0.12, rot_cota("1,0 m"), lado=UP)                  # 1,0 m logo acima da água
+        braco = VGroup(Line(P3(PX(1.0), YA), P3(PX(0.2), YA)).set_stroke(VREL, 3), Line(P3(PX(0.2), YA - 0.1), P3(PX(0.2), YA + 0.1)).set_stroke(VREL, 3),
+                       rot("0,80 m", 28, VREL).next_to(P3(PX(0.45), YA), UP, buff=0.14))  # 0,80 m acima do braço
+        falta = VGroup(Line(P3(PX(0.2), YA), P3(PX(0.0), YA)).set_stroke(HEAT, 6),
+                       rot("0,20 m", 30, HEAT).next_to(P3(PX(0.1), YA), DOWN, buff=0.18))     # 0,20 m entre a mão e a estaca
+        amarra = DashedLine(P3(PX(1.0) + 0.05, YW + 0.62), P3(X0 - 0.08, YW + 1.25), dash_length=0.09).set_stroke("#C9A27A", 3, opacity=0.45)
         R1, r1 = eqp(r"1{,}0\ \mathrm{m}", "-", r"0{,}80\ \mathrm{m}", "=", r"0{,}20\ \mathrm{m}", size=48)
         na_conta(R1, 0.75)
         na = txt("NÃO ALCANÇA", 32, bold=True, color=HEAT)
         na_conta(na, -0.15)
-        self.ate(0.26)
-        self.play(TransformFromCopy(d1[1], mp(R1, r1, [0])), TransformFromCopy(braco[2], mp(R1, r1, [2])), FadeIn(mp(R1, r1, [1, 3])),
-                  TransformFromCopy(falta[1], mp(R1, r1, [4])), run_time=1.2)
-        self.play(FadeIn(na, shift=0.1 * UP), run_time=0.5)
-        self.ate(0.45)
-        self.play(Indicate(falta, color=HEAT, scale_factor=1.15), run_time=0.8)          # "o certo era ter amarrado antes"
-        self.ate(0.55)
-        self.play(FadeOut(eixo), run_time=0.4)                                          # a régua sai: a DICA ocupa o canto
-        self.dica_entra(dica("DESLOCAMENTO EM RELAÇÃO À CANOA NÃO É", "DESLOCAMENTO EM RELAÇÃO À ÁGUA"))
-        self.ate(0.85)
+        self.em("a um metro da estaca")
+        self.play(FadeIn(d1), run_time=0.7)
+        self.em("o braço alcança")
+        self.play(Create(braco[:2]), FadeIn(braco[2]), run_time=0.9)                              # o braço estica e para
+        self.em("Faltam vinte")
+        self.play(FadeIn(falta), TransformFromCopy(d1[1], mp(R1, r1, [0])), TransformFromCopy(braco[2], mp(R1, r1, [2])), FadeIn(mp(R1, r1, [1, 3])),
+                  TransformFromCopy(falta[1], mp(R1, r1, [4])), run_time=1.1)
+        self.play(FadeIn(na, shift=0.1 * UP), Indicate(falta, color=HEAT, scale_factor=1.15), run_time=0.7)   # o vão pulsa em laranja
+        self.em("O certo era ter amarrado")
+        self.play(Create(amarra), run_time=0.9)                                                   # a amarra, em fantasma, como devia estar
+        self.em("E a dica")
+        self.dica_entra(dica("DESLOCAMENTO EM RELAÇÃO", "À CANOA NÃO É DESLOCAMENTO", "EM RELAÇÃO À ÁGUA"))   # na coluna da CONTA
+        na_canoa = VGroup(seta(P3(PX(4.0), YW + 3.0), P3(PX(1.0), YW + 3.0), GEO, 5, tip=0.2),
+                          rot("3 m em relação à canoa", 26, GEO).next_to(P3(PX(2.5), YW + 3.0), UP, buff=0.22))
+        na_agua = VGroup(seta(P3(PX(3.0), YW - 0.55), P3(PX(1.0), YW - 0.55), VEL, 6, tip=0.22),
+                         rot("2 m em relação à água", 26, VEL).next_to(P3(PX(2.0), YW - 0.55), DOWN, buff=0.24))
+        self.em("o deslocamento em relação à canoa")
+        self.play(Create(na_canoa[0]), FadeIn(na_canoa[1]), run_time=0.9)
+        self.em("o deslocamento em relação à água")
+        self.play(Create(na_agua[0]), FadeIn(na_agua[1]), run_time=0.9)
+        self.em("Quem está parado")
         self.play(onda(P3(PX(2.0), YW + 1.25)), run_time=0.9)                             # "quem está parado é o centro de massa"
+        self.em("em relação à água que ele")
+        self.play(Flash(P3(PX(2.0), YW), color=CYAN, line_length=0.16, flash_radius=0.2, num_lines=10), run_time=0.7)
         self.ate(0.97)
 
     # ════════════════════════════════════════ síntese ════════════════════════════════════════
@@ -427,7 +520,7 @@ class LoteFinal(Camadas):
         self.play(FadeIn(resp, shift=0.1 * UP), self.g_pul.animate(rate_func=there_and_back).set_value(1.0), g.tau.animate(rate_func=linear).set_value(tauF - 0.3),
                   run_time=0.9)
         self.ate_mov(0.97, g.tau, tauF)
-        # ── S2: as quatro perguntas ──
+        # ── S2: as quatro perguntas; a miniatura de cada uma repete a ação-chave enquanto a linha é falada (foco: a linha a 100%, as outras a 50%) ──
         self.an("S2")
         self.cam_gra.clear_updaters()
         velhos = self.snap()
@@ -442,13 +535,63 @@ class LoteFinal(Camadas):
         for k in range(4):
             icones[k].move_to(P3(-5.6, ys[k]))
             t_ = txt(perg[k], 30, bold=True).move_to(P3(-2.55, ys[k]))
-            t_.align_to(P3(-3.9, 0), LEFT)
+            t_.align_to(P3(-3.55, 0), LEFT)
             na_conta(frm[k], ys[k], x0=2.3)
             linhas.append(VGroup(icones[k], t_, frm[k]))
+        veus = [Rectangle(width=15.0, height=1.3).move_to(P3(0, y_)).set_stroke(width=0).set_fill("#0B1A3A", 0.0).set_z_index(25) for y_ in ys]
+        for v_ in veus:
+            v_._fundo = True                                                     # véu de foco (50%): não é objeto da cena
+        self.add(*veus)
+
+        def foco(k, *extra, rt=0.6):
+            vis = [j for j in range(4) if linhas[j] in self.mobjects or j == k]
+            self.play(*[veus[j].animate.set_fill(opacity=0.0 if (k is None or j == k) else 0.5) for j in vis], *extra, run_time=rt)
         self.troca(velhos, FadeIn(linhas[0]), seq=True)
-        for k, f_ in zip((1, 2, 3), (0.27, 0.52, 0.8)):
-            self.ate(f_)
-            self.play(FadeIn(linhas[k], shift=0.15 * UP), run_time=0.8)
+        b0, bolas0, pl0, cm0 = icones[0]
+        self.em("na média das posições")
+        self.play(Indicate(frm[0], color=WHITE_, scale_factor=1.08), run_time=0.9)
+        self.em("pesada pelas massas")
+        self.play(Indicate(bolas0, color=WHITE_, scale_factor=1.3), run_time=0.8)
+        self.em("por partes")
+        self.play(Rotate(VGroup(b0, bolas0), angle=-0.3, about_point=cm0.get_center(), rate_func=there_and_back), run_time=1.3)   # a bandeja tomba e volta
+        self.em("massa negativa")
+        self.play(ShowPassingFlash(pl0.copy().set_fill(opacity=0).set_stroke(MAG, 4), time_width=0.6), run_time=1.0)   # a placa com o recorte
+        self.em("Como se move")
+        foco(1, FadeIn(linhas[1], shift=0.15 * UP), rt=0.8)
+        arco1, gr1, canoa1, cm1 = icones[1]
+        cacos1 = VGroup(*[Ellipse(width=0.22, height=0.17).set_fill(["#9AA6B8", "#3A4252"], 1).set_sheen_direction(UP).set_stroke("#7FB2FF", 1.2, opacity=0.6)
+                          .move_to(gr1.get_center()) for _ in range(3)])
+        for c_ in cacos1:
+            c_._degrade = "aco"
+        self.em("como uma partícula")
+        self.play(FadeOut(gr1), FadeIn(cacos1), run_time=0.2)
+        self.play(*[c_.animate.shift(0.42 * d_) for c_, d_ in zip(cacos1, (UP, rotate_vector(UP, 2.1), rotate_vector(UP, -2.1)))], run_time=0.8)   # a granada estilhaça; o ⊕ fica
+        self.em("empurrada só")
+        self.play(canoa1.animate.shift(0.15 * RIGHT), run_time=0.9)                              # a canoa recua
+        self.em("Que energia é relativa")
+        foco(2, FadeIn(linhas[2], shift=0.15 * UP), rt=0.8)
+        barras2 = icones[2][:2]
+        self.em("a energia cinética se divide")
+        self.play(*[GrowFromEdge(r_, DOWN) for r_ in barras2], run_time=1.0)                      # as duas barras sobem
+        self.em("na do centro de massa")
+        self.play(Indicate(barras2[0], color=WHITE_, scale_factor=1.15), run_time=0.8)
+        self.em("que só muda com força externa")
+        self.play(Indicate(frm[2][0][2:7], color=WHITE_, scale_factor=1.15), run_time=0.8)
+        self.em("e na do movimento relativo")
+        self.play(Indicate(VGroup(barras2[1], frm[2][0][-4:]), color=WHITE_, scale_factor=1.15), run_time=0.8)
+        self.em("como na explosão")
+        self.play(Indicate(barras2[1], color=mix(KC, 0.4), scale_factor=1.15), run_time=0.7)
+        self.em("ou consumir")
+        self.play(barras2[1].animate.stretch(0.05, 1, about_edge=DOWN).set_fill(HEAT), run_time=0.8)   # a colisão consome a relativa
+        self.em("E num corpo inteiro")
+        foco(3, FadeIn(linhas[3], shift=0.15 * UP), rt=0.8)
+        barra3 = icones[3][0]
+        cortes3 = VGroup(*[Line(barra3.get_top() + RIGHT * x_, barra3.get_bottom() + RIGHT * x_).set_stroke(BACKGROUND_COLOR, 2)
+                           for x_ in np.linspace(-0.9, 0.9, 9)[1:-1]])
+        self.em("a soma vira integral")
+        self.play(LaggedStart(*[Create(c_) for c_ in cortes3], lag_ratio=0.15), run_time=1.0)    # a barra vira pedacinhos
+        self.em("simetria primeiro")
+        foco(None, Flash(icones[3][1].get_center(), color=CYAN, line_length=0.15, flash_radius=0.18, num_lines=10), rt=0.7)   # as quatro de volta a 100%
         self.ate(0.97)
 
     def icone(self, k):
@@ -471,157 +614,159 @@ class LoteFinal(Camadas):
         return VGroup(barra_aco(-0.9, 0.9, 0.0, h=0.3, cores=["#C9D2DE", "#7A8696", "#262C38"]), marcador_cm(P3(0.3, 0.0), r=0.1))
 
     # ════════════════════════════════════════ encerramento ════════════════════════════════════════
+    # v5 (narração v3.2): nenhuma referência a vídeo que ainda não está no canal. EN1 = o centro de massa nas colisões (aplicação deste vídeo),
+    # visto do chão e depois do referencial do ⊕; EN2 = logo e inscrição.
     def encerramento(self):
-        # ── EN1 ──
+        self.en1()
+        self.en2()
+
+    def en1(self):
+        """Blocos de 2 kg (+2 m/s) e 1 kg (−2 m/s) que grudam (+⅔ m/s). O ⊕ fica sobre os blocos, na altura do centro deles, em
+        x_cm = (2x₁ + 1x₂)/3, reto a ⅔ m/s com rastro em degradê. Depois a câmera passa a andar com o ⊕ (troca de referencial do T3-2):
+        momentos ±8/3 kg·m/s, iguais e opostos; os blocos grudam e param; a K relativa (16/3 J) vira laranja e sai, a K do CM (⅔ J) fica."""
         self.an("EN1")
+        velhos = self.snap()
+        self.secao("CENTRO DE MASSA NAS COLISÕES")
+        C1F, C2F = GEO, STEEL
+        m1, m2, u1, u2, vf = 2.0, 1.0, 2.0, -2.0, 2 / 3
+        w1, w2, xc0, ty, kx, ka, kp = 1.0, 0.8, -1.4, -2.25, 0.85, 0.55, 0.42
+        t, wref = ValueTracker(-2.3), ValueTracker(0.0)                                          # wref: 0 = chão, 1 = câmera no ⊕
+        self.add(t, wref)
+        t_ini = -2.3
+        b1, b2 = Corpo(None, C1F, w1), Corpo(None, C2F, w2)
+
+        def xs(tt):
+            if tt < 0:
+                return xc0 - w1 / 2 + u1 * tt * kx, xc0 + w2 / 2 + u2 * tt * kx
+            return xc0 - w1 / 2 + vf * tt * kx, xc0 + w2 / 2 + vf * tt * kx
+        xcm = lambda tt: (m1 * xs(tt)[0] + m2 * xs(tt)[1]) / (m1 + m2)
+        XF = xcm(0.0)                                                                             # onde o ⊕ fica parado no referencial dele
+        ycm = ty + 0.45                                                                           # na altura do centro dos blocos
+
+        mrg = ValueTracker(0.0)                                                                   # 0 = rótulos 2 kg e 1 kg; 1 = um só, 3 kg
+        self.add(mrg)
+        Y_AR = ty + w1 + 0.62                                                                     # setas acima dos rótulos de massa
+
+        def cena():
+            tt, w, mm = t.get_value(), suave(wref.get_value()), mrg.get_value()
+            x1, x2 = xs(tt)
+            xc = xcm(tt)
+            dx = -w * (xc - XF)
+            g = VGroup(Line(P3(-7.2, ty), P3(7.2, ty)).set_stroke(WHITE_, 2.5, opacity=0.4))
+            g.add(b1.copy().at(x1 + dx, ty), b2.copy().at(x2 + dx, ty))
+            xm = (x1 + x2) / 2 + dx
+            pm = P3(xm, ty + w1 + 0.24)                                                          # rótulo acima de cada bloco; grudados, 3 kg no centro
+            if mm < 0.999:
+                for x_, w_, n_ in ((x1 + dx, w1, "2 kg"), (x2 + dx, w2, "1 kg")):
+                    q_ = P3(x_, ty + w_ + 0.24)
+                    g.add(mrot(n_, 28, op=1 - mm).move_to(q_ + (pm - q_) * mm))
+            if mm > 0.001:
+                g.add(mrot("3 kg", 28, op=mm).move_to(pm))
+            if w < 0.999:                                                                         # velocidades em relação ao chão
+                o = 1 - w
+                if tt < 0:
+                    for x_, v_, n_ in ((x1 + dx, u1, r"2\ \mathrm{m/s}"), (x2 + dx, u2, r"-2\ \mathrm{m/s}")):   # os dados da fala
+                        a = seta(P3(x_, Y_AR), P3(x_ + v_ * ka, Y_AR), VEL, 5, tip=0.2, op=o)
+                        g.add(a, mtex(n_, VEL, 38).set_opacity(o).next_to(P3(x_ + v_ * ka / 2, Y_AR), UP, buff=0.12))
+                else:
+                    g.add(seta(P3(xm, Y_AR), P3(xm + vf * ka, Y_AR), VEL, 5, tip=0.2, op=o),
+                          mtex(r"\tfrac{2}{3}\ \mathrm{m/s}", VEL, 38).set_opacity(o).next_to(P3(xm + vf * ka / 2, Y_AR), UP, buff=0.12))
+            if w > 0.001 and tt < 0:                                                              # momentos no referencial do ⊕: iguais e opostos
+                for x_, p_ in ((x1 + dx, m1 * (u1 - vf)), (x2 + dx, m2 * (u2 - vf))):
+                    a = seta(P3(x_, Y_AR), P3(x_ + p_ * kp, Y_AR), MAG, 6, tip=0.22, op=w)
+                    g.add(a, mtex(r"\tfrac{8}{3}\ \mathrm{kg\cdot m/s}", MAG, 36).set_opacity(w).next_to(P3(x_ + p_ * kp / 2, Y_AR), UP, buff=0.12))
+            ts = np.linspace(t_ini, tt, max(2, int((tt - t_ini) * 12)))
+            if w < 0.999:
+                q = [P3(xcm(s) + dx, ycm) for s in ts]
+                g.add(rastro_cm(q, w=4, op=0.9 * (1 - w)))
+            g.add(marcador_cm(P3(xc + dx, ycm), r=0.2))
+            ctr1, ctr2 = g[1].front.get_center(), g[2].front.get_center()
+            v1, v2 = (u1, u2) if tt < 0 else (vf, vf)
+            self.reg("en1", cm=P3(xc + dx, ycm), media=P3((m1 * ctr1[0] + m2 * ctr2[0]) / (m1 + m2), ycm),
+                     p_rel=P3(m1 * (v1 - vf) + m2 * (v2 - vf), 0.0))                              # soma dos momentos no referencial do CM
+            return g
+        cv = vivo(cena)
+        self.troca(velhos, FadeIn(cv), seq=True)
+        self.em("Dois blocos")
+        self.play(t.animate(rate_func=linear).set_value(0.0), run_time=self.ate_fala("batem e grudam", 1.2))
+        self.play(Flash(P3(xc0, ty + 0.4), color=WHITE_, line_length=0.2, flash_radius=0.1, num_lines=10), t.animate(rate_func=linear).set_value(0.1),
+                  mrg.animate.set_value(1.0), run_time=0.5)                                       # grudados: 2 kg + 1 kg = 3 kg
+        self.em("A batida é interna")
+        self.play(onda(P3(xcm(0.1), ycm), r=0.3), t.animate(rate_func=linear).set_value(0.5), run_time=0.9)
+        self.play(t.animate(rate_func=linear).set_value(2.0), run_time=self.ate_fala("Então a velocidade final", 1.0))
+        # a fórmula sai deste vídeo: v_f = V_cm (grudados, andam com o ⊕) = Σ mᵢvᵢ/M (a caixa do T2-2) = (m₁v₁ᵢ + m₂v₂ᵢ)/(m₁ + m₂)
+        def partes(m_):                                                                           # "=", numerador, barra, denominador (pela altura)
+            gl = list(m_[0])
+            k_ = max(range(1, len(gl)), key=lambda q: gl[q].width)
+            yb = gl[k_].get_y()
+            return ([0], [q for q in range(1, len(gl)) if q != k_ and gl[q].get_y() > yb], [k_],
+                    [q for q in range(1, len(gl)) if q != k_ and gl[q].get_y() < yb])
+        L1, l1 = eqp(r"v_f", "=", r"V_{cm}", size=52, cores={0: VEL, 2: VEL})
+        L1.move_to(P3(-4.6 + L1.width / 2, 2.35))
+        bx1 = caixa(L1, cor=VEL)
+        L1b = MathTex(r"=\frac{\sum_i m_i v_i}{M}", font_size=52, color=WHITE_).next_to(L1, RIGHT, buff=0.35)
+        L2 = MathTex(r"=\frac{m_1v_{1i}+m_2v_{2i}}{m_1+m_2}", font_size=52, color=WHITE_)
+        L2.move_to(P3(-4.6 + 0.55 + L2.width / 2, 0.75))
+        L3 = MathTex(r"=\frac{2\cdot 2+1\cdot(-2)}{3}=\tfrac{2}{3}\ \mathrm{m/s}", font_size=48, color=WHITE_).next_to(L2, RIGHT, buff=0.3)
+        mini_eq = MathTex(r"\vec V_{cm}=\frac{\sum_i m_i\vec v_i}{M}", font_size=46, color=WHITE_)
+        mini_eq[0][0:4].set_color(VEL)
+        mini = VGroup(caixa(mini_eq, cor=VEL), mini_eq)
+        selo_t2 = txt('DO BLOCO "COMO SE MOVE?"', 24, color=DIM).next_to(mini, UP, buff=0.12)
+        VGroup(mini, selo_t2).move_to(P3(5.2, 2.2))
+        self.em("Então a velocidade final")
+        self.play(FadeIn(L1), FadeIn(bx1), t.animate(rate_func=linear).set_value(2.2), run_time=0.8)   # grudados, os dois andam com o ⊕
+        self.play(FadeIn(mini), FadeIn(selo_t2), run_time=0.4)
+        self.play(TransformFromCopy(mini_eq[0][4:], L1b[0][0:]), run_time=0.9)                          # a média pesada das velocidades
+        self.play(FadeOut(mini), FadeOut(selo_t2), run_time=0.3)
+        p1, p2 = partes(L1b), partes(L2)
+        self.play(TransformByGlyphMap(L1b.copy(), L2, *[(a_, b_) for a_, b_ in zip(p1, p2)]), run_time=0.9)   # dois blocos: m₁v₁ᵢ + m₂v₂ᵢ sobre m₁ + m₂
+        self.em("dois terços")
+        self.play(FadeIn(L3, shift=0.1 * RIGHT), run_time=0.8)
+        # o mesmo choque visto do ⊕: a câmera passa a andar com ele
+        rot_ref = VGroup(txt("VISTO DO CENTRO DE MASSA:", 26), MathTex(r"\vec P=\vec 0", font_size=40, color=MAG), txt("ANTES E DEPOIS", 26)).arrange(RIGHT, buff=0.18)
+        rot_ref.move_to(P3(-1.6, -3.3))
+        KCM_, KREL_ = 2 / 3, 16 / 3
+        e_ = 0.3
+        base_b = P3(5.2, -1.25)
+        bar_cm = Rectangle(width=0.5, height=KCM_ * e_).set_stroke(width=0).set_fill(KC, 1).move_to(base_b + P3(0, KCM_ * e_ / 2))
+        bar_rel = Rectangle(width=0.5, height=KREL_ * e_).set_stroke(width=0).set_fill(mix(KC, 0.25), 1).move_to(base_b + P3(1.55, KREL_ * e_ / 2))
+        for r_ in (bar_cm, bar_rel):
+            r_._fundo = True
+        lb = VGroup(VGroup(mtex("K", KC, 36), txt("DO CM", 24)).arrange(DOWN, buff=0.06).next_to(base_b, DOWN, buff=0.12),
+                    VGroup(mtex("K", KC, 36), txt("RELATIVA", 24)).arrange(DOWN, buff=0.06).next_to(base_b + P3(1.55, 0), DOWN, buff=0.12))
+        chao_b = Line(base_b + P3(-0.45, 0), base_b + P3(2.0, 0)).set_stroke(GEO, 2)
+        self.em("Agora olha a mesma batida")
+        self.play(t.animate.set_value(t_ini), mrg.animate.set_value(0.0), run_time=0.5)
+        self.play(wref.animate.set_value(1.0), FadeIn(rot_ref), FadeIn(VGroup(bar_cm, bar_rel, lb, chao_b)), run_time=1.4)   # a câmera passa a andar com o ⊕
+        self.em("Os dois chegam")
+        self.play(t.animate(rate_func=linear).set_value(0.0), run_time=self.ate_fala("e param", 1.2))
+        self.play(Flash(P3(XF, ty + 0.4), color=WHITE_, line_length=0.2, flash_radius=0.1, num_lines=10), t.animate(rate_func=linear).set_value(0.1),
+                  mrg.animate.set_value(1.0), run_time=0.5)
+        self.em("Toda a energia relativa")
+        self.play(bar_rel.animate.set_fill(HEAT), run_time=0.5)
+        self.play(bar_rel.animate.stretch(0.02, 1, about_edge=DOWN).shift(0.6 * UP).set_opacity(0.0), t.animate(rate_func=linear).set_value(0.6), run_time=1.2)   # a relativa vira outra coisa
+        self.em("e a do centro de massa fica")
+        self.play(Indicate(VGroup(bar_cm, lb[0]), color=WHITE_, scale_factor=1.15), run_time=0.8)
+        selo_mod = txt("NO MÓDULO DE COLISÕES", 28, color=DIM).next_to(P3(7.4, -3.3), LEFT, buff=0)
+        chao_ref = txt("VISTO DO CHÃO", 26).move_to(rot_ref)
+        self.em("É isso que a gente")
+        self.play(wref.animate.set_value(0.0), t.animate(rate_func=linear).set_value(1.6), FadeTransform(rot_ref, chao_ref),
+                  FadeIn(selo_mod, shift=0.1 * UP), run_time=1.6)                                 # de volta ao chão; o selo fica ≥ 1,5 s na tela
+        self.em("módulo de colisões")
+        self.play(Indicate(selo_mod, color=WHITE_, scale_factor=1.06), t.animate(rate_func=linear).set_value(2.0), run_time=0.8)
+        self.ate(0.97)
+        cv.clear_updaters()
+
+    def en2(self):
+        self.an("EN2")
         velhos = self.snap()
         self.secao(None)
         logo = self.logo(5.4).move_to(P3(0, 0.75))
         aneis = VGroup(*[Circle(radius=r).move_to(P3(0, 0.75)).set_stroke(BLUE_L, 2, opacity=o) for r, o in ((2.5, 0.25), (2.9, 0.15))])
         ins = txt("INSCREVA-SE PARA ACOMPANHAR OS PRÓXIMOS VÍDEOS", 32, bold=True).move_to(P3(0, -3.0))
         self.troca(velhos, FadeIn(logo, scale=0.95), FadeIn(aneis), seq=True)
-        self.ate(0.2)
+        self.em("se inscreve")
         self.play(FadeIn(ins, shift=0.1 * UP), aneis.animate.scale(1.06).set_stroke(opacity=0.3), run_time=0.9)
-        self.ate(0.6)
-        self.play(aneis.animate.scale(1 / 1.06), run_time=1.2)
+        self.em("Até a próxima")
+        self.play(aneis.animate.scale(1 / 1.06), run_time=1.0)
         self.ate(0.97)
-        self.en2()
-        self.en3()
-
-    def en2(self):
-        """A cena C04 do vídeo de colisões (re-renderizada aqui: mesmas cores e notação) com o ⊕ do par: x_cm = (2x₁ + 1x₂)/3 anda a ⅔ m/s
-        antes, durante e depois da batida, com rastro em degradê e fotos a cada 0,5 s (igualmente espaçadas: velocidade constante)."""
-        self.an("EN2")
-        velhos = self.snap()
-        C1F, C2F = GEO, STEEL
-        m1, m2, u1, u2, vf = 2.0, 1.0, 2.0, -2.0, 2 / 3
-        w1, w2, xc0, ty, kx, ka = 1.0, 0.8, -1.4, -2.25, 0.85, 0.55
-        t = ValueTracker(-2.3)
-        self.add(t)
-        t_ini = -2.3
-        selo = txt("DO VÍDEO DE COLISÕES EM 1D", 26, color=DIM).move_to(P3(0, 2.95))
-        b1, b2 = Corpo("m_1", C1F, w1), Corpo("m_2", C2F, w2)
-
-        def xs(tt):
-            if tt < 0:
-                return xc0 - w1 / 2 + u1 * tt * kx, xc0 + w2 / 2 + u2 * tt * kx
-            return xc0 - w1 / 2 + vf * tt * kx, xc0 + w2 / 2 + vf * tt * kx
-
-        def cena():
-            tt = t.get_value()
-            x1, x2 = xs(tt)
-            g = VGroup(Line(P3(-7.2, ty), P3(7.2, ty)).set_stroke(WHITE_, 2.5, opacity=0.4))
-            g.add(b1.copy().at(x1, ty), b2.copy().at(x2, ty))
-            y0 = ty + 0.32
-            if tt < 0:
-                for x_, w_, v_, n_ in ((x1, w1, u1, r"v_{1i}"), (x2, w2, u2, r"v_{2i}")):
-                    a = seta(P3(x_, y0 + w_), P3(x_ + v_ * ka, y0 + w_), VEL, 5, tip=0.2)
-                    g.add(a, mtex(n_, VEL, 40).next_to(P3(x_ + v_ * ka / 2, y0 + w_), UP, buff=0.12))
-            else:
-                xm = (x1 + x2) / 2
-                g.add(seta(P3(xm, y0 + w1), P3(xm + vf * ka, y0 + w1), VEL, 5, tip=0.2), mtex(r"v_f", VEL, 40).next_to(P3(xm + vf * ka / 2, y0 + w1), UP, buff=0.12))
-            xcm = (m1 * x1 + m2 * x2) / (m1 + m2)
-            ycm = ty - 0.5
-            ts = np.linspace(t_ini, tt, max(2, int((tt - t_ini) * 12)))
-            q = [P3((m1 * xs(s)[0] + m2 * xs(s)[1]) / (m1 + m2), ycm) for s in ts]
-            g.add(rastro_cm(q, w=4, op=0.9))
-            for s in np.arange(t_ini, tt + 1e-9, 0.5):
-                g.add(marcador_cm(P3((m1 * xs(s)[0] + m2 * xs(s)[1]) / (m1 + m2), ycm), r=0.12, op=0.3, leve=True))
-            g.add(marcador_cm(P3(xcm, ycm), r=0.2))
-            ctr1, ctr2 = g[1].front.get_center(), g[2].front.get_center()
-            self.reg("en2", cm=P3(xcm, ycm), media=P3((m1 * ctr1[0] + m2 * ctr2[0]) / (m1 + m2), ycm))
-            return g
-        cv = vivo(cena)
-        self.troca(velhos, FadeIn(selo), FadeIn(cv), seq=True)
-        self.play(t.animate(rate_func=linear).set_value(0.0), run_time=2.3 / 0.9)
-        self.play(Flash(P3(xc0, ty + 0.4), color=WHITE_, line_length=0.2, flash_radius=0.1, num_lines=10), t.animate(rate_func=linear).set_value(0.08), run_time=0.4)
-        self.play(t.animate(rate_func=linear).set_value(1.6), run_time=2.0)
-        Fq, fi = eqp(r"v_f", "=", r"\frac{m_1v_{1i}+m_2v_{2i}}{m_1+m_2}", size=56, cores={0: VEL})
-        fr_ = fi[2]
-        for j in fr_[2:5] + fr_[8:11]:
-            Fq[0][j].set_color(VEL)
-        Fq.move_to(P3(-1.2, 1.25))
-        Nq = mtex(r"=\frac{2\cdot 2+1\cdot(-2)}{3}=\tfrac{2}{3}\ \mathrm{m/s}", WHITE_, 48).next_to(Fq, RIGHT, buff=0.3)
-        self.ate(0.22)
-        self.play(FadeIn(Fq), t.animate(rate_func=linear).set_value(2.0), run_time=0.9)
-        self.ate(0.32)
-        self.play(FadeIn(Nq), run_time=0.8)
-        G2, g2 = eqp("=", r"V_{cm}", size=56, cores={1: VEL})
-        G2.next_to(Fq, DOWN, buff=0.35).align_to(Fq[0][fi[1][0]], LEFT)
-        self.ate(0.42)
-        self.play(TransformByGlyphMap(Fq.copy(), G2, (fi[1], g2[0]), (fi[0], g2[1]), (fi[2], []), auto_fade=True), run_time=1.3)   # ganha "= V_cm"
-        bx = caixa(G2, cor=VEL)
-        self.play(FadeIn(bx), run_time=0.4)
-        # "ele já andava assim antes da batida, e continua igual depois": replay com o ⊕ reto, fotos igualmente espaçadas
-        self.ate(0.6)
-        self.play(t.animate.set_value(-2.3), run_time=0.6)
-        self.play(t.animate(rate_func=linear).set_value(1.9), run_time=max(2.5, 0.78 * self.resta() * 0.25 + 2.5))
-        card = VGroup(txt("JÁ ESTÁ NO CANAL:", 26, color=DIM), txt("COLISÕES EM 1D", 30, bold=True)).arrange(DOWN, buff=0.08, aligned_edge=LEFT)
-        cx_ = RoundedRectangle(corner_radius=0.12, width=card.width + 0.5, height=card.height + 0.4).move_to(card).set_fill(PANEL, 0.9).set_stroke(BLUE_L, 2)
-        cx_._fundo = True
-        cartao_ = VGroup(cx_, card).to_corner(UR, buff=0.5).shift(0.95 * DOWN)            # o canto do cartão final do YouTube
-        self.ate(0.82)
-        self.play(FadeIn(cartao_, shift=0.1 * LEFT), run_time=0.7)
-        self.ate(0.97)
-        cv.clear_updaters()
-
-    def en3(self):
-        self.an("EN3")
-        velhos = self.snap()
-        topo = txt("NO PRÓXIMO VÍDEO: SÓ EXERCÍCIOS", 30, bold=True).move_to(P3(0, 2.85))
-        self.troca(velhos, FadeIn(topo), seq=True)
-        # (1) placa com furo fora do centro; o ⊕ foge do furo
-        c1 = P3(-4.9, 0.1)
-        pl = Difference(Square(2.6).move_to(c1), Circle(radius=0.55).move_to(c1 + P3(0.55, 0.45)))
-        pl.set_fill(["#9AA6B8", "#3A4252"], 1).set_sheen_direction(UP).set_stroke("#7FB2FF", 2, opacity=0.7)
-        pl._degrade = "aco"
-        d_ = -(PI * 0.55 ** 2) / (2.6 ** 2 - PI * 0.55 ** 2) * P3(0.55, 0.45)
-        cm1 = marcador_cm(c1, r=0.17)
-        self.ate(0.18)
-        self.play(FadeIn(pl), FadeIn(cm1), run_time=0.7)
-        self.play(cm1.animate.move_to(c1 + d_ * 2.2), run_time=1.0)                       # foge do furo
-        # (2) fio nas arestas de um cubo (Three.js): o ⊕ flutua fora do fio
-        cb = self.cubo = Cubo3D(self, K=1.95, xc=0.0, yc=0.0, op=0.0)
-        self.add(cb.az, cb.f3d)
-        cmc = vivo(lambda: marcador_cm(self.reg("cubo", cm=cb.p(Cubo3D.CM))["cm"], r=0.17))
-        self.t_cubo = self.clk.get_value()
-        cb.az.add_updater(lambda m, dt=0: m.set_value(-55.0 + 14.0 * (self.clk.get_value() - self.t_cubo)))
-        self.ate(0.32)
-        self.play(cb.f3d.op.animate.set_value(1.0), FadeIn(cmc), run_time=0.8)
-        # (3) gafanhoto numa folha que recua na água
-        c3 = P3(4.9, -0.6)
-        gt = ValueTracker(0.0)
-        self.add(gt)
-
-        def gafa():
-            u = gt.get_value()
-            g = VGroup(Line(P3(2.6, c3[1]), P3(7.3, c3[1])).set_stroke(mix(BLUE_L, 0.3), 2.4, opacity=0.8))
-            g.add(Rectangle(width=4.7, height=1.0).move_to(P3(4.95, c3[1] - 0.5)).set_stroke(width=0).set_fill(BLUE_L, 0.12))
-            folha_x = c3[0] - 0.9 * u
-            folha = Ellipse(width=1.7, height=0.22).move_to(P3(folha_x, c3[1] + 0.02)).set_fill(["#9AA6B8", "#3A4252"], 1).set_sheen_direction(UP) \
-                .set_stroke("#7FB2FF", 1.6, opacity=0.6)
-            folha._degrade = "aco"
-            gx = c3[0] + 1.8 * u
-            gy = c3[1] + 0.25 + 1.8 * u * (1 - u) * 2.2
-            corpo = Ellipse(width=0.62, height=0.2).move_to(P3(gx, gy)).set_fill(["#9AA6B8", "#3A4252"], 1).set_sheen_direction(UP).set_stroke("#7FB2FF", 1.4, opacity=0.6)
-            corpo._degrade = "aco"
-            pern = VGroup(Line(P3(gx - 0.1, gy - 0.05), P3(gx - 0.3, gy + 0.18)).set_stroke("#9AA6B8", 3),
-                          Line(P3(gx - 0.3, gy + 0.18), P3(gx - 0.42, gy - 0.12 - 0.15 * (1 - u))).set_stroke("#9AA6B8", 3),
-                          Dot(P3(gx + 0.33, gy + 0.04), radius=0.07, color="#9AA6B8"))
-            g.add(folha, corpo, pern)
-            return g
-        gv = vivo(gafa)
-        self.ate(0.6)
-        self.play(FadeIn(gv), run_time=0.5)
-        self.play(gt.animate.set_value(1.0), run_time=1.4)                                 # salta; a folha foge dele
-        disco = Difference(Circle(radius=0.55).move_to(P3(-1.0, -2.45)), Circle(radius=0.27).move_to(P3(-0.86, -2.45)))
-        disco.set_fill(["#9AA6B8", "#3A4252"], 1).set_sheen_direction(UP).set_stroke("#7FB2FF", 1.6, opacity=0.6)
-        disco._degrade = "aco"
-        rd = txt("E A RESPOSTA DO DESAFIO", 28).next_to(disco, RIGHT, buff=0.3)
-        self.ate(0.82)
-        self.play(FadeIn(disco), FadeIn(rd), run_time=0.7)
-        prox = txt("PRÓXIMO VÍDEO: CENTRO DE MASSA · EXERCÍCIOS", 32, bold=True, color=CYAN).move_to(P3(0, -3.45))
-        self.ate(0.9)
-        self.play(FadeIn(prox, shift=0.1 * UP), run_time=0.7)
-        self.ate(0.97)
-        cb.az.clear_updaters()

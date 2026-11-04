@@ -3,6 +3,7 @@ que o r3d.js mediu na câmera do Three.js no mesmo quadro (pontos.json); e, no h
 explosão, o comprimento das setas de momento relativo (devem ser iguais).
 Uso: python qa_3d.py X1"""
 import json
+import os
 import sys
 
 import numpy as np
@@ -10,7 +11,7 @@ import numpy as np
 from kit import AQUI
 
 LOTE = sys.argv[1] if len(sys.argv) > 1 else "X1"
-W, H = 960, 540
+W, H = (1920, 1080) if os.environ.get("QA_FINAL") == "1" else (960, 540)   # QA_FINAL=1: sobre o render final 1080p30
 q3d = AQUI / "threejs" / "q3d" / f"{LOTE}_{W}x{H}"
 ov = json.loads((AQUI / f"qa_overlay_{LOTE}.json").read_text(encoding="utf-8"))
 

@@ -21,10 +21,9 @@ EXTRA = {"lote1": ["renders/prancha_PH.png", "renders/prancha_P1.png", "renders/
                    "threejs/cena3d/granada_medidas.json"],
          "teste3d": ["renders/prancha_teste3d.png", "renders/troca_haltere_3d_2d.png", "renders/qa_teste3d.txt", "ficha.md", "kit.py",
                      "sec_teste3d.py", "qa_3d.py", "threejs/cena3d/cm3d.js"],
-         "completo": ["renders/prancha_P*.png", "renders/conferencia_v4.png", "renders/capitulos_completo.txt", "renders/qa.txt",
-                      *[f"renders/conferencia/{q}" for q in ("T1-1_50.png", "T2-4_72.png", "T2-6_84.png", "T2-8_80.png", "T3-2_80.png", "T3-3_50.png",
-                                                              "T3-4_27.png", "T3-6_75.png", "T4-3_80.png", "T4-4_78.png", "E1-2_85.png", "E1-3_90.png",
-                                                              "E2-2_80.png", "E2-4_50.png", "EN2_75.png", "EN3_95.png")],
+         "completo": ["renders/prancha_P*.png", "renders/conferencia_v6.png", "renders/capitulos_completo.txt", "renders/qa.txt",
+                      *[f"renders/conferencia/{q}" for q in ("T3-4_21.png", "T3-4_27.png", "T2-8_80.png", "T2-6_84.png", "EN1_43.png", "EN1_50.png",
+                                                              "EN1_54.png", "EN1_17.png")],
                       "ficha.md", "narracao_sugestao.md", "ancoras.json", "kit.py", "pecas3d.py", "camadas.py", "sec_abertura.py", "sec_t1.py",
                       "sec_t2.py", "sec_t3.py", "sec_t4.py", "sec_final.py", "fundo.py", "threejs/cena3d/cm3d.js", "threejs/cena3d/campo.js",
                       "threejs/cena3d/granada_medidas.json"]}[R]

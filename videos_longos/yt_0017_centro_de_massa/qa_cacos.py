@@ -5,6 +5,7 @@ do mesmo quadro (pedidos3d: estado → projeta3d). No campo de provas o ponto f�
 sai do encaixe no corpo em T_SEP e apoia na linha de contato (G4): esses quadros saem separados. No espaço (exp) o encaixe é físico.
 uso: python qa_cacos.py PH P2"""
 import json
+import os
 import sys
 
 import numpy as np
@@ -12,7 +13,7 @@ import numpy as np
 from kit import AQUI, projeta3d
 from pecas3d import CEN, MED, MS, MT
 
-W, H = 960, 540
+W, H = (1920, 1080) if os.environ.get("QA_FINAL") == "1" else (960, 540)   # QA_FINAL=1: sobre o render final 1080p30
 px = lambda p: np.array([(p[0] + 8) / 16 * W, (4.5 - p[1]) / 9 * H])
 alvo = [m / MT for m in MS]
 fr = [v / MED["vol_corpo"] for v in MED["vol"]]

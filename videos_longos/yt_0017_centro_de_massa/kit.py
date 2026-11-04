@@ -72,13 +72,14 @@ def escuro(c, w):
 
 T_HL, T_MAIN, T_LAB, T_SMALL = 44, 34, 26, 22
 M_MAIN, M_MID, M_REF, M_LAB = 68, 56, 46, 40
-FPS = 15
+FPS = int(round(config.frame_rate))   # 15 no preview, 30 no render final (-r 1920,1080 --fps 30)
 FRAC = 0.02 / FPS            # folga p/ np.arange não criar um quadro extra
 
 AUDITORIA = os.environ.get("AUDITORIA") == "1"
 STILL = float(os.environ["STILL"]) if os.environ.get("STILL") else None   # still num instante (use com -s)
 
 ANC = json.loads((AQUI / "ancoras.json").read_text(encoding="utf-8"))["ancoras"]
+_re_fala = __import__("re").compile(r"\w+")
 
 
 def dur(aid):
@@ -1012,6 +1013,26 @@ class Base(Scene):
         alvo = self._q0 + frac * (self.alvo - self._q0)
         if alvo - self.nq >= 1:
             self.wait((alvo - self.nq) / FPS)
+
+    def fr(self, trecho):
+        """Fração da âncora corrente em que a fala chega a `trecho` (ritmo uniforme de palavras, o mesmo das âncoras)."""
+        w = [x.lower() for x in _re_fala.findall(ANC[self._aid]["fala"])]
+        t = [x.lower() for x in _re_fala.findall(trecho)]
+        a = ANC[self._aid]
+        for i in range(len(w)):
+            if w[i:i + len(t)] == t:
+                if "voz_s" in a:                     # com a voz gravada: a fala ocupa [voz_ini, voz_ini + voz_s] da âncora
+                    return (a["voz_ini"] + i / len(w) * a["voz_s"]) / a["dur"]
+                return i / len(w)
+        raise ValueError(f"'{trecho}' não está na fala de {self._aid}")
+
+    def em(self, trecho, antes=0.15):
+        """Espera até a fala chegar a `trecho` (a tela entra `antes` s antes da palavra)."""
+        self.ate(self.fr(trecho) - antes * FPS / max(1, self.alvo - self._q0))
+
+    def ate_fala(self, trecho, minimo=0.6):
+        """Segundos daqui até a fala chegar a `trecho` (para o run_time de um movimento que acaba na palavra)."""
+        return max(minimo, (self._q0 + self.fr(trecho) * (self.alvo - self._q0) - self.nq) / FPS)
 
     def resta(self):
         """Segundos que faltam para o fim da âncora corrente."""

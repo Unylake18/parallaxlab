@@ -3,6 +3,7 @@ de conferência de todos os lotes), duração por âncora (narração v3.1 × ce
 de 40% de pixels abaixo de luminância 0,03, fora do A1/EN1), EN2 ⊕ × MÉDIA, transição hook → T1 sem salto de brilho, auditorias por lote.
 uso: python qa.py [exceções.txt]"""
 import json
+import os
 import re
 import subprocess
 import sys
@@ -20,12 +21,12 @@ EXC = [l.rstrip() for l in open(sys.argv[1], encoding="utf-8")] if len(sys.argv)
 ANC = json.loads((U / "ancoras.json").read_text(encoding="utf-8"))["ancoras"]
 logs = {c: (U / f"log_{c}.txt").read_text(encoding="utf-8", errors="replace") for c in LOTES}
 run = lambda *a: subprocess.run([PY, *a], capture_output=True, text=True, encoding="utf-8", errors="replace", cwd=U).stdout
-video = lambda c: U / f"media_{c}/videos/cena/540p15/{c}.mp4"
+video = lambda c: U / (f"media_final_{c}/videos/cena/1080p30/{c}.mp4" if os.environ.get("QA_FINAL") == "1" else f"media_{c}/videos/cena/540p15/{c}.mp4")
 anc = {c: [(m.group(1), float(m.group(2))) for m in re.finditer(r"\[ancora\] (\S+) ([0-9.]+)", logs[c])] for c in LOTES}
-W, H = 960, 540
+W, H = (1920, 1080) if os.environ.get("QA_FINAL") == "1" else (960, 540)   # QA_FINAL=1: sobre o render final 1080p30
 px = lambda p: np.array([(p[0] + 8) / 16 * W, (4.5 - p[1]) / 9 * H])
 
-out = ["# yt_0017 · vídeo inteiro (handoff v4 de 2026-10-29) · QA do preview 960×540 / 15 fps", ""]
+out = ["# yt_0017 · vídeo inteiro (handoff v7 de 2026-10-30) · " + ("QA do render final 1920×1080 / 30 fps (auditorias [audit] do preview 960×540 com a mesma cronometragem)" if os.environ.get("QA_FINAL") == "1" else "QA do preview 960×540 / 15 fps"), ""]
 out += ["## Alinhamento Manim × Three.js (quadro a quadro)"]
 for c in LOTES:
     if (U / f"qa_overlay_{c}.json").exists():
@@ -33,10 +34,11 @@ for c in LOTES:
 out += ["", "## Cacos da granada (VOLUME DOS CACOS e CENTROIDE × FÍSICA)"]
 out += [l for l in run("qa_cacos.py", "PH", "P2", "P3", "P5").splitlines() if l.startswith("[cacos]")] + [""]
 
-out += ["## EN2 ⊕ × MÉDIA (⊕ da cena × média ponderada das posições dos blocos, todo quadro)"]
-ov = json.loads((U / "qa_overlay_P5.json").read_text(encoding="utf-8")).get("en2", {})
+out += ["## EN1 ⊕ × MÉDIA e P⃗ no referencial do CM (⊕ da cena × média ponderada dos blocos; soma dos momentos relativos, todo quadro)"]
+ov = json.loads((U / "qa_overlay_P5.json").read_text(encoding="utf-8")).get("en1", {})
 d = [float(np.linalg.norm(px(v["cm"]) - px(v["media"]))) for v in ov.values()]
-out += [f"{len(d)} quadros; pior {max(d):.4f} px" if d else "sem registro"]
+pr_ = [abs(v["p_rel"][0]) for v in ov.values()]
+out += [f"{len(d)} quadros; ⊕ × média: pior {max(d):.4f} px; |Σ mᵢ vᵢ′|: pior {max(pr_):.2e} kg·m/s" if d else "sem registro"]
 ovb = json.loads((U / "qa_overlay_P3.json").read_text(encoding="utf-8")).get("blocos", {})
 db = [float(np.linalg.norm(px(v["cm"]) - px(v["media"]))) for v in ovb.values()]
 out += [f"T3-6 (blocos): {len(db)} quadros; pior {max(db):.4f} px" if db else ""]
@@ -59,7 +61,8 @@ out += [f"T3-6: K antes = ½·2·6² = {0.5 * 2 * 36:g} J; V_cm = 2·6/3 = {2 * 
         f"{abs(-Fr(1, 4) * Fr(1, 4) / Fr(3, 4))} m do centro (não falado)",
         f"E2: X_cm = (75·3 + 150·1,5)/225 = {(75 * 3 + 150 * 1.5) / 225:g} m; 75(−3 + Δx_c) + 150 Δx_c = 0 → Δx_c = {75 * 3 / 225:g} m; Δx_r = {-3 + 1:g} m; "
         f"falta {1.0 - 0.8:.2f} m",
-        f"EN2: V_cm = (2·2 + 1·(−2))/3 = {(2 * 2 - 2) / 3:.4f} m/s = v_f", ""]
+        f"EN1: V_cm = (2·2 + 1·(−2))/3 = {(2 * 2 - 2) / 3:.4f} m/s = v_f; v₁′ = {2 - 2 / 3:.4f}, v₂′ = {-2 - 2 / 3:.4f} m/s; p′ = ±{2 * (2 - 2 / 3):.4f} kg·m/s; "
+        f"K = {0.5 * 2 * 4 + 0.5 * 1 * 4:g} J = {0.5 * 3 * (2 / 3) ** 2:.4f} (CM) + {0.5 * 2 * (4 / 3) ** 2 + 0.5 * 1 * (8 / 3) ** 2:.4f} (relativa) J", ""]
 
 out += ["## Duração por âncora (narração v3.1: palavras e duração a 2,7 palavras/s × duração real da cena)",
         "âncora   palavras   fala (s)   cena (s)   diferença"]

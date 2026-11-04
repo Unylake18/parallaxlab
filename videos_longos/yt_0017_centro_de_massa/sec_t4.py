@@ -80,7 +80,7 @@ class LoteT4(Camadas):
                   run_time=1.5)                                                                                       # Σ → ∫, mᵢ → dm
         bx = caixa(I, cor=CMC)
         self.play(FadeIn(bx), run_time=0.5)
-        lig = VGroup(txt("COMO NO VÍDEO DO IMPULSO:", 24, color=DIM), txt("A SOMA DE RETÂNGULOS VIRA INTEGRAL", 24, color=DIM)).arrange(DOWN, buff=0.08)
+        lig = txt("DA SOMA À INTEGRAL", 26, color=DIM)
         lig.move_to(P3(PALCO_C[0], -3.3))
         self.ate(0.84)
         self.play(FadeIn(lig), run_time=0.7)
@@ -195,7 +195,8 @@ class LoteT4(Camadas):
         self.ate(0.66)
         self.play(FadeIn(mp(E3, i3, [2, 3, 4, 5])), xcm.animate.set_value(4 / 3), run_time=1.6)     # o ⊕ desliza do meio até 1,33 m
         bx = caixa(mp(E3, i3, [5]), cor=CMC)
-        cota_ = VGroup(Line(P3(px(4 / 3), Y - 0.85), P3(px(4 / 3), Y - 0.65)).set_stroke(WHITE_, 2.4), rot("1,33", 30).next_to(P3(px(4 / 3), Y - 0.85), DOWN, buff=0.12))
+        l133 = rot("1,33 m", 32).move_to(P3(px(4 / 3) + 0.25, Y + 1.45))                       # acima da barra, com linha-guia até o ⊕ (longe do "1" do eixo)
+        cota_ = VGroup(DashedLine(l133.get_bottom() + 0.08 * DOWN + 0.25 * LEFT, P3(px(4 / 3), Y + 0.26), dash_length=0.07).set_stroke(WHITE_, 1.6, opacity=0.7), l133)
         self.play(FadeIn(bx), FadeIn(cota_), run_time=0.6)
         self.ate(0.8)
         self.dica_entra(dica("SIMETRIA PRIMEIRO. INTEGRAL SÓ PARA", "O QUE A SIMETRIA NÃO DIZ"))

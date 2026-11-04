@@ -272,8 +272,15 @@ window.CAMPO = (function () {
       estado = g;
       const esc = g.esc || 0.3, chao = !!g.chao;
       U.onda.value = g.onda != null ? g.onda : -1; U.brilho.value = g.brilho || 0;
-      matFace.emissiveIntensity = 0.6 * (g.calor || 0);
-      matFace.color.copy(hex(0x23272F)).lerp(hex(0x3A2418), g.calor || 0);
+      const cal = g.calor || 0;
+      if (window.TRANSP) {                             // no espaço (sem chão que reflita) a face fria não fica preta: aço mais claro + recorte #7FB2FF
+        matFace.color.copy(hex(0x4A5262)).lerp(hex(0x3A2418), cal);
+        matFace.emissive.copy(hex(0x7FB2FF)).lerp(hex(0xFF7A3D), Math.min(1, 3 * cal));
+        matFace.emissiveIntensity = Math.max(0.14, 0.6 * cal);
+      } else {
+        matFace.emissiveIntensity = 0.6 * cal;
+        matFace.color.copy(hex(0x23272F)).lerp(hex(0x3A2418), cal);
+      }
       if (g.cen) {                                     // granada inteira (os três cacos encaixados) + espoleta e alavanca
         let lift = 0;
         if (chao) { const piso = Math.abs(g.cen[0]) < 0.5 ? 0.04 : 0; lift = Math.max(0, piso - (g.cen[1] + esc * ZMIN_CORPO)); }

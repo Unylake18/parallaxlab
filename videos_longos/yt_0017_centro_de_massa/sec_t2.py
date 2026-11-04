@@ -485,6 +485,8 @@ class LoteT2(Camadas):
         resp.move_to(P3(-1.9, 2.75)).set_z_index(30)
         self.play(FadeIn(resp, shift=0.1 * UP), VGroup(f1, B, Rt).animate.set_opacity(OP_FUNDO), self.g_pul.animate(rate_func=there_and_back).set_value(1.0),
                   g.tau.animate(rate_func=linear).set_value(g.ttoque[1] - 1.0), run_time=0.9)            # o pagamento do hook
+        self.em("é o centro de massa")
+        self.play(self.g_pul.animate(rate_func=there_and_back).set_value(1.0), Indicate(resp[1], color=WHITE_, scale_factor=1.3), run_time=0.9)
         self.ate(0.97)
         # T2-8 — o primeiro toque
         self.an("T2-8")
@@ -539,9 +541,9 @@ class LoteT2(Camadas):
         gv = vivo(gelo_cena)
         d10 = cota(X0, X0 + K * 10, YG - 0.55, rot_cota("10 m"))
         self.troca(velhos, FadeIn(gl), FadeIn(gv), FadeIn(d10), seq=True)
-        self.ate(0.1)                                                  # "o centro de massa fica parado para sempre"
+        self.em("o centro de massa fica parado")
         self.play(onda(P3(X0 + K * 4.0, YG + 1.2)), run_time=1.0)
-        self.ate(0.19)                                                 # "a dez metros uma da outra"
+        self.em("a dez metros")
         self.play(Indicate(d10, color=WHITE_, scale_factor=1.08), run_time=0.8)
         # a conta antes do Cyrano: X_cm = (60·0 + 40·10)/100 = 4 m; F_ext = 0 e V_cm = 0 ⇒ X_cm fixo
         Xc, ix = eqp(r"X_{cm}", "=", r"\frac{60\cdot 0+40\cdot 10}{100}", "=", r"4\ \mathrm{m}", size=46, cores={0: CMC, 4: CMC})
@@ -549,7 +551,7 @@ class LoteT2(Camadas):
         fr_ = ix[2]                                                # 6 0 · 0 + 4 0 · 1 0 , barra, 1 0 0
         lab0 = gv.submobjects[0][7]
         lab1 = gv.submobjects[0][8]
-        self.ate(0.25)
+        self.em("O centro de massa está em")
         self.play(TransformFromCopy(lab0[0:2], VGroup(Xc[0][fr_[0]], Xc[0][fr_[1]])), TransformFromCopy(lab1[0:2], VGroup(Xc[0][fr_[5]], Xc[0][fr_[6]])),
                   TransformFromCopy(d10[1][0:2], VGroup(Xc[0][fr_[8]], Xc[0][fr_[9]])),
                   FadeIn(VGroup(*[Xc[0][j] for j in range(len(Xc[0])) if j not in (fr_[0], fr_[1], fr_[5], fr_[6], fr_[8], fr_[9])])), run_time=1.3)
@@ -557,23 +559,31 @@ class LoteT2(Camadas):
         na_conta(L2, 1.4)
         L3 = VGroup(eqp(r"\Rightarrow\ ", r"X_{cm}", size=46, cores={1: CMC})[0], txt("FIXO", 30, bold=True)).arrange(RIGHT, buff=0.18)
         na_conta(L3, 0.6)
-        self.ate(0.36)
-        self.play(FadeIn(L2), FadeOut(d10), run_time=0.7)
-        self.play(FadeIn(L3), run_time=0.6)
-        self.ate(0.45)
-        self.play(u.animate(rate_func=linear).set_value(1.0), run_time=4.0)
+        self.em("dividido por cem")
+        self.play(Circumscribe(mp(Xc, ix, [2]), color=CMC, buff=0.06), run_time=1.0)
         d4 = cota(X0, X0 + K * 4, YG - 0.55, rot_cota("4 m"))
-        self.play(TransformFromCopy(mp(Xc, ix, [4]), d4[1]), FadeIn(d4[0]), run_time=0.9)       # o 4 m da conta desce até a cota
+        self.em("quatro metros da mais pesada")
+        self.play(TransformFromCopy(mp(Xc, ix, [4]), d4[1]), FadeIn(d4[0]), FadeOut(d10), run_time=0.9)       # o 4 m da conta desce até a cota
+        self.em("Ele não se mexe")
+        self.play(FadeIn(L2), run_time=0.6)
+        self.play(FadeIn(L3), run_time=0.5)
+        self.em("então é exatamente ali")
+        self.play(u.animate(rate_func=linear).set_value(1.0), run_time=self.ate_fala("E é por isso", 2.2))   # elas se encontram no ⊕
         d6 = cota(X0 + K * 4, X0 + K * 10, YG - 0.55, rot_cota("6 m"))                          # a mais leve anda mais: 6 m
-        self.ate(0.6)
-        self.play(FadeIn(d6), run_time=0.7)
+        self.play(FadeIn(d6), run_time=0.6)
         # o Cyrano do vídeo anterior: sem still do yt_0016 disponível, entra só o selo e a frase (G18: nunca um ícone de palito)
         C0 = P3(4.3, 0.6)
         tag = txt("DO VÍDEO ANTERIOR", 26, color=DIM).move_to(C0 + P3(0, 0.75))
         cap = VGroup(txt("CYRANO:", 32, bold=True), txt("JOGAR O ÍMÃ PARA CIMA", 30), txt("NÃO FAZ O CONJUNTO SUBIR", 30)).arrange(DOWN, buff=0.14).move_to(C0 + P3(0, -0.35))
-        self.ate(0.72)
-        self.play(FadeOut(VGroup(Xc, L2, L3)), run_time=0.4)
-        self.play(FadeIn(tag), FadeIn(cap), run_time=0.8)
-        self.ate(0.84)
+        self.em("E é por isso")
+        self.play(FadeOut(VGroup(Xc, L2, L3)), FadeIn(tag), run_time=0.6)
+        self.em("ideia antiga do Cyrano")
+        self.play(FadeIn(cap[0]), run_time=0.5)
+        self.em("jogando um ímã para cima")
+        self.play(FadeIn(cap[1]), run_time=0.6)
+        self.em("nunca funciona")
+        self.play(FadeIn(cap[2], shift=0.1 * UP), run_time=0.6)
+        self.em("o centro de massa do conjunto")
         self.dica_entra(dica("O CENTRO DE MASSA SÓ ESCUTA", "A FORÇA EXTERNA"))
+        self.play(Circumscribe(cap[2], color=CYAN, buff=0.08), run_time=1.0)                     # "não sobe"
         self.ate(0.97)

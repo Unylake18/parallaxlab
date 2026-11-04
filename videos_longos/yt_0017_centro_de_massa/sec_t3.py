@@ -17,7 +17,7 @@ def mp(m, idx, partes):
 
 J = lambda idx, *ks: [j for k in ks for j in idx[k]]
 
-LENTO = 0.35                                                       # T3-2…T3-4: os cacos se afastam devagar (ficam no PALCO)
+VT = 0.0105                                                        # T3-2…T3-4: tau por segundo (os cacos se afastam devagar e ficam no PALCO)
 KCM, KREL = 0.5 * MT * Explosao3D.V0 ** 2, sum(Explosao3D.C ** 2 / (2 * m) for m in MS)   # unidades do modelo (só proporção nas barras)
 
 
@@ -61,6 +61,7 @@ class LoteT3(Camadas):
         self.ate_mov(0.97, e.tau, 2.9)
 
     # ── T3-2: a câmera passa a acompanhar o ⊕; v⃗ᵢ = V⃗_cm + v⃗ᵢ′ ──────────────────────────────────────────────
+    # v5: do T3-2 ao T3-4 a explosão anda sozinha (updater em tau, VT por segundo) e cada entrada cai na palavra da fala (self.em)
     def t3_2(self):
         e, T = self.e, self.ex
         self.an("T3-2")
@@ -70,63 +71,72 @@ class LoteT3(Camadas):
         e.K.set_value(K0 + (K1 - K0) * u)
         e.camx.set_value(c0 + (c1 - c0) * u)
         e.dolly = None
-        self.play(e.seg.animate.set_value(1.0), T["w"].animate.set_value(1.0), e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.35), run_time=2.2)
+        e.tau.add_updater(lambda m, dt: m.increment_value(VT * dt))
+        self.play(e.seg.animate.set_value(1.0), run_time=2.0)                                     # "a câmera passa a andar junto"
         self.troca_ref("VISTO DO CENTRO DE MASSA")
         E, ie = eqp(r"\vec v_i", "=", r"\vec V_{cm}", "+", r"\vec v_i'", size=56, cores={0: VEL, 2: VEL, 4: VREL})
         na_conta(E, 1.6)
         vlab = mtex(r"\vec V_{cm}", VEL, 36).move_to(P3(-1.6 + 0.55, 2.45 + 0.32))          # o rótulo do canto (camada)
+        self.em("A parte comum some")
+        self.play(T["w"].animate.set_value(1.0), run_time=1.5)                                    # a parte comum sai das velocidades e vai para o canto
         c1kg = e.corpos()[1][0]
         vr = mtex(r"\vec v_i'", VREL, 40).move_to(c1kg + P3(-0.95, -1.1))
-        self.ate(0.45)
-        self.play(FadeIn(vr), e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.45), run_time=0.5)
-        self.play(FadeIn(mp(E, ie, [0, 1, 3])), TransformFromCopy(vlab, mp(E, ie, [2])), TransformFromCopy(vr, mp(E, ie, [4])),
-                  e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.6), run_time=1.3)
-        self.play(FadeOut(vr), e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.65), run_time=0.4)
+        self.em("e sobra só o movimento")
+        self.play(FadeIn(vr, scale=1.3), run_time=0.6)
+        self.em("Ou seja, a velocidade")
+        self.play(FadeIn(mp(E, ie, [0, 1])), run_time=0.6)
+        self.em("a velocidade do centro de massa mais")
+        self.play(TransformFromCopy(vlab, mp(E, ie, [2])), FadeIn(mp(E, ie, [3])), run_time=0.9)
+        self.em("a velocidade dele em relação")
+        self.play(TransformFromCopy(vr, mp(E, ie, [4])), run_time=0.9)
+        self.play(FadeOut(vr), run_time=0.4)
         self.E32 = E, ie
-        self.ate_mov(0.97, e.tau, tau + LENTO * 0.9)
+        self.ate(0.97)
 
-    # ── T3-3: momentos relativos fecham o triângulo; Σ mᵢv⃗ᵢ′ = 0⃗ ───────────────────────────────────────────
+    # ── T3-3: momentos relativos fecham o triângulo; Σ mᵢv⃗ᵢ′ = 0⃗ (o 0⃗ fica ao lado de P⃗ − P⃗) ─────────────────
     def t3_3(self):
         e, T = self.e, self.ex
         self.an("T3-3")
-        tau = e.tau.get_value()
         E, ie = self.E32
         self.play(T["op_vel"].animate.set_value(0.0), T["op_rel"].animate.set_value(1.0), E.animate.set_opacity(OP_FUNDO).move_to(P3(E.get_center()[0], 2.9)),
-                  e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.08), run_time=1.0)
-        self.ate(0.1)
-        self.play(onda(e.cm(), r=0.3), e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.16), run_time=1.0)   # "se afastam de um ponto parado"
-        self.ate(0.2)
-        self.play(T["op_30"].animate.set_value(1.0), e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.24), run_time=0.8)   # "o mesmo tamanho"
-        self.ate(0.36)
-        self.play(T["op_30"].animate.set_value(0.0), T["u_tri"].animate.set_value(1.0), e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.4), run_time=1.6)
-        self.ate(0.48)
-        self.play(onda(e.corpos()[1][0], r=0.5), e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.48), run_time=0.9)   # o mais leve, mais rápido
-        # a conta
+                  run_time=1.0)
+        self.em("se afastam de um ponto parado")
+        self.play(onda(e.cm(), r=0.3), run_time=1.0)
+        self.em("as três têm o mesmo tamanho")
+        self.play(T["op_30"].animate.set_value(1.0), run_time=0.8)
+        self.em("como os pedaços saem separados")
+        self.play(T["op_30"].animate.set_value(0.0), T["u_tri"].animate.set_value(1.0), run_time=1.6)   # ponta com ponta: fecha o triângulo
+        self.em("só com setas iguais a soma dá zero")
+        self.play(Flash(P3(PALCO_C[0] + 2.9, 0.75), color=MAG, line_length=0.18, flash_radius=0.16, num_lines=10), run_time=0.7)
+        self.em("o pedaço mais leve")
+        self.play(onda(e.corpos()[1][0], r=0.5), run_time=0.9)                                   # o mais leve, mais rápido
+        self.em("as setas podem ter tamanhos diferentes")
+        self.play(LaggedStart(*[onda(c_[0], r=0.45) for c_ in e.corpos()], lag_ratio=0.25), run_time=1.2)
+        self.em("O que vale sempre")
+        self.play(Flash(P3(PALCO_C[0] + 2.9, 0.75), color=MAG, line_length=0.18, flash_radius=0.16, num_lines=10), run_time=0.7)   # somadas, dão zero
         A, ia = eqp(r"\sum_i", r"m_i\vec v_i'", size=52, cores={1: VREL})
         B, ib = eqp("=", r"\sum_i", r"m_i\vec v_i", "-", "M", r"\vec V_{cm}", size=52, cores={2: MAG, 5: VEL})
         C, ic = eqp("=", r"\vec P", "-", r"\vec P", size=52, cores={1: MAG, 3: MAG})
         D, id_ = eqp("=", r"\vec 0", size=52)
         na_conta(A, 1.85)
-        for M_, y_ in ((B, 0.5), (C, -0.6), (D, -1.5)):
+        for M_, y_ in ((B, 0.5), (C, -0.6)):
             M_.move_to(P3(XC0 + 0.55 + M_.width / 2, y_))
-        self.ate(0.56)
-        self.play(FadeIn(A), e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.52), run_time=0.8)
-        self.ate(0.62)
-        self.play(TransformByGlyphMap(A.copy(), B, ([], J(ib, 0)), (J(ia, 0), J(ib, 1)), (J(ia, 1), J(ib, 2)), ([], J(ib, 3, 4, 5)), auto_fade=True),
-                  e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.58), run_time=1.3)
-        self.ate(0.72)
-        self.play(TransformByGlyphMap(B.copy(), C, (J(ib, 0), J(ic, 0)), (J(ib, 1, 2), J(ic, 1)), (J(ib, 3), J(ic, 2)), (J(ib, 4, 5), J(ic, 3))),
-                  e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.64), run_time=1.3)
+        D.next_to(C, RIGHT, buff=0.25)                                                            # o 0⃗ ao lado de P⃗ − P⃗
+        self.em("Agora a conta")
+        self.play(FadeIn(A), run_time=0.8)
+        self.em("dá o momento total menos")
+        self.play(TransformByGlyphMap(A.copy(), B, ([], J(ib, 0)), (J(ia, 0), J(ib, 1)), (J(ia, 1), J(ib, 2)), ([], J(ib, 3, 4, 5)), auto_fade=True), run_time=1.3)
+        self.em("Mas isso é o momento")
+        self.play(TransformByGlyphMap(B.copy(), C, (J(ib, 0), J(ic, 0)), (J(ib, 1, 2), J(ic, 1)), (J(ib, 3), J(ic, 2)), (J(ib, 4, 5), J(ic, 3))), run_time=1.3)
         rs = VGroup(risco(mp(C, ic, [1]), WHITE_, 3), risco(mp(C, ic, [3]), WHITE_, 3))
-        self.ate(0.8)
-        self.play(Create(rs), e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.68), run_time=0.6)
-        self.play(TransformByGlyphMap(C.copy(), D, (J(ic, 0), J(id_, 0)), (J(ic, 1, 2, 3), J(id_, 1))), FadeOut(rs),
-                  e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.74), run_time=1.0)
+        self.em("ele mesmo")
+        self.play(Create(rs), run_time=0.5)
+        self.play(TransformByGlyphMap(C.copy(), D, (J(ic, 0), J(id_, 0)), (J(ic, 1, 2, 3), J(id_, 1))), run_time=1.0)
         bx = caixa(D, cor=MAG)
-        self.ate(0.88)
-        self.play(FadeIn(bx), e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.78), run_time=0.5)
-        self.ate_mov(0.97, e.tau, tau + LENTO * 0.85)
-        self.c33 = VGroup(A, B, C, bx)
+        self.em("o momento do sistema é sempre zero")
+        self.play(FadeIn(bx), Indicate(D, color=WHITE_, scale_factor=1.12), run_time=0.8)
+        self.ate(0.97)
+        self.c33 = VGroup(A, B, C, rs, bx)
         self.zero, self.zero_i = D, id_
 
     # ── T3-4: K = ½ M V²_cm + K_rel; barras ─────────────────────────────────────────────────────────────────
@@ -163,58 +173,70 @@ class LoteT3(Camadas):
     def t3_4(self):
         e, T = self.e, self.ex
         self.an("T3-4")
-        tau = e.tau.get_value()
-        self.play(FadeOut(self.c33), self.zero.animate.set_opacity(OP_FUNDO).move_to(P3(6.75, 3.25)), self.E32[0].animate.set_opacity(0.0),
-                  e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.04), run_time=0.7)
+        z_src = self.zero.copy()                                                                  # o 0⃗ do T3-3, no lugar dele (fonte do TransformFromCopy)
+        self.play(FadeOut(self.c33), FadeOut(self.zero), self.E32[0].animate.set_opacity(0.0), run_time=0.7)
         self.remove(self.E32[0])
         K1, i1 = eqp("K", "=", r"\tfrac{1}{2}", r"\sum_i", "m_i", r"\big(", r"\vec V_{cm}", "+", r"\vec v_i'", r"\big)^2", size=50,
                      cores={0: KC, 6: VEL, 8: VREL})
         na_conta(K1, 2.2)
-        self.ate(0.04)
-        self.play(FadeIn(K1), e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.1), run_time=0.9)
+        self.play(FadeIn(K1), run_time=0.9)
         K2, i2 = eqp("=", r"\tfrac{1}{2}", "M", r"V_{cm}^2", "+", r"\vec V_{cm}", r"\cdot", r"\sum_i m_i\vec v_i'", size=46, cores={3: VEL, 5: VEL})
         K2b, i2b = eqp("+", r"\tfrac{1}{2}", r"\sum_i m_i v_i'^2", size=46)
         na_conta(K2, 1.05, x0=XC0 + 0.3)
         na_conta(K2b, 0.0, x0=XC0 + 0.3)
-        self.ate(0.12)
+        self.em("aparecem três termos")
         self.play(TransformByGlyphMap(K1.copy(), K2, (J(i1, 1), J(i2, 0)), (J(i1, 2), J(i2, 1)), (J(i1, 6), J(i2, 3)), (J(i1, 0, 3, 4, 5, 7, 8, 9), []),
-                                      ([], J(i2, 2, 4, 5, 6, 7)), auto_fade=True), FadeIn(K2b, shift=0.1 * DOWN),
-                  e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.18), run_time=1.6)
-        # o termo do meio: recebe o 0⃗ do T3-3 e apaga
+                                      ([], J(i2, 2, 4, 5, 6, 7)), auto_fade=True), FadeIn(K2b, shift=0.1 * DOWN), run_time=1.6)
+        # o termo do meio: recebe o 0⃗ do T3-3 (TransformFromCopy) e sai junto com ele
         meio = mp(K2, i2, [5, 6, 7])
-        self.ate(0.22)
-        self.play(meio.animate.set_color(MAG), e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.22), run_time=0.5)
-        z0 = mp(self.zero, self.zero_i, [1])
-        self.play(TransformFromCopy(z0, mp(K2, i2, [7])), e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.28), run_time=0.9)
+        self.em("O do meio carrega")
+        self.play(meio.animate.set_color(MAG), run_time=0.5)
+        self.em("aquela soma que dá zero")
+        chave = Brace(mp(K2, i2, [7]), DOWN, buff=0.06).set_color(MAG)
+        zc = MathTex(r"=\vec 0", font_size=46, color=MAG).next_to(chave, DOWN, buff=0.06)
+        self.play(GrowFromCenter(chave), TransformFromCopy(z_src, zc), run_time=0.9)            # o 0⃗ do T3-3 vai para a chave do termo do meio
+        self.em("então ele some")
+        self.play(mp(K2, i2, [4, 5, 6, 7]).animate.set_opacity(0.0), FadeOut(chave), FadeOut(zc), run_time=0.9)   # sai o termo inteiro, com a chave
+        gl_ = {id(q) for q in K2.family_members_with_points() + K2b.family_members_with_points()}
+        self.remove(*[m for m in self.mobjects if any(id(q) in gl_ for q in m.family_members_with_points())])   # tira as cópias que engrossavam o traço
+        K2, K2b = K2.copy(), K2b.copy()
+        self.add(K2, K2b)
         K3, i3 = eqp("K", "=", r"\tfrac{1}{2}", "M", r"V_{cm}^2", "+", r"\tfrac{1}{2}", r"\sum_i m_i v_i'^2", size=50, cores={0: KC, 4: VEL})
         na_conta(K3, -1.2, x0=1.3)
-        self.ate(0.3)
+        self.em("Sobra uma separação")
         self.play(FadeIn(mp(K3, i3, [0])), TransformFromCopy(mp(K2, i2, [0, 1, 2, 3]), mp(K3, i3, [1, 2, 3, 4])),
-                  TransformFromCopy(mp(K2b, i2b, [0, 1, 2]), mp(K3, i3, [5, 6, 7])), mp(K2, i2, [4, 5, 6, 7]).animate.set_opacity(0.4),
-                  e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.34), run_time=1.4)          # o termo do meio fica para trás
+                  TransformFromCopy(mp(K2b, i2b, [0, 1, 2]), mp(K3, i3, [5, 6, 7])), run_time=1.4)
         K4, i4 = eqp("K", "=", r"\tfrac{1}{2}", "M", r"V_{cm}^2", "+", r"K_{rel}", size=56, cores={0: KC, 4: VEL, 6: KC})
         na_conta(K4, -2.45, x0=XC0 + 0.2)
         bx = caixa(K4, cor=KC)
         defi, idf = eqp(r"K_{rel}", "=", r"\tfrac{1}{2}", r"\sum_i", "m_i", r"\left|\vec v_i-\vec V_{cm}\right|^2", size=46, cores={0: KC})
         na_conta(defi, 1.6, x0=XC0 + 0.2)
-        self.ate(0.42)
-        self.play(TransformByGlyphMap(K3.copy(), K4, *[(J(i3, k), J(i4, k)) for k in range(6)], (J(i3, 6, 7), J(i4, 6))), FadeIn(bx),
-                  e.tau.animate(rate_func=linear).set_value(tau + LENTO * 0.4), run_time=1.3)
         quadro = self.quadro = self.barras(P3(PALCO_C[0], 0.1))
-        self.ate(0.5)
-        self.play(e.f3d.op.animate.set_value(0.0), FadeOut(self.selo_esp), *[FadeOut(m_) for m_ in self._refs.values() if m_ in self.mobjects],
-                  run_time=0.5)                                                                     # os cacos saem; o PALCO vira o painel das energias
-        self.play(FadeIn(quadro), FadeIn(self.kbar), self.kb["cm"].animate.set_value(1.0), run_time=1.0)
-        self.ate(0.6)
-        self.play(self.kb["rel"].animate.set_value(1.0), run_time=1.0)
-        self.ate(0.66)
+        self.em("a energia cinética total")
+        self.play(TransformByGlyphMap(K3.copy(), K4, *[(J(i3, k), J(i4, k)) for k in range(6)], (J(i3, 6, 7), J(i4, 6))), FadeIn(bx),
+                  e.f3d.op.animate.set_value(0.0), FadeOut(self.selo_esp), *[FadeOut(m_) for m_ in self._refs.values() if m_ in self.mobjects], run_time=1.3)
+        e.tau.clear_updaters()                                                                    # os cacos saem; o PALCO vira o painel das energias
+        self.play(FadeIn(quadro), FadeIn(self.kbar), run_time=0.6)
+        self.em("a energia do centro de massa andando")
+        self.play(self.kb["cm"].animate.set_value(1.0), run_time=1.0)                              # sobe quando é nomeada
+        self.em("metade da massa total")
+        self.play(Indicate(mp(K4, i4, [2, 3]), color=WHITE_, scale_factor=1.2), run_time=0.8)
+        self.em("a velocidade dele ao quadrado")
+        self.play(Indicate(mp(K4, i4, [4]), color=WHITE_, scale_factor=1.2), run_time=0.8)
+        self.em("mais a energia cinética do movimento")
+        self.play(self.kb["rel"].animate.set_value(1.0), Indicate(mp(K4, i4, [6]), color=WHITE_, scale_factor=1.15), run_time=1.0)
+        self.em("dos pedaços em relação")
         self.play(FadeOut(VGroup(K1, K2, K2b)), FadeIn(defi, shift=0.1 * DOWN), run_time=0.8)
         nota = cartao("TUDO ENERGIA DE MOVIMENTO:", "NÃO É A ENERGIA INTERNA", "DA TERMODINÂMICA", size=26)
         nota.move_to(P3(PALCO_C[0], -2.75))
-        self.ate(0.74)
+        self.em("Repara: aqui")
         self.play(FadeIn(nota), K3.animate.set_opacity(OP_FUNDO), run_time=0.8)
+        self.em("Não é a energia interna")
+        self.play(Circumscribe(nota, color=HEAT, buff=0.06), run_time=1.0)
+        self.em("aquela das moléculas")
+        self.play(Indicate(nota, color=HEAT, scale_factor=1.04), run_time=1.0)
         self.ate(0.97)
-        self.c34 = VGroup(K3, defi, nota, self.zero)
+        self.c34 = VGroup(K3, defi, nota, mp(K2, i2, [4, 5, 6, 7]))
         self.K4, self.bx4 = K4, bx
 
     # ── T3-5: replay do chão: K do CM parada, K relativa nasce da energia química ─────────────────────────────
@@ -249,7 +271,6 @@ class LoteT3(Camadas):
     # ── T3-6: colisão de blocos; 36 = 24 + 12 J ─────────────────────────────────────────────────────────────
     def t3_6(self):
         self.an("T3-6")
-        e = self.e
         self.kbar.clear_updaters()
         velhos = self.snap()
         Y, S, XC = -2.35, 0.16, -3.35                                  # trilho, tela por metro, ponto do contato
@@ -282,12 +303,13 @@ class LoteT3(Camadas):
             return g
         bv = vivo(blocos)
         self.troca(velhos, FadeIn(bv), seq=True)
-        self.play(tt.animate(rate_func=linear).set_value(0.0), run_time=3.1 * 0.9)
-        self.play(Flash(P3(XC, Y + 0.4), color=WHITE_, line_length=0.2, flash_radius=0.12, num_lines=10), run_time=0.35)
-        self.play(tt.animate(rate_func=linear).set_value(1.2), run_time=1.2)
-        # barras empilhadas (ANTES / DEPOIS), em joules
-        SB, X0 = 0.14, -6.85
-        def barra(y, partes, rot_=True):
+        self.em("Um bloco de dois")
+        self.play(tt.animate(rate_func=linear).set_value(0.0), run_time=self.ate_fala("e eles grudam", 1.5))
+        self.play(Flash(P3(XC, Y + 0.4), color=WHITE_, line_length=0.2, flash_radius=0.12, num_lines=10), tt.animate(rate_func=linear).set_value(0.3), run_time=0.4)
+        self.play(tt.animate(rate_func=linear).set_value(1.2), run_time=1.0)
+        # barras empilhadas (ANTES / DEPOIS), em joules; os rótulos ANTES e DEPOIS sempre à esquerda das barras
+        SB, X0 = 0.14, -5.3
+        def barra(y, partes):
             g, x = VGroup(), X0
             for val, cor, op in partes:
                 r = Rectangle(width=val * SB, height=0.5).set_stroke(width=0).set_fill(cor, op).move_to(P3(x + val * SB / 2, y))
@@ -296,7 +318,8 @@ class LoteT3(Camadas):
                 x += val * SB
             return g
         yA, yD = 1.75, 0.55
-        tA = txt("ANTES", 26).move_to(P3(X0 + 0.55, yA + 0.5))
+        tA = txt("ANTES", 26).next_to(P3(X0, yA), LEFT, buff=0.2)
+        tD = txt("DEPOIS", 26).next_to(P3(X0, yD), LEFT, buff=0.2)
         bA = barra(yA, [(36, KC, 1.0)])
         lA = rot("36 J", 30, BACKGROUND_COLOR).move_to(bA)
         # a conta, cada número saindo do desenho
@@ -306,72 +329,104 @@ class LoteT3(Camadas):
         G4, g4 = eqp(r"K_{rel}", "=", "36", "-", "24", "=", r"12\ \mathrm{J}", size=46, cores={0: KC})
         for M_, y_ in ((G1, 2.3), (G2, 1.15), (G3, 0.0), (G4, -1.15)):
             na_conta(M_, y_)
-        self.play(tt.animate(rate_func=linear).set_value(-3.1), FadeIn(tA), run_time=0.6)          # volta ao ANTES
-        self.ate(0.2)
-        self.play(FadeIn(G1), FadeIn(bA), FadeIn(lA), tt.animate(rate_func=linear).set_value(-2.5), run_time=0.9)
-        self.ate(0.27)
-        self.play(FadeIn(G2), tt.animate(rate_func=linear).set_value(-2.1), run_time=0.9)
-        self.ate(0.33)
-        self.play(FadeIn(G3), tt.animate(rate_func=linear).set_value(-1.7), run_time=0.9)
+        self.em("A energia antes")
+        self.play(tt.animate(rate_func=linear).set_value(-3.1), FadeIn(tA), FadeIn(G1), FadeIn(bA), FadeIn(lA), run_time=0.9)   # volta ao ANTES
+        self.em("A do centro de massa, que anda")
+        self.play(FadeIn(G2), tt.animate(rate_func=linear).set_value(-2.5), run_time=0.9)
+        self.em("a quatro metros por segundo")
+        self.play(Indicate(mp(G2, g2, [4]), color=WHITE_, scale_factor=1.2), run_time=0.8)
+        self.em("com os três quilogramas")
+        self.play(Indicate(mp(G2, g2, [2]), color=WHITE_, scale_factor=1.15), run_time=0.8)
+        self.em("é vinte e quatro joules")
+        self.play(FadeIn(G3), tt.animate(rate_func=linear).set_value(-2.1), run_time=0.9)
         bA2 = barra(yA, [(24, KC, 1.0), (12, mix(KC, 0.35), 1.0)])
         lA2 = VGroup(rot("24 J", 30, BACKGROUND_COLOR).move_to(bA2[0]), rot("12 J", 30, BACKGROUND_COLOR).move_to(bA2[1]))
         sub = VGroup(txt("CENTRO DE MASSA", 24).next_to(bA2[0], DOWN, buff=0.12), txt("RELATIVA", 24).next_to(bA2[1], DOWN, buff=0.12))
-        self.ate(0.4)
+        self.em("Então a energia do movimento relativo")
         self.play(FadeIn(G4), TransformFromCopy(mp(G3, g3, [6]), lA2[0]), ReplacementTransform(bA, bA2), FadeOut(lA), FadeIn(lA2[1]), FadeIn(sub),
-                  tt.animate(rate_func=linear).set_value(-1.3), run_time=1.1)
-        # "Depois do choque, os blocos andam juntos, e sobram exatamente vinte e quatro"
-        self.ate_mov(0.53, tt, 0.0)
-        self.play(Flash(P3(XC, Y + 0.4), color=WHITE_, line_length=0.2, flash_radius=0.12, num_lines=10), run_time=0.35)
-        tD = txt("DEPOIS", 26).move_to(P3(X0 + 0.65, yD - 0.5 - 0.3))
+                  tt.animate(rate_func=linear).set_value(-1.7), run_time=1.1)
+        self.em("Depois do choque")
+        self.play(tt.animate(rate_func=linear).set_value(0.0), run_time=self.ate_fala("e sobram exatamente", 1.0))
+        self.play(Flash(P3(XC, Y + 0.4), color=WHITE_, line_length=0.2, flash_radius=0.12, num_lines=10), tt.animate(rate_func=linear).set_value(0.2), run_time=0.35)
         bD = barra(yD, [(24, KC, 1.0), (12, mix(KC, 0.35), 1.0)])
         lD = VGroup(rot("24 J", 30, BACKGROUND_COLOR).move_to(bD[0]), rot("12 J", 30, BACKGROUND_COLOR).move_to(bD[1]))
         self.play(FadeIn(tD), FadeIn(bD), FadeIn(lD), tt.animate(rate_func=linear).set_value(0.6), run_time=0.8)
-        # os 12 J saem em laranja para DEFORMAÇÃO · AQUECIMENTO · SOM
+        # os 12 J saem em laranja para DEFORMAÇÃO · AQUECIMENTO · SOM (0,25 acima da seta de 4 m/s)
         dest = VGroup(*[txt(s_, 26, color=HEAT) for s_ in ("DEFORMAÇÃO", "AQUECIMENTO", "SOM")]).arrange(DOWN, buff=0.12, aligned_edge=LEFT)
-        dest.move_to(P3(-0.75, -0.6))
+        dest.move_to(P3(-0.75, -0.35))
         laranja = bD[1].copy().set_fill(HEAT, 1)
-        self.ate(0.66)
+        self.em("Os doze joules relativos")
         self.play(Transform(bD[1], laranja), FadeOut(lD[1]), tt.animate(rate_func=linear).set_value(1.2), run_time=0.7)
+        self.em("viraram deformação")
         self.play(bD[1].animate.move_to(dest.get_center()).scale(0.2).set_opacity(0.0), FadeIn(dest, shift=0.2 * RIGHT),
                   tt.animate(rate_func=linear).set_value(2.0), run_time=1.3)
-        self.ate(0.88)
+        self.em("A colisão consumiu")
         self.play(Indicate(G4, color=WHITE_, scale_factor=1.08), tt.animate(rate_func=linear).set_value(2.4), run_time=0.9)   # "consumiu toda a energia relativa"
         self.ate(0.97)
         self.c36 = VGroup(G1, G2, G3, G4, dest, tA, bA2, lA2, sub, tD)
         self.bD, self.lD, self.bv = bD, lD, bv
 
-    # ── T3-7: cadeado ───────────────────────────────────────────────────────────────────────────────────────
+    # ── T3-7: cadeado; com gravidade, a energia do CM muda ao longo da parábola (a miniatura percorre a parábola) ──────────────
     def t3_7(self):
         self.an("T3-7")
         bD, lD = self.bD, self.lD
-        cad = cadeado(s=0.95).move_to(bD[0].get_left() + P3(0.45, 0.08))               # na barra de 24 J
+        cad = cadeado(s=0.95)
+        cad.scale_to_fit_height(0.45).move_to(bD[0].get_left() + P3(0.4, 0.0))                   # na barra de 24 J (≥ 0,35 de altura)
         sem = txt("SEM FORÇA EXTERNA", 28, bold=True).next_to(bD[0], RIGHT, buff=0.3)
-        self.play(FadeOut(VGroup(*self.c36[:4])), run_time=0.5)
-        self.ate(0.04)
-        self.play(Indicate(bD[0], color=WHITE_, scale_factor=1.05), run_time=0.7)
-        self.play(FadeIn(cad, shift=0.2 * DOWN), FadeIn(sem), run_time=0.8)
+        self.play(FadeOut(VGroup(*self.c36[:5])), run_time=0.5)
         f1 = VGroup(txt("SEM FORÇA EXTERNA,", 28), txt("UMA COLISÃO NUNCA PERDE", 28),
                     VGroup(txt("MAIS QUE A", 28), mtex("K", KC, 40), txt("RELATIVA", 28)).arrange(RIGHT, buff=0.12)) \
             .arrange(DOWN, buff=0.14, aligned_edge=LEFT)
-        na_conta(f1, 1.7)
-        self.ate(0.12)
+        na_conta(f1, 1.95)
+        self.em("uma colisão nunca pode perder")
         self.play(FadeIn(f1), run_time=0.8)
-        # "Na granada, a gravidade é externa e faz trabalho": miniatura da granada com o peso; o cadeado abre
-        gx = P3(4.4, 0.1)
-        gran = VGroup(Ellipse(width=0.62, height=0.78).set_fill(["#9AA6B8", "#3A4252"], 1).set_sheen_direction(UP).set_stroke("#7FB2FF", 2, opacity=0.6))
-        gran[0]._degrade = "aco"
+        self.em("a energia do movimento relativo")
+        self.play(Indicate(VGroup(self.c36[6][1], self.c36[7][1], self.c36[8][1]), color=WHITE_, scale_factor=1.08), run_time=0.9)   # os 12 J relativos
+        self.em("A energia do centro de massa")
+        self.play(Indicate(VGroup(self.c36[6][0], self.c36[7][0], self.c36[8][0]), color=WHITE_, scale_factor=1.06), run_time=0.9)   # os 24 J do CM
+        self.em("fica trancada")
+        self.play(Indicate(bD[0], color=WHITE_, scale_factor=1.05), FadeIn(cad, shift=0.2 * DOWN), FadeIn(sem), run_time=0.9)
+        self.em("o conjunto continue andando")
+        self.play(self.b_t.animate(rate_func=linear).set_value(3.4), run_time=1.6)               # os blocos grudados seguem andando
+        self.em("Mas repara na condição")
+        self.play(Indicate(sem, color=WHITE_, scale_factor=1.1), run_time=0.7)
+        # a granada em miniatura percorre a parábola; a barrinha K DO CM desce na subida e sobe na descida (½ M v², com v = (30; 40 − 80u))
+        u = ValueTracker(0.0)
+        self.add(u)
+        gran0 = VGroup(Ellipse(width=0.5, height=0.62).set_fill(["#9AA6B8", "#3A4252"], 1).set_sheen_direction(UP).set_stroke("#7FB2FF", 2, opacity=0.6))
+        gran0[0]._degrade = "aco"
         for k in (-1, 0, 1):
-            gran.add(Line(gx + P3(-0.28, 0.2 * k), gx + P3(0.28, 0.2 * k)).set_stroke("#2A303A", 2).shift(-gx))
-        gran.add(RoundedRectangle(corner_radius=0.03, width=0.22, height=0.12).set_fill("#9AA6B8", 1).set_stroke(width=0).move_to(P3(0, 0.44)))
-        gran.move_to(gx)
-        peso = VGroup(seta(gx + 0.42 * DOWN, gx + 1.2 * DOWN, FC, 7, tip=0.24), mtex(r"M\vec g", FC, 40).next_to(gx + 0.75 * DOWN, RIGHT, buff=0.28))
-        cad2 = cadeado(aberto=True, s=1.0).move_to(gx + P3(-1.4, -0.3))
-        cg = VGroup(txt("COM GRAVIDADE,", 28), txt("O CADEADO ABRE", 28)).arrange(DOWN, buff=0.1).move_to(P3(CONTA_C[0], -1.7))
-        self.ate(0.6)
-        self.play(FadeIn(gran), FadeIn(peso), run_time=0.8)
-        self.ate(0.72)
-        self.play(FadeIn(cad2, shift=0.1 * UP), FadeIn(cg), run_time=0.8)
-        self.ate(0.82)
+            gran0.add(Line(P3(-0.22, 0.16 * k), P3(0.22, 0.16 * k)).set_stroke("#2A303A", 2))
+        gran0.add(RoundedRectangle(corner_radius=0.03, width=0.18, height=0.1).set_fill("#9AA6B8", 1).set_stroke(width=0).move_to(P3(0, 0.35)))
+        XA, XB, YB, HA = 2.4, 5.6, -0.55, 1.4
+        pos = lambda v: P3(XA + (XB - XA) * v, YB + HA * 4 * v * (1 - v))
+        h_k = lambda v: 1.4 * (30 ** 2 + (40 * (1 - 2 * v)) ** 2) / 2500                         # ∝ ½ M |V_cm|²
+        BX, BY = 6.6, -0.6
+        trilha = DashedVMobject(ParametricFunction(pos, t_range=[0, 1]).set_stroke(WHITE_, 2, opacity=0.45), num_dashes=24)
+        lk = VGroup(mtex("K", KC, 36), txt("DO CM", 24)).arrange(RIGHT, buff=0.08).move_to(P3(BX, 1.1))
+
+        def mini():
+            v = u.get_value()
+            p_ = pos(v)
+            h = h_k(v)
+            return VGroup(gran0.copy().move_to(p_), seta(p_ + 0.36 * DOWN, p_ + 0.95 * DOWN, FC, 6, tip=0.2),
+                          mtex(r"M\vec g", FC, 36).next_to(p_ + 0.68 * DOWN, RIGHT, buff=0.22),
+                          Rectangle(width=0.36, height=h).set_stroke(width=0).set_fill(KC, 1).move_to(P3(BX, BY + h / 2)),
+                          Line(P3(BX - 0.35, BY), P3(BX + 0.35, BY)).set_stroke(GEO, 2))
+        mv = vivo(mini)
+        cad2 = cadeado(aberto=True, s=1.0)
+        cad2.scale_to_fit_height(0.45).move_to(P3(6.3, -0.3))
+        cg = txt("COM GRAVIDADE, O CADEADO ABRE", 26).move_to(P3(CONTA_C[0], -1.95))
+        self.em("Na granada")
+        m0 = mini()
+        self.play(FadeIn(trilha), FadeIn(m0), FadeIn(lk), run_time=0.7)
+        self.remove(m0)
+        self.add(mv)
+        self.em("faz trabalho")
+        self.play(FadeIn(cad2, shift=0.1 * UP), u.animate(rate_func=linear).set_value(0.5), run_time=max(1.4, self.ate_fala("muda, sim", 1.4)))   # sobe: K do CM desce
+        self.play(u.animate(rate_func=linear).set_value(1.0), FadeIn(cg), run_time=max(1.4, self.ate_fala("ao longo da parábola", 1.4)))         # desce: K do CM sobe
+        self.em("ao longo da parábola")
         self.dica_entra(dica("NUMA COLISÃO, SÓ A ENERGIA", "RELATIVA PODE SE PERDER"))
         self.ate(0.97)
+        mv.clear_updaters()
         self.bv.clear_updaters()
