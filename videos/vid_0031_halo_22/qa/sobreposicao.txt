@@ -1,0 +1,161 @@
+vid_0031 — teste de sobreposição v7 (64 quadros-chave)
+[OK] C01_halo (0.67 s, 2 textos, 0 traços)
+[OK] C01_cristais (6.47 s, 2 textos, 0 traços)
+[OK] C01_raio (8.80 s, 4 textos, 2 traços)
+[OK] C02_raio_no_cristal (11.93 s, 3 textos, 14 traços)
+[OK] C02_lupa (16.07 s, 4 textos, 14 traços)
+[OK] C02_pessoa (19.13 s, 4 textos, 14 traços)
+[OK] C02_paralelas (23.13 s, 4 textos, 14 traços)
+[OK] C02_arcos (26.73 s, 5 textos, 62 traços)
+[OK] C02_igual (27.87 s, 7 textos, 62 traços)
+[OK] C02_22 (29.00 s, 8 textos, 62 traços)
+[OK] C03_arco_iris (33.53 s, 4 textos, 28 traços)
+[OK] C03_vira (35.27 s, 1 textos, 12 traços)
+[OK] C03_halo (36.80 s, 6 textos, 62 traços)
+[OK] C04_frio (44.80 s, 1 textos, 0 traços)
+[OK] C04_globo (48.80 s, 2 textos, 0 traços)
+[OK] C05_inicio (49.40 s, 0 textos, 13 traços)
+[OK] C05_oposta (54.67 s, 5 textos, 29 traços)
+[OK] C05_vizinha (57.07 s, 4 textos, 27 traços)
+[OK] C05_alternada_olho (58.73 s, 3 textos, 29 traços)
+[OK] C05_60 (60.13 s, 6 textos, 31 traços)
+[OK] C05_prisma (60.47 s, 6 textos, 31 traços)
+[OK] C06_b1_snell1 (66.07 s, 3 textos, 50 traços)
+[OK] C06_b1_snell2 (70.80 s, 6 textos, 70 traços)
+[OK] C06_b2_triangulo (75.67 s, 7 textos, 71 traços)
+[OK] C06_b2_eq (77.40 s, 8 textos, 71 traços)
+[OK] C06_b2_r60 (80.60 s, 8 textos, 71 traços)
+[OK] C06_b3_viradas (83.73 s, 8 textos, 50 traços)
+[OK] C06_b4_D1 (84.40 s, 9 textos, 50 traços)
+[OK] C06_b4_D2 (88.33 s, 9 textos, 50 traços)
+[OK] C06_payoff (92.07 s, 10 textos, 50 traços)
+[OK] C07_grafico (98.47 s, 9 textos, 31 traços)
+[OK] C07_meio_do_giro (100.07 s, 10 textos, 32 traços)
+[OK] C07_curva (101.60 s, 10 textos, 32 traços)
+[OK] C07_faixas_chaves (105.07 s, 12 textos, 33 traços)
+[OK] C08_ida_volta_cristal (108.33 s, 12 textos, 61 traços)
+[OK] C08_par_30_53 (112.13 s, 14 textos, 61 traços)
+[OK] C08_coincide (114.40 s, 10 textos, 61 traços)
+[OK] C08_paralelo (115.13 s, 10 textos, 32 traços)
+[OK] C08_simetria (115.87 s, 13 textos, 32 traços)
+[OK] C08_snell_1 (117.60 s, 14 textos, 32 traços)
+[OK] C08_r30 (120.40 s, 16 textos, 34 traços)
+[OK] C08_snell_2 (122.67 s, 16 textos, 34 traços)
+[OK] C08_snell_4 (124.27 s, 16 textos, 34 traços)
+[OK] C08_mf4 (127.40 s, 16 textos, 34 traços)
+[OK] C08_payoff (129.73 s, 17 textos, 34 traços)
+[OK] C09_inicio (131.27 s, 9 textos, 2 traços)
+[OK] C09_pontos (133.27 s, 10 textos, 2 traços)
+[OK] C09_projecao (135.60 s, 10 textos, 2 traços)
+[OK] C09_parede (137.60 s, 10 textos, 2 traços)
+[OK] C09_lado (139.13 s, 4 textos, 58 traços)
+[OK] C09_muita_luz (141.60 s, 5 textos, 62 traços)
+[OK] C09_perto (143.07 s, 6 textos, 64 traços)
+[OK] C09_longe (144.47 s, 7 textos, 62 traços)
+[OK] C09_cone_varre (148.27 s, 3 textos, 13 traços)
+[OK] C09_cone_girando (149.33 s, 0 textos, 13 traços)
+[OK] C09_cone_frente (150.20 s, 0 textos, 13 traços)
+[OK] C09_ceu (151.13 s, 0 textos, 0 traços)
+[OK] C10_zoom_curvas (158.53 s, 12 textos, 3 traços)
+[OK] C10_cores_ceu (162.47 s, 2 textos, 0 traços)
+[OK] C11_sintese (164.40 s, 2 textos, 19 traços)
+[OK] C11_duas_faces (169.80 s, 2 textos, 19 traços)
+[OK] C11_fios (173.27 s, 2 textos, 76 traços)
+[OK] C11_halo (175.33 s, 2 textos, 76 traços)
+[OK] C11_cta (177.20 s, 2 textos, 0 traços)
+
+(e) linhas mistas Text + MathTex: 0 (nada a medir)
+[OK] (f) objetos na cena durante o giro: 45 quadros, min 240, max 240
+[OK] (g) glifos meio transparentes parados > 0,3 s: 0
+(i) raios conferidos nos quadros-chave: 68 (ocorrências listadas acima, por estado)
+
+(j) tempo parado de cada equação (da entrada pronta ao início da saída):
+[OK]  7.00 s  1 · sen i1 = n sen r1  (66.07–73.07 s) · posição [0.2, -1.75]
+[OK]  2.27 s  2 · sen i2 = n sen r2  (70.80–73.07 s) · posição [0.2, -2.95]
+[OK]  2.60 s  120° + r1 + r2 = 180°  (77.40–80.00 s) · posição [0.2, -3.2]
+[ACUSA]  1.27 s  3 · r1 + r2 = 60°  (80.60–81.87 s) · posição [0.2, -3.2]
+[OK]  2.93 s  D = (i1 − r1) + (i2 − r2)  (84.40–87.33 s) · posição [0.2, -3.2]
+[OK]  3.07 s  D = i1 + i2 − (r1 + r2)  (88.33–91.40 s) · posição [0.2, -3.2]
+[ACUSA]  1.27 s  4 · D = i1 + i2 − 60° (payoff)  (92.07–93.33 s) · posição [0.2, -3.2]
+       (q) caderno: \operatorname{sen} i_1 = n\,\operatorname{sen} r_1 — posição final no caderno [-1.59, -0.15]
+       (q) caderno: \operatorname{sen} i_2 = n\,\operatorname{sen} r_2 — posição final no caderno [-1.58, -0.75]
+       (q) caderno: r_1 + r_2 = 60^\circ — posição final no caderno [-1.99, -1.35]
+[OK] 19.67 s  D = i1 + i2 − 60° (topo do caderno)  (95.47–115.13 s) · posição [0.0, 1.2]
+[ACUSA]  0.80 s  r1 + r2 = 60°  (115.87–116.67 s) · posição [-1.94, 0.8]
+[ACUSA]  1.27 s  2r = 60°  (117.27–118.53 s) · posição [-2.45, 0.8]
+[OK]  4.53 s  sen i = n sen r  (117.60–122.13 s) · posição [0.1, -0.8]
+[ACUSA]  1.07 s  sen i = 1,31 · sen 30°  (122.67–123.73 s) · posição [0.1, -0.8]
+[ACUSA]  1.80 s  i = arcsen(0,655) ≈ 40,9°  (124.27–126.07 s) · posição [0.1, -0.8]
+[OK] 10.80 s  D = 2i − 60°  (115.67–126.47 s) · posição [-1.96, 1.45]
+[ACUSA]  1.47 s  D = 2 · 40,9° − 60°  (127.40–128.87 s) · posição [0.0, -0.8]
+[OK] 11.20 s  r = 30°  (119.27–130.47 s) · posição [-2.57, 0.8]
+[ACUSA]  1.07 s  D = 2 · 40,9° − 60° ≈ 21,8° (payoff)  (129.40–130.47 s) · posição [0.0, -0.8]
+
+[OK] (o) oposta: feixe dentro do gelo = 4.50 = 87 % do diâmetro (mínimo 60 %)
+[OK] (o) vizinha: feixe dentro do gelo = 3.46 = 67 % do diâmetro (mínimo 0 %)
+[OK] (o) alternada: feixe dentro do gelo = 4.09 = 79 % do diâmetro (mínimo 60 %)
+[OK] (t) oposta: entrada a s = 0.50 da face (0,3–0,7), Sol a 2.40 do contorno (≥ 2,4)
+[OK] (t) vizinha: entrada a s = 0.50 da face (0,3–0,7), Sol a 2.44 do contorno (≥ 2,4)
+[OK] (t) alternada: entrada a s = 0.56 da face (0,3–0,7), Sol a 2.42 do contorno (≥ 2,4)
+[OK] (s) linhas de visão: máximo 48 (≥ 36)
+[OK] (s) ângulo eixo–linha = 21.84° (22° ± 0,3°; d_min = 21.84°)
+[OK] (s) pessoa: H máx. 2.55 (≥ 1,6; altura total ≈ 17 % da tela)
+[OK] (s) eixo olho → Sol: o Sol em [-1.95, 4.45] (esperado [-1.95, 4.45]); vértice no olho [0.6, -1.55]
+[OK] (r) glifo em meio-tom sobre outro objeto nos 0,5 s em volta de 14 cortes: 0 quadros
+[OK] (u) textos com altura < 14 px (a 540 px): 0
+[OK] (u) título linha 1: 30.3 px (≥ 30)
+[OK] (u) título linha 2: 20.0 px (≥ 20)
+    (u) equações em C06_payoff: altura px, texto, y = [(24.7, '\\operatorname{sen} i_1 = n\\,\\operato', -0.15), (24.7, '\\operatorname{sen} i_2 = n\\,\\operato', -0.75), (25.5, 'r_1 + r_2 = 60^\\circ', -1.35), (39.8, 'D = i_1 + i_2 - 60^\\circ', -3.2)]
+    (u) equações em C07_grafico: altura px, texto, y = [(34.3, 'D = i_1 + i_2 - 60^\\circ', 1.2)]
+    (u) equações em C08_snell_4: altura px, texto, y = [(22.7, 'D = 2i - 60^\\circ', 1.45), (22.7, 'r = 30^\\circ', 0.8), (43.6, 'i = \\arcsin(0{,}655) \\approx 40{,}9^', -0.8)]
+    (u) equações em C08_payoff: altura px, texto, y = [(22.7, 'r = 30^\\circ', 0.8), (34.0, 'i = \\arcsin(0{,}655) \\approx 40{,}9^', 0.15), (36.0, 'D = 2 \\cdot 40{,}9^\\circ - 60^\\circ ', -0.8)]
+[OK] (p) cone: pessoa e vértice em 48 de 48 quadros
+(k) área vazia contígua > 25 % da altura útil em estados > 2 s: medida acima (só aparecem as ocorrências)
+[OK] (p) último quadro do cone × céu do C01 (3D, 2,0 s): diferença média 2.2 %
+[OK] (l) cinza residual no corpo do cristal: 0 quadros
+[OK] (d) cristais 3D no cabeçalho: pior quadro com 0 pixels claros em y > +7
+[OK] (h) quadros pretos > 0,2 s: []; quadros brancos: 0; luminância média mín. 0.058, máx. 0.527
+
+transições de equação: 11
+[OK] C06 MF1: sen i2 = n sen r2 construída da linha 1 a 30 % (quadro 1052): 0 pares de glifos se cruzando
+[OK] C06 MF1: sen i2 = n sen r2 construída da linha 1 a 50 % (quadro 1055): 0 pares de glifos se cruzando
+[OK] C06 MF1: sen i2 = n sen r2 construída da linha 1 a 70 % (quadro 1058): 0 pares de glifos se cruzando
+[OK] C06 MF2: o 120° atravessa o = e junta com o 180° a 30 % (quadro 1204): 0 pares de glifos se cruzando
+[OK] C06 MF2: o 120° atravessa o = e junta com o 180° a 50 % (quadro 1207): 0 pares de glifos se cruzando
+[OK] C06 MF2: o 120° atravessa o = e junta com o 180° a 70 % (quadro 1210): 0 pares de glifos se cruzando
+[OK] C06 MF3: os −r entram no parêntese a 30 % (quadro 1314): 0 pares de glifos se cruzando
+[OK] C06 MF3: os −r entram no parêntese a 50 % (quadro 1318): 0 pares de glifos se cruzando
+[OK] C06 MF3: os −r entram no parêntese a 70 % (quadro 1320): 0 pares de glifos se cruzando
+[OK] C06 MF4: o 60° voa da linha 3 a 30 % (quadro 1375): 0 pares de glifos se cruzando
+[OK] C06 MF4: o 60° voa da linha 3 a 50 % (quadro 1379): 0 pares de glifos se cruzando
+[OK] C06 MF4: o 60° voa da linha 3 a 70 % (quadro 1381): 0 pares de glifos se cruzando
+[OK] C08 MF5: simetria D = 2i − 60° a 30 % (quadro 1731): 0 pares de glifos se cruzando
+[OK] C08 MF5: simetria D = 2i − 60° a 50 % (quadro 1733): 0 pares de glifos se cruzando
+[OK] C08 MF5: simetria D = 2i − 60° a 70 % (quadro 1735): 0 pares de glifos se cruzando
+[OK] C08 MF5: r1 + r2 = 60° → 2r = 60° a 30 % (quadro 1753): 0 pares de glifos se cruzando
+[OK] C08 MF5: r1 + r2 = 60° → 2r = 60° a 50 % (quadro 1756): 0 pares de glifos se cruzando
+[OK] C08 MF5: r1 + r2 = 60° → 2r = 60° a 70 % (quadro 1758): 0 pares de glifos se cruzando
+[OK] C08 MF5: 2r = 60° → r = 30° a 30 % (quadro 1781): 0 pares de glifos se cruzando
+[OK] C08 MF5: 2r = 60° → r = 30° a 50 % (quadro 1784): 0 pares de glifos se cruzando
+[OK] C08 MF5: 2r = 60° → r = 30° a 70 % (quadro 1786): 0 pares de glifos se cruzando
+[OK] C08 MF6: n = 1,31 e r = 30° a 30 % (quadro 1836): 0 pares de glifos se cruzando
+[OK] C08 MF6: n = 1,31 e r = 30° a 50 % (quadro 1838): 0 pares de glifos se cruzando
+[OK] C08 MF6: n = 1,31 e r = 30° a 70 % (quadro 1840): 0 pares de glifos se cruzando
+[OK] C08: 1,31 · sen 30° → i = arcsen(0,655) ≈ 40,9° a 30 % (quadro 1860): 0 pares de glifos se cruzando
+[OK] C08: 1,31 · sen 30° → i = arcsen(0,655) ≈ 40,9° a 50 % (quadro 1862): 0 pares de glifos se cruzando
+[OK] C08: 1,31 · sen 30° → i = arcsen(0,655) ≈ 40,9° a 70 % (quadro 1864): 0 pares de glifos se cruzando
+[OK] C08: o 40,9° voa para D = 2i − 60° a 30 % (quadro 1901): 0 pares de glifos se cruzando
+[ACUSA] C08: o 40,9° voa para D = 2i − 60° a 50 % (quadro 1904): 1 pares de glifos se cruzando
+[OK] C08: o 40,9° voa para D = 2i − 60° a 70 % (quadro 1907): 0 pares de glifos se cruzando
+[OK] C08: ≈ 21,8° a 30 % (quadro 1937): 0 pares de glifos se cruzando
+[OK] C08: ≈ 21,8° a 50 % (quadro 1939): 0 pares de glifos se cruzando
+[OK] C08: ≈ 21,8° a 70 % (quadro 1941): 0 pares de glifos se cruzando
+
+contagem de "22°" e "42°" na tela (quadros-chave):
+    C01_halo: 'halo solar de 22°'
+    C01_cristais: 'halo solar de 22°'
+    C01_raio: 'halo solar de 22°'
+    C02_22: '22°'
+    C03_arco_iris: '42°'
+
+ocorrências: 9

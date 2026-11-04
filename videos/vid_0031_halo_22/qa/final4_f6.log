@@ -1,0 +1,91 @@
+Manim Community v0.21.0
+
+[11/04/26 03:49:23] WARNING  Output format changed to '.mov' to   utils.py:1486
+                             support transparency                              
+[11/04/26 03:50:51] WARNING  The original duration of             scene.py:1131
+                             HaloSol031.wait(), 0.0166667                      
+                             seconds, is too short for the                     
+                             current frame rate of 30 FPS.                     
+                             Rendering with the shortest possible              
+                             duration of 0.0333333 seconds                     
+                             instead.                                          
+[11/04/26 03:57:28] WARNING  The original duration of             scene.py:1131
+                             HaloSol031.wait(), 0.0166667                      
+                             seconds, is too short for the                     
+                             current frame rate of 30 FPS.                     
+                             Rendering with the shortest possible              
+                             duration of 0.0333333 seconds                     
+                             instead.                                          
+                    WARNING  The original duration of             scene.py:1131
+                             HaloSol031.wait(), 0.0166667                      
+                             seconds, is too short for the                     
+                             current frame rate of 30 FPS.                     
+                             Rendering with the shortest possible              
+                             duration of 0.0333333 seconds                     
+                             instead.                                          
+[11/04/26 03:58:17] INFO     Caching disabled.             cairo_renderer.py:81
+[11/04/26 03:58:26] INFO     Animation 232 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0031_halo_22\me                         
+                             dia_f6\videos\cena\1920p3                         
+                             0\partial_movie_files\Hal                         
+                             oSol031\uncached_00232.mo                         
+                             v'                                                
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/04/26 03:58:29] INFO     Animation 233 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0031_halo_22\me                         
+                             dia_f6\videos\cena\1920p3                         
+                             0\partial_movie_files\Hal                         
+                             oSol031\uncached_00233.mo                         
+                             v'                                                
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/04/26 03:58:32] INFO     Animation 234 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0031_halo_22\me                         
+                             dia_f6\videos\cena\1920p3                         
+                             0\partial_movie_files\Hal                         
+                             oSol031\uncached_00234.mo                         
+                             v'                                                
+[11/04/26 03:58:49] INFO     Caching disabled.             cairo_renderer.py:81
+[11/04/26 03:59:41] INFO     Animation 235 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0031_halo_22\me                         
+                             dia_f6\videos\cena\1920p3                         
+                             0\partial_movie_files\Hal                         
+                             oSol031\uncached_00235.mo                         
+                             v'                                                
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/04/26 03:59:44] INFO     Animation 236 : Partial   scene_file_writer.py:192
+                             movie file written in                             
+                             'C:\Users\KaioOrtiz\Pycha                         
+                             rmProjects\manim-fisica\v                         
+                             ideos\vid_0031_halo_22\me                         
+                             dia_f6\videos\cena\1920p3                         
+                             0\partial_movie_files\Hal                         
+                             oSol031\uncached_00236.mo                         
+                             v'                                                
+ATRASOS:
+  1
+  8.69s: bloco anterior terminou em 8.767s
+                    INFO     Combining to Movie file.  scene_file_writer.py:952
+                    INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'C:\Users\KaioOrtiz\Pych                          
+                             armProjects\manim-fisica                          
+                             \videos\vid_0031_halo_22                          
+                             \media_f6\videos\cena\19                          
+                             20p30\HaloSol031.mov'                             
+                                                                               
+                    INFO     Rendered HaloSol031                   scene.py:290
+                             Played 237 animations                             
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

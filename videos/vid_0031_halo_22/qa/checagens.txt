@@ -1,0 +1,24 @@
+vid_0031 — checagens da §10 (fisica.py)
+[OK] d_min(1,31): obtido 21.8393 · esperado 21.84 ± 0.01
+[OK] i1 no mínimo: obtido 40.9196 · esperado 40.92 ± 0.01
+[OK] ângulo crítico: obtido 49.7612 · esperado 49.76 ± 0.01
+[OK] i1 mínimo para transmitir: obtido 13.4652 · esperado 13.47 ± 0.01
+[OK] desvio(20…90): obtido [27.5382, 24.6013, 22.9972, 22.1535, 21.9755, 22.4987, 23.4088, 24.7214, 28.6993, 34.8163, 43.4652] · esperado [27.5, 24.6, 23.0, 22.2, 22.0, 22.5, 23.4, 24.7, 28.7, 34.8, 43.5] ± 0.05
+[OK] vale único: trocas de sinal de dD/di1 = 1; min d²D (convexidade) = 2.250e-07
+[OK] fundo achatado (D < 22,84 ⇔ i1 em): obtido [30.7054, 52.1339] · esperado [30.7, 52.1] ± 0.05
+[OK] pares (direto → invertido): obtido [67.5382, 59.6013, 52.9972, 47.1535, 43.9131, 41.8465, 40.9193] · esperado [67.5, 59.6, 53.0, 47.2, 43.9, 41.9, 40.9] ± 0.06
+[OK] pares (desvio): obtido [27.5382, 24.6013, 22.9972, 22.1535, 21.9131, 21.8465, 21.8393] · esperado [27.5, 24.6, 23.0, 22.2, 21.9, 21.85, 21.84] ± 0.06
+[OK] desvio(par_invertido(a)) == desvio(a) (erro máx.): obtido 0.0 · esperado 0 ± 1e-09
+[OK] d_min(1,307) / d_min(1,317): obtido [21.612, 22.3711] · esperado [21.61, 22.37] ± 0.01
+[OK] face vizinha (A = 120°): reflexão total para todo i1 (901/901 NaN)
+[OK] d_min(1,0): obtido -0.0 · esperado 0 ± 1e-09
+[OK] histograma 2D (24000 aceitos): mínimo 21.8393° (≥ 21.8393°); 46.3% a < 1° do mínimo
+[OK] traçado vetorial (caminho60, i1 14°–88°) × desvio(): obtido 0.0 · esperado 0 ± 1e-09
+[OK] arco-íris: máximo de theta_arco_iris / b/R do máximo: obtido [42.0781, 0.8608] · esperado [42.08, 0.861] ± [0.02, 0.002]
+[OK] projeção 60 orientações (14°–89°): 16 em [D_min; D_min + 1°) pela regra estrita; 0 abaixo de D_min
+[OK] observador D = 21.84°: distância do raio de saída ao olho / ângulo no olho: obtido [0.0, 21.8393] · esperado [0, np.float64(21.839299909773004)] ± [1e-06, 0.01]
+[OK] observador D = 30.00°: distância do raio de saída ao olho / ângulo no olho: obtido [0.0, 30.0] · esperado [0, 30.0] ± [1e-06, 0.01]
+[OK] d_min(1,3079) / d_min(1,3190) (v6, Warren & Brandt 2008): obtido [21.6802, 22.5235] · esperado [21.68, 22.52] ± 0.01
+[OK] i1 no mínimo: vermelho 40.840° (numérico 40.840°), violeta 41.262° (numérico 41.262°): mínimos em i1 diferentes, ambos perto de 40,9°
+
+falhas: nenhuma

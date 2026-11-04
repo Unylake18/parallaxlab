@@ -5,6 +5,7 @@ O estilo padrão reproduz o vid_0002; --style piloto usa o posicionamento e a
 tipografia observados no master aprovado do vid_0001. --style solid mantém o
 padrão do vid_0002 com máscara opaca ampliada para cenas com texto inferior.
 --color-module importa SUBTITLE_TERM_COLORS de uma cena sem inserir tags no SRT.
+--style semcaixa: padrão (negrito, mesma posição) sem a caixa semitransparente, contorno de 3 px (vid_0031).
 --style compacto (vid_0029): Arial regular 23 px em 540, contorno fino e caixa leve, base em ~835 px
 (faixa reservada 760–840 px), para a legenda não disputar atenção com a cena.
 """
@@ -71,7 +72,8 @@ def draw_caption(frame, lines, font, width, height, style, term_colors=None):
     painter = ImageDraw.Draw(overlay)
     pilot = style == "piloto"
     compact = style == "compacto"
-    stroke = round((1 if pilot or compact else 2) * scale)
+    nobox = style == "semcaixa"
+    stroke = round((1 if pilot or compact else 3 if nobox else 2) * scale)
     boxes = [painter.textbbox((0, 0), line, font=font, stroke_width=stroke)
              for line in lines]
     widest = max(box[2] - box[0] for box in boxes)
@@ -82,7 +84,8 @@ def draw_caption(frame, lines, font, width, height, style, term_colors=None):
     top = bottom - len(lines) * line_height
     left = (width - widest) / 2 - 15 * scale
     top_padding = (32 if style == "solid" else 5 if compact else 7) * scale
-    painter.rounded_rectangle(
+    if not nobox:
+      painter.rounded_rectangle(
         (left, top - top_padding, width - left, bottom + 5 * scale),
         radius=round(12 * scale),
         fill=(4, 6, 16, 90 if pilot else 110 if compact else (255 if style == "solid" else 160)),
@@ -179,7 +182,7 @@ def main() -> None:
     parser.add_argument("master", type=Path)
     parser.add_argument("srt", type=Path)
     parser.add_argument("output", type=Path)
-    parser.add_argument("--style", choices=("standard", "piloto", "solid", "compacto"), default="standard")
+    parser.add_argument("--style", choices=("standard", "piloto", "solid", "compacto", "semcaixa"), default="standard")
     parser.add_argument("--color-module", type=Path)
     parser.add_argument("--crf", default="auto", help="qualidade do H.264 (menor = melhor/maior). Padrão 'auto': 14 (joelho medido: abaixo disso o ganho é desprezível; acima, as linhas finas degradam), "
                         "mas nunca mais exigente que o necessário: max(14, CRF do master − 5). Antes era 18/19 fixo.")

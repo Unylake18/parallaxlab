@@ -1,0 +1,23 @@
+{
+  "cristal": {
+    "quadros": 1423,
+    "quadros_no_giro": 47,
+    "erro_max_px": 0.009,
+    "pior_quadro": {
+      "erro": 0.008890616704140477,
+      "quadro": 1406,
+      "t": 93.733
+    },
+    "objetos_na_cena_do_cristal": [
+      10
+    ]
+  },
+  "ceu": {
+    "quadro": 2,
+    "pixels_vermelhos": 990,
+    "dist_ponto_seta_ao_vermelho_px": 0.4950191915471999,
+    "raio_seta_px": 183.7053255733214,
+    "raio_vermelho_px": 183.875,
+    "erro_raio_px": 0.17
+  }
+}
