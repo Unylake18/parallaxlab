@@ -1,0 +1,57 @@
+# yt_0020 — QA do preview v2-parcial (960×540 / 15 fps, sem voz)
+
+## 1. Portão G28 (linhas [audit] da auditoria a cada 3 quadros, dentro de cada play e no estado final)
+- PH: 436 ocorrências em 605 passadas (completa): TEXTO SOBRE OBJETO 203; ENCOSTADO 151; SEM PALCO 76; OBJETO FORA DA MARGEM 6
+- PT1: 2605 ocorrências em 776 passadas (completa): TEXTO SOBRE OBJETO 1030; CHAMADA CRUZA CORPO 774; ENCOSTADO 654; FORA DA ZONA 81; CALHA 47; LINHA ÓRFÃ 16; COR POR TOKEN 2; CAIXA SEM LADO ESQUERDO 1
+- PT2: 1181 ocorrências em 607 passadas (completa): ENCOSTADO 978; TEXTO SOBRE OBJETO 152; FORA DA ZONA 38; CALHA 9; TRÂNSITO 4
+- PT3: 2537 ocorrências em 975 passadas (completa): FORA DA ZONA 1948; TEXTO SOBRE OBJETO 287; RÓTULO SOLTO 148; ENCOSTADO 128; CALHA 10; SOBREPOSICAO 9; SEM PALCO 2; COR POR TOKEN 2; TEXTO SOBRE CAIXA 2
+- PT4: 3538 ocorrências em 1146 passadas (completa): FORA DA ZONA 1188; TEXTO SOBRE OBJETO 1083; ENCOSTADO 610; CALHA 592; TEXTO PEQUENO 57; FORA DA MARGEM 6; SEM PALCO 2
+- PT5: 3098 ocorrências em 1473 passadas (completa): ENCOSTADO 2322; FORA DA ZONA 350; TEXTO SOBRE OBJETO 158; SOBREPOSICAO 108; FORA DA MARGEM 83; CALHA 70; SEM PALCO 5; TEXTO SOBRE CAIXA 2
+- PE1: 12846 ocorrências em 1148 passadas (completa): ENCOSTADO 3834; TEXTO SOBRE OBJETO 3147; CALHA 2651; TEXTO PEQUENO 1853; FORA DA ZONA 1128; SOBREPOSICAO 135; TEXTO SOBRE CAIXA 54; SELO DUPLO 42; FORA DA MARGEM 2
+- PE2: 6906 ocorrências em 983 passadas (completa): TEXTO SOBRE OBJETO 3194; ENCOSTADO 1462; FORA DA ZONA 1295; TEXTO PEQUENO 512; OBJETO FORA DA MARGEM 252; CALHA 106; SELO DUPLO 84; COR POR TOKEN 1
+- PE3: 5533 ocorrências em 1291 passadas (completa): ENCOSTADO 2924; TEXTO PEQUENO 1446; FORA DA ZONA 768; TEXTO SOBRE OBJETO 283; SELO DUPLO 51; CALHA 33; OBJETO FORA DA MARGEM 21; SEM PALCO 6; OPACIDADE 1
+- PS: 4 ocorrências em 403 passadas (completa): SEM PALCO 2; TEXTO SOBRE OBJETO 2
+- TOTAL: 38684 — ENCOSTADO 13063; TEXTO SOBRE OBJETO 9539; FORA DA ZONA 6796; TEXTO PEQUENO 3868; CALHA 3518; CHAMADA CRUZA CORPO 774; OBJETO FORA DA MARGEM 279; SOBREPOSICAO 252; SELO DUPLO 177; RÓTULO SOLTO 148; SEM PALCO 93; FORA DA MARGEM 91; TEXTO SOBRE CAIXA 58; LINHA ÓRFÃ 16; COR POR TOKEN 5; TRÂNSITO 5; CAIXA SEM LADO ESQUERDO 1; OPACIDADE 1
+
+## 2. Auditorias de física
+- RÍGIDO (6143 quadros T1–T5): distâncias ao eixo e entre pontos variam no máx. 0.000 px (≤ 1 px) OK; pontos fora da linha pintada no máx. 0.000 px OK; régua do T1-1 115 quadros, variação 0.000 px OK
+- MESMO ω (T2-3, 260 quadros): Δθ dos três pontos no mesmo Δt diferem no máx. 0.0000° (≤ 0,5°) OK; arcos s ∝ r: [1.634, 3.267, 4.901]
+- MESMO ω (hélice, T4-2): as duas setas usam o mesmo ângulo da pá 0 a cada quadro (761 quadros)
+- ÁREA = ÂNGULO (T3-4, 936 quadros): |área − θ do disco| / θ no máx. 0.0000% (≤ 1%) OK
+- ÁREA COM SINAL (inset T3-4): Δθ final = 0.0000° (≤ 1°) OK; giro total 4π
+- ÁREA = ÂNGULO (E1-3): área do triângulo ∫ω dt = 471.239 rad; contador final 471.239 rad (75.000 voltas) OK; tempo comprimido 30 s → 10 s (fator 3,0)
+- SETAS PROPORCIONAIS hélice: L/r constante (variação 0.0000%) ⇒ razão 0,95/0,10 = 9,5 (±2%) OK
+- SETAS PROPORCIONAIS disco (T4-2): L/(r ω) constante (variação 0.0000%) OK
+- SETAS PROPORCIONAIS T4-6 (559 quadros): a_t = rα e a_c = ω²r (erro máx. 0.00e+00); |a_t|/a_c das setas = valor (erro 2.22e-16); tan φ = |a_t|/a_c (erro máx. 0.0000°, ≤ 1°) OK
+- SETAS PROPORCIONAIS E2-5: a_c coroa : catraca = 0.600 : 1.500 = 1 : 2.500 (1 : 2,5) OK; E1-5 fora desta auditoria (selo FORA DE ESCALA)
+- LIVRO (T5-2): capa esquerda [ 0. -1.  0.] (−y, erro 0.0000°) · direita [1. 0. 0.] (+x, erro 0.0000°) OK; diferença entre as ordens com 90°: 120.00° (120°); eixos desenhados fixos (mesmas setas do laboratório em todos os quadros)
+- T5-4 medidor: 10° → 1.7409° (alvo 1.74°, ±0,01) OK · 5° → 0.4361° (alvo 0.44°, ±0,01) OK · 1° → 0.0175° (alvo 0.017°, ±0,01) OK
+- PRODUTO VETORIAL (T5-6, 1568 quadros, O de z = -0.8 a 0.8): |v⃗| = ω r_⊥ (erro máx. 0.0000%, ≤ 1%) OK; v⃗ independente de O (máx. 0.00e+00; em px ≈ 0.0000 px ≤ 1 px) OK
+- PRODUTO VETORIAL (T5-8, 400 quadros): |α⃗ × r⃗| = |α| r_⊥ e |ω⃗ × (ω⃗ × r⃗)| = ω² r_⊥ (erro máx. 2.50e-16) = a_t e a_c do T4 OK
+- PRODUTO VETORIAL (E3-4): v⃗ de São Paulo × leste: 0.0000° (≤ 0,5°) OK; a_c × plano ⟂ ao eixo: 0.0000° OK; ângulo entre a_c e a radial = 23.55° (|λ| = 23,55°)
+- CORRENTE (2531 quadros): ω₂/ω₁ − 2,5 máx. 4.44e-16 OK; |v_coroa − v_catraca|/v máx. 1.92e-14% (≤ 0,5%) OK; pedal no E2-4: 5.000 voltas (5,00) OK
+- TERRA (E3-2, 740 quadros): direção da estrela nas duas posições varia 0.0000° (≤ 0,2°, setas paralelas) OK; a volta extra desenhada = o avanço orbital desenhado (30°, EXAGERADO)
+- ALIASING: maior giro por quadro = 30.8° (≤ 60°) OK (hélice ×90, ventilador ×30, roda ×4)
+- ORDEM (14 linhas construídas, 77 partes, 6 voos): pares fora de ordem (t_i > t_j + 0,05 s com i à esquerda de j) = 0 OK
+- CAIXA VAZIA (contorno sem conteúdo por > 0,3 s): 0 OK
+- NÚMEROS: 34/34 valores da tela batem com a Conferência numérica do Anexo A (±0,2%) OK
+
+## 3. Alinhamento Three.js × Manim (px)
+- PH hélice: marcadores 10 cm e 95 cm, 569 pares, erro máx. 0.537 px (≤ 2 px) OK
+- PT4 hélice: marcadores 10 cm e 95 cm, 711 pares, erro máx. 0.538 px (≤ 2 px) OK
+- PS hélice: marcadores 10 cm e 95 cm, 243 pares, erro máx. 0.539 px (≤ 2 px) OK
+- PT5 troca disco 2D → 3D (T5-1, quadro 12): ponto de fora 0.127 px, centro 0.000 px (≤ 2 px) OK
+- PT5 ponta de v⃗ = ω⃗ × r⃗ (Three.js × Manim, 1568 quadros): erro máx. 0.017 px OK
+- PE3 São Paulo (geo, E3-4 a E3-6, 1797 quadros): erro máx. 0.000 px OK
+- custo PH: {"lote":"PH","res":"960x540","renderizados":757,"copiados":0,"segundos":97.3,"s_por_quadro":0.1285}
+- custo PT4: {"lote":"PT4","res":"960x540","renderizados":712,"copiados":0,"segundos":79.9,"s_por_quadro":0.1122}
+- custo PT5: {"lote":"PT5","res":"960x540","renderizados":2629,"copiados":1142,"segundos":324.9,"s_por_quadro":0.1236}
+- custo PE3: {"lote":"PE3","res":"960x540","renderizados":435,"copiados":2916,"segundos":56.2,"s_por_quadro":0.1292}
+- custo PS: {"lote":"PS","res":"960x540","renderizados":253,"copiados":0,"segundos":33.9,"s_por_quadro":0.1341}
+
+## 4. Duração por âncora (narração nominal × cena)
+- H1 13.7/13.7 · H2 22.2/22.2 · H3 14.1/14.1 · A1 3.3/3.3 · A2 26.7/26.7 · A3 22.6/22.6 · T1-1 17.8/17.7 · T1-2 33.0/33.0 · T1-3 30.8/30.7 · T1-4 24.4/24.5 · T1-5 27.8/27.8 · T2-1 13.7/13.7 · T2-2 18.5/18.5 · T2-3 21.5/21.5 · T2-4 19.3/19.3 · T2-5 33.7/33.7 · T3-1 14.8/14.9 · T3-2 20.4/20.3 · T3-3 18.2/18.2 · T3-4 63.7/63.7 · T3-5 21.9/21.8 · T3-6 25.9/26.0 · T4-1 34.5/34.4 · T4-2 51.5/51.5 · T4-3 23.3/23.3 · T4-4 17.8/17.8 · T4-5 25.9/25.9 · T4-6 45.6/45.5 · T5-1 26.3/26.3 · T5-2 27.8/27.8 · T5-3 29.6/29.6 · T5-4 25.2/25.2 · T5-5 28.5/28.5 · T5-6 47.4/47.4 · T5-7 13.0/13.0 · T5-8 53.7/53.7 · E1-1 18.9/18.9 · E1-2 27.4/27.4 · E1-3 23.3/23.3 · E1-4 30.4/30.4 · E1-5 47.0/47.1 · E1-6 49.3/49.3 · E2-1 19.3/19.3 · E2-2 26.3/26.3 · E2-3 47.0/47.0 · E2-4 44.5/44.5 · E2-5 32.2/32.3 · E3-1 9.3/9.3 · E3-2 50.8/50.7 · E3-3 43.3/43.3 · E3-4 33.0/33.0 · E3-5 40.0/40.0 · E3-6 47.0/47.0 · S1 30.0/30.1 · S2 16.3/16.3 · EN1 6.3/6.3 · EN2 15.9/15.9
+- total: narração 26.93 min × cena 26.93 min; simulações: E1 30 s → 10 s (×3), desenho ×30; hélice ×90; bicicleta ×4 (tempo real)
+
+## 5. Cor por capítulo e FUNDO (no preview)
+- preview ou capítulos ausentes

@@ -1,0 +1,13 @@
+# yt_0020 — álgebra por âncora (linhas da CONTA)
+
+esc = linha escrita em ordem de x (parte fixa) · esc+voo = com partes que voam do desenho · passo = TransformByGlyphMap · tmt = TransformMatchingTex (fonte) ·
+fade-selo / fade-texto = FadeIn de selo/DICA ou de linha só de texto (permitido). Equação por FadeIn de linha inteira = 0 por construção (play converte).
+
+âncora    esc  esc+voo  passo  tmt  fade-selo  fade-texto
+T3-1        3        0      0    0          0           0
+T3-2        2        0      0    0          0           0
+T3-3        0        1      0    0          0           0
+T3-4        3        1      0    0          0           0
+T3-5        3        1      0    0          0           0
+
+TOTAL: esc 11 · esc+voo 3 · passo 0 · tmt 0 · fade-selo 0 · fade-texto 0

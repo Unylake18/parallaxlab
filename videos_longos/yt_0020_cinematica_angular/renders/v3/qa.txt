@@ -1,0 +1,279 @@
+# yt_0020 — QA do preview v3 (960×540 / 15 fps, sem voz)
+
+## Resumo v3 (cópia do rodapé)
+- G28: FALHA (1 linha(s) com FALHA)
+- ORDEM: OK
+- MOSTRADOR: OK
+- PARADO: OK
+- COLUNA VAZIA: OK
+- TAMANHO: NÃO MEDIDO/PARCIAL
+- COR POR TOKEN: FALHA (1 linha(s) com FALHA)
+- COR OPERADOR: FALHA (1 linha(s) com FALHA)
+- COR POR CAPÍTULO (família e larga): FALHA (9 linha(s) com FALHA)
+- §6 PRODUTO VETORIAL T5-8: OK
+- §6 CAIXA VAZIA (todos os caminhos): FALHA (1 linha(s) com FALHA)
+- §6 FRASE-CHAVE: FALHA (1 linha(s) com FALHA)
+- §6 E1-5 inset: OK
+
+## 1. Portão G28 (linhas [audit] da auditoria a cada 3 quadros, dentro de cada play e no estado final)
+- PH: v1 436 → v2 59 ocorrências em 603 passadas (completa): SEM PALCO 76→38; TEXTO SOBRE OBJETO 203→11; OPACIDADE 0→9; ENCOSTADO 151→1
+    · SEM PALCO  [50.8–53.3, 54.1–57.8 s] 35 passadas → falso positivo: coordenador: A1 (o logo é ImageMobject, a auditoria não o vê) e 3,7 s de cartão de título no A2
+    · SEM PALCO  [0.0–0.2 s] 2 passadas → TRANSITÓRIO: QA: entrada do vídeo (a hélice acende em 0,2 s; quadros 0,0 e 0,2 s)
+    · SEM PALCO  [81.3–81.3 s] 1 passadas → TRANSITÓRIO: QA: troca A2 → A3, 1 passada com o quadro vazio (81,2 s), dentro da abertura (exceção declarada)
+    · TEXTO SOBRE OBJETO '\approx 100\ \mathrm{km/h}' x Circle em [21.4–21.7 s] 4 passadas → TRANSITÓRIO: coordenador: voos '≈ 100/≈ 970 km/h' (V intencional, 0,3 s)
+    · TEXTO SOBRE OBJETO '\approx 100\ \mathrm{km/h}' x VMobject em [21.9–21.9 s] 1 passadas → TRANSITÓRIO: coordenador: voos '≈ 100/≈ 970 km/h' (V intencional, 0,3 s)
+    · TEXTO SOBRE OBJETO '\approx 100\ \mathrm{km/h}' x ArrowTriangleFilledTip em [22.1–22.1 s] 1 passadas → TRANSITÓRIO: coordenador: voos '≈ 100/≈ 970 km/h' (V intencional, 0,3 s)
+    · TEXTO SOBRE OBJETO '\approx 970\ \mathrm{km/h}' x VMobject em [26.5–26.5 s] 1 passadas → TRANSITÓRIO: coordenador: voos '≈ 100/≈ 970 km/h' (V intencional, 0,3 s)
+    · TEXTO SOBRE OBJETO '\approx 970\ \mathrm{km/h}' x Line em [26.6–26.8 s] 3 passadas → TRANSITÓRIO: coordenador: voos '≈ 100/≈ 970 km/h' (V intencional, 0,3 s)
+    · TEXTO SOBRE OBJETO '\approx 970\ \mathrm{km/h}' x ArrowTriangleFilledTip em [27.2–27.2 s] 1 passadas → TRANSITÓRIO: coordenador: voos '≈ 100/≈ 970 km/h' (V intencional, 0,3 s)
+    · ENCOSTADO '\approx 970\ \mathrm{km/h}' x '(95\ \mathrm{cm})' [27.2–27.2 s] 1 passadas → TRANSITÓRIO: coordenador: pouso do voo '≈ 970 km/h' (1 passada, 27,2 s)
+    · OPACIDADE 'ROTAÇÃO' em 0.60 (< 1,00 depois de entrar) [36.6–36.6 s] 1 passadas → REAL
+    · OPACIDADE '2{.}700\\ \\mathrm{RPM}' em 0.60 (< 1,00 depois de entrar) [36.6–36.6 s] 1 passadas → REAL
+    · OPACIDADE 'A' em 0.60 (< 1,00 depois de entrar) [36.6–36.6 s] 1 passadas → REAL
+    · OPACIDADE '10\\ \\mathrm{cm}' em 0.60 (< 1,00 depois de entrar) [36.6–36.6 s] 1 passadas → REAL
+    · OPACIDADE 'DOEIXO' em 0.60 (< 1,00 depois de entrar) [36.6–36.6 s] 1 passadas → REAL
+    · OPACIDADE 'NAPONTA' em 0.60 (< 1,00 depois de entrar) [36.6–36.6 s] 1 passadas → REAL
+    · OPACIDADE '(95\\ \\mathrm{cm})' em 0.60 (< 1,00 depois de entrar) [36.6–36.6 s] 1 passadas → REAL
+    · OPACIDADE '\\approx 100\\ \\mathrm{km/h}' em 0.60 (< 1,00 depois de entrar) [36.6–36.6 s] 1 passadas → REAL
+    · OPACIDADE '\\approx 970\\ \\mathrm{km/h}' em 0.60 (< 1,00 depois de entrar) [36.6–36.6 s] 1 passadas → REAL
+- PT1: v1 2605 → v2 0 ocorrências em 781 passadas (completa)
+- PT2: v1 1181 → v2 7 ocorrências em 622 passadas (completa): ESPREMIDO 0→3; CALHA 9→2; FORA DA ZONA 38→2
+    · CALHA texto 'MESMO' em x 0.60…2.13 [35.3–35.3 s] 1 passadas → REAL
+    · CALHA texto 'PARAOCORPOTODO' em x 0.60…4.76 [35.3–35.3 s] 1 passadas → REAL
+    · ESPREMIDO '282{,}7' no vão entre dois corpos [69.8–69.8, 70.8–70.8, 71.8–71.8 s] 3 passadas → falso positivo: o 282,7 fica dentro do cubo da hélice por desenho; legível, folga visível até as pás (70,8 e 71,8 s)
+- PT3: v1 2547 → v2 34 ocorrências em 983 passadas (completa): TEXTO SOBRE OBJETO 303→27; TRÂNSITO 3→2; TEXTO PEQUENO 0→2; CALHA 12→1; ENCOSTADO 120→1; SOBREPOSICAO 9→1
+    · TEXTO SOBRE OBJETO '\omega' x Circle em [15.5–15.7, 35.4–35.6 s] 4 passadas → TRANSITÓRIO: QA: 1–2 passadas (≤ 0,3 s) em entrada/troca de discos, gráfico e voo; sobreposição visível nos quadros 15,6 / 35,4 / 91,3 / 107,5 / 117,6 / 139,8 s
+    · TEXTO SOBRE OBJETO '\alpha' x Circle em [15.5–15.7 s] 2 passadas → TRANSITÓRIO: QA: 1–2 passadas (≤ 0,3 s) em entrada/troca de discos, gráfico e voo; sobreposição visível nos quadros 15,6 / 35,4 / 91,3 / 107,5 / 117,6 / 139,8 s
+    · TEXTO SOBRE OBJETO '\omega>0' x Line em [35.4–35.4 s] 1 passadas → TRANSITÓRIO: QA: 1–2 passadas (≤ 0,3 s) em entrada/troca de discos, gráfico e voo; sobreposição visível nos quadros 15,6 / 35,4 / 91,3 / 107,5 / 117,6 / 139,8 s
+    · TEXTO SOBRE OBJETO 'GIRANDO' x Line em [35.4–35.4 s] 1 passadas → TRANSITÓRIO: QA: 1–2 passadas (≤ 0,3 s) em entrada/troca de discos, gráfico e voo; sobreposição visível nos quadros 15,6 / 35,4 / 91,3 / 107,5 / 117,6 / 139,8 s
+    · TEXTO SOBRE OBJETO 'MAISRÁPIDO' x Line em [35.4–35.4 s] 1 passadas → TRANSITÓRIO: QA: 1–2 passadas (≤ 0,3 s) em entrada/troca de discos, gráfico e voo; sobreposição visível nos quadros 15,6 / 35,4 / 91,3 / 107,5 / 117,6 / 139,8 s
+    · CALHA desenho VMobjectFromSVGPath em [48.1–48.1 s] 1 passadas → REAL
+    · TRÂNSITO glifo de glifo em cruza glifo em por mais de 2 quadros [90.5–90.7 s] 2 passadas → REAL
+    · TEXTO SOBRE OBJETO '+2\pi' x Polygon em [98.9–99.3 s] 3 passadas → TRANSITÓRIO: QA: 1–2 passadas (≤ 0,3 s) em entrada/troca de discos, gráfico e voo; sobreposição visível nos quadros 15,6 / 35,4 / 91,3 / 107,5 / 117,6 / 139,8 s
+    · TEXTO SOBRE OBJETO '-2\pi' x Polygon em [101.9–102.9, 117.5–117.7 s] 8 passadas → TRANSITÓRIO: QA: 1–2 passadas (≤ 0,3 s) em entrada/troca de discos, gráfico e voo; sobreposição visível nos quadros 15,6 / 35,4 / 91,3 / 107,5 / 117,6 / 139,8 s
+    · TEXTO SOBRE OBJETO '-2\pi' x Line em [106.9–106.9 s] 1 passadas → TRANSITÓRIO: QA: 1–2 passadas (≤ 0,3 s) em entrada/troca de discos, gráfico e voo; sobreposição visível nos quadros 15,6 / 35,4 / 91,3 / 107,5 / 117,6 / 139,8 s
+    · TEXTO SOBRE OBJETO '+2\pi' x VMobject em [117.5–117.7 s] 2 passadas → TRANSITÓRIO: QA: 1–2 passadas (≤ 0,3 s) em entrada/troca de discos, gráfico e voo; sobreposição visível nos quadros 15,6 / 35,4 / 91,3 / 107,5 / 117,6 / 139,8 s
+    · TEXTO SOBRE OBJETO '\omega' x Line em [117.7–117.7 s] 1 passadas → TRANSITÓRIO: QA: 1–2 passadas (≤ 0,3 s) em entrada/troca de discos, gráfico e voo; sobreposição visível nos quadros 15,6 / 35,4 / 91,3 / 107,5 / 117,6 / 139,8 s
+    · ENCOSTADO empilhado '\omega' x '\omega' [117.7–117.7 s] 1 passadas → REAL
+    · TEXTO SOBRE OBJETO '\omega=\omega_0+\alpha t' x VMobjectFromSVGPath em Group[2] [122.7–122.7 s] 1 passadas → TRANSITÓRIO: QA: 1–2 passadas (≤ 0,3 s) em entrada/troca de discos, gráfico e voo; sobreposição visível nos quadros 15,6 / 35,4 / 91,3 / 107,5 / 117,6 / 139,8 s
+    · TEXTO SOBRE OBJETO 'MOVIMENTOEMLINHA' x Circle em [139.7–139.9 s] 2 passadas → TRANSITÓRIO: QA: 1–2 passadas (≤ 0,3 s) em entrada/troca de discos, gráfico e voo; sobreposição visível nos quadros 15,6 / 35,4 / 91,3 / 107,5 / 117,6 / 139,8 s
+    · SOBREPOSICAO '\omega=\omega_0+\alpha t' x 'GIRO' (0.76x0.22) [139.7–139.7 s] 1 passadas → TRANSITÓRIO: QA: 1 passada (139,7 s) na troca para a tabela MESMA MATEMÁTICA
+    · TEXTO PEQUENO 'v=v_0+at' (19 < 36) [140.0–140.0 s] 1 passadas → falso positivo: medido durante a entrada com escala crescente (a linha ainda nem aparece no quadro 140,93 s); no tamanho final nenhuma passada acusa
+    · TEXTO PEQUENO 'v^2=v_0^2+2a\Delta x' (29 < 36) [140.9–140.9 s] 1 passadas → falso positivo: medido durante a entrada com escala crescente (a linha ainda nem aparece no quadro 140,93 s); no tamanho final nenhuma passada acusa
+- PT4: v1 3538 → v2 148 ocorrências em 1180 passadas (completa): TEXTO SOBRE OBJETO 1083→108; FORA DA ZONA 1188→36; TRÂNSITO 0→3; CALHA 592→1
+    · TEXTO SOBRE OBJETO 'r' x Circle em [1.1–6.5 s] 34 passadas → fundo_de_objeto: v3 §6 fundo_de_objeto: o Circle são as camadas do degradê do disco_aco (rótulo na face do disco por desenho; o degradê é fundo do objeto, não objeto)
+    · TEXTO SOBRE OBJETO '\theta' x Circle em [4.1–7.5 s] 21 passadas → fundo_de_objeto: v3 §6 fundo_de_objeto: o Circle são as camadas do degradê do disco_aco (rótulo na face do disco por desenho; o degradê é fundo do objeto, não objeto)
+    · TRÂNSITO glifo de glifo em cruza glifo em por mais de 2 quadros [12.7–12.7, 13.5–13.5, 172.1–172.1 s] 3 passadas → REAL
+    · TEXTO SOBRE OBJETO '\frac{d}{dt}s=\frac{d}{dt}(r\t' x VMobjectFromSVGPath em Group[3] [13.5–13.5 s] 1 passadas → REAL
+    · TEXTO SOBRE OBJETO 'v_t=r\omega' x VMobjectFromSVGPath em Group[4] [24.9–24.9 s] 1 passadas → TRANSITÓRIO: coordenador: cópia de glyph map; QA: quadro 24,93 s visivelmente embaralhado (1 passada)
+    · FORA DA ZONA desenho acima do ESQUEMA VMobject [35.5–35.5, 37.4–37.5, 62.6–62.8, 64.6–64.8 s] 36 passadas → REAL
+    · TEXTO SOBRE OBJETO '282{,}7' x Line em [42.0–42.2, 44.6–45.0 s] 5 passadas → REAL
+    · TEXTO SOBRE OBJETO '\mathrm{rad/s}' x Line em [42.0–42.2, 44.8–44.8 s] 3 passadas → REAL
+    · TEXTO SOBRE OBJETO 'v_2=0{,}95\cdot282{,}7\approx2' x VMobjectFromSVGPath em Group[2] [58.5–58.5 s] 2 passadas → falso positivo: sem sobreposição visível em 58,40 / 58,47 / 58,53 s (cópia do glyph map pousada na própria linha)
+    · TEXTO SOBRE OBJETO 'CÂMERALENTA×90' x VMobject em [63.8–63.8, 67.8–67.8, 69.8–69.8, 71.8–71.8 s] 9 passadas → REAL
+    · TEXTO SOBRE OBJETO '\vec v_A' x Circle em [92.7–93.3, 99.1–99.3, 105.1–105.8 s] 11 passadas → REAL
+    · TEXTO SOBRE OBJETO '\vec v_B' x Circle em [92.9–93.1, 98.9–99.5, 105.5–105.7 s] 9 passadas → REAL
+    · TEXTO SOBRE OBJETO 'v_t=r\omega' x VMobjectFromSVGPath em Group[3] [111.2–111.2 s] 1 passadas → TRANSITÓRIO: coordenador: cópia de glyph map; QA: quadro 24,93 s visivelmente embaralhado (1 passada)
+    · TEXTO SOBRE OBJETO '\frac{d}{dt}v_t=r\,\frac{d}{dt' x VMobjectFromSVGPath em Group[3] [115.2–115.6 s] 3 passadas → TRANSITÓRIO: coordenador: cópia de glyph map; QA: quadro 24,93 s visivelmente embaralhado (1 passada)
+    · TEXTO SOBRE OBJETO 'a_t' x VMobject em [119.9–119.9, 123.2–123.3, 127.3–127.3 s] 4 passadas → REAL
+    · TEXTO SOBRE OBJETO '\varphi' x VMobject em [169.6–169.6, 173.5–173.5, 181.4–181.4 s] 4 passadas → REAL
+    · CALHA texto 'a_c=\omega^2r' em x 0.64…3.03 [188.0–188.0 s] 1 passadas → REAL
+- PT5: v1 3098 → v2 16 ocorrências em 1485 passadas (completa): TEXTO SOBRE OBJETO 158→14; CALHA 70→1; TRÂNSITO 0→1
+    · CALHA texto 'x' em x 0.27…0.48 [55.2–55.2 s] 1 passadas → TRANSITÓRIO: coordenador: rótulo x no deslize (some no meio do deslize)
+    · TEXTO SOBRE OBJETO 'd\vec\theta_1 + d\vec\theta_2' x VMobjectFromSVGPath em Group[2] [104.1–105.3 s] 7 passadas → REAL
+    · TEXTO SOBRE OBJETO '\propto' x VMobjectFromSVGPath em Group[2] [104.7–104.7 s] 1 passadas → REAL
+    · TEXTO SOBRE OBJETO 'DIFERENÇA' x VMobjectFromSVGPath em Group[2] [104.9–104.9 s] 1 passadas → REAL
+    · TRÂNSITO glifo de glifo em cruza glifo em por mais de 2 quadros [213.2–213.2 s] 1 passadas → TRANSITÓRIO: coordenador: troca de lugar dθ⃗₁ ↔ dθ⃗₂ e cópia do v⃗ (1 passada cada)
+    · TEXTO SOBRE OBJETO '\vec a=\vec\alpha\times\vec r+' x VMobjectFromSVGPath em VGroup[5] [237.1–237.9 s] 5 passadas → falso positivo: coordenador: o ind (realce) sobre a própria linha
+- PE1: v1 12846 → v2 5 ocorrências em 1177 passadas (completa): CALHA 2651→3; FORA DA ZONA 1128→1; TEXTO SOBRE OBJETO 3147→1
+    · TEXTO SOBRE OBJETO '\Delta\theta=\omega_0 t+\tfrac' x VMobjectFromSVGPath em Group[3] [75.2–75.2 s] 1 passadas → REAL
+    · CALHA caixa em x 0.61…6.57 [192.9–193.3 s] 2 passadas → TRANSITÓRIO: coordenador: caixa 0,4 s entrando (192,9–193,3 s)
+    · CALHA caixa em x 0.53…6.66 [193.1–193.1 s] 1 passadas → TRANSITÓRIO: coordenador: caixa 0,4 s entrando (192,9–193,3 s)
+- PE2: v1 6906 → v2 791 ocorrências em 1015 passadas (completa): TEXTO SOBRE OBJETO 3194→787; FORA DA ZONA 1295→2; ENCOSTADO 1462→1; COR POR TOKEN 1→1
+    · TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em [13.2–93.1 s] 481 passadas → REAL
+    · TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em [13.2–33.2 s] 118 passadas → REAL
+    · TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em [93.7–93.9, 96.0–97.2, 138.7–138.9, 144.5–144.9 s] 61 passadas → REAL
+    · TEXTO SOBRE OBJETO '\alpha_2' x Arc em [96.0–96.0, 98.7–98.7 s] 2 passadas → TRANSITÓRIO: coordenador: 1 quadro no pico do pulso (96,0 e 98,7 s)
+    · ENCOSTADO '\Delta\theta_1=10\pi\ \mathrm{' x 'VOLTAS' [134.0–134.0 s] 1 passadas → TRANSITÓRIO: coordenador: 1 quadro (134,0 s) na escrita
+    · COR POR TOKEN '2\pi' em #9C8CFF (esperado ['#FFC24D']) [141.8–141.8 s] 1 passadas → REAL
+    · FORA DA ZONA texto da CONTA '=2\pi\cdot0{,}10\approx0{,}63\' (1.31…6.86; 1.12…1.69) [144.1–144.1 s] 1 passadas → REAL
+    · TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em [148.1–169.1 s] 125 passadas → REAL
+- PE3: v1 5533 → v2 2 ocorrências em 1317 passadas (completa): TEXTO SOBRE OBJETO 283→2
+    · TEXTO SOBRE OBJETO '\omega=\frac{2\pi}{T_{\mathrm{' x VMobjectFromSVGPath em Group[2] [96.7–96.7 s] 2 passadas → REAL
+- PS: v1 4 → v2 3 ocorrências em 404 passadas (completa): TEXTO SOBRE OBJETO 2→3
+    · TEXTO SOBRE OBJETO 'CÂMERALENTA×90' x VMobject em [35.3–35.3, 41.3–41.3, 45.3–45.3 s] 3 passadas → REAL
+- TOTAL: v1 38694 → v2 1065 — TEXTO SOBRE OBJETO 9555→953; FORA DA ZONA 6796→41; SEM PALCO 93→38; OPACIDADE 1→9; CALHA 3520→8; TRÂNSITO 7→6; ENCOSTADO 13055→3; ESPREMIDO 0→3; TEXTO PEQUENO 3868→2; SOBREPOSICAO 252→1; COR POR TOKEN 5→1
+- G28: 37 ocorrências únicas REAIS (meta 0) FALHA — por lote: {'PH': 9, 'PT2': 2, 'PT3': 3, 'PT4': 11, 'PT5': 3, 'PE1': 1, 'PE2': 6, 'PE3': 1, 'PS': 1}; 31 TRANSITÓRIAS (aparecem no quadro, ≤ 0,8 s; classificadas pelo coordenador ou pelo QA, ver motivo) — {'PH': 9, 'PT3': 13, 'PT4': 3, 'PT5': 2, 'PE1': 2, 'PE2': 2}; 6 falsos positivos; 2 marcadas fundo_de_objeto (degradê do disco_aco: camadas Circle de fundo, não objeto)
+- Nota QA (não acusado pela auditoria): no PT4 o rótulo θ cruza o raio pintado e os pontos de 4,1 a 4,5 s (quadros 4,13 e 4,40 s); a auditoria só vê θ × Circle (degradê), não θ × Line
+
+## 2. Auditorias de física
+- RÍGIDO (5595 quadros T1–T5, R = |p3 − c| de cada quadro; R por lote: PT1 2.60; PT2 2.60; PT3 2.45; PT4 1.90…2.45; PT5 2.60): |p1 − c| = R/3, |p2 − c| = 2R/3 e |p3 − p1| = 2R/3 com erro máx. 0.000 px (≤ 1 px) OK; pontos fora da linha pintada no máx. 0.000 px OK; régua do T1-1 262 quadros, variação 0.000 px OK
+- MESMO ω (T2-3, 260 quadros): Δθ dos três pontos no mesmo Δt diferem no máx. 0.0000° (≤ 0,5°) OK; arcos s ∝ r: [1.634, 3.267, 4.901]
+- MESMO ω (hélice, T4-2): as duas setas usam o mesmo ângulo da pá 0 a cada quadro (796 quadros)
+- ÁREA = ÂNGULO (T3-4, 958 quadros): |área − θ do disco| / θ no máx. 0.0000% (≤ 1%) OK
+- ÁREA COM SINAL (inset T3-4): Δθ final = 0.0000° (≤ 1°) OK; giro total 4π
+- ÁREA = ÂNGULO (E1-3): área do triângulo ∫ω dt = 471.239 rad; contador final 471.239 rad (75.000 voltas) OK; tempo comprimido 30 s → 10 s (fator 3,0)
+- SETAS PROPORCIONAIS hélice: L/r constante (variação 0.0000%) ⇒ razão 0,95/0,10 = 9,5 (±2%) OK
+- SETAS PROPORCIONAIS disco (T4, t4_acel, 226 quadros): L_at/|a_t| constante (variação 0.0000%), L_v/ω constante = k·r (variação 0.0000%) OK
+- SETAS PROPORCIONAIS T4-6 (349 quadros, r = a_c/ω² = [1.9]): a_t = rα e a_c = ω²r com o mesmo r (|a_t ω² − a_c α| máx. 5.55e-17) OK; |a_t|/a_c das setas = valor (erro 1.11e-16); tan φ = |a_t|/a_c (erro máx. 0.0000°, ≤ 1°) OK
+- SETAS PROPORCIONAIS E2-5: a_c coroa : catraca = 0.220 : 0.550 = 1 : 2.500 (1 : 2,5) OK; E1-5 fora desta auditoria (selo FORA DE ESCALA)
+- LIVRO (T5-2): capa esquerda [ 0. -1.  0.] (−y, erro 0.0000°) · direita [1. 0. 0.] (+x, erro 0.0000°) OK; diferença entre as ordens com 90°: 120.00° (120°); eixos desenhados fixos (mesmas setas do laboratório em todos os quadros)
+- T5-4 medidor: 10° → 1.7409° (alvo 1.74°, ±0,01) OK · 5° → 0.4361° (alvo 0.44°, ±0,01) OK · 1° → 0.0175° (alvo 0.017°, ±0,01) OK; mostrado × calculado: 0.00e+00
+- PRODUTO VETORIAL (T5-6, 1105 quadros, O de z = 0.02 a 0.6): |v⃗| = ω r_⊥ (erro máx. 0.0000%, ≤ 1%) OK; v⃗ independente de O (máx. 0.00e+00; em px ≈ 0.0000 px ≤ 1 px) OK
+- PRODUTO VETORIAL (T5-8, a3d, 430 quadros): a⃗ = α⃗×r⃗ + ω⃗×(ω⃗×r⃗) recalculado de (α, ω, r⃗) × a3d: erro relativo máx. |Δa⃗|/|a⃗| = 0.0000%, α⃗×r⃗ 0.0000%, ω⃗×(ω⃗×r⃗) 0.0000%, a⃗ − (a_t + a_c) 0.0000% (≤ 1%) OK
+- PRODUTO VETORIAL (E3-4): v⃗ de São Paulo × leste: 0.0000° (≤ 0,5°) OK; a_c × plano ⟂ ao eixo: 0.0000° OK; ângulo entre a_c e a radial = 23.55° (|λ| = 23,55°)
+- CORRENTE (2532 quadros): ω₂/ω₁ − 2,5 máx. 4.44e-16 OK; |v_coroa − v_catraca|/v máx. 2.16e-14% (≤ 0,5%) OK; pedal no E2-4: 5.000 voltas (5,00) OK
+- TERRA (E3-2, 735 quadros): direção da estrela nas duas posições varia 0.0000° (≤ 0,2°, setas paralelas) OK; a volta extra desenhada = o avanço orbital desenhado (30°, EXAGERADO)
+- ALIASING: maior giro por quadro = 29.2° em PT1 disco 77.3 s (≤ 60°) OK; acima de 60°: [] (hélice ×90, ventilador ×30, roda ×4)
+- ORDEM (142 linhas construídas, 601 partes, 120 voos): pares fora de ordem (t_i > t_j + 0,05 s com i à esquerda de j) = 0 OK
+- CAIXA VAZIA (contorno sem conteúdo por > 0,3 s; caixas montadas por Prob2.escreve, registro ordem*.caixa): 0 OK. Caixas que entram por outro caminho (passo/pg/FadeIn) não têm registro — NÃO MEDIDAS
+- MOSTRADOR T1-5 (PT1, 281 quadros 115.07–133.73 s do lote, 0 buracos; T1-5 começa em 105.93 s): |mostrador − (Δθ mod 2π)| máx. 0.3782° (arredondado, ≤ 0,5°), 0 quadros fora OK; Δθ final 18.850 rad
+- MOSTRADOR E1-3 (PE1, 812 quadros 46.53–100.60 s do lote, 0 buracos; E1-3 começa em 46.27 s): |mostrador − (Δθ mod 2π)| máx. 1.0000° (piso, −1° < d ≤ 0), 0 quadros fora OK; Δθ final 471.239 rad
+- COR POR TOKEN: 13052 tokens conferidos, 1 fora da tabela, 1 linhas [audit] (meta 0) FALHA; {'PE2': '1 fora'}; MathTex sem partes: 0 (meta 0) OK
+- NÚMEROS: 34/34 valores da tela batem com a Conferência numérica do Anexo A (±0,2%) OK
+
+## 3. Alinhamento Three.js × Manim (px)
+- PH hélice: marcadores 10 cm e 95 cm, 569 pares, erro máx. 0.716 px (≤ 2 px) OK
+- PT4 hélice: marcadores 10 cm e 95 cm + ponta do T4-6 (helice6, 209 quadros), 997 pares, erro máx. 0.632 px (≤ 2 px) OK
+- PS hélice: marcadores 10 cm e 95 cm, 235 pares, erro máx. 0.775 px (≤ 2 px) OK
+- PT5 troca disco 2D → 3D (T5-1, quadro 12): ponto de fora 0.127 px, centro 0.000 px (≤ 2 px) OK
+- PT5 ponta de v⃗ = ω⃗ × r⃗ (Three.js × Manim, 1105 quadros): erro máx. 0.065 px OK
+- PT5 livros (centro e pontas dos eixos x, y dos 2 livros, câmera do pedido × r20.js, 7530 pares em 1255 quadros): erro máx. 0.000 px (≤ 2 px) OK
+- PE3 São Paulo (geo, câmera do overlay K = 2.15, xc = -5.0, yc = -0.7; quadro ≥ 1563, 1788 quadros): erro máx. 0.000 px OK; quadros cuja câmera pedida ao Three.js ≠ câmera geo: 0
+- custo PH: {"lote":"PH","res":"960x540","renderizados":757,"copiados":0,"segundos":114.8,"s_por_quadro":0.1516}
+- custo PT4: {"lote":"PT4","res":"960x540","renderizados":543,"copiados":464,"segundos":83.6,"s_por_quadro":0.154}
+- custo PT5: {"lote":"PT5","res":"960x540","renderizados":2682,"copiados":1111,"segundos":449.1,"s_por_quadro":0.1675}
+- custo PE3: {"lote":"PE3","res":"960x540","renderizados":423,"copiados":2928,"segundos":140.3,"s_por_quadro":0.3317}
+- custo PS: {"lote":"PS","res":"960x540","renderizados":251,"copiados":0,"segundos":50.1,"s_por_quadro":0.1995}
+
+## 4. Duração por âncora (narração nominal × cena)
+- H1 13.7/13.7 · H2 22.2/22.2 · H3 14.1/14.1 · A1 3.3/3.3 · A2 26.7/26.7 · A3 22.6/22.6 · T1-1 17.8/17.7 · T1-2 33.0/33.0 · T1-3 30.8/30.7 · T1-4 24.4/24.5 · T1-5 27.8/27.8 · T2-1 13.7/13.7 · T2-2 18.5/18.5 · T2-3 21.5/21.5 · T2-4 19.3/19.3 · T2-5 33.7/33.7 · T3-1 14.8/14.9 · T3-2 20.4/20.3 · T3-3 18.2/18.2 · T3-4 63.7/63.7 · T3-5 21.9/21.8 · T3-6 25.9/26.0 · T4-1 34.5/34.4 · T4-2 51.5/51.5 · T4-3 23.3/23.3 · T4-4 17.8/17.8 · T4-5 25.9/25.9 · T4-6 45.6/45.5 · T5-1 26.3/26.3 · T5-2 27.8/27.8 · T5-3 29.6/29.6 · T5-4 25.2/25.2 · T5-5 28.5/28.5 · T5-6 47.4/47.4 · T5-7 13.0/13.0 · T5-8 53.7/53.7 · E1-1 18.9/18.9 · E1-2 27.4/27.4 · E1-3 23.3/23.3 · E1-4 30.4/30.4 · E1-5 47.0/47.1 · E1-6 49.3/49.3 · E2-1 19.3/19.3 · E2-2 26.3/26.3 · E2-3 47.0/47.0 · E2-4 44.5/44.5 · E2-5 32.2/32.3 · E3-1 9.3/9.3 · E3-2 50.8/50.7 · E3-3 43.3/43.3 · E3-4 33.0/33.0 · E3-5 40.0/40.0 · E3-6 47.0/47.0 · S1 30.0/30.1 · S2 16.3/16.3 · EN1 6.3/6.3 · EN2 15.9/15.9
+- total: narração 26.93 min × cena 26.93 min; simulações: E1 30 s → 10 s (×3), desenho ×30; hélice ×90; bicicleta ×4 (tempo real)
+
+## 5. Cor por capítulo (mp4 dos lotes) e FUNDO (preview)
+- métrica v2 (§6): tinta = V > 0,45; família = S > 90 e matiz a ≤ 15° de âmbar 40°, violeta 248°, verde 149° ou ciano 192°; 1 quadro por s. Entre parênteses, a métrica do v1 (qualquer tinta saturada)
+- v3 §3: DUAS métricas por capítulo, ambas ≥ 30%: FAMÍLIA (acima) e LARGA = qualquer tinta saturada (V > 0,45, S > 90) que não seja fundo (pixel ≈ fundo_lab) nem aço (azul-acinzentado: matiz 205–255° com S < 150). Azuis de borda de painel muito saturados contam como larga
+- HOOK: FAMÍLIA 14.4% FALHA · LARGA 4.1% FALHA (saturada sem excluir aço/fundo, v1: 22.8%)
+- ABERTURA: FAMÍLIA 18.9% FALHA · LARGA 12.3% FALHA (saturada sem excluir aço/fundo, v1: 23.3%)
+- COMO MEDIR UM GIRO?: FAMÍLIA 23.5% FALHA · LARGA 24.1% FALHA (saturada sem excluir aço/fundo, v1: 40.2%)
+- QUÃO RÁPIDO GIRA?: FAMÍLIA 21.9% FALHA · LARGA 15.0% FALHA (saturada sem excluir aço/fundo, v1: 33.3%)
+- E QUANDO O GIRO ACELERA?: FAMÍLIA 54.1% OK · LARGA 48.5% OK (saturada sem excluir aço/fundo, v1: 61.5%)
+- E CADA PONTO DO CORPO?: FAMÍLIA 16.6% FALHA · LARGA 8.4% FALHA (saturada sem excluir aço/fundo, v1: 27.5%)
+- PARA ONDE APONTA UM GIRO?: FAMÍLIA 30.5% OK · LARGA 30.8% OK (saturada sem excluir aço/fundo, v1: 43.7%)
+- EXERCÍCIO 1 · O VENTILADOR QUE DESLIGA: FAMÍLIA 29.8% FALHA · LARGA 22.9% FALHA (saturada sem excluir aço/fundo, v1: 38.8%)
+- EXERCÍCIO 2 · A CORRENTE DA BICICLETA: FAMÍLIA 18.3% FALHA · LARGA 6.7% FALHA (saturada sem excluir aço/fundo, v1: 23.1%)
+- EXERCÍCIO 3 · QUANTO GIRA A TERRA?: FAMÍLIA 9.7% FALHA · LARGA 35.9% OK (saturada sem excluir aço/fundo, v1: 44.6%)
+- RESUMO: FAMÍLIA 26.5% FALHA · LARGA 20.4% FALHA (saturada sem excluir aço/fundo, v1: 36.7%)
+- ENCERRAMENTO E DESAFIO: FAMÍLIA 34.8% OK · LARGA 35.3% OK (saturada sem excluir aço/fundo, v1: 42.9%)
+- FUNDO: 0/1605 quadros (1 por s) com > 40% dos pixels abaixo de 0,03 (0.0%, ≤ 5%) OK
+
+## 6. Trechos parados, coluna vazia e tamanho (§8, §9 itens 4 e 6)
+- PARADO: quadro sem mudança = menos de 20 px (y 70…525) mudam > 24 níveis do quadro anterior; falha = ≥ 3 s seguidos. Pulsos de destaque e giros contam como mudança. Exceção declarada: abertura (A1–A3, logo/título)
+- COLUNA VAZIA: x > 0,6 u (px ≥ 516), y 70…525, menos de 30 px de tinta; falha = > 5 s seguidos; só nos lotes com ESQUEMA × CONTA
+- PH: PARADO 0 OK · exceção: 54.1–57.7 s (3.6 s, A2) · COLUNA VAZIA n/a (sem CONTA)
+- PT1: PARADO 0 OK · COLUNA VAZIA 0 OK
+- PT2: PARADO 0 OK · COLUNA VAZIA 0 OK
+- PT3: PARADO 0 OK · COLUNA VAZIA 0 OK
+- PT4: PARADO 0 OK · COLUNA VAZIA 0 OK
+- PT5: PARADO 0 OK · COLUNA VAZIA 0 OK
+- PE1: PARADO 0 OK · COLUNA VAZIA 0 OK
+- PE2: PARADO 0 OK · COLUNA VAZIA 0 OK
+- PE3: PARADO 0 OK · COLUNA VAZIA 0 OK
+- PS: PARADO 0 OK · COLUNA VAZIA n/a (sem CONTA)
+- TOTAL: PARADO 0 (meta 0) OK · COLUNA VAZIA 0 (meta 0) OK
+- TAMANHO (objeto principal, área da caixa envolvente ÷ área do ESQUEMA 7,5 × 6,15 u, alvo 55–75%):
+    · disco de referência PT1 (exato, R do overlay): T1-1 59%; T1-2 59%; T1-3 59%; T1-4 59%; T1-5 59%
+    · disco de referência PT2 (exato, R do overlay): T2-1 59%; T2-2 59%; T2-3 59%; T2-4 59%; T2-5 59%
+    · disco de referência PT3 (exato, R do overlay): T3-1 52% FALHA; T3-2 52% FALHA
+    · disco de referência PT4 (exato, R do overlay): T4-1 52% FALHA; T4-2 52% FALHA; T4-3 52% FALHA; T4-4 52% FALHA; T4-5 52% FALHA; T4-6 31%…52% FALHA
+    · disco de referência PT5 (exato, R do overlay): T5-1 59%
+    · hélice PH (exato, pontos.json, sem ESQUEMA; §7.1 pede D ≈ 65% da altura do quadro): D = 351 px = 65% da altura OK
+    · hélice PT4 (exato, pontos.json): D = 310 px → 58% do ESQUEMA OK
+    · hélice PS (exato, pontos.json, sem ESQUEMA; §7.1 pede D ≈ 65% da altura do quadro): D = 379 px = 70% da altura FALHA
+    · demais âncoras (medida indireta no vídeo: caixa envolvente de TODA a tinta dentro do ESQUEMA, maior de 3 amostras a 25/50/75% da âncora; inclui rótulos e setas, então só reprova: < 55% ⇒ o objeto principal é certamente < 55%):
+      PT1: T1-1 80% · T1-2 71% · T1-3 72% · T1-4 61% · T1-5 60%
+      PT2: T2-1 73% · T2-2 76% · T2-3 70% · T2-4 90% · T2-5 70%
+      PT3: T3-1 74% · T3-2 67% · T3-3 85% · T3-4 92% · T3-5 92% · T3-6 64%
+      PT4: T4-1 56% · T4-2 84% · T4-3 71% · T4-4 63% · T4-5 57% · T4-6 81%
+      PT5: T5-1 59% · T5-2 70% · T5-3 66% · T5-4 61% · T5-5 68% · T5-6 69% · T5-7 66% · T5-8 67%
+      PE1: E1-1 93% · E1-2 93% · E1-3 96% · E1-4 96% · E1-5 95% · E1-6 95%
+      PE2: E2-1 90% · E2-2 96% · E2-3 95% · E2-4 87% · E2-5 96%
+      PE3: E3-1 61% · E3-2 80% · E3-3 84% · E3-4 92% · E3-5 94% · E3-6 94%
+    · âncoras com envelope < 55% do ESQUEMA: 0 OK; acima de 75% e objeto isolado: NÃO MEDIDO (só o disco e a hélice têm medida exata)
+- TAMANHOS MÍNIMOS do G1: medidos pela classe TEXTO PEQUENO do G28 (Text < 24; MathTex no ESQUEMA < 36; na CONTA < 46 com '=' e < 34 sem), seção 1. Frase-chave ≥ 30 não é distinguida pela auditoria — NÃO MEDIDO
+## 7. COR OPERADOR, CAIXA VAZIA (todos os caminhos) e §6 do handoff v3
+- COR OPERADOR (v3 §2; corop.py, glifos reconhecidos por forma): d, t, =, +, −, parênteses, ∫, lim e barra de fração brancos; Δ com a cor do glifo seguinte (Δθ âmbar, Δt branco); θ φ λ s âmbar, ω v violeta, α a verde, r GEO; só vale violação que dura ≥ 3 passadas (0,6 s) — voo de glyph map interpola a cor
+    · PH: 16 MathTex, 21 glifos conferidos, 9 violações persistentes FALHA, 0 transitórias (< 0,6 s) e 0 pulsos de destaque (cor esperada clareada, ≤ 1 s) ignorados; ω: 0 glifos, cores [] (alturas 0.000…0.000) OK
+        - 'lim' em #B7C4DA (esperado #F5F7FF) em «1{,}9\ \mathrm{m}» 17.1–50.2 s (H2)
+        - 'lim' em #9C8CFF (esperado #F5F7FF) em «\approx 100\ \mathrm{km/h}» 21.4–50.0 s (H2)
+        - 'lim' em #B8C4D9 (esperado #F5F7FF) em «10\ \mathrm{cm}» 21.7–50.0 s (H2)
+        - 'lim' em #9C8CFF (esperado #F5F7FF) em «\approx 970\ \mathrm{km/h}» 26.5–50.0 s (H2)
+        - '(' em #B8C4DA (esperado #F5F7FF) em «(95\ \mathrm{cm})» 26.5–50.0 s (H2)
+        - 'lim' em #B8C4DA (esperado #F5F7FF) em «(95\ \mathrm{cm})» 26.5–50.0 s (H2)
+    · PT1: 859 MathTex, 406 glifos conferidos, 0 violações persistentes OK, 85 transitórias (< 0,6 s) e 5 pulsos de destaque (cor esperada clareada, ≤ 1 s) ignorados; ω: 0 glifos, cores [] (alturas 0.000…0.000) OK
+    · PT2: 2924 MathTex, 873 glifos conferidos, 1 violações persistentes FALHA, 4 transitórias (< 0,6 s) e 0 pulsos de destaque (cor esperada clareada, ≤ 1 s) ignorados; ω: 971 glifos, cores ['#9C8CFF'] (alturas 0.197…0.299) OK
+        - 'd' em #9C8CFF (esperado #F5F7FF) em «\omega_{m\acute{e}d}=\frac{\Delta\theta}{\Delta t}» 9.5–32.2 s (T2-1)
+    · PT3: 231 MathTex, 402 glifos conferidos, 11 violações persistentes FALHA, 0 transitórias (< 0,6 s) e 0 pulsos de destaque (cor esperada clareada, ≤ 1 s) ignorados; ω: 4866 glifos, cores ['#9C8CFF', '#F5F7FF', '#FFC24D'] (alturas 0.160…0.299) FALHA
+        - 'ω' em #F5F7FF (esperado #9C8CFF) em «\omega» 17.0–35.4 s (T3-2)
+        - 'ω' em #FFC24D (esperado #9C8CFF) em «\omega_0 t» 74.0–95.7 s (T3-4)
+        - 't' em #FFC24D (esperado #F5F7FF) em «\omega_0 t» 74.0–95.7 s (T3-4)
+        - 'barra' em #FFC24D (esperado #F5F7FF) em «\tfrac12\alpha t^2» 87.3–95.7 s (T3-4)
+        - 'α' em #FFC24D (esperado #3FE08B) em «\tfrac12\alpha t^2» 87.3–95.7 s (T3-4)
+        - 't' em #FFC24D (esperado #F5F7FF) em «\tfrac12\alpha t^2» 87.3–95.7 s (T3-4)
+    · PT4: 1618 MathTex, 2137 glifos conferidos, 21 violações persistentes FALHA, 369 transitórias (< 0,6 s) e 0 pulsos de destaque (cor esperada clareada, ≤ 1 s) ignorados; ω: 1232 glifos, cores ['#9C8CFF'] (alturas 0.254…0.299) OK
+        - 't' em #9C8CFF (esperado #F5F7FF) em «v_t=r\omega» 18.3–130.4 s (T4-1)
+        - 't' em #9C8CFF (esperado #F5F7FF) em «v_t>0» 21.7–34.4 s (T4-1)
+        - 't' em #9C8CFF (esperado #F5F7FF) em «|v_t|=r|\omega|» 25.1–34.4 s (T4-1)
+        - 'lim' em #B8C4DA (esperado #F5F7FF) em «r_1=0{,}10\,\mathrm{m}» 46.8–60.5 s (T4-2)
+        - 'lim' em #9C8CFF (esperado #F5F7FF) em «v_1=0{,}10\cdot282{,}7\approx28\ \mathrm{m/s}» 48.7–52.6 s (T4-2)
+        - 'lim' em #9C8CFF (esperado #F5F7FF) em «28\cdot3{,}6\approx100\ \mathrm{km/h}» 51.8–52.6 s (T4-2)
+    · PT5: 6505 MathTex, 2806 glifos conferidos, 6 violações persistentes FALHA, 204 transitórias (< 0,6 s) e 0 pulsos de destaque (cor esperada clareada, ≤ 1 s) ignorados; ω: 4589 glifos, cores ['#3FE08B', '#9C8CFF', '#B8C4DA'] (alturas 0.144…0.299) FALHA
+        - 'lim' em #B7C4DA (esperado #F5F7FF) em «3\ \mathrm{m}» 58.8–72.8 s (T5-3)
+        - 'lim' em #B7C4DA (esperado #F5F7FF) em «4\ \mathrm{m}» 60.7–72.8 s (T5-3)
+        - 'd' em #FFC24D (esperado #F5F7FF) em «d\vec\theta_1 + d\vec\theta_2» 102.7–109.1 s (T5-4)
+        - 'd' em #FFC24D (esperado #F5F7FF) em «= d\vec\theta_2 + d\vec\theta_1» 105.9–109.1 s (T5-4)
+        - 't' em #3FE08B (esperado #F5F7FF) em «a_t=\alpha r_\perp» 234.9–251.5 s (T5-8)
+        - 'barra' em #9C8CFF (esperado #F5F7FF) em «\vec a_c=-\omega^2\vec r_\perp» 236.7–251.5 s (T5-8)
+    · PE1: 3362 MathTex, 800 glifos conferidos, 21 violações persistentes FALHA, 7 transitórias (< 0,6 s) e 0 pulsos de destaque (cor esperada clareada, ≤ 1 s) ignorados; ω: 1142 glifos, cores ['#9C8CFF', '#FFC24D'] (alturas 0.179…0.249) FALHA
+        - 'lim' em #B7C4DA (esperado #F5F7FF) em «r=0{,}60\ \mathrm{m}» 5.4–196.3 s (E1-1)
+        - 'lim' em #B8C4DA (esperado #F5F7FF) em «r=0{,}60\ \mathrm{m}» 6.4–18.9 s (E1-1)
+        - 'barra' em #3FE08B (esperado #F5F7FF) em «=-\frac{\pi}{3}\approx-1{,}05\ \mathrm{rad/s^2}» 36.5–46.3 s (E1-2)
+        - 'barra' em #3FE08B (esperado #F5F7FF) em «\alpha\approx-1{,}05» 70.9–100.0 s (E1-4)
+        - 'ω' em #FFC24D (esperado #9C8CFF) em «\Delta\theta=\omega_0 t+\tfrac12\alpha t^2» 71.7–77.0 s (E1-4)
+        - 't' em #FFC24D (esperado #F5F7FF) em «\Delta\theta=\omega_0 t+\tfrac12\alpha t^2» 71.7–77.0 s (E1-4)
+    · PE2: 2312 MathTex, 106 glifos conferidos, 16 violações persistentes FALHA, 0 transitórias (< 0,6 s) e 0 pulsos de destaque (cor esperada clareada, ≤ 1 s) ignorados; ω: 3119 glifos, cores ['#9C8CFF'] (alturas 0.159…0.279) OK
+        - 'lim' em #B8C4DA (esperado #F5F7FF) em «r_1=10\ \mathrm{cm}» 4.7–53.7 s (E2-1)
+        - 'lim' em #B8C4DA (esperado #F5F7FF) em «r_2=4\ \mathrm{cm}» 9.1–53.7 s (E2-1)
+        - 'lim' em #B8C4D9 (esperado #F5F7FF) em «R=35\ \mathrm{cm}» 10.7–137.3 s (E2-1)
+        - 'lim' em #B8C4DA (esperado #F5F7FF) em «R=35\ \mathrm{cm}» 11.9–53.7 s (E2-1)
+        - 'r' em #9C8CFF (esperado #B8C4DA) em «v_{borda}=15{,}7\cdot0{,}35» 77.0–92.6 s (E2-3)
+        - 'd' em #9C8CFF (esperado #F5F7FF) em «v_{borda}=15{,}7\cdot0{,}35» 77.0–92.6 s (E2-3)
+    · PE3: 377 MathTex, 68 glifos conferidos, 9 violações persistentes FALHA, 1 transitórias (< 0,6 s) e 0 pulsos de destaque (cor esperada clareada, ≤ 1 s) ignorados; ω: 2396 glifos, cores ['#9C8CFF'] (alturas 0.169…0.299) OK
+        - '+' em #FFC24D (esperado #F5F7FF) em «+1» 69.1–75.9 s (E3-3)
+        - 'barra' em #9C8CFF (esperado #F5F7FF) em «\omega\approx7{,}292\times 10^{-5}\ \mathrm{rad/s}» 97.2–158.3 s (E3-3)
+        - 'lim' em #B8C4DA (esperado #F5F7FF) em «R=6{.}371\ \mathrm{km}» 138.1–176.3 s (E3-5)
+        - 'lim' em #B8C4DA (esperado #F5F7FF) em «r_\perp=6{.}371\ \mathrm{km}\cdot\cos23{,}55^\circ» 147.9–176.7 s (E3-5)
+        - 'lim' em #B8C4DA (esperado #F5F7FF) em «\approx5{.}840\ \mathrm{km}» 149.1–176.7 s (E3-5)
+        - 'lim' em #9C8CFF (esperado #F5F7FF) em «v=\omega R\approx465\ \mathrm{m/s}» 152.7–176.7 s (E3-5)
+    · PS: 9 MathTex, 22 glifos conferidos, 2 violações persistentes FALHA, 0 transitórias (< 0,6 s) e 0 pulsos de destaque (cor esperada clareada, ≤ 1 s) ignorados; ω: 496 glifos, cores ['#9C8CFF'] (alturas 0.235…0.289) OK
+        - 't' em #3FE08B (esperado #F5F7FF) em «a_t=\alpha r» 14.7–30.5 s (S1)
+        - 'lim' em #9C8CFF (esperado #F5F7FF) em «1{.}000\ \mathrm{km/h}» 31.3–46.5 s (S2)
+- COR OPERADOR: 96 violações persistentes em 10/10 lotes medidos (meta 0) FALHA
+- CAIXA VAZIA (todos os caminhos: escreve, passo, pg, FadeIn; objeto `_caixa` visível sem conteúdo dentro por > 0,3 s; 10/10 lotes medidos): 1 FALHA; [('PE2', 'E2-4', 130.4, 0.6)]
+- FRASE-CHAVE ≥ 30 (8 Text com «?» vistos em 10 lotes; maior tamanho que cada um atinge): 3 abaixo de 30 FALHA; [('PE3', 'QUÊ?EQUALÉADISTÂNCIAAOEIXO?', 25.4), ('PE3', 'EMRELAÇÃOAQUÊ?', 25.4), ('PS', '?', 27.6)]; ? 42; UMASETA? 36; UMVETOR? 36; ? 32
+- E1-5 inset a_c : a_t (1 quadros): desenhado 1.200 : 0.900 = 1.333 : 1 (registrado 1.333) OK; real (ω₀²r)/(rπ/3) = 942 : 1; selo FORA DE ESCALA declarado OK (real ÷ desenhado = 707×)
+
+## Resumo v3 (veredito de cada auditoria; detalhes nas seções acima)
+- G28: FALHA (1 linha(s) com FALHA)
+- ORDEM: OK
+- MOSTRADOR: OK
+- PARADO: OK
+- COLUNA VAZIA: OK
+- TAMANHO: NÃO MEDIDO/PARCIAL
+- COR POR TOKEN: FALHA (1 linha(s) com FALHA)
+- COR OPERADOR: FALHA (1 linha(s) com FALHA)
+- COR POR CAPÍTULO (família e larga): FALHA (9 linha(s) com FALHA)
+- §6 PRODUTO VETORIAL T5-8: OK
+- §6 CAIXA VAZIA (todos os caminhos): FALHA (1 linha(s) com FALHA)
+- §6 FRASE-CHAVE: FALHA (1 linha(s) com FALHA)
+- §6 E1-5 inset: OK

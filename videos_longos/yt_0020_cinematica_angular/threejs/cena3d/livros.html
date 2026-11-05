@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>3D livros</title>
+<style>html,body{margin:0;background:transparent;overflow:hidden}canvas{display:block}</style></head>
+<body>
+<script>window.TRANSP = true;</script>
+<script>window.CENA_ID = 'livros';</script>
+<script src="three.min.js"></script><script src="RoomEnvironment.js"></script><script src="tex20.js"></script>
+<script src="b3d.js"></script><script src="r20_t5.js"></script>
+<script>// PT5 v2 (D27): câmera 3/4 por baixo; luz de preenchimento vinda de baixo para a capa voltada para baixo ler (capa azul com logo, não sombra)
+(function () { const l = new THREE.DirectionalLight(0xF5F7FF, 0.6); l.position.set(3, -4, -5); B3D.scene.add(l); })();</script>
+</body></html>
