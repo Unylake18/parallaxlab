@@ -1,0 +1,76 @@
+C01 selos + fórmula                palavra "Pressão" @    0.04  evento @    0.10  atraso +0.06  OK
+C01 "de onde vem isso?"            palavra "De" @    6.04  evento @    6.10  atraso +0.06  OK
+C01 chip "só com moléculas…"       palavra "acompanhando" @    7.88  evento @    7.90  atraso +0.02  OK
+C02 p = mv                         palavra "o" @   15.18  evento @   15.33  atraso +0.15  OK
+C02 rótulo massa                   palavra "massa" @   16.22  evento @   16.27  atraso +0.05  OK
+C02 rótulo velocidade              palavra "velocidade." @   16.96  evento @   17.00  atraso +0.04  OK
+C02 pᵢ = mvₓ                       palavra "Na" @   17.86  evento @   17.92  atraso +0.06  OK
+C02 pᵢ, p_f                        palavra "passa" @   22.40  evento @   22.50  atraso +0.10  OK
+C02 Δp = p_f − pᵢ                  palavra "Final" @   24.60  evento @   24.66  atraso +0.06  OK
+C02 −mvₓ − mvₓ                     palavra "inicial" @   25.28  evento @   25.30  atraso +0.02  OK
+C02 −2mvₓ                          palavra "duas" @   26.60  evento @   26.62  atraso +0.02  OK
+C02 setas de impulso               palavra "o" @   29.78  evento @   29.90  atraso +0.12  OK
+C02 J = +2mvₓ                      palavra "o" @   30.54  evento @   30.60  atraso +0.06  OK
+C03 seta L                         palavra "duas" @   37.06  evento @   37.10  atraso +0.04  OK
+C03 rótulo lado                    palavra "lado" @   37.82  evento @   37.92  atraso +0.10  OK
+C03 Δt = (L+L)/vₓ                  palavra "O" @   38.72  evento @   38.78  atraso +0.06  OK
+C03 Δt = 2L/vₓ                     palavra "dividida" @   41.18  evento @   41.20  atraso +0.02  OK
+C03 fixa J, Δt                     palavra "A" @   42.70  evento @   42.75  atraso +0.05  OK
+C03 F̄ = J/Δt                      palavra "o" @   43.72  evento @   43.78  atraso +0.06  OK
+C03 F̄ = 2mvₓ/(2L/vₓ)              palavra "dividido" @   44.38  evento @   44.45  atraso +0.07  OK
+C03 o 2 cancela                    palavra "o" @   45.68  evento @   45.74  atraso +0.06  OK
+C03 F̄ = mvₓ²/L                    palavra "Sobra" @   46.82  evento @   46.90  atraso +0.08  OK
+C03 P₁ = F̄/A                      palavra "E" @   50.38  evento @   50.55  atraso +0.17  OK
+C03 rótulo área                    palavra "área." @   51.84  evento @   51.88  atraso +0.04  OK
+C03 P₁ = (…)/L²                    palavra "ao" @   53.20  evento @   53.30  atraso +0.10  OK
+C03 P₁ = …/L³                      palavra "lado" @   54.80  evento @   54.85  atraso +0.05  OK
+C03 rótulo volume                  palavra "o" @   55.64  evento @   55.66  atraso +0.02  OK
+C03 P₁ = …/V                       palavra "volume." @   55.76  evento @   55.93  atraso +0.17  OK
+C03 P₁V = mvₓ²                     palavra "pelo" @   60.28  evento @   60.40  atraso +0.12  OK
+C04 rótulo molécula i              palavra "todas" @   61.64  evento @   61.65  atraso +0.01  OK
+C04 Σ                              palavra "pressão" @   62.76  evento @   62.82  atraso +0.06  OK
+C04 m Σ                            palavra "a" @   64.18  evento @   64.35  atraso +0.17  OK
+C04 N m ⟨vₓ²⟩                      palavra "o" @   67.42  evento @   67.55  atraso +0.13  OK
+C04 definição da média             palavra "a" @   68.92  evento @   69.10  atraso +0.18  OK
+C04 diagrama                       palavra "E" @   70.44  evento @   70.50  atraso +0.06  OK
+C04 vetor v                        palavra "Vem" @   71.42  evento @   71.50  atraso +0.08  OK
+C04 componentes                    palavra "no" @   72.26  evento @   72.30  atraso +0.04  OK
+C04 vᵢ² = soma                     palavra "o" @   73.02  evento @   73.05  atraso +0.03  OK
+C04 ⟨v²⟩ = soma                    palavra "e" @   76.98  evento @   77.00  atraso +0.02  OK
+C04 três moléculas                 palavra "Uma" @   77.98  evento @   78.00  atraso +0.02  OK
+C04 barras (n)                     palavra "Mas," @   81.22  evento @   81.25  atraso +0.03  OK
+C04 médias iguais                  palavra "as" @   84.42  evento @   84.48  atraso +0.06  OK
+C04 ⟨v²⟩ = 3⟨vₓ²⟩                  palavra "Como" @   86.02  evento @   86.08  atraso +0.06  OK
+C04 barra empilhada ⅓              palavra "cada" @   88.94  evento @   88.95  atraso +0.01  OK
+C04 ⟨vₓ²⟩ = ⟨v²⟩/3                 palavra "uma" @   89.32  evento @   89.50  atraso +0.18  OK
+C04 PV = N m ⟨vₓ²⟩                 palavra "pressão" @   91.18  evento @   91.20  atraso +0.02  OK
+C04 substituição                   palavra "é" @   92.58  evento @   92.70  atraso +0.12  OK
+C04 PV = ⅓ N m ⟨v²⟩                palavra "vezes" @   95.46  evento @   95.50  atraso +0.04  OK
+C05 ⟨E_c⟩ = ½ m⟨v²⟩                palavra "Metade" @   98.78  evento @   98.84  atraso +0.06  OK
+C05 m⟨v²⟩ = 2⟨E_c⟩                 palavra "é" @  101.38  evento @  101.45  atraso +0.07  OK
+C05 PV = ⅓N·2⟨E_c⟩                 palavra "então" @  102.58  evento @  102.72  atraso +0.14  OK
+C05 PV = ⅔N⟨E_c⟩                   palavra "é" @  104.34  evento @  104.50  atraso +0.16  OK
+C05 gráfico                        palavra "termômetro" @  112.46  evento @  112.45  atraso -0.01  OK
+C05 ponto 273,15 K                 palavra "em" @  113.62  evento @  113.74  atraso +0.12  OK
+C05 ponto 373,15 K                 palavra "temperatura," @  114.14  evento @  114.20  atraso +0.06  OK
+C05 reta                           palavra "pressão" @  114.88  evento @  114.90  atraso +0.02  OK
+C05 tabela                         palavra "dividido" @  116.16  evento @  116.20  atraso +0.04  OK
+C05 PV/(NT) = const.               palavra "dá" @  119.40  evento @  119.45  atraso +0.05  OK
+C05 k_B                            palavra "de" @  120.78  evento @  120.95  atraso +0.17  OK
+C05 PV = N k_B T                   palavra "Logo," @  121.54  evento @  121.60  atraso +0.06  OK
+C05 contorno PV = N k_B T          palavra "temperatura." @  126.82  evento @  126.85  atraso +0.03  OK
+C05 ⅔N⟨E_c⟩ = N k_B T              palavra "as" @  128.22  evento @  128.40  atraso +0.18  OK
+C05 ⟨E_c⟩ = 3/2 k_B T              palavra "a" @  129.44  evento @  129.45  atraso +0.01  OK
+C06 N = nN_A                       palavra "o" @  135.58  evento @  135.65  atraso +0.07  OK
+C06 PV = nN_A k_B T                palavra "Avogadro," @  138.16  evento @  138.20  atraso +0.04  OK
+C06 R ≡ N_A k_B                    palavra "constante" @  139.04  evento @  139.15  atraso +0.11  OK
+C06 6,022·10²³ × 1,38·10⁻²³        palavra "Boltzmann." @  141.40  evento @  141.50  atraso +0.10  OK
+C06 PV = nRT                       palavra "pressão" @  143.62  evento @  143.65  atraso +0.03  OK
+C07 contadores 34 → 67             palavra "contador" @  152.10  evento @  152.20  atraso +0.10  OK
+C07 ×2                             palavra "o" @  153.40  evento @  153.55  atraso +0.15  OK
+C07 temperatura constante          palavra "Com" @  155.22  evento @  155.30  atraso +0.08  OK
+C07 PV = const. ⇒ …                palavra "isso" @  156.70  evento @  156.75  atraso +0.05  OK
+C07 nitrogênio                     palavra "No" @  161.30  evento @  161.35  atraso +0.05  OK
+C07 velocidade quadrática média    palavra "a" @  163.36  evento @  163.40  atraso +0.04  OK
+C07 517 m/s                        palavra "quinhentos" @  165.30  evento @  165.35  atraso +0.05  OK
+75 eventos; fora do limite (−0,067 … +0,2 s): 0
