@@ -75,7 +75,7 @@ class LoteE3(L20):
         self._voando = set(id(x) for x in a.get_family()) | set(id(x) for x in b.get_family())
         self._voando_raiz = [a, b]
         self._fontes_extra = [src]
-        self.play(TransformMatchingTex(a, b, key_map=key_map), *extra, run_time=max(0.8, rt))
+        self.play_dip(src, TransformMatchingTex(a, b, key_map=key_map), *extra, run_time=max(0.8, rt))
         self._fontes_extra = []
         self._voando, self._voando_raiz = set(), []
         self.remove(a, b)
@@ -138,7 +138,7 @@ class LoteE3(L20):
         self.pilha.poe(q)
         self.play(FadeIn(q), run_time=0.6)
         self.gat("depende uma volta em relação a quê")
-        self.pede("EM RELAÇÃO A QUÊ? E QUAL É A DISTÂNCIA AO EIXO?")
+        self.pede("EM RELAÇÃO A QUÊ · QUAL A DISTÂNCIA AO EIXO")   # v6 §2.3: selo sem «?» (a frase-chave é a pergunta de 30 pt acima)
         self.ate(0.99)
 
         # ── E3-2: dia sideral × dia solar (vista de cima; só o trecho da órbita) ──
@@ -155,7 +155,7 @@ class LoteE3(L20):
         T["psi"] = a_star                                                 # observador (meridiano) apontando para o Sol e a estrela
         T["estrela"] = False
         self.play(el.animate.set_value(89.999), az.animate.set_value(-90.0), K.animate.set_value(1.25), alvo_y.animate.set_value(-1.9),
-                  orb.animate.set_value(0.0), rtv.animate.set_value(0.62), rsv.animate.set_value(0.85), run_time=1.6)
+                  orb.animate.set_value(0.0), rtv.animate.set_value(1.1), rsv.animate.set_value(0.55), run_time=1.6)
         T["p0"], T["psi0"] = [RO * math.cos(phi1), RO * math.sin(phi1), 0.0], a_star
         cmT = cam()
         sol_c = projeta3d(cmT, np.zeros(3))
@@ -212,17 +212,17 @@ class LoteE3(L20):
         self.play(FadeIn(sv), FadeIn(P1), run_time=0.7)
         l_mer = txt("MERIDIANO", 24)
         l_obs = txt("OBSERVADOR", 24)
-        r_mer = self.rotulo(l_mer, c0 + (sc_T + 0.45) * s2, lados=(LEFT, UL, DL), buffs=(0.3, 0.5), zona=ZE, chamada=False)
-        r_obs = self.rotulo(l_obs, c0 + sc_T * s2, lados=(RIGHT, DR, UR), buffs=(0.3, 0.5), zona=ZE, chamada=False)
+        r_mer = self.rotulo(l_mer, c0 + (sc_T + 0.45) * s2, lados=(LEFT, UL, DL), buffs=(0.55, 0.75), zona=ZE, chamada=False)
+        r_obs = self.rotulo(l_obs, c0 + sc_T * s2, lados=(RIGHT, DR, UR), buffs=(0.55, 0.75), zona=ZE, chamada=False)
         self.play(FadeIn(r_mer), FadeIn(r_obs), run_time=0.5)
         estrela = Star(n=5, outer_radius=0.17, density=2).set_fill(WHITE_, 1).set_stroke(WHITE_, 1).move_to(P_EST).set_z_index(10)
         l_est = VGroup(txt("ESTRELA", 24), lbl(r"\to\infty", WHITE_, 36)).arrange(DOWN, buff=0.08, aligned_edge=LEFT)
         l_est.next_to(estrela, RIGHT, buff=0.3).align_to(estrela, UP)
         P2 = VGroup(txt("ESTRELA MUITO DISTANTE:", 28, bold=True), txt("NO MESMO MERIDIANO", 28)).arrange(DOWN, buff=0.1, aligned_edge=LEFT)
         self.pilha.poe(P2)
-        self.gat("vamos marcar também a direção de uma estrela")
+        self.gat("vamos marcar também uma estrela muito distante")
         self.play(vis["est"].animate.set_value(1.0), FadeIn(estrela), FadeIn(l_est), FadeIn(P2), run_time=0.7)
-        self.gat("depois de uma volta completa em relação às estrelas")
+        self.gat("ao mesmo tempo avança um pouco em sua órbita")           # v7 §4: a Terra gira e avança AO MESMO TEMPO; a volta completa corre até "aquela direção estelar já voltou"
         self.play(FadeOut(r_mer), FadeOut(r_obs), *self.troca_marcador(None), run_time=0.3)
         fant = DashedVMobject(Circle(radius=sc_T).move_to(c0), num_dashes=18, dashed_ratio=0.55).set_stroke(GEO, 2.4, opacity=0.75).set_z_index(6)
         T["fant"] = 1.0
@@ -231,14 +231,14 @@ class LoteE3(L20):
         upd = VGroup()
         upd.add_updater(lambda m: T.update(phi=phi1 + dphi * prog.get_value(), psi=a_star + 2 * PI * prog.get_value()))
         self.add(upd)
-        self.play(prog.animate(rate_func=linear).set_value(1.0), vis["sol"].animate.set_value(1.0), FadeIn(fant), *self.troca_marcador("EXAGERADO", "dir"),
-                  run_time=self.ate_t("só que nesse tempo"))
+        self.play(prog.animate(rate_func=linear).set_value(1.0), vis["sol"].animate.set_value(1.0), FadeIn(fant), *self.troca_marcador("EXAGERADO", "dir", y=-3.25),
+                  run_time=self.ate_t("aquela direção estelar já voltou à posição inicial"))
         D1m, id1 = M(r"\approx", r"23\ \mathrm{h}\ 56\ \mathrm{min}", size=46)
         D1 = VGroup(txt("EM RELAÇÃO ÀS ESTRELAS:", 28, bold=True), linha_m(txt("DIA SIDERAL", 28, bold=True), D1m, buff=0.2)).arrange(DOWN, buff=0.1, aligned_edge=LEFT)
         self.pilha.poe(D1)
-        self.gat("só que nesse tempo a terra também andou")
+        self.gat("aquela direção estelar já voltou à posição inicial")
         self.play(FadeIn(D1), run_time=0.9)                               # D39: nasce quando a estrela volta ao meridiano
-        self.gat("então o sol ainda não voltou ao meridiano")
+        self.gat("mas o sol ainda não voltou ao meridiano")
         extra = ValueTracker(0.0)
         self.add(extra)
         upd.clear_updaters()
@@ -261,12 +261,12 @@ class LoteE3(L20):
         l1g = VGroup(lbl(r"\approx 1^\circ", ANG, 36), txt("(REAL)", 24)).arrange(RIGHT, buff=0.12)
         a_mid = a_star + dphi / 2
         r1g = self.rotulo(l1g, c2 + 1.9 * P3(math.cos(a_star), math.sin(a_star)), lados=(RIGHT, UR), buffs=(0.3, 0.5, 0.8), zona=ZE, chamada=False)
-        self.gat("quase um grau")
+        self.gat("um pouquinho mais")
         self.play(FadeIn(r1g), run_time=0.5)
-        self.gat("o dia de vinte e quatro horas é o dia solar médio")
+        self.gat("o dia solar médio dura vinte e quatro horas")
         self.foco = D2
         self.wait(1.0)
-        self.gat("a volta de verdade em relação às estrelas")
+        self.gat("uma volta em relação às estrelas o dia sideral")
         self.foco = D1
         self.ate(0.99)
 
@@ -309,21 +309,21 @@ class LoteE3(L20):
                 g.add(row[0].copy(), num_mob(f"{v:.2f}".replace(".", ","), ANG, 40).move_to(row[1].get_corner(DL), aligned_edge=DL))
             return g
         ctv = vivo(contagem)
-        self.gat("conta as voltas num ano inteiro")
+        self.gat("contando voltas durante um ano")
         self.play(FadeIn(ctv), run_time=0.4)
         self.play(ano.animate(rate_func=linear).set_value(1.0), run_time=5.0)
         self.remove(ctv)
         self.add(rS, rE)
-        mais1 = lbl("+1", ANG, 40).next_to(rE[1], RIGHT, buff=0.3)
-        self.gat("em relação às estrelas uma volta a mais")
+        mais1 = Mc(("+", WHITE_), ("1", WHITE_), size=40).next_to(rE[1], RIGHT, buff=0.3)   # v4 §3: sem âmbar no +1
+        self.gat("em relação às estrelas a terra completa uma volta a mais")
         self.play(FadeIn(mais1), run_time=0.4)
-        N_, iN = M(r"N_{\mathrm{est}}", "=", r"N_{\mathrm{sol}}", "+", "1", size=52, cores={0: ANG, 2: ANG, 4: ANG})
+        N_, iN = M(r"N_{\mathrm{est}}", "=", r"N_{\mathrm{sol}}", "+", "1", size=52, cores={0: ANG, 2: ANG})
         self.pilha.poe(N_)
-        self.gat("porque a órbita inteira acrescenta um giro")
-        self.voa([(VGroup(mais1[0][1]), mp(N_, iN, [4]))], extra=[FadeIn(mp(N_, iN, [0, 1, 2, 3]))], rt=1.0, origem=False)
+        self.gat("essa volta extra aparece")
+        self.voa([(VGroup(mais1[1]), mp(N_, iN, [4]))], extra=[FadeIn(mp(N_, iN, [0, 1, 2, 3]))], rt=1.0, origem=False)
         Y2, iy2 = M(r"\frac{1}{T_{\mathrm{sid}}}", "=", r"\frac{1}{T_{\mathrm{sol}}}", "+", r"\frac{1}{T_{\mathrm{ano}}}", size=52)
         self.pilha.poe(Y2)
-        self.gat("dividindo tudo pelo tempo de um ano")
+        self.gat("dividindo pelo tempo de um ano")
         # GM da divisão termo a termo: N_est → 1/T_sid, N_sol → 1/T_sol, o "1" vira o numerador de 1/T_ano (com a barra) e T_ano entra embaixo
         self.passo(N_, Y2, (J(iN, 0), J(iy2, 0)), (J(iN, 1), J(iy2, 1)), (J(iN, 2), J(iy2, 2)), (J(iN, 3), J(iy2, 3)), (J(iN, 4), iy2[4][:2]),
                    ([], iy2[4][2:]), rt=1.4, origem=False)
@@ -335,7 +335,7 @@ class LoteE3(L20):
             Y3[0][j].set_color(ANG)
             Y3[0][j].set_stroke(ANG, width=1.8, background=False)
         self.pilha.poe(Y3)
-        self.gat("dá oitenta e seis mil")
+        self.gat("dá aproximadamente oitenta e seis mil")
         # números dos contadores e do dia solar; a barra entra junto com o numerador (bug 3 da escreve: barra antes do numerador)
         self.voa([(rS[1], VGroup(*[Y3[0][j] for j in iy3[2][:7]])), (rE[1], VGroup(*[Y3[0][j] for j in iy3[2][7:]])), (mp(D2n, id2n, [1]), mp(Y3, iy3, [4]))],
                  extra=[FadeIn(mp(Y3, iy3, [0, 1, 3]))], rt=1.6, origem=False)
@@ -354,7 +354,7 @@ class LoteE3(L20):
         Y5, iy5 = M(r"\omega", r"\approx", r"7{,}292\times 10^{-5}\ \mathrm{rad/s}", size=48, cores={0: VEL, 2: VEL})
         Y5b = caixa_l(Y5, VEL)
         self.pilha.poe(Y5b, dx=0.2)
-        self.gat("sete vírgula duzentos")
+        self.gat("sete vírgula dois nove dois")
         # v3 §7: TransformMatchingTex (o ω se repete de ω = 2π/T_sid para ω ≈ 7,292·10⁻⁵ rad/s; o resto sai e entra)
         self.tmt(Y4, Y5, [(r"\omega", VEL), ("=", None), (r"\frac{2\pi}{T_{\mathrm{sid}}}", None)],
                  [(r"\omega", VEL), (r"\approx", None), (r"7{,}292\times 10^{-5}\ \mathrm{rad/s}", VEL)], 52, 48, rt=1.1, extra=[FadeIn(Y5b[0])])
@@ -490,7 +490,7 @@ class LoteE3(L20):
         self.remove(self.s1, LR, LL)
         self.s1 = None
         self.pilha.so(Z3x)
-        self.gat("e a aceleração centrípeta de são paulo")
+        self.gat("e são paulo também tem aceleração centrípeta")
         self.play(gtr["ov"].animate.set_value(0.35), gtr["oac"].animate.set_value(1.0), v_i.animate.set_opacity(0.35), FadeOut(lv_i),
                   FadeIn(ac_i), run_time=0.8)
         self.play(FadeIn(la_i), run_time=0.4)
@@ -504,7 +504,7 @@ class LoteE3(L20):
                    (J(iz3, 3), J(iw1, 3)), (J(iz3, 4), J(iw1, 4)), rt=1.3, origem=False)
         W2, iw2 = M(r"\approx", r"0{,}031\ \mathrm{m/s^2}", size=48, cores={1: ACC})
         self.pilha.poe(W2)
-        self.gat("uns três centésimos")
+        self.gat("zero vírgula zero três um")
         self.play(FadeIn(W2), run_time=0.7)
         W3m, iw3 = M(r"\approx", r"0{,}32\%", size=48, cores={1: ACC})
         W3 = linha_m(W3m, txt("DE", 26, bold=True), lbl("g", ACC, 48), buff=0.15)
@@ -513,17 +513,17 @@ class LoteE3(L20):
         self.play(FadeIn(W3), run_time=0.7)
         lr_ = VGroup(txt("PARA O EIXO", 24, bold=True), txt("(NÃO PARA O CENTRO)", 24)).arrange(DOWN, buff=0.08)
         lr_.move_to(P3(0.12 - lr_.width / 2, -3.05))
-        self.gat("para o eixo da terra não para o centro")
+        self.gat("para o eixo de rotação não exatamente para o centro")
         self.play(gtr["orad"].animate.set_value(1.0), FadeIn(lr_), run_time=0.8)
-        self.gat("um ângulo igual à latitude")
+        self.gat("um ângulo igual ao módulo da latitude")
         self.play(ll_i.animate(rate_func=there_and_back).scale(1.15), lam_i.animate(rate_func=there_and_back).set_stroke(width=10), run_time=0.8)
-        self.gat("conferindo no polo")
+        self.gat("nos polos a distância ao eixo é zero")
         self.confere([["POLO:", lbl(r"r_\perp", GEO_, 36), "= 0", lbl(r"\to", WHITE_, 36), lbl("v", VEL, 36), "= 0"],
                       ["EQUADOR:", lbl(r"r_\perp", GEO_, 36), "=", lbl("R", GEO_, 36), lbl(r"\to", WHITE_, 36), lbl("v", VEL, 36), "MÁXIMA",
                        lbl(r"\checkmark", WHITE_, 36)]])
-        self.gat("e ficam duas dicas")
+        self.gat("guarda duas perguntas para qualquer problema")
         self.sem_selo()                                                   # G7: um selo por vez (o CONFERE sai antes da DICA)
         self.pilha.x0, self.pilha.larg = X_CONTA + 0.2, LARG_CONTA - 0.2   # o respiro do pulso da DICA (larga) não entra na CALHA
-        self.dica18([[lbl(r"\omega", VEL, 36), "EM RELAÇÃO A QUÊ?"], [lbl("r", GEO_, 36), "É A DISTÂNCIA AO EIXO"]])
+        self.dica18([[lbl(r"\omega", VEL, 36), "EM RELAÇÃO A QUÊ"], [lbl("r", GEO_, 36), "É A DISTÂNCIA AO EIXO"]])
         self.ate(0.99)
         mot.clear_updaters()

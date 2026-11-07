@@ -19,7 +19,7 @@ FR = 0.03                      # giro na tela = FR × ω mostrado: P fica na fre
 W5 = 0.6                       # ω mostrado no T5-5…T5-7
 AL5 = 0.3                     # α mostrado no T5-8
 TH6 = math.radians(-166.0)     # θ de P no início do T5-6 (v⃗ nasce com P na frente-esquerda e passa pela frente no T5-6_82)
-AZL, ELL = -62.0, -18.0         # livros: câmera 3/4, por baixo e de lado
+AZL, ELL = -62.0, -26.0         # livros: câmera 3/4, por baixo e de lado
 BGT = "#0B1530"                # contorno escuro atrás dos rótulos sobre o aço claro
 DIRS = [P3(math.cos(k * PI / 4), math.sin(k * PI / 4)) for k in range(8)]
 
@@ -158,7 +158,10 @@ class LoteT5(L20):
         c = src.copy()
         self.add(c)
         self._fontes_extra = [src]
-        self.play(TransformMatchingTex(c, dst, path_arc=3.0), run_time=max(0.8, rt))
+        self._voando = set(id(x) for x in c.get_family()) | set(id(x) for x in dst.get_family())      # v8: o voo da troca de termos é transitório da construção (como nos outros passos)
+        self._voando_raiz = [c, dst]
+        self.play_dip(src, TransformMatchingTex(c, dst, path_arc=3.0), run_time=max(0.8, rt))
+        self._voando, self._voando_raiz = set(), []
         self._fontes_extra = []
         for m in list(self.mobjects):
             if id(m) not in tops and m is not dst:
@@ -177,13 +180,13 @@ class LoteT5(L20):
 
         def mor(a, b, **kw):
             if _p2._n_gl(a) == _p2._n_gl(b):
-                return ReplacementTransform(a, b, path_arc=arco, **kw)
+                return ReplacementTransform(a, b, path_arc=-arco, **kw)   # v4: o arco desce (por baixo da linha-mãe)
             return _p2.troca_anim(a, b, rate=smooth)
         tb_ = TransformByGlyphMap(c, dst, *mapas, default_transformer=mor, lag_ratio=lag)
         self._voando = set(id(x) for x in c.get_family()) | set(id(x) for x in dst.get_family()) | set(id(x) for x in tb_.mobject.get_family())
         self._voando_raiz = [c, dst, tb_.mobject]
         self._fontes_extra = [src]
-        self.play(tb_, run_time=max(0.8, rt))      # a linha-mãe esmaece enquanto os glifos viajam: a cópia nunca briga com o original
+        self.play_dip(src, tb_, run_time=max(0.8, rt))      # a linha-mãe esmaece (40% até o fim do passo) enquanto os glifos viajam: a cópia nunca briga com o original
         self._fontes_extra = []
         self._voando, self._voando_raiz = set(), []
         for m in list(self.mobjects):
@@ -279,19 +282,34 @@ class LoteT5(L20):
         self.an("T5-2")
         I3 = np.eye(3)
         LV = {"L": I3.copy(), "R": I3.copy(), "G": I3.copy()}
-        CEN = [[-0.2, 0.0, 0.0], [0.2, 0.0, 0.0]]
-        SXL = 0.12
-        kL, xL, yL = ValueTracker(13.5), ValueTracker(0.0), ValueTracker(-0.9)
-        LT = {k: ValueTracker(0.0) for k in ("oe", "on", "oG", "fx", "fy", "sl")}
+        CEN = [[-0.3, 0.0, 0.0], [0.3, 0.0, 0.0]]          # v7: livros mais afastados (triedro grosso ao lado de cada um)
+        SXL = 0.22
+        kL, xL, yL = ValueTracker(12.0), ValueTracker(-0.9), ValueTracker(-1.75)
+        LT = {k: ValueTracker(0.0) for k in ("oe", "on", "oG", "fx", "fy", "sl", "oa")}
         LT["on"].set_value(1.0)
-        lnv = ValueTracker(0.14)
+        lnv = ValueTracker(0.11)
         self.add(kL, xL, yL, lnv, *LT.values())
         camL = lambda: cam_obl(AZL, ELL, (0.0, 0.0, 0.0), K=round(kL.get_value(), 4), xc=round(xL.get_value(), 4), yc=round(yL.get_value(), 4), fov=16)
+
+        U12 = [None, None]                                       # u1, u2 (progresso dos dois giros), ligados abaixo
+        ARC_R, ARC_A0 = 0.21, 0.5
+
+        def arcos_est():
+            """v7 §2.5: arco âmbar com seta em torno do eixo da vez: livro da esquerda x depois y; da direita y depois x. Some quando o outro giro começa."""
+            if U12[0] is None:
+                return []
+            u1_, u2_ = U12[0].get_value(), U12[1].get_value()
+            g_ = math.radians(ang["g"])
+            o1 = min(1.0, u1_ * 8) * (1 - min(1.0, u2_ * 8)) * (1 - LT["oa"].get_value())
+            o2 = min(1.0, u2_ * 8) * (1 - LT["oa"].get_value())
+            return [dict(k=0, ax="x", a0=ARC_A0, a=u1_ * g_, op=round(o1, 3), r=ARC_R), dict(k=0, ax="y", a0=ARC_A0, a=u2_ * g_, op=round(o2, 3), r=ARC_R),
+                    dict(k=1, ax="y", a0=ARC_A0, a=u1_ * g_, op=round(o1, 3), r=ARC_R), dict(k=1, ax="x", a0=ARC_A0, a=u2_ * g_, op=round(o2, 3), r=ARC_R)]
 
         def est_livros(t):
             o = LT["oe"].get_value()
             return {"c": CEN, "L": fl(LV["L"]), "R": fl(LV["R"]), "G": fl(LV["G"]), "oG": round(LT["oG"].get_value(), 3), "sx": SXL,
-                    "oe": round(o, 3), "oz": round(o, 3), "on": round(LT["on"].get_value(), 3), "ln": round(lnv.get_value(), 4), "cam": camL()}
+                    "oe": round(o, 3), "oz": round(o, 3), "on": round(LT["on"].get_value(), 3), "ln": round(lnv.get_value(), 4), "cam": camL(),
+                    "arcs": arcos_est()}
         f3b = Fundo3D(self, "livros", est_livros, op=0.0)
         self.add(f3b)
         self.play(f3.op.animate.set_value(0.0), f3b.op.animate.set_value(1.0), FadeOut(VGroup(pi_g, ter_g, lab_i, q)), run_time=0.6)
@@ -324,7 +342,7 @@ class LoteT5(L20):
         t_esq, t_dir = ordem("x", "y"), ordem("y", "x")
 
         def pos_ordem(k, cam):
-            return P3(projeta3d(cam, CEN[k])[0], 2.4 - t_esq.height / 2)      # bloco alto e compacto: o rótulo y do livro da direita não encosta no "DEPOIS 90°"
+            return P3(projeta3d(cam, CEN[k])[0] + 1.9 * min(1.0, max(0.0, (cam["K"] - 8.0) / 4.5)), 2.4 - t_esq.height / 2)      # v7: à esquerda da seta y do triedro (a seta y subia até o bloco)      # bloco alto e compacto: o rótulo y do livro da direita não encosta no "DEPOIS 90°"
         t_esq.move_to(pos_ordem(0, camL()))
         t_dir.move_to(pos_ordem(1, camL()))
         self.gat("os dois eixos ficam parados no laboratório")
@@ -333,6 +351,61 @@ class LoteT5(L20):
         self.foco = self.s1
         u1, u2 = ValueTracker(0.0), ValueTracker(0.0)
         self.add(u1, u2)
+        U12[0], U12[1] = u1, u2
+        ang = {"g": 90.0}
+
+        def lab3d(c, d):
+            """lab (x, y, z) → mundo (x, −z, y), para os rótulos presos ao 3D (mesma conta do r20_t5.js)."""
+            return (c[0] + d[0], c[1] - d[2], c[2] + d[1])
+
+        def rot_capa():
+            """v7 §2.4: `CAPA` junto da ponta da normal (ciano) de cada livro."""
+            g = VGroup()
+            if ang.get("fim"):
+                return g
+            o = LT["on"].get_value() * (1 - LT["sl"].get_value()) * (1 - LT["oa"].get_value() * (1 if ang["g"] == 90.0 else 0)) * (1 - min(1.0, u1.get_value() * 25))      # v8: `CAPA` so antes do giro
+            if o < 0.05:
+                return g
+            cam = camL()
+            for k, R_ in ((0, LV["L"]), (1, LV["R"])):
+                n = np.array([R_[0][2], -R_[2][2], R_[1][2]])
+                base = np.array(CEN[k]) + n * 0.025
+                pb, pt = projeta3d(cam, base), projeta3d(cam, base + n * lnv.get_value())
+                u = (pt - pb) / max(np.linalg.norm(pt - pb), 1e-6)
+                m = fundo(txt("CAPA", 30, color=CYAN, bold=True))
+                if abs(u[1]) > abs(u[0]) or ang["g"] != 90.0:      # normal vertical (a legenda "CAPA PARA BAIXO" cobre) ou rodadas pequenas: sem rótulo
+                    continue
+                else:                                      # normal horizontal (coincide com a seta x): rótulo abaixo da linha
+                    m.move_to(pt + u * (0.12 + 0.5 * m.width) + 0.3 * DOWN)
+                g.add(opa(m, o))
+            return g
+        rcap = vivo(rot_capa)
+        self.add(rcap)
+
+        def rot_arco():
+            """v7 §2.5: `90°` junto do arco do giro, na palavra dita (só nas rodadas de 90°)."""
+            g = VGroup()
+            if ang["g"] != 90.0 or ang.get("fim"):
+                return g
+            cam = camL()
+            u1_, u2_ = u1.get_value(), u2.get_value()
+            oa_ = 1 - LT["oa"].get_value()
+            for (k, ax, uu, ou) in ((0, "x", u1_, min(1.0, u1_ * 8) * (1 - min(1.0, u2_ * 8))), (0, "y", u2_, min(1.0, u2_ * 8)),
+                                    (1, "y", u1_, min(1.0, u1_ * 8) * (1 - min(1.0, u2_ * 8))), (1, "x", u2_, min(1.0, u2_ * 8))):
+                o = ou * oa_ * (1 - min(1.0, max(0.0, (uu - 0.85) / 0.15)))      # v8: o rotulo 90 some quando o giro termina (nao encosta no x do eixo)
+                if o < 0.05 or uu < 0.15:
+                    continue
+                phi = ARC_A0 + uu * PI / 4
+                d = (0, ARC_R * math.cos(phi), ARC_R * math.sin(phi)) if ax == "x" else (ARC_R * math.sin(phi), 0, ARC_R * math.cos(phi))
+                pm = projeta3d(cam, lab3d(CEN[k], d))
+                pc = projeta3d(cam, CEN[k])
+                u = (pm - pc) / max(np.linalg.norm(pm - pc), 1e-6)
+                m = fundo(lbl(r"90^\circ", ANG, 40))
+                m.move_to(pm + (0.5 * DOWN if (k == 1 and ax == "y") else u * 0.5))
+                g.add(opa(m, o))
+            return g
+        rarc = vivo(rot_arco)
+        self.add(rarc)
         ang = {"g": 90.0}
 
         def gira_livros(m):
@@ -352,11 +425,11 @@ class LoteT5(L20):
         self.gat("e depois noventa graus em torno deste outro")
         self.play(u2.animate(rate_func=smooth).set_value(1.0), LT["fy"].animate(rate_func=there_and_back).set_value(1.0), run_time=1.6)
         self.gat("olha como eles terminam")
-        dif = lbl(r"\neq", WHITE_, 72).move_to(P3(-0.2, -2.0))
+        dif = lbl(r"\neq", WHITE_, 72).move_to(P3(-0.2, -0.3))
         cap = VGroup(txt("CAPA PARA BAIXO", 26, bold=True), txt("CAPA PARA A DIREITA", 26, bold=True))
-        cap[0].move_to(P3(projeta3d(camL(), CEN[0])[0] - 0.35 - cap[0].width / 2, -3.0))      # ao lado da normal, que desce
-        cap[1].move_to(P3(projeta3d(camL(), CEN[1])[0], -3.0))
-        self.play(FadeIn(dif, scale=0.8), lnv.animate(rate_func=there_and_back).set_value(0.18), run_time=0.8)
+        cap[0].move_to(P3(max(projeta3d(camL(), CEN[0])[0] - 0.35 - cap[0].width / 2, -7.15 + cap[0].width / 2), -3.15))      # ao lado da normal, que desce
+        cap[1].move_to(P3(projeta3d(camL(), CEN[1])[0], -3.15))
+        self.play(FadeIn(dif, scale=0.8), lnv.animate(rate_func=there_and_back).set_value(0.16), LT["oa"].animate.set_value(1.0), run_time=0.8)
         self.gat("a capa de um aponta para um lado")
         self.play(FadeIn(cap[0]), run_time=0.5)
         self.gat("a do outro para outro lado")
@@ -366,10 +439,10 @@ class LoteT5(L20):
 
         # ── T5-3: vetores comutam; giros finitos não ──
         self.an("T5-3")
-        cam2 = cam_obl(AZL, ELL, (0.0, 0.0, 0.0), K=10.0, xc=-3.55, yc=-0.6, fov=16)
+        cam2 = cam_obl(AZL, ELL, (0.0, 0.0, 0.0), K=7.4, xc=-4.1, yc=-1.2, fov=16)
         self.play(FadeOut(cap), FadeOut(dif), run_time=0.3)
         self.remove(cap, dif)
-        self.play(kL.animate.set_value(10.0), xL.animate.set_value(-3.55), yL.animate.set_value(-0.6), LT["sl"].animate(rate_func=there_and_back).set_value(1.0),
+        self.play(kL.animate.set_value(7.4), xL.animate.set_value(-4.1), yL.animate.set_value(-1.2), LT["sl"].animate(rate_func=there_and_back).set_value(1.0),
                   t_esq.animate.move_to(pos_ordem(0, cam2)), t_dir.animate.move_to(pos_ordem(1, cam2)), run_time=1.2)
         self.sem_selo(rt=0.25)
         # D28: 3 m para leste e 4 m para norte nas duas ordens, setas GEO com ponta, o mesmo ponto final marcado
@@ -388,9 +461,11 @@ class LoteT5(L20):
         l4 = lbl(r"4\ \mathrm{m}", GEO_, 36).next_to((pA + pAB) / 2, RIGHT, buff=0.18).shift(0.4 * DOWN)
         rosa = VGroup(txt("N", 26, bold=True).move_to(P3(5.6, -0.55)), arrow(P3(5.6, -1.75), P3(5.6, -0.85), WHITE_, 4, tip=0.16))
         self.gat("andar três metros para leste")
-        self.play(GrowArrow(L1), FadeIn(lA), FadeIn(l3), FadeIn(rosa), run_time=0.7)
+        self.play(GrowArrow(L1), FadeIn(rosa), run_time=0.45)
+        self.play(FadeIn(lA), FadeIn(l3), run_time=0.3)          # v7 §3: o rótulo entra depois que a ponta da seta pousou (a ponta cruzava o 3 m)
         self.gat("e depois quatro para norte")
-        self.play(GrowArrow(L2), FadeIn(lB), FadeIn(l4), run_time=0.7)
+        self.play(GrowArrow(L2), run_time=0.45)
+        self.play(FadeIn(lB), FadeIn(l4), run_time=0.3)
         self.gat("leva ao mesmo lugar")
         V1a, ia = M(r"\vec A", "+", r"\vec B", size=54, cores={0: GEO_, 2: GEO_})
         V1 = linha_m(txt("VETORES:", 28, bold=True), V1a, buff=0.25)
@@ -429,13 +504,15 @@ class LoteT5(L20):
         # ── T5-4: giros pequenos ──
         self.an("T5-4")
         self.sem_selo(rt=0.25)
+        ang["fim"] = True
+        LT["oa"].set_value(0.0)                                    # v7: os arcos do giro voltam nas rodadas de 10°, 5° e 1°
         self.pilha.limpa(rt=0.3, anims=[FadeOut(t_esq), FadeOut(t_dir)])
         self.remove(t_esq, t_dir)
-        med_t = txt("DIFERENÇA ENTRE AS ORDENS", 26, bold=True).move_to(P3(-3.55, -2.45))
+        med_t = txt("DIFERENÇA ENTRE AS ORDENS", 26, bold=True).move_to(P3(-4.5, -3.05))
         cx_ = {"v": 0.0}
 
         def medidor():
-            return num_mob(fmt_g(cx_["v"]) + "°", ANG, 54).move_to(P3(-3.55, -3.12))
+            return num_mob(fmt_g(cx_["v"]) + "°", ANG, 50).move_to(P3(-0.95, -3.05))
         mv = vivo(medidor)
         self.play(FadeIn(med_t), FadeIn(mv), run_time=0.4)
 
@@ -486,24 +563,29 @@ class LoteT5(L20):
         rodada(1.0)
         nota_ = linha_m(txt("DIFERENÇA", 28, bold=True), lbl(r"\propto", WHITE_, 46), lbl(r"\theta_1\cdot\theta_2", ANG, 46), buff=0.18)
         self.pilha.poe(nota_)
-        self.gat("com o produto dos dois ângulos")
+        self.gat("depende do produto dos dois ângulos")
         self.play(FadeIn(nota_), run_time=0.7)
-        self.gat("se os dois giros caem pela metade")
+        self.gat("se os dois caem pela metade")
         rodada(5.0)
         R10, R5 = rows[10.0][0], rows[5.0][0]
         q4 = lbl(r"\div 4", WHITE_, 46).move_to(P3(max(R10.get_right()[0], R5.get_right()[0]) + 0.75, (R10.get_y() + R5.get_y()) / 2))
         cv4 = CurvedArrow(R10.get_right() + P3(0.12, 0), R5.get_right() + P3(0.12, 0), angle=-PI / 2, color=WHITE_, stroke_width=3, tip_length=0.14)
-        self.gat("a diferença cai para um quarto")
+        self.gat("aproximadamente quatro vezes menor")
         self.play(Create(cv4), FadeIn(q4), run_time=0.8)
         self.foco = q4
+        self.pilha.limpa(rt=0.4, anims=[FadeOut(cv4), FadeOut(q4)]); self.remove(cv4, q4)      # v8: a tabela ja cumpriu o papel; a soma entra numa coluna livre
         G1a = mtp(r"d\vec\theta_1", "+", r"d\vec\theta_2", size=54, cores={0: ANG, 2: ANG})
         G1b = mtp("=", r"d\vec\theta_2", "+", r"d\vec\theta_1", size=54, cores={1: ANG, 3: ANG})
+        for G_, ps_ in ((G1a, (0, 2)), (G1b, (1, 3))):                  # v4 §3: o d de dθ⃗ é neutro (branco); θ⃗ fica âmbar
+            for i_ in ps_:
+                G_[i_][0].set_color(WHITE_)
+                G_[i_][0].set_stroke(WHITE_, width=1.8, background=False)
         self.pilha.poe(G1a, dx=0.62)
         self.pilha.poe(G1b, dx=0.0)
-        self.gat("para giros infinitesimais")
+        self.gat("de giros infinitesimais")
         self.play(FadeIn(G1a), run_time=0.8)
-        self.gat("e os giros pequenininhos se somam")
-        self.tmt(G1a, G1b, rt=1.8)                                   # §7: os dois termos trocam de lugar pela correspondência de TransformMatchingTex
+        self.gat("os pequenos giros podem ser somados como vetores")
+        self.tmt(G1a, G1b, rt=1.0)                                   # §7: os dois termos trocam de lugar pela correspondência de TransformMatchingTex
         self.foco = G1b
         self.ate(0.99)
 
@@ -522,9 +604,9 @@ class LoteT5(L20):
         mot.add_updater(motor)
         f3 = Fundo3D(self, "disco", est_d, op=0.0)
         self.add(f3)
-        self.pilha.limpa(rt=1.0, anims=[FadeOut(med_t), FadeOut(mv), FadeOut(rx), FadeOut(an_), FadeOut(cv4), FadeOut(q4),
+        self.pilha.limpa(rt=1.0, anims=[FadeOut(med_t), FadeOut(mv), FadeOut(rx), FadeOut(rcap), FadeOut(rarc), FadeOut(an_), FadeOut(cv4), FadeOut(q4),
                                         f3b.op.animate.set_value(0.0), f3.op.animate.set_value(1.0)])
-        self.remove(f3b, mv, rx, an_, med_t, cv4, q4)
+        self.remove(f3b, mv, rx, rcap, rarc, an_, med_t, cv4, q4)
 
         def lab5():
             g = {}
@@ -547,7 +629,7 @@ class LoteT5(L20):
         self.play(T["fl"].animate(rate_func=there_and_back).set_value(1.0), run_time=0.8)
         W2, iw2 = M(r"|\vec\omega|", "=", r"|\omega|", size=56, cores={0: VEL, 2: VEL})
         self.pilha.poe(W2)
-        self.gat("com tamanho igual ao tamanho")
+        self.gat("com tamanho igual ao módulo")
         self.pg(W1, W2, (J(iw1, 0), iw2[0][1:3]), ([], [iw2[0][0], iw2[0][3]]), (J(iw1, 1), J(iw2, 1)), (J(iw1, 2), J(iw2, 2)), rt=1.2, origem=False)
         W3 = linha_m(lbl(r"\omega", VEL, 46), txt("(COM SINAL) =", 26), buff=0.14)
         W3b = linha_m(txt("COMPONENTE DE", 26), lbl(r"\vec\omega", VEL, 46), txt("NO EIXO", 26), buff=0.14)
@@ -606,6 +688,9 @@ class LoteT5(L20):
             arc_pts = [pj(O + 0.32 * (np.array([0, 0, 1]) * math.cos(a) + hu * math.sin(a))) for a in np.linspace(0, phi, 7)]
             if ops["ophi"] > 0.01:
                 segs += list(zip(arc_pts[:-1], arc_pts[1:]))
+            if circ_o.get_value() > 0.01:                          # v8: o círculo tracejado de P também é obstáculo dos rótulos (φ e ω⃗ passavam por cima dele)
+                pcir = [pj((math.cos(a_), math.sin(a_), 0.012)) for a_ in np.linspace(0, 2 * PI, 49)]
+                segs += list(zip(pcir[:-1], pcir[1:]))
             P2 = -P + np.array([0, 0, 0.02])
             r2 = P2 - O
             v2 = np.cross([0, 0, w], r2)
@@ -623,11 +708,11 @@ class LoteT5(L20):
                 segs.append((pa0, pa1))
             g = {}
             if ops["ow"] > 0.01:
-                g["w"] = LD.poe("w", rot(r"\vec\omega", VEL, 46), pW1, segs, pts, d=0.12, pref=(3, 4))
+                g["w"] = LD.poe("w", rot(r"\vec\omega", VEL, 46), pW1, segs, pts, d=0.3, pref=(3, 4))
             if ops["oO"] > 0.01:
                 g["O"] = LD.poe("O", rot("O", WHITE_, 42), pO, segs, pts, d=0.1)
             if ops["ophi"] > 0.01:
-                g["phi"] = LD.poe("phi", rot(r"\varphi", ANG, 44), arc_pts[3], segs, pts, d=0.08)
+                g["phi"] = LD.poe("phi", rot(r"\varphi", ANG, 44), arc_pts[3], segs, pts, d=0.24, pref=(0, 1, 7))
             if ops["or"] > 0.01:
                 g["r"] = LD.poe("r", rot(r"\vec r", GEO_, 46), pO + 0.55 * (pP - pO), segs, pts, d=0.24)
             if ops["orp"] > 0.01:
@@ -682,33 +767,34 @@ class LoteT5(L20):
         self.play(T["oO"].animate.set_value(1.0), T["or"].animate.set_value(1.0), z0.animate.set_value(0.5), run_time=0.9)
         X1, ix1 = M(r"\vec v", "=", r"\vec\omega", r"\times", r"\vec r", size=60, cores={0: VEL, 2: VEL, 4: GEO_})
         self.pilha.poe(X1)
-        self.gat("ganha uma fórmula completa")
+        self.gat("ganha uma descrição completa")
         L6 = lab6()
         self.voa([(L6["w"], mp(X1, ix1, [2])), (L6["r"], mp(X1, ix1, [4]))], extra=[FadeIn(mp(X1, ix1, [0, 1, 3]))], rt=1.3, origem=False)
-        self.gat("dá um terceiro")
+        self.gat("dá a velocidade do ponto")
         self.play(T["ov"].animate.set_value(1.0), run_time=0.8)
-        self.gat("com tamanho igual à área desse paralelogramo")
+        self.gat("olha o paralelogramo")
         self.play(T["opar"].animate.set_value(1.0), run_time=0.8)
         X2, ix2 = M(r"|\vec v|", "=", r"\omega", "r", r"\operatorname{sen}", r"\varphi", size=60, cores={0: VEL, 2: VEL, 3: GEO_, 5: ANG})
         self.pilha.poe(X2)
-        self.gat("vezes o seno do ângulo entre eles")
+        self.gat("vezes o seno do ângulo entre os dois")
         self.play(T["ophi"].animate.set_value(1.0), run_time=0.6)
         self.voa([(lab6()["phi"], mp(X2, ix2, [5]))], extra=[FadeIn(mp(X2, ix2, [0, 1, 2, 3, 4]))], rt=1.3, origem=False)
         X3, ix3 = M("=", r"\omega", r"r_\perp", size=60, cores={1: VEL, 2: GEO_})
         self.pilha.poe(X3)
-        self.gat("é exatamente a distância do ponto ao eixo")
+        self.gat("é justamente a distância perpendicular ao eixo")
         self.play(T["orp"].animate.set_value(1.0), run_time=0.6)
         # GM r sen φ → r_⊥ (o r_⊥ do desenho pisca junto)
         self.pg(X2, X3, (J(ix2, 0), []), (J(ix2, 1), J(ix3, 0)), (J(ix2, 2), J(ix3, 1)), (J(ix2, 3, 4, 5), J(ix3, 2)), rt=1.3, origem=False,
                 extra=[T["fl"].animate(rate_func=there_and_back).set_value(1.0)])
         self.foco = X3
-        self.gat("por isso o vetor posição pode começar em qualquer ponto do eixo")
+        self.gat("recuperamos a relação que já conhecemos")                  # v6: ordem da fala (recuperamos → tangente → qualquer ponto do eixo)
+        self.play(Indicate(X3, color=WHITE_, scale_factor=1.05), run_time=1.2)
+        self.gat("tangente à trajetória circular")
+        self.play(circ_o.animate.set_value(1.0), run_time=0.6)
+        self.gat("qualquer ponto desse eixo como origem")
         self.play(z0.animate(rate_func=smooth).set_value(0.6), run_time=2.4)
         self.play(z0.animate(rate_func=smooth).set_value(0.1), run_time=3.0)
-        self.gat("o tamanho volta a ser")
         self.play(z0.animate(rate_func=smooth).set_value(0.5), run_time=1.6)
-        self.gat("tangente ao círculo do ponto")
-        self.play(circ_o.animate.set_value(1.0), run_time=0.6)
         self.ate(0.99)
 
         # ── T5-7: os dois pontos opostos ──
@@ -732,9 +818,9 @@ class LoteT5(L20):
         Y1, iy1 = M(r"\vec\alpha", "=", r"\frac{d\vec\omega}{dt}", size=56, cores={0: ACC})
         pinta(Y1, iy1[2][1:3], VEL)
         self.pilha.poe(Y1)
-        self.gat("a aceleração angular também vira vetor")
+        self.gat("e a aceleração angular também pode ser um vetor")
         self.voa([(lab6()["w"], gl(Y1, iy1[2][1:3]))], extra=[FadeIn(mp(Y1, iy1, [0, 1])), FadeIn(gl(Y1, [iy1[2][0]] + iy1[2][3:]))], rt=1.3, origem=False)
-        self.gat("com eixo fixo ela fica em cima do eixo")
+        self.gat("com o eixo fixo ela aponta ao longo desse eixo")
         cfg["oal"] = 0.0
         oal = ValueTracker(0.0)
         self.add(oal)
@@ -744,13 +830,13 @@ class LoteT5(L20):
         alv.set_value(AL5)
         self.play(oal.animate.set_value(1.0), run_time=0.7)
         self.play(wv.animate(rate_func=linear).set_value(0.72), run_time=self.ate_t("quando o giro acelera", 0.6))
-        self.gat("quando o giro acelera")
+        self.gat("o giro acelera")
         self.selo("ACELERA", "", rt=0.4, anims=[wv.animate(rate_func=linear).set_value(0.75)])
-        self.gat("no sentido oposto quando freia")
+        self.gat("no sentido oposto o giro desacelera")
         alv.set_value(-AL5)
         self.selo("FREIA", "", rt=0.4)
         self.play(wv.animate(rate_func=linear).set_value(W5), run_time=1.4)
-        self.gat("e agora dá para juntar tudo numa linha")
+        self.gat("agora deriva a expressão vetorial da velocidade de um ponto")
         alv.set_value(AL5)
         self.selo("ACELERA", "", rt=0.4)
         t_rest = self.resta()
@@ -761,13 +847,12 @@ class LoteT5(L20):
         A1, ia1 = M(r"\vec a", "=", r"\frac{d\vec v}{dt}", size=52, cores={0: ACC})
         pinta(A1, ia1[2][1:3], VEL)
         self.pilha.poe(A1)
-        self.voa([(lab6()["v"], gl(A1, ia1[2][1:3]))], extra=[FadeIn(mp(A1, ia1, [0, 1])), FadeIn(gl(A1, [ia1[2][0]] + ia1[2][3:]))], rt=1.2, origem=False)
+        self.voa([(lab6()["v"], gl(A1, ia1[2][1:3]))], extra=[FadeIn(mp(A1, ia1, [0, 1])), FadeIn(gl(A1, [ia1[2][0]] + ia1[2][3:]))], rt=0.8, origem=False)
         A2, ia2 = M("=", r"\frac{d}{dt}", "(", r"\vec\omega", r"\times", r"\vec r", ")", size=52, cores={3: VEL, 5: GEO_})
         self.pilha.poe(A2)
-        self.gat("derivando a velocidade do ponto")
-        f1 = ia1[2]
+        f1 = ia1[2]                                                # v7 §4: sem gatilho aqui; "aparecem dois termos" dispara o passo seguinte, e este cabe antes dele
         self.pg(A1, A2, (J(ia1, 0), []), (J(ia1, 1), J(ia2, 0)), ([f1[0]], [ia2[1][0]]), (f1[1:3], J(ia2, 2, 3, 4, 5, 6)), ([f1[3]], [ia2[1][1]]),
-                (f1[4:], ia2[1][2:]), rt=1.2, origem=False)
+                (f1[4:], ia2[1][2:]), rt=0.9, origem=False)
         A3, ia3 = M("=", r"\vec\alpha", r"\times", r"\vec r", "+", r"\vec\omega", r"\times", r"\vec v", size=52, cores={1: ACC, 3: GEO_, 5: VEL, 7: VEL})
         self.pilha.poe(A3)
         self.gat("aparecem dois termos")
@@ -775,7 +860,7 @@ class LoteT5(L20):
         self.passo_arco(A2, A3, (J(ia2, 0), J(ia3, 0)), (J(ia2, 1), J(ia3, 1)), (J(ia2, 2), []), (J(ia2, 3), J(ia3, 5)), (J(ia2, 4), J(ia3, 2)),
                 (J(ia2, 5), J(ia3, 3)), (J(ia2, 6), []), ([], J(ia3, 4)), ([], J(ia3, 6)), ([], J(ia3, 7)), rt=2.2)
         self.foco = A3
-        self.gat("o primeiro é a aceleração angular")
+        self.gat("o primeiro combina a aceleração angular")
         self.foco = A3
         self.gat("é a aceleração tangencial")
         self.play(T["ov"].animate.set_value(0.0), T["oat"].animate.set_value(1.0), *self.troca_marcador("FORA DE ESCALA", "dir", y=-2.95), run_time=0.7)
@@ -789,15 +874,15 @@ class LoteT5(L20):
         pinta(A4f, ia4f[8][4:6], GEO_)
         A4._lhs = lambda: A4f
         self.pilha.poe(A4)
-        self.gat("o segundo é a velocidade angular")
+        self.gat("o segundo combina a velocidade angular")
         self.foco = A3
-        self.gat("com a velocidade do próprio ponto")
+        self.gat("com a velocidade do ponto")
         # GM v⃗ → (ω⃗ × r⃗)
         self.pg(A3, A4, *[(J(ia3, k), J(ia4, k)) for k in range(8)], rt=1.2, origem=False)
         self.foco = A4
-        self.gat("ele aponta para o eixo")
+        self.gat("esse aponta para o eixo")
         self.play(T["oac"].animate.set_value(1.0), T["or"].animate.set_value(0.0), run_time=0.7)      # r⃗ sai: a_c corre sobre ele
-        self.gat("e tem tamanho velocidade angular")
+        self.gat("e tem módulo igual ao quadrado da velocidade angular")
         A4f = self.pilha.so(A4, rt=0.6)[0]
         br1 = Brace(mp(A4f, ia4f, [2, 3, 4]), DOWN, buff=0.24, color=WHITE_)
         br2 = Brace(mp(A4f, ia4f, [6, 7, 8]), DOWN, buff=0.24, color=WHITE_)
@@ -818,9 +903,9 @@ class LoteT5(L20):
         self.gat("vezes a distância ao eixo")
         self.voa([(lab6()["ac"], mp(Z2m, iz2, [0]))], extra=[FadeIn(mp(Z2m, iz2, [1, 2, 3])), FadeIn(Z2[1])], rt=1.1, origem=False)
         self.foco = Z2
-        self.gat("as duas acelerações do disco estavam escondidas")
+        self.gat("aquelas duas acelerações que desenhamos no disco")
         self.play(self.ind(A4f, ia4f, [2, 3, 4], f=1.0), self.ind(A4f, ia4f, [6, 7, 8], f=1.0), run_time=0.9)
-        self.gat("e quando o próprio eixo muda de direção")
+        self.gat("se a própria direção do eixo começar a mudar")
         self.play(*self.troca_marcador(None), run_time=0.4)
         self.foco = A4f
         self.ate(0.99)

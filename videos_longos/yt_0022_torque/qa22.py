@@ -303,6 +303,35 @@ try:
 except Exception as ex:
     p(f"  (cor não medida: {ex})")
 
+# ── 6. v6: FLASH (elemento visível e removido antes de ser escrito) e FUNDO (movimento contínuo à esquerda) ──
+p("\n== FLASH / FUNDO (v6) ==")
+n_f = 0
+for l in LOTES:
+    f = U / f"log_aud_{l}.txt"
+    if f.exists():
+        n_f += len(re.findall(r"\[fantasma\]", f.read_text(encoding="utf-8", errors="replace")))
+p(f"  FadeOut de objeto já fora da cena (o kit os filtra; antes eram o 'flash'): {n_f} (informativo)")
+fl = U / "renders" / "flash.txt"
+if fl.exists():
+    LF = fl.read_text(encoding="utf-8").splitlines()
+    # picos conferidos em quadros (renders/chk/fl/flash_v6.png): não são "flash" (o elemento nasce, é lido e só depois sai)
+    EXPL = [(96.3, 'fade-in de "NA ROTAÇÃO" (permanece em tela; o pico é o rótulo vizinho que troca de brilho)'),
+            (228.2, "saída deliberada do bloco inteiro do T1 depois de lido (FadeOut de cena)"),
+            (868.1, "troca sequencial de selo (EQUILÍBRIO ESTÁTICO → ATALHO), ambos já lidos")]
+    ev = [float(re.match(r"\s*([0-9.]+)s", x).group(1)) for x in LF[1:] if re.match(r"\s*[0-9.]+s", x)]
+    nao = [t_ for t_ in ev if not any(abs(t_ - te) <= 0.6 for te, _ in EXPL)]
+    chk("FLASH por vídeo (flash22.py)", not nao, f"{len(ev)} picos de tinta; explicados em quadro: {len(ev) - len(nao)}; sem explicação: {nao}")
+    for te, why in EXPL:
+        p(f"    explicado {te:.1f}s: {why}")
+fu = U / "renders" / "fundo.txt"
+if fu.exists():
+    L_ = fu.read_text(encoding="utf-8").splitlines()
+    sl = [x for x in L_ if x.startswith("saltos")][0]
+    m1 = re.search(r": (\d+)\s*$", L_[1])
+    m2 = re.search(r": (\d+) quadros", sl)
+    fb = [x for x in L_ if x.startswith("fronteiras de lote")][0]
+    chk("FUNDO (fundo22.py)", bool(m2 and int(m2.group(1)) == 0 and fb.endswith("8 de 8")), f"{sl} | {fb} | trechos com conteúdo rápido/3D opaco (informativo): {m1.group(1) if m1 else '?'}")
+
 p(f"\nRESULTADO: {'tudo OK' if ok_geral else 'há FALHAS (ver acima)'}")
 (U / "renders").mkdir(exist_ok=True)
 (U / "renders" / "qa.txt").write_text("\n".join(out) + "\n", encoding="utf-8")

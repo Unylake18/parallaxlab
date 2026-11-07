@@ -14,17 +14,25 @@ from pecas22 import *  # noqa: F401,F403
 class LoteT4(Lote22):
     def corpo(self):
         cam = cam_regua_frente(K=4.8, xc=-3.6, yc=0.55, camx=0.45, camz=-0.04)
+        # T4-3: a régua 3D com barras de a_t(r) cobre exatamente o esquema 2D (dobradiça em (-5,6; 0,35), comprimento 5,2)
+        cam_b = cam_regua_frente(K=5.2, xc=-5.6, yc=0.35, camx=0.0, camz=0.0, el=0.0)
+        cam_tr = ValueTracker(0.0)
+        bar_tr = ValueTracker(0.0)
+        self.add(cam_tr, bar_tr)
 
         def est(t):
             e = estado_regua(0.0, moedas=False)
-            e["cam"] = cam
+            cam_ = cam_b if cam_tr.get_value() > 0.5 else cam
+            e["cam"] = cam_
+            e["barras"] = round(float(bar_tr.get_value()), 4)
+            e["hb"] = round(2.025 / 5.2, 5)
             if not PEDIDOS3D:
                 self.reg(
                     "t4_regua",
-                    dobradica=tela_regua(cam, 0.0, 0.0),
-                    cm=tela_regua(cam, 0.50, 0.0),
-                    dois_tercos=tela_regua(cam, 2.0 / 3.0, 0.0),
-                    ponta=tela_regua(cam, 1.00, 0.0),
+                    dobradica=tela_regua(cam_, 0.0, 0.0),
+                    cm=tela_regua(cam_, 0.50, 0.0),
+                    dois_tercos=tela_regua(cam_, 2.0 / 3.0, 0.0),
+                    ponta=tela_regua(cam_, 1.00, 0.0),
                 )
             return r4(e)
 
@@ -40,8 +48,8 @@ class LoteT4(Lote22):
         self.play(FadeIn(A0_t4), run_time=0.6)
         self.wait(0.6)
         # Transição limpa para o esquema 2D da régua na metade esquerda
-        P_DOB = P3(-6.0, 0.65)
-        L_ESQ = 4.8
+        P_DOB = P3(-5.6, 0.35)
+        L_ESQ = 5.2
         reg = regua2d(P_DOB, comp=L_ESQ, esp=0.24, ang=0.0, n_fatias=0, bancada=True)
         self.play(f3.op.animate.set_value(0.0), FadeIn(reg), run_time=0.8)
 
@@ -53,7 +61,7 @@ class LoteT4(Lote22):
         self.gat("cada pedacinho tem o seu peso")
         self.play(FadeIn(setas_p), run_time=0.7)
 
-        A1, ia1 = M(r"\tau_{\mathrm{peso}}", "=", r"\sum", "m_i", "g", "x_i", "=", "g", r"\sum", "m_i", "x_i", size=46)
+        A1, ia1 = M(r"\tau_{\mathrm{peso}}", "=", "g", r"\sum", "m_i", "x_i", size=46)
         self.pilha.poe(A1)
         self.monta(A1, ia1, {}, rt=1.1)
 
@@ -74,8 +82,8 @@ class LoteT4(Lote22):
             A1, A2,
             (J(ia1, 0), J(ia2, 0)),
             (J(ia1, 1), J(ia2, 1)),
-            (J(ia1, 7), J(ia2, 3)),
-            (J(ia1, 8, 9, 10), J(ia2, 2, 4)),
+            (J(ia1, 2), J(ia2, 3)),
+            (J(ia1, 3, 4, 5), J(ia2, 2, 4)),
             rt=1.1,
             origem=True,
         )
@@ -105,7 +113,9 @@ class LoteT4(Lote22):
         # Risca M em cima e embaixo e L com o quadrado
         self.gat("a massa some")
         risco_M1 = Line(B3[0][3].get_corner(DL), B3[0][3].get_corner(UR)).set_stroke(MAS, 3.8)
+        risco_M1._risco = True
         risco_M2 = Line(B3[0][11].get_corner(DL), B3[0][11].get_corner(UR)).set_stroke(MAS, 3.8)
+        risco_M2._risco = True
         self.play(Create(risco_M1), Create(risco_M2), run_time=0.6)
 
         B4, ib4 = M(r"\alpha_z", "=", "-", r"\frac{3g}{2L}", size=56)
@@ -131,12 +141,15 @@ class LoteT4(Lote22):
         self.play(FadeOut(VGroup(m_cm, s_mg, l_mg, cota_l2, arco_h, B4b, B5)), run_time=0.45)
 
         self.selo("INSTANTE DA LARGADA", "PARTINDO DO REPOUSO: SÓ HÁ ACELERAÇÃO TANGENCIAL")
+        cam_tr.set_value(1.0)                                  # câmera do T4-3 = geometria exata do esquema 2D
+        self.play(reg.animate.set_opacity(0.0), f3.op.animate.set_value(1.0), run_time=0.6)
 
         # Risco explícito em a_c = ω² r = 0 no topo da Pilha
         C0, ic0 = M("a_c", "=", r"\omega^2", "r", "=", "0", size=46)
         self.pilha.poe(C0)
         self.monta(C0, ic0, {}, rt=0.7)
         risco_ac = Line(mp(C0, ic0, [2, 3]).get_corner(DL), mp(C0, ic0, [2, 3]).get_corner(UR)).set_stroke(MAS, 3.6)
+        risco_ac._risco = True
         self.play(Create(risco_ac), run_time=0.4)
 
         # Gráfico sob a régua 2D: linha horizontal tracejada para a aceleração g e reta inclinada para a_t(r) = (3g / 2L) r
@@ -144,7 +157,7 @@ class LoteT4(Lote22):
         H_PONTA = 1.5 * H_G
         y_base = P_DOB[1]
         lin_g = DashedLine(P3(P_DOB[0], y_base - H_G), P3(P_DOB[0] + L_ESQ + 0.35, y_base - H_G), dash_length=0.09).set_stroke(GEO, 2.4, opacity=0.85)
-        lbl_lin_g = T("g", 38, ACC).next_to(lin_g, RIGHT, buff=0.14)
+        lbl_lin_g = T("g", 38, ACC).next_to(lin_g, LEFT, buff=0.14)
         reta_at = Line(P_DOB, P3(P_DOB[0] + L_ESQ, y_base - H_PONTA)).set_stroke(ACC, 4.0)
 
         # Setas verdes de a_t(r) crescendo linearmente com r
@@ -156,7 +169,7 @@ class LoteT4(Lote22):
         C1, ic1 = M("a_t(r)", "=", r"|\alpha|", "r", "=", r"\frac{3g}{2L}", "r", size=48)
         self.pilha.poe(C1)
         self.gat("aceleração angular vezes a distância")
-        self.play(Create(lin_g), FadeIn(lbl_lin_g), Create(reta_at), FadeIn(setas_at), run_time=1.0)
+        self.play(Create(lin_g), FadeIn(lbl_lin_g), Create(reta_at), bar_tr.animate.set_value(1.0), run_time=1.0)
         self.monta(C1, ic1, {}, rt=1.0)
 
         # Na ponta (r = L): a_ponta = 3g/2 = 14,7 m/s² > g
@@ -171,7 +184,7 @@ class LoteT4(Lote22):
         p_23 = reg.dois_tercos
         dot_23 = Dot(p_23 + DOWN * H_G, radius=0.09, color=WHITE_).set_z_index(18)
         lin_v23 = DashedLine(p_23 + UP * 0.25, p_23 + DOWN * (H_G + 0.25), dash_length=0.07).set_stroke(WHITE_, 2.4)
-        lbl_23 = VGroup(T(r"\tfrac{2}{3}L", 36, GEO), nm(r"\approx 67\ \mathrm{cm}", GEO, 36)).arrange(RIGHT, buff=0.10).move_to(dot_23.get_center() + P3(-0.35, -0.48))
+        lbl_23 = VGroup(T(r"\tfrac{2}{3}L", 36, GEO), nm(r"\approx 67\ \mathrm{cm}", GEO, 36)).arrange(RIGHT, buff=0.10).move_to(dot_23.get_center() + P3(-0.20, -0.80))
 
         C2, ic2 = M("r", "=", r"\frac{2}{3}", "L", r"\approx", "67", r"\,\mathrm{cm}", r"\ \Rightarrow\ ", "a_t", "=", "g", size=46)
         self.pilha.poe(C2)
@@ -183,7 +196,7 @@ class LoteT4(Lote22):
         m1_2d = RoundedRectangle(width=0.34, height=0.10, corner_radius=0.03).move_to(reg.cm + UP * 0.19).set_fill("#EAF0FA", 0.98).set_stroke(ACC, 2.0)
         m2_2d = RoundedRectangle(width=0.34, height=0.10, corner_radius=0.03).move_to(reg.ponta + UP * 0.36).set_fill("#EAF0FA", 0.98).set_stroke(ACC, 2.0)
         tag_m1 = nm(r"0{,}75\,g < g", ACC, 36).move_to(m1_2d.get_top() + P3(-0.75, 0.30))
-        tag_m2 = nm(r"\tfrac{3}{2}g > g", ACC, 36).move_to(m2_2d.get_top() + P3(0.20, 0.30))
+        tag_m2 = nm(r"\tfrac{3}{2}g > g", ACC, 36).move_to(m2_2d.get_top() + P3(-0.85, 0.55))
         self.gat("a moeda do meio está antes disso")
         self.play(FadeIn(m1_2d), FadeIn(tag_m1), FadeIn(m2_2d), FadeIn(tag_m2), run_time=0.8)
         self.foco = C3b
@@ -194,7 +207,9 @@ class LoteT4(Lote22):
         self.sem_selo()
         self.pilha.limpa()
         self.play(
-            FadeOut(VGroup(C0, risco_ac, C1, C2, C3b, lin_g, lbl_lin_g, reta_at, setas_at, dot_23, lin_v23, lbl_23, m1_2d, m2_2d, tag_m1, tag_m2)),
+            FadeOut(VGroup(C0, risco_ac, C1, C2, C3b, lin_g, lbl_lin_g, reta_at, dot_23, lin_v23, lbl_23, m1_2d, m2_2d, tag_m1, tag_m2)),
+            bar_tr.animate.set_value(0.0),
+            f3.op.animate.set_value(0.0),
             run_time=0.45,
         )
 
@@ -221,8 +236,8 @@ class LoteT4(Lote22):
             y0 = pk[1] + (0.16 if dy > 0 else -0.16)
             setas_alem.add(seta(P3(pk[0], y0), P3(pk[0], y0 + dy), FC, 4.8, tip=0.16))
 
-        tit_setas = txt("FORÇAS ALÉM DO PESO (VIZINHOS + DOBRADIÇA)", 22, bold=True, color=FC).move_to(P_DOB + P3(2.4, -1.55))
-        self.gat("olha cada fatia")
+        tit_setas = VGroup(txt("FORÇAS ALÉM DO PESO", 32, bold=True, color=FC), txt("(VIZINHOS + DOBRADIÇA)", 26, color=FC)).arrange(DOWN, buff=0.1).move_to(P_DOB + P3(3.0, -1.9))
+        self.gat("cada fatia precisa acompanhar")
         self.play(FadeIn(setas_alem), FadeIn(tit_setas), run_time=0.9)
 
         # Registra para auditoria FATIAS em qa22.py
@@ -230,9 +245,9 @@ class LoteT4(Lote22):
 
         # Na fatia 0 (colada à dobradiça), separa a seta em VIZINHOS (internos) + DOBRADIÇA (externa = M g / 4 para cima)
         s_dob = seta(P_DOB + P3(0.0, 0.20), P_DOB + P3(0.0, 1.35), FC, 6.5, tip=0.20)
-        l_dob_f = VGroup(txt("DOBRADIÇA:", 22, bold=True, color=FC), T(r"\tfrac{1}{4}Mg", 36, FC)).arrange(RIGHT, buff=0.10).move_to(P_DOB + P3(0.95, 1.68))
+        l_dob_f = VGroup(txt("DOBRADIÇA:", 30, bold=True, color=FC), T(r"\tfrac{1}{4}Mg", 36, FC)).arrange(RIGHT, buff=0.10).move_to(P_DOB + P3(0.95, 1.68))
 
-        self.gat("perto da dobradiça")
+        self.gat("na extremidade presa")
 
         D2, id2 = M(r"r_i > \tfrac{2}{3}L", r"\ \Rightarrow\ ", r"F_{\mathrm{viz}} < 0", size=46)
         self.pilha.poe(D2)
@@ -265,9 +280,17 @@ class LoteT4(Lote22):
         # Chão na esquerda + vassoura e lápis apoiados lado a lado
         P_VAS = P3(-5.8, -2.55)
         P_LAP = P3(-2.3, -2.55)
-        chao_vl = Line(P3(-6.8, -2.55), P3(-0.6, -2.55)).set_stroke(GEO, 2.8)
         t_vl = ValueTracker(0.0)
         self.add(t_vl)
+        cam_q = cam_regua_frente(K=3.0, xc=-4.0, yc=-2.55, camx=0.0, camz=0.0, el=0.0)   # Three.js 'queda': pé da vassoura em x_tela = -5,8; do lápis em -2,3; chão em y = -2,55
+
+        def est_q(t):
+            tf_ = min(float(t_vl.get_value()), float(TAB_VASSOURA["t_queda"]) + 0.02)
+            i_ = min(len(TAB_VASSOURA["ts"]) - 1, max(0, int(round(tf_ / float(TAB_VASSOURA["dt"])))))
+            return r4({"th_v": round(float(TAB_VASSOURA["th"][i_]), 5), "th_p": round(float(TAB_LAPIS["th"][i_]), 5), "cam": cam_q})
+
+        f4 = Fundo3D(self, "queda", est_q, op=0.0)
+        self.add(f4)
 
         dt_vl = TAB_VASSOURA["dt"]
         tv_max = float(TAB_VASSOURA["t_queda"])
@@ -278,18 +301,16 @@ class LoteT4(Lote22):
             idx = min(len(TAB_VASSOURA["ts"]) - 1, max(0, int(round(tf / dt_vl))))
             th_v = float(TAB_VASSOURA["th"][idx])
             th_l = float(TAB_LAPIS["th"][idx])
-            v_obj = vassoura(P_VAS, comp=3.6, th=th_v)
-            l_obj = lapis(P_LAP, comp=0.75, th=th_l)
             tv_mostra = min(tf, tv_max)
             tl_mostra = min(tf, tl_max)
-            rel_v = VGroup(txt("VASSOURA (1,2 m)", 22, color=GEO), nm(rf"t = {br(tv_mostra, 2)}\ \mathrm{{s}}", VEL, 36)).arrange(DOWN, buff=0.08).move_to(P3(-5.5, 2.05))
-            rel_l = VGroup(txt("LÁPIS (15 cm)", 22, color=GEO), nm(rf"t = {br(tl_mostra, 2)}\ \mathrm{{s}}", VEL, 36)).arrange(DOWN, buff=0.08).move_to(P3(-2.1, 2.05))
-            return VGroup(chao_vl, v_obj, l_obj, rel_v, rel_l)
+            rel_v = VGroup(rot("VASSOURA (1,2 m)", 30, color=GEO), nm(rf"t = {br(tv_mostra, 2)}\ \mathrm{{s}}", VEL, 36)).arrange(DOWN, buff=0.08).move_to(P3(-5.5, 2.05))
+            rel_l = VGroup(rot("LÁPIS (15 cm)", 30, color=GEO), nm(rf"t = {br(tl_mostra, 2)}\ \mathrm{{s}}", VEL, 36)).arrange(DOWN, buff=0.08).move_to(P3(-2.1, 2.05))
+            return VGroup(rel_v, rel_l)
 
         v_vl = vivo(_cena_vl)
         E1, ie1 = M(r"|\alpha|", "=", r"\frac{3g}{2L}", r"\sin\theta", r"\ \propto\ ", r"\frac{1}{L}", size=48)
         self.pilha.poe(E1)
-        self.play(FadeIn(v_vl), run_time=0.6)
+        self.play(FadeIn(v_vl), f4.op.animate.set_value(1.0), run_time=0.6)
         self.monta(E1, ie1, {}, rt=1.0)
         self.gat("um sobre o comprimento")
 

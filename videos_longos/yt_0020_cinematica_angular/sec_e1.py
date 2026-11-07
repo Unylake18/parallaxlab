@@ -90,7 +90,7 @@ class LoteE1(L20):
         self._voando = set(id(x) for x in a.get_family()) | set(id(x) for x in b.get_family())
         self._voando_raiz = [a, b]
         self._fontes_extra = [src]
-        self.play(TransformMatchingTex(a, b, key_map=key_map), *extra, run_time=max(0.8, rt))
+        self.play_dip(src, TransformMatchingTex(a, b, key_map=key_map), *extra, run_time=max(0.8, rt))
         self._fontes_extra = []
         self._voando, self._voando_raiz = set(), []
         self.remove(a, b)
@@ -135,8 +135,8 @@ class LoteE1(L20):
         # v3 §5.1: o número do rótulo original fica a 40% enquanto a cópia voa (sem cópia sobre o original). UpdateFromAlphaFunc sobre o próprio l_r (uma fatia
         # em ApplyMethod entraria na cena como grupo à parte e levaria os glifos `r =` embora).
         def _op(k, de, ate):
-            return UpdateFromAlphaFunc(l_r, lambda m, a: [g.set_opacity(de + (ate - de) * a) for g in m[0][2:k]], suspend_mobject_updating=False)
-        dim_r = lambda k=6: _op(k, 1.0, 0.4)
+            return UpdateFromAlphaFunc(l_r, lambda m, a: [g.set_opacity(de + (ate - de) * a) for g in m[0][2:k]], suspend_mobject_updating=False)  # v4: de=1.0 só em des_r; dim_r parte de 0,4 já diminuído por escreve (sem pop a 100%)
+        dim_r = lambda k=6: _op(k, 0.4, 0.4)
         des_r = lambda k=6: _op(k, 0.4, 1.0)
         l_p = VGroup(txt("PARA EM", 26, bold=True), valor(r"30\ \mathrm{s}", WHITE_, 40)).arrange(DOWN, buff=0.1).move_to(P3(-1.0, 1.65))
         Da, ida = M(r"\omega_0", "=", r"300\ \mathrm{RPM}", size=50, cores={0: VEL, 2: VEL})
@@ -150,7 +150,7 @@ class LoteE1(L20):
         self.play(Create(cota_r), FadeIn(l_r), run_time=0.7)
         self.pilha.poe(Db)
         self.voa([(l_r[0][2:7], mp(Db, idb, [2]))], extra=[FadeIn(mp(Db, idb, [0, 1])), dim_r(7)], rt=1.0)
-        self.gat("desligado ele para em trinta segundos")
+        self.gat("desliga ele para em trinta segundos")
         self.play(FadeIn(l_p), des_r(7), run_time=0.5)
         self.pilha.poe(Dc)
         self.voa([(l_p[1][0], mp(Dc, idc, [2]))], extra=[FadeIn(mp(Dc, idc, [0, 1]))], rt=1.0)
@@ -240,10 +240,10 @@ class LoteE1(L20):
             g = VGroup()
             d_, sm_, ur_ = dth_.copy().move_to(P3(X0C + dth_.width / 2, YC1)), (sim_ap if fim_ else sim_ig).copy().move_to(P3(xs_, YC1)), un_rad.copy()
             xl_ = xs_ + sim_ig.width / 2 + 0.14
-            nr_ = pon(tab(f"{max(th, 0.0):.0f}", ANG, 40, "000"), xl_ + CAMPO_R, YC1 - 0.13)
+            nr_ = pon(tab(f"{max(th, 0.0) + 0.0:.0f}", ANG, 40, "000"), xl_ + CAMPO_R, YC1 - 0.13)
             ur_.move_to(P3(xl_ + CAMPO_R + 0.1 + ur_.width / 2, YC1))
             g.add(VGroup(d_, sm_, nr_, ur_))
-            vtxt = "75" if fim_ else f"{max(vt, 0.0):.1f}".replace(".", ",")
+            vtxt = "75" if fim_ else f"{max(vt, 0.0) + 0.0:.1f}".replace(".", ",")
             nv_ = pon(tab(vtxt, WHITE_, 40, "00,0"), X0C + CAMPO_V, YC2 - 0.13)
             uv_ = un_vol.copy()
             uv_.move_to(P3(X0C + CAMPO_V + 0.14 + uv_.width / 2, YC2))
@@ -288,7 +288,7 @@ class LoteE1(L20):
         bxC = cx(C2, ANG)
         self.play(FadeIn(bxC), run_time=0.3)
         self.gat("e repara no mostrador")
-        rr = RoundedRectangle(corner_radius=0.1, width=1.9, height=1.15).move_to(P3(-0.85, 0.35)).set_stroke(WHITE_, 3).set_fill(opacity=0)
+        rr = RoundedRectangle(corner_radius=0.1, width=2.2, height=1.5).move_to(P3(-0.85, 0.4))   # v6 §2.2: folga ≥ 0,1 u dentro da caixa.set_stroke(WHITE_, 3).set_fill(opacity=0)
         rr._fundo = True
         self.play(FadeIn(rr), run_time=0.4)
         self.play(FadeOut(rr), run_time=0.5)
@@ -306,10 +306,14 @@ class LoteE1(L20):
         D2, id2 = M(r"\approx", r"262\ \mathrm{rad}", r"\approx", r"41{,}7", size=50, cores={1: ANG})
         D2l = linha_m(D2, txt("VOLTAS", 26, bold=True), buff=0.15)
         # v3 §7: a equação do ângulo entra em símbolos e vira a forma com |α| por TransformMatchingTex (Δθ, =, ω₀t, ½ e t² se repetem; + vira −; α sai e |α| entra)
-        PG1 = [(r"\Delta\theta", ANG), ("=", None), (r"\omega_0 t", ANG), ("+", None), (r"\tfrac12", ANG), (r"\alpha", ACC), ("t^2", ANG)]
-        PG2 = [(r"\Delta\theta", ANG), ("=", None), (r"\omega_0 t", ANG), ("-", None), (r"\tfrac12", ANG), (r"|\alpha|", ACC), ("t^2", ANG)]
-        G1, _ = M(*[p[0] for p in PG1], size=50, cores={0: ANG, 2: ANG, 4: ANG, 5: ACC, 6: ANG})
-        G2, _ = M(*[p[0] for p in PG2], size=50, cores={0: ANG, 2: ANG, 4: ANG, 5: ACC, 6: ANG})
+        PG1 = [(r"\Delta\theta", ANG), ("=", None), (r"\omega_0 t", VEL), ("+", None), (r"\tfrac12", None), (r"\alpha", ACC), ("t^2", None)]   # v4 §3: ω₀ violeta, α verde, t e ½ brancos (o t é pintado de branco abaixo)
+        PG2 = [(r"\Delta\theta", ANG), ("=", None), (r"\omega_0 t", VEL), ("-", None), (r"\tfrac12", None), (r"|\alpha|", ACC), ("t^2", None)]
+        G1, i_g1 = M(*[p[0] for p in PG1], size=50, cores={0: ANG, 2: VEL, 5: ACC})
+        G2, i_g2 = M(*[p[0] for p in PG2], size=50, cores={0: ANG, 2: VEL, 5: ACC})
+        for G_, i_ in ((G1, i_g1), (G2, i_g2)):
+            tg_ = G_[0][i_[2][-1]]                                  # o t de ω₀t
+            tg_.set_color(WHITE_)
+            tg_.set_stroke(WHITE_, width=1.8, background=False)
         self.pilha.poe(G1)
         self.pilha.poe(G2)
         self.gat("quanto ele gira nos primeiros dez segundos")

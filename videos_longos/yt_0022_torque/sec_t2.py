@@ -54,7 +54,7 @@ class LoteT2(Lote22):
         s_r = seta(p_dob, p_mac, VETC, 6, tip=0.22)
         l_r = T(r"\vec r", 42, VETC).move_to((p_dob + p_mac) / 2 + P3(0.0, -0.40))
         s_F = seta(p_mac, p_fim_f, FC, 6, tip=0.22)
-        l_F = T(r"\vec F", 42, FC).next_to(p_fim_f, RIGHT, buff=0.18)
+        l_F = T(r"\vec F", 42, FC).next_to(p_fim_f, RIGHT, buff=0.36)
 
         self.gat("olha a porta de um ângulo diferente")
         self.play(FadeIn(s_r), FadeIn(l_r), FadeIn(s_F), FadeIn(l_F), run_time=0.8)
@@ -62,11 +62,12 @@ class LoteT2(Lote22):
         # Quarto vértice do paralelogramo projetado em perspectiva exata
         p_quarto = P3(*projeta3d(cam_34, (u_f3d[0], u_f3d[1], 0.0)), 0.0)
         paral = Polygon(p_dob, p_mac, p_fim_f, p_quarto).set_fill(TQ, 0.26).set_stroke(TQ, 2.2)
-        lbl_area = VGroup(txt("ÁREA =", 24, bold=True, color=TQ), T(r"r F\sin\varphi", 36)).arrange(RIGHT, buff=0.12).move_to(
-            (p_dob + p_mac + p_fim_f + p_quarto) / 4 + P3(-0.35, 0.42)
+        lbl_area = VGroup(txt("ÁREA =", 32, bold=True, color=TQ), T(r"r F\sin\varphi", 36)).arrange(DOWN, buff=0.08).move_to(
+            P3(-0.85, 1.55)
         )
+        ch_area = Line(P3(-0.85, 1.55) + P3(-0.3, -0.62), (p_dob + p_mac + p_fim_f + p_quarto) / 4).set_stroke(TQ, 2.0)
         self.gat("desenha o paralelogramo")
-        self.play(FadeIn(paral), FadeIn(lbl_area), run_time=0.9)
+        self.play(FadeIn(paral), FadeIn(lbl_area), Create(ch_area), run_time=0.9)
 
         B, ib = M(r"|\vec\tau|", "=", "r", "F", r"\sin\varphi", size=50)
         l_b = VGroup(B, txt("= ÁREA", 26, bold=True, color=TQ)).arrange(RIGHT, buff=0.22)
@@ -80,12 +81,12 @@ class LoteT2(Lote22):
         # ── T2-2: direção ao longo do eixo + regra da mão direita + τ⃗ = r⃗ × F⃗ em caixa PANEL azul-força ──
         self.an("T2-2")
         s_tau = seta(p_dob, p_topo, TQ, 7, tip=0.24)
-        l_tau = T(r"\vec\tau", 46, TQ).next_to(p_topo, LEFT, buff=0.16)
+        l_tau = T(r"\vec\tau", 46, TQ).next_to(p_topo, LEFT, buff=0.38)
         arco_eixo = arco_torque(p_dob + P3(0.0, 0.55), r=0.38, sentido=1, a0=-0.4, amp=2.2, cor=TQ, w=4.5, tip=0.16)
         self.gat("ao longo do eixo de giro")
         self.play(FadeIn(s_tau), FadeIn(l_tau), FadeIn(arco_eixo), run_time=0.9)
 
-        ic_mao = mao_direita(P3(-1.45, 1.15), escala=0.88, sentido=1)
+        ic_mao = mao_direita(P3(-1.0, -1.6), escala=0.88, sentido=1)
         self.gat("regra da mão direita")
         self.play(FadeIn(ic_mao, shift=0.1 * UP), run_time=0.7)
 
@@ -102,12 +103,12 @@ class LoteT2(Lote22):
         self.an("T2-3")
         self.play(
             f3.op.animate.set_value(0.0),
-            FadeOut(VGroup(s_r, l_r, s_F, l_F, s_tau, l_tau, arco_eixo, paral, lbl_area, ic_mao)),
+            FadeOut(VGroup(s_r, l_r, s_F, l_F, s_tau, l_tau, arco_eixo, paral, lbl_area, ch_area, ic_mao)),
             run_time=0.45,
         )
 
         # Esquema 2D limpo na esquerda mostrando o paralelogramo entre r⃗ e F⃗
-        O_p = P3(-5.5, 0.55)
+        O_p = P3(-5.5, 0.05)
         phi_tr = ValueTracker(math.radians(55.0))
         inv_tr = ValueTracker(1.0)
         self.add(phi_tr, inv_tr)
@@ -121,12 +122,12 @@ class LoteT2(Lote22):
             sr = seta(O_p, O_p + vr, VETC, 6, tip=0.20)
             lr = T(r"\vec r", 40, VETC).next_to(sr, DOWN if sinal >= 0 else UP, buff=0.12)
             sf = seta(O_p, O_p + vf, FC, 6, tip=0.20)
-            lf = T(r"\vec F", 40, FC).next_to(O_p + vf, UL if sinal >= 0 else DL, buff=0.10)
+            lf = T(r"\vec F", 40, FC).next_to(O_p + vf, UL if sinal >= 0 else DL, buff=0.30)
             # Símbolo de τ⃗ apontando para fora (⊙) ou para dentro (⊗)
             c_simb = O_p + P3(1.4, -1.65)
             circ_s = Circle(radius=0.24).move_to(c_simb).set_stroke(TQ, 2.8)
             if abs(math.sin(ph)) < 0.05:
-                miolo = T("0", 34, GEO).move_to(c_simb)
+                miolo = T("0", 40, GEO).move_to(c_simb)
             elif sinal >= 0:
                 miolo = Dot(c_simb, radius=0.065, color=TQ)
             else:
@@ -167,15 +168,15 @@ class LoteT2(Lote22):
         O_xy = P3(-5.6, -0.55)
         eixo_x = Arrow(O_xy + LEFT * 0.4, O_xy + RIGHT * 4.2, buff=0, stroke_width=2.6, tip_length=0.18).set_color(GEO)
         eixo_y = Arrow(O_xy + DOWN * 1.2, O_xy + UP * 2.4, buff=0, stroke_width=2.6, tip_length=0.18).set_color(GEO)
-        lx = T("x", 36, GEO).next_to(eixo_x.get_end(), DOWN, buff=0.16)
-        ly = T("y", 36, GEO).next_to(eixo_y.get_end(), LEFT, buff=0.16)
+        lx = T("x", 38, GEO).next_to(eixo_x.get_end(), DOWN, buff=0.36)
+        ly = T("y", 38, GEO).next_to(eixo_y.get_end(), LEFT, buff=0.36)
 
         ch_xy = chave_roda(O_xy, comp=2.8, ang=0.0, cano=False)
         p_ap = ch_xy.ponta
         s_fx = seta(p_ap, p_ap + RIGHT * 0.95, FC, 5, tip=0.18, op=0.55)
-        l_fx = T("F_x", 36, FC).next_to(s_fx, DOWN, buff=0.14)
+        l_fx = T("F_x", 40, FC).next_to(s_fx, DOWN, buff=0.30)
         s_fy = seta(p_ap, p_ap + UP * 1.45, FC, 6, tip=0.20)
-        l_fy = T("F_y", 36, FC).next_to(s_fy, LEFT, buff=0.14)
+        l_fy = T("F_y", 44, FC).next_to(s_fy, LEFT, buff=0.32)
         cota_x = nm(r"x = 0{,}40\ \mathrm{m}", GEO, 36).move_to(O_xy + P3(1.4, -0.55))
         cota_y = nm(r"y = 0", GEO, 36).move_to(O_xy + P3(1.4, -1.00))
 
@@ -189,12 +190,17 @@ class LoteT2(Lote22):
 
         # Na chave de roda: F_x = 0, F_y = 250 N
         self.gat("testa com a chave de roda")
-        self.play(FadeOut(s_fx), FadeOut(l_fx), Transform(l_fy, nm(r"250\ \mathrm{N}", FC, 36).next_to(s_fy, RIGHT, buff=0.14)), run_time=0.6)
+        l_250b = nm(r"250\ \mathrm{N}", FC, 38).next_to(s_fy, RIGHT, buff=0.30)
+        self.play(FadeOut(s_fx), FadeOut(l_fx), FadeOut(l_fy), FadeIn(l_250b), run_time=0.6)
 
-        C2, ic2 = M(r"\tau_z", "=", "0{,}40", r"\cdot", "250", "-", "0", "=", "+100", r"\,\mathrm{N\cdot m}", size=46)
+        C2, ic2 = M(r"\tau_z", "=", "0{,}40", r"\cdot", "250", "-", "0", size=46)
+        C2b, ic2b = M("=", "+100", r"\,\mathrm{N\cdot m}", size=46)
         self.pilha.poe(C2)
-        self.monta(C2, ic2, {2: cota_x, 4: l_fy, 6: cota_y}, rt=1.1)
-        self.foco = C2
+        self.pilha.poe(C2b, dx=0.6)
+        self.monta(C2, ic2, {2: cota_x, 4: l_250b, 6: cota_y}, rt=1.1)
+        self.monta(C2b, ic2b, {}, rt=0.6)
+        self.foco = C2b
+        C2 = VGroup(C2, C2b)
         self.ate(0.99)
 
         # ── T2-5: o torque depende do ponto escolhido (O na porca vs P no meio da chave) ──
@@ -202,12 +208,12 @@ class LoteT2(Lote22):
         self.pilha.limpa()
         cab_t25 = txt("DEPENDE DO PONTO ESCOLHIDO:", 26, bold=True, color=TQ)
         self.pilha.poe(cab_t25)
-        self.play(FadeOut(VGroup(eixo_x, eixo_y, lx, ly, cota_x, cota_y, Cb, C2)), FadeIn(cab_t25), run_time=0.45)
+        self.play(FadeOut(VGroup(eixo_x, eixo_y, lx, ly, cota_x, cota_y)), FadeIn(cab_t25), run_time=0.45)
 
         p_O = ch_xy.porca
         p_P = ch_xy.meio
         dot_O = Dot(p_O, radius=0.09, color=TQ).set_z_index(18)
-        lbl_O = T("O", 40, TQ).next_to(dot_O, UP, buff=0.28)
+        lbl_O = T("O", 40, TQ).next_to(dot_O, UP, buff=0.55)
         dot_P = Dot(p_P, radius=0.09, color=VETC).set_z_index(18)
         lbl_P = T("P", 40, VETC).next_to(dot_P, UP, buff=0.28)
 
@@ -225,14 +231,14 @@ class LoteT2(Lote22):
 
         D1, id1 = M(r"\tau_O", "=", "0{,}40", r"\cdot", "250", "=", "100", r"\,\mathrm{N\cdot m}", size=50)
         self.pilha.poe(D1)
-        self.monta(D1, id1, {2: cota_O[1], 4: l_fy}, rt=1.0)
+        self.monta(D1, id1, {2: cota_O[1], 4: l_250b}, rt=1.0)
 
         self.gat("a partir do meio da chave")
         self.play(FadeIn(dot_P), FadeIn(lbl_P), FadeIn(cota_P), run_time=0.7)
 
         D2, id2 = M(r"\tau_P", "=", "0{,}20", r"\cdot", "250", "=", "50", r"\,\mathrm{N\cdot m}", size=50)
         self.pilha.poe(D2)
-        self.monta(D2, id2, {2: cota_P[1], 4: l_fy}, rt=1.0)
+        self.monta(D2, id2, {2: cota_P[1], 4: l_250b}, rt=1.0)
 
         D3, id3 = M(r"\tau_O", r"\neq", r"\tau_P", size=54)
         self.pilha.poe(D3)

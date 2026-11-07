@@ -234,51 +234,79 @@
 
   // ════════════════════════════════════ livros ════════════════════════════════════
   if (id === 'livros') {
-    const W = 0.23, Hh = 0.16, E = 0.04, LOG = window.TEX20 || {};
+    // v7 §2: livro legível — faces distintas e sem iluminação (MeshBasicMaterial), arestas claras, triedro grosso, normal da capa ciano, arcos do giro.
+    const W = 0.2875, Hh = 0.2, E = 0.05, LOG = window.TEX20 || {};          // v7: livro 25% maior
     const ld = new T3.TextureLoader();
-    const tCapa = ld.load(LOG.capa), tContra = ld.load(LOG.contra);
-    const mCapa = new T3.MeshStandardMaterial({ map: tCapa, metalness: 0.0, roughness: 0.55, envMapIntensity: 0.6 });
-    const mContra = new T3.MeshStandardMaterial({ map: tContra, metalness: 0.0, roughness: 0.6, envMapIntensity: 0.6 });
-    const mLomb = new T3.MeshStandardMaterial({ color: 0x1FA8D8, metalness: 0.25, roughness: 0.45, envMapIntensity: 0.7 });          // lombada: ciano da marca
-    const mPag = new T3.MeshStandardMaterial({ color: 0xEDE3C8, metalness: 0.0, roughness: 0.85, envMapIntensity: 0.4 });
-    const fant = (m) => { const c = m.clone(); c.transparent = true; c.opacity = 0.5; c.depthWrite = false; c.emissive = new T3.Color(COR.ang); c.emissiveIntensity = 0.55; return c; };
+    const tex = (u) => { const t = ld.load(u); t.anisotropy = Math.min(16, B.renderer.capabilities.getMaxAnisotropy()); t.generateMipmaps = true; t.minFilter = T3.LinearMipmapLinearFilter; t.magFilter = T3.LinearFilter; return t; };
+    const tCapa = tex(LOG.capa), tContra = tex(LOG.contra);
+    const mB = (o) => new T3.MeshBasicMaterial(o);
+    const mCapa = mB({ map: tCapa }), mContra = mB({ map: tContra });
+    const mLomb = mB({ color: 0xE83FAE }), mTopo = mB({ color: 0xF2B13A }), mFore = mB({ color: 0xE8EEF8 });
+    const fant = (cor) => mB({ color: cor, transparent: true, opacity: 0.32, depthWrite: false });
+    const RE = 0.0006;                                    // raio das arestas (≈ 1,9 px a 1080p)
+    const bordas = (g, cor, op) => {
+      const x = W / 2, y = Hh / 2, z = E / 2, mat = mB({ color: cor, transparent: true, opacity: op });
+      const C = [[-x, -y, -z], [x, -y, -z], [x, y, -z], [-x, y, -z], [-x, -y, z], [x, -y, z], [x, y, z], [-x, y, z]];
+      [[0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [5, 6], [6, 7], [7, 4], [0, 4], [1, 5], [2, 6], [3, 7]].forEach(([i, j]) => {
+        const A = v3(...C[i]), Bv = v3(...C[j]), d = Bv.clone().sub(A), L = d.length(), m = new T3.Mesh(GCIL, mat);
+        m.position.copy(A).addScaledVector(d, 0.5); m.quaternion.setFromUnitVectors(UP, d.normalize()); m.scale.set(RE, L + 2 * RE, RE); m.renderOrder = 4; g.add(m);
+      });
+      return mat;
+    };
     // BoxGeometry: faces +x, −x, +y, −y, +z, −z (coordenadas do LIVRO = do laboratório no estado inicial: capa em +z, lombada em −x)
     const livro = (ghost) => {
-      const ms = [mPag, mLomb, mPag, mPag, mCapa, mContra].map(m => ghost ? fant(m) : m);
+      const ms = ghost ? [0, 1, 2, 3, 4, 5].map(() => fant(COR.ang)) : [mFore, mLomb, mTopo, mTopo, mCapa, mContra];
       const g = new T3.Group(); const b = new T3.Mesh(new T3.BoxGeometry(W, Hh, E), ms); g.add(b);
+      const em = bordas(g, ghost ? COR.ang : 0xF5F7FF, ghost ? 0.7 : 0.78);
       // o livro vive no LAB; o grupo de fora converte LAB → mundo (x, y, z) → (x, −z, y)
-      const o = new T3.Group(); o.add(g); o.matrixAutoUpdate = true; B.scene.add(o); return { o, g, ms };
+      const o = new T3.Group(); o.add(g); o.matrixAutoUpdate = true; B.scene.add(o); return { o, g, ms, em, ghost };
     };
     const Lv = livro(false), Rv = livro(false), Gv = livro(true);
     const M = new T3.Matrix4().set(1, 0, 0, 0, 0, 0, -1, 0, 0, 1, 0, 0, 0, 0, 0, 1);         // LAB → mundo
-    const eixos = [0, 1].map(() => ({ x: seta(COR.geo), y: seta(COR.geo), z: seta(COR.geo) }));
-    const sNorm = [seta(COR.geo), seta(COR.geo)], sNormG = seta(COR.ang);       // seta normal à capa (D27) e a do fantasma de comparação (D29)
+    const CTRI = 0xDDE6FA, CNOR = 0x4DE1FF, RA = 0.0018;                                     // triedro GEO claro; normal da capa ciano; raio das setas (≥ 5 px a 1080p)
+    const eixos = [0, 1].map(() => ({ x: seta(CTRI), y: seta(CTRI), z: seta(CTRI) }));
+    const sNorm = [seta(CNOR), seta(CNOR)], sNormG = seta(COR.ang);       // seta normal à capa e a do fantasma de comparação (D29)
+    // arcos do giro (âmbar, com ponta): 4 (dois por livro)
+    const arcos = [0, 1, 2, 3].map(() => { const l = linhaPts(COR.ang, 40, 0.0024), cone = new T3.Mesh(GCONE, l.mat); cone.renderOrder = 6; B.scene.add(cone); return { l, cone }; });
+    const lab2mun = (p) => [p[0], -p[2], p[1]];
     const poeLivro = (L, c, R9, op) => {
       L.o.visible = op == null || op > 0.01;
       const R4 = new T3.Matrix4().set(R9[0], R9[1], R9[2], 0, R9[3], R9[4], R9[5], 0, R9[6], R9[7], R9[8], 0, 0, 0, 0, 1);
       const Mw = M.clone().multiply(R4);
       L.o.matrix.identity(); L.o.matrixAutoUpdate = false;
       L.o.matrix.copy(new T3.Matrix4().makeTranslation(...c).multiply(Mw)); L.o.matrixWorldNeedsUpdate = true;
-      if (op != null && L.ms[0].transparent) L.ms.forEach(m => { m.opacity = 0.5 * op; });
+      if (L.ghost && op != null) { L.ms.forEach(m => { m.opacity = 0.32 * op; }); L.em.opacity = 0.7 * op; }
     };
     var atualiza = e => {
+      B.luz.chave.intensity = 0; B.luz.rim.intensity = 0; B.luz.amb.intensity = 0;
       const cs = e.c || [[-0.2, 0, 0], [0.2, 0, 0]];
       poeLivro(Lv, cs[0], e.L || [1, 0, 0, 0, 1, 0, 0, 0, 1], e.oL);
       poeLivro(Rv, cs[1], e.R || [1, 0, 0, 0, 1, 0, 0, 0, 1], e.oR);
       poeLivro(Gv, cs[0], e.G || [1, 0, 0, 0, 1, 0, 0, 0, 1], e.oG || 0);
-      const s = e.sx || 0.17, oe = e.oe == null ? 1 : e.oe;
+      const s = e.sx || 0.3, oe = e.oe == null ? 1 : e.oe;
       const normal = (R9) => { const n = [R9[2], -R9[8], R9[5]]; return n; };           // terceira coluna da matriz do livro (LAB) → mundo (x, −z, y)
       [[Lv, e.L, 0], [Rv, e.R, 1]].forEach(([L_, R9, k]) => {
-        R9 = R9 || [1, 0, 0, 0, 1, 0, 0, 0, 1]; const n = normal(R9), c = cs[k], b = soma(c, n, E / 2), len = e.ln || 0.12;
-        poeSeta(sNorm[k], b, soma(b, n, len), 0.0075, e.on == null ? 1 : e.on, 0.03); prj('nb' + k, b); prj('nt' + k, soma(b, n, len));
+        R9 = R9 || [1, 0, 0, 0, 1, 0, 0, 0, 1]; const n = normal(R9), c = cs[k], b = soma(c, n, E / 2), len = e.ln || 0.2;
+        poeSeta(sNorm[k], b, soma(b, n, len), RA, e.on == null ? 1 : e.on, 0.045); prj('nb' + k, b); prj('nt' + k, soma(b, n, len));
       });
-      { const R9 = e.G || [1, 0, 0, 0, 1, 0, 0, 0, 1], n = normal(R9), b = soma(cs[0], n, E / 2), len = e.ln || 0.12;
-        poeSeta(sNormG, b, soma(b, n, len), 0.0075, e.oNg == null ? (e.oG || 0) : e.oNg, 0.03); prj('ngt', soma(b, n, len)); }
-      cs.forEach((c, k) => {      // eixos do LAB em cada livro: x (direita) e y (cima → mundo +z); z (para a câmera → mundo −y) só se pedido
-        poeSeta(eixos[k].x, c, soma(c, [s, 0, 0]), 0.0035, oe, 0.025);
-        poeSeta(eixos[k].y, c, soma(c, [0, 0, s]), 0.0035, oe, 0.025);
-        poeSeta(eixos[k].z, c, soma(c, [0, -s, 0]), 0.0035, e.oz || 0, 0.025);
+      { const R9 = e.G || [1, 0, 0, 0, 1, 0, 0, 0, 1], n = normal(R9), b = soma(cs[0], n, E / 2), len = e.ln || 0.2;
+        poeSeta(sNormG, b, soma(b, n, len), RA, e.oNg == null ? (e.oG || 0) : e.oNg, 0.045); prj('ngt', soma(b, n, len)); }
+      cs.forEach((c, k) => {      // triedro fixo do LAB em cada livro: x (direita), y (cima → mundo +z) e z (para a câmera → mundo −y)
+        poeSeta(eixos[k].x, c, soma(c, [s, 0, 0]), RA, oe, 0.05);
+        poeSeta(eixos[k].y, c, soma(c, [0, 0, s]), RA, oe, 0.05);
+        poeSeta(eixos[k].z, c, soma(c, [0, -s, 0]), RA, e.oz == null ? oe : e.oz, 0.05);
         prj('c' + k, c); prj('x' + k, soma(c, [s, 0, 0])); prj('y' + k, soma(c, [0, 0, s]));
+      });
+      const AR = e.arcs || [];
+      arcos.forEach((A, i) => {
+        const d = AR[i];
+        if (!d || !(d.op > 0.01) || !(d.a > 0.02)) { poeLinha(A.l, [], 0); A.cone.visible = false; return; }
+        const c = cs[d.k], r = d.r || 0.19, pts = [];
+        const pl = (phi) => lab2mun(d.ax === 'x' ? [0, r * Math.cos(phi), r * Math.sin(phi)] : [r * Math.sin(phi), 0, r * Math.cos(phi)]);
+        for (let j = 0; j <= 39; j++) pts.push(soma(c, pl(d.a0 + d.a * j / 39)));
+        poeLinha(A.l, pts, d.op);
+        const pe = pts[39], pq = pts[38], u = v3(...pe).sub(v3(...pq)).normalize(), tl = 0.045;
+        A.cone.visible = true; A.cone.position.copy(v3(...pe)).addScaledVector(u, tl * 0.1); A.cone.quaternion.setFromUnitVectors(UP, u); A.cone.scale.set(0.0085, tl, 0.0085);
       });
     };
   }

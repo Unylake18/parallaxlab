@@ -1,110 +1,126 @@
 Manim Community v0.21.0
 
-[11/04/26 17:53:06] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:08] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] S1 0.80 um corpo rígido girando em torno de um eixo fixo tem um ângulo
+[plano] an:S1 A=0.60 W=0.00 D=1.50 ritmo=1.58 ritmo_w=1.00
+[11/06/26 21:33:55] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 21:33:56] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S1 1.53 um corpo rígido girando em torno de um eixo fixo tem um ângulo
+[plano] gat:S1:um corpo rígido girando em torno de um eixo A=0.70 W=0.00 D=2.63 ritmo=1.80 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:09] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] S1 abs 1550.5 s dp 0.80 alvos ['VGroup:3.9,6.4']
+[11/06/26 21:33:57] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S1 4.20 tem um ângulo
+[plano] gat:S1:tem um ângulo A=0.60 W=0.00 D=0.86 ritmo=1.20 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:10] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] S1 4.47 tem um ângulo
-                    INFO     Caching disabled.             cairo_renderer.py:81
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] S1 5.60 uma velocidade angular
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:11] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] S1 abs 1555.2 s dp 0.80 alvos ['VGroup:3.9,6.4']
+[11/06/26 21:33:58] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S1 5.13 uma velocidade angular
+[plano] gat:S1:uma velocidade angular A=0.60 W=0.00 D=4.07 ritmo=1.80 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] S1 10.00 com aceleração angular constante
-[11/04/26 17:53:12] INFO     Caching disabled.             cairo_renderer.py:81
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:13] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:14] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] S1 14.47 cada ponto transforma esse giro em movimento
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:15] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:16] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] S1 abs 1565.3 s dp 0.80 alvos ['VGroup:3.9,6.6', 'VGroup:3.9,6.4']
-[11/04/26 17:53:17] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:18] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] S1 20.00 a aceleração tangencial e a centrípeta
+[pulso] S1 abs 1514.9 s dp 0.80 alvos ['VGroup:3.9,6.4']
+[11/06/26 21:33:59] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 21:34:00] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S1 9.20 com aceleração angular constante
+[plano] gat:S1:com aceleração angular constante A=4.00 W=0.00 D=5.54 ritmo=1.18 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] S1 22.27 e como vetor
-[11/04/26 17:53:19] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 21:34:02] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] S1 abs 1571.9 s dp 0.80 alvos ['VGroup:3.9,5.6', 'VGroup:3.9,6.6', 'VGroup:3.9,6.4']
+[gatilho] S1 14.80 cada ponto transforma esse giro em movimento
+[plano] gat:S1:cada ponto transforma esse giro em moviment A=1.90 W=0.00 D=5.72 ritmo=1.74 ritmo_w=1.00
+[11/06/26 21:34:03] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:20] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] S1 abs 1574.6 s dp 0.80 alvos ['VGroup:3.9,5.6', 'VGroup:3.9,6.6', 'VGroup:3.9,6.4']
-[11/04/26 17:53:21] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:22] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:23] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 21:34:04] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] S1 abs 1526.7 s dp 0.61 alvos ['VGroup:3.9,6.6', 'VGroup:3.9,6.4']
+[11/06/26 21:34:05] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S1 20.53 a aceleração tangencial e a centrípeta
+[plano] gat:S1:a aceleração tangencial e a centrípeta A=0.60 W=0.00 D=2.59 ritmo=1.80 ritmo_w=1.00
+[11/06/26 21:34:06] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S1 23.20 e como vetor
+[plano] gat:S1:e como vetor A=0.70 W=0.00 D=6.09 ritmo=1.80 ritmo_w=1.00
+[11/06/26 21:34:07] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:26] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:32] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] S2 2.00 o corpo inteiro compartilha o mesmo giro
-[11/04/26 17:53:36] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:37] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:39] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] S1 abs 1533.1 s dp 0.80 alvos ['VGroup:3.9,5.6', 'VGroup:3.9,6.6', 'VGroup:3.9,6.4']
+[11/06/26 21:34:08] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 21:34:09] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 21:34:10] INFO     Caching disabled.             cairo_renderer.py:81
+[plano] ate:S1:0.99 A=0.00 W=0.00 D=0.33 ritmo=1.00 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[plano] an:S2 A=1.95 W=0.00 D=2.06 ritmo=1.03 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 21:34:11] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 21:34:12] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S2 2.13 o corpo inteiro compartilha o mesmo giro
+[plano] gat:S2:o corpo inteiro compartilha o mesmo giro A=0.70 W=0.00 D=2.59 ritmo=1.80 ritmo_w=1.00
+[11/06/26 21:34:13] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
 [gatilho] S2 4.80 cada ponto transforma esse giro
+[plano] gat:S2:cada ponto transforma esse giro A=0.70 W=0.00 D=6.70 ritmo=1.80 ritmo_w=1.00
+[11/06/26 21:34:14] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 21:34:15] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] S2 abs 1544.3 s dp 0.80 alvos ['Text:3.8,6.8', 'VGroup:1.6,2.5', 'VGroup:3.8,5.6']
+[11/06/26 21:34:16] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:40] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] S2 abs 1584.5 s dp 0.80 alvos ['Text:3.8,6.8', 'VGroup:1.6,2.5', 'VGroup:3.8,5.0']
-[11/04/26 17:53:42] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:44] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] S2 abs 1587.2 s dp 0.80 alvos ['Text:3.8,6.8', 'VGroup:1.6,2.5', 'VGroup:3.8,5.0']
-[11/04/26 17:53:46] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:48] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:49] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] S2 12.87 ela só está mais longe do eixo
-[11/04/26 17:53:50] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:51] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] S2 abs 1592.9 s dp 0.33 alvos ['VGroup:3.8,6.8', 'Text:3.8,6.8', 'VGroup:1.6,2.5']
-[11/04/26 17:53:55] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:56] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:53:57] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:54:00] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:54:01] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] EN1 1.87 se inscreve no parallax lab
+[pulso] S2 abs 1546.9 s dp 0.80 alvos ['Text:3.8,6.8', 'VGroup:1.6,2.5', 'VGroup:3.8,5.6']
+[11/06/26 21:34:17] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 21:34:18] WARNING  The original total run_time of       scene.py:1131
+                             PS.play(), 0.0653333 seconds, is too              
+                             short for the current frame rate of               
+                             15 FPS. Rendering with the shortest               
+                             possible total run_time of 0.0666667              
+                             seconds instead.                                  
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:54:02] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] EN1 abs 1597.9 s dp 0.80 alvos ['Text:0.0,11.6', 'VGroup:0.0,5.1', 'ImageMobject:0.0,5.4']
-[11/04/26 17:54:03] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:54:05] INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PS.play(), 0.0653333 seconds, is too              
+                             short for the current frame rate of               
+                             15 FPS. Rendering with the shortest               
+                             possible total run_time of 0.0666667              
+                             seconds instead.                                  
+[gatilho] S2 11.47 ela só está mais longe do eixo
+[plano] gat:S2:ela só está mais longe do eixo A=0.90 W=0.00 D=1.82 ritmo=1.42 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:54:06] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:54:08] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:54:09] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] EN2 2.60 depois do meio dia
-[11/04/26 17:54:10] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:54:11] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] EN2 abs 1605.1 s dp 0.80 alvos ['VGroup:3.2,6.3', 'Text:3.2,6.3']
-[11/04/26 17:54:13] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:54:14] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] EN2 abs 1607.7 s dp 0.80 alvos ['VGroup:3.2,6.3', 'Text:3.2,6.3']
-[11/04/26 17:54:15] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:54:17] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] EN2 9.93 dica pense na velocidade angular
-[11/04/26 17:54:18] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 21:34:19] INFO     Caching disabled.             cairo_renderer.py:81
+[plano] ate:S2:0.99 A=0.00 W=0.00 D=0.30 ritmo=1.00 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] EN2 abs 1612.2 s dp 0.80 alvos ['VGroup:3.2,1.5', 'VGroup:3.2,6.3', 'Text:3.2,6.3']
-[11/04/26 17:54:20] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:54:22] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] EN2 abs 1614.9 s dp 0.53 alvos ['VGroup:3.2,1.5', 'VGroup:3.2,6.3', 'Text:3.2,6.3']
-[11/04/26 17:54:24] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 17:54:26] INFO     Caching disabled.             cairo_renderer.py:81
+[plano] an:EN1 A=0.80 W=0.00 D=1.68 ritmo=1.45 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 21:34:20] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 21:34:21] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] EN1 1.73 se inscreve no parallax lab
+[plano] gat:EN1:se inscreve no parallax lab A=0.70 W=0.00 D=2.94 ritmo=1.80 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 21:34:22] INFO     Caching disabled.             cairo_renderer.py:81
+[plano] ate:EN1:0.99 A=0.00 W=0.00 D=0.30 ritmo=1.00 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[plano] an:EN2 A=0.80 W=0.00 D=2.22 ritmo=1.67 ritmo_w=1.00
+[11/06/26 21:34:23] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 21:34:24] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] EN2 2.27 depois do meio dia
+[plano] gat:EN2:depois do meio dia A=0.80 W=0.00 D=5.69 ritmo=1.80 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 21:34:25] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] EN2 abs 1560.3 s dp 0.80 alvos ['VGroup:3.2,6.3', 'Text:3.2,6.3']
+[11/06/26 21:34:26] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 21:34:27] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] EN2 8.00 dica pense na velocidade angular
+[plano] gat:EN2:dica pense na velocidade angular A=0.60 W=0.00 D=4.59 ritmo=1.80 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 21:34:28] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] EN2 abs 1565.6 s dp 0.80 alvos ['VGroup:3.2,1.5', 'VGroup:3.2,6.3', 'Text:3.2,6.3']
+[11/06/26 21:34:29] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[plano] ate:EN2:0.99 A=0.00 W=0.00 D=0.33 ritmo=1.00 ritmo_w=1.00
+[11/06/26 21:34:30] INFO     Caching disabled.             cairo_renderer.py:81
 [ancora] S1 0.00
-[ancora] S2 30.07
-[ancora] EN1 46.33
-[ancora] EN2 52.67
-[ancora] FIM 68.60
-[tempo] total 68.6 s (1029 quadros)
-[3d] pedidos: helice 251
+[ancora] S2 29.53
+[ancora] EN1 43.07
+[ancora] EN2 47.87
+[ancora] FIM 60.73
+[tempo] total 60.7 s (911 quadros)
+[3d] pedidos: helice 213
                     INFO     Rendered PS                           scene.py:290
-                             Played 71 animations                              
+                             Played 60 animations                              
 You are using manim version v0.21.0, but version v0.22.1 is available.
 You should consider upgrading via pip install -U manim

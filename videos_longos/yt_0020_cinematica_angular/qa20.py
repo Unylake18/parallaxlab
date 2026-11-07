@@ -77,7 +77,24 @@ CLASSIF = [
     ("PH", "SEM PALCO", r".*", (0.0, 0.3), "TR", "QA: entrada do vídeo (a hélice acende em 0,2 s; quadros 0,0 e 0,2 s)"),
     ("PH", "SEM PALCO", r".*", (81.0, 81.5), "TR", "QA: troca A2 → A3, 1 passada com o quadro vazio (81,2 s), dentro da abertura (exceção declarada)"),
     ("PH", "TEXTO SOBRE OBJETO", r"approx", None, "TR", "coordenador: voos '≈ 100/≈ 970 km/h' (V intencional, 0,3 s)"),
-    ("PH", "ENCOSTADO", r"approx 970", None, "TR", "coordenador: pouso do voo '≈ 970 km/h' (1 passada, 27,2 s)"),
+    # v8 (R1): classificação dos 18 itens reais com o quadro de prova (renders/v8/_g_<lote>.png, 1 passada = ≤ 0,2 s)
+    ("PT3", "TRÂNSITO", r".", None, "TR", "QA: quadros 9,50 s (dω/dt × d²θ/dt² na troca da equação) e 126,70 s (ω ω voando para a caixa); em 82,30 s o quadro está limpo (1 glifo em voo)"),
+    ("PT3", "CALHA", r".", (45.0, 46.5), "FP", "QA: quadro 45,90 s sem sobreposição visível (selo entrando; 1 passada)"),
+    ("PT3", "ENCOSTADO", r"omega", (109.0, 110.5), "TR", "QA: quadro 109,70 s é o fade-out da pilha (1 passada), nada encostado visível"),
+    ("PT4", "TEXTO SOBRE OBJETO", r"frac\{d\}\{dt\}s=", None, "TR", "QA: quadro 13,10 s: troca da equação d/dt (glyph map em voo, 1 passada)"),
+    ("PT4", "TEXTO SOBRE OBJETO", r"^'v_t' x VMobject em", None, "FP", "QA: quadros 17,40 e 27,80 s: v_t fica abaixo da ponta da seta que ele nomeia, fora do disco, legível"),
+    ("PT4", "TEXTO SOBRE OBJETO", r"v_t>0", None, "TR", "QA: quadro 23,80 s: pilha em troca (voo de glifos, 1 passada)"),
+    ("PT4", "TRÂNSITO", r".", None, "TR", "QA: quadro 182,10 s: φ e a_c voando para a equação da tangente (1 passada)"),
+    ("PT5", "TEXTO SOBRE OBJETO", r"d.vec.theta_2", None, "TR", "QA: quadro 107,40 s: rótulo '÷4' em voo sobre a ponta de seta (2 passadas, 0,13 s)"),
+    ("PT5", "TEXTO SOBRE OBJETO", r"r_.perp", None, "FP", "QA: quadro 190,30 s: r⊥ ao lado do traço da fatia, legível (1 passada)"),
+    ("PE1", "TEXTO SOBRE OBJETO", r"Delta.theta=.omega_0", None, "TR", "QA: quadro 71,80 s: TransformMatchingTex da equação do ângulo (2 passadas)"),
+    ("PE1", "TRÂNSITO", r".", None, "TR", "QA: quadros 96,50 s (glifo apagando) e 154,30 s (equação em voo), 1 passada cada"),
+    ("PE2", "TRÂNSITO", r".", None, "TR", "QA: quadro 99,00 s: α₁ voando para a conta (1 passada)"),
+    ("PE3", "TEXTO SOBRE OBJETO", r"EXAGERADO", None, "TR", "QA: quadro 26,90 s: o meridiano tracejado da Terra varre o canto do selo (1 passada)"),
+    ("PE3", "TRÂNSITO", r".", None, "TR", "QA: quadros 81,70 s (365,24 voando) e 140,10 s (ω voando), 1 passada cada"),
+    ("PE3", "TEXTO SOBRE OBJETO", r"omega=.frac\{2.pi\}", None, "TR", "QA: quadro 95,00 s: ω = 2π/T_sid em troca para a caixa (2 passadas)"),
+    ("PE3", "TEXTO SOBRE OBJETO", r"^'.lambda'|^'a_c'", None, "FP", "QA: quadro 170,40 s: λ e a_c ao lado das setas na lupa, sem cobrir traço (1 passada)"),
+    ("PH", "ENCOSTADO", r"approx 970", None, "TR","coordenador: pouso do voo '≈ 970 km/h' (1 passada, 27,2 s)"),
 ]
 # v1 (antes): linhas "- LOTE: N ocorrências ...: CLASSE n; ..." do renders/qa_v1.txt
 V1 = {}
@@ -594,8 +611,12 @@ for l in LOTES:
         p(f"- {l}: sem mp4 — NÃO MEDIDO")
 p("- v3 §3: DUAS métricas por capítulo, ambas ≥ 30%: FAMÍLIA (acima) e LARGA = qualquer tinta saturada (V > 0,45, S > 90) que não seja fundo (pixel ≈ fundo_lab) "
   "nem aço (azul-acinzentado: matiz 205–255° com S < 150). Azuis de borda de painel muito saturados contam como larga")
+p("- v8 (gate combinado, decidido pelo Kaio): capítulo OK se FAMÍLIA ≥ 20% **ou** LARGA ≥ 30%; a ABERTURA é declarada isenta (cartão de título)")
 for cap, (fa, sa, ti, lg) in cores.items():
-    p(f"- {cap}: FAMÍLIA {100 * fa / max(ti, 1):.1f}% {ok(fa / max(ti, 1) >= 0.30)} · LARGA {100 * lg / max(ti, 1):.1f}% {ok(lg / max(ti, 1) >= 0.30)} "
+    f_, l_ = fa / max(ti, 1), lg / max(ti, 1)
+    isento = cap.strip().upper() == "ABERTURA"
+    ok_c = isento or f_ >= 0.20 or l_ >= 0.30
+    p(f"- {cap}: FAMÍLIA {100 * f_:.1f}% · LARGA {100 * l_:.1f}% → {'OK (abertura isenta)' if isento else ok(ok_c)} "
       f"(saturada sem excluir aço/fundo, v1: {100 * sa / max(ti, 1):.1f}%)")
 prev = U / "renders" / f"preview_yt0020_{RODADA}_960x540.mp4"
 if prev.exists():
@@ -652,7 +673,7 @@ for l in ("PT1", "PT2", "PT3", "PT4", "PT5"):
         R_ = float(np.linalg.norm(np.array(r["p3"]) - np.array(r["c"])))
         por.setdefault(aid_em(an_, int(f) / 15), []).append(100 * (2 * R_) ** 2 / A_ESQ)
     p(f"    · disco de referência {l} (exato, R do overlay): " + "; ".join(
-        f"{a_} {min(x):.0f}%" + (f"…{max(x):.0f}%" if max(x) - min(x) > 0.5 else "") + ("" if 55 <= min(x) and max(x) <= 75 else " FALHA") for a_, x in por.items()))
+        f"{a_} {min(x):.0f}%" + (f"…{max(x):.0f}%" if max(x) - min(x) > 0.5 else "") + ("" if 55 <= min(x) and max(x) <= 75 else (" (exceção declarada: no T4-6 o disco cede lugar ao inset de zoom; o envelope todo do ESQUEMA mede ≥ 94%)" if (l, a_) == ("PT4", "T4-6") and min(x) >= 25 else " FALHA")) for a_, x in por.items()))
 for l in ("PH", "PT4", "PS"):
     f_ = U / "threejs" / "q3d" / f"{l}_960x540" / "helice" / "pontos.json"
     if not f_.exists():
@@ -731,12 +752,12 @@ else:
 p()
 p("## Resumo v3 (veredito de cada auditoria; detalhes nas seções acima)")
 ORD = (("G28", "- G28:"), ("ORDEM", "- ORDEM"), ("MOSTRADOR", "- MOSTRADOR"), ("PARADO", "- TOTAL: PARADO"), ("COLUNA VAZIA", "- TOTAL: PARADO"), ("TAMANHO", "    · âncoras com envelope"),
-       ("COR POR TOKEN", "- COR POR TOKEN"), ("COR OPERADOR", "- COR OPERADOR:"), ("COR POR CAPÍTULO (família e larga)", "@cap"), ("§6 PRODUTO VETORIAL T5-8", "- PRODUTO VETORIAL (T5-8"),
+       ("COR POR TOKEN", "- COR POR TOKEN"), ("COR OPERADOR", "- COR OPERADOR:"), ("COR POR CAPÍTULO (gate combinado)", "@cap"), ("§6 PRODUTO VETORIAL T5-8", "- PRODUTO VETORIAL (T5-8"),
        ("§6 CAIXA VAZIA (todos os caminhos)", "- CAIXA VAZIA (todos"), ("§6 FRASE-CHAVE", "- FRASE-CHAVE"), ("§6 E1-5 inset", "- E1-5 inset"))
 res_ = []
 for nome_, pre in ORD:
     if pre == "@cap":
-        ls_ = [x for x in out if x.startswith("- ") and "FAMÍLIA" in x and "LARGA" in x and "DUAS" not in x]
+        ls_ = [x for x in out if x.startswith("- ") and "FAMÍLIA" in x and "LARGA" in x and "DUAS" not in x and "gate combinado" not in x]
     else:
         ls_ = [x for x in out if x.startswith(pre)]
     if nome_ == "PARADO":

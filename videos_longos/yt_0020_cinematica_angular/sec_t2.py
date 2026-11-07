@@ -146,7 +146,7 @@ class LoteT2(L20):
         self.pilha.poe(v0)
         self.pilha.poe(V1)
         self.play(w_t.animate.set_value(W_T), FadeIn(v0), FadeIn(V1), run_time=1.0)
-        self.gat("a ideia é a mesma da velocidade")
+        self.gat("é a mesma ideia do velocímetro")
         self.play(op_s.animate.set_value(1.0), run_time=0.8)
         self.play(nk.animate(rate_func=linear).set_value(4.0), run_time=max(1.2, self.ate_t("a velocidade angular média") - 0.2))   # as cópias nascem uma a uma
         self.gat("a velocidade angular média")
@@ -200,7 +200,8 @@ class LoteT2(L20):
             return g
         swv = vivo(seta_w)
         self.gat("velocidade angular positiva é giro anti horário")
-        self.play(FadeIn(swv), op_s.animate.set_value(0.0), run_time=0.6)
+        self.play(op_s.animate.set_value(0.0), run_time=0.3)           # v8: o Δθ sai antes de o ω > 0 entrar (o Δθ acompanha o arco e passava por baixo do rótulo)
+        self.play(FadeIn(swv), run_time=0.4)
         self.gat("negativa horário")
         self.play(w_t.animate.set_value(-W_T), run_time=0.5)
         sgn.set_value(-1.0)
@@ -361,7 +362,7 @@ class LoteT2(L20):
             return g
         cr = vivo(crono)
         self.pilha.base = -1.35                                       # o cronômetro mora embaixo da CONTA
-        self.gat("quando o giro é uniforme")
+        self.gat("quando o disco gira sempre no mesmo ritmo")
         self.play(FadeIn(cr), run_time=0.5)
         n1 = linha_m(lbl("f", VEL, 46), txt("= VOLTAS POR SEGUNDO", 26), lbl(r"(\mathrm{Hz})", WHITE_, 40), buff=0.15)
         n2 = linha_m(lbl("T", WHITE_, 46), txt("= TEMPO DE UMA VOLTA", 26), buff=0.15)
@@ -372,13 +373,13 @@ class LoteT2(L20):
         F2, i2 = M("=", r"\frac{2\pi}{T}", size=60)
         for j in i2[1][:2]:
             F2[0][j].set_color(ANG)
-        self.gat("a frequência que é o número de voltas")
+        self.gat("a frequência que diz quantas voltas")
         self.pilha.poe(n1, dx=0.1)
         self.play(FadeIn(n1), run_time=0.6)
         self.gat("e o período que é o tempo de uma volta")
         self.pilha.poe(n2, dx=0.1)
         self.play(FadeIn(n2), run_time=0.6)
-        self.gat("o tamanho da velocidade angular é dois pi")
+        self.gat("o módulo da velocidade angular é dois pi")
         self.pilha.poe(F1, dx=0.1)
         # §5 T2-5: f voa da linha que o define; |ω|, = e 2π são escritos na vaga
         self.voa([(n1[0], gl(F1, i1[2][2:3]))], extra=[FadeIn(gl(F1, J(i1, 0, 1) + i1[2][:2]))], rt=1.2)
@@ -386,13 +387,13 @@ class LoteT2(L20):
         self.pilha.poe(F2)
         # GM f → /T (a filha nasce na vaga de baixo, "=" sob o "="; o |ω| da linha de cima não desce)
         self.passo(F1, F2, (J(i1, 0), []), (J(i1, 1), J(i2, 0)), (i1[2][:2], i2[1][:2]), (i1[2][2:3], i2[1][2:4]), rt=1.2)
-        self.gat("repara nas duas ressalvas")
-        self.selo("ATENÇÃO", [["SÓ COM GIRO UNIFORME ·", lbl("f>0", VEL, 34)], ["MESMO NO GIRO HORÁRIO"]])
-        self.gat("é o tamanho porque a frequência")
+        self.gat("duas observações")
+        self.selo("ATENÇÃO", [["SÓ COM GIRO UNIFORME"], [lbl("f>0", VEL, 34), "MESMO NO GIRO HORÁRIO"]], pad_v=0.12)   # v4: quebra no ·; padding vertical ≥ 0,10
+        self.gat("a frequência é positiva mesmo quando o giro é horário")
         self.ind(F1, i1, [0], color=WHITE_)
-        self.gat("e só vale com giro uniforme")
+        self.gat("e aqui estamos falando de giro uniforme")
         self.play(w_t.animate(rate_func=linear).set_value(2.6 * W_T), run_time=self.ate_t("e não existe um período só"))
-        self.gat("e não existe um período só")
+        self.gat("cada volta pode levar um tempo diferente")
         self.play(w_t.animate.set_value(W_T), run_time=1.0)
         self.ate(0.99)
         motor.clear_updaters()

@@ -114,15 +114,28 @@ def gancho(self, dentro=False):
             ST["n_tex"] += 1
             ST["n_gl"] += sum(1 for r_, _ in c[2] if r_)
         _, tex, cls = c
+        _full = m.get_tex_string()
+        _hs = sorted(g_.height for g_, c_ in zip(gl, cls) if c_[0] != "barra")
+        _med = _hs[len(_hs) // 2] if _hs else 0.0
+        _cy = float(np.median([g_.get_center()[1] for g_, c_ in zip(gl, cls) if c_[0] != "barra"] or [0.0]))
         for j, g in enumerate(gl):
             rot, cor = cls[j]
             if rot is None:
+                continue
+            if rot == "lim" and r"\lim" not in _full:          # v4 §3: o m de uma unidade (\mathrm{m}) não é "lim"
+                continue
+            if j > 0 and rot in ("d", "t", "r", "v", "a", "s", "θ") and gl[j - 1] is not g and g.get_center()[1] < gl[j - 1].get_center()[1] - 0.03 and g.height <= 1.02 * gl[j - 1].height                     and 0 < g.get_center()[0] - gl[j - 1].get_center()[0] < 0.6:          # v8: subscrito (t de a_t, v_t; d de v_borda, ω_méd...): herda a cor da grandeza, não é operador
+                continue
+            if rot in ("d", "t", "r", "v", "a", "ω", "α", "s", "θ") and (g.height < 0.85 * _med or g.get_center()[1] < _cy - 0.18 * _med) and rot != "ω":   # v4 §3: subscrito/expoente herda a cor da grandeza (não é violação)
                 continue
             if cor == "DELTA":                                 # Δ leva a cor do glifo seguinte na mesma linha (Δθ âmbar, Δt branco)
                 ck = g.get_center()
                 viz = [(gl[q].get_center()[0] - ck[0], cls[q][1]) for q in range(len(gl)) if cls[q][0] not in (None, "Δ")
                        and abs(gl[q].get_center()[1] - ck[1]) < 0.15 and 0 < gl[q].get_center()[0] - ck[0] < 0.8]
                 if not viz:
+                    continue
+                prox = min([(gl[q].get_center()[0] - ck[0], cls[q][0]) for q in range(len(gl)) if abs(gl[q].get_center()[1] - ck[1]) < 0.15 and 0 < gl[q].get_center()[0] - ck[0] < 0.8], default=None)
+                if prox is not None and prox[1] is None:          # v8: Δ colado a uma grandeza não classificada (Δx, Δy): sem regra de cor
                     continue
                 cor = min(viz, key=lambda p: p[0])[1]
             if rot == "ω":
@@ -132,7 +145,8 @@ def gancho(self, dentro=False):
                 o_[1], o_[2] = min(o_[1], g.height), max(o_[2], g.height)
             got = _rgb(_gcor(g))
             if np.abs(got - _rgb(cor)).max() > TOL:
-                v = ST["viol"].setdefault((k, j), {"tex": tex, "glifo": rot, "cor": HEX(_gcor(g)), "esp": HEX(cor), "n": 0, "t0": t, "t1": t})
+                v = ST["viol"].setdefault((k, j), {"tex": tex, "glifo": rot, "cor": HEX(_gcor(g)), "esp": HEX(cor), "n": 0, "t0": t, "t1": t,
+                                                  "dono": next((type(tp).__name__ + f"[{len(tp.submobjects)}]" for tp in self.mobjects if m in tp.get_family()), "?"), "x": round(float(g.get_x()), 1), "y": round(float(g.get_y()), 1)})
                 v["n"] += 1
                 v["t1"] = t
     # CAIXA VAZIA (qualquer caminho: escreve, passo, pg, FadeIn) ------------------------------------------------------------------
@@ -157,7 +171,10 @@ def gancho(self, dentro=False):
 
 def fim(self):
     _orig_rel(self)
-    v = [dict(x, k=f"{j}") for (k, j), x in ST["viol"].items() if x["n"] >= 3]
+    def _pulso(x):                                          # v8: cor esperada clareada (destaque do foco) por até 1,2 s não é violação
+        got, esp = _rgb(x["cor"]), _rgb(x["esp"])
+        return (got >= esp - 6).all() and (x["t1"] - x["t0"]) <= 1.2
+    v = [dict(x, k=f"{j}") for (k, j), x in ST["viol"].items() if x["n"] >= 3 and not _pulso(x)]
     cx = [dict(x, dur=round(x["max"] * 0.2, 2)) for x in ST["caixa"].values() if x.get("max", 0) >= 3]
     res = {"lote": LOTE, "n_tex": ST["n_tex"], "n_glifos": ST["n_gl"], "violacoes": sorted(v, key=lambda d: d["t0"]),
            "curtas": sum(1 for x in ST["viol"].values() if x["n"] < 3), "omega": ST["omega"],

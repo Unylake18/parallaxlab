@@ -1,12 +1,14 @@
 Manim Community v0.21.0
 
-[11/04/26 17:47:43] INFO     Caching disabled.             cairo_renderer.py:81
+[plano] an:T3-1 A=0.50 W=0.00 D=0.33 ritmo=0.66 ritmo_w=1.00
+[11/06/26 17:52:28] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 0.00 1
 [dens] 0.20 1
-[dens] 0.40 1
-[dens] 0.53 1
-[gatilho] T3-1 0.53 e se o giro muda de ritmo
-[11/04/26 17:47:44] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 0.33 1
+[gatilho] T3-1 0.33 e se o giro muda de ritmo
+[plano] gat:T3-1:e se o giro muda de ritmo A=2.74 W=0.00 D=2.94 ritmo=1.04 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 0.33 1
 [dens] 0.53 1
 [dens] 0.73 1
 [dens] 0.93 1
@@ -18,111 +20,105 @@ Manim Community v0.21.0
 [dens] 2.13 1
 [dens] 2.33 1
 [dens] 2.53 1
-[dens] 2.60 1
-[gatilho] T3-1 2.60 aí entra a aceleração angular
-[11/04/26 17:47:45] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 2.60 1
-[dens] 2.80 2
-[dens] 3.00 2
-[dens] 3.20 2
-[dens] 3.27 2
+[dens] 2.73 1
+[dens] 2.93 1
+[dens] 3.13 1
+[dens] 3.33 1
+[dens] 3.40 1
+[gatilho] T3-1 3.40 aí entra a aceleração angular
+[plano] gat:T3-1:aí entra a aceleração angular A=0.70 W=0.00 D=4.79 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:52:30] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 3.40 1
+[dens] 3.60 1
+[dens] 3.80 2
+[dens] 4.00 2
+[dens] 4.20 2
+[dens] 4.40 2
+[dens] 4.60 2
+[dens] 4.67 2
 [alg] T3-1 escreve n=3 voos=0 dx=0.25 D=0.70 \alpha=\frac{d\omega}{dt}
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 3.27 9
-[dens] 3.47 9
-[11/04/26 17:47:46] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 3.53 9
-[dens] 3.73 9
-[dens] 3.93 9
-[dens] 4.13 9
-[dens] 4.33 9
-[dens] 4.53 9
-[dens] 4.73 9
+[11/06/26 17:52:31] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 4.67 9
+[dens] 4.87 9
+[11/06/26 17:52:32] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 4.93 9
-[pulso] T3-1 abs 348.2 s dp 0.80 alvos ['MathTex:1.7,1.9', 'VGroup:1.7,1.9', 'VGroup:1.7,1.9']
-[11/04/26 17:47:47] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 5.13 9
 [dens] 5.33 9
 [dens] 5.53 9
 [dens] 5.73 9
 [dens] 5.93 9
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 5.93 16
-[dens] 6.13 16
-[dens] 6.33 16
-[dens] 6.53 16
-[dens] 6.73 16
-[dens] 6.93 16
-[dens] 7.13 16
+[dens] 6.13 9
+[dens] 6.33 9
+[pulso] T3-1 abs 327.3 s dp 0.80 alvos ['MathTex:1.7,1.9', 'VGroup:1.7,1.9', 'VGroup:1.7,1.9']
+[11/06/26 17:52:33] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 6.53 9
+[dens] 6.73 9
+[dens] 6.93 9
+[dens] 7.13 9
+[dens] 7.33 9
+[11/06/26 17:52:34] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 7.33 16
 [dens] 7.53 16
 [dens] 7.73 16
-[gatilho] T3-1 7.80 ou derivando duas vezes
+[dens] 7.93 16
+[dens] 8.13 16
+[gatilho] T3-1 8.27 ou derivando duas vezes
+[plano] gat:T3-1:ou derivando duas vezes A=1.30 W=0.00 D=3.72 ritmo=1.69 ritmo_w=1.00
 [alg] T3-1 tmt \alpha = \frac{d^2\theta}{dt^2}
-[11/04/26 17:47:49] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 7.80 16
-[dens] 8.00 16
-[dens] 8.20 16
-[dens] 8.40 16
-[dens] 8.60 16
-[dens] 8.80 16
-[dens] 9.00 16
-[dens] 9.13 25
-[11/04/26 17:47:50] WARNING  Attempted adding some Mobject as a  mobject.py:557
-                             child more than once, this is not                 
-                             possible. Repetitions are ignored.                
-                    WARNING  Attempted adding some Mobject as a  mobject.py:557
-                             child more than once, this is not                 
-                             possible. Repetitions are ignored.                
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 9.13 25
-[dens] 9.33 25
-[dens] 9.53 25
-[dens] 9.73 25
-[dens] 9.93 25
-[dens] 10.13 25
-[dens] 10.33 25
-[dens] 10.53 25
-[dens] 10.73 25
-[dens] 10.93 25
-[11/04/26 17:47:51] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 11.00 25
-[gatilho] T3-1 11.13 a unidade é radiano por segundo ao quadrado
-[11/04/26 17:47:52] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 11.13 25
-[dens] 11.33 25
-[dens] 11.53 25
-[dens] 11.73 25
+[11/06/26 17:52:35] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 8.27 16
+[dens] 8.47 16
+[dens] 8.67 16
+[dens] 8.87 16
+[dens] 9.07 16
+[dens] 9.27 16
+[dens] 9.47 16
+[audit]     9.5s TRÂNSITO glifo de glifo em (2.2; 0.4) cruza glifo em (2.1; 0.6) por mais de 2 quadros
+[dens] 9.67 16
+[dens] 9.87 16
+[dens] 10.07 16
+[dens] 10.27 16
+[dens] 10.47 25
+[11/06/26 17:52:37] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 10.47 25
+[dens] 10.67 25
+[dens] 10.87 25
+[dens] 11.07 25
+[dens] 11.27 25
+[dens] 11.47 25
+[dens] 11.67 25
+[dens] 11.87 25
+[gatilho] T3-1 12.07 a unidade é radiano por segundo ao quadrado
+[plano] gat:T3-1:a unidade é radiano por segundo ao quadra A=0.60 W=0.00 D=2.50 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:52:38] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 12.07 25
+[dens] 12.27 25
+[dens] 12.47 25
+[dens] 12.67 25
+[dens] 12.87 25
+[dens] 13.07 25
+[dens] 13.13 25
 [alg] T3-1 escreve n=3 voos=0 dx=0.20 D=0.60 [\alpha]=\mathrm{rad/s^2}
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 11.73 35
-[dens] 11.93 35
-[11/04/26 17:47:53] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 12.00 35
-[dens] 12.20 35
-[dens] 12.40 35
-[dens] 12.60 35
-[dens] 12.80 35
-[dens] 13.00 35
-[dens] 13.20 35
+[11/06/26 17:52:39] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 13.13 35
+[dens] 13.33 35
+[11/06/26 17:52:40] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 13.40 35
-[pulso] T3-1 abs 356.7 s dp 0.80 alvos ['MathTex:2.1,2.8', 'VGroup:2.1,2.8', 'VGroup:2.1,2.8']
-[11/04/26 17:47:54] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 13.60 35
 [dens] 13.80 35
 [dens] 14.00 35
 [dens] 14.20 35
 [dens] 14.40 35
-[11/04/26 17:47:55] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 14.40 45
+[plano] ate:T3-1:0.99 A=0.00 W=0.00 D=0.30 ritmo=1.00 ritmo_w=1.00
+[11/06/26 17:52:41] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 14.53 35
+[dens] 14.73 35
+[plano] an:T3-2 A=2.10 W=0.00 D=2.44 ritmo=1.08 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 14.53 45
-[dens] 14.73 45
-[11/04/26 17:47:56] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 14.87 45
-[dens] 15.07 2
+[dens] 14.80 35
+[dens] 15.00 35
 [dens] 15.13 2
-[11/04/26 17:47:57] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 17:52:42] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 15.13 2
 [dens] 15.33 2
 [audit]    15.5s TEXTO SOBRE OBJETO '\omega' x Circle em (-1.3; 0.1) 
@@ -131,204 +127,208 @@ Manim Community v0.21.0
 [audit]    15.7s TEXTO SOBRE OBJETO '\omega' x Circle em (-1.3; 0.1) 
 [audit]    15.7s TEXTO SOBRE OBJETO '\alpha' x Circle em (-6.1; 0.1) 
 [dens] 15.73 2
-[dens] 15.93 0
+[audit]    15.9s TEXTO SOBRE OBJETO '\omega' x Circle em (-1.3; 0.1) 
+[audit]    15.9s TEXTO SOBRE OBJETO '\alpha' x Circle em (-6.1; 0.1) 
+[dens] 15.93 2
+[dens] 16.00 0
 [selo] SINAIS linhas=1 w=3.16 h=0.36
-[11/04/26 17:48:00] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 15.93 0
-[dens] 16.13 13
-[dens] 16.33 13
-[dens] 16.47 13
-[11/04/26 17:48:02] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 16.47 13
-[dens] 16.67 13
-[dens] 16.87 13
-[dens] 17.00 13
+[11/06/26 17:52:45] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 16.00 0
+[dens] 16.20 13
+[dens] 16.40 13
+[dens] 16.53 13
+[11/06/26 17:52:46] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 16.53 13
+[dens] 16.73 13
+[dens] 16.93 13
+[dens] 17.07 13
 [alg] T3-2 escreve n=3 voos=0 dx=0.15 D=0.50 0.0
-[11/04/26 17:48:03] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 17.00 34
-[dens] 17.20 34
-                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 17:52:47] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 17.07 34
 [dens] 17.27 34
-[gatilho] T3-2 2.60 aceleração angular negativa não quer dizer
-[11/04/26 17:48:04] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 17.47 34
-[dens] 17.67 56
-[dens] 17.87 56
-[dens] 18.07 56
-[11/04/26 17:48:06] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 18.07 56
-[dens] 18.27 56
-[dens] 18.47 56
-[dens] 18.67 56
-[dens] 18.87 56
-[dens] 19.07 56
-[dens] 19.27 56
-[dens] 19.47 56
-[dens] 19.67 56
-[dens] 19.87 56
-[pulso] T3-2 abs 363.0 s dp 0.80 alvos ['VGroup:3.6,5.8', 'VGroup:2.3,3.2', 'VGroup:-1.3,2.2']
-[11/04/26 17:48:10] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 19.93 56
-[dens] 20.13 56
-[dens] 20.33 56
-[dens] 20.53 56
-[dens] 20.73 56
-[11/04/26 17:48:12] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 20.73 56
-[dens] 20.93 56
-[dens] 21.13 56
-[dens] 21.33 56
-[dens] 21.53 56
-[dens] 21.73 56
-[dens] 21.93 56
-[dens] 22.13 56
-[dens] 22.33 56
-[dens] 22.53 56
-[pulso] T3-2 abs 365.7 s dp 0.80 alvos ['VGroup:3.6,5.8', 'VGroup:2.3,3.2', 'VGroup:-1.3,2.2']
-[11/04/26 17:48:16] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 22.60 56
-[dens] 22.80 56
-[dens] 23.00 56
-[dens] 23.20 56
-[dens] 23.40 56
-[11/04/26 17:48:18] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 23.40 56
-[dens] 23.60 56
-[dens] 23.80 56
-[dens] 24.00 56
-[dens] 24.20 56
-[dens] 24.40 56
-[gatilho] T3-2 9.60 se a velocidade angular e a aceleração angular têm o mesmo sinal
-[11/04/26 17:48:19] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T3-2 2.53 aceleração angular negativa não quer dizer
+[plano] gat:T3-2:aceleração angular negativa não quer dize A=0.60 W=0.00 D=7.11 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:52:48] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 17.33 34
+[dens] 17.53 56
+[dens] 17.73 56
+[dens] 17.93 56
+[dens] 18.13 56
+[dens] 18.33 56
+[dens] 18.40 56
+[11/06/26 17:52:50] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 18.40 56
+[dens] 18.60 56
+[dens] 18.80 56
+[dens] 19.00 56
+[dens] 19.20 56
+[dens] 19.40 56
+[dens] 19.60 56
+[dens] 19.80 56
+[dens] 20.00 56
+[dens] 20.20 56
+[pulso] T3-2 abs 341.1 s dp 0.80 alvos ['VGroup:3.6,5.8', 'VGroup:2.3,3.2', 'VGroup:-1.3,2.2']
+[11/06/26 17:52:53] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 20.27 56
+[dens] 20.47 56
+[dens] 20.67 56
+[dens] 20.87 56
+[dens] 21.07 56
+[11/06/26 17:52:54] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 21.07 56
+[dens] 21.27 56
+[dens] 21.47 56
+[dens] 21.67 56
+[dens] 21.87 56
+[dens] 22.07 56
+[dens] 22.27 56
+[dens] 22.47 56
+[dens] 22.67 56
+[dens] 22.87 56
+[pulso] T3-2 abs 343.7 s dp 0.80 alvos ['VGroup:3.6,5.8', 'VGroup:2.3,3.2', 'VGroup:-1.3,2.2']
+[11/06/26 17:52:57] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 22.93 56
+[dens] 23.13 56
+[dens] 23.33 56
+[dens] 23.53 56
+[dens] 23.73 56
+[11/06/26 17:52:59] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 23.73 56
+[dens] 23.93 56
+[dens] 24.13 56
+[dens] 24.33 56
+[gatilho] T3-2 9.67 se a velocidade angular e a aceleração angular têm o mesmo sinal
+[plano] gat:T3-2:se a velocidade angular e a aceleração an A=0.60 W=0.00 D=5.63 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:53:00] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 24.47 56
 [dens] 24.67 79
 [dens] 24.87 79
 [dens] 25.07 79
-[11/04/26 17:48:21] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 25.07 79
 [dens] 25.27 79
 [dens] 25.47 79
-[dens] 25.67 79
-[dens] 25.87 79
-[dens] 26.07 79
-[dens] 26.27 79
-[dens] 26.47 79
-[dens] 26.67 79
-[dens] 26.87 79
-[pulso] T3-2 abs 370.0 s dp 0.80 alvos ['VGroup:3.6,5.8', 'VGroup:2.3,3.2', 'VGroup:-6.1,2.2']
-[11/04/26 17:48:25] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 25.53 79
+[11/06/26 17:53:02] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 25.53 79
+[dens] 25.73 79
+[dens] 25.93 79
+[dens] 26.13 79
+[dens] 26.33 79
+[dens] 26.53 79
+[dens] 26.73 79
 [dens] 26.93 79
 [dens] 27.13 79
 [dens] 27.33 79
-[dens] 27.53 79
-[dens] 27.73 79
-[11/04/26 17:48:27] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 27.73 79
-[dens] 27.93 79
-[dens] 28.13 79
-[dens] 28.33 79
-[dens] 28.53 79
-[dens] 28.73 79
-[dens] 28.93 79
-[dens] 29.13 79
-[dens] 29.33 79
-[dens] 29.53 79
-[pulso] T3-2 abs 372.7 s dp 0.80 alvos ['VGroup:3.6,5.8', 'VGroup:2.3,3.2', 'VGroup:-6.1,2.2']
-[11/04/26 17:48:31] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T3-2 abs 348.2 s dp 0.80 alvos ['VGroup:3.6,5.8', 'VGroup:2.3,3.2', 'VGroup:-6.1,2.2']
+[11/06/26 17:53:05] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 27.40 79
+[dens] 27.60 79
+[dens] 27.80 79
+[dens] 28.00 79
+[dens] 28.20 79
+[11/06/26 17:53:07] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 28.20 79
+[dens] 28.40 79
+[dens] 28.60 79
+[dens] 28.80 79
+[dens] 29.00 79
+[dens] 29.20 79
+[dens] 29.40 79
 [dens] 29.60 79
 [dens] 29.80 79
 [dens] 30.00 79
-[dens] 30.20 79
-[dens] 30.40 79
-[11/04/26 17:48:33] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 30.40 79
-[dens] 30.60 79
-[dens] 30.80 79
-[dens] 31.00 79
-[dens] 31.20 79
-[dens] 31.40 79
-[gatilho] T3-2 16.60 se têm sinais opostos
-[11/04/26 17:48:35] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 31.47 79
-[dens] 31.67 92
-[dens] 31.87 92
-[dens] 32.07 92
-[11/04/26 17:48:37] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 32.07 92
-[dens] 32.27 92
-[dens] 32.47 92
-[dens] 32.60 92
+[gatilho] T3-2 15.33 se têm sinais opostos
+[plano] gat:T3-2:se têm sinais opostos A=1.10 W=0.00 D=2.21 ritmo=1.42 ritmo_w=1.00
+[11/06/26 17:53:10] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 30.13 79
+[dens] 30.33 92
+[dens] 30.53 92
+[dens] 30.73 92
+[dens] 30.93 92
+[dens] 31.00 92
+[11/06/26 17:53:12] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 31.00 92
+[dens] 31.20 92
+[dens] 31.40 92
+[dens] 31.60 92
+[dens] 31.73 92
 [alg] T3-2 escreve n=3 voos=0 dx=0.15 D=0.50 0.0
-[11/04/26 17:48:39] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 17:53:14] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 31.73 113
+[dens] 31.93 113
+[dens] 32.13 113
+[plano] ate:T3-2:0.99 A=0.00 W=0.00 D=0.30 ritmo=1.00 ritmo_w=1.00
+[11/06/26 17:53:15] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 32.33 113
+[dens] 32.53 113
+[plano] an:T3-3 A=1.10 W=0.00 D=2.06 ritmo=1.37 ritmo_w=1.00
+[11/06/26 17:53:16] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 32.60 113
-[dens] 32.80 113
-[11/04/26 17:48:40] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 32.87 113
-[dens] 33.07 113
-[dens] 33.27 113
-[dens] 33.47 113
-[dens] 33.67 113
-[dens] 33.87 113
-[dens] 34.07 113
-[dens] 34.27 113
-[pulso] T3-2 abs 377.5 s dp 0.46 alvos ['VGroup:3.5,5.5', 'VGroup:2.3,3.2', 'VGroup:3.5,5.5']
-[11/04/26 17:48:43] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 34.47 113
-[dens] 34.67 113
-[dens] 34.87 113
-[dens] 34.93 113
-[11/04/26 17:48:45] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 34.93 113
-[dens] 35.13 113
-[11/04/26 17:48:46] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 35.20 113
-[audit]    35.4s TEXTO SOBRE OBJETO '\omega>0' x Line em (-6.3; -1.7) 
-[audit]    35.4s TEXTO SOBRE OBJETO 'GIRANDO' x Line em (-6.3; -1.7) 
-[audit]    35.4s TEXTO SOBRE OBJETO 'MAISRÁPIDO' x Line em (-6.3; -1.7) 
-[audit]    35.4s TEXTO SOBRE OBJETO '\omega' x Circle em (-6.2; 0.3) 
-[dens] 35.40 115
-[audit]    35.6s TEXTO SOBRE OBJETO '\omega' x Circle em (-6.2; 0.3) 
-[dens] 35.60 15
-[dens] 35.80 15
+[audit]    32.8s TEXTO SOBRE OBJETO '\omega>0' x Line em (-6.3; -1.7) 
+[audit]    32.8s TEXTO SOBRE OBJETO 'GIRANDO' x Line em (-6.3; -1.7) 
+[audit]    32.8s TEXTO SOBRE OBJETO 'MAISRÁPIDO' x Line em (-6.3; -1.7) 
+[audit]    32.8s TEXTO SOBRE OBJETO '\omega' x Circle em (-6.2; 0.3) 
+[dens] 32.80 115
+[audit]    33.0s TEXTO SOBRE OBJETO '\omega' x Circle em (-6.2; 0.3) 
+[dens] 33.00 15
+[audit]    33.2s TEXTO SOBRE OBJETO '\omega' x Circle em (-6.2; 0.3) 
+[dens] 33.20 15
+[dens] 33.40 15
 [selo] ACELERAÇÃO linhas=2 w=5.95 h=0.78
-[11/04/26 17:48:52] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 35.80 15
-[dens] 36.00 2
-[dens] 36.07 2
+[11/06/26 17:53:20] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 33.40 15
+[dens] 33.60 15
+[dens] 33.73 2
+[11/06/26 17:53:21] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 33.73 2
+[dens] 33.93 40
+[dens] 34.07 40
                     INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 36.07 2
-[dens] 36.27 40
-[dens] 36.33 40
-[11/04/26 17:48:53] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 36.33 40
-[dens] 36.53 40
-[dens] 36.73 40
-[dens] 36.93 40
-[gatilho] T3-3 1.87 aceleração angular constante
-[11/04/26 17:48:54] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 37.07 40
-[dens] 37.27 40
-[dens] 37.47 40
-[dens] 37.67 40
-[11/04/26 17:48:55] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 34.07 40
+[dens] 34.27 40
+[dens] 34.47 40
+[dens] 34.67 40
+[gatilho] T3-3 2.13 aceleração angular constante
+[plano] gat:T3-3:aceleração angular constante A=0.60 W=0.00 D=5.15 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:53:22] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 34.73 40
+[dens] 34.93 40
+[dens] 35.13 40
+[dens] 35.33 40
+[dens] 35.53 40
+[dens] 35.73 40
+[dens] 35.80 40
+[11/06/26 17:53:23] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 35.80 40
+[dens] 36.00 40
+[dens] 36.20 40
+[dens] 36.40 40
+[dens] 36.60 40
+[dens] 36.80 40
+[dens] 37.00 40
+[dens] 37.20 40
+[dens] 37.40 40
+[dens] 37.60 40
+[pulso] T3-3 abs 358.5 s dp 0.80 alvos ['VGroup:3.7,6.0', 'VGroup:-3.2,6.5']
+[11/06/26 17:53:25] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 37.67 40
 [dens] 37.87 40
 [dens] 38.07 40
 [dens] 38.27 40
+[dens] 38.47 40
+[11/06/26 17:53:26] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 38.47 40
 [dens] 38.67 40
 [dens] 38.87 40
 [dens] 39.07 40
 [dens] 39.27 40
 [dens] 39.47 40
-[pulso] T3-3 abs 382.6 s dp 0.80 alvos ['VGroup:3.7,6.0', 'VGroup:-3.2,6.5']
-[11/04/26 17:48:57] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 39.53 40
-[dens] 39.73 40
+[dens] 39.67 40
+[dens] 39.87 40
+[gatilho] T3-3 7.33 cresce como uma reta no tempo
+[plano] gat:T3-3:cresce como uma reta no tempo A=3.00 W=0.00 D=2.05 ritmo=0.68 ritmo_w=1.00
+[11/06/26 17:53:27] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 39.93 40
 [dens] 40.13 40
-[dens] 40.33 40
-[11/04/26 17:48:58] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 40.33 40
 [dens] 40.53 40
 [dens] 40.73 40
@@ -337,117 +337,117 @@ Manim Community v0.21.0
 [dens] 41.33 40
 [dens] 41.53 40
 [dens] 41.73 40
-[gatilho] T3-3 6.67 cresce como uma reta no tempo
-[11/04/26 17:48:59] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 41.87 40
-[dens] 42.07 40
-[dens] 42.27 40
-[dens] 42.47 40
-[dens] 42.67 40
-[dens] 42.87 40
-[dens] 43.07 40
-[dens] 43.27 40
-[dens] 43.47 40
-[dens] 43.67 40
-[dens] 43.87 40
-[dens] 44.07 40
-[dens] 44.27 40
-[dens] 44.47 40
-[dens] 44.67 40
-[dens] 44.87 40
-[gatilho] T3-3 9.67 velocidade angular igual à velocidade angular inicial
-[11/04/26 17:49:01] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 44.87 40
-[dens] 45.07 42
-[dens] 45.27 42
-[11/04/26 17:49:02] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 45.27 42
-[dens] 45.47 42
-[dens] 45.67 42
-[dens] 45.80 42
+[dens] 41.93 40
+[dens] 42.00 40
+[gatilho] T3-3 9.40 velocidade angular igual à velocidade angular inicial
+[plano] gat:T3-3:velocidade angular igual à velocidade ang A=0.90 W=0.00 D=5.98 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:53:29] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 42.00 40
+[dens] 42.20 42
+[dens] 42.40 42
+[dens] 42.60 42
+[dens] 42.73 42
+[11/06/26 17:53:30] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 42.73 42
+[dens] 42.93 42
+[dens] 43.13 42
+[dens] 43.33 42
+[dens] 43.53 42
+[dens] 43.67 42
 [alg] T3-3 escreve n=3 voos=1 dx=0.25 D=0.50 \omega=\omega_0+\alphat
+[11/06/26 17:53:31] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 43.67 42
+[dens] 43.87 42
                     INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 45.80 42
-[dens] 46.00 42
-[11/04/26 17:49:03] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 46.07 42
-[dens] 46.27 42
-[dens] 46.47 42
-[dens] 46.67 42
-[dens] 46.87 42
-[dens] 47.07 42
-[dens] 47.27 42
-[dens] 47.47 42
-[pulso] T3-3 abs 390.7 s dp 0.80 alvos ['VGroup:1.6,1.8', 'VGroup:3.7,6.0', 'VGroup:1.5,0.4']
-[11/04/26 17:49:04] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 47.67 42
-[dens] 47.87 42
+[dens] 43.93 42
+[dens] 44.13 42
+[dens] 44.33 42
+[dens] 44.53 42
+[dens] 44.73 42
+[dens] 44.93 42
+[dens] 45.13 42
+[dens] 45.33 42
+[pulso] T3-3 abs 366.3 s dp 0.80 alvos ['VGroup:1.6,1.8', 'VGroup:3.7,6.0', 'VGroup:1.5,0.4']
+[11/06/26 17:53:33] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 45.53 42
+[dens] 45.73 42
+[dens] 45.93 42
+[audit]    45.9s CALHA desenho VMobjectFromSVGPath em (0.66; 1.93)
+[dens] 46.13 42
+[dens] 46.33 42
+[11/06/26 17:53:34] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 46.33 42
+[dens] 46.53 42
+[dens] 46.73 42
+[dens] 46.93 42
+[dens] 47.13 42
+[dens] 47.33 42
+[dens] 47.53 42
+[dens] 47.73 42
+[dens] 47.93 42
+[gatilho] T3-3 15.47 a inclinação dessa reta
+[plano] gat:T3-3:a inclinação dessa reta A=1.35 W=0.00 D=2.82 ritmo=1.45 ritmo_w=1.00
+[11/06/26 17:53:35] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 48.07 42
-[audit]    48.1s CALHA desenho VMobjectFromSVGPath em (0.66; 1.93)
-[dens] 48.27 42
-[dens] 48.47 42
-[11/04/26 17:49:06] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 48.47 42
-[dens] 48.67 42
-[dens] 48.87 42
-[dens] 49.07 42
-[dens] 49.27 42
-[gatilho] T3-3 14.13 a inclinação dessa reta
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 49.33 42
-[dens] 49.53 43
-[dens] 49.73 43
-[dens] 49.93 43
+[dens] 48.27 43
+[dens] 48.47 43
+[dens] 48.67 43
+[dens] 48.87 43
+[dens] 49.07 43
+[11/06/26 17:53:36] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 49.07 43
+[dens] 49.27 43
+[dens] 49.47 43
+[dens] 49.67 43
+[dens] 49.87 43
 [dens] 50.00 43
-[11/04/26 17:49:07] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 50.00 43
-[dens] 50.20 43
-[dens] 50.40 43
-[dens] 50.60 43
-[dens] 50.67 43
 [alg] T3-3 escreve n=3 voos=2 dx=0.25 D=0.65 \omega=\omega_0+\alphat
-[11/04/26 17:49:08] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 50.67 52
+[11/06/26 17:53:37] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 50.00 52
+[dens] 50.20 52
+[dens] 50.40 52
+[dens] 50.60 52
+[dens] 50.80 52
+[plano] ate:T3-3:0.99 A=0.00 W=0.00 D=0.30 ritmo=1.00 ritmo_w=1.00
+[11/06/26 17:53:38] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 50.87 52
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 50.93 52
+[dens] 51.07 52
+[plano] an:T3-4 A=0.60 W=0.00 D=2.10 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:53:39] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 51.13 52
 [dens] 51.33 52
-[dens] 51.53 52
-[dens] 51.73 52
-[dens] 51.93 52
-[dens] 52.13 52
-[dens] 52.33 52
-[pulso] T3-3 abs 395.6 s dp 0.53 alvos ['MathTex:2.3,3.3', 'VGroup:3.7,6.0', 'VGroup:2.3,3.3']
-[11/04/26 17:49:10] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 52.53 52
-[dens] 52.73 52
-[dens] 52.93 52
-[dens] 53.07 52
-[11/04/26 17:49:11] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 53.07 52
-[dens] 53.27 52
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 53.40 52
-[dens] 53.60 52
-[dens] 53.80 51
-[dens] 54.00 51
-[11/04/26 17:49:12] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 54.00 51
-[dens] 54.20 51
-[dens] 54.40 51
-[gatilho] T3-4 1.13 olha a área embaixo dessa reta
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 54.53 51
-[dens] 54.73 51
-[dens] 54.93 51
-[dens] 55.13 51
-[dens] 55.33 51
-[dens] 55.53 51
-[dens] 55.73 51
-[dens] 55.93 51
+[dens] 51.53 51
+[dens] 51.73 51
+[dens] 51.93 51
+[dens] 52.13 51
+[dens] 52.20 51
+[11/06/26 17:53:40] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 52.20 51
+[dens] 52.40 51
+[dens] 52.60 51
+[dens] 52.80 51
+[dens] 53.00 51
+[dens] 53.20 51
+[gatilho] T3-4 2.13 olha o gráfico da velocidade angular
+[plano] gat:T3-4:olha o gráfico da velocidade angular A=1.60 W=0.00 D=8.47 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:53:41] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 53.27 51
+[dens] 53.47 51
+[dens] 53.67 51
+[dens] 53.87 51
+[dens] 54.07 51
+[dens] 54.27 51
+[dens] 54.47 51
+[dens] 54.67 51
+[dens] 54.87 51
+[dens] 55.07 51
+[dens] 55.27 51
+[dens] 55.47 51
+[dens] 55.67 51
+[dens] 55.87 51
+[dens] 56.07 51
 [dens] 56.13 51
-[11/04/26 17:49:13] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 17:53:44] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 56.13 51
 [dens] 56.33 51
 [dens] 56.53 51
@@ -458,14 +458,14 @@ Manim Community v0.21.0
 [dens] 57.53 51
 [dens] 57.73 51
 [dens] 57.93 51
-[pulso] T3-4 abs 401.1 s dp 0.80 alvos ['MathTex:2.3,3.3', 'VGroup:3.7,6.0', 'VGroup:2.3,3.3']
-[11/04/26 17:49:15] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T3-4 abs 378.8 s dp 0.80 alvos ['MathTex:2.3,3.3', 'VGroup:3.7,6.0', 'VGroup:2.3,3.3']
+[11/06/26 17:53:45] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 58.00 51
 [dens] 58.20 51
 [dens] 58.40 51
 [dens] 58.60 51
 [dens] 58.80 51
-[11/04/26 17:49:16] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 17:53:47] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 58.80 51
 [dens] 59.00 51
 [dens] 59.20 51
@@ -476,257 +476,29 @@ Manim Community v0.21.0
 [dens] 60.20 51
 [dens] 60.40 51
 [dens] 60.60 51
-[pulso] T3-4 abs 403.7 s dp 0.47 alvos ['MathTex:2.3,3.3', 'VGroup:3.7,6.0', 'VGroup:2.3,3.3']
-[11/04/26 17:49:17] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T3-4 abs 381.5 s dp 0.80 alvos ['MathTex:2.3,3.3', 'VGroup:3.7,6.0', 'VGroup:2.3,3.3']
+[11/06/26 17:53:48] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 60.67 51
 [dens] 60.87 51
 [dens] 61.07 51
-[dens] 61.13 51
-[gatilho] T3-4 7.73 que é uma tirinha fina de área
-[11/04/26 17:49:19] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 61.13 51
-[dens] 61.33 55
-[dens] 61.53 55
-[dens] 61.67 55
+[dens] 61.27 51
+[dens] 61.47 51
+[11/06/26 17:53:50] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 61.47 51
+[dens] 61.67 51
+[gatilho] T3-4 10.60 uma tirinha de área
+[plano] gat:T3-4:uma tirinha de área A=0.50 W=0.50 D=1.42 ritmo=1.19 ritmo_w=1.65
                     INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 61.67 55
-[dens] 61.87 55
-[dens] 62.07 55
-[11/04/26 17:49:20] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 62.20 55
-[dens] 62.40 55
-[dens] 62.60 55
-[dens] 62.80 55
-[dens] 63.00 55
-[dens] 63.20 55
-[dens] 63.40 55
-[11/04/26 17:49:21] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 63.60 55
-[gatilho] T3-4 10.40 somando todas as tirinhas
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 63.80 55
-[dens] 64.00 55
-[dens] 64.20 55
-[dens] 64.40 55
-[dens] 64.60 55
-[dens] 64.80 55
-[dens] 65.00 55
-[dens] 65.20 55
-[dens] 65.40 55
-[dens] 65.60 55
-[dens] 65.80 55
-[dens] 66.00 55
-[dens] 66.20 55
-[dens] 66.40 55
-[dens] 66.60 55
-[dens] 66.80 55
-[dens] 67.00 55
-[dens] 67.20 55
-[dens] 67.40 55
-[dens] 67.60 55
-[dens] 67.80 55
-[dens] 68.00 55
-[dens] 68.20 55
-[dens] 68.40 55
-[dens] 68.60 55
-[dens] 68.80 55
-[dens] 69.00 55
-[gatilho] T3-4 15.60 a integral da velocidade angular
-[11/04/26 17:49:26] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 69.00 55
-[dens] 69.20 55
-[dens] 69.40 55
-[dens] 69.60 55
-[dens] 69.73 55
-[alg] T3-4 escreve n=4 voos=1 dx=0.25 D=0.75 \Delta\theta=\int_0^t\omega\,dt'
-[11/04/26 17:49:27] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 69.73 77
-[dens] 69.93 77
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 70.00 77
-[dens] 70.20 77
-[dens] 70.40 77
-[11/04/26 17:49:28] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 70.60 77
-[dens] 70.80 77
-[dens] 71.00 77
-[dens] 71.20 77
-[dens] 71.40 77
-[pulso] T3-4 abs 414.7 s dp 0.80 alvos ['MathTex:2.5,3.6', 'VGroup:3.7,6.0', 'VGroup:2.5,3.6']
-[11/04/26 17:49:29] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 71.60 77
-[dens] 71.80 77
-[dens] 72.00 77
-[dens] 72.20 77
-[dens] 72.40 77
-[11/04/26 17:49:30] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 72.40 77
-[dens] 72.60 77
-[dens] 72.80 77
-[dens] 73.00 77
-[dens] 73.20 77
-[dens] 73.40 77
-[dens] 73.60 77
-[gatilho] T3-4 20.40 o retângulo é a velocidade angular inicial vezes o tempo
-[11/04/26 17:49:31] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 73.80 77
-[dens] 74.00 81
-[dens] 74.20 81
-[dens] 74.40 81
-[dens] 74.60 81
-[dens] 74.73 81
-[11/04/26 17:49:32] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 74.73 81
-[dens] 74.93 81
-[dens] 75.13 81
-[dens] 75.33 81
-[dens] 75.53 81
-[dens] 75.73 81
-[dens] 75.93 81
-[dens] 76.13 81
-[dens] 76.33 81
-[dens] 76.53 81
-[pulso] T3-4 abs 419.7 s dp 0.80 alvos ['MathTex:2.5,3.6', 'VGroup:3.7,6.0', 'VGroup:-4.1,4.4']
-[11/04/26 17:49:34] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 76.60 81
-[dens] 76.80 81
-[dens] 77.00 81
-[dens] 77.20 81
-[dens] 77.40 81
-[11/04/26 17:49:36] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 77.40 81
-[dens] 77.60 81
-[dens] 77.80 81
-[dens] 78.00 81
-[dens] 78.20 81
-[dens] 78.40 81
-[dens] 78.60 81
-[dens] 78.80 81
-[dens] 79.00 81
-[dens] 79.20 81
-[pulso] T3-4 abs 422.3 s dp 0.80 alvos ['MathTex:2.5,3.6', 'VGroup:3.7,6.0', 'VGroup:-4.1,4.4']
-[11/04/26 17:49:38] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 79.27 81
-[dens] 79.47 81
-[dens] 79.67 81
-[dens] 79.87 81
-[dens] 80.07 81
-[11/04/26 17:49:40] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 80.07 81
-[dens] 80.27 81
-[dens] 80.47 81
-[dens] 80.67 81
-[gatilho] T3-4 27.40 e o triângulo
-[11/04/26 17:49:41] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 80.80 81
-[dens] 81.00 83
-[dens] 81.20 83
-[dens] 81.40 83
-[dens] 81.60 83
-[11/04/26 17:49:43] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 81.60 83
-[dens] 81.80 83
-[dens] 82.00 83
-[dens] 82.20 83
-[dens] 82.40 83
-[dens] 82.60 83
-[dens] 82.80 83
-[dens] 83.00 83
-[dens] 83.20 83
-[dens] 83.40 83
-[pulso] T3-4 abs 426.5 s dp 0.80 alvos ['MathTex:2.5,3.6', 'VGroup:3.7,6.0', 'Line:-4.1,4.4']
-[11/04/26 17:49:45] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 83.47 83
-[dens] 83.67 83
-[dens] 83.87 83
-[dens] 84.07 83
-[dens] 84.27 83
-[11/04/26 17:49:47] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 84.27 83
-[dens] 84.47 83
-[dens] 84.67 83
-[dens] 84.87 83
-[dens] 85.07 83
-[dens] 85.27 83
-[dens] 85.47 83
-[dens] 85.67 83
-[dens] 85.87 83
-[dens] 86.07 83
-[pulso] T3-4 abs 429.2 s dp 0.80 alvos ['MathTex:2.5,3.6', 'VGroup:3.7,6.0', 'Line:-4.1,4.4']
-[11/04/26 17:49:49] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 86.13 83
-[dens] 86.33 83
-[dens] 86.53 83
-[dens] 86.73 83
-[dens] 86.93 83
-[11/04/26 17:49:51] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 86.93 83
-[gatilho] T3-4 33.67 vale meio vezes a aceleração angular
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 87.07 83
-[dens] 87.27 89
-[dens] 87.47 89
-[dens] 87.67 89
-[11/04/26 17:49:52] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 87.67 89
-[dens] 87.87 89
-[dens] 88.07 89
-[dens] 88.27 89
-[dens] 88.47 89
-[dens] 88.67 89
-[dens] 88.87 89
-[dens] 89.07 89
-[alg] T3-4 escreve n=5 voos=3 dx=0.25 D=1.40 \Delta\theta=\omega_0t+\tfrac12\alphat^2
-[11/04/26 17:49:55] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 89.07 138
-[dens] 89.27 138
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 89.33 138
-[dens] 89.53 129
-[11/04/26 17:49:57] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 89.53 144
-[dens] 89.73 144
-[dens] 89.87 144
-[alg] T3-4 passo mapas=10 arco
-[11/04/26 17:49:58] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 89.87 129
-[dens] 90.07 129
-[dens] 90.27 129
-[dens] 90.47 129
-[audit]    90.5s TRÂNSITO glifo de glifo em (0.8; -0.8) cruza glifo em (0.8; -0.8) por mais de 2 quadros
-[dens] 90.67 129
-[audit]    90.7s TRÂNSITO glifo de glifo em (2.7; -0.9) cruza glifo em (2.7; -0.9) por mais de 2 quadros
-[dens] 90.87 129
-[dens] 91.07 129
-[dens] 91.20 144
-[gatilho] T3-4 37.80 é o giro a mais que a aceleração deu
-[alg] T3-4 passo mapas=11
-[11/04/26 17:50:01] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 91.20 144
-[dens] 91.40 144
-[dens] 91.60 144
-[dens] 91.80 144
-[dens] 92.00 144
-[dens] 92.20 144
-[dens] 92.40 144
-[dens] 92.53 159
-[11/04/26 17:50:03] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 92.53 159
-[dens] 92.73 159
-[dens] 92.80 159
-[alg] T3-4 escreve n=0 voos=0 dx=0.12 D=0.25 \theta=\theta_0+\omega_0t+\tfrac12\alphat^2
-[11/04/26 17:50:04] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 92.80 159
-[dens] 93.00 159
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 93.07 159
-[dens] 93.27 159
-[dens] 93.47 159
-[dens] 93.67 159
-[dens] 93.87 159
-[dens] 94.07 159
-[dens] 94.27 159
-[11/04/26 17:50:06] WARNING  The original total run_time of       scene.py:1131
+[dens] 61.73 51
+[dens] 61.93 55
+[dens] 62.13 55
+[dens] 62.33 55
+[11/06/26 17:53:51] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 62.33 55
+[dens] 62.53 55
+[dens] 62.73 55
+[dens] 62.93 55
+[11/06/26 17:53:52] WARNING  The original total run_time of       scene.py:1131
                              PT3.play(), 0.0653333 seconds, is                 
                              too short for the current frame rate              
                              of 15 FPS. Rendering with the                     
@@ -739,583 +511,790 @@ Manim Community v0.21.0
                              of 15 FPS. Rendering with the                     
                              shortest possible total run_time of               
                              0.0666667 seconds instead.                        
-[dens] 94.47 159
-[gatilho] T3-4 41.13 só um cuidado
-[selo] ÁREA COM SINAL linhas=1 w=2.81 h=0.42
-[11/04/26 17:50:07] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 94.53 159
-[dens] 94.73 121
-[dens] 94.80 121
-[11/04/26 17:50:08] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 94.80 121
-[dens] 95.00 133
-[dens] 95.07 133
-[11/04/26 17:50:11] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 95.07 133
-[dens] 95.27 47
-[dens] 95.33 47
-[11/04/26 17:50:16] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 95.33 47
-[dens] 95.53 47
-[11/04/26 17:50:18] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 95.53 47
-[dens] 95.73 47
-[dens] 95.93 27
-[dens] 96.07 27
-[11/04/26 17:50:21] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 96.07 27
-[dens] 96.27 35
-[dens] 96.47 35
-[dens] 96.60 35
-[11/04/26 17:50:23] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 96.60 35
-[dens] 96.80 35
-[dens] 97.00 35
-[dens] 97.20 35
-[dens] 97.40 35
-[dens] 97.60 35
-[dens] 97.80 35
-[gatilho] T3-4 44.47 se o disco inverter o sentido
-[11/04/26 17:50:25] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 97.87 35
-[dens] 98.07 35
-[dens] 98.27 35
-[dens] 98.47 35
-[dens] 98.67 35
-[audit]    98.9s TEXTO SOBRE OBJETO '+2\pi' x Polygon em (-5.7; -1.6) 
-[dens] 98.87 35
-[audit]    99.1s TEXTO SOBRE OBJETO '+2\pi' x Polygon em (-5.6; -1.5) 
-[dens] 99.07 35
-[audit]    99.3s TEXTO SOBRE OBJETO '+2\pi' x Polygon em (-5.5; -1.5) 
-[dens] 99.27 35
-[dens] 99.47 35
-[dens] 99.67 35
-[dens] 99.87 35
-[dens] 100.07 35
-[dens] 100.27 35
-[gatilho] T3-4 46.87 a parte abaixo do eixo conta negativo
-[11/04/26 17:50:27] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 100.27 35
-[dens] 100.47 35
-[dens] 100.67 35
-[dens] 100.87 35
-[dens] 101.07 35
-[dens] 101.27 35
-[dens] 101.47 35
-[dens] 101.67 35
-[audit]   101.9s TEXTO SOBRE OBJETO '-2\pi' x Polygon em (-2.9; -2.7) 
-[dens] 101.87 35
-[audit]   102.1s TEXTO SOBRE OBJETO '-2\pi' x Polygon em (-2.8; -2.7) 
-[dens] 102.07 35
-[audit]   102.3s TEXTO SOBRE OBJETO '-2\pi' x Polygon em (-2.7; -2.8) 
-[dens] 102.27 35
-[audit]   102.5s TEXTO SOBRE OBJETO '-2\pi' x Polygon em (-2.7; -2.9) 
-[dens] 102.47 35
-[audit]   102.7s TEXTO SOBRE OBJETO '-2\pi' x Polygon em (-2.6; -2.8) 
-[dens] 102.67 35
-[audit]   102.9s TEXTO SOBRE OBJETO '-2\pi' x Polygon em (-2.5; -2.8) 
-[dens] 102.87 35
-[dens] 103.07 35
-[dens] 103.27 35
-[dens] 103.47 35
-[dens] 103.67 35
-[dens] 103.87 35
-[dens] 104.07 35
-[dens] 104.27 35
-[dens] 104.47 35
-[dens] 104.67 35
-[11/04/26 17:50:34] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 104.67 35
-[dens] 104.87 35
-[dens] 105.07 35
-[dens] 105.27 35
-[dens] 105.47 35
-[dens] 105.67 35
-[dens] 105.87 35
-[dens] 106.07 35
-[dens] 106.27 35
-[dens] 106.47 35
-[pulso] T3-4 abs 449.6 s dp 0.80 alvos ['VGroup:3.7,5.5', 'VGroup:2.1,2.8', 'MathTex:-1.9,0.7']
-[11/04/26 17:50:37] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 106.53 35
-[dens] 106.73 35
-[audit]   106.9s TEXTO SOBRE OBJETO '-2\pi' x Line em (-1.1; -2.7) 
-[dens] 106.93 35
-[dens] 107.13 35
-[dens] 107.33 35
-[11/04/26 17:50:39] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 107.33 35
-[dens] 107.53 35
-[dens] 107.73 35
-[dens] 107.93 35
-[dens] 108.13 35
-[gatilho] T3-4 54.80 tem deslocamento angular zero
-[11/04/26 17:50:41] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 108.20 35
-[dens] 108.40 35
-[dens] 108.60 35
-[dens] 108.80 35
-[dens] 108.93 35
-[alg] T3-4 escreve n=4 voos=2 dx=0.25 D=0.75 \Delta\theta=+2\pi-2\pi
-[11/04/26 17:50:42] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 108.93 56
-[dens] 109.13 56
-[alg] T3-4 passo mapas=2
-[11/04/26 17:50:43] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 109.20 56
-[dens] 109.40 56
-[dens] 109.60 56
-[dens] 109.80 56
-[dens] 110.00 56
-[dens] 110.20 56
-[dens] 110.40 58
-[gatilho] T3-4 57.00 mas girou quatro pi radianos no total
-[11/04/26 17:50:47] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 110.40 58
-[dens] 110.60 58
-[dens] 110.80 58
-[dens] 111.00 58
-[dens] 111.20 58
-[dens] 111.27 58
-[alg] T3-4 escreve n=5 voos=0 dx=0.17 D=0.90 =2\pi+2\pi
-[11/04/26 17:50:48] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 111.27 73
-[dens] 111.47 73
-[alg] T3-4 passo mapas=2
-[11/04/26 17:50:49] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 111.53 73
-[dens] 111.73 73
-[dens] 111.93 73
-[dens] 112.13 73
-[dens] 112.33 73
-[dens] 112.53 73
-[dens] 112.73 76
-[11/04/26 17:50:51] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 112.73 76
-[dens] 112.93 76
-[dens] 113.13 76
-[dens] 113.33 76
-[dens] 113.53 76
-[dens] 113.73 76
-[dens] 113.93 76
-[dens] 114.13 76
-[dens] 114.33 76
-[dens] 114.53 76
-[pulso] T3-4 abs 457.7 s dp 0.80 alvos ['MathTex:3.5,1.1', 'VGroup:2.1,2.8', 'VGroup:3.5,1.1']
-[11/04/26 17:50:54] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 114.60 76
-[dens] 114.80 76
-[dens] 115.00 76
-[dens] 115.20 76
-[dens] 115.40 76
-[11/04/26 17:50:55] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 115.40 76
-[dens] 115.60 76
-[dens] 115.80 76
-[dens] 116.00 76
-[dens] 116.20 76
-[11/04/26 17:50:57] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 116.33 76
-[dens] 116.53 76
-[dens] 116.73 76
-[dens] 116.93 76
-[11/04/26 17:50:58] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 117.13 76
-[dens] 117.33 76
-[dens] 117.47 64
-[11/04/26 17:51:00] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   117.5s TEXTO SOBRE OBJETO '+2\pi' x VMobject em (-4.1; -1.5) 
-[audit]   117.5s TEXTO SOBRE OBJETO '-2\pi' x Polygon em (-4.1; -1.9) 
-[dens] 117.47 64
-[audit]   117.7s TEXTO SOBRE OBJETO '\omega' x Line em (-6.3; -1.7) 
-[audit]   117.7s TEXTO SOBRE OBJETO '+2\pi' x VMobject em (-4.1; -1.5) 
-[audit]   117.7s TEXTO SOBRE OBJETO '-2\pi' x Polygon em (-4.1; -1.9) 
-[dens] 117.67 66
-[audit]   117.7s ENCOSTADO empilhado '\omega' x '\omega' (folga 0.19)
-[dens] 117.87 2
-[dens] 118.00 2
-[11/04/26 17:51:03] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 118.00 2
-[dens] 118.20 2
-[dens] 118.40 2
-[dens] 118.60 2
-[dens] 118.80 2
-[dens] 119.00 2
-[dens] 119.20 2
-[dens] 119.40 2
-[dens] 119.60 2
-[dens] 119.73 2
-[alg] T3-5 escreve n=14 voos=0 dx=0.12 D=1.76 \omega=\omega_0+\alphat
-[11/04/26 17:51:04] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 119.73 22
-[dens] 119.93 22
-[gatilho] T3-5 2.87 se você eliminar o tempo
-[alg] T3-5 passo mapas=7
+[dens] 63.13 55
+[gatilho] T3-4 12.07 somamos todas as tirinhas
+[plano] gat:T3-4:somamos todas as tirinhas A=2.05 W=0.00 D=2.05 ritmo=1.00 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 120.00 22
-[dens] 120.20 22
-[dens] 120.40 22
-[dens] 120.60 22
-[dens] 120.80 22
-[dens] 121.00 22
-[dens] 121.20 22
-[dens] 121.40 30
-[11/04/26 17:51:06] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 121.40 30
-[dens] 121.60 30
-[dens] 121.80 30
-[dens] 122.00 30
-[dens] 122.20 30
-[dens] 122.40 30
-[dens] 122.60 30
-[gatilho] T3-5 5.60 velocidade angular ao quadrado igual
+[dens] 63.20 55
+[dens] 63.40 55
+[dens] 63.60 55
+[dens] 63.80 55
+[dens] 64.00 55
+[dens] 64.20 55
+[dens] 64.40 55
+[dens] 64.60 55
+[dens] 64.80 55
+[dens] 65.00 55
+[dens] 65.20 55
+[dens] 65.27 55
+[gatilho] T3-4 14.13 a integral da velocidade angular
+[plano] gat:T3-4:a integral da velocidade angular A=0.75 W=0.60 D=4.67 ritmo=1.80 ritmo_w=5.53
+[11/06/26 17:53:54] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 65.27 55
+[dens] 65.47 55
+[dens] 65.67 55
+[dens] 65.87 55
+[dens] 66.07 55
+[dens] 66.27 55
+[dens] 66.47 55
+[dens] 66.60 55
+[alg] T3-4 escreve n=4 voos=1 dx=0.25 D=0.75 \Delta\theta=\int_0^t\omega\,dt'
+[11/06/26 17:53:56] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 66.60 77
+[dens] 66.80 77
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 66.87 77
+[dens] 67.07 77
+[dens] 67.27 77
+[dens] 67.47 77
+[dens] 67.67 77
+[dens] 67.87 77
+[dens] 68.07 77
+[dens] 68.27 77
+[pulso] T3-4 abs 389.3 s dp 0.80 alvos ['MathTex:2.5,3.6', 'VGroup:3.7,6.0', 'VGroup:2.5,3.6']
+[11/06/26 17:53:58] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 68.47 77
+[dens] 68.67 77
+[dens] 68.87 77
+[dens] 69.07 77
+[dens] 69.27 77
+[11/06/26 17:53:59] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 69.27 77
+[dens] 69.47 77
+[dens] 69.67 77
+[dens] 69.87 77
+[dens] 70.07 77
+[gatilho] T3-4 19.07 o retângulo representa o giro
+[plano] gat:T3-4:o retângulo representa o giro A=0.90 W=0.00 D=5.41 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:54:00] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 70.20 77
+[dens] 70.40 81
+[dens] 70.60 81
+[dens] 70.80 81
+[dens] 71.00 81
+[dens] 71.20 81
+[dens] 71.40 81
+[dens] 71.60 81
+[dens] 71.80 81
+[11/06/26 17:54:02] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 71.80 81
+[dens] 72.00 81
+[dens] 72.20 81
+[dens] 72.40 81
+[dens] 72.60 81
+[dens] 72.80 81
+[dens] 73.00 81
+[dens] 73.20 81
+[dens] 73.40 81
+[dens] 73.60 81
+[pulso] T3-4 abs 394.5 s dp 0.80 alvos ['MathTex:2.5,3.6', 'VGroup:3.7,6.0', 'VGroup:-4.1,4.4']
+[11/06/26 17:54:04] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 73.67 81
+[dens] 73.87 81
+[dens] 74.07 81
+[dens] 74.27 81
+[dens] 74.47 81
+[11/06/26 17:54:06] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 74.47 81
+[dens] 74.67 81
+[dens] 74.87 81
+[dens] 75.07 81
+[dens] 75.27 81
+[dens] 75.47 81
+[gatilho] T3-4 24.53 o triângulo representa a contribuição da aceleração
+[plano] gat:T3-4:o triângulo representa a contribuição da  A=0.80 W=0.00 D=3.03 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:54:07] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 75.67 81
+[dens] 75.87 83
+[dens] 76.07 83
+[dens] 76.27 83
+[dens] 76.47 83
+[dens] 76.67 83
+[dens] 76.87 83
+[dens] 77.07 83
+[dens] 77.13 83
+[11/06/26 17:54:09] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 77.13 83
+[dens] 77.33 83
+[dens] 77.53 83
+[dens] 77.73 83
+[dens] 77.93 83
+[dens] 78.13 83
+[dens] 78.33 83
+[dens] 78.53 83
+[gatilho] T3-4 27.60 metade da aceleração angular vezes o tempo ao quadrado
+[plano] gat:T3-4:metade da aceleração angular vezes o temp A=3.86 W=0.00 D=3.34 ritmo=0.87 ritmo_w=1.00
+[11/06/26 17:54:10] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 78.73 83
+[dens] 78.93 89
+[dens] 79.13 89
+[dens] 79.27 89
+[11/06/26 17:54:11] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 79.27 89
+[dens] 79.47 89
+[dens] 79.67 89
+[dens] 79.87 89
+[dens] 80.07 89
+[dens] 80.27 89
+[dens] 80.47 89
+[alg] T3-4 escreve n=5 voos=3 dx=0.25 D=1.40 \Delta\theta=\omega_0t+\tfrac12\alphat^2
+[11/06/26 17:54:13] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 80.47 110
+[dens] 80.67 110
+[11/06/26 17:54:14] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 80.73 110
+[dens] 80.93 101
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 80.93 116
+[dens] 81.13 116
+[dens] 81.27 116
+[alg] T3-4 passo mapas=10 arco
+[11/06/26 17:54:15] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 81.27 101
+[dens] 81.47 101
+[dens] 81.67 101
+[dens] 81.87 101
+[dens] 82.07 101
+[dens] 82.27 101
+[audit]    82.3s TRÂNSITO glifo de glifo em (4.3; -0.9) cruza glifo em (4.3; -0.9) por mais de 2 quadros
+[dens] 82.40 116
+[gatilho] T3-4 31.27 somando temos o deslocamento angular
+[plano] gat:T3-4:somando temos o deslocamento angular A=1.55 W=1.40 D=2.13 ritmo=1.00 ritmo_w=0.42
+[alg] T3-4 passo mapas=11
+[11/06/26 17:54:17] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 82.40 116
+[dens] 82.60 116
+[dens] 82.80 116
+[dens] 83.00 116
+[dens] 83.20 116
+[dens] 83.40 116
+[dens] 83.60 116
+[dens] 83.73 131
+[11/06/26 17:54:19] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 83.73 131
+[dens] 83.93 131
+[dens] 84.00 131
+[alg] T3-4 escreve n=0 voos=0 dx=0.12 D=0.25 \theta=\theta_0+\omega_0t+\tfrac12\alphat^2
+[11/06/26 17:54:20] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 84.00 131
+[dens] 84.20 131
+[11/06/26 17:54:21] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 84.27 131
+[dens] 84.47 131
+[dens] 84.67 131
+[gatilho] T3-4 33.73 mas cuidado
+[plano] gat:T3-4:mas cuidado A=2.00 W=0.00 D=4.25 ritmo=1.46 ritmo_w=1.00
+[selo] ÁREA COM SINAL linhas=1 w=2.81 h=0.42
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 84.87 131
+[dens] 85.07 131
+[dens] 85.20 93
+[11/06/26 17:54:22] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 85.20 93
+[dens] 85.40 105
+[dens] 85.53 105
+[11/06/26 17:54:23] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 85.53 105
+[dens] 85.73 105
+[dens] 85.93 47
+[dens] 86.00 47
+[11/06/26 17:54:25] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 86.00 47
+[dens] 86.20 47
+[dens] 86.27 47
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 86.27 47
+[dens] 86.47 47
+[dens] 86.67 27
+[dens] 86.87 27
+[dens] 87.00 27
+[11/06/26 17:54:26] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 87.00 27
+[dens] 87.20 35
+[dens] 87.40 35
+[dens] 87.60 35
+[dens] 87.73 35
+[11/06/26 17:54:28] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 87.73 35
+[dens] 87.93 35
+[dens] 88.13 35
+[dens] 88.33 35
+[dens] 88.53 35
+[dens] 88.73 35
+[dens] 88.93 35
+[dens] 89.13 35
+[gatilho] T3-4 38.07 abaixo negativo
+[plano] gat:T3-4:abaixo negativo A=0.80 W=0.00 D=1.15 ritmo=1.20 ritmo_w=1.00
+[11/06/26 17:54:29] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 89.20 35
+[dens] 89.40 35
+[dens] 89.60 35
+[dens] 89.80 35
+[dens] 90.00 35
+[dens] 90.13 35
+[11/06/26 17:54:30] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 90.13 35
+[dens] 90.33 35
+[gatilho] T3-4 39.27 se o disco der uma volta num sentido
+[plano] gat:T3-4:se o disco der uma volta num sentido A=2.40 W=0.00 D=2.39 ritmo=1.00 ritmo_w=1.00
+[11/06/26 17:54:31] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 90.40 35
+[dens] 90.60 35
+[dens] 90.80 35
+[dens] 91.00 35
+[dens] 91.20 35
+[audit]    91.4s TEXTO SOBRE OBJETO '+2\pi' x Polygon em (-5.7; -1.6) 
+[dens] 91.40 35
+[audit]    91.6s TEXTO SOBRE OBJETO '+2\pi' x Polygon em (-5.6; -1.5) 
+[dens] 91.60 35
+[audit]    91.8s TEXTO SOBRE OBJETO '+2\pi' x Polygon em (-5.5; -1.5) 
+[dens] 91.80 35
+[dens] 92.00 35
+[dens] 92.20 35
+[dens] 92.40 35
+[dens] 92.60 35
+[dens] 92.80 35
+[gatilho] T3-4 41.67 e depois uma volta no sentido contrário
+[plano] gat:T3-4:e depois uma volta no sentido contrário A=4.40 W=0.00 D=2.07 ritmo=0.50 ritmo_w=1.00
+[11/06/26 17:54:33] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 92.80 35
+[dens] 93.00 35
+[dens] 93.20 35
+[dens] 93.40 35
+[audit]    93.6s TEXTO SOBRE OBJETO '-2\pi' x Polygon em (-2.9; -2.7) 
+[dens] 93.60 35
+[audit]    93.8s TEXTO SOBRE OBJETO '-2\pi' x Polygon em (-2.7; -2.8) 
+[dens] 93.80 35
+[audit]    94.0s TEXTO SOBRE OBJETO '-2\pi' x Polygon em (-2.6; -2.8) 
+[dens] 94.00 35
+[dens] 94.20 35
+[dens] 94.40 35
+[dens] 94.60 35
+[dens] 94.80 35
+[dens] 95.00 35
+[gatilho] T3-4 43.87 terá girado quatro pi radianos no total
+[plano] gat:T3-4:terá girado quatro pi radianos no total A=2.10 W=0.00 D=2.81 ritmo=1.16 ritmo_w=1.00
+[11/06/26 17:54:36] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 95.00 35
+[dens] 95.20 35
+[dens] 95.40 35
+[dens] 95.60 35
+[dens] 95.80 35
+[dens] 96.00 35
+[dens] 96.07 35
+[alg] T3-4 escreve n=5 voos=0 dx=0.17 D=0.90 =2\pi+2\pi
+[11/06/26 17:54:37] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 96.07 50
+[dens] 96.27 50
+[alg] T3-4 passo mapas=2
+[11/06/26 17:54:38] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 96.33 50
+[dens] 96.53 50
+[dens] 96.73 50
+[dens] 96.93 50
+[dens] 97.13 50
+[dens] 97.33 50
+[dens] 97.53 50
+[dens] 97.73 53
+[11/06/26 17:54:40] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 97.73 53
+[gatilho] T3-4 46.73 deslocamento angular será zero
+[plano] gat:T3-4:deslocamento angular será zero A=1.95 W=0.00 D=10.99 ritmo=1.80 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 97.87 53
+[dens] 98.07 53
+[dens] 98.27 53
+[dens] 98.47 53
+[dens] 98.67 53
+[dens] 98.87 53
+[dens] 99.07 53
+[dens] 99.20 53
+[alg] T3-4 escreve n=4 voos=2 dx=0.25 D=0.75 \Delta\theta=+2\pi-2\pi
+[11/06/26 17:54:42] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 99.20 74
+[dens] 99.40 74
+[alg] T3-4 passo mapas=2
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 99.47 74
+[dens] 99.67 74
+[dens] 99.87 74
+[dens] 100.07 74
+[dens] 100.27 74
+[dens] 100.47 74
+[dens] 100.67 74
+[dens] 100.87 74
+[dens] 101.07 74
+[dens] 101.27 74
+[dens] 101.47 74
+[dens] 101.60 76
+[11/06/26 17:54:45] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 101.60 76
+[dens] 101.80 76
+[dens] 102.00 76
+[dens] 102.20 76
+[dens] 102.40 76
+[dens] 102.60 76
+[dens] 102.80 76
+[dens] 103.00 76
+[dens] 103.20 76
+[dens] 103.40 76
+[pulso] T3-4 abs 424.3 s dp 0.80 alvos ['MathTex:3.5,1.1', 'MathTex:2.1,0.8', 'VGroup:2.1,2.8']
+[11/06/26 17:54:48] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 103.47 76
+[dens] 103.67 76
+[dens] 103.87 76
+[dens] 104.07 76
+[dens] 104.27 76
+[11/06/26 17:54:49] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 104.27 76
+[dens] 104.47 76
+[dens] 104.67 76
+[dens] 104.87 76
+[dens] 105.07 76
+[dens] 105.27 76
+[dens] 105.47 76
+[dens] 105.67 76
+[dens] 105.87 76
+[dens] 106.07 76
+[pulso] T3-4 abs 426.9 s dp 0.80 alvos ['MathTex:3.5,1.1', 'MathTex:2.1,0.8', 'VGroup:2.1,2.8']
+[11/06/26 17:54:51] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 106.13 76
+[dens] 106.33 76
+[dens] 106.53 76
+[dens] 106.73 76
+[dens] 106.93 76
+[11/06/26 17:54:53] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 106.93 76
+[dens] 107.13 76
+[dens] 107.33 76
+[dens] 107.53 76
+[dens] 107.73 76
+[dens] 107.93 76
+[dens] 108.13 76
+[dens] 108.33 76
+[dens] 108.53 76
+[dens] 108.73 76
+[plano] ate:T3-4:0.99 A=0.00 W=0.00 D=0.40 ritmo=1.00 ritmo_w=1.00
+[pulso] T3-4 abs 429.6 s dp 0.40 alvos ['MathTex:3.5,1.1', 'MathTex:2.1,0.8', 'VGroup:2.1,2.8']
+[11/06/26 17:54:55] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 108.80 76
+[dens] 109.00 76
+[dens] 109.20 76
+[plano] an:T3-5 A=2.61 W=0.00 D=2.06 ritmo=0.79 ritmo_w=1.00
+[11/06/26 17:54:56] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 109.20 76
+[dens] 109.40 64
+[dens] 109.47 64
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[audit]   109.5s TEXTO SOBRE OBJETO '+2\pi' x VMobject em (-4.1; -1.5) 
+[audit]   109.5s TEXTO SOBRE OBJETO '-2\pi' x Polygon em (-4.1; -1.9) 
+[dens] 109.47 64
+[audit]   109.7s TEXTO SOBRE OBJETO '\omega' x Line em (-6.3; -1.7) 
+[audit]   109.7s TEXTO SOBRE OBJETO '+2\pi' x VMobject em (-4.1; -1.5) 
+[audit]   109.7s TEXTO SOBRE OBJETO '-2\pi' x Polygon em (-4.1; -1.9) 
+[dens] 109.67 66
+[audit]   109.7s ENCOSTADO empilhado '\omega' x '\omega' (folga 0.19)
+[dens] 109.87 2
+[11/06/26 17:54:58] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 109.87 2
+[dens] 110.07 2
+[dens] 110.27 2
+[dens] 110.47 2
+[dens] 110.67 2
+[dens] 110.87 2
+[dens] 111.07 2
+[dens] 111.27 2
+[alg] T3-5 escreve n=14 voos=0 dx=0.12 D=1.76 \omega=\omega_0+\alphat
+[11/06/26 17:54:59] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 111.27 22
+[dens] 111.47 22
+[gatilho] T3-5 2.33 se você eliminar o tempo
+[plano] gat:T3-5:se você eliminar o tempo A=1.40 W=0.00 D=2.99 ritmo=1.46 ritmo_w=1.00
+[alg] T3-5 passo mapas=7
+[11/06/26 17:55:00] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 111.53 22
+[dens] 111.73 22
+[dens] 111.93 22
+[dens] 112.13 22
+[dens] 112.33 22
+[dens] 112.53 22
+[dens] 112.73 22
+[dens] 112.93 22
+[dens] 113.13 22
+[dens] 113.33 22
+[dens] 113.53 22
+[dens] 113.60 30
+[11/06/26 17:55:02] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 113.60 30
+[dens] 113.80 30
+[dens] 114.00 30
+[dens] 114.20 30
+[dens] 114.40 30
+[gatilho] T3-5 5.40 velocidade angular ao quadrado igual
+[plano] gat:T3-5:velocidade angular ao quadrado igual A=0.25 W=0.00 D=8.02 ritmo=1.80 ritmo_w=1.00
 [alg] T3-5 tmt \omega^2 = \omega_0^2 + 2 \alpha \Delta\
-[11/04/26 17:51:07] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   122.7s TEXTO SOBRE OBJETO '\omega=\omega_0+\alpha t' x VMobjectFromSVGPath em (1.4; 2.1) Group[2]
-[dens] 122.73 30
-[dens] 122.93 30
-[dens] 123.00 41
+[11/06/26 17:55:03] INFO     Caching disabled.             cairo_renderer.py:81
+[audit]   114.6s TEXTO SOBRE OBJETO '\omega=\omega_0+\alpha t' x VMobjectFromSVGPath em (2.7; 2.1) Group[2]
+[dens] 114.60 30
+[audit]   114.8s TEXTO SOBRE OBJETO '\Delta\theta=\omega_0t+\tfrac1' x VMobjectFromSVGPath em (3.0; 1.1) Group[2]
+[dens] 114.80 30
+[dens] 115.00 30
+[dens] 115.07 41
 [alg] T3-5 escreve n=0 voos=0 dx=0.25 D=0.25 \omega^2=\omega_0^2+2\alpha\Delta\theta
                     INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 123.00 30
-[dens] 123.20 30
-[11/04/26 17:51:08] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 123.27 41
-[dens] 123.47 41
-[dens] 123.67 41
-[dens] 123.87 41
-[dens] 124.07 41
-[dens] 124.27 41
-[dens] 124.47 41
-[dens] 124.67 41
-[pulso] T3-5 abs 467.9 s dp 0.80 alvos ['VGroup:3.2,4.7', 'RoundedRectangle:3.2,4.7', 'VGroup:2.0,2.6']
-[11/04/26 17:51:09] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 124.87 41
-[dens] 125.07 41
-[dens] 125.27 41
-[dens] 125.47 41
-[dens] 125.67 41
-[11/04/26 17:51:10] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 125.67 41
-[dens] 125.87 41
-[dens] 126.07 41
-[dens] 126.27 41
-[dens] 126.47 41
-[dens] 126.67 41
-[dens] 126.87 41
-[dens] 127.07 41
-[dens] 127.27 41
-[dens] 127.47 41
-[pulso] T3-5 abs 470.6 s dp 0.80 alvos ['VGroup:3.2,4.7', 'RoundedRectangle:3.2,4.7', 'VGroup:2.0,2.6']
-[11/04/26 17:51:11] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 127.53 41
-[dens] 127.73 41
-[dens] 127.93 41
-[dens] 128.13 41
-[dens] 128.33 41
-[11/04/26 17:51:12] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 128.33 41
-[dens] 128.53 41
-[dens] 128.73 41
-[dens] 128.93 41
-[dens] 129.13 41
-[dens] 129.33 41
-[dens] 129.53 41
-[dens] 129.73 41
-[dens] 129.93 41
-[gatilho] T3-5 12.93 olhando a mesma área como um trapézio
-[11/04/26 17:51:14] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 130.07 41
-[dens] 130.27 45
-[dens] 130.47 45
-[dens] 130.67 45
-[dens] 130.87 45
-[dens] 131.00 45
-[11/04/26 17:51:15] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 131.00 45
-[dens] 131.20 45
-[dens] 131.40 45
-[dens] 131.60 45
-[dens] 131.80 45
-[dens] 132.00 45
-[dens] 132.20 45
-[dens] 132.40 45
-[dens] 132.60 45
-[dens] 132.80 45
-[pulso] T3-5 abs 475.9 s dp 0.80 alvos ['VGroup:3.2,4.7', 'MathTex:-4.1,0.1', 'MathTex:-1.5,0.2']
-[11/04/26 17:51:17] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 132.87 45
-[dens] 133.07 45
-[dens] 133.27 45
-[dens] 133.47 45
-[dens] 133.67 45
+[dens] 115.07 30
+[dens] 115.27 30
                     INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 133.67 45
+[dens] 115.33 41
+[dens] 115.53 41
+[dens] 115.73 41
+[dens] 115.93 41
+[dens] 116.13 41
+[dens] 116.33 41
+[dens] 116.53 41
+[dens] 116.73 41
+[pulso] T3-5 abs 437.7 s dp 0.80 alvos ['VGroup:3.2,4.7', 'RoundedRectangle:3.2,4.7', 'VGroup:2.0,2.6']
+[11/06/26 17:55:05] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 116.93 41
+[dens] 117.13 41
+[dens] 117.33 41
+[dens] 117.53 41
+[dens] 117.73 41
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 117.73 41
+[dens] 117.93 41
+[dens] 118.13 41
+[dens] 118.33 41
+[dens] 118.53 41
+[dens] 118.73 41
+[dens] 118.93 41
+[dens] 119.13 41
+[dens] 119.33 41
+[dens] 119.53 41
+[pulso] T3-5 abs 440.4 s dp 0.80 alvos ['VGroup:3.2,4.7', 'RoundedRectangle:3.2,4.7', 'VGroup:2.0,2.6']
+[11/06/26 17:55:07] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 119.60 41
+[dens] 119.80 41
+[dens] 120.00 41
+[dens] 120.20 41
+[dens] 120.40 41
+[11/06/26 17:55:08] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 120.40 41
+[dens] 120.60 41
+[dens] 120.80 41
+[dens] 121.00 41
+[dens] 121.20 41
+[dens] 121.40 41
+[dens] 121.60 41
+[dens] 121.80 41
+[dens] 122.00 41
+[dens] 122.20 41
+[pulso] T3-5 abs 443.1 s dp 0.35 alvos ['VGroup:3.2,4.7', 'RoundedRectangle:3.2,4.7', 'VGroup:2.0,2.6']
+[11/06/26 17:55:09] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 122.27 41
+[dens] 122.47 41
+[dens] 122.60 41
+[gatilho] T3-5 13.40 olhando a mesma área como um trapézio
+[plano] gat:T3-5:olhando a mesma área como um trapézio A=0.90 W=0.00 D=3.20 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:55:10] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 122.60 41
+[dens] 122.80 45
+[dens] 123.00 45
+[dens] 123.20 45
+[dens] 123.40 45
+[dens] 123.60 45
+[dens] 123.80 45
+[dens] 124.00 45
+[dens] 124.20 45
+[11/06/26 17:55:11] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 124.20 45
+[dens] 124.40 45
+[dens] 124.60 45
+[dens] 124.80 45
+[dens] 125.00 45
+[dens] 125.20 45
+[dens] 125.40 45
+[dens] 125.60 45
+[dens] 125.80 45
 [gatilho] T3-5 16.67 é a média das velocidades angulares
-[11/04/26 17:51:18] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 133.80 45
-[dens] 134.00 45
-[dens] 134.20 45
-[dens] 134.40 45
-[dens] 134.60 45
-[dens] 134.80 45
-[dens] 134.87 45
+[plano] gat:T3-5:é a média das velocidades angulares A=1.04 W=0.00 D=4.23 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:55:13] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 125.87 45
+[dens] 126.07 45
+[dens] 126.27 45
+[dens] 126.47 45
+[dens] 126.67 45
+[audit]   126.7s TRÂNSITO glifo de glifo em (1.3; -2.4) cruza glifo em (1.3; -2.3) por mais de 2 quadros
+[dens] 126.87 45
+[dens] 127.07 45
+[dens] 127.27 45
+[dens] 127.47 45
+[dens] 127.67 45
+[dens] 127.73 45
 [alg] T3-5 escreve n=9 voos=3 dx=0.12 D=1.04 \Delta\theta=\tfrac12(\omega_0+\omega)t
-[11/04/26 17:51:19] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 134.87 45
-[dens] 135.07 45
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 135.13 45
-[dens] 135.33 45
-[dens] 135.53 45
-[dens] 135.73 45
-[dens] 135.93 45
-[dens] 136.13 45
-[dens] 136.33 45
-[dens] 136.53 45
-[pulso] T3-5 abs 479.8 s dp 0.80 alvos ['VGroup:3.3,4.4', 'VGroup:3.3,4.8', 'RoundedRectangle:3.3,4.8']
-[11/04/26 17:51:21] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 136.73 45
-[dens] 136.93 45
-[dens] 137.13 45
-[dens] 137.33 45
-[dens] 137.53 45
-[11/04/26 17:51:22] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 137.53 45
-[dens] 137.73 45
-[dens] 137.93 45
-[dens] 138.13 45
-[dens] 138.33 45
-[dens] 138.53 45
-[11/04/26 17:51:23] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 138.67 45
-[dens] 138.87 45
+[11/06/26 17:55:14] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 127.73 60
+[dens] 127.93 60
+[11/06/26 17:55:15] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 128.00 60
+[dens] 128.20 60
+[dens] 128.40 60
+[dens] 128.60 60
+[dens] 128.80 60
+[dens] 129.00 60
+[dens] 129.20 60
+[dens] 129.40 60
+[pulso] T3-5 abs 450.4 s dp 0.50 alvos ['MathTex:3.3,4.4', 'VGroup:3.3,4.8', 'RoundedRectangle:3.3,4.8']
+[11/06/26 17:55:16] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 129.60 60
+[dens] 129.80 60
+[dens] 130.00 60
+[dens] 130.07 60
+[plano] ate:T3-5:0.99 A=0.00 W=0.00 D=0.30 ritmo=1.00 ritmo_w=1.00
+[11/06/26 17:55:17] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 130.07 60
+[dens] 130.27 60
+[plano] an:T3-6 A=1.00 W=0.00 D=0.82 ritmo=0.82 ritmo_w=1.00
 [selo] MESMA MATEMÁTICA linhas=1 w=3.55 h=0.42
                     INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 138.93 45
-[dens] 139.13 60
-[dens] 139.33 60
-[dens] 139.47 60
-[11/04/26 17:51:25] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 139.47 75
-[audit]   139.7s TEXTO SOBRE OBJETO 'MOVIMENTOEMLINHA' x Circle em (-4.0; 1.1) 
-[audit]   139.7s SOBREPOSICAO '\omega=\omega_0+\alpha t' x 'GIRO' (0.76x0.22)
-[dens] 139.67 95
-[audit]   139.9s TEXTO SOBRE OBJETO 'MOVIMENTOEMLINHA' x Circle em (-4.0; 1.1) 
-[dens] 139.87 35
-[dens] 140.00 35
-[gatilho] T3-6 1.07 são exatamente as equações do movimento
-[11/04/26 17:51:27] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   140.0s TEXTO PEQUENO 'v=v_0+at' (19 < 36)
-[dens] 140.00 42
-[dens] 140.20 42
-[dens] 140.40 42
-[dens] 140.47 42
+[dens] 130.33 60
+[dens] 130.53 75
+[dens] 130.73 75
+[11/06/26 17:55:18] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 130.73 75
+[audit]   130.9s TEXTO SOBRE OBJETO 'MOVIMENTOEMLINHA' x Circle em (-4.0; 1.1) 
+[audit]   130.9s SOBREPOSICAO '\omega=\omega_0+\alpha t' x 'GIRO' (0.76x0.22)
+[dens] 130.93 95
+[dens] 131.13 35
+[11/06/26 17:55:19] WARNING  The original total run_time of       scene.py:1131
+                             PT3.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
                     INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 140.47 57
-[dens] 140.67 57
-[dens] 140.87 57
-[dens] 140.93 57
-[11/04/26 17:51:28] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   140.9s TEXTO PEQUENO 'v^2=v_0^2+2a\Delta x' (29 < 36)
-[dens] 140.93 68
-[dens] 141.13 68
-[dens] 141.33 68
-[dens] 141.40 68
+                    WARNING  The original total run_time of       scene.py:1131
+                             PT3.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[dens] 131.13 35
+[gatilho] T3-6 0.87 são exatamente as equações do movimento
+[plano] gat:T3-6:são exatamente as equações do movimento A=1.80 W=0.00 D=3.67 ritmo=1.43 ritmo_w=1.00
+[11/06/26 17:55:20] INFO     Caching disabled.             cairo_renderer.py:81
+[audit]   131.2s TEXTO PEQUENO 'v=v_0+at' (19 < 36)
+[dens] 131.20 42
+[audit]   131.4s TEXTO PEQUENO 'v=v_0+at' (26 < 36)
+[dens] 131.40 42
+[dens] 131.60 42
+[dens] 131.80 42
+[dens] 131.87 42
                     INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 141.40 81
-[dens] 141.60 81
-[dens] 141.80 81
-[dens] 141.87 81
-[11/04/26 17:51:29] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 141.87 81
-[dens] 142.07 81
-[gatilho] T3-6 3.33 com o ângulo no lugar da posição
+[dens] 131.87 57
+[dens] 132.07 57
+[dens] 132.27 57
+[dens] 132.47 57
+[dens] 132.53 57
+[11/06/26 17:55:21] INFO     Caching disabled.             cairo_renderer.py:81
+[audit]   132.5s TEXTO PEQUENO 'v^2=v_0^2+2a\Delta x' (29 < 36)
+[dens] 132.53 68
+[dens] 132.73 68
+[dens] 132.93 68
+[dens] 133.13 68
+[dens] 133.20 68
                     INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 142.27 81
-[dens] 142.47 84
-[dens] 142.67 84
-[dens] 142.80 84
-[11/04/26 17:51:30] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 142.80 84
-[dens] 143.00 84
-[dens] 143.20 84
-[dens] 143.40 84
-[dens] 143.60 84
-[dens] 143.80 84
-[dens] 144.00 84
-[dens] 144.20 84
-[dens] 144.40 84
-[dens] 144.60 84
-[11/04/26 17:51:31] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 144.67 84
-[gatilho] T3-6 5.93 a velocidade angular no lugar da velocidade
+[dens] 133.20 81
+[dens] 133.40 81
+[dens] 133.60 81
+[dens] 133.80 81
+[dens] 133.87 81
+[11/06/26 17:55:22] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 133.87 81
+[dens] 134.07 81
+[dens] 134.27 81
+[dens] 134.47 81
+[dens] 134.67 81
+[dens] 134.87 81
+[gatilho] T3-6 4.60 com o ângulo no lugar da posição
+[plano] gat:T3-6:com o ângulo no lugar da posição A=0.50 W=0.00 D=1.84 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:55:23] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 134.93 81
+[dens] 135.13 84
+[dens] 135.33 84
+[dens] 135.53 84
+[dens] 135.73 84
+[dens] 135.87 84
                     INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 144.87 84
-[dens] 145.07 87
-[dens] 145.27 87
-[dens] 145.40 87
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 145.40 87
-[dens] 145.60 87
-[dens] 145.80 87
-[dens] 146.00 87
-[dens] 146.20 87
-[dens] 146.40 87
-[dens] 146.60 87
-[dens] 146.80 87
-[dens] 147.00 87
-[dens] 147.20 87
-[11/04/26 17:51:33] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 147.27 87
+[dens] 135.87 84
+[dens] 136.07 84
+[dens] 136.27 84
+[dens] 136.47 84
+[dens] 136.67 84
+[gatilho] T3-6 6.47 a velocidade angular no lugar da velocidade
+[plano] gat:T3-6:a velocidade angular no lugar da velocida A=0.50 W=0.00 D=1.97 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:55:24] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 136.80 84
+[dens] 137.00 87
+[dens] 137.20 87
+[dens] 137.40 87
+[dens] 137.60 87
+[dens] 137.73 87
+[11/06/26 17:55:25] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 137.73 87
+[dens] 137.93 87
+[dens] 138.13 87
+[dens] 138.33 87
+[dens] 138.53 87
+[dens] 138.73 87
 [gatilho] T3-6 8.53 e a aceleração angular no lugar da aceleração
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 147.47 87
-[dens] 147.67 90
-[dens] 147.87 90
-[dens] 148.00 90
-[11/04/26 17:51:34] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 148.00 90
-[dens] 148.20 90
-[dens] 148.40 90
-[dens] 148.60 90
-[dens] 148.80 90
-[dens] 149.00 90
-[dens] 149.20 90
-[dens] 149.40 90
-[dens] 149.60 90
-[dens] 149.80 90
-[pulso] T3-6 abs 492.9 s dp 0.54 alvos ['VGroup:2.5,3.5', 'VGroup:-3.1,1.1', 'VGroup:-4.7,1.1']
-[11/04/26 17:51:35] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 149.87 90
-[dens] 150.07 90
-[dens] 150.27 90
-[dens] 150.40 90
-[gatilho] T3-6 11.47 e não é coincidência
-[11/04/26 17:51:36] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 150.40 97
-[dens] 150.60 97
-[dens] 150.80 97
-[dens] 150.93 97
+[plano] gat:T3-6:e a aceleração angular no lugar da aceler A=0.50 W=0.00 D=2.77 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:55:26] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 138.87 87
+[dens] 139.07 90
+[dens] 139.27 90
+[dens] 139.47 90
+[dens] 139.67 90
+[dens] 139.80 90
+[11/06/26 17:55:27] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 139.80 90
+[dens] 140.00 90
+[dens] 140.20 90
+[dens] 140.40 90
+[dens] 140.60 90
+[dens] 140.80 90
+[dens] 141.00 90
+[dens] 141.20 90
+[dens] 141.40 90
+[dens] 141.60 90
+[gatilho] T3-6 11.33 não é coincidência
+[plano] gat:T3-6:não é coincidência A=5.20 W=0.00 D=5.47 ritmo=1.03 ritmo_w=1.00
+[11/06/26 17:55:28] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 141.67 97
+[dens] 141.87 97
+[dens] 142.07 97
+[dens] 142.20 97
 [alg] T3-6 passo mapas=6
-[11/04/26 17:51:37] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 150.93 90
-[dens] 151.13 90
-[dens] 151.33 90
-[dens] 151.53 90
-[dens] 151.73 97
-[11/04/26 17:51:38] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 151.73 112
-[dens] 151.93 112
-[dens] 152.13 112
-[dens] 152.27 112
+[11/06/26 17:55:29] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 142.20 90
+[dens] 142.40 90
+[dens] 142.60 90
+[dens] 142.80 90
+[dens] 143.00 97
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 143.00 112
+[dens] 143.20 112
+[dens] 143.40 112
+[dens] 143.53 112
 [alg] T3-6 passo mapas=10
-[11/04/26 17:51:39] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 152.27 97
-[dens] 152.47 97
-[dens] 152.67 97
-[dens] 152.87 97
-[dens] 153.07 112
-[11/04/26 17:51:40] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 153.07 123
-[dens] 153.27 123
-[dens] 153.47 123
-[dens] 153.60 123
+[11/06/26 17:55:30] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 143.53 97
+[dens] 143.73 97
+[dens] 143.93 97
+[dens] 144.13 97
+[dens] 144.33 112
+[11/06/26 17:55:31] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 144.33 123
+[dens] 144.53 123
+[dens] 144.73 123
+[dens] 144.87 123
 [alg] T3-6 passo mapas=7
-[11/04/26 17:51:41] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 153.60 112
-[dens] 153.80 112
-[dens] 154.00 112
-[dens] 154.20 112
-[dens] 154.40 123
-[11/04/26 17:51:42] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 154.40 136
-[dens] 154.60 136
-[dens] 154.80 136
-[dens] 154.93 136
+[11/06/26 17:55:32] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 144.87 112
+[dens] 145.07 112
+[dens] 145.27 112
+[dens] 145.47 112
+[dens] 145.67 123
+[11/06/26 17:55:33] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 145.67 136
+[dens] 145.87 136
+[dens] 146.07 136
+[dens] 146.20 136
 [alg] T3-6 passo mapas=5
-[11/04/26 17:51:43] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 154.93 123
-[dens] 155.13 123
-[dens] 155.33 123
-[dens] 155.53 123
-[dens] 155.73 136
-[gatilho] T3-6 16.80 então a física nova não está aqui
-[11/04/26 17:51:44] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 155.73 136
-[dens] 155.93 136
-[dens] 156.13 136
-[dens] 156.33 136
-[dens] 156.53 136
-[dens] 156.73 136
-[dens] 156.93 136
-[dens] 157.13 136
-[dens] 157.33 136
-[dens] 157.53 136
-[pulso] T3-6 abs 500.7 s dp 0.80 alvos ['MathTex:2.4,3.5', 'VGroup:2.5,3.5', 'VGroup:-3.1,1.1']
-[11/04/26 17:51:47] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 157.60 136
-[dens] 157.80 136
-[dens] 158.00 136
-[dens] 158.20 136
-[dens] 158.40 136
-[11/04/26 17:51:48] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 158.40 136
-[dens] 158.60 136
-[dens] 158.80 136
-[dens] 159.00 136
-[dens] 159.20 136
-[dens] 159.40 136
-[dens] 159.60 136
-[dens] 159.80 136
-[dens] 160.00 136
-[dens] 160.20 136
-[pulso] T3-6 abs 503.3 s dp 0.80 alvos ['MathTex:2.4,3.5', 'VGroup:2.5,3.5', 'VGroup:-3.1,1.1']
-[11/04/26 17:51:50] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 160.27 136
-[dens] 160.47 136
-[dens] 160.67 136
-[dens] 160.87 136
-[dens] 161.07 136
-[11/04/26 17:51:51] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 161.07 136
-[dens] 161.27 136
-[dens] 161.47 136
-[dens] 161.67 136
-[dens] 161.87 136
-[dens] 162.07 136
-[dens] 162.27 136
-[dens] 162.47 136
-[dens] 162.67 136
-[dens] 162.87 136
-[pulso] T3-6 abs 506.0 s dp 0.80 alvos ['MathTex:2.4,3.5', 'VGroup:2.5,3.5', 'VGroup:-3.1,1.1']
-[11/04/26 17:51:53] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 162.93 136
-[dens] 163.13 136
-[dens] 163.33 136
-[dens] 163.53 136
-[dens] 163.73 136
-[11/04/26 17:51:55] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 163.73 136
-[dens] 163.93 136
-[dens] 164.13 136
-[dens] 164.33 136
-[11/04/26 17:51:56] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 164.40 136
-[dens] 164.60 136
-[dens] 164.80 136
+[11/06/26 17:55:34] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 146.20 123
+[dens] 146.40 123
+[dens] 146.60 123
+[dens] 146.80 123
+[dens] 147.00 136
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 147.00 136
+[gatilho] T3-6 16.87 então a física nova não está aqui
+[plano] gat:T3-6:então a física nova não está aqui A=0.00 W=0.00 D=8.63 ritmo=1.00 ritmo_w=1.00
+[11/06/26 17:55:35] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 147.20 136
+[dens] 147.40 136
+[dens] 147.60 136
+[dens] 147.80 136
+[dens] 148.00 136
+[dens] 148.20 136
+[dens] 148.40 136
+[dens] 148.60 136
+[dens] 148.80 136
+[pulso] T3-6 abs 469.7 s dp 0.80 alvos ['MathTex:2.4,3.5', 'VGroup:2.5,3.5', 'VGroup:-3.1,1.1']
+[11/06/26 17:55:36] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 148.93 136
+[dens] 149.13 136
+[dens] 149.33 136
+[dens] 149.53 136
+[dens] 149.73 136
+[11/06/26 17:55:37] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 149.73 136
+[dens] 149.93 136
+[dens] 150.13 136
+[dens] 150.33 136
+[dens] 150.53 136
+[dens] 150.73 136
+[dens] 150.93 136
+[dens] 151.13 136
+[dens] 151.33 136
+[dens] 151.53 136
+[pulso] T3-6 abs 472.4 s dp 0.80 alvos ['MathTex:2.4,3.5', 'VGroup:2.5,3.5', 'VGroup:-3.1,1.1']
+[11/06/26 17:55:39] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 151.60 136
+[dens] 151.80 136
+[dens] 152.00 136
+[dens] 152.20 136
+[dens] 152.40 136
+[11/06/26 17:55:40] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 152.40 136
+[dens] 152.60 136
+[dens] 152.80 136
+[dens] 153.00 136
+[dens] 153.20 136
+[dens] 153.40 136
+[dens] 153.60 136
+[dens] 153.80 136
+[dens] 154.00 136
+[dens] 154.20 136
+[pulso] T3-6 abs 475.1 s dp 0.80 alvos ['MathTex:2.4,3.5', 'VGroup:2.5,3.5', 'VGroup:-3.1,1.1']
+[11/06/26 17:55:41] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 154.27 136
+[dens] 154.47 136
+[dens] 154.67 136
+[dens] 154.87 136
+[dens] 155.07 136
+[11/06/26 17:55:42] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 155.07 136
+[dens] 155.27 136
+[dens] 155.47 136
+[dens] 155.67 136
+[plano] ate:T3-6:0.99 A=0.00 W=0.00 D=0.33 ritmo=1.00 ritmo_w=1.00
+[11/06/26 17:55:43] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 155.80 136
+[dens] 156.00 136
 [ancora] T3-1 0.00
-[ancora] T3-2 14.87
-[ancora] T3-3 35.20
-[ancora] T3-4 53.40
-[ancora] T3-5 117.13
-[ancora] T3-6 138.93
-[ancora] FIM 164.93
-[degrade] objetos com degradê por marca: {'aco': 21552}
-[cor] tokens conferidos: 321; fora da tabela: 0
-[tempo] total 164.9 s (2474 quadros)
+[ancora] T3-2 14.80
+[ancora] T3-3 32.60
+[ancora] T3-4 51.13
+[ancora] T3-5 109.20
+[ancora] T3-6 130.33
+[ancora] FIM 156.13
+[degrade] objetos com degradê por marca: {'aco': 20009}
+[cor] tokens conferidos: 315; fora da tabela: 0
+[tempo] total 156.1 s (2342 quadros)
 [cor] origem (G24 v3): 0 pares conferidos; fora da cor de origem: 0
-[11/04/26 17:51:57] INFO     Rendered PT3                          scene.py:290
-                             Played 179 animations                             
+                    INFO     Rendered PT3                          scene.py:290
+                             Played 160 animations                             
 You are using manim version v0.21.0, but version v0.22.1 is available.
 You should consider upgrading via pip install -U manim

@@ -62,7 +62,7 @@ def escuro(c, w):
 
 T_HL, T_MAIN, T_LAB, T_SMALL = 44, 34, 26, 22
 M_MAIN, M_MID, M_REF, M_LAB = 68, 56, 46, 40
-FPS = 15
+FPS = int(os.environ.get("FPS_RENDER", "15"))       # 15 = preview 960×540; 30 = render final 1920×1080
 FRAC = 0.02 / FPS            # folga p/ np.arange não criar um quadro extra
 
 AUDITORIA = os.environ.get("AUDITORIA") == "1"
@@ -88,14 +88,19 @@ def plano(A, W, D):
     return max(0.5, (D - wp) / A), (wp / W if W > 1e-6 else 1.0)
 
 
-def poeira_estelar(clk, n=200, seed=19):
-    """v10 R-M: campo de estrelas minúsculas à deriva (3 camadas, parallax) atrás de todo o conteúdo. Movimento contínuo e discreto; sem texto, sem física."""
+LFUNDO = 9.1      # v6: meia-largura do campo de estrelas (tela = ±7,1): a reciclagem (mod) só ocorre ≥ 2 u fora da tela
+
+
+def poeira_estelar(clk, n=227, seed=19, vmul=1.0, opm=1.0, t0=None):
+    """v6: campo de estrelas minúsculas (3 camadas, parallax) atrás de todo o conteúdo, SEMPRE para a esquerda, em velocidade constante por camada.
+    Independe da sincronia: a posição é função do relógio GLOBAL do vídeo `t0() + clk` (t0 = início do lote na voz), então não reinicia por lote,
+    não para e não volta. Sem balanço vertical; a volta (mod) acontece só fora da tela."""
     rng = np.random.default_rng(seed)
-    xs, ys = rng.uniform(-8.4, 8.4, n), rng.uniform(-4.7, 4.7, n)
+    xs, ys = rng.uniform(-LFUNDO, LFUNDO, n), rng.uniform(-4.7, 4.7, n)
     cam = rng.integers(0, 3, n)
-    vel = np.array([0.16, 0.30, 0.52])[cam] * rng.uniform(0.85, 1.15, n)
-    rad = np.array([0.010, 0.016, 0.022])[cam]
-    op = np.array([0.18, 0.28, 0.40])[cam]
+    vel = np.array([0.40, 0.75, 1.25])[cam] * vmul
+    rad = np.array([0.0145, 0.0215, 0.031])[cam]
+    op = np.array([0.18, 0.31, 0.50])[cam] * opm
     pts = [Dot(P3(xs[i], ys[i]), radius=float(rad[i]), color="#DCE8FF").set_opacity(float(op[i])) for i in range(n)]
     g = VGroup(*pts)
     g._fundo = True
@@ -104,10 +109,11 @@ def poeira_estelar(clk, n=200, seed=19):
     g.set_z_index(-60)
 
     def f_(m):
-        t = clk.get_value()
+        t = clk.get_value() + (t0() if t0 else 0.0)
         for i, d_ in enumerate(m.submobjects):
-            x = ((xs[i] - vel[i] * t + 8.4) % 16.8) - 8.4
-            d_.move_to(P3(x, ys[i] + 0.06 * math.sin(0.5 * t + i)))
+            x = ((xs[i] - vel[i] * t + LFUNDO) % (2 * LFUNDO)) - LFUNDO
+            d_.move_to(P3(x, ys[i]))
+            d_.set_opacity(float(op[i]) * (0.5 if (1.1 < x < 7.4 and -3.4 < ys[i] < 2.8) else 1.0))   # atrás da CONTA: metade da densidade (luz)
     f_(g)
     g.add_updater(f_)
     return g
@@ -179,6 +185,7 @@ def Mc(*pares, size=M_MID, w=None):
             sub.set_color(c)
     if w and m.width > w:
         m.scale_to_fit_width(w)
+    barras_neutras(m)
     m._partes = [(t, c or WHITE_) for t, c in zip(partes, cores)]
     return m
 
@@ -319,6 +326,15 @@ def _operadores_neutros(m, partes, idx, size, cores):
             cores.pop(i, None)
 
 
+def barras_neutras(m):
+    """v4 §3 / v6 §2.3: barra de fração e sinal de menos (glifo achatado, largura > 3× a altura) são operadores: ficam brancos, a cor fica só nos números e variáveis."""
+    for g in m.family_members_with_points():
+        if g.width <= 3.0 * max(g.height, 1e-6):
+            continue
+        g.set_color(WHITE_)
+        g.set_stroke(WHITE_, width=1.8, background=False)
+
+
 def eqp(*partes, size=M_MID, cores=None):
     """MathTex de string única montado por partes, com o índice de glifos de cada parte (para TransformByGlyphMap sem contar à mão).
     Retorna (MathTex, lista de listas de índices). `cores`: {índice da parte: cor} (G12: cor por grandeza)."""
@@ -348,6 +364,7 @@ def eqp(*partes, size=M_MID, cores=None):
         for j in idx[i]:
             gl = m[0][j]
             gl.set_stroke(gl.get_fill_color(), width=1.8, background=False)
+    barras_neutras(m)                                       # v4 §3: a barra de fração é neutra (não herda a cor da grandeza)
     _operadores_neutros(m, partes, idx, size, cores)
     m._partes = [(t, (cores or {}).get(i, WHITE_)) for i, t in enumerate(partes)]
     m._gl = list(zip(partes, idx))
@@ -363,7 +380,8 @@ _NUM = r"[-+−]?\\?,?[0-9{},.]+"
 _REGRAS = [   # yt_0020 (handoff §2.1, G12/G24): cor por família de grandeza; número substituído herda a cor da grandeza
     ((ANG,), (r"\\theta", r"\\theta_0", r"\\Delta\\theta", r"\\varphi", r"\\phi", r"\\lambda", r"s",
               r"2\\pi", r"4\\pi", r"6\\pi", r"150\\pi", r"10\\pi\ ?\\mathrm\{rad\}", _NUM + r"\\ ?\\mathrm\{rad\}", _NUM + r"\^\\circ", _NUM + r"\\pi\ ?\\mathrm\{rad\}",
-              r"\\omega_0 ?t", r"\\tfrac12\\alpha t\^2", r"\\frac12\\alpha t\^2")),
+              r"\\tfrac12\\alpha t\^2", r"\\frac12\\alpha t\^2")),
+    ((VEL, ANG), (r"\\omega_0 ?t",)),   # ω₀t: ω₀ violeta e t branco (v4 §3) ou o produto todo âmbar
     ((VEL,), (r"\\omega", r"\\omega_0", r"\\omega_[12]", r"\\vec\\omega", r"\|\\omega\|", r"\\omega_\{m\\acute\{e\}d\}", r"v", r"v_t", r"v_0", r"v_c", r"\\vec v", r"\|v\|",
               r"\|\\vec v\|", r"f", r"v_\{borda\}", _NUM + r"\\ ?\\mathrm\{rad/s\}", _NUM + r"\\ ?\\mathrm\{m/s\}", _NUM + r"\\ ?\\mathrm\{km/h\}",
               _NUM + r"\\ ?\\mathrm\{RPM\}", _NUM + r"\\ ?\\mathrm\{Hz\}", r"10\\pi", r"5\\pi", r"2\\pi f")),
@@ -1158,7 +1176,7 @@ class Base(Scene):
         self.fundo = ImageMobject(str(AQUI / self.FUNDO)).set_width(16).move_to(ORIGIN).set_z_index(-100)
         self.add(self.fundo)
         self.clk = ValueTracker(0.0)
-        self.poeira = VGroup()                                # yt_0020: céu estático (handoff §2.2); sem poeira à deriva
+        self.poeira = poeira_estelar(self.clk, t0=lambda: (getattr(self, "_off", None) or 0) / FPS)   # v7: estrelas à deriva em relógio global do vídeo (igual ao torque)
         self.add(self.poeira)
         self.nq = 0
         self.lote = type(self).__name__
@@ -1331,7 +1349,7 @@ class Base(Scene):
         k = self._k_frase(self._aid, frase)
         if k is not None:
             tw = ANC.get(self._aid, {}).get("t")
-            prev = max(0.0, (tw[k] if tw else 0.15 + k / 2.7) - LEAD)
+            prev = max(0.0, (tw[k] if tw else 0.15 + k / 2.7) - LEAD + 0.06)      # v6: +0,06 s compensa o arredondamento a quadro
             agora = (self.nq - self._q0) / FPS
             if prev - agora >= 1 / FPS:
                 self.wait(prev - agora, interno=True)
@@ -1547,7 +1565,7 @@ class Base(Scene):
         for top in self.mobjects:
             if top not in fixos and top is not self.clk:
                 tem_desenho(top)
-        if graf[0] == 0 and not getattr(self, "_em_troca", False):
+        if graf[0] == 0 and not getattr(self, "_em_troca", False) and self._aid not in ("A1", "A2", "A3") and t > 0.6:      # v7: abertura (logo/título) e o 1.º fade-in não têm palco por desenho
             print(f"[audit] {t:7.1f}s SEM PALCO")
         # G15: degradê só no ⊕ (e no rastro dele, e no sombreado de aço dos corpos); qualquer outro gradiente é erro
         tags = getattr(self, "_tags_degrade", None)

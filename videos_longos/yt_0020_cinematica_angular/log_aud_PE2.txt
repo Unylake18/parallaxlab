@@ -1,1767 +1,349 @@
 Manim Community v0.21.0
 
-[11/04/26 18:17:40] INFO     Caching disabled.             cairo_renderer.py:81
+[plano] an:E2-1 A=0.80 W=0.00 D=1.62 ritmo=1.42 ritmo_w=1.00
+[11/06/26 17:46:20] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 0.00 0
 [dens] 0.20 13
 [dens] 0.40 13
 [dens] 0.60 13
 [dens] 0.80 13
-[gatilho] E2-1 0.80 uma bicicleta com a coroa
+[dens] 1.00 13
+[dens] 1.13 13
+[11/06/26 17:46:22] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 1.13 13
+[dens] 1.33 13
+[dens] 1.53 13
+[gatilho] E2-1 1.67 uma bicicleta com a coroa
+[plano] gat:E2-1:uma bicicleta com a coroa A=0.50 W=0.00 D=3.21 ritmo=1.80 ritmo_w=1.00
 [alg] E2-1 fadein-texto
-[11/04/26 18:17:43] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 0.80 13
-[dens] 1.00 55
-[dens] 1.20 55
-[dens] 1.33 55
-[11/04/26 18:17:45] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 1.33 55
-[dens] 1.53 55
-[dens] 1.73 55
-[dens] 1.93 55
-[dens] 2.13 55
-[dens] 2.33 55
-[dens] 2.53 55
-[dens] 2.73 55
-[dens] 2.93 55
-[dens] 3.13 55
-[pulso] E2-1 abs 1157.7 s dp 0.80 alvos ['VGroup:3.1,4.5', 'Text:-5.9,1.1', 'VGroup:-5.7,3.0']
-[11/04/26 18:17:47] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 17:46:23] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 1.67 13
+[dens] 1.87 55
+[dens] 2.07 55
+[dens] 2.27 55
+[dens] 2.47 55
+[dens] 2.60 55
+[11/06/26 17:46:24] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 2.60 55
+[dens] 2.80 55
+[dens] 3.00 55
 [dens] 3.20 55
 [dens] 3.40 55
 [dens] 3.60 55
 [dens] 3.80 55
 [dens] 4.00 55
-[11/04/26 18:17:49] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 4.00 55
 [dens] 4.20 55
 [dens] 4.40 55
-[gatilho] E2-1 4.47 dez centímetros de raio
-                    INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] E2-1 abs 1130.5 s dp 0.44 alvos ['VGroup:3.1,4.5', 'Text:-5.9,1.1', 'VGroup:-5.7,3.0']
+[11/06/26 17:46:25] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 4.47 55
-[dens] 4.67 62
-[dens] 4.87 62
-[11/04/26 18:17:50] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 4.87 62
-[dens] 5.07 62
-[dens] 5.27 62
-[dens] 5.47 62
-[dens] 5.67 62
+[dens] 4.67 55
+[dens] 4.87 55
+[dens] 4.93 55
+[gatilho] E2-1 4.93 dez centímetros de raio
+[plano] gat:E2-1:dez centímetros de raio A=1.30 W=0.00 D=1.55 ritmo=1.09 ritmo_w=1.00
+[11/06/26 17:46:26] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 4.93 55
+[dens] 5.13 62
+[dens] 5.33 62
+[dens] 5.40 62
+[11/06/26 17:46:27] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 5.40 62
+[dens] 5.60 62
 [dens] 5.80 62
+[dens] 6.00 62
+[dens] 6.20 62
+[dens] 6.40 62
 [alg] E2-1 escreve n=3 voos=2 dx=0.25 D=0.90 r_1=10\ \mathrm{cm}
-[11/04/26 18:17:52] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 5.80 69
-[dens] 6.00 69
-[gatilho] E2-1 6.07 a catraca a engrenagem pequena
+[11/06/26 17:46:28] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 6.40 69
+[dens] 6.60 69
+[gatilho] E2-1 6.67 a catraca a engrenagem pequena
+[plano] gat:E2-1:a catraca a engrenagem pequena A=0.50 W=0.00 D=2.63 ritmo=1.80 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 6.07 69
-[dens] 6.27 76
-[dens] 6.47 76
-[dens] 6.60 76
-[11/04/26 18:17:53] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 6.60 76
-[dens] 6.80 76
-[dens] 7.00 76
-[dens] 7.20 76
-[dens] 7.40 76
+[dens] 6.67 69
+[dens] 6.87 76
+[dens] 7.07 76
+[dens] 7.27 76
+[dens] 7.47 76
+[dens] 7.60 76
+[11/06/26 17:46:29] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 7.60 76
 [dens] 7.80 76
 [dens] 8.00 76
 [dens] 8.20 76
 [dens] 8.40 76
-[pulso] E2-1 abs 1162.9 s dp 0.42 alvos ['MathTex:2.0,2.5', 'Text:-3.2,1.4', 'VGroup:2.0,2.5']
-[11/04/26 18:17:56] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 8.47 76
-[dens] 8.67 76
-[dens] 8.87 76
-[gatilho] E2-1 8.87 de quatro centímetros
-[11/04/26 18:17:57] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 8.87 76
-[dens] 9.07 82
-[dens] 9.27 82
-[11/04/26 18:17:58] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 9.27 82
-[dens] 9.47 82
-[dens] 9.67 82
-[dens] 9.87 82
-[dens] 10.07 82
-[dens] 10.20 82
+[dens] 8.60 76
+[dens] 8.80 76
+[dens] 9.00 76
+[dens] 9.20 76
+[gatilho] E2-1 9.33 de quatro centímetros
+[plano] gat:E2-1:de quatro centímetros A=1.30 W=0.00 D=1.33 ritmo=1.01 ritmo_w=1.00
+[11/06/26 17:46:30] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 9.33 76
+[dens] 9.53 82
+[dens] 9.73 82
+[11/06/26 17:46:31] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 9.73 82
+[dens] 9.93 82
+[dens] 10.13 82
+[dens] 10.33 82
+[dens] 10.53 82
+[dens] 10.67 82
 [alg] E2-1 escreve n=3 voos=2 dx=0.25 D=0.90 r_2=4\ \mathrm{cm}
-[11/04/26 18:18:00] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 10.20 88
-[dens] 10.40 88
-[gatilho] E2-1 10.47 e a roda de trinta e cinco
-[11/04/26 18:18:01] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 10.47 88
-[dens] 10.67 94
-[dens] 10.87 94
-[dens] 10.93 94
-[11/04/26 18:18:02] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 10.93 94
+[11/06/26 17:46:32] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 10.67 88
+[dens] 10.87 88
+[gatilho] E2-1 10.93 e a roda de trinta e cinco
+[plano] gat:E2-1:e a roda de trinta e cinco A=1.35 W=0.00 D=2.23 ritmo=1.28 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 10.93 88
 [dens] 11.13 94
 [dens] 11.33 94
 [dens] 11.53 94
+[11/06/26 17:46:33] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 11.53 94
 [dens] 11.73 94
-[dens] 11.87 94
+[dens] 11.93 94
+[dens] 12.13 94
+[dens] 12.33 94
+[dens] 12.53 94
+[dens] 12.67 94
 [alg] E2-1 escreve n=3 voos=2 dx=0.25 D=0.90 R=35\ \mathrm{cm}
-[11/04/26 18:18:04] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 11.87 100
-[dens] 12.07 100
-[11/04/26 18:18:05] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 12.13 100
-[dens] 12.33 100
-[dens] 12.53 100
-[dens] 12.73 100
+[11/06/26 17:46:35] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 12.67 100
+[dens] 12.87 100
+                    INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 12.93 100
-[gatilho] E2-1 13.00 o ciclista pedala a sessenta
-[11/04/26 18:18:07] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 13.00 100
-[audit]    13.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    13.2s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.5) 
-[dens] 13.20 133
-[audit]    13.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    13.4s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.4) 
+[dens] 13.13 100
+[gatilho] E2-1 13.20 o ciclista pedala a sessenta
+[plano] gat:E2-1:o ciclista pedala a sessenta A=1.00 W=0.00 D=2.90 ritmo=1.70 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 13.20 100
 [dens] 13.40 133
-[audit]    13.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    13.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.7; 0.4) 
-[dens] 13.53 133
-[11/04/26 18:18:08] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    13.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    13.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.7; 0.4) 
-[dens] 13.53 133
-[audit]    13.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    13.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.6; 0.3) 
-[dens] 13.73 133
-[audit]    13.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    13.9s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.5; 0.3) 
-[dens] 13.93 133
-[audit]    14.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    14.1s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.4; 0.3) 
+[dens] 13.60 133
+[dens] 13.80 133
+[dens] 14.00 133
 [dens] 14.07 133
+[11/06/26 17:46:37] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 14.07 133
+[dens] 14.27 133
+[dens] 14.47 133
+[dens] 14.67 133
+[dens] 14.87 133
+[dens] 14.93 133
 [alg] E2-1 escreve n=3 voos=1 dx=0.25 D=0.50 \omega_1=60\ \mathrm{RPM}
-[11/04/26 18:18:11] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    14.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    14.1s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.4; 0.3) 
-[dens] 14.07 141
-[audit]    14.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    14.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.3; 0.3) 
-[dens] 14.27 141
-[11/04/26 18:18:12] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    14.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    14.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.3; 0.3) 
-[dens] 14.33 141
-[audit]    14.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    14.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.2; 0.4) 
-[dens] 14.53 141
-[audit]    14.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    14.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.1; 0.5) 
-[dens] 14.73 141
-[audit]    14.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    14.9s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.1; 0.6) 
+[11/06/26 17:46:38] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 14.93 141
-[audit]    15.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    15.1s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.1; 0.7) 
 [dens] 15.13 141
-[audit]    15.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    15.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.2; 0.8) 
-[dens] 15.33 141
-[audit]    15.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    15.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.2; 0.9) 
-[dens] 15.53 141
-[audit]    15.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    15.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.3; 1.0) 
-[dens] 15.73 141
-[gatilho] E2-1 15.93 com que velocidade angular gira a roda
+[11/06/26 17:46:39] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 15.20 141
+[dens] 15.40 141
+[dens] 15.60 141
+[dens] 15.80 141
+[dens] 16.00 141
+[gatilho] E2-1 16.13 com que velocidade angular gira a roda
+[plano] gat:E2-1:com que velocidade angular gira a roda A=0.50 W=0.00 D=2.06 ritmo=1.80 ritmo_w=1.00
 [selo] PEDE linhas=2 w=4.33 h=0.72
-[11/04/26 18:18:17] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    15.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    15.9s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.4; 1.0) 
-[dens] 15.93 141
-[audit]    16.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    16.1s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.6; 1.0) 
-[dens] 16.13 170
-[audit]    16.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    16.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.7; 0.9) 
+[11/06/26 17:46:40] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 16.13 141
 [dens] 16.33 170
-[audit]    16.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    16.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.7; 0.9) 
-[dens] 16.47 170
-[11/04/26 18:18:20] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    16.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    16.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.7; 0.9) 
-[dens] 16.47 170
-[audit]    16.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    16.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.8) 
-[dens] 16.67 170
-[audit]    16.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    16.9s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.7) 
-[dens] 16.87 170
-[audit]    17.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    17.1s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.6) 
+[dens] 16.53 170
+[dens] 16.73 170
+[dens] 16.93 170
 [dens] 17.07 170
-[audit]    17.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    17.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.5) 
+[11/06/26 17:46:42] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 17.07 170
 [dens] 17.27 170
-[audit]    17.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    17.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.7; 0.4) 
 [dens] 17.47 170
-[audit]    17.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    17.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.6; 0.3) 
 [dens] 17.67 170
-[audit]    17.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    17.9s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.5; 0.3) 
 [dens] 17.87 170
-[audit]    18.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    18.1s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.4; 0.3) 
 [dens] 18.07 170
-[audit]    18.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    18.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.3; 0.3) 
-[dens] 18.27 170
-[pulso] E2-1 abs 1172.8 s dp 0.59 alvos ['MathTex:2.4,3.1', 'VGroup:2.9,4.3', 'VGroup:2.4,3.1']
-[11/04/26 18:18:24] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    18.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    18.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.3; 0.3) 
-[dens] 18.33 170
-[audit]    18.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    18.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.2; 0.4) 
-[dens] 18.53 170
-[audit]    18.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    18.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.1; 0.5) 
-[dens] 18.73 170
-[audit]    18.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    18.9s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.1; 0.6) 
-[dens] 18.93 170
-[11/04/26 18:18:27] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    18.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    18.9s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.1; 0.6) 
-[dens] 18.93 170
-[audit]    19.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    19.1s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.1; 0.7) 
-[dens] 19.13 170
-[11/04/26 18:18:28] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    19.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    19.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.1; 0.8) 
-[dens] 19.27 170
-[audit]    19.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    19.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.2; 0.9) 
-[dens] 19.47 170
-[audit]    19.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    19.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.3; 0.9) 
-[dens] 19.67 170
-[audit]    19.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    19.9s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.4; 1.0) 
-[dens] 19.87 170
-[audit]    20.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    20.1s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.5; 1.0) 
-[dens] 20.07 170
-[audit]    20.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    20.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.6; 1.0) 
-[dens] 20.27 170
-[audit]    20.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    20.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.7; 0.9) 
-[dens] 20.47 170
-[audit]    20.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    20.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.8) 
-[dens] 20.67 170
-[pulso] E2-2 abs 1175.3 s dp 0.80 alvos ['MathTex:2.4,3.1', 'VGroup:2.9,4.3', 'VGroup:2.4,3.1']
-[11/04/26 18:18:32] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    20.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    20.9s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.7) 
-[dens] 20.87 170
-[audit]    21.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    21.1s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.6) 
-[dens] 21.07 170
-[audit]    21.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    21.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.5) 
-[dens] 21.27 170
-[audit]    21.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    21.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.7; 0.4) 
-[dens] 21.47 170
-[audit]    21.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    21.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.6; 0.3) 
+[plano] ate:E2-1:0.99 A=0.00 W=0.00 D=0.30 ritmo=1.00 ritmo_w=1.00
+[11/06/26 17:46:44] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 18.20 170
+[plano] an:E2-2 A=0.00 W=0.00 D=4.24 ritmo=1.00 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 18.40 170
+[dens] 18.60 170
+[dens] 18.80 170
+[pulso] E2-2 abs 1145.1 s dp 0.80 alvos ['MathTex:2.4,3.1', 'VGroup:2.9,4.3', 'VGroup:2.4,3.1']
+[11/06/26 17:46:45] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 19.00 170
+[dens] 19.20 170
+[dens] 19.40 170
+[dens] 19.60 170
+[dens] 19.80 170
+[11/06/26 17:46:47] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 19.80 170
+[dens] 20.00 170
+[dens] 20.20 170
+[dens] 20.40 170
+[dens] 20.60 170
+[dens] 20.80 170
+[dens] 21.00 170
+[dens] 21.20 170
+[dens] 21.40 170
+[dens] 21.60 170
+[pulso] E2-2 abs 1147.7 s dp 0.80 alvos ['MathTex:2.4,3.1', 'VGroup:2.9,4.3', 'VGroup:2.4,3.1']
+[11/06/26 17:46:49] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 21.67 170
-[11/04/26 18:18:35] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    21.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    21.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.6; 0.3) 
-[dens] 21.67 170
-[audit]    21.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    21.9s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.5; 0.3) 
 [dens] 21.87 170
-[audit]    22.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    22.1s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.4; 0.3) 
 [dens] 22.07 170
-[audit]    22.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    22.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.3; 0.3) 
 [dens] 22.27 170
-[audit]    22.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    22.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.2; 0.4) 
 [dens] 22.47 170
-[audit]    22.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    22.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.2; 0.4) 
+[11/06/26 17:46:51] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 22.47 170
+[gatilho] E2-2 4.27 todos os pontos de um corpo rígido
+[plano] gat:E2-2:todos os pontos de um corpo rígido A=0.50 W=0.00 D=1.83 ritmo=1.80 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 22.67 170
-[audit]    22.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    22.9s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.1; 0.5) 
 [dens] 22.87 170
-[audit]    23.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    23.1s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.1; 0.7) 
 [dens] 23.07 170
-[audit]    23.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    23.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.1; 0.8) 
 [dens] 23.27 170
-[audit]    23.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    23.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.2; 0.9) 
 [dens] 23.47 170
-[pulso] E2-2 abs 1178.0 s dp 0.80 alvos ['MathTex:2.4,3.1', 'VGroup:2.9,4.3', 'VGroup:2.4,3.1']
-[11/04/26 18:18:40] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    23.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    23.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.2; 0.9) 
-[dens] 23.53 170
-[audit]    23.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    23.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.3; 1.0) 
-[dens] 23.73 170
-[audit]    23.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    23.9s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.4; 1.0) 
-[dens] 23.93 170
-[audit]    24.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    24.1s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.6; 1.0) 
-[dens] 24.13 170
-[audit]    24.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    24.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.7; 1.0) 
-[dens] 24.33 170
-[11/04/26 18:18:42] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    24.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    24.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.7; 1.0) 
-[dens] 24.33 170
-[audit]    24.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    24.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.7; 0.9) 
+[dens] 23.60 170
+[11/06/26 17:46:52] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 23.60 170
+[dens] 23.80 170
+[dens] 24.00 170
+[dens] 24.20 170
+[dens] 24.40 170
+[gatilho] E2-2 6.13 têm a mesma velocidade angular
+[plano] gat:E2-2:têm a mesma velocidade angular A=0.60 W=0.00 D=4.89 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:46:54] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 24.53 170
-[audit]    24.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    24.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.8) 
 [dens] 24.73 170
-[gatilho] E2-2 5.60 todos os pontos de um corpo rígido
-[11/04/26 18:18:44] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    24.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    24.9s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.7) 
-[dens] 24.87 170
-[audit]    25.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    25.1s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.6) 
-[dens] 25.07 170
-[audit]    25.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    25.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.5) 
-[dens] 25.27 170
-[audit]    25.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    25.4s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.4) 
-[dens] 25.40 170
-[11/04/26 18:18:46] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    25.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    25.4s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.4) 
-[dens] 25.40 170
-[audit]    25.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    25.6s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.7; 0.3) 
+[dens] 24.93 170
+[dens] 25.13 170
+[dens] 25.33 170
+[dens] 25.53 170
 [dens] 25.60 170
-[audit]    25.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    25.8s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.6; 0.3) 
-[dens] 25.80 170
-[audit]    26.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    26.0s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.5; 0.3) 
-[dens] 26.00 170
-[audit]    26.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    26.2s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.4; 0.3) 
-[dens] 26.20 170
-[audit]    26.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    26.4s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.3; 0.3) 
-[dens] 26.40 170
-[audit]    26.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    26.6s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.2; 0.4) 
-[dens] 26.60 170
-[audit]    26.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    26.8s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.1; 0.5) 
-[dens] 26.80 170
-[audit]    27.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    27.0s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.1; 0.6) 
-[dens] 27.00 170
-[audit]    27.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    27.2s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.1; 0.7) 
-[dens] 27.20 170
-[11/04/26 18:18:50] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    27.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    27.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.1; 0.8) 
-[dens] 27.27 170
-[gatilho] E2-2 8.13 têm a mesma velocidade angular
-[11/04/26 18:18:51] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    27.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    27.4s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.2; 0.8) 
-[dens] 27.40 170
-[audit]    27.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    27.6s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.3; 0.9) 
-[dens] 27.60 170
-[audit]    27.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    27.8s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.4; 1.0) 
-[dens] 27.80 170
-[audit]    28.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    28.0s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.5; 1.0) 
-[dens] 28.00 170
 [alg] E2-2 escreve n=4 voos=0 dx=0.13 D=0.60 0.0
-[11/04/26 18:18:54] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    28.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    28.0s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.5; 1.0) 
-[dens] 28.00 191
-[audit]    28.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    28.2s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.6; 1.0) 
-[dens] 28.20 191
-[11/04/26 18:18:55] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    28.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    28.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.6; 1.0) 
+[11/06/26 17:46:55] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 25.60 191
+[dens] 25.80 191
+[11/06/26 17:46:56] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 25.87 191
+[dens] 26.07 191
+[dens] 26.27 191
+[dens] 26.47 191
+[dens] 26.67 191
+[dens] 26.87 191
+[dens] 27.07 191
+[dens] 27.27 191
+[pulso] E2-2 abs 1153.5 s dp 0.80 alvos ['VGroup:3.7,5.7', 'VGroup:2.9,4.3', 'VGroup:3.7,5.7']
+[11/06/26 17:46:59] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 27.47 191
+[dens] 27.67 191
+[dens] 27.87 191
+[dens] 28.07 191
 [dens] 28.27 191
-[audit]    28.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    28.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.7; 0.9) 
+[11/06/26 17:47:01] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 28.27 191
 [dens] 28.47 191
-[audit]    28.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    28.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.8) 
 [dens] 28.67 191
-[audit]    28.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    28.9s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.7) 
 [dens] 28.87 191
-[audit]    29.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    29.1s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.6) 
 [dens] 29.07 191
-[audit]    29.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    29.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.5) 
 [dens] 29.27 191
-[audit]    29.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    29.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.7; 0.4) 
+[gatilho] E2-2 11.07 porque são corpos diferentes
+[plano] gat:E2-2:porque são corpos diferentes A=1.28 W=0.00 D=1.67 ritmo=1.14 ritmo_w=1.00
+[11/06/26 17:47:03] INFO     Caching disabled.             cairo_renderer.py:81
 [dens] 29.47 191
-[audit]    29.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    29.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.6; 0.3) 
 [dens] 29.67 191
-[pulso] E2-2 abs 1184.3 s dp 0.80 alvos ['VGroup:3.7,5.7', 'VGroup:2.9,4.3', 'VGroup:3.7,5.7']
-[11/04/26 18:19:00] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    29.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    29.9s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.5; 0.3) 
-[dens] 29.87 191
-[audit]    30.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    30.1s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.4; 0.3) 
-[dens] 30.07 191
-[audit]    30.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    30.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.3; 0.3) 
-[dens] 30.27 191
-[audit]    30.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    30.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.2; 0.4) 
-[dens] 30.47 191
-[audit]    30.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    30.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.2; 0.4) 
-[dens] 30.67 191
-[11/04/26 18:19:04] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    30.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    30.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.2; 0.4) 
-[dens] 30.67 191
-[audit]    30.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    30.9s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.1; 0.5) 
-[dens] 30.87 191
-[audit]    31.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    31.1s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.1; 0.7) 
-[dens] 31.07 191
-[audit]    31.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    31.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.1; 0.8) 
-[dens] 31.27 191
-[audit]    31.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    31.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.2; 0.9) 
-[dens] 31.47 191
-[audit]    31.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    31.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.3; 0.9) 
-[dens] 31.67 191
-[audit]    31.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    31.9s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.4; 1.0) 
-[dens] 31.87 191
-[audit]    32.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    32.1s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.5; 1.0) 
-[dens] 32.07 191
-[audit]    32.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    32.3s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.6; 1.0) 
-[dens] 32.27 191
-[audit]    32.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    32.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.7; 0.9) 
-[dens] 32.47 191
-[pulso] E2-2 abs 1187.0 s dp 0.43 alvos ['VGroup:3.7,5.7', 'VGroup:2.9,4.3', 'VGroup:3.7,5.7']
-[11/04/26 18:19:10] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    32.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    32.5s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.7; 0.9) 
-[dens] 32.53 191
-[audit]    32.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    32.7s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.8) 
-[dens] 32.73 191
-[audit]    32.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    32.9s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.7) 
-[dens] 32.93 191
-[audit]    33.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    33.0s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.6) 
-[dens] 33.00 191
-[gatilho] E2-2 13.73 porque são corpos diferentes
-[11/04/26 18:19:13] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    33.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    33.0s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.6) 
-[dens] 33.00 191
-[audit]    33.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[audit]    33.2s TEXTO SOBRE OBJETO 'PEDALANDO(RODALIVREENGATADA)' x Line em (-6.8; 0.5) 
-[dens] 33.20 197
-[audit]    33.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 33.40 197
-[audit]    33.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 33.60 197
-[11/04/26 18:19:16] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    33.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 33.60 197
-[audit]    33.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 33.80 197
-[audit]    34.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 34.00 197
-[audit]    34.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 34.20 197
-[audit]    34.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 34.27 197
+[dens] 29.80 163
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 29.80 163
+[dens] 30.00 169
+[dens] 30.13 169
+[11/06/26 17:47:04] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 30.13 169
+[dens] 30.33 169
+[dens] 30.53 169
+[dens] 30.73 169
+[dens] 30.93 169
 [alg] E2-2 escreve n=5 voos=0 dx=0.12 D=0.68 0.0
-[11/04/26 18:19:19] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    34.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 34.27 220
-[audit]    34.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 34.47 220
-[gatilho] E2-2 15.27 ligados pela corrente
-[11/04/26 18:19:21] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    34.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 34.53 220
-[audit]    34.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 34.73 220
-[audit]    34.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 34.93 220
-[audit]    35.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 35.13 220
-[audit]    35.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 35.33 220
-[audit]    35.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 35.47 220
-[11/04/26 18:19:25] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    35.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 35.47 220
-[gatilho] E2-2 16.33 já a catraca e a roda
+[11/06/26 17:47:06] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 30.93 192
+[dens] 31.13 192
+[gatilho] E2-2 12.80 ligados pela corrente
+[plano] gat:E2-2:ligados pela corrente A=0.90 W=0.00 D=1.38 ritmo=1.24 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    35.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 35.60 220
-[audit]    35.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 35.80 226
-[audit]    36.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 36.00 226
-[audit]    36.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 36.20 226
-[audit]    36.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 36.27 226
-[11/04/26 18:19:29] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    36.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 36.27 226
-[audit]    36.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 36.47 226
-[audit]    36.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 36.67 226
-[audit]    36.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 36.87 226
-[audit]    37.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 37.07 226
-[audit]    37.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 37.27 226
-[audit]    37.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 37.47 226
-[audit]    37.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 37.67 226
-[audit]    37.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 37.87 226
-[audit]    38.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 38.07 226
-[pulso] E2-2 abs 1192.6 s dp 0.80 alvos ['VGroup:3.7,5.7', 'VGroup:2.9,4.3', 'Text:-0.7,1.5']
-[11/04/26 18:19:37] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    38.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 38.13 226
-[audit]    38.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 38.33 226
-[audit]    38.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 38.53 226
-[audit]    38.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 38.73 226
-[audit]    38.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 38.93 226
-[11/04/26 18:19:42] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    38.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 38.93 226
-[audit]    39.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 39.13 226
-[audit]    39.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 39.33 226
-[audit]    39.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 39.53 226
-[audit]    39.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 39.73 226
-[audit]    39.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 39.93 226
-[audit]    40.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 40.13 226
-[audit]    40.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 40.33 226
-[audit]    40.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 40.53 226
-[audit]    40.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 40.73 226
-[pulso] E2-2 abs 1195.3 s dp 0.80 alvos ['VGroup:3.7,5.7', 'VGroup:2.9,4.3', 'Text:-0.7,1.5']
-[11/04/26 18:19:50] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    40.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 40.80 226
-[audit]    41.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 41.00 226
-[audit]    41.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 41.20 226
-[audit]    41.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 41.40 226
-[audit]    41.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 41.60 226
-[11/04/26 18:19:54] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    41.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 41.60 226
-[gatilho] E2-2 22.53 um corpo só com a mesma velocidade angular
-[11/04/26 18:19:55] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    41.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 41.80 226
-[audit]    42.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 42.00 226
-[audit]    42.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 42.20 226
-[audit]    42.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 42.40 226
+[dens] 31.20 192
+[dens] 31.40 192
+[dens] 31.60 192
+[dens] 31.80 192
+[dens] 32.00 192
+[dens] 32.20 192
+[dens] 32.33 192
+[11/06/26 17:47:08] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 32.33 192
+[dens] 32.53 192
+[gatilho] E2-2 14.27 já a catraca e a roda
+[plano] gat:E2-2:já a catraca e a roda A=0.70 W=0.00 D=5.03 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:47:09] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 32.67 192
+[dens] 32.87 198
+[dens] 33.07 198
+[dens] 33.27 198
+[dens] 33.47 198
+[dens] 33.67 198
+[dens] 33.87 198
+[dens] 33.93 198
+[11/06/26 17:47:12] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 33.93 198
+[dens] 34.13 198
+[dens] 34.33 198
+[dens] 34.53 198
+[dens] 34.73 198
+[dens] 34.93 198
+[dens] 35.13 198
+[dens] 35.33 198
+[dens] 35.53 198
+[dens] 35.73 198
+[pulso] E2-2 abs 1161.9 s dp 0.80 alvos ['VGroup:3.7,5.7', 'VGroup:2.9,4.3', 'Text:-0.7,1.5']
+[11/06/26 17:47:15] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 35.80 198
+[dens] 36.00 198
+[dens] 36.20 198
+[dens] 36.40 198
+[dens] 36.60 198
+[11/06/26 17:47:17] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 36.60 198
+[dens] 36.80 198
+[dens] 37.00 198
+[dens] 37.20 198
+[dens] 37.40 198
+[dens] 37.60 198
+[gatilho] E2-2 19.33 um corpo só com a mesma velocidade angular
+[plano] gat:E2-2:um corpo só com a mesma velocidade angula A=0.60 W=0.00 D=2.20 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:47:20] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 37.73 198
+[dens] 37.93 198
+[dens] 38.13 198
+[dens] 38.33 198
+[dens] 38.53 198
+[dens] 38.73 198
+[dens] 38.80 198
 [alg] E2-2 escreve n=4 voos=0 dx=0.13 D=0.60 0.0
-[11/04/26 18:19:58] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    42.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 42.40 246
-[audit]    42.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 42.60 246
-[11/04/26 18:20:00] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    42.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 42.67 246
-[audit]    42.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 42.87 246
-[audit]    43.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 43.07 246
-[audit]    43.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 43.27 246
-[audit]    43.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 43.47 246
-[audit]    43.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 43.67 246
-[audit]    43.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 43.87 246
-[audit]    44.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 44.07 246
-[pulso] E2-2 abs 1198.7 s dp 0.80 alvos ['VGroup:3.5,5.4', 'VGroup:2.9,4.3', 'VGroup:3.5,5.4']
-[11/04/26 18:20:09] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    44.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 44.27 246
-[audit]    44.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 44.47 246
-[audit]    44.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 44.67 246
-[audit]    44.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 44.87 246
-[audit]    45.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 45.07 246
-[11/04/26 18:20:14] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    45.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 45.07 246
-[11/04/26 18:20:15] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    45.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 45.20 246
-[audit]    45.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 45.40 246
-[11/04/26 18:20:17] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    45.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 45.60 246
-[audit]    45.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 45.80 246
-[audit]    46.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 46.00 206
-[gatilho] E2-3 0.40 e o que a corrente faz
-[selo] HIPÓTESES linhas=2 w=5.66 h=0.72
-[11/04/26 18:20:21] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    46.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 46.00 206
-[audit]    46.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 46.20 177
-[audit]    46.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 46.27 177
-[11/04/26 18:20:24] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    46.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 46.27 177
-[audit]    46.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 46.47 215
-[audit]    46.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 46.53 215
-[11/04/26 18:20:28] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    46.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 46.53 215
-[audit]    46.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 46.73 215
-[audit]    46.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 46.93 215
-[audit]    47.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 47.13 215
-[audit]    47.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 47.33 215
-[audit]    47.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 47.53 215
-[audit]    47.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 47.73 215
-[audit]    47.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 47.93 215
-[audit]    48.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 48.13 215
-[audit]    48.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 48.33 215
-[pulso] E2-3 abs 1202.9 s dp 0.80 alvos ['VGroup:3.5,5.4', 'VGroup:3.5,5.7', 'VGroup:3.5,5.4']
-[11/04/26 18:20:35] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    48.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 48.40 215
-[audit]    48.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 48.60 215
-[audit]    48.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 48.80 215
-[audit]    49.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 49.00 215
-[audit]    49.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 49.20 215
-[11/04/26 18:20:43] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    49.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 49.20 215
-[audit]    49.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 49.40 215
-[audit]    49.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 49.60 215
-[audit]    49.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 49.80 215
-[audit]    50.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 50.00 215
-[gatilho] E2-3 4.47 então todos os elos andam com a mesma velocidade
-[11/04/26 18:20:47] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    50.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 50.07 215
-[audit]    50.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 50.27 223
-[audit]    50.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 50.47 223
-[audit]    50.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 50.67 223
-[audit]    50.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 50.87 223
-[11/04/26 18:20:52] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    50.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 50.87 223
-[audit]    51.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 51.07 223
-[audit]    51.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 51.27 223
-[audit]    51.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 51.47 223
-[audit]    51.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 51.67 223
-[audit]    51.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 51.87 223
-[audit]    52.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 52.07 223
-[audit]    52.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 52.27 223
-[audit]    52.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 52.47 223
-[audit]    52.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 52.67 223
-[pulso] E2-3 abs 1207.2 s dp 0.64 alvos ['VGroup:3.5,5.4', 'VGroup:3.5,5.7', 'MathTex:-2.0,0.3']
-[11/04/26 18:21:06] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    52.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 52.73 223
-[audit]    52.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 52.93 223
-[audit]    53.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 53.13 223
-[audit]    53.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 53.33 223
-[audit]    53.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 53.40 223
-[gatilho] E2-3 7.80 na coroa essa velocidade
-[11/04/26 18:21:14] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    53.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 53.40 223
-[audit]    53.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 53.60 223
-[audit]    53.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 53.73 185
-[11/04/26 18:21:21] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    53.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 53.73 185
-[audit]    53.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 53.93 185
-[audit]    54.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 54.07 57
-[11/04/26 18:21:32] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    54.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 54.07 57
-[audit]    54.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 54.27 57
-[audit]    54.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 54.47 57
-[audit]    54.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 54.67 57
-[audit]    54.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 54.87 57
-[audit]    55.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 55.07 57
-[audit]    55.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 55.20 57
-[alg] E2-3 escreve n=4 voos=2 dx=0.25 D=1.15 v_c=\omega_1r_1=\omega_2r_2
-[11/04/26 18:21:35] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    55.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 55.20 57
-[audit]    55.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 55.40 57
-[11/04/26 18:21:37] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    55.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 55.47 57
-[audit]    55.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 55.67 57
-[audit]    55.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 55.87 57
-[audit]    56.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 56.07 57
-[audit]    56.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 56.27 57
-[audit]    56.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 56.47 57
-[audit]    56.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 56.67 57
-[audit]    56.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 56.87 57
-[pulso] E2-3 abs 1211.5 s dp 0.80 alvos ['VGroup:2.0,2.4', 'VGroup:2.4,0.5', 'VGroup:1.7,0.4']
-[11/04/26 18:21:41] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    57.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 57.07 57
-[audit]    57.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 57.27 57
-[audit]    57.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 57.47 57
-[audit]    57.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 57.67 57
-[audit]    57.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 57.87 57
-[11/04/26 18:21:43] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    57.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 57.87 57
-[audit]    58.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 58.07 57
-[audit]    58.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 58.27 57
-[audit]    58.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 58.47 57
-[audit]    58.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 58.67 57
-[audit]    58.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 58.87 57
-[gatilho] E2-3 13.33 na catraca a da catraca
-[11/04/26 18:21:47] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    58.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 58.93 57
-[audit]    59.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 59.13 57
-[audit]    59.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 59.33 57
-[audit]    59.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 59.47 57
-[alg] E2-3 escreve n=3 voos=1 dx=0.25 D=0.50 v_c=\omega_1r_1=\omega_2r_2
-[11/04/26 18:21:49] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    59.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 59.47 69
-[audit]    59.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 59.67 69
-[11/04/26 18:21:51] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    59.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 59.73 69
-[audit]    59.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 59.93 69
-[audit]    60.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 60.13 69
-[audit]    60.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 60.33 69
-[audit]    60.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 60.53 69
-[audit]    60.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 60.73 69
-[audit]    60.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 60.93 69
-[audit]    61.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 61.13 69
-[pulso] E2-3 abs 1215.8 s dp 0.80 alvos ['MathTex:2.9,4.3', 'VGroup:2.9,4.3', 'VGroup:2.9,4.3']
-[11/04/26 18:22:00] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    61.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 61.33 69
-[audit]    61.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 61.53 69
-[audit]    61.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 61.73 69
-[audit]    61.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 61.93 69
-[audit]    62.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 62.13 69
-[11/04/26 18:22:05] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    62.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 62.13 81
-[audit]    62.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 62.33 81
-[audit]    62.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 62.53 81
-[gatilho] E2-3 17.07 igualando a catraca gira
-[alg] E2-3 passo mapas=7
-[11/04/26 18:22:07] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    62.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 62.67 81
-[audit]    62.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 62.87 81
-[audit]    63.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 63.07 81
-[audit]    63.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 63.27 81
-[audit]    63.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 63.47 81
-[audit]    63.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 63.67 81
-[audit]    63.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 63.87 81
-[audit]    64.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 64.07 81
-[audit]    64.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 64.13 91
-[11/04/26 18:22:12] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    64.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 64.13 91
-[audit]    64.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 64.33 91
-[audit]    64.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 64.53 91
-[audit]    64.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 64.73 91
-[gatilho] E2-3 19.27 duas vezes e meia mais rápido
-[11/04/26 18:22:14] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    64.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 64.87 91
-[audit]    65.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 65.07 93
-[audit]    65.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 65.27 93
-[audit]    65.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 65.47 93
-[audit]    65.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 65.67 93
-[audit]    65.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 65.87 93
-[audit]    66.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 66.00 93
-[alg] E2-3 escreve n=4 voos=2 dx=0.25 D=1.15 \omega_2=2{,}5\,\omega_1
-[11/04/26 18:22:18] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    66.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 66.00 93
-[audit]    66.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 66.20 93
-[11/04/26 18:22:19] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    66.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 66.27 93
-[audit]    66.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 66.47 93
-[audit]    66.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 66.67 93
-[audit]    66.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 66.87 93
-[audit]    67.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 67.07 93
-[audit]    67.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 67.27 93
-[audit]    67.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 67.47 93
-[audit]    67.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 67.67 93
-[pulso] E2-3 abs 1222.3 s dp 0.36 alvos ['VGroup:2.6,3.1', 'MathTex:-0.1,0.4', 'RoundedRectangle:2.6,3.1']
-[11/04/26 18:22:24] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    67.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 67.87 93
-[audit]    68.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 68.07 93
-[audit]    68.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 68.20 93
-[gatilho] E2-3 22.60 sessenta rotações por minuto são dois pi
-[11/04/26 18:22:26] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    68.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 68.20 93
-[audit]    68.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 68.40 93
-[audit]    68.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 68.60 93
-[audit]    68.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 68.80 93
-[audit]    69.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 69.00 93
-[audit]    69.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 69.20 93
-[audit]    69.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 69.40 93
-[alg] E2-3 escreve n=5 voos=1 dx=0.25 D=1.20 \omega_1=60\ \mathrm{RPM}=2\pi\ \mathrm{rad/s}
-[11/04/26 18:22:30] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    69.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 69.40 109
-[audit]    69.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 69.60 109
-[11/04/26 18:22:32] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    69.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 69.67 109
-[audit]    69.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 69.87 109
-[audit]    70.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 70.07 109
-[audit]    70.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 70.27 109
-[audit]    70.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 70.47 109
-[audit]    70.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 70.67 109
-[audit]    70.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 70.87 109
-[audit]    71.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 71.07 109
-[pulso] E2-3 abs 1225.7 s dp 0.66 alvos ['MathTex:3.6,5.5', 'VGroup:3.6,5.5', 'VGroup:3.6,5.5']
-[11/04/26 18:22:36] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    71.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 71.27 109
-[audit]    71.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 71.47 109
-[audit]    71.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 71.67 109
-[audit]    71.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 71.87 109
-[audit]    71.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 71.93 109
-[gatilho] E2-3 26.33 então a roda gira a cinco pi
-[11/04/26 18:22:40] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    71.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 71.93 125
-[audit]    72.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 72.13 125
-[audit]    72.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 72.33 125
-[audit]    72.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 72.53 125
-[audit]    72.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 72.73 125
-[audit]    72.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 72.93 125
-[audit]    73.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 73.13 125
-[audit]    73.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 73.33 125
-[audit]    73.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 73.53 125
-[alg] E2-3 escreve n=5 voos=1 dx=0.25 D=1.60 \omega_2=5\pi\approx15{,}7\ \mathrm{rad/s}
-[11/04/26 18:22:46] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    73.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 73.53 140
-[audit]    73.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 73.73 140
-[11/04/26 18:22:49] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    73.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 73.80 140
-[audit]    74.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 74.00 140
-[audit]    74.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 74.20 140
-[audit]    74.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 74.40 140
-[audit]    74.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 74.60 140
-[audit]    74.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 74.80 140
-[audit]    75.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 75.00 140
-[audit]    75.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 75.20 140
-[pulso] E2-3 abs 1229.9 s dp 0.60 alvos ['MathTex:3.2,4.8', 'VGroup:3.2,4.8', 'VGroup:3.2,4.8']
-[11/04/26 18:22:54] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    75.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 75.40 140
-[audit]    75.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 75.60 140
-[audit]    75.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 75.80 140
-[audit]    76.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 76.00 140
-[gatilho] E2-3 30.40 e a borda do pneu anda
-[11/04/26 18:22:57] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    76.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 76.00 155
-[audit]    76.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 76.20 155
-[audit]    76.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 76.40 155
-[audit]    76.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 76.60 155
-[audit]    76.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 76.80 155
-[audit]    77.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 77.00 155
-[alg] E2-3 escreve n=5 voos=2 dx=0.25 D=1.00 v_{borda}=15{,}7\cdot0{,}35
-[11/04/26 18:23:03] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    77.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 77.00 171
-[audit]    77.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 77.20 171
-[11/04/26 18:23:05] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    77.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 77.27 171
-[audit]    77.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 77.47 137
-[11/04/26 18:23:07] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    77.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 77.47 145
-[audit]    77.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 77.67 145
-[audit]    77.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 77.80 145
-[11/04/26 18:23:10] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    77.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 77.80 145
-[audit]    78.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 78.00 145
-[audit]    78.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 78.20 145
-[audit]    78.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 78.40 145
-[audit]    78.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 78.60 145
-[audit]    78.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 78.80 145
-[audit]    79.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 79.00 145
-[audit]    79.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 79.20 145
-[audit]    79.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 79.40 145
-[audit]    79.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 79.60 145
-[pulso] E2-3 abs 1234.1 s dp 0.80 alvos ['MathTex:2.9,4.2', 'VGroup:2.9,4.2', 'VGroup:2.9,4.2']
-[11/04/26 18:23:17] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    79.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 79.67 145
-[audit]    79.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 79.87 145
-[audit]    80.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 80.07 145
-[audit]    80.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 80.27 145
-[audit]    80.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 80.47 145
-[11/04/26 18:23:22] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    80.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 80.47 161
-[audit]    80.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 80.67 161
-[audit]    80.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 80.87 161
-[audit]    81.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 81.07 161
-[audit]    81.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 81.27 161
-[audit]    81.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 81.47 161
-[gatilho] E2-3 35.93 cinco e meio metros por segundo
-[11/04/26 18:23:26] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    81.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 81.53 161
-[audit]    81.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 81.73 161
-[audit]    81.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 81.93 161
-[audit]    82.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 82.00 161
-[alg] E2-3 escreve n=2 voos=0 dx=0.25 D=0.45 \approx5{,}50\ \mathrm{m/s}\approx19{,}8\ \mathrm{km/h}
-[11/04/26 18:23:29] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    82.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 82.00 161
-[audit]    82.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 82.20 161
-[11/04/26 18:23:31] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    82.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 82.27 161
-[audit]    82.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 82.47 161
-[audit]    82.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 82.67 161
-[audit]    82.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 82.87 161
-[audit]    83.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 83.07 161
-[audit]    83.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 83.27 161
-[audit]    83.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 83.47 161
-[audit]    83.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 83.67 161
-[pulso] E2-3 abs 1238.3 s dp 0.80 alvos ['VGroup:3.8,5.7', 'RoundedRectangle:3.8,5.7', 'VGroup:2.6,1.9']
-[11/04/26 18:23:35] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    83.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 83.87 161
-[audit]    84.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 84.07 161
-[audit]    84.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 84.27 161
-[audit]    84.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 84.47 161
-[audit]    84.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 84.67 161
-[11/04/26 18:23:38] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    84.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 84.67 161
-[audit]    84.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 84.87 161
-[audit]    85.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 85.07 161
-[gatilho] E2-3 39.67 quase vinte quilômetros por hora
-[11/04/26 18:23:41] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    85.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 85.27 161
-[audit]    85.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 85.47 161
-[audit]    85.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 85.67 161
-[audit]    85.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 85.73 161
-[alg] E2-3 escreve n=2 voos=0 dx=0.25 D=0.45 \approx5{,}50\ \mathrm{m/s}\approx19{,}8\ \mathrm{km/h}
-[11/04/26 18:23:44] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    85.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 85.73 178
-[audit]    85.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 85.93 178
-[11/04/26 18:23:46] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    86.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 86.00 178
-[audit]    86.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 86.20 178
-[audit]    86.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 86.40 178
-[audit]    86.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 86.60 178
-[audit]    86.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 86.80 178
-[audit]    87.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 87.00 178
-[gatilho] E2-3 41.53 se o pneu não escorrega no chão
-[11/04/26 18:23:55] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    87.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 87.13 178
-[audit]    87.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 87.33 165
-[audit]    87.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 87.40 165
-[11/04/26 18:23:58] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    87.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 87.40 165
-[audit]    87.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 87.60 182
-[audit]    87.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 87.80 182
-[11/04/26 18:24:03] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    87.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 87.80 182
-[audit]    88.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 88.00 182
-[audit]    88.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 88.20 182
-[audit]    88.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 88.40 182
-[audit]    88.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 88.60 182
-[audit]    88.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 88.80 182
-[audit]    89.0s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 89.00 182
-[audit]    89.2s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 89.20 182
-[audit]    89.4s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 89.40 182
-[audit]    89.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 89.60 182
-[gatilho] E2-3 44.13 essa é a velocidade da bicicleta
-[alg] E2-3 fadein-texto
-[11/04/26 18:24:11] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    89.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 89.73 182
-[audit]    89.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 89.93 205
-[audit]    90.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 90.13 205
-[audit]    90.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 90.33 205
-[11/04/26 18:24:15] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    90.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 90.33 205
-[audit]    90.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 90.53 205
-[audit]    90.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 90.73 205
-[audit]    90.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 90.93 205
-[audit]    91.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 91.13 205
-[audit]    91.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 91.33 205
-[audit]    91.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 91.53 205
-[audit]    91.7s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 91.73 205
-[audit]    91.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 91.93 205
-[11/04/26 18:24:22] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    92.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 92.07 205
-[pulso] E2-3 abs 1246.7 s dp 0.36 alvos ['VGroup:3.8,5.7', 'Text:3.3,5.0', 'Text:-2.1,3.7']
-[11/04/26 18:24:23] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    92.3s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 92.27 205
-[audit]    92.5s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 92.47 205
-[audit]    92.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 92.60 205
-[11/04/26 18:24:28] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    92.6s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 92.60 205
-[audit]    92.8s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 92.80 71
-[audit]    92.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 92.87 71
-[11/04/26 18:24:32] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    92.9s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 92.87 71
-[audit]    93.1s TEXTO SOBRE OBJETO '60\ \mathrm{RPM}' x Arc em (-3.6; 0.4) 
-[dens] 93.07 63
-[gatilho] E2-4 0.47 agora o ciclista acelera a cadência
-[11/04/26 18:24:34] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 93.07 79
-[dens] 93.27 83
-[dens] 93.47 83
-[dens] 93.67 83
-[audit]    93.7s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[dens] 93.73 83
-[alg] E2-4 escreve n=3 voos=0 dx=0.25 D=0.70 0.0
-[11/04/26 18:24:42] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]    93.7s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[dens] 93.73 95
-[audit]    93.9s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[dens] 93.93 95
-[11/04/26 18:24:45] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 94.00 95
-[dens] 94.20 95
-[dens] 94.40 95
-[dens] 94.60 95
-[dens] 94.80 95
-[dens] 95.00 95
-[dens] 95.20 95
-[dens] 95.40 95
-[pulso] E2-4 abs 1250.1 s dp 0.80 alvos ['VGroup:2.9,4.2', 'MathTex:-4.6,0.4', 'MathTex:-7.0,0.4']
-[11/04/26 18:24:51] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 95.60 95
-[dens] 95.80 95
-[audit]    96.0s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[audit]    96.0s TEXTO SOBRE OBJETO '\alpha_2' x Arc em (-4.1; -2.4) 
-[dens] 96.00 95
-[dens] 96.20 95
-[dens] 96.40 95
-[11/04/26 18:24:56] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 96.40 95
-[audit]    96.6s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[dens] 96.60 95
-[dens] 96.80 95
-[dens] 97.00 95
-[audit]    97.2s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[dens] 97.20 95
-[dens] 97.40 95
-[dens] 97.60 95
-[dens] 97.80 95
-[dens] 98.00 95
-[dens] 98.20 95
-[pulso] E2-4 abs 1252.7 s dp 0.80 alvos ['VGroup:2.9,4.2', 'MathTex:-4.6,0.4', 'MathTex:-7.0,0.4']
-[11/04/26 18:25:03] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 98.27 95
-[dens] 98.47 95
-[audit]    98.7s TEXTO SOBRE OBJETO '\alpha_2' x Arc em (-4.1; -2.4) 
-[dens] 98.67 95
-[dens] 98.87 95
-[dens] 99.07 95
-[11/04/26 18:25:07] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 99.07 95
-[dens] 99.27 95
-[dens] 99.47 95
-[gatilho] E2-4 7.07 a aceleração angular da coroa
-[11/04/26 18:25:11] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 99.67 95
-[dens] 99.87 95
-[dens] 100.07 95
-[dens] 100.27 95
-[dens] 100.33 95
-[alg] E2-4 escreve n=3 voos=0 dx=0.25 D=0.70 \alpha_1=\frac{3\pi-2\pi}{4}
-[11/04/26 18:25:15] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 100.33 105
-[dens] 100.53 105
-[11/04/26 18:25:16] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 100.60 105
-[dens] 100.80 105
-[dens] 101.00 105
-[dens] 101.20 105
-[dens] 101.40 105
-[dens] 101.60 105
-[dens] 101.80 105
-[dens] 102.00 105
-[pulso] E2-4 abs 1256.7 s dp 0.80 alvos ['MathTex:2.3,3.1', 'VGroup:2.3,3.1', 'VGroup:2.3,3.1']
-[11/04/26 18:25:24] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 102.20 105
-[dens] 102.40 105
-[dens] 102.60 105
-[dens] 102.80 105
-[dens] 103.00 105
-[11/04/26 18:25:28] WARNING  Attempted adding some Mobject as a  mobject.py:557
-                             child more than once, this is not                 
-                             possible. Repetitions are ignored.                
-                    WARNING  Attempted adding some Mobject as a  mobject.py:557
-                             child more than once, this is not                 
-                             possible. Repetitions are ignored.                
-[11/04/26 18:25:29] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 103.00 115
-[dens] 103.20 115
-[dens] 103.40 115
-[dens] 103.60 115
-[dens] 103.80 115
-[dens] 104.00 115
-[dens] 104.20 115
-[dens] 104.40 115
-[dens] 104.60 115
-[dens] 104.80 115
-[pulso] E2-4 abs 1259.3 s dp 0.69 alvos ['MathTex:2.3,3.1', 'VGroup:2.3,3.1', 'VGroup:2.3,3.1']
-[11/04/26 18:25:42] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 104.87 105
-[dens] 105.07 105
-[dens] 105.27 105
-[dens] 105.47 105
-[dens] 105.53 105
-[gatilho] E2-4 12.93 pi sobre quatro
-[alg] E2-4 passo mapas=6
-[11/04/26 18:25:46] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 105.53 115
-[dens] 105.73 115
-[dens] 105.93 115
-[dens] 106.13 115
-[dens] 106.33 115
-[dens] 106.53 115
-[dens] 106.73 115
-[dens] 106.87 131
-[11/04/26 18:25:53] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 106.87 131
-[dens] 107.07 131
-[dens] 107.27 131
-[dens] 107.47 131
-[dens] 107.67 131
-[dens] 107.87 131
-[dens] 108.07 131
-[dens] 108.27 131
-[dens] 108.47 131
-[dens] 108.67 131
-[11/04/26 18:26:02] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 108.73 131
-[gatilho] E2-4 16.27 como a relação da corrente vale
-[alg] E2-4 passo mapas=5
-[11/04/26 18:26:03] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 108.87 131
-[dens] 109.07 131
-[dens] 109.27 131
-[dens] 109.47 131
-[dens] 109.67 131
-[dens] 109.87 131
-[dens] 110.07 131
-[dens] 110.20 150
-[11/04/26 18:26:09] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 110.20 150
-[dens] 110.40 142
-[11/04/26 18:26:11] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 110.40 142
-[dens] 110.60 142
-[dens] 110.73 142
-[11/04/26 18:26:15] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 110.73 142
-[dens] 110.93 142
-[dens] 111.13 142
-[dens] 111.33 142
-[dens] 111.53 142
-[dens] 111.73 142
-[dens] 111.93 142
-[dens] 112.13 142
-[dens] 112.33 142
-[dens] 112.53 142
-[pulso] E2-4 abs 1267.1 s dp 0.80 alvos ['MathTex:3.7,5.7', 'VGroup:3.7,5.7', 'VGroup:3.7,4.4']
-[11/04/26 18:26:24] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 112.60 142
-[dens] 112.80 142
-[dens] 113.00 142
-[dens] 113.20 142
-[dens] 113.40 142
-[11/04/26 18:26:29] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 113.40 142
-[dens] 113.60 142
-[dens] 113.80 142
-[dens] 114.00 142
-[dens] 114.20 142
-[dens] 114.40 142
-[dens] 114.60 142
-[dens] 114.80 142
-[dens] 115.00 142
-[dens] 115.20 142
-[pulso] E2-4 abs 1269.7 s dp 0.80 alvos ['MathTex:3.7,5.7', 'VGroup:3.7,5.7', 'VGroup:3.7,4.4']
-[11/04/26 18:26:40] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 115.27 142
-[dens] 115.47 142
-[dens] 115.67 142
-[dens] 115.87 142
-[dens] 116.07 142
-[11/04/26 18:26:46] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 116.07 142
-[dens] 116.27 142
-[dens] 116.47 142
-[dens] 116.67 142
-[dens] 116.87 142
-[dens] 117.07 142
-[dens] 117.27 142
-[dens] 117.47 142
-[dens] 117.67 142
-[dens] 117.87 142
-[11/04/26 18:26:57] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 117.93 142
-[gatilho] E2-4 25.47 com o pneu sem escorregar
-[11/04/26 18:26:59] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 118.07 142
-[dens] 118.27 142
-[dens] 118.47 142
-[dens] 118.67 142
-[dens] 118.73 142
-[11/04/26 18:27:09] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 118.73 142
-[dens] 118.93 142
-[dens] 119.13 142
-[dens] 119.33 142
-[dens] 119.53 142
-[dens] 119.73 142
-[dens] 119.93 142
-[dens] 120.13 142
-[dens] 120.33 142
-[dens] 120.53 142
-[11/04/26 18:27:19] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 120.60 142
-[gatilho] E2-4 28.13 a bicicleta acelera isso vezes trinta e cinco
-[11/04/26 18:27:21] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 120.73 142
-[dens] 120.93 142
-[dens] 121.13 142
-[dens] 121.33 142
-[dens] 121.53 142
-[dens] 121.73 142
-[dens] 121.93 142
-[dens] 122.07 142
-[alg] E2-4 escreve n=6 voos=2 dx=0.22 D=1.30 a=\alpha_2R\approx0{,}69\ \mathrm{m/s^2}
-[11/04/26 18:27:30] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 122.07 156
-[dens] 122.27 156
-[11/04/26 18:27:34] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 122.33 156
-[dens] 122.53 156
-[dens] 122.73 156
-[dens] 122.93 156
-[dens] 123.13 156
-[dens] 123.33 156
-[dens] 123.53 156
-[dens] 123.73 156
-[pulso] E2-4 abs 1278.4 s dp 0.80 alvos ['MathTex:3.2,4.8', 'VGroup:3.2,4.8', 'VGroup:3.2,4.8']
-[11/04/26 18:27:48] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 123.93 156
-[dens] 124.13 156
-[dens] 124.33 156
-[dens] 124.53 156
-[dens] 124.73 156
-[11/04/26 18:27:53] WARNING  Attempted adding some Mobject as a  mobject.py:557
-                             child more than once, this is not                 
-                             possible. Repetitions are ignored.                
-                    WARNING  Attempted adding some Mobject as a  mobject.py:557
-                             child more than once, this is not                 
-                             possible. Repetitions are ignored.                
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 124.73 170
-[dens] 124.93 170
-[dens] 125.13 170
-[dens] 125.33 170
-[dens] 125.53 170
-[dens] 125.73 170
-[dens] 125.93 170
-[dens] 126.13 170
-[dens] 126.33 170
-[dens] 126.53 170
-[pulso] E2-4 abs 1281.1 s dp 0.80 alvos ['MathTex:3.2,4.8', 'VGroup:3.2,4.8', 'VGroup:3.2,4.8']
-[11/04/26 18:28:05] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 126.60 156
-[dens] 126.80 156
-[dens] 127.00 156
-[dens] 127.20 156
-[dens] 127.40 156
-[11/04/26 18:28:10] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 127.40 170
-[dens] 127.60 170
-[gatilho] E2-4 35.20 e nesses quatro segundos o pedal dá
-[11/04/26 18:28:14] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 127.80 170
-[dens] 128.00 170
-[dens] 128.20 170
-[dens] 128.40 170
-[dens] 128.60 170
-[dens] 128.80 170
-[alg] E2-4 escreve n=6 voos=0 dx=0.16 D=1.00 \Delta\theta_1=\tfrac12(2\pi+3\pi)\cdot4
-[11/04/26 18:28:23] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 128.80 186
-[dens] 129.00 186
-[ajuste]   129.1s linha encolhida para caber na Pilha (5.79 → 5.70, fator 0.98) 0.0
-[11/04/26 18:28:27] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 129.07 186
-[dens] 129.27 138
-[11/04/26 18:28:30] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 129.27 138
-[dens] 129.47 138
-[dens] 129.60 138
-[11/04/26 18:28:36] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 129.60 138
-[dens] 129.80 138
-[dens] 130.00 138
-[dens] 130.20 138
-[gatilho] E2-4 37.80 exatamente cinco voltas
-[alg] E2-4 passo mapas=4
-[11/04/26 18:28:42] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 130.40 144
-[dens] 130.60 144
-[dens] 130.80 144
-[dens] 131.00 144
-[dens] 131.20 144
-[dens] 131.40 144
-[dens] 131.60 144
-[dens] 131.73 156
-[11/04/26 18:28:58] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 131.73 156
-[dens] 131.93 156
-[dens] 132.13 156
-[dens] 132.33 156
-[dens] 132.53 156
-[dens] 132.73 156
-[dens] 132.93 156
-[dens] 133.13 156
-[dens] 133.33 156
-[dens] 133.53 156
-[pulso] E2-4 abs 1288.1 s dp 0.80 alvos ['VGroup:3.8,5.7', 'Text:5.9,1.2', 'RoundedRectangle:3.8,5.7']
-[11/04/26 18:29:12] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 133.60 156
-[dens] 133.80 156
-[audit]   134.0s ENCOSTADO '\Delta\theta_1=10\pi\ \mathrm{' x 'VOLTAS' (folga < 0,03)
-[dens] 134.00 156
-[dens] 134.20 156
-[dens] 134.40 156
-[11/04/26 18:29:17] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 134.40 156
-[dens] 134.60 156
-[dens] 134.80 156
-[dens] 135.00 156
-[dens] 135.20 156
-[dens] 135.40 156
-[dens] 135.60 156
-[dens] 135.80 156
-[dens] 136.00 156
-[dens] 136.20 156
-[11/04/26 18:29:27] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 136.27 156
-[11/04/26 18:29:28] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 136.40 156
-[dens] 136.60 156
-[dens] 136.80 156
-[dens] 137.00 156
-[11/04/26 18:29:35] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 137.07 156
-[dens] 137.27 156
-[dens] 137.47 32
-[11/04/26 18:29:41] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 137.47 32
-[dens] 137.67 45
-[dens] 137.87 45
-[11/04/26 18:29:43] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 137.87 45
-[dens] 138.07 45
-[dens] 138.27 45
-[dens] 138.47 45
-[dens] 138.67 45
-[audit]   138.7s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[dens] 138.73 45
-[alg] E2-5 escreve n=4 voos=0 dx=0.23 D=0.90 v_c=\omega_1r_1
-[11/04/26 18:29:45] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   138.7s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[dens] 138.73 52
-[audit]   138.9s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[dens] 138.93 52
-[11/04/26 18:29:46] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 139.00 52
-[dens] 139.20 52
-[dens] 139.40 52
-[dens] 139.60 52
-[dens] 139.80 52
-[dens] 140.00 52
-[gatilho] E2-5 3.00 um elo andando a zero vírgula sessenta
-[11/04/26 18:29:49] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 140.07 52
-[dens] 140.27 70
-[dens] 140.47 70
-[dens] 140.67 70
-[dens] 140.87 70
-[ajuste]   140.9s filha encolhida (fator 0.96) 0.0
-[11/04/26 18:29:51] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 140.87 70
-[dens] 141.07 70
-[dens] 141.27 70
-[dens] 141.47 70
-[dens] 141.67 70
-[dens] 141.80 70
-[alg] E2-5 escreve n=6 voos=1 dx=0.18 D=0.92 =2\pi\cdot0{,}10\approx0{,}63\ \mathrm{m/s}
-[11/04/26 18:29:56] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   141.8s COR POR TOKEN '2\pi' em #9C8CFF (esperado ['#FFC24D'])
-[dens] 141.80 86
-[dens] 142.00 86
-[11/04/26 18:29:58] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 142.07 86
-[dens] 142.27 86
-[dens] 142.47 86
-[dens] 142.67 86
-[dens] 142.87 86
-[dens] 143.07 86
-[dens] 143.27 86
-[dens] 143.47 86
-[pulso] E2-5 abs 1298.1 s dp 0.80 alvos ['MathTex:4.1,5.2', 'VGroup:4.1,5.2', 'VGroup:4.1,5.2']
-[11/04/26 18:30:03] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 143.67 86
-[dens] 143.87 86
-[dens] 144.07 86
-[audit]   144.1s FORA DA ZONA texto da CONTA '=2\pi\cdot0{,}10\approx0{,}63\' (1.31…6.86; 1.12…1.69)
-[dens] 144.27 86
-[dens] 144.47 86
-[11/04/26 18:30:09] WARNING  The original total run_time of       scene.py:1131
+[11/06/26 17:47:22] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 38.80 218
+[dens] 39.00 218
+[11/06/26 17:47:23] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 39.07 218
+[dens] 39.27 218
+[dens] 39.47 218
+[dens] 39.67 218
+[dens] 39.87 218
+[plano] ate:E2-2:0.99 A=0.00 W=0.00 D=0.30 ritmo=1.00 ritmo_w=1.00
+[11/06/26 17:47:25] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 39.93 218
+[dens] 40.13 218
+[plano] an:E2-3 A=0.40 W=0.00 D=0.16 ritmo=0.40 (1º gatilho nas primeiras palavras)
+[11/06/26 17:47:26] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 40.20 218
+[dens] 40.33 206
+[11/06/26 17:47:27] WARNING  The original total run_time of       scene.py:1131
                              PE2.play(), 0.0653333 seconds, is                 
                              too short for the current frame rate              
                              of 15 FPS. Rendering with the                     
@@ -1774,387 +356,1001 @@ Manim Community v0.21.0
                              of 15 FPS. Rendering with the                     
                              shortest possible total run_time of               
                              0.0666667 seconds instead.                        
-[dens] 144.47 102
-[gatilho] E2-5 7.47 tem aceleração centrípeta de três vírgula nove na coroa
-[11/04/26 18:30:10] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   144.5s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[dens] 144.53 102
-[audit]   144.7s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[dens] 144.73 109
-[audit]   144.9s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[dens] 144.93 109
-[dens] 145.07 109
-[11/04/26 18:30:12] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 145.07 109
-[dens] 145.27 109
-[dens] 145.47 109
-[dens] 145.67 109
-[dens] 145.87 109
-[dens] 146.07 109
-[dens] 146.27 109
-[dens] 146.40 109
+[dens] 40.33 206
+[gatilho] E2-3 0.20 e o que a corrente faz
+[plano] gat:E2-3:e o que a corrente faz A=0.50 W=0.00 D=3.60 ritmo=1.80 ritmo_w=1.00
+[selo] HIPÓTESES linhas=2 w=5.66 h=0.72
+[11/06/26 17:47:28] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 40.40 206
+[dens] 40.60 206
+[dens] 40.80 177
+[dens] 40.87 177
+[11/06/26 17:47:30] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 40.87 177
+[dens] 41.07 215
+[dens] 41.27 215
+[dens] 41.33 215
+[11/06/26 17:47:32] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 41.33 215
+[dens] 41.53 215
+[dens] 41.73 215
+[dens] 41.93 215
+[dens] 42.13 215
+[dens] 42.33 215
+[dens] 42.53 215
+[dens] 42.73 215
+[dens] 42.93 215
+[dens] 43.13 215
+[pulso] E2-3 abs 1169.3 s dp 0.80 alvos ['VGroup:3.5,5.4', 'VGroup:3.5,5.7', 'VGroup:3.5,5.4']
+[11/06/26 17:47:36] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 43.20 215
+[dens] 43.40 215
+[dens] 43.60 215
+[dens] 43.80 215
+[dens] 44.00 215
+[11/06/26 17:47:38] WARNING  The original total run_time of       scene.py:1131
+                             PE2.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PE2.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[dens] 44.00 215
+[gatilho] E2-3 3.87 então todos os elos andam com a mesma velocidade
+[plano] gat:E2-3:então todos os elos andam com a mesma vel A=0.80 W=0.00 D=2.63 ritmo=1.80 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 44.07 215
+[dens] 44.27 223
+[dens] 44.47 223
+[dens] 44.67 223
+[dens] 44.87 223
+[dens] 45.07 223
+[dens] 45.27 223
+[dens] 45.47 223
+[dens] 45.53 223
+[11/06/26 17:47:42] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 45.53 223
+[dens] 45.73 223
+[dens] 45.93 223
+[dens] 46.13 223
+[dens] 46.33 223
+[dens] 46.53 223
+[gatilho] E2-3 6.53 na coroa essa velocidade
+[plano] gat:E2-3:na coroa essa velocidade A=1.85 W=0.00 D=5.99 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:47:45] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 46.73 223
+[dens] 46.93 223
+[dens] 47.13 185
+[dens] 47.33 185
+[11/06/26 17:47:47] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 47.33 185
+[dens] 47.53 185
+[dens] 47.73 57
+[dens] 47.93 57
+[11/06/26 17:47:49] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 47.93 57
+[dens] 48.13 57
+[dens] 48.33 57
+[dens] 48.53 57
+[dens] 48.73 57
+[dens] 48.93 57
+[dens] 49.13 57
+[dens] 49.33 57
+[dens] 49.53 57
+[dens] 49.73 57
+[dens] 49.93 57
+[dens] 50.00 57
+[alg] E2-3 escreve n=4 voos=2 dx=0.25 D=1.15 v_c=\omega_1r_1=\omega_2r_2
+[11/06/26 17:47:52] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 50.00 57
+[dens] 50.20 57
+[11/06/26 17:47:53] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 50.27 57
+[dens] 50.47 57
+[dens] 50.67 57
+[dens] 50.87 57
+[dens] 51.07 57
+[dens] 51.27 57
+[dens] 51.47 57
+[dens] 51.67 57
+[pulso] E2-3 abs 1177.9 s dp 0.80 alvos ['VGroup:2.0,2.4', 'VGroup:2.4,0.5', 'VGroup:1.7,0.4']
+[11/06/26 17:47:54] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 51.87 57
+[dens] 52.07 57
+[dens] 52.27 57
+[dens] 52.47 57
+[dens] 52.67 57
+[11/06/26 17:47:56] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 52.67 57
+[gatilho] E2-3 12.60 na catraca a da catraca
+[plano] gat:E2-3:na catraca a da catraca A=0.50 W=0.00 D=3.40 ritmo=1.80 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 52.80 57
+[dens] 53.00 57
+[dens] 53.20 57
+[dens] 53.40 57
+[dens] 53.60 57
+[dens] 53.73 57
+[alg] E2-3 escreve n=3 voos=1 dx=0.25 D=0.50 v_c=\omega_1r_1=\omega_2r_2
+[11/06/26 17:47:57] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 53.73 69
+[dens] 53.93 69
+[11/06/26 17:47:58] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 54.00 69
+[dens] 54.20 69
+[dens] 54.40 69
+[dens] 54.60 69
+[dens] 54.80 69
+[dens] 55.00 69
+[dens] 55.20 69
+[dens] 55.40 69
+[pulso] E2-3 abs 1181.7 s dp 0.66 alvos ['MathTex:2.9,4.3', 'VGroup:2.9,4.3', 'VGroup:2.9,4.3']
+[11/06/26 17:48:00] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 55.60 69
+[dens] 55.80 69
+[dens] 56.00 69
+[dens] 56.20 69
+[dens] 56.27 69
+[gatilho] E2-3 16.07 igualando a catraca gira
+[plano] gat:E2-3:igualando a catraca gira A=1.50 W=0.00 D=2.49 ritmo=1.29 ritmo_w=1.00
+[alg] E2-3 passo mapas=7
+[11/06/26 17:48:01] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 56.27 81
+[dens] 56.47 81
+[dens] 56.67 81
+[dens] 56.87 81
+[dens] 57.07 81
+[dens] 57.27 81
+[dens] 57.47 81
+[dens] 57.67 81
+[dens] 57.87 81
+[dens] 58.07 81
+[dens] 58.20 91
+[11/06/26 17:48:04] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 58.20 91
+[dens] 58.40 91
+[dens] 58.60 91
+[gatilho] E2-3 18.60 duas vezes e meia mais rápido
+[plano] gat:E2-3:duas vezes e meia mais rápido A=1.15 W=0.00 D=2.48 ritmo=1.47 ritmo_w=1.00
+[11/06/26 17:48:05] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 58.80 91
+[dens] 59.00 93
+[dens] 59.20 93
+[dens] 59.40 93
+[dens] 59.60 93
+[dens] 59.80 93
+[dens] 60.00 93
+[dens] 60.20 93
+[dens] 60.40 93
+[dens] 60.47 93
+[alg] E2-3 escreve n=4 voos=2 dx=0.25 D=1.15 \omega_2=2{,}5\,\omega_1
+[11/06/26 17:48:07] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 60.47 101
+[dens] 60.67 101
+[11/06/26 17:48:08] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 60.73 101
+[dens] 60.93 101
+[dens] 61.13 101
+[gatilho] E2-3 21.13 sessenta rotações por minuto são dois pi
+[plano] gat:E2-3:sessenta rotações por minuto são dois pi A=1.20 W=0.00 D=3.91 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:48:09] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 61.33 101
+[dens] 61.53 101
+[dens] 61.73 101
+[dens] 61.93 101
+[dens] 62.13 101
+[dens] 62.33 101
+[dens] 62.53 101
+[dens] 62.73 101
+[dens] 62.93 101
+[dens] 63.13 101
+[dens] 63.33 101
+[dens] 63.47 101
+[alg] E2-3 escreve n=5 voos=1 dx=0.25 D=1.20 \omega_1=60\ \mathrm{RPM}=2\pi\ \mathrm{rad/s}
+[11/06/26 17:48:12] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 63.47 117
+[dens] 63.67 117
+[11/06/26 17:48:13] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 63.73 117
+[dens] 63.93 117
+[dens] 64.13 117
+[dens] 64.33 117
+[dens] 64.53 117
+[dens] 64.73 117
+[dens] 64.93 117
+[dens] 65.13 117
+[gatilho] E2-3 25.07 então a roda gira a cinco pi
+[plano] gat:E2-3:então a roda gira a cinco pi A=1.60 W=0.00 D=3.43 ritmo=1.46 ritmo_w=1.00
+[11/06/26 17:48:15] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 65.27 117
+[dens] 65.47 117
+[dens] 65.67 117
+[dens] 65.87 117
+[dens] 66.07 117
+[dens] 66.27 117
+[dens] 66.47 117
+[dens] 66.67 117
+[dens] 66.87 117
+[dens] 67.07 117
+[dens] 67.27 117
+[dens] 67.47 117
+[dens] 67.60 117
+[alg] E2-3 escreve n=5 voos=1 dx=0.25 D=1.60 \omega_2=5\pi\approx15{,}7\ \mathrm{rad/s}
+[11/06/26 17:48:19] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 67.60 132
+[dens] 67.80 132
+[11/06/26 17:48:20] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 67.87 132
+[dens] 68.07 132
+[dens] 68.27 132
+[dens] 68.47 132
+[dens] 68.67 132
+[gatilho] E2-3 28.53 e a borda do pneu anda
+[plano] gat:E2-3:e a borda do pneu anda A=1.56 W=0.00 D=4.57 ritmo=1.71 ritmo_w=1.00
+[11/06/26 17:48:21] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 68.73 132
+[dens] 68.93 132
+[dens] 69.13 132
+[dens] 69.33 132
+[dens] 69.53 132
+[dens] 69.73 132
+[dens] 69.93 132
+[dens] 70.13 132
+[dens] 70.33 132
+[dens] 70.47 132
+[alg] E2-3 escreve n=5 voos=2 dx=0.25 D=1.00 v_{borda}=15{,}7\cdot0{,}35
+[11/06/26 17:48:25] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 70.47 148
+[dens] 70.67 148
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 70.73 148
+[dens] 70.93 148
+[dens] 71.07 114
+[11/06/26 17:48:26] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 71.07 114
+[dens] 71.27 114
+[dens] 71.47 114
+[dens] 71.67 114
+[11/06/26 17:48:28] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 71.67 114
+[dens] 71.87 114
+[dens] 72.07 114
+[dens] 72.27 114
+[dens] 72.47 114
+[dens] 72.67 114
+[dens] 72.87 114
+[dens] 73.07 114
+[dens] 73.27 114
+[gatilho] E2-3 33.13 cinco e meio metros por segundo
+[plano] gat:E2-3:cinco e meio metros por segundo A=0.45 W=0.00 D=2.79 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:48:30] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 73.33 114
+[dens] 73.53 114
+[dens] 73.73 114
+[dens] 73.93 114
+[dens] 74.13 114
+[alg] E2-3 escreve n=2 voos=0 dx=0.25 D=0.45 \approx5{,}50\ \mathrm{m/s}\approx19{,}8\ \mathrm{km/h}
+[11/06/26 17:48:31] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 74.13 114
+[dens] 74.33 114
+[11/06/26 17:48:32] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 74.40 114
+[dens] 74.60 114
+[dens] 74.80 114
+[dens] 75.00 114
+[dens] 75.20 114
+[dens] 75.40 114
+[dens] 75.60 114
+[dens] 75.80 114
+[11/06/26 17:48:34] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 76.00 114
+[gatilho] E2-3 36.00 quase vinte quilômetros por hora
+[plano] gat:E2-3:quase vinte quilômetros por hora A=0.45 W=0.00 D=1.98 ritmo=1.80 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 76.20 114
+[dens] 76.40 114
+[dens] 76.60 114
+[dens] 76.80 114
+[dens] 77.00 114
+[alg] E2-3 escreve n=2 voos=0 dx=0.25 D=0.45 \approx5{,}50\ \mathrm{m/s}\approx19{,}8\ \mathrm{km/h}
+[11/06/26 17:48:35] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 77.00 131
+[dens] 77.20 131
+[11/06/26 17:48:36] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 77.27 131
+[dens] 77.47 131
+[dens] 77.67 131
+[dens] 77.87 131
+[dens] 78.07 131
+[gatilho] E2-3 38.07 se o pneu não escorrega no chão
+[plano] gat:E2-3:se o pneu não escorrega no chão A=0.70 W=0.00 D=1.77 ritmo=1.59 ritmo_w=1.00
+[11/06/26 17:48:37] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 78.27 131
+[dens] 78.47 131
+[dens] 78.67 118
+[dens] 78.73 118
+[11/06/26 17:48:39] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 78.73 118
+[dens] 78.93 135
+[dens] 79.13 135
+[dens] 79.33 135
+[dens] 79.40 135
+[11/06/26 17:48:40] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 79.40 135
+[dens] 79.60 135
+[dens] 79.80 135
+[dens] 80.00 135
+[gatilho] E2-3 39.93 essa é a velocidade da bicicleta
+[plano] gat:E2-3:essa é a velocidade da bicicleta A=0.60 W=0.00 D=1.37 ritmo=1.51 ritmo_w=1.00
+[alg] E2-3 fadein-texto
+[11/06/26 17:48:41] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 80.13 135
+[dens] 80.33 158
+[dens] 80.53 158
+[dens] 80.73 158
+[dens] 80.93 158
+[dens] 81.07 158
+[11/06/26 17:48:43] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 81.07 158
+[dens] 81.27 158
+[plano] ate:E2-3:0.99 A=0.00 W=0.00 D=0.53 ritmo=1.00 ritmo_w=1.00
+[11/06/26 17:48:44] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 81.47 158
+[dens] 81.67 158
+[dens] 81.87 158
+[plano] an:E2-4 A=0.50 W=0.00 D=0.16 ritmo=0.32 (1º gatilho nas primeiras palavras)
+[11/06/26 17:48:45] WARNING  The original total run_time of       scene.py:1131
+                             PE2.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PE2.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[dens] 82.00 158
+[dens] 82.07 71
+[11/06/26 17:48:46] WARNING  The original total run_time of       scene.py:1131
+                             PE2.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PE2.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[dens] 82.07 71
+[dens] 82.13 63
+                    WARNING  The original total run_time of       scene.py:1131
+                             PE2.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PE2.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[dens] 82.13 63
+[gatilho] E2-4 0.20 agora o ciclista acelera a cadência
+[plano] gat:E2-4:agora o ciclista acelera a cadência A=0.70 W=0.00 D=7.30 ritmo=1.80 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 82.20 79
+[dens] 82.40 83
+[dens] 82.60 83
+[dens] 82.80 83
+[dens] 83.00 83
+[dens] 83.20 83
+[dens] 83.40 83
+[dens] 83.47 83
+[alg] E2-4 escreve n=3 voos=0 dx=0.25 D=0.70 0.0
+[11/06/26 17:48:50] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 83.47 95
+[dens] 83.67 95
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 83.73 95
+[dens] 83.93 95
+[dens] 84.13 95
+[dens] 84.33 95
+[dens] 84.53 95
+[dens] 84.73 95
+[dens] 84.93 95
+[dens] 85.13 95
+[pulso] E2-4 abs 1211.4 s dp 0.80 alvos ['VGroup:2.9,4.2', 'MathTex:-4.6,0.4', 'MathTex:-7.0,0.4']
+[11/06/26 17:48:53] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 85.33 95
+[dens] 85.53 95
+[audit]    85.7s TEXTO SOBRE OBJETO '\alpha_2' x Arc em (-4.1; -2.4) 
+[dens] 85.73 95
+[dens] 85.93 95
+[dens] 86.13 95
+[11/06/26 17:48:55] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 86.13 95
+[dens] 86.33 95
+[dens] 86.53 95
+[dens] 86.73 95
+[dens] 86.93 95
+[dens] 87.13 95
+[dens] 87.33 95
+[dens] 87.53 95
+[dens] 87.73 95
+[dens] 87.93 95
+[pulso] E2-4 abs 1214.1 s dp 0.80 alvos ['VGroup:2.9,4.2', 'MathTex:-4.6,0.4', 'MathTex:-7.0,0.4']
+[11/06/26 17:48:59] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 88.00 95
+[dens] 88.20 95
+[audit]    88.4s TEXTO SOBRE OBJETO '\alpha_2' x Arc em (-4.1; -2.4) 
+[dens] 88.40 95
+[dens] 88.60 95
+[dens] 88.80 95
+[11/06/26 17:49:01] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 88.80 95
+[dens] 89.00 95
+[dens] 89.20 95
+[dens] 89.40 95
+[gatilho] E2-4 7.53 a aceleração angular da coroa
+[plano] gat:E2-4:a aceleração angular da coroa A=0.70 W=0.00 D=5.45 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:49:03] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 89.53 95
+[dens] 89.73 95
+[dens] 89.93 95
+[dens] 90.13 95
+[dens] 90.33 95
+[dens] 90.53 95
+[dens] 90.73 95
+[dens] 90.80 95
+[alg] E2-4 escreve n=3 voos=0 dx=0.25 D=0.70 \alpha_1=\frac{3\pi-2\pi}{4}
+[11/06/26 17:49:05] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 90.80 105
+[dens] 91.00 105
+[11/06/26 17:49:06] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 91.07 105
+[dens] 91.27 105
+[dens] 91.47 105
+[dens] 91.67 105
+[dens] 91.87 105
+[dens] 92.07 105
+[dens] 92.27 105
+[dens] 92.47 105
+[pulso] E2-4 abs 1218.7 s dp 0.80 alvos ['MathTex:2.3,3.1', 'VGroup:2.3,3.1', 'VGroup:2.3,3.1']
+[11/06/26 17:49:09] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 92.67 105
+[dens] 92.87 105
+[dens] 93.07 105
+[dens] 93.27 105
+[dens] 93.47 105
+[11/06/26 17:49:10] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 93.47 115
+[dens] 93.67 115
+[dens] 93.87 115
+[dens] 94.07 115
+[dens] 94.27 115
+[dens] 94.47 115
+[dens] 94.67 115
+[dens] 94.87 115
+[gatilho] E2-4 13.07 pi sobre quatro
+[plano] gat:E2-4:pi sobre quatro A=1.30 W=0.00 D=2.69 ritmo=1.44 ritmo_w=1.00
+[alg] E2-4 passo mapas=6
+[11/06/26 17:49:13] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 95.07 115
+[dens] 95.27 115
+[dens] 95.47 115
+[dens] 95.67 115
+[dens] 95.87 115
+[dens] 96.07 115
+[dens] 96.27 115
+[dens] 96.47 115
+[dens] 96.67 115
+[dens] 96.87 115
+[dens] 96.93 131
+[11/06/26 17:49:17] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 96.93 131
+[dens] 97.13 131
+[dens] 97.33 131
+[dens] 97.53 131
+[dens] 97.73 131
+[gatilho] E2-4 15.80 como a relação da corrente vale
+[plano] gat:E2-4:como a relação da corrente vale A=1.86 W=0.00 D=7.60 ritmo=1.80 ritmo_w=1.00
+[alg] E2-4 passo mapas=5
+[11/06/26 17:49:18] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 97.80 131
+[dens] 98.00 131
+[dens] 98.20 131
+[dens] 98.40 131
+[dens] 98.60 131
+[dens] 98.80 131
+[dens] 99.00 131
+[audit]    99.0s TRÂNSITO glifo de glifo em (2.8; -0.4) cruza '\alpha_1=\frac{3\pi-2\pi}{4}' por mais de 2 quadros
+[dens] 99.20 131
+[dens] 99.40 131
+[dens] 99.60 131
+[dens] 99.80 131
+[dens] 100.00 131
+[dens] 100.13 150
+[11/06/26 17:49:23] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 100.13 150
+[dens] 100.33 150
+[dens] 100.53 142
+[11/06/26 17:49:24] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 100.53 142
+[dens] 100.73 142
+[dens] 100.93 142
+[dens] 101.13 142
+[11/06/26 17:49:26] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 101.13 142
+[dens] 101.33 142
+[dens] 101.53 142
+[dens] 101.73 142
+[dens] 101.93 142
+[dens] 102.13 142
+[dens] 102.33 142
+[dens] 102.53 142
+[dens] 102.73 142
+[dens] 102.93 142
+[pulso] E2-4 abs 1229.1 s dp 0.80 alvos ['MathTex:3.7,5.7', 'VGroup:3.7,5.7', 'VGroup:3.7,4.4']
+[11/06/26 17:49:29] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 103.00 142
+[dens] 103.20 142
+[dens] 103.40 142
+[dens] 103.60 142
+[dens] 103.80 142
+[11/06/26 17:49:31] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 103.80 142
+[dens] 104.00 142
+[dens] 104.20 142
+[dens] 104.40 142
+[dens] 104.60 142
+[dens] 104.80 142
+[dens] 105.00 142
+[dens] 105.20 142
+[gatilho] E2-4 23.40 com o pneu sem escorregar
+[plano] gat:E2-4:com o pneu sem escorregar A=0.70 W=0.00 D=1.92 ritmo=1.66 ritmo_w=1.00
+[11/06/26 17:49:34] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 105.40 142
+[dens] 105.60 142
+[dens] 105.80 142
+[dens] 106.00 142
+[dens] 106.20 142
+[dens] 106.40 142
+[dens] 106.53 142
+[11/06/26 17:49:36] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 106.53 142
+[dens] 106.73 142
+[dens] 106.93 142
+[dens] 107.13 142
+[dens] 107.33 142
+[gatilho] E2-4 25.40 a bicicleta acelera isso vezes trinta e cinco
+[plano] gat:E2-4:a bicicleta acelera isso vezes trinta e c A=1.30 W=0.00 D=6.74 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:49:38] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 107.40 142
+[dens] 107.60 142
+[dens] 107.80 142
+[dens] 108.00 142
+[dens] 108.20 142
+[dens] 108.40 142
+[dens] 108.60 142
+[dens] 108.80 142
+[dens] 109.00 142
+[dens] 109.20 142
+[dens] 109.40 142
+[dens] 109.60 142
+[dens] 109.73 142
+[alg] E2-4 escreve n=6 voos=2 dx=0.22 D=1.30 a=\alpha_2R\approx0{,}69\ \mathrm{m/s^2}
+[11/06/26 17:49:42] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 109.73 156
+[dens] 109.93 156
+[11/06/26 17:49:43] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 110.00 156
+[dens] 110.20 156
+[dens] 110.40 156
+[dens] 110.60 156
+[dens] 110.80 156
+[dens] 111.00 156
+[dens] 111.20 156
+[dens] 111.40 156
+[pulso] E2-4 abs 1237.7 s dp 0.80 alvos ['MathTex:3.2,4.8', 'VGroup:3.2,4.8', 'VGroup:3.2,4.8']
+[11/06/26 17:49:46] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 111.60 156
+[dens] 111.80 156
+[dens] 112.00 156
+[dens] 112.20 156
+[dens] 112.40 156
+[11/06/26 17:49:48] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 112.40 170
+[dens] 112.60 170
+[dens] 112.80 170
+[dens] 113.00 170
+[dens] 113.20 170
+[dens] 113.40 170
+[dens] 113.60 170
+[dens] 113.80 170
+[dens] 114.00 170
+[gatilho] E2-4 32.20 e nesses quatro segundos o pedal dá
+[plano] gat:E2-4:e nesses quatro segundos o pedal dá A=1.56 W=0.00 D=2.06 ritmo=1.15 ritmo_w=1.00
+[11/06/26 17:49:51] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 114.20 170
+[dens] 114.40 170
+[dens] 114.60 170
+[dens] 114.80 170
+[dens] 115.00 170
+[dens] 115.20 170
+[dens] 115.33 170
+[alg] E2-4 escreve n=6 voos=0 dx=0.16 D=1.00 \Delta\theta_1=\tfrac12(2\pi+3\pi)\cdot4
+[11/06/26 17:49:54] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 115.33 186
+[dens] 115.53 186
+[ajuste]   115.6s linha encolhida para caber na Pilha (5.97 → 5.70, fator 0.95) 0.0
+[11/06/26 17:49:55] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 115.60 186
+[dens] 115.80 138
+[dens] 115.87 138
+[11/06/26 17:49:56] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 115.87 138
+[dens] 116.07 138
+[dens] 116.27 138
+[gatilho] E2-4 34.27 exatamente cinco voltas
+[plano] gat:E2-4:exatamente cinco voltas A=1.70 W=0.00 D=5.30 ritmo=1.77 ritmo_w=1.00
+[alg] E2-4 passo mapas=4
+[11/06/26 17:49:58] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 116.27 144
+[dens] 116.47 144
+[dens] 116.67 144
+[dens] 116.87 144
+[dens] 117.07 144
+[dens] 117.27 144
+[dens] 117.47 144
+[dens] 117.67 144
+[dens] 117.87 144
+[dens] 118.07 144
+[dens] 118.27 144
+[dens] 118.47 144
+[dens] 118.53 156
+[11/06/26 17:50:02] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 118.53 156
+[dens] 118.73 156
+[dens] 118.93 156
+[dens] 119.13 156
+[dens] 119.27 156
+[11/06/26 17:50:03] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 119.27 156
+[dens] 119.47 156
+[dens] 119.67 156
+[dens] 119.87 156
+[dens] 120.07 156
+[dens] 120.27 156
+[dens] 120.47 156
+[dens] 120.67 156
+[dens] 120.87 156
+[dens] 121.07 156
+[pulso] E2-4 abs 1247.2 s dp 0.40 alvos ['VGroup:3.9,5.7', 'RoundedRectangle:3.9,5.7', 'Text:5.9,1.2']
+[11/06/26 17:50:07] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 121.13 156
+[dens] 121.33 156
+[dens] 121.53 156
+[plano] ate:E2-4:0.99 A=0.00 W=0.00 D=0.40 ritmo=1.00 ritmo_w=1.00
+[11/06/26 17:50:08] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 121.53 156
+[dens] 121.73 156
+[plano] an:E2-5 A=1.70 W=0.00 D=2.30 ritmo=1.16 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 121.93 156
+[dens] 122.13 156
+[dens] 122.33 48
+[dens] 122.40 32
+[11/06/26 17:50:10] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 122.40 27
+[dens] 122.60 40
+[dens] 122.80 40
+[dens] 122.87 40
+[11/06/26 17:50:11] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 122.87 40
+[dens] 123.07 40
+[dens] 123.27 40
+[dens] 123.47 40
+[dens] 123.67 40
+[dens] 123.87 40
+[dens] 123.93 40
+[alg] E2-5 escreve n=4 voos=0 dx=0.23 D=0.90 v_c=\omega_1r_1
+[11/06/26 17:50:12] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 123.93 47
+[dens] 124.13 47
+                    WARNING  The original total run_time of       scene.py:1131
+                             PE2.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PE2.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[dens] 124.20 47
+[gatilho] E2-5 2.33 um elo andando a zero vírgula sessenta
+[plano] gat:E2-5:um elo andando a zero vírgula sessenta A=1.72 W=0.00 D=3.71 ritmo=1.47 ritmo_w=1.00
+[11/06/26 17:50:13] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 124.27 47
+[dens] 124.47 65
+[dens] 124.67 65
+[dens] 124.87 65
+[dens] 125.07 65
+[dens] 125.27 65
+[dens] 125.47 65
+[ajuste]   125.5s filha encolhida (fator 0.96) 0.0
+[11/06/26 17:50:14] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 125.47 65
+[dens] 125.67 65
+[dens] 125.87 65
+[dens] 126.07 65
+[dens] 126.27 65
+[dens] 126.47 65
+[dens] 126.67 65
+[dens] 126.80 65
+[alg] E2-5 escreve n=6 voos=1 dx=0.18 D=0.92 =2\pi\cdot0{,}10\approx0{,}63\ \mathrm{m/s}
+[11/06/26 17:50:16] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 126.80 81
+[dens] 127.00 81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 127.07 81
+[dens] 127.27 81
+[dens] 127.47 81
+[dens] 127.67 81
+[dens] 127.87 81
+[gatilho] E2-5 6.07 tem aceleração centrípeta de três vírgula nove na coroa
+[plano] gat:E2-5:tem aceleração centrípeta de três vírgula A=1.80 W=0.00 D=3.41 ritmo=1.38 ritmo_w=1.00
+[11/06/26 17:50:17] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 128.00 81
+[dens] 128.20 88
+[dens] 128.40 88
+[dens] 128.60 88
+[dens] 128.67 88
+[11/06/26 17:50:18] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 128.67 88
+[dens] 128.87 88
+[dens] 129.07 88
+[dens] 129.27 88
+[dens] 129.47 88
+[dens] 129.67 88
+[dens] 129.87 88
+[dens] 130.07 88
+[dens] 130.27 88
+[dens] 130.47 88
 [alg] E2-5 escreve n=7 voos=2 dx=0.18 D=1.30 a_c=\frac{v^2}{r_1}\approx3{,}9\ \mathrm{m/s^2}
-[11/04/26 18:30:18] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 146.40 125
-[dens] 146.60 125
-[11/04/26 18:30:20] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 146.67 125
-[dens] 146.87 125
-[dens] 147.07 125
-[dens] 147.27 125
-[dens] 147.47 125
-[dens] 147.67 125
-[gatilho] E2-5 10.80 e de nove vírgula nove na catraca
-[11/04/26 18:30:24] INFO     Caching disabled.             cairo_renderer.py:81
-[dens] 147.87 125
-[audit]   148.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 148.07 132
-[audit]   148.3s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 148.27 132
-[audit]   148.4s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 148.40 132
-[11/04/26 18:30:27] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   148.4s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 148.40 132
-[audit]   148.6s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 148.60 132
-[audit]   148.8s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 148.80 132
-[audit]   149.0s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 149.00 132
-[audit]   149.2s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 149.20 132
-[audit]   149.4s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 149.40 132
-[audit]   149.6s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 149.60 132
-[audit]   149.7s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   149.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 149.73 132
+[11/06/26 17:50:21] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 130.47 104
+[dens] 130.67 104
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 130.73 104
+[dens] 130.93 104
+[dens] 131.13 104
+[dens] 131.33 104
+[gatilho] E2-5 9.53 e de nove vírgula nove na catraca
+[plano] gat:E2-5:e de nove vírgula nove na catraca A=1.80 W=0.00 D=2.21 ritmo=1.11 ritmo_w=1.00
+[11/06/26 17:50:22] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 131.47 104
+[dens] 131.67 111
+[dens] 131.87 111
+[dens] 132.00 111
+[11/06/26 17:50:23] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 132.00 111
+[dens] 132.20 111
+[dens] 132.40 111
+[dens] 132.60 111
+[dens] 132.80 111
+[dens] 133.00 111
+[dens] 133.20 111
+[dens] 133.40 111
+[dens] 133.47 111
 [alg] E2-5 escreve n=7 voos=2 dx=0.18 D=1.30 a_c=\frac{v^2}{r_2}\approx9{,}9\ \mathrm{m/s^2}
-[11/04/26 18:30:34] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   149.7s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[audit]   149.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 149.73 148
-[audit]   149.9s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   149.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 149.93 148
-[11/04/26 18:30:37] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   150.0s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 150.00 148
-[audit]   150.2s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 150.20 148
-[gatilho] E2-5 13.33 mesma velocidade raio menor
-[11/04/26 18:30:39] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   150.4s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 150.40 148
-[audit]   150.6s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 150.60 148
-[audit]   150.8s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 150.80 148
-[audit]   151.0s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 151.00 148
-[audit]   151.2s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 151.20 148
+[11/06/26 17:50:25] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 133.47 127
+[dens] 133.67 127
+[gatilho] E2-5 11.80 mesma velocidade raio menor
+[plano] gat:E2-5:mesma velocidade raio menor A=0.80 W=0.00 D=8.26 ritmo=1.80 ritmo_w=1.00
+[11/06/26 17:50:26] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 133.73 127
+[dens] 133.93 127
+[dens] 134.13 127
+[dens] 134.33 127
+[dens] 134.53 127
+[dens] 134.73 127
+[dens] 134.93 127
+[dens] 135.13 127
+[dens] 135.20 127
 [alg] E2-5 escreve n=6 voos=0 dx=0.12 D=0.80 0.0
-[11/04/26 18:30:46] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   151.2s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 151.20 169
-[audit]   151.4s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 151.40 169
-[11/04/26 18:30:48] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   151.5s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 151.47 169
-[audit]   151.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 151.67 169
-[audit]   151.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 151.87 169
-[audit]   152.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 152.07 169
-[audit]   152.3s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 152.27 169
-[audit]   152.5s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 152.47 169
-[audit]   152.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 152.67 169
-[audit]   152.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 152.87 169
-[pulso] E2-5 abs 1307.5 s dp 0.80 alvos ['VGroup:3.5,5.3', 'VGroup:3.5,5.3', 'VGroup:3.5,5.3']
-[11/04/26 18:30:57] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   153.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 153.07 169
-[audit]   153.3s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 153.27 169
-[audit]   153.5s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 153.47 169
-[audit]   153.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 153.67 169
-[audit]   153.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 153.87 169
-[11/04/26 18:31:02] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   153.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 153.87 190
-[audit]   154.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 154.07 190
-[audit]   154.3s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 154.27 190
-[audit]   154.5s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 154.47 190
-[gatilho] E2-5 17.47 a dica que fica
+[11/06/26 17:50:28] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 135.20 148
+[dens] 135.40 148
+[11/06/26 17:50:29] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 135.47 148
+[dens] 135.67 148
+[dens] 135.87 148
+[dens] 136.07 148
+[dens] 136.27 148
+[dens] 136.47 148
+[dens] 136.67 148
+[dens] 136.87 148
+[pulso] E2-5 abs 1263.1 s dp 0.80 alvos ['VGroup:3.5,5.3', 'VGroup:3.5,5.3', 'VGroup:3.5,5.3']
+[11/06/26 17:50:31] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 137.07 148
+[dens] 137.27 148
+[dens] 137.47 148
+[dens] 137.67 148
+[dens] 137.87 148
+[11/06/26 17:50:33] WARNING  Attempted adding some Mobject as a  mobject.py:557
+                             child more than once, this is not                 
+                             possible. Repetitions are ignored.                
+                    WARNING  Attempted adding some Mobject as a  mobject.py:557
+                             child more than once, this is not                 
+                             possible. Repetitions are ignored.                
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 137.87 169
+[dens] 138.07 169
+[dens] 138.27 169
+[dens] 138.47 169
+[dens] 138.67 169
+[dens] 138.87 169
+[dens] 139.07 169
+[dens] 139.27 169
+[dens] 139.47 169
+[dens] 139.67 169
+[pulso] E2-5 abs 1265.8 s dp 0.80 alvos ['VGroup:3.5,5.3', 'VGroup:3.5,5.3', 'VGroup:3.5,5.3']
+[11/06/26 17:50:36] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 139.73 148
+[dens] 139.93 148
+[dens] 140.13 148
+[dens] 140.33 148
+[dens] 140.53 148
+[11/06/26 17:50:38] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 140.53 169
+[dens] 140.73 169
+[dens] 140.93 169
+[dens] 141.13 169
+[dens] 141.33 169
+[dens] 141.53 169
+[dens] 141.73 169
+[dens] 141.93 169
+[gatilho] E2-5 20.07 a dica que fica
+[plano] gat:E2-5:a dica que fica A=1.36 W=0.00 D=12.49 ritmo=1.80 ritmo_w=1.00
 [selo] DICA linhas=2 w=5.81 h=0.72
 [audit] FORA DA ZONA selo 'DICA' grande demais (5.81 × 0.72)
-[ajuste]   154.5s linha encolhida para caber na Pilha (5.81 → 5.80, fator 1.00) 0.0
-[11/04/26 18:31:07] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   154.5s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[audit]   154.5s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 154.53 190
-[audit]   154.7s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   154.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 154.73 151
-[11/04/26 18:31:09] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   154.7s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   154.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 154.73 151
-[audit]   154.9s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   154.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 154.93 151
-[audit]   155.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 155.07 151
+[ajuste]   142.0s linha encolhida para caber na Pilha (5.81 → 5.80, fator 1.00) 0.0
+[11/06/26 17:50:40] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 142.00 169
+[dens] 142.20 169
+[dens] 142.40 146
+[11/06/26 17:50:41] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 142.40 146
+[dens] 142.60 146
+[dens] 142.80 146
+[dens] 143.00 146
 [dica] borda_esq_dx=0.000 gap=-0.874 linhas=1
-[11/04/26 18:31:12] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   155.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 155.07 151
-[audit]   155.3s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 155.27 151
-[audit]   155.5s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 155.47 151
-[audit]   155.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 155.67 151
-[audit]   155.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 155.87 151
+[11/06/26 17:50:43] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 143.00 146
+[dens] 143.20 146
+[dens] 143.40 146
+[dens] 143.60 146
+[dens] 143.80 146
+[dens] 144.00 146
+[dens] 144.20 146
+[dens] 144.40 146
+[dens] 144.47 146
 [alg] E2-5 escreve n=6 voos=0 dx=0.12 D=0.80 0.0
-[11/04/26 18:31:18] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   155.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 155.87 201
-[audit]   156.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 156.07 201
-[11/04/26 18:31:20] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   156.1s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   156.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 156.13 201
-[audit]   156.3s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   156.3s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 156.33 201
-[audit]   156.5s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   156.5s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 156.53 201
-[audit]   156.7s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   156.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 156.73 201
-[audit]   156.9s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   156.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 156.93 201
-[audit]   157.1s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[audit]   157.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 157.13 201
-[audit]   157.3s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   157.3s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 157.33 201
-[audit]   157.5s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[audit]   157.5s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 157.53 201
-[pulso] E2-5 abs 1312.2 s dp 0.80 alvos ['VGroup:3.8,5.8', 'RoundedRectangle:3.8,5.8', 'VGroup:3.8,5.8']
-[11/04/26 18:31:29] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   157.7s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[audit]   157.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 157.73 201
-[audit]   157.9s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   157.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 157.93 201
-[audit]   158.1s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   158.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 158.13 201
-[audit]   158.3s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   158.3s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 158.33 201
-[audit]   158.5s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   158.5s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 158.53 201
-[11/04/26 18:31:35] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   158.5s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   158.5s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 158.53 201
-[audit]   158.7s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[audit]   158.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 158.73 201
-[audit]   158.9s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[audit]   158.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 158.93 201
-[audit]   159.1s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[audit]   159.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 159.13 201
-[audit]   159.3s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   159.3s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 159.33 201
-[audit]   159.5s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   159.5s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 159.53 201
-[audit]   159.7s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   159.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 159.73 201
-[audit]   159.9s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   159.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 159.93 201
-[audit]   160.1s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   160.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 160.13 201
-[audit]   160.3s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[audit]   160.3s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 160.33 201
-[pulso] E2-5 abs 1314.9 s dp 0.80 alvos ['VGroup:3.8,5.8', 'RoundedRectangle:3.8,5.8', 'VGroup:3.8,5.8']
-[11/04/26 18:31:44] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   160.4s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 160.40 201
-[audit]   160.6s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 160.60 201
-[audit]   160.8s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 160.80 201
-[audit]   161.0s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 161.00 201
-[audit]   161.2s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 161.20 201
-[11/04/26 18:31:49] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   161.2s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 161.20 201
-[audit]   161.4s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 161.40 201
-[audit]   161.6s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 161.60 201
-[audit]   161.8s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 161.80 201
-[audit]   162.0s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 162.00 201
-[audit]   162.2s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 162.20 201
-[audit]   162.4s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 162.40 201
-[audit]   162.6s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 162.60 201
-[audit]   162.8s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 162.80 201
-[audit]   163.0s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 163.00 201
-[pulso] E2-5 abs 1317.5 s dp 0.80 alvos ['VGroup:3.8,5.8', 'RoundedRectangle:3.8,5.8', 'VGroup:3.8,5.8']
-[11/04/26 18:32:02] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   163.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 163.07 201
-[audit]   163.3s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 163.27 201
-[audit]   163.5s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 163.47 201
-[audit]   163.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 163.67 201
-[audit]   163.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 163.87 201
-[11/04/26 18:32:08] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   163.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 163.87 201
-[audit]   164.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 164.07 201
-[audit]   164.3s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 164.27 201
-[audit]   164.5s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 164.47 201
-[audit]   164.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 164.67 201
-[audit]   164.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 164.87 201
-[audit]   165.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 165.07 201
-[audit]   165.3s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 165.27 201
-[audit]   165.5s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 165.47 201
-[audit]   165.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 165.67 201
-[pulso] E2-5 abs 1320.2 s dp 0.80 alvos ['VGroup:3.8,5.8', 'RoundedRectangle:3.8,5.8', 'VGroup:3.8,5.8']
-[11/04/26 18:32:19] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   165.7s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[audit]   165.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 165.73 201
-[audit]   165.9s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   165.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 165.93 201
-[audit]   166.1s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   166.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 166.13 201
-[audit]   166.3s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   166.3s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 166.33 201
-[audit]   166.5s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   166.5s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 166.53 201
-[11/04/26 18:32:25] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   166.5s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   166.5s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 166.53 201
-[audit]   166.7s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[audit]   166.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 166.73 201
-[audit]   166.9s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[audit]   166.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 166.93 201
-[audit]   167.1s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   167.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 167.13 201
-[audit]   167.3s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   167.3s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 167.33 201
-[audit]   167.5s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   167.5s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 167.53 201
-[audit]   167.7s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   167.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 167.73 201
-[audit]   167.9s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   167.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 167.93 201
-[audit]   168.1s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.5; -0.8) 
-[audit]   168.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 168.13 201
-[audit]   168.3s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[audit]   168.3s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 168.33 201
-[pulso] E2-5 abs 1322.9 s dp 0.32 alvos ['VGroup:3.8,5.8', 'RoundedRectangle:3.8,5.8', 'VGroup:3.8,5.8']
-[11/04/26 18:32:35] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   168.4s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 168.40 201
-[audit]   168.6s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.5; -0.8) 
-[dens] 168.60 201
-[audit]   168.7s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[audit]   168.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 168.73 201
-[11/04/26 18:32:40] INFO     Caching disabled.             cairo_renderer.py:81
-[audit]   168.7s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[audit]   168.7s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 168.73 201
-[audit]   168.9s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[audit]   168.9s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 168.93 201
-[audit]   169.1s TEXTO SOBRE OBJETO '\mathrm{RPM}' x VMobject em (-2.4; -0.8) 
-[audit]   169.1s TEXTO SOBRE OBJETO '9{,}9\ \mathrm{m/s^2}' x VMobject em (-2.4; -0.8) 
-[dens] 169.13 201
+[11/06/26 17:50:45] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 144.47 196
+[dens] 144.67 196
+[11/06/26 17:50:46] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 144.73 196
+[dens] 144.93 196
+[dens] 145.13 196
+[dens] 145.33 196
+[dens] 145.53 196
+[dens] 145.73 196
+[dens] 145.93 196
+[dens] 146.13 196
+[pulso] E2-5 abs 1272.4 s dp 0.80 alvos ['VGroup:3.8,5.8', 'RoundedRectangle:3.8,5.8', 'VGroup:3.8,5.8']
+[11/06/26 17:50:49] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 146.33 196
+[dens] 146.53 196
+[dens] 146.73 196
+[dens] 146.93 196
+[dens] 147.13 196
+[11/06/26 17:50:51] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 147.13 196
+[dens] 147.33 196
+[dens] 147.53 196
+[dens] 147.73 196
+[dens] 147.93 196
+[dens] 148.13 196
+[dens] 148.33 196
+[dens] 148.53 196
+[dens] 148.73 196
+[dens] 148.93 196
+[pulso] E2-5 abs 1275.1 s dp 0.80 alvos ['VGroup:3.8,5.8', 'RoundedRectangle:3.8,5.8', 'VGroup:3.8,5.8']
+[11/06/26 17:50:54] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 149.00 196
+[dens] 149.20 196
+[dens] 149.40 196
+[dens] 149.60 196
+[dens] 149.80 196
+[11/06/26 17:50:56] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 149.80 196
+[dens] 150.00 196
+[dens] 150.20 196
+[dens] 150.40 196
+[dens] 150.60 196
+[dens] 150.80 196
+[dens] 151.00 196
+[dens] 151.20 196
+[dens] 151.40 196
+[dens] 151.60 196
+[pulso] E2-5 abs 1277.7 s dp 0.80 alvos ['VGroup:3.8,5.8', 'RoundedRectangle:3.8,5.8', 'VGroup:3.8,5.8']
+[11/06/26 17:50:59] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 151.67 196
+[dens] 151.87 196
+[dens] 152.07 196
+[dens] 152.27 196
+[dens] 152.47 196
+[11/06/26 17:51:01] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 152.47 196
+[dens] 152.67 196
+[dens] 152.87 196
+[dens] 153.07 196
+[dens] 153.27 196
+[dens] 153.47 196
+[dens] 153.67 196
+[dens] 153.87 196
+[dens] 154.07 196
+[dens] 154.27 196
+[11/06/26 17:51:04] WARNING  The original total run_time of       scene.py:1131
+                             PE2.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PE2.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[dens] 154.33 196
+[plano] ate:E2-5:0.99 A=0.00 W=0.00 D=0.47 ritmo=1.00 ritmo_w=1.00
+[11/06/26 17:51:05] INFO     Caching disabled.             cairo_renderer.py:81
+[dens] 154.40 196
+[dens] 154.60 196
+[dens] 154.80 196
 [ancora] E2-1 0.00
-[ancora] E2-2 19.27
-[ancora] E2-3 45.60
-[ancora] E2-4 92.60
-[ancora] E2-5 137.07
-[ancora] FIM 169.33
-[degrade] objetos com degradê por marca: {'aco': 16083}
-[cor] tokens conferidos: 1931; fora da tabela: 1
-[tempo] total 169.3 s (2540 quadros)
+[ancora] E2-2 18.40
+[ancora] E2-3 40.20
+[ancora] E2-4 82.00
+[ancora] E2-5 121.93
+[ancora] FIM 154.87
+[degrade] objetos com degradê por marca: {'aco': 14707}
+[cor] tokens conferidos: 1429; fora da tabela: 0
+[tempo] total 154.9 s (2323 quadros)
 [cor] origem (G24 v3): 6 pares conferidos; fora da cor de origem: 0
-[11/04/26 18:32:45] INFO     Rendered PE2                          scene.py:290
-                             Played 201 animations                             
+[11/06/26 17:51:06] INFO     Rendered PE2                          scene.py:290
+                             Played 174 animations                             
 You are using manim version v0.21.0, but version v0.22.1 is available.
 You should consider upgrading via pip install -U manim

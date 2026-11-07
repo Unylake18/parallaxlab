@@ -1,138 +1,17 @@
 {
 "lote": "PH",
-"n_tex": 16,
-"n_glifos": 21,
-"violacoes": [
-{
-"tex": "1{,}9\\ \\mathrm{m}",
-"glifo": "lim",
-"cor": "#B7C4DA",
-"esp": "#F5F7FF",
-"n": 199,
-"t0": 17.067,
-"t1": 50.201,
-"k": "3"
-},
-{
-"tex": "\\approx 100\\ \\mathrm{km/h}",
-"glifo": "lim",
-"cor": "#9C8CFF",
-"esp": "#F5F7FF",
-"n": 6,
-"t0": 21.401,
-"t1": 22.068,
-"k": "5"
-},
-{
-"tex": "10\\ \\mathrm{cm}",
-"glifo": "lim",
-"cor": "#B8C4D9",
-"esp": "#F5F7FF",
-"n": 170,
-"t0": 21.667,
-"t1": 50.0,
-"k": "3"
-},
-{
-"tex": "\\approx 100\\ \\mathrm{km/h}",
-"glifo": "lim",
-"cor": "#9C8CFF",
-"esp": "#F5F7FF",
-"n": 167,
-"t0": 22.267,
-"t1": 50.0,
-"k": "5"
-},
-{
-"tex": "\\approx 970\\ \\mathrm{km/h}",
-"glifo": "lim",
-"cor": "#9C8CFF",
-"esp": "#F5F7FF",
-"n": 6,
-"t0": 26.534,
-"t1": 27.201,
-"k": "5"
-},
-{
-"tex": "(95\\ \\mathrm{cm})",
-"glifo": "(",
-"cor": "#B8C4DA",
-"esp": "#F5F7FF",
-"n": 143,
-"t0": 26.534,
-"t1": 50.0,
-"k": "0"
-},
-{
-"tex": "(95\\ \\mathrm{cm})",
-"glifo": "lim",
-"cor": "#B8C4DA",
-"esp": "#F5F7FF",
-"n": 143,
-"t0": 26.534,
-"t1": 50.0,
-"k": "4"
-},
-{
-"tex": "(95\\ \\mathrm{cm})",
-"glifo": ")",
-"cor": "#B8C4DA",
-"esp": "#F5F7FF",
-"n": 143,
-"t0": 26.534,
-"t1": 50.0,
-"k": "5"
-},
-{
-"tex": "\\approx 970\\ \\mathrm{km/h}",
-"glifo": "lim",
-"cor": "#9C8CFF",
-"esp": "#F5F7FF",
-"n": 137,
-"t0": 27.4,
-"t1": 50.0,
-"k": "5"
-},
-{
-"tex": "343\\ \\mathrm{m/s}",
-"glifo": "lim",
-"cor": "#9C8CFF",
-"esp": "#F5F7FF",
-"n": 39,
-"t0": 30.2,
-"t1": 36.267,
-"k": "3"
-},
-{
-"tex": "1{.}000\\ \\mathrm{km/h}",
-"glifo": "lim",
-"cor": "#9C8CFF",
-"esp": "#F5F7FF",
-"n": 79,
-"t0": 36.8,
-"t1": 50.201,
-"k": "6"
-},
-{
-"tex": "1{.}000\\ \\mathrm{km/h}",
-"glifo": "lim",
-"cor": "#9C8CFF",
-"esp": "#F5F7FF",
-"n": 152,
-"t0": 53.934,
-"t1": 80.267,
-"k": "6"
-}
-],
+"n_tex": 15,
+"n_glifos": 20,
+"violacoes": [],
 "curtas": 0,
 "omega": {},
 "caixas_vazias": [],
 "frases": {
 "?": [
-29.999999999999957,
-42.39972778440421,
-36.8,
-80.267
+29.999999999999982,
+40.00000000000004,
+34.8,
+70.333
 ]
 }
 }

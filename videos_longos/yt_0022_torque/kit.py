@@ -64,7 +64,7 @@ def escuro(c, w):
 
 T_HL, T_MAIN, T_LAB, T_SMALL = 44, 34, 26, 22
 M_MAIN, M_MID, M_REF, M_LAB = 68, 56, 46, 40
-FPS = 15
+FPS = int(os.environ.get("FPS_RENDER", "15"))       # 15 = preview 960×540; 30 = render final 1920×1080
 FRAC = 0.02 / FPS            # folga p/ np.arange não criar um quadro extra
 
 AUDITORIA = os.environ.get("AUDITORIA") == "1"
@@ -74,7 +74,7 @@ ANC = json.loads((AQUI / "ancoras.json").read_text(encoding="utf-8"))["ancoras"]
 
 
 SYNC = os.environ.get("SYNC", "final")      # v9: "medir" (passe a seco: mede o tempo nominal de cada trecho) | "final" (encaixa cada trecho na voz)
-LEAD = 0.12                                  # v9: a imagem começa ~0,12 s antes da palavra; tolerância -0,15 s … +0,20 s
+LEAD = 0.09                                  # v9: a imagem começa ~0,12 s antes da palavra; tolerância -0,15 s … +0,20 s
 
 
 def plano(A, W, D):
@@ -90,14 +90,19 @@ def plano(A, W, D):
     return max(0.5, (D - wp) / A), (wp / W if W > 1e-6 else 1.0)
 
 
-def poeira_estelar(clk, n=200, seed=19):
-    """v10 R-M: campo de estrelas minúsculas à deriva (3 camadas, parallax) atrás de todo o conteúdo. Movimento contínuo e discreto; sem texto, sem física."""
+LFUNDO = 9.1      # v6: meia-largura do campo de estrelas (tela = ±7,1): a reciclagem (mod) só ocorre ≥ 2 u fora da tela
+
+
+def poeira_estelar(clk, n=227, seed=19, vmul=1.0, opm=1.0, t0=None):
+    """v6: campo de estrelas minúsculas (3 camadas, parallax) atrás de todo o conteúdo, SEMPRE para a esquerda, em velocidade constante por camada.
+    Independe da sincronia: a posição é função do relógio GLOBAL do vídeo `t0() + clk` (t0 = início do lote na voz), então não reinicia por lote,
+    não para e não volta. Sem balanço vertical; a volta (mod) acontece só fora da tela."""
     rng = np.random.default_rng(seed)
-    xs, ys = rng.uniform(-8.4, 8.4, n), rng.uniform(-4.7, 4.7, n)
+    xs, ys = rng.uniform(-LFUNDO, LFUNDO, n), rng.uniform(-4.7, 4.7, n)
     cam = rng.integers(0, 3, n)
-    vel = np.array([0.16, 0.30, 0.52])[cam] * rng.uniform(0.85, 1.15, n)
-    rad = np.array([0.010, 0.016, 0.022])[cam]
-    op = np.array([0.18, 0.28, 0.40])[cam]
+    vel = np.array([0.40, 0.75, 1.25])[cam] * vmul
+    rad = np.array([0.0145, 0.0215, 0.031])[cam]
+    op = np.array([0.18, 0.31, 0.50])[cam] * opm
     pts = [Dot(P3(xs[i], ys[i]), radius=float(rad[i]), color="#DCE8FF").set_opacity(float(op[i])) for i in range(n)]
     g = VGroup(*pts)
     g._fundo = True
@@ -106,10 +111,10 @@ def poeira_estelar(clk, n=200, seed=19):
     g.set_z_index(-60)
 
     def f_(m):
-        t = clk.get_value()
+        t = clk.get_value() + (t0() if t0 else 0.0)
         for i, d_ in enumerate(m.submobjects):
-            x = ((xs[i] - vel[i] * t + 8.4) % 16.8) - 8.4
-            d_.move_to(P3(x, ys[i] + 0.06 * math.sin(0.5 * t + i)))
+            x = ((xs[i] - vel[i] * t + LFUNDO) % (2 * LFUNDO)) - LFUNDO
+            d_.move_to(P3(x, ys[i]))
     f_(g)
     g.add_updater(f_)
     return g
@@ -367,7 +372,8 @@ def tinge(m, pular=()):
             continue
         gh, gy = g.height, g.get_center()[1]
         gb = gy - gh / 2
-        sub = base is not None and gh < 0.85 * base[0] and (gb < base[2] - 0.02 or gb > base[1]) and not em_fracao(g)
+        oper = g.width > 1.9 * gh or gh < 0.2 * (base[0] if base else 1.0)          # '=', '+', '−', '·' nunca herdam cor
+        sub = base is not None and not oper and not em_fracao(g) and ((gh < 0.85 * base[0] and (gb < base[2] - 0.02 or gb > base[1])) or (gh < 1.12 * base[0] and gb < base[2] - 0.05))
         if i_ is None:
             if herda is not None and sub:
                 if j not in pular:
@@ -1197,7 +1203,7 @@ class Base(Scene):
         self.fundo = ImageMobject(str(AQUI / self.FUNDO)).set_width(16).move_to(ORIGIN).set_z_index(-100)
         self.add(self.fundo)
         self.clk = ValueTracker(0.0)
-        self.poeira = poeira_estelar(self.clk)                # v10 R-M: poeira de estrelas à deriva (parallax), atrás de tudo: a tela nunca fica estática
+        self.poeira = poeira_estelar(self.clk, t0=lambda: (getattr(self, "_off", None) or 0) / FPS)                # v10 R-M: poeira de estrelas à deriva (parallax), atrás de tudo: a tela nunca fica estática
         self.add(self.poeira)
         self.nq = 0
         self.lote = type(self).__name__
@@ -1238,6 +1244,7 @@ class Base(Scene):
         rt = run_time
         if rt is None:
             rt = max([getattr(a, "run_time", 1.0) for a in anims] or [1.0])
+        anims = self._sem_fantasma(anims)                    # v6: depois do rt (a duração do play não muda ao tirar um FadeOut fantasma)
         if not fixo:
             if SYNC == "medir":
                 self._cur["A"] += rt                         # v9: tempo nominal de animação do trecho (medição)
@@ -1264,6 +1271,36 @@ class Base(Scene):
         self.nq += n
         if AUDITORIA:
             self._auditar()                                  # v3 §3: e o estado final de cada play (depois dos removers)
+
+    def _sem_fantasma(self, anims):
+        """v6 (FLASH): `FadeOut` de um objeto que já saiu da cena (ex.: `pilha.limpa()` já apagou a linha e o bloco ainda a lista de novo) faz o Manim
+        RE-MOSTRAR o objeto com a opacidade original e apagá-lo outra vez: o "flash" de texto/fórmula antes da escrita. Aqui o FadeOut só pega o que está na cena."""
+        pres = {id(x) for m in self.mobjects for x in m.get_family()}
+
+        def colhe(x):                                        # partes de x que estão na cena (x inteiro, ou, se x é um grupo solto, suas partes presentes)
+            if id(x) in pres:
+                return [x]
+            return [y for c_ in x.submobjects for y in colhe(c_)]
+        out = []
+        for a in anims:
+            if isinstance(a, FadeOut) and not isinstance(a, FadeIn):
+                m = a.mobject
+                if id(m) in pres:
+                    out.append(a)
+                    continue
+                vivos = colhe(m)
+                folhas = [x for x in m.get_family() if not x.submobjects]
+                perdidos = sum(1 for x in folhas if id(x) not in pres)
+                if not perdidos:
+                    out.append(a)
+                    continue
+                self._fantasmas = getattr(self, "_fantasmas", 0) + 1
+                print(f"[fantasma] {self.nq / FPS:7.1f}s FadeOut de objeto fora da cena ({perdidos} de {max(1, len(folhas))} folhas)")
+                if vivos:
+                    out.append(FadeOut(VGroup(*vivos), run_time=a.run_time))
+                continue
+            out.append(a)
+        return tuple(out)
 
     def update_to_time(self, t):
         """v3 §3: a auditoria roda a cada 3 quadros DENTRO do play (crossfade de selos, Pilha rolando, rótulos que seguem corpos, ápice)."""
@@ -1435,8 +1472,12 @@ class Base(Scene):
             (AQUI / f"medicao_{self.lote}.json").write_text(json.dumps({"lote": self.lote, "marcas": self._segs}, indent=0), encoding="utf-8")
 
     # cabeçalho -------------------------------------------------------------------------------------------------
+    def poeira_extra(self, **kw):
+        """v6: desativada. O fundo não pode ter estrelas surgindo na tela nem velocidade variável; cena parada resolve-se com movimento do conteúdo."""
+        return VGroup()
+
     def fixos(self):
-        return {self.fundo, self.poeira, self.wm, self.h1, *([self.h2] if self.h2 else []), *([self._sl] if getattr(self, '_sl', None) else [])}
+        return {self.fundo, self.poeira, *getattr(self, "_pex", []), self.wm, self.h1, *([self.h2] if self.h2 else []), *([self._sl] if getattr(self, '_sl', None) else [])}
 
     def secao(self, s, selo=None):
         """Linha 2 do header (e selo da fonte, linha 3): o antigo sai (0,25 s) antes de o novo entrar."""

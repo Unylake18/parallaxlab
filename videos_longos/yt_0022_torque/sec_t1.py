@@ -38,8 +38,8 @@ class LoteT1(Lote22):
         p_perto = P3(*tela_porta(cam, 0.15, 0.0), 0.0)
         p_mac = P3(*tela_porta(cam, 0.75, 0.0), 0.0)
 
-        lbl_dob = txt("DOBRADIÇA", 24, color=GEO).move_to(p_dob + P3(0.0, -0.68))
-        lbl_mac = txt("MAÇANETA", 24, color=GEO).move_to(p_mac + P3(0.0, -0.68))
+        lbl_dob = txt("DOBRADIÇA", 30, color=GEO).move_to(p_dob + P3(0.0, 1.6))
+        lbl_mac = txt("MAÇANETA", 30, color=GEO).move_to(p_mac + P3(0.0, 1.6))
         cab_t1 = txt("MESMA FORÇA, DISTÂNCIAS DIFERENTES:", 26, bold=True, color=TQ)
         self.pilha.poe(cab_t1)
         self.play(FadeIn(lbl_dob), FadeIn(lbl_mac), FadeIn(cab_t1), run_time=0.7)
@@ -88,11 +88,12 @@ class LoteT1(Lote22):
         self.pilha.limpa()
         cab_t12 = txt("O QUE DECIDE O GIRO:", 28, bold=True, color=TQ)
         self.pilha.poe(cab_t12)
-        self.play(FadeOut(cab_t1), FadeOut(card1), FadeOut(card2), FadeOut(lbl_mac), FadeOut(lbl_dob), FadeIn(cab_t12), ang_p.animate.set_value(0.0), run_time=0.5)
+        self.play(FadeOut(cab_t1), FadeOut(card1), FadeOut(card2), FadeOut(lbl_mac), FadeOut(lbl_dob), ang_p.animate.set_value(0.0), run_time=0.3)
+        self.play(FadeIn(cab_t12), run_time=0.3)
 
         # φ = 90°
         arco_90 = RightAngle(Line(p_mac, p_dob), Line(p_mac, p_mac + UP), length=0.26, color=GEO)
-        lbl_90 = nm(r"90^\circ", GEO, 36).move_to(p_mac + P3(-0.48, -0.48))
+        lbl_90 = nm(r"90^\circ", GEO, 36).move_to(p_mac + P3(-0.8, -0.8))
         self.gat("perpendicular à porta")
         self.play(FadeIn(arco_90), FadeIn(lbl_90), ang_p.animate.set_value(0.36), run_time=1.1)
         self.play(ang_p.animate.set_value(0.0), run_time=0.5)
@@ -103,14 +104,14 @@ class LoteT1(Lote22):
         dir_30 = np.array([-math.cos(ang_30), math.sin(ang_30), 0.0])
         s_f30 = seta(p_mac - dir_30 * 1.45, p_mac - dir_30 * 0.10, FC, 6, tip=0.22)
         lbl_30 = nm(r"30^\circ", GEO, 36).move_to(p_mac + P3(-0.68, -0.42))
-        self.play(FadeOut(arco_90), Transform(s_f2, s_f30), Transform(lbl_90, lbl_30), l_f1.animate.next_to(s_f30, DOWN, buff=0.18), ang_p.animate.set_value(0.16), run_time=1.1)
+        self.play(FadeOut(arco_90), Transform(s_f2, s_f30), Transform(lbl_90, lbl_30), l_f1.animate.move_to(p_mac - dir_30 * 1.45 + P3(0.0, -0.5)), ang_p.animate.set_value(0.16), run_time=1.1)
         self.play(ang_p.animate.set_value(0.0), run_time=0.4)
 
         # φ = 0° (apontando para a dobradiça) + LINHA DE AÇÃO tracejada
         self.gat("apontando para a dobradiça")
         s_f0 = seta(p_mac + P3(1.45, 0.0), p_mac + P3(0.10, 0.0), FC, 6, tip=0.22)
         lin_acao = DashedLine(p_dob + P3(-0.75, 0.0), p_mac + P3(1.55, 0.0), dash_length=0.10).set_stroke(GEO, 2.4, opacity=0.85)
-        lbl_la = txt("LINHA DE AÇÃO PASSA PELO EIXO", 24, color=GEO).move_to((p_dob + p_mac) / 2 + P3(0.2, -0.72))
+        lbl_la = txt("LINHA DE AÇÃO PASSA PELO EIXO", 30, color=GEO).move_to((p_dob + p_mac) / 2 + P3(0.2, 1.45))
         self.play(Transform(s_f2, s_f0), FadeOut(lbl_90), l_f1.animate.next_to(s_f0, UP, buff=0.22), Create(lin_acao), FadeIn(lbl_la), run_time=0.9)
 
         # Resumo dos 3 ingredientes na Pilha
@@ -135,58 +136,58 @@ class LoteT1(Lote22):
         )
 
         # Dois esquemas 2D empilhados na esquerda: em cima (1º jeito: braço de alavanca r_⊥), embaixo (2º jeito: força perpendicular F_⊥)
-        O1 = P3(-5.8, 1.05)
+        O1 = P3(-5.8, 1.5)
         L_ESQ = 3.2
         phi = math.radians(38.0)
         P_ap1 = O1 + RIGHT * L_ESQ
         u_f = np.array([math.cos(phi), math.sin(phi), 0.0])
         porta_sup = porta2d(O1, comp=L_ESQ, esp=0.18, ang=0.0)
         s_F_sup = seta(P_ap1, P_ap1 + u_f * 1.35, FC, 6, tip=0.20)
-        l_F_sup = T("F", 38, FC).next_to(P_ap1 + u_f * 1.35, RIGHT, buff=0.14)
+        l_F_sup = T("F", 40, FC).next_to(P_ap1 + u_f * 1.35, DR, buff=0.30)
         l_r_sup = T("r", 38, GEO).move_to(O1 + RIGHT * (L_ESQ * 0.52) + DOWN * 0.38)
         arco_phi1 = Arc(radius=0.52, start_angle=0.0, angle=phi, arc_center=P_ap1).set_stroke(GEO, 2.4)
-        l_phi1 = T(r"\varphi", 36, GEO).move_to(P_ap1 + P3(0.76, 0.24))
+        l_phi1 = T(r"\varphi", 36, GEO).move_to(P_ap1 + P3(1.0, 0.10))
 
         A, ia = M(r"\tau", "=", "r", "F", r"\sin\varphi", size=54)
         self.pilha.poe(A)
         self.play(FadeIn(porta_sup), FadeIn(s_F_sup), FadeIn(l_F_sup), FadeIn(l_r_sup), Create(arco_phi1), FadeIn(l_phi1), run_time=0.7)
         self.monta(A, ia, {2: l_r_sup, 3: l_F_sup, 4: l_phi1}, rt=1.1)
-        self.gat("o torque é a distância ao eixo vezes a força vezes o seno")
+        self.gat("a distância até o eixo vezes o tamanho da força vezes o seno")
 
         # 1º jeito: linha de ação tracejada + perpendicular r_⊥ do eixo até a linha de ação
-        self.gat("primeiro jeito")
+        self.gat("primeiro prolonga a linha de ação")
         p_pe_perp = O1 + (L_ESQ * math.sin(phi)) * np.array([math.sin(phi), -math.cos(phi), 0.0])
         lin_ac1 = DashedLine(P_ap1 - u_f * 2.75, P_ap1 + u_f * 1.55, dash_length=0.09).set_stroke(GEO, 2.0, opacity=0.75)
         seg_rperp = Line(O1, p_pe_perp).set_stroke(GEO, 5.0)
         ang_reto1 = RightAngle(Line(p_pe_perp, O1), Line(p_pe_perp, P_ap1), length=0.20, color=GEO)
-        l_rperp = T(r"r_\perp = r\sin\varphi", 36, GEO).move_to(O1 + P3(-0.65, -0.88))
-        tag_braco = txt("BRAÇO DE ALAVANCA", 22, bold=True, color=GEO).next_to(l_rperp, DOWN, buff=0.08)
+        l_rperp = T(r"r_\perp = r\sin\varphi", 38, GEO).move_to(O1 + P3(3.6, -1.4))
+        tag_braco = txt("BRAÇO DE ALAVANCA", 28, bold=True, color=GEO).next_to(l_rperp, DOWN, buff=0.12)
         self.play(Create(lin_ac1), Create(seg_rperp), FadeIn(ang_reto1), FadeIn(l_rperp), FadeIn(tag_braco), run_time=0.9)
 
         B, ib = M(r"\tau", "=", r"r_\perp", "F", size=52)
         self.pilha.poe(B)
-        self.gat("torque é força vezes braço de alavanca")
+        self.gat("o torque é força vezes esse braço")
         self.passo(A, B, (J(ia, 0), J(ib, 0)), (J(ia, 1), J(ib, 1)), (J(ia, 2, 4), J(ib, 2)), (J(ia, 3), J(ib, 3)), rt=1.1, origem=True)
 
         # 2º jeito: esquema inferior separando F em F_∥ (ao longo de r) e F_⊥ (perpendicular a r)
-        self.gat("segundo jeito")
-        O2 = P3(-5.8, -1.95)
+        self.gat("segundo mantém a distância")
+        O2 = P3(-5.8, -2.3)
         P_ap2 = O2 + RIGHT * L_ESQ
         porta_inf = porta2d(O2, comp=L_ESQ, esp=0.18, ang=0.0)
         s_F_inf = seta(P_ap2, P_ap2 + u_f * 1.45, FC, 4, tip=0.18, op=0.45)
         s_Fpar = seta(P_ap2, P_ap2 + RIGHT * (1.45 * math.cos(phi)), GEO, 4, tip=0.16, op=0.65)
-        l_Fpar = T(r"F_\parallel", 32, GEO).next_to(s_Fpar, DOWN, buff=0.10)
+        l_Fpar = T(r"F_\parallel", 38, GEO).next_to(s_Fpar, DOWN, buff=0.30)
         s_Fperp = seta(P_ap2, P_ap2 + UP * (1.45 * math.sin(phi)), FC, 6, tip=0.20)
-        l_Fperp = T(r"F_\perp = F\sin\varphi", 34, FC).next_to(s_Fperp, LEFT, buff=0.14)
+        l_Fperp = T(r"F_\perp = F\sin\varphi", 40, FC).next_to(s_Fperp, LEFT, buff=0.32)
         self.play(FadeIn(porta_inf), FadeIn(s_F_inf), FadeIn(s_Fpar), FadeIn(l_Fpar), FadeIn(s_Fperp), FadeIn(l_Fperp), run_time=0.9)
 
         C_, ic = M(r"\tau", "=", "r", r"F_\perp", size=52)
         self.pilha.poe(C_)
-        self.gat("quem gira é a parte perpendicular")
+        self.gat("a perpendicular é a que produz torque")
         self.passo(A, C_, (J(ia, 0), J(ic, 0)), (J(ia, 1), J(ic, 1)), (J(ia, 2), J(ic, 2)), (J(ia, 3, 4), J(ic, 3)), rt=1.1, origem=True)
 
         # Caixa PANEL azul-força unindo as três leituras
-        self.gat("é a mesma conta lida pelos dois lados")
+        self.gat("duas maneiras de enxergar exatamente o mesmo efeito")
         D_, id_ = M(r"\tau", "=", "r", "F", r"\sin\varphi", "=", r"r_\perp", "F", "=", "r", r"F_\perp", size=48)
         Db = caixa_l(D_, TQ)
         self.pilha.so(A, B, C_)
@@ -216,20 +217,20 @@ class LoteT1(Lote22):
         )
 
         # Dois mostradores circulares na esquerda: + ANTI-HORÁRIO e − HORÁRIO
-        c_pos, c_neg = P3(-4.8, 0.85), P3(-2.0, 0.85)
+        c_pos, c_neg = P3(-5.3, 0.85), P3(-1.5, 0.85)
         d_pos = VGroup(
              disco_aco(c_pos, 0.95),
             eixo_cruz(c_pos, 0.14),
             arco_torque(c_pos, r=0.65, sentido=1, a0=-0.2, amp=2.2, cor=TQ),
             T(r"\tau > 0\ (+)", 38, TQ).move_to(c_pos + P3(0.0, -1.35)),
-            txt("ANTI-HORÁRIO", 22, color=GEO).move_to(c_pos + P3(0.0, -1.78)),
+            txt("ANTI-HORÁRIO", 34, color=GEO).move_to(c_pos + P3(0.0, -2.1)),
         )
         d_neg = VGroup(
             disco_aco(c_neg, 0.95),
             eixo_cruz(c_neg, 0.14),
             arco_torque(c_neg, r=0.65, sentido=-1, a0=2.0, amp=2.2, cor=TQ),
             T(r"\tau < 0\ (-)", 38, TQ).move_to(c_neg + P3(0.0, -1.35)),
-            txt("HORÁRIO", 22, color=GEO).move_to(c_neg + P3(0.0, -1.78)),
+            txt("HORÁRIO", 34, color=GEO).move_to(c_neg + P3(0.0, -2.1)),
         )
         self.gat("girar no anti horário é positivo")
         self.play(FadeIn(d_pos, shift=0.1 * UP), run_time=0.7)
@@ -249,6 +250,7 @@ class LoteT1(Lote22):
         self.monta(U2, iu2, {0: mp(U1, iu1, [2])}, rt=0.9)
         self.play(FadeIn(l_u2[1]), run_time=0.4)
         risco_J = Line(mp(U2, iu2, [2]).get_corner(DL) + 0.06 * DL, mp(U2, iu2, [2]).get_corner(UR) + 0.06 * UR).set_stroke(MAS, 4.0)
+        risco_J._risco = True
         self.gat("ninguém escreve joule no torque")
         self.play(Create(risco_J), run_time=0.5)
         self.foco = l_u2
@@ -261,15 +263,15 @@ class LoteT1(Lote22):
         self.pilha.poe(cab_t15)
         self.play(FadeOut(VGroup(d_pos, d_neg, Db, U1, l_u2, risco_J)), FadeIn(cab_t15), run_time=0.45)
 
-        P_porca = P3(-5.8, -0.35)
-        L_CH = 2.6
+        P_porca = P3(-6.3, 0.1)
+        L_CH = 3.0
         chave = chave_roda(P_porca, comp=L_CH, ang=0.0, cano=False)
         cota_04 = VGroup(
             Line(P_porca + 0.55 * UP, chave.ponta + 0.55 * UP).set_stroke(GEO, 2.6),
             nm(r"0{,}40\ \mathrm{m}", GEO, 36).move_to((P_porca + chave.ponta) / 2 + 0.90 * UP),
         )
         s_250 = seta(chave.ponta + P3(0.0, -1.55), chave.ponta + P3(0.0, -0.14), FC, 6, tip=0.22)
-        l_250 = nm(r"250\ \mathrm{N}", FC, 38).next_to(s_250, DOWN, buff=0.16)
+        l_250 = nm(r"250\ \mathrm{N}", FC, 38).next_to(s_250, DOWN, buff=0.34)
         arco_t = arco_torque(P_porca, r=0.52, sentido=1, a0=0.4, amp=1.9, cor=TQ)
 
         self.play(FadeIn(chave), FadeIn(cota_04), FadeIn(s_250), FadeIn(l_250), FadeIn(arco_t), run_time=0.8)
@@ -284,7 +286,7 @@ class LoteT1(Lote22):
         u30 = np.array([-math.cos(math.radians(30)), math.sin(math.radians(30)), 0.0])
         s_250_30 = seta(chave.ponta - u30 * 1.55, chave.ponta - u30 * 0.14, FC, 6, tip=0.22)
         l_ang30 = nm(r"30^\circ", GEO, 36).move_to(chave.ponta + P3(-0.65, -0.45))
-        self.play(Transform(s_250, s_250_30), l_250.animate.next_to(s_250_30, DOWN, buff=0.16), FadeIn(l_ang30), run_time=0.7)
+        self.play(Transform(s_250, s_250_30), l_250.animate.move_to(chave.ponta - u30 * 1.55 + P3(0.0, -0.5)), FadeIn(l_ang30), run_time=0.7)
 
         E2, ie2 = M(r"\tau_{30^\circ}", "=", "100", r"\cdot", "0{,}5", "=", "50", r"\,\mathrm{N\cdot m}", size=48)
         self.pilha.poe(E2)
@@ -293,13 +295,13 @@ class LoteT1(Lote22):
 
         # Cano extensor de 0,80 m com metade da força (125 N) → mesmos 100 N·m
         self.gat("encaixa um cano na chave")
-        chave_c = chave_roda(P_porca, comp=L_CH, ang=0.0, cano=True, comp_cano=4.8)
+        chave_c = chave_roda(P_porca, comp=L_CH, ang=0.0, cano=True, comp_cano=6.0)
         cota_08 = VGroup(
             Line(P_porca + 0.55 * UP, chave_c.ponta + 0.55 * UP).set_stroke(GEO, 2.6),
             nm(r"0{,}80\ \mathrm{m}", GEO, 36).move_to((P_porca + chave_c.ponta) / 2 + 0.90 * UP),
         )
         s_125 = seta(chave_c.ponta + P3(0.0, -0.95), chave_c.ponta + P3(0.0, -0.14), FC, 6, tip=0.20)
-        l_125 = nm(r"125\ \mathrm{N}", FC, 38).next_to(s_125, DOWN, buff=0.12)
+        l_125 = nm(r"125\ \mathrm{N}", FC, 38).next_to(s_125, DOWN, buff=0.34)
         self.play(
             FadeOut(l_ang30),
             Transform(chave, chave_c),

@@ -380,7 +380,7 @@ class Prob2(Prob):
         self.chk = None
         self._orig_n = [0, 0]
 
-    def _selo_mob(self, tag, corpo, cor=CYAN, borda=BLUE_L, size=24, wmax=LARG_CONTA):
+    def _selo_mob(self, tag, corpo, cor=CYAN, borda=BLUE_L, size=24, wmax=LARG_CONTA, pad_v=0.06):
         """Selo da faixa (v3 §4): altura ≤ 0,65. A etiqueta abre a primeira linha e o texto continua nela e na de baixo, na largura toda
         (no máximo duas linhas; quebra por palavras, o "·" vai junto)."""
         t = txt(tag, 24, color=cor, bold=True)
@@ -419,7 +419,7 @@ class Prob2(Prob):
             g = VGroup(l1, *[mk(l) for l in linhas[1:]]).arrange(DOWN, buff=0.06, aligned_edge=LEFT)
         else:
             g = VGroup(t)
-        bx = RoundedRectangle(corner_radius=0.08, width=g.width + 0.24, height=g.height + 0.12).move_to(g).set_fill(PANEL, 0.9).set_stroke(borda, 1.8)
+        bx = RoundedRectangle(corner_radius=0.08, width=g.width + 0.24, height=g.height + 2 * pad_v).move_to(g).set_fill(PANEL, 0.9).set_stroke(borda, 1.8)
         bx._fundo = bx._caixa = True
         s = VGroup(bx, g).set_z_index(36)
         s._selo = "faixa"
@@ -429,8 +429,8 @@ class Prob2(Prob):
         return s
 
     # ── selo único na faixa (v3 §4): o velho sai em 0,25 s e só então o novo entra ──
-    def selo(self, tag, corpo, cor=CYAN, borda=BLUE_L, rt=0.5, x0=X_CONTA, anims=(), wmax=LARG_CONTA):
-        novo = self._selo_mob(tag, corpo, cor, borda, wmax=wmax)
+    def selo(self, tag, corpo, cor=CYAN, borda=BLUE_L, rt=0.5, x0=X_CONTA, anims=(), wmax=LARG_CONTA, pad_v=0.06):
+        novo = self._selo_mob(tag, corpo, cor, borda, wmax=wmax, pad_v=pad_v)
         novo.move_to(P3(x0 + novo.width / 2, Y_SELO_TOPO - novo.height / 2))
         velho = self.s1
         if velho is not None:
@@ -717,6 +717,21 @@ class Prob2(Prob):
             self._orig_n[1] += 1
             print(f"[audit] {self.clk.get_value():7.1f}s COR POR TOKEN origem {ca} → {cb} ({ctx})")
 
+    def play_dip(self, src, *anims, **kw):
+        """v4 §2.1: joga as animações de uma linha-filha que sai da linha-mãe `src` com a mãe a 40% (sem texto sobre texto) e a devolve a 100% no fim."""
+        dip = []
+        for g_ in src.family_members_with_points():
+            fo, so = g_.get_fill_opacity(), g_.get_stroke_opacity()
+            if max(fo, so) > 0.5:
+                dip.append((g_, fo, so))
+                g_.set_fill(opacity=fo * 0.4).set_stroke(opacity=so * 0.4)
+
+        def _volta(m, a, dip=dip):
+            for g_, fo, so in dip:
+                g_.set_fill(opacity=fo * (0.4 + 0.6 * a)).set_stroke(opacity=so * (0.4 + 0.6 * a))
+        volta = UpdateFromAlphaFunc(Mobject(), _volta, rate_func=lambda a: max(0.0, (a - 0.72) / 0.28), suspend_mobject_updating=False)
+        self.play(*anims, volta, **kw)
+
     def passo(self, src, dst, *mapas, rt=1.2, extra=(), origem=True):
         print(f"[alg] {self._aid} passo mapas={len(mapas)}")
 
@@ -733,13 +748,25 @@ class Prob2(Prob):
                 except Exception:
                     pass
         tops_antes = set(id(m) for m in self.mobjects)
+        # v4 §2.1: a linha-mãe é diminuída ANTES de a cópia sair (nunca texto sobre texto, nem no 1º quadro); volta a 100% no fim do passo.
+        dip = []
+        for g_ in src.family_members_with_points():
+            fo, so = g_.get_fill_opacity(), g_.get_stroke_opacity()
+            if max(fo, so) > 0.5:
+                dip.append((g_, fo, so))
+                g_.set_fill(opacity=fo * 0.4).set_stroke(opacity=so * 0.4)
+
+        def _volta(m, a, dip=dip):
+            for g_, fo, so in dip:
+                g_.set_fill(opacity=fo * (0.4 + 0.6 * a)).set_stroke(opacity=so * (0.4 + 0.6 * a))
+        volta_an = (UpdateFromAlphaFunc(Mobject(), _volta, rate_func=lambda a: max(0.0, (a - 0.72) / 0.28), suspend_mobject_updating=False),)
         c = src.copy()
         self.add(c)
         tb_ = TransformByGlyphMap(c, dst, *mapas, default_transformer=Morph4, lag_ratio=0.12)       # v4: um grupo depois do outro, sem sopa
         self._voando = set(id(x) for x in c.get_family()) | set(id(x) for x in dst.get_family()) | set(id(x) for x in tb_.mobject.get_family())
         self._voando_raiz = [c, dst, tb_.mobject]
         self._fontes_extra = [src]                                    # v4 TRÂNSITO: o passo sai de cima da linha-mãe
-        self.play(tb_, *extra, run_time=max(0.8, rt))
+        self.play(tb_, *extra, *volta_an, run_time=max(0.8, rt))
         self._fontes_extra = []
         self._voando, self._voando_raiz = set(), []
         for m in list(self.mobjects):
@@ -767,7 +794,7 @@ class Prob2(Prob):
         pedacos, resto = [], []
         for an_ in extra:
             m = getattr(an_, "mobject", None)
-            (pedacos if isinstance(an_, FadeIn) and m is not None and self._eh_vaga(m, fam_alvo) else resto).append(an_)
+            (pedacos if isinstance(an_, FadeIn) and m is not None and (self._eh_vaga(m, fam_alvo) or getattr(m, "_caixa", False)) else resto).append(an_)   # v4: a caixa entra no ritmo da escrita (junto do conteúdo)
         self.escreve(*[an_.mobject for an_ in pedacos], voos=pares, extra=resto, rt=rt, origem=origem, arco_esq=arco_esq, alvo=alvo)
 
 
@@ -852,7 +879,7 @@ class Prob2(Prob):
         for u in cont:
             u["ini"] += lead
             u["t"] += lead
-        t_cx = max(0.0, (cont[0]["t"] - 0.1) if cont else 0.0)
+        t_cx = max(0.0, (cont[0]["ini"] + 0.8 * d_voo if cont[0]["tipo"] == "voo" else cont[0]["t"] - 0.1) if cont else 0.0)   # v4 §2.1: caixa e conteúdo entram juntos (voo: a caixa acende quando o glifo já chegou)
         anims, ini, assenta, proxies, revelas, raizes = [], [], [], [], [], []
         for u in cont:
             if u["tipo"] == "fixo":
@@ -884,6 +911,33 @@ class Prob2(Prob):
             assenta.append(an_)
         if not anims:
             return
+        # v4 §2.1: a origem do voo é diminuída ANTES de a cópia sair (nunca texto sobre texto, nem no 1º quadro) e volta a 100% no fim do voo.
+        dip = []
+        tem_dim = any(isinstance(e_, UpdateFromAlphaFunc) for e_ in extra)
+        for a_, _b in voos:
+            if not hasattr(a_, "family_members_with_points"):
+                continue
+            for g_ in a_.family_members_with_points():
+                fo, so = g_.get_fill_opacity(), g_.get_stroke_opacity()
+                if max(fo, so) > 0.5 and not any(g_ is x[0] for x in dip):
+                    dip.append((g_, fo, so))
+                    g_.set_fill(opacity=fo * 0.4).set_stroke(opacity=so * 0.4)
+        if tem_dim:                                                                     # v5 §2.4: o chamador restaura só o que é dele (fatia de l_r); o resto das origens volta a 100% aqui
+            fam_ch = set()
+            for e_ in extra:
+                if isinstance(e_, UpdateFromAlphaFunc) and getattr(e_, "mobject", None) is not None:
+                    fam_ch |= set(id(x) for x in e_.mobject.get_family())
+            dip = [x for x in dip if id(x[0]) not in fam_ch]
+        if dip:
+            fim_ = max(i_ + (getattr(a2, "run_time", 0.0) or 0.0) for a2, i_ in zip(anims, ini))
+            t_r = max(0.0, fim_ - 0.3)
+
+            def _volta(m, a, dip=dip):
+                for g_, fo, so in dip:
+                    g_.set_fill(opacity=fo * (0.4 + 0.6 * a)).set_stroke(opacity=so * (0.4 + 0.6 * a))
+            rest_ = UpdateFromAlphaFunc(Mobject(), _volta, run_time=min(0.3, fim_), suspend_mobject_updating=False)
+            anims.append(rest_)
+            ini.append(t_r)
         grp = _Temporizado(*anims, starts=ini)
         D = grp.max_end_time
         alvos = []

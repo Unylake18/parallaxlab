@@ -105,11 +105,11 @@
     const texAco = (() => {
       const c = document.createElement('canvas'); c.width = 64; c.height = 256; const g = c.getContext('2d');
       let sd = 7; const rnd = () => { sd = (sd * 16807) % 2147483647; return sd / 2147483647; };
-      for (let y = 0; y < 256; y++) { const v = 175 + Math.floor(rnd() * 70); g.fillStyle = 'rgb(' + v + ',' + (v + 4) + ',' + (v + 10) + ')'; g.fillRect(0, y, 64, 1); }
+      for (let y = 0; y < 256; y++) { const v = 118 + Math.floor(rnd() * 50); g.fillStyle = 'rgb(' + v + ',' + (v + 4) + ',' + (v + 10) + ')'; g.fillRect(0, y, 64, 1); }
       return new T3.CanvasTexture(c);
     })();
-    const mAco = new T3.MeshStandardMaterial({ color: 0xBCC4D4, map: texAco, metalness: 0.55, roughness: 0.5, envMapIntensity: 0.6, side: T3.DoubleSide });
-    const mFaixa = new T3.MeshStandardMaterial({ color: 0xF4F6FF, emissive: 0x4A5070, metalness: 0.05, roughness: 0.45, envMapIntensity: 0.5, side: T3.DoubleSide });
+    const mAco = new T3.MeshStandardMaterial({ color: 0x7D89A8, map: texAco, metalness: 0.55, roughness: 0.5, envMapIntensity: 0.6, side: T3.DoubleSide });
+    const mFaixa = new T3.MeshStandardMaterial({ color: 0xC9D0F0, emissive: 0x2A2F4A, metalness: 0.05, roughness: 0.45, envMapIntensity: 0.5, side: T3.DoubleSide });
     const naca = (x, tt) => 5 * tt * (0.2969 * Math.sqrt(x) - 0.126 * x - 0.3516 * x * x + 0.2843 * x * x * x - 0.1036 * x * x * x * x);
     // pá: perfil de aerofólio (NACA simétrico) com corda que afina e torção que cai do cubo para a ponta; t ∈ [0, 1] ao longo do raio
     function lamina(t0, t1, nR) {

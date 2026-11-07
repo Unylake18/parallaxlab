@@ -16,7 +16,7 @@ class LoteT5(Lote22):
         self.an("T5-1")
         C_R = P3(-3.8, -0.45)
         R_W = 1.95
-        dth_val = 0.55
+        dth_val = 0.80
 
         rd = roda(C_R, R=R_W, ang=0.15, raios=6)
         p0 = C_R + R_W * np.array([math.cos(0.15), math.sin(0.15), 0.0])
@@ -27,13 +27,13 @@ class LoteT5(Lote22):
         lin_r1 = Line(C_R, p1).set_stroke(GEO, 3.0)
         arco_ds = Arc(radius=R_W, start_angle=0.15, angle=dth_val, arc_center=C_R).set_stroke(KC, 6.0).set_z_index(12)
         arco_dth = Arc(radius=0.68, start_angle=0.15, angle=dth_val, arc_center=C_R).set_stroke(GEO, 2.8)
-        l_R = T("R", 38, GEO).move_to((C_R + p1) / 2 + P3(-0.34, 0.28))
-        l_dth = T(r"d\theta", 36, GEO).move_to(C_R + 1.05 * np.array([math.cos(0.42), math.sin(0.42), 0.0]))
-        l_ds = T("ds", 38, KC).move_to(C_R + (R_W + 0.42) * np.array([math.cos(0.42), math.sin(0.42), 0.0]))
+        l_R = T("R", 38, GEO).move_to((C_R + p0) / 2 + P3(0.12, -0.52))
+        l_dth = T(r"d\theta", 38, GEO).move_to(C_R + 1.30 * np.array([math.cos(0.55), math.sin(0.55), 0.0]))
+        l_ds = T("ds", 38, KC).move_to(C_R + (R_W + 0.45) * np.array([math.cos(0.55), math.sin(0.55), 0.0]))
         s_ft = seta(p1, p1 + tg1 * 1.35, FC, 6, tip=0.20, z=14)
-        l_ft = T("F_t", 40, FC).next_to(p1 + tg1 * 1.35, UL, buff=0.12)
+        l_ft = T("F_t", 40, FC).move_to(p1 + tg1 * 1.35 + tg1 * 0.5)
 
-        cab_t51 = txt("TRABALHO DE UM GIRO ELEMENTAR:", 26, bold=True, color=KC)
+        cab_t51 = txt("TRABALHO NUM GIRO PEQUENO:", 26, bold=True, color=KC)
         self.pilha.poe(cab_t51)
         self.play(FadeIn(rd), Create(lin_r0), Create(lin_r1), FadeIn(l_R), FadeIn(s_ft), FadeIn(l_ft), FadeIn(cab_t51), run_time=0.8)
         self.gat("gira um ângulo pequenininho")
@@ -71,7 +71,7 @@ class LoteT5(Lote22):
         self.passo(A3, A4, (J(ia3, 0), J(ia4, 0)), (J(ia3, 1), J(ia4, 1)), (J(ia3, 2, 3), J(ia4, 3)), rt=1.1, origem=False)
         self.pilha.so(A4b)
 
-        self.selo("UNIDADE DE ENERGIA", "AGORA SIM:  N·m · rad = J  (TORQUE × ÂNGULO = TRABALHO)")
+        self.selo("UNIDADE DE ENERGIA", "N·m · rad = J  (TORQUE × ÂNGULO = TRABALHO)")
         self.foco = A4b
         self.ate(0.99)
 
@@ -89,8 +89,8 @@ class LoteT5(Lote22):
         W_G, H_G = 4.6, 3.2
         ex_g = Arrow(O_g, O_g + RIGHT * (W_G + 0.35), buff=0, stroke_width=2.6, tip_length=0.18).set_color(GEO)
         ey_g = Arrow(O_g, O_g + UP * (H_G + 0.35), buff=0, stroke_width=2.6, tip_length=0.18).set_color(GEO)
-        l_ex = T(r"\theta", 36, GEO).next_to(ex_g.get_end(), DOWN, buff=0.12)
-        l_ey = T(r"\tau(\theta)", 36, TQ).next_to(ey_g.get_end(), LEFT, buff=0.12)
+        l_ex = T(r"\theta", 38, GEO).next_to(ex_g.get_end(), DOWN, buff=0.32)
+        l_ey = T(r"\tau(\theta)", 38, TQ).next_to(ey_g.get_end(), LEFT, buff=0.34)
 
         def _f_tau(u):
             return 1.35 + 0.85 * math.sin(math.pi * u) + 0.25 * math.cos(2 * math.pi * u)
@@ -100,27 +100,27 @@ class LoteT5(Lote22):
         curva = VMobject().set_points_smoothly(pts_curva).set_stroke(TQ, 4.0).set_z_index(10)
         area_w = Polygon(O_g + P3(xs_u[0] * W_G, 0.0), *pts_curva, O_g + P3(xs_u[-1] * W_G, 0.0)).set_fill(KC, 0.32).set_stroke(KC, 1.8).set_z_index(8)
         lbl_w = T(r"W = \int \tau\,d\theta", 36, KC).move_to(O_g + P3(0.50 * W_G, 0.85))
-        l_thi = T(r"\theta_i", 32, GEO).move_to(O_g + P3(xs_u[0] * W_G, -0.35))
-        l_thf = T(r"\theta_f", 32, GEO).move_to(O_g + P3(xs_u[-1] * W_G, -0.35))
+        l_thi = T(r"\theta_i", 38, GEO).move_to(O_g + P3(xs_u[0] * W_G, -0.35))
+        l_thf = T(r"\theta_f", 38, GEO).move_to(O_g + P3(xs_u[-1] * W_G, -0.35))
 
         self.play(FadeIn(ex_g), FadeIn(ey_g), FadeIn(l_ex), FadeIn(l_ey), Create(curva), FadeIn(area_w), FadeIn(lbl_w), FadeIn(l_thi), FadeIn(l_thf), run_time=0.9)
 
         # Cadeia da regra da cadeia: τ = I α = I dω/dt = I (dω/dθ)(dθ/dt) = I ω dω/dθ
         B1, ib1 = M(r"\tau", "=", "I", r"\alpha", "=", "I", r"\frac{d\omega}{dt}", "=", "I", r"\omega", r"\frac{d\omega}{d\theta}", size=46)
         self.pilha.poe(B1)
-        self.gat("troca o torque por momento de inércia")
+        self.gat("substitui o torque por momento de inércia")
         self.monta(B1, ib1, {}, rt=1.1)
 
         B2, ib2 = M("W", "=", r"\int_{\theta_i}^{\theta_f}", r"\tau\,d\theta", "=", r"\int_{\omega_i}^{\omega_f}", "I", r"\omega\,d\omega", size=46)
         self.pilha.poe(B2)
-        self.gat("variação dela por ângulo")
+        self.gat("integral deixa de depender do ângulo")
         self.monta(B2, ib2, {}, rt=1.1)
 
-        B3, ib3 = M("W", "=", r"\frac{1}{2}", "I", r"\omega_f^2", "-", r"\frac{1}{2}", "I", r"\omega_i^2", "=", r"\Delta K_{\mathrm{rot}}", size=48)
+        B3, ib3 = M("W", "=", r"\frac{1}{2}", "I", r"\omega_f^2", "-", r"\frac{1}{2}", "I", r"\omega_i^2", "=", r"\Delta K_{\mathrm{rot}}", size=46)
         B3b = caixa_l(B3, KC)
         self.pilha.so(B1, B2)
         self.pilha.poe(B3b)
-        self.gat("energia cinética de rotação")
+        self.gat("sai meio i ômega final")
         self.cx(B3b[0])
         self.passo(B2, B3, (J(ib2, 0), J(ib3, 0)), (J(ib2, 1), J(ib3, 1)), rt=1.1, origem=False)
         self.pilha.so(B3b)
@@ -135,37 +135,41 @@ class LoteT5(Lote22):
             run_time=0.45,
         )
 
-        C_MOT = P3(-3.8, -0.45)
+        C_MOT = P3(-3.8, -0.65)
         ang_m = ValueTracker(0.0)
         ang_m.add_updater(lambda m, dt: m.increment_value(4.5 * dt))
         self.add(ang_m)
 
-        mv = vivo(lambda: VGroup(
-            motor(C_MOT, escala=1.25, ang=ang_m.get_value()),
-            arco_torque(C_MOT, r=0.98, sentido=1, a0=0.3, amp=1.8, cor=TQ, w=5),
-        ))
+        mv = vivo(lambda: motor(C_MOT, escala=1.85, ang=ang_m.get_value()))
+        arm = vivo(lambda: arco_torque(C_MOT, r=1.45, sentido=1, a0=0.3, amp=1.8, cor=TQ, w=5))
+        cab_t53 = txt("POTÊNCIA DE UM GIRO:", 26, bold=True, color=KC)
+        self.pilha.poe(cab_t53)
+        self.play(FadeIn(arm), FadeIn(cab_t53), run_time=0.7)
         lbl_mot = VGroup(
             VGroup(T(r"\tau =", 36, TQ), nm(r"100\ \mathrm{N\cdot m}", TQ, 36)).arrange(RIGHT, buff=0.10),
             nm(r"4000\ \mathrm{RPM}", VEL, 36),
-        ).arrange(DOWN, buff=0.12).move_to(C_MOT + P3(0.0, 1.85))
-        self.play(FadeIn(mv), FadeIn(lbl_mot), run_time=0.7)
-
+        ).arrange(DOWN, buff=0.12).move_to(C_MOT + P3(0.0, 2.65))
         C1, ic1 = M("P", "=", r"\frac{dW}{dt}", "=", r"\tau", r"\frac{d\theta}{dt}", "=", r"\tau", r"\omega", size=50)
         C1b = caixa_l(C1, KC)
         self.pilha.poe(C1b)
-        self.gat("potência é torque vezes velocidade angular")
+        self.gat("torque vezes velocidade angular")
         self.cx(C1b[0])
         self.monta(C1, ic1, {}, rt=1.1)
 
+        self.gat("imagina um motor")
+        self.play(FadeIn(mv), FadeIn(lbl_mot), run_time=0.7)
         self.gat("quatro mil rotações por minuto")
-        C2, ic2 = M(r"\omega", "=", r"4000\cdot\frac{2\pi}{60}", r"\approx", "418{,}9", r"\,\mathrm{rad/s}", size=44)
+        C2, ic2 = M(r"\omega", "=", r"4000\cdot\frac{2\pi}{60}", r"\approx", "418{,}9", r"\,\mathrm{rad/s}", size=46)
         self.pilha.poe(C2)
         self.monta(C2, ic2, {}, rt=1.0)
 
-        self.gat("quarenta e dois quilowatts")
-        C3, ic3 = M("P", "=", "100", r"\cdot", "418{,}9", r"\approx", "41{,}9", r"\,\mathrm{kW}", r"\approx", "57", r"\,\mathrm{cv}", size=44)
+        self.gat("multiplica quase quarenta e dois")
+        C3, ic3 = M("P", "=", "100", r"\cdot", "418{,}9", r"\approx", "41{,}9", r"\,\mathrm{kW}", size=46)
+        C4, ic4 = M(r"\approx", "57", r"\,\mathrm{cv}", size=46)
         self.pilha.poe(C3)
         self.monta(C3, ic3, {2: lbl_mot[0][1], 4: mp(C2, ic2, [4])}, rt=1.1)
+        self.pilha.poe(C4)
+        self.monta(C4, ic4, {}, rt=0.6)
         self.foco = C3
         self.ate(0.99)
 
@@ -174,32 +178,44 @@ class LoteT5(Lote22):
         mv.clear_updaters()
         ang_m.clear_updaters()
         self.pilha.limpa()
-        self.play(FadeOut(VGroup(mv, lbl_mot, C1b, C2, C3)), run_time=0.45)
+        self.play(FadeOut(VGroup(mv, arm, lbl_mot, C1b, C2, C3, C4)), run_time=0.45)
 
-        C_ENG = P3(-3.8, -0.35)
+        C_ENG = P3(-4.9, -0.2)
         ang_e = ValueTracker(0.0)
         ang_e.add_updater(lambda m, dt: m.increment_value(1.8 * dt))
         self.add(ang_e)
 
-        ev = vivo(lambda: engrenagens(C_ENG, ang1=ang_e.get_value(), r1=0.58, razao=3, n1=8))
-        ref_e = engrenagens(C_ENG, ang1=0.0, r1=0.58, razao=3, n1=8)
-        lbl_e1 = VGroup(T("R_1", 36, GEO), T(r"\omega,\ \tau", 36)).arrange(DOWN, buff=0.08).move_to(ref_e.c1 + P3(0.0, -1.25))
-        lbl_e2 = VGroup(T("R_2 = 3R_1", 36, GEO), T(r"\tfrac{\omega}{3},\ 3\tau", 36)).arrange(DOWN, buff=0.08).move_to(ref_e.c2 + P3(0.0, -2.35))
+        # Three.js 'engr': par 3:1 com dentes reais (8 e 24 dentes), câmera oblíqua; r1 = 0,72 u na tela
+        K_E = 0.72
+        cam_e = cam_obl(az=-90.0, el=52.0, alvo=(2.0, 0.0, 0.0), K=K_E, xc=float(C_ENG[0]), yc=float(C_ENG[1]), fov=14)
+
+        def est_e(t):
+            a1 = ang_e.get_value()
+            return r4({"th1": round(a1, 5), "th2": round(math.pi + math.pi / 24 - a1 / 3.0, 5), "cam": cam_e})
+
+        ev = Fundo3D(self, "engr", est_e, op=0.0)
+        self.add(ev)
+        b1_s = P3(*projeta3d(cam_e, (0.0, -1.3, 0.0)), 0.0)
+        b2_s = P3(*projeta3d(cam_e, (4.0, -3.3, 0.0)), 0.0)
+        lbl_e1 = VGroup(T("R_1", 36, GEO), T(r"\omega,\ \tau", 36)).arrange(DOWN, buff=0.08).move_to(b1_s + P3(0.0, -0.75))
+        lbl_e2 = VGroup(T("R_2 = 3R_1", 36, GEO), T(r"\tfrac{\omega}{3},\ 3\tau", 36)).arrange(DOWN, buff=0.08).move_to(b2_s + P3(0.0, -0.75))
 
         D1, id1 = M("P", "=", r"\tau", r"\omega", "=", r"(3\tau)", r"\Big(\frac{\omega}{3}\Big)", size=50)
         D1b = caixa_l(D1, KC)
         self.pilha.poe(D1b)
-        self.play(FadeIn(ev), FadeIn(lbl_e1), FadeIn(lbl_e2), run_time=0.8)
+        self.play(ev.op.animate.set_value(1.0), FadeIn(lbl_e1), FadeIn(lbl_e2), run_time=0.8)
+        self.gat("reduz a rotação três vezes")
         self.cx(D1b[0])
         self.monta(D1, id1, {}, rt=1.1)
         self.gat("multiplica o torque três vezes")
 
         # Duas barras de potência iguais em ciano (#22D3EE)
-        b_p1 = VGroup(barra_E(1.5, -2.6, 2.2, larg=0.44, cor=KC, hmax=2.4), T("P_1", 36, KC).move_to(P3(1.5, -2.95)))
-        b_p2 = VGroup(barra_E(2.6, -2.6, 2.2, larg=0.44, cor=KC, hmax=2.4), T("P_2", 36, KC).move_to(P3(2.6, -2.95)))
-        ig_p = txt("IGUAIS", 24, bold=True, color=KC).move_to(P3(2.05, -0.15))
+        b_p1 = VGroup(barra_E(1.9, -2.6, 1.6, larg=0.6, cor=KC, hmax=1.8), T("P_1", 44, KC).move_to(P3(1.9, -3.1)))
+        b_p2 = VGroup(barra_E(3.5, -2.6, 1.6, larg=0.6, cor=KC, hmax=1.8), T("P_2", 44, KC).move_to(P3(3.5, -3.1)))
+        ig_p = txt("IGUAIS", 32, bold=True, color=KC).move_to(P3(2.7, -0.55))
 
         self.play(FadeIn(b_p1), FadeIn(ig_p), FadeIn(b_p2), run_time=0.8)
+        self.gat("primeira marcha arranca o carro")
         self.selo("CAIXA DE MARCHAS", "TROCA VELOCIDADE ANGULAR POR TORQUE COM A MESMA POTÊNCIA")
         self.foco = D1b
         self.ate(0.99)

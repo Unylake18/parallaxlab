@@ -105,7 +105,7 @@ class LoteFim(L20):
 
     def sintese2(self):
         self.an("S2")
-        cam = cam_hel(K=3.3, c=P3(-3.75, 0.2))       # v3 §4: hélice ≥ 65% da altura (2R ≈ 5,3 u de 8)
+        cam = cam_hel(K=3.06, c=P3(-3.75, 0.2))       # v3 §4: hélice ≥ 65% da altura (2R ≈ 5,3 u de 8)
         giro = GiroHel(t0=self.clk.get_value())
         f3 = Fundo3D(self, "helice", lambda t: {"ang": round(giro.ang(t), 4), "cam": cam}, op=0.0)
         k_seta, op_set, op_mk = ValueTracker(1.0), ValueTracker(0.0), ValueTracker(0.0)
@@ -116,8 +116,8 @@ class LoteFim(L20):
         self.mot_s1.clear_updaters()
         self.troca([m for m in velhos if m is not f3 and m not in (k_seta, op_set, op_mk)], f3.op.animate.set_value(1.0), seq=True)   # v2: o 3D entra na troca (sem quadro SEM PALCO)
         self.add(ch)
-        q = VGroup(txt("POR QUE A PONTA DA HÉLICE", 26, bold=True), VGroup(txt("CHEGA A QUASE", 26, bold=True), valor(r"1.000\ \mathrm{km/h}".replace(".", "{.}"), VEL, 38),
-                   txt("?", 26, bold=True)).arrange(RIGHT, buff=0.12)).arrange(DOWN, buff=0.18).move_to(P3(3.75, 1.85))
+        q = VGroup(txt("POR QUE A PONTA DA HÉLICE", 30, bold=True), VGroup(txt("CHEGA A QUASE", 30, bold=True), valor(r"1.000\ \mathrm{km/h}".replace(".", "{.}"), VEL, 42),
+                   txt("?", 30, bold=True)).arrange(RIGHT, buff=0.12)).arrange(DOWN, buff=0.18).move_to(P3(3.75, 1.85))
         # v2 §3: CÂMERA LENTA vira o marcador de canto (como no hook), nunca sobre a hélice
         self.play(op_mk.animate.set_value(1.0), op_set.animate.set_value(1.0), *self.troca_marcador("CÂMERA LENTA ×90", "esq", y=-3.5), FadeIn(q), run_time=0.9)
         fr = VGroup(linha_m(txt("O MESMO", 32, bold=True), lbl(r"\omega", VEL, 54), buff=0.18),

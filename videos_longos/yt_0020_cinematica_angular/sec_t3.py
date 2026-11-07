@@ -85,7 +85,7 @@ class LoteT3(L20):
         self._voando = set(id(x) for x in a.get_family()) | set(id(x) for x in b.get_family())
         self._voando_raiz = [a, b]
         self._fontes_extra = [src]
-        self.play(TransformMatchingTex(a, b, key_map=key_map), *extra, run_time=max(0.8, rt))
+        self.play_dip(src, TransformMatchingTex(a, b, key_map=key_map), *extra, run_time=max(0.8, rt))
         self._fontes_extra = []
         self._voando, self._voando_raiz = set(), []
         self.remove(a, b)
@@ -123,7 +123,7 @@ class LoteT3(L20):
         return dst
 
     def t3(self):
-        d = DiscoRef(self, C=P3(-3.75, -0.55), R=2.45, th0=1.0)      # v3 §4: disco no tamanho do T1/T2 (ø 4,9 u ≈ 60% da altura); as setas ficam dentro da zona
+        d = DiscoRef(self, th0=1.0)      # v5 §2.5: disco do T1/T2 (R = DR, 59% do ESQUEMA)        # v3 §4: disco no tamanho do T1/T2 (ø 4,9 u ≈ 60% da altura); as setas ficam dentro da zona
         self.add(d.g)
         C, R = d.C, d.R
         # ── T3-1: α ──
@@ -144,7 +144,8 @@ class LoteT3(L20):
         self.add(opa)
 
         def setas():
-            g = VGroup(seta_curva(C, R + 0.32, 0.55, 0.35 + 0.55 * w.get_value(), VEL, 8, tip=0.3))
+            sp_ = 0.35 + 0.55 * w.get_value()
+            g = VGroup(seta_curva(C, R + 0.32, 1.1 - sp_, sp_, VEL, 8, tip=0.3))      # v8: a ponta fica fixa em 1,1 rad (a seta cresce para trás): nunca passa do topo do ESQUEMA
             lw = mtex(r"\omega", VEL, 56).move_to(C + (R + 0.78) * P3(math.cos(0.45), math.sin(0.45)))
             g.add(lw)
             if opa.get_value() > 0.01:                                  # α do outro lado do ω (esquerda do disco), mesmo raio: nunca no caminho da seta violeta
@@ -287,16 +288,16 @@ class LoteT3(L20):
         # ── T3-4: a área é o ângulo ──
         self.an("T3-4")
         self.play(FadeOut(tri), FadeOut(la), ts.animate.set_value(0.0), run_time=0.6)
-        self.gat("olha a área embaixo dessa reta")
+        self.gat("olha o gráfico da velocidade angular")
         self.play(opA.animate.set_value(1.0), opP.animate.set_value(1.0), ts.animate(rate_func=linear).set_value(0.8), run_time=1.6)
-        self.gat("que é uma tirinha fina de área")
+        self.gat("uma tirinha de área")
         l_strip = M(r"\omega", "dt'", size=40, cores={0: VEL})[0]
         l_strip.move_to(P3(-5.3, -1.15))
         lead_strip = Line(P3(-5.45, -1.42), G.pt(0.8, wf(0.8)) + 0.04 * UP).set_stroke(ANG, 1.6)
         strip_g = VGroup(l_strip, lead_strip)
         self.play(FadeIn(strip_g), run_time=0.5)
         self.wait(0.5)
-        self.gat("somando todas as tirinhas")
+        self.gat("somamos todas as tirinhas")
         self.play(ts.animate(rate_func=linear).set_value(TT), run_time=self.ate_t("a integral da velocidade angular"))
         D1, i1 = M(r"\Delta\theta", "=", r"\int_0^t", r"\omega\,dt'", size=58, cores={0: ANG})
         self.pilha.poe(D1)                                                # ω violeta (mesma saturação dos outros) e ∫, limites, dt′ brancos pelo eqp (v3 §2)
@@ -307,16 +308,16 @@ class LoteT3(L20):
         rect = Rectangle(width=G.w * TT / G.tmax, height=G.hpu * W0).move_to((G.pt(0, 0) + G.pt(TT, W0)) / 2).set_stroke(ANG, 2.5).set_fill(ANG, 0.0)
         triang = Polygon(G.pt(0, W0), G.pt(TT, wf(TT)), G.pt(TT, W0)).set_stroke(ANG, 2.5).set_fill(ANG, 0.70)
         sep = Line(G.pt(0, W0), G.pt(TT, W0)).set_stroke(WHITE_, 1.6).set_z_index(5)
-        l_rect = sobre_area(lbl(r"\omega_0 t", ANG, 44)).move_to(rect.get_center())
-        l_tri = sobre_area(lbl(r"\tfrac12\alpha t^2", ANG, 36)).move_to(G.pt(TT * 0.84, W0) + 0.40 * UP)
+        l_rect = sobre_area(Mc((r"\omega_0", VEL), ("t", WHITE_), size=44)).move_to(rect.get_center())
+        l_tri = sobre_area(Mc((r"\tfrac12", WHITE_), (r"\alpha", ACC), ("t^2", WHITE_), size=36)).move_to(G.pt(TT * 0.84, W0) + 0.40 * UP)
         cot_t = VGroup(Line(G.pt(0, 0) + 0.3 * DOWN, G.pt(TT, 0) + 0.3 * DOWN).set_stroke(GEO, 2), lbl("t", WHITE_, 40).next_to(G.pt(TT / 2, 0) + 0.3 * DOWN, DOWN, buff=0.05))
         cot_h = VGroup(Line(G.pt(TT, W0) + 0.3 * RIGHT, G.pt(TT, wf(TT)) + 0.3 * RIGHT).set_stroke(GEO, 2), M(r"\alpha", "t", size=40, cores={0: ACC})[0])
         cot_h[1].next_to(cot_h[0], RIGHT, buff=0.12)
-        self.gat("o retângulo é a velocidade angular inicial vezes o tempo")
+        self.gat("o retângulo representa o giro")
         self.play(Create(rect), FadeIn(l_rect), FadeIn(cot_t), run_time=0.9)
-        self.gat("e o triângulo")
+        self.gat("o triângulo representa a contribuição da aceleração")
         self.play(FadeIn(triang), FadeIn(cot_h), FadeIn(sep), opP.animate.set_value(0.0), rect.animate.set_fill(ANG, 0.45), run_time=0.8)
-        self.gat("vale meio vezes a aceleração angular")
+        self.gat("metade da aceleração angular vezes o tempo ao quadrado")
         self.play(FadeIn(l_tri), run_time=0.6)
         D2, i2 = M(r"\Delta\theta", "=", r"\omega_0", "t", "+", r"\tfrac12", r"\alpha", "t^2", size=58, cores={0: ANG, 2: VEL, 6: ACC})
         self.pilha.poe(D2)
@@ -329,14 +330,14 @@ class LoteT3(L20):
         self.pilha.poe(D3b, dx=0.2)
         self.passo_arco(D2, P1, (i2[0][:1], []), (i2[0][1:], ip[0]), (J(i2, 1), J(ip, 3)), (J(i2, 2), J(ip, 4)), (J(i2, 3), J(ip, 5)), (J(i2, 4), J(ip, 6)),
                    (J(i2, 5), J(ip, 7)), (J(i2, 6), J(ip, 8)), (J(i2, 7), J(ip, 9)), ([], J(ip, 1, 2)), rt=1.3)
-        self.gat("é o giro a mais que a aceleração deu")
+        self.gat("somando temos o deslocamento angular")
         self.passo(P1, D3, (J(ip, 0), J(i3, 0)), (J(ip, 1), []), (J(ip, 2), J(i3, 2)), (J(ip, 3), J(i3, 1)), (J(ip, 4), J(i3, 4)), (J(ip, 5), J(i3, 5)),
                    (J(ip, 6), J(i3, 6)), (J(ip, 7), J(i3, 7)), (J(ip, 8), J(i3, 8)), (J(ip, 9), J(i3, 9)), ([], J(i3, 3)), rt=1.3, origem=False)
         self.play(FadeIn(D3b[0]), run_time=0.3)                          # v3 §5.5: a caixa do resultado entra depois do conteúdo (nunca uma caixa vazia)
         self.foco = D3b
         self.wait(1.4)
         # inset: área com sinal
-        self.gat("só um cuidado")
+        self.gat("mas cuidado")
         self.selo("ÁREA COM SINAL", "")
         self.pilha.so(D3b)
         velhos = VGroup(rect, triang, sep, l_rect, l_tri, cot_t, cot_h, G.eixos, lw0, strip_g)
@@ -356,6 +357,8 @@ class LoteT3(L20):
             return 2 * PI - ((PI * u * u / 4) if u <= 2 else (2 * PI - PI * (4 - u) ** 2 / 4))
         lp = sobre_area(lbl(r"+2\pi", ANG, 36)).move_to(G2.pt(2, 1.1))
         lm = sobre_area(lbl(r"-2\pi", ANG, 36)).move_to(G2.pt(6, -1.1))
+        lp[0][0].set_color(WHITE_)      # v6 §2.3: o sinal é operador (neutro)
+        lm[0][0].set_color(WHITE_)
         ev = (lm.get_left()[0] - 0.22, lm.get_bottom()[1] - 0.18, lm.get_right()[0] + 0.22, lm.get_top()[1] + 0.18)
         # v3 §5.5: as duas áreas já preenchidas (âmbar 22%, a de baixo com hachura) e rotuladas desde que o inset entra; a varredura pinta 45% por cima
         pts_c = [G2.pt(0, 0), G2.pt(2, PI), G2.pt(4, 0)]
@@ -380,25 +383,29 @@ class LoteT3(L20):
         iv = vivo(inset)
         self.remove(pv)
         self.play(FadeIn(G2.eixos), FadeIn(iv), FadeIn(fant), FadeIn(lp), FadeIn(lm), run_time=0.5)
-        self.gat("se o disco inverter o sentido")
+        self.gat("abaixo negativo")                                   # v6: ordem da fala (abaixo negativo → volta num sentido → volta contrária)
+        self.play(Indicate(lp, color=WHITE_, scale_factor=1.15), Indicate(lm, color=WHITE_, scale_factor=1.15), run_time=0.8)
+        self.gat("se o disco der uma volta num sentido")
         self.play(ti.animate(rate_func=linear).set_value(4.0), run_time=2.4)
-        self.gat("a parte abaixo do eixo conta negativo")
+        self.gat("e depois uma volta no sentido contrário")
         self.play(ti.animate(rate_func=linear).set_value(8.0), run_time=4.4)
-        E1a, ie = M(r"\Delta\theta", "=", r"+2\pi", r"-2\pi", size=56, cores={0: ANG, 2: ANG, 3: ANG})
-        E1b, ie2 = M("=", "0", size=56, cores={1: ANG})
-        self.pilha.poe(E1a)
-        self.pilha.poe(E1b)
-        self.gat("tem deslocamento angular zero")
-        self.voa([(lp, mp(E1a, ie, [2])), (lm, mp(E1a, ie, [3]))], extra=[FadeIn(mp(E1a, ie, [0, 1]))], rt=1.2, origem=False)
-        self.passo(E1a, E1b, (J(ie, 1), J(ie2, 0)), (J(ie, 2, 3), J(ie2, 1)), rt=1.2, origem=False)
         E1c, ic = M(r"=", r"2\pi", "+", r"2\pi", size=52, cores={1: ANG, 3: ANG})
         E1d, id_ = M("=", r"4\pi", size=52, cores={1: ANG})
         E1g = linha_m(txt("GIRO TOTAL", 28, bold=True), E1c, buff=0.2)
         self.pilha.poe(E1g)
         self.pilha.poe(E1d)
-        self.gat("mas girou quatro pi radianos no total")
+        self.gat("terá girado quatro pi radianos no total")
         self.play(FadeIn(E1g), run_time=0.9)
         self.passo(E1c, E1d, (J(ic, 0), J(id_, 0)), (J(ic, 1, 2, 3), J(id_, 1)), rt=1.2, origem=False)
+        E1a, ie = M(r"\Delta\theta", "=", r"+2\pi", r"-2\pi", size=56, cores={0: ANG, 2: ANG, 3: ANG})
+        E1a[0][ie[2][0]].set_color(WHITE_)
+        E1a[0][ie[3][0]].set_color(WHITE_)
+        E1b, ie2 = M("=", "0", size=56, cores={1: ANG})
+        self.pilha.poe(E1a)
+        self.pilha.poe(E1b)
+        self.gat("deslocamento angular será zero")
+        self.voa([(lp, mp(E1a, ie, [2])), (lm, mp(E1a, ie, [3]))], extra=[FadeIn(mp(E1a, ie, [0, 1]))], rt=1.2, origem=False)
+        self.passo(E1a, E1b, (J(ie, 1), J(ie2, 0)), (J(ie, 2, 3), J(ie2, 1)), rt=1.2, origem=False)
         self.foco = E1d
         self.ate(0.99)
         # ── T3-5: eliminando t; o trapézio ──
@@ -501,7 +508,7 @@ class LoteT3(L20):
         self.play(FadeIn(pares[1]), run_time=0.5)
         self.gat("e a aceleração angular no lugar da aceleração")
         self.play(FadeIn(pares[2]), run_time=0.5)
-        self.gat("e não é coincidência")
+        self.gat("não é coincidência")
         for k in range(4):                                               # GM copiado da linha linear: x → θ, v → ω, a → α; a linha 1D fica
             (Lk, ik), (Ak, ika) = lin[k], ang_[k]
             c = Lk.copy()                                                # a cópia viaja inteira até a coluna GIRO (rígida: nenhum glifo cruza outro)

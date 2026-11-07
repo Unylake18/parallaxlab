@@ -37,7 +37,12 @@ def camada_helice(cena, giro, camf, k_seta, op_set, op_mk, pulso=None, op_rastro
             L = L_PONTA * r / 0.95
             kk = k_seta.get_value()                    # 0: hipótese "todo ponto igual" (tracejada); 1: proporcional ao raio
             L = (1 - kk) * L_PONTA * 0.5 + kk * L
-            w = 6 + (2 * pulso.get_value() if pulso is not None else 0)
+            if r > 0.5 and abs(t[1]) > 1e-6:           # v8: a seta da ponta não passa do topo do ESQUEMA (2,42) nem do selo de câmera lenta (−3,12)
+                for lim_ in (2.42, -3.12):
+                    Lc = (lim_ - p[1]) / t[1]
+                    if 0 < Lc < L:
+                        L = max(Lc, 0.45)
+            w = 12 + (2 * pulso.get_value() if pulso is not None else 0)
             if orr > 0.01:                              # v2 D2: rastro do ponto nos últimos DT_RASTRO s (violeta que some para trás): curto no cubo, longo na ponta
                 n_ = 12
                 for k in range(n_):
@@ -91,7 +96,7 @@ class LoteHook(L20):
         self.play(op_mk.animate.set_value(1.0), run_time=0.6)
         self.gat("então dá vontade de dizer")
         self.play(op_set.animate.set_value(1.0), run_time=0.8)
-        self.gat("só que não tem")
+        self.gat("só que não anda")
         self.play(k_seta.animate.set_value(1.0), run_time=1.0)
         self.play(op_rastro.animate.set_value(1.0), run_time=0.8)                                  # v2 D2: rastros de mesmo Δt mostram a diferença que a seta curta esconde
         self.ate(0.99)
@@ -99,7 +104,7 @@ class LoteHook(L20):
         self.an("H2")
         self.play(xs.animate(rate_func=smooth).set_value(C_H[0]), run_time=1.2)          # v3 §4: a hélice desliza do centro para a esquerda quando a coluna vai entrar
         # v2 S1: seta curva NO CUBO (gira no sentido da hélice); a seta da ponta varre r ≤ 2,75 u, então nada dela cruza o cubo; o valor vai para a legenda
-        arc_rpm = seta_curva(C_H, 0.62, 2.55, 1.6, VEL, 6, tip=0.2)
+        arc_rpm = seta_curva(C_H, 0.62, 2.55, 1.6, VEL, 9, tip=0.2)
         y_cota = -2.95
         cota_ = VGroup(Line(P3(C_H[0] - K_H * 0.95, y_cota), P3(C_H[0] + K_H * 0.95, y_cota)).set_stroke(GEO, 2.4),
                        *[Line(P3(C_H[0] + s_ * K_H * 0.95, y_cota - 0.1), P3(C_H[0] + s_ * K_H * 0.95, y_cota + 0.1)).set_stroke(GEO, 2.4) for s_ in (-1, 1)])
@@ -116,6 +121,8 @@ class LoteHook(L20):
         self.play(Create(arc_rpm), FadeIn(l_rpm), run_time=0.8)
         l1 = VGroup(txt("A", 28), valor(r"10\ \mathrm{cm}", GEO_, 40), txt("DO EIXO", 28)).arrange(RIGHT, buff=0.14)
         l2 = VGroup(txt("NA PONTA", 28), valor(r"(95\ \mathrm{cm})", GEO_, 40)).arrange(RIGHT, buff=0.14)
+        l2[1][0][0].set_color(WHITE_)
+        l2[1][0][-1].set_color(WHITE_)      # v6 §2.3: parênteses neutros
         v1 = valor(r"\approx 100\ \mathrm{km/h}", VEL, 46)
         v2 = valor(r"\approx 970\ \mathrm{km/h}", VEL, 46)
         a1 = arrow(P3(X0, 0.75), P3(X0 + L_PONTA * 0.10 / 0.95, 0.75), VEL, 6, tip=0.2)
@@ -130,10 +137,8 @@ class LoteHook(L20):
         self.play(FadeIn(nasce1, scale=0.8), run_time=0.3)
         self.play(ReplacementTransform(nasce1, v1), FadeIn(l1), GrowArrow(a1), run_time=0.8)
         self.gat("já a ponta da pá")
-        p2 = hel_pt(cam(), 0.95, giro.ang(self.clk.get_value() + 0.3))
-        nasce2 = v2.copy().move_to(np.clip(p2 + 0.6 * (p2 - C_H) / max(np.linalg.norm(p2 - C_H), 1e-6), [-6.5, -3.4, 0], [-0.9, 2.6, 0]))
-        self.play(FadeIn(nasce2, scale=0.8), FadeIn(l2), run_time=0.3)          # o rótulo entra antes: o número em voo não passa por cima dele
-        self.play(ReplacementTransform(nasce2, v2), GrowArrow(a2), run_time=0.8)
+        self.play(FadeIn(l2), run_time=0.3)          # o rótulo entra antes
+        self.play(FadeIn(v2, scale=0.9), GrowArrow(a2), run_time=0.8)          # v7 §3: sem voo (o número cruzava a pá, o cubo e a legenda); nasce já na legenda, ao lado da seta
         # barra da velocidade do som: marca violeta com 78% e a ponta da hélice (o ≈ 970 km/h) ligada a ela por uma linha tracejada
         xb0, xb1, yb = 1.0, 6.6, -2.4
         frac = NUM["som"]
@@ -161,9 +166,9 @@ class LoteHook(L20):
         q = VGroup(txt("POR QUE A PONTA DA", 40, bold=True), txt("HÉLICE CHEGA A QUASE", 40, bold=True),
                    VGroup(valor(r"1.000\ \mathrm{km/h}".replace(".", "{.}"), VEL, 62), txt("?", 40, bold=True)).arrange(RIGHT, buff=0.16))
         q.arrange(DOWN, buff=0.2).move_to(P3(4.2, -2.3))          # v3 H3: frase-chave maior que os números; a coluna recua a 60% quando ela entra
-        self.play(FadeOut(VGroup(bar_f, bar_v, tick, t_som, v_som, pct, lig)), coluna.animate.set_opacity(0.6), run_time=0.35)
+        self.play(FadeOut(VGroup(bar_f, bar_v, tick, t_som, v_som, pct, lig)), run_time=0.35)      # v4: a coluna só recua quando a pergunta entra
         self.gat("e aí fica a pergunta")
-        self.play(FadeIn(q, shift=0.1 * UP), run_time=0.7)
+        self.play(FadeIn(q, shift=0.1 * UP), run_time=0.7)      # v5 §2.3: a coluna fica a 100% (nada abaixo de 100% depois de entrar)
         self.gat("se a hélice inteira gira no mesmo ritmo")
         for _ in range(2):
             self.play(pulso.animate(rate_func=there_and_back).set_value(1.0), Indicate(a1, color=WHITE_, scale_factor=1.15), Indicate(a2, color=WHITE_, scale_factor=1.04), run_time=0.8)
@@ -189,7 +194,7 @@ class LoteHook(L20):
         nv = txt("NESTE VÍDEO:", 34, color=CYAN, bold=True).move_to(P3(-5.6, 0.85))
         ic1 = VGroup(Line(ORIGIN, 0.9 * RIGHT).set_stroke(GEO, 3), Line(ORIGIN, 0.9 * P3(math.cos(0.9), math.sin(0.9))).set_stroke(WHITE_, 4),
                      arco(ORIGIN, 0.55, 0, 0.9, ANG, 6))
-        ic2 = seta_curva(ORIGIN, 0.5, 0.3, 4.2, VEL, 6)
+        ic2 = seta_curva(ORIGIN, 0.5, 0.3, 4.2, VEL, 9)
         dsk = VGroup(Circle(radius=0.8).set_stroke(GEO, 2.5).set_fill(STEEL, 0.6), Line(ORIGIN, 0.8 * RIGHT).set_stroke(WHITE_, 4))
         # v2 D4: o ícone do giro ao ponto leva as duas setas de família: v violeta tangente e a_c verde para o centro
         ic3 = VGroup(dsk, ponto_mob(P3(0.8, 0), 0.08, z=12), arrow(P3(0.8, 0), P3(0.8, 1.0), VEL, 6, tip=0.2), arrow(P3(0.8, 0), P3(0.2, 0), ACC, 6, tip=0.2))      # v3 A2: setas ≥ 40% do diâmetro

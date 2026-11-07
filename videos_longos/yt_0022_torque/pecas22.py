@@ -134,8 +134,14 @@ def _integra_regua(dt=1e-4, tmax=0.52):
 TAB_REGUA = _integra_regua()
 
 
-def estado_regua(t, massa_ponta=False, moedas=True, op=1.0):
-    """Estado interpolado da cena 3D 'regua' no instante físico t (s)."""
+def estado_regua(t, massa_ponta=False, moedas=True, op=1.0, dedo=0.0):
+    """Estado interpolado da cena 3D 'regua' no instante físico t (s). dedo: 1 = dedo 3D pressionando a ponta, 0 = sem dedo."""
+    e_ = _estado_regua(t, massa_ponta, moedas, op)
+    e_["dedo"] = round(float(dedo), 3)
+    return e_
+
+
+def _estado_regua(t, massa_ponta=False, moedas=True, op=1.0):
     dt = TAB_REGUA["dt"]
     idx = min(len(TAB_REGUA["ts"]) - 1, max(0, int(round(t / dt))))
     if massa_ponta:
@@ -282,6 +288,15 @@ def cam_regua_obl(u, K=5.4, xc=-1.6, yc=0.65, camx=0.42, camz=-0.06):
     return cam_obl(az=az, el=el, alvo=(camx, 0.0, camz), K=K, xc=xc, yc=yc, fov=14)
 
 
+def cam_hook(u, K0=8.0, K1=11.0, xc=-1.4, yc=0.15, camx=0.5, camz=-0.06):
+    """Câmera do hook (v2): dolly-in de 3/4 alta (az -64°, el 22°, K0) até a frontal pura (az -90°, el 0°, K1); a régua passa a ≥ 70% da largura."""
+    s = smooth(clamp(u, 0.0, 1.0))
+    K = K0 + (K1 - K0) * s
+    if s >= 0.9999:
+        return cam_regua_frente(K=K1, xc=xc, yc=yc, camx=camx, camz=camz, el=0.0)
+    return cam_obl(az=-64.0 + (-26.0) * s, el=22.0 * (1.0 - s), alvo=(camx, 0.0, camz), K=K, xc=xc, yc=yc, fov=14)
+
+
 def tela_regua(cam, r, th=0.0, dz=0.0):
     """Projeta ponto a distância r ao longo da régua (inclinada de th) na tela Manim via projeta3d."""
     c, s = math.cos(th), math.sin(th)
@@ -418,16 +433,16 @@ def chave_roda(porca, comp=2.8, ang=0.0, cano=False, comp_cano=5.2, z=8):
     u = np.array([math.cos(ang), math.sin(ang), 0.0])
     # Cabeça sextavada externa + porca sextavada interna
     cab = RegularPolygon(n=6, radius=0.34).move_to(porca).rotate(ang)
-    aco(cab, 2.2)
+    cab.set_fill("#8E9BAE", 0.95).set_stroke(GEO, 2.2)
     haste = capsula2d(porca + u * 0.22, porca + u * comp, 0.13, "#7A8696")
-    aco(haste, 2.0)
+    haste.set_fill("#7A8696", 0.95).set_stroke(GEO, 1.8)
     punho = capsula2d(porca + u * (comp - 0.55), porca + u * comp, 0.16, "#5C687C")
     porca_hex = RegularPolygon(n=6, radius=0.19).move_to(porca).set_fill("#DCE4F2", 0.95).set_stroke(GEO, 2.2)
     eixo = eixo_cruz(porca, s=0.13, z=z + 4)
     g = VGroup(haste.set_z_index(z), punho.set_z_index(z + 1), cab.set_z_index(z + 2), porca_hex.set_z_index(z + 3), eixo)
     if cano:
         tubo = capsula2d(porca + u * (comp * 0.45), porca + u * comp_cano, 0.20, "#6E84A8")
-        aco(tubo, 2.2, op=0.92)
+        tubo.set_fill("#6E84A8", 0.92).set_stroke(GEO, 1.8)
         g.add(tubo.set_z_index(z + 1))
         g.ponta = porca + u * comp_cano
     else:
@@ -711,7 +726,7 @@ def zoom_inset(c, w=2.9, h=2.0, folga_cm=5.4, th=0.165, z=20):
 def pedaco(c, r0, r1, a0, da, op, z=6):
     """Pedaço de disco (setor de anel) em rosa: opacidade = massa relativa."""
     s = AnnularSector(inner_radius=r0, outer_radius=r1, start_angle=a0, angle=da, arc_center=np.asarray(c, float))
-    return s.set_fill(MAS, op).set_stroke(mix(MAS, 0.2), 1.6, opacity=0.9).set_z_index(z)
+    return s.set_fill(MAS, op).set_stroke("#3A0F2E", 2.4, opacity=0.95).set_z_index(z)
 
 
 def disco_aco(c, R, z=4):
@@ -737,6 +752,10 @@ class DiscoPedacos(VGroup):
                 op = op0 + (op1 - op0) * (area / ((R ** 2 - (R * (nr - 1) / nr) ** 2) * math.pi / nt))
                 self.pec.add(pedaco(c, r0, r1, a0, 2 * math.pi / nt, op))
                 self.dados.append({"m": M * area / A, "r": math.sqrt((r0 ** 2 + r1 ** 2) / 2), "a": a0 + math.pi / nt, "r0": r0, "r1": r1})
+        for p_ in self.pec:                                    # pedaços = tesselação interna do corpo (traços finos sobre o disco 3D): fundo, não obstáculo
+            p_._fundo = True
+            for q_ in p_.get_family():
+                q_._fundo = True
         self.add(self.corpo, self.pec)
 
     def centro_de(self, k):

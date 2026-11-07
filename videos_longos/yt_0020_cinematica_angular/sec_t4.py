@@ -11,8 +11,8 @@ com a seta verde para o eixo na ponta, a_c = ω²r = 282,7² · 0,95 ≈ 7,6 × 
 from pecas20 import *  # noqa: F401,F403
 from sec_hook import camada_helice, REV_TELA, K_H, C_H  # noqa: E402
 
-CD, RD = P3(-3.75, -0.55), 2.45       # v3 §4: disco no tamanho do T1/T2 (ø 5,0 u ≈ 60% da altura); as setas e os rótulos cabem no ESQUEMA
-KH4, CH4 = 2.7, P3(-3.75, -0.27)        # v3 §4: hélice do T4 maior (ø 5,1 u ≈ 64% da altura); sobe um pouco para a ponta não cruzar o selo CÂMERA LENTA
+CD, RD = DC, DR       # v3 §4: disco no tamanho do T1/T2 (ø 5,0 u ≈ 60% da altura); as setas e os rótulos cabem no ESQUEMA
+KH4, CH4 = 2.66, P3(-3.45, -0.37)        # v3 §4: hélice do T4 maior (ø 5,1 u ≈ 64% da altura); sobe um pouco para a ponta não cruzar o selo CÂMERA LENTA
 KV = 0.55                            # seta v = KV · r · ω
 KT = 7.0                              # T4-4: seta a_t = KT · |a_t| (só ela na tela)
 KC = 1.0                              # T4-5: seta a_c = KC · a_c
@@ -25,16 +25,59 @@ POSE = PI                             # hélice parada: a pá marcada aponta par
 ZX = (-7.2, 0.1, -3.5, 2.42)          # caixa do ESQUEMA para rótulos que se movem
 
 
-def no_esq(m, z=ZX, d=None):
-    """Rótulo vivo sempre dentro do ESQUEMA; com o disco `d`, nunca sobre a linha de referência tracejada (sai para cima ou para baixo dela)."""
-    if d is not None:
-        C, R = d.C, d.R
-        y0, y1 = m.get_bottom()[1], m.get_top()[1]
-        if m.get_right()[0] > C[0] + R - 0.15 and m.get_left()[0] < C[0] + R + 0.75 and y0 < C[1] + 0.2 and y1 > C[1] - 0.2:
-            m.shift(UP * ((C[1] + 0.2 - y0) if m.get_y() >= C[1] else (C[1] - 0.2 - y1)))
+def no_esq(m, z=ZX, d=None, evita=(), segs=()):
+    """Rótulo vivo sempre dentro do ESQUEMA e (com o disco `d`) fora do disco, com folga ≥ 0,18 u do contorno e fora da linha de referência tracejada.
+    v6 §2.1: em vez de empurrar o rótulo para cima do disco, procura a posição válida mais próxima (espiral de 0,1 em 0,1 u, de 15 em 15°)."""
+    c0 = m.get_center().copy()
+    hw, hh = m.width / 2, m.height / 2
+
+    def ok(c):
+        if c[0] - hw < z[0] or c[0] + hw > min(z[1], 0.0) or c[1] - hh < z[2] or c[1] + hh > min(z[3], 2.45):
+            return False
+        if d is not None:
+            dx, dy = max(abs(c[0] - d.C[0]) - hw, 0.0), max(abs(c[1] - d.C[1]) - hh, 0.0)
+            if math.hypot(dx, dy) < d.R + 0.18:
+                return False
+            if c[0] + hw > d.C[0] + d.R - 0.15 and c[0] - hw < d.C[0] + d.R + 0.75 and c[1] - hh < d.C[1] + 0.2 and c[1] + hh > d.C[1] - 0.2:
+                return False
+        for (bx0, bx1, by0, by1) in evita:                       # v8: não encosta em outro rótulo já posto (folga 0,12 u)
+            if c[0] + hw + 0.22 > bx0 and c[0] - hw - 0.22 < bx1 and c[1] + hh + 0.22 > by0 and c[1] - hh - 0.22 < by1:
+                return False
+        for (qa, qb) in segs:                                    # v8: nem em nenhuma seta (folga 0,12 u)
+            for k in range(15):
+                q = qa + (qb - qa) * k / 14
+                if abs(q[0] - c[0]) < hw + 0.15 and abs(q[1] - c[1]) < hh + 0.15:
+                    return False
+        return True
+    if ok(c0):
+        return m
+    for r in np.arange(0.1, 2.9, 0.1):
+        for k in range(24):
+            a = k * PI / 12
+            c = c0 + r * P3(math.cos(a), math.sin(a))
+            if ok(c):
+                return m.move_to(c)
     dx = max(0.0, z[0] - m.get_left()[0]) - max(0.0, m.get_right()[0] - z[1])
     dy = max(0.0, z[2] - m.get_bottom()[1]) - max(0.0, m.get_top()[1] - z[3])
     return m.shift(P3(dx, dy))
+
+
+def caixa_m(m):
+    return (m.get_left()[0], m.get_right()[0], m.get_bottom()[1], m.get_top()[1])
+
+
+def cl_zx(q0, q1, mg=0.14):
+    """v8: encurta a seta q0→q1 até a ponta ficar dentro do ESQUEMA (fora da calha e das zonas de texto), folga `mg`."""
+    lo = (ZX[0] + mg, ZX[2] + mg)
+    hi = (min(ZX[1], 0.0) - mg, min(ZX[3], 2.45) - mg)
+    f = 1.0
+    for k in (0, 1):
+        dd = q1[k] - q0[k]
+        if dd > 1e-9:
+            f = min(f, (hi[k] - q0[k]) / dd)
+        elif dd < -1e-9:
+            f = min(f, (lo[k] - q0[k]) / dd)
+    return q0 + (q1 - q0) * max(0.0, min(1.0, f))
 
 
 def Mm(*pares, size):
@@ -48,10 +91,23 @@ def Mm(*pares, size):
 
 def pos_vab(p, s_, u, n, L):
     """Rótulo de v⃗_A/v⃗_B: por fora do ponto, ao lado da seta; se isso sair do ESQUEMA (ponto perto do rodapé/topo), vai para depois da ponta da seta."""
-    c1 = p + s_ * n * L / 2 + s_ * u * 0.58
-    if ZX[2] + 0.55 < c1[1] < ZX[3] - 0.25:
-        return c1
-    return p + s_ * n * (L + 0.75) + s_ * u * 0.3
+    # v5 §2.2: candidatos em ordem; vale o primeiro que fica dentro do ESQUEMA, a ≥ 0,5 do disco e a ≥ 0,45 da própria seta (nada de clamp sobre o disco)
+    cands = [p + s_ * n * L / 2 + s_ * u * 0.9, p + s_ * n * (L + 0.75) + s_ * u * 0.3, p + s_ * u * 1.0 - s_ * n * 0.55,
+             p + s_ * u * 1.05, p + s_ * n * (L + 0.75) - s_ * u * 0.1, p + s_ * u * 0.9 - s_ * n * (L / 2)]
+    seg0, seg1 = p, p + s_ * n * L
+    best, bs = cands[0], -9.0
+    for c in cands:
+        dz = min(c[0] - (ZX[0] + 0.5), (ZX[1] - 0.5) - c[0], c[1] - (ZX[2] + 0.35), (ZX[3] - 0.22) - c[1])
+        dd = float(np.linalg.norm(c - CD)) - RD - 0.5
+        v = seg1 - seg0
+        tt = min(1.0, max(0.0, float(np.dot(c - seg0, v) / max(np.dot(v, v), 1e-9))))
+        da = float(np.linalg.norm(c - (seg0 + tt * v))) - 0.45
+        sc = min(dz, dd, da)
+        if sc >= 0:
+            return c
+        if sc > bs:
+            best, bs = c, sc
+    return best
 
 
 def cota_h(x0, x1, y, cor=GEO):
@@ -144,7 +200,7 @@ class LoteT4(L20):
         out = {}
         hub = VGroup(lbl(r"282{,}7", VEL, 44), lbl(r"\mathrm{rad/s}", VEL, 38)).arrange(DOWN, buff=0.1).move_to(c + P3(1.85, 0.0))   # v3 §5.14: ao lado do cubo (vão entre as pás), com linha-guia curta
         out["hub"] = hub
-        out["hubl"] = Line(c + P3(0.3, 0.0), P3(hub.get_left()[0] - 0.22, c[1])).set_stroke(GEO, 2.2, opacity=0.9).set_z_index(9)
+        out["hubl"] = Line(c + P3(0.3, 0.0), P3(hub.get_left()[0] - 0.55, c[1])).set_stroke(GEO, 2.2, opacity=0.9).set_z_index(9)
         y2 = c[1] + 0.45
         L2, i2 = M("r_2" if r1 else "r", "=", r"0{,}95", r"\,\mathrm{m}", size=42, cores={0: GEO_, 2: GEO_, 3: GEO_})
         L2.move_to(P3((p2[0] + c[0]) / 2 - 0.15, y2 + 0.42))
@@ -166,7 +222,7 @@ class LoteT4(L20):
         self._voando = set(id(x) for x in a.get_family()) | set(id(x) for x in b.get_family())
         self._voando_raiz = [a, b]
         self._fontes_extra = [src]
-        self.play(TransformMatchingTex(a, b, key_map=key_map), *extra, run_time=max(0.8, rt))
+        self.play_dip(src, TransformMatchingTex(a, b, key_map=key_map), *extra, run_time=max(0.8, rt))
         self._fontes_extra = []
         self._voando, self._voando_raiz = set(), []
         self.remove(a, b)
@@ -223,10 +279,13 @@ class LoteT4(L20):
 
         def pos_s(th):
             am = (th + th_a) / 2
+            smax = (ZX[3] - 0.2 - d.C[1]) / (d.R + 0.38)           # v8: o s fica sempre FORA do disco; sem espaço acima, desce pela borda (ângulo limitado)
+            if math.sin(am) > smax:
+                am = math.asin(max(-1.0, min(1.0, smax)))
             return d.C + (d.R + 0.38) * P3(math.cos(am), math.sin(am))
 
         def pos_th(th):                                            # v3 §6: θ fora do arco, do lado de trás da linha pintada (dentro do setor varrido, nunca sobre o raio nem os pontos)
-            return d.C + 1.0 * P3(math.cos(th - 0.45), math.sin(th - 0.45))
+            return d.C + 1.3 * P3(math.cos(th - 0.5), math.sin(th - 0.5))
 
         def pos_r(th):
             u, n = d.u(th)
@@ -240,7 +299,7 @@ class LoteT4(L20):
             g = VGroup()
             o = op_s.get_value()
             if o > 0.01 and th - th_a > 0.02:                         # D21: só o arco varrido (nunca o círculo inteiro)
-                g.add(arco(C, R, th_a, th, ANG, 9, o, z=8), arco(C, 0.6, th_a, th, ANG, 7, o, z=8))
+                g.add(arco(C, R, th_a, th, ANG, 15, o, z=8), arco(C, 0.6, th_a, th, ANG, 12, o, z=8))
                 g.add(escala_op(mtex("s", ANG, 44).move_to(pos_s(th)), o), escala_op(mtex(r"\theta", ANG, 42).move_to(pos_th(th)), o))
             if op_r.get_value() > 0.01:
                 g.add(escala_op(mtex("r", GEO_, 44).move_to(pos_r(th)), op_r.get_value()))
@@ -249,7 +308,7 @@ class LoteT4(L20):
             ov = op_v.get_value()
             if ov > 0.01:
                 L = KV * R * st["w"]
-                g.add(seta(p, p + n * L, VEL, 8, tip=min(0.26, 0.45 * L), op=ov, z=11))
+                g.add(seta(p, p + n * L, VEL, 13, tip=min(0.3, 0.45 * L), op=ov, z=11))
                 g.add(escala_op(no_esq(mtex("v_t", VEL, 44).move_to(p + n * L / 2 + u * 0.55), d=d), ov))
             return g
         pv = vivo(ponto)
@@ -326,7 +385,7 @@ class LoteT4(L20):
         velhos = [d.g, pv]
         self.pilha.limpa(rt=0.3)
         self.play(*[FadeOut(m) for m in velhos], f3.op.animate.set_value(1.0), op_mk.animate.set_value(1.0), op_set.animate.set_value(1.0),
-                  *self.troca_marcador("CÂMERA LENTA ×90", "dir"), run_time=0.8)
+                  *self.troca_marcador("CÂMERA LENTA ×90", "dir", y=-3.50), run_time=0.8)
         self.remove(*velhos)
         mot.clear_updaters()
         F1, if1 = M("v", "=", "r", r"\omega", size=54, cores={0: VEL, 2: GEO_, 3: VEL})
@@ -334,13 +393,13 @@ class LoteT4(L20):
         self.pilha.poe(F0)
         self.gat("a hélice inteira")
         self.play(FadeIn(F0), run_time=0.8)
-        self.gat("tem uma velocidade angular só")
+        self.gat("tem a mesma velocidade angular")
         giro.parar(self.clk.get_value())                              # S9: a hélice para na pose para os rótulos ficarem presos aos pontos
         self.play(*self.troca_marcador(None), run_time=0.4)
         R_ = self.hel_rotulos(cam)
-        self.gat("uns duzentos e oitenta e três")
+        self.gat("cerca de duzentos e oitenta e três")
         self.play(FadeIn(R_["hub"]), Create(R_["hubl"]), run_time=0.7)
-        self.gat("mas cada ponto multiplica")
+        self.gat("a velocidade de cada ponto depende")
         F2, if2 = M("v_1", "=", r"0{,}10", r"\cdot", r"282{,}7", r"\approx", r"28\ \mathrm{m/s}", size=48, cores={0: VEL, 2: GEO_, 4: VEL, 6: VEL})
         F3, if3 = M("28", r"\cdot", r"3{,}6", r"\approx", r"100\ \mathrm{km/h}", size=48, cores={0: VEL, 4: VEL})
         F4, if4 = M("v_2", "=", r"0{,}95", r"\cdot", r"282{,}7", r"\approx", r"269\ \mathrm{m/s}", size=48, cores={0: VEL, 2: GEO_, 4: VEL, 6: VEL})
@@ -352,7 +411,7 @@ class LoteT4(L20):
         # §5 T4-2: 0,10 voa da cota de r₁, 282,7 voa do cubo; v₁, =, ·, ≈ e o resultado são escritos na vaga (ordem de x)
         self.voa([(mp(R_["l1"], R_["i1"], [2]), mp(F2, if2, [2])), (R_["hub"][0], mp(F2, if2, [4]))], extra=[FadeIn(mp(F2, if2, [0, 1, 3, 5, 6]))], rt=1.6)
         self.pilha.poe(F3)
-        self.gat("uns cem quilômetros")
+        self.gat("perto de cem quilômetros por hora")
         # GM × 3,6: o 28 desce, o resto da linha-mãe fica; · 3,6 ≈ 100 km/h entram por x
         self.pg(F2, F3, (J(if2, 0, 1, 2, 3, 4, 5) + if2[6][2:], []), (if2[6][:2], J(if3, 0)), ([], J(if3, 1)), ([], J(if3, 2)), ([], J(if3, 3)), ([], J(if3, 4)),
                 rt=1.1, origem=False)
@@ -371,15 +430,15 @@ class LoteT4(L20):
         self.play(FadeOut(rot_), run_time=0.4)                        # os rótulos saem antes de as pás voltarem a passar por eles
         self.remove(rot_)
         giro.retomar(self.clk.get_value())
-        self.play(*self.troca_marcador("CÂMERA LENTA ×90", "dir"), run_time=0.5)
-        self.gat("ele gira junto")
+        self.play(*self.troca_marcador("CÂMERA LENTA ×90", "dir", y=-3.50), run_time=0.5)
+        self.gat("ele completa cada volta junto com a ponta")
         self.play(op_ras.animate.set_value(1.0), run_time=0.8)        # rastros de mesmo Δt: o cubo gira junto, só que perto do eixo
-        self.gat("e essa rapidez na ponta")
+        self.gat("e tem um detalhe importante")
         self.foco = F5
         self.wait(0.9)
-        self.gat("ela é medida em relação ao eixo")
+        self.gat("essas são velocidades em relação ao eixo")
         self.selo("EM RELAÇÃO AO EIXO", "")
-        self.gat("perto da velocidade do som")
+        self.gat("se aproxima da velocidade do som")
         self.foco = F4
         self.wait(0.9)
         self.ate(0.99)
@@ -391,8 +450,8 @@ class LoteT4(L20):
         st["t"] = self.clk.get_value()
         prog["ts"], prog["ws"] = [self.clk.get_value()], [0.5]
         mot.add_updater(motor)
-        op2, pul, op_rr = ValueTracker(0.0), ValueTracker(0.0), ValueTracker(0.0)
-        self.add(op2, pul, op_rr)
+        op2, pul, op_rr, lab_dim = ValueTracker(0.0), ValueTracker(0.0), ValueTracker(0.0), ValueTracker(1.0)
+        self.add(op2, pul, op_rr, lab_dim)
 
         def opostos():
             o = op2.get_value()
@@ -406,12 +465,13 @@ class LoteT4(L20):
                 if op_rr.get_value() > 0.01:                         # "à mesma distância do eixo": os dois raios acendem em GEO
                     g.add(Line(d.C, p).set_stroke(GEO, 7, opacity=0.9 * op_rr.get_value()).set_z_index(7))
                 if o > 0.01:
-                    g.add(seta(p, p + s_ * n * L, VEL, 6 + 3 * pul.get_value(), op=o, z=11))
-                    g.add(escala_op(no_esq(mtex(nm, VEL, 44).move_to(pos_vab(p, s_, u, n, L)), d=d), o))
+                    g.add(seta(p, p + s_ * n * L, VEL, 12 + 3 * pul.get_value(), op=o, z=11))
+                    g.add(escala_op(no_esq(mtex(nm, VEL, 44).move_to(pos_vab(p, s_, u, n, L)), d=d), o * lab_dim.get_value()))   # v5 §2.4: o rótulo de origem do voo fica a 40% (cópia nunca sobre o original a 100%)
             if not PEDIDOS3D and o > 0.5:
                 self.reg("opostos", L1=L, L2=L, d=(d.R * u + n * L - (-d.R * u - n * L)).tolist())
             return g
         ov = vivo(opostos)
+        volta_dim = lambda: UpdateFromAlphaFunc(lab_dim, lambda m, a: m.set_value(0.4 + 0.6 * a), rate_func=lambda a: max(0.0, (a - 0.75) / 0.25), suspend_mobject_updating=False)
 
         def lab_op(s_):
             th = d.th.get_value()
@@ -435,15 +495,17 @@ class LoteT4(L20):
         self.pilha.poe(G1)
         self.gat("o tamanho da velocidade é o mesmo")
         # D22: v⃗_A e v⃗_B voam das setas (com as barras do módulo: o de fechamento nunca antes do que está dentro)
-        self.voa([(lab_op(1), mp(G1, ig1, [0])), (lab_op(-1), mp(G1, ig1, [2]))], extra=[FadeIn(mp(G1, ig1, [1, 3, 4, 5]))], rt=1.4, origem=False)
+        lab_dim.set_value(0.4)
+        self.voa([(lab_op(1), mp(G1, ig1, [0])), (lab_op(-1), mp(G1, ig1, [2]))], extra=[FadeIn(mp(G1, ig1, [1, 3, 4, 5])), volta_dim()], rt=1.4, origem=False)
         self.pilha.poe(G2)
         self.gat("mas as setas apontam")
         th = d.th.get_value()
         u, n = d.u(th)
         pB = d.C - d.R * u
-        sB = seta(pB, pB - n * KV * d.R * st["w"] * 1.8, VEL, 6, z=11)
+        sB = seta(pB, pB - n * KV * d.R * st["w"] * 1.8, VEL, 12, z=11)
         # o sinal "−" sai da seta de B (a que aponta ao contrário)
-        self.voa([(lab_op(1), mp(G2, ig2, [0])), (sB, mp(G2, ig2, [2])), (lab_op(-1), mp(G2, ig2, [3]))], extra=[FadeIn(mp(G2, ig2, [1]))], rt=1.3, origem=False)
+        lab_dim.set_value(0.4)
+        self.voa([(lab_op(1), mp(G2, ig2, [0])), (sB, mp(G2, ig2, [2])), (lab_op(-1), mp(G2, ig2, [3]))], extra=[FadeIn(mp(G2, ig2, [1])), volta_dim()], rt=1.3, origem=False)
         fr2 = VGroup(txt("MESMA RAPIDEZ", 32, bold=True), txt("VELOCIDADES OPOSTAS", 32, bold=True)).arrange(DOWN, buff=0.18, aligned_edge=LEFT)
         self.pilha.poe(fr2)
         self.gat("mesma rapidez velocidades diferentes")
@@ -464,6 +526,8 @@ class LoteT4(L20):
         op_t, op_c = ValueTracker(0.0), ValueTracker(0.0)
         self.add(op_t, op_c)
 
+        labpos = {}
+
         def acel():
             th = d.th.get_value()
             p = d.p(3, th)
@@ -472,22 +536,39 @@ class LoteT4(L20):
             w_, al_ = st["w"], st["al"]
             Lv = KV * d.R * w_
             ov_ = op_v.get_value()
-            if ov_ > 0.01:
-                g.add(seta(p, p + n * Lv, VEL, 6, op=ov_, z=11))
-                g.add(escala_op(no_esq(mtex("v", VEL, 44).move_to(p + n * Lv * 0.45 + u * 0.4), d=d), ov_))
             at, ac = d.R * al_, w_ * w_ * d.R
             ot = op_t.get_value() * min(1.0, abs(at) * KT / 0.18)
-            if ot > 0.01:                                          # D23: acelerando, a seta verde nasce na ponta da violeta; freando, nasce no ponto e aponta para trás
-                q0 = p + n * Lv if at > 0 else p
-                q1 = q0 + n * at * KT
-                g.add(seta(q0, q1, ACC, 6, op=ot, z=12))
-                g.add(escala_op(no_esq(mtex("a_t", ACC, 44).move_to(q1 + np.sign(at) * n * 0.42 + u * 0.12), d=d), ot))
+            oc = op_c.get_value()
+            qv = cl_zx(p, p + n * Lv)
+            q0 = qv if at > 0 else p                                # D23: acelerando, a seta verde nasce na ponta da violeta; freando, nasce no ponto e aponta para trás
+            q1 = cl_zx(q0, q0 + n * at * KT)
+            qc = cl_zx(p, p - u * ac * KC)
+            segs = []
+            if ov_ > 0.01:
+                segs.append((p, qv))
+            if ot > 0.01:
+                segs.append((q0, q1))
+            if oc > 0.01:
+                segs.append((p, qc))
+            evita = []                                              # v8: rótulos postos em conjunto (sem encostar um no outro nem em seta)
+            labpos.clear()
+            if ov_ > 0.01:
+                g.add(seta(p, qv, VEL, 14, op=ov_, z=11))
+                m_ = no_esq(mtex("v", VEL, 44).move_to((p + qv) / 2 + u * 0.42), d=d, evita=evita, segs=segs)
+                evita.append(caixa_m(m_)); labpos["v"] = m_.get_center().copy()
+                g.add(escala_op(m_, ov_))
+            if ot > 0.01:
+                g.add(seta(q0, q1, ACC, 14, op=ot, z=12))
+                m_ = no_esq(mtex("a_t", ACC, 44).move_to(q1 + np.sign(at) * n * 0.55 + u * 0.3), d=d, evita=evita, segs=segs)
+                evita.append(caixa_m(m_)); labpos["a_t"] = m_.get_center().copy()
+                g.add(escala_op(m_, ot))
                 if not PEDIDOS3D:
                     self.reg("t4_acel", at=at, ac=ac, Lt=abs(at) * KT, Lv=Lv, w=w_, al=al_)
-            oc = op_c.get_value()
             if oc > 0.01:                                          # a_c para o eixo; o rótulo fica fora do disco, do lado de fora do ponto
-                g.add(seta(p, p - u * ac * KC, ACC, 6, op=oc, z=12))
-                g.add(escala_op(no_esq(mtex("a_c", ACC, 44).move_to(p + u * 0.42 - n * 0.42), d=d), oc))
+                g.add(seta(p, qc, ACC, 14, op=oc, z=12))
+                m_ = no_esq(mtex("a_c", ACC, 44).move_to(p + u * 0.5 - n * 0.5), d=d, evita=evita, segs=segs)
+                evita.append(caixa_m(m_)); labpos["a_c"] = m_.get_center().copy()
+                g.add(escala_op(m_, oc))
             return g
         av = vivo(acel)
         self.add(av)
@@ -545,8 +626,8 @@ class LoteT4(L20):
         u, n = d.u(th)
         p = d.p(3, th)
         Lv = KV * d.R * st["w"]
-        lv = mtex("v", VEL, 44).move_to(p + n * Lv * 0.45 + u * 0.4)
-        lac = mtex("a_c", ACC, 44).move_to(p + u * 0.42 - n * 0.42)
+        lv = mtex("v", VEL, 44).move_to(labpos.get("v", p + n * Lv * 0.45 + u * 0.4))
+        lac = mtex("a_c", ACC, 44).move_to(labpos.get("a_c", p + u * 0.42 - n * 0.42))
         # §5 T4-5: a_c voa do rótulo da seta verde, v do rótulo da violeta; =, ², barra e r escritos na vaga (numerador → barra → denominador)
         # (o v pousa junto com a barra: sozinha, a barra, mais larga, nasceria antes do numerador)
         self.voa([(lac, mp(C1, ic1, [0])), (lv, gl(C1, [ic1[2][0], ic1[2][2]]))], extra=[FadeIn(mp(C1, ic1, [1])), FadeIn(gl(C1, [ic1[2][1], ic1[2][3]]))],
@@ -614,13 +695,17 @@ class LoteT4(L20):
             tg, rad = LEFT, DOWN                                      # no topo da borda: tangente (anti-horário) para a esquerda, eixo para baixo
             vt, vc = tg * at * KA, rad * ac * KA
             ot, oc, os_ = op6t.get_value() * o, op6c.get_value() * o, op6s.get_value() * o
+            def lim(v_, k):                                        # v8: no inset a seta nunca passa da borda da lupa (a soma não encosta nos rótulos de fora)
+                v_ = v_ * k
+                nv = float(np.linalg.norm(v_))
+                return v_ * min(1.0, 1.4 / nv) if (k > 1.0 and nv > 1e-9) else v_
             for (q, k, wd, tp) in ((Z6, 1.0, 5, 0.12), (Zi, ZOOM, 8, 0.26)):          # no disco (pequenas) e no inset (×2,5)
                 if ot > 0.01 and abs(at) * KA * k > 0.03:
-                    g.add(seta(q, q + vt * k, ACC, wd, tip=tp, op=ot, z=14))
+                    g.add(seta(q, q + lim(vt, k), ACC, wd, tip=tp, op=ot, z=14))
                 if oc > 0.01:
-                    g.add(seta(q, q + vc * k, ACC, wd, tip=tp, op=oc, z=14))
+                    g.add(seta(q, q + lim(vc, k), ACC, wd, tip=tp, op=oc, z=14))
                 if os_ > 0.01:
-                    g.add(seta(q, q + (vt + vc) * k, ACC, wd + 2, tip=tp * 1.1, op=os_, z=15))
+                    g.add(seta(q, q + lim(vt + vc, k), ACC, wd + 2, tip=tp * 1.1, op=os_, z=15))
             if o > 0.01:
                 g.add(ponto_mob(Zi, 0.09, z=16))
             if os_ > 0.01:
@@ -639,45 +724,47 @@ class LoteT4(L20):
             return g
         zv = vivo(zoom6)
         self.add(zv)
-        self.play(*d.move(C6, R6), run_time=1.0)
-        self.gat("cada ponto tem duas acelerações")
+        self.play(*d.move(C6, R6), run_time=0.3)                 # v7 §4: o disco chega antes de "um ponto do disco pode ter duas acelerações" (0,38 s da âncora)
+        self.gat("um ponto do disco pode ter duas acelerações")
         self.play(FadeIn(inset_g), op6.animate.set_value(1.0), run_time=0.8)
         P1, ip1 = M("a_t", "=", "r", r"\alpha", size=58, cores={0: ACC, 2: GEO_, 3: ACC})
         P2, ip2 = M("a_c", "=", r"\omega^2", "r", size=58, cores={0: ACC, 2: VEL, 3: GEO_})
         P3_, ip3 = M("a", "=", r"\sqrt{a_t^2+a_c^2}", size=58, cores={0: ACC, 2: ACC})
         P4, ip4 = M(r"\tan\varphi", "=", r"\frac{|a_t|}{a_c}", size=58, cores={2: ACC})
+        P3_[0][ip3[2][5]].set_color(WHITE_)                       # v8: o "+" do radicando e operador (branco); so a_t² e a_c² levam a cor da grandeza
+        P3_[0][ip3[2][5]].set_stroke(WHITE_, width=1.8, background=False)
         P4[0][ip4[0][3]].set_color(ANG)
         P4[0][ip4[0][3]].set_stroke(ANG, width=1.8, background=False)
 
         def sg6():
             return 1 if st["al"] >= 0 else -1
-        self.gat("a tangencial que muda o tamanho")
+        self.gat("a tangencial muda o tamanho da velocidade")
         self.play(op6t.animate.set_value(1.0), run_time=0.6)
         self.pilha.poe(P1)
         self.voa([(rot6("at", sg6()), mp(P1, ip1, [0]))], extra=[FadeIn(mp(P1, ip1, [1, 2, 3]))], rt=1.0, origem=False)
-        self.gat("e a centrípeta que muda")
+        self.gat("a centrípeta muda sua direção")
         self.play(op6c.animate.set_value(1.0), run_time=0.6)
         self.pilha.poe(P2)
         self.voa([(rot6("ac", sg6()), mp(P2, ip2, [0]))], extra=[FadeIn(mp(P2, ip2, [1, 2, 3]))], rt=1.0, origem=False)
-        self.gat("a aceleração total é a soma")
+        self.gat("o tamanho da aceleração total")
         self.play(op6s.animate.set_value(1.0), run_time=0.8)
         self.pilha.poe(P3_)
-        self.gat("o tamanho vem do pitágoras")
+        self.gat("vem de pitágoras")
         # raiz: símbolo → radicando; a_t² + voa do rótulo de a_t, a_c² do rótulo de a_c
-        self.voa([(rot6("at", sg6()), gl(P3_, ip3[2][2:6])), (rot6("ac", sg6()), gl(P3_, ip3[2][6:9]))],
-                 extra=[FadeIn(mp(P3_, ip3, [0, 1])), FadeIn(gl(P3_, ip3[2][:2]))], rt=1.3, origem=False)
-        self.gat("e o ângulo dela medido a partir")
+        self.voa([(rot6("at", sg6()), gl(P3_, ip3[2][2:5])), (rot6("ac", sg6()), gl(P3_, ip3[2][6:9]))],
+                 extra=[FadeIn(mp(P3_, ip3, [0, 1])), FadeIn(gl(P3_, ip3[2][:2])), FadeIn(gl(P3_, ip3[2][5:6]))], rt=1.3, origem=False)
+        self.gat("se medirmos o ângulo a partir")
         self.play(op6f.animate(rate_func=there_and_back).set_value(1.0), run_time=0.9)
         self.pilha.poe(P4)
-        self.gat("tem tangente igual")
+        self.gat("sua tangente é o módulo")
         self.voa([(rot6("f", sg6()), gl(P4, ip4[0][3:4])), (rot6("at", sg6()), gl(P4, ip4[2][:5])), (rot6("ac", sg6()), gl(P4, ip4[2][5:]))],
                  extra=[FadeIn(gl(P4, ip4[0][:3])), FadeIn(mp(P4, ip4, [1]))], rt=1.3, origem=False)
         self.foco = P4
-        self.gat("para a frente se o giro acelera")
+        self.gat("para qual lado a resultante se inclina")
         self.foco = P4
         self.wait(0.9)
         # fecho: a hélice grande volta, com a seta verde para o eixo na ponta
-        self.gat("repara também que a centrípeta cresce")
+        self.gat("e olha a consequência")
         self.pilha.limpa(rt=0.3)
         t0 = self.clk.get_value()
         t_st6 = t0 + self.ate_t("na ponta da hélice")
@@ -695,7 +782,7 @@ class LoteT4(L20):
             c = projeta3d(cam, (0, -0.07, 0))
             uu = (c - p) / max(np.linalg.norm(c - p), 1e-6)
             Lh = 0.55 * float(np.linalg.norm(c - p))                      # v3 §5.6: a seta de a_c cresce com a hélice (G8)
-            g = VGroup(seta(p, p + uu * Lh, ACC, 9, tip=0.3, op=o, z=12), escala_op(ponto_mob(p, 0.09, z=13), o))
+            g = VGroup(seta(p, p + uu * Lh, ACC, 14, tip=0.3, op=o, z=12), escala_op(ponto_mob(p, 0.09, z=13), o))
             if op_hl.get_value() > 0.01:
                 g.add(escala_op(mtex("a_c", ACC, 46).move_to(p + uu * Lh / 2 + P3(0, -0.5)), op_hl.get_value()))
             if not PEDIDOS3D:
@@ -704,7 +791,7 @@ class LoteT4(L20):
         hp = vivo(ponta)
         self.add(hp)
         velhos = [d.g, zv, inset_g]
-        self.play(*[FadeOut(m) for m in velhos], f6.op.animate.set_value(1.0), *self.troca_marcador("CÂMERA LENTA ×90", "dir"), run_time=0.5)
+        self.play(*[FadeOut(m) for m in velhos], f6.op.animate.set_value(1.0), *self.troca_marcador("CÂMERA LENTA ×90", "dir", y=-3.50), run_time=0.5)
         self.remove(*velhos)                                          # a seta verde da ponta só entra depois que os rótulos do inset saíram
         mot.clear_updaters()
         H1 = M("a_c", "=", r"\omega^2", "r", size=58, cores={0: ACC, 2: VEL, 3: GEO_})
@@ -718,14 +805,14 @@ class LoteT4(L20):
         H3 = M(r"\approx", r"7{,}6\times 10^4\ \mathrm{m/s^2}", size=56, cores={1: ACC})[0]
         H4 = M("a_c", r"\approx", r"7{.}750\ g", size=58, cores={0: ACC, 2: ACC})[0]
         H4b = caixa_l(H4, ACC)
-        self.gat("com o quadrado da velocidade angular")
+        self.gat("do quadrado da velocidade angular")
         self.foco = H1l
-        self.gat("na ponta da hélice")
+        self.gat("na ponta daquela hélice")
         giro6.parar(self.clk.get_value())
         self.play(*self.troca_marcador(None), run_time=0.25)                       # um marcador por vez: o velho sai antes
         self.play(*self.troca_marcador("FORA DE ESCALA", "dir"), run_time=0.3)
         R6_ = self.hel_rotulos(cam, r1=False)
-        self.gat("dá uns setenta")
+        self.gat("aproximadamente setenta e seis mil")
         self.play(FadeIn(R6_["hub"]), Create(R6_["hubl"]), Create(R6_["c2"]), FadeIn(R6_["l2"]), op_hl.animate.set_value(1.0), run_time=0.6)
         self.pilha.poe(H2)
         # §5 T4-6: 282,7 voa do cubo e 0,95 da cota da ponta; o ² nasce junto da base
@@ -734,7 +821,7 @@ class LoteT4(L20):
         self.pilha.poe(H3, dx=max(0.0, H2[0][ih2[0][0]].get_left()[0] - X_CONTA))
         self.play(FadeIn(H3), run_time=0.9)
         self.pilha.poe(H4b, dx=0.2)
-        self.gat("perto de sete mil e setecentas")
+        self.gat("mais de sete mil e setecentas")
         self.play(FadeIn(H4b), run_time=1.0)
         self.foco = H4b
         self.ate(0.99)

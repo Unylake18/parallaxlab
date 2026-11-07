@@ -1,264 +1,363 @@
 Manim Community v0.21.0
 
-[11/04/26 16:34:17] INFO     Caching disabled.             cairo_renderer.py:81
+[plano] an:T4-1 A=0.60 W=0.00 D=3.76 ritmo=1.80 ritmo_w=1.00
+[11/06/26 22:41:30] INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-1 escreve n=3 voos=0 dx=0.20 D=0.60 0.0
-[11/04/26 16:34:18] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-1 0.87 um ponto a uma certa distância do eixo
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:34:19] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-1 abs 511.3 s dp 0.37 alvos ['VGroup:3.4,5.5', 'VGroup:3.4,5.5', 'VGroup:3.4,5.5']
                     INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-1 3.73 percorre um arco igual
-[11/04/26 16:34:21] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-1 abs 479.9 s dp 0.80 alvos ['VGroup:3.4,5.5', 'VGroup:3.4,5.5', 'VGroup:3.4,5.5']
+[11/06/26 22:41:31] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:41:32] WARNING  The original total run_time of       scene.py:1131
+                             PT4.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
                     INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-1 4.87 igual a essa distância
-[11/04/26 16:34:22] INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PT4.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[gatilho] T4-1 3.80 um ponto a uma certa distância do eixo
+[plano] gat:T4-1:um ponto a uma certa distância do eixo A=0.60 W=0.00 D=2.06 ritmo=1.80 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-1 5.93 percorre um arco igual
+[plano] gat:T4-1:percorre um arco igual A=0.90 W=0.00 D=0.95 ritmo=1.03 ritmo_w=1.00
+[11/06/26 22:41:33] INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PT4.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PT4.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[gatilho] T4-1 6.93 igual a essa distância
+[plano] gat:T4-1:igual a essa distância A=1.15 W=0.00 D=2.29 ritmo=1.41 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-1 escreve n=4 voos=3 dx=0.25 D=1.15 s=r\theta
+[11/06/26 22:41:34] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:34:23] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-1 7.47 como a distância ao eixo não muda
+[gatilho] T4-1 9.27 como a distância ao eixo não muda
+[plano] gat:T4-1:como a distância ao eixo não muda A=0.00 W=0.90 D=2.95 ritmo=1.80 ritmo_w=3.28
                     WARNING  Attempted adding some Mobject as a  mobject.py:557
                              child more than once, this is not                 
                              possible. Repetitions are ignored.                
                     INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-1 abs 515.9 s dp 0.47 alvos ['MathTex:1.5,1.7', 'VGroup:1.5,1.7', 'VGroup:3.4,5.5']
-[11/04/26 16:34:24] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:34:26] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-1 abs 518.2 s dp 0.80 alvos ['MathTex:1.5,1.7', 'VGroup:1.5,1.7', 'VGroup:3.4,5.5']
-[11/04/26 16:34:27] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:34:28] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-1 11.87 é só derivar dos dois lados
+[pulso] T4-1 abs 487.3 s dp 0.80 alvos ['MathTex:1.5,1.7', 'VGroup:1.5,1.7', 'VGroup:3.4,5.5']
+[11/06/26 22:41:35] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-1 12.27 é só derivar dos dois lados
+[plano] gat:T4-1:é só derivar dos dois lados A=2.70 W=0.00 D=1.37 ritmo=0.51 ritmo_w=1.00
 [alg] T4-1 tmt \frac{d}{dt} s = \dfrac{d}{dt} ( r \thet
-[11/04/26 16:34:29] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:41:36] INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-1 tmt \frac{d}{dt} s = r\, \dfrac{d}{dt} \thet
-[11/04/26 16:34:30] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:41:37] INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-1 fadein-selo
-[11/04/26 16:34:31] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-1 14.53 a velocidade do ponto ao longo do círculo
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:34:32] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:34:33] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-1 17.07 é a distância ao eixo vezes a velocidade angular
+[gatilho] T4-1 13.73 a velocidade do ponto ao longo do círculo
+[plano] gat:T4-1:a velocidade do ponto ao longo do círculo A=1.06 W=0.00 D=2.43 ritmo=1.51 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:41:38] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-1 16.20 é a distância ao eixo vezes a velocidade angular
+[plano] gat:T4-1:é a distância ao eixo vezes a velocidade  A=1.20 W=0.00 D=2.96 ritmo=1.57 ritmo_w=1.00
 [alg] T4-1 passo mapas=4
-[11/04/26 16:34:34] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:34:35] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:34:36] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-1 20.33 ela tem sinal
-[11/04/26 16:34:37] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:34:38] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:41:39] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:41:40] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-1 19.20 ela tem sinal
+[plano] gat:T4-1:ela tem sinal A=1.40 W=0.00 D=4.36 ritmo=1.76 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:41:41] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-1 escreve n=5 voos=0 dx=0.17 D=0.90 v_t>0
-[11/04/26 16:34:39] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:34:40] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-1 abs 531.5 s dp 0.80 alvos ['VGroup:3.3,5.1', 'VGroup:3.3,5.1', 'VGroup:3.3,5.1']
-[11/04/26 16:34:41] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:34:43] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-1 24.87 e a rapidez
+[11/06/26 22:41:42] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:41:43] WARNING  The original total run_time of       scene.py:1131
+                             PT4.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PT4.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[gatilho] T4-1 23.60 e a rapidez
+[plano] gat:T4-1:e a rapidez A=0.20 W=0.00 D=5.82 ritmo=1.80 ritmo_w=1.00
 [alg] T4-1 passo mapas=8
-[11/04/26 16:34:44] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-1 escreve n=1 voos=0 dx=0.25 D=0.20 |v_t|=r|\omega|
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:34:45] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-1 abs 534.9 s dp 0.80 alvos ['MathTex:3.8,2.6', 'VGroup:2.9,4.4', 'VGroup:2.9,4.4']
-[11/04/26 16:34:47] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:34:48] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-1 abs 537.6 s dp 0.80 alvos ['MathTex:3.8,2.6', 'VGroup:2.9,4.4', 'VGroup:2.9,4.4']
-[11/04/26 16:34:50] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:34:52] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-1 31.47 sempre tangente ao círculo do ponto
-[11/04/26 16:34:55] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:34:57] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:34:58] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:34:59] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:01] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:03] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-2 1.87 a hélice inteira
-[11/04/26 16:35:04] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-1 abs 502.7 s dp 0.80 alvos ['MathTex:3.8,2.6', 'VGroup:2.9,4.4', 'VGroup:2.9,4.4']
+[11/06/26 22:41:44] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:41:45] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-1 abs 505.4 s dp 0.80 alvos ['MathTex:3.8,2.6', 'VGroup:2.9,4.4', 'VGroup:2.9,4.4']
+[11/06/26 22:41:46] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-1 29.47 sempre tangente ao círculo do ponto
+[plano] gat:T4-1:sempre tangente ao círculo do ponto A=1.40 W=0.00 D=1.81 ritmo=1.14 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:41:47] INFO     Caching disabled.             cairo_renderer.py:81
+[plano] ate:T4-1:0.99 A=0.00 W=0.00 D=0.30 ritmo=1.00 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[plano] an:T4-2 A=1.10 W=0.00 D=2.64 ritmo=1.55 ritmo_w=1.00
+[gatilho-sem-frase] T4-2: 'tem uma velocidade angular só'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:41:48] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:41:49] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-2 2.67 a hélice inteira
+[plano] gat:T4-2:a hélice inteira A=0.92 W=0.00 D=0.99 ritmo=1.04 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-2 escreve n=7 voos=0 dx=0.12 D=0.92 0.0
+[11/06/26 22:41:50] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-2 3.87 tem a mesma velocidade angular
+[plano] gat:T4-2:tem a mesma velocidade angular A=0.40 W=0.00 D=1.67 ritmo=1.80 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-2 3.07 tem uma velocidade angular só
-[11/04/26 16:35:05] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:06] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-2 4.87 uns duzentos e oitenta e três
-[11/04/26 16:35:07] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:08] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-2 abs 549.8 s dp 0.74 alvos ['VGroup:2.9,4.5', 'Line:-3.0,0.8', 'VGroup:-1.9,1.0']
-[11/04/26 16:35:09] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-2 8.13 mas cada ponto multiplica
-[11/04/26 16:35:11] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-2 abs 552.4 s dp 0.80 alvos ['VGroup:2.9,4.5', 'Line:-3.0,0.8', 'VGroup:-1.9,1.0']
-[11/04/26 16:35:12] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:41:51] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-2 5.60 cerca de duzentos e oitenta e três
+[plano] gat:T4-2:cerca de duzentos e oitenta e três A=0.70 W=0.00 D=3.46 ritmo=1.80 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-2 12.20 a dez centímetros
-[11/04/26 16:35:13] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:41:52] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-2 abs 517.2 s dp 0.35 alvos ['VGroup:2.9,4.5', 'Line:-2.9,0.5', 'VGroup:-1.6,1.0']
+[11/06/26 22:41:53] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-2 9.07 a velocidade de cada ponto depende
+[plano] gat:T4-2:a velocidade de cada ponto depende A=0.00 W=0.00 D=3.35 ritmo=1.00 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-2 abs 519.4 s dp 0.80 alvos ['VGroup:2.9,4.5', 'Line:-2.9,0.5', 'VGroup:-1.6,1.0']
+[11/06/26 22:41:54] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-2 12.47 a dez centímetros
+[plano] gat:T4-2:a dez centímetros A=2.10 W=0.00 D=3.13 ritmo=1.22 ritmo_w=1.00
+[11/06/26 22:41:55] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-2 escreve n=7 voos=2 dx=0.23 D=1.60 v_1=0{,}10\cdot282{,}7\approx28\ \mathrm{m/s}
-[11/04/26 16:35:14] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:15] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:41:56] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-2 16.33 uns cem quilômetros
+[gatilho] T4-2 15.67 perto de cem quilômetros por hora
+[plano] gat:T4-2:perto de cem quilômetros por hora A=1.10 W=0.00 D=1.77 ritmo=1.27 ritmo_w=1.00
 [alg] T4-2 passo mapas=6
-[11/04/26 16:35:16] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:17] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-2 18.20 na ponta a noventa e cinco
+[11/06/26 22:41:57] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:18] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:19] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-2 17.47 na ponta a noventa e cinco
+[plano] gat:T4-2:na ponta a noventa e cinco A=2.40 W=0.00 D=5.17 ritmo=1.47 ritmo_w=1.00
+[11/06/26 22:41:58] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:41:59] INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-2 escreve n=7 voos=2 dx=0.23 D=1.60 v_2=0{,}95\cdot282{,}7\approx269\ \mathrm{m/s}
-[11/04/26 16:35:20] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:00] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-2 abs 564.9 s dp 0.80 alvos ['MathTex:3.7,5.9', 'VGroup:3.7,5.9', 'VGroup:3.7,5.9']
-[11/04/26 16:35:22] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:24] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-2 24.13 quase mil quilômetros
+[gatilho] T4-2 22.73 quase mil quilômetros
+[plano] gat:T4-2:quase mil quilômetros A=0.25 W=0.00 D=5.93 ritmo=1.80 ritmo_w=1.00
 [alg] T4-2 passo mapas=6
-[11/04/26 16:35:25] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:01] INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-2 escreve n=0 voos=0 dx=0.25 D=0.25 269\cdot3{,}6\approx970\ \mathrm{km/h}
-[11/04/26 16:35:26] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-2 25.93 o cubo não gira mais devagar
-[11/04/26 16:35:27] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:28] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-2 28.20 ele gira junto
-[11/04/26 16:35:29] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:30] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-2 abs 573.3 s dp 0.61 alvos ['VGroup:3.3,4.8', 'VGroup:-1.7,3.2', 'VGroup:3.3,4.8']
-[11/04/26 16:35:31] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-2 31.47 e essa rapidez na ponta
-[11/04/26 16:35:33] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-2 abs 533.5 s dp 0.80 alvos ['VGroup:3.3,4.8', 'VGroup:3.3,4.8', 'VGroup:3.3,4.8']
+[11/06/26 22:42:02] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:03] WARNING  Attempted adding some Mobject as a  mobject.py:557
+                             child more than once, this is not                 
+                             possible. Repetitions are ignored.                
+                    WARNING  Attempted adding some Mobject as a  mobject.py:557
+                             child more than once, this is not                 
+                             possible. Repetitions are ignored.                
                     INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-2 abs 575.8 s dp 0.80 alvos ['MathTex:3.3,4.5', 'VGroup:3.3,4.8', 'VGroup:-1.7,3.2']
-[11/04/26 16:35:34] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:36] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-2 abs 578.5 s dp 0.80 alvos ['MathTex:3.3,4.5', 'VGroup:3.3,4.8', 'VGroup:-1.7,3.2']
-[11/04/26 16:35:37] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:39] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-2 37.40 ela é medida em relação ao eixo
+[pulso] T4-2 abs 536.2 s dp 0.80 alvos ['VGroup:3.3,4.8', 'VGroup:3.3,4.8', 'VGroup:3.3,4.8']
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:04] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-2 28.67 o cubo não gira mais devagar
+[plano] gat:T4-2:o cubo não gira mais devagar A=0.90 W=0.00 D=1.81 ritmo=1.42 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:05] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-2 30.53 ele completa cada volta junto com a ponta
+[plano] gat:T4-2:ele completa cada volta junto com a ponta A=0.80 W=0.00 D=4.65 ritmo=1.80 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:06] WARNING  Attempted adding some Mobject as a  mobject.py:557
+                             child more than once, this is not                 
+                             possible. Repetitions are ignored.                
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-2 abs 542.3 s dp 0.80 alvos ['VGroup:3.3,4.8', 'VGroup:-1.7,3.2', 'VGroup:3.3,4.8']
+[11/06/26 22:42:07] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:08] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-2 35.20 e tem um detalhe importante
+[plano] gat:T4-2:e tem um detalhe importante A=0.00 W=0.90 D=1.04 ritmo=1.07 ritmo_w=1.16
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-2 36.27 essas são velocidades em relação ao eixo
+[plano] gat:T4-2:essas são velocidades em relação ao eixo A=0.50 W=0.00 D=13.07 ritmo=1.80 ritmo_w=1.00
 [selo] EM RELAÇÃO AO EIXO linhas=1 w=3.40 h=0.49
-[11/04/26 16:35:40] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:41] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-2 abs 582.2 s dp 0.80 alvos ['MathTex:3.3,4.5', 'VGroup:3.3,4.8', 'VGroup:2.4,3.4']
-[11/04/26 16:35:42] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:43] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-2 abs 584.9 s dp 0.80 alvos ['MathTex:3.3,4.5', 'VGroup:3.3,4.8', 'VGroup:2.4,3.4']
-[11/04/26 16:35:44] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:45] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-2 44.07 perto da velocidade do som
-[11/04/26 16:35:46] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:47] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-2 abs 587.6 s dp 0.80 alvos ['MathTex:3.7,5.9', 'VGroup:3.3,4.8', 'VGroup:2.4,3.4']
+[11/06/26 22:42:09] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:49] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-2 abs 590.3 s dp 0.80 alvos ['MathTex:3.7,5.9', 'VGroup:3.3,4.8', 'VGroup:2.4,3.4']
-[11/04/26 16:35:51] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:52] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:54] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-2 abs 547.5 s dp 0.80 alvos ['MathTex:3.3,4.5', 'VGroup:3.3,4.8', 'VGroup:2.4,3.4']
+[11/06/26 22:42:10] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:11] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-2 abs 550.2 s dp 0.80 alvos ['MathTex:3.3,4.5', 'VGroup:3.3,4.8', 'VGroup:2.4,3.4']
+[11/06/26 22:42:12] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:13] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-2 abs 552.9 s dp 0.80 alvos ['MathTex:3.3,4.5', 'VGroup:3.3,4.8', 'VGroup:2.4,3.4']
+[11/06/26 22:42:14] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:55] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-2 abs 555.5 s dp 0.80 alvos ['MathTex:3.3,4.5', 'VGroup:3.3,4.8', 'VGroup:2.4,3.4']
+[11/06/26 22:42:15] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:16] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-2 49.27 se aproxima da velocidade do som
+[plano] gat:T4-2:se aproxima da velocidade do som A=0.00 W=0.90 D=8.27 ritmo=1.80 ritmo_w=9.19
+[11/06/26 22:42:17] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-2 abs 558.2 s dp 0.80 alvos ['MathTex:3.7,5.9', 'VGroup:3.3,4.8', 'VGroup:2.4,3.4']
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:57] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:35:58] INFO     Caching disabled.             cairo_renderer.py:81
-[ajuste]    87.3s linha encolhida para caber na Pilha (6.20 → 6.00, fator 0.97) 0.0
+[11/06/26 22:42:18] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-2 abs 560.9 s dp 0.80 alvos ['MathTex:3.7,5.9', 'VGroup:3.3,4.8', 'VGroup:2.4,3.4']
+[11/06/26 22:42:19] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:20] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-2 abs 563.5 s dp 0.80 alvos ['MathTex:3.7,5.9', 'VGroup:3.3,4.8', 'VGroup:2.4,3.4']
+[11/06/26 22:42:21] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:22] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:23] WARNING  The original total run_time of       scene.py:1131
+                             PT4.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PT4.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[plano] ate:T4-2:0.99 A=0.00 W=0.00 D=0.67 ritmo=1.00 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-2 abs 566.3 s dp 0.40 alvos ['MathTex:3.7,5.9', 'VGroup:3.3,4.8', 'VGroup:2.4,3.4']
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[plano] an:T4-3 A=1.95 W=0.00 D=1.52 ritmo=0.78 ritmo_w=1.00
+[11/06/26 22:42:24] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:25] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[ajuste]    90.9s linha encolhida para caber na Pilha (6.20 → 6.00, fator 0.97) 0.0
 [alg] T4-3 fadein-texto
-[11/04/26 16:35:59] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-3 1.93 olha esses dois pontos
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:00] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-3 4.47 à mesma distância do eixo
-[11/04/26 16:36:02] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-3 1.60 olha esses dois pontos
+[plano] gat:T4-3:olha esses dois pontos A=0.70 W=0.00 D=2.86 ritmo=1.80 ritmo_w=1.00
+[11/06/26 22:42:26] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-3 4.53 à mesma distância do eixo
+[plano] gat:T4-3:à mesma distância do eixo A=0.60 W=0.00 D=1.67 ritmo=1.67 ritmo_w=1.00
+[11/06/26 22:42:27] INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-3 escreve n=3 voos=0 dx=0.20 D=0.60 0.0
-[11/04/26 16:36:03] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:04] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-3 6.33 o tamanho da velocidade é o mesmo
-[11/04/26 16:36:05] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:28] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-3 6.27 o tamanho da velocidade é o mesmo
+[plano] gat:T4-3:o tamanho da velocidade é o mesmo A=1.80 W=0.00 D=2.17 ritmo=1.10 ritmo_w=1.00
+[11/06/26 22:42:29] INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-3 escreve n=6 voos=2 dx=0.24 D=1.80 |\vec v_A|=|\vec v_B|=r\omega
-[11/04/26 16:36:07] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:08] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-3 8.93 mas as setas apontam
+[11/06/26 22:42:30] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-3 8.53 mas as setas apontam
+[plano] gat:T4-3:mas as setas apontam A=1.15 W=0.00 D=2.69 ritmo=1.53 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-3 escreve n=4 voos=3 dx=0.25 D=1.15 \vec v_A=-\vec v_B
-[11/04/26 16:36:10] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:31] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-3 11.53 mesma rapidez velocidades diferentes
+[gatilho] T4-3 11.27 mesma rapidez velocidades diferentes
+[plano] gat:T4-3:mesma rapidez velocidades diferentes A=0.60 W=0.00 D=2.85 ritmo=1.80 ritmo_w=1.00
 [alg] T4-3 fadein-texto
-[11/04/26 16:36:11] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:12] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-3 13.00 a fórmula que a gente acabou de ver
-[11/04/26 16:36:13] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:14] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-3 abs 608.0 s dp 0.80 alvos ['MathTex:2.7,4.1', 'VGroup:3.1,4.8', 'VGroup:1.9,2.5']
+[11/06/26 22:42:32] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:15] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:17] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-3 17.00 a direção completa no espaço
+[gatilho] T4-3 14.20 a fórmula que a gente acabou de ver
+[plano] gat:T4-3:a fórmula que a gente acabou de ver A=0.00 W=0.90 D=2.56 ritmo=1.69 ritmo_w=2.84
+[11/06/26 22:42:33] WARNING  The original total run_time of       scene.py:1131
+                             PT4.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:18] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-3 abs 613.8 s dp 0.80 alvos ['MathTex:2.7,4.1', 'VGroup:3.1,4.8', 'VGroup:1.9,2.5']
-[11/04/26 16:36:19] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:20] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-3 abs 616.5 s dp 0.39 alvos ['MathTex:2.7,4.1', 'VGroup:3.1,4.8', 'VGroup:1.9,2.5']
-[11/04/26 16:36:22] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:23] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:24] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-4 0.27 derivando mais uma vez
-[11/04/26 16:36:26] INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PT4.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[pulso] T4-3 abs 580.9 s dp 0.80 alvos ['MathTex:2.7,4.1', 'VGroup:3.1,4.8', 'VGroup:1.9,2.5']
+[11/06/26 22:42:34] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-3 16.80 a direção completa no espaço
+[plano] gat:T4-3:a direção completa no espaço A=1.00 W=0.00 D=4.14 ritmo=1.80 ritmo_w=1.00
+[11/06/26 22:42:35] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:36] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-3 abs 587.1 s dp 0.44 alvos ['MathTex:2.7,4.1', 'VGroup:3.1,4.8', 'VGroup:1.9,2.5']
+[11/06/26 22:42:37] INFO     Caching disabled.             cairo_renderer.py:81
+[plano] ate:T4-3:0.99 A=0.00 W=0.00 D=0.30 ritmo=1.00 ritmo_w=1.00
+[11/06/26 22:42:38] INFO     Caching disabled.             cairo_renderer.py:81
+[plano] an:T4-4 A=0.30 W=0.00 D=0.10 ritmo=0.33 (1º gatilho nas primeiras palavras)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-4 0.13 derivando mais uma vez
+[plano] gat:T4-4:derivando mais uma vez A=0.80 W=0.00 D=1.53 ritmo=1.38 ritmo_w=1.00
+[11/06/26 22:42:39] INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-4 escreve n=4 voos=0 dx=0.20 D=0.80 v_t=r\omega
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:27] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-4 1.53 se o giro acelera
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-4 1.73 se o giro acelera
+[plano] gat:T4-4:se o giro acelera A=1.20 W=0.00 D=0.39 ritmo=0.50 ritmo_w=1.00
 [alg] T4-4 tmt \frac{d}{dt} v_t = r\, \dfrac{d}{dt} \om
+[11/06/26 22:42:40] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-4 2.33 acelera a velocidade do ponto
+[plano] gat:T4-4:acelera a velocidade do ponto A=0.60 W=0.00 D=4.43 ritmo=1.80 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-4 2.73 acelera a velocidade do ponto
-[11/04/26 16:36:28] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:41] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-4 abs 593.1 s dp 0.80 alvos ['MathTex:2.4,3.3', 'VGroup:1.7,2.0', 'VGroup:1.7,2.0']
+[11/06/26 22:42:42] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-4 abs 622.5 s dp 0.35 alvos ['MathTex:2.4,3.3', 'VGroup:1.7,2.0', 'VGroup:1.7,2.0']
-[11/04/26 16:36:29] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-4 5.53 essa é a aceleração tangencial
+[gatilho] T4-4 6.80 essa é a aceleração tangencial
+[plano] gat:T4-4:essa é a aceleração tangencial A=1.20 W=0.00 D=2.38 ritmo=1.41 ritmo_w=1.00
 [alg] T4-4 tmt a_t = r\, \alpha
-[11/04/26 16:36:30] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:31] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-4 7.47 a distância ao eixo vezes a aceleração angular
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:32] WARNING  Attempted adding some Mobject as a  mobject.py:557
+[11/06/26 22:42:43] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-4 9.27 a distância ao eixo vezes a aceleração angular
+[plano] gat:T4-4:a distância ao eixo vezes a aceleração an A=0.00 W=0.90 D=7.43 ritmo=1.80 ritmo_w=8.26
+[11/06/26 22:42:44] WARNING  Attempted adding some Mobject as a  mobject.py:557
                              child more than once, this is not                 
                              possible. Repetitions are ignored.                
                     WARNING  Attempted adding some Mobject as a  mobject.py:557
                              child more than once, this is not                 
                              possible. Repetitions are ignored.                
                     INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-4 abs 625.9 s dp 0.80 alvos ['MathTex:1.8,2.1', 'VGroup:1.7,2.0', 'VGroup:1.7,2.0']
+[pulso] T4-4 abs 598.3 s dp 0.80 alvos ['MathTex:1.8,2.1', 'VGroup:1.7,2.0', 'VGroup:1.7,2.0']
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:33] WARNING  Attempted adding some Mobject as a  mobject.py:557
+[11/06/26 22:42:45] WARNING  Attempted adding some Mobject as a  mobject.py:557
                              child more than once, this is not                 
                              possible. Repetitions are ignored.                
                     WARNING  Attempted adding some Mobject as a  mobject.py:557
                              child more than once, this is not                 
                              possible. Repetitions are ignored.                
                     INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-4 abs 628.6 s dp 0.80 alvos ['MathTex:1.8,2.1', 'VGroup:1.7,2.0', 'VGroup:1.7,2.0']
-[11/04/26 16:36:34] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:35] WARNING  Attempted adding some Mobject as a  mobject.py:557
+[pulso] T4-4 abs 600.9 s dp 0.80 alvos ['MathTex:1.8,2.1', 'VGroup:1.7,2.0', 'VGroup:1.7,2.0']
+[11/06/26 22:42:46] INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  Attempted adding some Mobject as a  mobject.py:557
                              child more than once, this is not                 
                              possible. Repetitions are ignored.                
                     WARNING  Attempted adding some Mobject as a  mobject.py:557
                              child more than once, this is not                 
                              possible. Repetitions are ignored.                
                     INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-4 abs 631.3 s dp 0.80 alvos ['MathTex:1.8,2.1', 'VGroup:1.7,2.0', 'VGroup:1.7,2.0']
-[11/04/26 16:36:36] INFO     Caching disabled.             cairo_renderer.py:81
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-4 15.47 contra ela quando freia
-[11/04/26 16:36:37] INFO     Caching disabled.             cairo_renderer.py:81
-                    WARNING  Attempted adding some Mobject as a  mobject.py:557
-                             child more than once, this is not                 
-                             possible. Repetitions are ignored.                
-                    WARNING  Attempted adding some Mobject as a  mobject.py:557
-                             child more than once, this is not                 
-                             possible. Repetitions are ignored.                
-[pulso] T4-4 abs 633.9 s dp 0.80 alvos ['MathTex:1.8,2.1', 'VGroup:1.7,2.0', 'VGroup:1.7,2.0']
-[11/04/26 16:36:38] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-4 abs 603.6 s dp 0.80 alvos ['MathTex:1.8,2.1', 'VGroup:1.7,2.0', 'VGroup:1.7,2.0']
+[11/06/26 22:42:47] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:48] INFO     Caching disabled.             cairo_renderer.py:81
                     WARNING  The original total run_time of       scene.py:1131
                              PT4.play(), 0.0653333 seconds, is                 
                              too short for the current frame rate              
@@ -272,183 +371,212 @@ Manim Community v0.21.0
                              of 15 FPS. Rendering with the                     
                              shortest possible total run_time of               
                              0.0666667 seconds instead.                        
+[gatilho] T4-4 16.73 contra ela quando freia
+[plano] gat:T4-4:contra ela quando freia A=0.00 W=1.20 D=1.25 ritmo=1.02 ritmo_w=1.04
                     INFO     Caching disabled.             cairo_renderer.py:81
+[plano] ate:T4-4:0.99 A=0.00 W=0.00 D=0.30 ritmo=1.00 ritmo_w=1.00
+[11/06/26 22:42:49] INFO     Caching disabled.             cairo_renderer.py:81
+[plano] an:T4-5 A=0.50 W=0.00 D=3.22 ritmo=1.80 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:39] WARNING  Attempted adding some Mobject as a  mobject.py:557
+                    WARNING  Attempted adding some Mobject as a  mobject.py:557
                              child more than once, this is not                 
                              possible. Repetitions are ignored.                
                     WARNING  Attempted adding some Mobject as a  mobject.py:557
                              child more than once, this is not                 
                              possible. Repetitions are ignored.                
                     INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-5 abs 637.5 s dp 0.80 alvos ['MathTex:1.8,2.1', 'VGroup:1.7,2.0', 'VGroup:1.7,2.0']
+[pulso] T4-5 abs 608.9 s dp 0.45 alvos ['MathTex:1.8,2.1', 'VGroup:1.7,2.0', 'VGroup:1.7,2.0']
+[11/06/26 22:42:50] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-5 3.27 sem aceleração angular nenhuma
+[plano] gat:T4-5:sem aceleração angular nenhuma A=1.22 W=0.00 D=13.89 ritmo=1.80 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:40] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-5 3.33 sem aceleração angular nenhuma
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:41] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:51] INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-5 escreve n=7 voos=0 dx=0.12 D=0.92 \alpha=0\ \Rightarrow\ a_t=0
+[11/06/26 22:42:52] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:42] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-5 abs 641.5 s dp 0.80 alvos ['MathTex:2.6,3.8', 'VGroup:2.6,3.8', 'VGroup:2.6,3.8']
+[pulso] T4-5 abs 613.4 s dp 0.80 alvos ['MathTex:2.6,3.8', 'VGroup:2.6,3.8', 'VGroup:2.6,3.8']
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:43] WARNING  Attempted adding some Mobject as a  mobject.py:557
+[11/06/26 22:42:53] WARNING  Attempted adding some Mobject as a  mobject.py:557
                              child more than once, this is not                 
                              possible. Repetitions are ignored.                
                     WARNING  Attempted adding some Mobject as a  mobject.py:557
                              child more than once, this is not                 
                              possible. Repetitions are ignored.                
                     INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-5 abs 644.1 s dp 0.56 alvos ['MathTex:2.6,3.8', 'VGroup:2.6,3.8', 'VGroup:2.6,3.8']
-[11/04/26 16:36:44] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-5 9.60 é a aceleração centrípeta
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:45] WARNING  Attempted adding some Mobject as a  mobject.py:557
+[pulso] T4-5 abs 616.1 s dp 0.80 alvos ['MathTex:2.6,3.8', 'VGroup:2.6,3.8', 'VGroup:2.6,3.8']
+[11/06/26 22:42:54] INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  Attempted adding some Mobject as a  mobject.py:557
                              child more than once, this is not                 
                              possible. Repetitions are ignored.                
                     WARNING  Attempted adding some Mobject as a  mobject.py:557
                              child more than once, this is not                 
                              possible. Repetitions are ignored.                
                     INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-5 abs 647.2 s dp 0.46 alvos ['MathTex:2.6,3.8', 'VGroup:2.6,3.8', 'VGroup:2.6,3.8']
-[11/04/26 16:36:46] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-5 12.60 velocidade ao quadrado dividida
-[11/04/26 16:36:47] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-5 abs 618.7 s dp 0.80 alvos ['MathTex:2.6,3.8', 'VGroup:2.6,3.8', 'VGroup:2.6,3.8']
+[11/06/26 22:42:55] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:56] WARNING  Attempted adding some Mobject as a  mobject.py:557
+                             child more than once, this is not                 
+                             possible. Repetitions are ignored.                
+                    WARNING  Attempted adding some Mobject as a  mobject.py:557
+                             child more than once, this is not                 
+                             possible. Repetitions are ignored.                
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-5 abs 621.4 s dp 0.80 alvos ['MathTex:2.6,3.8', 'VGroup:2.6,3.8', 'VGroup:2.6,3.8']
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:57] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-5 17.13 é a aceleração centrípeta
+[plano] gat:T4-5:é a aceleração centrípeta A=0.70 W=0.00 D=2.73 ritmo=1.80 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:42:58] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-5 19.93 velocidade ao quadrado dividida
+[plano] gat:T4-5:velocidade ao quadrado dividida A=1.35 W=0.00 D=3.22 ritmo=1.54 ritmo_w=1.00
+[11/06/26 22:42:59] INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-5 escreve n=4 voos=2 dx=0.25 D=1.35 a_c=\frac{v^2}{r}
-[11/04/26 16:36:48] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:00] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-5 15.60 trocando a velocidade pela distância
+[gatilho] T4-5 23.20 trocando a velocidade pela distância
+[plano] gat:T4-5:trocando a velocidade pela distância A=2.20 W=0.00 D=3.38 ritmo=1.24 ritmo_w=1.00
 [alg] T4-5 passo mapas=6
-[11/04/26 16:36:49] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:01] INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-5 passo mapas=9
-[11/04/26 16:36:50] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-5 18.93 fica velocidade angular ao quadrado
-[11/04/26 16:36:51] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:52] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:02] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-5 26.67 fica velocidade angular ao quadrado
+[plano] gat:T4-5:fica velocidade angular ao quadrado A=2.26 W=0.00 D=4.09 ritmo=1.35 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:03] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-5 passo mapas=6
-[11/04/26 16:36:53] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:54] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-5 22.60 e ela aponta sempre para o eixo
-[11/04/26 16:36:55] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-5 abs 658.1 s dp 0.42 alvos ['MathTex:2.2,1.5', 'VGroup:2.4,1.9', 'VGroup:2.5,2.1']
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:56] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:57] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:04] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-5 30.80 e ela aponta sempre para o eixo
+[plano] gat:T4-5:e ela aponta sempre para o eixo A=0.00 W=0.90 D=1.79 ritmo=1.41 ritmo_w=1.99
+[11/06/26 22:43:05] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-5 abs 637.6 s dp 0.80 alvos ['MathTex:2.2,1.5', 'VGroup:2.4,1.9', 'VGroup:2.5,2.1']
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:06] INFO     Caching disabled.             cairo_renderer.py:81
+[plano] ate:T4-5:0.99 A=0.00 W=0.00 D=0.30 ritmo=1.00 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[plano] an:T4-6 A=0.60 W=0.00 D=0.30 ritmo=0.50 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:36:58] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-6 1.27 cada ponto tem duas acelerações
-[11/04/26 16:36:59] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-6 0.27 um ponto do disco pode ter duas acelerações
+[plano] gat:T4-6:um ponto do disco pode ter duas aceleraçõ A=0.80 W=0.00 D=3.49 ritmo=1.80 ritmo_w=1.00
+[11/06/26 22:43:07] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-6 2.60 a tangencial que muda o tamanho
-[11/04/26 16:37:00] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:08] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-6 3.80 a tangencial muda o tamanho da velocidade
+[plano] gat:T4-6:a tangencial muda o tamanho da velocidade A=1.95 W=0.00 D=2.66 ritmo=1.17 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:09] INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-6 escreve n=4 voos=1 dx=0.25 D=1.35 a_t=r\alpha
-[11/04/26 16:37:01] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-6 5.60 e a centrípeta que muda
+[11/06/26 22:43:10] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-6 6.53 a centrípeta muda sua direção
+[plano] gat:T4-6:a centrípeta muda sua direção A=1.95 W=0.00 D=5.11 ritmo=1.62 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:37:02] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-6 escreve n=4 voos=1 dx=0.25 D=1.35 a_c=\omega^2r
-[11/04/26 16:37:03] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:37:04] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-6 8.20 a aceleração total é a soma
+[11/06/26 22:43:12] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:37:07] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:37:10] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-6 11.13 o tamanho vem do pitágoras
-[11/04/26 16:37:11] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:13] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-6 11.73 o tamanho da aceleração total
+[plano] gat:T4-6:o tamanho da aceleração total A=0.80 W=0.00 D=1.87 ritmo=1.53 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:14] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-6 13.67 vem de pitágoras
+[plano] gat:T4-6:vem de pitágoras A=1.00 W=0.00 D=1.43 ritmo=1.20 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-6 escreve n=5 voos=2 dx=0.25 D=1.00 a=\sqrt{a_t^2+a_c^2}
-[11/04/26 16:37:12] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:37:13] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-6 13.00 e o ângulo dela medido a partir
-[11/04/26 16:37:14] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:37:15] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-6 abs 676.8 s dp 0.80 alvos ['MathTex:2.5,3.6', 'VGroup:2.5,3.6', 'VGroup:2.5,3.6']
-[11/04/26 16:37:17] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:37:18] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-6 18.13 tem tangente igual
-[11/04/26 16:37:20] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:15] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-6 15.13 se medirmos o ângulo a partir
+[plano] gat:T4-6:se medirmos o ângulo a partir A=0.90 W=0.00 D=2.93 ritmo=1.80 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:16] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-6 18.13 sua tangente é o módulo
+[plano] gat:T4-6:sua tangente é o módulo A=1.15 W=0.00 D=6.39 ritmo=1.80 ritmo_w=1.00
+[11/06/26 22:43:17] INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-6 escreve n=5 voos=3 dx=0.25 D=1.15 \tan\varphi=\frac{|a_t|}{a_c}
-[11/04/26 16:37:21] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:37:22] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-6 abs 682.1 s dp 0.80 alvos ['MathTex:2.2,3.1', 'VGroup:2.2,3.1', 'VGroup:2.2,3.1']
-[11/04/26 16:37:24] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:37:25] WARNING  Attempted adding some Mobject as a  mobject.py:557
+[11/06/26 22:43:18] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:19] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-6 abs 661.0 s dp 0.80 alvos ['MathTex:2.2,3.1', 'VGroup:2.2,3.1', 'VGroup:2.2,3.1']
+[11/06/26 22:43:20] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-6 24.60 para qual lado a resultante se inclina
+[plano] gat:T4-6:para qual lado a resultante se inclina A=0.00 W=0.90 D=2.20 ritmo=1.56 ritmo_w=2.44
+[11/06/26 22:43:21] WARNING  Attempted adding some Mobject as a  mobject.py:557
                              child more than once, this is not                 
                              possible. Repetitions are ignored.                
                     WARNING  Attempted adding some Mobject as a  mobject.py:557
                              child more than once, this is not                 
                              possible. Repetitions are ignored.                
                     INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-6 abs 684.8 s dp 0.80 alvos ['MathTex:2.2,3.1', 'VGroup:2.2,3.1', 'VGroup:2.2,3.1']
-[11/04/26 16:37:27] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:37:29] WARNING  Attempted adding some Mobject as a  mobject.py:557
-                             child more than once, this is not                 
-                             possible. Repetitions are ignored.                
-                    WARNING  Attempted adding some Mobject as a  mobject.py:557
-                             child more than once, this is not                 
-                             possible. Repetitions are ignored.                
+[pulso] T4-6 abs 663.7 s dp 0.80 alvos ['MathTex:2.2,3.1', 'VGroup:2.2,3.1', 'VGroup:2.2,3.1']
+[11/06/26 22:43:22] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:23] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-6 26.80 e olha a consequência
+[plano] gat:T4-6:e olha a consequência A=1.90 W=0.00 D=1.12 ritmo=0.59 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:37:30] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-6 26.60 para a frente se o giro acelera
-[11/04/26 16:37:31] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:37:32] WARNING  Attempted adding some Mobject as a  mobject.py:557
-                             child more than once, this is not                 
-                             possible. Repetitions are ignored.                
-                    WARNING  Attempted adding some Mobject as a  mobject.py:557
-                             child more than once, this is not                 
-                             possible. Repetitions are ignored.                
-                    INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-6 abs 689.4 s dp 0.80 alvos ['MathTex:2.2,3.1', 'VGroup:2.2,3.1', 'VGroup:2.2,3.1']
-[11/04/26 16:37:33] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:37:35] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-6 30.80 repara também que a centrípeta cresce
-[11/04/26 16:37:37] INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:37:38] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho-sem-frase] T4-6: 'na ponta da hélice'
+[11/06/26 22:43:24] INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-6 fadein-texto
-[11/04/26 16:37:40] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:25] INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-6 escreve n=4 voos=0 dx=0.13 D=0.60 a_c=\omega^2r
-[11/04/26 16:37:41] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-6 33.00 com o quadrado da velocidade angular
-[11/04/26 16:37:42] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-6 abs 695.6 s dp 0.62 alvos ['MathTex:1.8,2.3', 'VGroup:1.8,2.3', 'VGroup:1.8,2.3']
                     INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-6 35.20 na ponta da hélice
-[11/04/26 16:37:43] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-6 28.13 do quadrado da velocidade angular
+[plano] gat:T4-6:do quadrado da velocidade angular A=0.00 W=0.00 D=1.79 ritmo=1.00 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:37:44] INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-6 36.67 dá uns setenta
+[11/06/26 22:43:26] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-6 30.00 na ponta daquela hélice
+[plano] gat:T4-6:na ponta daquela hélice A=0.55 W=0.00 D=3.03 ritmo=1.80 ritmo_w=1.00
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:37:45] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:27] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:28] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-6 33.07 aproximadamente setenta e seis mil
+[plano] gat:T4-6:aproximadamente setenta e seis mil A=2.20 W=0.00 D=4.53 ritmo=1.44 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-6 escreve n=5 voos=2 dx=0.25 D=1.15 =282{,}7^2\cdot0{,}95
-[11/04/26 16:37:46] INFO     Caching disabled.             cairo_renderer.py:81
-                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:29] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:30] INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-6 escreve n=2 voos=0 dx=0.25 D=0.45 \approx7{,}6\times 10^4\ \mathrm{m/s^2}
-[11/04/26 16:37:47] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[gatilho] T4-6 40.80 perto de sete mil e setecentas
-[11/04/26 16:37:48] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] T4-6 37.67 mais de sete mil e setecentas
+[plano] gat:T4-6:mais de sete mil e setecentas A=0.70 W=0.00 D=15.52 ritmo=1.80 ritmo_w=1.00
+[11/06/26 22:43:31] INFO     Caching disabled.             cairo_renderer.py:81
 [alg] T4-6 escreve n=3 voos=0 dx=0.25 D=0.70 a_c\approx7{.}750\ g
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:37:49] INFO     Caching disabled.             cairo_renderer.py:81
-[pulso] T4-6 abs 704.3 s dp 0.80 alvos ['VGroup:2.7,3.6', 'RoundedRectangle:2.7,3.6', 'VGroup:2.7,3.6']
-[11/04/26 16:37:50] INFO     Caching disabled.             cairo_renderer.py:81
                     INFO     Caching disabled.             cairo_renderer.py:81
-[11/04/26 16:37:51] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-6 abs 679.7 s dp 0.80 alvos ['VGroup:2.7,3.6', 'RoundedRectangle:2.7,3.6', 'VGroup:2.7,3.6']
+[11/06/26 22:43:32] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:33] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-6 abs 682.4 s dp 0.80 alvos ['VGroup:2.7,3.6', 'RoundedRectangle:2.7,3.6', 'VGroup:2.7,3.6']
+[11/06/26 22:43:34] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-6 abs 685.1 s dp 0.80 alvos ['VGroup:2.7,3.6', 'RoundedRectangle:2.7,3.6', 'VGroup:2.7,3.6']
+[11/06/26 22:43:35] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:36] INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-6 abs 687.7 s dp 0.80 alvos ['VGroup:2.7,3.6', 'RoundedRectangle:2.7,3.6', 'VGroup:2.7,3.6']
+[11/06/26 22:43:37] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[pulso] T4-6 abs 690.4 s dp 0.80 alvos ['VGroup:2.7,3.6', 'RoundedRectangle:2.7,3.6', 'VGroup:2.7,3.6']
+[11/06/26 22:43:38] INFO     Caching disabled.             cairo_renderer.py:81
+[11/06/26 22:43:39] INFO     Caching disabled.             cairo_renderer.py:81
+[plano] ate:T4-6:0.99 A=0.00 W=0.00 D=0.73 ritmo=1.00 ritmo_w=1.00
+                    INFO     Caching disabled.             cairo_renderer.py:81
 [ancora] T4-1 0.00
-[ancora] T4-2 34.40
-[ancora] T4-3 85.93
-[ancora] T4-4 109.27
-[ancora] T4-5 127.07
-[ancora] T4-6 153.00
-[ancora] FIM 198.53
-[tempo] total 198.5 s (2978 quadros)
-[3d] pedidos: helice 1007
-                    INFO     Rendered PT4                          scene.py:290
-                             Played 235 animations                             
+[ancora] T4-2 31.53
+[ancora] T4-3 89.73
+[ancora] T4-4 110.93
+[ancora] T4-5 129.13
+[ancora] T4-6 162.00
+[ancora] FIM 215.80
+[tempo] total 215.8 s (3237 quadros)
+[3d] pedidos: helice 1290
+[11/06/26 22:43:40] INFO     Rendered PT4                          scene.py:290
+                             Played 236 animations                             
 You are using manim version v0.21.0, but version v0.22.1 is available.
 You should consider upgrading via pip install -U manim

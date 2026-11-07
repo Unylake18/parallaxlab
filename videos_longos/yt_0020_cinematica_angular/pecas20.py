@@ -157,6 +157,7 @@ def lbl(tex, cor, size=40):
     """Rótulo MathTex de uma cor só (G12): registra a parte para a auditoria de cor."""
     m = MathTex(tex, font_size=size, color=cor)
     m._partes = [(tex, cor)]
+    barras_neutras(m)                                         # v4 §3: barra de fração branca
     return m.set_z_index(12)
 
 

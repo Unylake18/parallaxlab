@@ -118,7 +118,7 @@ class LoteT1(L20):
         rv = vivo(rastros)
         self.add(rv)
         self.gat("repara no que acontece quando ele gira")
-        self.play(op_c.animate.set_value(1.0), d.th.animate(rate_func=linear).set_value(th_ini + 1.0), run_time=2.4)
+        self.play(op_c.animate.set_value(1.0), d.th.animate(rate_func=linear).set_value(th_ini + 1.0), run_time=max(0.5, self.ate_t("cada ponto anda num círculo centrado no eixo")))
         self.gat("cada ponto anda num círculo centrado no eixo")
         c1 = cartao("CADA PONTO:", "UM CÍRCULO", size=30)
         self.pilha.poe(c1, dx=0.1)
@@ -131,8 +131,8 @@ class LoteT1(L20):
         self.gat("basta um número só")
         self.play(op_c.animate.set_value(0.45), d.th.animate(rate_func=smooth).set_value(0.9), run_time=1.6)
         self.gat("o ângulo entre essa linha pintada")
-        self.play(op_t.animate.set_value(1.0), Indicate(d.ref, color=WHITE_, scale_factor=1.0), Indicate(c2, color=WHITE_, scale_factor=1.06), run_time=0.9)
-        self.gat("na tela ele aparece como teta")
+        self.play(op_t.animate.set_value(1.0), Indicate(d.ref, color=WHITE_, scale_factor=1.0), c2.animate(rate_func=there_and_back).scale(1.06), run_time=0.9)
+        self.gat("e uma linha fixa de referência")
         th_lab = lbl(r"\theta", ANG, 56)
         self.gat("um corpo rígido girando em torno de um eixo fixo")
         fr = VGroup(txt("UM NÚMERO DESCREVE", 34, bold=True), VGroup(txt("O CORPO TODO:", 34, bold=True), th_lab).arrange(RIGHT, buff=0.2)).arrange(DOWN, buff=0.16, aligned_edge=LEFT)
@@ -170,7 +170,7 @@ class LoteT1(L20):
             return g
         av_ = vivo(arcos)
         self.add(av_)
-        self.gat("a gente mede em radianos")
+        self.gat("a gente usa o radiano")
         card = cartao_p("ÂNGULO EM RADIANOS:", "ARCO ÷ RAIO", size=30)
         self.pilha.poe(card, dx=0.2)
         self.play(FadeIn(card, shift=0.1 * UP), run_time=0.6)
@@ -183,10 +183,12 @@ class LoteT1(L20):
         self.play(FadeIn(ls), FadeIn(lth), Create(rr), FadeIn(lr), run_time=0.7)
         self.gat("e divide pela distância dele ao eixo")
         A, ia = eqf([r"\theta", "="], ["s"], ["r"], size=60, cores={("pre", 0): ANG, ("num", 0): ANG, ("den", 0): GEO_})
-        self.pilha.poe(A)
+        self.pilha.poe(A, dx=0.1)
         # D6/§5: θ, s e r voam do desenho; "=" e a barra são escritos na vaga
         self.voa([(lth, gl(A, ia["pre"][0])), (ls, gl(A, ia["num"][0])), (lr, gl(A, ia["den"][0]))],
                  extra=[FadeIn(gl(A, ia["pre"][1] + ia["bar"]))], rt=1.4)
+        self.gat("é o ângulo da fatia em radianos")
+        self.play(Indicate(A, color=WHITE_, scale_factor=1.06), run_time=0.8)
         self.gat("olha os três pontos")
         B, ib = M(r"\frac{s_1}{r_1}", "=", r"\frac{s_2}{r_2}", "=", r"\frac{s_3}{r_3}", "=", r"1{,}0\ \mathrm{rad}", size=50, cores={6: ANG})
         for k in (0, 2, 4):
@@ -201,8 +203,6 @@ class LoteT1(L20):
         self.play(*[Indicate(m, color=WHITE_, scale_factor=1.0) for m in av_.submobjects[:3]], run_time=0.8)
         self.gat("a divisão dá o mesmo número")
         self.play(FadeIn(B, shift=0.1 * UP), run_time=0.9)
-        self.gat("esse número é o ângulo em radianos")
-        self.play(Indicate(A, color=WHITE_, scale_factor=1.06), run_time=0.8)
         self.gat("e uma volta inteira")
         self.play(FadeOut(ls), FadeOut(lth), FadeOut(lr), FadeOut(rr), op_t3.animate.set_value(0.0), run_time=0.3)
         A = self.pilha.so(A, rt=2.0, anims=[d.th.animate(rate_func=smooth).set_value(2 * PI)])[0]
@@ -262,7 +262,7 @@ class LoteT1(L20):
         bxg = VGroup(bx, ptr)                                      # caixa + linha-guia curta selo→fator: um grupo de fundo (não é objeto do QA)
         bxg._fundo = True
         self.play(FadeIn(bxg), FadeIn(sb), run_time=0.6)
-        self.gat("é por isso que toda a rotação")
+        self.gat("por isso em rotação é sempre radiano")
         self.dica18("EM ROTAÇÃO, ÂNGULO SEMPRE EM RADIANOS")
         self.ate(0.99)
         # ── T1-5: sinais; mostrador × acumulado ──
@@ -281,7 +281,7 @@ class LoteT1(L20):
         self.play(FadeIn(sp), FadeIn(sg_p), FadeIn(lp_), run_time=0.6)
         self.gat("horário é negativo")
         self.play(FadeIn(sm), FadeIn(sg_m), FadeIn(lm_), run_time=0.6)
-        self.gat("o ângulo que a gente usa não volta a zero")
+        self.gat("o ângulo não precisa voltar a zero")
         # D9: o disco volta à referência (θ = 0) e o contador parte de Δθ = 0: mostrador = Δθ mod 2π em todo quadro
         th0 = 2 * PI * round(d.th.get_value() / (2 * PI))      # mesma pose de θ = 0 pelo caminho curto (417° → 360°): sem aliasing de 115°/quadro
         self.play(FadeOut(VGroup(sp, sm, sg_p, sg_m, lp_, lm_)), d.th.animate(rate_func=smooth).set_value(th0), run_time=0.6)
@@ -322,9 +322,9 @@ class LoteT1(L20):
         cv = vivo(contadores)
         self.add(cv)
         self.play(FadeIn(t_m), FadeIn(dial), FadeIn(t_a), run_time=0.6)
-        self.gat("se o disco deu três voltas")
+        self.gat("três voltas no mesmo sentido")
         T3 = self.ate_t("o mostrador de zero a trezentos")
-        rt_v = max(1.2, (T3 - 0.9 - 1.5) / 3)
+        rt_v = max(0.55, (T3 - 2.4 - 0.2) / 3)          # v7 §4: o orçamento fixo (marcas 3×0,3 + saída 0,3 + voo 0,9 + saída 0,3) cabe antes de "o mostrador de zero a trezentos"
         pos_mk = P3(6.0, -0.15)
         lv = txt("VOLTA A VOLTA:", 26).next_to(pos_mk, LEFT, buff=0.6)      # 6π é ângulo, não número de voltas
 
@@ -345,11 +345,11 @@ class LoteT1(L20):
         self.play(FadeOut(lv), FadeOut(t_a), opc.animate.set_value(0.0), run_time=0.3)
         self.pilha.topo = -1.0
         self.pilha.poe(F, dx=0.1)
-        self.voa([(mk, mp(F, iF, [2]))], extra=[FadeIn(mp(F, iF, [0, 1, 3, 4]))], rt=1.4)
+        self.voa([(mk, mp(F, iF, [2]))], extra=[FadeIn(mp(F, iF, [0, 1, 3, 4]))], rt=0.9)
         self.play(FadeOut(mk), run_time=0.3)                       # a cópia que ficou no lugar do 6π sai: Δθ só aparece em Δθ = 6π ≈ 18,85 rad
         self.remove(mk)
         self.gat("o mostrador de zero a trezentos")
         self.play(Indicate(dial, color=WHITE_, scale_factor=1.06), run_time=0.8)
-        self.gat("o ângulo acumulado diz quanto")
+        self.gat("já o deslocamento angular acompanha o giro com sinal")
         self.play(Indicate(F, color=WHITE_, scale_factor=1.04), run_time=0.8)
         self.ate(0.99)

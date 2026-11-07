@@ -163,8 +163,8 @@ def corrente(s, flash=0.0, z=6):
     for k in range(NEL):
         p, t_, _ = pos_laco(s + k * LT / NEL)
         (ext if k % 2 == 0 else inn).append_points(_seg(p - 0.44 * PASSO * t_, p + 0.44 * PASSO * t_))
-    c_e = interpolate_color(ManimColor("#C9D2E0"), ManimColor(WHITE_), flash)
-    c_i = interpolate_color(ManimColor("#6E7A8C"), ManimColor(CYAN), flash)
+    c_e = interpolate_color(ManimColor(VEL), ManimColor(WHITE_), flash)             # v8: a corrente leva a cor da grandeza que ela carrega (v_c, violeta)
+    c_i = interpolate_color(ManimColor("#5B4FA8"), ManimColor(CYAN), flash)
     g = VGroup(ext.set_stroke(c_e, 6.5).set_z_index(z), inn.set_stroke(c_i, 5).set_z_index(z))
     if flash > 0.01:
         halo = ext.copy().set_stroke(CYAN, 14, opacity=0.35 * flash).set_z_index(z - 0.5)
@@ -292,7 +292,7 @@ class LoteE2(L20):
         lR = M("R", "=", r"35\ \mathrm{cm}", size=38, cores={0: GEO_, 2: GEO_})[0].move_to(P3(-3.55, 1.75))
         aR = 1.9
         cotaR = Line(C2, C2 + (RR - 0.02) * P3(math.cos(aR), math.sin(aR))).set_stroke(GEO, 3).set_z_index(5.5)
-        l60 = valor(r"60\ \mathrm{RPM}", VEL, 38).move_to(P3(-5.0, 0.55))
+        l60 = valor(r"60\ \mathrm{RPM}", VEL, 38).move_to(P3(-5.2, 0.5))   # v5 §2.1: à esquerda do pneu (folga ≥ 0,2 do arco), acima da seta violeta da coroa
         w_on = ValueTracker(0.0)
         self.add(w_on)
 
@@ -304,8 +304,8 @@ class LoteE2(L20):
             return escala_op(seta_curva(C1, 1.1, 0.5, sw, VEL, 8), o)
         wv = vivo(setas_w)
         self.add(wv)
-        l_ped = txt("PEDALANDO (RODA LIVRE ENGATADA)", 24)
-        l_ped.move_to(P3(-7.25 + l_ped.width / 2, 2.3))
+        l_ped = VGroup(txt("PEDALANDO", 24), txt("(RODA LIVRE", 24), txt("ENGATADA)", 24)).arrange(DOWN, aligned_edge=LEFT, buff=0.05)   # v4 §2.2: duas linhas perto do pedal; a linha-guia não cruza a roda nem o 60 RPM
+        l_ped.move_to(P3(-7.25 + l_ped.width / 2, 2.0))
         op_pl = ValueTracker(0.0)
         self.add(op_pl)
 
@@ -315,7 +315,7 @@ class LoteE2(L20):
                 return VGroup()
             a = S["a1"] + PI / 2
             pe = C1 + L_PED * P3(math.cos(a), math.sin(a))
-            a0 = P3(l_ped.get_left()[0] + 0.25, l_ped.get_bottom()[1] - 0.05)
+            a0 = P3(l_ped.get_left()[0] + 0.03, l_ped.get_bottom()[1] - 0.3)
             d = (pe - a0) / np.linalg.norm(pe - a0)
             return escala_op(VGroup(Line(a0, pe - d * 0.13).set_stroke(GEO, 1.8, opacity=0.9).set_z_index(9),
                                     Circle(radius=0.11).move_to(pe).set_stroke(GEO, 2.4).set_fill(opacity=0).set_z_index(9)), o)
@@ -372,7 +372,7 @@ class LoteE2(L20):
             return g
         cv_ = vivo(corpos)
         self.add(cv_)
-        c1l = txt("CORPO 1", 26, bold=True, color=VEL).move_to(P3(-5.9, 1.15))
+        c1l = txt("CORPO 1", 26, bold=True, color=VEL).move_to(P3(-6.25, 1.3))
         c2l = txt("CORPO 2", 26, bold=True, color=VEL).move_to(P3(-0.65, 1.6))
         N1 = linha_m(txt("NUM CORPO RÍGIDO", 26, bold=True), lbl(r"\Rightarrow", WHITE_, 44), txt("MESMO", 26, bold=True), lbl(r"\omega", VEL, 46), buff=0.14)
         N2 = linha_m(txt("CORPOS DIFERENTES", 26, bold=True), lbl(r"\Rightarrow", WHITE_, 44), lbl(r"\omega_1", VEL, 46), lbl(r"\neq", WHITE_, 46),
@@ -384,7 +384,8 @@ class LoteE2(L20):
         self.gat("têm a mesma velocidade angular")
         self.play(FadeIn(N1), run_time=0.6)
         self.gat("porque são corpos diferentes")
-        self.play(op_p.animate.set_value(0.0), op_c1.animate.set_value(1.0), FadeIn(c1l), op_pl.animate.set_value(0.0), run_time=0.6)
+        self.play(op_p.animate.set_value(0.0), FadeOut(l_ped), op_pl.animate.set_value(0.0), run_time=0.3)          # v8: a legenda velha sai antes de CORPO 1 entrar (não se cruzam no fade)
+        self.play(op_c1.animate.set_value(1.0), FadeIn(c1l), run_time=0.3)
         self.pilha.poe(N2)
         self.play(FadeIn(N2), run_time=0.6)
         self.gat("ligados pela corrente")
@@ -398,7 +399,7 @@ class LoteE2(L20):
 
         # ── E2-3: v_c iguala nas bordas ──
         self.an("E2-3")
-        self.play(op_c1.animate.set_value(0.0), op_c2.animate.set_value(0.0), FadeOut(c1l), FadeOut(c2l), FadeOut(l_ped), op_pl.animate.set_value(0.0), run_time=0.4)   # os dados ficam até a 1ª conta
+        self.play(op_c1.animate.set_value(0.0), op_c2.animate.set_value(0.0), FadeOut(c1l), FadeOut(c2l), op_pl.animate.set_value(0.0), run_time=0.4)   # os dados ficam até a 1ª conta
         self.remove(cv_, lpv)
         self.gat("e o que a corrente faz")
         self.selo("HIPÓTESES", "CORRENTE NÃO ESTICA NEM ESCORREGA", cor=CYAN, borda=GEO)
@@ -508,8 +509,8 @@ class LoteE2(L20):
         la2 = lbl(r"\alpha_2", ACC, 40).move_to(P3(-4.58, -2.64))      # folga do rótulo r₁ (x) e do marcador de canto (y) (G28 ENCOSTADO)
 
         def contador():
-            return VGroup(mtxt("PEDAL:", 26), num_mob(f"{S['volt']:.2f}".replace(".", ","), WHITE_, 42), mtxt("VOLTAS", 26)).arrange(RIGHT, buff=0.14)\
-                .move_to(P3(-7.25, 1.1), aligned_edge=LEFT)
+            return VGroup(mtxt("PEDAL:", 26), num_mob(f"{S['volt']:.2f}".replace(".", ","), WHITE_, 42), mtxt("VOLTAS", 26)).arrange(RIGHT, buff=0.22)\
+                .move_to(P3(-7.25, 2.35), aligned_edge=LEFT)
         cv = vivo(contador)
         A0 = linha_m(lbl(r"60\rightarrow 90\ \mathrm{RPM}", VEL, 46), txt("EM", 26), lbl(r"4\ \mathrm{s}", WHITE_, 46), buff=0.14)
         self.pilha.poe(A0)
@@ -545,14 +546,15 @@ class LoteE2(L20):
         for j in (ia4[3][1], ia4[3][2], ia4[3][4], ia4[3][5]):
             A4[0][j].set_color(VEL)
         A4m, ia4m = M(r"\Delta\theta_1", "=", r"10\pi\ \mathrm{rad}", "=", "5", size=48, cores={0: ANG, 2: ANG, 4: ANG})
-        A4b = caixa_l(linha_m(A4m, txt("VOLTAS", 26), buff=0.12), ANG)
+        A4b = caixa_l(linha_m(A4m, txt("VOLTAS", 26), buff=0.3), ANG)
         self.pilha.poe(A4)
         self.gat("e nesses quatro segundos o pedal dá")
         self.play(FadeIn(A4), Indicate(cv, color=WHITE_, scale_factor=1.04), run_time=1.0)
         self.pilha.poe(A4b, dx=0.2)
         self.gat("exatamente cinco voltas")
         self.passo(A4, A4m, (J(ia4, 0), J(ia4m, 0)), (J(ia4, 1), J(ia4m, 1)), (J(ia4, 2, 3, 4, 5), J(ia4m, 2)), ([], J(ia4m, 3, 4)), rt=1.3, origem=False,
-                   extra=[Create(A4b[0]), Write(A4b[1][1])])
+                   extra=[Write(A4b[1][1])])
+        self.play(Create(A4b[0]), run_time=0.4)      # v6 §2.2: a caixa nasce depois do conteúdo (nunca vazia)
         self.foco = A4b
         self.ate(0.99)
         S["acel"] = None
@@ -561,10 +563,10 @@ class LoteE2(L20):
         self.an("E2-5")
         S["w1"] = 2 * PI
         self.pilha.limpa(rt=0.4, anims=[opA.animate.set_value(0.0), FadeOut(cv), FadeOut(la1), FadeOut(la2), FadeOut(lR), FadeOut(cotaR), FadeOut(l_pn)])
-        self.remove(cv, av)
+        self.remove(cv, av, lrpm)
         self.play(FadeIn(l2), FadeIn(n_ca), FadeIn(lig2), FadeIn(ch_s), run_time=0.4)
         W5, iw5 = M("v_c", "=", r"\omega_1", "r_1", size=54, cores={0: VEL, 2: VEL, 3: GEO_})      # v3 §4: a coluna entra com a conta de partida
-        W5b, iw5b = M("=", r"2\pi", r"\cdot", r"0{,}10", r"\approx", r"0{,}63\ \mathrm{m/s}", size=54, cores={1: VEL, 3: GEO_, 5: VEL})
+        W5b, iw5b = M("=", r"2\pi", r"\cdot", r"0{,}10", r"\approx", r"0{,}63\ \mathrm{m/s}", size=54, cores={1: ANG, 3: GEO_, 5: VEL})
         self.pilha.poe(W5)
         self.play(FadeIn(W5), run_time=0.9)
         f1, sv1, sa1, lc1 = inset_fixo(1, True)
@@ -572,9 +574,9 @@ class LoteE2(L20):
         iv = vivo(insets)
         self.add(iv)
         lv1 = lbl(r"0{,}63\ \mathrm{m/s}", VEL, 36).move_to(P3(-4.65, 2.2))
-        lv2 = lbl(r"0{,}63\ \mathrm{m/s}", VEL, 36).move_to(P3(-2.5, 2.28))
+        lv2 = lbl(r"0{,}63\ \mathrm{m/s}", VEL, 36).move_to(P3(-2.85, 2.3))
         la_1 = lbl(r"3{,}9\ \mathrm{m/s^2}", ACC, 36).move_to(P3(-4.65, 1.42))
-        la_2 = lbl(r"9{,}9\ \mathrm{m/s^2}", ACC, 36).move_to(P3(-2.5, 1.6))
+        la_2 = lbl(r"9{,}9\ \mathrm{m/s^2}", ACC, 36).move_to(P3(-2.85, 1.73))
         self.gat("um elo andando a zero vírgula sessenta")
         self.play(op_i.animate.set_value(1.0), FadeIn(f1), FadeIn(f2), FadeIn(sv1), FadeIn(sv2), FadeIn(lv1), FadeIn(lv2), run_time=0.8)
         self.pilha.poe(W5b)

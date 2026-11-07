@@ -11,7 +11,7 @@ conta); G24 v3: cada par símbolo → número confere a cor de origem (`_origem`
 from prob import *  # noqa: F401,F403
 
 X_CONTA, TOPO_PILHA, BASE_PILHA = 0.7, 2.35, -3.25          # yt_0019 §3 G25
-LARG_CONTA = 6.0                                             # x 0,7…6,7
+LARG_CONTA = 6.1                                             # x 0,7…6,8 (zona da conta do portão)
 Y_SELO_TOPO, H_SELO = 3.15, 1.32                             # faixa de selo: topo 3,15 (§2.3)                 # faixa de selo: duas linhas de 24 pt ao lado da etiqueta (topo 3,55, base ≥ 2,75)
 FILHAS = ("=", r"\Rightarrow", r"\rightarrow", r"\to")
 
@@ -139,12 +139,13 @@ class Pilha:
 
     def poe(self, m, dx=0.0, rt=0.35, manter=()):
         """Posiciona m na próxima vaga (o chamador anima a entrada) e registra a linha. Filha (P1): alinha o "=" com o da mãe (P2)."""
-        if m.width > self.larg - dx + 0.01:
-            if m.width > 1.18 * (self.larg - dx):                    # v7: encolhe até 18% (margem direita ≤ 912 px) antes de avisar
+        lim_ = self.larg - dx + (0.15 if (isinstance(m, VGroup) and len(m) and getattr(m[0], '_caixa', False)) else 0.0)   # caixa: o texto interno ainda cabe na zona (x ≤ 6,8)
+        if m.width > lim_ + 0.01:
+            if m.width > 1.18 * lim_:                    # v7: encolhe até 18% (margem direita ≤ 912 px) antes de avisar
                 print(f"[audit] {self.cena.clk.get_value():7.1f}s FORA DA MARGEM linha da pilha larga demais ({m.width:.2f}) {_desc(m)}")
             else:                                                    # yt_0019: até 12% mais larga, a linha encolhe para caber (G1 × G25; fica no qa.txt)
                 print(f"[ajuste] {self.cena.clk.get_value():7.1f}s linha encolhida para caber na Pilha ({m.width:.2f} → {self.larg - dx:.2f}) {_desc(m)}")
-                m.scale_to_fit_width(self.larg - dx)
+                m.scale_to_fit_width(lim_)
         h_ = m.height
         if self._y_topo() - h_ < self.base:
             ficam, saem, herdam = self._sai_blocos(lambda f: self.topo - sum(l.height + self.buff for l, _ in f) - h_ >= self.base, manter)
@@ -353,7 +354,7 @@ class Prob2(Prob):
             self.play(FadeOut(velho), run_time=0.25)
             self.remove(velho)
         self.s1 = None
-        topo = min(TOPO_PILHA, novo.get_bottom()[1] - 0.15)                 # selo de três linhas: a Pilha desce junto (nunca um por cima do outro)
+        topo = min(TOPO_PILHA, novo.get_bottom()[1] - 0.34)                 # selo de três linhas: a Pilha desce junto (nunca um por cima do outro)
         mov = []
         if abs(topo - self.pilha.topo) > 1e-3 and not self.layout_v:
             self.pilha.topo = topo
@@ -862,7 +863,26 @@ class Prob2(Prob):
             visita(x)
         return saida
 
+    def _faixa_luz(self):
+        faixa = VGroup(*[Rectangle(width=0.3, height=14.0).set_fill(CYAN, 0.11 * math.exp(-((i - 3.5) / 1.8) ** 2)).set_stroke(width=0) for i in range(8)])
+        faixa.arrange(RIGHT, buff=0).rotate(-0.45).move_to(P3(-12.5, 0.0)).set_z_index(-60)
+        faixa._fundo = True
+        return faixa
+
     def play(self, *a, **kw):
+        rt0 = (kw.get("run_time") or max([getattr(x, "run_time", 1.0) for x in a] or [1.0])) * (1.0 if kw.get("fixo", False) else self.ritmo)
+        if False and rt0 > 1.5 and SYNC != "medir" and not getattr(self, "_em_troca", False) and not getattr(self, "_varrendo", False):
+            faixa = self._faixa_luz()
+            self.add(faixa)
+            self._varrendo = True
+            try:
+                return self._play_orig(*a, faixa.animate(rate_func=linear).move_to(P3(12.5, 0.0)), **kw)
+            finally:
+                self._varrendo = False
+                self.remove(faixa)
+        return self._play_orig(*a, **kw)
+
+    def _play_orig(self, *a, **kw):
         sutil = kw.pop("sutil", False)                 # sutil: muda pouco pixel por quadro (risco fino, cor): não conta como movimento
         q = getattr(self, "_quieto", 0.0)
         novos = self._introduzidos(a)
@@ -905,7 +925,7 @@ class Prob2(Prob):
             b = there_and_back(a)
             m.become(base)
             m.scale(1 + (f - 1) * b)
-            for g, c0 in zip(m.family_members_with_points(), cores0):
+            for g, c0 in (zip(m.family_members_with_points(), cores0) if color is not None else ()):       # color=None: só pulsa (ícones coloridos não viram mancha branca)
                 g.set_color(interpolate_color(ManimColor(c0), ManimColor(color), min(1.0, 1.6 * b)))
         return UpdateFromAlphaFunc(base.copy(), f_, introducer=True, remover=True, run_time=rt, suspend_mobject_updating=False)
 
@@ -919,7 +939,7 @@ class Prob2(Prob):
             b = there_and_back(a)
             m.become(base)
             m.scale(1 + (f - 1) * b)
-            for g, c0 in zip(m.family_members_with_points(), cores0):
+            for g, c0 in (zip(m.family_members_with_points(), cores0) if color is not None else ()):       # color=None: só pulsa (ícones coloridos não viram mancha branca)
                 g.set_color(interpolate_color(ManimColor(c0), ManimColor(color), min(1.0, 1.6 * b)))
         return UpdateFromAlphaFunc(base.copy(), f_, introducer=True, remover=True, run_time=rt, suspend_mobject_updating=False)
 
@@ -993,6 +1013,17 @@ class Prob2(Prob):
             for sub in reversed(list(alvo.submobjects)):
                 self.mobjects.insert(min(pos, len(self.mobjects)), sub)
 
+    def _varre(self, d):
+        """v2: varredura de luz (faixa suave, ciano 9%) que cruza o quadro da esquerda para a direita, em passadas de ~2,2 s, enquanto a voz segue."""
+        resta = d
+        while resta > 0.05:
+            dp = min(2.2, resta) if resta - 2.2 > 0.4 or resta <= 2.2 else resta / 2
+            faixa = self._faixa_luz()
+            self.add(faixa)
+            self.play(faixa.animate.move_to(P3(12.5, 0.0)), run_time=dp, rate_func=linear, fixo=True)
+            self.remove(faixa)
+            resta -= dp
+
     def wait(self, duration=1.0, *a, interno=False, **kw):
         if not interno:
             if SYNC == "medir":
@@ -1007,6 +1038,10 @@ class Prob2(Prob):
                 self._wait_q(d)
                 q += d
                 break
+            if d > 1.3:                                            # v2: espera longa = varredura de luz contínua (o pulso sozinho deixava o quadro quase parado)
+                self._wait_q(d)
+                q = 0.0
+                break
             alvos = self._destaques(3)
             if not alvos:                                          # sem o que pulsar: segue parado (o QA acusa e a cena ganha movimento próprio)
                 if d > 1.0:
@@ -1018,8 +1053,8 @@ class Prob2(Prob):
                         pp_ = [t for t in self.mobjects if any(id(x) in ids_ for x in t.get_family())]
                         print(f"[parado-dbg2] partes={len(pp_)} ops={[round(max([max(x.get_fill_opacity(), x.get_stroke_opacity()) for x in t.family_members_with_points()] or [0]),2) for t in pp_]} upds={[any(x.get_updaters() for x in t.get_family()) for t in pp_]} foco={type(self.foco).__name__}")
                     if False: print(f"[parado-dbg] foco={type(self.foco).__name__} ultima={type(ul_).__name__ if ul_ is not None else None} em_mobjects={ul_ in self.mobjects if ul_ is not None else None} upd={[bool(x.get_updaters()) for x in (ul_.get_family() if ul_ is not None else [])][:3]} n_intro={len(getattr(self, '_intro', []))}")
-                self._wait_q(d)
-                q += d
+                self._varre(d)                                     # v2: sem destaque, uma varredura de luz atravessa o palco (nunca Wait puro)
+                q = 0.0
                 break
             if livre > 0.05:
                 self._wait_q(livre)

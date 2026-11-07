@@ -12,7 +12,7 @@ class LoteA(Lote22):
         self.an("A1")
         logo = self.logo(5.6).move_to(P3(0, 0.9))
         aneis = VGroup(*[Circle(radius=r).move_to(P3(0, 0.9)).set_stroke(VEL, 2.2, opacity=o) for r, o in ((2.1, 0.35), (2.45, 0.2))])
-        bv = txt("BEM-VINDOS AO PARALLAX LAB", 30).move_to(P3(0, -1.6))
+        bv = txt("BEM-VINDOS AO PARALLAX LAB", 30).move_to(P3(0, -2.5))
         self.play(FadeIn(logo, scale=0.94), FadeIn(aneis), FadeIn(bv, shift=0.1 * UP), run_time=0.8)
         self.play(aneis.animate.scale(1.05), run_time=max(0.5, self.resta() - 0.4))
         self.ate(0.99)
@@ -21,22 +21,28 @@ class LoteA(Lote22):
         self.an("A2")
         tt = txt("TORQUE:", 44, bold=True).move_to(P3(0, 2.7))
         tt2 = txt("POR QUE A PONTA DA RÉGUA ACELERA MAIS QUE A GRAVIDADE?", 28, bold=True).next_to(tt, DOWN, buff=0.2)
-        nv = txt("NESTE VÍDEO:", 28).move_to(P3(-5.4, 0.85))
+        nv = txt("NESTE VÍDEO:", 34, bold=True, color=TQ).move_to(P3(-5.1, 1.05))
         ics = VGroup(*[self.item(k) for k in range(3)])
         for k, it in enumerate(ics):
-            it.move_to(P3(-4.3 + 4.3 * k, -1.3))
+            it.move_to(P3(-4.6 + 4.6 * k, -1.35))
+            t0_ = self.clk.get_value()
+            it._ang = 0.0
+            it.add_updater(lambda m, dt, k_=k: (m[0].rotate(0.07 * math.sin(1.1 * (self.clk.get_value() + k_)) - m._ang, about_point=m[0].get_center()), setattr(m, '_ang', 0.07 * math.sin(1.1 * (self.clk.get_value() + k_)))))
+        self.secao("NESTE VÍDEO")
         self.play(FadeOut(logo), FadeOut(aneis), FadeOut(bv), run_time=0.35)
         self.play(FadeIn(tt, shift=0.1 * UP), FadeIn(tt2, shift=0.1 * UP), FadeIn(nv), FadeIn(ics), run_time=0.8)
         ul = VGroup()
-        for k, frase in enumerate(("primeiro por que a posição", "depois a segunda lei de newton", "por fim trabalho e potência")):
+        for k, frase in enumerate(("primeiro por que a posição", "depois como a segunda lei de newton", "e por fim como calcular trabalho e potência")):
             self.gat(frase)
             ul.add(Line(ics[k].get_corner(DL) + 0.16 * DOWN, ics[k].get_corner(DR) + 0.16 * DOWN).set_stroke(CYAN, 3.5))
-            self.play(Create(ul[-1]), self.ind_copia(ics[k][0], WHITE_, 1.08, 0.7), run_time=0.7)
+            self.play(Create(ul[-1]), self.ind_copia(ics[k][0], None, 1.08, 0.7), run_time=0.7)
             self.foco = ics[k][0]
         self.ate(0.99)
 
         # ── A3: translação (F = m a) → rotação (mesma força em pontos diferentes, o que faz o papel da força?) ──
         self.an("A3")
+        for it_ in ics:
+            it_.clear_updaters()
         self.play(FadeOut(VGroup(tt, tt2, nv, ics, ul)), run_time=0.35)
 
         # Bloco 2,5D de aço deslizando na translação
@@ -69,18 +75,20 @@ class LoteA(Lote22):
         self.play(FadeIn(dv), run_time=0.7)
 
         # Mesma força F empurrando na borda (gira mais), perto do eixo (gira menos) e apontando para o eixo (não gira nada)
-        s_borda = seta(C_D + P3(R_D, -1.25), C_D + P3(R_D, -0.05), FC, 6, tip=0.20)
-        l_fb = T("F", 38, FC).next_to(s_borda, RIGHT, buff=0.12)
+        s_borda = seta(C_D + P3(R_D, -1.95), C_D + P3(R_D, -0.05), FC, 6, tip=0.20)
+        l_fb = T("F", 40, FC).move_to(C_D + P3(R_D + 0.45, -1.75))
         self.gat("em lugares diferentes")
         self.play(FadeIn(s_borda), FadeIn(l_fb), vel_d.animate.set_value(1.5), run_time=0.8)
 
         self.gat("girar menos")
-        s_perto = seta(C_D + P3(0.45 * R_D, -1.25), C_D + P3(0.45 * R_D, -0.05), FC, 6, tip=0.20)
-        self.play(Transform(s_borda, s_perto), l_fb.animate.next_to(s_perto, RIGHT, buff=0.12), vel_d.animate.set_value(0.35), run_time=0.8)
+        s_perto = seta(C_D + P3(0.45 * R_D, -1.95), C_D + P3(0.45 * R_D, -0.05), FC, 6, tip=0.20)
+        l_fb2 = T("F", 40, FC).move_to(C_D + P3(0.45 * R_D + 0.45, -1.75))
+        self.play(Transform(s_borda, s_perto), FadeOut(l_fb), FadeIn(l_fb2), vel_d.animate.set_value(0.35), run_time=0.8)
 
         self.gat("não girar nada")
         s_radial = seta(C_D + P3(R_D + 1.25, 0.0), C_D + P3(R_D + 0.05, 0.0), FC, 6, tip=0.20)
-        self.play(Transform(s_borda, s_radial), l_fb.animate.next_to(s_radial, UP, buff=0.12), vel_d.animate.set_value(0.0), run_time=0.8)
+        l_fb3 = T("F", 40, FC).move_to(C_D + P3(R_D + 0.65, 0.5))
+        self.play(Transform(s_borda, s_radial), FadeOut(l_fb2), FadeIn(l_fb3), vel_d.animate.set_value(0.0), run_time=0.8)
 
         self.gat("o que faz o papel da força")
         B, ib = M(r"\tau", "=", r"\,?", size=58)
@@ -108,6 +116,6 @@ class LoteA(Lote22):
 
     def item(self, k):
         ic = self.icone(k)
-        ic.scale(min(1.9 / ic.width, 1.45 / ic.height))
-        t = VGroup(*[txt(l, 26) for l in self.ROT[k]]).arrange(DOWN, buff=0.18)
-        return VGroup(ic, t).arrange(DOWN, buff=0.35)
+        ic.scale(min(2.9 / ic.width, 2.1 / ic.height))
+        t = VGroup(*[txt(l, 32, bold=True) for l in self.ROT[k]]).arrange(DOWN, buff=0.14)
+        return VGroup(ic, t).arrange(DOWN, buff=0.4)

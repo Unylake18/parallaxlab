@@ -51,19 +51,26 @@ def terra(W=1024, H=512):
     return Image.fromarray(np.clip(img, 0, 255).astype(np.uint8))
 
 
-def capa(W=575, H=400, logo=True):
-    # capa: azul vivo com a logo; contracapa: grafite liso (cores diferentes, handoff v2 D27: o espectador sabe qual face está vendo)
-    img = Image.new("RGB", (W, H), (0x1F, 0x5F, 0xB8) if logo else (0x1B, 0x20, 0x2C))
+def capa(W=1024, H=712, logo=True):
+    # v7 §2.1: capa azul-royal profundo #17408F com a logo oficial em cores (≥ 60% da largura; textura ≥ 1024 px, sem reamostrar para cima);
+    # verso branco-gelo #E8EEF8 com um X fino. Material sem iluminação (MeshBasicMaterial).
+    img = Image.new("RGB", (W, H), (0x17, 0x40, 0x8F) if logo else (0xE8, 0xEE, 0xF8))
     d = ImageDraw.Draw(img)
-    d.rectangle([14, 14, W - 15, H - 15], outline=(0x9F, 0xD2, 0xFF) if logo else (0x4A, 0x55, 0x6E), width=4)
     if logo:
+        d.rectangle([18, 18, W - 19, H - 19], outline=(0xBF, 0xD8, 0xFF), width=6)
         lg = Image.open(ROOT / "assets" / "branding" / "overlays" / "parallax_lab_logo_horizontal.png").convert("RGBA")
         a = np.asarray(lg)[..., 3]
         ys, xs = np.nonzero(a > 8)
         lg = lg.crop((xs.min(), ys.min(), xs.max() + 1, ys.max() + 1))
-        k = 0.78 * W / lg.width
+        k = 0.72 * W / lg.width
         lg = lg.resize((int(lg.width * k), int(lg.height * k)), Image.LANCZOS)
+        print("logo na capa: origem", lg.width / k, "px -> ", lg.width, "px (", round(lg.width / W * 100), "% da largura )")
         img.paste(lg, ((W - lg.width) // 2, (H - lg.height) // 2), lg)
+    else:
+        c = (0x9A, 0xA8, 0xC4)
+        d.rectangle([18, 18, W - 19, H - 19], outline=c, width=6)
+        d.line([(60, 60), (W - 60, H - 60)], fill=c, width=5)
+        d.line([(W - 60, 60), (60, H - 60)], fill=c, width=5)
     return img
 
 
