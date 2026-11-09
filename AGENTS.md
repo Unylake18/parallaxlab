@@ -34,6 +34,7 @@ Consulte conforme necessidade:
 - `docs/guia_mestre.md` — estratégia ampla;
 - `docs/formatos.md` — formatos curto vertical e longo horizontal, campos da ficha (inclui `solido_3d:`) e relatório "Teste do arsenal";
 - `docs/padrao_video_longo.md` — padrão de forma dos longos (abertura, tag do canto, pouca escrita, maiúsculas Space Grotesk, cores das grandezas, narração, tags sem "slowly", CTA com prévia); ler ao implementar ou roteirizar um `longo_horizontal`;
+- `docs/padrao_video_longo.md` seção "Série Cálculo I–IV (exceção de fundo)" + `assets/calculo/papel.py` — fundo milimetrado parado, gráficos presos à grade e 3D em Three.js; ler ao implementar qualquer longo de Cálculo I–IV;
 - `docs/roteiro_voz_elevenlabs_v4.md` — como escrever a fala (estilo professor de cursinho, variáveis pelo nome, conectivos) e gerar a voz com ElevenLabs v4 e audio tags `[ ]`; usar ao escrever roteiro ou gerar narração;
 - `docs/mapa_curricular.md` — arquitetura curricular/editorial (v2: Física I–IV, Eletromagnetismo/Griffiths, Cálculo, Álgebra Linear, EDO, EDP); usar para localizar uma pauta e preencher `disciplina:`/`bloco:`/`modulo:`/`referencia:` da ficha;
 - **3D é Three.js** (ver seção "3D: Three.js primeiro"); modelos em `videos_longos/yt_0015_momento_impulso/threejs/` e `videos_longos/yt_0016_sistemas_momento/threejs/`. `experimentos/blender/arsenal/catalogo.md`, `indice_producao.md` e `cobertura.md` servem só de referência de geometria (sólidos 3D catalogados); não use o Blender nem a ponte `Solido3D` salvo pedido explícito.

@@ -225,3 +225,10 @@ Render, QA, documentação e ações de Git devem ser proporcionais à etapa e a
 - Referências: Física I–IV com Moysés Nussenzveig e Sears (Young & Freedman), não Halliday; Feynman (*Lições de Física*) como consulta teórica e discursiva; EM com Griffiths.
 - Um endereço principal por vídeo (ID, tag do canto, pasta de entrega); o vídeo pode entrar em mais de uma playlist (uma playlist por bloco).
 - Ficha: `disciplina:`, `bloco:`, `modulo:` e `referencia:` substituem `macroassunto:` (`docs/formatos.md`). Fichas antigas não são reescritas.
+
+## 2026-11-09 — Padrão da série de longos de Cálculo I–IV
+
+- Fundo de papel milimetrado noturno **parado na câmera** (sem estrelas) em todos os longos de Cálculo I–IV; os longos de Física continuam com o céu espacial.
+- Motivo de render, medido (cena de álgebra de 8 s, 1080p/30): 10,1 s com estrelas andando contra 4,5 s com fundo parado na câmera (`camera.background_image`).
+- Gráficos: `eixos_no_papel` é a regra (origem em cruzamento grosso, unidade múltipla de 0,2 u); `janela` é a exceção para o que não encaixa.
+- 3D em Three.js (nunca `ThreeDScene` do Manim). Detalhe em `docs/padrao_video_longo.md` (seção "Série Cálculo I–IV") e código em `assets/calculo/papel.py`.

@@ -149,3 +149,33 @@ Geração, voz, modelo e regras gerais das tags: `docs/roteiro_voz_elevenlabs_v4
 - Entrega: master 1080p30, CRF 14, `.srt` separado, `capitulos_youtube.txt`, via `videos/entregar.py` (`docs/entregas.md`). A pasta em
   `entregas/Vídeos Longos/` segue `<Área> - <Bloco> - <Assunto>`, com área e bloco do mapa.
 - Duração observada: 12–27 min. A duração sai da explicação, não o contrário.
+
+
+## Série Cálculo I–IV (exceção de fundo)
+
+Padrão aprovado pelo Kaio em 2026-11-09 (thread "Comparar Manim 2.5D e Three.js em Cálculo III"). Vale para todo `longo_horizontal` de Cálculo I, II, III e IV (Guidorizzi). O resto deste documento continua valendo; aqui ficam só as diferenças. Código e imagens: `assets/calculo/` (`papel.py`, `gerar_fundos.py`).
+
+### 1. Fundo: milimetrado noturno, parado
+- Degradê azul-marinho #0F1B33 (topo) → #0A1326 (base), vinheta 0,45.
+- Grade fina a cada 0,2 u do Manim (24 px em 1080p) e grossa a cada 1 u (120 px), com um cruzamento grosso na origem do quadro. Linhas fracas: fina ≈ #121E39 sobre o fundo, grossa ≈ #1C2F55.
+- Arquivos: `fundo_calculo_milimetrado_1920x1080.png` / `_960x540.png` e a versão sem grade `fundo_calculo_liso_*` (para a janela e para o 3D).
+- **Exceção à regra dos longos de Física:** nos longos de Cálculo não há céu espacial nem estrelas andando (`poeira_estelar`).
+- Vale com o quadro 16×9 u do projeto (`template/config_horizontal.py`): 1 u = 120 px em 1080p, 60 px em 540p.
+
+### 2. Fundo fixo = render rápido
+- O fundo entra como imagem da câmera (`camera.background_image`, via `usar_papel(self)`), nunca como `ImageMobject`, e nada no fundo se mexe.
+- Motivo, medido em 2026-11-09 (cena de álgebra de 8 s, 1080p/30): fundo atual dos longos de Física, com estrelas andando, 10,1 s; fundo parado na câmera, 4,5 s. O updater das estrelas obriga o Manim a redesenhar, em todo quadro, todos os objetos que vêm depois delas na cena. Isso dá ~20–25 min de render a mais num longo de 30 min.
+
+### 3. Gráficos presos no papel
+- **Regra:** eixos criados com `eixos_no_papel(origem, x_range, y_range, unidade)`. A origem cai num cruzamento grosso (coordenada inteira do Manim) e a unidade é arredondada para múltiplo de 0,2 u. Assim toda marca do eixo fica em cima de uma linha do papel.
+- **Exceção:** gráfico que não pode encaixar (eixos girados, perspectiva, escala imposta) usa `janela(self, ax)`, que apaga a grade atrás dos eixos com bordas suaves. É um PNG por cena, gerado uma vez só, sem custo por quadro.
+- QA: com zoom no pixel, as marcas dos eixos coincidem com as linhas da grade.
+
+### 4. 3D: Three.js onde a câmera trabalha
+- Superfície curva, campo vetorial, sólido com corte e câmera orbitando: Three.js, com valores, rótulos e fórmulas no Manim (pipeline de sempre). Não usar `ThreeDScene` do Manim: no teste do fluxo pelo paraboloide, ele levou 242 s contra 22 s do Three.js e ainda errou a ordem de profundidade.
+- O fundo das cenas 3D é o `fundo_calculo_liso` (degradê sem grade), para a grade plana não confundir a leitura de profundidade. *(Sugestão; ajustar se o Kaio preferir o milimetrado também no 3D.)*
+
+### 5. Hábitos de render leve
+- Poucos updaters; não usar `always_redraw` que recria `MathTex` a cada quadro.
+- Tirar da cena (`remove`/`FadeOut`) o que saiu da tela; opacidade 0 ainda custa.
+- Preview em 540p/15 só da seção que mudou; 1080p/30 uma vez, no fechamento.
