@@ -1,0 +1,160 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="katex/katex.min.css">
+<script src="katex/katex.min.js"></script>
+<style>
+@font-face{font-family:SG;src:url(SpaceGrotesk-Bold.ttf)}
+@font-face{font-family:SGM;src:url(SpaceGrotesk-Medium.ttf)}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#091226}
+canvas{position:absolute;left:0;top:0}
+.f{position:absolute;color:#F5F7FF;white-space:nowrap;line-height:1}
+.f .katex{font-size:1em}
+</style></head><body><canvas id="o" width="1920" height="1080"></canvas>
+<script>
+// Storyboard v7 do yt_0026: sistema visual simples. ?k=<cena>
+const K=new URLSearchParams(location.search).get('k'), x=document.getElementById('o').getContext('2d'), PI=Math.PI;
+const CAMPO='#2EE6A0', CAMPO2='#8CFFD2', POS='#E08A3C', SAI='#7FB2FF', SAIF='#A9CCFF', GEO='#B8C4DA', BR='#F5F7FF', E1='#FFC24D', E2='#EA63FF', VEL='#9C8CFF', CORAL='#FF7A8A', ESC='#050B18', CHAPA='#13234A';
+const M={'\\X':'\\textcolor{#FFC24D}{x}','\\Y':'\\textcolor{#EA63FF}{y}','\\F':'\\textcolor{#2EE6A0}{\\vec F}','\\ii':'\\vec\\imath','\\jj':'\\vec\\jmath',
+ '\\th':'\\textcolor{#FFC24D}{\\theta}','\\rh':'\\textcolor{#EA63FF}{\\rho}','\\U':'\\textcolor{#FFC24D}{u}','\\V':'\\textcolor{#EA63FF}{v}','\\S':'\\textcolor{#7FB2FF}','\\G':'\\textcolor{#B8C4DA}',
+ '\\P':'\\textcolor{#E08A3C}','\\gp':'\\textcolor{#9C8CFF}{\\gamma\'(t)}','\\sen':'\\operatorname{sen}','\\rot':'\\operatorname{rot}'};
+let O=[960,540],U=100; const P=(a,b)=>[O[0]+a*U,O[1]-b*U]; const vista=(cx,cy,u)=>{O=[cx,cy];U=u;};
+const img=s=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.src=s;});
+function mix(a,b,t){const h=s=>[1,3,5].map(i=>parseInt(s.slice(i,i+2),16));const A=h(a),B=h(b);return 'rgb('+A.map((v,i)=>Math.round(v+(B[i]-v)*t)).join(',')+')';}
+function tex(s,X,Y,size=56,al='l',cor=BR){const d=document.createElement('div');d.className='f';d.style.fontSize=size+'px';d.style.color=cor;
+ katex.render(s,d,{macros:M,throwOnError:false});document.body.appendChild(d);const w=d.offsetWidth,h=d.offsetHeight;
+ d.style.left=(al==='c'?X-w/2:al==='r'?X-w:X)+'px';d.style.top=(Y-h/2)+'px';return d;}
+function txt(s,X,Y,{size=30,f='SG',cor=BR,al='left',alpha=1}={}){x.globalAlpha=alpha;x.font=`${size}px ${f}`;x.textAlign=al;x.fillStyle=cor;x.fillText(s,X,Y);x.textAlign='left';x.globalAlpha=1;}
+function caminho(pts){x.beginPath();pts.forEach((p,i)=>{const q=P(...p);i?x.lineTo(...q):x.moveTo(...q)});}
+function linha(pts,cor,w,{dash=null,alpha=1}={}){x.lineCap='round';x.lineJoin='round';x.setLineDash(dash||[]);caminho(pts);x.globalAlpha=alpha;x.strokeStyle=cor;x.lineWidth=w;x.stroke();x.globalAlpha=1;x.setLineDash([]);}
+function preenche(pts,cor,alpha=1){caminho(pts);x.closePath();x.globalAlpha=alpha;x.fillStyle=cor;x.fill();x.globalAlpha=1;}
+// seta: só a flecha (haste + ponta cheia), sem contorno, sem brilho
+function seta(a,b,cor,w=5,head=20,alpha=1){const A=P(...a),B=P(...b),dx=B[0]-A[0],dy=B[1]-A[1],L=Math.hypot(dx,dy);if(L<3)return;
+ const ux=dx/L,uy=dy/L,h=Math.min(head,.45*L),hw=h*.5,bx=B[0]-ux*h,by=B[1]-uy*h; x.globalAlpha=alpha;
+ x.lineCap='round';x.beginPath();x.moveTo(...A);x.lineTo(bx+ux,by+uy);x.strokeStyle=cor;x.lineWidth=w;x.stroke();
+ x.beginPath();x.moveTo(...B);x.lineTo(bx-uy*hw,by+ux*hw);x.lineTo(bx+uy*hw,by-ux*hw);x.closePath();x.fillStyle=cor;x.fill();x.globalAlpha=1;}
+function ponto(p,cor,r=9){const q=P(...p);x.beginPath();x.arc(...q,r,0,7);x.fillStyle=cor;x.fill();}
+function circ(r,c=[0,0],n=160){const a=[];for(let i=0;i<=n;i++)a.push([c[0]+r*Math.cos(2*PI*i/n),c[1]+r*Math.sin(2*PI*i/n)]);return a;}
+function eixos(x0,x1,y0,y1,{rx=null,ry=null,cor=GEO,alpha=.7}={}){linha([[x0,0],[x1,0]],cor,2,{alpha});linha([[0,y0],[0,y1]],cor,2,{alpha});
+ if(rx)tex(rx,...P(x1,0).map((v,i)=>v+(i?0:18)),34);if(ry)tex(ry,P(0,y1)[0],P(0,y1)[1]-24,34,'c');}
+// campo: comprimento comprimido (nunca vira pontinho), cor pela intensidade
+function campo(Fv,{x0=-3,x1=3,y0=-3,y1=3,passo=.5,rmin=.3,rmax=99,lmax=.42,mmax=1,alpha=1,c=[0,0]}={}){
+ for(let X=x0;X<=x1+1e-6;X+=passo)for(let Y=y0;Y<=y1+1e-6;Y+=passo){const r=Math.hypot(X-c[0],Y-c[1]);if(r<rmin||r>rmax)continue;const f=Fv(X,Y),m=Math.hypot(...f);if(m<1e-9)continue;
+  const t=Math.min(1,m/mmax),L=lmax*(.4+.6*t),u=[f[0]/m*L,f[1]/m*L];const cc=alpha<1?mix(CAMPO,'#0B1730',1-alpha):mix(CAMPO,CAMPO2,t);seta([X-u[0]/2,Y-u[1]/2],[X+u[0]/2,Y+u[1]/2],cc,5,19,1);}}
+function canto(s){txt('CÁLCULO III · FUNÇÕES A VALORES VETORIAIS E CAMPOS VETORIAIS',36,104,{size:22,f:'SGM',cor:'#C8D6F0',alpha:.6});txt(s,36,150,{size:36});}
+async function logo(){const lg=await img('logo_c.png');x.globalAlpha=.9;x.drawImage(lg,1668,44,40,42);x.globalAlpha=1;txt('PARALLAX LAB',1716,76,{size:20,f:'SGM',cor:'#DCE6FA',alpha:.85});}
+function rotT(s){txt(s,960,150,{size:40,al:'center'});} // rótulo da abertura (sem canto)
+function legenda(s,X,Y,cor=SAIF,al='left',size=28){txt(s,X,Y,{size,f:'SGM',cor,al});}
+async function img3d(f,bx,by,bw,bh){const i=await img(f);const s=Math.min(bw/i.width,bh/i.height);x.drawImage(i,bx+(bw-i.width*s)/2,by+(bh-i.height*s)/2,i.width*s,i.height*s);}
+function painel(X0,Y0,w,h,rot,cor=GEO){x.fillStyle='rgba(9,18,38,.72)';x.beginPath();x.roundRect(X0,Y0,w,h,14);x.fill();x.strokeStyle='rgba(184,196,218,.35)';x.lineWidth=2;x.stroke();
+ if(rot)txt(rot,X0+w/2,Y0-18,{size:28,f:'SGM',cor,al:'center'});}
+function arco(X0,Y0,X1,Y1,rot){x.strokeStyle=BR;x.lineWidth=4;x.lineCap='round';x.beginPath();x.moveTo(X0,Y0);x.quadraticCurveTo((X0+X1)/2,Y0-70,X1,Y1);x.stroke();
+ const a=Math.atan2(Y1-(Y0-70),X1-(X0+X1)/2);x.beginPath();x.moveTo(X1+6*Math.cos(a),Y1+6*Math.sin(a));x.lineTo(X1-18*Math.cos(a)+10*Math.sin(a),Y1-18*Math.sin(a)-10*Math.cos(a));x.lineTo(X1-18*Math.cos(a)-10*Math.sin(a),Y1-18*Math.sin(a)+10*Math.cos(a));x.closePath();x.fillStyle=BR;x.fill();
+ if(rot)tex(rot,(X0+X1)/2,Y0-75,44,'c');}
+const giro=(X,Y)=>[-Y,X];
+function bandeira(ang,c=[0,0],cor=CORAL,alpha=1){const R=(p)=>[c[0]+p[0]*Math.cos(ang)-p[1]*Math.sin(ang),c[1]+p[0]*Math.sin(ang)+p[1]*Math.cos(ang)];
+ linha([R([1,0]),R([1,1.9])],cor,5,{alpha});preenche([R([1,1.9]),R([2.3,1.55]),R([1,1.2])],cor,alpha);}
+function malha(n,s,cor=GEO){for(let k=-n;k<=n;k++){linha([[k*s,-n*s],[k*s,n*s]],cor,1.5,{alpha:k?.35:.7});linha([[-n*s,k*s],[n*s,k*s]],cor,1.5,{alpha:k?.35:.7});}}
+
+async function main(){
+ const liso=['t6'].includes(K); x.drawImage(await img(liso?'bg_escuro_liso.png':'bg_escuro_mil.png'),0,0);
+ const abertura=K[0]==='t'; if(!abertura){await logo();}
+ // ---------- ABERTURA ----------
+ if(K==='t0'){rotT('UMA SETA EM CADA PONTO');vista(620,600,115);campo(giro,{x0:-3,x1:3,y0:-3,y1:3,passo:.5,rmin:.4,rmax:3.2,mmax:3.2});
+  tex('\\F(\\X,\\Y) = -\\Y\\,\\ii + \\X\\,\\jj',1120,520,58);legenda('CAMPO VETORIAL',1124,620,CAMPO2);}
+ if(K==='t1'){rotT('VOLUME');await img3d('c_col.png',180,230,880,760);
+  tex('V = \\iint_{\\G R} \\S{f}(\\X,\\Y)\\,dA',1120,520,58);legenda('SOMA DE COLUNAS FININHAS',1124,630);}
+ if(K==='t2'){rotT('TRABALHO');vista(620,600,110);const Fv=(X,Y)=>[.8+.35*Math.sin(.9*Y),.35*Math.cos(.8*X)];
+  campo(Fv,{x0:-3.5,x1:3.5,y0:-3,y1:3,passo:.7,rmin:0,mmax:1.2,lmax:.5,alpha:.85});
+  const cur=t=>[-3.2+6.4*t,1.1*Math.sin(PI*1.2*t)-.4],pts=[];for(let i=0;i<=120;i++)pts.push(cur(i/120));linha(pts,POS,6);
+  [.15,.32,.5,.68,.85].forEach(t=>{const a=cur(t),b=cur(t+.005),d=[b[0]-a[0],b[1]-a[1]],L=Math.hypot(...d),u=[d[0]/L,d[1]/L],f=Fv(...a),ft=f[0]*u[0]+f[1]*u[1];
+   seta(a,[a[0]+u[0]*ft*.9,a[1]+u[1]*ft*.9],BR,6,22);ponto(a,POS,8);});
+  tex('W = \\int_{\\P{C}} \\F\\cdot d\\vec r',1120,520,58);legenda('O CAMPO AO LONGO DE CADA PEDACINHO',1124,630);}
+ if(K==='t3'){rotT('FLUXO');await img3d('c_flu.png',200,250,840,700);
+  tex('\\Phi = \\iint_{\\S{S}} \\F\\cdot\\vec n\\,dS',1120,520,58);legenda('O QUE ATRAVESSA CADA PEDACINHO',1124,630);}
+ if(K==='t4a'||K==='t4b'){const a=K==='t4a';rotT(a?'PEDACINHO POR PEDACINHO':'SÓ SOBRA A BORDA');vista(620,600,130);
+  const n=3,s=1.6,x0=-2.4,y0=-2.4;preenche([[x0,y0],[x0+n*s,y0],[x0+n*s,y0+n*s],[x0,y0+n*s]],CHAPA,.9);
+  for(let k=0;k<=n;k++){const ext=k===0||k===n;linha([[x0+k*s,y0],[x0+k*s,y0+n*s]],GEO,ext?3:2,{alpha:ext?.9:.45});linha([[x0,y0+k*s],[x0+n*s,y0+k*s]],GEO,ext?3:2,{alpha:ext?.9:.45});}
+  const q=.42,h=s/2-.17;
+  for(let i=0;i<n;i++)for(let j=0;j<n;j++){const cx=x0+(i+.5)*s,cy=y0+(j+.5)*s;
+   [[[cx-q,cy-h],[cx+q,cy-h],j>0],[[cx+h,cy-q],[cx+h,cy+q],i<n-1],[[cx+q,cy+h],[cx-q,cy+h],j<n-1],[[cx-h,cy+q],[cx-h,cy-q],i>0]].forEach(([A,B,interna])=>{
+    if(interna&&!a)return;seta(A,B,interna?CAMPO:CAMPO2,5,20);});}
+  if(!a){const B=[[x0,y0],[x0+n*s,y0],[x0+n*s,y0+n*s],[x0,y0+n*s],[x0,y0]];linha(B,CAMPO2,5,{alpha:.5});}
+  if(a){const e=P(x0+s,y0+1.5*s);x.strokeStyle=CORAL;x.lineWidth=3.5;x.beginPath();x.roundRect(e[0]-34,e[1]-74,68,148,12);x.stroke();
+   legenda('CADA PEDACINHO GIRA UM POUCO',1120,480,BR,'left',34);legenda('NA PAREDE ENTRE DOIS VIZINHOS,',1120,560,SAIF);legenda('AS DUAS SETAS SE CANCELAM',1120,600,CORAL);}
+  else{tex('\\oint_{\\G C} \\F\\cdot d\\vec r \\;=\\; \\iint_{\\G R} (\\rot \\F)\\,dA',1120,500,52);
+   legenda('NA BORDA',1150,610,SAIF);legenda('SOMA DOS GIROS DE DENTRO',1430,610,CAMPO2);txt('TEOREMA DE GREEN',1124,720,{size:34});}}
+ if(K==='t5'){rotT('A MESMA IDEIA, TRÊS VEZES');
+  const L=[['GREEN','\\oint_{\\G C} \\F\\cdot d\\vec r','\\iint_{\\G R} (\\nabla\\times\\F)\\cdot\\vec k\\,dA'],
+   ['STOKES','\\oint_{\\G C} \\F\\cdot d\\vec r','\\iint_{\\S{S}} (\\nabla\\times\\F)\\cdot\\vec n\\,dS'],
+   ['GAUSS','\\oiint_{\\S{S}} \\F\\cdot\\vec n\\,dS','\\iiint_{\\G V} \\nabla\\cdot\\F\\,dV']];
+  legenda('NA BORDA',800,270,SAIF,'center');legenda('EM CADA PEDACINHO DE DENTRO',1330,270,CAMPO2,'center');
+  L.forEach(([n,l,r],i)=>{const Y=370+i*150;txt(n,220,Y+12,{size:36});tex(l,960,Y,52,'r');tex('=',990,Y,52,'c');tex(r,1030,Y,52,'l');});
+  txt('O LOCAL E O GLOBAL',960,890,{size:66,al:'center'});txt('ESTÃO CONECTADOS.',960,970,{size:66,al:'center',cor:SAIF});}
+ if(K==='t6'){vista(960,540,110);campo(giro,{x0:-8,x1:8,y0:-4.6,y1:4.6,passo:.8,rmin:.5,mmax:8,lmax:.5,alpha:.16});
+  x.fillStyle='rgba(5,11,24,.86)';x.strokeStyle='rgba(169,204,255,.5)';x.lineWidth=2;x.beginPath();x.roundRect(460,370,1000,320,18);x.fill();x.stroke();
+  txt('CÁLCULO III',960,520,{size:110,al:'center'});seta([-.6,-.55],[.6,-.55],CAMPO,6,24);
+  txt('DO INFINITAMENTE PEQUENO AO ESPAÇO INTEIRO.',960,648,{size:34,f:'SGM',cor:SAIF,al:'center'});}
+ // ---------- CORPO ----------
+ if(K==='h3'){canto('MESMA FÓRMULA, DOIS DESENHOS');tex('(\\X,\\Y)\\;\\longmapsto\\;(-\\Y,\\;\\X)',960,235,56,'c');
+  painel(150,300,700,600,'');painel(1070,300,700,600,'');
+  vista(500,600,80);malha(3,1);bandeira(0,[0,0],CORAL,.22);bandeira(PI/2);ponto([0,0],BR,7);legenda('TRANSFORMAÇÃO: A BANDEIRA GIRA',500,950,BR,'center');
+  vista(1420,600,80);campo(giro,{x0:-3,x1:3,y0:-3,y1:3,passo:.6,rmin:.5,rmax:3.3,mmax:3.3,lmax:.5});legenda('CAMPO: UMA SETA EM CADA PONTO',1420,950,CAMPO2,'center');
+  txt('QUAL É O DESENHO CERTO?',960,1035,{size:34,al:'center',cor:SAIF});}
+ if(K==='b1'){canto('QUE FUNÇÃO É ESSA');tex('f : {\\G A} \\subset \\mathbb{R}^n \\to \\mathbb{R}^m',960,280,64,'c');
+  const C=[[140,'CURVA','\\mathbb{R}\\to\\mathbb{R}^2',GEO],[720,'GRÁFICO','\\mathbb{R}^2\\to\\mathbb{R}',GEO],[1300,'NESTE VÍDEO','\\mathbb{R}^2\\to\\mathbb{R}^2',CAMPO2]];
+  C.forEach(([X0,r,t,c],i)=>{painel(X0,400,480,420,'');if(i===2){x.strokeStyle=CAMPO;x.lineWidth=3;x.beginPath();x.roundRect(X0,400,480,420,14);x.stroke();}
+   tex(t,X0+240,880,44,'c');txt(r,X0+240,950,{size:28,f:'SGM',cor:c,al:'center'});});
+  vista(380,620,70);eixos(-2.6,2.6,-2.2,2.2,{alpha:.5});const cv=[];for(let i=0;i<=100;i++){const t=-PI+2*PI*i/100;cv.push([2.1*Math.sin(t),1.4*Math.sin(2*t)]);}linha(cv,POS,5);ponto([2.1*Math.sin(.9),1.4*Math.sin(1.8)],POS,9);
+  await img3d('c_par.png',740,420,440,380);
+  vista(1540,600,52);campo(giro,{x0:-3,x1:3,y0:-3,y1:3,passo:1,rmin:.5,mmax:4.3,lmax:.7});
+  }
+ if(K==='b2'){canto('TRANSFORMAÇÃO');painel(130,250,740,560,'ENTRADA',E1);painel(1050,250,740,560,'SAÍDA',SAI);arco(890,520,1030,520,'\\varphi');
+  vista(250,700,72);const tw=2*PI,rh=2,sx=8.2/tw,sy=1.95;   // retângulo B
+  const R=(t,r)=>[t*sx,r*sy];preenche([R(0,0),R(tw,0),R(tw,rh),R(0,rh)],CHAPA,.9);
+  for(let k=0;k<=8;k++)linha([R(k*tw/8,0),R(k*tw/8,rh)],E1,k%8?2.5:4);for(let k=0;k<=4;k++)linha([R(0,k*rh/4),R(tw,k*rh/4)],E2,k%4?2.5:4);
+  tex('\\th',...P(...R(tw,0)).map((v,i)=>v+(i?10:28)),40);tex('\\rh',...P(...R(0,rh)).map((v,i)=>v+(i?-40:-8)),40);
+  tex('2\\pi',P(...R(tw,0))[0],P(...R(tw,0))[1]+40,30,'c');tex('2',P(...R(0,rh))[0]-26,P(...R(0,rh))[1],30,'c');tex('{\\G B}',P(...R(tw/2,rh))[0],P(...R(tw/2,rh))[1]-28,36,'c');
+  vista(1420,530,120);for(let k=1;k<=4;k++)preenche(circ(.5*k),CHAPA,k===4?.9:0);eixos(-2.4,2.4,-2.2,2.2,{alpha:.45});
+  for(let k=0;k<8;k++){const a=k*PI/4;linha([[0,0],[2*Math.cos(a),2*Math.sin(a)]],E1,2.5);}for(let k=1;k<=4;k++)linha(circ(.5*k),E2,k===4?4:2.5);
+  tex('\\S{\\operatorname{Im} = \\varphi(B)}',1660,300,36,'c');
+  tex('\\varphi(\\th,\\rh) = \\S{\\big(}\\underbrace{\\rh\\cos\\th}_{\\S{\\varphi_1}},\\; \\underbrace{\\rh\\,\\sen\\th}_{\\S{\\varphi_2}}\\S{\\big)}',960,935,54,'c');}
+ if(K==='b3'){canto('A DOBRA');painel(130,250,620,560,'ENTRADA',E1);painel(1170,250,620,560,'SAÍDA',SAI);arco(780,520,1150,520,'\\varphi');
+  vista(440,530,110);preenche([[-2.3,-2.3],[2.3,-2.3],[2.3,2.3],[-2.3,2.3]],CHAPA,.9);eixos(-2.3,2.3,-2.3,2.0,{alpha:.5,rx:'\\U',ry:'\\V'});
+  linha([[-2.3,1],[2.3,1]],E2,4);linha([[-2.3,-1],[2.3,-1]],E2,4,{dash:[14,10]});tex('\\V=1',...P(1.35,1.3),30);tex('\\V=-1',...P(1.2,-.7),30);
+  vista(1480,770,52);const pr=[];for(let i=0;i<=80;i++){const X=-2.8+5.6*i/80;pr.push([X,X*X]);}
+  preenche([...pr.filter(p=>p[1]<=9.4),[2.8,9.4],[-2.8,9.4]],SAI,.22);eixos(-3.2,3.2,-.3,9.0,{alpha:.5,rx:'\\X',ry:'\\Y'});
+  linha(pr.filter(p=>p[1]<=9.4),SAI,4);const p1=pr.map(([X,Y])=>[X,Y+1]).filter(p=>p[1]<=9.4);linha(p1,E2,4);
+  tex('\\Y = \\X^2+1',...P(-5.4,6.2),30);tex('\\S{\\Y=\\X^2}',...P(2.3,2.6),30);
+  tex('\\varphi(\\U,\\V) = \\S{(}\\U,\\; \\U^2+\\V^2\\S{)}',440,920,48,'c');tex('\\S{\\operatorname{Im}\\varphi = \\{(x,y) \\mid y \\ge x^2\\}}',1480,920,48,'c');
+  legenda('v = 1 E v = −1 CAEM NA MESMA PARÁBOLA',960,1010,BR,'center',28);}
+ if(K==='b4'){canto('PARA O ESPAÇO');await img3d('c_par.png',150,200,900,820);
+  tex('f(\\U,\\V) = \\S{(}\\U,\\; \\V,\\; \\U^2+\\V^2\\S{)}',1120,460,54);tex('\\S{z = x^2+y^2}',1120,580,54);legenda('A FOLHA PLANA VIRA UMA TIGELA',1124,690);}
+ if(K==='b5'){canto('CAMPO VETORIAL');vista(620,600,115);eixos(-3.2,3.2,-3.2,3.2,{alpha:.35});[1,2].forEach(r=>linha(circ(r),GEO,2,{dash:[10,9],alpha:.6}));
+  campo((X,Y)=>[X,Y],{x0:-3,x1:3,y0:-3,y1:3,passo:.6,rmin:.4,rmax:3.3,mmax:3.3,lmax:.5});ponto([0,0],BR,6);
+  tex('\\F(\\X,\\Y) = \\X\\,\\ii + \\Y\\,\\jj',1120,470,56);tex('\\|\\F\\| = \\sqrt{x^2+y^2}',1120,590,56);legenda('MAIS LONGE DA ORIGEM, SETA MAIOR',1124,700);}
+ if(K==='b54'){canto('CAMPO VETORIAL');painel(150,260,740,560,'TRANSFORMAÇÃO',BR);painel(1030,260,740,560,'CAMPO',CAMPO2);
+  vista(520,560,100);ponto([-1.6,-.8],GEO,11);ponto([1.6,.9],SAI,11);x.strokeStyle=BR;x.lineWidth=4;x.setLineDash([12,10]);x.beginPath();const a=P(-1.45,-.65),b=P(1.42,.85);x.moveTo(...a);x.quadraticCurveTo(a[0]+60,b[1]-40,b[0]-6,b[1]);x.stroke();x.setLineDash([]);
+  tex('X',...P(-1.9,-1.25),40,'c');tex('\\S{\\varphi(X)}',...P(1.7,1.45),40,'c');
+  vista(1400,560,100);ponto([-1,-.6],POS,11);seta([-1,-.6],[1.4,.6],CAMPO,7,28);tex('\\P{X}',...P(-1.3,-1.05),40,'c');tex('\\F(X)',...P(1.2,1.2),40,'c');
+  legenda('PARA ONDE O PONTO VAI?',520,900,BR,'center',32);legenda('QUE SETA O PONTO CARREGA?',1400,900,CAMPO2,'center',32);}
+ if(K==='b6a'){canto('DE VOLTA AO REDEMOINHO');vista(620,600,115);eixos(-3.2,3.2,-3.2,3.2,{alpha:.35});[1,2].forEach(r=>linha(circ(r),GEO,2,{dash:[10,9],alpha:.6}));
+  campo(giro,{x0:-3,x1:3,y0:-3,y1:3,passo:.6,rmin:.4,rmax:3.3,mmax:3.3,lmax:.5,alpha:.35});
+  const p=[2*Math.cos(.6),2*Math.sin(.6)];seta([0,0],p,POS,6,24);const f=giro(...p);seta(p,[p[0]+f[0]*.55,p[1]+f[1]*.55],CAMPO,7,28);
+  const u=[p[0]/2,p[1]/2],v=[f[0]/2,f[1]/2],s=.22;linha([[p[0]-u[0]*s,p[1]-u[1]*s],[p[0]-u[0]*s+v[0]*s,p[1]-u[1]*s+v[1]*s],[p[0]+v[0]*s,p[1]+v[1]*s]],BR,2.5);
+  ponto(p,POS,9);tex('\\P{(x,y)}',...P(p[0]+.55,p[1]-.35),36);
+  tex('\\F(\\X,\\Y) = -\\Y\\,\\ii + \\X\\,\\jj',1120,430,54);tex('\\F\\cdot\\P{(x,y)} = -yx + xy = 0',1120,550,54);legenda('A SETA É SEMPRE PERPENDICULAR AO RAIO',1124,660);}
+ if(K==='b6b'){canto('DE VOLTA AO REDEMOINHO');vista(620,600,115);eixos(-3.2,3.2,-3.2,3.2,{alpha:.35});
+  campo(giro,{x0:-3,x1:3,y0:-3,y1:3,passo:.6,rmin:.4,rmax:3.3,mmax:3.3,lmax:.5,alpha:.35});
+  linha(circ(2),POS,5);const t=1.0,p=[2*Math.cos(t),2*Math.sin(t)];seta(p,[p[0]-2*Math.sin(t)*.55,p[1]+2*Math.cos(t)*.55],VEL,8,30);ponto(p,POS,10);
+  tex('\\P{\\gamma(t)} = (r\\cos t,\\; r\\,\\sen t)',1120,400,50);tex('\\gp = (-r\\,\\sen t,\\; r\\cos t)',1120,510,50);tex('\\gp = \\F(\\P{\\gamma(t)})',1120,640,58);
+  legenda('A VELOCIDADE DA CIRCUNFERÊNCIA É O PRÓPRIO CAMPO',1124,750);}
+ if(K==='b7'){canto('NO ESPAÇO');await img3d('c_cam.png',140,200,920,840);
+  tex('\\F(X) = -\\dfrac{X}{\\|X\\|^3}',1120,450,58);tex('\\|\\F\\| = \\dfrac{1}{r^2}',1120,610,58);tex('{\\G A} = \\mathbb{R}^3 - \\{0\\}',1120,750,50);}
+ if(K==='s1'){canto('RESUMO');const T=[[140,'TRANSFORMAÇÃO','\\varphi(\\th,\\rh) = (\\rh\\cos\\th,\\;\\rh\\,\\sen\\th)'],[720,'SUPERFÍCIE','f(\\U,\\V) = (\\U,\\V,\\U^2+\\V^2)'],[1300,'CAMPO','\\F(\\X,\\Y) = -\\Y\\,\\ii + \\X\\,\\jj']];
+  T.forEach(([X0,r,f])=>{painel(X0,260,480,460,r,BR);tex(f,X0+240,780,30,'c');});
+  vista(380,490,85);for(let k=1;k<=4;k++)preenche(circ(.5*k),CHAPA,k===4?.9:0);for(let k=0;k<8;k++){const a=k*PI/4;linha([[0,0],[2*Math.cos(a),2*Math.sin(a)]],E1,2);}for(let k=1;k<=4;k++)linha(circ(.5*k),E2,k===4?3.5:2);
+  await img3d('c_par.png',740,280,440,420);
+  vista(1540,490,62);campo(giro,{x0:-3,x1:3,y0:-3,y1:3,passo:.75,rmin:.5,rmax:3.3,mmax:3.3,lmax:.6});
+  tex('f : {\\G A}\\subset\\mathbb{R}^n\\to\\mathbb{R}^m',960,920,56,'c');}
+ document.title='pronto';}
+document.fonts.load('30px SG').then(()=>document.fonts.load('30px SGM')).then(()=>document.fonts.ready).then(main);
+</script></body></html>

@@ -1,0 +1,128 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:SG;src:url(SpaceGrotesk-Bold.ttf)}
+@font-face{font-family:SGM;src:url(SpaceGrotesk-Medium.ttf)}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#0A1326 url(bg_escuro_liso.png)}
+canvas{position:absolute;left:0;top:0}
+</style></head><body>
+<canvas id="g" width="1920" height="1080"></canvas>
+<canvas id="o" width="1920" height="1080"></canvas>
+<script src="three.min.js"></script>
+<script>
+// Prancha de estilo 3D (referência para o preview v3 do yt_0026). Cena por ?c=paraboloide|colunas|campo
+const T=THREE, PI=Math.PI, W=1920, H=1080, C=new URLSearchParams(location.search).get('c');
+const R=new T.WebGLRenderer({canvas:document.getElementById('g'),antialias:true,alpha:true});
+R.setPixelRatio(1);R.setSize(W,H,false);
+R.shadowMap.enabled=true;R.shadowMap.type=T.PCFSoftShadowMap;
+const S=new T.Scene(); T.Object3D.DefaultUp.set(0,0,1);
+const cam=new T.PerspectiveCamera(22,W/H,0.1,200); cam.up.set(0,0,1);
+const ctx=document.getElementById('o').getContext('2d');
+const col=h=>new T.Color(h);
+// luz: chave do alto à esquerda (sombra), preenchimento frio, contraluz para recortar a silhueta
+const key=new T.DirectionalLight(0xffffff,0.95); key.position.set(-5,-3,8); key.castShadow=true;
+key.shadow.mapSize.set(2048,2048); Object.assign(key.shadow.camera,{left:-6,right:6,top:6,bottom:-6,near:1,far:30}); key.shadow.radius=6; key.shadow.bias=-0.0008;
+S.add(key); S.add(new T.HemisphereLight(0xBFD6FF,0x0A1326,0.45));
+const rim=new T.DirectionalLight(0x9CC8FF,0.45); rim.position.set(4,6,2); S.add(rim);
+// "fresnel": acende a borda da silhueta (contorno de luz) em qualquer material Standard
+function comBorda(m,cor,forca){m.onBeforeCompile=sh=>{sh.uniforms.rimC={value:col(cor)};sh.uniforms.rimK={value:forca};
+ sh.fragmentShader='uniform vec3 rimC; uniform float rimK;\n'+sh.fragmentShader.replace('#include <dithering_fragment>',
+ '#include <dithering_fragment>\n float fr=1.0-abs(dot(normalize(vViewPosition),normalize(vNormal)));\n gl_FragColor.rgb+=rimC*pow(fr,2.6)*rimK;');};return m;}
+function tubo(pts,r,cor,emi){const c=new T.CatmullRomCurve3(pts);const g=new T.TubeGeometry(c,Math.max(8,pts.length*2),r,8,false);
+ return new T.Mesh(g,new T.MeshBasicMaterial({color:cor}));}
+function seta(a,b,r,cor,contorno){ // seta sólida: haste cilíndrica + cone, sombreada, com casca escura (contorno) por trás
+ const d=new T.Vector3().subVectors(b,a),L=d.length(),g=new T.Group(); const hl=Math.min(.2,.4*L), hr=Math.max(r*2.6,hl*.38);
+ const m=comBorda(new T.MeshStandardMaterial({color:cor,roughness:.4,metalness:0,emissive:col(cor),emissiveIntensity:.3}),'#D2FFEF',.45);
+ const sh=new T.Mesh(new T.CylinderGeometry(r,r,L-hl,10),m); sh.position.y=(L-hl)/2;
+ const cn=new T.Mesh(new T.ConeGeometry(hr,hl,16),m); cn.position.y=L-hl/2; g.add(sh,cn);
+ if(contorno){const k=new T.MeshBasicMaterial({color:0x040A17,side:T.BackSide});
+  const s2=new T.Mesh(new T.CylinderGeometry(r*1.9,r*1.9,L-hl,10),k); s2.position.y=(L-hl)/2;
+  const c2=new T.Mesh(new T.ConeGeometry(hr*1.32,hl*1.25,16),k); c2.position.y=L-hl/2-hl*.05; g.add(s2,c2);}
+ g.position.copy(a); g.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),d.clone().normalize()); g.traverse(o=>o.castShadow=true); return g;}
+function piso(r,cor,op){const m=new T.Mesh(new T.CircleGeometry(r,96),new T.ShadowMaterial({opacity:op??.45})); m.receiveShadow=true; return m;}
+function proj(v){const p=v.clone().project(cam);return [(p.x+1)/2*W,(1-p.y)/2*H];}
+function rotulo(txt,v,dx,dy,cor){const [x,y]=proj(v);ctx.font='600 30px SGM';const w=ctx.measureText(txt).width;
+ ctx.fillStyle='rgba(6,12,26,.82)';ctx.strokeStyle=cor;ctx.lineWidth=2;const X=x+dx,Y=y+dy;
+ ctx.beginPath();ctx.roundRect(X-10,Y-27,w+20,40,8);ctx.fill();ctx.stroke();ctx.fillStyle=cor;ctx.fillText(txt,X,Y);
+ ctx.beginPath();ctx.arc(x,y,7,0,7);ctx.fillStyle=cor;ctx.fill();ctx.lineWidth=3;ctx.strokeStyle='#040A17';ctx.stroke();}
+function titulo(a,b){return;ctx.font='700 34px SG';ctx.fillStyle='#F5F7FF';ctx.fillText(b,36,92);ctx.font='500 22px SGM';ctx.fillStyle='rgba(200,214,240,.55)';ctx.fillText(a,36,52);}
+function eixos(L){const g=new T.Group();[[L,0,0],[0,L,0],[0,0,L*1.25]].forEach(e=>{const s=seta(new T.Vector3(0,0,0),new T.Vector3(...e),.012,0x8FA3C4,false);s.traverse(o=>o.castShadow=false);g.add(s)});return g;}
+
+document.fonts.load('30px SGM').then(()=>document.fonts.load('34px SG')).then(main);
+function main(){
+{const e=Number(new URLSearchParams(location.search).get('esq')||0); if(e) cam.setViewOffset(W,H,e,0,W,H);}
+if(C==='paraboloide'){
+ const K=.55; const fill=new T.DirectionalLight(0xAFC8FF,.55); fill.position.set(6,-9,-1); S.add(fill); // z = K(u²+v²) só na prancha (na cena real: escala da câmera)
+ cam.position.set(9.0,-11.2,7.0); cam.lookAt(0,0,1.0);
+ const f=(r,t)=>new T.Vector3(r*Math.cos(t),r*Math.sin(t),K*r*r);
+ const g=new T.ParametricGeometry((a,b,v)=>{v.copy(f(2*a,2*PI*b))},64,128);
+ const fora=comBorda(new T.MeshStandardMaterial({color:0x35589E,roughness:.6,metalness:0,side:T.FrontSide,polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1}),'#7FB2FF',.25);
+ const dentro=comBorda(new T.MeshStandardMaterial({color:0x6E9EF0,roughness:.5,metalness:0,side:T.BackSide,polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1}),'#BFD8FF',.55);
+ const m1=new T.Mesh(g,fora),m2=new T.Mesh(g,dentro); m1.castShadow=true; S.add(m1,m2);
+ // famílias u = c (âmbar) e v = c (magenta) levantadas: tubos com profundidade (somem atrás da tigela)
+ for(let c=-1.5;c<=1.51;c+=.5){const w=Math.sqrt(4-c*c),pu=[],pv=[];for(let i=0;i<=40;i++){const s=-w+2*w*i/40;pu.push(new T.Vector3(c,s,K*(c*c+s*s)));pv.push(new T.Vector3(s,c,K*(c*c+s*s)));}
+  S.add(tubo(pu,.017,0xFFC24D,.45),tubo(pv,.017,0xEA63FF,.45));}
+ // circunferências r = 1 e r = 2 (altura 1 e 4) com destaque
+ [1,2].forEach(r=>{const p=[];for(let i=0;i<=96;i++)p.push(f(r,2*PI*i/96));S.add(tubo(p,r==2?.022:.018,0xDCEBFF,.7));});
+ // chão: sombra + disco do domínio (chapa escura com contorno GEO) e eixos
+ 
+ const chapa=new T.Mesh(new T.CircleGeometry(2,96),new T.MeshBasicMaterial({color:0x14254A,transparent:true,opacity:.35,depthWrite:false})); chapa.position.z=.002; S.add(chapa);
+ const cp=[];for(let i=0;i<=96;i++)cp.push(new T.Vector3(2*Math.cos(2*PI*i/96),2*Math.sin(2*PI*i/96),.004)); S.add(tubo(cp,.012,0xB8C4DA,.3));
+ S.add(eixos(2.9));
+ R.render(S,cam); titulo('CÁLCULO III · FUNÇÕES A VALORES VETORIAIS E CAMPOS VETORIAIS','PARA O ESPAÇO');
+ rotulo('ALTURA 4',f(2,-.28),26,-14,'#CFE2FF'); rotulo('ALTURA 1',f(1,-.55),26,14,'#CFE2FF');
+}
+if(C==='colunas'){
+ cam.position.set(9.6,-8.2,7.2); cam.lookAt(1.5,1.0,1.0);
+ const z=(x,y)=>1.5+.5*Math.sin(1.5*x)*Math.cos(1.2*y), nx=12, ny=8, dx=3/nx, dy=2/ny, gap=.12;
+ // vid_0020: três tons fixos por face (lado x, lado y, tampo) + aresta clara; aqui na família azul-claro da saída
+ const tons={x:0x4470C0,y:0x1F3A72,top:0x9CC6FF}, mats=[tons.x,tons.x,tons.y,tons.y,tons.top,tons.top].map(c=>new T.MeshBasicMaterial({color:c}));
+ const ar=new T.LineBasicMaterial({color:0xCFE2FF,transparent:true,opacity:.7});
+ for(let i=0;i<nx;i++)for(let j=0;j<ny;j++){const x=(i+.5)*dx,y=(j+.5)*dy,h=z(x,y);const bg=new T.BoxGeometry(dx*(1-gap),dy*(1-gap),h);
+  const b=new T.Mesh(bg,mats); b.position.set(x,y,h/2); S.add(b); const e=new T.LineSegments(new T.EdgesGeometry(bg),ar); e.position.copy(b.position); S.add(e);}
+ // coluna destacada (a que a fala aponta): violeta do vid_0020 não, aqui âmbar? -> mantém azul e acende o contorno
+ const i0=8,j0=2,x0=(i0+.5)*dx,y0=(j0+.5)*dy,h0=z(x0,y0); const bg=new T.BoxGeometry(dx*(1-gap)+.004,dy*(1-gap)+.004,h0+.004);
+ const e0=new T.LineSegments(new T.EdgesGeometry(bg),new T.LineBasicMaterial({color:0xFFFFFF})); e0.position.set(x0,y0,h0/2); S.add(e0);
+ // superfície por cima: malha de linhas azul-claro (como o wireframe do vid_0020)
+ for(let k=0;k<=12;k++){const p=[],q=[];for(let s=0;s<=40;s++){const X=3*s/40,Y=2*k/12;p.push(new T.Vector3(X,Y,z(X,Y)+.12));const X2=3*k/12,Y2=2*s/40;q.push(new T.Vector3(X2,Y2,z(X2,Y2)+.12));}
+  const lm=new T.LineBasicMaterial({color:0xDCEBFF,transparent:true,opacity:.9}); S.add(new T.Line(new T.BufferGeometry().setFromPoints(p),lm),new T.Line(new T.BufferGeometry().setFromPoints(q),lm));}
+ const base=new T.Mesh(new T.PlaneGeometry(3.4,2.4),new T.MeshBasicMaterial({color:0x14254A,transparent:true,opacity:.6})); base.position.set(1.5,1,-.003); S.add(base);
+ R.render(S,cam);
+}
+if(C==='campo'){
+ cam.position.set(8.3,-8.3,4.6); cam.lookAt(0,0,0);
+ const fib=n=>{const out=[],ga=PI*(3-Math.sqrt(5));for(let i=0;i<n;i++){const y=1-2*(i+.5)/n,r=Math.sqrt(1-y*y),t=i*ga;out.push(new T.Vector3(r*Math.cos(t),y,r*Math.sin(t)));}return out;};
+ const cascas=[[1.5,26,.0],[2.3,40,.7]];
+ const claro=col('#8CFFD2'),escuro=col('#1FB57E');
+ cascas.forEach(([r,n,rot])=>{
+  // casca de referência: esfera em linhas GEO bem fracas (dá a profundidade de onde as setas estão)
+  const lm=new T.LineBasicMaterial({color:0x8FA3C4,transparent:true,opacity:.22});
+  [[1,0,0],[0,1,0],[0,0,1]].forEach(ax=>{const pts=[];for(let i=0;i<=96;i++){const t=2*PI*i/96;const v=ax[2]?new T.Vector3(Math.cos(t),Math.sin(t),0):ax[0]?new T.Vector3(0,Math.cos(t),Math.sin(t)):new T.Vector3(Math.cos(t),0,Math.sin(t));pts.push(v.multiplyScalar(r));}
+   S.add(new T.Line(new T.BufferGeometry().setFromPoints(pts),lm));});
+  fib(n).forEach(d=>{d.applyAxisAngle(new T.Vector3(0,0,1),rot);const p=d.clone().multiplyScalar(r),L=.8/(r*r)*1.15,c=escuro.clone().lerp(claro,Math.min(1,(1/(r*r))/(1/1.5625)));
+   const vis=cam.position.clone().sub(p).normalize(); if(Math.abs(vis.dot(d))>Math.cos(55*PI/180)) return; const b=p.clone().add(d.clone().multiplyScalar(-L)); S.add(seta(p,b,.022,c.getHex(),false));});});
+ // origem fora do domínio: anel vazado
+ const anel=new T.Mesh(new T.TorusGeometry(.13,.022,12,48),new T.MeshStandardMaterial({color:0xF5F7FF,emissive:0xF5F7FF,emissiveIntensity:.5}));
+ anel.lookAt(cam.position); S.add(anel);
+ S.fog=new T.Fog(0x0C1730,9,17);
+ R.render(S,cam); titulo('CÁLCULO III · FUNÇÕES A VALORES VETORIAIS E CAMPOS VETORIAIS','NO ESPAÇO');
+}
+
+if(C==='fluxo'){
+ const K=.55; const fill=new T.DirectionalLight(0xAFC8FF,.55); fill.position.set(6,-9,-1); S.add(fill);
+ cam.position.set(9.0,-11.2,7.0); cam.lookAt(0,0,1.0);
+ const f=(r,t)=>new T.Vector3(r*Math.cos(t),r*Math.sin(t),K*r*r);
+ const g=new T.ParametricGeometry((a,b,v)=>{v.copy(f(1.8*a,2*PI*b))},48,96);
+ const dentro=comBorda(new T.MeshStandardMaterial({color:0x35589E,roughness:.6,side:T.FrontSide,polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1}),'#7FB2FF',.25);
+ const fora=comBorda(new T.MeshStandardMaterial({color:0x6E9EF0,roughness:.5,side:T.BackSide,polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1}),'#BFD8FF',.55);
+ const m=new T.Mesh(g,dentro); m.castShadow=true; S.add(m,new T.Mesh(g,fora));
+ for(let k=1;k<=3;k++){const p=[];for(let i=0;i<=96;i++)p.push(f(.6*k,2*PI*i/96));S.add(tubo(p,.014,0xDCEBFF));}
+ for(let k=0;k<8;k++){const p=[];for(let i=0;i<=30;i++)p.push(f(1.8*i/30,k*PI/4));S.add(tubo(p,.01,0xDCEBFF));}
+ 
+ // campo constante para cima, atravessando a tigela: setas retas verde-menta
+ const v=new T.Vector3(0,0,1);
+ [[-1.2,-.5],[-.6,.6],[0,0],[.6,-.7],[1.1,.4],[-.2,-1.2],[.3,1.1],[-1.0,1.0],[1.0,-1.1]].forEach(([a,b])=>{const z0=K*(a*a+b*b);
+  S.add(seta(new T.Vector3(a,b,z0-.35),new T.Vector3(a,b,z0+.8),.03,0x2EE6A0,false));});
+ R.render(S,cam);
+}
+document.title='pronto';}
+</script></body></html>

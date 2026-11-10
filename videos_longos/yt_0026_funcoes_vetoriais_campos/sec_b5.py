@@ -1,128 +1,98 @@
-"""Lote PB5 · CAMPO VETORIAL (B5-1…B5-4): vetor aplicado no ponto X; F⃗ = j⃗ (vento uniforme × colapso num ponto); F⃗ = x i⃗ + y j⃗ (explosão
-de setas, ‖F⃗‖ = r, × identidade); quadro das duas perguntas. Plano à esquerda (origem (−3, 0), [−3, 3]², unidade 1), fórmulas à direita."""
-from kit import *  # noqa: F401,F403
+"""Lote PB5 · CAMPO VETORIAL (B5-1…B5-4): layout A (quadro 14) e layout B (quadro 15). O ponto X e a seta que nasce nele; a forma geral P i + Q j; o campo constante j (vento uniforme);
+o campo radial x i + y j (círculos tracejados, setas do mesmo tamanho em cada um); as duas perguntas (transformação × campo) em dois painéis. Sem miniaturas."""
+from v7 import *  # noqa: F401,F403
 
-XF = 3.7          # centro da coluna das fórmulas
+V = Vista(620, 600, 115)
 
 
-def sub_caneta(m, gs, tex):
-    """Um pedaço de uma fórmula para a caneta (ex.: a seta de F⃗ acendendo por último, na sua palavra)."""
-    g = VGroup(*gs)
-    g._tex, g._caneta, g._esc, g._em_caneta = tex, True, False, False
+def palco():
+    g = VGroup(eixos7(V, -3.2, 3.2, -3.2, 3.2, alpha=0.35))
     return g
-
-
-def mini(c, rotulo):
-    pl = Plano(c, 0.32)
-    ax = VGroup(Line(pl.c2p(-2.4, 0), pl.c2p(2.4, 0)), Line(pl.c2p(0, -2.4), pl.c2p(0, 2.4))).set_stroke(GEO, 1.5, 0.7)
-    for l in ax:
-        l._sem_contorno = True
-    pts = VGroup(*[Dot(pl.c2p(x, y), radius=0.045, color=GEO) for x in range(-2, 3) for y in range(-2, 3)])
-    r = txt(rotulo, 20, color=DIM).move_to(pl.c2p(0, 3.05))
-    return pl, VGroup(ax, r), pts
 
 
 class LoteB5(Base):
     def corpo(self):
-        ax = eixos((-3, 0), [-3, 3, 1], [-3, 3, 1], 1.0)
-
-        # ── B5-1 · vetor aplicado no ponto ──
+        # ── B5-1 · um ponto X e o vetor de saída com o pé em X ──
         self.an("B5-1")
         self.secao("CAMPO VETORIAL")
+        ax = palco()
         self.play(Create(ax), run_time=1.0)
-        X = ax.c2p(1.5, 1.0)
-        dX = ponto(X, POS, 0.09)
-        lX = F("X", size=M_M, caneta=False).set_color(POS).next_to(dX, DL, buff=0.08)
+        X = V.c2p(1.5, 1.0)
+        dX = ponto7(X, POS7, 9)
+        lX = TC(r"\P{X}", *(lambda p: (p[0] * 120 + 960 - 22, 4.5 * 120 - p[1] * 120 + 26))(X), 40, "c", caneta=False)
         self.gat("em vez de mandar o ponto")
         self.play(FadeIn(dX, scale=0.5), FadeIn(lX), run_time=0.5)
-        fant = ponto(ax.c2p(-1.2, 2.4), SAI, 0.08).set_opacity(0.6)
-        arc = voo(X + 0.1 * UL, fant.get_center() + 0.1 * DR, angle=0.8, w=2.2, tip=0.15).set_opacity(0.7)
+        fant = ponto7(V.c2p(-1.2, 2.4), SAI, 8)
+        arc = voo(X + 0.1 * UL, fant.get_center() + 0.1 * DR, angle=0.8, w=2.2, tip=0.15)
         self.play(Create(arc), FadeIn(fant), run_time=0.9)
         self.play(FadeOut(arc), FadeOut(fant), run_time=0.5)
         self.remove(arc, fant)
-        sF = seta(X, ax.c2p(1.5 + 1.3, 1.0 + 0.9), CAMPO_FORTE, 4.5, tip=0.2)
+        sF = seta7(X, V.c2p(2.8, 1.9), CAMPO, 7, 28)
         self.gat("a gente desenha o vetor de saída")
         self.play(GrowArrow(sF), run_time=0.9)
-        fx = F((r"\vec F", CAMPO), "(", ("X", POS), ")", size=M_XL).move_to(P3(XF, 2.2))
-        gl = glifos(fx)
-        flecha = max(gl[:2], key=lambda g: g.get_center()[1])
-        corpo_ = sub_caneta(fx, [g for g in gl if g is not flecha], r"F(X)")
-        topo = sub_caneta(fx, [flecha], r"\vec{\ }")
+        fx = TC(r"\F(\P{X})", 1120, 420, 64)
         self.gat("a função se chama campo vetorial")
-        self.play(caneta(corpo_))
-        self.gat("ganha uma setinha em cima")
-        self.play(caneta(topo))
-        geral = F((r"\vec F", CAMPO), "(", ("x", E1), ",", ("y", E2), ")", "=", ("P", CAMPO), "(", ("x", E1), ",", ("y", E2), ")", r"\,\vec i", "+", ("Q", CAMPO), "(", ("x", E1), ",", ("y", E2), ")", r"\,\vec j", size=M_M).move_to(P3(XF, 0.5))
+        self.play(caneta(fx))
+        geral = TC(r"\F(\X,\Y) = \textcolor{cc}{P}(\X,\Y)\,\ii + \textcolor{cc}{Q}(\X,\Y)\,\jj", 1120, 590, 44)
         self.gat("em geral um campo no plano")
         self.play(caneta(geral))
         self.wait(max(0.1, min(2.0, self.resta() - 0.5)))
-        self.play(FadeOut(geral), run_time=0.3)
-        self.remove(geral)
 
-        # ── B5-2 · F⃗ = j⃗: vento uniforme × colapso num ponto ──
+        # ── B5-2 · F⃗ = j⃗: vento uniforme ──
         self.an("B5-2")
-        self.play(FadeOut(VGroup(dX, lX, sF, corpo_, topo)), run_time=0.4)
-        self.remove(dX, lX, sF, corpo_, topo)
-        f2 = F((r"\vec F", CAMPO), "(", ("x", E1), ",", ("y", E2), ")", "=", r"\vec j", size=M_XL).move_to(P3(XF, 2.2))
+        self.play(FadeOut(VGroup(dX, lX, sF, fx, geral)), run_time=0.4)
+        self.remove(dX, lX, sF, fx, geral)
+        f2 = TC(r"\F(\X,\Y) = \jj", 1120, 470, 56)
         self.gat("um campo que devolve o mesmo vetor")
         self.play(caneta(f2))
-        pts = [(x, y) for x in range(-3, 4) for y in range(-3, 3)]          # sem a linha y = 3: a seta subiria até o canto
-        c2 = campo(ax, lambda x, y: (0.0, 1.0), pts, 0.8, "B5-2 F = j")
+        c2 = campo7(V, lambda x, y: (0.0, 1.0), -3, 3, -3, 3, passo=0.6, rmin=0, lmax=0.5, mmax=1.0, nome="B5-2 j")
         self.gat("desenhado como campo")
-        self.play(LaggedStart(*[GrowArrow(s) for s in c2], lag_ratio=0.02), run_time=1.6)
-        pl, moldura, mp = mini(P3(XF, -1.25), "COMO TRANSFORMAÇÃO")
-        self.gat("agora a mesma fórmula lida como transformação")
-        self.play(FadeIn(moldura), FadeIn(mp), run_time=0.6)
-        alvo = ponto(pl.c2p(0, 1), SAI, 0.09)
-        self.gat("todo ponto do plano vai parar")
-        self.play(*[d.animate.move_to(pl.c2p(0, 1)).set_color(SAI) for d in mp], run_time=1.8)
-        self.add(alvo)
-        self.gat("o plano inteiro é esmagado")
-        self.play(Flash(alvo.get_center(), color=SAI, line_length=0.14, flash_radius=0.2), run_time=0.7)
+        self.play(LaggedStart(*[GrowArrow(s_) for s_ in sorted(c2, key=lambda s_: s_._xy[1])], lag_ratio=0.01), run_time=1.6)
+        l2 = legenda("VENTO UNIFORME", 1124, 580)
         self.gat("um desenho mostra vento")
-        self.play(pulso(c2, 1.0), run_time=0.9)
-        self.play(pulso(alvo, 1.6), run_time=0.7)
+        self.play(FadeIn(l2), pulso(c2, 1.0), run_time=0.9)
 
-        # ── B5-3 · F⃗ = x i⃗ + y j⃗: explosão × identidade ──
+        # ── B5-3 · F⃗ = x i⃗ + y j⃗ (quadro 14) ──
         self.an("B5-3")
-        self.play(FadeOut(VGroup(f2, c2, moldura, mp, alvo)), run_time=0.4)
-        self.remove(f2, c2, moldura, mp, alvo)
-        f3 = F((r"\vec F", CAMPO), "(", ("x", E1), ",", ("y", E2), ")", "=", ("x", E1), r"\,\vec i", "+", ("y", E2), r"\,\vec j", size=M_XL).move_to(P3(XF, 2.2))
+        self.play(FadeOut(VGroup(f2, c2, l2)), run_time=0.4)
+        self.remove(f2, c2, l2)
+        f3 = TC(r"\F(\X,\Y) = \X\,\ii + \Y\,\jj", 1120, 470, 56)
         self.gat("o campo que devolve em cada ponto")
         self.play(caneta(f3))
-        K3 = 0.28
-        c3 = campo(ax, lambda x, y: (x, y), [p for p in grade_pts(3.0, 1.0) if p[1] < 2.5], K3, "B5-3 radial (x, y)")   # nada acima de y = 190 px (canto)
+        c3 = campo7(V, lambda x, y: (x, y), -3, 3, -3, 3, passo=0.6, rmin=0.4, rmax=3.3, mmax=3.3, lmax=0.5, nome="B5-3 radial")
+        o3 = ponto7(V.c2p(0, 0), WHITE_, 6)
         self.gat("cada seta aponta para fora")
-        self.play(LaggedStart(*[GrowArrow(s) for s in sorted(c3, key=lambda s: math.hypot(*s._xy))], lag_ratio=0.03), run_time=1.8)
-        n3 = F(r"\|", (r"\vec F", CAMPO), r"\|", "=", r"\sqrt{", ("x", E1), "^2+", ("y", E2), "^2}", size=M_L).move_to(P3(XF, 0.95))
+        self.play(LaggedStart(*[GrowArrow(s_) for s_ in sorted(c3, key=lambda s_: math.hypot(*s_._xy))], lag_ratio=0.012), FadeIn(o3), run_time=1.8)
+        n3 = TC(r"\|\F\| = \sqrt{x^2+y^2}", 1120, 590, 56)
         self.gat("o tamanho da seta é igual")
         self.play(caneta(n3))
-        circ = VGroup(*[tracejado(Circle(radius=r).move_to(ax.c2p(0, 0)), GEO, W_GUIA, 0.85) for r in (1, 2)])
-        aneis = VGroup(*[campo(ax, lambda x, y: (x, y), [(r * math.cos(k * PI / 4), r * math.sin(k * PI / 4)) for k in range(8)], K3, f"B5-3 anel r={r}", w=4.5,
-                               fmax=3.0) for r in (1, 2)])
+        circ = VGroup(*[circ7(V, r, GEO, 2, (10, 9), 0.6) for r in (1, 2)])
+        l3 = legenda("MAIS LONGE DA ORIGEM, SETA MAIOR", 1124, 700)
         self.gat("em cima de uma mesma circunferência")
-        self.play(Create(circ), run_time=0.9)
-        self.play(FadeIn(aneis), c3.animate.set_opacity(0.35), run_time=0.7)
-        pl, moldura, mp = mini(P3(XF, -1.6), "COMO TRANSFORMAÇÃO")
+        self.play(Create(circ), FadeIn(l3), run_time=0.9)
         self.gat("e como transformação")
-        self.play(FadeIn(moldura), FadeIn(mp), run_time=0.6)
-        self.gat("cada ponto vai para")
-        self.play(*[pulso(d, 1.8) for d in mp], run_time=1.2)
+        self.wait(0.2)
         self.gat("como campo é uma explosão")
-        self.play(c3.animate.set_opacity(1.0), pulso(VGroup(c3, aneis), 1.0), run_time=1.0)
+        self.play(pulso(c3, 1.0), run_time=1.0)
 
-        # ── B5-4 · as duas perguntas ──
+        # ── B5-4 · as duas perguntas (quadro 15) ──
         self.an("B5-4")
         self.limpa(rt=0.4)
-        div = Line(P3(0, 2.4), P3(0, -2.6)).set_stroke(GEO, 2, 0.6)
-        ic_t = VGroup(ponto(P3(-4.6, -0.2), GEO, 0.1), ponto(P3(-2.4, 0.4), SAI, 0.1), voo(P3(-4.45, -0.05), P3(-2.55, 0.45), angle=-0.7, w=3, tip=0.2))
-        ic_c = VGroup(ponto(P3(2.6, -0.2), POS, 0.1), seta(P3(2.6, -0.2), P3(4.3, 0.6), CAMPO_FORTE, 4.5, tip=0.22))
-        col_t = VGroup(txt("TRANSFORMAÇÃO:", 30, bold=True), txt("PARA ONDE O PONTO VAI?", 30)).arrange(DOWN, buff=0.18).move_to(P3(-3.6, -1.9))
-        col_c = VGroup(txt("CAMPO:", 30, bold=True, color=CAMPO), txt("QUE SETA O PONTO CARREGA?", 30)).arrange(DOWN, buff=0.18).move_to(P3(3.6, -1.9))
+        pa, pb = painel(150, 260, 740, 560, "TRANSFORMAÇÃO", WHITE_), painel(1030, 260, 740, 560, "CAMPO", CAMPO2)
+        vA, vB = Vista(520, 560, 100), Vista(1400, 560, 100)
+        dA, dB = ponto7(vA.c2p(-1.6, -0.8), GEO, 11), ponto7(vA.c2p(1.6, 0.9), SAI, 11)
+        a_, b_ = vA.c2p(-1.45, -0.65), vA.c2p(1.42, 0.85)
+        voo_ = DashedVMobject(VMobject().set_points([a_, a_ + (b_ - a_) * 0.3 + UP * 0.9, b_ + (a_ - b_) * 0.3 + UP * 0.6, b_ - RIGHT * 0.05]).set_stroke(WHITE_, 4 / 1.2, 1).set_fill(opacity=0), num_dashes=22)
+        voo_._sem_contorno = True
+        tX, tpX = TC("X", *(lambda p: (p[0] * 120 + 960, 4.5 * 120 - p[1] * 120))(vA.c2p(-1.9, -1.25)), 40, "c", caneta=False), TC(r"\S{\varphi(X)}", *(lambda p: (p[0] * 120 + 960, 4.5 * 120 - p[1] * 120))(vA.c2p(1.7, 1.45)), 40, "c", caneta=False)
+        dC = ponto7(vB.c2p(-1, -0.6), POS7, 11)
+        sC = seta7(vB.c2p(-1, -0.6), vB.c2p(1.4, 0.6), CAMPO, 7, 28)
+        tC1, tC2 = TC(r"\P{X}", *(lambda p: (p[0] * 120 + 960, 4.5 * 120 - p[1] * 120))(vB.c2p(-1.3, -1.05)), 40, "c", caneta=False), TC(r"\F(X)", *(lambda p: (p[0] * 120 + 960, 4.5 * 120 - p[1] * 120))(vB.c2p(1.2, 1.2)), 40, "c", caneta=False)
+        qA, qB = legenda("PARA ONDE O PONTO VAI?", 520, 900, WHITE_, "center", 32), legenda("QUE SETA O PONTO CARREGA?", 1400, 900, CAMPO2, "center", 32)
         self.gat("nenhum dos dois desenhos")
-        self.play(Create(div), run_time=0.6)
+        self.play(FadeIn(pa), FadeIn(pb), run_time=0.6)
         self.gat("como transformação a pergunta é")
-        self.play(FadeIn(ic_t), FadeIn(col_t, shift=0.1 * UP), run_time=0.8)
+        self.play(FadeIn(dA), FadeIn(dB), Create(voo_), FadeIn(tX), FadeIn(tpX), FadeIn(qA, shift=0.1 * UP), run_time=1.0)
         self.gat("como campo a pergunta é")
-        self.play(FadeIn(ic_c), FadeIn(col_c, shift=0.1 * UP), run_time=0.8)
+        self.play(FadeIn(dC), GrowArrow(sC), FadeIn(tC1), FadeIn(tC2), FadeIn(qB, shift=0.1 * UP), run_time=1.0)
         self.sai_fim()

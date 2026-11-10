@@ -1,7 +1,7 @@
 #!/bin/bash
 # yt_0026 (copiado do yt_0022): renderiza os lotes pedidos em paralelo (2D: render.sh; com 3D: render3d.sh). uso: ./render_todos.sh PT1 PT2 ...
 cd "$(dirname "$0")"
-TRES="PT PB4 PB7"
+TRES="PT PB1 PB4 PB7 PS"
 for C in "$@"; do
   if [[ " $TRES " == *" $C "* ]]; then ./render3d.sh $C > /dev/null 2>&1 & else ./render.sh $C > /dev/null 2>&1 & fi
 done

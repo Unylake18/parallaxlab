@@ -32,8 +32,8 @@ Cada `###` é uma âncora (evento visual). A linha do cabeçalho traz o `tela:`;
 ### H1 · tela: malha GEO com a bandeira; a malha inteira gira +90° (anti-horário)
 [curious] Olha essa folha de papel milimetrado, com uma bandeirinha desenhada. Agora uma regra bem simples pega cada ponto da folha e manda para outro lugar: ela troca as duas coordenadas de lugar e coloca um sinal de menos na primeira. E o resultado é esse: o plano inteiro gira um quarto de volta, de uma vez só, e a bandeira vai junto.
 
-### H2 · tela: a malha volta; entra o campo (−y, x) ciano; pontinhos laranja-queimado soltos começam a girar (um `Rotate` do grupo)
-[thoughtful] Agora a mesma regra, sem mudar nada, desenhada de outro jeito. Em vez de mover os pontos, a gente pendura em cada ponto uma setinha com aquilo que a regra devolve. E aparece um redemoinho: setas girando em volta do centro, pequenas perto dele e cada vez maiores para fora. Solta uns pontinhos ali… e eles saem dando voltas.
+### H2 · tela: a malha volta; entra o campo (−y, x) ciano; sem pontinhos
+[thoughtful] Agora a mesma regra, sem mudar nada, desenhada de outro jeito. Em vez de mover os pontos, a gente pendura em cada ponto uma setinha com aquilo que a regra devolve. E aparece um redemoinho: setas girando em volta do centro, pequenas perto dele e cada vez maiores para fora.
 
 ### H3 · tela: tela dividida, à esquerda a bandeira girada, à direita o redemoinho; no alto `MESMA FÓRMULA. QUAL É O DESENHO CERTO?`; hold de 2 s
 [curious] Então repara que coisa estranha. É a mesma fórmula. Num desenho, ela gira o plano inteiro; no outro, vira um redemoinho de setas. Qual dos dois é o desenho certo dessa função? E por que ela precisa de dois desenhos, se uma função comum tem um gráfico só?

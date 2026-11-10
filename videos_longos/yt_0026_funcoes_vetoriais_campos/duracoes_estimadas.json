@@ -1,7 +1,7 @@
 {
  "nota": "ESTIMADO: 0,15 s + palavras/2,7 + 0,35 s por âncora (fala nominal); a cena pode esticar onde a construção pede (ver render)",
- "total_com_b7_s": 1038.2,
- "total_sem_b7_s": 999.4,
+ "total_com_b7_s": 1034.9,
+ "total_sem_b7_s": 996.1,
  "ancoras": {
   "T0": {
    "palavras": 23,
@@ -44,14 +44,14 @@
    "dur_render_s": 23.4
   },
   "H2": {
-   "palavras": 59,
-   "dur_s": 22.35,
-   "dur_render_s": 22.4
+   "palavras": 50,
+   "dur_s": 19.02,
+   "dur_render_s": 19.07
   },
   "H3": {
    "palavras": 48,
    "dur_s": 18.28,
-   "dur_render_s": 18.6
+   "dur_render_s": 18.8
   },
   "B1-1": {
    "palavras": 63,
@@ -151,7 +151,7 @@
   "B4-3": {
    "palavras": 60,
    "dur_s": 22.72,
-   "dur_render_s": 23.73
+   "dur_render_s": 23.33
   },
   "B5-1": {
    "palavras": 101,
@@ -216,17 +216,17 @@
   "B7-2": {
    "palavras": 50,
    "dur_s": 19.02,
-   "dur_render_s": 20.0
+   "dur_render_s": 19.6
   },
   "S1": {
    "palavras": 85,
    "dur_s": 31.98,
-   "dur_render_s": 31.93
+   "dur_render_s": 32.0
   },
   "S2": {
    "palavras": 48,
    "dur_s": 18.28,
-   "dur_render_s": 18.33
+   "dur_render_s": 18.27
   },
   "CTA": {
    "palavras": 56,
@@ -234,9 +234,9 @@
    "dur_render_s": 24.2
   }
  },
- "render_v5": {
-  "com_b7_s": 1046.5,
-  "sem_b7_s": 1006.7,
+ "render_v6": {
+  "com_b7_s": 1042.6,
+  "sem_b7_s": 1003.2,
   "nota": "dur_render_s = do início da âncora ao início da seguinte no preview com B7 (inclui as saídas de seção)"
  }
 }

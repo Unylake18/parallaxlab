@@ -124,8 +124,9 @@ PASSO, DG = 0.30, 0.6  # passo entre glifos e duração de cada glifo
 class _Caneta(Animation):
     """Modo caneta: contorno fino glifo a glifo (esquerda → direita), depois o preenchimento na cor do papel. Nada aparece antes da vez."""
 
-    def __init__(self, m, ordem=None, atraso=0.0, **kw):
+    def __init__(self, m, ordem=None, atraso=0.0, ritmo=1.0, **kw):
         self.atraso = atraso
+        self.passo, self.dg = PASSO * ritmo, DG * ritmo
         gs = glifos(m)
         gs = sorted(gs, key=lambda g: (round(g.get_left()[0], 2), -g.get_center()[1]))
         if ordem:
@@ -133,7 +134,7 @@ class _Caneta(Animation):
         self.gl = gs
         self.orig = [g.copy() for g in gs]
         self.n = len(gs)
-        self.tot = atraso + PASSO * max(0, self.n - 1) + DG
+        self.tot = atraso + self.passo * max(0, self.n - 1) + self.dg
         self.ponta = None
         m._em_caneta = True
         super().__init__(m, rate_func=linear, introducer=True, run_time=self.tot, **kw)
@@ -142,7 +143,7 @@ class _Caneta(Animation):
         t = alpha * self.tot - self.atraso
         topo = None
         for i, (g, o) in enumerate(zip(self.gl, self.orig)):
-            u = (t - PASSO * i) / DG
+            u = (t - self.passo * i) / self.dg
             if u <= 0:
                 g.set_fill(opacity=0).set_stroke(width=0, opacity=0)
                 continue
@@ -168,9 +169,9 @@ class _Caneta(Animation):
         self.mobject._em_caneta, self.mobject._esc = False, True
 
 
-def caneta(m, ordem=None, atraso=0.0):
+def caneta(m, ordem=None, atraso=0.0, ritmo=1.0):
     """Animação da caneta. A ponta branca (~3 px) é posta e tirada pelo Base.play. `atraso`: segundos de espera antes do primeiro glifo."""
-    return _Caneta(m, ordem=ordem, atraso=atraso)
+    return _Caneta(m, ordem=ordem, atraso=atraso, ritmo=ritmo)
 
 
 def ja_escrita(m):
@@ -272,7 +273,7 @@ def voo(a, b, angle=-0.75, w=2.5, tip=0.13):
     s.tip.set_fill(WHITE_, 1)
     for m in s.get_family():
         m._voo = True
-    return contorno(s)
+    return s
 
 
 def guia(a, b, cor, w=W_GUIA, op=0.9):
@@ -311,7 +312,7 @@ def eixo_seta(a, b, tip=0.12):
 
 # ── setas e campos ───────────────────────────────────────────────────────────────────────────────────
 class SetaG(VGroup):
-    """Seta = haste + ponta cheia, SEM contorno e SEM brilho (handoff v6 §2.1). Faz as vezes do Arrow nos GrowArrow/become.
+    """Seta = haste + ponta cheia, SEM contorno e sem efeito algum (handoff v7 §2.4). Faz as vezes do Arrow nos GrowArrow/become.
     Opacidade parcial não existe: set_opacity(o) com 0 < o < 1 mistura a cor com o fundo (seta continua opaca)."""
 
     def get_start(self):
@@ -337,7 +338,7 @@ class SetaG(VGroup):
         return self
 
 
-def seta(a, b, cor=CAMPO, w=W_CAMPO, tip=0.20, op=1.0, brilho=False):
+def seta(a, b, cor=CAMPO, w=W_CAMPO, tip=0.20, op=1.0):
     """Seta com o pé exatamente em `a` e a ponta em `b` (sem buff): haste + ponta cheia (largura 0,7 × comprimento), sem contorno e sem brilho."""
     a, b = np.asarray(a, float), np.asarray(b, float)
     L = float(np.linalg.norm(b - a))
@@ -345,10 +346,10 @@ def seta(a, b, cor=CAMPO, w=W_CAMPO, tip=0.20, op=1.0, brilho=False):
         return VMobject()
     d = (b - a) / L
     n = np.array([-d[1], d[0], 0.0])
-    tl = min(tip, 0.42 * L)
+    tl = min(tip, 0.45 * L)
     base = b - tl * d
     haste = Line(a, base + 0.3 * tl * d).set_stroke(cor, w, 1)
-    ponta = Polygon(b, base + 0.35 * tl * n, base - 0.35 * tl * n).set_fill(cor, 1).set_stroke(cor, 1.5, 1)
+    ponta = Polygon(b, base + 0.5 * tl * n, base - 0.5 * tl * n).set_fill(cor, 1).set_stroke(cor, 1.5, 1)
     for m in (haste, ponta):
         m._sem_contorno = True
     s = SetaG(haste, ponta)
@@ -359,26 +360,6 @@ def seta(a, b, cor=CAMPO, w=W_CAMPO, tip=0.20, op=1.0, brilho=False):
 def cor_campo(f):
     """Cor da seta de campo pela intensidade f = ‖F‖/‖F‖máx da cena (fraca → forte)."""
     return interpolate_color(ManimColor(CAMPO_FRACO), ManimColor(CAMPO_FORTE), min(1.0, max(0.0, f)))
-
-
-def campo(ax, f, pts, K, nome, cor=None, w=W_CAMPO, passo=1.0, fmax=None):
-    """Campo estático (sem updater): seta K·F(x, y) com o pé em (x, y), MESMA escala K no quadro inteiro (sem normalizar).
-    Cor pela intensidade ‖F‖/fmax (fmax = maior ‖F‖ da cena; padrão: o maior deste grupo), salvo `cor` fixa.
-    Loga o fator e a maior seta ÷ espaçamento (critério v5: ≤ 0,85)."""
-    w = max(w, W_CAMPO)
-    g = VGroup()
-    vs = [np.array(f(x, y), float) for (x, y) in pts]
-    fm = fmax or max([float(np.hypot(*v)) for v in vs] + [1e-9])
-    mx = 0.0
-    for (x, y), v in zip(pts, vs):
-        a = ax.c2p(x, y)
-        b = ax.c2p(x + K * v[0], y + K * v[1])
-        mx = max(mx, K * float(np.hypot(*v)))
-        s = seta(a, b, cor or cor_campo(float(np.hypot(*v)) / fm), w, brilho=True)
-        s._xy = (x, y)
-        g.add(s)
-    print(f"[campo] {nome}: K={K:.4f} maior seta={mx:.3f} u ÷ espaçamento {passo} = {mx / passo:.2f}")
-    return g
 
 
 def grade_pts(r=3.0, passo=1.0, disco=True, sem_origem=True):
@@ -414,80 +395,6 @@ def bandeira(ax, s=1.0, cor=DEST, silhueta=False):
         pano = Polygon(p(1, 1.6), p(2.0, 1.32), p(1, 1.04)).set_stroke(cor, 2).set_fill(cor, 1)
         pe = Dot(p(1, 0), radius=0.07, color=cor)
     return contorno(VGroup(mastro, pano, pe))
-
-
-# ── partículas de campo: "mapa de vento" (handoff v6 §5.1) ─────────────────────────────────────────────────
-class Particulas(VGroup):
-    """N partículas com rastro de 8 amostras (~0,5 s) correndo pelo campo `f(x, y)` (RK4 por quadro, passo = tempo do relógio da cena).
-    `proj(xy) → (N, 3)` leva coordenadas do plano à tela (recebe a projeção atual: serve para a câmera que recua). Quatro VMobjects no total
-    (rastro velho, médio, novo e cabeça): um updater só. Fora de `dentro(x, y)` ou depois da vida, a partícula renasce num ponto sorteado (semente fixa);
-    o rastro nasce de comprimento zero (o fade-in é o próprio crescimento)."""
-
-    def __init__(self, cena, f, proj, dentro, n=180, cor=CAMPO_FORTE, vel=1.0, rmax=3.2, z=3, semente=11):
-        super().__init__()
-        self.cm, self.f, self.proj, self.dentro, self.n, self.vel, self.rmax = cena, f, proj, dentro, n, vel, rmax
-        self.rng = np.random.default_rng(semente)
-        self.xy = self.sorteia(n)
-        self.hist = np.repeat(self.xy[:, None, :], 8, axis=1)
-        self.vida = self.rng.uniform(2.5, 6.0, n)
-        self.idade = self.rng.uniform(0, 2.5, n)
-        self.t0 = None
-        self.ativo = True
-        self.cam = [VMobject().set_stroke(cor, w, op).set_fill(opacity=0) for w, op in ((1.4, 0.22), (2.2, 0.5), (3.0, 0.8), (5.0, 1.0))]
-        for m in self.cam:
-            m._sem_contorno = True
-            m.cap_style = CapStyleType.ROUND
-        self.add(*self.cam)
-        self.set_z_index(z)
-        self.last = -1
-        self.add_updater(lambda m: m._quadro())
-
-    def __deepcopy__(self, memo):
-        g = VGroup(*[m.copy() for m in self.cam])         # cópia estática (FadeOut/transições): sem a cena nem o updater
-        return g.set_z_index(self.z_index)
-
-    def sorteia(self, k):
-        pts = []
-        while len(pts) < k:
-            p = (self.rng.uniform(-self.rmax, self.rmax, 2))
-            if self.dentro(*p):
-                pts.append(p)
-        return np.array(pts)
-
-    def _vel(self, p):
-        return np.array([self.f(x, y) for x, y in p]) * self.vel
-
-    def _quadro(self):
-        t = self.cm.clk.get_value()
-        q = int(round(t * FPS))
-        if q == self.last:
-            return self
-        dt = 0.0 if self.last < 0 else max(0.0, (q - self.last) / FPS)
-        self.last = q
-        if dt > 0.5:
-            dt = 1 / FPS
-        if dt > 0 and self.ativo:
-            for _ in range(2):
-                h = dt / 2
-                k1 = self._vel(self.xy); k2 = self._vel(self.xy + 0.5 * h * k1); k3 = self._vel(self.xy + 0.5 * h * k2); k4 = self._vel(self.xy + h * k3)
-                self.xy = self.xy + h / 6 * (k1 + 2 * k2 + 2 * k3 + k4)
-            self.idade += dt
-            mor = np.array([self.idade[i] > self.vida[i] or not self.dentro(*self.xy[i]) for i in range(self.n)])
-            if mor.any():
-                self.xy[mor] = self.sorteia(int(mor.sum()))
-                self.idade[mor] = 0.0
-                self.vida[mor] = self.rng.uniform(2.5, 6.0, int(mor.sum()))
-                self.hist[mor] = self.xy[mor][:, None, :]
-            self.hist = np.concatenate([self.hist[:, 1:], self.xy[:, None, :]], axis=1)
-        scr = self.proj(self.hist.reshape(-1, 2)).reshape(self.n, 8, 3)
-        for m, (i0, i1) in zip(self.cam, ((0, 3), (3, 5), (5, 7), (6, 7))):
-            a, b = scr[:, i0:i1, :].reshape(self.n, -1, 3)[:, :-1], scr[:, i0 + 1:i1 + 1, :]
-            a = scr[:, i0:i1]
-            b = scr[:, i0 + 1:i1 + 1]
-            a, b = a.reshape(-1, 3), b.reshape(-1, 3)
-            pts = np.stack([a, a + (b - a) / 3, a + 2 * (b - a) / 3, b], axis=1).reshape(-1, 3)
-            m.set_points(pts)
-        return self
 
 
 # ── 3D por estado (Three.js): passagem seca grava pedidos, r3d.js renderiza, a passagem final cola o PNG ───────

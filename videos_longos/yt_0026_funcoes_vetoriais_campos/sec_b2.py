@@ -1,18 +1,12 @@
-"""Lote PB2 · TRANSFORMAÇÃO (B2-1…B2-7): coordenadas polares φ(θ, ρ) = (ρ cos θ, ρ sen θ). Dois planos lado a lado (entrada θρ à esquerda,
-com janela; saída xy à direita), seta em arco φ no alto, fórmula embaixo. Pontos voando, segmento ρ = 2 enrolando na circunferência (magenta
-nos dois lados), raio θ fixo (âmbar), o retângulo B virando o disco φ(B), as bordas (ρ = 0 esmagado; θ = 0 e θ = 2π colados).
-v3 (handoff v4): painéis no tamanho do alvo (retângulo 5,0 × 2,4 u; disco de raio 2,8 u), chapas opacas, famílias com traço 3–4, pontos com
-anel, φ(B) em placa, lado ρ = 0 / origem / lados colados em destaque coral (no lugar do pisca branco)."""
-from kit import *  # noqa: F401,F403
+"""Lote PB2 · TRANSFORMAÇÃO (B2-1…B2-7), layout B (quadro 11): coordenadas polares φ(θ, ρ) = (ρ cos θ, ρ sen θ). Dois painéis do mesmo tamanho (ENTRADA à esquerda, SAÍDA à
+direita), seta em arco φ entre eles, fórmula embaixo com as chaves φ₁ e φ₂. Pontos voando, o segmento ρ = 2 enrolando na circunferência, o retângulo B virando o disco φ(B),
+as bordas (ρ = 0 esmagado; θ = 0 e θ = 2π colados). Tudo dentro dos painéis."""
+from v7 import *  # noqa: F401,F403
 
 
-def paineis(ax_e, ax_s, y_e, y_s, a=(-1.9, 1.75), b=(1.75, 1.95)):
-    """Títulos ENTRADA/SAÍDA e a seta de voo em arco φ entre os painéis (no alto), de `a` até `b`."""
-    te = txt("ENTRADA", 24, color=DIM).move_to(P3((ax_e.c2p(ax_e.x_range[0], 0)[0] + ax_e.c2p(ax_e.x_range[1], 0)[0]) / 2, y_e))
-    ts = txt("SAÍDA", 24, color=DIM).move_to(P3((ax_s.c2p(ax_s.x_range[0], 0)[0] + ax_s.c2p(ax_s.x_range[1], 0)[0]) / 2, y_s))
-    arco = voo(P3(*a), P3(*b), angle=-0.75, w=3, tip=0.2)
-    phi = F(r"\varphi", size=M_L, caneta=False).move_to(arco.point_from_proportion(0.5) + P3(0, 0.4))
-    return te, ts, arco, phi
+def px_de(p):
+    """ponto do Manim → (x, y) em px de 1080p"""
+    return p[0] * 120 + 960, 4.5 * 120 - p[1] * 120
 
 
 class LoteB2(Base):
@@ -20,44 +14,34 @@ class LoteB2(Base):
         # ── B2-1 · dois painéis vazios ──
         self.an("B2-1")
         self.secao("TRANSFORMAÇÃO")
-        ax_e = eixos((-7, -1), [0, 2 * PI, PI / 2], [0, 2.2, 1], 0.8, 1.2)          # retângulo B: 5,03 × 2,4 u
-        ax_s = eixos((4, 0), [-2.2, 2.2, 1], [-2.2, 2.2, 1], 1.4)                    # disco φ(B): raio 2,8 u
-        janela_local(self, ax_e)            # exceção registrada: θ com unidade 0,8 por rad não cai na grade
-        te, ts, arco, phi = paineis(ax_e, ax_s, 2.15, 3.85, a=(-2.5, 2.2), b=(0.55, 2.5))
-        self.play(Create(ax_e), Create(ax_s), run_time=1.2)
+        ax_e = Plano(PX(250, 700)[:2], 8.2 / (2 * PI) * 72 / 120, 1.95 * 72 / 120)      # retângulo B: θ de 0 a 2π (590 px), ρ de 0 a 2 (281 px)
+        ax_s = Plano(PX(1420, 530)[:2], 1.0)                                          # disco φ(B): raio 2 (240 px)
+        pe, ps = painel(130, 250, 740, 560, "ENTRADA", E1), painel(1050, 250, 740, 560, "SAÍDA", SAI)
+        arco = arco7(890, 520, 1030, 520, r"\varphi")
         self.gat("à esquerda o plano de entrada")
-        self.play(FadeIn(te), pulso(ax_e, 1.02, 1.6), run_time=0.8)
+        self.play(FadeIn(pe), run_time=0.8)
         self.gat("à direita o plano de saída")
-        self.play(FadeIn(ts), pulso(ax_s, 1.02, 1.6), run_time=0.8)
+        self.play(FadeIn(ps), run_time=0.8)
         self.gat("quando eu jogo um conjunto")
-        self.play(Create(arco), FadeIn(phi), run_time=1.0)
+        self.play(FadeIn(arco), run_time=1.0)
 
         # ── B2-2 · eixos θ, ρ e a fórmula ──
         self.an("B2-2")
-        lt = F(r"\theta", size=M_M, caneta=False).set_color(E1).next_to(ax_e.c2p(2 * PI, 0), RIGHT, buff=0.15)
-        lr = F(r"\rho", size=M_M, caneta=False).set_color(E2).next_to(ax_e.c2p(0, 2.2), UP, buff=0.12)
-        tk = VGroup(*[F(s, size=26, caneta=False).next_to(ax_e.c2p(v, 0), DOWN, buff=0.14) for s, v in
-                      ((r"\tfrac{\pi}{2}", PI / 2), (r"\pi", PI), (r"\tfrac{3\pi}{2}", 3 * PI / 2), (r"2\pi", 2 * PI))])
-        tkr = VGroup(*[F(s, size=26, caneta=False).next_to(ax_e.c2p(0, v), LEFT, buff=0.12) for s, v in (("1", 1), ("2", 2))])
-        lx = F("x", size=M_M, caneta=False).set_color(SAI).next_to(ax_s.c2p(2.2, 0), RIGHT, buff=0.12)
-        ly = F("y", size=M_M, caneta=False).set_color(SAI).next_to(ax_s.c2p(0, 2.2), RIGHT, buff=0.15)
-        tks = VGroup(*[F(str(v), size=24, caneta=False).next_to(ax_s.c2p(v, 0), DOWN, buff=0.1) for v in (1, 2)])
+        R = lambda t, r: ax_e.c2p(t, r)
+        lt = TC(r"\th", px_de(R(2 * PI, 0))[0] + 28, px_de(R(2 * PI, 0))[1] + 10, 40, "c", caneta=False)
+        lr = TC(r"\rh", px_de(R(0, 2))[0] - 8, px_de(R(0, 2))[1] - 40, 40, "c", caneta=False)
+        tk = [TC(r"2\pi", px_de(R(2 * PI, 0))[0], px_de(R(2 * PI, 0))[1] + 40, 30, "c", caneta=False),
+              TC("2", px_de(R(0, 2))[0] - 26, px_de(R(0, 2))[1], 30, "c", caneta=False)]
+        ex_e = VGroup(linha7([R(0, 0), R(2 * PI, 0)], GEO, 2, 0.5), linha7([R(0, 0), R(0, 2.3)], GEO, 2, 0.5)).set_z_index(2)
+        vs = Vista(1420, 530, 120)
+        ex_s = eixos7(vs, -2.4, 2.4, -2.2, 2.2, alpha=0.45)
         self.gat("o eixo horizontal é um ângulo")
-        self.play(FadeIn(lt, shift=0.1 * LEFT), FadeIn(tk), run_time=0.7)
+        self.play(Create(ex_e), FadeIn(lt, shift=0.1 * LEFT), FadeIn(tk[0]), run_time=0.7)
         self.gat("o eixo vertical é um raio")
-        self.play(FadeIn(lr, shift=0.1 * DOWN), FadeIn(tkr), run_time=0.7)
-        self.play(FadeIn(lx), FadeIn(ly), FadeIn(tks), run_time=0.5)
-        form = F(r"\varphi", "(", (r"\theta", E1), ",", (r"\rho", E2), ")", "=", ("(", SAI), (r"\rho", E2), (r"\cos", SAI), (r"\theta", E1), (",", SAI),
-                 (r"\ \rho", E2), (r"\,\mathrm{sen}\,", SAI), (r"\theta", E1), (")", SAI), size=M_L).move_to(P3(-3.4, -3.35))
+        self.play(FadeIn(lr, shift=0.1 * DOWN), FadeIn(tk[1]), Create(ex_s), run_time=0.7)
+        form = TC(r"\varphi(\th,\rh) = \S{\big(}\underbrace{\rh\cos\th}_{\S{\varphi_1}},\; \underbrace{\rh\,\sen\th}_{\S{\varphi_2}}\S{\big)}", 960, 935, 54, "c")
         self.gat("a função pega esse par")
         self.play(caneta(form))
-        self.gat("essas duas fórmulas são as componentes")
-        cha = [Brace(VGroup(form[8], form[9], form[10]), DOWN, buff=0.06), Brace(VGroup(form[12], form[13], form[14]), DOWN, buff=0.06)]
-        for c_ in cha:
-            c_.set_fill(SAI_F, 1).set_stroke(width=0)
-            c_._sem_contorno = True
-        rot_c = [F(r"\varphi_1", size=26, caneta=False).set_color(SAI_F).next_to(cha[0], DOWN, buff=0.04), F(r"\varphi_2", size=26, caneta=False).set_color(SAI_F).next_to(cha[1], DOWN, buff=0.04)]
-        self.play(FadeIn(VGroup(*cha)), FadeIn(VGroup(*rot_c)), run_time=0.7)
 
         # ── B2-3 · três pontos voando ──
         self.an("B2-3")
@@ -95,7 +79,7 @@ class LoteB2(Base):
         self.remove(seg_r, seg_t, img_r, img_t)
         pol = Polar(ax_e, ax_s, 2.0)
         B_ = retangulo_polar(pol, 2.0)
-        lB = F("B", size=M_M, caneta=False).set_color(GEO).next_to(ax_e.c2p(2 * PI, 2), UR, buff=0.08)
+        lB = TC(r"{\G B}", px_de(R(PI, 2))[0], px_de(R(PI, 2))[1] - 28, 36, "c", caneta=False)
         self.gat("olha o retângulo inteiro")
         self.play(FadeIn(B_[0]), Create(B_[1]), Create(B_[2]), FadeIn(lB), run_time=1.4)
         img = B_.copy()
@@ -110,17 +94,8 @@ class LoteB2(Base):
         for k in (0.25, 0.5, 0.75, 1.0):
             print(f"[polar] B2-5 k={k:.2f} em {t0 + alfa_de_k(k) * 3.4:.2f}s do lote (quadro {round((t0 + alfa_de_k(k) * 3.4) * FPS)})")
         print(f"[qa] B2-5 polar em k = 1 × φ(θ, ρ): {pol.erro_k1():.3f} px")
-        print(f"[qa] B2 tamanho dos painéis a 1080p: retângulo {pol.a_th * 2 * PI * 120:.0f} × {pol.a_rho * 2 * 120:.0f} px; disco de raio {2 * pol.u_s * 120:.0f} px "
-              f"(alvo ~565 × 300 e ~330)")
-        ancora_d = ax_s.c2p(1.414, 1.414)
-        PL = P3(6.95, 2.85)
-        lphi = F(r"\varphi", "(", ("B", GEO), ")", size=M_M).move_to(PL)
-        p_phi = placa(lphi, SAI_F)
-        fio = Line(ancora_d, p_phi[0].get_corner(DL)).set_stroke(SAI_F, 2)
         self.gat("e o retângulo se fecha")
         self.play(img[0].animate.set_fill(CH_IMG, 0.8).set_stroke(SAI_F, 4), run_time=0.8)          # a chapa do domínio vira a chapa da imagem
-        self.play(Create(fio), FadeIn(p_phi[0]), run_time=0.3)
-        self.play(caneta(lphi))
 
         # ── B2-6 · as bordas: ρ = 0 vira um ponto; θ = 0 e θ = 2π caem no mesmo segmento (destaque coral) ──
         self.an("B2-6")
@@ -145,14 +120,12 @@ class LoteB2(Base):
 
         # ── B2-7 · a imagem; aviso: o meio do caminho é só animação ──
         self.an("B2-7")
-        lim = F((r"\mathrm{Im}", SAI), "=", r"\varphi", "(", ("B", GEO), ")", size=M_M).move_to(PL + P3(-0.45, 0))
-        p_im = placa(lim, SAI_F)
-        fio2 = Line(ancora_d, p_im[0].get_corner(DL)).set_stroke(SAI_F, 2)
+        lim = TC(r"\S{\operatorname{Im} = \varphi(B)}", 1660, 300, 36, "c")
         self.gat("esse disco tem nome")
-        self.play(FadeOut(VGroup(baixo, b2, esq, dir_, e2, d2, orig)), FadeOut(lphi), Transform(p_phi[0], p_im[0]), Transform(fio, fio2), run_time=0.3)
-        self.remove(baixo, b2, esq, dir_, e2, d2, orig, lphi)
+        self.play(FadeOut(VGroup(baixo, b2, esq, dir_, e2, d2, orig)), run_time=0.3)
+        self.remove(baixo, b2, esq, dir_, e2, d2, orig)
         self.play(caneta(lim))
-        selo = txt("O MEIO DO CAMINHO É SÓ ANIMAÇÃO", 20, color=DIM).move_to(P3(-3.6, -2.4))
+        selo = T("O MEIO DO CAMINHO É SÓ ANIMAÇÃO", 500, 850, 24, "center", DIM, bold=False)
         self.gat("só um aviso honesto")
         self.play(FadeIn(selo, shift=0.08 * UP), run_time=0.5)
         self.gat("a função liga direto")
