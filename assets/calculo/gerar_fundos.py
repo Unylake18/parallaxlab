@@ -1,14 +1,20 @@
+"""Gera os fundos de Cálculo (v4 do yt_0026): cor única + brilho central suave, sem degradê vertical nem vinheta; placas lisas atrás do canto e do logo.
+Rodar nesta pasta: python gerar_fundos.py"""
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageFilter
 W, H = 1920, 1080
-y = np.linspace(0, 1, H)[:, None]; x = np.linspace(0, 1, W)[None, :]
-c0, c1 = np.array([0x0F, 0x1B, 0x33], float), np.array([0x0A, 0x13, 0x26], float)
-liso = c0 * (1 - y[..., None]) + c1 * y[..., None] + 0 * x[..., None]
-vin = (1 - 0.45 * np.clip(np.hypot((x - .5) / .75, (y - .5) / .75) - .35, 0, 1) ** 1.5)[..., None]
 gx, gy = np.arange(W)[None, :] - W / 2, np.arange(H)[:, None] - H / 2
 fina = (np.abs((gx + 0.5) % 24 - 12) > 11.4) | (np.abs((gy + 0.5) % 24 - 12) > 11.4)
 grossa = (np.abs((gx + 0.5) % 120 - 60) > 59.3) | (np.abs((gy + 0.5) % 120 - 60) > 59.3)
+BASE, BRILHO = np.array([0x09, 0x12, 0x26], float), 0.10          # cor única + brilho central suave (sem vinheta)
+r = np.hypot(gx / (W * 0.55), gy / (H * 0.55))
+liso = np.ones((H, W, 3)) * BASE * (1 + BRILHO * np.exp(-r ** 2))[..., None]
 mil = liso + fina[..., None] * np.array([18, 30, 52]) * 0.30 + grossa[..., None] * np.array([40, 70, 120]) * 0.32
-for nome, img in (("fundo_calculo_milimetrado", mil * vin), ("fundo_calculo_liso", liso * vin)):
+m = np.zeros((H, W)); m[72:170, 0:1240] = 1; m[34:96, 1656:1920] = 1   # placas lisas: canto e logo
+m = np.asarray(Image.fromarray((m * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(22)), float)[..., None] / 255
+mil = mil * (1 - m) + liso * m
+rng = np.random.default_rng(7)                      # dithering ±0,5 nível: tira a elipse do brilho central (quantização de 8 bits)
+liso = liso + rng.uniform(-0.5, 0.5, liso.shape); mil = mil + rng.uniform(-0.5, 0.5, mil.shape)
+for nome, img in (("fundo_calculo_milimetrado", mil), ("fundo_calculo_liso", liso)):
     im = Image.fromarray(np.clip(img, 0, 255).astype(np.uint8))
     im.save(f"{nome}_1920x1080.png"); im.resize((960, 540), Image.LANCZOS).save(f"{nome}_960x540.png")

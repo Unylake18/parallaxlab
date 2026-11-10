@@ -156,7 +156,7 @@ Geração, voz, modelo e regras gerais das tags: `docs/roteiro_voz_elevenlabs_v4
 Padrão aprovado pelo Kaio em 2026-11-09 (thread "Comparar Manim 2.5D e Three.js em Cálculo III"). Vale para todo `longo_horizontal` de Cálculo I, II, III e IV (Guidorizzi). O resto deste documento continua valendo; aqui ficam só as diferenças. Código e imagens: `assets/calculo/` (`papel.py`, `gerar_fundos.py`).
 
 ### 1. Fundo: milimetrado noturno, parado
-- Degradê azul-marinho #0F1B33 (topo) → #0A1326 (base), vinheta 0,45.
+- Cor única #091226 na tela inteira, com um brilho largo e suave no centro da mesma cor (+10%), sem degradê vertical e sem vinheta (v4 do yt_0026, 2026-11-10). Placas lisas (grade apagada com borda esfumada) atrás do canto (x 0–1240, y 72–170 px) e do logo (x 1656–1920, y 34–96). Gerador: `assets/calculo/gerar_fundos.py`.
 - Grade fina a cada 0,2 u do Manim (24 px em 1080p) e grossa a cada 1 u (120 px), com um cruzamento grosso na origem do quadro. Linhas fracas: fina ≈ #121E39 sobre o fundo, grossa ≈ #1C2F55.
 - Arquivos: `fundo_calculo_milimetrado_1920x1080.png` / `_960x540.png` e a versão sem grade `fundo_calculo_liso_*` (para a janela e para o 3D).
 - **Exceção à regra dos longos de Física:** nos longos de Cálculo não há céu espacial nem estrelas andando (`poeira_estelar`).
