@@ -1,0 +1,247 @@
+Manim Community v0.21.0
+
+[ancora] B7-1 0.000
+[11/11/26 10:33:38] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\D{1}\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\832                        
+                             0d346ed075e94.tex                                 
+[11/11/26 10:33:39] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\D{2}\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\f3e                        
+                             613f4745a79f4.tex                                 
+[11/11/26 10:33:41] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\D{3}\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\955                        
+                             d50b250dc6a20.tex                                 
+[11/11/26 10:33:43] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\D{4}\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\9fb                        
+                             755c574addd99.tex                                 
+[gatilho] B7-1   3.80s (alvo   3.78s, atraso +0.02s) uma função que dá um número em cada ponto
+[campo] B7 gradiente (2x, 2y): 111 setas, maior 0.420 u, menor 0.210 u (menor ÷ maior 0.50; alvo ≥ 0,40), maior ÷ passo = 0.84
+[gatilho] B7-1   7.33s (alvo   7.32s, atraso +0.01s) calcula o gradiente dela
+[11/11/26 10:33:46] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla^2\p                        
+                             hi =                                              
+                             \nabla\cdot\nabla\phi\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\d15                        
+                             e0a1ac447b240.tex                                 
+[gatilho] B7-1  14.67s (alvo  14.70s, atraso -0.03s) o resultado se chama laplaciano
+[algebra] B7-1   14.67s glifos=8 cor=100% rt=2.7s '\\nabla^2\\phi = \\nabla\\cdot\\nabla\\phi'
+[ancora] B7-2 23.467
+[gatilho] B7-2   0.80s (alvo   0.82s, atraso -0.02s) a soma dos quadrados
+[11/11/26 10:33:49] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\phi =                            
+                             \X^2 +                                            
+                             \Y^2\special{dvisvgm:raw                          
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\db3                        
+                             8d83957f69ab4.tex                                 
+[algebra] B7-2   24.27s glifos=7 cor=100% rt=2.4s '\\phi = \\X^2 + \\Y^2'
+[gatilho] B7-2   3.33s (alvo   3.32s, atraso +0.01s) o gradiente dela é uma explosão
+[11/11/26 10:33:51] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla\phi                        
+                             = (2\X,\                                          
+                             2\Y)\special{dvisvgm:raw                          
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\63b                        
+                             35d5ec26ef948.tex                                 
+[algebra] B7-2   26.80s glifos=10 cor=100% rt=3.3s '\\nabla\\phi = (2\\X,\\ 2\\Y)'
+[gatilho] B7-2   7.67s (alvo   7.68s, atraso -0.01s) agora calcula o divergente dessa explosão
+[11/11/26 10:33:53] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla^2\p                        
+                             hi = 2 + 2 =                                      
+                             \D{4}\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\183                        
+                             a1fe578b4ef83.tex                                 
+[algebra] B7-2   31.13s glifos=9 cor=100% rt=3.0s '\\nabla^2\\phi = 2 + 2 = \\D{4}'
+[gatilho] B7-2  15.13s (alvo  15.16s, atraso -0.03s) no espaço
+[11/11/26 10:33:55] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\phi =                            
+                             \X^2 + \Y^2 + \Z^2                                
+                             \;\Rightarrow\;                                   
+                             \nabla^2\phi =                                    
+                             \D{6}\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\2ab                        
+                             e15d5d438c197.tex                                 
+[algebra] B7-2   38.60s glifos=16 cor=100% rt=5.1s '\\phi = \\X^2 + \\Y^2 + \\Z^2 \\;\\Rightarrow\\; \\nabla^2\\phi = \\D{6}'
+[ancora] B7-3 45.800
+[sync] PB7 trecho 9 (B7-3 → gat ele compara o valor da função num ponto): pede 2.67s, cabe 1.61s → caneta × 0.60
+[11/11/26 10:33:57] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}P\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\e0a                        
+                             77d7bd6dfd310.tex                                 
+[laplaciano] B7-3: φ(P) = 1.2500; média na circunferência de raio 0,4 = 1.4100; diferença 0.1600 = ρ²/4·∇²φ = 0.1600
+[algebra] B7-3   45.80s glifos=7 cor=100% rt=1.8s '\\phi = \\X^2 + \\Y^2'
+[gatilho] B7-3   1.80s (alvo   1.66s, atraso +0.14s) ele compara o valor da função num ponto
+[sync] PB7 trecho 10 (B7-3 → gat com a média dos vizinhos): pede 3.00s, cabe 2.11s → caneta × 0.70
+[11/11/26 10:34:07] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\phi(P) =                         
+                             1{,}25\special{dvisvgm:raw                        
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\4fb                        
+                             438faa047ab6b.tex                                 
+[algebra] B7-3   47.60s glifos=9 cor=100% rt=2.1s '\\phi(P) = 1{,}25'
+[gatilho] B7-3   3.93s (alvo   3.96s, atraso -0.03s) com a média dos vizinhos
+[11/11/26 10:34:17] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}1{,}41\spe                        
+                             cial{dvisvgm:raw </g>} to                         
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\b6c                        
+                             c5637bd8ed11d.tex                                 
+[algebra] B7-3   51.13s glifos=4 cor=100% rt=1.5s '1{,}41'
+[gatilho] B7-3   7.60s (alvo   7.62s, atraso -0.02s) laplaciano positivo
+[11/11/26 10:34:18] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}1{,}25 <                          
+                             1{,}41\special{dvisvgm:raw                        
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\62a                        
+                             27b75c0b09f3e.tex                                 
+[algebra] B7-3   53.40s glifos=9 cor=100% rt=3.0s '1{,}25 < 1{,}41'
+[11/11/26 10:34:20] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla^2\p                        
+                             hi = \nabla\cdot\nabla\phi                        
+                             = 4 >                                             
+                             0\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\29a                        
+                             df88972e0312c.tex                                 
+[algebra] B7-3   56.40s glifos=12 cor=100% rt=3.9s '\\nabla^2\\phi = \\nabla\\cdot\\nabla\\phi = 4 > 0'
+[ancora] B7-4 68.400
+[11/11/26 10:34:33] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\X\special                        
+                             {dvisvgm:raw </g>} to                             
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\8f3                        
+                             dea5c0d7bd9e2.tex                                 
+[11/11/26 10:34:34] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\T\special                        
+                             {dvisvgm:raw </g>} to                             
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\009                        
+                             3a080aef40311.tex                                 
+[11/11/26 10:34:38] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Pt{P}\spe                        
+                             cial{dvisvgm:raw </g>} to                         
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\822                        
+                             ca2689a65d592.tex                                 
+[gatilho] B7-4   7.47s (alvo   7.50s, atraso -0.03s) abaixo da média dos vizinhos
+[sync] PB7 trecho 14 (B7-4 → gat esquenta): pede 4.27s, cabe 3.70s → caneta × 0.84
+[11/11/26 10:34:41] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla^2                          
+                             \T > 0 \;\Rightarrow\; \T\                        
+                             \text{sobe}\special{dvisvg                        
+                             m:raw </g>} to                                    
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\f0b                        
+                             a076e471a2d99.tex                                 
+[gatilho] B7-4   9.13s (alvo   9.12s, atraso +0.01s) o laplaciano é positivo (agendado)
+[algebra] B7-4   76.53s glifos=11 cor=100% rt=3.0s '\\nabla^2 \\T > 0 \\;\\Rightarrow\\; \\T\\ \\text{sobe}'
+[gatilho] B7-4  11.20s (alvo  11.22s, atraso -0.02s) esquenta
+[gatilho] B7-4  12.40s (alvo  12.40s, atraso +0.00s) vai se enchendo
+[calor] B7-4: T(0) 0.143 → 0.581; média dos vizinhos (x = ±0,75) 0.775 → 0.782; ∇²T(0) = 4σ²/s² > 0 (8.16 → 1.95); 4αt em 6 s
+[11/11/26 10:34:48] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial \T}{\partial t} =                           
+                             \alpha\,\nabla^2                                  
+                             \T\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_93.1\Tex\643                        
+                             6aff4d0971f43.tex                                 
+[gatilho] B7-4  15.07s (alvo  15.08s, atraso -0.01s) equação do calor
+[algebra] B7-4   83.47s glifos=10 cor=100% rt=3.3s '\\dfrac{\\partial \\T}{\\partial t} = \\alpha\\,\\nabla^2 \\T'
+[gatilho] B7-4  21.80s (alvo  21.82s, atraso -0.02s) e ele volta nas ondas
+[calor] B7-4: 4αt final = 0.500
+[11/11/26 10:34:58] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_still_PB7_93.                          
+                             1\images\cena\PB7_ManimC                          
+                             E_v0.21.0.png'                                    
+                                                                               
+                    INFO     Rendered PB7                          scene.py:290
+                             Played 42 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

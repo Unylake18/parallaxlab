@@ -1,0 +1,60 @@
+Manim Community v0.21.0
+
+[ancora] F1 0.000
+[campo] F1 campo elétrico (falsa fonte): 112 setas, maior 0.348 u, menor 0.227 u (menor ÷ maior 0.65; alvo ≥ 0,40), maior ÷ passo = 0.70
+[11/11/26 03:32:58] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:33:00] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] F1   4.87s (alvo   4.86s, atraso +0.01s) o formato do campo elétrico
+[11/11/26 03:33:03] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:33:04] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] F1  10.60s (alvo  10.60s, atraso +0.00s) é a nossa falsa fonte
+[algebra] F1   10.60s glifos=20 cor=100% rt=6.3s '\\E = \\dfrac{\\lambda}{2\\pi\\varepsilon_0}\\,\\dfrac{(\\X,\\ \\Y)}{\\X^2+\\Y^2}'
+[11/11/26 03:33:09] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:33:14] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] F1  17.40s (alvo  16.30s, atraso +1.10s) a lei de gauss na forma local
+[algebra] F1   17.40s glifos=9 cor=100% rt=3.0s '\\nabla\\cdot\\E = \\dfrac{\\rho}{\\varepsilon_0}'
+[11/11/26 03:33:15] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:33:19] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] F1  23.27s (alvo  23.26s, atraso +0.01s) fora do fio não tem carga
+[algebra] F1   23.27s glifos=19 cor=100% rt=6.0s '\\text{fora do fio: }\\ \\rho = 0 \\;\\Rightarrow\\; \\nabla\\cdot\\E = 0'
+[11/11/26 03:33:21] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] F1  29.27s (alvo  27.88s, atraso +1.39s) a carga mora toda no furo
+[11/11/26 03:33:28] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:33:31] INFO     Caching disabled.             cairo_renderer.py:81
+[ancora] F2 34.000
+[campo] F2 campo magnético (vórtice): 112 setas, maior 0.348 u, menor 0.227 u (menor ÷ maior 0.65; alvo ≥ 0,40), maior ÷ passo = 0.70
+[11/11/26 03:33:33] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:33:36] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] F2   1.13s (alvo   1.10s, atraso +0.03s) o formato do campo magnético
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:33:37] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] F2   4.73s (alvo   4.74s, atraso -0.01s) de novo o nosso vórtice
+[algebra] F2   38.73s glifos=21 cor=100% rt=6.6s '\\B = \\dfrac{\\mu_0 I}{2\\pi}\\,\\dfrac{(-\\Y,\\ \\X)}{\\X^2+\\Y^2}'
+[11/11/26 03:33:39] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:33:46] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] F2  11.87s (alvo   9.84s, atraso +2.03s) o rotacional do campo magnético é proporcional
+[algebra] F2   45.87s glifos=9 cor=100% rt=3.0s '\\nabla\\times\\B = \\mu_0\\J'
+[11/11/26 03:33:47] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] F2  14.87s (alvo  14.20s, atraso +0.67s) fora do fio não passa corrente
+[algebra] F2   48.87s glifos=22 cor=100% rt=6.9s '\\text{fora do fio: }\\ \\J = \\vec 0 \\;\\Rightarrow\\; \\nabla\\times\\B = \\vec 0'
+[11/11/26 03:33:50] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:33:58] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] F2  22.73s (alvo  22.74s, atraso -0.01s) o divergente do campo magnético é zero sempre
+[algebra] F2   56.73s glifos=6 cor=100% rt=2.1s '\\nabla\\cdot\\B = 0'
+[11/11/26 03:33:59] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:34:02] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:34:03] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:34:09] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:34:10] INFO     Caching disabled.             cairo_renderer.py:81
+[deriva] PF +0.00s além do fim da última âncora
+[cor-bloco] PF fração colorida (glifos de caneta) = 100% em 7 MathTex
+[flash-total] PF 0
+[estilo] PF traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PF brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 65.60s (984 quadros)
+[sync] plano gravado: 13 trechos
+[11/11/26 03:34:11] INFO     Rendered PF                           scene.py:290
+                             Played 26 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

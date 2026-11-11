@@ -1,0 +1,79 @@
+Manim Community v0.21.0
+
+[ancora] B7-1 0.000
+[11/10/26 17:43:08] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}1\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_20\Tex\e6a56                        
+                             6ad7d876b8c.tex                                   
+[11/10/26 17:43:10] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}2\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_20\Tex\92c26                        
+                             d21f4d400ae.tex                                   
+[11/10/26 17:43:11] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}3\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_20\Tex\9ca76                        
+                             7606662f643.tex                                   
+[11/10/26 17:43:13] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_20\Tex\b6e1e                        
+                             0d35a22cf8a.tex                                   
+[gatilho] B7-1   4.87s (alvo   4.88s, atraso -0.01s) uma função que dá um número em cada ponto
+[campo] B7 gradiente (2x, 2y): 20 setas, k = 0.1901 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[gatilho] B7-1   9.67s (alvo   9.69s, atraso -0.02s) calcula o gradiente dela
+[gatilho] B7-1  15.60s (alvo  15.62s, atraso -0.02s) tira o divergente desse campo
+[11/10/26 17:43:15] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla^2                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\varphi                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}=\nabla\cd                        
+                             ot \special{dvisvgm:raw                           
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique003'>}\nabla\var                        
+                             phi\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_20\Tex\15f84                        
+                             9a2277360a6.tex                                   
+[gatilho] B7-1  17.47s (alvo  17.47s, atraso -0.00s) o resultado se chama laplaciano
+[algebra] B7-1   17.47s glifos=8 cor=38% rt=2.7s '\\nabla^2\\varphi=\\nabla\\cdot\\nabla\\varphi'
+[11/10/26 17:43:17] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_still_PB7_20\                          
+                             images\cena\PB7_ManimCE_                          
+                             v0.21.0.png'                                      
+                                                                               
+                    INFO     Rendered PB7                          scene.py:290
+                             Played 9 animations                               
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

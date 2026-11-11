@@ -1,0 +1,101 @@
+Manim Community v0.21.0
+
+[ancora] B6-1 0.000
+[11/10/26 20:11:38] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B6-1   3.00s (alvo   1.17s, atraso +1.83s) o divergente ganha uma terceira parcela
+[algebra] B6-1    3.00s glifos=23 cor=100% rt=7.2s '\\dv \\F = \\dfrac{\\partial \\Pp}{\\dx} + \\dfrac{\\partial \\Qq}{\\dy} + \\dfrac{\\partial \\Rr}{\\dz}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:11:39] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B6-1  14.13s (alvo  14.13s, atraso -0.00s) agora por unidade de volume
+[11/10/26 20:11:40] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B6-1  16.33s (alvo  16.36s, atraso -0.02s) continua sendo um número
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:11:41] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] B6-1: 0 rótulos a menos de 6 px em 0 rótulos
+[ancora] B6-2 18.267
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B6-2  12.27s (alvo  12.28s, atraso -0.02s) com o eixo da rodinha alinhado
+[11/10/26 20:11:43] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B6-2  18.60s (alvo  18.58s, atraso +0.02s) inclina a rodinha
+[11/10/26 20:11:44] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B6-2  21.60s (alvo  21.54s, atraso +0.06s) deita a rodinha de lado
+[11/10/26 20:11:45] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B6-2  24.60s (alvo  23.39s, atraso +1.21s) e ela para
+[11/10/26 20:11:46] INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] B6-2: 0 rótulos a menos de 6 px em 7 rótulos
+[estouro] B6-3 começou 0.20s depois do previsto (a cena se esticou)
+[ancora] B6-3 43.400
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:11:47] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B6-3   2.40s (alvo   1.17s, atraso +1.23s) o rotacional é um vetor de verdade
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:11:49] INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:11:50] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B6-3   8.93s (alvo   8.95s, atraso -0.02s) o tamanho é o dobro dessa rapidez
+[11/10/26 20:11:52] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\rot \F =                         
+                             \begin{vmatrix} \vec\imath                        
+                             & \vec\jmath & \vec k                             
+                             \\[2pt] \partial_{\X} &                           
+                             \partial_{\Y} &                                   
+                             \partial_{\Z} \\[2pt] \Pp                         
+                             & \Qq & \Rr                                       
+                             \end{vmatrix}\special{dvis                        
+                             vgm:raw </g>} to                                  
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB6\Tex\3963abc11a                        
+                             ab4b3b.tex                                        
+[11/10/26 20:11:53] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B6-3  16.33s (alvo  16.36s, atraso -0.02s) se organizam num determinante simbólico
+[algebra] B6-3   59.73s glifos=35 cor=100% rt=10.8s '\\rot \\F = \\begin{vmatrix} \\vec\\imath & \\vec\\jmath & \\vec k \\\\[2pt] \\partial_{\\X} & \\partial_{\\Y} & \\partial_{\\Z} \\\\[2pt] \\Pp & \\Qq & \\Rr \\end{vmatrix}'
+[11/10/26 20:11:54] INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:11:56] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\rot\F =                          
+                             \nabla \times \F \qquad                           
+                             (\nabla \wedge                                    
+                             \F)\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB6\Tex\1296d4c9ea                        
+                             2fe8fd.tex                                        
+[gatilho] B6-3  27.13s (alvo  25.99s, atraso +1.15s) um produto vetorial do nabla com o campo
+[algebra] B6-3   70.53s glifos=16 cor=100% rt=5.1s '\\rot\\F = \\nabla \\times \\F \\qquad (\\nabla \\wedge \\F)'
+[11/10/26 20:11:57] INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:11:58] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dv\F =                           
+                             \nabla \cdot                                      
+                             \F\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB6\Tex\8462fe4d19                        
+                             3b1831.tex                                        
+[gatilho] B6-3  32.20s (alvo  30.06s, atraso +2.14s) como um produto escalar
+[algebra] B6-3   75.60s glifos=10 cor=100% rt=3.3s '\\dv\\F = \\nabla \\cdot \\F'
+[11/10/26 20:11:59] INFO     Caching disabled.             cairo_renderer.py:81
+[3d] B6 roda: rapidez = W·n em 912 quadros; maior |dfase/dt − W·n| = 5.7e-14; mínimo W·n = 0.0000; W·n = cos 50° = 0.643 no quadro 603 do lote
+[11/10/26 20:12:00] INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] B6-3: 0 rótulos a menos de 6 px em 0 rótulos
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[cor-bloco] PB6 fração colorida (glifos de caneta) = 100% em 4 MathTex
+[flash-total] PB6 0
+[estilo] PB6 traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PB6 brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 79.67s (1195 quadros)
+                    INFO     Rendered PB6                          scene.py:290
+                             Played 27 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

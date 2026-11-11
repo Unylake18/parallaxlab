@@ -1,0 +1,185 @@
+Manim Community v0.21.0
+
+[ancora] B4-1 0.000
+[campo] B4 explosão: 120 setas, maior 0.420 u, menor 0.210 u (menor ÷ maior 0.50; alvo ≥ 0,40), maior ÷ passo = 0.84
+[11/11/26 10:33:42] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}0\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB4_95.5\Tex\ab0                        
+                             de9a363d86c5f.tex                                 
+[11/11/26 10:33:43] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>},\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB4_95.5\Tex\711                        
+                             ab062245acc0c.tex                                 
+[11/11/26 10:33:45] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB4_95.5\Tex\b6e                        
+                             1e0d35a22cf8a.tex                                 
+[11/11/26 10:33:47] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}9\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB4_95.5\Tex\f7c                        
+                             8a5ee0f168adf.tex                                 
+[gatilho] B4-1   7.87s (alvo   7.84s, atraso +0.03s) aqui o quadradinho não gira
+[gatilho] B4-1   9.53s (alvo   9.52s, atraso +0.01s) ele cresce
+[motor] B4-1: fluxo de 0.000 a 0.350 em 3.00 s (fator 0.117 de fluxo por s)
+[área] B4-1: área 0.490 → 0.987 (exata: A0·e^(2t), t = 0,35)
+[ancora] B4-2 13.467
+[11/11/26 10:33:53] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dv \F =                          
+                             \dfrac{\partial \Pp}{\dx}                         
+                             + \dfrac{\partial                                 
+                             \Qq}{\dy}\special{dvisvgm:                        
+                             raw </g>} to                                      
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB4_95.5\Tex\795                        
+                             384c3d0bdfb75.tex                                 
+[gatilho] B4-2   0.00s (alvo   0.06s, atraso -0.06s) o divergente mede exatamente isso
+[algebra] B4-2   13.47s glifos=17 cor=100% rt=5.4s '\\dv \\F = \\dfrac{\\partial \\Pp}{\\dx} + \\dfrac{\\partial \\Qq}{\\dy}'
+[gatilho] B4-2  14.80s (alvo  14.82s, atraso -0.02s) o resultado é um número
+[11/11/26 10:34:00] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F = (\X,\                        
+                             \Y)\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB4_95.5\Tex\1c4                        
+                             b2a1c27d8f774.tex                                 
+[11/11/26 10:34:01] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dv \F = 1                        
+                             + 1 =                                             
+                             \D{2}\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB4_95.5\Tex\40d                        
+                             4329224bbaf70.tex                                 
+[gatilho] B4-2  23.73s (alvo  23.74s, atraso -0.01s) na explosão o divergente vale dois
+[algebra] B4-2   37.20s glifos=8 cor=100% rt=2.7s '\\F = (\\X,\\ \\Y)'
+[algebra] B4-2   39.87s glifos=11 cor=100% rt=3.6s '\\dv \\F = 1 + 1 = \\D{2}'
+[ancora] B4-3 43.933
+[gatilho] B4-3   5.33s (alvo   5.34s, atraso -0.01s) uma caixa parada
+[gatilho] B4-3  11.40s (alvo  11.40s, atraso +0.00s) sai mais fluido do que entra
+[ancora] B4-4 56.933
+[caixa] B4-4: entra 36 px (P = 0.5), sai 144 px (P = 2.0)
+[gatilho] B4-4   6.20s (alvo   6.18s, atraso +0.02s) pela parede da direita
+[gatilho] B4-4  10.20s (alvo  10.18s, atraso +0.02s) pela da esquerda
+[11/11/26 10:34:14] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\h\special                        
+                             {dvisvgm:raw </g>} to                             
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB4_95.5\Tex\d3c                        
+                             d628110068462.tex                                 
+[11/11/26 10:34:15] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\k\special                        
+                             {dvisvgm:raw </g>} to                             
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB4_95.5\Tex\60a                        
+                             4eebaef14921f.tex                                 
+[11/11/26 10:34:16] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\xo\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB4_95.5\Tex\6b2                        
+                             f7210c0cac3a3.tex                                 
+[11/11/26 10:34:17] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\xo+\h\spe                        
+                             cial{dvisvgm:raw </g>} to                         
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB4_95.5\Tex\a80                        
+                             e4e58c1298dbd.tex                                 
+[11/11/26 10:34:18] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}[\Pp(\xo+\                        
+                             h) - \Pp(\xo)]\,\k \approx                        
+                             \dfrac{\partial                                   
+                             \Pp}{\dx}\,\h\k\special{dv                        
+                             isvgm:raw </g>} to                                
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB4_95.5\Tex\52e                        
+                             955a285a77f43.tex                                 
+[gatilho] B4-4  12.93s (alvo  12.92s, atraso +0.01s) a diferença vezes a altura
+[algebra] B4-4   70.40s glifos=24 cor=100% rt=7.5s '[\\Pp(\\xo+\\h) - \\Pp(\\xo)]\\,\\k \\approx \\dfrac{\\partial \\Pp}{\\dx}\\,\\h\\k'
+[11/11/26 10:34:20] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}[\Qq(\yo+\                        
+                             k) - \Qq(\yo)]\,\h \approx                        
+                             \dfrac{\partial                                   
+                             \Qq}{\dy}\,\h\k\special{dv                        
+                             isvgm:raw </g>} to                                
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB4_95.5\Tex\769                        
+                             6dc6743aa0040.tex                                 
+[gatilho] B4-4  26.47s (alvo  26.44s, atraso +0.03s) em cima e embaixo
+[algebra] B4-4   84.33s glifos=24 cor=100% rt=5.0s '[\\Qq(\\yo+\\k) - \\Qq(\\yo)]\\,\\h \\approx \\dfrac{\\partial \\Qq}{\\dy}\\,\\h\\k'
+[11/11/26 10:34:22] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\D{                        
+                             \text{saldo}}}{\h\k}                              
+                             \;\longrightarrow\;                               
+                             \dfrac{\partial \Pp}{\dx}                         
+                             + \dfrac{\partial                                 
+                             \Qq}{\dy} =                                       
+                             \dv\F\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB4_95.5\Tex\ce6                        
+                             6ac7fc5880850.tex                                 
+[gatilho] B4-4  33.53s (alvo  33.52s, atraso +0.01s) somando e dividindo pela área (agendado)
+[algebra] B4-4   89.33s glifos=27 cor=100% rt=6.7s '\\dfrac{\\D{\\text{saldo}}}{\\h\\k} \\;\\longrightarrow\\; \\dfrac{\\partial \\Pp}{\\dx} + \\dfrac{\\partial \\Qq}{\\dy} = \\dv\\F'
+[11/11/26 10:34:25] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_still_PB4_95.                          
+                             5\images\cena\PB4_ManimC                          
+                             E_v0.21.0.png'                                    
+                                                                               
+                    INFO     Rendered PB4                          scene.py:290
+                             Played 33 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

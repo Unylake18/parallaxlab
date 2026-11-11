@@ -1,0 +1,124 @@
+Manim Community v0.21.0
+
+[ancora] S1 0.000
+[motor] S1 rodinha: 1.0000 s de fluxo por s de tela
+[11/10/26 17:43:08] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\operatorn                        
+                             ame{rot}                                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\vec F                         
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}=\left(\df                        
+                             rac{\partial                                      
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique003'>}Q                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique004'>}}{\partial                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique005'>}x                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique006'>}}-\dfrac{\                        
+                             partial                                           
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique007'>}P                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique008'>}}{\partial                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique009'>}y                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique010'>}}\right)\v                        
+                             ec k=2                                            
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique011'>}\omega                         
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique012'>}\,\vec                         
+                             k\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PS_22\Tex\73d5c8                        
+                             d45f1f599c.tex                                    
+[11/10/26 17:43:10] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\operatorn                        
+                             ame{div}                                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\vec F                         
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}=\dfrac{\p                        
+                             artial                                            
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique003'>}P                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique004'>}}{\partial                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique005'>}x                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique006'>}}+\dfrac{\                        
+                             partial                                           
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique007'>}Q                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique008'>}}{\partial                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique009'>}y                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique010'>}}\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PS_22\Tex\5b6082                        
+                             fd508b8518.tex                                    
+[gatilho] S1   5.60s (alvo   5.62s, atraso -0.02s) giro não é coisa de uma seta só
+[gatilho] S1  12.67s (alvo  12.65s, atraso +0.01s) o rotacional mede isso com duas derivadas
+[algebra] S1   12.67s glifos=26 cor=27% rt=8.1s '\\operatorname{rot}\\vec F=\\left(\\dfrac{\\partial Q}{\\partial x}-\\dfrac{\\partial P}{\\partial y}\\right)\\vec k=2\\omega\\,\\vec k'
+[gatilho] S1  20.80s (alvo  19.69s, atraso +1.11s) o divergente mede com outras duas
+[algebra] S1   20.80s glifos=17 cor=35% rt=5.4s '\\operatorname{div}\\vec F=\\dfrac{\\partial P}{\\partial x}+\\dfrac{\\partial Q}{\\partial y}'
+[11/10/26 17:43:12] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_still_PS_22\i                          
+                             mages\cena\PS_ManimCE_v0                          
+                             .21.0.png'                                        
+                                                                               
+                    INFO     Rendered PS                           scene.py:290
+                             Played 7 animations                               
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

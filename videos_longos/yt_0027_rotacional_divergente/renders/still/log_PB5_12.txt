@@ -1,0 +1,59 @@
+Manim Community v0.21.0
+
+[ancora] B5-1 0.000
+[campo] B5 falsa fonte (x, y)/r²: 36 setas, k = 0.5355 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[11/10/26 17:40:15] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\vec F                            
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique001'>}=\dfrac{(                         
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique002'>}x                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique003'>},\                             
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique004'>}y                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique005'>})}{                            
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique006'>}x                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique007'>}^2+                            
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique008'>}y                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique009'>}^2}\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB5_12\Tex\2f714                        
+                             45d3f3735b2.tex                                   
+[gatilho] B5-1   3.73s (alvo   3.76s, atraso -0.03s) olha esse campo
+[gatilho] B5-1   8.60s (alvo   8.58s, atraso +0.02s) é a explosão dividida
+[algebra] B5-1    8.60s glifos=14 cor=43% rt=4.5s '\\vec F=\\dfrac{(x,\\ y)}{x^2+y^2}'
+[gatilho] B5-1  13.13s (alvo  12.65s, atraso +0.48s) enfraquecem conforme se afastam
+[11/10/26 17:40:16] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_still_PB5_12\                          
+                             images\cena\PB5_ManimCE_                          
+                             v0.21.0.png'                                      
+                                                                               
+                    INFO     Rendered PB5                          scene.py:290
+                             Played 4 animations                               
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

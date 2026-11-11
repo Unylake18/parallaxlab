@@ -1,0 +1,59 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:transparent}</style></head><body>
+<script type="module">
+// Cenas 3D-alvo do yt_0027 v2: sem sombra, sem névoa, sem brilho; fundo transparente (composto sobre o milimetrado).
+import * as THREE from './three/three.module.js';
+const K=new URLSearchParams(location.search).get('k');
+const W=1100,H=900, r=new THREE.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true});r.setSize(W,H);r.setClearColor(0x000000,0);document.body.appendChild(r.domElement);
+const S=new THREE.Scene(), cam=new THREE.PerspectiveCamera(30,W/H,.1,100);cam.up.set(0,0,1);
+S.add(new THREE.AmbientLight(0xffffff,.55));const d=new THREE.DirectionalLight(0xffffff,1.6);d.position.set(4,-6,8);S.add(d);const d2=new THREE.DirectionalLight(0x9fb8ff,.5);d2.position.set(-6,4,2);S.add(d2);
+const mat=(c,e=0)=>new THREE.MeshStandardMaterial({color:c,roughness:.55,metalness:0,emissive:c,emissiveIntensity:e,side:THREE.DoubleSide});
+function seta(a,b,cor,raio=.035){const A=new THREE.Vector3(...a),B=new THREE.Vector3(...b),v=B.clone().sub(A),L=v.length(),h=Math.min(.26,.42*L),g=new THREE.Group();
+ const m=mat(cor,.25),c1=new THREE.Mesh(new THREE.CylinderGeometry(raio,raio,L-h,16),m);c1.position.y=(L-h)/2;const c2=new THREE.Mesh(new THREE.ConeGeometry(raio*3.2,h,24),m);c2.position.y=L-h/2;g.add(c1,c2);
+ g.position.copy(A);g.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),v.normalize());S.add(g);return g;}
+const MENTA=0x2EE6A0, MENTA2=0x8CFFD2, GEO=0xB8C4DA, VEL=0x9C8CFF, CORAL=0xFF7A8A;
+function ver(p,t){cam.position.set(...p);cam.lookAt(...t);}
+if(K==='cubo'){const a=1.6,h=a/2;const g=new THREE.BoxGeometry(a,a,a);const ms=[0x2E4C86,0x2E4C86,0x3A60A8,0x3A60A8,0x24406E,0x24406E].map(c=>mat(c));S.add(new THREE.Mesh(g,ms));
+ const e=new THREE.LineSegments(new THREE.EdgesGeometry(g),new THREE.LineBasicMaterial({color:0xDCE6FA}));S.add(e);
+ const pts=[];for(const s of [-1,1])for(const ax of [0,1,2]){pts.push([ax,s,0,0]);for(const [u,v] of [[.45,.45],[.45,-.45],[-.45,.45],[-.45,-.45]])pts.push([ax,s,u,v]);}
+ for(const [ax,s,u,v] of pts){const p=[0,0,0];p[ax]=s*h;const o=[0,1,2].filter(i=>i!==ax);p[o[0]]=u*h;p[o[1]]=v*h;const f=p.map(c=>c*.55);const big=!u&&!v;
+  seta(p,p.map((c,i)=>c+f[i]*(big?1.1:.9)),big?MENTA2:MENTA,big?.04:.03);}
+ ver([4.6,-5.4,2.6],[0,0,0]);}
+if(K==='roda_incl'||K==='roda_rot'){const th=35*Math.PI/180,Wv=new THREE.Vector3(Math.sin(th),0,Math.cos(th));
+ // giro rígido em torno de W: dois anéis de setas finas (contexto) ao redor do eixo
+ const e1=new THREE.Vector3(Math.cos(th),0,-Math.sin(th)),e2=new THREE.Vector3(0,1,0);
+ for(const z of [-.9,.9]){const R=1.9,n=10;for(let i=0;i<n;i++){const a=2*Math.PI*i/n,p=Wv.clone().multiplyScalar(z).add(e1.clone().multiplyScalar(R*Math.cos(a))).add(e2.clone().multiplyScalar(R*Math.sin(a)));
+  const t=e1.clone().multiplyScalar(-Math.sin(a)).add(e2.clone().multiplyScalar(Math.cos(a))).multiplyScalar(.55);seta(p.clone().sub(t.clone().multiplyScalar(.5)).toArray(),p.clone().add(t.clone().multiplyScalar(.5)).toArray(),MENTA,.028);}
+  const ring=[];for(let i=0;i<=96;i++){const a=2*Math.PI*i/96;ring.push(Wv.clone().multiplyScalar(z).add(e1.clone().multiplyScalar(1.9*Math.cos(a))).add(e2.clone().multiplyScalar(1.9*Math.sin(a))));}
+  S.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(ring),new THREE.LineBasicMaterial({color:0x1A5F55})));}
+ // eixo do giro (tracejado claro) e rodinha
+ const ax=new THREE.Line(new THREE.BufferGeometry().setFromPoints([Wv.clone().multiplyScalar(-2.2),Wv.clone().multiplyScalar(2.2)]),new THREE.LineDashedMaterial({color:GEO,dashSize:.12,gapSize:.1}));ax.computeLineDistances();if(K==='roda_incl')S.add(ax);
+ const ang=K==='roda_incl'?50*Math.PI/180:0; const n=Wv.clone().applyAxisAngle(new THREE.Vector3(0,1,0),ang);
+ const g=new THREE.Group();const hub=new THREE.Mesh(new THREE.CylinderGeometry(.13,.13,.22,24),mat(0x0B1530));g.add(hub);
+ const eixo=new THREE.Mesh(new THREE.CylinderGeometry(.03,.03,1.5,12),mat(GEO));g.add(eixo);
+ for(let k=0;k<4;k++){const p=new THREE.Mesh(new THREE.BoxGeometry(.8,.55,.05),mat(CORAL,.12));p.position.set(.52,0,0);const q=new THREE.Group();q.add(p);
+  if(k===0){const s=new THREE.Mesh(new THREE.BoxGeometry(.18,.56,.06),mat(0xA9CCFF,.2));s.position.set(.84,0,0);q.add(s);}q.rotation.y=k*Math.PI/2+.4;g.add(q);}
+ g.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),n);S.add(g);
+ if(K==='roda_rot')seta([0,0,0],Wv.clone().multiplyScalar(2.0).toArray(),VEL,.045);
+ ver([6.4,-5.6,2.4],[0.2,0,0.1]);}
+if(K==='cubo3'){
+ // v3: cubo-chapa translúcido (arestas GEO), UMA seta por parede, material plano (sem luz, sem brilho).
+ // Campo F = (x, y, z) no cubo [1, 2]^3: em cada par de paredes entra 1 e sai 2 (seta de saída 2x a de entrada). Câmera do lado (+x, +y, +z): as 3 paredes de SAÍDA ficam de frente; as de ENTRADA, atrás, vistas pela chapa.
+ const a=1.6,h=a/2,flat=c=>new THREE.MeshBasicMaterial({color:c});
+ const caixa=new THREE.Mesh(new THREE.BoxGeometry(a,a,a),new THREE.MeshBasicMaterial({color:0x1A2C52,transparent:true,opacity:.32,depthWrite:false,side:THREE.DoubleSide}));S.add(caixa);
+ S.add(new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(a,a,a)),new THREE.LineBasicMaterial({color:0xB8C4DA})));
+ function setaP(A,B,cor){const v=B.clone().sub(A),L=v.length(),hl=.22,g=new THREE.Group();
+  const sh=new THREE.Mesh(new THREE.CylinderGeometry(.03,.03,L-hl,16),flat(cor));sh.position.y=(L-hl)/2;const cn=new THREE.Mesh(new THREE.ConeGeometry(.095,hl,24),flat(cor));cn.position.y=L-hl/2;g.add(sh,cn);
+  g.position.copy(A);g.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),v.normalize());S.add(g);}
+ const AX=[0xFFC24D,0xEA63FF,0x35D9FF],Lin=.55,Lout=1.1;
+ for(let ax=0;ax<3;ax++){const n=new THREE.Vector3();n.setComponent(ax,1);
+  // moldura da cor do eixo, por dentro de cada parede do par
+  for(const s of [-1,1]){const fr=new THREE.Group(),w=a*.78,t=.03;
+   for(const [dx,dy,sx,sy] of [[0,w/2,w,t],[0,-w/2,w,t],[w/2,0,t,w],[-w/2,0,t,w]]){const m=new THREE.Mesh(new THREE.PlaneGeometry(sx,sy),flat(AX[ax]));m.position.set(dx,dy,0);fr.add(m);}
+   fr.quaternion.setFromUnitVectors(new THREE.Vector3(0,0,1),n.clone().multiplyScalar(s));fr.position.copy(n.clone().multiplyScalar(s*(h+.004)));S.add(fr);}
+  const pIn=n.clone().multiplyScalar(-h),pOut=n.clone().multiplyScalar(h);
+  setaP(pIn.clone().sub(n.clone().multiplyScalar(Lin)),pIn,0x2EE6A0);   // entra pela parede de trás do par
+  setaP(pOut,pOut.clone().add(n.clone().multiplyScalar(Lout)),0x8CFFD2);} // sai pela da frente, maior
+ cam.fov=24;cam.updateProjectionMatrix();ver([6.9,5.1,4.8],[0,0,-0.08]);}
+
+r.render(S,cam);document.title='ok';
+</script></body></html>

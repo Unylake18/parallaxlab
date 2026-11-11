@@ -1,0 +1,424 @@
+Manim Community v0.21.0
+
+[ancora] B2-1 0.000
+[campo] B2 (−y, 2x): 120 setas, maior 0.420 u, menor 0.189 u (menor ÷ maior 0.45; alvo ≥ 0,40), maior ÷ passo = 0.84
+[11/10/26 20:05:17] INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:18] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\C{A}\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\4bb17ef675                        
+                             ff5470.tex                                        
+[11/10/26 20:05:20] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\C{B}\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\cc47ee7e38                        
+                             7535d8.tex                                        
+[11/10/26 20:05:21] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\h\special                        
+                             {dvisvgm:raw </g>} to                             
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\d3cd628110                        
+                             068462.tex                                        
+[11/10/26 20:05:23] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-1   3.40s (alvo   3.39s, atraso +0.01s) pega só duas partículas
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-1   8.60s (alvo   8.58s, atraso +0.02s) ligadas por um braço
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-1  10.07s (alvo  10.06s, atraso +0.01s) cada ponta do braço é carregada
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão] B2-1: '\\C{B}' a 0.0 px de um traço (alvo ≥ 6)
+[colisão-total] B2-1: 1 rótulos a menos de 6 px em 3 rótulos
+[ancora] B2-2 16.067
+[gatilho] B2-2   0.00s (alvo   0.06s, atraso -0.06s) repara só na parte vertical
+[11/10/26 20:05:24] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-2   2.67s (alvo   2.65s, atraso +0.01s) se a ponta da direita sobe
+[motor] B2-2: fluxo de 0.000 a 0.280 em 2.00 s (fator 0.140 de fluxo por s)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[braços] B2-2: o braço AB girou 0.534 rad em t = 0,28 (taxa média 1.907 rad/s; inicial 2)
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\w_{\C{AB}                        
+                             } \approx                                         
+                             \dfrac{\Qq(\xo+\h,\,\yo) -                        
+                             \Qq(\xo,\,\yo)}{\h}\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\1788ffcf61                        
+                             bcd6c1.tex                                        
+[11/10/26 20:05:26] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\w_{\C{AB}                        
+                             } = \dfrac{\partial                               
+                             \Qq}{\dx}\special{dvisvgm:                        
+                             raw </g>} to                                      
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\d110fa7318                        
+                             736871.tex                                        
+[11/10/26 20:05:27] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-2   9.67s (alvo   9.69s, atraso -0.02s) e com que rapidez
+[algebra] B2-2   25.73s glifos=25 cor=100% rt=7.8s '\\w_{\\C{AB}} \\approx \\dfrac{\\Qq(\\xo+\\h,\\,\\yo) - \\Qq(\\xo,\\,\\yo)}{\\h}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-2  17.47s (alvo  17.10s, atraso +0.37s) essa razão vira a derivada
+[11/10/26 20:05:28] INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:31] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-2  21.93s (alvo  21.91s, atraso +0.02s) essa é a velocidade angular
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:32] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] B2-2: 0 rótulos a menos de 6 px em 5 rótulos
+[ancora] B2-3 41.333
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\C{C}\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\95f5bdcf67                        
+                             071a33.tex                                        
+[11/10/26 20:05:34] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\k\special                        
+                             {dvisvgm:raw </g>} to                             
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\60a4eebaef                        
+                             14921f.tex                                        
+[gatilho] B2-3   0.53s (alvo   0.06s, atraso +0.47s) agora um braço vertical
+[11/10/26 20:05:35] INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:36] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-3   5.27s (alvo   5.24s, atraso +0.02s) o que importa é a parte horizontal
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:39] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Rightarro                        
+                             w\ \text{sinal }                                  
+                             -\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\69fdcbc64a                        
+                             aec6bc.tex                                        
+[11/10/26 20:05:40] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-3   8.60s (alvo   8.58s, atraso +0.02s) se a ponta de cima anda para a direita
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[algebra] B2-3   50.53s glifos=7 cor=100% rt=2.4s '\\Rightarrow\\ \\text{sinal } -'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:41] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\w_{\C{AC}                        
+                             } = -\dfrac{\partial                              
+                             \Pp}{\dy}\special{dvisvgm:                        
+                             raw </g>} to                                      
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\d711c3b2a9                        
+                             d0c5fc.tex                                        
+[11/10/26 20:05:45] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-3  17.47s (alvo  17.47s, atraso -0.00s) por isso a velocidade angular dele
+[algebra] B2-3   58.80s glifos=10 cor=100% rt=3.3s '\\w_{\\C{AC}} = -\\dfrac{\\partial \\Pp}{\\dy}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:46] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-3  23.40s (alvo  23.39s, atraso +0.01s) neste campo a ponta de cima vai para a esquerda
+[motor] B2-3: fluxo de 0.000 a 0.150 em 1.60 s (fator 0.094 de fluxo por s)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[braços] B2-3: o braço AC girou 0.151 rad em t = 0,15 (taxa média 1.008 rad/s; inicial 1)
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial \Pp}{\dy} = -1                              
+                             \;\Rightarrow\;                                   
+                             \w_{\C{AC}} = -(-1) =                             
+                             1\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\639b3dad1e                        
+                             301591.tex                                        
+[11/10/26 20:05:48] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-3  27.07s (alvo  27.10s, atraso -0.03s) menos com menos dá mais
+[algebra] B2-3   68.40s glifos=20 cor=100% rt=6.3s '\\dfrac{\\partial \\Pp}{\\dy} = -1 \\;\\Rightarrow\\; \\w_{\\C{AC}} = -(-1) = 1'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] B2-3: 0 rótulos a menos de 6 px em 6 rótulos
+[ancora] B2-4 75.200
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:49] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\V{2\                             
+                             \text{rad/s}}\special{dvis                        
+                             vgm:raw </g>} to                                  
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\5ebc187706                        
+                             807945.tex                                        
+[11/10/26 20:05:51] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\V{1\                             
+                             \text{rad/s}}\special{dvis                        
+                             vgm:raw </g>} to                                  
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\97422b1156                        
+                             a867da.tex                                        
+[11/10/26 20:05:52] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-4   3.40s (alvo   3.39s, atraso +0.01s) o horizontal gira a dois
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-4   6.33s (alvo   6.36s, atraso -0.02s) e o vertical a um só
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\w_{\C{AB}                        
+                             } =                                               
+                             \V{2}\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\5f45fc8b2e                        
+                             00081f.tex                                        
+[11/10/26 20:05:54] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\w_{\C{AC}                        
+                             } =                                               
+                             \V{1}\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\969ab6350d                        
+                             ae151a.tex                                        
+[algebra] B2-4   81.93s glifos=5 cor=100% rt=1.8s '\\w_{\\C{AB}} = \\V{2}'
+[algebra] B2-4   81.93s glifos=5 cor=100% rt=2.1s '\\w_{\\C{AC}} = \\V{1}'
+[11/10/26 20:05:56] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-4   8.87s (alvo   8.58s, atraso +0.29s) a cruz abre e fecha
+[motor] B2-4: fluxo de 0.000 a 0.500 em 2.50 s (fator 0.200 de fluxo por s)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[braços] B2-4: pontas em t = 0,5: H = (1.140; 1.378), V = (-0.689; 1.140) (alvo (1,140; 1,378) e (−0,689; 1,140))
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-4  11.93s (alvo  11.91s, atraso +0.02s) uma rodinha de pás não vira tesoura
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[motor] B2-4/5 rodinha a 1,5 rad/s (tempo de tela): 1.0000 s de fluxo por s de tela
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\w_{\text{                        
+                             \C{roda}}} = \dfrac{\V{2}                         
+                             + \V{1}}{2} =                                     
+                             \V{\dfrac{3}{2}}\special{d                        
+                             visvgm:raw </g>} to                               
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\e040683399                        
+                             6192a0.tex                                        
+[11/10/26 20:06:01] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-4  21.20s (alvo  21.17s, atraso +0.03s) na média dos dois braços
+[algebra] B2-4   96.40s glifos=15 cor=100% rt=4.8s '\\w_{\\text{\\C{roda}}} = \\dfrac{\\V{2} + \\V{1}}{2} = \\V{\\dfrac{3}{2}}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão] B2-4: '\\V{1\\ \\text{rad/s}}' a 0.0 px de um traço (alvo ≥ 6)
+[colisão] B2-4: '\\V{2\\ \\text{rad/s}}' a 0.0 px de um traço (alvo ≥ 6)
+[colisão-total] B2-4: 2 rótulos a menos de 6 px em 6 rótulos
+[estouro] B2-5 começou 0.73s depois do previsto (a cena se esticou)
+[ancora] B2-5 101.600
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:06:02] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\odot\,\kk                        
+                             \special{dvisvgm:raw </g>}                        
+                             to                                                
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\16cdf6d061                        
+                             4a6239.tex                                        
+[11/10/26 20:06:03] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\rot \F =                         
+                             \left(\dfrac{\partial                             
+                             \Qq}{\dx} -                                       
+                             \dfrac{\partial                                   
+                             \Pp}{\dy}\right)\kk =                             
+                             2\,\w\,\kk\special{dvisvgm                        
+                             :raw </g>} to                                     
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\8fb61af21a                        
+                             fd3312.tex                                        
+[gatilho] B2-5   0.53s (alvo   0.43s, atraso +0.10s) é daí que nasce o rotacional
+[algebra] B2-5  102.13s glifos=26 cor=100% rt=8.1s '\\rot \\F = \\left(\\dfrac{\\partial \\Qq}{\\dx} - \\dfrac{\\partial \\Pp}{\\dy}\\right)\\kk = 2\\,\\w\\,\\kk'
+[11/10/26 20:06:05] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-5  16.00s (alvo  15.99s, atraso +0.01s) um vetor perpendicular à folha
+[11/10/26 20:06:06] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F =                              
+                             (-\Y,\                                            
+                             2\X)\special{dvisvgm:raw                          
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\63ec3094a0                        
+                             9e10c0.tex                                        
+[11/10/26 20:06:07] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial \Qq}{\dx} = 2,\qquad                        
+                             \dfrac{\partial \Pp}{\dy}                         
+                             = -1\special{dvisvgm:raw                          
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\8ee31495e4                        
+                             debccd.tex                                        
+[11/10/26 20:06:08] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\rot \F =                         
+                             \bigl(2 - (-1)\bigr)\kk =                         
+                             \V{3}\,\kk\special{dvisvgm                        
+                             :raw </g>} to                                     
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\df11e83d53                        
+                             ebfb1d.tex                                        
+[11/10/26 20:06:09] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-5  22.27s (alvo  22.28s, atraso -0.02s) neste campo ele vale três
+[algebra] B2-5  123.87s glifos=10 cor=100% rt=3.3s '\\F = (-\\Y,\\ 2\\X)'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[algebra] B2-5  127.20s glifos=16 cor=100% rt=5.1s '\\dfrac{\\partial \\Qq}{\\dx} = 2,\\qquad \\dfrac{\\partial \\Pp}{\\dy} = -1'
+[11/10/26 20:06:10] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-5  32.27s (alvo  24.50s, atraso +7.76s) a rodinha gira a três meios
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão] B2-5: '\\odot\\,\\kk' a 0.0 px de um traço (alvo ≥ 6)
+[colisão-total] B2-5: 1 rótulos a menos de 6 px em 5 rótulos
+[estouro] B2-6 começou 5.87s depois do previsto (a cena se esticou)
+[ancora] B2-6 134.667
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[campo] B2-6 (−y, x): 70 setas, maior 0.521 u, menor 0.333 u (menor ÷ maior 0.64; alvo ≥ 0,40), maior ÷ passo = 0.84
+[11/10/26 20:06:11] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-6   3.73s (alvo   3.76s, atraso -0.03s) troca as coordenadas de lugar
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F =                              
+                             (-\Y,\                                            
+                             \X)\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\ed56e129bc                        
+                             e0e2c4.tex                                        
+[algebra] B2-6  138.40s glifos=9 cor=100% rt=3.0s '\\F = (-\\Y,\\ \\X)'
+[11/10/26 20:06:12] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-6  11.53s (alvo  11.54s, atraso -0.01s) a primeira derivada dá um
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial \Qq}{\dx} = 1,\qquad                        
+                             \dfrac{\partial \Pp}{\dy}                         
+                             = -1\special{dvisvgm:raw                          
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\1000be4283                        
+                             bbe933.tex                                        
+[algebra] B2-6  146.20s glifos=16 cor=100% rt=5.1s '\\dfrac{\\partial \\Qq}{\\dx} = 1,\\qquad \\dfrac{\\partial \\Pp}{\\dy} = -1'
+[11/10/26 20:06:13] INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:06:14] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-6  20.07s (alvo  20.06s, atraso +0.01s) o rotacional vale dois
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\rot \F =                         
+                             \bigl(1 - (-1)\bigr)\kk =                         
+                             \V{2}\,\kk\special{dvisvgm                        
+                             :raw </g>} to                                     
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\7789d7ed39                        
+                             884c85.tex                                        
+[algebra] B2-6  154.73s glifos=20 cor=100% rt=6.3s '\\rot \\F = \\bigl(1 - (-1)\\bigr)\\kk = \\V{2}\\,\\kk'
+[11/10/26 20:06:15] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-6  26.33s (alvo  22.65s, atraso +3.68s) a rodinha gira a um radiano
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\w =                              
+                             \V{1}\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\cf1a6b92e8                        
+                             2ebc05.tex                                        
+[algebra] B2-6  161.00s glifos=3 cor=100% rt=1.2s '\\w = \\V{1}'
+[11/10/26 20:06:16] INFO     Caching disabled.             cairo_renderer.py:81
+[motor] B2-6: uma volta (t = 2π) em 3.00 s (fator 2.094)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:06:19] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\V{2\omega                        
+                             }\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB2\Tex\8107ac1490                        
+                             df7dab.tex                                        
+[11/10/26 20:06:22] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B2-6  37.07s (alvo  37.10s, atraso -0.03s) vorticidade
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] B2-6: 0 rótulos a menos de 6 px em 7 rótulos
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[cor-bloco] PB2 fração colorida (glifos de caneta) = 100% em 14 MathTex
+[flash-total] PB2 0
+[estilo] PB2 traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PB2 brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 180.87s (2713 quadros)
+                    INFO     Rendered PB2                          scene.py:290
+                             Played 74 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

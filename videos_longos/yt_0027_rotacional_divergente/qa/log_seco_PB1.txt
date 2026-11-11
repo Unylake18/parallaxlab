@@ -1,0 +1,128 @@
+Manim Community v0.21.0
+
+[ancora] B1-1a 0.000
+[campo] B1 (−y, 2x) em contexto (B1-1a e B1-1): 120 setas, maior 0.420 u, menor 0.189 u (menor ÷ maior 0.45; alvo ≥ 0,40), maior ÷ passo = 0.84
+[11/11/26 09:56:00] INFO     Caching disabled.             cairo_renderer.py:81
+[pecas] B1-1a: F(0,5; 1,3) = (-1.30, 1.00): P < 0 (horizontal para a esquerda), Q > 0
+[11/11/26 09:56:01] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-1a   1.53s (alvo   1.52s, atraso +0.01s) nome às peças
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 09:56:02] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-1a   6.00s (alvo   5.98s, atraso +0.02s) região aberta
+[algebra] B1-1a    6.00s glifos=18 cor=100% rt=5.7s '\\Omega \\subset \\mathbb{R}^2 \\ \\text{aberto}, \\qquad \\F : \\Omega \\to \\mathbb{R}^2'
+[11/11/26 09:56:04] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 09:56:08] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-1a  16.73s (alvo  16.72s, atraso +0.01s) duas partes
+[11/11/26 09:56:11] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-1a  17.67s (alvo  17.62s, atraso +0.05s) a parte horizontal
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 09:56:12] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-1a  19.87s (alvo  19.86s, atraso +0.01s) e a vertical de q
+[11/11/26 09:56:13] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-1a  21.33s (alvo  21.34s, atraso -0.01s) e as duas mudam de ponto para ponto
+[algebra] B1-1a   21.33s glifos=23 cor=100% rt=7.2s '\\F(\\X,\\Y) = \\big(\\Pp(\\X,\\Y),\\ \\Qq(\\X,\\Y)\\big)'
+[11/11/26 09:56:14] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-1a  28.53s (alvo  26.48s, atraso +2.05s) neste campo
+[algebra] B1-1a   28.53s glifos=10 cor=100% rt=3.3s '\\F = (-\\Y,\\ 2\\X)'
+[11/11/26 09:56:19] INFO     Caching disabled.             cairo_renderer.py:81
+[algebra] B1-1a   31.87s glifos=9 cor=100% rt=3.0s '\\Pp = -\\Y, \\qquad \\Qq = 2\\X'
+[11/11/26 09:56:22] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 09:56:24] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 09:56:25] INFO     Caching disabled.             cairo_renderer.py:81
+[ancora] B1-1 37.600
+[11/11/26 09:56:26] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 09:56:27] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-1   1.80s (alvo   1.80s, atraso +0.00s) a gente vai ler o campo como a velocidade
+[11/11/26 09:56:28] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[motor] B1-1: uma volta da elipse (t = 4.443) em 18.97 s (fator 0.234)
+[11/11/26 09:56:29] INFO     Caching disabled.             cairo_renderer.py:81
+[fluxo] B1-1: o ponto volta a (1.6000, 0.0000) depois de uma volta (partiu de (1.6, 0.0))
+[algebra] B1-1   59.67s glifos=10 cor=100% rt=3.3s '\\F = (-\\Y,\\ 2\\X)'
+[11/11/26 09:56:43] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 09:56:45] INFO     Caching disabled.             cairo_renderer.py:81
+[ancora] B1-2 63.600
+[11/11/26 09:56:46] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-2   0.53s (alvo   0.48s, atraso +0.05s) pega uma lupa
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-2   1.40s (alvo   1.42s, atraso -0.02s) chega bem pertinho
+[11/11/26 09:56:47] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-2   4.13s (alvo   4.14s, atraso -0.01s) as setas ficam quase todas iguais
+[11/11/26 09:56:49] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-2   6.47s (alvo   6.48s, atraso -0.01s) quase se fossem
+[11/11/26 09:56:50] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 09:56:51] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-2  16.80s (alvo  16.82s, atraso -0.02s) pega uma seta e a vizinha
+[11/11/26 09:56:55] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-2  19.80s (alvo  19.80s, atraso +0.00s) que a gente chama de agá
+[11/11/26 09:56:56] INFO     Caching disabled.             cairo_renderer.py:81
+[lupa] B1-2: F1 = (-0.562, 1.375), F2 = (-0.562, 1.825), ΔF = (0.000, 0.450) (vertical: só o Q muda com x)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-2  21.33s (alvo  21.32s, atraso +0.01s) a diferença entre as duas
+[11/11/26 09:56:57] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-2  22.93s (alvo  22.90s, atraso +0.03s) essa setinha coral
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 09:56:58] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-2  24.13s (alvo  24.14s, atraso -0.01s) essa diferença dividida
+[algebra] B1-2   87.73s glifos=20 cor=100% rt=4.6s '\\dfrac{\\C{\\Delta\\vec F}}{\\h} \\quad\\xrightarrow{\\ \\h\\,\\to\\,0\\ }\\quad \\dfrac{\\partial \\F}{\\dx}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-2  28.80s (alvo  28.82s, atraso -0.02s) tem nome derivada parcial
+[algebra] B1-2   92.40s glifos=20 cor=100% rt=6.3s '\\dfrac{\\partial \\F}{\\dx} = \\Big(\\dfrac{\\partial \\Pp}{\\dx},\\ \\dfrac{\\partial \\Qq}{\\dx}\\Big)'
+[11/11/26 09:57:00] INFO     Caching disabled.             cairo_renderer.py:81
+[estouro] B1-3 começou 1.73s depois do previsto (a cena se esticou)
+[ancora] B1-3 98.667
+[campo] B1-3 GIRA: 61 setas, maior 0.714 u, menor 0.438 u (menor ÷ maior 0.61; alvo ≥ 0,40), maior ÷ passo = 0.84
+[campo] B1-3 MUDA DE ÁREA: 61 setas, maior 0.714 u, menor 0.438 u (menor ÷ maior 0.61; alvo ≥ 0,40), maior ÷ passo = 0.84
+[campo] B1-3 DEFORMA: 61 setas, maior 0.714 u, menor 0.438 u (menor ÷ maior 0.61; alvo ≥ 0,40), maior ÷ passo = 0.84
+[11/11/26 09:57:04] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-3   7.40s (alvo   7.38s, atraso +0.02s) pode girar
+[11/11/26 09:57:08] INFO     Caching disabled.             cairo_renderer.py:81
+[motor] B1-3: fluxo de 0.000 a 0.600 em 0.25 s (fator 2.400 de fluxo por s)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[malha] B1-3 GIRA: área 1.4400 → 1.4400
+[gatilho] B1-3   8.27s (alvo   8.26s, atraso +0.01s) pode crescer ou encolher
+[11/11/26 09:57:09] INFO     Caching disabled.             cairo_renderer.py:81
+[motor] B1-3: fluxo de 0.000 a 0.372 em 1.60 s (fator 0.232 de fluxo por s)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[malha] B1-3 MUDADEÁREA: área 1.4400 → 3.0276
+[11/11/26 09:57:10] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-3  10.93s (alvo  10.96s, atraso -0.03s) e pode se deformar
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[motor] B1-3: fluxo de 0.000 a 0.405 em 1.60 s (fator 0.253 de fluxo por s)
+[11/11/26 09:57:11] INFO     Caching disabled.             cairo_renderer.py:81
+[malha] B1-3 DEFORMA: área 1.4400 → 1.4400
+[11/11/26 09:57:12] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-3  21.47s (alvo  21.46s, atraso +0.01s) o giro é medido pelo rotacional
+[11/11/26 09:57:18] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 09:57:19] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-3  24.73s (alvo  24.76s, atraso -0.03s) pelo divergente
+[11/11/26 09:57:23] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 09:57:24] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B1-3  25.93s (alvo  25.90s, atraso +0.03s) a terceira a deformação
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 09:57:25] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 09:57:30] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 09:57:31] INFO     Caching disabled.             cairo_renderer.py:81
+[deriva] PB1 +0.00s além do fim da última âncora
+[cor-bloco] PB1 fração colorida (glifos de caneta) = 100% em 7 MathTex
+[flash-total] PB1 0
+[estilo] PB1 traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PB1 brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 129.33s (1940 quadros)
+[sync] plano gravado: 29 trechos
+[11/11/26 09:57:33] INFO     Rendered PB1                          scene.py:290
+                             Played 65 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

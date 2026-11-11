@@ -1,0 +1,750 @@
+Manim Community v0.21.0
+
+[ancora] B3-1 0.000
+[campo] B3 vórtice: 112 setas, maior 0.348 u, menor 0.227 u (menor ÷ maior 0.65; alvo ≥ 0,40), maior ÷ passo = 0.70
+[11/11/26 10:45:19] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:45:21] INFO     Animation 0 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00000.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:45:23] INFO     Animation 1 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00001.mp4'                          
+[gatilho] B3-1   3.47s (alvo   3.50s, atraso -0.03s) o mesmo campo de giro
+[sobrepos-chk] B3-1 «o mesmo campo de giro»: 0 textos, 112 setas visíveis, 0 ocorrências
+[sync] PB3 trecho 1 (B3-1 → gat repara no que isso faz com os vizinhos): pede 4.80s, cabe 4.72s → caneta × 0.98
+[algebra] B3-1    3.47s glifos=15 cor=100% rt=4.7s '\\F = \\dfrac{(-\\Y,\\ \\X)}{\\X^2+\\Y^2}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:45:28] INFO     Animation 2 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00002.mp4'                          
+[gatilho] B3-1   8.20s (alvo   8.24s, atraso -0.04s) repara no que isso faz com os vizinhos
+[sobrepos-chk] B3-1 «repara no que isso faz com os vizinhos»: 1 textos, 112 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:45:29] INFO     Animation 3 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00003.mp4'                          
+[braços] B3 radial: -0.3288 rad/s no início (∓1/r² em r = 1,8: -0.3086)
+[braços] B3 tangencial: +0.2905 rad/s no início (∓1/r² em r = 1,8: +0.3086)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:45:30] INFO     Animation 4 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00004.mp4'                          
+[gatilho] B3-1  10.27s (alvo  10.24s, atraso +0.03s) pega o braço que aponta para fora
+[sobrepos-chk] B3-1 «pega o braço que aponta para fora»: 1 textos, 100 setas visíveis, 0 ocorrências
+[motor] B3-1: fluxo de 0.000 a 1.070 em 3.00 s (fator 0.357 de fluxo por s)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:45:33] INFO     Animation 5 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00005.mp4'                          
+[braços] B3: centro da cruz andou 0.330 rad em t = 1,07 (alvo 0,33)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:45:39] INFO     Animation 6 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00006.mp4'                          
+[gatilho] B3-1  19.00s (alvo  19.00s, atraso +0.00s) então esse braço tomba
+[sobrepos-chk] B3-1 «então esse braço tomba»: 1 textos, 98 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 7 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00007.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:45:40] INFO     Animation 8 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00008.mp4'                          
+[sobrepos-chk] B3-1 fim: 1 textos, 98 setas visíveis, 0 ocorrências
+[11/11/26 10:45:41] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 9 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00009.mp4'                          
+[ancora] B3-2 21.667
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:45:44] INFO     Animation 10 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00010.mp4'                          
+[gatilho] B3-2   4.20s (alvo   4.22s, atraso -0.02s) gira no sentido anti-horário
+[sobrepos-chk] B3-2 «gira no sentido anti-horário»: 1 textos, 98 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:45:45] INFO     Animation 11 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00011.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:45:46] INFO     Animation 12 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00012.mp4'                          
+[gatilho] B3-2   6.07s (alvo   6.04s, atraso +0.03s) e os dois giram exatamente na mesma rapidez
+[sobrepos-chk] B3-2 «e os dois giram exatamente na mesma rapidez»: 1 textos, 98 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 13 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00013.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:45:48] INFO     Animation 14 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00014.mp4'                          
+[hook] B3-2: rodinha andou pela órbita sem girar (orientação 0.00°)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:45:51] INFO     Animation 15 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00015.mp4'                          
+[gatilho] B3-2  13.33s (alvo  13.30s, atraso +0.03s) fazendo as derivadas
+[sobrepos-chk] B3-2 «fazendo as derivadas»: 1 textos, 101 setas visíveis, 0 ocorrências
+[algebra] B3-2   35.00s glifos=27 cor=100% rt=5.9s '\\dfrac{\\partial \\Qq}{\\dx} = \\dfrac{(\\X^2+\\Y^2) - \\X\\cdot 2\\X}{(\\X^2+\\Y^2)^2}'
+[algebra] B3-2   35.00s glifos=28 cor=100% rt=6.4s '\\dfrac{\\partial \\Pp}{\\dy} = \\dfrac{-(\\X^2+\\Y^2) + \\Y\\cdot 2\\Y}{(\\X^2+\\Y^2)^2}'
+[11/11/26 10:45:52] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:45:58] INFO     Animation 16 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00016.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:45:59] INFO     Animation 17 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00017.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:00] INFO     Animation 18 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00018.mp4'                          
+[gatilho] B3-2  22.13s (alvo  22.12s, atraso +0.01s) são iguais
+[sobrepos-chk] B3-2 «são iguais»: 3 textos, 101 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:01] INFO     Animation 19 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00019.mp4'                          
+[gatilho] B3-2  22.93s (alvo  22.98s, atraso -0.05s) e a diferença é zero
+[sobrepos-chk] B3-2 «e a diferença é zero»: 1 textos, 101 setas visíveis, 0 ocorrências
+[algebra] B3-2   44.60s glifos=8 cor=100% rt=2.7s '\\rot \\F = \\vec 0'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:04] INFO     Animation 20 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00020.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:06] INFO     Animation 21 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00021.mp4'                          
+[gatilho] B3-2  28.80s (alvo  28.80s, atraso +0.00s) menos na origem
+[sobrepos-chk] B3-2 «menos na origem»: 2 textos, 101 setas visíveis, 0 ocorrências
+[algebra] B3-2   50.47s glifos=12 cor=100% rt=3.9s '\\text{em } \\mathbb{R}^2 - \\{(0,0)\\}'
+[11/11/26 10:46:07] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:11] INFO     Animation 22 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00022.mp4'                          
+[sobrepos-chk] B3-2 fim: 3 textos, 101 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:12] INFO     Animation 23 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00023.mp4'                          
+[ancora] B3-3 54.933
+[campo] B3-3 esquerda (−y, x): 70 setas, maior 0.521 u, menor 0.333 u (menor ÷ maior 0.64; alvo ≥ 0,40), maior ÷ passo = 0.84
+[campo] B3-3 direita (−y, x)/r²: 70 setas, maior 0.333 u, menor 0.258 u (menor ÷ maior 0.77; alvo ≥ 0,40), maior ÷ passo = 0.54
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:15] INFO     Animation 24 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00024.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:17] INFO     Animation 25 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00025.mp4'                          
+[gatilho] B3-3   2.80s (alvo   2.78s, atraso +0.02s) na circunferência os dois campos
+[sobrepos-chk] B3-3 «na circunferência os dois campos»: 0 textos, 140 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 26 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00026.mp4'                          
+[hook] B3-3 E: |F| em r = 1: 1.000 (48 px); em r = 1,5: 1.500 (72 px)
+[hook] B3-3 D: |F| em r = 1: 1.000 (48 px); em r = 1,5: 0.667 (32 px)
+[11/11/26 10:46:18] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:23] INFO     Animation 27 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00027.mp4'                          
+[gatilho] B3-3  12.27s (alvo  12.28s, atraso -0.01s) olha a seta logo ali fora
+[sobrepos-chk] B3-3 «olha a seta logo ali fora»: 0 textos, 140 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:24] INFO     Animation 28 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00028.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:26] INFO     Animation 29 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00029.mp4'                          
+[gatilho] B3-3  15.00s (alvo  14.98s, atraso +0.02s) a seta de fora é mais forte
+[sobrepos-chk] B3-3 «a seta de fora é mais forte»: 0 textos, 132 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:27] INFO     Animation 30 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00030.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:28] INFO     Animation 31 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00031.mp4'                          
+[gatilho] B3-3  17.47s (alvo  17.48s, atraso -0.01s) ela é mais fraca
+[sobrepos-chk] B3-3 «ela é mais fraca»: 1 textos, 132 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:29] INFO     Animation 32 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00032.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:30] INFO     Animation 33 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00033.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:36] INFO     Animation 34 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00034.mp4'                          
+[gatilho] B3-3  24.07s (alvo  24.04s, atraso +0.03s) se chama irrotacional
+[sobrepos-chk] B3-3 «se chama irrotacional»: 3 textos, 132 setas visíveis, 0 ocorrências
+[algebra] B3-3   79.00s glifos=24 cor=100% rt=7.5s '\\F\\ \\text{irrotacional} \\iff \\rot\\F = \\vec 0'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:45] INFO     Animation 35 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00035.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:49] INFO     Animation 36 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00036.mp4'                          
+[sobrepos-chk] B3-3 fim: 4 textos, 132 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:50] INFO     Animation 37 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00037.mp4'                          
+[ancora] B3-4 91.067
+[campo] B3-4 tornado: 110 setas, maior 0.504 u, menor 0.302 u (menor ÷ maior 0.60; alvo ≥ 0,40), maior ÷ passo = 0.84
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:54] INFO     Animation 38 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00038.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 39 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00039.mp4'                          
+[gatilho] B3-4   1.13s (alvo   1.10s, atraso +0.03s) cola os dois redemoinhos
+[sobrepos-chk] B3-4 «cola os dois redemoinhos»: 0 textos, 110 setas visíveis, 0 ocorrências
+[sync] PB3 trecho 19 (B3-4 → gat encaixa certinho): pede 5.07s, cabe 4.82s → caneta × 0.95
+[algebra] B3-4   92.20s glifos=16 cor=100% rt=4.8s '\\text{dentro: }\\ \\F = (-\\Y,\\ \\X)'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:46:58] INFO     Animation 40 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00040.mp4'                          
+[gatilho] B3-4   6.00s (alvo   6.00s, atraso +0.00s) encaixa certinho
+[sobrepos-chk] B3-4 «encaixa certinho»: 1 textos, 110 setas visíveis, 0 ocorrências
+[gatilho] B3-4   9.67s (alvo   9.64s, atraso +0.03s) o modelo clássico de um tornado (agendado)
+[algebra] B3-4   97.07s glifos=20 cor=100% rt=6.3s '\\text{fora: }\\ \\F = \\dfrac{(-\\Y,\\ \\X)}{\\X^2+\\Y^2}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:03] INFO     Animation 41 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00041.mp4'                          
+[motor] B3-4 tornado (rodinhas): 0.6000 s de fluxo por s de tela
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:04] INFO     Animation 42 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00042.mp4'                          
+[gatilho] B3-4  13.00s (alvo  12.98s, atraso +0.02s) o miolo gira como um corpo rígido
+[sobrepos-chk] B3-4 «o miolo gira como um corpo rígido»: 4 textos, 110 setas visíveis, 0 ocorrências
+[sync] PB3 trecho 21 (B3-4 → gat em volta dele o ar dá voltas): pede 3.00s, cabe 2.27s → caneta × 0.76
+[algebra] B3-4  104.07s glifos=9 cor=100% rt=2.3s '\\rot\\F = \\V{2}\\,\\kk'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:07] INFO     Animation 43 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00043.mp4'                          
+[gatilho] B3-4  15.27s (alvo  15.32s, atraso -0.05s) em volta dele o ar dá voltas
+[sobrepos-chk] B3-4 «em volta dele o ar dá voltas»: 5 textos, 110 setas visíveis, 0 ocorrências
+[algebra] B3-4  106.33s glifos=8 cor=100% rt=2.7s '\\rot\\F = \\vec 0'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:10] INFO     Animation 44 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00044.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 45 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00045.mp4'                          
+[gatilho] B3-4  18.07s (alvo  18.04s, atraso +0.03s) uma rodinha no miolo gira
+[sobrepos-chk] B3-4 «uma rodinha no miolo gira»: 6 textos, 110 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:11] INFO     Animation 46 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00046.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:24] INFO     Animation 47 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00047.mp4'                          
+[sobrepos-chk] B3-4 fim: 7 textos, 110 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:25] INFO     Animation 48 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00048.mp4'                          
+[ancora] B3-5 121.467
+[campo] B3-5 rio: 55 setas, maior 1.150 u, menor 0.708 u (menor ÷ maior 0.62; alvo ≥ 0,40), maior ÷ passo = 0.77
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:27] INFO     Animation 49 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00049.mp4'                          
+[gatilho] B3-5   1.87s (alvo   1.88s, atraso -0.01s) olha um rio
+[sobrepos-chk] B3-5 «olha um rio»: 7 textos, 110 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:31] INFO     Animation 50 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00050.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:32] INFO     Animation 51 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00051.mp4'                          
+[gatilho] B3-5   5.20s (alvo   5.18s, atraso +0.02s) mais rápida no meio
+[sobrepos-chk] B3-5 «mais rápida no meio»: 0 textos, 55 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 52 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00052.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:35] INFO     Animation 53 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00053.mp4'                          
+[gatilho] B3-5  13.07s (alvo  13.10s, atraso -0.03s) esse rio tem giro ou não
+[sobrepos-chk] B3-5 «esse rio tem giro ou não»: 0 textos, 55 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 54 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00054.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:37] INFO     Animation 55 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00055.mp4'                          
+[gatilho] B3-5  16.07s (alvo  16.06s, atraso +0.01s) espalha rodinhas presas
+[sobrepos-chk] B3-5 «espalha rodinhas presas»: 1 textos, 55 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 56 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00056.mp4'                          
+[motor] B3-5/6 rodinhas do rio (×3: câmera rápida, y = 1,8 → 0,6 rad/s na tela): 3.0000 s de fluxo por s de tela
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:38] INFO     Animation 57 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00057.mp4'                          
+[sobrepos-chk] B3-5 fim: 0 textos, 49 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:39] INFO     Animation 58 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00058.mp4'                          
+[ancora] B3-6 140.600
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:42] INFO     Animation 59 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00059.mp4'                          
+[gatilho] B3-6   8.13s (alvo   8.12s, atraso +0.01s) gira no sentido anti-horário
+[sobrepos-chk] B3-6 «gira no sentido anti-horário»: 0 textos, 49 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:43] INFO     Animation 60 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00060.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:45] INFO     Animation 61 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00061.mp4'                          
+[gatilho] B3-6  12.00s (alvo  12.00s, atraso +0.00s) e ela gira no horário
+[sobrepos-chk] B3-6 «e ela gira no horário»: 0 textos, 49 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 62 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00062.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:48] INFO     Animation 63 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00063.mp4'                          
+[gatilho] B3-6  18.27s (alvo  18.28s, atraso -0.01s) a conta confirma
+[sobrepos-chk] B3-6 «a conta confirma»: 0 textos, 49 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 64 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00064.mp4'                          
+[algebra] B3-6  159.47s glifos=13 cor=100% rt=4.2s '\\F = \\left(1 - \\dfrac{\\Y^2}{9},\\ 0\\right)'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:51] INFO     Animation 65 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00065.mp4'                          
+[algebra] B3-6  163.67s glifos=21 cor=100% rt=6.6s '\\rot \\F = -\\dfrac{\\partial \\Pp}{\\dy}\\,\\kk = \\V{\\dfrac{2\\Y}{9}}\\,\\kk'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:55] INFO     Animation 66 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00066.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:56] INFO     Animation 67 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00067.mp4'                          
+[rio] rodinha em y = +1.8: ½ rot = +0.2000 rad/s (fluxo); na tela ×3 = +0.600 rad/s
+[rio] rodinha em y = +0.0: ½ rot = +0.0000 rad/s (fluxo); na tela ×3 = +0.000 rad/s
+[rio] rodinha em y = -1.8: ½ rot = -0.2000 rad/s (fluxo); na tela ×3 = -0.600 rad/s
+[sobrepos-chk] B3-6 fim: 4 textos, 49 setas visíveis, 0 ocorrências
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:47:57] INFO     Animation 68 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00068.mp4'                          
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 69 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0027_rotacional_divergent                         
+                             e\media_PB3\videos\cena\5                         
+                             40p15\partial_movie_files                         
+                             \PB3\uncached_00069.mp4'                          
+[deriva] PB3 +0.00s além do fim da última âncora
+[cor-bloco] PB3 fração colorida (glifos de caneta) = 100% em 12 MathTex
+[flash-total] PB3 0
+[estilo] PB3 traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PB3 brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 173.00s (2595 quadros)
+                    INFO     Combining to Movie file.  scene_file_writer.py:952
+[11/11/26 10:47:58] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_PB3\videos\ce                          
+                             na\540p15\PB3.mp4'                                
+                                                                               
+                    INFO     Rendered PB3                          scene.py:290
+                             Played 70 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

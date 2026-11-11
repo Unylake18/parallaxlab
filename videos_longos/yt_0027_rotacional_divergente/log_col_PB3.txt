@@ -1,0 +1,314 @@
+Manim Community v0.21.0
+
+[ancora] B3-1 0.000
+[campo] B3 vórtice: 112 setas, maior 0.348 u, menor 0.227 u (menor ÷ maior 0.65; alvo ≥ 0,40), maior ÷ passo = 0.70
+[11/10/26 20:05:17] INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:18] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F =                              
+                             \dfrac{(-\Y,\                                     
+                             \X)}{\X^2+\Y^2}\special{dv                        
+                             isvgm:raw </g>} to                                
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB3\Tex\a58a83b816                        
+                             976857.tex                                        
+[11/10/26 20:05:20] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-1   1.93s (alvo   1.91s, atraso +0.02s) o mesmo campo de giro
+[algebra] B3-1    1.93s glifos=15 cor=100% rt=4.8s '\\F = \\dfrac{(-\\Y,\\ \\X)}{\\X^2+\\Y^2}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-1   7.47s (alvo   7.47s, atraso -0.00s) repara no que isso faz com os vizinhos
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[braços] B3 radial: -0.3288 rad/s no início (∓1/r² em r = 1,8: -0.3086)
+[braços] B3 tangencial: +0.2905 rad/s no início (∓1/r² em r = 1,8: +0.3086)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-1  10.40s (alvo  10.43s, atraso -0.03s) pega o braço que aponta para fora
+[motor] B3-1: fluxo de 0.000 a 1.070 em 3.00 s (fator 0.357 de fluxo por s)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[braços] B3: centro da cruz andou 0.330 rad em t = 1,07 (alvo 0,33)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-1  22.27s (alvo  22.28s, atraso -0.02s) então esse braço tomba
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] B3-1: 0 rótulos a menos de 6 px em 1 rótulos
+[ancora] B3-2 25.333
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-2   4.87s (alvo   4.88s, atraso -0.01s) gira no sentido anti-horário
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:21] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-2   6.73s (alvo   6.73s, atraso +0.01s) e os dois giram exatamente na mesma rapidez
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[hook] B3-2: rodinha andou pela órbita sem girar (orientação 0.00°)
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial \Qq}{\dx} =                                 
+                             \dfrac{(\X^2+\Y^2) -                              
+                             \X\cdot                                           
+                             2\X}{(\X^2+\Y^2)^2}\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB3\Tex\bcf3fd473d                        
+                             6e3eed.tex                                        
+[11/10/26 20:05:23] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial \Qq}{\dx} =                                 
+                             \dfrac{(\X^2+\Y^2) -                              
+                             \X\cdot                                           
+                             2\X}{(\X^2+\Y^2)^2} =                             
+                             \dfrac{\Y^2 -                                     
+                             \X^2}{(\X^2+\Y^2)^2}\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB3\Tex\43ac38575e                        
+                             fc10d8.tex                                        
+[11/10/26 20:05:25] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial \Pp}{\dy} =                                 
+                             \dfrac{-(\X^2+\Y^2) +                             
+                             \Y\cdot                                           
+                             2\Y}{(\X^2+\Y^2)^2}\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB3\Tex\58bd7be4ba                        
+                             8cb194.tex                                        
+[11/10/26 20:05:26] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial \Pp}{\dy} =                                 
+                             \dfrac{-(\X^2+\Y^2) +                             
+                             \Y\cdot                                           
+                             2\Y}{(\X^2+\Y^2)^2} =                             
+                             \dfrac{\Y^2 -                                     
+                             \X^2}{(\X^2+\Y^2)^2}\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB3\Tex\7b02d6ce37                        
+                             6473ae.tex                                        
+[11/10/26 20:05:28] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-2  10.80s (alvo  10.80s, atraso -0.00s) fazendo as derivadas
+[algebra] B3-2   36.13s glifos=27 cor=100% rt=5.9s '\\dfrac{\\partial \\Qq}{\\dx} = \\dfrac{(\\X^2+\\Y^2) - \\X\\cdot 2\\X}{(\\X^2+\\Y^2)^2}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:29] INFO     Caching disabled.             cairo_renderer.py:81
+[algebra] B3-2   43.00s glifos=28 cor=100% rt=6.1s '\\dfrac{\\partial \\Pp}{\\dy} = \\dfrac{-(\\X^2+\\Y^2) + \\Y\\cdot 2\\Y}{(\\X^2+\\Y^2)^2}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:30] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\rot \F =                         
+                             \vec 0\special{dvisvgm:raw                        
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB3\Tex\ea5b1756c8                        
+                             77cd6b.tex                                        
+[11/10/26 20:05:32] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{em }                        
+                             \mathbb{R}^2 -                                    
+                             \{(0,0)\}\special{dvisvgm:                        
+                             raw </g>} to                                      
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB3\Tex\996652a86b                        
+                             30dfac.tex                                        
+[gatilho] B3-2  25.53s (alvo  15.24s, atraso +10.29s) e a diferença é zero
+[algebra] B3-2   50.87s glifos=8 cor=100% rt=2.7s '\\rot \\F = \\vec 0'
+[11/10/26 20:05:34] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-2  28.20s (alvo  18.21s, atraso +9.99s) menos na origem
+[algebra] B3-2   53.53s glifos=12 cor=100% rt=3.9s '\\text{em } \\mathbb{R}^2 - \\{(0,0)\\}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] B3-2: 0 rótulos a menos de 6 px em 3 rótulos
+[estouro] B3-3 começou 10.13s depois do previsto (a cena se esticou)
+[ancora] B3-3 57.400
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[campo] B3-3 esquerda (−y, x): 70 setas, maior 0.521 u, menor 0.333 u (menor ÷ maior 0.64; alvo ≥ 0,40), maior ÷ passo = 0.84
+[campo] B3-3 direita (−y, x)/r²: 70 setas, maior 0.333 u, menor 0.258 u (menor ÷ maior 0.77; alvo ≥ 0,40), maior ÷ passo = 0.54
+[11/10/26 20:05:35] INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:36] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-3   3.40s (alvo   3.39s, atraso +0.01s) na circunferência os dois campos
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[hook] B3-3 seta do anel r = 1,5 no ângulo 0.000: esquerda 38.0 px × direita 28.0 px
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-3  15.27s (alvo  15.24s, atraso +0.02s) a seta de fora é mais forte
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-3  18.60s (alvo  18.58s, atraso +0.02s) ela é mais fraca
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F\                               
+                             \text{irrotacional} \iff                          
+                             \rot\F = \vec                                     
+                             0\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB3\Tex\9a0db2f495                        
+                             c09250.tex                                        
+[11/10/26 20:05:38] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-3  26.33s (alvo  26.36s, atraso -0.02s) se chama irrotacional
+[algebra] B3-3   83.73s glifos=24 cor=100% rt=7.5s '\\F\\ \\text{irrotacional} \\iff \\rot\\F = \\vec 0'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] B3-3: 0 rótulos a menos de 6 px em 1 rótulos
+[estouro] B3-4 começou 3.67s depois do previsto (a cena se esticou)
+[ancora] B3-4 91.200
+[11/10/26 20:05:39] INFO     Caching disabled.             cairo_renderer.py:81
+[campo] B3-4 tornado: 110 setas, maior 0.504 u, menor 0.302 u (menor ÷ maior 0.60; alvo ≥ 0,40), maior ÷ passo = 0.84
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-4   1.53s (alvo   1.54s, atraso -0.01s) cola os dois redemoinhos
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:40] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-4   7.07s (alvo   7.10s, atraso -0.03s) encaixa certinho
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:42] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-4  10.80s (alvo  10.80s, atraso -0.00s) o modelo clássico de um tornado
+[11/10/26 20:05:43] INFO     Caching disabled.             cairo_renderer.py:81
+[motor] B3-4 tornado (rodinhas): 0.6000 s de fluxo por s de tela
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-4  13.00s (alvo  13.02s, atraso -0.02s) o miolo gira como um corpo rígido
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{dent                        
+                             ro: }\ \F = (-\Y,\                                
+                             \X)\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB3\Tex\e8b68cd1ba                        
+                             91a8a0.tex                                        
+[algebra] B3-4  104.20s glifos=16 cor=100% rt=5.1s '\\text{dentro: }\\ \\F = (-\\Y,\\ \\X)'
+[11/10/26 20:05:44] INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:45] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\rot\F =                          
+                             \V{2}\,\kk\special{dvisvgm                        
+                             :raw </g>} to                                     
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB3\Tex\c251b8a774                        
+                             1c5d43.tex                                        
+[algebra] B3-4  109.27s glifos=9 cor=100% rt=3.0s '\\rot\\F = \\V{2}\\,\\kk'
+[11/10/26 20:05:47] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-4  21.07s (alvo  15.99s, atraso +5.08s) em volta dele o ar dá voltas
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{fora                        
+                             : }\ \F = \dfrac{(-\Y,\                           
+                             \X)}{\X^2+\Y^2}\special{dv                        
+                             isvgm:raw </g>} to                                
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB3\Tex\ca53885f62                        
+                             813326.tex                                        
+[algebra] B3-4  112.27s glifos=20 cor=100% rt=6.3s '\\text{fora: }\\ \\F = \\dfrac{(-\\Y,\\ \\X)}{\\X^2+\\Y^2}'
+[11/10/26 20:05:49] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\rot\F =                          
+                             \vec 0\special{dvisvgm:raw                        
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB3\Tex\a69e65ddeb                        
+                             9c43cc.tex                                        
+[algebra] B3-4  118.53s glifos=8 cor=100% rt=2.7s '\\rot\\F = \\vec 0'
+[11/10/26 20:05:51] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-4  30.00s (alvo  19.32s, atraso +10.68s) uma rodinha no miolo gira
+[11/10/26 20:05:54] INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] B3-4: 0 rótulos a menos de 6 px em 6 rótulos
+[estouro] B3-5 começou 7.40s depois do previsto (a cena se esticou)
+[ancora] B3-5 121.733
+[11/10/26 20:05:55] INFO     Caching disabled.             cairo_renderer.py:81
+[campo] B3-5 rio: 55 setas, maior 1.150 u, menor 0.708 u (menor ÷ maior 0.62; alvo ≥ 0,40), maior ÷ passo = 0.77
+[11/10/26 20:05:56] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-5   1.93s (alvo   1.91s, atraso +0.02s) olha um rio
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-5   6.33s (alvo   6.36s, atraso -0.02s) mais rápida no meio
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-5  11.93s (alvo  11.91s, atraso +0.02s) espalha rodinhas presas
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[motor] B3-5/6 rodinhas do rio (×3: câmera rápida, y = 1,8 → 0,6 rad/s na tela): 3.0000 s de fluxo por s de tela
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] B3-5: 0 rótulos a menos de 6 px em 0 rótulos
+[ancora] B3-6 137.000
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-6  10.40s (alvo  10.43s, atraso -0.03s) gira no sentido anti-horário
+[11/10/26 20:05:57] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-6  14.87s (alvo  14.88s, atraso -0.01s) e ela gira no horário
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:06:02] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F =                              
+                             \left(1 -                                         
+                             \dfrac{\Y^2}{9},\                                 
+                             0\right)\special{dvisvgm:r                        
+                             aw </g>} to                                       
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB3\Tex\41b0fc87ec                        
+                             96c9be.tex                                        
+[11/10/26 20:06:04] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\rot \F =                         
+                             -\dfrac{\partial                                  
+                             \Pp}{\dy}\,\kk =                                  
+                             \V{\dfrac{2\Y}{9}}\,\kk\sp                        
+                             ecial{dvisvgm:raw </g>} to                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB3\Tex\3215778498                        
+                             6b9c2e.tex                                        
+[11/10/26 20:06:05] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B3-6  23.40s (alvo  23.39s, atraso +0.01s) a conta confirma
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[algebra] B3-6  161.20s glifos=13 cor=100% rt=4.2s '\\F = \\left(1 - \\dfrac{\\Y^2}{9},\\ 0\\right)'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[algebra] B3-6  165.40s glifos=21 cor=100% rt=6.6s '\\rot \\F = -\\dfrac{\\partial \\Pp}{\\dy}\\,\\kk = \\V{\\dfrac{2\\Y}{9}}\\,\\kk'
+[11/10/26 20:06:06] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[rio] rodinha em y = +1.8: ½ rot = +0.2000 rad/s (fluxo); na tela ×3 = +0.600 rad/s
+[rio] rodinha em y = +0.0: ½ rot = +0.0000 rad/s (fluxo); na tela ×3 = +0.000 rad/s
+[rio] rodinha em y = -1.8: ½ rot = -0.2000 rad/s (fluxo); na tela ×3 = -0.600 rad/s
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] B3-6: 0 rótulos a menos de 6 px em 4 rótulos
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:06:07] INFO     Caching disabled.             cairo_renderer.py:81
+[cor-bloco] PB3 fração colorida (glifos de caneta) = 100% em 12 MathTex
+[flash-total] PB3 0
+[estilo] PB3 traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PB3 brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 176.60s (2649 quadros)
+                    INFO     Rendered PB3                          scene.py:290
+                             Played 69 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

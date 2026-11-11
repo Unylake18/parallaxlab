@@ -1,0 +1,23 @@
+yt_0027 v4 · R5 (sobreposição): 227 checagens (cada gatilho e o fim de cada âncora, nos 10 lotes)
+critério: caixas de texto/MathTex não se cruzam; nenhuma seta de campo visível com o centro dentro da caixa de um texto (+4 px)
+  PHA: 16 checagens; 12 textos e 1120 setas visíveis somados
+  PB1: 24 checagens; 80 textos e 3018 setas visíveis somados
+  PB2: 35 checagens; 111 textos e 3181 setas visíveis somados
+  PB3: 31 checagens; 39 textos e 3055 setas visíveis somados
+  PB4: 31 checagens; 150 textos e 2538 setas visíveis somados
+  PB5: 12 checagens; 40 textos e 1249 setas visíveis somados
+  PB6: 23 checagens; 106 textos e 0 setas visíveis somados
+  PF: 12 checagens; 49 textos e 1289 setas visíveis somados
+  PB7: 20 checagens; 151 textos e 1216 setas visíveis somados
+  PS: 23 checagens; 82 textos e 1932 setas visíveis somados
+OCORRÊNCIAS: 0
+
+R6 (v4): amostragem a cada 0,2 s DURANTE o render, inclusive em Transform/FadeIn/FadeOut: ~6159 amostras nos 10 lotes
+critério: texto×texto (+4 px), seta de campo com o centro numa caixa de texto (+4 px) ou cruzando a caixa, imagem sobre seta de campo, DUPLICATA de MathTex
+TRECHOS COM OCORRÊNCIA: 4
+  PB5 B5-2   45.80–  57.40s (11.8 s): DUPLICATA '\\D{0{,}219}'
+  PB5 B5-2   46.60–  57.40s (11.0 s): DUPLICATA '\\D{0{,}927}'
+  PB5 B5-3   57.60–  57.60s (0.2 s): DUPLICATA '\\D{0{,}219}'
+  PB5 B5-3   57.60–  57.60s (0.2 s): DUPLICATA '\\D{0{,}927}'
+
+JUSTIFICATIVA (R6, DUPLICATA no B5-2/B5-3): é intencional, como no alvo b52bv3. O 0,219 aparece nas duas paredes horizontais da caixa (o mesmo fluxo em cima e embaixo, por simetria). O 0,927 aparece junto da parede de entrada e na coluna, em ENTRA. Não são linhas empilhadas nem cópias esquecidas. Na passagem B5-2 → B5-3 eles somem junto com a caixa (0,2 a 0,4 s de fade).

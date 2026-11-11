@@ -1,0 +1,191 @@
+Manim Community v0.21.0
+
+[ancora] B5-1 0.000
+[campo] B5 falsa fonte: 112 setas, maior 0.348 u, menor 0.227 u (menor ÷ maior 0.65; alvo ≥ 0,40), maior ÷ passo = 0.70
+[11/10/26 20:05:17] INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:18] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F =                              
+                             \dfrac{(\X,\                                      
+                             \Y)}{\X^2+\Y^2}\special{dv                        
+                             isvgm:raw </g>} to                                
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB5\Tex\295ee86ed6                        
+                             e7f544.tex                                        
+[11/10/26 20:05:20] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B5-1   8.60s (alvo   8.58s, atraso +0.02s) é a explosão dividida
+[algebra] B5-1    8.60s glifos=14 cor=100% rt=4.5s '\\F = \\dfrac{(\\X,\\ \\Y)}{\\X^2+\\Y^2}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] B5-1: 0 rótulos a menos de 6 px em 1 rótulos
+[ancora] B5-2 14.600
+[gatilho] B5-2   0.00s (alvo   0.06s, atraso -0.06s) solta um pedacinho de fluido
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[motor] B5-2: fluxo de 0.000 a 2.000 em 14.88 s (fator 0.134 de fluxo por s)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[setor] B5-2: raios em t = 2: 2.332 a 2.561 (alvo 2,33 e 2,56); área 0.27999 → 0.27999
+[11/10/26 20:05:24] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B5-2  15.60s (alvo  15.62s, atraso -0.02s) a área não muda
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial \Pp}{\dx} =                                 
+                             \dfrac{\Y^2 -                                     
+                             \X^2}{(\X^2+\Y^2)^2}\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB5\Tex\747602e737                        
+                             f32eb4.tex                                        
+[11/10/26 20:05:26] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial \Qq}{\dy} =                                 
+                             \dfrac{\X^2 -                                     
+                             \Y^2}{(\X^2+\Y^2)^2}\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB5\Tex\1caccf4953                        
+                             b8a69c.tex                                        
+[11/10/26 20:05:28] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dv\F =                           
+                             \D{0}\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB5\Tex\f87d958266                        
+                             5bf1c6.tex                                        
+[11/10/26 20:05:30] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B5-2  17.07s (alvo  17.10s, atraso -0.03s) as derivadas dizem o mesmo
+[algebra] B5-2   31.67s glifos=20 cor=100% rt=5.0s '\\dfrac{\\partial \\Pp}{\\dx} = \\dfrac{\\Y^2 - \\X^2}{(\\X^2+\\Y^2)^2}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[algebra] B5-2   36.73s glifos=20 cor=100% rt=5.0s '\\dfrac{\\partial \\Qq}{\\dy} = \\dfrac{\\X^2 - \\Y^2}{(\\X^2+\\Y^2)^2}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[algebra] B5-2   41.80s glifos=7 cor=100% rt=2.4s '\\dv\\F = \\D{0}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B5-2  29.60s (alvo  21.54s, atraso +8.06s) coloca uma caixa parada
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:31] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\D{0{,}927                        
+                             }\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB5\Tex\f1d504547b                        
+                             5f750a.tex                                        
+[11/10/26 20:05:33] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\D{0{,}490                        
+                             }\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB5\Tex\722c892e2d                        
+                             71a66f.tex                                        
+[11/10/26 20:05:35] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\D{0{,}219                        
+                             }\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB5\Tex\5048478343                        
+                             546cf1.tex                                        
+[caixa] B5-2: entra 0.9273; sai 0.4900 + 0.2187 + 0.2187 = 0.9273; saldo -5.5e-09
+[11/10/26 20:05:36] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:42] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\D{0{,}490                        
+                             + 0{,}219 + 0{,}219 =                             
+                             0{,}927}\special{dvisvgm:r                        
+                             aw </g>} to                                       
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB5\Tex\abf46e271f                        
+                             96b317.tex                                        
+[gatilho] B5-2  31.80s (alvo  23.02s, atraso +8.78s) o que entra
+[algebra] B5-2   46.40s glifos=5 cor=100% rt=1.8s '\\D{0{,}927}'
+[11/10/26 20:05:44] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B5-2  33.60s (alvo  24.13s, atraso +9.47s) é exatamente o que sai
+[algebra] B5-2   48.20s glifos=23 cor=100% rt=7.2s '\\D{0{,}490 + 0{,}219 + 0{,}219 = 0{,}927}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:45] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{sald                        
+                             o} = 0\special{dvisvgm:raw                        
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB5\Tex\3507568a55                        
+                             bb2556.tex                                        
+[gatilho] B5-2  40.80s (alvo  25.99s, atraso +14.81s) o divergente é zero em todo ponto
+[algebra] B5-2   55.40s glifos=7 cor=100% rt=2.4s '\\text{saldo} = 0'
+[11/10/26 20:05:47] INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:50] INFO     Caching disabled.             cairo_renderer.py:81
+[colisão] B5-2: '\\D{0{,}219}' a 0.0 px de um traço (alvo ≥ 6)
+[colisão] B5-2: '\\D{0{,}219}' a 0.0 px de um traço (alvo ≥ 6)
+[colisão] B5-2: '\\D{0{,}927}' a 0.0 px de um traço (alvo ≥ 6)
+[colisão] B5-2: '\\D{0{,}490}' a 0.6 px de um traço (alvo ≥ 6)
+[colisão-total] B5-2: 4 rótulos a menos de 6 px em 11 rótulos
+[estouro] B5-3 começou 14.00s depois do previsto (a cena se esticou)
+[ancora] B5-3 58.333
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[campo] B5-3 explosão: 66 setas, maior 0.502 u, menor 0.246 u (menor ÷ maior 0.49; alvo ≥ 0,40), maior ÷ passo = 0.84
+[campo] B5-3 falsa fonte: 62 setas, maior 0.490 u, menor 0.285 u (menor ÷ maior 0.58; alvo ≥ 0,40), maior ÷ passo = 0.82
+[11/10/26 20:05:51] INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:52] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dv =                             
+                             \D{2}\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB5\Tex\bed83d0aa6                        
+                             1276e8.tex                                        
+[11/10/26 20:05:54] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dv =                             
+                             \D{0}\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB5\Tex\baa2eb204e                        
+                             351ab0.tex                                        
+[11/10/26 20:05:55] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B5-3   1.93s (alvo   1.91s, atraso +0.02s) não quer dizer fonte
+[algebra] B5-3   60.27s glifos=5 cor=100% rt=1.8s '\\dv = \\D{2}'
+[algebra] B5-3   60.27s glifos=5 cor=100% rt=2.2s '\\dv = \\D{0}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:56] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] B5-3: 0 rótulos a menos de 6 px em 2 rótulos
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[cor-bloco] PB5 fração colorida (glifos de caneta) = 100% em 9 MathTex
+[flash-total] PB5 0
+[estilo] PB5 traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PB5 brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 72.73s (1091 quadros)
+                    INFO     Rendered PB5                          scene.py:290
+                             Played 29 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

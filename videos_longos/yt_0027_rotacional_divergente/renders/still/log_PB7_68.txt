@@ -1,0 +1,270 @@
+Manim Community v0.21.0
+
+[ancora] B7-1 0.000
+[11/10/26 17:43:08] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}1\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_68\Tex\e6a56                        
+                             6ad7d876b8c.tex                                   
+[11/10/26 17:43:10] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}2\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_68\Tex\92c26                        
+                             d21f4d400ae.tex                                   
+[11/10/26 17:43:11] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}3\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_68\Tex\9ca76                        
+                             7606662f643.tex                                   
+[11/10/26 17:43:13] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_68\Tex\b6e1e                        
+                             0d35a22cf8a.tex                                   
+[gatilho] B7-1   4.87s (alvo   4.88s, atraso -0.01s) uma função que dá um número em cada ponto
+[campo] B7 gradiente (2x, 2y): 20 setas, k = 0.1901 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[gatilho] B7-1   9.67s (alvo   9.69s, atraso -0.02s) calcula o gradiente dela
+[gatilho] B7-1  15.60s (alvo  15.62s, atraso -0.02s) tira o divergente desse campo
+[11/10/26 17:43:15] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla^2                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\varphi                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}=\nabla\cd                        
+                             ot \special{dvisvgm:raw                           
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique003'>}\nabla\var                        
+                             phi\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_68\Tex\15f84                        
+                             9a2277360a6.tex                                   
+[gatilho] B7-1  17.47s (alvo  17.47s, atraso -0.00s) o resultado se chama laplaciano
+[algebra] B7-1   17.47s glifos=8 cor=38% rt=2.7s '\\nabla^2\\varphi=\\nabla\\cdot\\nabla\\varphi'
+[gatilho] B7-1  20.80s (alvo  20.80s, atraso -0.00s) o nabla aplicado duas vezes
+[ancora] B7-2 23.133
+[11/10/26 17:43:17] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\varphi                           
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}=                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique002'>}x                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique003'>}^2+                            
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique004'>}y                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique005'>}^2\special                        
+                             {dvisvgm:raw </g>} to                             
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_68\Tex\54101                        
+                             65f6e388b64.tex                                   
+[11/10/26 17:43:19] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla\var                        
+                             phi \special{dvisvgm:raw                          
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}=(2                            
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique002'>}x                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique003'>},\ 2                           
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique004'>}y                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique005'>})\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_68\Tex\99877                        
+                             5734f3a18ab.tex                                   
+[11/10/26 17:43:21] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla^2                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\varphi                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique002'>}=2+2=                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique003'>}4\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_68\Tex\b11cb                        
+                             e8eb39bb9ec.tex                                   
+[11/10/26 17:43:22] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\varphi                           
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}=                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique002'>}x                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique003'>}^2+                            
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique004'>}y                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique005'>}^2+                            
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique006'>}z                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique007'>}^2\                            
+                             \Rightarrow\ \nabla^2                             
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique008'>}\varphi                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique009'>}=                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique010'>}6\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_68\Tex\8ed69                        
+                             bf3122ba4ac.tex                                   
+[gatilho] B7-2   0.80s (alvo   0.80s, atraso -0.00s) a soma dos quadrados
+[algebra] B7-2   23.93s glifos=7 cor=43% rt=2.4s '\\varphi=x^2+y^2'
+[gatilho] B7-2   3.73s (alvo   3.76s, atraso -0.03s) o gradiente dela é uma explosão
+[algebra] B7-2   26.87s glifos=10 cor=40% rt=3.3s '\\nabla\\varphi=(2x,\\ 2y)'
+[gatilho] B7-2  10.40s (alvo  10.43s, atraso -0.03s) dá quatro
+[algebra] B7-2   33.53s glifos=9 cor=22% rt=3.0s '\\nabla^2\\varphi=2+2=4'
+[gatilho] B7-2  13.40s (alvo  11.17s, atraso +2.23s) no espaço
+[algebra] B7-2   36.53s glifos=16 cor=38% rt=5.1s '\\varphi=x^2+y^2+z^2\\ \\Rightarrow\\ \\nabla^2\\varphi=6'
+[estouro] B7-3 começou 3.20s depois do previsto (a cena se esticou)
+[ancora] B7-3 41.600
+[laplaciano] B7-3: valor em (1, ½) = 1.2500; média na circunferência de raio 0,4 = 1.4100 (8 pontos: 1.4100); diferença 0.1600 = ρ²/4·∇²φ = 0.1600
+[gatilho] B7-3   2.27s (alvo   2.28s, atraso -0.02s) ele compara o valor da função num ponto
+[gatilho] B7-3   5.27s (alvo   5.24s, atraso +0.02s) com a média dos vizinhos
+[11/10/26 17:43:35] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}1{,}25\spe                        
+                             cial{dvisvgm:raw </g>} to                         
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_68\Tex\a43df                        
+                             7b56c0681a5.tex                                   
+[11/10/26 17:43:37] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}1{,}41\spe                        
+                             cial{dvisvgm:raw </g>} to                         
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_68\Tex\d873d                        
+                             a08a280cc58.tex                                   
+[11/10/26 17:43:38] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla^2                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\varphi                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}=4>0\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_68\Tex\50521                        
+                             72c2e286500.tex                                   
+[gatilho] B7-3   7.87s (alvo   7.84s, atraso +0.03s) laplaciano positivo
+[algebra] B7-3   49.47s glifos=7 cor=14% rt=2.4s '\\nabla^2\\varphi=4>0'
+[gatilho] B7-3  10.27s (alvo   8.58s, atraso +1.69s) o ponto está abaixo da média
+[gatilho] B7-3  12.67s (alvo  12.65s, atraso +0.01s) zero ele é exatamente a média
+[ancora] B7-4 57.667
+[gatilho-sem-frase] B7-4: 'uma chapa de metal'
+[gatilho] B7-4   6.33s (alvo   6.36s, atraso -0.02s) esse ponto vai esquentar
+[calor] B7-4: núcleo do calor exato; centro vai de T = 0.003 a 0.906 em t = 4.0 (σ = 0,5, α = 0,15)
+[11/10/26 17:43:40] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial                                             
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}T                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}}{\partial                        
+                             t}=\alpha\,\nabla^2                               
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique003'>}T\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB7_68\Tex\3f99f                        
+                             4a736629bee.tex                                   
+[gatilho] B7-4   8.93s (alvo   8.95s, atraso -0.02s) o laplaciano entra na equação do calor
+[algebra] B7-4   66.60s glifos=10 cor=20% rt=3.3s '\\dfrac{\\partial T}{\\partial t}=\\alpha\\,\\nabla^2 T'
+[11/10/26 17:43:45] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_still_PB7_68\                          
+                             images\cena\PB7_ManimCE_                          
+                             v0.21.0.png'                                      
+                                                                               
+                    INFO     Rendered PB7                          scene.py:290
+                             Played 39 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

@@ -1,0 +1,68 @@
+Manim Community v0.21.0
+
+[ancora] B5-1 0.000
+[campo] B5 falsa fonte: 112 setas, maior 0.348 u, menor 0.227 u (menor ÷ maior 0.65; alvo ≥ 0,40), maior ÷ passo = 0.70
+[11/11/26 03:32:58] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:33:00] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B5-1   6.73s (alvo   6.72s, atraso +0.01s) é a explosão dividida
+[algebra] B5-1    6.73s glifos=14 cor=100% rt=4.5s '\\F = \\dfrac{(\\X,\\ \\Y)}{\\X^2+\\Y^2}'
+[11/11/26 03:33:05] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:33:09] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:33:11] INFO     Caching disabled.             cairo_renderer.py:81
+[ancora] B5-2 15.000
+[gatilho] B5-2   0.00s (alvo   0.06s, atraso -0.06s) solta um pedacinho de fluido
+[11/11/26 03:33:12] INFO     Caching disabled.             cairo_renderer.py:81
+[motor] B5-2: fluxo de 0.000 a 2.000 em 16.21 s (fator 0.123 de fluxo por s)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[setor] B5-2: raios em t = 2: 2.332 a 2.561 (alvo 2,33 e 2,56); área 0.27999 → 0.27997
+[11/11/26 03:33:27] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B5-2  16.93s (alvo  16.94s, atraso -0.01s) a área não muda
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:33:28] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B5-2  20.93s (alvo  20.92s, atraso +0.01s) as derivadas dizem o mesmo
+[algebra] B5-2   35.93s glifos=20 cor=100% rt=5.0s '\\dfrac{\\partial \\Pp}{\\dx} = \\dfrac{\\Y^2 - \\X^2}{(\\X^2+\\Y^2)^2}'
+[algebra] B5-2   35.93s glifos=20 cor=100% rt=5.3s '\\dfrac{\\partial \\Qq}{\\dy} = \\dfrac{\\X^2 - \\Y^2}{(\\X^2+\\Y^2)^2}'
+[11/11/26 03:33:31] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:33:37] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B5-2  26.93s (alvo  26.90s, atraso +0.03s) e se cancelam
+[11/11/26 03:33:38] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:33:39] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B5-2  27.87s (alvo  27.90s, atraso -0.03s) coloca uma caixa parada
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[caixa] B5-2: entra 0.9273; sai 0.4900 + 0.2187 + 0.2187 = 0.9273; saldo -5.5e-09
+[11/11/26 03:33:41] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:33:42] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:33:43] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B5-2  30.60s (alvo  30.58s, atraso +0.02s) a gente soma o que entra
+[gatilho] B5-2  35.07s (alvo  35.06s, atraso +0.01s) é exatamente o que sai (agendado)
+[algebra] B5-2   45.60s glifos=5 cor=100% rt=1.8s '\\D{0{,}927}'
+[algebra] B5-2   45.60s glifos=23 cor=100% rt=7.5s '\\D{0{,}490 + 0{,}219 + 0{,}219 = 0{,}927}'
+[11/11/26 03:33:44] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B5-2  38.07s (alvo  36.64s, atraso +1.43s) o divergente é zero em todo ponto
+[algebra] B5-2   53.07s glifos=10 cor=100% rt=3.3s '\\dv\\F = \\D{0} \\ \\text{ em } \\Omega'
+[11/11/26 03:33:52] INFO     Caching disabled.             cairo_renderer.py:81
+[estouro] B5-3 começou 1.87s depois do previsto (a cena se esticou)
+[ancora] B5-3 56.400
+[campo] B5-3 explosão: 68 setas, maior 0.491 u, menor 0.266 u (menor ÷ maior 0.54; alvo ≥ 0,40), maior ÷ passo = 0.82
+[campo] B5-3 falsa fonte: 64 setas, maior 0.456 u, menor 0.282 u (menor ÷ maior 0.62; alvo ≥ 0,40), maior ÷ passo = 0.76
+[11/11/26 03:33:56] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:34:00] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B5-3   2.20s (alvo   2.18s, atraso +0.02s) não quer dizer fonte
+[algebra] B5-3   58.60s glifos=5 cor=100% rt=1.8s '\\dv = \\D{2}'
+[algebra] B5-3   58.60s glifos=5 cor=100% rt=2.2s '\\dv = \\D{0}'
+[11/11/26 03:34:01] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:34:03] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:34:16] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[deriva] PB5 +0.00s além do fim da última âncora
+[cor-bloco] PB5 fração colorida (glifos de caneta) = 100% em 8 MathTex
+[flash-total] PB5 0
+[estilo] PB5 traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PB5 brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 75.07s (1126 quadros)
+[sync] plano gravado: 13 trechos
+[11/11/26 03:34:17] INFO     Rendered PB5                          scene.py:290
+                             Played 27 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

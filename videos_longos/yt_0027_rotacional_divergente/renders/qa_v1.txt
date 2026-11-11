@@ -1,0 +1,469 @@
+== PHA
+[ancora] H1 0.000
+[campo] H esquerda (−y, x): 20 setas, k = 0.3560 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[campo] H direita (−y, x)/r²: 20 setas, k = 0.3560 u por unidade de |F|, maior seta ÷ espaçamento = 0.57 (ok)
+[motor] H tinta: 0.6472 s de fluxo por s de tela
+[motor] H rodinhas (3 voltas até o congelamento): 0.6472 s de fluxo por s de tela
+[gatilho] H1   5.60s (alvo   5.62s, atraso -0.02s) soltar uma rodinha
+[gatilho] H1   8.60s (alvo   8.58s, atraso +0.02s) exatamente na mesma distância
+[gatilho] H1  11.20s (alvo  11.17s, atraso +0.03s) deixar a correnteza levar
+[ancora] H2 13.067
+[gatilho] H2   0.00s (alvo   0.06s, atraso -0.06s) no primeiro
+[gatilho] H2   7.87s (alvo   7.84s, atraso +0.03s) ela também completou um giro
+[gatilho] H2   9.67s (alvo   9.69s, atraso -0.02s) no segundo
+[gatilho] H2  13.40s (alvo  13.39s, atraso +0.01s) chega do mesmo jeito que saiu
+[gatilho] H2  15.60s (alvo  15.62s, atraso -0.02s) a pá marcada fica apontando
+[ancora] H3 35.467
+[hook] rodinha esquerda: 3.0000 giros; direita: orientação final − inicial = 0.000°; centros em (np.float64(0.9999999999999998), np.float64(-7.347880794884119e-16)) e (np.float64(0.9999999999999998), np.float64(-7.347880794884119e-16)) (o pouso foi em (1, 0))
+[hook] no raio 1: 8 pares; maior diferença entre as pontas = 0.0000 px a 960×540
+[gatilho] H3   6.00s (alvo   5.99s, atraso +0.01s) os dois campos são idênticos
+[gatilho] H3  10.40s (alvo  10.43s, atraso -0.03s) as duas rodinhas passaram
+[gatilho] H3  13.73s (alvo  13.76s, atraso -0.03s) por que uma gira
+[gatilho] H3  15.27s (alvo  15.24s, atraso +0.02s) e a outra não
+[gatilho] H3  17.47s (alvo  17.47s, atraso -0.00s) o que quer dizer um campo girar
+[ancora] A1 56.667
+[gatilho] A1   2.67s (alvo   2.65s, atraso +0.01s) hoje a aula
+[motor] A1 ícones: 1.0000 s de fluxo por s de tela
+[gatilho] A1   4.53s (alvo   4.50s, atraso +0.03s) duas medidas
+[gatilho] A1   8.20s (alvo   8.21s, atraso -0.01s) o rotacional que mede o giro
+[gatilho] A1  10.80s (alvo  10.80s, atraso -0.00s) o divergente que mede o espalhamento
+[motor] A1 quadradinho: 1.0000 s de fluxo por s de tela
+[gatilho] A1  14.53s (alvo  14.50s, atraso +0.03s) de onde vêm as fórmulas
+[gatilho] A1  18.60s (alvo  18.58s, atraso +0.02s) por que o desenho de longe engana
+[gatilho] A1  21.53s (alvo  21.54s, atraso -0.01s) onde tudo isso aparece na física
+[gatilho] A1  23.73s (alvo  23.76s, atraso -0.03s) vai ter rodinha
+[gatilho] A1  27.47s (alvo  27.47s, atraso -0.00s) bora
+[cor-bloco] PHA fração colorida (glifos de caneta) = 0% em 0 MathTex
+[flash-total] PHA 0
+[estilo] PHA traços sem contorno = 0  (contorno posto pela varredura: 96)
+[estilo] PHA brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 85.27s (1279 quadros)
+== PB1
+[ancora] B1-1 0.000
+[campo] B1 (−y, 2x): 28 setas, k = 0.1417 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[motor] B1 pontinhos: 0.5500 s de fluxo por s de tela
+[gatilho] B1-1   3.73s (alvo   3.76s, atraso -0.03s) ler o campo como a velocidade
+[gatilho] B1-1  12.27s (alvo  12.28s, atraso -0.02s) o escoamento não muda com o tempo
+[gatilho] B1-1  14.87s (alvo  14.88s, atraso -0.01s) e o campo é liso
+[gatilho] B1-1  18.20s (alvo  18.21s, atraso -0.01s) é isso que deixa
+[ancora] B1-2 22.400
+[campo] B1 lupa: 9 setas, k = 0.3081 fixo nos três zooms, maior seta ÷ espaçamento = 0.85 (ok)
+[gatilho] B1-2   0.53s (alvo   0.43s, atraso +0.10s) pega uma lupa
+[gatilho] B1-2   2.40s (alvo   1.91s, atraso +0.49s) chega bem pertinho
+[gatilho] B1-2   7.07s (alvo   7.10s, atraso -0.03s) quase se fossem
+[gatilho] B1-2  13.00s (alvo  13.02s, atraso -0.02s) toda a graça está nas pequenas diferenças
+[gatilho] B1-2  19.33s (alvo  19.32s, atraso +0.01s) dividida pela distância
+[algebra] B1-2   41.73s glifos=12 cor=50% rt=3.9s '\\dfrac{\\Delta\\vec F}{h}\\;\\to\\;\\dfrac{\\partial\\vec F}{\\partialx}'
+[gatilho] B1-2  23.20s (alvo  21.91s, atraso +1.29s) cada vez mais perto
+[gatilho] B1-2  25.07s (alvo  24.13s, atraso +0.93s) derivada parcial
+[estouro] B1-3 começou 0.73s depois do previsto (a cena se esticou)
+[ancora] B1-3 48.400
+[gatilho] B1-3   0.47s (alvo   0.43s, atraso +0.04s) solta um quadradinho
+[motor] B1-3 quadradinho: 0.4500 s de fluxo por s de tela
+[gatilho] B1-3   7.87s (alvo   7.84s, atraso +0.03s) três coisas
+[fluxo] B1-3 quadradinho andou 3.090 de tempo de fluxo
+[fluxo] B1-3 quadradinho (−y, 2x): 20 pontos em t = 3.090 (tempo de fluxo); erro máx 0.000 px a 960×540 (ok)
+[campo] B1-3 GIRA: 24 setas, k = 0.2104 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[campo] B1-3 MUDA DE ÁREA: 24 setas, k = 0.2104 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[campo] B1-3 DEFORMA: 24 setas, k = 0.2104 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[motor] B1-3 miniaturas: 1.0000 s de fluxo por s de tela
+[gatilho] B1-3   8.60s (alvo   8.58s, atraso +0.02s) pode girar
+[gatilho] B1-3   9.53s (alvo   9.32s, atraso +0.21s) pode crescer ou encolher
+[gatilho] B1-3  11.93s (alvo  11.91s, atraso +0.02s) e pode se deformar
+[gatilho] B1-3  20.40s (alvo  20.43s, atraso -0.03s) o giro é medido pelo rotacional
+[gatilho] B1-3  24.53s (alvo  24.50s, atraso +0.03s) pelo divergente
+[cor-bloco] PB1 fração colorida (glifos de caneta) = 50% em 1 MathTex
+[flash-total] PB1 0
+[estilo] PB1 traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PB1 brancos = 7 {('B1-2', 'Circle', 'GEO'): 7} (setas de voo, permitidas: 0 traços)
+[tempo] total 74.67s (1120 quadros)
+== PB2
+[ancora] B2-1 0.000
+[campo] B2 (−y, 2x): 28 setas, k = 0.1417 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[motor] B2 correnteza (−y, 2x): 0.4500 s de fluxo por s de tela
+[gatilho] B2-1   3.40s (alvo   3.39s, atraso +0.01s) pega só duas partículas
+[gatilho] B2-1   8.60s (alvo   8.58s, atraso +0.02s) ligadas por um braço
+[gatilho] B2-1  10.07s (alvo  10.06s, atraso +0.01s) cada ponta do braço é carregada
+[campo] B2 componentes: k = 0.2615, maior seta ÷ comprimento do braço = 0.85 (ok)
+[gatilho] B2-1  13.73s (alvo  13.76s, atraso -0.03s) no lugar onde ela está
+[ancora] B2-2 16.067
+[gatilho] B2-2   0.00s (alvo   0.06s, atraso -0.06s) repara só na parte vertical
+[motor] B2-2 balanço do braço (fluxo exato, ida e volta): 1.0000 s de fluxo por s de tela
+[gatilho] B2-2   2.67s (alvo   2.65s, atraso +0.01s) se a ponta da direita sobe
+[gatilho] B2-2   9.67s (alvo   9.69s, atraso -0.02s) e com que rapidez
+[algebra] B2-2   25.73s glifos=25 cor=60% rt=7.8s '\\omega_{AB} \\approx \\dfrac{Q(x_0 + h,\\, y_0) - Q(x_0,\\, y_0)}{h}'
+[gatilho] B2-2  17.47s (alvo  15.62s, atraso +1.85s) agora encolhe o braço
+[gatilho] B2-2  20.07s (alvo  17.10s, atraso +2.97s) essa razão vira a derivada
+[gatilho] B2-2  21.93s (alvo  21.91s, atraso +0.02s) essa é a velocidade angular
+[ancora] B2-3 41.333
+[gatilho] B2-3   0.47s (alvo   0.06s, atraso +0.41s) agora um braço vertical
+[gatilho] B2-3   5.27s (alvo   5.24s, atraso +0.02s) o que importa é a parte horizontal
+[gatilho] B2-3   8.60s (alvo   8.58s, atraso +0.02s) se a ponta de cima anda para a direita
+[gatilho] B2-3  17.47s (alvo  17.47s, atraso -0.00s) por isso a velocidade angular dele
+[algebra] B2-3   58.80s glifos=10 cor=50% rt=3.3s '\\omega_{AC} = -\\dfrac{\\partial P}{\\partial y}'
+[gatilho] B2-3  23.40s (alvo  23.39s, atraso +0.01s) neste campo a ponta de cima vai para a esquerda
+[motor] B2-3 balanço do braço vertical: 1.0000 s de fluxo por s de tela
+[gatilho] B2-3  27.07s (alvo  27.10s, atraso -0.03s) menos com menos dá mais
+[algebra] B2-3   68.40s glifos=7 cor=0% rt=2.4s '-(-1) = 1'
+[gatilho] B2-3  31.53s (alvo  31.54s, atraso -0.01s) a um radiano por segundo
+[ancora] B2-4 75.200
+[braços] B2-4 horizontal: 1.950 rad/s em 3 quadros de fluxo (alvo 2.0; 2.5%)
+[braços] B2-4 vertical: 1.013 rad/s em 3 quadros de fluxo (alvo 1.0; 1.3%)
+[gatilho] B2-4   3.40s (alvo   3.39s, atraso +0.01s) o horizontal gira a dois
+[algebra] B2-4   78.60s glifos=6 cor=100% rt=2.1s '2\\,\\mathrm{rad/s}'
+[gatilho] B2-4   6.33s (alvo   6.36s, atraso -0.02s) e o vertical a um só
+[algebra] B2-4   81.53s glifos=6 cor=100% rt=2.1s '1\\,\\mathrm{rad/s}'
+[motor] B2-4 cruz (câmera lenta): 0.5500 s de fluxo por s de tela
+[gatilho] B2-4   8.60s (alvo   8.58s, atraso +0.02s) a cruz abre e fecha
+[gatilho] B2-4  11.93s (alvo  11.91s, atraso +0.02s) uma rodinha de pás não vira tesoura
+[gatilho] B2-4  21.20s (alvo  21.17s, atraso +0.03s) na média dos dois braços
+[algebra] B2-4   96.40s glifos=8 cor=100% rt=2.7s '\\tfrac{3}{2}\\,\\mathrm{rad/s}'
+[ancora] B2-5 100.867
+[motor] B2-5 rodinha presa (½ rot = 3/2): 0.5500 s de fluxo por s de tela
+[gatilho] B2-5   0.93s (alvo   0.43s, atraso +0.50s) é daí que nasce o rotacional
+[algebra] B2-5  101.80s glifos=21 cor=29% rt=6.6s '\\operatorname{rot}\\vec F=\\left(\\dfrac{\\partial Q}{\\partial x}-\\dfrac{\\partial P}{\\partial y}\\right)\\vec k'
+[gatilho] B2-5  11.93s (alvo  11.91s, atraso +0.02s) o dobro da velocidade angular
+[algebra] B2-5  112.80s glifos=5 cor=20% rt=1.8s '=2\\,\\omega\\,\\vec k'
+[gatilho] B2-5  16.00s (alvo  15.99s, atraso +0.01s) um vetor perpendicular à folha
+[algebra] B2-5  116.87s glifos=3 cor=0% rt=1.2s '\\odot\\,\\vec k'
+[gatilho] B2-5  22.27s (alvo  22.28s, atraso -0.02s) neste campo ele vale três
+[algebra] B2-5  123.13s glifos=8 cor=0% rt=2.7s '2-(-1)=3'
+[gatilho] B2-5  24.93s (alvo  24.50s, atraso +0.43s) a rodinha gira a três meios
+[ancora] B2-6 128.067
+[campo] B2-6 esquerda (−y, x): 20 setas, k = 0.3560 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[campo] B2-6 direita (−y, x)/r²: 20 setas, k = 0.3560 u por unidade de |F|, maior seta ÷ espaçamento = 0.57 (ok)
+[motor] B2-6 hook esquerdo (uma volta a cada 9 s): 0.6981 s de fluxo por s de tela
+[gatilho] B2-6   3.73s (alvo   3.76s, atraso -0.03s) troca as coordenadas de lugar
+[algebra] B2-6  131.80s glifos=9 cor=44% rt=3.0s '\\vec F=(-y,\\ x)'
+[gatilho] B2-6  11.53s (alvo  11.54s, atraso -0.01s) a primeira derivada dá um
+[algebra] B2-6  139.60s glifos=7 cor=29% rt=2.4s '\\dfrac{\\partial Q}{\\partial x}=1'
+[gatilho] B2-6  16.73s (alvo  16.73s, atraso +0.01s) a segunda dá menos um
+[algebra] B2-6  144.80s glifos=8 cor=25% rt=2.7s '\\dfrac{\\partial P}{\\partial y}=-1'
+[gatilho] B2-6  20.07s (alvo  20.06s, atraso +0.01s) o rotacional vale dois
+[algebra] B2-6  148.13s glifos=9 cor=22% rt=3.0s '\\operatorname{rot}\\vec F=2\\,\\vec k'
+[gatilho] B2-6  23.07s (alvo  22.65s, atraso +0.41s) a rodinha gira a um radiano
+[algebra] B2-6  151.13s glifos=3 cor=33% rt=1.2s '\\omega=1'
+[gatilho] B2-6  29.67s (alvo  29.69s, atraso -0.02s) por isso ela completa um giro
+[gatilho] B2-6  37.07s (alvo  37.10s, atraso -0.03s) vorticidade
+[gatilho] B2-6  43.40s (alvo  43.39s, atraso +0.01s) metade do mistério
+[cor-bloco] PB2 fração colorida (glifos de caneta) = 43% em 15 MathTex
+[flash-total] PB2 0
+[estilo] PB2 traços sem contorno = 0  (contorno posto pela varredura: 4)
+[estilo] PB2 brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 174.27s (2614 quadros)
+== PB3
+[ancora] B3-1 0.000
+[campo] B3 vórtice: 36 setas, k = 0.5341 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[motor] B3 correnteza no vórtice: 0.5000 s de fluxo por s de tela
+[gatilho] B3-1   7.47s (alvo   7.47s, atraso -0.00s) repara no que isso faz com os vizinhos
+[braços] B3 radial: -0.961 rad/s nos 3 primeiros quadros de fluxo (alvo -1)
+[braços] B3 tangencial: 0.891 rad/s nos 3 primeiros quadros de fluxo (alvo +1)
+[motor] B3 cruz no vórtice (0,35 de volta em 6 s): 0.4398 s de fluxo por s de tela
+[gatilho] B3-1  10.40s (alvo  10.43s, atraso -0.03s) pega o braço que aponta para fora
+[hook] B3 rodinha no vórtice: orientação 0.00° depois de 0,35 volta (parada)
+[gatilho] B3-1  22.27s (alvo  22.28s, atraso -0.02s) então esse braço tomba
+[ancora] B3-2 25.333
+[gatilho] B3-2  10.80s (alvo  10.80s, atraso -0.00s) fazendo as derivadas
+[algebra] B3-2   36.13s glifos=20 cor=30% rt=6.3s '\\dfrac{\\partial Q}{\\partial x}=\\dfrac{y^2-x^2}{(x^2+y^2)^2}'
+[algebra] B3-2   36.13s glifos=20 cor=30% rt=6.6s '\\dfrac{\\partial P}{\\partial y}=\\dfrac{y^2-x^2}{(x^2+y^2)^2}'
+[gatilho] B3-2  17.40s (alvo  15.24s, atraso +2.16s) e a diferença é zero
+[algebra] B3-2   43.67s glifos=8 cor=25% rt=2.7s '\\operatorname{rot}\\vec F=\\vec 0'
+[gatilho] B3-2  21.00s (alvo  18.21s, atraso +2.79s) menos na origem
+[algebra] B3-2   46.33s glifos=14 cor=0% rt=4.5s '\\text{em }\\ \\Omega=\\mathbb{R}^2-\\{(0,0)\\}'
+[estouro] B3-3 começou 3.60s depois do previsto (a cena se esticou)
+[ancora] B3-3 50.867
+[campo] B3-3 esquerda (−y, x): 20 setas, k = 0.3560 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[campo] B3-3 direita (−y, x)/r²: 20 setas, k = 0.3560 u por unidade de |F|, maior seta ÷ espaçamento = 0.57 (ok)
+[motor] B3-3 rodinhas (uma volta a cada 9 s): 0.6981 s de fluxo por s de tela
+[gatilho] B3-3   3.40s (alvo   3.39s, atraso +0.01s) na circunferência os dois campos
+[gatilho] B3-3  11.53s (alvo  11.54s, atraso -0.01s) como as setas mudam em volta dele
+[hook] B3-3 seta logo de fora (r = 1,8): esquerda 0.641 u × direita 0.198 u
+[gatilho] B3-3  15.27s (alvo  15.24s, atraso +0.02s) a seta de fora é mais forte
+[gatilho] B3-3  18.60s (alvo  18.58s, atraso +0.02s) ela é mais fraca
+[gatilho] B3-3  26.33s (alvo  26.36s, atraso -0.02s) se chama irrotacional
+[algebra] B3-3   77.20s glifos=24 cor=17% rt=7.5s '\\vec F\\ \\text{irrotacional}\\iff\\operatorname{rot}\\vec F=\\vec 0'
+[gatilho] B3-3  33.80s (alvo  27.47s, atraso +6.33s) trajetória curva não quer dizer giro
+[estouro] B3-4 começou 4.60s depois do previsto (a cena se esticou)
+[ancora] B3-4 85.600
+[campo] B3-4 tornado: 26 setas, k = 0.3560 u por unidade de |F|, maior seta ÷ espaçamento = 0.57 (ok)
+[gatilho] B3-4   1.53s (alvo   1.54s, atraso -0.01s) cola os dois redemoinhos
+[motor] B3-4 tornado: 0.7500 s de fluxo por s de tela
+[gatilho] B3-4   7.07s (alvo   7.10s, atraso -0.03s) encaixa certinho
+[gatilho] B3-4  11.20s (alvo  11.17s, atraso +0.03s) modelo clássico de um tornado
+[gatilho] B3-4  19.33s (alvo  19.32s, atraso +0.01s) uma rodinha no miolo gira
+[gatilho] B3-4  21.93s (alvo  21.91s, atraso +0.02s) só passeia
+[fluxo] B3-4 tinta do tornado: 20 pontos em t = 13.850 (tempo de fluxo); erro máx 0.066 px a 960×540 (ok)
+[ancora] B3-5 108.733
+[campo] B3-5 rio: 36 setas, k = 1.5300 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[gatilho] B3-5   1.93s (alvo   1.91s, atraso +0.02s) olha um rio
+[motor] B3-5/6 rio (tempo real de fluxo): 1.0000 s de fluxo por s de tela
+[gatilho] B3-5   6.33s (alvo   6.36s, atraso -0.02s) mais rápida no meio
+[gatilho] B3-5  10.07s (alvo  10.06s, atraso +0.01s) nenhuma partícula faz curva
+[gatilho] B3-5  11.93s (alvo  11.91s, atraso +0.02s) espalha rodinhas presas
+[rio] rodinhas presas: ½ rot = y/9 → y = 2: +0,222 rad/s; y = 0: 0; y = −2: −0,222 rad/s (tempo de fluxo = tempo de tela)
+[ancora] B3-6 124.000
+[gatilho] B3-6   0.53s (alvo   0.06s, atraso +0.47s) na metade de cima
+[gatilho] B3-6  10.40s (alvo  10.43s, atraso -0.03s) gira no sentido anti-horário
+[gatilho] B3-6  12.27s (alvo  12.28s, atraso -0.02s) na metade de baixo
+[gatilho] B3-6  14.87s (alvo  14.88s, atraso -0.01s) e ela gira no horário
+[gatilho] B3-6  17.07s (alvo  17.10s, atraso -0.03s) bem no meio
+[gatilho] B3-6  23.40s (alvo  23.39s, atraso +0.01s) a conta confirma
+[gatilho] B3-6  24.73s (alvo  24.50s, atraso +0.23s) o rotacional é proporcional à altura
+[algebra] B3-6  148.73s glifos=13 cor=23% rt=4.2s '\\vec F=\\left(1-\\dfrac{y^2}{9},\\ 0\\right)'
+[algebra] B3-6  152.93s glifos=12 cor=25% rt=3.9s '\\operatorname{rot}\\vec F=\\dfrac{2y}{9}\\,\\vec k'
+[gatilho] B3-6  32.80s (alvo  30.06s, atraso +2.74s) trajetória reta e mesmo assim tem giro
+[gatilho] B3-6  34.13s (alvo  34.13s, atraso -0.00s) um galho boiando perto da margem
+[rio] rodinha em y = +2: ângulo +8.933 rad em 40.20 s de fluxo → +0.2222 rad/s
+[rio] rodinha em y = +0: ângulo +0.000 rad em 40.20 s de fluxo → +0.0000 rad/s
+[rio] rodinha em y = -2: ângulo -8.933 rad em 40.20 s de fluxo → -0.2222 rad/s
+[cor-bloco] PB3 fração colorida (glifos de caneta) = 22% em 7 MathTex
+[flash-total] PB3 0
+[estilo] PB3 traços sem contorno = 0  (contorno posto pela varredura: 2)
+[estilo] PB3 brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 163.60s (2454 quadros)
+== PB4
+[ancora] B4-1 0.000
+[campo] B4 explosão (x, y): 28 setas, k = 0.2833 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[motor] B4 correnteza na explosão: 0.4500 s de fluxo por s de tela
+[gatilho] B4-1   8.20s (alvo   8.21s, atraso -0.01s) aqui o quadradinho não gira
+[gatilho] B4-1  13.00s (alvo  13.02s, atraso -0.02s) a área aumenta
+[ancora] B4-2 14.533
+[gatilho] B4-2   0.00s (alvo   0.06s, atraso -0.06s) o divergente mede exatamente isso
+[algebra] B4-2   14.53s glifos=17 cor=35% rt=5.4s '\\operatorname{div}\\vec F=\\dfrac{\\partial P}{\\partial x}+\\dfrac{\\partial Q}{\\partial y}'
+[gatilho] B4-2  11.20s (alvo  11.17s, atraso +0.03s) o resultado é um número
+[gatilho] B4-2  21.20s (alvo  21.17s, atraso +0.03s) positivo ele se expande
+[gatilho] B4-2  25.60s (alvo  25.62s, atraso -0.02s) na explosão o divergente vale dois
+[algebra] B4-2   40.13s glifos=5 cor=20% rt=1.8s '1+1=2'
+[ancora] B4-3 43.933
+[gatilho] B4-3   5.27s (alvo   5.24s, atraso +0.02s) uma caixa parada
+[gatilho] B4-3   7.47s (alvo   7.47s, atraso -0.00s) o fluido passa por ela
+[gatilho] B4-3  11.93s (alvo  11.91s, atraso +0.02s) sai mais fluido do que entra
+[ancora] B4-4 58.467
+[gatilho] B4-4   0.00s (alvo   0.06s, atraso -0.06s) pela parede da direita
+[gatilho] B4-4   5.60s (alvo   5.62s, atraso -0.02s) pela da esquerda
+[gatilho] B4-4   9.33s (alvo   9.32s, atraso +0.01s) a diferença vezes a altura
+[algebra] B4-4   68.20s glifos=24 cor=50% rt=7.5s '[P(x_0+h)-P(x_0)]\\,k\\approx\\dfrac{\\partial P}{\\partial x}\\,hk'
+[gatilho] B4-4  23.73s (alvo  23.76s, atraso -0.03s) em cima e embaixo
+[algebra] B4-4   83.00s glifos=24 cor=50% rt=7.5s '[Q(y_0+k)-Q(y_0)]\\,h\\approx\\dfrac{\\partial Q}{\\partial y}\\,hk'
+[gatilho] B4-4  32.00s (alvo  27.84s, atraso +4.16s) somando e dividindo pela área
+[algebra] B4-4   90.47s glifos=26 cor=31% rt=8.1s '\\dfrac{\\text{saldo}}{hk}\\to\\dfrac{\\partial P}{\\partial x}+\\dfrac{\\partial Q}{\\partial y}=\\operatorname{div}\\vec F'
+[gatilho] B4-4  40.13s (alvo  31.54s, atraso +8.59s) a fórmula não caiu do céu
+[estouro] B4-5 começou 2.73s depois do previsto (a cena se esticou)
+[ancora] B4-5 99.533
+[campo] B4-5 fonte-anel (x − x³/3, y − y³/3): 28 setas, k = 0.4121 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[gatilho] B4-5   0.53s (alvo   0.06s, atraso +0.47s) vamos testar num campo de verdade
+[algebra] B4-5  101.27s glifos=18 cor=33% rt=5.7s '\\vec F=\\left(x-\\tfrac{x^3}{3},\\ y-\\tfrac{y^3}{3}\\right)'
+[motor] B4-5 correnteza fonte-anel: 0.4500 s de fluxo por s de tela
+[campo] B4-5 lupa: 20 setas, k = 0.3859 fixo nos quatro passos, maior seta ÷ espaçamento = 0.85 (ok)
+[caixa] B4-5 lado 1.0: saldo/área numérico 0.58333; fórmula 2 − x0² − y0² − h²/6 = 0.58333; na tela 0.583 (ok)
+[caixa] B4-5 lado 0.5: saldo/área numérico 0.70833; fórmula 2 − x0² − y0² − h²/6 = 0.70833; na tela 0.708 (ok)
+[caixa] B4-5 lado 0.25: saldo/área numérico 0.73958; fórmula 2 − x0² − y0² − h²/6 = 0.73958; na tela 0.740 (ok)
+[caixa] B4-5 lado 0.125: saldo/área numérico 0.74740; fórmula 2 − x0² − y0² − h²/6 = 0.74740; na tela 0.747 (ok)
+[gatilho] B4-5   7.80s (alvo   7.47s, atraso +0.33s) coloca a caixa num ponto
+[gatilho] B4-5   9.67s (alvo   9.69s, atraso -0.02s) calcula o saldo por unidade de área
+[gatilho] B4-5  12.67s (alvo  12.65s, atraso +0.01s) encolhe a caixa pela metade
+[gatilho] B4-5  14.53s (alvo  14.50s, atraso +0.03s) e de novo e de novo
+[gatilho] B4-5  16.00s (alvo  15.99s, atraso +0.01s) de novo os números
+[gatilho] B4-5  19.67s (alvo  19.69s, atraso -0.02s) três quartos é exatamente o divergente
+[algebra] B4-5  119.20s glifos=13 cor=31% rt=4.2s '\\operatorname{div}\\vec F=2-x^2-y^2'
+[algebra] B4-5  123.40s glifos=18 cor=39% rt=5.7s '\\operatorname{div}\\vec F(1,\\tfrac12)=0{,}750'
+[gatilho] B4-5  29.53s (alvo  23.76s, atraso +5.77s) o que sobra desse saldo
+[estouro] B4-6 começou 1.33s depois do previsto (a cena se esticou)
+[ancora] B4-6 129.867
+[mapa] B4-6 div = 2 − r²: zero em r = √2 = 1.4142 (círculo tracejado de raio 1.4142 unidades)
+[gatilho] B4-6   1.20s (alvo   1.17s, atraso +0.03s) pintar o plano inteiro
+[gatilho] B4-6   3.73s (alvo   3.76s, atraso -0.03s) dentro de um disco
+[gatilho] B4-6   9.33s (alvo   9.32s, atraso +0.01s) fora dele é negativo
+[gatilho] B4-6  13.40s (alvo  13.39s, atraso +0.01s) um círculo inteiro de divergente zero
+[gatilho] B4-6  16.73s (alvo  16.73s, atraso +0.01s) ninguém está criando nem destruindo
+[gatilho] B4-6  23.00s (alvo  23.02s, atraso -0.02s) a água por exemplo
+[gatilho] B4-6  33.00s (alvo  33.02s, atraso -0.02s) bomba de bicicleta
+[cor-bloco] PB4 fração colorida (glifos de caneta) = 39% em 8 MathTex
+[flash-total] PB4 0
+[estilo] PB4 traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PB4 brancos = 1 {('B4-5', 'Circle', 'GEO'): 1} (setas de voo, permitidas: 0 traços)
+[tempo] total 166.07s (2491 quadros)
+== PB5
+[ancora] B5-1 0.000
+[campo] B5 falsa fonte (x, y)/r²: 36 setas, k = 0.5355 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[motor] B5 correnteza na falsa fonte: 0.5500 s de fluxo por s de tela
+[gatilho] B5-1   8.60s (alvo   8.58s, atraso +0.02s) é a explosão dividida
+[algebra] B5-1    8.60s glifos=14 cor=43% rt=4.5s '\\vec F=\\dfrac{(x,\\ y)}{x^2+y^2}'
+[gatilho] B5-1  13.13s (alvo  12.65s, atraso +0.48s) enfraquecem conforme se afastam
+[ancora] B5-2 14.600
+[gatilho] B5-2   0.00s (alvo   0.06s, atraso -0.06s) solta um pedacinho de fluido
+[setor] B5-2: raios em t = 2: 2.332 a 2.561 (alvo 2,33 e 2,56); área inicial 0.27999, final 0.27999 (variação 0.000%)
+[gatilho] B5-2  15.60s (alvo  15.62s, atraso -0.02s) a área não muda
+[gatilho] B5-2  17.07s (alvo  17.10s, atraso -0.03s) coloca uma caixa parada
+[caixa] B5-2: entra 0.9273 (esquerda); sai 0.4900 + 0.2187 + 0.2187 = 0.9273; saldo -5.51e-09
+[gatilho] B5-2  18.60s (alvo  18.58s, atraso +0.02s) o que entra
+[algebra] B5-2   33.20s glifos=5 cor=100% rt=1.8s '0{,}927'
+[gatilho] B5-2  20.20s (alvo  19.69s, atraso +0.51s) é exatamente o que sai
+[algebra] B5-2   34.80s glifos=23 cor=22% rt=7.2s '0{,}490+0{,}219+0{,}219=0{,}927'
+[gatilho] B5-2  27.40s (alvo  21.54s, atraso +5.86s) o divergente é zero
+[algebra] B5-2   42.00s glifos=10 cor=20% rt=3.3s '\\operatorname{div}\\vec F=0\\ \\text{ em }\\ \\Omega'
+[estouro] B5-3 começou 5.47s depois do previsto (a cena se esticou)
+[ancora] B5-3 45.333
+[campo] B5-3 explosão: 28 setas, k = 0.2267 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[campo] B5-3 falsa fonte: 36 setas, k = 0.4284 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[motor] B5-3 correnteza explosão: 0.4500 s de fluxo por s de tela
+[motor] B5-3 correnteza falsa fonte: 0.5500 s de fluxo por s de tela
+[gatilho] B5-3   3.07s (alvo   1.91s, atraso +1.15s) não quer dizer fonte
+[algebra] B5-3   48.40s glifos=5 cor=20% rt=1.8s '\\operatorname{div}=2'
+[algebra] B5-3   48.40s glifos=5 cor=20% rt=2.2s '\\operatorname{div}=0'
+[gatilho] B5-3   7.07s (alvo   7.10s, atraso -0.03s) em cada pedacinho o saldo é zero
+[gatilho] B5-3  10.80s (alvo  10.80s, atraso -0.00s) na medida exata
+[cor-bloco] PB5 fração colorida (glifos de caneta) = 32% em 6 MathTex
+[flash-total] PB5 0
+[estilo] PB5 traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PB5 brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 59.73s (896 quadros)
+== PB6
+[ancora] B6-1 0.000
+[gatilho] B6-1   1.33s (alvo   1.17s, atraso +0.16s) o divergente ganha uma terceira parcela
+[algebra] B6-1    1.33s glifos=23 cor=35% rt=7.2s '\\operatorname{div}\\vec F=\\dfrac{\\partial P}{\\partial x}+\\dfrac{\\partial Q}{\\partial y}+\\dfrac{\\partial R}{\\partial z}'
+[gatilho] B6-1   8.53s (alvo   7.47s, atraso +1.07s) a caixa vira um cubo
+[gatilho] B6-1  14.13s (alvo  14.13s, atraso -0.00s) agora por unidade de volume
+[gatilho] B6-1  16.33s (alvo  16.36s, atraso -0.02s) continua sendo um número
+[ancora] B6-2 18.267
+[gatilho] B6-2  12.27s (alvo  12.28s, atraso -0.02s) com o eixo da rodinha alinhado
+[gatilho] B6-2  18.60s (alvo  18.58s, atraso +0.02s) inclina a rodinha
+[gatilho] B6-2  21.60s (alvo  21.54s, atraso +0.06s) deita a rodinha de lado
+[gatilho] B6-2  24.60s (alvo  23.39s, atraso +1.21s) e ela para
+[estouro] B6-3 começou 0.47s depois do previsto (a cena se esticou)
+[ancora] B6-3 43.667
+[gatilho] B6-3   2.00s (alvo   1.17s, atraso +0.83s) o rotacional é um vetor de verdade
+[algebra] B6-3   46.67s glifos=5 cor=100% rt=1.8s '\\operatorname{rot}\\vec F'
+[gatilho] B6-3   8.93s (alvo   8.95s, atraso -0.02s) o tamanho é o dobro dessa rapidez
+[algebra] B6-3   52.60s glifos=2 cor=100% rt=0.9s '2\\omega'
+[gatilho] B6-3  16.33s (alvo  16.36s, atraso -0.02s) se organizam num determinante simbólico
+[algebra] B6-3   60.00s glifos=33 cor=24% rt=10.2s '\\operatorname{rot}\\vec F=\\begin{vmatrix}\\vec i&\\vec j&\\vec k\\\\ \\partial_x&\\partial_y&\\partial_z\\\\ P&Q&R\\end{vmatrix}'
+[gatilho] B6-3  26.53s (alvo  25.99s, atraso +0.55s) um produto vetorial do nabla com o campo
+[algebra] B6-3   70.20s glifos=5 cor=40% rt=1.8s '=\\nabla\\times\\vec F'
+[algebra] B6-3   72.00s glifos=4 cor=50% rt=1.5s '\\nabla\\wedge\\vec F'
+[gatilho] B6-3  30.07s (alvo  30.06s, atraso +0.01s) como um produto escalar
+[algebra] B6-3   73.73s glifos=10 cor=40% rt=3.3s '\\operatorname{div}\\vec F=\\nabla\\cdot\\vec F'
+[3d] B6 rodinha: rapidez = W·n em 884 quadros; maior |dfase/dt − W·n| = 5.67e-14 rad/s; mínimo de W·n = 0.0000 (ângulo 90.0°: rodinha deitada, parada)
+[cor-bloco] PB6 fração colorida (glifos de caneta) = 38% em 7 MathTex
+[flash-total] PB6 0
+[estilo] PB6 traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PB6 brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 78.20s (1173 quadros)
+== PF
+[ancora] F1 0.000
+[campo] F1 campo elétrico do fio (falsa fonte): 36 setas, k = 0.5355 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[motor] F1 pontinhos saindo: 0.5500 s de fluxo por s de tela
+[gatilho] F1   8.93s (alvo   8.95s, atraso -0.02s) o formato do campo elétrico
+[gatilho] F1  16.33s (alvo  16.36s, atraso -0.02s) é o próprio fio
+[gatilho] F1  17.87s (alvo  17.84s, atraso +0.03s) a lei de gauss na forma local
+[algebra] F1   17.87s glifos=9 cor=33% rt=3.0s '\\nabla\\cdot\\vec E=\\dfrac{\\rho}{\\varepsilon_0}'
+[gatilho] F1  26.33s (alvo  26.36s, atraso -0.02s) fora do fio não tem carga
+[gatilho] F1  30.40s (alvo  30.43s, atraso -0.03s) igualzinho à nossa conta
+[gatilho] F1  31.93s (alvo  31.91s, atraso +0.02s) a carga mora toda no furo
+[ancora] F2 34.533
+[campo] F2 campo magnético do fio (vórtice): 36 setas, k = 0.6676 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[gatilho] F2   0.53s (alvo   0.06s, atraso +0.47s) e o vórtice
+[motor] F2 pontinhos no vórtice: 1.2000 s de fluxo por s de tela
+[gatilho] F2   2.33s (alvo   1.54s, atraso +0.79s) o formato do campo magnético
+[gatilho] F2   8.93s (alvo   8.95s, atraso -0.02s) o rotacional do campo magnético é proporcional
+[algebra] F2   43.47s glifos=9 cor=44% rt=3.0s '\\nabla\\times\\vec B=\\mu_0\\vec J'
+[gatilho] F2  18.60s (alvo  18.58s, atraso +0.02s) a corrente está toda no furo
+[gatilho] F2  21.93s (alvo  21.91s, atraso +0.02s) o divergente do campo magnético é zero sempre
+[algebra] F2   56.47s glifos=6 cor=33% rt=2.1s '\\nabla\\cdot\\vec B=0'
+[gatilho] F2  27.87s (alvo  27.84s, atraso +0.03s) polo magnético isolado
+[cor-bloco] PF fração colorida (glifos de caneta) = 38% em 3 MathTex
+[flash-total] PF 0
+[estilo] PF traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PF brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 64.47s (967 quadros)
+== PB7
+[ancora] B7-1 0.000
+[gatilho] B7-1   4.87s (alvo   4.88s, atraso -0.01s) uma função que dá um número em cada ponto
+[gatilho] B7-1   8.20s (alvo   8.21s, atraso -0.01s) como uma temperatura
+[campo] B7 gradiente (2x, 2y): 20 setas, k = 0.1901 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[gatilho] B7-1   9.80s (alvo   9.69s, atraso +0.11s) calcula o gradiente dela
+[motor] B7 correnteza no gradiente: 0.3000 s de fluxo por s de tela
+[gatilho] B7-1  15.60s (alvo  15.62s, atraso -0.02s) tira o divergente desse campo
+[gatilho] B7-1  17.47s (alvo  17.47s, atraso -0.00s) o resultado se chama laplaciano
+[algebra] B7-1   17.47s glifos=8 cor=38% rt=2.7s '\\nabla^2\\varphi=\\nabla\\cdot\\nabla\\varphi'
+[gatilho] B7-1  20.80s (alvo  20.80s, atraso -0.00s) o nabla aplicado duas vezes
+[ancora] B7-2 23.133
+[gatilho] B7-2   0.80s (alvo   0.80s, atraso -0.00s) a soma dos quadrados
+[algebra] B7-2   23.93s glifos=7 cor=43% rt=2.4s '\\varphi=x^2+y^2'
+[gatilho] B7-2   3.73s (alvo   3.76s, atraso -0.03s) o gradiente dela é uma explosão
+[algebra] B7-2   26.87s glifos=10 cor=40% rt=3.3s '\\nabla\\varphi=(2x,\\ 2y)'
+[gatilho] B7-2  10.40s (alvo  10.43s, atraso -0.03s) dá quatro
+[algebra] B7-2   33.53s glifos=9 cor=22% rt=3.0s '\\nabla^2\\varphi=2+2=4'
+[gatilho] B7-2  13.40s (alvo  11.17s, atraso +2.23s) no espaço
+[algebra] B7-2   36.53s glifos=16 cor=38% rt=5.1s '\\varphi=x^2+y^2+z^2\\ \\Rightarrow\\ \\nabla^2\\varphi=6'
+[estouro] B7-3 começou 3.20s depois do previsto (a cena se esticou)
+[ancora] B7-3 41.600
+[laplaciano] B7-3: valor em (1, ½) = 1.2500; média na circunferência de raio 0,4 = 1.4100 (8 pontos: 1.4100); diferença 0.1600 = ρ²/4·∇²φ = 0.1600
+[gatilho] B7-3   2.27s (alvo   2.28s, atraso -0.02s) ele compara o valor da função num ponto
+[gatilho] B7-3   5.27s (alvo   5.24s, atraso +0.02s) com a média dos vizinhos
+[gatilho] B7-3   7.87s (alvo   7.84s, atraso +0.03s) laplaciano positivo
+[algebra] B7-3   49.47s glifos=7 cor=14% rt=2.4s '\\nabla^2\\varphi=4>0'
+[gatilho] B7-3  10.27s (alvo   8.58s, atraso +1.69s) o ponto está abaixo da média
+[gatilho] B7-3  12.67s (alvo  12.65s, atraso +0.01s) zero ele é exatamente a média
+[ancora] B7-4 57.667
+[gatilho] B7-4   0.80s (alvo   0.80s, atraso -0.00s) numa chapa de metal
+[gatilho] B7-4   6.33s (alvo   6.36s, atraso -0.02s) esse ponto vai esquentar
+[calor] B7-4: núcleo do calor exato; centro vai de T = 0.003 a 0.906 em t = 4.0 (σ = 0,5, α = 0,15)
+[gatilho] B7-4   8.93s (alvo   8.95s, atraso -0.02s) o laplaciano entra na equação do calor
+[algebra] B7-4   66.60s glifos=10 cor=20% rt=3.3s '\\dfrac{\\partial T}{\\partial t}=\\alpha\\,\\nabla^2 T'
+[gatilho] B7-4  12.67s (alvo  12.65s, atraso +0.01s) nas ondas no potencial elétrico
+[gatilho] B7-4  17.07s (alvo  17.10s, atraso -0.03s) isso fica para mais à frente
+[cor-bloco] PB7 fração colorida (glifos de caneta) = 31% em 7 MathTex
+[flash-total] PB7 0
+[estilo] PB7 traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PB7 brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 78.00s (1170 quadros)
+== PS
+[ancora] S1 0.000
+[motor] S1 rodinha: 1.0000 s de fluxo por s de tela
+[gatilho] S1   5.60s (alvo   5.62s, atraso -0.02s) giro não é coisa de uma seta só
+[gatilho] S1  12.67s (alvo  12.65s, atraso +0.01s) o rotacional mede isso com duas derivadas
+[algebra] S1   12.67s glifos=26 cor=27% rt=8.1s '\\operatorname{rot}\\vec F=\\left(\\dfrac{\\partial Q}{\\partial x}-\\dfrac{\\partial P}{\\partial y}\\right)\\vec k=2\\omega\\,\\vec k'
+[gatilho] S1  20.80s (alvo  19.69s, atraso +1.11s) o divergente mede com outras duas
+[algebra] S1   20.80s glifos=17 cor=35% rt=5.4s '\\operatorname{div}\\vec F=\\dfrac{\\partial P}{\\partial x}+\\dfrac{\\partial Q}{\\partial y}'
+[gatilho] S1  26.33s (alvo  26.36s, atraso -0.02s) duas medidas locais
+[ancora] S2 29.400
+[campo] S2 vórtice: 20 setas, k = 0.5341 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[campo] S2 falsa fonte: 20 setas, k = 0.4284 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[motor] S2 correnteza vórtice: 0.5000 s de fluxo por s de tela
+[motor] S2 correnteza falsa fonte: 0.5500 s de fluxo por s de tela
+[gatilho] S2   1.93s (alvo   1.91s, atraso +0.02s) no vórtice nenhum ponto gira
+[gatilho] S2   4.53s (alvo   4.50s, atraso +0.03s) se você der uma volta em torno do furo
+[gatilho] S2  13.40s (alvo  13.39s, atraso +0.01s) na falsa fonte nenhum pedacinho se expande
+[gatilho] S2  16.73s (alvo  16.73s, atraso +0.01s) se você cercar o furo
+[gatilho] S2  20.80s (alvo  20.80s, atraso -0.00s) longe do furo qualquer volta
+[gatilho] S2  26.33s (alvo  26.36s, atraso -0.02s) em volta do fio alguma coisa
+[ancora] S3 58.400
+[gatilho] S3   2.27s (alvo   2.28s, atraso -0.02s) como ligar o que acontece em cada ponto
+[gatilho] S3  11.53s (alvo  11.54s, atraso -0.01s) os teoremas de green
+[gatilho] S3  13.00s (alvo  13.02s, atraso -0.02s) stokes
+[gatilho] S3  13.53s (alvo  13.39s, atraso +0.14s) e gauss
+[ancora] S4 75.933
+[gatilho] S4  10.07s (alvo  10.06s, atraso +0.01s) lembra das três coisas
+[campo] S4 GIRA: 24 setas, k = 0.1653 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[campo] S4 MUDA DE ÁREA: 24 setas, k = 0.1653 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[campo] S4 DEFORMA: 24 setas, k = 0.1653 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[motor] S4 miniaturas: 1.0000 s de fluxo por s de tela
+[gatilho] S4  14.13s (alvo  14.13s, atraso -0.00s) deixa a sua resposta
+[cor-bloco] PS fração colorida (glifos de caneta) = 30% em 2 MathTex
+[flash-total] PS 0
+[estilo] PS traços sem contorno = 0  (contorno posto pela varredura: 96)
+[estilo] PS brancos = 2 {('S2', 'Circle', 'GEO'): 2} (setas de voo, permitidas: 0 traços)
+[tempo] total 102.73s (1541 quadros)
+== alinhamento 3D × Manim (qa3d.py)
+[qa3d] PB6/cubo_saldo: 534 pontos em 267 quadros; pior desvio 0.000 px OK
+[qa3d] PB6/rodinha_eixo: 2673 pontos em 891 quadros; pior desvio 0.000 px OK
+== 3D: transparências por cena ([estilo3d]) e custo por quadro (r3d.js)
+PB6: [cubo_saldo] cubo_saldo: 30 setas (6 faces x 5), aresta 1.2, 0.35 acima do chao
+PB6: [cubo_saldo] [estilo3d] cubo_saldo: 0 materiais com opacidade < 0,75; exceções declaradas: sombra do chão (ShadowMaterial 0,5); chapa do domínio no chão (0,35); sombra ligada
+PB6: [rodinha_eixo] rodinha_eixo: W = (0.574, 0, 0.819), 30 setas em 3 alturas x 1 raios, rodinha R = 0.62
+PB6: [rodinha_eixo] [estilo3d] rodinha_eixo: 0 materiais com opacidade < 0,75; exceções declaradas: sombra do chão (ShadowMaterial 0,5); sombra ligada
+PB6: rodinha_eixo: 300 quadros
+PB6: rodinha_eixo: 600 quadros
+PB6: rodinha_eixo: 900 quadros
+PB6: {"lote":"PB6","res":"960x540","renderizados":1158,"copiados":0,"segundos":86,"s_por_quadro":0.0742}

@@ -1,0 +1,87 @@
+Manim Community v0.21.0
+
+[ancora] S1 0.000
+[motor] S1 rodinha: 1.0000 s de fluxo por s de tela
+[11/11/26 10:33:38] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\rot \F =                         
+                             \left(\dfrac{\partial                             
+                             \Qq}{\dx} -                                       
+                             \dfrac{\partial                                   
+                             \Pp}{\dy}\right)\kk =                             
+                             2\,\w\,\kk\special{dvisvgm                        
+                             :raw </g>} to                                     
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PS_69.8\Tex\8fb6                        
+                             1af21afd3312.tex                                  
+[11/11/26 10:33:40] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dv \F =                          
+                             \dfrac{\partial \Pp}{\dx}                         
+                             + \dfrac{\partial                                 
+                             \Qq}{\dy}\special{dvisvgm:                        
+                             raw </g>} to                                      
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PS_69.8\Tex\7953                        
+                             84c3d0bdfb75.tex                                  
+[gatilho] S1  10.33s (alvo  10.36s, atraso -0.03s) o rotacional mede isso com duas derivadas
+[sync] PS trecho 1 (S1 → gat o divergente mede com outras duas): pede 8.13s, cabe 5.72s → caneta × 0.70
+[algebra] S1   10.33s glifos=26 cor=100% rt=5.7s '\\rot \\F = \\left(\\dfrac{\\partial \\Qq}{\\dx} - \\dfrac{\\partial \\Pp}{\\dy}\\right)\\kk = 2\\,\\w\\,\\kk'
+[gatilho] S1  16.13s (alvo  16.10s, atraso +0.03s) o divergente mede com outras duas
+[algebra] S1   16.13s glifos=17 cor=100% rt=5.4s '\\dv \\F = \\dfrac{\\partial \\Pp}{\\dx} + \\dfrac{\\partial \\Qq}{\\dy}'
+[ancora] S2 24.067
+[campo] S2 vórtice (contexto): 62 setas, maior 0.490 u, menor 0.285 u (menor ÷ maior 0.58; alvo ≥ 0,40), maior ÷ passo = 0.82
+[campo] S2 falsa fonte (contexto): 62 setas, maior 0.490 u, menor 0.285 u (menor ÷ maior 0.58; alvo ≥ 0,40), maior ÷ passo = 0.82
+[11/11/26 10:33:43] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\odot\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PS_69.8\Tex\5a29                        
+                             a1f78fa4777a.tex                                  
+[11/11/26 10:33:45] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}+\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PS_69.8\Tex\e7b4                        
+                             a31b4e3f2356.tex                                  
+[gatilho] S2   3.93s (alvo   3.96s, atraso -0.03s) se você der uma volta em torno do furo
+[gatilho] S2  13.93s (alvo  13.92s, atraso +0.01s) se você cercar o furo
+[11/11/26 10:33:49] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}0\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PS_69.8\Tex\4a57                        
+                             6026e183eded.tex                                  
+[gatilho] S2  17.33s (alvo  17.32s, atraso +0.01s) longe do furo qualquer volta
+[gatilho] S2  21.07s (alvo  21.08s, atraso -0.01s) em cada ponto nada
+[gatilho] S2  22.67s (alvo  22.68s, atraso -0.01s) em volta do fio alguma coisa
+[ancora] S3 48.667
+[gatilho] S3  11.33s (alvo  11.36s, atraso -0.03s) stokes
+[gatilho] S3  13.27s (alvo  13.24s, atraso +0.03s) gauss
+[gatilho] S3  16.47s (alvo  16.44s, atraso +0.03s) green
+[11/11/26 10:34:32] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_still_PS_69.8                          
+                             \images\cena\PS_ManimCE_                          
+                             v0.21.0.png'                                      
+                                                                               
+                    INFO     Rendered PS                           scene.py:290
+                             Played 32 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

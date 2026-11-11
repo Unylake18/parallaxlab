@@ -1,0 +1,24 @@
+Manim Community v0.21.0
+
+[ancora] B3-1 0.000
+[campo] B3 vórtice: 36 setas, k = 0.5341 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[gatilho] B3-1   7.47s (alvo   7.47s, atraso -0.00s) repara no que isso faz com os vizinhos
+[braços] B3 radial: -0.961 rad/s nos 3 primeiros quadros de fluxo (alvo -1)
+[braços] B3 tangencial: 0.891 rad/s nos 3 primeiros quadros de fluxo (alvo +1)
+[motor] B3 cruz no vórtice (0,35 de volta em 6 s): 0.3665 s de fluxo por s de tela
+[gatilho] B3-1  10.40s (alvo  10.43s, atraso -0.03s) pega o braço que aponta para fora
+[hook] B3 rodinha no vórtice: orientação 0.00° depois de 0,35 volta (parada)
+[gatilho] B3-1  22.27s (alvo  22.28s, atraso -0.02s) então esse braço tomba
+[11/10/26 17:20:51] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_still_PB3_20\                          
+                             images\cena\PB3_ManimCE_                          
+                             v0.21.0.png'                                      
+                                                                               
+                    INFO     Rendered PB3                          scene.py:290
+                             Played 8 animations                               
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

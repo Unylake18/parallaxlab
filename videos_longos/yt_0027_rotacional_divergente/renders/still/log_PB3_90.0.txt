@@ -1,0 +1,150 @@
+Manim Community v0.21.0
+
+[ancora] B3-1 0.000
+[campo] B3 vórtice: 112 setas, maior 0.348 u, menor 0.227 u (menor ÷ maior 0.65; alvo ≥ 0,40), maior ÷ passo = 0.70
+[11/11/26 10:33:38] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F =                              
+                             \dfrac{(-\Y,\                                     
+                             \X)}{\X^2+\Y^2}\special{dv                        
+                             isvgm:raw </g>} to                                
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB3_90.0\Tex\a58                        
+                             a83b816976857.tex                                 
+[gatilho] B3-1   3.47s (alvo   3.50s, atraso -0.03s) o mesmo campo de giro
+[sync] PB3 trecho 1 (B3-1 → gat repara no que isso faz com os vizinhos): pede 4.80s, cabe 4.72s → caneta × 0.98
+[algebra] B3-1    3.47s glifos=15 cor=100% rt=4.7s '\\F = \\dfrac{(-\\Y,\\ \\X)}{\\X^2+\\Y^2}'
+[gatilho] B3-1   8.20s (alvo   8.24s, atraso -0.04s) repara no que isso faz com os vizinhos
+[braços] B3 radial: -0.3288 rad/s no início (∓1/r² em r = 1,8: -0.3086)
+[braços] B3 tangencial: +0.2905 rad/s no início (∓1/r² em r = 1,8: +0.3086)
+[gatilho] B3-1  10.27s (alvo  10.24s, atraso +0.03s) pega o braço que aponta para fora
+[motor] B3-1: fluxo de 0.000 a 1.070 em 3.00 s (fator 0.357 de fluxo por s)
+[braços] B3: centro da cruz andou 0.330 rad em t = 1,07 (alvo 0,33)
+[gatilho] B3-1  19.00s (alvo  19.00s, atraso +0.00s) então esse braço tomba
+[ancora] B3-2 21.667
+[gatilho] B3-2   4.20s (alvo   4.22s, atraso -0.02s) gira no sentido anti-horário
+[gatilho] B3-2   6.07s (alvo   6.04s, atraso +0.03s) e os dois giram exatamente na mesma rapidez
+[hook] B3-2: rodinha andou pela órbita sem girar (orientação 0.00°)
+[11/11/26 10:33:43] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial \Qq}{\dx} =                                 
+                             \dfrac{(\X^2+\Y^2) -                              
+                             \X\cdot                                           
+                             2\X}{(\X^2+\Y^2)^2}\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB3_90.0\Tex\bcf                        
+                             3fd473d6e3eed.tex                                 
+[11/11/26 10:33:45] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial \Qq}{\dx} =                                 
+                             \dfrac{(\X^2+\Y^2) -                              
+                             \X\cdot                                           
+                             2\X}{(\X^2+\Y^2)^2} =                             
+                             \dfrac{\Y^2 -                                     
+                             \X^2}{(\X^2+\Y^2)^2}\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB3_90.0\Tex\43a                        
+                             c38575efc10d8.tex                                 
+[11/11/26 10:33:47] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial \Pp}{\dy} =                                 
+                             \dfrac{-(\X^2+\Y^2) +                             
+                             \Y\cdot                                           
+                             2\Y}{(\X^2+\Y^2)^2}\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB3_90.0\Tex\58b                        
+                             d7be4ba8cb194.tex                                 
+[11/11/26 10:33:49] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial \Pp}{\dy} =                                 
+                             \dfrac{-(\X^2+\Y^2) +                             
+                             \Y\cdot                                           
+                             2\Y}{(\X^2+\Y^2)^2} =                             
+                             \dfrac{\Y^2 -                                     
+                             \X^2}{(\X^2+\Y^2)^2}\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB3_90.0\Tex\7b0                        
+                             2d6ce376473ae.tex                                 
+[gatilho] B3-2  13.33s (alvo  13.30s, atraso +0.03s) fazendo as derivadas
+[algebra] B3-2   35.00s glifos=27 cor=100% rt=5.9s '\\dfrac{\\partial \\Qq}{\\dx} = \\dfrac{(\\X^2+\\Y^2) - \\X\\cdot 2\\X}{(\\X^2+\\Y^2)^2}'
+[algebra] B3-2   35.00s glifos=28 cor=100% rt=6.4s '\\dfrac{\\partial \\Pp}{\\dy} = \\dfrac{-(\\X^2+\\Y^2) + \\Y\\cdot 2\\Y}{(\\X^2+\\Y^2)^2}'
+[gatilho] B3-2  22.13s (alvo  22.12s, atraso +0.01s) são iguais
+[11/11/26 10:33:52] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\rot \F =                         
+                             \vec 0\special{dvisvgm:raw                        
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB3_90.0\Tex\ea5                        
+                             b1756c877cd6b.tex                                 
+[11/11/26 10:33:54] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{em }                        
+                             \mathbb{R}^2 -                                    
+                             \{(0,0)\}\special{dvisvgm:                        
+                             raw </g>} to                                      
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB3_90.0\Tex\996                        
+                             652a86b30dfac.tex                                 
+[gatilho] B3-2  22.93s (alvo  22.98s, atraso -0.05s) e a diferença é zero
+[algebra] B3-2   44.60s glifos=8 cor=100% rt=2.7s '\\rot \\F = \\vec 0'
+[gatilho] B3-2  28.80s (alvo  28.80s, atraso +0.00s) menos na origem
+[algebra] B3-2   50.47s glifos=12 cor=100% rt=3.9s '\\text{em } \\mathbb{R}^2 - \\{(0,0)\\}'
+[ancora] B3-3 54.933
+[campo] B3-3 esquerda (−y, x): 70 setas, maior 0.521 u, menor 0.333 u (menor ÷ maior 0.64; alvo ≥ 0,40), maior ÷ passo = 0.84
+[campo] B3-3 direita (−y, x)/r²: 70 setas, maior 0.333 u, menor 0.258 u (menor ÷ maior 0.77; alvo ≥ 0,40), maior ÷ passo = 0.54
+[gatilho] B3-3   2.80s (alvo   2.78s, atraso +0.02s) na circunferência os dois campos
+[hook] B3-3 E: |F| em r = 1: 1.000 (48 px); em r = 1,5: 1.500 (72 px)
+[hook] B3-3 D: |F| em r = 1: 1.000 (48 px); em r = 1,5: 0.667 (32 px)
+[gatilho] B3-3  12.27s (alvo  12.28s, atraso -0.01s) olha a seta logo ali fora
+[gatilho] B3-3  15.00s (alvo  14.98s, atraso +0.02s) a seta de fora é mais forte
+[gatilho] B3-3  17.47s (alvo  17.48s, atraso -0.01s) ela é mais fraca
+[11/11/26 10:34:23] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F\                               
+                             \text{irrotacional} \iff                          
+                             \rot\F = \vec                                     
+                             0\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB3_90.0\Tex\9a0                        
+                             db2f495c09250.tex                                 
+[gatilho] B3-3  24.07s (alvo  24.04s, atraso +0.03s) se chama irrotacional
+[algebra] B3-3   79.00s glifos=24 cor=100% rt=7.5s '\\F\\ \\text{irrotacional} \\iff \\rot\\F = \\vec 0'
+[11/11/26 10:34:25] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_still_PB3_90.                          
+                             0\images\cena\PB3_ManimC                          
+                             E_v0.21.0.png'                                    
+                                                                               
+                    INFO     Rendered PB3                          scene.py:290
+                             Played 37 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

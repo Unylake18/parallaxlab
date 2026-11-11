@@ -1,0 +1,88 @@
+Manim Community v0.21.0
+
+[ancora] S1 0.000
+[11/10/26 20:11:38] INFO     Caching disabled.             cairo_renderer.py:81
+[motor] S1 rodinha: 1.0000 s de fluxo por s de tela
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S1  12.67s (alvo  12.65s, atraso +0.01s) o rotacional mede isso com duas derivadas
+[algebra] S1   12.67s glifos=26 cor=100% rt=8.1s '\\rot \\F = \\left(\\dfrac{\\partial \\Qq}{\\dx} - \\dfrac{\\partial \\Pp}{\\dy}\\right)\\kk = 2\\,\\w\\,\\kk'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S1  20.80s (alvo  19.69s, atraso +1.11s) o divergente mede com outras duas
+[algebra] S1   20.80s glifos=17 cor=100% rt=5.4s '\\dv \\F = \\dfrac{\\partial \\Pp}{\\dx} + \\dfrac{\\partial \\Qq}{\\dy}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] S1: 0 rótulos a menos de 6 px em 0 rótulos
+[ancora] S2 29.400
+[campo] S2 vórtice (contexto): 62 setas, maior 0.490 u, menor 0.285 u (menor ÷ maior 0.58; alvo ≥ 0,40), maior ÷ passo = 0.82
+[campo] S2 falsa fonte (contexto): 62 setas, maior 0.490 u, menor 0.285 u (menor ÷ maior 0.58; alvo ≥ 0,40), maior ÷ passo = 0.82
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S2   1.93s (alvo   1.91s, atraso +0.02s) no vórtice nenhum ponto gira
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:11:39] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S2   4.53s (alvo   4.50s, atraso +0.03s) se você der uma volta em torno do furo
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S2  13.40s (alvo  13.39s, atraso +0.01s) na falsa fonte nenhum pedacinho se expande
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S2  16.73s (alvo  16.73s, atraso +0.01s) se você cercar o furo
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S2  20.80s (alvo  20.80s, atraso -0.00s) longe do furo qualquer volta
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S2  24.87s (alvo  24.88s, atraso -0.01s) em cada ponto nada
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S2  26.33s (alvo  26.36s, atraso -0.02s) em volta do fio alguma coisa
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] S2: 0 rótulos a menos de 6 px em 6 rótulos
+[ancora] S3 58.400
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S3   2.27s (alvo   2.28s, atraso -0.02s) como ligar o que acontece em cada ponto
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:11:40] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S3  11.53s (alvo  11.54s, atraso -0.01s) os teoremas de green
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S3  13.00s (alvo  13.02s, atraso -0.02s) stokes
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S3  13.53s (alvo  13.39s, atraso +0.14s) e gauss
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão] S3: 'GAUSS' a 0.0 px de um traço (alvo ≥ 6)
+[colisão] S3: 'GREEN' a 0.0 px de um traço (alvo ≥ 6)
+[colisão-total] S3: 2 rótulos a menos de 6 px em 10 rótulos
+[ancora] S4 75.933
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S4  10.07s (alvo  10.06s, atraso +0.01s) lembra das três coisas
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[campo] S4 GIRA: 61 setas, maior 0.714 u, menor 0.438 u (menor ÷ maior 0.61; alvo ≥ 0,40), maior ÷ passo = 0.84
+[campo] S4 MUDA DE ÁREA: 61 setas, maior 0.714 u, menor 0.438 u (menor ÷ maior 0.61; alvo ≥ 0,40), maior ÷ passo = 0.84
+[campo] S4 DEFORMA: 61 setas, maior 0.714 u, menor 0.438 u (menor ÷ maior 0.61; alvo ≥ 0,40), maior ÷ passo = 0.84
+[11/10/26 20:11:41] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] S4  14.13s (alvo  14.13s, atraso -0.00s) deixa a sua resposta
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:11:42] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] S4: 0 rótulos a menos de 6 px em 2 rótulos
+[cor-bloco] PS fração colorida (glifos de caneta) = 100% em 2 MathTex
+[flash-total] PS 0
+[estilo] PS traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PS brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 102.80s (1542 quadros)
+[11/10/26 20:11:44] INFO     Rendered PS                           scene.py:290
+                             Played 44 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

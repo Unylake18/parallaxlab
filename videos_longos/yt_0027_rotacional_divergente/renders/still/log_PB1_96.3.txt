@@ -1,0 +1,236 @@
+Manim Community v0.21.0
+
+[ancora] B1-1a 0.000
+[campo] B1 (−y, 2x) em contexto (B1-1a e B1-1): 120 setas, maior 0.420 u, menor 0.189 u (menor ÷ maior 0.45; alvo ≥ 0,40), maior ÷ passo = 0.84
+[11/11/26 10:33:38] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Pp\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB1_96.3\Tex\498                        
+                             f6e7cd3f1ec88.tex                                 
+[11/11/26 10:33:40] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Qq\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB1_96.3\Tex\62a                        
+                             410e942fb58b3.tex                                 
+[11/11/26 10:33:42] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F\special                        
+                             {dvisvgm:raw </g>} to                             
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB1_96.3\Tex\594                        
+                             d8d729b6f25f1.tex                                 
+[11/11/26 10:33:44] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}(\X,\Y)\sp                        
+                             ecial{dvisvgm:raw </g>} to                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB1_96.3\Tex\230                        
+                             825272d5cc95f.tex                                 
+[11/11/26 10:33:45] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Omega                            
+                             \subset \mathbb{R}^2 \                            
+                             \text{aberto}, \qquad \F :                        
+                             \Omega \to                                        
+                             \mathbb{R}^2\special{dvisv                        
+                             gm:raw </g>} to                                   
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB1_96.3\Tex\829                        
+                             afa12226857a0.tex                                 
+[11/11/26 10:33:47] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F(\X,\Y)                         
+                             = \big(\Pp(\X,\Y),\                               
+                             \Qq(\X,\Y)\big)\special{dv                        
+                             isvgm:raw </g>} to                                
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB1_96.3\Tex\983                        
+                             9779bbc956b9e.tex                                 
+[11/11/26 10:34:06] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F =                              
+                             (-\Y,\                                            
+                             2\X)\special{dvisvgm:raw                          
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB1_96.3\Tex\63e                        
+                             c3094a09e10c0.tex                                 
+[11/11/26 10:34:07] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Pp = -\Y,                        
+                             \qquad \Qq =                                      
+                             2\X\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB1_96.3\Tex\821                        
+                             170b58f059d5b.tex                                 
+[pecas] B1-1a: F(0,5; 1,3) = (-1.30, 1.00): P < 0 (horizontal para a esquerda), Q > 0
+[gatilho] B1-1a   1.53s (alvo   1.52s, atraso +0.01s) nome às peças
+[gatilho] B1-1a   6.00s (alvo   5.98s, atraso +0.02s) região aberta
+[algebra] B1-1a    6.00s glifos=18 cor=100% rt=5.7s '\\Omega \\subset \\mathbb{R}^2 \\ \\text{aberto}, \\qquad \\F : \\Omega \\to \\mathbb{R}^2'
+[gatilho] B1-1a  16.73s (alvo  16.72s, atraso +0.01s) duas partes
+[gatilho] B1-1a  17.67s (alvo  17.62s, atraso +0.05s) a parte horizontal
+[gatilho] B1-1a  19.87s (alvo  19.86s, atraso +0.01s) e a vertical de q
+[gatilho] B1-1a  21.33s (alvo  21.34s, atraso -0.01s) e as duas mudam de ponto para ponto
+[sync] PB1 trecho 6 (B1-1a → gat neste campo): pede 7.20s, cabe 5.10s → caneta × 0.71
+[algebra] B1-1a   21.33s glifos=23 cor=100% rt=5.1s '\\F(\\X,\\Y) = \\big(\\Pp(\\X,\\Y),\\ \\Qq(\\X,\\Y)\\big)'
+[11/11/26 10:34:10] WARNING  The original total run_time of       scene.py:1131
+                             PB1._play_sync(), 0.0653333 seconds,              
+                             is too short for the current frame                
+                             rate of 15 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    WARNING  The original total run_time of       scene.py:1131
+                             PB1._play_sync(), 0.0653333 seconds,              
+                             is too short for the current frame                
+                             rate of 15 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[gatilho] B1-1a  26.47s (alvo  26.48s, atraso -0.01s) neste campo
+[algebra] B1-1a   26.47s glifos=10 cor=100% rt=3.3s '\\F = (-\\Y,\\ 2\\X)'
+[algebra] B1-1a   29.80s glifos=9 cor=100% rt=3.0s '\\Pp = -\\Y, \\qquad \\Qq = 2\\X'
+[ancora] B1-1 37.600
+[11/11/26 10:34:12] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Pt{\vec                          
+                             v}\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB1_96.3\Tex\707                        
+                             2272a315b70be.tex                                 
+[gatilho] B1-1   1.80s (alvo   1.80s, atraso +0.00s) a gente vai ler o campo como a velocidade
+[motor] B1-1: uma volta da elipse (t = 4.443) em 18.97 s (fator 0.234)
+[fluxo] B1-1: o ponto volta a (1.6000, 0.0000) depois de uma volta (partiu de (1.6, 0.0))
+[algebra] B1-1   59.67s glifos=10 cor=100% rt=3.3s '\\F = (-\\Y,\\ 2\\X)'
+[ancora] B1-2 63.600
+[gatilho] B1-2   0.53s (alvo   0.48s, atraso +0.05s) pega uma lupa
+[gatilho] B1-2   1.40s (alvo   1.42s, atraso -0.02s) chega bem pertinho
+[gatilho] B1-2   4.13s (alvo   4.14s, atraso -0.01s) as setas ficam quase todas iguais
+[gatilho] B1-2   6.47s (alvo   6.48s, atraso -0.01s) quase se fossem
+[11/11/26 10:34:32] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F_1\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB1_96.3\Tex\2a1                        
+                             ebda09319fca2.tex                                 
+[11/11/26 10:34:33] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F_2\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB1_96.3\Tex\bad                        
+                             e152bdfeea1a5.tex                                 
+[11/11/26 10:34:35] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\h\special                        
+                             {dvisvgm:raw </g>} to                             
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB1_96.3\Tex\d3c                        
+                             d628110068462.tex                                 
+[gatilho] B1-2  16.80s (alvo  16.82s, atraso -0.02s) pega uma seta e a vizinha
+[gatilho] B1-2  19.80s (alvo  19.80s, atraso +0.00s) que a gente chama de agá
+[11/11/26 10:34:39] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\C{\Delta\                        
+                             vec F}\special{dvisvgm:raw                        
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB1_96.3\Tex\78a                        
+                             0ce096d3f0a92.tex                                 
+[lupa] B1-2: F1 = (-0.562, 1.375), F2 = (-0.562, 1.825), ΔF = (0.000, 0.450) (vertical: só o Q muda com x)
+[gatilho] B1-2  21.33s (alvo  21.32s, atraso +0.01s) a diferença entre as duas
+[gatilho] B1-2  22.93s (alvo  22.90s, atraso +0.03s) essa setinha coral
+[11/11/26 10:34:40] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\C{                        
+                             \Delta\vec F}}{\h}                                
+                             \quad\xrightarrow{\                               
+                             \h\,\to\,0\ }\quad                                
+                             \dfrac{\partial                                   
+                             \F}{\dx}\special{dvisvgm:r                        
+                             aw </g>} to                                       
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB1_96.3\Tex\2d2                        
+                             5adc2b27f257a.tex                                 
+[11/11/26 10:34:44] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial \F}{\dx} =                                  
+                             \Big(\dfrac{\partial                              
+                             \Pp}{\dx},\                                       
+                             \dfrac{\partial                                   
+                             \Qq}{\dx}\Big)\special{dvi                        
+                             svgm:raw </g>} to                                 
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB1_96.3\Tex\f0b                        
+                             6868c1de0e422.tex                                 
+[gatilho] B1-2  24.13s (alvo  24.14s, atraso -0.01s) essa diferença dividida
+[sync] PB1 trecho 19 (B1-2 → gat tem nome derivada parcial): pede 4.67s, cabe 4.64s → caneta × 0.99
+[algebra] B1-2   87.73s glifos=20 cor=100% rt=4.6s '\\dfrac{\\C{\\Delta\\vec F}}{\\h} \\quad\\xrightarrow{\\ \\h\\,\\to\\,0\\ }\\quad \\dfrac{\\partial \\F}{\\dx}'
+[11/11/26 10:34:45] WARNING  The original total run_time of       scene.py:1131
+                             PB1._play_sync(), 0.0653333 seconds,              
+                             is too short for the current frame                
+                             rate of 15 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    WARNING  The original total run_time of       scene.py:1131
+                             PB1._play_sync(), 0.0653333 seconds,              
+                             is too short for the current frame                
+                             rate of 15 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[gatilho] B1-2  28.80s (alvo  28.82s, atraso -0.02s) tem nome derivada parcial
+[sync] PB1 trecho 20 (B1-2 → fecha ): pede 6.27s, cabe 4.48s → caneta × 0.72
+[algebra] B1-2   92.40s glifos=20 cor=100% rt=4.5s '\\dfrac{\\partial \\F}{\\dx} = \\Big(\\dfrac{\\partial \\Pp}{\\dx},\\ \\dfrac{\\partial \\Qq}{\\dx}\\Big)'
+[ancora] B1-3 96.933
+[campo] B1-3 GIRA: 61 setas, maior 0.714 u, menor 0.438 u (menor ÷ maior 0.61; alvo ≥ 0,40), maior ÷ passo = 0.84
+[campo] B1-3 MUDA DE ÁREA: 61 setas, maior 0.714 u, menor 0.438 u (menor ÷ maior 0.61; alvo ≥ 0,40), maior ÷ passo = 0.84
+[campo] B1-3 DEFORMA: 61 setas, maior 0.714 u, menor 0.438 u (menor ÷ maior 0.61; alvo ≥ 0,40), maior ÷ passo = 0.84
+[11/11/26 10:35:03] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_still_PB1_96.                          
+                             3\images\cena\PB1_ManimC                          
+                             E_v0.21.0.png'                                    
+                                                                               
+                    INFO     Rendered PB1                          scene.py:290
+                             Played 50 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

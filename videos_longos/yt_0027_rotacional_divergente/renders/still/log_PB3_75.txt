@@ -1,0 +1,169 @@
+Manim Community v0.21.0
+
+[ancora] B3-1 0.000
+[campo] B3 vórtice: 36 setas, k = 0.5341 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[gatilho] B3-1   7.47s (alvo   7.47s, atraso -0.00s) repara no que isso faz com os vizinhos
+[braços] B3 radial: -0.961 rad/s nos 3 primeiros quadros de fluxo (alvo -1)
+[braços] B3 tangencial: 0.891 rad/s nos 3 primeiros quadros de fluxo (alvo +1)
+[motor] B3 cruz no vórtice (0,35 de volta em 6 s): 0.3665 s de fluxo por s de tela
+[gatilho] B3-1  10.40s (alvo  10.43s, atraso -0.03s) pega o braço que aponta para fora
+[hook] B3 rodinha no vórtice: orientação 0.00° depois de 0,35 volta (parada)
+[gatilho] B3-1  22.27s (alvo  22.28s, atraso -0.02s) então esse braço tomba
+[ancora] B3-2 25.333
+[11/10/26 17:20:51] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial                                             
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}Q                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}}{\partial                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique003'>}x                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique004'>}}=\dfrac{                         
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique005'>}y                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique006'>}^2-                            
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique007'>}x                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique008'>}^2}{(                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique009'>}x                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique010'>}^2+                            
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique011'>}y                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique012'>}^2)^2}\spe                        
+                             cial{dvisvgm:raw </g>} to                         
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB3_75\Tex\9fdb8                        
+                             4992855ff29.tex                                   
+[11/10/26 17:20:53] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial                                             
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}P                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique002'>}}{\partial                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique003'>}y                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique004'>}}=\dfrac{                         
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique005'>}y                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique006'>}^2-                            
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique007'>}x                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique008'>}^2}{(                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique009'>}x                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique010'>}^2+                            
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique011'>}y                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique012'>}^2)^2}\spe                        
+                             cial{dvisvgm:raw </g>} to                         
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB3_75\Tex\9496c                        
+                             c648890dbe4.tex                                   
+[gatilho] B3-2  10.80s (alvo  10.80s, atraso -0.00s) fazendo as derivadas
+[algebra] B3-2   36.13s glifos=20 cor=30% rt=6.3s '\\dfrac{\\partial Q}{\\partial x}=\\dfrac{y^2-x^2}{(x^2+y^2)^2}'
+[algebra] B3-2   42.40s glifos=20 cor=30% rt=6.3s '\\dfrac{\\partial P}{\\partial y}=\\dfrac{y^2-x^2}{(x^2+y^2)^2}'
+[gatilho] B3-2  23.33s (alvo  15.24s, atraso +8.09s) e a diferença é zero
+[11/10/26 17:20:54] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\operatorn                        
+                             ame{rot}                                          
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\vec F                         
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique002'>}=\vec                          
+                             0\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB3_75\Tex\37e23                        
+                             4b8499b5f63.tex                                   
+[algebra] B3-2   49.60s glifos=8 cor=25% rt=2.7s '\\operatorname{rot}\\vec F=\\vec 0'
+[11/10/26 17:20:55] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{em                          
+                             }\                                                
+                             \Omega=\mathbb{R}^2-\{(0,0                        
+                             )\}\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB3_75\Tex\1882b                        
+                             cd99a266075.tex                                   
+[gatilho] B3-2  26.93s (alvo  18.21s, atraso +8.73s) menos na origem
+[algebra] B3-2   52.27s glifos=14 cor=0% rt=4.5s '\\text{em }\\ \\Omega=\\mathbb{R}^2-\\{(0,0)\\}'
+[estouro] B3-3 começou 9.53s depois do previsto (a cena se esticou)
+[ancora] B3-3 56.800
+[campo] B3-3 esquerda (−y, x): 20 setas, k = 0.3560 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[campo] B3-3 direita (−y, x)/r²: 20 setas, k = 0.3560 u por unidade de |F|, maior seta ÷ espaçamento = 0.57 (ok)
+[motor] B3-3 rodinhas (uma volta a cada 9 s): 0.6981 s de fluxo por s de tela
+[gatilho] B3-3   3.40s (alvo   3.39s, atraso +0.01s) na circunferência os dois campos
+[gatilho] B3-3  11.53s (alvo  11.54s, atraso -0.01s) como as setas mudam em volta dele
+[hook] B3-3 seta logo de fora (r = 1,8): esquerda 0.641 u × direita 0.198 u
+[gatilho] B3-3  15.27s (alvo  15.24s, atraso +0.02s) a seta de fora é mais forte
+[gatilho] B3-3  18.60s (alvo  18.58s, atraso +0.02s) ela é mais fraca
+[11/10/26 17:20:58] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_still_PB3_75\                          
+                             images\cena\PB3_ManimCE_                          
+                             v0.21.0.png'                                      
+                                                                               
+                    INFO     Rendered PB3                          scene.py:290
+                             Played 30 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

@@ -1,0 +1,144 @@
+Manim Community v0.21.0
+
+[ancora] B4-1 0.000
+[campo] B4 explosão: 120 setas, maior 0.420 u, menor 0.210 u (menor ÷ maior 0.50; alvo ≥ 0,40), maior ÷ passo = 0.84
+[11/11/26 10:25:06] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:25:07] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-1   7.87s (alvo   7.84s, atraso +0.03s) aqui o quadradinho não gira
+[11/11/26 10:25:10] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-1   9.53s (alvo   9.52s, atraso +0.01s) ele cresce
+[motor] B4-1: fluxo de 0.000 a 0.350 em 3.00 s (fator 0.117 de fluxo por s)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:25:12] INFO     Caching disabled.             cairo_renderer.py:81
+[área] B4-1: área 0.490 → 0.987 (exata: A0·e^(2t), t = 0,35)
+[11/11/26 10:25:13] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[ancora] B4-2 13.467
+[gatilho] B4-2   0.00s (alvo   0.06s, atraso -0.06s) o divergente mede exatamente isso
+[algebra] B4-2   13.47s glifos=17 cor=100% rt=5.4s '\\dv \\F = \\dfrac{\\partial \\Pp}{\\dx} + \\dfrac{\\partial \\Qq}{\\dy}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:25:16] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-2  14.80s (alvo  14.82s, atraso -0.02s) o resultado é um número
+[11/11/26 10:25:20] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:25:21] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-2  23.73s (alvo  23.74s, atraso -0.01s) na explosão o divergente vale dois
+[algebra] B4-2   37.20s glifos=8 cor=100% rt=2.7s '\\F = (\\X,\\ \\Y)'
+[11/11/26 10:25:25] INFO     Caching disabled.             cairo_renderer.py:81
+[algebra] B4-2   39.87s glifos=11 cor=100% rt=3.6s '\\dv \\F = 1 + 1 = \\D{2}'
+[11/11/26 10:25:26] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:25:28] INFO     Caching disabled.             cairo_renderer.py:81
+[ancora] B4-3 43.933
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:25:29] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-3   5.33s (alvo   5.34s, atraso -0.01s) uma caixa parada
+[11/11/26 10:25:31] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-3  11.40s (alvo  11.40s, atraso +0.00s) sai mais fluido do que entra
+[11/11/26 10:25:33] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:25:34] INFO     Caching disabled.             cairo_renderer.py:81
+[ancora] B4-4 56.933
+[caixa] B4-4: entra 36 px (P = 0.5), sai 144 px (P = 2.0)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-4   6.20s (alvo   6.18s, atraso +0.02s) pela parede da direita
+[11/11/26 10:25:37] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-4  10.20s (alvo  10.18s, atraso +0.02s) pela da esquerda
+[11/11/26 10:25:38] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:25:39] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-4  12.93s (alvo  12.92s, atraso +0.01s) a diferença vezes a altura
+[11/11/26 10:25:40] INFO     Caching disabled.             cairo_renderer.py:81
+[algebra] B4-4   70.40s glifos=24 cor=100% rt=7.5s '[\\Pp(\\xo+\\h) - \\Pp(\\xo)]\\,\\k \\approx \\dfrac{\\partial \\Pp}{\\dx}\\,\\h\\k'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:25:44] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-4  26.47s (alvo  26.44s, atraso +0.03s) em cima e embaixo
+[11/11/26 10:25:46] INFO     Caching disabled.             cairo_renderer.py:81
+[algebra] B4-4   84.33s glifos=24 cor=100% rt=5.0s '[\\Qq(\\yo+\\k) - \\Qq(\\yo)]\\,\\h \\approx \\dfrac{\\partial \\Qq}{\\dy}\\,\\h\\k'
+[11/11/26 10:25:47] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-4  33.53s (alvo  33.52s, atraso +0.01s) somando e dividindo pela área (agendado)
+[algebra] B4-4   89.33s glifos=27 cor=100% rt=6.7s '\\dfrac{\\D{\\text{saldo}}}{\\h\\k} \\;\\longrightarrow\\; \\dfrac{\\partial \\Pp}{\\dx} + \\dfrac{\\partial \\Qq}{\\dy} = \\dv\\F'
+[11/11/26 10:25:50] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:25:54] INFO     Caching disabled.             cairo_renderer.py:81
+[ancora] B4-5 96.333
+[campo] B4-5 fonte-anel: 120 setas, maior 0.420 u, menor 0.254 u (menor ÷ maior 0.60; alvo ≥ 0,40), maior ÷ passo = 0.84
+[gatilho] B4-5   0.00s (alvo   0.06s, atraso -0.06s) vamos testar num campo de verdade
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[algebra] B4-5   97.73s glifos=18 cor=100% rt=5.7s '\\F = \\left(\\X - \\dfrac{\\X^3}{3},\\ \\Y - \\dfrac{\\Y^3}{3}\\right)'
+[11/11/26 10:25:56] INFO     Caching disabled.             cairo_renderer.py:81
+[caixa] B4-5 lado 1.0: saldo/área numérico 0.58333; fórmula 0.58333; na tela 0{,}583
+[caixa] B4-5 lado 0.5: saldo/área numérico 0.70833; fórmula 0.70833; na tela 0{,}708
+[caixa] B4-5 lado 0.25: saldo/área numérico 0.73958; fórmula 0.73958; na tela 0{,}740
+[caixa] B4-5 lado 0.125: saldo/área numérico 0.74740; fórmula 0.74740; na tela 0{,}747
+[11/11/26 10:25:59] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-5   8.87s (alvo   8.86s, atraso +0.01s) calcula o que sai menos o que entra
+[11/11/26 10:26:00] INFO     Caching disabled.             cairo_renderer.py:81
+[algebra] B4-5  105.80s glifos=1 cor=100% rt=0.6s '1'
+[algebra] B4-5  105.80s glifos=5 cor=100% rt=2.0s '\\D{0{,}583}'
+[11/11/26 10:26:01] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:26:02] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-5  14.47s (alvo  14.44s, atraso +0.03s) encolhe a caixa pela metade
+[11/11/26 10:26:03] INFO     Caching disabled.             cairo_renderer.py:81
+[algebra] B4-5  111.40s glifos=3 cor=100% rt=1.2s '\\tfrac12'
+[algebra] B4-5  111.40s glifos=5 cor=100% rt=2.0s '\\D{0{,}708}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:26:04] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-5  17.93s (alvo  17.94s, atraso -0.01s) e de novo zero vírgula setenta e quatro
+[11/11/26 10:26:05] INFO     Caching disabled.             cairo_renderer.py:81
+[algebra] B4-5  114.87s glifos=3 cor=100% rt=1.2s '\\tfrac14'
+[algebra] B4-5  114.87s glifos=5 cor=100% rt=2.0s '\\D{0{,}740}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-5  20.53s (alvo  20.44s, atraso +0.09s) e de novo zero vírgula setenta e cinco
+[11/11/26 10:26:06] INFO     Caching disabled.             cairo_renderer.py:81
+[algebra] B4-5  117.47s glifos=3 cor=100% rt=1.2s '\\tfrac18'
+[algebra] B4-5  117.47s glifos=5 cor=100% rt=2.0s '\\D{0{,}747}'
+[11/11/26 10:26:07] INFO     Caching disabled.             cairo_renderer.py:81
+[algebra] B4-5  119.47s glifos=1 cor=100% rt=0.6s '\\downarrow'
+[algebra] B4-5  119.47s glifos=13 cor=100% rt=4.4s '\\dv \\F = 2 - \\X^2 - \\Y^2'
+[11/11/26 10:26:08] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-5  27.53s (alvo  25.36s, atraso +2.17s) três quartos é exatamente o divergente
+[algebra] B4-5  123.87s glifos=26 cor=100% rt=8.1s '\\dv \\F\\left(1,\\tfrac12\\right) = 2 - 1 - \\tfrac14 = \\D{0{,}750}'
+[11/11/26 10:26:10] INFO     Caching disabled.             cairo_renderer.py:81
+[estouro] B4-6 começou 2.73s depois do previsto (a cena se esticou)
+[ancora] B4-6 132.000
+[11/11/26 10:26:16] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-6   0.47s (alvo   0.46s, atraso +0.01s) pintar o plano inteiro
+[gatilho] B4-6   2.67s (alvo   2.64s, atraso +0.03s) dentro de um disco (agendado)
+[algebra] B4-6  132.47s glifos=13 cor=100% rt=4.2s '\\dv \\F = 2 - \\X^2 - \\Y^2'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[motor] B4-6: fluxo de 0.000 a 0.280 em 2.00 s (fator 0.140 de fluxo por s)
+[11/11/26 10:26:20] INFO     Caching disabled.             cairo_renderer.py:81
+[área] B4-6 dentro: 0.2500 → 0.3992
+[11/11/26 10:26:21] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-6   7.73s (alvo   7.76s, atraso -0.03s) fora dele é negativo
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[motor] B4-6: fluxo de 0.000 a 0.200 em 2.00 s (fator 0.100 de fluxo por s)
+[11/11/26 10:26:22] INFO     Caching disabled.             cairo_renderer.py:81
+[área] B4-6 fora: 0.2500 → 0.1211
+[mapa] B4-6: círculo de div 0 em r = √2 = 1.4142
+[11/11/26 10:26:24] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-6  12.13s (alvo  12.16s, atraso -0.03s) um círculo inteiro de divergente zero
+[11/11/26 10:26:25] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-6  18.93s (alvo  18.96s, atraso -0.03s) ninguém está criando nem destruindo
+[11/11/26 10:26:29] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-6  25.27s (alvo  25.28s, atraso -0.01s) a água por exemplo
+[algebra] B4-6  157.27s glifos=7 cor=100% rt=2.4s '\\dv\\textcolor{cc}{\\vec v} \\approx 0'
+[11/11/26 10:26:33] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:26:35] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B4-6  33.93s (alvo  33.92s, atraso +0.01s) bomba de bicicleta
+[algebra] B4-6  165.93s glifos=27 cor=100% rt=8.4s '\\text{ar comprimido na bomba: }\\ \\dv\\vec v < 0'
+[11/11/26 10:26:39] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 10:26:46] INFO     Caching disabled.             cairo_renderer.py:81
+[deriva] PB4 +1.80s além do fim da última âncora
+[cor-bloco] PB4 fração colorida (glifos de caneta) = 100% em 21 MathTex
+[flash-total] PB4 0
+[estilo] PB4 traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PB4 brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 174.67s (2620 quadros)
+[sync] plano gravado: 30 trechos
+[11/11/26 10:26:47] INFO     Rendered PB4                          scene.py:290
+                             Played 64 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

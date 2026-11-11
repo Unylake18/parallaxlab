@@ -1,0 +1,245 @@
+Manim Community v0.21.0
+
+[ancora] B7-1 0.000
+[11/10/26 20:11:39] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\D{3}\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB7\Tex\955d50b250                        
+                             dc6a20.tex                                        
+[11/10/26 20:11:40] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\D{4}\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB7\Tex\9fb755c574                        
+                             addd99.tex                                        
+[11/10/26 20:11:41] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B7-1   4.87s (alvo   4.88s, atraso -0.01s) uma função que dá um número em cada ponto
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[campo] B7 gradiente (2x, 2y): 120 setas, maior 0.420 u, menor 0.210 u (menor ÷ maior 0.50; alvo ≥ 0,40), maior ÷ passo = 0.84
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B7-1   9.67s (alvo   9.69s, atraso -0.02s) calcula o gradiente dela
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla^2\p                        
+                             hi =                                              
+                             \nabla\cdot\nabla\phi\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB7\Tex\d15e0a1ac4                        
+                             47b240.tex                                        
+[11/10/26 20:11:43] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B7-1  17.47s (alvo  17.47s, atraso -0.00s) o resultado se chama laplaciano
+[algebra] B7-1   17.47s glifos=8 cor=100% rt=2.7s '\\nabla^2\\phi = \\nabla\\cdot\\nabla\\phi'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão] B7-1: '\\D{1}' a 0.0 px de um traço (alvo ≥ 6)
+[colisão] B7-1: '\\D{2}' a 0.0 px de um traço (alvo ≥ 6)
+[colisão] B7-1: '\\D{3}' a 0.0 px de um traço (alvo ≥ 6)
+[colisão] B7-1: '\\D{4}' a 0.0 px de um traço (alvo ≥ 6)
+[colisão-total] B7-1: 4 rótulos a menos de 6 px em 5 rótulos
+[ancora] B7-2 23.067
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B7-2   0.80s (alvo   0.80s, atraso -0.00s) a soma dos quadrados
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\phi =                            
+                             \X^2 +                                            
+                             \Y^2\special{dvisvgm:raw                          
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB7\Tex\db38d83957                        
+                             f69ab4.tex                                        
+[algebra] B7-2   23.87s glifos=7 cor=100% rt=2.4s '\\phi = \\X^2 + \\Y^2'
+[11/10/26 20:11:44] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B7-2   3.73s (alvo   3.76s, atraso -0.03s) o gradiente dela é uma explosão
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla\phi                        
+                             = (2\X,\                                          
+                             2\Y)\special{dvisvgm:raw                          
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB7\Tex\63b35d5ec2                        
+                             6ef948.tex                                        
+[algebra] B7-2   26.80s glifos=10 cor=100% rt=3.3s '\\nabla\\phi = (2\\X,\\ 2\\Y)'
+[11/10/26 20:11:45] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B7-2  10.40s (alvo  10.43s, atraso -0.03s) dá quatro
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla^2\p                        
+                             hi = 2 + 2 =                                      
+                             \D{4}\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB7\Tex\183a1fe578                        
+                             b4ef83.tex                                        
+[algebra] B7-2   33.47s glifos=9 cor=100% rt=3.0s '\\nabla^2\\phi = 2 + 2 = \\D{4}'
+[11/10/26 20:11:46] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B7-2  13.40s (alvo  11.17s, atraso +2.23s) no espaço
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\phi =                            
+                             \X^2 + \Y^2 + \Z^2                                
+                             \;\Rightarrow\;                                   
+                             \nabla^2\phi =                                    
+                             \D{6}\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB7\Tex\2abe15d5d4                        
+                             38c197.tex                                        
+[algebra] B7-2   36.47s glifos=16 cor=100% rt=5.1s '\\phi = \\X^2 + \\Y^2 + \\Z^2 \\;\\Rightarrow\\; \\nabla^2\\phi = \\D{6}'
+[11/10/26 20:11:47] INFO     Caching disabled.             cairo_renderer.py:81
+[colisão] B7-2: '\\D{1}' a 0.0 px de um traço (alvo ≥ 6)
+[colisão] B7-2: '\\D{2}' a 0.0 px de um traço (alvo ≥ 6)
+[colisão] B7-2: '\\D{3}' a 0.0 px de um traço (alvo ≥ 6)
+[colisão] B7-2: '\\D{4}' a 0.0 px de um traço (alvo ≥ 6)
+[colisão-total] B7-2: 4 rótulos a menos de 6 px em 9 rótulos
+[estouro] B7-3 começou 3.13s depois do previsto (a cena se esticou)
+[ancora] B7-3 41.533
+[11/10/26 20:11:48] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}P\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB7\Tex\e0a77d7bd6                        
+                             dfd310.tex                                        
+[laplaciano] B7-3: φ(P) = 1.2500; média na circunferência de raio 0,4 = 1.4100; diferença 0.1600 = ρ²/4·∇²φ = 0.1600
+[11/10/26 20:11:49] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B7-3   2.27s (alvo   2.28s, atraso -0.02s) ele compara o valor da função num ponto
+[algebra] B7-3   43.80s glifos=7 cor=100% rt=2.4s '\\phi = \\X^2 + \\Y^2'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:11:51] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\phi(P) =                         
+                             1{,}25\special{dvisvgm:raw                        
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB7\Tex\4fb438faa0                        
+                             47ab6b.tex                                        
+[algebra] B7-3   46.20s glifos=9 cor=100% rt=3.0s '\\phi(P) = 1{,}25'
+[11/10/26 20:11:52] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B7-3   7.67s (alvo   5.24s, atraso +2.42s) com a média dos vizinhos
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:11:54] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}1{,}41\spe                        
+                             cial{dvisvgm:raw </g>} to                         
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB7\Tex\b6cc5637bd                        
+                             8ed11d.tex                                        
+[algebra] B7-3   50.60s glifos=4 cor=100% rt=1.5s '1{,}41'
+[11/10/26 20:11:56] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B7-3  10.53s (alvo   7.84s, atraso +2.70s) laplaciano positivo
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}1{,}25 <                          
+                             1{,}41\special{dvisvgm:raw                        
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB7\Tex\62a27b75c0                        
+                             b09f3e.tex                                        
+[algebra] B7-3   52.07s glifos=9 cor=100% rt=3.0s '1{,}25 < 1{,}41'
+[11/10/26 20:11:57] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla^2\p                        
+                             hi = \nabla\cdot\nabla\phi                        
+                             = 4 >                                             
+                             0\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB7\Tex\29adf88972                        
+                             e0312c.tex                                        
+[algebra] B7-3   55.07s glifos=12 cor=100% rt=3.9s '\\nabla^2\\phi = \\nabla\\cdot\\nabla\\phi = 4 > 0'
+[11/10/26 20:12:00] INFO     Caching disabled.             cairo_renderer.py:81
+[colisão] B7-3: 'P' a 0.0 px de um traço (alvo ≥ 6)
+[colisão] B7-3: '\\D{1}' a 0.0 px de um traço (alvo ≥ 6)
+[colisão] B7-3: '\\D{2}' a 0.0 px de um traço (alvo ≥ 6)
+[colisão] B7-3: '\\D{3}' a 0.0 px de um traço (alvo ≥ 6)
+[colisão] B7-3: '\\D{4}' a 0.0 px de um traço (alvo ≥ 6)
+[colisão-total] B7-3: 5 rótulos a menos de 6 px em 13 rótulos
+[estouro] B7-4 começou 1.33s depois do previsto (a cena se esticou)
+[ancora] B7-4 58.933
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:12:01] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B7-4   0.80s (alvo   0.80s, atraso -0.00s) numa chapa de metal
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla^2                          
+                             \T > 0\special{dvisvgm:raw                        
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB7\Tex\603f00e3cb                        
+                             9da777.tex                                        
+[11/10/26 20:12:04] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial \T}{\partial t} =                           
+                             \alpha\,\nabla^2                                  
+                             \T\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PB7\Tex\6436aff4d0                        
+                             971f43.tex                                        
+[calor] B7-4: núcleo exato (σ = 0,5, α = 0,15), t de 0 a 1,5 em 17.8 s de tela; centro T = 0.002 → 0.783
+[11/10/26 20:12:05] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B7-4   7.87s (alvo   7.84s, atraso +0.03s) é assim que o laplaciano entra
+[algebra] B7-4   66.80s glifos=10 cor=100% rt=3.3s '\\dfrac{\\partial \\T}{\\partial t} = \\alpha\\,\\nabla^2 \\T'
+[11/10/26 20:12:07] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] B7-4  11.53s (alvo  11.54s, atraso -0.01s) e ele volta nas ondas
+[11/10/26 20:12:09] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] B7-4: 0 rótulos a menos de 6 px em 5 rótulos
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[cor-bloco] PB7 fração colorida (glifos de caneta) = 100% em 11 MathTex
+[flash-total] PB7 0
+[estilo] PB7 traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PB7 brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 79.20s (1188 quadros)
+                    INFO     Rendered PB7                          scene.py:290
+                             Played 37 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

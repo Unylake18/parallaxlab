@@ -1,0 +1,27 @@
+Manim Community v0.21.0
+
+[ancora] H1 0.000
+[campo] H esquerda (−y, x): 70 setas, maior 0.521 u, menor 0.333 u (menor ÷ maior 0.64; alvo ≥ 0,40), maior ÷ passo = 0.84
+[campo] H direita (−y, x)/r²: 70 setas, maior 0.333 u, menor 0.258 u (menor ÷ maior 0.77; alvo ≥ 0,40), maior ÷ passo = 0.54
+[gatilho] H1   2.60s (alvo   2.59s, atraso +0.01s) tudo dá voltas em torno do centro
+[gatilho] H1   7.40s (alvo   7.37s, atraso +0.03s) soltar uma rodinha
+[ancora] H2 15.267
+[gatilho] H2   0.00s (alvo   0.06s, atraso -0.06s) no primeiro
+[motor] H2: t de 0 a 2π em 6.54 s (fator 0.961)
+[gatilho] H2   7.53s (alvo   7.56s, atraso -0.03s) no segundo
+[motor] H2: t de 2π a 3π em 11.23 s (fator 0.280)
+[hook] em t = 3π: rodinha esquerda deu 1.500 voltas e girou 1.500 giros; direita: orientação 0.000° (deve ser 0)
+[fluxo] H fita (−y, x)/r²: 20 pontos em t = 9.425; erro máx 0.000 px a 960×540 (ok)
+[11/11/26 10:33:33] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_still_PHA_32.                          
+                             4\images\cena\PHA_ManimC                          
+                             E_v0.21.0.png'                                    
+                                                                               
+                    INFO     Rendered PHA                          scene.py:290
+                             Played 10 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

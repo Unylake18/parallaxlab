@@ -1,0 +1,69 @@
+Manim Community v0.21.0
+
+[ancora] H1 0.000
+[campo] H esquerda (−y, x): 70 setas, maior 0.521 u, menor 0.333 u (menor ÷ maior 0.64; alvo ≥ 0,40), maior ÷ passo = 0.84
+[campo] H direita (−y, x)/r²: 70 setas, maior 0.333 u, menor 0.258 u (menor ÷ maior 0.77; alvo ≥ 0,40), maior ÷ passo = 0.54
+[11/11/26 03:44:02] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] H1   2.60s (alvo   2.59s, atraso +0.01s) tudo dá voltas em torno do centro
+[11/11/26 03:44:03] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] H1   7.40s (alvo   7.37s, atraso +0.03s) soltar uma rodinha
+[11/11/26 03:44:05] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:44:06] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:44:09] INFO     Caching disabled.             cairo_renderer.py:81
+[ancora] H2 15.267
+[gatilho] H2   0.00s (alvo   0.06s, atraso -0.06s) no primeiro
+[motor] H2: t de 0 a 2π em 6.54 s (fator 0.961)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:44:16] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] H2   7.53s (alvo   7.56s, atraso -0.03s) no segundo
+[motor] H2: t de 2π a 3π em 11.23 s (fator 0.280)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[hook] em t = 3π: rodinha esquerda deu 1.500 voltas e girou 1.500 giros; direita: orientação 0.000° (deve ser 0)
+[fluxo] H fita (−y, x)/r²: 20 pontos em t = 9.425; erro máx 0.000 px a 960×540 (ok)
+[11/11/26 03:44:27] INFO     Caching disabled.             cairo_renderer.py:81
+[ancora] H3 34.333
+[11/11/26 03:44:28] INFO     Caching disabled.             cairo_renderer.py:81
+[hook] anel r = 1: 10 pares; maior diferença entre as setas dos dois painéis = 0.0000 px a 1080p
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] H3   5.13s (alvo   5.10s, atraso +0.03s) os dois campos são idênticos
+[11/11/26 03:44:30] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:44:32] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] H3  14.20s (alvo  14.18s, atraso +0.02s) então por que uma gira
+[11/11/26 03:44:37] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:44:43] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:44:44] INFO     Caching disabled.             cairo_renderer.py:81
+[ancora] A1 59.867
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] A1   7.93s (alvo   7.96s, atraso -0.03s) hoje a aula
+[11/11/26 03:44:48] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:44:49] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] A1   9.07s (alvo   9.06s, atraso +0.01s) duas medidas
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] A1  12.20s (alvo  12.20s, atraso +0.00s) o rotacional que mede o giro
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:44:50] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] A1  14.07s (alvo  14.04s, atraso +0.03s) o divergente que mede o espalhamento
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] A1  16.27s (alvo  16.24s, atraso +0.03s) a gente vai descobrir
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 03:44:51] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] A1  28.33s (alvo  28.34s, atraso -0.01s) bora
+[11/11/26 03:44:53] INFO     Caching disabled.             cairo_renderer.py:81
+[deriva] PHA -0.07s além do fim da última âncora
+[cor-bloco] PHA fração colorida (glifos de caneta) = 0% em 0 MathTex
+[flash-total] PHA 0
+[estilo] PHA traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PHA brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 88.60s (1329 quadros)
+[sync] plano gravado: 17 trechos
+[11/11/26 03:44:54] INFO     Rendered PHA                          scene.py:290
+                             Played 33 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

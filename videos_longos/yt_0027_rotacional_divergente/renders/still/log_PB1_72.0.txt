@@ -1,0 +1,85 @@
+Manim Community v0.21.0
+
+[ancora] B1-1 0.000
+[campo] B1 (−y, 2x): 28 setas, k = 0.1417 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[motor] B1 pontinhos: 0.5500 s de fluxo por s de tela
+[gatilho] B1-1   3.73s (alvo   3.76s, atraso -0.03s) ler o campo como a velocidade
+[gatilho] B1-1  12.27s (alvo  12.28s, atraso -0.02s) o escoamento não muda com o tempo
+[gatilho] B1-1  14.87s (alvo  14.88s, atraso -0.01s) e o campo é liso
+[gatilho] B1-1  18.20s (alvo  18.21s, atraso -0.01s) é isso que deixa
+[ancora] B1-2 22.400
+[campo] B1 lupa: 9 setas, k = 0.3081 fixo nos três zooms, maior seta ÷ espaçamento = 0.85 (ok)
+[gatilho] B1-2   0.53s (alvo   0.43s, atraso +0.10s) pega uma lupa
+[gatilho] B1-2   2.40s (alvo   1.91s, atraso +0.49s) chega bem pertinho
+[gatilho] B1-2   7.07s (alvo   7.10s, atraso -0.03s) quase se fossem
+[gatilho] B1-2  13.00s (alvo  13.02s, atraso -0.02s) toda a graça está nas pequenas diferenças
+[gatilho] B1-2  19.33s (alvo  19.32s, atraso +0.01s) dividida pela distância
+[11/10/26 17:09:32] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\De                        
+                             lta \special{dvisvgm:raw                          
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\vec F                         
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique002'>}}{                             
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique003'>}h                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique004'>}}\;\to\;\d                        
+                             frac{\partial                                     
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique005'>}\vec F                         
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique006'>}}{\partial                        
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique007'>}x                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique008'>}}\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB1_72.0\Tex\9d2                        
+                             3ddd01b772277.tex                                 
+[algebra] B1-2   41.73s glifos=12 cor=50% rt=3.9s '\\dfrac{\\Delta\\vec F}{h}\\;\\to\\;\\dfrac{\\partial\\vec F}{\\partialx}'
+[gatilho] B1-2  23.20s (alvo  21.91s, atraso +1.29s) cada vez mais perto
+[gatilho] B1-2  25.07s (alvo  24.13s, atraso +0.93s) derivada parcial
+[estouro] B1-3 começou 0.73s depois do previsto (a cena se esticou)
+[ancora] B1-3 48.400
+[gatilho] B1-3   0.47s (alvo   0.43s, atraso +0.04s) solta um quadradinho
+[motor] B1-3 quadradinho: 0.4500 s de fluxo por s de tela
+[gatilho] B1-3   7.87s (alvo   7.84s, atraso +0.03s) três coisas
+[fluxo] B1-3 quadradinho andou 3.090 de tempo de fluxo
+[fluxo] B1-3 quadradinho (−y, 2x): 20 pontos em t = 3.090 (tempo de fluxo); erro máx 0.000 px a 960×540 (ok)
+[campo] B1-3 GIRA: 24 setas, k = 0.2104 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[campo] B1-3 MUDA DE ÁREA: 24 setas, k = 0.2104 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[campo] B1-3 DEFORMA: 24 setas, k = 0.2104 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[motor] B1-3 miniaturas: 1.0000 s de fluxo por s de tela
+[gatilho] B1-3   8.60s (alvo   8.58s, atraso +0.02s) pode girar
+[gatilho] B1-3   9.53s (alvo   9.32s, atraso +0.21s) pode crescer ou encolher
+[gatilho] B1-3  11.93s (alvo  11.91s, atraso +0.02s) e pode se deformar
+[gatilho] B1-3  20.40s (alvo  20.43s, atraso -0.03s) o giro é medido pelo rotacional
+[gatilho] B1-3  24.53s (alvo  24.50s, atraso +0.03s) pelo divergente
+[11/10/26 17:09:45] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_still_PB1_72.                          
+                             0\images\cena\PB1_ManimC                          
+                             E_v0.21.0.png'                                    
+                                                                               
+                    INFO     Rendered PB1                          scene.py:290
+                             Played 44 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

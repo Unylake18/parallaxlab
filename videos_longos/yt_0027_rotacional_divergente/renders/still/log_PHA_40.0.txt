@@ -1,0 +1,33 @@
+Manim Community v0.21.0
+
+[ancora] H1 0.000
+[campo] H esquerda (−y, x): 20 setas, k = 0.3560 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[campo] H direita (−y, x)/r²: 20 setas, k = 0.3560 u por unidade de |F|, maior seta ÷ espaçamento = 0.57 (ok)
+[motor] H tinta: 0.6472 s de fluxo por s de tela
+[motor] H rodinhas (3 voltas até o congelamento): 0.6472 s de fluxo por s de tela
+[gatilho] H1   5.60s (alvo   5.62s, atraso -0.02s) soltar uma rodinha
+[gatilho] H1   8.60s (alvo   8.58s, atraso +0.02s) exatamente na mesma distância
+[gatilho] H1  11.20s (alvo  11.17s, atraso +0.03s) deixar a correnteza levar
+[ancora] H2 13.067
+[gatilho] H2   0.00s (alvo   0.06s, atraso -0.06s) no primeiro
+[gatilho] H2   7.87s (alvo   7.84s, atraso +0.03s) ela também completou um giro
+[gatilho] H2   9.67s (alvo   9.69s, atraso -0.02s) no segundo
+[gatilho] H2  13.40s (alvo  13.39s, atraso +0.01s) chega do mesmo jeito que saiu
+[gatilho] H2  15.60s (alvo  15.62s, atraso -0.02s) a pá marcada fica apontando
+[ancora] H3 35.467
+[hook] rodinha esquerda: 3.0000 giros; direita: orientação final − inicial = 0.000°; centros em (np.float64(0.9999999999999998), np.float64(-7.347880794884119e-16)) e (np.float64(0.9999999999999998), np.float64(-7.347880794884119e-16)) (o pouso foi em (1, 0))
+[hook] no raio 1: 8 pares; maior diferença entre as pontas = 0.0000 px a 960×540
+[gatilho] H3   6.00s (alvo   5.99s, atraso +0.01s) os dois campos são idênticos
+[11/10/26 17:08:46] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_still_PHA_40.                          
+                             0\images\cena\PHA_ManimC                          
+                             E_v0.21.0.png'                                    
+                                                                               
+                    INFO     Rendered PHA                          scene.py:290
+                             Played 24 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

@@ -1,0 +1,162 @@
+[
+{
+"c": 0.0,
+"o": 1.0,
+"fim": "gat",
+"aid": "B7-1",
+"frase": "uma função que dá um número em cada ponto",
+"antes": 0.0
+},
+{
+"c": 0.0,
+"o": 0.8,
+"fim": "gat",
+"aid": "B7-1",
+"frase": "calcula o gradiente dela",
+"antes": 0.0
+},
+{
+"c": 0.0,
+"o": 1.467,
+"fim": "gat",
+"aid": "B7-1",
+"frase": "o resultado se chama laplaciano",
+"antes": 0.0
+},
+{
+"c": 2.667,
+"o": 0.0,
+"fim": "fecha",
+"aid": "B7-1",
+"frase": null,
+"antes": 0.0
+},
+{
+"c": 0.0,
+"o": 0.6,
+"fim": "gat",
+"aid": "B7-2",
+"frase": "a soma dos quadrados",
+"antes": 0.0
+},
+{
+"c": 2.4,
+"o": 0.0,
+"fim": "gat",
+"aid": "B7-2",
+"frase": "o gradiente dela é uma explosão",
+"antes": 0.0
+},
+{
+"c": 3.333,
+"o": 0.0,
+"fim": "gat",
+"aid": "B7-2",
+"frase": "agora calcula o divergente dessa explosão",
+"antes": 0.0
+},
+{
+"c": 3.0,
+"o": 0.0,
+"fim": "gat",
+"aid": "B7-2",
+"frase": "no espaço",
+"antes": 0.0
+},
+{
+"c": 5.067,
+"o": 0.0,
+"fim": "fecha",
+"aid": "B7-2",
+"frase": null,
+"antes": 0.0
+},
+{
+"c": 2.667,
+"o": 0.0,
+"fim": "gat",
+"aid": "B7-3",
+"frase": "ele compara o valor da função num ponto",
+"antes": 0.0
+},
+{
+"c": 3.0,
+"o": 0.0,
+"fim": "gat",
+"aid": "B7-3",
+"frase": "com a média dos vizinhos",
+"antes": 0.0
+},
+{
+"c": 1.467,
+"o": 1.4,
+"fim": "gat",
+"aid": "B7-3",
+"frase": "laplaciano positivo",
+"antes": 0.0
+},
+{
+"c": 6.867,
+"o": 0.0,
+"fim": "fecha",
+"aid": "B7-3",
+"frase": null,
+"antes": 0.0
+},
+{
+"c": 0.0,
+"o": 1.733,
+"fim": "gat",
+"aid": "B7-4",
+"frase": "abaixo da média dos vizinhos",
+"antes": 0.0
+},
+{
+"c": 3.6,
+"o": 0.667,
+"fim": "gat",
+"aid": "B7-4",
+"frase": "esquenta",
+"antes": 0.0
+},
+{
+"c": 0.0,
+"o": 0.6,
+"fim": "gat",
+"aid": "B7-4",
+"frase": "vai se enchendo",
+"antes": 0.0
+},
+{
+"c": 0.0,
+"o": 0.6,
+"fim": "gat",
+"aid": "B7-4",
+"frase": "equação do calor",
+"antes": 0.0
+},
+{
+"c": 3.333,
+"o": 0.0,
+"fim": "gat",
+"aid": "B7-4",
+"frase": "e ele volta nas ondas",
+"antes": 0.0
+},
+{
+"c": 0.0,
+"o": 0.533,
+"fim": "fecha",
+"aid": "B7-4",
+"frase": null,
+"antes": 0.35
+},
+{
+"c": 0.0,
+"o": 0.333,
+"fim": "fim",
+"aid": null,
+"frase": null,
+"antes": 0.0
+}
+]

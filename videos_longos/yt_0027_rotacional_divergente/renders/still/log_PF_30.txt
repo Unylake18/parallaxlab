@@ -1,0 +1,54 @@
+Manim Community v0.21.0
+
+[ancora] F1 0.000
+[campo] F1 campo elétrico do fio (falsa fonte): 36 setas, k = 0.5355 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[gatilho] F1   6.33s (alvo   6.36s, atraso -0.02s) lembra da falsa fonte
+[motor] F1 pontinhos saindo: 0.5500 s de fluxo por s de tela
+[11/10/26 17:40:15] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}+\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PF_30\Tex\713151                        
+                             ed93a8b1f5.tex                                    
+[gatilho] F1   8.93s (alvo   8.95s, atraso -0.02s) o formato do campo elétrico
+[gatilho] F1  16.33s (alvo  16.36s, atraso -0.02s) é o próprio fio
+[11/10/26 17:40:18] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla\cdo                        
+                             t \special{dvisvgm:raw                            
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique001'>}\vec E                         
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g id='unique002'>}=                              
+                             \special{dvisvgm:raw                              
+                             </g>}\special{dvisvgm:raw                         
+                             <g                                                
+                             id='unique003'>}\dfrac{\rh                        
+                             o}{\varepsilon_0}\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PF_30\Tex\3d9a45                        
+                             39b5828c63.tex                                    
+[gatilho] F1  17.87s (alvo  17.84s, atraso +0.03s) a lei de gauss na forma local
+[algebra] F1   17.87s glifos=9 cor=33% rt=3.0s '\\nabla\\cdot\\vec E=\\dfrac{\\rho}{\\varepsilon_0}'
+[gatilho] F1  26.33s (alvo  26.36s, atraso -0.02s) fora do fio não tem carga
+[gatilho] F1  30.40s (alvo  30.43s, atraso -0.03s) igualzinho à nossa conta
+[11/10/26 17:40:20] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_still_PF_30\i                          
+                             mages\cena\PF_ManimCE_v0                          
+                             .21.0.png'                                        
+                                                                               
+                    INFO     Rendered PF                           scene.py:290
+                             Played 12 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

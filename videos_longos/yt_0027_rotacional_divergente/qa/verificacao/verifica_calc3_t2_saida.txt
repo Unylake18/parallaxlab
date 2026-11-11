@@ -1,0 +1,108 @@
+== A. Definições e exemplos do livro ==
+A1 rot(xy, yz², xyz) = (z(x-2y), -yz, -x)  [§1.3 Ex.1]: True
+A2 div(x²+z, -y², 2x+3y+z²) = 2x-2y+2z  [§1.4 Ex.1]: True
+A3 no plano (R = 0, sem z): rot = (Qx - Py) k: True
+A4 div grad(x²y) = 2y  [§1.4 Ex.2]: True
+A5 laplaciano de x²+y²+z² = 6  [§1.4 Ex.3]: True
+
+== B. Interpretação do livro: os dois braços AB e AC ==
+B1 braço horizontal AB (lado h): taxa -> dQ/dx quando h -> 0: True
+B2 braço vertical AC (lado k): taxa -> -dP/dy quando k -> 0: True
+B3 média da taxa sobre todas as direções = (a21 - a12)/2 = rot/2 (rodinha rígida): True
+B4 dois braços perpendiculares já dão a média (alpha e alpha + pi/2): True
+B5 decomposição: G = (div/2) I + (rot/2) J + (simétrica de traço zero): True
+
+== C. Campos do vídeo (plano) ==
+C  giro (-y, x)            [§1.3 Ex.6]: rot = 2 k (esperado 2) True; div = 0 (esperado 0) True
+C  vórtice (-y, x)/r²      [Ex.1.3-5]: rot = 0 k (esperado 0) True; div = 0 (esperado 0) True
+C  rio (1 - y²/9, 0)       [Ex.1.3-4 girado]: rot = 2*y/9 k (esperado 2*y/9) True; div = 0 (esperado 0) True
+C  rio do livro (0, 1-x²/9)[Ex.1.3-4]: rot = -2*x/9 k (esperado -2*x/9) True; div = 0 (esperado 0) True
+C  radial (x, y): rot = 0 k (esperado 0) True; div = 2 (esperado 2) True
+C  falsa fonte (x, y)/r²   [§1.3 Ex.5, sinal trocado]: rot = 0 k (esperado 0) True; div = 0 (esperado 0) True
+C  fonte-anel (x - x³/3, y - y³/3): rot = 0 k (esperado 0) True; div = -x**2 - y**2 + 2 (esperado -x**2 - y**2 + 2) True
+C  sela (x, -y)            [CTA]: rot = 0 k (esperado 0) True; div = 0 (esperado 0) True
+C  subida (0, y)           [§1.4 Ex.6]: rot = 0 k (esperado 0) True; div = 1 (esperado 1) True
+C0 campo do B2 (-y, 2x): braço horizontal gira a dQ/dx = 2, vertical a -dP/dy = 1; rodinha a (2+1)/2 = 3/2; rot = 3k: True True True
+C0b fluxo exato do B2: e^(Gt) (elipses, período 2pi/sqrt2), área conservada (div = 0): True
+C1 vórtice: braço radial em (x0, 0) gira a -1/x0²: True ; braço tangencial a +1/x0²: True -> média 0
+C2 vórtice: velocidade angular da órbita = |F|/r = 1/r²: True
+C3 rodinha no giro (-y, x): omega = rot/2 = 1 rad/s (uma volta própria por volta em torno do centro)
+C4 rio: rodinha em y = 2 gira a 2/9 rad/s anti-horário; em y = 0 parada; em y = -2, 2/9 horário: [2/9, 0, -2/9]
+C5 sela (x, -y) não é constante e tem div = rot = 0 (resposta do CTA)
+
+== D. Fluxos exatos usados nas animações (sem interpolação) ==
+D1 vórtice: r fixo, ângulo th0 + t/r0² resolve X' = F(X): True
+D2 falsa fonte: r² = r0² + 2t resolve X' = X/r²: True
+D3 falsa fonte: área do setor-anel [r1, r2] x dtheta não muda: True
+D4 fonte-anel, em cada eixo: u = x² = 3/(1 + (3/u0 - 1)e^(-2t)) resolve u' = 2u(1 - u/3): True ; u(0) = u0: True
+D5 radial (x, y): área do quadradinho = A0 e^(2t), e (d/dt) ln A = 2 = div: True
+D6 campo linear qualquer: det(e^(Gt)) = e^(t·tr G) (Liouville: d/dt ln área = div): True
+D7 livro (§1.4 Ex.5): V(t0+dt) = hk[1 + dt·div] + O(dt²): True
+
+== E. A caixa fixa que encolhe ==
+E1 fonte-anel, quadrado de lado h centrado em (x0, y0): fluxo/área = 2 - x0² - y0² - h²/6: True
+E2 tabela no ponto (1, 1/2), div = 3/4: [('1', '7/12', 0.5833333333333334), ('1/2', '17/24', 0.7083333333333334), ('1/4', '71/96', 0.7395833333333334), ('1/8', '287/384', 0.7473958333333334)]
+E3 qualquer campo cúbico: lim fluxo/área = Px + Qy no centro: True
+E4 campo de grau ≤ 2: a razão já é exata para qualquer h (por isso o vídeo usa um campo cúbico): True
+E5 falsa fonte, quadrado [1, 2] x [-1/2, 1/2] (sem a origem): sai exatamente o que entra (soma de arctg, conferida a 50 dígitos): True
+
+== F. Espaço: rotacional como eixo da rodinha ==
+F1 rotação rígida W × X: rot = 2W, div = 0: True True
+F2 campo linear qualquer: rodinha com eixo n gira a (1/2) rot · n: True
+F3 Ex.1 do livro no ponto (1, 1, 1): rot = [-1, -1, -1] ; eixo que gira mais = -(1,1,1)/√3, rapidez = sqrt(3)/2 ; rodinhas nos eixos x, y, z: -1/2 cada: [-1/2, -1/2, -1/2]
+
+== G. Identidades ==
+G1 rot grad f = 0 (C²) [Ex.1.3-3 no plano]: True
+G2 div rot F = 0 (C²): True
+G3 div grad f = laplaciano: True
+
+== H. Local × global nos dois campos com furo (só a promessa da síntese; nenhuma conta vai ao vídeo) ==
+H1 vórtice, circunferência de raio R em volta do furo: circulação = 2*pi (≠ 0, para todo R) True
+H2 falsa fonte, mesma circunferência: fluxo para fora = 2*pi (≠ 0, para todo R) True
+H3 laço que não envolve o furo (centro (3, 0), raio 1): circulação do vórtice e fluxo da falsa fonte = -0.e-105 -0.e-105 True
+
+== L. Laplaciano (B7, curiosidade) ==
+L1 plano: grad(x²+y²) = 2(x, y) e div grad = 4: True True
+L2 espaço: laplaciano de x²+y²+z² = 6 (§1.4 Ex.3): ver A5
+L3 média de x²+y² na circunferência de raio rho em volta de (a, b) = valor no centro + rho² = valor + (rho²/4)·laplaciano: True
+L4 qualquer função lisa: média em volta − valor no centro = (rho²/4)·laplaciano + O(rho⁴) (positivo ⇔ ponto abaixo da média): True
+L5 mancha fria da animação (núcleo do calor 2D) resolve dT/dt = alpha·laplaciano T: True
+
+== I. Números e fórmulas de implementação (handoff v1) ==
+I1 fluxo exato do B2 (-y, 2x): x(t) = x0 cos(√2 t) − (y0/√2) sen(√2 t), y(t) = √2 x0 sen(√2 t) + y0 cos(√2 t): True True
+I2 falsa fonte, caixa [1, 2] x [-1/2, 1/2]: ENTRA (esquerda) = 0.9273 ; SAI direita = 0.4900 ; SAI cima + baixo = 0.4373 ; soma das saídas = 0.9273 True
+I3 rodinha da falsa fonte (setor-anel r 1,2→1,6, t = 0..2): raios finais 2.332 2.561 (espessura 0,40 →  0.229 ), área constante (D3)
+I4 fonte-anel no ponto (1, 1/2): div = 2 - 1 - 1/4 = 3/4
+
+== J. Ganchos de física (bloco F e frases soltas) ==
+J1 fio comprido carregado: E = (lambda/2 pi eps0)(x, y)/r² = falsa fonte × constante; div E = 0 fora do fio: True ; |E|² = (lambda/(2 pi eps0 r))²: True
+J2 fio com corrente: B = (mu0 I/2 pi)(-y, x)/r² = vórtice × constante; rot B = 0 e div B = 0 fora do fio: True True
+J3 o que "mora no furo": fluxo de E por um círculo em volta do fio = lambda/eps0 (Gauss); circulação de B = mu0 I (Ampère): True True
+J4 vórtice de Rankine (tornado), miolo de raio 1: contínuo em r = 1: True ; rot = 2 Omega dentro, 0 fora: True True
+J5 vorticidade de corpo rígido: rot(omega × r) = 2 omega (ver F1)
+
+== V2: álgebra escrita na tela e números dos quadros-alvo
+V2-1 dQ/dx do vórtice = ((x²+y²) − x·2x)/(x²+y²)² = (y²−x²)/(x²+y²)²: True
+V2-2 dP/dy do vórtice = (−(x²+y²) + y·2y)/(x²+y²)² = (y²−x²)/(x²+y²)²: True
+V2-3 falsa fonte: dP/dx = (y²−x²)/(x²+y²)², dQ/dy = (x²−y²)/(x²+y²)²: True
+V2-4 rio: rot = −dP/dy = 2y/9: True
+V2-5 (−y, 2x): dQ/dx = 2, dP/dy = −1, rot = 3: True
+V2-6 fonte-anel em (1, 1/2): 2 − 1 − 1/4 = 3/4: True
+V2-7 rodinha 3D com eixo a 50° de W (|W| = 1): ω = cos 50° ≈ 0,643: True
+V2-8 B4-2 quadrado de lado 0,7 em (x, y) por t = 0,35: área 0,49 → 0,49·e^0,7 ≈ 0,99: True
+V2-9 média de x²+y² na circunferência de raio 0,4 em (1, 1/2) = 1,25 + 0,16 = 1,41: True
+== V3 ==
+deformação rot = 0: True
+deformação div = 0: True
+fluxo (x e^t, y e^-t) resolve x' = x, y' = -y: True
+área preservada (jacobiano = 1): True
+cubo: div (x,y,z) = 3: True
+cubo: saldo = 3 x (2 - 1) x 1 = 3: True
+calor: T_t = alpha lap T: True
+calor: lap T(0,0) = 4 s0/s^2 > 0: True
+--- V4 ---
+V4 rot(P(x,y),Q(x,y),0) = (0,0,Qx-Py): True
+V4 determinante = componentes do alvo 17: True
+V4 exemplo B1-1a (-y,2x): P=-y, Q=2x, rot = 3 k: True
+V4 exemplo B2-6 (-y,x): Qx=1, Py=-1, rot=2: True
+V4 div em R^n (F_i = x_i^2) = 2(x1+...+xn): True

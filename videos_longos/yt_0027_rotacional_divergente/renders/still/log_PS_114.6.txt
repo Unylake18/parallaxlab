@@ -1,0 +1,181 @@
+Manim Community v0.21.0
+
+[ancora] S1 0.000
+[motor] S1 rodinha: 1.0000 s de fluxo por s de tela
+[11/11/26 10:33:38] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\rot \F =                         
+                             \left(\dfrac{\partial                             
+                             \Qq}{\dx} -                                       
+                             \dfrac{\partial                                   
+                             \Pp}{\dy}\right)\kk =                             
+                             2\,\w\,\kk\special{dvisvgm                        
+                             :raw </g>} to                                     
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PS_114.6\Tex\8fb                        
+                             61af21afd3312.tex                                 
+[11/11/26 10:33:40] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dv \F =                          
+                             \dfrac{\partial \Pp}{\dx}                         
+                             + \dfrac{\partial                                 
+                             \Qq}{\dy}\special{dvisvgm:                        
+                             raw </g>} to                                      
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PS_114.6\Tex\795                        
+                             384c3d0bdfb75.tex                                 
+[gatilho] S1  10.33s (alvo  10.36s, atraso -0.03s) o rotacional mede isso com duas derivadas
+[sync] PS trecho 1 (S1 → gat o divergente mede com outras duas): pede 8.13s, cabe 5.72s → caneta × 0.70
+[algebra] S1   10.33s glifos=26 cor=100% rt=5.7s '\\rot \\F = \\left(\\dfrac{\\partial \\Qq}{\\dx} - \\dfrac{\\partial \\Pp}{\\dy}\\right)\\kk = 2\\,\\w\\,\\kk'
+[gatilho] S1  16.13s (alvo  16.10s, atraso +0.03s) o divergente mede com outras duas
+[algebra] S1   16.13s glifos=17 cor=100% rt=5.4s '\\dv \\F = \\dfrac{\\partial \\Pp}{\\dx} + \\dfrac{\\partial \\Qq}{\\dy}'
+[ancora] S2 24.067
+[campo] S2 vórtice (contexto): 62 setas, maior 0.490 u, menor 0.285 u (menor ÷ maior 0.58; alvo ≥ 0,40), maior ÷ passo = 0.82
+[campo] S2 falsa fonte (contexto): 62 setas, maior 0.490 u, menor 0.285 u (menor ÷ maior 0.58; alvo ≥ 0,40), maior ÷ passo = 0.82
+[11/11/26 10:33:43] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\odot\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PS_114.6\Tex\5a2                        
+                             9a1f78fa4777a.tex                                 
+[11/11/26 10:33:45] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}+\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PS_114.6\Tex\e7b                        
+                             4a31b4e3f2356.tex                                 
+[gatilho] S2   3.93s (alvo   3.96s, atraso -0.03s) se você der uma volta em torno do furo
+[gatilho] S2  13.93s (alvo  13.92s, atraso +0.01s) se você cercar o furo
+[11/11/26 10:33:49] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}0\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PS_114.6\Tex\4a5                        
+                             76026e183eded.tex                                 
+[gatilho] S2  17.33s (alvo  17.32s, atraso +0.01s) longe do furo qualquer volta
+[gatilho] S2  21.07s (alvo  21.08s, atraso -0.01s) em cada ponto nada
+[gatilho] S2  22.67s (alvo  22.68s, atraso -0.01s) em volta do fio alguma coisa
+[ancora] S3 48.667
+[gatilho] S3  11.33s (alvo  11.36s, atraso -0.03s) stokes
+[gatilho] S3  13.27s (alvo  13.24s, atraso +0.03s) gauss
+[gatilho] S3  16.47s (alvo  16.44s, atraso +0.03s) green
+[ancora] S4 72.200
+[campo] S4 deformação (x, −y): 80 setas, maior 0.485 u, menor 0.289 u (menor ÷ maior 0.60; alvo ≥ 0,40), maior ÷ passo = 0.81
+[11/11/26 10:34:36] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F = (\X,\                        
+                             -\Y)\special{dvisvgm:raw                          
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PS_114.6\Tex\c97                        
+                             f07446c9be46a.tex                                 
+[gatilho] S4   2.80s (alvo   2.82s, atraso -0.02s) olha este campo
+[sync] PS trecho 14 (S4 → gat faz a conta): pede 3.00s, cabe 2.49s → caneta × 0.83
+[algebra] S4   75.00s glifos=9 cor=100% rt=2.5s '\\F = (\\X,\\ -\\Y)'
+[11/11/26 10:34:37] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\rot\F =                          
+                             \vec 0\special{dvisvgm:raw                        
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PS_114.6\Tex\a69                        
+                             e65ddeb9c43cc.tex                                 
+[11/11/26 10:34:39] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dv\F =                           
+                             0\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PS_114.6\Tex\6a7                        
+                             5c23667f7fcc1.tex                                 
+[11/11/26 10:34:40] WARNING  The original total run_time of       scene.py:1131
+                             PS._play_sync(), 0.0653333 seconds,               
+                             is too short for the current frame                
+                             rate of 15 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    WARNING  The original total run_time of       scene.py:1131
+                             PS._play_sync(), 0.0653333 seconds,               
+                             is too short for the current frame                
+                             rate of 15 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[gatilho] S4   5.33s (alvo   5.34s, atraso -0.01s) faz a conta
+[sync] PS trecho 15 (S4 → gat o divergente também): pede 2.67s, cabe 2.06s → caneta × 0.77
+[algebra] S4   77.53s glifos=8 cor=100% rt=2.1s '\\rot\\F = \\vec 0'
+[gatilho] S4   7.40s (alvo   7.44s, atraso -0.04s) o divergente também
+[sync] PS trecho 16 (S4 → gat nenhuma rodinha gira): pede 2.40s, cabe 2.23s → caneta × 0.93
+[algebra] S4   79.60s glifos=7 cor=100% rt=2.2s '\\dv\\F = 0'
+                    WARNING  The original total run_time of       scene.py:1131
+                             PS._play_sync(), 0.0653333 seconds,               
+                             is too short for the current frame                
+                             rate of 15 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    WARNING  The original total run_time of       scene.py:1131
+                             PS._play_sync(), 0.0653333 seconds,               
+                             is too short for the current frame                
+                             rate of 15 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[gatilho] S4   9.67s (alvo   9.68s, atraso -0.01s) nenhuma rodinha gira
+[gatilho] S4  10.93s (alvo  10.96s, atraso -0.03s) nenhum pedacinho muda de área
+[gatilho] S4  16.60s (alvo  16.60s, atraso +0.00s) estica
+[motor] S4: fluxo de 0.000 a 0.550 em 2.50 s (fator 0.220 de fluxo por s)
+[deforma] S4: fluxo exato (x eᵗ, y e⁻ᵗ) até t = 0,55: área 1.44000 → 1.44000; lados 2.080 × 0.692
+[gatilho] S4  21.87s (alvo  21.88s, atraso -0.01s) isso é a deformação
+[gatilho] S4  27.73s (alvo  27.76s, atraso -0.03s) desafio para os comentários
+[campo] S4 prévia (x, −y): 33 setas, maior 0.632 u, menor 0.470 u (menor ÷ maior 0.74; alvo ≥ 0,40), maior ÷ passo = 0.79
+[11/11/26 10:35:01] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\begin{pma                        
+                             trix} \dfrac{\partial                             
+                             \Pp}{\dx} &                                       
+                             \dfrac{\partial \Pp}{\dy}                         
+                             \\[12pt] \dfrac{\partial                          
+                             \Qq}{\dx} &                                       
+                             \dfrac{\partial \Qq}{\dy}                         
+                             \end{pmatrix}\special{dvis                        
+                             vgm:raw </g>} to                                  
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PS_114.6\Tex\813                        
+                             fa91655794e81.tex                                 
+[gatilho] S4  34.67s (alvo  34.64s, atraso +0.03s) no próximo vídeo
+[motor] S4: fluxo de 0.000 a 0.550 em 2.00 s (fator 0.275 de fluxo por s)
+[gatilho] S4  42.27s (alvo  42.26s, atraso +0.01s) juntando todas as derivadas parciais
+[sync] PS trecho 23 (S4 → gat se essa aula te ajudou): pede 9.07s, cabe 7.58s → caneta × 0.83
+[algebra] S4  114.47s glifos=28 cor=100% rt=7.2s '\\begin{pmatrix} \\dfrac{\\partial \\Pp}{\\dx} & \\dfrac{\\partial \\Pp}{\\dy} \\\\[12pt] \\dfrac{\\partial \\Qq}{\\dx} & \\dfrac{\\partial \\Qq}{\\dy} \\end{pmatrix}'
+[11/11/26 10:35:06] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_still_PS_114.                          
+                             6\images\cena\PS_ManimCE                          
+                             _v0.21.0.png'                                     
+                                                                               
+                    INFO     Rendered PS                           scene.py:290
+                             Played 57 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

@@ -1,0 +1,213 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="katex/katex.min.css">
+<script src="katex/katex.min.js"></script>
+<style>
+@font-face{font-family:SG;src:url(SpaceGrotesk-Bold.ttf)}
+@font-face{font-family:SGM;src:url(SpaceGrotesk-Medium.ttf)}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#091226}
+canvas{position:absolute;left:0;top:0}
+.f{position:absolute;color:#F5F7FF;white-space:nowrap;line-height:1}
+.f .katex{font-size:1em}
+.pl{position:absolute;background:rgba(9,18,38,.85);border-radius:6px}
+</style></head><body><canvas id="o" width="1920" height="1080"></canvas>
+<script>
+// Quadros-alvo v2 do yt_0027 (rotacional e divergente). ?k=<cena>
+// Sistema: o mesmo do yt_0026 v7/v8 (setas só flecha, comprimento comprimido, painéis sem preenchimento, canto alto, placa mínima nos rótulos).
+const K=new URLSearchParams(location.search).get('k'), x=document.getElementById('o').getContext('2d'), PI=Math.PI;
+const CAMPO='#2EE6A0', CAMPO2='#8CFFD2', CTX='#1A5F55', SAI='#7FB2FF', SAIF='#A9CCFF', GEO='#B8C4DA', BR='#F5F7FF', E1='#FFC24D', E2='#EA63FF', E3='#35D9FF',
+ VEL='#9C8CFF', CORAL='#FF7A8A', ESC='#050B18', CHAPA='#1A2C52', POS='#E08A3C', CARGA='#267BFF', CORR='#3FE08B', MAG='#EA63FF';
+const M={'\\X':'\\textcolor{#FFC24D}{x}','\\Y':'\\textcolor{#EA63FF}{y}','\\Z':'\\textcolor{#35D9FF}{z}','\\F':'\\textcolor{#2EE6A0}{\\vec F}',
+ '\\Pp':'\\textcolor{#2EE6A0}{P}','\\Qq':'\\textcolor{#2EE6A0}{Q}','\\Rr':'\\textcolor{#2EE6A0}{R}',
+ '\\dx':'\\partial \\textcolor{#FFC24D}{x}','\\dy':'\\partial \\textcolor{#EA63FF}{y}','\\dz':'\\partial \\textcolor{#35D9FF}{z}',
+ '\\w':'\\textcolor{#9C8CFF}{\\omega}','\\V':'\\textcolor{#9C8CFF}','\\D':'\\textcolor{#7FB2FF}','\\C':'\\textcolor{#FF7A8A}',
+ '\\rot':'\\operatorname{rot}','\\dv':'\\operatorname{div}','\\h':'\\textcolor{#FFC24D}{h}','\\k':'\\textcolor{#EA63FF}{k}',
+ '\\xo':'\\textcolor{#FFC24D}{x_0}','\\yo':'\\textcolor{#EA63FF}{y_0}','\\E':'\\textcolor{#2EE6A0}{\\vec E}','\\B':'\\textcolor{#EA63FF}{\\vec B}',
+ '\\J':'\\textcolor{#3FE08B}{\\vec J}','\\phi':'\\textcolor{#7FB2FF}{\\varphi}','\\T':'\\textcolor{#7FB2FF}{T}','\\kk':'\\vec k'};
+let O=[960,540],U=100; const P=(a,b)=>[O[0]+a*U,O[1]-b*U]; const vista=(cx,cy,u)=>{O=[cx,cy];U=u;};
+const img=s=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=s;});
+function mix(a,b,t){const h=s=>[1,3,5].map(i=>parseInt(s.slice(i,i+2),16));const A=h(a),B=h(b);return 'rgb('+A.map((v,i)=>Math.round(v+(B[i]-v)*t)).join(',')+')';}
+function tex(s,X,Y,size=52,al='l',placa=false){const d=document.createElement('div');d.className='f';d.style.fontSize=size+'px';
+ katex.render(s,d,{macros:M,throwOnError:false});document.body.appendChild(d);const w=d.offsetWidth,h=d.offsetHeight;
+ const L=(al==='c'?X-w/2:al==='r'?X-w:X),T=(Y-h/2);d.style.left=L+'px';d.style.top=T+'px';
+ if(placa){const p=document.createElement('div');p.className='pl';p.style.left=(L-6)+'px';p.style.top=(T-4)+'px';p.style.width=(w+12)+'px';p.style.height=(h+8)+'px';document.body.insertBefore(p,d);}return d;}
+function txt(s,X,Y,{size=30,f='SG',cor=BR,al='left',alpha=1,placa=false}={}){x.font=`${size}px ${f}`;if(placa){const w=x.measureText(s).width,L=al==='center'?X-w/2:X;x.fillStyle='rgba(9,18,38,.85)';x.beginPath();x.roundRect(L-8,Y-size*.82,w+16,size*1.05,6);x.fill();}
+ x.globalAlpha=alpha;x.textAlign=al;x.fillStyle=cor;x.fillText(s,X,Y);x.textAlign='left';x.globalAlpha=1;}
+function legenda(s,X,Y,cor=SAIF,al='left',size=28){txt(s,X,Y,{size,f:'SGM',cor,al});}
+function caminho(pts){x.beginPath();pts.forEach((p,i)=>{const q=P(...p);i?x.lineTo(...q):x.moveTo(...q)});}
+function linha(pts,cor,w,{dash=null,alpha=1}={}){x.lineCap='round';x.lineJoin='round';x.setLineDash(dash||[]);caminho(pts);x.globalAlpha=alpha;x.strokeStyle=cor;x.lineWidth=w;x.stroke();x.globalAlpha=1;x.setLineDash([]);}
+function preenche(pts,cor,alpha=1){caminho(pts);x.closePath();x.globalAlpha=alpha;x.fillStyle=cor;x.fill();x.globalAlpha=1;}
+function seta(a,b,cor,w=5,head=20){const A=P(...a),B=P(...b),dx=B[0]-A[0],dy=B[1]-A[1],L=Math.hypot(dx,dy);if(L<3)return;
+ const ux=dx/L,uy=dy/L,h=Math.min(head,.45*L),hw=h*.5,bx=B[0]-ux*h,by=B[1]-uy*h;
+ x.lineCap='round';x.beginPath();x.moveTo(...A);x.lineTo(bx+ux,by+uy);x.strokeStyle=cor;x.lineWidth=w;x.stroke();
+ x.beginPath();x.moveTo(...B);x.lineTo(bx-uy*hw,by+ux*hw);x.lineTo(bx+uy*hw,by-ux*hw);x.closePath();x.fillStyle=cor;x.fill();}
+function ponto(p,cor,r=9){const q=P(...p);x.beginPath();x.arc(...q,r,0,7);x.fillStyle=cor;x.fill();}
+function circ(r,c=[0,0],n=200,a0=0,a1=2*PI){const a=[];for(let i=0;i<=n;i++){const t=a0+(a1-a0)*i/n;a.push([c[0]+r*Math.cos(t),c[1]+r*Math.sin(t)]);}return a;}
+// seta de campo: comprimento comprimido L = lmax(0,4 + 0,6 t), centrada no ponto, cor pela intensidade; ctx = cor escura opaca de contexto
+function setaCampo(X,Y,f,{lmax,mmax,ctx=false,cor=null}){const m=Math.hypot(...f);if(m<1e-9)return;const t=Math.min(1,m/mmax),L=lmax*(.4+.6*t),u=[f[0]/m*L,f[1]/m*L];
+ const cc=cor?(ctx?mix(cor,'#091226',.65):cor):(ctx?CTX:mix(CAMPO,CAMPO2,t));seta([X-u[0]/2,Y-u[1]/2],[X+u[0]/2,Y+u[1]/2],cc,5,19);}
+function campo(Fv,{x0=-3,x1=3,y0=-3,y1=3,passo=.5,rmin=.3,rmax=3.05,mmax=1,ctx=false,cor=null,c=[0,0],skip=null}={}){const lmax=.84*passo;
+ for(let X=x0;X<=x1+1e-6;X+=passo)for(let Y=y0;Y<=y1+1e-6;Y+=passo){const r=Math.hypot(X-c[0],Y-c[1]);if(r<rmin||r>rmax)continue;if(skip&&skip(X,Y))continue;setaCampo(X,Y,Fv(X,Y),{lmax,mmax,ctx,cor});}}
+function campoPolar(Fv,aneis,{arco=.62,mmax=1,ctx=false,cor=null,destaque=null}={}){aneis.forEach(r=>{const n=Math.max(6,Math.round(2*PI*r/arco));for(let i=0;i<n;i++){const a=2*PI*i/n,X=r*Math.cos(a),Y=r*Math.sin(a);
+ const dd=destaque&&Math.abs(r-destaque)<1e-6;if(dd){const f=Fv(X,Y),m=Math.hypot(...f),t=Math.min(1,m/mmax),L=.84*arco*(.4+.6*t),u=[f[0]/m*L,f[1]/m*L];seta([X-u[0]/2,Y-u[1]/2],[X+u[0]/2,Y+u[1]/2],CAMPO2,7,22);}
+ else setaCampo(X,Y,Fv(X,Y),{lmax:.84*arco,mmax,ctx,cor});}});}
+function canto(s){txt('CÁLCULO III · ROTACIONAL E DIVERGENTE',36,73,{size:22,f:'SGM',cor:'#C8D6F0',alpha:.6});txt(s,36,118,{size:36});}
+async function logo(){const lg=await img('logo_crop.png');if(lg)x.drawImage(lg,1640,20);}
+function painel(X0,Y0,w,h,rot,cor=GEO){x.strokeStyle='rgba(184,196,218,.35)';x.lineWidth=2;x.beginPath();x.roundRect(X0,Y0,w,h,14);x.stroke();
+ if(rot)txt(rot,X0+w/2,Y0-18,{size:28,f:'SGM',cor,al:'center'});}
+async function img3d(f,bx,by,bw,bh){const i=await img(f);if(!i)return;const s=Math.min(bw/i.width,bh/i.height);x.drawImage(i,bx+(bw-i.width*s)/2,by+(bh-i.height*s)/2,i.width*s,i.height*s);}
+// rodinha de pás (sonda): 4 pás coral, cubo escuro com anel coral, pá 0 marcada (faixa azul-clara na ponta); ang = orientação
+function roda(c,R,ang,{pino=false,alpha=1}={}){x.globalAlpha=alpha;for(let k=0;k<4;k++){const a=ang+PI/2+k*PI/2,u=[Math.cos(a),Math.sin(a)],n=[-u[1],u[0]],w=.15*R;
+  const q=(s,t)=>[c[0]+u[0]*s+n[0]*t,c[1]+u[1]*s+n[1]*t];preenche([q(.2*R,-w),q(R,-w),q(R,w),q(.2*R,w)],k===0?SAIF:CORAL);}
+ const C=P(...c);x.beginPath();x.arc(...C,.24*R*U,0,7);x.fillStyle=ESC;x.fill();x.strokeStyle=CORAL;x.lineWidth=3;x.stroke();
+ if(pino){x.beginPath();x.arc(...C,5,0,7);x.fillStyle=GEO;x.fill();}x.globalAlpha=1;}
+function giroSeta(c,r,a0,a1,cor=VEL,w=4){const pts=circ(r,c,60,a0,a1);linha(pts,cor,w);const n=pts.length,A=pts[n-2],B=pts[n-1];const d=[B[0]-A[0],B[1]-A[1]],L=Math.hypot(...d);seta([B[0]-d[0]/L*.01,B[1]-d[1]/L*.01],[B[0]+d[0]/L*.12,B[1]+d[1]/L*.12],cor,w,18);}
+function furo(r=.5,cor=null,simb=null){const pts=circ(r);preenche(pts,ESC);linha(pts,GEO,3);if(cor){preenche(circ(r*.62),cor);if(simb)tex(simb,...P(0,0),r*U*.9,'c');}}
+function braco(a,b,{dash=null,cor=CORAL,w=7}={}){linha([a,b],cor,w,{dash});if(!dash){ponto(a,cor,10);ponto(b,cor,10);}}
+function quadrado(c,s,cor,{dash=null,fill=null,w=4,alpha=.85}={}){const q=[[c[0]-s/2,c[1]-s/2],[c[0]+s/2,c[1]-s/2],[c[0]+s/2,c[1]+s/2],[c[0]-s/2,c[1]+s/2],[c[0]-s/2,c[1]-s/2]];if(fill)preenche(q,fill,alpha);linha(q,cor,w,{dash});}
+const giro=(X,Y)=>[-Y,X], vort=(X,Y)=>{const r2=X*X+Y*Y;return[-Y/r2,X/r2];}, expl=(X,Y)=>[X,Y], falsa=(X,Y)=>{const r2=X*X+Y*Y;return[X/r2,Y/r2];};
+const tes=(X,Y)=>[-Y,2*X], anel=(X,Y)=>[X-X**3/3,Y-Y**3/3];
+// fluxos exatos
+const flV=(p,t)=>{const r=Math.hypot(...p),th=Math.atan2(p[1],p[0])+t/(r*r);return[r*Math.cos(th),r*Math.sin(th)];};
+const flG=(p,t)=>[p[0]*Math.cos(t)-p[1]*Math.sin(t),p[0]*Math.sin(t)+p[1]*Math.cos(t)];
+const s2=Math.SQRT2, flT=(p,t)=>[p[0]*Math.cos(s2*t)-p[1]/s2*Math.sin(s2*t), s2*p[0]*Math.sin(s2*t)+p[1]*Math.cos(s2*t)];
+const flF=(p,t)=>{const r=Math.hypot(...p),th=Math.atan2(p[1],p[0]),R=Math.sqrt(r*r+2*t);return[R*Math.cos(th),R*Math.sin(th)];};
+// fita de tinta (uma faixa radial de 0,75 a 2,5) levada pelo fluxo
+function fita(fl,t,lw){const pts=[];for(let i=0;i<=300;i++){const r=.75+1.75*i/300;pts.push(fl([0,r],t));}x.globalAlpha=.5;linha(pts,SAI,lw);x.globalAlpha=1;linha(pts,SAIF,2,{alpha:.7});}
+async function main(){
+ await document.fonts.load('30px SG');await document.fonts.load('30px SGM');
+ const bg=await img('fundo27_milimetrado_1920x1080.png');x.drawImage(bg,0,0);await logo();
+ const AN=[1,1.5,2,2.5];
+ // ---------- HOOK (sem canto) ----------
+ if(K==='h2'||K==='h3'){const t=K==='h2'?3.9:3*PI;
+  painel(130,260,700,560,'');painel(1090,260,700,560,'');
+  vista(480,540,96);fita(flG,t,14);campoPolar(giro,AN,{mmax:2.5,destaque:K==='h3'?1:null});if(K==='h3')linha(circ(1),SAIF,4,{alpha:.9});
+  roda(flG([1,0],t),.42,t);
+  vista(1440,540,96);fita(flV,t,14);campoPolar(vort,AN,{mmax:2.5,destaque:K==='h3'?1:null});if(K==='h3')linha(circ(1),SAIF,4,{alpha:.9});furo(.6);
+  roda(flV([1,0],t),.42,0);
+  if(K==='h3')txt('AS MESMAS SETAS. POR QUE SÓ UMA GIRA?',960,930,{size:40,al:'center',cor:SAIF});}
+ // ---------- B1-3: três cartões ----------
+ if(K==='b13'){canto('UM PEDACINHO DE FLUIDO');const C=[[140,'GIRA','ROTACIONAL',VEL,giro,p=>flG(p,.6)],[720,'MUDA DE ÁREA','DIVERGENTE',SAI,expl,p=>[p[0]*1.45,p[1]*1.45]],[1300,'DEFORMA','',GEO,(X,Y)=>[X,-Y],p=>[p[0]*1.5,p[1]/1.5]]];
+  for(const [X0,r,tag,ct,Fv,T] of C){painel(X0,250,480,460,'');vista(X0+240,480,56);campo(Fv,{x0:-3.5,x1:3.5,y0:-3.5,y1:3.5,passo:.85,rmin:1.1,rmax:3.9,mmax:3.4});
+   const q=[[-.6,-.6],[.6,-.6],[.6,.6],[-.6,.6],[-.6,-.6]];linha(q,CORAL,3,{dash:[8,8],alpha:.6});const qq=q.map(T);preenche(qq,CORAL,.9);
+   txt(r,X0+240,780,{size:34,al:'center'});if(tag)txt(tag,X0+240,835,{size:30,f:'SGM',cor:ct,al:'center'});}}
+ // ---------- B2: braços na origem do campo (-y, 2x) ----------
+ if(['b22','b23','b24','b25'].includes(K)){canto('ROTACIONAL');vista(600,540,120);const ctx=K!=='b25'||true;campo(tes,{mmax:6,ctx:true});ponto([0,0],CORAL,8);
+  if(K==='b22'){braco([0,0],[1.5,0]);linha([[0,0],[1.5*Math.cos(.28),1.5*Math.sin(.28)]],CORAL,4,{dash:[10,9],alpha:.7});seta([1.5,0],[1.5,1.2],CAMPO2,6,24);
+   giroSeta([0,0],1.85,.05,.3);tex('\\C{A}',...P(-.22,-.28),40,'c',true);tex('\\C{B}',...P(1.62,-.32),40,'c',true);tex('\\h',...P(.75,-.32),40,'c',true);
+   tex('\\w_{\\C{AB}} \\approx \\dfrac{\\Qq(\\xo+\\h,\\,\\yo) - \\Qq(\\xo,\\,\\yo)}{\\h}',1120,400,48);tex('\\w_{\\C{AB}} = \\dfrac{\\partial \\Qq}{\\dx}',1120,560,56);legenda('BRAÇO HORIZONTAL',1124,680,CORAL);}
+  if(K==='b23'){braco([0,0],[0,1.5]);linha([[0,0],[-1.5*Math.sin(.15),1.5*Math.cos(.15)]],CORAL,4,{dash:[10,9],alpha:.7});seta([0,1.5],[-.6,1.5],CAMPO2,6,24);
+   giroSeta([0,0],1.85,PI/2+.05,PI/2+.3);tex('\\C{A}',...P(.28,-.25),40,'c',true);tex('\\C{C}',...P(.3,1.6),40,'c',true);tex('\\k',...P(.3,.75),40,'c',true);
+   tex('\\w_{\\C{AC}} = -\\dfrac{\\partial \\Pp}{\\dy}',1120,400,56);legenda('BRAÇO VERTICAL',1124,520,CORAL);
+   // regra geral, em miniatura: ponta de cima mais rápida para a direita -> horário -> sinal de menos
+   const o=O.slice(),u=U;vista(1210,720,70);linha([[0,-1],[0,1]],GEO,5,{dash:[9,8]});seta([0,1],[1.3,1],CAMPO2,6,20);seta([0,-1],[.45,-1],CAMPO2,6,20);giroSeta([0,0],1.25,PI/2+.15,PI/2-.6,VEL,4);
+   txt('HORÁRIO',1330,705,{size:30,f:'SGM',cor:VEL});tex('\\Rightarrow\\ \\text{sinal } -',1330,760,40);vista(...o,u);
+   tex('\\dfrac{\\partial \\Pp}{\\dy} = -1 \\;\\Rightarrow\\; \\w_{\\C{AC}} = -(-1) = 1',1120,900,44);}
+  if(K==='b24'){const H=flT([1.5,0],.5),Vv=flT([0,1.5],.5);linha([[0,0],[1.5,0]],GEO,3,{dash:[6,8],alpha:.6});linha([[0,0],[0,1.5]],GEO,3,{dash:[6,8],alpha:.6});
+   braco([0,0],H,{dash:[12,9],cor:CORAL,w:5});braco([0,0],Vv,{dash:[12,9],cor:CORAL,w:5});roda([0,0],1.05,.75);giroSeta([0,0],1.3,-.6,.1);
+   tex('\\V{2\\ \\text{rad/s}}',...P(H[0]+.62,H[1]+.12),38,'c',true);tex('\\V{1\\ \\text{rad/s}}',...P(Vv[0]-.55,Vv[1]+.3),38,'c',true);
+   tex('\\w_{\\C{AB}} = \\V{2}',1120,360,52);tex('\\w_{\\C{AC}} = \\V{1}',1120,470,52);tex('\\w_{\\text{\\C{roda}}} = \\dfrac{\\V{2} + \\V{1}}{2} = \\V{\\dfrac{3}{2}}',1120,620,52);legenda('A RODINHA GIRA NA MÉDIA DOS DOIS BRAÇOS',1124,760);}
+  if(K==='b25'){roda([0,0],1.05,.3);giroSeta([0,0],1.3,-.4,1.1);tex('\\odot\\,\\kk',...P(1.45,1.1),46,'c',true);
+   tex('\\rot \\F = \\left(\\dfrac{\\partial \\Qq}{\\dx} - \\dfrac{\\partial \\Pp}{\\dy}\\right)\\kk = 2\\,\\w\\,\\kk',1120,380,50);
+   tex('\\F = (-\\Y,\\ 2\\X)',1120,530,48);tex('\\dfrac{\\partial \\Qq}{\\dx} = 2,\\qquad \\dfrac{\\partial \\Pp}{\\dy} = -1',1120,650,46);tex('\\rot \\F = \\bigl(2 - (-1)\\bigr)\\kk = \\V{3}\\,\\kk',1120,790,50);}}
+ // ---------- B3 ----------
+ if(K==='b32'){canto('DOIS ENGANOS');vista(600,540,120);campo(vort,{rmin:.75,mmax:1.4});furo(.55);
+  linha(circ(1.8,[0,0],60,0,.33),GEO,3,{dash:[6,8],alpha:.7});braco([1.35,0],[2.25,0],{dash:[8,8],cor:GEO,w:3});braco([1.8,-.45],[1.8,.45],{dash:[8,8],cor:GEO,w:3});
+  const t=1.07,a=flV([1.35,0],t),b=flV([2.25,0],t),c=flV([1.8,-.45],t),d=flV([1.8,.45],t);braco(a,b);braco(c,d);
+  const m=flV([1.8,0],t);giroSeta(m,.62,1.45,.85,VEL,4);giroSeta(m,.62,-1.9,-1.3,VEL,4);
+  tex('\\dfrac{\\partial \\Qq}{\\dx} = \\dfrac{(\\X^2+\\Y^2) - \\X\\cdot 2\\X}{(\\X^2+\\Y^2)^2} = \\dfrac{\\Y^2 - \\X^2}{(\\X^2+\\Y^2)^2}',1080,330,40);
+  tex('\\dfrac{\\partial \\Pp}{\\dy} = \\dfrac{-(\\X^2+\\Y^2) + \\Y\\cdot 2\\Y}{(\\X^2+\\Y^2)^2} = \\dfrac{\\Y^2 - \\X^2}{(\\X^2+\\Y^2)^2}',1080,500,40);
+  tex('\\rot \\F = \\vec 0',1080,650,52);tex('\\text{em } \\mathbb{R}^2 - \\{(0,0)\\}',1080,740,40);
+  tex('\\F = \\dfrac{(-\\Y,\\ \\X)}{\\X^2+\\Y^2}',1080,880,42);}
+ if(K==='b34'){canto('DOIS ENGANOS');vista(600,540,120);const tor=(X,Y)=>Math.hypot(X,Y)<1?giro(X,Y):vort(X,Y);
+  campoPolar(tor,[.5,1,1.5,2,2.5,3],{mmax:1,arco:.6});linha(circ(1),SAIF,4);roda([0,.62],.3,.9);giroSeta([0,.62],.42,-.3,.9,VEL,3);roda([2.05,-.6],.32,0);
+  txt('MODELO DE TORNADO',1120,300,{size:44});
+  tex('\\text{dentro: }\\ \\F = (-\\Y,\\ \\X)',1120,420,44);tex('\\rot\\F = \\V{2}\\,\\kk',1160,510,44);
+  tex('\\text{fora: }\\ \\F = \\dfrac{(-\\Y,\\ \\X)}{\\X^2+\\Y^2}',1120,650,44);tex('\\rot\\F = \\vec 0',1160,760,44);
+  legenda('NA CIRCUNFERÊNCIA AS SETAS SÃO IGUAIS',1124,860);}
+ if(K==='b36'){canto('DOIS ENGANOS');vista(960,500,90);const rio=(X,Y)=>[1-Y*Y/9,0];
+  for(let i=0;i<30;i++){const y0=-3+6*i/30,y1=y0+.2,a=Math.min(1,Math.abs(y0+.1)/3)*.32;preenche([[-9.6,y0],[9.6,y0],[9.6,y1],[-9.6,y1]],VEL,a);}
+  linha([[-9.6,0],[9.6,0]],GEO,2,{dash:[10,10],alpha:.6});preenche([[-9.6,3],[9.6,3],[9.6,3.5],[-9.6,3.5]],CHAPA,1);preenche([[-9.6,-3],[9.6,-3],[9.6,-3.5],[-9.6,-3.5]],CHAPA,1);
+  linha([[-9.6,3],[9.6,3]],GEO,3);linha([[-9.6,-3],[9.6,-3]],GEO,3);
+  for(let X=-6.5;X<=8.6;X+=1.5)for(const Y of [-2.4,-1.2,0,1.2,2.4])setaCampo(X,Y,rio(X,Y),{lmax:1.15,mmax:1});
+  const pr=[];for(let i=0;i<=60;i++){const Y=-3+6*i/60;pr.push([-8.6+1.3*(1-Y*Y/9),Y]);}linha([[-8.6,-3],[-8.6,3]],GEO,2);linha(pr,GEO,3);
+  for(const X of [-5.75,-.5,4.75])for(const [Y,s] of [[1.8,1],[0,0],[-1.8,-1]]){roda([X,Y],.38,s*.5);if(s)giroSeta([X,Y],.55,s>0?-.2:.2,s>0?.9:-.9,VEL,3);}
+  txt('+',...P(-9.1,2.15),{size:64,cor:VEL,al:'center'});txt('−',...P(-9.1,-2.65),{size:64,cor:VEL,al:'center'});
+  tex('\\F = \\left(1 - \\dfrac{\\Y^2}{9},\\ 0\\right)',260,940,46);tex('\\rot \\F = -\\dfrac{\\partial \\Pp}{\\dy}\\,\\kk = \\V{\\dfrac{2\\Y}{9}}\\,\\kk',960,940,46);}
+ // ---------- B4 ----------
+ if(K==='b42'){canto('DIVERGENTE');vista(600,540,120);campo(expl,{mmax:3});const c0=[1.25,.85],s0=.7,e=Math.exp(.35);
+  quadrado(c0,s0,CORAL,{dash:[9,8],w:3,alpha:0});quadrado([c0[0]*e,c0[1]*e],s0*e,CORAL,{fill:CORAL,alpha:.9,w:3});
+  tex('\\dv \\F = \\dfrac{\\partial \\Pp}{\\dx} + \\dfrac{\\partial \\Qq}{\\dy}',1120,360,56);legenda('É UM NÚMERO',1124,470);
+  tex('\\F = (\\X,\\ \\Y)',1120,580,48);tex('\\dv \\F = 1 + 1 = \\D{2}',1120,680,52);legenda('ÁREA: 0,49 → 0,99',1124,800,CORAL);}
+ if(K==='b44'){canto('DIVERGENTE');vista(600,540,120);campo(expl,{mmax:3,ctx:true});const x0=.5,x1=2,y0=.5,y1=2;
+  preenche([[x0,y0],[x1,y0],[x1,y1],[x0,y1]],CHAPA,.55);linha([[x0,y0],[x1,y0],[x1,y1],[x0,y1],[x0,y0]],GEO,3);
+  const s=.45;for(const Y of [.8,1.25,1.7]){seta([x1,Y],[x1+s*x1,Y],CAMPO2,6,22);seta([x0-s*x0,Y],[x0,Y],CAMPO,6,16);}
+  for(const X of [.8,1.25,1.7]){seta([X,y1],[X,y1+s*y1],CAMPO2,6,22);seta([X,y0-s*y0],[X,y0],CAMPO,6,16);}
+  tex('\\h',...P(1.25,.18),40,'c',true);tex('\\k',...P(.2,1.25),40,'c',true);tex('\\xo',...P(.5,-.2),34,'c',true);tex('\\xo+\\h',...P(2,-.2),34,'c',true);
+  txt('SAI − ENTRA',1120,250,{size:34,cor:SAI});
+  tex('[\\Pp(\\xo+\\h) - \\Pp(\\xo)]\\,\\k \\approx \\dfrac{\\partial \\Pp}{\\dx}\\,\\h\\k',1120,360,42);
+  tex('[\\Qq(\\yo+\\k) - \\Qq(\\yo)]\\,\\h \\approx \\dfrac{\\partial \\Qq}{\\dy}\\,\\h\\k',1120,500,42);
+  tex('\\dfrac{\\D{\\text{saldo}}}{\\h\\k} \\;\\longrightarrow\\; \\dfrac{\\partial \\Pp}{\\dx} + \\dfrac{\\partial \\Qq}{\\dy} = \\dv\\F',1120,660,46);}
+ if(K==='b45'){canto('DIVERGENTE');vista(600,540,120);campo(anel,{mmax:1.1});const c=[1,.5];
+  [1,.5,.25,.125].forEach((s,i)=>quadrado(c,s,i===3?CORAL:GEO,{dash:i?[7,7]:null,w:i?2.5:3.5,fill:i?null:CHAPA,alpha:.55}));ponto(c,CORAL,5);
+  tex('\\F = \\left(\\X - \\dfrac{\\X^3}{3},\\ \\Y - \\dfrac{\\Y^3}{3}\\right)',1120,250,44);
+  legenda('LADO',1150,355,GEO);legenda('SALDO ÷ ÁREA',1400,355,SAI);
+  [['1','0{,}583'],['\\tfrac12','0{,}708'],['\\tfrac14','0{,}740'],['\\tfrac18','0{,}747']].forEach(([l,v],i)=>{tex(l,1180,420+i*70,40,'c');tex('\\D{'+v+'}',1400,420+i*70,40);});
+  tex('\\downarrow',1440,700,40,'c');tex('\\dv \\F = 2 - \\X^2 - \\Y^2',1120,790,46);tex('\\dv \\F\\left(1,\\tfrac12\\right) = 2 - 1 - \\tfrac14 = \\D{0{,}750}',1120,890,46);}
+ if(K==='b46'){canto('DIVERGENTE');vista(600,540,120);const r0=Math.SQRT2;preenche(circ(3.05),ESC,.55);preenche(circ(r0),SAI,.22);campo(anel,{mmax:1.1,ctx:true});
+  linha(circ(r0),GEO,3,{dash:[10,9]});txt('+',...P(-.55,-.75),{size:90,cor:SAI,al:'center'});txt('−',...P(-2.1,-1.95),{size:90,cor:GEO,al:'center'});tex('\\dv\\F = 0',...P(1.55,1.45),38,'l',true);
+  quadrado([.35,.3],.5,CORAL,{dash:[8,7],w:3,alpha:0});quadrado([.35,.3],.66,CORAL,{fill:CORAL,alpha:.9,w:3});
+  quadrado([2.05,-1.25],.5,CORAL,{dash:[8,7],w:3,alpha:0});quadrado([2.05,-1.25],.36,CORAL,{fill:CORAL,alpha:.9,w:3});
+  tex('\\dv \\F = 2 - \\X^2 - \\Y^2',1120,330,52);legenda('+  CADA PEDACINHO SE EXPANDE',1124,450,SAI);legenda('−  CADA PEDACINHO SE CONTRAI',1124,510,GEO);
+  legenda('NINGUÉM CRIA NEM DESTRÓI FLUIDO',1124,600,BR);
+  tex('\\text{água: }\\ \\dv\\vec v \\approx 0',1120,730,44);tex('\\text{ar comprimido na bomba: }\\ \\dv\\vec v < 0',1120,830,40);}
+ // ---------- B5 ----------
+ if(K==='b52a'||K==='b52b'){canto('A FALSA FONTE');vista(600,540,120);campo(falsa,{rmin:.75,mmax:1.4,ctx:K==='b52b'});furo(.55);
+  if(K==='b52a'){const sec=(r1,r2,a)=>{const p=[];for(let i=0;i<=30;i++)p.push([r1*Math.cos(-a+2*a*i/30),r1*Math.sin(-a+2*a*i/30)]);for(let i=30;i>=0;i--)p.push([r2*Math.cos(-a+2*a*i/30),r2*Math.sin(-a+2*a*i/30)]);p.push(p[0]);return p;};
+   linha(sec(1.2,1.6,.25),CORAL,3,{dash:[8,7]});const f=sec(Math.sqrt(1.44+4),Math.sqrt(2.56+4),.25);preenche(f,CORAL,.9);
+   tex('\\F = \\dfrac{(\\X,\\ \\Y)}{\\X^2+\\Y^2}',1120,300,48);tex('\\dfrac{\\partial \\Pp}{\\dx} = \\dfrac{\\Y^2 - \\X^2}{(\\X^2+\\Y^2)^2}',1120,450,44);
+   tex('\\dfrac{\\partial \\Qq}{\\dy} = \\dfrac{\\X^2 - \\Y^2}{(\\X^2+\\Y^2)^2}',1120,590,44);tex('\\dv\\F = \\D{0}',1120,720,52);legenda('ÁREA DO PEDACINHO: 0,28 → 0,28',1124,830,CORAL);}
+  else{const x0=1,x1=2,y0=-.5,y1=.5;preenche([[x0,y0],[x1,y0],[x1,y1],[x0,y1]],CHAPA,.55);linha([[x0,y0],[x1,y0],[x1,y1],[x0,y1],[x0,y0]],GEO,3);
+   seta([.7,0],[1,0],CAMPO2,6,20);seta([2,0],[2.35,0],CAMPO2,6,20);seta([1.5,.5],[1.62,.85],CAMPO2,6,18);seta([1.5,-.5],[1.62,-.85],CAMPO2,6,18);
+   tex('\\D{0{,}927}',...P(.75,.85),40,'c',true);tex('\\D{0{,}490}',...P(2.5,.3),40,'c',true);tex('\\D{0{,}219}',...P(1.95,1.0),40,'c',true);tex('\\D{0{,}219}',...P(1.95,-1.0),40,'c',true);
+   legenda('ENTRA',1124,360,SAI);tex('\\D{0{,}927}',1124,420,46);legenda('SAI',1124,520,SAI);tex('\\D{0{,}490 + 0{,}219 + 0{,}219 = 0{,}927}',1124,580,46);
+   tex('\\text{saldo} = 0',1120,700,52);txt('SETAS PARA FORA NÃO QUER DIZER FONTE',1120,820,{size:30,f:'SGM',cor:SAIF});}}
+ // ---------- B6 (3D) ----------
+ if(K==='b61'){canto('NO ESPAÇO');await img3d('r3d_cubo.png',150,170,920,780);
+  tex('\\dv \\F = \\dfrac{\\partial \\Pp}{\\dx} + \\dfrac{\\partial \\Qq}{\\dy} + \\dfrac{\\partial \\Rr}{\\dz}',1120,420,50);legenda('SALDO POR UNIDADE DE VOLUME',1124,540);legenda('CONTINUA SENDO UM NÚMERO',1124,600,SAI);}
+ if(K==='b62'){canto('NO ESPAÇO');await img3d('r3d_roda_incl.png',150,170,920,780);
+  tex('\\w_{\\text{\\C{roda}}} = \\V{0{,}64}\\ \\text{rad/s}',1120,440,52);legenda('EIXO ALINHADO: 1,00    DEITADA: 0',1124,560,GEO);}
+ if(K==='b63'){canto('NO ESPAÇO');await img3d('r3d_roda_rot.png',150,170,920,780);
+  tex('\\rot \\F = \\begin{vmatrix} \\vec\\imath & \\vec\\jmath & \\vec k \\\\[2pt] \\partial_{\\X} & \\partial_{\\Y} & \\partial_{\\Z} \\\\[2pt] \\Pp & \\Qq & \\Rr \\end{vmatrix}',1120,380,50);
+  tex('\\rot\\F = \\nabla \\times \\F \\qquad (\\nabla \\wedge \\F)',1120,570,46);tex('\\dv\\F = \\nabla \\cdot \\F',1120,690,46);legenda('DIREÇÃO: EIXO DO GIRO MAIS RÁPIDO',1124,800,VEL);legenda('TAMANHO: O DOBRO DESSA RAPIDEZ',1124,850,VEL);}
+ // ---------- F ----------
+ if(K==='f1'){canto('NA FÍSICA');vista(600,540,120);campo(falsa,{rmin:.75,mmax:1.4});furo(.55,CARGA,'+');txt('FIO CARREGADO',...P(0,-1.05),{size:28,f:'SGM',cor:BR,al:'center',placa:true});
+  tex('\\E = \\dfrac{\\lambda}{2\\pi\\varepsilon_0}\\,\\dfrac{(\\X,\\ \\Y)}{\\X^2+\\Y^2}',1120,330,48);legenda('= FALSA FONTE × CONSTANTE',1124,440);
+  tex('\\nabla\\cdot\\E = \\dfrac{\\rho}{\\varepsilon_0}',1120,570,56);tex('\\text{fora do fio: }\\ \\rho = 0 \\;\\Rightarrow\\; \\nabla\\cdot\\E = 0',1120,700,40);
+  txt('A CARGA MORA NO FURO',1120,820,{size:34,cor:CARGA});}
+ if(K==='f2'){canto('NA FÍSICA');vista(600,540,120);campo(vort,{rmin:.75,mmax:1.4,cor:MAG});furo(.55,CORR,'\\odot');txt('FIO COM CORRENTE',...P(0,-1.05),{size:28,f:'SGM',cor:BR,al:'center',placa:true});
+  tex('\\B = \\dfrac{\\mu_0 I}{2\\pi}\\,\\dfrac{(-\\Y,\\ \\X)}{\\X^2+\\Y^2}',1120,330,48);legenda('= VÓRTICE × CONSTANTE',1124,440);
+  tex('\\nabla\\times\\B = \\mu_0\\J',1120,560,56);tex('\\text{fora do fio: }\\ \\J = \\vec 0 \\;\\Rightarrow\\; \\nabla\\times\\B = \\vec 0',1120,680,40);
+  tex('\\nabla\\cdot\\B = 0',1120,810,52);legenda('SEMPRE',1420,820,MAG);}
+ // ---------- B7 ----------
+ if(K==='b73'){canto('LAPLACIANO');vista(600,540,120);campo((X,Y)=>[2*X,2*Y],{mmax:6,ctx:true});
+  [1,2,3,4].forEach(v=>{const r=Math.sqrt(v);linha(circ(r),SAI,3);tex('\\D{'+v+'}',...P(-r*.72,-r*.72),34,'c',true);});
+  const p=[1,.5];linha(circ(.4,p),GEO,2.5,{dash:[6,6]});for(let i=0;i<8;i++){const a=2*PI*i/8;ponto([p[0]+.4*Math.cos(a),p[1]+.4*Math.sin(a)],POS,6);}ponto(p,POS,10);tex('P',...P(1.12,.22),36,'c',true);
+  tex('\\phi = \\X^2 + \\Y^2',1120,300,50);legenda('VALOR NO PONTO',1124,420,POS);tex('\\phi(P) = 1{,}25',1450,410,46);
+  legenda('MÉDIA EM VOLTA',1124,520,POS);tex('1{,}41',1450,510,46);tex('1{,}25 < 1{,}41',1120,640,46);tex('\\nabla^2\\phi = \\nabla\\cdot\\nabla\\phi = 4 > 0',1120,770,48);legenda('ABAIXO DA MÉDIA DOS VIZINHOS',1124,870);}
+ if(K==='b74'){canto('LAPLACIANO');vista(600,540,120);const im=x.createImageData(720,720),s=.5,al=.15,t=.3,sg=s*s+4*al*t;
+  const c1=[0x5C,0x8B,0xFF],c2=[0xFF,0x9A,0x5C];for(let j=0;j<720;j++)for(let i=0;i<720;i++){const X=(i-360)/120,Y=(360-j)/120,T=1-(s*s/sg)*Math.exp(-(X*X+Y*Y)/sg),k=4*(j*720+i);
+   for(let q=0;q<3;q++)im.data[k+q]=c1[q]+(c2[q]-c1[q])*T;im.data[k+3]=235;}x.putImageData(im,240,180);x.strokeStyle=GEO;x.lineWidth=3;x.strokeRect(240,180,720,720);
+  tex('\\nabla^2 \\T > 0',...P(0,-1.25),40,'c',true);txt('ESQUENTA',...P(0,-1.75),{size:30,al:'center',placa:true});
+  tex('\\dfrac{\\partial \\T}{\\partial t} = \\alpha\\,\\nabla^2 \\T',1120,420,60);legenda('EQUAÇÃO DO CALOR',1124,540);legenda('E TAMBÉM: ONDAS, POTENCIAL ELÉTRICO…',1124,620,GEO);}
+ // ---------- S2 ----------
+ if(K==='s2'){canto('RESUMO');painel(130,260,700,560,'');painel(1090,260,700,560,'');
+  vista(480,540,96);campo(vort,{x0:-3.5,x1:3.5,y0:-2.8,y1:2.8,passo:.6,rmin:.8,rmax:2.8,mmax:1.3,cor:MAG,ctx:true});furo(.55,CORR,'\\odot');
+  linha(circ(1.7),SAIF,4);for(let i=0;i<6;i++){const a=2*PI*i/6+.3;seta([1.7*Math.cos(a),1.7*Math.sin(a)],[1.7*Math.cos(a+.32),1.7*Math.sin(a+.32)],SAIF,5,18);}
+  linha(circ(.45,[2.5,1.75]),GEO,3,{dash:[7,6]});tex('0',...P(2.5,1.75),34,'c');
+  vista(1440,540,96);campo(falsa,{x0:-3.5,x1:3.5,y0:-2.8,y1:2.8,passo:.6,rmin:.8,rmax:2.8,mmax:1.3,ctx:true});furo(.55,CARGA,'+');
+  linha(circ(1.7),SAIF,4);for(let i=0;i<8;i++){const a=2*PI*i/8+.2;seta([1.5*Math.cos(a),1.5*Math.sin(a)],[2.05*Math.cos(a),2.05*Math.sin(a)],SAIF,5,18);}
+  linha(circ(.45,[2.5,1.75]),GEO,3,{dash:[7,6]});tex('0',...P(2.5,1.75),34,'c');
+  txt('EM CADA PONTO: NADA',960,900,{size:34,al:'center',cor:GEO});txt('EM VOLTA DO FIO: ALGUMA COISA',960,960,{size:34,al:'center',cor:SAIF});}
+ document.title='ok';}
+main();
+</script></body></html>

@@ -1,0 +1,28 @@
+Manim Community v0.21.0
+
+[ancora] B1-1 0.000
+[campo] B1 (−y, 2x): 28 setas, k = 0.1417 u por unidade de |F|, maior seta ÷ espaçamento = 0.85 (ok)
+[motor] B1 pontinhos: 0.5500 s de fluxo por s de tela
+[gatilho] B1-1   3.73s (alvo   3.76s, atraso -0.03s) ler o campo como a velocidade
+[gatilho] B1-1  12.27s (alvo  12.28s, atraso -0.02s) o escoamento não muda com o tempo
+[gatilho] B1-1  14.87s (alvo  14.88s, atraso -0.01s) e o campo é liso
+[gatilho] B1-1  18.20s (alvo  18.21s, atraso -0.01s) é isso que deixa
+[ancora] B1-2 22.400
+[campo] B1 lupa: 9 setas, k = 0.3081 fixo nos três zooms, maior seta ÷ espaçamento = 0.85 (ok)
+[gatilho] B1-2   0.53s (alvo   0.43s, atraso +0.10s) pega uma lupa
+[gatilho] B1-2   2.40s (alvo   1.91s, atraso +0.49s) chega bem pertinho
+[gatilho] B1-2   7.07s (alvo   7.10s, atraso -0.03s) quase se fossem
+[gatilho] B1-2  13.00s (alvo  13.02s, atraso -0.02s) toda a graça está nas pequenas diferenças
+[11/10/26 17:46:42] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_still_PB1_30.                          
+                             0\images\cena\PB1_ManimC                          
+                             E_v0.21.0.png'                                    
+                                                                               
+                    INFO     Rendered PB1                          scene.py:290
+                             Played 22 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

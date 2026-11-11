@@ -1,0 +1,168 @@
+Manim Community v0.21.0
+
+[ancora] F1 0.000
+[campo] F1 campo elétrico (falsa fonte): 112 setas, maior 0.348 u, menor 0.227 u (menor ÷ maior 0.65; alvo ≥ 0,40), maior ÷ passo = 0.70
+[11/10/26 20:05:18] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] F1   6.33s (alvo   6.36s, atraso -0.02s) lembra da falsa fonte
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}+\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PF\Tex\e7b4a31b4e3                        
+                             f2356.tex                                         
+[11/10/26 20:05:23] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] F1   8.93s (alvo   8.95s, atraso -0.02s) o formato do campo elétrico
+[11/10/26 20:05:24] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\E =                              
+                             \dfrac{\lambda}{2\pi\varep                        
+                             silon_0}\,\dfrac{(\X,\                            
+                             \Y)}{\X^2+\Y^2}\special{dv                        
+                             isvgm:raw </g>} to                                
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PF\Tex\f36a0a8e639                        
+                             bf099.tex                                         
+[11/10/26 20:05:25] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] F1  14.53s (alvo  14.50s, atraso +0.03s) é a nossa falsa fonte
+[algebra] F1   14.53s glifos=20 cor=100% rt=6.3s '\\E = \\dfrac{\\lambda}{2\\pi\\varepsilon_0}\\,\\dfrac{(\\X,\\ \\Y)}{\\X^2+\\Y^2}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:29] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla\cdo                        
+                             t\E =                                             
+                             \dfrac{\rho}{\varepsilon_0                        
+                             }\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PF\Tex\2661284ccfa                        
+                             24221.tex                                         
+[gatilho] F1  21.33s (alvo  21.17s, atraso +0.16s) a lei de gauss na forma local
+[algebra] F1   21.33s glifos=9 cor=100% rt=3.0s '\\nabla\\cdot\\E = \\dfrac{\\rho}{\\varepsilon_0}'
+[11/10/26 20:05:31] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{fora                        
+                             do fio: }\ \rho = 0                               
+                             \;\Rightarrow\;                                   
+                             \nabla\cdot\E =                                   
+                             0\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PF\Tex\e0f72384f0c                        
+                             caf94.tex                                         
+[11/10/26 20:05:33] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] F1  29.67s (alvo  29.69s, atraso -0.02s) fora do fio não tem carga
+[algebra] F1   29.67s glifos=19 cor=100% rt=6.0s '\\text{fora do fio: }\\ \\rho = 0 \\;\\Rightarrow\\; \\nabla\\cdot\\E = 0'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] F1  35.67s (alvo  35.24s, atraso +0.42s) a carga mora toda no furo
+[11/10/26 20:05:36] INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:37] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão] F1: 'FIOCARREGADO' a 0.0 px de um traço (alvo ≥ 6)
+[colisão-total] F1: 1 rótulos a menos de 6 px em 7 rótulos
+[ancora] F2 37.867
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[campo] F2 campo magnético (vórtice): 112 setas, maior 0.348 u, menor 0.227 u (menor ÷ maior 0.65; alvo ≥ 0,40), maior ÷ passo = 0.70
+[gatilho] F2   0.53s (alvo   0.06s, atraso +0.47s) e o vórtice
+[11/10/26 20:05:38] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\odot\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PF\Tex\5a29a1f78fa                        
+                             4777a.tex                                         
+[gatilho] F2   2.00s (alvo   1.54s, atraso +0.46s) o formato do campo magnético
+[11/10/26 20:05:42] INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:43] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\B =                              
+                             \dfrac{\mu_0                                      
+                             I}{2\pi}\,\dfrac{(-\Y,\                           
+                             \X)}{\X^2+\Y^2}\special{dv                        
+                             isvgm:raw </g>} to                                
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PF\Tex\271a36474a1                        
+                             3a244.tex                                         
+[11/10/26 20:05:44] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] F2   6.00s (alvo   5.99s, atraso +0.01s) de novo o nosso vórtice
+[algebra] F2   43.87s glifos=21 cor=100% rt=6.6s '\\B = \\dfrac{\\mu_0 I}{2\\pi}\\,\\dfrac{(-\\Y,\\ \\X)}{\\X^2+\\Y^2}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:48] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla\tim                        
+                             es\B =                                            
+                             \mu_0\J\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PF\Tex\a029491f275                        
+                             69f28.tex                                         
+[gatilho] F2  13.13s (alvo  11.91s, atraso +1.22s) o rotacional do campo magnético é proporcional
+[algebra] F2   51.00s glifos=9 cor=100% rt=3.0s '\\nabla\\times\\B = \\mu_0\\J'
+[11/10/26 20:05:50] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{fora                        
+                             do fio: }\ \J = \vec 0                            
+                             \;\Rightarrow\;                                   
+                             \nabla\times\B = \vec                             
+                             0\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PF\Tex\d4da89adebb                        
+                             3b3b4.tex                                         
+[gatilho] F2  16.13s (alvo  15.99s, atraso +0.15s) fora do fio não passa corrente
+[algebra] F2   54.00s glifos=22 cor=100% rt=6.9s '\\text{fora do fio: }\\ \\J = \\vec 0 \\;\\Rightarrow\\; \\nabla\\times\\B = \\vec 0'
+[11/10/26 20:05:52] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\nabla\cdo                        
+                             t\B =                                             
+                             0\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_aud_PF\Tex\825d9e25fe4                        
+                             bca2c.tex                                         
+[11/10/26 20:05:54] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] F2  24.87s (alvo  24.88s, atraso -0.01s) o divergente do campo magnético é zero sempre
+[algebra] F2   62.73s glifos=6 cor=100% rt=2.1s '\\nabla\\cdot\\B = 0'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:57] INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:58] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão] F2: 'FIOCOMCORRENTE' a 0.0 px de um traço (alvo ≥ 6)
+[colisão-total] F2: 1 rótulos a menos de 6 px em 8 rótulos
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[cor-bloco] PF fração colorida (glifos de caneta) = 100% em 7 MathTex
+[flash-total] PF 0
+[estilo] PF traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PF brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 70.80s (1062 quadros)
+                    INFO     Rendered PF                           scene.py:290
+                             Played 28 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

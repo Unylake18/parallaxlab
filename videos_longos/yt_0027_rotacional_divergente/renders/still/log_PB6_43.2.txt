@@ -1,0 +1,138 @@
+Manim Community v0.21.0
+
+[ancora] B6-0 0.000
+[11/11/26 10:33:41] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Omega                            
+                             \subset \mathbb{R}^n \                            
+                             \text{aberto}, \qquad \F =                        
+                             (\textcolor{cc}{F_1},\                            
+                             \textcolor{cc}{F_2},\                             
+                             \dots,\                                           
+                             \textcolor{cc}{F_n})\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB6_43.2\Tex\e20                        
+                             98a03092165f6.tex                                 
+[11/11/26 10:33:46] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dv \F =                          
+                             \dfrac{\partial                                   
+                             \textcolor{cc}{F_1}}{\part                        
+                             ial x_1} + \dfrac{\partial                        
+                             \textcolor{cc}{F_2}}{\part                        
+                             ial x_2} + \cdots +                               
+                             \dfrac{\partial                                   
+                             \textcolor{cc}{F_n}}{\part                        
+                             ial                                               
+                             x_n}\special{dvisvgm:raw                          
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB6_43.2\Tex\98a                        
+                             115bb4717f08f.tex                                 
+[11/11/26 10:33:51] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}(n =                              
+                             2)\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB6_43.2\Tex\bca                        
+                             4d66b4b868ec9.tex                                 
+[11/11/26 10:33:53] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}(\textcolo                        
+                             r{cc}{F_1},\textcolor{cc}{                        
+                             F_2}) = (\Pp,\Qq) \qquad                          
+                             (x_1,x_2) =                                       
+                             (\X,\Y)\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB6_43.2\Tex\455                        
+                             79945e6c64395.tex                                 
+[11/11/26 10:34:00] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}(n =                              
+                             3)\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB6_43.2\Tex\0ef                        
+                             01c60043c893f.tex                                 
+[11/11/26 10:34:01] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}(\textcolo                        
+                             r{cc}{F_1},\textcolor{cc}{                        
+                             F_2},\textcolor{cc}{F_3})                         
+                             = (\Pp,\Qq,\Rr) \quad                             
+                             (x_1,x_2,x_3) =                                   
+                             (\X,\Y,\Z)\special{dvisvgm                        
+                             :raw </g>} to                                     
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB6_43.2\Tex\20a                        
+                             679cda051c7a3.tex                                 
+[11/11/26 10:34:10] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}n\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB6_43.2\Tex\8dc                        
+                             1f4c09f1217e0.tex                                 
+[gatilho] B6-0   3.73s (alvo   3.72s, atraso +0.01s) a definição do divergente
+[sync] PB6 trecho 1 (B6-0 → gat tem n componentes): pede 8.67s, cabe 6.12s → caneta × 0.71
+[algebra] B6-0    3.73s glifos=28 cor=100% rt=6.1s '\\Omega \\subset \\mathbb{R}^n \\ \\text{aberto}, \\qquad \\F = (\\textcolor{cc}{F_1},\\ \\textcolor{cc}{F_2},\\ \\dots,\\ \\textcolor{cc}{F_n})'
+[gatilho] B6-0   9.87s (alvo   9.90s, atraso -0.03s) tem n componentes
+[gatilho] B6-0  12.67s (alvo  12.70s, atraso -0.03s) e o divergente é a soma
+[sync] PB6 trecho 3 (B6-0 → gat no espaço chega o r): pede 10.20s, cabe 7.60s → caneta × 0.75
+[gatilho] B6-0  17.33s (alvo  17.32s, atraso +0.01s) no plano as duas componentes (agendado)
+[algebra] B6-0   12.67s glifos=33 cor=100% rt=7.6s '\\dv \\F = \\dfrac{\\partial \\textcolor{cc}{F_1}}{\\partial x_1} + \\dfrac{\\partial \\textcolor{cc}{F_2}}{\\partial x_2} + \\cdots + \\dfrac{\\partial \\textcolor{cc}{F_n}}{\\partial x_n}'
+[gatilho] B6-0  20.27s (alvo  20.32s, atraso -0.05s) no espaço chega o r
+[gatilho] B6-0  22.07s (alvo  22.04s, atraso +0.03s) já o rotacional
+[ancora] B6-1 28.067
+[11/11/26 10:34:25] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dv \F =                          
+                             \dfrac{\partial \Pp}{\dx}                         
+                             + \dfrac{\partial                                 
+                             \Qq}{\dy} +                                       
+                             \dfrac{\partial                                   
+                             \Rr}{\dz}\special{dvisvgm:                        
+                             raw </g>} to                                      
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             7_rotacional_divergente\me                        
+                             dia_still_PB6_43.2\Tex\8b9                        
+                             56a14f9fbd59c.tex                                 
+[cubo3] B6-1: cada par cresce e acende com a sua parcela: 0.50, 0.75, 1.00 da caneta (x, y, z)
+[gatilho] B6-1   0.80s (alvo   0.80s, atraso +0.00s) o divergente tem três parcelas
+[sync] PB6 trecho 7 (B6-1 → gat com seis paredes): pede 7.20s, cabe 6.21s → caneta × 0.86
+[algebra] B6-1   28.87s glifos=23 cor=100% rt=6.2s '\\dv \\F = \\dfrac{\\partial \\Pp}{\\dx} + \\dfrac{\\partial \\Qq}{\\dy} + \\dfrac{\\partial \\Rr}{\\dz}'
+[cubo3] B6-1: câmera parada em az = 36.50° (alvo 36.5°) no fim da fórmula
+[gatilho] B6-1   7.00s (alvo   7.06s, atraso -0.06s) com seis paredes
+[gatilho] B6-1  10.80s (alvo  10.80s, atraso +0.00s) agora por unidade de volume
+[gatilho] B6-1  15.47s (alvo  15.46s, atraso +0.01s) continua sendo um número
+[11/11/26 10:34:35] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0027_rotacional_diverg                          
+                             ente\media_still_PB6_43.                          
+                             2\images\cena\PB6_ManimC                          
+                             E_v0.21.0.png'                                    
+                                                                               
+                    INFO     Rendered PB6                          scene.py:290
+                             Played 18 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

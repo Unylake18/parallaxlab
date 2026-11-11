@@ -1,0 +1,87 @@
+Manim Community v0.21.0
+
+[ancora] B6-0 0.000
+[gatilho] B6-0   3.73s (alvo   3.72s, atraso +0.01s) a definição do divergente
+[sobrepos-chk] B6-0 «a definição do divergente»: 1 textos, 0 setas visíveis, 0 ocorrências
+[sync] PB6 trecho 1 (B6-0 → gat tem n componentes): pede 8.67s, cabe 6.12s → caneta × 0.71
+[algebra] B6-0    3.73s glifos=28 cor=100% rt=6.1s '\\Omega \\subset \\mathbb{R}^n \\ \\text{aberto}, \\qquad \\F = (\\textcolor{cc}{F_1},\\ \\textcolor{cc}{F_2},\\ \\dots,\\ \\textcolor{cc}{F_n})'
+[gatilho] B6-0   9.87s (alvo   9.90s, atraso -0.03s) tem n componentes
+[sobrepos-chk] B6-0 «tem n componentes»: 2 textos, 0 setas visíveis, 0 ocorrências
+[gatilho] B6-0  12.67s (alvo  12.70s, atraso -0.03s) e o divergente é a soma
+[sobrepos-chk] B6-0 «e o divergente é a soma»: 3 textos, 0 setas visíveis, 0 ocorrências
+[sync] PB6 trecho 3 (B6-0 → gat no espaço chega o r): pede 10.20s, cabe 7.60s → caneta × 0.75
+[gatilho] B6-0  17.33s (alvo  17.32s, atraso +0.01s) no plano as duas componentes (agendado)
+[algebra] B6-0   12.67s glifos=33 cor=100% rt=7.6s '\\dv \\F = \\dfrac{\\partial \\textcolor{cc}{F_1}}{\\partial x_1} + \\dfrac{\\partial \\textcolor{cc}{F_2}}{\\partial x_2} + \\cdots + \\dfrac{\\partial \\textcolor{cc}{F_n}}{\\partial x_n}'
+[gatilho] B6-0  20.27s (alvo  20.32s, atraso -0.05s) no espaço chega o r
+[sobrepos-chk] B6-0 «no espaço chega o r»: 7 textos, 0 setas visíveis, 0 ocorrências
+[gatilho] B6-0  22.07s (alvo  22.04s, atraso +0.03s) já o rotacional
+[sobrepos-chk] B6-0 «já o rotacional»: 10 textos, 0 setas visíveis, 0 ocorrências
+[sobrepos-chk] B6-0 fim: 13 textos, 0 setas visíveis, 0 ocorrências
+[ancora] B6-1 28.067
+[cubo3] B6-1: cada par cresce e acende com a sua parcela: 0.50, 0.75, 1.00 da caneta (x, y, z)
+[gatilho] B6-1   0.80s (alvo   0.80s, atraso +0.00s) o divergente tem três parcelas
+[sobrepos-chk] B6-1 «o divergente tem três parcelas»: 3 textos, 0 setas visíveis, 0 ocorrências
+[sync] PB6 trecho 7 (B6-1 → gat com seis paredes): pede 7.20s, cabe 6.21s → caneta × 0.86
+[algebra] B6-1   28.87s glifos=23 cor=100% rt=6.2s '\\dv \\F = \\dfrac{\\partial \\Pp}{\\dx} + \\dfrac{\\partial \\Qq}{\\dy} + \\dfrac{\\partial \\Rr}{\\dz}'
+[cubo3] B6-1: câmera parada em az = 36.50° (alvo 36.5°) no fim da fórmula
+[gatilho] B6-1   7.00s (alvo   7.06s, atraso -0.06s) com seis paredes
+[sobrepos-chk] B6-1 «com seis paredes»: 1 textos, 0 setas visíveis, 0 ocorrências
+[gatilho] B6-1  10.80s (alvo  10.80s, atraso +0.00s) agora por unidade de volume
+[sobrepos-chk] B6-1 «agora por unidade de volume»: 2 textos, 0 setas visíveis, 0 ocorrências
+[gatilho] B6-1  15.47s (alvo  15.46s, atraso +0.01s) continua sendo um número
+[sobrepos-chk] B6-1 «continua sendo um número»: 3 textos, 0 setas visíveis, 0 ocorrências
+[sobrepos-chk] B6-1 fim: 4 textos, 0 setas visíveis, 0 ocorrências
+[ancora] B6-2 44.867
+[gatilho] B6-2  10.60s (alvo  10.58s, atraso +0.02s) com o eixo da rodinha alinhado
+[sobrepos-chk] B6-2 «com o eixo da rodinha alinhado»: 0 textos, 0 setas visíveis, 0 ocorrências
+[gatilho] B6-2  15.33s (alvo  15.34s, atraso -0.01s) inclina a rodinha
+[sobrepos-chk] B6-2 «inclina a rodinha»: 6 textos, 0 setas visíveis, 0 ocorrências
+[gatilho] B6-2  17.93s (alvo  17.92s, atraso +0.01s) deita a rodinha de lado
+[sobrepos-chk] B6-2 «deita a rodinha de lado»: 6 textos, 0 setas visíveis, 0 ocorrências
+[sobrepos-chk] B6-2 fim: 6 textos, 0 setas visíveis, 0 ocorrências
+[ancora] B6-3 67.467
+[layout] B6-3: forma aberta 675 px (x de 1000 a 1675); 3ª componente = 11 glifos
+[gatilho] B6-3   2.60s (alvo   2.62s, atraso -0.02s) o rotacional é um vetor de verdade
+[sobrepos-chk] B6-3 «o rotacional é um vetor de verdade»: 0 textos, 0 setas visíveis, 0 ocorrências
+[gatilho] B6-3  10.53s (alvo  10.54s, atraso -0.01s) o tamanho é o dobro dessa rapidez
+[sobrepos-chk] B6-3 «o tamanho é o dobro dessa rapidez»: 1 textos, 0 setas visíveis, 0 ocorrências
+[gatilho] B6-3  13.87s (alvo  13.90s, atraso -0.03s) se organizam num determinante simbólico
+[sobrepos-chk] B6-3 «se organizam num determinante simbólico»: 2 textos, 0 setas visíveis, 0 ocorrências
+[sync] PB6 trecho 18 (B6-3 → gat abrindo o determinante): pede 10.80s, cabe 10.22s → caneta × 0.95
+[algebra] B6-3   81.33s glifos=35 cor=100% rt=10.2s '\\rot \\F = \\begin{vmatrix} \\vec\\imath & \\vec\\jmath & \\vec k \\\\[2pt] \\partial_{\\X} & \\partial_{\\Y} & \\partial_{\\Z} \\\\[2pt] \\Pp & \\Qq & \\Rr \\end{vmatrix}'
+[11/11/26 10:47:55] WARNING  The original total run_time of       scene.py:1131
+                             PB6._play_sync(), 0.0653333 seconds,              
+                             is too short for the current frame                
+                             rate of 15 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    WARNING  The original total run_time of       scene.py:1131
+                             PB6._play_sync(), 0.0653333 seconds,              
+                             is too short for the current frame                
+                             rate of 15 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[gatilho] B6-3  24.13s (alvo  24.14s, atraso -0.01s) abrindo o determinante
+[sobrepos-chk] B6-3 «abrindo o determinante»: 3 textos, 0 setas visíveis, 0 ocorrências
+[gatilho] B6-3  27.53s (alvo  27.56s, atraso -0.03s) a do plano (agendado)
+[algebra] B6-3   91.60s glifos=38 cor=100% rt=8.2s '= \\Big(\\dfrac{\\partial \\Rr}{\\dy} - \\dfrac{\\partial \\Qq}{\\dz},\\ \\dfrac{\\partial \\Pp}{\\dz} - \\dfrac{\\partial \\Rr}{\\dx},\\ \\dfrac{\\partial \\Qq}{\\dx} - \\dfrac{\\partial \\Pp}{\\dy}\\Big)'
+[gatilho] B6-3  34.27s (alvo  34.26s, atraso +0.01s) um produto vetorial do nabla com o campo
+[sobrepos-chk] B6-3 «um produto vetorial do nabla com o campo»: 5 textos, 0 setas visíveis, 0 ocorrências
+[sync] PB6 trecho 20 (B6-3 → gat como um produto escalar): pede 5.07s, cabe 3.44s → caneta × 0.68
+[algebra] B6-3  101.73s glifos=16 cor=100% rt=3.5s '\\rot\\F = \\nabla \\times \\F \\qquad (\\nabla \\wedge \\F)'
+[gatilho] B6-3  37.73s (alvo  37.76s, atraso -0.03s) como um produto escalar
+[sobrepos-chk] B6-3 «como um produto escalar»: 6 textos, 0 setas visíveis, 0 ocorrências
+[algebra] B6-3  105.20s glifos=10 cor=100% rt=3.3s '\\dv\\F = \\nabla \\cdot \\F'
+[3d] B6 roda: rapidez = W·n em 977 quadros; maior |dfase/dt − W·n| = 1.1e-13; mínimo W·n = 0.0000; W·n = cos 50° = 0.643 no quadro 947 do lote
+[sobrepos-chk] B6-3 fim: 7 textos, 0 setas visíveis, 0 ocorrências
+[deriva] PB6 +0.00s além do fim da última âncora
+[3d] pedidos: cubo=265, roda=996
+[cor-bloco] PB6 fração colorida (glifos de caneta) = 100% em 7 MathTex
+[flash-total] PB6 0
+[estilo] PB6 traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PB6 brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 111.20s (1668 quadros)
+[11/11/26 10:48:30] INFO     Rendered PB6                          scene.py:290
+                             Played 47 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

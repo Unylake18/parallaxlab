@@ -1,0 +1,85 @@
+Manim Community v0.21.0
+
+[ancora] H1 0.000
+[campo] H esquerda (−y, x): 70 setas, maior 0.521 u, menor 0.333 u (menor ÷ maior 0.64; alvo ≥ 0,40), maior ÷ passo = 0.84
+[campo] H direita (−y, x)/r²: 70 setas, maior 0.333 u, menor 0.258 u (menor ÷ maior 0.77; alvo ≥ 0,40), maior ÷ passo = 0.54
+[11/10/26 20:05:14] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] H1   2.60s (alvo   2.28s, atraso +0.32s) tudo dá voltas em torno do centro
+[11/10/26 20:05:15] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] H1   5.60s (alvo   5.62s, atraso -0.02s) soltar uma rodinha
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] H1: 0 rótulos a menos de 6 px em 0 rótulos
+[ancora] H2 13.067
+[gatilho] H2   0.00s (alvo   0.06s, atraso -0.06s) no primeiro
+[motor] H2: t de 0 a 2π em 8.44 s (fator 0.745)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:23] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] H2   9.67s (alvo   9.69s, atraso -0.02s) no segundo
+[motor] H2: t de 2π a 3π em 12.43 s (fator 0.253)
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[hook] em t = 3π: rodinha esquerda deu 1.500 voltas e girou 1.500 giros; direita: orientação 0.000° (deve ser 0)
+[fluxo] H fita (−y, x)/r²: 20 pontos em t = 9.425; erro máx 0.000 px a 960×540 (ok)
+[11/10/26 20:05:36] INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] H2: 0 rótulos a menos de 6 px em 0 rótulos
+[ancora] H3 35.467
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[hook] anel r = 1: 10 pares; maior diferença entre as setas dos dois painéis = 0.0000 px a 1080p
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] H3   6.00s (alvo   5.99s, atraso +0.01s) os dois campos são idênticos
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:40] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] H3  13.40s (alvo  13.39s, atraso +0.01s) então por que uma gira
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:41] WARNING  The original total run_time of       scene.py:1131
+                             PHA.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PHA.play(), 0.0653333 seconds, is                 
+                             too short for the current frame rate              
+                             of 15 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0666667 seconds instead.                        
+[colisão-total] H3: 0 rótulos a menos de 6 px em 0 rótulos
+[ancora] A1 56.667
+[11/10/26 20:05:43] INFO     Caching disabled.             cairo_renderer.py:81
+[11/10/26 20:05:44] INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] A1   2.67s (alvo   2.65s, atraso +0.01s) hoje a aula
+[11/10/26 20:05:54] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] A1   4.53s (alvo   4.50s, atraso +0.03s) duas medidas
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] A1   8.20s (alvo   8.21s, atraso -0.01s) o rotacional que mede o giro
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] A1  10.80s (alvo  10.80s, atraso -0.00s) o divergente que mede o espalhamento
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] A1  13.00s (alvo  13.02s, atraso -0.02s) a gente vai descobrir
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[gatilho] A1  27.47s (alvo  27.47s, atraso -0.00s) bora
+[11/10/26 20:05:55] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[colisão-total] A1: 0 rótulos a menos de 6 px em 2 rótulos
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[cor-bloco] PHA fração colorida (glifos de caneta) = 0% em 0 MathTex
+[flash-total] PHA 0
+[estilo] PHA traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PHA brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 85.27s (1279 quadros)
+                    INFO     Rendered PHA                          scene.py:290
+                             Played 35 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim
