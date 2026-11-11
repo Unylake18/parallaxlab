@@ -2,7 +2,8 @@
 canto) e fundo 3D por estado (Three.js).
 
 O relógio, as âncoras (an/gat/ate) e o Fundo3D vêm do kit do yt_0022 (copiados, sem a medição de sincronia da voz, que não existe no preview).
-O fundo é o milimetrado parado da série de Cálculo (assets/calculo/papel.py): imagem da câmera, nada se mexe atrás.
+Fundo: papel v2 da série de Cálculo (assets/calculo/papel.py, 2026-11-11): violeta liso parado na câmera + grade que nasce dos eixos de cada cena
+(`self.grade(...)`: VGroup parado, entra e sai em fade DENTRO do próximo play, sem somar tempo).
 Auditorias desta rodada (logs no render): [flash] (glifo de caneta visível antes da vez), [algebra] (glifos e fração colorida por MathTex),
 [campo] (fator de escala de cada campo e maior seta ÷ espaçamento), [ancora] (início de cada âncora no lote).
 """
@@ -20,7 +21,7 @@ ROOT = AQUI.parents[1]
 sys.path.insert(0, str(ROOT))
 from template.config_horizontal import TEXT_COLOR, WATERMARK_PATH  # noqa: E402
 from template.fonts import DISPLAY_FONT, official_text, screen_text  # noqa: E402
-from assets.calculo.papel import _arq, eixos_no_papel, janela, usar_papel  # noqa: E402,F401
+from assets.calculo.papel import BASE as _FUNDO_BASE, TOPO as _FUNDO_TOPO, _arq, eixos_no_papel, papel as _papel_grade, usar_papel  # noqa: E402,F401
 
 config.media_dir = os.environ.get("MEDIA_DIR", str(AQUI / "media"))
 Circle.set_default(color=WHITE)
@@ -504,7 +505,8 @@ TITULO = "CÁLCULO III · FUNÇÕES A VALORES VETORIAIS E CAMPOS VETORIAIS"
 
 
 def _placa_img(x0, y0, rects, w, h, feather=12):
-    """Placa ESC (#091226, 100 %) com borda esfumada (24 px): ImageMobject RGBA de w × h px (a partir de (x0, y0) do quadro), só nos retângulos dados."""
+    """Placa com borda esfumada (24 px): ImageMobject RGBA de w × h px (a partir de (x0, y0) do quadro), só nos retângulos dados.
+    Papel v2: a cor é a do fundo violeta naquela linha (degradê #18143A → #0F0C26), então a placa só esconde a grade atrás do texto."""
     from PIL import Image as _I, ImageFilter as _F
     m = _I.new("L", (w, h), 0)
     from PIL import ImageDraw as _D
@@ -513,7 +515,10 @@ def _placa_img(x0, y0, rects, w, h, feather=12):
         d.rectangle([a - x0, b - y0, c - x0, e - y0], fill=255)
     m = np.asarray(m.filter(_F.GaussianBlur(feather)), np.uint8)
     arr = np.zeros((h, w, 4), np.uint8)
-    arr[..., 0], arr[..., 1], arr[..., 2], arr[..., 3] = 0x09, 0x12, 0x26, m
+    hx = lambda c: np.array([int(c[i:i + 2], 16) for i in (1, 3, 5)], float)
+    v = ((y0 + np.arange(h)) / 1079.0)[:, None, None]
+    arr[..., :3] = np.round(hx(_FUNDO_TOPO) * (1 - v) + hx(_FUNDO_BASE) * v).astype(np.uint8)
+    arr[..., 3] = m
     im = ImageMobject(arr)
     im.set_width(w / 120)
     return im
@@ -529,8 +534,9 @@ class Base(Scene):
         self.fim()
 
     def setup_base(self):
-        usar_papel(self)
+        usar_papel(self)          # papel v2: violeta liso; a grade entra por self.grade(...)
         self.liso = False
+        self._grades, self._gpend = {}, []
         if os.environ.get("SO_AUDITORIA") == "1":
             self.renderer.render = lambda *a, **k: None
         self.clk = ValueTracker(0.0)
@@ -578,10 +584,13 @@ class Base(Scene):
         rtq = n / FPS - FRAC
         t0 = self.nq / FPS
         clk = UpdateFromAlphaFunc(self.clk, lambda m, a: m.set_value(t0 + a * n / FPS), rate_func=linear, run_time=rtq)
+        ga, gsai = self._anims_grade(rtq)
         self._em_play = True
-        super().play(*anims, clk, run_time=rtq, **kw)
+        super().play(*anims, *ga, clk, run_time=rtq, **kw)
         self._em_play = False
         self.nq += n
+        if gsai:
+            self.remove(*gsai)
         if pontas:
             self.remove(*pontas)
 
@@ -758,7 +767,8 @@ class Base(Scene):
         return (4.5 - self.h1.get_bottom()[1]) * 120
 
     def fixos(self):
-        return {self.wm, self.h1, *([self.h2] if self.h2 else [])}
+        return {self.wm, self.h1, *([self.h2] if self.h2 else []), *self._grades.values(),
+                *[g for _, g in getattr(self, '_gpend', [])]}
 
     def secao(self, s):
         """Linha 2 do canto: a antiga sai (0,25 s) antes de a nova entrar (junto do próximo play)."""
@@ -787,25 +797,54 @@ class Base(Scene):
             self.remove(m)
 
     def papel(self, liso, rt=0.0):
-        """Troca o fundo da câmera entre o milimetrado e o liso (3D). Com rt > 0, a grade some/volta num fade (uma imagem por cima, removida no fim)."""
+        """Papel v2: liso = a grade sai (fade); não liso = volta a grade padrão (papel()). O fade vai junto do próximo play;
+        com rt > 0, num play próprio de rt (como o fade da v1)."""
         if liso == self.liso:
             return
-        mm = str(_arq("fundo_calculo_milimetrado"))
-        if rt <= 0:
-            usar_papel(self, _arq("fundo_calculo_liso") if liso else None)
-        else:
-            img = ImageMobject(mm).set_width(16).move_to(ORIGIN).set_z_index(-50)
-            if liso:
-                usar_papel(self, _arq("fundo_calculo_liso"))
-                self.add(img)
-                self.play(FadeOut(img), run_time=rt)
-            else:
-                img.set_opacity(0)
-                self.add(img)
-                self.play(img.animate.set_opacity(1), run_time=rt)
-                usar_papel(self)
-            self.remove(img)
+        self.grade() if liso else self.grade(None)
+        if rt > 0:
+            self.play(Wait(rt), run_time=rt)
         self.liso = liso
+
+    def grade(self, *itens, passo=None):
+        """Troca o conjunto de grades da tela (papel v2). Cada item: None = papel() (unidade padrão, tela inteira); ax = papel(ax) (tela inteira);
+        (ax, painel) = papel(ax, area=painel) (só dentro do painel, 8 px para dentro da moldura); (ax, painel, passo). Sem itens = liso.
+        A grade que já está igual fica; as outras saem/entram em fade junto do PRÓXIMO play (mesmo run_time; nenhum tempo muda)."""
+        novas = {}
+        for it in itens:
+            ax, mob, ps = (tuple(it) + (None, None))[:3] if isinstance(it, tuple) else (it, None, None)
+            area = area_de(ax, mob) if mob is not None else None
+            g = _papel_grade(ax, area, ps or passo)
+            g.set_z_index(Z_GRADE)
+            g._grade = g._sem_contorno = True
+            o = np.round(np.array((ax or Plano()).c2p(0, 0))[:2] * 120, 2)
+            u = np.round(np.array((ax or Plano()).c2p(1, 1))[:2] * 120, 2) - o
+            k = (tuple(o), tuple(u), tuple(np.round(area, 4)) if area else None, g.passo)
+            novas[k] = g
+            print(f"[grade] {self._aid} {self.t:7.2f}s origem {o} px, passo {g.passo} u = {g.passo * abs(u[0]):.1f}×{g.passo * abs(u[1]):.1f} px"
+                  f"{' (painel)' if area else ''}, {len(g)} linhas")
+        for k in [k for k in self._grades if k not in novas]:
+            self._gpend.append(("sai", self._grades.pop(k)))
+        for k, g in novas.items():
+            if k not in self._grades:
+                self._grades[k] = g
+                self._gpend.append(("entra", g))
+
+    def _anims_grade(self, rt):
+        """Fades pendentes da grade para o play que vai rodar (rt): entrada/saída em até 0,5 s no começo do play."""
+        if not self._gpend:
+            return [], []
+        ent, sai = [], []
+        for op, g in self._gpend:
+            (ent if op == "entra" else sai).append(g)
+        self._gpend = []
+        both = [g for g in ent if g in sai]
+        ent, sai = [g for g in ent if g not in both], [g for g in sai if g not in both]
+        a = min(0.5, rt)
+
+        def fade(cls, g):
+            return cls(g, run_time=rt) if rt - a < 1 / FPS else Succession(cls(g, run_time=a), Wait(run_time=rt - a))
+        return [fade(FadeIn, g) for g in ent] + [fade(FadeOut, g) for g in sai], sai
 
     def logo(self, largura):
         img = ImageMobject(str(ROOT / "assets" / "branding" / "overlays" / "parallax_lab_logo_horizontal.png"))
@@ -820,7 +859,10 @@ class Base(Scene):
         """Fim do lote: o conteúdo sai até o papel (o próximo lote começa do papel vazio, com a linha 1 do canto)."""
         if self._aid is not None:
             self._fecha(antes=rt + (0.2 if self.h2 is not None else 0.0))
+        self.grade()              # papel v2: a grade sai junto do conteúdo (o próximo lote começa do violeta liso)
         self.limpa(rt=rt)
+        if self._gpend:
+            print(f"[grade] AVISO {self.lote}: fade da grade sem play para ir junto")
         if self.h2 is not None:
             self.play(FadeOut(self.h2), run_time=0.2)
             self.h2 = None
@@ -839,27 +881,19 @@ class Plano:
         return ((p[0] - self.o[0]) / self.ux, (p[1] - self.o[1]) / self.uy)
 
 
-def janela_local(cena, ax, folga=0.35, op=0.9, nome=None):
-    """Cópia de assets/calculo/papel.py:janela que grava o PNG na própria unidade (renders/janela/), para não escrever em assets/.
-    Apaga a grade atrás dos eixos que não encaixam no papel (exceção registrada: painel θρ do B2)."""
-    from PIL import Image, ImageDraw, ImageFilter
-    w, h = config.pixel_width, config.pixel_height
-    k = w / config.frame_width
-    x0, y0 = ax.c2p(ax.x_range[0], ax.y_range[0])[:2]
-    x1, y1 = ax.c2p(ax.x_range[1], ax.y_range[1])[:2]
-    caixa = [(x0 - folga + config.frame_width / 2) * k, (config.frame_height / 2 - y1 - folga) * k,
-             (x1 + folga + config.frame_width / 2) * k, (config.frame_height / 2 - y0 + folga) * k]
-    m = Image.new("L", (w, h), 0)
-    ImageDraw.Draw(m).rounded_rectangle(caixa, radius=40 * k / 120, fill=255)
-    m = np.array(m.filter(ImageFilter.GaussianBlur(28 * k / 120)), float)[..., None] / 255 * op
-    a = np.array(Image.open(_arq("fundo_calculo_milimetrado")).convert("RGB"), float)
-    b = np.array(Image.open(_arq("fundo_calculo_liso")).convert("RGB"), float)
-    d = AQUI / "renders" / "janela"
-    d.mkdir(parents=True, exist_ok=True)
-    saida = d / f"janela_{nome or type(cena).__name__}_{w}x{h}.png"
-    Image.fromarray((a * (1 - m) + b * m).astype(np.uint8)).save(saida)
-    usar_papel(cena, saida)
-    return saida
+Z_GRADE = -46            # papel v2: a grade fica sob as placas do canto/logo (-45), os painéis (-40) e as chapas (-39), como o milimetrado na v1
+
+
+def area_de(ax, mob, folga_px=8):
+    """Área (x0, x1, y0, y1) em unidades de `ax` (None = unidade padrão) do retângulo do painel `mob` (a moldura, 1º submobject), folga_px para dentro."""
+    r = mob[0] if isinstance(mob, VGroup) and len(mob.submobjects) else mob
+    f = folga_px / 120
+    (x0, y0), (x1, y1) = r.get_corner(DL)[:2] + f, r.get_corner(UR)[:2] - f
+    if ax is None:
+        return (float(x0), float(x1), float(y0), float(y1))
+    a0, b0 = ax.p2c(P3(x0, y0))
+    a1, b1 = ax.p2c(P3(x1, y1))
+    return (float(a0), float(a1), float(b0), float(b1))
 
 
 def _falta(self, frase):

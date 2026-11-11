@@ -28,6 +28,7 @@ class LoteB6(Base):
         self.an("B6-1")
         self.secao("DE VOLTA AO REDEMOINHO")
         ax = VGroup(eixos7(V, -3.2, 3.2, -3.2, 3.2))
+        self.grade(V)
         self.play(Create(ax), run_time=1.0)
         fF = TC(r"\F(\X,\Y) = -\Y\,\ii + \X\,\jj", 1120, 430, 54)
         self.gat("a regra que troca as coordenadas")

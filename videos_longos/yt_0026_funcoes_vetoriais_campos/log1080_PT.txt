@@ -1,0 +1,673 @@
+Manim Community v0.21.0
+
+[placa] linha 1 = 692 px → placa = 752 px (texto + 24 px + margem x = 36)
+[ancora] T0 0.000
+[campo] T0 (−y, x): 128 setas, maior 0.417 u, menor 0.207 u (razão 0.50), maior ÷ passo = 0.83
+[11/11/26 11:06:18] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F(\X,\Y)                         
+                             = -\Y\,\ii +                                      
+                             \X\,\jj\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media1080_PT\Tex\d01f5c52                        
+                             b6822301.tex                                      
+[grade] T0    0.00s origem [-340.  -60.] px, passo 0.25 u = 28.8×28.8 px, 104 linhas
+[11/11/26 11:06:22] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:06:24] INFO     Animation 0 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00000                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:06:26] INFO     Animation 1 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00001                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:06:32] INFO     Animation 2 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00002                         
+                             .mp4'                                             
+[gatilho] T0   5.67s (alvo   5.67s, atraso -0.00s) junta infinitas delas
+[algebra] T0    5.67s glifos=16 cor=100% rt=3.6s '\\F(\\X,\\Y) = -\\Y\\,\\ii + \\X\\,\\jj'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:06:40] INFO     Animation 3 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00003                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:06:42] INFO     Animation 4 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00004                         
+                             .mp4'                                             
+[ancora] T1 9.867
+[11/11/26 11:06:44] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\textstyle                        
+                             V = \iint_{\G R}                                  
+                             \S{f}(\X,\Y)\,dA\special{d                        
+                             visvgm:raw </g>} to                               
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media1080_PT\Tex\4e74cbab                        
+                             ab702533.tex                                      
+[11/11/26 11:06:55] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:07:00] INFO     Animation 5 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00005                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:07:29] INFO     Animation 6 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00006                         
+                             .mp4'                                             
+[gatilho] T1   4.70s (alvo   4.70s, atraso +0.00s) empilha colunas finíssimas
+[algebra] T1   14.57s glifos=12 cor=100% rt=1.6s 'V = \\iint_{\\G R} \\S{f}(\\X,\\Y)\\,dA'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:07:42] INFO     Animation 7 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00007                         
+                             .mp4'                                             
+                    WARNING  The original total run_time of       scene.py:1131
+                             PT.play(), 0.0326667 seconds, is too              
+                             short for the current frame rate of               
+                             30 FPS. Rendering with the shortest               
+                             possible total run_time of 0.0333333              
+                             seconds instead.                                  
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PT.play(), 0.0326667 seconds, is too              
+                             short for the current frame rate of               
+                             30 FPS. Rendering with the shortest               
+                             possible total run_time of 0.0333333              
+                             seconds instead.                                  
+                    INFO     Animation 8 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00008                         
+                             .mp4'                                             
+[gatilho] T1   6.40s (alvo   6.40s, atraso +0.00s) e elas viram um volume
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:07:51] INFO     Animation 9 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00009                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:07:53] INFO     Animation 10 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00010                         
+                             .mp4'                                             
+[ancora] T2 17.667
+[campo] T2: 99 setas, maior 0.500 u, menor 0.314 u (razão 0.63), maior ÷ passo = 0.71
+[11/11/26 11:07:55] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\textstyle                        
+                             W = \int_{\P{C}} \F\cdot                          
+                             d\vec                                             
+                             r\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media1080_PT\Tex\c8e3c6c3                        
+                             89ff29fb.tex                                      
+[grade] T2   17.67s origem [-340.  -60.] px, passo 0.25 u = 27.5×27.5 px, 109 linhas
+[11/11/26 11:08:00] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:08:03] INFO     Animation 11 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00011                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:08:05] INFO     Animation 12 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00012                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 13 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00013                         
+                             .mp4'                                             
+[gatilho] T2   1.37s (alvo   1.36s, atraso +0.01s) em cada pedacinho
+[algebra] T2   19.03s glifos=10 cor=100% rt=3.3s 'W = \\int_{\\P{C}} \\F\\cdot d\\vec r'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:08:12] INFO     Animation 14 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00014                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:08:18] INFO     Animation 15 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00015                         
+                             .mp4'                                             
+[ancora] T3 25.067
+[11/11/26 11:08:21] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\textstyle                        
+                             \Phi = \iint_{\S{S}}                              
+                             \F\cdot\vec                                       
+                             n\,dS\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media1080_PT\Tex\afda1179                        
+                             79af7107.tex                                      
+[11/11/26 11:08:25] WARNING  The original total run_time of       scene.py:1131
+                             PT.play(), 0.0326667 seconds, is too              
+                             short for the current frame rate of               
+                             30 FPS. Rendering with the shortest               
+                             possible total run_time of 0.0333333              
+                             seconds instead.                                  
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PT.play(), 0.0326667 seconds, is too              
+                             short for the current frame rate of               
+                             30 FPS. Rendering with the shortest               
+                             possible total run_time of 0.0333333              
+                             seconds instead.                                  
+                    INFO     Animation 16 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00016                         
+                             .mp4'                                             
+[algebra] T3   25.10s glifos=11 cor=100% rt=3.6s '\\Phi = \\iint_{\\S{S}} \\F\\cdot\\vec n\\,dS'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:08:49] INFO     Animation 17 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00017                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:09:04] INFO     Animation 18 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00018                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:09:05] INFO     Animation 19 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00019                         
+                             .mp4'                                             
+[ancora] T4 31.033
+[grade] T4   31.03s origem [-340.  -60.] px, passo 0.2 u = 26.0×26.0 px, 116 linhas
+[11/11/26 11:09:15] WARNING  The original total run_time of       scene.py:1131
+                             PT.play(), 0.0326667 seconds, is too              
+                             short for the current frame rate of               
+                             30 FPS. Rendering with the shortest               
+                             possible total run_time of 0.0333333              
+                             seconds instead.                                  
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PT.play(), 0.0326667 seconds, is too              
+                             short for the current frame rate of               
+                             30 FPS. Rendering with the shortest               
+                             possible total run_time of 0.0333333              
+                             seconds instead.                                  
+[11/11/26 11:09:16] INFO     Animation 20 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00020                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:09:20] INFO     Animation 21 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00021                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:09:23] INFO     Animation 22 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00022                         
+                             .mp4'                                             
+[gatilho] T4   4.53s (alvo   4.52s, atraso +0.01s) as trocas entre vizinhos se cancelam
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:09:25] INFO     Animation 23 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00023                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:09:27] INFO     Animation 24 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00024                         
+                             .mp4'                                             
+[gatilho] T4   6.70s (alvo   6.70s, atraso +0.00s) só sobra o que passa pela borda
+[11/11/26 11:09:30] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\textstyle                        
+                             \oint_{\G C} \F\cdot d\vec                        
+                             r \;=\; \iint_{\G R} (\rot                        
+                             \F)\,dA\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media1080_PT\Tex\797f2b31                        
+                             6cb617c0.tex                                      
+[algebra] T4   37.73s glifos=20 cor=100% rt=1.4s '\\oint_{\\G C} \\F\\cdot d\\vec r \\;=\\; \\iint_{\\G R} (\\rot \\F)\\,dA'
+[11/11/26 11:09:37] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:09:41] INFO     Animation 25 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00025                         
+                             .mp4'                                             
+[11/11/26 11:09:46] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 26 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00026                         
+                             .mp4'                                             
+[grade] T4   39.20s origem [0. 0.] px, passo 0.25 u = 30.0×30.0 px, 102 linhas
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:09:48] INFO     Animation 27 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00027                         
+                             .mp4'                                             
+[gatilho] T4   8.57s (alvo   8.58s, atraso -0.01s) no plano
+[11/11/26 11:09:50] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\textstyle                        
+                             \oint_{\G C} \F\cdot d\vec                        
+                             r\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media1080_PT\Tex\bd91b6ea                        
+                             cdbda88a.tex                                      
+[11/11/26 11:09:51] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}=\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media1080_PT\Tex\bb8461a6                        
+                             acd63ee1.tex                                      
+[11/11/26 11:09:52] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\textstyle                        
+                             \iint_{\G R}                                      
+                             (\nabla\times\F)\cdot\vec                         
+                             k\,dA\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media1080_PT\Tex\86bb2361                        
+                             ccfc7c8b.tex                                      
+[11/11/26 11:09:53] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:09:55] INFO     Animation 28 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00028                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:09:57] INFO     Animation 29 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00029                         
+                             .mp4'                                             
+[gatilho] T4  10.73s (alvo  10.72s, atraso +0.01s) numa superfície
+[11/11/26 11:09:59] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\textstyle                        
+                             \iint_{\S{S}}                                     
+                             (\nabla\times\F)\cdot\vec                         
+                             n\,dS\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media1080_PT\Tex\871d1499                        
+                             8976e4a2.tex                                      
+[11/11/26 11:10:00] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:10:01] INFO     Animation 30 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00030                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:10:04] INFO     Animation 31 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00031                         
+                             .mp4'                                             
+[gatilho] T4  12.67s (alvo  12.68s, atraso -0.01s) num volume
+[11/11/26 11:10:06] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\textstyle                        
+                             \oiint_{\S{S}} \F\cdot\vec                        
+                             n\,dS\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media1080_PT\Tex\0452618f                        
+                             e233d0b8.tex                                      
+[11/11/26 11:10:07] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\textstyle                        
+                             \iiint_{\G V}                                     
+                             \nabla\cdot\F\,dV\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media1080_PT\Tex\a3abd952                        
+                             e48fd745.tex                                      
+[11/11/26 11:10:09] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:10:10] INFO     Animation 32 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00032                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:10:12] INFO     Animation 33 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00033                         
+                             .mp4'                                             
+[gatilho] T4  14.37s (alvo  14.36s, atraso +0.01s) o local e o global
+[11/11/26 11:10:17] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:10:18] INFO     Animation 34 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00034                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:10:22] INFO     Animation 35 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00035                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 36 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00036                         
+                             .mp4'                                             
+[ancora] T5 48.000
+[campo] T5 contexto: 251 setas, maior 0.500 u, menor 0.223 u (razão 0.45), maior ÷ passo = 0.62
+[11/11/26 11:10:27] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 37 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00037                         
+                             .mp4'                                             
+[gatilho] T5   0.07s (alvo   0.06s, atraso +0.01s) isso é cálculo três
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:10:32] INFO     Animation 38 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00038                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:10:34] INFO     Animation 39 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00039                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 40 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00040                         
+                             .mp4'                                             
+[gatilho] T5   1.37s (alvo   1.36s, atraso +0.01s) do infinitamente pequeno
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:10:36] INFO     Animation 41 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00041                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:10:48] INFO     Animation 42 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00042                         
+                             .mp4'                                             
+[gatilho] T5   5.87s (alvo   5.88s, atraso -0.01s) aquela seta
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:10:51] INFO     Animation 43 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00043                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:10:53] INFO     Animation 44 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00044                         
+                             .mp4'                                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 11:10:55] INFO     Animation 45 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0026_funcoes_vetoriais_ca                         
+                             mpos\media1080_PT\videos\                         
+                             cena\1080p30\partial_movi                         
+                             e_files\PT\uncached_00045                         
+                             .mp4'                                             
+[deriva] PT +0.00s além do fim da última âncora
+[cor-bloco] PT fração colorida (glifos de caneta) = 100% em 5 MathTex
+[flash-total] PT 0
+[estilo] PT traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PT brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 55.70s (1671 quadros)
+                    INFO     Combining to Movie file.  scene_file_writer.py:952
+[11/11/26 11:10:56] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0026_funcoes_vetoriais                          
+                             _campos\media1080_PT\vid                          
+                             eos\cena\1080p30\PT.mp4'                          
+                                                                               
+                    INFO     Rendered PT                           scene.py:290
+                             Played 46 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

@@ -16,6 +16,7 @@ class LoteAH(Base):
         logo = self.logo(5.6).move_to(P3(0, 0.9))
         aneis = VGroup(*[DashedVMobject(Circle(radius=r).move_to(P3(0, 0.9)), num_dashes=48).set_stroke(GEO, 2.2, opacity=o) for r, o in ((2.1, 0.45), (2.45, 0.25))])
         bv = txt("BEM-VINDOS AO PARALLAX LAB", 34).move_to(P3(0, -2.5))
+        self.grade(None)                                # sem gráfico: papel()
         self.play(FadeIn(logo, scale=0.94), FadeIn(aneis), FadeIn(bv, shift=0.1 * UP), run_time=0.8)
         rt = max(3.0, self.falta("o assunto de hoje"))          # v9: os anéis giram até o título (sem 12 s de tela parada)
         self.play(Rotate(aneis[0], 0.5 * rt / 3), Rotate(aneis[1], -0.4 * rt / 3), rate_func=linear, run_time=rt)
@@ -42,6 +43,7 @@ class LoteAH(Base):
         band = bandeira7(v1, 0.0, (0, 0), DEST)
         centro = ponto7(v1.c2p(0, 0), WHITE_, 7)
         grupo = VGroup(folha, band)
+        self.grade(v1)
         self.play(FadeIn(folha), run_time=0.8)
         self.gat("com uma bandeirinha desenhada")
         self.play(FadeIn(band, shift=0.1 * UP), FadeIn(centro), run_time=0.6)
@@ -71,6 +73,7 @@ class LoteAH(Base):
         fH = TC(r"(\X,\Y)\;\longmapsto\;(-\Y,\;\X)", 960, 235, 56, "c")
         lE, lD = legenda("TRANSFORMAÇÃO: A BANDEIRA GIRA", 480, 950, WHITE_, "center"), legenda("CAMPO: UMA SETA EM CADA PONTO", 1440, 950, CAMPO2, "center")
         perg = T("QUAL É O DESENHO CERTO?", 960, 1035, 34, "center", SAI_F)
+        self.grade((vE, pe), (vD, pd))                  # um por painel, o resto liso
         self.play(FadeOut(folha0), FadeOut(cmp), FadeIn(pe), FadeIn(pd), FadeIn(mE), FadeIn(silh), FadeIn(bE), FadeIn(oE), FadeIn(mD), FadeIn(cD), run_time=0.9)
         self.gat("é a mesma fórmula")
         cf = caneta(fH)

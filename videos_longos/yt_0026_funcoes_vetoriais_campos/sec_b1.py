@@ -50,6 +50,7 @@ class LoteB1(Base):
         r2 = legenda("GRÁFICO", XS[1] + 240, 950, GEO, "center")
         self.add(grf)
         self.gat("uma curva é uma função")
+        self.grade((v1, c1))                            # cartões: grade só nos cartões 2D; o do 3D fica liso
         self.play(FadeIn(c1), Create(ex1), run_time=0.7)
         self.play(Create(curva), FadeIn(dcur), run_time=1.2)
         self.play(caneta(t1), FadeIn(r1))
@@ -68,6 +69,7 @@ class LoteB1(Base):
         t3 = TC(r"\mathbb{R}^2\to\mathbb{R}^2", XS[2] + 240, 880, 44, "c")
         r3 = legenda("NESTE VÍDEO", XS[2] + 240, 950, CAMPO2, "center")
         self.gat("agora junta as duas ideias")
+        self.grade((v1, c1), (v3, c3))
         self.play(FadeIn(c3), Create(borda3), run_time=0.7)
         self.play(LaggedStart(*[GrowArrow(s_) for s_ in g3], lag_ratio=0.04), run_time=1.0)
         self.gat("ela parte de um conjunto")
@@ -81,6 +83,7 @@ class LoteB1(Base):
 
         # ── B1-3 · contagem de eixos ──
         self.an("B1-3")
+        self.grade(None)                                # eixos oblíquos (3D desenhado): papel()
         self.limpa(rt=0.4)
         cE, cD = P3(-3.4, -1.4), P3(3.2, -1.4)
         e1 = eixos3(cE, 1.05)
@@ -113,12 +116,14 @@ class LoteB1(Base):
 
         # ── B1-4 · os dois jeitos de desenhar ──
         self.an("B1-4")
+        self.grade()
         self.limpa(rt=0.4)
         pa, pb = painel_c(480, 540, 720, 600, "TRANSFORMAÇÃO", WHITE_), painel_c(1440, 540, 720, 600, "CAMPO VETORIAL", CAMPO2)
         mal = icone_malha(PX(480, 588)).scale(1.5, about_point=PX(480, 588))
         vb = Vista(1440, 540, 72)
         gb = campo7(vb, GIRO, -3, 3, -3, 3, passo=0.75, rmin=0.5, rmax=3.3, mmax=3.3, lmax=0.6, nome="B1-4 campo")
         self.gat("no primeiro")
+        self.grade((None, pa), (vb, pb))
         self.play(FadeIn(pa), Create(mal), run_time=1.2)
         self.gat("no segundo")
         self.play(FadeIn(pb), LaggedStart(*[GrowArrow(s_) for s_ in gb], lag_ratio=0.02), run_time=1.3)

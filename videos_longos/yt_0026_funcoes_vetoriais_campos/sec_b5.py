@@ -23,6 +23,7 @@ class LoteB5(Base):
         self.an("B5-1")
         self.secao("CAMPO VETORIAL")
         ax = palco()
+        self.grade(V)
         self.play(Create(ax), run_time=1.0)
         X = V.c2p(1.5, 1.0)
         dX = ponto7(X, POS7, 9)
@@ -97,6 +98,7 @@ class LoteB5(Base):
 
         # ── B5-4 · as duas perguntas (quadro 15) ──
         self.an("B5-4")
+        self.grade()
         self.limpa(rt=0.4)
         pa, pb = painel_c(480, 540, 720, 600, "TRANSFORMAÇÃO", WHITE_), painel_c(1440, 540, 720, 600, "CAMPO", CAMPO2)
         vA, vB = Vista(480, 540, 96), Vista(1440, 540, 96)
@@ -110,6 +112,7 @@ class LoteB5(Base):
         tC1, tC2 = TC(r"\P{X}", *pxy(vB.c2p(-1.3, -1.05)), 40, "c", caneta=False), TC(r"\F(X)", *pxy(vB.c2p(1.2, 1.2)), 40, "c", caneta=False)
         qA, qB = legenda("PARA ONDE O PONTO VAI?", 480, 920, WHITE_, "center", 32), legenda("QUE SETA O PONTO CARREGA?", 1440, 920, CAMPO2, "center", 32)
         self.gat("nenhum dos dois desenhos")
+        self.grade((vA, pa), (vB, pb))
         self.play(FadeIn(pa), FadeIn(pb), run_time=0.6)
         self.gat("como transformação a pergunta é")
         self.play(FadeIn(dA), FadeIn(dB), Create(voo_), FadeIn(tX), FadeIn(tpX), FadeIn(qA, shift=0.1 * UP), run_time=1.0)

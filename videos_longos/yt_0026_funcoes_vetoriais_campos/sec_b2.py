@@ -17,11 +17,14 @@ class LoteB2(Base):
         self.secao("TRANSFORMAÇÃO")
         ax_e = Plano(PX0(240, 660)[:2], 72 / 120, 120 / 120)      # v8, presa na grade: origem num cruzamento grosso (240, 660); θ 96 px/rad (2π = 603 px), ρ 144 px/u (ρ = 2 → 288 px)
         ax_s = Vista(1440, 540, 96)                                                  # disco φ(B): raio 2 (192 px), origem num cruzamento grosso
+        ax_g = Plano(PX0(240, 660)[:2], 72 / 120 * PI / 2, 120 / 120)       # papel v2: grade do plano θρ (mesma origem); 1 u da grade = π/2 em θ, então o passo 0,25 = π/8 e ρ = 0,25 caem nas divisões do B e no 2π
         pe, ps = painel_c(480, 540, 720, 600, "ENTRADA", E1), painel_c(1440, 540, 720, 600, "SAÍDA", SAI)
         arco = arco7(870, 588, 1050, 588, r"\varphi")
         self.gat("à esquerda o plano de entrada")
+        self.grade((ax_g, pe))
         self.play(FadeIn(pe), run_time=0.8)
         self.gat("à direita o plano de saída")
+        self.grade((ax_g, pe), (ax_s, ps))
         self.play(FadeIn(ps), run_time=0.8)
         self.gat("quando eu jogo um conjunto")
         self.play(FadeIn(arco), run_time=1.0)

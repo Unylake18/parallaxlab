@@ -48,10 +48,12 @@ class LoteS(Base):
         self.gat("como transformação ela move os pontos")
         self.play(caneta(fdef))
         self.gat("segmentos viram circunferências")
+        self.grade((v1, cart[0]))                       # cartões: grade só nos 2D; a tigela 3D fica no liso
         self.play(FadeIn(cart[0]), Create(dsc), FadeIn(forms[0]), run_time=1.4)
         self.gat("folhas viram tigelas")
         self.play(FadeIn(cart[1]), tig.op.animate.set_value(1.0), FadeIn(forms[1]), run_time=1.0)
         self.gat("ela pendura uma seta em cada ponto")
+        self.grade((v1, cart[0]), (v3, cart[2]))
         self.play(FadeIn(cart[2]), LaggedStart(*[GrowArrow(s_) for s_ in rdm], lag_ratio=0.02), FadeIn(forms[2]), run_time=1.6)
         self.gat("e as duas leituras são necessárias")
         self.play(pulso(dsc, 1.04), pulso(rdm, 1.04), run_time=1.0)
@@ -65,6 +67,7 @@ class LoteS(Base):
         vA, vB = Vista(480, 540, 72), Vista(1440, 540, 72)
         d2 = disco_polar(vA)
         r2 = campo7(vB, GIRO, -3, 3, -3, 3, passo=0.6, rmin=0.5, rmax=3.3, mmax=3.3, lmax=0.5, nome="S2 redemoinho")
+        self.grade((vA, pa), (vB, pb))
         self.play(FadeOut(dsc), FadeOut(rdm), FadeIn(pa), FadeIn(pb), FadeIn(d2), FadeIn(r2), run_time=0.8)
         self.remove(dsc, rdm)
         self.gat("trocar de coordenadas dentro de uma integral")
@@ -74,11 +77,12 @@ class LoteS(Base):
 
         # ── CTA ──
         self.an("CTA")
-        tudo = [m for m in self.mobjects if m is not self.clk and not isinstance(m, ValueTracker)]
+        tudo = [m for m in self.mobjects if m is not self.clk and not isinstance(m, ValueTracker) and not getattr(m, "_grade", False)]
         vC = Vista(960, 594, 120)
         rdc = campo7(vC, GIRO, -3, 3, -3, 3, passo=1.0, rmin=0.5, rmax=3.3, mmax=3.3, lmax=0.7, nome="CTA redemoinho")
         barco = barquinho(vC.c2p(1.6, 0.0))
         perg = T("O BARQUINHO GIRA EM TORNO DE SI MESMO?", 960, 150, 40, "center")
+        self.grade(vC)
         self.play(*[FadeOut(m) for m in tudo], FadeIn(rdc), run_time=0.6)
         self.remove(*tudo)
         self.h2 = None
@@ -88,6 +92,7 @@ class LoteS(Base):
         aneis = VGroup(*[DashedVMobject(Circle(radius=r).move_to(CL), num_dashes=48).set_stroke(GEO, 2.6, opacity=o) for r, o in ((2.1, 0.85), (2.45, 0.6))])
         ins = VGroup(txt("INSCREVA-SE PARA ACOMPANHAR", 40, bold=True), txt("OS PRÓXIMOS VÍDEOS", 40, bold=True)).arrange(DOWN, buff=0.12).move_to(P3(0, -2.6))
         self.gat("deixa a sua resposta")
+        self.grade(None)                                # logo: papel()
         self.play(FadeOut(VGroup(rdc, barco, perg)), FadeIn(logo, scale=0.96), FadeIn(aneis), FadeIn(ins, shift=0.1 * UP), run_time=0.45)
         self.remove(rdc, barco, perg)
         rt = self.resta() + 3.0                                   # até o fim da fala e mais 3 s de hold

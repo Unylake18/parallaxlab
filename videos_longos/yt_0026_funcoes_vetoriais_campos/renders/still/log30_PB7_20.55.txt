@@ -1,0 +1,67 @@
+Manim Community v0.21.0
+
+[placa] linha 1 = 692 px → placa = 752 px (texto + 24 px + margem x = 36)
+[ancora] B7-1 0.000
+[placa] NO ESPAÇO: linha 2 = 188 px → placa = 248 px
+[11/11/26 10:45:19] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F(X) =                           
+                             -\dfrac{X}{\|X\|^3}\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media_s30_PB7\Tex\b03ac09                        
+                             70ab236f7.tex                                     
+[11/11/26 10:45:21] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\|\F\| =                          
+                             \dfrac{1}{r^2}\special{dvi                        
+                             svgm:raw </g>} to                                 
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media_s30_PB7\Tex\724c79c                        
+                             824ebd474.tex                                     
+[gatilho] B7-1   3.27s (alvo   3.26s, atraso +0.01s) em cada ponto do espaço
+[algebra] B7-1    3.27s glifos=13 cor=100% rt=3.2s '\\F(X) = -\\dfrac{X}{\\|X\\|^3}'
+[11/11/26 10:45:24] WARNING  The original total run_time of       scene.py:1131
+                             PB7.play(), 0.0326667 seconds, is                 
+                             too short for the current frame rate              
+                             of 30 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0333333 seconds instead.                        
+                    WARNING  The original total run_time of       scene.py:1131
+                             PB7.play(), 0.0326667 seconds, is                 
+                             too short for the current frame rate              
+                             of 30 FPS. Rendering with the                     
+                             shortest possible total run_time of               
+                             0.0333333 seconds instead.                        
+[gatilho] B7-1   6.53s (alvo   6.54s, atraso -0.01s) com tamanho igual a um dividido
+[algebra] B7-1    6.53s glifos=9 cor=100% rt=3.0s '\\|\\F\\| = \\dfrac{1}{r^2}'
+[ancora] B7-2 16.533
+[11/11/26 10:45:25] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}{\G A} =                          
+                             \mathbb{R}^3 -                                    
+                             \{0\}\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media_s30_PB7\Tex\375941c                        
+                             4f0cb1f18.tex                                     
+[gatilho] B7-2   7.40s (alvo   7.40s, atraso +0.00s) menos um ponto
+[11/11/26 10:45:28] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0026_funcoes_vetoriais                          
+                             _campos\media_s30_PB7\im                          
+                             ages\cena\PB7_ManimCE_v0                          
+                             .21.0.png'                                        
+                                                                               
+                    INFO     Rendered PB7                          scene.py:290
+                             Played 7 animations                               
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

@@ -17,6 +17,7 @@ class LoteB3(Base):
         dom = chapa7([ax_e.c2p(*p) for p in ((-2.2, -2.2), (2.2, -2.2), (2.2, 2.2), (-2.2, 2.2))])
         ex_e = eixos7(ax_e, -2.2, 2.2, -2.2, 2.0, rx=("u", E1), ry=("v", E2))
         ex_s = eixos7(ax_s, -3.2, 3.2, -0.5, 7.6, rx=("x", SAI), ry=("y", SAI))
+        self.grade((ax_e, pe), (ax_s, ps))
         self.play(FadeIn(pe), FadeIn(ps), FadeIn(dom), Create(ex_e), Create(ex_s), FadeIn(arco), run_time=1.4)
         form = TC(r"\varphi(\U,\V) = \S{(}\U,\; \U^2+\V^2\S{)}", 480, 960, 46, "c")
         self.gat("uma função que repete")

@@ -31,6 +31,7 @@ class LoteT(Base):
         uno = ordem[0]
         f0 = TC(F_GIRO, 1120, 520, 58)
         l0 = legenda("CAMPO VETORIAL", 1124, 620, CAMPO2)
+        self.grade(v0)                                  # papel v2: grade do plano do campo
         self.play(FadeIn(rot0), GrowArrow(uno), run_time=0.7)
         self.play(pulso(uno, 1.3, 1.5), run_time=0.8)
         self.gat("junta infinitas delas")
@@ -55,6 +56,7 @@ class LoteT(Base):
         rot1 = rot_abertura("VOLUME")
         f1 = TC(r"V = \iint_{\G R} \S{f}(\X,\Y)\,dA", 1120, 520, 58)
         l1 = legenda("SOMA DE COLUNAS FININHAS", 1124, 630)
+        self.grade()                                    # 3D: violeta liso
         self.corte([g0, rot0, f0, l0], [col, rot1], rt=0.4)
         self.gat("empilha colunas finíssimas")
         seg["l1"] = self.t
@@ -86,6 +88,7 @@ class LoteT(Base):
         rot2 = rot_abertura("TRABALHO")
         f2 = TC(r"W = \int_{\P{C}} \F\cdot d\vec r", 1120, 520, 58)
         l2 = legenda("O CAMPO AO LONGO DE CADA PEDACINHO", 1124, 630)
+        self.grade(v2)
         self.corte([col, rot1, f1, l1], [rot2, g2], rt=0.3)
         self.play(Create(curva), run_time=0.9)
         self.gat("em cada pedacinho")
@@ -105,6 +108,7 @@ class LoteT(Base):
         rot3 = rot_abertura("FLUXO")
         f3 = TC(r"\Phi = \iint_{\S{S}} \F\cdot\vec n\,dS", 1120, 520, 58)
         l3 = legenda("O QUE ATRAVESSA CADA PEDACINHO", 1124, 630)
+        self.grade()                                    # 3D: violeta liso
         self.corte([g2, curva, setas2, pts2, rot2, f2, l2], [fl, rot3], rt=1 / FPS)
         c3 = caneta(f3)
         self.play(c3, Succession(Wait(max(0.1, c3.tot - 0.5)), FadeIn(l3, run_time=0.5)), run_time=c3.tot)
@@ -138,7 +142,7 @@ class LoteT(Base):
         coral._sem_contorno = True
         la1, la2, la3 = (legenda("CADA PEDACINHO GIRA UM POUCO", 1120, 480, WHITE_, "left", 34), legenda("NA PAREDE ENTRE DOIS VIZINHOS,", 1120, 560, SAI_F),
                          legenda("AS DUAS SETAS SE CANCELAM", 1120, 600, DEST))
-        self.papel(False)
+        self.grade((v4, None, 0.2))                     # passo 0,2 (26 px): as paredes das células (múltiplos de 0,8) caem em linhas da grade
         self.corte([fl, rot3, f3, l3], [rot4a, chapa, grade], rt=1 / FPS)
         self.play(LaggedStart(*[AnimationGroup(*[GrowArrow(a_) for a_ in cel]) for cel in celulas], lag_ratio=0.18, run_time=2.2), FadeIn(la1, run_time=0.5))
         self.gat("as trocas entre vizinhos se cancelam")
@@ -157,6 +161,7 @@ class LoteT(Base):
         rot4c = rot_abertura("A MESMA IDEIA, TRÊS VEZES")
         ch1, ch2 = legenda("NA BORDA", 800, 270, SAI_F, "center"), legenda("EM CADA PEDACINHO DE DENTRO", 1330, 270, CAMPO2, "center")
         self.wait(max(0.1, self.falta("no plano") - 0.45))       # v9: a troca (0,4 s) termina no gatilho de "no plano"
+        self.grade(None)                                # só fórmulas: papel()
         self.play(*[FadeOut(m) for m in (rot4b, chapa, grade, externas, bordaL, f4, lb1, lb2, lb3)], FadeIn(rot4c), FadeIn(ch1), FadeIn(ch2), run_time=0.4)
         self.remove(rot4b, chapa, grade, externas, bordaL, f4, lb1, lb2, lb3)
         linhas = [("GREEN", r"\oint_{\G C} \F\cdot d\vec r", r"\iint_{\G R} (\nabla\times\F)\cdot\vec k\,dA"),

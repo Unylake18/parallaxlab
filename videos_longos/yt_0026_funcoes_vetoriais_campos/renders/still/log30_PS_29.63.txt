@@ -1,0 +1,73 @@
+Manim Community v0.21.0
+
+[placa] linha 1 = 692 px → placa = 752 px (texto + 24 px + margem x = 36)
+[ancora] S1 0.000
+[placa] RESUMO: linha 2 = 143 px → placa = 203 px
+[11/11/26 10:45:28] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\varphi(\t                        
+                             h,\rh) =                                          
+                             (\rh\cos\th,\;\rh\,\sen\th                        
+                             )\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media_s30_PS\Tex\09c1292d                        
+                             2cc0f2e4.tex                                      
+[11/11/26 10:45:29] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}f(\U,\V) =                        
+                             (\U,\V,\U^2+\V^2)\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media_s30_PS\Tex\d2eac73b                        
+                             064e80c3.tex                                      
+[11/11/26 10:45:31] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F(\X,\Y)                         
+                             = -\Y\,\ii +                                      
+                             \X\,\jj\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media_s30_PS\Tex\d01f5c52                        
+                             b6822301.tex                                      
+[campo] S1 redemoinho: 60 setas, maior 0.587 u, menor 0.322 u (razão 0.55), maior ÷ passo = 0.78
+[11/11/26 10:45:33] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}f : {\G                           
+                             A}\subset\mathbb{R}^n\to\m                        
+                             athbb{R}^m\special{dvisvgm                        
+                             :raw </g>} to                                     
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media_s30_PS\Tex\13c38df8                        
+                             08f5a840.tex                                      
+[gatilho] S1   8.33s (alvo   8.34s, atraso -0.01s) como transformação ela move os pontos
+[algebra] S1    8.33s glifos=9 cor=100% rt=3.0s 'f : {\\G A}\\subset\\mathbb{R}^n\\to\\mathbb{R}^m'
+[gatilho] S1  13.20s (alvo  13.20s, atraso +0.00s) segmentos viram circunferências
+[grade] S1   13.20s origem [-600.  120.] px, passo 0.5 u = 36.0×36.0 px (painel), 26 linhas
+[gatilho] S1  16.67s (alvo  16.68s, atraso -0.01s) folhas viram tigelas
+[gatilho] S1  19.03s (alvo  19.02s, atraso +0.01s) ela pendura uma seta em cada ponto
+[grade] S1   19.03s origem [-600.  120.] px, passo 0.5 u = 36.0×36.0 px (painel), 26 linhas
+[grade] S1   19.03s origem [600. 120.] px, passo 0.5 u = 24.0×24.0 px (painel), 38 linhas
+[gatilho] S1  25.33s (alvo  25.32s, atraso +0.01s) e as duas leituras são necessárias
+[ancora] S2 31.033
+[11/11/26 10:45:40] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0026_funcoes_vetoriais                          
+                             _campos\media_s30_PS\ima                          
+                             ges\cena\PS_ManimCE_v0.2                          
+                             1.0.png'                                          
+                                                                               
+                    INFO     Rendered PS                           scene.py:290
+                             Played 11 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

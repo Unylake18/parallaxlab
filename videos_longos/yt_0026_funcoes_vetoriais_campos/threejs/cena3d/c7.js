@@ -104,7 +104,7 @@
   if (id === 'campo') {
     const p0 = new T.Vector3(8.3, -8.3, 4.6);
     const fib = n => { const out = [], ga = PI * (3 - Math.sqrt(5)); for (let i = 0; i < n; i++) { const y = 1 - 2 * (i + 0.5) / n, r = Math.sqrt(1 - y * y), t = i * ga; out.push(new T.Vector3(r * Math.cos(t), y, r * Math.sin(t))); } return out; };
-    const claro = col('#8CFFD2'), escuro = col('#1FB57E'), lm = new T.LineBasicMaterial({ color: 0x1A2540 }), fl = [];
+    const claro = col('#8CFFD2'), escuro = col('#1FB57E'), lm = new T.LineBasicMaterial({ color: 0x2B2558 }), fl = [];
     [[1.5, 26, 0.0], [2.3, 40, 0.7]].forEach(([r, n, rot]) => {
       [[1, 0, 0], [0, 1, 0], [0, 0, 1]].forEach(ax => {
         const pts = []; for (let i = 0; i <= 96; i++) { const t = 2 * PI * i / 96; const v = ax[2] ? new T.Vector3(Math.cos(t), Math.sin(t), 0) : ax[0] ? new T.Vector3(0, Math.cos(t), Math.sin(t)) : new T.Vector3(Math.cos(t), 0, Math.sin(t)); pts.push(v.multiplyScalar(r)); }

@@ -1,0 +1,86 @@
+Manim Community v0.21.0
+
+[placa] linha 1 = 692 px → placa = 752 px (texto + 24 px + margem x = 36)
+[ancora] B1-1 0.000
+[placa] QUE FUNÇÃO É ESSA: linha 2 = 338 px → placa = 398 px
+[11/11/26 10:45:19] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\mathbb{R}                        
+                             \to\mathbb{R}^2\special{dv                        
+                             isvgm:raw </g>} to                                
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media_s30_PB1\Tex\78ba736                        
+                             44a0a9846.tex                                     
+[11/11/26 10:45:24] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\mathbb{R}                        
+                             ^2\to\mathbb{R}\special{dv                        
+                             isvgm:raw </g>} to                                
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media_s30_PB1\Tex\69ae663                        
+                             8bb1f47d1.tex                                     
+[gatilho] B1-1   2.33s (alvo   2.34s, atraso -0.01s) uma curva é uma função
+[grade] B1-1    2.33s origem [-600.    0.] px, passo 0.5 u = 36.0×36.0 px (painel), 24 linhas
+[algebra] B1-1    4.23s glifos=4 cor=100% rt=1.5s '\\mathbb{R}\\to\\mathbb{R}^2'
+[gatilho] B1-1   9.03s (alvo   9.02s, atraso +0.01s) e uma função de várias variáveis
+[algebra] B1-1   10.03s glifos=4 cor=100% rt=1.5s '\\mathbb{R}^2\\to\\mathbb{R}'
+[ancora] B1-2 18.533
+[11/11/26 10:45:32] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}f : {\G A}                        
+                             \subset \mathbb{R}^n \to                          
+                             \mathbb{R}^m\special{dvisv                        
+                             gm:raw </g>} to                                   
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media_s30_PB1\Tex\53835d7                        
+                             37e9db64c.tex                                     
+[campo] B1 cartão campo: 48 setas, maior 0.694 u, menor 0.378 u (razão 0.54), maior ÷ passo = 0.69
+[11/11/26 10:45:34] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\mathbb{R}                        
+                             ^2\to\mathbb{R}^2\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media_s30_PB1\Tex\c5ce5e8                        
+                             2041235e9.tex                                     
+[gatilho] B1-2   0.07s (alvo   0.06s, atraso +0.01s) agora junta as duas ideias
+[grade] B1-2   18.60s origem [-600.    0.] px, passo 0.5 u = 36.0×36.0 px (painel), 24 linhas
+[grade] B1-2   18.60s origem [600.   0.] px, passo 0.5 u = 24.0×24.0 px (painel), 36 linhas
+[gatilho] B1-2   8.17s (alvo   8.18s, atraso -0.01s) ela parte de um conjunto
+[algebra] B1-2   26.70s glifos=9 cor=100% rt=3.0s 'f : {\\G A} \\subset \\mathbb{R}^n \\to \\mathbb{R}^m'
+[algebra] B1-2   29.70s glifos=5 cor=100% rt=1.8s '\\mathbb{R}^2\\to\\mathbb{R}^2'
+[gatilho] B1-2  14.97s (alvo  14.98s, atraso -0.01s) repara que as curvas
+[11/11/26 10:45:42] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}f(X) =                            
+                             (f_1(X),\ \dots,\                                 
+                             f_m(X))\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             6_funcoes_vetoriais_campos                        
+                             \media_s30_PB1\Tex\59b579f                        
+                             3499cf78c.tex                                     
+[gatilho] B1-2  31.77s (alvo  31.78s, atraso -0.01s) cada coordenada da saída
+[algebra] B1-2   50.30s glifos=22 cor=100% rt=6.9s 'f(X) = (f_1(X),\\ \\dots,\\ f_m(X))'
+[11/11/26 10:45:44] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0026_funcoes_vetoriais                          
+                             _campos\media_s30_PB1\im                          
+                             ages\cena\PB1_ManimCE_v0                          
+                             .21.0.png'                                        
+                                                                               
+                    INFO     Rendered PB1                          scene.py:290
+                             Played 19 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim
