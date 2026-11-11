@@ -5,6 +5,7 @@ Uso, na raiz do repositório:
     uv run python videos/entregar.py --todos             # entrega todas as unidades do registro que já têm master
     uv run python videos/entregar.py vid_0016 --dry-run  # só mostra o que seria copiado
     uv run python videos/entregar.py --listar            # mostra o que cada unidade tem pronto
+    uv run python videos/entregar.py vid_0016 --limpar   # entrega e depois apaga o rastro de construção (videos/limpar_rastro.py)
 
 Pasta de destino: entregas/ na raiz (mude com a variável de ambiente PARALLAX_ENTREGAS). Pasta: «Série - EP NN - Assunto - 0016». Em todos os nomes de arquivo o número do vídeo (0001 em diante) vai no fim, antes da
 extensão: «master - 0016.mp4». Dentro de cada entrega:
@@ -109,7 +110,7 @@ def candidatos(un, tipo):
 def escolher(un, tipo):
     fixo = REGISTRO.get(un.name, {}).get(tipo)
     cands = candidatos(un, tipo)
-    if fixo:
+    if fixo and (ROOT / fixo).is_file():   # o fixo some depois de videos/limpar_rastro.py
         return ROOT / fixo, [c for c in cands if c != ROOT / fixo]
     return (cands[0], cands[1:]) if cands else (None, [])
 
@@ -198,6 +199,7 @@ def main():
     ap.add_argument("--todos", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--listar", action="store_true")
+    ap.add_argument("--limpar", action="store_true", help="depois de entregar, apaga o rastro de construção da unidade")
     a = ap.parse_args()
     if a.listar:
         for un in unidades():
@@ -218,7 +220,10 @@ def main():
         return
     if not a.unidade:
         ap.error("informe a unidade (ex.: vid_0016) ou use --todos / --listar")
-    entregar(achar_unidade(a.unidade), a.dry_run)
+    un = achar_unidade(a.unidade)
+    if entregar(un, a.dry_run) and a.limpar:
+        from limpar_rastro import limpar
+        limpar(un, apagar=not a.dry_run)
 
 
 if __name__ == "__main__":

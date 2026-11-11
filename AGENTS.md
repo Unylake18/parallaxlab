@@ -14,6 +14,13 @@ Use o menor contexto suficiente para concluir corretamente a tarefa.
 Não releia o repositório inteiro, vídeos anteriores ou toda a documentação por padrão.
 Amplie o contexto somente quando houver uma dependência concreta.
 
+### Economia de tokens (hábitos)
+- **Logs:** render, ffmpeg e scripts longos vão para arquivo; leia só o fim ou os erros (`tail`, `grep`).
+- **Imagens:** quadros conferidos sempre em resolução cheia (nunca reduzidos: o olhar crítico nas correções vem primeiro); economize escolhendo só os beats afetados e seus vizinhos, e recortando a região para detalhe fino.
+- **Código grande:** localize com Grep e leia por trechos (`offset`/`limit`); arquivo inteiro só para reestruturar.
+- **Não reler para confirmar** um Edit bem-sucedido; confirme com `py_compile`.
+- **Uma sessão por fase** (preview, voz, entrega): o handoff e a memória levam o estado; não arraste uma conversa longa entre fases.
+
 ## Antes de editar
 
 1. Execute `git status --short`.
@@ -34,7 +41,7 @@ Consulte conforme necessidade:
 - `docs/guia_mestre.md` — estratégia ampla;
 - `docs/formatos.md` — formatos curto vertical e longo horizontal, campos da ficha (inclui `solido_3d:`) e relatório "Teste do arsenal";
 - `docs/padrao_video_longo.md` — padrão de forma dos longos (abertura, tag do canto, pouca escrita, maiúsculas Space Grotesk, cores das grandezas, narração, tags sem "slowly", CTA com prévia); ler ao implementar ou roteirizar um `longo_horizontal`;
-- `docs/padrao_video_longo.md` seção "Série Cálculo I–IV (exceção de fundo)" + `assets/calculo/papel.py` — fundo milimetrado parado, gráficos presos à grade e 3D em Three.js; ler ao implementar qualquer longo de Cálculo I–IV;
+- `docs/padrao_video_longo.md` seção "Série Cálculo I–IV (exceção de fundo)" + `assets/calculo/papel.py` — fundo violeta liso parado, grade que nasce dos eixos (`papel(ax)`) e 3D em Three.js; ler ao implementar qualquer longo de Cálculo I–IV;
 - `docs/roteiro_voz_elevenlabs_v4.md` — como escrever a fala (estilo professor de cursinho, variáveis pelo nome, conectivos) e gerar a voz com ElevenLabs v4 e audio tags `[ ]`; usar ao escrever roteiro ou gerar narração;
 - `docs/mapa_curricular.md` — arquitetura curricular/editorial (v2: Física I–IV, Eletromagnetismo/Griffiths, Cálculo, Álgebra Linear, EDO, EDP); usar para localizar uma pauta e preencher `disciplina:`/`bloco:`/`modulo:`/`referencia:` da ficha;
 - **3D é Three.js** (ver seção "3D: Three.js primeiro"); modelos em `videos_longos/yt_0015_momento_impulso/threejs/` e `videos_longos/yt_0016_sistemas_momento/threejs/`. `experimentos/blender/arsenal/catalogo.md`, `indice_producao.md` e `cobertura.md` servem só de referência de geometria (sólidos 3D catalogados); não use o Blender nem a ponte `Solido3D` salvo pedido explícito.
@@ -112,7 +119,9 @@ arquivo (`master - 0016.mp4`). Vale para qualquer agente.
 - Ao fechar uma versão final: `uv run python videos/entregar.py vid_NNNN` (cópia; não move nem apaga origens) e informar no
   relatório o caminho da pasta em `entregas/`.
 - Não deixar finais soltos em `renders/` nem em `videos/vid_NNNN/renders/` como destino definitivo; previews e
-  intermediários podem continuar lá.
+  intermediários podem continuar lá até a aprovação final.
+- Aprovada a versão final, apagar o rastro de construção: `uv run python videos/limpar_rastro.py vid_NNNN` (simula) e
+  `--apagar`. Zip para o GPT nunca vai para `entregas/`.
 - Série, EP e assunto vêm da `ficha.md` (`Série pública: **NOME · EP. N**` e `# Assunto`) ou de
   `videos/entregas_registro.json`. Detalhes em `docs/entregas.md`.
 
@@ -159,6 +168,8 @@ Regras:
 - Prefira `auto_fade` a `auto_morph`; não use `Scene.keep_orientation()`.
 - `SurroundingRectangleUnion` exige `unbuff=0` (falha com numpy 2.x); não é padrão.
 - Não refaça vídeos anteriores só por causa da biblioteca.
+
+- **Escrita (desde 2026-11-08):** termo novo = caneta finíssima (glifo a glifo, esquerda→direita); termo com origem no desenho = voo (`TransformFromCopy`); manipulação = `TransformByGlyphMap`. Proibido `FadeIn` de linha pronta e preview do destino (`FadeIn`/`TransformFromCopy`/`Write` dentro de `Succession(Wait…)` ou `AnimationGroup` põem o destino na cena em estado final no instante 0). QA `FLASH POR QUADRO` com zero eventos. Detalhe e parâmetros: `docs/padrao_video_longo.md` §8.
 
 ## 3D: Three.js primeiro (desde 2026-10-28)
 

@@ -226,9 +226,21 @@ Render, QA, documentação e ações de Git devem ser proporcionais à etapa e a
 - Um endereço principal por vídeo (ID, tag do canto, pasta de entrega); o vídeo pode entrar em mais de uma playlist (uma playlist por bloco).
 - Ficha: `disciplina:`, `bloco:`, `modulo:` e `referencia:` substituem `macroassunto:` (`docs/formatos.md`). Fichas antigas não são reescritas.
 
+## 2026-11-08 — Escrita da álgebra com a caneta
+
+- Decisão do Kaio: toda álgebra nova (longos e curtos) é escrita com a **caneta finíssima**, glifo a glifo, sem `FadeIn` de linha pronta nem preview do destino; origem no desenho = voo; manipulação = glyph map.
+- QA obrigatório `FLASH POR QUADRO` (zero eventos). Parâmetros e texto em `docs/padrao_video_longo.md` §8. Vídeos já feitos não são refeitos.
+
 ## 2026-11-09 — Padrão da série de longos de Cálculo I–IV
 
 - Fundo de papel milimetrado noturno **parado na câmera** (sem estrelas) em todos os longos de Cálculo I–IV; os longos de Física continuam com o céu espacial.
 - Motivo de render, medido (cena de álgebra de 8 s, 1080p/30): 10,1 s com estrelas andando contra 4,5 s com fundo parado na câmera (`camera.background_image`).
 - Gráficos: `eixos_no_papel` é a regra (origem em cruzamento grosso, unidade múltipla de 0,2 u); `janela` é a exceção para o que não encaixa.
 - 3D em Three.js (nunca `ThreeDScene` do Manim). Detalhe em `docs/padrao_video_longo.md` (seção "Série Cálculo I–IV") e código em `assets/calculo/papel.py`.
+
+## 2026-11-11 — Cálculo I–IV: fundo violeta liso e grade que nasce dos eixos
+
+- Decisão do Kaio: nos longos de Cálculo I–IV o milimetrado em PNG sai. Fundo = degradê violeta liso #18143A → #0F0C26, parado, como imagem da câmera.
+- Grade = quadradinhos iguais, sem linha grossa, #2B2558, traço 1,2, desenhada pelo Manim a partir dos eixos de cada cena (`papel(ax)` em `assets/calculo/papel.py`, mesma origem e unidade): alinha sozinha em qualquer escala. Passo 0,25 da unidade do gráfico; abaixo de 20 px em 1080p passa a 0,5 (depois 1); `passo=` força.
+- Dois painéis com escalas diferentes: uma grade por painel (`area=`), o resto liso. Sem gráfico: `papel()` na unidade padrão. A grade entra e sai com FadeIn/FadeOut, nunca com updater.
+- Substitui a regra de eixos presos (`eixos_no_papel` com encaixe, `janela`) de 2026-11-09. yt_0026 trocado já entregue; yt_0027–yt_0029 adotam na próxima rodada de cada um. Detalhe em `docs/padrao_video_longo.md` (seção "Série Cálculo I–IV").

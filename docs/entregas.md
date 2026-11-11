@@ -37,6 +37,26 @@ uv run python videos/entregar.py --todos              # refaz todas (copia só o
   (`Série pública: **NOME · EP. N**` e um título `# Assunto`).
 - `"inferido": true` no registro = série/EP deduzidos, para confirmar (hoje: vid_0001 e vid_0002).
 
+## Limpeza do rastro depois da entrega
+
+A entrega guarda o essencial para consulta (vídeos finais, legenda, capa, voz, textos, manifesto) e o Git guarda o código.
+Todo o resto é rastro de construção e sai com:
+
+```
+uv run python videos/limpar_rastro.py vid_NNNN            # simulação: lista o que sairia
+uv run python videos/limpar_rastro.py vid_NNNN --apagar   # apaga
+uv run python videos/limpar_rastro.py --todos [--apagar]  # todas as unidades que já têm master em entregas/
+uv run python videos/entregar.py vid_NNNN --limpar        # entrega e limpa em seguida
+```
+
+- Só arquivos **fora do Git**, sem seguir junções, no checkout principal e nos worktrees: vídeos, `.zip`, `.log`, imagens em
+  pastas de rastro (`renders`, `qa`, `frames*`, `media*`, `q3d`, `quadros*`, `preview*`, `capas_*`...), `media*/`, `node_modules/`,
+  `__pycache__/`, o que tiver o prefixo da unidade em `renders/` da raiz e zips dentro da própria entrega.
+- Fica: código e parâmetros, áudio, textos/JSON/SRT soltos e a pasta da entrega.
+- Recusa sem master em `entregas/` ou com arquivo gravado na última hora (render rodando). Log em `entregas/limpezas.log`;
+  o manifesto ganha `rastro_limpo_em`. Para refazer o vídeo depois, renderize de novo a partir do código.
+- Quando: no fechamento, depois que o usuário aprovar a versão final (o zip do GPT já foi usado).
+
 ## Regra de trabalho
 
 Ao fechar uma versão final, rodar `entregar.py` e informar no relatório o caminho da pasta em `entregas/`.

@@ -150,15 +150,45 @@ Geração, voz, modelo e regras gerais das tags: `docs/roteiro_voz_elevenlabs_v4
   `entregas/Vídeos Longos/` segue `<Área> - <Bloco> - <Assunto>`, com área e bloco do mapa.
 - Duração observada: 12–27 min. A duração sai da explicação, não o contrário.
 
+## 7. Fundo e entrada de fórmulas (regras permanentes, 2026-11-06)
+
+1. **Fundo de estrelas** (exceto Cálculo I–IV: ver a seção "Série Cálculo I–IV (exceção de fundo)" no fim deste documento). Movimento contínuo **para a esquerda**, em velocidade constante por camada (3 camadas, parallax), calculado em **relógio global do
+   vídeo** (`t = início do lote na voz + clk do lote`), independente da sincronia (`play`, `plano()`, `LEAD`). Nunca reinicia por lote/cena, nunca para, nunca
+   volta, sem balanço vertical. A reciclagem (mod) das estrelas acontece só **fora da tela** (campo ≥ tela + 2 u de folga de cada lado); nenhuma estrela
+   surge ou some dentro da área visível. Cena parada resolve-se com movimento do conteúdo, nunca acelerando o fundo nem somando camadas. QA de
+   deslocamento por quadro (correlação de fase, `fundo22.py` no yt_0022) no preview e no master, inclusive nas fronteiras de lote.
+2. **Fórmulas sem "flash".** Nenhum termo, linha, título ou caixa pode ficar visível (opacidade > 0,15) e depois sumir antes de ser escrito. Cada elemento
+   nasce uma vez, na palavra que o nomeia, e só sai por `FadeOut` deliberado depois de lido; visível por < 0,7 s seguido de sumiço é defeito. Causa mais
+   comum: `FadeOut` de um objeto que a `Pilha` (`limpa()`/`so()`) já tirou da cena: o Manim o re-mostra com a opacidade original e o apaga de novo. O kit
+   deve filtrar `FadeOut` de objeto fora da cena. QA FLASH: log `[fantasma]` na auditoria + detector por vídeo (picos de "tinta" que sobem em ≤ 3 quadros e
+   voltam em ≤ 10, `flash22.py`).
+3. **Sólidos 3D.** Contraste mínimo entre tampa, raios, anéis e fatias (nunca tom sobre tom); luminância da superfície ≤ ~85% (sem estourar); lateral/espessura
+   legível; rótulos e setas **fora** do sólido (≥ 0,3 u de afastamento); um só desenho do sólido para todas as cenas em que ele aparece.
+
+## 8. Escrita da álgebra: caneta (regra permanente, 2026-11-08)
+
+> **Escrita da álgebra: caneta (desde 2026-11-08, Kaio).** Todo termo novo de uma conta é escrito glifo a glifo, da esquerda para a direita, por uma caneta: contorno finíssimo (≈ 2% da altura do glifo, ≈ 1 px a 1280×720, ≈ `stroke_width` 1 no Manim a 1080p), ponta branca de ≈ 3 px, preenchimento na cor do token **sem contorno por cima**, 0,6 s por glifo, um glifo a cada 0,30 s. Termos com origem no desenho (seta, cota, rótulo) **voam** do desenho com `TransformFromCopy`; passos de manipulação usam `TransformByGlyphMap`. Nada de `FadeIn` de linha pronta e nada de preview do destino: antes da sua vez o termo **não está na cena** (ou está com opacidade 0 no fill e no stroke). Cuidado: `FadeIn`, `TransformFromCopy` e `Write` dentro de `Succession(Wait(...), ...)` ou de `AnimationGroup` adicionam o destino à cena em estado final no instante 0 (flash): programar o início de cada termo sem esse padrão. Auditoria `FLASH POR QUADRO` obrigatória no QA (zero eventos). Vale para toda álgebra nova (longos e curtos); vídeos já feitos não são refeitos.
+
+| Parâmetro | Valor |
+|---|---|
+| Traço do contorno | finíssimo: ≈ 2% da altura do glifo (≈ 1 px a 1280×720; nunca abaixo de 1 px no preview 960×540) |
+| Preenchimento | cor do token, sem contorno por cima (a letra termina com o peso normal) |
+| Ponta da caneta | ponto branco de ≈ 3 px com borda na cor do token; some quando o traço fecha |
+| Tempo por glifo | 0,6 s de traço + preenchimento; início de um glifo a cada 0,30 s |
+| Ordem dos traços | em sequência, como a mão |
+| Fração, raiz, parênteses | escrevem como um bloco, 0,4–0,5 s, esquerda para a direita |
+| Preview 960×540 | se o QA reprovar a legibilidade, subir só o traço (1,0 px), nunca a ponta |
+
+Portão de QA `FLASH POR QUADRO`: no quadro `t0−1` de cada termo escrito/voado, a tinta no retângulo de destino é igual à do fundo (≤ 2% de pixels claros) e o termo não aparece completo antes de `t0`. FALHA com qualquer evento.
+
 
 ## Série Cálculo I–IV (exceção de fundo)
 
-Padrão aprovado pelo Kaio em 2026-11-09 (thread "Comparar Manim 2.5D e Three.js em Cálculo III"). Vale para todo `longo_horizontal` de Cálculo I, II, III e IV (Guidorizzi). O resto deste documento continua valendo; aqui ficam só as diferenças. Código e imagens: `assets/calculo/` (`papel.py`, `gerar_fundos.py`).
+Padrão aprovado pelo Kaio em 2026-11-09 (thread "Comparar Manim 2.5D e Three.js em Cálculo III"). Vale para todo `longo_horizontal` de Cálculo I, II, III e IV (Guidorizzi). O resto deste documento continua valendo; aqui ficam só as diferenças. Código e imagens: `assets/calculo/` (`papel.py`; `gerar_fundos.py` gerou os PNGs da v1). Fundo e grade em vigor: v2 de 2026-11-11 (seções 1 e 3).
 
-### 1. Fundo: milimetrado noturno, parado
-- Cor única #091226 na tela inteira, com um brilho largo e suave no centro da mesma cor (+10%), sem degradê vertical e sem vinheta (v4 do yt_0026, 2026-11-10). Placas lisas (grade apagada com borda esfumada) atrás do canto (x 0–1240, y 72–170 px) e do logo (x 1656–1920, y 34–96). Gerador: `assets/calculo/gerar_fundos.py`.
-- Grade fina a cada 0,2 u do Manim (24 px em 1080p) e grossa a cada 1 u (120 px), com um cruzamento grosso na origem do quadro. Linhas fracas: fina ≈ #121E39 sobre o fundo, grossa ≈ #1C2F55.
-- Arquivos: `fundo_calculo_milimetrado_1920x1080.png` / `_960x540.png` e a versão sem grade `fundo_calculo_liso_*` (para a janela e para o 3D).
+### 1. Fundo: violeta liso, parado (v2, 2026-11-11)
+- Degradê vertical violeta liso, #18143A no topo → #0F0C26 na base, sem grade na imagem, parado na câmera (`usar_papel(self)`). O PNG `fundo_calculo_violeta_liso_<W>x<H>.png` é gerado sozinho na primeira chamada (`assets/calculo/papel.py`).
+- O milimetrado em PNG (v1, 2026-11-09: `fundo_calculo_milimetrado_*`, `fundo_calculo_liso_*`) saiu do padrão. Os PNGs antigos ficam em `assets/calculo/` para as unidades ainda não migradas.
 - **Exceção à regra dos longos de Física:** nos longos de Cálculo não há céu espacial nem estrelas andando (`poeira_estelar`).
 - Vale com o quadro 16×9 u do projeto (`template/config_horizontal.py`): 1 u = 120 px em 1080p, 60 px em 540p.
 
@@ -166,14 +196,17 @@ Padrão aprovado pelo Kaio em 2026-11-09 (thread "Comparar Manim 2.5D e Three.js
 - O fundo entra como imagem da câmera (`camera.background_image`, via `usar_papel(self)`), nunca como `ImageMobject`, e nada no fundo se mexe.
 - Motivo, medido em 2026-11-09 (cena de álgebra de 8 s, 1080p/30): fundo atual dos longos de Física, com estrelas andando, 10,1 s; fundo parado na câmera, 4,5 s. O updater das estrelas obriga o Manim a redesenhar, em todo quadro, todos os objetos que vêm depois delas na cena. Isso dá ~20–25 min de render a mais num longo de 30 min.
 
-### 3. Gráficos presos no papel
-- **Regra:** eixos criados com `eixos_no_papel(origem, x_range, y_range, unidade)`. A origem cai num cruzamento grosso (coordenada inteira do Manim) e a unidade é arredondada para múltiplo de 0,2 u. Assim toda marca do eixo fica em cima de uma linha do papel.
-- **Exceção:** gráfico que não pode encaixar (eixos girados, perspectiva, escala imposta) usa `janela(self, ax)`, que apaga a grade atrás dos eixos com bordas suaves. É um PNG por cena, gerado uma vez só, sem custo por quadro.
-- QA: com zoom no pixel, as marcas dos eixos coincidem com as linhas da grade.
+### 3. Grade que nasce dos eixos (v2, 2026-11-11)
+- A grade é desenhada pelo Manim **a partir dos eixos de cada cena**: `papel(ax)` usa a mesma origem e a mesma unidade de `ax` (qualquer objeto com `c2p`), então alinha por construção em qualquer escala. Não há mais eixo preso a cruzamento nem unidade arredondada.
+- Quadradinhos iguais, sem linha grossa: cor #2B2558, traço 1,2.
+- Passo: 0,25 da unidade do gráfico. Se o quadradinho ficar com menos de 20 px em 1080p, passa sozinho para 0,5 (e depois 1). `passo=` força outro valor.
+- Cena com um gráfico: `papel(ax)` cobre a tela inteira. Dois painéis com escalas diferentes: `papel(ax1, area=...)` e `papel(ax2, area=...)` (área em unidades de cada gráfico), um por painel, e o resto liso. Cena sem gráfico: `papel()`, na unidade padrão (1 u, origem no centro).
+- A grade é um `VGroup` parado (z_index −10 por padrão; a unidade pode baixar para ficar sob chapas e placas): entra e sai com `FadeIn`/`FadeOut`, nunca com updater.
+- `eixos_no_papel` continua existindo, mas só cria e posiciona os eixos. `janela`/`janela_local` deixam de ser necessárias (`janela` fica em `papel.py` só por compatibilidade).
 
 ### 4. 3D: Three.js onde a câmera trabalha
 - Superfície curva, campo vetorial, sólido com corte e câmera orbitando: Three.js, com valores, rótulos e fórmulas no Manim (pipeline de sempre). Não usar `ThreeDScene` do Manim: no teste do fluxo pelo paraboloide, ele levou 242 s contra 22 s do Three.js e ainda errou a ordem de profundidade.
-- O fundo das cenas 3D é o `fundo_calculo_liso` (degradê sem grade), para a grade plana não confundir a leitura de profundidade. *(Sugestão; ajustar se o Kaio preferir o milimetrado também no 3D.)*
+- O fundo das cenas 3D é o mesmo violeta liso (quadros Three.js com fundo transparente sobre a câmera, ou o violeta no próprio Three.js); a grade sai (fade) enquanto o 3D está na tela, para a grade plana não confundir a leitura de profundidade.
 
 ### 5. Hábitos de render leve
 - Poucos updaters; não usar `always_redraw` que recria `MathTex` a cada quadro.
