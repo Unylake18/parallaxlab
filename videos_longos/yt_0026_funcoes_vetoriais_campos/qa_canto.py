@@ -3,16 +3,16 @@ import re, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from kit import *  # noqa
-h1 = Base._canto(txt(TITULO, 13.2, color="#C8D6F0", op=0.6), 104)
+h1 = Base._canto(txt(TITULO, 13.2, color="#C8D6F0", op=0.6), 73)
 b1 = (4.5 - h1.get_bottom()[1]) * 120; t1 = (4.5 - h1.get_top()[1]) * 120
 tit = set()
 for f in Path(__file__).parent.glob("sec_*.py"):
     tit |= set(re.findall(r'secao\("([^"]+)"\)', f.read_text(encoding="utf-8")))
 pior = 1e9
 for s in sorted(tit):
-    h2 = Base._canto(txt(s, 21.6, color="#F5F7FF", bold=True), 150, topo_min=b1 + 10)
+    h2 = Base._canto(txt(s, 21.6, color="#F5F7FF", bold=True), 118, topo_min=b1 + 10)
     t2, b2 = (4.5 - h2.get_top()[1]) * 120, (4.5 - h2.get_bottom()[1]) * 120
     gap = t2 - b1; pior = min(pior, gap)
-    ok = gap >= 10 and t1 >= 72 and b2 <= 170
-    print(f"[canto] {s}: linha1 {t1:.0f}–{b1:.0f} px, linha2 {t2:.0f}–{b2:.0f} px, gap {gap:.1f} px {'OK' if ok else 'FALHA'}")
+    ok = gap >= 10 and t1 >= 40 and b2 <= 132
+    print(f"[canto] centro dos caracteres da linha 1 ≈ {(t1 + b1) / 2:.0f} px (logo em 65); {s}: linha1 {t1:.0f}–{b1:.0f} px, linha2 {t2:.0f}–{b2:.0f} px, gap {gap:.1f} px {'OK' if ok else 'FALHA'}")
 print(f"[canto] pior gap {pior:.1f} px em {len(tit)} títulos")

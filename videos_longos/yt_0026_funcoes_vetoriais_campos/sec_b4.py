@@ -7,11 +7,12 @@ BOX = [150, 200, 900, 820]
 
 class LoteB4(Base):
     def corpo(self):
+        set_dy(48)
         seg = {}
 
         def est(t):
             s = suave((t - seg["sobe"]) / 3.0) if "sobe" in seg else 0.0
-            return {"s": s, "box": BOX}
+            return {"s": s, "box": caixa(BOX)}
 
         # ── B4-1 ──
         self.an("B4-1")
@@ -45,7 +46,7 @@ class LoteB4(Base):
         self.play(caneta(g), FadeIn(leg))
         self.gat("fabricar uma superfície")
         self.play(pulso(g, 1.05), run_time=1.0)
-        self._fecha()
+        self._fecha(antes=0.4 + 0.35 + 0.2)       # v9: a saída inteira cabe na âncora
         self.play(FadeOut(VGroup(a1, a4)), FadeOut(form), FadeOut(g), FadeOut(leg), folha.op.animate.set_value(0.0), run_time=0.4)
         folha.clear_updaters()
         self.remove(a1, a4, folha, form, g, leg)

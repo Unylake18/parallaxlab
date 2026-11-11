@@ -10,31 +10,34 @@ class LoteAH(Base):
     CANTO = False
 
     def corpo(self):
+        set_dy(48)
         # ── A1 ──
         self.an("A1")
         logo = self.logo(5.6).move_to(P3(0, 0.9))
         aneis = VGroup(*[DashedVMobject(Circle(radius=r).move_to(P3(0, 0.9)), num_dashes=48).set_stroke(GEO, 2.2, opacity=o) for r, o in ((2.1, 0.45), (2.45, 0.25))])
         bv = txt("BEM-VINDOS AO PARALLAX LAB", 34).move_to(P3(0, -2.5))
         self.play(FadeIn(logo, scale=0.94), FadeIn(aneis), FadeIn(bv, shift=0.1 * UP), run_time=0.8)
-        self.play(Rotate(aneis[0], 0.5), Rotate(aneis[1], -0.4), rate_func=linear, run_time=3.0)
+        rt = max(3.0, self.falta("o assunto de hoje"))          # v9: os anéis giram até o título (sem 12 s de tela parada)
+        self.play(Rotate(aneis[0], 0.5 * rt / 3), Rotate(aneis[1], -0.4 * rt / 3), rate_func=linear, run_time=rt)
         self.gat("o assunto de hoje")
         tit = VGroup(txt("FUNÇÕES A VALORES VETORIAIS", 46, bold=True), txt("E CAMPOS VETORIAIS", 46, bold=True)).arrange(DOWN, buff=0.18).move_to(P3(0, 1.1))
         nv = linha_texto(txt("NESTE VÍDEO:", 28, bold=True, color=CAMPO), txt("TRANSFORMAÇÃO · IMAGEM · CAMPO VETORIAL", 28)).move_to(P3(0, -1.0))
         self.play(FadeOut(logo), FadeOut(aneis), FadeOut(bv), run_time=0.35)
         self.remove(logo, aneis, bv)
+        self.add(self.pl_canto)
         self.play(FadeIn(tit, shift=0.1 * UP), FadeIn(self.h1), run_time=0.7)
         self.gat("a gente vai ver")
         self.play(FadeIn(nv, shift=0.1 * UP), run_time=0.6)
         self.gat("como transformação e como campo")
         self.play(pulso(nv[1], 1.04), run_time=1.0)
-        self.gat("para começar")
+        self.wait(max(0.1, self.resta() - 0.4))       # v9: título e NESTE VÍDEO ficam até o fim da fala
         self.play(FadeOut(tit), FadeOut(nv), run_time=0.4)
         self.remove(tit, nv)
 
 
         # ── H1 · a malha gira +90° (a bandeira vai junto) ──
         self.an("H1")
-        v1 = Vista(960, 580, 105)
+        v1 = Vista(960, 540, 96)
         folha = malha7(v1, 3, 1.0)
         band = bandeira7(v1, 0.0, (0, 0), DEST)
         centro = ponto7(v1.c2p(0, 0), WHITE_, 7)
@@ -59,14 +62,14 @@ class LoteAH(Base):
         # ── H3 · dois painéis: a bandeira girada e o redemoinho; a pergunta embaixo (quadro 09) ──
         self.an("H3")
         self.secao("MESMA FÓRMULA, DOIS DESENHOS")
-        pe, pd = painel(150, 300, 700, 600), painel(1070, 300, 700, 600)
-        vE, vD = Vista(500, 600, 80), Vista(1420, 600, 80)
+        pe, pd = painel_c(480, 540, 720, 600), painel_c(1440, 540, 720, 600)
+        vE, vD = Vista(480, 540, 72), Vista(1440, 540, 72)
         mE, silh, bE = malha7(vE, 3, 1.0), bandeira7(vE, 0.0, (0, 0), DEST, alpha=0.22), bandeira7(vE, PI / 2, (0, 0), DEST)
         oE = ponto7(vE.c2p(0, 0), WHITE_, 7)
         mD = malha7(vD, 3, 1.0)
         cD = campo7(vD, GIRO, -3, 3, -3, 3, passo=0.6, rmin=0.5, rmax=3.3, mmax=3.3, lmax=0.5, nome="H3 (−y, x)")
         fH = TC(r"(\X,\Y)\;\longmapsto\;(-\Y,\;\X)", 960, 235, 56, "c")
-        lE, lD = legenda("TRANSFORMAÇÃO: A BANDEIRA GIRA", 500, 950, WHITE_, "center"), legenda("CAMPO: UMA SETA EM CADA PONTO", 1420, 950, CAMPO2, "center")
+        lE, lD = legenda("TRANSFORMAÇÃO: A BANDEIRA GIRA", 480, 950, WHITE_, "center"), legenda("CAMPO: UMA SETA EM CADA PONTO", 1440, 950, CAMPO2, "center")
         perg = T("QUAL É O DESENHO CERTO?", 960, 1035, 34, "center", SAI_F)
         self.play(FadeOut(folha0), FadeOut(cmp), FadeIn(pe), FadeIn(pd), FadeIn(mE), FadeIn(silh), FadeIn(bE), FadeIn(oE), FadeIn(mD), FadeIn(cD), run_time=0.9)
         self.gat("é a mesma fórmula")

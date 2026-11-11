@@ -1,20 +1,20 @@
-# yt_0026 · narração por âncora (Anexo A do handoff v2, 2026-11-09, com a abertura T e a frase do A1 do handoff v4, 2026-11-10; fonte do ancoras.json)
+# yt_0026 · narração por âncora (Anexo A do handoff v9, 2026-11-10; fonte do ancoras.json)
 
 Cada `###` é uma âncora (evento visual). A linha do cabeçalho traz o `tela:`; a fala começa ~0,15 s depois. Tags `[ ]` do ElevenLabs v4 não são faladas.
 
 ## T · ABERTURA DO CÁLCULO III (handoff v6, 2026-11-10: tudo em movimento, texto desde o primeiro quadro; substitui T0–T5 do v5.1)
 
 ### T0 · tela: fundo liso; texto `UMA SETA`; a caneta desenha UMA seta grande verde-menta, que pulsa e encolhe; em "junta infinitas delas" setas nascem em onda e partículas correm (texto `INFINITAS SETAS: UM CAMPO`); em "espaço inteiro" o grupo recua até o redemoinho encher a tela
-[curious] Uma seta, num ponto só. Sozinha, ela quase não diz nada. Mas junta infinitas delas, e elas contam a história do espaço inteiro.
+[curious] Uma seta, num ponto só, mostra uma direção. Sozinha, ela quase não diz nada. Mas junta infinitas delas, e elas contam a história do espaço inteiro.
 
 ### T1 · tela: colunas (6×4 → 12×8 → 24×16 → superfície sólida), câmera orbitando; texto `VOLUME`
-[thoughtful] É assim o tempo todo no Cálculo três. Empilha colunas finíssimas debaixo de uma superfície… e elas viram um volume.
+[thoughtful] É assim o tempo todo no Cálculo três. Quer o volume debaixo de uma superfície curva? Empilha colunas finíssimas… e elas viram um volume.
 
 ### T2 · tela: curva laranja num campo verde-menta com partículas; um ponto anda pela curva e acende a componente do campo ao longo dela (seta branca tangente); barra `TRABALHO` que sobe quando o campo ajuda e desce quando atrapalha; texto `TRABALHO`
-[thoughtful] Soma o empurrão de um campo em cada pedacinho de um caminho… e sai o trabalho ao longo dele.
+[thoughtful] Soma o empurrão de um campo em cada pedacinho de um caminho, ajudando num trecho, atrapalhando em outro… e sai o trabalho ao longo dele.
 
 ### T3 · tela: Three.js, tigela sólida em retalhos; chuva de setas atravessa e cada retalho acende; barra `FLUXO` crescente; corte seco para o T4
-[thoughtful] Conta o que atravessa cada pedacinho de uma superfície… e sai o fluxo.
+[thoughtful] Imagina uma corrente de água furando uma superfície. Conta o que atravessa cada pedacinho… e sai o fluxo.
 
 ### T4 · tela: (a) Green no plano: 3×3 células com rotores girando e traços correndo; os 12 lados internos piscam e somem aos pares; sobra a borda; (b) Stokes: calota em células, mesmo cancelamento; (c) Gauss: 2×2×2 cubinhos, setas opostas nas faces comuns se cancelam; o trio encolhe lado a lado, ainda em movimento, e `O LOCAL E O GLOBAL ESTÃO CONECTADOS.` entra grande
 [thoughtful, emphatic] E aí vem a surpresa. Quando você soma o que acontece em cada pedacinho de dentro, as trocas entre vizinhos se cancelam, e só sobra o que passa pela borda. No plano, esse é o teorema de Green. Numa superfície, o de Stokes. Num volume, o de Gauss. O local e o global estão conectados.
@@ -25,7 +25,7 @@ Cada `###` é uma âncora (evento visual). A linha do cabeçalho traz o `tela:`;
 ## A · BEM-VINDOS
 
 ### A1 · tela: logo; `BEM-VINDOS AO PARALLAX LAB`; depois o título `FUNÇÕES A VALORES VETORIAIS E CAMPOS VETORIAIS` e `NESTE VÍDEO: TRANSFORMAÇÃO · IMAGEM · CAMPO VETORIAL`; o canto entra
-[happy] Fala, pessoal! Bem-vindos ao Parallax Lab. Este é o primeiro vídeo do Cálculo três, e o assunto de hoje é justamente essa seta em cada ponto, e a família de funções de onde ela vem: funções que recebem um ponto e devolvem um vetor. A gente vai ver o que elas são, por que não dá para desenhar o gráfico delas, e as duas maneiras de enxergar uma: como transformação e como campo vetorial. E, para começar, olha só uma coisa curiosa.
+[happy] Fala, pessoal! Bem-vindos ao Parallax Lab, e que bom ter você aqui no primeiro vídeo do canal. O Cálculo três é a matéria em que tudo o que você já sabe sai da reta e do plano e passa a valer no espaço inteiro: é a matemática do vento, da gravidade, da eletricidade, do escoamento da água. O assunto de hoje é a primeira peça disso, a função que recebe um ponto e devolve uma seta. A gente vai ver o que ela é, por que o gráfico dela não cabe em lugar nenhum, e as duas maneiras de enxergar uma: como transformação e como campo vetorial. E já aviso: no meio do caminho tem um mistério, uma mesma fórmula que desenha duas coisas completamente diferentes. Para começar, olha só.
 
 ## H · MESMA FÓRMULA, DOIS FILMES
 
@@ -36,7 +36,7 @@ Cada `###` é uma âncora (evento visual). A linha do cabeçalho traz o `tela:`;
 [thoughtful] Agora a mesma regra, sem mudar nada, desenhada de outro jeito. Em vez de mover os pontos, a gente pendura em cada ponto uma setinha com aquilo que a regra devolve. E aparece um redemoinho: setas girando em volta do centro, pequenas perto dele e cada vez maiores para fora.
 
 ### H3 · tela: tela dividida, à esquerda a bandeira girada, à direita o redemoinho; no alto `MESMA FÓRMULA. QUAL É O DESENHO CERTO?`; hold de 2 s
-[curious] Então repara que coisa estranha. É a mesma fórmula. Num desenho, ela gira o plano inteiro; no outro, vira um redemoinho de setas. Qual dos dois é o desenho certo dessa função? E por que ela precisa de dois desenhos, se uma função comum tem um gráfico só?
+[curious] Espera aí. É a mesma fórmula, sem mudar nada. Num desenho, ela gira o plano inteiro; no outro, vira um redemoinho de setas. Qual dos dois é o desenho certo dessa função? E por que ela precisa de dois desenhos, se uma função comum tem um gráfico só? É isso que a gente vai descobrir.
 
 ## B1 · QUE FUNÇÃO É ESSA
 
@@ -58,7 +58,7 @@ Cada `###` é uma âncora (evento visual). A linha do cabeçalho traz o `tela:`;
 [thoughtful] Primeiro jeito: a função como transformação. A ideia é desenhar dois planos lado a lado. À esquerda, o plano de entrada, de onde saem os pontos. À direita, o plano de saída, onde eles chegam. E a pergunta passa a ser: quando eu jogo um conjunto inteiro pela função, que forma ele ganha do outro lado?
 
 ### B2-2 · tela: rótulos dos eixos de entrada θ (âmbar) e ρ (magenta); CANETA `\varphi(\theta, \rho) = (\rho\cos\theta,\ \rho\,\mathrm{sen}\,\theta)` embaixo (saída em azul-claro)
-[thoughtful] O exemplo clássico são as coordenadas polares. No plano de entrada, o eixo horizontal é um ângulo e o eixo vertical é um raio. A função pega esse par e devolve o ponto que está a essa distância da origem, girado desse ângulo: a coordenada horizontal é o raio vezes o cosseno do ângulo, e a vertical é o raio vezes o seno do ângulo. Essas duas fórmulas são as componentes de fi.
+[thoughtful] O exemplo clássico são as coordenadas polares. No plano de entrada, o eixo horizontal é um ângulo e o eixo vertical é um raio. A função pega esse par e devolve o ponto que está a essa distância da origem, girado desse ângulo: a coordenada horizontal é o raio vezes o cosseno do ângulo, e a vertical é o raio vezes o seno do ângulo. Essas duas fórmulas são as componentes da função.
 
 ### B2-3 · tela: três pontos voando em arco da entrada para a saída, um por frase: (0, 2) → (2, 0); (π/2, 2) → (0, 2); (π, 1) → (−1, 0)
 [curious] Vamos acompanhar alguns pontos. Ângulo zero e raio dois: o ponto vai parar no eixo horizontal, a duas unidades da origem. Ângulo de noventa graus, mesmo raio: ele sobe para o eixo vertical. Ângulo de cento e oitenta graus e raio um: cai do lado esquerdo, a uma unidade da origem.
@@ -135,7 +135,7 @@ Cada `###` é uma âncora (evento visual). A linha do cabeçalho traz o `tela:`;
 [thoughtful, emphatic] Terceira pergunta: para onde a seta aponta, comparada com o vetor posição? Faz o produto escalar dos dois: sai menos o produto das coordenadas, mais o produto das coordenadas… que dá zero. E produto escalar zero quer dizer perpendicular. Cada seta é perpendicular ao vetor posição, ou seja, tangente à circunferência que passa por ali. Junta as três respostas e o redemoinho aparece sozinho: setas tangentes às circunferências, cada vez maiores para fora.
 
 ### B6-5 · tela: γ(t) percorrendo uma circunferência; CANETA `\gamma(t) = (r\cos t,\ r\,\mathrm{sen}\,t)`; GM para `\gamma'(t) = (-r\,\mathrm{sen}\,t,\ r\cos t) = \vec F(\gamma(t))`; a seta violeta de γ′(t) pousa sobre a seta ciano do campo
-[curious] E aqueles pontinhos que saíam dando voltas? Aqui entra a derivada. Lê o campo como velocidade: a seta em cada ponto é a velocidade de quem passa por ali. Agora pega uma circunferência de raio qualquer, percorrida com o ângulo igual ao tempo. A derivada dessa curva em relação ao tempo é exatamente o vetor que o campo pendura no ponto onde a curva está. Ou seja, as circunferências são as trajetórias desse campo.
+[curious] E quem é que se move nesse redemoinho? Aqui entra a derivada. Lê o campo como velocidade: a seta em cada ponto é a velocidade de quem passa por ali. Agora pega uma circunferência de raio qualquer, percorrida com o ângulo igual ao tempo. A derivada dessa curva em relação ao tempo é exatamente o vetor que o campo pendura no ponto onde a curva está. Ou seja, as circunferências são as trajetórias desse campo.
 
 ### B6-6 · tela: pontos em três raios girando juntos (um `Rotate`); ponto parado no centro; por fim, um disco rígido translúcido girando por baixo do campo
 [excited] E olha que bonito: toda circunferência leva o mesmo tempo para dar uma volta, pequena ou grande. Bem no centro, a seta tem tamanho zero, e o ponto fica parado; longe do centro, a velocidade cresce na proporção do raio. É exatamente assim que se move cada pedacinho de um disco rígido girando a um radiano por segundo. Esse redemoinho é o campo de velocidades de um disco girando!
@@ -157,7 +157,7 @@ Cada `###` é uma âncora (evento visual). A linha do cabeçalho traz o `tela:`;
 [calm, satisfied] Então, a pergunta do começo está respondida. A mesma fórmula girava o plano e desenhava um redemoinho porque são duas leituras da mesma função. Como transformação, ela move os pontos, e a gente enxerga isso acompanhando conjuntos: segmentos viram circunferências, retângulos viram discos, folhas viram tigelas. Como campo, ela pendura uma seta em cada ponto, e a gente enxerga isso perguntando pelo tamanho e pela direção das setas. E as duas leituras são necessárias porque o gráfico, com quatro eixos, não cabe em lugar nenhum.
 
 ### S2 · tela: o disco das polares e o redemoinho em miniatura, lado a lado
-[thoughtful] Essas duas leituras não saem mais de cena no Cálculo três. As transformações voltam quando a gente trocar de coordenadas dentro de uma integral, e aquele disco das coordenadas polares volta junto. Os campos voltam nas integrais de linha, no fluxo e nos grandes teoremas do cálculo vetorial.
+[thoughtful] Essas duas leituras não saem mais de cena no Cálculo três. As transformações voltam quando a gente trocar de coordenadas dentro de uma integral, e aquele disco das coordenadas polares volta junto. Os campos voltam nas integrais de linha, no fluxo e nos grandes teoremas. E aquela frase do começo, o local e o global estão conectados, é justamente para onde tudo isso caminha.
 
 ### CTA · tela: `FadeOut` de tudo e `self.clear()`; barquinho de papel sobre o redemoinho e `O BARQUINHO GIRA EM TORNO DE SI MESMO?`; depois logo com anéis, `INSCREVA-SE PARA ACOMPANHAR OS PRÓXIMOS VÍDEOS`, sem prévia de "próximo vídeo"
-[curious] Fica uma pergunta para você pensar: se você colocar um barquinho de papel nesse redemoinho, ele só dá voltas em torno do centro… ou também gira em torno de si mesmo? Deixa a sua resposta nos comentários. E, se essa aula ajudou você, se inscreve no Parallax Lab para acompanhar os próximos vídeos. Até a próxima!
+[curious] Fica uma pergunta para você pensar: se um barquinho de papel for levado por esse redemoinho, ele só dá voltas em torno do centro… ou também gira em torno de si mesmo? Deixa a sua resposta nos comentários. No próximo vídeo, a gente descobre como medir esse giro, ponto a ponto, e por que andar em círculo não é o mesmo que girar sobre si. Se essa aula te ajudou, deixa o like e se inscreve no Parallax Lab. Até a próxima!

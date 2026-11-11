@@ -5,19 +5,20 @@ from v7 import *  # noqa: F401,F403
 
 
 def px_de(p):
-    """ponto do Manim → (x, y) em px de 1080p"""
-    return p[0] * 120 + 960, 4.5 * 120 - p[1] * 120
+    """ponto do Manim → (x, y) em px de PROJETO (v8: com o deslocamento DY)"""
+    return pxy(p)
 
 
 class LoteB2(Base):
     def corpo(self):
+        set_dy(48)
         # ── B2-1 · dois painéis vazios ──
         self.an("B2-1")
         self.secao("TRANSFORMAÇÃO")
-        ax_e = Plano(PX(250, 700)[:2], 8.2 / (2 * PI) * 72 / 120, 1.95 * 72 / 120)      # retângulo B: θ de 0 a 2π (590 px), ρ de 0 a 2 (281 px)
-        ax_s = Plano(PX(1420, 530)[:2], 1.0)                                          # disco φ(B): raio 2 (240 px)
-        pe, ps = painel(130, 250, 740, 560, "ENTRADA", E1), painel(1050, 250, 740, 560, "SAÍDA", SAI)
-        arco = arco7(890, 520, 1030, 520, r"\varphi")
+        ax_e = Plano(PX0(240, 660)[:2], 72 / 120, 120 / 120)      # v8, presa na grade: origem num cruzamento grosso (240, 660); θ 96 px/rad (2π = 603 px), ρ 144 px/u (ρ = 2 → 288 px)
+        ax_s = Vista(1440, 540, 96)                                                  # disco φ(B): raio 2 (192 px), origem num cruzamento grosso
+        pe, ps = painel_c(480, 540, 720, 600, "ENTRADA", E1), painel_c(1440, 540, 720, 600, "SAÍDA", SAI)
+        arco = arco7(870, 588, 1050, 588, r"\varphi")
         self.gat("à esquerda o plano de entrada")
         self.play(FadeIn(pe), run_time=0.8)
         self.gat("à direita o plano de saída")
@@ -28,18 +29,17 @@ class LoteB2(Base):
         # ── B2-2 · eixos θ, ρ e a fórmula ──
         self.an("B2-2")
         R = lambda t, r: ax_e.c2p(t, r)
-        lt = TC(r"\th", px_de(R(2 * PI, 0))[0] + 28, px_de(R(2 * PI, 0))[1] + 10, 40, "c", caneta=False)
-        lr = TC(r"\rh", px_de(R(0, 2))[0] - 8, px_de(R(0, 2))[1] - 40, 40, "c", caneta=False)
-        tk = [TC(r"2\pi", px_de(R(2 * PI, 0))[0], px_de(R(2 * PI, 0))[1] + 40, 30, "c", caneta=False),
-              TC("2", px_de(R(0, 2))[0] - 26, px_de(R(0, 2))[1], 30, "c", caneta=False)]
-        ex_e = VGroup(linha7([R(0, 0), R(2 * PI, 0)], GEO, 2, 0.5), linha7([R(0, 0), R(0, 2.3)], GEO, 2, 0.5)).set_z_index(2)
-        vs = Vista(1420, 530, 120)
-        ex_s = eixos7(vs, -2.4, 2.4, -2.2, 2.2, alpha=0.45)
+        lt = TC(r"\th", px_de(R(2 * PI, 0))[0] + 30, px_de(R(2 * PI, 0))[1] + 12, 40, "c", caneta=False, placa=True)
+        lr = TC(r"\rh", px_de(R(0, 2))[0] - 8, px_de(R(0, 2))[1] - 40, 40, "c", caneta=False, placa=True)
+        tk = [TC(r"2\pi", px_de(R(2 * PI, 0))[0], px_de(R(2 * PI, 0))[1] + 42, 30, "c", caneta=False, placa=True),
+              TC("2", px_de(R(0, 2))[0] - 26, px_de(R(0, 2))[1], 30, "c", caneta=False, placa=True)]
+        ex_e = VGroup(linha7([R(0, 0), R(2 * PI + 0.4, 0)], EIXO, 3, 1.0), linha7([R(0, 0), R(0, 2.35)], EIXO, 3, 1.0)).set_z_index(2)
+        ex_s = eixos7(ax_s, -2.4, 2.4, -2.3, 2.3)
         self.gat("o eixo horizontal é um ângulo")
         self.play(Create(ex_e), FadeIn(lt, shift=0.1 * LEFT), FadeIn(tk[0]), run_time=0.7)
         self.gat("o eixo vertical é um raio")
         self.play(FadeIn(lr, shift=0.1 * DOWN), FadeIn(tk[1]), Create(ex_s), run_time=0.7)
-        form = TC(r"\varphi(\th,\rh) = \S{\big(}\underbrace{\rh\cos\th}_{\S{\varphi_1}},\; \underbrace{\rh\,\sen\th}_{\S{\varphi_2}}\S{\big)}", 960, 935, 54, "c")
+        form = TC(r"\varphi(\th,\rh) = \S{\big(}\underbrace{\rh\cos\th}_{\S{\varphi_1}},\; \underbrace{\rh\,\sen\th}_{\S{\varphi_2}}\S{\big)}", 960, 970, 52, "c")
         self.gat("a função pega esse par")
         self.play(caneta(form))
 
@@ -79,7 +79,7 @@ class LoteB2(Base):
         self.remove(seg_r, seg_t, img_r, img_t)
         pol = Polar(ax_e, ax_s, 2.0)
         B_ = retangulo_polar(pol, 2.0)
-        lB = TC(r"{\G B}", px_de(R(PI, 2))[0], px_de(R(PI, 2))[1] - 28, 36, "c", caneta=False)
+        lB = TC(r"{\G B}", px_de(R(PI, 2))[0], px_de(R(PI, 2))[1] - 28, 36, "c", caneta=False, placa=True)
         self.gat("olha o retângulo inteiro")
         self.play(FadeIn(B_[0]), Create(B_[1]), Create(B_[2]), FadeIn(lB), run_time=1.4)
         img = B_.copy()
@@ -120,12 +120,12 @@ class LoteB2(Base):
 
         # ── B2-7 · a imagem; aviso: o meio do caminho é só animação ──
         self.an("B2-7")
-        lim = TC(r"\S{\operatorname{Im} = \varphi(B)}", 1660, 300, 36, "c")
+        lim = TC(r"\S{\operatorname{Im} = \varphi(B)}", 1620, 345, 36, "c")
         self.gat("esse disco tem nome")
         self.play(FadeOut(VGroup(baixo, b2, esq, dir_, e2, d2, orig)), run_time=0.3)
         self.remove(baixo, b2, esq, dir_, e2, d2, orig)
         self.play(caneta(lim))
-        selo = T("O MEIO DO CAMINHO É SÓ ANIMAÇÃO", 500, 850, 24, "center", DIM, bold=False)
+        selo = T("O MEIO DO CAMINHO É SÓ ANIMAÇÃO", 480, 905, 24, "center", DIM, bold=False)
         self.gat("só um aviso honesto")
         self.play(FadeIn(selo, shift=0.08 * UP), run_time=0.5)
         self.gat("a função liga direto")

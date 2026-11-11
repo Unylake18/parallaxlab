@@ -1,0 +1,1270 @@
+1
+00:00:00,080 --> 00:00:03,290
+Uma seta, num ponto só,
+mostra uma direção.
+
+2
+00:00:03,340 --> 00:00:07,360
+Sozinha, ela quase não diz nada.
+Mas junta infinitas delas,
+
+3
+00:00:07,400 --> 00:00:09,850
+e elas contam a história
+do espaço inteiro.
+
+4
+00:00:10,000 --> 00:00:12,300
+É assim o tempo todo no Cálculo III.
+
+5
+00:00:12,340 --> 00:00:14,600
+Quer o volume debaixo
+de uma superfície curva?
+
+6
+00:00:14,640 --> 00:00:17,630
+Empilha colunas finíssimas…
+e elas viram um volume.
+
+7
+00:00:17,800 --> 00:00:20,860
+Soma o empurrão de um campo em
+cada pedacinho de um caminho,
+
+8
+00:00:20,900 --> 00:00:23,260
+ajudando num trecho,
+atrapalhando em outro…
+
+9
+00:00:23,300 --> 00:00:27,040
+e sai o trabalho ao longo dele.
+Imagina uma corrente de água furando uma
+
+10
+00:00:27,080 --> 00:00:30,100
+superfície. Conta o que
+atravessa cada pedacinho…
+
+11
+00:00:30,140 --> 00:00:32,500
+e sai o fluxo. E aí vem a surpresa.
+
+12
+00:00:32,540 --> 00:00:35,600
+Quando você soma o que acontece
+em cada pedacinho de dentro,
+
+13
+00:00:35,640 --> 00:00:39,660
+as trocas entre vizinhos se cancelam,
+e só sobra o que passa pela borda.
+
+14
+00:00:39,700 --> 00:00:42,860
+No plano, esse é o teorema
+de Green. Numa superfície,
+
+15
+00:00:42,900 --> 00:00:45,440
+o de Stokes. Num volume, o de Gauss.
+
+16
+00:00:45,480 --> 00:00:48,070
+O local e o global estão conectados.
+
+17
+00:00:48,160 --> 00:00:52,120
+Isso é Cálculo III: do infinitamente
+pequeno ao espaço inteiro.
+
+18
+00:00:52,160 --> 00:00:55,790
+E a primeira peça é justamente
+aquela seta, num ponto só.
+
+19
+00:00:55,860 --> 00:01:00,640
+Fala, pessoal! Bem-vindos ao Parallax Lab,
+e que bom ter você aqui no primeiro vídeo
+
+20
+00:01:00,680 --> 00:01:05,180
+do canal. O Cálculo III é a matéria em que
+tudo o que você já sabe sai da reta e do
+
+21
+00:01:05,220 --> 00:01:08,860
+plano e passa a valer no espaço
+inteiro: é a matemática do vento,
+
+22
+00:01:08,900 --> 00:01:12,120
+da gravidade, da eletricidade,
+do escoamento da água.
+
+23
+00:01:12,160 --> 00:01:16,720
+O assunto de hoje é a primeira peça disso,
+a função que recebe um ponto e devolve
+
+24
+00:01:16,760 --> 00:01:20,740
+uma seta. A gente vai ver o que ela é,
+por que o gráfico dela não cabe em lugar
+
+25
+00:01:20,780 --> 00:01:25,040
+nenhum, e as duas maneiras de enxergar
+uma: como transformação e como campo
+
+26
+00:01:25,080 --> 00:01:28,480
+vetorial. E já aviso: no meio
+do caminho tem um mistério,
+
+27
+00:01:28,520 --> 00:01:32,620
+uma mesma fórmula que desenha duas
+coisas completamente diferentes.
+
+28
+00:01:32,660 --> 00:01:36,060
+Para começar, olha só. Olha
+essa folha de papel milimetrado,
+
+29
+00:01:36,100 --> 00:01:40,740
+com uma bandeirinha desenhada. Agora uma
+regra bem simples pega cada ponto da folha
+
+30
+00:01:40,780 --> 00:01:44,800
+e manda para outro lugar: ela troca as
+duas coordenadas de lugar e coloca um
+
+31
+00:01:44,840 --> 00:01:47,560
+sinal de menos na primeira.
+E o resultado é esse:
+
+32
+00:01:47,600 --> 00:01:50,720
+o plano inteiro gira um quarto
+de volta, de uma vez só,
+
+33
+00:01:50,760 --> 00:01:54,300
+e a bandeira vai junto. Agora
+a mesma regra, sem mudar nada,
+
+34
+00:01:54,340 --> 00:01:57,100
+desenhada de outro jeito.
+Em vez de mover os pontos,
+
+35
+00:01:57,140 --> 00:02:01,080
+a gente pendura em cada ponto uma
+setinha com aquilo que a regra devolve.
+
+36
+00:02:01,120 --> 00:02:04,360
+E aparece um redemoinho:
+setas girando em volta do centro,
+
+37
+00:02:04,400 --> 00:02:07,420
+pequenas perto dele e cada
+vez maiores para fora.
+
+38
+00:02:07,460 --> 00:02:10,400
+Espera aí. É a mesma
+fórmula, sem mudar nada.
+
+39
+00:02:10,440 --> 00:02:13,300
+Num desenho, ela gira o
+plano inteiro; no outro,
+
+40
+00:02:13,340 --> 00:02:17,600
+vira um redemoinho de setas. Qual dos
+dois é o desenho certo dessa função?
+
+41
+00:02:17,640 --> 00:02:22,220
+E por que ela precisa de dois desenhos,
+se uma função comum tem um gráfico só?
+
+42
+00:02:22,260 --> 00:02:26,160
+É isso que a gente vai descobrir.
+Vamos começar pelo que você já conhece.
+
+43
+00:02:26,200 --> 00:02:29,200
+Uma curva é uma função
+que recebe um número só,
+
+44
+00:02:29,240 --> 00:02:32,840
+o tempo, por exemplo, e devolve
+um ponto do plano ou do espaço.
+
+45
+00:02:32,880 --> 00:02:36,560
+E uma função de várias variáveis,
+do jeito que você viu até agora,
+
+46
+00:02:36,600 --> 00:02:40,000
+faz o contrário: recebe um
+ponto e devolve um número só,
+
+47
+00:02:40,040 --> 00:02:42,420
+como a temperatura em
+cada lugar de uma sala.
+
+48
+00:02:42,460 --> 00:02:46,060
+Agora junta as duas ideias:
+uma função que recebe um ponto,
+
+49
+00:02:46,100 --> 00:02:48,860
+com várias coordenadas,
+e devolve outro ponto,
+
+50
+00:02:48,900 --> 00:02:52,000
+também com várias coordenadas.
+Ela parte de um conjunto,
+
+51
+00:02:52,040 --> 00:02:56,660
+o domínio, num espaço de certa dimensão,
+e chega num espaço que pode ter outra
+
+52
+00:02:56,700 --> 00:03:00,920
+dimensão. Repara que as curvas e as
+funções de várias variáveis são os casos
+
+53
+00:03:00,960 --> 00:03:04,320
+extremos, em que a entrada
+ou a saída é um número só.
+
+54
+00:03:04,360 --> 00:03:08,980
+Hoje o interesse está no resto: entra um
+ponto do plano e sai um ponto do plano,
+
+55
+00:03:09,020 --> 00:03:12,920
+ou do espaço; entra um ponto do
+espaço e sai um vetor do espaço.
+
+56
+00:03:12,960 --> 00:03:16,060
+E repara numa coisa:
+cada coordenada da saída é,
+
+57
+00:03:16,100 --> 00:03:20,200
+sozinha, uma função comum, que
+recebe o ponto e devolve um número.
+
+58
+00:03:20,240 --> 00:03:24,640
+São as funções componentes, e a
+função inteira é só elas lado a lado.
+
+59
+00:03:24,680 --> 00:03:29,220
+E aqui aparece o problema. Para uma
+função de duas variáveis a valores reais,
+
+60
+00:03:29,260 --> 00:03:32,680
+o gráfico é uma superfície:
+duas coordenadas para a entrada,
+
+61
+00:03:32,720 --> 00:03:36,140
+uma para a saída, três no
+total, e isso cabe no espaço.
+
+62
+00:03:36,180 --> 00:03:39,500
+Só que, se entram duas
+coordenadas e saem duas,
+
+63
+00:03:39,540 --> 00:03:41,800
+o gráfico precisaria de quatro eixos.
+
+64
+00:03:41,840 --> 00:03:45,960
+Não cabe na tela, não cabe na sala, não
+cabe em lugar nenhum que a gente consiga
+
+65
+00:03:46,000 --> 00:03:50,600
+ver. Então a gente desiste do gráfico e
+desenha a função de dois outros jeitos.
+
+66
+00:03:50,640 --> 00:03:53,800
+No primeiro, a função é uma
+máquina que move pontos:
+
+67
+00:03:53,840 --> 00:03:56,700
+pega um conjunto e mostra
+no que ele se transforma.
+
+68
+00:03:56,740 --> 00:03:59,920
+No segundo, a função pendura
+uma seta em cada ponto.
+
+69
+00:03:59,960 --> 00:04:03,040
+São esses dois jeitos que vão
+responder a pergunta do começo.
+
+70
+00:04:03,080 --> 00:04:05,980
+Primeiro jeito: a função
+como transformação.
+
+71
+00:04:06,020 --> 00:04:08,820
+A ideia é desenhar dois
+planos lado a lado.
+
+72
+00:04:08,860 --> 00:04:12,500
+À esquerda, o plano de entrada,
+de onde saem os pontos.
+
+73
+00:04:12,540 --> 00:04:15,420
+À direita, o plano de
+saída, onde eles chegam.
+
+74
+00:04:15,460 --> 00:04:19,520
+E a pergunta passa a ser: quando eu
+jogo um conjunto inteiro pela função,
+
+75
+00:04:19,560 --> 00:04:23,600
+que forma ele ganha do outro lado?
+O exemplo clássico são as coordenadas
+
+76
+00:04:23,640 --> 00:04:28,420
+polares. No plano de entrada, o eixo
+horizontal é um ângulo e o eixo vertical é
+
+77
+00:04:28,460 --> 00:04:33,140
+um raio. A função pega esse par e devolve
+o ponto que está a essa distância da
+
+78
+00:04:33,180 --> 00:04:38,100
+origem, girado desse ângulo: a coordenada
+horizontal é o raio vezes o cosseno
+
+79
+00:04:38,140 --> 00:04:41,540
+do ângulo, e a vertical é o
+raio vezes o seno do ângulo.
+
+80
+00:04:41,580 --> 00:04:44,380
+Essas duas fórmulas são
+as componentes da função.
+
+81
+00:04:44,420 --> 00:04:47,860
+Vamos acompanhar alguns pontos.
+Ângulo zero e raio dois:
+
+82
+00:04:47,900 --> 00:04:51,580
+o ponto vai parar no eixo horizontal,
+a duas unidades da origem.
+
+83
+00:04:51,620 --> 00:04:55,660
+Ângulo de noventa graus, mesmo raio:
+ele sobe para o eixo vertical.
+
+84
+00:04:55,700 --> 00:04:59,380
+Ângulo de cento e oitenta graus
+e raio um: cai do lado esquerdo,
+
+85
+00:04:59,420 --> 00:05:02,860
+a uma unidade da origem.
+Agora, em vez de pontos soltos,
+
+86
+00:05:02,900 --> 00:05:07,560
+uma reta inteira. Fixa o raio em dois
+e deixa o ângulo correr de zero até uma
+
+87
+00:05:07,600 --> 00:05:11,280
+volta completa. No plano de entrada,
+isso é um segmento horizontal.
+
+88
+00:05:11,320 --> 00:05:14,120
+Do outro lado, é uma
+circunferência de raio dois.
+
+89
+00:05:14,160 --> 00:05:19,040
+Ou seja, o segmento se enrolou. E se a
+gente fixa o ângulo e deixa o raio variar,
+
+90
+00:05:19,080 --> 00:05:23,000
+sai um segmento que parte da origem,
+como um raio de roda de bicicleta.
+
+91
+00:05:23,040 --> 00:05:27,300
+Junta tudo e olha o retângulo inteiro:
+ângulo de zero a uma volta,
+
+92
+00:05:27,340 --> 00:05:31,080
+raio de zero a dois. Cada
+faixa horizontal vira um anel,
+
+93
+00:05:31,120 --> 00:05:35,920
+cada faixa vertical vira um raio da roda,
+e o retângulo se fecha num disco de raio
+
+94
+00:05:35,960 --> 00:05:38,660
+dois! Repara em duas coisas nas bordas.
+
+95
+00:05:38,700 --> 00:05:41,380
+O lado de baixo do retângulo,
+onde o raio é zero,
+
+96
+00:05:41,420 --> 00:05:44,800
+é um segmento inteiro… e ele
+vai todo parar num ponto só,
+
+97
+00:05:44,840 --> 00:05:47,980
+a origem. A função esmagou
+um segmento num ponto.
+
+98
+00:05:48,020 --> 00:05:52,020
+E os dois lados verticais, o de ângulo
+zero e o de ângulo de uma volta,
+
+99
+00:05:52,060 --> 00:05:56,880
+caem exatamente um em cima do outro:
+o retângulo foi colado nele mesmo para
+
+100
+00:05:56,920 --> 00:06:01,360
+fechar o disco. Esse disco tem nome:
+é a imagem do retângulo pela função,
+
+101
+00:06:01,400 --> 00:06:05,580
+tudo o que a função faz sair dele.
+E a moral do primeiro jeito é essa:
+
+102
+00:06:05,620 --> 00:06:09,140
+para enxergar uma transformação,
+você não fica olhando a fórmula;
+
+103
+00:06:09,180 --> 00:06:12,250
+você acompanha conjuntos
+e vê no que eles viram.
+
+104
+00:06:12,300 --> 00:06:16,240
+Só um aviso honesto: o retângulo
+se enrolando aos poucos é animação,
+
+105
+00:06:16,280 --> 00:06:20,920
+para o olho acompanhar. A função liga
+direto cada ponto de entrada ao seu ponto
+
+106
+00:06:20,960 --> 00:06:23,920
+de saída. Agora um caso mais traiçoeiro.
+
+107
+00:06:23,960 --> 00:06:27,660
+Uma função que repete a primeira
+entrada na primeira saída e,
+
+108
+00:06:27,700 --> 00:06:31,660
+na segunda saída, coloca a soma
+dos quadrados das duas entradas.
+
+109
+00:06:31,700 --> 00:06:34,680
+Como ela deforma o plano?
+A estratégia é a mesma:
+
+110
+00:06:34,720 --> 00:06:38,980
+acompanhar retas. Fixa a segunda
+entrada em um e deixa a primeira correr.
+
+111
+00:06:39,020 --> 00:06:41,980
+A coordenada horizontal da
+saída é a primeira entrada,
+
+112
+00:06:42,020 --> 00:06:44,960
+e a vertical é esse valor
+ao quadrado, mais um:
+
+113
+00:06:45,000 --> 00:06:47,660
+a parábola padrão, levantada uma unidade.
+
+114
+00:06:47,700 --> 00:06:51,860
+Com a segunda entrada fixa em dois,
+a parábola sobe quatro unidades.
+
+115
+00:06:51,900 --> 00:06:55,920
+Cada reta horizontal vira uma
+parábola, todas com o mesmo formato,
+
+116
+00:06:55,960 --> 00:06:58,180
+empilhadas. Só que tem um detalhe.
+
+117
+00:06:58,220 --> 00:07:00,400
+A segunda entrada aparece ao quadrado.
+
+118
+00:07:00,440 --> 00:07:04,820
+Então a reta em que ela vale menos um vai
+parar na mesma parábola da reta em que ela
+
+119
+00:07:04,860 --> 00:07:08,100
+vale um. Duas retas
+diferentes, uma imagem só.
+
+120
+00:07:08,140 --> 00:07:11,400
+E as retas verticais? Fixa
+a primeira entrada em um.
+
+121
+00:07:11,440 --> 00:07:16,380
+A saída fica com coordenada horizontal um,
+e vertical igual a um mais o quadrado
+
+122
+00:07:16,420 --> 00:07:20,580
+da segunda entrada. Enquanto a segunda
+entrada vem dos negativos até zero,
+
+123
+00:07:20,620 --> 00:07:24,800
+o ponto desce pela vertical até a
+altura um; quando ela passa de zero,
+
+124
+00:07:24,840 --> 00:07:27,220
+o ponto sobe de novo pelo mesmo caminho.
+
+125
+00:07:27,260 --> 00:07:31,020
+A reta inteira vira uma semirreta,
+percorrida duas vezes:
+
+126
+00:07:31,060 --> 00:07:35,340
+desce e volta. Juntando tudo:
+essa função faz duas coisas.
+
+127
+00:07:35,380 --> 00:07:38,820
+Primeiro, dobra o plano ao meio,
+ao longo do eixo horizontal,
+
+128
+00:07:38,860 --> 00:07:43,180
+como quem dobra uma folha de papel:
+a metade de baixo cai em cima da metade de
+
+129
+00:07:43,220 --> 00:07:46,440
+cima. Depois, estica essa
+meia-folha para cima.
+
+130
+00:07:46,480 --> 00:07:49,320
+E a linha da dobra, onde
+a segunda entrada é zero,
+
+131
+00:07:49,360 --> 00:07:51,940
+vira a borda da imagem: a parábola padrão.
+
+132
+00:07:51,980 --> 00:07:55,920
+A imagem é tudo o que está sobre
+essa parábola ou acima dela…
+
+133
+00:07:55,960 --> 00:07:58,880
+e nada abaixo. Dá para
+conferir sem desenho nenhum.
+
+134
+00:07:58,920 --> 00:08:01,600
+Pega um ponto do plano de
+saída: quem chega nele?
+
+135
+00:08:01,640 --> 00:08:04,900
+A primeira entrada tem que ser a
+coordenada horizontal do ponto,
+
+136
+00:08:04,940 --> 00:08:08,880
+e o quadrado da segunda entrada tem
+que ser a altura menos o quadrado da
+
+137
+00:08:08,920 --> 00:08:12,960
+coordenada horizontal. Acima da
+parábola, essa diferença é positiva:
+
+138
+00:08:13,000 --> 00:08:15,700
+duas soluções, uma de cada lado da dobra.
+
+139
+00:08:15,740 --> 00:08:19,520
+Na parábola, ela é zero: sobra
+uma só, a da linha da dobra.
+
+140
+00:08:19,560 --> 00:08:23,980
+E abaixo ela é negativa; como nenhum
+número real ao quadrado dá negativo,
+
+141
+00:08:24,020 --> 00:08:27,300
+ninguém chega lá. E se a
+saída tiver três coordenadas?
+
+142
+00:08:27,340 --> 00:08:30,980
+Pega cada ponto do plano e
+devolve um ponto do espaço:
+
+143
+00:08:31,020 --> 00:08:33,999
+as duas primeiras coordenadas
+ficam iguais às da entrada,
+
+144
+00:08:34,039 --> 00:08:37,619
+e a terceira, a altura,
+é a soma dos quadrados delas,
+
+145
+00:08:37,659 --> 00:08:40,789
+ou seja, o quadrado da
+distância até a origem.
+
+146
+00:08:40,860 --> 00:08:43,920
+Olha o que acontece com a
+folha. A origem fica no chão.
+
+147
+00:08:43,960 --> 00:08:47,060
+A circunferência de raio
+um sobe para a altura um.
+
+148
+00:08:47,100 --> 00:08:49,660
+A de raio dois sobe para a altura quatro.
+
+149
+00:08:49,700 --> 00:08:53,360
+E a folha plana inteira vira
+uma tigela, um paraboloide.
+
+150
+00:08:53,400 --> 00:08:57,800
+Repara numa coisa: essa tigela é
+exatamente o gráfico daquela função de
+
+151
+00:08:57,840 --> 00:09:01,280
+duas variáveis que dá o quadrado
+da distância até a origem.
+
+152
+00:09:01,320 --> 00:09:06,020
+Ou seja, o gráfico que você já conhecia
+é um caso particular de imagem de uma
+
+153
+00:09:06,060 --> 00:09:10,790
+transformação. E essa ideia, fabricar uma
+superfície levantando uma folha plana,
+
+154
+00:09:10,840 --> 00:09:14,070
+vai voltar quando a gente chegar
+às integrais de superfície.
+
+155
+00:09:14,160 --> 00:09:18,420
+Agora o segundo jeito, que serve quando
+a entrada e a saída têm o mesmo número de
+
+156
+00:09:18,460 --> 00:09:21,500
+coordenadas. Em vez de mandar
+o ponto para outro lugar,
+
+157
+00:09:21,540 --> 00:09:25,520
+a gente desenha o vetor de saída com
+o pé no próprio ponto de entrada:
+
+158
+00:09:25,560 --> 00:09:30,060
+um vetor aplicado no ponto. Lida
+desse jeito, a função se chama campo
+
+159
+00:09:30,100 --> 00:09:33,520
+vetorial, e na tela o nome
+dela ganha uma setinha em cima,
+
+160
+00:09:33,560 --> 00:09:36,160
+justamente para lembrar
+essa leitura. Em geral,
+
+161
+00:09:36,200 --> 00:09:39,100
+um campo no plano se escreve
+com duas componentes,
+
+162
+00:09:39,140 --> 00:09:43,940
+uma na direção de i e outra na direção
+de j, cada uma uma função comum das
+
+163
+00:09:43,980 --> 00:09:48,380
+coordenadas. O exemplo mais simples:
+um campo que devolve o mesmo vetor,
+
+164
+00:09:48,420 --> 00:09:50,860
+uma unidade para cima, em qualquer ponto.
+
+165
+00:09:50,900 --> 00:09:54,340
+Desenhado como campo, é o
+plano coberto de setas iguais,
+
+166
+00:09:54,380 --> 00:09:56,820
+todas para cima, como um vento uniforme.
+
+167
+00:09:56,860 --> 00:09:59,660
+Agora a mesma fórmula
+lida como transformação:
+
+168
+00:09:59,700 --> 00:10:04,140
+todo ponto do plano vai parar no mesmo
+lugar, uma unidade acima da origem.
+
+169
+00:10:04,180 --> 00:10:06,860
+O plano inteiro é esmagado num ponto só.
+
+170
+00:10:06,900 --> 00:10:10,010
+Um desenho mostra vento;
+o outro, um colapso.
+
+171
+00:10:10,160 --> 00:10:13,340
+Segundo exemplo: o campo
+que devolve, em cada ponto,
+
+172
+00:10:13,380 --> 00:10:15,860
+o próprio vetor posição daquele ponto.
+
+173
+00:10:15,900 --> 00:10:20,020
+Como campo, cada seta aponta
+para fora, para longe da origem,
+
+174
+00:10:20,060 --> 00:10:23,440
+e o tamanho da seta é igual
+à distância até a origem.
+
+175
+00:10:23,480 --> 00:10:27,480
+Perto do centro, setinhas curtas;
+longe, setas compridas;
+
+176
+00:10:27,520 --> 00:10:30,820
+e, em cima de uma mesma
+circunferência centrada na origem,
+
+177
+00:10:30,860 --> 00:10:33,680
+todas do mesmo tamanho.
+E como transformação?
+
+178
+00:10:33,720 --> 00:10:36,240
+Cada ponto vai para… ele mesmo.
+
+179
+00:10:36,280 --> 00:10:38,520
+É a identidade: nada se mexe.
+
+180
+00:10:38,560 --> 00:10:42,660
+A fórmula que, como transformação,
+não faz absolutamente nada,
+
+181
+00:10:42,700 --> 00:10:45,760
+como campo é uma explosão
+de setas para fora.
+
+182
+00:10:45,800 --> 00:10:48,960
+Então já dá para responder
+metade da pergunta do começo.
+
+183
+00:10:49,000 --> 00:10:52,520
+Nenhum dos dois desenhos é o
+certo. A fórmula é a mesma;
+
+184
+00:10:52,560 --> 00:10:55,840
+quem decide o desenho é a
+leitura. Como transformação,
+
+185
+00:10:55,880 --> 00:10:58,620
+a pergunta é: para onde cada ponto vai?
+
+186
+00:10:58,660 --> 00:11:02,550
+Como campo, a pergunta é:
+que seta cada ponto carrega?
+
+187
+00:11:02,640 --> 00:11:07,040
+Agora volta lá para o começo: a regra que
+troca as coordenadas de lugar e coloca um
+
+188
+00:11:07,080 --> 00:11:09,700
+sinal de menos na primeira.
+Como transformação,
+
+189
+00:11:09,740 --> 00:11:12,740
+ela leva cada ponto um
+quarto de volta adiante,
+
+190
+00:11:12,780 --> 00:11:15,360
+em torno da origem,
+no sentido anti-horário.
+
+191
+00:11:15,400 --> 00:11:17,980
+Por isso o plano inteiro
+girou. E como campo?
+
+192
+00:11:18,020 --> 00:11:21,140
+Vamos desenhar sem decorar
+nada, só com três perguntas.
+
+193
+00:11:21,180 --> 00:11:24,540
+Primeira pergunta: quanto o
+campo vale em alguns pontos?
+
+194
+00:11:24,580 --> 00:11:28,680
+No ponto a uma unidade à direita
+da origem, a seta aponta para cima.
+
+195
+00:11:28,720 --> 00:11:31,740
+No ponto uma unidade acima,
+aponta para a esquerda.
+
+196
+00:11:31,780 --> 00:11:34,880
+À esquerda da origem,
+aponta para baixo; embaixo,
+
+197
+00:11:34,920 --> 00:11:37,190
+para a direita. Já dá para sentir o giro.
+
+198
+00:11:37,240 --> 00:11:40,940
+Segunda pergunta: onde o tamanho
+da seta é sempre o mesmo?
+
+199
+00:11:40,980 --> 00:11:44,980
+O tamanho dessa seta é a raiz da
+soma dos quadrados das coordenadas,
+
+200
+00:11:45,020 --> 00:11:47,300
+ou seja, a distância até a origem.
+
+201
+00:11:47,340 --> 00:11:50,220
+Então, em cada circunferência
+centrada na origem,
+
+202
+00:11:50,260 --> 00:11:54,300
+todas as setas têm o mesmo tamanho,
+e esse tamanho cresce com o raio.
+
+203
+00:11:54,340 --> 00:11:58,980
+Terceira pergunta: para onde a seta
+aponta, comparada com o vetor posição?
+
+204
+00:11:59,020 --> 00:12:03,140
+Faz o produto escalar dos dois:
+sai menos o produto das coordenadas,
+
+205
+00:12:03,180 --> 00:12:05,740
+mais o produto das
+coordenadas… que dá zero.
+
+206
+00:12:05,780 --> 00:12:08,820
+E produto escalar zero
+quer dizer perpendicular.
+
+207
+00:12:08,860 --> 00:12:12,400
+Cada seta é perpendicular
+ao vetor posição, ou seja,
+
+208
+00:12:12,440 --> 00:12:14,870
+tangente à circunferência
+que passa por ali.
+
+209
+00:12:14,940 --> 00:12:18,200
+Junta as três respostas e o
+redemoinho aparece sozinho:
+
+210
+00:12:18,240 --> 00:12:22,250
+setas tangentes às circunferências,
+cada vez maiores para fora.
+
+211
+00:12:22,320 --> 00:12:26,000
+E quem é que se move nesse
+redemoinho? Aqui entra a derivada.
+
+212
+00:12:26,040 --> 00:12:30,980
+Lê o campo como velocidade: a seta em
+cada ponto é a velocidade de quem passa
+
+213
+00:12:31,020 --> 00:12:34,000
+por ali. Agora pega uma
+circunferência de raio qualquer,
+
+214
+00:12:34,040 --> 00:12:36,360
+percorrida com o ângulo igual ao tempo.
+
+215
+00:12:36,400 --> 00:12:41,220
+A derivada dessa curva em relação ao tempo
+é exatamente o vetor que o campo pendura
+
+216
+00:12:41,260 --> 00:12:46,040
+no ponto onde a curva está. Ou seja, as
+circunferências são as trajetórias desse
+
+217
+00:12:46,080 --> 00:12:50,360
+campo. E olha que bonito: toda
+circunferência leva o mesmo tempo para dar
+
+218
+00:12:50,400 --> 00:12:54,760
+uma volta, pequena ou grande. Bem
+no centro, a seta tem tamanho zero,
+
+219
+00:12:54,800 --> 00:12:59,780
+e o ponto fica parado; longe do centro,
+a velocidade cresce na proporção do raio.
+
+220
+00:12:59,820 --> 00:13:03,820
+É exatamente assim que se move cada
+pedacinho de um disco rígido girando a um
+
+221
+00:13:03,860 --> 00:13:08,850
+radiano por segundo. Esse redemoinho é o
+campo de velocidades de um disco girando!
+
+222
+00:13:08,960 --> 00:13:11,680
+E agora dá para ver onde as
+duas leituras se encontram.
+
+223
+00:13:11,720 --> 00:13:14,660
+A transformação dá um quarto
+de volta de uma vez só.
+
+224
+00:13:14,700 --> 00:13:18,500
+O campo, lido como velocidade,
+faz os pontos girarem sem parar.
+
+225
+00:13:18,540 --> 00:13:21,140
+Deixa esse giro correr por
+um tempo de pi sobre dois,
+
+226
+00:13:21,180 --> 00:13:25,080
+que é um quarto do tempo de uma volta…
+e cada ponto chega exatamente onde a
+
+227
+00:13:25,120 --> 00:13:27,980
+transformação tinha levado.
+São operações diferentes,
+
+228
+00:13:28,020 --> 00:13:30,550
+ligadas por esse tempo. E no espaço?
+
+229
+00:13:30,600 --> 00:13:32,760
+A mesma ideia, com uma dimensão a mais.
+
+230
+00:13:32,800 --> 00:13:36,040
+Em cada ponto do espaço, uma
+seta que aponta para a origem,
+
+231
+00:13:36,080 --> 00:13:39,260
+com tamanho igual a um dividido
+pelo quadrado da distância.
+
+232
+00:13:39,300 --> 00:13:42,880
+Longe, setas quase sumindo;
+perto, cada vez maiores.
+
+233
+00:13:42,920 --> 00:13:46,070
+É o formato do campo gravitacional
+em volta de uma estrela.
+
+234
+00:13:46,160 --> 00:13:49,300
+Repara no domínio. Bem na
+origem, a distância é zero,
+
+235
+00:13:49,340 --> 00:13:53,460
+e não dá para dividir por zero. Então esse
+campo está definido no espaço inteiro,
+
+236
+00:13:53,500 --> 00:13:58,220
+menos um ponto: a origem. É por isso que a
+definição sempre começa dizendo de onde a
+
+237
+00:13:58,260 --> 00:14:01,430
+função parte. O domínio
+faz parte da função.
+
+238
+00:14:01,520 --> 00:14:04,100
+Então, a pergunta do
+começo está respondida.
+
+239
+00:14:04,140 --> 00:14:08,800
+A mesma fórmula girava o plano e desenhava
+um redemoinho porque são duas leituras da
+
+240
+00:14:08,840 --> 00:14:12,100
+mesma função. Como transformação,
+ela move os pontos,
+
+241
+00:14:12,140 --> 00:14:14,620
+e a gente enxerga isso
+acompanhando conjuntos:
+
+242
+00:14:14,660 --> 00:14:18,100
+segmentos viram circunferências,
+retângulos viram discos,
+
+243
+00:14:18,140 --> 00:14:22,480
+folhas viram tigelas. Como campo,
+ela pendura uma seta em cada ponto,
+
+244
+00:14:22,520 --> 00:14:26,690
+e a gente enxerga isso perguntando
+pelo tamanho e pela direção das setas.
+
+245
+00:14:26,780 --> 00:14:29,660
+E as duas leituras são
+necessárias porque o gráfico,
+
+246
+00:14:29,700 --> 00:14:32,370
+com quatro eixos, não
+cabe em lugar nenhum.
+
+247
+00:14:32,560 --> 00:14:35,920
+Essas duas leituras não saem
+mais de cena no Cálculo III.
+
+248
+00:14:35,960 --> 00:14:39,580
+As transformações voltam quando a gente
+trocar de coordenadas dentro de uma
+
+249
+00:14:39,620 --> 00:14:43,200
+integral, e aquele disco das
+coordenadas polares volta junto.
+
+250
+00:14:43,240 --> 00:14:47,580
+Os campos voltam nas integrais de linha,
+no fluxo e nos grandes teoremas.
+
+251
+00:14:47,620 --> 00:14:51,380
+E aquela frase do começo,
+o local e o global estão conectados,
+
+252
+00:14:51,420 --> 00:14:54,110
+é justamente para onde tudo isso caminha.
+
+253
+00:14:54,160 --> 00:14:58,300
+Fica uma pergunta para você pensar: se
+um barquinho de papel for levado por esse
+
+254
+00:14:58,340 --> 00:15:01,380
+redemoinho, ele só dá
+voltas em torno do centro…
+
+255
+00:15:01,420 --> 00:15:03,660
+ou também gira em torno de si mesmo?
+
+256
+00:15:03,700 --> 00:15:06,520
+Deixa a sua resposta nos
+comentários. No próximo vídeo,
+
+257
+00:15:06,560 --> 00:15:09,620
+a gente descobre como medir
+esse giro, ponto a ponto,
+
+258
+00:15:09,660 --> 00:15:13,200
+e por que andar em círculo não
+é o mesmo que girar sobre si.
+
+259
+00:15:13,240 --> 00:15:16,900
+Se essa aula te ajudou, deixa o
+like e se inscreve no Parallax Lab.
+
+260
+00:15:16,940 --> 00:15:18,940
+Até a próxima!

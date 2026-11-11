@@ -4,12 +4,12 @@ e f : A ⊂ ℝⁿ → ℝᵐ no pé. S2: o disco e o redemoinho lado a lado (la
 from v7 import *  # noqa: F401,F403
 
 GIRO = lambda x, y: (-y, x)
-XS = (140, 720, 1300)
+XS = (120, 720, 1320)          # v8.1: cartões centrados em x = 360, 960, 1560 (cruzamentos grossos); centro y = 420
 
 
 def disco_polar(v, w_circ=2.0):
     g = VGroup()
-    ch = Circle(radius=2 * v.ux).move_to(v.c2p(0, 0)).set_fill(CHAPA, 0.9).set_stroke(width=0)
+    ch = Circle(radius=2 * v.ux).move_to(v.c2p(0, 0)).set_fill(CHAPA, 0.55).set_stroke(width=0)
     ch._sem_contorno = True
     g.add(ch)
     for k in range(8):
@@ -29,19 +29,20 @@ def barquinho(c, s=0.55):
 
 class LoteS(Base):
     def corpo(self):
+        set_dy(48)
         # ── S1 · os três cartões (quadro 19) ──
         self.an("S1")
         self.secao("RESUMO")
-        cart = [painel(x, 260, 480, 460, r, WHITE_) for x, r in zip(XS, ("TRANSFORMAÇÃO", "SUPERFÍCIE", "CAMPO"))]
+        cart = [painel(x, 238, 480, 460, r, WHITE_) for x, r in zip(XS, ("TRANSFORMAÇÃO", "SUPERFÍCIE", "CAMPO"))]
         forms = [TC(r"\varphi(\th,\rh) = (\rh\cos\th,\;\rh\,\sen\th)", XS[0] + 240, 780, 30, "c", caneta=False),
                  TC(r"f(\U,\V) = (\U,\V,\U^2+\V^2)", XS[1] + 240, 780, 30, "c", caneta=False),
                  TC(r"\F(\X,\Y) = -\Y\,\ii + \X\,\jj", XS[2] + 240, 780, 30, "c", caneta=False)]
-        v1 = Vista(380, 490, 85)
+        v1 = Vista(360, 420, 72)
         dsc = disco_polar(v1)
-        BOX = [740, 280, 440, 420]
-        tig = Fundo3D(self, "c7_paraboloide", lambda t: {"s": 1.0, "box": BOX}, op=0.0)
+        BOX = [740, 258, 440, 420]
+        tig = Fundo3D(self, "c7_paraboloide", lambda t: {"s": 1.0, "box": caixa(BOX)}, op=0.0)
         self.add(tig)
-        v3 = Vista(1540, 490, 62)
+        v3 = Vista(1560, 420, 48)
         rdm = campo7(v3, GIRO, -3, 3, -3, 3, passo=0.75, rmin=0.5, rmax=3.3, mmax=3.3, lmax=0.6, nome="S1 redemoinho")
         fdef = TC(r"f : {\G A}\subset\mathbb{R}^n\to\mathbb{R}^m", 960, 920, 56, "c")
         self.gat("como transformação ela move os pontos")
@@ -60,8 +61,8 @@ class LoteS(Base):
         self.play(FadeOut(VGroup(*cart, *forms, fdef)), tig.op.animate.set_value(0.0), run_time=0.5)
         tig.clear_updaters()
         self.remove(*cart, *forms, fdef, tig)
-        pa, pb = painel(150, 300, 700, 600), painel(1070, 300, 700, 600)
-        vA, vB = Vista(500, 600, 80), Vista(1420, 600, 80)
+        pa, pb = painel_c(480, 540, 720, 600), painel_c(1440, 540, 720, 600)
+        vA, vB = Vista(480, 540, 72), Vista(1440, 540, 72)
         d2 = disco_polar(vA)
         r2 = campo7(vB, GIRO, -3, 3, -3, 3, passo=0.6, rmin=0.5, rmax=3.3, mmax=3.3, lmax=0.5, nome="S2 redemoinho")
         self.play(FadeOut(dsc), FadeOut(rdm), FadeIn(pa), FadeIn(pb), FadeIn(d2), FadeIn(r2), run_time=0.8)

@@ -7,10 +7,11 @@ BOX = [140, 200, 920, 840]
 
 class LoteB7(Base):
     def corpo(self):
+        set_dy(48)
         seg = {}
 
         def est(t):
-            return {"az": 20 * suave(t / 25.0), "box": BOX}
+            return {"az": 20 * suave(t / 25.0), "box": caixa(BOX)}
 
         self.an("B7-1")
         self.secao("NO ESPAÇO")
@@ -20,7 +21,7 @@ class LoteB7(Base):
         f1 = TC(r"\F(X) = -\dfrac{X}{\|X\|^3}", 1120, 450, 58)
         f2 = TC(r"\|\F\| = \dfrac{1}{r^2}", 1120, 610, 58)
         self.gat("em cada ponto do espaço")
-        self.play(caneta(f1))
+        self.play(self.caneta_ate(f1, "com tamanho igual a um dividido"))
         self.gat("com tamanho igual a um dividido")
         self.play(caneta(f2))
 
@@ -30,7 +31,7 @@ class LoteB7(Base):
         self.play(caneta(dom))
         self.gat("o domínio faz parte da função")
         self.play(pulso(dom, 1.05), run_time=1.0)
-        self._fecha()
+        self._fecha(antes=0.4 + 0.35 + 0.2)       # v9: a saída inteira cabe na âncora
         self.play(FadeOut(VGroup(f1, f2, dom)), cmp.op.animate.set_value(0.0), run_time=0.4)
         cmp.clear_updaters()
         self.remove(cmp, f1, f2, dom)

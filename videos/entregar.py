@@ -33,7 +33,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE = Path(os.environ.get("PARALLAX_ENTREGAS", ROOT / "entregas"))
 REGISTRO = json.loads((ROOT / "videos" / "entregas_registro.json").read_text(encoding="utf-8"))
 SERIES = {"POR TRÁS DA FÓRMULA": "Por Trás da Fórmula", "DA EQUAÇÃO AO FENÔMENO": "Da Equação ao Fenômeno",
-          "EXERCÍCIO RESOLVIDO": "Exercício Resolvido", "ABSURDO CALCULÁVEL": "Absurdo Calculável"}
+          "EXERCÍCIO RESOLVIDO": "Exercício Resolvido", "ABSURDO CALCULÁVEL": "Absurdo Calculável", "CÁLCULO III": "Cálculo III"}
 IMG = {".png", ".jpg", ".jpeg", ".webp"}
 
 
@@ -72,6 +72,8 @@ def identidade(un):
 
 def numero(un):
     """Número do vídeo para o fim dos nomes: 0016 (vid_0016...) ou yt0001 (vídeos longos)."""
+    if REGISTRO.get(un.name, {}).get("numero"):          # o registro pode fixar o número (ex.: longos da série Cálculo, "0026")
+        return REGISTRO[un.name]["numero"]
     m = re.match(r"(vid|yt)_(\d{4})", un.name)
     return m.group(2) if m.group(1) == "vid" else f"yt{m.group(2)}"
 

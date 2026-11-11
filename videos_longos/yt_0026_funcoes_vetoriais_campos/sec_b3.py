@@ -6,25 +6,26 @@ from v7 import *  # noqa: F401,F403
 
 class LoteB3(Base):
     def corpo(self):
+        set_dy(48)
         # ── B3-1 ──
         self.an("B3-1")
         self.secao("A DOBRA")
-        ax_e = Vista(440, 530, 110)
-        ax_s = Vista(1480, 770, 52)
-        pe, ps = painel(130, 250, 620, 560, "ENTRADA", E1), painel(1170, 250, 620, 560, "SAÍDA", SAI)
-        arco = arco7(780, 520, 1150, 520, r"\varphi")
-        dom = chapa7([ax_e.c2p(*p) for p in ((-2.3, -2.3), (2.3, -2.3), (2.3, 2.3), (-2.3, 2.3))])
-        ex_e = eixos7(ax_e, -2.3, 2.3, -2.3, 2.0, alpha=0.5, rx=("u", E1), ry=("v", E2))
-        ex_s = eixos7(ax_s, -3.2, 3.2, -0.3, 9.0, alpha=0.5, rx=("x", SAI), ry=("y", SAI))
+        ax_e = Vista(480, 540, 96)          # v8: origens presas na grade (cruzamentos grossos), unidades múltiplas de 24 px
+        ax_s = Vista(1440, 660, 48)
+        pe, ps = painel_c(480, 540, 720, 600, "ENTRADA", E1), painel_c(1440, 540, 720, 600, "SAÍDA", SAI)
+        arco = arco7(870, 588, 1050, 588, r"\varphi")
+        dom = chapa7([ax_e.c2p(*p) for p in ((-2.2, -2.2), (2.2, -2.2), (2.2, 2.2), (-2.2, 2.2))])
+        ex_e = eixos7(ax_e, -2.2, 2.2, -2.2, 2.0, rx=("u", E1), ry=("v", E2))
+        ex_s = eixos7(ax_s, -3.2, 3.2, -0.5, 7.6, rx=("x", SAI), ry=("y", SAI))
         self.play(FadeIn(pe), FadeIn(ps), FadeIn(dom), Create(ex_e), Create(ex_s), FadeIn(arco), run_time=1.4)
-        form = TC(r"\varphi(\U,\V) = \S{(}\U,\; \U^2+\V^2\S{)}", 440, 920, 48, "c")
+        form = TC(r"\varphi(\U,\V) = \S{(}\U,\; \U^2+\V^2\S{)}", 480, 960, 46, "c")
         self.gat("uma função que repete")
         self.play(caneta(form))
         mapa = lambda p: ax_s.c2p(*(lambda c: (c[0], c[0] ** 2 + c[1] ** 2))(ax_e.p2c(p)))
 
         # ── B3-2 · v = k vira y = x² + k² ──
         self.an("B3-2")
-        linha = lambda v, cor=E2, w=W_CURVA: Line(ax_e.c2p(-2.3, v), ax_e.c2p(2.3, v)).insert_n_curves(60).set_stroke(cor, w)
+        linha = lambda v, cor=E2, w=W_CURVA: Line(ax_e.c2p(-1.8, v), ax_e.c2p(1.8, v)).insert_n_curves(60).set_stroke(cor, w)
         l1, l2 = linha(1), linha(2)
         self.gat("fixa a segunda entrada em um")
         self.play(Create(l1), run_time=0.9)
@@ -35,7 +36,7 @@ class LoteB3(Base):
         self.play(Create(l2), run_time=0.9)
         p2 = l2.copy()
         self.play(ApplyPointwiseFunction(mapa, p2), run_time=2.2)
-        fk = TC(r"\V = \V_0 \Rightarrow \Y = \X^2 + \V_0^2", 1480, 920, 44, "c")
+        fk = TC(r"\V = \V_0 \Rightarrow \Y = \X^2 + \V_0^2", 1440, 960, 42, "c")
         self.gat("cada reta horizontal vira uma parábola")
         self.play(caneta(fk))
 
@@ -48,15 +49,25 @@ class LoteB3(Base):
         pm = lm.copy()
         self.play(ApplyPointwiseFunction(mapa, pm), run_time=2.2)
         self.gat("duas retas diferentes")
-        leg = legenda("v = 1 E v = −1 CAEM NA MESMA PARÁBOLA", 960, 1010, WHITE_, "center")
+        leg = VGroup()
+        for tipo, c in (("m", r"\V=1"), ("t", "E"), ("m", r"\V=-1"), ("t", "CAEM NA MESMA PARÁBOLA")):      # v9: variável em MathTex (o caixa-alta virava V)
+            if tipo == "t":
+                m = legenda(c, 0, 1050, WHITE_)
+            else:
+                m = TC(c, 0, 1050, 30, "l", caneta=False)
+                m.shift(UP * (PX(0, 1050)[1] - m[0][0].get_bottom()[1]))      # pé do v na linha de base do texto
+            if len(leg):
+                m.shift(RIGHT * (leg.get_right()[0] + 0.12 - m.get_left()[0]))
+            leg.add(m)
+        leg.shift(RIGHT * (PX(960, 0)[0] - leg.get_center()[0]))
         self.play(pulso(VGroup(l1, lm), 1.0, 1.7), pulso(VGroup(p1, pm), 1.0, 1.7), FadeIn(leg), run_time=1.2)
-        rv1 = TC(r"\V=1", ax_e.cx + 1.35 * ax_e.u, ax_e.cy - 1.3 * ax_e.u, 30, "l", caneta=False)
-        rv2 = TC(r"\V=-1", ax_e.cx + 1.2 * ax_e.u, ax_e.cy + 0.7 * ax_e.u, 30, "l", caneta=False)
+        rv1 = TC(r"\V=1", *vpx(ax_e, 1.2, 1.3), 30, "l", caneta=False, placa=True)
+        rv2 = TC(r"\V=-1", *vpx(ax_e, 1.1, -0.75), 30, "l", caneta=False, placa=True)
         self.play(FadeIn(rv1), FadeIn(rv2), run_time=0.4)
 
         # ── B3-4 · u = 1 vira a semirreta x = 1, y ≥ 1, percorrida duas vezes ──
         self.an("B3-4")
-        lu1 = Line(ax_e.c2p(1, -2.3), ax_e.c2p(1, 2.3)).set_stroke(E1, W_CURVA)
+        lu1 = Line(ax_e.c2p(1, -2.2), ax_e.c2p(1, 2.2)).set_stroke(E1, W_CURVA)
         vt = ValueTracker(-2.0)
         de = ponto(ORIGIN, GEO, 0.09, z=7).add_updater(lambda d: d.move_to(ax_e.c2p(1, vt.get_value())))
         ds = ponto(ORIGIN, SAI, 0.1, z=7).add_updater(lambda d: d.move_to(ax_s.c2p(1, 1 + vt.get_value() ** 2)))
@@ -80,7 +91,7 @@ class LoteB3(Base):
         self.remove(l1, l2, lm, p1, p2, pm, lu1, de, ds, semi, fk, vt, leg, rv1, rv2)
 
         def meia(sinal):
-            r = chapa(Polygon(*[ax_e.c2p(*p) for p in ((-2.3, 0), (2.3, 0), (2.3, 2 * sinal), (-2.3, 2 * sinal))]))
+            r = chapa(Polygon(*[ax_e.c2p(*p) for p in ((-1.8, 0), (1.8, 0), (1.8, 2 * sinal), (-1.8, 2 * sinal))]))
             r.insert_n_curves(120)
             vs = VGroup(*[linha(sinal * v, E2, W_FAM) for v in (1, 2)])
             us = VGroup(*[Line(ax_e.c2p(u, 0), ax_e.c2p(u, 2 * sinal)).insert_n_curves(40).set_stroke(E1, W_FAM) for u in (-1, 1)])
@@ -100,14 +111,14 @@ class LoteB3(Base):
         meia_f = VGroup(cima, baixo, dobra)
         img = meia_f.copy()
         self.play(ApplyPointwiseFunction(mapa, img), run_time=2.6)
-        pr = [(x, x * x) for x in np.linspace(-3, 3, 91)]
-        regiao = VMobject().set_points_as_corners([ax_s.c2p(*p) for p in pr] + [ax_s.c2p(3, 9.4), ax_s.c2p(-3, 9.4)])
+        pr = [(x, x * x) for x in np.linspace(-2.7, 2.7, 91)]
+        regiao = VMobject().set_points_as_corners([ax_s.c2p(*p) for p in pr] + [ax_s.c2p(2.7, 7.4), ax_s.c2p(-2.7, 7.4)])
         regiao.set_stroke(width=0).set_fill(SAI, 0.22).set_z_index(-1)
-        borda = contorno(ParametricFunction(lambda x: ax_s.c2p(x, x * x), t_range=[-3, 3]).set_stroke(FORTE, W_IMG)).set_z_index(5)
+        borda = contorno(ParametricFunction(lambda x: ax_s.c2p(x, x * x), t_range=[-2.7, 2.7]).set_stroke(FORTE, W_IMG)).set_z_index(5)
         self.gat("e a linha da dobra")
         self.play(pulso(dobra, 1.0, 1.8), pulso(img[2], 1.0, 1.8), run_time=1.2)
         self.gat("a imagem é tudo o que está")
-        fim_ = TC(r"\S{\operatorname{Im}\varphi = \{(x,y) \mid y \ge x^2\}}", 1480, 920, 44, "c")
+        fim_ = TC(r"\S{\operatorname{Im}\varphi = \{(x,y) \mid y \ge x^2\}}", 1440, 960, 42, "c")
         cf = caneta(fim_)
         w = self.falta("e nada abaixo")                      # o flash do "nada abaixo" entra na palavra, durante a caneta
         rt = max(cf.tot, w + 0.7)
@@ -124,7 +135,7 @@ class LoteB3(Base):
         ds_ = VGroup(*[ponto(ax_s.c2p(*p), SAI_F, 0.09, z=8) for p in (Pa, Pb, Pc)])
         self.gat("pega um ponto do plano de saída")
         self.play(FadeIn(ds_, scale=0.5), run_time=0.6)
-        pre = TC(r"\U = \S{x_0},\quad \V^2 = \S{y_0 - x_0^2}", 440, 920, 44, "c")
+        pre = TC(r"\U = \S{x_0},\quad \V^2 = \S{y_0 - x_0^2}", 480, 960, 42, "c")
         self.gat("a primeira entrada tem que ser")
         self.play(caneta(pre))
 

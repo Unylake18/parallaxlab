@@ -19,6 +19,7 @@ class LoteT(Base):
         self.remove(*velhos)
 
     def corpo(self):
+        set_dy(0)
         seg = {}
 
         # ── T0 · uma seta, num ponto só; depois uma seta em cada ponto (quadro 01) ──
@@ -57,7 +58,7 @@ class LoteT(Base):
         self.corte([g0, rot0, f0, l0], [col, rot1], rt=0.4)
         self.gat("empilha colunas finíssimas")
         seg["l1"] = self.t
-        c1 = caneta(f1, ritmo=0.6)
+        c1 = self.caneta_ate(f1, "e elas viram um volume", ritmo=0.6)
         self.play(c1, Succession(Wait(max(0.1, c1.tot - 0.5)), FadeIn(l1, run_time=0.5)), run_time=c1.tot)
         self.gat("e elas viram um volume")
         seg["l2"] = self.t
@@ -147,21 +148,20 @@ class LoteT(Base):
         bordaL = linha7([v4.c2p(*p) for p in ((x0, y0), (x0 + n * s, y0), (x0 + n * s, y0 + n * s), (x0, y0 + n * s), (x0, y0))], CAMPO2, 5, 0.5)
         f4 = TC(r"\oint_{\G C} \F\cdot d\vec r \;=\; \iint_{\G R} (\rot \F)\,dA", 1120, 500, 52)
         lb1, lb2, lb3 = legenda("NA BORDA", 1150, 610, SAI_F), legenda("SOMA DOS GIROS DE DENTRO", 1430, 610, CAMPO2), T("TEOREMA DE GREEN", 1124, 720, 34)
-        c4 = caneta(f4, ritmo=0.22)
+        c4 = self.caneta_ate(f4, "no plano", ritmo=0.22, folga=0.5)
         self.play(FadeOut(internas), FadeOut(coral), FadeOut(la1), FadeOut(la2), FadeOut(la3), FadeOut(rot4a), FadeIn(rot4b), FadeIn(bordaL), c4,
                   Succession(Wait(max(0.1, c4.tot - 0.7)), FadeIn(lb1), FadeIn(lb2), FadeIn(lb3, run_time=0.5)), run_time=max(c4.tot, 1.0))
         self.remove(internas)
 
         # ── T4c · a mesma ideia, três vezes (quadro 07): só fórmulas ──
-        self.gat("no plano")
         rot4c = rot_abertura("A MESMA IDEIA, TRÊS VEZES")
-        self.play(*[FadeOut(m) for m in (rot4b, chapa, grade, externas, bordaL, f4, lb1, lb2, lb3)], FadeIn(rot4c), run_time=0.4)
-        self.remove(rot4b, chapa, grade, externas, bordaL, f4, lb1, lb2, lb3)
         ch1, ch2 = legenda("NA BORDA", 800, 270, SAI_F, "center"), legenda("EM CADA PEDACINHO DE DENTRO", 1330, 270, CAMPO2, "center")
+        self.wait(max(0.1, self.falta("no plano") - 0.45))       # v9: a troca (0,4 s) termina no gatilho de "no plano"
+        self.play(*[FadeOut(m) for m in (rot4b, chapa, grade, externas, bordaL, f4, lb1, lb2, lb3)], FadeIn(rot4c), FadeIn(ch1), FadeIn(ch2), run_time=0.4)
+        self.remove(rot4b, chapa, grade, externas, bordaL, f4, lb1, lb2, lb3)
         linhas = [("GREEN", r"\oint_{\G C} \F\cdot d\vec r", r"\iint_{\G R} (\nabla\times\F)\cdot\vec k\,dA"),
                   ("STOKES", r"\oint_{\G C} \F\cdot d\vec r", r"\iint_{\S{S}} (\nabla\times\F)\cdot\vec n\,dS"),
                   ("GAUSS", r"\oiint_{\S{S}} \F\cdot\vec n\,dS", r"\iiint_{\G V} \nabla\cdot\F\,dV")]
-        self.play(FadeIn(ch1), FadeIn(ch2), run_time=0.4)
         for k, (nome, a, b) in enumerate(linhas):
             Y = 370 + k * 150
             self.gat(["no plano", "numa superfície", "num volume"][k])
@@ -185,10 +185,9 @@ class LoteT(Base):
         acento = seta7(v5.c2p(-0.6, -0.55), v5.c2p(0.6, -0.55), CAMPO, 6, 24).set_z_index(21)
         l5 = legenda("DO INFINITAMENTE PEQUENO AO ESPAÇO INTEIRO.", 960, 648, SAI_F, "center", 34).set_z_index(21)
         sai = [m for m in self.snap()]
-        self.play(*[FadeOut(m) for m in sai], FadeIn(g5), run_time=0.25)
-        self.remove(*sai)
         self.gat("isso é cálculo três")
-        self.play(FadeIn(painel5), FadeIn(card, scale=0.97), run_time=0.7)
+        self.play(*[FadeOut(m) for m in sai], FadeIn(g5), FadeIn(painel5), FadeIn(card, scale=0.97), run_time=0.7)       # v9: o cartão entra junto da troca
+        self.remove(*sai)
         self.play(GrowArrow(acento), run_time=0.5)
         self.gat("do infinitamente pequeno")
         self.play(FadeIn(l5, shift=0.1 * UP), run_time=0.6)

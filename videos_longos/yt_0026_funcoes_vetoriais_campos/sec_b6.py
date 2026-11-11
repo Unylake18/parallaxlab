@@ -3,7 +3,7 @@ F⃗ · X = 0, perpendicular ao vetor posição); trajetórias γ(t) = r(cos t, 
 tempo (disco rígido com um raio girando); a bandeira gira com o campo por t = π/2. Sem pontinhos soltos: só o ponto da explicação."""
 from v7 import *  # noqa: F401,F403
 
-V = Vista(620, 600, 115)
+V = Vista(600, 540, 96)       # v8: origem num cruzamento grosso, unidade 96 px
 GIRO = lambda x, y: (-y, x)
 
 
@@ -23,14 +23,15 @@ def anel_setas(r, n, mmax=3.3, lmax=0.5):
 
 class LoteB6(Base):
     def corpo(self):
+        set_dy(48)
         # ── B6-1 · a regra do começo ──
         self.an("B6-1")
         self.secao("DE VOLTA AO REDEMOINHO")
-        ax = VGroup(eixos7(V, -3.2, 3.2, -3.2, 3.2, alpha=0.35))
+        ax = VGroup(eixos7(V, -3.2, 3.2, -3.2, 3.2))
         self.play(Create(ax), run_time=1.0)
         fF = TC(r"\F(\X,\Y) = -\Y\,\ii + \X\,\jj", 1120, 430, 54)
         self.gat("a regra que troca as coordenadas")
-        self.play(caneta(fF))
+        self.play(self.caneta_ate(fF, "como transformação ela leva"))
         mal = malha7(V, 3, 1.0)
         band = bandeira7(V, 0.0, (0, 0), DEST)
         mm = VGroup(mal, band)
@@ -94,7 +95,7 @@ class LoteB6(Base):
         u_, v_, s = (p[0] / 2, p[1] / 2), (f[0] / 2, f[1] / 2), 0.22
         ang = linha7([V.c2p(p[0] - u_[0] * s, p[1] - u_[1] * s), V.c2p(p[0] - u_[0] * s + v_[0] * s, p[1] - u_[1] * s + v_[1] * s), V.c2p(p[0] + v_[0] * s, p[1] + v_[1] * s)], WHITE_, 2.5)
         dp = ponto7(V.c2p(*p), POS7, 9)
-        xy = TC(r"\P{(x,y)}", *(lambda q: (q[0] * 120 + 960, 4.5 * 120 - q[1] * 120))(V.c2p(p[0] + 0.55, p[1] - 0.35)), 36, "c", caneta=False)
+        xy = TC(r"\P{(x,y)}", *pxy(V.c2p(p[0] + 0.55, p[1] - 0.35)), 36, "c", caneta=False)
         prod = TC(r"\F\cdot\P{(x,y)} = -yx + xy = 0", 1120, 580, 54)
         self.gat("para onde a seta aponta")
         self.play(GrowArrow(pos), FadeIn(dp), FadeIn(xy), run_time=0.8)

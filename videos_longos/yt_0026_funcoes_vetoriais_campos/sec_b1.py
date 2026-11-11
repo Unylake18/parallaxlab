@@ -4,7 +4,7 @@ from v7 import *  # noqa: F401,F403
 
 GIRO = lambda x, y: (-y, x)
 EX, EY, EZ = np.array([-0.55, -0.42, 0.0]), np.array([1.0, 0.0, 0.0]), np.array([0.0, 1.0, 0.0])
-XS = (140, 720, 1300)
+XS = (120, 720, 1320)          # v8.1: cartões centrados em cruzamentos grossos (x = 360, 960, 1560; y = 540)
 
 
 def pj(c, x, y, z, s=1.0):
@@ -28,13 +28,14 @@ def icone_malha(c):
 
 class LoteB1(Base):
     def corpo(self):
+        set_dy(48)
         seg = {}
         self.an("B1-1")
         self.secao("QUE FUNÇÃO É ESSA")
         # cartão 1: a curva ℝ → ℝ²
-        c1 = painel(XS[0], 400, 480, 420)
-        v1 = Vista(380, 620, 70)
-        ex1 = eixos7(v1, -2.6, 2.6, -2.2, 2.2, alpha=0.5)
+        c1 = painel(XS[0], 378, 480, 420)
+        v1 = Vista(360, 540, 72)
+        ex1 = eixos7(v1, -2.5, 2.5, -2.2, 2.2)
         cv = [v1.c2p(2.1 * math.sin(t), 1.4 * math.sin(2 * t)) for t in np.linspace(-PI, PI, 101)]
         curva = linha7(cv, POS7, 5)
         contorno(curva)
@@ -42,9 +43,9 @@ class LoteB1(Base):
         t1 = TC(r"\mathbb{R}\to\mathbb{R}^2", XS[0] + 240, 880, 44, "c")
         r1 = legenda("CURVA", XS[0] + 240, 950, GEO, "center")
         # cartão 2: o gráfico ℝ² → ℝ (a tigela do 3D)
-        c2 = painel(XS[1], 400, 480, 420)
-        BOXG = [740, 420, 440, 380]
-        grf = Fundo3D(self, "c7_paraboloide", lambda t: {"s": 1.0, "box": BOXG}, op=0.0)
+        c2 = painel(XS[1], 378, 480, 420)
+        BOXG = [740, 398, 440, 380]
+        grf = Fundo3D(self, "c7_paraboloide", lambda t: {"s": 1.0, "box": caixa(BOXG)}, op=0.0)
         t2 = TC(r"\mathbb{R}^2\to\mathbb{R}", XS[1] + 240, 880, 44, "c")
         r2 = legenda("GRÁFICO", XS[1] + 240, 950, GEO, "center")
         self.add(grf)
@@ -60,9 +61,9 @@ class LoteB1(Base):
         # ── B1-2 · a definição, o terceiro cartão e as funções componentes ──
         self.an("B1-2")
         fdef = TC(r"f : {\G A} \subset \mathbb{R}^n \to \mathbb{R}^m", 960, 280, 64, "c")
-        c3 = painel(XS[2], 400, 480, 420)
-        borda3 = contorno_painel(XS[2], 400, 480, 420, CAMPO, 3)
-        v3 = Vista(1540, 600, 52)
+        c3 = painel(XS[2], 378, 480, 420)
+        borda3 = contorno_painel(XS[2], 378, 480, 420, CAMPO, 3)
+        v3 = Vista(1560, 540, 48)
         g3 = campo7(v3, GIRO, -3, 3, -3, 3, passo=1.0, rmin=0.5, mmax=4.3, lmax=0.7, nome="B1 cartão campo")
         t3 = TC(r"\mathbb{R}^2\to\mathbb{R}^2", XS[2] + 240, 880, 44, "c")
         r3 = legenda("NESTE VÍDEO", XS[2] + 240, 950, CAMPO2, "center")
@@ -113,9 +114,9 @@ class LoteB1(Base):
         # ── B1-4 · os dois jeitos de desenhar ──
         self.an("B1-4")
         self.limpa(rt=0.4)
-        pa, pb = painel(150, 260, 740, 560, "TRANSFORMAÇÃO", WHITE_), painel(1030, 260, 740, 560, "CAMPO VETORIAL", CAMPO2)
-        mal = icone_malha(PX(520, 540)).scale(1.5, about_point=PX(520, 540))
-        vb = Vista(1400, 540, 70)
+        pa, pb = painel_c(480, 540, 720, 600, "TRANSFORMAÇÃO", WHITE_), painel_c(1440, 540, 720, 600, "CAMPO VETORIAL", CAMPO2)
+        mal = icone_malha(PX(480, 588)).scale(1.5, about_point=PX(480, 588))
+        vb = Vista(1440, 540, 72)
         gb = campo7(vb, GIRO, -3, 3, -3, 3, passo=0.75, rmin=0.5, rmax=3.3, mmax=3.3, lmax=0.6, nome="B1-4 campo")
         self.gat("no primeiro")
         self.play(FadeIn(pa), Create(mal), run_time=1.2)

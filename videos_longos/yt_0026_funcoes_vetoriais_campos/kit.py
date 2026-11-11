@@ -232,9 +232,9 @@ def contorno(m, extra=4.0):
 def chapa(m, tipo="dom"):
     """Região = chapa opaca (a grade do fundo não atravessa): domínio ou imagem."""
     if tipo == "dom":
-        m.set_fill(CH_DOM, 0.85).set_stroke(GEO, 2.5, 1)
+        m.set_fill(CH_DOM, 0.55).set_stroke(GEO, 2.5, 1)
     else:
-        m.set_fill(CH_IMG, 0.80).set_stroke(SAI_F, 4, 1)
+        m.set_fill(CH_IMG, 0.55).set_stroke(SAI_F, 4, 1)
     return contorno(m)
 
 
@@ -503,6 +503,22 @@ def projeta3d(cam, p):
 TITULO = "CÁLCULO III · FUNÇÕES A VALORES VETORIAIS E CAMPOS VETORIAIS"
 
 
+def _placa_img(x0, y0, rects, w, h, feather=12):
+    """Placa ESC (#091226, 100 %) com borda esfumada (24 px): ImageMobject RGBA de w × h px (a partir de (x0, y0) do quadro), só nos retângulos dados."""
+    from PIL import Image as _I, ImageFilter as _F
+    m = _I.new("L", (w, h), 0)
+    from PIL import ImageDraw as _D
+    d = _D.Draw(m)
+    for (a, b, c, e) in rects:
+        d.rectangle([a - x0, b - y0, c - x0, e - y0], fill=255)
+    m = np.asarray(m.filter(_F.GaussianBlur(feather)), np.uint8)
+    arr = np.zeros((h, w, 4), np.uint8)
+    arr[..., 0], arr[..., 1], arr[..., 2], arr[..., 3] = 0x09, 0x12, 0x26, m
+    im = ImageMobject(arr)
+    im.set_width(w / 120)
+    return im
+
+
 class Base(Scene):
     """(kit do yt_0022) Todo `play` é quantizado em quadros inteiros e arrasta o relógio `self.clk` (segundos do lote)."""
     CANTO = True          # linha 1 do canto presente desde o início do lote (o T não tem canto; o A o faz entrar)
@@ -521,8 +537,16 @@ class Base(Scene):
         self.nq = 0
         self.lote = type(self).__name__
         self._ped = {}
-        self.wm = ImageMobject(str(WATERMARK_PATH)).set_width(1.9).set_opacity(0.45).move_to(P3(6.9, 4.5 - 65 / 120)).set_z_index(40)   # centro y=65 px (placa lisa 34–96)
-        self.h1 = self._canto(txt(TITULO, 13.2, color="#C8D6F0", op=0.6), 104)
+        self.wm = ImageMobject(str(WATERMARK_PATH)).set_width(1.9).set_opacity(0.45).move_to(P3(6.9, 4.5 - 65 / 120)).set_z_index(40)   # centro y=65 px
+        self.h1 = self._canto(txt(TITULO, 13.2, color="#C8D6F0", op=0.6), 73)       # v8: centro dos caracteres em y = 65 px (baseline 73), como o logo
+        self.pl_logo = _placa_img(1600, 0, [(1656, 34, 1920 + 80, 96)], 1920 - 1600, 130)
+        self.pl_logo.move_to(P3(-8 + (1600 + 160) / 120 - 0.0, 4.5 - 65 / 120)).set_z_index(-45)
+        self.pl_canto = _placa_img(0, 0, self._rects_canto(0), 1000, 170).set_z_index(-45)
+        self.pl_canto.move_to(P3(-8 + 500 / 120, 4.5 - 85 / 120))
+        self.add(self.pl_logo)
+        if self.CANTO:
+            self.add(self.pl_canto)
+        print(f"[placa] linha 1 = {self.h1.width * 120:.0f} px → placa = {self.h1.width * 120 + 24 + 36:.0f} px (texto + 24 px + margem x = 36)")
         self.h2 = None
         self._pend = []
         self.add(self.wm)
@@ -683,13 +707,18 @@ class Base(Scene):
         self.alvo = round(a["fim"] * FPS) - self._off
         print(f"[ancora] {aid} {self.nq / FPS:.3f}")
 
-    def _fecha(self):
-        if self._aid is not None and self.alvo - self.nq >= 1:
-            self.wait((self.alvo - self.nq) / FPS)
+    def _fecha(self, antes=0.0):
+        """Espera o resto da âncora; `antes` (s): para `antes` segundos antes do fim (v9: a saída de seção cabe dentro da fala, sem deriva)."""
+        if self._aid is not None:
+            alvo = self.alvo - round(antes * FPS)
+            if alvo - self.nq >= 1:
+                self.wait((alvo - self.nq) / FPS)
         self._aid = None
 
     def fim(self):
+        fim_alvo = self.alvo
         self._fecha()
+        print(f"[deriva] {self.lote} {(self.nq - fim_alvo) / FPS:+.2f}s além do fim da última âncora")
         if PEDIDOS3D and self._ped:
             DIR3D.joinpath("pedidos3d").mkdir(exist_ok=True)
             ped = {"cenas": {c: sorted(d.items()) for c, d in self._ped.items()}}
@@ -718,6 +747,13 @@ class Base(Scene):
             m.shift(DOWN * (topo_min - (4.5 - m.get_top()[1]) * 120) / 120)
         return m.set_z_index(40)
 
+    def _rects_canto(self, w2):
+        """Retângulos da placa do canto em px (x0, y0, x1, y1): a linha 1 (texto + 24 px) e a linha 2 (a sua largura + 24 px); só atrás do texto."""
+        r = [(-80, 30, 36 + self.h1.width * 120 + 24, 90)]
+        if w2:
+            r.append((-80, 84, 36 + w2 + 24, 132))
+        return r
+
     def _y1_fim_px(self):
         return (4.5 - self.h1.get_bottom()[1]) * 120
 
@@ -730,8 +766,10 @@ class Base(Scene):
             self.play(FadeOut(self.h2), run_time=0.25)
             self.h2 = None
         if s:
-            self.h2 = self._canto(txt(s, 21.6, color="#F5F7FF", bold=True), 150, topo_min=self._y1_fim_px() + 10)
+            self.h2 = self._canto(txt(s, 21.6, color="#F5F7FF", bold=True), 118, topo_min=self._y1_fim_px() + 10)
             self._pend.append(FadeIn(self.h2))
+            self.pl_canto.pixel_array = _placa_img(0, 0, self._rects_canto(self.h2.width * 120), 1000, 170).pixel_array
+            print(f"[placa] {s}: linha 2 = {self.h2.width * 120:.0f} px → placa = {self.h2.width * 120 + 24 + 36:.0f} px")
 
     def snap(self):
         keep = self.fixos()
@@ -780,7 +818,8 @@ class Base(Scene):
 
     def sai_fim(self, rt=0.35):
         """Fim do lote: o conteúdo sai até o papel (o próximo lote começa do papel vazio, com a linha 1 do canto)."""
-        self._fecha()
+        if self._aid is not None:
+            self._fecha(antes=rt + (0.2 if self.h2 is not None else 0.0))
         self.limpa(rt=rt)
         if self.h2 is not None:
             self.play(FadeOut(self.h2), run_time=0.2)
@@ -835,6 +874,18 @@ def _falta(self, frase):
 
 
 Base.falta = _falta
+
+
+def _caneta_ate(self, m, frase, ritmo=1.0, folga=0.05):
+    """v9: caneta que termina até o gatilho de `frase` (o ritmo encolhe se a voz real for mais rápida que a escrita)."""
+    c = caneta(m, ritmo=ritmo)
+    lim = self.falta(frase) - folga
+    if lim > 0.3 and c.tot > lim:
+        c = caneta(m, ritmo=ritmo * lim / c.tot)
+    return c
+
+
+Base.caneta_ate = _caneta_ate
 
 
 # ── polares: "virar e enrolar" (handoff v3 §3.1) ───────────────────────────────────────────────────────

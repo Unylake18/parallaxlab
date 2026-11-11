@@ -10,9 +10,7 @@ BASE, BRILHO = np.array([0x09, 0x12, 0x26], float), 0.10          # cor única +
 r = np.hypot(gx / (W * 0.55), gy / (H * 0.55))
 liso = np.ones((H, W, 3)) * BASE * (1 + BRILHO * np.exp(-r ** 2))[..., None]
 mil = liso + fina[..., None] * np.array([18, 30, 52]) * 0.30 + grossa[..., None] * np.array([40, 70, 120]) * 0.32
-m = np.zeros((H, W)); m[72:170, 0:1240] = 1; m[34:96, 1656:1920] = 1   # placas lisas: canto e logo
-m = np.asarray(Image.fromarray((m * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(22)), float)[..., None] / 255
-mil = mil * (1 - m) + liso * m
+# v8: SEM placas no PNG; a placa do canto e a do logo são desenhadas por cena, do tamanho do texto (kit.Base)
 rng = np.random.default_rng(7)                      # dithering ±0,5 nível: tira a elipse do brilho central (quantização de 8 bits)
 liso = liso + rng.uniform(-0.5, 0.5, liso.shape); mil = mil + rng.uniform(-0.5, 0.5, mil.shape)
 for nome, img in (("fundo_calculo_milimetrado", mil), ("fundo_calculo_liso", liso)):
