@@ -1,0 +1,107 @@
+yt_0028 v3 · alinhamento (R9): cantos de chapa, zonas, origens de papel e bordas de faixa contra as linhas grossas (x = 120k, y = 60 + 120k px no 1080p)
+medido no pixel (stills 1080p dos alvos): a moldura de cada chapa, nas 4 bordas, numa linha/coluna fora da grade; critério ≤ 1 px
+
+01 PH   layout A chapa (120, 180, 1080, 900): esq 120.0→120 (+0.0)  dir 1080.0→1080 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+02 PH   layout A chapa (120, 180, 1080, 900): esq 120.0→120 (+0.0)  dir 1080.0→1080 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+03 PB1  layout B chapa (120, 180, 840, 900): esq 120.0→120 (+0.0)  dir 840.0→840 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+03 PB1  layout B chapa (1080, 180, 1800, 900): esq 1080.0→1080 (+0.0)  dir 1800.0→1800 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+04 PB1  layout B chapa (120, 180, 840, 900): esq 120.0→120 (+0.0)  dir 840.0→840 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+04 PB1  layout B chapa (1080, 180, 1800, 900): esq 1080.0→1080 (+0.0)  dir 1800.0→1800 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+05 PB1  layout B chapa (120, 180, 840, 900): esq 120.0→120 (+0.0)  dir 840.0→840 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+05 PB1  layout B chapa (1080, 180, 1800, 900): esq 1080.0→1080 (+0.0)  dir 1800.0→1800 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+06 PB1  layout B chapa (120, 180, 840, 900): esq 120.0→120 (+0.0)  dir 840.0→840 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+06 PB1  layout B chapa (1080, 180, 1800, 900): esq 1080.0→1080 (+0.0)  dir 1800.0→1800 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+07 PB1  papel 240 px/u: origem/canto (600, 540) (exato no código; ver o registro do log abaixo)
+08 PB2  layout A chapa (120, 180, 1080, 900): esq 120.0→120 (+0.0)  dir 1080.0→1080 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+09 PB2  layout B chapa (120, 180, 840, 900): esq 120.0→120 (+0.0)  dir 840.0→840 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+09 PB2  layout B chapa (1080, 180, 1800, 900): esq 1080.0→1080 (+0.0)  dir 1800.0→1800 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+10 PB2  layout B chapa (120, 180, 840, 900): esq 120.0→120 (+0.0)  dir 840.0→840 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+10 PB2  layout B chapa (1080, 180, 1800, 900): esq 1080.0→1080 (+0.0)  dir 1800.0→1800 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+11 PB3  layout B chapa (120, 180, 840, 900): esq 120.0→120 (+0.0)  dir 840.0→840 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+11 PB3  layout B chapa (1080, 180, 1800, 900): esq 1080.0→1080 (+0.0)  dir 1800.0→1800 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+12 PB3  layout C chapa (120, 300, 600, 780): esq 120.0→120 (+0.0)  dir 600.0→600 (+0.0)  topo 300.0→300 (+0.0)  base 780.0→780 (+0.0)  OK
+12 PB3  layout C chapa (720, 300, 1200, 780): esq 720.0→720 (+0.0)  dir 1200.0→1200 (+0.0)  topo 300.0→300 (+0.0)  base 780.0→780 (+0.0)  OK
+12 PB3  layout C chapa (1320, 300, 1800, 780): esq 1320.0→1320 (+0.0)  dir 1800.0→1800 (+0.0)  topo 300.0→300 (+0.0)  base 780.0→780 (+0.0)  OK
+13 PB3  página: origem/canto (120, 180) (exato no código; ver o registro do log abaixo)
+14 PB4  layout B chapa (120, 180, 840, 900): esq 120.0→120 (+0.0)  dir 840.0→840 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+14 PB4  layout B chapa (1080, 180, 1800, 900): esq 1080.0→1080 (+0.0)  dir 1800.0→1800 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+15 PB4  layout B chapa (120, 180, 840, 900): esq 120.0→120 (+0.0)  dir 840.0→840 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+15 PB4  layout B chapa (1080, 180, 1800, 900): esq 1080.0→1080 (+0.0)  dir 1800.0→1800 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+16 PB4  layout B chapa (120, 180, 840, 900): esq 120.0→120 (+0.0)  dir 840.0→840 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+16 PB4  layout B chapa (1080, 180, 1800, 900): esq 1080.0→1080 (+0.0)  dir 1800.0→1800 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+17 PB4  layout A chapa (120, 180, 1080, 900): esq 120.0→120 (+0.0)  dir 1080.0→1080 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+18 PB5  layout A chapa (120, 180, 1080, 900): esq 120.0→120 (+0.0)  dir 1080.0→1080 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+19 PB5  layout B chapa (120, 180, 840, 900): esq 120.0→120 (+0.0)  dir 840.0→840 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+19 PB5  layout B chapa (1080, 180, 1800, 900): esq 1080.0→1080 (+0.0)  dir 1800.0→1800 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+20 PB5  papel 120 px/u: origem/canto (480, 540) (exato no código; ver o registro do log abaixo)
+21 PB5  layout B chapa (120, 180, 840, 900): esq 120.0→120 (+0.0)  dir 840.0→840 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+21 PB5  layout B chapa (1080, 180, 1800, 900): esq 1080.0→1080 (+0.0)  dir 1800.0→1800 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+22 PB5  layout B chapa (120, 180, 840, 900): esq 120.0→120 (+0.0)  dir 840.0→840 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+22 PB5  layout B chapa (1080, 180, 1800, 900): esq 1080.0→1080 (+0.0)  dir 1800.0→1800 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+23 PB6  layout A chapa (120, 180, 1080, 900): esq 120.0→120 (+0.0)  dir 1080.0→1080 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+24 PB6  layout A chapa (120, 180, 1080, 900): esq 120.0→120 (+0.0)  dir 1080.0→1080 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+25 PB6  layout A chapa (120, 180, 1080, 900): esq 120.0→120 (+0.0)  dir 1080.0→1080 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+26 PB6  layout A chapa (120, 180, 1080, 900): esq 120.0→120 (+0.0)  dir 1080.0→1080 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+27 PB6  layout A chapa (120, 180, 1080, 900): esq 120.0→120 (+0.0)  dir 1080.0→1080 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+28 PB6  layout A chapa (120, 180, 1080, 900): esq 120.0→120 (+0.0)  dir 1080.0→1080 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+29 PB6  layout A chapa (120, 180, 1080, 900): esq 120.0→120 (+0.0)  dir 1080.0→1080 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+30 PB7  papel 120 px/u: origem/canto (480, 420) (exato no código; ver o registro do log abaixo)
+31 PB7  papel 150 px/u: origem/canto (360, 780) (exato no código; ver o registro do log abaixo)
+32 PB7  layout C chapa (120, 300, 600, 780): esq 120.0→120 (+0.0)  dir 600.0→600 (+0.0)  topo 300.0→300 (+0.0)  base 780.0→780 (+0.0)  OK
+32 PB7  layout C chapa (720, 300, 1200, 780): esq 720.0→720 (+0.0)  dir 1200.0→1200 (+0.0)  topo 300.0→300 (+0.0)  base 780.0→780 (+0.0)  OK
+32 PB7  layout C chapa (1320, 300, 1800, 780): esq 1320.0→1320 (+0.0)  dir 1800.0→1800 (+0.0)  topo 300.0→300 (+0.0)  base 780.0→780 (+0.0)  OK
+33 PB7  layout C chapa (120, 300, 600, 780): esq 120.0→120 (+0.0)  dir 600.0→600 (+0.0)  topo 300.0→300 (+0.0)  base 780.0→780 (+0.0)  OK
+33 PB7  layout C chapa (720, 300, 1200, 780): esq 720.0→720 (+0.0)  dir 1200.0→1200 (+0.0)  topo 300.0→300 (+0.0)  base 780.0→780 (+0.0)  OK
+33 PB7  layout C chapa (1320, 300, 1800, 780): esq 1320.0→1320 (+0.0)  dir 1800.0→1800 (+0.0)  topo 300.0→300 (+0.0)  base 780.0→780 (+0.0)  OK
+34 PB7  layout C chapa (120, 300, 600, 780): esq 120.0→120 (+0.0)  dir 600.0→600 (+0.0)  topo 300.0→300 (+0.0)  base 780.0→780 (+0.0)  OK
+34 PB7  layout C chapa (720, 300, 1200, 780): esq 720.0→720 (+0.0)  dir 1200.0→1200 (+0.0)  topo 300.0→300 (+0.0)  base 780.0→780 (+0.0)  OK
+34 PB7  layout C chapa (1320, 300, 1800, 780): esq 1320.0→1320 (+0.0)  dir 1800.0→1800 (+0.0)  topo 300.0→300 (+0.0)  base 780.0→780 (+0.0)  OK
+35 PB7  layout A chapa (120, 180, 1080, 900): esq 120.0→120 (+0.0)  dir 1080.0→1080 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+36 PB7  layout A chapa (120, 180, 1080, 900): esq 120.0→120 (+0.0)  dir 1080.0→1080 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+37 PS   layout A chapa (120, 180, 1080, 900): esq 120.0→120 (+0.0)  dir 1080.0→1080 (+0.0)  topo 180.0→180 (+0.0)  base 900.0→900 (+0.0)  OK
+
+PIOR RESÍDUO MEDIDO NAS MOLDURAS: 0.00 px
+
+registro do código ([alinha] nos logs; coordenadas exatas, resíduo = distância à linha grossa):
+  PB1  chapa  painel (120, 180, 840, 900): (120, 180) – (840, 900)  resíduo 0.00 px
+  PB1  chapa  painel (1080, 180, 1800, 900): (1080, 180) – (1800, 900)  resíduo 0.00 px
+  PB1  zona   linha de baixo B (B1): (120, 900) – (1800, 1020)  resíduo 0.00 px
+  PB1  origem B1-7 sombras (600, 540): (600, 540) – (600, 540)  resíduo 0.00 px
+  PB1  faixa  borda vertical |x| = ε: (360, 180) – (360, 900)  resíduo 0.00 px
+  PB1  faixa  borda vertical |x| = ε: (840, 180) – (840, 900)  resíduo 0.00 px
+  PB1  faixa  borda horizontal |y| = ε: (120, 300) – (1080, 300)  resíduo 0.00 px
+  PB1  faixa  borda horizontal |y| = ε: (120, 780) – (1080, 780)  resíduo 0.00 px
+  PB1  zona   coluna (B1-7): (1080, 180) – (1920, 1020)  resíduo 0.00 px
+  PB2  chapa  A (B2): (120, 180) – (1080, 900)  resíduo 0.00 px
+  PB2  zona   coluna A (B2): (1080, 180) – (1920, 1020)  resíduo 0.00 px
+  PB2  zona   linha de baixo B (B2): (120, 900) – (1800, 1020)  resíduo 0.00 px
+  PB3  zona   linha de baixo B (B3): (120, 900) – (1800, 1020)  resíduo 0.00 px
+  PB3  chapa  painel (120, 300, 600, 780): (120, 300) – (600, 780)  resíduo 0.00 px
+  PB3  chapa  painel (720, 300, 1200, 780): (720, 300) – (1200, 780)  resíduo 0.00 px
+  PB3  chapa  painel (1320, 300, 1800, 780): (1320, 300) – (1800, 780)  resíduo 0.00 px
+  PB3  zona   títulos C (B3): (120, 780) – (1800, 1020)  resíduo 0.00 px
+  PB3  zona   página (B3-3): (120, 180) – (1800, 1020)  resíduo 0.00 px
+  PB4  zona   linha de baixo B (B4): (120, 900) – (1800, 1020)  resíduo 0.00 px
+  PB4  chapa  A (B4-5): (120, 180) – (1080, 900)  resíduo 0.00 px
+  PB4  zona   coluna A (B4-5): (1080, 180) – (1920, 1020)  resíduo 0.00 px
+  PB5  chapa  A (B5-1): (120, 180) – (1080, 900)  resíduo 0.00 px
+  PB5  zona   coluna A (B5-1): (1080, 180) – (1920, 1020)  resíduo 0.00 px
+  PB5  zona   linha de baixo B (B5): (120, 900) – (1800, 1020)  resíduo 0.00 px
+  PB5  origem B5-3 gráfico esquerdo (480, 540): (480, 540) – (480, 540)  resíduo 0.00 px
+  PB5  origem B5-3 gráfico direito (1440, 540): (1440, 540) – (1440, 540)  resíduo 0.00 px
+  PB6  chapa  A (B6): (120, 180) – (1080, 900)  resíduo 0.00 px
+  PB6  zona   coluna A (B6): (1080, 180) – (1920, 1020)  resíduo 0.00 px
+  PB7  zona   coluna (B7-1): (1200, 180) – (1920, 1020)  resíduo 0.00 px
+  PB7  origem B7-1 quina da célula (480, 420): (480, 420) – (480, 420)  resíduo 0.00 px
+  PB7  origem B7-1 quina da célula (480, 780): (480, 780) – (480, 780)  resíduo 0.00 px
+  PB7  origem B7-1 quina da célula (960, 420): (960, 420) – (960, 420)  resíduo 0.00 px
+  PB7  origem B7-1 quina da célula (960, 780): (960, 780) – (960, 780)  resíduo 0.00 px
+  PB7  origem B7-2 quina (360, 780): (360, 780) – (360, 780)  resíduo 0.00 px
+  PB7  zona   coluna (B7-2): (840, 180) – (1920, 1020)  resíduo 0.00 px
+  PB7  zona   títulos C (B7): (120, 780) – (1800, 1020)  resíduo 0.00 px
+  PB7  chapa  A (B7-4): (120, 180) – (1080, 900)  resíduo 0.00 px
+  PB7  zona   coluna A (B7-4): (1080, 180) – (1920, 1020)  resíduo 0.00 px
+  PH   chapa  A (H): (120, 180) – (1080, 900)  resíduo 0.00 px
+  PH   zona   coluna A (H): (1080, 180) – (1920, 1020)  resíduo 0.00 px
+  PS   chapa  A (S): (120, 180) – (1080, 900)  resíduo 0.00 px
+  PS   zona   coluna A (S): (1080, 180) – (1920, 1020)  resíduo 0.00 px

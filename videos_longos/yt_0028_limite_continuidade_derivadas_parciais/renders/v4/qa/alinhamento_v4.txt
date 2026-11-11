@@ -1,0 +1,199 @@
+yt_0028 v4 · alinhamento (§8.2) — fundo violeta liso, grade do eixo (papel.py v2); stills 1080p dos 37 alvos; critério ≤ 1 px
+por painel: fase da grade medida (picos do perfil de brilho; desvio mediano à grade prevista pela origem do eixo),
+moldura nos 4 lados (centro dos pixels claros) contra a linha da grade, origem contra o nó medido.
+
+01 PH   painel (120, 180, 1080, 900) origem (600, 540) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (34 linhas) · y +0.00 (24 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «H (x, −y)» (origem (600, 540) 120 px/u, quadradinho 30 px): 164 setas, centro × nó: resíduo 0.00 px
+02 PH   painel (120, 180, 1080, 900) origem (600, 540) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (31 linhas) · y +0.00 (24 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «H (x, −y)» (origem (600, 540) 120 px/u, quadradinho 30 px): 164 setas, centro × nó: resíduo 0.00 px
+03 PB1  painel (120, 180, 840, 900) origem (480, 540) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (19 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+03 PB1  painel (1080, 180, 1800, 900) origem (1260, 576) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (20 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B1 campo da aula (contexto)» (origem (480, 540) 144 px/u, quadradinho 36 px): 80 setas, centro × nó: resíduo 0.00 px
+04 PB1  painel (120, 180, 840, 900) origem (480, 540) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (19 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+04 PB1  painel (1080, 180, 1800, 900) origem (1260, 576) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (25 linhas) · y +0.00 (20 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B1 campo da aula (contexto)» (origem (480, 540) 144 px/u, quadradinho 36 px): 80 setas, centro × nó: resíduo 0.00 px
+05 PB1  painel (120, 180, 840, 900) origem (480, 540) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (15 linhas) · y +0.00 (14 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+05 PB1  painel (1080, 180, 1800, 900) origem (1440, 540) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (17 linhas) · y +0.00 (16 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B1 campo da aula (contexto)» (origem (480, 540) 144 px/u, quadradinho 36 px): 80 setas, centro × nó: resíduo 0.00 px
+06 PB1  painel (120, 180, 840, 900) origem (480, 540) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (19 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+06 PB1  painel (1080, 180, 1800, 900) origem (1260, 576) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (20 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B1 campo da aula (contexto)» (origem (480, 540) 144 px/u, quadradinho 36 px): 80 setas, centro × nó: resíduo 0.00 px
+07 PB1  tela cheia origem (600, 540) 240 px/u (quadradinho 60 px): fase da grade x +0.00 (32 linhas) · y +0.00 (16 linhas) → origem no nó: resíduo 0.00 px  → OK
+      rede «B1 campo da aula (contexto)» (origem (480, 540) 144 px/u, quadradinho 36 px): 80 setas, centro × nó: resíduo 0.00 px
+08 PB2  painel (120, 180, 1080, 900) origem (600, 540) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (31 linhas) · y +0.00 (24 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B2 campo das diagonais (proporcional)» (origem (600, 540) 120 px/u, quadradinho 30 px): 140 setas, centro × nó: resíduo 0.00 px
+      rede «B2-3 G (painel)» (origem (480, 540) 144 px/u, quadradinho 36 px): 68 setas, centro × nó: resíduo 0.00 px
+09 PB2  painel (120, 180, 840, 900) origem (480, 540) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (19 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+09 PB2  painel (1080, 180, 1800, 900) origem (1440, 576) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (19 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B2 campo das diagonais (proporcional)» (origem (600, 540) 120 px/u, quadradinho 30 px): 140 setas, centro × nó: resíduo 0.00 px
+      rede «B2-3 G (painel)» (origem (480, 540) 144 px/u, quadradinho 36 px): 68 setas, centro × nó: resíduo 0.00 px
+      rede «B2-4 K (contexto, × 2)» (origem (480, 540) 144 px/u, quadradinho 36 px): 45 setas, centro × nó: resíduo 0.00 px
+10 PB2  painel (120, 180, 840, 900) origem (480, 540) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (19 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+10 PB2  painel (1080, 180, 1800, 900) origem (1440, 576) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (19 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B2 campo das diagonais (proporcional)» (origem (600, 540) 120 px/u, quadradinho 30 px): 140 setas, centro × nó: resíduo 0.00 px
+      rede «B2-3 G (painel)» (origem (480, 540) 144 px/u, quadradinho 36 px): 68 setas, centro × nó: resíduo 0.00 px
+      rede «B2-4 K (contexto, × 2)» (origem (480, 540) 144 px/u, quadradinho 36 px): 45 setas, centro × nó: resíduo 0.00 px
+11 PB3  painel (120, 180, 840, 900) origem (480, 540) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (19 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+11 PB3  painel (1080, 180, 1800, 900) origem (1260, 576) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (19 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B3-1 campo da aula (contexto)» (origem (480, 540) 144 px/u, quadradinho 36 px): 70 setas, centro × nó: resíduo 0.00 px
+      rede «B3 ① carga» (origem (360, 540) 60 px/u, quadradinho 30 px): 44 setas, centro × nó: resíduo 0.00 px
+      rede «B3 ② G» (origem (960, 540) 60 px/u, quadradinho 30 px): 30 setas, centro × nó: resíduo 0.00 px
+      rede «B3 ③ salto» (origem (1560, 540) 60 px/u, quadradinho 30 px): 34 setas, centro × nó: resíduo 0.00 px
+12 PB3  painel (120, 300, 600, 780) origem (360, 540) 60 px/u (quadradinho 30 px): fase da grade x +0.00 (15 linhas) · y +0.00 (15 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+12 PB3  painel (720, 300, 1200, 780) origem (960, 540) 60 px/u (quadradinho 30 px): fase da grade x +0.00 (15 linhas) · y +0.00 (15 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+12 PB3  painel (1320, 300, 1800, 780) origem (1560, 540) 60 px/u (quadradinho 30 px): fase da grade x +0.00 (15 linhas) · y +0.00 (15 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B3-1 campo da aula (contexto)» (origem (480, 540) 144 px/u, quadradinho 36 px): 70 setas, centro × nó: resíduo 0.00 px
+      rede «B3 ① carga» (origem (360, 540) 60 px/u, quadradinho 30 px): 44 setas, centro × nó: resíduo 0.00 px
+      rede «B3 ② G» (origem (960, 540) 60 px/u, quadradinho 30 px): 30 setas, centro × nó: resíduo 0.00 px
+      rede «B3 ③ salto» (origem (1560, 540) 60 px/u, quadradinho 30 px): 34 setas, centro × nó: resíduo 0.00 px
+13 PB3  tela cheia origem (960, 540) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (63 linhas) · y +0.00 (31 linhas) → origem no nó: resíduo 0.00 px  → OK
+      rede «B3-1 campo da aula (contexto)» (origem (480, 540) 144 px/u, quadradinho 36 px): 70 setas, centro × nó: resíduo 0.00 px
+      rede «B3 ① carga» (origem (360, 540) 60 px/u, quadradinho 30 px): 44 setas, centro × nó: resíduo 0.00 px
+      rede «B3 ② G» (origem (960, 540) 60 px/u, quadradinho 30 px): 30 setas, centro × nó: resíduo 0.00 px
+      rede «B3 ③ salto» (origem (1560, 540) 60 px/u, quadradinho 30 px): 34 setas, centro × nó: resíduo 0.00 px
+14 PB4  painel (120, 180, 840, 900) origem (480, 540) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (19 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+14 PB4  painel (1080, 180, 1800, 900) origem (1260, 648) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (19 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B4 campo da aula (contexto)» (origem (480, 540) 144 px/u, quadradinho 36 px): 80 setas, centro × nó: resíduo 0.00 px
+15 PB4  painel (120, 180, 840, 900) origem (480, 540) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (19 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+15 PB4  painel (1080, 180, 1800, 900) origem (1296, 684) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (19 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B4 campo da aula (contexto)» (origem (480, 540) 144 px/u, quadradinho 36 px): 80 setas, centro × nó: resíduo 0.00 px
+16 PB4  painel (120, 180, 840, 900) origem (480, 540) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (19 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+16 PB4  painel (1080, 180, 1800, 900) origem (1296, 648) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (19 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B4 campo da aula (contexto)» (origem (480, 540) 144 px/u, quadradinho 36 px): 80 setas, centro × nó: resíduo 0.00 px
+17 PB4  painel (120, 180, 1080, 900) origem (600, 540) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (31 linhas) · y +0.00 (24 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B4 campo da aula (contexto)» (origem (480, 540) 144 px/u, quadradinho 36 px): 80 setas, centro × nó: resíduo 0.00 px
+      rede «B4-5 palco (contexto)» (origem (600, 540) 120 px/u, quadradinho 30 px): 135 setas, centro × nó: resíduo 0.00 px
+18 PB5  painel (120, 180, 1080, 900) origem (600, 540) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (31 linhas) · y +0.00 (24 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B5 campo das diagonais» (origem (600, 540) 120 px/u, quadradinho 30 px): 140 setas, centro × nó: resíduo 0.00 px
+19 PB5  painel (120, 180, 840, 900) origem (480, 540) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (19 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+19 PB5  painel (1080, 180, 1800, 900) origem (1440, 576) 144 px/u (quadradinho 36 px): fase da grade x +0.00 (19 linhas) · y +0.00 (20 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B5 campo das diagonais» (origem (600, 540) 120 px/u, quadradinho 30 px): 140 setas, centro × nó: resíduo 0.00 px
+      rede «B5-2 G (painel)» (origem (480, 540) 144 px/u, quadradinho 36 px): 64 setas, centro × nó: resíduo 0.00 px
+20 PB5  painel (120, 180, 840, 900) origem (480, 540) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (23 linhas) · y +0.00 (24 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+20 PB5  painel (1080, 180, 1800, 900) origem (1440, 540) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (23 linhas) · y +0.00 (24 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B5 campo das diagonais» (origem (600, 540) 120 px/u, quadradinho 30 px): 140 setas, centro × nó: resíduo 0.00 px
+      rede «B5-2 G (painel)» (origem (480, 540) 144 px/u, quadradinho 36 px): 64 setas, centro × nó: resíduo 0.00 px
+      rede «B5-4 campo da aula (200 px/u)» (origem (480, 540) 180 px/u, quadradinho 45 px): 35 setas, centro × nó: resíduo 0.00 px
+21 PB5  painel (120, 180, 840, 900) origem (480, 540) 180 px/u (quadradinho 45 px): fase da grade x +0.00 (15 linhas) · y +0.00 (16 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+21 PB5  painel (1080, 180, 1800, 900) origem (1170, 540) 180 px/u (quadradinho 45 px): fase da grade x +0.00 (15 linhas) · y +0.00 (16 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B5 campo das diagonais» (origem (600, 540) 120 px/u, quadradinho 30 px): 140 setas, centro × nó: resíduo 0.00 px
+      rede «B5-2 G (painel)» (origem (480, 540) 144 px/u, quadradinho 36 px): 64 setas, centro × nó: resíduo 0.00 px
+      rede «B5-4 campo da aula (200 px/u)» (origem (480, 540) 180 px/u, quadradinho 45 px): 35 setas, centro × nó: resíduo 0.00 px
+22 PB5  tela cheia origem (600, 840) 88 px/u (quadradinho 22 px): fase da grade x +0.00 (86 linhas) · y +0.00 (43 linhas) → origem no nó: resíduo 0.00 px  → OK
+      rede «B5 campo das diagonais» (origem (600, 540) 120 px/u, quadradinho 30 px): 140 setas, centro × nó: resíduo 0.00 px
+      rede «B5-2 G (painel)» (origem (480, 540) 144 px/u, quadradinho 36 px): 64 setas, centro × nó: resíduo 0.00 px
+      rede «B5-4 campo da aula (200 px/u)» (origem (480, 540) 180 px/u, quadradinho 45 px): 35 setas, centro × nó: resíduo 0.00 px
+23 PB6  painel (120, 180, 1080, 900) origem (600, 540) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (31 linhas) · y +0.00 (24 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B6 campo da aula» (origem (600, 540) 120 px/u, quadradinho 30 px): 165 setas, centro × nó: resíduo 0.00 px
+24 PB6  painel (120, 180, 1080, 900) origem (600, 540) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (31 linhas) · y +0.00 (24 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B6 campo da aula» (origem (600, 540) 120 px/u, quadradinho 30 px): 165 setas, centro × nó: resíduo 0.00 px
+25 PB6  painel (120, 180, 1080, 900) origem (600, 540) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (31 linhas) · y +0.00 (24 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B6 campo da aula» (origem (600, 540) 120 px/u, quadradinho 30 px): 165 setas, centro × nó: resíduo 0.00 px
+26 PB6  painel (120, 180, 1080, 900) origem (600, 540) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (31 linhas) · y +0.00 (24 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B6 campo da aula» (origem (600, 540) 120 px/u, quadradinho 30 px): 165 setas, centro × nó: resíduo 0.00 px
+27 PB6  painel (120, 180, 1080, 900) origem (600, 540) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (31 linhas) · y +0.00 (24 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B6 campo da aula» (origem (600, 540) 120 px/u, quadradinho 30 px): 165 setas, centro × nó: resíduo 0.00 px
+28 PB6  painel (120, 180, 1080, 900) origem (600, 540) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (31 linhas) · y +0.00 (24 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B6 campo da aula» (origem (600, 540) 120 px/u, quadradinho 30 px): 165 setas, centro × nó: resíduo 0.00 px
+29 PB6  painel (120, 180, 1080, 900) origem (600, 540) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (31 linhas) · y +0.00 (24 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B6 campo da aula» (origem (600, 540) 120 px/u, quadradinho 30 px): 165 setas, centro × nó: resíduo 0.00 px
+30 PB7  tela cheia origem (480, 420) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (63 linhas) · y +0.00 (31 linhas) → origem no nó: resíduo 0.00 px  → OK
+31 PB7  tela cheia origem (360, 780) 150 px/u (quadradinho 37.5 px): fase da grade x +0.00 (51 linhas) · y +0.00 (24 linhas) → origem no nó: resíduo 0.00 px  → OK
+      rede «B7 cartão GIRA» (origem (360, 540) 60 px/u, quadradinho 30 px): 32 setas, centro × nó: resíduo 0.00 px
+      rede «B7 cartão MUDA DE ÁREA» (origem (960, 540) 60 px/u, quadradinho 30 px): 32 setas, centro × nó: resíduo 0.00 px
+      rede «B7 cartão DEFORMA» (origem (1560, 540) 60 px/u, quadradinho 30 px): 32 setas, centro × nó: resíduo 0.00 px
+32 PB7  painel (120, 300, 600, 780) origem (360, 540) 60 px/u (quadradinho 30 px): fase da grade x +0.00 (15 linhas) · y +0.00 (15 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+32 PB7  painel (720, 300, 1200, 780) origem (960, 540) 60 px/u (quadradinho 30 px): fase da grade x +0.00 (16 linhas) · y +0.00 (16 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+32 PB7  painel (1320, 300, 1800, 780) origem (1560, 540) 60 px/u (quadradinho 30 px): fase da grade x +0.00 (15 linhas) · y +0.00 (16 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B7 cartão GIRA» (origem (360, 540) 60 px/u, quadradinho 30 px): 32 setas, centro × nó: resíduo 0.00 px
+      rede «B7 cartão MUDA DE ÁREA» (origem (960, 540) 60 px/u, quadradinho 30 px): 32 setas, centro × nó: resíduo 0.00 px
+      rede «B7 cartão DEFORMA» (origem (1560, 540) 60 px/u, quadradinho 30 px): 32 setas, centro × nó: resíduo 0.00 px
+33 PB7  painel (120, 300, 600, 780) origem (360, 540) 60 px/u (quadradinho 30 px): fase da grade x +0.00 (15 linhas) · y +0.00 (15 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+33 PB7  painel (720, 300, 1200, 780) origem (960, 540) 60 px/u (quadradinho 30 px): fase da grade x +0.00 (16 linhas) · y +0.00 (16 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+33 PB7  painel (1320, 300, 1800, 780) origem (1560, 540) 60 px/u (quadradinho 30 px): fase da grade x +0.00 (15 linhas) · y +0.00 (16 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B7 cartão GIRA» (origem (360, 540) 60 px/u, quadradinho 30 px): 32 setas, centro × nó: resíduo 0.00 px
+      rede «B7 cartão MUDA DE ÁREA» (origem (960, 540) 60 px/u, quadradinho 30 px): 32 setas, centro × nó: resíduo 0.00 px
+      rede «B7 cartão DEFORMA» (origem (1560, 540) 60 px/u, quadradinho 30 px): 32 setas, centro × nó: resíduo 0.00 px
+34 PB7  painel (120, 300, 600, 780) origem (360, 540) 60 px/u (quadradinho 30 px): fase da grade x +0.00 (15 linhas) · y +0.00 (15 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+34 PB7  painel (720, 300, 1200, 780) origem (960, 540) 60 px/u (quadradinho 30 px): fase da grade x +0.00 (16 linhas) · y +0.00 (16 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+34 PB7  painel (1320, 300, 1800, 780) origem (1560, 540) 60 px/u (quadradinho 30 px): fase da grade x +0.00 (15 linhas) · y +0.00 (16 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B7 cartão GIRA» (origem (360, 540) 60 px/u, quadradinho 30 px): 32 setas, centro × nó: resíduo 0.00 px
+      rede «B7 cartão MUDA DE ÁREA» (origem (960, 540) 60 px/u, quadradinho 30 px): 32 setas, centro × nó: resíduo 0.00 px
+      rede «B7 cartão DEFORMA» (origem (1560, 540) 60 px/u, quadradinho 30 px): 32 setas, centro × nó: resíduo 0.00 px
+      rede «B7-4 gancho (x, −y)» (origem (600, 540) 120 px/u, quadradinho 30 px): 164 setas, centro × nó: resíduo 0.00 px
+35 PB7  painel (120, 180, 1080, 900) origem (600, 540) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (34 linhas) · y +0.00 (24 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B7 cartão GIRA» (origem (360, 540) 60 px/u, quadradinho 30 px): 32 setas, centro × nó: resíduo 0.00 px
+      rede «B7 cartão MUDA DE ÁREA» (origem (960, 540) 60 px/u, quadradinho 30 px): 32 setas, centro × nó: resíduo 0.00 px
+      rede «B7 cartão DEFORMA» (origem (1560, 540) 60 px/u, quadradinho 30 px): 32 setas, centro × nó: resíduo 0.00 px
+      rede «B7-4 gancho (x, −y)» (origem (600, 540) 120 px/u, quadradinho 30 px): 164 setas, centro × nó: resíduo 0.00 px
+36 PB7  painel (120, 180, 1080, 900) origem (600, 540) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (31 linhas) · y +0.00 (24 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «B7 cartão GIRA» (origem (360, 540) 60 px/u, quadradinho 30 px): 32 setas, centro × nó: resíduo 0.00 px
+      rede «B7 cartão MUDA DE ÁREA» (origem (960, 540) 60 px/u, quadradinho 30 px): 32 setas, centro × nó: resíduo 0.00 px
+      rede «B7 cartão DEFORMA» (origem (1560, 540) 60 px/u, quadradinho 30 px): 32 setas, centro × nó: resíduo 0.00 px
+      rede «B7-4 gancho (x, −y)» (origem (600, 540) 120 px/u, quadradinho 30 px): 164 setas, centro × nó: resíduo 0.00 px
+37 PS   painel (120, 180, 1080, 900) origem (600, 540) 120 px/u (quadradinho 30 px): fase da grade x +0.00 (31 linhas) · y +0.00 (24 linhas) → origem no nó: resíduo 0.00 px
+      moldura × linha da grade: esq -0.00  dir -0.00  topo -0.00  base -0.00  → OK
+      rede «S modelo linear (contexto)» (origem (600, 540) 120 px/u, quadradinho 30 px): 148 setas, centro × nó: resíduo 0.00 px
+
+faixas (bordas) contra as linhas da grade do mesmo lote ([alinha] faixa × [alinha] grade):
+  PB1  borda vertical |x| = ε: (360, 180) – (360, 900) × grade origem (600, 540), quadradinho 60: resíduo 0.00 px
+  PB1  borda vertical |x| = ε: (840, 180) – (840, 900) × grade origem (480, 540), quadradinho 36: resíduo 0.00 px
+  PB1  borda horizontal |y| = ε: (120, 300) – (1080, 300) × grade origem (600, 540), quadradinho 60: resíduo 0.00 px
+  PB1  borda horizontal |y| = ε: (120, 780) – (1080, 780) × grade origem (600, 540), quadradinho 60: resíduo 0.00 px
+
+eixos: nos alvos 07, 20, 22, 30 e 31 os eixos passam pela origem da vista, que é a origem da grade (mesma Vista) → resíduo 0 por construção;
+a fase medida acima confirma o nó da origem no pixel.
+
+PIOR: fase/origem 0.00 px · moldura 0.00 px · setas 0.00 px · faixas 0.00 px

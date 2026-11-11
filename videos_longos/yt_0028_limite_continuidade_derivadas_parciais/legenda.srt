@@ -1,0 +1,1284 @@
+1
+00:00:00,100 --> 00:00:02,490
+Lembra do campo que
+fechou o episódio passado?
+
+2
+00:00:02,540 --> 00:00:06,650
+A componente horizontal é o
+próprio x, e a vertical é menos y.
+
+3
+00:00:06,940 --> 00:00:11,040
+Coloca um quadradinho de fluido no meio
+e faz as contas que a gente já conhece.
+
+4
+00:00:11,080 --> 00:00:14,740
+O rotacional dá zero, em todo
+ponto: nenhuma rodinha gira.
+
+5
+00:00:14,780 --> 00:00:18,280
+O divergente também dá zero:
+nenhum pedacinho muda de área.
+
+6
+00:00:18,320 --> 00:00:21,140
+Então, pelas duas medidas,
+não era para acontecer nada,
+
+7
+00:00:21,180 --> 00:00:23,830
+certo? Só que agora deixa o fluido andar…
+
+8
+00:00:23,920 --> 00:00:28,520
+e olha o que acontece: o quadradinho
+estica para os lados e achata na vertical.
+
+9
+00:00:28,560 --> 00:00:31,380
+A área continua a mesma,
+e ele não girou nem um grau.
+
+10
+00:00:31,420 --> 00:00:36,320
+Mas a forma mudou completamente. Então tem
+alguma coisa nesse campo que o rotacional
+
+11
+00:00:36,360 --> 00:00:39,260
+e o divergente não enxergam.
+Que número mede isso?
+
+12
+00:00:39,300 --> 00:00:43,380
+E de onde ele sai? A resposta está
+nas derivadas parciais do campo.
+
+13
+00:00:43,420 --> 00:00:46,020
+Só que, para usar essas
+derivadas com segurança,
+
+14
+00:00:46,060 --> 00:00:50,310
+a gente precisa começar pelo chão:
+o que quer dizer chegar perto de um ponto.
+
+15
+00:00:50,380 --> 00:00:53,060
+Fala, pessoal! Bem-vindos ao Parallax Lab!
+
+16
+00:00:53,100 --> 00:00:56,220
+Esse é o terceiro episódio da
+nossa série de Cálculo III.
+
+17
+00:00:56,260 --> 00:00:59,180
+Hoje a gente olha um campo
+vetorial bem de pertinho.
+
+18
+00:00:59,220 --> 00:01:03,340
+Porque a seta de um ponto não basta:
+é preciso entender as setas vizinhas.
+
+19
+00:01:03,380 --> 00:01:06,720
+Para isso, entram três ideias,
+uma apoiada na outra.
+
+20
+00:01:06,760 --> 00:01:10,220
+Primeiro, o limite: o que quer
+dizer chegar perto de um ponto,
+
+21
+00:01:10,260 --> 00:01:13,420
+com o épsilon e o delta
+desenhados, e não só escritos.
+
+22
+00:01:13,460 --> 00:01:16,620
+Depois, a continuidade:
+quando a seta não dá pulo,
+
+23
+00:01:16,660 --> 00:01:20,420
+e três jeitos de ela falhar. E,
+por fim, as derivadas parciais,
+
+24
+00:01:20,460 --> 00:01:23,220
+que medem como a seta
+muda em cada direção.
+
+25
+00:01:23,260 --> 00:01:27,060
+No meio do caminho tem um engano, em
+que as derivadas parciais mentem sobre o
+
+26
+00:01:27,100 --> 00:01:31,000
+campo. E, no final, a gente junta
+tudo numa tabela de quatro números,
+
+27
+00:01:31,040 --> 00:01:35,800
+que revela o giro, a mudança de área e
+aquela deformação do quadradinho que ficou
+
+28
+00:01:35,840 --> 00:01:38,460
+sem explicação. Então
+vamos começar pelo chão:
+
+29
+00:01:38,500 --> 00:01:41,500
+o que é chegar perto?
+Vamos usar duas telas.
+
+30
+00:01:41,540 --> 00:01:44,340
+Na da esquerda está o campo,
+e é ali que você anda:
+
+31
+00:01:44,380 --> 00:01:47,120
+tem um ponto fixo, e você
+vai se aproximando dele.
+
+32
+00:01:47,160 --> 00:01:49,820
+A seta do lugar onde você
+está fica em destaque.
+
+33
+00:01:49,860 --> 00:01:52,660
+Na da direita, eu trago essa
+seta para a mesma origem,
+
+34
+00:01:52,700 --> 00:01:55,180
+para comparar só onde a ponta dela chega.
+
+35
+00:01:55,220 --> 00:01:59,220
+Uma tela mostra por onde você anda;
+a outra, onde a seta chega.
+
+36
+00:01:59,260 --> 00:02:03,540
+Conforme você chega perto do ponto,
+a ponta da seta vai chegando perto de uma
+
+37
+00:02:03,580 --> 00:02:07,000
+seta-alvo. Essa seta-alvo
+é a candidata a limite.
+
+38
+00:02:07,040 --> 00:02:11,080
+Os dois números de baixo contam a
+história: a distância até o ponto encolhe,
+
+39
+00:02:11,120 --> 00:02:14,140
+e a distância da ponta
+até o alvo encolhe junto.
+
+40
+00:02:14,180 --> 00:02:16,720
+Só que "encolhe junto" ainda é vago.
+
+41
+00:02:16,760 --> 00:02:20,090
+Perto quanto? Então a
+definição vira um desafio.
+
+42
+00:02:20,140 --> 00:02:23,060
+Primeiro, alguém escolhe
+uma tolerância na chegada:
+
+43
+00:02:23,100 --> 00:02:26,080
+um disquinho de raio épsilon
+em volta da ponta do alvo.
+
+44
+00:02:26,120 --> 00:02:29,520
+É como se dissesse: quero
+todas as respostas aqui dentro.
+
+45
+00:02:29,560 --> 00:02:34,080
+Qualquer épsilon pode ser escolhido,
+por isso a definição começa com "para todo
+
+46
+00:02:34,120 --> 00:02:38,460
+épsilon". Depois é a sua vez: você
+responde com um disquinho de raio delta em
+
+47
+00:02:38,500 --> 00:02:41,100
+volta do ponto. E olha o
+que acontece do outro lado:
+
+48
+00:02:41,140 --> 00:02:44,740
+cada ponto do seu disco manda a
+ponta da seta para algum lugar,
+
+49
+00:02:44,780 --> 00:02:47,600
+e todas essas pontas
+juntas formam uma mancha.
+
+50
+00:02:47,640 --> 00:02:50,990
+A pergunta é uma só:
+a mancha cabe no disco épsilon?
+
+51
+00:02:51,060 --> 00:02:53,800
+Com delta igual a zero
+vírgula sete, não cabe:
+
+52
+00:02:53,840 --> 00:02:56,600
+um monte de pontas escapa.
+Diminui o delta…
+
+53
+00:02:56,640 --> 00:02:59,580
+e a mancha encolhe junto.
+Em zero vírgula quatro um,
+
+54
+00:02:59,620 --> 00:03:04,420
+ela fica inteira por dentro. Achou:
+é isso que "existe delta" quer dizer.
+
+55
+00:03:04,460 --> 00:03:08,620
+Se o desafio aperta para meio,
+você aperta para zero vírgula dois um.
+
+56
+00:03:08,660 --> 00:03:10,940
+Para um quarto, zero vírgula um zero.
+
+57
+00:03:10,980 --> 00:03:15,080
+O delta depende do épsilon, e o limite
+existe quando você sempre consegue
+
+58
+00:03:15,120 --> 00:03:19,480
+responder. E tem um detalhe no seu
+disco: o próprio ponto fica de fora.
+
+59
+00:03:19,520 --> 00:03:24,100
+É o "maior que zero" da definição.
+O limite só olha para quem está chegando,
+
+60
+00:03:24,140 --> 00:03:26,360
+nunca para o que acontece
+em cima do ponto.
+
+61
+00:03:26,400 --> 00:03:30,760
+Aliás, o ponto nem precisa estar no
+domínio: basta ter pontos do domínio tão
+
+62
+00:03:30,800 --> 00:03:35,100
+perto dele quanto você quiser.
+O nome disso é ponto de acumulação.
+
+63
+00:03:35,140 --> 00:03:38,520
+Já um ponto do domínio sozinho,
+sem vizinhos, não serve:
+
+64
+00:03:38,560 --> 00:03:43,620
+ninguém chega perto dele. Agora sim,
+escrito: a seta-alvo é o limite quando,
+
+65
+00:03:43,660 --> 00:03:47,800
+para todo épsilon positivo,
+existe um delta positivo tal que,
+
+66
+00:03:47,840 --> 00:03:52,340
+para todo ponto do domínio a uma distância
+maior que zero e menor que delta,
+
+67
+00:03:52,380 --> 00:03:54,920
+a seta fica a menos de épsilon do alvo.
+
+68
+00:03:54,960 --> 00:03:57,640
+A metade da esquerda
+fala de onde você anda.
+
+69
+00:03:57,680 --> 00:04:00,960
+A da direita, de onde a
+seta chega. E tem um atalho.
+
+70
+00:04:01,000 --> 00:04:04,140
+Se a ponta está no disco
+épsilon, as duas sombras dela,
+
+71
+00:04:04,180 --> 00:04:08,200
+a horizontal e a vertical, ficam a
+menos de épsilon das sombras do alvo.
+
+72
+00:04:08,240 --> 00:04:11,360
+E o contrário também vale:
+se as duas sombras estão perto,
+
+73
+00:04:11,400 --> 00:04:15,160
+a ponta cai num quadrado, que cabe
+num disco só um pouquinho maior.
+
+74
+00:04:15,200 --> 00:04:19,500
+Então o limite de um campo existe
+exatamente quando o limite de cada
+
+75
+00:04:19,540 --> 00:04:24,080
+componente existe, e aí é o limite de
+funções de várias variáveis que você já
+
+76
+00:04:24,120 --> 00:04:27,160
+conhece. Mas guarda uma coisa:
+com várias variáveis,
+
+77
+00:04:27,200 --> 00:04:31,200
+o caminho pelo qual você chega pode
+mudar completamente a resposta.
+
+78
+00:04:31,240 --> 00:04:34,620
+E é justamente isso que acontece
+com este campo encrenqueiro.
+
+79
+00:04:34,660 --> 00:04:38,580
+Todas as setas são horizontais.
+Nos eixos, não tem seta nenhuma;
+
+80
+00:04:38,620 --> 00:04:42,900
+nas diagonais, as setas têm tamanho um:
+numa delas apontam para a direita,
+
+81
+00:04:42,940 --> 00:04:46,640
+na outra, para a esquerda. Só que a
+resposta muda com a direção por onde a
+
+82
+00:04:46,680 --> 00:04:50,020
+gente chega. Vem andando até
+a origem pelo eixo horizontal:
+
+83
+00:04:50,060 --> 00:04:53,370
+a seta é zero o caminho todo.
+Pela diagonal de subida:
+
+84
+00:04:53,420 --> 00:04:56,540
+um, para a direita. Pela
+outra: um, para a esquerda.
+
+85
+00:04:56,580 --> 00:05:00,480
+Numa reta qualquer pela origem,
+o campo vale o dobro da inclinação,
+
+86
+00:05:00,520 --> 00:05:03,040
+dividido por um mais a
+inclinação ao quadrado.
+
+87
+00:05:03,080 --> 00:05:05,780
+Três caminhos, três resultados diferentes.
+
+88
+00:05:05,820 --> 00:05:09,520
+Muda a reta, muda o valor. E dá para
+ver isso de um jeito mais bonito.
+
+89
+00:05:09,560 --> 00:05:14,140
+Em coordenadas polares, a componente
+horizontal vira o seno do dobro do ângulo.
+
+90
+00:05:14,180 --> 00:05:17,300
+O campo não depende da
+distância, só da direção.
+
+91
+00:05:17,340 --> 00:05:20,720
+Então dá uma volta num círculo
+minúsculo em volta da origem:
+
+92
+00:05:20,760 --> 00:05:24,740
+a ponta da seta varre o segmento
+inteiro, de menos um até um.
+
+93
+00:05:24,780 --> 00:05:29,240
+Diminui o raio… e diminui de novo:
+acontece exatamente a mesma coisa,
+
+94
+00:05:29,280 --> 00:05:32,540
+por menor que seja o círculo.
+Agora joga o desafio.
+
+95
+00:05:32,580 --> 00:05:35,260
+Escolhe um alvo qualquer
+e um épsilon de meio.
+
+96
+00:05:35,300 --> 00:05:38,740
+O disco tem largura um,
+e o segmento tem largura dois:
+
+97
+00:05:38,780 --> 00:05:40,960
+não cabe, seja qual for o alvo.
+
+98
+00:05:41,000 --> 00:05:43,160
+Então não existe limite na origem.
+
+99
+00:05:43,200 --> 00:05:47,460
+E fica um cuidado: dois caminhos com
+valores diferentes provam que o limite não
+
+100
+00:05:47,500 --> 00:05:52,220
+existe. Mas todas as retas darem o mesmo
+valor ainda não provam que ele existe,
+
+101
+00:05:52,260 --> 00:05:54,860
+porque dá para chegar por
+uma curva. Olha este campo:
+
+102
+00:05:54,900 --> 00:05:57,340
+por qualquer reta, a seta vai para zero.
+
+103
+00:05:57,380 --> 00:06:00,540
+Mas, pela parábola, ela
+fica em meio o caminho todo.
+
+104
+00:06:00,580 --> 00:06:03,380
+Também não tem limite.
+Agora a continuidade.
+
+105
+00:06:03,420 --> 00:06:06,880
+A definição tem três pedaços,
+e cada um pode falhar.
+
+106
+00:06:06,920 --> 00:06:10,520
+Um: o ponto está no domínio,
+então a seta do ponto existe.
+
+107
+00:06:10,560 --> 00:06:15,600
+Dois: o limite ali existe. Três:
+o limite é igual à própria seta do
+
+108
+00:06:15,640 --> 00:06:20,200
+ponto. Na figura, é o mesmo desafio de
+antes, só que agora o disco épsilon fica
+
+109
+00:06:20,240 --> 00:06:22,900
+em volta da ponta da
+seta do próprio ponto.
+
+110
+00:06:22,940 --> 00:06:25,620
+No nosso campo, a mancha cabe. Contínuo.
+
+111
+00:06:25,660 --> 00:06:29,940
+Agora, três jeitos de dar errado, e em
+cada um você vai chegando no ponto para
+
+112
+00:06:29,980 --> 00:06:32,960
+ver o que a seta faz.
+No campo elétrico de uma carga,
+
+113
+00:06:33,000 --> 00:06:37,040
+o ponto da carga nem está no domínio,
+e quanto mais você chega perto,
+
+114
+00:06:37,080 --> 00:06:41,480
+mais a seta cresce. Falha o primeiro
+pedaço, e a pergunta nem se faz;
+
+115
+00:06:41,520 --> 00:06:43,720
+em todo o resto, ele é contínuo.
+
+116
+00:06:43,760 --> 00:06:46,740
+No campo encrenqueiro,
+definido como zero na origem,
+
+117
+00:06:46,780 --> 00:06:51,200
+a seta existe, mas o limite não:
+dependendo do caminho por onde você chega,
+
+118
+00:06:51,240 --> 00:06:54,490
+a seta vai para a direita,
+para a esquerda ou para zero.
+
+119
+00:06:54,540 --> 00:06:58,600
+Falha o segundo. E neste aqui todas
+as setas apontam para a direita,
+
+120
+00:06:58,640 --> 00:07:02,280
+menos a do centro, que aponta para
+cima. Chegando de qualquer lado,
+
+121
+00:07:02,320 --> 00:07:06,060
+a seta é para a direita; só em
+cima do ponto ela vira para cima.
+
+122
+00:07:06,100 --> 00:07:10,670
+O limite existe e é a seta para a
+direita, mas a seta do ponto é outra.
+
+123
+00:07:10,740 --> 00:07:13,750
+Falha o terceiro: um salto
+bem em cima do ponto.
+
+124
+00:07:13,840 --> 00:07:18,620
+E, de novo, por componentes: o campo
+é contínuo exatamente quando cada
+
+125
+00:07:18,660 --> 00:07:23,440
+componente é contínua. Por isso quase todo
+campo que vem de fórmula é contínuo onde
+
+126
+00:07:23,480 --> 00:07:28,400
+está definido: somas, produtos, quocientes
+com denominador diferente de zero e
+
+127
+00:07:28,440 --> 00:07:31,860
+composições de funções
+contínuas continuam contínuas.
+
+128
+00:07:31,900 --> 00:07:35,620
+A primeira componente do nosso
+campo é uma constante mais senos:
+
+129
+00:07:35,660 --> 00:07:39,980
+contínua. E o campo da carga é um
+quociente: contínuo em todo lugar,
+
+130
+00:07:40,020 --> 00:07:43,980
+menos em cima da carga. Agora
+sim: medir como a seta muda.
+
+131
+00:07:44,020 --> 00:07:47,180
+Fica no ponto e anda só
+na horizontal, um passo.
+
+132
+00:07:47,220 --> 00:07:51,340
+A seta muda de uma para outra, e a
+diferença entre as duas é um vetor,
+
+133
+00:07:51,380 --> 00:07:53,640
+que liga a ponta velha à ponta nova.
+
+134
+00:07:53,680 --> 00:07:57,160
+Divide esse vetor pelo tamanho
+do passo e encolhe o passo.
+
+135
+00:07:57,200 --> 00:08:01,020
+Esse limite é a derivada parcial
+do campo na direção horizontal.
+
+136
+00:08:01,060 --> 00:08:05,500
+Com passo um, o quociente vale zero
+vírgula oito quatro e dois vírgula um
+
+137
+00:08:05,540 --> 00:08:09,980
+quatro. Com meio, zero vírgula
+nove seis e dois vírgula um seis.
+
+138
+00:08:10,020 --> 00:08:13,580
+Com passo cada vez menor,
+ele vai chegando em um e dois.
+
+139
+00:08:13,620 --> 00:08:16,320
+E olha a tela da chegada:
+andando na horizontal,
+
+140
+00:08:16,360 --> 00:08:20,860
+a ponta da seta desenha uma curva.
+A diferença é uma corda dessa curva,
+
+141
+00:08:20,900 --> 00:08:24,080
+e, dividida pelo passo,
+ela vira a seta tangente.
+
+142
+00:08:24,120 --> 00:08:27,200
+Então a derivada parcial
+é a velocidade da ponta,
+
+143
+00:08:27,240 --> 00:08:29,900
+quando você anda na
+horizontal com velocidade um.
+
+144
+00:08:29,940 --> 00:08:32,240
+E essa velocidade tem duas sombras.
+
+145
+00:08:32,280 --> 00:08:35,960
+A horizontal diz quanto muda a
+componente horizontal do campo:
+
+146
+00:08:36,000 --> 00:08:39,530
+um. A vertical diz quanto
+muda a componente vertical:
+
+147
+00:08:39,600 --> 00:08:44,460
+dois. Por isso a conta é por componentes:
+a derivada do campo é a derivada de
+
+148
+00:08:44,500 --> 00:08:47,210
+cada componente. Agora na vertical.
+
+149
+00:08:47,360 --> 00:08:51,380
+Andando para cima, a ponta anda num
+círculo, e o quociente vai chegando em
+
+150
+00:08:51,420 --> 00:08:55,880
+menos um e zero: a derivada na direção
+vertical aponta para a esquerda,
+
+151
+00:08:55,920 --> 00:09:00,160
+tangente ao círculo. Então a derivada
+parcial de um campo não é um número:
+
+152
+00:09:00,200 --> 00:09:04,280
+é um vetor, que diz como a seta
+muda quando você anda numa direção.
+
+153
+00:09:04,320 --> 00:09:08,880
+Na conta, a derivada na horizontal
+dá cosseno e dois cossenos mais seno,
+
+154
+00:09:08,920 --> 00:09:12,140
+da coordenada horizontal;
+no ponto, um e dois.
+
+155
+00:09:12,180 --> 00:09:16,460
+A derivada na vertical dá menos
+cosseno e seno da coordenada vertical;
+
+156
+00:09:16,500 --> 00:09:20,500
+no ponto, menos um e zero.
+A conta bate com o desenho.
+
+157
+00:09:20,540 --> 00:09:24,720
+E, num campo no espaço, aparece uma
+terceira, na direção da profundidade,
+
+158
+00:09:24,760 --> 00:09:27,300
+com a mesma ideia.
+Só que tem uma armadilha.
+
+159
+00:09:27,340 --> 00:09:31,000
+Volta no campo encrenqueiro e calcula
+as derivadas parciais na origem.
+
+160
+00:09:31,040 --> 00:09:34,140
+Pelo eixo horizontal,
+a seta é zero o tempo todo:
+
+161
+00:09:34,180 --> 00:09:36,960
+derivada zero. Pelo vertical, mesma coisa.
+
+162
+00:09:37,000 --> 00:09:39,360
+As duas existem, e as duas são zero.
+
+163
+00:09:39,400 --> 00:09:43,120
+Se você confiasse só nelas,
+ia prever que, perto da origem,
+
+164
+00:09:43,160 --> 00:09:47,140
+tudo vai para perto do zero: um
+quadradinho em volta da origem iria parar
+
+165
+00:09:47,180 --> 00:09:51,820
+num ponto só. Mas olha a imagem de
+verdade: a ponta varre o segmento inteiro,
+
+166
+00:09:51,860 --> 00:09:55,040
+de menos um até um. A previsão errou feio.
+
+167
+00:09:55,080 --> 00:09:59,560
+As parciais só olham duas retas,
+e esse campo esconde tudo nas diagonais.
+
+168
+00:09:59,600 --> 00:10:02,200
+Ele nem é contínuo na
+origem. O que faltou?
+
+169
+00:10:02,240 --> 00:10:05,360
+Olha as próprias derivadas,
+andando pelo eixo vertical.
+
+170
+00:10:05,400 --> 00:10:09,320
+No nosso campo, a derivada na
+horizontal vale um o caminho todo,
+
+171
+00:10:09,360 --> 00:10:13,400
+sem salto nenhum. No encrenqueiro,
+ela vale dois dividido pela altura:
+
+172
+00:10:13,440 --> 00:10:16,560
+explode perto da origem,
+e na origem vale zero.
+
+173
+00:10:16,600 --> 00:10:20,780
+Essa é a condição de classe C¹:
+as derivadas parciais existem e são
+
+174
+00:10:20,820 --> 00:10:23,080
+contínuas, numa vizinhança do ponto.
+
+175
+00:10:23,120 --> 00:10:26,040
+Ela é suficiente para a
+aproximação linear funcionar.
+
+176
+00:10:26,080 --> 00:10:29,680
+Classe Cʳ é o mesmo, até
+as derivadas de ordem erre.
+
+177
+00:10:29,720 --> 00:10:33,780
+E com ela vem a promessa. Pega uma
+malhinha em volta do ponto e manda para a
+
+178
+00:10:33,820 --> 00:10:37,880
+tela da chegada. As linhas horizontais
+viram curvas na direção da derivada
+
+179
+00:10:37,920 --> 00:10:41,920
+horizontal, e as verticais, curvas
+na direção da derivada vertical.
+
+180
+00:10:41,960 --> 00:10:45,060
+Cada quadradinho da malha
+vira quase um paralelogramo,
+
+181
+00:10:45,100 --> 00:10:47,320
+com lados de passo vezes derivada.
+
+182
+00:10:47,360 --> 00:10:50,860
+Escrito: a seta num ponto
+vizinho é a seta do ponto,
+
+183
+00:10:50,900 --> 00:10:54,300
+mais o passo horizontal vezes
+a derivada na horizontal,
+
+184
+00:10:54,340 --> 00:10:57,500
+mais o passo vertical vezes
+a derivada na vertical,
+
+185
+00:10:57,540 --> 00:11:00,100
+com um erro que some
+mais rápido que o passo.
+
+186
+00:11:00,140 --> 00:11:03,680
+O nosso campo, feito de
+senos e cossenos, é C¹.
+
+187
+00:11:03,720 --> 00:11:07,500
+O encrenqueiro, não. E dá para ver
+isso dividindo o erro pelo passo.
+
+188
+00:11:07,540 --> 00:11:10,180
+No nosso campo, quando
+o passo cai pela metade,
+
+189
+00:11:10,220 --> 00:11:13,200
+essa conta cai pela metade
+também, e vai para zero.
+
+190
+00:11:13,240 --> 00:11:18,200
+No encrenqueiro, ela dobra. É a diferença
+entre ter duas derivadas parciais e ter
+
+191
+00:11:18,240 --> 00:11:21,740
+uma aproximação linear de
+verdade. Então vamos usar isso.
+
+192
+00:11:21,780 --> 00:11:25,440
+Pega o campo da aula e chega
+dez vezes mais perto do ponto:
+
+193
+00:11:25,480 --> 00:11:28,300
+essa janelinha vira o
+palco inteiro. De perto,
+
+194
+00:11:28,340 --> 00:11:31,180
+todas as setas ficam parecidas
+com a seta do centro.
+
+195
+00:11:31,220 --> 00:11:34,220
+Cada uma é a seta do
+centro, mais um restinho.
+
+196
+00:11:34,260 --> 00:11:37,720
+Tira a seta do centro de
+todas… e sobra só a mudança.
+
+197
+00:11:37,760 --> 00:11:42,040
+Olha que campo arrumadinho. Bem de perto,
+essa mudança é escrita com as duas
+
+198
+00:11:42,080 --> 00:11:45,600
+derivadas. Então coloca as
+duas lado a lado, como colunas:
+
+199
+00:11:45,640 --> 00:11:49,720
+a derivada na horizontal na primeira,
+a derivada na vertical na segunda.
+
+200
+00:11:49,760 --> 00:11:54,040
+Fica uma tabela de quatro números, com as
+derivadas das duas componentes nas duas
+
+201
+00:11:54,080 --> 00:11:57,260
+direções. Ela tem nome: matriz jacobiana.
+
+202
+00:11:57,300 --> 00:12:01,260
+No nosso ponto, um e menos um
+em cima, dois e zero embaixo.
+
+203
+00:12:01,300 --> 00:12:05,940
+E ela funciona assim: um passo com uma
+parte horizontal e uma vertical vira a
+
+204
+00:12:05,980 --> 00:12:10,960
+parte horizontal vezes a primeira coluna,
+mais a parte vertical vezes a segunda.
+
+205
+00:12:11,000 --> 00:12:13,360
+A seta do modelo é a soma das duas.
+
+206
+00:12:13,400 --> 00:12:16,370
+É a primeira aproximação
+do campo perto do ponto.
+
+207
+00:12:16,480 --> 00:12:19,200
+Agora coloca um quadradinho
+com a quina no ponto.
+
+208
+00:12:19,240 --> 00:12:22,180
+A quina da direita é empurrada
+pela primeira coluna;
+
+209
+00:12:22,220 --> 00:12:25,930
+a de cima, pela segunda.
+Cada coluna empurra uma aresta.
+
+210
+00:12:25,980 --> 00:12:28,860
+Solta o fluido no modelo…
+e o quadradinho gira,
+
+211
+00:12:28,900 --> 00:12:31,420
+cresce e entorta, tudo ao mesmo tempo.
+
+212
+00:12:31,460 --> 00:12:34,880
+Tudo isso, no modelo linear,
+estava nos quatro números.
+
+213
+00:12:34,920 --> 00:12:39,300
+E dá para separar essa bagunça, lendo
+cada número da tabela como um movimento de
+
+214
+00:12:39,340 --> 00:12:43,790
+aresta. Em cima, à esquerda:
+quanto a aresta horizontal estica.
+
+215
+00:12:43,860 --> 00:12:47,430
+Aqui, um. Embaixo,
+à esquerda: quanto ela gira.
+
+216
+00:12:47,480 --> 00:12:52,140
+Dois. Em cima, à direita: quanto a
+aresta vertical tomba para o lado.
+
+217
+00:12:52,180 --> 00:12:55,000
+Menos um, para a esquerda.
+Embaixo, à direita:
+
+218
+00:12:55,040 --> 00:12:57,850
+quanto ela estica. Zero. Agora junta.
+
+219
+00:12:57,900 --> 00:13:01,820
+Os dois giros no mesmo sentido,
+somados, dão o rotacional:
+
+220
+00:13:01,860 --> 00:13:06,560
+dois mais um, três. Os dois
+estiramentos somados dão o divergente:
+
+221
+00:13:06,600 --> 00:13:09,920
+um mais zero, um.
+E sobram duas comparações.
+
+222
+00:13:09,960 --> 00:13:12,970
+Estiramento horizontal menos vertical: um.
+
+223
+00:13:13,140 --> 00:13:17,560
+Essa é a primeira deformação, quanto o
+pedacinho estica mais numa direção do que
+
+224
+00:13:17,600 --> 00:13:21,250
+na outra. E a diferença entre
+os dois giros: dois menos um,
+
+225
+00:13:21,440 --> 00:13:25,580
+um. Essa é a segunda, quanto o
+ângulo reto do quadradinho fecha,
+
+226
+00:13:25,620 --> 00:13:29,500
+como uma tesoura. Quatro números
+entram, quatro medidas saem,
+
+227
+00:13:29,540 --> 00:13:33,600
+e nada se perde no caminho. Bem
+de perto e sem a seta do centro,
+
+228
+00:13:33,640 --> 00:13:38,060
+a variação de primeira ordem de todo
+campo C¹ é uma mistura de quatro campos
+
+229
+00:13:38,100 --> 00:13:42,170
+simples: um redemoinho, uma
+explosão e duas deformações.
+
+230
+00:13:42,220 --> 00:13:45,540
+Olha cada um agindo no
+quadradinho: o redemoinho gira,
+
+231
+00:13:45,580 --> 00:13:50,000
+a explosão cresce, a deformação
+estica de um lado e achata do outro.
+
+232
+00:13:50,040 --> 00:13:53,040
+E isso não é só matemática:
+num fluido newtoniano,
+
+233
+00:13:53,080 --> 00:13:55,520
+o atrito viscoso vem da deformação.
+
+234
+00:13:55,560 --> 00:13:59,980
+Um bloco de fluido girando inteiro,
+rígido, não tem atrito viscoso nenhum por
+
+235
+00:14:00,020 --> 00:14:04,120
+dentro. Agora volta lá no começo.
+No campo que esticava o quadradinho,
+
+236
+00:14:04,160 --> 00:14:07,950
+a tabela é um e zero em cima,
+zero e menos um embaixo.
+
+237
+00:14:08,000 --> 00:14:11,960
+A aresta horizontal estica,
+a vertical encolhe na mesma medida,
+
+238
+00:14:12,000 --> 00:14:15,420
+e ninguém gira. Rotacional
+zero, divergente zero,
+
+239
+00:14:15,460 --> 00:14:17,720
+e a primeira deformação vale dois.
+
+240
+00:14:17,760 --> 00:14:21,600
+É tudo deformação. E lá no
+episódio passado ficou um desafio:
+
+241
+00:14:21,640 --> 00:14:26,020
+achar outro campo, que não fosse
+constante, com rotacional e divergente
+
+242
+00:14:26,060 --> 00:14:29,520
+zero. Um deles é este, que
+troca as coordenadas de lugar.
+
+243
+00:14:29,560 --> 00:14:33,980
+As duas arestas giram uma contra a
+outra: a segunda deformação vale dois,
+
+244
+00:14:34,020 --> 00:14:37,400
+e o quadradinho vira losango.
+É o mesmo campo de antes,
+
+245
+00:14:37,440 --> 00:14:40,960
+girado quarenta e cinco graus.
+E quem achou um de segundo grau,
+
+246
+00:14:41,000 --> 00:14:44,480
+como o da tela, também acertou.
+Rotacional e divergente,
+
+247
+00:14:44,520 --> 00:14:47,880
+sozinhos, não dizem tudo
+sobre como um campo varia.
+
+248
+00:14:47,920 --> 00:14:52,000
+Resumindo: limite é ganhar o
+desafio do épsilon com um delta.
+
+249
+00:14:52,040 --> 00:14:55,100
+Continuidade é o limite
+igual à seta do ponto,
+
+250
+00:14:55,140 --> 00:14:59,620
+sem salto. A derivada parcial é a
+velocidade da ponta numa direção.
+
+251
+00:14:59,660 --> 00:15:04,380
+E, quando essas derivadas são contínuas,
+a tabela delas descreve o campo bem perto
+
+252
+00:15:04,420 --> 00:15:07,160
+do ponto: giro, área e deformação.
+
+253
+00:15:07,200 --> 00:15:10,760
+E uma curiosidade: no espaço,
+a tabela tem nove números,
+
+254
+00:15:10,800 --> 00:15:15,240
+que se separam em três de giro,
+um de volume e cinco de deformação.
+
+255
+00:15:15,280 --> 00:15:18,240
+No próximo vídeo, é a vez
+de colocar a mão na massa:
+
+256
+00:15:18,280 --> 00:15:21,120
+o integrador do módulo, só com exercícios.
+
+257
+00:15:21,160 --> 00:15:25,500
+Campo vetorial, rotacional,
+divergente, limite e continuidade,
+
+258
+00:15:25,540 --> 00:15:27,780
+derivadas parciais, tudo junto.
+
+259
+00:15:27,820 --> 00:15:32,040
+E vai ser a sua hora de pegar um campo,
+montar a tabela e descobrir se o
+
+260
+00:15:32,080 --> 00:15:35,510
+quadradinho vai girar,
+mudar de área ou deformar.
+
+261
+00:15:35,620 --> 00:15:39,860
+Se essa aula te ajudou, deixa o like,
+se inscreve no Parallax Lab e conta nos
+
+262
+00:15:39,900 --> 00:15:44,180
+comentários: qual dessas medidas,
+giro, expansão ou deformação,
+
+263
+00:15:44,220 --> 00:15:47,410
+você acha que aparece mais
+na física? Até a próxima!

@@ -1,0 +1,211 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="katex/katex.min.css">
+<script src="katex/katex.min.js"></script>
+<style>
+@font-face{font-family:SG;src:url(SpaceGrotesk-Bold.ttf)}
+@font-face{font-family:SGM;src:url(SpaceGrotesk-Medium.ttf)}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#091226}
+canvas{position:absolute;left:0;top:0}
+.f{position:absolute;color:#F5F7FF;white-space:nowrap;line-height:1}
+.f .katex{font-size:1em}
+.pl{position:absolute;background:rgba(9,18,38,.85);border-radius:6px}
+</style></head><body><canvas id="o" width="1920" height="1080"></canvas>
+<script>
+// Quadros-alvo v1.2 do yt_0028 (v1.2: palco do B6-3 em diante = modelo linear J·H; v1.1: pedacinho de fluido com chapa + malha 4x4) (Cálculo III · EP. 03 · limite, continuidade e derivadas parciais). ?k=<chave>
+// Sistema visual = yt_0026 v7/v8 + yt_0027 v2/v3: setas só flecha, comprimento comprimido, painéis sem preenchimento,
+// clareira (R1), placa mínima (R2), coluna de fórmulas em x = 1120, layouts A (palco 600,540 · 120 px/u), B (painéis · 96 px/u), C (cartões · 56 px/u).
+const K=new URLSearchParams(location.search).get('k'), x=document.getElementById('o').getContext('2d'), PI=Math.PI;
+const CAMPO='#2EE6A0', CAMPO2='#8CFFD2', CTX='#1A5F55', SAI='#7FB2FF', SAIF='#A9CCFF', GEO='#B8C4DA', BR='#F5F7FF', E1='#FFC24D', E2='#EA63FF',
+ VEL='#9C8CFF', CORAL='#FF7A8A', ESC='#050B18', POS='#E08A3C', CARGA='#267BFF', LIMA='#C6F26B';
+const M={'\\X':'\\textcolor{#FFC24D}{x}','\\Y':'\\textcolor{#EA63FF}{y}','\\F':'\\textcolor{#2EE6A0}{\\vec F}','\\G':'\\textcolor{#2EE6A0}{\\vec G}',
+ '\\Pp':'\\textcolor{#2EE6A0}{P}','\\Qq':'\\textcolor{#2EE6A0}{Q}','\\dx':'\\partial \\textcolor{#FFC24D}{x}','\\dy':'\\partial \\textcolor{#EA63FF}{y}',
+ '\\V':'\\textcolor{#9C8CFF}','\\D':'\\textcolor{#7FB2FF}','\\Lm':'\\textcolor{#C6F26B}','\\Am':'\\textcolor{#FFC24D}','\\Mg':'\\textcolor{#EA63FF}',
+ '\\rot':'\\operatorname{rot}','\\dv':'\\operatorname{div}','\\h':'\\textcolor{#FFC24D}{h}','\\k':'\\textcolor{#EA63FF}{k}',
+ '\\xo':'\\textcolor{#FFC24D}{x_0}','\\yo':'\\textcolor{#EA63FF}{y_0}','\\Pt':'\\textcolor{#E08A3C}{P}','\\Xp':'\\textcolor{#E08A3C}{X}',
+ '\\eps':'\\textcolor{#8CFFD2}{\\varepsilon}','\\del':'\\textcolor{#E08A3C}{\\delta}','\\Lv':'\\textcolor{#2EE6A0}{\\vec L}',
+ '\\sen':'\\operatorname{sen}','\\E':'\\textcolor{#2EE6A0}{\\vec E}'};
+let O=[960,540],U=100; const P=(a,b)=>[O[0]+a*U,O[1]-b*U]; const vista=(cx,cy,u)=>{O=[cx,cy];U=u;};
+const img=s=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=s;});
+function mix(a,b,t){const h=s=>[1,3,5].map(i=>parseInt(s.slice(i,i+2),16));const A=h(a),B=h(b);return 'rgb('+A.map((v,i)=>Math.round(v+(B[i]-v)*t)).join(',')+')';}
+function tex(s,X,Y,size=52,al='l',placa=false){const d=document.createElement('div');d.className='f';d.style.fontSize=size+'px';
+ katex.render(s,d,{macros:M,throwOnError:false});document.body.appendChild(d);const w=d.offsetWidth,h=d.offsetHeight;
+ const L=(al==='c'?X-w/2:al==='r'?X-w:X),T=(Y-h/2);d.style.left=L+'px';d.style.top=T+'px';
+ if(placa){const p=document.createElement('div');p.className='pl';p.style.left=(L-6)+'px';p.style.top=(T-4)+'px';p.style.width=(w+12)+'px';p.style.height=(h+8)+'px';document.body.insertBefore(p,d);}return d;}
+function txt(s,X,Y,{size=30,f='SG',cor=BR,al='left',alpha=1,placa=false}={}){x.font=`${size}px ${f}`;if(placa){const w=x.measureText(s).width,L=al==='center'?X-w/2:X;x.fillStyle='rgba(9,18,38,.85)';x.beginPath();x.roundRect(L-8,Y-size*.82,w+16,size*1.05,6);x.fill();}
+ x.globalAlpha=alpha;x.textAlign=al;x.fillStyle=cor;x.fillText(s,X,Y);x.textAlign='left';x.globalAlpha=1;}
+function legenda(s,X,Y,cor=SAIF,al='left',size=28){txt(s,X,Y,{size,f:'SGM',cor,al});}
+function caminho(pts){x.beginPath();pts.forEach((p,i)=>{const q=P(...p);i?x.lineTo(...q):x.moveTo(...q)});}
+function linha(pts,cor,w,{dash=null,alpha=1}={}){x.lineCap='round';x.lineJoin='round';x.setLineDash(dash||[]);caminho(pts);x.globalAlpha=alpha;x.strokeStyle=cor;x.lineWidth=w;x.stroke();x.globalAlpha=1;x.setLineDash([]);}
+function preenche(pts,cor,alpha=1){caminho(pts);x.closePath();x.globalAlpha=alpha;x.fillStyle=cor;x.fill();x.globalAlpha=1;}
+function seta(a,b,cor,w=5,head=20){const A=P(...a),B=P(...b),dx=B[0]-A[0],dy=B[1]-A[1],L=Math.hypot(dx,dy);if(L<3)return;
+ const ux=dx/L,uy=dy/L,h=Math.min(head,.45*L),hw=h*.5,bx=B[0]-ux*h,by=B[1]-uy*h;
+ x.lineCap='round';x.beginPath();x.moveTo(...A);x.lineTo(bx+ux,by+uy);x.strokeStyle=cor;x.lineWidth=w;x.stroke();
+ x.beginPath();x.moveTo(...B);x.lineTo(bx-uy*hw,by+ux*hw);x.lineTo(bx+uy*hw,by-ux*hw);x.closePath();x.fillStyle=cor;x.fill();}
+function ponto(p,cor,r=9){const q=P(...p);x.beginPath();x.arc(...q,r,0,7);x.fillStyle=cor;x.fill();}
+function circ(r,c=[0,0],n=200,a0=0,a1=2*PI){const a=[];for(let i=0;i<=n;i++){const t=a0+(a1-a0)*i/n;a.push([c[0]+r*Math.cos(t),c[1]+r*Math.sin(t)]);}return a;}
+// seta de campo comprimida: L = lmax(0,4 + 0,6 t), centrada no ponto da grade
+function setaCampo(X,Y,f,{lmax,mmax,ctx=false,w=5,head=19,cor=null}){const m=Math.hypot(...f);if(m<1e-9)return;const t=Math.min(1,m/mmax),L=lmax*(.4+.6*t),u=[f[0]/m*L,f[1]/m*L];
+ const cc=cor||(ctx?CTX:mix(CAMPO,CAMPO2,t));seta([X-u[0]/2,Y-u[1]/2],[X+u[0]/2,Y+u[1]/2],cc,w,head);}
+// seta de campo proporcional (só no campo das diagonais, |G| <= 1): L = lmax |G|
+function setaProp(X,Y,f,{lmax,ctx=false,w=5,cor=null}){const m=Math.hypot(...f);if(m*lmax*U<6)return;const u=[f[0]*lmax,f[1]*lmax];
+ seta([X-u[0]/2,Y-u[1]/2],[X+u[0]/2,Y+u[1]/2],cor||(ctx?CTX:mix(CAMPO,CAMPO2,m)),w,19);}
+function campo(Fv,{x0=-3,x1=3,y0=-3,y1=3,passo=.5,rmin=.3,rmax=9,mmax=1,ctx=false,prop=false,skip=null}={}){const lmax=.84*passo;
+ for(let X=x0;X<=x1+1e-6;X+=passo)for(let Y=y0;Y<=y1+1e-6;Y+=passo){const r=Math.hypot(X,Y);if(r<rmin||r>rmax)continue;if(skip&&skip(X,Y))continue;
+  prop?setaProp(X,Y,Fv(X,Y),{lmax,ctx}):setaCampo(X,Y,Fv(X,Y),{lmax,mmax,ctx});}}
+// clareira (R1): retângulos [x0,y0,x1,y1] e discos [cx,cy,r] em unidades do palco, margem 0,25 u
+const clar=(rects=[],discos=[])=>(X,Y)=>rects.some(([a,b,c,d])=>X>a-.25&&X<c+.25&&Y>b-.25&&Y<d+.25)||discos.some(([a,b,r])=>Math.hypot(X-a,Y-b)<r+.25);
+const dseg=(X,Y,a,b)=>{const p=b[0]-a[0],q=b[1]-a[1],t=Math.max(0,Math.min(1,((X-a[0])*p+(Y-a[1])*q)/(p*p+q*q)));return Math.hypot(X-a[0]-t*p,Y-a[1]-t*q);};
+function dentro(X,Y,pts){let c=false;for(let i=0,j=pts.length-1;i<pts.length;j=i++){const [a,b]=pts[i],[e,f]=pts[j];if(((b>Y)!==(f>Y))&&(X<(e-a)*(Y-b)/(f-b)+a))c=!c;}return c;}
+const clarPoly=(pts,m=.25)=>(X,Y)=>dentro(X,Y,pts)||pts.some((p,i)=>dseg(X,Y,p,pts[(i+1)%pts.length])<m);
+const clarSeg=(segs,m=.2)=>(X,Y)=>segs.some(([a,b])=>dseg(X,Y,a,b)<m);
+const ou=(...fs)=>(X,Y)=>fs.some(f=>f(X,Y));
+function canto(s){txt('CÁLCULO III · LIMITE, CONTINUIDADE E DERIVADAS PARCIAIS',36,73,{size:22,f:'SGM',cor:'#C8D6F0',alpha:.6});txt(s,36,118,{size:36});}
+async function logo(){const lg=await img('logo_crop.png');if(lg)x.drawImage(lg,1650,24);}
+function painel(X0,Y0,w,h){x.strokeStyle='rgba(184,196,218,.35)';x.lineWidth=2;x.beginPath();x.roundRect(X0,Y0,w,h,14);x.stroke();}
+function nomesB(a='ONDE VOCÊ ANDA',b='ONDE A SETA CHEGA'){txt(a,480,868,{size:28,f:'SGM',cor:GEO,al:'center'});txt(b,1440,868,{size:28,f:'SGM',cor:GEO,al:'center'});}
+// v2: pedacinho de fluido = chapa coral escura opaca + malha interna 4x4 (a malha deforma junto) + contorno coral
+const CHAPA_C=mix('#FF7A8A','#091226',.62);
+function quad(pts,{cor=CORAL,fill=true,dash=null,w=4,alpha=.9,n=4}={}){const q=[...pts,pts[0]];
+ if(dash){linha(q,cor,3,{dash,alpha:.7});return;}
+ if(fill){caminho(q);x.closePath();x.fillStyle=CHAPA_C;x.fill();
+  const L=(a,b,t)=>[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];const [A,B,C,D]=pts;   // quadrilátero: malha bilinear (exata para mapas lineares)
+  for(let i=1;i<n;i++){const t=i/n;linha([L(A,B,t),L(D,C,t)],'#FFB3BC',2);linha([L(A,D,t),L(B,C,t)],'#FFB3BC',2);}}
+ linha(q,cor,w);}
+const quadPts=(c,s)=>[[c[0]-s/2,c[1]-s/2],[c[0]+s/2,c[1]-s/2],[c[0]+s/2,c[1]+s/2],[c[0]-s/2,c[1]+s/2]];
+const mapa=(Mx,pts)=>pts.map(p=>[Mx[0][0]*p[0]+Mx[0][1]*p[1],Mx[1][0]*p[0]+Mx[1][1]*p[1]]);
+// ---------- campos ----------
+const aula=(X,Y)=>[1+Math.sin(X)-Math.sin(Y),2*Math.sin(X)+2-Math.cos(X)-Math.cos(Y)];
+const diag=(X,Y)=>{const r2=X*X+Y*Y;return r2<1e-12?[0,0]:[2*X*Y/r2,0];};
+const sela=(X,Y)=>[X,-Y], troca=(X,Y)=>[Y,X], giro=(X,Y)=>[-Y,X], expl=(X,Y)=>[X,Y];
+const carga=(X,Y)=>{const r3=Math.pow(X*X+Y*Y,1.5);return[X/r3,Y/r3];};
+const resid=(X,Y)=>{const a=aula(X/10,Y/10);return[(a[0]-1)*10,(a[1]-0)*10];};   // zoom ×10 sem a seta do centro
+const JA=[[1,-1],[2,0]];
+const lin=(X,Y)=>[X-Y,2*X];   // v1.2: do B6-3 em diante o palco mostra o modelo linear J·H (exato para o fluxo e^{tJ})
+function expJA(t){const w=Math.sqrt(7)/2,e=Math.exp(t/2),c=Math.cos(w*t),s=Math.sin(w*t)/w;   // exp(tJ) = e^{t/2}[cos(wt) I + sen(wt)/w (J - I/2)]
+ return [[e*(c+s*(1-.5)),e*(s*-1)],[e*(s*2),e*(c+s*(0-.5))]];}
+const ch=Math.cosh, sh=Math.sinh;
+async function main(){
+ await document.fonts.load('30px SG');await document.fonts.load('30px SGM');
+ const bg=await img('fundo.png');if(bg)x.drawImage(bg,0,0);await logo();
+ // ---------- H: o quadradinho que deforma (layout A, sem linha 2 no canto) ----------
+ if(K==='h'||K==='b73'){if(K==='b73')canto('QUATRO NÚMEROS, QUATRO MEDIDAS');vista(600,540,120);const t=.55,s=1.2,e=Math.exp(t);
+  const ret=[[-s/2*e,-s/2/e],[s/2*e,-s/2/e],[s/2*e,s/2/e],[-s/2*e,s/2/e]];
+  campo(sela,{mmax:3,rmin:0,skip:clar([[-1.05,-.62,1.05,.62],[-1.1,-1.25,1.1,-.75]])});
+  quad(quadPts([0,0],s),{fill:false,dash:[9,8],w:3});quad(ret);
+  tex('\\text{ÁREA } 1{,}44 \\to 1{,}44',...P(0,-1),34,'c',true);
+  if(K==='h'){tex('\\F = (\\X,\\ -\\Y)',1120,330,52);tex('\\rot\\F = \\V{0}',1120,450,52);tex('\\dv\\F = \\D{0}',1120,560,52);
+   txt('MAS DEFORMA',1120,700,{size:48,cor:LIMA});legenda('QUE NÚMERO MEDE ISSO?',1124,780,GEO,'left',34);}
+  else{tex('J = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}',1120,360,52);tex('\\rot = \\V{0}\\qquad \\dv = \\D{0}',1120,520,48);
+   txt('DEFORMAÇÃO: 2 e 0',1120,650,{size:44,cor:LIMA});legenda('É TUDO DEFORMAÇÃO',1124,730,GEO);legenda('ESTICA NO x · ACHATA NO y',1124,780,GEO);}}
+ // ---------- B1: limite em dois painéis ----------
+ if(K==='b13'||K==='b15'){canto('CHEGAR PERTO');painel(130,260,700,560);painel(1090,260,700,560);
+  const d=K==='b13'?.41:.21, ep=K==='b13'?1:.5, ang=.9, Xp=[d*Math.cos(ang),d*Math.sin(ang)];
+  vista(480,540,140);campo(aula,{x0:-2.25,x1:2.25,y0:-1.75,y1:1.75,passo:.5,rmin:0,mmax:3.5,ctx:true,skip:clar([[-.85,-.5,-.45,.15],[Xp[0]-.2,Xp[1]+.2,Xp[0]+.4,Xp[1]+.62]],[[0,0,Math.max(d,.2)+.1]])});
+  linha(circ(d),POS,3);ponto([0,0],POS,9);ponto(Xp,POS,6);
+  const f=aula(...Xp),m=Math.hypot(...f),L=.84*.5*(.4+.6*Math.min(1,m/3.5));seta(Xp,[Xp[0]+f[0]/m*L,Xp[1]+f[1]/m*L],CAMPO2,7,22);
+  tex('\\Pt',...P(-.25,-.3),36,'c',true);tex('\\Xp',...P(Xp[0]+.1,Xp[1]+.42),32,'c',true);tex('\\del',...P(-d-.3,0),36,'c',true);
+  vista(1250,560,140);ponto([0,0],GEO,6);const tip=[1,0];linha(circ(ep,tip),CAMPO2,3);
+  const img_=circ(d,[0,0],240).map(p=>aula(...p));linha(img_,CAMPO2,2,{alpha:.85});
+  seta([0,0],tip,CAMPO2,7,24);seta([0,0],f,CAMPO,6,22);
+  tex('\\F(\\Pt)',...P(.5,-.32),34,'c',true);tex('\\F(\\Xp)',...P(f[0]-.15,f[1]+.38),34,'c',true);tex('\\eps',...P(1+ep*.75+.22,ep*.75+.2),36,'c',true);
+  nomesB();
+  if(K==='b13')tex('\\eps = 1 \\;\\Rightarrow\\; \\del = 0{,}41',960,955,44,'c');
+  else tex('\\lim\\limits_{\\Xp\\to\\Pt}\\F(\\Xp)=\\Lv \\iff \\forall\\eps>0\\ \\exists\\del>0:\\ 0<\\|\\Xp-\\Pt\\|<\\del \\;\\Rightarrow\\; \\|\\F(\\Xp)-\\Lv\\|<\\eps',960,960,40,'c');}
+ // ---------- B2: o limite que não existe ----------
+ if(K==='b2'){canto('QUANDO O LIMITE NÃO EXISTE');vista(600,540,120);
+  const Ppts=[[1.25,0],[1.1,1.1],[-1.1,1.1]];
+  campo(diag,{prop:true,rmin:.3,skip:ou(clar([[1.0,-.75,2.0,-.3],[1.3,1.25,2.6,1.75],[-2.6,1.25,-1.3,1.75]],Ppts.map(p=>[...p,.15])),clarSeg([[[3,0],[.3,0]],[[2.7,2.7],[.22,.22]],[[-2.7,2.7],[-.22,.22]]]))});
+  linha([[3,0],[.3,0]],GEO,3,{dash:[10,9]});linha([[2.7,2.7],[.22,.22]],GEO,3,{dash:[10,9]});linha([[-2.7,2.7],[-.22,.22]],GEO,3,{dash:[10,9]});
+  ponto([0,0],GEO,5);
+  for(const p of Ppts){ponto(p,POS,9);const g=diag(...p);if(Math.hypot(...g)>0)seta([p[0]-.1,p[1]],[p[0]-.1+g[0]*.42*1.15,p[1]],CAMPO2,8,24);}
+  tex('\\vec 0',...P(1.5,-.5),36,'c',true);tex('(1,\\ 0)',...P(1.95,1.5),36,'c',true);tex('(-1,\\ 0)',...P(-1.95,1.5),36,'c',true);
+  tex('\\G = \\left(\\dfrac{2\\X\\Y}{\\X^2+\\Y^2},\\ 0\\right)',1120,320,48);
+  legenda('NA RETA y = m x:',1124,450,GEO);tex('\\G = \\left(\\dfrac{2m}{1+m^2},\\ 0\\right)',1120,530,48);
+  tex('m=0 \\to 0\\quad m=1 \\to 1\\quad m=-1 \\to -1',1120,650,40);
+  txt('NÃO EXISTE O LIMITE',1120,780,{size:40,cor:BR});txt('EM (0, 0)',1120,830,{size:40,cor:BR});}
+ // ---------- B3: continuidade, três cartões ----------
+ if(K==='b3'){canto('CONTINUIDADE');
+  const C=[[140,'CONTÍNUO','AS SETAS NÃO SALTAM'],[720,'FORA DO DOMÍNIO','AQUI O CAMPO NÃO EXISTE'],[1300,'DESCONTÍNUO','EXISTE, MAS SEM LIMITE']];
+  C.forEach(([X0,t1,t2],i)=>{painel(X0,250,480,460);vista(X0+240,480,56);
+   if(i===0){campo(aula,{x0:-3.6,x1:3.6,y0:-3.6,y1:3.6,passo:.9,rmin:0,mmax:3.5,skip:clar([],[[0,0,.75]])});linha(circ(.75),POS,3);ponto([0,0],POS,8);
+    const f=aula(0,0);seta([-.4,0],[.4,0],CAMPO2,6,18);}
+   if(i===1){campo(carga,{x0:-3.6,x1:3.6,y0:-3.6,y1:3.6,passo:.9,rmin:1.1,mmax:1});preenche(circ(.7),ESC);linha(circ(.7),GEO,3,{dash:[7,7]});preenche(circ(.42),CARGA);txt('+',...P(0,-.28),{size:34,al:'center'});}
+   if(i===2){campo(diag,{x0:-3.6,x1:3.6,y0:-3.6,y1:3.6,passo:.9,rmin:.3,prop:true,skip:clar([[-.2,-1.9,3.1,-.95]])});ponto([0,0],POS,8);tex('\\G(0,0) = \\vec 0',...P(1.45,-1.4),30,'c',true);}
+   txt(t1,X0+240,775,{size:34,al:'center'});legenda(t2,X0+240,825,GEO,'center',26);});
+  tex('\\F \\text{ contínua em } \\Pt \\iff \\lim\\limits_{\\Xp\\to\\Pt}\\F(\\Xp)=\\F(\\Pt)',960,930,44,'c');legenda('CONTÍNUA ⇔ CADA COMPONENTE É CONTÍNUA',960,1012,GEO,'center',28);}
+ // ---------- B4-1 / B4-2: derivada parcial nos dois painéis ----------
+ if(K==='b41'||K==='b42'){const H=K==='b41',cor=H?E1:E2,h=H?.5:1;canto('DERIVADA PARCIAL');painel(130,260,700,560);painel(1090,260,700,560);
+  const Q=H?[h,0]:[0,h];vista(480,540,140);
+  campo(aula,{x0:-2.25,x1:2.25,y0:-1.75,y1:1.75,passo:.5,rmin:0,mmax:3.5,ctx:true,skip:clar(H?[[-2.4,-.1,2.4,.1],[-.5,-.55,0,-.1],[0,.1,.5,.5]]:[[-.1,-1.9,.1,1.9],[-.5,-.5,-.1,.5],[.1,-.5,.6,-.1]],[[0,0,.2],[...Q,.2]])});
+  linha(H?[[-2.3,0],[2.3,0]]:[[0,-1.9],[0,1.9]],cor,3,{dash:[10,9]});ponto([0,0],POS,9);ponto(Q,POS,7);
+  tex('\\Pt',...P(H?-.25:.35,H?-.32:-.28),34,'c',true);tex(H?'\\h':'\\k',...P(H?.25:-.28,H?.28:.25),32,'c',true);
+  vista(H?1270:1300,H?650:660,140);ponto([0,0],GEO,6);
+  const cur=[];for(let i=0;i<=200;i++){const s=H?-.75+1.75*i/200:-1.25+2.85*i/200;cur.push(H?aula(s,0):aula(0,s));}linha(cur,cor,2.5);
+  const A=aula(0,0),B=H?aula(h,0):aula(0,h),q=[(B[0]-A[0])/h,(B[1]-A[1])/h];
+  if(H){seta([0,0],A,CAMPO2,7,24);seta([0,0],B,CAMPO,5,20);}else{seta([0,0],A,GEO,3,16);seta([0,0],B,CAMPO,5,20);}linha([A,B],cor,4);seta(A,[A[0]+q[0],A[1]+q[1]],cor,8,26);
+  const tg=H?[1,2]:[-1,0];linha([[A[0]-tg[0]*.45,A[1]-tg[1]*.45],[A[0]+tg[0]*1.1,A[1]+tg[1]*1.1]],GEO,2,{dash:[6,8],alpha:.6});
+  tex(H?'\\dfrac{\\Delta\\F}{\\h}':'\\dfrac{\\Delta\\F}{\\k}',...P(A[0]+q[0]+(H?.5:-.05),A[1]+q[1]+(H?-.15:.55)),34,'c',true);
+  tex('\\F(\\Pt)',...P(.5,-.3),30,'c',true);
+  nomesB();
+  if(H)tex('\\h=1:\\ (0{,}84;\\ 2{,}14)\\quad \\h=0{,}5:\\ (0{,}96;\\ 2{,}16)\\quad \\h=0{,}1:\\ (1{,}00;\\ 2{,}05)\\quad \\to\\ (1,\\ 2)',960,955,38,'c');
+  else tex('\\k=1:\\ (-0{,}84;\\ 0{,}46)\\quad \\k=0{,}5:\\ (-0{,}96;\\ 0{,}25)\\quad \\k=0{,}1:\\ (-1{,}00;\\ 0{,}05)\\quad \\to\\ (-1,\\ 0)',960,955,38,'c');}
+ // ---------- B4-3: as duas derivadas no palco ----------
+ if(K==='b43'){canto('DERIVADA PARCIAL');vista(600,540,120);
+  campo(aula,{rmin:0,mmax:3.5,ctx:true,skip:(X,Y)=>{const d=(a,b,p,q)=>{const t=Math.max(0,Math.min(1,((X-a)*(p-a)+(Y-b)*(q-b))/((p-a)**2+(q-b)**2)));return Math.hypot(X-a-t*(p-a),Y-b-t*(q-b));};
+   return d(0,0,1,2)<.3||d(0,0,-1,0)<.3||Math.hypot(X,Y)<.3||clar([[1.05,1.75,2.55,2.45],[-2.65,.2,-1.15,.8]])(X,Y);}});
+  ponto([0,0],POS,10);seta([0,0],[1,2],E1,8,28);seta([0,0],[-1,0],E2,8,28);
+  tex('\\dfrac{\\partial\\F}{\\dx}=(1,\\,2)',...P(1.8,2.1),36,'c',true);tex('\\dfrac{\\partial\\F}{\\dy}=(-1,\\,0)',...P(-1.9,.5),36,'c',true);tex('\\Pt',...P(.3,-.35),34,'c',true);
+  tex('\\dfrac{\\partial \\F}{\\dx}(\\xo,\\yo)=\\lim\\limits_{\\h\\to0}\\dfrac{\\F(\\xo+\\h,\\,\\yo)-\\F(\\xo,\\,\\yo)}{\\h}',1090,290,36);
+  tex('\\dfrac{\\partial \\F}{\\dx}=\\left(\\dfrac{\\partial \\Pp}{\\dx},\\ \\dfrac{\\partial \\Qq}{\\dx}\\right)',1090,450,40);
+  tex('=(\\cos\\X,\\ 2\\cos\\X+\\sen\\X)=\\Am{(1,\\ 2)}',1150,545,38);
+  tex('\\dfrac{\\partial \\F}{\\dy}=\\left(\\dfrac{\\partial \\Pp}{\\dy},\\ \\dfrac{\\partial \\Qq}{\\dy}\\right)',1090,665,40);
+  tex('=(-\\cos\\Y,\\ \\sen\\Y)=\\Mg{(-1,\\ 0)}',1150,760,38);
+  tex('\\F = (1+\\sen\\X-\\sen\\Y,\\ \\ 2\\sen\\X+2-\\cos\\X-\\cos\\Y)',1090,880,30);legenda('NO PONTO (0, 0)',1094,940,GEO);}
+ // ---------- B5: o engano ----------
+ if(K==='b5'){canto('O ENGANO');vista(600,540,120);
+  campo(diag,{prop:true,rmin:.3,skip:(X,Y)=>Math.abs(X)<.05||Math.abs(Y)<.05});
+  linha([[-3.1,0],[3.1,0]],E1,4);linha([[0,-3.1],[0,3.1]],E2,4);ponto([0,0],POS,10);
+  for(const [X,Y] of [[1,1],[1.5,1.5],[2,2],[-1,-1],[-1.5,-1.5],[-2,-2],[-1,1],[-1.5,1.5],[-2,2],[1,-1],[1.5,-1.5],[2,-2]])setaProp(X,Y,diag(X,Y),{lmax:.42,cor:CAMPO2,w:7});
+  tex('\\dfrac{\\partial\\G}{\\dx}(0,0)=\\vec 0',1120,290,44);tex('\\dfrac{\\partial\\G}{\\dy}(0,0)=\\vec 0',1120,410,44);
+  legenda('AS PARCIAIS SÓ OLHAM DUAS RETAS',1124,505,GEO);legenda('E G NEM É CONTÍNUO EM (0, 0)',1124,555,BR);
+  legenda('CLASSE C¹ (PARCIAIS CONTÍNUAS) ⇒',1124,680,SAIF);
+  tex('\\F(\\Pt+H)\\approx\\F(\\Pt)+\\h\\,\\dfrac{\\partial\\F}{\\dx}+\\k\\,\\dfrac{\\partial\\F}{\\dy}',1120,780,42);}
+ // ---------- B6: a tabela ----------
+ if(['b62','b63','b64','b65','s'].includes(K)){canto(K==='s'?'RESUMO':'A TABELA');vista(600,540,120);const S=1.2;
+  const sq=[[0,0],[S,0],[S,S],[0,S]], fl=mapa(expJA(.35),sq);
+  const pol=K==='b64'?clarPoly(sq):(K==='b65'||K==='s')?ou(clarPoly(fl),clarPoly(sq,.15)):(()=>false);
+  campo(K==='b62'?resid:lin,{y1:2.5,rmin:.3,mmax:6,ctx:K!=='b62',skip:ou(clar([...(K==='b64'?[[S-.05,.05,S+.45,.85],[-.55,S-.1,-.05,S+.1]]:[]),...(K==='b65'?[[1.0,-.95,2.1,-.55]]:[])]),pol)});
+  tex('\\text{ZOOM}\\times 10',...P(-2.35,3.0),30,'c',true);if(K!=='b62')txt('MODELO LINEAR LOCAL',...P(-1.3,2.92),{size:26,f:'SGM',cor:GEO,placa:true});
+  if(K==='b62'){tex('\\F(\\Pt+H)-\\F(\\Pt)\\approx\\h\\,\\dfrac{\\partial\\F}{\\dx}+\\k\\,\\dfrac{\\partial\\F}{\\dy}',1110,330,40);legenda('DE PERTO, SEM A SETA DO CENTRO,',1114,450,GEO);legenda('SOBRA UM CAMPO LINEAR',1114,495,GEO);ponto([0,0],POS,9);}
+  const mat='J_{\\F}(\\Pt)=\\begin{pmatrix}\\dfrac{\\partial\\Pp}{\\dx} & \\dfrac{\\partial\\Pp}{\\dy}\\\\[10pt] \\dfrac{\\partial\\Qq}{\\dx} & \\dfrac{\\partial\\Qq}{\\dy}\\end{pmatrix}';
+  if(K==='b63'){tex(mat,1110,360,44);tex('=\\begin{pmatrix}\\Am{1} & \\Mg{-1}\\\\ \\Am{2} & \\Mg{0}\\end{pmatrix}',1310,560,52);txt('MATRIZ JACOBIANA',1114,700,{size:40});
+   legenda('1ª COLUNA: ∂F/∂x · 2ª COLUNA: ∂F/∂y',1114,760,GEO);ponto([0,0],POS,9);}
+  if(K==='b64'){quad(sq,{alpha:.85});ponto([0,0],POS,10);seta([S,0],[S+.4,.8],E1,8,26);seta([0,S],[-.4,S],E2,8,26);
+   tex('J=\\begin{pmatrix}\\Am{1} & \\Mg{-1}\\\\ \\Am{2} & \\Mg{0}\\end{pmatrix}',1120,330,48);txt('AS COLUNAS EMPURRAM',1120,480,{size:38});txt('AS ARESTAS',1120,530,{size:38});
+   legenda('QUINA DA DIREITA: 1ª COLUNA',1124,610,E1);legenda('QUINA DE CIMA: 2ª COLUNA',1124,655,E2);}
+  if(K==='b65'){quad(sq,{fill:false,dash:[9,8],w:3});quad(fl,{alpha:.85});ponto([0,0],POS,10);
+   tex('J=\\begin{pmatrix}\\Am{1} & \\Mg{-1}\\\\ \\Am{2} & \\Mg{0}\\end{pmatrix}',1120,330,48);txt('GIRA · CRESCE · ENTORTA',1120,490,{size:38});legenda('TUDO AO MESMO TEMPO',1124,550,GEO);
+   tex('\\text{ÁREA}\\times 1{,}42',...P(1.55,-.75),32,'c',true);}
+  if(K==='s'){quad(fl,{alpha:.85});ponto([0,0],POS,10);
+   tex('J=\\begin{pmatrix}\\Am{1} & \\Mg{-1}\\\\ \\Am{2} & \\Mg{0}\\end{pmatrix}',1120,330,48);
+   tex('\\V{\\rot = 3}',1120,480,44);tex('\\D{\\dv = 1}',1120,560,44);tex('\\Lm{\\text{deformação} = 1 \\text{ e } 1}',1120,640,44);}}
+ // ---------- B7-1 / B7-2: cartões ----------
+ if(K==='b71'||K==='b72'){canto('QUATRO NÚMEROS, QUATRO MEDIDAS');
+  const C=[[140,'GIRA',VEL,giro,p=>[p[0]*Math.cos(.6)-p[1]*Math.sin(.6),p[0]*Math.sin(.6)+p[1]*Math.cos(.6)]],[720,'MUDA DE ÁREA',SAI,expl,p=>[p[0]*1.42,p[1]*1.42]],[1300,'DEFORMA',LIMA,sela,p=>[p[0]*1.5,p[1]/1.5]]];
+  for(const [X0,t1,ct,Fv,T] of C){painel(X0,250,480,460);vista(X0+240,480,56);campo(Fv,{x0:-3.5,x1:3.5,y0:-3.5,y1:3.5,passo:.85,rmin:1.2,rmax:3.9,mmax:3.4});
+   const q=quadPts([0,0],1.2);quad(q,{fill:false,dash:[8,8],w:3});quad(q.map(T));txt(t1,X0+240,760,{size:34,al:'center',cor:ct});}
+  tex('\\V{\\rot}:\\ \\dfrac{\\partial \\Qq}{\\dx}-\\dfrac{\\partial \\Pp}{\\dy}',380,845,36,'c');
+  tex('\\D{\\dv}:\\ \\dfrac{\\partial \\Pp}{\\dx}+\\dfrac{\\partial \\Qq}{\\dy}',960,845,36,'c');
+  tex('\\dfrac{\\partial \\Pp}{\\dx}-\\dfrac{\\partial \\Qq}{\\dy}\\ \\ \\Lm{\\text{e}}\\ \\ \\dfrac{\\partial \\Qq}{\\dx}+\\dfrac{\\partial \\Pp}{\\dy}',1540,845,34,'c');
+  if(K==='b72'){tex('=2-(-1)=\\V{3}',380,940,38,'c');tex('=1+0=\\D{1}',960,940,38,'c');tex('=1-0=\\Lm{1}\\quad =2+(-1)=\\Lm{1}',1540,940,36,'c');
+   txt('4 NÚMEROS ENTRAM, 4 MEDIDAS SAEM',960,205,{size:36,al:'center',cor:BR});}}
+ // ---------- B7-4: o desafio ----------
+ if(K==='b74'){canto('O DESAFIO');vista(600,540,120);const t=.55,s=1.2,Mx=[[ch(t),sh(t)],[sh(t),ch(t)]],q=quadPts([0,0],s),l=mapa(Mx,q);
+  campo(troca,{mmax:3,rmin:0,skip:clar([[Math.min(...l.map(p=>p[0])),Math.min(...l.map(p=>p[1])),Math.max(...l.map(p=>p[0])),Math.max(...l.map(p=>p[1]))]])});
+  quad(q,{fill:false,dash:[9,8],w:3});quad(l);
+  tex('\\F = (\\Y,\\ \\X)',1120,300,48);tex('J = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}',1120,440,48);tex('\\rot = \\V{0}\\qquad \\dv = \\D{0}',1120,580,44);
+  txt('DEFORMAÇÃO: 0 e 2',1120,700,{size:44,cor:LIMA});legenda('O MESMO, GIRADO DE 45°',1124,770,GEO);
+  tex('\\text{TAMBÉM VALE: } (\\X^2-\\Y^2,\\ -2\\X\\Y)',1120,880,34,false,true);}
+ document.title='ok';}
+main();
+</script></body></html>

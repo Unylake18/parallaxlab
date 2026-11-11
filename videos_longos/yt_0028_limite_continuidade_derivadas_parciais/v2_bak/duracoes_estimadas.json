@@ -1,0 +1,197 @@
+{
+ "nota": "ESTIMADO: 0,15 s + palavras/2,8 + 0,35 s por âncora (fala nominal); a cena pode esticar onde a construção pede (ver render). Não são tempos medidos.",
+ "palavras": 2391,
+ "total_nominal_s": 872.4,
+ "total_nominal_min": 14.54,
+ "ancoras": {
+  "H1": {
+   "palavras": 60,
+   "dur_s": 21.93,
+   "dur_render_s": 21.93
+  },
+  "H2": {
+   "palavras": 41,
+   "dur_s": 15.14,
+   "dur_render_s": 15.13
+  },
+  "H3": {
+   "palavras": 54,
+   "dur_s": 19.79,
+   "dur_render_s": 19.8
+  },
+  "A1": {
+   "palavras": 53,
+   "dur_s": 19.43,
+   "dur_render_s": 19.73
+  },
+  "B1-1": {
+   "palavras": 45,
+   "dur_s": 16.57,
+   "dur_render_s": 16.6
+  },
+  "B1-2": {
+   "palavras": 62,
+   "dur_s": 22.64,
+   "dur_render_s": 22.6
+  },
+  "B1-3": {
+   "palavras": 89,
+   "dur_s": 32.29,
+   "dur_render_s": 32.8
+  },
+  "B1-4": {
+   "palavras": 74,
+   "dur_s": 26.93,
+   "dur_render_s": 26.93
+  },
+  "B1-5": {
+   "palavras": 124,
+   "dur_s": 44.79,
+   "dur_render_s": 44.8
+  },
+  "B1-6": {
+   "palavras": 82,
+   "dur_s": 29.79,
+   "dur_render_s": 30.13
+  },
+  "B2-1": {
+   "palavras": 33,
+   "dur_s": 12.29,
+   "dur_render_s": 12.27
+  },
+  "B2-2": {
+   "palavras": 55,
+   "dur_s": 20.14,
+   "dur_render_s": 20.8
+  },
+  "B2-3": {
+   "palavras": 66,
+   "dur_s": 24.07,
+   "dur_render_s": 24.07
+  },
+  "B2-4": {
+   "palavras": 73,
+   "dur_s": 26.57,
+   "dur_render_s": 26.93
+  },
+  "B3-1": {
+   "palavras": 71,
+   "dur_s": 25.86,
+   "dur_render_s": 25.8
+  },
+  "B3-2": {
+   "palavras": 100,
+   "dur_s": 36.21,
+   "dur_render_s": 36.27
+  },
+  "B3-3": {
+   "palavras": 44,
+   "dur_s": 16.21,
+   "dur_render_s": 16.53
+  },
+  "B4-1": {
+   "palavras": 63,
+   "dur_s": 23.0,
+   "dur_render_s": 23.0
+  },
+  "B4-2": {
+   "palavras": 87,
+   "dur_s": 31.57,
+   "dur_render_s": 31.53
+  },
+  "B4-3": {
+   "palavras": 43,
+   "dur_s": 15.86,
+   "dur_render_s": 15.87
+  },
+  "B4-4": {
+   "palavras": 33,
+   "dur_s": 12.29,
+   "dur_render_s": 12.6
+  },
+  "B4-5": {
+   "palavras": 86,
+   "dur_s": 31.21,
+   "dur_render_s": 31.53
+  },
+  "B5-1": {
+   "palavras": 40,
+   "dur_s": 14.79,
+   "dur_render_s": 14.8
+  },
+  "B5-2": {
+   "palavras": 68,
+   "dur_s": 24.79,
+   "dur_render_s": 24.73
+  },
+  "B5-3": {
+   "palavras": 70,
+   "dur_s": 25.5,
+   "dur_render_s": 25.53
+  },
+  "B5-4": {
+   "palavras": 106,
+   "dur_s": 38.36,
+   "dur_render_s": 38.67
+  },
+  "B6-1": {
+   "palavras": 61,
+   "dur_s": 22.29,
+   "dur_render_s": 22.33
+  },
+  "B6-2": {
+   "palavras": 65,
+   "dur_s": 23.71,
+   "dur_render_s": 23.67
+  },
+  "B6-3": {
+   "palavras": 37,
+   "dur_s": 13.71,
+   "dur_render_s": 13.73
+  },
+  "B6-4": {
+   "palavras": 50,
+   "dur_s": 18.36,
+   "dur_render_s": 18.67
+  },
+  "B7-1": {
+   "palavras": 58,
+   "dur_s": 21.21,
+   "dur_render_s": 22.6
+  },
+  "B7-2": {
+   "palavras": 77,
+   "dur_s": 28.0,
+   "dur_render_s": 28.07
+  },
+  "B7-3": {
+   "palavras": 69,
+   "dur_s": 25.14,
+   "dur_render_s": 25.13
+  },
+  "B7-4": {
+   "palavras": 50,
+   "dur_s": 18.36,
+   "dur_render_s": 18.33
+  },
+  "B7-5": {
+   "palavras": 72,
+   "dur_s": 26.21,
+   "dur_render_s": 26.53
+  },
+  "S1": {
+   "palavras": 76,
+   "dur_s": 27.64,
+   "dur_render_s": 29.13
+  },
+  "S2": {
+   "palavras": 54,
+   "dur_s": 19.79,
+   "dur_render_s": 22.8
+  }
+ },
+ "render_v2": {
+  "total_s": 882.4,
+  "nota": "dur_render_s = do início da âncora ao início da seguinte no preview (inclui as saídas de seção); estimado, sem voz"
+ }
+}

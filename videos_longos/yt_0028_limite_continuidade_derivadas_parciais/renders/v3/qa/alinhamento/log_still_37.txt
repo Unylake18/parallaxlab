@@ -1,0 +1,90 @@
+Manim Community v0.21.0
+
+[ancora] S1 0.000
+[campo] S modelo linear (contexto): 148 setas, maior 0.420 u, menor 0.189 u (menor ÷ maior 0.45; alvo ≥ 0,40), maior ÷ passo = 0.84
+[11/11/26 10:07:03] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{ZOOM                        
+                             }\times                                           
+                             10\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _37\Tex\d568b74cecb9175a.t                        
+                             ex                                                
+[11/11/26 10:07:07] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}J=\begin{p                        
+                             matrix}\Am{1} & \Mg{-1}\\                         
+                             \Am{2} &                                          
+                             \Mg{0}\end{pmatrix}\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _37\Tex\357a4d0ad64b5812.t                        
+                             ex                                                
+[gatilho] S1   7.93s (alvo   7.92s, atraso +0.02s) a derivada parcial é a velocidade
+[algebra] S1    7.93s glifos=9 cor=100% rt=1.5s 'J=\\begin{pmatrix}\\Am{1} & \\Mg{-1}\\\\ \\Am{2} & \\Mg{0}\\end{pmatrix}'
+[11/11/26 10:07:09] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\V{\rot =                         
+                             3}\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _37\Tex\e5ee593d2c3fee3e.t                        
+                             ex                                                
+[11/11/26 10:07:10] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\D{\dv =                          
+                             1}\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _37\Tex\f04300c3f126aeb0.t                        
+                             ex                                                
+[11/11/26 10:07:12] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Lm{\text{                        
+                             deformação} = 1 \text{ e }                        
+                             1}\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _37\Tex\b1c8e00c23c23b0c.t                        
+                             ex                                                
+[gatilho] S1  17.20s (alvo  17.20s, atraso -0.00s) giro
+[algebra] S1   17.20s glifos=5 cor=100% rt=0.5s '\\V{\\rot = 3}'
+[gatilho] S1  17.73s (alvo  17.56s, atraso +0.17s) área
+[algebra] S1   17.73s glifos=5 cor=100% rt=0.5s '\\D{\\dv = 1}'
+[gatilho] S1  18.27s (alvo  18.27s, atraso -0.01s) deformação
+[algebra] S1   18.27s glifos=16 cor=100% rt=1.5s '\\Lm{\\text{deformação} = 1 \\text{ e } 1}'
+[gatilho] S1  19.80s (alvo  18.99s, atraso +0.81s) uma curiosidade
+[gatilho] S1  23.60s (alvo  23.63s, atraso -0.03s) três de giro
+[E7] S completo (matriz, três linhas e duas legendas) e 1,5 s parado antes do CTA
+[estouro] S2 começou 1.47s depois do previsto (a cena se esticou)
+[ancora] S2 29.133
+[gatilho] S2   0.00s (alvo   0.06s, atraso -0.06s) no próximo vídeo
+[11/11/26 10:07:24] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0028_limite_continuida                          
+                             de_derivadas_parciais\me                          
+                             dia_s1080_37\images\cena                          
+                             \PS_ManimCE_v0.21.0.png'                          
+                                                                               
+                    INFO     Rendered PS                           scene.py:290
+                             Played 12 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

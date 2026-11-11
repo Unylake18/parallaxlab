@@ -1,0 +1,28 @@
+True  F(P): [1. 0.] (alvo [1, 0])
+True  ∂F/∂x(P): [1. 2.] (alvo [1, 2])
+True  ∂F/∂y(P): [-1.  0.] (alvo [-1, 0])
+True  rot = ∂Q/∂x − ∂P/∂y: 3.0 (alvo 3)
+True  div = ∂P/∂x + ∂Q/∂y: 1.0 (alvo 1)
+True  deformação 1 = ∂P/∂x − ∂Q/∂y: 1.0 (alvo 1)
+True  deformação 2 = ∂Q/∂x + ∂P/∂y: 1.0 (alvo 1)
+True  quociente em x, h = 1: [0.8415 2.1426] (alvo (0.84, 2.14))
+True  quociente em x, h = 0.5: [0.9589 2.1625] (alvo (0.96, 2.16))
+True  quociente em x, h = 0.2: [0.9933 2.0864] (alvo (0.99, 2.09))
+True  quociente em x, h = 0.1: [0.9983 2.0466] (alvo (1.0, 2.05))
+True  quociente em y, k = 1: [-0.8415  0.4597] (alvo (-0.84, 0.46))
+False  quociente em y, k = 0.5: [-0.9589  0.2448] (alvo (-0.96, 0.25))
+True  quociente em y, k = 0.2: [-0.9933  0.0997] (alvo (-0.99, 0.1))
+True  quociente em y, k = 0.1: [-0.9983  0.05  ] (alvo (-1.0, 0.05))
+True  ε = 1: com δ = 0.41, maior |F(X) − F(P)| na borda = 0.9862 < ε (maior δ ≈ 0.416)
+True  ε = 0.5: com δ = 0.21, maior |F(X) − F(P)| na borda = 0.4962 < ε (maior δ ≈ 0.212)
+True  exp(0,35 J) fechada = expm: [[ 1.2669 -0.4022]
+ [ 0.8044  0.8647]] (alvo [[ 1.26692347 -0.40219826]
+ [ 0.80439651  0.86472522]])
+True  área × det e^(0,35 J): 1.4191 (alvo 1.42)
+True  gancho: área 1,2·e^0,55 × 1,2·e^−0,55: 1.44 (alvo 1.44)
+True  gancho: lados: [2.0799 0.6923] (alvo [2.08, 0.69])
+True  G na reta y = 0x: 0.0 (alvo 0)
+True  G na reta y = 1x: 1.0 (alvo 1)
+True  G na reta y = -1x: -1.0 (alvo -1)
+
+23 de 24 checagens True

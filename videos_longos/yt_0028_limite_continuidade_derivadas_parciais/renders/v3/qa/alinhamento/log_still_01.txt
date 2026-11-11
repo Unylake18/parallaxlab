@@ -1,0 +1,91 @@
+Manim Community v0.21.0
+
+[ancora] H1 0.000
+[campo] H (x, −y): 164 setas, maior 0.420 u, menor 0.210 u (menor ÷ maior 0.50; alvo ≥ 0,40), maior ÷ passo = 0.84
+[11/11/26 09:57:28] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F =                              
+                             (\X,\special{dvisvgm:raw                          
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _01\Tex\ea6ba87fea594df0.t                        
+                             ex                                                
+[11/11/26 09:57:32] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}-\Y)\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _01\Tex\b556df56dd7a4649.t                        
+                             ex                                                
+K:\PycharmProjects\manim-fisica\videos_longos\yt_0028_limite_continuidade_derivadas_parciais\v28.py:884: RuntimeWarning: invalid value encountered in scalar divide
+  t = max(0.0, min(1.0, ((X - a[0]) * p + (Y - a[1]) * q) / (p * p + q * q)))
+[gatilho] H1   1.00s (alvo   0.06s, atraso +0.94s) lembra do campo
+[algebra] H1    1.00s glifos=6 cor=100% rt=2.1s '\\F = (\\X,'
+[gatilho] H1   7.20s (alvo   7.20s, atraso -0.00s) menos a coordenada vertical
+[algebra] H1    7.20s glifos=3 cor=100% rt=1.2s '-\\Y)'
+[gatilho] H1   8.60s (alvo   8.63s, atraso -0.03s) coloca um quadradinho
+[11/11/26 09:57:35] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\rot\F =                          
+                             \V{0}\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _01\Tex\5f86615054e982e7.t                        
+                             ex                                                
+[gatilho] H1  14.33s (alvo  14.35s, atraso -0.01s) o rotacional dá zero
+[algebra] H1   14.33s glifos=7 cor=100% rt=2.4s '\\rot\\F = \\V{0}'
+[11/11/26 09:57:37] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dv\F =                           
+                             \D{0}\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _01\Tex\40e100753b1a1ef8.t                        
+                             ex                                                
+[gatilho] H1  17.93s (alvo  17.92s, atraso +0.02s) o divergente também
+[algebra] H1   17.93s glifos=7 cor=100% rt=2.4s '\\dv\\F = \\D{0}'
+[ancora] H2 21.933
+[gatilho] H2   3.60s (alvo   3.63s, atraso -0.03s) deixa o fluido andar
+[motor] H (x eᵗ, y e⁻ᵗ): fluxo de 0.000 a 0.550 em 6.00 s
+[deforma] H: área 1.4400 → 1.4400; lados 2.080 × 0.692
+[11/11/26 09:57:40] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{ÁREA                        
+                             } 1{,}44 \to                                      
+                             1{,}44\special{dvisvgm:raw                        
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _01\Tex\1a6548788f227f4e.t                        
+                             ex                                                
+[gatilho] H2   9.60s (alvo   8.99s, atraso +0.61s) a área continua a mesma
+[gatilho] H2  13.27s (alvo  13.27s, atraso -0.01s) mas virou outra coisa
+[ancora] H3 37.067
+[gatilho] H3   5.07s (alvo   5.06s, atraso +0.01s) que número mede isso
+[11/11/26 09:57:55] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0028_limite_continuida                          
+                             de_derivadas_parciais\me                          
+                             dia_s1080_01\images\cena                          
+                             \PH_ManimCE_v0.21.0.png'                          
+                                                                               
+                    INFO     Rendered PH                           scene.py:290
+                             Played 20 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

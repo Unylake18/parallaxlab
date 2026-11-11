@@ -1,0 +1,135 @@
+Manim Community v0.21.0
+
+[ancora] B4-1 0.000
+[campo] B4 campo da aula (contexto): 80 setas, maior 0.420 u, menor 0.176 u (menor ÷ maior 0.42; alvo ≥ 0,40), maior ÷ passo = 0.84
+[alinha-setas] B4 campo da aula (contexto) | origem (480, 540) 144 px/u, quadradinho 36 px | 80 setas | resíduo 0.00 px
+[11/11/26 11:30:49] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Pt\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _14\Tex\c085f82aa368e188.t                        
+                             ex                                                
+[11/11/26 11:30:51] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F(\Pt)\sp                        
+                             ecial{dvisvgm:raw </g>} to                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _14\Tex\b3a01fdb359a9c89.t                        
+                             ex                                                
+[11/11/26 11:30:53] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\h\special                        
+                             {dvisvgm:raw </g>} to                             
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _14\Tex\9eedcaa754dd7e68.t                        
+                             ex                                                
+[11/11/26 11:30:55] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\De                        
+                             lta\F}{\h}\special{dvisvgm                        
+                             :raw </g>} to                                     
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _14\Tex\af3f203559d8aeef.t                        
+                             ex                                                
+[gatilho] B4-1   4.00s (alvo   3.99s, atraso +0.01s) anda só na horizontal
+[gatilho] B4-1   9.00s (alvo   8.99s, atraso +0.01s) a diferença entre as duas é um vetor
+[11/11/26 11:30:57] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Delta\F=\                        
+                             F(\Pt+\h)-\F(\Pt)\ \                              
+                             \text{(corda)}\special{dvi                        
+                             svgm:raw </g>} to                                 
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _14\Tex\ee99e51cc065f15c.t                        
+                             ex                                                
+[gatilho] B4-1  11.87s (alvo  11.85s, atraso +0.02s) que liga a ponta velha
+[algebra] B4-1   11.87s glifos=24 cor=100% rt=3.4s '\\Delta\\F=\\F(\\Pt+\\h)-\\F(\\Pt)\\ \\ \\text{(corda)}'
+[gatilho] B4-1  15.27s (alvo  14.70s, atraso +0.56s) divide esse vetor
+[ancora] B4-2 23.000
+[11/11/26 11:31:00] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\h=1:\                            
+                             (0{,}84;\                                         
+                             2{,}14)\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _14\Tex\320a490acbab0307.t                        
+                             ex                                                
+[11/11/26 11:31:02] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\h=0{,}5:\                        
+                             (0{,}96;\                                         
+                             2{,}16)\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _14\Tex\c10500ff9824309c.t                        
+                             ex                                                
+[11/11/26 11:31:04] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\h=0{,}1:\                        
+                             (1{,}00;\                                         
+                             2{,}05)\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _14\Tex\b15f5d9d7b7fdb5c.t                        
+                             ex                                                
+[11/11/26 11:31:06] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\to\ (1,\                         
+                             2)\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _14\Tex\e2383e46c08a68b0.t                        
+                             ex                                                
+[gatilho] B4-2   0.00s (alvo   0.06s, atraso -0.06s) com passo um
+[algebra] B4-2   23.00s glifos=15 cor=100% rt=1.9s '\\h=1:\\ (0{,}84;\\ 2{,}14)'
+[gatilho] B4-2   5.40s (alvo   5.42s, atraso -0.02s) com meio
+[algebra] B4-2   28.40s glifos=17 cor=100% rt=2.2s '\\h=0{,}5:\\ (0{,}96;\\ 2{,}16)'
+[gatilho] B4-2   9.33s (alvo   9.35s, atraso -0.01s) com passo cada vez menor
+[algebra] B4-2   32.93s glifos=17 cor=100% rt=2.2s '\\h=0{,}1:\\ (1{,}00;\\ 2{,}05)'
+[quociente] x: h = 0,1 → (0.998; 2.047)
+[gatilho] B4-2  12.07s (alvo  11.13s, atraso +0.94s) ele vai chegando em um e dois
+[algebra] B4-2   35.07s glifos=6 cor=100% rt=1.1s '\\to\\ (1,\\ 2)'
+[gatilho] B4-2  18.27s (alvo  18.27s, atraso -0.01s) desenha uma curva
+[11/11/26 11:31:09] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0028_limite_continuida                          
+                             de_derivadas_parciais\me                          
+                             dia_s1080_14\images\cena                          
+                             \PB4_ManimCE_v0.21.0.png                          
+                             '                                                 
+                                                                               
+                    INFO     Rendered PB4                          scene.py:290
+                             Played 18 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

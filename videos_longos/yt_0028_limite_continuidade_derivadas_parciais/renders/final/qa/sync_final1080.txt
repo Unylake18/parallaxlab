@@ -1,0 +1,288 @@
+yt_0028 · sincronização (rodada final1080, 30 fps): atraso = tela − voz (s); meta ≤ +0,20 s
+
+PH: [deriva] PH +0.00s além do fim da última âncora
+PB1: [deriva] PB1 +0.00s além do fim da última âncora
+PB2: [deriva] PB2 +0.00s além do fim da última âncora
+PB3: [deriva] PB3 +0.00s além do fim da última âncora
+PB4: [deriva] PB4 +0.00s além do fim da última âncora
+PB5: [deriva] PB5 +0.00s além do fim da última âncora
+PB6: [deriva] PB6 +0.00s além do fim da última âncora
+PB7: [deriva] PB7 +0.00s além do fim da última âncora
+PS: [deriva] PS +2.00s além do fim da última âncora
+
+âncoras (início da âncora na tela × 1ª palavra na voz):
+  H1    tela     0.00 s · voz     0.10 s · -0.10 s OK
+  H2    tela    21.67 s · voz    21.80 s · -0.13 s OK
+  H3    tela    33.50 s · voz    33.66 s · -0.16 s OK
+  A1    tela    50.23 s · voz    50.38 s · -0.15 s OK
+  B1-1  tela    99.80 s · voz    99.94 s · -0.14 s OK
+  B1-2  tela   119.10 s · voz   119.26 s · -0.16 s OK
+  B1-3  tela   140.00 s · voz   140.14 s · -0.14 s OK
+  B1-4  tela   170.90 s · voz   171.06 s · -0.16 s OK
+  B1-5  tela   195.67 s · voz   195.82 s · -0.15 s OK
+  B1-6  tela   239.73 s · voz   239.90 s · -0.17 s OK
+  B2-1  tela   271.10 s · voz   271.24 s · -0.14 s OK
+  B2-2  tela   287.40 s · voz   287.56 s · -0.16 s OK
+  B2-3  tela   307.40 s · voz   307.56 s · -0.16 s OK
+  B2-4  tela   330.87 s · voz   331.02 s · -0.15 s OK
+  B3-1  tela   361.87 s · voz   362.00 s · -0.13 s OK
+  B3-2  tela   385.50 s · voz   385.66 s · -0.16 s OK
+  B3-3  tela   433.70 s · voz   433.84 s · -0.14 s OK
+  B4-1  tela   461.33 s · voz   461.48 s · -0.15 s OK
+  B4-2  tela   480.90 s · voz   481.06 s · -0.16 s OK
+  B4-3  tela   509.80 s · voz   509.94 s · -0.14 s OK
+  B4-4  tela   525.63 s · voz   525.78 s · -0.15 s OK
+  B4-5  tela   537.10 s · voz   537.26 s · -0.16 s OK
+  B5-1  tela   565.70 s · voz   565.86 s · -0.16 s OK
+  B5-2  tela   579.27 s · voz   579.40 s · -0.13 s OK
+  B5-3  tela   601.20 s · voz   601.36 s · -0.16 s OK
+  B5-4  tela   629.57 s · voz   629.72 s · -0.15 s OK
+  B6-1  tela   680.23 s · voz   680.38 s · -0.15 s OK
+  B6-2  tela   699.20 s · voz   699.36 s · -0.16 s OK
+  B6-3  tela   721.13 s · voz   721.30 s · -0.17 s OK
+  B6-4  tela   736.33 s · voz   736.48 s · -0.15 s OK
+  B7-1  tela   754.77 s · voz   754.92 s · -0.15 s OK
+  B7-2  tela   776.73 s · voz   776.88 s · -0.15 s OK
+  B7-3  tela   806.53 s · voz   806.68 s · -0.15 s OK
+  B7-4  tela   840.47 s · voz   840.62 s · -0.15 s OK
+  B7-5  tela   859.10 s · voz   859.24 s · -0.14 s OK
+  S1    tela   887.77 s · voz   887.92 s · -0.15 s OK
+  S2    tela   915.13 s · voz   915.28 s · -0.15 s OK
+
+gatilhos (234):
+  H1    +0.08 s  «que fechou o episódio passado»  (tela 1.00 · voz 0.92) OK
+  H1    -0.09 s  «e a vertical é menos y»  (tela 4.93 · voz 5.02) OK
+  H1    -0.07 s  «coloca um quadradinho»  (tela 6.87 · voz 6.94) OK
+  H1    -0.08 s  «o rotacional dá zero»  (tela 11.00 · voz 11.08) OK
+  H1    -0.08 s  «o divergente também»  (tela 14.70 · voz 14.78) OK
+  H2    -0.06 s  «olha o que acontece»  (tela 24.04 · voz 24.10) OK
+  H2    -0.09 s  «a área continua a mesma»  (tela 28.47 · voz 28.56) OK
+  H2    -0.08 s  «mas a forma mudou completamente»  (tela 31.34 · voz 31.42) OK
+  H3    -0.09 s  «que número mede isso»  (tela 37.93 · voz 38.02) OK
+  H3    -0.09 s  «nas derivadas parciais»  (tela 41.27 · voz 41.36) OK
+  H3    -0.09 s  «começar pelo chão»  (tela 46.63 · voz 46.72) OK
+  H3    -0.10 s  «chegar perto de um ponto»  (tela 48.60 · voz 48.70) OK
+  A1    -0.08 s  «fala pessoal»  (tela 50.30 · voz 50.38) OK
+  A1    -0.10 s  «esse é o terceiro episódio»  (tela 53.00 · voz 53.10) OK
+  A1    -0.08 s  «para isso entram três ideias»  (tela 63.30 · voz 63.38) OK
+  A1    -0.10 s  «uma apoiada na outra»  (tela 65.30 · voz 65.40) OK
+  A1    -0.10 s  «primeiro o limite»  (tela 66.66 · voz 66.76) OK
+  A1    -0.10 s  «depois a continuidade»  (tela 73.36 · voz 73.46) OK
+  A1    -0.10 s  «e por fim as derivadas parciais»  (tela 78.20 · voz 78.30) OK
+  A1    -0.09 s  «numa tabela de quatro números»  (tela 89.23 · voz 89.32) OK
+  A1    -0.09 s  «então vamos começar pelo chão»  (tela 96.73 · voz 96.82) OK
+  B1-1  -0.09 s  «a seta do lugar onde você está»  (tela 107.07 · voz 107.16) OK
+  B1-1  -0.09 s  «na da direita»  (tela 109.77 · voz 109.86) OK
+  B1-1  -0.07 s  «eu trago essa seta»  (tela 110.57 · voz 110.64) OK
+  B1-1  -0.09 s  «por onde você anda»  (tela 116.13 · voz 116.22) OK
+  B1-1  -0.09 s  «a outra onde a seta chega»  (tela 117.33 · voz 117.42) OK
+  B1-2  -0.09 s  «conforme você chega perto»  (tela 119.17 · voz 119.26) OK
+  B1-2  -0.11 s  «os dois números de baixo»  (tela 126.93 · voz 127.04) OK
+  B1-2  -0.12 s  «então a definição vira um desafio»  (tela 137.70 · voz 137.82) OK
+  B1-3  -0.07 s  «um disquinho de raio épsilon»  (tela 143.03 · voz 143.10) OK
+  B1-3  -0.09 s  «qualquer épsilon pode ser escolhido»  (tela 149.47 · voz 149.56) OK
+  B1-3  -0.07 s  «depois é a sua vez»  (tela 154.67 · voz 154.74) OK
+  B1-3  -0.09 s  «e olha o que acontece do outro lado»  (tela 159.37 · voz 159.46) OK
+  B1-3  -0.07 s  «cada ponto do seu disco»  (tela 161.07 · voz 161.14) OK
+  B1-3  -0.09 s  «formam uma mancha»  (tela 166.43 · voz 166.52) OK
+  B1-3  -0.07 s  «a pergunta é uma só»  (tela 167.57 · voz 167.64) OK
+  B1-4  -0.09 s  «com delta igual a zero vírgula sete»  (tela 170.97 · voz 171.06) OK
+  B1-4  -0.09 s  «diminui o delta»  (tela 175.43 · voz 175.52) OK
+  B1-4  -0.09 s  «achou»  (tela 181.23 · voz 181.32) OK
+  B1-4  -0.09 s  «se o desafio aperta para meio»  (tela 184.37 · voz 184.46) OK
+  B1-4  -0.09 s  «para um quarto»  (tela 188.57 · voz 188.66) OK
+  B1-5  -0.08 s  «o próprio ponto fica de fora»  (tela 197.44 · voz 197.52) OK
+  B1-5  -0.08 s  «é o maior que zero»  (tela 199.44 · voz 199.52) OK
+  B1-5  -0.08 s  «o limite só olha para quem está chegando»  (tela 201.60 · voz 201.68) OK
+  B1-5  -0.08 s  «nem precisa estar no domínio»  (tela 207.34 · voz 207.42) OK
+  B1-5  -0.10 s  «tão perto dele quanto você quiser»  (tela 210.44 · voz 210.54) OK
+  B1-5  -0.08 s  «o nome disso é ponto de acumulação»  (tela 212.54 · voz 212.62) OK
+  B1-5  -0.10 s  «sozinho sem vizinhos»  (tela 216.14 · voz 216.24) OK
+  B1-5  -0.10 s  «agora sim escrito»  (tela 219.94 · voz 220.04) OK
+  B1-5  -0.09 s  «a metade da esquerda»  (tela 234.87 · voz 234.96) OK
+  B1-5  -0.08 s  «a da direita»  (tela 237.60 · voz 237.68) OK
+  B1-6  -0.10 s  «e tem um atalho»  (tela 239.80 · voz 239.90) OK
+  B1-6  -0.11 s  «as duas sombras dela»  (tela 242.73 · voz 242.84) OK
+  B1-6  -0.12 s  «ficam a menos de épsilon»  (tela 245.66 · voz 245.78) OK
+  B1-6  -0.10 s  «o contrário também vale»  (tela 248.20 · voz 248.30) OK
+  B1-6  -0.10 s  «a ponta cai num quadrado»  (tela 251.30 · voz 251.40) OK
+  B1-6  -0.11 s  «um pouquinho maior»  (tela 253.93 · voz 254.04) OK
+  B1-6  -0.14 s  «então o limite de um campo existe»  (tela 255.06 · voz 255.20) OK
+  B1-6  -0.10 s  «o limite de cada componente existe»  (tela 258.36 · voz 258.46) OK
+  B2-1  -0.08 s  «campo encrenqueiro»  (tela 273.50 · voz 273.58) OK
+  B2-2  -0.09 s  «pelo eixo horizontal»  (tela 288.77 · voz 288.86) OK
+  B2-2  -0.09 s  «pela diagonal de subida»  (tela 291.93 · voz 292.02) OK
+  B2-2  -0.11 s  «pela outra»  (tela 294.47 · voz 294.58) OK
+  B2-2  -0.11 s  «numa reta qualquer»  (tela 296.47 · voz 296.58) OK
+  B2-2  -0.11 s  «três caminhos três resultados diferentes»  (tela 302.97 · voz 303.08) OK
+  B2-2  -0.11 s  «muda o valor»  (tela 306.67 · voz 306.78) OK
+  B2-3  -0.09 s  «e dá para ver isso»  (tela 307.47 · voz 307.56) OK
+  B2-3  -0.09 s  «em coordenadas polares»  (tela 309.47 · voz 309.56) OK
+  B2-3  -0.09 s  «o seno do dobro do ângulo»  (tela 312.33 · voz 312.42) OK
+  B2-3  -0.11 s  «num círculo minúsculo»  (tela 318.37 · voz 318.48) OK
+  B2-3  -0.09 s  «a ponta da seta varre o segmento»  (tela 320.67 · voz 320.76) OK
+  B2-4  -0.08 s  «escolhe um alvo qualquer»  (tela 332.50 · voz 332.58) OK
+  B2-4  -0.10 s  «um épsilon de meio»  (tela 334.00 · voz 334.10) OK
+  B2-4  -0.08 s  «não cabe»  (tela 338.70 · voz 338.78) OK
+  B2-4  -0.08 s  «seja qual for o alvo»  (tela 339.44 · voz 339.52) OK
+  B2-4  -0.10 s  «e fica um cuidado»  (tela 343.10 · voz 343.20) OK
+  B2-4  -0.10 s  «todas as retas darem o mesmo valor»  (tela 348.30 · voz 348.40) OK
+  B2-4  -0.08 s  «chegar por uma curva»  (tela 352.74 · voz 352.82) OK
+  B2-4  -0.09 s  «olha este campo»  (tela 353.87 · voz 353.96) OK
+  B2-4  -0.10 s  «por qualquer reta»  (tela 354.80 · voz 354.90) OK
+  B2-4  -0.08 s  «pela parábola»  (tela 357.70 · voz 357.78) OK
+  B2-4  -0.08 s  «também não tem limite»  (tela 360.50 · voz 360.58) OK
+  B3-1  -0.08 s  «um o ponto está no domínio»  (tela 366.84 · voz 366.92) OK
+  B3-1  -0.06 s  «dois o limite ali existe»  (tela 370.50 · voz 370.56) OK
+  B3-1  -0.06 s  «três o limite é igual»  (tela 372.74 · voz 372.80) OK
+  B3-1  -0.08 s  «na figura»  (tela 376.10 · voz 376.18) OK
+  B3-1  -0.07 s  «no nosso campo a mancha cabe»  (tela 382.87 · voz 382.94) OK
+  B3-2  -0.10 s  «três jeitos de dar errado»  (tela 386.10 · voz 386.20) OK
+  B3-2  -0.09 s  «no campo elétrico de uma carga»  (tela 391.27 · voz 391.36) OK
+  B3-2  -0.11 s  «falha o primeiro pedaço»  (tela 398.33 · voz 398.44) OK
+  B3-2  -0.09 s  «em todo o resto ele é contínuo»  (tela 401.43 · voz 401.52) OK
+  B3-2  -0.11 s  «definido como zero na origem»  (tela 404.87 · voz 404.98) OK
+  B3-2  -0.10 s  «dependendo do caminho por onde você chega»  (tela 408.90 · voz 409.00) OK
+  B3-2  -0.11 s  «falha o segundo»  (tela 414.43 · voz 414.54) OK
+  B3-2  -0.09 s  «e neste aqui»  (tela 415.47 · voz 415.56) OK
+  B3-2  -0.11 s  «menos a do centro»  (tela 418.53 · voz 418.64) OK
+  B3-2  -0.09 s  «chegando de qualquer lado»  (tela 420.77 · voz 420.86) OK
+  B3-2  -0.10 s  «o limite existe e é a seta para a direita»  (tela 426.00 · voz 426.10) OK
+  B3-2  -0.11 s  «a seta do ponto é outra»  (tela 428.77 · voz 428.88) OK
+  B3-2  -0.11 s  «falha o terceiro»  (tela 430.63 · voz 430.74) OK
+  B3-3  -0.07 s  «cada componente é contínua»  (tela 438.27 · voz 438.34) OK
+  B3-3  -0.07 s  «somas produtos quocientes»  (tela 444.43 · voz 444.50) OK
+  B3-3  -0.07 s  «e composições de funções contínuas»  (tela 448.23 · voz 448.30) OK
+  B3-3  -0.07 s  «uma constante mais senos»  (tela 453.83 · voz 453.90) OK
+  B3-3  -0.07 s  «o campo da carga é um quociente»  (tela 456.33 · voz 456.40) OK
+  B4-1  -0.08 s  «anda só na horizontal»  (tela 464.96 · voz 465.04) OK
+  B4-1  -0.08 s  «a diferença entre as duas é um vetor»  (tela 469.16 · voz 469.24) OK
+  B4-1  -0.08 s  «que liga a ponta velha»  (tela 471.30 · voz 471.38) OK
+  B4-1  -0.12 s  «divide esse vetor»  (tela 473.56 · voz 473.68) OK
+  B4-2  -0.09 s  «com passo um»  (tela 480.97 · voz 481.06) OK
+  B4-2  -0.11 s  «com meio»  (tela 485.97 · voz 486.08) OK
+  B4-2  -0.09 s  «com passo cada vez menor»  (tela 489.93 · voz 490.02) OK
+  B4-2  -0.11 s  «ele vai chegando em um e dois»  (tela 491.53 · voz 491.64) OK
+  B4-2  -0.11 s  «desenha uma curva»  (tela 497.27 · voz 497.38) OK
+  B4-2  -0.09 s  «ela vira a seta tangente»  (tela 502.23 · voz 502.32) OK
+  B4-2  -0.09 s  «então a derivada parcial é a velocidade»  (tela 504.03 · voz 504.12) OK
+  B4-3  -0.08 s  «a horizontal diz»  (tela 512.20 · voz 512.28) OK
+  B4-3  -0.07 s  «a vertical diz»  (tela 516.33 · voz 516.40) OK
+  B4-3  -0.09 s  «por isso a conta é por componentes»  (tela 520.13 · voz 520.22) OK
+  B4-4  -0.08 s  «agora na vertical»  (tela 525.70 · voz 525.78) OK
+  B4-4  -0.10 s  «anda num círculo»  (tela 528.90 · voz 529.00) OK
+  B4-4  -0.10 s  «e o quociente vai chegando»  (tela 529.96 · voz 530.06) OK
+  B4-4  -0.09 s  «tangente ao círculo»  (tela 535.83 · voz 535.92) OK
+  B4-5  -0.10 s  «é um vetor»  (tela 540.10 · voz 540.20) OK
+  B4-5  -0.11 s  «quando você anda numa direção»  (tela 542.53 · voz 542.64) OK
+  B4-5  -0.09 s  «na conta»  (tela 544.23 · voz 544.32) OK
+  B4-5  -0.11 s  «dá cosseno»  (tela 546.27 · voz 546.38) OK
+  B4-5  -0.09 s  «no ponto um e dois»  (tela 550.27 · voz 550.36) OK
+  B4-5  -0.11 s  «a derivada na vertical dá»  (tela 552.07 · voz 552.18) OK
+  B4-5  -0.10 s  «no ponto menos um e zero»  (tela 556.40 · voz 556.50) OK
+  B4-5  -0.09 s  «num campo no espaço»  (tela 560.73 · voz 560.82) OK
+  B5-1  -0.11 s  «pelo eixo horizontal»  (tela 570.93 · voz 571.04) OK
+  B5-1  -0.11 s  «derivada zero»  (tela 574.07 · voz 574.18) OK
+  B5-1  -0.09 s  «pelo vertical»  (tela 575.03 · voz 575.12) OK
+  B5-1  -0.03 s  «as duas existem»  (tela 576.97 · voz 577.00) OK
+  B5-1  -0.10 s  «as duas são zero»  (tela 578.10 · voz 578.20) OK
+  B5-2  -0.06 s  «se você confiasse só nelas»  (tela 579.34 · voz 579.40) OK
+  B5-2  -0.06 s  «um quadradinho em volta da origem»  (tela 584.84 · voz 584.90) OK
+  B5-2  -0.08 s  «iria parar num ponto só»  (tela 586.54 · voz 586.62) OK
+  B5-2  -0.06 s  «mas olha a imagem de verdade»  (tela 588.10 · voz 588.16) OK
+  B5-2  -0.07 s  «a previsão errou feio»  (tela 593.47 · voz 593.54) OK
+  B5-2  -0.06 s  «esconde tudo nas diagonais»  (tela 597.74 · voz 597.80) OK
+  B5-3  -0.09 s  «o que faltou»  (tela 601.27 · voz 601.36) OK
+  B5-3  -0.10 s  «no nosso campo a derivada na horizontal»  (tela 605.30 · voz 605.40) OK
+  B5-3  -0.09 s  «no encrenqueiro»  (tela 610.33 · voz 610.42) OK
+  B5-3  -0.11 s  «na origem vale zero»  (tela 615.03 · voz 615.14) OK
+  B5-3  -0.11 s  «classe cê um»  (tela 617.53 · voz 617.64) OK
+  B5-3  -0.11 s  «classe cê erre»  (tela 625.97 · voz 626.08) OK
+  B5-4  -0.08 s  «e com ela vem a promessa»  (tela 629.64 · voz 629.72) OK
+  B5-4  -0.09 s  «manda para a tela da chegada»  (tela 633.17 · voz 633.26) OK
+  B5-4  -0.10 s  «as linhas horizontais viram curvas»  (tela 634.74 · voz 634.84) OK
+  B5-4  -0.09 s  «e as verticais»  (tela 638.57 · voz 638.66) OK
+  B5-4  -0.10 s  «quase um paralelogramo»  (tela 643.60 · voz 643.70) OK
+  B5-4  -0.09 s  «escrito»  (tela 647.27 · voz 647.36) OK
+  B5-4  -0.10 s  «com um erro que some»  (tela 657.44 · voz 657.54) OK
+  B5-4  -0.10 s  «o nosso campo feito de senos e cossenos»  (tela 660.04 · voz 660.14) OK
+  B5-4  -0.08 s  «o encrenqueiro não»  (tela 663.64 · voz 663.72) OK
+  B5-4  -0.08 s  «dividindo o erro pelo passo»  (tela 665.74 · voz 665.82) OK
+  B5-4  -0.10 s  «no nosso campo quando o passo cai pela metade»  (tela 667.44 · voz 667.54) OK
+  B5-4  -0.10 s  «no encrenqueiro ela dobra»  (tela 673.14 · voz 673.24) OK
+  B6-1  -0.08 s  «dez vezes mais perto»  (tela 683.36 · voz 683.44) OK
+  B6-1  -0.08 s  «essa janelinha vira o palco inteiro»  (tela 685.40 · voz 685.48) OK
+  B6-1  -0.09 s  «cada uma é a seta do centro»  (tela 691.13 · voz 691.22) OK
+  B6-1  -0.10 s  «tira a seta do centro de todas»  (tela 694.16 · voz 694.26) OK
+  B6-2  -0.09 s  «bem de perto essa mudança é escrita»  (tela 699.27 · voz 699.36) OK
+  B6-2  -0.09 s  «então coloca as duas lado a lado»  (tela 702.83 · voz 702.92) OK
+  B6-2  -0.11 s  «a derivada na horizontal na primeira»  (tela 705.53 · voz 705.64) OK
+  B6-2  -0.11 s  «a derivada na vertical na segunda»  (tela 707.57 · voz 707.68) OK
+  B6-2  -0.09 s  «matriz jacobiana»  (tela 715.77 · voz 715.86) OK
+  B6-2  -0.10 s  «no nosso ponto»  (tela 717.20 · voz 717.30) OK
+  B6-3  -0.12 s  «um passo com uma parte horizontal»  (tela 722.46 · voz 722.58) OK
+  B6-3  -0.14 s  «vira a parte horizontal vezes a primeira coluna»  (tela 725.46 · voz 725.60) OK
+  B6-3  -0.12 s  «mais a parte vertical vezes a segunda»  (tela 728.40 · voz 728.52) OK
+  B6-3  -0.10 s  «a seta do modelo é a soma das duas»  (tela 730.90 · voz 731.00) OK
+  B6-4  -0.08 s  «agora coloca um quadradinho»  (tela 736.40 · voz 736.48) OK
+  B6-4  -0.08 s  «a quina da direita»  (tela 739.16 · voz 739.24) OK
+  B6-4  -0.09 s  «a de cima»  (tela 742.13 · voz 742.22) OK
+  B6-4  -0.08 s  «cada coluna empurra uma aresta»  (tela 743.76 · voz 743.84) OK
+  B6-4  -0.08 s  «solta o fluido no modelo»  (tela 745.90 · voz 745.98) OK
+  B6-4  -0.09 s  «gira cresce e entorta»  (tela 748.23 · voz 748.32) OK
+  B6-4  -0.08 s  «tudo ao mesmo tempo»  (tela 750.20 · voz 750.28) OK
+  B7-1  -0.08 s  «em cima à esquerda»  (tela 759.94 · voz 760.02) OK
+  B7-1  -0.09 s  «aqui um»  (tela 763.77 · voz 763.86) OK
+  B7-1  -0.08 s  «embaixo à esquerda»  (tela 764.84 · voz 764.92) OK
+  B7-1  -0.11 s  «dois»  (tela 767.37 · voz 767.48) OK
+  B7-1  -0.09 s  «em cima à direita»  (tela 768.07 · voz 768.16) OK
+  B7-1  -0.08 s  «menos um para a esquerda»  (tela 772.10 · voz 772.18) OK
+  B7-1  -0.09 s  «embaixo à direita»  (tela 773.57 · voz 773.66) OK
+  B7-1  -0.09 s  «zero»  (tela 776.17 · voz 776.26) OK
+  B7-2  -0.08 s  «agora junta»  (tela 776.80 · voz 776.88) OK
+  B7-2  -0.09 s  «dão o rotacional»  (tela 780.63 · voz 780.72) OK
+  B7-2  -0.08 s  «dão o divergente»  (tela 785.30 · voz 785.38) OK
+  B7-2  -0.10 s  «estiramento horizontal menos vertical»  (tela 789.86 · voz 789.96) OK
+  B7-2  -0.08 s  «estica mais numa direção»  (tela 795.70 · voz 795.78) OK
+  B7-2  -0.08 s  «essa é a segunda»  (tela 801.86 · voz 801.94) OK
+  B7-2  -0.09 s  «como uma tesoura»  (tela 805.53 · voz 805.62) OK
+  B7-3  -0.08 s  «quatro números entram»  (tela 806.60 · voz 806.68) OK
+  B7-3  -0.09 s  «quatro medidas saem»  (tela 808.03 · voz 808.12) OK
+  B7-3  -0.08 s  «e nada se perde no caminho»  (tela 809.46 · voz 809.54) OK
+  B7-3  -0.08 s  «um redemoinho»  (tela 818.66 · voz 818.74) OK
+  B7-3  -0.10 s  «uma explosão»  (tela 819.60 · voz 819.70) OK
+  B7-3  -0.08 s  «e duas deformações»  (tela 820.56 · voz 820.64) OK
+  B7-3  -0.10 s  «o redemoinho gira»  (tela 824.16 · voz 824.26) OK
+  B7-3  -0.08 s  «a explosão cresce»  (tela 825.50 · voz 825.58) OK
+  B7-3  -0.10 s  «a deformação estica de um lado»  (tela 826.80 · voz 826.90) OK
+  B7-3  -0.08 s  «e isso não é só matemática»  (tela 829.96 · voz 830.04) OK
+  B7-3  -0.08 s  «o atrito viscoso vem da deformação»  (tela 833.00 · voz 833.08) OK
+  B7-3  -0.09 s  «girando inteiro rígido»  (tela 836.43 · voz 836.52) OK
+  B7-4  -0.09 s  «a tabela é um e zero»  (tela 844.07 · voz 844.16) OK
+  B7-4  -0.10 s  «a aresta horizontal estica»  (tela 847.90 · voz 848.00) OK
+  B7-4  -0.10 s  «rotacional zero»  (tela 852.94 · voz 853.04) OK
+  B7-4  -0.10 s  «a primeira deformação vale dois»  (tela 855.44 · voz 855.54) OK
+  B7-4  -0.09 s  «é tudo deformação»  (tela 857.67 · voz 857.76) OK
+  B7-5  -0.08 s  «um deles é este»  (tela 866.50 · voz 866.58) OK
+  B7-5  -0.07 s  «que troca as coordenadas»  (tela 867.63 · voz 867.70) OK
+  B7-5  +0.01 s  «as duas arestas giram uma contra a outra»  (tela 869.57 · voz 869.56) OK
+  B7-5  +0.19 s  «a segunda deformação vale dois»  (tela 872.23 · voz 872.04) OK
+  B7-5  -0.09 s  «e o quadradinho vira losango»  (tela 873.93 · voz 874.02) OK
+  B7-5  -0.09 s  «é o mesmo campo de antes»  (tela 875.77 · voz 875.86) OK
+  B7-5  -0.09 s  «quem achou um de segundo grau»  (tela 879.27 · voz 879.36) OK
+  S1    -0.09 s  «a derivada parcial é a velocidade»  (tela 895.87 · voz 895.96) OK
+  S1    -0.10 s  «giro»  (tela 905.10 · voz 905.20) OK
+  S1    -0.08 s  «área»  (tela 905.80 · voz 905.88) OK
+  S1    +0.02 s  «deformação»  (tela 906.34 · voz 906.32) OK
+  S1    -0.04 s  «uma curiosidade»  (tela 907.24 · voz 907.28) OK
+  S1    -0.08 s  «três de giro»  (tela 911.64 · voz 911.72) OK
+  S2    -0.08 s  «no próximo vídeo»  (tela 915.20 · voz 915.28) OK
+  S2    -0.08 s  «o integrador do módulo»  (tela 918.20 · voz 918.28) OK
+  S2    -0.10 s  «campo vetorial»  (tela 921.06 · voz 921.16) OK
+  S2    -0.08 s  «rotacional»  (tela 922.10 · voz 922.18) OK
+  S2    -0.10 s  «divergente»  (tela 923.00 · voz 923.10) OK
+  S2    -0.09 s  «limite e continuidade»  (tela 923.93 · voz 924.02) OK
+  S2    -0.08 s  «derivadas parciais»  (tela 925.46 · voz 925.54) OK
+  S2    -0.09 s  «se essa aula te ajudou»  (tela 935.53 · voz 935.62) OK
+
+resumo: 37 âncoras, 234 gatilhos; atraso de -0.17 a +0.19 s; fora da meta (> +0,2 s): 0

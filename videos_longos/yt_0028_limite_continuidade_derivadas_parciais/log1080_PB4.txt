@@ -1,0 +1,1249 @@
+Manim Community v0.21.0
+
+[ancora] B4-1 0.000
+[campo] B4 campo da aula (contexto): 80 setas, maior 0.420 u, menor 0.176 u (menor ÷ maior 0.42; alvo ≥ 0,40), maior ÷ passo = 0.84
+[alinha-setas] B4 campo da aula (contexto) | origem (480, 540) 144 px/u, quadradinho 36 px | 80 setas | resíduo 0.00 px
+[11/11/26 14:36:15] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Pt\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\c085f82aa368e188.te                        
+                             x                                                 
+[11/11/26 14:36:17] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F(\Pt)\sp                        
+                             ecial{dvisvgm:raw </g>} to                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\b3a01fdb359a9c89.te                        
+                             x                                                 
+[onda] 80 setas a partir de (0, 0) em 0.8 s (play de 1.00 s)
+[11/11/26 14:36:19] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:36:25] INFO     Animation 0 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00000.mp4'                             
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\h\special                        
+                             {dvisvgm:raw </g>} to                             
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\9eedcaa754dd7e68.te                        
+                             x                                                 
+[11/11/26 14:36:27] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\De                        
+                             lta\F}{\h}\special{dvisvgm                        
+                             :raw </g>} to                                     
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\af3f203559d8aeef.te                        
+                             x                                                 
+[11/11/26 14:36:30] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:36:37] INFO     Animation 1 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00001.mp4'                             
+[gatilho] B4-1   3.63s (alvo   3.62s, atraso +0.01s) anda só na horizontal
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:36:40] INFO     Animation 2 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00002.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:36:48] INFO     Animation 3 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00003.mp4'                             
+[gatilho] B4-1   7.83s (alvo   7.82s, atraso +0.01s) a diferença entre as duas é um vetor
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:36:51] INFO     Animation 4 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00004.mp4'                             
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Delta\F=\                        
+                             F(\Pt+\h)-\F(\Pt)\ \                              
+                             \text{(corda)}\special{dvi                        
+                             svgm:raw </g>} to                                 
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\ee99e51cc065f15c.te                        
+                             x                                                 
+[11/11/26 14:36:53] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:36:56] INFO     Animation 5 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00005.mp4'                             
+[gatilho] B4-1   9.97s (alvo   9.96s, atraso +0.01s) que liga a ponta velha
+[algebra] B4-1    9.97s glifos=24 cor=100% rt=3.4s '\\Delta\\F=\\F(\\Pt+\\h)-\\F(\\Pt)\\ \\ \\text{(corda)}'
+[11/11/26 14:36:57] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:37:05] INFO     Animation 6 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00006.mp4'                             
+[gatilho] B4-1  12.23s (alvo  12.26s, atraso -0.03s) divide esse vetor
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:37:08] INFO     Animation 7 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00007.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:37:21] INFO     Animation 8 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00008.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:37:22] INFO     Animation 9 : Partial     scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00009.mp4'                             
+[ancora] B4-2 19.567
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\h=1:\                            
+                             (0{,}84;\                                         
+                             2{,}14)\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\320a490acbab0307.te                        
+                             x                                                 
+[11/11/26 14:37:23] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\h=0{,}5:\                        
+                             (0{,}96;\                                         
+                             2{,}16)\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\c10500ff9824309c.te                        
+                             x                                                 
+[11/11/26 14:37:25] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\h=0{,}1:\                        
+                             (1{,}00;\                                         
+                             2{,}05)\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\b15f5d9d7b7fdb5c.te                        
+                             x                                                 
+[11/11/26 14:37:26] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\to\ (1,\                         
+                             2)\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\e2383e46c08a68b0.te                        
+                             x                                                 
+[11/11/26 14:37:27] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:37:28] INFO     Animation 10 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00010.mp4'                             
+[gatilho] B4-2   0.07s (alvo   0.06s, atraso +0.01s) com passo um
+[algebra] B4-2   19.63s glifos=15 cor=100% rt=1.9s '\\h=1:\\ (0{,}84;\\ 2{,}14)'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:37:34] INFO     Animation 11 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00011.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:37:42] INFO     Animation 12 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00012.mp4'                             
+[gatilho] B4-2   5.07s (alvo   5.08s, atraso -0.01s) com meio
+[algebra] B4-2   24.63s glifos=17 cor=100% rt=2.2s '\\h=0{,}5:\\ (0{,}96;\\ 2{,}16)'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:37:50] INFO     Animation 13 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00013.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:37:54] INFO     Animation 14 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00014.mp4'                             
+[gatilho] B4-2   9.03s (alvo   9.02s, atraso +0.01s) com passo cada vez menor
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:37:56] INFO     Animation 15 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00015.mp4'                             
+[algebra] B4-2   28.93s glifos=17 cor=100% rt=2.2s '\\h=0{,}1:\\ (1{,}00;\\ 2{,}05)'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:38:01] INFO     Animation 16 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00016.mp4'                             
+[quociente] x: h = 0,1 → (0.998; 2.047)
+[gatilho] B4-2  10.63s (alvo  10.64s, atraso -0.01s) ele vai chegando em um e dois
+[algebra] B4-2   30.20s glifos=6 cor=100% rt=1.1s '\\to\\ (1,\\ 2)'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:38:05] INFO     Animation 17 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00017.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:38:16] INFO     Animation 18 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00018.mp4'                             
+[gatilho] B4-2  16.37s (alvo  16.38s, atraso -0.01s) desenha uma curva
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:38:23] INFO     Animation 19 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00019.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:38:25] INFO     Animation 20 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00020.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:38:32] INFO     Animation 21 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00021.mp4'                             
+[gatilho] B4-2  21.33s (alvo  21.32s, atraso +0.01s) ela vira a seta tangente
+[11/11/26 14:38:33] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:38:38] INFO     Animation 22 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00022.mp4'                             
+[quociente] x: limite → (1.0000; 2.0000) (∂F/∂x = (1, 2))
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:38:39] INFO     Animation 23 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00023.mp4'                             
+[gatilho] B4-2  23.13s (alvo  23.12s, atraso +0.01s) então a derivada parcial é a velocidade
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:38:42] INFO     Animation 24 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00024.mp4'                             
+[11/11/26 14:38:44] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:38:46] INFO     Animation 25 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00025.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:38:52] INFO     Animation 26 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00026.mp4'                             
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial\F}{\dx}\special{dvis                        
+                             vgm:raw </g>} to                                  
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\5dcaea8bdb2b398a.te                        
+                             x                                                 
+[11/11/26 14:38:55] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:38:58] INFO     Animation 27 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00027.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:39:00] INFO     Animation 28 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00028.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:39:02] INFO     Animation 29 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00029.mp4'                             
+[ancora] B4-3 48.467
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial\Pp}{\dx}=1\special{d                        
+                             visvgm:raw </g>} to                               
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\f767682671500025.te                        
+                             x                                                 
+[11/11/26 14:39:04] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial\Qq}{\dx}=2\special{d                        
+                             visvgm:raw </g>} to                               
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\69d5cac22844fa86.te                        
+                             x                                                 
+[11/11/26 14:39:05] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:39:10] INFO     Animation 30 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00030.mp4'                             
+[gatilho] B4-3   2.40s (alvo   2.40s, atraso +0.00s) a horizontal diz
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:39:13] INFO     Animation 31 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00031.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:39:21] INFO     Animation 32 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00032.mp4'                             
+[gatilho] B4-3   6.53s (alvo   6.52s, atraso +0.01s) a vertical diz
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:39:23] INFO     Animation 33 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00033.mp4'                             
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial\F}{\dx}=\left(\dfrac                        
+                             {\partial\Pp}{\dx},\                              
+                             \dfrac{\partial\Qq}{\dx}\r                        
+                             ight)=\Am{(1,\                                    
+                             2)}\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\6efce7363073be86.te                        
+                             x                                                 
+[11/11/26 14:39:25] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:39:32] INFO     Animation 34 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00034.mp4'                             
+[gatilho] B4-3  10.33s (alvo  10.34s, atraso -0.01s) por isso a conta é por componentes
+[algebra] B4-3   58.80s glifos=26 cor=100% rt=3.6s '\\dfrac{\\partial\\F}{\\dx}=\\left(\\dfrac{\\partial\\Pp}{\\dx},\\ \\dfrac{\\partial\\Qq}{\\dx}\\right)=\\Am{(1,\\ 2)}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:39:45] INFO     Animation 35 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00035.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:39:48] INFO     Animation 36 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00036.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:39:49] INFO     Animation 37 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00037.mp4'                             
+[ancora] B4-4 64.300
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\k\special                        
+                             {dvisvgm:raw </g>} to                             
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\1db8455f44fcdb8d.te                        
+                             x                                                 
+[11/11/26 14:39:50] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\De                        
+                             lta\F}{\k}\special{dvisvgm                        
+                             :raw </g>} to                                     
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\5956ea693a2a3d6b.te                        
+                             x                                                 
+[11/11/26 14:39:52] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 38 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00038.mp4'                             
+[gatilho] B4-4   0.07s (alvo   0.06s, atraso +0.01s) agora na vertical
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:39:55] INFO     Animation 39 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00039.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:39:57] INFO     Animation 40 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00040.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:39:59] INFO     Animation 41 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00041.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:40:02] INFO     Animation 42 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00042.mp4'                             
+[gatilho] B4-4   3.27s (alvo   3.28s, atraso -0.01s) anda num círculo
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:40:05] INFO     Animation 43 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00043.mp4'                             
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\k=1:\                            
+                             (-0{,}84;\                                        
+                             0{,}46)\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\0e0fc177809534a8.te                        
+                             x                                                 
+[11/11/26 14:40:06] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\k=0{,}5:\                        
+                             (-0{,}96;\                                        
+                             0{,}25)\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\f28ae841f46c7d9a.te                        
+                             x                                                 
+[11/11/26 14:40:07] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\k=0{,}1:\                        
+                             (-1{,}00;\                                        
+                             0{,}05)\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\ab04d4602fa1ce04.te                        
+                             x                                                 
+[11/11/26 14:40:08] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\to\ (-1,\                        
+                             0)\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\6fbff812ebde54db.te                        
+                             x                                                 
+[11/11/26 14:40:09] WARNING  The original total run_time of       scene.py:1131
+                             PB4._play_rit(), 0.0326667 seconds,               
+                             is too short for the current frame                
+                             rate of 30 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0333333 seconds instead.                        
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PB4._play_rit(), 0.0326667 seconds,               
+                             is too short for the current frame                
+                             rate of 30 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0333333 seconds instead.                        
+                    INFO     Animation 44 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00044.mp4'                             
+[gatilho] B4-4   4.33s (alvo   4.34s, atraso -0.01s) e o quociente vai chegando
+[algebra] B4-4   68.63s glifos=16 cor=100% rt=1.0s '\\k=1:\\ (-0{,}84;\\ 0{,}46)'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:40:13] INFO     Animation 45 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00045.mp4'                             
+[algebra] B4-4   69.67s glifos=18 cor=100% rt=1.1s '\\k=0{,}5:\\ (-0{,}96;\\ 0{,}25)'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:40:17] INFO     Animation 46 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00046.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:40:18] INFO     Animation 47 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00047.mp4'                             
+[algebra] B4-4   71.20s glifos=18 cor=100% rt=1.1s '\\k=0{,}1:\\ (-1{,}00;\\ 0{,}05)'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:40:22] INFO     Animation 48 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00048.mp4'                             
+[quociente] y: k = 0,1 → (-0.998; 0.050)
+[algebra] B4-4   72.33s glifos=7 cor=100% rt=0.6s '\\to\\ (-1,\\ 0)'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:40:24] INFO     Animation 49 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00049.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:40:28] INFO     Animation 50 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00050.mp4'                             
+[gatilho] B4-4  10.20s (alvo  10.20s, atraso +0.00s) tangente ao círculo
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:40:31] INFO     Animation 51 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00051.mp4'                             
+[quociente] y: limite → (-1.0000; 0.0000) (∂F/∂y = (−1, 0))
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial\F}{\dy}\special{dvis                        
+                             vgm:raw </g>} to                                  
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\b567835669e46bfc.te                        
+                             x                                                 
+[11/11/26 14:40:32] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:40:34] INFO     Animation 52 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00052.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 53 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00053.mp4'                             
+[ancora] B4-5 75.767
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:40:37] INFO     Animation 54 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00054.mp4'                             
+[campo] B4-5 palco (contexto): 135 setas, maior 0.420 u, menor 0.203 u (menor ÷ maior 0.48; alvo ≥ 0,40), maior ÷ passo = 0.84
+[alinha-setas] B4-5 palco (contexto) | origem (600, 540) 120 px/u, quadradinho 30 px | 135 setas | resíduo 0.00 px
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:40:42] INFO     Animation 55 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00055.mp4'                             
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial\F}{\dx}=(1,\,2)\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\8cefa49cb591bccd.te                        
+                             x                                                 
+[11/11/26 14:40:43] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial\F}{\dy}=(-1,\,0)\spe                        
+                             cial{dvisvgm:raw </g>} to                         
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\ecc09dccc61c432f.te                        
+                             x                                                 
+[11/11/26 14:40:44] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:40:46] INFO     Animation 56 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00056.mp4'                             
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial                                             
+                             \F}{\dx}(\xo,\yo)=\lim\lim                        
+                             its_{\h\to0}\dfrac{\F(\xo+                        
+                             \h,\,\yo)-\F(\xo,\,\yo)}{\                        
+                             h}\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\8aa771a40daa207b.te                        
+                             x                                                 
+[11/11/26 14:40:48] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:40:49] INFO     Animation 57 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00057.mp4'                             
+[gatilho] B4-5   3.00s (alvo   3.00s, atraso +0.00s) é um vetor
+[algebra] B4-5   78.77s glifos=43 cor=100% rt=4.0s '\\dfrac{\\partial \\F}{\\dx}(\\xo,\\yo)=\\lim\\limits_{\\h\\to0}\\dfrac{\\F(\\xo+\\h,\\,\\yo)-\\F(\\xo,\\,\\yo)}{\\h}'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:40:57] INFO     Animation 58 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00058.mp4'                             
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial                                             
+                             \F}{\dx}=\left(\dfrac{\par                        
+                             tial \Pp}{\dx},\                                  
+                             \dfrac{\partial                                   
+                             \Qq}{\dx}\right)\special{d                        
+                             visvgm:raw </g>} to                               
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\8461b329fdaa1f35.te                        
+                             x                                                 
+[11/11/26 14:40:59] WARNING  The original total run_time of       scene.py:1131
+                             PB4._play_rit(), 0.0326667 seconds,               
+                             is too short for the current frame                
+                             rate of 30 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0333333 seconds instead.                        
+                    INFO     Caching disabled.             cairo_renderer.py:81
+                    WARNING  The original total run_time of       scene.py:1131
+                             PB4._play_rit(), 0.0326667 seconds,               
+                             is too short for the current frame                
+                             rate of 30 FPS. Rendering with the                
+                             shortest possible total run_time of               
+                             0.0333333 seconds instead.                        
+                    INFO     Animation 59 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00059.mp4'                             
+[gatilho] B4-5   5.43s (alvo   5.44s, atraso -0.01s) quando você anda numa direção
+[algebra] B4-5   81.20s glifos=20 cor=100% rt=1.9s '\\dfrac{\\partial \\F}{\\dx}=\\left(\\dfrac{\\partial \\Pp}{\\dx},\\ \\dfrac{\\partial \\Qq}{\\dx}\\right)'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:41:05] INFO     Animation 60 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00060.mp4'                             
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F =                              
+                             (1+\sen\X-\sen\Y,\ \                              
+                             2\sen\X+2-\cos\X-\cos\Y)\s                        
+                             pecial{dvisvgm:raw </g>}                          
+                             to                                                
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\e5d7bbb6d5284032.te                        
+                             x                                                 
+[11/11/26 14:41:08] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 61 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00061.mp4'                             
+[gatilho] B4-5   7.13s (alvo   7.12s, atraso +0.01s) na conta
+[algebra] B4-5   82.90s glifos=34 cor=100% rt=1.9s '\\F = (1+\\sen\\X-\\sen\\Y,\\ \\ 2\\sen\\X+2-\\cos\\X-\\cos\\Y)'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:41:16] INFO     Animation 62 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00062.mp4'                             
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}=(\cos\X,\                        
+                             2\cos\X+\sen\X)\special{dv                        
+                             isvgm:raw </g>} to                                
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\54241567d66e8f51.te                        
+                             x                                                 
+[11/11/26 14:41:17] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}=(\cos\X,\                        
+                             2\cos\X+\sen\X)=\Am{(1,\                          
+                             2)}\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\aee32f35e31ceaf9.te                        
+                             x                                                 
+[11/11/26 14:41:19] INFO     Caching disabled.             cairo_renderer.py:81
+                    INFO     Animation 63 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00063.mp4'                             
+[gatilho] B4-5   9.17s (alvo   9.18s, atraso -0.01s) dá cosseno
+[algebra] B4-5   84.93s glifos=18 cor=100% rt=1.7s '=(\\cos\\X,\\ 2\\cos\\X+\\sen\\X)'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:41:27] INFO     Animation 64 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00064.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:41:34] INFO     Animation 65 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00065.mp4'                             
+[gatilho] B4-5  13.17s (alvo  13.16s, atraso +0.01s) no ponto um e dois
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:41:39] INFO     Animation 66 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00066.mp4'                             
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial                                             
+                             \F}{\dy}=\left(\dfrac{\par                        
+                             tial \Pp}{\dy},\                                  
+                             \dfrac{\partial                                   
+                             \Qq}{\dy}\right)\special{d                        
+                             visvgm:raw </g>} to                               
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\f804550f33c97eda.te                        
+                             x                                                 
+[11/11/26 14:41:40] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:41:43] INFO     Animation 67 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00067.mp4'                             
+[gatilho] B4-5  14.97s (alvo  14.98s, atraso -0.01s) a derivada na vertical dá
+[algebra] B4-5   90.73s glifos=20 cor=100% rt=1.9s '\\dfrac{\\partial \\F}{\\dy}=\\left(\\dfrac{\\partial \\Pp}{\\dy},\\ \\dfrac{\\partial \\Qq}{\\dy}\\right)'
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:41:52] INFO     Animation 68 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00068.mp4'                             
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}=(-\cos\Y,                        
+                             \                                                 
+                             \sen\Y)\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\7fbc97f675e1f395.te                        
+                             x                                                 
+[11/11/26 14:41:54] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}=(-\cos\Y,                        
+                             \ \sen\Y)=\Mg{(-1,\                               
+                             0)}\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\83eab463820392f9.te                        
+                             x                                                 
+[algebra] B4-5   92.63s glifos=13 cor=100% rt=1.3s '=(-\\cos\\Y,\\ \\sen\\Y)'
+[11/11/26 14:41:55] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:42:02] INFO     Animation 69 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00069.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:42:05] INFO     Animation 70 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00070.mp4'                             
+[gatilho] B4-5  19.30s (alvo  19.30s, atraso +0.00s) no ponto menos um e zero
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:42:11] INFO     Animation 71 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00071.mp4'                             
+[11/11/26 14:42:13] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\partial                          
+                             \vec F/\partial                                   
+                             z\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media1080_P                        
+                             B4\Tex\c1d80a024d12bbcb.te                        
+                             x                                                 
+[11/11/26 14:42:15] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:42:50] INFO     Animation 72 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00072.mp4'                             
+[gatilho] B4-5  23.63s (alvo  23.62s, atraso +0.01s) num campo no espaço
+[11/11/26 14:42:51] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:43:03] INFO     Animation 73 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00073.mp4'                             
+[11/11/26 14:43:04] INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:43:49] INFO     Animation 74 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00074.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:43:57] INFO     Animation 75 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00075.mp4'                             
+                    INFO     Caching disabled.             cairo_renderer.py:81
+[11/11/26 14:44:07] INFO     Animation 76 : Partial    scene_file_writer.py:192
+                             movie file written in                             
+                             'K:\PycharmProjects\manim                         
+                             -fisica\videos_longos\yt_                         
+                             0028_limite_continuidade_                         
+                             derivadas_parciais\media1                         
+                             080_PB4\videos\cena\1080p                         
+                             30\partial_movie_files\PB                         
+                             4\uncached_00076.mp4'                             
+[deriva] PB4 +0.00s além do fim da última âncora
+[cor-bloco] PB4 fração colorida (glifos de caneta) = 100% em 16 MathTex
+[flash-total] PB4 0
+[estilo] PB4 traços sem contorno = 0  (contorno posto pela varredura: 0)
+[estilo] PB4 brancos = 0  (setas de voo, permitidas: 0 traços)
+[tempo] total 104.37s (3131 quadros)
+[r6-total] PB4 0 quadros fora em 0 quadros checados; 0 objetos guardados
+[r7-total] PB4 0 ocorrências em 1498 quadros checados
+[r8-total] PB4 0 chapas vazias por mais de 0,5 s
+[alinha] grade painel (120, 180, 840, 900) origem (480, 540) 144 px/u, quadradinho 36 px 480.00 540.00 840.00 900.00
+[alinha] chapa painel (120, 180, 840, 900) 120.00 180.00 840.00 900.00
+[alinha] grade painel (1080, 180, 1800, 900) origem (1260, 648) 144 px/u, quadradinho 36 px 1260.00 648.00 1800.00 900.00
+[alinha] chapa painel (1080, 180, 1800, 900) 1080.00 180.00 1800.00 900.00
+[alinha] grade A (B4-5) origem (600, 540) 120 px/u, quadradinho 30 px 600.00 540.00 1080.00 900.00
+[alinha] chapa A (B4-5) 120.00 180.00 1080.00 900.00
+[r7t-total] PB4 0 textos/placas cruzando moldura
+[r10-total] PB4 0 trechos de tela vazia > 0,8 s em 1498 quadros checados
+                    INFO     Combining to Movie file.  scene_file_writer.py:952
+[11/11/26 14:44:23] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0028_limite_continuida                          
+                             de_derivadas_parciais\me                          
+                             dia1080_PB4\videos\cena\                          
+                             1080p30\PB4.mp4'                                  
+                                                                               
+                    INFO     Rendered PB4                          scene.py:290
+                             Played 77 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

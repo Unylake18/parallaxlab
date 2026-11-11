@@ -1,0 +1,126 @@
+Manim Community v0.21.0
+
+[ancora] B6-1 0.000
+[campo] B6 campo da aula: 165 setas, maior 0.420 u, menor 0.198 u (menor ÷ maior 0.47; alvo ≥ 0,40), maior ÷ passo = 0.84
+[gatilho] B6-1   1.47s (alvo   1.49s, atraso -0.02s) pega o campo da aula
+[11/11/26 10:03:56] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\times                            
+                             10\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _25\Tex\921bc3cd7118f4fa.t                        
+                             ex                                                
+[gatilho] B6-1   4.00s (alvo   3.99s, atraso +0.01s) dez vezes mais perto
+[gatilho] B6-1   6.13s (alvo   6.13s, atraso +0.00s) essa janelinha vira o palco inteiro
+[E4] zoom contínuo: setas reavaliadas em P + (X, Y)/s, s de 1 a 10, mmax de 3,5 a 6
+[11/11/26 10:04:08] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{ZOOM                        
+                             }\times                                           
+                             10\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _25\Tex\d568b74cecb9175a.t                        
+                             ex                                                
+[B6] H = (−0,1; 0,1): F = (0.800; -0.190), resto = (-0.200; -0.190)
+[11/11/26 10:04:10] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F(\Pt)\sp                        
+                             ecial{dvisvgm:raw </g>} to                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _25\Tex\b3a01fdb359a9c89.t                        
+                             ex                                                
+[11/11/26 10:04:12] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{rest                        
+                             o}\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _25\Tex\d09a65891f61ae2a.t                        
+                             ex                                                
+[11/11/26 10:04:14] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F(\Xp)\sp                        
+                             ecial{dvisvgm:raw </g>} to                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _25\Tex\189bdc40d808943e.t                        
+                             ex                                                
+[11/11/26 10:04:15] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F(\Xp)=\F                        
+                             (\Pt)+\big(\F(\Xp)-\F(\Pt)                        
+                             \big)\special{dvisvgm:raw                         
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _25\Tex\6b0f7409440828ec.t                        
+                             ex                                                
+[gatilho] B6-1  12.53s (alvo  12.56s, atraso -0.03s) cada uma é a seta do centro
+[algebra] B6-1   13.33s glifos=25 cor=100% rt=2.3s '\\F(\\Xp)=\\F(\\Pt)+\\big(\\F(\\Xp)-\\F(\\Pt)\\big)'
+[gatilho] B6-1  16.07s (alvo  16.13s, atraso -0.06s) tira a seta do centro de todas
+[ancora] B6-2 22.333
+[11/11/26 10:04:28] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\F(\Pt+H)-                        
+                             \F(\Pt)\approx\h\,\dfrac{\                        
+                             partial\F}{\dx}+\k\,\dfrac                        
+                             {\partial\F}{\dy}\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _25\Tex\edf52dc457a8b896.t                        
+                             ex                                                
+[gatilho] B6-2   0.00s (alvo   0.06s, atraso -0.06s) bem de perto essa mudança é escrita
+[algebra] B6-2   22.67s glifos=29 cor=100% rt=3.1s '\\F(\\Pt+H)-\\F(\\Pt)\\approx\\h\\,\\dfrac{\\partial\\F}{\\dx}+\\k\\,\\dfrac{\\partial\\F}{\\dy}'
+[11/11/26 10:04:38] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}J_{\F}(\Pt                        
+                             )=\begin{pmatrix}\dfrac{\p                        
+                             artial\Pp}{\dx} &                                 
+                             \dfrac{\partial\Pp}{\dy}\\                        
+                             [10pt]                                            
+                             \dfrac{\partial\Qq}{\dx} &                        
+                             \dfrac{\partial\Qq}{\dy}\e                        
+                             nd{pmatrix}\special{dvisvg                        
+                             m:raw </g>} to                                    
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _25\Tex\83420327b09d2745.t                        
+                             ex                                                
+[gatilho] B6-2   4.00s (alvo   3.99s, atraso +0.01s) então coloca as duas lado a lado
+[11/11/26 10:04:40] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0028_limite_continuida                          
+                             de_derivadas_parciais\me                          
+                             dia_s1080_25\images\cena                          
+                             \PB6_ManimCE_v0.21.0.png                          
+                             '                                                 
+                                                                               
+                    INFO     Rendered PB6                          scene.py:290
+                             Played 19 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

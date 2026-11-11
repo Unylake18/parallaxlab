@@ -1,0 +1,105 @@
+Manim Community v0.21.0
+
+[ancora] B5-1 0.000
+[campo] B5 campo das diagonais: 140 setas, maior 0.420 u, menor 0.118 u (menor ÷ maior 0.28; alvo ≥ 0,40), maior ÷ passo = 0.84
+[11/11/26 10:02:22] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial\G}{\dx}(0,0)=\vec                           
+                             0\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _19\Tex\cef1254d6415cdee.t                        
+                             ex                                                
+[11/11/26 10:02:24] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial\G}{\dy}(0,0)=\vec                           
+                             0\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _19\Tex\fbb7f4170b8160aa.t                        
+                             ex                                                
+[gatilho] B5-1   5.80s (alvo   5.77s, atraso +0.03s) pelo eixo horizontal
+[gatilho] B5-1   9.33s (alvo   9.35s, atraso -0.01s) derivada zero
+[algebra] B5-1    9.33s glifos=14 cor=100% rt=1.3s '\\dfrac{\\partial\\G}{\\dx}(0,0)=\\vec 0'
+[gatilho] B5-1  10.67s (alvo  10.06s, atraso +0.61s) pelo vertical
+[algebra] B5-1   11.27s glifos=14 cor=100% rt=1.3s '\\dfrac{\\partial\\G}{\\dy}(0,0)=\\vec 0'
+[gatilho] B5-1  12.60s (alvo  11.49s, atraso +1.11s) as duas existem
+[gatilho] B5-1  14.00s (alvo  12.92s, atraso +1.08s) as duas são zero
+[ancora] B5-2 14.800
+[campo] B5-2 G (painel): 72 setas, maior 0.420 u, menor 0.092 u (menor ÷ maior 0.22; alvo ≥ 0,40), maior ÷ passo = 0.84
+[11/11/26 10:02:39] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial\G}{\dx}(0,0)=\dfrac{                        
+                             \partial\G}{\dy}(0,0)=\vec                        
+                              0\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _19\Tex\feb3bf3dc5179fb0.t                        
+                             ex                                                
+[gatilho] B5-2   0.00s (alvo   0.06s, atraso -0.06s) se você confiasse só nelas
+[algebra] B5-2   16.20s glifos=26 cor=100% rt=2.8s '\\dfrac{\\partial\\G}{\\dx}(0,0)=\\dfrac{\\partial\\G}{\\dy}(0,0)=\\vec 0'
+[gatilho] B5-2   6.13s (alvo   6.13s, atraso +0.00s) um quadradinho em volta da origem
+[gatilho] B5-2   8.27s (alvo   8.27s, atraso -0.01s) iria parar num ponto só
+[11/11/26 10:02:45] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}-1\special                        
+                             {dvisvgm:raw </g>} to                             
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _19\Tex\3810cf466a7409a6.t                        
+                             ex                                                
+[11/11/26 10:02:47] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}1\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _19\Tex\bfd09a7db9f850a4.t                        
+                             ex                                                
+[gatilho] B5-2  10.07s (alvo  10.06s, atraso +0.01s) mas olha a imagem de verdade
+[algebra] B5-2   26.07s glifos=2 cor=100% rt=0.4s '-1'
+[algebra] B5-2   26.07s glifos=1 cor=100% rt=0.3s '1'
+[gatilho] B5-2  16.13s (alvo  16.13s, atraso +0.00s) a previsão errou feio
+[gatilho] B5-2  20.80s (alvo  20.77s, atraso +0.03s) esconde tudo nas diagonais
+[ancora] B5-3 39.600
+[11/11/26 10:03:02] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Y\special                        
+                             {dvisvgm:raw </g>} to                             
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _19\Tex\f24c9fd36f6359d6.t                        
+                             ex                                                
+[gatilho] B5-3   0.00s (alvo   0.06s, atraso -0.06s) o que faltou
+[11/11/26 10:03:04] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0028_limite_continuida                          
+                             de_derivadas_parciais\me                          
+                             dia_s1080_19\images\cena                          
+                             \PB5_ManimCE_v0.21.0.png                          
+                             '                                                 
+                                                                               
+                    INFO     Rendered PB5                          scene.py:290
+                             Played 26 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

@@ -1,0 +1,237 @@
+Manim Community v0.21.0
+
+[ancora] B5-1 0.000
+[campo] B5 campo das diagonais: 140 setas, maior 0.420 u, menor 0.118 u (menor ÷ maior 0.28; alvo ≥ 0,40), maior ÷ passo = 0.84
+[11/11/26 10:02:34] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial\G}{\dx}(0,0)=\vec                           
+                             0\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _20\Tex\cef1254d6415cdee.t                        
+                             ex                                                
+[11/11/26 10:02:35] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial\G}{\dy}(0,0)=\vec                           
+                             0\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _20\Tex\fbb7f4170b8160aa.t                        
+                             ex                                                
+[gatilho] B5-1   5.80s (alvo   5.77s, atraso +0.03s) pelo eixo horizontal
+[gatilho] B5-1   9.33s (alvo   9.35s, atraso -0.01s) derivada zero
+[algebra] B5-1    9.33s glifos=14 cor=100% rt=1.3s '\\dfrac{\\partial\\G}{\\dx}(0,0)=\\vec 0'
+[gatilho] B5-1  10.67s (alvo  10.06s, atraso +0.61s) pelo vertical
+[algebra] B5-1   11.27s glifos=14 cor=100% rt=1.3s '\\dfrac{\\partial\\G}{\\dy}(0,0)=\\vec 0'
+[gatilho] B5-1  12.60s (alvo  11.49s, atraso +1.11s) as duas existem
+[gatilho] B5-1  14.00s (alvo  12.92s, atraso +1.08s) as duas são zero
+[ancora] B5-2 14.800
+[campo] B5-2 G (painel): 72 setas, maior 0.420 u, menor 0.092 u (menor ÷ maior 0.22; alvo ≥ 0,40), maior ÷ passo = 0.84
+[11/11/26 10:02:47] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial\G}{\dx}(0,0)=\dfrac{                        
+                             \partial\G}{\dy}(0,0)=\vec                        
+                              0\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _20\Tex\feb3bf3dc5179fb0.t                        
+                             ex                                                
+[gatilho] B5-2   0.00s (alvo   0.06s, atraso -0.06s) se você confiasse só nelas
+[algebra] B5-2   16.20s glifos=26 cor=100% rt=2.8s '\\dfrac{\\partial\\G}{\\dx}(0,0)=\\dfrac{\\partial\\G}{\\dy}(0,0)=\\vec 0'
+[gatilho] B5-2   6.13s (alvo   6.13s, atraso +0.00s) um quadradinho em volta da origem
+[gatilho] B5-2   8.27s (alvo   8.27s, atraso -0.01s) iria parar num ponto só
+[11/11/26 10:02:53] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}-1\special                        
+                             {dvisvgm:raw </g>} to                             
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _20\Tex\3810cf466a7409a6.t                        
+                             ex                                                
+[11/11/26 10:02:54] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}1\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _20\Tex\bfd09a7db9f850a4.t                        
+                             ex                                                
+[gatilho] B5-2  10.07s (alvo  10.06s, atraso +0.01s) mas olha a imagem de verdade
+[algebra] B5-2   26.07s glifos=2 cor=100% rt=0.4s '-1'
+[algebra] B5-2   26.07s glifos=1 cor=100% rt=0.3s '1'
+[gatilho] B5-2  16.13s (alvo  16.13s, atraso +0.00s) a previsão errou feio
+[gatilho] B5-2  20.80s (alvo  20.77s, atraso +0.03s) esconde tudo nas diagonais
+[ancora] B5-3 39.600
+[11/11/26 10:03:10] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Y\special                        
+                             {dvisvgm:raw </g>} to                             
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _20\Tex\f24c9fd36f6359d6.t                        
+                             ex                                                
+[gatilho] B5-3   0.00s (alvo   0.06s, atraso -0.06s) o que faltou
+[11/11/26 10:03:12] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial \Pp}{\dx}(0,\Y)=\cos                        
+                             0=1\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _20\Tex\b9ac8dde354ce3ef.t                        
+                             ex                                                
+[gatilho] B5-3   4.00s (alvo   3.99s, atraso +0.01s) no nosso campo a derivada na horizontal
+[algebra] B5-3   43.60s glifos=17 cor=100% rt=2.2s '\\dfrac{\\partial \\Pp}{\\dx}(0,\\Y)=\\cos 0=1'
+[11/11/26 10:03:14] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial}{\dx}\!\left(\dfrac{                        
+                             2\X\Y}{\X^2+\Y^2}\right)\!                        
+                             (0,\Y)=\dfrac{2}{\Y}\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _20\Tex\ef99b042be0bb1fa.t                        
+                             ex                                                
+[11/11/26 10:03:16] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\uparrow\                         
+                             \infty\special{dvisvgm:raw                        
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _20\Tex\f601a95bf10461d9.t                        
+                             ex                                                
+[11/11/26 10:03:17] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\downarrow                        
+                             \                                                 
+                             -\infty\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _20\Tex\8949120a9e402a52.t                        
+                             ex                                                
+[gatilho] B5-3   9.33s (alvo   9.35s, atraso -0.01s) no encrenqueiro
+[algebra] B5-3   48.93s glifos=24 cor=100% rt=2.6s '\\dfrac{\\partial}{\\dx}\\!\\left(\\dfrac{2\\X\\Y}{\\X^2+\\Y^2}\\right)\\!(0,\\Y)=\\dfrac{2}{\\Y}'
+[11/11/26 10:03:19] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{vale                        
+                             }0\text{ na                                       
+                             origem}\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _20\Tex\a236c76eedbcfaf9.t                        
+                             ex                                                
+[gatilho] B5-3  13.93s (alvo  13.99s, atraso -0.06s) na origem vale zero
+[11/11/26 10:03:23] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\mathrm{C}                        
+                             ^{1}\special{dvisvgm:raw                          
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _20\Tex\946a14671600f594.t                        
+                             ex                                                
+[gatilho] B5-3  17.20s (alvo  17.20s, atraso -0.00s) classe cê um
+[11/11/26 10:03:30] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\mathrm{C}                        
+                             ^{r}\special{dvisvgm:raw                          
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _20\Tex\b6283a0afcc4b7c2.t                        
+                             ex                                                
+[11/11/26 10:03:34] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}r\special{                        
+                             dvisvgm:raw </g>} to                              
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _20\Tex\4a6689509eb6d8ea.t                        
+                             ex                                                
+[gatilho] B5-3  20.80s (alvo  20.77s, atraso +0.03s) classe cê erre
+[ancora] B5-4 65.067
+[campo] B5-4 campo da aula (200 px/u): 35 setas, maior 0.420 u, menor 0.198 u (menor ÷ maior 0.47; alvo ≥ 0,40), maior ÷ passo = 0.84
+[11/11/26 10:03:36] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Pt\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _20\Tex\c085f82aa368e188.t                        
+                             ex                                                
+[11/11/26 10:03:38] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\h\special                        
+                             {dvisvgm:raw </g>} to                             
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _20\Tex\9eedcaa754dd7e68.t                        
+                             ex                                                
+[11/11/26 10:03:39] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\k\special                        
+                             {dvisvgm:raw </g>} to                             
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _20\Tex\1db8455f44fcdb8d.t                        
+                             ex                                                
+[gatilho] B5-4   0.00s (alvo   0.06s, atraso -0.06s) e com ela vem a promessa
+[11/11/26 10:03:41] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0028_limite_continuida                          
+                             de_derivadas_parciais\me                          
+                             dia_s1080_20\images\cena                          
+                             \PB5_ManimCE_v0.21.0.png                          
+                             '                                                 
+                                                                               
+                    INFO     Rendered PB5                          scene.py:290
+                             Played 42 animations                              
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

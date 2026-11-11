@@ -1,0 +1,50 @@
+Manim Community v0.21.0
+
+[ancora] B5-1 0.000
+[campo] B5 campo das diagonais: 140 setas, maior 0.420 u, menor 0.118 u (menor ÷ maior 0.28; alvo ≥ 0,40), maior ÷ passo = 0.84
+[alinha-setas] B5 campo das diagonais | origem (600, 540) 120 px/u, quadradinho 30 px | 140 setas | resíduo 0.00 px
+[11/11/26 11:32:06] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial\G}{\dx}(0,0)=\vec                           
+                             0\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _18\Tex\cef1254d6415cdee.t                        
+                             ex                                                
+[11/11/26 11:32:08] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\dfrac{\pa                        
+                             rtial\G}{\dy}(0,0)=\vec                           
+                             0\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             K:\PycharmProjects\manim-f                        
+                             isica\videos_longos\yt_002                        
+                             8_limite_continuidade_deri                        
+                             vadas_parciais\media_s1080                        
+                             _18\Tex\fbb7f4170b8160aa.t                        
+                             ex                                                
+[gatilho] B5-1   5.80s (alvo   5.77s, atraso +0.03s) pelo eixo horizontal
+[gatilho] B5-1   9.33s (alvo   9.35s, atraso -0.01s) derivada zero
+[algebra] B5-1    9.33s glifos=14 cor=100% rt=1.3s '\\dfrac{\\partial\\G}{\\dx}(0,0)=\\vec 0'
+[gatilho] B5-1  10.67s (alvo  10.06s, atraso +0.61s) pelo vertical
+[algebra] B5-1   11.27s glifos=14 cor=100% rt=1.3s '\\dfrac{\\partial\\G}{\\dy}(0,0)=\\vec 0'
+[gatilho] B5-1  12.60s (alvo  11.49s, atraso +1.11s) as duas existem
+[gatilho] B5-1  14.00s (alvo  12.92s, atraso +1.08s) as duas são zero
+[11/11/26 11:32:20] INFO                              scene_file_writer.py:1103
+                             File ready at                                     
+                             'K:\PycharmProjects\mani                          
+                             m-fisica\videos_longos\y                          
+                             t_0028_limite_continuida                          
+                             de_derivadas_parciais\me                          
+                             dia_s1080_18\images\cena                          
+                             \PB5_ManimCE_v0.21.0.png                          
+                             '                                                 
+                                                                               
+                    INFO     Rendered PB5                          scene.py:290
+                             Played 9 animations                               
+You are using manim version v0.21.0, but version v0.22.1 is available.
+You should consider upgrading via pip install -U manim

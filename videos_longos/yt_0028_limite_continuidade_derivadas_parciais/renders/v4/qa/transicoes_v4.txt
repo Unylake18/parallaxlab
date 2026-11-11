@@ -1,0 +1,14 @@
+yt_0028 v4 · R10 transições (preview 13837 quadros, 922.5 s): quadro vazio = < 0,02 % da área útil fora do fundo liso; limite 0,8 s (12 quadros)
+
+trechos vazios (qualquer duração): 14; mais longo 0.33 s; > 0,8 s: 0
+
+trocas de layout (janela de 3 s em volta do início da âncora; por quadro: % da área útil com objeto · nº de objetos (componentes conexos)):
+  A → B1-1: 74.93–78.93 s · mínimo 0.00 % da área · objetos 0–651 · maior vazio 0.27 s → OK
+  B3-2 → B3-3: 408.87–412.87 s · mínimo 8.89 % da área · objetos 46–107 · maior vazio 0.00 s → OK
+  B4-4/B4-5 → B5-1: 550.33–554.33 s · mínimo 0.00 % da área · objetos 0–384 · maior vazio 0.20 s → OK
+  B5-1 → B5-2: 565.13–569.13 s · mínimo 4.81 % da área · objetos 75–574 · maior vazio 0.00 s → OK
+  B5-2 → B5-3: 589.93–593.93 s · mínimo 3.88 % da área · objetos 122–777 · maior vazio 0.00 s → OK
+  B5-4 → B5-5 (alvo 22): troca dentro do lote PB5 (gatilho «dividindo o erro pelo passo»); coberta pela varredura de quadros vazios acima
+  B6-7 → B7-1: 747.87–751.87 s · mínimo 0.01 % da área · objetos 5–1719 · maior vazio 0.13 s → OK
+
+R10: 0 ocorrências de tela vazia > 0,8 s

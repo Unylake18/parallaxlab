@@ -1,0 +1,21 @@
+yt_0028 · QA da voz (narracao_final.wav)
+modelo eleven_v4 · voz qw7jgPZWOKrl10GsjQ82 · texto narracao_tags.md v5 (handoff final §3) · 4 blocos de API
+duração 947.36 s (15:47.36); limite da parada: 17:30 → OK
+pico -1.24 dBFS; amostras em clipping (|x| ≥ 0,999): 0 → OK
+silêncios > 1,5 s dentro de parágrafo: 0
+pausas entre parágrafos: 36; 0.16–0.36 s (média 0.27 s); maior pausa entre palavras no texto todo 0.54 s
+tag lida em voz alta (STT): {'curious': 0, 'thoughtful': 0, 'emphatic': 0, 'excited': 0, 'happy': 0} → OK
+  «épsilon» no STT: 13×
+  «delta» no STT: 9×
+  «jacobiana» no STT: 1×
+  «cê um» no STT: 4×
+  «cê erre» no STT: 1×
+  «newtoniano» no STT: 1×
+  «Parallax Lab» no STT: 2×
+palavras 2865; 3.02 palavras/s no WAV inteiro; 3.03 palavras/s do início ao fim da fala (referência 3,0 palavras/s)
+fronteira de bloco antes de «então o limite de um campo existe»: pausa 0.26 s (254.94–255.20); nível 2 s antes -24.1 dB × 2 s depois -21.4 dB
+  maior salto entre amostras na pausa: 0.0452 (clique > 0,2)
+fronteira de bloco antes de «a vertical diz quanto muda»: pausa 0.28 s (516.12–516.40); nível 2 s antes -23.5 dB × 2 s depois -20.9 dB
+  maior salto entre amostras na pausa: 0.1029 (clique > 0,2)
+fronteira de bloco antes de «os dois giros no mesmo sentido»: pausa 0.30 s (777.60–777.90); nível 2 s antes -22.1 dB × 2 s depois -21.1 dB
+  maior salto entre amostras na pausa: 0.0202 (clique > 0,2)

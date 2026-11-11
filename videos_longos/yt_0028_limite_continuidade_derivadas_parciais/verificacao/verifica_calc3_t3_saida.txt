@@ -1,0 +1,91 @@
+== A · Guidorizzi §1.6 Ex. 1 ==
+A1 dF/dx = (2x, 1/x)                                       True
+A2 dF/dy = (2y, 1/y)  (livro imprime 1/x: erro de digitação) True
+== F · campo da aula F = (1 + sen x - sen y, 2 sen x + 2 - cos x - cos y), P = (0,0) ==
+F1 F(P) = (1, 0)                                           True
+F2 J_F(P) = [[1, -1], [2, 0]]                              True
+F3 div, rot, e1, e2 em P = 1, 3, 1, 1                      True
+F4 lim quociente em x = (1, 2) = dF/dx(P)                  True
+F5 lim quociente em y = (-1, 0) = dF/dy(P)                 True
+   h = 1.00: quociente x = (0.841, 2.143)   quociente y = (-0.841, 0.460)
+   h = 0.50: quociente x = (0.959, 2.163)   quociente y = (-0.959, 0.245)
+   h = 0.20: quociente x = (0.993, 2.086)   quociente y = (-0.993, 0.100)
+   h = 0.10: quociente x = (0.998, 2.047)   quociente y = (-0.998, 0.050)
+F6 andando em x, a ponta faz (1 + sen s, 2 sen s + 1 - cos s) True
+F7 andando em y, a ponta anda num círculo de centro (1,1), raio 1 True
+F8 tangentes às duas curvas em s=0 = dF/dx e dF/dy         True
+   |H| = 0.3: erro da aproximação linear / tamanho de J H = 0.078
+   |H| = 0.1: erro da aproximação linear / tamanho de J H = 0.023
+   |H| = 0.03: erro da aproximação linear / tamanho de J H = 0.007
+F9 erro relativo da tabela cai com |H| (0,3 -> 0,03)       True
+   valores singulares de J_F(P): [2.288 0.874] (círculo vira elipse de semi-eixos nessa razão)
+   eps = 1.0: delta máximo = 0.416   (eps/sigma_max = 0.437)
+   eps = 0.5: delta máximo = 0.212   (eps/sigma_max = 0.219)
+   eps = 0.25: delta máximo = 0.107   (eps/sigma_max = 0.109)
+F10 delta(eps) ~ eps/sigma_max quando eps é pequeno        True
+== G · campo das diagonais G = (2xy/(x²+y²), 0), G(0,0) = (0,0) ==
+G1 na reta y = m x: G = (2m/(1+m²), 0), não depende de x   True
+G2 eixo x (m=0): 0 · diagonal y=x: 1 · diagonal y=-x: -1   True
+G3 |G| <= 1 em todo ponto (2|xy| <= x²+y²)                 True
+G4 dG/dx(0,0) = lim [G(h,0)-G(0,0)]/h = 0                  True
+G5 dG/dy(0,0) = 0                                          True
+G6 mas G não é contínuo em (0,0): na diagonal G = 1 != 0   True
+G7 polar: G = sen 2θ (constante em cada raio)              True
+== C · continuidade e cartões ==
+C1 E da carga: direção E/|E| no raio de ângulo θ = (cos θ, sen θ), sem limite na carga True
+C2 vórtice: domínio sem a origem (lá o denominador zera)   True
+C3 limite por componentes: max|u_j| <= |u| <= √2·max|u_j|  True
+== J · a tabela das derivadas parciais (matriz jacobiana) ==
+J1 J = (div/2) I + (rot/2) giro + (e1/2) (x,-y) + (e2/2) (y,x) True
+J2 quatro números <-> quatro medidas (mudança de base inversível) True
+J3 tijolos: (x,y) -> 2,0,0,0                               True
+J4 (-y,x) -> 0,2,0,0                                       True
+J5 (x,-y) -> 0,0,2,0   (o campo do gancho)                 True
+J6 (y,x)  -> 0,0,0,2   (o mesmo, girado de 45°)            True
+J7 taxa de estiramento na direção u: uᵀJu = div/2 + (e1 cos2α + e2 sen2α)/2 True
+J8 em x menos em y = e1 ; diagonal menos antidiagonal = e2 True
+J9b reflexão: JᵀJ = I (círculo -> círculo) e mesmo assim d1 = 2 True
+J9 círculo -> círculo (JᵀJ = λI) quando e1 = e2 = 0 (só a ida) True
+J10 e com e1 = e2 = 1 (campo da aula) círculo vira elipse (σ diferentes) True
+J11 arestas do quadradinho após dt: colunas de I + dt J = e_i + dt ∂F/∂x_i True
+J12 área após dt: det(I + dt J) = 1 + dt div + O(dt²)      True
+J13 fluxo de (x,-y): (x e^t, y e^-t), área constante, sem giro True
+J14 fluxo de (y,x): diagonal cresce e^t, antidiagonal cai e^-t True
+J15 fluxo da tabela do campo da aula: área × e^t (div = 1), t = 0,4 True
+   gancho: quadradinho de lado 1,2 em (x,-y) até t = 0,55: 2.080 × 0.692 (área 1.44)
+   tabela da aula, t = 0,4: área 1 -> 1.492
+== D · desafio do EP. 02 (campo não constante com rot 0 e div 0) ==
+D1 (y, x): rot 0, div 0                                    True
+D2 (x² - y², -2xy): rot 0, div 0, não constante            True
+== V2 · handoff v2 (interpretações geométricas novas) ==
+   maior delta: eps 1: 0.4156  eps 0.5: 0.2116  eps 0.25: 0.1073
+V1 ε = 1 → δ 0,41; ε = 0,5 → δ 0,21; ε = 0,25 → δ 0,10 (arredondado para baixo) True
+   delta 0,7 com eps 1: 61% da borda da mancha fica fora; distância máxima 1.69
+V2 δ = 0,7 não serve para ε = 1 (a mancha vaza)            True
+V3 G em polares: 2xy/(x²+y²) = sen 2θ (só depende da direção) True
+V4 qualquer círculo em volta da origem: a ponta varre [−1, 1] (largura 2 > 2ε com ε = 0,5) True
+V5 ∂G/∂x = 2y(y² − x²)/(x² + y²)²; no eixo vertical vale 2/y (explode na origem) True
+V6 ∂F/∂x do campo da aula = (cos x, 2cos x + sen x) é contínua (C¹) True
+V7 faixas: |ΔP|,|ΔQ| ≤ ‖Δ‖ ≤ √2·max(|ΔP|,|ΔQ|) (disco ⊂ quadrado ⊂ disco √2) True
+V8 J·H = h·(1ª coluna) + k·(2ª coluna): H = (0,9; 0,6) → (0,3; 1,8) True
+   zoom × 10, ponto (−1; 1) do palco = H (−0,1; 0,1): F = (0.800; -0.190), resto = (-0.200; -0.190)
+V9 seta do zoom = seta do centro + resto, e o resto ≈ J·H (erro < 10 %) True
+   malha de ±0,4 em volta de P: erro máximo da imagem em relação ao paralelogramo = 0.180 u (≈ 25 px a 140 px/u)
+V10 malha ±0,4: a imagem é quase o paralelogramo (erro < 0,2 u) True
+V11 rot = giro da aresta horizontal + giro da vertical     True
+V12 div = estica horizontal + estica vertical              True
+V13 d1 = estica horizontal − estica vertical               True
+V14 d2 = giro horizontal − giro vertical = taxa em que o ângulo reto fecha True
+V15 campo da aula: estica 1 e 0, gira 2 e 1 → rot 3, div 1, d1 1, d2 1 True
+V16 no espaço: 9 = 3 (giro, antissimétrica) + 1 (volume, traço) + 5 (deformação, simétrica sem traço) True
+
+--- v3: cenas novas ---
+V17 campo K: em toda reta y = m x o valor vai a 0          True
+V18 campo K: na parábola y = x² vale 1/2 em todo ponto (x ≠ 0) True
+V19 nosso campo: máx ‖erro‖/‖H‖ em ‖H‖ = 0,5 · 0,25 · 0,125 = [np.float64(0.33), np.float64(0.15), np.float64(0.07)] ≈ 0,33 · 0,15 · 0,07 (cai pela metade) True
+V20 encrenqueiro: previsão das parciais = 0, máx ‖erro‖/‖H‖ = [np.float64(2.0), np.float64(4.0), np.float64(8.0)] = 2 · 4 · 8 (dobra) True
+V21 ponto de acumulação: P = (0,7; 0) fora do disco aberto A (centro (−0,75; 0), raio 1,45) mas todo disco em volta de P toca A True
+
+--- v4: gráfico do alvo 22 ---
+V22 encrenqueiro: máx ‖G(H)‖/‖H‖ = 1/passo (curva vermelha y = 16/x com x = 16·passo) True
+V23 nosso campo: erro ÷ passo decresce com o passo e fica abaixo de 0,35 (curva verde cola no eixo): {0.5: np.float64(0.33), 0.25: np.float64(0.145), 0.125: np.float64(0.068), 0.0625: np.float64(0.033), 0.03125: np.float64(0.016)} True
