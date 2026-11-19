@@ -4,7 +4,7 @@ import math
 import numpy as np
 from manim import (
     VGroup, Line, Circle, Dot, FadeIn, FadeOut, Create, ReplacementTransform, Write, ValueTracker, always_redraw, BOLD,
-    UP, DOWN, LEFT, RIGHT,
+    UP, DOWN, LEFT, RIGHT, DashedVMobject, ImageMobject, LaggedStart,
 )
 from base import *  # noqa: F401,F403
 
@@ -45,7 +45,7 @@ class Sec7:
         self.remove(flow)
         self.drop("H")
         self.caption("A mesma lei, agora com outra fonte")
-        loop = Circle(radius=1.55, color=BLUE_L, stroke_width=7).move_to([-4.3, -0.15, 0])
+        loop = Circle(radius=1.55, color=STEEL, stroke_width=7).move_to([-4.3, -0.15, 0])
         self.play(ReplacementTransform(wire, loop), run_time=2.2)
         lflow = self.flow([lambda u: np.array([-4.3 + 1.55 * math.cos(2 * math.pi * u), -0.15 + 1.55 * math.sin(2 * math.pi * u), 0])], count=10)
         self.add(lflow)
@@ -76,10 +76,33 @@ class Sec7:
         self.play(FadeIn(q2), run_time=0.9)
         self.caption("Que propriedades esse campo necessariamente possui?")
         self.mark("gancho_estrutura_local")
-        self.hold(6)
-        self.clear()
-        end = txt("PARALLAX LAB", 40).move_to([0, 0.7, 0])
-        below = txt("LEI DE BIOT–SAVART", T_BODY, opacity=0.8).move_to([0, -0.3, 0])
-        self.play(FadeIn(end), FadeIn(below), run_time=1.2)
-        self.hold(4)
+        self.hold(5)
+        self.cta()
         self.mark("fim")
+
+    def cta(self):
+        """End card no padrão do 5.1 (b09_cta): logo horizontal oficial, anéis tracejados, chamada e tease do próximo assunto."""
+        self._ev("cta", "início do CTA")
+        self.clear()
+        oc = np.array([0.0, 0.5, 0.0])
+        rings = VGroup(*[DashedVMobject(Circle(radius=r, arc_center=oc), num_dashes=max(12, int(14 * r)), dashed_ratio=0.6).set_stroke(VIOLET, 3.5, 0.16)
+                         for r in (2.0, 3.0, 4.0)])
+        for i, r_ in enumerate(rings):
+            r_.add_updater(lambda m, dt, s=(1 if i % 2 == 0 else -1) * (0.06 - 0.01 * i): m.rotate(s * dt, about_point=oc))
+        logo = ImageMobject(str(ROOT / "assets" / "branding" / "overlays" / "parallax_lab_logo_horizontal.png")).set_width(6.0).move_to(oc + np.array([0.0, 0.5, 0.0]))
+        msg = txt("Inscreva-se para acompanhar os próximos vídeos", 28, opacity=0.9).move_to(oc + np.array([0.0, -0.9, 0.0]))
+        nxt = VGroup(txt("Próximo:", 24, opacity=0.8), txt("divergente, rotacional e a lei de Ampère", 24, opacity=0.95)).arrange(RIGHT, buff=0.2).move_to(oc + np.array([0.0, -1.75, 0.0]))
+
+        def ripple():
+            w = DashedVMobject(Circle(radius=1.6, arc_center=oc), num_dashes=24, dashed_ratio=0.6).set_stroke(VIOLET, 3.5, 0.35)
+            self.play(w.animate.scale(2.6, about_point=oc).set_stroke(opacity=0.0), run_time=2.6)
+            self.remove(w)
+
+        self.play(FadeOut(self.wm), FadeOut(self.tag), FadeOut(self.head) if self.head is not None else FadeOut(self.wm), run_time=1.0)
+        self.play(LaggedStart(*[FadeIn(r_, scale=0.85) for r_ in rings], lag_ratio=0.3), FadeIn(logo, scale=0.92), run_time=1.8)
+        self.play(FadeIn(msg, shift=0.1 * UP), run_time=1.0)
+        self.hold(0.8)
+        self.play(FadeIn(nxt, shift=0.1 * UP), run_time=1.0)
+        ripple()
+        ripple()
+        self.hold(1.2)

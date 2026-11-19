@@ -1,0 +1,118 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>c3d32</title>
+<style>html,body{margin:0;background:transparent;overflow:hidden}canvas{display:block}</style></head><body>
+<script src="three.min.js"></script>
+<script>
+// Cenas 3D-alvo do yt_0032 (Cálculo III · EP. 07 · propriedades da integral dupla), three.js r128. ?k=<chave>
+// Mesmo estilo e mesmas funções do c3d29.html (EP. 05): opaco, sem luz, tom por face (topo = cor; faces x 70 %; faces y 48 % sobre o fundo),
+// contorno escuro fino até n = 16, sem sombra/névoa/brilho/transparência, fundo transparente (o compositor põe o violeta liso por baixo).
+// Mundo: x e y em metros (chapa [0,2]²), z desenhado = ZS · valor. Câmera perspectiva fov 22°, up = +z.
+// window.PTS = pontos nomeados projetados em px de 1920×1080 (o Manim prende rótulos neles).
+const T=THREE,PI=Math.PI,K=new URLSearchParams(location.search).get('k')||'b12';
+const W=1920,H=1080,R=new T.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true});
+R.setPixelRatio(1);R.setSize(W,H,false);R.setClearColor(0x000000,0);document.body.appendChild(R.domElement);
+const S=new T.Scene();T.Object3D.DefaultUp.set(0,0,1);
+const cam=new T.PerspectiveCamera(22,W/H,.05,200);cam.up.set(0,0,1);
+const BG='#131030',CI='#35D9FF',AZC='#7FB2FF',CORAL='#FF7A8A',POS='#E08A3C',E1='#FFC24D',E2='#EA63FF',GEO='#B8C4DA',RAMP0='#10243A',
+ LEVE='#1E5072',PESADO='#30BBE0',BR='#F5F7FF';
+const C=h=>new T.Color(h), mixc=(a,b,t)=>C(a).lerp(C(b),t);
+let ZS=.25; const f=(x,y)=>x*x+y*y;
+const PTS={};
+function ver(p,t,cx=600,cy=540){cam.position.set(...p);cam.lookAt(...t);cam.setViewOffset(W,H,960-cx,540-cy,W,H);cam.updateProjectionMatrix();cam.updateMatrixWorld(true);}
+function proj(nome,v){const q=new T.Vector3(...v).project(cam);PTS[nome]=[+((q.x+1)/2*W).toFixed(1),+((1-q.y)/2*H).toFixed(1)];}
+function caixas(lista,{bordas=true,corBorda=null}={}){
+ const pos=[],col=[],ed=[];
+ const quad=(a,b,c,d,cc)=>{for(const p of [a,b,c,a,c,d]){pos.push(...p);col.push(cc.r,cc.g,cc.b);}};
+ for(const b of lista){const {x0,x1,y0,y1,z0,z1}=b,c=C(b.c),cx=mixc(BG,b.c,.70),cy=mixc(BG,b.c,.48);
+  quad([x0,y0,z1],[x1,y0,z1],[x1,y1,z1],[x0,y1,z1],c);
+  quad([x1,y0,z0],[x1,y1,z0],[x1,y1,z1],[x1,y0,z1],cx);quad([x0,y1,z0],[x0,y0,z0],[x0,y0,z1],[x0,y1,z1],cx);
+  quad([x0,y0,z0],[x1,y0,z0],[x1,y0,z1],[x0,y0,z1],cy);quad([x1,y1,z0],[x0,y1,z0],[x0,y1,z1],[x1,y1,z1],cy);
+  if(bordas){const v=[[x0,y0],[x1,y0],[x1,y1],[x0,y1]];for(let k=0;k<4;k++){const a=v[k],n=v[(k+1)%4];ed.push(a[0],a[1],z1,n[0],n[1],z1, a[0],a[1],z0,a[0],a[1],z1);}}}
+ const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(pos,3));g.setAttribute('color',new T.Float32BufferAttribute(col,3));
+ const m=new T.Mesh(g,new T.MeshBasicMaterial({vertexColors:true,side:T.DoubleSide,polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1}));S.add(m);
+ if(bordas&&ed.length){const ge=new T.BufferGeometry();ge.setAttribute('position',new T.Float32BufferAttribute(ed,3));
+  S.add(new T.LineSegments(ge,new T.LineBasicMaterial({color:corBorda?C(corBorda):mixc(BG,'#0B1530',.6)})));}
+ return m;}
+function poli(pts){const cp=new T.CurvePath();for(let i=0;i+1<pts.length;i++)cp.add(new T.LineCurve3(new T.Vector3(...pts[i]),new T.Vector3(...pts[i+1])));return cp;}
+const tubo=(pts,r,cor,{depth=true}={})=>{const m=new T.Mesh(new T.TubeGeometry(poli(pts),Math.max(8,(pts.length-1)*4),r,8,false),new T.MeshBasicMaterial({color:C(cor),depthTest:depth}));if(!depth)m.renderOrder=10;S.add(m);return m;};
+function seta(a,b,r,cor,depth=true){const A=new T.Vector3(...a),B=new T.Vector3(...b),d=B.clone().sub(A),L=d.length(),hl=Math.min(.16,.3*L),g=new T.Group(),m=new T.MeshBasicMaterial({color:C(cor),depthTest:depth});
+ const s=new T.Mesh(new T.CylinderGeometry(r,r,L-hl,12),m);s.position.y=(L-hl)/2;const c=new T.Mesh(new T.ConeGeometry(r*3,hl,18),m);c.position.y=L-hl/2;g.add(s,c);
+ g.position.copy(A);g.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),d.normalize());S.add(g);return g;}
+function eixos({lx=2.45,ly=3.3,lz=2.25,marcas=[2,4,6,8]}={}){seta([0,0,.014],[lx,0,.014],.011,E1);seta([0,0,.014],[0,ly,.014],.011,E2);seta([0,0,0],[0,0,lz],.011,CI);
+ proj('ex',[lx+.12,0,0]);proj('ey',[0,ly+.12,0]);proj('ez',[0,0,lz+.12]);
+ for(const v of marcas){tubo([[-.05,0,v*ZS],[.05,0,v*ZS]],.008,CI);proj('m'+v,[-.13,-.02,v*ZS]);}}
+function base(cor=GEO,{x1=2,y1=2,fill='#1C1846'}={}){const p=new T.Mesh(new T.PlaneGeometry(x1,y1),new T.MeshBasicMaterial({color:C(fill)}));p.position.set(x1/2,y1/2,-.002);S.add(p);
+ tubo([[0,0,0],[x1,0,0],[x1,y1,0],[0,y1,0],[0,0,0]].map(q=>[q[0],q[1],.001]),.006,cor);}
+function malha(n=8,cor=mixc(BG,CI,.75).getStyle(),r=.0045){for(let k=0;k<=n;k++){const a=2*k/n,L1=[],L2=[];for(let t=0;t<=48;t++){const b=2*t/48;L1.push([a,b,ZS*f(a,b)]);L2.push([b,a,ZS*f(b,a)]);}
+  const rr=(k===0||k===n)?.008:r;tubo(L1,rr,(k===0||k===n)?CI:cor);tubo(L2,rr,(k===0||k===n)?CI:cor);}}
+const CAM_PREDIO=()=>ver([1+2.6,1-7.2,8.6],[1,1,.7],600,600);
+const CAM_BAIXO=()=>ver([1+2.9,1-8.2,6.8],[1,1,.35],600,600);
+// solda (a mesma do cartão do EP. 05) e a chapa de dois metais
+const g=a=>1+.42*Math.sin(1.7*a-.4);
+const rho=(X,Y)=>Y<=g(X)?1:3;
+function faixa(a,b,amostras=40){let mn=9,mx=-9;for(let s=0;s<=amostras;s++){const v=g(a+(b-a)*s/amostras);mn=Math.min(mn,v);mx=Math.max(mx,v);}return [mn,mx];}
+function celulaMetal(a,b,c,d){const [mn,mx]=faixa(a,b);const leve=c<=mx, pesado=d>mn;return {piso:leve?1:3,teto:pesado?3:1,vermelha:leve&&pesado};}
+
+
+const LIL='#C9A7FF',MEN='#8CFFD2';
+function arame(lista,cor,r=.006){for(const b of lista){const {x0,x1,y0,y1,z0,z1}=b;
+ tubo([[x0,y0,z1],[x1,y0,z1],[x1,y1,z1],[x0,y1,z1],[x0,y0,z1]],r,cor);
+ for(const [a,c] of [[x0,y0],[x1,y0],[x1,y1],[x0,y1]])tubo([[a,c,z0],[a,c,z1]],r*.8,cor);}}
+function eixos2(lz=1.95,mk=[]){seta([0,0,.014],[2.45,0,.014],.011,E1);seta([0,0,.014],[0,2.45,.014],.011,E2);seta([0,0,0],[0,0,lz],.011,CI);
+ proj('ex',[2.57,0,0]);proj('ey',[0,2.57,0]);proj('ez',[0,0,lz+.12]);for(const v of mk){tubo([[-.05,0,ZS*v],[.05,0,ZS*v]],.008,CI);proj('m'+v,[-.13,-.02,ZS*v]);}}
+const soldaTubo=(z,cor=BR,r=.012)=>{const c=[];for(let s=0;s<=80;s++){const a=2*s/80;c.push([a,g(a),z]);}tubo(c,r,cor);};
+// b12: rampas empilhadas: x² (âmbar) embaixo, y² (magenta) em cima, mesmos pontos (centros), n = 4
+if(K==='b12'){ver([1+3.6,1-7.6,5.2],[1,1,.75],600,600);const n=4,h=2/n,A=[],B=[];base();eixos({marcas:[2,4,6,8]});
+ for(let i=0;i<n;i++)for(let j=0;j<n;j++){const xc=(i+.5)*h,yc=(j+.5)*h;A.push({x0:i*h,x1:(i+1)*h,y0:j*h,y1:(j+1)*h,z0:0,z1:ZS*xc*xc,c:E1});
+  B.push({x0:i*h,x1:(i+1)*h,y0:j*h,y1:(j+1)*h,z0:ZS*xc*xc,z1:ZS*(xc*xc+yc*yc),c:E2});}
+ caixas(A,{corBorda:'#3A2A08'});caixas(B,{corBorda:'#3A0A40'});
+ proj('xq',[1.75,.0,ZS*1.75*1.75*.5]);proj('yq',[1.75,.25,ZS*(1.75*1.75+.25*.25)+.02]);proj('topo',[1.75,1.75,ZS*(2*1.75*1.75)]);}
+// b14: camadas da chapa de dois metais: 1 kg/m² na chapa toda + reforço de 2 kg/m² no pedaço de cima (n = 32, sem contorno)
+if(K==='b14'){ZS=.4;CAM_BAIXO();const n=32,h=2/n,L=[],Rf=[];base();
+ for(let i=0;i<n;i++)for(let j=0;j<n;j++){const a=i*h,c=j*h;L.push({x0:a,x1:a+h,y0:c,y1:c+h,z0:0,z1:ZS,c:LEVE});
+  if(c+h/2>g(a+h/2))Rf.push({x0:a,x1:a+h,y0:c,y1:c+h,z0:ZS,z1:3*ZS,c:PESADO});}
+ caixas(L,{bordas:false});caixas(Rf,{bordas:false});soldaTubo(ZS+.004);
+ eixos2(1.55,[1,3]);proj('camada',[1.9,.15,ZS*.5]);proj('reforco',[.25,1.85,ZS*2.2]);}
+// b21: f = x²+y² (ciano, sólido) dentro de g = f + 1 + x/2 (lilás, só arestas), n = 4
+if(K==='b21'){ver([1+3.6,1-7.6,5.2],[1,1,.75],600,600);const n=4,h=2/n,F=[],G=[];base();eixos({marcas:[2,4,6,8]});
+ for(let i=0;i<n;i++)for(let j=0;j<n;j++){const xc=(i+.5)*h,yc=(j+.5)*h,v=xc*xc+yc*yc,w=v+1+xc/2;
+  F.push({x0:i*h,x1:(i+1)*h,y0:j*h,y1:(j+1)*h,z0:0,z1:ZS*v,c:CI});G.push({x0:i*h,x1:(i+1)*h,y0:j*h,y1:(j+1)*h,z0:ZS*v,z1:ZS*w});}
+ caixas(F,{corBorda:'#08303A'});arame(G,LIL,.006);
+ proj('f',[1.75,0,ZS*1.75*1.75*.6]);proj('g',[1.75,.25,ZS*(1.75*1.75+.0625+1+.875)+.03]);proj('folga',[1.5,0,ZS*(1.5625+.0625+.6)]);}
+// b22: chapa de dois metais (n = 16) entre duas lajes planas: altura 1 (azul-claro) e 3 (coral), só o contorno
+if(K==='b22'){ZS=.5;CAM_BAIXO();const n=16,h=2/n,L=[];base();
+ for(let i=0;i<n;i++)for(let j=0;j<n;j++){const a=i*h,c=j*h,cel=(c+h/2>g(a+h/2))?3:1;L.push({x0:a,x1:a+h,y0:c,y1:c+h,z0:0,z1:ZS*cel,c:cel===1?LEVE:PESADO});}
+ caixas(L,{corBorda:'#08142A'});
+ for(const [z,cor] of [[1,AZC],[3,CORAL]]){tubo([[0,0,ZS*z],[2,0,ZS*z],[2,2,ZS*z],[0,2,ZS*z],[0,0,ZS*z]],.012,cor);
+  for(const [a,c] of [[0,0],[2,0],[2,2],[0,2]])tubo([[a,c,0],[a,c,ZS*z]],.005,cor);}
+ eixos2(1.95,[1,3]);proj('l1',[2,0,ZS*1]);proj('l3',[2,0,ZS*3]);}
+// b31: só a solda: chão nas cores dos metais e o muro coral de altura M = 3 nas células que a solda cruza (n = 16)
+// b32: o muro de 100 kg/m² (n = 64), escala vertical reduzida: 100 desenhado com 2,0 m
+if(K==='b31'||K==='b32'){ZS=.5;CAM_BAIXO();const n=K==='b31'?16:64,h=2/n,Ch=[],Mu=[];base();
+ const alt=K==='b31'?ZS*3:2.0;
+ for(let i=0;i<n;i++){const a=i*h,[mn,mx]=faixa(a,a+h);for(let j=0;j<n;j++){const c=j*h,d=c+h;
+  if(c<=mx&&d>mn)Mu.push({x0:a,x1:a+h,y0:c,y1:d,z0:0,z1:alt,c:CORAL});}}
+ // chão: dois metais lisos (placas finas)
+ const m=64,hm=2/m;for(let i=0;i<m;i++)for(let j=0;j<m;j++){const a=i*hm,c=j*hm;Ch.push({x0:a,x1:a+hm,y0:c,y1:c+hm,z0:0,z1:.004,c:(c+hm/2>g(a+hm/2))?PESADO:LEVE});}
+ caixas(Ch,{bordas:false});caixas(Mu,{bordas:n<=16,corBorda:'#3A1220'});
+ seta([0,0,.014],[2.45,0,.014],.011,E1);seta([0,0,.014],[0,2.45,.014],.011,E2);seta([0,0,0],[0,0,K==='b31'?1.95:2.35],.011,CI);
+ proj('ex',[2.57,0,0]);proj('ey',[0,2.57,0]);proj('ez',[0,0,(K==='b31'?1.95:2.35)+.12]);
+ tubo([[-.05,0,alt],[.05,0,alt]],.008,CI);proj('M',[-.13,-.02,alt]);proj('muro',[1.159,g(1.159),alt+.04]);proj('leve',[1.75,.3,0]);proj('pesado',[.3,1.8,0]);}
+// b61: terraplanagem de x²+y² até o nível 8/3 (n = 16): o que está acima do nível em coral; o que falta abaixo em menta; contorno do nível em ciano
+if(K==='b61'){CAM_PREDIO();const n=16,h=2/n,Lw=[],Up=[],Dn=[],Lv=8/3;base();eixos({marcas:[2,4,6,8]});
+ for(let i=0;i<n;i++)for(let j=0;j<n;j++){const xc=(i+.5)*h,yc=(j+.5)*h,v=xc*xc+yc*yc,b={x0:i*h,x1:(i+1)*h,y0:j*h,y1:(j+1)*h};
+  if(v>Lv){Lw.push({...b,z0:0,z1:ZS*Lv,c:mixc(BG,CI,.55).getStyle()});Up.push({...b,z0:ZS*Lv,z1:ZS*v,c:CORAL});}
+  else{Lw.push({...b,z0:0,z1:ZS*v,c:mixc(BG,CI,.55).getStyle()});Dn.push({...b,z0:ZS*v,z1:ZS*Lv,c:MEN});}}
+ caixas(Lw,{bordas:false});caixas(Dn,{bordas:true,corBorda:'#1A4A3A'});caixas(Up,{bordas:true,corBorda:'#3A1220'});
+ tubo([[0,0,ZS*Lv],[2,0,ZS*Lv],[2,2,ZS*Lv],[0,2,ZS*Lv],[0,0,ZS*Lv]],.011,CI);
+ const r=Math.sqrt(Lv),arc=[];for(let k=0;k<=90;k++){const t=PI/2*k/90;arc.push([r*Math.cos(t),r*Math.sin(t),.004]);}tubo(arc.map(q=>[q[0],q[1],ZS*Lv+.006]),.014,POS);
+ proj('acima',[1.94,1.94,ZS*7.6]);proj('abaixo',[.3,.3,ZS*2]);proj('nivel',[2,0,ZS*Lv]);proj('arco',[r*Math.cos(.35),r*Math.sin(.35),0]);}
+// b14k (v2): k = −1: as caixas de f = x²+y² (n = 4) descem abaixo do chão; chão só com o contorno (sem preenchimento, para ver por baixo)
+if(K==='b14k'){ver([1+3.9,1-8.4,1.6],[1,1,-.55],600,470);const n=4,h=2/n,F=[];
+ tubo([[0,0,.001],[2,0,.001],[2,2,.001],[0,2,.001],[0,0,.001]],.008,GEO);
+ for(let k=1;k<4;k++){tubo([[k*h,0,.001],[k*h,2,.001]],.004,mixc(BG,GEO,.5).getStyle());tubo([[0,k*h,.001],[2,k*h,.001]],.004,mixc(BG,GEO,.5).getStyle());}
+ for(let i=0;i<n;i++)for(let j=0;j<n;j++){const xc=(i+.5)*h,yc=(j+.5)*h;F.push({x0:i*h,x1:(i+1)*h,y0:j*h,y1:(j+1)*h,z0:-ZS*(xc*xc+yc*yc),z1:0,c:CI});}
+ caixas(F,{corBorda:'#08303A'});
+ seta([0,0,.014],[2.45,0,.014],.011,E1);seta([0,0,.014],[0,2.45,.014],.011,E2);seta([0,0,-2.3],[0,0,.4],.011,CI);
+ proj('ex',[2.57,0,0]);proj('ey',[0,2.57,0]);proj('ez',[0,0,.52]);proj('kq',[1.75,0,-ZS*3.4]);proj('chao',[2.05,2.05,0]);}
+R.render(S,cam);window.PTS=PTS;document.title='ok';
+</script></body></html>

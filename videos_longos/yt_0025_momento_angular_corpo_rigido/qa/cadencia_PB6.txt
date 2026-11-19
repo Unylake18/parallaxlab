@@ -1,0 +1,24 @@
+CADÊNCIA PB6: 15 linhas, média 0.336 s/glifo, mínimo 0.142, 6 abaixo de 0,20
+  B6-1 t0=0.3s   8 glifos  1.80s 0.225 s/glifo  m = 20 \,\mathrm g
+  B6-1 t0=6.2s  10 glifos  2.40s 0.240 s/glifo  \rho = 0{,}20 \,\mathrm m
+  B6-1 t0=8.6s  17 glifos  4.20s 0.247 s/glifo  z_{\mathrm{axial}} = \pm 0{,}10 \,\mathrm m
+  B6-2 t0=33.8s   6 glifos  5.60s 0.933 s/glifo  \sum mxz \ne 0
+  B6-3 t0=41.5s  20 glifos  3.73s 0.187 s/glifo  v = \frac{100}{3{,}6} = 27{,}8 \,\mathrm{m/s}  <0,20
+  B6-3 t0=45.2s   5 glifos  1.80s 0.360 s/glifo  \omega = \frac vR
+  B6-3 t0=47.0s  11 glifos  2.00s 0.182 s/glifo  \omega = \frac{27{,}8}{0{,}30}  <0,20
+  B6-3 t0=49.3s  14 glifos  2.07s 0.148 s/glifo  \omega = 92{,}6 \,\mathrm{rad/s}  <0,20
+  B6-3 t0=51.7s   6 glifos  2.13s 0.356 s/glifo  F = m \omega^2 \rho
+  B6-3 t0=54.2s  18 glifos  3.13s 0.174 s/glifo  F = 0{,}020 \cdot 92{,}6^2 \cdot 0{,}20  <0,20
+  B6-3 t0=57.7s   8 glifos  1.13s 0.142 s/glifo  F \approx 34 \,\mathrm N  <0,20
+  B6-3 t0=59.1s   8 glifos  2.47s 0.308 s/glifo  \tau = F \cdot 0{,}20
+  B6-3 t0=61.9s  11 glifos  1.60s 0.145 s/glifo  \tau \approx 6{,}9 \,\mathrm{N\cdot m}  <0,20
+  B6-5 t0=75.9s   6 glifos  2.13s 0.356 s/glifo  \sum mxz = 0
+  B6-5 t0=85.3s   6 glifos  6.20s 1.033 s/glifo  \vec L = I \vec\omega
+
+ENXUGAR A PAUTA (decisão da Produção):
+B6-3: v = \frac{100}{3{,}6} = 27{,}8 \,\mathrm{m/s} (0.187 s/glifo)
+B6-3: \omega = \frac{27{,}8}{0{,}30} (0.182 s/glifo)
+B6-3: \omega = 92{,}6 \,\mathrm{rad/s} (0.148 s/glifo)
+B6-3: F = 0{,}020 \cdot 92{,}6^2 \cdot 0{,}20 (0.174 s/glifo)
+B6-3: F \approx 34 \,\mathrm N (0.142 s/glifo)
+B6-3: \tau \approx 6{,}9 \,\mathrm{N\cdot m} (0.145 s/glifo)

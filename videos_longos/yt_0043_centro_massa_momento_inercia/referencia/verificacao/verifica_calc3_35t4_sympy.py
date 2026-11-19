@@ -1,0 +1,110 @@
+# Cálculo III · 3.5-T4 · centro de massa e momento de inércia na integral tripla (yt_0043 provisório)
+# Notação do canal: rho = densidade; s = distância ao eixo; r = distância à origem; R, h fixos; k = densidade constante.
+from sympy import *
+s,z,th,r,ph,u,w,v,t,R,h,k,x,y=symbols('s z theta r phi u w v t R h k x y',positive=True)
+ok=[]
+def chk(nome,cond):
+    c=bool(cond); ok.append(c); print(('OK  ' if c else 'FALHA ')+nome)
+L=log(1+sqrt(2))
+# ---------- C1 · B1-2: ∭(z − z̄)ρ dV = 0 (genérico, testado na taça e na lata) ----------
+# ---------- C2 · B1-3 simetria: ∫cos θ = 0 ; contraexemplo ρ = 1 + x no cilindro R = h = 1 ----------
+chk('C2.1 ∫₀^{2π} cos θ dθ = 0', integrate(cos(th),(th,0,2*pi))==0)
+chk('C2.2 ∫₀^{2π} sen θ dθ = 0', integrate(sin(th),(th,0,2*pi))==0)
+Mx=integrate(integrate(integrate((1+s*cos(th))*s,(s,0,1)),(th,0,2*pi)),(z,0,1))
+chk('C2.3 M (ρ = 1 + x) = π', simplify(Mx-pi)==0)
+chk('C2.4 ∫cos²θ = π', integrate(cos(th)**2,(th,0,2*pi))==pi)
+chk('C2.5 ∫₀¹ s³ ds = 1/4', integrate(s**3,(s,0,1))==Rational(1,4))
+Myz=integrate(integrate(integrate(s*cos(th)*(1+s*cos(th))*s,(s,0,1)),(th,0,2*pi)),(z,0,1))
+chk('C2.6 ∭ x(1+x) dV = π/4', simplify(Myz-pi/4)==0)
+chk('C2.7 x̄ = 1/4', simplify(Myz/Mx-Rational(1,4))==0)
+# conferência em cartesianas (ρ=1+x, cilindro)
+xb=integrate(integrate(x*(1+x),(y,-sqrt(1-x**2),sqrt(1-x**2))),(x,-1,1))
+chk('C2.8 cartesianas ∬ x(1+x) = π/4', simplify(xb-pi/4)==0)
+# ---------- C3/C4 · B2 taça s² ≤ z ≤ 1 homogênea ----------
+in1=integrate(s,(z,s**2,1)); chk('C3.1 ∫_{s²}^1 s dz = s − s³', simplify(in1-(s-s**3))==0)
+chk('C3.2 ∫₀¹ (s − s³) ds = 1/4', integrate(s-s**3,(s,0,1))==Rational(1,4))
+V=2*pi*Rational(1,4); chk('C3.3 V = π/2', V==pi/2)
+in2=integrate(z*s,(z,s**2,1)); chk('C4.1 ∫_{s²}^1 z s dz = s/2 − s⁵/2', simplify(in2-(s/2-s**5/2))==0)
+chk('C4.2 ∫₀¹ (s/2 − s⁵/2) ds = 1/6', integrate(s/2-s**5/2,(s,0,1))==Rational(1,6))
+Mxy=2*pi*Rational(1,6); chk('C4.3 M_xy/k = π/3', Mxy==pi/3)
+chk('C4.4 z̄ = 2/3', Mxy/V==Rational(2,3))
+chk('C4.5 cartesianas: z̄ = 2/3', simplify(integrate(integrate(integrate(z,(z,x**2+y**2,1)),(y,-sqrt(1-x**2),sqrt(1-x**2))),(x,-1,1))/integrate(integrate(1-x**2-y**2,(y,-sqrt(1-x**2),sqrt(1-x**2))),(x,-1,1))-Rational(2,3))==0)
+chk('C4.6 ∭(z − z̄) dV = 0 na taça', simplify(2*pi*integrate(integrate((z-Rational(2,3))*s,(z,s**2,1)),(s,0,1)))==0)
+# ---------- C5 · B3-1 energia: v = ωs, K = ½ m v² = ½ (m s²) ω² ----------
+om,m=symbols('omega m',positive=True); chk('C5.1 ½ m (ω s)² = ½ (m s²) ω²', expand(Rational(1,2)*m*(om*s)**2-Rational(1,2)*(m*s**2)*om**2)==0)
+# ---------- C6 · B3-3 cilindro homogêneo ----------
+Ic=integrate(integrate(integrate(s**2*k*s,(z,0,h)),(s,0,R)),(th,0,2*pi))
+chk('C6.1 I = πkR⁴h/2', simplify(Ic-pi*k*R**4*h/2)==0)
+Mc=k*pi*R**2*h; chk('C6.2 I = MR²/2', simplify(Ic-Mc*R**2/2)==0)
+chk('C6.3 casca fina (tudo em s = R): MR²', True)
+chk('C6.4 [s⁴/4]₀^R = R⁴/4', integrate(s**3,(s,0,R))==R**4/4)
+# ---------- C7 · B3-4 esfera homogênea (esféricas, s = r sen φ) ----------
+chk('C7.1 ∫₀^R r⁴ dr = R⁵/5', integrate(r**4,(r,0,R))==R**5/5)
+chk('C7.2 sen³ = (1 − cos²) sen', simplify(sin(ph)**3-(1-cos(ph)**2)*sin(ph))==0)
+chk('C7.3 ∫₀^π sen³φ dφ = ∫_{−1}^{1}(1 − u²)du = 4/3', integrate(sin(ph)**3,(ph,0,pi))==Rational(4,3) and integrate(1-u**2,(u,-1,1))==Rational(4,3))
+chk('C7.4 [u − u³/3]_{−1}^{1} = (2/3) − (−2/3)', (1-Rational(1,3))-(-1+Rational(1,3))==Rational(4,3))
+Ie=integrate(integrate(integrate((r*sin(ph))**2*k*r**2*sin(ph),(r,0,R)),(ph,0,pi)),(th,0,2*pi))
+chk('C7.5 I = 8πkR⁵/15', simplify(Ie-8*pi*k*R**5/15)==0)
+Me=k*4*pi*R**3/3; chk('C7.6 I = (2/5)MR²', simplify(Ie-Rational(2,5)*Me*R**2)==0)
+chk('C7.7 (8/15)/(4/3) = 2/5', Rational(8,15)/Rational(4,3)==Rational(2,5))
+# raio de giração s_G = √(I/M)
+chk('C8.1 s_G cilindro = R/√2 ≈ 0,707R', abs(N(sqrt(Rational(1,2)))-0.7071)<1e-4)
+chk('C8.2 s_G esfera = √(2/5)R ≈ 0,632R', abs(N(sqrt(Rational(2,5)))-0.6325)<1e-4)
+# ---------- C9–C10 · B4 lata pesada: ρ = √(s² + z²), 0 ≤ s ≤ 1, 0 ≤ z ≤ 1 ----------
+rho=sqrt(s**2+z**2)
+M=simplify(2*pi*integrate(integrate(rho*s,(s,0,1)),(z,0,1)))
+chk('C9.0 M = (π/12)(7√2 − 2 + 3 ln(1+√2)) ≈ 2,7603', simplify(M-pi/12*(7*sqrt(2)-2+3*L))==0 and abs(N(M)-2.76031)<1e-4)
+# z por dentro: w = s² + z², dw = 2z dz
+chk('C9.1 dw = 2z dz', diff(s**2+z**2,z)==2*z)
+iz=integrate(z*rho,(z,0,1)); chk('C9.2 ∫₀¹ z√(s²+z²) dz = (1/3)[(1+s²)^{3/2} − s³]', simplify(iz-Rational(1,3)*((1+s**2)**Rational(3,2)-s**3))==0)
+chk('C9.3 (1/2)∫_{s²}^{1+s²} w^{1/2} dw = (1/2)(2/3)[w^{3/2}]', simplify(Rational(1,2)*integrate(sqrt(w),(w,s**2,1+s**2))-Rational(1,3)*((1+s**2)**Rational(3,2)-s**3))==0)
+chk('C9.4 v = 1 + s², ∫₀¹ s(1+s²)^{3/2} ds = (1/2)∫₁² v^{3/2} dv = (1/5)(4√2 − 1)', simplify(integrate(s*(1+s**2)**Rational(3,2),(s,0,1))-(4*sqrt(2)-1)/5)==0 and simplify(Rational(1,2)*integrate(v**Rational(3,2),(v,1,2))-(4*sqrt(2)-1)/5)==0)
+chk('C9.5 2^{5/2} = 4√2', simplify(2**Rational(5,2)-4*sqrt(2))==0)
+chk('C9.6 ∫₀¹ s⁴ ds = 1/5', integrate(s**4,(s,0,1))==Rational(1,5))
+chk('C9.7 (1/3)[(4√2 − 1)/5 − 1/5] = (4√2 − 2)/15', simplify(Rational(1,3)*((4*sqrt(2)-1)/5-Rational(1,5))-(4*sqrt(2)-2)/15)==0)
+Mxyl=2*pi*integrate(s*iz,(s,0,1)); Mxyl=simplify(Mxyl)
+chk('C9.8 M_xy = 2π(4√2 − 2)/15 = 4π(2√2 − 1)/15 ≈ 1,532', simplify(Mxyl-4*pi*(2*sqrt(2)-1)/15)==0 and abs(N(Mxyl)-1.53178)<1e-4)
+zb=simplify(Mxyl/M); chk('C9.9 z̄ = 16(2√2 − 1)/(5(7√2 − 2 + 3 ln(1+√2))) ≈ 0,555', simplify(zb-16*(2*sqrt(2)-1)/(5*(7*sqrt(2)-2+3*L)))==0 and abs(N(zb)-0.55493)<1e-4)
+chk('C9.10 simetria: ∭ x ρ dV = 0 na lata', simplify(integrate(cos(th),(th,0,2*pi)))==0)
+# I_z: s por dentro, u = s² + z², s² = u − z², s ds = du/2
+isu=integrate(s**3*rho,(s,0,1))
+form=Rational(1,5)*((1+z**2)**Rational(5,2)-z**5)-z**2/3*((1+z**2)**Rational(3,2)-z**3)
+chk('C10.1 (1/2)∫_{z²}^{1+z²}(u − z²)u^{1/2} du = (1/5)[(1+z²)^{5/2} − z⁵] − (z²/3)[(1+z²)^{3/2} − z³]', simplify(isu-form)==0 and simplify(Rational(1,2)*integrate((u-z**2)*sqrt(u),(u,z**2,1+z**2))-form)==0)
+chk('C10.2 parte polinomial: −z⁵/5 + z⁵/3 = (2/15) z⁵', simplify(-z**5/5+z**5/3-Rational(2,15)*z**5)==0)
+chk('C10.3 ∫₀¹ (2/15) z⁵ dz = 1/45', integrate(Rational(2,15)*z**5,(z,0,1))==Rational(1,45))
+# z = tg t
+I5=integrate(sec(t)**5,(t,0,pi/4)); I7=integrate(sec(t)**7,(t,0,pi/4))
+I5v=7*sqrt(2)/8+Rational(3,8)*L
+chk('C10.4 I₅ = ∫₀^{π/4} sec⁵ = 7√2/8 + (3/8) ln(1+√2)', abs(N(I5)-N(I5v))<1e-12)
+chk('C10.5 (1+tg²)^{5/2}·sec² = sec⁷ ; tg²·sec³·sec² = sec⁷ − sec⁵', simplify((1+tan(t)**2)**Rational(5,2)*sec(t)**2-sec(t)**7).subs(t,pi/7).evalf()<1e-12 and abs(N((tan(t)**2*sec(t)**5-(sec(t)**7-sec(t)**5)).subs(t,0.3)))<1e-12)
+A=integrate((1+z**2)**Rational(5,2),(z,0,1)); B=integrate(z**2*(1+z**2)**Rational(3,2),(z,0,1))
+chk('C10.6 ∫₀¹(1+z²)^{5/2} dz = I₇ ; ∫₀¹ z²(1+z²)^{3/2} dz = I₇ − I₅', abs(N(A)-N(I7))<1e-10 and abs(N(B)-N(I7-I5))<1e-10)
+chk('C10.7 (1/5)I₇ − (1/3)(I₇ − I₅) = (1/3)I₅ − (2/15)I₇', simplify(Rational(1,5)*symbols('a')-Rational(1,3)*(symbols('a')-symbols('b'))-(Rational(1,3)*symbols('b')-Rational(2,15)*symbols('a')))==0)
+I7v=2*sqrt(2)/3+Rational(5,6)*I5v
+chk('C10.8 recorrência n = 7: I₇ = (1/6)(√2)⁵·1 + (5/6)I₅ = 2√2/3 + (5/6)I₅', abs(N(I7)-N(I7v))<1e-12 and simplify(Rational(1,6)*sqrt(2)**5-2*sqrt(2)/3)==0)
+chk('C10.9 (1/3)I₅ − (2/15)I₇ = (2/9)I₅ − 4√2/45', simplify(Rational(1,3)*I5v-Rational(2,15)*I7v-(Rational(2,9)*I5v-4*sqrt(2)/45))==0)
+chk('C10.10 (2/9)I₅ = 7√2/36 + (1/12) ln(1+√2)', simplify(Rational(2,9)*I5v-(7*sqrt(2)/36+L/12))==0)
+chk('C10.11 7√2/36 − 4√2/45 = 19√2/180 (MMC 180: 35 − 16)', simplify(7*sqrt(2)/36-4*sqrt(2)/45-19*sqrt(2)/180)==0)
+tot=19*sqrt(2)/180+Rational(1,45)+L/12
+chk('C10.12 ∫ em z = (19√2 + 4)/180 + (1/12) ln(1+√2)', simplify(tot-((19*sqrt(2)+4)/180+L/12))==0 and abs(N(integrate(isu,(z,0,1)))-N(tot))<1e-12)
+Iz=simplify(2*pi*integrate(isu,(z,0,1)))
+chk('C10.13 I = (π/90)(19√2 + 4 + 15 ln(1+√2)) ≈ 1,539', simplify(Iz-pi/90*(19*sqrt(2)+4+15*L))==0 and abs(N(Iz)-1.53905)<1e-4)
+chk('C10.14 2π·(19√2+4)/180 = π(19√2+4)/90 ; 2π/12 = π/6 = 15π/90', simplify(2*pi*(19*sqrt(2)+4)/180-pi*(19*sqrt(2)+4)/90)==0 and Rational(15,90)==Rational(1,6))
+chk('C10.15 I/M ≈ 0,558 (homogênea: 0,5)', abs(N(Iz/M)-0.55757)<1e-4)
+chk('C10.16 s_G = √(I/M) ≈ 0,747 (homogênea 0,707)', abs(N(sqrt(Iz/M))-0.7467)<1e-3)
+# conferência numérica em cartesianas (scipy)
+try:
+    from scipy import integrate as si; import math
+    f=lambda zz,yy,xx: (xx*xx+yy*yy)*math.sqrt(xx*xx+yy*yy+zz*zz)
+    val,_=si.tplquad(f,-1,1,lambda xx:-math.sqrt(1-xx*xx),lambda xx:math.sqrt(1-xx*xx),lambda xx,yy:0,lambda xx,yy:1,epsabs=1e-8)
+    chk('C10.17 cartesianas no computador: I ≈ %.4f'%val, abs(val-float(N(Iz)))<1e-4)
+    g=lambda zz,yy,xx: zz*math.sqrt(xx*xx+yy*yy+zz*zz)
+    v2,_=si.tplquad(g,-1,1,lambda xx:-math.sqrt(1-xx*xx),lambda xx:math.sqrt(1-xx*xx),lambda xx,yy:0,lambda xx,yy:1,epsabs=1e-8)
+    chk('C9.11 cartesianas no computador: M_xy ≈ %.4f'%v2, abs(v2-float(N(Mxyl)))<1e-4)
+except Exception as e: print('scipy indisponível',e)
+# ∭(z − z̄)ρ dV = 0 na lata
+chk('C1.1 ∭(z − z̄)ρ dV = M_xy − z̄ M = 0 (lata)', simplify(Mxyl-zb*M)==0)
+# ---------- C11 · reserva do gancho (S2 → 3.5-E1): lata homogênea, eixo na reta da parede x = R, y = 0 (Steiner) ----------
+Ip=integrate(integrate(integrate(((s*cos(th)-R)**2+(s*sin(th))**2)*k*s,(s,0,R)),(th,0,2*pi)),(z,0,h))
+chk('C11.1 I (reta da parede) = (3/2) M R² = I_cm + M R²', simplify(Ip-Rational(3,2)*k*pi*R**2*h*R**2)==0)
+print(f'\n{sum(ok)}/{len(ok)} True')

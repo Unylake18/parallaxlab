@@ -1,0 +1,86 @@
+[
+ {
+  "ancora": "B4-1",
+  "metodo": "lei",
+  "tex": "z \\vec\\rho + z (-\\vec\\rho) = 0",
+  "origem": null,
+  "voos": 0,
+  "t": 11.066666666666666,
+  "operadores_incorretos": [],
+  "grandezas": 4,
+  "coloridos": 4,
+  "font_size": 46.00000000000001
+ },
+ {
+  "ancora": "B4-1",
+  "metodo": "GM",
+  "tex": "\\vec L_\\perp = 0",
+  "origem": "z \\vec\\rho + z (-\\vec\\rho) = 0",
+  "voos": 0,
+  "t": 20.933333333333334,
+  "operadores_incorretos": [],
+  "grandezas": 1,
+  "coloridos": 1,
+  "font_size": 52.0
+ },
+ {
+  "ancora": "B4-2",
+  "metodo": "voo",
+  "tex": "L_z = I_z \\omega",
+  "origem": null,
+  "voos": 1,
+  "t": 33.2,
+  "operadores_incorretos": [],
+  "grandezas": 3,
+  "coloridos": 3,
+  "font_size": 45.99999999999999
+ },
+ {
+  "ancora": "B4-2",
+  "metodo": "GM",
+  "tex": "\\vec L = I \\vec\\omega",
+  "origem": "L_z = I_z \\omega",
+  "voos": 0,
+  "t": 40.6,
+  "operadores_incorretos": [],
+  "grandezas": 3,
+  "coloridos": 3,
+  "font_size": 52.0
+ },
+ {
+  "ancora": "B4-3",
+  "metodo": "escrita",
+  "tex": "\\vec L_\\perp \\ne 0",
+  "origem": null,
+  "voos": 0,
+  "t": 46.733333333333334,
+  "operadores_incorretos": [],
+  "grandezas": 1,
+  "coloridos": 1,
+  "font_size": 46.000000000000014
+ },
+ {
+  "ancora": "B4-3",
+  "metodo": "escrita",
+  "tex": "\\vec L_\\perp = 0",
+  "origem": null,
+  "voos": 0,
+  "t": 52.53333333333333,
+  "operadores_incorretos": [],
+  "grandezas": 1,
+  "coloridos": 1,
+  "font_size": 46.000000000000014
+ },
+ {
+  "ancora": "B4-3",
+  "metodo": "escrita",
+  "tex": "\\vec L = I \\vec\\omega",
+  "origem": null,
+  "voos": 0,
+  "t": 54.333333333333336,
+  "operadores_incorretos": [],
+  "grandezas": 3,
+  "coloridos": 3,
+  "font_size": 46.00000000000001
+ }
+]

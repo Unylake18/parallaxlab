@@ -1,0 +1,345 @@
+{
+"lote": "PE2",
+"marcas": [
+{
+"id": "an:E2-1",
+"A": 1.0,
+"W": 0.0
+},
+{
+"id": "gat:E2-1:de massa e comprimento conhecidos",
+"A": 0.5,
+"W": 0.0
+},
+{
+"id": "gat:E2-1:a um quarto do comprimento",
+"A": 0.6,
+"W": 0.0
+},
+{
+"id": "gat:E2-1:solta do repouso na horizontal",
+"A": 0.5,
+"W": 0.0
+},
+{
+"id": "gat:E2-1:queremos o momento de in\u00e9rcia",
+"A": 0.5,
+"W": 0.0
+},
+{
+"id": "gat:E2-1:principalmente a for\u00e7a do eixo",
+"A": 0.8,
+"W": 0.0
+},
+{
+"id": "ate:E2-1:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E2-2",
+"A": 3.3000000000000003,
+"W": 0.0
+},
+{
+"id": "gat:E2-2:o centro de massa est\u00e1 no meio",
+"A": 0.8,
+"W": 0.0
+},
+{
+"id": "gat:E2-2:pelos eixos paralelos",
+"A": 7.575,
+"W": 0.4
+},
+{
+"id": "gat:E2-2:um doze avos mais um dezesseis avos",
+"A": 1.5,
+"W": 0.0
+},
+{
+"id": "gat:E2-2:sete quarenta e oito avos",
+"A": 1.5,
+"W": 0.0
+},
+{
+"id": "ate:E2-2:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E2-3",
+"A": 1.4,
+"W": 0.0
+},
+{
+"id": "gat:E2-3:com o eixo no centro",
+"A": 1.0,
+"W": 0.0
+},
+{
+"id": "gat:E2-3:na ponta um ter\u00e7o",
+"A": 1.4,
+"W": 0.0
+},
+{
+"id": "gat:E2-3:o nosso eixo est\u00e1 entre os dois",
+"A": 1.45,
+"W": 0.0
+},
+{
+"id": "ate:E2-3:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E2-4",
+"A": 0.9500000000000001,
+"W": 0.0
+},
+{
+"id": "gat:E2-4:mede o \u00e2ngulo a partir da horizontal",
+"A": 1.2,
+"W": 0.0
+},
+{
+"id": "gat:E2-4:o \u00fanico torque \u00e9 o do peso",
+"A": 3.2149999999999994,
+"W": 0.0
+},
+{
+"id": "gat:E2-4:com bra\u00e7o de um quarto do comprimento",
+"A": 2.42,
+"W": 0.7
+},
+{
+"id": "gat:E2-4:dividindo pelo momento de in\u00e9rcia",
+"A": 8.32,
+"W": 0.4
+},
+{
+"id": "gat:E2-4:ela n\u00e3o \u00e9 constante",
+"A": 0.4,
+"W": 0.0
+},
+{
+"id": "gat:E2-4:cai a zero na vertical",
+"A": 3.6500000000000004,
+"W": 0.0
+},
+{
+"id": "ate:E2-4:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E2-5",
+"A": 1.4,
+"W": 0.0
+},
+{
+"id": "gat:E2-5:o centro de massa desce",
+"A": 0.8,
+"W": 0.0
+},
+{
+"id": "gat:E2-5:essa energia potencial vira energia cin\u00e9tica",
+"A": 5.65,
+"W": 0.0
+},
+{
+"id": "gat:E2-5:isolando a velocidade angular",
+"A": 7.785,
+"W": 0.4
+},
+{
+"id": "ate:E2-5:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E2-6",
+"A": 2.3499999999999996,
+"W": 0.0
+},
+{
+"id": "gat:E2-6:a haste s\u00f3 tem duas for\u00e7as externas",
+"A": 0.0,
+"W": 0.6
+},
+{
+"id": "gat:E2-6:for\u00e7a do eixo mais peso \u00e9 a massa vezes",
+"A": 3.4000000000000004,
+"W": 0.0
+},
+{
+"id": "gat:E2-6:anda num c\u00edrculo de raio",
+"A": 0.8,
+"W": 0.0
+},
+{
+"id": "gat:E2-6:a tangencial",
+"A": 8.83,
+"W": 0.6000000000000001
+},
+{
+"id": "gat:E2-6:e a centr\u00edpeta",
+"A": 3.875,
+"W": 0.6000000000000001
+},
+{
+"id": "ate:E2-6:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E2-7",
+"A": 0.8,
+"W": 0.0
+},
+{
+"id": "gat:E2-7:projetando ao longo da haste",
+"A": 4.0,
+"W": 0.0
+},
+{
+"id": "gat:E2-7:o eixo puxa para dentro",
+"A": 4.52,
+"W": 0.0
+},
+{
+"id": "gat:E2-7:segura com quatro s\u00e9timos",
+"A": 7.0600000000000005,
+"W": 0.0
+},
+{
+"id": "gat:E2-7:o comprimento da haste sumiu",
+"A": 4.4,
+"W": 0.0
+},
+{
+"id": "ate:E2-7:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E2-8",
+"A": 0.9,
+"W": 0.0
+},
+{
+"id": "gat:E2-8:na largada \u00e2ngulo zero",
+"A": 1.0,
+"W": 0.0
+},
+{
+"id": "gat:E2-8:quatro s\u00e9timos do peso para cima",
+"A": 3.6599999999999997,
+"W": 0.0
+},
+{
+"id": "gat:E2-8:come\u00e7a descendo com tr\u00eas s\u00e9timos",
+"A": 2.0,
+"W": 0.0
+},
+{
+"id": "gat:E2-8:o eixo n\u00e3o segura o peso inteiro",
+"A": 0.7,
+"W": 0.0
+},
+{
+"id": "ate:E2-8:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E2-9",
+"A": 0.75,
+"W": 0.0
+},
+{
+"id": "gat:E2-9:a quarenta e cinco graus",
+"A": 1.6,
+"W": 0.0
+},
+{
+"id": "gat:E2-9:o eixo tamb\u00e9m empurra de lado",
+"A": 2.9050000000000002,
+"W": 0.0
+},
+{
+"id": "gat:E2-9:e a vertical dezessete",
+"A": 2.9050000000000002,
+"W": 0.0
+},
+{
+"id": "gat:E2-9:no total uma v\u00edrgula tr\u00eas sete",
+"A": 2.3000000000000003,
+"W": 0.0
+},
+{
+"id": "gat:E2-9:o centro de massa est\u00e1 fazendo uma curva",
+"A": 1.5,
+"W": 0.0
+},
+{
+"id": "ate:E2-9:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E2-10",
+"A": 0.9,
+"W": 0.0
+},
+{
+"id": "gat:E2-10:e na vertical noventa graus",
+"A": 1.6,
+"W": 0.0
+},
+{
+"id": "gat:E2-10:sobram treze s\u00e9timos do peso",
+"A": 4.26,
+"W": 0.0
+},
+{
+"id": "gat:E2-10:acelera\u00e7\u00e3o angular zero n\u00e3o \u00e9 parada",
+"A": 1.8,
+"W": 0.0
+},
+{
+"id": "gat:E2-10:numa \u00fanica queda",
+"A": 5.069199999999732,
+"W": 0.0
+},
+{
+"id": "ate:E2-10:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E2-11",
+"A": 1.9,
+"W": 0.0
+},
+{
+"id": "gat:E2-11:a for\u00e7a no eixo sai",
+"A": 2.1,
+"W": 0.0
+},
+{
+"id": "gat:E2-11:esquecer a centr\u00edpeta",
+"A": 3.1000000000000005,
+"W": 0.0
+},
+{
+"id": "ate:E2-11:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "fim",
+"A": 0.0,
+"W": 0.0
+}
+]
+}

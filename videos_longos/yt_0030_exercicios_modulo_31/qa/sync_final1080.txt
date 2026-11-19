@@ -1,0 +1,724 @@
+yt_0030 · sincronização (rodada final1080, 30 fps, fonte dos tempos: voz real audio/narracao_final.wav (alinhamento forçado, alinhamento_palavras.json)): atraso = tela − voz (s); meta ≤ +0,20 s
+
+emendas (quadro absoluto da 1ª âncora de cada lote × ini da âncora × fps; meta ±1 quadro):
+  PH    H-1    quadro      0 · esperado      0 · +0 OK
+  PD1   D1-1   quadro   2439 · esperado   2439 · +0 OK
+  PD2   D2-1   quadro   6762 · esperado   6762 · +0 OK
+  PD3   D3-1   quadro   8982 · esperado   8982 · +0 OK
+  PD3B  D3b-1  quadro  20933 · esperado  20933 · +0 OK
+  PD4   D4-1   quadro  26235 · esperado  26235 · +0 OK
+  PD5   D5-1   quadro  36285 · esperado  36285 · +0 OK
+  PA1   P2-1   quadro  44818 · esperado  44818 · +0 OK
+  PA2   A2-1   quadro  50337 · esperado  50337 · +0 OK
+  PA4   A4-1   quadro  55532 · esperado  55532 · +0 OK
+  PA3   A3-1   quadro  60604 · esperado  60604 · +0 OK
+  PS    S-1    quadro  69206 · esperado  69206 · +0 OK
+
+avisos do log:
+  PH: [deriva] PH +0.40s além do fim da última âncora
+  PD1: [estouro] D1-3 começou 0.10s depois do previsto (a cena se esticou)
+  PD1: [deriva] PD1 +0.40s além do fim da última âncora
+  PD2: [estouro] D2-5 começou 0.03s depois do previsto (a cena se esticou)
+  PD2: [deriva] PD2 +0.40s além do fim da última âncora
+  PD3: [estouro] D3-3 começou 0.03s depois do previsto (a cena se esticou)
+  PD3: [deriva] PD3 +0.40s além do fim da última âncora
+  PD3B: [estouro] D3b-5 começou 0.03s depois do previsto (a cena se esticou)
+  PD3B: [deriva] PD3B +0.40s além do fim da última âncora
+  PD4: [estouro] D4-4 começou 0.03s depois do previsto (a cena se esticou)
+  PD4: [deriva] PD4 +0.40s além do fim da última âncora
+  PD5: [estouro] D5-8 começou 0.03s depois do previsto (a cena se esticou)
+  PD5: [deriva] PD5 +0.40s além do fim da última âncora
+  PA1: [deriva] PA1 +0.40s além do fim da última âncora
+  PA2: [deriva] PA2 +0.40s além do fim da última âncora
+  PA4: [deriva] PA4 +0.40s além do fim da última âncora
+  PA3: [estouro] A3-3 começou 0.03s depois do previsto (a cena se esticou)
+  PA3: [estouro] A3-6 começou 0.03s depois do previsto (a cena se esticou)
+  PA3: [deriva] PA3 +0.40s além do fim da última âncora
+  PS: [estouro] S-2 começou 0.03s depois do previsto (a cena se esticou)
+  PS: [deriva] PS +0.00s além do fim da última âncora
+
+âncoras (início da âncora na tela × 1ª palavra na voz):
+  H-1   tela     0.00 s · voz     0.06 s · -0.06 s OK
+  A-1   tela    42.27 s · voz    42.40 s · -0.13 s OK
+  D1-1  tela    81.30 s · voz    81.46 s · -0.16 s OK
+  D1-2  tela   106.53 s · voz   106.68 s · -0.15 s OK
+  D1-3  tela   117.20 s · voz   117.26 s · -0.06 s OK
+  D1-4  tela   157.90 s · voz   158.06 s · -0.16 s OK
+  D1-5  tela   184.73 s · voz   184.88 s · -0.15 s OK
+  D1-6  tela   213.80 s · voz   213.96 s · -0.16 s OK
+  D2-1  tela   225.40 s · voz   225.54 s · -0.14 s OK
+  D2-2  tela   237.27 s · voz   237.42 s · -0.15 s OK
+  D2-3  tela   255.63 s · voz   255.78 s · -0.15 s OK
+  D2-4  tela   278.33 s · voz   278.48 s · -0.15 s OK
+  D2-5  tela   290.77 s · voz   290.90 s · -0.13 s OK
+  D3-1  tela   299.40 s · voz   299.54 s · -0.14 s OK
+  D3-2  tela   322.60 s · voz   322.74 s · -0.14 s OK
+  D3-3  tela   371.57 s · voz   371.70 s · -0.13 s OK
+  D3-4  tela   536.37 s · voz   536.52 s · -0.15 s OK
+  D3-5  tela   565.93 s · voz   566.10 s · -0.17 s OK
+  D3-6  tela   589.83 s · voz   589.98 s · -0.15 s OK
+  D3-7  tela   660.33 s · voz   660.48 s · -0.15 s OK
+  D3b-1 tela   697.77 s · voz   697.92 s · -0.15 s OK
+  D3b-2 tela   748.47 s · voz   748.60 s · -0.13 s OK
+  D3b-3 tela   775.27 s · voz   775.40 s · -0.13 s OK
+  D3b-4 tela   795.33 s · voz   795.48 s · -0.15 s OK
+  D3b-5 tela   832.97 s · voz   833.10 s · -0.13 s OK
+  D3b-6 tela   863.20 s · voz   863.34 s · -0.14 s OK
+  D4-1  tela   874.50 s · voz   874.64 s · -0.14 s OK
+  D4-2  tela   889.40 s · voz   889.54 s · -0.14 s OK
+  D4-3  tela   904.27 s · voz   904.40 s · -0.13 s OK
+  D4-4  tela   943.93 s · voz   944.06 s · -0.13 s OK
+  D4-5  tela   966.20 s · voz   966.36 s · -0.16 s OK
+  D4-6  tela  1002.73 s · voz  1002.88 s · -0.15 s OK
+  D4-7  tela  1086.77 s · voz  1086.92 s · -0.15 s OK
+  D4-8  tela  1195.80 s · voz  1195.96 s · -0.16 s OK
+  D5-1  tela  1209.50 s · voz  1209.66 s · -0.16 s OK
+  D5-2  tela  1244.10 s · voz  1244.26 s · -0.16 s OK
+  D5-3  tela  1250.57 s · voz  1250.72 s · -0.15 s OK
+  D5-4  tela  1281.73 s · voz  1281.88 s · -0.15 s OK
+  D5-5  tela  1289.87 s · voz  1290.02 s · -0.15 s OK
+  D5-6  tela  1320.20 s · voz  1320.36 s · -0.16 s OK
+  D5-7  tela  1326.33 s · voz  1326.48 s · -0.15 s OK
+  D5-8  tela  1352.77 s · voz  1352.90 s · -0.13 s OK
+  D5-9  tela  1378.13 s · voz  1378.30 s · -0.17 s OK
+  D5-10 tela  1420.20 s · voz  1420.34 s · -0.14 s OK
+  D5-11 tela  1452.53 s · voz  1452.68 s · -0.15 s OK
+  D5-12 tela  1480.50 s · voz  1480.66 s · -0.16 s OK
+  P2-1  tela  1493.93 s · voz  1494.08 s · -0.15 s OK
+  A1-1  tela  1505.77 s · voz  1505.92 s · -0.15 s OK
+  A1-2  tela  1532.20 s · voz  1532.36 s · -0.16 s OK
+  A1-3  tela  1558.53 s · voz  1558.68 s · -0.15 s OK
+  A1-4  tela  1628.53 s · voz  1628.68 s · -0.15 s OK
+  A1-5  tela  1643.27 s · voz  1643.40 s · -0.13 s OK
+  A2-1  tela  1677.90 s · voz  1678.06 s · -0.16 s OK
+  A2-2  tela  1695.37 s · voz  1695.52 s · -0.15 s OK
+  A2-3  tela  1785.27 s · voz  1785.42 s · -0.15 s OK
+  A2-4  tela  1813.40 s · voz  1813.56 s · -0.16 s OK
+  A4-1  tela  1851.07 s · voz  1851.22 s · -0.15 s OK
+  A4-2  tela  1873.60 s · voz  1873.76 s · -0.16 s OK
+  A4-3  tela  1934.80 s · voz  1934.94 s · -0.14 s OK
+  A4-4  tela  1987.87 s · voz  1988.00 s · -0.13 s OK
+  A3-1  tela  2020.13 s · voz  2020.28 s · -0.15 s OK
+  A3-2  tela  2034.90 s · voz  2035.04 s · -0.14 s OK
+  A3-3  tela  2062.53 s · voz  2062.66 s · -0.13 s OK
+  A3-4  tela  2108.97 s · voz  2109.12 s · -0.15 s OK
+  A3-5  tela  2156.43 s · voz  2156.58 s · -0.15 s OK
+  A3-6  tela  2278.57 s · voz  2278.70 s · -0.13 s OK
+  S-1   tela  2306.87 s · voz  2307.00 s · -0.13 s OK
+  S-2   tela  2335.40 s · voz  2335.52 s · -0.12 s OK
+  S-3   tela  2363.60 s · voz  2363.76 s · -0.16 s OK
+
+gatilhos (586):
+  H-1   -0.09 s  «um só entorta»  (tela 3.53 · voz 3.62) OK
+  H-1   -0.10 s  «outro gira encolhe e entorta»  (tela 4.70 · voz 4.80) OK
+  H-1   -0.09 s  «e no terceiro campo»  (tela 8.33 · voz 8.42) OK
+  H-1   -0.10 s  «embaixo três fórmulas fora de ordem»  (tela 12.70 · voz 12.80) OK
+  H-1   -0.10 s  «a pergunta é»  (tela 15.30 · voz 15.40) OK
+  H-1   -0.11 s  «dá e hoje é você»  (tela 21.43 · voz 21.54) OK
+  H-1   -0.09 s  «exatamente as mesmas contas»  (tela 25.33 · voz 25.42) OK
+  H-1   -0.09 s  «por que o campo magnético»  (tela 29.13 · voz 29.22) OK
+  H-1   -0.09 s  «enfraquece com um sobre a distância»  (tela 31.07 · voz 31.16) OK
+  H-1   -0.11 s  «e o campo de uma carga»  (tela 33.33 · voz 33.44) OK
+  H-1   -0.10 s  «ao quadrado»  (tela 35.80 · voz 35.90) OK
+  H-1   -0.09 s  «é o rotacional e o divergente»  (tela 37.77 · voz 37.86) OK
+  A-1   -0.06 s  «quarto episódio da nossa série»  (tela 45.60 · voz 45.66) OK
+  A-1   -0.06 s  «e hoje é dia»  (tela 48.14 · voz 48.20) OK
+  A-1   -0.07 s  «o integrador do módulo»  (tela 50.47 · voz 50.54) OK
+  A-1   -0.06 s  «só com exercícios»  (tela 52.00 · voz 52.06) OK
+  A-1   -0.08 s  «vai ser uma escada»  (tela 53.20 · voz 53.28) OK
+  A-1   -0.07 s  «ler uma fórmula de dois jeitos»  (tela 56.37 · voz 56.44) OK
+  A-1   -0.08 s  «desenhar um campo»  (tela 58.14 · voz 58.22) OK
+  A-1   -0.08 s  «uma família de redemoinhos»  (tela 59.70 · voz 59.78) OK
+  A-1   -0.07 s  «duas regras»  (tela 61.87 · voz 61.94) OK
+  A-1   -0.08 s  «um campo que não melhora de perto»  (tela 63.30 · voz 63.38) OK
+  A-1   -0.06 s  «e no topo o desafio»  (tela 65.24 · voz 65.30) OK
+  A-1   -0.07 s  «depois as aplicações»  (tela 69.07 · voz 69.14) OK
+  A-1   -0.08 s  «um rio»  (tela 70.70 · voz 70.78) OK
+  A-1   -0.06 s  «um jato numa parede»  (tela 71.34 · voz 71.40) OK
+  A-1   -0.06 s  «mapas que não entortam»  (tela 72.74 · voz 72.80) OK
+  A-1   -0.07 s  «e as leis do um sobre a distância»  (tela 74.17 · voz 74.24) OK
+  A-1   -0.06 s  «pausa o vídeo e tenta»  (tela 78.84 · voz 78.90) OK
+  D1-1  -0.10 s  «na primeira coordenada»  (tela 85.60 · voz 85.70) OK
+  D1-1  -0.09 s  «na tela fi de u v»  (tela 89.53 · voz 89.62) OK
+  D1-1  -0.11 s  «no plano da esquerda»  (tela 96.97 · voz 97.08) OK
+  D1-1  -0.10 s  «no da direita»  (tela 99.40 · voz 99.50) OK
+  D1-1  +0.04 s  «três itens»  (tela 101.40 · voz 101.36) OK
+  D1-1  -0.10 s  «pausa o vídeo e tenta»  (tela 105.10 · voz 105.20) OK
+  D1-2  -0.10 s  «o eixo horizontal da esquerda»  (tela 107.10 · voz 107.20) OK
+  D1-2  -0.10 s  «onde o segundo número é zero»  (tela 108.76 · voz 108.86) OK
+  D1-2  -0.09 s  «aí a soma e a diferença»  (tela 110.43 · voz 110.52) OK
+  D1-2  -0.08 s  «o eixo vai parar na diagonal»  (tela 115.60 · voz 115.68) OK
+  D1-3  -0.00 s  «a origem fica parada»  (tela 124.20 · voz 124.20) OK
+  D1-3  +0.01 s  «o canto um zero a soma»  (tela 125.53 · voz 125.52) OK
+  D1-3  +0.01 s  «ele vai para um um»  (tela 130.17 · voz 130.16) OK
+  D1-3  +0.00 s  «o canto um um vai para»  (tela 131.60 · voz 131.60) OK
+  D1-3  +0.01 s  «e o canto zero um vai para»  (tela 134.23 · voz 134.22) OK
+  D1-3  -0.01 s  «liga os pontos»  (tela 136.83 · voz 136.84) OK
+  D1-3  -0.01 s  «com lado raiz de dois»  (tela 141.13 · voz 141.14) OK
+  D1-3  -0.00 s  «agora é raiz de dois ao quadrado»  (tela 146.80 · voz 146.80) OK
+  D1-3  +0.01 s  «olha a ordem dos cantos»  (tela 149.63 · voz 149.62) OK
+  D1-3  +0.00 s  «o quadrado foi espelhado»  (tela 155.10 · voz 155.10) OK
+  D1-4  -0.09 s  «e um círculo em volta da origem»  (tela 157.97 · voz 158.06) OK
+  D1-4  -0.11 s  «soma ao quadrado mais diferença»  (tela 159.97 · voz 160.08) OK
+  D1-4  -0.09 s  «abre os dois quadrados»  (tela 162.83 · voz 162.92) OK
+  D1-4  -0.11 s  «esses termos cruzados se cancelam»  (tela 167.93 · voz 168.04) OK
+  D1-4  -0.11 s  «e sobra duas vezes»  (tela 169.93 · voz 170.04) OK
+  D1-4  -0.11 s  «então a distância até a origem»  (tela 173.53 · voz 173.64) OK
+  D1-4  -0.09 s  «e o círculo vira um círculo»  (tela 177.23 · voz 177.32) OK
+  D1-4  -0.09 s  «e como a área vai com o quadrado»  (tela 181.13 · voz 181.22) OK
+  D1-5  -0.08 s  «agora a mesma fórmula»  (tela 184.80 · voz 184.88) OK
+  D1-5  -0.10 s  «a setinha em cima do f»  (tela 187.40 · voz 187.50) OK
+  D1-5  -0.10 s  «você pendura a seta»  (tela 191.66 · voz 191.76) OK
+  D1-5  -0.10 s  «no eixo horizontal a coordenada vertical»  (tela 195.36 · voz 195.46) OK
+  D1-5  -0.10 s  «então as duas componentes ficam iguais»  (tela 198.10 · voz 198.20) OK
+  D1-5  -0.10 s  «no eixo vertical a seta é»  (tela 203.76 · voz 203.86) OK
+  D1-5  -0.08 s  «em cima da origem as setas»  (tela 207.86 · voz 207.94) OK
+  D1-6  -0.09 s  «e aqui fica uma pergunta»  (tela 213.87 · voz 213.96) OK
+  D1-6  -0.09 s  «como transformação a área dobrou»  (tela 216.47 · voz 216.56) OK
+  D1-6  -0.09 s  «como campo se a gente soltar»  (tela 218.57 · voz 218.66) OK
+  D1-6  -0.11 s  «a área dele também dobra»  (tela 222.53 · voz 222.64) OK
+  D1-6  -0.09 s  «guarda o seu palpite»  (tela 224.17 · voz 224.26) OK
+  D2-1  -0.07 s  «sem calcular mil setas»  (tela 227.53 · voz 227.60) OK
+  D2-1  -0.08 s  «o campo é este»  (tela 229.30 · voz 229.38) OK
+  D2-1  -0.07 s  «pausa o vídeo e tenta»  (tela 235.07 · voz 235.14) OK
+  D2-2  -0.08 s  «o truque é procurar onde o campo não muda»  (tela 237.34 · voz 237.42) OK
+  D2-2  -0.09 s  «a vertical só depende da diferença»  (tela 242.17 · voz 242.26) OK
+  D2-2  -0.09 s  «a seta é a mesma em todo ponto»  (tela 248.27 · voz 248.36) OK
+  D2-2  -0.10 s  «a seta dupla da tela»  (tela 250.34 · voz 250.44) OK
+  D2-3  -0.08 s  «na própria diagonal»  (tela 255.70 · voz 255.78) OK
+  D2-3  -0.08 s  «uma reta abaixo»  (tela 262.50 · voz 262.58) OK
+  D2-3  -0.08 s  «mais uma abaixo»  (tela 268.36 · voz 268.44) OK
+  D2-3  -0.10 s  «e acima da diagonal»  (tela 273.40 · voz 273.50) OK
+  D2-4  -0.08 s  «agora é só copiar»  (tela 278.40 · voz 278.48) OK
+  D2-4  -0.10 s  «e o campo inteiro está desenhado»  (tela 282.46 · voz 282.56) OK
+  D2-4  -0.09 s  «setas que vão empinando»  (tela 284.33 · voz 284.42) OK
+  D2-5  -0.08 s  «é uma derivada»  (tela 295.44 · voz 295.52) OK
+  D3-1  -0.07 s  «menos a coordenada vertical»  (tela 303.47 · voz 303.54) OK
+  D3-1  -0.08 s  «xis ao quadrado mais ípsilon ao quadrado»  (tela 310.70 · voz 310.78) OK
+  D3-1  -0.08 s  «cada valor do expoente alfa»  (tela 315.60 · voz 315.68) OK
+  D3-1  -0.09 s  «pausa o vídeo e tenta»  (tela 318.57 · voz 318.66) OK
+  D3-2  -0.09 s  «tangentes às circunferências»  (tela 323.73 · voz 323.82) OK
+  D3-2  -0.08 s  «o vetor de cima tem tamanho»  (tela 329.80 · voz 329.88) OK
+  D3-2  -0.08 s  «o sinal some no quadrado»  (tela 334.70 · voz 334.78) OK
+  D3-2  -0.08 s  «embaixo a distância ao quadrado elevada»  (tela 341.60 · voz 341.68) OK
+  D3-2  -0.09 s  «potência de potência multiplica»  (tela 344.53 · voz 344.62) OK
+  D3-2  -0.08 s  «então a rapidez é a distância»  (tela 350.00 · voz 350.08) OK
+  D3-2  -0.09 s  «na divisão os expoentes se subtraem»  (tela 354.67 · voz 354.76) OK
+  D3-2  -0.09 s  «com alfa zero a rapidez cresce»  (tela 358.43 · voz 358.52) OK
+  D3-2  -0.08 s  «com alfa meio a rapidez»  (tela 362.80 · voz 362.88) OK
+  D3-2  -0.08 s  «com alfa um ela cai»  (tela 366.80 · voz 366.88) OK
+  D3-3  -0.10 s  «agora a conta do rotacional»  (tela 371.60 · voz 371.70) OK
+  D3-3  -0.06 s  «na tela p e q»  (tela 373.50 · voz 373.56) OK
+  D3-3  -0.07 s  «menos a derivada da componente horizontal»  (tela 382.97 · voz 383.04) OK
+  D3-3  -0.06 s  «a componente vertical é a coordenada»  (tela 386.64 · voz 386.70) OK
+  D3-3  -0.07 s  «para encurtar a tela chama»  (tela 393.07 · voz 393.14) OK
+  D3-3  -0.08 s  «regra do produto»  (tela 396.60 · voz 396.68) OK
+  D3-3  -0.06 s  «a derivada do primeiro vezes o segundo»  (tela 397.70 · voz 397.76) OK
+  D3-3  -0.08 s  «a primeira parte dá a própria»  (tela 402.70 · voz 402.78) OK
+  D3-3  -0.06 s  «porque a derivada de xis em relação»  (tela 404.84 · voz 404.90) OK
+  D3-3  -0.06 s  «a segunda pela regra da cadeia»  (tela 407.54 · voz 407.60) OK
+  D3-3  -0.06 s  «o expoente desce»  (tela 409.40 · voz 409.46) OK
+  D3-3  -0.07 s  «e ainda multiplica pela derivada de dentro»  (tela 413.87 · voz 413.94) OK
+  D3-3  -0.08 s  «a derivada de esse em relação a xis»  (tela 416.30 · voz 416.38) OK
+  D3-3  -0.06 s  «vezes duas vezes a coordenada horizontal»  (tela 427.04 · voz 427.10) OK
+  D3-3  -0.06 s  «xis vezes dois xis dá dois»  (tela 431.84 · voz 431.90) OK
+  D3-3  -0.06 s  «agora o truque»  (tela 434.70 · voz 434.76) OK
+  D3-3  -0.07 s  «põe a potência com um a menos»  (tela 442.97 · voz 443.04) OK
+  D3-3  -0.07 s  «a outra derivada é igualzinha»  (tela 450.87 · voz 450.94) OK
+  D3-3  -0.06 s  «a componente horizontal é menos ípsilon»  (tela 452.74 · voz 452.80) OK
+  D3-3  -0.06 s  «a derivada de menos ípsilon em relação»  (tela 456.74 · voz 456.80) OK
+  D3-3  -0.08 s  «e a cadeia agora traz duas vezes»  (tela 460.14 · voz 460.22) OK
+  D3-3  -0.06 s  «sai menos a potência mais»  (tela 462.80 · voz 462.86) OK
+  D3-3  -0.08 s  «em evidência o mesmo parêntese»  (tela 468.94 · voz 469.02) OK
+  D3-3  -0.06 s  «e o sinal trocado»  (tela 472.40 · voz 472.46) OK
+  D3-3  -0.04 s  «ao subtrair menos com menos»  (tela 473.54 · voz 473.58) OK
+  D3-3  -0.07 s  «a distância ao quadrado aparece duas vezes»  (tela 476.07 · voz 476.14) OK
+  D3-3  -0.08 s  «os dois termos com alfa se juntam»  (tela 478.70 · voz 478.78) OK
+  D3-3  -0.08 s  «que é a distância ao quadrado de novo»  (tela 483.50 · voz 483.58) OK
+  D3-3  -0.08 s  «no parêntese sobra dois esse»  (tela 485.40 · voz 485.48) OK
+  D3-3  -0.06 s  «esse em evidência vezes dois»  (tela 489.30 · voz 489.36) OK
+  D3-3  -0.08 s  «e esse vezes a potência com um»  (tela 493.00 · voz 493.08) OK
+  D3-3  -0.06 s  «sobra uma fórmula curtinha»  (tela 497.50 · voz 497.56) OK
+  D3-3  -0.08 s  «e o divergente»  (tela 503.24 · voz 503.32) OK
+  D3-3  -0.08 s  «agora é a soma»  (tela 504.40 · voz 504.48) OK
+  D3-3  -0.08 s  «na primeira o menos ípsilon é constante»  (tela 511.24 · voz 511.32) OK
+  D3-3  -0.06 s  «na segunda o xis é constante»  (tela 514.14 · voz 514.20) OK
+  D3-3  -0.08 s  «só a regra da cadeia trabalha»  (tela 517.40 · voz 517.48) OK
+  D3-3  -0.08 s  «e sai o mesmo termo»  (tela 519.10 · voz 519.18) OK
+  D3-3  -0.08 s  «uma vez com sinal de mais»  (tela 525.34 · voz 525.42) OK
+  D3-3  -0.06 s  «eles se cancelam zero»  (tela 528.34 · voz 528.40) OK
+  D3-3  -0.07 s  «nenhum desses redemoinhos»  (tela 531.17 · voz 531.24) OK
+  D3-4  -0.08 s  «agora lê a fórmula»  (tela 536.44 · voz 536.52) OK
+  D3-4  -0.10 s  «alfa zero dois menos zero»  (tela 538.64 · voz 538.74) OK
+  D3-4  -0.09 s  «alfa meio dois menos um»  (tela 545.87 · voz 545.96) OK
+  D3-4  -0.08 s  «e mesmo assim o rotacional»  (tela 551.00 · voz 551.08) OK
+  D3-4  -0.08 s  «alfa um dois menos dois»  (tela 556.64 · voz 556.72) OK
+  D3-5  -0.10 s  «e alfa dois»  (tela 566.00 · voz 566.10) OK
+  D3-5  -0.12 s  «e o quadradinho gira no sentido horário»  (tela 574.36 · voz 574.48) OK
+  D3-5  +0.02 s  «olha por quê»  (tela 576.76 · voz 576.74) OK
+  D3-5  -0.10 s  «a seta do lado de dentro»  (tela 577.40 · voz 577.50) OK
+  D3-5  -0.12 s  «que a do lado de fora»  (tela 579.86 · voz 579.98) OK
+  D3-5  -0.10 s  «então a borda de dentro do quadradinho»  (tela 580.96 · voz 581.06) OK
+  D3-5  -0.10 s  «o sentido da volta não é»  (tela 585.70 · voz 585.80) OK
+  D3-6  -0.09 s  «lê-se limite de f quando x tende à origem»  (tela 593.73 · voz 593.82) OK
+  D3-6  -0.10 s  «com alfa entre zero e meio»  (tela 602.66 · voz 602.76) OK
+  D3-6  -0.10 s  «mas olha o expoente da rapidez»  (tela 606.60 · voz 606.70) OK
+  D3-6  -0.10 s  «distância pequena elevada a um número»  (tela 610.76 · voz 610.86) OK
+  D3-6  -0.09 s  «a rapidez vai a zero»  (tela 614.33 · voz 614.42) OK
+  D3-6  -0.08 s  «o campo fica contínuo»  (tela 621.36 · voz 621.44) OK
+  D3-6  -0.10 s  «com alfa meio a rapidez fica um»  (tela 622.86 · voz 622.96) OK
+  D3-6  -0.10 s  «chegando pelo eixo xis»  (tela 627.20 · voz 627.30) OK
+  D3-6  -0.10 s  «a seta é zero um»  (tela 635.70 · voz 635.80) OK
+  D3-6  -0.08 s  «chegando pelo eixo ípsilon»  (tela 637.96 · voz 638.04) OK
+  D3-6  -0.10 s  «dividido por tê menos um»  (tela 643.10 · voz 643.20) OK
+  D3-6  -0.10 s  «não tem limite»  (tela 648.66 · voz 648.76) OK
+  D3-6  -0.09 s  «e com alfa maior que meio»  (tela 649.73 · voz 649.82) OK
+  D3-6  -0.08 s  «o expoente um menos dois alfa fica negativo»  (tela 651.40 · voz 651.48) OK
+  D3-6  -0.09 s  «a seta explode»  (tela 656.73 · voz 656.82) OK
+  D3-7  -0.08 s  «gira cada seta noventa graus»  (tela 661.36 · voz 661.44) OK
+  D3-7  -0.08 s  «a componente horizontal nova»  (tela 668.16 · voz 668.24) OK
+  D3-7  -0.08 s  «então o divergente novo»  (tela 674.06 · voz 674.14) OK
+  D3-7  -0.08 s  «exatamente a conta do rotacional antigo»  (tela 675.60 · voz 675.68) OK
+  D3-7  -0.09 s  «o rotacional vira zero»  (tela 679.33 · voz 679.42) OK
+  D3-7  -0.09 s  «é a falsa fonte do segundo episódio»  (tela 687.83 · voz 687.92) OK
+  D3-7  -0.08 s  «guarda essa fórmula»  (tela 693.46 · voz 693.54) OK
+  D3b-1 -0.08 s  «pega um campo que é o gradiente»  (tela 702.14 · voz 702.22) OK
+  D3b-1 -0.09 s  «as componentes são as derivadas parciais»  (tela 704.57 · voz 704.66) OK
+  D3b-1 -0.08 s  «na tela nabla fi»  (tela 707.64 · voz 707.72) OK
+  D3b-1 -0.08 s  «e daqui em diante»  (tela 711.00 · voz 711.08) OK
+  D3b-1 -0.08 s  «calcula o rotacional»  (tela 717.00 · voz 717.08) OK
+  D3b-1 -0.10 s  «a primeira componente é»  (tela 718.30 · voz 718.40) OK
+  D3b-1 -0.08 s  «menos a derivada em relação à profundidade»  (tela 723.74 · voz 723.82) OK
+  D3b-1 -0.08 s  «e as outras duas componentes»  (tela 728.20 · voz 728.28) OK
+  D3b-1 -0.10 s  «uma derivada mista menos a mesma»  (tela 730.90 · voz 731.00) OK
+  D3b-1 -0.08 s  «com a ordem trocada»  (tela 734.14 · voz 734.22) OK
+  D3b-1 -0.10 s  «as derivadas mistas são iguais»  (tela 737.04 · voz 737.14) OK
+  D3b-1 -0.10 s  «tudo cancela»  (tela 739.70 · voz 739.80) OK
+  D3b-1 -0.09 s  «no plano só sobra a terceira»  (tela 740.67 · voz 740.76) OK
+  D3b-2 -0.06 s  «lembra do campo que esticava»  (tela 748.54 · voz 748.60) OK
+  D3b-2 -0.06 s  «ele é o gradiente da metade»  (tela 751.80 · voz 751.86) OK
+  D3b-2 -0.07 s  «derivando fi em xis»  (tela 756.87 · voz 756.94) OK
+  D3b-2 -0.08 s  «derivando em ípsilon»  (tela 760.54 · voz 760.62) OK
+  D3b-2 -0.06 s  «o gradiente é xis menos ípsilon»  (tela 764.94 · voz 765.00) OK
+  D3b-2 -0.07 s  «e pela regra que acabamos»  (tela 768.77 · voz 768.84) OK
+  D3b-2 -0.08 s  «por isso o quadradinho deformava»  (tela 772.30 · voz 772.38) OK
+  D3b-3 -0.08 s  «calcula o rotacional de um campo»  (tela 777.40 · voz 777.48) OK
+  D3b-3 -0.06 s  «o divergente desse rotacional»  (tela 779.74 · voz 779.80) OK
+  D3b-3 -0.06 s  «a primeira componente é derivada»  (tela 781.60 · voz 781.66) OK
+  D3b-3 -0.06 s  «a segunda na vertical»  (tela 784.20 · voz 784.26) OK
+  D3b-3 -0.07 s  «e a terceira na profundidade»  (tela 785.57 · voz 785.64) OK
+  D3b-3 -0.08 s  «aparecem seis derivadas mistas»  (tela 787.30 · voz 787.38) OK
+  D3b-3 -0.08 s  «e elas se cancelam aos pares»  (tela 789.40 · voz 789.48) OK
+  D3b-3 -0.08 s  «um rotacional nunca diverge»  (tela 791.90 · voz 791.98) OK
+  D3b-4 -0.08 s  «e isso vira teste»  (tela 795.40 · voz 795.48) OK
+  D3b-4 -0.08 s  «existe outro campo cujo rotacional»  (tela 798.80 · voz 798.88) OK
+  D3b-4 -0.09 s  «calcula o divergente»  (tela 803.13 · voz 803.22) OK
+  D3b-4 -0.08 s  «na primeira o ípsilon fica parado»  (tela 805.96 · voz 806.04) OK
+  D3b-4 -0.10 s  «a primeira parcela dá seno»  (tela 811.06 · voz 811.16) OK
+  D3b-4 -0.08 s  «na segunda a derivada do cosseno»  (tela 813.40 · voz 813.48) OK
+  D3b-4 -0.10 s  «a segunda dá menos seno»  (tela 816.56 · voz 816.66) OK
+  D3b-4 -0.10 s  «na terceira o xis e o ípsilon»  (tela 818.90 · voz 819.00) OK
+  D3b-4 -0.09 s  «e a terceira dá um»  (tela 822.93 · voz 823.02) OK
+  D3b-4 -0.10 s  «seno menos seno cancela»  (tela 824.20 · voz 824.30) OK
+  D3b-4 -0.10 s  «total um»  (tela 825.80 · voz 825.90) OK
+  D3b-4 -0.09 s  «então não existe»  (tela 831.23 · voz 831.32) OK
+  D3b-5 -0.08 s  «o campo magnético tem divergente zero»  (tela 834.84 · voz 834.92) OK
+  D3b-5 -0.08 s  «não existe polo magnético isolado»  (tela 839.64 · voz 839.72) OK
+  D3b-5 -0.06 s  «o rotacional de outro campo»  (tela 845.20 · voz 845.26) OK
+  D3b-5 -0.08 s  «a seta dupla nos dois sentidos»  (tela 848.74 · voz 848.82) OK
+  D3b-5 -0.06 s  «a regra de hoje prova uma das metades»  (tela 856.84 · voz 856.90) OK
+  D3b-6 -0.07 s  «e repara na hipótese»  (tela 863.27 · voz 863.34) OK
+  D3b-6 -0.09 s  «classe cê dois sem»  (tela 864.63 · voz 864.72) OK
+  D4-1  -0.07 s  «este campo pega o vetor posição»  (tela 877.27 · voz 877.34) OK
+  D4-1  -0.09 s  «a gente define a seta como zero»  (tela 886.77 · voz 886.86) OK
+  D4-2  -0.07 s  «olha o desenho»  (tela 889.47 · voz 889.54) OK
+  D4-2  -0.09 s  «nas diagonais de subida»  (tela 890.27 · voz 890.36) OK
+  D4-2  -0.09 s  «nas outras diagonais»  (tela 893.97 · voz 894.06) OK
+  D4-2  -0.07 s  «pausa o vídeo e tenta»  (tela 900.63 · voz 900.70) OK
+  D4-3  -0.06 s  «item a existe limite»  (tela 904.34 · voz 904.40) OK
+  D4-3  -0.08 s  «calcula o tamanho da seta»  (tela 906.54 · voz 906.62) OK
+  D4-3  +0.02 s  «as barras duplas da tela»  (tela 908.34 · voz 908.32) OK
+  D4-3  -0.08 s  «o vetor posição tem tamanho igual»  (tela 914.30 · voz 914.38) OK
+  D4-3  -0.07 s  «então a seta tem tamanho igual ao módulo»  (tela 917.67 · voz 917.74) OK
+  D4-3  -0.08 s  «em polares o produto»  (tela 923.00 · voz 923.08) OK
+  D4-3  -0.08 s  «a distância ao quadrado vezes o cosseno»  (tela 925.44 · voz 925.52) OK
+  D4-3  -0.06 s  «e cosseno vezes seno é metade»  (tela 929.60 · voz 929.66) OK
+  D4-3  -0.06 s  «então o tamanho da seta é a distância»  (tela 933.50 · voz 933.56) OK
+  D4-3  -0.06 s  «e isso nunca passa da metade»  (tela 938.74 · voz 938.80) OK
+  D4-4  -0.10 s  «agora o desafio do épsilon»  (tela 943.96 · voz 944.06) OK
+  D4-4  -0.08 s  «épsilon é a tolerância na seta»  (tela 945.80 · voz 945.88) OK
+  D4-4  -0.08 s  «alguém escolhe um épsilon»  (tela 950.76 · voz 950.84) OK
+  D4-4  -0.08 s  «você responde com delta»  (tela 952.16 · voz 952.24) OK
+  D4-4  -0.08 s  «se o ponto está a menos de delta»  (tela 955.06 · voz 955.14) OK
+  D4-4  -0.06 s  «ou seja menos que épsilon»  (tela 960.90 · voz 960.96) OK
+  D4-4  -0.06 s  «venceu para qualquer épsilon»  (tela 962.66 · voz 962.72) OK
+  D4-5  -0.09 s  «o ponto está no domínio»  (tela 968.07 · voz 968.16) OK
+  D4-5  -0.09 s  «o limite existe»  (tela 970.97 · voz 971.06) OK
+  D4-5  -0.09 s  «e é igual à seta do ponto»  (tela 973.17 · voz 973.26) OK
+  D4-5  -0.11 s  «os três pedaços passam»  (tela 974.73 · voz 974.84) OK
+  D4-5  -0.10 s  «item c as derivadas parciais»  (tela 977.70 · voz 977.80) OK
+  D4-5  -0.09 s  «andando pelo eixo horizontal»  (tela 980.57 · voz 980.66) OK
+  D4-5  -0.11 s  «na tela ela é o limite»  (tela 986.13 · voz 986.24) OK
+  D4-5  -0.11 s  «pelo vertical a mesma coisa»  (tela 991.87 · voz 991.98) OK
+  D4-5  -0.09 s  «a tabela é toda zero»  (tela 993.77 · voz 993.86) OK
+  D4-5  -0.11 s  «rotacional zero divergente zero»  (tela 995.23 · voz 995.34) OK
+  D4-5  -0.11 s  «deformação zero»  (tela 997.57 · voz 997.68) OK
+  D4-5  -0.09 s  «a previsão seria»  (tela 998.87 · voz 998.96) OK
+  D4-6  -0.08 s  «item d confere com um zoom»  (tela 1002.80 · voz 1002.88) OK
+  D4-6  -0.10 s  «deixava as setas arrumadinhas»  (tela 1007.06 · voz 1007.16) OK
+  D4-6  -0.10 s  «aqui olha o zoom de dez vezes»  (tela 1010.86 · voz 1010.96) OK
+  D4-6  -0.10 s  «e o de cem vezes também»  (tela 1015.00 · voz 1015.10) OK
+  D4-6  -0.10 s  «multiplicar a posição por um número»  (tela 1018.66 · voz 1018.76) OK
+  D4-6  -0.10 s  «o número aparece ao quadrado em cima»  (tela 1024.36 · voz 1024.46) OK
+  D4-6  -0.08 s  «agora a definição»  (tela 1031.06 · voz 1031.14) OK
+  D4-6  -0.10 s  «e o erro dividido pelo tamanho»  (tela 1040.10 · voz 1040.20) OK
+  D4-6  -0.08 s  «aqui o valor na origem é zero»  (tela 1045.46 · voz 1045.54) OK
+  D4-6  -0.08 s  «então o erro é o próprio campo»  (tela 1048.46 · voz 1048.54) OK
+  D4-6  -0.08 s  «testa na diagonal com o passo»  (tela 1050.40 · voz 1050.48) OK
+  D4-6  -0.08 s  «a fração vale meio»  (tela 1057.86 · voz 1057.94) OK
+  D4-6  -0.08 s  «na diagonal a seta tem sempre metade»  (tela 1059.16 · voz 1059.24) OK
+  D4-6  -0.10 s  «o tamanho do erro é»  (tela 1064.36 · voz 1064.46) OK
+  D4-6  -0.10 s  «o do passo agá raiz de dois»  (tela 1067.20 · voz 1067.30) OK
+  D4-6  -0.08 s  «pelo passo fica em meio»  (tela 1070.26 · voz 1070.34) OK
+  D4-6  -0.08 s  «essa razão teria que ir a zero»  (tela 1073.46 · voz 1073.54) OK
+  D4-6  -0.08 s  «então o desenho não se aproxima»  (tela 1075.90 · voz 1075.98) OK
+  D4-6  -0.08 s  «tem quadradinho crescendo»  (tela 1081.06 · voz 1081.14) OK
+  D4-7  -0.10 s  «item e calcula a derivada»  (tela 1088.74 · voz 1088.84) OK
+  D4-7  -0.10 s  «a componente horizontal é o quadrado»  (tela 1095.00 · voz 1095.10) OK
+  D4-7  -0.09 s  «regra do quociente»  (tela 1101.47 · voz 1101.56) OK
+  D4-7  -0.10 s  «a derivada de cima é duas vezes»  (tela 1109.34 · voz 1109.44) OK
+  D4-7  -0.08 s  «porque o ípsilon fica parado»  (tela 1113.20 · voz 1113.28) OK
+  D4-7  -0.08 s  «a de baixo é duas vezes»  (tela 1117.10 · voz 1117.18) OK
+  D4-7  -0.10 s  «substitui no molde e abre»  (tela 1120.14 · voz 1120.24) OK
+  D4-7  -0.08 s  «dois xis ípsilon vezes xis ao quadrado»  (tela 1122.64 · voz 1122.72) OK
+  D4-7  -0.09 s  «dois xis ípsilon vezes ípsilon ao quadrado»  (tela 1127.07 · voz 1127.16) OK
+  D4-7  -0.09 s  «e xis ao quadrado ípsilon vezes dois»  (tela 1131.57 · voz 1131.66) OK
+  D4-7  -0.09 s  «os termos com a quarta potência»  (tela 1136.97 · voz 1137.06) OK
+  D4-7  -0.10 s  «agora olha essa derivada»  (tela 1145.84 · voz 1145.94) OK
+  D4-7  -0.08 s  «nos eixos ela vale zero»  (tela 1148.74 · voz 1148.82) OK
+  D4-7  -0.10 s  «com ípsilon zero o cubo zera»  (tela 1151.40 · voz 1151.50) OK
+  D4-7  -0.08 s  «com xis zero o fator xis zera»  (tela 1154.14 · voz 1154.22) OK
+  D4-7  -0.10 s  «na diagonal as duas coordenadas são iguais»  (tela 1156.44 · voz 1156.54) OK
+  D4-7  -0.09 s  «embaixo xis ao quadrado mais xis»  (tela 1161.87 · voz 1161.96) OK
+  D4-7  -0.08 s  «duas vezes a quarta potência»  (tela 1168.30 · voz 1168.38) OK
+  D4-7  -0.09 s  «e vale meio na diagonal inteira»  (tela 1174.47 · voz 1174.56) OK
+  D4-7  -0.10 s  «o campo não é de classe»  (tela 1181.14 · voz 1181.24) OK
+  D4-7  -0.08 s  «e a tabela perde a garantia»  (tela 1183.10 · voz 1183.18) OK
+  D4-7  -0.10 s  «o cê um é uma garantia»  (tela 1186.90 · voz 1187.00) OK
+  D4-7  -0.08 s  «tem campo que não é»  (tela 1189.84 · voz 1189.92) OK
+  D4-7  -0.10 s  «que a aproximação falha»  (tela 1194.34 · voz 1194.44) OK
+  D4-8  -0.11 s  «no episódio passado o campo encrenqueiro»  (tela 1196.77 · voz 1196.88) OK
+  D4-8  -0.09 s  «este é contínuo»  (tela 1200.27 · voz 1200.36) OK
+  D4-8  -0.11 s  «tem as duas derivadas parciais»  (tela 1201.47 · voz 1201.58) OK
+  D4-8  -0.11 s  «e mesmo assim engana»  (tela 1203.33 · voz 1203.44) OK
+  D4-8  -0.09 s  «ter derivadas parciais não basta»  (tela 1204.77 · voz 1204.86) OK
+  D5-1  -0.11 s  «monta a tabela»  (tela 1214.67 · voz 1214.78) OK
+  D5-1  -0.11 s  «prevê se o quadradinho gira»  (tela 1217.13 · voz 1217.24) OK
+  D5-1  -0.09 s  «a tabela se chama jacobiana»  (tela 1222.63 · voz 1222.72) OK
+  D5-1  -0.09 s  «lembra das quatro medidas»  (tela 1228.37 · voz 1228.46) OK
+  D5-1  -0.11 s  «rotacional o de baixo à esquerda»  (tela 1229.77 · voz 1229.88) OK
+  D5-1  -0.11 s  «divergente a diagonal somada»  (tela 1233.57 · voz 1233.68) OK
+  D5-1  -0.11 s  «primeira deformação dê um»  (tela 1235.77 · voz 1235.88) OK
+  D5-1  -0.09 s  «segunda dê dois»  (tela 1239.13 · voz 1239.22) OK
+  D5-2  -0.09 s  «a soma e a diferença»  (tela 1246.77 · voz 1246.86) OK
+  D5-2  -0.11 s  «pausa o vídeo e tenta»  (tela 1249.13 · voz 1249.24) OK
+  D5-3  -0.08 s  «a tabela»  (tela 1250.64 · voz 1250.72) OK
+  D5-3  -0.10 s  «a componente horizontal é a soma»  (tela 1251.34 · voz 1251.44) OK
+  D5-3  -0.10 s  «a vertical é a diferença»  (tela 1255.50 · voz 1255.60) OK
+  D5-3  -0.10 s  «em cima um e um»  (tela 1259.10 · voz 1259.20) OK
+  D5-3  -0.09 s  «rotacional o de baixo à esquerda menos o de cima à direita um»  (tela 1263.67 · voz 1263.76) OK
+  D5-3  -0.08 s  «divergente a diagonal um»  (tela 1268.80 · voz 1268.88) OK
+  D5-3  -0.09 s  «primeira deformação um menos»  (tela 1272.27 · voz 1272.36) OK
+  D5-3  -0.08 s  «segunda um mais um»  (tela 1275.54 · voz 1275.62) OK
+  D5-3  -0.09 s  «previsão não gira»  (tela 1277.77 · voz 1277.86) OK
+  D5-3  -0.08 s  «não muda de área»  (tela 1279.50 · voz 1279.58) OK
+  D5-3  -0.10 s  «só deforma»  (tela 1280.70 · voz 1280.80) OK
+  D5-4  -0.08 s  «solta»  (tela 1281.80 · voz 1281.88) OK
+  D5-5  -0.10 s  «como transformação essa fórmula»  (tela 1292.00 · voz 1292.10) OK
+  D5-5  -0.08 s  «como campo ela não muda»  (tela 1294.94 · voz 1295.02) OK
+  D5-5  -0.10 s  «a transformação leva cada ponto»  (tela 1299.70 · voz 1299.80) OK
+  D5-5  -0.08 s  «o campo é uma velocidade»  (tela 1303.20 · voz 1303.28) OK
+  D5-5  -0.08 s  «e quem mede a taxa de área»  (tela 1307.84 · voz 1307.92) OK
+  D5-5  -0.08 s  «mudança de variáveis»  (tela 1316.50 · voz 1316.58) OK
+  D5-6  -0.09 s  «segundo campo»  (tela 1320.27 · voz 1320.36) OK
+  D5-6  -0.10 s  «pausa e tenta»  (tela 1325.10 · voz 1325.20) OK
+  D5-7  -0.08 s  «a componente horizontal é constante»  (tela 1326.40 · voz 1326.48) OK
+  D5-7  -0.08 s  «a vertical um na direção»  (tela 1330.30 · voz 1330.38) OK
+  D5-7  -0.10 s  «tabela zero e zero em cima»  (tela 1334.20 · voz 1334.30) OK
+  D5-7  -0.08 s  «rotacional um menos zero»  (tela 1337.96 · voz 1338.04) OK
+  D5-7  -0.10 s  «divergente zero mais»  (tela 1340.30 · voz 1340.40) OK
+  D5-7  -0.09 s  «deformações zero menos»  (tela 1343.33 · voz 1343.42) OK
+  D5-7  -0.08 s  «e um mais zero»  (tela 1346.30 · voz 1346.38) OK
+  D5-7  -0.10 s  «previsão tudo junto»  (tela 1347.80 · voz 1347.90) OK
+  D5-7  -0.08 s  «gira no sentido anti-horário»  (tela 1349.40 · voz 1349.48) OK
+  D5-8  -0.08 s  «esse é o um embaixo à esquerda»  (tela 1358.80 · voz 1358.88) OK
+  D5-8  -0.08 s  «andando para cima a seta abaixa»  (tela 1360.84 · voz 1360.92) OK
+  D5-8  -0.06 s  «solta o quadradinho viaja»  (tela 1364.44 · voz 1364.50) OK
+  D5-8  -0.08 s  «porque a gente tirou a seta do centro»  (tela 1373.14 · voz 1373.22) OK
+  D5-9  -0.10 s  «terceiro campo»  (tela 1378.20 · voz 1378.30) OK
+  D5-9  -0.11 s  «agora a tabela não é constante»  (tela 1386.13 · voz 1386.24) OK
+  D5-9  -0.10 s  «derivando a diferença dos quadrados»  (tela 1389.46 · voz 1389.56) OK
+  D5-9  -0.10 s  «em ípsilon o xis ao quadrado»  (tela 1397.56 · voz 1397.66) OK
+  D5-9  -0.11 s  «derivando duas vezes o produto»  (tela 1403.43 · voz 1403.54) OK
+  D5-9  -0.12 s  «pausa o vídeo e prevê»  (tela 1414.06 · voz 1414.18) OK
+  D5-10 -0.07 s  «rotacional duas vezes a vertical»  (tela 1420.27 · voz 1420.34) OK
+  D5-10 -0.09 s  «divergente duas vezes a horizontal mais»  (tela 1427.37 · voz 1427.46) OK
+  D5-10 -0.08 s  «e as duas deformações cada uma»  (tela 1433.20 · voz 1433.28) OK
+  D5-10 -0.07 s  «zero em qualquer ponto»  (tela 1437.17 · voz 1437.24) OK
+  D5-10 -0.09 s  «no ponto um zero»  (tela 1438.77 · voz 1438.86) OK
+  D5-10 -0.09 s  «só cresce»  (tela 1444.97 · voz 1445.06) OK
+  D5-10 -0.09 s  «no zero um»  (tela 1445.93 · voz 1446.02) OK
+  D5-10 -0.09 s  «só gira»  (tela 1449.33 · voz 1449.42) OK
+  D5-10 -0.07 s  «no um um»  (tela 1450.27 · voz 1450.34) OK
+  D5-10 -0.08 s  «gira e cresce»  (tela 1451.30 · voz 1451.38) OK
+  D5-11 -0.08 s  «solta os três»  (tela 1452.60 · voz 1452.68) OK
+  D5-11 -0.09 s  «as quinas continuam em ângulo reto»  (tela 1459.93 · voz 1460.02) OK
+  D5-11 -0.10 s  «a tabela fala do que acontece»  (tela 1462.90 · voz 1463.00) OK
+  D5-11 -0.10 s  «um quadradinho de tamanho finito»  (tela 1466.40 · voz 1466.50) OK
+  D5-11 -0.08 s  «e os lados até se curvam»  (tela 1470.66 · voz 1470.74) OK
+  D5-11 -0.09 s  «bem pequeno esse campo»  (tela 1474.13 · voz 1474.22) OK
+  D5-11 -0.08 s  «guarda isso»  (tela 1477.26 · voz 1477.34) OK
+  D5-12 -0.09 s  «desafio cumprido»  (tela 1480.57 · voz 1480.66) OK
+  D5-12 -0.09 s  «a fórmula do campo vira uma tabela»  (tela 1481.97 · voz 1482.06) OK
+  D5-12 -0.11 s  «a tabela vira quatro números»  (tela 1484.07 · voz 1484.18) OK
+  D5-12 -0.09 s  «e os quatro números contam»  (tela 1486.03 · voz 1486.12) OK
+  D5-12 -0.10 s  «e o cê um garante»  (tela 1491.40 · voz 1491.50) OK
+  P2-1  -0.10 s  «agora vem a melhor parte»  (tela 1497.16 · voz 1497.26) OK
+  P2-1  -0.09 s  «água de verdade»  (tela 1501.53 · voz 1501.62) OK
+  P2-1  -0.09 s  «leis da física»  (tela 1503.43 · voz 1503.52) OK
+  P2-1  -0.08 s  «vamos começar por um rio»  (tela 1504.40 · voz 1504.48) OK
+  A1-1  -0.09 s  «a água corre a um metro»  (tela 1508.47 · voz 1508.56) OK
+  A1-1  -0.08 s  «numa parábola»  (tela 1513.70 · voz 1513.78) OK
+  A1-1  -0.10 s  «a componente na direção do canal»  (tela 1514.64 · voz 1514.74) OK
+  A1-1  -0.10 s  «no meio dá um»  (tela 1519.90 · voz 1520.00) OK
+  A1-1  -0.10 s  «nas margens a três metros»  (tela 1520.94 · voz 1521.04) OK
+  A1-1  -0.08 s  «um menos nove nonos»  (tela 1523.60 · voz 1523.68) OK
+  A1-1  -0.08 s  «onde o atrito é maior»  (tela 1529.74 · voz 1529.82) OK
+  A1-1  -0.10 s  «pausa o vídeo e tenta»  (tela 1531.04 · voz 1531.14) OK
+  A1-2  -0.09 s  «primeira a velocidade só tem»  (tela 1532.27 · voz 1532.36) OK
+  A1-2  -0.09 s  «e ela não muda ao longo do canal»  (tela 1535.97 · voz 1536.06) OK
+  A1-2  -0.09 s  «monta a tabela pelas derivadas»  (tela 1537.77 · voz 1537.86) OK
+  A1-2  -0.11 s  «a primeira componente é zero»  (tela 1539.53 · voz 1539.64) OK
+  A1-2  -0.11 s  «a segunda um menos xis»  (tela 1543.27 · voz 1543.38) OK
+  A1-2  -0.11 s  «em xis o um some»  (tela 1548.73 · voz 1548.84) OK
+  A1-2  -0.09 s  «divergente zero mais zero»  (tela 1554.23 · voz 1554.32) OK
+  A1-2  -0.09 s  «divergente zero incompressível»  (tela 1556.07 · voz 1556.16) OK
+  A1-3  -0.10 s  «o rotacional é a derivada»  (tela 1563.26 · voz 1563.36) OK
+  A1-3  -0.08 s  «menos a derivada da primeira componente»  (tela 1567.80 · voz 1567.88) OK
+  A1-3  -0.10 s  «dá menos dois nonos»  (tela 1570.80 · voz 1570.90) OK
+  A1-3  -0.08 s  «na margem esquerda menos dois nonos»  (tela 1573.46 · voz 1573.54) OK
+  A1-3  -0.09 s  «menos com menos dá mais»  (tela 1576.83 · voz 1576.92) OK
+  A1-3  -0.10 s  «que simplifica para dois terços»  (tela 1579.10 · voz 1579.20) OK
+  A1-3  -0.10 s  «um galho ali gira»  (tela 1581.80 · voz 1581.90) OK
+  A1-3  -0.10 s  «lembra que o rotacional é o dobro»  (tela 1587.50 · voz 1587.60) OK
+  A1-3  -0.09 s  «o galho gira com ômega»  (tela 1592.63 · voz 1592.72) OK
+  A1-3  -0.10 s  «e o período o t da tela»  (tela 1600.66 · voz 1600.76) OK
+  A1-3  -0.10 s  «que é dois pi vezes três»  (tela 1608.50 · voz 1608.60) OK
+  A1-3  -0.08 s  «com pi perto de três vírgula catorze»  (tela 1610.86 · voz 1610.94) OK
+  A1-3  -0.10 s  «na margem direita menos dois terços»  (tela 1616.50 · voz 1616.60) OK
+  A1-3  -0.10 s  «porque agora é menos dois nonos»  (tela 1618.80 · voz 1618.90) OK
+  A1-3  -0.08 s  «bem no centro com xis zero»  (tela 1623.36 · voz 1623.44) OK
+  A1-4  -0.08 s  «olha os três quadradinhos»  (tela 1628.60 · voz 1628.68) OK
+  A1-4  -0.10 s  «cada um para um lado»  (tela 1634.60 · voz 1634.70) OK
+  A1-4  -0.08 s  «a água do lado de dentro corre»  (tela 1636.46 · voz 1636.54) OK
+  A1-5  -0.06 s  «terceira o atrito»  (tela 1643.34 · voz 1643.40) OK
+  A1-5  -0.07 s  «o atrito viscoso vem da deformação»  (tela 1645.17 · voz 1645.24) OK
+  A1-5  -0.08 s  «da diferença de velocidade entre camadas»  (tela 1647.54 · voz 1647.62) OK
+  A1-5  -0.07 s  «aqui a primeira deformação»  (tela 1650.77 · voz 1650.84) OK
+  A1-5  -0.08 s  «a segunda é menos dois nonos»  (tela 1654.44 · voz 1654.52) OK
+  A1-5  -0.07 s  «na margem com xis igual a três»  (tela 1658.57 · voz 1658.64) OK
+  A1-5  -0.06 s  «no centro com xis zero»  (tela 1665.60 · voz 1665.66) OK
+  A1-5  -0.06 s  «máxima nas margens»  (tela 1669.20 · voz 1669.26) OK
+  A2-1  -0.11 s  «um jato de água descendo»  (tela 1679.03 · voz 1679.14) OK
+  A2-1  -0.09 s  «num modelo ideal»  (tela 1682.87 · voz 1682.96) OK
+  A2-1  -0.11 s  «a velocidade tem a coordenada horizontal»  (tela 1685.53 · voz 1685.64) OK
+  A2-1  -0.09 s  «só na metade de cima»  (tela 1692.57 · voz 1692.66) OK
+  A2-2  -0.08 s  «na parede a componente vertical é zero»  (tela 1696.14 · voz 1696.22) OK
+  A2-2  -0.08 s  «numa parede de verdade»  (tela 1701.70 · voz 1701.78) OK
+  A2-2  -0.10 s  «segundo a tabela derivada por derivada»  (tela 1709.00 · voz 1709.10) OK
+  A2-2  -0.08 s  «a primeira componente é xis»  (tela 1712.00 · voz 1712.08) OK
+  A2-2  -0.08 s  «a segunda é menos ípsilon»  (tela 1716.40 · voz 1716.48) OK
+  A2-2  -0.08 s  «a tabela tem um e zero»  (tela 1720.80 · voz 1720.88) OK
+  A2-2  -0.09 s  «rotacional zero»  (tela 1724.67 · voz 1724.76) OK
+  A2-2  -0.10 s  «divergente um menos um»  (tela 1727.10 · voz 1727.20) OK
+  A2-2  -0.10 s  «primeira deformação um menos»  (tela 1729.50 · voz 1729.60) OK
+  A2-2  -0.08 s  «uma gota de tinta»  (tela 1735.94 · voz 1736.02) OK
+  A2-2  -0.08 s  «e as linhas de corrente são hipérboles»  (tela 1741.70 · voz 1741.78) OK
+  A2-2  -0.09 s  «ípsilon igual a uma constante sobre xis»  (tela 1747.67 · voz 1747.76) OK
+  A2-2  -0.08 s  «lê-se dê xis ípsilon dê tê»  (tela 1750.90 · voz 1750.98) OK
+  A2-2  -0.09 s  «regra do produto agora no tempo»  (tela 1755.47 · voz 1755.56) OK
+  A2-2  -0.09 s  «a posição muda com a velocidade»  (tela 1762.97 · voz 1763.06) OK
+  A2-2  -0.10 s  «o produto muda pela velocidade horizontal»  (tela 1768.64 · voz 1768.74) OK
+  A2-2  -0.10 s  «mais a horizontal vezes a velocidade vertical»  (tela 1772.90 · voz 1773.00) OK
+  A2-2  -0.10 s  «com u igual a xis»  (tela 1775.74 · voz 1775.84) OK
+  A2-2  -0.08 s  «dá o produto menos o produto»  (tela 1778.64 · voz 1778.72) OK
+  A2-2  -0.08 s  «o produto não muda»  (tela 1781.14 · voz 1781.22) OK
+  A2-3  -0.09 s  «esse campo é o gradiente»  (tela 1786.07 · voz 1786.16) OK
+  A2-3  -0.08 s  «derivando o meio vezes dois xis»  (tela 1790.54 · voz 1790.62) OK
+  A2-3  -0.10 s  «e o meio vezes menos dois ípsilon»  (tela 1793.50 · voz 1793.60) OK
+  A2-3  -0.10 s  «essa função se chama potencial»  (tela 1796.64 · voz 1796.74) OK
+  A2-3  -0.10 s  «e o laplaciano dela»  (tela 1799.40 · voz 1799.50) OK
+  A2-3  -0.10 s  «escrito nabla dois fi»  (tela 1800.64 · voz 1800.74) OK
+  A2-3  -0.09 s  «derivando de novo»  (tela 1806.27 · voz 1806.36) OK
+  A2-3  -0.09 s  «dá um menos um»  (tela 1811.67 · voz 1811.76) OK
+  A2-4  -0.10 s  «se a velocidade é um gradiente»  (tela 1815.20 · voz 1815.30) OK
+  A2-4  -0.09 s  «é a primeira das duas regras»  (tela 1820.13 · voz 1820.22) OK
+  A2-4  -0.03 s  «se também tem divergente zero»  (tela 1821.93 · voz 1821.96) OK
+  A2-4  -0.09 s  «então o divergente do gradiente é zero»  (tela 1823.67 · voz 1823.76) OK
+  A2-4  -0.09 s  «e o divergente do gradiente é o laplaciano»  (tela 1826.47 · voz 1826.56) OK
+  A2-4  -0.09 s  «deriva fi xis em xis»  (tela 1829.43 · voz 1829.52) OK
+  A2-4  -0.10 s  «quer dizer laplaciano do potencial igual a zero»  (tela 1838.80 · voz 1838.90) OK
+  A2-4  -0.09 s  «aparece no potencial elétrico»  (tela 1844.17 · voz 1844.26) OK
+  A2-4  -0.09 s  «e na temperatura de uma chapa»  (tela 1847.17 · voz 1847.26) OK
+  A4-1  -0.09 s  «deformação zero em todo lugar»  (tela 1854.87 · voz 1854.96) OK
+  A4-1  -0.10 s  «iguala cada deformação a zero»  (tela 1858.14 · voz 1858.24) OK
+  A4-1  -0.08 s  «e a derivada vertical da primeira»  (tela 1866.70 · voz 1866.78) OK
+  A4-1  -0.10 s  «essas são as equações de cauchy»  (tela 1871.34 · voz 1871.44) OK
+  A4-2  -0.11 s  «o nosso campo é exatamente o quadrado»  (tela 1877.77 · voz 1877.88) OK
+  A4-2  -0.11 s  «abre o quadrado»  (tela 1884.37 · voz 1884.48) OK
+  A4-2  -0.11 s  «com o molde da soma ao quadrado»  (tela 1885.17 · voz 1885.28) OK
+  A4-2  -0.09 s  «o i da tela é a unidade imaginária»  (tela 1892.53 · voz 1892.62) OK
+  A4-2  -0.10 s  «mais duas vezes i vezes o produto»  (tela 1896.50 · voz 1896.60) OK
+  A4-2  -0.10 s  «é menos um»  (tela 1903.70 · voz 1903.80) OK
+  A4-2  -0.11 s  «junta o que não tem i»  (tela 1907.57 · voz 1907.68) OK
+  A4-2  -0.11 s  «sobra a diferença dos quadrados»  (tela 1909.73 · voz 1909.84) OK
+  A4-2  -0.11 s  «a primeira e a segunda componente»  (tela 1914.77 · voz 1914.88) OK
+  A4-2  -0.11 s  «confere as equações»  (tela 1917.23 · voz 1917.34) OK
+  A4-2  -0.11 s  «igual à derivada vertical da segunda»  (tela 1921.17 · voz 1921.28) OK
+  A4-2  -0.10 s  «a derivada vertical da primeira é menos»  (tela 1923.30 · voz 1923.40) OK
+  A4-2  -0.09 s  «igual a menos a derivada horizontal»  (tela 1926.37 · voz 1926.46) OK
+  A4-2  -0.09 s  «passou»  (tela 1928.97 · voz 1929.06) OK
+  A4-2  -0.10 s  «e toda função complexa derivável»  (tela 1929.60 · voz 1929.70) OK
+  A4-3  -0.07 s  «agora lê como transformação»  (tela 1934.87 · voz 1934.94) OK
+  A4-3  -0.07 s  «a tabela desse campo»  (tela 1936.57 · voz 1936.64) OK
+  A4-3  -0.09 s  «tem a forma a menos b»  (tela 1939.47 · voz 1939.56) OK
+  A4-3  -0.08 s  «uma tabela assim é um número vezes»  (tela 1945.30 · voz 1945.38) OK
+  A4-3  -0.09 s  «que dá duas vezes a distância»  (tela 1951.37 · voz 1951.46) OK
+  A4-3  -0.07 s  «no ponto um um ela é»  (tela 1953.23 · voz 1953.30) OK
+  A4-3  -0.09 s  «as duas colunas têm o mesmo tamanho»  (tela 1960.67 · voz 1960.76) OK
+  A4-3  -0.09 s  «quadradinhos pequenos viram quadradinhos»  (tela 1968.87 · voz 1968.96) OK
+  A4-3  -0.07 s  «mas sempre com ângulos retos»  (tela 1972.23 · voz 1972.30) OK
+  A4-3  -0.09 s  «o mapa múndi de mercator»  (tela 1976.87 · voz 1976.96) OK
+  A4-3  -0.09 s  «preserva os ângulos»  (tela 1978.37 · voz 1978.46) OK
+  A4-3  -0.09 s  «por isso a groenlândia aparece»  (tela 1982.53 · voz 1982.62) OK
+  A4-4  -0.06 s  «e o irmão desse campo»  (tela 1987.94 · voz 1988.00) OK
+  A4-4  -0.07 s  «as derivadas da primeira são»  (tela 1995.57 · voz 1995.64) OK
+  A4-4  -0.08 s  «as da segunda menos dois ípsilon»  (tela 1999.00 · voz 1999.08) OK
+  A4-4  -0.08 s  «rotacional menos dois ípsilon»  (tela 2002.24 · voz 2002.32) OK
+  A4-4  -0.08 s  «divergente dois xis menos»  (tela 2006.40 · voz 2006.48) OK
+  A4-4  -0.06 s  «rotacional zero divergente zero»  (tela 2009.64 · voz 2009.70) OK
+  A4-4  -0.07 s  «e as duas deformações quatro xis»  (tela 2011.87 · voz 2011.94) OK
+  A4-4  -0.06 s  «esse irmão não gira»  (tela 2016.70 · voz 2016.76) OK
+  A3-1  -0.08 s  «as linhas do campo magnético»  (tela 2026.70 · voz 2026.78) OK
+  A3-1  -0.10 s  «pausa e pensa»  (tela 2033.60 · voz 2033.70) OK
+  A3-2  -0.09 s  «o campo dá a volta no fio»  (tela 2037.63 · voz 2037.72) OK
+  A3-2  -0.09 s  «e o tamanho só depende da distância»  (tela 2039.37 · voz 2039.46) OK
+  A3-2  -0.09 s  «supondo uma lei de potência»  (tela 2041.97 · voz 2042.06) OK
+  A3-2  -0.07 s  «menos a coordenada vertical»  (tela 2045.83 · voz 2045.90) OK
+  A3-2  -0.07 s  «elevada a um expoente alfa»  (tela 2050.57 · voz 2050.64) OK
+  A3-2  -0.09 s  «a lei de ampère diz»  (tela 2058.07 · voz 2058.16) OK
+  A3-3  -0.10 s  «agora usa a fórmula que a gente guardou»  (tela 2062.56 · voz 2062.66) OK
+  A3-3  -0.08 s  «para ser zero»  (tela 2070.00 · voz 2070.08) OK
+  A3-3  -0.07 s  «olha o denominador»  (tela 2071.73 · voz 2071.80) OK
+  A3-3  -0.06 s  «o numerador zera»  (tela 2078.80 · voz 2078.86) OK
+  A3-3  -0.07 s  «passa o dois alfa para o outro lado»  (tela 2082.23 · voz 2082.30) OK
+  A3-3  -0.07 s  «dois igual a dois alfa»  (tela 2084.23 · voz 2084.30) OK
+  A3-3  -0.08 s  «e alfa igual a um»  (tela 2085.90 · voz 2085.98) OK
+  A3-3  -0.08 s  «então o tamanho do campo»  (tela 2087.30 · voz 2087.38) OK
+  A3-3  -0.08 s  «em cima o tamanho de menos ípsilon»  (tela 2088.80 · voz 2088.88) OK
+  A3-3  -0.07 s  «embaixo a distância elevada a dois alfa»  (tela 2093.83 · voz 2093.90) OK
+  A3-3  -0.06 s  «a distância dividida pela distância ao quadrado»  (tela 2097.90 · voz 2097.96) OK
+  A3-3  -0.06 s  «um sobre a distância o campo»  (tela 2100.56 · voz 2100.62) OK
+  A3-3  -0.06 s  «o campo do fio cai»  (tela 2101.86 · voz 2101.92) OK
+  A3-4  -0.08 s  «faz o mesmo com um fio carregado»  (tela 2109.04 · voz 2109.12) OK
+  A3-4  -0.10 s  «o campo elétrico aponta para fora»  (tela 2110.84 · voz 2110.94) OK
+  A3-4  -0.08 s  «fora do fio não tem carga»  (tela 2120.64 · voz 2120.72) OK
+  A3-4  -0.09 s  «calcula o divergente como no terceiro»  (tela 2124.27 · voz 2124.36) OK
+  A3-4  -0.08 s  «a primeira parcela é xis vezes»  (tela 2126.70 · voz 2126.78) OK
+  A3-4  -0.09 s  «sai a própria potência menos»  (tela 2130.57 · voz 2130.66) OK
+  A3-4  -0.08 s  «a segunda é igual com ípsilon»  (tela 2135.90 · voz 2135.98) OK
+  A3-4  -0.10 s  «somando aparecem duas vezes»  (tela 2138.00 · voz 2138.10) OK
+  A3-4  -0.08 s  «que é dois alfa vezes a potência»  (tela 2145.64 · voz 2145.72) OK
+  A3-4  -0.10 s  «divergente dois menos dois alfa»  (tela 2147.74 · voz 2147.84) OK
+  A3-4  -0.10 s  «igual a zero alfa um»  (tela 2152.14 · voz 2152.24) OK
+  A3-4  -0.09 s  «alfa um e o campo também cai»  (tela 2153.07 · voz 2153.16) OK
+  A3-5  -0.08 s  «e uma carga pontual»  (tela 2156.50 · voz 2156.58) OK
+  A3-5  -0.09 s  «escreve o campo como o vetor posição»  (tela 2158.33 · voz 2158.42) OK
+  A3-5  -0.09 s  «o x maiúsculo é o vetor posição»  (tela 2163.13 · voz 2163.22) OK
+  A3-5  -0.08 s  «faz a conta de uma parcela»  (tela 2173.66 · voz 2173.74) OK
+  A3-5  -0.08 s  «primeiro a derivada da distância»  (tela 2181.96 · voz 2182.04) OK
+  A3-5  -0.09 s  «o meio desce»  (tela 2191.43 · voz 2191.52) OK
+  A3-5  -0.08 s  «o meio com o dois cancela»  (tela 2196.16 · voz 2196.24) OK
+  A3-5  -0.09 s  «a derivada da distância nessa direção»  (tela 2197.83 · voz 2197.92) OK
+  A3-5  -0.09 s  «agora a regra do produto com xis»  (tela 2203.33 · voz 2203.42) OK
+  A3-5  -0.08 s  «sobra um sobre a distância elevada ao expoente»  (tela 2209.86 · voz 2209.94) OK
+  A3-5  -0.08 s  «na outra parte menos p vezes a distância»  (tela 2212.76 · voz 2212.84) OK
+  A3-5  -0.08 s  «vezes a derivada da distância xis»  (tela 2217.76 · voz 2217.84) OK
+  A3-5  -0.08 s  «xis vezes xis dá xis ao quadrado»  (tela 2221.40 · voz 2221.48) OK
+  A3-5  -0.10 s  «e as potências da distância se juntam»  (tela 2223.50 · voz 2223.60) OK
+  A3-5  -0.08 s  «então dá um sobre a distância»  (tela 2229.76 · voz 2229.84) OK
+  A3-5  -0.08 s  «menos o expoente vezes o quadrado»  (tela 2233.00 · voz 2233.08) OK
+  A3-5  -0.08 s  «as outras parcelas são iguais»  (tela 2239.36 · voz 2239.44) OK
+  A3-5  -0.10 s  «agora soma»  (tela 2242.80 · voz 2242.90) OK
+  A3-5  -0.09 s  «os quadrados das coordenadas somam»  (tela 2247.43 · voz 2247.52) OK
+  A3-5  -0.09 s  «que cancela o mais dois»  (tela 2250.63 · voz 2250.72) OK
+  A3-5  -0.08 s  «sobra o número de parcelas»  (tela 2252.80 · voz 2252.88) OK
+  A3-5  -0.08 s  «no plano são duas parcelas»  (tela 2257.80 · voz 2257.88) OK
+  A3-5  -0.08 s  «o divergente no espaço é três»  (tela 2261.10 · voz 2261.18) OK
+  A3-5  -0.08 s  «para zerar o expoente é três»  (tela 2266.76 · voz 2266.84) OK
+  A3-5  -0.10 s  «a intensidade fica a distância dividida»  (tela 2268.76 · voz 2268.86) OK
+  A3-5  -0.09 s  «a de coulomb»  (tela 2276.63 · voz 2276.72) OK
+  A3-5  -0.08 s  «e a da gravitação»  (tela 2277.46 · voz 2277.54) OK
+  A3-6  -0.10 s  «no plano o número que aparece»  (tela 2278.60 · voz 2278.70) OK
+  A3-6  -0.06 s  «o expoente da lei vem da dimensão»  (tela 2282.74 · voz 2282.80) OK
+  A3-6  -0.08 s  «tem mais lugar para se espalhar»  (tela 2287.10 · voz 2287.18) OK
+  A3-6  -0.08 s  «é a lei física»  (tela 2293.40 · voz 2293.48) OK
+  A3-6  -0.06 s  «junto com a simetria»  (tela 2298.14 · voz 2298.20) OK
+  A3-6  -0.08 s  «as linhas em círculo em volta do fio»  (tela 2299.40 · voz 2299.48) OK
+  S-1   -0.08 s  «a mesma fórmula conta dois filmes»  (tela 2308.34 · voz 2308.42) OK
+  S-1   -0.06 s  «um campo se desenha pelas curvas»  (tela 2310.74 · voz 2310.80) OK
+  S-1   -0.06 s  «o sentido da volta não é o sentido do giro»  (tela 2314.10 · voz 2314.16) OK
+  S-1   -0.08 s  «um gradiente nunca gira»  (tela 2316.90 · voz 2316.98) OK
+  S-1   -0.08 s  «ter derivadas parciais não basta»  (tela 2322.00 · voz 2322.08) OK
+  S-1   -0.06 s  «e com a tabela você prevê»  (tela 2324.24 · voz 2324.30) OK
+  S-1   -0.06 s  «e nas aplicações»  (tela 2327.94 · voz 2328.00) OK
+  S-1   -0.08 s  «um rio que gira nas margens»  (tela 2329.30 · voz 2329.38) OK
+  S-1   -0.06 s  «uma parede onde a água deforma»  (tela 2331.04 · voz 2331.10) OK
+  S-1   -0.08 s  «mapas conformes»  (tela 2333.00 · voz 2333.08) OK
+  S-1   -0.07 s  «e leis de distância»  (tela 2334.17 · voz 2334.24) OK
+  S-2   -0.09 s  «no próximo vídeo»  (tela 2335.43 · voz 2335.52) OK
+  S-2   -0.05 s  «agora é hora de somar pedacinhos»  (tela 2341.37 · voz 2341.42) OK
+  S-2   -0.06 s  «leve num canto e cada vez mais densa»  (tela 2346.30 · voz 2346.36) OK
+  S-2   -0.05 s  «pelo valor do centro»  (tela 2349.37 · voz 2349.42) OK
+  S-2   -0.05 s  «pela média dos quatro cantos»  (tela 2352.23 · voz 2352.28) OK
+  S-2   -0.05 s  «o dobro»  (tela 2354.97 · voz 2355.02) OK
+  S-2   -0.05 s  «qual das duas está certa»  (tela 2355.77 · voz 2355.82) OK
+  S-2   -0.05 s  «a resposta exata vem de somar»  (tela 2357.27 · voz 2357.32) OK
+  S-3   -0.09 s  «se essa aula te ajudou»  (tela 2363.67 · voz 2363.76) OK
+
+fins de sublinhado (23; alvo = palavra da frase `ate` − LEAD):
+  leitura  1 D1-1  +0.00 s  «primeiro como transformação»  (tela 95.33 · alvo 95.33) OK
+  leitura  2 D1-5  +0.02 s  «em cada ponto do plano»  (tela 190.37 · alvo 190.35) OK
+  leitura  3 D2-2  -0.02 s  «e essas retas são as paralelas»  (tela 252.93 · alvo 252.95) OK
+  leitura  4 D3-1  +0.01 s  «cada valor do expoente alfa»  (tela 315.60 · alvo 315.59) OK
+  leitura  5 D3-3  -0.01 s  «e o d arredondado»  (tela 376.20 · alvo 376.21) OK
+  leitura  5 D3-3  -0.00 s  «o rotacional é a derivada»  (tela 378.67 · alvo 378.67) OK
+  leitura  6 D3-6  +0.00 s  «com alfa zero não tem divisão»  (tela 597.03 · alvo 597.03) OK
+  leitura  7 D3b-1 +0.01 s  «e daqui em diante»  (tela 711.00 · alvo 710.99) OK
+  leitura  8 D3b-1 +0.01 s  «calcula o rotacional»  (tela 717.00 · alvo 716.99) OK
+  leitura  9 D3b-5 -0.01 s  «as duas ideias andam juntas»  (tela 852.60 · alvo 852.61) OK
+  leitura 10 D4-3  +0.01 s  «a barra simples»  (tela 911.40 · alvo 911.39) OK
+  leitura 11 D4-3  +0.01 s  «o vetor posição tem tamanho»  (tela 914.30 · alvo 914.29) OK
+  leitura 12 D4-4  -0.02 s  «delta o raio»  (tela 947.83 · alvo 947.85) OK
+  leitura 13 D4-4  -0.02 s  «alguém escolhe um épsilon»  (tela 950.73 · alvo 950.75) OK
+  leitura 14 D4-5  -0.02 s  «pelo vertical a mesma coisa»  (tela 991.87 · alvo 991.89) OK
+  leitura 15 D5-1  +0.00 s  «derivadas de p em cima»  (tela 1225.63 · alvo 1225.63) OK
+  leitura 17 A1-3  +0.02 s  «igual a um terço»  (tela 1595.37 · alvo 1595.35) OK
+  leitura 18 A1-3  +0.00 s  «dois pi dividido por um terço»  (tela 1606.63 · alvo 1606.63) OK
+  leitura 19 A2-2  -0.01 s  «andando com a água»  (tela 1761.90 · alvo 1761.91) OK
+  leitura 20 A2-3  +0.01 s  «aquela curiosidade do segundo episódio»  (tela 1804.30 · alvo 1804.29) OK
+  leitura 21 A4-2  -0.01 s  «o quadrado da horizontal»  (tela 1895.00 · alvo 1895.01) OK
+  leitura 22 A3-5  +0.02 s  «as barras duplas a distância»  (tela 2165.37 · alvo 2165.35) OK
+  leitura 22 A3-5  +0.00 s  «p o expoente»  (tela 2167.23 · alvo 2167.23) OK
+
+resumo: 69 âncoras, 586 gatilhos, 23 fins de sublinhado, 27 leituras, 10 chamadas de pausa no código; atraso de -0.17 a +0.04 s; fora da meta (> +0,2 s): 0; [gatilho-sem-frase] 0; pior emenda 0 quadro(s)

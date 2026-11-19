@@ -1,0 +1,21 @@
+# Momento angular de uma partícula
+
+- **ID:** `yt_0024`
+- **formato:** `longo_horizontal`
+- **natureza:** `teoria_visual`
+- **Série pública:** **MECÂNICA · EP. 5 (ROTAÇÃO DE CORPOS RÍGIDOS)** (provisório)
+- **disciplina:** `Física I`
+- **bloco:** `Rotação`
+- **modulo:** `4.11 Rotação de corpos rígidos (momento angular de uma partícula)`
+- **referencia:** `Kleppner & Kolenkow, An Introduction to Mechanics, 1ª ed., §6.2–6.3 (Ex. 6.1, 6.3, 6.5); Moysés vol. 1, cap. 11; Sears, cap. 10` (só aqui e na descrição do YouTube; nunca na tela nem na fala)
+- **pergunta narrativa:** Como algo pode girar mais rápido sem receber torque?
+- **pergunta_central:** o que é o momento angular de uma partícula, o que o muda e por que uma força que aponta para o centro não o muda?
+- **pre_requisitos:** momento linear p = mv e F = dp/dt; produto vetorial e torque τ = r × F; Στ = Iα; I de uma partícula; K = ½mv²
+- **payoff_principal:** (1) momento angular não exige trajetória circular; (2) torque nulo não exige velocidade angular constante; (3) conservar momento angular não é conservar energia cinética
+- **duracao_alvo:** ~14 min (sai da fala; teto 15 min). Nominal da narração v1: 14,4 min (2.279 palavras a 2,7 palavras/s)
+- **3d_threejs:** v2 "laboratório Parallax" (base comum `threejs/cena3d/base3d.js`: HDR half float + MSAA 4×, PMREM próprio, bloom seletivo, tom com ombro, saída com alfa) — `mesa_furo` v2 (`mesa.js`: tampo de compósito com grade polar gravada, micro-furos, borda de alumínio com LED, cavaletes em A, tubo-guia de vidro, disco com anel de LED rosa; H, A, B1, B2, B4, B6, S1); `painel_queda` (B3-1 a B3-5), `orbita` (B5), `nuvem` (S2) em `outras.js`.
+- **solido_3d:** nenhum do arsenal Blender; geometria própria em Three.js
+- **física:** `fisica24.py` (puxada integrada com dt = 1e-4 s, reta, círculo acelerado, pedra, Kepler) → `mesa_tab.json`
+- **Canto:** linha 1 `MECÂNICA · MOMENTO ANGULAR DE UMA PARTÍCULA`; linha 2 por bloco (`DE p PARA L`, `UMA RETA TAMBÉM GIRA`, `O QUE MUDA L`, `O CÍRCULO`, `FORÇA CENTRAL`, `DE VOLTA À MESA`, `RESUMO`)
+- **Cor nova:** momento angular em magenta-claro `#F19AFF` (decisão do Kaio, 2026-11-07; registrar em `padrao_video_longo.md` só no fechamento da unidade)
+- **Status:** v13 com voz (ElevenLabs v4, voz `qw7jgPZWOKrl10GsjQ82`, 13:20, 2.542 palavras) e sincronização por palavra (ASR + 43 âncoras reais); preview 540p com voz e render final 1080p30 em andamento em 2026-11-09; legenda `.srt` externa (sem legendado embutido); notação de derivada em Leibniz (dI/dt), nunca ponto de Newton

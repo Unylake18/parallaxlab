@@ -1,0 +1,2131 @@
+1
+00:00:00,100 --> 00:00:03,200
+Ficou uma pergunta no
+ar sobre girar uma lata.
+
+2
+00:00:03,240 --> 00:00:06,830
+Pega uma lata de material
+uniforme: raio R, altura h,
+
+3
+00:00:06,960 --> 00:00:10,780
+densidade constante k. Girar essa
+lata em volta do eixo central,
+
+4
+00:00:10,820 --> 00:00:13,920
+como um pião, custa
+metade de M R ao quadrado:
+
+5
+00:00:13,960 --> 00:00:17,540
+isso a gente já sabe calcular.
+Agora prende a lata pela parede,
+
+6
+00:00:17,580 --> 00:00:20,980
+como uma porta na dobradiça,
+e gira em volta dessa reta.
+
+7
+00:00:21,020 --> 00:00:25,420
+A intuição diz que vai custar mais, porque
+quase todo pedaço da lata ficou mais
+
+8
+00:00:25,460 --> 00:00:28,100
+longe do eixo de giro. Mas quanto mais?
+
+9
+00:00:28,140 --> 00:00:31,780
+O dobro? O triplo? A gente
+vai responder de dois jeitos:
+
+10
+00:00:31,820 --> 00:00:34,940
+com a conta inteira em cilíndricas,
+e com um atalho que,
+
+11
+00:00:34,980 --> 00:00:38,640
+depois de provado, resolve esse
+tipo de pergunta numa linha só.
+
+12
+00:00:38,680 --> 00:00:42,620
+E no caminho, a gente passa por tudo o
+que o módulo de integral tripla ensinou:
+
+13
+00:00:42,660 --> 00:00:46,100
+a definição, a redução à
+integral dupla, as esféricas,
+
+14
+00:00:46,140 --> 00:00:49,740
+as cilíndricas, o centro de
+massa e o momento de inércia.
+
+15
+00:00:49,780 --> 00:00:54,300
+Antes dos exercícios, a receita. Toda
+integral tripla deste módulo se resolve
+
+16
+00:00:54,340 --> 00:00:57,660
+respondendo quatro perguntas,
+sempre na mesma ordem.
+
+17
+00:00:57,700 --> 00:00:59,920
+Primeira pergunta: onde está o corpo?
+
+18
+00:00:59,960 --> 00:01:02,400
+Desenhar, e achar a sombra dele no chão.
+
+19
+00:01:02,440 --> 00:01:04,779
+Segunda: qual sistema de coordenadas?
+
+20
+00:01:04,819 --> 00:01:09,760
+Cartesianas, cilíndricas ou esféricas,
+e quem escolhe é o formato do corpo e
+
+21
+00:01:09,800 --> 00:01:14,100
+também o formato da densidade. Junto
+com o sistema vem o fator do volume:
+
+22
+00:01:14,140 --> 00:01:19,260
+um nas cartesianas, s nas cilíndricas,
+r ao quadrado seno de φ nas esféricas.
+
+23
+00:01:19,300 --> 00:01:22,380
+Esquecer esse fator é o
+erro número um da prova.
+
+24
+00:01:22,420 --> 00:01:27,400
+Terceira: entra e sai. Uma sonda
+atravessa o corpo e diz onde a variável de
+
+25
+00:01:27,440 --> 00:01:30,860
+dentro começa e onde termina.
+E a quarta: conferir.
+
+26
+00:01:30,900 --> 00:01:35,340
+Por simetria, por um caso-limite, ou por
+um segundo caminho que não tem nada a ver
+
+27
+00:01:35,380 --> 00:01:38,580
+com o primeiro. E três
+fórmulas aparecem o tempo todo:
+
+28
+00:01:38,620 --> 00:01:42,120
+a massa, o centro de massa,
+que é momento dividido por massa,
+
+29
+00:01:42,160 --> 00:01:44,760
+e o momento de inércia,
+que é a distância ao eixo,
+
+30
+00:01:44,800 --> 00:01:47,920
+ao quadrado, pesada pela
+massa. Fala, pessoal!
+
+31
+00:01:47,960 --> 00:01:52,640
+Bem-vindos ao Parallax Lab! Hoje é dia de
+exercícios do módulo de integral tripla:
+
+32
+00:01:52,680 --> 00:01:56,100
+um cubo, um tetraedro,
+um cone, uma meia bola,
+
+33
+00:01:56,140 --> 00:02:00,640
+e a lata na dobradiça, cada um com a conta
+inteira e com uma conferência por outro
+
+34
+00:02:00,680 --> 00:02:03,820
+caminho. Primeiro exercício,
+o mais simples de todos:
+
+35
+00:02:03,860 --> 00:02:08,920
+um cubo de lado um, encostado na origem,
+e a densidade é a soma das coordenadas,
+
+36
+00:02:08,960 --> 00:02:14,000
+x mais y mais z. Leve no canto da origem,
+pesado na quina do lado oposto.
+
+37
+00:02:14,040 --> 00:02:17,520
+Quanto pesa esse cubo? Começa
+pelo chute mais preguiçoso:
+
+38
+00:02:17,560 --> 00:02:20,440
+a densidade no centro
+do cubo, vezes o volume.
+
+39
+00:02:20,480 --> 00:02:24,440
+No centro, cada coordenada vale
+meio, a densidade dá três meios,
+
+40
+00:02:24,480 --> 00:02:27,150
+e o volume é um. Chute: três meios.
+
+41
+00:02:27,220 --> 00:02:30,480
+Agora a definição de verdade,
+a soma de Riemann.
+
+42
+00:02:30,520 --> 00:02:33,920
+Corta cada aresta no meio:
+o cubo vira oito caixinhas,
+
+43
+00:02:33,960 --> 00:02:36,640
+cada uma com lado meio e volume um oitavo.
+
+44
+00:02:36,680 --> 00:02:40,020
+Em cada caixinha a gente escolhe
+um ponto e calcula a densidade,
+
+45
+00:02:40,060 --> 00:02:42,480
+e vou escolher no ponto
+do meio de cada caixinha.
+
+46
+00:02:42,520 --> 00:02:46,220
+Nesses pontos, cada coordenada
+é um quarto ou três quartos.
+
+47
+00:02:46,260 --> 00:02:51,260
+Repara que, para a coordenada x, quatro
+caixinhas têm x igual a um quarto e quatro
+
+48
+00:02:51,300 --> 00:02:54,200
+têm x igual a três quartos:
+somando, dá quatro.
+
+49
+00:02:54,240 --> 00:02:58,700
+O mesmo para o y e para o z. Então,
+somando a densidade nas oito caixinhas,
+
+50
+00:02:58,740 --> 00:03:01,740
+são três coordenadas,
+cada uma contribuindo quatro:
+
+51
+00:03:01,780 --> 00:03:06,240
+doze. E a soma de Riemann é essa
+soma vezes o volume de cada caixinha:
+
+52
+00:03:06,280 --> 00:03:08,860
+doze vezes um oitavo, três meios de novo.
+
+53
+00:03:08,900 --> 00:03:11,250
+Igualzinho ao chute. Coincidência?
+
+54
+00:03:11,300 --> 00:03:14,340
+Para ver que não é coincidência,
+troca o ponto escolhido.
+
+55
+00:03:14,380 --> 00:03:17,420
+Se eu calculo a densidade no
+canto de baixo de cada caixinha,
+
+56
+00:03:17,460 --> 00:03:21,100
+as coordenadas viram zero ou
+meio: somando tudo dá seis,
+
+57
+00:03:21,140 --> 00:03:23,300
+e vezes um oitavo dá três quartos.
+
+58
+00:03:23,340 --> 00:03:26,080
+Esse é o pior caso por
+baixo. E no canto de cima,
+
+59
+00:03:26,120 --> 00:03:30,140
+as coordenadas viram meio ou
+um: dezoito, vezes um oitavo,
+
+60
+00:03:30,180 --> 00:03:32,600
+nove quartos, o pior caso por cima.
+
+61
+00:03:32,640 --> 00:03:35,480
+Três quartos e nove quartos:
+longe um do outro,
+
+62
+00:03:35,520 --> 00:03:39,000
+e o três meios bem no meio.
+Agora corta em mais pedaços.
+
+63
+00:03:39,040 --> 00:03:43,180
+Com quatro divisões por aresta, o de
+baixo sobe para um vírgula cento e vinte e
+
+64
+00:03:43,220 --> 00:03:47,320
+cinco e o de cima desce para um
+vírgula oitocentos e setenta e cinco.
+
+65
+00:03:47,360 --> 00:03:51,080
+Com dez, um vírgula trinta e cinco
+e um vírgula sessenta e cinco.
+
+66
+00:03:51,120 --> 00:03:53,720
+E o do meio? Não sai do lugar: um e meio.
+
+67
+00:03:53,760 --> 00:03:58,200
+Repara no que a definição está dizendo: o
+valor exato fica sempre espremido entre a
+
+68
+00:03:58,240 --> 00:04:02,740
+soma de baixo e a soma de cima, e a
+diferença entre as duas é três sobre n,
+
+69
+00:04:02,780 --> 00:04:05,920
+que vai a zero quando o maior
+lado das caixinhas vai a zero.
+
+70
+00:04:05,960 --> 00:04:10,280
+Isso é a integral tripla: o número que
+sobra quando todas as somas concordam.
+
+71
+00:04:10,320 --> 00:04:13,820
+E o ponto do meio acerta de primeira
+porque a densidade é linear:
+
+72
+00:04:13,860 --> 00:04:17,660
+dentro de cada caixinha, o que a
+densidade tem a mais de um lado do centro,
+
+73
+00:04:17,700 --> 00:04:20,690
+ela tem a menos do outro,
+e as duas coisas se cancelam.
+
+74
+00:04:20,760 --> 00:04:23,760
+Na prática, a gente nunca
+calcula pela definição:
+
+75
+00:04:23,800 --> 00:04:27,840
+o teorema da redução diz que,
+para uma função contínua numa caixa,
+
+76
+00:04:27,880 --> 00:04:30,620
+a integral tripla vira
+três integrais simples,
+
+77
+00:04:30,660 --> 00:04:33,970
+uma dentro da outra, em qualquer
+ordem. A de dentro é em z:
+
+78
+00:04:34,140 --> 00:04:38,760
+x e y ficam parados, como se a sonda
+estivesse presa num ponto do chão e só
+
+79
+00:04:38,800 --> 00:04:43,660
+subisse. Integra, aplica de zero
+a um, e sobra x mais y mais meio.
+
+80
+00:04:43,700 --> 00:04:47,140
+Depois em y, com o x parado:
+integra cada pedaço,
+
+81
+00:04:47,180 --> 00:04:51,980
+o meio que estava sozinho vira y sobre
+dois, e aplicando os limites sobra x
+
+82
+00:04:52,020 --> 00:04:56,300
+mais um. E por último em x:
+um meio mais um, o mesmo três meios.
+
+83
+00:04:56,340 --> 00:05:00,680
+Três caminhos diferentes, o chute do
+centro, a soma de Riemann e a redução,
+
+84
+00:05:00,720 --> 00:05:04,550
+e todos deram o mesmo número.
+O cubo pesa três meios.
+
+85
+00:05:04,600 --> 00:05:07,840
+Agora: onde esse cubo equilibra?
+Antes de fazer conta,
+
+86
+00:05:07,880 --> 00:05:11,160
+repara numa simetria esperta.
+Se eu trocar o nome das letras,
+
+87
+00:05:11,200 --> 00:05:15,800
+chamar o x de y e o y de x,
+o cubo continua o mesmo cubo e a
+
+88
+00:05:15,840 --> 00:05:20,480
+densidade continua a mesma soma. Então as
+três coordenadas do centro de massa têm
+
+89
+00:05:20,520 --> 00:05:25,540
+que ser iguais. Basta calcular uma.
+O momento em relação ao plano y z usa o x:
+
+90
+00:05:25,580 --> 00:05:30,660
+integral de x vezes a densidade. A gente
+distribui o x e separa em três integrais.
+
+91
+00:05:30,700 --> 00:05:34,640
+E aqui o cubo ajuda de novo: numa caixa,
+quando o integrando é um produto de
+
+92
+00:05:34,680 --> 00:05:39,180
+pedaços que dependem de uma letra só,
+cada pedaço separa numa integral simples.
+
+93
+00:05:39,220 --> 00:05:43,480
+O x ao quadrado dá um terço.
+O x vezes y dá meio vezes meio,
+
+94
+00:05:43,520 --> 00:05:46,300
+um quarto, e o x vezes z, a mesma coisa.
+
+95
+00:05:46,340 --> 00:05:49,020
+Somando as três, num
+denominador comum de doze,
+
+96
+00:05:49,060 --> 00:05:52,360
+dá dez doze avos, que
+simplifica para cinco sextos.
+
+97
+00:05:52,400 --> 00:05:56,060
+Dividindo pela massa, inverte
+e multiplica: cinco nonos,
+
+98
+00:05:56,100 --> 00:05:58,400
+mais ou menos zero
+vírgula cinquenta e seis.
+
+99
+00:05:58,440 --> 00:06:01,080
+Faz sentido? O centro
+do cubo está em meio.
+
+100
+00:06:01,120 --> 00:06:04,520
+O centro de massa fica na diagonal,
+um pouco além do centro,
+
+101
+00:06:04,560 --> 00:06:07,720
+puxado para a quina pesada.
+Se desse menos que meio,
+
+102
+00:06:07,760 --> 00:06:12,340
+alguma coisa estaria errada. Uma pegadinha
+de definição antes do próximo sólido.
+
+103
+00:06:12,380 --> 00:06:17,000
+E se o corpo fosse só a tampa do cubo,
+uma folha quadrada no plano z igual a um?
+
+104
+00:06:17,040 --> 00:06:19,880
+Quanto dá a integral tripla
+da densidade sobre a folha?
+
+105
+00:06:19,920 --> 00:06:22,260
+Na folha, a densidade não passa de três.
+
+106
+00:06:22,300 --> 00:06:26,400
+Para cobrir a folha, basta uma
+camada de caixinhas de altura Δz.
+
+107
+00:06:26,440 --> 00:06:30,500
+A soma de Riemann fica entre zero
+e três vezes o volume dessa camada,
+
+108
+00:06:30,540 --> 00:06:34,700
+que é um vezes Δz. Quando Δz
+vai a zero, a soma vai a zero.
+
+109
+00:06:34,740 --> 00:06:37,020
+Então a integral sobre a folha é zero.
+
+110
+00:06:37,060 --> 00:06:41,100
+Parece uma contradição: a densidade
+é positiva em todo ponto da folha,
+
+111
+00:06:41,140 --> 00:06:45,920
+e a integral dá zero? Não é. A regra
+que diz "função positiva com integral
+
+112
+00:06:45,960 --> 00:06:49,220
+zero tem que ser zero"
+vale nos pontos interiores,
+
+113
+00:06:49,260 --> 00:06:53,540
+e a folha não tem nenhum ponto interior:
+qualquer bolinha em volta de um ponto dela
+
+114
+00:06:53,580 --> 00:06:57,080
+escapa para cima e para baixo.
+A folha tem volume zero,
+
+115
+00:06:57,120 --> 00:07:00,500
+então tem massa zero.
+Na prática, é por isso que tampa,
+
+116
+00:07:00,540 --> 00:07:03,600
+parede e costura nunca
+mudam uma integral tripla:
+
+117
+00:07:03,640 --> 00:07:06,950
+tanto faz escrever menor ou
+menor ou igual nos limites.
+
+118
+00:07:07,180 --> 00:07:10,860
+Segundo exercício: agora os
+limites deixam de ser números.
+
+119
+00:07:10,900 --> 00:07:14,170
+O sólido é o canto de um
+cubo cortado por um plano:
+
+120
+00:07:14,220 --> 00:07:19,120
+x mais y mais z menor ou igual a um,
+com as três coordenadas positivas.
+
+121
+00:07:19,160 --> 00:07:22,610
+Um tetraedro. E a densidade
+agora é só x mais y:
+
+122
+00:07:22,820 --> 00:07:26,300
+pesa mais longe do eixo z,
+e a ponta de cima é leve.
+
+123
+00:07:26,340 --> 00:07:29,120
+Primeira pergunta da receita:
+onde está o corpo?
+
+124
+00:07:29,160 --> 00:07:31,440
+A sombra dele no chão é um triângulo.
+
+125
+00:07:31,480 --> 00:07:35,340
+Terceira pergunta, entra e sai:
+a sonda entra pelo chão,
+
+126
+00:07:35,380 --> 00:07:38,120
+em z igual a zero,
+e sai pelo plano inclinado,
+
+127
+00:07:38,160 --> 00:07:40,450
+em z igual a um menos x menos y.
+
+128
+00:07:40,700 --> 00:07:43,540
+Repara que a saída depende
+de onde a sonda está:
+
+129
+00:07:43,580 --> 00:07:47,660
+perto da origem ela sai alto,
+perto da aresta ela quase não sobe.
+
+130
+00:07:47,700 --> 00:07:50,640
+E olhando de cima,
+a sombra se lê do mesmo jeito:
+
+131
+00:07:50,680 --> 00:07:55,660
+x vai de zero a um, e para cada
+x, o y vai de zero até a reta y
+
+132
+00:07:55,700 --> 00:08:00,500
+igual a um menos x. Juntando tudo,
+a massa é uma integral tripla em que
+
+133
+00:08:00,540 --> 00:08:03,520
+cada limite de dentro
+depende das letras de fora.
+
+134
+00:08:03,560 --> 00:08:06,820
+A receita já montou a conta
+inteira; agora é só fazer.
+
+135
+00:08:06,860 --> 00:08:10,140
+A de dentro é em z, e o
+integrando nem depende de z:
+
+136
+00:08:10,180 --> 00:08:12,840
+é uma constante vezes
+o comprimento da sonda.
+
+137
+00:08:12,880 --> 00:08:16,350
+Fica x mais y vezes um menos x menos y.
+
+138
+00:08:16,640 --> 00:08:19,340
+Agora a do meio, em y, com o x parado.
+
+139
+00:08:19,380 --> 00:08:22,940
+Dá para abrir tudo e integrar
+termo a termo, mas tem um atalho:
+
+140
+00:08:22,980 --> 00:08:25,900
+repara que x mais y aparece duas vezes.
+
+141
+00:08:25,940 --> 00:08:29,390
+Então vale uma letra nova:
+w igual a x mais y.
+
+142
+00:08:29,640 --> 00:08:33,840
+Com o x parado, dw é dy,
+e os limites mudam junto:
+
+143
+00:08:33,880 --> 00:08:38,440
+quando y é zero, w vale x;
+quando y chega em um menos x,
+
+144
+00:08:38,480 --> 00:08:42,540
+w vale um. O produto feio vira
+uma integral em w bem simples,
+
+145
+00:08:42,580 --> 00:08:46,740
+w vezes um menos w. Aplica os
+limites, primeiro o de cima,
+
+146
+00:08:46,780 --> 00:08:51,860
+menos o de baixo, e sobra um sexto menos
+x ao quadrado sobre dois mais x ao cubo
+
+147
+00:08:51,900 --> 00:08:56,840
+sobre três. E a de fora, em x, de zero
+a um: o primeiro termo e o segundo se
+
+148
+00:08:56,880 --> 00:08:59,220
+cancelam, e sobra um doze avos.
+
+149
+00:08:59,260 --> 00:09:01,870
+A massa do tetraedro é um doze avos.
+
+150
+00:09:01,980 --> 00:09:05,200
+Dá para conferir esse um doze
+avos sem fazer integral nenhuma,
+
+151
+00:09:05,240 --> 00:09:09,280
+com a mesma ideia do cubo. No cubo,
+a densidade no centro vezes o volume
+
+152
+00:09:09,320 --> 00:09:13,680
+acertou. Aqui, o centro certo é o
+centroide, o centro geométrico do
+
+153
+00:09:13,720 --> 00:09:16,600
+tetraedro, e ele é a
+média dos quatro vértices:
+
+154
+00:09:16,640 --> 00:09:18,880
+um quarto, um quarto, um quarto.
+
+155
+00:09:18,920 --> 00:09:22,190
+A densidade no centroide é
+um quarto mais um quarto,
+
+156
+00:09:22,260 --> 00:09:26,320
+meio. O volume do tetraedro é
+um terço da base vezes a altura:
+
+157
+00:09:26,360 --> 00:09:29,400
+a base é o triângulo de
+catetos um, área meio,
+
+158
+00:09:29,440 --> 00:09:33,580
+e a altura é um. Um sexto.
+Multiplica: meio vezes um sexto,
+
+159
+00:09:33,620 --> 00:09:36,340
+um doze avos. Confere. Por que funciona?
+
+160
+00:09:36,380 --> 00:09:40,880
+Para uma densidade linear, cada pedaço da
+integral é uma constante vezes a integral
+
+161
+00:09:40,920 --> 00:09:45,580
+de x, de y ou de z, e cada uma delas
+é o volume vezes a coordenada do
+
+162
+00:09:45,620 --> 00:09:50,260
+centroide. Então a massa é o volume
+vezes a densidade calculada no centroide.
+
+163
+00:09:50,300 --> 00:09:53,540
+Mas cuidado: isso só vale
+quando a densidade é linear.
+
+164
+00:09:53,580 --> 00:09:57,760
+Com ρ igual a x ao quadrado,
+a conta de verdade dá um sessenta avos,
+
+165
+00:09:57,800 --> 00:10:00,440
+e o atalho daria um noventa e seis avos.
+
+166
+00:10:00,480 --> 00:10:04,830
+Errado. Fora do linear, o centroide
+não representa a média da densidade.
+
+167
+00:10:04,940 --> 00:10:08,140
+Agora a altura de equilíbrio
+do tetraedro, o z̄.
+
+168
+00:10:08,180 --> 00:10:12,000
+O momento em relação ao chão é a
+integral de z vezes a densidade.
+
+169
+00:10:12,040 --> 00:10:15,540
+A de dentro de novo é em
+z: x mais y é constante,
+
+170
+00:10:15,580 --> 00:10:18,560
+e a primitiva de z é z
+ao quadrado sobre dois.
+
+171
+00:10:18,600 --> 00:10:22,940
+Fica x mais y, vezes um
+menos x menos y ao quadrado,
+
+172
+00:10:22,980 --> 00:10:26,750
+sobre dois. Com a mesma troca
+de letra, w igual a x mais y,
+
+173
+00:10:26,960 --> 00:10:30,260
+sobra uma integral dupla em
+x e w. Dá para fazer direto,
+
+174
+00:10:30,300 --> 00:10:33,530
+mas tem um caminho mais curto.
+Olha a região no plano x w:
+
+175
+00:10:33,760 --> 00:10:37,320
+o x vai de zero a um,
+e o w vai de x até um.
+
+176
+00:10:37,360 --> 00:10:39,780
+É o triângulo em que x é menor que w.
+
+177
+00:10:39,820 --> 00:10:42,600
+Se a gente troca a ordem
+e integra primeiro em x,
+
+178
+00:10:42,640 --> 00:10:46,720
+o integrando não depende de x,
+e fica só o comprimento da tira deitada,
+
+179
+00:10:46,760 --> 00:10:51,000
+que é o próprio w. Esse w multiplica o
+que já estava lá e sobra uma integral
+
+180
+00:10:51,040 --> 00:10:55,220
+simples: meio de w ao quadrado
+vezes um menos w ao quadrado.
+
+181
+00:10:55,260 --> 00:10:59,960
+Abre o quadrado: w ao quadrado menos
+dois w ao cubo mais w à quarta.
+
+182
+00:11:00,000 --> 00:11:04,700
+Integra termo a termo, aplica de zero a
+um, e num denominador de trinta sobra um
+
+183
+00:11:04,740 --> 00:11:07,200
+trinta avos. Com a metade
+que estava na frente,
+
+184
+00:11:07,240 --> 00:11:09,400
+o momento é um sessenta avos.
+
+185
+00:11:09,440 --> 00:11:13,100
+Dividindo pela massa,
+um sessenta avos sobre um doze avos:
+
+186
+00:11:13,140 --> 00:11:16,840
+um quinto. Faz sentido?
+O centroide está na altura um quarto,
+
+187
+00:11:16,880 --> 00:11:19,360
+e o centro de massa ficou
+abaixo do centroide,
+
+188
+00:11:19,400 --> 00:11:22,520
+em um quinto. Claro:
+lá em cima, perto da ponta,
+
+189
+00:11:22,560 --> 00:11:25,960
+x e y são quase zero,
+a densidade quase some.
+
+190
+00:11:26,000 --> 00:11:28,740
+A ponta de cima é leve,
+e o equilíbrio desce.
+
+191
+00:11:28,780 --> 00:11:31,510
+Terceiro exercício: um cone de sorvete.
+
+192
+00:11:31,620 --> 00:11:36,160
+Vértice na origem, abrindo para
+cima, altura h e raio R na tampa,
+
+193
+00:11:36,200 --> 00:11:40,760
+material uniforme. A parede do cone é onde
+a distância ao eixo cresce na proporção
+
+194
+00:11:40,800 --> 00:11:44,670
+da altura: s sobre R igual
+a z sobre h, ou seja,
+
+195
+00:11:44,740 --> 00:11:47,340
+z igual a h sobre R vezes s.
+
+196
+00:11:47,380 --> 00:11:50,620
+Por dentro do cone, z fica
+entre a parede e a tampa.
+
+197
+00:11:50,660 --> 00:11:53,740
+E a sombra é o disco de
+raio R. Segunda pergunta:
+
+198
+00:11:53,780 --> 00:11:56,740
+qual sistema? Corpo
+redondo em volta do eixo z,
+
+199
+00:11:56,780 --> 00:11:59,740
+densidade que não depende
+do ângulo: cilíndricas,
+
+200
+00:11:59,780 --> 00:12:03,540
+com o fator s. A sonda entra
+na parede e sai na tampa,
+
+201
+00:12:03,580 --> 00:12:07,250
+então o comprimento dela
+é h menos h s sobre R.
+
+202
+00:12:07,340 --> 00:12:12,180
+Vezes o s do fator, sobra h
+s menos h sobre R vezes s ao
+
+203
+00:12:12,220 --> 00:12:16,660
+quadrado. Agora em s, de zero a
+R: integra, aplica os limites,
+
+204
+00:12:16,700 --> 00:12:21,820
+e meio menos um terço dá um sexto. E a
+volta inteira em θ multiplica por dois π:
+
+205
+00:12:21,860 --> 00:12:24,140
+π R ao quadrado h sobre três.
+
+206
+00:12:24,180 --> 00:12:27,020
+O famoso um terço do
+cilindro, saindo da conta,
+
+207
+00:12:27,060 --> 00:12:29,680
+sem decorar nada. E onde o cone equilibra?
+
+208
+00:12:29,720 --> 00:12:33,380
+A massa do cone está quase toda
+lá em cima, perto da tampa larga,
+
+209
+00:12:33,420 --> 00:12:35,980
+então o equilíbrio tem
+que ficar acima da metade.
+
+210
+00:12:36,020 --> 00:12:40,960
+Com a densidade constante, o k cancela,
+e o z̄ é a integral de z dividida pelo
+
+211
+00:12:41,000 --> 00:12:44,480
+volume. A mesma montagem,
+só com um z a mais no integrando.
+
+212
+00:12:44,520 --> 00:12:49,380
+A primitiva de z é z ao quadrado sobre
+dois, aplicada da parede até a tampa,
+
+213
+00:12:49,420 --> 00:12:51,760
+e o s do fator fica parado na frente.
+
+214
+00:12:51,800 --> 00:12:56,100
+Em s, de zero a R: um quarto
+menos um oitavo, um oitavo.
+
+215
+00:12:56,140 --> 00:13:00,460
+Vezes dois π, sobra π R ao quadrado
+h ao quadrado sobre quatro.
+
+216
+00:13:00,500 --> 00:13:03,820
+Agora divide pelo volume:
+os π R ao quadrado cancelam,
+
+217
+00:13:03,860 --> 00:13:08,140
+um h cancela, e um quarto dividido
+por um terço dá três quartos.
+
+218
+00:13:08,180 --> 00:13:10,940
+Três quartos da altura, medido do vértice.
+
+219
+00:13:10,980 --> 00:13:15,360
+Ou, do jeito que costuma cair em prova:
+o centro de massa do cone fica a um quarto
+
+220
+00:13:15,400 --> 00:13:19,660
+da altura, medido a partir da tampa.
+E quanto custa girar o cone em volta do
+
+221
+00:13:19,700 --> 00:13:22,540
+eixo? Momento de inércia:
+a distância ao eixo,
+
+222
+00:13:22,580 --> 00:13:25,160
+ao quadrado, vezes a massa de cada pedaço.
+
+223
+00:13:25,200 --> 00:13:28,980
+A distância ao eixo é o próprio
+s, então entra s ao quadrado,
+
+224
+00:13:29,020 --> 00:13:31,320
+vezes o s do fator: s ao cubo.
+
+225
+00:13:31,360 --> 00:13:35,880
+Repara no que essa casca está mostrando:
+todos os pedaços dessa casca fina estão à
+
+226
+00:13:35,920 --> 00:13:40,120
+mesma distância do eixo, e o tamanho
+dela é o comprimento da sonda.
+
+227
+00:13:40,160 --> 00:13:44,180
+A de dentro, em z, dá s ao
+cubo vezes esse comprimento.
+
+228
+00:13:44,220 --> 00:13:47,700
+Em s, um quarto menos um
+quinto: um vinte avos.
+
+229
+00:13:47,740 --> 00:13:52,360
+Vezes k e vezes dois π:
+π k R à quarta h sobre dez.
+
+230
+00:13:52,400 --> 00:13:55,500
+Para escrever com a massa,
+que é k vezes o volume,
+
+231
+00:13:55,540 --> 00:13:58,300
+π k R ao quadrado h sobre três.
+
+232
+00:13:58,340 --> 00:14:02,460
+Dividindo um pelo outro, sobra
+três décimos de M R ao quadrado.
+
+233
+00:14:02,500 --> 00:14:05,020
+Compara com o cilindro, que custa metade.
+
+234
+00:14:05,060 --> 00:14:07,700
+O cone custa três décimos: menos.
+
+235
+00:14:07,740 --> 00:14:10,940
+Faz sentido, porque o cone
+tem pouca massa longe do eixo:
+
+236
+00:14:10,980 --> 00:14:15,720
+a borda larga só existe lá em cima,
+e embaixo tudo se aperta perto da ponta.
+
+237
+00:14:15,760 --> 00:14:19,660
+Agora a conferência por outro caminho:
+o mesmo volume nas esféricas.
+
+238
+00:14:19,700 --> 00:14:23,560
+Do ponto de vista do vértice,
+o cone é um conjunto de direções:
+
+239
+00:14:23,600 --> 00:14:27,380
+todas as que fazem com o eixo
+z um ângulo φ menor que α,
+
+240
+00:14:27,420 --> 00:14:30,120
+em que a tangente de α é R sobre h.
+
+241
+00:14:30,160 --> 00:14:33,410
+E cada direção vai até
+onde o raio sai pela tampa:
+
+242
+00:14:33,560 --> 00:14:38,560
+r cosseno de φ é a altura, h,
+então r vai até h sobre cosseno
+
+243
+00:14:38,600 --> 00:14:41,500
+de φ. Repara que o limite
+de r não é um número:
+
+244
+00:14:41,540 --> 00:14:44,750
+depende de φ, porque a
+tampa é reta e a bola não é.
+
+245
+00:14:44,800 --> 00:14:48,180
+Monta a integral com o fator
+r ao quadrado seno de φ.
+
+246
+00:14:48,220 --> 00:14:53,340
+A de dentro, em r, dá r ao cubo
+sobre três, e sobra h ao cubo sobre
+
+247
+00:14:53,380 --> 00:14:57,360
+três cosseno ao cubo de φ.
+Agora em φ, com uma substituição:
+
+248
+00:14:57,400 --> 00:15:01,640
+u igual a cosseno de φ,
+du é menos seno de φ dφ,
+
+249
+00:15:01,680 --> 00:15:04,440
+e os limites vão de um até cosseno de α.
+
+250
+00:15:04,480 --> 00:15:08,260
+O seno some com o du, e a
+integral vira uma potência de u,
+
+251
+00:15:08,300 --> 00:15:12,790
+menos u à menos três. A primitiva
+é u à menos dois sobre dois.
+
+252
+00:15:12,840 --> 00:15:16,820
+Aplicando os limites, aparece um
+sobre cosseno ao quadrado menos um,
+
+253
+00:15:16,860 --> 00:15:21,240
+e isso é a tangente ao quadrado de α,
+aquela identidade da trigonometria.
+
+254
+00:15:21,280 --> 00:15:23,670
+E a tangente de α é R sobre h.
+
+255
+00:15:23,800 --> 00:15:27,890
+Os h se simplificam e sobra
+h R ao quadrado sobre seis.
+
+256
+00:15:27,960 --> 00:15:32,700
+Vezes dois π: o mesmo número.
+E repara que o h R ao quadrado sobre seis
+
+257
+00:15:32,740 --> 00:15:37,380
+apareceu nos dois caminhos: nas duas
+contas, ele é o volume de uma fatia de um
+
+258
+00:15:37,420 --> 00:15:41,090
+radiano em θ. Sistemas
+diferentes, a mesma fatia.
+
+259
+00:15:41,140 --> 00:15:46,220
+Quarto exercício: uma meia bola,
+raio R, apoiada no chão pela face plana,
+
+260
+00:15:46,260 --> 00:15:48,590
+material uniforme. Onde ela equilibra?
+
+261
+00:15:48,680 --> 00:15:52,000
+Aqui a escolha é fácil: corpo
+redondo em volta de um ponto,
+
+262
+00:15:52,040 --> 00:15:56,210
+esféricas. E os limites são
+todos números: r de zero a R,
+
+263
+00:15:56,340 --> 00:15:59,780
+φ de zero a π sobre dois,
+porque é só a metade de cima,
+
+264
+00:15:59,820 --> 00:16:02,540
+e θ a volta inteira. A massa primeiro.
+
+265
+00:16:02,580 --> 00:16:05,500
+Como os limites são números
+e o integrando é um produto,
+
+266
+00:16:05,540 --> 00:16:08,020
+cada letra separa numa integral simples.
+
+267
+00:16:08,060 --> 00:16:12,180
+O de φ é menos cosseno de φ,
+de zero a π sobre dois,
+
+268
+00:16:12,220 --> 00:16:16,240
+que dá um. Então a massa é
+dois terços de π k R ao cubo:
+
+269
+00:16:16,280 --> 00:16:20,280
+metade da bola, como tinha que
+ser. A altura, nas esféricas,
+
+270
+00:16:20,320 --> 00:16:25,060
+é r cosseno de φ, e o momento em relação
+ao chão é a integral dessa altura
+
+271
+00:16:25,100 --> 00:16:28,740
+vezes a massa de cada pedaço.
+De novo, cada letra separa:
+
+272
+00:16:28,780 --> 00:16:33,700
+o r ao cubo vira R à quarta sobre
+quatro, e o de φ é a integral do seno
+
+273
+00:16:33,740 --> 00:16:38,480
+vezes o cosseno. Esse sai de cabeça: a
+derivada de seno ao quadrado é duas vezes
+
+274
+00:16:38,520 --> 00:16:42,660
+seno vezes cosseno, então a primitiva
+é seno ao quadrado sobre dois,
+
+275
+00:16:42,700 --> 00:16:47,480
+e de zero a π sobre dois dá meio.
+Juntando, o momento é π k R à quarta
+
+276
+00:16:47,520 --> 00:16:51,580
+sobre quatro. E dividindo pela massa:
+um quarto sobre dois terços,
+
+277
+00:16:51,620 --> 00:16:56,680
+três oitavos de R. O centro de massa da
+meia bola uniforme fica a três oitavos do
+
+278
+00:16:56,720 --> 00:17:01,310
+raio, acima do chão. Abaixo da metade,
+porque a parte larga está embaixo.
+
+279
+00:17:01,360 --> 00:17:03,900
+Agora a conferência,
+sem esféricas nenhuma.
+
+280
+00:17:03,940 --> 00:17:07,640
+A redução também funciona fatiando:
+em vez de uma sonda em pé,
+
+281
+00:17:07,680 --> 00:17:11,960
+a gente corta o corpo em fatias
+horizontais, faz a integral dupla de cada
+
+282
+00:17:12,000 --> 00:17:14,460
+fatia e depois soma as fatias em z.
+
+283
+00:17:14,500 --> 00:17:18,420
+Vamos fatiar a meia bola.
+Na altura z, a fatia é um disco,
+
+284
+00:17:18,460 --> 00:17:23,059
+e o raio dele sai pelo teorema de
+Pitágoras: raiz de R ao quadrado menos z
+
+285
+00:17:23,099 --> 00:17:27,660
+ao quadrado. Então a área da fatia
+é π vezes R ao quadrado menos z ao
+
+286
+00:17:27,700 --> 00:17:32,780
+quadrado. E aqui está o truque: a integral
+dupla de cada fatia é só a área dela,
+
+287
+00:17:32,820 --> 00:17:35,120
+porque o z é o mesmo na fatia inteira.
+
+288
+00:17:35,160 --> 00:17:38,460
+O momento vira uma integral
+simples de z vezes a área.
+
+289
+00:17:38,500 --> 00:17:41,960
+Um polinômio simples:
+integra, aplica de zero a R,
+
+290
+00:17:42,000 --> 00:17:44,220
+e dá π R à quarta sobre quatro.
+
+291
+00:17:44,260 --> 00:17:48,480
+Igual. O volume sai igual também,
+dois terços de π R ao cubo.
+
+292
+00:17:48,520 --> 00:17:50,940
+E o z̄ dá três oitavos de novo.
+
+293
+00:17:50,980 --> 00:17:55,760
+Duas reduções diferentes, esféricas e
+fatias, o mesmo ponto de equilíbrio.
+
+294
+00:17:55,800 --> 00:17:59,620
+E se a meia bola fosse feita de um
+material que fica mais densa conforme se
+
+295
+00:17:59,660 --> 00:18:02,840
+afasta do centro, com ρ igual a k vezes r?
+
+296
+00:18:02,880 --> 00:18:05,860
+O ponto de equilíbrio
+sobe, desce, ou fica?
+
+297
+00:18:05,900 --> 00:18:10,640
+A massa ganha um r a mais no integrando:
+o r ao cubo vira r à quarta sobre
+
+298
+00:18:10,680 --> 00:18:15,240
+quatro, e o resto é igual, então a
+massa é π k R à quarta sobre dois.
+
+299
+00:18:15,280 --> 00:18:20,100
+E o momento ganha o mesmo r: r à
+quarta vira R à quinta sobre cinco,
+
+300
+00:18:20,140 --> 00:18:23,300
+e o de φ continua meio.
+Dividindo um pelo outro,
+
+301
+00:18:23,340 --> 00:18:26,730
+os π k se cancelam,
+e sobra dois quintos de R.
+
+302
+00:18:27,020 --> 00:18:31,900
+Subiu: de zero vírgula trezentos e
+setenta e cinco para zero vírgula quatro.
+
+303
+00:18:31,940 --> 00:18:35,220
+Por quê? Porque a densidade
+agora pesa a casca de fora,
+
+304
+00:18:35,260 --> 00:18:38,100
+e a casca, em média,
+está mais alta que o miolo,
+
+305
+00:18:38,140 --> 00:18:41,360
+que fica todo perto do chão.
+Vale até conferir o caso extremo:
+
+306
+00:18:41,400 --> 00:18:44,700
+se toda a massa morasse na
+casca, a meia esfera oca,
+
+307
+00:18:44,740 --> 00:18:46,940
+o equilíbrio iria para a metade do raio.
+
+308
+00:18:46,980 --> 00:18:51,050
+Três oitavos, dois quintos,
+meio: a ordem faz sentido.
+
+309
+00:18:51,140 --> 00:18:53,340
+Agora sim, a lata na dobradiça.
+
+310
+00:18:53,380 --> 00:18:57,800
+Primeiro, um truque de montagem: escolhe
+os eixos de um jeito que a reta da parede
+
+311
+00:18:57,840 --> 00:19:02,880
+vira o eixo z. A lata escorrega para o
+lado: o centro dela vai para x igual a R,
+
+312
+00:19:02,920 --> 00:19:06,720
+em cima do eixo x, e o círculo
+da base passa pela origem.
+
+313
+00:19:06,760 --> 00:19:11,420
+Assim, o momento de inércia em volta da
+dobradiça é o I em relação ao eixo z,
+
+314
+00:19:11,460 --> 00:19:16,200
+com a distância até o eixo z ao quadrado:
+x ao quadrado mais y ao quadrado.
+
+315
+00:19:16,240 --> 00:19:19,980
+E qual sistema? A lata é redonda
+em volta do próprio centro,
+
+316
+00:19:20,020 --> 00:19:24,150
+não da origem. Então a gente põe o
+polo das cilíndricas no centro da lata:
+
+317
+00:19:24,200 --> 00:19:29,080
+x é R mais s cosseno de θ,
+y é s seno de θ, e o z
+
+318
+00:19:29,120 --> 00:19:31,900
+fica. É só uma translação
+seguida das polares,
+
+319
+00:19:31,940 --> 00:19:34,180
+então o fator do volume continua s.
+
+320
+00:19:34,220 --> 00:19:37,800
+Só cuidado: esse s mede a
+distância até o centro da lata,
+
+321
+00:19:37,840 --> 00:19:42,580
+não até a dobradiça. O quadrado da
+distância até o eixo z fica R mais s
+
+322
+00:19:42,620 --> 00:19:45,720
+cosseno, ao quadrado,
+mais s seno ao quadrado.
+
+323
+00:19:45,760 --> 00:19:50,520
+Abre os quadrados: aparece R ao
+quadrado, um termo cruzado dois R s
+
+324
+00:19:50,560 --> 00:19:54,280
+cosseno de θ, e o cosseno ao
+quadrado mais o seno ao quadrado,
+
+325
+00:19:54,320 --> 00:19:59,260
+que juntos dão um. Sobra R ao quadrado,
+mais dois R s cosseno de θ,
+
+326
+00:19:59,300 --> 00:20:02,570
+mais s ao quadrado. Guarda
+bem esses três pedaços.
+
+327
+00:20:02,620 --> 00:20:05,680
+Agora a integral separa em
+cada um dos três pedaços,
+
+328
+00:20:05,720 --> 00:20:09,840
+e cada pedaço conta uma história.
+O primeiro pedaço é R ao quadrado,
+
+329
+00:20:09,880 --> 00:20:14,740
+uma constante, vezes a integral de s:
+isso é R ao quadrado vezes a massa da
+
+330
+00:20:14,780 --> 00:20:19,520
+lata. É como se toda a massa estivesse
+concentrada a uma distância R do eixo,
+
+331
+00:20:19,560 --> 00:20:22,040
+que é exatamente onde
+fica o centro da lata.
+
+332
+00:20:22,080 --> 00:20:25,290
+O segundo tem o cosseno
+de θ, numa volta inteira:
+
+333
+00:20:25,400 --> 00:20:30,080
+zero. É a mesma simetria do centro de
+massa: para cada pedaço do lado de cá do
+
+334
+00:20:30,120 --> 00:20:33,780
+centro, tem um gêmeo do lado de lá,
+com o cosseno trocado de sinal,
+
+335
+00:20:33,820 --> 00:20:38,430
+e os dois se cancelam. E o terceiro
+é s ao quadrado vezes o s do fator:
+
+336
+00:20:38,560 --> 00:20:41,400
+s ao cubo, e essa integral
+a gente conhece de cor.
+
+337
+00:20:41,440 --> 00:20:44,760
+É o momento de inércia da lata
+girando pelo próprio centro:
+
+338
+00:20:44,800 --> 00:20:49,040
+metade de M R ao quadrado.
+Somando: M R ao quadrado,
+
+339
+00:20:49,080 --> 00:20:51,740
+mais zero, mais meio M R ao quadrado.
+
+340
+00:20:51,780 --> 00:20:54,040
+Três meios de M R ao quadrado.
+
+341
+00:20:54,080 --> 00:20:58,460
+Respondendo a pergunta do começo: girar
+pela dobradiça custa o triplo de girar
+
+342
+00:20:58,500 --> 00:21:02,220
+pelo centro. E a conferência?
+Desta vez com o polo na origem,
+
+343
+00:21:02,260 --> 00:21:05,820
+na dobradiça. Aí a distância
+ao eixo z é o próprio s,
+
+344
+00:21:05,860 --> 00:21:09,340
+mas a lata fica torta nas coordenadas.
+Desenvolvendo o círculo,
+
+345
+00:21:09,380 --> 00:21:13,980
+x ao quadrado mais y ao quadrado
+fica menor ou igual a dois R x.
+
+346
+00:21:14,020 --> 00:21:18,860
+Em polares, o círculo vira s menor
+ou igual a dois R cosseno de θ,
+
+347
+00:21:18,900 --> 00:21:23,500
+com θ de menos π sobre dois a π sobre
+dois, que é onde o cosseno é positivo.
+
+348
+00:21:23,540 --> 00:21:27,420
+Cada raio que sai da dobradiça
+atravessa a lata e sai na borda,
+
+349
+00:21:27,460 --> 00:21:31,380
+nessa distância. Então a integral
+fica s ao quadrado vezes s,
+
+350
+00:21:31,420 --> 00:21:33,640
+com um limite de s que depende de θ.
+
+351
+00:21:33,680 --> 00:21:37,420
+A de dentro em s dá a quarta
+potência de dois R cosseno,
+
+352
+00:21:37,460 --> 00:21:41,240
+sobre quatro: quatro R à quarta,
+cosseno à quarta de θ.
+
+353
+00:21:41,280 --> 00:21:44,460
+E agora o trabalho de
+trigonometria: baixar a potência.
+
+354
+00:21:44,500 --> 00:21:47,580
+Cosseno ao quadrado é um
+mais cosseno de dois θ,
+
+355
+00:21:47,620 --> 00:21:51,980
+sobre dois. Eleva ao quadrado,
+aparece um cosseno ao quadrado de dois θ,
+
+356
+00:21:52,020 --> 00:21:55,220
+e usa a mesma identidade de
+novo no cosseno de dois θ.
+
+357
+00:21:55,260 --> 00:21:58,640
+Sobra três oitavos, mais
+meio cosseno de dois θ,
+
+358
+00:21:58,680 --> 00:22:01,240
+mais um oitavo de cosseno de quatro θ.
+
+359
+00:22:01,280 --> 00:22:04,480
+Nos limites, os senos de
+π e de dois π são zero,
+
+360
+00:22:04,520 --> 00:22:08,251
+e sobra só três π sobre
+oito. Juntando tudo: k h,
+
+361
+00:22:08,400 --> 00:22:11,080
+quatro R à quarta, três π sobre oito.
+
+362
+00:22:11,120 --> 00:22:13,360
+Três meios de M R ao quadrado.
+
+363
+00:22:13,400 --> 00:22:16,700
+O mesmo número, por um caminho
+completamente diferente.
+
+364
+00:22:16,740 --> 00:22:20,280
+O que aconteceu na lata não foi
+sorte: vale para qualquer corpo.
+
+365
+00:22:20,320 --> 00:22:23,760
+Pega um corpo qualquer, e coloca
+a origem no centro de massa dele,
+
+366
+00:22:23,800 --> 00:22:26,520
+então x̄ e ȳ são zero.
+
+367
+00:22:26,560 --> 00:22:30,900
+Agora escolhe um eixo paralelo ao eixo
+z, passando pelo ponto x igual a d,
+
+368
+00:22:30,940 --> 00:22:33,920
+no eixo x, a uma distância
+d do centro de massa.
+
+369
+00:22:33,960 --> 00:22:38,280
+O momento de inércia em volta desse eixo
+novo é a integral do quadrado da distância
+
+370
+00:22:38,320 --> 00:22:43,180
+até ele, vezes dm. Abre o quadrado:
+x ao quadrado mais y ao quadrado,
+
+371
+00:22:43,220 --> 00:22:45,800
+menos dois d x, mais d ao quadrado.
+
+372
+00:22:45,840 --> 00:22:49,320
+A integral separa em três
+integrais, e cada uma tem nome.
+
+373
+00:22:49,360 --> 00:22:52,720
+A primeira é o momento de
+inércia pelo centro de massa.
+
+374
+00:22:52,760 --> 00:22:57,680
+A segunda é dois d vezes o
+momento, que é M vezes x̄.
+
+375
+00:22:57,720 --> 00:23:00,640
+A terceira é d ao quadrado vezes a massa.
+
+376
+00:23:00,680 --> 00:23:04,000
+E como o centro de massa
+está na origem, x̄ é zero,
+
+377
+00:23:04,040 --> 00:23:08,860
+e o termo do meio morre: I é igual
+a I pelo centro de massa mais M d ao
+
+378
+00:23:08,900 --> 00:23:12,120
+quadrado. Esse é o teorema
+dos eixos paralelos,
+
+379
+00:23:12,160 --> 00:23:15,020
+o teorema de Steiner.
+E ele diz mais uma coisa:
+
+380
+00:23:15,060 --> 00:23:19,600
+como M d ao quadrado nunca é negativo,
+entre todos os eixos paralelos,
+
+381
+00:23:19,640 --> 00:23:22,490
+o mais barato é o que
+passa pelo centro de massa.
+
+382
+00:23:22,560 --> 00:23:26,240
+Agora o atalho em ação.
+Um cubo de aresta L, uniforme,
+
+383
+00:23:26,280 --> 00:23:29,580
+girando em volta de uma das
+arestas. Pelo centro primeiro:
+
+384
+00:23:29,620 --> 00:23:34,400
+com o cubo centrado na origem, o I pelo
+centro é a integral de x ao quadrado mais
+
+385
+00:23:34,440 --> 00:23:37,880
+y ao quadrado. A integral de
+x ao quadrado, numa caixa,
+
+386
+00:23:37,920 --> 00:23:42,000
+separa: a primitiva de x ao
+quadrado é x ao cubo sobre três,
+
+387
+00:23:42,040 --> 00:23:46,980
+de menos L sobre dois até L sobre
+dois, e as duas metades somam L ao
+
+388
+00:23:47,020 --> 00:23:51,570
+cubo sobre doze; vezes a área L ao
+quadrado das outras duas letras,
+
+389
+00:23:51,680 --> 00:23:54,960
+L à quinta sobre doze.
+O y ao quadrado dá o mesmo,
+
+390
+00:23:55,000 --> 00:23:59,070
+e somando, com o k na frente:
+M L ao quadrado sobre seis.
+
+391
+00:23:59,120 --> 00:24:01,940
+Agora a distância entre o
+eixo central e a aresta,
+
+392
+00:24:01,980 --> 00:24:04,850
+olhando de cima: é a meia
+diagonal do quadrado,
+
+393
+00:24:05,040 --> 00:24:09,130
+L sobre raiz de dois. Ao quadrado,
+L ao quadrado sobre dois.
+
+394
+00:24:09,260 --> 00:24:14,200
+Steiner: um sexto mais um meio, que
+num denominador de seis é um sexto mais
+
+395
+00:24:14,240 --> 00:24:18,780
+três sextos: quatro sextos,
+dois terços de M L ao quadrado.
+
+396
+00:24:18,820 --> 00:24:22,200
+E dá para conferir sem atalho:
+com o cubo encostado na aresta,
+
+397
+00:24:22,240 --> 00:24:25,960
+a integral direta dá L à
+quinta sobre três duas vezes.
+
+398
+00:24:26,000 --> 00:24:30,700
+Dois terços. Confere. Mais uma de uma
+linha: uma bola girando em volta de uma
+
+399
+00:24:30,740 --> 00:24:34,080
+reta que encosta nela.
+Se a bola é maciça e uniforme,
+
+400
+00:24:34,120 --> 00:24:37,380
+pelo centro são dois
+quintos de M R ao quadrado;
+
+401
+00:24:37,420 --> 00:24:42,200
+a distância até a reta é R;
+então soma M R ao quadrado e dá sete
+
+402
+00:24:42,240 --> 00:24:46,980
+quintos. Esse sete quintos aparece toda
+vez que uma bola rola sem escorregar,
+
+403
+00:24:47,020 --> 00:24:50,320
+porque o ponto de contato com
+o chão é, a cada instante,
+
+404
+00:24:50,360 --> 00:24:54,150
+o eixo do giro. Agora o erro
+clássico, e ele cai muito.
+
+405
+00:24:54,220 --> 00:24:58,340
+A lata girando pela parede custa
+três meios de M R ao quadrado.
+
+406
+00:24:58,380 --> 00:25:03,160
+E pela parede do lado oposto? A tentação
+é somar M vezes a distância entre as
+
+407
+00:25:03,200 --> 00:25:07,010
+duas paredes, dois R,
+ao quadrado: daria onze meios.
+
+408
+00:25:07,060 --> 00:25:11,760
+Dá errado, porque o Steiner só liga um
+eixo qualquer ao eixo do centro de massa,
+
+409
+00:25:11,800 --> 00:25:14,740
+e o eixo da parede não
+passa pelo centro de massa.
+
+410
+00:25:14,780 --> 00:25:18,400
+O jeito certo é em dois passos:
+volta primeiro ao centro,
+
+411
+00:25:18,440 --> 00:25:22,580
+tirando M R ao quadrado,
+e sobra metade de M R ao quadrado;
+
+412
+00:25:22,620 --> 00:25:26,940
+e depois vai até a outra parede,
+somando M R ao quadrado de novo.
+
+413
+00:25:26,980 --> 00:25:31,060
+Três meios, igualzinho à primeira
+parede, como a simetria já mandava.
+
+414
+00:25:31,100 --> 00:25:34,730
+A regra: o Steiner sempre
+passa pelo centro de massa.
+
+415
+00:25:34,820 --> 00:25:39,040
+Para fechar, a receita mais uma vez,
+agora com o que a gente fez hoje:
+
+416
+00:25:39,080 --> 00:25:43,960
+a sombra do tetraedro, o fator s no
+cone e o r ao quadrado seno de φ na
+
+417
+00:25:44,000 --> 00:25:46,740
+meia bola, a sonda que
+sai no plano inclinado,
+
+418
+00:25:46,780 --> 00:25:49,030
+e uma conferência em todo exercício.
+
+419
+00:25:49,080 --> 00:25:51,840
+E os cinco erros que mais
+derrubam gente em prova.
+
+420
+00:25:51,880 --> 00:25:54,360
+O primeiro: esquecer o fator do volume.
+
+421
+00:25:54,400 --> 00:25:57,660
+O segundo: usar a distância
+errada no momento de inércia,
+
+422
+00:25:57,700 --> 00:26:00,980
+a distância até a origem no
+lugar da distância até o eixo.
+
+423
+00:26:01,020 --> 00:26:04,980
+O terceiro: usar o chute do centro
+quando a densidade não é linear.
+
+424
+00:26:05,020 --> 00:26:09,860
+O quarto: aplicar o Steiner entre dois
+eixos que não passam pelo centro de massa.
+
+425
+00:26:09,900 --> 00:26:14,500
+E o quinto: achar que a tampa,
+a parede ou a costura mudam a integral.
+
+426
+00:26:14,540 --> 00:26:18,860
+Não mudam: têm volume zero. Até
+aqui, a massa morava num volume,
+
+427
+00:26:18,900 --> 00:26:22,340
+e a integral tripla somava
+pedaço por pedaço de um corpo.
+
+428
+00:26:22,380 --> 00:26:25,420
+Agora imagina uma hélice
+enrolada na parede da lata,
+
+429
+00:26:25,460 --> 00:26:29,240
+como a mola de um caderno. Nas
+cilíndricas, ela é a coisa mais simples do
+
+430
+00:26:29,280 --> 00:26:33,600
+mundo: s fica parado em R,
+θ cresce, e z sobe junto.
+
+431
+00:26:33,640 --> 00:26:36,980
+Agora põe uma conta de colar
+escorregando por essa hélice,
+
+432
+00:26:37,020 --> 00:26:39,400
+e uma força empurrando
+a conta pelo caminho.
+
+433
+00:26:39,440 --> 00:26:41,860
+Quanto trabalho essa força faz numa volta?
+
+434
+00:26:41,900 --> 00:26:45,580
+Aí a soma não é mais sobre um
+volume, é ao longo de uma curva.
+
+435
+00:26:45,620 --> 00:26:50,180
+No próximo vídeo: integrais de linha,
+o campo somado ao longo da curva.
+
+436
+00:26:50,220 --> 00:26:54,540
+E fica um desafio para os comentários:
+quanto custa girar o cone de sorvete em
+
+437
+00:26:54,580 --> 00:26:57,500
+volta de um diâmetro da
+tampa? Dica: o Steiner,
+
+438
+00:26:57,540 --> 00:27:00,460
+com o centro de massa do cone.
+Deixa nos comentários,
+
+439
+00:27:00,500 --> 00:27:03,550
+curte o vídeo e se inscreve
+no canal. Até o próximo!

@@ -2,7 +2,7 @@
 
 - id: vid_0023
 - formato: curto_vertical
-- Série pública: **EXERCÍCIO RESOLVIDO · EP. 7** (confirmado pelo usuário; aplicar a tag "EP. 7" no render final)
+- Série pública: **EXERCÍCIO RESOLVIDO · EP. 8** (renumerado pelo usuário em 17/10/2026; o 0021 passou a ser o EP. 7; o render entregue ainda traz a tag "EP. 7")
 - fase: V5 (preview silencioso 540×960 / 15 fps, 154,5 s) — narração sugerida em `narracao_sugestao_v5.md`; falta voz, legenda, cartão final (@labparallax pequeno em degradê padrão + "siga o Parallax Lab") e render final
 - implementação atual: `cena_v5.py` — `AnguloPuxarCaixa023V5` (V1–V4 preservadas)
 - solido_3d: nenhum

@@ -1,0 +1,1676 @@
+1
+00:00:00,080 --> 00:00:05,040
+Olha esta integral dupla:
+e^ fração x mais y sobre x menos
+
+2
+00:00:05,080 --> 00:00:09,620
+y, em cima deste trapézio. Ela ficou
+de desafio no fim do vídeo passado,
+
+3
+00:00:09,660 --> 00:00:12,640
+e tem um problema: ela
+trava nas duas ordens.
+
+4
+00:00:12,680 --> 00:00:17,420
+Fatia em pé: a integral de dentro, em y,
+pede uma primitiva que não se escreve com
+
+5
+00:00:17,460 --> 00:00:20,460
+as funções do Cálculo I.
+Trava. Fatia deitada:
+
+6
+00:00:20,500 --> 00:00:23,680
+trava também. Os cantos
+do trapézio são um, zero;
+
+7
+00:00:23,720 --> 00:00:26,660
+dois, zero; zero, menos
+dois; e zero, menos um.
+
+8
+00:00:26,700 --> 00:00:29,840
+Agora repara no expoente.
+Ele só enxerga duas coisas:
+
+9
+00:00:29,880 --> 00:00:33,560
+a soma, x mais y, e a
+diferença, x menos y.
+
+10
+00:00:33,600 --> 00:00:37,960
+E as bordas também: duas delas
+são retas de x menos y constante.
+
+11
+00:00:38,000 --> 00:00:40,640
+Então chama a soma de
+u e a diferença de v.
+
+12
+00:00:40,680 --> 00:00:44,620
+As retas de u constante e de v
+constante formam uma grade nova,
+
+13
+00:00:44,660 --> 00:00:48,790
+inclinada, por cima do papel. E,
+nessa grade, o trapézio fica reto:
+
+14
+00:00:48,840 --> 00:00:52,320
+v vai de um a dois,
+e u vai de menos v até v.
+
+15
+00:00:52,360 --> 00:00:55,320
+A conta sai rapidinho. Só que
+aparece um meio na frente,
+
+16
+00:00:55,360 --> 00:00:59,720
+que ninguém chamou. E repara: o trapézio
+tem três quadradinhos da grade nova,
+
+17
+00:00:59,760 --> 00:01:04,440
+contando as duas metades das pontas,
+mas a área dele no papel é três meios.
+
+18
+00:01:04,480 --> 00:01:08,600
+Então cada quadradinho da grade nova
+vale só meio quadradinho do papel?
+
+19
+00:01:08,640 --> 00:01:11,640
+De onde sai esse meio?
+É isso que este vídeo responde.
+
+20
+00:01:11,680 --> 00:01:14,940
+E, no fim, essa integral sai
+inteira, com número e tudo.
+
+21
+00:01:14,980 --> 00:01:18,200
+E esse é o assunto de hoje.
+Quando você troca as variáveis,
+
+22
+00:01:18,240 --> 00:01:21,580
+a grade muda, e cada pedacinho
+de área muda de tamanho.
+
+23
+00:01:21,620 --> 00:01:25,620
+O número que diz quanto ele estica
+ou encolhe se chama jacobiano.
+
+24
+00:01:25,660 --> 00:01:30,520
+E, na integral, dê x dê y vira o
+módulo do jacobiano vezes dê u dê
+
+25
+00:01:30,560 --> 00:01:33,400
+v. E a gente vai descobrir
+de onde sai esse fator,
+
+26
+00:01:33,440 --> 00:01:35,940
+em vez de decorar a
+fórmula. Fala, pessoal!
+
+27
+00:01:35,980 --> 00:01:40,440
+Bem-vindos ao Parallax Lab! Até aqui,
+a gente calculou integrais duplas fatiando
+
+28
+00:01:40,480 --> 00:01:44,300
+em x ou em y. Hoje a gente
+troca as próprias variáveis.
+
+29
+00:01:44,340 --> 00:01:48,340
+Vamos ver a régua esticada do Cálculo
+I, o paralelogramo das transformações
+
+30
+00:01:48,380 --> 00:01:52,580
+lineares, o fator local de área,
+o teorema de mudança de variáveis e,
+
+31
+00:01:52,620 --> 00:01:55,820
+no fim, o trapézio inteiro,
+do começo ao número.
+
+32
+00:01:55,860 --> 00:02:00,120
+Começa onde você já sabe. No Cálculo
+I, a integral de zero a dois de x,
+
+33
+00:02:00,160 --> 00:02:04,040
+dê x, dá dois: a primitiva
+é x ao quadrado sobre dois;
+
+34
+00:02:04,080 --> 00:02:07,100
+em dois, quatro sobre dois; em zero, zero.
+
+35
+00:02:07,140 --> 00:02:10,680
+Dá dois. Agora troca a
+variável: x igual a dois tê.
+
+36
+00:02:10,720 --> 00:02:13,800
+Quando tê vai de zero a um,
+x vai de zero a dois.
+
+37
+00:02:13,840 --> 00:02:16,600
+E o dê x vira dois dê tê. Por quê?
+
+38
+00:02:16,640 --> 00:02:19,560
+Olha as duas réguas.
+A do tê tem comprimento um;
+
+39
+00:02:19,600 --> 00:02:24,360
+a do x, dois. Cada pedacinho
+Δt vira um pedacinho Δx
+
+40
+00:02:24,400 --> 00:02:28,340
+duas vezes maior. Esse dois é o
+fator de comprimento da troca.
+
+41
+00:02:28,380 --> 00:02:32,050
+E a conta confirma: a integral
+de zero a um de dois tê,
+
+42
+00:02:32,120 --> 00:02:35,780
+vezes dois, dê tê, é quatro
+vezes a integral de tê,
+
+43
+00:02:35,820 --> 00:02:39,120
+que é um meio: a primitiva,
+tê ao quadrado sobre dois,
+
+44
+00:02:39,160 --> 00:02:41,580
+de zero a um, dá um meio menos zero.
+
+45
+00:02:41,620 --> 00:02:44,710
+Quatro vezes um meio, dois. O mesmo valor.
+
+46
+00:02:44,760 --> 00:02:48,420
+Quando a troca não é tão
+simples, x igual a gê de tê,
+
+47
+00:02:48,460 --> 00:02:53,280
+o fator muda de lugar para lugar:
+Δx é mais ou menos gê linha de
+
+48
+00:02:53,320 --> 00:02:58,460
+tê vezes Δt. E esse Δx tem sinal;
+o fator de comprimento é o
+
+49
+00:02:58,500 --> 00:03:02,500
+módulo de gê linha. Guarda esse
+sinal: ele volta no determinante.
+
+50
+00:03:02,540 --> 00:03:06,780
+E se o caminho for uma curva? Gama
+de tê é um ponto andando no plano.
+
+51
+00:03:06,820 --> 00:03:10,480
+Num tempinho Δt, ele percorre um arco, Δs.
+
+52
+00:03:10,520 --> 00:03:14,080
+A derivada, gama linha de
+tê, é o vetor velocidade,
+
+53
+00:03:14,120 --> 00:03:19,060
+tangente à curva. Então gama linha
+vezes Δt é uma setinha tangente,
+
+54
+00:03:19,100 --> 00:03:23,480
+e o comprimento dela, a norma
+de gama linha de tê vezes Δt,
+
+55
+00:03:23,520 --> 00:03:27,100
+quase cobre o arco.
+Quanto menor o Δt, melhor.
+
+56
+00:03:27,140 --> 00:03:30,500
+Numa dimensão, o fator é sempre
+o tamanho de uma derivada.
+
+57
+00:03:30,540 --> 00:03:35,040
+E aí vem a pergunta do vídeo: no plano,
+quando um retângulo vira outra figura,
+
+58
+00:03:35,080 --> 00:03:37,980
+qual é o fator de área?
+Vamos dar nome às coisas,
+
+59
+00:03:38,020 --> 00:03:42,900
+como no livro. φ de u, v igual
+a x, y: uma transformação que
+
+60
+00:03:42,940 --> 00:03:47,080
+leva cada ponto do plano u
+v num ponto do plano x y.
+
+61
+00:03:47,120 --> 00:03:51,920
+Ela é de classe cê um num aberto ômega:
+as derivadas parciais existem e são
+
+62
+00:03:51,960 --> 00:03:55,280
+contínuas, como a gente viu
+quando estudou derivadas parciais.
+
+63
+00:03:55,320 --> 00:03:58,280
+Pega um retângulo A,
+de lados paralelos aos eixos,
+
+64
+00:03:58,320 --> 00:04:01,460
+contido em ômega, com lados Δu e Δv.
+
+65
+00:04:01,500 --> 00:04:06,080
+A imagem dele, B igual a φ de A,
+é o conjunto dos pontos φ de u,
+
+66
+00:04:06,120 --> 00:04:09,380
+v com u, v em A. Um ponto vai num ponto.
+
+67
+00:04:09,420 --> 00:04:13,280
+Um lado, Δu, vira uma curva,
+e o lado Δv também.
+
+68
+00:04:13,320 --> 00:04:16,140
+E o retângulo inteiro vira
+um quadrilátero curvo,
+
+69
+00:04:16,180 --> 00:04:18,960
+com cantos M, N, P e Q.
+
+70
+00:04:19,000 --> 00:04:24,160
+A pergunta é: quanto vale a área
+de B quando Δu e Δv são pequenos?
+
+71
+00:04:24,200 --> 00:04:28,910
+Antes da curva, o caso reto.
+φ de u, v igual a dois u mais v,
+
+72
+00:04:28,960 --> 00:04:32,960
+u mais três v. É uma transformação
+linear: retas viram retas,
+
+73
+00:04:33,000 --> 00:04:35,740
+e o quadrado de lado um
+vira um paralelogramo.
+
+74
+00:04:35,780 --> 00:04:40,100
+Para onde vão os lados? O lado
+do u, de zero, zero até um,
+
+75
+00:04:40,140 --> 00:04:43,860
+zero, vai para dois, um.
+O lado do v vai para um,
+
+76
+00:04:43,900 --> 00:04:47,740
+três. Esses dois vetores são
+as colunas da matriz dois,
+
+77
+00:04:47,780 --> 00:04:52,160
+um; um, três. É a matriz jacobiana que
+a gente viu nas derivadas parciais:
+
+78
+00:04:52,200 --> 00:04:55,430
+cada coluna diz para onde
+vai um lado do quadradinho.
+
+79
+00:04:55,480 --> 00:04:59,090
+E a área? Põe o paralelogramo
+numa caixa de três por quatro:
+
+80
+00:04:59,140 --> 00:05:02,890
+área doze. Tira dois triângulos
+de catetos dois e um,
+
+81
+00:05:02,940 --> 00:05:06,800
+um de área cada. Tira dois
+triângulos de catetos um e três,
+
+82
+00:05:06,840 --> 00:05:10,630
+um e meio de área cada. E tira
+dois retangulinhos de um por um.
+
+83
+00:05:10,680 --> 00:05:14,290
+Doze, menos dois, menos
+três, menos dois: cinco.
+
+84
+00:05:14,420 --> 00:05:18,160
+Agora com letras:
+as colunas á, cê e bê, dê.
+
+85
+00:05:18,200 --> 00:05:22,480
+Na posição do desenho, a caixa
+é á mais bê, vezes cê mais dê.
+
+86
+00:05:22,520 --> 00:05:27,300
+Tira duas vezes á cê sobre dois,
+duas vezes bê dê sobre dois e
+
+87
+00:05:27,340 --> 00:05:31,040
+dois bê cê. Abrindo o
+produto: á cê, mais á dê,
+
+88
+00:05:31,080 --> 00:05:35,460
+mais bê cê, mais bê dê. O á
+cê cancela, o bê dê cancela,
+
+89
+00:05:35,500 --> 00:05:38,800
+e bê cê menos dois bê
+cê sobra menos bê cê.
+
+90
+00:05:38,840 --> 00:05:42,410
+Fica ad − bc: o determinante da matriz.
+
+91
+00:05:42,480 --> 00:05:45,530
+Dois vezes três, menos um vezes um: cinco.
+
+92
+00:05:45,580 --> 00:05:48,920
+E, como a transformação é
+linear, toda célula da grade,
+
+93
+00:05:48,960 --> 00:05:53,540
+de lados Δu e Δv, vira um
+paralelogramo de área cinco vezes
+
+94
+00:05:53,580 --> 00:05:57,480
+Δu vezes Δv: a área é
+multiplicada por cinco.
+
+95
+00:05:57,520 --> 00:06:00,960
+E o fator é o mesmo em todo lugar.
+Agora a troca do trapézio,
+
+96
+00:06:01,000 --> 00:06:04,840
+de trás para a frente:
+x igual a u mais v sobre dois,
+
+97
+00:06:04,880 --> 00:06:07,450
+y igual a u menos v sobre dois.
+
+98
+00:06:07,500 --> 00:06:11,780
+As colunas são um meio, um meio,
+e um meio, menos um meio.
+
+99
+00:06:11,820 --> 00:06:16,980
+O determinante: um meio vezes menos
+um meio, menos um meio vezes um meio.
+
+100
+00:06:17,020 --> 00:06:20,070
+Menos um quarto, menos
+um quarto: menos um meio.
+
+101
+00:06:20,140 --> 00:06:24,040
+Área negativa? Não. Anda pelo
+quadrado no sentido anti-horário:
+
+102
+00:06:24,080 --> 00:06:26,780
+primeiro o lado do u, depois o do v.
+
+103
+00:06:26,820 --> 00:06:31,020
+Na imagem, a volta sai no sentido
+horário: o quadrado virou de costas.
+
+104
+00:06:31,060 --> 00:06:33,420
+O sinal conta isso, a orientação.
+
+105
+00:06:33,460 --> 00:06:36,800
+A área é o módulo: um meio.
+É o meio do trapézio,
+
+106
+00:06:36,840 --> 00:06:39,180
+e a primeira parte do desafio está paga.
+
+107
+00:06:39,220 --> 00:06:42,120
+Falta a outra: e quando a
+transformação não é linear,
+
+108
+00:06:42,160 --> 00:06:45,510
+e a grade sai curva? Agora
+uma transformação que entorta:
+
+109
+00:06:45,600 --> 00:06:50,700
+x igual a u ao quadrado menos v
+ao quadrado, e y igual a dois u v,
+
+110
+00:06:50,740 --> 00:06:55,620
+no quadrado de zero a um. A reta u
+igual a um vira a parábola x igual
+
+111
+00:06:55,660 --> 00:06:58,240
+a um menos y ao quadrado sobre quatro.
+
+112
+00:06:58,280 --> 00:07:03,240
+A reta v igual a um vira a parábola
+x igual a y ao quadrado sobre quatro
+
+113
+00:07:03,280 --> 00:07:06,560
+menos um. As células viram
+quadriláteros curvos.
+
+114
+00:07:06,600 --> 00:07:09,980
+E repara no tamanho: perto
+da origem, elas quase somem;
+
+115
+00:07:10,020 --> 00:07:13,400
+lá em cima, elas crescem.
+Aqui não existe um fator só:
+
+116
+00:07:13,440 --> 00:07:17,090
+ele muda de ponto para ponto.
+Então dá zoom numa célula,
+
+117
+00:07:17,140 --> 00:07:22,080
+com canto M em u igual a zero vírgula
+setenta e cinco e v igual a zero vírgula
+
+118
+00:07:22,120 --> 00:07:26,480
+cinco. O lado MN é a curva
+de v constante, andando Δu.
+
+119
+00:07:26,520 --> 00:07:30,680
+Como na curva do começo, ele é quase
+a setinha da derivada parcial de φ em
+
+120
+00:07:30,720 --> 00:07:35,680
+relação a u, vezes Δu. E o lado
+MQ é quase a derivada parcial de φ
+
+121
+00:07:35,720 --> 00:07:40,600
+em relação a v, vezes Δv. Então a
+célula é quase o paralelogramo dessas
+
+122
+00:07:40,640 --> 00:07:44,080
+duas setas. E a área de um
+paralelogramo, lá de vetores,
+
+123
+00:07:44,120 --> 00:07:47,220
+é a norma do produto vetorial.
+Põe as duas setas,
+
+124
+00:07:47,260 --> 00:07:51,700
+já com o Δu e o Δv, no chão do espaço,
+com terceira coordenada zero:
+
+125
+00:07:51,740 --> 00:07:54,820
+o produto vetorial delas
+fica em pé, na direção cá,
+
+126
+00:07:54,860 --> 00:07:57,360
+e a altura dele é a área do paralelogramo.
+
+127
+00:07:57,400 --> 00:08:00,640
+Os deltas são números positivos,
+então saem para fora:
+
+128
+00:08:00,680 --> 00:08:05,480
+a área é Δu vezes Δv vezes a
+norma do produto vetorial das duas
+
+129
+00:08:05,520 --> 00:08:09,460
+derivadas. Agora volta para a vista
+de cima, e calcula essa norma.
+
+130
+00:08:09,500 --> 00:08:14,100
+O produto vetorial é o determinante
+com i, jota e cá na primeira linha,
+
+131
+00:08:14,140 --> 00:08:17,600
+as derivadas de x e de y
+em relação a u na segunda,
+
+132
+00:08:17,640 --> 00:08:20,960
+e em relação a v na terceira,
+com zero no fim das duas.
+
+133
+00:08:21,000 --> 00:08:24,600
+Os termos com i e com jota
+têm zero, então sobra só o cá,
+
+134
+00:08:24,640 --> 00:08:27,200
+multiplicado por um
+determinante dois por dois.
+
+135
+00:08:27,240 --> 00:08:30,000
+Trocando linha por coluna,
+que não muda o determinante,
+
+136
+00:08:30,040 --> 00:08:33,560
+ele vira a matriz jacobiana:
+derivadas de x na primeira linha,
+
+137
+00:08:33,600 --> 00:08:37,420
+de y na segunda. Esse número
+se chama o jacobiano de x,
+
+138
+00:08:37,460 --> 00:08:41,920
+y em relação a u, v. E a área da
+célula é mais ou menos o módulo do
+
+139
+00:08:41,960 --> 00:08:44,820
+jacobiano, vezes Δu, vezes Δv.
+
+140
+00:08:44,860 --> 00:08:47,520
+O livro chama esse módulo
+de fator de ampliação,
+
+141
+00:08:47,560 --> 00:08:50,660
+ou de contração, local
+de área. Na nossa grade:
+
+142
+00:08:50,700 --> 00:08:54,520
+a derivada de x em relação a
+u é dois u, em relação a v,
+
+143
+00:08:54,560 --> 00:08:58,960
+menos dois v; a de y em relação
+a u é dois v, e em relação a v,
+
+144
+00:08:59,000 --> 00:09:03,560
+dois u. Dois u vezes dois u,
+menos menos dois v vezes dois v:
+
+145
+00:09:03,600 --> 00:09:06,540
+quatro u ao quadrado mais
+quatro v ao quadrado.
+
+146
+00:09:06,580 --> 00:09:11,560
+No ponto M, u vale zero vírgula setenta
+e cinco e v vale zero vírgula cinco:
+
+147
+00:09:11,600 --> 00:09:15,880
+quatro vezes zero vírgula setenta e cinco
+ao quadrado dá dois vírgula vinte e cinco,
+
+148
+00:09:15,920 --> 00:09:18,860
+e quatro vezes zero vírgula
+cinco ao quadrado dá um.
+
+149
+00:09:18,900 --> 00:09:21,940
+Somando, três vírgula
+vinte e cinco. Perto de M,
+
+150
+00:09:21,980 --> 00:09:25,640
+as áreas ficam multiplicadas por
+quase três vírgula vinte e cinco.
+
+151
+00:09:25,680 --> 00:09:29,560
+E dá para medir o quanto ele acerta,
+usando o jacobiano do canto M para a
+
+152
+00:09:29,600 --> 00:09:33,180
+célula inteira. Com a célula de
+lado zero vírgula vinte e cinco,
+
+153
+00:09:33,220 --> 00:09:37,620
+a área de verdade é um vírgula quarenta
+e quatro vezes o que o jacobiano prevê.
+
+154
+00:09:37,660 --> 00:09:40,440
+Com lado zero vírgula um,
+um vírgula dezesseis.
+
+155
+00:09:40,480 --> 00:09:43,500
+Com zero vírgula zero cinco,
+um vírgula zero oito.
+
+156
+00:09:43,540 --> 00:09:46,440
+Com zero vírgula zero um,
+um vírgula zero dois.
+
+157
+00:09:46,480 --> 00:09:49,020
+Quanto menor a célula, mais ele acerta.
+
+158
+00:09:49,060 --> 00:09:51,980
+Por isso o jacobiano é
+um fator local. E repara:
+
+159
+00:09:52,020 --> 00:09:55,200
+na origem, quatro vezes
+zero mais quatro vezes zero,
+
+160
+00:09:55,240 --> 00:09:59,360
+zero, e as células somem;
+no canto um, um, quatro mais quatro,
+
+161
+00:09:59,400 --> 00:10:02,930
+oito, e elas crescem.
+Agora junta tudo na integral.
+
+162
+00:10:02,980 --> 00:10:05,920
+Divide a região do plano
+u v em retangulinhos,
+
+163
+00:10:05,960 --> 00:10:09,580
+r í jota. Cada um vira,
+no papel, um pedacinho,
+
+164
+00:10:09,620 --> 00:10:14,640
+bê í jota. A integral de f sobre B é
+quase a soma de f num ponto de cada
+
+165
+00:10:14,680 --> 00:10:18,280
+pedacinho, vezes a área do pedacinho,
+como na soma de Riemann.
+
+166
+00:10:18,320 --> 00:10:21,500
+Escolhe esse ponto como a imagem
+de um ponto do retangulinho:
+
+167
+00:10:21,540 --> 00:10:25,640
+x barra, y barra igual
+a φ de u barra, v barra.
+
+168
+00:10:25,680 --> 00:10:30,260
+E a área do pedacinho é quase o
+módulo do jacobiano vezes Δu vezes
+
+169
+00:10:30,300 --> 00:10:34,720
+Δv. Então a soma fica quase
+a soma de f de φ de u barra,
+
+170
+00:10:34,760 --> 00:10:38,360
+v barra, vezes o módulo
+do jacobiano, vezes Δu,
+
+171
+00:10:38,400 --> 00:10:42,680
+vezes Δv. E repara: essa é uma
+soma de Riemann no plano u v!
+
+172
+00:10:42,720 --> 00:10:45,620
+Quando as divisões encolhem,
+sob as hipóteses certas,
+
+173
+00:10:45,660 --> 00:10:49,640
+ela vai para a integral dupla,
+no plano u v, de f de φ de u,
+
+174
+00:10:49,680 --> 00:10:52,860
+v, vezes o módulo do jacobiano, dê u dê v.
+
+175
+00:10:52,900 --> 00:10:56,920
+Mas essa ideia ainda não é uma
+demonstração: falta dizer em que condições
+
+176
+00:10:56,960 --> 00:11:00,300
+ela vale. O livro enuncia
+esse resultado sem demonstrar,
+
+177
+00:11:00,340 --> 00:11:04,050
+porque a prova completa é longa,
+mas cada hipótese tem um papel.
+
+178
+00:11:04,160 --> 00:11:08,100
+φ de classe cê um num aberto ômega:
+as derivadas são contínuas,
+
+179
+00:11:08,140 --> 00:11:10,930
+e de perto a célula é
+quase o paralelogramo.
+
+180
+00:11:10,980 --> 00:11:13,900
+Bê u v contido em ômega,
+compacto, quer dizer,
+
+181
+00:11:13,940 --> 00:11:17,180
+fechado e limitado, e com
+fronteira de conteúdo nulo,
+
+182
+00:11:17,220 --> 00:11:21,250
+como a gente viu quando estudou
+conteúdo nulo: a borda não pesa na soma.
+
+183
+00:11:21,300 --> 00:11:25,040
+B é a imagem, φ de bê u v,
+e o interior vai no interior:
+
+184
+00:11:25,080 --> 00:11:29,500
+as duas regiões se correspondem.
+φ inversível no interior de bê u v:
+
+185
+00:11:29,540 --> 00:11:32,660
+dois pontos diferentes de
+dentro não caem no mesmo lugar,
+
+186
+00:11:32,700 --> 00:11:35,080
+e nenhum pedaço é contado duas vezes.
+
+187
+00:11:35,120 --> 00:11:38,620
+E o jacobiano diferente de
+zero em todo ponto do interior:
+
+188
+00:11:38,660 --> 00:11:40,990
+nenhuma célula de dentro se achata.
+
+189
+00:11:41,060 --> 00:11:46,080
+Nessas condições, se f é integrável
+em B, a integral dupla de f sobre B
+
+190
+00:11:46,120 --> 00:11:49,440
+é igual à integral sobre
+bê u v de f de φ de u,
+
+191
+00:11:49,480 --> 00:11:52,550
+v, vezes o módulo do jacobiano, dê u dê v.
+
+192
+00:11:52,640 --> 00:11:55,820
+Essas condições bastam;
+não são as únicas possíveis.
+
+193
+00:11:55,860 --> 00:12:00,500
+Na prática, é uma receita de
+dois passos: dê x dê y vira o
+
+194
+00:12:00,540 --> 00:12:05,320
+módulo do jacobiano dê u dê v,
+e você descobre a região bê u v que φ
+
+195
+00:12:05,360 --> 00:12:08,400
+leva em B. Por que exigir
+que φ seja inversível?
+
+196
+00:12:08,440 --> 00:12:12,320
+Olha o que acontece se não for.
+φ de u, v igual a u ao quadrado,
+
+197
+00:12:12,360 --> 00:12:15,340
+v, no retângulo com u entre menos um e um.
+
+198
+00:12:15,380 --> 00:12:18,200
+A metade da esquerda
+dobra por cima da direita,
+
+199
+00:12:18,240 --> 00:12:20,880
+e as duas caem no mesmo
+quadrado de lado um.
+
+200
+00:12:20,920 --> 00:12:25,010
+As derivadas: x em relação
+a u, dois u; em relação a v,
+
+201
+00:12:25,120 --> 00:12:28,920
+zero; y em relação a u,
+zero; em relação a v, um.
+
+202
+00:12:28,960 --> 00:12:32,940
+O jacobiano é dois u vezes
+um, menos zero vezes zero:
+
+203
+00:12:32,980 --> 00:12:37,020
+dois u. Agora a integral do módulo,
+dois vezes o módulo de u.
+
+204
+00:12:37,060 --> 00:12:40,800
+Na metade da direita, a primitiva
+de dois u é u ao quadrado:
+
+205
+00:12:40,840 --> 00:12:44,960
+um menos zero, um. Na da esquerda,
+o módulo vira menos dois u,
+
+206
+00:12:45,000 --> 00:12:48,960
+e a primitiva é menos u ao
+quadrado: zero, menos menos um,
+
+207
+00:12:49,000 --> 00:12:53,220
+um. Somando, dois. E,
+em v, de zero a um: dois v,
+
+208
+00:12:53,260 --> 00:12:56,640
+dois menos zero, dois.
+Mas a área do quadrado é um.
+
+209
+00:12:56,680 --> 00:12:59,680
+Quem conta a área duas
+vezes é a sobreposição:
+
+210
+00:12:59,720 --> 00:13:03,080
+cada ponto do quadrado recebe
+um pedaço de cada metade.
+
+211
+00:13:03,120 --> 00:13:07,120
+E o jacobiano ainda zera no meio,
+na dobra, um ponto do interior:
+
+212
+00:13:07,160 --> 00:13:11,520
+outra hipótese que falha. Já na borda,
+o teorema deixa o jacobiano zerar,
+
+213
+00:13:11,560 --> 00:13:15,340
+e deixa φ não ser injetora.
+Fica só com a metade da direita:
+
+214
+00:13:15,380 --> 00:13:19,200
+agora u igual a zero é borda,
+o jacobiano zera só ali,
+
+215
+00:13:19,240 --> 00:13:22,880
+e a integral de dois u,
+de zero a um, dá um menos zero,
+
+216
+00:13:22,920 --> 00:13:26,460
+um: a área certa. Isso vai fazer
+diferença no próximo vídeo.
+
+217
+00:13:26,500 --> 00:13:29,880
+Testa o teorema na região das
+parábolas, com f igual a um,
+
+218
+00:13:29,920 --> 00:13:34,440
+que dá a área. A área é a integral no
+quadrado de quatro u ao quadrado mais
+
+219
+00:13:34,480 --> 00:13:39,020
+quatro v ao quadrado. Por dentro,
+em u: quatro u ao cubo sobre três,
+
+220
+00:13:39,060 --> 00:13:42,460
+mais quatro v ao quadrado
+vezes u, de zero a um.
+
+221
+00:13:42,500 --> 00:13:45,540
+Em um, quatro terços mais
+quatro v ao quadrado;
+
+222
+00:13:45,580 --> 00:13:49,640
+em zero, zero. Fica quatro
+terços mais quatro v ao quadrado.
+
+223
+00:13:49,680 --> 00:13:54,500
+Por fora, em v: quatro v sobre
+três, mais quatro v ao cubo sobre
+
+224
+00:13:54,540 --> 00:13:58,660
+três, de zero a um. Em um,
+quatro terços mais quatro terços;
+
+225
+00:13:58,700 --> 00:14:01,000
+em zero, zero: oito terços.
+
+226
+00:14:01,040 --> 00:14:04,140
+Agora confere sem jacobiano,
+fatiando deitado,
+
+227
+00:14:04,180 --> 00:14:08,090
+do jeito que a gente já sabe.
+A fatia entra na parábola da esquerda,
+
+228
+00:14:08,140 --> 00:14:11,280
+x igual a y ao quadrado
+sobre quatro menos um,
+
+229
+00:14:11,320 --> 00:14:15,850
+e sai na da direita, x igual a um
+menos y ao quadrado sobre quatro.
+
+230
+00:14:15,900 --> 00:14:20,900
+O comprimento é a saída menos a entrada:
+um menos y ao quadrado sobre quatro,
+
+231
+00:14:20,940 --> 00:14:24,720
+menos o parêntese y ao
+quadrado sobre quatro menos um.
+
+232
+00:14:24,760 --> 00:14:28,610
+Distribuindo o sinal, dois
+menos y ao quadrado sobre dois.
+
+233
+00:14:28,680 --> 00:14:32,740
+A primitiva é dois y menos
+y ao cubo sobre seis.
+
+234
+00:14:32,780 --> 00:14:36,540
+Em dois, quatro menos oito
+sextos; em zero, zero.
+
+235
+00:14:36,580 --> 00:14:39,830
+Quatro menos oito sextos,
+quatro menos quatro terços,
+
+236
+00:14:39,880 --> 00:14:43,460
+oito terços. Bateu: dois
+caminhos, a mesma área,
+
+237
+00:14:43,500 --> 00:14:46,610
+e o jacobiano corrigiu
+exatamente a troca de grade.
+
+238
+00:14:46,720 --> 00:14:50,370
+Agora sim, o trapézio
+inteiro, em cinco passos.
+
+239
+00:14:50,500 --> 00:14:55,000
+Passo um: escolher as variáveis.
+O integrando pede a soma e a diferença,
+
+240
+00:14:55,040 --> 00:14:59,740
+e as bordas também. Então u
+igual a x mais y, e v igual a x
+
+241
+00:14:59,780 --> 00:15:04,960
+menos y. Passo dois: o teorema
+quer x e y em função de u e v.
+
+242
+00:15:05,000 --> 00:15:09,700
+Soma as duas: u mais v é dois
+x, então x é u mais v sobre
+
+243
+00:15:09,740 --> 00:15:14,560
+dois. Subtrai: u menos v é
+dois y, então y é u menos
+
+244
+00:15:14,600 --> 00:15:17,700
+v sobre dois. Passo três: o jacobiano.
+
+245
+00:15:17,740 --> 00:15:21,540
+A derivada de x em relação a
+u é um meio, em relação a v,
+
+246
+00:15:21,580 --> 00:15:25,640
+um meio; a de y em relação a
+u é um meio, e em relação a v,
+
+247
+00:15:25,680 --> 00:15:30,440
+menos um meio. Um meio vezes menos
+um meio, menos um meio vezes um meio:
+
+248
+00:15:30,480 --> 00:15:33,310
+menos um quarto menos um
+quarto, menos um meio.
+
+249
+00:15:33,360 --> 00:15:36,360
+Módulo: um meio. E dá para
+conferir pelo outro lado:
+
+250
+00:15:36,400 --> 00:15:40,960
+o jacobiano de u, v em relação
+a x, y é um vezes menos um,
+
+251
+00:15:41,000 --> 00:15:44,600
+menos um vezes um: menos
+dois. A ida dobra a área,
+
+252
+00:15:44,640 --> 00:15:49,680
+e a volta divide por dois. No papel,
+cada célula da grade inclinada tem lado um
+
+253
+00:15:49,720 --> 00:15:52,080
+sobre raiz de dois, e área um meio.
+
+254
+00:15:52,120 --> 00:15:55,240
+Era esse o meio que faltava
+na abertura. Passo quatro:
+
+255
+00:15:55,280 --> 00:15:58,840
+a região nova. Cada lado do
+trapézio vira um lado novo.
+
+256
+00:15:58,880 --> 00:16:03,220
+O de cima, y igual a zero:
+aí u e v ficam iguais a x,
+
+257
+00:16:03,260 --> 00:16:08,200
+então u igual a v. A borda x menos
+y igual a dois vira v igual a
+
+258
+00:16:08,240 --> 00:16:13,000
+dois. O lado x igual a zero:
+u fica y e v fica menos y,
+
+259
+00:16:13,040 --> 00:16:17,940
+então u igual a menos v. E a
+borda x menos y igual a um vira v
+
+260
+00:16:17,980 --> 00:16:21,660
+igual a um. Os cantos conferem:
+um, zero vai para um,
+
+261
+00:16:21,700 --> 00:16:26,400
+um; dois, zero vai para dois, dois;
+zero, menos dois vai para menos
+
+262
+00:16:26,440 --> 00:16:29,780
+dois, dois; e zero,
+menos um vai para menos um,
+
+263
+00:16:29,820 --> 00:16:34,180
+um. No plano u v, v vai de
+um a dois, e, para cada v,
+
+264
+00:16:34,220 --> 00:16:37,290
+a fatia em u entra em menos v e sai em v.
+
+265
+00:16:37,340 --> 00:16:41,340
+Essa é a região bê u v.
+Passo cinco: a conta.
+
+266
+00:16:41,380 --> 00:16:44,660
+A integral fica a integral
+de um a dois, em v,
+
+267
+00:16:44,700 --> 00:16:49,640
+da integral de menos v até
+v, em u, de e^ fração u
+
+268
+00:16:49,680 --> 00:16:52,860
+sobre v, vezes um meio, dê u, dê v.
+
+269
+00:16:52,900 --> 00:16:57,620
+Por dentro, o v está congelado,
+e o expoente é só u vezes um número.
+
+270
+00:16:57,660 --> 00:17:02,360
+A primitiva de e^ fração
+u sobre v, em u, é v vezes
+
+271
+00:17:02,400 --> 00:17:07,579
+e^ mesma fração: deriva e confere,
+v vezes um sobre v dá um.
+
+272
+00:17:07,619 --> 00:17:09,840
+Colchete de menos v até v.
+
+273
+00:17:09,880 --> 00:17:14,020
+Em cima, u igual a v,
+e o expoente v sobre v é um;
+
+274
+00:17:14,060 --> 00:17:17,960
+embaixo, u igual a menos v,
+e o expoente é menos um.
+
+275
+00:17:18,000 --> 00:17:22,990
+Fica v vezes é, menos v
+vezes e^ menos um, ou seja,
+
+276
+00:17:23,040 --> 00:17:25,579
+v vezes, é menos um sobre e.
+
+277
+00:17:25,619 --> 00:17:30,640
+Por fora: um meio, vezes é menos um
+sobre e, vezes a integral de um a
+
+278
+00:17:30,680 --> 00:17:34,940
+dois de v, dê v. A primitiva
+é v ao quadrado sobre dois:
+
+279
+00:17:34,980 --> 00:17:38,280
+quatro sobre dois menos
+um sobre dois, três meios.
+
+280
+00:17:38,320 --> 00:17:40,960
+Um meio vezes três meios, três quartos.
+
+281
+00:17:41,000 --> 00:17:44,340
+Resultado: três quartos
+de é menos um sobre e,
+
+282
+00:17:44,380 --> 00:17:46,920
+mais ou menos um vírgula setenta e seis.
+
+283
+00:17:46,960 --> 00:17:49,580
+E o teste de sempre, com f igual a um.
+
+284
+00:17:49,620 --> 00:17:54,700
+No plano u v, a fatia vai de
+menos v até v: comprimento dois v.
+
+285
+00:17:54,740 --> 00:17:58,300
+A integral de um a dois de
+dois v dá v ao quadrado,
+
+286
+00:17:58,340 --> 00:18:01,700
+quatro menos um, três.
+Vezes o fator, um meio:
+
+287
+00:18:01,740 --> 00:18:05,240
+três meios. No papel,
+o trapézio é o triângulo grande,
+
+288
+00:18:05,280 --> 00:18:09,560
+de catetos dois, área dois,
+menos o pequeno, de catetos um,
+
+289
+00:18:09,600 --> 00:18:14,040
+área um meio: três meios também.
+O meio que ninguém chamou é o jacobiano.
+
+290
+00:18:14,080 --> 00:18:18,020
+A troca não fez mágica: escolheu
+a grade em que tudo fica simples,
+
+291
+00:18:18,060 --> 00:18:21,300
+e pagou com o fator de área.
+Pausa o vídeo e tenta este,
+
+292
+00:18:21,340 --> 00:18:26,180
+que é do livro: a integral do cosseno
+de x menos y sobre o seno de x mais
+
+293
+00:18:26,220 --> 00:18:31,340
+y, no trapézio entre x mais y
+igual a um e x mais y igual a dois,
+
+294
+00:18:31,380 --> 00:18:36,200
+no primeiro quadrante. Pronto?
+O livro escolhe u igual a x menos y e
+
+295
+00:18:36,240 --> 00:18:40,580
+v igual a x mais y.
+Somando, u mais v é dois x,
+
+296
+00:18:40,620 --> 00:18:43,180
+então x é u mais v sobre dois.
+
+297
+00:18:43,220 --> 00:18:48,000
+Subtraindo, v menos u é
+dois y, então y é v menos u
+
+298
+00:18:48,040 --> 00:18:51,380
+sobre dois. O jacobiano:
+um meio vezes um meio,
+
+299
+00:18:51,420 --> 00:18:55,500
+menos um meio vezes menos um
+meio, um quarto mais um quarto,
+
+300
+00:18:55,540 --> 00:18:59,700
+mais um meio. As bordas viram
+v igual a um, v igual a dois,
+
+301
+00:18:59,740 --> 00:19:02,260
+v igual a u e v igual a menos u.
+
+302
+00:19:02,300 --> 00:19:05,420
+Por dentro, um sobre seno
+de v sai da integral,
+
+303
+00:19:05,460 --> 00:19:10,080
+e a primitiva do cosseno de u é
+o seno de u: de menos v até v,
+
+304
+00:19:10,120 --> 00:19:12,790
+dá seno de v menos seno de menos v.
+
+305
+00:19:12,860 --> 00:19:17,900
+Seno de menos v é menos seno de v,
+então fica seno de v mais seno de
+
+306
+00:19:17,940 --> 00:19:21,730
+v: dois seno de v.
+Dividido por seno de v: dois.
+
+307
+00:19:21,780 --> 00:19:25,520
+Por fora, um meio vezes a
+integral de um a dois de dois.
+
+308
+00:19:25,560 --> 00:19:28,840
+A primitiva de dois é
+dois v: quatro menos dois,
+
+309
+00:19:28,880 --> 00:19:31,370
+dois. Um meio vezes dois: um.
+
+310
+00:19:31,440 --> 00:19:35,520
+O sinal mudou porque u e v
+trocaram de papel; o fator de área,
+
+311
+00:19:35,560 --> 00:19:39,740
+que é o módulo, não. O jacobiano
+aparece fora da integral também.
+
+312
+00:19:39,780 --> 00:19:42,680
+No mapa do mundo mais comum,
+a projeção de Mercator,
+
+313
+00:19:42,720 --> 00:19:47,040
+tratando a Terra como uma esfera,
+o fator de área é a secante da latitude ao
+
+314
+00:19:47,080 --> 00:19:50,860
+quadrado. Na altura da Groenlândia,
+uns setenta e dois graus norte,
+
+315
+00:19:50,900 --> 00:19:55,100
+cada pedacinho aparece mais de dez
+vezes maior do que perto do equador.
+
+316
+00:19:55,140 --> 00:19:58,100
+É por isso que a Groenlândia
+parece do tamanho da África,
+
+317
+00:19:58,140 --> 00:20:00,880
+que é umas catorze vezes
+maior. E nos fluidos:
+
+318
+00:20:00,920 --> 00:20:05,000
+num tempo curtinho tê, cada
+pedacinho da água estica ou encolhe,
+
+319
+00:20:05,040 --> 00:20:08,960
+e o fator de área fica um,
+mais tê vezes o divergente,
+
+320
+00:20:09,000 --> 00:20:13,480
+mais termos menores. O divergente,
+a soma das derivadas parciais que medem o
+
+321
+00:20:13,520 --> 00:20:17,670
+estiramento em cada direção, é a
+taxa com que o fator começa a mudar.
+
+322
+00:20:17,740 --> 00:20:22,520
+Resumindo. Na régua do Cálculo I,
+o dê x vira gê linha de tê dê tê.
+
+323
+00:20:22,560 --> 00:20:25,540
+No caso linear, o quadrado
+vira paralelogramo,
+
+324
+00:20:25,580 --> 00:20:28,520
+e a área se multiplica pelo
+módulo do determinante,
+
+325
+00:20:28,560 --> 00:20:33,560
+ad − bc. Na transformação curva,
+cada célula é quase um paralelogramo,
+
+326
+00:20:33,600 --> 00:20:38,140
+e a área dela é o módulo do
+jacobiano vezes Δu vezes Δv.
+
+327
+00:20:38,180 --> 00:20:42,980
+E, no trapézio, a troca certa transformou
+duas ordens travadas numa conta de
+
+328
+00:20:43,020 --> 00:20:46,220
+cinco passos. Trocar as
+variáveis é trocar a grade,
+
+329
+00:20:46,260 --> 00:20:48,840
+e o jacobiano é o fator local de área.
+
+330
+00:20:48,880 --> 00:20:53,640
+E fica um desafio. O disco de
+raio um, e a integral de e^ menos,
+
+331
+00:20:53,680 --> 00:20:56,040
+x ao quadrado mais y ao quadrado.
+
+332
+00:20:56,080 --> 00:20:59,080
+É o famoso sino, agora
+girado em volta da origem.
+
+333
+00:20:59,120 --> 00:21:01,560
+Em pé, trava; deitado, trava.
+
+334
+00:21:01,600 --> 00:21:05,000
+Mas talvez o problema seja
+a grade. O disco pede outra:
+
+335
+00:21:05,040 --> 00:21:08,140
+círculos e raios, com as variáveis r e θ.
+
+336
+00:21:08,180 --> 00:21:11,260
+Olha estas duas células:
+uma aqui perto da origem,
+
+337
+00:21:11,300 --> 00:21:15,580
+outra lá longe. As duas têm
+o mesmo Δr e o mesmo Δθ,
+
+338
+00:21:15,620 --> 00:21:20,540
+mas a de fora é bem maior. Então o fator
+de área muda com a distância até a origem.
+
+339
+00:21:20,580 --> 00:21:23,460
+Qual é ele? É o que a gente
+descobre no próximo vídeo:
+
+340
+00:21:23,500 --> 00:21:28,640
+coordenadas polares. E, com esse fator,
+sai até a área inteira debaixo do sino,
+
+341
+00:21:28,680 --> 00:21:31,130
+a curva que está em toda a estatística.
+
+342
+00:21:31,240 --> 00:21:35,620
+Se essa aula te ajudou, deixa o like,
+se inscreve no Parallax Lab e conta nos
+
+343
+00:21:35,660 --> 00:21:39,840
+comentários: qual troca de variável você
+já fez sem saber que tinha um jacobiano
+
+344
+00:21:39,880 --> 00:21:41,880
+escondido? Até a próxima!

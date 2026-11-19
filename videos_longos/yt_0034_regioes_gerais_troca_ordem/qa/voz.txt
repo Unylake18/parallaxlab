@@ -1,0 +1,37 @@
+yt_0034 · QA da voz (narracao_final.wav)
+modelo eleven_v4 · voz qw7jgPZWOKrl10GsjQ82 · texto narracao_tags.md (narração v3.2) · 5 blocos de API
+duração 1283.52 s (21:23.52); limite da parada: 23:30 → OK
+pico -0.80 dBFS; amostras em clipping (|x| ≥ 0,999): 0 → OK
+silêncios > 1,5 s dentro de parágrafo: 0
+pausas entre parágrafos: 22; 0.20–0.44 s (média 0.32 s); maior pausa entre palavras no texto todo 0.44 s
+tag lida em voz alta (STT): {'curious': 0, 'thoughtful': 0, 'surprised': 0, 'serious': 0, 'excited': 0, 'happy': 0} → OK
+  «éfe» no STT: 7×
+  «bê» no STT: 13×
+  «erre» no STT: 3×
+  «teta» no STT: 12×
+  «pi» no STT: 10×
+  «Euler» no STT: 1×
+  «Fubini» no STT: 7×
+  «ípsilon» no STT: 0×
+  «xis» no STT: 0×
+  «Cálculo um» no STT: 4×
+  «Parallax Lab» no STT: 2×
+palavras 4040; 3.15 palavras/s no WAV inteiro; 3.15 palavras/s do início ao fim da fala (referência 3,0 palavras/s)
+fronteira de bloco antes de «liga o ponto de cima da»: pausa 0.30 s (261.34–261.64); nível 2 s antes -20.1 dB × 2 s depois -19.3 dB
+  maior salto entre amostras na pausa: 0.0441 (clique > 0,2)
+fronteira de bloco antes de «e os limites mudam junto ípsilon»: pausa 0.26 s (541.24–541.50); nível 2 s antes -24.2 dB × 2 s depois -21.8 dB
+  maior salto entre amostras na pausa: 0.0258 (clique > 0,2)
+fronteira de bloco antes de «a integral de dentro vai de»: pausa 0.24 s (817.04–817.28); nível 2 s antes -23.2 dB × 2 s depois -20.8 dB
+  maior salto entre amostras na pausa: 0.0804 (clique > 0,2)
+fronteira de bloco antes de «não é garantia de que a»: pausa 0.28 s (1102.38–1102.66); nível 2 s antes -22.1 dB × 2 s depois -21.5 dB
+  maior salto entre amostras na pausa: 0.0279 (clique > 0,2)
+
+pronúncia (STT de conferência scribe_v1; o STT grava letra lida como símbolo, então ípsilon/xis/dê xis aparecem como y/x/dx):
+  ípsilon → y: 104×
+  xis → x: 109×
+  dê xis / dê ípsilon → dx / dy: 26×
+  Euler: 1×
+  Fubini: 7×
+  teta → θ/teta: 0×
+  B1/B2 (bê um, bê dois): 2×
+  escuta humana: pendente (Kaio)

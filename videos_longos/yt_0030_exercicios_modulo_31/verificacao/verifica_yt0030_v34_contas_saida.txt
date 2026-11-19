@@ -1,0 +1,90 @@
+True  C1 ‖(−y,x)‖ = √((−y)²+x²) = √(x²+y²)
+True  C1 s^α = (r²)^α = r^{2α}
+True  C1 r / r^{2α} = r^{1−2α}
+True  C1 ‖v‖ = r^{1−2α} (r = √s)
+True  C2 (x)' = 1
+True  C2 ∂s/∂x = 2x
+True  C2 (s^{−α})'_x = −α s^{−α−1}·2x
+True  C2 ∂Q/∂x = 1·s^{−α} + x(−α s^{−α−1}·2x)
+True  C2 = s^{−α} − 2αx² s^{−α−1}
+True  C2 K4: s^{−α} = s·s^{−α−1}
+True  C2 P5: = s^{−α−1}(s − 2αx²)
+True  C2 ∂P/∂y = −1·s^{−α} + (−y)(−α s^{−α−1}·2y)
+True  C2 G3 = −s^{−α} + 2αy² s^{−α−1}
+True  C2 G5 = −s^{−α−1}(s − 2αy²)
+True  C2 RS = rot
+True  C2 RS5 = s^{−α−1}(2s − 2αs)
+True  C2 RS5b = s^{−α−1}·s(2 − 2α)
+True  C2 RS5c = s^{−α}(2 − 2α) = (2 − 2α)/s^α
+True  C2 DP = −y(−α s^{−α−1}·2x) = 2αxy s^{−α−1}
+True  C2 DQ = x(−α s^{−α−1}·2y) = −2αxy s^{−α−1}
+True  C2 div = 0
+True  C3 v(t,0) = (0,1)
+True  C3 v(0,t) = (−1,0)
+True  C3 α=¼: r^{1−2α} → 0 (r → 0⁺)
+True  C3 α=1: r^{1−2α} → ∞ (r → 0⁺)
+True  C4 φ_x = ½·2x = x
+True  C4 φ_y = ½·(−2y) = −y
+True  C14 φ_xx = 1, φ_yy = −1, ∇²φ = 0
+True  C5 ∂(x sen y)/∂x = sen y
+True  C5 ∂(cos y)/∂y = −sen y
+True  C5 ∂(z − xy)/∂z = 1
+True  C6 homogeneidade F(sx,sy) = s F(x,y)
+True  C6 F(h,h) = (h·h)/(h²+h²)(h,h) = ½(h,h) = (h/2,h/2)
+True  C6 ‖erro‖ = √(h²/4 + h²/4) = h√2/2
+True  C6 ‖H‖ = √(h²+h²) = h√2
+True  C6 razão = ½
+True  C7 N' = 2xy
+True  C7 D' = 2x
+True  C7 abre: 2xy(x²+y²) − x²y·2x = 2x³y + 2xy³ − 2x³y
+True  C7 ∂P/∂x = 2xy³/(x²+y²)²
+True  C7 y=0: 0
+True  C7 x=0: 0
+True  C7 y=x: 2x·x³/(x²+x²)² = 2x⁴/(2x²)² = 2x⁴/4x⁴ = ½
+True  C8 P_x = 2x − 0
+True  C8 P_y = 0 − 2y
+True  C8 Q_x = 2·y·1
+True  C8 Q_y = 2·x·1
+True  C9 Q_x = 0 − 2x/9
+True  C9 Q_y = 0
+True  C10 rot(−3) = −2(−3)/9 = 6/9 = 2/3
+True  C10 rot(3) = −2·3/9 = −2/3
+True  C10 rot(0) = 0
+True  C10 ω = (2/3)/2 = 1/3
+True  C10 T = 2π/(1/3) = 6π
+True  C10 6π ≈ 18,8 (≈ 19 s)
+True  C11 |d₂(±3)| = 2·3/9 = 2/3
+True  C11 d₂(0) = 0
+True  C12 u_x=1, u_y=0, v_x=0, v_y=−1
+True  C13 d(xy)/dt = ẋ y + x ẏ
+True  C13 u·y + x·v = xy − xy = 0
+True  C13 xy = c ⇒ y = c/x
+True  C15 div ∇φ = φ_xx + φ_yy
+True  C16 (x+iy)² = x² + 2x(iy) + (iy)²
+True  C16 i² = −1
+True  C16 = (x² − y²) + i(2xy)
+True  C16 CR: P_x = 2x = Q_y
+True  C16 CR: P_y = −2y = −Q_x
+True  C17 J = (2x −2y; 2y 2x)
+True  C17 J = 2r·R(θ), 2r = √(a²+b²) = 2√(x²+y²)
+True  C17 J(1,1) = (2 −2; 2 2) = 2√2·R(45°)
+True  C17 colunas (2,2)·(−2,2) = 0, mesmo tamanho 2√2
+True  C18 P_x=2x, P_y=−2y, Q_x=−2y, Q_y=−2x
+True  C18 rot = −2y − (−2y) = 0
+True  C18 div = 2x − 2x = 0
+True  C18 d₁ = 4x, d₂ = −4y
+True  C19 2 − 2α = 0 ⇒ α = 1
+True  C19 ‖B‖ = r/r^{2α} com α=1 = 1/r
+True  C20 T1 = ∂(x s^{−α})/∂x
+True  C20 T1b = s^{−α} − 2αx² s^{−α−1}
+True  C20 S1 = div E
+True  C20 S3 = 2s^{−α} − 2α s^{−α}
+True  C20 S4 = (2 − 2α)/s^α
+True  C21 ∂‖X‖/∂x = ½(x²+y²+z²)^{−1/2}·2x = x/‖X‖
+True  C21 PA = ∂/∂x (x/‖X‖^p)
+True  C21 PB0 = 1/‖X‖^p − p x² ‖X‖^{−p−1}‖X‖^{−1}
+True  C21 PB1 = … ‖X‖^{−p−2} = PB
+True  C21 div E = (3 − p)/‖X‖^p
+True  C21 p=3: ‖E‖ = r/r³ = 1/r²
+
+88/88 True

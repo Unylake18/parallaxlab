@@ -1,0 +1,250 @@
+[
+ {
+  "id": "H1",
+  "texto": "Olha esse carretel: gira sem atrito, com dois blocos em tambores diferentes, fios em sentidos opostos. Seis quilos no grande, dez no pequeno. Quando eu soltar, qual dos dois desce? Se apostou no mais pesado, fica tranquilo: quase todo mundo aposta."
+ },
+ {
+  "id": "H2",
+  "texto": "Só que olha: o de seis quilos desce, e o de dez sobe. Sem motor, sem empurrão, sem truque nenhum."
+ },
+ {
+  "id": "H3",
+  "texto": "Como o mais leve vence o mais pesado? A resposta está na geometria das forças e na inércia de quem gira, e é isso que vamos desvendar hoje: quatro problemas, montando as equações e conferindo cada resultado."
+ },
+ {
+  "id": "A1",
+  "texto": "Fala, pessoal! Bem-vindos ao Parallax Lab!"
+ },
+ {
+  "id": "A2",
+  "texto": "Hoje é aula de dinâmica da rotação, aprendendo resolvendo. Primeiro, um volante com um bloco pendurado. Depois, uma haste que cai girando, e a força que o eixo faz durante a queda. Em seguida, o carretel do começo, com números. E, por fim, um pêndulo: onde pôr o eixo para ele oscilar o mais rápido possível? Três deles escondem a mesma ideia: importa onde a massa está."
+ },
+ {
+  "id": "A3",
+  "texto": "Antes de começar, a caixa de ferramentas, porque são só cinco. A primeira é o momento de inércia: a resistência de um corpo a mudar sua rotação. Ele é a soma de cada pedacinho de massa vezes a sua distância ao eixo, ao quadrado. Repara nesse ao quadrado: massa longe do eixo conta muito mais do que massa perto. A segunda é o teorema dos eixos paralelos: o momento de inércia em torno do centro de massa, mais a massa total vezes a distância entre os eixos, ao quadrado. A terceira é a segunda lei da rotação: a soma dos torques externos é o momento de inércia vezes a aceleração angular. A quarta é a energia cinética de rotação: metade do momento de inércia vezes a velocidade angular ao quadrado. E a quinta são as pontes entre o giro e cada ponto do corpo: velocidade tangencial, aceleração tangencial e aceleração centrípeta. Então bora usar."
+ },
+ {
+  "id": "D1",
+  "texto": "Antes do primeiro problema, um desafio que ficou no ar. Uma régua uniforme de um metro, presa numa dobradiça horizontal sem atrito, é solta na horizontal. Uma moeda solta na ponta fica para trás, porque a ponta acelera mais do que a gravidade. Agora prende na ponta uma massa igual à da própria régua. A moeda é só detector. Será que a ponta ainda passa da gravidade?"
+ },
+ {
+  "id": "D2",
+  "texto": "O torque agora tem duas contribuições: o peso da régua, no meio, com braço de metade do comprimento, e o peso da massa extra, na ponta, com o comprimento inteiro. Somando, três meios da massa vezes a gravidade vezes o comprimento. O momento de inércia também cresce: um terço da massa vezes o comprimento ao quadrado, da régua, mais a massa vezes o comprimento ao quadrado, da ponta. Total: quatro terços. Dividindo, a aceleração angular inicial é nove oitavos da gravidade sobre o comprimento. E a ponta, a um comprimento do eixo, acelera nove oitavos da gravidade. Repara no peso de cada termo: como as duas massas são iguais, a massa da ponta, com braço duas vezes maior, manda mais no torque que a régua inteira."
+ },
+ {
+  "id": "D3",
+  "texto": "Ainda passa da gravidade, mas por pouco: só um oitavo. Antes, a ponta chegava a três meios da gravidade. O torque ficou três vezes maior, mas o momento de inércia ficou quatro vezes maior, porque a massa está longe do eixo. O ponto da régua que acelera exatamente como a gravidade foi de dois terços do comprimento para oito nonos. Primeira pista do vídeo: massa longe do eixo atrapalha o giro. Pensa assim: com a massa mais longe, o torque cresce com a distância, mas a inércia cresce com o quadrado dela, e vence."
+ },
+ {
+  "id": "E1-1",
+  "texto": "Exercício um, o volante. Volantes de inércia guardam energia no giro e suavizam o movimento de máquinas e motores. O nosso gira em torno de um eixo fixo horizontal e tem três partes. Um anel espesso de quinze quilos, com raio interno de trinta centímetros e externo de quarenta. Um cubo central, um disco maciço de três quilos e dez centímetros de raio. E dois discos pequenos de um quilo e cinco centímetros de raio, em lados opostos, com os centros a vinte e cinco centímetros do eixo. Na frente do cubo, um tambor leve de quinze centímetros de raio, com um fio que segura um bloco de dez quilos, solto do repouso."
+ },
+ {
+  "id": "E1-2",
+  "texto": "O que queremos: o momento de inércia do volante; a aceleração do bloco, a aceleração angular e a tração no fio; quanto o conjunto gira em um segundo e meio; para onde vai a energia; e o que acontece quando entra um freio. Hipóteses: eixo sem atrito, fio leve, que não estica nem escorrega, raios e tambor sem massa, e gravidade de nove vírgula oito metros por segundo ao quadrado. Repara na ordem do que vem aí: primeiro a inércia do volante, depois a dinâmica, e só então a cinemática e a energia."
+ },
+ {
+  "id": "E1-3",
+  "texto": "Item a: o momento de inércia. Começa pelo anel, e tem um jeito bonito de enxergar: o anel é um disco cheio de quarenta centímetros de raio, menos um disco de trinta que foi recortado do miolo. Os dois têm a mesma densidade por área, que é a massa do anel dividida pela área do anel. O momento de inércia de um disco é metade da massa vezes o raio ao quadrado, e a massa de cada disco cresce com o raio ao quadrado, então o momento de inércia de cada um cresce com o raio na quarta. Faz a subtração, coloca em evidência, e sobra uma expressão simples: metade da massa do anel vezes a soma dos quadrados dos dois raios. Com os números, metade de quinze vezes zero vírgula zero nove mais zero vírgula dezesseis. Dá um vírgula oito sete cinco quilograma metro quadrado. Esse truque vale para qualquer forma montada com pedaços conhecidos: o momento de inércia soma, desde que seja em torno do mesmo eixo."
+ },
+ {
+  "id": "E1-4",
+  "texto": "Fórmula nova sem teste é fórmula suspeita, então confere. Se o furo some, com o raio interno indo a zero, volta o disco cheio: metade da massa vezes o raio ao quadrado. Se o anel afina até os dois raios coincidirem, vira massa vezes raio ao quadrado, o aro, toda a massa na borda. Passou nos dois limites. Agora o cubo, disco maciço: metade de três vezes zero vírgula um ao quadrado, zero vírgula zero um cinco. E os discos pequenos, que não estão no eixo, pedem o teorema dos eixos paralelos: cada um tem metade de um quilo vezes cinco centímetros ao quadrado, em torno do próprio centro, mais um quilo vezes vinte e cinco centímetros ao quadrado, pelo deslocamento. Os dois juntos: zero vírgula um dois sete cinco."
+ },
+ {
+  "id": "E1-5",
+  "texto": "Somando: dois vírgula zero dois quilograma metro quadrado. E repara na distribuição. O anel tem setenta e cinco por cento da massa e quase noventa e três por cento do momento de inércia. O cubo, quinze por cento da massa, não chega a um por cento. E os discos pequenos: sem o termo do deslocamento, seriam zero vírgula zero zero dois cinco; com ele, cinquenta e uma vezes mais. Massa longe do eixo é a que pesa no giro. Guarda essa frase."
+ },
+ {
+  "id": "E1-6",
+  "texto": "Item b: a aceleração do bloco. O primeiro passo é sempre separar os corpos. No bloco, o peso para baixo e a tração para cima. No volante, a tração puxa a borda do tambor, com braço igual ao raio do tambor. O peso do volante e a força do eixo também atuam, mas passam pelo eixo: braço zero, torque zero. Por isso nem entram na equação da rotação."
+ },
+ {
+  "id": "E1-7",
+  "texto": "Três equações. Newton no bloco: o peso menos a tração é a massa do bloco vezes a aceleração. Rotação do volante: a tração vezes o raio do tambor é o momento de inércia vezes a aceleração angular. E o vínculo: como o fio não escorrega, a aceleração do bloco é a aceleração angular vezes o raio do tambor. O vínculo amarra a translação do bloco à rotação do volante. Sem ele, seriam três incógnitas e só duas equações."
+ },
+ {
+  "id": "E1-8",
+  "texto": "Da equação do volante, a tração é o momento de inércia vezes a aceleração angular, dividido pelo raio do tambor. Trocando a aceleração angular pelo vínculo, fica momento de inércia vezes aceleração, sobre o raio do tambor ao quadrado. Coloca na equação do bloco, junta os termos com a aceleração e divide. Sai uma fórmula que vale guardar: a aceleração é a gravidade dividida por um mais o momento de inércia sobre a massa do bloco vezes o raio do tambor ao quadrado."
+ },
+ {
+  "id": "E1-9",
+  "texto": "A fórmula conta uma história. Sem inércia nenhuma, o termo de baixo some e a aceleração é a da gravidade: queda livre. Com momento de inércia enorme, a aceleração vai a zero e o bloco mal se mexe. Tem um jeito ainda mais concreto de ler: o momento de inércia dividido pelo raio do tambor ao quadrado tem unidade de massa, uma inércia equivalente. Aqui, dois vírgula zero dois sobre zero vírgula zero dois dois cinco: quase noventa quilos. O volante tem vinte quilos de massa, mas resiste à aceleração como se fossem noventa andando em linha reta. Cuidado: não é uma massa extra puxando o fio. Quem puxa continua sendo só o peso do bloco. O giro acrescenta inércia, não força."
+ },
+ {
+  "id": "E1-10",
+  "texto": "Agora os números. A aceleração do bloco: zero vírgula nove oito metro por segundo ao quadrado, um décimo da gravidade. Dividindo pelo raio do tambor, a aceleração angular: seis vírgula cinco seis radianos por segundo ao quadrado. A tração é a massa vezes gravidade menos aceleração: oitenta e oito vírgula dois newtons, menos que o peso de noventa e oito, como tem que ser, porque o bloco desce acelerando. Confere pelo torque: a tração vezes o raio do tambor dá treze vírgula dois newtons metro, igual ao momento de inércia vezes a aceleração angular. Repara no sentido físico: a tração é menor que o peso porque ela é quem freia a queda."
+ },
+ {
+  "id": "E1-11",
+  "texto": "Item c: um segundo e meio. A aceleração angular é constante, então é cinemática angular, a de sempre. A velocidade angular é aceleração angular vezes tempo: nove vírgula oito três radianos por segundo. O ângulo é metade da aceleração angular vezes o tempo ao quadrado: sete vírgula três sete radianos, pouco mais de uma volta. O bloco desce esse ângulo vezes o raio do tambor: um vírgula um um metro, com velocidade de um vírgula quatro sete metro por segundo. Todas essas fórmulas são a cinemática de sempre, com letras de rotação."
+ },
+ {
+  "id": "E1-12",
+  "texto": "Agora um ponto na borda do anel, a quarenta centímetros do eixo. A aceleração tangencial é a aceleração angular vezes o raio: dois vírgula seis dois metros por segundo ao quadrado. A centrípeta é a velocidade angular ao quadrado vezes o raio: trinta e oito vírgula sete, quase quatro vezes a gravidade. Quem manda na borda é a centrípeta: a aceleração total desvia só uns quatro graus do raio."
+ },
+ {
+  "id": "E1-13",
+  "texto": "Item d: a energia, o grande teste da resolução inteira, porque ela não depende de como a gente resolveu. O peso do bloco realizou um trabalho de cento e oito vírgula quatro joules. A energia cinética do bloco, metade da massa vezes velocidade ao quadrado, é dez vírgula nove. A de rotação do volante, metade do momento de inércia vezes a velocidade angular ao quadrado, é noventa e sete vírgula cinco. Somando: cento e oito vírgula quatro. Fecha! E repara: quase noventa por cento da energia foi parar no giro, nove vezes a do bloco, a mesma razão entre a inércia equivalente e a massa do bloco. Vale guardar essa conferência: quando o resultado do torque e o da energia concordam, a chance de erro de conta é pequena. Ela mostra também que o volante, com a mesma tração, guarda energia como se fosse uma massa muito maior que a do bloco."
+ },
+ {
+  "id": "E1-14",
+  "texto": "E de onde vem a energia do volante? Do fio, e não direto do peso do bloco. A potência é a tração vezes a velocidade do fio, ou o torque vezes a velocidade angular. Em um segundo e meio, chega a cento e trinta watts. Como cresce em linha reta com o tempo, a energia é a área do triângulo: metade de cento e trinta vezes um e meio, noventa e sete vírgula cinco, exatamente a energia cinética de rotação. Bate de novo."
+ },
+ {
+  "id": "E1-15",
+  "texto": "Item e: o freio, como o de uma bicicleta. Nesse instante o fio se solta, e uma pastilha encosta na borda do anel, apertando com vinte e cinco newtons, para o eixo. O coeficiente de atrito cinético é zero vírgula quatro. O atrito é esse coeficiente vezes a normal: dez newtons, tangente à borda, contra o giro. O torque é dez vezes quarenta centímetros: quatro newtons metro. E a normal aponta direto para o eixo: braço zero, torque zero."
+ },
+ {
+  "id": "E1-16",
+  "texto": "A desaceleração angular é o torque sobre o momento de inércia: um vírgula nove oito radiano por segundo ao quadrado. Para zerar nove vírgula oito três radianos por segundo, leva quatro vírgula nove seis segundos. O ângulo até parar sai da equação de Torricelli angular: velocidade angular ao quadrado sobre duas vezes a desaceleração. Vinte e quatro vírgula quatro radianos, quase quatro voltas. Confere pela energia: o trabalho do atrito é o torque vezes o ângulo, quatro vezes vinte e quatro vírgula quatro, noventa e sete vírgula cinco joules, exatamente a energia que o volante tinha. Ela não sumiu: virou calor na pastilha e no anel. É por isso que freio esquenta."
+ },
+ {
+  "id": "E1-17",
+  "texto": "Último item, um teste de intuição. Outro volante, com os mesmos vinte quilos, mas todos num aro fino de quarenta centímetros de raio. Mesmo bloco, mesmo fio, solto do repouso. O momento de inércia do aro é vinte vezes zero vírgula quatro ao quadrado: três vírgula dois. A inércia equivalente pula para cento e quarenta e dois quilos, e a aceleração do bloco cai de zero vírgula nove oito para zero vírgula seis quatro. Mesma massa, resultado diferente: o aro perde, porque a massa dele está longe do eixo."
+ },
+ {
+  "id": "E1-18",
+  "texto": "Moral do volante: a massa total não decide sozinha, decide onde ela está. E o método vale para o vídeo inteiro: separa os corpos, escreve uma equação para cada um e não esquece o vínculo, que transforma três incógnitas numa resposta. Agora, um sistema bem diferente."
+ },
+ {
+  "id": "E2-1",
+  "texto": "Exercício dois, a haste. Pensa na tampa de um alçapão presa numa dobradiça horizontal: ao cair, que força a dobradiça faz? Vamos investigar com uma haste fina e uniforme, de massa e comprimento conhecidos, girando em torno de um eixo horizontal a um quarto do comprimento de uma das pontas, solta do repouso na horizontal. Queremos o momento de inércia, a aceleração angular, a velocidade angular na queda e, principalmente, a força do eixo."
+ },
+ {
+  "id": "E2-2",
+  "texto": "Hipóteses: eixo sem atrito e sem resistência do ar. O centro de massa está no meio da haste, a um quarto do comprimento do eixo. Pelos eixos paralelos: o momento de inércia em torno do centro, um doze avos da massa vezes o comprimento ao quadrado, mais a massa vezes um quarto do comprimento ao quadrado. Um doze avos mais um dezesseis avos dá sete quarenta e oito avos da massa vezes o comprimento ao quadrado."
+ },
+ {
+  "id": "E2-3",
+  "texto": "Faz sentido? Com o eixo no centro, seriam quatro quarenta e oito avos. Na ponta, um terço, dezesseis quarenta e oito avos. O nosso eixo está entre os dois, então o resultado também tem que estar. Está."
+ },
+ {
+  "id": "E2-4",
+  "texto": "Agora a segunda lei da rotação. Mede o ângulo a partir da horizontal. O único torque é o do peso, no centro de massa, com braço de um quarto do comprimento vezes o cosseno do ângulo. Dividindo pelo momento de inércia, a aceleração angular é doze sétimos da gravidade sobre o comprimento, vezes o cosseno do ângulo. Repara: ela não é constante. É máxima na largada e cai a zero na vertical, porque ali o peso aponta para o eixo e deixa de girar a haste. A intuição ajuda: conforme a haste desce, o braço do peso encolhe, e o peso empurra cada vez mais ao longo da haste e cada vez menos de lado."
+ },
+ {
+  "id": "E2-5",
+  "texto": "Como a aceleração angular muda, esquece as equações de aceleração constante: para a velocidade angular, usa a energia. O centro de massa desce um quarto do comprimento vezes o seno do ângulo, e essa energia potencial vira energia cinética de rotação, metade do momento de inércia vezes a velocidade angular ao quadrado. Isolando, a velocidade angular ao quadrado é vinte e quatro sétimos da gravidade sobre o comprimento, vezes o seno do ângulo."
+ },
+ {
+  "id": "E2-6",
+  "texto": "E a força do eixo? Aqui está o pulo do gato. A haste só tem duas forças externas, o peso e a força do eixo, então ela sai da segunda lei de Newton para o centro de massa: força do eixo mais peso é a massa vezes a aceleração do centro de massa. Só que o centro de massa anda num círculo de raio um quarto do comprimento. Por isso a aceleração tem duas partes: a tangencial, aceleração angular vezes esse raio, e a centrípeta, velocidade angular ao quadrado vezes esse raio, apontando para o eixo."
+ },
+ {
+  "id": "E2-7",
+  "texto": "Projetando ao longo da haste e perpendicular a ela, as contas ficam curtas. Ao longo da haste, o eixo puxa para dentro com treze sétimos do peso vezes o seno do ângulo. Perpendicular, segura com quatro sétimos do peso vezes o cosseno, contra o sentido da queda. E o comprimento da haste sumiu: a força só depende do peso e do ângulo."
+ },
+ {
+  "id": "E2-8",
+  "texto": "Teste dos sentidos, em três posições. Na largada, ângulo zero: sobra só a parte perpendicular, quatro sétimos do peso, para cima. Ainda não há velocidade, então não há centrípeta. O centro de massa começa descendo com três sétimos da gravidade: peso menos quatro sétimos dá três sétimos. O eixo não segura o peso inteiro, mas também não deixa a haste em queda livre. Confere."
+ },
+ {
+  "id": "E2-9",
+  "texto": "A quarenta e cinco graus aparece o que muita gente esquece: o eixo também empurra de lado. A componente horizontal vale nove quatorze avos do peso, para o lado do eixo, e a vertical, dezessete quatorze avos, para cima. No total, uma vírgula três sete vez o peso. Por que de lado? Porque o centro de massa está fazendo uma curva, e para curvar alguém precisa empurrar na horizontal. A única força horizontal aqui é a do eixo."
+ },
+ {
+  "id": "E2-10",
+  "texto": "E na vertical, noventa graus: a aceleração angular é zero, a parte perpendicular some e sobram treze sétimos do peso, para cima, quase o dobro. Aceleração angular zero não é parada: aqui a velocidade angular é a maior da queda. É a centrípeta cobrando a conta: o centro de massa passa voando por baixo do eixo, e o eixo precisa puxá-lo para a curva. Numa única queda, a força vai de quatro a treze sétimos do peso e ainda muda de direção. Neste problema, o momento mais exigente para o eixo é a passagem pela vertical, não a largada."
+ },
+ {
+  "id": "E2-11",
+  "texto": "A dica: a força no eixo sai da segunda lei de Newton para o centro de massa, com as duas acelerações, a tangencial e a centrípeta. Esquecer a centrípeta é errar justamente onde a força é maior."
+ },
+ {
+  "id": "E3-1",
+  "texto": "Exercício três, o carretel do começo, agora com números. Momento de inércia de zero vírgula cinco quilograma metro quadrado, sem atrito. O tambor grande tem trinta centímetros de raio e segura o bloco de seis quilos. O pequeno tem dez e segura o de dez quilos, com o fio em sentido contrário. Fios leves, sem escorregamento. De novo, antes da conta: qual desce?"
+ },
+ {
+  "id": "E3-2",
+  "texto": "Dá para prever sem resolver. Imagina um giro pequeno, no sentido em que o bloco leve desce. Para o mesmo giro, o leve desce o ângulo vezes trinta centímetros; o pesado sobe o mesmo ângulo vezes dez, três vezes menos. Compara a energia potencial: o leve perde seis vezes zero vírgula três, um vírgula oito; o pesado ganha dez vezes zero vírgula um, um. Sobra energia, então o movimento acontece nesse sentido, e só nele. Quem decide não é a massa sozinha, é a massa vezes o raio. Esse raciocínio poupa conta: antes de escrever qualquer equação, já dá para saber o sentido do movimento, e o resultado final tem que concordar com essa previsão."
+ },
+ {
+  "id": "E3-3",
+  "texto": "Só que cuidado. No carretel, quem faz torque não são os pesos: são as trações dos fios, e com tudo em movimento a tração deixa de ser igual ao peso. Então separa os corpos. No bloco leve, o peso para baixo e a primeira tração para cima. No pesado, o peso para baixo e a segunda tração para cima. No carretel, cada tração puxa a borda do seu tambor, e como os fios são opostos, os torques também são opostos. Esse é o erro mais comum do problema: supor que a tração é igual ao peso. Isso só vale em equilíbrio. Com aceleração, a tração do bloco que desce é menor que o peso, e a do que sobe é maior."
+ },
+ {
+  "id": "E3-4",
+  "texto": "As equações, com o sentido positivo em que o leve desce. Bloco leve: peso menos primeira tração é massa vezes aceleração. Bloco pesado: segunda tração menos peso é massa vezes aceleração. Carretel: primeira tração vezes raio grande, menos segunda tração vezes raio pequeno, é o momento de inércia vezes a aceleração angular. E dois vínculos: o leve acelera com aceleração angular vezes raio grande, o pesado, vezes raio pequeno. As acelerações lineares são diferentes: a do leve é três vezes a do pesado."
+ },
+ {
+  "id": "E3-5",
+  "texto": "Isola as trações, troca as acelerações pelos vínculos e leva tudo para a equação do carretel. Aparece algo bonito: a aceleração angular é a gravidade vezes massa leve vezes raio grande menos massa pesada vezes raio pequeno, tudo dividido por momento de inércia mais massa leve vezes raio grande ao quadrado mais massa pesada vezes raio pequeno ao quadrado. O de cima é a comparação da energia. O de baixo é sempre positivo, porque tudo que se move soma inércia. Então o sinal do numerador já prevê o sentido. É a mesma comparação de energia de antes, agora escrita com todas as letras. Se as massas ou os raios mudarem, a fórmula continua valendo: é só trocar os valores."
+ },
+ {
+  "id": "E3-6",
+  "texto": "Com os números: gravidade vezes zero vírgula oito, que dá sete vírgula oito quatro, sobre um vírgula catorze. Seis vírgula oito oito radianos por segundo ao quadrado. O bloco leve desce com dois vírgula zero seis metros por segundo ao quadrado, o pesado sobe com zero vírgula seis nove. Primeira conferência: a razão entre as acelerações é três, a razão entre os raios."
+ },
+ {
+  "id": "E3-7",
+  "texto": "Agora as trações. Leve: seis vezes nove vírgula oito menos dois vírgula zero seis, quarenta e seis vírgula quatro newtons, menos que o peso de cinquenta e oito vírgula oito, porque ele desce acelerando. Pesado: dez vezes nove vírgula oito mais zero vírgula seis nove, cento e quatro vírgula nove, mais que o peso, porque sobe acelerando. O torque resultante das trações no carretel é três vírgula quatro quatro newtons metro; dividido por zero vírgula cinco, volta a aceleração angular de seis vírgula oito oito. E os sete vírgula oito quatro de antes? Aquela equação é do sistema inteiro: o sete vírgula oito quatro é a contribuição gravitacional, dividida pela inércia total de um vírgula catorze, que inclui os blocos. O erro clássico é dividir o sete vírgula oito quatro só pelo momento de inércia do carretel: dá quinze vírgula sete, e está errado, porque ignora a inércia dos blocos. Repara no que cada número diz: as duas trações são diferentes, e é essa diferença, atuando em braços diferentes, que gira o carretel."
+ },
+ {
+  "id": "E3-8",
+  "texto": "Outra conferência, pela energia. Quando o leve desce um metro, o pesado sobe um terço. A energia potencial perdida é cinquenta e oito vírgula oito menos trinta e dois vírgula sete: vinte e seis vírgula um joules, que viram energia cinética dos dois blocos e do carretel. Resolvendo com os vínculos, o leve chega a dois vírgula zero três metros por segundo. Pela cinemática, aceleração dois vírgula zero seis em um metro, dá o mesmo valor. Bate."
+ },
+ {
+  "id": "E3-9",
+  "texto": "Que massa deixaria o sistema parado, se fosse solto do repouso? O numerador precisa zerar: a massa do bloco do tambor pequeno vezes dez centímetros igual a seis quilos vezes trinta. Dezoito quilos, três vezes a massa do leve, porque o braço é três vezes menor. A aceleração angular zera. Se o carretel já estivesse girando, continuaria com velocidade constante: ele só fica parado porque parte do repouso. E a pergunta do começo está respondida: o bloco leve desce porque puxa com um braço três vezes maior. Em equilíbrio, as duas trações voltam a ser iguais aos pesos, e os torques se compensam."
+ },
+ {
+  "id": "E3-10",
+  "texto": "A dica do carretel: compara massa vezes raio para prever o sentido, mas escreve as equações com as trações. E confere pela razão das acelerações e pela energia."
+ },
+ {
+  "id": "E4-1",
+  "texto": "Exercício quatro, o pêndulo de disco, o problema de quem projeta um relógio de pêndulo. Dois discos iguais, mesma massa e mesmo raio, ligados por uma haste leve. O de cima é preso ao eixo pelo centro, o de baixo fica pendurado, com os centros a uma certa distância. Qual é o período das oscilações pequenas?"
+ },
+ {
+  "id": "E4-2",
+  "texto": "A estratégia é comparar com o pêndulo simples, uma bolinha na ponta de um fio. O momento de inércia dela é massa vezes comprimento ao quadrado, e o torque do peso é massa vezes gravidade vezes comprimento vezes o seno do ângulo, puxando de volta. Para ângulos pequenos, o seno é quase o próprio ângulo, e a aceleração angular fica proporcional ao ângulo, com sinal contrário: movimento harmônico simples. O período é dois pi vezes a raiz do comprimento sobre a gravidade. Então, se o nosso pêndulo der a mesma equação com outro comprimento, é só usar esse comprimento equivalente. Essa ideia vale muito além deste problema: todo pêndulo físico, de qualquer forma, tem um pêndulo simples equivalente com o mesmo período."
+ },
+ {
+  "id": "E4-3",
+  "texto": "Aqui o torque vem só do disco de baixo, porque o peso do de cima passa pelo eixo. Já o momento de inércia tem os dois. O de cima, metade da massa vezes o raio ao quadrado. O de baixo, o mesmo, mais a massa vezes a distância ao quadrado, pelos eixos paralelos. A massa total é o dobro da de um disco, e o centro de massa do conjunto fica no meio: massa total vezes a distância do eixo ao centro de massa dá a massa de um disco vezes a distância inteira. Dividindo o momento de inércia por isso, o comprimento equivalente é a distância mais o raio ao quadrado sobre a distância. Com raio de dez centímetros e distância de trinta, o período dá um vírgula um seis segundo. E o pêndulo simples equivalente ao lado oscila junto, em fase. Repara que o comprimento equivalente é sempre maior que a distância até o disco de baixo, porque o segundo termo é positivo. Esse excesso é o preço de a massa não estar concentrada num ponto."
+ },
+ {
+  "id": "E4-4",
+  "texto": "O disco de cima ajuda ou atrapalha? Solta dois pêndulos juntos, do mesmo ângulo: um com o disco de cima, outro sem. O de cima soma momento de inércia e nenhum torque restaurador, então só deixa o pêndulo mais preguiçoso. Sem ele, o período cai de um vírgula um seis para um vírgula um três segundo."
+ },
+ {
+  "id": "E4-5",
+  "texto": "Tira o disco de cima. Fica um disco só, pendurado por uma haste leve, com o eixo a uma certa distância do centro. Agora a pergunta é de projeto: onde pôr o eixo para o período ser o menor possível?"
+ },
+ {
+  "id": "E4-6",
+  "texto": "O momento de inércia é metade da massa vezes o raio ao quadrado mais a massa vezes a distância ao quadrado, e o torque é o peso vezes a distância. O comprimento equivalente fica a distância mais o raio ao quadrado sobre duas vezes a distância. Olha os extremos. Eixo muito longe: o segundo termo some, e o disco vira uma bolinha num fio. Eixo quase no centro: o torque some, o segundo termo explode, e o período vai ao infinito, como um balanço que mal volta. Entre os dois tem que haver um mínimo."
+ },
+ {
+  "id": "E4-7",
+  "texto": "Vamos achar esse mínimo de três maneiras. Primeiro, a derivada: como o período cresce com a raiz do comprimento equivalente, minimizar um é minimizar o outro; derivando e igualando a zero, a distância é o raio sobre raiz de dois. Segundo, sem derivada: os dois termos têm produto fixo, metade do raio ao quadrado, e a soma de dois positivos de produto fixo é mínima quando eles são iguais. Mesma resposta. Terceiro, a curva do período: o fundo cai em sete vírgula zero sete centímetros, para um disco de dez. O período mínimo é zero vírgula sete cinco cinco segundo. E nos extremos? Com o eixo muito perto do centro, o termo do raio ao quadrado sobre a distância explode, e o pêndulo fica lento, quase sem torque restaurador."
+ },
+ {
+  "id": "E4-8",
+  "texto": "A curva ainda esconde um presente. Com o eixo a cinco ou a dez centímetros do centro, o período é o mesmo, dentro da precisão mostrada: zero vírgula sete sete sete segundo. Trocar a distância pelo raio ao quadrado sobre duas vezes a distância não muda o comprimento equivalente: cinco vezes dez dá cinquenta, metade de dez ao quadrado. Duas posições, o mesmo relógio. Isso acontece porque a expressão é simétrica: duas distâncias que multiplicadas dão metade do raio ao quadrado dão o mesmo comprimento equivalente."
+ },
+ {
+  "id": "E4-9",
+  "texto": "Só que o mínimo caiu a sete centímetros do centro, num disco de dez: o eixo está dentro do disco. Isso é possível, fazendo um furo. Mas se o disco tem que ficar pendurado por uma haste presa fora dele, a distância não pode ser menor que o raio, e o melhor permitido é o eixo bem na borda: zero vírgula sete sete sete segundo, só três por cento acima do mínimo. Perto do fundo a curva é quase plana: errar um pouco a posição do eixo quase não muda o período. Na prática, isso alivia: não é preciso precisão de laboratório para posicionar o eixo, porque a curva do período é quase plana no mínimo."
+ },
+ {
+  "id": "E4-10",
+  "texto": "A dica: para qualquer pêndulo de corpo rígido, divide o momento de inércia em torno do eixo pela massa total vezes a distância do eixo ao centro de massa. Esse é o comprimento equivalente, e o resto é pêndulo simples."
+ },
+ {
+  "id": "S1",
+  "texto": "Vamos resumir os quatro. No volante, a distribuição da massa decide a aceleração: o momento de inércia age como uma inércia extra, que atrapalha, mas não puxa. Na haste, a força no eixo não é constante: vai de quatro sétimos a treze sétimos do peso e muda de direção. No carretel, quem manda é massa vezes raio: as trações dão a equação do carretel, e os pesos dão a do sistema inteiro, cada um com a sua inércia. E no pêndulo, torque e momento de inércia viram ferramenta de projeto: o período é mínimo com o eixo a uma distância do centro igual ao raio sobre raiz de dois."
+ },
+ {
+  "id": "S2",
+  "texto": "O método foi o mesmo: começa pela física, não pela fórmula. Desenha o sistema, identifica as forças, escolhe o eixo, escreve as equações e usa os vínculos. Depois confere: pela energia, pelos sentidos das forças, pelos casos-limite ou por outro caminho. Essas conferências não são detalhe: mostram se o resultado faz sentido. Conta que passa nesses testes merece confiança."
+ },
+ {
+  "id": "EN1",
+  "texto": "Se esse vídeo te ajudou, se inscreve no Parallax Lab para acompanhar os próximos vídeos. E, antes de ir, um desafio para os comentários."
+ },
+ {
+  "id": "EN2",
+  "texto": "Volta no volante e troca o bloco de dez quilos por um de vinte. A aceleração dobra? Mais que dobra? Menos? Usa a fórmula que a gente guardou e escreve sua resposta e seu raciocínio. Até a próxima!"
+ }
+]

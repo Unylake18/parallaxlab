@@ -1,0 +1,112 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>c3d34</title>
+<style>html,body{margin:0;background:transparent;overflow:hidden}canvas{display:block}</style></head><body>
+<script src="three.min.js"></script>
+<script>
+// Cenas 3D-alvo do yt_0034 (Cálculo III · EP. 09 · Regiões gerais e troca de ordem), three.js r128. ?k=<chave>
+// Estilo da série (c3d33): opaco, sem luz, tom por face (topo = cor por altura; paredes que olham para ±x a 70 %, para ±y a 48 % sobre o fundo),
+// sem sombra/névoa/brilho/transparência, fundo transparente (o compositor põe o violeta liso por baixo).
+// Mundo: x e y em metros × SC; z desenhado = SC · ZS · valor. Câmera perspectiva fov 22°, up = +z.
+// Chaves:
+//   b31  cunha z = y sobre o quarto de disco de raio 2; faca EM PÉ em x = 1 (a parte x > 1 recua 0,55): a fatia é um TRIÂNGULO (âmbar)
+//   b32  a mesma cunha; faca DEITADA em y = 1 (a parte y > 1 recua 0,55): a fatia é um RETÂNGULO (magenta)
+//   b42p sino z = e^(−y²) sobre o triângulo 0 ≤ x ≤ y ≤ 1; faca EM PÉ em x = 0,4: teto CURVO (âmbar)
+//   b42  o mesmo sino; faca DEITADA em y = 0,6: RETÂNGULO de altura e^(−0,36) e comprimento 0,6 (magenta)
+// window.PTS = pontos nomeados projetados em px de 1920×1080 (o Manim prende rótulos neles).
+const T=THREE,PI=Math.PI,K=new URLSearchParams(location.search).get('k')||'b31';
+const W=1920,H=1080,R=new T.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true});
+R.setPixelRatio(1);R.setSize(W,H,false);R.setClearColor(0x000000,0);document.body.appendChild(R.domElement);
+const S=new T.Scene();T.Object3D.DefaultUp.set(0,0,1);
+const cam=new T.PerspectiveCamera(22,W/H,.05,200);cam.up.set(0,0,1);
+const BG='#131030',CI='#35D9FF',E1='#FFC24D',E2='#EA63FF',GEO='#B8C4DA',RAMP0='#10243A',BR='#F5F7FF';
+const C=h=>new T.Color(h), mixc=(a,b,t)=>C(a).lerp(C(b),t);
+let SC=1,ZS=1,VMAX=2;
+const PTS={};
+function ver(p,t,cx=600,cy=540){cam.position.set(...p);cam.lookAt(...t);cam.setViewOffset(W,H,960-cx,540-cy,W,H);cam.updateProjectionMatrix();cam.updateMatrixWorld(true);}
+function proj(nome,v){const q=new T.Vector3(...v).project(cam);PTS[nome]=[+((q.x+1)/2*W).toFixed(1),+((1-q.y)/2*H).toFixed(1)];}
+function poli(pts){const cp=new T.CurvePath();for(let i=0;i+1<pts.length;i++)cp.add(new T.LineCurve3(new T.Vector3(...pts[i]),new T.Vector3(...pts[i+1])));return cp;}
+const tubo=(pts,r,cor)=>{const m=new T.Mesh(new T.TubeGeometry(poli(pts),Math.max(8,(pts.length-1)*4),r,8,false),new T.MeshBasicMaterial({color:C(cor)}));S.add(m);return m;};
+function seta(a,b,r,cor){const A=new T.Vector3(...a),B=new T.Vector3(...b),d=B.clone().sub(A),L=d.length(),hl=Math.min(.16,.3*L),g=new T.Group(),m=new T.MeshBasicMaterial({color:C(cor)});
+ const s=new T.Mesh(new T.CylinderGeometry(r,r,L-hl,12),m);s.position.y=(L-hl)/2;const c=new T.Mesh(new T.ConeGeometry(r*3,hl,18),m);c.position.y=L-hl/2;g.add(s,c);
+ g.position.copy(A);g.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),d.normalize());S.add(g);return g;}
+function malhaTri(tris){const pos=[],col=[];for(const [a,b,c,cc] of tris){for(const p of [a,b,c]){pos.push(...p);col.push(cc.r,cc.g,cc.b);}}
+ const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(pos,3));g.setAttribute('color',new T.Float32BufferAttribute(col,3));
+ const m=new T.Mesh(g,new T.MeshBasicMaterial({vertexColors:true,side:T.DoubleSide,polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1}));S.add(m);return m;}
+const corAlt=v=>mixc(RAMP0,CI,Math.pow(Math.min(1,v/VMAX),.85));
+const W3=(X,Y,v,off)=>[SC*(X+off[0]),SC*(Y+off[1]),SC*ZS*v];
+// sólido embaixo de h sobre a região parametrizada p(u,v) -> [x,y], u,v em [0,1]; paredes nas 4 bordas do parâmetro.
+// cores: {u0,u1,v0,v1} força a cor de uma parede (a face do corte); senão, tom pela orientação.
+function solido(p,h,{nu=30,nv=30,off=[0,0],cor={}}={}){const T3=[];
+ for(let i=0;i<nu;i++)for(let j=0;j<nv;j++){const q=[p(i/nu,j/nv),p((i+1)/nu,j/nv),p((i+1)/nu,(j+1)/nv),p(i/nu,(j+1)/nv)];
+  const m=p((i+.5)/nu,(j+.5)/nv),cc=corAlt(h(...m)),z=a=>W3(a[0],a[1],h(a[0],a[1]),off);T3.push([z(q[0]),z(q[1]),z(q[2]),cc],[z(q[0]),z(q[2]),z(q[3]),cc]);}
+ const parede=(pts,forca)=>{for(let k=0;k+1<pts.length;k++){const a=pts[k],b=pts[k+1];const dx=b[0]-a[0],dy=b[1]-a[1];if(Math.hypot(dx,dy)<1e-9)continue;
+   const mid=[(a[0]+b[0])/2,(a[1]+b[1])/2],top=corAlt(h(...mid)).getStyle(),cc=forca?C(forca):mixc(BG,top,Math.abs(dy)>Math.abs(dx)?.70:.48);
+   const A0=W3(a[0],a[1],0,off),B0=W3(b[0],b[1],0,off),A1=W3(a[0],a[1],h(...a),off),B1=W3(b[0],b[1],h(...b),off);T3.push([A0,B0,B1,cc],[A0,B1,A1,cc]);}};
+ const N=60,borda=(f)=>Array.from({length:N+1},(_,s)=>f(s/N));
+ parede(borda(t=>p(0,t)),cor.u0);parede(borda(t=>p(1,t)),cor.u1);parede(borda(t=>p(t,0)),cor.v0);parede(borda(t=>p(t,1)),cor.v1);
+ // chão da peça (a região) com contorno GEO fino
+ const laco=[].concat(borda(t=>p(t,0)),borda(t=>p(1,t)),borda(t=>p(1-t,1)),borda(t=>p(0,1-t))).map(a=>[a[0]+off[0],a[1]+off[1]]);
+ chao(laco);return malhaTri(T3);}
+function contorno(pts,h,cor,r=.009,off=[0,0]){const c=[W3(pts[0][0],pts[0][1],0,off)];for(const a of pts)c.push(W3(a[0],a[1],h(...a),off));const z=pts[pts.length-1];c.push(W3(z[0],z[1],0,off),W3(pts[0][0],pts[0][1],0,off));tubo(c,r,cor);}
+function chao(pts,fill='#1C1846',cor=GEO){const sh=new T.Shape(pts.map(a=>new T.Vector2(SC*a[0],SC*a[1])));const m=new T.Mesh(new T.ShapeGeometry(sh),new T.MeshBasicMaterial({color:C(fill)}));m.position.z=-.002;S.add(m);
+ tubo(pts.concat([pts[0]]).map(a=>[SC*a[0],SC*a[1],.001]),.006,cor);}
+function eixos(lx,ly,lz){seta([0,0,.014],[lx,0,.014],.011,E1);seta([0,0,.014],[0,ly,.014],.011,E2);seta([0,0,0],[0,0,lz],.011,CI);
+ proj('ex',[lx+.12,0,0]);proj('ey',[0,ly+.12,0]);proj('ez',[0,0,lz+.12]);}
+const arcoPts=(r,n=60)=>Array.from({length:n+1},(_,k)=>[r*Math.cos(PI/2*k/n),r*Math.sin(PI/2*k/n)]);
+
+// ---------- cunha: densidade y sobre o quarto de disco de raio 2 ----------
+const hy=(X,Y)=>Y;
+if(K==='b31'){SC=1;ZS=1;VMAX=2;const D=.75;// em pé em x = 1: fica a parte x ≤ 1 com a face do corte (triângulo); a parte x > 1 recua em +x
+ solido((u,v)=>{const X=u;return [X,v*Math.sqrt(4-X*X)];},hy,{cor:{u1:E1}});
+ solido((u,v)=>{const X=1+u;return [X,v*Math.sqrt(Math.max(0,4-X*X))];},hy,{off:[D,0]});
+ contorno(Array.from({length:41},(_,s)=>[1,Math.sqrt(3)*s/40]),hy,'#7A5A10',.008);
+ ver([1+8.2,1-9.6,4.6],[1.3,.95,.75],580,600);eixos(3.3,2.45,2.35);
+ proj('fatia',[1,1.15,.42]);proj('faca',[1,Math.sqrt(3),Math.sqrt(3)+.14]);proj('base',[1,Math.sqrt(3)/2,0]);proj('alt',[1,Math.sqrt(3),Math.sqrt(3)/2]);proj('x1',[1,0,0]);}
+if(K==='b32'){SC=1;ZS=1;VMAX=2;const D=.9;// deitada em y = 1: fica a parte y ≥ 1 com a face do corte (retângulo, olhando para −y); a parte y < 1 desliza para a frente e para a direita (sai da frente da fatia)
+ solido((u,v)=>{const Y=1+u;return [v*Math.sqrt(Math.max(0,4-Y*Y)),Y];},hy,{cor:{u0:E2}});
+ solido((u,v)=>{const Y=u;return [v*Math.sqrt(4-Y*Y),Y];},hy,{off:[2.35,-D]});
+ contorno(Array.from({length:41},(_,s)=>[Math.sqrt(3)*s/40,1]),hy,'#6A1E78',.008);
+ ver([1+5.6,1-9.8,5.0],[1.9,.6,.6],600,600);eixos(2.55,2.5,2.35);
+ proj('fatia',[Math.sqrt(3)/2,1,.5]);proj('faca',[Math.sqrt(3),1,1.14]);proj('base',[Math.sqrt(3)/2,1,0]);proj('alt',[0,1,.5]);proj('y1',[0,1,0]);}
+
+// ---------- sino: e^(−y²) sobre o triângulo 0 ≤ x ≤ y ≤ 1 (mundo ×2) ----------
+const hs=(X,Y)=>Math.exp(-Y*Y);
+if(K==='b42p'){SC=2;ZS=1;VMAX=1.15;const x0=.4,D=.85;// em pé em x = 0,4: a fatia vai de y = 0,4 a 1, teto curvo
+ solido((u,v)=>{const X=x0*u;return [X,X+(1-X)*v];},hs,{cor:{u1:E1}});
+ solido((u,v)=>{const X=x0+(1-x0)*u;return [X,X+(1-X)*v];},hs,{off:[D,0]});
+ contorno(Array.from({length:41},(_,s)=>[x0,x0+(1-x0)*s/40]),hs,'#7A5A10',.008);
+ ver([2*(.7+3.4),2*(.5-4.9),2*2.3],[1.5,1.05,.5],580,600);eixos(3.6,2.35,1.75);
+ proj('fatia',[2*x0,2*.7,.5]);proj('teto',[2*x0,2*.72,2*hs(0,.72)+.12]);proj('faca',[2*x0,2,2*hs(0,1)+.14]);proj('x1',[2*x0,0,0]);}
+if(K==='b42'){SC=2;ZS=1;VMAX=1.15;const y0=.6,D=.55;// deitada em y = 0,6: fica a parte y ≥ 0,6 (face olhando para −y); a parte y < 0,6 desliza para a frente e para a direita
+ solido((u,v)=>{const Y=y0+(1-y0)*u;return [Y*v,Y];},hs,{cor:{u0:E2}});
+ solido((u,v)=>{const Y=y0*u;return [Y*v,Y];},hs,{off:[1.75,-D]});
+ contorno(Array.from({length:41},(_,s)=>[y0*s/40,y0]),hs,'#6A1E78',.008);
+ ver([2*(.5+3.3),2*(.3-5.2),2*2.4],[1.6,.85,.5],600,600);eixos(2.45,2.4,1.75);
+ proj('fatia',[2*y0/2,2*y0,.6]);proj('teto',[2*y0/2,2*y0,2*hs(0,y0)+.12]);proj('faca',[2*y0,2*y0,2*hs(0,y0)+.14]);proj('base',[2*y0/2,2*y0,0]);proj('alt',[0,2*y0,hs(0,y0)]);proj('y1',[0,2*y0,0]);}
+
+
+// ---------- v3: sino SEM peças separadas; a parte da frente da faca vira TRAÇO (contorno fino), a de trás fica opaca com a face do corte ----------
+const TR='#6C7698';
+function traco(p,h,{n=6,cor=TR,r=.0065}={}){const N=50,L=f=>Array.from({length:N+1},(_,s)=>f(s/N));
+ const bordas=[L(t=>p(0,t)),L(t=>p(1,t)),L(t=>p(t,0)),L(t=>p(t,1))];
+ for(const b of bordas){tubo(b.map(a=>W3(a[0],a[1],h(...a),[0,0])),r,cor);tubo(b.map(a=>W3(a[0],a[1],0,[0,0])),r,cor);}
+ for(const c of [p(0,0),p(1,0),p(1,1),p(0,1)]){if(h(...c)>1e-3)tubo([W3(c[0],c[1],0,[0,0]),W3(c[0],c[1],h(...c),[0,0])],r,cor);}
+ for(let k=1;k<n;k++){tubo(L(t=>p(k/n,t)).map(a=>W3(a[0],a[1],h(...a),[0,0])),r*.8,cor);}}
+const CAMP=()=>{ver([1.0+9.6,1.1-3.6,6.6],[1.0,1.1,.4],560,600);};const CAMD=()=>{ver([1.0+3.0,1.1-10.0,6.6],[1.0,1.1,.4],560,600);};
+const sinoP=(u,v)=>{const Y=u;return [Y*v,Y];};
+if(K==='s3i'){SC=2;ZS=1;VMAX=1.15;solido(sinoP,hs,{nu:40,nv:30});CAMP();eixos(2.5,2.45,1.75);
+ proj('topo',[0,0,2]);proj('y1',[0,2,0]);proj('x1',[2,0,0]);proj('meio',[.7,1.4,.9]);}
+if(K==='s3p'){SC=2;ZS=1;VMAX=1.15;const x0=.2;
+ solido((u,v)=>{const X=x0*u;return [X,X+(1-X)*v];},hs,{cor:{u1:E1}});
+ traco((u,v)=>{const X=x0+(1-x0)*u;return [X,X+(1-X)*v];},hs,{n:1});
+ contorno(Array.from({length:41},(_,s)=>[x0,x0+(1-x0)*s/40]),hs,'#7A5A10',.008);
+ CAMP();eixos(2.5,2.45,1.75);
+ proj('fatia',[2*x0,2*.72,.42]);proj('teto',[2*x0,2*.7,2*hs(0,.7)+.14]);proj('faca',[2*x0,2*x0,2*hs(0,x0)+.16]);proj('x1',[2*x0,0,0]);proj('ent',[2*x0,2*x0,0]);proj('sai',[2*x0,2,0]);}
+if(K==='s3d'){SC=2;ZS=1;VMAX=1.15;const y0=.6;
+ solido((u,v)=>{const Y=y0+(1-y0)*u;return [Y*v,Y];},hs,{cor:{u0:E2}});
+ traco((u,v)=>{const Y=y0*u;return [Y*v,Y];},hs,{n:1});
+ contorno(Array.from({length:41},(_,s)=>[y0*s/40,y0]),hs,'#6A1E78',.008);
+ CAMD();eixos(2.5,2.45,1.75);
+ proj('fatia',[2*y0/2,2*y0,.55]);proj('teto',[2*y0/2,2*y0,2*hs(0,y0)+.14]);proj('faca',[2*y0,2*y0,2*hs(0,y0)+.16]);proj('y1',[0,2*y0,0]);proj('ent',[0,2*y0,0]);proj('sai',[2*y0,2*y0,0]);}
+
+R.render(S,cam);window.PTS=PTS;document.title='ok';
+</script></body></html>

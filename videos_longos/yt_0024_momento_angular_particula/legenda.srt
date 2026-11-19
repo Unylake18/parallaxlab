@@ -1,0 +1,1218 @@
+1
+00:00:00,000 --> 00:00:01,440
+Olha essa mesa de ar.
+
+2
+00:00:01,460 --> 00:00:06,320
+O disco desliza praticamente sem atrito, preso
+a um fio que passa por um furinho no meio
+
+3
+00:00:06,340 --> 00:00:09,340
+da mesa e desce até a mão
+de alguém, lá embaixo.
+
+4
+00:00:09,360 --> 00:00:11,200
+Agora a pessoa puxa o fio.
+
+5
+00:00:11,220 --> 00:00:12,460
+O raio cai pela metade…
+
+6
+00:00:12,480 --> 00:00:16,540
+e o disco passa a dar quatro voltas
+no tempo em que antes dava uma.
+
+7
+00:00:16,560 --> 00:00:21,160
+Você já viu isso: é o que faz uma patinadora,
+que gira devagar de braços abertos e,
+
+8
+00:00:21,180 --> 00:00:24,460
+quando encolhe os braços junto
+do corpo, dispara a rodar.
+
+9
+00:00:24,480 --> 00:00:26,220
+Só que repara numa coisa.
+
+10
+00:00:26,240 --> 00:00:29,380
+O fio só puxa o disco para
+o furo, para o centro.
+
+11
+00:00:29,400 --> 00:00:30,920
+Ele nunca empurra para o lado.
+
+12
+00:00:30,940 --> 00:00:33,980
+Então, se ninguém empurra o
+disco na direção da volta,
+
+13
+00:00:34,000 --> 00:00:35,680
+de onde veio esse giro a mais?
+
+14
+00:00:35,700 --> 00:00:36,700
+Fala, pessoal!
+
+15
+00:00:36,720 --> 00:00:38,500
+Bem-vindos ao Parallax Lab.
+
+16
+00:00:38,520 --> 00:00:41,220
+Hoje o assunto é o momento
+angular de uma partícula.
+
+17
+00:00:41,240 --> 00:00:44,920
+A gente vai ver que até um corpo andando
+em linha reta tem momento angular,
+
+18
+00:00:44,940 --> 00:00:47,460
+vai descobrir o que faz esse
+momento mudar e, no fim,
+
+19
+00:00:47,480 --> 00:00:49,960
+volta para essa mesa
+e responde a pergunta.
+
+20
+00:00:49,980 --> 00:00:51,960
+Vamos começar pelo que você já conhece.
+
+21
+00:00:51,980 --> 00:00:54,840
+O momento linear é a
+massa vezes a velocidade,
+
+22
+00:00:54,860 --> 00:00:56,820
+a famosa quantidade de movimento.
+
+23
+00:00:56,840 --> 00:01:01,260
+É por isso que uma bola de boliche é muito
+mais difícil de parar do que uma bola de tênis,
+
+24
+00:01:01,280 --> 00:01:03,000
+mesmo na mesma velocidade.
+
+25
+00:01:03,020 --> 00:01:07,480
+E a segunda lei de Newton diz que a força
+resultante é a taxa com que esse momento muda
+
+26
+00:01:07,500 --> 00:01:08,200
+no tempo.
+
+27
+00:01:08,220 --> 00:01:09,120
+Lembra do torque?
+
+28
+00:01:09,140 --> 00:01:12,120
+É o produto vetorial do
+vetor posição com a força.
+
+29
+00:01:12,140 --> 00:01:15,360
+Então vem a pergunta natural:
+e se, em vez da força,
+
+30
+00:01:15,380 --> 00:01:18,220
+a gente fizer o mesmo
+produto com o momento linear?
+
+31
+00:01:18,240 --> 00:01:20,360
+Escolhe um ponto, que aqui é o furo.
+
+32
+00:01:20,380 --> 00:01:23,460
+Desenha o vetor posição,
+do furo até a partícula,
+
+33
+00:01:23,480 --> 00:01:26,520
+e faz o produto vetorial
+dele com o momento linear.
+
+34
+00:01:26,540 --> 00:01:30,400
+Isso tem nome: é o momento angular
+da partícula em relação a esse ponto.
+
+35
+00:01:30,420 --> 00:01:34,260
+Repara que ele não depende só de
+quanto movimento a partícula tem,
+
+36
+00:01:34,280 --> 00:01:38,500
+mas também de onde esse movimento acontece
+em relação ao ponto que a gente escolheu.
+
+37
+00:01:38,520 --> 00:01:42,740
+Como todo produto vetorial, o resultado
+é perpendicular aos dois vetores.
+
+38
+00:01:42,760 --> 00:01:46,120
+O vetor posição e o momento
+linear estão no plano da mesa,
+
+39
+00:01:46,140 --> 00:01:49,140
+então o momento angular
+aponta para fora desse plano.
+
+40
+00:01:49,160 --> 00:01:54,120
+O sentido vem da regra da mão direita: os dedos
+vão do vetor posição para o momento linear,
+
+41
+00:01:54,140 --> 00:01:55,940
+e o polegar mostra o momento angular.
+
+42
+00:01:55,960 --> 00:01:57,680
+Aqui ele aponta para cima.
+
+43
+00:01:57,700 --> 00:01:58,520
+E o tamanho?
+
+44
+00:01:58,540 --> 00:02:01,620
+É a distância até o ponto,
+vezes o momento linear,
+
+45
+00:02:01,640 --> 00:02:03,580
+vezes o seno do ângulo entre os dois.
+
+46
+00:02:03,600 --> 00:02:08,420
+Só que repara: a distância vezes o
+seno é exatamente este segmento aqui,
+
+47
+00:02:08,440 --> 00:02:11,740
+a distância do ponto até a reta
+por onde o movimento passa.
+
+48
+00:02:11,760 --> 00:02:14,700
+É o braço, igualzinho ao
+braço de alavanca do torque.
+
+49
+00:02:14,720 --> 00:02:18,940
+Ou seja, o momento angular é o
+momento linear vezes o braço.
+
+50
+00:02:18,960 --> 00:02:22,360
+Por isso a unidade é quilograma
+metro quadrado por segundo.
+
+51
+00:02:22,380 --> 00:02:24,620
+Agora um teste que pega muita gente.
+
+52
+00:02:24,640 --> 00:02:28,260
+Solta o disco do fio e deixa ele
+atravessar a mesa em linha reta,
+
+53
+00:02:28,280 --> 00:02:29,460
+com velocidade constante.
+
+54
+00:02:29,480 --> 00:02:31,220
+Ninguém faz força nele.
+
+55
+00:02:31,240 --> 00:02:32,600
+Será que ele tem momento angular?
+
+56
+00:02:32,620 --> 00:02:33,900
+Depende do ponto.
+
+57
+00:02:33,920 --> 00:02:36,140
+Imagina alguém vindo por
+um corredor comprido:
+
+58
+00:02:36,160 --> 00:02:38,880
+se você está bem na
+frente, nem gira a cabeça.
+
+59
+00:02:38,900 --> 00:02:39,640
+É isso.
+
+60
+00:02:39,660 --> 00:02:42,260
+Em relação a um ponto
+em cima da própria reta,
+
+61
+00:02:42,280 --> 00:02:46,120
+o vetor posição e o momento linear
+ficam sempre na mesma direção.
+
+62
+00:02:46,140 --> 00:02:49,200
+O braço é zero, então o
+momento angular é zero.
+
+63
+00:02:49,220 --> 00:02:54,320
+Já quem está parado ao lado do corredor gira
+a cabeça para acompanhar a pessoa passando.
+
+64
+00:02:54,340 --> 00:02:58,280
+É o que acontece em relação ao furo,
+que fica a quarenta centímetros da reta.
+
+65
+00:02:58,300 --> 00:03:02,520
+Visto de cima, o disco passa girando
+no sentido horário em volta do furo.
+
+66
+00:03:02,540 --> 00:03:06,240
+O braço é a distância do furo
+até a reta, e ela não muda.
+
+67
+00:03:06,260 --> 00:03:10,180
+Então o momento angular vale
+menos a massa, vezes a velocidade,
+
+68
+00:03:10,200 --> 00:03:15,340
+vezes essa distância: menos zero vírgula
+doze quilograma metro quadrado por segundo.
+
+69
+00:03:15,360 --> 00:03:18,480
+O sinal negativo é o sentido
+horário, para dentro da mesa.
+
+70
+00:03:18,500 --> 00:03:23,140
+E de um ponto do outro lado da reta, o
+mesmo disco gira no sentido contrário,
+
+71
+00:03:23,160 --> 00:03:25,340
+e o momento angular troca de sinal.
+
+72
+00:03:25,360 --> 00:03:29,240
+Ou seja: momento angular não é
+uma propriedade só da partícula.
+
+73
+00:03:29,260 --> 00:03:32,240
+É da partícula junto com
+o ponto que você escolheu.
+
+74
+00:03:32,260 --> 00:03:34,400
+E tem uma imagem bonita escondida aqui.
+
+75
+00:03:34,420 --> 00:03:37,880
+Liga o furo ao disco e olha a
+área que esse segmento varre.
+
+76
+00:03:37,900 --> 00:03:40,880
+Em tempos iguais o disco
+anda distâncias iguais,
+
+77
+00:03:40,900 --> 00:03:43,240
+e a altura até o furo é sempre a mesma.
+
+78
+00:03:43,260 --> 00:03:46,740
+Triângulos com a mesma base e a
+mesma altura têm a mesma área.
+
+79
+00:03:46,760 --> 00:03:49,880
+O segmento varre áreas
+iguais em tempos iguais.
+
+80
+00:03:49,900 --> 00:03:51,820
+E isso não é coincidência.
+
+81
+00:03:51,840 --> 00:03:57,060
+A área de cada triângulo fininho é metade
+do produto vetorial do vetor posição com o
+
+82
+00:03:57,080 --> 00:03:57,660
+deslocamento.
+
+83
+00:03:57,680 --> 00:04:01,360
+Trocando a velocidade pelo momento
+linear dividido pela massa,
+
+84
+00:04:01,380 --> 00:04:06,780
+aparece o momento angular: a área varrida
+por segundo é o momento angular dividido pelo
+
+85
+00:04:06,800 --> 00:04:07,660
+dobro da massa.
+
+86
+00:04:07,680 --> 00:04:10,700
+Momento angular constante,
+área por segundo constante.
+
+87
+00:04:10,720 --> 00:04:13,380
+Então o que faz o momento angular mudar?
+
+88
+00:04:13,400 --> 00:04:15,780
+Vamos derivar a definição no tempo.
+
+89
+00:04:15,800 --> 00:04:19,140
+É a derivada de um produto,
+então são duas parcelas:
+
+90
+00:04:19,160 --> 00:04:22,080
+a derivada do vetor posição
+vezes o momento linear,
+
+91
+00:04:22,100 --> 00:04:26,120
+mais o vetor posição vezes a
+derivada do momento linear.
+
+92
+00:04:26,140 --> 00:04:31,700
+A derivada da posição é a velocidade, e a
+derivada do momento linear é a força resultante.
+
+93
+00:04:31,720 --> 00:04:36,760
+Só que olha a primeira parcela: a
+velocidade vezes a massa vezes a velocidade.
+
+94
+00:04:36,780 --> 00:04:42,020
+São dois vetores na mesma direção, e o
+produto vetorial de vetores paralelos é zero.
+
+95
+00:04:42,040 --> 00:04:42,840
+Ela some.
+
+96
+00:04:42,860 --> 00:04:46,940
+Sobra o vetor posição vezes
+a força, que é o torque.
+
+97
+00:04:46,960 --> 00:04:50,880
+Então o torque resultante é a taxa
+de variação do momento angular.
+
+98
+00:04:50,900 --> 00:04:55,180
+A força muda o momento linear;
+o torque muda o momento angular.
+
+99
+00:04:55,200 --> 00:04:59,180
+Só com um cuidado: o ponto tem que
+estar parado num referencial inercial,
+
+100
+00:04:59,200 --> 00:05:03,620
+e o torque e o momento angular têm que
+ser medidos em relação ao mesmo ponto.
+
+101
+00:05:03,640 --> 00:05:07,780
+Vamos conferir com algo simples: uma
+pedra de meio quilo solta do repouso,
+
+102
+00:05:07,800 --> 00:05:10,220
+quarenta centímetros
+à direita de um ponto.
+
+103
+00:05:10,240 --> 00:05:12,300
+Ela cai reto, sem girar nada.
+
+104
+00:05:12,320 --> 00:05:15,080
+Será que ela ganha momento
+angular em relação a esse ponto?
+
+105
+00:05:15,100 --> 00:05:15,740
+Ganha.
+
+106
+00:05:15,760 --> 00:05:18,200
+O braço continua sendo
+os quarenta centímetros,
+
+107
+00:05:18,220 --> 00:05:21,220
+mas o momento linear para
+baixo cresce com o tempo.
+
+108
+00:05:21,240 --> 00:05:24,700
+Então o momento angular cresce
+em linha reta: menos a massa,
+
+109
+00:05:24,720 --> 00:05:28,160
+vezes a gravidade, vezes a
+distância, vezes o tempo.
+
+110
+00:05:28,180 --> 00:05:32,280
+Negativo, porque a pedra passa girando
+no sentido horário em volta do ponto.
+
+111
+00:05:32,300 --> 00:05:33,500
+E o torque do peso?
+
+112
+00:05:33,520 --> 00:05:37,360
+É menos a massa vezes a gravidade
+vezes a mesma distância:
+
+113
+00:05:37,380 --> 00:05:40,180
+menos um vírgula noventa
+e seis newtons metro,
+
+114
+00:05:40,200 --> 00:05:41,000
+constante.
+
+115
+00:05:41,020 --> 00:05:43,280
+É exatamente a inclinação dessa reta.
+
+116
+00:05:43,300 --> 00:05:44,040
+Confere.
+
+117
+00:05:44,060 --> 00:05:47,100
+Agora o caso que todo mundo
+associa ao momento angular:
+
+118
+00:05:47,120 --> 00:05:49,800
+o movimento circular,
+com o ponto no centro.
+
+119
+00:05:49,820 --> 00:05:53,320
+Aqui o vetor posição é sempre
+perpendicular à velocidade,
+
+120
+00:05:53,340 --> 00:05:55,400
+então o braço é o próprio raio.
+
+121
+00:05:55,420 --> 00:05:58,420
+O momento angular é a
+massa, vezes a velocidade,
+
+122
+00:05:58,440 --> 00:05:59,320
+vezes o raio.
+
+123
+00:05:59,340 --> 00:06:02,560
+E como a velocidade é a
+velocidade angular vezes o raio,
+
+124
+00:06:02,580 --> 00:06:06,600
+fica a massa vezes o raio ao
+quadrado vezes a velocidade angular.
+
+125
+00:06:06,620 --> 00:06:11,080
+A massa vezes o raio ao quadrado é o momento
+de inércia da partícula em relação a esse
+
+126
+00:06:11,100 --> 00:06:11,600
+eixo.
+
+127
+00:06:11,620 --> 00:06:16,880
+Então, no círculo, o momento angular é o
+momento de inércia vezes a velocidade angular.
+
+128
+00:06:16,900 --> 00:06:21,620
+No movimento circular uniforme, a
+única força no plano é a tração do fio,
+
+129
+00:06:21,640 --> 00:06:23,040
+e ela aponta para o centro.
+
+130
+00:06:23,060 --> 00:06:26,400
+Força na mesma linha do
+vetor posição não faz torque.
+
+131
+00:06:26,420 --> 00:06:28,900
+Torque zero, momento angular constante.
+
+132
+00:06:28,920 --> 00:06:32,680
+Agora imagina um empurrão de lado
+no disco, tangente ao círculo,
+
+133
+00:06:32,700 --> 00:06:34,860
+como a gente empurra o
+carrossel de uma pracinha,
+
+134
+00:06:34,880 --> 00:06:36,640
+enquanto o fio segura o raio.
+
+135
+00:06:36,660 --> 00:06:40,600
+Essa força tangencial faz torque,
+e o momento angular cresce.
+
+136
+00:06:40,620 --> 00:06:44,620
+Escrevendo a lei com o raio fixo,
+a massa e o raio saem da derivada.
+
+137
+00:06:44,640 --> 00:06:47,800
+Sobra o momento de inércia
+vezes a aceleração angular.
+
+138
+00:06:47,820 --> 00:06:53,160
+É a segunda lei da rotação, saindo direto de
+torque igual à variação do momento angular.
+
+139
+00:06:53,180 --> 00:06:56,260
+Guarda este detalhe, porque ele
+vai salvar a gente daqui a pouco:
+
+140
+00:06:56,280 --> 00:06:59,360
+isso só saiu assim
+porque o raio ficou fixo.
+
+141
+00:06:59,380 --> 00:07:01,860
+Agora a ideia mais poderosa do vídeo.
+
+142
+00:07:01,880 --> 00:07:06,700
+Uma força central é uma força que aponta
+sempre na linha que liga a partícula a um ponto
+
+143
+00:07:06,720 --> 00:07:11,620
+fixo, para ele ou para longe dele, e pode
+mudar de intensidade com a distância.
+
+144
+00:07:11,640 --> 00:07:14,360
+Como ela fica na mesma
+direção do vetor posição,
+
+145
+00:07:14,380 --> 00:07:16,600
+o torque em relação a esse ponto é zero.
+
+146
+00:07:16,620 --> 00:07:20,080
+E torque zero significa
+momento angular constante.
+
+147
+00:07:20,100 --> 00:07:22,860
+Não importa o tamanho da
+força, nem como ela muda:
+
+148
+00:07:22,880 --> 00:07:26,840
+se ela é central, o momento angular
+em relação ao centro não muda.
+
+149
+00:07:26,860 --> 00:07:28,640
+Daí saem duas consequências.
+
+150
+00:07:28,660 --> 00:07:33,320
+A primeira: o momento angular é perpendicular
+ao vetor posição e à velocidade.
+
+151
+00:07:33,340 --> 00:07:37,920
+Se ele não muda de direção, a partícula
+nunca sai do plano perpendicular a ele.
+
+152
+00:07:37,940 --> 00:07:39,400
+O movimento fica num plano.
+
+153
+00:07:39,420 --> 00:07:44,160
+E se o momento angular for zero, a partícula
+anda numa reta que passa pelo centro.
+
+154
+00:07:44,180 --> 00:07:48,920
+A segunda: lembra que a área varrida por
+segundo é o momento angular dividido pelo dobro
+
+155
+00:07:48,940 --> 00:07:49,660
+da massa?
+
+156
+00:07:49,680 --> 00:07:53,100
+Se o momento angular é constante,
+a área por segundo também é.
+
+157
+00:07:53,120 --> 00:07:56,960
+Áreas iguais em tempos iguais,
+para qualquer força central:
+
+158
+00:07:56,980 --> 00:08:00,400
+um fio, uma mola presa num
+ponto, a gravidade do Sol.
+
+159
+00:08:00,420 --> 00:08:03,240
+O Newton tinha uma prova
+geométrica linda disso.
+
+160
+00:08:03,260 --> 00:08:08,280
+Sem força, a partícula iria do ponto A ao
+ponto B e depois ao ponto onde ela estaria
+
+161
+00:08:08,300 --> 00:08:12,400
+sem o chute, com o mesmo passo, e
+os triângulos teriam a mesma área,
+
+162
+00:08:12,420 --> 00:08:13,280
+como na reta.
+
+163
+00:08:13,300 --> 00:08:18,300
+Agora, em B, ela leva um chute apontando
+para o centro e vai parar no ponto C.
+
+164
+00:08:18,320 --> 00:08:24,020
+A diferença entre onde ela estaria e onde ela
+está é paralela à reta que liga B ao centro.
+
+165
+00:08:24,040 --> 00:08:27,200
+Então os dois triângulos têm
+a mesma base e a mesma altura,
+
+166
+00:08:27,220 --> 00:08:28,620
+e a mesma área.
+
+167
+00:08:28,640 --> 00:08:30,760
+Chute central não muda a área.
+
+168
+00:08:30,780 --> 00:08:35,000
+Repetindo com intervalos cada vez
+menores, chega-se à força contínua.
+
+169
+00:08:35,020 --> 00:08:39,380
+Por isso um planeta anda mais rápido
+perto do Sol e mais devagar longe dele.
+
+170
+00:08:39,400 --> 00:08:44,160
+Perto, o braço é curto, então a parte da
+velocidade ao longo da órbita tem que ser maior
+
+171
+00:08:44,180 --> 00:08:45,680
+para varrer a mesma área.
+
+172
+00:08:45,700 --> 00:08:49,200
+A própria Terra faz isso: passa
+mais rápido por volta de janeiro,
+
+173
+00:08:49,220 --> 00:08:52,340
+quando está mais perto do Sol, e
+mais devagar por volta de julho.
+
+174
+00:08:52,360 --> 00:08:55,500
+A lei das áreas não depende
+de a força ser a gravidade;
+
+175
+00:08:55,520 --> 00:08:57,340
+depende de ela ser central.
+
+176
+00:08:57,360 --> 00:09:01,140
+O resto das leis dos planetas a gente
+explora no módulo de gravitação.
+
+177
+00:09:01,160 --> 00:09:02,960
+Agora sim, de volta à mesa.
+
+178
+00:09:02,980 --> 00:09:06,960
+O fio passa pelo furo, então a
+tração aponta sempre para o furo.
+
+179
+00:09:06,980 --> 00:09:09,300
+É uma força central em relação ao furo.
+
+180
+00:09:09,320 --> 00:09:12,660
+Então o momento angular do disco
+em relação ao furo não muda,
+
+181
+00:09:12,680 --> 00:09:14,500
+mesmo enquanto alguém puxa o fio.
+
+182
+00:09:14,520 --> 00:09:19,060
+Só que agora o disco anda numa espiral,
+e a velocidade dele tem duas partes:
+
+183
+00:09:19,080 --> 00:09:21,360
+uma para o furo e outra ao longo da volta.
+
+184
+00:09:21,380 --> 00:09:24,920
+A parte para o furo está na
+mesma direção do vetor posição,
+
+185
+00:09:24,940 --> 00:09:27,000
+então não entra no produto vetorial.
+
+186
+00:09:27,020 --> 00:09:29,880
+Todo o momento angular vem
+da parte ao longo da volta.
+
+187
+00:09:29,900 --> 00:09:34,500
+Por isso, mesmo na espiral, ele continua
+sendo o momento de inércia vezes a velocidade
+
+188
+00:09:34,520 --> 00:09:38,960
+angular, com o momento de inércia
+igual à massa vezes o raio ao quadrado.
+
+189
+00:09:38,980 --> 00:09:43,020
+Quando o raio cai pela metade, o
+momento de inércia cai para um quarto.
+
+190
+00:09:43,040 --> 00:09:47,000
+Para o produto continuar o mesmo, a
+velocidade angular tem que quadruplicar:
+
+191
+00:09:47,020 --> 00:09:49,680
+de dois e meio para dez
+radianos por segundo.
+
+192
+00:09:49,700 --> 00:09:53,500
+É igual a uma bola presa a um barbante
+que vai se enrolando num poste:
+
+193
+00:09:53,520 --> 00:09:56,140
+o raio encurta e ela acelera na volta.
+
+194
+00:09:56,160 --> 00:09:57,020
+Mas espera.
+
+195
+00:09:57,040 --> 00:09:59,980
+Torque zero e a velocidade
+angular aumentando?
+
+196
+00:10:00,000 --> 00:10:04,380
+Isso não contradiz o torque igual a momento
+de inércia vezes aceleração angular?
+
+197
+00:10:04,400 --> 00:10:05,500
+Não contradiz.
+
+198
+00:10:05,520 --> 00:10:09,180
+A lei geral é o torque igual
+à variação do momento angular.
+
+199
+00:10:09,200 --> 00:10:12,340
+Derivando o momento de inércia
+vezes a velocidade angular,
+
+200
+00:10:12,360 --> 00:10:17,140
+a regra do produto dá duas parcelas: o
+momento de inércia vezes a aceleração angular,
+
+201
+00:10:17,160 --> 00:10:21,580
+mais a taxa de variação do momento de
+inércia vezes a velocidade angular.
+
+202
+00:10:21,600 --> 00:10:25,100
+A versão curta só vale quando o
+momento de inércia é constante,
+
+203
+00:10:25,120 --> 00:10:26,700
+e lá no círculo ele era.
+
+204
+00:10:26,720 --> 00:10:27,820
+Aqui não é.
+
+205
+00:10:27,840 --> 00:10:31,700
+Com torque zero, a primeira
+parcela tem que cancelar a segunda.
+
+206
+00:10:31,720 --> 00:10:34,980
+Como o raio está diminuindo, o
+momento de inércia está caindo,
+
+207
+00:10:35,000 --> 00:10:37,580
+e a aceleração angular sai positiva.
+
+208
+00:10:37,600 --> 00:10:41,940
+Para ter um número, suponha que o fio esteja
+sendo recolhido a trinta centímetros por
+
+209
+00:10:41,960 --> 00:10:42,320
+segundo.
+
+210
+00:10:42,340 --> 00:10:45,680
+Quando o disco passa a quarenta
+e cinco centímetros do furo,
+
+211
+00:10:45,700 --> 00:10:49,600
+a aceleração angular dá quase seis
+radianos por segundo ao quadrado,
+
+212
+00:10:49,620 --> 00:10:50,940
+sem torque nenhum.
+
+213
+00:10:50,960 --> 00:10:54,060
+E repara numa diferença que
+obriga a pensar no raio.
+
+214
+00:10:54,080 --> 00:10:59,400
+A velocidade angular quadruplicou, mas a
+velocidade do disco ao longo da volta só dobrou:
+
+215
+00:10:59,420 --> 00:11:01,900
+de um e meio para três metros por segundo.
+
+216
+00:11:01,920 --> 00:11:05,280
+A velocidade angular depende
+do inverso do raio ao quadrado;
+
+217
+00:11:05,300 --> 00:11:08,760
+a velocidade ao longo da volta
+depende só do inverso do raio.
+
+218
+00:11:08,780 --> 00:11:09,500
+E as áreas?
+
+219
+00:11:09,520 --> 00:11:13,360
+Continuam iguais em tempos
+iguais, durante a puxada inteira.
+
+220
+00:11:13,380 --> 00:11:15,920
+Com o raio menor, o
+triângulo fica mais baixo,
+
+221
+00:11:15,940 --> 00:11:20,080
+então tem que ficar mais largo: o disco
+percorre mais arco a cada instante.
+
+222
+00:11:20,100 --> 00:11:22,420
+Falta uma pergunta: e a energia?
+
+223
+00:11:22,440 --> 00:11:24,760
+Quem deu energia para o disco correr mais?
+
+224
+00:11:24,780 --> 00:11:26,620
+Olha a velocidade durante a puxada.
+
+225
+00:11:26,640 --> 00:11:31,100
+A trajetória é uma espiral, então a velocidade
+tem uma parte ao longo da volta e uma
+
+226
+00:11:31,120 --> 00:11:32,720
+parte apontando para o furo.
+
+227
+00:11:32,740 --> 00:11:34,880
+A tração também aponta para o furo.
+
+228
+00:11:34,900 --> 00:11:37,740
+Então a tração tem uma componente
+na direção do movimento,
+
+229
+00:11:37,760 --> 00:11:39,700
+e faz trabalho positivo.
+
+230
+00:11:39,720 --> 00:11:43,120
+Força central não faz torque,
+mas pode fazer trabalho.
+
+231
+00:11:43,140 --> 00:11:47,840
+A energia cinética vai de zero vírgula duzentos
+e vinte e cinco para zero vírgula novecentos
+
+232
+00:11:47,860 --> 00:11:53,040
+joule, quatro vezes mais, comparando os dois
+estados em que o disco não está se aproximando
+
+233
+00:11:53,060 --> 00:11:53,720
+do furo.
+
+234
+00:11:53,740 --> 00:11:58,280
+Os zero vírgula seiscentos e setenta e cinco
+joule de diferença são o trabalho da mão,
+
+235
+00:11:58,300 --> 00:11:59,460
+entregue pelo fio.
+
+236
+00:11:59,480 --> 00:12:03,620
+Ou seja: o momento angular se
+conservou, e a energia cinética não.
+
+237
+00:12:03,640 --> 00:12:07,660
+São duas leis com condições diferentes:
+uma pede ausência de torque,
+
+238
+00:12:07,680 --> 00:12:09,500
+a outra leva em conta o trabalho.
+
+239
+00:12:09,520 --> 00:12:12,800
+E por isso fica cada
+vez mais difícil puxar.
+
+240
+00:12:12,820 --> 00:12:17,520
+Numa puxada sem acelerar o disco para dentro,
+a tração cresce com o inverso do cubo do
+
+241
+00:12:17,540 --> 00:12:21,800
+raio: quando o raio cai pela metade,
+a força fica oito vezes maior,
+
+242
+00:12:21,820 --> 00:12:25,180
+de zero vírgula setenta e
+cinco newton para seis newtons.
+
+243
+00:12:25,200 --> 00:12:27,420
+A pergunta inicial está respondida.
+
+244
+00:12:27,440 --> 00:12:29,380
+Ninguém empurrou o disco para o lado.
+
+245
+00:12:29,400 --> 00:12:34,160
+A tração é central, então não faz torque, e
+o momento angular em relação ao furo ficou
+
+246
+00:12:34,180 --> 00:12:34,700
+constante.
+
+247
+00:12:34,720 --> 00:12:39,400
+Com o raio menor, a única forma de manter
+esse momento angular é girar mais rápido.
+
+248
+00:12:39,420 --> 00:12:42,880
+E a energia extra veio da mão,
+que fez trabalho pelo fio.
+
+249
+00:12:42,900 --> 00:12:46,740
+Três ideias para levar: momento
+angular não precisa de círculo;
+
+250
+00:12:46,760 --> 00:12:49,600
+torque zero não quer dizer
+velocidade angular constante;
+
+251
+00:12:49,620 --> 00:12:53,280
+e conservar momento angular
+não é conservar energia.
+
+252
+00:12:53,300 --> 00:12:56,860
+E fica uma pergunta para você:
+e se, em vez de uma partícula,
+
+253
+00:12:56,880 --> 00:12:59,980
+for um corpo inteiro girando,
+feito de milhões delas?
+
+254
+00:13:00,000 --> 00:13:04,860
+Como somar todos esses momentos angulares, e
+será que o resultado sempre aponta na direção
+
+255
+00:13:04,880 --> 00:13:06,060
+do eixo de rotação?
+
+256
+00:13:06,080 --> 00:13:08,800
+A gente investiga isso no
+módulo de corpo rígido.
+
+257
+00:13:08,820 --> 00:13:13,260
+Se essas conexões ajudaram você, se inscreve
+no Parallax Lab para acompanhar os próximos
+
+258
+00:13:13,280 --> 00:13:13,520
+vídeos.
+
+259
+00:13:13,540 --> 00:13:18,560
+E deixa nos comentários: em relação a qual
+ponto uma pedra caindo reto tem momento angular
+
+260
+00:13:18,580 --> 00:13:19,120
+zero?
+
+261
+00:13:19,140 --> 00:13:19,660
+Até a próxima!

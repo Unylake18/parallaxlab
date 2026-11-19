@@ -1,0 +1,90 @@
+== D1 · φ(u,v) = (u+v, u−v) (Guidorizzi 1.1 ex. 2 e 3)
+[True ] quadrado → (0,0),(1,1),(2,0),(1,−1)
+[True ] lado da imagem = √2
+[True ] área da imagem = 2 (shoelace)
+[True ] x²+y² = 2(u²+v²): círculo de raio r vira raio r√2
+[True ] det da transformação = −2 (área ×2 e inverte a orientação)
+[True ] reta v = 0 vira a reta y = x
+== D2 · f = (1, x − y) nas retas (Guidorizzi 1.2 ex. 2)
+[True ] na reta y = x − 0: f = (1, 0)
+[True ] na reta y = x − 1: f = (1, 1)
+[True ] na reta y = x − 2: f = (1, 2)
+== D3 · famílias (−y, x)/r^{2α} e (x, y)/r^{2α} (Guidorizzi 1.3 ex. 6)
+[True ] rot redemoinho = (2 − 2α)/(x²+y²)^α
+[True ] div redemoinho = 0 para todo α
+[True ] div explosão = (2 − 2α)/(x²+y²)^α
+[True ] rot explosão = 0 para todo α
+[True ] rapidez = r^{1−2α}
+[True ] α = 0: rot = 2
+[True ] α = 1/2: rot = 1/sqrt(x**2 + y**2)
+[True ] α = 1: rot = 0
+[True ] α = 2: rot = -2/(x**2 + y**2)**2
+[True ] α = 1/2: rapidez 1 em todo ponto
+[True ] α = 1/4: rapidez → 0 na origem (r^{1/2})
+[True ] α = 1/2: rapidez 1 perto da origem, direção depende do caminho (sem limite)
+[True ] α = 1: rapidez 1/r → ∞ na origem
+== D4 · F = xy/(x²+y²)·(x, y), F(0,0) = 0
+[True ] ‖F‖ = |xy|/r (polar: r|sen2θ|/2 ≤ r/2)
+[True ] ‖F‖² em polar = r²·sen²(2θ)/4
+[True ] δ = 2ε funciona: ‖X‖ < 2ε ⇒ ‖F‖ ≤ ‖X‖/2 < ε
+[True ] ∂F/∂x(0,0) = 0 (F(h,0) = 0)
+[True ] ∂F/∂y(0,0) = 0 (F(0,k) = 0)
+[True ] homogêneo de grau 1: F(sX) = s·F(X) (zoom ×10 dá o mesmo desenho)
+[True ] ∂P/∂x = 2xy³/(x²+y²)²
+[True ] ∂P/∂x na diagonal y = x vale 1/2 (e 0 nos eixos) ⇒ não é C¹
+[True ] erro do modelo linear (tabela zero) / ‖H‖ na diagonal = 1/2, não vai a 0
+[True ] div F fora da origem = 2xy/(x²+y²) = sen 2θ
+[True ] rot F fora da origem = (y² − x²)/(x²+y²) = −cos 2θ
+== D5 · o desafio: tabela → previsão
+[True ] ① J = [[1,1],[1,−1]]
+[True ] ① rot 0, div 0, d1 2, d2 2
+[True ] ① fluxo t = 0,5: área ×1.0000 (= 1)
+[True ] ① direção que estica: 22.5° (22,5°), fator e^(√2·0,5) = 2.028
+[True ] ② J = [[0,0],[1,−1]]
+[True ] ② rot 1, div −1, d1 1, d2 1
+[True ] ② fluxo t = 0,5 (parte linear): área ×0.6065 = e^(−0,5)
+[True ] ③ J = [[2x, −2y],[2y, 2x]]
+[True ] ③ rot = 4y, div = 4x, d1 = d2 = 0 em todo ponto
+[True ] ③ em (1, 0): (rot, div) = (0, 4)
+[True ] ③ em (0, 1): (rot, div) = (4, 0)
+[True ] ③ em (1, 1): (rot, div) = (4, 4)
+[True ] ③ em (-1, 0): (rot, div) = (0, -4)
+[True ] ③ fluxo exato: z(t) = z0/(1 − t·z0) resolve z' = z² (o campo é z²)
+[True ] ③ (x²−y²) + i·2xy = (x + iy)²
+      ③ (1, 0), quadradinho 0,2, t = 0,12: ângulo da quina 91.6°, giro 0.0°, área ×1.76
+[True ] ③ (1, 0): quina continua ~90° (|Δ| < 3°)
+      ③ (0, 1), quadradinho 0,2, t = 0,12: ângulo da quina 91.2°, giro 13.9°, área ×1.01
+[True ] ③ (0, 1): quina continua ~90° (|Δ| < 3°)
+      ③ (1, 1), quadradinho 0,2, t = 0,12: ângulo da quina 91.3°, giro 15.7°, área ×1.68
+[True ] ③ (1, 1): quina continua ~90° (|Δ| < 3°)
+== A1 · rio no canal v = (1 − x²/9) j, −3 < x < 3 (Guidorizzi 1.3 ex. 4)
+[True ] rot = −2x/9
+[True ] div = 0 (incompressível)
+[True ] d1 = 0, d2 = −2x/9
+[True ] margem esquerda x = −3: rot = +2/3 (anti-horário); direita: −2/3
+[True ] centro x = 0: rot 0, deformação 0 (atrito viscoso nulo no meio)
+== A2 · água batendo na parede v = (x, −y), y ≥ 0
+[True ] v = ∇φ com φ = (x² − y²)/2
+[True ] rot 0, div 0, d1 = 2, d2 = 0
+[True ] ∇²φ = 0 (irrotacional + incompressível ⇒ Laplace; Guidorizzi 1.4 ex. 4)
+[True ] linhas de corrente xy = c (v·∇(xy) = 0)
+[True ] na parede y = 0 a velocidade é tangente (v_y = 0)
+== A3 · por que 1/r e 1/r²
+[True ] fio: B = (−y, x)/r^{2α}, rot B = 0 fora do fio ⇔ α = 1 ⇒ |B| = 1/r
+[True ] espaço: div(X/‖X‖^p) = (3 − p)/‖X‖^p
+[True ] div = 0 fora da carga ⇔ p = 3 ⇒ |E| = ‖X‖/‖X‖³ = 1/r²
+[True ] plano (fio carregado): div(X/r^{2α}) = 0 ⇔ α = 1 ⇒ |E| = 1/r
+[True ] Guidorizzi 1.4 ex. 6: ∇²f(x²+y²) = 4[u f''(u) + f'(u)]
+[True ] f = ln u é solução (u f'' = −f')
+[True ] ∇ ln(x²+y²) = 2(x, y)/(x²+y²) (a explosão com α = 1)
+== A4 · nunca deforma ⇔ Cauchy–Riemann
+[True ] z²: d1 = d2 = 0
+[True ] z³: d1 = d2 = 0
+[True ] e^z: d1 = d2 = 0
+[True ] conjugado (x² − y², −2xy): rot 0, div 0, só deforma
+== D3b · duas identidades (Guidorizzi 1.3 ex. 3; estilo Stewart 16.5)
+[True ] rot(∇φ) = 0 para φ de classe C² (Schwarz)
+[True ] div(rot F) = 0 para F de classe C²
+[True ] div(x sen y, cos y, z − xy) = 1 ≠ 0 ⇒ não existe G com rot G igual a ele
+
+TOTAL: 75/75 True

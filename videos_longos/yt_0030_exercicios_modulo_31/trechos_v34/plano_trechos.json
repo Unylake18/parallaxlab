@@ -1,0 +1,132 @@
+[
+ {
+  "trecho": "T01_D3-2_D3-3",
+  "ancoras": [
+   "D3-2",
+   "D3-3"
+  ],
+  "antes": "D3-1",
+  "depois": "D3-4",
+  "chars": 3544,
+  "contexto_antes": "[thoughtful] Terceiro degrau: uma família inteira de redemoinhos. Começa com menos a coordenada vertical na primeira componente e a horizontal na segunda. Divide tudo por uma potência da distância ao quadrado. Xis ao quadrado mais ípsilon ao quadrado é a distância ao quadrado. O expoente é alfa. Cada valor do expoente alfa cria um campo diferente. Pausa o vídeo e tenta: o que acontece com alfa zero, meio e um?",
+  "contexto_depois": "[curious] Agora lê a fórmula caso a caso. Alfa zero: dois menos zero, sobre a potência zero, que vale um. Rotacional dois, exatamente o disco rígido. Alfa meio: dois menos um, sobre a distância. Todas as setas têm o mesmo tamanho e, mesmo assim, o rotacional vale um sobre a distância. A rodinha gira mais perto do centro. Alfa um: dois menos dois dá zero. As partículas continuam dando a volta, mas o quadradinho não apresenta rotação local: é o vórtice do segundo episódio."
+ },
+ {
+  "trecho": "T02_D3-6",
+  "ancoras": [
+   "D3-6"
+  ],
+  "antes": "D3-5",
+  "depois": "D3-7",
+  "chars": 1117,
+  "contexto_antes": "[excited] E alfa dois? Dois menos quatro dá menos dois: o rotacional fica negativo. As setas continuam dando a volta no sentido anti-horário, e o quadradinho gira no sentido horário! Olha por quê: a seta do lado de dentro é bem mais forte que a do lado de fora. Então a borda de dentro do quadradinho avança mais rápido, e ele vira para trás. O sentido da volta não é o sentido do giro. Não confunda os dois.",
+  "contexto_depois": "[curious] Último item: gira cada seta noventa graus, no sentido horário. O redemoinho vira uma explosão radial, com setas para fora. A componente horizontal nova é a vertical antiga, e a vertical nova é menos a horizontal antiga. Então o divergente novo é exatamente a conta do rotacional antigo. Os papéis se trocam: o rotacional vira zero, e o divergente passa a ser dois menos dois alfa, dividido pela distância ao quadrado elevada a alfa. Com alfa um, é a falsa fonte do segundo episódio: setas para fora, mas divergente zero fora do centro. [thoughtful, emphatic] Guarda essa fórmula: dois menos dois alfa. Ela volta na física."
+ },
+ {
+  "trecho": "T03_D3b-2",
+  "ancoras": [
+   "D3b-2"
+  ],
+  "antes": "D3b-1",
+  "depois": "D3b-3",
+  "chars": 447,
+  "contexto_antes": "[thoughtful] Antes de subir, duas regras que economizam contas. A primeira começa assim: pega um campo que é o gradiente de uma função. As componentes são as derivadas parciais da função. Na tela, nabla fi: lê-se gradiente de fi. E, daqui em diante, fi com xis pequeno embaixo é a derivada parcial de fi em relação a xis. Calcula o rotacional. A primeira componente é a derivada em relação à vertical da derivada em relação à profundidade, menos a derivada em relação à profundidade da derivada em relação à vertical. E as outras duas componentes seguem o mesmo padrão: uma derivada mista menos a mesma derivada mista com a ordem trocada. Se a função é classe cê dois, as derivadas mistas são iguais, por Schwarz. Tudo cancela. No plano, só sobra a terceira componente do rotacional, e ela também vale zero. Um gradiente nunca gira localmente, nessas condições.",
+  "contexto_depois": "[thoughtful] Segunda regra, agora no espaço. Calcula o rotacional de um campo e depois o divergente desse rotacional. A primeira componente é derivada na horizontal, a segunda na vertical e a terceira na profundidade. Aparecem seis derivadas mistas, e elas se cancelam aos pares, por Schwarz. Um rotacional nunca diverge, com regularidade suficiente."
+ },
+ {
+  "trecho": "T04_D3b-4",
+  "ancoras": [
+   "D3b-4"
+  ],
+  "antes": "D3b-3",
+  "depois": "D3b-5",
+  "chars": 603,
+  "contexto_antes": "[thoughtful] Segunda regra, agora no espaço. Calcula o rotacional de um campo e depois o divergente desse rotacional. A primeira componente é derivada na horizontal, a segunda na vertical e a terceira na profundidade. Aparecem seis derivadas mistas, e elas se cancelam aos pares, por Schwarz. Um rotacional nunca diverge, com regularidade suficiente.",
+  "contexto_depois": "[thoughtful] Isso também aparece na física. O campo magnético tem divergente zero, pela lei de Gauss para o magnetismo, que diz que não existe polo magnético isolado. No espaço todo, sob hipóteses adequadas, ele pode ser o rotacional de outro campo, chamado potencial vetor. A seta dupla nos dois sentidos lê-se se e somente se. As duas ideias andam juntas, mas cada direção tem as suas hipóteses. A regra de hoje prova uma das metades: todo rotacional suficientemente regular tem divergente zero."
+ },
+ {
+  "trecho": "T05_D4-6_D4-7",
+  "ancoras": [
+   "D4-6",
+   "D4-7"
+  ],
+  "antes": "D4-5",
+  "depois": "D4-8",
+  "chars": 3193,
+  "contexto_antes": "[thoughtful] Item b: continuidade. O ponto está no domínio, porque definimos a seta ali. O limite existe e é o vetor zero. E é igual à seta do ponto. Os três pedaços passam: o campo é contínuo. Item c: as derivadas parciais na origem. Andando pelo eixo horizontal, o produto das coordenadas é zero, seta zero: derivada zero. Na tela, ela é o limite, quando h tende a zero, da diferença das setas dividida pelo passo h. Pelo vertical, a mesma coisa. A tabela é toda zero: rotacional zero, divergente zero, deformação zero. A previsão seria: perto da origem, nada muda na primeira ordem.",
+  "contexto_depois": "[curious] Olha a escada. No episódio passado, o campo encrenqueiro nem era contínuo. Este é contínuo, tem as duas derivadas parciais e mesmo assim engana. Ter derivadas parciais não basta para garantir que a tabela descreva o campo de perto."
+ },
+ {
+  "trecho": "T06_D5-9",
+  "ancoras": [
+   "D5-9"
+  ],
+  "antes": "D5-8",
+  "depois": "D5-10",
+  "chars": 666,
+  "contexto_antes": "[curious] E isso já aparecia no desenho do segundo degrau: indo para a direita, a seta fica mais inclinada para cima. Esse é o um embaixo à esquerda. Andando para cima, a seta abaixa, e aí aparece o menos um. Solta: o quadradinho viaja pelo campo, gira, encolhe e entorta. A viagem depende da velocidade no centro; ela não aparece na jacobiana porque a gente tirou a seta do centro. A tabela explica forma e área, não o transporte.",
+  "contexto_depois": "[curious] Rotacional: duas vezes a vertical, menos menos duas vezes a vertical. Resultado: quatro vezes a vertical. Divergente: duas vezes a horizontal mais duas vezes a horizontal: quatro vezes a horizontal. E as duas deformações, cada uma é um termo menos ele mesmo. Zero, em qualquer ponto. No ponto um, zero: quatro vezes zero, rotacional zero; quatro vezes um, divergente quatro. Só cresce. No zero, um: rotacional quatro, divergente zero. Só gira. No um, um: gira e cresce."
+ },
+ {
+  "trecho": "T07_A1-2_A1-3",
+  "ancoras": [
+   "A1-2",
+   "A1-3"
+  ],
+  "antes": "A1-1",
+  "depois": "A1-4",
+  "chars": 1618,
+  "contexto_antes": "[thoughtful] Um canal reto, com seis metros de largura. A água corre a um metro por segundo bem no meio e a velocidade cai até zero nas margens, numa parábola. A componente na direção do canal é um menos o quadrado da coordenada horizontal sobre nove. No meio dá um; nas margens, a três metros do centro, dá um menos nove nonos: zero. Três perguntas: o escoamento é incompressível? O escoamento gira? E onde o atrito é maior? Pausa o vídeo e tenta.",
+  "contexto_depois": "[curious] Olha os três quadradinhos. O do meio só viaja. Os das margens viajam, entortam e giram, cada um para um lado. Por quê? A água do lado de dentro corre mais rápido que a do lado de fora, perto de cada margem. Uma borda avança mais que a outra."
+ },
+ {
+  "trecho": "T08_A1-5",
+  "ancoras": [
+   "A1-5"
+  ],
+  "antes": "A1-4",
+  "depois": "A2-1",
+  "chars": 536,
+  "contexto_antes": "[curious] Olha os três quadradinhos. O do meio só viaja. Os das margens viajam, entortam e giram, cada um para um lado. Por quê? A água do lado de dentro corre mais rápido que a do lado de fora, perto de cada margem. Uma borda avança mais que a outra.",
+  "contexto_depois": "[thoughtful] Segundo problema: um jato de água descendo e batendo numa parede, como numa pia. Num modelo ideal, perto do ponto de estagnação, a velocidade tem a coordenada horizontal na primeira componente e menos a vertical na segunda. É o campo do episódio passado, só na metade de cima do plano, com a parede embaixo."
+ },
+ {
+  "trecho": "T09_A2-2_A2-4",
+  "ancoras": [
+   "A2-2",
+   "A2-3",
+   "A2-4"
+  ],
+  "antes": "A2-1",
+  "depois": "A4-1",
+  "chars": 2512,
+  "contexto_antes": "[thoughtful] Segundo problema: um jato de água descendo e batendo numa parede, como numa pia. Num modelo ideal, perto do ponto de estagnação, a velocidade tem a coordenada horizontal na primeira componente e menos a vertical na segunda. É o campo do episódio passado, só na metade de cima do plano, com a parede embaixo.",
+  "contexto_depois": "[curious] Lembra do terceiro campo do desafio, sem deformação? Olha por quê. Deformação zero em todo lugar dá duas equações. Iguala cada deformação a zero e passa um termo para o outro lado: a derivada horizontal da primeira componente é igual à derivada vertical da segunda, e a derivada vertical da primeira é igual a menos a derivada horizontal da segunda. Essas são as equações de Cauchy-Riemann."
+ },
+ {
+  "trecho": "T10_A4-2_A4-4",
+  "ancoras": [
+   "A4-2",
+   "A4-3",
+   "A4-4"
+  ],
+  "antes": "A4-1",
+  "depois": "A3-1",
+  "chars": 2499,
+  "contexto_antes": "[curious] Lembra do terceiro campo do desafio, sem deformação? Olha por quê. Deformação zero em todo lugar dá duas equações. Iguala cada deformação a zero e passa um termo para o outro lado: a derivada horizontal da primeira componente é igual à derivada vertical da segunda, e a derivada vertical da primeira é igual a menos a derivada horizontal da segunda. Essas são as equações de Cauchy-Riemann.",
+  "contexto_depois": "[excited] E agora chegamos ao último problema, aquele da abertura. Um fio comprido com corrente atravessa a tela. As linhas do campo magnético são circunferências ao redor dele. A pergunta é: como a intensidade diminui com a distância? Pausa e pensa."
+ },
+ {
+  "trecho": "T11_A3-3_A3-5",
+  "ancoras": [
+   "A3-3",
+   "A3-4",
+   "A3-5"
+  ],
+  "antes": "A3-2",
+  "depois": "A3-6",
+  "chars": 3572,
+  "contexto_antes": "[thoughtful] A física traz duas informações. Primeiro, o campo dá a volta no fio, e o tamanho só depende da distância até ele. Supondo uma lei de potência, podemos usar a família do terceiro degrau: menos a coordenada vertical e a horizontal, divididas pela distância ao quadrado elevada a um expoente alfa desconhecido. Agora entra a segunda informação: fora do fio não há corrente. Na magnetostática, a lei de Ampère diz que, nessa região, o rotacional do campo magnético é zero.",
+  "contexto_depois": "[thoughtful, emphatic] No plano, o número que aparece é dois; no espaço, é três. O expoente da lei vem da dimensão do espaço: em três dimensões, o campo tem mais lugar para se espalhar. Mas cuidado: o rotacional e o divergente sozinhos não decidem a lei. É a lei física, impondo rotacional ou divergente zero fora da fonte, junto com a simetria: as linhas em círculo em volta do fio e as linhas radiais em volta da carga. Com as duas juntas, a dependência fica determinada."
+ }
+]

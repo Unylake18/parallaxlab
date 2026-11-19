@@ -1,0 +1,22 @@
+(timeline da voz; medido no 540p15 com voz — as rotas do PB1/PB6 mudaram depois só no caminho dos voos, sem mudar tempos)
+G3 · parado = trecho em que menos de 40 px do quadro 960×540 mudam (diferença > 8 em algum canal), quadro a quadro, por mais de 3 s.
+Motivo: a fala do trecho (voz real, alinhamento forçado) vai ao lado; entre 3 e 5 s o critério do handoff aceita a voz lendo a tela.
+
+16 trechos > 3 s · 0 trechos > 5 s · duração do vídeo 20:11.07
+
+1:41.40 – 1:44.73  ( 3.3 s, 3–5 s)  PB1  | fala: «o maior número que fica abaixo de todos esses valores»
+2:49.80 – 2:53.27  ( 3.5 s, 3–5 s)  PB1  | fala: «área da base essa diferença entre teto e piso tem nome»
+3:26.33 – 3:29.73  ( 3.4 s, 3–5 s)  PB1  | fala: «épsilon maior que zero existe delta maior que zero»
+4:58.40 – 5:01.47  ( 3.1 s, 3–5 s)  PB2  | fala: «apertam em torno de sete vírgula zero seis quilos»
+5:13.13 – 5:16.27  ( 3.1 s, 3–5 s)  PB2  | fala: «espaço os pontos de descontinuidade ocupam»
+6:59.93 – 7:03.00  ( 3.1 s, 3–5 s)  PB3  | fala: «de conteúdo nulo também tem conteúdo nulo»
+8:52.73 – 8:56.60  ( 3.9 s, 3–5 s)  PB4  | fala: «essa diferença vai a zero o livro vai além toda curva de»
+12:30.07 – 12:33.27  ( 3.2 s, 3–5 s)  PB6  | fala: «fechada e limitada dá para escolher entre esses pares»
+12:41.67 – 12:45.00  ( 3.3 s, 3–5 s)  PB6  | fala: «fechada e limitada toda função contínua é»
+12:48.47 – 12:52.13  ( 3.7 s, 3–5 s)  PB7  | fala: «juntando tudo pega uma função limitada num retângulo»
+12:52.67 – 12:56.40  ( 3.7 s, 3–5 s)  PB7  | fala: «número eme maiúsculo positivo que limita o módulo dos valores»
+14:06.73 – 14:10.00  ( 3.3 s, 3–5 s)  PB7  | fala: «bastante mas o módulo dela nunca passa de eme»
+15:14.13 – 15:17.73  ( 3.6 s, 3–5 s)  PB7  | fala: «imediata se a função é contínua no retângulo inteiro»
+17:02.93 – 17:06.40  ( 3.5 s, 3–5 s)  PB8  | fala: «passado existem bordas que não somem existem»
+17:43.53 – 17:47.00  ( 3.5 s, 3–5 s)  PB9  | fala: «nulo e se a região não é um retângulo»
+19:16.67 – 19:19.73  ( 3.1 s, 3–5 s)  PS  | fala: «sai o teorema uma integral dupla não exige que tudo»

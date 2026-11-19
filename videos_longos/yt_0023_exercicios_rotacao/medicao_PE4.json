@@ -1,0 +1,320 @@
+{
+"lote": "PE4",
+"marcas": [
+{
+"id": "an:E4-1",
+"A": 0.6,
+"W": 0.0
+},
+{
+"id": "gat:E4-1:dois discos iguais",
+"A": 0.5,
+"W": 0.0
+},
+{
+"id": "gat:E4-1:o de cima \u00e9 preso ao eixo pelo centro",
+"A": 1.4,
+"W": 0.0
+},
+{
+"id": "gat:E4-1:com os centros a uma certa dist\u00e2ncia",
+"A": 0.5,
+"W": 0.0
+},
+{
+"id": "gat:E4-1:qual \u00e9 o per\u00edodo das oscila\u00e7\u00f5es pequenas",
+"A": 0.5,
+"W": 0.0
+},
+{
+"id": "ate:E4-1:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E4-2",
+"A": 0.4,
+"W": 0.0
+},
+{
+"id": "gat:E4-2:uma bolinha na ponta de um fio",
+"A": 0.6,
+"W": 0.0
+},
+{
+"id": "gat:E4-2:uma bolinha na ponta de um fio",
+"A": 6.93,
+"W": 0.4
+},
+{
+"id": "gat:E4-2:o momento de in\u00e9rcia dela",
+"A": 7.330000000000001,
+"W": 0.4
+},
+{
+"id": "gat:E4-2:para \u00e2ngulos pequenos",
+"A": 2.56,
+"W": 0.0
+},
+{
+"id": "gat:E4-2:o per\u00edodo \u00e9 dois pi vezes",
+"A": 3.37,
+"W": 0.0
+},
+{
+"id": "gat:E4-2:\u00e9 s\u00f3 usar esse comprimento equivalente",
+"A": 1.7599999999999998,
+"W": 0.0
+},
+{
+"id": "ate:E4-2:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E4-3",
+"A": 0.75,
+"W": 0.0
+},
+{
+"id": "gat:E4-3:o torque vem s\u00f3 do disco de baixo",
+"A": 1.8,
+"W": 0.0
+},
+{
+"id": "gat:E4-3:j\u00e1 o momento de in\u00e9rcia tem os dois",
+"A": 4.7,
+"W": 0.0
+},
+{
+"id": "gat:E4-3:a massa total \u00e9 o dobro",
+"A": 5.750000000000001,
+"W": 0.0
+},
+{
+"id": "gat:E4-3:dividindo o momento de in\u00e9rcia por isso",
+"A": 8.93,
+"W": 0.4
+},
+{
+"id": "gat:E4-3:o per\u00edodo d\u00e1 um v\u00edrgula um seis",
+"A": 7.905,
+"W": 0.0
+},
+{
+"id": "gat:E4-3:e o p\u00eandulo simples equivalente",
+"A": 0.9,
+"W": 0.0
+},
+{
+"id": "ate:E4-3:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E4-4",
+"A": 1.55,
+"W": 0.0
+},
+{
+"id": "gat:E4-4:solta dois p\u00eandulos juntos",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "gat:E4-4:soma momento de in\u00e9rcia",
+"A": 2.76,
+"W": 0.0
+},
+{
+"id": "gat:E4-4:sem ele o per\u00edodo cai",
+"A": 2.1,
+"W": 0.0
+},
+{
+"id": "ate:E4-4:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E4-5",
+"A": 1.25,
+"W": 0.0
+},
+{
+"id": "gat:E4-5:com o eixo a uma certa dist\u00e2ncia do centro",
+"A": 3.6,
+"W": 0.0
+},
+{
+"id": "gat:E4-5:onde p\u00f4r o eixo para o per\u00edodo ser o menor poss\u00edvel",
+"A": 1.0,
+"W": 0.0
+},
+{
+"id": "ate:E4-5:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E4-6",
+"A": 0.75,
+"W": 0.0
+},
+{
+"id": "gat:E4-6:o momento de in\u00e9rcia \u00e9 metade da massa",
+"A": 5.515,
+"W": 0.0
+},
+{
+"id": "gat:E4-6:o comprimento equivalente fica",
+"A": 5.99,
+"W": 0.0
+},
+{
+"id": "gat:E4-6:eixo muito longe",
+"A": 3.4,
+"W": 0.0
+},
+{
+"id": "gat:E4-6:eixo quase no centro",
+"A": 4.21,
+"W": 0.0
+},
+{
+"id": "gat:E4-6:tem que haver um m\u00ednimo",
+"A": 2.0,
+"W": 0.0
+},
+{
+"id": "ate:E4-6:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E4-7",
+"A": 0.8,
+"W": 0.0
+},
+{
+"id": "gat:E4-7:primeiro a derivada",
+"A": 1.9000000000000001,
+"W": 0.0
+},
+{
+"id": "gat:E4-7:a dist\u00e2ncia \u00e9 o raio sobre raiz de dois",
+"A": 3.2600000000000002,
+"W": 0.0
+},
+{
+"id": "gat:E4-7:segundo sem derivada",
+"A": 2.51,
+"W": 0.0
+},
+{
+"id": "gat:E4-7:\u00e9 m\u00ednima quando eles s\u00e3o iguais",
+"A": 2.31,
+"W": 0.0
+},
+{
+"id": "gat:E4-7:terceiro a curva do per\u00edodo",
+"A": 4.0,
+"W": 0.0
+},
+{
+"id": "gat:E4-7:sete v\u00edrgula zero sete cent\u00edmetros",
+"A": 0.5,
+"W": 0.0
+},
+{
+"id": "gat:E4-7:per\u00edodo m\u00ednimo",
+"A": 7.035,
+"W": 0.0
+},
+{
+"id": "ate:E4-7:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E4-8",
+"A": 1.35,
+"W": 0.0
+},
+{
+"id": "gat:E4-8:o per\u00edodo \u00e9 o mesmo",
+"A": 0.6,
+"W": 0.0
+},
+{
+"id": "gat:E4-8:trocar a dist\u00e2ncia pelo raio ao quadrado",
+"A": 2.3449999999999998,
+"W": 0.0
+},
+{
+"id": "gat:E4-8:cinco vezes dez d\u00e1 cinquenta",
+"A": 2.425,
+"W": 0.4
+},
+{
+"id": "ate:E4-8:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E4-9",
+"A": 1.4,
+"W": 0.0
+},
+{
+"id": "gat:E4-9:o eixo est\u00e1 dentro do disco",
+"A": 5.4,
+"W": 0.0
+},
+{
+"id": "gat:E4-9:a dist\u00e2ncia n\u00e3o pode ser menor que o raio",
+"A": 1.0,
+"W": 0.0
+},
+{
+"id": "gat:E4-9:o eixo bem na borda",
+"A": 4.56,
+"W": 0.0
+},
+{
+"id": "gat:E4-9:errar um pouco a posi\u00e7\u00e3o do eixo",
+"A": 2.0,
+"W": 0.0
+},
+{
+"id": "ate:E4-9:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:E4-10",
+"A": 0.9,
+"W": 0.0
+},
+{
+"id": "gat:E4-10:divide o momento de in\u00e9rcia em torno do eixo",
+"A": 2.8,
+"W": 0.0
+},
+{
+"id": "gat:E4-10:esse \u00e9 o comprimento equivalente",
+"A": 4.805000000000001,
+"W": 0.0
+},
+{
+"id": "ate:E4-10:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "fim",
+"A": 0.0,
+"W": 0.0
+}
+]
+}

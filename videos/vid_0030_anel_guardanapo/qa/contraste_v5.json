@@ -1,0 +1,691 @@
+{
+ "quadros_avaliados": 180,
+ "limiar": {
+  "texto": 4.5,
+  "linha": 3.0
+ },
+ "abaixo_do_limiar": [
+  {
+   "elemento": "Manim rot_aux",
+   "medidas": 251,
+   "pior": 1.12,
+   "t_pior": 94.0,
+   "tipo": "texto",
+   "xy": [
+    385,
+    311
+   ],
+   "mediana": 5.6
+  },
+  {
+   "elemento": "linha 3D cor (229, 176, 248)",
+   "medidas": 1,
+   "pior": 1.79,
+   "t_pior": 100.0,
+   "tipo": "linha",
+   "xy": [
+    432,
+    293
+   ],
+   "mediana": 1.79
+  },
+  {
+   "elemento": "linha 3D cor (229, 182, 251)",
+   "medidas": 7,
+   "pior": 1.84,
+   "t_pior": 93.0,
+   "tipo": "linha",
+   "xy": [
+    324,
+    291
+   ],
+   "mediana": 1.84
+  },
+  {
+   "elemento": "linha 3D cor (233, 139, 253)",
+   "medidas": 12,
+   "pior": 1.72,
+   "t_pior": 41.0,
+   "tipo": "linha",
+   "xy": [
+    364,
+    277
+   ],
+   "mediana": 2.22
+  },
+  {
+   "elemento": "linha 3D cor (233, 98, 253)",
+   "medidas": 11,
+   "pior": 1.15,
+   "t_pior": 42.0,
+   "tipo": "linha",
+   "xy": [
+    121,
+    312
+   ],
+   "mediana": 1.31
+  }
+ ],
+ "quadros_de_teste": {
+  "C01 trio com régua": {
+   "Remotion rot_trio0 R = 5 cm": 18.02
+  },
+  "C02 corte com h e triângulo": {
+   "Manim rot_aux": 2.67,
+   "linha 3D cor (233, 139, 253)": 1.74
+  },
+  "C03 coroa com r_int/r_ext/R": {},
+  "C04 disco da esfera": {},
+  "C06 anel com régua": {
+   "Remotion regua_anel": 7.12,
+   "Remotion regua_anel_rot h = 6 cm": 6.91
+  }
+ },
+ "por_elemento": {
+  "Manim rot_aux": {
+   "medidas": 251,
+   "pior": 1.12,
+   "t_pior": 94.0,
+   "tipo": "texto",
+   "xy": [
+    385,
+    311
+   ],
+   "mediana": 5.6
+  },
+  "Remotion C04_cont A = 0,00π cm²": {
+   "medidas": 2,
+   "pior": 17.6,
+   "t_pior": 101.0,
+   "tipo": "texto",
+   "xy": [
+    181,
+    603
+   ],
+   "mediana": 17.63
+  },
+  "Remotion C04_cont A = 5,00π cm²": {
+   "medidas": 4,
+   "pior": 17.81,
+   "t_pior": 106.0,
+   "tipo": "texto",
+   "xy": [
+    180,
+    603
+   ],
+   "mediana": 17.86
+  },
+  "Remotion C04_cont A = 5,44π cm²": {
+   "medidas": 2,
+   "pior": 17.72,
+   "t_pior": 109.0,
+   "tipo": "texto",
+   "xy": [
+    181,
+    603
+   ],
+   "mediana": 17.78
+  },
+  "Remotion C04_cont A = 6,33π cm²": {
+   "medidas": 2,
+   "pior": 17.85,
+   "t_pior": 105.0,
+   "tipo": "texto",
+   "xy": [
+    406,
+    603
+   ],
+   "mediana": 17.86
+  },
+  "Remotion C04_cont A = 6,81π cm²": {
+   "medidas": 2,
+   "pior": 17.7,
+   "t_pior": 103.0,
+   "tipo": "texto",
+   "xy": [
+    181,
+    603
+   ],
+   "mediana": 17.73
+  },
+  "Remotion C04_cont A = 7,56π cm²": {
+   "medidas": 2,
+   "pior": 12.06,
+   "t_pior": 112.0,
+   "tipo": "texto",
+   "xy": [
+    181,
+    603
+   ],
+   "mediana": 12.07
+  },
+  "Remotion C04_cont A = 8,00π cm²": {
+   "medidas": 2,
+   "pior": 17.83,
+   "t_pior": 108.0,
+   "tipo": "texto",
+   "xy": [
+    406,
+    603
+   ],
+   "mediana": 17.85
+  },
+  "Remotion C04_cont A = 8,72π cm²": {
+   "medidas": 2,
+   "pior": 17.83,
+   "t_pior": 107.0,
+   "tipo": "texto",
+   "xy": [
+    407,
+    603
+   ],
+   "mediana": 17.84
+  },
+  "Remotion C04_cont A = 8,95π cm²": {
+   "medidas": 2,
+   "pior": 17.77,
+   "t_pior": 111.0,
+   "tipo": "texto",
+   "xy": [
+    407,
+    603
+   ],
+   "mediana": 17.81
+  },
+  "Remotion C04_cont A = 9,00π cm²": {
+   "medidas": 4,
+   "pior": 17.72,
+   "t_pior": 110.0,
+   "tipo": "texto",
+   "xy": [
+    407,
+    603
+   ],
+   "mediana": 17.73
+  },
+  "Remotion C04_cont z = +0,2 cm": {
+   "medidas": 1,
+   "pior": 17.77,
+   "t_pior": 111.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 17.77
+  },
+  "Remotion C04_cont z = +1,2 cm": {
+   "medidas": 1,
+   "pior": 11.83,
+   "t_pior": 112.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 11.83
+  },
+  "Remotion C04_cont z = +1,6 cm": {
+   "medidas": 1,
+   "pior": 17.68,
+   "t_pior": 105.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 17.68
+  },
+  "Remotion C04_cont z = +1,9 cm": {
+   "medidas": 1,
+   "pior": 17.61,
+   "t_pior": 109.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 17.61
+  },
+  "Remotion C04_cont z = +2,0 cm": {
+   "medidas": 1,
+   "pior": 17.77,
+   "t_pior": 106.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 17.77
+  },
+  "Remotion C04_cont z = +3,0 cm": {
+   "medidas": 1,
+   "pior": 17.53,
+   "t_pior": 101.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 17.53
+  },
+  "Remotion C04_cont z = -0,5 cm": {
+   "medidas": 1,
+   "pior": 17.72,
+   "t_pior": 107.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 17.72
+  },
+  "Remotion C04_cont z = -1,0 cm": {
+   "medidas": 1,
+   "pior": 17.44,
+   "t_pior": 108.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 17.44
+  },
+  "Remotion C04_cont z = -1,5 cm": {
+   "medidas": 1,
+   "pior": 17.83,
+   "t_pior": 103.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 17.83
+  },
+  "Remotion C04_cont z = -2,0 cm": {
+   "medidas": 1,
+   "pior": 17.74,
+   "t_pior": 102.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 17.74
+  },
+  "Remotion C04_cont z = 0,0 cm": {
+   "medidas": 2,
+   "pior": 17.47,
+   "t_pior": 110.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 17.57
+  },
+  "Remotion C06_cont R = 11,0 cm     a": {
+   "medidas": 1,
+   "pior": 17.76,
+   "t_pior": 147.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    602
+   ],
+   "mediana": 17.76
+  },
+  "Remotion C06_cont R = 6,9 cm     a =": {
+   "medidas": 1,
+   "pior": 17.86,
+   "t_pior": 145.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    602
+   ],
+   "mediana": 17.86
+  },
+  "Remotion C06_cont R = 9,6 cm     a =": {
+   "medidas": 1,
+   "pior": 17.73,
+   "t_pior": 146.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    602
+   ],
+   "mediana": 17.73
+  },
+  "Remotion C07_cont h = 0,00 cm     V": {
+   "medidas": 2,
+   "pior": 17.89,
+   "t_pior": 165.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    534
+   ],
+   "mediana": 17.89
+  },
+  "Remotion C07_cont h = 0,05 cm     V": {
+   "medidas": 1,
+   "pior": 17.76,
+   "t_pior": 164.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    534
+   ],
+   "mediana": 17.76
+  },
+  "Remotion C07_cont h = 10,00 cm     V": {
+   "medidas": 4,
+   "pior": 17.91,
+   "t_pior": 159.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    534
+   ],
+   "mediana": 17.91
+  },
+  "Remotion C07_cont h = 5,93 cm     V": {
+   "medidas": 1,
+   "pior": 17.86,
+   "t_pior": 163.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    534
+   ],
+   "mediana": 17.86
+  },
+  "Remotion C07_cont h = 7,00 cm     V": {
+   "medidas": 1,
+   "pior": 17.81,
+   "t_pior": 157.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    534
+   ],
+   "mediana": 17.81
+  },
+  "Remotion C07_cont h = 9,86 cm     V": {
+   "medidas": 1,
+   "pior": 17.75,
+   "t_pior": 158.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    534
+   ],
+   "mediana": 17.75
+  },
+  "Remotion regua0": {
+   "medidas": 3,
+   "pior": 6.37,
+   "t_pior": 35.0,
+   "tipo": "texto",
+   "xy": [
+    167,
+    296
+   ],
+   "mediana": 7.19
+  },
+  "Remotion regua0_rot 6 cm": {
+   "medidas": 6,
+   "pior": 6.01,
+   "t_pior": 35.0,
+   "tipo": "texto",
+   "xy": [
+    126,
+    296
+   ],
+   "mediana": 6.88
+  },
+  "Remotion regua1": {
+   "medidas": 3,
+   "pior": 7.13,
+   "t_pior": 170.0,
+   "tipo": "texto",
+   "xy": [
+    135,
+    366
+   ],
+   "mediana": 7.13
+  },
+  "Remotion regua1_rot 6 cm": {
+   "medidas": 6,
+   "pior": 5.94,
+   "t_pior": 35.0,
+   "tipo": "texto",
+   "xy": [
+    100,
+    426
+   ],
+   "mediana": 6.85
+  },
+  "Remotion regua2_rot 6 cm": {
+   "medidas": 6,
+   "pior": 5.86,
+   "t_pior": 35.0,
+   "tipo": "texto",
+   "xy": [
+    60,
+    554
+   ],
+   "mediana": 6.85
+  },
+  "Remotion regua_anel": {
+   "medidas": 11,
+   "pior": 7.04,
+   "t_pior": 145.0,
+   "tipo": "texto",
+   "xy": [
+    120,
+    312
+   ],
+   "mediana": 7.15
+  },
+  "Remotion regua_anel_rot h = 6 cm": {
+   "medidas": 11,
+   "pior": 6.88,
+   "t_pior": 145.0,
+   "tipo": "texto",
+   "xy": [
+    120,
+    199
+   ],
+   "mediana": 6.92
+  },
+  "Remotion rot_trio0 R = 5 cm": {
+   "medidas": 12,
+   "pior": 15.47,
+   "t_pior": 35.0,
+   "tipo": "texto",
+   "xy": [
+    371,
+    296
+   ],
+   "mediana": 18.02
+  },
+  "Remotion rot_trio0 V = 36π cm³": {
+   "medidas": 3,
+   "pior": 17.85,
+   "t_pior": 171.0,
+   "tipo": "texto",
+   "xy": [
+    365,
+    263
+   ],
+   "mediana": 17.89
+  },
+  "Remotion rot_trio1 R = 7 cm": {
+   "medidas": 11,
+   "pior": 15.39,
+   "t_pior": 35.0,
+   "tipo": "texto",
+   "xy": [
+    396,
+    427
+   ],
+   "mediana": 18.02
+  },
+  "Remotion rot_trio1 V = 36π cm³": {
+   "medidas": 3,
+   "pior": 17.92,
+   "t_pior": 171.0,
+   "tipo": "texto",
+   "xy": [
+    388,
+    380
+   ],
+   "mediana": 17.98
+  },
+  "Remotion rot_trio2 R = 10 cm": {
+   "medidas": 10,
+   "pior": 15.31,
+   "t_pior": 35.0,
+   "tipo": "texto",
+   "xy": [
+    441,
+    556
+   ],
+   "mediana": 17.93
+  },
+  "Remotion rot_trio2 V = 36π cm³": {
+   "medidas": 3,
+   "pior": 17.92,
+   "t_pior": 171.0,
+   "tipo": "texto",
+   "xy": [
+    424,
+    497
+   ],
+   "mediana": 17.94
+  },
+  "Remotion tag_hook = ESFERA FURADA": {
+   "medidas": 7,
+   "pior": 9.96,
+   "t_pior": 17.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    729
+   ],
+   "mediana": 12.3
+  },
+  "Remotion tag_hook ANEL DE GUARDANAPO": {
+   "medidas": 12,
+   "pior": 17.01,
+   "t_pior": 6.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    729
+   ],
+   "mediana": 17.01
+  },
+  "linha 3D cor (182, 194, 247)": {
+   "medidas": 1,
+   "pior": 6.38,
+   "t_pior": 66.0,
+   "tipo": "linha",
+   "xy": [
+    304,
+    297
+   ],
+   "mediana": 6.38
+  },
+  "linha 3D cor (182, 194, 248)": {
+   "medidas": 21,
+   "pior": 5.14,
+   "t_pior": 62.0,
+   "tipo": "linha",
+   "xy": [
+    304,
+    297
+   ],
+   "mediana": 6.38
+  },
+  "linha 3D cor (182, 194, 254)": {
+   "medidas": 1,
+   "pior": 3.68,
+   "t_pior": 39.0,
+   "tipo": "linha",
+   "xy": [
+    343,
+    283
+   ],
+   "mediana": 3.68
+  },
+  "linha 3D cor (183, 193, 248)": {
+   "medidas": 1,
+   "pior": 6.03,
+   "t_pior": 63.0,
+   "tipo": "linha",
+   "xy": [
+    304,
+    297
+   ],
+   "mediana": 6.03
+  },
+  "linha 3D cor (229, 176, 248)": {
+   "medidas": 1,
+   "pior": 1.79,
+   "t_pior": 100.0,
+   "tipo": "linha",
+   "xy": [
+    432,
+    293
+   ],
+   "mediana": 1.79
+  },
+  "linha 3D cor (229, 182, 251)": {
+   "medidas": 7,
+   "pior": 1.84,
+   "t_pior": 93.0,
+   "tipo": "linha",
+   "xy": [
+    324,
+    291
+   ],
+   "mediana": 1.84
+  },
+  "linha 3D cor (233, 139, 253)": {
+   "medidas": 12,
+   "pior": 1.72,
+   "t_pior": 41.0,
+   "tipo": "linha",
+   "xy": [
+    364,
+    277
+   ],
+   "mediana": 2.22
+  },
+  "linha 3D cor (233, 98, 253)": {
+   "medidas": 11,
+   "pior": 1.15,
+   "t_pior": 42.0,
+   "tipo": "linha",
+   "xy": [
+    121,
+    312
+   ],
+   "mediana": 1.31
+  },
+  "linha 3D cor (240, 244, 253)": {
+   "medidas": 1,
+   "pior": 5.76,
+   "t_pior": 38.0,
+   "tipo": "linha",
+   "xy": [
+    340,
+    258
+   ],
+   "mediana": 5.76
+  }
+ }
+}

@@ -1,0 +1,268 @@
+ function painel2d(X0,Y0,w,h){x.save();x.fillStyle='#16123A';x.beginPath();x.roundRect(X0,Y0,w,h,14);x.fill();x.clip();
+  x.strokeStyle='#2B2558';x.lineWidth=1.2;const s=30;for(let X=X0;X<=X0+w;X+=s){x.beginPath();x.moveTo(X+.5,Y0);x.lineTo(X+.5,Y0+h);x.stroke();}
+  for(let Y=Y0;Y<=Y0+h;Y+=s){x.beginPath();x.moveTo(X0,Y+.5);x.lineTo(X0+w,Y+.5);x.stroke();}x.restore();painel(X0,Y0,w,h,{a:.45});}
+ function arcoPx(c,R,a0,a1,cor,w=4){x.strokeStyle=cor;x.lineWidth=w;x.beginPath();x.arc(...P(...c),R,-a1,-a0);x.stroke();}
+ const COL=1020;
+ function legq(t,X,Y,cor,size=30){x.fillStyle=cor;x.fillRect(X,Y-size*.62,size*.6,size*.6);txt(t,X+size*.9,Y,{size,f:'SGM',cor});}
+ // ⊕ do centro de massa: anel com degradê ciano → magenta (padrão da série), cruz branca fina
+ function cmMark(X,Y,r=17){const g=x.createLinearGradient(X-r,Y-r,X+r,Y+r);g.addColorStop(0,'#35D9FF');g.addColorStop(1,'#EA63FF');
+  x.fillStyle='#16123A';x.beginPath();x.arc(X,Y,r,0,7);x.fill();x.strokeStyle=g;x.lineWidth=5;x.beginPath();x.arc(X,Y,r,0,7);x.stroke();
+  x.strokeStyle=BR;x.lineWidth=2.5;x.beginPath();x.moveTo(X-r+5,Y);x.lineTo(X+r-5,Y);x.moveTo(X,Y-r+5);x.lineTo(X,Y+r-5);x.stroke();}
+ function tracoH(X0,X1,Y,cor=GEO){x.strokeStyle=cor;x.lineWidth=2.5;x.setLineDash([9,7]);x.beginPath();x.moveTo(X0,Y);x.lineTo(X1,Y);x.stroke();x.setLineDash([]);}
+ function cartao(X0,Y0,w,h){x.fillStyle='rgba(19,16,48,.92)';x.beginPath();x.roundRect(X0,Y0,w,h,14);x.fill();painel(X0,Y0,w,h,{a:.45});}
+ function caixaMen(el,pad=14){const r=el.getBoundingClientRect();moldura(r.left-pad,r.top-pad*.7,r.width+2*pad,r.height+1.4*pad,MEN);return r;}
+ const OL={dx:-100,dy:80,esc:.94};            // lata grande (H1, H2, B1, B3-1, S2): câmera da série
+ const OC={dx:-120,dy:150,esc:.72};         // lata pequena nas telas de conta (B4): coluna em x = 780
+ const COLC=780;
+
+ // 01 · H1 · a lata que gira
+ if(K==='h1'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('A LATA PESADA GIRA');await cena3d('lataGiro',OL);
+  for(const [n,s] of [['ex','\\X'],['ey','\\Y'],['ez','\\Z']])rotulo3('lataGiro',n,s,{...OL,size:38,al:'c'});rotulo3('lataGiro','omega','\\omega',{...OL,size:34,ox:-30,oy:26});
+  legq('LEVE NA ORIGEM',120,1020,'#5FA8C8');legq('PESADA NA QUINA',540,1020,CI);
+  mixl([['t','DENSIDADE',CI],['m','\\de=\\Ci{\\sqrt{\\X^2+\\Y^2+\\Z^2}}=\\Ci{\\sqrt{\\S^2+\\Z^2}}']],COL,180,44);
+  mixl([['t','LATA',GEO],['m','0\\le\\S\\le1,\\ \\ 0\\le\\T\\le2\\pi,\\ \\ 0\\le\\Z\\le1']],COL,290,40);
+  cartao(COL,360,840,200);txt('①  ONDE ELA EQUILIBRA?',COL+30,420,{size:36});mixl([['t','LATA COMUM: NO MEIO,',GEO],['m','\\zb=\\dfrac12']],COL+30,505,40);
+  cartao(COL,600,840,200);txt('②  QUANTO CUSTA GIRAR?',COL+30,660,{size:36});mixl([['t','LATA COMUM:',GEO],['m','I=\\dfrac12\\,M R^2']],COL+30,745,40);
+  txt('E A LATA PESADA?',COL,900,{size:46,cor:CI});}
+
+ // 02 · H2 · uma conta por pedaço
+ if(K==='h2'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('UMA CONTA POR PEDAÇO');await cena3d('lataDuas',OL);
+  rotulo3('lataDuas','ez','\\Z',{...OL,size:38,al:'c'});
+  rotulo3('lataDuas','c1','\\dm',{...OL,size:34,ox:16,oy:30});rotulo3('lataDuas','c2','\\dm',{...OL,size:34,ox:16,oy:-10});
+  rotulo3('lataDuas','f2','\\S',{...OL,size:34,ox:-10,oy:-34,al:'c'});
+  legq('PERTO DA ORIGEM: LEVE',120,1020,'#5FA8C8');legq('NA QUINA: PESADO',540,1020,CI);
+  tex('\\dm=\\de\\,dV',COL,200,54);
+  mixl([['t','①  ALTURA PESADA:',GEO],['m','\\Z\\cdot\\dm']],COL,330,46);
+  mixl([['t','②  CADA PEDAÇO CUSTA',GEO],['m','\\S^2\\cdot\\dm']],COL,450,46);
+  mixl([['t','SOMA DE TUDO:',GEO],['m','\\iiint \\Z\\,\\dm,\\qquad \\iiint \\S^2\\,\\dm']],COL,590,46);}
+
+ // 03 · B1-1 etapa 1 · três bolinhas
+ if(K==='b11a'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('DO SISTEMA DE PONTOS AO CORPO');const o={dx:-60,dy:30,esc:1};await cena3d('cmPontos',o);
+  for(const [n,s] of [['ex','\\X'],['ey','\\Y'],['ez','\\Z']])rotulo3('cmPontos',n,s,{...o,size:38,al:'c'});
+  [['m1','m_1=1'],['m2','m_2=3'],['m3','m_3=2']].forEach(([n,s])=>rotulo3('cmPontos',n,s,{...o,size:30,ox:22,oy:-26}));
+  const q=Q3('cmPontos','cm',o);cmMark(q[0],q[1]);
+  legq('O CENTRO DE MASSA FICA MAIS PERTO DA MAIS PESADA',120,1020,'#B9A6FF');
+  tex('\\xb=\\dfrac{\\sum m_i\\,\\X_i}{\\sum m_i}',COL,260,54);
+  tex('\\yb=\\dfrac{\\sum m_i\\,\\Y_i}{\\sum m_i}',COL,440,50);tex('\\zb=\\dfrac{\\sum m_i\\,\\Z_i}{\\sum m_i}',COL,610,50);
+  leg('A MESMA MÉDIA, TRÊS VEZES',COL,760,GEO,'left',30);}
+
+ // 04 · B1-1 etapa 2 · o corpo
+ if(K==='b11b'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('DO SISTEMA DE PONTOS AO CORPO');await cena3d('lataCel',OL);
+  for(const [n,s] of [['ex','\\X'],['ey','\\Y'],['ez','\\Z']])rotulo3('lataCel',n,s,{...OL,size:38,al:'c'});
+  rotulo3('lataCel','cel','\\Delta m\\approx\\de\\,\\Delta V',{...OL,size:30,ox:20,oy:-10});rotulo3('lataCel','px','\\X',{...OL,size:30,oy:30,al:'c'});rotulo3('lataCel','py','\\Y',{...OL,size:30,ox:22,oy:20});
+  chip('\\xb=\\dfrac{\\sum m_i\\X_i}{\\sum m_i}',COL,150,28);
+  tex('\\Delta m_i\\approx\\de(P_i)\\,\\Delta V_i',COL,270,46);
+  tex('\\sum \\X_i\\,\\de(P_i)\\,\\Delta V_i\\ \\longrightarrow\\ \\iiint \\X\\,\\de\\,dV',COL,380,44);
+  tex('M=\\iiint \\de\\,dV',COL,490,46);
+  tex('\\xb=\\dfrac1M\\iiint\\X\\,\\de\\,dV',COL,630,50);leg('ȳ E z̄: O MESMO, COM y E COM z',COL,720,GEO,'left',28);
+  tex('\\Mxy=\\iiint\\Z\\,\\de\\,dV',COL,820,46);leg('MOMENTO EM RELAÇÃO AO PLANO xy',COL,900,GEO,'left',28);
+  leg('OS OUTROS DOIS PLANOS: O MESMO, COM x E COM y',COL,945,GEO,'left',28);}
+
+ // 05 · B1-2 · o plano que equilibra
+ if(K==='b12'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('O QUE O CENTRO DE MASSA GARANTE');await cena3d('lataPlano',OL);
+  rotulo3('lataPlano','ez','\\Z',{...OL,size:38,al:'c'});rotulo3('lataPlano','cA','+',{...OL,size:40,ox:18,oy:-6});rotulo3('lataPlano','cB','-',{...OL,size:40,ox:18,oy:6});
+  rotulo3('lataPlano','fA','\\Z-\\zb',{...OL,size:28,ox:16});rotulo3('lataPlano','plano','\\Z=\\zb',{...OL,size:32,ox:10,oy:30});
+  tex('\\iiint(\\Z-\\zb)\\,\\de\\,dV',COL,200,52);
+  tex('=\\iiint\\Z\\,\\de\\,dV-\\zb\\iiint\\de\\,dV',COL,330,48);
+  tex('=\\Mxy-\\zb\\,M',COL,450,50);
+  tex('=M\\,\\zb-\\zb\\,M=0',COL,570,52);
+  leg('O QUE ESTÁ ACIMA DO PLANO',COL,700,MEN,'left',32);leg('EQUILIBRA O QUE ESTÁ ABAIXO',COL,745,MEN,'left',32);}
+
+ // 06 · B1-3 etapa 1 · simetria
+ if(K==='b13a'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('SIMETRIA');const o={dx:-110,dy:40,esc:1};await cena3d('lataSim',o);
+  rotulo3('lataSim','cA','\\X',{...o,size:34,ox:12});rotulo3('lataSim','cB','-\\X',{...o,size:34,ox:12});
+  legq('GÊMEOS: MESMA MASSA, x COM SINAL TROCADO',120,1020,LI);
+  mixl([['m','\\de=\\de(\\S,\\Z)'],['t','(NÃO DEPENDE DE θ)',GEO]],COL,190,46);
+  tex('\\Myz=\\int\\!\\!\\int\\Big(\\int_0^{2\\pi}\\cos\\T\\,\\dT\\Big)\\,\\S^2\\de\\,\\dS\\,\\dZ',COL,320,44);
+  tex('\\int_0^{2\\pi}\\cos\\T\\,\\dT=\\Big[\\sen\\T\\Big]_0^{2\\pi}=0-0=0',COL,460,46);
+  mixl([['m','\\Rightarrow\\ \\xb=0'],['t','IGUAL PARA y:',GEO],['m','\\yb=0']],COL,580,46);
+  const f=txt;cartao(COL,650,840,120);leg('CORPO E DENSIDADE GIRAM JUNTOS',COL+24,700,MEN,'left',32);leg('⇒ CENTRO DE MASSA NO EIXO',COL+24,748,MEN,'left',32);}
+
+ // 07 · B1-3 etapa 2 · contraexemplo ρ = 1 + x
+ if(K==='b13b'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('SIMETRIA: OS DOIS PRECISAM GIRAR');const o={dx:-110,dy:40,esc:1};await cena3d('lataSim2',o);
+  rotulo3('lataSim2','cA','\\X',{...o,size:34,ox:12});rotulo3('lataSim2','cB','-\\X',{...o,size:34,ox:12});
+  legq('ρ = 1 + x: O LADO DO x > 0 PESA MAIS',120,1020,'#E9FF9E');
+  chip('\\de=1+\\X\\quad(\\text{CILINDRO } R=1,\\ h=1)',COL,150,30);
+  tex('M=\\iiint(1+\\X)\\,dV=\\pi+0=\\pi',COL,290,44);
+  tex('\\Myz=\\iiint\\X(1+\\X)\\,dV=\\iiint\\X\\,dV+\\iiint\\X^2\\,dV',COL,400,40);
+  tex('\\iiint\\X^2dV=\\int_0^{2\\pi}\\!\\cos^2\\T\\,\\dT\\cdot\\!\\int_0^1\\!\\S^3\\dS\\cdot\\!\\int_0^1\\!\\dZ',COL,520,40);
+  tex('=\\pi\\cdot\\dfrac14\\cdot1=\\dfrac{\\pi}{4}',COL+60,630,44);
+  tex('\\xb=\\dfrac{\\pi/4}{\\pi}=\\dfrac14',COL,770,52);selo('A DENSIDADE QUEBROU A SIMETRIA',COL,900,AL,30);}
+
+ // 08 · B2-1 · a taça: montar
+ if(K==='b21'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('A TAÇA');await cena3d('taca',OL);
+  rotulo3('taca','ez','\\Z',{...OL,size:38,al:'c'});
+  legq('ENTRA EM z = s²',120,1020,AZC);legq('SAI EM z = 1',480,1020,CORAL);
+  mixl([['t','TAÇA',GEO],['m','\\X^2+\\Y^2\\le\\Z\\le1,\\quad\\de=k']],COL,180,44);
+  mixl([['t','EM CILÍNDRICAS',GEO],['m','\\S^2\\le\\Z\\le1']],COL,280,44);
+  mixl([['t','SOMBRA',GEO],['m','0\\le\\S\\le1,\\ \\ 0\\le\\T\\le2\\pi']],COL,380,42);
+  chip('\\text{SIMETRIA}\\ \\Rightarrow\\ \\xb=\\yb=0',COL,470,30);
+  tex('\\zb=\\dfrac{\\Mxy}{M}=\\dfrac{k\\iiint\\Z\\,dV}{k\\iiint dV}',COL,620,50);
+  leg('O k CANCELA: z̄ SÓ DEPENDE DA FORMA',COL,750,GEO,'left',30);selo('CHUTE: z̄ = 1/2 ?',COL,850,SOMB,32);}
+
+ // 09 · B2-2 etapa 2 · a taça: a conta
+ if(K==='b22'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('A TAÇA: A CONTA');await cena3d('taca',OL);
+  rotulo3('taca','ez','\\Z',{...OL,size:38,al:'c'});let q=Q3('taca','z23',OL);cmMark(q[0],q[1]);tex('\\dfrac23',q[0]-60,q[1]-6,30,'r',true);
+  q=Q3('taca','z12',OL);tracoH(q[0]-150,q[0]+150,q[1]);tex('\\dfrac12',q[0]+170,q[1],30,'l',true);
+  chip('V=\\dfrac{\\pi}{2}',COL,150,30);
+  tex('\\iiint\\Z\\,dV=\\int_0^{2\\pi}\\!\\!\\int_0^1\\!\\!\\int_{\\S^2}^1\\Z\\,\\Js\\,\\dZ\\,\\dS\\,\\dT',COL,270,42);
+  tex('\\int_{\\S^2}^1\\Z\\,\\S\\,\\dZ=\\S\\Big[\\dfrac{\\Z^2}{2}\\Big]_{\\S^2}^1=\\S\\Big(\\dfrac12-\\dfrac{\\S^4}{2}\\Big)=\\dfrac{\\S}{2}-\\dfrac{\\S^5}{2}',COL,400,40);
+  tex('\\int_0^1\\Big(\\dfrac{\\S}{2}-\\dfrac{\\S^5}{2}\\Big)\\dS=\\Big[\\dfrac{\\S^2}{4}-\\dfrac{\\S^6}{12}\\Big]_0^1=\\dfrac14-\\dfrac1{12}=\\dfrac16',COL,530,40);
+  tex('\\iiint\\Z\\,dV=2\\pi\\cdot\\dfrac16=\\dfrac{\\pi}{3}',COL,650,44);
+  const f=tex('\\zb=\\dfrac{\\pi/3}{\\pi/2}=\\dfrac23',COL+10,790,54);caixaMen(f);leg('ACIMA DO MEIO: A TAÇA É LARGA EM CIMA',COL,900,GEO,'left',30);}
+
+ // 10 · B3-1 · de onde vem o momento de inércia
+ if(K==='b31'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('MOMENTO DE INÉRCIA');await cena3d('giroCel',OL);
+  rotulo3('giroCel','ez','\\Z',{...OL,size:38,al:'c'});rotulo3('giroCel','omega','\\omega',{...OL,size:34,ox:-34,oy:24});
+  rotulo3('giroCel','fio','\\S',{...OL,size:36,oy:-34,al:'c'});rotulo3('giroCel','cel','\\dm',{...OL,size:30,ox:-70,oy:-40});rotulo3('giroCel','v','v',{...OL,size:34,ox:14,oy:-8});
+  tex('v=\\omega\\,\\S',COL,180,50);
+  tex('K=\\dfrac12\\,\\dm\\,v^2=\\dfrac12\\,(\\S^2\\,\\dm)\\,\\omega^2',COL,300,48);
+  mixl([['t','UM PONTO',GEO],['m','I=m\\,\\S^2']],COL,420,46);mixl([['t','VÁRIOS',GEO],['m','I=\\sum m_i\\,\\S_i^2']],COL,520,46);
+  txt('CORPO',COL,668,{size:36,cor:GEO});{const f=tex('I=\\iiint\\S^2\\,\\de\\,dV',COL+190,650,52);caixaMen(f);}
+  chip('\\text{UNIDADE: kg}\\cdot\\text{m}^2',COL,770,30);leg('A MASSA RESISTE A EMPURRAR; O I RESISTE A GIRAR',COL,880,GEO,'left',28);}
+
+ // 11 · B3-2 · distância ao eixo, não à origem
+ if(K==='b32'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('DISTÂNCIA AO EIXO, NÃO À ORIGEM');const o={dx:-40,dy:20,esc:1};await cena3d('distEixo',o);
+  for(const [n,s] of [['ex','\\X'],['ey','\\Y'],['ez','\\Z']])rotulo3('distEixo',n,s,{...o,size:38,al:'c'});
+  rotulo3('distEixo','P','P',{...o,size:36,ox:16,oy:-24});rotulo3('distEixo','s','\\S',{...o,size:36,oy:-30,al:'c'});rotulo3('distEixo','r','\\R',{...o,size:36,ox:-34,oy:6});
+  legq('ATÉ O EIXO z: s',120,1020,SOMB);legq('ATÉ O EIXO x',440,1020,GEO);legq('ATÉ A ORIGEM: r',720,1020,RO);
+  mixl([['t','EIXO z:',EZ],['m','\\S^2=\\X^2+\\Y^2']],COL,200,50);
+  mixl([['t','EIXO x:',E1],['m','\\Y^2+\\Z^2']],COL,310,46);mixl([['t','EIXO y:',E2],['m','\\X^2+\\Z^2']],COL,410,46);
+  tex('I_{\\Z}=\\iiint(\\X^2+\\Y^2)\\,\\de\\,dV',COL,540,50);
+  selo('NÃO É  r² = x² + y² + z²',COL,680,AL,32);leg('OUTRO EIXO, OUTRO I',COL,790,GEO,'left',32);}
+
+ // 12 · B3-3 · cilindro homogêneo
+ if(K==='b33'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('O CILINDRO UNIFORME');const o={dx:-40,dy:110,esc:.82};await cena3d('cilindroH',o);
+  rotulo3('cilindroH','ez','\\Z',{...o,size:38,al:'c'});rotulo3('cilindroH','s','\\S',{...o,size:34,oy:-30,al:'c'});rotulo3('cilindroH','R','R',{...o,size:34,oy:-30,al:'c'});rotulo3('cilindroH','h','h',{...o,size:36,ox:-40});
+  legq('A CASCA DE RAIO s: CRESCE ATÉ A PAREDE',120,1020,SOMB);
+  tex('I_{\\Z}=\\int_0^{2\\pi}\\!\\!\\int_0^R\\!\\!\\int_0^h\\S^2\\cdot k\\cdot\\Js\\,\\dZ\\,\\dS\\,\\dT',COL,190,44);leg('s² · s = s³',COL,262,LI,'left',30);
+  tex('=k\\cdot\\Big[\\Z\\Big]_0^h\\cdot\\Big[\\dfrac{\\S^4}{4}\\Big]_0^R\\cdot\\Big[\\T\\Big]_0^{2\\pi}',COL,370,44);
+  tex('=k\\cdot h\\cdot\\dfrac{R^4}{4}\\cdot2\\pi=\\dfrac{\\pi k R^4 h}{2}',COL,490,46);
+  tex('M=k\\cdot\\pi R^2h',COL,600,46);
+  const f=tex('I_{\\Z}=\\dfrac12\\,(k\\pi R^2h)\\,R^2=\\dfrac12\\,M R^2',COL+10,720,52);caixaMen(f);
+  mixl([['t','CASCA FINA:',SOMB],['m','I=M R^2']],COL,840,44);}
+
+ // 13 · B3-4 etapa 2 · bola: o seno ao cubo   |  13b · etapa 3 · o resultado
+ if(K==='b34a'||K==='b34b'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('A BOLA UNIFORME');const o={dx:-40,dy:100,esc:.86};await cena3d('esferaOct',o);
+  rotulo3('esferaOct','ez','\\Z',{...o,size:38,al:'c'});rotulo3('esferaOct','r','\\R',{...o,size:34,ox:-30,oy:10});rotulo3('esferaOct','phi','\\F',{...o,size:32,ox:-6,oy:-28});
+  rotulo3('esferaOct','s','\\S',{...o,size:34,oy:-30,al:'c'});rotulo3('esferaOct','R','R',{...o,size:34,ox:10,oy:24});
+  legq('s = r sen φ: A SOMBRA É A DISTÂNCIA AO EIXO',120,1020,SOMB);
+  chip('I_{\\Z}=k\\cdot2\\pi\\cdot\\Big(\\int_0^\\pi\\sen^3\\F\\,\\dF\\Big)\\cdot\\dfrac{R^5}{5}',COL,140,28);
+  if(K==='b34a'){
+  tex('\\sen^3\\F=(1-\\cos^2\\F)\\,\\sen\\F',COL,260,46);
+  tex('\\uu=\\cos\\F,\\qquad \\du=-\\sen\\F\\,\\dF',COL,370,46);
+  tex('\\F=0\\to\\uu=1,\\qquad \\F=\\pi\\to\\uu=-1',COL,470,44);
+  tex('\\int_0^\\pi\\sen^3\\F\\,\\dF=\\int_1^{-1}(1-\\uu^2)(-\\du)=\\int_{-1}^1(1-\\uu^2)\\,\\du',COL,600,38);
+  tex('=\\Big[\\uu-\\dfrac{\\uu^3}{3}\\Big]_{-1}^1=\\Big(1-\\dfrac13\\Big)-\\Big(-1+\\dfrac13\\Big)=\\dfrac43',COL+40,740,40);
+  leg('O LIMITE INVERTE; O MENOS DO du DESVIRA',COL,860,AL,'left',30);}
+  else{chip('\\int_0^\\pi\\sen^3\\F\\,\\dF=\\dfrac43',COL+600,140,28);
+  tex('I_{\\Z}=k\\cdot2\\pi\\cdot\\dfrac43\\cdot\\dfrac{R^5}{5}=\\dfrac{8\\pi kR^5}{15}',COL,300,50);
+  tex('M=k\\cdot\\dfrac43\\pi R^3',COL,450,48);
+  const f=tex('I_{\\Z}=\\dfrac{8/15}{4/3}\\,MR^2=\\dfrac25\\,MR^2',COL+10,620,54);caixaMen(f);}}
+
+ // 14 · B3-5 · quem gira mais fácil (2D)
+ if(K==='b35'){fundoV();vista(960,540,120);papelTela(.5);await logo();canto('QUEM GIRA MAIS FÁCIL');
+  const cards=[['TUBO FINO','I=MR^2',1,'tubo'],['CILINDRO','I=\\tfrac12\\,MR^2',Math.SQRT1_2,'cil'],['BOLA','I=\\tfrac25\\,MR^2',Math.sqrt(.4),'bola']];
+  cards.forEach(([t,f,sg,kind],i)=>{const X0=120+i*600;painel2d(X0,180,480,420);txt(t,X0+24,226,{size:28,f:'SGM',cor:GEO});vista(X0+240,520,110);
+   linha([[0,-.15],[0,2.75]],EZ,2,{dash:[7,6]});
+   if(kind==='tubo'){linha([[-1.2,0],[-1.2,2.4]],GEO,6);linha([[1.2,0],[1.2,2.4]],GEO,6);}
+   if(kind==='cil'){preenche([[-1.2,0],[1.2,0],[1.2,2.4],[-1.2,2.4]],mix('#16123A',GEO,.30));linha([[-1.2,0],[1.2,0],[1.2,2.4],[-1.2,2.4],[-1.2,0]],GEO,3);}
+   if(kind==='bola'){preenche(arco2(a=>[1.2*Math.cos(a),1.2+1.2*Math.sin(a)],0,2*PI),mix('#16123A',GEO,.30));linha(arco2(a=>[1.2*Math.cos(a),1.2+1.2*Math.sin(a)],0,2*PI),GEO,3);}
+   linha([[1.6*sg,.05],[1.6*sg,2.35]],SOMB,4);linha([[-1.6*sg,.05],[-1.6*sg,2.35]],SOMB,4);tex('\\Sg',P(1.6*sg,2.5)[0],P(1.6*sg,2.5)[1],30,'c');
+   tex(f,X0+240,660,44,'c');});
+  vista(420,820,1);const X0=420,X1=1500,Yb=800;x.strokeStyle=GEO;x.lineWidth=3;x.beginPath();x.moveTo(X0,Yb);x.lineTo(X1,Yb);x.stroke();
+  for(const [v,lab] of [[0,'0'],[.4,'2/5'],[.5,'1/2'],[1,'1']]){const X=X0+(X1-X0)*v;x.beginPath();x.moveTo(X,Yb-12);x.lineTo(X,Yb+12);x.stroke();txt(lab,X,Yb+50,{size:30,f:'SGM',cor:GEO,al:'center'});}
+  txt('I / MR²',X1+40,Yb+10,{size:30,f:'SGM',cor:GEO});
+  tex('I=M\\,\\Sg^2:\\qquad \\Sg=R,\\qquad \\dfrac{R}{\\sqrt2}\\approx0{,}71\\,R,\\qquad \\sqrt{\\tfrac25}\\,R\\approx0{,}63\\,R',960,950,40,'c');}
+
+ // 15 · B4-1 · a lata pesada: a integral em s
+ if(K==='b41'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('ONDE A LATA PESADA EQUILIBRA');await cena3d('lataPesada',{...OC,clip:720});rotulo3('lataPesada','ez','\\Z',{...OC,size:34,al:'c'});
+  chip('M=\\dfrac{\\pi}{12}\\big(7\\sqrt2-2+3\\ln(1+\\sqrt2)\\big)\\approx2{,}76',COLC,140,28);leg('A MASSA DA LATA PESADA (EM CILÍNDRICAS)',COLC+20,205,GEO,'left',24);
+  chip('\\text{SIMETRIA:}\\ \\xb=\\yb=0',COLC+640,140,28);
+  tex('\\Mxy=\\int_0^{2\\pi}\\!\\!\\int_0^1\\!\\!\\int_0^1\\Z\\cdot\\Ci{\\sqrt{\\S^2+\\Z^2}}\\cdot\\Js\\,\\dS\\,\\dZ\\,\\dT',COLC,300,46);
+  leg('ALTURA',COLC+330,370,EZ,'left',24);leg('DENSIDADE',COLC+430,370,CI,'left',24);leg('FATOR',COLC+600,370,LI,'left',24);
+  mixl([['m','\\uu=\\S^2+\\Z^2'],['t','(z PARADO)',GEO],['m','\\du=2\\S\\,\\dS\\Rightarrow\\Js\\,\\dS=\\dfrac{\\du}{2}']],COLC,460,42);
+  tex('\\S=0\\to\\uu=\\Z^2,\\qquad \\S=1\\to\\uu=1+\\Z^2',COLC,560,40);
+  tex('\\int_0^1\\Ci{\\sqrt{\\S^2+\\Z^2}}\\,\\Js\\,\\dS=\\dfrac12\\int_{\\Z^2}^{1+\\Z^2}\\uu^{1/2}\\,\\du=\\dfrac12\\cdot\\dfrac23\\Big[\\uu^{3/2}\\Big]_{\\Z^2}^{1+\\Z^2}',COLC,690,42);
+  const f=tex('=\\dfrac13\\Big[(1+\\Z^2)^{3/2}-\\Z^3\\Big]',COLC,830,50);const r=f.getBoundingClientRect();chip('\\Z\\ge0:\\ (\\Z^2)^{3/2}=\\Z^3',r.right+30,830,28);}
+
+ // 16 · B4-2 etapa 2 · z̄ da lata pesada
+ if(K==='b42'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('ONDE A LATA PESADA EQUILIBRA');await cena3d('lataPesada',{...OC,clip:720});rotulo3('lataPesada','ez','\\Z',{...OC,size:34,al:'c'});
+  let q=Q3('lataPesada','zbar',OC);cmMark(q[0],q[1],15);q=Q3('lataPesada','meio',OC);tracoH(q[0]-120,q[0]+120,q[1]+3);
+  legq('CENTRO DE MASSA EM z ≈ 0,555',120,1020,'#B9A6FF');legq('TRACEJADO: z = 1/2',700,1020,GEO);
+  chip('\\Mxy=\\dfrac{4\\pi(2\\sqrt2-1)}{15}\\approx1{,}532',COLC,140,28);chip('M\\approx2{,}760',COLC+560,140,28);
+  tex('\\zb=\\dfrac{\\Mxy}{M}=\\dfrac{\\;\\dfrac{4\\pi(2\\sqrt2-1)}{15}\\;}{\\dfrac{\\pi}{12}\\big(7\\sqrt2-2+3\\ln(1+\\sqrt2)\\big)}',COLC,330,44);
+  const f=tex('=\\dfrac{16(2\\sqrt2-1)}{5\\big(7\\sqrt2-2+3\\ln(1+\\sqrt2)\\big)}\\approx0{,}555',COLC+10,520,48);caixaMen(f);
+  mixl([['t','LATA COMUM:',GEO],['m','\\zb=0{,}5']],COLC,660,44);
+  chip('\\text{CONFERE: CARTESIANAS NO COMPUTADOR}\\ \\Mxy\\approx1{,}5318',COLC,770,28,MEN);
+  leg('A TAMPA, LONGE DA ORIGEM, PESA MAIS QUE O FUNDO',COLC,880,GEO,'left',30);}
+
+ // 17 · B4-3 · quanto custa girar: a integral em s
+ if(K==='b43'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('QUANTO CUSTA GIRAR A LATA PESADA');await cena3d('lataGiro',{...OC,clip:720});rotulo3('lataGiro','ez','\\Z',{...OC,size:34,al:'c'});
+  chip('\\zb\\approx0{,}555',COLC,140,28);
+  tex('I_{\\Z}=\\int_0^{2\\pi}\\!\\!\\int_0^1\\!\\!\\int_0^1\\S^2\\cdot\\Ci{\\sqrt{\\S^2+\\Z^2}}\\cdot\\Js\\,\\dS\\,\\dZ\\,\\dT',COLC,270,46);
+  leg('DISTÂNCIA AO EIXO²',COLC+250,340,SOMB,'left',24);leg('DENSIDADE',COLC+480,340,CI,'left',24);leg('FATOR',COLC+650,340,LI,'left',24);
+  tex('\\S^3\\dS=\\S^2\\cdot\\Js\\,\\dS,\\qquad \\uu=\\S^2+\\Z^2\\ \\Rightarrow\\ \\S^2=\\uu-\\Z^2,\\ \\ \\Js\\,\\dS=\\dfrac{\\du}{2}',COLC,430,40);
+  tex('\\int_0^1\\S^3\\Ci{\\sqrt{\\S^2+\\Z^2}}\\,\\dS=\\dfrac12\\int_{\\Z^2}^{1+\\Z^2}(\\uu-\\Z^2)\\,\\uu^{1/2}\\,\\du',COLC,540,42);
+  tex('=\\dfrac12\\int_{\\Z^2}^{1+\\Z^2}\\big(\\uu^{3/2}-\\Z^2\\uu^{1/2}\\big)\\,\\du',COLC+40,650,42);
+  tex('=\\dfrac12\\Big[\\dfrac25\\uu^{5/2}-\\Z^2\\cdot\\dfrac23\\uu^{3/2}\\Big]_{\\Z^2}^{1+\\Z^2}',COLC+40,760,42);
+  const f=tex('=\\dfrac15\\Big[(1+\\Z^2)^{5/2}-\\Z^5\\Big]-\\dfrac{\\Z^2}{3}\\Big[(1+\\Z^2)^{3/2}-\\Z^3\\Big]',COLC+40,880,44);const r=f.getBoundingClientRect();chip('(\\Z^2)^{5/2}=\\Z^5',r.right+24,880,28);}
+
+ // 18 · B4-4 · a integral em z: o triângulo
+ if(K==='b44'){fundoV();vista(960,540,120);papelTela(.5);await logo();canto('A INTEGRAL EM z: O TRIÂNGULO');
+  painel2d(60,170,560,520);txt('O TRIÂNGULO',84,212,{size:26,f:'SGM',cor:GEO});vista(120,620,260);
+  const z0=1.15;preenche([[0,0],[1.4,0],[1.4,z0]],mix('#16123A',GEO,.18));linha([[0,0],[1.4,0]],GEO,5);linha([[1.4,0],[1.4,z0]],EZ,5);linha([[0,0],[1.4,z0]],BR,5);
+  linha([[1.28,0],[1.28,.12],[1.4,.12]],GEO,2);arcoPx([0,0],70,0,Math.atan2(z0,1.4),UU,4);
+  tex('1',P(.7,0)[0],P(.7,0)[1]+28,34,'c');tex('\\Z=\\tg\\Tt',P(1.4,z0/2)[0]+14,P(1.4,z0/2)[1],32,'l');tex('\\sqrt{1+\\Z^2}=\\sec\\Tt',P(.55,.72)[0]-10,P(.55,.72)[1]-30,30,'c');tex('\\Tt',P(.36,.1)[0],P(.36,.1)[1],32,'c');
+  vista(960,540,120);const C2=680;
+  chip('-\\dfrac15\\Z^5+\\dfrac13\\Z^5=\\dfrac2{15}\\Z^5\\ \\Rightarrow\\ \\int_0^1\\dfrac2{15}\\Z^5\\dZ=\\dfrac2{15}\\cdot\\dfrac16=\\dfrac1{45}',C2,150,28);
+  mixl([['t','SOBRA:',GEO],['m','\\dfrac15\\int_0^1(1+\\Z^2)^{5/2}\\dZ-\\dfrac13\\int_0^1\\Z^2(1+\\Z^2)^{3/2}\\dZ']],C2,290,40);
+  tex('\\Z=\\tg\\Tt,\\ \\ \\dZ=\\sec^2\\Tt\\,\\dTt;\\qquad \\Z=0\\to\\Tt=0,\\ \\ \\Z=1\\to\\Tt=\\dfrac{\\pi}{4}',C2,400,40);
+  tex('(1+\\Z^2)^{5/2}\\dZ=\\sec^5\\Tt\\cdot\\sec^2\\Tt\\,\\dTt=\\sec^7\\Tt\\,\\dTt',C2,520,42);
+  tex('\\Z^2(1+\\Z^2)^{3/2}\\dZ=\\tg^2\\Tt\\cdot\\sec^3\\Tt\\cdot\\sec^2\\Tt\\,\\dTt',C2,630,42);
+  tex('=(\\sec^2\\Tt-1)\\sec^5\\Tt\\,\\dTt=(\\sec^7\\Tt-\\sec^5\\Tt)\\,\\dTt',C2+60,730,42);
+  tex('\\text{SOBRA}=\\dfrac15I_7-\\dfrac13(I_7-I_5)=\\dfrac13I_5-\\dfrac2{15}I_7',C2,860,46);
+  leg('Iₙ = ∫ secⁿ t dt, DE 0 A π/4',C2,950,GEO,'left',28);}
+
+ // 19 · B4-5 etapa 2 · a secante à sétima e o I
+ if(K==='b45a'||K==='b45b'){fundoV();vista(960,540,120);papelTela(.5);await logo();canto('A SECANTE À SÉTIMA');
+  painel2d(60,170,560,520);txt('O TRIÂNGULO (t = π/4)',84,212,{size:26,f:'SGM',cor:GEO});vista(150,620,280);
+  preenche([[0,0],[1.2,0],[1.2,1.2]],mix('#16123A',GEO,.18));linha([[0,0],[1.2,0]],GEO,5);linha([[1.2,0],[1.2,1.2]],EZ,5);linha([[0,0],[1.2,1.2]],BR,5);arcoPx([0,0],70,0,PI/4,UU,4);
+  tex('1',P(.6,0)[0],P(.6,0)[1]+28,34,'c');tex('1',P(1.2,.6)[0]+18,P(1.2,.6)[1],34,'l');tex('\\sqrt2',P(.5,.68)[0]-24,P(.5,.68)[1]-12,32,'c');tex('\\dfrac{\\pi}{4}',P(.42,.12)[0]+10,P(.42,.12)[1],28,'c');
+  vista(960,540,120);const C2=680;
+  chip('I_5=\\dfrac{7\\sqrt2}{8}+\\dfrac38\\ln(1+\\sqrt2)',C2,140,28);chip('I_7=\\dfrac{2\\sqrt2}{3}+\\dfrac56I_5',C2+560,140,28);
+  if(K==='b45a'){
+  tex('\\text{SOBRA}=\\dfrac13I_5-\\dfrac2{15}\\Big(\\dfrac{2\\sqrt2}{3}+\\dfrac56I_5\\Big)',C2,260,42);
+  tex('=\\dfrac13I_5-\\dfrac{4\\sqrt2}{45}-\\dfrac19I_5=\\dfrac29I_5-\\dfrac{4\\sqrt2}{45}',C2+60,390,42);
+  tex('\\dfrac29I_5=\\dfrac29\\Big(\\dfrac{7\\sqrt2}{8}+\\dfrac38\\ln(1+\\sqrt2)\\Big)=\\dfrac{7\\sqrt2}{36}+\\dfrac1{12}\\ln(1+\\sqrt2)',C2,530,40);
+  tex('\\dfrac{7\\sqrt2}{36}-\\dfrac{4\\sqrt2}{45}=\\dfrac{35\\sqrt2}{180}-\\dfrac{16\\sqrt2}{180}=\\dfrac{19\\sqrt2}{180}',C2,670,42);
+  tex('\\int\\text{ EM }\\Z=\\dfrac{19\\sqrt2}{180}+\\dfrac1{12}\\ln(1+\\sqrt2)+\\dfrac1{45}',C2,820,46);}
+  else{chip('\\int\\text{ EM }\\Z=\\dfrac{19\\sqrt2}{180}+\\dfrac1{12}\\ln(1+\\sqrt2)+\\dfrac1{45}',C2,250,28);
+  tex('I_{\\Z}=2\\pi\\Big[\\dfrac{19\\sqrt2+4}{180}+\\dfrac{\\ln(1+\\sqrt2)}{12}\\Big]',C2,400,50);
+  const f=tex('=\\dfrac{\\pi}{90}\\big(19\\sqrt2+4+15\\ln(1+\\sqrt2)\\big)\\approx1{,}539',C2+20,560,50);caixaMen(f);
+  chip('\\text{CONFERE: CARTESIANAS NO COMPUTADOR}\\approx1{,}5391',C2,710,28,MEN);}}
+
+ // 20 · B4-6 · o que os dois números dizem (2D)
+ if(K==='b46'){fundoV();vista(960,540,120);papelTela(.5);await logo();canto('MESMA FORMA, MASSA EM OUTRO LUGAR');
+  for(const [i,t,dens,zb,sg] of [[0,'LATA COMUM',false,.5,.7071],[1,'LATA PESADA',true,.5549,.7467]]){const X0=60+i*450;painel2d(X0,170,420,560);txt(t,X0+24,214,{size:28,f:'SGM',cor:GEO});vista(X0+210,660,170);
+   const n=40;for(let a=0;a<n;a++)for(let b=0;b<n;b++){const s0=-1+2*a/n,z0=b/n,ss=Math.abs(s0+1/n),zz=z0+.5/n;const c=dens?corR2(ss,zz):mix('#16123A',GEO,.32);x.fillStyle=c;const p=P(s0,z0+1/n);x.fillRect(p[0],p[1],U*2/n+1,U/n+1);}
+   linha([[-1,0],[1,0],[1,1],[-1,1],[-1,0]],GEO,3);linha([[0,-.12],[0,1.5]],EZ,2,{dash:[7,6]});linha([[sg,.04],[sg,.96]],SOMB,4);linha([[-sg,.04],[-sg,.96]],SOMB,4);
+   const q=P(0,zb);cmMark(q[0],q[1],14);txt(zb.toFixed(3).replace('.',','),X0+30,P(0,zb)[1]+10,{size:26,f:'SGM',cor:BR});tex('\\Sg',P(sg,1.15)[0],P(sg,1.15)[1],28,'c');}
+  const Cx=1020;txt('LATA COMUM',Cx+300,250,{size:30,f:'SGM',cor:GEO,al:'center'});txt('LATA PESADA',Cx+640,250,{size:30,f:'SGM',cor:CI,al:'center'});
+  const rows=[['\\zb','0{,}500','0{,}555'],['I/M','0{,}500\\,R^2','\\dfrac{1{,}539}{2{,}760}\\approx0{,}558\\,R^2'],['\\Sg','0{,}707\\,R','\\sqrt{0{,}558}\\approx0{,}747\\,R']];
+  rows.forEach(([a,b,c],i)=>{const Y=360+i*130;tex(a,Cx,Y,46);tex(b,Cx+300,Y,44,'c');tex(c,Cx+640,Y,44,'c');});
+  leg('MESMA FORMA; A MASSA FOI MORAR LONGE DA ORIGEM',Cx,800,GEO,'left',30);leg('LONGE DA ORIGEM = MAIS ALTO E MAIS LONGE DO EIXO',Cx,850,GEO,'left',30);}
+
+ // 21 · S2 · o eixo na parede e o próximo vídeo
+ if(K==='s2'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('E SE O EIXO ESTIVER NA PAREDE?');await cena3d('lataParede',OL);
+  rotulo3('lataParede','reta','\\text{EIXO}',{...OL,size:28,ox:16,oy:10});
+  txt('E SE O EIXO NÃO PASSAR',COL,200,{size:44});txt('PELO CENTRO?',COL,260,{size:44});
+  leg('GIRAR A LATA EM VOLTA DE UMA RETA DA PAREDE',COL,350,AL,'left',30);
+  cartao(1060,500,760,330);txt('NO PRÓXIMO VÍDEO',1440,580,{size:30,f:'SGM',cor:GEO,al:'center'});
+  txt('EXERCÍCIOS',1440,665,{size:48,al:'center'});txt('DO MÓDULO',1440,735,{size:48,cor:SOMB,al:'center'});leg('INTEGRAL TRIPLA',1440,800,GEO,'center',28);}
+
+ document.title='ok';}
+function arco2(f,a0,a1,n=80){return Array.from({length:n+1},(_,k)=>f(a0+(a1-a0)*k/n));}
+function corR2(s,z){const r=Math.min(1,Math.sqrt(s*s+z*z)/Math.SQRT2),t=Math.pow(r,.85),A=[0x10,0x24,0x3A],B=[0x35,0xD9,0xFF];return 'rgb('+A.map((v,i)=>Math.round(v+(B[i]-v)*t)).join(',')+')';}
+main();
+</script></body></html>

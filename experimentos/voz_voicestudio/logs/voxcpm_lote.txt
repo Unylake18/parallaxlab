@@ -1,0 +1,6 @@
+voxcpm_model_path: K:\VoiceStudio_runtime\cache\models--openbmb--VoxCPM2\snapshots\7936080b41163874f38610f46f438e2c0757f9fd, zipenhancer_model_path: None, enable_denoiser: False
+K:\VoiceStudio_runtime\data\engines\voxcpm2\voxcpm2\.venv\Lib\site-packages\torch\nn\utils\weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+Loading AudioVAE from pytorch: K:\VoiceStudio_runtime\cache\models--openbmb--VoxCPM2\snapshots\7936080b41163874f38610f46f438e2c0757f9fd\audiovae.pth
+Running on device: cuda, dtype: bfloat16
+Loading model from safetensors: K:\VoiceStudio_runtime\cache\models--openbmb--VoxCPM2\snapshots\7936080b41163874f38610f46f438e2c0757f9fd\model.safetensors

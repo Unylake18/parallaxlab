@@ -1,0 +1,105 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>c3d39</title>
+<style>html,body{margin:0;background:transparent;overflow:hidden}canvas{display:block}</style></head><body>
+<script src="three.min.js"></script>
+<script>
+// Cenas 3D-alvo do 3.4-E1 (Cálculo III · EP. 14 · exercícios do módulo 3.4), three.js r128. ?k=<chave>
+// Estilo da série: opaco, sem luz (MeshBasicMaterial), tom por face calculado uma vez (normal · direção fixa), sem sombra/névoa/brilho/transparência.
+// Fundo transparente (o compositor põe o violeta liso por baixo). Câmera perspectiva fov 22°, up = +z.
+// Chaves:
+//   oct      E3: quarto de disco de raio a no chão (GEO) + a casca da esfera x²+y²+z² = a² no 1º octante (ciano escuro, tom pela altura);
+//            eixos x (âmbar), y (magenta), z (branco). a = SC.
+//   pap_md   E6-1: meio disco de raio a em pé no plano xz (y_chapa = z), girando em torno do eixo x (âmbar), varrido até φ = 270°;
+//            um quadradinho lima na altura y0 = 0,6a na face que avança e o ANEL lima de raio y0 (volta inteira).
+//   pap_arr  E6-3: meia arruela 1 ≤ r ≤ 2 varrida até φ = 250° (a bola oca aparece pela face do corte);
+//            círculo tracejado magenta do centroide, raio 28/(9π).
+//   pap_toro E6-5: disco de raio 1 com centro a 2 do eixo, varrido até φ = 270°; círculo tracejado magenta do centro (raio 2).
+//   pap_anel E6-1: só a chapa (meio disco) em pé, sem sólido, com o quadradinho e o anel lima da volta inteira (raio y0) que ele percorre
+// window.PTS = pontos nomeados projetados em px de 1920×1080 (o Manim prende rótulos neles).
+const T=THREE,PI=Math.PI,K=new URLSearchParams(location.search).get('k')||'oct';
+const W=1920,H=1080,R=new T.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true});
+R.setPixelRatio(1);R.setSize(W,H,false);R.setClearColor(0x000000,0);document.body.appendChild(R.domElement);
+const S=new T.Scene();T.Object3D.DefaultUp.set(0,0,1);
+const cam=new T.PerspectiveCamera(22,W/H,.05,200);cam.up.set(0,0,1);
+const BG='#131030',CI='#35D9FF',E1='#FFC24D',E2='#EA63FF',GEO='#B8C4DA',BR='#F5F7FF',LIMA='#C6F26B',SOL0='#123A5A',SOL1='#2FA9D6',CHAPA='#9AA6C4';
+const C=h=>new T.Color(h), mixc=(a,b,t)=>C(a).lerp(C(b),t);
+const PTS={};
+function ver(p,t,cx=960,cy=540){cam.position.set(...p);cam.lookAt(...t);cam.setViewOffset(W,H,960-cx,540-cy,W,H);cam.updateProjectionMatrix();cam.updateMatrixWorld(true);}
+function proj(nome,v){const q=new T.Vector3(...v).project(cam);PTS[nome]=[+((q.x+1)/2*W).toFixed(1),+((1-q.y)/2*H).toFixed(1)];}
+function malha(tris){const pos=[],col=[];for(const [a,b,c,cc] of tris){for(const p of [a,b,c]){pos.push(...p);col.push(cc.r,cc.g,cc.b);}}
+ const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(pos,3));g.setAttribute('color',new T.Float32BufferAttribute(col,3));
+ const m=new T.Mesh(g,new T.MeshBasicMaterial({vertexColors:true,side:T.DoubleSide,polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1}));S.add(m);return m;}
+function tubo(pts,r,cor){const cp=new T.CurvePath();for(let i=0;i+1<pts.length;i++)cp.add(new T.LineCurve3(new T.Vector3(...pts[i]),new T.Vector3(...pts[i+1])));
+ const m=new T.Mesh(new T.TubeGeometry(cp,Math.max(8,(pts.length-1)*2),r,8,false),new T.MeshBasicMaterial({color:C(cor)}));S.add(m);return m;}
+function tracejado(pts,r,cor,on=6,off=5){for(let i=0;i<pts.length-1;i+=on+off){const seg=pts.slice(i,Math.min(pts.length,i+on+1));if(seg.length>1)tubo(seg,r,cor);}}
+function seta3(a,b,cor,r=.018){tubo([a,b],r,cor);const d=new T.Vector3(...b).sub(new T.Vector3(...a)).normalize();const cone=new T.Mesh(new T.ConeGeometry(r*3.2,r*11,12),new T.MeshBasicMaterial({color:C(cor)}));
+ cone.position.set(...new T.Vector3(...b).addScaledVector(d,r*5).toArray());cone.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),d);S.add(cone);}
+// tom por face: mistura entre escuro e claro pelo cosseno com uma direção fixa (não é luz: é a cor calculada uma vez)
+const DIR=new T.Vector3(.35,-.55,.76).normalize();
+function tom(n,c0=SOL0,c1=SOL1){const t=Math.max(0,Math.min(1,.5+.5*n.dot(DIR)));return mixc(c0,c1,Math.pow(t,1.1));}
+function quad(a,b,c,d,cc,T3){T3.push([a,b,c,cc],[a,c,d,cc]);}
+function nrm(a,b,c){const A=new T.Vector3(...a),B=new T.Vector3(...b),Cc=new T.Vector3(...c);return B.sub(A).cross(Cc.sub(A)).normalize();}
+
+if(K==='oct'){const SC=2.4,T3=[];
+ // chão: quarto de disco (GEO escuro) e a casca da esfera no 1º octante
+ const nr=40,nt=60;
+ for(let i=0;i<nr;i++)for(let j=0;j<nt;j++){const r0=SC*i/nr,r1=SC*(i+1)/nr,t0=PI/2*j/nt,t1=PI/2*(j+1)/nt,P=(r,t)=>[r*Math.cos(t),r*Math.sin(t),0];
+  quad(P(r0,t0),P(r1,t0),P(r1,t1),P(r0,t1),mixc(BG,GEO,.30),T3);}
+ const np=48,nq=48,Sp=(ph,th)=>[SC*Math.sin(ph)*Math.cos(th),SC*Math.sin(ph)*Math.sin(th),SC*Math.cos(ph)];
+ for(let i=0;i<np;i++)for(let j=0;j<nq;j++){const p0=PI/2*i/np,p1=PI/2*(i+1)/np,t0=PI/2*j/nq,t1=PI/2*(j+1)/nq;const m=Sp((p0+p1)/2,(t0+t1)/2);
+  const n=new T.Vector3(...m).normalize();quad(Sp(p0,t0),Sp(p1,t0),Sp(p1,t1),Sp(p0,t1),tom(n),T3);}
+ // paredes de corte (planos x = 0 e y = 0): quartos de disco verticais, um pouco mais escuros
+ for(let i=0;i<nr;i++)for(let j=0;j<nt;j++){const r0=SC*i/nr,r1=SC*(i+1)/nr,t0=PI/2*j/nt,t1=PI/2*(j+1)/nt;
+  const A=(r,t)=>[r*Math.cos(t),0,r*Math.sin(t)],B=(r,t)=>[0,r*Math.cos(t),r*Math.sin(t)];
+  quad(A(r0,t0),A(r1,t0),A(r1,t1),A(r0,t1),mixc(BG,SOL1,.38),T3);quad(B(r0,t0),B(r1,t0),B(r1,t1),B(r0,t1),mixc(BG,SOL1,.30),T3);}
+ malha(T3);
+ const arco=(f,n=90)=>Array.from({length:n+1},(_,k)=>f(PI/2*k/n));
+ tubo(arco(t=>[SC*Math.cos(t),SC*Math.sin(t),0.004]),.012,GEO);tubo(arco(t=>[SC*Math.cos(t),0,SC*Math.sin(t)]),.012,GEO);tubo(arco(t=>[0,SC*Math.cos(t),SC*Math.sin(t)]),.012,GEO);
+ seta3([0,0,0],[SC+.55,0,0],E1);seta3([0,0,0],[0,SC+.55,0],E2);seta3([0,0,0],[0,0,SC+.5],BR);
+ ver([11.5,5.2,7.6],[SC*.42,SC*.42,SC*.28],600,580);
+ proj('ex',[SC+.75,0,0]);proj('ey',[0,SC+.75,0]);proj('ez',[0,0,SC+.72]);proj('a_x',[SC,0,0]);proj('a_y',[0,SC,0]);proj('a_z',[0,0,SC]);proj('origem',[0,0,0]);
+ proj('casca',Sp(PI/4.2,PI/4));}
+
+if(K.startsWith('pap')){
+ // chapa no plano (x, s) com s = distância ao eixo x; giro: (x, s) -> (x, s·sen φ', s·cos φ')? usamos (x, -s sen φ, s cos φ) para a varredura vir para a câmera
+ const ANEL=K==='pap_anel';const SC=(K==='pap_md'||ANEL)?2.2:(K==='pap_arr'?1.15:1.0);
+ const PH=K==='pap_arr'?250*PI/180:(K==='pap_anel'?2*PI:270*PI/180);
+ if(K==='pap_toro')ver([11.5,-20,9.5],[0,0,.2],700,560);else ver([8.8,-15.5,7.2],[0,0,.25],640,560);
+ const G=(x,s,ph)=>[x,s*Math.sin(ph),s*Math.cos(ph)];
+ // perfil da chapa: polígono fechado em (x, s), s ≥ 0, mais a malha da chapa por faixas
+ let perfilOut,perfilIn=null,chapaPts;
+ if(K==='pap_md'||ANEL){perfilOut=x=>Math.sqrt(Math.max(0,SC*SC-x*x));chapaPts=(u,v)=>{const r=SC*u,t=PI*v;return [r*Math.cos(t),r*Math.sin(t)];};}
+ if(K==='pap_arr'){perfilOut=x=>Math.sqrt(Math.max(0,4*SC*SC-x*x));perfilIn=x=>Math.sqrt(Math.max(0,SC*SC-x*x));chapaPts=(u,v)=>{const r=SC*(1+u),t=PI*v;return [r*Math.cos(t),r*Math.sin(t)];};}
+ if(K==='pap_toro'){chapaPts=(u,v)=>{const r=SC*u,t=2*PI*v;return [r*Math.cos(t),2*SC+r*Math.sin(t)];};}
+ const T3=[];
+ // superfície varrida: as curvas de borda da chapa giram de 0 até PH
+ const bordas=[];const NB=120;
+ const lado=f=>Array.from({length:NB+1},(_,k)=>f(k/NB));
+ if(K==='pap_md'||ANEL)bordas.push(lado(t=>{const a=PI*t;return [SC*Math.cos(a),SC*Math.sin(a)];}));
+ if(K==='pap_arr'){bordas.push(lado(t=>{const a=PI*t;return [2*SC*Math.cos(a),2*SC*Math.sin(a)];}));bordas.push(lado(t=>{const a=PI*t;return [SC*Math.cos(a),SC*Math.sin(a)];}));}
+ if(K==='pap_toro')bordas.push(lado(t=>{const a=2*PI*t;return [SC*Math.cos(a),2*SC+SC*Math.sin(a)];}));
+ const nph=90;
+ if(!ANEL)for(const B of bordas){for(let k=0;k<B.length-1;k++)for(let j=0;j<nph;j++){const p0=PH*j/nph,p1=PH*(j+1)/nph;
+   const a=G(B[k][0],B[k][1],p0),b=G(B[k+1][0],B[k+1][1],p0),c=G(B[k+1][0],B[k+1][1],p1),d=G(B[k][0],B[k][1],p1);
+   const mx=(B[k][0]+B[k+1][0])/2,ms=(B[k][1]+B[k+1][1])/2,pm=(p0+p1)/2;let n=nrm(a,b,c);const ctr=new T.Vector3(mx,0,0),pmid=new T.Vector3(...G(mx,ms,pm));
+   if(n.dot(pmid.clone().sub(ctr))<0)n.negate();quad(a,b,c,d,tom(n),T3);}}
+ // as duas faces de corte (a chapa em φ = 0 e em φ = PH): a de φ = PH é a chapa que avança (GEO claro); a de φ = 0 fica escurecida
+ const nu=40,nv=90;
+ for(const [ph,cc] of (ANEL?[[PH,C(CHAPA)]]:[[0,mixc(BG,CHAPA,.55)],[PH,C(CHAPA)]]))for(let i=0;i<nu;i++)for(let j=0;j<nv;j++){const q=[chapaPts(i/nu,j/nv),chapaPts((i+1)/nu,j/nv),chapaPts((i+1)/nu,(j+1)/nv),chapaPts(i/nu,(j+1)/nv)].map(p=>G(p[0],p[1],ph));
+   quad(q[0],q[1],q[2],q[3],cc,T3);}
+ malha(T3);
+ // contorno da chapa que avança e da chapa inicial
+ for(const ph of (ANEL?[0,PH]:[0,PH]))for(const B of bordas)(ANEL&&ph===0?(pts=>tracejado(pts,.009,GEO,5,5)):(pts=>tubo(pts,.011,GEO)))(B.map(p=>G(p[0],p[1],ph)),.011,GEO);
+ // eixo de rotação (âmbar)
+ const XM=K==='pap_toro'?2.0:((K==='pap_md'||ANEL)?SC+.9:2*SC+.7);seta3([-XM,0,0],[XM,0,0],E1,.02);
+ if(K==='pap_md'||ANEL){const y0=.6*SC,h=.28;// quadradinho na chapa que avança e o anel (volta inteira) de raio y0
+  const sq=[[-.55-h/2,y0-h/2],[-.55+h/2,y0-h/2],[-.55+h/2,y0+h/2],[-.55-h/2,y0+h/2]].map(p=>G(p[0],p[1],PH));const T4=[];quad(sq[0],sq[1],sq[2],sq[3],C(LIMA),T4);
+  malha(T4.map(t=>[t[0].map((v,i)=>v+[0,-.004,0][i]),t[1].map((v,i)=>v+[0,-.004,0][i]),t[2].map((v,i)=>v+[0,-.004,0][i]),t[3]]));
+  const anel=Array.from({length:181},(_,k)=>G(-.55,y0,(ANEL?PH:2*PI)*k/180));tubo(anel,.016,LIMA);
+  proj('quad',G(-.55,y0,PH));proj('anel_topo',G(-.55,y0,PI));proj('anel_frente',G(-.55,y0,PI/2*3));proj('eixo_fim',[XM+.2,0,0]);proj('centro',[0,0,0]);
+  proj('chapa_topo',G(0,SC,PH));proj('borda_dir',[SC,0,0]);}
+ if(K==='pap_arr'){const yb=28/(9*PI)*SC;const circ=Array.from({length:241},(_,k)=>G(0,yb,2*PI*k/240));tracejado(circ,.013,E2,5,4);
+  proj('cm_ini',G(0,yb,0));proj('cm_fim',G(0,yb,PH));proj('oco',G(0,SC*.55,PH*.62));proj('eixo_fim',[XM+.2,0,0]);proj('r1',G(SC,0,PH));proj('r2',G(2*SC,0,PH));proj('topo',G(0,2*SC,PH));}
+ if(K==='pap_toro'){const circ=Array.from({length:241},(_,k)=>G(0,2*SC,2*PI*k/240));tracejado(circ,.013,E2,5,4);proj('centro_disco',G(0,2*SC,PH));proj('eixo_fim',[XM+.2,0,0]);}
+}
+R.render(S,cam);window.PTS=PTS;document.title='ok';
+</script></body></html>

@@ -8,10 +8,11 @@ from pathlib import Path
 import numpy as np
 from manim import (
     Scene, VGroup, VMobject, ValueTracker, ImageMobject, MathTex, DecimalNumber, Line, DashedLine, Arc, Circle, Dot,
-    Polygon, Ellipse, ParametricFunction, FadeIn, FadeOut, Create, ReplacementTransform, Transform, TransformFromCopy,
+    Polygon, Ellipse, ParametricFunction, CapStyleType, FadeIn, FadeOut, Create, ReplacementTransform, Transform, TransformFromCopy,
     Write, Indicate, LaggedStart, AnimationGroup, UP, DOWN, LEFT, RIGHT, UL, UR, BOLD, always_redraw, linear, smooth,
-    there_and_back, config,
+    there_and_back, config, Wait,
 )
+from manim.animation.animation import prepare_animation
 
 ROOT = Path(__file__).resolve().parents[2]
 UNIT = Path(__file__).resolve().parent
@@ -23,6 +24,8 @@ from kit import *  # noqa: E402,F401,F403
 from kit import _EC  # noqa: E402,F401
 
 SEG = os.environ.get("SEG", "")
+SYNC_LOG = os.environ.get("SYNC_LOG", "")      # arquivo .jsonl: registra cada play/espera (índice, tipo, instante editorial, duração nominal)
+SYNC = os.environ.get("SYNC", "")              # ritmo.json: quadros (30 fps) de cada intervalo, na ordem das chamadas a play()
 WM_W, WM_OP = 1.92, 0.45
 LW_VEC, LW_WIRE = 5, 6
 HERO = np.array([3.95, 1.25, 0.0])
@@ -45,9 +48,12 @@ class Base(Scene):
         self.beta, self.tau = ValueTracker(0), ValueTracker(0)
         self.checkpoints, self.sections, self.layout_issues = [], [], []
         self.head = self.cap = None
-        self.slots = {"H": {"pos": HERO, "eq": None, "card": None, "w": 6.7, "h": 2.5},
-                      "A": {"pos": AUX, "eq": None, "card": None, "w": 6.7, "h": 2.45}}
+        self.slots = {"H": {"pos": HERO, "eq": None, "card": None, "w": 6.7, "h": 2.5, "name": None, "note": None},
+                      "A": {"pos": AUX, "eq": None, "card": None, "w": 6.7, "h": 2.45, "name": None, "note": None}}
         self.layout_name = "split"
+        self._pi, self._e, self._ritmo = 0, 0.0, None
+        if SYNC:
+            self._ritmo = json.load(open(SYNC, encoding="utf-8"))["frames"]
         self.clock = ValueTracker(0)
         self.clock.add_updater(lambda m, dt: m.increment_value(dt * 0.18))
         self.add(self.clock)
@@ -76,7 +82,11 @@ class Base(Scene):
             m.set_color(color)
         return halo(m.move_to(np.asarray(point, dtype=float) + np.array([dx, dy, 0]))).set_z_index(12)
 
-    def tube(self, a, b, color=BLUE_L, width=LW_WIRE):
+    def tip(self, text, point, size=22, color=DIM):
+        """Descrição curta de uma variável, junto ao rótulo (sai quando a relação está consolidada)."""
+        return halo(rich(text, size, color).move_to(point)).set_z_index(12)
+
+    def tube(self, a, b, color=STEEL, width=LW_WIRE):
         """Fio/tubo: linha grossa com brilho fino (leitura de volume sem sombreamento caro)."""
         a, b = np.asarray(a, dtype=float), np.asarray(b, dtype=float)
         d = b - a
@@ -108,8 +118,24 @@ class Base(Scene):
         return roots, static
 
     def play(self, *animations, **kwargs):
+        """Todo o tempo da cena passa por aqui. Com SYNC_LOG, registra os intervalos; com SYNC, cada intervalo dura
+        exatamente o nº de quadros da tabela (a cena segue a voz, sem deriva)."""
         self.dynamic_last()
-        return super().play(*animations, **kwargs)
+        anims = [prepare_animation(a) for a in animations]
+        nominal = float(kwargs["run_time"]) if "run_time" in kwargs else max((a.run_time for a in anims), default=0.0)
+        kind = "hold" if (len(anims) == 1 and isinstance(anims[0], Wait)) else "anim"
+        k = self._pi
+        self._pi += 1
+        if SYNC_LOG:
+            with open(SYNC_LOG, "a", encoding="utf-8") as f:
+                f.write(json.dumps({"i": k, "kind": kind, "e0": round(self._e, 4), "nom": round(nominal, 4)}) + chr(10))
+        self._e += nominal
+        if self._ritmo is not None and nominal > 0:
+            if k >= len(self._ritmo):
+                raise RuntimeError(f"ritmo.json tem {len(self._ritmo)} intervalos, mas a cena chamou o {k + 1}º: refaça a tabela")
+            F = int(self._ritmo[k])
+            kwargs["run_time"] = max(F, 1) / config.frame_rate - 0.25 / config.frame_rate    # ceil → exatamente F quadros
+        return super().play(*anims, **kwargs)
 
     def hold(self, d):
         self.update_mobjects(0)
@@ -124,19 +150,31 @@ class Base(Scene):
                 for u in ups:
                     m.add_updater(u)
 
-    def flow(self, paths, count=7, direction=1, color=GREEN, radius=0.05):
-        """Marcas convencionais de corrente (nunca velocidade de deriva). paths: funções u∈[0,1) → ponto da tela."""
+    def flow(self, paths, count=7, direction=1, color=GREEN, dash=0.30, width=8):
+        """Marcas convencionais de corrente (sentido convencional, nunca velocidade de deriva): traços alongados que
+        correm pelo caminho, cabeça mais clara que a cauda. Não são cargas. paths: funções u∈[0,1] → ponto da tela."""
         g = VGroup()
         for path in paths:
+            pts = np.array([path(t) for t in np.linspace(0, 1, 41)])
+            length = float(np.linalg.norm(np.diff(pts, axis=0), axis=1).sum()) + 1e-6
+            du = dash / 2 / length
             for k in range(count):
-                dot = Dot(radius=radius, color=color).set_z_index(8)
+                tail = Line(LEFT, RIGHT, color=color, stroke_width=width, cap_style=CapStyleType.ROUND).set_opacity(0.5)
+                head = Line(LEFT, RIGHT, color=color, stroke_width=width, cap_style=CapStyleType.ROUND)
+                for ln in (tail, head):
+                    ln.set_stroke(BACKGROUND_COLOR, width + 3.5, background=True)
+                mark = VGroup(tail, head).set_z_index(8)
 
-                def move(m, p=path, phase=k / count):
+                def move(m, p=path, phase=k / count, du=du):
                     s = direction() if callable(direction) else direction
-                    m.move_to(p((phase + s * self.clock.get_value()) % 1))
-                dot.add_updater(move)
-                dot.update(0)
-                g.add(dot)
+                    u = (phase + s * self.clock.get_value()) % 1
+                    back = p(min(max(u - s * du, 0.0), 1.0))
+                    front = p(min(max(u + s * du, 0.0), 1.0))
+                    m[0].set_points_as_corners([back, front])
+                    m[1].set_points_as_corners([p(u), front])
+                mark.add_updater(move)
+                mark.update(0)
+                g.add(mark)
         return g
 
     def cached(self, key, builder):
@@ -174,7 +212,15 @@ class Base(Scene):
         return g.set_z_index(9)
 
     # ── marcas, seções, legenda ──────────────────────────────────────────────────────────────────────────────
+    def _ev(self, kind, text):
+        """Registro de eventos para ancorar a narração (só com QA_EVENTS=<arquivo>)."""
+        path = os.environ.get("QA_EVENTS")
+        if path:
+            with open(path, "a", encoding="utf-8") as f:
+                f.write(json.dumps({"t": round(float(self._e), 2), "kind": kind, "text": text}, ensure_ascii=False) + chr(10))
+
     def mark(self, name):
+        self._ev("mark", name)
         self.checkpoints.append({"name": name, "time": round(float(self.time), 3), "part": self.renderer.num_plays})
         if os.environ.get("QA_STILLS"):
             self.update_mobjects(0)
@@ -192,6 +238,7 @@ class Base(Scene):
 
     def section(self, name, title=None):
         print(f"[5.2] {name} — {float(self.time):.2f}s", flush=True)
+        self._ev("section", name)
         self.next_section(name, skip_animations=bool(SEG and name not in SEG.split(",")))
         self.sections.append({"name": name, "time": round(float(self.time), 3), "part": self.renderer.num_plays})
         if title:
@@ -209,6 +256,7 @@ class Base(Scene):
 
     def caption(self, s, color=WHITE, rt=0.45):
         """Nota curta que nomeia a operação atual. Saída e entrada em sequência (nunca duas frases juntas)."""
+        self._ev("caption", s)
         new = rich(s, T_CAP, color)
         if new.width > 13.6:
             new.scale_to_fit_width(13.6)
@@ -219,6 +267,40 @@ class Base(Scene):
         self.cap = new
 
     # ── layouts: partição da tela que muda conforme a operação (geometria / split / álgebra) ───────────────
+    PAD_X, PAD_Y, DECO_H = 0.9, 0.8, 0.42
+
+    def _fit(self, eq, s):
+        """Tamanho do cartão = conteúdo (nome + fórmula + nota) com margem fixa; s["w"], s["h"] são só o máximo do layout."""
+        nm, nt = s.get("name"), s.get("note")
+        dh = self.DECO_H * ((nm is not None) + (nt is not None))
+        w = eq.width + self.PAD_X
+        for d in (nm, nt):
+            if d is not None:
+                w = max(w, d.width + 0.8)
+        w = min(s["w"], max(3.2, w))
+        h = min(s["h"] + dh, max(1.25, eq.height + self.PAD_Y + dh))
+        return float(w), float(h)
+
+    def _need_h(self, eq, s):
+        return self._fit(eq, s)[1]
+
+    def _eq_pos(self, s):
+        """Centro da fórmula dentro do cartão (desloca para dar lugar ao nome, em cima, e à nota, embaixo)."""
+        dy = (-0.5 * self.DECO_H if s.get("name") is not None else 0.0) + (0.5 * self.DECO_H if s.get("note") is not None else 0.0)
+        return s["pos"] + np.array([0.0, dy, 0.0])
+
+    def _deco_pos(self, s, key):
+        h = s.get("ch", s["h"])
+        y = s["pos"][1] + (h / 2 - 0.3 if key == "name" else -h / 2 + 0.3)
+        return np.array([s["pos"][0], y, 0.0])
+
+    def _resize_rule(self, s, w, h):
+        """Histerese: o cartão cresce quando o conteúdo não cabe; só encolhe quando sobra muito (uma vez por etapa)."""
+        cw, ch = s.get("cw", s["w"]), s.get("ch", s["h"])
+        if w > cw + 0.01 or h > ch + 0.01 or cw - w > 1.2 or ch - h > 0.7:
+            return w, h
+        return cw, ch
+
     def relayout(self, name, rt=1.0):
         """Anima cartões e equações vivos até o novo layout; sem criar cartões vazios."""
         anims = []
@@ -226,61 +308,86 @@ class Base(Scene):
             s = self.slots[k]
             s.update(pos=np.array([x, y, 0.0]), w=w, h=h)
             eq = s["eq"]
-            if s["card"] is not None:
-                ch = self._need_h(eq, s) if (eq is not None and hasattr(eq, "tok")) else h
-                nc = panel(w, ch, s["pos"])
-                anims.append(ReplacementTransform(s["card"], nc))
-                s["card"], s["ch"] = nc, ch
             if eq is not None and hasattr(eq, "nat_w"):
-                tgt = eq.copy()
                 f = min(1.0, (w - 0.55) / eq.nat_w) / max(1e-6, eq.width / eq.nat_w)
+                tgt = eq.copy()
                 tgt.scale(f)
-                tgt.move_to(s["pos"])
-                anims.append(eq.animate.become(tgt))
+                tgt.move_to(self._eq_pos(s))
+                cw, ch = self._fit(tgt, s)
             elif eq is not None:
                 tgt = eq.copy()
                 if tgt.width > w - 0.55:
                     tgt.scale_to_fit_width(w - 0.55)
-                tgt.move_to(s["pos"])
+                tgt.move_to(self._eq_pos(s))
+                cw, ch = (self._fit(tgt, s) if s["card"] is not None else (w, h))
+            else:
+                tgt, cw, ch = None, w, h
+            if s["card"] is not None:
+                nc = panel(cw, ch, s["pos"])
+                anims.append(ReplacementTransform(s["card"], nc))
+                s["card"], s["cw"], s["ch"] = nc, cw, ch
+            if tgt is not None:
                 anims.append(eq.animate.become(tgt))
+            for key in ("name", "note"):
+                if s.get(key) is not None:
+                    anims.append(s[key].animate.move_to(self._deco_pos(s, key)))
         self.layout_name = name
         if anims:
             self.play(*anims, run_time=rt)
 
     # ── slots de equação (HERO / AUX) com proveniência dos termos ────────────────────────────────────────────
-    def _need_h(self, eq, s):
-        """Altura do cartão acompanha a expressão (margem moderada); s["h"] é o máximo do layout."""
-        return float(min(s["h"], max(1.25, eq.height + 0.8)))
-
     def _card(self, slot):
         s = self.slots[slot]
         if s["card"] is None:
             s["card"] = panel(s["w"], s["h"], s["pos"])
-            s["ch"] = s["h"]
+            s["cw"], s["ch"] = s["w"], s["h"]
             return s["card"]
         return None
 
-    def show(self, new, *pairs, slot="H", src=None, rt=1.6, wait=2.0, auto=True, structure=True):
+    def show(self, new, *pairs, slot="H", src=None, rt=1.6, wait=2.0, auto=True, structure=True, name=None, note=None):
         """Mostra `new` no slot. Se já havia equação: TransformByGlyphMap (termos transportados, saídas e entradas).
         src={(token, occ): mobject|lista}: o termo nasce voando de uma CÓPIA CONGELADA do objeto do desenho; os glifos de
-        destino ficam reservados (o auto-mapeamento não os toca). Cada glifo de destino tem um único proprietário."""
+        destino ficam reservados (o auto-mapeamento não os toca). Cada glifo de destino tem um único proprietário.
+        name/note: âncora semântica (nome da lei) e nota curta, dentro do mesmo cartão."""
         s = self.slots[slot]
-        new.move_to(s["pos"])
+        self._ev("eq" + ("-aux" if slot == "A" else ""), getattr(new, "tex", "") + (f"  [nome: {name}]" if name else "") + (f"  [nota: {note}]" if note else ""))
         new.nat_w = new.width
         max_w = s["w"] - 0.55
         if new.width > max_w:
             new.scale_to_fit_width(max_w)
-            new.move_to(s["pos"])
-        need = self._need_h(new, s)
+        # decorações (nome da lei em cima, nota embaixo): saem se não foram pedidas de novo
+        deco_in, deco_anims = [], []
+        for key, val, build in (("name", name, lambda v: txt(v, 22, DIM)), ("note", note, lambda v: rich(v, 22, DIM))):
+            old = s.get(key)
+            if old is not None and (val is None or getattr(old, "src_text", None) != val):
+                deco_anims.append(FadeOut(old))
+                s[key] = old = None
+            if val is not None and old is None:
+                m = build(val)
+                m.src_text = val
+                if m.width > s["w"] - 0.8:
+                    m.scale_to_fit_width(s["w"] - 0.8)
+                s[key] = m
+                deco_in.append((key, m))
+        w_need, h_need = self._fit(new, s)
+        new.move_to(self._eq_pos(s))
         card = None
-        if s["card"] is None:
-            s["card"] = panel(s["w"], need, s["pos"])
-            s["ch"] = need
-            card = s["card"]
         resize = None
-        if card is None and abs(need - s.get("ch", need)) > 0.4:
-            resize = (s["card"], panel(s["w"], need, s["pos"]))
-            s["card"], s["ch"] = resize[1], need
+        if s["card"] is None:
+            s["card"] = card = panel(w_need, h_need, s["pos"])
+            s["cw"], s["ch"] = w_need, h_need
+        else:
+            cw, ch = self._resize_rule(s, w_need, h_need)
+            if abs(cw - s.get("cw", s["w"])) > 0.01 or abs(ch - s.get("ch", s["h"])) > 0.01:
+                resize = (s["card"], panel(cw, ch, s["pos"]))
+                s["card"], s["cw"], s["ch"] = resize[1], cw, ch
+        for key, m in deco_in:
+            m.move_to(self._deco_pos(s, key))
+            deco_anims.append(FadeIn(m))
+        for key in ("name", "note"):
+            m = s.get(key)
+            if m is not None and all(m is not d for _, d in deco_in):
+                deco_anims.append(m.animate.move_to(self._deco_pos(s, key)))
         old = s["eq"]
         flights, restore, reserved = [], [], set()
         for (tok, occ), mob in (src or {}).items():
@@ -295,7 +402,7 @@ class Base(Scene):
             snap = source.copy()
             snap.clear_updaters(recursive=True)
             flights.append(TransformFromCopy(snap, ghost))
-        anims = list(flights)
+        anims = list(flights) + deco_anims
         if card is not None:
             anims.append(FadeIn(card))
         if resize is not None:
@@ -320,6 +427,22 @@ class Base(Scene):
             self.hold(wait)
         return new
 
+    def name_card(self, name, slot="H", rt=0.9):
+        """Põe o nome da lei/resultado num cartão já estável (depois que a álgebra terminou)."""
+        s = self.slots[slot]
+        self._ev("name", name)
+        m = txt(name, 22, DIM)
+        m.src_text = name
+        s["name"] = m
+        w, h = self._fit(s["eq"], s)
+        cw, ch = max(w, s.get("cw", w)), h
+        nc = panel(cw, ch, s["pos"])
+        anims = [ReplacementTransform(s["card"], nc), s["eq"].animate.move_to(self._eq_pos(s))]
+        s["card"], s["cw"], s["ch"] = nc, cw, ch
+        m.move_to(self._deco_pos(s, "name"))
+        anims.append(FadeIn(m))
+        self.play(*anims, run_time=rt)
+
     def drop(self, slot="H", rt=0.6, keep_card=None):
         s = self.slots[slot]
         if keep_card is None:
@@ -332,6 +455,10 @@ class Base(Scene):
                 # grupos montados com FadeIn separado: os filhos também estão na cena
                 stale = list(s["eq"].submobjects)
             s["eq"] = None
+        for key in ("name", "note"):
+            if s.get(key) is not None:
+                anims.append(FadeOut(s[key]))
+                s[key] = None
         if not keep_card and s["card"] is not None:
             anims.append(FadeOut(s["card"]))
             s["card"] = None
@@ -348,6 +475,16 @@ class Base(Scene):
         self.hold(rt)
         self.play(FadeOut(r), run_time=0.25)
 
+    def destaca(self, mobs, d, color=WHITE, each=1.0):
+        """Troca uma espera de d s por destaques em sequência dos objetos que a fala cita (cada um 'each' s); o resto é espera.
+        A tela acompanha a explicação em vez de ficar parada."""
+        usado = 0.0
+        for m in mobs:
+            self.play(Indicate(m, color=color, scale_factor=1.12), run_time=each)
+            usado += each
+        if d - usado > 0.05:
+            self.hold(d - usado)
+
     def pulse(self, m, color=WHITE, rt=0.9):
         self.play(Indicate(m, color=color, scale_factor=1.12), run_time=rt)
 
@@ -360,5 +497,5 @@ class Base(Scene):
             self.play(*[FadeOut(m) for m in mobs], run_time=0.9)
         self.cap = None
         for k, ((x, y), w, h) in LAYOUTS["split"].items():
-            self.slots[k].update(eq=None, card=None, pos=np.array([x, y, 0.0]), w=w, h=h)
+            self.slots[k].update(eq=None, card=None, name=None, note=None, pos=np.array([x, y, 0.0]), w=w, h=h)
         self.layout_name = "split"

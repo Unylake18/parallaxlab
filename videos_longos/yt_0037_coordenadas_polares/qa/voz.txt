@@ -1,0 +1,38 @@
+yt_0037 · QA da voz (narracao_final.wav)
+modelo eleven_v4 · voz qw7jgPZWOKrl10GsjQ82 · texto narracao_tags.md (narração final v3.1) · 4 blocos de API
+duração 955.44 s (15:55.44); limite da parada: 18:30 → OK
+pico -0.96 dBFS; amostras em clipping (|x| ≥ 0,999): 0 → OK
+silêncios > 1,5 s dentro de parágrafo: 0
+pausas entre parágrafos: 18; 0.22–0.40 s (média 0.29 s); maior pausa entre palavras no texto todo 0.40 s
+tag lida em voz alta (STT): {'curious': 0, 'thoughtful': 0, 'surprised': 0, 'serious': 0, 'excited': 0, 'happy': 0} → OK
+  «erre» no STT: 112×
+  «téta» no STT: 73×
+  «teta (nunca)» no STT: 0×
+  «xis» no STT: 26×
+  «ípsilon» no STT: 21×
+  «á» no STT: 225×
+  «bê» no STT: 12×
+  «dê u» no STT: 4×
+  «dê erre» no STT: 10×
+  «dê téta» no STT: 6×
+  «rô» no STT: 1×
+  «cá» no STT: 1×
+  «secante» no STT: 4×
+  «cossecante» no STT: 2×
+  «cosseno de dois téta» no STT: 0×
+  «zero vírgula três um seis» no STT: 1×
+  «um vírgula noventa e nove» no STT: 2×
+  «três vírgula zero oito» no STT: 1×
+  «raiz de dois pi» no STT: 2×
+  «Pitágoras» no STT: 1×
+  «Parallax Lab» no STT: 2×
+  «é elevado a zero» no STT: 3×
+  «Fubini» no STT: 2×
+  «Cálculo um» no STT: 1×
+palavras 3081; 3.22 palavras/s no WAV inteiro; 3.23 palavras/s do início ao fim da fala (referência 3,0 palavras/s)
+fronteira de bloco antes de «o determinante é cosseno de téta»: pausa 0.20 s (271.30–271.50); nível 2 s antes -21.0 dB × 2 s depois -21.4 dB
+  maior salto entre amostras na pausa: 0.0074 (clique > 0,2)
+fronteira de bloco antes de «a fatia das polares é o»: pausa 0.24 s (551.90–552.14); nível 2 s antes -24.4 dB × 2 s depois -20.7 dB
+  maior salto entre amostras na pausa: 0.1299 (clique > 0,2)
+fronteira de bloco antes de «num quadrado o raio sai ora»: pausa 0.30 s (831.70–832.00); nível 2 s antes -21.1 dB × 2 s depois -18.8 dB
+  maior salto entre amostras na pausa: 0.0098 (clique > 0,2)

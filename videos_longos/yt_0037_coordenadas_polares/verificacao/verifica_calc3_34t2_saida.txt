@@ -1,0 +1,52 @@
+H1 de dentro: ∫_0^1 e^(-r²) r dr = (1 - 1/e)/2 (o mesmo número do sino do EP. 09): True (0.316060)
+H1 u = r²: ∫_0^1 e^(-u) du/2 = [-e^(-u)/2]_0^1 = -1/(2e) + 1/2: True 
+H1 ∬_disco e^(-(x²+y²)) dA = 2π · (1 - 1/e)/2 = π(1 - 1/e) ≈ 1,9859: True (1.9859)
+H1 numérica em xy (dblquad) = π(1 - 1/e): True (1.985865)
+H1 EP. 09: ∫_0^1 y e^(-y²) dy é a MESMA integral de dentro: True 
+H1 trava em xy: primitiva de e^(-y²) não é elementar (sympy devolve erf): True (sqrt(pi)*erf(y)/2)
+B1 x² + y² = r² (Pitágoras no triângulo): True 
+B1 θ = π/3, r = 2: ponto (1, √3): True 
+B2 setor de raio r e ângulo Δθ: πr² · Δθ/(2π) = r²Δθ/2: True 
+B2 célula = (r2² - r1²)Δθ/2 = (r2 + r1)(r2 - r1)Δθ/2 = r̄ Δr Δθ EXATO: True 
+B2 Δr = 0,5 e Δθ = π/6: célula de 0,5 a 1 = 3/4 · 1/2 · π/6 = π/16 ≈ 0,196: True (0.1963)
+B2 célula de 1,5 a 2 = 7/4 · 1/2 · π/6 = 7π/48 ≈ 0,458; razão 7/3: True (0.4581)
+B2 matriz jacobiana [[cos θ, -r sen θ], [sen θ, r cos θ]]: True 
+B2 det = r cos²θ + r sen²θ = r(cos²θ + sen²θ) = r: True 
+B2 erro clássico: ∫_0^{2π}∫_0^R dr dθ = 2πR (perímetro, não área): True 
+B2 certo: ∫_0^{2π}∫_0^R r dr dθ = ∫_0^{2π} R²/2 dθ = πR²: True 
+B3 borda r = 0 vai inteira para a origem (o jacobiano zera só ali): True 
+B3 bordas θ = 0 e θ = 2π caem no mesmo segmento do eixo x: True 
+B4 u = r²: ∫_0^1 sen(r²) r dr = ½∫_0^1 sen u du = ½[-cos u]_0^1 = ½(1 - cos 1): True 
+B4 ∬ sen(x² + y²) no semicírculo = π/2 · (1 - cos 1) ≈ 0,7221: True (0.7221)
+B4 numérica em xy igual: True (0.722091)
+B4 conferência f = 1: ∫_0^π∫_0^1 r dr dθ = π · ½ = π/2 (meio disco): True 
+B4 trava em xy: ∫ sen(x² + y²) dy não é elementar: True 
+B5 u = R² - r², du = -2r dr, r: 0→R ⇒ u: R²→0: ∫_{R²}^0 √u (-du/2) = ½∫_0^{R²} √u du = ½ · ⅔ R³ = R³/3: True 
+B5 V = 2 · 2π · R³/3 = 4πR³/3: True 
+B5 casca: altura total 2√(R² - r²), comprimento 2πr, espessura dr: True 
+B6 x² + y² ≤ 2x ⇔ (x - 1)² + y² ≤ 1: True 
+B6 em polares: r² ≤ 2r cos θ ⇒ r ≤ 2 cos θ (r > 0), θ ∈ [-π/2, π/2]: True 
+B6 θ = π/3 ⇒ r = 1 ⇒ ponto (1/2, √3/2) está na circunferência: True 
+B6 área: ∫ [r²/2]_0^{2cos θ} dθ = ∫ 2cos²θ dθ = ∫ (1 + cos 2θ) dθ = [θ + sen 2θ/2] = π: True 
+B6 ∬ √(x² + y²) dA = ∫ (8/3)cos³θ dθ = (8/3)(4/3) = 32/9: True 
+B6 numérica em xy = 32/9: True (3.555556)
+B6 distância média da margem = 32/(9π) ≈ 1,1318 raio: True (1.1318)
+B6 quadrado: ∫_0^1 x [y²/2]_0^1 dx = ∫ x/2 dx = 1/4: True 
+B6 o mesmo quadrado em polares exige dividir em θ = π/4 (r até sec θ e até cossec θ); numérica 1/4: True 
+B7 disco de raio A: π(1 - e^(-A²)): True 
+B7 círculo circunscrito ao quadrado [-R, R]² tem raio R√2 (meia diagonal): True 
+B7 disco de raio R√2: π(1 - e^(-2R²)): True 
+B7 Fubini: ∬_quadrado e^(-x²)e^(-y²) = I(R)² (R = 1, numérica): True 
+B7 confronto vale para R = 1, 2, 3: True R=1: 1.9859 ≤ 2.2310 ≤ 2.7164 | R=2: 3.0841 ≤ 3.1123 ≤ 3.1405 | R=3: 3.1412 ≤ 3.1415 ≤ 3.1416
+B7 I(1) ≈ 1,4936 · I(2) ≈ 1,7642 · I(3) ≈ 1,7724; √π ≈ 1,7725: True 
+B7 limites: π(1 - e^(-R²)) → π e π(1 - e^(-2R²)) → π: True 
+B7 ∫_{-∞}^{∞} e^(-x²) dx = √π: True 
+B7 normal: x = √2 u, dx = √2 du ⇒ ∫ e^(-x²/2) dx = √2 · √π = √(2π): True 
+B8 elipse: x = a r cos θ, y = b r sen θ ⇒ jacobiano = abr cos²θ + abr sen²θ = abr: True 
+B8 x²/a² + y²/b² = r² (r ≤ 1 é a elipse): True 
+B8 área = ∫_0^{2π}∫_0^1 ab r dr dθ = ab · ½ · 2π = πab; a = b = R dá πR²: True 
+B8 vazão: v_max ∫_0^R (r - r³/R²) dr = v_max (R²/2 - R²/4) = v_max R²/4: True 
+B8 Q = 2π · v_max R²/4 = πR² v_max/2; média = v_max/2: True 
+S2 meia-lua de raio a, densidade k·r: M = kπa³/3, momento = ka⁴/2, ȳ = 3a/(2π) ≈ 0,477a: True 
+
+TOTAL: 50/50 True

@@ -1,0 +1,1415 @@
+1
+00:00:00,120 --> 00:00:03,200
+Lembra da chapa de dois
+metais? Embaixo da solda,
+
+2
+00:00:03,240 --> 00:00:06,240
+um quilo por metro
+quadrado; em cima, três.
+
+3
+00:00:06,280 --> 00:00:10,920
+No episódio passado, descobrimos que a
+massa total existe e vale aproximadamente
+
+4
+00:00:10,960 --> 00:00:15,840
+sete vírgula zero seis quilos. Agora
+imagina cortar a chapa exatamente na linha
+
+5
+00:00:15,880 --> 00:00:18,780
+da solda e colocar os
+dois pedaços numa balança.
+
+6
+00:00:18,820 --> 00:00:22,880
+O pedaço leve tem aproximadamente
+dois vírgula quarenta e sete quilos.
+
+7
+00:00:22,920 --> 00:00:25,500
+O pesado, quatro vírgula cinquenta e oito.
+
+8
+00:00:25,540 --> 00:00:30,060
+Usando os valores sem arredondar, a soma
+dá os mesmos sete vírgula zero seis.
+
+9
+00:00:30,100 --> 00:00:33,920
+Até aqui, tudo bem. Mas olha a
+linha branca entre os dois metais:
+
+10
+00:00:33,960 --> 00:00:36,230
+ela é a fronteira dos dois pedaços.
+
+11
+00:00:36,280 --> 00:00:38,790
+Será que a gente contou
+a solda duas vezes?
+
+12
+00:00:38,840 --> 00:00:43,600
+E quanto ela pesa? Agora piora: e se
+a densidade exatamente sobre a solda
+
+13
+00:00:43,640 --> 00:00:46,960
+fosse de cem quilos por metro
+quadrado? A massa mudaria?
+
+14
+00:00:47,000 --> 00:00:51,540
+E uma última pergunta: a densidade média
+da chapa é aproximadamente um vírgula
+
+15
+00:00:51,580 --> 00:00:53,840
+setenta e seis quilo por metro quadrado.
+
+16
+00:00:53,880 --> 00:00:57,350
+Existe algum ponto onde a densidade
+tem exatamente esse valor?
+
+17
+00:00:57,400 --> 00:01:01,980
+Parecem três perguntas diferentes, mas as
+propriedades da integral dupla respondem
+
+18
+00:01:02,020 --> 00:01:06,460
+todas. E a ideia principal é simples:
+a integral nasce de uma soma.
+
+19
+00:01:06,500 --> 00:01:10,420
+Então as regras que funcionam nas somas
+continuam funcionando quando passamos ao
+
+20
+00:01:10,460 --> 00:01:14,760
+limite: somar, multiplicar,
+comparar e dividir regiões.
+
+21
+00:01:14,800 --> 00:01:17,700
+E tem um ingrediente a mais,
+que veio do episódio passado:
+
+22
+00:01:17,740 --> 00:01:22,420
+um conjunto de conteúdo nulo pode estar no
+desenho sem contribuir para a integral de
+
+23
+00:01:22,460 --> 00:01:26,370
+uma função limitada. É isso que
+vai resolver o mistério da solda.
+
+24
+00:01:26,440 --> 00:01:29,280
+Fala, pessoal! Bem-vindos ao Parallax Lab!
+
+25
+00:01:29,320 --> 00:01:33,720
+Esse é o sétimo episódio da nossa série
+de Cálculo III e o terceiro do módulo de
+
+26
+00:01:33,760 --> 00:01:38,120
+integrais duplas. A gente já sabe de onde
+a integral vem e como garantir que ela
+
+27
+00:01:38,160 --> 00:01:41,070
+existe. Agora vamos aprender
+a trabalhar com ela:
+
+28
+00:01:41,140 --> 00:01:45,960
+sete propriedades para somar, comparar,
+estimar e dividir integrais sem
+
+29
+00:01:46,000 --> 00:01:49,340
+refazer a conta. E, no final,
+o teorema do valor médio.
+
+30
+00:01:49,380 --> 00:01:52,160
+Cada propriedade vai sair
+de um desenho. Primeiro,
+
+31
+00:01:52,200 --> 00:01:56,940
+as regras do jogo. Temos duas funções,
+f e g, integráveis numa mesma
+
+32
+00:01:56,980 --> 00:02:00,840
+região B, e uma constante k,
+que é simplesmente um número fixo.
+
+33
+00:02:00,880 --> 00:02:05,200
+Lembrando: uma função é integrável quando
+suas somas de Riemann convergem para um
+
+34
+00:02:05,240 --> 00:02:07,980
+único valor à medida que
+a partição fica fina,
+
+35
+00:02:08,020 --> 00:02:10,280
+independentemente dos pontos escolhidos.
+
+36
+00:02:10,320 --> 00:02:13,240
+Esse valor é escrito com o
+símbolo de integral dupla.
+
+37
+00:02:13,280 --> 00:02:17,900
+Lê-se: integral dupla
+sobre B de f de x, y, dê x,
+
+38
+00:02:17,940 --> 00:02:21,580
+dê y. A letra B indica a
+região onde estamos somando,
+
+39
+00:02:21,620 --> 00:02:24,740
+e o dê x, dê y representa
+o elemento de área.
+
+40
+00:02:24,780 --> 00:02:28,810
+Pega a nossa chapa quadrada de
+dois metros de lado e duas funções:
+
+41
+00:02:28,860 --> 00:02:32,240
+x ao quadrado, uma rampa que
+cresce na direção horizontal,
+
+42
+00:02:32,280 --> 00:02:36,000
+e y ao quadrado, uma rampa que
+cresce na direção vertical.
+
+43
+00:02:36,040 --> 00:02:39,480
+Mesma grade para as duas,
+mesmos pontos em cada célula.
+
+44
+00:02:39,520 --> 00:02:42,540
+Primeiro, levantamos as
+caixinhas da rampa horizontal.
+
+45
+00:02:42,580 --> 00:02:46,140
+Depois, colocamos em cima delas
+as caixinhas da outra rampa.
+
+46
+00:02:46,180 --> 00:02:49,900
+Em cada célula, a altura total
+é a soma das duas alturas.
+
+47
+00:02:49,940 --> 00:02:54,820
+Então a soma de Riemann de f mais g
+é exatamente a soma de Riemann de f
+
+48
+00:02:54,860 --> 00:02:58,290
+mais a de g. Isso vale antes
+mesmo de refinar a grade!
+
+49
+00:02:58,380 --> 00:03:01,620
+E, passando ao limite,
+a igualdade continua valendo.
+
+50
+00:03:01,660 --> 00:03:05,580
+Portanto, a soma de duas funções
+integráveis também é integrável,
+
+51
+00:03:05,620 --> 00:03:08,440
+e a integral da soma é
+a soma das integrais.
+
+52
+00:03:08,480 --> 00:03:12,060
+E olha o que isso dá de graça!
+Quando construímos a integral dupla,
+
+53
+00:03:12,100 --> 00:03:17,020
+a chapa com densidade x ao quadrado mais
+y ao quadrado deu trinta e dois terços de
+
+54
+00:03:17,060 --> 00:03:21,160
+quilo. Agora espelha a rampa de x
+ao quadrado pela diagonal da chapa:
+
+55
+00:03:21,200 --> 00:03:24,660
+ela se transforma exatamente
+na rampa de y ao quadrado.
+
+56
+00:03:24,700 --> 00:03:29,080
+A região continua a mesma, e as caixinhas
+correspondentes têm os mesmos volumes.
+
+57
+00:03:29,120 --> 00:03:32,980
+Então as duas integrais são iguais.
+Como somam trinta e dois terços,
+
+58
+00:03:33,020 --> 00:03:35,260
+cada uma vale dezesseis terços.
+
+59
+00:03:35,300 --> 00:03:40,080
+Nenhuma soma nova: só a propriedade que
+acabamos de ver e a simetria do desenho.
+
+60
+00:03:40,120 --> 00:03:43,060
+A segunda parte da primeira
+propriedade é a constante.
+
+61
+00:03:43,100 --> 00:03:47,620
+Multiplicando a função por k, todas as
+caixinhas têm a altura multiplicada por k.
+
+62
+00:03:47,660 --> 00:03:50,660
+Se k vale dois, as alturas
+dobram; se vale meio,
+
+63
+00:03:50,700 --> 00:03:54,440
+caem pela metade; se é negativo,
+a contribuição troca de sinal.
+
+64
+00:03:54,480 --> 00:03:58,700
+Em todos os casos, cada parcela da
+soma de Riemann é multiplicada por k,
+
+65
+00:03:58,740 --> 00:04:01,680
+e a constante sai da soma
+e, depois, da integral.
+
+66
+00:04:01,720 --> 00:04:06,220
+Lê-se: a integral de k vezes
+f é k vezes a integral de f.
+
+67
+00:04:06,260 --> 00:04:10,460
+Agora junta com a regra da soma. A chapa
+de dois metais pode ser vista como uma
+
+68
+00:04:10,500 --> 00:04:14,400
+camada de um quilo por metro quadrado
+sobre os quatro metros quadrados,
+
+69
+00:04:14,440 --> 00:04:18,970
+mais um reforço de dois quilos por metro
+quadrado só na região do metal pesado.
+
+70
+00:04:19,019 --> 00:04:23,740
+A camada dá quatro quilos; o reforço,
+aproximadamente três vírgula zero
+
+71
+00:04:23,780 --> 00:04:28,650
+seis. Total: sete vírgula zero seis
+quilos, agora montado em camadas.
+
+72
+00:04:28,720 --> 00:04:31,560
+Agora uma propriedade que
+parece óbvia no desenho,
+
+73
+00:04:31,600 --> 00:04:36,300
+mas é muito útil nas contas. Se uma
+função é maior ou igual a zero em toda a
+
+74
+00:04:36,340 --> 00:04:39,460
+região, cada parcela da
+soma de Riemann também é,
+
+75
+00:04:39,500 --> 00:04:41,770
+e a integral não pode ser negativa.
+
+76
+00:04:41,840 --> 00:04:44,420
+Essa é a propriedade dois, a do sinal.
+
+77
+00:04:44,460 --> 00:04:47,190
+Aquela seta na fórmula se lê "implica".
+
+78
+00:04:47,240 --> 00:04:51,960
+Daí vem a propriedade três: se f
+é menor ou igual a g em todos os
+
+79
+00:04:52,000 --> 00:04:55,330
+pontos, a integral de f
+é menor ou igual à de g.
+
+80
+00:04:55,380 --> 00:04:59,060
+Por quê? A diferença g
+menos f nunca é negativa,
+
+81
+00:04:59,100 --> 00:05:02,680
+então sua integral também não é.
+E, pela propriedade da soma,
+
+82
+00:05:02,720 --> 00:05:06,240
+essa integral é a integral
+de g menos a integral de f.
+
+83
+00:05:06,280 --> 00:05:08,460
+Reorganizando, aparece a comparação.
+
+84
+00:05:08,500 --> 00:05:11,840
+Percebe? Uma propriedade
+ajuda a demonstrar a seguinte.
+
+85
+00:05:11,880 --> 00:05:16,320
+E a comparação permite descobrir se uma
+resposta é possível antes de calcular a
+
+86
+00:05:16,360 --> 00:05:21,060
+integral. Na chapa de dois metais, a
+densidade fica entre um e três quilos por
+
+87
+00:05:21,100 --> 00:05:24,060
+metro quadrado. Compara
+com duas chapas uniformes:
+
+88
+00:05:24,100 --> 00:05:27,200
+com a menor densidade,
+a massa seria quatro quilos;
+
+89
+00:05:27,240 --> 00:05:31,680
+com a maior, doze. Então a massa
+verdadeira está entre quatro e doze,
+
+90
+00:05:31,720 --> 00:05:34,320
+e o sete vírgula zero seis passa no teste.
+
+91
+00:05:34,360 --> 00:05:38,940
+Em geral, se uma função fica entre um
+valor m minúsculo e um M maiúsculo,
+
+92
+00:05:38,980 --> 00:05:43,060
+sua integral fica entre esses valores
+multiplicados pela área da região,
+
+93
+00:05:43,100 --> 00:05:47,040
+que chamamos de α. Parece simples,
+mas é extremamente útil:
+
+94
+00:05:47,080 --> 00:05:50,240
+se um programa calculasse
+treze quilos para essa chapa,
+
+95
+00:05:50,280 --> 00:05:53,590
+já saberíamos que tem erro,
+sem resolver a integral inteira.
+
+96
+00:05:53,660 --> 00:05:57,540
+Agora, a primeira pergunta da
+abertura: quanto pesa a solda?
+
+97
+00:05:57,580 --> 00:06:01,160
+Começa pela solda matemática:
+uma curva, sem espessura.
+
+98
+00:06:01,200 --> 00:06:04,380
+No episódio passado, vimos que
+essa linha tem conteúdo nulo:
+
+99
+00:06:04,420 --> 00:06:08,580
+dá para cobri-la com retângulos de área
+total tão pequena quanto quisermos.
+
+100
+00:06:08,620 --> 00:06:13,220
+Agora põe sobre ela uma densidade
+limitada: existe um número m maior que o
+
+101
+00:06:13,260 --> 00:06:17,400
+módulo de todos os seus valores.
+A contribuição das células que cobrem a
+
+102
+00:06:17,440 --> 00:06:20,820
+solda fica limitada por m
+vezes a área da cobertura.
+
+103
+00:06:20,860 --> 00:06:24,960
+A altura pode ser grande, mas o que
+vai ficando pequeno é a área da base,
+
+104
+00:06:25,000 --> 00:06:28,620
+e a contribuição tende a zero.
+Essa é a quarta propriedade:
+
+105
+00:06:28,660 --> 00:06:33,080
+a integral de uma função limitada sobre
+um conjunto de conteúdo nulo é zero.
+
+106
+00:06:33,120 --> 00:06:37,440
+No desenho, um muro que pode ser alto,
+mas fica tão fino quanto se queira.
+
+107
+00:06:37,480 --> 00:06:42,240
+Vamos exagerar: densidade de cem quilos
+por metro quadrado exatamente sobre a
+
+108
+00:06:42,280 --> 00:06:44,880
+solda. O muro coral fica altíssimo.
+
+109
+00:06:44,920 --> 00:06:49,880
+Com sessenta e quatro divisões por lado,
+a cota superior desse muro chega a nove
+
+110
+00:06:49,920 --> 00:06:53,690
+vírgula três quilos. Atenção:
+é uma cota grosseira,
+
+111
+00:06:53,780 --> 00:06:58,440
+não a massa real da linha. Dobra a
+resolução: a cota cai para quatro vírgula
+
+112
+00:06:58,480 --> 00:07:01,260
+seis. Depois, dois vírgula três.
+
+113
+00:07:01,300 --> 00:07:06,390
+Depois, um vírgula dois. E,
+continuando, seis décimos de quilo.
+
+114
+00:07:06,460 --> 00:07:10,140
+A altura continua cem; o que
+encolhe é a área da cobertura.
+
+115
+00:07:10,180 --> 00:07:14,400
+Refinando sempre, a cota fica menor
+que qualquer tolerância positiva.
+
+116
+00:07:14,440 --> 00:07:18,240
+Então a solda matemática não
+acrescenta massa à integral dupla,
+
+117
+00:07:18,280 --> 00:07:21,340
+por maior que seja a densidade,
+desde que limitada.
+
+118
+00:07:21,380 --> 00:07:24,270
+E contar zero duas vezes não muda nada.
+
+119
+00:07:24,460 --> 00:07:27,960
+Só que aqui precisamos
+separar o modelo da realidade.
+
+120
+00:07:28,000 --> 00:07:32,880
+Uma solda de verdade é um cordão de
+metal: ocupa espaço e acrescenta massa
+
+121
+00:07:32,920 --> 00:07:36,660
+à peça. Vamos representá-lo como
+uma faixa de largura constante,
+
+122
+00:07:36,700 --> 00:07:40,980
+com seis quilos por metro quadrado. A
+linha da solda tem uns dois vírgula vinte
+
+123
+00:07:41,020 --> 00:07:45,340
+e cinco metros. Com um centímetro de
+largura, a faixa teria uns cento e trinta
+
+124
+00:07:45,380 --> 00:07:49,070
+e cinco gramas. Com um milímetro,
+uns treze gramas e meio.
+
+125
+00:07:49,120 --> 00:07:53,920
+E, conforme a largura tende a zero,
+a massa desse modelo também tende a zero.
+
+126
+00:07:53,960 --> 00:07:57,330
+E se quisermos uma massa
+realmente concentrada numa linha?
+
+127
+00:07:57,400 --> 00:08:00,640
+Aí usamos uma densidade
+linear, em quilos por metro,
+
+128
+00:08:00,680 --> 00:08:04,340
+que leva às integrais de linha.
+É uma descrição diferente da densidade
+
+129
+00:08:04,380 --> 00:08:07,330
+superficial limitada que
+usamos na integral dupla.
+
+130
+00:08:07,420 --> 00:08:09,980
+Agora, uma consequência surpreendente.
+
+131
+00:08:10,020 --> 00:08:13,600
+Qual densidade devemos colocar
+exatamente sobre a solda?
+
+132
+00:08:13,640 --> 00:08:16,810
+A do metal leve, um? A do pesado, três?
+
+133
+00:08:16,880 --> 00:08:20,130
+O meio-termo, dois?
+Ou aquele exagero de cem?
+
+134
+00:08:20,200 --> 00:08:24,380
+Para a massa total, tanto faz.
+Essa é a quinta propriedade:
+
+135
+00:08:24,420 --> 00:08:28,640
+se duas funções integráveis só
+diferem num conjunto de conteúdo nulo,
+
+136
+00:08:28,680 --> 00:08:33,820
+suas integrais são iguais. Na fórmula,
+aparece o conjunto dos pontos x,
+
+137
+00:08:33,860 --> 00:08:36,940
+y de B tais que f é diferente de g.
+
+138
+00:08:36,980 --> 00:08:40,510
+O tracinho em pé, dentro das
+chaves, se lê "tais que".
+
+139
+00:08:40,620 --> 00:08:45,060
+Se esse conjunto tem conteúdo nulo,
+a integral de f é igual à de g.
+
+140
+00:08:45,100 --> 00:08:47,640
+Então podemos mudar a
+densidade sobre a solda,
+
+141
+00:08:47,680 --> 00:08:51,660
+e o contador continua marcando
+sete vírgula zero seis quilos.
+
+142
+00:08:51,700 --> 00:08:54,380
+E essa propriedade nasce das anteriores.
+
+143
+00:08:54,420 --> 00:08:59,260
+Se duas funções são iguais fora da solda,
+a diferença entre elas vale zero fora
+
+144
+00:08:59,300 --> 00:09:03,400
+dessa linha. Então, nas somas da
+diferença, só contam as células que
+
+145
+00:09:03,440 --> 00:09:08,020
+encostam na solda, e a área delas pode
+ser tornada arbitrariamente pequena.
+
+146
+00:09:08,060 --> 00:09:12,020
+A integral da diferença é zero,
+e, pela propriedade da soma,
+
+147
+00:09:12,060 --> 00:09:14,560
+as integrais das duas funções são iguais.
+
+148
+00:09:14,600 --> 00:09:19,000
+Isso também resolve uma situação comum:
+uma função que não está definida em alguns
+
+149
+00:09:19,040 --> 00:09:23,370
+pontos, como um furo na origem ou
+uma borda onde a fórmula falha.
+
+150
+00:09:23,420 --> 00:09:26,340
+Se esses pontos formam um
+conjunto de conteúdo nulo,
+
+151
+00:09:26,380 --> 00:09:30,900
+podemos preenchê-los com valores limitados
+e trabalhar com uma extensão integrável.
+
+152
+00:09:30,940 --> 00:09:34,550
+O valor da integral não depende
+de como preenchemos o furo.
+
+153
+00:09:34,740 --> 00:09:37,850
+Agora voltamos à balança,
+com a propriedade seis.
+
+154
+00:09:37,900 --> 00:09:41,040
+A chapa foi dividida em
+duas partes: o metal leve,
+
+155
+00:09:41,080 --> 00:09:44,060
+que vamos chamar de B,
+e o metal pesado, B um.
+
+156
+00:09:44,100 --> 00:09:48,040
+Se a função é integrável nelas e
+a parte comum tem conteúdo nulo,
+
+157
+00:09:48,080 --> 00:09:51,450
+a integral sobre a união é
+a soma das duas integrais.
+
+158
+00:09:51,500 --> 00:09:54,840
+O U normal é a união:
+os dois conjuntos juntos.
+
+159
+00:09:54,880 --> 00:09:58,550
+O U de cabeça para baixo é a
+interseção: a parte em comum.
+
+160
+00:09:58,600 --> 00:10:03,330
+Lê-se: a integral sobre B união
+B um é igual à integral sobre B
+
+161
+00:10:03,400 --> 00:10:07,680
+mais a integral sobre B um. A solda
+está na fronteira dos dois pedaços,
+
+162
+00:10:07,720 --> 00:10:11,200
+então aparece nas duas regiões.
+Mas ela tem conteúdo nulo,
+
+163
+00:10:11,240 --> 00:10:15,440
+e sua contribuição é zero. Por isso
+a balança não precisa de correção:
+
+164
+00:10:15,480 --> 00:10:19,210
+sem arredondar, o total é
+sete vírgula zero seis quilos.
+
+165
+00:10:19,340 --> 00:10:21,830
+E se a parte comum tiver área positiva?
+
+166
+00:10:21,880 --> 00:10:25,120
+Aí somar as integrais conta
+essa parte duas vezes.
+
+167
+00:10:25,160 --> 00:10:29,430
+A conta correta é a integral sobre
+B, mais a integral sobre B um,
+
+168
+00:10:29,500 --> 00:10:33,740
+menos a integral sobre a interseção.
+É como contar os alunos de duas turmas:
+
+169
+00:10:33,780 --> 00:10:37,190
+quem está nas duas não pode
+entrar duas vezes no total.
+
+170
+00:10:37,280 --> 00:10:41,840
+Na chapa: faz os dois pedaços se
+sobreporem numa faixa de vinte centímetros
+
+171
+00:10:41,880 --> 00:10:44,780
+de altura. A chapa tem
+quatro metros quadrados,
+
+172
+00:10:44,820 --> 00:10:48,560
+mas a soma das áreas dos dois
+pedaços dá quatro vírgula quatro.
+
+173
+00:10:48,600 --> 00:10:52,160
+Os quatro décimos extras são
+a faixa contada duas vezes.
+
+174
+00:10:52,200 --> 00:10:56,660
+Quando a interseção tem conteúdo nulo,
+esse desconto vale zero e desaparece.
+
+175
+00:10:56,700 --> 00:10:59,360
+Com área positiva, precisamos descontá-la.
+
+176
+00:10:59,400 --> 00:11:02,840
+E dividir é uma das estratégias
+mais úteis na prática.
+
+177
+00:11:02,880 --> 00:11:06,600
+A massa de uma peça montada sai
+das massas de cada componente,
+
+178
+00:11:06,640 --> 00:11:11,020
+sem sobreposições. Uma região em
+formato de éle vira dois retângulos.
+
+179
+00:11:11,060 --> 00:11:15,520
+Uma chapa de materiais diferentes se
+divide justamente onde a densidade muda.
+
+180
+00:11:15,560 --> 00:11:19,020
+Em vez de uma integral complicada,
+várias integrais simples.
+
+181
+00:11:19,060 --> 00:11:21,880
+Quando começarmos a trabalhar
+com integrais iteradas,
+
+182
+00:11:21,920 --> 00:11:24,520
+essa estratégia vai aparecer o tempo todo.
+
+183
+00:11:24,560 --> 00:11:27,270
+Agora, a terceira pergunta: a média.
+
+184
+00:11:27,380 --> 00:11:31,300
+Volta à chapa com densidade x
+ao quadrado mais y ao quadrado.
+
+185
+00:11:31,340 --> 00:11:35,900
+A massa é trinta e dois terços de quilo,
+e a área é quatro metros quadrados.
+
+186
+00:11:35,940 --> 00:11:40,380
+Dividindo, a densidade média é oito
+terços, aproximadamente dois vírgula
+
+187
+00:11:40,420 --> 00:11:42,840
+sessenta e sete quilos por metro quadrado.
+
+188
+00:11:42,880 --> 00:11:46,780
+Agora transforma a densidade num relevo,
+como quando construímos a integral:
+
+189
+00:11:46,820 --> 00:11:51,420
+o gráfico vira um morro. A média é a
+altura que dá o mesmo volume se nivelarmos
+
+190
+00:11:51,460 --> 00:11:55,820
+tudo. Olha a terraplanagem: o material
+acima dessa altura vai preencher o espaço
+
+191
+00:11:55,860 --> 00:11:59,620
+que falta abaixo. O volume
+retirado e o preenchido são iguais:
+
+192
+00:11:59,660 --> 00:12:03,660
+oito pi sobre nove, aproximadamente
+dois vírgula setenta e nove.
+
+193
+00:12:03,700 --> 00:12:07,960
+Mas será que algum ponto da chapa já tem
+essa altura antes de nivelarmos o morro?
+
+194
+00:12:08,000 --> 00:12:12,440
+Existe! Todos os pontos deste arco,
+a um vírgula sessenta e três da origem,
+
+195
+00:12:12,480 --> 00:12:14,890
+têm densidade igual a oito terços.
+
+196
+00:12:15,000 --> 00:12:19,040
+Mas isso acontece com qualquer função?
+Aqui entra a sétima propriedade:
+
+197
+00:12:19,080 --> 00:12:21,920
+o teorema do valor médio
+para integrais duplas.
+
+198
+00:12:21,960 --> 00:12:26,660
+As hipóteses: a região B é compacta,
+ou seja, fechada e limitada.
+
+199
+00:12:26,700 --> 00:12:29,540
+Fechada quer dizer que contém
+seus pontos de fronteira;
+
+200
+00:12:29,580 --> 00:12:32,180
+limitada, que cabe dentro
+de algum retângulo.
+
+201
+00:12:32,220 --> 00:12:36,880
+A fronteira tem conteúdo nulo. Dois pontos
+quaisquer da região podem ser ligados por
+
+202
+00:12:36,920 --> 00:12:40,480
+um caminho contínuo que não sai
+dela. E a função é contínua.
+
+203
+00:12:40,520 --> 00:12:45,440
+Com essas condições, existe pelo menos um
+ponto (r, s) da região onde a função vale
+
+204
+00:12:45,480 --> 00:12:50,300
+exatamente a média. Na fórmula,
+a integral sobre B de f é igual a α
+
+205
+00:12:50,340 --> 00:12:53,660
+vezes f de (r, s), sendo α a área de B.
+
+206
+00:12:53,700 --> 00:12:57,040
+Em outras palavras: desde que
+a região tenha área positiva,
+
+207
+00:12:57,080 --> 00:12:59,700
+a função assume em algum
+lugar o valor médio.
+
+208
+00:12:59,740 --> 00:13:03,660
+E a demonstração é muito bonita,
+porque junta duas ideias conhecidas.
+
+209
+00:13:03,700 --> 00:13:08,140
+Como B é compacto e a função é contínua,
+ela atinge um mínimo e um máximo na
+
+210
+00:13:08,180 --> 00:13:11,240
+região. Na nossa chapa,
+o mínimo é zero, na origem,
+
+211
+00:13:11,280 --> 00:13:13,500
+e o máximo é oito, no canto oposto.
+
+212
+00:13:13,540 --> 00:13:18,220
+Pela comparação, a integral fica entre
+o mínimo vezes a área e o máximo vezes a
+
+213
+00:13:18,260 --> 00:13:22,510
+área. Dividindo pela área, a média
+está entre o mínimo e o máximo.
+
+214
+00:13:22,560 --> 00:13:27,120
+Agora escolhe um caminho dentro da região
+ligando um ponto de mínimo a um ponto de
+
+215
+00:13:27,160 --> 00:13:30,700
+máximo. Ao longo dele,
+a função muda continuamente.
+
+216
+00:13:30,740 --> 00:13:35,320
+E, pelo teorema do valor intermediário,
+uma função contínua não passa de um valor
+
+217
+00:13:35,360 --> 00:13:39,400
+abaixo da média para outro acima
+sem assumir a própria média.
+
+218
+00:13:39,440 --> 00:13:43,570
+Em algum lugar desse caminho está
+o ponto (r, s) que procuramos.
+
+219
+00:13:43,620 --> 00:13:46,760
+E, se a região tiver área
+zero e não for vazia,
+
+220
+00:13:46,800 --> 00:13:50,410
+a integral é zero, e qualquer
+ponto satisfaz a igualdade.
+
+221
+00:13:50,580 --> 00:13:55,010
+Agora a parte interessante: o que
+acontece sem alguma dessas hipóteses?
+
+222
+00:13:55,160 --> 00:14:00,020
+Volta à chapa de dois metais. A densidade
+média é aproximadamente um vírgula setenta
+
+223
+00:14:00,060 --> 00:14:04,270
+e seis, mas, no modelo original,
+a função só assume dois valores:
+
+224
+00:14:04,340 --> 00:14:08,580
+um e três. Nenhum ponto tem
+densidade um vírgula setenta e seis:
+
+225
+00:14:08,620 --> 00:14:12,520
+a função salta de um valor para o
+outro, passando por cima da média.
+
+226
+00:14:12,560 --> 00:14:16,980
+Outro exemplo: dois quadrados separados,
+um com densidade um e o outro com
+
+227
+00:14:17,020 --> 00:14:21,000
+densidade três. A função é contínua
+na região formada pelos dois,
+
+228
+00:14:21,040 --> 00:14:24,220
+mas não existe caminho dentro
+dela ligando os quadrados.
+
+229
+00:14:24,260 --> 00:14:28,340
+A média é dois, e a função
+não vale dois em nenhum ponto.
+
+230
+00:14:28,380 --> 00:14:31,900
+Só que repara no outro lado da
+moeda: pela quinta propriedade,
+
+231
+00:14:31,940 --> 00:14:36,700
+dá para colocar um vírgula setenta e
+seis exatamente sobre a solda sem mudar a
+
+232
+00:14:36,740 --> 00:14:40,580
+massa. Aí a média aparece
+num ponto, mesmo com o salto.
+
+233
+00:14:40,620 --> 00:14:44,040
+Então continuidade e caminho
+garantem o resultado,
+
+234
+00:14:44,080 --> 00:14:46,590
+mas não são a única
+forma de ele acontecer.
+
+235
+00:14:46,640 --> 00:14:49,780
+Sem essas hipóteses,
+a média pode até ser atingida,
+
+236
+00:14:49,820 --> 00:14:54,040
+mas o teorema não assegura.
+E essa média aparece em muito lugar.
+
+237
+00:14:54,080 --> 00:14:56,480
+A temperatura média de uma placa aquecida.
+
+238
+00:14:56,520 --> 00:14:59,460
+A altura média de chuva
+numa bacia hidrográfica.
+
+239
+00:14:59,500 --> 00:15:03,140
+A altura de uma terraplanagem,
+que equilibra corte e aterro.
+
+240
+00:15:03,180 --> 00:15:05,980
+O brilho médio de uma
+região numa imagem digital.
+
+241
+00:15:06,020 --> 00:15:10,640
+A integral dupla dá a média mesmo quando
+a grandeza varia de ponto para ponto.
+
+242
+00:15:10,680 --> 00:15:15,360
+E o teorema acrescenta: se a função é
+contínua e a região satisfaz as hipóteses
+
+243
+00:15:15,400 --> 00:15:19,480
+do teorema, algum lugar assume
+exatamente esse valor médio.
+
+244
+00:15:19,520 --> 00:15:22,620
+Para fechar, um exemplo que
+junta várias propriedades.
+
+245
+00:15:22,660 --> 00:15:27,200
+No disco de raio um, considera a
+função x ao quadrado dividido por x ao
+
+246
+00:15:27,240 --> 00:15:32,100
+quadrado mais y ao quadrado. Na origem,
+a fórmula vira zero dividido por
+
+247
+00:15:32,140 --> 00:15:34,540
+zero: a função não está definida ali.
+
+248
+00:15:34,580 --> 00:15:37,760
+E o limite na origem nem
+existe: pelo eixo horizontal,
+
+249
+00:15:37,800 --> 00:15:40,140
+o valor é um; pelo vertical, zero.
+
+250
+00:15:40,180 --> 00:15:44,220
+Mas a origem é um único ponto,
+e um ponto tem conteúdo nulo.
+
+251
+00:15:44,260 --> 00:15:47,940
+Fora dele, a função é contínua
+e fica entre zero e um.
+
+252
+00:15:47,980 --> 00:15:51,320
+Então podemos preencher o furo
+com qualquer valor finito:
+
+253
+00:15:51,360 --> 00:15:55,620
+a função fica integrável, e a integral
+não depende do valor escolhido.
+
+254
+00:15:55,660 --> 00:15:58,830
+É a quinta propriedade
+funcionando. E agora o valor,
+
+255
+00:15:58,880 --> 00:16:02,240
+sem calcular nenhuma primitiva.
+Cria uma segunda função,
+
+256
+00:16:02,280 --> 00:16:05,290
+parecida, mas com y ao
+quadrado no numerador.
+
+257
+00:16:05,340 --> 00:16:09,640
+Somando as duas, fora da origem,
+o numerador fica igual ao denominador.
+
+258
+00:16:09,680 --> 00:16:14,520
+Resultado: um! Então a soma das duas
+funções vale um em todo o disco,
+
+259
+00:16:14,560 --> 00:16:17,580
+exceto talvez naquele ponto
+que não altera a integral.
+
+260
+00:16:17,620 --> 00:16:21,900
+Pela propriedade da soma, as duas
+integrais juntas valem a integral de um
+
+261
+00:16:21,940 --> 00:16:25,360
+sobre o disco, que é a área:
+pi. Agora a simetria:
+
+262
+00:16:25,400 --> 00:16:29,220
+espelhando o disco pela diagonal,
+a primeira função vira a segunda,
+
+263
+00:16:29,260 --> 00:16:32,720
+e a região continua a mesma.
+Então as integrais são iguais.
+
+264
+00:16:32,760 --> 00:16:37,530
+Se as duas integrais são iguais e
+somam pi, cada uma vale pi sobre dois.
+
+265
+00:16:37,660 --> 00:16:39,980
+Soma, conteúdo nulo e simetria.
+
+266
+00:16:40,020 --> 00:16:43,340
+Nenhuma integração complicada.
+Então olha o que aprendemos.
+
+267
+00:16:43,380 --> 00:16:47,520
+A integral dupla nasce de uma soma,
+por isso podemos somar funções,
+
+268
+00:16:47,560 --> 00:16:50,620
+multiplicar por constantes
+e comparar resultados.
+
+269
+00:16:50,660 --> 00:16:55,080
+Um conjunto de conteúdo nulo não contribui
+para a integral de uma função limitada,
+
+270
+00:16:55,120 --> 00:16:58,260
+e mudar a função só nele
+não altera o resultado.
+
+271
+00:16:58,300 --> 00:17:02,980
+Dividir a região funciona quando a
+sobreposição não traz contribuição extra.
+
+272
+00:17:03,020 --> 00:17:06,340
+E o teorema do valor médio
+garante que uma função contínua,
+
+273
+00:17:06,380 --> 00:17:09,840
+numa região adequada, atinge
+sua média em algum ponto.
+
+274
+00:17:09,880 --> 00:17:14,180
+As três perguntas da abertura:
+a solda matemática não acrescenta massa;
+
+275
+00:17:14,220 --> 00:17:17,400
+o valor limitado que pomos
+nela não altera o total;
+
+276
+00:17:17,440 --> 00:17:22,000
+e, para garantir um ponto com a média,
+olhamos a continuidade e a geometria da
+
+277
+00:17:22,040 --> 00:17:27,100
+região. Mas repara numa coisa. Até aqui,
+as integrais apareceram como limites de
+
+278
+00:17:27,140 --> 00:17:30,020
+somas de Riemann, com
+grades cada vez mais finas,
+
+279
+00:17:30,060 --> 00:17:33,660
+propriedades e simetrias.
+Falta uma pergunta bem prática:
+
+280
+00:17:33,700 --> 00:17:37,320
+como calcular uma integral dupla
+diretamente, com as ferramentas do
+
+281
+00:17:37,360 --> 00:17:41,960
+Cálculo I? Por exemplo: dá para achar a
+massa exata da chapa de dois metais numa
+
+282
+00:17:42,000 --> 00:17:45,200
+conta no papel, sem refinar
+milhares de caixinhas?
+
+283
+00:17:45,240 --> 00:17:49,840
+Dá. A ideia é fatiar a região:
+primeiro, somamos dentro de cada
+
+284
+00:17:49,880 --> 00:17:52,620
+fatia; depois, somamos as fatias.
+
+285
+00:17:52,660 --> 00:17:55,200
+Duas integrais simples trabalhando juntas.
+
+286
+00:17:55,240 --> 00:17:59,070
+É isso que vamos ver no próximo
+episódio, com o teorema de Fubini.
+
+287
+00:17:59,120 --> 00:18:03,300
+Se essa aula te ajudou, deixa o like e se
+inscreve no Parallax Lab para acompanhar a
+
+288
+00:18:03,340 --> 00:18:07,280
+série. E conta nos comentários:
+qual propriedade te surpreendeu mais?
+
+289
+00:18:07,320 --> 00:18:11,900
+A solda sem massa, mudar a função num
+conjunto de conteúdo nulo ou o ponto com o
+
+290
+00:18:11,940 --> 00:18:13,940
+valor médio? Até a próxima!

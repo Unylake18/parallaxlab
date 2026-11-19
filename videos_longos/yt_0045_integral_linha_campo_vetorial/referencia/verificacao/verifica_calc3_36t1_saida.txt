@@ -1,0 +1,41 @@
+True  C1.1 B-A=(3,0)
+True  C1.2 W=2*3+1*0=6
+True  C1.3 |F||D|cos a = 6 (cos a = 2/sqrt5)
+True  C1.4 parte de F na direção do caminho = 2, de lado = 1 (trabalho 0)
+True  C2.1 F(γ(t_i))·Δγ_i = R² sen Δt
+True  C2.2 n=4: 4 sen(2π/4) ≈ 4.0
+True  C2.2 n=8: 8 sen(2π/8) ≈ 5.657
+True  C2.2 n=16: 16 sen(2π/16) ≈ 6.123
+True  C2.3 lim n sen(2π/n) = 2π
+True  C4.1 F(γ)·γ' = R²
+True  C4.2 W = 2πR²
+True  C4.3 2πR² = 2·(πR²)
+True  C4.4 no raio γ=(t,0): F(γ)=(0,t), γ'=(1,0), produto 0, W=0
+True  C5.1 F(γ)·γ' = t + 2t³
+True  C5.2 primitiva t²/2 + t⁴/2
+True  C5.3 G(1)=1, G(-1)=1, W=0
+True  C5.4 metade de ida: ∫_{-1}^0 = -1
+True  C5.5 metade de volta: ∫_0^1 = +1
+True  C5.6 G(t) = ½(x²+y²) no ponto γ(t)
+True  C5.7 integrando ímpar
+True  C6.1 F(γ)·γ' = P x' + Q y' + R z'
+True  C7.1 dx = -2 sen t dt, dy = cos t dt
+True  C7.2 -y dx = 2 sen² t dt
+True  C7.3 x dy = 2 cos² t dt
+True  C7.4 soma = 2 dt
+True  C7.5 ∫ = 4π
+True  C7.6 área da elipse (a=2,b=1) = 2π, e 4π = 2·2π
+True  C8.1 dx=-sen t dt, dy=cos t dt, dz=c dt
+True  C8.2 -y dx = sen² t dt; x dy = cos² t dt; -dz = -c dt
+True  C8.3 integrando = 1 - c
+True  C8.4 W = 2π - 2πc
+True  C8.5 subida numa volta z(2π)-z(0) = 2πc
+True  C8.6 lata do canal: duas voltas sobem 1 ⇒ c = 1/(4π)
+True  C8.7 W(lata) = 2π - 1/2 ≈ 5,78
+True  C8.8 W = 0 ⟺ c = 1
+True  C8.9 duas voltas na lata: 4π - 1
+True  C8.10 soma com 20000 pedaços ≈ 2π − 1/2 (=5.78319)
+True  C9.1 γ₂(u)=(R cos 2u, R sen 2u), u∈[0,π]: 2πR² (igual)
+True  C9.2 ao contrário: -2πR²
+
+39/39 True

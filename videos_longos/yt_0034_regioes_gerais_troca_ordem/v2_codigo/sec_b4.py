@@ -1,0 +1,452 @@
+"""yt_0034 · B4 · a troca: desenhar a região pelos limites (alvo 13), o sino z = e^(−y²) em Three.js (cena2: alvos 14 → 15 → 16, pouso
+lateral com a saída de escala (a): ZS vai de 1 a 440/560 durante o pouso) e o erro clássico (alvo 17). Glyph maps 8 e 9."""
+from pecas34 import *
+from sec_b3 import corte3d, pouso, troca_para_2d
+
+LAT2 = Lat(200, 820, 560, 440)         # painel do sino: 560 px por metro (x), 440 px por unidade de f
+ZS2 = 440 / 560
+
+
+def integral_hook(X, Y, size, caneta=True):
+    return L([("io", r"\int_{\Am{0}}^{\Am{1}}\!"), ("ii", r"\int_{\Az{\X}}^{\Co{1}}"), ("e", r"e^{-\Y^2}"), ("dy", r"\,\dY"), ("dx", r"\,\dX")],
+             X, Y, size, "l", caneta)
+
+
+def sem_alto(m, chave):
+    g = list(gl(m, chave))
+    a = max(g, key=lambda x: x.height)
+    return [x for x in g if x is not a], a
+
+
+class PB4(B34):
+    ANTES = "A TROCA"
+
+    def corpo(self):
+        # ── B4-1 · desenhar a região pelos limites (alvo 13) ──
+        self.an("B4-1")
+        I = integral_hook(960, 520, 52)
+        I.shift(LEFT * I.width / 2)
+        self.pena(I, passo=0.09)
+        self.gat("tem um método")
+        acende(self, (gl(I, "io", "ii"), None), rt=1.0)
+        self.gat("desenhar a região")
+        g = papel_v(TRI, (0, 1.12, 0, 1.12))
+        self.grade = g
+        sx, sy, lx, ly = eixos_v(TRI, 1.2, 1.2)
+        alvoI = integral_hook(1120, 260, 50, caneta=False)
+        self.play(Transform(I, alvoI), FadeIn(g), GrowFromPoint(sx, TRI.P(0, 0)), GrowFromPoint(sy, TRI.P(0, 0)), run_time=1.1)
+        self.pena(lx, ly)
+        p1 = T("PASSO 1: DESENHAR A REGIÃO", 1120, 430, 40, "left", MEN)
+        self.pena(p1)
+        self.gat("a partir dos limites")
+        realce(self, sx, sy)                                           # os eixos onde os limites vão pousar
+        acende(self, (sem_alto(I, "io")[0][0], E1), (sem_alto(I, "io")[0][1], E1), (VGroup(*sem_alto(I, "ii")[0]), CORAL), rt=0.8)
+        self.gat("xis vai de zero")
+        lo, hi = sem_alto(I, "io")[0][0], sem_alto(I, "io")[0][1]
+        lo, hi = sorted([lo, hi], key=lambda x: x.get_center()[1])
+        t1x = tick(TRI, "x", 1, r"\Am{1}")
+        t0 = TC(r"\Am{0}", *TRI.px(0, 0), 28, "c").shift(DOWN * 30 / 120 + LEFT * 22 / 120)
+        self.play(Create(t1x[0]), run_time=0.3)
+        voos(self, [(lo, t0), (hi, t1x[1])], rt=1.0)
+        v1 = curva(TRI, [(1, 0), (1, 1)], E1, 2, dash=(6, 7), alpha=.7, z=3)
+        self.play(Create(v1), run_time=0.6)
+        self.gat("para cada xis ípsilon")
+        realce(self, v1, t1x[0], cor=E1)                               # x vai de 0 a 1
+        self.gat("de xis até um")
+        (li, ia) = sem_alto(I, "ii")
+        lix, li1 = sorted(li, key=lambda x: x.get_center()[1])
+        dg = curva(TRI, [(0, 0), (1, 1)], AZC, 4)
+        tp = curva(TRI, [(0, 1), (1, 1)], CORAL, 4)
+        risca_voando(self, [(lix, dg), (li1, tp)], rt=1.2)
+        t1y = tick(TRI, "y", 1, r"\Mg{1}")
+        self.play(Create(t1y[0]), run_time=0.3)
+        self.pena(t1y[1])
+        self.gat("entra na reta ípsilon")
+        tv = tiraV(TRI, .5, .5, 1, alpha=.55)
+        pe, ps = pontos_es(TRI, (.5, .5), (.5, 1))
+        self.play(GrowFromEdge(tv, DOWN), FadeIn(pe, scale=.5), run_time=0.7)
+        ryx = rot(TRI, r"\Az{\Y=\X}", (.62, .5), 10, 10, 30)
+        self.pena(ryx)
+        self.gat("e sai na reta")
+        self.play(FadeIn(ps, scale=.5), run_time=0.3)
+        ry1 = rot(TRI, r"\Co{\Y=1}", (.35, 1), 0, -30, 30)
+        self.pena(ry1)
+        self.gat("com o xis andando")
+        reg = regiao(TRI, [(0, 0), (1, 1), (0, 1)])
+        lado = curva(TRI, [(0, 0), (0, 1)], GEO, 2, z=3)
+        tiras = [tiraV(TRI, a, a, 1, alpha=.4) for a in (.1, .3, .5, .7, .9)]
+        self.play(FadeOut(tv), FadeOut(pe), FadeOut(ps), run_time=0.3)
+        self.remove(tv, pe, ps)
+        self.play(LaggedStart(*[GrowFromEdge(t, DOWN) for t in tiras], lag_ratio=0.35), run_time=2.2)
+        self.gat("pintam um triângulo")
+        self.play(FadeIn(reg), Create(lado), run_time=0.9)
+        self.gat("com vértices em zero")
+        vs = [ponto_px(*TRI.px(*p), GEO, 7) for p in ((0, 0), (0, 1), (1, 1))]
+        q01, q11 = TRI.px(0, 1), TRI.px(1, 1)
+        l01 = leg("(0, 1)", q01[0] - 20, q01[1] - 22, GEO, "right", 26)
+        l11 = leg("(1, 1)", q11[0] + 16, q11[1] - 14, GEO, "left", 26)
+        self.play(FadeIn(vs[0], scale=.5), run_time=0.3)
+        self.play(FadeIn(vs[1], scale=.5), run_time=0.3)
+        self.pena(l01)
+        self.play(FadeIn(vs[2], scale=.5), run_time=0.3)
+        self.pena(l11)
+        self.gat("esse triângulo é")
+        self.play(reg.animate.set_fill(mixh(BG_, GEO, .3)), run_time=0.5)
+        self.play(reg.animate.set_fill(RB), run_time=0.5)
+        self.gat("a integral dupla não")
+        realce(self, *tiras)                                           # as fatias em pé: uma ordem entre duas
+        self.gat("não sabe nada de")
+        so = mixl([("m", r"\iint"), ("t", "SÓ CONHECE REGIÃO E FUNÇÃO", GEO)], 1120, 540, 36)
+        self.pena(*so.p, lag=0.15)
+        self.marca("13", agora=True)
+        self.gat("ela só conhece")                       # as fatias em pé dão lugar às deitadas: a região é a mesma
+        deit = [tiraH(TRI, b, 0, b, alpha=.4) for b in (.1, .3, .5, .7, .9)]
+        self.play(*[ReplacementTransform(a, b) for a, b in zip(tiras, deit)], run_time=1.4)
+        tiras = deit
+
+        # ── B4-2 · reler deitado: o sino vira retângulo (alvos 14 → 15 → 16) ──
+        self.an("B4-2")
+        self.secao("O SINO")
+        self.gat("reler o triângulo deitado")
+        p2 = T("PASSO 2: RELER DEITADO", 1120, 280, 40, "left", MEN)
+        th = tiraH(TRI, .6, 0, .6)
+        pe2, ps2 = pontos_es(TRI, (0, .6), (.6, .6))
+        dgc = curva(TRI, [(0, 0), (1, 1)], CORAL, 4)
+        rxy = rot(TRI, r"\Co{\X=\Y}", (.62, .5), 10, 10, 30)
+        self.play(*[FadeOut(m) for m in [I, p1, so] + tiras + [ry1]], ReplacementTransform(dg, dgc), ReplacementTransform(ryx, rxy),
+                  tp.animate.set_stroke(GEO, W(2)), run_time=0.9)
+        self.remove(I, p1, so, *tiras, ry1)
+        ja_escrita(rxy.f)
+        self.pena(p2, extra=[GrowFromEdge(th, LEFT), FadeIn(pe2, scale=.5), FadeIn(ps2, scale=.5)])
+        self.gat("o ípsilon vai de")
+        R2 = L([("a", r"\Mg{0}\le\Y\le\Mg{1},"), ("q", r"\qquad"), ("b", r"\Az{0}\le\X\le"), ("y", r"\Co{\Y}")], 1120, 390, 42, caneta=False)
+        self.pena(parte(R2, sel(R2, "a"), "0 ≤ y ≤ 1"))
+        acende(self, (t1y[1], E2), rt=0.5)
+        self.gat("para cada ípsilon a")
+        for yy_ in (.25, .85, .6):
+            pa_, pb_ = pontos_es(TRI, (0, yy_), (yy_, yy_))
+            self.play(Transform(th, tiraH(TRI, yy_, 0, yy_)), Transform(pe2, pa_), Transform(ps2, pb_), run_time=0.9)
+        self.gat("entra no eixo")
+        self.pena(parte(R2, sel(R2, "b"), "0 ≤ x ≤"))
+        self.gat("sai na diagonal")
+        yy = [x for x in rxy.f[0] if x.get_center()[0] > rxy.f.get_center()[0]][-1:]
+        voos(self, [(VGroup(*yy), VGroup(*gl(R2, "y")))], rt=1.0)
+        R2._esc = True
+        # corte para a cena 2: o sino sobe; a faca em pé dá o teto curvo
+        self.gat("e olha a fatia")
+        pal = Palco3D(self, "cena2", CAM_B42P, tipo="pe", cresce=0.0, faca=0.0, corte=0.0, face=0.0, sai=0.0, zs=1.0, lx=3.0, ly=2.6, ox=0.9, oy=-0.9)
+        pal.fundo.op.set_value(1.0)
+        col_p2 = [p2, R2]
+        sai = [m for m in self.snap() if m not in col_p2] + [self.grade]
+        self.remove(*sai)
+        self.grade = None
+        self.add(pal.fundo)
+        lx3 = pal.prende(TC(r"\X", 0, 0, 32, "c"), "ex")
+        lf3 = pal.prende(TC(r"\f", 0, 0, 32, "c"), "ez", 30, 34)
+        ja_escrita(lx3)
+        ja_escrita(lf3)
+        self.add(lx3, lf3)
+        F0 = TC(r"\f(\X,\Y)=e^{-\Y^2}", 1120, 280, 48)
+        self.play(*pal.anim(1.2, cresce=1.0), FadeOut(p2), FadeOut(R2), run_time=1.2)
+        self.remove(p2, R2)
+        self.pena(F0)
+        self.gat("em pé o teto")
+        corte3d(self, pal, rt_f=0.6, rt_c=0.7, rt_s=0.3, rt_face=0.3)
+        px4 = pal.prende(TP(r"\X=0{,}4", 0, 0, 32), "faca", 30, -40)
+        tc = leg("FATIA EM PÉ: TETO CURVO", 1120, 380, E1, "left", 30)
+        self.pena(px4, tc, lag=0.3)
+        self.gat("pedaço do sino")
+        realce(self, px4, cor=E1)                                      # o teto curvo da fatia em pé
+        F1 = L([("i", r"\int_{\Az{\X}}^{\Co{1}}e^{-\Y^2}\,\dY="), ("q", r"\ \Al{?}")], 1120, 500, 44)
+        self.pena(F1)
+        Gs = Lat(1505, 895, 130, 180)                                  # O SINO INTEIRO: e^(−y²) em [−2,5; 2,5]; o pedaço de 0 a 1 é o do sólido
+        psn = painel(1150, 610, 710, 320)
+        t1s = leg("O SINO INTEIRO", 1180, 660, GEO, "left", 26)
+        t2s = leg("O PEDAÇO DO SÓLIDO", 1830, 660, CI, "right", 26)
+        ggs = VGroup()
+        a_ = -2.5
+        while a_ <= 2.5 + 1e-9:
+            ggs.add(lin_px([Gs.px(a_, 0), Gs.px(a_, 1.1)], GRADE, 1.2, z=-9))
+            a_ += .25
+        for b_ in (.25, .5, .75, 1.0):
+            ggs.add(lin_px([Gs.px(-2.5, b_), Gs.px(2.5, b_)], GRADE, 1.2, z=-9))
+        cs_ = curva(Gs, cX(gs, -2.5, 2.5), mixh(BG_, CI, .75), 3, z=5)
+        ps_ = poly_px([Gs.px(0, 0)] + [Gs.px(a, gs(a)) for a in np.linspace(0, 1, 30)] + [Gs.px(1, 0)], mixh(BG_, CI, .45), z=4)
+        cp_ = curva(Gs, cX(gs, 0, 1), CI, 5, z=6)
+        es_ = seta_px(Gs.px(-2.55, 0), Gs.px(2.6, 0), E2, 2.5, 14, z=6)
+        t0s = TC(r"\Mg{0}", Gs.px(0, 0)[0], Gs.px(0, 0)[1] + 26, 24, "c")
+        t1s_ = TC(r"\Mg{1}", Gs.px(1, 0)[0], Gs.px(1, 0)[1] + 26, 24, "c")
+        self.play(Create(psn), FadeIn(ggs), GrowFromPoint(es_, Gs.P(-2.55, 0)), run_time=0.4)
+        self.play(Create(cs_), run_time=0.6, rate_func=linear)
+        self.pena(t1s, t0s, t1s_, extra=[FadeIn(ps_), Create(cp_)])
+        self.pena(t2s)
+        sino_ = [psn, t1s, t2s, ggs, cs_, ps_, cp_, es_, t0s, t1s_]
+        self.marca("v2_06", agora=True)
+        self.gat("a conta travava")
+        sp = placa_txt("SEM PRIMITIVA EM FÓRMULA", 560, 1010, AL, 26, "center")
+        self.pena(sp)
+        self.marca("14", agora=True)
+        self.gat("deitada o é")                       # a faca em pé sai, o sólido se fecha; a câmera vai ao ângulo do alvo 15 (um movimento)
+        self.play(*pal.anim(0.6, face=0.0, corte=0.0), *[FadeOut(m) for m in (F0, tc, F1, sp, px4, *sino_)], run_time=0.6)
+        px4.clear_updaters()
+        self.remove(F0, tc, F1, sp, px4, *sino_)
+        pal.set(tipo="dei")
+        pal.rumo(CAM_B42, arco=True)                  # em arco: o sino não cresce até o canto no meio da troca
+        self.play(*pal.anim(1.8, s=1.0, lx=2.45, ly=2.4, ox=1.6, oy=-0.55), run_time=1.8)
+        p2b = T("PASSO 2: RELER DEITADO", 1120, 280, 40, "left", MEN)
+        R2b = L([("a", r"\Mg{0}\le\Y\le\Mg{1},"), ("q", r"\qquad"), ("b", r"\Az{0}\le\X\le"), ("y", r"\Co{\Y}")], 1120, 390, 42)
+        self.pena(p2b, R2b, lag=0.4, passo=0.04, extra=pal.anim(0.6, faca=1.0))
+        self.play(*pal.anim(0.7, corte=1.0), run_time=0.7)
+        self.play(*pal.anim(0.3, faca=0.0), run_time=0.3)
+        self.play(*pal.anim(0.3, face=1.0), run_time=0.3)
+        py6 = pal.prende(TP(r"\Y=0{,}6", 0, 0, 32), "faca", 40, -40)
+        fd = leg("FATIA DEITADA: RETÂNGULO", 1120, 500, E2, "left", 30)
+        self.pena(py6, fd, lag=0.3)
+        self.marca("15", agora=True)
+        self.gat("a fatia é um")
+        self.play(*pal.anim(0.7, sai=1.0), *[FadeOut(m) for m in (p2b, R2b, fd, py6, lx3, lf3)], run_time=0.7)
+        for m in (py6, lx3, lf3):
+            m.clear_updaters()
+        self.remove(p2b, R2b, fd, py6, lx3, lf3)
+        pouso(self, pal, (0, 1.2, 0), (0, 1, 0), 280, 200, 820, extra_s=pal.anim(2.5, zs=ZS2))
+        h = gs(.6)
+        G = lateral(LAT2, 1.15, ymax=1.15, zt=(0, 1), yt=(0, 1), hcor=E1, hl=r"\X", vl=r"\f", passo=.25)
+        ret = poly_px([LAT2.px(0, 0), LAT2.px(.6, 0), LAT2.px(.6, h), LAT2.px(0, h)], mixh(BG_, CI, .3), z=2)
+        cont = lin_px([LAT2.px(0, 0), LAT2.px(.6, 0), LAT2.px(.6, h), LAT2.px(0, h), LAT2.px(0, 0)], E2, 5, z=4)
+        py_ = TP(r"\Y=0{,}6", 270, 240, 30, "c")
+        troca_para_2d(self, pal, [G["grade"], G["eh"], G["ev"], G["lh"], G["lv"], G["nums"], ret, cont, py_])
+        print(f"[pouso2d] B4-2 ret f0={LAT2.px(0, 0)} f1={LAT2.px(.6, 0)} f2={LAT2.px(.6, h)} f3={LAT2.px(0, h)}")
+        self.gat("altura vezes comprimento")
+        A_, B_ = LAT2.px(0, h), LAT2.px(.6, 0)
+        le = TC(r"\Ci{e^{-\Y^2}}", B_[0] + 20, A_[1] - 6, 34, "l")
+        self.pena(le)
+        K0 = L([("io", r"\int_0^1\!"), ("ii", r"\int_{\Az{0}}^{\Co{\Y}}"), ("e", r"e^{-\Y^2}"), ("dx", r"\,\dX"), ("dy", r"\,\dY")], 1120, 310, 40)
+        self.pena(K0)
+        self.gat("vezes ípsilon o")
+        ch = chave_px(A_[0], B_[0], B_[1] + 72, E2)
+        cy_ = TC(r"\Y", (A_[0] + B_[0]) / 2, B_[1] + 110, 36, "c")
+        cf = leg("COMPRIMENTO DA FATIA", (A_[0] + B_[0]) / 2, B_[1] + 168, E2, "center", 26)
+        self.play(Create(ch), run_time=0.5)
+        self.pena(cy_, cf, lag=0.2)
+        self.gat("o comprimento da fatia")
+        K1 = L([("eq", "="), ("io", r"\int_0^1"), ("y", r"\Y\,"), ("e", r"e^{-\Y^2}"), ("dy", r"\,\dY")], 1120, 430, 40)
+        passo(self, K0, K1, [("io", "io"), ("e", "e"), ("dy", "dy")], voos=[(cy_.copy(), "y")], rt=1.1, copia=True,
+              nota="mapa 8a (B4-2: a de dentro sai; o y voa do comprimento da fatia)")
+        sy_ = sublinha_fica(gl(K1, "y"), E2)
+        self.play(Create(sy_), run_time=0.3)
+        self.wait(1.2)
+        self.gat("quase a derivada do")
+        self.play(FadeOut(sy_), run_time=0.3)
+        self.remove(sy_)
+        ee = list(gl(K1, "e"))
+        expo = VGroup(*[x for x in ee if x is not max(ee, key=lambda z: z.height)])
+        acende(self, (gl(K1, "y"), E2), (expo, E2), rt=1.2)
+        self.gat("terceiro passo")
+        p3 = T("PASSO 3: CALCULAR", 1120, 200, 40, "left", MEN)
+        self.pena(p3)
+        self.gat("a primitiva é menos")
+        K2 = L([("eq", "="), ("b", r"\Big[-\dfrac{e^{-\Y^2}}{2}\Big]_0^1")], 1120, 560, 40)
+        passo(self, K1, K2, [("eq", "eq"), (["io", "y", "e", "dy"], "b")], rt=1.3, copia=True, nota="mapa 8b (B4-2: = [−e^(−y²)/2]₀¹)")
+        self.gat("de zero a um dá")
+        K3 = L([("eq", "="), ("fr", r"\dfrac{1-1/e}{2}"), ("ap", r"\approx 0{,}316")], 1120, 690, 44, caneta=False)
+        alvo3 = L([("eq", "="), ("fr", r"\dfrac{1-1/e}{2}")], 1120, 690, 44)
+        passo(self, K2, alvo3, [("eq", "eq"), ("b", "fr")], rt=1.2, copia=True, nota="mapa 8c (B4-2: = (1 − 1/e)/2, o exato primeiro)")
+        realce(self, ret, cont, le)                                    # o retângulo cuja área a conta soma
+        self.gat("zero vírgula três um")
+        K3full = L([("eq", "="), ("fr", r"\dfrac{1-1/e}{2}"), ("ap", r"\approx 0{,}316")], 1120, 690, 44)
+        passo(self, alvo3, K3full, [("eq", "eq"), ("fr", "fr")], rt=0.4, nota="mapa 8d (B4-2: ≈ 0,316)")
+        self.marca("16", agora=True)
+        self.gat("a integral que travava")                # recapitulação no palco: a mesma região, a fatia em pé vira a deitada
+        lat = [G["grade"], G["eh"], G["ev"], G["lh"], G["lv"], G["nums"], ret, cont, py_, le, ch, cy_, cf]
+        regT = regiao(TRI, [(0, 0), (1, 1), (0, 1)])
+        eT = curva(TRI, [(0, 1), (1, 1)], GEO, 2)
+        dT = curva(TRI, [(0, 0), (1, 1)], AZC, 3)
+        yT = curva(TRI, [(0, 0), (0, 1)], GEO, 2)
+        tvT = tiraV(TRI, .5, .5, 1)
+        gT = papel_v(TRI, (0, 1.12, 0, 1.12))
+        sxT, syT, lxT, lyT = eixos_v(TRI, 1.2, 1.2)
+        k1x, k1y = tick(TRI, "x", 1, r"\Am{1}"), tick(TRI, "y", 1, r"\Mg{1}")
+        self.play(*[FadeOut(m) for m in lat], run_time=0.5)
+        self.remove(*lat)
+        self.play(FadeIn(gT), GrowFromPoint(sxT, TRI.P(0, 0)), GrowFromPoint(syT, TRI.P(0, 0)), FadeIn(regT), Create(eT), Create(dT), Create(yT),
+                  Create(k1x[0]), Create(k1y[0]), run_time=0.7)
+        self.grade = gT
+        ryx = rot(TRI, r"\Az{\Y=\X}", (.62, .5), 10, 10, 30)
+        self.pena(lxT, lyT, k1x[1], k1y[1], ryx, lag=0.08, extra=[GrowFromEdge(tvT, DOWN)])
+        self.gat("mudou o jeito de")                       # a tira em pé vira a deitada; a diagonal troca de papel (entrada → saída)
+        dT2 = curva(TRI, [(0, 0), (1, 1)], CORAL, 3)
+        rxy = rot(TRI, r"\Co{\X=\Y}", (.62, .5), 10, 10, 30)
+        rx0 = rot(TRI, r"\Az{\X=0}", (0, .78), -18, 0, 28, "r")
+        thT = tiraH(TRI, .6, 0, .6)
+        self.play(ReplacementTransform(tvT, thT), ReplacementTransform(dT, dT2), ReplacementTransform(ryx, rxy), yT.animate.set_stroke(AZC, W(3)), run_time=1.4)
+        ja_escrita(rxy.f)
+        self.pena(rx0)
+
+        # ── B4-3 · o erro clássico (alvos v2_07, v2_08), layout A ──
+        self.an("B4-3")
+        self.secao("O ERRO CLÁSSICO")
+        # o palco: o quadrado [0, 1]² (eixos do triângulo) e a reta x = 1; o triângulo sai
+        quad = curva(TRI, [(0, 0), (1, 0), (1, 1), (0, 1), (0, 0)], GEO, 2, dash=(7, 7), alpha=.6, z=3)
+        x1c = curva(TRI, [(1, 0), (1, 1.05)], CORAL, 3, z=5)
+        rx1 = rot(TRI, r"\Co{\X=1}", (1, .95), 16, 0, 28, "l")
+        velhos = [regT, eT, dT2, yT, thT, rxy, rx0]
+        self.play(*[FadeOut(m) for m in velhos], Create(quad), Create(x1c), run_time=0.8)
+        self.remove(*velhos)
+        self.pena(rx1)
+        self.gat("trocar só o dê")
+        realce(self, quad)                                             # a região lida com os limites de antes
+        col = [m for m in self.snap() if pxof(m.get_left())[0] >= 1100]
+        self.play(*[FadeOut(m) for m in col], run_time=0.4)
+        self.remove(*col)
+        Wr = L([("io", r"\int_0^1\!"), ("ii", r"\int_{\Al{\X}}^{1}"), ("e", r"e^{-\Y^2}"), ("dx", r"\,\Al{d\X}"), ("dy", r"\,\dY")], 1120, 260, 50)
+        self.pena(Wr)
+        so_ = mixl([("t", "SÓ TROCOU", AL), ("m", r"\dX"), ("t", "COM", AL), ("m", r"\dY")], 1120, 370, 36)
+        self.pena(*so_.p, lag=0.12)
+        self.gat("deixar os limites como")
+        realce(self, x1c, rx1)                                         # o limite 1 que ficou como estava
+        acende(self, (VGroup(*sem_alto(Wr, "io")[0]), None), (VGroup(*sem_alto(Wr, "ii")[0]), None), rt=0.8)
+        self.gat("olha o que acontece")
+        realce(self, quad)
+        self.gat("passa a ser em")
+        acende(self, (gl(Wr, "dx"), AL), rt=0.8)
+        # "de xis até um": a tira deitada em y = 0,55 nasce de x até 1; o começo dela é o próprio x (âmbar), com "x ?"
+        self.gat("de xis até um o")
+        xt = ValueTracker(.45)
+        self.add(xt)
+        YT = .55
+        tira_ = always_redraw(lambda: tiraH(TRI, YT, xt.get_value(), 1, alpha=.5))
+        pc = always_redraw(lambda: ponto_px(*TRI.px(xt.get_value(), YT), E1, 10))
+        pf = ponto_px(*TRI.px(1, YT), CORAL, 9)
+        px0 = always_redraw(lambda: ponto_px(*TRI.px(xt.get_value(), 0), E1, 10))
+        tr0 = always_redraw(lambda: curva(TRI, [(xt.get_value(), 0), (xt.get_value(), YT - .03)], E1, 2, dash=(5, 6), alpha=.8, z=4))
+        lq = always_redraw(lambda: TP(r"\Al{\X\,?}", TRI.px(xt.get_value(), YT)[0] - 14, TRI.px(xt.get_value(), YT)[1] - 36, 32, "r", caneta=False))
+        self.play(GrowFromEdge(tira_.copy(), RIGHT), FadeIn(pf, scale=.5), run_time=0.7)
+        self.add(tira_)
+        self.play(FadeIn(pc, scale=.5), FadeIn(px0, scale=.5), Create(tr0.copy()), FadeIn(lq), run_time=0.6)
+        self.add(tr0)
+        # "ao mesmo tempo a variável que anda e o limite dela": o x anda e o começo da fatia anda junto
+        self.gat("ao mesmo tempo")
+        self.play(xt.animate.set_value(.15), run_time=0.8)
+        ext1 = curva(TRI, [(.15, YT - .03), (1, YT - .03), (1, YT + .03), (.15, YT + .03), (.15, YT - .03)], GEO, 2, dash=(5, 6), z=3)
+        self.add(ext1)
+        self.play(xt.animate.set_value(.75), run_time=0.9)
+        ext2 = curva(TRI, [(.75, YT - .03), (1, YT - .03), (1, YT + .03), (.75, YT + .03), (.75, YT - .03)], GEO, 2, dash=(5, 6), z=3)
+        self.add(ext2)
+        self.play(xt.animate.set_value(.45), run_time=0.7)
+        sd1 = seta_px(TRI.px(.45, -.09), TRI.px(.6, -.09), E1, 2.5, 14)
+        sd2 = seta_px(TRI.px(.45, -.09), TRI.px(.3, -.09), E1, 2.5, 14)
+        ca = mixl([("t", "O COMEÇO ANDA COM", AL), ("m", r"\Al{\X}")], 300, 215, 32)
+        self.play(GrowFromPoint(sd1, TRI.P(.45, -.09)), GrowFromPoint(sd2, TRI.P(.45, -.09)), run_time=0.4)
+        self.pena(*ca.p, lag=0.12)
+        lv = mixl([("m", r"\Al{\X}"), ("t", "É LIMITE E VARIÁVEL", AL)], 1120, 480, 36)
+        self.pena(*lv.p, lag=0.12)
+        self.marca("v2_07", agora=True)
+        self.gat("isso não tem sentido")
+        realce(self, pc, lq)                                   # o x que é ao mesmo tempo limite e variável
+        lim, alto = sem_alto(Wr, "ii")
+        xl = min(lim, key=lambda x: x.get_center()[1])
+        cxl = sublinha_fica(VGroup(xl), AL)
+        self.play(Create(cxl), run_time=0.6)
+        # "sobra um xis solto": a coluna se reorganiza e o mapa 9 dá (1 − x)·∫…
+        self.gat("a conta mesmo assim")
+        realce(self, tira_, pc)
+        self.gat("sobra um xis solto")
+        Wr2 = L([("io", r"\int_0^1\!"), ("ii", r"\int_{\Al{\X}}^{1}"), ("e", r"e^{-\Y^2}"), ("dx", r"\,\Al{d\X}"), ("dy", r"\,\dY")], 1120, 240, 44, caneta=False)
+        self.play(FadeOut(cxl), *[FadeOut(m) for m in (*so_.p, *lv.p)], Transform(Wr, Wr2), run_time=0.5)
+        self.remove(cxl, *so_.p, *lv.p)
+        lim, alto = sem_alto(Wr, "ii")
+        xl = min(lim, key=lambda x: x.get_center()[1])
+        um_ = max(lim, key=lambda x: x.get_center()[1])
+        W1 = L([("eq", "="), ("p1", "("), ("um", "1"), ("mn", "-"), ("x", r"\Al{\X}"), ("p2", ")"), ("d", r"\cdot"), ("io", r"\int_0^1"), ("e", r"e^{-\Y^2}"),
+                ("dy", r"\,\dY")], 1120, 350, 42)
+        passo(self, Wr, W1, [("io", "io"), ("e", "e"), ("dy", "dy"), ([list(Wr[0]).index(xl)], "x"), ([list(Wr[0]).index(um_)], "um")], rt=1.3, copia=True,
+              nota="mapa 9 (B4-3: a forma errada deixa (1 − x) · ∫₀¹ e^(−y²) dy; o 1 e o x vêm dos limites)")
+        rc_ = mixl([("t", "RESULTADO COM", AL), ("m", r"\Al{\X}"), ("t", "?", AL)], 1175, 460, 44)
+        cz = cruz_px(1140, 458, AL, 1)
+        self.play(Create(cz), run_time=0.3)
+        self.pena(*rc_.p, lag=0.12)
+        # "a integral dupla é um número": o "resultado" em função de x (uma reta), e o valor certo, um número só
+        self.gat("só que a integral")
+        for m in (tira_, pc, px0, tr0, lq):
+            m.clear_updaters()
+        palco_ = [m for m in self.snap() if pxof(m.get_right())[0] < 1100] + [self.grade]
+        self.play(*[FadeOut(m) for m in palco_], run_time=0.4)
+        self.remove(*palco_, xt)
+        I0v = 0.746824
+        GR = Lat(250, 860, 620, 700)
+        gR = VGroup()
+        for a_ in np.arange(0, 1.1001, .1):
+            gR.add(lin_px([GR.px(a_, 0), GR.px(a_, .9)], GRADE, 1.2, z=-9))
+        for b_ in np.arange(0, .9001, .1):
+            gR.add(lin_px([GR.px(0, b_), GR.px(1.1, b_)], GRADE, 1.2, z=-9))
+        self.grade = gR
+        ex_ = seta_px(GR.px(-.03, 0), GR.px(1.12, 0), E1, 3, 16, z=6)
+        er_ = seta_px(GR.px(0, -.03), GR.px(0, .92), GEO, 3, 16, z=6)
+        lxR = TC(r"\X", GR.px(1.12, 0)[0] + 24, GR.px(1.12, 0)[1], 32, "c")
+        lrR = leg("RESULTADO", GR.px(0, .92)[0] + 18, GR.px(0, .92)[1] + 8, GEO, "left", 26)
+        k1 = tick(GR, "x", 1, "1")
+        self.play(FadeIn(gR), GrowFromPoint(ex_, GR.P(0, 0)), GrowFromPoint(er_, GR.P(0, 0)), Create(k1[0]), run_time=0.4)
+        self.pena(lxR, lrR, k1[1], lag=0.05, passo=0.035)
+        reta = curva(GR, [(0, I0v), (1, 0)], AL, 4, z=5)
+        self.play(Create(reta), run_time=0.7, rate_func=linear)
+        pts_ = []
+        for xx, sv, fr in ((.2, r"0{,}597", "é um número"), (.8, r"0{,}149", "não pode depender de")):
+            self.gat(fr)
+            v = (1 - xx) * I0v
+            dl = curva(GR, [(xx, 0), (xx, v)], E1, 2, dash=(5, 6), z=4)
+            dp_ = ponto_px(*GR.px(xx, v), AL, 10)
+            q = GR.px(xx, v)
+            lv_ = TC(r"\Al{" + sv + "}", q[0] + 16, q[1] - 28, 30, "l")
+            kx = tick(GR, "x", xx, r"\Am{" + str(xx).replace(".", "{,}") + "}")
+            self.play(Create(dl), Create(kx[0]), FadeIn(dp_, scale=.5), run_time=0.5)
+            self.pena(lv_, kx[1], lag=0.2)
+            pts_ += [dl, dp_, lv_, *kx]
+        self.gat("é o mesmo aviso")
+        m316 = curva(GR, [(0, .316), (1.05, .316)], MEN, 3, dash=(8, 7), z=4)
+        q = GR.px(1.06, .316)
+        l316 = TC(r"\Me{0{,}316}", q[0] + 8, q[1], 30, "l")
+        un = T("UMA INTEGRAL DUPLA É UM NÚMERO", 1120, 600, 34, "left", MEN)
+        self.play(Create(m316), run_time=0.7)
+        self.pena(l316, un, lag=0.3)
+        self.gat("só pode depender da")
+        rd = leg("DENTRO: SÓ A VARIÁVEL DE FORA", 1120, 700, GEO, "left", 28)
+        self.pena(rd)
+        self.marca("v2_08", agora=True)
+        realce(self, reta, atraso=0.4)                                 # o "resultado" que depende de x
+        self.gat("por isso a troca")
+        realce(self, m316, l316, atraso=0.4)                           # o número certo
+        # "por isso a troca certa começa pela região": volta o triângulo, com a tira deitada certa (de 0 a y)
+        self.gat("começa pela região")
+        graf = [gR, ex_, er_, lxR, lrR, *k1, reta, m316, l316, *pts_]
+        coluna = [m for m in self.snap() if pxof(m.get_left())[0] >= 1100]
+        self.play(*[FadeOut(m) for m in graf + coluna], run_time=0.4)
+        self.remove(*graf, *coluna)
+        g3 = papel_v(TRI, (0, 1.12, 0, 1.12))
+        self.grade = g3
+        sx3, sy3, lx3_, ly3_ = eixos_v(TRI, 1.2, 1.2)
+        self.play(FadeIn(g3), GrowFromPoint(sx3, TRI.P(0, 0)), GrowFromPoint(sy3, TRI.P(0, 0)), run_time=0.5)
+        self.pena(lx3_, ly3_)
+        self.gat("primeiro redesenha o")
+        tr = regiao(TRI, [(0, 0), (1, 1), (0, 1)])
+        d1 = curva(TRI, [(0, 0), (1, 1)], CORAL, 3)
+        d2 = curva(TRI, [(0, 1), (1, 1)], GEO, 2)
+        d3 = curva(TRI, [(0, 0), (0, 1)], AZC, 3)
+        self.play(FadeIn(tr), Create(d1), Create(d2), Create(d3), run_time=0.9)
+        self.gat("depois acha os limites")
+        tt = tiraH(TRI, .55, 0, .55)
+        q1, q2 = pontos_es(TRI, (0, .55), (.55, .55))
+        r0_ = rot(TRI, r"\Az{0}", (0, .55), -40, -28, 30)
+        ry_ = rot(TRI, r"\Co{\Y}", (.55, .55), 34, -34, 30)
+        self.play(GrowFromEdge(tt, LEFT), FadeIn(q1, scale=.5), FadeIn(q2, scale=.5), run_time=0.6)
+        self.pena(r0_, ry_, lag=0.2)
+        self.gat("e só então escreve")
+        realce(self, tt, r0_, ry_)                                     # a fatia deitada que dá os limites
+        OK = L([("io", r"\int_0^1\!"), ("ii", r"\int_{\Az{0}}^{\Co{\Y}}"), ("e", r"e^{-\Y^2}"), ("dx", r"\,\dX"), ("dy", r"\,\dY")], 1120, 260, 46)
+        self.pena(OK)
+        ck = check_px(1800, 260)
+        self.play(Create(ck), run_time=0.4)
+        self.gat("a região manda")
+        realce(self, tr, d1, d2, d3)                                   # a região que escolhe os limites
+        ar = leg("A REGIÃO ESCOLHE OS LIMITES", 1120, 360, MEN, "left", 28)
+        self.pena(ar)
+        self.sai_fim()

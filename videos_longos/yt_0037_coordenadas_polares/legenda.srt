@@ -1,0 +1,1240 @@
+1
+00:00:00,080 --> 00:00:05,060
+Olha esse sino: é a função e elevado
+a menos, x ao quadrado mais y
+
+2
+00:00:05,100 --> 00:00:07,670
+ao quadrado, em cima do disco de raio um.
+
+3
+00:00:07,760 --> 00:00:10,480
+Essa foi a pergunta que ficou
+no fim do vídeo passado:
+
+4
+00:00:10,520 --> 00:00:13,110
+quanto vale a integral
+dupla dela nesse disco?
+
+5
+00:00:13,200 --> 00:00:18,260
+Fatiando em pé, a fatia pede uma primitiva
+de e elevado a menos y ao quadrado.
+
+6
+00:00:18,300 --> 00:00:22,560
+Ela existe, mas não é elementar: não
+se escreve com as funções do Cálculo I.
+
+7
+00:00:22,600 --> 00:00:26,700
+Deitado, trava igual. Só que esse
+integrando só depende de uma coisa:
+
+8
+00:00:26,740 --> 00:00:29,820
+da distância até a origem.
+Então troca a grade.
+
+9
+00:00:29,860 --> 00:00:32,560
+Em vez de quadradinhos, círculos e raios.
+
+10
+00:00:32,600 --> 00:00:37,620
+Repara num detalhe: esta célula aqui perto
+da origem e esta lá longe têm o mesmo
+
+11
+00:00:37,660 --> 00:00:41,700
+delta R e o mesmo delta téta,
+mas a de fora é bem maior.
+
+12
+00:00:41,740 --> 00:00:46,620
+Então a pergunta do vídeo é: quanto vale
+a área de cada pedaço dessa grade nova?
+
+13
+00:00:46,660 --> 00:00:49,800
+Quando a gente descobrir,
+esse disco sai em poucas linhas.
+
+14
+00:00:49,840 --> 00:00:53,600
+E a mesma ferramenta vai entregar uma
+coisa que nenhuma primitiva elementar
+
+15
+00:00:53,640 --> 00:00:56,740
+entrega: a área inteira
+debaixo da curva do sino,
+
+16
+00:00:56,780 --> 00:00:59,130
+a curva que está em toda a estatística.
+
+17
+00:00:59,200 --> 00:01:01,940
+Fala, pessoal! Bem-vindos ao Parallax Lab!
+
+18
+00:01:01,980 --> 00:01:04,880
+Hoje é dia de coordenadas
+polares na integral dupla:
+
+19
+00:01:04,920 --> 00:01:08,620
+a grade de círculos e raios,
+o fator de área, o teorema,
+
+20
+00:01:08,660 --> 00:01:11,420
+dois discos e, no fim, a integral do sino.
+
+21
+00:01:11,460 --> 00:01:16,060
+Primeiro, o endereço de um ponto. Em vez
+de dizer quanto ele anda em x e em y,
+
+22
+00:01:16,100 --> 00:01:18,920
+você diz duas coisas:
+a distância até a origem,
+
+23
+00:01:18,960 --> 00:01:22,760
+que se chama R, e o ângulo que
+essa distância faz com o eixo x,
+
+24
+00:01:22,800 --> 00:01:25,920
+medido a partir do lado positivo,
+no sentido anti-horário,
+
+25
+00:01:25,960 --> 00:01:29,820
+que se chama téta. No triângulo
+do desenho, R é a hipotenusa.
+
+26
+00:01:29,860 --> 00:01:33,920
+O cateto de baixo é R vezes
+cosseno de téta: esse é o x.
+
+27
+00:01:33,960 --> 00:01:37,740
+O cateto em pé é R vezes
+seno de téta: esse é o y.
+
+28
+00:01:37,780 --> 00:01:42,740
+E, por Pitágoras, x ao quadrado mais
+y ao quadrado é igual a R ao quadrado.
+
+29
+00:01:42,780 --> 00:01:47,560
+Por exemplo: R igual a dois e téta
+igual a π sobre três dão x igual a
+
+30
+00:01:47,600 --> 00:01:52,480
+dois vezes um meio, que é um, e y igual
+a dois vezes raiz de três sobre dois,
+
+31
+00:01:52,520 --> 00:01:57,460
+que é raiz de três. A gente usa R maior
+ou igual a zero e téta entre zero e
+
+32
+00:01:57,500 --> 00:02:00,540
+dois π. Agora olha isso
+como uma transformação,
+
+33
+00:02:00,580 --> 00:02:03,840
+igual no vídeo passado.
+De um lado, o plano R téta,
+
+34
+00:02:03,880 --> 00:02:06,460
+com R na horizontal e téta na vertical.
+
+35
+00:02:06,500 --> 00:02:10,840
+Do outro, o plano x y.
+A transformação fi leva o ponto R,
+
+36
+00:02:10,880 --> 00:02:14,780
+téta no ponto R cosseno
+de téta, R seno de téta.
+
+37
+00:02:14,820 --> 00:02:18,100
+Uma reta vertical, com R
+constante, vira um círculo.
+
+38
+00:02:18,140 --> 00:02:22,300
+Uma reta horizontal, com téta constante,
+vira um raio saindo da origem.
+
+39
+00:02:22,340 --> 00:02:26,960
+E o retângulo de R entre zero e um e
+téta entre zero e dois π vira o disco
+
+40
+00:02:27,000 --> 00:02:29,440
+inteiro. Mas repara em duas bordas.
+
+41
+00:02:29,480 --> 00:02:34,040
+O lado R igual a zero, um segmento
+inteiro, cai todo num ponto só:
+
+42
+00:02:34,080 --> 00:02:38,920
+a origem. E os lados téta igual a zero
+e téta igual a dois π caem no mesmo
+
+43
+00:02:38,960 --> 00:02:42,430
+segmento do eixo x.
+Guarda isso, que já já volta.
+
+44
+00:02:42,480 --> 00:02:47,440
+Agora, a pergunta do começo: quanto
+vale a área de um pedacinho dessa grade?
+
+45
+00:02:47,480 --> 00:02:51,040
+Ele fica entre dois círculos,
+de raios R um e R dois,
+
+46
+00:02:51,080 --> 00:02:54,320
+e entre dois raios separados
+por um ângulo delta téta.
+
+47
+00:02:54,360 --> 00:02:57,120
+Começa pelo setor,
+a fatia de pizza inteira.
+
+48
+00:02:57,160 --> 00:03:02,180
+O círculo de raio R tem área π R ao
+quadrado, e o setor pega a fração delta
+
+49
+00:03:02,220 --> 00:03:06,640
+téta sobre dois π do círculo.
+Então o setor tem área um meio de R ao
+
+50
+00:03:06,680 --> 00:03:11,660
+quadrado vezes delta téta. A célula é
+o setor grande menos o setor pequeno:
+
+51
+00:03:11,700 --> 00:03:16,680
+um meio de R dois ao quadrado delta téta,
+menos um meio de R um ao quadrado
+
+52
+00:03:16,720 --> 00:03:21,720
+delta téta. Põe em evidência: um meio,
+vezes a diferença R dois ao quadrado
+
+53
+00:03:21,760 --> 00:03:24,620
+menos R um ao quadrado, vezes delta téta.
+
+54
+00:03:24,660 --> 00:03:29,760
+Diferença de quadrados: R dois
+mais R um, vezes R dois menos R um.
+
+55
+00:03:29,800 --> 00:03:34,600
+A metade da soma é o raio médio,
+R barra; a diferença é delta R.
+
+56
+00:03:34,640 --> 00:03:39,060
+A célula tem área exata:
+R barra, delta R, delta téta.
+
+57
+00:03:39,100 --> 00:03:42,960
+Com delta R igual a um meio e
+delta téta igual a π sobre seis,
+
+58
+00:03:43,000 --> 00:03:45,820
+a célula de dentro,
+de raio médio três quartos,
+
+59
+00:03:45,860 --> 00:03:49,820
+dá π sobre dezesseis; a de fora,
+de raio médio sete quartos,
+
+60
+00:03:49,860 --> 00:03:53,100
+dá sete π sobre quarenta
+e oito. Mesmo delta R,
+
+61
+00:03:53,140 --> 00:03:57,280
+mesmo delta téta, e a de fora tem
+sete terços da área da de dentro.
+
+62
+00:03:57,320 --> 00:04:01,880
+Tem outro jeito de ver o mesmo R.
+A célula pequena é quase um retângulo:
+
+63
+00:04:01,920 --> 00:04:05,940
+um lado é delta R, na direção
+do raio; o outro é um arco,
+
+64
+00:04:05,980 --> 00:04:09,840
+e arco é raio vezes ângulo
+em radianos, R delta téta.
+
+65
+00:04:09,880 --> 00:04:13,260
+Lado vezes lado: R, delta R, delta téta.
+
+66
+00:04:13,300 --> 00:04:16,560
+E o terceiro jeito é o do
+vídeo passado: o jacobiano.
+
+67
+00:04:16,600 --> 00:04:19,120
+A matriz das derivadas
+tem, na primeira linha,
+
+68
+00:04:19,160 --> 00:04:23,640
+a derivada de x em R, cosseno de
+téta, e a derivada de x em téta,
+
+69
+00:04:23,680 --> 00:04:28,260
+menos R seno de téta. Na segunda
+linha, a derivada de y em R,
+
+70
+00:04:28,300 --> 00:04:31,460
+seno de téta, e em téta,
+R cosseno de téta.
+
+71
+00:04:31,500 --> 00:04:35,690
+O determinante é cosseno de
+téta vezes R cosseno de téta,
+
+72
+00:04:35,760 --> 00:04:39,790
+menos, menos R seno de
+téta vezes seno de téta:
+
+73
+00:04:39,840 --> 00:04:43,040
+R cosseno ao quadrado
+mais R seno ao quadrado.
+
+74
+00:04:43,080 --> 00:04:47,330
+Põe o R em evidência, e cosseno ao
+quadrado mais seno ao quadrado é um.
+
+75
+00:04:47,380 --> 00:04:51,740
+Sobra R. Três caminhos,
+o mesmo fator: dê A igual a R,
+
+76
+00:04:51,780 --> 00:04:56,100
+dê R, dê téta. E aqui mora o
+erro mais comum das provas:
+
+77
+00:04:56,140 --> 00:04:59,340
+esquecer esse R.
+A unidade denuncia na hora.
+
+78
+00:04:59,380 --> 00:05:04,340
+Num disco de raio á, sem o R, a de dentro
+dá á e a de fora multiplica por dois
+
+79
+00:05:04,380 --> 00:05:07,180
+π: dois π á, o perímetro, em metro.
+
+80
+00:05:07,220 --> 00:05:10,480
+Com o R, a de dentro é R
+ao quadrado sobre dois,
+
+81
+00:05:10,520 --> 00:05:15,380
+de zero a á, que dá á ao quadrado sobre
+dois, e a de fora multiplica por dois
+
+82
+00:05:15,420 --> 00:05:18,260
+π: π á ao quadrado, em metro quadrado.
+
+83
+00:05:18,300 --> 00:05:21,570
+Esqueceu o R, a resposta
+nem tem unidade de área.
+
+84
+00:05:21,660 --> 00:05:23,860
+Agora o teorema, com o rigor do livro.
+
+85
+00:05:23,900 --> 00:05:26,340
+A transformação fi é de classe cê um.
+
+86
+00:05:26,380 --> 00:05:29,580
+Seja B R téta um conjunto
+compacto, quer dizer,
+
+87
+00:05:29,620 --> 00:05:32,880
+fechado e limitado, com
+fronteira de conteúdo nulo,
+
+88
+00:05:32,920 --> 00:05:37,350
+e B a imagem dele por fi. O teorema
+pede três coisas no interior:
+
+89
+00:05:37,460 --> 00:05:41,570
+fi leva o interior de B R téta
+exatamente no interior de B,
+
+90
+00:05:41,660 --> 00:05:45,440
+fi é injetora ali, e o
+jacobiano, R, não se anula.
+
+91
+00:05:45,480 --> 00:05:50,540
+Então, para f integrável em B, a integral
+dupla de f em B é igual à integral
+
+92
+00:05:50,580 --> 00:05:55,260
+dupla em B R téta de f de R
+cosseno de téta, R seno de
+
+93
+00:05:55,300 --> 00:05:58,190
+téta, vezes R, dê R, dê téta.
+
+94
+00:05:58,260 --> 00:06:01,500
+Só que, no disco inteiro,
+a primeira exigência falha:
+
+95
+00:06:01,540 --> 00:06:05,440
+a imagem do interior do retângulo não
+chega na origem nem no segmento da
+
+96
+00:06:05,480 --> 00:06:08,400
+costura, e esses pontos
+estão no interior do disco.
+
+97
+00:06:08,440 --> 00:06:11,200
+A saída é cortar o disco em duas metades.
+
+98
+00:06:11,240 --> 00:06:14,440
+A de cima vem de téta
+entre zero e π; a de baixo,
+
+99
+00:06:14,480 --> 00:06:19,460
+de téta entre π e dois π. Em cada metade,
+as três exigências valem ao pé da
+
+100
+00:06:19,500 --> 00:06:22,700
+letra. E o corte, um segmento,
+tem conteúdo nulo:
+
+101
+00:06:22,740 --> 00:06:27,220
+não soma área nenhuma. Então a integral
+no disco é a soma das duas metades,
+
+102
+00:06:27,260 --> 00:06:30,940
+e as duas juntas são a integral
+com téta de zero a dois π.
+
+103
+00:06:30,980 --> 00:06:34,640
+Na prática, são quatro passos.
+Primeiro, desenha a região.
+
+104
+00:06:34,680 --> 00:06:36,920
+Segundo, lê a região em polares.
+
+105
+00:06:36,960 --> 00:06:41,040
+Os limites de fora são os do téta,
+números, dizendo de que ângulo a que
+
+106
+00:06:41,080 --> 00:06:44,600
+ângulo os raios varrem a região.
+Os de dentro são os do R,
+
+107
+00:06:44,640 --> 00:06:47,720
+e aqui entra a reta-sonda,
+agora saindo da origem:
+
+108
+00:06:47,760 --> 00:06:51,520
+ao longo de cada raio, onde
+ela entra na região começa o R,
+
+109
+00:06:51,560 --> 00:06:56,540
+onde ela sai termina. Terceiro,
+troca: x vira R cosseno de téta,
+
+110
+00:06:56,580 --> 00:07:01,440
+y vira R seno de téta, x ao
+quadrado mais y ao quadrado vira
+
+111
+00:07:01,480 --> 00:07:05,240
+R ao quadrado, e dê A vira R dê R dê téta.
+
+112
+00:07:05,280 --> 00:07:09,280
+Quarto, calcula, de dentro para
+fora, como no teorema de Fubini.
+
+113
+00:07:09,320 --> 00:07:11,940
+Agora sim, de volta ao disco do começo.
+
+114
+00:07:11,980 --> 00:07:14,830
+Em polares, o disco de
+raio um é um retângulo:
+
+115
+00:07:14,900 --> 00:07:17,520
+R de zero a um, téta de zero a dois π.
+
+116
+00:07:17,560 --> 00:07:20,720
+O integrando vira e elevado
+a menos R ao quadrado,
+
+117
+00:07:20,760 --> 00:07:24,760
+e o jacobiano traz o R.
+A integral fica: de zero a dois π,
+
+118
+00:07:24,800 --> 00:07:28,640
+da integral de zero a um, de e
+elevado a menos R ao quadrado,
+
+119
+00:07:28,680 --> 00:07:30,960
+vezes R, dê R, dê téta.
+
+120
+00:07:31,000 --> 00:07:34,740
+E olha o que esse R faz: ele é
+exatamente o fator que faltava.
+
+121
+00:07:34,780 --> 00:07:39,820
+Chama u de R ao quadrado:
+dê u é dois R dê R, então R dê R
+
+122
+00:07:39,860 --> 00:07:43,900
+vira dê u sobre dois. E os
+limites: R zero dá u zero,
+
+123
+00:07:43,940 --> 00:07:48,900
+R um dá u um. Fica a integral de
+zero a um de e elevado a menos u,
+
+124
+00:07:48,940 --> 00:07:53,600
+dê u sobre dois. A primitiva é menos
+e elevado a menos u sobre dois,
+
+125
+00:07:53,640 --> 00:07:56,940
+de zero a um. Em um:
+menos e elevado a menos um,
+
+126
+00:07:56,980 --> 00:08:00,900
+sobre dois. Em zero: menos e
+elevado a zero, sobre dois,
+
+127
+00:08:00,940 --> 00:08:05,200
+e e elevado a zero é um.
+Subtraindo, menos com menos dá mais:
+
+128
+00:08:05,240 --> 00:08:07,700
+menos um sobre dois é, mais um meio.
+
+129
+00:08:07,740 --> 00:08:10,400
+Isso é a metade de um menos um sobre e.
+
+130
+00:08:10,440 --> 00:08:13,380
+Guarda esse número:
+zero vírgula três um seis.
+
+131
+00:08:13,420 --> 00:08:17,580
+A de fora só multiplica por dois π, porque
+o resultado de dentro não depende de
+
+132
+00:08:17,620 --> 00:08:20,880
+téta: π vezes a diferença
+um menos um sobre e,
+
+133
+00:08:20,920 --> 00:08:23,440
+mais ou menos um vírgula noventa e nove.
+
+134
+00:08:23,480 --> 00:08:26,800
+E esse número tem cara:
+é o volume debaixo do sino,
+
+135
+00:08:26,840 --> 00:08:29,780
+em cima do disco. Dá até
+para ver o R no desenho.
+
+136
+00:08:29,820 --> 00:08:34,019
+Como a função só depende da distância,
+cada anel fino tem uma altura só,
+
+137
+00:08:34,059 --> 00:08:38,940
+e elevado a menos R ao quadrado.
+Em cima do anel de raio R e espessura dê R
+
+138
+00:08:38,980 --> 00:08:43,999
+fica uma casca: o comprimento é dois
+π R, a altura é e elevado a menos
+
+139
+00:08:44,039 --> 00:08:46,500
+R ao quadrado e a espessura é dê R.
+
+140
+00:08:46,540 --> 00:08:51,320
+O volume da casca é o produto:
+dois π R, vezes e elevado a menos R ao
+
+141
+00:08:51,360 --> 00:08:54,940
+quadrado, vezes dê R.
+Somando as cascas de zero a um,
+
+142
+00:08:54,980 --> 00:08:59,800
+e no limite, com cascas cada vez mais
+finas, a soma vira a integral de zero a um
+
+143
+00:08:59,840 --> 00:09:03,820
+de dois π R, e elevado a
+menos R ao quadrado, dê R:
+
+144
+00:09:03,860 --> 00:09:06,600
+dois π vezes a integral que
+a gente acabou de fazer,
+
+145
+00:09:06,640 --> 00:09:09,240
+que deu um menos um sobre e, sobre dois.
+
+146
+00:09:09,280 --> 00:09:12,100
+De novo, π vezes um menos um sobre e.
+
+147
+00:09:12,140 --> 00:09:15,580
+A fatia das polares é o anel,
+ou, em três dimensões,
+
+148
+00:09:15,620 --> 00:09:18,990
+uma casca, e o comprimento
+do anel é que traz o R.
+
+149
+00:09:19,140 --> 00:09:22,610
+Agora uma região redonda que
+não está centrada na origem:
+
+150
+00:09:22,680 --> 00:09:27,160
+x ao quadrado mais y ao quadrado
+menor ou igual a dois x.
+
+151
+00:09:27,200 --> 00:09:30,100
+Passa o dois x para a esquerda
+e completa o quadrado,
+
+152
+00:09:30,140 --> 00:09:33,900
+somando um aos dois lados:
+x menos um, ao quadrado,
+
+153
+00:09:33,940 --> 00:09:36,780
+mais y ao quadrado, menor ou igual a um.
+
+154
+00:09:36,820 --> 00:09:40,940
+É o disco de centro um, zero e
+raio um, que passa pela origem:
+
+155
+00:09:40,980 --> 00:09:43,930
+a origem, R igual a zero,
+já está na região.
+
+156
+00:09:44,020 --> 00:09:48,940
+Em polares, o lado esquerdo vira R
+ao quadrado e o dois x vira dois R
+
+157
+00:09:48,980 --> 00:09:53,820
+cosseno de téta. R ao quadrado menor
+ou igual a dois R cosseno de téta;
+
+158
+00:09:53,860 --> 00:09:58,560
+divide por R, que é positivo:
+R menor ou igual a dois cosseno de téta.
+
+159
+00:09:58,600 --> 00:10:02,600
+Como R não é negativo, o cosseno
+tem que ser maior ou igual a zero:
+
+160
+00:10:02,640 --> 00:10:05,970
+téta entre menos π sobre
+dois e π sobre dois.
+
+161
+00:10:06,020 --> 00:10:08,720
+A reta-sonda sai da origem,
+que está na borda:
+
+162
+00:10:08,760 --> 00:10:11,800
+entra em R igual a zero
+e sai na circunferência,
+
+163
+00:10:11,840 --> 00:10:14,060
+em R igual a dois cosseno de téta.
+
+164
+00:10:14,100 --> 00:10:17,560
+Com téta igual a π sobre
+três, sai em R igual a um.
+
+165
+00:10:17,600 --> 00:10:21,080
+Repara que esse disco não vira
+retângulo no plano R téta:
+
+166
+00:10:21,120 --> 00:10:23,420
+o limite de dentro depende de téta.
+
+167
+00:10:23,460 --> 00:10:27,920
+A grade certa simplifica a região,
+mas montar os limites ainda é o trabalho.
+
+168
+00:10:27,960 --> 00:10:32,500
+Confere com a área. Como a função é
+um, o integrando em polares é só R.
+
+169
+00:10:32,540 --> 00:10:37,360
+A de dentro dá R ao quadrado sobre
+dois, de zero a dois cosseno de téta.
+
+170
+00:10:37,400 --> 00:10:40,940
+Em dois cosseno de téta: quatro
+cosseno ao quadrado de téta,
+
+171
+00:10:40,980 --> 00:10:45,420
+sobre dois; em zero, zero. Fica
+dois cosseno ao quadrado de téta.
+
+172
+00:10:45,460 --> 00:10:48,840
+Dois cosseno ao quadrado é
+um mais cosseno de dois téta,
+
+173
+00:10:48,880 --> 00:10:52,620
+cuja primitiva é téta mais
+seno de dois téta sobre dois.
+
+174
+00:10:52,660 --> 00:10:56,440
+Em π sobre dois: π sobre dois,
+mais seno de π sobre dois,
+
+175
+00:10:56,480 --> 00:10:59,980
+que é zero. Em menos π sobre
+dois: menos π sobre dois,
+
+176
+00:11:00,020 --> 00:11:03,870
+mais zero. A diferença dá π,
+a área de um disco de raio um.
+
+177
+00:11:03,920 --> 00:11:07,240
+E agora, a promessa do
+começo. A curva do sino,
+
+178
+00:11:07,280 --> 00:11:11,380
+e elevado a menos x ao quadrado.
+Qual é a área inteira debaixo dela,
+
+179
+00:11:11,420 --> 00:11:13,640
+de menos infinito a mais infinito?
+
+180
+00:11:13,680 --> 00:11:18,280
+A primitiva existe, mas não é elementar,
+então não dá para calcular nas pontas.
+
+181
+00:11:18,320 --> 00:11:23,260
+Chama de I de á a integral de menos
+á até á, e depois deixa á crescer.
+
+182
+00:11:23,300 --> 00:11:28,440
+O truque é elevar ao quadrado. I de
+á ao quadrado é I de á vezes I de á;
+
+183
+00:11:28,480 --> 00:11:31,060
+escreve uma com x e a outra com y.
+
+184
+00:11:31,100 --> 00:11:34,400
+Pelo teorema de Fubini,
+no quadrado de lado dois á,
+
+185
+00:11:34,440 --> 00:11:39,360
+a integral dupla de e elevado a menos
+x ao quadrado vezes e elevado a menos
+
+186
+00:11:39,400 --> 00:11:43,000
+y ao quadrado é exatamente
+isso: na fatia deitada,
+
+187
+00:11:43,040 --> 00:11:46,200
+o fator em y é constante e
+sai da integral de dentro,
+
+188
+00:11:46,240 --> 00:11:49,580
+que vira I de á; a de
+fora dá I de á de novo.
+
+189
+00:11:49,620 --> 00:11:53,080
+E o produto das duas
+exponenciais é e elevado a menos,
+
+190
+00:11:53,120 --> 00:11:56,400
+x ao quadrado mais y ao
+quadrado: o sino girado,
+
+191
+00:11:56,440 --> 00:11:59,940
+o mesmo do começo. Só que
+o quadrado não é redondo.
+
+192
+00:11:59,980 --> 00:12:02,660
+Então a gente prende o
+quadrado entre dois discos.
+
+193
+00:12:02,700 --> 00:12:05,760
+O disco de raio á,
+inscrito, cabe dentro dele.
+
+194
+00:12:05,800 --> 00:12:09,840
+O disco de raio á raiz de dois,
+circunscrito, contém o quadrado,
+
+195
+00:12:09,880 --> 00:12:12,500
+porque a meia diagonal é á raiz de dois.
+
+196
+00:12:12,540 --> 00:12:15,980
+E o quadrado de á raiz de
+dois é dois á ao quadrado.
+
+197
+00:12:16,020 --> 00:12:19,820
+Como o integrando é positivo,
+região maior dá integral maior.
+
+198
+00:12:19,860 --> 00:12:23,300
+Num disco de raio B, é a mesma
+conta do disco do começo:
+
+199
+00:12:23,340 --> 00:12:27,640
+dois π vezes menos e elevado a
+menos R ao quadrado sobre dois,
+
+200
+00:12:27,680 --> 00:12:31,880
+de zero a B. Em B: menos e
+elevado a menos B ao quadrado,
+
+201
+00:12:31,920 --> 00:12:35,900
+sobre dois. Em zero: menos e
+elevado a zero, sobre dois,
+
+202
+00:12:35,940 --> 00:12:40,300
+que é menos um meio. O dois π
+multiplica a diferença e o dois cancela:
+
+203
+00:12:40,340 --> 00:12:43,840
+π vezes um menos e elevado
+a menos B ao quadrado.
+
+204
+00:12:43,880 --> 00:12:48,780
+Então I de á ao quadrado fica entre
+π vezes um menos e elevado a menos á
+
+205
+00:12:48,820 --> 00:12:53,740
+ao quadrado e π vezes um menos e
+elevado a menos dois á ao quadrado.
+
+206
+00:12:53,780 --> 00:12:58,260
+Com á igual a um: entre um vírgula noventa
+e nove e dois vírgula setenta e dois.
+
+207
+00:12:58,300 --> 00:13:02,760
+Com á igual a dois: entre três vírgula
+zero oito e três vírgula catorze.
+
+208
+00:13:02,800 --> 00:13:06,040
+Com á igual a três,
+as duas pontas já colam em π.
+
+209
+00:13:06,080 --> 00:13:09,660
+Quando á vai para o infinito,
+as duas exponenciais vão para zero,
+
+210
+00:13:09,700 --> 00:13:13,660
+as duas pontas vão para π, e o
+teorema do confronto prende o meio:
+
+211
+00:13:13,700 --> 00:13:17,380
+I de á ao quadrado tende a
+π. Como I de á é positivo,
+
+212
+00:13:17,420 --> 00:13:21,660
+a integral de menos infinito a mais
+infinito de e elevado a menos x ao
+
+213
+00:13:21,700 --> 00:13:24,180
+quadrado, dê x, é raiz de π.
+
+214
+00:13:24,220 --> 00:13:26,640
+E esse número mora em toda a estatística.
+
+215
+00:13:26,680 --> 00:13:31,000
+A curva normal padrão usa e elevado
+a menos x ao quadrado sobre dois.
+
+216
+00:13:31,040 --> 00:13:35,520
+Troca x por raiz de dois vezes u:
+dê x vira raiz de dois dê u,
+
+217
+00:13:35,560 --> 00:13:38,860
+e os limites continuam de
+menos infinito a mais infinito.
+
+218
+00:13:38,900 --> 00:13:42,940
+A integral vira raiz de dois
+vezes raiz de π: raiz de dois π.
+
+219
+00:13:42,980 --> 00:13:47,020
+É por isso que a fórmula da normal
+tem um sobre raiz de dois π na frente:
+
+220
+00:13:47,060 --> 00:13:49,560
+para a área total dar um, cem por cento.
+
+221
+00:13:49,600 --> 00:13:51,950
+Mas polar não é botão mágico.
+
+222
+00:13:52,000 --> 00:13:55,490
+Num quadrado, o raio sai
+ora pelo lado x igual a um,
+
+223
+00:13:55,540 --> 00:13:58,860
+ora pelo lado y igual a um.
+No lado x igual a um,
+
+224
+00:13:58,900 --> 00:14:03,020
+R cosseno de téta é um,
+então R é secante de téta.
+
+225
+00:14:03,060 --> 00:14:07,500
+No lado y igual a um,
+R seno de téta é um, então R é
+
+226
+00:14:07,540 --> 00:14:12,560
+cossecante de téta. A integral racha em
+duas, em téta igual a π sobre quatro:
+
+227
+00:14:12,600 --> 00:14:16,120
+de zero a π sobre quatro,
+R vai até secante de téta;
+
+228
+00:14:16,160 --> 00:14:20,080
+de π sobre quatro a π sobre
+dois, até cossecante de téta.
+
+229
+00:14:20,120 --> 00:14:23,920
+Em x e y, o quadrado é a
+região mais simples que existe.
+
+230
+00:14:23,960 --> 00:14:27,440
+Polar vale a pena quando a região
+tem simetria em torno da origem,
+
+231
+00:14:27,480 --> 00:14:32,200
+um disco, um anel, um setor, ou quando
+o integrando tem x ao quadrado mais
+
+232
+00:14:32,240 --> 00:14:35,070
+y ao quadrado. Melhor
+ainda quando tem os dois.
+
+233
+00:14:35,200 --> 00:14:40,040
+Então, juntando tudo. Em coordenadas
+polares, a grade vira círculos e
+
+234
+00:14:40,080 --> 00:14:43,540
+raios, e o pedacinho de
+área é R dê R dê téta:
+
+235
+00:14:43,580 --> 00:14:46,300
+quanto mais longe da
+origem, maior o pedaço.
+
+236
+00:14:46,340 --> 00:14:49,500
+Dá para ver esse R por três
+caminhos: pelos setores,
+
+237
+00:14:49,540 --> 00:14:52,240
+pelo arco vezes o lado
+e pelo determinante.
+
+238
+00:14:52,280 --> 00:14:55,160
+Os limites saem da reta-sonda
+que parte da origem,
+
+239
+00:14:55,200 --> 00:14:57,460
+e a grade certa simplifica a região.
+
+240
+00:14:57,500 --> 00:15:01,280
+Quando o integrando depende de x
+ao quadrado mais y ao quadrado,
+
+241
+00:15:01,320 --> 00:15:05,040
+o R do jacobiano costuma ser
+exatamente o fator que faltava.
+
+242
+00:15:05,080 --> 00:15:08,960
+Foi assim que o disco deu π vezes
+a diferença um menos um sobre e,
+
+243
+00:15:09,000 --> 00:15:13,120
+e o sino inteiro deu raiz de π.
+E fica uma chapa para o próximo vídeo.
+
+244
+00:15:13,160 --> 00:15:16,220
+Um meio disco de raio á,
+mais pesado na borda:
+
+245
+00:15:16,260 --> 00:15:18,860
+a densidade, rô, é cá vezes R.
+
+246
+00:15:18,900 --> 00:15:21,380
+Ela cresce junto com a
+distância até o centro.
+
+247
+00:15:21,420 --> 00:15:23,760
+Coloca um lápis embaixo.
+Onde ela equilibra?
+
+248
+00:15:23,800 --> 00:15:27,580
+Em polares, a massa já se monta:
+a integral de zero a π,
+
+249
+00:15:27,620 --> 00:15:31,440
+da integral de zero a á,
+de cá R, vezes R, dê R,
+
+250
+00:15:31,480 --> 00:15:35,600
+dê téta. Um R é da densidade;
+o outro é o R do jacobiano,
+
+251
+00:15:35,640 --> 00:15:39,640
+o fator de hoje. Mas a massa total
+ainda não diz onde apoiar o lápis:
+
+252
+00:15:39,680 --> 00:15:43,000
+para isso, precisa de uma
+ideia nova, o centro de massa.
+
+253
+00:15:43,040 --> 00:15:46,740
+É o que a gente faz no próximo
+vídeo: massa e centro de massa.
+
+254
+00:15:46,780 --> 00:15:50,920
+Se essa aula te ajudou, deixa o like,
+se inscreve no Parallax Lab e conta nos
+
+255
+00:15:50,960 --> 00:15:54,520
+comentários: qual integral
+você já viu sair só em polares?
+
+256
+00:15:54,560 --> 00:15:56,560
+Até a próxima!

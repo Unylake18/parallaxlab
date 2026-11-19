@@ -1,0 +1,74 @@
+OK  D1 φ(1,0)=(1+0,1-0)=(1,1)
+OK  D1 φ(1,1)=(2,0)
+OK  D1 φ(0,1)=(1,-1)
+OK  D1 φ(u,0)=(u,u)
+OK  D1 lado √(1²+1²)=√2
+OK  D1 (u+v)²+(u−v)² = u²+2uv+v²+u²−2uv+v²
+OK  D1 ... = 2u²+2v² = 2(u²+v²)
+OK  D1 f1(x,0)=(x,x)
+OK  D1 f1(0,y)=(y,-y)
+OK  D3 ∂Q/∂x = 1·s^-α + x·(−α s^(−α−1)·2x)
+OK  D3 ∂Q/∂x = s^-α − 2αx² s^(−α−1)
+OK  D3 ∂Q/∂x = s^(−α−1)(s − 2αx²)
+OK  D3 ∂P/∂y = −s^(−α−1)(s − 2αy²)
+OK  D3 rot = s^(−α−1)(s−2αx²+s−2αy²)
+OK  D3 rot = s^(−α−1)(2s−2α(x²+y²))
+OK  D3 rot = s^(−α−1)·s·(2−2α) = (2−2α)/s^α
+OK  D3 ∂P/∂x = −y·(−α s^(−α−1)·2x) = 2αxy s^(−α−1)
+OK  D3 ∂Q/∂y = x·(−α s^(−α−1)·2y) = −2αxy s^(−α−1)
+OK  D3 div = 0
+OK  D3 ‖v‖ = r/r^(2α) = r^(1−2α)
+OK  D3 α=0: rot
+OK  D3 α=1/2: rot
+OK  D3 α=1: rot
+OK  D3 α=2: rot
+OK  D3 w = (Q,−P) = (x,y)/s^α
+OK  D3 div w = ∂Q/∂x − ∂P/∂y = rot v
+OK  D3 rot w = −(∂P/∂x + ∂Q/∂y) = −div v = 0
+OK  D3b rot ∇φ = 0 (Schwarz)
+OK  D3b div rot F = R_yx − Q_zx + P_zy − R_xy + Q_xz − P_yz = 0
+OK  D3b teste: div = sen y − sen y + 1 = 1
+OK  D3b plano: rot ∇φ (3ª linha) com φ=(x²−y²)/2 = 0
+OK  D4 ‖F‖² = (xy)²/s
+OK  D4 xy = r² cosθ senθ = r² sen2θ/2
+OK  D4 ‖F‖ = r|sen2θ|/2 (r>0)
+OK  D4 F(h,0) = 0
+OK  D4 F(0,k) = 0
+OK  D4 F(Sx,Sy) = S·F(x,y)
+OK  D4 diagonal F(h,h) = (h/2,h/2)
+OK  D4 razão = ½
+OK  D4 P = x²y/(x²+y²)
+OK  D4 ∂P/∂x = [2xy·s − x²y·2x]/s²
+OK  D4 ... = (2x³y + 2xy³ − 2x³y)/s²
+OK  D4 ∂P/∂x = 2xy³/s²
+OK  D4 na diagonal: 2t·t³/(2t²)² = ½
+OK  D4 na outra diagonal: −½
+OK  D4 no eixo y=0: 0
+OK  D5① J=(1,1;1,−1); rot 0, div 0, d1 2, d2 2
+OK  D5② J=(0,0;1,−1); rot 1, div −1, d1 1, d2 1
+OK  D5③ J=(2x,−2y;2y,2x); rot 4y, div 4x, d1 0, d2 0
+OK  D5③ em (1, 0): rot 0, div 4
+OK  D5③ em (0, 1): rot 4, div 0
+OK  D5③ em (1, 1): rot 4, div 4
+OK  A1 J=(0,0;−2x/9,0); rot −2x/9, div 0, d1 0, d2 −2x/9
+OK  A1 Q(±3)=0, Q(0)=1
+OK  A1 rot(−3)=2/3, rot(3)=−2/3
+OK  A1 ω=1/3, T=2π/ω=6π≈18,85 s
+     T = 18.85
+OK  A2 J=(1,0;0,−1); rot 0, div 0, d1 2, d2 0
+OK  A2 d(xy)/dt = u·y + x·v = xy − xy = 0
+OK  A2 ∇φ = (x,−y)
+OK  A2 ∇²φ = 1 + (−1) = 0
+OK  A4 (x+iy)² = x² + 2ixy + i²y² = x² − y² + i·2xy
+OK  A4 irmão: J=(2x,−2y;−2y,−2x); rot 0, div 0
+OK  A4 irmão: d1 = 4x, d2 = −4y (só deforma)
+OK  A3 2 − 2α = 0 ⇒ α = 1
+OK  A3 ∂‖X‖/∂x = x/‖X‖
+OK  A3 ∂/∂x(x/‖X‖^p) = 1/‖X‖^p + x·(−p‖X‖^(−p−1))·x/‖X‖
+OK  A3 ... = 1/‖X‖^p − p x²/‖X‖^(p+2)
+OK  A3 div = 3/‖X‖^p − p(x²+y²+z²)/‖X‖^(p+2)
+OK  A3 div = (3 − p)/‖X‖^p
+OK  A3 plano: div = (2 − p)/‖X‖^p
+OK  A3 p=3: ‖E‖ = r/r³ = 1/r²
+
+71 de 71 checagens True

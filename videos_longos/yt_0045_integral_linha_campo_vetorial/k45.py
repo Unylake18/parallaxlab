@@ -1,0 +1,1591 @@
+r"""yt_0045 · CÁLCULO III · EP. 20 (provisório) · Integral de linha de um campo vetorial — camada da unidade sobre o v41.py
+(copiada do k44.py do yt_0044, que veio do k43.py do yt_0043).
+
+- Macros do preâmbulo = as de referencia/yt_0045_quadros_alvo_v1/sb45.html (const M=) + as da 1ª linha do keys45.js
+  (\g, \gp, \Fv, \dg, \Dg, \DTt, \al, \Lim, \Om, \uu).
+- Palco 2D (novo): Vista2D(cx, cy, U) = vista() do head45.part; campo de setas = setaCampo/campo do keys45.js.
+- Câmeras e pontos 3D = os de c3d45.html (helice, heliceCampo, heliceLeitura); deslocamentos de tela OL, OC do keys45.js/head45.part.
+- Papel de borda a borda (passo 60 px) em 100% das cenas (2D e 3D), exceto no CTA final (G1).
+- Escrita: caneta glifo a glifo (pena), voos (TransformFromCopy em arco), glyph maps (TransformByGlyphMap com mapa explícito).
+- QA por quadro (a cada 0,2 s): [R5], [R5V], [R6], [vazio], [grade], [3dcanto], [orfa], e logs [gm], [degrau], [voo], [pena], [coluna], [marca], [tam]."""
+import v41 as _v41
+from v41 import *  # noqa: F401,F403
+from v41 import _Caneta  # noqa: F401
+from MF_Tools import TransformByGlyphMap
+
+# Acrescentar símbolos Unicode que aparecem em legendas/textos de keys44.js ao parser ESPECIAIS do v41
+_NOVOS_ESP = [
+    ("x̄", r"\bar{x}"), ("ȳ", r"\bar{y}"), ("z̄", r"\bar{z}"),
+    ("Iₙ", r"I_n"), ("secⁿ", r"\sec^n"), ("∫", r"\int"), ("α", r"\alpha"), ("Δ", r"\Delta"), ("ρ", r"\rho"), ("√", r"\surd"),
+    ("γ", r"\gamma"), ("≤", r"\le"), ("→", r"\to"),
+]
+for _par in _NOVOS_ESP:
+    if _par not in _v41.ESPECIAIS:
+        _v41.ESPECIAIS.insert(0, _par)
+_v41._RX = re.compile("(" + "|".join(re.escape(a) for a, _ in _v41.ESPECIAIS) + ")")
+
+# ── paleta e macros desta unidade (sb44.html + keys44.js) ──────────────────────────────────────────────────
+RO, FI, TH, SOMB, LI, EZ, UU = "#FF9440", "#B48CFF", "#2EE6A6", "#FFC08A", "#C6F26B", "#5AA2FF", "#E08A3C"
+TRC = "#6C7698"
+LIL, HEL = "#B9A6FF", "#FFB36B"
+
+TEX31.add_to_preamble(
+    r"\definecolor{ro}{HTML}{FF9440}\definecolor{fi}{HTML}{B48CFF}\definecolor{th}{HTML}{2EE6A6}\definecolor{so}{HTML}{FFC08A}"
+    r"\definecolor{lim}{HTML}{C6F26B}\definecolor{ez}{HTML}{5AA2FF}\definecolor{uu}{HTML}{E08A3C}\definecolor{lil}{HTML}{B9A6FF}"
+    r"\def\Z{\textcolor{ez}{z}}\def\dZ{\textcolor{ez}{dz}}\def\DZ{\textcolor{ez}{\Delta z}}\def\Dz{\textcolor{ez}{\Delta z}}"
+    r"\def\S{\textcolor{so}{s}}\def\Rs{\textcolor{so}{s}}\def\dS{\textcolor{so}{ds}}\def\DS{\textcolor{so}{\Delta s}}"
+    r"\def\T{\textcolor{th}{\theta}}\def\dT{\textcolor{th}{d\theta}}\def\DT{\textcolor{th}{\Delta\theta}}"
+    r"\def\R{\textcolor{ro}{r}}\def\dR{\textcolor{ro}{dr}}\def\DR{\textcolor{ro}{\Delta r}}"
+    r"\def\F{\textcolor{fi}{\varphi}}\def\dF{\textcolor{fi}{d\varphi}}\def\DF{\textcolor{fi}{\Delta\varphi}}"
+    r"\def\J{\textcolor{lim}{r^2\operatorname{sen}\varphi}}\def\Jr{\textcolor{lim}{r^2\operatorname{sen}\varphi}}"
+    r"\def\Js{\textcolor{lim}{s}}\def\Li#1{\textcolor{lim}{#1}}\def\de{\textcolor{ci}{\rho}}\def\dV{dV}"
+    r"\def\Ro#1{\textcolor{ro}{#1}}\def\Fi#1{\textcolor{fi}{#1}}\def\Th#1{\textcolor{th}{#1}}\def\So#1{\textcolor{so}{#1}}"
+    r"\def\Ez#1{\textcolor{ez}{#1}}\def\Uu#1{\textcolor{uu}{#1}}"
+    r"\def\uu{\textcolor{uu}{u}}\def\du{\textcolor{uu}{du}}"
+    r"\def\ww{\textcolor{uu}{w}}\def\dw{\textcolor{uu}{dw}}"
+    r"\def\Tt{\textcolor{uu}{t}}\def\dTt{\textcolor{uu}{dt}}\def\tg{\operatorname{tg}}"
+    r"\def\xb{\bar{\textcolor{ca}{x}}}\def\yb{\bar{\textcolor{cm}{y}}}\def\zb{\bar{\textcolor{ez}{z}}}"
+    r"\def\dm{\textcolor{ci}{dm}}\def\Sg{\textcolor{so}{s_G}}"
+    r"\def\Mxy{M_{\textcolor{ca}{x}\textcolor{cm}{y}}}\def\Myz{M_{\textcolor{cm}{y}\textcolor{ez}{z}}}\def\Mxz{M_{\textcolor{ca}{x}\textcolor{ez}{z}}}"
+    r"\def\dd{\textcolor{lil}{d}}\def\al{\textcolor{fi}{\alpha}}\def\Icm{I_{\mathrm{cm}}}"
+    # yt_0045 (keys45.js): γ laranja, γ′ e deslocamentos violeta, F verde-menta, Δt cor de t, lima, Ω
+    r"\definecolor{hl}{HTML}{FFB36B}\definecolor{vi}{HTML}{B48CFF}\definecolor{cp}{HTML}{2EE6A0}"
+    r"\def\g{\textcolor{hl}{\gamma}}\def\gp{\textcolor{vi}{\gamma'}}\def\Fv{\textcolor{cp}{\vec F}}"
+    r"\def\dg{\textcolor{vi}{d\gamma}}\def\Dg{\textcolor{vi}{\Delta\gamma}}\def\DTt{\textcolor{uu}{\Delta t}}"
+    r"\def\Lim#1{\textcolor{lim}{#1}}\def\Om{\Omega}\def\Hl#1{\textcolor{hl}{#1}}\def\Cp#1{\textcolor{cp}{#1}}\def\Vi#1{\textcolor{vi}{#1}}"
+)
+import kit as _kit_t
+_kit_t.TITULO = "CÁLCULO III · INTEGRAIS DE LINHA"          # handoff §3.2 item 5 (o kit.py não é editado)
+CAMPO, VIO, TT = "#2EE6A0", "#B48CFF", "#E08A3C"
+
+from pathlib import Path as _Path
+AQUI_RENDERS = _Path(__file__).resolve().parent / "renders"
+
+# ── câmeras do c3d44.html: ver(pos, alvo, cx, cy) com DF = 1,4 ───────────────────────────────────────────────
+CAMLATA_V = ((9.2, -6.2, 5.8), (0, 0, .45), 600, 560, 1.4)
+CAMCUBO_V = ((9.2, -6.2, 5.8), (.5, .5, .45), 600, 560, 1.4)
+CAMTETRA_V = ((8.2, 7.4, 5.6), (.34, .34, .28), 600, 560, 1.4)
+VER = {"helice": CAMLATA_V, "heliceCampo": CAMLATA_V, "heliceLeitura": CAMLATA_V}
+
+# deslocamentos de tela do keys44.js / sb44.html (a imagem 1920×1080 do c3d44 é escalada por esc e deslocada por dx, dy) + recorte G3 (clip)
+OL = {"dx": -100.0, "dy": 80.0, "esc": 0.94, "clip": 975}
+OC = {"dx": -120.0, "dy": 150.0, "esc": 0.72, "clip": 720}
+OT = {"dx": -70.0, "dy": 130.0, "esc": 0.84, "clip": 975}
+OM = {"dx": -110.0, "dy": 175.0, "esc": 0.74, "clip": 820}
+
+
+def cam45(cena, o):
+    p, t, cx, cy, DF = VER[cena]
+    p, t = np.array(p, float), np.array(t, float)
+    pos = t + (p - t) * DF
+    esc = o["esc"]
+    fov = 2 * math.degrees(math.atan(math.tan(math.radians(11.0)) / esc))
+    return cam_dict(pos, t, (0, 0, 1), o["dx"] + esc * cx, o["dy"] + esc * cy, fov)
+
+
+def gira_cam(c, graus):
+    if abs(graus) < 1e-9:
+        return c
+    a = math.radians(graus)
+    t = np.array(c["tgt"])
+    d = np.array(c["pos"]) - t
+    R = np.array([[math.cos(a), -math.sin(a), 0], [math.sin(a), math.cos(a), 0], [0, 0, 1]])
+    c2 = dict(c)
+    c2["pos"] = [float(x) for x in t + R @ d]
+    return c2
+
+
+def _cyl(s, t, z):
+    return np.array([s * math.cos(t), s * math.sin(t), z], float)
+
+
+def _sph(r, f, t):
+    return np.array([r * math.sin(f) * math.cos(t), r * math.sin(f) * math.sin(t), r * math.cos(f)], float)
+
+
+def _pontos45():
+    """Os mesmos pontos do c45.js (proj) = os do c3d45.html, no mundo three. Lata do canal: raio 1, altura 1, SC = 2,2."""
+    SC = 2.2
+    Wp = lambda X, Y, Z: SC * np.array([X, Y, Z], float)
+    WC = lambda s, t, z: Wp(*_cyl(s, t, z))
+    HX = lambda t: WC(1.012, t, t / (4 * PI))
+    Fh = lambda t: np.array([-math.sin(t), math.cos(t), -1.0])
+    P = {}
+    tc = PI * 1.80
+    P["helice"] = {"ez": Wp(0, 0, 1.45 + .12), "conta": HX(tc), "F": HX(tc) + SC * .42 * Fh(tc), "hel": HX(PI * 3.1)}
+    hc = {"ez": Wp(0, 0, 1.45 + .12), "t0": HX(0), "t2pi": HX(2 * PI), "hel": HX(PI * 1.6)}
+    for i, m in enumerate((.80, 1.08, 1.36, 1.64, 1.92)):
+        hc[f"F{i}"] = HX(m * PI) + SC * .24 * Fh(m * PI)
+    P["heliceCampo"] = dict(hc)
+    P["heliceLeitura"] = {**hc, "sub": WC(1.18, 0, .25), "tampa": WC(1.0, -.62 * PI, 0)}
+    for c in P:
+        P[c]["eixoTopo"] = P[c]["ez"]
+        P[c]["eixoBase"] = np.array([0.0, 0.0, 0.0])
+    return {c: {k: np.array(v, float) for k, v in d.items()} for c, d in P.items()}
+
+
+P45 = _pontos45()
+P43 = P45
+
+
+class Palco45(Palco3D):
+    """Palco3D do kit (estado por quadro → pedidos3d → PNG do c44.js); câmera fixa por bloco; `clip` (px de 1080p) = limite G3 do PNG."""
+
+    def __init__(self, sc, cena, o, obst=(), **ini):
+        self.o = o
+        super().__init__(sc, cena, cam45(cena, o), clip=int(o["clip"]), **ini)
+        if not self.fundo.dir.exists():
+            alt = DIR3D / "q3d" / f"{sc.lote}_960x540" / cena
+            if alt.exists():
+                self.fundo.dir = alt
+                self.fundo.f = -1
+                self.fundo._quadro()
+        self.obst = list(obst)
+        sc._palcos.append(self)
+
+    def pt(self, nome):
+        return proj3d(self.cam(), P45[self.cena][nome])
+
+    def ptm(self, nome, dx=0.0, dy=0.0):
+        x, y = self.pt(nome)
+        return PX(x + dx, y + dy)
+
+
+Palco43 = Palco45
+# ── texto, peças e elementos visuais ─────────────────────────────────────────────────────────────────────────
+GM_LOG = []
+_NG = {}
+
+
+def ng(tex):
+    if tex not in _NG:
+        _NG[tex] = len(MathTex(r"\textstyle " + tex.replace(r"\sum", r"\sum\nolimits"), font_size=30, tex_template=TEX31)[0]) if tex.strip() else 0
+    return _NG[tex]
+
+
+def L(pecas, x, y, size=40, al="l", caneta=True):
+    pecas = [p if isinstance(p, tuple) else (None, p) for p in pecas]
+    m = TC(" ".join(t for _, t in pecas), x, y, size, al, caneta)
+    ix, k = {}, 0
+    for ch, t in pecas:
+        n = ng(t)
+        if ch is not None:
+            ix.setdefault(ch, []).extend(range(k, k + n))
+        k += n
+    if k != len(m[0]):
+        print(f"[pecas] AVISO {k} glifos nas peças × {len(m[0])} na fórmula: {m._tex!r}")
+    m._ix = ix
+    return m
+
+
+def sel(m, a):
+    if isinstance(a, str):
+        return list(m._ix[a])
+    out = []
+    for x in a:
+        out += [x] if isinstance(x, (int, np.integer)) else list(m._ix[x])
+    return out
+
+
+def gl(m, *chaves):
+    out = []
+    for c in chaves:
+        out += sel(m, c) if not isinstance(c, (int, np.integer)) else [c]
+    return VGroup(*[m[0][i] for i in out])
+
+
+def mixl(partes, X, Y, S=36):
+    g, cx, ps = VGroup(), X, []
+    for p in partes:
+        if p[0] == "g":                      # yt_0044: ajuste de espaço (px) entre peças, ex.: ρ(CENTRO) sem os 14 px de cada lado
+            cx += p[1]
+            continue
+        if p[0] == "m":
+            m = TC(p[1], cx, Y, S, "l")
+        elif p[0] == "L":
+            m = L(p[1], cx, Y, S, "l")
+        else:
+            m = T(p[1], cx, Y + S * .27, max(26, round(S * .78)), "left", p[2] if len(p) > 2 else BR)
+        cx = pxof(m.get_right())[0] + 14
+        g.add(m)
+        ps.append(m)
+    g.p = ps
+    g._tex = "mixl: " + " | ".join(str(p[1])[:24] for p in partes)
+    return g
+
+
+def moldura(X0, Y0, w, h, cor=GEO, alpha=0.5, wpx=2, raio=10, fill=None, fop=0.0):
+    r = RoundedRectangle(width=w / 120, height=h / 120, corner_radius=raio / 120).move_to(PX(X0 + w / 2, Y0 + h / 2))
+    r.set_fill(fill or BG_, fop).set_stroke(cor, W(wpx), alpha)
+    r._painel = (X0, Y0, X0 + w, Y0 + h)
+    return sem_ctn(r).set_z_index(2 if not fop else -4)
+
+
+def cartao(X0, Y0, w, h, alpha=0.45, fop=0.92):
+    """cartao(X0, Y0, w, h) de keys44.js: fundo #131030 a 92%, borda GEO a 45%, raio 14."""
+    return moldura(X0, Y0, w, h, GEO, alpha, 2, 14, BG_, fop)
+
+
+def caixa_men(f, pad=14, cor=MEN):
+    """caixaMen(el, pad=14) de keys44.js: moldura menta (wpx=3, raio=12) ao redor da fórmula f."""
+    x0, y0 = pxof(f.get_corner(UL))
+    x1, y1 = pxof(f.get_corner(DR))
+    return moldura(x0 - pad, y0 - pad * .7, (x1 - x0) + 2 * pad, (y1 - y0) + 1.4 * pad, cor, 1.0, 3, 12)
+
+
+def cm_mark(X, Y, r=17):
+    """cmMark(X, Y, r=17) de keys44.js: ⊕ do centro de massa (fundo #16123A, anel ciano→magenta, cruz branca)."""
+    fundo = Circle(radius=r / 120).move_to(PX(X, Y)).set_fill("#16123A", 1.0).set_stroke(width=0)
+    anel1 = Arc(radius=r / 120, start_angle=PI / 4, angle=PI, arc_center=PX(X, Y)).set_stroke(CI, W(5)).set_fill(opacity=0)
+    anel2 = Arc(radius=r / 120, start_angle=-3 * PI / 4, angle=PI, arc_center=PX(X, Y)).set_stroke(E2, W(5)).set_fill(opacity=0)
+    lh = Line(PX(X - r + 5, Y), PX(X + r - 5, Y)).set_stroke(BR, W(2.5))
+    lv = Line(PX(X, Y - r + 5), PX(X, Y + r - 5)).set_stroke(BR, W(2.5))
+    g = sem_ctn(VGroup(fundo, anel1, anel2, lh, lv)).set_z_index(20)
+    return g
+
+
+def traco_h(X0, X1, Y, cor=GEO):
+    """tracoH(X0, X1, Y, cor=GEO) de keys44.js: linha tracejada horizontal."""
+    return lin_px([(X0, Y), (X1, Y)], cor, 2.5, alpha=1.0, dash=(9, 7), z=15)
+
+
+def chip(tex, X, Y, size=30, cor=GEO):
+    f = TC(tex, X + 16, Y, size, "l")
+    x0, y0 = pxof(f.get_corner(UL))
+    x1, y1 = pxof(f.get_corner(DR))
+    mol = moldura(X, y0 - 10, (x1 - x0) + 32, (y1 - y0) + 20, cor, .75, 2, 10)
+    g = VGroup(mol, f)
+    g.eh_chip = True
+    return g, f, mol
+
+
+def chipm(partes, X, Y, size=30, cor=GEO):
+    """Chip misto: texto Space Grotesk + MathTex alinhados pela linha de base (mixl), com moldura. Retorna (grupo, miolo, moldura)."""
+    g = mixl(partes, X + 16, Y, size)
+    x0, y0 = pxof(g.get_corner(UL))
+    x1, y1 = pxof(g.get_corner(DR))
+    mol = moldura(X, y0 - 10, (x1 - x0) + 32, (y1 - y0) + 20, cor, .75, 2, 10)
+    c = VGroup(mol, g)
+    c.eh_chip = True
+    return c, g, mol
+
+
+def selo(s, X, Y, cor=GEO, size=26):
+    t = leg(s, X + 14, Y + 2, cor, "left", size)
+    w = t.width * 120
+    mol = moldura(X, Y - size - 6, w + 28, size + 22, cor, 1.0, 2, 8)
+    return mol, t
+
+
+def legq(cor, s, x, y, size=30):
+    """legq do sb44: quadradinho de lado 0,6·size com a base 0,02·size acima da linha de base do texto; texto em x + 0,9·size."""
+    sq = ret_px(x, y - size * .62, x + size * .6, y - size * .02, fill=cor, fop=1.0, stroke=None, z=6)
+    t = leg(s, x + size * .9, y, cor, "left", size)
+    return sq, t
+
+
+def painel2d44(X0, Y0, w, h, passo=30):
+    fundo = moldura(X0, Y0, w, h, GEO, .45, 2, 14, "#16123A", 1.0)
+    fundo.set_z_index(-3)
+    gr = VGroup()
+    for X in range(int(X0) + passo, int(X0 + w), passo):
+        gr.add(lin_px([(X, Y0 + 3), (X, Y0 + h - 3)], "#2B2558", 1, z=-2))
+    for Y in range(int(Y0) + passo, int(Y0 + h), passo):
+        gr.add(lin_px([(X0 + 3, Y), (X0 + w - 3, Y)], "#2B2558", 1, z=-2))
+    g = VGroup(fundo, gr)
+    g._painel = (X0, Y0, X0 + w, Y0 + h)
+    return g
+
+
+class Vista2D:
+    def __init__(self, cx, cy, u):
+        self.cx, self.cy, self.u = cx, cy, u
+
+    def P(self, x, y):
+        return (self.cx + self.u * x, self.cy - self.u * y)
+
+    def seta(self, a, b, cor, wpx=4, head=16):
+        return seta_px(self.P(*a), self.P(*b), cor, wpx, head, z=6)
+
+    def linha(self, pts, cor, wpx=4, dash=None):
+        return lin_px([self.P(*p) for p in pts], cor, wpx, dash=dash, z=6)
+
+    def ponto(self, p, cor, r=9):
+        return ponto_px(*self.P(*p), cor, r, z=9)
+
+    def arco(self, R, a0, a1, cor, wpx=4, n=40):
+        pts = [(self.cx + R * math.cos(a0 + (a1 - a0) * k / n), self.cy - R * math.sin(a0 + (a1 - a0) * k / n)) for k in range(n + 1)]
+        return lin_px(pts, cor, wpx, z=6)
+
+
+def pronto(m):
+    for x in m.get_family():
+        if getattr(x, "_caneta", False):
+            x._esc = True
+    return m
+
+
+class _Nada(Animation):
+    def interpolate_mobject(self, alpha):
+        pass
+
+
+# ── cena-base do vídeo ───────────────────────────────────────────────────────────────────────────────────────
+QA_PASSO = 3
+MARGEM = 48
+
+_ALIAS_GAT = {
+    "um plano deitado na altura z barra": "plano deitado na altura z barra",
+    "os dois pedaços sem raiz": "dois pedaços sem raiz",
+    "a volta inteira em téta": "volta inteira em téta",
+}
+
+
+class B45(B34):
+    """Base desta unidade: papel de borda a borda desde o quadro 0 (exceto CTA), palcos 3D, caneta, voos, glyph maps e QA."""
+    ANTES = None
+
+    def setup_base(self):
+        super().setup_base()
+        self._palcos = []
+        self._rots3 = []
+        self._dentro = []
+        self._vazio0 = None
+        self._parado = []
+        self._col = {}
+        self._ultimo_qa = -999
+        self._ult_seg = -1
+        self._r5v = []
+        self._t_anim = 0.0
+        # G1: papel de quadrados de 60 px em 1080p em toda a tela, inclusive sob o 3D (exceto CTA)
+        self.papel_on(rt=0)
+        if STILL is not None:
+            _orig_render = self.renderer.render
+            self.renderer.render = lambda *a, **k: _orig_render(*a, **k) if self.nq / FPS >= STILL - 0.2 else None
+
+    def remove(self, *ms):
+        fam = set()
+        for m in ms:
+            fam |= {id(x) for x in m.get_family()}
+        super().remove(*ms)
+        extra = [x for x in self.mobjects if id(x) in fam]
+        if extra:
+            super().remove(*extra)
+        return self
+
+    def _k_frase(self, aid, frase):
+        import re as _r
+        fala = ANC.get(aid, {}).get("fala", "").split()
+        fr = _ALIAS_GAT.get(frase, frase)
+        alvo = _r.findall(r"\w+", fr.lower())
+        ks = [i for i in range(len(fala)) if fala[i:i + len(alvo)] == alvo]
+        if not ks:
+            return None
+        agora = (self.nq - self._q0) / FPS
+        tw = ANC[aid]["t"]
+        return next((k for k in ks if tw[k] - LEAD >= agora - 0.6), ks[-1])
+
+    def gat(self, frase):
+        Base.gat(self, frase)
+
+    # canto ------------------------------------------------------------------------------------------------
+    def titulo(self, s, rt=0.4):
+        novo = self._canto(txt(s, 21.6, color="#F5F7FF", bold=True, up=False), CANTO_Y2, topo_min=self._y1_fim_px() + 10)
+        novo._canto2 = s
+        if rt == 0:                                   # R8: canto inteiro desde o quadro 0, sem animação de escrita
+            self.add(novo)
+        elif self.h2 is not None:
+            self.play(FadeOut(self.h2), FadeIn(novo), run_time=rt)
+            self.remove(self.h2)
+        else:
+            self.play(FadeIn(novo), run_time=rt)
+        self.h2 = novo
+        print(f"[canto] {self.lote} {self._aid} {self.t:.2f} {s}")
+
+    # papel -----------------------------------------------------------------------------------------------
+    def papel_on(self, v=None, passo=None, rt=0.5, junto=()):
+        if self.grade is not None:
+            return
+        self.grade = (papel(v) if v is not None and passo is None else papel(v, passo=passo or 0.5)).set_z_index(-10)
+        if rt > 0:
+            self.play(FadeIn(self.grade), *junto, run_time=rt)
+        else:
+            self.add(self.grade)
+
+    def papel_off(self, rt=0.5, junto=()):
+        self.grade_off(rt=rt, junto=junto)
+
+    # 3D --------------------------------------------------------------------------------------------------
+    def palco(self, cena, o, obst=(), **ini):
+        return Palco45(self, cena, o, obst=obst, **{k: float(v) for k, v in ini.items()})
+
+    def rot3(self, pal, nome, tex, dx=0.0, dy=0.0, size=34, ancora="c", placa=True, txtp=False, cor=None):
+        """Rótulo preso a um ponto do 3D (Manim), com placa mínima. Em keys44.js: rotulo3 tem al='l' por padrão, aqui ancora='l'|'c'|'r'."""
+        if txtp:
+            f = T(tex, 0, 0, size, "left", cor or BR, bold=False)
+        else:
+            f = TC(tex, 960, 540, size, ancora)
+        g = VGroup(placa_min(f), f) if placa else VGroup(f)
+        g.f = f
+        g._txt = tex
+        g._rot3 = True
+        pal.prende(g, nome, dx, dy, ancora)
+        self._rots3.append(g)
+        return g
+
+    def pena(self, *ms, atraso=0.0, passo=None, extra=(), rt=None, lag=0.0):
+        super().pena(*ms, atraso=atraso, passo=passo, extra=extra, rt=rt, lag=lag)
+        for r in getattr(self, "_rots3", ()):
+            if r.f in self.mobjects or r[0] in self.mobjects:
+                self.remove(r.f, r[0])
+                pronto(r)
+                if r not in self.mobjects:
+                    self.add(r)
+
+    # escrita ---------------------------------------------------------------------------------------------
+    def marca(self, alvo, agora=False):
+        if not agora and self._aid is not None:
+            _a0 = self._aid
+            self._fecha(antes=0.75)
+            self._aid = _a0
+        t = self.nq / FPS
+        print(f"[marca] {alvo} {t:.3f}")
+
+    def degrau(self, conta, desc):
+        print(f"[degrau] {self.lote} {self._aid} {(self.nq - self._q0) / FPS:7.2f} {self.t:8.2f} {conta} :: {desc}")
+
+    def origem(self, o, de):
+        print(f"[origem] {self.lote} {self._aid} {self.t:.2f} {o} <- {de}")
+
+    def sub(self, *gs, rt=1.0, cor=BR):
+        ss = []
+        for g_ in gs:
+            x0, x1 = pxof(g_.get_left())[0], pxof(g_.get_right())[0]
+            y = pxof(g_.get_bottom())[1] + 7
+            ss.append(sublinha_px(x0 - 2, x1 + 2, y, cor, 2))
+        self.play(*[Create(s) for s in ss], run_time=0.25)
+        if rt > 0:
+            self.wait(rt)
+        self.play(*[FadeOut(s) for s in ss], run_time=0.25)
+        self.remove(*ss)
+
+    def voos(self, pares, rt=1.0, arco=-0.6, extra=(), nota=""):
+        an = []
+        for src, alvo_m in pares:
+            ja_escrita(alvo_m)
+            for x in alvo_m.get_family():
+                if getattr(x, "_caneta", False):
+                    x._esc = True
+                x._voando = True
+            src_c = src.copy()
+            for x in src_c.get_family():
+                x._voando = True
+                if isinstance(x, VMobject) and x.get_fill_opacity() > .1:
+                    x.set_stroke(width=0, opacity=0)
+            an.append(TransformFromCopy(src_c, alvo_m, path_arc=arco, run_time=rt))
+        self.play(*an, *extra, run_time=rt)
+        for a in an:
+            self.remove(a.mobject)
+        for _, b in pares:
+            for x in b.get_family():
+                x._voando = False
+            self.add(b)
+            junta(self, b)
+            print(f"[voo] {self.lote} {self._aid} {(self.nq - self._q0) / FPS:6.2f}s {self.t:8.2f} {nota} {str(getattr(b, '_tex', getattr(b, '_txt', '')))[:80]!r}")
+
+    def escreve(self, F, voos=(), rt_voo=1.0, extra=(), passo=None, arco=-0.6, atraso=0.0, nota=""):
+        p = passo or CANETA_P
+        gls = list(F[0])
+        anims, voados = [], set()
+        for src, idx in voos:
+            ii = sel(F, idx) if not isinstance(idx, list) or (idx and not isinstance(idx[0], (int, np.integer))) else idx
+            alvo = VGroup(*[gls[i] for i in ii])
+            src_c = src.copy()
+            for x in src_c.get_family():
+                x._voando = True
+                if isinstance(x, VMobject) and x.get_fill_opacity() > .1:
+                    x.set_stroke(width=0, opacity=0)
+            for x in alvo.get_family():
+                x._voando = True
+            anims.append(TransformFromCopy(src_c, alvo, path_arc=arco, run_time=rt_voo))
+            voados |= set(ii)
+            print(f"[voo] {self.lote} {self._aid} {(self.nq - self._q0) / FPS:6.2f}s {self.t:8.2f} {nota} {F._tex[:60]!r} glifos {ii[:3]}…")
+        resto = VGroup(*[g_ for i, g_ in enumerate(gls) if i not in voados])
+        if len(resto):
+            resto._tex = F._tex + " (resto)"
+            anims.append(caneta(resto, atraso=atraso, ritmo=p / 0.30))
+        tot = max([rt_voo if voos else 0.0] + [a.tot for a in anims if isinstance(a, _Caneta)])
+        F._em_caneta = True
+        self.play(*anims, *extra, run_time=tot)
+        for a in anims:
+            if isinstance(a, TransformFromCopy):
+                self.remove(a.mobject)
+        for x in F.get_family():
+            x._voando = False
+        self.remove(*[a.mobject for a in anims if isinstance(a, _Caneta)])
+        F._em_caneta, F._esc = False, True
+        self.add(F)
+        print(f"[pena] {self.lote} {self._aid} {(self.nq - self._q0) / FPS:6.2f}s {F._tex[:90]!r} dir={pxof(F.get_right())[0]:.0f}")
+        return F
+
+    def gm(self, n, A, B, pares, voos=(), rt=1.0, copia=False, nota="", extra=(), atraso_caneta=0.10):
+        ent = [(sel(A, a), sel(B, b)) for a, b in pares]
+        alvo = set()
+        for _, b in ent:
+            alvo |= set(b)
+        repetidos = [i for _, b in ent for i in b]
+        if len(repetidos) != len(set(repetidos)):
+            print(f"[gm] AVISO glifo de B mapeado duas vezes no mapa {n}")
+        voados = set()
+        for _, b in voos:
+            voados |= set(sel(B, b))
+        novos = [i for i in range(len(B[0])) if i not in alvo]
+        orig = {i: B[0][i].copy() for i in novos}
+        for i in novos:
+            B[0][i].set_fill(opacity=0).set_stroke(width=0, opacity=0)
+        B._esc = True
+        snapA = A.copy() if copia else None
+        ent_n = ent + ([(_Nada, novos)] if novos else [])
+        an = TransformByGlyphMap(A, B, *ent_n, from_copy=copia, auto_fade=True, run_time=rt)
+        GM_LOG.append((self.lote, self._aid, round(self.t, 2), n, A._tex, B._tex))
+        print(f"[gm] {self.lote} {self._aid} {(self.nq - self._q0) / FPS:6.2f}s {self.t:8.2f} mapa={n} pares={len(ent)} novos={len(novos)} {nota} :: "
+              f"{A._tex[:70]!r} -> {B._tex[:80]!r}")
+        for x in B.get_family():
+            x._voando = True
+        self.play(an, *extra, run_time=rt)
+        if not copia:
+            self.remove(A)
+        self._limpa_soltos(A, B)
+        self.add(B)
+        for x in B.get_family():
+            x._voando = False
+        if novos:
+            for i in novos:
+                B[0][i].become(orig[i])
+                B[0][i].set_fill(opacity=0).set_stroke(width=0, opacity=0)
+            anims = []
+            for src, b in voos:
+                g_ = VGroup(*[B[0][i] for i in sel(B, b)])
+                for i in sel(B, b):
+                    B[0][i].become(orig[i])
+                src_c = src.copy()
+                for x in src_c.get_family():
+                    x._voando = True
+                    if isinstance(x, VMobject) and x.get_fill_opacity() > .1:
+                        x.set_stroke(width=0, opacity=0)
+                anims.append(TransformFromCopy(src_c, g_, path_arc=-0.6, run_time=0.8))
+            resto = [i for i in novos if i not in voados]
+            if resto:
+                for i in resto:
+                    B[0][i].become(orig[i])
+                g_ = VGroup(*[B[0][i] for i in resto])
+                g_._tex = B._tex + " (glifos novos)"
+                g_._caneta, g_._esc, g_._em_caneta, g_._txt = True, False, False, None
+                anims.append(caneta(g_, atraso=atraso_caneta if voos else 0.0, ritmo=CANETA_P / 0.30))
+            tot = max([0.8 if voos else 0.0] + [a.tot for a in anims if isinstance(a, _Caneta)])
+            self.play(*anims, run_time=tot)
+            for a in anims:
+                if isinstance(a, TransformFromCopy):
+                    self.remove(a.mobject)
+                if isinstance(a, _Caneta):
+                    self.remove(a.mobject)
+            self._limpa_soltos(A, B)
+            self.add(B)
+        if copia and snapA is not None:
+            A.become(snapA)
+            if not any(A in m.get_family() for m in self.mobjects):
+                self.add(A)
+        return B
+
+    def _limpa_soltos(self, A, B):
+        gs = {id(x) for x in A[0].submobjects} | {id(x) for x in B[0].submobjects}
+        for m in list(self.mobjects):
+            if m is A or m is B or getattr(m, "_tex", None) is not None or not isinstance(m, VMobject):
+                continue
+            fam = [x for x in m.get_family() if x is not m and len(x.points)]
+            if (id(m) in gs) or (fam and all(id(x) in gs or any(id(y) in gs for y in x.get_family()) for x in fam)):
+                self.remove(m)
+
+    def chip_pena(self, cg, cf, cm_, **kw):
+        self.pena(cf, extra=[Create(cm_)], **kw)
+        self.remove(cf, cm_)
+        pronto(cg)
+        self.add(cg)
+        return cg
+
+    def chip_voo(self, cg, cf, mol, src, extra=(), rt=1.0, nota=""):
+        """Chip que voa da linha `src` (TransformFromCopy) e ganha a moldura (Create); o resultado que continua sendo usado."""
+        self.voos([(src, cf)], rt=rt, extra=[Create(mol), *extra], nota=nota)
+        self.remove(cf, mol)
+        pronto(cg)
+        self.add(cg)
+        return cg
+
+    def chips_voo(self, itens, extra=(), rt=1.0, nota=""):
+        """Vários chips voando juntos (cada item: (grupo, miolo, moldura, origem)); as molduras nascem no mesmo play."""
+        self.voos([(src, cf) for _, cf, _, src in itens], rt=rt, extra=[Create(mol) for _, _, mol, _ in itens] + list(extra), nota=nota)
+        for cg, cf, mol, _ in itens:
+            self.remove(cf, mol)
+            pronto(cg)
+            self.add(cg)
+
+    def velhos(self, *ms):
+        vivos = []
+        for m in ms:
+            if m is None:
+                continue
+            if any(x in self.mobjects for x in m.get_family()):
+                vivos.append(m)
+        out = [m for m in vivos if not any(m is not o and m in o.get_family() for o in vivos)]
+        return VGroup(*out)
+
+    def sobe_sai(self, *ms, dy=0.5, rt=0.5, extra=()):
+        g = self.velhos(*ms)
+        if len(g):
+            self.play(g.animate.shift(UP * dy).set_opacity(0), *extra, run_time=rt)
+            for m in g:
+                m.clear_updaters()
+            self.remove(g)
+        elif extra:
+            self.play(*extra, run_time=rt)
+
+    # coluna ----------------------------------------------------------------------------------------------
+    def col(self, nome, *ms, chips=0):
+        c = self._col.setdefault(nome, {"linhas": [], "chips": 0, "max": 0, "base": 0})
+        for m in ms:
+            if m not in c["linhas"]:
+                c["linhas"].append(m)
+        c["chips"] = max(c["chips"], chips)
+        vivos = [m for m in c["linhas"] if any(y in self.mobjects for y in m.get_family()) or any(m in x.get_family() for x in self.mobjects)]
+        c["linhas"] = vivos
+        vivos = [m for m in vivos if not getattr(m, "eh_chip", False)]
+        base = max([pxof(m.get_bottom())[1] for m in vivos] or [0])
+        c["max"] = max(c["max"], len(vivos))
+        print(f"[coluna] {self.lote} {self._aid} {self.t:.2f} {nome} linhas={len(vivos)} chips={c['chips']} base={base:.0f} folga={1080 - base:.0f}")
+
+    def col_zera(self, nome):
+        if nome in self._col:
+            self._col[nome]["linhas"] = []
+
+    def dentro(self, painel_rect, *itens):
+        for it in itens:
+            self._dentro.append((it, painel_rect))
+
+    # QA por quadro ---------------------------------------------------------------------------------------
+    def update_to_time(self, t):
+        super().update_to_time(t)
+        if not getattr(self, "_em_play", False) and not getattr(self, "_em_wait", False):
+            return
+        f = int(round(self.clk.get_value() * FPS))
+        if f - self._ultimo_qa >= QA_PASSO:
+            self._ultimo_qa = f
+            self._qa_quadro(f)
+
+    def play(self, *anims, run_time=None, **kw):
+        self._em_wait = False
+        super().play(*anims, run_time=run_time, **kw)
+
+    def wait(self, duration=1.0, *a, **kw):
+        t0 = self.t
+        self._em_wait = True
+        _r0 = self.renderer.render
+        if not PEDIDOS3D and STILL is None and os.environ.get("SO_AUDITORIA") != "1":
+            _feito = [False]
+
+            def _fast_wait_render(sc, tm, mov=None):
+                if not _feito[0]:
+                    _r0(sc, tm, mov)
+                    _feito[0] = True
+                else:
+                    self.renderer.add_frame(self.renderer.get_frame())
+
+            self.renderer.render = _fast_wait_render
+        try:
+            super().wait(duration, *a, **kw)
+        finally:
+            self.renderer.render = _r0
+            self._em_wait = False
+        if duration >= 0.5:
+            print(f"[espera] {self.lote} {self._aid} {t0:.2f} {duration:.2f}")
+
+    def _caixas(self):
+        cx = []
+        fix = self.fixos()
+
+        def caixa(x):
+            vis = [g_ for g_ in x.family_members_with_points() if isinstance(g_, VMobject) and g_.get_fill_opacity() > 0.3
+                   and not isinstance(g_, RoundedRectangle)]
+            if not vis:
+                return
+            pts = np.concatenate([g_.points for g_ in vis])
+            x0, x1 = pts[:, 0].min() * 120 + 960, pts[:, 0].max() * 120 + 960
+            y0, y1 = 540 - pts[:, 1].max() * 120, 540 - pts[:, 1].min() * 120
+            voa = any(getattr(g_, "_voando", False) for g_ in x.get_family())
+            cx.append((getattr(x, "_txt", None) or "ponto", (x0, y0, x1, y1), getattr(x, "_obst", False), x, voa))
+
+        def desce(x):
+            if getattr(x, "_txt", None) is not None or getattr(x, "_obst", False):
+                caixa(x)
+                return
+            for y in x.submobjects:
+                desce(y)
+
+        for m in self.mobjects:
+            if m in fix or isinstance(m, (Fundo3D, ValueTracker)):
+                continue
+            desce(m)
+        for pal in self._palcos:
+            if pal.fundo in self.mobjects and pal.fundo.op.get_value() > 0.5:
+                for nome in pal.obst:
+                    x, y = pal.pt(nome)
+                    cx.append((f"3d:{pal.cena}.{nome}", (x - 9, y - 9, x + 9, y + 9), True, pal, False))
+        return cx
+
+    def _still(self):
+        if STILL is not None and self.nq / FPS >= STILL:
+            self._dump_caixas()
+        super()._still()
+
+    def _dump_caixas(self):
+        """QA v2 (texto × 3D, plaquinha × aresta, órfãos, painel vazio): caixas em px de 1080p no instante do still."""
+        import json as _j
+        out = {"t": STILL, "textos": [], "placas": [], "palcos": [], "rots3": [], "paineis": []}
+        for nome, box, obst, x, voa in self._caixas():
+            if str(nome).startswith("3d:") or voa:
+                continue
+            out["textos"].append({"nome": str(nome)[:60], "box": [round(float(b), 1) for b in box]})
+        for r in self._rots3:
+            vis = any(y in self.mobjects for y in r.get_family()) or any(r in m.get_family() for m in self.mobjects)
+            p3 = getattr(r.f, "_p3d", None) or getattr(r, "_p3d", None)
+            ent = {"txt": str(getattr(r, "_txt", "?"))[:40], "cena": p3[0] if p3 else None, "ponto": p3[1] if p3 else None, "visivel": bool(vis)}
+            if vis and len(r) > 1 and len(r[0].points):
+                pts = r[0].points
+                ent["placa"] = [round(float(pts[:, 0].min() * 120 + 960), 1), round(float(540 - pts[:, 1].max() * 120), 1),
+                                round(float(pts[:, 0].max() * 120 + 960), 1), round(float(540 - pts[:, 1].min() * 120), 1)]
+                out["placas"].append({"nome": ent["txt"], "box": ent["placa"]})
+            out["rots3"].append(ent)
+        for pal in self._palcos:
+            out["palcos"].append({"cena": pal.cena, "op": round(float(pal.fundo.op.get_value()), 3), "noscene": pal.fundo in self.mobjects})
+        for m in self.mobjects:
+            for g_ in m.get_family():
+                pn = getattr(g_, "_painel", None)
+                if pn is not None and isinstance(g_, RoundedRectangle):
+                    dentro = 0
+                    for o in self.mobjects:
+                        if o is m or o is g_:
+                            continue
+                        for q in o.family_members_with_points():
+                            if isinstance(q, VMobject) and q.get_fill_opacity() > .3 and q.get_stroke_opacity() >= 0 and not isinstance(q, RoundedRectangle):
+                                cx_, cy_ = q.get_center()[0] * 120 + 960, 540 - q.get_center()[1] * 120
+                                if pn[0] <= cx_ <= pn[2] and pn[1] <= cy_ <= pn[3]:
+                                    dentro += 1
+                    out["paineis"].append({"box": list(pn), "conteudo": dentro, "op_fill": round(float(g_.get_fill_opacity()), 2)})
+        d = AQUI_RENDERS / "still"
+        d.mkdir(parents=True, exist_ok=True)
+        (d / f"{self.lote}_{STILL:g}_caixas.json").write_text(_j.dumps(out, ensure_ascii=False), encoding="utf-8")
+
+    def _orfaos(self, t):
+        """QA v2 (I1/I2): rótulo preso a um 3D visível enquanto o 3D dele não está na tela (ou já sumiu)."""
+        for r in self._rots3:
+            if not (any(y in self.mobjects for y in r.get_family()) or any(r in m.get_family() for m in self.mobjects)):
+                continue
+            ops = [g_.get_fill_opacity() for g_ in r.family_members_with_points() if isinstance(g_, VMobject)]
+            if not ops or max(ops) < 0.5:
+                continue
+            p3 = getattr(r.f, "_p3d", None) or getattr(r, "_p3d", None)
+            if not p3:
+                continue
+            pal = next((p for p in self._palcos if p.cena == p3[0] and p.fundo in self.mobjects), None)
+            if pal is None or pal.fundo.op.get_value() < 0.15:
+                print(f"[orfao] {self.lote} {self._aid} {t:7.2f}s rótulo {str(getattr(r, '_txt', '?'))[:30]!r} sem o 3D {p3[0]} na tela")
+
+    def _qa_quadro(self, f):
+        t = f / FPS
+        self._orfaos(t)
+        caixas = self._caixas()
+        for i in range(len(caixas)):
+            for j in range(i + 1, len(caixas)):
+                a, b = caixas[i], caixas[j]
+                if a[2] and b[2]:
+                    continue
+                (ax0, ay0, ax1, ay1), (bx0, by0, bx1, by1) = a[1], b[1]
+                ox = min(ax1, bx1) - max(ax0, bx0)
+                oy = min(ay1, by1) - max(ay0, by0)
+                if ox > 2 and oy > 2:
+                    if a[4] or b[4]:
+                        self._r5v.append((self._aid, t, a[0], b[0]))
+                        print(f"[R5V] {self.lote} {self._aid} {t:7.2f}s {str(a[0])[:40]!r} x {str(b[0])[:40]!r} ({ox:.0f}x{oy:.0f} px)")
+                    else:
+                        self._r5.append((self._aid, t, a[0], b[0], ox, oy))
+                        print(f"[R5] {self.lote} {self._aid} {t:7.2f}s {str(a[0])[:40]!r} x {str(b[0])[:40]!r} ({ox:.0f}x{oy:.0f} px)")
+        for nome, (x0, y0, x1, y1), obst, m, voa in caixas:
+            if obst or voa:
+                continue
+            if x0 < MARGEM - 1 or x1 > 1920 - MARGEM + 1 or y1 > 1080 - MARGEM + 1 or y0 < MARGEM - 1:
+                print(f"[R6] {self.lote} {self._aid} {t:7.2f}s margem {str(nome)[:50]!r} ({x0:.0f},{y0:.0f},{x1:.0f},{y1:.0f})")
+        for it, (px0, py0, px1, py1) in self._dentro:
+            if not any(it in x.get_family() for x in self.mobjects):
+                continue
+            ops = [g_.get_fill_opacity() for g_ in it.family_members_with_points() if isinstance(g_, VMobject)]
+            if not ops or max(ops) < 0.3 or getattr(it, "_voando", False):
+                continue
+            x0, y1_ = pxof(it.get_corner(UL))
+            x1, y0_ = pxof(it.get_corner(DR))
+            if x0 < px0 + 4 or x1 > px1 - 4 or y1_ < py0 + 4 or y0_ > py1 - 4:
+                print(f"[R6] {self.lote} {self._aid} {t:7.2f}s painel {str(getattr(it, '_txt', getattr(it, '_tex', '?')))[:50]!r} ({x0:.0f},{y1_:.0f},{x1:.0f},{y0_:.0f}) "
+                      f"fora de ({px0},{py0},{px1},{py1})")
+        grupos = {}
+        for it, rect in self._dentro:
+            grupos.setdefault(tuple(rect), []).append(it)
+        for rect, itens in grupos.items():
+            card = None
+            for m in self.mobjects:
+                for g_ in m.get_family():
+                    if getattr(g_, "_painel", None) is not None and tuple(g_._painel) == rect and isinstance(g_, RoundedRectangle):
+                        card = g_
+            if card is None or card.get_fill_opacity() < 0.5:
+                continue
+            tem = False
+            for it in itens:
+                if not any(it in x.get_family() for x in self.mobjects):
+                    continue
+                if any(isinstance(q, VMobject) and (q.get_fill_opacity() > 0.05 or q.get_stroke_opacity() > 0.05) for q in it.family_members_with_points()):
+                    tem = True
+                    break
+            if not tem:
+                print(f"[painel-vazio] {self.lote} {self._aid} {t:7.2f}s cartão {rect} sem conteúdo")
+        if self.h2 is not None and self.h2 in self.mobjects:
+            hx0, hy0 = pxof(self.h2.get_corner(UL))
+            hx1, hy1 = pxof(self.h2.get_corner(DR))
+            for pal in self._palcos:
+                if pal.fundo in self.mobjects and pal.fundo.op.get_value() > 0.5 and "eixoTopo" in P43[pal.cena]:
+                    (xa, ya), (xb, yb) = pal.pt("eixoBase"), pal.pt("eixoTopo")
+                    for u in np.linspace(0, 1, 40):
+                        x, y = xa + (xb - xa) * u, ya + (yb - ya) * u
+                        if hx0 - 6 <= x <= hx1 + 6 and hy0 - 6 <= y <= hy1 + 6:
+                            print(f"[3dcanto] {self.lote} {self._aid} {t:7.2f}s eixo z de {pal.cena} cruza o canto")
+                            break
+        fix = self.fixos()
+        conteudo = [m for m in self.mobjects if m not in fix and not isinstance(m, ValueTracker) and m is not self.clk]
+        vis = 0
+        for m in conteudo:
+            if isinstance(m, Fundo3D):
+                vis += m.op.get_value() > 0.3
+            elif isinstance(m, ImageMobject):
+                vis += 1
+            else:
+                vis += any(isinstance(g_, VMobject) and (g_.get_fill_opacity() > 0.3 or g_.get_stroke_opacity() > 0.3) for g_ in m.family_members_with_points())
+        if vis == 0:
+            if self._vazio0 is None:
+                self._vazio0 = t
+        else:
+            if self._vazio0 is not None and t - self._vazio0 > 0.5:
+                print(f"[vazio] {self.lote} {self._aid} {self._vazio0:.2f}–{t:.2f}s palco vazio {t - self._vazio0:.2f}s")
+            self._vazio0 = None
+        seg = int(t)
+        if seg != self._ult_seg:
+            self._ult_seg = seg
+            tem3d = any(p.fundo in self.mobjects and p.fundo.op.get_value() > 0.5 for p in self._palcos)
+            grade = self.grade is not None and self.grade in self.mobjects and self.grade.get_stroke_opacity() > 0.3
+            cta = getattr(self, "_cta", False)
+            tipo = "3D-grade" if (tem3d and grade) else ("2D-grade" if grade else ("CTA-liso" if cta else "SEM-GRADE"))
+            canto2 = self.h2 is not None and self.h2 in self.mobjects
+            print(f"[grade] {self.lote} {self._aid} {t:.0f} {tipo} canto2={'sim' if canto2 or cta or not self.CANTO else 'NAO'}")
+
+    def fim(self):
+        super().fim()
+        print(f"[R5V-total] {self.lote} {len(self._r5v)}")
+        for nome, c in self._col.items():
+            print(f"[coluna-max] {self.lote} {nome} {c['max']} chips={c['chips']}")
+
+    def entra(self, *ms, rt=0.5, extra=()):
+        an = []
+        for m in ms:
+            if isinstance(m, Fundo3D):
+                an.append(m.op.animate.set_value(1.0))
+                if m not in self.mobjects:
+                    m.op.set_value(0.0)
+                    self.add(m)
+            elif isinstance(m, (ImageMobject, Group)) and not isinstance(m, VMobject):
+                an.append(FadeIn(m))
+            else:
+                an.append(Create(m))
+        self.play(*an, *extra, run_time=rt)
+
+    def sai(self, *ms, rt=0.4, extra=()):
+        ms = [m for m in ms if m is not None and m in self.mobjects]
+        if not ms and not extra:
+            return
+        an = [(m.op.animate.set_value(0.0) if isinstance(m, Fundo3D) else FadeOut(m)) for m in ms]
+        self.play(*an, *extra, run_time=rt)
+        for m in ms:
+            m.clear_updaters()
+        self.remove(*ms)
+
+
+def cta43(cena, rt_fim=0.0):
+    CL = P3(0, 0.9)
+    logo = cena.logo(5.6).move_to(CL)
+    aneis = VGroup(*[DashedVMobject(Circle(radius=r).move_to(CL), num_dashes=48).set_stroke(GEO, 2.6, opacity=o) for r, o in ((2.1, 0.85), (2.45, 0.6))])
+    sem_ctn(aneis)
+    ins = VGroup(T("INSCREVA-SE PARA ACOMPANHAR", 960, 0, 66, "center", caneta=False), T("OS PRÓXIMOS VÍDEOS", 960, 0, 66, "center", caneta=False)
+                 ).arrange(DOWN, buff=0.12).move_to(P3(0, -2.6))
+    s4 = cena.snap()
+    sai_c = [m_ for m_ in (cena.h2, cena.h1, cena.grade) if m_ is not None and m_ in cena.mobjects]
+    cena._cta = True
+    cena.play(*[(m_.op.animate.set_value(0.0) if isinstance(m_, Fundo3D) else FadeOut(m_)) for m_ in s4 + sai_c], run_time=0.4)
+    cena.play(FadeIn(logo, scale=0.96), FadeIn(aneis), FadeIn(ins, shift=0.1 * UP), run_time=0.5)
+    for m_ in s4:
+        m_.clear_updaters()
+    cena.remove(*s4, *sai_c)
+    cena.h2 = None
+    cena.grade = None
+    print(f"[cta] {cena.lote} {cena.t:.2f}")
+    if cena.resta() + rt_fim > 0.05:
+        cena.wait(cena.resta() + rt_fim)
+
+
+# ── FINAL: PRESSA, duas passadas para a cena seguir a voz real (portado do v2kit.py do yt_0037, que veio do lib34.py do yt_0034) ──────────────
+# Passada 1 (PRESSA=grava, --dry_run): cada trecho entre dois gatilhos (gat, an, fim) anota o tempo de animação dele e o atraso com que chegou ao
+# gatilho do fim. Fator do trecho = (tempo − atraso que o próprio trecho criou − 0,1 s) ÷ tempo, com piso PISO_PRESSA (0,6: a construção nunca
+# fica mais de 1,67× mais rápida). Trechos com folga se esticam (teto 2,6×) em vez de a tela esperar parada. A voz nunca muda.
+import json as _json
+import os as _os
+from pathlib import Path as _Path
+import kit as _kit
+
+PRESSA = _os.environ.get("PRESSA", "usa")
+PISO_PRESSA = float(_os.environ.get("PISO_PRESSA", "0.6"))
+_DIRPR = _Path(__file__).resolve().parent / "renders" / "pressa"
+_B = B45
+_play_pr0, _wait_pr0, _gat_pr0, _an_pr0, _fim_pr0 = _B.play, _B.wait, _B.gat, _B.an, _B.fim
+
+
+def _pr(self):
+    if not hasattr(self, "_prs"):
+        self._prs, self._seg, self._em_gat = {}, 0, False
+        arq = _DIRPR / f"{self.lote}.json"
+        self._fat = {} if PRESSA != "usa" or not arq.exists() else {int(k): v for k, v in _json.loads(arq.read_text(encoding="utf-8"))["fator"].items()}
+    return self._prs
+
+
+def _play_pr(self, *anims, run_time=None, **kw):
+    from manim.animation.animation import prepare_animation
+    S = _pr(self)
+    anims = [prepare_animation(a) for a in anims]
+    rt = run_time if run_time is not None else max([a.run_time for a in anims] or [1.0])
+    f = self._fat.get(self._seg, 1.0)
+    if abs(f - 1.0) > 0.001:
+        for a in anims:
+            a.run_time *= f
+        rt *= f
+        run_time = rt if run_time is not None else None
+    S.setdefault(self._seg, {"rt": 0.0, "late": 0.0, "nome": ""})["rt"] += rt
+    return _play_pr0(self, *anims, run_time=run_time, **kw)
+
+
+def _wait_pr(self, duration=1.0, *a, **k):
+    S = _pr(self)
+    if not self._em_gat and duration > 0.2:
+        f = self._fat.get(self._seg, 1.0)
+        duration *= f
+        S.setdefault(self._seg, {"rt": 0.0, "late": 0.0, "nome": ""})["rt"] += duration
+        if duration < 1 / _kit.FPS:
+            return
+    return _wait_pr0(self, duration, *a, **k)
+
+
+def _fecha_seg(self, late, nome):
+    S = _pr(self)
+    S.setdefault(self._seg, {"rt": 0.0, "late": 0.0, "nome": ""}).update(late=round(late, 3), nome=nome, ini=bool(getattr(self, "_seg_ini", False)))
+    self._seg_ini = False
+    self._seg += 1
+
+
+def _gat_pr(self, frase):
+    _pr(self)
+    k = self._k_frase(self._aid, frase)
+    if k is not None:
+        alvo = self._q0 + max(0.0, _kit.ANC[self._aid]["t"][k] - _kit.LEAD) * _kit.FPS
+        _fecha_seg(self, (self.nq - alvo) / _kit.FPS, f"{self._aid}: {frase}")
+    self._em_gat = True
+    try:
+        return _gat_pr0(self, frase)
+    finally:
+        self._em_gat = False
+        if k is not None:
+            if not hasattr(self, "_gpos"):
+                self._gpos = {}
+            self._gpos[self._aid] = k
+
+
+def _an_pr(self, aid):
+    _pr(self)
+    if self._off is not None:
+        _fecha_seg(self, (self.nq - (round(_kit.ANC[aid]["ini"] * _kit.FPS) - self._off)) / _kit.FPS, f"início de {aid}")
+    self._em_gat = True
+    self._seg_ini = True      # o 1º trecho da âncora (título + entrada do palco) não se estica: palco vazio ≤ 0,5 s
+    try:
+        return _an_pr0(self, aid)
+    finally:
+        self._em_gat = False
+
+
+def _fim_pr(self):
+    S = _pr(self)
+    _fecha_seg(self, (self.nq - self.alvo) / _kit.FPS, "fim do lote")
+    self._em_gat = True
+    if PRESSA == "grava":
+        fat, ant = {}, 0.0
+        for s in sorted(S):
+            d = S[s]
+            need = d["late"] - max(0.0, ant)
+            if need > 0.05 and d["rt"] > 0.2 and not (self.lote == "PS" and d["nome"] == "fim do lote"):
+                fat[s] = round(max(PISO_PRESSA, (d["rt"] - need - 0.1) / d["rt"]), 3)
+            elif -d["late"] > 1.2 and d["rt"] > 0.15 and not d.get("ini") and not (d["nome"] == "fim do lote" or d["nome"].startswith("in")):
+                fat[s] = round(min(2.6, (d["rt"] - d["late"] - 0.4) / d["rt"]), 3)
+            ant = d["late"]
+        _DIRPR.mkdir(parents=True, exist_ok=True)
+        (_DIRPR / f"{self.lote}.json").write_text(_json.dumps({"fator": fat, "trechos": S}, ensure_ascii=False, indent=0), encoding="utf-8")
+        print(f"[pressa] {self.lote}: {len(fat)} trechos ajustados; menor fator {min(fat.values()) if fat else 1:.2f}")
+    if self._aid is None and self.nq < self.alvo:        # a saída do fim do lote ficou curta (PRESSA): completa até o fim da fala, sem deriva entre lotes
+        _wait_pr0(self, (self.alvo - self.nq) / _kit.FPS)
+    return _fim_pr0(self)
+
+
+_B.play, _B.wait, _B.gat, _B.an, _B.fim = _play_pr, _wait_pr, _gat_pr, _an_pr, _fim_pr
+
+
+
+# ── Registro de tamanhos para o QA (§6.1) ───────────────────────────────────────────────────────────────────
+_CTX = {"lote": "?", "aid": "?"}
+_TAM = []
+_TC_ORIG, _T_ORIG, _LEG_ORIG = TC, T, leg
+
+
+def TC(s, x=960, y=540, size=48, al="l", caneta=True):                      # noqa: F811
+    _TAM.append(("F", _CTX["aid"], size, str(s)[:60]))
+    return _TC_ORIG(s, x, y, size, al, caneta)
+
+
+def T(s, x, y, size=30, al="left", cor=BR, bold=True, caneta=True):          # noqa: F811
+    _TAM.append(("T", _CTX["aid"], size, str(s)[:60]))
+    return _T_ORIG(s, x, y, size, al, cor, bold, caneta)
+
+
+def leg(s, x, y, cor=GEO, al="left", size=28, caneta=True):                   # noqa: F811
+    return T(s, x, y, max(26, size), al, cor, bold=False, caneta=caneta)
+
+
+_v41.TC = TC
+_v41.T = T
+_v41.leg = leg
+
+
+_an_tam0, _fim_tam0 = B45.an, B45.fim
+
+
+def _an_tam(self, aid):
+    _CTX["lote"], _CTX["aid"] = self.lote, aid
+    return _an_tam0(self, aid)
+
+
+def _fim_tam(self):
+    for k, a, sz, tx in _TAM:
+        print(f"[tam] {self.lote} {a} {k} {sz} {tx!r}")
+    return _fim_tam0(self)
+
+
+_quadro_orig = Fundo3D._quadro
+
+
+def _quadro_fallback(self):
+    f = int(round(self.cm.clk.get_value() * FPS))
+    if not PEDIDOS3D and f != self.f:
+        arq = self.dir / f"f{f:05d}.png"
+        if not arq.exists():
+            alt_dir = DIR3D / "q3d" / f"{self.cm.lote}_960x540" / self.cena
+            if (alt_dir / f"f{f:05d}.png").exists():
+                self.dir = alt_dir
+    return _quadro_orig(self)
+
+
+Fundo3D._quadro = _quadro_fallback
+B45.an, B45.fim = _an_tam, _fim_tam
+
+
+B43 = B45
+cta44 = cta43
+painel2d43 = painel2d44
+
+
+# ── yt_0044: utilitários da unidade ─────────────────────────────────────────────────────────────────────────
+def ao_lado(A, B, ga, gb, gap=12):
+    """Põe B logo à direita de A (gap px), com o glifo gb de B na mesma altura do glifo ga de A (ex.: os dois sinais de igual)."""
+    B.shift(RIGHT * (A.get_right()[0] - B.get_left()[0] + gap / 120))
+    B.shift(UP * (A[0][ga].get_center()[1] - B[0][gb].get_center()[1]))
+    return B
+
+
+def ultimo(m, chave):
+    return sel(m, chave)[-1]
+
+
+def _troca3d(self, pal_old, rots_old, cena, o, rots=(), **ini):
+    """Troca de cena 3D por corte limpo (mesmo lugar na tela): o palco antigo e os rótulos dele saem no mesmo quadro em que o novo entra.
+    rots = [(nome, tex, kwargs do rot3)]. Devolve (palco, [rótulos])."""
+    pal = self.palco(cena, o, **ini)
+    novos = []
+    for nome, tex, kw in rots:
+        r = self.rot3(pal, nome, tex, **kw)
+        pronto(r)
+        novos.append(r)
+    for r in rots_old:
+        r.clear_updaters()
+    pal_old.fundo.clear_updaters()
+    self.remove(pal_old.fundo, *rots_old)
+    if pal_old in self._palcos:
+        self._palcos.remove(pal_old)
+    self.add(pal.fundo, *novos)
+    print(f"[troca3d] {self.lote} {self._aid} {self.t:.2f} {pal_old.cena} -> {cena}")
+    return pal, novos
+
+
+B45.troca3d = _troca3d
+
+
+def _chip_vira(self, cg, cf, mol, src, extra=(), rt=0.45, nota="", sai=()):
+    """O resultado `src` (e a moldura dele, em `sai`) vira o chip do topo: ReplacementTransform da própria fórmula (nada fica embaixo do voo)."""
+    ja_escrita(cf)
+    for x in cf.get_family():
+        if getattr(x, "_caneta", False):
+            x._esc = True
+        x._voando = True
+    vivos = [m for m in sai if m is not None and m in self.mobjects]
+    self.play(ReplacementTransform(src, cf), Create(mol), *[FadeOut(m) for m in vivos], *extra, run_time=rt)
+    self.remove(src, *vivos)
+    for x in cf.get_family():
+        x._voando = False
+    self.remove(cf, mol)
+    pronto(cg)
+    self.add(cg)
+    print(f"[voo] {self.lote} {self._aid} {(self.nq - self._q0) / FPS:6.2f}s {self.t:8.2f} {nota} {str(getattr(cf, '_tex', ''))[:80]!r}")
+    return cg
+
+
+B45.chip_vira = _chip_vira
+
+
+def num(n, X, Y, size=40, cor=BR):
+    """Número no círculo (①, ②, ③ do alvo) em px: centro (X, Y)."""
+    dg = max(26.0, size * .62)
+    c = circ_px(X, Y, max(size * .5, dg * .68), cor, 2.5, z=24)
+    t = T(str(n), X, Y + dg * .36, dg, "center", cor)
+    g = VGroup(c, t)
+    g._txt = f"({n})"
+    return g
+
+
+def legqn(cor, n, s, x, y, size=30):
+    """legq com o número no círculo (①, ②, ③) desenhado (o Space Grotesk não tem esses glifos): quadradinho, círculo, texto."""
+    sq = ret_px(x, y - size * .62, x + size * .6, y - size * .02, fill=cor, fop=1.0, stroke=None, z=6)
+    nc = num(n, x + size * .9 + 18, y - size * .34, size * .95, cor)
+    t = leg(s, x + size * .9 + 46, y, cor, "left", size)
+    return sq, VGroup(nc, t)
+
+
+def chipL(pecas, X, Y, size=30, cor=GEO):
+    """chip() com o miolo em peças (L): o glyph map pode sair do chip."""
+    f = L(pecas, X + 16, Y, size, "l")
+    x0, y0 = pxof(f.get_corner(UL))
+    x1, y1 = pxof(f.get_corner(DR))
+    mol = moldura(X, y0 - 10, (x1 - x0) + 32, (y1 - y0) + 20, cor, .75, 2, 10)
+    g = VGroup(mol, f)
+    g.eh_chip = True
+    return g, f, mol
+
+
+# ── yt_0045: palco 2D (vista do head45.part) e campo de setas (keys45.js) ─────────────────────────────────────
+def _c2p(self, a, b):
+    return PX(*self.P(a, b))
+
+
+Vista2D.c2p = _c2p
+
+
+def eixos2(v, x0, x1, y0, y1, lx=True):
+    """eixos2 do keys45.js: eixo x âmbar, eixo y magenta (3 px, ponta 16); rótulos x, y (34 px) perto das pontas. Devolve (setas, [rótulos])."""
+    ax = v.seta((x0, 0), (x1, 0), E1, 3, 16)
+    ay = v.seta((0, y0), (0, y1), E2, 3, 16)
+    ax._eixo, ay._eixo = ("x", v.P(x0, 0), v.P(x1, 0)), ("y", v.P(0, y0), v.P(0, y1))
+    rots = []
+    if lx:
+        qx, qy = v.P(x1, 0), v.P(0, y1)
+        rots = [TC(r"\X", qx[0] + 10, qx[1] + 22, 34, "l"), TC(r"\Y", qy[0] + 16, qy[1] + 6, 34, "l")]
+    return VGroup(ax, ay), rots
+
+
+def arco2(f, a, b, n=160):
+    return [f(a + (b - a) * k / n) for k in range(n + 1)]
+
+
+def curva(v, f, a, b, cor=HEL, wpx=5, n=160, dash=None):
+    m = lin_px([v.P(*p) for p in arco2(f, a, b, n)], cor, wpx, dash=dash, z=6)
+    m._curva = (f, a, b)
+    return m
+
+
+def sentido(v, f, t, cor=HEL, h=22):
+    """sentido() do keys45.js: só a ponta (h px) na direção da tangente em t."""
+    A, B = v.P(*f(t - .02)), v.P(*f(t + .02))
+    ux, uy = B[0] - A[0], B[1] - A[1]
+    L = math.hypot(ux, uy)
+    c = v.P(*f(t))
+    u = np.array([ux / L, uy / L])
+    n_ = np.array([-u[1], u[0]])
+    B = np.array(c) + u * 4
+    b = B - u * h
+    m = Polygon(PX(*B), PX(*(b + n_ * h * .5)), PX(*(b - n_ * h * .5))).set_fill(cor, 1).set_stroke(cor, 0)
+    return sem_ctn(m).set_z_index(7)
+
+
+def seta_campo(v, p, vec, k=.35, mx=.9, cor=CAMPO, wpx=3, head=12, z=5):
+    """setaCampo do keys45.js: comprimento na tela = min(k·|F|, mx) unidades do desenho."""
+    L = math.hypot(*vec)
+    if L < 1e-9:
+        return None
+    s = min(k * L, mx) / L
+    b = (p[0] + vec[0] * s, p[1] + vec[1] * s)
+    m = seta_px(v.P(*p), v.P(*b), cor, wpx, head, z=z)
+    m._seg = (v.P(*p), v.P(*b))
+    m._campo = True
+    return m
+
+
+def campo(v, F, pts, k=.35, mx=.9, wpx=3, head=12, cor=CAMPO):
+    g = VGroup(*[s for s in (seta_campo(v, p, F(*p), k, mx, cor, wpx, head) for p in pts) if s is not None])
+    g._campo_g = True
+    return g
+
+
+def grade_pts(xs, ys):
+    return [(a, b) for a in xs for b in ys]
+
+
+def regua(X0, X1, Y, marks, cor=UU):
+    """regua do keys45.js: traço de X0 a X1 em Y (3 px) com marcas (±10 px) e rótulos 26 px abaixo (y + 34)."""
+    base = lin_px([(X0, Y), (X1, Y)], cor, 3, z=6)
+    tq = VGroup(*[lin_px([(X, Y - 10), (X, Y + 10)], cor, 3, z=6) for X, _ in marks])
+    rot = [TC(s, X, Y + 34, 26, "c") for X, s in marks if s]
+    return base, tq, rot
+
+
+def placa_tc(tex, X, Y, size=32, al="c"):
+    """tex(..., placa=true) do keys45.js: rótulo com placa opaca mínima atrás."""
+    t = TC(tex, X, Y, size, al)
+    g = VGroup(placa_min(t), t)
+    g._txt = tex
+    g.f = t
+    return g
+
+
+def _papel_vista(self, v=None, rt=0.4, extra=()):
+    """Papel que nasce dos eixos do palco 2D (quadradinho de 60 px de borda a borda; passo = 60/U do desenho). v=None: papel padrão (origem no centro)."""
+    chave = (round(v.cx) % 60, round(v.cy) % 60) if v is not None else (0, 0)
+    if chave == getattr(self, "_papel_chave", (0, 0)) and self.grade is not None:
+        if extra:
+            self.play(*extra, run_time=rt)
+        return
+    nova = (papel(v, passo=60 / v.u) if v is not None else papel(passo=0.5)).set_z_index(-10)
+    velha = self.grade
+    self.grade = nova
+    self._papel_chave = chave
+    if rt > 0:
+        self.play(*([FadeOut(velha)] if velha is not None else []), FadeIn(nova), *extra, run_time=rt)
+    else:
+        self.add(nova)
+    if velha is not None:
+        self.remove(velha)
+    print(f"[papel] {self.lote} {self._aid} {self.t:.2f} origem {chave}")
+
+
+B45.papel_vista = _papel_vista
+
+
+def _sai_fim45(self, rt=0.35):
+    """Fim do lote: o conteúdo sai e o papel volta ao padrão (origem no centro), para a emenda com o próximo lote não pular."""
+    if self._aid is not None:
+        self._fecha(antes=rt + 0.3)
+    self.limpa(rt=rt)
+    self.papel_vista(None, rt=0.3)
+
+
+B45.sai_fim = _sai_fim45
+
+
+def _calib(self, alvo, v, axes=None, curva_pts=(), setas=()):
+    """Item 22: posições MEDIDAS nos objetos do Manim (px de 1080p) × as calculadas pela vista(cx, cy, U) do keys45.js."""
+    def mpx(p):
+        return np.array(pxof(p), float)
+    linhas = []
+    if axes is not None:
+        ax, ay = axes[0], axes[1]
+        o_med = np.array([mpx(ay[0].get_start())[0], mpx(ax[0].get_start())[1]])
+        linhas.append(("origem", o_med, np.array(v.P(0, 0))))
+        ponta = mpx(ax[1].get_vertices()[0])
+        linhas.append(("ponta eixo x", ponta, np.array(ax._eixo[2])))
+    for nome, m, xy in curva_pts:
+        pts = np.array([pxof(p) for p in m.points])
+        alvo_p = np.array(v.P(*xy))
+        d = np.linalg.norm(pts - alvo_p, axis=1)
+        linhas.append((nome, pts[d.argmin()], alvo_p))
+    for nome, s, p0, p1 in setas:
+        linhas.append((nome + " base", mpx(s[0].get_start()), np.array(v.P(*p0))))
+        linhas.append((nome + " ponta", mpx(s[1].get_vertices()[0]), np.array(v.P(*p1))))
+    for nome, med, calc in linhas:
+        e = float(np.linalg.norm(med - calc))
+        print(f"[palco2d] {self.lote} {alvo} vista({v.cx},{v.cy},{v.u}) {nome}: medido ({med[0]:.2f},{med[1]:.2f}) calc ({calc[0]:.2f},{calc[1]:.2f}) erro {e:.2f}px")
+
+
+B45.calib = _calib
+
+
+def seta_ponta(v, p, vec, k, mx):
+    L = math.hypot(*vec)
+    s = min(k * L, mx) / L
+    return (p[0] + vec[0] * s, p[1] + vec[1] * s)
+
+
+def _seg_rect(a, b, r, pad=0):
+    x0, y0, x1, y1 = r[0] - pad, r[1] - pad, r[2] + pad, r[3] + pad
+    for u in np.linspace(0, 1, 25):
+        x, y = a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u
+        if x0 < x < x1 and y0 < y < y1:
+            return True
+    return False
+
+
+_qa_q0 = B45._qa_quadro
+
+
+def _qa_quadro45(self, f):
+    """+ item 21: rótulo do palco 2D × seta do campo (haste amostrada contra a caixa do rótulo)."""
+    _qa_q0(self, f)
+    setas = [x for m in self.mobjects for x in m.get_family() if getattr(x, "_campo", False)
+             and any(q.get_stroke_opacity() > .3 or q.get_fill_opacity() > .3 for q in x.family_members_with_points())]
+    if not setas:
+        return
+    for nome, box, obst, m, voa in self._caixas():
+        if obst or voa or box[0] > 980 or str(nome).startswith("3d:") or getattr(m, "_com_placa", False):
+            continue
+        for s in setas:
+            if _seg_rect(*s._seg, box):
+                print(f"[R21] {self.lote} {self._aid} {f / FPS:7.2f}s rótulo {str(nome)[:40]!r} sobre seta do campo em {tuple(round(c) for c in s._seg[0])}")
+
+
+B45._qa_quadro = _qa_quadro45
+B44 = B45
+
+
+# ── yt_0045 v2: campo NA GRADE (campoG do keys45.js v2) e lata em projeção oblíqua 2D (Lata do keys45.js v2) ──────────
+def meio(a, b, s=1.0):
+    r, v = [], a
+    while v <= b + 1e-9:
+        r.append(round(v, 3))
+        v += s
+    return r
+
+
+def amostra(f, a, b, n=200):
+    return [f(a + (b - a) * i / n) for i in range(n + 1)]
+
+
+def nos_campo(v, F, xs, ys, k=.32, mx=.8, curvas=(), folga=.15, evita_px=()):
+    """campoG: seta CENTRADA em cada nó (xs × ys); descartada se passar a < folga de uma curva (unidades) ou cair numa caixa px de rótulo.
+    Devolve a lista [(nó, A, B)] em unidades do desenho (sem criar mobjects)."""
+    cv = [np.array(c, float) for c in curvas]
+    out = []
+    for X in xs:
+        for Y in ys:
+            vec = F(X, Y)
+            Lg = math.hypot(*vec)
+            if Lg < 1e-9:
+                continue
+            l = min(k * Lg, mx)
+            u = (vec[0] / Lg, vec[1] / Lg)
+            A = (X - u[0] * l / 2, Y - u[1] * l / 2)
+            B = (X + u[0] * l / 2, Y + u[1] * l / 2)
+            ok = True
+            for i in range(11):
+                if not ok:
+                    break
+                q = (A[0] + (B[0] - A[0]) * i / 10, A[1] + (B[1] - A[1]) * i / 10)
+                for c in cv:
+                    if np.min(np.hypot(c[:, 0] - q[0], c[:, 1] - q[1])) < folga:
+                        ok = False
+                        break
+                Q = v.P(*q)
+                for x0, y0, x1, y1 in evita_px:
+                    if x0 - 6 < Q[0] < x1 + 6 and y0 - 6 < Q[1] < y1 + 6:
+                        ok = False
+            if ok:
+                out.append(((X, Y), A, B))
+    if curvas or evita_px:                       # itens 24/25 medidos em px sobre a geometria desenhada (log "[setas]")
+        dc, dr = [], []
+        cp = [np.array([v.P(*q) for q in c]) for c in cv]
+        for _, A, B in out:
+            for i in range(41):
+                Q = np.array(v.P(A[0] + (B[0] - A[0]) * i / 40, A[1] + (B[1] - A[1]) * i / 40))
+                for c in cp:
+                    dc.append(float(np.min(np.hypot(c[:, 0] - Q[0], c[:, 1] - Q[1]))))
+                for x0, y0, x1, y1 in evita_px:
+                    dr.append(float(math.hypot(max(x0 - Q[0], 0, Q[0] - x1), max(y0 - Q[1], 0, Q[1] - y1))))
+        print(f"[setas] n={len(out)} seta×curva_min={min(dc) if dc else float('inf'):.1f}px seta×rótulo_min={min(dr) if dr else float('inf'):.1f}px")
+    return out
+
+
+def seta_nos(v, nos, wpx=3, head=12, cor=CAMPO, z=5):
+    """Cria as setas (VGroup) de uma lista de nos_campo; cada seta guarda _ab (A, B em unidades) e _no."""
+    ms = []
+    for no, A, B in nos:
+        m = seta_px(v.P(*A), v.P(*B), cor, wpx, head, z=z)
+        m._seg = (v.P(*A), v.P(*B))
+        m._campo = True
+        m._ab = (A, B)
+        m._no = no
+        ms.append(m)
+    g = VGroup(*ms)
+    g._campo_g = True
+    return g
+
+
+def campo_grade(v, F, xs, ys, wpx=3, head=12, cor=CAMPO, **kw):
+    return seta_nos(v, nos_campo(v, F, xs, ys, **kw), wpx, head, cor)
+
+
+def calib_setas(cp, idx):
+    """Entradas de B45.calib para as setas de índices idx de um campo_grade (base e ponta medidas × calculadas)."""
+    return [(f"campo {i} nó {cp[i]._no}", cp[i], cp[i]._ab[0], cp[i]._ab[1]) for i in idx]
+
+
+HELB, GEOB = "#8E6C55", "#5E6788"
+
+
+class Lata45:
+    """Lata em projeção oblíqua fixa, desenhada no próprio papel: X = CX + U·x ; Y = CY − U·(z + k·y) (px de 1080p). Sem piso, sem 3D."""
+
+    def __init__(self, CX, CY, U, k):
+        self.CX, self.CY, self.U, self.k = CX, CY, U, k
+
+    def pr(self, x, y, z):
+        return (self.CX + self.U * x, self.CY - self.U * (z + self.k * y))
+
+    def _ell(self, z, t0, t1, cor, w, dash=None, zi=3):
+        n = 120
+        pts = [self.pr(math.cos(t0 + (t1 - t0) * i / n), math.sin(t0 + (t1 - t0) * i / n), z) for i in range(n + 1)]
+        return lin_px(pts, cor, w, dash=dash, z=zi)
+
+    def lata(self, H=1.0):
+        """Devolve (grupo, partes): base de trás tracejada, base da frente, tampa e as DUAS paredes (nenhuma outra vertical)."""
+        bb = self._ell(0, 0, PI, GEOB, 2, (8, 8))
+        bf = self._ell(0, PI, 2 * PI, GEO, 2)
+        tp = self._ell(H, 0, 2 * PI, GEO, 2)
+        w1 = lin_px([self.pr(-1, 0, 0), self.pr(-1, 0, H)], GEO, 2, z=3)
+        w2 = lin_px([self.pr(1, 0, 0), self.pr(1, 0, H)], GEO, 2, z=3)
+        g = VGroup(bb, bf, tp, w1, w2)
+        g._partes = dict(base_tras=bb, base_frente=bf, tampa=tp, w1=w1, w2=w2)
+        return g
+
+    def eixo(self, z1, cortes=(), pontes=(), meio_corte=10):
+        """Eixo z (azul, 3 px) que passa POR TRÁS do que está na frente: um corte de `meio_corte` px (10: o traço da hélice tem 5–6 px e o aceite pede ≥ 6 px de folga; o handoff dizia 8) para cada lado de cada Y (px) em
+        `cortes` (já abertos) e em `pontes` (fechados por um segmento, que o cena remove quando o traço da frente passa).
+        Devolve VGroup; `_pontes` = {Y: segmento}."""
+        y0, y1 = self.pr(0, 0, 0)[1], self.pr(0, 0, z1)[1]
+        x = self.CX
+        cs = sorted([(c, False) for c in cortes] + [(c, True) for c in pontes], key=lambda a: -a[0])   # de baixo (Y grande) para cima
+        pecas, pts, ponte = [], [], {}
+        ini = y0
+        for c, ponta in cs:
+            pecas.append((ini, c + meio_corte))
+            if ponta:
+                ponte[c] = lin_px([(x, c + meio_corte), (x, c - meio_corte)], EZ, 3, z=5)
+            ini = c - meio_corte
+        pecas.append((ini, y1))
+        ms = []
+        for i, (a, b) in enumerate(pecas):
+            ms.append(seta_px((x, a), (x, b), EZ, 3, 16, z=5) if i == len(pecas) - 1 else lin_px([(x, a), (x, b)], EZ, 3, z=5))
+            if i < len(cs) and cs[i][1]:
+                ms.append(ponte[cs[i][0]])                      # a ponte entra na ordem espacial (o Create desenha o eixo de baixo para cima)
+        g = VGroup(*ms)
+        g._pontes = ponte
+        return g
+
+    def helice(self, c, t0, t1, cor, w, corB=HELB, zi=6, n=400, quebras=()):
+        """Peças em ordem de t: frente (sen t < 0) contínua, trás (sen t > 0) tracejada 3 px 12/9. Devolve VGroup na ordem de t."""
+        pecas, seg, back, spans = [], [], None, []
+        ts = {"i": t0, "p": t0}
+
+        def fecha():
+            if len(seg) > 1:
+                pecas.append(lin_px(list(seg), corB if back else cor, 3 if back else w, dash=(12, 9) if back else None, z=zi))
+                spans.append((ts["i"], ts["p"]))
+
+        for i in range(n + 1):
+            t = t0 + (t1 - t0) * i / n
+            b = math.sin(t) > 0
+            quebra = any(abs(t - q) < (t1 - t0) / n / 2 for q in quebras)
+            if back is not None and (b != back or quebra):
+                q = seg[-1]
+                fecha()
+                seg = [q]
+                ts["i"] = ts["p"]
+            back = b
+            seg.append(self.pr(math.cos(t), math.sin(t), c * t))
+            ts["p"] = t
+        fecha()
+        g = VGroup(*pecas)
+        g._spans = spans
+        return g
+
+    def cresce(self, cena, hel, rt, cruza=None, junto=()):
+        """Faz a hélice crescer com velocidade CONSTANTE em t (rt s no total, peça a peça) e remove cada ponte do eixo quando o traço
+        da frente chega ao cruzamento: cruza = {t_do_cruzamento: ponte}. `junto` anima junto com a 1ª peça."""
+        cruza = cruza or {}
+        tot = sum(b - a for a, b in hel._spans)
+        for k, (peca, (a, b)) in enumerate(zip(hel, hel._spans)):
+            cena.play(Create(peca), *(junto if k == 0 else ()), run_time=max(0.05, rt * (b - a) / tot))
+            for tc, ponte in list(cruza.items()):
+                if abs(b - tc) < 0.05:
+                    for pai in list(cena.mobjects):                  # a ponte é filha do grupo do eixo: tira dele (e da cena)
+                        if ponte in pai.submobjects:
+                            pai.remove(ponte)
+                    cena.remove(ponte)
+
+    def mede(self, nome, a, b, c, tx=None, pts=(), caixa=None, t0=0.0, t1=4 * PI):
+        """Itens 24/25 da lata, medidos em px na geometria desenhada: distância mínima da seta (a→b) à base (as 2 elipses z = 0), à
+        tampa, ao eixo z (x = CX), à hélice (sem os 14 px do começo da seta, que nasce nela), aos pontos pts e à caixa do rótulo (x0,y0,x1,y1)."""
+        A, B = np.array(a, float), np.array(b, float)
+        S = [A + (B - A) * i / 60 for i in range(61)]
+        far = [q for q in S if np.hypot(*(q - A)) > 14]
+
+        def dmin(poly, qs=far):
+            P = np.array(poly)
+            return min(float(np.min(np.hypot(P[:, 0] - q[0], P[:, 1] - q[1]))) for q in qs)
+        el = lambda z: [self.pr(math.cos(u), math.sin(u), z) for u in np.linspace(0, 2 * PI, 241)]
+        hel = [self.pr(math.cos(t), math.sin(t), c * t) for t in np.linspace(t0, t1, 800) if tx is None or abs(t - tx) > 0.5 * PI]   # só as OUTRAS voltas
+        r = dict(base=dmin(el(0)), tampa=dmin(el(1.0)), eixo=min(abs(q[0] - self.CX) for q in S), helice=dmin(hel))
+        if pts:
+            r["pontos"] = min(dmin([p], S) for p in pts)
+        if caixa is not None:
+            x0, y0, x1, y1 = caixa
+            r["rotulo×hélice"] = min(float(np.min(np.hypot(np.maximum(x0 - np.array(hel)[:, 0], 0) + np.maximum(np.array(hel)[:, 0] - x1, 0),
+                                                        np.maximum(y0 - np.array(hel)[:, 1], 0) + np.maximum(np.array(hel)[:, 1] - y1, 0)))), 1e9)
+        print(f"[lata] {nome} " + " ".join(f"{k}={v:.1f}px" for k, v in r.items()))
+        return r
+
+    def seta_F(self, t, c, s, w=4, head=16):
+        """Seta de F = (−y, x, −1) com base no ponto da hélice em t. Devolve (seta, base_px, ponta_px)."""
+        p = self.pr(math.cos(t), math.sin(t), c * t)
+        f = (-math.sin(t), math.cos(t), -1.0)
+        q = (p[0] + self.U * s * f[0], p[1] - self.U * s * (f[2] + self.k * f[1]))
+        return seta_px(p, q, CAMPO, w, head, z=8), p, q

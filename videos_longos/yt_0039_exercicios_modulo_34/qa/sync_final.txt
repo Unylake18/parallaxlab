@@ -1,0 +1,698 @@
+yt_0039 · sincronização (rodada final, 15 fps): atraso = tela − voz (s); meta ≤ +0,20 s
+
+PH: [deriva] PH +0.00s além do fim da última âncora
+PA: [deriva] PA +0.00s além do fim da última âncora
+PE1: [estouro] E1-2 começou 0.33s depois do previsto (a cena se esticou)
+PE1: [deriva] PE1 -0.07s além do fim da última âncora
+PE2: [estouro] E2-2 começou 0.40s depois do previsto (a cena se esticou)
+PE2: [deriva] PE2 +0.00s além do fim da última âncora
+PE3: [estouro] E3-2 começou 1.07s depois do previsto (a cena se esticou)
+PE3: [deriva] PE3 +0.73s além do fim da última âncora
+PE4: [estouro] E4-3 começou 1.00s depois do previsto (a cena se esticou)
+PE4: [deriva] PE4 +0.00s além do fim da última âncora
+PE5: [deriva] PE5 +0.73s além do fim da última âncora
+PE6: [deriva] PE6 +0.00s além do fim da última âncora
+PS: [deriva] PS +0.00s além do fim da última âncora
+
+âncoras (início na tela × 1ª palavra na voz):
+  H1    tela     0.00 s · voz     0.08 s · -0.08 s OK
+  H2    tela    39.47 s · voz    40.04 s · -0.57 s OK
+  A1    tela    74.47 s · voz    74.64 s · -0.17 s OK
+  E1-1  tela    94.07 s · voz    94.20 s · -0.13 s OK
+  E1-2  tela   141.27 s · voz   141.10 s · +0.17 s OK
+  E1-3  tela   241.40 s · voz   241.84 s · -0.44 s OK
+  E1-4  tela   300.20 s · voz   300.60 s · -0.40 s OK
+  E2-1  tela   370.07 s · voz   369.92 s · +0.15 s OK
+  E2-2  tela   415.67 s · voz   415.14 s · +0.53 s FORA
+  E2-3  tela   498.47 s · voz   498.58 s · -0.11 s OK
+  E2-4  tela   562.14 s · voz   562.24 s · -0.10 s OK
+  E3-1  tela   622.60 s · voz   622.10 s · +0.50 s FORA
+  E3-2  tela   672.53 s · voz   670.94 s · +1.59 s FORA
+  E4-1  tela   760.93 s · voz   758.60 s · +2.33 s FORA
+  E4-2  tela   850.06 s · voz   848.32 s · +1.74 s FORA
+  E4-3  tela   929.86 s · voz   926.52 s · +3.34 s FORA
+  E4-4  tela  1013.20 s · voz  1010.50 s · +2.70 s FORA
+  E5-1  tela  1076.66 s · voz  1073.32 s · +3.34 s FORA
+  E5-2  tela  1126.13 s · voz  1123.44 s · +2.69 s FORA
+  E5-3  tela  1186.73 s · voz  1183.48 s · +3.25 s FORA
+  E5-4  tela  1218.46 s · voz  1215.56 s · +2.90 s FORA
+  E6-1  tela  1286.99 s · voz  1282.94 s · +4.05 s FORA
+  E6-2  tela  1348.26 s · voz  1344.82 s · +3.44 s FORA
+  E6-3  tela  1378.86 s · voz  1375.44 s · +3.42 s FORA
+  E6-4  tela  1435.32 s · voz  1431.90 s · +3.42 s FORA
+  E6-5  tela  1508.86 s · voz  1505.44 s · +3.42 s FORA
+  S1    tela  1531.32 s · voz  1527.26 s · +4.06 s FORA
+  S2    tela  1580.12 s · voz  1576.50 s · +3.62 s FORA
+
+gatilhos (371):
+  H1    +0.79 s  «olha esta chapa»  (tela 0.87 · voz 0.08) FORA
+  H1    -0.13 s  «arrancado do meio»  (tela 8.07 · voz 8.20) OK
+  H1    +0.11 s  «Sobrou uma meia arruela»  (tela 9.47 · voz 9.36) OK
+  H1    -0.17 s  «e ela é homogênea»  (tela 10.53 · voz 10.70) OK
+  H1    -0.16 s  «onde ficaria o ponto»  (tela 16.80 · voz 16.96) OK
+  H1    -0.18 s  «pela simetria»  (tela 18.00 · voz 18.18) OK
+  H1    -0.12 s  «mas em que altura»  (tela 20.40 · voz 20.52) OK
+  H1    +1.03 s  «menos de um»  (tela 24.27 · voz 23.24) FORA
+  H1    -0.15 s  «a borda de fora fosse mais pesada»  (tela 28.67 · voz 28.82) OK
+  H1    -0.14 s  «sobe de volta»  (tela 31.00 · voz 31.14) OK
+  H1    -0.18 s  «hoje a gente responde»  (tela 32.40 · voz 32.58) OK
+  H1    -0.17 s  «uma bola e uma bola»  (tela 35.13 · voz 35.30) OK
+  H2    -0.56 s  «cinco passos e»  (tela 43.20 · voz 43.76) OK
+  H2    -0.60 s  «escolher as variáveis»  (tela 49.34 · voz 49.94) OK
+  H2    -0.56 s  «x e y em função»  (tela 51.60 · voz 52.16) OK
+  H2    -0.60 s  «calcular o jacobiano»  (tela 53.40 · voz 54.00) OK
+  H2    -0.57 s  «desenhar a região nova»  (tela 54.87 · voz 55.44) OK
+  H2    -0.58 s  «calcular e conferir»  (tela 57.54 · voz 58.12) OK
+  H2    -0.60 s  «uma divisão só»  (tela 64.00 · voz 64.60) OK
+  H2    -0.57 s  «momento sobre massa»  (tela 65.07 · voz 65.64) OK
+  A1    -0.20 s  «bem-vindos ao parallax»  (tela 75.40 · voz 75.60) OK
+  A1    -0.19 s  «seis problemas»  (tela 78.87 · voz 79.06) OK
+  A1    -0.16 s  «duas parábolas»  (tela 82.80 · voz 82.96) OK
+  A1    -0.15 s  «duas hipérboles»  (tela 83.87 · voz 84.02) OK
+  A1    -0.17 s  «um oitavo de bola»  (tela 84.87 · voz 85.04) OK
+  A1    -0.16 s  «uma elipse»  (tela 86.14 · voz 86.30) OK
+  A1    -0.14 s  «a meia arruela»  (tela 87.00 · voz 87.14) OK
+  A1    -0.18 s  «o teorema de pappus»  (tela 88.60 · voz 88.78) OK
+  E1-1  -0.13 s  «primeiro problema»  (tela 94.07 · voz 94.20) OK
+  E1-1  -0.13 s  «um mais x ao quadrado»  (tela 98.07 · voz 98.20) OK
+  E1-1  -0.14 s  «dois mais x ao quadrado»  (tela 100.94 · voz 101.08) OK
+  E1-1  -0.10 s  «x mais x ao quadrado»  (tela 104.34 · voz 104.44) OK
+  E1-1  -0.10 s  «x maior ou igual a zero»  (tela 105.94 · voz 106.04) OK
+  E1-1  -0.16 s  «calcule a integral dupla»  (tela 107.34 · voz 107.50) OK
+  E1-1  -0.12 s  «pausa o vídeo»  (tela 114.60 · voz 114.72) OK
+  E1-1  -0.11 s  «em pé»  (tela 117.67 · voz 117.78) OK
+  E1-1  -0.05 s  «A integral de dentro»  (tela 118.27 · voz 118.32) OK
+  E1-1  -0.16 s  «isso não existe»  (tela 123.34 · voz 123.50) OK
+  E1-1  -0.12 s  «Trava»  (tela 125.60 · voz 125.72) OK
+  E1-1  +0.64 s  «fatia deitada trava»  (tela 127.14 · voz 126.50) FORA
+  E1-1  +0.11 s  «trava também»  (tela 127.67 · voz 127.56) OK
+  E1-1  -0.12 s  «enxerga»  (tela 130.54 · voz 130.66) OK
+  E1-1  -0.15 s  «e as bordas também»  (tela 133.67 · voz 133.82) OK
+  E1-2  +1.28 s  «passo um»  (tela 142.80 · voz 141.52) FORA
+  E1-2  +0.14 s  «passo dois»  (tela 154.60 · voz 154.46) OK
+  E1-2  +0.14 s  «passo três»  (tela 174.80 · voz 174.66) OK
+  E1-2  +0.15 s  «A primeira linha na tela»  (tela 186.07 · voz 185.92) OK
+  E1-2  +0.18 s  «A segunda é a das derivadas de y»  (tela 189.80 · voz 189.62) OK
+  E1-2  +0.16 s  «Agora o determinante»  (tela 193.34 · voz 193.18) OK
+  E1-2  +0.20 s  «o jacobiano é um»  (tela 199.34 · voz 199.14) OK
+  E1-2  +0.15 s  «com x parado»  (tela 201.87 · voz 201.72) OK
+  E1-2  +0.16 s  «cada carta escorrega»  (tela 206.34 · voz 206.18) OK
+  E1-2  +0.16 s  «a área não»  (tela 209.80 · voz 209.64) OK
+  E1-2  +0.50 s  «passo quatro»  (tela 211.00 · voz 210.50) FORA
+  E1-2  +0.17 s  «y igual a um mais»  (tela 215.27 · voz 215.10) OK
+  E1-2  +0.14 s  «a de dois mais x ao quadrado vira»  (tela 219.94 · voz 219.80) OK
+  E1-2  +0.18 s  «x igual a zero vira»  (tela 223.80 · voz 223.62) OK
+  E1-2  +0.16 s  «x mais x ao quadrado vira»  (tela 227.34 · voz 227.18) OK
+  E1-2  +0.95 s  «os cantos conferem»  (tela 231.07 · voz 230.12) FORA
+  E1-2  +0.17 s  «virou um trapézio»  (tela 235.87 · voz 235.70) OK
+  E1-2  +0.15 s  «v vai de um a dois»  (tela 237.07 · voz 236.92) OK
+  E1-2  +0.17 s  «u vai de zero até v»  (tela 240.27 · voz 240.10) OK
+  E1-3  +3.09 s  «passo cinco»  (tela 244.93 · voz 241.84) FORA
+  E1-3  -0.47 s  «entra o módulo do jacobiano»  (tela 252.33 · voz 252.80) OK
+  E1-3  -0.47 s  «a de dentro é em u»  (tela 258.47 · voz 258.94) OK
+  E1-3  -0.41 s  «não depende de u»  (tela 261.73 · voz 262.14) OK
+  E1-3  -0.46 s  «v menos zero»  (tela 269.20 · voz 269.66) OK
+  E1-3  -0.46 s  «cancela o v que estava embaixo»  (tela 275.40 · voz 275.86) OK
+  E1-3  -0.45 s  «Sobra só é elevado a v»  (tela 286.73 · voz 287.18) OK
+  E1-3  -0.43 s  «a de fora»  (tela 288.93 · voz 289.36) OK
+  E1-3  +3.59 s  «a primitiva de é elevado»  (tela 293.73 · voz 290.14) FORA
+  E1-3  +1.14 s  «aplica de um a dois»  (tela 294.40 · voz 293.26) FORA
+  E1-3  -0.45 s  «Dá mais ou menos»  (tela 296.73 · voz 297.18) OK
+  E1-4  -0.40 s  «Mas será que está certo»  (tela 300.20 · voz 300.60) OK
+  E1-4  -0.37 s  «No plano u v a região»  (tela 312.13 · voz 312.50) OK
+  E1-4  -0.43 s  «média das bases vezes a altura»  (tela 316.87 · voz 317.30) OK
+  E1-4  -0.41 s  «três meios agora»  (tela 322.67 · voz 323.08) OK
+  E1-4  -0.38 s  «de zero a um a fatia»  (tela 331.60 · voz 331.98) OK
+  E1-4  -0.37 s  «o x ao quadrado cancela»  (tela 338.87 · voz 339.24) OK
+  E1-4  -0.38 s  «de um a dois ela entra»  (tela 342.40 · voz 342.78) OK
+  E1-4  -0.38 s  «o comprimento é dois menos x»  (tela 348.20 · voz 348.58) OK
+  E1-4  -0.43 s  «A primeira é fácil»  (tela 351.47 · voz 351.90) OK
+  E1-4  -0.38 s  «a gente aplica os limites»  (tela 359.40 · voz 359.78) OK
+  E1-4  -0.37 s  «um mais um meio»  (tela 363.27 · voz 363.64) OK
+  E1-4  +0.46 s  «três meios de novo»  (tela 365.20 · voz 364.74) FORA
+  E2-1  +0.15 s  «segundo problema»  (tela 370.07 · voz 369.92) OK
+  E2-1  +0.14 s  «entre as hipérboles»  (tela 373.60 · voz 373.46) OK
+  E2-1  +0.18 s  «x y igual a dois»  (tela 376.20 · voz 376.02) OK
+  E2-1  +0.12 s  «as retas y igual a x»  (tela 378.00 · voz 377.88) OK
+  E2-1  +0.16 s  «y igual a dois x»  (tela 380.00 · voz 379.84) OK
+  E2-1  +0.15 s  «Calcule a área»  (tela 381.67 · voz 381.52) OK
+  E2-1  +0.15 s  «e a massa de uma»  (tela 382.67 · voz 382.52) OK
+  E2-1  +0.18 s  «pausa e tenta»  (tela 387.80 · voz 387.62) OK
+  E2-1  +0.14 s  «um sobre raiz de dois até»  (tela 390.94 · voz 390.80) OK
+  E2-1  +0.16 s  «as bordas trocam»  (tela 394.94 · voz 394.78) OK
+  E2-1  +0.13 s  «entra na hipérbole de baixo»  (tela 397.07 · voz 396.94) OK
+  E2-1  +0.14 s  «entra na reta de baixo»  (tela 400.80 · voz 400.66) OK
+  E2-1  +0.16 s  «seriam duas integrais»  (tela 403.80 · voz 403.64) OK
+  E2-1  +0.13 s  «olha as bordas de novo»  (tela 407.27 · voz 407.14) OK
+  E2-2  +0.53 s  «passo um u igual»  (tela 415.67 · voz 415.14) FORA
+  E2-2  +0.54 s  «Olha como as bordas»  (tela 420.00 · voz 419.46) FORA
+  E2-2  +0.53 s  «a grade nova é feita»  (tela 424.87 · voz 424.34) FORA
+  E2-2  +0.53 s  «Passo dois»  (tela 430.07 · voz 429.54) FORA
+  E2-2  +0.54 s  «o x some»  (tela 434.74 · voz 434.20) FORA
+  E2-2  +0.54 s  «o y some»  (tela 439.20 · voz 438.66) FORA
+  E2-2  +0.56 s  «então x é raiz»  (tela 442.40 · voz 441.84) FORA
+  E2-2  +0.53 s  «derivar essas raízes»  (tela 448.87 · voz 448.34) FORA
+  E2-2  +0.50 s  «Vai o atalho»  (tela 452.20 · voz 451.70) FORA
+  E2-2  +0.52 s  «u derivado em x dá y»  (tela 460.74 · voz 460.22) FORA
+  E2-2  +0.51 s  «em y dá x»  (tela 462.67 · voz 462.16) FORA
+  E2-2  +0.53 s  «dá menos y sobre x ao quadrado»  (tela 465.27 · voz 464.74) FORA
+  E2-2  +0.52 s  «em y dá um sobre x»  (tela 467.54 · voz 467.02) FORA
+  E2-2  +0.56 s  «Agora o determinante»  (tela 469.60 · voz 469.04) FORA
+  E2-2  +0.50 s  «y sobre x mais»  (tela 472.34 · voz 471.84) FORA
+  E2-2  +0.52 s  «dois y sobre x»  (tela 474.94 · voz 474.42) FORA
+  E2-2  +0.53 s  «dá dois v»  (tela 478.47 · voz 477.94) FORA
+  E2-2  +0.54 s  «ir e voltar»  (tela 480.54 · voz 480.00) FORA
+  E2-2  +0.53 s  «pela regra da cadeia»  (tela 485.47 · voz 484.94) FORA
+  E2-2  +0.56 s  «um sobre dois v e»  (tela 489.00 · voz 488.44) FORA
+  E2-2  +0.56 s  «o módulo é o mesmo»  (tela 491.80 · voz 491.24) FORA
+  E2-3  -0.11 s  «virou um quadrado»  (tela 501.07 · voz 501.18) OK
+  E2-3  -0.11 s  «a área é a integral»  (tela 510.07 · voz 510.18) OK
+  E2-3  +1.71 s  «a de dentro é em u»  (tela 514.47 · voz 512.76) FORA
+  E2-3  -0.11 s  «comprimento do quadrado»  (tela 519.27 · voz 519.38) OK
+  E2-3  -0.10 s  «Fica só um sobre dois v»  (tela 521.00 · voz 521.10) OK
+  E2-3  -0.13 s  «A de fora é um meio»  (tela 522.87 · voz 523.00) OK
+  E2-3  -0.12 s  «logaritmo de dois menos»  (tela 526.94 · voz 527.06) OK
+  E2-3  -0.11 s  «logaritmo de um é zero»  (tela 529.67 · voz 529.78) OK
+  E2-3  -0.13 s  «a área é logaritmo»  (tela 531.27 · voz 531.40) OK
+  E2-3  -0.09 s  «liga os quatro cantos»  (tela 539.47 · voz 539.56) OK
+  E2-3  +1.77 s  «uma mede um»  (tela 545.87 · voz 544.10) FORA
+  E2-3  +1.58 s  «a outra um sobre raiz de dois»  (tela 546.54 · voz 544.96) FORA
+  E2-3  -0.11 s  «diagonal vezes diagonal»  (tela 548.07 · voz 548.18) OK
+  E2-3  +0.54 s  «raiz de dois sobre quatro»  (tela 551.20 · voz 550.66) FORA
+  E2-3  -0.13 s  «um tiquinho de um»  (tela 555.87 · voz 556.00) OK
+  E2-3  -0.08 s  «a pipa chega bem perto»  (tela 558.34 · voz 558.42) OK
+  E2-3  -0.09 s  «é uma estimativa»  (tela 559.87 · voz 559.96) OK
+  E2-4  +1.23 s  «agora a massa»  (tela 563.47 · voz 562.24) FORA
+  E2-4  -0.09 s  «é o nosso u»  (tela 567.41 · voz 567.50) OK
+  E2-4  -0.13 s  «A de dentro é em u»  (tela 577.61 · voz 577.74) OK
+  E2-4  -0.09 s  «aplica de um a dois»  (tela 582.27 · voz 582.36) OK
+  E2-4  -0.09 s  «subtração de frações»  (tela 584.21 · voz 584.30) OK
+  E2-4  -0.07 s  «sobram três meios»  (tela 586.27 · voz 586.34) OK
+  E2-4  -0.12 s  «três sobre quatro v»  (tela 589.74 · voz 589.86) OK
+  E2-4  +0.39 s  «A de fora é três quartos»  (tela 591.81 · voz 591.42) FORA
+  E2-4  +2.49 s  «três quartos de logaritmo de dois mais»  (tela 599.87 · voz 597.38) FORA
+  E2-4  -0.10 s  «a densidade média»  (tela 604.34 · voz 604.44) OK
+  E2-4  +1.17 s  «dividida pela área»  (tela 607.81 · voz 606.64) FORA
+  E2-4  -0.13 s  «bem no meio entre»  (tela 610.87 · voz 611.00) OK
+  E2-4  -0.11 s  «o jacobiano só depende»  (tela 613.47 · voz 613.58) OK
+  E3-1  +0.50 s  «terceiro problema»  (tela 622.60 · voz 622.10) FORA
+  E3-1  +0.51 s  «a integral de zero a a»  (tela 628.47 · voz 627.96) FORA
+  E3-1  +0.62 s  «da integral de zero a raiz»  (tela 630.20 · voz 629.58) FORA
+  E3-1  +0.49 s  «pausa e tenta»  (tela 638.67 · voz 638.18) FORA
+  E3-1  +0.53 s  «x vai de zero a a»  (tela 644.07 · voz 643.54) FORA
+  E3-1  +1.16 s  «a fatia entra em y»  (tela 647.40 · voz 646.24) FORA
+  E3-1  +0.50 s  «e sai na raiz»  (tela 649.00 · voz 648.50) FORA
+  E3-1  +2.05 s  «elevando ao quadrado»  (tela 653.93 · voz 651.88) FORA
+  E3-1  +2.25 s  «Elevando ao quadrado»  (tela 654.13 · voz 651.88) FORA
+  E3-1  +0.52 s  «é o círculo de raio»  (tela 658.00 · voz 657.48) FORA
+  E3-1  +0.49 s  «a região é um quarto»  (tela 659.47 · voz 658.98) FORA
+  E3-1  +0.47 s  «e o integrando»  (tela 661.53 · voz 661.06) FORA
+  E3-1  +0.47 s  «é a esfera de raio»  (tela 663.93 · voz 663.46) FORA
+  E3-1  +2.53 s  «um oitavo de bola»  (tela 670.73 · voz 668.20) FORA
+  E3-2  +2.89 s  «x ao quadrado mais y ao quadrado é r ao quadrado»  (tela 676.93 · voz 674.04) FORA
+  E3-2  +1.62 s  «e o integrando fica»  (tela 679.20 · voz 677.58) FORA
+  E3-2  +1.56 s  «r de zero a a»  (tela 684.66 · voz 683.10) FORA
+  E3-2  +1.60 s  «e téta de zero a pi»  (tela 685.86 · voz 684.26) FORA
+  E3-2  +2.72 s  «e não esquece o fator»  (tela 689.26 · voz 686.54) FORA
+  E3-2  +2.66 s  «vezes r o jacobiano»  (tela 690.60 · voz 687.94) FORA
+  E3-2  +2.64 s  «o jacobiano das polares»  (tela 691.40 · voz 688.76) FORA
+  E3-2  +1.59 s  «w igual a a ao quadrado»  (tela 698.33 · voz 696.74) FORA
+  E3-2  +1.58 s  «então r d r é menos»  (tela 704.66 · voz 703.08) FORA
+  E3-2  +1.58 s  «os limites mudam»  (tela 711.46 · voz 709.88) FORA
+  E3-2  +1.62 s  «o sinal de menos inverte»  (tela 719.60 · voz 717.98) FORA
+  E3-2  +1.58 s  «a primitiva é dois terços»  (tela 729.06 · voz 727.48) FORA
+  E3-2  +1.57 s  «a ao quadrado elevado a três»  (tela 735.53 · voz 733.96) FORA
+  E3-2  +1.61 s  «a ao cubo sobre três»  (tela 745.13 · voz 743.52) FORA
+  E3-2  +3.42 s  «A de fora só multiplica»  (tela 748.60 · voz 745.18) FORA
+  E3-2  +1.56 s  «pi a ao cubo sobre seis»  (tela 751.20 · voz 749.64) FORA
+  E3-2  +1.56 s  «confere com a bola inteira»  (tela 753.20 · voz 751.64) FORA
+  E3-2  +1.58 s  «dividido por oito»  (tela 756.60 · voz 755.02) FORA
+  E3-2  +2.00 s  «um oitavo certinho»  (tela 758.86 · voz 756.86) FORA
+  E4-1  +2.33 s  «quarto problema»  (tela 760.93 · voz 758.60) FORA
+  E4-1  +2.32 s  «polares comuns não»  (tela 769.00 · voz 766.68) FORA
+  E4-1  +2.32 s  «estica as polares»  (tela 778.66 · voz 776.34) FORA
+  E4-1  +2.36 s  «e y igual a b»  (tela 782.66 · voz 780.30) FORA
+  E4-1  +2.32 s  «joga na desigualdade»  (tela 791.46 · voz 789.14) FORA
+  E4-1  +2.32 s  «embaixo cancelam»  (tela 795.80 · voz 793.48) FORA
+  E4-1  +2.36 s  «b ao quadrado com b»  (tela 798.00 · voz 795.64) FORA
+  E4-1  +2.36 s  «sobra r ao quadrado vezes»  (tela 801.06 · voz 798.70) FORA
+  E4-1  +2.34 s  «o disco de raio um»  (tela 811.60 · voz 809.26) FORA
+  E4-1  +2.35 s  «Olha a matriz na tela»  (tela 814.33 · voz 811.98) FORA
+  E4-1  +2.35 s  «diagonal menos diagonal»  (tela 816.73 · voz 814.38) FORA
+  E4-1  +2.34 s  «a b r cosseno ao quadrado»  (tela 818.66 · voz 816.32) FORA
+  E4-1  +2.36 s  «põe a b r em evidência»  (tela 822.60 · voz 820.24) FORA
+  E4-1  +2.36 s  «esticar por a e por b»  (tela 829.60 · voz 827.24) FORA
+  E4-1  +2.30 s  «faz a metade de cima»  (tela 836.20 · voz 833.90) FORA
+  E4-1  +3.30 s  «faz a metade de cima»  (tela 837.20 · voz 833.90) FORA
+  E4-1  +2.36 s  «A integral de r d r dá um meio»  (tela 839.40 · voz 837.04) FORA
+  E4-1  +2.31 s  «pi a b com»  (tela 844.73 · voz 842.42) FORA
+  E4-1  +2.36 s  «volta o pi a ao quadrado»  (tela 848.20 · voz 845.84) FORA
+  E4-2  +1.73 s  «a forma da meia elipse»  (tela 852.79 · voz 851.06) FORA
+  E4-2  +1.73 s  «rô igual a k vezes»  (tela 862.59 · voz 860.86) FORA
+  E4-2  +1.77 s  «pausa e tenta»  (tela 871.73 · voz 869.96) FORA
+  E4-2  +1.75 s  «Aproveita a simetria»  (tela 872.93 · voz 871.18) FORA
+  E4-2  +1.74 s  «aqui a é um»  (tela 878.86 · voz 877.12) FORA
+  E4-2  +1.74 s  «a b r ou seja»  (tela 888.66 · voz 886.92) FORA
+  E4-2  +1.73 s  «é r de zero a um»  (tela 892.39 · voz 890.66) FORA
+  E4-2  +1.77 s  «A massa é a integral»  (tela 895.39 · voz 893.62) FORA
+  E4-2  +1.77 s  «o integrando separa»  (tela 905.33 · voz 903.56) FORA
+  E4-2  +1.74 s  «A de téta é a integral do seno»  (tela 912.06 · voz 910.32) FORA
+  E4-2  +1.76 s  «um mais um dois»  (tela 916.46 · voz 914.70) FORA
+  E4-2  +2.61 s  «A de r é r ao quadrado»  (tela 918.73 · voz 916.12) FORA
+  E4-2  +1.71 s  «Junta tudo com o k sobre quatro»  (tela 920.79 · voz 919.08) FORA
+  E4-2  +1.71 s  «k sobre seis»  (tela 926.99 · voz 925.28) FORA
+  E4-3  +3.59 s  «o momento em relação ao eixo»  (tela 931.79 · voz 928.20) FORA
+  E4-3  +3.35 s  «a integral de y vezes rô»  (tela 933.73 · voz 930.38) FORA
+  E4-3  +3.31 s  «os números viram um oitavo»  (tela 954.93 · voz 951.62) FORA
+  E4-3  +3.35 s  «seno ao quadrado a gente não integra»  (tela 963.73 · voz 960.38) FORA
+  E4-3  +3.33 s  «Integra termo a termo»  (tela 971.33 · voz 968.00) FORA
+  E4-3  +3.33 s  «Aplica de zero a pi»  (tela 976.19 · voz 972.86) FORA
+  E4-3  +3.34 s  «sobra pi sobre dois»  (tela 979.86 · voz 976.52) FORA
+  E4-3  +3.33 s  «A de r ao cubo»  (tela 981.39 · voz 978.06) FORA
+  E4-3  +3.33 s  «Junta o momento»  (tela 984.99 · voz 981.66) FORA
+  E4-3  +3.34 s  «k pi sobre sessenta e quatro»  (tela 986.46 · voz 983.12) FORA
+  E4-3  +3.34 s  «é momento sobre massa»  (tela 990.26 · voz 986.92) FORA
+  E4-3  +3.36 s  «inverte e multiplica»  (tela 996.46 · voz 993.10) FORA
+  E4-3  +3.33 s  «o k cancela»  (tela 997.93 · voz 994.60) FORA
+  E4-3  +3.37 s  «três pi sobre trinta e dois»  (tela 1002.73 · voz 999.36) FORA
+  E4-3  +3.33 s  «zero vírgula duzentos»  (tela 1005.39 · voz 1002.06) FORA
+  E4-4  +2.69 s  «conferir a massa sem»  (tela 1013.47 · voz 1010.78) FORA
+  E4-4  +2.73 s  «x vai de menos um»  (tela 1019.13 · voz 1016.40) FORA
+  E4-4  +2.67 s  «A de dentro é k vezes»  (tela 1025.93 · voz 1023.26) FORA
+  E4-4  +2.70 s  «aplicado no topo»  (tela 1029.40 · voz 1026.70) FORA
+  E4-4  +2.71 s  «o quadrado da raiz»  (tela 1031.13 · voz 1028.42) FORA
+  E4-4  +2.68 s  «k vezes um menos x ao quadrado sobre oito»  (tela 1036.20 · voz 1033.52) FORA
+  E4-4  +2.73 s  «A de fora integra»  (tela 1039.27 · voz 1036.54) FORA
+  E4-4  +2.73 s  «dois terços mais dois»  (tela 1046.67 · voz 1043.94) FORA
+  E4-4  +2.71 s  «k sobre seis de novo»  (tela 1051.13 · voz 1048.42) FORA
+  E4-4  +2.67 s  «e se a chapa fosse»  (tela 1056.27 · voz 1053.60) FORA
+  E4-4  +2.70 s  «achatado pela metade»  (tela 1059.80 · voz 1057.10) FORA
+  E4-4  +2.67 s  «quatro b sobre três pi»  (tela 1062.93 · voz 1060.26) FORA
+  E4-4  +2.71 s  «dois sobre três pi»  (tela 1066.33 · voz 1063.62) FORA
+  E4-4  +2.73 s  «a densidade que cresce»  (tela 1069.47 · voz 1066.74) FORA
+  E5-1  +3.34 s  «agora sim a meia arruela»  (tela 1076.66 · voz 1073.32) FORA
+  E5-1  +3.31 s  «em polares ela é um retângulo»  (tela 1078.99 · voz 1075.68) FORA
+  E5-1  +5.01 s  «r vai de um a dois»  (tela 1082.73 · voz 1077.72) FORA
+  E5-1  +5.59 s  «e téta de zero a pi»  (tela 1084.59 · voz 1079.00) FORA
+  E5-1  +3.34 s  «x barra é zero»  (tela 1094.26 · voz 1090.92) FORA
+  E5-1  +3.31 s  «a área é a integral»  (tela 1100.93 · voz 1097.62) FORA
+  E5-1  +3.37 s  «aquele r é o jacobiano»  (tela 1103.93 · voz 1100.56) FORA
+  E5-1  +3.37 s  «a de dentro r ao quadrado»  (tela 1105.73 · voz 1102.36) FORA
+  E5-1  +3.35 s  «quatro meios menos um meio»  (tela 1109.13 · voz 1105.78) FORA
+  E5-1  +3.35 s  «A de fora é só multiplicar»  (tela 1111.79 · voz 1108.44) FORA
+  E5-1  +3.64 s  «a área é três pi»  (tela 1114.26 · voz 1110.62) FORA
+  E5-1  +3.33 s  «o meio disco grande»  (tela 1119.53 · voz 1116.20) FORA
+  E5-1  +3.32 s  «o pequeno pi sobre»  (tela 1121.86 · voz 1118.54) FORA
+  E5-1  +3.45 s  «a diferença é três pi sobre dois»  (tela 1123.79 · voz 1120.34) FORA
+  E5-2  +3.72 s  «o momento em relação»  (tela 1127.46 · voz 1123.74) FORA
+  E5-2  +2.66 s  «e y é r seno»  (tela 1130.26 · voz 1127.60) FORA
+  E5-2  +2.68 s  «A de dentro integra»  (tela 1140.66 · voz 1137.98) FORA
+  E5-2  +2.71 s  «oito terços menos um terço»  (tela 1145.93 · voz 1143.22) FORA
+  E5-2  +3.39 s  «sete terços de seno»  (tela 1148.53 · voz 1145.14) FORA
+  E5-2  +3.44 s  «A de fora é a integral do seno»  (tela 1150.46 · voz 1147.02) FORA
+  E5-2  +7.04 s  «menos cosseno de zero a pi»  (tela 1156.06 · voz 1149.02) FORA
+  E5-2  +5.92 s  «aquele dois de sempre»  (tela 1156.80 · voz 1150.88) FORA
+  E5-2  +6.20 s  «o momento é catorze»  (tela 1158.40 · voz 1152.20) FORA
+  E5-2  +5.26 s  «é momento sobre área»  (tela 1160.66 · voz 1155.40) FORA
+  E5-2  +2.70 s  «inverte e multiplica»  (tela 1164.60 · voz 1161.90) FORA
+  E5-2  +2.70 s  «vinte e oito sobre nove pi»  (tela 1166.46 · voz 1163.76) FORA
+  E5-2  +2.84 s  «zero vírgula novecentos e noventa»  (tela 1169.20 · voz 1166.36) FORA
+  E5-2  +2.72 s  «menor que um por»  (tela 1172.60 · voz 1169.88) FORA
+  E5-2  +2.71 s  «cai no buraco»  (tela 1177.73 · voz 1175.02) FORA
+  E5-3  +3.25 s  «recorta essa meia arruela»  (tela 1188.13 · voz 1184.88) FORA
+  E5-3  +3.22 s  «pendura por uma ponta»  (tela 1190.26 · voz 1187.04) FORA
+  E5-3  +3.26 s  «ela gira até o centro»  (tela 1192.60 · voz 1189.34) FORA
+  E5-3  +3.24 s  «pendura um fio de prumo»  (tela 1196.40 · voz 1193.16) FORA
+  E5-3  +3.28 s  «pela outra ponta»  (tela 1200.80 · voz 1197.52) FORA
+  E5-3  +4.78 s  «as duas linhas se cruzam»  (tela 1204.60 · voz 1199.82) FORA
+  E5-3  +4.18 s  «no ar onde não tem»  (tela 1206.20 · voz 1202.02) FORA
+  E5-3  +3.24 s  «acontece com um anel»  (tela 1210.26 · voz 1207.02) FORA
+  E5-3  +3.28 s  «com uma ferradura»  (tela 1211.60 · voz 1208.32) FORA
+  E5-3  +3.28 s  «com um bumerangue»  (tela 1212.66 · voz 1209.38) FORA
+  E5-4  +3.90 s  «e se a borda pesar»  (tela 1219.46 · voz 1215.56) FORA
+  E5-4  +2.89 s  «Pensa numa roda de bicicleta»  (tela 1224.53 · voz 1221.64) FORA
+  E5-4  +2.92 s  «cada um tem um dono»  (tela 1229.26 · voz 1226.34) FORA
+  E5-4  +2.89 s  «integra em r ao cubo»  (tela 1236.53 · voz 1233.64) FORA
+  E5-4  +2.93 s  «oito terços menos um»  (tela 1240.13 · voz 1237.20) FORA
+  E5-4  +2.93 s  «sete k sobre três a»  (tela 1242.13 · voz 1239.20) FORA
+  E5-4  +2.87 s  «a de fora multiplica por pi»  (tela 1243.59 · voz 1240.72) FORA
+  E5-4  +2.88 s  «Agora o momento»  (tela 1248.06 · voz 1245.18) FORA
+  E5-4  +2.93 s  «A de dentro é r à quarta»  (tela 1255.33 · voz 1252.40) FORA
+  E5-4  +2.93 s  «dezesseis quartos menos»  (tela 1258.93 · voz 1256.00) FORA
+  E5-4  +2.91 s  «quinze quartos»  (tela 1261.19 · voz 1258.28) FORA
+  E5-4  +2.91 s  «o mesmo dois da integral»  (tela 1264.99 · voz 1262.08) FORA
+  E5-4  +2.93 s  «quinze k sobre dois»  (tela 1267.93 · voz 1265.00) FORA
+  E5-4  +2.89 s  «Dividindo momento por massa»  (tela 1269.39 · voz 1266.50) FORA
+  E5-4  +3.23 s  «o k cancela»  (tela 1271.39 · voz 1268.16) FORA
+  E5-4  +2.92 s  «quarenta e cinco sobre catorze»  (tela 1275.66 · voz 1272.74) FORA
+  E5-4  +5.83 s  «volta para a chapa»  (tela 1286.13 · voz 1280.30) FORA
+  E6-1  +4.05 s  «último problema»  (tela 1286.99 · voz 1282.94) FORA
+  E6-1  +4.03 s  «e gira em torno do eixo»  (tela 1293.19 · voz 1289.16) FORA
+  E6-1  +4.03 s  «qual o volume»  (tela 1300.59 · voz 1296.56) FORA
+  E6-1  +4.02 s  «olha um quadradinho»  (tela 1301.52 · voz 1297.50) FORA
+  E6-1  +4.04 s  «a uma altura y»  (tela 1304.26 · voz 1300.22) FORA
+  E6-1  +4.06 s  «um anel de comprimento»  (tela 1306.72 · voz 1302.66) FORA
+  E6-1  +4.03 s  «dois pi y e»  (tela 1307.99 · voz 1303.96) FORA
+  E6-1  +4.06 s  «varre um volume de mais»  (tela 1309.26 · voz 1305.20) FORA
+  E6-1  +4.03 s  «somando no limite»  (tela 1320.79 · voz 1316.76) FORA
+  E6-1  +4.87 s  «o dois pi sai»  (tela 1326.59 · voz 1321.72) FORA
+  E6-1  +4.08 s  «o momento em relação ao eixo»  (tela 1327.72 · voz 1323.64) FORA
+  E6-1  +4.06 s  «y barra vezes a área»  (tela 1330.66 · voz 1326.60) FORA
+  E6-1  +4.06 s  «o caminho do centroide»  (tela 1336.92 · voz 1332.86) FORA
+  E6-1  +4.08 s  «fatiando deitado»  (tela 1342.12 · voz 1338.04) FORA
+  E6-1  +4.04 s  «o método das cascas»  (tela 1345.72 · voz 1341.68) FORA
+  E6-2  +4.04 s  «Vamos testar com o meio disco»  (tela 1348.86 · voz 1344.82) FORA
+  E6-2  +3.46 s  «a quatro a sobre três pi»  (tela 1353.26 · voz 1349.80) FORA
+  E6-2  +3.47 s  «e a área é pi»  (tela 1355.53 · voz 1352.06) FORA
+  E6-2  +3.45 s  «girando em torno da base»  (tela 1358.13 · voz 1354.68) FORA
+  E6-2  +5.81 s  «Pappus diz o volume»  (tela 1363.13 · voz 1357.32) FORA
+  E6-2  +3.46 s  «o pi cancela»  (tela 1366.86 · voz 1363.40) FORA
+  E6-2  +3.45 s  «oito a sobre três vezes»  (tela 1368.39 · voz 1364.94) FORA
+  E6-2  +3.44 s  «que dá quatro terços»  (tela 1371.86 · voz 1368.42) FORA
+  E6-2  +4.17 s  «quatro terços de pi a»  (tela 1372.99 · voz 1368.82) FORA
+  E6-2  +3.62 s  «É a bola»  (tela 1374.46 · voz 1370.84) FORA
+  E6-3  +4.62 s  «agora a meia arruela»  (tela 1380.06 · voz 1375.44) FORA
+  E6-3  +3.45 s  «ela varre uma bola oca»  (tela 1381.73 · voz 1378.28) FORA
+  E6-3  +5.95 s  «a bola de raio dois menos»  (tela 1387.59 · voz 1381.64) FORA
+  E6-3  +3.65 s  «quatro terços de pi vezes oito»  (tela 1389.19 · voz 1385.54) FORA
+  E6-3  +3.43 s  «vinte e oito pi sobre três»  (tela 1391.59 · voz 1388.16) FORA
+  E6-3  +3.40 s  «Pappus ao contrário»  (tela 1395.46 · voz 1392.06) FORA
+  E6-3  +3.44 s  «A área a gente já tem»  (tela 1404.26 · voz 1400.82) FORA
+  E6-3  +3.45 s  «três pi ao quadrado»  (tela 1408.33 · voz 1404.88) FORA
+  E6-3  +3.41 s  «Vamos dividir»  (tela 1409.59 · voz 1406.18) FORA
+  E6-3  +3.43 s  «vinte e oito sobre nove pi o»  (tela 1416.59 · voz 1413.16) FORA
+  E6-3  +3.41 s  «o mesmo número»  (tela 1418.39 · voz 1414.98) FORA
+  E6-4  +5.15 s  «vale para qualquer meia arruela»  (tela 1437.19 · voz 1432.04) FORA
+  E6-4  +3.47 s  «raio de dentro a e»  (tela 1437.65 · voz 1434.18) FORA
+  E6-4  +3.40 s  «quatro terços de pi vezes b»  (tela 1444.12 · voz 1440.72) FORA
+  E6-4  +3.39 s  «quatro vezes b ao cubo»  (tela 1455.45 · voz 1452.06) FORA
+  E6-4  +3.43 s  «fatora essas duas diferenças»  (tela 1462.05 · voz 1458.62) FORA
+  E6-4  +3.44 s  «diferença de quadrados»  (tela 1465.92 · voz 1462.48) FORA
+  E6-4  +3.43 s  «o b menos a cancela»  (tela 1471.25 · voz 1467.82) FORA
+  E6-4  +3.40 s  «com a igual a zero»  (tela 1481.32 · voz 1477.92) FORA
+  E6-4  +4.05 s  «é o meio disco»  (tela 1486.05 · voz 1482.00) FORA
+  E6-4  +3.45 s  «A chapa afina até virar um arame»  (tela 1498.19 · voz 1494.74) FORA
+  E6-4  +3.43 s  «sessenta e quatro por cento»  (tela 1506.25 · voz 1502.82) FORA
+  E6-5  +3.45 s  «uma rosquinha»  (tela 1509.73 · voz 1506.28) FORA
+  E6-5  +3.45 s  «a dois do eixo»  (tela 1513.13 · voz 1509.68) FORA
+  E6-5  +3.44 s  «girando em volta dele»  (tela 1515.06 · voz 1511.62) FORA
+  E6-5  +8.35 s  «o centro do disco é o centroide»  (tela 1521.33 · voz 1512.98) FORA
+  E6-5  +5.92 s  «dois pi vezes dois a»  (tela 1521.46 · voz 1515.54) FORA
+  E6-5  +5.05 s  «a área é pi vezes»  (tela 1522.13 · voz 1517.08) FORA
+  E6-5  +3.42 s  «quatro pi ao quadrado»  (tela 1523.86 · voz 1520.44) FORA
+  S1    +4.46 s  «resumindo»  (tela 1531.72 · voz 1527.26) FORA
+  S1    +4.08 s  «esquecer o jacobiano»  (tela 1535.52 · voz 1531.44) FORA
+  S1    +4.07 s  «sem módulo»  (tela 1542.85 · voz 1538.78) FORA
+  S1    +4.07 s  «sem desenhar»  (tela 1550.65 · voz 1546.58) FORA
+  S1    +4.04 s  «dividir pela área»  (tela 1556.72 · voz 1552.68) FORA
+  S1    +4.07 s  «usar pappus com chapa»  (tela 1559.99 · voz 1555.92) FORA
+  S1    +4.06 s  «E a meia arruela»  (tela 1570.92 · voz 1566.86) FORA
+  S1    +4.04 s  «volta para a chapa em»  (tela 1577.52 · voz 1573.48) FORA
+  S2    +3.64 s  «toda massa foi de chapa»  (tela 1580.92 · voz 1577.28) FORA
+  S2    +3.64 s  «dentro de um sólido ponto»  (tela 1586.12 · voz 1582.48) FORA
+  S2    +3.61 s  «mais pesado longe de um canto»  (tela 1590.25 · voz 1586.64) FORA
+  S2    +3.64 s  «quanto pesa esse cubo»  (tela 1596.72 · voz 1593.08) FORA
+  S2    +3.63 s  «uma soma de caixinhas»  (tela 1599.19 · voz 1595.56) FORA
+  S2    +3.61 s  «no próximo vídeo»  (tela 1604.05 · voz 1600.44) FORA
+  S2    +3.63 s  «deixa o like»  (tela 1606.39 · voz 1602.76) FORA
+  S2    +7.09 s  «a partir de que tamanho»  (tela 1614.19 · voz 1607.10) FORA
+
+resumo: 28 âncoras, 371 gatilhos; atraso de -0.60 a +8.35 s; fora da meta (> +0,2 s): 278
+  gatilho H1 «olha esta chapa»: +0.79 s
+  gatilho H1 «menos de um»: +1.03 s
+  gatilho E1-1 «fatia deitada trava»: +0.64 s
+  gatilho E1-2 «passo um»: +1.28 s
+  gatilho E1-2 «passo quatro»: +0.50 s
+  gatilho E1-2 «os cantos conferem»: +0.95 s
+  gatilho E1-3 «passo cinco»: +3.09 s
+  gatilho E1-3 «a primitiva de é elevado»: +3.59 s
+  gatilho E1-3 «aplica de um a dois»: +1.14 s
+  gatilho E1-4 «três meios de novo»: +0.46 s
+  âncora E2-2: +0.53 s
+  gatilho E2-2 «passo um u igual»: +0.53 s
+  gatilho E2-2 «Olha como as bordas»: +0.54 s
+  gatilho E2-2 «a grade nova é feita»: +0.53 s
+  gatilho E2-2 «Passo dois»: +0.53 s
+  gatilho E2-2 «o x some»: +0.54 s
+  gatilho E2-2 «o y some»: +0.54 s
+  gatilho E2-2 «então x é raiz»: +0.56 s
+  gatilho E2-2 «derivar essas raízes»: +0.53 s
+  gatilho E2-2 «Vai o atalho»: +0.50 s
+  gatilho E2-2 «u derivado em x dá y»: +0.52 s
+  gatilho E2-2 «em y dá x»: +0.51 s
+  gatilho E2-2 «dá menos y sobre x ao quadrado»: +0.53 s
+  gatilho E2-2 «em y dá um sobre x»: +0.52 s
+  gatilho E2-2 «Agora o determinante»: +0.56 s
+  gatilho E2-2 «y sobre x mais»: +0.50 s
+  gatilho E2-2 «dois y sobre x»: +0.52 s
+  gatilho E2-2 «dá dois v»: +0.53 s
+  gatilho E2-2 «ir e voltar»: +0.54 s
+  gatilho E2-2 «pela regra da cadeia»: +0.53 s
+  gatilho E2-2 «um sobre dois v e»: +0.56 s
+  gatilho E2-2 «o módulo é o mesmo»: +0.56 s
+  gatilho E2-3 «a de dentro é em u»: +1.71 s
+  gatilho E2-3 «uma mede um»: +1.77 s
+  gatilho E2-3 «a outra um sobre raiz de dois»: +1.58 s
+  gatilho E2-3 «raiz de dois sobre quatro»: +0.54 s
+  gatilho E2-4 «agora a massa»: +1.23 s
+  gatilho E2-4 «A de fora é três quartos»: +0.39 s
+  gatilho E2-4 «três quartos de logaritmo de dois mais»: +2.49 s
+  gatilho E2-4 «dividida pela área»: +1.17 s
+  âncora E3-1: +0.50 s
+  gatilho E3-1 «terceiro problema»: +0.50 s
+  gatilho E3-1 «a integral de zero a a»: +0.51 s
+  gatilho E3-1 «da integral de zero a raiz»: +0.62 s
+  gatilho E3-1 «pausa e tenta»: +0.49 s
+  gatilho E3-1 «x vai de zero a a»: +0.53 s
+  gatilho E3-1 «a fatia entra em y»: +1.16 s
+  gatilho E3-1 «e sai na raiz»: +0.50 s
+  gatilho E3-1 «elevando ao quadrado»: +2.05 s
+  gatilho E3-1 «Elevando ao quadrado»: +2.25 s
+  gatilho E3-1 «é o círculo de raio»: +0.52 s
+  gatilho E3-1 «a região é um quarto»: +0.49 s
+  gatilho E3-1 «e o integrando»: +0.47 s
+  gatilho E3-1 «é a esfera de raio»: +0.47 s
+  gatilho E3-1 «um oitavo de bola»: +2.53 s
+  âncora E3-2: +1.59 s
+  gatilho E3-2 «x ao quadrado mais y ao quadrado é r ao quadrado»: +2.89 s
+  gatilho E3-2 «e o integrando fica»: +1.62 s
+  gatilho E3-2 «r de zero a a»: +1.56 s
+  gatilho E3-2 «e téta de zero a pi»: +1.60 s
+  gatilho E3-2 «e não esquece o fator»: +2.72 s
+  gatilho E3-2 «vezes r o jacobiano»: +2.66 s
+  gatilho E3-2 «o jacobiano das polares»: +2.64 s
+  gatilho E3-2 «w igual a a ao quadrado»: +1.59 s
+  gatilho E3-2 «então r d r é menos»: +1.58 s
+  gatilho E3-2 «os limites mudam»: +1.58 s
+  gatilho E3-2 «o sinal de menos inverte»: +1.62 s
+  gatilho E3-2 «a primitiva é dois terços»: +1.58 s
+  gatilho E3-2 «a ao quadrado elevado a três»: +1.57 s
+  gatilho E3-2 «a ao cubo sobre três»: +1.61 s
+  gatilho E3-2 «A de fora só multiplica»: +3.42 s
+  gatilho E3-2 «pi a ao cubo sobre seis»: +1.56 s
+  gatilho E3-2 «confere com a bola inteira»: +1.56 s
+  gatilho E3-2 «dividido por oito»: +1.58 s
+  gatilho E3-2 «um oitavo certinho»: +2.00 s
+  âncora E4-1: +2.33 s
+  gatilho E4-1 «quarto problema»: +2.33 s
+  gatilho E4-1 «polares comuns não»: +2.32 s
+  gatilho E4-1 «estica as polares»: +2.32 s
+  gatilho E4-1 «e y igual a b»: +2.36 s
+  gatilho E4-1 «joga na desigualdade»: +2.32 s
+  gatilho E4-1 «embaixo cancelam»: +2.32 s
+  gatilho E4-1 «b ao quadrado com b»: +2.36 s
+  gatilho E4-1 «sobra r ao quadrado vezes»: +2.36 s
+  gatilho E4-1 «o disco de raio um»: +2.34 s
+  gatilho E4-1 «Olha a matriz na tela»: +2.35 s
+  gatilho E4-1 «diagonal menos diagonal»: +2.35 s
+  gatilho E4-1 «a b r cosseno ao quadrado»: +2.34 s
+  gatilho E4-1 «põe a b r em evidência»: +2.36 s
+  gatilho E4-1 «esticar por a e por b»: +2.36 s
+  gatilho E4-1 «faz a metade de cima»: +2.30 s
+  gatilho E4-1 «faz a metade de cima»: +3.30 s
+  gatilho E4-1 «A integral de r d r dá um meio»: +2.36 s
+  gatilho E4-1 «pi a b com»: +2.31 s
+  gatilho E4-1 «volta o pi a ao quadrado»: +2.36 s
+  âncora E4-2: +1.74 s
+  gatilho E4-2 «a forma da meia elipse»: +1.73 s
+  gatilho E4-2 «rô igual a k vezes»: +1.73 s
+  gatilho E4-2 «pausa e tenta»: +1.77 s
+  gatilho E4-2 «Aproveita a simetria»: +1.75 s
+  gatilho E4-2 «aqui a é um»: +1.74 s
+  gatilho E4-2 «a b r ou seja»: +1.74 s
+  gatilho E4-2 «é r de zero a um»: +1.73 s
+  gatilho E4-2 «A massa é a integral»: +1.77 s
+  gatilho E4-2 «o integrando separa»: +1.77 s
+  gatilho E4-2 «A de téta é a integral do seno»: +1.74 s
+  gatilho E4-2 «um mais um dois»: +1.76 s
+  gatilho E4-2 «A de r é r ao quadrado»: +2.61 s
+  gatilho E4-2 «Junta tudo com o k sobre quatro»: +1.71 s
+  gatilho E4-2 «k sobre seis»: +1.71 s
+  âncora E4-3: +3.34 s
+  gatilho E4-3 «o momento em relação ao eixo»: +3.59 s
+  gatilho E4-3 «a integral de y vezes rô»: +3.35 s
+  gatilho E4-3 «os números viram um oitavo»: +3.31 s
+  gatilho E4-3 «seno ao quadrado a gente não integra»: +3.35 s
+  gatilho E4-3 «Integra termo a termo»: +3.33 s
+  gatilho E4-3 «Aplica de zero a pi»: +3.33 s
+  gatilho E4-3 «sobra pi sobre dois»: +3.34 s
+  gatilho E4-3 «A de r ao cubo»: +3.33 s
+  gatilho E4-3 «Junta o momento»: +3.33 s
+  gatilho E4-3 «k pi sobre sessenta e quatro»: +3.34 s
+  gatilho E4-3 «é momento sobre massa»: +3.34 s
+  gatilho E4-3 «inverte e multiplica»: +3.36 s
+  gatilho E4-3 «o k cancela»: +3.33 s
+  gatilho E4-3 «três pi sobre trinta e dois»: +3.37 s
+  gatilho E4-3 «zero vírgula duzentos»: +3.33 s
+  âncora E4-4: +2.70 s
+  gatilho E4-4 «conferir a massa sem»: +2.69 s
+  gatilho E4-4 «x vai de menos um»: +2.73 s
+  gatilho E4-4 «A de dentro é k vezes»: +2.67 s
+  gatilho E4-4 «aplicado no topo»: +2.70 s
+  gatilho E4-4 «o quadrado da raiz»: +2.71 s
+  gatilho E4-4 «k vezes um menos x ao quadrado sobre oito»: +2.68 s
+  gatilho E4-4 «A de fora integra»: +2.73 s
+  gatilho E4-4 «dois terços mais dois»: +2.73 s
+  gatilho E4-4 «k sobre seis de novo»: +2.71 s
+  gatilho E4-4 «e se a chapa fosse»: +2.67 s
+  gatilho E4-4 «achatado pela metade»: +2.70 s
+  gatilho E4-4 «quatro b sobre três pi»: +2.67 s
+  gatilho E4-4 «dois sobre três pi»: +2.71 s
+  gatilho E4-4 «a densidade que cresce»: +2.73 s
+  âncora E5-1: +3.34 s
+  gatilho E5-1 «agora sim a meia arruela»: +3.34 s
+  gatilho E5-1 «em polares ela é um retângulo»: +3.31 s
+  gatilho E5-1 «r vai de um a dois»: +5.01 s
+  gatilho E5-1 «e téta de zero a pi»: +5.59 s
+  gatilho E5-1 «x barra é zero»: +3.34 s
+  gatilho E5-1 «a área é a integral»: +3.31 s
+  gatilho E5-1 «aquele r é o jacobiano»: +3.37 s
+  gatilho E5-1 «a de dentro r ao quadrado»: +3.37 s
+  gatilho E5-1 «quatro meios menos um meio»: +3.35 s
+  gatilho E5-1 «A de fora é só multiplicar»: +3.35 s
+  gatilho E5-1 «a área é três pi»: +3.64 s
+  gatilho E5-1 «o meio disco grande»: +3.33 s
+  gatilho E5-1 «o pequeno pi sobre»: +3.32 s
+  gatilho E5-1 «a diferença é três pi sobre dois»: +3.45 s
+  âncora E5-2: +2.69 s
+  gatilho E5-2 «o momento em relação»: +3.72 s
+  gatilho E5-2 «e y é r seno»: +2.66 s
+  gatilho E5-2 «A de dentro integra»: +2.68 s
+  gatilho E5-2 «oito terços menos um terço»: +2.71 s
+  gatilho E5-2 «sete terços de seno»: +3.39 s
+  gatilho E5-2 «A de fora é a integral do seno»: +3.44 s
+  gatilho E5-2 «menos cosseno de zero a pi»: +7.04 s
+  gatilho E5-2 «aquele dois de sempre»: +5.92 s
+  gatilho E5-2 «o momento é catorze»: +6.20 s
+  gatilho E5-2 «é momento sobre área»: +5.26 s
+  gatilho E5-2 «inverte e multiplica»: +2.70 s
+  gatilho E5-2 «vinte e oito sobre nove pi»: +2.70 s
+  gatilho E5-2 «zero vírgula novecentos e noventa»: +2.84 s
+  gatilho E5-2 «menor que um por»: +2.72 s
+  gatilho E5-2 «cai no buraco»: +2.71 s
+  âncora E5-3: +3.25 s
+  gatilho E5-3 «recorta essa meia arruela»: +3.25 s
+  gatilho E5-3 «pendura por uma ponta»: +3.22 s
+  gatilho E5-3 «ela gira até o centro»: +3.26 s
+  gatilho E5-3 «pendura um fio de prumo»: +3.24 s
+  gatilho E5-3 «pela outra ponta»: +3.28 s
+  gatilho E5-3 «as duas linhas se cruzam»: +4.78 s
+  gatilho E5-3 «no ar onde não tem»: +4.18 s
+  gatilho E5-3 «acontece com um anel»: +3.24 s
+  gatilho E5-3 «com uma ferradura»: +3.28 s
+  gatilho E5-3 «com um bumerangue»: +3.28 s
+  âncora E5-4: +2.90 s
+  gatilho E5-4 «e se a borda pesar»: +3.90 s
+  gatilho E5-4 «Pensa numa roda de bicicleta»: +2.89 s
+  gatilho E5-4 «cada um tem um dono»: +2.92 s
+  gatilho E5-4 «integra em r ao cubo»: +2.89 s
+  gatilho E5-4 «oito terços menos um»: +2.93 s
+  gatilho E5-4 «sete k sobre três a»: +2.93 s
+  gatilho E5-4 «a de fora multiplica por pi»: +2.87 s
+  gatilho E5-4 «Agora o momento»: +2.88 s
+  gatilho E5-4 «A de dentro é r à quarta»: +2.93 s
+  gatilho E5-4 «dezesseis quartos menos»: +2.93 s
+  gatilho E5-4 «quinze quartos»: +2.91 s
+  gatilho E5-4 «o mesmo dois da integral»: +2.91 s
+  gatilho E5-4 «quinze k sobre dois»: +2.93 s
+  gatilho E5-4 «Dividindo momento por massa»: +2.89 s
+  gatilho E5-4 «o k cancela»: +3.23 s
+  gatilho E5-4 «quarenta e cinco sobre catorze»: +2.92 s
+  gatilho E5-4 «volta para a chapa»: +5.83 s
+  âncora E6-1: +4.05 s
+  gatilho E6-1 «último problema»: +4.05 s
+  gatilho E6-1 «e gira em torno do eixo»: +4.03 s
+  gatilho E6-1 «qual o volume»: +4.03 s
+  gatilho E6-1 «olha um quadradinho»: +4.02 s
+  gatilho E6-1 «a uma altura y»: +4.04 s
+  gatilho E6-1 «um anel de comprimento»: +4.06 s
+  gatilho E6-1 «dois pi y e»: +4.03 s
+  gatilho E6-1 «varre um volume de mais»: +4.06 s
+  gatilho E6-1 «somando no limite»: +4.03 s
+  gatilho E6-1 «o dois pi sai»: +4.87 s
+  gatilho E6-1 «o momento em relação ao eixo»: +4.08 s
+  gatilho E6-1 «y barra vezes a área»: +4.06 s
+  gatilho E6-1 «o caminho do centroide»: +4.06 s
+  gatilho E6-1 «fatiando deitado»: +4.08 s
+  gatilho E6-1 «o método das cascas»: +4.04 s
+  âncora E6-2: +3.44 s
+  gatilho E6-2 «Vamos testar com o meio disco»: +4.04 s
+  gatilho E6-2 «a quatro a sobre três pi»: +3.46 s
+  gatilho E6-2 «e a área é pi»: +3.47 s
+  gatilho E6-2 «girando em torno da base»: +3.45 s
+  gatilho E6-2 «Pappus diz o volume»: +5.81 s
+  gatilho E6-2 «o pi cancela»: +3.46 s
+  gatilho E6-2 «oito a sobre três vezes»: +3.45 s
+  gatilho E6-2 «que dá quatro terços»: +3.44 s
+  gatilho E6-2 «quatro terços de pi a»: +4.17 s
+  gatilho E6-2 «É a bola»: +3.62 s
+  âncora E6-3: +3.42 s
+  gatilho E6-3 «agora a meia arruela»: +4.62 s
+  gatilho E6-3 «ela varre uma bola oca»: +3.45 s
+  gatilho E6-3 «a bola de raio dois menos»: +5.95 s
+  gatilho E6-3 «quatro terços de pi vezes oito»: +3.65 s
+  gatilho E6-3 «vinte e oito pi sobre três»: +3.43 s
+  gatilho E6-3 «Pappus ao contrário»: +3.40 s
+  gatilho E6-3 «A área a gente já tem»: +3.44 s
+  gatilho E6-3 «três pi ao quadrado»: +3.45 s
+  gatilho E6-3 «Vamos dividir»: +3.41 s
+  gatilho E6-3 «vinte e oito sobre nove pi o»: +3.43 s
+  gatilho E6-3 «o mesmo número»: +3.41 s
+  âncora E6-4: +3.42 s
+  gatilho E6-4 «vale para qualquer meia arruela»: +5.15 s
+  gatilho E6-4 «raio de dentro a e»: +3.47 s
+  gatilho E6-4 «quatro terços de pi vezes b»: +3.40 s
+  gatilho E6-4 «quatro vezes b ao cubo»: +3.39 s
+  gatilho E6-4 «fatora essas duas diferenças»: +3.43 s
+  gatilho E6-4 «diferença de quadrados»: +3.44 s
+  gatilho E6-4 «o b menos a cancela»: +3.43 s
+  gatilho E6-4 «com a igual a zero»: +3.40 s
+  gatilho E6-4 «é o meio disco»: +4.05 s
+  gatilho E6-4 «A chapa afina até virar um arame»: +3.45 s
+  gatilho E6-4 «sessenta e quatro por cento»: +3.43 s
+  âncora E6-5: +3.42 s
+  gatilho E6-5 «uma rosquinha»: +3.45 s
+  gatilho E6-5 «a dois do eixo»: +3.45 s
+  gatilho E6-5 «girando em volta dele»: +3.44 s
+  gatilho E6-5 «o centro do disco é o centroide»: +8.35 s
+  gatilho E6-5 «dois pi vezes dois a»: +5.92 s
+  gatilho E6-5 «a área é pi vezes»: +5.05 s
+  gatilho E6-5 «quatro pi ao quadrado»: +3.42 s
+  âncora S1: +4.06 s
+  gatilho S1 «resumindo»: +4.46 s
+  gatilho S1 «esquecer o jacobiano»: +4.08 s
+  gatilho S1 «sem módulo»: +4.07 s
+  gatilho S1 «sem desenhar»: +4.07 s
+  gatilho S1 «dividir pela área»: +4.04 s
+  gatilho S1 «usar pappus com chapa»: +4.07 s
+  gatilho S1 «E a meia arruela»: +4.06 s
+  gatilho S1 «volta para a chapa em»: +4.04 s
+  âncora S2: +3.62 s
+  gatilho S2 «toda massa foi de chapa»: +3.64 s
+  gatilho S2 «dentro de um sólido ponto»: +3.64 s
+  gatilho S2 «mais pesado longe de um canto»: +3.61 s
+  gatilho S2 «quanto pesa esse cubo»: +3.64 s
+  gatilho S2 «uma soma de caixinhas»: +3.63 s
+  gatilho S2 «no próximo vídeo»: +3.61 s
+  gatilho S2 «deixa o like»: +3.63 s
+  gatilho S2 «a partir de que tamanho»: +7.09 s

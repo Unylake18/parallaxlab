@@ -1,0 +1,39 @@
+Q1 área do quarto de disco: ∫_0^2 sqrt(4 - x²) dx = pi: True (pi)
+Q2 fatia em x = 1 tem altura sqrt(3) ≈ 1,732: True 
+Q3 fatia de F (1 dentro, 0 fora) em x = 1 em [0,2] = sqrt(3) (o zero não soma): True (1.732051)
+T1 fatia em pé de 0 até x: beta(x) = x³ + x³/3 = 4x³/3: True (4*x**3/3)
+T2 massa do triângulo de baixo = 16/3 (metade de 32/3): True 
+T3 deitado de x = y até 2: alpha(y) = 8/3 + 2y² - 4y³/3: True (-4*y**3/3 + 2*y**2 + 8/3)
+T4 ∫_0^2 alpha = 16/3 + 16/3 - 16/3 = 16/3: True 
+T5 simetria: f(x,y) = f(y,x), então o triângulo de cima também pesa 16/3: True 
+T6 caso-limite f = 1: área do triângulo = 2 = metade de 4: True 
+   fatias: beta(1) = 1.3333, beta(2) = 10.6667; alpha(0) = 2.6667, alpha(1) = 3.3333, alpha(2) = 0.0000
+Y1 em pé: ∫_0^2 ∫_0^{sqrt(4-x²)} y dy dx = ∫_0^2 (4 - x²)/2 dx = 8/3: True 
+Y2 inverter: y = sqrt(4 - x²), x, y ≥ 0  ⇔  x = sqrt(4 - y²): True 
+Y3 deitado: ∫_0^2 y·sqrt(4 - y²) dy = [-(4 - y²)^{3/2}/3]_0^2 = 8/3: True (8/3)
+Y4 fatia deitada: f = y não depende de x ⇒ integral de dentro = y · comprimento sqrt(4 - y²): True 
+G1 a primitiva de e^{-y²} não é elementar (sympy devolve erf): True (sqrt(pi)*erf(y)/2)
+G2 trocando: ∫_0^1 ∫_0^y e^{-y²} dx dy = ∫_0^1 y e^{-y²} dy = (1 - 1/e)/2: True ≈ 0.316060
+G3 a de dentro deitada: ∫_0^y e^{-y²} dx = y·e^{-y²} (comprimento × altura): True 
+G4 ordem original, numérica (dblquad): ≈ 0,316060: True (0.316060)
+G5 ordem original com erf (sympy) dá o mesmo: True 
+G6 região lida dos limites: 0 ≤ x ≤ 1, x ≤ y ≤ 1  ⇔  0 ≤ y ≤ 1, 0 ≤ x ≤ y (mesmo triângulo, área 1/2): True 
+G7 erro clássico (só trocar dy dx por dx dy) devolve uma função de x, não um número: True (sqrt(pi)*(1 - x)*erf(1)/2)
+   e^-1 = 0.367879; fatias deitadas: y e^(-y²) em y = 0,25/0,5/0,75/1: 0.2349, 0.3894, 0.4273, 0.3679; máximo em y = 1/sqrt2 ≈ 0.7071 (valor 0.4289)
+S1 sen(x³) não tem primitiva elementar (sympy devolve hipergeométrica): True (x**4*gamma(2/3)*hyper((2/3,), (3/2, 5/3), -x**6/4)/(6*gamma(5/3)))
+S2 região: 0 ≤ y ≤ 1, sqrt(y) ≤ x ≤ 1  ⇔  0 ≤ x ≤ 1, 0 ≤ y ≤ x²: True 
+S3 trocando: ∫_0^1 x² sen(x³) dx = (1 - cos 1)/3: True ≈ 0.153233
+S4 ordem original, numérica ≈ 0,153233: True (0.153233)
+R1 deitado (uma conta): ∫_0^1 [(1 - y) - (y - 1)] dy = 1: True 
+R2 em pé (duas contas, o teto muda de fórmula em x = 0): 1/2 + 1/2 = 1: True 
+R3 com densidade y: 1/3 nas duas ordens (1/6 + 1/6): True 
+R4 Guidorizzi Ex. 7: ∬ xy no telhado = 0 (simetria) nas duas ordens: True 
+M1 metal leve em pé: ∫_0^2 g = 2,4721 m² (EP. 08): True (2.472143)
+M2 deitado: faixa cheia (y < 0,836) + 1 corte (0,836–1,059) + 2 cortes (1,059–1,42) = mesma área: True (1.6729 + 0.4097 + 0.3895 = 2.472143)
+   g(0) = 0.8364, g(2) = 1.0593, máximo 1.4200 em x = 1.1593
+L1 encontro: P(|x - y| ≤ 1/4) = 1 - (3/4)² = 7/16, em pé com 3 pedaços: True (≈ 0.4375)
+L2 a mesma probabilidade deitado: True 
+K1 inverter y = 4x - x²: x = 2 ∓ sqrt(4 - y) (os dois ramos): True 
+K2 área 9/2: em pé uma conta; deitado 0 ≤ y ≤ 3 (sai na reta) + 3 ≤ y ≤ 4 (sai no ramo direito): True 
+
+34 de 34 checagens True

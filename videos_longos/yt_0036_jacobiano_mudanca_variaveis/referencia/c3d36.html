@@ -1,0 +1,44 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>c3d36</title>
+<style>html,body{margin:0;background:transparent;overflow:hidden}canvas{display:block}</style></head><body>
+<script src="three.min.js"></script>
+<script>
+// Cena 3D-alvo do yt_0036 (Cálculo III · EP. 11 · Jacobiano), three.js r128. ?k=<chave>
+// O PRODUTO VETORIAL EM PÉ (B4-2). Coordenadas LOCAIS do zoom: origem no canto M = φ(0,75; 0,5) = (0,3125; 0,75),
+// unidade = Δ = 0,1 do plano x, y nos TRÊS eixos (ξ = (x − x_M)/0,1, η = (y − y_M)/0,1, ζ = z/0,1).
+//   w1 = ∂φ/∂u · Δu = (2u, 2v)·0,1 = (0,15; 0,10)  → local (1,5; 1)    laranja  #FF9440
+//   w2 = ∂φ/∂v · Δv = (−2v, 2u)·0,1 = (−0,10; 0,15) → local (−1; 1,5) verde-água #2EE6A6
+//   w1 ∧ w2 = (0, 0, 1,5·1,5 − (−1)·1) = (0, 0, 3,25) local  → ALTURA 3,25 = ÁREA do paralelogramo (3,25 unidades²)
+//   Em unidades de x, y: área = 3,25 · 0,1 · 0,1 = 0,0325 = |J(M)| Δu Δv. Mesma escala nas setas e no vetor (sem fator de desenho).
+// Chaves:  obl  câmera oblíqua parada (quadro-alvo 10, estado final: vetor inteiro)
+//          topo vista de cima ORTOGRÁFICA = o 2D do zoom (quadro-alvo 09): M em (330, 860) px, 190 px por unidade local (= 1900 px por unidade de x, y)
+// Estilo: opaco, sem luz (MeshBasicMaterial), sem sombra/névoa/brilho/transparência, fundo transparente (o violeta liso vem do Manim).
+// window.PTS = pontos nomeados em px de 1920×1080 (o Manim prende os rótulos neles).
+const T=THREE,K=new URLSearchParams(location.search).get('k')||'obl';
+const W=1920,H=1080,R=new T.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true});
+R.setPixelRatio(1);R.setSize(W,H,false);R.setClearColor(0x000000,0);document.body.appendChild(R.domElement);
+T.Object3D.DefaultUp.set(0,0,1);const S=new T.Scene();
+const UC='#FF9440',VC='#2EE6A6',LIMA='#C6F26B',CHAPA='#663A4C',MALHA='#FFB3BC',GRADE='#2B2558',BG='#18143A';
+const C=h=>new T.Color(h);
+const w1=[1.5,1,0],w2=[-1,1.5,0],cc=[w1[0]+w2[0],w1[1]+w2[1],0],HZ=w1[0]*w2[1]-w1[1]*w2[0]; // 3,25
+let cam;const PTS={};
+if(K==='topo'){const s=190;cam=new T.OrthographicCamera(-330/s,(W-330)/s,860/s,-(H-860)/s,.1,100);cam.position.set(0,0,20);cam.up.set(0,1,0);cam.lookAt(0,0,0);}
+else{cam=new T.PerspectiveCamera(22,W/H,.1,300);cam.up.set(0,0,1);cam.position.set(-7.2,-11,7.4);cam.lookAt(0.25,1.25,1.45);cam.setViewOffset(W,H,960-640,540-560,W,H);}
+cam.updateProjectionMatrix();cam.updateMatrixWorld(true);
+function proj(n,v){const q=new T.Vector3(...v).project(cam);PTS[n]=[+((q.x+1)/2*W).toFixed(1),+((1-q.y)/2*H).toFixed(1)];}
+function poli(p){const cp=new T.CurvePath();for(let i=0;i+1<p.length;i++)cp.add(new T.LineCurve3(new T.Vector3(...p[i]),new T.Vector3(...p[i+1])));return cp;}
+const tubo=(p,r,cor)=>{const m=new T.Mesh(new T.TubeGeometry(poli(p),Math.max(8,(p.length-1)*4),r,8,false),new T.MeshBasicMaterial({color:C(cor)}));S.add(m);return m;};
+function seta(a,b,r,cor){const A=new T.Vector3(...a),B=new T.Vector3(...b),d=B.clone().sub(A),L=d.length(),hl=Math.min(.42,.28*L),g=new T.Group(),m=new T.MeshBasicMaterial({color:C(cor)});
+ const s=new T.Mesh(new T.CylinderGeometry(r,r,L-hl,14),m);s.position.y=(L-hl)/2;const c=new T.Mesh(new T.ConeGeometry(r*2.6,hl,20),m);c.position.y=L-hl/2;g.add(s,c);
+ g.position.copy(A);g.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),d.normalize());S.add(g);return g;}
+// chão: grade de passo 0,5 local (= 0,05 de x, y, o papel do zoom), só traço fino
+const rG=K==='topo'?.006:.012;for(let i=-1;i<=6;i++){const t=i*.5,tx=t-.125;tubo([[tx,-.5,0],[tx,3,0]],rG,GRADE);tubo([[-1.125,t,0],[2.875,t,0]],rG,GRADE);} // ξ deslocado 0,125 para cair na grade absoluta de x (x_M = 0,3125 não é múltiplo de 0,05)
+// paralelogramo (chapa misturada ao fundo, como no alvo) + borda malha
+const sh=new T.Shape([new T.Vector2(0,0),new T.Vector2(w1[0],w1[1]),new T.Vector2(cc[0],cc[1]),new T.Vector2(w2[0],w2[1])]);
+const fill=new T.Mesh(new T.ShapeGeometry(sh),new T.MeshBasicMaterial({color:C(BG).lerp(C(CHAPA),.95),side:T.DoubleSide}));fill.position.z=.002;S.add(fill);
+const ez=.01;tubo([[0,0,ez],[...w1.slice(0,2),ez],[...cc.slice(0,2),ez],[...w2.slice(0,2),ez],[0,0,ez]],.022,MALHA);
+seta([0,0,.02],[w1[0],w1[1],.02],.045,UC);seta([0,0,.02],[w2[0],w2[1],.02],.045,VC);
+if(K!=='topo')seta([0,0,0],[0,0,HZ],.05,LIMA); // na vista de cima o vetor vira um ponto: some no pouso
+R.render(S,cam);
+proj('M',[0,0,0]);proj('w1',w1);proj('w2',w2);proj('C',cc);proj('topo',[0,0,HZ]);proj('w1_meio',[w1[0]/2,w1[1]/2,0]);proj('w2_meio',[w2[0]/2,w2[1]/2,0]);
+window.PTS=PTS;document.title='ok';
+</script></body></html>

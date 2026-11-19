@@ -1,0 +1,96 @@
+OK  C1.1 chute do centro: rho(1/2,1/2,1/2)·1 = 3/2
+OK  C1.2 Riemann n=2, pontos médios: soma 12 · 1/8 = 3/2
+OK  C1.3 canto de baixo: 6 · 1/8 = 3/4 ; canto de cima: 18 · 1/8 = 9/4
+OK  C1.4 canto de baixo = 3/2 − 3/(2n) (n = 2, 4, 10)
+OK  C1.5 canto de cima = 3/2 + 3/(2n) (n = 2, 4, 10)
+OK  C1.6 tabela: n=4 → 1,125 e 1,875; n=10 → 1,35 e 1,65
+OK  C1.7 ponto médio = 3/2 para todo n (2, 3, 4, 10)
+OK  C1.8 diferença cima − baixo = 3/n → 0
+OK  C1.9 ∫₀¹(x+y+z)dz = [xz + yz + z²/2]₀¹ = x + y + 1/2
+OK  C1.10 ∫₀¹(x + y + 1/2)dy = [xy + y²/2 + y/2]₀¹ = x + 1
+OK  C1.11 ∫₀¹(x+1)dx = [x²/2 + x]₀¹ = 3/2
+OK  C1.12 ∭x² = 1/3 ; ∭xy = ∭xz = 1/4
+OK  C1.13 M_yz = 1/3 + 1/4 + 1/4 = 5/6
+OK  C1.14 x̄ = (5/6)/(3/2) = 5/9 ≈ 0,556 (= ȳ = z̄ pela troca de letras)
+OK  C1.15 1/3 + 1/4 + 1/4 = 4/12 + 3/12 + 3/12 = 10/12 = 5/6
+OK  C1.16 folha z = 1: na tampa, rho = x + y + 1 ≤ 3; soma ≤ 3 · 1 · Δz → 0
+OK  C2.1 V = 1/6 (cateto·cateto/2 · altura/3)
+OK  C2.2 ∫₀^{1−x−y}(x+y)dz = (x+y)(1−x−y)
+OK  C2.3 w = x + y: y = 0 → w = x ; y = 1 − x → w = 1 ; dw = dy
+OK  C2.4 ∫ₓ¹ w(1 − w)dw = [w²/2 − w³/3]ₓ¹ = 1/6 − x²/2 + x³/3
+OK  C2.5 (1/2 − 1/3) − (x²/2 − x³/3) = 1/6 − x²/2 + x³/3
+OK  C2.6 ∫₀¹ (1/6 − x²/2 + x³/3)dx = 1/6 − 1/6 + 1/12 = 1/12
+OK  C2.7 centroide = média dos 4 vértices = (1/4, 1/4, 1/4)
+OK  C2.8 confere: rho(centroide) · V = (1/4 + 1/4)(1/6) = 1/12
+OK  C2.9 densidade linear: ∭(Ax+By+Cz+D) = V·(valor no centroide)
+OK  C2.10 contraexemplo: rho = x² não vale (∭x² = 1/60 ≠ (1/16)(1/6) = 1/96)
+OK  C2.11 ∫₀^{1−x−y} z(x+y)dz = (x+y)(1−x−y)²/2
+OK  C2.12 em w: ∫₀¹∫ₓ¹ (1/2)w(1−w)² dw dx
+OK  C2.13 troca a ordem: 0 ≤ x ≤ w ≤ 1 ⇒ ∫₀¹ (1/2)w(1−w)² · [x]₀ʷ dw = ∫₀¹ (1/2)w²(1−w)² dw
+OK  C2.14 w²(1 − w)² = w² − 2w³ + w⁴ ; ∫₀¹ = 1/3 − 1/2 + 1/5 = 1/30
+OK  C2.15 M_xy = (1/2)(1/30) = 1/60
+OK  C2.16 z̄ = (1/60)/(1/12) = 12/60 = 1/5 < 1/4
+OK  C2.17 (reserva) x̄ = ȳ = 3/10
+OK  C2.18 a massa pela troca também: ∫₀¹ w(1−w)·w dw = 1/3 − 1/4 = 1/12
+OK  C3.1 entrada z = (h/R)s (a parede), saída z = h (a tampa)
+OK  C3.2 ∫_{hs/R}^h s dz = s(h − hs/R) = hs − (h/R)s²
+OK  C3.3 ∫₀^R (hs − (h/R)s²) ds = hR²/2 − hR²/3 = hR²/6
+OK  C3.4 V = 2π · hR²/6 = πR²h/3
+OK  C3.5 ∫ z s dz = s[z²/2] = s(h²/2 − h²s²/(2R²))
+OK  C3.6 ∫₀^R (h²s/2 − h²s³/(2R²)) ds = h²R²/4 − h²R²/8 = h²R²/8
+OK  C3.7 ∭z dV = 2π · h²R²/8 = πR²h²/4
+OK  C3.8 z̄ = (πR²h²/4)/(πR²h/3) = 3h/4 (do vértice) = h/4 da base
+OK  C3.9 ∫ s³ dz = s³(h − hs/R) = hs³ − (h/R)s⁴
+OK  C3.10 ∫₀^R (hs³ − (h/R)s⁴) ds = hR⁴/4 − hR⁴/5 = hR⁴/20
+OK  C3.11 I_z = k · 2π · hR⁴/20 = πkR⁴h/10
+OK  C3.12 I_z = (πkR⁴h/10)/(πkR²h/3) MR² = (3/10)MR²
+OK  C3.13 (1/10)/(1/3) = 3/10 ; 0,3 < 0,5 (cilindro)
+OK  C3.14 plano z = h em esféricas: r cos φ = h ⇒ r = h/cos φ ; tg α = R/h
+OK  C3.15 ∫₀^{h/cos φ} r² sen φ dr = (h³/3) sen φ / cos³φ
+OK  C3.16 u = cos φ, du = −sen φ dφ: ∫₀^α senφ/cos³φ dφ = ∫₁^{cos α} −u⁻³ du = [u⁻²/2]₁^{cos α}
+OK  C3.17 = (1/cos²α − 1)/2 = tg²α/2 = R²/(2h²)
+OK  C3.18 V = 2π · (h³/3) · R²/(2h²) = πR²h/3 ✓
+OK  C3.19 numérico R = 1, h = 2: V esféricas ≈ 2,0944
+OK  C4.1 M = k · 2π · 1 · R³/3 = (2/3)πkR³
+OK  C4.2 z = r cos φ ; integrando r cos φ · r² sen φ = r³ sen φ cos φ
+OK  C4.3 ∫₀^{π/2} sen φ cos φ dφ = [sen²φ/2]₀^{π/2} = 1/2
+OK  C4.4 M_xy = k · 2π · 1/2 · R⁴/4 = πkR⁴/4
+OK  C4.5 z̄ = (πR⁴/4)/(2πR³/3) = 3R/8 = 0,375R
+OK  C4.6 fatias: área do disco na altura z = π(R² − z²)
+OK  C4.7 ∫₀^R z π(R² − z²) dz = π(R⁴/2 − R⁴/4) = πR⁴/4 ✓
+OK  C4.8 volume por fatias: ∫₀^R π(R² − z²) dz = 2πR³/3 ✓
+OK  C4.9 rho = k r: M = k · 2π · 1 · R⁴/4 = πkR⁴/2
+OK  C4.10 M_xy = k · 2π · 1/2 · R⁵/5 = πkR⁵/5
+OK  C4.11 z̄ = (πR⁵/5)/(πR⁴/2) = 2R/5 = 0,4R > 0,375R
+OK  C4.12 (cartesianas, numérico R = 1) z̄ homogênea ≈ 0,375
+OK  C4.13 rho = k rⁿ: z̄ = (n+3)R/(2(n+4)) → n = 0: 3R/8, n = 1: 2R/5, n → ∞: R/2 (tudo na casca)
+OK  C4.14 casca fina (meia esfera oca) z̄ = R/2 direto
+OK  C5.1 polo deslocado: x = R + s cos θ, y = s sen θ, z = z; jacobiano s
+OK  C5.2 x² + y² = R² + 2Rs cos θ + s²cos²θ + s²sen²θ = R² + 2Rs cos θ + s²
+OK  C5.3 termo 1: kR² ∭ s = R² · kπR²h = MR²
+OK  C5.4 termo 2: ∫₀^{2π} cos θ dθ = 0 ⇒ 0
+OK  C5.5 termo 3: k ∭ s³ = k · h · R⁴/4 · 2π = πkR⁴h/2 = MR²/2
+OK  C5.6 I = MR² + 0 + MR²/2 = (3/2)MR²
+OK  C5.7 polo na origem: (x−R)² + y² ≤ R² ⇔ s² ≤ 2Rs cos θ ⇔ s ≤ 2R cos θ, −π/2 ≤ θ ≤ π/2
+OK  C5.8 ∫₀^{2R cos θ} s³ ds = (2R cos θ)⁴/4 = 4R⁴cos⁴θ
+OK  C5.9 cos⁴θ = ((1 + cos 2θ)/2)² = (1 + 2cos 2θ + cos²2θ)/4
+OK  C5.10 cos²2θ = (1 + cos 4θ)/2 ⇒ cos⁴θ = 3/8 + (1/2)cos 2θ + (1/8)cos 4θ
+OK  C5.11 ∫_{−π/2}^{π/2}: [3θ/8 + sen 2θ/4 + sen 4θ/32] = 3π/8 + 0 + 0
+OK  C5.12 I = k · h · 4R⁴ · 3π/8 = (3/2)πkR⁴h = (3/2)MR² ✓
+OK  C5.13 massa com o polo na origem: kh ∫ 2R²cos²θ dθ = πkR²h ✓
+OK  C5.14 numérico (R = h = k = 1): I ≈ 3π/2 ≈ 4,712
+OK  C6.1 (x − d)² + y² = (x² + y²) − 2dx + d²
+OK  C6.2 ∭ x dm = M x̄ = 0 (centro de massa na origem) ⇒ I = I_cm + Md²
+OK  C6.3 cubo: ∭x² (centrado) = L · L · L³/12 = L⁵/12
+OK  C6.4 I_cm (eixo central) = 2kL⁵/12 = ML²/6
+OK  C6.5 d = meia diagonal da face = L/√2 ⇒ d² = L²/2
+OK  C6.6 I_aresta = ML²/6 + ML²/2 = 2ML²/3
+OK  C6.7 confere direto: k(L⁵/3 + L⁵/3) = (2/3)ML² ✓
+OK  C6.8 bola tangente: (2/5)MR² + MR² = (7/5)MR²
+OK  C6.9 confere direto em esféricas: I_tangente = (7/5)MR²
+OK  C6.10 erro: parede → parede oposta "+M(2R)²" daria 11/2 MR²; certo: 3/2 (simetria)
+OK  C6.11 eixo na parede oposta (x = 2R): I = (3/2)MR² também
+OK  C6.12 certo: volta ao centro (− MR²) e vai (+ MR²): 3/2 − 1 + 1 = 3/2
+OK  C6.13 (desafio) cone, diâmetro da base: (3/20)MR² + (1/10)Mh²
+
+94/94 True

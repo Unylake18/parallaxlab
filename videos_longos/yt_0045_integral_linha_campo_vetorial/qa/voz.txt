@@ -1,0 +1,37 @@
+yt_0045 · QA da voz (narracao_final.wav)
+modelo eleven_v4 · voz qw7jgPZWOKrl10GsjQ82 · texto narracao_tags.md (narração final v1.2) · 4 blocos de API
+duração 1068.96 s (17:48.96); limite da parada: 21:30 → OK
+pico -0.69 dBFS; amostras em clipping (|x| ≥ 0,999): 0 → OK
+silêncios > 1,5 s dentro de parágrafo: 0
+pausas entre parágrafos: 18; 0.22–0.54 s (média 0.30 s); maior pausa entre palavras no texto todo 0.86 s
+tag lida em voz alta (STT): {'curious': 0, 'thoughtful': 0, 'surprised': 0, 'serious': 0, 'excited': 0, 'happy': 0} → OK
+  «gama» no STT: 30×
+  «gama linha» no STT: 8×
+  «delta» no STT: 6×
+  «ômega» no STT: 2×
+  «P» no STT: 0×
+  «Q» no STT: 1×
+  «R» no STT: 0×
+  «W» no STT: 0×
+  «c» no STT: 7×
+  «d x» no STT: 14×
+  «d y» no STT: 13×
+  «d z» no STT: 5×
+  «d t» no STT: 16×
+  «dois pi R ao quadrado» no STT: 2×
+  «quatro pi» no STT: 3×
+  «um sobre quatro pi» no STT: 1×
+  «dois pi menos meio» no STT: 1×
+  «cinco vírgula setenta e oito» no STT: 1×
+  «seis vírgula vinte e oito» no STT: 2×
+  «t mais dois t ao cubo» no STT: 1×
+  «Riemann» no STT: 1×
+  «Green» no STT: 2×
+  «Parallax Lab» no STT: 1×
+palavras 3424; 3.20 palavras/s no WAV inteiro; 3.20 palavras/s do início ao fim da fala (referência 3,0 palavras/s)
+fronteira de bloco antes de «repara bem o produto escalar de»: pausa 0.28 s (264.10–264.38); nível 2 s antes -21.5 dB × 2 s depois -19.7 dB
+  maior salto entre amostras na pausa: 0.0220 (clique > 0,2)
+fronteira de bloco antes de «o trabalho do redemoinho numa volta»: pausa 0.26 s (543.56–543.82); nível 2 s antes -22.8 dB × 2 s depois -18.9 dB
+  maior salto entre amostras na pausa: 0.0078 (clique > 0,2)
+fronteira de bloco antes de «as duas primeiras componentes são o»: pausa 0.30 s (831.78–832.08); nível 2 s antes -20.4 dB × 2 s depois -22.5 dB
+  maior salto entre amostras na pausa: 0.1355 (clique > 0,2)

@@ -1,0 +1,219 @@
+[
+ {
+  "nome": "PÊNDULO L perpendicular ao fio",
+  "erro": 1.4210854715202004e-14,
+  "limite": 1,
+  "unidade": "grau",
+  "ok": true
+ },
+ {
+  "nome": "PÊNDULO dL/dt = torque do peso",
+  "erro": 1.920259048961624e-10,
+  "limite": 1e-06,
+  "unidade": "N m",
+  "ok": true
+ },
+ {
+  "nome": "PÊNDULO módulo constante",
+  "erro": 5.551115123125783e-17,
+  "limite": 0.00168,
+  "unidade": "kg m²/s",
+  "ok": true
+ },
+ {
+  "nome": "HALTERE L perpendicular à haste",
+  "erro": 1.4210854715202004e-14,
+  "limite": 1,
+  "unidade": "grau",
+  "ok": true
+ },
+ {
+  "nome": "HALTERE torque pelas centrípetas",
+  "erro": 3.510833468576701e-16,
+  "limite": 1e-06,
+  "unidade": "N m",
+  "ok": true
+ },
+ {
+  "nome": "MANCAIS binário e direção",
+  "erro": 4.577566798522237e-16,
+  "limite": 1e-06,
+  "unidade": "N m",
+  "ok": true
+ },
+ {
+  "nome": "SINAIS transversal para a massa de baixo",
+  "erro": 0.0,
+  "limite": 0,
+  "unidade": "",
+  "ok": true
+ },
+ {
+  "nome": "X transversal total",
+  "erro": 0.0,
+  "limite": 0.0011300000000000001,
+  "unidade": "",
+  "ok": true
+ },
+ {
+  "nome": "VOXEL principal após remontagem",
+  "erro": 0.0,
+  "limite": 0.5,
+  "unidade": "grau",
+  "ok": true
+ },
+ {
+  "nome": "VOXEL CM no eixo",
+  "erro": 5.483892217465372e-17,
+  "limite": 0.001,
+  "unidade": "m",
+  "ok": true
+ },
+ {
+  "nome": "VOXEL inclinação inicial >= 20 graus",
+  "erro": 0.0,
+  "limite": 0,
+  "unidade": "grau",
+  "ok": true
+ },
+ {
+  "nome": "VOXEL eixo principal mais próximo 35 ± 5 graus",
+  "erro": 7.105427357601002e-15,
+  "limite": 5,
+  "unidade": "grau",
+  "ok": true
+ },
+ {
+  "nome": "RODA CM dos excessos no eixo",
+  "erro": 0.0,
+  "limite": 1e-12,
+  "unidade": "m",
+  "ok": true
+ },
+ {
+  "nome": "RODA produtos de inércia após contrapesos",
+  "erro": 0.0,
+  "limite": 1e-12,
+  "unidade": "kg m²",
+  "ok": true
+ },
+ {
+  "nome": "RODA aliasing aparente 18 graus/quadro",
+  "erro": 0.0,
+  "limite": 0,
+  "unidade": "grau",
+  "ok": true
+ },
+ {
+  "nome": "OUTRA ORIGEM L axial no centro do círculo",
+  "erro": 0.0,
+  "limite": 1e-12,
+  "unidade": "",
+  "ok": true
+ },
+ {
+  "nome": "OUTRA ORIGEM Lz = 0,1682",
+  "erro": 1.903097840203327e-05,
+  "limite": 0.005,
+  "unidade": "",
+  "ok": true
+ },
+ {
+  "nome": "OUTRA ORIGEM torques do peso e da tração se cancelam",
+  "erro": 0.0,
+  "limite": 1e-12,
+  "unidade": "",
+  "ok": true
+ },
+ {
+  "nome": "RODA binário pelos apoios",
+  "erro": 0.0,
+  "limite": 1e-10,
+  "unidade": "N m",
+  "ok": true
+ },
+ {
+  "nome": "SÍNTESE sem torque: s² omega constante",
+  "erro": 4.440892098500626e-16,
+  "limite": 1e-12,
+  "unidade": "",
+  "ok": true
+ },
+ {
+  "nome": "HALTERE triplicar omega multiplica torque por nove",
+  "erro": 0.0,
+  "limite": 1e-10,
+  "unidade": "",
+  "ok": true
+ },
+ {
+  "nome": "HALTERE triplicar omega multiplica Fsup por nove",
+  "erro": 0.0,
+  "limite": 1e-10,
+  "unidade": "",
+  "ok": true
+ },
+ {
+  "nome": "HALTERE triplicar omega multiplica Finf por nove",
+  "erro": 0.0,
+  "limite": 1e-10,
+  "unidade": "",
+  "ok": true
+ },
+ {
+  "nome": "HALTERE triplicar omega multiplica Fc por nove",
+  "erro": 3.552713678800501e-15,
+  "limite": 1e-10,
+  "unidade": "",
+  "ok": true
+ },
+ {
+  "nome": "NÚMEROS pendulo omega",
+  "erro": 1.903097840183525e-05,
+  "limite": 0.005,
+  "unidade": "relativo",
+  "ok": true
+ },
+ {
+  "nome": "NÚMEROS pendulo torque",
+  "erro": 0.0,
+  "limite": 0.005,
+  "unidade": "relativo",
+  "ok": true
+ },
+ {
+  "nome": "NÚMEROS haltere Lz",
+  "erro": 0.0008613763648893372,
+  "limite": 0.005,
+  "unidade": "relativo",
+  "ok": true
+ },
+ {
+  "nome": "NÚMEROS haltere Lperp",
+  "erro": 0.0005595339933903551,
+  "limite": 0.005,
+  "unidade": "relativo",
+  "ok": true
+ },
+ {
+  "nome": "NÚMEROS haltere torque",
+  "erro": 0.0006628062414925924,
+  "limite": 0.005,
+  "unidade": "relativo",
+  "ok": true
+ },
+ {
+  "nome": "NÚMEROS roda Fc",
+  "erro": 0.00018796466264327341,
+  "limite": 0.005,
+  "unidade": "relativo",
+  "ok": true
+ },
+ {
+  "nome": "NÚMEROS roda binario",
+  "erro": 0.0001879646626432734,
+  "limite": 0.005,
+  "unidade": "relativo",
+  "ok": true
+ }
+]

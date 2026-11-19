@@ -1,0 +1,1231 @@
+1
+00:00:00,000 --> 00:00:02,400
+Olha esses dois halteres
+girando lado a lado.
+
+2
+00:00:02,420 --> 00:00:06,130
+Mesma massa, mesmo tipo de
+motor, a mesma velocidade:
+
+3
+00:00:06,420 --> 00:00:07,730
+uma volta por segundo.
+
+4
+00:00:07,920 --> 00:00:11,630
+Nos dois, o centro de massa
+está exatamente em cima do eixo.
+
+5
+00:00:11,680 --> 00:00:15,630
+A única diferença é a haste: em
+um ela é perpendicular ao eixo,
+
+6
+00:00:15,720 --> 00:00:17,250
+e no outro está inclinada.
+
+7
+00:00:17,380 --> 00:00:18,830
+Agora repara nas bancadas.
+
+8
+00:00:18,960 --> 00:00:20,650
+A da esquerda fica quietinha.
+
+9
+00:00:20,780 --> 00:00:23,650
+A da direita balança,
+uma vez a cada volta.
+
+10
+00:00:23,760 --> 00:00:26,990
+O balanço está exagerado na
+animação, só para você enxergar,
+
+11
+00:00:27,080 --> 00:00:31,000
+mas o efeito é real: os apoios do
+haltere inclinado estão sendo empurrados,
+
+12
+00:00:31,020 --> 00:00:33,260
+e esse empurrão gira junto com ele.
+
+13
+00:00:33,280 --> 00:00:37,400
+Pode parecer o que faz a máquina de lavar
+vibrar quando a roupa se acumula de um lado.
+
+14
+00:00:37,420 --> 00:00:40,620
+Só que aqui o centro de
+massa está certinho no eixo,
+
+15
+00:00:40,640 --> 00:00:42,540
+e a velocidade do giro não muda.
+
+16
+00:00:42,560 --> 00:00:44,570
+Então, de onde vem esse empurrão?
+
+17
+00:00:44,640 --> 00:00:47,890
+Como pode existir torque sem
+a velocidade angular aumentar?
+
+18
+00:00:48,280 --> 00:00:49,170
+Fala, pessoal!
+
+19
+00:00:49,340 --> 00:00:50,760
+Bem-vindos ao Parallax Lab.
+
+20
+00:00:50,780 --> 00:00:55,640
+Hoje a gente vai descobrir por que o momento
+angular de um corpo rígido nem sempre aponta
+
+21
+00:00:55,660 --> 00:00:59,450
+na direção do eixo de rotação, e o
+que acontece quando ele não aponta.
+
+22
+00:00:59,520 --> 00:01:04,360
+Pela regra da mão direita, os dedos acompanham
+o giro e o polegar mostra a direção da
+
+23
+00:01:04,380 --> 00:01:05,370
+velocidade angular.
+
+24
+00:01:05,520 --> 00:01:09,410
+O momento angular é outra seta, e ela
+pode apontar para um lado diferente.
+
+25
+00:01:09,800 --> 00:01:13,070
+O caminho tem três paradas:
+uma bolinha presa a um fio,
+
+26
+00:01:13,140 --> 00:01:16,190
+esse haltere inclinado e,
+no fim, a roda de um carro.
+
+27
+00:01:16,220 --> 00:01:20,800
+Os três contam a mesma história: um corpo
+pode girar com velocidade angular constante
+
+28
+00:01:20,820 --> 00:01:24,920
+e, ainda assim, ter um momento angular
+que muda de direção o tempo todo.
+
+29
+00:01:24,940 --> 00:01:27,790
+E é isso que explica por
+que um volante pode tremer.
+
+30
+00:01:27,880 --> 00:01:31,250
+Vamos começar pelo mais simples
+possível: uma bolinha só.
+
+31
+00:01:31,300 --> 00:01:33,970
+Sabe aquelas cadeirinhas
+voadoras de parque de diversões?
+
+32
+00:01:34,200 --> 00:01:38,780
+Quando o brinquedo ganha velocidade, as
+cadeirinhas se abrem e cada uma gira num círculo
+
+33
+00:01:38,800 --> 00:01:39,530
+deitado.
+
+34
+00:01:39,600 --> 00:01:43,830
+É isso que acontece neste pêndulo: a
+bolinha, presa por um fio a um prego,
+
+35
+00:01:43,860 --> 00:01:46,930
+anda num círculo horizontal,
+sempre com a mesma rapidez.
+
+36
+00:01:47,100 --> 00:01:50,070
+E, em relação ao prego,
+o peso dela faz torque.
+
+37
+00:01:50,280 --> 00:01:52,580
+Torque, e a velocidade angular não muda.
+
+38
+00:01:52,600 --> 00:01:55,570
+Guarda esse mistério, porque a
+gente vai desmontar ele agora.
+
+39
+00:01:55,940 --> 00:02:00,360
+Hipóteses: fio sem massa, sem atrito,
+e a gente olha tudo a partir do prego,
+
+40
+00:02:00,380 --> 00:02:01,310
+que está parado.
+
+41
+00:02:01,340 --> 00:02:03,940
+O momento angular da
+bolinha, em relação ao prego,
+
+42
+00:02:03,960 --> 00:02:08,180
+é o produto vetorial entre a posição
+dela, que vai do prego até a bolinha,
+
+43
+00:02:08,200 --> 00:02:11,190
+e o momento linear, que
+aponta na tangente do círculo.
+
+44
+00:02:11,240 --> 00:02:16,220
+Os dois formam noventa graus, então o tamanho
+do momento angular é simplesmente o comprimento
+
+45
+00:02:16,240 --> 00:02:18,270
+do fio vezes o momento linear.
+
+46
+00:02:18,440 --> 00:02:21,520
+E o momento angular não é
+só um número: é uma seta.
+
+47
+00:02:21,540 --> 00:02:24,530
+Pela regra da mão direita
+aplicada ao produto vetorial,
+
+48
+00:02:24,680 --> 00:02:28,730
+ela é perpendicular ao fio e ao
+movimento, e aponta para cima,
+
+49
+00:02:28,840 --> 00:02:30,930
+inclinada para o lado onde está a bolinha.
+
+50
+00:02:31,040 --> 00:02:34,270
+Repara nisso: a bolinha gira
+em torno de um eixo vertical,
+
+51
+00:02:34,400 --> 00:02:37,690
+mas o momento angular dela não
+aponta ao longo desse eixo.
+
+52
+00:02:37,740 --> 00:02:39,790
+Esse é o detalhe que muda tudo.
+
+53
+00:02:40,020 --> 00:02:43,100
+Vamos separar essa seta em
+duas partes: uma vertical,
+
+54
+00:02:43,120 --> 00:02:45,510
+ao longo do eixo, e outra horizontal.
+
+55
+00:02:45,800 --> 00:02:50,140
+O raio do círculo é o comprimento do fio
+vezes o seno do ângulo com a vertical.
+
+56
+00:02:50,160 --> 00:02:55,760
+Fazendo a conta, a parte vertical dá a massa
+vezes o raio ao quadrado vezes a velocidade
+
+57
+00:02:55,780 --> 00:02:59,770
+angular: o momento de inércia da
+bolinha vezes a velocidade angular,
+
+58
+00:03:00,060 --> 00:03:01,830
+igualzinho ao que a gente já conhecia.
+
+59
+00:03:01,920 --> 00:03:05,290
+Só que essa expressão descreve
+apenas a parte ao longo do eixo.
+
+60
+00:03:05,360 --> 00:03:07,370
+A parte horizontal é a novidade.
+
+61
+00:03:07,520 --> 00:03:09,130
+Agora deixa o pêndulo girar.
+
+62
+00:03:09,160 --> 00:03:10,950
+A parte vertical fica parada.
+
+63
+00:03:11,040 --> 00:03:15,710
+Mas a parte horizontal acompanha a bolinha,
+e a ponta da seta desenha um círculo.
+
+64
+00:03:15,780 --> 00:03:16,920
+O tamanho não muda…
+
+65
+00:03:16,940 --> 00:03:19,100
+só que a direção muda o tempo todo.
+
+66
+00:03:19,120 --> 00:03:22,170
+E uma seta que muda de
+direção está variando.
+
+67
+00:03:22,200 --> 00:03:22,520
+Quanto?
+
+68
+00:03:22,540 --> 00:03:27,100
+Num intervalo pequeno de tempo, a parte
+horizontal gira um ângulo igual à velocidade
+
+69
+00:03:27,120 --> 00:03:29,010
+angular vezes esse tempo.
+
+70
+00:03:29,060 --> 00:03:33,720
+Então a variação do momento angular é a
+parte horizontal vezes a velocidade angular,
+
+71
+00:03:33,740 --> 00:03:35,470
+na tangente desse círculo.
+
+72
+00:03:35,500 --> 00:03:39,360
+Agora olha o torque do peso: o
+braço dele é o raio do círculo,
+
+73
+00:03:39,380 --> 00:03:42,250
+e ele aponta exatamente
+nessa mesma direção.
+
+74
+00:03:42,340 --> 00:03:44,680
+O torque não está acelerando o giro.
+
+75
+00:03:44,700 --> 00:03:46,650
+Ele está virando o momento angular.
+
+76
+00:03:46,800 --> 00:03:51,600
+Essa é a ideia central da aula: torque
+não é sinônimo de girar mais rápido.
+
+77
+00:03:51,620 --> 00:03:55,740
+Torque é o que muda o momento angular,
+e o momento angular é uma seta,
+
+78
+00:03:55,760 --> 00:03:58,590
+então ele pode mudar de
+tamanho ou só de direção.
+
+79
+00:03:58,700 --> 00:04:00,740
+E isso já rende física de verdade.
+
+80
+00:04:00,760 --> 00:04:04,220
+Iguala o torque do peso à
+variação do momento angular.
+
+81
+00:04:04,240 --> 00:04:07,840
+A massa cancela, um comprimento
+cancela, o seno cancela,
+
+82
+00:04:07,860 --> 00:04:12,900
+e sobra: a velocidade angular ao quadrado
+é a gravidade dividida pelo comprimento do
+
+83
+00:04:12,920 --> 00:04:14,840
+fio vezes o cosseno do ângulo.
+
+84
+00:04:14,860 --> 00:04:17,820
+Com um metro de fio a
+trinta graus da vertical,
+
+85
+00:04:17,840 --> 00:04:20,980
+dá três vírgula trinta e
+seis radianos por segundo,
+
+86
+00:04:21,000 --> 00:04:24,190
+uma volta a cada um vírgula
+oitenta e sete segundos.
+
+87
+00:04:24,340 --> 00:04:28,390
+Ou seja, para cada ângulo existe
+uma única velocidade de giro.
+
+88
+00:04:28,420 --> 00:04:29,610
+Cadeirinhas mais abertas?
+
+89
+00:04:29,800 --> 00:04:32,010
+Tem que girar mais
+rápido: é a mesma conta.
+
+90
+00:04:32,100 --> 00:04:35,770
+E um cuidado com as palavras: a
+rapidez da bolinha é constante,
+
+91
+00:04:36,020 --> 00:04:38,530
+mas a velocidade dela muda de direção.
+
+92
+00:04:38,640 --> 00:04:41,360
+Com o momento angular é
+igual: o tamanho é constante,
+
+93
+00:04:41,380 --> 00:04:42,990
+mas a seta muda.
+
+94
+00:04:43,020 --> 00:04:46,330
+Agora vamos sair da bolinha
+e ir para um corpo inteiro.
+
+95
+00:04:46,500 --> 00:04:49,300
+Um corpo rígido é um monte
+de pedacinhos grudados,
+
+96
+00:04:49,320 --> 00:04:53,400
+e o momento angular dele é a soma
+dos momentos angulares de todos eles,
+
+97
+00:04:53,420 --> 00:04:55,220
+em relação a um ponto fixo.
+
+98
+00:04:55,240 --> 00:04:59,950
+Quando a gente deriva essa soma, as forças
+entre os pedacinhos aparecem em pares iguais,
+
+99
+00:05:00,040 --> 00:05:03,620
+opostos e na mesma linha, e
+os torques delas se cancelam.
+
+100
+00:05:03,640 --> 00:05:06,940
+Sobra a lei que importa:
+em relação a um ponto fixo,
+
+101
+00:05:06,960 --> 00:05:11,860
+num referencial parado, o torque das forças
+externas é a taxa de variação do momento
+
+102
+00:05:11,880 --> 00:05:13,050
+angular do corpo.
+
+103
+00:05:13,140 --> 00:05:14,370
+Pega um pedacinho só.
+
+104
+00:05:14,480 --> 00:05:18,070
+Com o eixo fixo e vertical, ele
+anda num círculo horizontal.
+
+105
+00:05:18,360 --> 00:05:22,610
+A gente põe a origem num ponto do eixo
+e quebra a posição dele em duas partes:
+
+106
+00:05:22,780 --> 00:05:25,930
+uma horizontal, que é o raio
+do círculo, e uma vertical,
+
+107
+00:05:26,140 --> 00:05:27,870
+que é a altura em relação à origem.
+
+108
+00:05:27,920 --> 00:05:31,980
+O momento angular se quebra junto: a
+parte do raio dá uma seta vertical,
+
+109
+00:05:32,000 --> 00:05:35,850
+ao longo do eixo, e a parte da
+altura dá uma seta horizontal.
+
+110
+00:05:35,980 --> 00:05:38,110
+Exatamente como no pêndulo.
+
+111
+00:05:38,380 --> 00:05:40,170
+Soma só as partes verticais.
+
+112
+00:05:40,360 --> 00:05:43,970
+Cada pedacinho entrega massa
+vezes raio vezes velocidade,
+
+113
+00:05:44,220 --> 00:05:47,220
+e a velocidade é a velocidade
+angular vezes o raio:
+
+114
+00:05:47,240 --> 00:05:50,610
+massa vezes raio ao quadrado
+vezes velocidade angular.
+
+115
+00:05:50,760 --> 00:05:54,180
+A velocidade angular é a mesma
+para todos e sai da soma,
+
+116
+00:05:54,200 --> 00:05:57,280
+e o que sobra é o momento de
+inércia em relação ao eixo:
+
+117
+00:05:57,300 --> 00:06:01,430
+um número que diz quanta massa existe
+e a que distância do eixo ela está.
+
+118
+00:06:01,500 --> 00:06:06,080
+A parte do momento angular ao longo do eixo
+é o momento de inércia vezes a velocidade
+
+119
+00:06:06,100 --> 00:06:06,750
+angular.
+
+120
+00:06:06,880 --> 00:06:10,880
+Sempre, para qualquer corpo rígido
+girando em torno de um eixo fixo.
+
+121
+00:06:10,900 --> 00:06:14,320
+E, como o corpo é rígido, o
+momento de inércia não muda.
+
+122
+00:06:14,340 --> 00:06:17,030
+Então, olhando só essa
+parte na lei do torque,
+
+123
+00:06:17,140 --> 00:06:22,200
+sai a equação que a gente já usava: torque
+igual a momento de inércia vezes aceleração
+
+124
+00:06:22,220 --> 00:06:22,750
+angular.
+
+125
+00:06:22,860 --> 00:06:24,270
+Ela não é a lei geral.
+
+126
+00:06:24,480 --> 00:06:27,190
+É só a parte da lei que
+fica ao longo do eixo.
+
+127
+00:06:27,380 --> 00:06:30,800
+Mas essa igualdade fala só
+da parte ao longo do eixo.
+
+128
+00:06:30,820 --> 00:06:35,090
+E as partes horizontais de cada
+pedacinho: elas se cancelam ou se somam?
+
+129
+00:06:35,180 --> 00:06:37,350
+Vamos para o caso mais simples que existe.
+
+130
+00:06:37,500 --> 00:06:41,380
+Um haltere inclinado: duas massas
+iguais, de quatrocentos gramas,
+
+131
+00:06:41,400 --> 00:06:44,770
+nas pontas de uma haste sem
+massa, presa ao eixo pelo meio.
+
+132
+00:06:44,900 --> 00:06:49,340
+A haste faz trinta graus com o eixo vertical,
+e cada massa fica a trinta centímetros
+
+133
+00:06:49,360 --> 00:06:50,070
+do centro.
+
+134
+00:06:50,100 --> 00:06:54,100
+O centro de massa fica no eixo, e um
+motor mantém uma volta por segundo.
+
+135
+00:06:54,120 --> 00:06:57,850
+Cada massa descreve um círculo
+horizontal, como a bolinha de antes.
+
+136
+00:06:57,920 --> 00:06:58,990
+Pega a massa de cima.
+
+137
+00:06:59,100 --> 00:07:03,900
+A altura dela é positiva, então a parte
+horizontal do momento angular dela aponta para
+
+138
+00:07:03,920 --> 00:07:05,830
+dentro, para o lado oposto ao dela.
+
+139
+00:07:05,940 --> 00:07:07,150
+Agora a massa de baixo.
+
+140
+00:07:07,200 --> 00:07:12,410
+Ela está do outro lado do eixo, então a posição
+horizontal dela aponta para o lado contrário.
+
+141
+00:07:12,440 --> 00:07:16,050
+Mas a altura também trocou de sinal,
+porque ela está abaixo da origem.
+
+142
+00:07:16,100 --> 00:07:17,870
+Duas trocas de sinal juntas…
+
+143
+00:07:17,980 --> 00:07:19,230
+e o resultado não troca.
+
+144
+00:07:19,320 --> 00:07:23,880
+A parte horizontal da massa de baixo aponta
+para o mesmo lado que a da massa de cima.
+
+145
+00:07:23,900 --> 00:07:27,540
+Leva os dois momentos angulares
+para a mesma origem e soma.
+
+146
+00:07:27,560 --> 00:07:30,830
+As partes verticais se somam,
+claro, e as horizontais também,
+
+147
+00:07:30,960 --> 00:07:33,060
+mesmo com as massas em lados opostos.
+
+148
+00:07:33,080 --> 00:07:37,300
+O resultado é um momento angular
+inclinado, que não aponta ao longo do eixo.
+
+149
+00:07:37,320 --> 00:07:40,350
+E isso com o centro de
+massa perfeitamente no eixo.
+
+150
+00:07:40,420 --> 00:07:44,600
+De lado, dá para ver tudo: o momento
+angular fica perpendicular à haste,
+
+151
+00:07:44,620 --> 00:07:46,110
+a sessenta graus do eixo.
+
+152
+00:07:46,140 --> 00:07:50,580
+A parte ao longo do eixo continua sendo o
+momento de inércia vezes a velocidade angular:
+
+153
+00:07:50,600 --> 00:07:54,660
+zero vírgula cento e treze quilogramas
+metro quadrado por segundo.
+
+154
+00:07:54,680 --> 00:07:59,420
+Só que a parte transversal é ainda maior:
+zero vírgula cento e noventa e seis.
+
+155
+00:07:59,440 --> 00:08:04,580
+Ela vem de somar, para cada massa, a massa
+vezes a altura vezes a distância horizontal
+
+156
+00:08:04,600 --> 00:08:06,310
+ao eixo, com os sentidos.
+
+157
+00:08:06,440 --> 00:08:09,050
+Essas somas têm nome: produtos de inércia.
+
+158
+00:08:09,120 --> 00:08:13,370
+Elas medem o quanto a massa está distribuída
+de um jeito torto em relação ao eixo.
+
+159
+00:08:13,400 --> 00:08:16,500
+E, com o haltere girando, o
+que acontece com essa seta?
+
+160
+00:08:16,520 --> 00:08:20,180
+A parte transversal está presa
+ao haltere e gira junto com ele:
+
+161
+00:08:20,200 --> 00:08:22,550
+a ponta desenha um
+círculo, como no pêndulo.
+
+162
+00:08:22,600 --> 00:08:24,660
+O tamanho fica, a direção muda.
+
+163
+00:08:24,680 --> 00:08:28,730
+Então, que distribuição de massa
+faria essa parte transversal sumir?
+
+164
+00:08:28,840 --> 00:08:32,190
+Um jeito simples: para cada
+pedacinho, um parceiro igual,
+
+165
+00:08:32,300 --> 00:08:34,600
+na mesma altura, do outro lado do eixo.
+
+166
+00:08:34,620 --> 00:08:39,400
+Aí os produtos de inércia dão zero, como num
+segundo haltere inclinado para o outro lado,
+
+167
+00:08:39,420 --> 00:08:40,540
+formando um xis.
+
+168
+00:08:40,560 --> 00:08:45,660
+As partes transversais se cancelam, e o momento
+angular volta a apontar ao longo do eixo.
+
+169
+00:08:45,680 --> 00:08:50,860
+Quando isso acontece, o momento angular é o
+momento de inércia vezes a velocidade angular,
+
+170
+00:08:50,880 --> 00:08:53,330
+inteirinho, as duas setas paralelas.
+
+171
+00:08:53,520 --> 00:08:56,590
+Esse eixo se chama eixo
+principal de inércia.
+
+172
+00:08:56,660 --> 00:08:59,470
+Um disco girando pelo
+centro, uma roda bem feita,
+
+173
+00:08:59,500 --> 00:09:03,690
+um haltere perpendicular ao eixo: todos
+giram em torno de um eixo principal.
+
+174
+00:09:03,860 --> 00:09:07,810
+E um detalhe importante: simetria
+ajuda, mas não é obrigatória.
+
+175
+00:09:07,880 --> 00:09:10,130
+Pensa numa batata, sem simetria nenhuma.
+
+176
+00:09:10,340 --> 00:09:13,570
+Girando em torno de um eixo qualquer,
+o momento angular sai torto.
+
+177
+00:09:13,660 --> 00:09:16,800
+Mas existem três direções
+perpendiculares entre si,
+
+178
+00:09:16,820 --> 00:09:21,730
+passando pelo centro de massa dela, em que ele
+fica alinhado e não sobra parte transversal.
+
+179
+00:09:21,760 --> 00:09:24,670
+A simetria é só um jeito
+fácil de achar esses eixos.
+
+180
+00:09:24,780 --> 00:09:28,710
+Agora, de volta ao haltere inclinado,
+e finalmente a resposta do começo.
+
+181
+00:09:28,900 --> 00:09:33,840
+A velocidade angular é constante, mas a parte
+transversal do momento angular está mudando
+
+182
+00:09:33,860 --> 00:09:34,610
+de direção.
+
+183
+00:09:34,700 --> 00:09:39,640
+Pela mesma conta do pêndulo, a taxa de
+variação é a velocidade angular vezes a parte
+
+184
+00:09:39,660 --> 00:09:40,500
+transversal.
+
+185
+00:09:40,520 --> 00:09:44,290
+E, pela lei geral, isso precisa de
+um torque externo desse tamanho.
+
+186
+00:09:44,420 --> 00:09:48,400
+Com uma volta por segundo, dá um
+vírgula vinte e três newtons metro.
+
+187
+00:09:48,420 --> 00:09:52,730
+E repara na direção: o torque é
+horizontal, perpendicular ao eixo.
+
+188
+00:09:52,780 --> 00:09:56,710
+Ele não tem parte ao longo do eixo, e
+por isso não muda a velocidade angular.
+
+189
+00:09:56,940 --> 00:09:58,830
+Ele só vira o momento angular.
+
+190
+00:09:58,900 --> 00:10:00,050
+Quem faz esse torque?
+
+191
+00:10:00,200 --> 00:10:03,600
+O eixo, pelos dois mancais, que
+são os apoios onde ele gira,
+
+192
+00:10:03,620 --> 00:10:05,480
+como o rolamento no cubo de uma roda.
+
+193
+00:10:05,500 --> 00:10:08,570
+Eles empurram em sentidos
+opostos, formando um binário,
+
+194
+00:10:08,620 --> 00:10:11,240
+e esse par de forças
+gira junto com o haltere.
+
+195
+00:10:11,260 --> 00:10:13,770
+Com os mancais a quarenta
+centímetros um do outro,
+
+196
+00:10:13,800 --> 00:10:16,040
+cada um empurra com uns três newtons.
+
+197
+00:10:16,060 --> 00:10:18,970
+Atenção: essa é só a
+parte que vem do binário.
+
+198
+00:10:19,000 --> 00:10:23,070
+A força total em cada apoio ainda
+inclui segurar o peso do conjunto.
+
+199
+00:10:23,240 --> 00:10:28,160
+Dá para conferir só com forças, mas repara:
+são forças diferentes das dos mancais,
+
+200
+00:10:28,180 --> 00:10:29,830
+que agem de fora no conjunto.
+
+201
+00:10:29,920 --> 00:10:34,460
+Agora olha a resultante sobre cada massa,
+que a haste aplica para mantê-la no círculo.
+
+202
+00:10:34,480 --> 00:10:38,220
+Cada massa anda numa circunferência
+de quinze centímetros de raio,
+
+203
+00:10:38,240 --> 00:10:42,480
+então essa resultante horizontal é de
+dois vírgula trinta e sete newtons,
+
+204
+00:10:42,500 --> 00:10:43,830
+apontando para o eixo.
+
+205
+00:10:43,960 --> 00:10:46,830
+As duas são opostas, mas
+em alturas diferentes,
+
+206
+00:10:47,160 --> 00:10:51,090
+separadas por cinquenta e dois
+centímetros, e isso forma um binário…
+
+207
+00:10:51,160 --> 00:10:54,060
+de novo um vírgula vinte
+e três newtons metro,
+
+208
+00:10:54,080 --> 00:10:56,170
+o mesmo que os mancais precisam entregar.
+
+209
+00:10:56,220 --> 00:10:59,350
+O momento angular e as
+forças contam a mesma coisa.
+
+210
+00:10:59,440 --> 00:11:02,040
+Agora o exemplo que você
+já sentiu no volante.
+
+211
+00:11:02,060 --> 00:11:06,200
+Uma roda de carro com dois excessos
+de massa de vinte gramas cada,
+
+212
+00:11:06,220 --> 00:11:09,750
+em lados opostos do eixo e
+em faces opostas da roda.
+
+213
+00:11:09,780 --> 00:11:14,760
+No nosso modelo, eles ficam a vinte centímetros
+do eixo e a dez centímetros de cada lado
+
+214
+00:11:14,780 --> 00:11:19,870
+do plano central da roda, ou seja, separados
+por vinte centímetros ao longo do eixo.
+
+215
+00:11:19,920 --> 00:11:22,130
+O centro de massa continua no eixo.
+
+216
+00:11:22,160 --> 00:11:27,020
+Com o eixo na horizontal e sem atrito, a
+roda não tem uma posição preferida por efeito
+
+217
+00:11:27,040 --> 00:11:30,450
+do peso: você deixa ela em
+qualquer posição, e ela fica.
+
+218
+00:11:30,540 --> 00:11:32,330
+Parada, parece balanceada.
+
+219
+00:11:32,520 --> 00:11:35,760
+Mas, girando, é exatamente
+o haltere inclinado:
+
+220
+00:11:35,780 --> 00:11:39,990
+os produtos de inércia não se cancelam,
+e o momento angular sai inclinado.
+
+221
+00:11:40,020 --> 00:11:44,290
+A cem quilômetros por hora, para um pneu
+de trinta centímetros de raio de rolamento,
+
+222
+00:11:44,320 --> 00:11:48,090
+sem escorregar, a roda dá quase
+quinze voltas por segundo.
+
+223
+00:11:48,200 --> 00:11:53,790
+Cada excesso de vinte gramas precisa de uma
+força centrípeta de uns trinta e quatro newtons,
+
+224
+00:11:53,880 --> 00:11:56,860
+mais ou menos o peso
+de três quilos e meio.
+
+225
+00:11:56,880 --> 00:12:02,460
+E os dois, em faces diferentes, formam
+um binário de quase sete newtons metro,
+
+226
+00:12:02,480 --> 00:12:04,550
+girando quinze vezes por segundo.
+
+227
+00:12:04,760 --> 00:12:09,410
+Esse binário passa esforços periódicos
+para os apoios e pode provocar vibração:
+
+228
+00:12:09,500 --> 00:12:12,650
+é isso que, dependendo do
+carro, faz o volante tremer.
+
+229
+00:12:12,700 --> 00:12:16,750
+É por isso que, na borracharia,
+não basta equilibrar a roda parada.
+
+230
+00:12:16,780 --> 00:12:19,960
+O balanceamento dinâmico
+corrige a distribuição de massa:
+
+231
+00:12:19,980 --> 00:12:25,000
+neste exemplo, um contrapeso em cada face,
+do lado oposto ao excesso daquela face,
+
+232
+00:12:25,020 --> 00:12:26,820
+zera os produtos de inércia.
+
+233
+00:12:26,840 --> 00:12:30,410
+Numa roda real, a máquina
+mede onde e quanto colocar.
+
+234
+00:12:30,500 --> 00:12:35,040
+O eixo volta a ser principal, e os apoios
+não precisam mais fazer esse binário.
+
+235
+00:12:35,060 --> 00:12:37,510
+Então, vamos fechar com
+a pergunta do começo.
+
+236
+00:12:37,740 --> 00:12:42,870
+A pergunta inicial está respondida: por que
+só a bancada do haltere inclinado balança?
+
+237
+00:12:42,960 --> 00:12:47,360
+Porque, nele, o momento angular fica
+inclinado e gira junto com o haltere,
+
+238
+00:12:47,380 --> 00:12:49,910
+e mudar o momento angular exige torque.
+
+239
+00:12:50,080 --> 00:12:53,440
+Quem faz esse torque são os
+mancais, e o empurrão deles,
+
+240
+00:12:53,460 --> 00:12:55,430
+girando, balança a bancada.
+
+241
+00:12:55,480 --> 00:12:59,250
+Como o torque é perpendicular ao eixo,
+ele não muda a velocidade angular:
+
+242
+00:12:59,360 --> 00:13:01,270
+só a direção do momento angular.
+
+243
+00:13:01,360 --> 00:13:06,060
+No outro haltere, o eixo é principal, o
+momento angular fica alinhado e ninguém precisa
+
+244
+00:13:06,080 --> 00:13:07,070
+empurrar nada.
+
+245
+00:13:07,160 --> 00:13:11,920
+Resumindo: a parte ao longo do eixo é sempre
+o momento de inércia vezes a velocidade
+
+246
+00:13:11,940 --> 00:13:16,920
+angular, mas o momento angular inteiro só fica
+alinhado com o eixo quando ele é principal.
+
+247
+00:13:16,940 --> 00:13:20,660
+É assim que um corpo gira com
+velocidade angular constante e,
+
+248
+00:13:20,680 --> 00:13:22,390
+mesmo assim, exige torque.
+
+249
+00:13:22,540 --> 00:13:24,770
+E, antes de ir, uma última cena.
+
+250
+00:13:24,920 --> 00:13:28,330
+Uma plataforma girando livre,
+sem motor nenhum empurrando.
+
+251
+00:13:28,440 --> 00:13:32,070
+Lá no meio, um carretel puxa as
+duas massas para perto do eixo.
+
+252
+00:13:32,100 --> 00:13:34,090
+Nada de fora faz torque nela…
+
+253
+00:13:34,160 --> 00:13:36,750
+e ela passa a girar
+três vezes mais rápido.
+
+254
+00:13:36,840 --> 00:13:39,890
+É parecido com o que a patinadora
+faz quando fecha os braços.
+
+255
+00:13:40,020 --> 00:13:41,530
+Quem acelerou essa plataforma?
+
+256
+00:13:41,720 --> 00:13:43,660
+E por que exatamente três vezes?
+
+257
+00:13:43,680 --> 00:13:48,070
+É isso que a gente vai explorar quando o
+assunto for a conservação do momento angular.
+
+258
+00:13:48,220 --> 00:13:52,660
+Se essas conexões ajudaram você, se inscreve
+no Parallax Lab para acompanhar os próximos
+
+259
+00:13:52,680 --> 00:13:53,090
+vídeos.
+
+260
+00:13:53,240 --> 00:13:55,490
+E deixa nos comentários: se a roda tivesse
+
+261
+00:13:56,400 --> 00:14:00,120
+massa a mais só de um lado, os
+apoios sentiriam apenas um binário,
+
+262
+00:14:00,140 --> 00:14:03,510
+ou apareceria também uma força
+que gira junto com a roda?
+
+263
+00:14:03,540 --> 00:14:04,120
+Até a próxima!

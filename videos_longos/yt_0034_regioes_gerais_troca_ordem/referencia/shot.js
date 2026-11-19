@@ -1,0 +1,7 @@
+const {chromium}=require('playwright');const path=require('path');
+const L=[['01_H1_integral_que_trava','h1'],['02_H2_tese','h2'],['03_A1_titulo','a1'],['04_B1-1_fatia_na_curva','b11'],['05_B1-2_por_que_vale','b12'],['06_B1-3_area_pi','b13'],['07_B2-1_regiao_em_pe','b21'],['08_B2-2_regiao_deitada','b22'],['09_B3-1_cunha_3D_em_pe','b31'],['10_B3-1_triangulo_de_lado','b31L'],['11_B3-2_cunha_3D_deitada','b32'],['12_B3-2_retangulo_de_lado','b32L'],['13_B4-1_desenhar_a_regiao','b41'],['14_B4-2_sino_3D_em_pe','b42p'],['15_B4-2_sino_3D_deitado','b42'],['16_B4-2_retangulo_e_conta','b42L'],['17_B4-3_erro_classico','b43'],['18_B5-1_diagonal_em_pe','b51'],['19_B5-2_outra_ordem_espelho','b52'],['20_B6-1_seno_x3','b61'],['21_B7-1_telhado','b71'],['22_B7-1_metal_leve_deitado','b71m'],['23_B7-2_quando_vale','b72'],['24_B8_mundo','b8'],['25_S1_sintese','s1'],['26_S2_proximo','s2']];
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1920,height:1080}});const errs=[];p.on('pageerror',e=>errs.push(e.message));p.on('console',m=>{if(m.type()==='error')errs.push(m.text())});
+const only=process.argv.slice(2);for(const [n,k] of L){if(only.length&&!only.includes(k))continue;errs.length=0;await p.goto('file://'+path.resolve('sb34.html')+'?k='+k);
+ try{await p.waitForFunction(()=>document.title==='ok',null,{timeout:20000});}catch(e){console.log('TIMEOUT',k,errs.join('|'));continue;}
+ await p.screenshot({path:n+'.jpg',type:'jpeg',quality:90});if(errs.length)console.log(k,errs.join('|'));}
+await b.close();})();

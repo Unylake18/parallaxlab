@@ -1,0 +1,148 @@
+The user sent a new message while you were working:
+
+
+<pasted_content id="6bef">
+# yt_0023 · avaliação do preview v4 (PH, PE1a, PE3) + HANDOFF v5
+
+"Dinâmica da rotação: 4 problemas em que o momento de inércia decide tudo" · `videos_longos/yt_0023_exercicios_rotacao/` · 2026-11-08
+
+Complementa os handoffs v2, v3 e v4. **Onde divergem, vale este.** Não mudam: física, números, narração v1.1, `ancoras.json`, seleção E1–E4, cores das grandezas, operadores neutros, fundo de estrelas, a regra da caneta finíssima (já registrada nos docs).
+
+---
+
+## 0. Veredito do v4
+
+### Funcionou (manter)
+- **Carretel 2.5D vetorial (E3-1 a E3-7):** muito melhor. Tambor grande escuro com círculo lima (R), tambor pequeno claro com círculo magenta tracejado (r), cotas e pílulas na cor de cada raio. Dá para ver qual raio é qual e que é "um tambor em cima do outro".
+- **Caixa de ferramentas (A3):** disco escuro, raios lima, `r` e `D` lima na fórmula. A ligação símbolo ↔ desenho está clara. A caneta aparece escrevendo `I = I_cm + …`.
+- **Paleta lima/magenta:** lê bem em cima do azul-aço escuro. Fica como decisão da série.
+- **Docs registrados** (caneta e portão de flash) e a **causa do flash confirmada** em teste (`TransformFromCopy` em `Succession`/`AnimationGroup` deixa o destino visível desde o quadro 0; `Vez()` em `prob2.py` corrige).
+
+### Ainda ruim
+1. **Volante (E1-3, E1-4) ainda é 3D oblíquo e ilegível.** Os círculos R₂ lima e R₁ magenta, projetados sobre o anel inclinado, viram elipses. O eixo, o cubo, os raios e a hachura do corte se misturam no centro. O espectador não vê "um anel de dois círculos". O mesmo tratamento do carretel (2.5D frontal vetorial) falta. O Claude Code já listou isso como pendente; é **P0**.
+2. **Pílulas em cima do objeto.** `R₁ = 0,30 m` e `R₂ = 0,40 m` tocam o anel; `D = 0,25 m` cobre a borda do anel; `m = 1,0 kg / r = 0,05 m` cai em cima do volante; no carretel `r = 0,10 m` e `R = 0,30 m` ficam colados um no outro, e `NO CENTRO: BRAÇO ZERO` está sobre o disco (E3-3, E3-4).
+3. **Objetos pequenos.** O carretel 2.5D ocupa ~35% da altura e o volante em 3/4 ~30%. A meta é 55–60%.
+4. **Caneta só pela metade.** Só os termos fixos do `voa()` usam caneta. Os termos **novos** dos passos com glyph map (`passo`) ainda entram como antes. Toda a álgebra nova precisa da caneta (decisão do Kaio).
+5. **Flash não zerou:** 10 eventos com tinta antes da vez (PE3: t0 = 111,6 s, 111,5 s, 184,3 s, 239,7 s, 299,3 s; PE1a 2; PH 3). Vez() cobre o `TransformFromCopy`; os restantes são provavelmente outro caminho (a caixa de resultado, o `escrever` do `voa`, ou termos do `passo`). Conferir os quadros de t0−1.
+6. **Haste (E2) e pêndulo (E4)** sem lima/magenta nem 2.5D.
+7. **Portões novos reprovam** (CONTRASTE PE3 10; OBJETO CORTADO PE1a 18, PE3 3; EMENDA PE1a 88, PH 5, PE3 46) e as pendências do v3 seguem (faixa de resultados, pilha ≤ 5, LEI PRIMEIRO, ALIASING PE1b, CURVA, portão por evento).
+
+---
+
+## 1. P0 · Volante em 2.5D vetorial frontal (mesmo tratamento do carretel)
+
+Mesmo princípio do carretel: **3D só onde a câmera trabalha (tour, corte, explodido); esquema, cotas e conta em 2.5D frontal no Manim**, com *match cut* ≤ 2 px de centro e raio.
+
+### 1.1 Desenho
+- **Anel:** azul-aço escuro `#33456B`, aro externo claro de 3 px; **R₂** = círculo lima sólido na borda de fora, **R₁** = círculo magenta tracejado na borda de dentro; faixa entre os dois com lima 18%.
+- **Cubo, quatro raios (hastes) e dois discos pequenos:** cinza-azulado de luminância média, aresta clara fina; os discos pequenos ficam **em posição fixa e simétrica** (um à direita, um à esquerda, a 0,25 m), com a cota `D = 0,25 m` lima do eixo ao centro de um deles.
+- **Tambor leve (r = 0,15 m)** claro, com sombra projetada; fio **tangente**; **bloco** 2.5D rosa com `m = 10 kg`.
+- **Eixo:** ponto claro no centro; marca de giro (um entalhe) no anel, longe do fio.
+- **Tamanho:** o anel ocupa **≥ 55% da altura útil**, com a CONTA ao lado.
+
+### 1.2 Cenas
+- **E1-1 (tour):** continua em 3D com os closes (anel → cubo → discos → tambor → bloco), mas as **pílulas ficam fora da silhueta**, em coluna, com chamada fina. No fim, o *match cut* para o 2.5D frontal.
+- **E1-3 (anel):** em 2.5D frontal. O disco de R₂ (lima 20%) nasce, o miolo de R₁ sai como fatia magenta 30%, os dois círculos aparecem juntos; as duas pílulas ficam fora do anel (R₂ em cima, R₁ embaixo à esquerda).
+- **E1-4 (cubo e discos):** em 2.5D frontal; o círculo do cubo e os dos discos pequenos acendem em lima, um de cada vez, com as pílulas na coluna da direita do esquema.
+- **E1-5 (explodido):** continua em 3D (é onde a câmera trabalha). No fim volta ao 2.5D por match cut.
+- **E1-6 em diante:** 2.5D frontal com os diagramas de corpo livre (como no carretel).
+- **E1-12, E1-15, E1-16:** em 2.5D frontal; calor e pastilha vetoriais.
+- **E1-17:** dois volantes 2.5D lado a lado, cada um ≥ 35% da altura, queda inteira enquadrada.
+
+### 1.3 Haste e pêndulo (mesmo padrão)
+- **Haste (E2) e pêndulo (E4):** 2.5D frontal, azul-aço escuro, `d`, `D`, `l` e `R` em lima (`R` do pêndulo lima); círculo lima tracejado do disco quando o raio é falado; lupa do pivô no E2-6 a E2-10 como no handoff v3.
+- **Régua e ⊕:** régua com `L`, `L/2` lima; ⊕ do centro de massa em degradê ciano→magenta (só ele).
+- O 3D de apresentação (E2-1, E4-1) permanece.
+
+---
+
+## 2. P0 · Rótulos e pílulas: regra de colocação (resolve a maior parte das sobreposições)
+
+1. **Pílula nunca toca a silhueta do objeto** (anel, tambor, bloco, seta). Margem ≥ 12 px a 1080p.
+2. **Coluna de rótulos:** as pílulas de dados ficam numa **coluna** ao lado do esquema (do lado em que o objeto tem espaço) e cada uma tem uma **chamada fina da cor do token** até o ponto/círculo que mede. Duas pílulas lado a lado no mesmo nível só se a largura somada couber com ≥ 20 px entre elas; senão, uma em cima e outra embaixo.
+3. **`NO CENTRO: BRAÇO ZERO` e etiquetas parecidas:** só fora do disco, na coluna, com chamada ao centro. Nunca centradas sobre a peça.
+4. **Valor que cai em cima de outro** (`m₁ = 6,0 kg` encostando no bloco): rótulo a ≥ 16 px do bloco, alinhado pela base.
+5. **Pílula de dado do tambor/disco pequeno** (`m = 1,0 kg · r = 0,05 m`): fora do volante, na coluna, com chamada ao disco pequeno aceso em lima.
+6. **Tamanho:** o carretel 2.5D passa a ≥ 50% da altura (hoje ~35%). Ampliar mantendo o enquadramento do título e dos blocos.
+
+---
+
+## 3. P0 · Caneta em **todos** os termos novos e flash zero
+
+### 3.1 O que falta
+- **Passos com glyph map (`passo`):** os termos **novos** do destino (sem par no mapa) entram **escritos pela caneta**, na vez deles, ordenados por x. Os termos mapeados continuam por `TransformByGlyphMap` (se movem). A linha de destino não existe na cena antes do começo do passo.
+- **Caixa de resultado:** entra vazia e discreta com o primeiro termo; nunca antes (já há `_cx_pend`).
+- **Linhas de texto da CONTA** (rótulos como `LEVE`, `VÍNCULO`) entram por caneta ou por `FadeIn` curto (≤ 0,2 s) só depois do termo à esquerda terminar; nunca antes.
+
+### 3.1b Prova da caneta (o Kaio não conseguiu ver a caneta no v4)
+O Kaio assistiu ao preview e **a escrita seguiu como antes**. Duas causas prováveis, as duas a corrigir:
+1. **Só os termos fixos do `voa()` usam a caneta**; os termos dos `passo` (a maior parte da álgebra) não.
+2. **No preview 960×540 o traço finíssimo quase some**, então mesmo onde a caneta existe ela não se vê.
+
+**Evidência no preview v4 (Kaio enviou o vídeo; quadros a 2,5 fps):**
+- **E1-3, ≈ 296–301 s** (`σ = M / π(R₂² − R₁²)`): termos por **fade**. Aparece um `σ` apagado, depois a barra de fração com um `M` quase transparente e um `π` fantasma embaixo, e só depois tudo preenche. Sem traço de contorno, sem ponta. O `M` do numerador surge antes do `π`: fora da ordem esquerda → direita.
+- **E1-8, ≈ 482–488 s** (`T = Ia/r² → mg − Ia/r² = ma → mg = ma + Ia/r²`): as linhas se movem bem, mas o termo novo (`+ Ia/r²`) surge sem caneta, e há um `I` rosa duplicado sobre outra linha durante o voo.
+- O flash de antes não apareceu nesses dois trechos (a correção `Vez()` parece funcionar onde olhei).
+
+Correções:
+- **No preview 960×540 a caneta é visível:** traço 1,5 px, ponta 4 px (no render final 1080p volta ao finíssimo da tabela §3.4b do v4: ≈ 1 px a 1280×720, ponta 3 px). O traço e a ponta ficam em constantes do kit (`CANETA_TRACO_PREVIEW`, `CANETA_PONTA_PREVIEW`).
+- **Entregar um vídeo-prova curto**, `renders/prova_caneta.mp4` (≈ 15 s, 960×540, dentro do zip de QA **além** do `.mp4` do vídeo, que continua fora): um `voa` e dois `passo` com termos novos em sequência (ex.: E1-8 e E3-5), sem corte, mostrando a caneta traçando glifo a glifo. O Kaio precisa **ver** isso antes de aprovar o resto.
+- **Auditoria `CANETA`:** o log `[alg]` já tem o método de cada termo; incluir `caneta` como método e **reprovar** termo novo (sem par no mapa e sem origem no desenho) cujo método seja `FadeIn` ou escrita de linha pronta. Contagem por âncora no `qa.txt`.
+
+### 3.2 Os 10 eventos de flash restantes
+Para cada um dos 10 eventos listados em `flash_PE3.txt`, `flash_PE1a.txt` e `flash_PH.txt`:
+1. abrir os quadros `t0−2 … t0+1`;
+2. dizer qual objeto é e por qual caminho entrou (`passo` ou `voa` ou caixa);
+3. corrigir pela raiz (a mesma classe `Vez()` ou escondê-lo até a vez);
+4. repetir o teste de flash (`flash23.py`) até **zero**.
+
+Resultado exigido no qa.txt: **FLASH POR QUADRO = 0 eventos** em PH, PE1a, PE3, PE2 e PE4.
+
+### 3.3 Portões
+`FLASH POR QUADRO` zero. `LEI PRIMEIRO` zero. E1-11 (`α = a/r` antes do `α = 6,56`), E3-7, E3-8 e E4-9 corrigidos agora.
+
+---
+
+## 4. P1 · Triagem dos portões novos
+
+### EMENDA (PE1a 88, PH 5, PE3 46)
+O portão contou saltos de quadro a quadro. Classificar cada evento como:
+- **INTENCIONAL (lista fechada com motivo):** *match cut* 3D → 2.5D (com centro e raio iguais ≤ 2 px), cortes de lote (EMENDA entre lotes deve ser ≈ 0).
+- **REAL:** objeto que "pula" de posição/tamanho ou câmera com salto.
+
+Meta: zero REAIS. Os INTENCIONAIS ficam listados com o intervalo.
+
+### CONTRASTE PE3 10
+Pelo log (`lima area ≈ 170–200 px, contraste 1,1–1,5` nos instantes 11–14 s): é o lima do círculo de R sobre a borda clara do tambor/flange. Mudar o círculo lima para **halo escuro de 6 px por baixo** (linha dupla: escura + lima), ou escurecer a borda do flange. Meta: CONTRASTE = 0.
+
+### OBJETO CORTADO (PE1a 18, PE3 3)
+Volante e bloco saindo do quadro. O enquadramento do §1.1 (anel ≥ 55%, mas com o bloco e o fio inteiros no quadro, incluindo a queda de 1,11 m) resolve. Meta: zero.
+
+---
+
+## 5. Pendências herdadas do v3 (continuam)
+Faixa de resultados (até 3 caixas no topo da CONTA); pilha ≤ 5 linhas; ALIASING PE1b (62,8°, salto de ângulo no E1-15); CURVA (14,6 px, ponto = mesmo tracker do furo); portão por evento zerado em TEXTO SOBRE OBJETO, TRÂNSITO, ENCOSTADO, TEXTO PEQUENO, SOBREPOSIÇÃO e FORA DA MARGEM; alinhamento 3D × Manim (reconferir o do carretel 2.5D e a projeção dos círculos sobre o 3D).
+
+---
+
+## 6. Ordem de trabalho e render
+
+Resposta à pergunta do Claude Code ("paro para o Kaio aprovar a linguagem ou sigo?"): **sigo**, porque o Kaio já aprovou a direção (cores, 2.5D frontal, caneta). Ordem:
+
+1. **Flash zero e caneta nos `passo`** (§3). É o defeito que mais incomoda e vale para todo o vídeo.
+2. **Volante 2.5D frontal** (§1) e **rótulos/pílulas** (§2) no E1 e no E3.
+3. **Haste (E2) e pêndulo (E4)** com paleta e 2.5D (§1.3).
+4. **Triagem dos portões** (§4) e as pendências do v3 (§5).
+5. **Render da onda 2:** PH (A3 com correções), PE1a, PE3, **PE2** e **PE4**, 960×540 / 15 fps, sem voz.
+   - Quadros de conferência: E1-1, E1-3, E1-4, E1-5, E1-9; E3-1, E3-3, E3-7; E2-2, E2-6, E2-9; E4-1, E4-7, E4-9; **seis quadros consecutivos de um `passo` com termo novo** (caneta) e **seis de um `voa`** (sem preview).
+   - `qa.txt` com FLASH, CONTRASTE, OBJETO CORTADO, EMENDA (com triagem), LEI PRIMEIRO, ALIASING e CURVA.
+   - Zip de QA sem `.mp4`.
+6. **Pare.** O Kaio aprova; depois PE1b e PS (mesmo padrão).
+7. Sem voz, SRT, master, entrega, commit ou push. Relatório com arquivos alterados, verificações e resultados, caminhos e pendências reais. Falha de portão não é aviso menor.
+
+## 7. Não reabrir
+Física e números; narração v1.1; seleção E1–E4; cores (lima raio maior, magenta raio menor, rosa só em massa); caneta finíssima; fundo de estrelas contínuas; operadores neutros; sem livros ou provas na tela; sem citar vídeo futuro.
+</pasted_content id="6bef">
+
+
+This is how Claude Code surfaces messages the user sends mid-turn — within the running turn, often alongside the next tool result, rather than as a separate conversation turn. Address the message above as you continue this turn.

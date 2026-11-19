@@ -1,0 +1,49 @@
+L1 ∫0^2 x dx = 2: True
+L2 x=2t: ∫0^1 (2t)·2 dt = 2: True
+P1 (a+b)(c+d) − ac − bd − 2bc = ad − bc: True
+P2 (a,c,0)∧(b,d,0) = (0,0,ad−bc): True
+P3 det 3x3 (i j k; xu yu 0; xv yv 0) = (ad − bc)k: True
+P4 det transposta = det: True
+P5 φ(u,v)=(2u+v, u+3v): det = 2·3 − 1·1 = 5: True
+P6 figura: 3·4 − 2 − 3 − 2 = 5: True
+T0 inversa: x=(u+v)/2, y=(u−v)/2 devolve u,v: True
+T1 J = |1/2 1/2; 1/2 −1/2| = −1/2: True
+T2 ∂(u,v)/∂(x,y) = −2 e (−2)(−1/2) = 1: True
+T3 célula da grade inclinada: (1/√2)² = 1/2: True
+T4 quadrado uv → losango de área orientada −1/2 (inverte o sentido): True
+T5 vértices (1,0)(2,0)(0,−2)(0,−1) → (1,1)(2,2)(−2,2)(−1,1): True
+T6 y=0 ⇒ u=v ; x=0 ⇒ u=−v: True
+T7 ∫_{−v}^{v} e^{u/v} du = v(e − 1/e): True
+T8 d/du (v e^{u/v}) = e^{u/v}: True
+T9 ∫1^2 v dv = [v²/2] = 2 − 1/2 = 3/2: True
+T10 total = (3/4)(e − 1/e): True
+   valor ≈ 1.7628017904657023
+T11 numérica em xy (dblquad) = (3/4)(e − 1/e): True
+T12 teste f=1: área uv = 3 e área xy = 3·1/2 = 3/2 (2 − 1/2): True
+T13 ∫ e^{a/t} dt = t e^{a/t} − a·Ei(a/t): pede Ei (não elementar) nas duas ordens: True
+T14 (x+y)/(x−y) = −1 + 2x/(x−y) = 1 + 2y/(x−y): True
+G1 ∫_{−v}^{v} cos u / sen v du = 2: True
+G2 (1/2)∫1^2 2 dv = 1: True
+G3 numérica em xy = 1: True
+G4 J de x=(u+v)/2, y=(v−u)/2 = +1/2: True
+N1 J = (2u)(2u) − (−2v)(2v) = 4u² + 4v²: True
+N2 bordas: u=1 ⇒ x = 1 − y²/4 ; v=1 ⇒ x = y²/4 − 1: True
+N3 área = ∫∫ 4(u²+v²) = 4(1/3 + 1/3) = 8/3: True
+N4 conferência deitada: ∫0^2 (2 − y²/2) dy = 4 − 4/3 = 8/3: True
+N5 J no canto (0,0) = 0 ; no canto (1,1) = 8: True
+   Δ=1/4: exata=0.291667  |J(M)|ΔuΔv=0.203125  razão=1.4359
+   Δ=1/10: exata=0.037767  |J(M)|ΔuΔv=0.032500  razão=1.1621
+   Δ=1/20: exata=0.008767  |J(M)|ΔuΔv=0.008125  razão=1.0790
+   Δ=1/100: exata=0.000330  |J(M)|ΔuΔv=0.000325  razão=1.0155
+N6 J(0,75; 0,5) = 4(0,5625 + 0,25) = 3,25: True
+N7 área pela borda (shoelace) = ∬ J da célula Δ=0,1: True
+N8 (reserva) ∬ y dA = 2 nas duas formas: True
+H1 dobra: ∬|J| = ∫∫ 2|u| = 2, mas a área da imagem [0,1]² é 1: True
+H2 sem módulo, ∬ J = ∫∫ 2u = 0: True
+D1 d/dt det(I + tJ) em t=0 = traço = div: True
+M1 Mercator: dy/dφ = sec φ: True
+   sec²(72°) ≈ 10.47213595499958
+M2 sec²(72°) ≈ 10,5: True
+Z1 ∬_disco e^{−(x²+y²)} = π(1 − 1/e) ≈ 1,9859: True
+
+41/41 True

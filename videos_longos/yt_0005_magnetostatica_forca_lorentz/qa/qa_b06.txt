@@ -1,0 +1,23 @@
+OK   Q(t) = Q0 + S_PHYS ∫(I_ent − I_sai)dt  erro máximo 1.83e-03 C (tol 4e-3)
+OK   ΔQ em 'I_ent = I_sai (inicial)' [0.2–1.5 s]  modelo 0.0000 · ∫ 0.0000 C
+OK   ΔQ em 'rampa I_sai 1→2' [1.6–3.1 s]  modelo -0.0807 · ∫ -0.0825 C
+OK   ΔQ em 'I_sai > I_ent (estável)' [3.5–8.2 s]  modelo -0.5170 · ∫ -0.5170 C
+OK   ΔQ em 'retorno I_sai → 1' [8.3–9.5 s]  modelo -0.0678 · ∫ -0.0660 C
+OK   ΔQ em 'equilíbrio recuperado' [9.8–10.3 s]  modelo 0.0000 · ∫ 0.0000 C
+OK   ΔQ em 'rampa I_ent 1→2' [10.3–11.8 s]  modelo 0.0807 · ∫ 0.0825 C
+OK   ΔQ em 'I_ent > I_sai (estável)' [12.2–16.9 s]  modelo 0.5170 · ∫ 0.5170 C
+OK   ΔQ em 'retorno I_ent → 1' [17.0–18.2 s]  modelo 0.0678 · ∫ 0.0660 C
+OK   ΔQ em 'equilíbrio final' [18.4–22.8 s]  modelo 0.0000 · ∫ 0.0000 C
+OK   estado 1: I_ent = I_sai → Q constante  ΔQ = 1.55e-15
+OK   estado 2: I_sai > I_ent → Q diminui  Q: 0.875 → 0.358
+OK   estado 3: I_ent > I_sai → Q aumenta  Q: 0.404 → 0.921
+OK   estado 4: retorno → dQ/dt = 0 e Q constante  ΔQ(9,8–10,3) = 0.0000 · ΔQ(18,4–22,8) = 0.0000
+OK   sem saturação artificial (Q não trava durante I_sai > I_ent)  dQ/dt medido -0.1100 · esperado -0.1100 C/s de tela
+OK   sem saturação artificial (Q não trava durante I_ent > I_sai)  dQ/dt medido 0.1100 · esperado 0.1100 C/s de tela
+OK   Q nunca sai do intervalo físico (N ≥ 1 portador)  N mín = 6.71 portadores (Q mín = 0.280 C)
+OK   Q final volta a Q0 (excursões simétricas)  Q final 1.0000
+OK   portadores só entram na face de entrada, só saem na de saída e nunca recuam  0 violações
+OK   nº de portadores desenhados ≈ Q·N0 (diferença ≤ 1)  diferença máxima 1.00 portador
+
+S_PHYS = 0.11 s físicos por s de tela · N0 = 24 · R0 = 2.64 portadores/s por unidade de corrente
+RESULTADO: TUDO OK

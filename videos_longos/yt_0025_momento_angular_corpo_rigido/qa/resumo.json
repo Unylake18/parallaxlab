@@ -1,0 +1,682 @@
+{
+ "ocorrencias": 13,
+ "categorias": [
+  {
+   "lote": "PB1",
+   "categoria": "TRÂNSITO",
+   "n": 2
+  },
+  {
+   "lote": "PB2",
+   "categoria": "TRÂNSITO",
+   "n": 3
+  },
+  {
+   "lote": "PS",
+   "categoria": "COLUNA VAZIA",
+   "n": 8
+  }
+ ],
+ "fontes": {
+  "PH": {
+   "render": [
+    "7a859196b63693ad"
+   ],
+   "auditoria": [
+    "7a859196b63693ad"
+   ]
+  },
+  "PB1": {
+   "render": [
+    "2e2250eab2b04a0c"
+   ],
+   "auditoria": [
+    "f1b60fa6bd24e97a"
+   ]
+  },
+  "PB2": {
+   "render": [
+    "2e2250eab2b04a0c"
+   ],
+   "auditoria": [
+    "705636e012932664"
+   ]
+  },
+  "PB3": {
+   "render": [
+    "19f11dcf4fc75d4d"
+   ],
+   "auditoria": [
+    "23c275b24ffb0c82"
+   ]
+  },
+  "PB4": {
+   "render": [
+    "19f11dcf4fc75d4d"
+   ],
+   "auditoria": [
+    "19f11dcf4fc75d4d"
+   ]
+  },
+  "PB5": {
+   "render": [
+    "19f11dcf4fc75d4d"
+   ],
+   "auditoria": [
+    "b44f39feb36d22dc"
+   ]
+  },
+  "PB6": {
+   "render": [
+    "f1b60fa6bd24e97a"
+   ],
+   "auditoria": [
+    "f1b60fa6bd24e97a"
+   ]
+  },
+  "PS": {
+   "render": [
+    "f1b60fa6bd24e97a"
+   ],
+   "auditoria": [
+    "f1b60fa6bd24e97a"
+   ]
+  }
+ },
+ "algebra": {
+  "PH": {
+   "transformacoes_GM": 0,
+   "grandezas": 0,
+   "coloridas": 0,
+   "fracao_colorida": null,
+   "operadores_incorretos": [],
+   "fontes_menores46": [],
+   "cor_todo_texto": 0.34602156534671874,
+   "cor_math": 1.0,
+   "flash_candidatos": []
+  },
+  "PB1": {
+   "transformacoes_GM": 10,
+   "grandezas": 80,
+   "coloridas": 80,
+   "fracao_colorida": 1.0,
+   "operadores_incorretos": [],
+   "fontes_menores46": [],
+   "cor_todo_texto": 0.462748056744066,
+   "cor_math": 0.6077485607592967,
+   "flash_candidatos": []
+  },
+  "PB2": {
+   "transformacoes_GM": 10,
+   "grandezas": 76,
+   "coloridas": 74,
+   "fracao_colorida": 0.9736842105263158,
+   "operadores_incorretos": [],
+   "fontes_menores46": [],
+   "cor_todo_texto": 0.4690150914958165,
+   "cor_math": 0.7129387575268028,
+   "flash_candidatos": []
+  },
+  "PB3": {
+   "transformacoes_GM": 6,
+   "grandezas": 50,
+   "coloridas": 50,
+   "fracao_colorida": 1.0,
+   "operadores_incorretos": [],
+   "fontes_menores46": [],
+   "cor_todo_texto": 0.679986209840264,
+   "cor_math": 0.7215119510839355,
+   "flash_candidatos": []
+  },
+  "PB4": {
+   "transformacoes_GM": 2,
+   "grandezas": 16,
+   "coloridas": 16,
+   "fracao_colorida": 1.0,
+   "operadores_incorretos": [],
+   "fontes_menores46": [],
+   "cor_todo_texto": 0.45402457164894494,
+   "cor_math": 0.783737517831669,
+   "flash_candidatos": []
+  },
+  "PB5": {
+   "transformacoes_GM": 7,
+   "grandezas": 47,
+   "coloridas": 47,
+   "fracao_colorida": 1.0,
+   "operadores_incorretos": [],
+   "fontes_menores46": [],
+   "cor_todo_texto": 0.4316143147366776,
+   "cor_math": 0.6043809357083461,
+   "flash_candidatos": []
+  },
+  "PB6": {
+   "transformacoes_GM": 5,
+   "grandezas": 28,
+   "coloridas": 28,
+   "fracao_colorida": 1.0,
+   "operadores_incorretos": [],
+   "fontes_menores46": [],
+   "cor_todo_texto": 0.31668014557217955,
+   "cor_math": 0.6647934386391251,
+   "flash_candidatos": []
+  },
+  "PS": {
+   "transformacoes_GM": 0,
+   "grandezas": 8,
+   "coloridas": 8,
+   "fracao_colorida": 1.0,
+   "operadores_incorretos": [],
+   "fontes_menores46": [],
+   "cor_todo_texto": 0.4379714593606113,
+   "cor_math": 0.7486873508353222,
+   "flash_candidatos": []
+  }
+ },
+ "duracoes": [
+  {
+   "ancora": "H1",
+   "lote": "PH",
+   "inicio_global": 0.0,
+   "cena": 13.066666666666666,
+   "fala_estimada": 12.592592592592592,
+   "hold": 0,
+   "folga": 0.47407407407407476
+  },
+  {
+   "ancora": "H2",
+   "lote": "PH",
+   "inicio_global": 13.066666666666666,
+   "cena": 14.2,
+   "fala_estimada": 13.703703703703702,
+   "hold": 0,
+   "folga": 0.4962962962962969
+  },
+  {
+   "ancora": "H3",
+   "lote": "PH",
+   "inicio_global": 27.266666666666666,
+   "cena": 9.200000000000003,
+   "fala_estimada": 6.666666666666666,
+   "hold": 2,
+   "folga": 2.5333333333333368
+  },
+  {
+   "ancora": "A1",
+   "lote": "PH",
+   "inicio_global": 36.46666666666667,
+   "cena": 3.866666666666667,
+   "fala_estimada": 2.5925925925925926,
+   "hold": 0,
+   "folga": 1.2740740740740746
+  },
+  {
+   "ancora": "A2",
+   "lote": "PH",
+   "inicio_global": 40.333333333333336,
+   "cena": 16.33333333333333,
+   "fala_estimada": 16.666666666666664,
+   "hold": 0,
+   "folga": -0.3333333333333357
+  },
+  {
+   "ancora": "B1-1",
+   "lote": "PB1",
+   "inicio_global": 56.666666666666664,
+   "cena": 26.4,
+   "fala_estimada": 25.925925925925924,
+   "hold": 0,
+   "folga": 0.47407407407407476
+  },
+  {
+   "ancora": "B1-2",
+   "lote": "PB1",
+   "inicio_global": 83.06666666666666,
+   "cena": 14.933333333333337,
+   "fala_estimada": 14.444444444444443,
+   "hold": 0,
+   "folga": 0.48888888888889426
+  },
+  {
+   "ancora": "B1-3",
+   "lote": "PB1",
+   "inicio_global": 98.0,
+   "cena": 25.333333333333336,
+   "fala_estimada": 24.814814814814813,
+   "hold": 0,
+   "folga": 0.5185185185185226
+  },
+  {
+   "ancora": "B1-4",
+   "lote": "PB1",
+   "inicio_global": 123.33333333333334,
+   "cena": 17.133333333333326,
+   "fala_estimada": 16.666666666666664,
+   "hold": 0,
+   "folga": 0.46666666666666146
+  },
+  {
+   "ancora": "B1-5",
+   "lote": "PB1",
+   "inicio_global": 140.46666666666667,
+   "cena": 28.266666666666666,
+   "fala_estimada": 27.777777777777775,
+   "hold": 0,
+   "folga": 0.4888888888888907
+  },
+  {
+   "ancora": "B1-6",
+   "lote": "PB1",
+   "inicio_global": 168.73333333333332,
+   "cena": 33.26666666666668,
+   "fala_estimada": 30.74074074074074,
+   "hold": 2,
+   "folga": 2.5259259259259395
+  },
+  {
+   "ancora": "B1-7",
+   "lote": "PB1",
+   "inicio_global": 202.0,
+   "cena": 15.666666666666657,
+   "fala_estimada": 15.185185185185183,
+   "hold": 0,
+   "folga": 0.48148148148147385
+  },
+  {
+   "ancora": "B1-8",
+   "lote": "PB1",
+   "inicio_global": 217.66666666666666,
+   "cena": 16.80000000000001,
+   "fala_estimada": 16.296296296296294,
+   "hold": 0,
+   "folga": 0.5037037037037173
+  },
+  {
+   "ancora": "B2-1",
+   "lote": "PB2",
+   "inicio_global": 234.46666666666667,
+   "cena": 28.666666666666668,
+   "fala_estimada": 28.148148148148145,
+   "hold": 0,
+   "folga": 0.5185185185185226
+  },
+  {
+   "ancora": "B2-2",
+   "lote": "PB2",
+   "inicio_global": 263.1333333333333,
+   "cena": 20.13333333333333,
+   "fala_estimada": 19.62962962962963,
+   "hold": 0,
+   "folga": 0.5037037037036995
+  },
+  {
+   "ancora": "B2-3",
+   "lote": "PB2",
+   "inicio_global": 283.26666666666665,
+   "cena": 13.466666666666669,
+   "fala_estimada": 12.962962962962962,
+   "hold": 0,
+   "folga": 0.5037037037037067
+  },
+  {
+   "ancora": "B2-4",
+   "lote": "PB2",
+   "inicio_global": 296.73333333333335,
+   "cena": 34.93333333333334,
+   "fala_estimada": 34.44444444444444,
+   "hold": 0,
+   "folga": 0.48888888888889426
+  },
+  {
+   "ancora": "B2-5",
+   "lote": "PB2",
+   "inicio_global": 331.6666666666667,
+   "cena": 18.666666666666657,
+   "fala_estimada": 18.148148148148145,
+   "hold": 0,
+   "folga": 0.5185185185185119
+  },
+  {
+   "ancora": "B2-6",
+   "lote": "PB2",
+   "inicio_global": 350.3333333333333,
+   "cena": 14.933333333333351,
+   "fala_estimada": 14.444444444444443,
+   "hold": 0,
+   "folga": 0.48888888888890847
+  },
+  {
+   "ancora": "B3-1",
+   "lote": "PB3",
+   "inicio_global": 365.26666666666665,
+   "cena": 21.266666666666666,
+   "fala_estimada": 20.74074074074074,
+   "hold": 0,
+   "folga": 0.5259259259259252
+  },
+  {
+   "ancora": "B3-2",
+   "lote": "PB3",
+   "inicio_global": 386.5333333333333,
+   "cena": 14.933333333333337,
+   "fala_estimada": 14.444444444444443,
+   "hold": 0,
+   "folga": 0.48888888888889426
+  },
+  {
+   "ancora": "B3-3",
+   "lote": "PB3",
+   "inicio_global": 401.46666666666664,
+   "cena": 23.46666666666666,
+   "fala_estimada": 22.962962962962962,
+   "hold": 0,
+   "folga": 0.5037037037036995
+  },
+  {
+   "ancora": "B3-4",
+   "lote": "PB3",
+   "inicio_global": 424.93333333333334,
+   "cena": 18.4,
+   "fala_estimada": 15.925925925925926,
+   "hold": 2,
+   "folga": 2.474074074074073
+  },
+  {
+   "ancora": "B3-5",
+   "lote": "PB3",
+   "inicio_global": 443.3333333333333,
+   "cena": 20.866666666666674,
+   "fala_estimada": 20.37037037037037,
+   "hold": 0,
+   "folga": 0.496296296296304
+  },
+  {
+   "ancora": "B3-6",
+   "lote": "PB3",
+   "inicio_global": 464.2,
+   "cena": 22.0,
+   "fala_estimada": 21.48148148148148,
+   "hold": 0,
+   "folga": 0.518518518518519
+  },
+  {
+   "ancora": "B3-7",
+   "lote": "PB3",
+   "inicio_global": 486.2,
+   "cena": 15.666666666666657,
+   "fala_estimada": 15.185185185185183,
+   "hold": 0,
+   "folga": 0.48148148148147385
+  },
+  {
+   "ancora": "B4-1",
+   "lote": "PB4",
+   "inicio_global": 501.8666666666667,
+   "cena": 23.466666666666665,
+   "fala_estimada": 22.962962962962962,
+   "hold": 0,
+   "folga": 0.5037037037037031
+  },
+  {
+   "ancora": "B4-2",
+   "lote": "PB4",
+   "inicio_global": 525.3333333333334,
+   "cena": 19.400000000000002,
+   "fala_estimada": 18.88888888888889,
+   "hold": 0,
+   "folga": 0.5111111111111128
+  },
+  {
+   "ancora": "B4-3",
+   "lote": "PB4",
+   "inicio_global": 544.7333333333333,
+   "cena": 23.06666666666667,
+   "fala_estimada": 22.59259259259259,
+   "hold": 0,
+   "folga": 0.4740740740740783
+  },
+  {
+   "ancora": "B5-1",
+   "lote": "PB5",
+   "inicio_global": 567.8,
+   "cena": 18.666666666666668,
+   "fala_estimada": 18.148148148148145,
+   "hold": 0,
+   "folga": 0.5185185185185226
+  },
+  {
+   "ancora": "B5-2",
+   "lote": "PB5",
+   "inicio_global": 586.4666666666666,
+   "cena": 21.266666666666662,
+   "fala_estimada": 20.74074074074074,
+   "hold": 0,
+   "folga": 0.5259259259259217
+  },
+  {
+   "ancora": "B5-3",
+   "lote": "PB5",
+   "inicio_global": 607.7333333333332,
+   "cena": 24.93333333333333,
+   "fala_estimada": 24.444444444444443,
+   "hold": 0,
+   "folga": 0.48888888888888715
+  },
+  {
+   "ancora": "B5-4",
+   "lote": "PB5",
+   "inicio_global": 632.6666666666666,
+   "cena": 31.0,
+   "fala_estimada": 28.518518518518515,
+   "hold": 2,
+   "folga": 2.4814814814814845
+  },
+  {
+   "ancora": "B5-5",
+   "lote": "PB5",
+   "inicio_global": 663.6666666666666,
+   "cena": 14.933333333333337,
+   "fala_estimada": 14.444444444444443,
+   "hold": 0,
+   "folga": 0.48888888888889426
+  },
+  {
+   "ancora": "B6-1",
+   "lote": "PB6",
+   "inicio_global": 678.6,
+   "cena": 22.333333333333332,
+   "fala_estimada": 21.85185185185185,
+   "hold": 0,
+   "folga": 0.48148148148148096
+  },
+  {
+   "ancora": "B6-2",
+   "lote": "PB6",
+   "inicio_global": 700.9333333333334,
+   "cena": 18.26666666666667,
+   "fala_estimada": 17.777777777777775,
+   "hold": 0,
+   "folga": 0.48888888888889426
+  },
+  {
+   "ancora": "B6-3",
+   "lote": "PB6",
+   "inicio_global": 719.2,
+   "cena": 23.066666666666663,
+   "fala_estimada": 22.59259259259259,
+   "hold": 0,
+   "folga": 0.4740740740740712
+  },
+  {
+   "ancora": "B6-4",
+   "lote": "PB6",
+   "inicio_global": 742.2666666666667,
+   "cena": 14.93333333333333,
+   "fala_estimada": 14.444444444444443,
+   "hold": 0,
+   "folga": 0.48888888888888715
+  },
+  {
+   "ancora": "B6-5",
+   "lote": "PB6",
+   "inicio_global": 757.2,
+   "cena": 23.46666666666667,
+   "fala_estimada": 22.962962962962962,
+   "hold": 0,
+   "folga": 0.5037037037037067
+  },
+  {
+   "ancora": "S1",
+   "lote": "PS",
+   "inicio_global": 780.6666666666666,
+   "cena": 38.333333333333336,
+   "fala_estimada": 37.77777777777778,
+   "hold": 0,
+   "folga": 0.5555555555555571
+  },
+  {
+   "ancora": "S2",
+   "lote": "PS",
+   "inicio_global": 819.0,
+   "cena": 10.799999999999997,
+   "fala_estimada": 10.37037037037037,
+   "hold": 0,
+   "folga": 0.4296296296296269
+  },
+  {
+   "ancora": "EN",
+   "lote": "PS",
+   "inicio_global": 829.8,
+   "cena": 17.133333333333333,
+   "fala_estimada": 16.666666666666664,
+   "hold": 0,
+   "folga": 0.46666666666666856
+  }
+ ],
+ "mascaras_oclusao": {
+  "PH": {
+   "quadros": 287,
+   "texto_sobre_objeto": 0,
+   "fora_do_palco": 0,
+   "oclusao": 0,
+   "segmentos_checados": 6299,
+   "segmentos_ocultos": 1294
+  },
+  "PB1": {
+   "quadros": 927,
+   "texto_sobre_objeto": 0,
+   "fora_do_palco": 0,
+   "oclusao": 0,
+   "segmentos_checados": 65513,
+   "segmentos_ocultos": 2510
+  },
+  "PB2": {
+   "quadros": 676,
+   "texto_sobre_objeto": 0,
+   "fora_do_palco": 0,
+   "oclusao": 0,
+   "segmentos_checados": 33808,
+   "segmentos_ocultos": 22374
+  },
+  "PB3": {
+   "quadros": 708,
+   "texto_sobre_objeto": 0,
+   "fora_do_palco": 0,
+   "oclusao": 0,
+   "segmentos_checados": 40853,
+   "segmentos_ocultos": 6514
+  },
+  "PB4": {
+   "quadros": 336,
+   "texto_sobre_objeto": 0,
+   "fora_do_palco": 0,
+   "oclusao": 0,
+   "segmentos_checados": 14793,
+   "segmentos_ocultos": 1139
+  },
+  "PB5": {
+   "quadros": 578,
+   "texto_sobre_objeto": 0,
+   "fora_do_palco": 0,
+   "oclusao": 0,
+   "segmentos_checados": 55771,
+   "segmentos_ocultos": 4291
+  },
+  "PB6": {
+   "quadros": 532,
+   "texto_sobre_objeto": 0,
+   "fora_do_palco": 0,
+   "oclusao": 0,
+   "segmentos_checados": 24193,
+   "segmentos_ocultos": 8803
+  },
+  "PS": {
+   "quadros": 337,
+   "texto_sobre_objeto": 0,
+   "fora_do_palco": 0,
+   "oclusao": 0,
+   "segmentos_checados": 10960,
+   "segmentos_ocultos": 818
+  }
+ },
+ "substituicoes": [
+  {
+   "lote": "PB3",
+   "ancora": "B3-5",
+   "quadro_inicial": 1171,
+   "quadros": 319,
+   "arquivo": "media_correcao_PB3_B3-5/videos/cena/540p15/PB3.mp4"
+  },
+  {
+   "lote": "PB5",
+   "ancora": "B5-1",
+   "quadro_inicial": 0,
+   "quadros": 286,
+   "arquivo": "media_correcao_PB5_B5-1/videos/cena/540p15/PB5.mp4"
+  },
+  {
+   "lote": "PB5",
+   "ancora": "B5-2",
+   "quadro_inicial": 280,
+   "quadros": 325,
+   "arquivo": "media_correcao_PB5_B5-2/videos/cena/540p15/PB5.mp4"
+  },
+  {
+   "lote": "PB5",
+   "ancora": "B5-4",
+   "quadro_inicial": 973,
+   "quadros": 471,
+   "arquivo": "media_correcao_PB5_B5-4/videos/cena/540p15/PB5.mp4"
+  },
+  {
+   "lote": "PB3",
+   "ancora": "B3-3",
+   "quadro_inicial": 543,
+   "quadros": 358,
+   "arquivo": "media_correcao_PB3_B3-3/videos/cena/540p15/PB3.mp4"
+  },
+  {
+   "lote": "PB5",
+   "ancora": "B5-3",
+   "quadro_inicial": 599,
+   "quadros": 380,
+   "arquivo": "media_correcao_PB5_B5-3/videos/cena/540p15/PB5.mp4"
+  },
+  {
+   "lote": "PB1",
+   "ancora": "B1-3",
+   "quadro_inicial": 620,
+   "quadro_no_clip": 24,
+   "quadros": 386,
+   "arquivo": "media_correcao_PB1_B1-3/videos/cena/540p15/PB1.mp4"
+  },
+  {
+   "lote": "PB1",
+   "ancora": "B1-6",
+   "quadro_inicial": 1681,
+   "quadro_no_clip": 38,
+   "quadros": 505,
+   "arquivo": "media_correcao_PB1_B1-6/videos/cena/540p15/PB1.mp4"
+  }
+ ]
+}

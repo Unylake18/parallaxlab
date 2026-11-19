@@ -1,0 +1,34 @@
+yt_0041 · QA da voz (narracao_final.wav)
+modelo eleven_v4 · voz qw7jgPZWOKrl10GsjQ82 · texto narracao_tags.md (narração final v1.5) · 5 blocos de API
+duração 1252.56 s (20:52.56); limite da parada: 23:45 → OK
+pico -0.92 dBFS; amostras em clipping (|x| ≥ 0,999): 0 → OK
+silêncios > 1,5 s dentro de parágrafo: 0
+pausas entre parágrafos: 18; 0.20–0.44 s (média 0.32 s); maior pausa entre palavras no texto todo 0.82 s
+tag lida em voz alta (STT): {'curious': 0, 'thoughtful': 0, 'surprised': 0, 'serious': 0, 'excited': 0, 'happy': 0} → OK
+  «eixo z» no STT: 0×
+  «téta» no STT: 0×
+  «teta (nunca)» no STT: 0×
+  «fi» no STT: 0×
+  «rô» no STT: 0×
+  «pi» no STT: 0×
+  «seno de fi» no STT: 44×
+  «cosseno de fi» no STT: 16×
+  «seno ao quadrado» no STT: 11×
+  «raiz quarta» no STT: 1×
+  «d r» no STT: 0×
+  «d V» no STT: 0×
+  «Guidorizzi» no STT: 1×
+  «Parallax Lab» no STT: 2×
+  «oito terços» no STT: 2×
+  «três dezesseis avos» no STT: 2×
+  «dois mais raiz de três» no STT: 1×
+  «zero vírgula oitenta e quatro» no STT: 1×
+palavras 4029; 3.22 palavras/s no WAV inteiro; 3.22 palavras/s do início ao fim da fala (referência 3,0 palavras/s)
+fronteira de bloco antes de «a face r igual a zero»: pausa 0.24 s (275.42–275.66); nível 2 s antes -24.0 dB × 2 s depois -20.1 dB
+  maior salto entre amostras na pausa: 0.1392 (clique > 0,2)
+fronteira de bloco antes de «mais cosseno de fi vezes o»: pausa 0.32 s (554.50–554.82); nível 2 s antes -22.4 dB × 2 s depois -19.9 dB
+  maior salto entre amostras na pausa: 0.0256 (clique > 0,2)
+fronteira de bloco antes de «somar as cascas é integrar quatro»: pausa 0.32 s (827.16–827.48); nível 2 s antes -21.6 dB × 2 s depois -19.6 dB
+  maior salto entre amostras na pausa: 0.1195 (clique > 0,2)
+fronteira de bloco antes de «aplica em um um quarto aplica»: pausa 0.30 s (1112.84–1113.14); nível 2 s antes -23.0 dB × 2 s depois -23.7 dB
+  maior salto entre amostras na pausa: 0.1395 (clique > 0,2)

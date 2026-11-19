@@ -1,0 +1,31 @@
+CADÊNCIA PB2: 21 linhas, média 0.351 s/glifo, mínimo 0.120, 7 abaixo de 0,20
+  B2-1 t0=0.6s  11 glifos  2.00s 0.182 s/glifo  \vec L = \sum \vec r_i \times \vec p_i  <0,20
+  B2-1 t0=9.1s  15 glifos  5.67s 0.378 s/glifo  \frac{d\vec L}{dt} = \sum \vec r_i \times \vec F_i
+  B2-1 t0=15.3s  17 glifos  4.80s 0.282 s/glifo  \vec F_i = \vec F_{\mathrm{ext}} + \vec F_{\mathrm{int}}
+  B2-1 t0=21.9s  14 glifos  4.93s 0.352 s/glifo  \frac{d\vec L}{dt} = \sum \vec\tau_{\mathrm{ext}}
+  B2-2 t0=30.5s  12 glifos 11.73s 0.978 s/glifo  \vec r_i = \vec\rho_i + z_i \hat z
+  B2-3 t0=45.1s  13 glifos  3.00s 0.231 s/glifo  \vec L_i = \vec r_i \times m_i \vec v_i
+  B2-3 t0=48.1s  20 glifos  2.40s 0.120 s/glifo  \vec L_i = (\vec\rho_i+z_i\hat z) \times m_i \vec v_i  <0,20
+  B2-3 t0=50.7s  24 glifos  3.93s 0.164 s/glifo  \vec L_i = \vec\rho_i \times m_i \vec v_i + z_i \hat z \times m_i \vec v_i  <0,20
+  B2-4 t0=57.3s   6 glifos  2.07s 0.345 s/glifo  m_i \rho_i v_i
+  B2-4 t0=65.1s   6 glifos  2.67s 0.444 s/glifo  v_i = \omega \rho_i
+  B2-4 t0=70.7s   6 glifos  2.67s 0.444 s/glifo  m_i \rho_i^2 \omega
+  B2-4 t0=74.8s  10 glifos  5.07s 0.507 s/glifo  L_z = \sum m_i \rho_i^2 \omega
+  B2-4 t0=80.3s  12 glifos  6.47s 0.539 s/glifo  L_z = (\sum m_i\rho_i^2) \omega
+  B2-4 t0=87.3s   6 glifos  3.20s 0.533 s/glifo  L_z = I_z \omega
+  B2-5 t0=91.9s   9 glifos  1.60s 0.178 s/glifo  \vec\tau = \frac{d\vec L}{dt}  <0,20
+  B2-5 t0=94.5s   9 glifos  1.60s 0.178 s/glifo  \tau_z = \frac{dL_z}{dt}  <0,20
+  B2-5 t0=96.9s  12 glifos  2.13s 0.178 s/glifo  \tau_z = \frac{d(I_z\omega)}{dt}  <0,20
+  B2-5 t0=100.1s  10 glifos  1.73s 0.173 s/glifo  \tau_z = I_z \frac{d\omega}{dt}  <0,20
+  B2-5 t0=102.1s   6 glifos  1.73s 0.289 s/glifo  \tau_z = I_z \alpha
+  B2-6 t0=104.8s   6 glifos  2.53s 0.422 s/glifo  L_z = I_z \omega
+  B2-6 t0=109.3s   5 glifos  2.27s 0.453 s/glifo  \vec L_\perp = ?
+
+ENXUGAR A PAUTA (decisão da Produção):
+B2-1: \vec L = \sum \vec r_i \times \vec p_i (0.182 s/glifo)
+B2-3: \vec L_i = (\vec\rho_i+z_i\hat z) \times m_i \vec v_i (0.120 s/glifo)
+B2-3: \vec L_i = \vec\rho_i \times m_i \vec v_i + z_i \hat z \times m_i \vec v_i (0.164 s/glifo)
+B2-5: \vec\tau = \frac{d\vec L}{dt} (0.178 s/glifo)
+B2-5: \tau_z = \frac{dL_z}{dt} (0.178 s/glifo)
+B2-5: \tau_z = \frac{d(I_z\omega)}{dt} (0.178 s/glifo)
+B2-5: \tau_z = I_z \frac{d\omega}{dt} (0.173 s/glifo)

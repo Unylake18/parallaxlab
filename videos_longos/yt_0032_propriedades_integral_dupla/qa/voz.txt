@@ -1,0 +1,26 @@
+yt_0032 · QA da voz (narracao_final.wav)
+modelo eleven_v4 · voz qw7jgPZWOKrl10GsjQ82 · texto narracao_tags.md (narração v3.1) · 5 blocos de API
+duração 1093.76 s (18:13.76); limite da parada: 19:30 → OK
+pico -0.76 dBFS; amostras em clipping (|x| ≥ 0,999): 0 → OK
+silêncios > 1,5 s dentro de parágrafo: 0
+pausas entre parágrafos: 25; 0.20–0.44 s (média 0.30 s); maior pausa entre palavras no texto todo 0.44 s
+tag lida em voz alta (STT): {'curious': 0, 'thoughtful': 0, 'surprised': 0, 'serious': 0, 'excited': 0, 'happy': 0} → OK
+  «éfe» no STT: 14×
+  «gê» no STT: 9×
+  «cá» no STT: 7×
+  «érre, ésse» no STT: 3×
+  «eme» no STT: 4×
+  «alfa» no STT: 1×
+  «pi» no STT: 3×
+  «Riemann» no STT: 6×
+  «Fubini» no STT: 1×
+  «Parallax Lab» no STT: 2×
+palavras 3186; 2.91 palavras/s no WAV inteiro; 2.91 palavras/s do início ao fim da fala (referência 3,0 palavras/s)
+fronteira de bloco antes de «a camada dá quatro quilos o»: pausa 0.30 s (258.72–259.02); nível 2 s antes -21.4 dB × 2 s depois -20.6 dB
+  maior salto entre amostras na pausa: 0.0426 (clique > 0,2)
+fronteira de bloco antes de «se duas funções são iguais fora»: pausa 0.28 s (534.14–534.42); nível 2 s antes -23.1 dB × 2 s depois -21.9 dB
+  maior salto entre amostras na pausa: 0.1596 (clique > 0,2)
+fronteira de bloco antes de «dividindo pela área a média está»: pausa 0.28 s (798.44–798.72); nível 2 s antes -22.3 dB × 2 s depois -20.1 dB
+  maior salto entre amostras na pausa: 0.0344 (clique > 0,2)
+fronteira de bloco antes de «a ideia é fatiar a região»: pausa 0.24 s (1065.40–1065.64); nível 2 s antes -22.8 dB × 2 s depois -19.2 dB
+  maior salto entre amostras na pausa: 0.0243 (clique > 0,2)

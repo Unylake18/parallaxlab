@@ -1,0 +1,33 @@
+yt_0030 · QA das emendas v3.4 (pausa real, nível e clique em cada emenda)
+FALHA T01_D3-2_D3-3 (início): «um?» → «As» pausa 0.24 s (322.50–322.74) · nível -0.3 dB · salto 0.2057
+OK    T01_D3-2_D3-3 (fim): «deformação.» → «Agora» pausa 0.30 s (536.22–536.52) · nível +1.3 dB · salto 0.0825
+FALHA T02_D3-6 (início): «dois.» → «E» pausa 0.18 s (589.80–589.98) · nível +3.6 dB · salto 0.0397
+FALHA T02_D3-6 (fim): «finito.» → «Último» pausa 0.46 s (660.02–660.48) · nível +3.3 dB · salto 0.0555
+OK    T03_D3b-2 (início): «condições.» → «Lembra» pausa 0.24 s (748.36–748.60) · nível +2.1 dB · salto 0.0318
+OK    T03_D3b-2 (fim): «girava.» → «Segunda» pausa 0.32 s (775.08–775.40) · nível +1.5 dB · salto 0.1595
+OK    T04_D3b-4 (início): «suficiente.» → «E» pausa 0.18 s (795.30–795.48) · nível +2.8 dB · salto 0.0228
+OK    T04_D3b-4 (fim): «campo.» → «Isso» pausa 0.24 s (832.86–833.10) · nível -1.8 dB · salto 0.0366
+OK    T05_D4-6_D4-7 (início): «ordem.» → «Item» pausa 0.20 s (1002.68–1002.88) · nível -1.1 dB · salto 0.1744
+OK    T05_D4-6_D4-7 (fim): «falha.» → «Olha» pausa 0.28 s (1195.68–1195.96) · nível +1.5 dB · salto 0.0238
+OK    T06_D5-9 (início): «transporte.» → «Terceiro» pausa 0.16 s (1378.14–1378.30) · nível +0.6 dB · salto 0.0344
+FALHA T06_D5-9 (fim): «um.» → «Rotacional:» pausa 0.30 s (1420.04–1420.34) · nível +3.3 dB · salto 0.0078
+OK    T07_A1-2_A1-3 (início): «tenta.» → «Primeira:» pausa 0.14 s (1532.22–1532.36) · nível -0.2 dB · salto 0.0162
+OK    T07_A1-2_A1-3 (fim): «girar.» → «Olha» pausa 0.28 s (1628.40–1628.68) · nível +0.4 dB · salto 0.0317
+OK    T08_A1-5 (início): «outra.» → «Terceira:» pausa 0.18 s (1643.22–1643.40) · nível -0.2 dB · salto 0.0603
+FALHA T08_A1-5 (fim): «maior.» → «Segundo» pausa 0.38 s (1677.68–1678.06) · nível +1.9 dB · salto 0.2308
+OK    T09_A2-2_A2-4 (início): «embaixo.» → «Primeiro:» pausa 0.18 s (1695.34–1695.52) · nível +2.9 dB · salto 0.0240
+OK    T09_A2-2_A2-4 (fim): «adequadas.» → «Lembra» pausa 0.26 s (1850.96–1851.22) · nível +1.2 dB · salto 0.0303
+OK    T10_A4-2_A4-4 (início): «Cauchy-Riemann.» → «Elas» pausa 0.16 s (1873.60–1873.76) · nível +0.9 dB · salto 0.0435
+FALHA T10_A4-2_A4-4 (fim): «local.» → «E» pausa 0.28 s (2020.00–2020.28) · nível +4.9 dB · salto 0.0113
+FALHA T11_A3-3_A3-5 (início): «zero.» → «Agora» pausa 0.20 s (2062.46–2062.66) · nível +3.2 dB · salto 0.1012
+FALHA T11_A3-3_A3-5 (fim): «gravitação.» → «No» pausa 0.28 s (2278.42–2278.70) · nível +4.3 dB · salto 0.0101
+
+análise das 8 FALHA (decisão: seguir sem novo take; nenhuma é defeito de emenda):
+- nível |Δ| > 3 dB (6 emendas, +3,2 a +4,9 dB): é a diferença natural entre fim de frase (mais baixo) e começo da seguinte. Medido nas 68 fronteiras
+  de parágrafo da voz v3.3 SEM emenda (mesma janela de 2 s): 16 de 68 (24 %) passam de 3 dB; mediana 1,9 dB, p90 3,9 dB, máx 6,9 dB.
+  Nas 22 emendas: 6 (27 %), todas ≤ 4,9 dB — dentro da distribuição natural. O ganho de cada trecho já iguala o RMS da fala ao trecho antigo.
+- salto > 0,2 (2 emendas, 0,206 e 0,231): o maior salto não está no corte. T01 início: em 322,727 s, 57 ms depois do corte (322,670 s) e 13 ms
+  antes de «As»; T08 fim: 20 ms antes de «Segundo». É o ataque da consoante (o alinhamento marca o início da palavra alguns ms depois). Nas
+  fronteiras naturais da v3.3 o maior salto também chega a 0,231.
+- pausas: as 22 entre 0,14 e 0,46 s (critério 0,12–0,60).
+- escuta: não feita pelo agente (sem saída de áudio); os 22 tempos acima ficam para a escuta do Kaio.

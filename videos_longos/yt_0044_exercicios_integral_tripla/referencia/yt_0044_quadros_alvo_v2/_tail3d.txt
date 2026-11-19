@@ -1,0 +1,13 @@
+
+// ---------- piso da série (G2, v2): FINITO, só em volta da peça, com borda; abaixo de tudo (sem atravessar faces) ----------
+function piso(a0,a1,b0,b1,off=-.03,step=.5,cor='#3E4474',r=.0030){const n0=Math.round((a1-a0)/step),n1=Math.round((b1-b0)/step);
+ for(let i=1;i<n0;i++){const a=a0+i*step;tubo([Wp(a,b0,off),Wp(a,b1,off)],r*SC,cor);}
+ for(let j=1;j<n1;j++){const b=b0+j*step;tubo([Wp(a0,b,off),Wp(a1,b,off)],r*SC,cor);}
+ tubo([Wp(a0,b0,off),Wp(a1,b0,off),Wp(a1,b1,off),Wp(a0,b1,off),Wp(a0,b0,off)],r*1.5*SC,'#545A8C');}
+const L15=[-1.5,1.5,-1.5,1.5],CUB=[-.5,1.5,-.5,1.5];
+const PISOK={lataParede:[-1.5,1.5,-1.5,1.5],lataDobradica:[-.5,2.5,-1.5,1.5],lataDob3:[-.5,2.5,-1.5,1.5],cubo:CUB,cuboCaixas:CUB,cuboSonda:CUB,cuboDiag:CUB,cuboFolha:CUB,
+ tetra:[-.25,1.25,-.25,1.25],tetraSonda:[-.25,1.25,-.25,1.25],tetraCent:[-.25,1.25,-.25,1.25],tetraPlano:[-.25,1.25,-.25,1.25],cone:L15,coneCm:L15,coneCasca:L15,semi:L15,semiFatia:L15,helice:L15};
+if(PISOK[K])piso(...PISOK[K]);
+
+projAll();R.render(S,cam);window.PTS=PTS;document.title='ok';
+</script></body></html>

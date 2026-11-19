@@ -18,7 +18,7 @@ Fonte: `screen_text` (Space Grotesk) para texto; matemática em `MathTex`. Nunca
 | geometria auxiliar, eixos, normais | branco/neutro |
 | painéis e destaques | azul-escuro `PANEL = #0E2A52` com contorno `BLUE_L` (sem caixa branca sobre preto) |
 
-Carga ≠ corrente: carga azul, corrente verde. Fios em azul-claro; a corrente (pulsos/setas verdes) corre por cima, sempre em movimento.
+Carga ≠ corrente ≠ matéria: carga azul, corrente verde, **matéria condutora (fio, lâmina, prisma) em cinza-aço `STEEL = #7A8696`**. A corrente corre por cima do aço como pulsos alongados verdes (`pulso()`: pontas redondas, contorno na cor do fundo, cabeça mais clara que a cauda; nunca bolinha, que lê como carga) ou setas verdes, sempre em movimento. `dℓ`, `dx`, `t̂` são geometria (branco), não corrente. Trajetórias, órbitas, hélices, feixe, volume de controle e painéis NÃO usam STEEL (continuam `BLUE_L`).
 Operadores matemáticos podem ficar brancos; as grandezas levam a cor semântica (`BASECOL` + `cores_novas`).
 
 ## Disposição na tela (16:9, unidades do Manim)

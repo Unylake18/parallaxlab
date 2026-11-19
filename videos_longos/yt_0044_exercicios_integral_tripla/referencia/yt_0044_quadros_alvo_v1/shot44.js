@@ -1,0 +1,7 @@
+const {chromium}=require('playwright');const path=require('path');
+const L=[['01_H1_lata_dobradica','h1'],['02_H2_receita','h2'],['03_E1-1_cubo_riemann','e11'],['04_E1-2_limite_somas','e12'],['05_E1-3_cubo_conta','e13'],['06_E1-4_cubo_cm','e14'],['07_E1-5_folha','e15'],['08_E2-1_tetra_sombra','e21'],['09_E2-2_tetra_massa','e22'],['10_E2-3_centroide','e23'],['11_E2-4_tetra_zbarra','e24'],['12_E3-1_cone_volume','e31'],['13_E3-2_cone_zbarra','e32'],['14_E3-3_cone_inercia','e33'],['15_E3-4_cone_esfericas','e34'],['16_E4-1_meia_bola','e41'],['17_E4-2_fatias','e42'],['18_E4-3_densidade_r','e43'],['19_E5-1_dobradica_polo','e51'],['20_E5-2_tres_pedacos','e52'],['21_E5-3_polo_origem','e53'],['22_E6-1_steiner','e61'],['23_E6-2_cubo_aresta','e62'],['24_E6-3_bola_erro','e63'],['25_S1_sintese','s1'],['26_S2_helice','s2']];
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1920,height:1080}});const errs=[];p.on('pageerror',e=>errs.push(e.message));p.on('console',m=>{if(m.type()==='error'||m.type()==='log')errs.push(m.text())});
+const only=process.argv.slice(2);for(const [n,k] of L){if(only.length&&!only.includes(k))continue;errs.length=0;await p.goto('file://'+path.resolve('sb44.html')+'?k='+k);
+ try{await p.waitForFunction(()=>document.title==='ok',null,{timeout:30000});}catch(e){console.log('TIMEOUT',k,errs.join('|'));continue;}
+ await p.screenshot({path:n+'.jpg',type:'jpeg',quality:90});if(errs.length)console.log(k,errs.join('|'));}
+await b.close();})();

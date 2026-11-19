@@ -1,0 +1,41 @@
+yt_0043 · QA da voz (narracao_final.wav)
+modelo eleven_v4 · voz qw7jgPZWOKrl10GsjQ82 · texto narracao_tags.md (narração final v1.1) · 5 blocos de API
+duração 1264.40 s (21:04.40); limite da parada: 24:30 → OK
+pico -0.64 dBFS; amostras em clipping (|x| ≥ 0,999): 0 → OK
+silêncios > 1,5 s dentro de parágrafo: 0
+pausas entre parágrafos: 20; 0.20–0.56 s (média 0.32 s); maior pausa entre palavras no texto todo 0.66 s
+tag lida em voz alta (STT): {'curious': 0, 'thoughtful': 0, 'surprised': 0, 'serious': 0, 'excited': 0, 'happy': 0} → OK
+  «x barra» no STT: 5×
+  «y barra» no STT: 4×
+  «z barra» no STT: 9×
+  «téta» no STT: 8×
+  «fi» no STT: 0×
+  «rô» no STT: 0×
+  «pi» no STT: 0×
+  «ômega» no STT: 4×
+  «d m» no STT: 3×
+  «d V» no STT: 4×
+  «secante à sétima» no STT: 0×
+  «secante à quinta» no STT: 0×
+  «logaritmo de um mais raiz de dois» no STT: 0×
+  «dois terços» no STT: 6×
+  «um quarto» no STT: 7×
+  «dois quintos» no STT: 5×
+  «zero vírgula cinco cinco cinco» no STT: 3×
+  «um vírgula cinco três nove» no STT: 1×
+  «quilograma vezes metro ao quadrado» no STT: 1×
+  «Parallax Lab» no STT: 2×
+palavras 4123; 3.26 palavras/s no WAV inteiro; 3.26 palavras/s do início ao fim da fala (referência 3,0 palavras/s)
+fronteira de bloco antes de «é por isso que uma chapa»: pausa 0.22 s (263.78–264.00); nível 2 s antes -23.3 dB × 2 s depois -19.6 dB
+  maior salto entre amostras na pausa: 0.1151 (clique > 0,2)
+fronteira de bloco antes de «com o eixo fixo para dar»: pausa 0.28 s (529.26–529.54); nível 2 s antes -25.2 dB × 2 s depois -19.5 dB
+  maior salto entre amostras na pausa: 0.0251 (clique > 0,2)
+fronteira de bloco antes de «a lata é redonda e a»: pausa 0.28 s (809.88–810.16); nível 2 s antes -22.2 dB × 2 s depois -19.7 dB
+  maior salto entre amostras na pausa: 0.1635 (clique > 0,2)
+fronteira de bloco antes de «e os valores vêm do triângulo»: pausa 0.26 s (1091.80–1092.06); nível 2 s antes -22.9 dB × 2 s depois -20.3 dB
+  maior salto entre amostras na pausa: 0.0178 (clique > 0,2)
+
+LÉXICO DO STT (conferência de pronúncia; o STT escreve letras gregas pelo nome latino):
+  «pi» (π): 24× · «fi» (φ): 9× · «rô» (ρ, o STT escreve rho): 9× · «téta» (o STT escreve theta): 8× · «ômega»: 4×
+  «secante à quinta/sétima»: 7× / 4× · «logaritmo»: 2× · «teta» sem acento na fala escrita: 0 (grep -c 'teta' = 0 em narracao_tags.md e narracao_limpa.md)
+  tags [ ] lidas em voz alta: 0 (STT) · silêncio > 1,5 s dentro de parágrafo: 0 · maior pausa entre palavras 0,66 s · fronteiras dos 5 blocos sem clique (maior salto 0,16 < 0,2)

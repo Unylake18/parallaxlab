@@ -1,0 +1,7 @@
+const {chromium}=require('playwright');const path=require('path');
+const L=[['01_H1_lata_gira','h1'],['02_H2_conta_por_pedaco','h2'],['03_B1-1a_tres_bolinhas','b11a'],['04_B1-1b_corpo','b11b'],['05_B1-2_plano_equilibra','b12'],['06_B1-3a_simetria','b13a'],['07_B1-3b_contraexemplo','b13b'],['08_B2-1_taca_montar','b21'],['09_B2-2_taca_conta','b22'],['10_B3-1_momento_inercia','b31'],['11_B3-2_distancia_eixo','b32'],['12_B3-3_cilindro','b33'],['13_B3-4a_bola_seno_cubo','b34a'],['13b_B3-4b_bola_resultado','b34b'],['14_B3-5_quem_gira','b35'],['15_B4-1_lata_integral_s','b41'],['16_B4-2_lata_zbarra','b42'],['17_B4-3_girar_integral_s','b43'],['18_B4-4_triangulo','b44'],['19_B4-5a_secante_setima','b45a'],['19b_B4-5b_momento_inercia','b45b'],['20_B4-6_dois_numeros','b46'],['21_S2_eixo_parede','s2']];
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1920,height:1080}});const errs=[];p.on('pageerror',e=>errs.push(e.message));p.on('console',m=>{if(m.type()==='error'||m.type()==='log')errs.push(m.text())});
+const only=process.argv.slice(2);for(const [n,k] of L){if(only.length&&!only.includes(k))continue;errs.length=0;await p.goto('file://'+path.resolve('sb43.html')+'?k='+k);
+ try{await p.waitForFunction(()=>document.title==='ok',null,{timeout:30000});}catch(e){console.log('TIMEOUT',k,errs.join('|'));continue;}
+ await p.screenshot({path:n+'.jpg',type:'jpeg',quality:90});if(errs.length)console.log(k,errs.join('|'));}
+await b.close();})();

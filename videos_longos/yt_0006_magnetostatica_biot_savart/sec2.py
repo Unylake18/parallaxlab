@@ -54,16 +54,17 @@ class Sec2:
         self.play(FadeIn(jl), FadeIn(rl), run_time=0.8)
         self.show(E(r"\frac{\partial\rho}{\partial t}+\nabla\cdot\mathbf J=0", r"\frac{\partial\rho}{\partial t}",
                     r"\nabla\cdot\mathbf J", size=M_L),
-                  src={(r"\frac{\partial\rho}{\partial t}", 0): rl, (r"\nabla\cdot\mathbf J", 0): jl}, rt=2.2, wait=2.0)
+                  src={(r"\frac{\partial\rho}{\partial t}", 0): rl, (r"\nabla\cdot\mathbf J", 0): jl}, rt=2.2, wait=2.0,
+                  name="Equação da continuidade")
         self.caption("Forma local: $\\rho$ é a densidade de carga e $\\mathbf J$ a corrente por área")
-        self.hold(3)
+        self.destaca([rl, jl], 3)
         self.show(E(r"\frac{\partial\rho}{\partial t}=0\ \implies\ \nabla\cdot\mathbf J=0", r"\frac{\partial\rho}{\partial t}",
                     r"\nabla\cdot\mathbf J", size=M_M), rt=2.0, wait=2.0)
-        self.caption("Sem acúmulo num pequeno volume")
+        self.caption("Sem acúmulo de carga.")
         self.mark("regime_divergente")
         self.hold(2)
         self.show(E(r"\frac{\partial\mathbf J}{\partial t}=0", size=M_L), slot="A", rt=1.2, wait=1.0)
-        self.caption("Hipótese extra: a distribuição de corrente também é constante")
+        self.caption("Corrente independente do tempo.")
         self.mark("regime_hipoteses")
         self.hold(4)
 
@@ -82,7 +83,7 @@ class Sec2:
         L["f"] = always_redraw(lambda: Dot(W(f), radius=0.1, color=GREEN).set_z_index(9))
         L["P"] = always_redraw(lambda: Dot(W(self.local_pt()), radius=0.11, color=WHITE).set_z_index(9))
         L["R"] = always_redraw(lambda: arrow(W(f), W(self.local_pt()), VIOLET, 5, z=6))
-        L["dl"] = always_redraw(lambda: arrow(W(f), W([1.0, 0, 0]), GREEN, 8, z=7))
+        L["dl"] = always_redraw(lambda: arrow(W(f), W([1.0, 0, 0]), WHITE, 8, z=7))
         L["guide"] = always_redraw(lambda: ParametricFunction(
             lambda u: W([self.Rd.get_value() * math.cos(u), self.Rd.get_value() * math.sin(u), 0]), t_range=[0.02, math.pi - 0.02],
             color=VIOLET, stroke_width=1.6, fill_opacity=0).set_stroke(opacity=0.28))
@@ -128,11 +129,15 @@ class Sec2:
         rrl = self.lab(r"\mathbf r", W(o + 0.45 * (self.local_pt() - o)) + np.array([0.15, -0.45, 0]), r"\mathbf r", size=M_M)
         self.play(FadeIn(od), FadeIn(ol), run_time=0.6)
         self.caption("Escolha uma origem $O$ qualquer")
-        self.play(Create(rp), FadeIn(rpl), run_time=1.2)
-        self.play(Create(rr), FadeIn(rrl), run_time=1.2)
+        t_rp = self.tip("posição da fonte", W(o / 2) + np.array([-0.35, -0.4, 0]))
+        t_rr = self.tip("posição do observador", np.array([-1.3, -2.1, 0]))
+        self.play(Create(rp), FadeIn(rpl), FadeIn(t_rp), run_time=1.2)
+        self.play(Create(rr), FadeIn(rrl), FadeIn(t_rr), run_time=1.2)
         self.caption("$\\mathbf r'$ localiza a fonte; $\\mathbf r$ localiza o ponto $P$")
         self.hold(2)
-        self.play(Create(L["R"]), FadeIn(L["Rl"]), run_time=1.2)
+        self.play(FadeOut(t_rp), FadeOut(t_rr), run_time=0.4)
+        t_R = self.tip("fonte → observador", W(0.5 * self.local_pt()) + np.array([1.55, 0.2, 0]))
+        self.play(Create(L["R"]), FadeIn(L["Rl"]), FadeIn(t_R), run_time=1.2)
         self.caption("Dois caminhos de $O$ até $P$: direto, ou passando pela fonte")
         self.play(Indicate(rp, color=WHITE), Indicate(L["R"], color=WHITE), run_time=1.4)
         self.show(E(r"\mathbf r'+\mathbf R=\mathbf r", r"\mathbf r'", r"\mathbf R", r"\mathbf r", "+", "=", size=M_XL),
@@ -142,8 +147,13 @@ class Sec2:
         self.show(E(r"\mathbf R=\mathbf r-\mathbf r'", r"\mathbf r'", r"\mathbf R", r"\mathbf r", "-", "=", size=M_XL),
                   (r"\mathbf r'", r"\mathbf r'"), ("+", "-"), rt=2.2, wait=2.5)
         self.mark("geo_separacao")
-        self.play(FadeOut(VGroup(od, ol, rp, rr, rpl, rrl)), run_time=0.8)
-        self.caption("Fixe $P$ e mova a fonte: só $\\mathbf R$ muda")
+        self.play(FadeOut(VGroup(od, ol, rp, rr, rpl, rrl, t_R)), run_time=0.8)
+        self.caption("O comprimento da seta $\\mathbf R$ é a distância $R$")
+        self.play(Indicate(L["R"], color=WHITE), run_time=1.0)
+        self.show(E(r"R=\left|\mathbf R\right|", "R", r"\mathbf R", size=M_L), slot="A",
+                  src={("R", 0): L["Rl"]}, rt=1.6, wait=2.0, note="distância fonte–observador")
+        self.drop("A")
+        self.caption("Observador fixo: mudam a posição da fonte e a separação.")
         xs = ValueTracker(0.0)
         Pfix = self.local_pt()
         mv_dot = always_redraw(lambda: Dot(W([xs.get_value(), 0, 0]), radius=0.1, color=GREEN).set_z_index(10))

@@ -1,0 +1,20 @@
+P='sec_e3.py'
+s=open(P,encoding='utf-8',newline='').read()
+def rep(a,b):
+    global s
+    assert s.count(a)==1,(s.count(a),a[:80]); s=s.replace(a,b)
+rep('''        self.selo("QUEM DECIDE", "MASSA × RAIO")
+        self.pilha.limpa()
+        c = cam()''','''        self.selo("QUEM DECIDE", "MASSA × RAIO")
+        self.pilha.limpa()
+        print("[cam] E3-2 GERAL quase frontal az=-73", flush=True)
+        self.play(ucam.animate.set_value(0.5), run_time=1.0, rate_func=smooth)
+        c = cam()''')
+rep('''        nota = VGroup(txt("TORQUE: AS TRAÇÕES", 30, bold=True, color=FC)''','''        print("[cam] E3-3 FRONTAL-FÍSICA", flush=True)
+        cR3 = cota23(o_, t1, lbl(r"R=0{,}30\ \mathrm{m}", GEO, 40), lado=UP, d=1.5)
+        cr3 = cota23(o_, t2, lbl(r"r=0{,}10\ \mathrm{m}", GEO, 40), lado=UP + LEFT, d=1.3)
+        pt3 = VGroup(*[VGroup(Dot(p_, radius=0.09, color=HALO), Dot(p_, radius=0.055, color=WHITE_)) for p_ in (t1, t2)]).set_z_index(18)
+        self.play(FadeIn(cR3), FadeIn(cr3), FadeIn(pt3), run_time=0.6)
+        nota = VGroup(txt("TORQUE: AS TRAÇÕES", 30, bold=True, color=FC)''')
+rep("fbd = VGroup(s_m1, s_T1, l_m1, l_T1, s_m2, s_T2, l_m2, l_T2, s_c1, l_c1, a_c1, s_c2, l_c2, a_c2, bz)","fbd = VGroup(s_m1, s_T1, l_m1, l_T1, s_m2, s_T2, l_m2, l_T2, s_c1, l_c1, a_c1, s_c2, l_c2, a_c2, bz, cR3, cr3, pt3)")
+open(P,'w',encoding='utf-8',newline='').write(s)

@@ -1,0 +1,69 @@
+01 E5 área meia arruela = 3π/2: True
+02 E5 área = π(4-1)/2 pela diferença de meios discos: True
+03 E5 de dentro (homog.) = (7/3) sen θ: True
+04 E5 [r³/3]₁² = 8/3 − 1/3 = 7/3: True
+05 E5 ∫₀^π sen θ = [−cos θ]₀^π = 1 + 1 = 2: True
+06 E5 M_x (homog.) = 14/3: True
+07 E5 ȳ homog. = (14/3)/(3π/2) = 28/(9π): True
+08 E5 28/(9π) ≈ 0,990 < 1 (cai no buraco): True
+09 E5 x̄ = 0 (simetria: M_y = 0): True
+10 E5 massa de dentro (ρ = k r) = 7k/3: True
+11 E5 massa (ρ = k r) = 7kπ/3: True
+12 E5 M_x de dentro (ρ = k r) = k(16/4 − 1/4) sen θ = (15k/4) sen θ: True
+13 E5 M_x (ρ = k r) = 15k/2: True
+14 E5 ȳ (ρ = k r) = (15k/2)/(7kπ/3) = 45/(14π): True
+15 E5 (15/2)·(3/7) = 45/14: True
+16 E5 45/(14π) ≈ 1,023 > 1 (volta para a chapa): True
+17 E6 fórmula geral ȳ = 4(b³−a³)/(3π(b²−a²)) com a=1,b=2 = 28/(9π): True
+18 E6 a → 0: ȳ → 4b/(3π) (meio disco): True
+19 E6 a → b: ȳ → 2b/π (arame semicircular): True
+20 E6 (b³−a³)/(b²−a²) = (a²+ab+b²)/(a+b): True
+21 E6 limiar t* = a/b ≈ 0,494 (a = 1, b = 2 dá t = 0,5: cai por um triz): True
+22 E6 Pappus meio disco: 2π·(4a/3π)·(πa²/2) = 4πa³/3: True
+23 E6 ∬ 2πy dA no meio disco = 4πa³/3: True
+24 E6 casca: (4/3)π(8 − 1) = 28π/3: True
+25 E6 Pappus meia arruela: 2π·(28/9π)·(3π/2) = 28π/3: True
+26 E6 ȳ = V/(2πA) = (28π/3)/(3π²) = 28/(9π): True
+27 E6 2π · 3π/2 = 3π²: True
+28 E6 cascas ∫₀^a 2πy·2√(a²−y²) dy = 4πa³/3: True
+29 E6 toro (R=2, a=1): Pappus 2π·2·π·1² = 4π²: True
+30 E6 toro por arruelas = 4π² (confere): True
+31 E6 4π² ≈ 39,48: True
+32 E1 jacobiano de (u, v + u²) = 1: True
+33 E1 ida: ∂(u,v)/∂(x,y) de (x, y − x²) = 1: True
+34 E1 área direta = 1 + [2x − x²/2]₁² = 1 + 1/2 = 3/2: True
+35 E1 [2x − x²/2]₁² = (4 − 2) − (2 − 1/2) = 1/2: True
+36 E1 área no plano u,v (trapézio) = ∫₁² v dv = 3/2: True
+37 E1 trapézio pela fórmula (1 + 2)/2 · 1 = 3/2: True
+38 E1 de dentro ∫₀^v (e^v/v) du = (e^v/v)·v = e^v: True
+39 E1 ∫₁² e^v dv = e² − e: True
+40 E1 e² − e ≈ 4,671: True
+41 E1 integral numérica na região original ≈ e² − e: True
+42 E2 jacobiano direto de (√(u/v), √(uv)) = 1/(2v): True
+43 E2 ∂(u,v)/∂(x,y) = y·(1/x) − x·(−y/x²) = 2y/x: True
+44 E2 2y/x = 2v ⇒ volta = 1/(2v): True
+45 E2 área = ∫₁²∫₁² 1/(2v) du dv = (ln 2)/2: True
+46 E2 (ln 2)/2 ≈ 0,347 ≈ 5,5 quadradinhos de 1/16: True
+47 E2 área numérica direta ≈ (ln 2)/2: True
+48 E2 massa ρ = xy: ∫∫ u/(2v) = [u²/2]₁² · [ln v/2]₁² = (3/2)(ln 2/2) = (3/4) ln 2: True
+49 E2 (3/4) ln 2 ≈ 0,520: True
+50 E2 massa numérica direta ≈ (3/4) ln 2: True
+51 E3 de dentro ∫₀^a √(a²−r²) r dr = a³/3: True
+52 E3 com U = a² − r²: (1/2)∫₀^{a²} U^{1/2} dU = (1/2)(2/3)a³ = a³/3: True
+53 E3 total = (π/2)(a³/3) = πa³/6: True
+54 E3 confere: (4πa³/3)/8 = πa³/6 (um oitavo da bola): True
+55 E3 iterada original em x, y (a = 1, numérica) = π/6: True
+56 E4 jacobiano das polares esticadas = abr: True
+57 E4 a²r²cos²/a² + b²r²sen²/b² = r² ≤ 1: True
+58 E4 área da elipse = ab·(1/2)·2π = πab: True
+59 E4 massa meia elipse ρ = k y: (k/4)·[r³/3]₀¹·2 = k/6: True
+60 E4 M_x = (k/8)·[r⁴/4]₀¹·∫sen² = (k/8)(1/4)(π/2) = kπ/64: True
+61 E4 ∫₀^π sen²θ dθ = [θ/2 − sen 2θ/4]₀^π = π/2: True
+62 E4 ȳ = (kπ/64)/(k/6) = 6π/64 = 3π/32: True
+63 E4 3π/32 ≈ 0,295 (de 0,5 de altura): True
+64 E4 x̄ = 0 (M_y = 0 pela simetria): True
+65 E4 meio disco ρ = k y: ȳ = (kπ/8)/(2k/3) = 3π/16; × 1/2 = 3π/32: True
+66 E4 homogênea: ȳ = 4b/(3π) com b = 1/2 → 2/(3π) ≈ 0,212: True
+67 E4 massa direta em x, y = k/6: True
+
+67/67 True

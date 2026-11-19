@@ -1,0 +1,666 @@
+[
+ {
+  "unidade": "N001",
+  "e": 0.0,
+  "v": 0.0,
+  "evento": "abertura",
+  "tipo": "section",
+  "ref_preview": 0.0
+ },
+ {
+  "unidade": "N002",
+  "e": 9.25,
+  "v": 13.76,
+  "evento": "A corrente cria um campo magnético que envolve o fio",
+  "tipo": "caption",
+  "ref_preview": 9.0
+ },
+ {
+  "unidade": "N003",
+  "e": 19.72,
+  "v": 28.57,
+  "evento": "No fio 2, $\\mathbf B_1$ é tangente ao anel, perpendicular ao fio",
+  "tipo": "caption",
+  "ref_preview": 20.0
+ },
+ {
+  "unidade": "N004",
+  "e": 30.46,
+  "v": 45.55,
+  "evento": "\\mathbf B_1=\\ ?",
+  "tipo": "eq-aux",
+  "ref_preview": 31.0
+ },
+ {
+  "unidade": "N005",
+  "e": 45.13,
+  "v": 54.12,
+  "evento": "regime",
+  "tipo": "section",
+  "ref_preview": 46.0
+ },
+ {
+  "unidade": "N006",
+  "e": 53.78,
+  "v": 68.12,
+  "evento": "\\frac{dQ}{dt}=I_{\\rm entra}-I_{\\rm sai}",
+  "tipo": "eq",
+  "ref_preview": 54.0
+ },
+ {
+  "unidade": "N007",
+  "e": 72.42,
+  "v": 78.27,
+  "evento": "\\frac{\\partial\\rho}{\\partial t}+\\nabla\\cdot\\mathbf J=0  [nome: Equação da contin",
+  "tipo": "eq",
+  "ref_preview": 73.0
+ },
+ {
+  "unidade": "N008",
+  "e": 80.29,
+  "v": 98.71,
+  "evento": "\\frac{\\partial\\rho}{\\partial t}=0\\ \\implies\\ \\nabla\\cdot\\mathbf J=0",
+  "tipo": "eq",
+  "ref_preview": 81.0
+ },
+ {
+  "unidade": "N009",
+  "e": 93.83,
+  "v": 114.98,
+  "evento": "geometria",
+  "tipo": "section",
+  "ref_preview": 95.0
+ },
+ {
+  "unidade": "N010",
+  "e": 104.15,
+  "v": 128.17,
+  "evento": "Escolha uma origem $O$ qualquer",
+  "tipo": "caption",
+  "ref_preview": 106.0
+ },
+ {
+  "unidade": "N011",
+  "e": 113.56,
+  "v": 141.34,
+  "evento": "\\mathbf r'+\\mathbf R=\\mathbf r",
+  "tipo": "eq",
+  "ref_preview": 115.0
+ },
+ {
+  "unidade": "N012",
+  "e": 124.43,
+  "v": 160.57,
+  "evento": "O comprimento da seta $\\mathbf R$ é a distância $R$",
+  "tipo": "caption",
+  "ref_preview": 128.0
+ },
+ {
+  "unidade": "N013",
+  "e": 140.67,
+  "v": 175.36,
+  "evento": "$d\\boldsymbol\\ell$ é o elemento de fio, tangente à corrente; $\\theta$ é o ângulo",
+  "tipo": "caption",
+  "ref_preview": 143.0
+ },
+ {
+  "unidade": "N014",
+  "e": 146.84,
+  "v": 186.11,
+  "evento": "lei",
+  "tipo": "section",
+  "ref_preview": 149.0
+ },
+ {
+  "unidade": "N015",
+  "e": 151.14,
+  "v": 200.13,
+  "evento": "O elemento de corrente $I\\,d\\ell$ produz uma contribuição $d\\mathbf B$ em $P$",
+  "tipo": "caption",
+  "ref_preview": 153.0
+ },
+ {
+  "unidade": "N016",
+  "e": 156.29,
+  "v": 213.59,
+  "evento": "Quanto mais longe de $P$, mais fraca a contribuição",
+  "tipo": "caption",
+  "ref_preview": 159.0
+ },
+ {
+  "unidade": "N017",
+  "e": 171.86,
+  "v": 227.14,
+  "evento": "A direção importa: só a parte perpendicular de $d\\boldsymbol\\ell$ conta",
+  "tipo": "caption",
+  "ref_preview": 174.0
+ },
+ {
+  "unidade": "N018",
+  "e": 181.53,
+  "v": 242.5,
+  "evento": "\\frac{\\mu_0}{4\\pi}  [nome: constante de proporcionalidade]  [nota: $\\mu_0$: perm",
+  "tipo": "eq-aux",
+  "ref_preview": 184.0
+ },
+ {
+  "unidade": "N019",
+  "e": 193.1,
+  "v": 260.65,
+  "evento": "A área do paralelogramo de $d\\boldsymbol\\ell$ e $\\hat{\\mathbf R}$ vale $d\\ell\\,\\",
+  "tipo": "caption",
+  "ref_preview": 196.0
+ },
+ {
+  "unidade": "N020",
+  "e": 210.14,
+  "v": 278.25,
+  "evento": "$\\hat{\\mathbf R}$ é o vetor $\\mathbf R$ com módulo 1",
+  "tipo": "caption",
+  "ref_preview": 213.0
+ },
+ {
+  "unidade": "N021",
+  "e": 225.78,
+  "v": 292.36,
+  "evento": "$R\\cdot R^2$ vira $R^3$: os expoentes se somam",
+  "tipo": "caption",
+  "ref_preview": 229.0
+ },
+ {
+  "unidade": "N022",
+  "e": 237.12,
+  "v": 306.88,
+  "evento": "distribuidas",
+  "tipo": "section",
+  "ref_preview": 240.0
+ },
+ {
+  "unidade": "N023",
+  "e": 252.34,
+  "v": 323.01,
+  "evento": "A corrente na faixa de largura $dw$ é $dI=K\\,dw$",
+  "tipo": "caption",
+  "ref_preview": 256.0
+ },
+ {
+  "unidade": "N024",
+  "e": 271.15,
+  "v": 337.83,
+  "evento": "da=dw\\,d\\ell",
+  "tipo": "eq-aux",
+  "ref_preview": 275.0
+ },
+ {
+  "unidade": "N025",
+  "e": 287.39,
+  "v": 355.33,
+  "evento": "A corrente na seção $dA_\\perp$ é $dI=J\\,dA_\\perp$",
+  "tipo": "caption",
+  "ref_preview": 291.0
+ },
+ {
+  "unidade": "N026",
+  "e": 303.33,
+  "v": 371.35,
+  "evento": "A seção percorre $d\\ell$ e varre o volume $d\\tau$",
+  "tipo": "caption",
+  "ref_preview": 307.0
+ },
+ {
+  "unidade": "N027",
+  "e": 315.47,
+  "v": 389.08,
+  "evento": "clinica",
+  "tipo": "section",
+  "ref_preview": 320.0
+ },
+ {
+  "unidade": "N028",
+  "e": 325.67,
+  "v": 402.46,
+  "evento": "$\\theta=0$: contribuição deste elemento nula",
+  "tipo": "caption",
+  "ref_preview": 330.0
+ },
+ {
+  "unidade": "N029",
+  "e": 360.72,
+  "v": 419.29,
+  "evento": "O produto vetorial dá também a direção",
+  "tipo": "caption",
+  "ref_preview": 365.0
+ },
+ {
+  "unidade": "N030",
+  "e": 373.06,
+  "v": 431.54,
+  "evento": "Trocar a ordem inverte o produto vetorial.",
+  "tipo": "caption",
+  "ref_preview": 378.0
+ },
+ {
+  "unidade": "N031",
+  "e": 378.73,
+  "v": 446.41,
+  "evento": "superposicao",
+  "tipo": "section",
+  "ref_preview": 383.0
+ },
+ {
+  "unidade": "N032",
+  "e": 396.43,
+  "v": 460.93,
+  "evento": "Ponta a ponta: a resultante liga a origem à ponta final da soma",
+  "tipo": "caption",
+  "ref_preview": 401.0
+ },
+ {
+  "unidade": "N033",
+  "e": 404.0,
+  "v": 474.37,
+  "evento": "Refinar a fonte: mais elementos, cada contribuição menor",
+  "tipo": "caption",
+  "ref_preview": 409.0
+ },
+ {
+  "unidade": "N034",
+  "e": 419.14,
+  "v": 488.26,
+  "evento": "metodo",
+  "tipo": "section",
+  "ref_preview": 424.0
+ },
+ {
+  "unidade": "N035",
+  "e": 430.66,
+  "v": 501.67,
+  "evento": "Pela regra da mão direita, todas as parcelas apontam para fora da tela",
+  "tipo": "caption",
+  "ref_preview": 436.0
+ },
+ {
+  "unidade": "N036",
+  "e": 443.6,
+  "v": 518.27,
+  "evento": "trecho",
+  "tipo": "section",
+  "ref_preview": 449.0
+ },
+ {
+  "unidade": "N037",
+  "e": 458.62,
+  "v": 530.5,
+  "evento": "d\\boldsymbol\\ell=dx\\,\\hat x",
+  "tipo": "eq",
+  "ref_preview": 464.0
+ },
+ {
+  "unidade": "N038",
+  "e": 463.29,
+  "v": 545.4,
+  "evento": "\\mathbf R=-x\\,\\hat x+a\\,\\hat y",
+  "tipo": "eq-aux",
+  "ref_preview": 469.0
+ },
+ {
+  "unidade": "N039",
+  "e": 467.49,
+  "v": 561.13,
+  "evento": "$\\mathbf R$ = parte paralela + parte perpendicular",
+  "tipo": "caption",
+  "ref_preview": 474.0
+ },
+ {
+  "unidade": "N040",
+  "e": 486.24,
+  "v": 578.72,
+  "evento": "Em 3D, o $\\odot$ vira o eixo $z$",
+  "tipo": "caption",
+  "ref_preview": 492.0
+ },
+ {
+  "unidade": "N041",
+  "e": 506.78,
+  "v": 597.46,
+  "evento": "Pitágoras: $R^2=x^2+a^2$",
+  "tipo": "caption",
+  "ref_preview": 513.0
+ },
+ {
+  "unidade": "N042",
+  "e": 517.95,
+  "v": 614.77,
+  "evento": "Mova o elemento: $|d\\mathbf B|$ muda, o sentido não",
+  "tipo": "caption",
+  "ref_preview": 524.0
+ },
+ {
+  "unidade": "N043",
+  "e": 536.89,
+  "v": 633.53,
+  "evento": "\\tan\\alpha=\\frac{x}{a}",
+  "tipo": "eq-aux",
+  "ref_preview": 543.0
+ },
+ {
+  "unidade": "N044",
+  "e": 547.46,
+  "v": 650.08,
+  "evento": "Derive: $dx=a\\sec^2\\alpha\\,d\\alpha$",
+  "tipo": "caption",
+  "ref_preview": 551.0
+ },
+ {
+  "unidade": "N045",
+  "e": 554.28,
+  "v": 668.78,
+  "evento": "Reescreva o denominador em função de $\\alpha$",
+  "tipo": "caption",
+  "ref_preview": 561.0
+ },
+ {
+  "unidade": "N046",
+  "e": 572.8,
+  "v": 689.86,
+  "evento": "Junte os $a$ do numerador",
+  "tipo": "caption",
+  "ref_preview": 579.0
+ },
+ {
+  "unidade": "N047",
+  "e": 596.28,
+  "v": 709.35,
+  "evento": "Os limites são os ângulos nas extremidades",
+  "tipo": "caption",
+  "ref_preview": 600.0
+ },
+ {
+  "unidade": "N048",
+  "e": 600.75,
+  "v": 723.86,
+  "evento": "B_{\\rm trecho}=\\frac{\\mu_0 I}{4\\pi a}\\int_{\\alpha_A}^{\\alpha_B}\\cos\\alpha\\,d\\alp",
+  "tipo": "eq",
+  "ref_preview": 608.0
+ },
+ {
+  "unidade": "N049",
+  "e": 611.85,
+  "v": 738.6,
+  "evento": "\\alpha_A=-\\alpha_1\\ ,\\quad\\alpha_B=\\alpha_2",
+  "tipo": "eq-aux",
+  "ref_preview": 619.0
+ },
+ {
+  "unidade": "N050",
+  "e": 625.32,
+  "v": 758.73,
+  "evento": "infinito",
+  "tipo": "section",
+  "ref_preview": 632.0
+ },
+ {
+  "unidade": "N051",
+  "e": 647.07,
+  "v": 775.12,
+  "evento": "B_\\infty=\\frac{\\mu_0 I}{2\\pi a}  [nome: Campo de um fio retilíneo infinito]",
+  "tipo": "eq",
+  "ref_preview": 654.0
+ },
+ {
+  "unidade": "N052",
+  "e": 656.74,
+  "v": 792.54,
+  "evento": "fios",
+  "tipo": "section",
+  "ref_preview": 664.0
+ },
+ {
+  "unidade": "N053",
+  "e": 668.16,
+  "v": 808.49,
+  "evento": "B_1=\\frac{\\mu_0 I_1}{2\\pi d}  [nome: Campo de um fio retilíneo infinito]",
+  "tipo": "eq",
+  "ref_preview": 676.0
+ },
+ {
+  "unidade": "N054",
+  "e": 683.5,
+  "v": 826.39,
+  "evento": "\\frac{F_2}{L}=\\frac{\\mu_0 I_1 I_2}{2\\pi d}",
+  "tipo": "eq",
+  "ref_preview": 691.0
+ },
+ {
+  "unidade": "N055",
+  "e": 693.27,
+  "v": 847.45,
+  "evento": "Inverta $I_2$: $\\mathbf B_1$ não muda, a força inverte",
+  "tipo": "caption",
+  "ref_preview": 701.0
+ },
+ {
+  "unidade": "N056",
+  "e": 700.44,
+  "v": 861.55,
+  "evento": "espira",
+  "tipo": "section",
+  "ref_preview": 709.0
+ },
+ {
+  "unidade": "N057",
+  "e": 706.29,
+  "v": 871.45,
+  "evento": "Na espira, a notação muda (R, s, z)",
+  "tipo": "legenda",
+  "ref_preview": 718.0
+ },
+ {
+  "unidade": "N058",
+  "e": 713.29,
+  "v": 888.51,
+  "evento": "d\\ell=R\\,d\\phi",
+  "tipo": "eq",
+  "ref_preview": 722.0
+ },
+ {
+  "unidade": "N059",
+  "e": 721.46,
+  "v": 903.25,
+  "evento": "Mudamos a perspectiva: da vista frontal ao perfil da espira.",
+  "tipo": "caption",
+  "ref_preview": 730.0
+ },
+ {
+  "unidade": "N060",
+  "e": 734.6,
+  "v": 916.76,
+  "evento": "Use o triângulo: $R$ raio, $z$ eixo, $s$ fonte → $P$",
+  "tipo": "caption",
+  "ref_preview": 743.0
+ },
+ {
+  "unidade": "N061",
+  "e": 747.84,
+  "v": 935.87,
+  "evento": "$d\\ell$ sai da tela e $\\mathbf s$ está no plano: o ângulo entre eles é $90^\\circ",
+  "tipo": "caption",
+  "ref_preview": 757.0
+ },
+ {
+  "unidade": "N062",
+  "e": 763.65,
+  "v": 956.41,
+  "evento": "A mão direita dá $d\\mathbf B$: perpendicular a $\\mathbf s$ e a $d\\ell$",
+  "tipo": "caption",
+  "ref_preview": 773.0
+ },
+ {
+  "unidade": "N063",
+  "e": 768.62,
+  "v": 972.18,
+  "evento": "Projete no eixo",
+  "tipo": "caption",
+  "ref_preview": 778.0
+ },
+ {
+  "unidade": "N064",
+  "e": 778.86,
+  "v": 986.49,
+  "evento": "\\cos\\gamma=\\frac{R}{s}",
+  "tipo": "eq-aux",
+  "ref_preview": 788.0
+ },
+ {
+  "unidade": "N065",
+  "e": 796.93,
+  "v": 1000.47,
+  "evento": "Agora o elemento diametralmente oposto, com a mesma distância $s$ até $P$",
+  "tipo": "caption",
+  "ref_preview": 807.0
+ },
+ {
+  "unidade": "N066",
+  "e": 801.3,
+  "v": 1014.85,
+  "evento": "As transversais cancelam",
+  "tipo": "caption",
+  "ref_preview": 811.0
+ },
+ {
+  "unidade": "N067",
+  "e": 816.64,
+  "v": 1031.63,
+  "evento": "O par mostrou a simetria. Integre UMA contribuição $dB_z$",
+  "tipo": "caption",
+  "ref_preview": 827.0
+ },
+ {
+  "unidade": "N068",
+  "e": 824.11,
+  "v": 1045.65,
+  "evento": "algebra_espira",
+  "tipo": "section",
+  "ref_preview": 835.0
+ },
+ {
+  "unidade": "N069",
+  "e": 838.41,
+  "v": 1059.97,
+  "evento": "Troque $d\\ell$ pelo arco $R\\,d\\phi$",
+  "tipo": "caption",
+  "ref_preview": 849.0
+ },
+ {
+  "unidade": "N070",
+  "e": 854.35,
+  "v": 1075.45,
+  "evento": "s^3=\\left(R^2+z^2\\right)^{3/2}",
+  "tipo": "eq-aux",
+  "ref_preview": 865.0
+ },
+ {
+  "unidade": "N071",
+  "e": 868.37,
+  "v": 1089.84,
+  "evento": "Integre uma volta: só $\\phi$ varia",
+  "tipo": "caption",
+  "ref_preview": 879.0
+ },
+ {
+  "unidade": "N072",
+  "e": 877.04,
+  "v": 1102.49,
+  "evento": "Somadas, as contribuições formam o campo total $\\mathbf B$",
+  "tipo": "caption",
+  "ref_preview": 888.0
+ },
+ {
+  "unidade": "N073",
+  "e": 895.68,
+  "v": 1116.79,
+  "evento": "A volta inteira dá $2\\pi$; junto com o $4\\pi$ da lei, resta $1/2$",
+  "tipo": "caption",
+  "ref_preview": 907.0
+ },
+ {
+  "unidade": "N074",
+  "e": 902.95,
+  "v": 1130.29,
+  "evento": "B_z(z)=\\frac{\\mu_0 I R^2}{2\\,(R^2+z^2)^{3/2}}",
+  "tipo": "eq",
+  "ref_preview": 914.0
+ },
+ {
+  "unidade": "N075",
+  "e": 915.5,
+  "v": 1149.13,
+  "evento": "centro",
+  "tipo": "section",
+  "ref_preview": 927.0
+ },
+ {
+  "unidade": "N076",
+  "e": 931.27,
+  "v": 1165.68,
+  "evento": "No centro não há componente lateral para cancelar",
+  "tipo": "caption",
+  "ref_preview": 942.0
+ },
+ {
+  "unidade": "N077",
+  "e": 939.54,
+  "v": 1182.65,
+  "evento": "distante",
+  "tipo": "section",
+  "ref_preview": 951.0
+ },
+ {
+  "unidade": "N078",
+  "e": 956.46,
+  "v": 1199.82,
+  "evento": "$|z|\\gg R$: a distância domina o denominador",
+  "tipo": "caption",
+  "ref_preview": 968.0
+ },
+ {
+  "unidade": "N079",
+  "e": 965.73,
+  "v": 1221.53,
+  "evento": "B_z\\sim\\frac{\\mu_0 I R^2}{2|z|^3}",
+  "tipo": "eq",
+  "ref_preview": 978.0
+ },
+ {
+  "unidade": "N080",
+  "e": 976.6,
+  "v": 1238.9,
+  "evento": "sintese",
+  "tipo": "section",
+  "ref_preview": 989.0
+ },
+ {
+  "unidade": "N081",
+  "e": 1004.94,
+  "v": 1260.3,
+  "evento": "A mesma lei, agora com outra fonte",
+  "tipo": "caption",
+  "ref_preview": 1017.0
+ },
+ {
+  "unidade": "N082",
+  "e": 1018.68,
+  "v": 1274.56,
+  "evento": "fechamento",
+  "tipo": "section",
+  "ref_preview": 1031.0
+ },
+ {
+  "unidade": "N083",
+  "e": 1032.53,
+  "v": 1289.78,
+  "evento": "início do CTA",
+  "tipo": "cta",
+  "ref_preview": 1044.0
+ }
+]

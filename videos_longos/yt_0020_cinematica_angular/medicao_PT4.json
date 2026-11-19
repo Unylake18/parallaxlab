@@ -1,0 +1,345 @@
+{
+"lote": "PT4",
+"marcas": [
+{
+"id": "an:T4-1",
+"A": 0.6,
+"W": 0.0
+},
+{
+"id": "gat:T4-1:um ponto a uma certa dist\u00e2ncia do eixo",
+"A": 0.6,
+"W": 0.0
+},
+{
+"id": "gat:T4-1:percorre um arco igual",
+"A": 0.9,
+"W": 0.0
+},
+{
+"id": "gat:T4-1:igual a essa dist\u00e2ncia",
+"A": 1.15,
+"W": 0.0
+},
+{
+"id": "gat:T4-1:como a dist\u00e2ncia ao eixo n\u00e3o muda",
+"A": 0.0,
+"W": 0.9
+},
+{
+"id": "gat:T4-1:\u00e9 s\u00f3 derivar dos dois lados",
+"A": 2.6999999999999997,
+"W": 0.0
+},
+{
+"id": "gat:T4-1:a velocidade do ponto ao longo do c\u00edrculo",
+"A": 1.06,
+"W": 0.0
+},
+{
+"id": "gat:T4-1:\u00e9 a dist\u00e2ncia ao eixo vezes a velocidade angular",
+"A": 1.2,
+"W": 0.0
+},
+{
+"id": "gat:T4-1:ela tem sinal",
+"A": 1.4,
+"W": 0.0
+},
+{
+"id": "gat:T4-1:e a rapidez",
+"A": 0.2,
+"W": 0.0
+},
+{
+"id": "gat:T4-1:sempre tangente ao c\u00edrculo do ponto",
+"A": 1.4,
+"W": 0.0
+},
+{
+"id": "ate:T4-1:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:T4-2",
+"A": 1.1,
+"W": 0.0
+},
+{
+"id": "gat:T4-2:a h\u00e9lice inteira",
+"A": 0.9199999999999999,
+"W": 0.0
+},
+{
+"id": "gat:T4-2:tem a mesma velocidade angular",
+"A": 0.4,
+"W": 0.0
+},
+{
+"id": "gat:T4-2:cerca de duzentos e oitenta e tr\u00eas",
+"A": 0.7,
+"W": 0.0
+},
+{
+"id": "gat:T4-2:a velocidade de cada ponto depende",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "gat:T4-2:a dez cent\u00edmetros",
+"A": 2.1,
+"W": 0.0
+},
+{
+"id": "gat:T4-2:perto de cem quil\u00f4metros por hora",
+"A": 1.1,
+"W": 0.0
+},
+{
+"id": "gat:T4-2:na ponta a noventa e cinco",
+"A": 2.4000000000000004,
+"W": 0.0
+},
+{
+"id": "gat:T4-2:quase mil quil\u00f4metros",
+"A": 0.25,
+"W": 0.0
+},
+{
+"id": "gat:T4-2:o cubo n\u00e3o gira mais devagar",
+"A": 0.9,
+"W": 0.0
+},
+{
+"id": "gat:T4-2:ele completa cada volta junto com a ponta",
+"A": 0.8,
+"W": 0.0
+},
+{
+"id": "gat:T4-2:e tem um detalhe importante",
+"A": 0.0,
+"W": 0.9
+},
+{
+"id": "gat:T4-2:essas s\u00e3o velocidades em rela\u00e7\u00e3o ao eixo",
+"A": 0.5,
+"W": 0.0
+},
+{
+"id": "gat:T4-2:se aproxima da velocidade do som",
+"A": 0.0,
+"W": 0.9
+},
+{
+"id": "ate:T4-2:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:T4-3",
+"A": 1.9499999999999997,
+"W": 0.0
+},
+{
+"id": "gat:T4-3:olha esses dois pontos",
+"A": 0.7,
+"W": 0.0
+},
+{
+"id": "gat:T4-3:\u00e0 mesma dist\u00e2ncia do eixo",
+"A": 0.6,
+"W": 0.0
+},
+{
+"id": "gat:T4-3:o tamanho da velocidade \u00e9 o mesmo",
+"A": 1.8,
+"W": 0.0
+},
+{
+"id": "gat:T4-3:mas as setas apontam",
+"A": 1.15,
+"W": 0.0
+},
+{
+"id": "gat:T4-3:mesma rapidez velocidades diferentes",
+"A": 0.6,
+"W": 0.0
+},
+{
+"id": "gat:T4-3:a f\u00f3rmula que a gente acabou de ver",
+"A": 0.0,
+"W": 0.9
+},
+{
+"id": "gat:T4-3:a dire\u00e7\u00e3o completa no espa\u00e7o",
+"A": 1.0,
+"W": 0.0
+},
+{
+"id": "ate:T4-3:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:T4-4",
+"A": 0.3,
+"W": 0.0
+},
+{
+"id": "gat:T4-4:derivando mais uma vez",
+"A": 0.8,
+"W": 0.0
+},
+{
+"id": "gat:T4-4:se o giro acelera",
+"A": 1.2,
+"W": 0.0
+},
+{
+"id": "gat:T4-4:acelera a velocidade do ponto",
+"A": 0.6,
+"W": 0.0
+},
+{
+"id": "gat:T4-4:essa \u00e9 a acelera\u00e7\u00e3o tangencial",
+"A": 1.2,
+"W": 0.0
+},
+{
+"id": "gat:T4-4:a dist\u00e2ncia ao eixo vezes a acelera\u00e7\u00e3o angular",
+"A": 0.0,
+"W": 0.9
+},
+{
+"id": "gat:T4-4:contra ela quando freia",
+"A": 0.0,
+"W": 1.2
+},
+{
+"id": "ate:T4-4:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:T4-5",
+"A": 0.5,
+"W": 0.0
+},
+{
+"id": "gat:T4-5:sem acelera\u00e7\u00e3o angular nenhuma",
+"A": 1.22,
+"W": 0.0
+},
+{
+"id": "gat:T4-5:\u00e9 a acelera\u00e7\u00e3o centr\u00edpeta",
+"A": 0.7,
+"W": 0.0
+},
+{
+"id": "gat:T4-5:velocidade ao quadrado dividida",
+"A": 1.3499999999999999,
+"W": 0.0
+},
+{
+"id": "gat:T4-5:trocando a velocidade pela dist\u00e2ncia",
+"A": 2.2,
+"W": 0.0
+},
+{
+"id": "gat:T4-5:fica velocidade angular ao quadrado",
+"A": 2.26,
+"W": 0.0
+},
+{
+"id": "gat:T4-5:e ela aponta sempre para o eixo",
+"A": 0.0,
+"W": 0.9
+},
+{
+"id": "ate:T4-5:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:T4-6",
+"A": 0.6,
+"W": 0.0
+},
+{
+"id": "gat:T4-6:um ponto do disco pode ter duas acelera\u00e7\u00f5es",
+"A": 0.8,
+"W": 0.0
+},
+{
+"id": "gat:T4-6:a tangencial muda o tamanho da velocidade",
+"A": 1.9499999999999997,
+"W": 0.0
+},
+{
+"id": "gat:T4-6:a centr\u00edpeta muda sua dire\u00e7\u00e3o",
+"A": 1.9499999999999997,
+"W": 0.0
+},
+{
+"id": "gat:T4-6:o tamanho da acelera\u00e7\u00e3o total",
+"A": 0.8,
+"W": 0.0
+},
+{
+"id": "gat:T4-6:vem de pit\u00e1goras",
+"A": 1.0,
+"W": 0.0
+},
+{
+"id": "gat:T4-6:se medirmos o \u00e2ngulo a partir",
+"A": 0.9,
+"W": 0.0
+},
+{
+"id": "gat:T4-6:sua tangente \u00e9 o m\u00f3dulo",
+"A": 1.15,
+"W": 0.0
+},
+{
+"id": "gat:T4-6:para qual lado a resultante se inclina",
+"A": 0.0,
+"W": 0.9
+},
+{
+"id": "gat:T4-6:e olha a consequ\u00eancia",
+"A": 1.9000000000000001,
+"W": 0.0
+},
+{
+"id": "gat:T4-6:do quadrado da velocidade angular",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "gat:T4-6:na ponta daquela h\u00e9lice",
+"A": 0.55,
+"W": 0.0
+},
+{
+"id": "gat:T4-6:aproximadamente setenta e seis mil",
+"A": 2.2,
+"W": 0.0
+},
+{
+"id": "gat:T4-6:mais de sete mil e setecentas",
+"A": 0.7,
+"W": 0.0
+},
+{
+"id": "ate:T4-6:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "fim",
+"A": 0.0,
+"W": 0.0
+}
+]
+}

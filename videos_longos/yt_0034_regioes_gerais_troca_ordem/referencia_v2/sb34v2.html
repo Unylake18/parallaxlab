@@ -1,0 +1,612 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="katex/katex.min.css">
+<script src="katex/katex.min.js"></script>
+<script src="r3d_pts.js"></script>
+<style>
+@font-face{font-family:SG;src:url(SpaceGrotesk-Bold.ttf)}
+@font-face{font-family:SGM;src:url(SpaceGrotesk-Medium.ttf)}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#131030}
+canvas{position:absolute;left:0;top:0}
+.f{position:absolute;color:#F5F7FF;white-space:nowrap;line-height:1}
+.f .katex{font-size:1em}
+.pl{position:absolute;background:rgba(19,16,48,.88);border-radius:6px}
+</style></head><body><canvas id="o" width="1920" height="1080"></canvas>
+<script>
+// Quadros-alvo v1 + v2 do yt_0034 (chaves v2_* = avaliação do preview v1) (Cálculo III · EP. 09 · Regiões gerais e troca de ordem). ?k=<chave>  (helpers herdados do sb33)
+// Mesmo sistema do sb29 (EP. 05): fundo violeta #18143A → #0F0C26 + grade #2B2558 a cada 0,25 m da chapa (60 px), alinhada ao canto (0,0) em (360,780);
+// layout A (palco + coluna em x = 1120), chapa R = [0,2]² com 1 m = 240 px; placa mínima; cor por grandeza; operadores brancos.
+// As cenas 3D vêm de c3d34.html (r3d_<k>.png e r3d_pts.js). A grade de cada palco nasce dos eixos (papel()).
+const K=new URLSearchParams(location.search).get('k'), x=document.getElementById('o').getContext('2d'), PI=Math.PI;
+const CI='#35D9FF', AZC='#7FB2FF', CORAL='#FF7A8A', POS='#E08A3C', E1='#FFC24D', E2='#EA63FF', GEO='#B8C4DA', BR='#F5F7FF',
+ AL='#FF5D5D', MEN='#8CFFD2', BG='#131030', LEVE='#1E5072', PESADO='#30BBE0';
+const M={'\\X':'\\textcolor{#FFC24D}{x}','\\Y':'\\textcolor{#EA63FF}{y}','\\f':'\\textcolor{#35D9FF}{f}','\\rr':'\\textcolor{#35D9FF}{\\rho}',
+ '\\Xij':'\\textcolor{#E08A3C}{X_{ij}}','\\dxi':'\\textcolor{#FFC24D}{\\Delta x_i}','\\dyj':'\\textcolor{#EA63FF}{\\Delta y_j}',
+ '\\Ci':'\\textcolor{#35D9FF}','\\Az':'\\textcolor{#7FB2FF}','\\Co':'\\textcolor{#FF7A8A}','\\Me':'\\textcolor{#8CFFD2}','\\Lr':'\\textcolor{#E08A3C}','\\Al':'\\textcolor{#FF5D5D}',
+ '\\eps':'\\textcolor{#8CFFD2}{\\varepsilon}','\\del':'\\textcolor{#E08A3C}{\\delta}','\\Rij':'R_{ij}',
+ '\\mij':'\\textcolor{#7FB2FF}{m_{ij}}','\\Mij':'\\textcolor{#FF7A8A}{M_{ij}}','\\sP':'\\textcolor{#7FB2FF}{s(P)}','\\SP':'\\textcolor{#FF7A8A}{S(P)}',
+ '\\XX':'\\textcolor{#E08A3C}{X}','\\YY':'\\textcolor{#E08A3C}{Y}','\\g':'\\textcolor{#C9A7FF}{g}','\\Li':'\\textcolor{#C9A7FF}','\\Am':'\\textcolor{#FFC24D}','\\Mg':'\\textcolor{#EA63FF}','\\Ge':'\\textcolor{#B8C4DA}','\\al':'\\textcolor{#B8C4DA}{\\alpha}','\\dX':'\\textcolor{#FFC24D}{dx}','\\dY':'\\textcolor{#EA63FF}{dy}','\\be':'\\textcolor{#FFC24D}{\\beta}','\\alp':'\\textcolor{#EA63FF}{\\alpha}','\\xii':'\\textcolor{#E08A3C}{\\xi_i}','\\sen':'\\operatorname{sen}'};
+let O=[960,540],U=100; const P=(a,b)=>[O[0]+a*U,O[1]-b*U]; const vista=(cx,cy,u)=>{O=[cx,cy];U=u;};
+const img=s=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=s;});
+function mix(a,b,t){const h=s=>[1,3,5].map(i=>parseInt(s.slice(i,i+2),16));const A=h(a),B=h(b);return 'rgb('+A.map((v,i)=>Math.round(v+(B[i]-v)*t)).join(',')+')';}
+function tex(s,X,Y,size=48,al='l',placa=false){const d=document.createElement('div');d.className='f';d.style.fontSize=size+'px';
+ katex.render(s,d,{macros:M,throwOnError:false});document.body.appendChild(d);const w=d.offsetWidth,h=d.offsetHeight;
+ const L=(al==='c'?X-w/2:al==='r'?X-w:X),T=(Y-h/2);d.style.left=L+'px';d.style.top=T+'px';
+ if(placa){const p=document.createElement('div');p.className='pl';p.style.left=(L-6)+'px';p.style.top=(T-4)+'px';p.style.width=(w+12)+'px';p.style.height=(h+8)+'px';document.body.insertBefore(p,d);}return d;}
+function txt(s,X,Y,{size=30,f='SG',cor=BR,al='left',alpha=1,placa=false}={}){x.font=`${size}px ${f}`;if(placa){const w=x.measureText(s).width,L=al==='center'?X-w/2:al==='right'?X-w:X;x.fillStyle='rgba(19,16,48,.88)';x.beginPath();x.roundRect(L-8,Y-size*.82,w+16,size*1.05,6);x.fill();}
+ x.globalAlpha=alpha;x.textAlign=al;x.fillStyle=cor;x.fillText(s,X,Y);x.textAlign='left';x.globalAlpha=1;}
+function leg(s,X,Y,cor=GEO,al='left',size=28){txt(s,X,Y,{size,f:'SGM',cor,al});}
+function caminho(pts){x.beginPath();pts.forEach((p,i)=>{const q=P(...p);i?x.lineTo(...q):x.moveTo(...q)});}
+function linha(pts,cor,w,{dash=null,alpha=1}={}){x.lineCap='round';x.lineJoin='round';x.setLineDash(dash||[]);caminho(pts);x.globalAlpha=alpha;x.strokeStyle=cor;x.lineWidth=w;x.stroke();x.globalAlpha=1;x.setLineDash([]);}
+function preenche(pts,cor){caminho(pts);x.closePath();x.fillStyle=cor;x.fill();}
+function ret(a,b,c,d,fill,stroke=null,w=2,dash=null){const A=P(a,d),B=P(b,c);if(fill){x.fillStyle=fill;x.fillRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);}
+ if(stroke){x.setLineDash(dash||[]);x.strokeStyle=stroke;x.lineWidth=w;x.strokeRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);x.setLineDash([]);}}
+function seta(a,b,cor,w=5,head=20){const A=P(...a),B=P(...b),dx=B[0]-A[0],dy=B[1]-A[1],L=Math.hypot(dx,dy);if(L<3)return;
+ const ux=dx/L,uy=dy/L,h=Math.min(head,.45*L),hw=h*.5,bx=B[0]-ux*h,by=B[1]-uy*h;
+ x.lineCap='round';x.beginPath();x.moveTo(...A);x.lineTo(bx+ux,by+uy);x.strokeStyle=cor;x.lineWidth=w;x.stroke();
+ x.beginPath();x.moveTo(...B);x.lineTo(bx-uy*hw,by+ux*hw);x.lineTo(bx+uy*hw,by-ux*hw);x.closePath();x.fillStyle=cor;x.fill();}
+function ponto(p,cor,r=9){const q=P(...p);x.beginPath();x.arc(...q,r,0,7);x.fillStyle=cor;x.fill();}
+function canto(s){txt('CÁLCULO III · INTEGRAL DUPLA',36,73,{size:22,f:'SGM',cor:'#C8D6F0',alpha:.6});if(s)txt(s,36,118,{size:36});}
+async function logo(){const lg=await img('logo_crop.png');if(lg)x.drawImage(lg,1650,24);}
+function painel(X0,Y0,w,h){x.strokeStyle='rgba(184,196,218,.35)';x.lineWidth=2;x.beginPath();x.roundRect(X0,Y0,w,h,14);x.stroke();}
+function check(X,Y,cor=MEN,s=1){x.strokeStyle=cor;x.lineWidth=6*s;x.lineCap='round';x.beginPath();x.moveTo(X-14*s,Y);x.lineTo(X-3*s,Y+11*s);x.lineTo(X+16*s,Y-13*s);x.stroke();}
+function cruz(X,Y,cor=AL,s=1){x.strokeStyle=cor;x.lineWidth=6*s;x.lineCap='round';x.beginPath();x.moveTo(X-12*s,Y-12*s);x.lineTo(X+12*s,Y+12*s);x.moveTo(X+12*s,Y-12*s);x.lineTo(X-12*s,Y+12*s);x.stroke();}
+function fundoV(grade=true){const g=x.createLinearGradient(0,0,0,1080);g.addColorStop(0,'#18143A');g.addColorStop(1,'#0F0C26');x.fillStyle=g;x.fillRect(0,0,1920,1080);
+ if(grade){x.strokeStyle='#2B2558';x.lineWidth=1.2;for(let X=0;X<=1920;X+=60){x.beginPath();x.moveTo(X+.5,0);x.lineTo(X+.5,1080);x.stroke();}for(let Y=0;Y<=1080;Y+=60){x.beginPath();x.moveTo(0,Y+.5);x.lineTo(1920,Y+.5);x.stroke();}}}
+const P3=(k,n)=>(window.R3D&&R3D[k]&&R3D[k][n])||[0,0];
+async function cena3d(k,{dx=0,dy=0,esc=1}={}){const im=await img('r3d_'+k+'.png');if(!im)return;x.drawImage(im,dx,dy,1920*esc,1080*esc);}
+const Q3=(k,n,{dx=0,dy=0,esc=1}={})=>{const p=P3(k,n);return [dx+p[0]*esc,dy+p[1]*esc];};
+// ---------- chapa ----------
+const f=(X,Y)=>X*X+Y*Y;
+const CH=()=>vista(360,780,240);
+function corDens(v){return mix('#10243A',CI,Math.pow(Math.min(1,v/8),.85));}
+function mapaDens(n=64){const h=2/n;for(let i=0;i<n;i++)for(let j=0;j<n;j++){const A=P(i*h,(j+1)*h),B=P((i+1)*h,j*h);x.fillStyle=corDens(f((i+.5)*h,(j+.5)*h));x.fillRect(A[0],A[1],B[0]-A[0]+.6,B[1]-A[1]+.6);}}
+function borda(cor=GEO,w=3){linha([[0,0],[2,0],[2,2],[0,2],[0,0]],cor,w);}
+function eixosChapa(){seta([-.1,0],[2.3,0],E1,3,16);seta([0,-.1],[0,2.3],E2,3,16);tex('\\X',...P(2.4,0),32,'c');tex('\\Y',...P(0,2.42),32,'c');}
+function grade(xs,ys,cor=GEO,w=2,dash=[7,7]){for(const a of xs)linha([[a,0],[a,2]],cor,w,{dash});for(const b of ys)linha([[0,b],[2,b]],cor,w,{dash});}
+const uni=n=>Array.from({length:n+1},(_,i)=>2*i/n);
+// ---------- solda e dois metais ----------
+const g=a=>1+.42*Math.sin(1.7*a-.4);
+function faixa(a,b,am=60){let mn=9,mx=-9;for(let s=0;s<=am;s++){const v=g(a+(b-a)*s/am);mn=Math.min(mn,v);mx=Math.max(mx,v);}return [mn,mx];}
+function metais(n,{verm=true,alphaV=.6,linhasGrade=true}={}){const h=2/n;for(let i=0;i<n;i++){const a=i*h,b=a+h,[mn,mx]=faixa(a,b);for(let j=0;j<n;j++){const c=j*h,d=c+h,leve=c<=mx,pes=d>mn;
+  const A=P(a,d),B=P(b,c);x.fillStyle=(verm&&leve&&pes)?mix(BG,AL,alphaV):((c+d)/2>g((a+b)/2)?PESADO:LEVE);x.fillRect(A[0],A[1],B[0]-A[0]+.6,B[1]-A[1]+.6);}}
+ if(linhasGrade&&n<=32)grade(uni(n).slice(1,-1),uni(n).slice(1,-1),mix(BG,GEO,.35),1,null);}
+function curvaG(dy=0){const c=[];for(let s=0;s<=120;s++){const a=2*s/120;c.push([a,g(a)+dy]);}return c;}
+function metaisLiso(){preenche([[0,0],[2,0]].concat(curvaG().reverse()),LEVE);preenche([[0,2],[2,2]].concat(curvaG().reverse()),PESADO);}
+function solda(cor=BR,w=4){const c=[];for(let s=0;s<=80;s++){const a=2*s/80;c.push([a,g(a)]);}linha(c,cor,w);}
+function cobertura(n,{cor=MEN,fill=.22,w=2,eng=0,dash=null}={}){const h=2/n;let area=0;for(let i=0;i<n;i++){const a=i*h,b=a+h,[mn,mx]=faixa(a,b);area+=(b-a)*(mx-mn);
+  ret(a-eng,b+eng,mn-eng,mx+eng,fill?(cor===MEN?`rgba(140,255,210,${fill})`:mix(BG,cor,fill)):null,cor,w,dash);}return area;}
+// ---------- quarto de disco ----------
+function escadaB(n,{cIn=mix(BG,CI,.55),cBord=mix(BG,AL,.55),bordaOn=false}={}){const h=2/n;for(let i=0;i<n;i++)for(let j=0;j<n;j++){const near=(i*h)**2+(j*h)**2,far=((i+1)*h)**2+((j+1)*h)**2,cx=(i+.5)*h,cy=(j+.5)*h;
+ const A=P(i*h,(j+1)*h),B=P((i+1)*h,j*h);let c=null;if(bordaOn&&near<4&&far>4)c=cBord;else if(cx*cx+cy*cy<=4)c=cIn;if(c){x.fillStyle=c;x.fillRect(A[0],A[1],B[0]-A[0]+.6,B[1]-A[1]+.6);}}}
+function arcoB(cor=CI,w=3,r=2){const a=[];for(let k=0;k<=90;k++){const t=PI/2*k/90;a.push([r*Math.cos(t),r*Math.sin(t)]);}linha(a,cor,w);}
+function discoB(fill){const a=[[0,0]];for(let k=0;k<=90;k++){const t=PI/2*k/90;a.push([2*Math.cos(t),2*Math.sin(t)]);}preenche(a,fill);}
+// régua da massa (0–12 kg), X0 = posição do 0, k = px por kg
+function regua(Y,{X0=1120,k=52,band=null,marks=[],ticks=[0,2,4,6,8,10,12]}={}){
+ x.strokeStyle=GEO;x.lineWidth=3;x.beginPath();x.moveTo(X0,Y);x.lineTo(X0+12*k+24,Y);x.stroke();
+ x.beginPath();x.moveTo(X0+12*k+34,Y);x.lineTo(X0+12*k+18,Y-8);x.lineTo(X0+12*k+18,Y+8);x.closePath();x.fillStyle=GEO;x.fill();
+ for(const t of ticks){x.beginPath();x.moveTo(X0+t*k,Y-7);x.lineTo(X0+t*k,Y+7);x.stroke();txt(String(t),X0+t*k,Y+38,{size:24,f:'SGM',cor:GEO,al:'center'});}
+ txt('kg',X0+12*k+40,Y+36,{size:22,f:'SGM',cor:GEO});
+ if(band){const [a,b]=band;x.fillStyle='rgba(184,196,218,.22)';x.fillRect(X0+a*k,Y-13,(b-a)*k,26);x.fillStyle=AZC;x.fillRect(X0+a*k-3,Y-18,6,36);x.fillStyle=CORAL;x.fillRect(X0+b*k-3,Y-18,6,36);}
+ for(const [v,lab,cor] of marks){x.beginPath();x.arc(X0+v*k,Y,9,0,7);x.fillStyle=cor;x.fill();if(lab)txt(lab,X0+v*k,Y-26,{size:24,f:'SGM',cor,al:'center'});}}
+// três miniaturas do gancho (dois metais · quarto de disco · x²+y²), cada uma com a chapa de lado L px e canto (0,0) em (X,Y)
+function miniMetais(X,Y,L,n=16){vista(X,Y,L/2);metais(n);borda(GEO,2);solda(BR,3);}
+function miniDisco(X,Y,L,n=32){vista(X,Y,L/2);escadaB(n,{bordaOn:true});grade(uni(n).slice(1,-1),uni(n).slice(1,-1),mix(BG,GEO,.3),1,null);borda(GEO,2);arcoB(CI,3);}
+function miniDens(X,Y,L){vista(X,Y,L/2);mapaDens(48);borda(GEO,2);}
+
+const LIL='#C9A7FF';
+const v3=s=>s.replace(/\./g,'{,}');
+// ---------- balança: dois pratos com os pedaços da chapa (pedaço leve à esquerda, pesado à direita) ----------
+function balanca(cx,Yp,u,{ok=false,dois=true}={}){const L=2*u,gap=60,xl=cx-gap/2-L,xr=cx+gap/2;
+ x.strokeStyle=GEO;x.lineWidth=3;x.lineCap='round';
+ const Yb=Yp-1.6*u-40;x.beginPath();x.moveTo(xl+L/2,Yb);x.lineTo(xr+L/2,Yb);x.stroke();
+ x.beginPath();x.moveTo(cx,Yb);x.lineTo(cx,Yp+90);x.stroke();x.beginPath();x.moveTo(cx-60,Yp+110);x.lineTo(cx+60,Yp+110);x.lineTo(cx,Yp+80);x.closePath();x.stroke();
+ for(const X0 of [xl,xr]){x.beginPath();x.moveTo(X0+L/2,Yb);x.lineTo(X0-6,Yp+4);x.moveTo(X0+L/2,Yb);x.lineTo(X0+L+6,Yp+4);x.stroke();
+  x.lineWidth=5;x.beginPath();x.moveTo(X0-14,Yp+6);x.lineTo(X0+L+14,Yp+6);x.stroke();x.lineWidth=3;}
+ vista(xl,Yp,u);preenche([[0,0],[2,0]].concat(curvaG().reverse()),LEVE);solda(BR,3);
+ vista(xr,Yp+0.836*u,u);preenche([[0,2],[2,2]].concat(curvaG().reverse()),PESADO);solda(BR,3);
+ return {xl,xr,L};}
+function cartao(X0,Y0,w,h,t,sub,cor=BR){painel(X0,Y0,w,h);txt(t,X0+w/2,Y0+h-58,{size:28,al:'center',cor});if(sub)leg(sub,X0+w/2,Y0+h-22,GEO,'center',22);}
+function mapaF(fun,n,cor0,cor1,{disco=false,vmax=1}={}){const h=2/n;for(let i=0;i<n;i++)for(let j=0;j<n;j++){const X=(i+.5)*h,Y=(j+.5)*h;
+  if(disco&&(X-1)**2+(Y-1)**2>1)continue;const A=P(i*h,(j+1)*h),B=P((i+1)*h,j*h);x.fillStyle=mix(cor0,cor1,Math.min(1,fun(X,Y)/vmax));x.fillRect(A[0],A[1],B[0]-A[0]+.6,B[1]-A[1]+.6);}}
+function circ(c,r,cor,w=3,dash=null){const q=P(...c);x.setLineDash(dash||[]);x.beginPath();x.arc(...q,r*U,0,7);x.strokeStyle=cor;x.lineWidth=w;x.stroke();x.setLineDash([]);}
+
+
+// ---------- yt_0033: helpers novos ----------
+const RG=s=>s.replace(/(\d)\.(\d)/g,'$1{,}$2');
+// linha mista: palavras em Space Grotesk + matemática em KaTeX, lado a lado (regra: frase portuguesa nunca dentro de MathTex)
+function mixl(parts,X,Y,size=36,cor=BR){let cx=X;for(const [t,s,c] of parts){if(t==='m'){const d=tex(s,cx,Y,size,'l');cx+=d.getBoundingClientRect().width+14;}
+ else{x.font=`${Math.round(size*.78)}px SG`;txt(s,cx,Y+size*.27,{size:Math.round(size*.78),cor:c||cor});cx+=x.measureText(s).width+14;}}return cx;}
+// painel lateral (vista de lado da fatia): eixo horizontal (y, magenta) e vertical (valor de f, ciano), grade 0,25 nascendo dos eixos
+let LX=0,LY=0,LUY=1,LUZ=1;const L=(a,b)=>[LX+a*LUY,LY-b*LUZ];
+function lateral(X0,Y0,uy,uz,zmax,{ymax=2.25,zt=[0,2,4,6],yt=[0,1,2],hcor=E2,vcor=CI,hl='\\Y',vl='\\f',grade=true,passo=null}={}){LX=X0;LY=Y0;LUY=uy;LUZ=uz;
+ if(grade){x.strokeStyle='#2B2558';x.lineWidth=1.2;const pz=passo||(uz*.25>=20?.25:(uz*.5>=20?.5:1));
+  for(let a=0;a<=ymax+1e-9;a+=.25){const [px]=L(a,0);x.beginPath();x.moveTo(px+.5,LY);x.lineTo(px+.5,LY-zmax*uz);x.stroke();}
+  for(let b=0;b<=zmax+1e-9;b+=pz){const [,py]=L(0,b);x.beginPath();x.moveTo(LX,py+.5);x.lineTo(LX+ymax*uy,py+.5);x.stroke();}}
+ const ar=(A,B,cor)=>{x.strokeStyle=cor;x.fillStyle=cor;x.lineWidth=3;x.beginPath();x.moveTo(...A);x.lineTo(...B);x.stroke();const dx=B[0]-A[0],dy=B[1]-A[1],l=Math.hypot(dx,dy),ux=dx/l,uy2=dy/l;
+  x.beginPath();x.moveTo(B[0]+ux*14,B[1]+uy2*14);x.lineTo(B[0]-uy2*8,B[1]+ux*8);x.lineTo(B[0]+uy2*8,B[1]-ux*8);x.closePath();x.fill();};
+ ar(L(-.05,0),L(ymax+.08,0),hcor);ar(L(0,-.1),L(0,zmax+.15),vcor);tex(hl,...(()=>{const p=L(ymax+.2,0);return [p[0]+6,p[1]];})(),32,'l');tex(vl,...(()=>{const p=L(0,zmax+.15);return [p[0],p[1]-30];})(),32,'c');
+ for(const a of yt){const [px,py]=L(a,0);txt(RG(String(a)).replace('{,}',','),px,py+36,{size:26,f:'SGM',cor:GEO,al:'center'});}
+ for(const b of zt){const [px,py]=L(0,b);txt(String(b).replace('.',','),px-14,py+9,{size:26,f:'SGM',cor:GEO,al:'right'});}}
+function curvaL(fn,cor,w=4,{a0=0,a1=2,dash=null,alpha=1}={}){x.setLineDash(dash||[]);x.globalAlpha=alpha;x.beginPath();for(let s=0;s<=120;s++){const a=a0+(a1-a0)*s/120,p=L(a,fn(a));s?x.lineTo(...p):x.moveTo(...p);}
+ x.strokeStyle=cor;x.lineWidth=w;x.lineJoin='round';x.stroke();x.setLineDash([]);x.globalAlpha=1;}
+function areaL(fn,cor,{a0=0,a1=2}={}){x.beginPath();x.moveTo(...L(a0,0));for(let s=0;s<=120;s++){const a=a0+(a1-a0)*s/120;x.lineTo(...L(a,fn(a)));}x.lineTo(...L(a1,0));x.closePath();x.fillStyle=cor;x.fill();}
+function escadaL(deg,cor,w=4,fill=null){if(fill){for(const [a,b,v] of deg){const A=L(a,v),B=L(b,0);x.fillStyle=fill;x.fillRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);}}
+ x.beginPath();deg.forEach(([a,b,v],i)=>{const A=L(a,v),B=L(b,v);if(i===0)x.moveTo(...L(a,0));x.lineTo(...A);x.lineTo(...B);});x.lineTo(...L(deg[deg.length-1][1],0));x.strokeStyle=cor;x.lineWidth=w;x.lineJoin='miter';x.stroke();}
+function chapaFatiada(n=8,afasta=.05){const h=2/n;for(let i=0;i<n;i++){x.save();x.translate(i*afasta*U,0);const a=i*h,b=a+h;
+ preenche([[a,0],[b,0],[b,g(b)],[a,g(a)]],LEVE);preenche([[a,g(a)],[b,g(b)],[b,2],[a,2]],PESADO);linha([[a,g(a)],[b,g(b)]],BR,2);linha([[a,0],[b,0],[b,2],[a,2],[a,0]],E1,2);x.restore();}}
+function placaTxt(s,X,Y,cor=BR,size=28,al='left'){txt(s,X,Y,{size,cor,placa:true,al});}
+function caixaOk(X,Y,w,t,{cor=MEN,ok=true}={}){x.strokeStyle='rgba(184,196,218,.45)';x.lineWidth=2;x.beginPath();x.roundRect(X,Y-45,w,80,12);x.stroke();(ok?check:cruz)(X+40,Y-6,ok?cor:AL,.9);txt(t,X+80,Y+8,{size:30});}
+function sublinha(X0,X1,Y,cor=BR){x.strokeStyle=cor;x.lineWidth=2.5;x.beginPath();x.moveTo(X0,Y);x.lineTo(X1,Y);x.stroke();}
+
+// ---------- yt_0034: helpers novos ----------
+const RB=mix(BG,GEO,.18), S3=Math.sqrt(3);
+// grade papel(ax): só no palco, nascendo dos eixos (quadradinho 0,25)
+function papel(a0,a1,b0,b1,p=.25){x.strokeStyle='#2B2558';x.lineWidth=1.2;
+ for(let a=Math.ceil(a0/p-1e-9)*p;a<=a1+1e-9;a+=p){const A=P(a,b0),B=P(a,b1);x.beginPath();x.moveTo(A[0]+.5,A[1]);x.lineTo(B[0]+.5,B[1]);x.stroke();}
+ for(let b=Math.ceil(b0/p-1e-9)*p;b<=b1+1e-9;b+=p){const A=P(a0,b),B=P(a1,b);x.beginPath();x.moveTo(A[0],A[1]+.5);x.lineTo(B[0],B[1]+.5);x.stroke();}}
+function eixos(a1,b1,{a0=-.06,b0=-.06,lx='\\X',ly='\\Y'}={}){seta([a0,0],[a1,0],E1,3,16);seta([0,b0],[0,b1],E2,3,16);const A=P(a1,0),B=P(0,b1);tex(lx,A[0]+22,A[1],32,'c');tex(ly,B[0],B[1]-26,32,'c');}
+function tkx(a,s,size=28){const q=P(a,0);x.strokeStyle=GEO;x.lineWidth=2;x.beginPath();x.moveTo(q[0],q[1]-7);x.lineTo(q[0],q[1]+7);x.stroke();tex(s,q[0],q[1]+30,size,'c');}
+function tky(b,s,size=28){const q=P(0,b);x.strokeStyle=GEO;x.lineWidth=2;x.beginPath();x.moveTo(q[0]-7,q[1]);x.lineTo(q[0]+7,q[1]);x.stroke();tex(s,q[0]-16,q[1],size,'r');}
+const cX=(fn,a0,a1,n=120)=>Array.from({length:n+1},(_,i)=>{const a=a0+(a1-a0)*i/n;return [a,fn(a)];});
+const cY=(fn,b0,b1,n=120)=>Array.from({length:n+1},(_,i)=>{const b=b0+(b1-b0)*i/n;return [fn(b),b];});
+function tiraV(a,lo,hi,{h=.06,cor=E1,ent=true,alpha=.55}={}){ret(a-h/2,a+h/2,lo,hi,mix(BG,cor,alpha),cor,2);if(ent){ponto([a,lo],AZC,9);ponto([a,hi],CORAL,9);}}
+function tiraH(b,lo,hi,{h=.06,cor=E2,ent=true,alpha=.55}={}){ret(lo,hi,b-h/2,b+h/2,mix(BG,cor,alpha),cor,2);if(ent){ponto([lo,b],AZC,9);ponto([hi,b],CORAL,9);}}
+function rot(s,p,dx=0,dy=0,size=30,al='l'){const q=P(...p);return tex(s,q[0]+dx,q[1]+dy,size,al,true);}
+function selo(s,X,Y,cor=GEO,size=24){x.font=`${size}px SGM`;const w=x.measureText(s).width;x.strokeStyle=cor;x.lineWidth=2;x.beginPath();x.roundRect(X,Y-size-6,w+28,size+22,8);x.stroke();txt(s,X+14,Y+2,{size,f:'SGM',cor});}
+function chave(X0,X1,Y,cor=E2){x.strokeStyle=cor;x.lineWidth=3;x.lineCap='round';x.beginPath();x.moveTo(X0,Y-10);x.quadraticCurveTo(X0,Y,X0+14,Y);x.lineTo((X0+X1)/2-12,Y);x.quadraticCurveTo((X0+X1)/2,Y,(X0+X1)/2,Y+12);x.quadraticCurveTo((X0+X1)/2,Y,(X0+X1)/2+12,Y);x.lineTo(X1-14,Y);x.quadraticCurveTo(X1,Y,X1,Y-10);x.stroke();}
+const TRI=[[0,0],[1,1],[0,1]];
+function triPalco(){vista(260,860,560);papel(0,1.12,0,1.12);preenche([[0,0],[1,1],[0,1]],RB);linha([[0,0],[0,1]],GEO,2);eixos(1.2,1.2);tkx(1,'\\Am{1}');tky(1,'\\Mg{1}');}
+function quartoDisco(){CH();papel(0,2.2,0,2.2);discoB(RB);eixos(2.35,2.35);tkx(2,'\\Am{2}');tky(2,'\\Mg{2}');}
+const gs=(y)=>Math.exp(-y*y);
+
+async function main(){
+ await document.fonts.load('30px SG');await document.fonts.load('30px SGM');
+ const warm=tex('\\int\\iint\\sum_j\\dfrac{a}{b}\\beta\\alpha\\xi\\,x\\,y\\,\\mathrm{kg}\\,R\\sqrt{3}\\operatorname{sen}',0,-300,40);await document.fonts.ready;await new Promise(r=>setTimeout(r,300));warm.remove();
+
+ // 01 · H1: a integral que trava, a região e os quatro limites
+ if(K==='h1'){fundoV(false);await logo();canto('UMA INTEGRAL QUE TRAVA');triPalco();
+  linha([[0,0],[1,1]],BR,3);linha([[0,1],[1,1]],BR,3);
+  tiraV(.72,.72,1);rot('\\Az{\\X}',[.72,.72],22,8,30);rot('\\Co{1}',[.72,1],22,-26,30);
+  tiraH(.42,0,.42);rot('\\Az{0}',[0,.42],-44,-30,30);rot('\\Co{\\Y}',[.42,.42],18,-26,30);
+  tex('\\int_{\\Am{0}}^{\\Am{1}}\\!\\int_{\\Az{\\X}}^{\\Co{1}} e^{-\\Y^2}\\,\\dY\\,\\dX',1120,250,50);
+  placaTxt('SEM PRIMITIVA EM FÓRMULA',1120,370,AL,28);
+  tex('=\\int_{\\Mg{0}}^{\\Mg{1}}\\!\\int_{\\Az{0}}^{\\Co{\\Y}} e^{-\\Y^2}\\,\\dX\\,\\dY',1120,490,50);
+  tex('=\\dfrac{1-1/e}{2}\\approx 0{,}316',1120,640,50);
+  leg('MESMA REGIÃO, OUTRA ORDEM',1120,760,MEN,'left',30);}
+
+ // 02 · H2: a tese
+ if(K==='h2'){fundoV(false);await logo();canto('A IDEIA DO VÍDEO');quartoDisco();arcoB(CORAL,4);
+  tiraV(1,0,S3);rot('\\Co{\\Y=\\sqrt{4-\\X^2}}',[1.36,1.72],0,0,30);rot('\\Az{\\Y=0}',[1.12,0],0,-30,28);
+  tex('\\iint_B\\f\\,dA=\\int_{\\Am{0}}^{\\Am{2}}\\!\\int_{\\Az{0}}^{\\Co{\\sqrt{4-\\X^2}}}\\f\\,\\dY\\,\\dX',1120,260,44);
+  txt('LIMITES DE FORA: NÚMEROS',1120,430,{size:36,cor:E1});txt('LIMITES DE DENTRO: CURVAS',1120,510,{size:36,cor:CORAL});
+  txt('TROCAR A ORDEM = RELER A REGIÃO',1120,680,{size:36,cor:MEN});}
+
+ // 03 · A1
+ if(K==='a1'){fundoV(false);await logo();
+  txt('CÁLCULO DE INTEGRAL DUPLA · VÍDEO 2',960,420,{size:28,f:'SGM',cor:CI,al:'center'});txt('REGIÕES GERAIS E TROCA DE ORDEM',960,500,{size:64,al:'center'});
+  leg('NESTE VÍDEO',960,600,GEO,'center',26);
+  ['A FATIA NA CURVA','O TEOREMA','DUAS ORDENS','A TROCA','QUANDO VALE'].forEach((t,i)=>{const X=380+i*290;x.strokeStyle='rgba(184,196,218,.5)';x.lineWidth=2;x.beginPath();x.roundRect(X-135,630,270,60,10);x.stroke();txt((i+1)+' · '+t,X,670,{size:24,al:'center',cor:i===3?MEN:BR});});}
+
+ // 04 · B1-1: a fatia que termina na curva (F estendida por zero)
+ if(K==='b11'){fundoV(false);await logo();canto('A FATIA NA CURVA');quartoDisco();
+  ret(0,2,0,2,null,GEO,2,[8,8]);arcoB(CORAL,4);tex('R',...P(2.06,2.08),34,'l');tex('B',...P(.42,.62),44,'c');
+  tex('\\Ge{0}',...P(1.9,1.2),34,'c');tex('\\Ge{0}',...P(1.55,1.88),34,'c');
+  linha([[1,-.04],[1,2.06]],E1,2,{dash:[6,8],alpha:.7});
+  ret(.97,1.03,S3,2,null,mix(BG,E1,.55),2,[6,6]);tiraV(1,0,S3);
+  linha([[0,S3],[1,S3]],GEO,2,{dash:[6,6]});tky(S3,'\\Mg{\\sqrt3}');tkx(1,'\\Am{1}');
+  rot('\\Co{\\Y=\\sqrt{4-\\X^2}}',[1.3,1.78],0,0,30);rot('\\Az{\\Y=0}',[1.16,0],0,-30,28);
+  mixl([['m','F=\\f'],['t','EM B'],['t','·'],['m','F=0'],['t','FORA']],1120,240,42);
+  tex('\\int_0^2 F(\\Am{1},\\Y)\\,\\dY=\\int_{\\Az{0}}^{\\Co{\\sqrt3}}\\f(\\Am{1},\\Y)\\,\\dY',1120,380,42);
+  tex('\\Am{1}^2+\\Y^2=4\\ \\Rightarrow\\ \\Y=\\sqrt3',1120,510,42);
+  leg('A FATIA TERMINA NA CURVA',1120,620,CORAL,'left',30);}
+
+ // 05 · B1-2: por que o Fubini ainda vale
+ if(K==='b12'){fundoV(false);await logo();canto('POR QUE O FUBINI VALE');vista(300,640,200);papel(0,2.2,0,2.2);
+  ret(0,2,0,2,null,GEO,2,[8,8]);discoB(RB);eixos(2.35,2.35);tex('R',...P(2.06,2.08),30,'l');tex('B',...P(.45,.6),40,'c');
+  arcoB(AL,2.5);linha([[0,0],[2,0]],AL,2.5);linha([[0,0],[0,2]],AL,2.5);leg('CONTEÚDO NULO',...P(1.62,1.55),AL,'left',24);
+  lateral(300,975,200,40,2.3,{ymax:2.25,zt:[0,2],yt:[0,2],grade:true});
+  const ff=Y=>1.5+.35*Math.sin(2.2*Y);curvaL(()=>0,CI,5,{a0:0,a1:.55});curvaL(ff,CI,5,{a0:.55,a1:1.55});curvaL(()=>0,CI,5,{a0:1.55,a1:2});
+  for(const a of [.55,1.55]){x.setLineDash([5,5]);x.strokeStyle=AL;x.lineWidth=2;x.beginPath();x.moveTo(...L(a,0));x.lineTo(...L(a,ff(a)));x.stroke();x.setLineDash([]);}
+  tex('0',...L(.27,.35),28,'c');tex('\\f',...L(1.05,ff(1.05)+.45),30,'c');tex('0',...L(1.8,.35),28,'c');leg('DOIS SALTOS',760,935,AL,'left',26);leg('UMA FATIA',760,895,GEO,'left',24);
+  caixaOk(1120,290,640,'F INTEGRÁVEL EM R');caixaOk(1120,410,640,'FATIA INTEGRÁVEL');
+  leg('TEOREMA DE FUBINI',1120,540,GEO,'left',26);
+  tex('\\Rightarrow\\ \\iint_B\\f\\,dA=\\int_{\\Am{a}}^{\\Am{b}}\\!\\int_{\\Az{c(\\X)}}^{\\Co{d(\\X)}}\\f\\,\\dY\\,\\dX',1120,630,42);}
+
+ // 06 · B1-3: a área pi
+ if(K==='b13'){fundoV(false);await logo();canto('O QUARTO DE DISCO');quartoDisco();
+  for(let a=.1;a<2;a+=.2)linha([[a,0],[a,Math.sqrt(4-a*a)]],E1,3);arcoB(CORAL,4);
+  tex('\\iint_B 1\\,dA=\\int_0^2\\!\\int_{\\Az{0}}^{\\Co{\\sqrt{4-\\X^2}}}1\\,\\dY\\,\\dX',1120,240,40);
+  tex('=\\int_0^2 \\Co{\\sqrt{4-\\X^2}}\\,\\dX',1160,360,40);tex('=\\dfrac{\\pi\\cdot 2^2}{4}=\\pi',1160,470,44);
+  const X=v=>1150+(v-3.1)*3200,Y=760;x.strokeStyle=GEO;x.lineWidth=3;x.beginPath();x.moveTo(1130,Y);x.lineTo(1820,Y);x.stroke();
+  for(const [v,s] of [[3.25,'3,25'],[3.17,'3,17'],[3.15,'3,15']]){x.beginPath();x.arc(X(v),Y,8,0,7);x.fillStyle=GEO;x.fill();txt(s,X(v),Y-24,{size:24,f:'SGM',cor:GEO,al:'center'});}
+  x.beginPath();x.arc(X(Math.PI),Y,10,0,7);x.fillStyle=MEN;x.fill();tex('\\Me{\\pi\\approx 3{,}1416}',X(Math.PI),Y+44,30,'c');
+  leg('CAIXINHAS',1130,690,GEO,'left',24);}
+
+ // 07 · B2-1: o enunciado, região em pé
+ if(K==='b21'){fundoV(false);await logo();canto('O TEOREMA');CH();papel(0,2.2,0,2.2);
+  const c=X=>.35+.22*Math.sin(1.4*X),d=X=>1.55+.3*Math.sin(2*X+.4),a=.3,b=1.85;
+  preenche(cX(c,a,b).concat(cX(d,a,b).reverse()),RB);linha([[a,0],[a,d(a)]],E1,2,{dash:[6,7],alpha:.7});linha([[b,0],[b,d(b)]],E1,2,{dash:[6,7],alpha:.7});
+  linha(cX(c,a,b),AZC,4);linha(cX(d,a,b),CORAL,4);eixos(2.35,2.35);tkx(a,'\\Am{a}');tkx(b,'\\Am{b}');
+  tiraV(1.1,c(1.1),d(1.1));rot('\\Co{\\Y=d(\\X)}',[1.45,d(1.45)],0,-40,30);rot('\\Az{\\Y=c(\\X)}',[1.35,c(1.35)],0,40,30);tex('B',...P(.62,1.05),40,'c');
+  mixl([['m','\\Az{c},\\ \\Co{d}'],['t','CONTÍNUAS EM'],['m','[\\Am{a},\\Am{b}],\\ \\ \\Az{c(\\X)}\\le\\Co{d(\\X)}']],1120,230,36);
+  tex('B=\\{(\\X,\\Y):\\ \\Am{a}\\le\\X\\le\\Am{b},\\ \\Az{c(\\X)}\\le\\Y\\le\\Co{d(\\X)}\\}',1120,330,36);
+  mixl([['m','\\f'],['t','CONTÍNUA EM B']],1120,420,36);
+  tex('\\Rightarrow\\ \\iint_B\\f\\,\\dX\\,\\dY=\\int_{\\Am{a}}^{\\Am{b}}\\Big[\\int_{\\Az{c(\\X)}}^{\\Co{d(\\X)}}\\f(\\X,\\Y)\\,\\dY\\Big]\\dX',1120,560,36);
+  sublinha(1120,1300,452);selo('REGIÃO EM PÉ (TIPO I)',1120,720);}
+
+ // 08 · B2-2: a região deitada e a regra dos limites
+ if(K==='b22'){fundoV(false);await logo();canto('A REGIÃO DEITADA');CH();papel(0,2.2,0,2.2);
+  const a=Y=>.3+.2*Math.sin(2.2*Y),b=Y=>1.6+.25*Math.sin(1.6*Y+1),c=.3,d=1.8;
+  preenche(cY(a,c,d).concat(cY(b,c,d).reverse()),RB);linha([[0,c],[b(c),c]],E2,2,{dash:[6,7],alpha:.7});linha([[0,d],[b(d),d]],E2,2,{dash:[6,7],alpha:.7});
+  linha(cY(a,c,d),AZC,4);linha(cY(b,c,d),CORAL,4);eixos(2.35,2.35);tky(c,'\\Mg{c}');tky(d,'\\Mg{d}');
+  linha([[-.02,1.05],[2.15,1.05]],BR,2,{dash:[4,6],alpha:.8});tiraH(1.05,a(1.05),b(1.05));
+  leg('COMEÇA',...(()=>{const q=P(a(1.05),1.05);return [q[0]-10,q[1]-24];})(),AZC,'right',24);leg('TERMINA',...(()=>{const q=P(b(1.05),1.05);return [q[0]+14,q[1]-24];})(),CORAL,'left',24);
+  rot('\\Az{\\X=a(\\Y)}',[a(1.55),1.55],-14,0,28,'r');rot('\\Co{\\X=b(\\Y)}',[b(1.5),1.5],14,0,28);tex('B',...P(1,.6),40,'c');
+  tex('B=\\{(\\X,\\Y):\\ \\Mg{c}\\le\\Y\\le\\Mg{d},\\ \\Az{a(\\Y)}\\le\\X\\le\\Co{b(\\Y)}\\}',1120,230,36);
+  tex('\\iint_B\\f=\\int_{\\Mg{c}}^{\\Mg{d}}\\Big[\\int_{\\Az{a(\\Y)}}^{\\Co{b(\\Y)}}\\f\\,\\dX\\Big]\\dY',1120,345,38);selo('REGIÃO DEITADA (TIPO II)',1120,460);
+  painel(1120,500,720,150);txt('FORA: NÚMEROS',1150,560,{size:30});txt('DENTRO: SÓ A VARIÁVEL DE FORA',1150,620,{size:30});
+  vista(1150,960,85);preenche([[0,0],[2,0],[2,2],[1.4,2],[1.4,.7],[.6,.7],[.6,2],[0,2]],RB);linha([[0,0],[2,0],[2,2],[1.4,2],[1.4,.7],[.6,.7],[.6,2],[0,2],[0,0]],GEO,2);
+  linha([[-.15,1.4],[2.2,1.4]],BR,2,{dash:[4,6]});for(const [p,q] of [[0,.6],[1.4,2]]){ponto([p,1.4],AZC,7);ponto([q,1.4],CORAL,7);}
+  placaTxt('DOIS TRECHOS?',1380,880,AL,28);}
+
+ // 09 · B3-1: a cunha 3D, fatia em pé = triângulo
+ if(K==='b31'){fundoV(false);await logo();canto('A CUNHA');await cena3d('b31');
+  tex('\\X',...Q3('b31','ex'),32,'c');tex('\\f',...(()=>{const p=Q3('b31','ez');return [p[0]+30,p[1]+34];})(),32,'c');
+  tex('\\X=1',...(()=>{const p=Q3('b31','faca');return [p[0],p[1]-34];})(),34,'c',true);
+  placaTxt('FATIA EM PÉ',...(()=>{const p=Q3('b31','fatia');return [p[0]-220,p[1]+90];})(),E1,28);
+  tex('\\f(\\X,\\Y)=\\Y',1120,280,48);leg('ALTURA = DENSIDADE (kg/m²)',1120,360,GEO,'left',28);
+  txt('CORTE EM',1120,500,{size:40});tex('\\X=1',1330,485,48);
+  leg('A FATIA EM PÉ É UM TRIÂNGULO',1120,580,E1,'left',30);}
+
+ // 10 · B3-1: o triângulo de lado
+ if(K==='b31L'){fundoV(false);await logo();canto('A CUNHA');lateral(200,880,300,300,2.1,{ymax:2.25,zt:[0,1,2],yt:[0,1,2],vl:'\\f'});
+  areaL(Y=>Y,mix(BG,E1,.35),{a0:0,a1:S3});curvaL(Y=>Y,E1,5,{a0:0,a1:S3});x.strokeStyle=E1;x.lineWidth=5;x.beginPath();x.moveTo(...L(S3,S3));x.lineTo(...L(S3,0));x.stroke();
+  const p=L(S3/2,0);leg('BASE',p[0],p[1]+80,GEO,'center',26);tex('\\Co{\\sqrt{4-\\X^2}}',p[0],p[1]+120,28,'c');
+  const q=L(S3,S3/2);leg('ALTURA',q[0]+24,q[1]-20,GEO,'left',26);tex('\\Co{\\sqrt{4-\\X^2}}',q[0]+24,q[1]+24,28,'l');placaTxt('x = 1',220,250,E1,30);
+  txt('BASE · ALTURA / 2',1120,240,{size:40,cor:E1});
+  tex('\\int_{\\Az{0}}^{\\Co{\\sqrt{4-\\X^2}}}\\Y\\,\\dY=\\dfrac{\\Y^2}{2}\\Big|_0^{\\sqrt{4-\\X^2}}',1120,370,40);tex('=\\dfrac{4-\\X^2}{2}',1160,480,44);
+  tex('\\int_0^2\\dfrac{4-\\X^2}{2}\\,\\dX=\\dfrac{8-8/3}{2}=\\dfrac{8}{3}',1120,620,40);}
+
+ // 11 · B3-2: a cunha 3D, fatia deitada = retângulo
+ if(K==='b32'){fundoV(false);await logo();canto('A FATIA DEITADA');await cena3d('b32');
+  tex('\\X',470,810,32,'c');tex('\\f',...(()=>{const p=Q3('b32','ez');return [p[0]+30,p[1]+34];})(),32,'c');
+  tex('\\Y=1',...(()=>{const p=Q3('b32','faca');return [p[0]+20,p[1]-40];})(),34,'c',true);
+  tex('\\Co{\\Y=\\sqrt{4-\\X^2}}',1120,230,40);tex('\\Y^2=4-\\X^2',1120,320,40);tex('\\X^2=4-\\Y^2',1120,410,40);
+  tex('\\Co{\\X=\\sqrt{4-\\Y^2}}',1120,500,40);tex('\\X\\ge 0',1440,500,32,'l');
+  leg('A FATIA DEITADA É UM RETÂNGULO',1120,620,E2,'left',30);}
+
+ // 12 · B3-2: o retângulo de lado + a diferença
+ if(K==='b32L'){fundoV(false);await logo();canto('A FATIA DEITADA');lateral(200,880,300,300,2.1,{ymax:2.25,zt:[0,1,2],yt:[0,1,2],hcor:E1,hl:'\\X',vl:'\\f'});
+  const A=L(0,1),B=L(S3,0);x.fillStyle=mix(BG,E2,.35);x.fillRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);x.strokeStyle=E2;x.lineWidth=5;x.strokeRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);
+  placaTxt('y = 1',220,250,E2,30);const p=L(S3/2,0);leg('COMPRIMENTO',p[0],p[1]+80,GEO,'center',26);tex('\\Co{\\sqrt{4-\\Y^2}}',p[0],p[1]+120,28,'c');
+  const q=L(S3,.5);leg('ALTURA',q[0]+24,q[1]-20,GEO,'left',26);tex('\\Y',q[0]+24,q[1]+22,30,'l');
+  painel(1120,170,740,170);txt('EM PÉ: ALTURA MUDA · TRIÂNGULO',1150,235,{size:30,cor:E1});txt('DEITADA: ALTURA FIXA · RETÂNGULO',1150,305,{size:30,cor:E2});
+  tex('\\int_{\\Az{0}}^{\\Co{\\sqrt{4-\\Y^2}}}\\Y\\,\\dX=\\Y\\sqrt{4-\\Y^2}',1120,440,40);
+  tex('\\int_0^2\\Y\\sqrt{4-\\Y^2}\\,\\dY=\\Big[-\\dfrac{(4-\\Y^2)^{3/2}}{3}\\Big]_0^2=\\dfrac{8}{3}',1120,580,36);check(1830,580);}
+
+ // 13 · B4-1: desenhar a região pelos limites
+ if(K==='b41'){fundoV(false);await logo();canto('A TROCA');triPalco();
+  for(const a of [.1,.3,.5,.7,.9])tiraV(a,a,1,{ent:false,alpha:.4});linha([[0,0],[1,1]],AZC,4);linha([[0,1],[1,1]],CORAL,4);
+  linha([[1,0],[1,1]],E1,2,{dash:[6,7],alpha:.7});rot('\\Az{\\Y=\\X}',[.62,.5],10,10,30);rot('\\Co{\\Y=1}',[.35,1],0,-30,30);
+  for(const [p,s] of [[[0,0],'(0,0)'],[[0,1],'(0,1)'],[[1,1],'(1,1)']]){ponto(p,GEO,7);}leg('(0, 1)',...(()=>{const q=P(0,1);return [q[0]-20,q[1]-22];})(),GEO,'right',22);leg('(1, 1)',...(()=>{const q=P(1,1);return [q[0]+16,q[1]-14];})(),GEO,'left',22);
+  tex('\\int_{\\Am{0}}^{\\Am{1}}\\!\\int_{\\Az{\\X}}^{\\Co{1}} e^{-\\Y^2}\\,\\dY\\,\\dX',1120,260,50);
+  txt('PASSO 1: DESENHAR A REGIÃO',1120,430,{size:40,cor:MEN});
+  mixl([['m','\\iint'],['t','SÓ CONHECE REGIÃO E FUNÇÃO',GEO]],1120,540,36);}
+
+ // 14 · B4-2a: o sino 3D, fatia em pé com teto curvo
+ if(K==='b42p'){fundoV(false);await logo();canto('O SINO');await cena3d('b42p');
+  tex('\\X',...Q3('b42p','ex'),32,'c');tex('\\f',...(()=>{const p=Q3('b42p','ez');return [p[0]+30,p[1]+34];})(),32,'c');
+  tex('\\X=0{,}4',...(()=>{const p=Q3('b42p','faca');return [p[0]+30,p[1]-40];})(),32,'c',true);
+  placaTxt('SEM PRIMITIVA EM FÓRMULA',560,222,AL,26);
+  tex('\\f(\\X,\\Y)=e^{-\\Y^2}',1120,280,48);leg('FATIA EM PÉ: TETO CURVO',1120,380,E1,'left',30);
+  tex('\\int_{\\Az{\\X}}^{\\Co{1}}e^{-\\Y^2}\\,\\dY=\\ \\Al{?}',1120,500,44);}
+
+ // 15 · B4-2b: o sino 3D, fatia deitada = retângulo
+ if(K==='b42'){fundoV(false);await logo();canto('O SINO');await cena3d('b42');
+  tex('\\X',...Q3('b42','ex'),32,'c');tex('\\f',...(()=>{const p=Q3('b42','ez');return [p[0]+30,p[1]+34];})(),32,'c');
+  tex('\\Y=0{,}6',...(()=>{const p=Q3('b42','faca');return [p[0]+40,p[1]-40];})(),32,'c',true);
+  txt('PASSO 2: RELER DEITADO',1120,280,{size:40,cor:MEN});
+  tex('\\Mg{0}\\le\\Y\\le\\Mg{1},\\qquad \\Az{0}\\le\\X\\le\\Co{\\Y}',1120,390,42);
+  leg('FATIA DEITADA: RETÂNGULO',1120,500,E2,'left',30);}
+
+ // 16 · B4-2c: o retângulo do sino e a conta
+ if(K==='b42L'){fundoV(false);await logo();canto('O SINO');lateral(200,820,560,440,1.15,{ymax:1.15,zt:[0,1],yt:[0,1],hcor:E1,hl:'\\X',vl:'\\f',passo:.25});
+  const h=gs(.6),A=L(0,h),B=L(.6,0);x.fillStyle=mix(BG,CI,.3);x.fillRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);x.strokeStyle=E2;x.lineWidth=5;x.strokeRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);
+  placaTxt('y = 0,6',220,250,E2,30);tex('\\Ci{e^{-\\Y^2}}',...(()=>{const p=L(.6,h);return [p[0]+20,p[1]-6];})(),34,'l');
+  chave(A[0],B[0],B[1]+62);tex('\\Y',(A[0]+B[0])/2,B[1]+100,36,'c');leg('COMPRIMENTO DA FATIA',(A[0]+B[0])/2,B[1]+160,E2,'center',26);
+  txt('PASSO 3: CALCULAR',1120,200,{size:40,cor:MEN});
+  tex('\\int_0^1\\!\\int_{\\Az{0}}^{\\Co{\\Y}} e^{-\\Y^2}\\,\\dX\\,\\dY',1120,310,40);
+  const d=tex('=\\int_0^1 \\Y\\,e^{-\\Y^2}\\,\\dY',1120,430,40);sublinha(1222,1250,462,E2);
+  tex('=\\Big[-\\dfrac{e^{-\\Y^2}}{2}\\Big]_0^1',1120,560,40);tex('=\\dfrac{1-1/e}{2}\\approx 0{,}316',1120,690,44);}
+
+ // 17 · B4-3: o erro clássico
+ if(K==='b43'){fundoV(false);await logo();canto('O ERRO CLÁSSICO');
+  tex('\\int_0^1\\!\\int_{\\Al{\\X}}^{1} e^{-\\Y^2}\\,\\Al{dx}\\,\\dY',200,300,52);leg('SÓ TROCOU dx COM dy',200,410,AL,'left',30);
+  tex('=(1-\\Al{x})\\cdot\\int_0^1 e^{-\\Y^2}\\,\\dY',200,530,46);
+  placaTxt('RESULTADO COM x?',240,670,AL,40);cruz(200,656,AL,1.1);
+  painel(1060,190,780,560);tex('\\int_0^1\\!\\int_{\\Az{0}}^{\\Co{\\Y}} e^{-\\Y^2}\\,\\dX\\,\\dY',1110,300,46);check(1790,300);
+  vista(1300,700,300);papel(0,1.1,0,1.1);preenche(TRI,RB);linha([[0,0],[1,1]],AZC,3);linha([[0,1],[1,1]],CORAL,3);linha([[0,0],[0,1]],GEO,2);tiraH(.55,0,.55);
+  leg('A REGIÃO ESCOLHE OS LIMITES',1110,730,MEN,'left',26);}
+
+ // 18 · B5-1: a chapa cortada na diagonal, em pé
+ if(K==='b51'){fundoV(false);await logo();canto('A CHAPA NA DIAGONAL');CH();mapaDens(64);preenche([[0,0],[2,2],[0,2]],'rgba(19,16,48,.78)');borda(GEO,2);
+  linha([[0,0],[2,2]],BR,4);eixosChapa();tiraV(1.2,0,1.2,{h:.08,alpha:.6});rot('\\Co{\\Y=\\X}',[1.45,1.45],-150,-10,30);rot('\\Az{\\Y=0}',[1.3,0],0,-30,28);
+  leg('CHAPA INTEIRA: 32/3 kg',1120,200,GEO,'left',26);
+  tex('\\int_{\\Az{0}}^{\\Co{\\X}}(\\X^2+\\Y^2)\\,\\dY',1120,300,40);tex('=\\X^2\\cdot\\X+\\dfrac{\\X^3}{3}',1160,410,40);tex('=\\dfrac{4\\X^3}{3}',1160,520,40);
+  tex('\\int_0^2\\dfrac{4}{3}\\X^3\\,\\dX=\\dfrac{4}{3}\\cdot\\dfrac{2^4}{4}=\\dfrac{16}{3}',1120,660,40);}
+
+ // 19 · B5-2: a outra ordem e o espelho
+ if(K==='b52'){fundoV(false);await logo();canto('A OUTRA ORDEM');CH();mapaDens(64);preenche([[0,0],[2,2],[0,2]],'rgba(19,16,48,.55)');borda(GEO,2);
+  linha([[0,0],[2,2]],BR,4);eixosChapa();tiraH(.8,.8,2,{h:.08,alpha:.6});rot('\\Az{\\X=\\Y}',[.8,.8],-120,-30,30);rot('\\Co{\\X=2}',[2,.8],20,-34,30);
+  linha([[0,0],[0,2],[2,2]],GEO,2,{dash:[7,7]});seta([.5,1.5],[1.45,.62],BR,3,18);
+  tex('\\int_{\\Az{\\Y}}^{\\Co{2}}(\\X^2+\\Y^2)\\,\\dX=\\dfrac{8}{3}+2\\Y^2-\\dfrac{4\\Y^3}{3}',1120,250,36);
+  tex('\\int_0^2\\Big(\\dfrac{8}{3}+2\\Y^2-\\dfrac{4\\Y^3}{3}\\Big)\\dY=\\dfrac{16}{3}',1120,380,36);check(1790,380);
+  tex('\\f(\\X,\\Y)=\\f(\\Y,\\X)',1120,520,40);leg('ESPELHO NA DIAGONAL',1120,600,GEO,'left',26);
+  tex('\\dfrac{16}{3}+\\dfrac{16}{3}=\\dfrac{32}{3}\\ \\text{kg}',1120,720,44);}
+
+ // 20 · B6-1: seno de x ao cubo
+ if(K==='b61'){fundoV(false);await logo();canto('OUTRA INTEGRAL TRAVADA');vista(260,860,560);papel(0,1.12,0,1.12);
+  preenche([[0,0]].concat(cX(a=>a*a,0,1)),RB);linha(cX(a=>a*a,0,1),CORAL,4);linha([[1,0],[1,1]],GEO,2,{dash:[6,7]});eixos(1.2,1.2);tkx(1,'\\Am{1}');tky(1,'\\Mg{1}');
+  tiraV(.72,0,.72*.72);rot('\\Co{\\Y=\\X^2}',[.55,.32],-24,-14,30,'r');rot('\\Az{\\Y=0}',[.8,0],0,-30,28);
+  tex('\\int_0^1\\!\\int_{\\Az{\\sqrt{\\Y}}}^{\\Co{1}}\\sen(\\X^3)\\,\\dX\\,\\dY',1120,220,40);
+  mixl([['m','\\sen(\\X^3)'],['t','SEM PRIMITIVA EM FÓRMULA',AL]],1120,320,30);
+  tex('\\Az{\\X=\\sqrt{\\Y}}\\ \\Leftrightarrow\\ \\Co{\\Y=\\X^2}',1120,410,40);
+  tex('=\\int_0^1\\!\\int_{\\Az{0}}^{\\Co{\\X^2}}\\sen(\\X^3)\\,\\dY\\,\\dX',1120,520,40);
+  tex('=\\int_0^1\\X^2\\sen(\\X^3)\\,\\dX',1120,630,40);tex('=\\dfrac{1-\\cos 1}{3}\\approx 0{,}153',1120,750,44);}
+
+ // 21 · B7-1a: o telhado
+ if(K==='b71'){fundoV(false);await logo();canto('QUANDO A REGIÃO SE DIVIDE');vista(560,800,420);papel(-1.1,1.1,0,1.15);
+  preenche([[-1,0],[0,1],[0,0]],mix(BG,GEO,.22));preenche([[0,0],[0,1],[1,0]],mix(BG,GEO,.14));linha([[-1,0],[0,1],[1,0]],CORAL,4);
+  linha([[0,0],[0,1.12]],BR,2,{dash:[6,7]});seta([-1.15,0],[1.25,0],E1,3,16);seta([0,-.05],[0,1.2],E2,3,16);tex('\\X',...P(1.31,0),32,'c');
+  tkx(-1,'\\Am{-1}');tkx(1,'\\Am{1}');tex('B_1',...P(-.32,.2),36,'c');tex('B_2',...P(.32,.2),36,'c');
+  tiraV(-.55,0,.45);tiraV(.55,0,.45);rot('\\Co{\\Y=1+\\X}',[-.62,.4],-24,-6,30,'r');rot('\\Co{\\Y=1-\\X}',[.62,.4],24,-6,30);
+  tiraH(.74,-.26,.26);rot('\\Az{\\X=\\Y-1}',[-.26,.74],-30,-12,26,'r');rot('\\Co{\\X=1-\\Y}',[.26,.74],30,-12,26);
+  leg('EM PÉ: DUAS CONTAS',1120,200,E1,'left',30);
+  tex('\\int_{-1}^{0}\\!\\int_{\\Az{0}}^{\\Co{1+\\X}}\\!\\dY\\,\\dX+\\int_0^1\\!\\int_{\\Az{0}}^{\\Co{1-\\X}}\\!\\dY\\,\\dX',1120,300,34);tex('=\\dfrac12+\\dfrac12',1160,410,40);
+  leg('DEITADO: UMA CONTA',1120,540,MEN,'left',30);tex('\\int_0^1\\!\\int_{\\Az{\\Y-1}}^{\\Co{1-\\Y}}\\!\\dX\\,\\dY=1',1120,640,38);}
+
+ // 22 · B7-1b: o metal leve deitado em três pedaços
+ if(K==='b71m'){fundoV(false);await logo();canto('QUANDO A REGIÃO SE DIVIDE');CH();papel(0,2.2,0,2.2);
+  preenche([[0,0],[2,0]].concat(curvaG().reverse()),LEVE);preenche([[0,2],[2,2]].concat(curvaG().reverse()),mix(BG,PESADO,.25));solda(BR,4);borda(GEO,2);eixosChapa();
+  for(const v of [.836,1.059,1.42])linha([[0,v],[2.02,v]],BR,1.6,{dash:[5,6],alpha:.8});
+  tky(.836,'0{,}836',24);tky(1.059,'1{,}059',24);tky(1.42,'1{,}42',24);
+  for(const [v,s] of [[.42,'CHEIA'],[.95,'1 CORTE'],[1.24,'2 CORTES']])leg(s,...(()=>{const q=P(2.06,v);return [q[0],q[1]+9];})(),GEO,'left',24);
+  tiraH(1.24,.61,1.708,{h:.05});tiraH(.95,.27,2,{h:.05});tiraH(.42,0,2,{h:.05});
+  txt('EM PÉ: UMA CONTA',1120,330,{size:34,cor:E1});tex('\\int_0^2\\!\\int_{\\Az{0}}^{\\Co{g(\\X)}}\\!\\dY\\,\\dX',1120,420,38);
+  txt('DEITADO: TRÊS PEDAÇOS',1120,560,{size:34,cor:E2});tex('1{,}6729+0{,}4097+0{,}3895',1120,640,38);
+  tex('\\Me{=2{,}4721\\ \\text{m}^2}',1120,760,44);leg('NAS DUAS ORDENS',1430,770,GEO,'left',26);}
+
+ // 23 · B7-2: quando vale trocar
+ if(K==='b72'){fundoV(false);await logo();canto('QUANDO VALE TROCAR');
+  const rows=[300,490,680];
+  vista(300,rows[0]+70,150);areaL;{const pts=[];preenche([[0,0]].concat(cX(gs,0,1.2)).concat([[1.2,0]]),mix(BG,CI,.25));linha(cX(gs,0,1.2),CI,3);ret(0,.6,0,gs(.6),mix(BG,E2,.35),E2,3);}
+  vista(330,rows[1]+60,110);preenche([[-1,0],[0,1],[1,0]],RB);linha([[-1,0],[0,1],[1,0]],CORAL,3);linha([[0,0],[0,1]],BR,2,{dash:[5,5]});linha([[-1,0],[1,0]],GEO,2);
+  vista(270,rows[2]+60,120);preenche([[0,0],[2,0],[2,2]].map(([a,b])=>[a/2*1.0,b/2*1.0]),RB);linha([[0,0],[1,1]],BR,3);linha([[0,0],[1,0],[1,1]],GEO,2);
+  ['A DE DENTRO SEM PRIMITIVA','UMA ORDEM DIVIDE A REGIÃO','LIMITES MAIS SIMPLES'].forEach((t,i)=>{check(560,rows[i]+18,MEN);txt(t,610,rows[i]+30,{size:40});});
+  txt('MESMA REGIÃO, MESMO VALOR',960,920,{size:40,cor:MEN,al:'center'});}
+
+ // 24 · B8: regiões gerais no mundo
+ if(K==='b8'){fundoV(false);await logo();canto('REGIÕES GERAIS NO MUNDO');
+  for(const X0 of [100,700,1300])painel(X0,200,520,700);
+  vista(230,700,380);ret(0,1,0,1,'#1C1846',GEO,2);preenche([[0,0],[.25,0],[1,.75],[1,1],[.75,1],[0,.25]],mix(BG,CI,.45));linha([[0,0],[1,1]],BR,2,{dash:[5,5]});
+  leg('ANA',...P(.5,-.12),E1,'center',24);leg('BIA',...(()=>{const q=P(-.04,.5);return [q[0]-6,q[1]+8];})(),E2,'right',26);
+  leg('HORÁRIOS UNIFORMES',360,790,GEO,'center',24);leg('E INDEPENDENTES',360,822,GEO,'center',24);tex('\\dfrac{7}{16}\\approx 44\\%',360,265,38,'c');
+  vista(960,640,100);preenche([[-2.3,0]].concat(cX(a=>2.6*Math.exp(-a*a),-2.3,2.3)).concat([[2.3,0]]),mix(BG,CI,.3));linha(cX(a=>2.6*Math.exp(-a*a),-2.3,2.3),CI,4);linha([[-2.4,0],[2.4,0]],GEO,2);
+  tex('e^{-\\X^2}',960,300,38,'c');leg('CURVA NORMAL',960,790,GEO,'center',26);
+  vista(1400,700,90);const pc=[[0,0],[4,0],[4,1.3]].concat(cX(a=>1.3+1.3*Math.sin(PI*(4-a)/4)+.4*(4-a)/4*0,0,4).reverse().map(([a,b])=>[4-a,b]).reverse()).concat([[0,2.2]]);
+  const borda2=cX(a=>2.2+1.2*Math.sin(PI*a/4)-.9*a/4,0,4);preenche([[0,0],[4,0]].concat(borda2.slice().reverse()),mix(BG,CI,.3));linha([[0,0],[4,0]],GEO,2);linha([[0,0],[0,borda2[0][1]]],GEO,2);linha([[4,0],[4,borda2[120][1]]],GEO,2);linha(borda2,CORAL,4);
+  mixl([['t','MASSA ='],['m','\\iint_B\\rr\\,dA']],1360,290,34);leg('PEÇA RECORTADA',1560,790,GEO,'center',26);}
+
+ // 25 · S1: síntese
+ if(K==='s1'){fundoV(false);await logo();canto('SÍNTESE');
+  tex('\\iint_B\\f=\\int_{\\Am a}^{\\Am b}\\!\\int_{\\Az{c(\\X)}}^{\\Co{d(\\X)}}\\f\\,\\dY\\,\\dX=\\int_{\\Mg c}^{\\Mg d}\\!\\int_{\\Az{a(\\Y)}}^{\\Co{b(\\Y)}}\\f\\,\\dX\\,\\dY',960,290,46,'c');
+  caixaOk(260,480,860,'QUARTO DE DISCO: ÁREA');tex('\\pi',715,486,40,'l');
+  caixaOk(260,610,860,'TRAVADA');tex('\\to\\ \\dfrac{1-1/e}{2}',560,612,36,'l');
+  caixaOk(260,740,860,'TROCAR = RELER A REGIÃO');
+  lateral(1300,800,420,330,1.15,{ymax:1.15,zt:[0,1],yt:[0,1],hcor:E1,hl:'\\X',vl:'\\f',passo:.25});
+  const A=L(0,gs(.6)),B=L(.6,0);x.fillStyle=mix(BG,CI,.3);x.fillRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);x.strokeStyle=E2;x.lineWidth=4;x.strokeRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);}
+
+ // 26 · S2: o próximo vídeo
+ if(K==='s2'){fundoV(false);await logo();canto('NO PRÓXIMO VÍDEO');vista(200,920,150);papel(0,4.2,0,4.2);
+  const pa=a=>4*a-a*a;preenche(cX(pa,0,3).concat([[0,0]]),RB);linha(cX(a=>a,0,3),CORAL,4);linha(cX(pa,0,2),AZC,4);linha(cX(pa,2,3),CORAL,4);
+  eixos(4.3,4.4);tkx(3,'\\Am{3}');tky(3,'\\Mg{3}');tky(4,'\\Mg{4}');linha([[0,3],[3,3]],E2,2,{dash:[6,7],alpha:.7});
+  const xl=y=>2-Math.sqrt(4-y),xr=y=>2+Math.sqrt(4-y);tiraH(1.5,xl(1.5),1.5,{h:.1});tiraH(3.5,xl(3.5),xr(3.5),{h:.1});
+  rot('\\Az{\\X=2-\\sqrt{4-\\Y}}',[xl(2.4),2.4],-20,0,28,'r');rot('\\Co{\\X=2+\\sqrt{4-\\Y}}',[xr(3.2),3.2],24,0,28);rot('\\Co{\\X=\\Y}',[2,2],40,20,28);
+  painel(1120,300,740,330);txt('NO PRÓXIMO VÍDEO:',1160,380,{size:30,f:'SGM',cor:GEO});txt('EXERCÍCIOS DO MÓDULO',1160,450,{size:40});
+  txt('A PARÁBOLA VIRA',1160,540,{size:40,cor:MEN});txt('DUAS CURVAS?',1160,595,{size:40,cor:MEN});
+  tex('\\Co{\\Y=4\\X-\\X^2}\\quad\\text{e}\\quad \\Y=\\X',1120,720,34);}
+
+
+ // ================= QUADROS-ALVO v2 (avaliação do preview v1) =================
+ // eixo de um gráfico de uma variável com escala própria (para o sino e para a fatia)
+ const G1=(X0,Y0,ux,uz)=>(a,b)=>[X0+a*ux,Y0-b*uz];
+ function seta2(A,B,cor,w=3,head=16){const dx=B[0]-A[0],dy=B[1]-A[1],l=Math.hypot(dx,dy),ux=dx/l,uy=dy/l;x.strokeStyle=cor;x.fillStyle=cor;x.lineWidth=w;x.lineCap='round';
+  x.beginPath();x.moveTo(...A);x.lineTo(B[0]-ux*head*.6,B[1]-uy*head*.6);x.stroke();x.beginPath();x.moveTo(B[0]+ux*2,B[1]+uy*2);x.lineTo(B[0]-ux*head-uy*head*.45,B[1]-uy*head+ux*head*.45);x.lineTo(B[0]-ux*head+uy*head*.45,B[1]-uy*head-ux*head*.45);x.closePath();x.fill();}
+ function gradeG(M,a0,a1,b0,b1,pa=.25,pb=.25){x.strokeStyle='#2B2558';x.lineWidth=1.2;
+  for(let a=Math.ceil(a0/pa-1e-9)*pa;a<=a1+1e-9;a+=pa){const A=M(a,b0),B=M(a,b1);x.beginPath();x.moveTo(A[0]+.5,A[1]);x.lineTo(B[0]+.5,B[1]);x.stroke();}
+  for(let b=Math.ceil(b0/pb-1e-9)*pb;b<=b1+1e-9;b+=pb){const A=M(a0,b),B=M(a1,b);x.beginPath();x.moveTo(A[0],A[1]+.5);x.lineTo(B[0],B[1]+.5);x.stroke();}}
+ function polyG(M,pts,fill,stroke=null,w=3){x.beginPath();pts.forEach((p,i)=>{const q=M(...p);i?x.lineTo(...q):x.moveTo(...q);});if(fill){x.closePath();x.fillStyle=fill;x.fill();}
+  if(stroke){x.strokeStyle=stroke;x.lineWidth=w;x.lineJoin='round';x.lineCap='round';x.stroke();}}
+ function linG(M,pts,cor,w=3,{dash=null,alpha=1}={}){x.setLineDash(dash||[]);x.globalAlpha=alpha;polyG(M,pts,null,cor,w);x.globalAlpha=1;x.setLineDash([]);}
+ function dotG(M,p,cor,r=9){const q=M(...p);x.beginPath();x.arc(...q,r,0,7);x.fillStyle=cor;x.fill();}
+ function chip(s,X,Y,ok=false){x.font='30px SG';const w=x.measureText(s).width;x.strokeStyle='rgba(184,196,218,.45)';x.lineWidth=2;x.beginPath();x.roundRect(X,Y-40,w+90,62,10);x.stroke();
+  (ok?check:cruz)(X+32,Y-9,ok?MEN:AL,.8);txt(s,X+66,Y+2,{size:30});return X+w+90;}
+
+ // v2_h1a · H1 em "E aí trava": o gráfico de e^(−y²), a área de x até 1 com "?", as três famílias riscadas
+ if(K==='v2_h1a'){fundoV(false);await logo();canto('UMA INTEGRAL QUE TRAVA');
+  const M=G1(560,800,210,420);gradeG(M,-2.25,2.25,0,1.25);
+  polyG(M,[[.3,0]].concat(cX(gs,.3,1)).concat([[1,0]]),mix(BG,CI,.32));
+  linG(M,cX(gs,-2.3,2.3),CI,4);linG(M,[[.3,0],[.3,gs(.3)]],E1,2,{dash:[6,6]});linG(M,[[1,0],[1,gs(1)]],GEO,2,{dash:[6,6]});
+  seta2(M(-2.4,0),M(2.5,0),E2);seta2(M(0,-.04),M(0,1.22),CI);tex('\\Y',...(()=>{const p=M(2.5,0);return [p[0]+24,p[1]];})(),32,'c');tex('\\f',...(()=>{const p=M(0,1.22);return [p[0],p[1]-26];})(),32,'c');
+  dotG(M,[.3,0],E1,9);tex('\\Am{\\X}',...(()=>{const p=M(.3,0);return [p[0],p[1]+34];})(),32,'c');tex('1',...(()=>{const p=M(1,0);return [p[0],p[1]+34];})(),30,'c');
+  tex('\\Al{?}',...M(.62,.36),54,'c');tex('e^{-\\Y^2}',...(()=>{const p=M(-1.25,gs(-1.25));return [p[0]-30,p[1]-34];})(),34,'r');
+  tex('\\int_{\\Am{0}}^{\\Am{1}}\\!\\int_{\\Az{\\X}}^{\\Co{1}} e^{-\\Y^2}\\,\\dY\\,\\dX',1120,250,50);
+  tex('\\int_{\\Az{\\X}}^{\\Co{1}} e^{-\\Y^2}\\,\\dY=\\ \\Al{?}',1120,380,44);
+  placaTxt('SEM PRIMITIVA EM FÓRMULA',1120,500,AL,30);
+  let cx_=1120;cx_=chip('POLINÔMIO',cx_,620)+16;chip('SENO',cx_,620);chip('LOGARITMO',1120,720);}
+
+ // v2_h1b · H1 em "os limites mudaram": as duas tiras nascem nos eixos, a região ainda não
+ if(K==='v2_h1b'){fundoV(false);await logo();canto('UMA INTEGRAL QUE TRAVA');vista(260,860,560);papel(0,1.12,0,1.12);eixos(1.2,1.2);tkx(1,'\\Am{1}');tky(1,'\\Mg{1}');
+  tiraV(.72,.72,1);rot('\\Az{\\X}',[.72,.72],22,8,30);rot('\\Co{1}',[.72,1],22,-26,30);
+  tiraH(.42,0,.42);rot('\\Az{0}',[0,.42],-44,-30,30);rot('\\Co{\\Y}',[.42,.42],18,-26,30);
+  tex('\\int_{\\Am{0}}^{\\Am{1}}\\!\\int_{\\Az{\\X}}^{\\Co{1}} e^{-\\Y^2}\\,\\dY\\,\\dX',1120,250,50);
+  placaTxt('SEM PRIMITIVA EM FÓRMULA',1120,370,AL,28);
+  tex('=\\int_{\\Mg{0}}^{\\Mg{1}}\\!\\int_{\\Az{0}}^{\\Co{\\Y}} e^{-\\Y^2}\\,\\dX\\,\\dY',1120,490,50);
+  tex('=\\dfrac{1-1/e}{2}\\approx 0{,}316',1120,640,50);}
+
+ // v2_b11 · B1-1 com R = [0, 2] × [−1/2, 2]: a fatia atravessa R, soma zero, f, zero
+ if(K==='v2_b11'){fundoV(false);await logo();canto('A FATIA NA CURVA');vista(360,760,240);papel(0,2.2,-.5,2.2);discoB(RB);
+  ret(0,2,-.5,2,null,GEO,2,[8,8]);eixos(2.35,2.35,{b0:-.62});tky(2,'\\Mg{2}');tky(-.5,'\\Mg{-\\tfrac12}');arcoB(CORAL,4);
+  tex('R',...P(2.06,2.08),34,'l');tex('B',...P(.42,.62),44,'c');
+  tex('\\Ge{0}',...P(1.9,1.2),34,'c');tex('\\Ge{0}',...P(.45,-.27),34,'c');tex('\\Ge{0}',...P(1.6,-.27),34,'c');
+  linha([[1,-.56],[1,2.06]],E1,2,{dash:[6,8],alpha:.7});
+  ret(.97,1.03,S3,2,null,mix(BG,E1,.55),2,[6,6]);ret(.97,1.03,-.5,0,null,mix(BG,E1,.55),2,[6,6]);tiraV(1,0,S3);
+  linha([[0,S3],[1,S3]],GEO,2,{dash:[6,6]});tky(S3,'\\Mg{\\sqrt3}');tex('\\Am{1}',...(()=>{const q=P(1,0);return [q[0]-22,q[1]+30];})(),28,'c',true);tex('\\Am{2}',...(()=>{const q=P(2,0);return [q[0]+24,q[1]+30];})(),28,'c',true);
+  rot('\\Co{\\Y=\\sqrt{4-\\X^2}}',[1.3,1.78],0,0,30);rot('\\Az{\\Y=0}',[1.16,0],0,-30,28);
+  mixl([['m','F=\\f'],['t','EM B'],['t','·'],['m','F=0'],['t','FORA']],1120,240,42);
+  tex('\\int_{\\Mg{-1/2}}^{\\Mg{2}} F(\\Am{1},\\Y)\\,\\dY=\\int_{\\Az{0}}^{\\Co{\\sqrt3}}\\f(\\Am{1},\\Y)\\,\\dY',1120,380,42);
+  tex('\\Am{1}^2+\\Y^2=4\\ \\Rightarrow\\ \\Y=\\sqrt3',1120,510,42);
+  leg('A FATIA TERMINA NA CURVA',1120,620,CORAL,'left',30);}
+
+ // v2_b12 · B1-2: palco pequeno, a fatia x = 1 ligada a um painel grande (zero, f, zero) e os dois selos com título desde o início
+ if(K==='v2_b12'){fundoV(false);await logo();canto('POR QUE O FUBINI VALE');vista(330,600,170);papel(0,2.2,-.5,2.2);
+  ret(0,2,-.5,2,null,GEO,2,[8,8]);discoB(RB);eixos(2.35,2.35,{b0:-.62});tex('R',...P(2.06,2.08),30,'l');tex('B',...P(.45,.6),40,'c');
+  arcoB(AL,2.5);linha([[0,0],[2,0]],AL,2.5);linha([[0,0],[0,2]],AL,2.5);leg('CONTEÚDO NULO',...P(2.1,1.25),AL,'left',24);
+  ret(.96,1.04,-.5,2,null,E1,2,[5,5]);tiraV(1,0,S3,{h:.08});tex('\\Am{1}',...(()=>{const q=P(1,0);return [q[0]-24,q[1]+26];})(),26,'c',true);
+  const M=G1(330,975,250,70);const ff=Y=>1.3+.35*Math.sin(2.2*Y);gradeG(M,-.5,2.25,0,2);
+  seta2(M(-.6,0),M(2.3,0),E2);seta2(M(-.5,-.1),M(-.5,2.1),CI);tex('\\Y',...(()=>{const p=M(2.3,0);return [p[0]+24,p[1]];})(),30,'c');tex('\\f',...(()=>{const p=M(-.5,2.1);return [p[0],p[1]-24];})(),30,'c');
+  linG(M,[[-.5,0],[0,0]],CI,5);linG(M,cX(ff,0,S3),CI,5);linG(M,[[S3,0],[2,0]],CI,5);
+  for(const a of [0,S3])linG(M,[[a,0],[a,ff(a)]],AL,2,{dash:[5,5]});
+  tex('0',...M(-.25,.45),28,'c');tex('\\f',...M(.9,ff(.9)+.55),30,'c');tex('0',...M(1.87,.45),28,'c');
+  for(const [a,s] of [[-.5,'-\\tfrac12'],[0,'0'],[S3,'\\sqrt3'],[2,'2']])tex('\\Mg{'+s+'}',...(()=>{const p=M(a,0);return [p[0],p[1]+30];})(),26,'c');
+  mixl([['t','UMA FATIA:',GEO],['m','\\X=\\Am{1}']],140,770,30);leg('DOIS SALTOS',800,880,AL,'left',26);
+  caixaOk(1120,290,640,'F INTEGRÁVEL EM R');caixaOk(1120,410,640,'FATIA INTEGRÁVEL');
+  leg('TEOREMA DE FUBINI',1120,540,GEO,'left',26);
+  tex('\\Rightarrow\\ \\iint_B\\f\\,dA=\\int_{\\Am{a}}^{\\Am{b}}\\!\\int_{\\Az{c(\\X)}}^{\\Co{d(\\X)}}\\f\\,\\dY\\,\\dX',1120,630,42);}
+
+ // v2_b12i · B1-2 em "duas coisas": os selos já nascem com o título (apagados), sem caixa vazia
+ if(K==='v2_b12i'){fundoV(false);await logo();canto('POR QUE O FUBINI VALE');vista(330,600,170);papel(0,2.2,-.5,2.2);
+  ret(0,2,-.5,2,null,GEO,2,[8,8]);discoB(RB);eixos(2.35,2.35,{b0:-.62});arcoB(CORAL,3);tex('R',...P(2.06,2.08),30,'l');tex('B',...P(.45,.6),40,'c');
+  for(const [Y,t] of [[290,'F INTEGRÁVEL EM R'],[410,'FATIA INTEGRÁVEL']]){x.strokeStyle='rgba(184,196,218,.45)';x.lineWidth=2;x.beginPath();x.roundRect(1120,Y-45,640,80,12);x.stroke();
+   x.beginPath();x.arc(1160,Y-6,15,0,7);x.strokeStyle=GEO;x.lineWidth=2.5;x.stroke();txt(t,1200,Y+8,{size:30,cor:GEO});tex('\\Ge{?}',1730,Y-4,34,'c');}}
+
+ // v2_b42p · B4-2 em pé + o sino inteiro na coluna (só o pedaço de 0 a 1 está no sólido)
+ if(K==='v2_b42p'){fundoV(false);await logo();canto('O SINO');await cena3d('b42p');
+  tex('\\X',...Q3('b42p','ex'),32,'c');tex('\\f',...(()=>{const p=Q3('b42p','ez');return [p[0]+30,p[1]+34];})(),32,'c');
+  tex('\\X=0{,}4',...(()=>{const p=Q3('b42p','faca');return [p[0]+30,p[1]-40];})(),32,'c',true);
+  tex('\\f(\\X,\\Y)=e^{-\\Y^2}',1120,280,48);leg('FATIA EM PÉ: TETO CURVO',1120,380,E1,'left',30);
+  tex('\\int_{\\Az{\\X}}^{\\Co{1}}e^{-\\Y^2}\\,\\dY=\\ \\Al{?}',1120,500,44);
+  painel(1150,610,710,320);leg('O SINO INTEIRO',1180,660,GEO,'left',26);leg('O PEDAÇO DO SÓLIDO',1830,660,CI,'right',24);
+  const M=G1(1505,895,130,180);gradeG(M,-2.5,2.5,0,1.1,.25,.25);
+  polyG(M,[[0,0]].concat(cX(gs,0,1)).concat([[1,0]]),mix(BG,CI,.45));linG(M,cX(gs,-2.5,2.5),CI,3,{alpha:.75});linG(M,cX(gs,0,1),CI,5);
+  seta2(M(-2.55,0),M(2.6,0),E2,2.5,14);tex('\\Mg{0}',...(()=>{const p=M(0,0);return [p[0],p[1]+26];})(),24,'c');tex('\\Mg{1}',...(()=>{const p=M(1,0);return [p[0],p[1]+26];})(),24,'c');}
+
+ // v2_b43a · B4-3: a forma errada no palco: o começo da fatia é a própria variável que anda
+ if(K==='v2_b43a'){fundoV(false);await logo();canto('O ERRO CLÁSSICO');vista(260,860,560);papel(0,1.12,0,1.12);eixos(1.2,1.2);tkx(1,'\\Am{1}');tky(1,'\\Mg{1}');
+  linha([[1,0],[1,1.05]],CORAL,3);rot('\\Co{\\X=1}',[1,.95],16,0,28);
+  for(const a of [.15,.75])ret(a,1,.52,.58,null,GEO,2,[5,6]);
+  ret(.45,1,.52,.58,mix(BG,E2,.5),E2,2);ponto([.45,.55],E1,10);ponto([1,.55],CORAL,9);
+  rot('\\Al{\\X\\,?}',[.45,.55],-14,-36,32,'r');
+  ponto([.45,0],E1,10);linha([[.45,0],[.45,.52]],E1,2,{dash:[5,6],alpha:.8});
+  seta2(P(.3,-.09),P(.6,-.09),E1,2.5,14);seta2(P(.6,-.09),P(.3,-.09),E1,2.5,14);
+  mixl([['t','O COMEÇO ANDA COM',AL],['m','\\Al{\\X}']],300,215,32);
+  tex('\\int_0^1\\!\\int_{\\Al{\\X}}^{1} e^{-\\Y^2}\\,\\Al{d\\X}\\,\\dY',1120,260,50);
+  mixl([['t','SÓ TROCOU',AL],['m','\\dX'],['t','COM',AL],['m','\\dY']],1120,370,36);
+  mixl([['m','\\Al{\\X}'],['t','É LIMITE E VARIÁVEL',AL]],1120,480,36);}
+
+ // v2_b43b · B4-3: "sobra um x solto": o "resultado" muda com x, e a integral dupla é um número só
+ if(K==='v2_b43b'){fundoV(false);await logo();canto('O ERRO CLÁSSICO');
+  const I0=0.746824;const M=G1(250,860,620,700);gradeG(M,0,1.1,0,.9);
+  seta2(M(-.03,0),M(1.12,0),E1);seta2(M(0,-.03),M(0,.92),GEO);tex('\\X',...(()=>{const p=M(1.12,0);return [p[0]+24,p[1]];})(),32,'c');
+  leg('RESULTADO',...(()=>{const p=M(0,.92);return [p[0]+18,p[1]+8];})(),GEO,'left',26);
+  linG(M,[[0,I0],[1,0]],AL,4);linG(M,[[0,.316],[1.05,.316]],MEN,3,{dash:[8,7]});
+  tex('\\Me{0{,}316}',...(()=>{const p=M(1.06,.316);return [p[0]+8,p[1]];})(),30,'l');
+  for(const [a,s] of [[.2,'0{,}597'],[.8,'0{,}149']]){const v=(1-a)*I0;linG(M,[[a,0],[a,v]],E1,2,{dash:[5,6]});dotG(M,[a,v],AL,10);tex('\\Al{'+s+'}',...(()=>{const p=M(a,v);return [p[0]+16,p[1]-28];})(),30,'l');
+   tex('\\Am{'+String(a).replace('.','{,}')+'}',...(()=>{const p=M(a,0);return [p[0],p[1]+32];})(),28,'c');}
+  tex('1',...(()=>{const p=M(1,0);return [p[0],p[1]+32];})(),28,'c');
+  tex('\\int_0^1\\!\\int_{\\Al{\\X}}^{1} e^{-\\Y^2}\\,\\Al{d\\X}\\,\\dY',1120,240,44);
+  tex('=(1-\\Al{\\X})\\cdot\\int_0^1 e^{-\\Y^2}\\,\\dY',1120,350,42);
+  cruz(1140,458,AL,1);mixl([['t','RESULTADO COM',AL],['m','\\Al{\\X}'],['t','?',AL]],1175,460,44);
+  mixl([['t','UMA INTEGRAL DUPLA É UM NÚMERO',MEN]],1120,590,34);
+  leg('DENTRO: SÓ A VARIÁVEL DE FORA',1120,690,GEO,'left',28);}
+
+ // v2_b61 · B6-1: os dois painéis da fatia vão para a faixa de baixo da coluna; o palco fica limpo
+ if(K==='v2_b61'){fundoV(false);await logo();canto('OUTRA INTEGRAL TRAVADA');vista(260,860,560);papel(0,1.12,0,1.12);
+  preenche([[0,0]].concat(cX(a=>a*a,0,1)).concat([[1,0]]),RB);linha(cX(a=>a*a,0,1),CORAL,4);linha([[1,0],[1,1]],GEO,2,{dash:[6,7]});eixos(1.2,1.2);tkx(1,'\\Am{1}');tky(1,'\\Mg{1}');
+  tiraV(.72,0,.72*.72);rot('\\Co{\\Y=\\X^2}',[.55,.32],-24,-14,30,'r');rot('\\Az{\\Y=0}',[.84,0],0,-30,28);
+  tex('\\int_0^1\\!\\int_{\\Az{\\sqrt{\\Y}}}^{\\Co{1}}\\sen(\\X^3)\\,\\dX\\,\\dY',1120,210,40);
+  mixl([['m','\\sen(\\X^3)'],['t','SEM PRIMITIVA EM FÓRMULA',AL]],1120,300,30);
+  tex('=\\int_0^1\\!\\int_{\\Az{0}}^{\\Co{\\X^2}}\\sen(\\X^3)\\,\\dY\\,\\dX',1120,400,40);
+  tex('=\\int_0^1\\X^2\\sen(\\X^3)\\,\\dX',1120,505,40);tex('=\\dfrac{1-\\cos 1}{3}\\approx 0{,}153',1120,615,44);
+  painel(1120,705,350,300);painel(1510,705,350,300);leg('ESTA FATIA',1145,750,GEO,'left',26);leg('NO SINO',1535,750,GEO,'left',26);
+  const X0=.72,ln=X0*X0,hh=Math.sin(X0**3);
+  let M=G1(1160,960,300,200);seta2(M(-.03,0),M(.9,0),E2,2.5,14);seta2(M(0,-.03),M(0,.8),CI,2.5,14);
+  polyG(M,[[0,0],[ln,0],[ln,hh],[0,hh]],mix(BG,CI,.3),E1,4);tex('\\Ci{\\sen(\\X^3)}',...(()=>{const p=M(ln,hh);return [p[0]+12,p[1]+4];})(),26,'l');tex('\\Co{\\X^2}',...(()=>{const p=M(ln/2,0);return [p[0],p[1]+30];})(),28,'c');
+  M=G1(1560,960,300,200);seta2(M(-.03,0),M(.9,0),E1,2.5,14);seta2(M(0,-.03),M(0,.8),CI,2.5,14);const hs=gs(.6);
+  polyG(M,[[0,0],[.6,0],[.6,hs],[0,hs]],mix(BG,CI,.3),E2,4);tex('e^{-\\Y^2}',...(()=>{const p=M(.6,hs);return [p[0]+12,p[1]+4];})(),26,'l');tex('\\Co{\\Y}',...(()=>{const p=M(.3,0);return [p[0],p[1]+30];})(),28,'c');}
+
+ // v2_b71m · B7-1b: o metal leve em foco (o pesado apagado) e os nomes na chapa
+ if(K==='v2_b71m'){fundoV(false);await logo();canto('QUANDO A REGIÃO SE DIVIDE');CH();papel(0,2.2,0,2.2);
+  preenche([[0,0],[2,0]].concat(curvaG().reverse()),LEVE);preenche([[0,2],[2,2]].concat(curvaG().reverse()),mix(BG,PESADO,.08));solda(BR,4);borda(GEO,2);eixosChapa();
+  leg('PESADO',...P(1.55,1.8),GEO,'left',24);leg('LEVE',...P(1.55,.2),BR,'left',24);
+  for(const v of [.836,1.059,1.42])linha([[0,v],[2.02,v]],BR,1.6,{dash:[5,6],alpha:.8});
+  tky(.836,'0{,}836',24);tky(1.059,'1{,}059',24);tky(1.42,'1{,}42',24);
+  for(const [v,s] of [[.42,'CHEIA'],[.95,'1 CORTE'],[1.24,'2 CORTES']])leg(s,...(()=>{const q=P(2.12,v);return [q[0],q[1]+9];})(),GEO,'left',24);
+  tiraH(1.24,.61,1.708,{h:.05});tiraH(.95,.27,2,{h:.05});tiraH(.42,0,2,{h:.05});
+  txt('EM PÉ: UMA CONTA',1120,330,{size:34,cor:E1});tex('\\int_0^2\\!\\int_{\\Az{0}}^{\\Co{g(\\X)}}\\!\\dY\\,\\dX',1120,420,38);
+  txt('DEITADO: TRÊS PEDAÇOS',1120,560,{size:34,cor:E2});tex('1{,}6729+0{,}4097+0{,}3895',1120,640,38);
+  tex('\\Me{\\approx 2{,}4721\\ \\text{m}^2}',1120,760,44);leg('NAS DUAS ORDENS',1450,770,GEO,'left',26);}
+
+ // v2_b72 · B7-2: cartão com miniaturas grandes, uma por motivo
+ if(K==='v2_b72'){fundoV(false);await logo();canto('QUANDO VALE TROCAR');
+  const rows=[290,520,750];for(const Y of rows)painel(140,Y-110,360,200);
+  let M=G1(180,rows[0]+70,170,150);polyG(M,[[0,0]].concat(cX(gs,0,1.7)).concat([[1.7,0]]),mix(BG,CI,.2));linG(M,cX(gs,0,1.7),CI,3);polyG(M,[[0,0],[.6,0],[.6,gs(.6)],[0,gs(.6)]],mix(BG,CI,.35),E2,3);
+  seta2(M(-.02,0),M(1.85,0),E2,2,12);
+  M=G1(320,rows[1]+70,130,130);polyG(M,[[-1,0],[0,1],[0,0]],mix(BG,GEO,.22));polyG(M,[[0,0],[0,1],[1,0]],mix(BG,GEO,.14));linG(M,[[-1,0],[0,1],[1,0]],CORAL,3);linG(M,[[0,0],[0,1.05]],BR,2,{dash:[5,5]});
+  polyG(M,[[-.6,0],[-.52,0],[-.52,.48],[-.6,.4]],mix(BG,E1,.5),E1,2);polyG(M,[[.52,0],[.6,0],[.6,.4],[.52,.48]],mix(BG,E1,.5),E1,2);linG(M,[[-1.1,0],[1.15,0]],GEO,2);
+  M=G1(240,rows[2]+75,75,75);polyG(M,[[0,0],[2,0],[2,2]],mix(BG,CI,.3));linG(M,[[0,0],[2,2]],BR,3);linG(M,[[0,0],[2,0],[2,2]],GEO,2);
+  polyG(M,[[1.17,0],[1.29,0],[1.29,1.29],[1.17,1.17]],mix(BG,E1,.6),E1,2);dotG(M,[1.23,0],AZC,6);dotG(M,[1.23,1.23],CORAL,6);
+  ['A DE DENTRO SEM PRIMITIVA','UMA ORDEM DIVIDE A REGIÃO','LIMITES MAIS SIMPLES'].forEach((t,i)=>{check(600,rows[i]-8,MEN);txt(t,650,rows[i]+6,{size:40});});
+  leg('O RETÂNGULO TRAZ O FATOR',650,rows[0]+60,GEO,'left',28);leg('EM PÉ: DUAS · DEITADO: UMA',650,rows[1]+60,GEO,'left',28);mixl([['t','DE',GEO],['m','\\Az{0}'],['t','ATÉ',GEO],['m','\\Co{\\X}']],650,rows[2]+55,34);
+  txt('MESMA REGIÃO, MESMO VALOR',960,960,{size:40,cor:MEN,al:'center'});}
+
+ // v2_s1 · S1: três painéis (zero fora, dois saltos, o retângulo), a tese e os três selos
+ if(K==='v2_s1'){fundoV(false);await logo();canto('SÍNTESE');
+  for(const X0 of [100,700,1300])painel(X0,160,520,380);
+  leg('ESTENDE POR ZERO',360,205,GEO,'center',26);leg('NO MÁXIMO DOIS SALTOS',960,205,GEO,'center',26);leg('A FATIA VIRA RETÂNGULO',1560,205,GEO,'center',26);
+  let M=G1(170,490,170,105);const c=X=>.35+.22*Math.sin(1.4*X),d=X=>1.55+.3*Math.sin(2*X+.4),a=.3,b=1.85;
+  polyG(M,[[0,-.1],[2.2,-.1],[2.2,2.1],[0,2.1],[0,-.1]],null,GEO,2);
+  polyG(M,cX(c,a,b).concat(cX(d,a,b).reverse()),RB);linG(M,cX(c,a,b),AZC,3);linG(M,cX(d,a,b),CORAL,3);
+  polyG(M,[[1.07,c(1.07)],[1.13,c(1.13)],[1.13,d(1.13)],[1.07,d(1.07)]],mix(BG,E1,.55),E1,2);
+  tex('\\Ge{0}',...M(.15,1.9),26,'c');tex('\\Ge{0}',...M(2.05,.2),26,'c');tex('B',...M(.65,1.05),30,'c');tex('R',...M(2.25,2.05),26,'l');
+  M=G1(760,470,190,70);const ff=Y=>1.3+.35*Math.sin(2.2*Y);seta2(M(-.05,0),M(2.15,0),E2,2.5,14);tex('\\Y',...(()=>{const p=M(2.15,0);return [p[0]+20,p[1]];})(),28,'c');
+  linG(M,[[0,0],[.5,0]],CI,4);linG(M,cX(ff,.5,1.55),CI,4);linG(M,[[1.55,0],[2.05,0]],CI,4);for(const s of [.5,1.55])linG(M,[[s,0],[s,ff(s)]],AL,2,{dash:[5,5]});
+  tex('0',...M(.25,.45),26,'c');tex('\\f',...M(1.0,ff(1.0)+.6),28,'c');tex('0',...M(1.8,.45),26,'c');
+  M=G1(1380,480,300,230);polyG(M,[[0,0]].concat(cX(gs,0,1.15)).concat([[1.15,0]]),mix(BG,CI,.18));linG(M,cX(gs,0,1.15),CI,3);polyG(M,[[0,0],[.6,0],[.6,gs(.6)],[0,gs(.6)]],mix(BG,CI,.35),E2,4);
+  seta2(M(-.02,0),M(1.25,0),E1,2.5,14);tex('\\X',...(()=>{const p=M(1.25,0);return [p[0]+20,p[1]];})(),28,'c');
+  tex('\\iint_B\\f=\\int_{\\Am a}^{\\Am b}\\!\\int_{\\Az{c(\\X)}}^{\\Co{d(\\X)}}\\f\\,\\dY\\,\\dX=\\int_{\\Mg c}^{\\Mg d}\\!\\int_{\\Az{a(\\Y)}}^{\\Co{b(\\Y)}}\\f\\,\\dX\\,\\dY',960,660,46,'c');
+  caixaOk(100,860,540,'QUARTO DE DISCO:');tex('\\pi',460,862,40,'l');
+  caixaOk(690,860,540,'TRAVADA:');tex('(1-1/e)/2',960,862,34,'l');
+  caixaOk(1280,860,540,'TROCAR = RELER');}
+
+ // v2_s2 · S2: o rótulo da curva da esquerda fica dentro da região (não cruza o eixo)
+ if(K==='v2_s2'){fundoV(false);await logo();canto('NO PRÓXIMO VÍDEO');vista(200,920,150);papel(0,4.2,0,4.2);
+  const pa=a=>4*a-a*a;preenche(cX(pa,0,3).concat([[0,0]]),RB);linha(cX(a=>a,0,3),CORAL,4);linha(cX(pa,0,2),AZC,4);linha(cX(pa,2,3),CORAL,4);
+  eixos(4.3,4.4);tkx(3,'\\Am{3}');tky(3,'\\Mg{3}');tky(4,'\\Mg{4}');linha([[0,3],[3,3]],E2,2,{dash:[6,7],alpha:.7});
+  const xl=y=>2-Math.sqrt(4-y),xr=y=>2+Math.sqrt(4-y);tiraH(1.5,xl(1.5),1.5,{h:.1});tiraH(3.5,xl(3.5),xr(3.5),{h:.1});
+  rot('\\Az{\\X=2-\\sqrt{4-\\Y}}',[xl(2.4),2.4],14,0,26,'l');rot('\\Co{\\X=2+\\sqrt{4-\\Y}}',[xr(3.2),3.2],24,0,28);rot('\\Co{\\X=\\Y}',[2,2],40,20,28);
+  painel(1120,300,740,330);txt('NO PRÓXIMO VÍDEO:',1160,380,{size:30,f:'SGM',cor:GEO});txt('EXERCÍCIOS DO MÓDULO',1160,450,{size:40});
+  txt('A PARÁBOLA VIRA',1160,540,{size:40,cor:MEN});txt('DUAS CURVAS?',1160,595,{size:40,cor:MEN});
+  tex('\\Co{\\Y=4\\X-\\X^2}\\quad\\text{e}\\quad \\Y=\\X',1120,720,34);}
+
+ // v2_b51 · B5-1: o triângulo de baixo com contorno e nome (o de cima claramente fora)
+ if(K==='v2_b51'){fundoV(false);await logo();canto('A CHAPA NA DIAGONAL');CH();mapaDens(64);preenche([[0,0],[2,2],[0,2]],'rgba(19,16,48,.86)');borda(GEO,2);
+  linha([[0,0],[2,0],[2,2],[0,0]],BR,3);eixosChapa();tiraV(1.2,0,1.2,{h:.08,alpha:.6});rot('\\Co{\\Y=\\X}',[1.45,1.45],-150,-10,30);rot('\\Az{\\Y=0}',[1.3,0],0,-30,28);
+  tex('B',...P(1.68,.5),40,'c');leg('FORA',...P(.35,1.5),GEO,'left',26);
+  mixl([['t','CHAPA INTEIRA:',GEO],['m','\\Ge{\\dfrac{32}{3}\\ \\text{kg}}']],1120,200,30);
+  tex('\\int_{\\Az{0}}^{\\Co{\\X}}(\\X^2+\\Y^2)\\,\\dY',1120,300,40);tex('=\\X^2\\cdot\\X+\\dfrac{\\X^3}{3}',1160,410,40);tex('=\\dfrac{4\\X^3}{3}',1160,520,40);
+  tex('\\int_0^2\\dfrac{4}{3}\\X^3\\,\\dX=\\dfrac{4}{3}\\cdot\\dfrac{2^4}{4}=\\dfrac{16}{3}',1120,660,40);}
+
+ document.title='ok';}
+main();
+</script></body></html>

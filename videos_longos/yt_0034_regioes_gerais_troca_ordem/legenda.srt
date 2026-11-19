@@ -1,0 +1,1646 @@
+1
+00:00:00,100 --> 00:00:03,380
+Olha esta peça. O volume
+dela é uma integral dupla,
+
+2
+00:00:03,420 --> 00:00:05,990
+e essa integral trava
+logo na primeira conta.
+
+3
+00:00:06,080 --> 00:00:09,680
+Agora, a mesma peça, cortada
+com a faca no outro sentido:
+
+4
+00:00:09,720 --> 00:00:13,050
+em duas linhas, sai metade
+de um menos um sobre e.
+
+5
+00:00:13,120 --> 00:00:16,110
+Mesma peça, mesmo volume. Só mudou a faca.
+
+6
+00:00:16,160 --> 00:00:19,530
+Como isso é possível? Vamos
+devagar. A integral é esta:
+
+7
+00:00:19,580 --> 00:00:22,640
+integral de zero a um,
+da integral de x até um,
+
+8
+00:00:22,680 --> 00:00:26,590
+de e elevado a menos y
+ao quadrado, dê y, dê x.
+
+9
+00:00:26,660 --> 00:00:29,980
+O e é o número de Euler, dois
+vírgula setenta e um e pouco.
+
+10
+00:00:30,020 --> 00:00:32,540
+Pelo teorema de Fubini,
+a gente começa por dentro:
+
+11
+00:00:32,580 --> 00:00:36,200
+precisa de uma primitiva de e
+elevado a menos y ao quadrado.
+
+12
+00:00:36,240 --> 00:00:40,580
+E aí trava. Essa primitiva existe, mas
+não se escreve com nenhuma combinação das
+
+13
+00:00:40,620 --> 00:00:43,320
+funções do Cálculo I:
+nada de polinômio, seno,
+
+14
+00:00:43,360 --> 00:00:47,640
+logaritmo, nada. Na peça, cada
+fatia em pé tem o teto curvo,
+
+15
+00:00:47,680 --> 00:00:51,400
+um pedaço do sino. Com a ordem
+trocada, integral de zero a um,
+
+16
+00:00:51,440 --> 00:00:56,120
+da integral de zero até y, dê x,
+dê y, cada fatia deitada tem o teto
+
+17
+00:00:56,160 --> 00:00:58,540
+reto. E repara: os limites mudaram.
+
+18
+00:00:58,580 --> 00:01:00,960
+O x até um virou zero até y.
+
+19
+00:01:01,000 --> 00:01:05,780
+A gente não trocou só o dê x com o dê y:
+mudou o jeito de percorrer a região.
+
+20
+00:01:05,820 --> 00:01:08,000
+Porque essa integral
+não mora num retângulo.
+
+21
+00:01:08,040 --> 00:01:11,140
+Ela mora num triângulo.
+E aí entram duas perguntas:
+
+22
+00:01:11,180 --> 00:01:14,500
+como fica o teorema de Fubini
+quando a região não é um retângulo?
+
+23
+00:01:14,540 --> 00:01:17,390
+E como achar os limites
+novos sem mudar o valor?
+
+24
+00:01:17,440 --> 00:01:21,040
+A resposta está no desenho. Quando
+a região se deixa fatiar inteira,
+
+25
+00:01:21,080 --> 00:01:24,060
+cada fatia começa numa
+curva e termina em outra.
+
+26
+00:01:24,100 --> 00:01:26,780
+Então os limites de fora
+continuam sendo números,
+
+27
+00:01:26,820 --> 00:01:30,660
+mas os de dentro passam a ser curvas,
+que dependem da variável de fora.
+
+28
+00:01:30,700 --> 00:01:33,900
+E trocar a ordem não é só
+trocar o dê x com o dê y:
+
+29
+00:01:33,940 --> 00:01:37,230
+é reler a mesma região,
+fatiando no outro sentido.
+
+30
+00:01:37,300 --> 00:01:39,960
+Fala, pessoal! Bem-vindos ao Parallax Lab!
+
+31
+00:01:40,000 --> 00:01:44,260
+O teorema de Fubini transforma a integral
+dupla num retângulo em duas integrais do
+
+32
+00:01:44,300 --> 00:01:46,600
+Cálculo I. Hoje ele sai do retângulo.
+
+33
+00:01:46,640 --> 00:01:48,920
+A gente vai ver a fatia
+que termina numa curva,
+
+34
+00:01:48,960 --> 00:01:52,420
+o teorema para regiões gerais,
+as duas ordens de fatiar,
+
+35
+00:01:52,460 --> 00:01:55,660
+como trocar uma pela outra
+e quando vale a pena trocar.
+
+36
+00:01:55,700 --> 00:01:59,640
+Volta no quarto de disco de raio dois.
+Quando a gente construiu a integral dupla,
+
+37
+00:01:59,680 --> 00:02:02,660
+apareceu um truque para
+regiões que não são retângulos:
+
+38
+00:02:02,700 --> 00:02:06,840
+coloca a região B dentro de um
+retângulo R, lê-se B contido em R,
+
+39
+00:02:06,880 --> 00:02:09,260
+e faz a função valer zero fora de B.
+
+40
+00:02:09,300 --> 00:02:11,900
+Agora fatia em pé,
+com o x congelado em um.
+
+41
+00:02:11,940 --> 00:02:17,130
+A fatia atravessa o retângulo inteiro, de
+y igual a menos meio até y igual a dois.
+
+42
+00:02:17,320 --> 00:02:21,160
+Só que, fora do disco,
+ela só soma zeros: embaixo,
+
+43
+00:02:21,200 --> 00:02:23,680
+antes de entrar, e em
+cima, depois de sair.
+
+44
+00:02:23,720 --> 00:02:27,880
+Então a integral da fatia é a mesma
+de zero, onde ela entra no disco,
+
+45
+00:02:27,920 --> 00:02:31,250
+até onde ela sai. E onde
+ela sai? Na circunferência,
+
+46
+00:02:31,320 --> 00:02:34,700
+x ao quadrado mais y ao
+quadrado igual a quatro.
+
+47
+00:02:34,740 --> 00:02:38,370
+Com x igual a um, sobra y
+ao quadrado igual a três;
+
+48
+00:02:38,440 --> 00:02:42,170
+e, como a gente está na parte
+de cima, y é raiz de três.
+
+49
+00:02:42,220 --> 00:02:46,540
+Agora deixa o x andar. Em x igual
+a zero, a fatia vai até dois;
+
+50
+00:02:46,580 --> 00:02:49,260
+perto de x igual a dois, ela quase some.
+
+51
+00:02:49,300 --> 00:02:54,080
+O fim da fatia é a curva y igual a
+raiz de quatro menos x ao quadrado,
+
+52
+00:02:54,120 --> 00:02:56,740
+e o começo é a reta y igual a zero.
+
+53
+00:02:56,780 --> 00:02:59,660
+A fatia começa numa
+curva e termina em outra.
+
+54
+00:02:59,700 --> 00:03:02,800
+E são essas curvas que vão
+virar os limites da integral.
+
+55
+00:03:02,840 --> 00:03:05,690
+Mas será que o teorema de
+Fubini ainda vale aqui?
+
+56
+00:03:05,780 --> 00:03:10,940
+Ele pedia duas coisas: a função integrável
+no retângulo e cada fatia com integral.
+
+57
+00:03:10,980 --> 00:03:14,740
+Primeira: f é contínua em B,
+que é fechado e limitado,
+
+58
+00:03:14,780 --> 00:03:18,720
+então f é limitada. E a função
+estendida, com zero fora,
+
+59
+00:03:18,760 --> 00:03:23,120
+só pode ser descontínua na fronteira
+de B: o arco e os dois segmentos.
+
+60
+00:03:23,160 --> 00:03:27,180
+Quando a gente estudou conteúdo nulo,
+viu que essas linhas têm conteúdo nulo.
+
+61
+00:03:27,220 --> 00:03:29,910
+Então a estendida é
+integrável no retângulo.
+
+62
+00:03:29,980 --> 00:03:34,300
+Segunda: cada fatia vale zero,
+depois f, depois zero de novo.
+
+63
+00:03:34,340 --> 00:03:38,720
+São no máximo dois saltos, e uma função
+de uma variável com dois saltos tem
+
+64
+00:03:38,760 --> 00:03:42,000
+integral, lá do Cálculo I.
+As duas hipóteses valem.
+
+65
+00:03:42,040 --> 00:03:46,780
+Então o teorema de Fubini garante: a
+integral dupla em B é a integral de fora,
+
+66
+00:03:46,820 --> 00:03:50,100
+da integral de dentro, com os
+limites de dentro nas curvas.
+
+67
+00:03:50,140 --> 00:03:53,600
+E repara: esse argumento não
+usou nada de especial do disco.
+
+68
+00:03:53,640 --> 00:03:57,340
+Vale para toda região entre os
+gráficos de duas funções contínuas,
+
+69
+00:03:57,380 --> 00:04:01,080
+e é esse o enunciado que vem agora.
+Agora o caso mais simples:
+
+70
+00:04:01,120 --> 00:04:05,700
+f igual a um. A integral de dentro,
+de zero até raiz de quatro menos x ao
+
+71
+00:04:05,740 --> 00:04:09,460
+quadrado, de um, dê y,
+é só o comprimento da fatia.
+
+72
+00:04:09,500 --> 00:04:12,710
+E somar os comprimentos de
+todas as fatias dá a área.
+
+73
+00:04:12,760 --> 00:04:17,039
+Fica a integral de zero a dois de
+raiz de quatro menos x ao quadrado,
+
+74
+00:04:17,079 --> 00:04:21,589
+dê x. Vamos fazer essa conta inteira,
+porque o desenho entrega a substituição.
+
+75
+00:04:21,640 --> 00:04:25,140
+Liga o ponto de cima da fatia
+com a origem: é um raio,
+
+76
+00:04:25,180 --> 00:04:28,980
+de tamanho dois. Chamando
+de θ o ângulo com o eixo y,
+
+77
+00:04:29,020 --> 00:04:34,060
+o x é dois seno de θ, e a altura,
+raiz de quatro menos x ao quadrado,
+
+78
+00:04:34,100 --> 00:04:38,420
+é dois cosseno de θ. Então
+dê x é dois cosseno de θ,
+
+79
+00:04:38,460 --> 00:04:42,940
+dê θ. Os limites mudam junto:
+x igual a zero é θ igual a zero,
+
+80
+00:04:42,980 --> 00:04:46,260
+e x igual a dois é θ igual a π sobre dois.
+
+81
+00:04:46,300 --> 00:04:50,860
+A integral vira a integral de zero a π
+sobre dois de quatro cosseno ao quadrado
+
+82
+00:04:50,900 --> 00:04:55,680
+de θ, dê θ. E cosseno ao quadrado
+é um mais cosseno de dois θ,
+
+83
+00:04:55,720 --> 00:05:00,720
+sobre dois. A primitiva fica dois
+vezes, θ mais seno de dois θ sobre
+
+84
+00:05:00,760 --> 00:05:04,380
+dois. Em π sobre dois,
+dá dois vezes π sobre dois;
+
+85
+00:05:04,420 --> 00:05:06,960
+em zero, dá zero. Resultado: π.
+
+86
+00:05:07,000 --> 00:05:10,460
+E a geometria confirma:
+um quarto de π R ao quadrado,
+
+87
+00:05:10,500 --> 00:05:13,580
+com raio dois, também dá
+π. Lembra das caixinhas?
+
+88
+00:05:13,620 --> 00:05:16,140
+Com quatro divisões,
+três vírgula vinte e cinco;
+
+89
+00:05:16,180 --> 00:05:19,540
+com dezesseis, três vírgula
+dezessete; com trinta e duas,
+
+90
+00:05:19,580 --> 00:05:22,320
+três vírgula quinze.
+Elas estavam chegando em π,
+
+91
+00:05:22,360 --> 00:05:25,810
+três vírgula catorze.
+Fatiando, sai o valor exato.
+
+92
+00:05:26,000 --> 00:05:28,470
+Agora o enunciado, com o rigor do livro.
+
+93
+00:05:28,620 --> 00:05:33,440
+Sejam cê e dê duas funções contínuas
+no intervalo fechado de á até B,
+
+94
+00:05:33,480 --> 00:05:36,400
+com cê de x menor ou igual a dê de x.
+
+95
+00:05:36,440 --> 00:05:41,280
+A região B é o conjunto dos pontos
+x, y tais que x está entre á e
+
+96
+00:05:41,320 --> 00:05:44,740
+B, e y está entre cê de x e dê de x.
+
+97
+00:05:44,780 --> 00:05:48,600
+As chaves se leem "o conjunto
+dos pontos", e os dois-pontos,
+
+98
+00:05:48,640 --> 00:05:53,620
+"tais que". Se f é contínua em B,
+então a integral dupla de f sobre B
+
+99
+00:05:53,660 --> 00:05:58,560
+é igual à integral de á até B,
+da integral de cê de x até dê de x,
+
+100
+00:05:58,600 --> 00:06:01,740
+de f de x, y, dê y, dê x.
+
+101
+00:06:01,780 --> 00:06:05,760
+Na figura: a fatia em pé entra
+na região pela curva de baixo,
+
+102
+00:06:05,800 --> 00:06:09,160
+cê de x, e sai pela
+curva de cima, dê de x.
+
+103
+00:06:09,200 --> 00:06:13,820
+Essa é uma região que se fatia em pé;
+alguns livros chamam de região do tipo um.
+
+104
+00:06:13,860 --> 00:06:17,120
+Trocando os papéis, vem a
+região que se fatia deitada:
+
+105
+00:06:17,160 --> 00:06:21,640
+y entre cê e dê, e x
+entre á de y e B de y.
+
+106
+00:06:21,680 --> 00:06:26,040
+Aí a integral de dentro é em x,
+da curva da esquerda até a da direita,
+
+107
+00:06:26,080 --> 00:06:30,940
+e a de fora é em y. E daqui sai a regra
+que você vai usar em todo exercício.
+
+108
+00:06:30,980 --> 00:06:35,500
+Os limites de fora são sempre números:
+eles dizem até onde as fatias vão.
+
+109
+00:06:35,540 --> 00:06:39,260
+Os limites de dentro podem depender,
+mas só da variável de fora,
+
+110
+00:06:39,300 --> 00:06:41,600
+porque é ela que está congelada na fatia.
+
+111
+00:06:41,640 --> 00:06:45,980
+Para achar os limites de dentro, pega uma
+reta na direção da fatia e atravessa a
+
+112
+00:06:46,020 --> 00:06:49,580
+região: onde ela entra,
+começa a integral; onde ela sai,
+
+113
+00:06:49,620 --> 00:06:53,420
+termina. Na fatia em pé,
+de baixo para cima; na deitada,
+
+114
+00:06:53,460 --> 00:06:58,340
+da esquerda para a direita. E, se essa
+reta encontrar dois pedaços separados da
+
+115
+00:06:58,380 --> 00:07:00,710
+região, uma integral só não basta.
+
+116
+00:07:00,760 --> 00:07:05,220
+Isso a gente resolve mais à frente. Agora
+uma chapa em forma de quarto de disco,
+
+117
+00:07:05,260 --> 00:07:09,820
+mas com densidade que cresce com a
+altura: y quilos por metro quadrado.
+
+118
+00:07:09,860 --> 00:07:13,040
+Desenhando a densidade como
+altura, aparece uma cunha.
+
+119
+00:07:13,080 --> 00:07:17,900
+Fatia em pé, em x igual a um.
+A fatia vai de zero até raiz de quatro
+
+120
+00:07:17,940 --> 00:07:22,100
+menos x ao quadrado, e a altura
+dela em cada ponto é o próprio y:
+
+121
+00:07:22,140 --> 00:07:27,080
+ela é um triângulo. A integral de dentro
+é de zero até raiz de quatro menos x ao
+
+122
+00:07:27,120 --> 00:07:29,320
+quadrado, de y, dê y.
+
+123
+00:07:29,360 --> 00:07:32,700
+A primitiva de y é y
+ao quadrado sobre dois.
+
+124
+00:07:32,740 --> 00:07:36,140
+No limite de cima, raiz de
+quatro menos x ao quadrado,
+
+125
+00:07:36,180 --> 00:07:39,240
+ao quadrado, sobre dois;
+no de baixo, zero.
+
+126
+00:07:39,280 --> 00:07:42,120
+Fica quatro menos x ao
+quadrado, sobre dois.
+
+127
+00:07:42,160 --> 00:07:46,220
+E é exatamente a área do triângulo:
+base vezes altura sobre dois,
+
+128
+00:07:46,260 --> 00:07:50,160
+com base e altura iguais a raiz
+de quatro menos x ao quadrado.
+
+129
+00:07:50,200 --> 00:07:54,520
+Agora a de fora: integral de zero a
+dois de quatro menos x ao quadrado,
+
+130
+00:07:54,560 --> 00:07:59,260
+sobre dois. O meio sai para fora, e a
+primitiva de quatro menos x ao quadrado é
+
+131
+00:07:59,300 --> 00:08:02,140
+quatro x menos x ao cubo sobre três.
+
+132
+00:08:02,180 --> 00:08:06,060
+Em dois, oito menos oito terços,
+que dá dezesseis terços;
+
+133
+00:08:06,100 --> 00:08:10,640
+em zero, zero. Metade de dezesseis
+terços: oito terços de quilo.
+
+134
+00:08:10,680 --> 00:08:14,920
+Agora deitado. Primeiro, um passo que
+vai aparecer em toda troca de ordem:
+
+135
+00:08:14,960 --> 00:08:17,620
+a curva tem que ser lida pelo outro eixo.
+
+136
+00:08:17,660 --> 00:08:20,760
+y igual a raiz de quatro
+menos x ao quadrado.
+
+137
+00:08:20,800 --> 00:08:24,680
+Eleva ao quadrado, isola o x
+e fica com a raiz positiva,
+
+138
+00:08:24,720 --> 00:08:29,720
+porque aqui o x é positivo: x igual
+a raiz de quatro menos y ao quadrado.
+
+139
+00:08:29,760 --> 00:08:33,280
+E olha a fatia: a altura
+é y em todo ponto dela,
+
+140
+00:08:33,320 --> 00:08:37,259
+então ela é um retângulo.
+A integral de dentro é y vezes x,
+
+141
+00:08:37,299 --> 00:08:40,639
+de zero até raiz de quatro
+menos y ao quadrado:
+
+142
+00:08:40,679 --> 00:08:45,540
+altura vezes comprimento, y vezes
+raiz de quatro menos y ao quadrado.
+
+143
+00:08:45,580 --> 00:08:50,320
+Agora a de fora, de zero a dois.
+Repara: o y que multiplica é quase a
+
+144
+00:08:50,360 --> 00:08:55,500
+derivada do que está dentro da raiz. Então
+chama u de quatro menos y ao quadrado.
+
+145
+00:08:55,540 --> 00:09:00,580
+Dê u é menos dois y dê y,
+então y dê y é menos dê u
+
+146
+00:09:00,620 --> 00:09:05,260
+sobre dois. E os limites mudam
+junto: y igual a zero dá u igual a
+
+147
+00:09:05,300 --> 00:09:08,660
+quatro, e y igual a
+dois dá u igual a zero.
+
+148
+00:09:08,700 --> 00:09:13,660
+O menos inverte os limites, e fica meio
+da integral de zero a quatro de raiz de
+
+149
+00:09:13,700 --> 00:09:18,360
+u, dê u. A primitiva de raiz de u
+é dois terços de u elevado a três
+
+150
+00:09:18,400 --> 00:09:21,290
+meios, e quatro elevado
+a três meios é oito.
+
+151
+00:09:21,340 --> 00:09:24,870
+Meio vezes dois terços vezes
+oito: oito terços de novo.
+
+152
+00:09:24,940 --> 00:09:27,350
+Agora olha as fatias como funções.
+
+153
+00:09:27,400 --> 00:09:31,260
+Em pé, a área de cada triângulo
+é quatro menos x ao quadrado,
+
+154
+00:09:31,300 --> 00:09:35,980
+sobre dois. Deitada, a área de
+cada retângulo é y vezes raiz de
+
+155
+00:09:36,020 --> 00:09:39,240
+quatro menos y ao quadrado.
+São curvas diferentes,
+
+156
+00:09:39,280 --> 00:09:42,730
+mas a área embaixo das duas
+é a mesma: oito terços.
+
+157
+00:09:42,840 --> 00:09:46,720
+Isso é o Fubini: o volume é
+a soma das áreas das fatias,
+
+158
+00:09:46,760 --> 00:09:49,180
+em qualquer sentido.
+Guarda essa diferença.
+
+159
+00:09:49,220 --> 00:09:52,020
+Quando a fatia vai na direção
+em que a função não muda,
+
+160
+00:09:52,060 --> 00:09:55,280
+a integral de dentro vira
+altura vezes comprimento.
+
+161
+00:09:55,320 --> 00:09:59,790
+E esse comprimento pode ser exatamente
+o fator que falta na conta de fora.
+
+162
+00:09:59,920 --> 00:10:03,920
+Agora sim, a integral do começo.
+Trocar a ordem tem um método,
+
+163
+00:10:03,960 --> 00:10:07,380
+e o primeiro passo é desenhar
+a região a partir dos limites.
+
+164
+00:10:07,420 --> 00:10:10,700
+Os limites de fora dizem:
+x vai de zero a um.
+
+165
+00:10:10,740 --> 00:10:15,140
+Os de dentro dizem: para
+cada x, y vai de x até um.
+
+166
+00:10:15,180 --> 00:10:18,540
+Então a fatia em pé entra
+na reta y igual a x,
+
+167
+00:10:18,580 --> 00:10:21,520
+a diagonal, e sai na reta y igual a um.
+
+168
+00:10:21,560 --> 00:10:25,360
+Com o x andando de zero a um,
+essas fatias pintam um triângulo,
+
+169
+00:10:25,400 --> 00:10:28,560
+com vértices em zero
+zero, zero um e um um.
+
+170
+00:10:28,600 --> 00:10:32,780
+Esse triângulo é a região. E a
+integral dupla não sabe nada de ordem:
+
+171
+00:10:32,820 --> 00:10:35,090
+ela só conhece a região e a função.
+
+172
+00:10:35,180 --> 00:10:37,970
+Segundo passo: reler o triângulo deitado.
+
+173
+00:10:38,020 --> 00:10:42,920
+Agora o y vai de zero a um, e,
+para cada y, a fatia entra no
+
+174
+00:10:42,960 --> 00:10:47,240
+eixo, em x igual a zero, e sai
+na diagonal, em x igual a y.
+
+175
+00:10:47,280 --> 00:10:51,000
+E olha a peça de novo. Em pé,
+em x igual a zero vírgula dois,
+
+176
+00:10:51,040 --> 00:10:55,900
+o teto da fatia é um pedaço do sino,
+curvo, e é por isso que a conta travava.
+
+177
+00:10:55,940 --> 00:11:00,620
+Deitada, em y igual a zero vírgula
+seis, o e elevado a menos y ao
+
+178
+00:11:00,660 --> 00:11:04,000
+quadrado não muda ao longo
+da fatia: o teto é reto,
+
+179
+00:11:04,040 --> 00:11:08,140
+e a fatia é um retângulo. Agora
+desenha a área de cada fatia.
+
+180
+00:11:08,180 --> 00:11:11,720
+Em pé, a área é a integral
+de x até um do sino:
+
+181
+00:11:11,760 --> 00:11:15,100
+ela não tem fórmula, mas existe,
+e vai caindo até zero.
+
+182
+00:11:15,140 --> 00:11:19,900
+Deitada, a área é y vezes e
+elevado a menos y ao quadrado.
+
+183
+00:11:19,940 --> 00:11:22,440
+Curvas diferentes, mesma área embaixo.
+
+184
+00:11:22,480 --> 00:11:25,740
+Só que a da direita a gente
+sabe integrar. Terceiro passo:
+
+185
+00:11:25,780 --> 00:11:30,500
+calcular. A de dentro é a integral
+de zero até y de e elevado a
+
+186
+00:11:30,540 --> 00:11:32,780
+menos y ao quadrado, dê x.
+
+187
+00:11:32,820 --> 00:11:37,870
+O e elevado a menos y ao quadrado
+não depende de x e sai para fora;
+
+188
+00:11:37,920 --> 00:11:41,260
+sobra x, de zero até y, que dá y.
+
+189
+00:11:41,300 --> 00:11:46,300
+Altura vezes comprimento. Agora a
+de fora: integral de zero a um de y
+
+190
+00:11:46,340 --> 00:11:50,100
+vezes e elevado a menos
+y ao quadrado, dê y.
+
+191
+00:11:50,140 --> 00:11:54,740
+Esse y, que veio do comprimento da
+fatia, é quase a derivada do expoente.
+
+192
+00:11:54,780 --> 00:11:59,560
+Chama u de y ao quadrado:
+dê u é dois y dê y, então
+
+193
+00:11:59,600 --> 00:12:02,130
+y dê y é dê u sobre dois.
+
+194
+00:12:02,220 --> 00:12:07,180
+y igual a zero dá u igual a zero,
+e y igual a um dá u igual a um.
+
+195
+00:12:07,220 --> 00:12:11,120
+Fica meio da integral de zero
+a um de e elevado a menos u,
+
+196
+00:12:11,160 --> 00:12:14,750
+dê u. A primitiva é menos
+e elevado a menos u.
+
+197
+00:12:14,800 --> 00:12:18,060
+Em um, menos um sobre
+e; em zero, menos um.
+
+198
+00:12:18,100 --> 00:12:22,420
+Menos um sobre e, menos menos um:
+os dois sinais de menos viram mais,
+
+199
+00:12:22,460 --> 00:12:27,650
+e sobra um menos um sobre e. Metade
+disso: zero vírgula três um seis.
+
+200
+00:12:27,700 --> 00:12:30,860
+A integral que travava virou
+uma conta de poucas linhas.
+
+201
+00:12:30,900 --> 00:12:35,330
+Ninguém inventou primitiva nova: a gente
+só mudou o jeito de percorrer a região.
+
+202
+00:12:35,380 --> 00:12:40,200
+Cuidado com o erro mais comum nessa
+troca: trocar só o dê y com o dê x e
+
+203
+00:12:40,240 --> 00:12:43,020
+deixar os limites como estavam.
+Olha o que acontece.
+
+204
+00:12:43,060 --> 00:12:46,640
+A integral de dentro passa
+a ser em x, de x até um.
+
+205
+00:12:46,680 --> 00:12:50,780
+O x seria, ao mesmo tempo,
+a variável que anda e o limite dela.
+
+206
+00:12:50,820 --> 00:12:53,500
+Essa escrita não define a
+integral que a gente quer.
+
+207
+00:12:53,540 --> 00:12:57,880
+E, se você fizer a conta mesmo assim,
+sobra um x solto no resultado.
+
+208
+00:12:57,920 --> 00:13:01,440
+Só que a integral dupla é um
+número: não pode depender de x.
+
+209
+00:13:01,480 --> 00:13:06,420
+É o mesmo aviso da regra: limite de dentro
+só pode depender da variável de fora.
+
+210
+00:13:06,460 --> 00:13:11,160
+Por isso a troca certa começa pela região:
+primeiro redesenha o conjunto de pontos,
+
+211
+00:13:11,200 --> 00:13:14,880
+depois acha os limites novos,
+e só então escreve a integral.
+
+212
+00:13:14,920 --> 00:13:17,940
+A região manda; os limites só a descrevem.
+
+213
+00:13:17,980 --> 00:13:22,400
+Agora, para fixar o método, uma conta
+completa com a chapa de densidade x ao
+
+214
+00:13:22,440 --> 00:13:26,460
+quadrado mais y ao quadrado, aquela
+de trinta e dois terços de quilo.
+
+215
+00:13:26,500 --> 00:13:30,940
+Corta a chapa na diagonal, y igual a
+x, e fica com o triângulo de baixo.
+
+216
+00:13:30,980 --> 00:13:35,820
+Quanto ele pesa? Fatia em pé: ela entra
+em y igual a zero e sai na diagonal,
+
+217
+00:13:35,860 --> 00:13:40,230
+em y igual a x. A integral
+de dentro vai de zero até x,
+
+218
+00:13:40,280 --> 00:13:43,920
+de x ao quadrado mais y ao quadrado, dê y.
+
+219
+00:13:43,960 --> 00:13:48,860
+A primitiva em y é x ao quadrado
+vezes y, mais y ao cubo sobre
+
+220
+00:13:48,900 --> 00:13:53,600
+três. Em y igual a x, dá x
+ao cubo mais x ao cubo sobre
+
+221
+00:13:53,640 --> 00:13:58,150
+três; em zero, zero. Somando,
+quatro terços de x ao cubo.
+
+222
+00:13:58,220 --> 00:14:03,120
+A de fora, de zero a dois:
+a primitiva é quatro terços de x à quarta
+
+223
+00:14:03,160 --> 00:14:06,440
+sobre quatro. Em dois,
+x à quarta é dezesseis,
+
+224
+00:14:06,480 --> 00:14:09,240
+que sobre quatro dá quatro; em zero, zero.
+
+225
+00:14:09,280 --> 00:14:12,770
+Quatro terços vezes quatro:
+dezesseis terços de quilo.
+
+226
+00:14:12,900 --> 00:14:15,290
+E deitado? Congela o y.
+
+227
+00:14:15,360 --> 00:14:18,680
+Agora a fatia entra na
+diagonal, em x igual a y,
+
+228
+00:14:18,720 --> 00:14:22,950
+e sai na borda, em x igual a dois.
+Repara que o limite de baixo mudou:
+
+229
+00:14:23,000 --> 00:14:25,220
+antes era o zero, agora é a diagonal.
+
+230
+00:14:25,260 --> 00:14:30,060
+A primitiva em x é x ao cubo sobre
+três, mais y ao quadrado vezes
+
+231
+00:14:30,100 --> 00:14:34,640
+x. Em x igual a dois, oito
+terços mais dois y ao quadrado;
+
+232
+00:14:34,680 --> 00:14:39,000
+em x igual a y, y ao cubo
+sobre três mais y ao cubo.
+
+233
+00:14:39,040 --> 00:14:42,720
+Subtraindo: oito terços,
+mais dois y ao quadrado,
+
+234
+00:14:42,760 --> 00:14:45,200
+menos quatro terços de y ao cubo.
+
+235
+00:14:45,240 --> 00:14:50,360
+A primitiva disso é oito terços de
+y, mais dois terços de y ao cubo,
+
+236
+00:14:50,400 --> 00:14:54,880
+menos y à quarta sobre três.
+Em dois, dá dezesseis terços,
+
+237
+00:14:54,920 --> 00:14:57,940
+mais dezesseis terços,
+menos dezesseis terços;
+
+238
+00:14:57,980 --> 00:15:01,230
+em zero, tudo zera.
+Sobra dezesseis terços.
+
+239
+00:15:01,280 --> 00:15:05,820
+Mesmo valor, como o teorema garante. E tem
+uma conferência que nem precisa de conta:
+
+240
+00:15:05,860 --> 00:15:10,280
+se você trocar x com y, a densidade
+não muda, e a diagonal funciona como um
+
+241
+00:15:10,320 --> 00:15:12,860
+espelho. Os dois triângulos pesam igual.
+
+242
+00:15:12,900 --> 00:15:16,740
+Dezesseis terços mais dezesseis
+terços: trinta e dois terços,
+
+243
+00:15:16,780 --> 00:15:21,100
+a chapa inteira. Mais uma, agora
+com curva: integral de zero a um,
+
+244
+00:15:21,140 --> 00:15:25,080
+da integral de raiz de y até
+um, de seno de x ao cubo,
+
+245
+00:15:25,120 --> 00:15:29,840
+dê x, dê y. A primitiva de seno de x
+ao cubo também não se escreve com as
+
+246
+00:15:29,880 --> 00:15:32,370
+funções do Cálculo I. Então, o método.
+
+247
+00:15:32,420 --> 00:15:37,420
+Desenha: y de zero a um, e cada
+fatia deitada entra na curva x igual
+
+248
+00:15:37,460 --> 00:15:40,250
+a raiz de y e sai em x igual a um.
+
+249
+00:15:40,300 --> 00:15:45,120
+Lendo essa curva pelo outro eixo,
+x igual a raiz de y é a parábola y
+
+250
+00:15:45,160 --> 00:15:49,170
+igual a x ao quadrado. A região
+é o pedaço embaixo da parábola.
+
+251
+00:15:49,220 --> 00:15:52,900
+Agora fatia em pé: y de
+zero até x ao quadrado.
+
+252
+00:15:52,940 --> 00:15:57,160
+Como seno de x ao cubo não depende
+de y, a fatia é um retângulo,
+
+253
+00:15:57,200 --> 00:16:02,280
+e a de dentro dá seno de x ao cubo
+vezes y, de zero até x ao quadrado:
+
+254
+00:16:02,320 --> 00:16:05,060
+x ao quadrado vezes seno de x ao cubo.
+
+255
+00:16:05,100 --> 00:16:08,360
+No sino, o comprimento da
+fatia trouxe o fator y;
+
+256
+00:16:08,400 --> 00:16:12,430
+aqui, trouxe x ao quadrado, que
+é quase a derivada de x ao cubo.
+
+257
+00:16:12,520 --> 00:16:17,250
+Chama u de x ao cubo: dê u
+é três x ao quadrado dê x.
+
+258
+00:16:17,360 --> 00:16:20,080
+x de zero a um dá u de zero a um.
+
+259
+00:16:20,120 --> 00:16:23,600
+Fica um terço da integral
+de zero a um de seno de u,
+
+260
+00:16:23,640 --> 00:16:27,880
+dê u. A primitiva é menos cosseno
+de u: menos cosseno de um,
+
+261
+00:16:27,920 --> 00:16:32,240
+mais cosseno de zero, que é um.
+Resultado: um menos cosseno de um,
+
+262
+00:16:32,280 --> 00:16:36,010
+sobre três. Mais ou menos
+zero vírgula um cinco três.
+
+263
+00:16:36,180 --> 00:16:39,400
+Mas às vezes uma ordem
+obriga a dividir a região.
+
+264
+00:16:39,440 --> 00:16:43,140
+Olha este telhado: o triângulo
+de vértices menos um zero,
+
+265
+00:16:43,180 --> 00:16:47,320
+zero um e um zero. Fatiando em
+pé, a fatia sai pelo telhado,
+
+266
+00:16:47,360 --> 00:16:52,500
+só que o telhado muda de fórmula no meio:
+à esquerda é y igual a um mais x;
+
+267
+00:16:52,540 --> 00:16:56,880
+à direita, um menos x. Uma
+fórmula só não descreve a saída,
+
+268
+00:16:56,920 --> 00:17:01,480
+então a região se divide em duas,
+B₁ e B₂, e a integral vira duas
+
+269
+00:17:01,520 --> 00:17:06,420
+integrais somadas. À esquerda,
+a primitiva de um mais x é x mais x
+
+270
+00:17:06,460 --> 00:17:09,779
+ao quadrado sobre dois;
+de menos um a zero, dá meio.
+
+271
+00:17:09,819 --> 00:17:14,860
+À direita, a primitiva de um menos x
+é x menos x ao quadrado sobre dois;
+
+272
+00:17:14,900 --> 00:17:18,530
+de zero a um, dá meio também.
+Meio mais meio: área um.
+
+273
+00:17:18,599 --> 00:17:21,760
+Fatiando deitado, toda
+fatia entra pela esquerda,
+
+274
+00:17:21,800 --> 00:17:26,640
+em x igual a y menos um, e sai
+pela direita, em x igual a um menos
+
+275
+00:17:26,680 --> 00:17:31,060
+y. O comprimento é a saída
+menos a entrada: um menos y,
+
+276
+00:17:31,100 --> 00:17:35,300
+menos o parêntese y menos um,
+que dá dois menos dois y.
+
+277
+00:17:35,340 --> 00:17:39,350
+A primitiva é dois y menos
+y ao quadrado: em um,
+
+278
+00:17:39,400 --> 00:17:42,180
+dois menos um, que é um; em zero, zero.
+
+279
+00:17:42,220 --> 00:17:47,060
+Uma conta só. A regra prática: se a
+fatia muda de comportamento no caminho,
+
+280
+00:17:47,100 --> 00:17:49,300
+descobre onde a mudança acontece.
+
+281
+00:17:49,340 --> 00:17:53,160
+É ali que a integral se divide.
+Na chapa de dois metais foi igual:
+
+282
+00:17:53,200 --> 00:17:56,220
+o metal leve, fatiado
+em pé, era uma conta só.
+
+283
+00:17:56,260 --> 00:18:00,380
+Deitado, a reta cortava a
+solda zero, uma ou duas vezes:
+
+284
+00:18:00,420 --> 00:18:03,520
+três pedaços, com arco-seno,
+para a mesma área,
+
+285
+00:18:03,560 --> 00:18:06,790
+dois vírgula quatro sete
+dois um metros quadrados.
+
+286
+00:18:06,920 --> 00:18:09,500
+Então, quando vale a pena trocar a ordem?
+
+287
+00:18:09,540 --> 00:18:13,020
+Primeiro, quando a integral de
+dentro não tem primitiva em fórmula,
+
+288
+00:18:13,060 --> 00:18:17,560
+como o sino e o seno de x ao cubo.
+Se a função depende de uma variável só,
+
+289
+00:18:17,600 --> 00:18:20,200
+a fatia no sentido da
+outra vira um retângulo,
+
+290
+00:18:20,240 --> 00:18:22,620
+e o comprimento dela entra como fator.
+
+291
+00:18:22,660 --> 00:18:26,830
+Não é garantia de que a conta vai sair,
+mas é a primeira coisa a tentar.
+
+292
+00:18:27,000 --> 00:18:31,060
+Segundo, quando uma ordem divide
+a região em pedaços e a outra não.
+
+293
+00:18:31,100 --> 00:18:34,000
+Terceiro, quando os
+limites ficam mais simples.
+
+294
+00:18:34,040 --> 00:18:37,560
+Em todos os casos, o valor
+não muda: a região é a mesma,
+
+295
+00:18:37,600 --> 00:18:42,420
+a função é a mesma, e o teorema garante as
+duas ordens quando a função é contínua e
+
+296
+00:18:42,460 --> 00:18:45,700
+a região se lê dos dois
+jeitos. E onde isso aparece?
+
+297
+00:18:45,740 --> 00:18:48,450
+Na probabilidade, o tempo todo.
+
+298
+00:18:48,520 --> 00:18:51,860
+Dois amigos combinam de se
+encontrar entre meio-dia e uma hora;
+
+299
+00:18:51,900 --> 00:18:55,460
+cada um chega num horário sorteado
+por igual dentro dessa hora,
+
+300
+00:18:55,500 --> 00:18:58,740
+sem um depender do outro,
+e espera só quinze minutos.
+
+301
+00:18:58,780 --> 00:19:02,860
+Qual a chance de eles se encontrarem?
+Coloca o horário de um no eixo x e o do
+
+302
+00:19:02,900 --> 00:19:07,160
+outro no eixo y. "Eles se encontram"
+é a faixa em volta da diagonal,
+
+303
+00:19:07,200 --> 00:19:10,020
+de um quarto de hora
+para cada lado. Fatiando,
+
+304
+00:19:10,060 --> 00:19:13,140
+essa faixa daria três
+pedaços. Mas tem um atalho:
+
+305
+00:19:13,180 --> 00:19:16,200
+olha o que fica de fora.
+São dois triângulos nos cantos,
+
+306
+00:19:16,240 --> 00:19:21,080
+com catetos de três quartos. Cada um tem
+área meio de três quartos ao quadrado;
+
+307
+00:19:21,120 --> 00:19:23,660
+os dois juntos, nove dezesseis avos.
+
+308
+00:19:23,700 --> 00:19:28,200
+Como o quadrado inteiro tem área um,
+a chance de eles se encontrarem é um menos
+
+309
+00:19:28,240 --> 00:19:33,280
+nove dezesseis avos: sete dezesseis avos,
+quase quarenta e quatro por cento.
+
+310
+00:19:33,320 --> 00:19:36,380
+E aquele sino, e elevado
+a menos x ao quadrado,
+
+311
+00:19:36,420 --> 00:19:40,360
+tem o formato da curva normal da
+estatística, depois de ajustar a escala:
+
+312
+00:19:40,400 --> 00:19:44,400
+a curva mais usada da probabilidade
+não tem primitiva em fórmula.
+
+313
+00:19:44,440 --> 00:19:48,120
+Na engenharia, a massa de uma
+peça recortada, com borda curva,
+
+314
+00:19:48,160 --> 00:19:50,840
+é exatamente uma integral
+numa região geral.
+
+315
+00:19:50,880 --> 00:19:55,460
+Então, juntando tudo. Nas regiões que
+se deixam fatiar entre duas curvas,
+
+316
+00:19:55,500 --> 00:19:59,780
+o truque é o mesmo de sempre: estende
+a função por zero até um retângulo,
+
+317
+00:19:59,820 --> 00:20:03,820
+e o teorema de Fubini continua valendo,
+porque a fronteira dessas regiões tem
+
+318
+00:20:03,860 --> 00:20:07,580
+conteúdo nulo e cada fatia
+tem no máximo dois saltos.
+
+319
+00:20:07,620 --> 00:20:11,020
+Na prática, a fatia entra
+numa curva e sai em outra.
+
+320
+00:20:11,060 --> 00:20:15,640
+Os limites de fora são números; os de
+dentro dependem só da variável de fora.
+
+321
+00:20:15,680 --> 00:20:19,880
+E, quando a ordem muda, uma fatia
+curva pode virar um retângulo e trazer
+
+322
+00:20:19,920 --> 00:20:24,080
+exatamente o fator que faltava.
+Foi assim que o quarto de disco deu π,
+
+323
+00:20:24,120 --> 00:20:27,900
+e a integral que travava virou
+metade de um menos um sobre e.
+
+324
+00:20:27,940 --> 00:20:30,640
+Trocar a ordem é reler a mesma região.
+
+325
+00:20:30,680 --> 00:20:35,680
+E fica um desafio. Olha a região entre
+a reta y igual a x e a parábola y
+
+326
+00:20:35,720 --> 00:20:38,140
+igual a quatro x menos x ao quadrado.
+
+327
+00:20:38,180 --> 00:20:40,940
+Em pé, é uma conta só. Agora deitado.
+
+328
+00:20:40,980 --> 00:20:44,500
+Lá embaixo, a fatia entra
+na parábola e sai na reta.
+
+329
+00:20:44,540 --> 00:20:48,140
+Mas, quando ela passa de y
+igual a três, a saída troca:
+
+330
+00:20:48,180 --> 00:20:51,020
+deixa a reta e vai para
+o outro lado da parábola.
+
+331
+00:20:51,060 --> 00:20:54,970
+E, lida pelo eixo y,
+a parábola vira duas curvas:
+
+332
+00:20:55,040 --> 00:20:59,880
+dois menos raiz de quatro menos y,
+e dois mais raiz de quatro menos
+
+333
+00:20:59,920 --> 00:21:03,170
+y. Quantas contas aparecem?
+E o valor fecha?
+
+334
+00:21:03,280 --> 00:21:06,660
+No próximo vídeo, os exercícios
+do módulo: essa parábola,
+
+335
+00:21:06,700 --> 00:21:10,640
+uma integral de seno de y sobre
+y que só sai trocando a ordem,
+
+336
+00:21:10,680 --> 00:21:14,310
+e dois cilindros que se cruzam
+e dão um volume sem π nenhum.
+
+337
+00:21:14,360 --> 00:21:18,500
+Se essa aula te ajudou, deixa o like,
+se inscreve no Parallax Lab e conta nos
+
+338
+00:21:18,540 --> 00:21:22,600
+comentários: qual integral você já
+viu travar numa ordem e sair na outra?
+
+339
+00:21:22,640 --> 00:21:24,640
+Até a próxima!

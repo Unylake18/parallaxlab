@@ -1,0 +1,310 @@
+yt_0032 · sincronização (rodada voz, 15 fps): atraso = tela − voz (s); meta ≤ +0,20 s
+
+PH: [deriva] PH +0.00s além do fim da última âncora
+PA: [deriva] PA +0.00s além do fim da última âncora
+PB1: [deriva] PB1 +0.00s além do fim da última âncora
+PB2: [deriva] PB2 +0.00s além do fim da última âncora
+PB3: [deriva] PB3 +0.00s além do fim da última âncora
+PB4: [deriva] PB4 +0.00s além do fim da última âncora
+PB5: [deriva] PB5 +0.00s além do fim da última âncora
+PB6: [deriva] PB6 +0.00s além do fim da última âncora
+PB7: [deriva] PB7 +0.00s além do fim da última âncora
+PS: [deriva] PS +3.00s além do fim da última âncora
+
+âncoras (início na tela × 1ª palavra na voz):
+  H1    tela     0.00 s · voz     0.12 s · -0.12 s OK
+  H2    tela    57.27 s · voz    57.40 s · -0.13 s OK
+  A1    tela    86.27 s · voz    86.44 s · -0.17 s OK
+  B1-1  tela   111.40 s · voz   111.58 s · -0.18 s OK
+  B1-2  tela   144.60 s · voz   144.78 s · -0.18 s OK
+  B1-3  tela   188.33 s · voz   188.48 s · -0.15 s OK
+  B1-4  tela   220.00 s · voz   220.12 s · -0.12 s OK
+  B2-1  tela   268.60 s · voz   268.72 s · -0.12 s OK
+  B2-2  tela   311.73 s · voz   311.88 s · -0.15 s OK
+  B3-1  tela   353.53 s · voz   353.66 s · -0.13 s OK
+  B3-2  tela   397.33 s · voz   397.48 s · -0.15 s OK
+  B3-3  tela   444.33 s · voz   444.46 s · -0.13 s OK
+  B4-1  tela   487.26 s · voz   487.42 s · -0.16 s OK
+  B4-2  tela   531.53 s · voz   531.70 s · -0.17 s OK
+  B5-1  tela   574.59 s · voz   574.74 s · -0.15 s OK
+  B5-2  tela   619.19 s · voz   619.34 s · -0.15 s OK
+  B5-3  tela   659.26 s · voz   659.40 s · -0.14 s OK
+  B6-1  tela   684.39 s · voz   684.56 s · -0.17 s OK
+  B6-2  tela   734.86 s · voz   735.00 s · -0.14 s OK
+  B6-3  tela   779.59 s · voz   779.74 s · -0.15 s OK
+  B6-4  tela   830.39 s · voz   830.58 s · -0.19 s OK
+  B6-5  tela   891.52 s · voz   891.66 s · -0.14 s OK
+  B7-1  tela   919.39 s · voz   919.52 s · -0.13 s OK
+  B7-2  tela   957.59 s · voz   957.72 s · -0.13 s OK
+  S1    tela  1001.72 s · voz  1001.88 s · -0.16 s OK
+  S2    tela  1042.52 s · voz  1042.68 s · -0.16 s OK
+
+gatilhos (265):
+  H1    -0.17 s  «um quilo por metro»  (tela 3.07 · voz 3.24) OK
+  H1    -0.12 s  «em cima três»  (tela 4.80 · voz 4.92) OK
+  H1    -0.13 s  «a massa total existe»  (tela 7.87 · voz 8.00) OK
+  H1    -0.16 s  «cortar a chapa exatamente»  (tela 13.60 · voz 13.76) OK
+  H1    -0.15 s  «o pedaço leve tem»  (tela 18.67 · voz 18.82) OK
+  H1    -0.12 s  «o pesado quatro»  (tela 22.80 · voz 22.92) OK
+  H1    -0.14 s  «usando os valores sem»  (tela 25.40 · voz 25.54) OK
+  H1    -0.17 s  «olha a linha branca»  (tela 31.73 · voz 31.90) OK
+  H1    -0.16 s  «ela é a fronteira»  (tela 33.80 · voz 33.96) OK
+  H1    -0.13 s  «contou a solda duas»  (tela 36.73 · voz 36.86) OK
+  H1    -0.14 s  «cem quilos por metro»  (tela 44.00 · voz 44.14) OK
+  H1    -0.13 s  «densidade média da chapa»  (tela 48.27 · voz 48.40) OK
+  H1    -0.15 s  «existe algum ponto»  (tela 53.73 · voz 53.88) OK
+  H2    -0.12 s  «a integral nasce de»  (tela 64.34 · voz 64.46) OK
+  H2    -0.16 s  «então as regras que»  (tela 66.34 · voz 66.50) OK
+  H2    -0.16 s  «somar multiplicar comparar»  (tela 71.00 · voz 71.16) OK
+  H2    -0.11 s  «multiplicar comparar e»  (tela 71.67 · voz 71.78) OK
+  H2    -0.12 s  «comparar e dividir»  (tela 72.54 · voz 72.66) OK
+  H2    -0.16 s  «dividir regiões e»  (tela 73.34 · voz 73.50) OK
+  H2    -0.14 s  «um conjunto de conteúdo»  (tela 77.60 · voz 77.74) OK
+  H2    -0.14 s  «o mistério da solda»  (tela 84.94 · voz 85.08) OK
+  A1    -0.17 s  «o terceiro do módulo»  (tela 92.27 · voz 92.44) OK
+  A1    -0.15 s  «agora vamos aprender»  (tela 98.67 · voz 98.82) OK
+  A1    -0.19 s  «somar comparar estimar»  (tela 102.27 · voz 102.46) OK
+  A1    -0.04 s  «comparar estimar e»  (tela 103.00 · voz 103.04) OK
+  A1    -0.20 s  «dividir integrais sem»  (tela 104.40 · voz 104.60) OK
+  A1    -0.14 s  «teorema do valor médio»  (tela 107.74 · voz 107.88) OK
+  B1-1  -0.17 s  «duas funções éfe e»  (tela 113.47 · voz 113.64) OK
+  B1-1  -0.21 s  «numa mesma região b»  (tela 116.13 · voz 116.34) OK
+  B1-1  -0.19 s  «uma constante cá»  (tela 117.67 · voz 117.86) OK
+  B1-1  -0.17 s  «um número fixo»  (tela 119.73 · voz 119.90) OK
+  B1-1  -0.21 s  «à medida que a»  (tela 125.87 · voz 126.08) OK
+  B1-1  -0.15 s  «independentemente dos pontos»  (tela 127.87 · voz 128.02) OK
+  B1-1  -0.19 s  «esse valor é escrito»  (tela 130.13 · voz 130.32) OK
+  B1-1  -0.19 s  «integral dupla sobre b»  (tela 133.67 · voz 133.86) OK
+  B1-1  -0.00 s  «sobre b de éfe»  (tela 134.80 · voz 134.80) OK
+  B1-1  -0.15 s  «dê xis dê ípsilon a»  (tela 137.13 · voz 137.28) OK
+  B1-1  -0.19 s  «a letra b indica»  (tela 138.53 · voz 138.72) OK
+  B1-1  -0.15 s  «e o dê xis dê ípsilon representa»  (tela 141.47 · voz 141.62) OK
+  B1-2  -0.10 s  «uma rampa que cresce na direção horizontal»  (tela 149.80 · voz 149.90) OK
+  B1-2  -0.17 s  «uma rampa que cresce na direção vertical»  (tela 153.53 · voz 153.70) OK
+  B1-2  -0.17 s  «mesma grade para as»  (tela 155.87 · voz 156.04) OK
+  B1-2  -0.19 s  «primeiro levantamos as caixinhas»  (tela 159.33 · voz 159.52) OK
+  B1-2  -0.18 s  «depois colocamos em cima»  (tela 162.40 · voz 162.58) OK
+  B1-2  -0.18 s  «em cada célula a»  (tela 166.00 · voz 166.18) OK
+  B1-2  -0.21 s  «então a soma de riemann»  (tela 169.73 · voz 169.94) OK
+  B1-2  -0.16 s  «é exatamente a soma»  (tela 172.20 · voz 172.36) OK
+  B1-2  -0.18 s  «e passando ao limite»  (tela 178.20 · voz 178.38) OK
+  B1-2  -0.16 s  «a igualdade continua valendo»  (tela 179.60 · voz 179.76) OK
+  B1-2  -0.20 s  «também é integrável»  (tela 184.20 · voz 184.40) OK
+  B1-3  -0.17 s  «a chapa com densidade»  (tela 191.93 · voz 192.10) OK
+  B1-3  -0.16 s  «deu trinta e dois»  (tela 195.40 · voz 195.56) OK
+  B1-3  -0.18 s  «agora espelha a rampa»  (tela 197.40 · voz 197.58) OK
+  B1-3  -0.17 s  «a região continua a»  (tela 204.53 · voz 204.70) OK
+  B1-3  -0.12 s  «então as duas integrais»  (tela 209.00 · voz 209.12) OK
+  B1-3  -0.18 s  «como somam trinta e»  (tela 211.00 · voz 211.18) OK
+  B1-3  -0.16 s  «cada uma vale dezesseis»  (tela 212.86 · voz 213.02) OK
+  B1-3  -0.17 s  «nenhuma soma nova»  (tela 215.13 · voz 215.30) OK
+  B1-3  -0.14 s  «e a simetria do»  (tela 218.40 · voz 218.54) OK
+  B1-4  -0.13 s  «se cá vale dois»  (tela 227.53 · voz 227.66) OK
+  B1-4  -0.13 s  «se vale meio»  (tela 229.73 · voz 229.86) OK
+  B1-4  -0.15 s  «se é negativo»  (tela 231.67 · voz 231.82) OK
+  B1-4  +0.21 s  «a contribuição troca de»  (tela 232.93 · voz 232.72) FORA
+  B1-4  -0.15 s  «em todos os casos»  (tela 234.33 · voz 234.48) OK
+  B1-4  -0.12 s  «cada parcela da soma»  (tela 235.60 · voz 235.72) OK
+  B1-4  -0.14 s  «e a constante sai»  (tela 238.60 · voz 238.74) OK
+  B1-4  -0.12 s  «lê se a integral»  (tela 241.60 · voz 241.72) OK
+  B1-4  -0.13 s  «agora junta com a»  (tela 246.13 · voz 246.26) OK
+  B1-4  -0.15 s  «uma camada de um»  (tela 250.13 · voz 250.28) OK
+  B1-4  -0.11 s  «mais um reforço de»  (tela 254.33 · voz 254.44) OK
+  B1-4  -0.15 s  «a camada dá quatro»  (tela 258.87 · voz 259.02) OK
+  B1-4  -0.13 s  «o reforço aproximadamente três»  (tela 260.73 · voz 260.86) OK
+  B1-4  -0.14 s  «total sete vírgula»  (tela 264.20 · voz 264.34) OK
+  B1-4  -0.13 s  «agora montado em camadas»  (tela 266.93 · voz 267.06) OK
+  B2-1  -0.13 s  «se uma função é»  (tela 273.53 · voz 273.66) OK
+  B2-1  -0.13 s  «cada parcela da soma»  (tela 276.87 · voz 277.00) OK
+  B2-1  -0.11 s  «essa é a propriedade»  (tela 281.73 · voz 281.84) OK
+  B2-1  -0.15 s  «se lê implica»  (tela 285.73 · voz 285.88) OK
+  B2-1  -0.17 s  «daí vem a propriedade»  (tela 287.07 · voz 287.24) OK
+  B2-1  -0.11 s  «a diferença gê menos»  (tela 295.87 · voz 295.98) OK
+  B2-1  -0.10 s  «então sua integral também»  (tela 299.00 · voz 299.10) OK
+  B2-1  -0.12 s  «essa integral é a»  (tela 302.60 · voz 302.72) OK
+  B2-1  -0.15 s  «reorganizando aparece a»  (tela 306.13 · voz 306.28) OK
+  B2-1  -0.09 s  «uma propriedade ajuda a»  (tela 309.07 · voz 309.16) OK
+  B2-2  -0.16 s  «compara com duas chapas»  (tela 321.86 · voz 322.02) OK
+  B2-2  -0.16 s  «massa seria quatro quilos»  (tela 325.40 · voz 325.56) OK
+  B2-2  -0.18 s  «com a maior doze»  (tela 327.06 · voz 327.24) OK
+  B2-2  -0.16 s  «então a massa verdadeira»  (tela 328.46 · voz 328.62) OK
+  B2-2  -0.19 s  «e o sete vírgula»  (tela 331.53 · voz 331.72) OK
+  B2-2  -0.16 s  «em geral se uma»  (tela 334.20 · voz 334.36) OK
+  B2-2  -0.17 s  «um valor eme minúsculo»  (tela 336.13 · voz 336.30) OK
+  B2-2  +0.03 s  «e um eme maiúsculo»  (tela 337.73 · voz 337.70) OK
+  B2-2  -0.17 s  «que chamamos de alfa»  (tela 342.93 · voz 343.10) OK
+  B2-2  -0.15 s  «se um programa calculasse»  (tela 346.93 · voz 347.08) OK
+  B2-2  -0.15 s  «já saberíamos que tem»  (tela 350.13 · voz 350.28) OK
+  B3-1  -0.12 s  «começa pela solda matemática»  (tela 357.46 · voz 357.58) OK
+  B3-1  -0.10 s  «uma curva sem espessura»  (tela 359.40 · voz 359.50) OK
+  B3-1  -0.16 s  «dá para cobri la»  (tela 364.26 · voz 364.42) OK
+  B3-1  -0.14 s  «existe um número eme»  (tela 371.20 · voz 371.34) OK
+  B3-1  -0.12 s  «a contribuição das células»  (tela 375.20 · voz 375.32) OK
+  B3-1  -0.13 s  «fica limitada por eme»  (tela 377.73 · voz 377.86) OK
+  B3-1  -0.13 s  «a altura pode ser»  (tela 380.73 · voz 380.86) OK
+  B3-1  -0.13 s  «essa é a quarta»  (tela 386.73 · voz 386.86) OK
+  B3-1  -0.16 s  «mas fica tão fino»  (tela 395.26 · voz 395.42) OK
+  B3-2  -0.18 s  «densidade de cem quilos»  (tela 398.26 · voz 398.44) OK
+  B3-2  -0.16 s  «o muro coral fica»  (tela 402.60 · voz 402.76) OK
+  B3-2  +0.01 s  «com sessenta e quatro»  (tela 404.93 · voz 404.92) OK
+  B3-2  -0.12 s  «chega a nove vírgula»  (tela 408.86 · voz 408.98) OK
+  B3-2  +0.10 s  «atenção é uma cota»  (tela 411.60 · voz 411.50) OK
+  B3-2  -0.13 s  «dobra a resolução»  (tela 415.33 · voz 415.46) OK
+  B3-2  -0.14 s  «depois dois vírgula três»  (tela 419.00 · voz 419.14) OK
+  B3-2  -0.17 s  «depois um vírgula dois»  (tela 421.13 · voz 421.30) OK
+  B3-2  -0.13 s  «e continuando seis décimos»  (tela 423.33 · voz 423.46) OK
+  B3-2  -0.13 s  «a altura continua cem»  (tela 426.33 · voz 426.46) OK
+  B3-2  -0.18 s  «refinando sempre a cota»  (tela 430.00 · voz 430.18) OK
+  B3-2  -0.18 s  «então a solda matemática»  (tela 434.26 · voz 434.44) OK
+  B3-2  -0.18 s  «e contar zero duas»  (tela 441.20 · voz 441.38) OK
+  B3-3  -0.07 s  «uma solda de verdade»  (tela 447.93 · voz 448.00) OK
+  B3-3  -0.16 s  «vamos representá lo como»  (tela 453.46 · voz 453.62) OK
+  B3-3  -0.10 s  «com seis quilos por»  (tela 456.60 · voz 456.70) OK
+  B3-3  -0.11 s  «a linha da solda»  (tela 458.73 · voz 458.84) OK
+  B3-3  -0.12 s  «com um centímetro de»  (tela 462.00 · voz 462.12) OK
+  B3-3  -0.11 s  «com um milímetro uns»  (tela 466.33 · voz 466.44) OK
+  B3-3  -0.12 s  «e conforme a largura»  (tela 469.00 · voz 469.12) OK
+  B3-3  -0.11 s  «uma massa realmente concentrada»  (tela 474.53 · voz 474.64) OK
+  B3-3  -0.14 s  «aí usamos uma densidade»  (tela 477.26 · voz 477.40) OK
+  B3-3  -0.14 s  «é uma descrição diferente»  (tela 482.20 · voz 482.34) OK
+  B4-1  -0.16 s  «qual densidade devemos colocar»  (tela 489.86 · voz 490.02) OK
+  B4-1  -0.18 s  «a do metal leve»  (tela 493.46 · voz 493.64) OK
+  B4-1  -0.13 s  «a do pesado três»  (tela 495.13 · voz 495.26) OK
+  B4-1  -0.15 s  «o meio termo dois»  (tela 496.73 · voz 496.88) OK
+  B4-1  -0.17 s  «ou aquele exagero de»  (tela 498.33 · voz 498.50) OK
+  B4-1  -0.14 s  «para a massa total»  (tela 500.06 · voz 500.20) OK
+  B4-1  -0.16 s  «se duas funções integráveis»  (tela 504.26 · voz 504.42) OK
+  B4-1  -0.13 s  «na fórmula aparece o»  (tela 510.53 · voz 510.66) OK
+  B4-1  -0.14 s  «se lê tais que»  (tela 519.06 · voz 519.20) OK
+  B4-1  -0.16 s  «se esse conjunto tem»  (tela 520.46 · voz 520.62) OK
+  B4-1  -0.17 s  «então podemos mudar a»  (tela 524.93 · voz 525.10) OK
+  B4-2  -0.18 s  «a diferença entre elas»  (tela 536.86 · voz 537.04) OK
+  B4-2  -0.17 s  «só contam as células»  (tela 541.93 · voz 542.10) OK
+  B4-2  -0.16 s  «pode ser tornada arbitrariamente»  (tela 545.46 · voz 545.62) OK
+  B4-2  -0.06 s  «a integral da diferença»  (tela 548.00 · voz 548.06) OK
+  B4-2  -0.18 s  «e pela propriedade da»  (tela 550.06 · voz 550.24) OK
+  B4-2  -0.14 s  «isso também resolve uma»  (tela 554.46 · voz 554.60) OK
+  B4-2  -0.20 s  «como um furo na»  (tela 559.46 · voz 559.66) OK
+  B4-2  -0.18 s  «podemos preenchê los com»  (tela 566.20 · voz 566.38) OK
+  B4-2  -0.14 s  «o valor da integral»  (tela 570.80 · voz 570.94) OK
+  B5-1  -0.18 s  «a chapa foi dividida»  (tela 577.72 · voz 577.90) OK
+  B5-1  -0.16 s  «que vamos chamar de»  (tela 580.92 · voz 581.08) OK
+  B5-1  -0.17 s  «o metal pesado b»  (tela 582.19 · voz 582.36) OK
+  B5-1  -0.18 s  «e a parte comum»  (tela 585.72 · voz 585.90) OK
+  B5-1  -0.16 s  «a integral sobre a»  (tela 587.92 · voz 588.08) OK
+  B5-1  -0.18 s  «o u normal é»  (tela 591.32 · voz 591.50) OK
+  B5-1  -0.16 s  «o u de cabeça»  (tela 594.72 · voz 594.88) OK
+  B5-1  -0.14 s  «lê se a integral»  (tela 598.46 · voz 598.60) OK
+  B5-1  -0.12 s  «a solda está na»  (tela 605.06 · voz 605.18) OK
+  B5-1  -0.18 s  «mas ela tem conteúdo»  (tela 609.52 · voz 609.70) OK
+  B5-1  -0.16 s  «por isso a balança»  (tela 612.92 · voz 613.08) OK
+  B5-1  -0.16 s  «sem arredondar o total»  (tela 615.32 · voz 615.48) OK
+  B5-2  -0.18 s  «conta essa parte duas»  (tela 623.12 · voz 623.30) OK
+  B5-2  -0.17 s  «a conta correta é»  (tela 624.99 · voz 625.16) OK
+  B5-2  -0.17 s  «é como contar os»  (tela 631.39 · voz 631.56) OK
+  B5-2  -0.15 s  «faz os dois pedaços»  (tela 637.99 · voz 638.14) OK
+  B5-2  -0.16 s  «numa faixa de vinte»  (tela 639.92 · voz 640.08) OK
+  B5-2  -0.17 s  «a chapa tem quatro»  (tela 642.39 · voz 642.56) OK
+  B5-2  -0.12 s  «a soma das áreas»  (tela 644.86 · voz 644.98) OK
+  B5-2  -0.14 s  «quando a interseção tem»  (tela 652.06 · voz 652.20) OK
+  B5-2  -0.20 s  «esse desconto vale zero»  (tela 654.06 · voz 654.26) OK
+  B5-2  -0.18 s  «e desaparece com área»  (tela 655.52 · voz 655.70) OK
+  B5-2  -0.18 s  «com área positiva precisamos»  (tela 656.52 · voz 656.70) OK
+  B5-3  -0.15 s  «a massa de uma»  (tela 662.73 · voz 662.88) OK
+  B5-3  -0.13 s  «sai das massas de»  (tela 664.39 · voz 664.52) OK
+  B5-3  -0.17 s  «uma região em formato»  (tela 667.79 · voz 667.96) OK
+  B5-3  -0.13 s  «uma chapa de materiais»  (tela 670.93 · voz 671.06) OK
+  B5-3  -0.17 s  «em vez de uma»  (tela 675.39 · voz 675.56) OK
+  B6-1  -0.15 s  «a massa é trinta»  (tela 691.19 · voz 691.34) OK
+  B6-1  -0.14 s  «e a área é»  (tela 693.52 · voz 693.66) OK
+  B6-1  -0.15 s  «dividindo a densidade média»  (tela 695.79 · voz 695.94) OK
+  B6-1  -0.16 s  «agora transforma a densidade»  (tela 702.72 · voz 702.88) OK
+  B6-1  -0.20 s  «se nivelarmos tudo»  (tela 710.52 · voz 710.72) OK
+  B6-1  -0.17 s  «olha a terraplanagem»  (tela 711.79 · voz 711.96) OK
+  B6-1  -0.18 s  «vai preencher o espaço»  (tela 714.52 · voz 714.70) OK
+  B6-1  -0.18 s  «o volume retirado e»  (tela 716.72 · voz 716.90) OK
+  B6-1  -0.18 s  «mas será que algum»  (tela 723.52 · voz 723.70) OK
+  B6-1  -0.20 s  «todos os pontos deste»  (tela 728.46 · voz 728.66) OK
+  B6-1  -0.19 s  «a um vírgula sessenta»  (tela 730.19 · voz 730.38) OK
+  B6-2  -0.17 s  «as hipóteses a região»  (tela 741.79 · voz 741.96) OK
+  B6-2  -0.11 s  «fechada quer dizer que»  (tela 746.59 · voz 746.70) OK
+  B6-2  -0.12 s  «limitada que cabe dentro»  (tela 749.46 · voz 749.58) OK
+  B6-2  -0.13 s  «dois pontos quaisquer da»  (tela 753.99 · voz 754.12) OK
+  B6-2  -0.16 s  «por um caminho contínuo»  (tela 756.66 · voz 756.82) OK
+  B6-2  -0.15 s  «e a função é contínua»  (tela 758.93 · voz 759.08) OK
+  B6-2  -0.13 s  «com essas condições existe»  (tela 760.39 · voz 760.52) OK
+  B6-2  -0.16 s  «existe pelo menos um»  (tela 761.46 · voz 761.62) OK
+  B6-2  -0.12 s  «érre ésse da região»  (tela 763.26 · voz 763.38) OK
+  B6-2  -0.11 s  «na fórmula a integral»  (tela 766.73 · voz 766.84) OK
+  B6-2  -0.17 s  «sendo alfa a área»  (tela 771.99 · voz 772.16) OK
+  B6-2  -0.04 s  «em outras palavras desde»  (tela 773.66 · voz 773.70) OK
+  B6-3  -0.16 s  «ela atinge um mínimo»  (tela 786.12 · voz 786.28) OK
+  B6-3  -0.18 s  «o mínimo é zero»  (tela 789.46 · voz 789.64) OK
+  B6-3  -0.16 s  «e o máximo é»  (tela 791.12 · voz 791.28) OK
+  B6-3  -0.15 s  «pela comparação a integral»  (tela 793.39 · voz 793.54) OK
+  B6-3  -0.13 s  «dividindo pela área a»  (tela 798.59 · voz 798.72) OK
+  B6-3  -0.17 s  «agora escolhe um caminho»  (tela 802.39 · voz 802.56) OK
+  B6-3  -0.14 s  «pelo teorema do valor»  (tela 810.86 · voz 811.00) OK
+  B6-3  -0.18 s  «em algum lugar desse»  (tela 819.26 · voz 819.44) OK
+  B6-3  -0.16 s  «e se a região»  (tela 823.46 · voz 823.62) OK
+  B6-4  -0.17 s  «volta à chapa de»  (tela 834.99 · voz 835.16) OK
+  B6-4  -0.20 s  «só assume dois valores»  (tela 842.46 · voz 842.66) OK
+  B6-4  -0.16 s  «nenhum ponto tem densidade»  (tela 845.32 · voz 845.48) OK
+  B6-4  -0.16 s  «a função salta de»  (tela 848.46 · voz 848.62) OK
+  B6-4  -0.20 s  «passando por cima da»  (tela 850.66 · voz 850.86) OK
+  B6-4  -0.10 s  «outro exemplo dois quadrados»  (tela 852.46 · voz 852.56) OK
+  B6-4  -0.17 s  «a função é contínua na»  (tela 857.99 · voz 858.16) OK
+  B6-4  -0.18 s  «mas não existe caminho»  (tela 860.86 · voz 861.04) OK
+  B6-4  -0.20 s  «a média é dois»  (tela 864.06 · voz 864.26) OK
+  B6-4  -0.22 s  «dá para colocar um»  (tela 871.72 · voz 871.94) OK
+  B6-4  -0.20 s  «exatamente sobre a solda»  (tela 874.06 · voz 874.26) OK
+  B6-4  -0.19 s  «aí a média aparece»  (tela 877.19 · voz 877.38) OK
+  B6-4  -0.16 s  «então continuidade e caminho»  (tela 880.46 · voz 880.62) OK
+  B6-4  -0.18 s  «sem essas hipóteses a»  (tela 886.46 · voz 886.64) OK
+  B6-5  -0.16 s  «a temperatura média de»  (tela 893.92 · voz 894.08) OK
+  B6-5  -0.13 s  «a altura média de»  (tela 896.39 · voz 896.52) OK
+  B6-5  -0.11 s  «a altura de uma»  (tela 899.39 · voz 899.50) OK
+  B6-5  -0.13 s  «o brilho médio de»  (tela 903.05 · voz 903.18) OK
+  B6-5  -0.17 s  «a integral dupla dá»  (tela 905.85 · voz 906.02) OK
+  B6-5  -0.16 s  «e o teorema acrescenta»  (tela 910.52 · voz 910.68) OK
+  B6-5  -0.12 s  «algum lugar assume exatamente»  (tela 916.12 · voz 916.24) OK
+  B7-1  -0.16 s  «considera a função xis»  (tela 923.72 · voz 923.88) OK
+  B7-1  -0.12 s  «na origem a fórmula»  (tela 929.32 · voz 929.44) OK
+  B7-1  -0.12 s  «e o limite na»  (tela 934.46 · voz 934.58) OK
+  B7-1  -0.14 s  «pelo eixo horizontal o»  (tela 936.46 · voz 936.60) OK
+  B7-1  -0.14 s  «pelo vertical zero»  (tela 938.52 · voz 938.66) OK
+  B7-1  -0.12 s  «e um ponto tem»  (tela 942.12 · voz 942.24) OK
+  B7-1  -0.14 s  «fora dele a função»  (tela 944.12 · voz 944.26) OK
+  B7-1  -0.05 s  «fica entre zero e»  (tela 946.39 · voz 946.44) OK
+  B7-1  -0.12 s  «então podemos preencher o»  (tela 947.86 · voz 947.98) OK
+  B7-1  -0.14 s  «não depende do valor»  (tela 953.72 · voz 953.86) OK
+  B7-2  -0.11 s  «cria uma segunda função»  (tela 960.79 · voz 960.90) OK
+  B7-2  -0.15 s  «somando as duas fora»  (tela 965.19 · voz 965.34) OK
+  B7-2  -0.02 s  «o numerador fica igual»  (tela 967.32 · voz 967.34) OK
+  B7-2  -0.16 s  «resultado um»  (tela 969.52 · voz 969.68) OK
+  B7-2  -0.10 s  «exceto talvez naquele ponto»  (tela 974.46 · voz 974.56) OK
+  B7-2  -0.16 s  «pela propriedade da soma»  (tela 977.46 · voz 977.62) OK
+  B7-2  -0.12 s  «valem a integral de»  (tela 980.46 · voz 980.58) OK
+  B7-2  -0.14 s  «que é a área»  (tela 982.66 · voz 982.80) OK
+  B7-2  -0.03 s  «agora a simetria espelhando»  (tela 984.19 · voz 984.22) OK
+  B7-2  -0.10 s  «se as duas integrais»  (tela 992.66 · voz 992.76) OK
+  B7-2  -0.16 s  «cada uma vale pi»  (tela 995.26 · voz 995.42) OK
+  B7-2  -0.14 s  «soma conteúdo nulo e»  (tela 997.52 · voz 997.66) OK
+  S1    -0.13 s  «por isso podemos somar»  (tela 1005.45 · voz 1005.58) OK
+  S1    -0.14 s  «um conjunto de conteúdo»  (tela 1010.52 · voz 1010.66) OK
+  S1    -0.18 s  «dividir a região funciona»  (tela 1018.12 · voz 1018.30) OK
+  S1    -0.17 s  «e o teorema do»  (tela 1022.85 · voz 1023.02) OK
+  S1    -0.16 s  «as três perguntas da»  (tela 1029.72 · voz 1029.88) OK
+  S1    -0.19 s  «a solda matemática não»  (tela 1031.45 · voz 1031.64) OK
+  S1    -0.17 s  «o valor limitado que»  (tela 1034.05 · voz 1034.22) OK
+  S1    -0.12 s  «e para garantir um»  (tela 1037.32 · voz 1037.44) OK
+  S2    -0.14 s  «grades cada vez mais»  (tela 1048.12 · voz 1048.26) OK
+  S2    -0.14 s  «dá para achar a»  (tela 1058.72 · voz 1058.86) OK
+  S2    -0.13 s  «numa conta no papel»  (tela 1061.59 · voz 1061.72) OK
+  S2    -0.19 s  «a ideia é fatiar»  (tela 1065.45 · voz 1065.64) OK
+  S2    -0.14 s  «duas integrais simples trabalhando»  (tela 1072.52 · voz 1072.66) OK
+  S2    -0.19 s  «é isso que vamos»  (tela 1075.05 · voz 1075.24) OK
+  S2    -0.15 s  «e conta nos comentários»  (tela 1083.65 · voz 1083.80) OK
+
+resumo: 26 âncoras, 265 gatilhos; atraso de -0.22 a +0.21 s; fora da meta (> +0,2 s): 1
+  gatilho B1-4 «a contribuição troca de»: +0.21 s

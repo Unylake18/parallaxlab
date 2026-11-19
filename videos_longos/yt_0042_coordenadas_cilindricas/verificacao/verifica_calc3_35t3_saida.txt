@@ -1,0 +1,59 @@
+H1a    primitiva em z de sqrt(x²+y²+z²) = z·raiz/2 + (x²+y²)/2·ln(z+raiz)         True
+H1b    1/sen φ = 1/cos φ em φ = π/4 (a quina)                                     True
+B2a    célula do eixo = π/96 ≈ 0,033                                              True
+B2b    célula da parede = π/32 = 3π/96 ≈ 0,098                                    True
+B2c    razão parede/eixo = 3                                                      True
+B2d    s̄ Δs Δθ Δz com s̄ = 1/4 dá o exato (eixo)                                 True
+B2e    s̄ Δs Δθ Δz com s̄ = 3/4 dá o exato (parede)                               True
+B2f    ∫_a^b s ds = s̄(b − a) com s̄ = (a+b)/2 (por que o ≈ acerta)               True
+B1a    x² + y² = s²                                                               True
+B1b    x² + y² + z² = s² + z² (r² = s² + z²)                                      True
+B1c    x = 2 cos(π/3) = 1                                                         True
+B1d    y = 2 sen(π/3) = √3                                                        True
+B1e    x² + y² = 1 + 3 = 4 = 2²                                                   True
+B1f    r = √(4 + 9/4) = √(25/4) = 5/2                                             True
+B2g    matriz: [[cos θ, −s sen θ, 0], [sen θ, s cos θ, 0], [0, 0, 1]]             True
+B2h    Laplace na linha de baixo: 0·M31 − 0·M32 + 1·M33 = M33                     True
+B2i    M33 = cos θ·s cos θ − (−s sen θ)·sen θ = s cos²θ + s sen²θ                 True
+B2j    det = s (≥ 0, então |det| = s)                                             True
+B2k    [z]_0^h = h; [s²/2]_0^R = R²/2; [θ]_0^{2π} = 2π                            True
+B2l    V = πR²h (base × altura)                                                   True
+B2m    sem o s: h·R·2π = 2πRh (área do rótulo, unidade m²)                        True
+B4a    x² + y² − 2x ≤ 0 ⇔ (x−1)² + y² ≤ 1 (completa o quadrado: soma 1 dos dois lados) True
+B4b    polo deslocado x = 1 + s cos θ: o jacobiano continua s                     True
+B4c    teto: x + y = 1 + s cos θ + s sen θ                                        True
+B4d    [s z]_0^{teto} = s + s² cos θ + s² sen θ                                   True
+B4e    ∫_0^1 ... ds = 1/2 + (1/3)cos θ + (1/3)sen θ                               True
+B4f    primitiva θ/2 + (1/3)sen θ − (1/3)cos θ                                    True
+B4g    G(π) = π/2 + 0 + 1/3; G(0) = 0 + 0 − 1/3                                   True
+B4h    V = π/2 + 2/3 ≈ 2,24                                                       True
+B4i    desafio: polo na origem (s ≤ 2cos θ, θ ∈ [0, π/2]) dá o mesmo π/2 + 2/3    True
+B4j    (o livro imprime π/2 + 3/2 na Observação: é erro de digitação)             True
+B4k    cartesianas no computador: 2.23746 ≈ π/2 + 2/3                             True
+B5a    u = s² + z², du = 2s ds ⇒ s ds = du/2; s=0→u=z², s=1→u=1+z²                True
+B5b    (1/2)·(2/3)[u^{3/2}] = (1/3)[(1+z²)^{3/2} − (z²)^{3/2}]                    True
+B5c    (z²)^{3/2} = z³ porque z ≥ 0                                               True
+B5d    se integrar z primeiro: ∫√(s²+z²) dz tem logaritmo (asinh) → TRAVA         True
+B5e    ∫_0^1 (1/3) z³ dz = (1/3)[z⁴/4]_0^1 = 1/12                                 True
+B5f    I = ∫_0^1 (1+z²)^{3/2} dz = 7√2/8 + (3/8) ln(1+√2) ≈ 1,568                 True
+B5g    z = tg t: 1 + tg²t = sec²t; dz = sec²t dt                                  True
+B5h    limites: z = 0 → t = 0; z = 1 → t = π/4                                    True
+B5i    (sec²t)^{3/2}·sec²t = sec⁵t (sec > 0 em [0, π/4]); ∫_0^{π/4} sec⁵ = I      True
+B5j5   recorrência n = 5: d/dt[sec^3 tg/4] + 3/4·sec^3 = sec^5                    True
+B5j3   recorrência n = 3: d/dt[sec^1 tg/2] + 1/2·sec^1 = sec^3                    True
+B5k    ∫sec = ln|sec + tg| (derivando)                                            True
+B5l    em π/4: sec = √2, tg = 1; em 0: sec = 1, tg = 0                            True
+B5m    [sec³ tg / 4]_0^{π/4} = 2√2/4 − 0 = √2/2                                   True
+B5n    ∫_0^{π/4} sec³ = [sec tg/2 + ln(sec+tg)/2] = √2/2 + (1/2)ln(1+√2) − 0      True
+B5o    I = √2/2 + (3/4)(√2/2 + (1/2)ln(1+√2)) = √2/2 + 3√2/8 + (3/8)ln(1+√2)      True
+B5p    √2/2 + 3√2/8 = 4√2/8 + 3√2/8 = 7√2/8                                       True
+B5q    (1/3)I − 1/12 = 7√2/24 + (1/8)ln(1+√2) − 1/12 ≈ 0,439                      True
+B5r    M = 2π[...] = 7√2π/12 + (π/4)ln(1+√2) − π/6                                True
+B5s    M = (π/12)(7√2 − 2 + 3 ln(1+√2)) ≈ 2,76                                    True
+B5t    cartesianas no computador: 2.76031 ≈ 2,7603                                True
+B5u    densidade média M/V = M/π ≈ 0,88 (bola do EP. 16: 3/4)                     True
+B5v    a quina mais longe da origem: r = √(1 + 1) = √2 ≈ 1,41                     True
+   7√2 = 9.8995; 3 ln(1+√2) = 2.6441; soma − 2 = 10.5436; × π/12 = 2.7603
+S2a    (reserva) I_z da lata homogênea = kπ/2 = M·1²/2 (não mostrado)             True
+
+TOTAL: 56/56 True

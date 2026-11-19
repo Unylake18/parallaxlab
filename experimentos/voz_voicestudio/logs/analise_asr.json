@@ -1,0 +1,128 @@
+{
+ "A_elevenlabs": {
+  "texto": "Primeiro, alguém escolhe uma tolerância na chegada, um disquinho de raio epsilon em volta da ponta do alvo. É como se dissesse, quero todas as respostas aqui dentro. Qualquer epsilon pode ser escolhido, por isso a definição começa com para todo epsilon. Depois é a sua vez, você responde com um disquinho de raio delta em volta do ponto. E olha o que acontece do outro lado. Cada ponto do seu disco manda a ponta da seta para algum lugar, e todas essas pontas juntas formam uma mancha. A pergunta é uma só. A mancha cabe no disco Y? Com Δ igual a 0,7, não cabe. Um monte de pontas escapa. Diminui o Δ e a mancha encolhe junto. Em 0,41, ela fica inteira por dentro. Achou! É isso que existe delta quer dizer. Se o desafio aperta para meio, você aperta para 0,21. Para um quarto, 0,10. O delta depende do epsilon, e o limite existe quando você sempre consegue responder. E tem um detalhe no seu disco. O próprio ponto fica de fora. É o maior que zero da definição.",
+  "wer_aprox": 0.114,
+  "termos": {
+   "épsilon": true,
+   "delta": true,
+   "zero vírgula sete": true,
+   "zero vírgula quatro um": true,
+   "zero vírgula dois um": true,
+   "zero vírgula um zero": true
+  },
+  "palavras_ts": 182
+ },
+ "A_omnivoice": {
+  "texto": "Primeiro, alguém escolhe uma tolerância na chegada, um disquinho de raio epsilon em volta da ponta do alvo. É como se dissesse, quero todas as respostas aqui dentro. Qualquer epsilon pode ser escolhido. Por isso, a definição começa com para todo epsilon. Depois é a sua vez. Você responde com um disquinho de raio delta em volta do ponto. E olha o que acontece do outro lado. Cada ponto do seu disco manda a ponta da seta para algum lugar e todas essas pontas juntas formam uma mancha. A pergunta é uma só. A mancha cabe no disco epsilon? Com delta igual a 0,7? Não cabe. Um monte de pontas escapa. Diminui o tau e a mancha encolhe junto. Em 0,41, ela fica inteira por dentro. Achou isso que existe delta, quer dizer. Se o desafio aperta para meio, você aperta para 0,21. Para um quarto, 0,10. O delta depende do epsilon, e o limite existe quando você sempre consegue responder. E tem um detalhe no seu disco. O próprio ponto fica de fora. É o maior que zero da definição.",
+  "wer_aprox": 0.114,
+  "termos": {
+   "épsilon": true,
+   "delta": true,
+   "zero vírgula sete": true,
+   "zero vírgula quatro um": true,
+   "zero vírgula dois um": true,
+   "zero vírgula um zero": true
+  },
+  "palavras_ts": 181
+ },
+ "A_omnivoice_clone": {
+  "texto": "Primeiro, alguém escolhe uma tolerância na chegada. Um disquinho de raio, epsilon, em volta da ponta do alvo. É como se dissesse, quero todas as respostas aqui dentro. Qualquer epsilon pode ser escolhido. Por isso, a definição começa com para todo epsilon. Depois é a sua vez. Você responde com um disquinho de raio, delta E, em volta do ponto. E olha o que acontece do outro lado. Cada ponto do seu disco manda a ponta da seta para algum lugar. E todas essas pontas juntas formam uma vancha. A pergunta é uma só. A mancha cabe no disco epsilon? Com delta igual a 0,7? Não cabe. Um monte de pontas escapa. Diminui o delta e a mancha encolhe junto. Em 0,41 ela fica inteira por dentro. Achou. É isso que existe delta quer dizer. Se o desafio aperta para meio, você aperta para 0,21. Para um quarto, 0,10. O delta depende do epsilon e o limite existe quando você sempre consegue responder. E tem um detalhe no seu disco. O próprio ponto fica de fora. É o maior que zero da definição.",
+  "wer_aprox": 0.114,
+  "termos": {
+   "épsilon": true,
+   "delta": true,
+   "zero vírgula sete": true,
+   "zero vírgula quatro um": true,
+   "zero vírgula dois um": true,
+   "zero vírgula um zero": true
+  },
+  "palavras_ts": 183
+ },
+ "A_voxcpm2": {
+  "texto": "Primeiro, alguém escolhe uma tolerância na chegada, um disquinho de raio epsilon em volta da ponta do alvo. É como se dissesse, quero todas as respostas aqui dentro. Qualquer epsilon pode ser escolhido, por isso a definição começa com para todo o epsilon. Depois é a sua vez. Você responde com um disquinho de raio delta em volta do ponto. E olha o que acontece do outro lado. Cada ponto do seu disco manda a ponta da seta para algum lugar. E todas essas pontas juntas formam uma mancha. A pergunta é uma só. A mancha cabe no disco epsilon? Com delta igual a 0,7? Não cabe. Um monte de pontas escapa. Diminui o delta e a mancha encolhe junto. Em 0,41 ela fica inteira por dentro. Achou? É isso que existe delta? Quer dizer... Se o desafio aperta para meio, você aperta para 0,21. Para um quarto, 0,10. O delta depende do epsilon. E o limite existe quando você sempre consegue responder. E tem um detalhe no seu disco. O próprio ponto fica de fora. É o maior que zero da definição.",
+  "wer_aprox": 0.109,
+  "termos": {
+   "épsilon": true,
+   "delta": true,
+   "zero vírgula sete": true,
+   "zero vírgula quatro um": true,
+   "zero vírgula dois um": true,
+   "zero vírgula um zero": true
+  },
+  "palavras_ts": 183
+ },
+ "A_voxcpm2_clone": {
+  "texto": "Primeiro, alguém escolhe uma tolerância na chegada. Um disquinho de raio epsilon em volta da ponta do alvo. É como se dissesse, quero todas as respostas aqui dentro. Qualquer epsilon pode ser escolhido, por isso a definição começa com para todo epsilon. Depois é a sua vez. Você responde com um disquinho de raio delta em volta do ponto. E olha o que acontece do outro lado. Cada ponto do seu disco manda a ponta da seta para algum lugar. E todas essas pontas juntas formam uma mancha. A pergunta é uma só. A mancha cabe no disco epsilon? Com delta igual a 0,7, não cabe. Um monte de pontas escapa. Diminui o delta e a mancha encolhe junto. Em 0,41 ela fica inteira por dentro. Achou. É isso que existe delta, quer dizer. Se o desafio aperta para meio, você aperta para 0,21. Para um quarto, 0,10. O delta depende do epsilon. E o limite existe quando você sempre consegue responder. E tem um detalhe no seu disco. O próprio ponto fica de fora. É o maior que zero da definição.",
+  "wer_aprox": 0.104,
+  "termos": {
+   "épsilon": true,
+   "delta": true,
+   "zero vírgula sete": true,
+   "zero vírgula quatro um": true,
+   "zero vírgula dois um": true,
+   "zero vírgula um zero": true
+  },
+  "palavras_ts": 182
+ },
+ "A_voxcpm2_clone_multi": {
+  "texto": "Primeiro alguém escolhe uma tolerância na chegada, um disquinho de raio epsilon em volta da ponta do alvo. É como se dissesse, quero todas as respostas aqui dentro. Qualquer epsilon pode ser escolhido, por isso a definição começa com para todo epsilon. Depois é a sua vez, você responde com um disquinho de raio delta em volta do ponto. E olha o que acontece do outro lado. Cada ponto do seu disco manda a ponta da seta para algum lugar, e todas essas pontas juntas formam uma mancha. A pergunta é uma só. A mancha cabe no disco epsilon? Com um delta igual a 0,7, não cabe. Um monte de pontas escapa. Diminui o delta, e a mancha encolhe junto. Em 0,41, ela fica inteira por dentro. Achou! É isso que existe delta, quer dizer. Se o desafio aperta pra meio, você aperta pra 0,21. Pra um quarto, 0,10. O delta depende do epsilon. E o limite existe quando você sempre consegue responder. E tem um detalhe no seu disco. O próprio ponto fica de fora. É o maior que zero da definição.",
+  "wer_aprox": 0.124,
+  "termos": {
+   "épsilon": true,
+   "delta": true,
+   "zero vírgula sete": true,
+   "zero vírgula quatro um": true,
+   "zero vírgula dois um": true,
+   "zero vírgula um zero": true
+  },
+  "palavras_ts": 183
+ },
+ "B_omnivoice": {
+  "texto": "Em coordenadas polares, a componente horizontal vira o seno do dobro do ângulo θ. A componente horizontal é o próprio x e a vertical é menos y. Essa é a condição de classe C1. As derivadas parciais existem e são contínuas. E, se o raio r dobra, a área do disco fica 4 vezes maior.",
+  "wer_aprox": 0.071,
+  "termos": {
+   "téta": false,
+   "x": true,
+   "y": true,
+   "C um": true,
+   "R": true
+  },
+  "palavras_ts": 55
+ },
+ "B_omnivoice_clone": {
+  "texto": "Em coordenadas polares, a componente horizontal vira o seno do dobro do ângulo θ. A componente horizontal é o próprio x e a vertical é menos y. Essa é a condição de classe C1. As derivadas parsis existem e são contínuas. E se o raio r dobra, a área do disco fica 4 vezes maior.",
+  "wer_aprox": 0.089,
+  "termos": {
+   "téta": false,
+   "x": true,
+   "y": true,
+   "C um": true,
+   "R": true
+  },
+  "palavras_ts": 55
+ },
+ "B_voxcpm2": {
+  "texto": "Em coordenadas polares, a componente horizontal vira o seno do dobro do ângulo θ. A componente horizontal é o próprio x e a vertical é menos y. Essa é a condição de classe C1. As derivadas parciais existem e são contínuas. E se o raio r dobra, a área do disco fica quatro vezes maior.",
+  "wer_aprox": 0.054,
+  "termos": {
+   "téta": false,
+   "x": true,
+   "y": true,
+   "C um": true,
+   "R": true
+  },
+  "palavras_ts": 55
+ },
+ "B_voxcpm2_clone": {
+  "texto": "Em coordenadas polares, a componente horizontal vira o seno do dobro do ângulo θ. A componente horizontal é o próprio x, e a vertical é menos y. Essa é a condição de classe C1. As derivadas parciais existem e são contínuas. E se o raio r dobra, a área do disco fica 4 vezes maior.",
+  "wer_aprox": 0.071,
+  "termos": {
+   "téta": false,
+   "x": true,
+   "y": true,
+   "C um": true,
+   "R": true
+  },
+  "palavras_ts": 55
+ }
+}

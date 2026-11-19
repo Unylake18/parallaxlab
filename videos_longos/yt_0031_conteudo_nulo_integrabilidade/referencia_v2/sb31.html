@@ -1,0 +1,506 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="katex/katex.min.css">
+<script src="katex/katex.min.js"></script>
+<script src="r3d_pts.js"></script>
+<style>
+@font-face{font-family:SG;src:url(SpaceGrotesk-Bold.ttf)}
+@font-face{font-family:SGM;src:url(SpaceGrotesk-Medium.ttf)}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#131030}
+canvas{position:absolute;left:0;top:0}
+.f{position:absolute;color:#F5F7FF;white-space:nowrap;line-height:1}
+.f .katex{font-size:1em}
+.pl{position:absolute;background:rgba(19,16,48,.88);border-radius:6px}
+</style></head><body><canvas id="o" width="1920" height="1080"></canvas>
+<script>
+// Quadros-alvo v2 do yt_0031 (v2 mexe só em b32, b43, b62, b91) (Cálculo III · EP. 06 · conteúdo nulo e integrabilidade). ?k=<chave>
+// Mesmo sistema do sb29 (EP. 05): fundo violeta #18143A → #0F0C26 + grade #2B2558 a cada 0,25 m da chapa (60 px), alinhada ao canto (0,0) em (360,780);
+// layout A (palco + coluna em x = 1120), chapa R = [0,2]² com 1 m = 240 px; placa mínima; cor por grandeza; operadores brancos.
+// As cenas 3D vêm de c3d31.html (r3d_<k>.png e r3d_pts.js).
+const K=new URLSearchParams(location.search).get('k'), x=document.getElementById('o').getContext('2d'), PI=Math.PI;
+const CI='#35D9FF', AZC='#7FB2FF', CORAL='#FF7A8A', POS='#E08A3C', E1='#FFC24D', E2='#EA63FF', GEO='#B8C4DA', BR='#F5F7FF',
+ AL='#FF5D5D', MEN='#8CFFD2', BG='#131030', LEVE='#1E5072', PESADO='#30BBE0';
+const M={'\\X':'\\textcolor{#FFC24D}{x}','\\Y':'\\textcolor{#EA63FF}{y}','\\f':'\\textcolor{#35D9FF}{f}','\\rr':'\\textcolor{#35D9FF}{\\rho}',
+ '\\Xij':'\\textcolor{#E08A3C}{X_{ij}}','\\dxi':'\\textcolor{#FFC24D}{\\Delta x_i}','\\dyj':'\\textcolor{#EA63FF}{\\Delta y_j}',
+ '\\Ci':'\\textcolor{#35D9FF}','\\Az':'\\textcolor{#7FB2FF}','\\Co':'\\textcolor{#FF7A8A}','\\Me':'\\textcolor{#8CFFD2}','\\Lr':'\\textcolor{#E08A3C}','\\Al':'\\textcolor{#FF5D5D}',
+ '\\eps':'\\textcolor{#8CFFD2}{\\varepsilon}','\\del':'\\textcolor{#E08A3C}{\\delta}','\\Rij':'R_{ij}',
+ '\\mij':'\\textcolor{#7FB2FF}{m_{ij}}','\\Mij':'\\textcolor{#FF7A8A}{M_{ij}}','\\sP':'\\textcolor{#7FB2FF}{s(P)}','\\SP':'\\textcolor{#FF7A8A}{S(P)}',
+ '\\XX':'\\textcolor{#E08A3C}{X}','\\YY':'\\textcolor{#E08A3C}{Y}','\\dX':'\\textcolor{#FFC24D}{dx}','\\dY':'\\textcolor{#EA63FF}{dy}'};
+let O=[960,540],U=100; const P=(a,b)=>[O[0]+a*U,O[1]-b*U]; const vista=(cx,cy,u)=>{O=[cx,cy];U=u;};
+const img=s=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=s;});
+function mix(a,b,t){const h=s=>[1,3,5].map(i=>parseInt(s.slice(i,i+2),16));const A=h(a),B=h(b);return 'rgb('+A.map((v,i)=>Math.round(v+(B[i]-v)*t)).join(',')+')';}
+function tex(s,X,Y,size=48,al='l',placa=false){const d=document.createElement('div');d.className='f';d.style.fontSize=size+'px';
+ katex.render(s,d,{macros:M,throwOnError:false});document.body.appendChild(d);const w=d.offsetWidth,h=d.offsetHeight;
+ const L=(al==='c'?X-w/2:al==='r'?X-w:X),T=(Y-h/2);d.style.left=L+'px';d.style.top=T+'px';
+ if(placa){const p=document.createElement('div');p.className='pl';p.style.left=(L-6)+'px';p.style.top=(T-4)+'px';p.style.width=(w+12)+'px';p.style.height=(h+8)+'px';document.body.insertBefore(p,d);}return d;}
+function txt(s,X,Y,{size=30,f='SG',cor=BR,al='left',alpha=1,placa=false}={}){x.font=`${size}px ${f}`;if(placa){const w=x.measureText(s).width,L=al==='center'?X-w/2:al==='right'?X-w:X;x.fillStyle='rgba(19,16,48,.88)';x.beginPath();x.roundRect(L-8,Y-size*.82,w+16,size*1.05,6);x.fill();}
+ x.globalAlpha=alpha;x.textAlign=al;x.fillStyle=cor;x.fillText(s,X,Y);x.textAlign='left';x.globalAlpha=1;}
+function leg(s,X,Y,cor=GEO,al='left',size=28){txt(s,X,Y,{size,f:'SGM',cor,al});}
+function caminho(pts){x.beginPath();pts.forEach((p,i)=>{const q=P(...p);i?x.lineTo(...q):x.moveTo(...q)});}
+function linha(pts,cor,w,{dash=null,alpha=1}={}){x.lineCap='round';x.lineJoin='round';x.setLineDash(dash||[]);caminho(pts);x.globalAlpha=alpha;x.strokeStyle=cor;x.lineWidth=w;x.stroke();x.globalAlpha=1;x.setLineDash([]);}
+function preenche(pts,cor){caminho(pts);x.closePath();x.fillStyle=cor;x.fill();}
+function ret(a,b,c,d,fill,stroke=null,w=2,dash=null){const A=P(a,d),B=P(b,c);if(fill){x.fillStyle=fill;x.fillRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);}
+ if(stroke){x.setLineDash(dash||[]);x.strokeStyle=stroke;x.lineWidth=w;x.strokeRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);x.setLineDash([]);}}
+function seta(a,b,cor,w=5,head=20){const A=P(...a),B=P(...b),dx=B[0]-A[0],dy=B[1]-A[1],L=Math.hypot(dx,dy);if(L<3)return;
+ const ux=dx/L,uy=dy/L,h=Math.min(head,.45*L),hw=h*.5,bx=B[0]-ux*h,by=B[1]-uy*h;
+ x.lineCap='round';x.beginPath();x.moveTo(...A);x.lineTo(bx+ux,by+uy);x.strokeStyle=cor;x.lineWidth=w;x.stroke();
+ x.beginPath();x.moveTo(...B);x.lineTo(bx-uy*hw,by+ux*hw);x.lineTo(bx+uy*hw,by-ux*hw);x.closePath();x.fillStyle=cor;x.fill();}
+function ponto(p,cor,r=9){const q=P(...p);x.beginPath();x.arc(...q,r,0,7);x.fillStyle=cor;x.fill();}
+function canto(s){txt('CÁLCULO III · INTEGRAL DUPLA',36,73,{size:22,f:'SGM',cor:'#C8D6F0',alpha:.6});if(s)txt(s,36,118,{size:36});}
+async function logo(){const lg=await img('logo_crop.png');if(lg)x.drawImage(lg,1650,24);}
+function painel(X0,Y0,w,h){x.strokeStyle='rgba(184,196,218,.35)';x.lineWidth=2;x.beginPath();x.roundRect(X0,Y0,w,h,14);x.stroke();}
+function check(X,Y,cor=MEN,s=1){x.strokeStyle=cor;x.lineWidth=6*s;x.lineCap='round';x.beginPath();x.moveTo(X-14*s,Y);x.lineTo(X-3*s,Y+11*s);x.lineTo(X+16*s,Y-13*s);x.stroke();}
+function cruz(X,Y,cor=AL,s=1){x.strokeStyle=cor;x.lineWidth=6*s;x.lineCap='round';x.beginPath();x.moveTo(X-12*s,Y-12*s);x.lineTo(X+12*s,Y+12*s);x.moveTo(X+12*s,Y-12*s);x.lineTo(X-12*s,Y+12*s);x.stroke();}
+function fundoV(grade=true){const g=x.createLinearGradient(0,0,0,1080);g.addColorStop(0,'#18143A');g.addColorStop(1,'#0F0C26');x.fillStyle=g;x.fillRect(0,0,1920,1080);
+ if(grade){x.strokeStyle='#2B2558';x.lineWidth=1.2;for(let X=0;X<=1920;X+=60){x.beginPath();x.moveTo(X+.5,0);x.lineTo(X+.5,1080);x.stroke();}for(let Y=0;Y<=1080;Y+=60){x.beginPath();x.moveTo(0,Y+.5);x.lineTo(1920,Y+.5);x.stroke();}}}
+const P3=(k,n)=>(window.R3D&&R3D[k]&&R3D[k][n])||[0,0];
+async function cena3d(k,{dx=0,dy=0,esc=1}={}){const im=await img('r3d_'+k+'.png');if(!im)return;x.drawImage(im,dx,dy,1920*esc,1080*esc);}
+const Q3=(k,n,{dx=0,dy=0,esc=1}={})=>{const p=P3(k,n);return [dx+p[0]*esc,dy+p[1]*esc];};
+// ---------- chapa ----------
+const f=(X,Y)=>X*X+Y*Y;
+const CH=()=>vista(360,780,240);
+function corDens(v){return mix('#10243A',CI,Math.pow(Math.min(1,v/8),.85));}
+function mapaDens(n=64){const h=2/n;for(let i=0;i<n;i++)for(let j=0;j<n;j++){const A=P(i*h,(j+1)*h),B=P((i+1)*h,j*h);x.fillStyle=corDens(f((i+.5)*h,(j+.5)*h));x.fillRect(A[0],A[1],B[0]-A[0]+.6,B[1]-A[1]+.6);}}
+function borda(cor=GEO,w=3){linha([[0,0],[2,0],[2,2],[0,2],[0,0]],cor,w);}
+function eixosChapa(){seta([-.1,0],[2.3,0],E1,3,16);seta([0,-.1],[0,2.3],E2,3,16);tex('\\X',...P(2.4,0),32,'c');tex('\\Y',...P(0,2.42),32,'c');}
+function grade(xs,ys,cor=GEO,w=2,dash=[7,7]){for(const a of xs)linha([[a,0],[a,2]],cor,w,{dash});for(const b of ys)linha([[0,b],[2,b]],cor,w,{dash});}
+const uni=n=>Array.from({length:n+1},(_,i)=>2*i/n);
+// ---------- solda e dois metais ----------
+const g=a=>1+.42*Math.sin(1.7*a-.4);
+function faixa(a,b,am=60){let mn=9,mx=-9;for(let s=0;s<=am;s++){const v=g(a+(b-a)*s/am);mn=Math.min(mn,v);mx=Math.max(mx,v);}return [mn,mx];}
+function metais(n,{verm=true,alphaV=.6,linhasGrade=true}={}){const h=2/n;for(let i=0;i<n;i++){const a=i*h,b=a+h,[mn,mx]=faixa(a,b);for(let j=0;j<n;j++){const c=j*h,d=c+h,leve=c<=mx,pes=d>mn;
+  const A=P(a,d),B=P(b,c);x.fillStyle=(verm&&leve&&pes)?mix(BG,AL,alphaV):((c+d)/2>g((a+b)/2)?PESADO:LEVE);x.fillRect(A[0],A[1],B[0]-A[0]+.6,B[1]-A[1]+.6);}}
+ if(linhasGrade&&n<=32)grade(uni(n).slice(1,-1),uni(n).slice(1,-1),mix(BG,GEO,.35),1,null);}
+function curvaG(dy=0){const c=[];for(let s=0;s<=120;s++){const a=2*s/120;c.push([a,g(a)+dy]);}return c;}
+function metaisLiso(){preenche([[0,0],[2,0]].concat(curvaG().reverse()),LEVE);preenche([[0,2],[2,2]].concat(curvaG().reverse()),PESADO);}
+function solda(cor=BR,w=4){const c=[];for(let s=0;s<=80;s++){const a=2*s/80;c.push([a,g(a)]);}linha(c,cor,w);}
+function cobertura(n,{cor=MEN,fill=.22,w=2,eng=0,dash=null}={}){const h=2/n;let area=0;for(let i=0;i<n;i++){const a=i*h,b=a+h,[mn,mx]=faixa(a,b);area+=(b-a)*(mx-mn);
+  ret(a-eng,b+eng,mn-eng,mx+eng,fill?(cor===MEN?`rgba(140,255,210,${fill})`:mix(BG,cor,fill)):null,cor,w,dash);}return area;}
+// ---------- quarto de disco ----------
+function escadaB(n,{cIn=mix(BG,CI,.55),cBord=mix(BG,AL,.55),bordaOn=false}={}){const h=2/n;for(let i=0;i<n;i++)for(let j=0;j<n;j++){const near=(i*h)**2+(j*h)**2,far=((i+1)*h)**2+((j+1)*h)**2,cx=(i+.5)*h,cy=(j+.5)*h;
+ const A=P(i*h,(j+1)*h),B=P((i+1)*h,j*h);let c=null;if(bordaOn&&near<4&&far>4)c=cBord;else if(cx*cx+cy*cy<=4)c=cIn;if(c){x.fillStyle=c;x.fillRect(A[0],A[1],B[0]-A[0]+.6,B[1]-A[1]+.6);}}}
+function arcoB(cor=CI,w=3,r=2){const a=[];for(let k=0;k<=90;k++){const t=PI/2*k/90;a.push([r*Math.cos(t),r*Math.sin(t)]);}linha(a,cor,w);}
+function discoB(fill){const a=[[0,0]];for(let k=0;k<=90;k++){const t=PI/2*k/90;a.push([2*Math.cos(t),2*Math.sin(t)]);}preenche(a,fill);}
+// régua da massa (0–12 kg), X0 = posição do 0, k = px por kg
+function regua(Y,{X0=1120,k=52,band=null,marks=[],ticks=[0,2,4,6,8,10,12]}={}){
+ x.strokeStyle=GEO;x.lineWidth=3;x.beginPath();x.moveTo(X0,Y);x.lineTo(X0+12*k+24,Y);x.stroke();
+ x.beginPath();x.moveTo(X0+12*k+34,Y);x.lineTo(X0+12*k+18,Y-8);x.lineTo(X0+12*k+18,Y+8);x.closePath();x.fillStyle=GEO;x.fill();
+ for(const t of ticks){x.beginPath();x.moveTo(X0+t*k,Y-7);x.lineTo(X0+t*k,Y+7);x.stroke();txt(String(t),X0+t*k,Y+38,{size:24,f:'SGM',cor:GEO,al:'center'});}
+ txt('kg',X0+12*k+40,Y+36,{size:22,f:'SGM',cor:GEO});
+ if(band){const [a,b]=band;x.fillStyle='rgba(184,196,218,.22)';x.fillRect(X0+a*k,Y-13,(b-a)*k,26);x.fillStyle=AZC;x.fillRect(X0+a*k-3,Y-18,6,36);x.fillStyle=CORAL;x.fillRect(X0+b*k-3,Y-18,6,36);}
+ for(const [v,lab,cor] of marks){x.beginPath();x.arc(X0+v*k,Y,9,0,7);x.fillStyle=cor;x.fill();if(lab)txt(lab,X0+v*k,Y-26,{size:24,f:'SGM',cor,al:'center'});}}
+// três miniaturas do gancho (dois metais · quarto de disco · x²+y²), cada uma com a chapa de lado L px e canto (0,0) em (X,Y)
+function miniMetais(X,Y,L,n=16){vista(X,Y,L/2);metais(n);borda(GEO,2);solda(BR,3);}
+function miniDisco(X,Y,L,n=32){vista(X,Y,L/2);escadaB(n,{bordaOn:true});grade(uni(n).slice(1,-1),uni(n).slice(1,-1),mix(BG,GEO,.3),1,null);borda(GEO,2);arcoB(CI,3);}
+function miniDens(X,Y,L){vista(X,Y,L/2);mapaDens(48);borda(GEO,2);}
+
+async function main(){
+ await document.fonts.load('30px SG');await document.fonts.load('30px SGM');
+
+ // ---------- 01 · H1: as três perguntas ----------
+ if(K==='h1'){fundoV(false);await logo();
+  txt('TRÊS PERGUNTAS DO VÍDEO PASSADO',960,150,{size:30,f:'SGM',cor:GEO,al:'center'});
+  const Xs=[80,690,1300],L=420;Xs.forEach(X0=>painel(X0,200,540,700));
+  miniMetais(140,760,L);tex('\\rr=1',...P(.4,.35),30,'c',true);tex('\\rr=3',...P(1.6,1.7),30,'c',true);
+  const ce=[1.25,1.25];ret(1.125,1.25,1.375,1.5,null,POS,3);
+  {x.strokeStyle=POS;x.lineWidth=2;x.beginPath();x.moveTo(389,445);x.lineTo(355,327);x.stroke();
+   x.fillStyle=PESADO;x.fillRect(300,215,110,73);x.fillStyle=LEVE;x.fillRect(300,288,110,37);x.strokeStyle=BR;x.lineWidth=3;x.beginPath();x.moveTo(300,287);x.lineTo(410,289);x.stroke();
+   x.strokeStyle=POS;x.lineWidth=3;x.strokeRect(300,215,110,110);for(const [X,Y] of[[331,309],[375,250]]){x.beginPath();x.arc(X,Y,7,0,7);x.fillStyle=POS;x.fill();}
+   tex('\\rr=1',430,309,24,'l',true);tex('\\rr=3',430,250,24,'l',true);}
+  txt('1 OU 3?',350+8,820,{size:30,al:'center',cor:POS});txt('A INTEGRAL EXISTE?',350,872,{size:30,al:'center'});
+  miniDisco(750,760,L);txt('A BORDA SEMPRE SOME?',960,872,{size:30,al:'center'});
+  miniDens(1360,760,L);tex('|S-\\tfrac{32}{3}|\\le 16\\Delta',1570,560,40,'c',true);
+  x.save();x.translate(1570,450);x.rotate(-.12);x.strokeStyle=CORAL;x.lineWidth=4;x.beginPath();x.roundRect(-190,-34,380,62,8);x.stroke();txt('CONTA SOB MEDIDA',0,12,{size:32,al:'center',cor:CORAL});x.restore();
+  txt('TODA FUNÇÃO PRECISA DE UMA?',1570,872,{size:30,al:'center'});}
+
+ // ---------- 02 · H2: a frase-tese ----------
+ if(K==='h2'){fundoV(false);await logo();
+  const L=200;[[560,'m'],[860,'d'],[1160,'e']].forEach(([X0,t])=>{painel(X0-20,110,L+40,L+40);if(t==='m')miniMetais(X0,110+L+20,L,16);if(t==='d')miniDisco(X0,110+L+20,L,16);if(t==='e')miniDens(X0,110+L+20,L);});
+  txt('O PROBLEMA NÃO É O SALTO',960,600,{size:76,al:'center'});
+  txt('É ONDE ELE ACONTECE',960,700,{size:76,al:'center',cor:CI});
+  leg('E QUANTO ESPAÇO OCUPA',960,790,GEO,'center',30);}
+
+ // ---------- 03 · A1: título ----------
+ if(K==='tit'){fundoV(false);await logo();
+  txt('INTEGRAIS DUPLAS · VÍDEO 2',960,400,{size:30,f:'SGM',cor:CI,al:'center'});
+  txt('CONTEÚDO NULO E INTEGRABILIDADE',960,500,{size:70,al:'center'});
+  txt('NESTE VÍDEO',960,615,{size:24,f:'SGM',cor:GEO,al:'center'});
+  const it=['1 · TAMPAS','2 · CONTEÚDO NULO','3 · TEOREMA'];x.font='34px SG';const ws=it.map(s=>x.measureText(s).width+56);const tot=ws.reduce((a,b)=>a+b,0)+2*28;
+  let X=960-tot/2;it.forEach((s,i)=>{x.strokeStyle='rgba(184,196,218,.45)';x.lineWidth=2;x.beginPath();x.roundRect(X,650,ws[i],70,12);x.stroke();txt(s,X+ws[i]/2,698,{size:34,al:'center',cor:i===2?CI:BR});X+=ws[i]+28;});}
+
+ // ---------- 04 · B1-1: piso e teto ----------
+ if(K==='b11'){fundoV();await logo();canto('PISO, TETO E TAMPAS');CH();mapaDens();grade([.5,1,1.5],[.5,1,1.5],BG,3,null);borda();eixosChapa();
+  x.globalAlpha=.55;for(let i=0;i<4;i++)for(let j=0;j<4;j++)if(!(i===3&&j===3))ret(i/2,i/2+.5,j/2,j/2+.5,'rgba(15,12,38,1)');x.globalAlpha=1;
+  ret(1.5,2,1.5,2,null,BR,5);tex('\\Rij',...P(1.75,1.75),32,'c',true);
+  // barrinha dos valores (entre a chapa e a coluna)
+  const bx=965,y0=780,sc=60,Yv=v=>y0-v*sc;x.strokeStyle=GEO;x.lineWidth=2;x.beginPath();x.moveTo(bx-40,Yv(1.2));x.lineTo(bx-40,Yv(8.6));x.stroke();
+  for(const v of[2,4,6,8]){x.beginPath();x.moveTo(bx-46,Yv(v));x.lineTo(bx-34,Yv(v));x.stroke();txt(String(v),bx-56,Yv(v)+8,{size:20,f:'SGM',cor:GEO,al:'right'});}
+  x.fillStyle=CI;x.fillRect(bx-8,Yv(8),16,(8-4.5)*sc);
+  x.fillStyle=AZC;x.fillRect(bx-26,Yv(4.5)-3,52,6);x.fillStyle=CORAL;x.fillRect(bx-26,Yv(8)-3,52,6);
+  leg('VALORES DE f',bx-40,Yv(8.6)-18,CI,'center',22);
+  tex('\\mij',bx+34,Yv(4.5),32);tex('\\Mij',bx+34,Yv(8),32);
+  tex('\\mij:\\ \\text{piso de }\\f\\text{ em }\\Rij',1120,300,40);leg('O MAIOR NÚMERO ABAIXO DE TODOS',1124,360,AZC,'left',24);leg('ÍNFIMO',1124,400,GEO,'left',24);
+  tex('\\Mij:\\ \\text{teto de }\\f\\text{ em }\\Rij',1120,500,40);leg('O MENOR NÚMERO ACIMA DE TODOS',1124,560,CORAL,'left',24);leg('SUPREMO',1124,600,GEO,'left',24);
+  txt('f LIMITADA: PISO E TETO EXISTEM',1120,720,{size:28,cor:BR});}
+
+ // ---------- 05 · B1-2: as duas somas, prédio por baixo + tampas ----------
+ if(K==='b12'){fundoV(false);await logo();canto('PISO, TETO E TAMPAS');await cena3d('b13',{dx:-40,dy:0});
+  tex('\\X',...Q3('b13','ex',{dx:-40}),30,'c');tex('\\Ci{z}',...Q3('b13','ez',{dx:-40}),30,'c');
+  const tA=Q3('b13','tampaAlto',{dx:-40});leg('TAMPAS',tA[0]+40,tA[1]-10,CORAL,'left',26);
+  tex('\\sP=\\sum_i\\sum_j \\mij\\,\\dxi\\,\\dyj',1120,260,40);leg('SOMA POR BAIXO',1124,322,AZC,'left',24);
+  tex('\\SP=\\sum_i\\sum_j \\Mij\\,\\dxi\\,\\dyj',1120,430,40);leg('SOMA POR CIMA',1124,492,CORAL,'left',24);
+  tex('\\sP\\ \\le\\ \\sum_i\\sum_j \\f(\\Xij)\\,\\dxi\\,\\dyj\\ \\le\\ \\SP',1120,640,38);
+  leg('TODA SOMA DE RIEMANN FICA NO MEIO',1124,710,GEO,'left',24);}
+
+ // ---------- 06 · B1-3: o prédio afunda, sobram as tampas ----------
+ if(K==='b13'){fundoV(false);await logo();canto('PISO, TETO E TAMPAS');await cena3d('b13t',{dx:-40,dy:0});
+  tex('\\X',...Q3('b13t','ex',{dx:-40}),30,'c');tex('\\Ci{z}',...Q3('b13t','ez',{dx:-40}),30,'c');
+  const a=Q3('b13t','tampaBase',{dx:-40}),b=Q3('b13t','tampaAlto',{dx:-40});x.strokeStyle=CORAL;x.lineWidth=3;x.beginPath();x.moveTo(a[0]+28,a[1]);x.lineTo(b[0]+28,b[1]);x.stroke();
+  for(const q of[a,b]){x.beginPath();x.moveTo(q[0]+20,q[1]);x.lineTo(q[0]+36,q[1]);x.stroke();}
+  tex('\\Mij-\\mij',(a[0]+b[0])/2+44,(a[1]+b[1])/2,30,'l',true);
+  tex('\\SP-\\sP=\\sum_i\\sum_j(\\Mij-\\mij)\\,\\dxi\\,\\dyj',1120,300,38);
+  x.strokeStyle=GEO;x.lineWidth=2;x.beginPath();x.moveTo(1440,340);x.lineTo(1610,340);x.stroke();leg('OSCILAÇÃO',1525,375,GEO,'center',22);
+  txt('= VOLUME DAS TAMPAS',1120,480,{size:40,cor:CORAL});}
+
+ // ---------- 07 · B1-4: as duas paredes e o critério ----------
+ if(K==='b14'){fundoV();await logo();canto('PISO, TETO E TAMPAS');
+  painel(80,190,900,740);const ox=180,oy=840,sx=1350,sy=34,G=(d,s)=>[ox+d*sx,oy-s*sy],L=32/3;
+  x.strokeStyle=GEO;x.lineWidth=2.5;x.beginPath();x.moveTo(...G(0,0));x.lineTo(...G(.56,0));x.stroke();x.beginPath();x.moveTo(...G(0,0));x.lineTo(...G(0,18));x.stroke();
+  for(const s of[5,10,15])txt(String(s),ox-14,G(0,s)[1]+8,{size:20,f:'SGM',cor:GEO,al:'right'});
+  for(const d of[.125,.25,.375,.5])txt(String(d).replace('.',','),G(d,0)[0],oy+30,{size:20,f:'SGM',cor:GEO,al:'center'});
+  leg('VALOR DA SOMA',ox+12,226,GEO,'left',20);leg('MAIOR LADO Δ',G(.3,0)[0],oy+62,GEO,'center',20);
+  const D=[[.5,7,15],[.25,8.75,12.75],[.125,9.6875,11.6875],[.0625,10.17,11.17]];
+  x.strokeStyle=CORAL;x.lineWidth=4;x.beginPath();x.moveTo(...G(0,L));D.slice().reverse().forEach(([d,,c])=>x.lineTo(...G(d,c)));x.stroke();
+  x.strokeStyle=AZC;x.beginPath();x.moveTo(...G(0,L));D.slice().reverse().forEach(([d,b])=>x.lineTo(...G(d,b)));x.stroke();
+  for(const [d,b,c] of D){for(const [s,cor] of[[b,AZC],[c,CORAL]]){const p=G(d,s);x.beginPath();x.arc(...p,8,0,7);x.fillStyle=cor;x.fill();}
+   for(let k=1;k<=3;k++){const p=G(d,b+(c-b)*k/4+(k===2?.3:0));x.beginPath();x.arc(...p,6,0,7);x.fillStyle=POS;x.fill();}}
+  ponto([0,0],BR,0);const pL=G(0,L);x.beginPath();x.arc(...pL,9,0,7);x.fillStyle=BR;x.fill();tex('L',pL[0]+24,pL[1]-26,30,'c',true);
+  leg('S(P) DESCE',G(.5,15)[0]-10,G(.5,15)[1]-24,CORAL,'right',24);leg('s(P) SOBE',G(.5,7)[0]-10,G(.5,7)[1]+40,AZC,'right',24);
+  tex('\\forall\\eps>0\\ \\ \\exists\\del>0:',1060,330,44);tex('\\Delta<\\del\\ \\Rightarrow\\ \\SP-\\sP<\\eps',1060,430,44);
+  tex('\\Downarrow',1200,530,44,'c');txt('f É INTEGRÁVEL',1060,630,{size:44,cor:CI});
+  leg('TAMPAS SOMEM ⇒ INTEGRAL EXISTE',1064,720,GEO,'left',28);}
+
+ // ---------- 08 · B2-1: a chapa de dois metais, grade 4 × 4 ----------
+ if(K==='b21'){fundoV();await logo();canto('A CHAPA DE DOIS METAIS');CH();metais(4,{alphaV:.75});grade([.5,1,1.5],[.5,1,1.5],BG,3,null);borda();solda(BR,4);eixosChapa();
+  tex('\\rr=1',...P(1.75,.25),30,'c',true);tex('\\rr=3',...P(.25,1.75),30,'c',true);
+  ret(1.5,2,0,.5,null,BR,4);ret(1,1.5,1,1.5,null,BR,4);
+  leg('TAMPA 0',...P(1.75,.62),BR,'center',22);leg('TAMPA 2',...P(1.25,1.58),BR,'center',22);
+  tex('\\text{leve: }\\rr=1\\ \\text{kg/m}^2',1120,260,40);tex('\\text{pesado: }\\rr=3\\ \\text{kg/m}^2',1120,340,40);
+  leg('≈ ALUMÍNIO E AÇO, MESMA ESPESSURA',1124,400,GEO,'left',24);
+  leg('NUM METAL SÓ',1124,500,GEO,'left',26);tex('\\mij=\\Mij\\ \\Rightarrow\\ \\text{tampa }0',1120,555,38);
+  leg('NA SOLDA',1124,650,AL,'left',26);tex('\\mij=\\Az1,\\ \\ \\Mij=\\Co3\\ \\Rightarrow\\ \\text{tampa }2',1120,705,38);
+  leg('5 CÉLULAS CRUZAM A SOLDA',1124,800,AL,'left',26);}
+
+ // ---------- 09 · B2-1b: o muro de tampas (3D) ----------
+ if(K==='b21m'){fundoV(false);await logo();canto('A CHAPA DE DOIS METAIS');await cena3d('b21',{dx:0,dy:0});
+  tex('\\X',...Q3('b21','ex'),30,'c');tex('\\Ci{z}',...Q3('b21','ez'),30,'c');const m1=Q3('b21','m1'),m3=Q3('b21','m3');tex('\\Ci1',m1[0]-14,m1[1],24,'c');tex('\\Ci3',m3[0]-14,m3[1],24,'c');
+  leg('MURO DE TAMPAS',640,165,CORAL,'center',28);x.strokeStyle=CORAL;x.lineWidth=2;x.beginPath();x.moveTo(640,178);x.lineTo(640,300);x.stroke();
+  tex('\\rr=1',...Q3('b21','leve'),28,'c',true);tex('\\rr=3',820,250,28,'c',true);
+  leg('16 × 16 · 24 CÉLULAS NA SOLDA',1124,260,GEO,'left',26);
+  tex('\\text{altura de cada tampa}=\\Co{3-1}=\\Co2',1120,350,38);
+  tex('\\SP-\\sP=\\Co2\\cdot(\\text{área das células na solda})',1120,460,34);
+  leg('FORA DA SOLDA: TAMPA ZERO',1124,560,GEO,'left',26);}
+
+ // ---------- 10 · B2-2: o muro vai sumindo (64 × 64 + tabela + régua) ----------
+ if(K==='b22'){fundoV();await logo();canto('A CHAPA DE DOIS METAIS');CH();metais(64,{alphaV:.85});borda();solda(BR,2);
+  leg('64 × 64 · 95 CÉLULAS NA SOLDA',600,262,AL,'center',24);
+  const R=[['4',5,'6{,}00','8{,}50','2{,}50'],['8',11,'6{,}38','7{,}75','1{,}38'],['16',24,'6{,}66','7{,}41','0{,}75'],['32',47,'6{,}88','7{,}25','0{,}37'],['64',95,'6{,}97','7{,}15','0{,}19']];
+  const cx=[1130,1260,1420,1580,1750];['n','CÉLULAS','POR BAIXO','POR CIMA','DIFERENÇA'].forEach((h,i)=>leg(h,cx[i],250,[GEO,AL,AZC,CORAL,BR][i],'left',22));
+  R.forEach((r,k)=>{const Y=312+k*56,on=k===4;tex(r[0],cx[0],Y,32);tex('\\Al{'+r[1]+'}',cx[1]+30,Y,32);tex('\\Az{'+r[2]+'}',cx[2],Y,32);tex('\\Co{'+r[3]+'}',cx[3],Y,32);tex(r[4],cx[4],Y,32);
+   if(on){x.strokeStyle='rgba(184,196,218,.5)';x.lineWidth=2;x.beginPath();x.roundRect(1112,Y-26,780,52,8);x.stroke();}});
+  leg('DOBROU n → DIFERENÇA ÷ 2',1124,620,GEO,'left',26);
+  regua(760,{band:[6.97,7.15],marks:[[7.06,'≈ 7,06',BR]]});
+  leg('O SALTO NÃO MUDA; A ÁREA DIMINUI',1124,880,CORAL,'left',26);}
+
+ // ---------- 11 · B2-3: a pergunta certa ----------
+ if(K==='b23'){fundoV();await logo();canto('A CHAPA DE DOIS METAIS');CH();borda(mix(BG,GEO,.6),2);solda(BR,5);eixosChapa();
+  leg('O CONJUNTO ONDE f SALTA',...P(1,2.12),BR,'center',26);
+  txt('A SOLDA CABE',1120,420,{size:58});txt('EM ÁREA PEQUENA?',1120,500,{size:58,cor:MEN});
+  leg('RETÂNGULOS COM ÁREA TOTAL',1124,600,GEO,'left',28);leg('TÃO PEQUENA QUANTO SE QUEIRA',1124,644,GEO,'left',28);}
+
+ // ---------- 12 · B3-1: a definição + cobertura com 4 retângulos + orçamento ----------
+ if(K==='b31'){fundoV();await logo();canto('CONTEÚDO NULO');CH();borda(mix(BG,GEO,.6),2);const a=cobertura(4);solda(BR,4);
+  tex('D',...P(-.14,.8),34,'c',true);
+  ['A_1','A_2','A_3','A_4'].forEach((s,i)=>{const [mn,mx]=faixa(i*.5,i*.5+.5);tex('\\Me{'+s+'}',...P(i*.5+.25,mx+.12),26,'c',true);});
+  orc(930,780,1,a);
+  tex('D\\ \\text{tem conteúdo nulo}\\ \\iff',1120,270,40);
+  tex('\\forall\\eps>0\\ \\ \\exists\\ \\Me{A_1},\\dots,\\Me{A_n}\\ \\text{retângulos}:',1120,370,40);
+  tex('D\\subset \\Me{A_1}\\cup\\Me{A_2}\\cup\\cdots\\cup\\Me{A_n}',1120,470,40);
+  tex('\\text{e}\\ \\ \\sum_{i=1}^{n} m(\\Me{A_i})<\\eps',1120,580,40);
+  x.strokeStyle=BR;x.lineWidth=2;x.beginPath();x.moveTo(1268,500);x.lineTo(1296,500);x.stroke();
+  leg('∪: UNIÃO   ·   m(Aᵢ): ÁREA DE Aᵢ',1124,690,GEO,'left',24);leg('NÚMERO FINITO DE RETÂNGULOS',1124,740,GEO,'left',24);
+  leg('NOTA DO ALVO (NÃO VAI AO VÍDEO): SUBLINHADO FINO = SÍMBOLO SENDO LIDO, AQUI O ∪',1124,1000,AL,'left',18);}
+
+ // ---------- 13 · B3-2: o orçamento cai, 64 retângulos ----------
+ if(K==='b32'){fundoV();await logo();canto('CONTEÚDO NULO');CH();borda(mix(BG,GEO,.6),2);const a=cobertura(64,{w:1,fill:.35});solda(BR,2);
+  orcFixo(930,780,a);
+  leg('ORÇAMENTO DE ÁREA',1124,260,MEN,'left',30);
+  const R=[['1','4','0{,}46'],['\\tfrac14','16','0{,}12'],['0{,}05','64','0{,}03']];
+  R.forEach((r,k)=>{const Y=350+k*90;tex('\\eps='+r[0]+'\\ \\ \\to\\ \\ '+r[1]+'\\ \\text{retângulos}\\ \\to\\ \\Me{'+r[2]+'\\ \\text{m}^2}',1120,Y,36);});
+  leg('3 EXEMPLOS NÃO SÃO PROVA',1124,680,GEO,'left',26);
+  txt('QUALQUER ε POSITIVO DÁ CONTA',1120,770,{size:36,cor:BR});}
+
+ // ---------- 14 · B3-3: o que tem e o que não tem ----------
+ if(K==='b33'){fundoV(false);await logo();canto('CONTEÚDO NULO');
+  const cards=[[140,200,'UM PONTO',1],[1000,200,'PONTOS EM NÚMERO FINITO',1],[140,580,'UM SEGMENTO',1],[1000,580,'UM DISCO CHEIO',0]];
+  for(const [X0,Y0,t,ok] of cards){painel(X0,Y0,780,340);txt(t,X0+30,Y0+300,{size:30});ok?check(X0+720,Y0+290):cruz(X0+720,Y0+290);}
+  vista(0,0,1);// coordenadas em px direto
+  const sq=(cx,cy,s,c=MEN)=>{x.fillStyle='rgba(140,255,210,.22)';x.fillRect(cx-s/2,cy-s/2,s,s);x.strokeStyle=c;x.lineWidth=2;x.strokeRect(cx-s/2,cy-s/2,s,s);};
+  const dot=(X,Y)=>{x.beginPath();x.arc(X,Y,6,0,7);x.fillStyle=BR;x.fill();};
+  [90,56,30].forEach((s,i)=>{sq(330+i*150,330,s);dot(330+i*150,330);});
+  [[1150,300],[1300,360],[1420,280],[1560,340],[1680,300]].forEach(([X,Y])=>{sq(X,Y,30);dot(X,Y);});
+  [[300,40],[500,22],[700,10]].forEach(([Y,h],i)=>{});
+  [0,1,2].forEach(i=>{const Y=680+i*40,h=[34,18,8][i];x.fillStyle='rgba(140,255,210,.22)';x.fillRect(260,Y-h/2,500,h);x.strokeStyle=MEN;x.lineWidth=2;x.strokeRect(260,Y-h/2,500,h);
+   x.strokeStyle=BR;x.lineWidth=4;x.beginPath();x.moveTo(270,Y);x.lineTo(750,Y);x.stroke();});
+  x.beginPath();x.arc(1250,730,95,0,7);x.fillStyle=mix(BG,CI,.55);x.fill();
+  for(let i=-3;i<3;i++)for(let j=-3;j<3;j++){const X=1250+i*34,Y=730+j*34;if(Math.hypot(Math.max(Math.abs(X+17-1250)-17,0),Math.max(Math.abs(Y+17-730)-17,0))<95){x.fillStyle='rgba(140,255,210,.18)';x.fillRect(X,Y,34,34);x.strokeStyle=MEN;x.lineWidth=1.5;x.strokeRect(X,Y,34,34);}}
+  // barra que estoura
+  x.fillStyle=MEN;x.fillRect(1500,640,46,200);x.fillStyle=AL;x.fillRect(1500,596,46,44);x.fillStyle=BR;x.fillRect(1490,638,66,4);
+  leg('ε',1560,650,MEN,'left',26);leg('ESTOURA',1600,610,AL,'left',22);
+  leg('PEDAÇO DE NULO: NULO',140,1010,GEO,'left',26);leg('UNIÃO FINITA DE NULOS: NULO',1000,1010,GEO,'left',26);}
+
+ // ---------- 15 · B4-1: a parábola, caixas empilhadas ----------
+ if(K==='b41'){fundoV();await logo();canto('CURVAS TÊM CONTEÚDO NULO');vista(200,900,300);const sy=.4;const Pq=(a,b)=>P(a,b*sy);
+  const n=8,h=2/n;seta([-.05,0],[2.85,0],E1,3,16);x.strokeStyle=CI;x.lineWidth=3;const z0=Pq(0,0),z1=Pq(0,4.6);seta([0,-.05],[0,4.6*sy],CI,3,16);
+  for(const v of[1,2,3,4]){const q=Pq(0,v);txt(String(v),q[0]-14,q[1]+8,{size:20,f:'SGM',cor:CI,al:'right'});}
+  for(let i=0;i<n;i++){const a=i*h,b=a+h;const A=Pq(a,b*b),B=Pq(b,a*a);x.fillStyle='rgba(140,255,210,.25)';x.fillRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);x.strokeStyle=MEN;x.lineWidth=2;x.strokeRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);}
+  const cv=[];for(let s=0;s<=60;s++){const a=2*s/60;cv.push(Pq(a,a*a));}x.strokeStyle=CI;x.lineWidth=4;x.beginPath();cv.forEach((p,i)=>i?x.lineTo(...p):x.moveTo(...p));x.stroke();
+  // coluna empilhada à direita
+  let z=0;for(let i=0;i<n;i++){const a=i*h,b=a+h,d=b*b-a*a;const A=Pq(2.35,z+d),B=Pq(2.35+h,z);x.fillStyle='rgba(140,255,210,.35)';x.fillRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);x.strokeStyle=MEN;x.lineWidth=2;x.strokeRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);z+=d;}
+  seta([2.12,2*sy],[2.3,2*sy],GEO,3,12);
+  const c1=Pq(2.35+h,0),c2=Pq(2.35+h,4);x.strokeStyle=BR;x.lineWidth=2;x.beginPath();x.moveTo(c1[0]+16,c1[1]);x.lineTo(c2[0]+16,c2[1]);x.stroke();txt('4',c1[0]+30,(c1[1]+c2[1])/2,{size:28,cor:BR});
+  tex('\\Delta',...Pq(2.35+h/2,-.5),28,'c');tex('\\Ci{y=\\X^2}',...Pq(1.2,3.6),32,'c',true);
+  leg('CAIXAS: DO PISO AO TETO',1124,260,MEN,'left',28);
+  tex('\\text{área das caixas}\\ \\le\\ 4\\,\\Delta',1120,350,40);
+  [['4','2'],['8','1'],['16','0{,}5']].forEach(([n,a],k)=>tex(n+'\\ \\text{pedaços}\\ \\to\\ \\Me{'+a+'}',1120,460+k*70,36));
+  txt('O GRÁFICO TEM CONTEÚDO NULO',1120,720,{size:32,cor:BR});}
+
+ // ---------- 16 · B4-2: a solda (duas colunas) e o arco (uma coluna) ----------
+ if(K==='b42'){fundoV(false);await logo();canto('CURVAS TÊM CONTEÚDO NULO');painel(80,190,860,760);painel(990,190,860,760);
+  // esquerda: solda, n = 8
+  vista(150,800,250);const n=8,h=2/n;borda(mix(BG,GEO,.5),2);for(let i=0;i<n;i++){const a=i*h,b=a+h,[mn,mx]=faixa(a,b);const sobe=g(b)>g(a);ret(a,b,mn,mx,sobe?'rgba(140,255,210,.30)':'rgba(140,255,210,.12)',MEN,2);}solda(BR,4);
+  let zu=0,zd=0;const X1=2.25,X2=2.25+h+.12;for(let i=0;i<n;i++){const a=i*h,b=a+h,[mn,mx]=faixa(a,b),d=mx-mn;if(g(b)>g(a)){ret(X1,X1+h,.5+zu,.5+zu+d,'rgba(140,255,210,.35)',MEN,2);zu+=d;}else{ret(X2,X2+h,.5+zd,.5+zd+d,'rgba(140,255,210,.15)',MEN,2);zd+=d;}}
+  tex('0{,}58',...P(X1+h/2,.5+zu+.12),26,'c');tex('0{,}36',...P(X2+h/2,.5+zd+.12),26,'c');leg('SOBE',...P(X1+h/2,.32),GEO,'center',20);leg('DESCE',...P(X2+h/2,.32),GEO,'center',20);
+  txt('A SOLDA',510,240+20,{size:30,al:'center'});tex('\\text{área}\\le 0{,}94\\,\\Delta',510,900,36,'c');
+  // direita: arco, n = 8
+  vista(1050,800,250);borda(mix(BG,GEO,.5),2);for(let i=0;i<n;i++){const a=i*h,b=a+h,hi=Math.sqrt(4-a*a),lo=Math.sqrt(Math.max(0,4-b*b));ret(a,b,lo,hi,'rgba(140,255,210,.28)',MEN,2);}arcoB(CI,4);
+  let za=0;for(let i=0;i<n;i++){const a=i*h,b=a+h,d=Math.sqrt(4-a*a)-Math.sqrt(Math.max(0,4-b*b));ret(2.3,2.3+h,za,za+d,'rgba(140,255,210,.35)',MEN,2);za+=d;}
+  tex('2',...P(2.3+h+.14,1),28,'c');txt('O ARCO',1420,260,{size:30,al:'center'});tex('\\text{área}=2\\,\\Delta',1420,900,36,'c');
+  leg('4 → 1 · 8 → 0,5 · 16 → 0,25 · 32 → 0,125',1420,940,MEN,'center',22);}
+
+ // ---------- 17 · B4-3: o resultado geral (v2: com a parábola e as caixas ao lado) ----------
+ if(K==='b43'){fundoV(false);await logo();canto('CURVAS TÊM CONTEÚDO NULO');
+  tex('\\f\\ \\text{contínua em}\\ [a,b]\\ \\Rightarrow\\ \\text{gráfico de}\\ \\f\\ \\text{tem conteúdo nulo}',960,215,46,'c');
+  painel(80,290,820,600);
+  {vista(170,800,190);const sy=.58,Pq=(a,b)=>P(a,b*sy),n=16,h=2/n;
+   const ax0=Pq(-.04,0),ax1=Pq(2.15,0);x.strokeStyle=E1;x.lineWidth=3;x.beginPath();x.moveTo(...ax0);x.lineTo(...ax1);x.stroke();
+   for(let i=0;i<n;i++){const a=i*h,b=a+h,A=Pq(a,b*b),B=Pq(b,a*a);x.fillStyle='rgba(140,255,210,.25)';x.fillRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);x.strokeStyle=MEN;x.lineWidth=1.5;x.strokeRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);}
+   const cv=[];for(let k=0;k<=60;k++){const a=2*k/60;cv.push(Pq(a,a*a));}x.strokeStyle=CI;x.lineWidth=4;x.beginPath();cv.forEach((p,i)=>i?x.lineTo(...p):x.moveTo(...p));x.stroke();
+   let z=0;for(let i=0;i<n;i++){const a=i*h,b=a+h,d=b*b-a*a,A=Pq(2.45,z+d),B=Pq(2.45+h,z);x.fillStyle='rgba(140,255,210,.35)';x.fillRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);x.strokeStyle=MEN;x.lineWidth=1.5;x.strokeRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);z+=d;}
+   const c1=Pq(2.45+h,0),c2=Pq(2.45+h,4);x.strokeStyle=BR;x.lineWidth=2;x.beginPath();x.moveTo(c1[0]+14,c1[1]);x.lineTo(c2[0]+14,c2[1]);x.stroke();txt('4',c1[0]+26,(c1[1]+c2[1])/2+10,{size:28,cor:BR});
+   tex('\\Ci{y=\\X^2}',...Pq(1.05,3.3),30,'c',true);tex('\\text{área}\\le 4\\,\\Delta=\\Me{0{,}5}',490,850,32,'c');}
+  leg('CAIXAS = S − s → ZERO',990,330,MEN,'left',28);
+  tex('\\text{curva de classe}\\ C^1\\ \\text{(por partes)}',990,420,40);tex('\\Rightarrow\\ \\text{conteúdo nulo}',990,490,40);
+  leg('C¹: DERIVADA CONTÍNUA',994,550,GEO,'left',24);
+  painel(960,600,880,290);const Ys=715;[[1070,'POLÍGONO'],[1290,'CÍRCULO'],[1510,'ELIPSE'],[1730,'SEGMENTO']].forEach(([X,t],i)=>{x.strokeStyle=CI;x.lineWidth=4;x.beginPath();
+   if(i===0){[[-55,35],[40,48],[60,-20],[0,-55],[-60,-14]].forEach((p,k)=>k?x.lineTo(X+p[0],Ys+p[1]):x.moveTo(X+p[0],Ys+p[1]));x.closePath();}
+   if(i===1)x.arc(X,Ys,55,0,7);if(i===2)x.ellipse(X,Ys,75,42,0,0,7);if(i===3){x.moveTo(X-70,Ys+42);x.lineTo(X+70,Ys-42);}x.stroke();
+   txt(t,X,Ys+120,{size:24,f:'SGM',cor:GEO,al:'center'});check(X+70,Ys-62,MEN,.8);});
+  txt('1ª PERGUNTA: SIM, PARA ESSAS BORDAS',960,1000,{size:32,al:'center',cor:MEN});}
+
+ // ---------- 18 · B5-1: interior, exterior, fronteira ----------
+ if(K==='b51'){fundoV();await logo();canto('FRONTEIRA');CH();discoB(mix(BG,CI,.45));borda(mix(BG,GEO,.5),2);arcoB(BR,4);linha([[0,0],[2,0]],BR,4);linha([[0,0],[0,2]],BR,4);
+  tex('B',...P(.45,.95),40,'c',true);
+  const disco=(c,r,cor,w=3)=>{const q=P(...c);x.beginPath();x.arc(...q,r*U,0,7);x.strokeStyle=cor;x.lineWidth=w;x.setLineDash([8,6]);x.stroke();x.setLineDash([]);};
+  disco([.9,.55],.25,BR);ponto([.9,.55],BR,6);leg('INTERIOR',...P(.9,.18),BR,'center',22);
+  disco([1.82,1.8],.15,BR);ponto([1.82,1.8],BR,6);leg('EXTERIOR',...P(1.82,2.08),BR,'center',22);
+  const fb=[Math.SQRT2,Math.SQRT2];[.28,.17,.08].forEach(r=>disco(fb,r,POS,3));ponto(fb,POS,7);leg('FRONTEIRA',...P(1.78,1.42),POS,'left',24);
+  leg('TODA BOLA PEGA B',1124,280,POS,'left',30);leg('E PEGA FORA DE B',1124,325,POS,'left',30);
+  leg('BOLA ABERTA: DISCO SEM A BORDA',1124,420,GEO,'left',24);
+  txt('FRONTEIRA DE B',1120,540,{size:36});leg('O ARCO + OS 2 SEGMENTOS',1124,590,BR,'left',28);
+  leg('PODE ESTAR EM B OU NÃO',1124,680,GEO,'left',24);}
+
+ // ---------- 19 · B5-2: a borda é uma solda (3D) ----------
+ if(K==='b52'){fundoV(false);await logo();canto('FRONTEIRA');await cena3d('b52');
+  tex('\\X',...Q3('b52','ex'),30,'c');tex('\\f=1',...Q3('b52','B'),30,'c',true);const mu=Q3('b52','muro');leg('TAMPAS SÓ NA BORDA',mu[0]+30,mu[1]-60,CORAL,'left',26);
+  tex('\\f=0\\ \\text{fora}',...Q3('b52','fora'),28,'c',true);
+  tex('g=\\begin{cases}\\f & \\text{em } B\\\\ 0 & \\text{fora de } B\\end{cases}',1120,290,40);
+  txt('BORDA = SOLDA',1120,450,{size:48});txt('ENTRE f E ZERO',1120,510,{size:48,cor:CI});
+  const im=await img('r3d_b21.png');if(im){painel(1120,600,640,330);x.drawImage(im,140,180,1100,700,1130,610,620,320*1.0);}
+  leg('A CHAPA DE DOIS METAIS',1440,970,GEO,'center',22);}
+
+ // ---------- 20 · B6-2: continuidade uniforme, a régua de dois pontos ----------
+ if(K==='b62'){fundoV();await logo();canto('CONTINUIDADE UNIFORME');CH();mapaDens();borda();eixosChapa();
+  const par=(X,Y,on)=>{linha([X,Y],POS,on?5:3,{dash:on?null:[6,6]});ponto(X,POS,on?9:6);ponto(Y,POS,on?9:6);};
+  par([.45,.5],[.33,.38],false);par([1.2,.45],[1.08,.33],false);const Xa=[1.9,1.9],Ya=[1.78,1.78];par(Xa,Ya,true);
+  tex('\\XX',...P(1.98,1.98),28,'c',true);tex('\\YY',...P(1.68,1.66),28,'c',true);tex('\\del',...P(1.68,1.95),28,'c',true);
+  // barrinhas f(X), f(Y) na faixa ε
+  const bx=990,y0=640,sc=38,Yv=v=>y0-v*sc;x.fillStyle='rgba(140,255,210,.18)';x.fillRect(bx-46,Yv(7.22),92,sc*1);x.strokeStyle=MEN;x.lineWidth=2;x.strokeRect(bx-46,Yv(7.22),92,sc*1);
+  x.fillStyle=CI;x.fillRect(bx-34,Yv(7.22),24,7.22*sc);x.fillRect(bx+10,Yv(6.34),24,6.34*sc);
+  x.strokeStyle=GEO;x.lineWidth=2;x.beginPath();x.moveTo(bx-46,y0);x.lineTo(bx+46,y0);x.stroke();tex('\\f(\\XX)',bx-62,Yv(7.22)+16,24,'r');tex('\\f(\\YY)',bx+54,Yv(6.34)+16,24,'l');tex('\\eps',bx,Yv(7.22)-24,28,'c');
+  leg('K FECHADO E LIMITADO, f CONTÍNUA EM K',1124,250,GEO,'left',24);
+  tex('\\forall\\eps>0\\ \\ \\exists\\del>0:\\ \\ \\forall\\,\\XX,\\YY\\in K,',1120,330,38);
+  tex('\\|\\XX-\\YY\\|<\\del\\ \\Rightarrow\\ |\\f(\\XX)-\\f(\\YY)|<\\eps',1120,420,38);
+  leg('‖ ‖: NORMA, A DISTÂNCIA',1124,490,GEO,'left',24);
+  txt('O MESMO δ SERVE EM TODO LUGAR',1120,590,{size:32});leg('CONTINUIDADE UNIFORME (HEINE-CANTOR)',1124,640,CI,'left',24);
+  tex('\\eps=1\\ \\ \\to\\ \\ \\del=0{,}17',1120,740,40);leg('O CANTO DE CIMA ESCOLHE O δ',1124,800,GEO,'left',24);}
+
+ // ---------- 21 · B6-3: por que fechado, sen(1/x) ----------
+ if(K==='b63'){fundoV();await logo();canto('CONTINUIDADE UNIFORME');CH();
+  const A=P(0,2),B=P(2,0);for(let X=Math.ceil(A[0]);X<B[0];X++){const a=(X-A[0]+.5)/U;let v;if(a<.025){v=.5}else v=(Math.sin(1/a)+1)/2;x.fillStyle=mix('#10243A',CI,v);x.fillRect(X,A[1],1,B[1]-A[1]);}
+  linha([[2,0],[2,2]],GEO,3);linha([[0,0],[2,0]],GEO,3);linha([[0,2],[2,2]],GEO,3);linha([[0,0],[0,2]],BR,3,{dash:[10,10]});
+  leg('BORDA DA ESQUERDA FICA FORA',...P(0,2.12),BR,'left',22);
+  const a1=1/(PI/2+2*PI),a2=1/(3*PI/2+2*PI);
+  // lupa
+  painel(880,300,180,420);const lx=(a)=>890+(a-.06)*(160/.1);for(let X=890;X<1050;X++){const a=.06+(X-890)/160*.1;const v=(Math.sin(1/a)+1)/2;x.fillStyle=mix('#10243A',CI,v);x.fillRect(X,310,1,400);}
+  const p1=[lx(a1),510],p2=[lx(a2),510];x.strokeStyle=POS;x.lineWidth=4;x.beginPath();x.moveTo(...p1);x.lineTo(...p2);x.stroke();for(const p of[p1,p2]){x.beginPath();x.arc(...p,8,0,7);x.fillStyle=POS;x.fill();}
+  tex('\\Ci{+1}',p1[0],470,24,'c',true);tex('\\Ci{-1}',p2[0],550,24,'c',true);leg('ZOOM',970,750,GEO,'center',20);
+  x.strokeStyle=GEO;x.lineWidth=1.5;x.setLineDash([5,5]);x.strokeRect(...P(.06,1.1),.1*U,.4*U);x.setLineDash([]);
+  tex('\\f(\\X,\\Y)=\\operatorname{sen}\\dfrac{1}{\\X}',1120,280,42);
+  leg('PERTO DA BORDA QUE FALTA:',1124,380,GEO,'left',26);leg('ONDULA CADA VEZ MAIS RÁPIDO',1124,420,GEO,'left',26);
+  tex('\\text{distância}\\to 0,\\quad\\text{diferença}=2',1120,510,36);
+  txt('NENHUM δ SERVE',1120,610,{size:40,cor:AL});
+  leg('FECHADA E LIMITADA: OS PARES',1124,720,GEO,'left',24);leg('SE ACUMULAM NUM PONTO DA CHAPA',1124,760,GEO,'left',24);}
+
+ // ---------- 22 · B7-1: cobrir, engordar, grade fina ----------
+ if(K==='b71'){fundoV();await logo();canto('O TEOREMA');CH();
+  const n=24,h=2/n;// densidade genérica contínua fora da solda (mapa) + solda
+  for(let i=0;i<64;i++)for(let j=0;j<64;j++){const a=(i+.5)/32,b=(j+.5)/32;const v=(b>g(a)?5:2)+1.2*Math.sin(1.3*a+.7*b);const A=P(i/32,(j+1)/32),B=P((i+1)/32,j/32);x.fillStyle=corDens(v);x.fillRect(A[0],A[1],B[0]-A[0]+.6,B[1]-A[1]+.6);}
+  const e=.06;// cobertura n=8, engordada
+  const cel=[];for(let i=0;i<n;i++)for(let j=0;j<n;j++){const a=i*h,b=a+h,c=j*h,d=c+h;let toca=false;for(let k=0;k<8;k++){const a0=k*.25,b0=a0+.25,[mn,mx]=faixa(a0,b0);if(a<b0&&b>a0&&c<mx&&d>mn)toca=true;}if(toca)cel.push([a,b,c,d]);}
+  for(const [a,b,c,d] of cel)ret(a,b,c,d,mix(BG,AL,.55));
+  grade(uni(n).slice(1,-1),uni(n).slice(1,-1),mix(BG,GEO,.4),1,null);cobertura(8,{fill:0,w:3});cobertura(8,{fill:0,w:2,eng:e,dash:[8,6]});solda(BR,3);borda();
+  tex('D',...P(.1,1.3),30,'c',true);
+  // lupa: a célula [0,833;0,917]×[1,333;1,417] encosta na cobertura A₄ ([0,75;1]) e fica dentro da engordada
+  {const [mn,mx]=faixa(.75,1.0),Z=(u,v)=>[1290+(u-.875)*700,370-(v-1.37)*700];
+   ret(.8333,.9167,1.3333,1.4167,null,BR,2);ret(.6,1.15,1.1,1.65,null,GEO,1.5,[5,5]);
+   painel(1120,200,340,340);x.save();x.beginPath();x.rect(1121,201,338,338);x.clip();x.fillStyle=BG;x.fillRect(1121,201,338,338);
+   x.strokeStyle=mix(BG,GEO,.4);x.lineWidth=1;for(let k=-6;k<=6;k++){const q=Z(.8333+k/12,0),r=Z(0,1.3333+k/12);x.beginPath();x.moveTo(q[0],201);x.lineTo(q[0],539);x.stroke();x.beginPath();x.moveTo(1121,r[1]);x.lineTo(1459,r[1]);x.stroke();}
+   const c0=Z(.8333,1.4167),c1=Z(.9167,1.3333);x.fillStyle=mix(BG,AL,.6);x.fillRect(c0[0],c0[1],c1[0]-c0[0],c1[1]-c0[1]);
+   const b0=Z(.75,mx),b1=Z(1.0,mn);x.fillStyle='rgba(140,255,210,.15)';x.fillRect(b0[0],b0[1],b1[0]-b0[0],b1[1]-b0[1]);x.strokeStyle=MEN;x.lineWidth=3;x.strokeRect(b0[0],b0[1],b1[0]-b0[0],b1[1]-b0[1]);
+   const e0=Z(.75-e,mx+e),e1=Z(1.0+e,mn-e);x.setLineDash([8,6]);x.strokeRect(e0[0],e0[1],e1[0]-e0[0],e1[1]-e0[1]);x.setLineDash([]);
+   x.strokeStyle=BR;x.lineWidth=2;x.strokeRect(c0[0],c0[1],c1[0]-c0[0],c1[1]-c0[1]);
+   const sc=[];for(let k=0;k<=40;k++){const u=.6+.55*k/40;sc.push(Z(u,g(u)));}x.strokeStyle=BR;x.lineWidth=3;x.beginPath();sc.forEach((p,i)=>i?x.lineTo(...p):x.moveTo(...p));x.stroke();x.restore();}
+  leg('MARGEM: A CÉLULA CABE',1290,580,GEO,'center',22);
+  leg('1 · COBRE D: ÁREA < ε₁',1500,260,MEN,'left',26);leg('2 · ENGORDA: ÁREA < 2ε₁',1500,320,MEN,'left',26);leg('3 · GRADE MENOR',1500,380,BR,'left',26);leg('QUE OS DOIS δ',1500,420,BR,'left',26);
+  tex('|\\f|\\le M',1120,680,40);leg('f LIMITADA',1124,740,GEO,'left',24);
+  leg('FORA DA COBERTURA: f CONTÍNUA',1124,820,GEO,'left',24);leg('→ CONTINUIDADE UNIFORME (ε₂)',1124,860,GEO,'left',24);}
+
+ // ---------- 23 · B7-2: calmas e vermelhas, as duas cotas ----------
+ if(K==='b72'){fundoV();await logo();canto('O TEOREMA');CH();const n=24,h=2/n;
+  for(let i=0;i<n;i++)for(let j=0;j<n;j++){const a=i*h,b=a+h,c=j*h,d=c+h;let toca=false;for(let k=0;k<8;k++){const a0=k*.25,b0=a0+.25,[mn,mx]=faixa(a0,b0);if(a<b0&&b>a0&&c<mx&&d>mn)toca=true;}
+   ret(a,b,c,d,toca?mix(BG,AL,.6):mix(BG,AZC,.22));}
+  grade(uni(n).slice(1,-1),uni(n).slice(1,-1),BG,1.5,null);solda(BR,3);borda();
+  leg('CALMAS',...P(1.6,.35),AZC,'center',26);leg('VERMELHAS',...P(1.15,1.66),AL,'center',26);
+  leg('CALMAS',1124,250,AZC,'left',28);tex('\\text{tampa}<\\varepsilon_2,\\ \\ \\text{área}\\le\\alpha\\ \\Rightarrow\\ <\\alpha\\,\\varepsilon_2',1120,310,36);
+  leg('VERMELHAS',1124,410,AL,'left',28);tex('\\text{tampa}\\le 2M,\\ \\ \\text{área}<2\\varepsilon_1\\ \\Rightarrow\\ <4M\\varepsilon_1',1120,470,36);
+  tex('\\SP-\\sP<\\alpha\\,\\varepsilon_2+4M\\varepsilon_1',1120,600,44);
+  tex('\\alpha\\,\\varepsilon_2<\\tfrac{\\eps}{2}\\quad\\text{e}\\quad 4M\\varepsilon_1<\\tfrac{\\eps}{2}',1120,700,40);
+  txt('AS TAMPAS SOMEM',1120,820,{size:40,cor:CI});leg('α: ÁREA DO RETÂNGULO',1124,880,GEO,'left',22);}
+
+ // ---------- 24 · B7-3: os teoremas ----------
+ if(K==='b73'){fundoV(false);await logo();canto('O TEOREMA');// v2: mesmos tamanhos nas quatro caixas, ∅ em LaTeX e uma miniatura por caixa
+  const caixa=(X,Y,w,h,t,cor=GEO)=>{x.strokeStyle=cor;x.lineWidth=2;x.beginPath();x.roundRect(X,Y,w,h,12);x.stroke();if(t)leg(t,X+24,Y+40,cor,'left',24);};
+  const ic=(X0,Y0,h)=>{x.strokeStyle='rgba(184,196,218,.35)';x.lineWidth=1.5;x.beginPath();x.roundRect(X0,Y0,h,h,8);x.stroke();};
+  caixa(140,160,1640,170,'TEOREMA 1',CI);tex('\\f\\ \\text{limitada em } R\\ \\ \\text{e}\\ \\ D=\\{\\text{descontinuidades}\\}\\ \\text{com conteúdo nulo}',170,240,38);tex('\\Rightarrow\\ \\f\\ \\text{integrável em } R',170,295,38);
+  ic(1610,175,140);miniMetais(1625,300,110,16);
+  caixa(140,350,1640,130,null,MEN);leg('CASO',164,390,MEN,'left',24);tex('\\Me{D=\\emptyset}',236,383,26,'l');tex('\\text{toda}\\ \\f\\ \\text{contínua num retângulo é integrável}',170,445,38);
+  ic(1660,357,116);miniDens(1673,460,90);
+  caixa(140,500,1640,220,'TEOREMA 2',CI);tex('B\\ \\text{limitado},\\ \\ \\f\\ \\text{contínua e limitada em } B,',170,590,38);tex('\\text{fronteira de } B\\ \\text{com conteúdo nulo}\\ \\Rightarrow\\ \\f\\ \\text{integrável em } B',170,660,38);
+  ic(1590,520,180);miniDisco(1605,685,150,16);
+  caixa(140,740,1640,150,'OBSERVAÇÃO',GEO);tex("\\text{``contínua'' pode virar ``contínua fora de um conjunto de conteúdo nulo''}",170,840,38);
+  ic(1640,752,126);vista(1653,865,50);discoB(mix(BG,CI,.55));arcoB(BR,2);linha([[.25,1.4],[.7,1.0],[1.2,.75],[1.6,.35]],BR,3);}
+
+ // ---------- 25 · B7-4: as três respostas ----------
+ if(K==='b74'){fundoV(false);await logo();canto('O TEOREMA');
+  const Xs=[80,690,1300],L=420;Xs.forEach(X0=>painel(X0,200,540,740));
+  miniMetais(140,760,L);miniDisco(750,760,L);miniDens(1360,760,L);
+  [[350,'MASSA ≈ 7,06 kg'],[960,'ÁREA = π'],[1570,'INTEGRÁVEL']].forEach(([X,t])=>{txt(t,X,850,{size:34,al:'center'});check(X+170,240);});
+  leg('SALTA SÓ NA SOLDA',350,905,GEO,'center',22);leg('FRONTEIRA DE CONTEÚDO NULO',960,905,GEO,'center',22);leg('CONTÍNUA NO RETÂNGULO',1570,905,GEO,'center',22);
+  txt('TRÊS PROBLEMAS, UM TEOREMA',960,1010,{size:32,al:'center',cor:CI});}
+
+ // ---------- 26 · B8-1: Dirichlet ----------
+ if(K==='b81'){fundoV(false);await logo();canto('QUANDO FALHA');
+  const pont=(X0,Y0,L,seed)=>{let s=seed;const r=()=>(s=(s*16807)%2147483647)/2147483647;x.fillStyle='#10243A';x.fillRect(X0,Y0,L,L);for(let k=0;k<1400;k++){x.fillStyle=r()<.5?CI:'#2B2558';x.fillRect(X0+r()*L,Y0+r()*L,4,4);}x.strokeStyle=GEO;x.lineWidth=2;x.strokeRect(X0,Y0,L,L);};
+  [[120,'CÉLULA'],[460,'ZOOM ×10'],[800,'ZOOM ×100']].forEach(([X,t],i)=>{pont(X,260,280,7+i*13);leg(t,X+140,580,GEO,'center',24);if(i<2)txt('→',X+310,410,{size:40,f:'SGM',cor:GEO,al:'center'});});
+  leg('A MISTURA NÃO MUDA',560,640,BR,'center',30);
+  tex('\\f(\\X,\\Y)=\\begin{cases}1 & \\X,\\Y\\ \\text{racionais}\\\\ 0 & \\text{senão}\\end{cases}',1160,330,40);
+  leg('RACIONAL: FRAÇÃO DE INTEIROS',1164,450,GEO,'left',24);
+  tex('\\text{em toda célula:}\\ \\ \\mij=\\Az0,\\ \\ \\Mij=\\Co1',1160,540,36);
+  // duas barras planas
+  const X0=170,Y0=720,k=60;x.strokeStyle=GEO;x.lineWidth=2;x.beginPath();x.moveTo(X0,Y0+240);x.lineTo(X0+1500,Y0+240);x.stroke();
+  [['4 × 4',0],['8 × 8',1],['16 × 16',2],['64 × 64',3]].forEach(([t,i])=>{const X=X0+120+i*360;x.fillStyle=CORAL;x.fillRect(X,Y0+240-4*k*.9,60,4*k*.9);x.fillStyle=AZC;x.fillRect(X+80,Y0+236,60,4);
+   txt(t,X+70,Y0+280,{size:22,f:'SGM',cor:GEO,al:'center'});tex('\\Co4',X+30,Y0+240-4*k*.9-24,26,'c');tex('\\Az0',X+110,Y0+210,26,'c');});
+  leg('4 CONTRA ZERO: NÃO É INTEGRÁVEL',1680,1030,BR,'right',26);}
+
+ // ---------- 27 · B8-2: a fronteira que não some ----------
+ if(K==='b82'){fundoV();await logo();canto('QUANDO FALHA');CH();
+  let s=11;const r=()=>(s=(s*16807)%2147483647)/2147483647;const A=P(0,2),B=P(2,0);x.fillStyle=mix(BG,AL,.18);x.fillRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);
+  for(let k=0;k<2600;k++){x.fillStyle=CI;x.fillRect(A[0]+r()*(B[0]-A[0]),A[1]+r()*(B[1]-A[1]),3,3);}borda(AL,4);
+  const q=P(1.2,1.1);x.beginPath();x.arc(...q,40,0,7);x.strokeStyle=POS;x.lineWidth=3;x.setLineDash([8,6]);x.stroke();x.setLineDash([]);
+  leg('TODA BOLA PEGA PONTOS DOS DOIS',600,262,POS,'center',24);
+  tex('\\{(\\X,\\Y):\\ \\X,\\Y\\ \\text{racionais}\\}',1120,280,40);
+  txt('FRONTEIRA = O QUADRADO TODO',1120,380,{size:34,cor:AL});leg('ÁREA 4: NÃO É CONTEÚDO NULO',1124,430,GEO,'left',26);
+  txt('CONDIÇÃO SUFICIENTE',1120,580,{size:40,cor:CI});
+  leg('HIPÓTESES VALEM → INTEGRAL EXISTE',1124,650,BR,'left',26);leg('NÃO VALEM → OLHE AS SOMAS',1124,700,GEO,'left',26);}
+
+ // ---------- 28 · B9-1: os exemplos do livro ----------
+ if(K==='b91'){fundoV(false);await logo();canto('NUM EXERCÍCIO');
+  const chips=['1 · LIMITADA?','2 · DESCONTINUIDADES: NULO?','3 · FRONTEIRA: NULO?'];x.font='28px SGM';let X=180;chips.forEach(c=>{const w=x.measureText(c).width+48;x.strokeStyle='rgba(184,196,218,.5)';x.lineWidth=2;x.beginPath();x.roundRect(X,150,w,56,10);x.stroke();txt(c,X+24,188,{size:28,f:'SGM',cor:BR});X+=w+30;});
+  const cards=[[100,240],[980,240],[100,640],[980,640]];cards.forEach(([X0,Y0])=>painel(X0,Y0,840,370));
+  // ex. 3: x+y no disco
+  vista(300,425,150);for(let i=-40;i<40;i++)for(let j=-40;j<40;j++){const a=(i+.5)/40,b=(j+.5)/40;if(a*a+b*b<=1){const A=P(i/40,(j+1)/40),B=P((i+1)/40,j/40);x.fillStyle=mix('#10243A',CI,(a+b+1.42)/2.84);x.fillRect(A[0],A[1],B[0]-A[0]+.6,B[1]-A[1]+.6);}}
+  x.beginPath();x.arc(300,425,150,0,7);x.strokeStyle=BR;x.lineWidth=3;x.stroke();
+  tex('\\X+\\Y\\ \\text{no disco}\\ \\X^2+\\Y^2\\le 1',500,330,30);leg('CONTÍNUA · CIRCUNFERÊNCIA',500,400,GEO,'left',22);
+  // ex. 4: região entre x² e 1+x²
+  vista(1200,560,95);const reg=[];for(let s=0;s<=40;s++){const a=-1+2*s/40;reg.push([a,a*a]);}for(let s=40;s>=0;s--){const a=-1+2*s/40;reg.push([a,1+a*a]);}preenche(reg,mix(BG,CI,.45));
+  linha(reg.concat([reg[0]]),BR,3);tex('\\X+\\Y\\ \\text{entre}\\ \\Y=\\X^2\\ \\text{e}\\ \\Y=1+\\X^2',1380,330,28);leg('2 GRÁFICOS + 2 SEGMENTOS',1380,400,GEO,'left',22);
+  // ex. 5: ±1 no disco
+  vista(300,825,150);x.beginPath();x.arc(300,825,150,PI,2*PI);x.fillStyle=PESADO;x.fill();x.beginPath();x.arc(300,825,150,0,PI);x.fillStyle=LEVE;x.fill();
+  x.strokeStyle=BR;x.lineWidth=4;x.beginPath();x.moveTo(150,825);x.lineTo(450,825);x.stroke();tex('1',300,760,30,'c',true);tex('-1',300,890,30,'c',true);
+  tex('\\f=\\pm 1\\ \\text{no disco}',500,730,30);leg('SALTA NUM SEGMENTO',500,800,GEO,'left',22);
+  // ex. 6: x²/(x²+y²) no quadrado, raios
+  vista(1180,825,140);for(let i=-56;i<56;i++)for(let j=-56;j<56;j++){const a=(i+.5)/56,b=(j+.5)/56;const v=a*a/(a*a+b*b);const A=P(i/56,(j+1)/56),B=P((i+1)/56,j/56);x.fillStyle=mix('#10243A',CI,v);x.fillRect(A[0],A[1],B[0]-A[0]+.6,B[1]-A[1]+.6);}
+  linha([[-1,-1],[1,-1],[1,1],[-1,1],[-1,-1]],BR,2);ponto([0,0],POS,7);
+  tex('\\dfrac{\\X^2}{\\X^2+\\Y^2},\\ \\ \\f(0,0)=1',1380,740,30);leg('SÓ SALTA NA ORIGEM',1380,810,GEO,'left',22);
+  cards.forEach(([X0,Y0])=>{for(let k=0;k<3;k++){txt(String(k+1),X0+620+k*60,Y0+300,{size:22,f:'SGM',cor:GEO,al:'center'});check(X0+620+k*60,Y0+336,MEN,.8);}});
+  txt('AS QUATRO SÃO INTEGRÁVEIS',960,1050,{size:30,al:'center',cor:MEN});}
+
+ // ---------- 29 · B9-2: aplicações ----------
+ if(K==='b92'){fundoV(false);await logo();canto('NUM EXERCÍCIO');
+  const Xs=[140,720,1300];Xs.forEach(X0=>painel(X0,230,480,440));
+  vista(240,600,140);metaisLiso();borda(GEO,2);solda(BR,3);
+  vista(800,600,140);ret(0,1.1,0,2,mix(BG,CI,.35));ret(1.1,2,0,2,mix(BG,CI,.8));const dv=[];for(let s=0;s<=30;s++){const t=s/30;dv.push([1.1+.15*Math.sin(6*t),2*t]);}linha(dv,BR,3);borda(GEO,2);
+  x.beginPath();x.arc(1540,450,140,0,7);x.fillStyle=mix(BG,CI,.6);x.fill();x.strokeStyle=BR;x.lineWidth=3;x.stroke();
+  [[380,'DOIS MATERIAIS'],[960,'DIVISA NO MAPA'],[1540,'ALVO REDONDO']].forEach(([X,t])=>txt(t,X,730,{size:30,al:'center'}));
+  [[380,'MASSA'],[960,'POPULAÇÃO'],[1540,'PROBABILIDADE']].forEach(([X,t])=>leg(t,X,780,CI,'center',26));
+  txt('OS SALTOS MORAM EM CURVAS',960,900,{size:40,al:'center'});leg('CURVAS TÊM CONTEÚDO NULO → A INTEGRAL EXISTE',960,960,GEO,'center',26);}
+
+ // ---------- 30 · S1: síntese ----------
+ if(K==='s1'){fundoV(false);await logo();canto('SÍNTESE');await cena3d('b21',{dx:-80,dy:40,esc:.9});
+  const it=[['TAMPAS','S(P) − s(P) TENDE A ZERO',CORAL],['CONTEÚDO NULO','ONDE f SALTA',MEN],['CONTINUIDADE UNIFORME','ONDE f É CONTÍNUA',CI]];
+  it.forEach(([t,s,c],i)=>{const Y=260+i*150;x.strokeStyle='rgba(184,196,218,.45)';x.lineWidth=2;x.beginPath();x.roundRect(1120,Y-50,700,110,12);x.stroke();txt(t,1150,Y,{size:34,cor:c});leg(s,1150,Y+42,GEO,'left',24);});
+  tex('\\Downarrow',1470,720,44,'c');txt('O TEOREMA',1470,800,{size:44,al:'center',cor:BR});}
+
+ // ---------- 31 · S2: próximo vídeo ----------
+ if(K==='s2'){fundoV(false);await logo();
+  txt('NO PRÓXIMO VÍDEO',960,200,{size:34,f:'SGM',cor:GEO,al:'center'});txt('PROPRIEDADES DA INTEGRAL DUPLA',960,290,{size:66,al:'center'});
+  vista(330,900,230);preenche([[0,0],[2,0]].concat(curvaG(-.03).reverse()),LEVE);
+  vista(330,840,230);preenche([[0,2],[2,2]].concat(curvaG(.03).reverse()),PESADO);
+  vista(330,870,230);solda(BR,4);
+  tex('\\iint_R\\rr\\,dA\\ \\overset{?}{=}\\ \\iint_{\\text{leve}}\\rr\\,dA+\\iint_{\\text{pesado}}\\rr\\,dA',1000,520,40);
+  txt('A SOLDA PESA ALGUMA COISA?',1000,700,{size:44,cor:MEN});}
+ document.title='ok';}
+function orcFixo(X,Yb,gasto){const k=400;// 1 m² = 400 px, escala fixa nos três ε
+ x.strokeStyle=GEO;x.lineWidth=2;x.beginPath();x.moveTo(X-10,Yb);x.lineTo(X+56,Yb);x.stroke();
+ for(const [e,lab,al] of [[1,'\\eps=1',.4],[.25,'\\eps=\\tfrac14',.4]]){x.globalAlpha=al;x.setLineDash([6,6]);x.strokeStyle=MEN;x.lineWidth=2;x.beginPath();x.moveTo(X-8,Yb-e*k);x.lineTo(X+54,Yb-e*k);x.stroke();x.setLineDash([]);x.globalAlpha=1;
+  const d=tex(lab,X+62,Yb-e*k,24,'l');d.style.opacity=al+.15;}
+ x.strokeStyle=MEN;x.globalAlpha=.55;x.lineWidth=3;x.beginPath();x.moveTo(X+23,Yb-k+14);x.lineTo(X+23,Yb-40);x.stroke();x.beginPath();x.moveTo(X+23,Yb-30);x.lineTo(X+15,Yb-44);x.lineTo(X+31,Yb-44);x.closePath();x.fillStyle=MEN;x.fill();x.globalAlpha=1;
+ x.fillStyle=MEN;x.fillRect(X-8,Yb-.05*k-2,62,4);tex('\\eps=0{,}05',X+62,Yb-.05*k-6,24,'l');
+ x.fillStyle='rgba(140,255,210,.85)';x.fillRect(X,Yb-gasto*k,46,gasto*k);tex('\\Me{'+gasto.toFixed(2).replace('.','{,}')+'}',X-12,Yb-6,22,'r',true);
+ leg('GASTO',X+23,Yb+34,MEN,'center',22);}
+// barra do orçamento ε (altura fixa 400 px = ε) e o gasto
+function orc(X,Ybase,eps,gasto){const Hh=400;x.strokeStyle=MEN;x.lineWidth=2;x.strokeRect(X,Ybase-Hh,46,Hh);x.fillStyle='rgba(140,255,210,.75)';x.fillRect(X,Ybase-Hh*gasto/eps,46,Hh*gasto/eps);
+ x.fillStyle=MEN;x.fillRect(X-8,Ybase-Hh-2,62,4);tex('\\eps='+String(eps).replace('.','{,}'),X+23,Ybase-Hh-30,26,'c');leg('GASTO',X+23,Ybase+34,MEN,'center',20);
+ tex('\\Me{'+gasto.toFixed(2).replace('.','{,}')+'}',X+23,Ybase-Hh*gasto/eps-22,22,'c',true);}
+main();
+</script></body></html>

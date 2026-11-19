@@ -1,0 +1,233 @@
+yt_0044 · sincronização (rodada final1080, 30 fps): atraso = tela − voz (s); meta ≤ +0,20 s
+
+PH: [deriva] PH -0.03s além do fim da última âncora
+PA: [deriva] PA -0.03s além do fim da última âncora
+PE1: [estouro] E1-4 começou 0.03s depois do previsto (a cena se esticou)
+PE1: [deriva] PE1 -0.03s além do fim da última âncora
+PE2: [deriva] PE2 -0.03s além do fim da última âncora
+PE3: [estouro] E3-2 começou 0.03s depois do previsto (a cena se esticou)
+PE3: [estouro] E3-3 começou 0.03s depois do previsto (a cena se esticou)
+PE3: [deriva] PE3 -0.03s além do fim da última âncora
+PE4: [estouro] E4-2 começou 0.03s depois do previsto (a cena se esticou)
+PE4: [deriva] PE4 -0.03s além do fim da última âncora
+PE5: [estouro] E5-3 começou 0.20s depois do previsto (a cena se esticou)
+PE5: [deriva] PE5 -0.03s além do fim da última âncora
+PE6: [deriva] PE6 +0.03s além do fim da última âncora
+PS: [deriva] PS +0.00s além do fim da última âncora
+
+âncoras (início na tela × 1ª palavra na voz):
+  H1    tela     0.00 s · voz     0.10 s · -0.10 s OK
+  H2    tela    49.63 s · voz    49.78 s · -0.15 s OK
+  A1    tela   106.77 s · voz   106.96 s · -0.19 s OK
+  E1-1  tela   121.00 s · voz   121.22 s · -0.22 s OK
+  E1-2  tela   191.07 s · voz   191.30 s · -0.23 s OK
+  E1-3  tela   260.53 s · voz   260.76 s · -0.23 s OK
+  E1-4  tela   304.43 s · voz   304.60 s · -0.17 s OK
+  E1-5  tela   369.27 s · voz   369.46 s · -0.19 s OK
+  E2-1  tela   426.97 s · voz   427.18 s · -0.21 s OK
+  E2-2  tela   486.64 s · voz   486.86 s · -0.22 s OK
+  E2-3  tela   541.77 s · voz   541.98 s · -0.21 s OK
+  E2-4  tela   604.74 s · voz   604.94 s · -0.20 s OK
+  E3-1  tela   688.54 s · voz   688.78 s · -0.24 s OK
+  E3-2  tela   748.07 s · voz   748.30 s · -0.23 s OK
+  E3-3  tela   797.44 s · voz   797.62 s · -0.18 s OK
+  E3-4  tela   855.57 s · voz   855.76 s · -0.19 s OK
+  E4-1  tela   940.94 s · voz   941.14 s · -0.20 s OK
+  E4-2  tela  1021.17 s · voz  1021.36 s · -0.19 s OK
+  E4-3  tela  1075.64 s · voz  1075.80 s · -0.16 s OK
+  E5-1  tela  1130.94 s · voz  1131.14 s · -0.20 s OK
+  E5-2  tela  1202.41 s · voz  1202.62 s · -0.21 s OK
+  E5-3  tela  1259.31 s · voz  1259.32 s · -0.01 s OK
+  E6-1  tela  1336.71 s · voz  1336.74 s · -0.03 s OK
+  E6-2  tela  1402.51 s · voz  1402.56 s · -0.05 s OK
+  E6-3  tela  1467.64 s · voz  1467.70 s · -0.06 s OK
+  S1    tela  1534.81 s · voz  1534.82 s · -0.01 s OK
+  S2    tela  1576.54 s · voz  1576.54 s · +0.00 s OK
+
+gatilhos (184):
+  H1    -0.14 s  «uma lata de material uniforme»  (tela 3.30 · voz 3.44) OK
+  H1    -0.16 s  «em volta do eixo central»  (tela 9.30 · voz 9.46) OK
+  H1    -0.15 s  «como uma porta na dobradiça»  (tela 17.43 · voz 17.58) OK
+  H1    -0.13 s  «Mas quanto mais»  (tela 26.67 · voz 26.80) OK
+  H2    -0.14 s  «Primeira pergunta»  (tela 57.56 · voz 57.70) OK
+  H2    -0.14 s  «Segunda»  (tela 62.30 · voz 62.44) OK
+  H2    -0.16 s  «Terceira»  (tela 82.26 · voz 82.42) OK
+  H2    -0.14 s  «E a quarta»  (tela 89.26 · voz 89.40) OK
+  H2    -0.14 s  «três fórmulas»  (tela 96.16 · voz 96.30) OK
+  E1-1  -0.23 s  «um cubo de lado um»  (tela 123.63 · voz 123.86) OK
+  E1-1  -0.22 s  «a densidade é a soma das coordenadas»  (tela 126.30 · voz 126.52) OK
+  E1-1  -0.21 s  «pelo chute mais preguiçoso»  (tela 135.63 · voz 135.84) OK
+  E1-1  -0.22 s  «Corta cada aresta no meio»  (tela 150.30 · voz 150.52) OK
+  E1-1  -0.21 s  «no ponto do meio de cada caixinha»  (tela 160.43 · voz 160.64) OK
+  E1-1  -0.23 s  «quatro caixinhas têm»  (tela 168.13 · voz 168.36) OK
+  E1-1  -0.21 s  «três coordenadas»  (tela 178.77 · voz 178.98) OK
+  E1-1  -0.22 s  «vezes o volume de cada caixinha»  (tela 184.10 · voz 184.32) OK
+  E1-1  -0.23 s  «Igualzinho ao chute»  (tela 188.67 · voz 188.90) OK
+  E1-2  -0.22 s  «troca o ponto escolhido»  (tela 192.84 · voz 193.06) OK
+  E1-2  -0.22 s  «no canto de baixo de cada caixinha»  (tela 195.30 · voz 195.52) OK
+  E1-2  -0.22 s  «no canto de cima»  (tela 204.90 · voz 205.12) OK
+  E1-2  -0.23 s  «corta em mais pedaços»  (tela 217.37 · voz 217.60) OK
+  E1-2  -0.24 s  «Com quatro divisões»  (tela 218.80 · voz 219.04) OK
+  E1-2  -0.22 s  «Com dez»  (tela 227.14 · voz 227.36) OK
+  E1-2  -0.22 s  «o valor exato fica sempre espremido»  (tela 235.54 · voz 235.76) OK
+  E1-2  -0.24 s  «a diferença entre as duas»  (tela 239.94 · voz 240.18) OK
+  E1-2  -0.23 s  «a densidade é linear»  (tela 252.17 · voz 252.40) OK
+  E1-3  -0.24 s  «a gente nunca calcula pela definição»  (tela 261.36 · voz 261.60) OK
+  E1-3  -0.22 s  «A de dentro é em z»  (tela 272.50 · voz 272.72) OK
+  E1-3  -0.24 s  «Depois em y»  (tela 283.46 · voz 283.70) OK
+  E1-3  -0.22 s  «por último em x»  (tela 292.46 · voz 292.68) OK
+  E1-3  -0.21 s  «o mesmo três meios»  (tela 294.63 · voz 294.84) OK
+  E1-4  -0.16 s  «trocar o nome das letras»  (tela 309.66 · voz 309.82) OK
+  E1-4  -0.16 s  «distribui o x»  (tela 327.86 · voz 328.02) OK
+  E1-4  -0.16 s  «cada pedaço separa»  (tela 336.66 · voz 336.82) OK
+  E1-4  -0.18 s  «o x vezes y»  (tela 340.86 · voz 341.04) OK
+  E1-4  -0.18 s  «Somando as três»  (tela 346.16 · voz 346.34) OK
+  E1-4  -0.17 s  «Dividindo pela massa»  (tela 352.23 · voz 352.40) OK
+  E1-4  -0.18 s  «fica na diagonal»  (tela 361.96 · voz 362.14) OK
+  E1-5  -0.20 s  «só a tampa»  (tela 373.20 · voz 373.40) OK
+  E1-5  -0.19 s  «a densidade não passa de três»  (tela 380.37 · voz 380.56) OK
+  E1-5  -0.18 s  «uma camada de caixinhas»  (tela 383.74 · voz 383.92) OK
+  E1-5  -0.18 s  «vai a zero»  (tela 392.60 · voz 392.78) OK
+  E1-5  -0.19 s  «Parece uma contradição»  (tela 396.87 · voz 397.06) OK
+  E1-5  -0.20 s  «não tem nenhum ponto interior»  (tela 409.54 · voz 409.74) OK
+  E1-5  -0.20 s  «Na prática»  (tela 418.40 · voz 418.60) OK
+  E2-1  -0.22 s  «o canto de um cubo cortado por um plano»  (tela 431.44 · voz 431.66) OK
+  E2-1  -0.20 s  «Primeira pergunta»  (tela 446.14 · voz 446.34) OK
+  E2-1  -0.20 s  «a sonda entra pelo chão»  (tela 453.54 · voz 453.74) OK
+  E2-1  -0.20 s  «olhando de cima»  (tela 467.60 · voz 467.80) OK
+  E2-1  -0.20 s  «Juntando tudo»  (tela 477.34 · voz 477.54) OK
+  E2-2  -0.09 s  «A de dentro é em z»  (tela 486.77 · voz 486.86) OK
+  E2-2  -0.23 s  «uma letra nova»  (tela 506.37 · voz 506.60) OK
+  E2-2  -0.23 s  «vira uma integral em w»  (tela 520.21 · voz 520.44) OK
+  E2-2  -0.23 s  «Aplica os limites»  (tela 524.31 · voz 524.54) OK
+  E2-2  -0.23 s  «a de fora, em x»  (tela 532.57 · voz 532.80) OK
+  E2-3  -0.22 s  «sem fazer integral nenhuma»  (tela 543.50 · voz 543.72) OK
+  E2-3  -0.22 s  «a média dos quatro vértices»  (tela 554.74 · voz 554.96) OK
+  E2-3  -0.22 s  «a densidade no centroide»  (tela 558.70 · voz 558.92) OK
+  E2-3  -0.21 s  «um terço da base vezes a altura»  (tela 564.07 · voz 564.28) OK
+  E2-3  -0.21 s  «Multiplica»  (tela 571.17 · voz 571.38) OK
+  E2-3  -0.22 s  «Por que funciona»  (tela 575.14 · voz 575.36) OK
+  E2-3  -0.20 s  «Mas cuidado»  (tela 590.10 · voz 590.30) OK
+  E2-4  -0.21 s  «a altura de equilíbrio»  (tela 605.11 · voz 605.32) OK
+  E2-4  -0.20 s  «a de dentro de novo»  (tela 611.84 · voz 612.04) OK
+  E2-4  -0.19 s  «a mesma troca de letra»  (tela 623.71 · voz 623.90) OK
+  E2-4  -0.21 s  «Olha a região»  (tela 631.71 · voz 631.92) OK
+  E2-4  -0.19 s  «fica só o comprimento»  (tela 644.47 · voz 644.66) OK
+  E2-4  -0.19 s  «Abre o quadrado»  (tela 655.07 · voz 655.26) OK
+  E2-4  -0.19 s  «Integra termo a termo»  (tela 659.81 · voz 660.00) OK
+  E2-4  -0.20 s  «a metade que estava na frente»  (tela 665.54 · voz 665.74) OK
+  E2-4  -0.20 s  «Dividindo pela massa»  (tela 669.24 · voz 669.44) OK
+  E2-4  -0.21 s  «abaixo do centroide»  (tela 677.97 · voz 678.18) OK
+  E3-1  -0.23 s  «um cone de sorvete»  (tela 689.87 · voz 690.10) OK
+  E3-1  -0.23 s  «a parede do cone»  (tela 697.17 · voz 697.40) OK
+  E3-1  -0.25 s  «sombra é o disco»  (tela 710.67 · voz 710.92) OK
+  E3-1  -0.24 s  «Segunda pergunta»  (tela 712.54 · voz 712.78) OK
+  E3-1  -0.23 s  «A sonda entra»  (tela 720.77 · voz 721.00) OK
+  E3-1  -0.23 s  «Agora em s»  (tela 732.67 · voz 732.90) OK
+  E3-1  -0.23 s  «a volta inteira»  (tela 738.77 · voz 739.00) OK
+  E3-2  -0.22 s  «acima da metade»  (tela 754.60 · voz 754.82) OK
+  E3-2  -0.24 s  «A mesma montagem»  (tela 761.34 · voz 761.58) OK
+  E3-2  -0.22 s  «a primitiva de z»  (tela 764.30 · voz 764.52) OK
+  E3-2  -0.23 s  «Em s»  (tela 771.57 · voz 771.80) OK
+  E3-2  -0.24 s  «Vezes dois pi»  (tela 775.90 · voz 776.14) OK
+  E3-2  -0.24 s  «divide pelo volume»  (tela 780.60 · voz 780.84) OK
+  E3-2  -0.22 s  «a um quarto da altura»  (tela 794.54 · voz 794.76) OK
+  E3-3  -0.05 s  «quanto custa girar o cone»  (tela 797.71 · voz 797.76) OK
+  E3-3  -0.17 s  «s ao cubo»  (tela 810.41 · voz 810.58) OK
+  E3-3  -0.19 s  «o comprimento da sonda»  (tela 818.41 · voz 818.60) OK
+  E3-3  -0.18 s  «Em s um quarto menos um quinto»  (tela 824.04 · voz 824.22) OK
+  E3-3  -0.17 s  «Vezes k»  (tela 827.57 · voz 827.74) OK
+  E3-3  -0.17 s  «a massa, que é»  (tela 832.97 · voz 833.14) OK
+  E3-3  -0.17 s  «Dividindo um pelo outro»  (tela 838.17 · voz 838.34) OK
+  E3-3  -0.17 s  «três décimos»  (tela 845.77 · voz 845.94) OK
+  E3-4  -0.20 s  «nas esféricas»  (tela 858.44 · voz 858.64) OK
+  E3-4  -0.19 s  «o raio sai pela tampa»  (tela 871.67 · voz 871.86) OK
+  E3-4  -0.20 s  «Monta a integral»  (tela 884.60 · voz 884.80) OK
+  E3-4  -0.18 s  «A de dentro, em r»  (tela 888.04 · voz 888.22) OK
+  E3-4  -0.18 s  «uma substituição»  (tela 896.00 · voz 896.18) OK
+  E3-4  -0.20 s  «vira uma potência»  (tela 906.60 · voz 906.80) OK
+  E3-4  -0.19 s  «e isso é a tangente ao quadrado de alfa»  (tela 916.67 · voz 916.86) OK
+  E3-4  -0.19 s  «a tangente de alfa é»  (tela 921.17 · voz 921.36) OK
+  E3-4  -0.19 s  «o mesmo número»  (tela 928.77 · voz 928.96) OK
+  E4-1  -0.20 s  «uma meia bola»  (tela 942.04 · voz 942.24) OK
+  E4-1  -0.19 s  «A massa primeiro»  (tela 961.37 · voz 961.56) OK
+  E4-1  -0.19 s  «o de fi»  (tela 967.87 · voz 968.06) OK
+  E4-1  -0.21 s  «metade da bola»  (tela 976.07 · voz 976.28) OK
+  E4-1  -0.19 s  «A altura, nas esféricas»  (tela 978.31 · voz 978.50) OK
+  E4-1  -0.21 s  «o momento em relação ao chão»  (tela 981.77 · voz 981.98) OK
+  E4-1  -0.21 s  «cada letra separa»  (tela 987.37 · voz 987.58) OK
+  E4-1  -0.19 s  «seno vezes o cosseno»  (tela 993.17 · voz 993.36) OK
+  E4-1  -0.21 s  «Juntando»  (tela 1004.71 · voz 1004.92) OK
+  E4-1  -0.20 s  «dividindo pela massa»  (tela 1008.24 · voz 1008.44) OK
+  E4-2  -0.20 s  «fatiar a meia bola»  (tela 1034.60 · voz 1034.80) OK
+  E4-2  -0.19 s  «pelo teorema de Pitágoras»  (tela 1039.37 · voz 1039.56) OK
+  E4-2  -0.18 s  «a integral dupla de cada fatia»  (tela 1049.40 · voz 1049.58) OK
+  E4-2  -0.18 s  «polinômio simples»  (tela 1058.44 · voz 1058.62) OK
+  E4-2  -0.20 s  «O volume sai igual»  (tela 1064.64 · voz 1064.84) OK
+  E4-2  -0.20 s  «três oitavos de novo»  (tela 1069.34 · voz 1069.54) OK
+  E4-3  -0.17 s  «mais densa conforme se afasta do centro»  (tela 1078.17 · voz 1078.34) OK
+  E4-3  -0.16 s  «A massa ganha um r»  (tela 1085.74 · voz 1085.90) OK
+  E4-3  -0.17 s  «E o momento»  (tela 1095.11 · voz 1095.28) OK
+  E4-3  -0.17 s  «Dividindo um pelo outro»  (tela 1101.77 · voz 1101.94) OK
+  E4-3  -0.15 s  «dois quintos de R»  (tela 1105.21 · voz 1105.36) OK
+  E4-3  -0.15 s  «Subiu»  (tela 1106.87 · voz 1107.02) OK
+  E4-3  -0.15 s  «o caso extremo»  (tela 1120.27 · voz 1120.42) OK
+  E5-1  -0.19 s  «a reta da parede vira o eixo z»  (tela 1136.51 · voz 1136.70) OK
+  E5-1  -0.19 s  «A lata escorrega para o lado»  (tela 1138.67 · voz 1138.86) OK
+  E5-1  -0.21 s  «a distância até o eixo z»  (tela 1151.37 · voz 1151.58) OK
+  E5-1  -0.19 s  «o polo das cilíndricas no centro da lata»  (tela 1161.41 · voz 1161.60) OK
+  E5-1  -0.21 s  «O quadrado da distância»  (tela 1178.91 · voz 1179.12) OK
+  E5-1  -0.19 s  «Abre os quadrados»  (tela 1185.57 · voz 1185.76) OK
+  E5-1  -0.19 s  «o cosseno ao quadrado mais o seno ao quadrado»  (tela 1191.51 · voz 1191.70) OK
+  E5-2  -0.22 s  «cada um dos três pedaços»  (tela 1203.88 · voz 1204.10) OK
+  E5-2  -0.20 s  «O primeiro pedaço»  (tela 1207.48 · voz 1207.68) OK
+  E5-2  -0.20 s  «O segundo»  (tela 1221.88 · voz 1222.08) OK
+  E5-2  -0.20 s  «E o terceiro»  (tela 1234.84 · voz 1235.04) OK
+  E5-2  -0.21 s  «Somando»  (tela 1246.81 · voz 1247.02) OK
+  E5-2  -0.22 s  «o triplo»  (tela 1257.18 · voz 1257.40) OK
+  E5-3  -0.02 s  «o polo na origem, na dobradiça»  (tela 1261.14 · voz 1261.16) OK
+  E5-3  -0.00 s  «o círculo vira»  (tela 1274.84 · voz 1274.84) OK
+  E5-3  -0.00 s  «a integral fica»  (tela 1288.74 · voz 1288.74) OK
+  E5-3  -0.00 s  «A de dentro em s»  (tela 1293.68 · voz 1293.68) OK
+  E5-3  -0.02 s  «baixar a potência»  (tela 1303.28 · voz 1303.30) OK
+  E5-3  -0.01 s  «de novo no cosseno de dois téta»  (tela 1313.31 · voz 1313.32) OK
+  E5-3  -0.00 s  «Nos limites»  (tela 1321.28 · voz 1321.28) OK
+  E5-3  -0.00 s  «Juntando tudo»  (tela 1326.68 · voz 1326.68) OK
+  E6-1  -0.04 s  «um corpo qualquer»  (tela 1340.48 · voz 1340.52) OK
+  E6-1  -0.02 s  «um eixo paralelo»  (tela 1347.14 · voz 1347.16) OK
+  E6-1  -0.04 s  «quadrado da distância até ele»  (tela 1357.18 · voz 1357.22) OK
+  E6-1  -0.04 s  «Abre o quadrado»  (tela 1359.98 · voz 1360.02) OK
+  E6-1  -0.03 s  «A integral separa»  (tela 1365.81 · voz 1365.84) OK
+  E6-1  -0.02 s  «cada uma tem nome»  (tela 1368.14 · voz 1368.16) OK
+  E6-1  -0.02 s  «o centro de massa está na origem»  (tela 1380.94 · voz 1380.96) OK
+  E6-1  -0.03 s  «o mais barato»  (tela 1399.61 · voz 1399.64) OK
+  E6-2  -0.05 s  «um cubo de aresta L»  (tela 1404.01 · voz 1404.06) OK
+  E6-2  -0.05 s  «Pelo centro primeiro»  (tela 1408.31 · voz 1408.36) OK
+  E6-2  -0.06 s  «A integral de x ao quadrado»  (tela 1412.38 · voz 1412.44) OK
+  E6-2  -0.05 s  «O y ao quadrado dá o mesmo»  (tela 1433.11 · voz 1433.16) OK
+  E6-2  -0.06 s  «a meia diagonal»  (tela 1443.04 · voz 1443.10) OK
+  E6-2  -0.05 s  «Steiner»  (tela 1449.21 · voz 1449.26) OK
+  E6-2  -0.06 s  «sem atalho»  (tela 1459.58 · voz 1459.64) OK
+  E6-3  +0.16 s  «uma bola girando em volta de uma reta que encosta nela»  (tela 1469.14 · voz 1468.98) OK
+  E6-3  -0.05 s  «o erro clássico»  (tela 1491.77 · voz 1491.82) OK
+  E6-3  -0.05 s  «Dá errado»  (tela 1507.01 · voz 1507.06) OK
+  E6-3  -0.05 s  «volta primeiro ao centro»  (tela 1517.01 · voz 1517.06) OK
+  E6-3  -0.05 s  «e depois vai»  (tela 1522.57 · voz 1522.62) OK
+  E6-3  -0.07 s  «sempre passa pelo centro de massa»  (tela 1532.47 · voz 1532.54) OK
+  S1    +0.05 s  «fechar»  (tela 1535.11 · voz 1535.06) OK
+  S1    +0.00 s  «o fator s no cone»  (tela 1540.54 · voz 1540.54) OK
+  S1    +0.00 s  «a sonda que sai»  (tela 1544.78 · voz 1544.78) OK
+  S1    -0.00 s  «uma conferência em todo exercício»  (tela 1546.88 · voz 1546.88) OK
+  S1    -0.00 s  «E os cinco erros»  (tela 1549.08 · voz 1549.08) OK
+  S1    -0.00 s  «o fator»  (tela 1553.14 · voz 1553.14) OK
+  S1    -0.02 s  «a distância errada»  (tela 1555.44 · voz 1555.46) OK
+  S1    -0.00 s  «o chute do centro»  (tela 1562.08 · voz 1562.08) OK
+  S1    -0.00 s  «o Steiner»  (tela 1566.18 · voz 1566.18) OK
+  S1    -0.02 s  «a tampa»  (tela 1571.08 · voz 1571.10) OK
+  S2    +0.00 s  «a massa morava num volume»  (tela 1577.34 · voz 1577.34) OK
+  S2    +0.00 s  «uma hélice enrolada na parede da lata»  (tela 1583.04 · voz 1583.04) OK
+  S2    +0.01 s  «uma conta de colar»  (tela 1594.21 · voz 1594.20) OK
+  S2    +0.00 s  «quanto trabalho»  (tela 1599.44 · voz 1599.44) OK
+  S2    -0.01 s  «No próximo vídeo»  (tela 1605.61 · voz 1605.62) OK
+
+resumo: 27 âncoras, 184 gatilhos; atraso de -0.25 a +0.16 s; fora da meta (> +0,2 s): 0

@@ -1,0 +1,40 @@
+yt_0039 · QA da voz (narracao_final.wav)
+modelo eleven_v4 · voz qw7jgPZWOKrl10GsjQ82 · formato mp3_44100_192 → WAV mono 16 bits 44,1 kHz · texto narracao_tags.md (narração final v2) · 6 blocos de API
+duração 1616.24 s (26:56.24); limite da parada: 24:30 → PASSA
+pico -0.84 dBFS; amostras em clipping (|x| ≥ 0,999): 0 → OK
+silêncios > 1,5 s dentro de parágrafo: 0
+pausas entre parágrafos: 27; 0.08–0.42 s (média 0.28 s); maior pausa entre palavras no texto todo 0.90 s
+tag lida em voz alta (STT): {'curious': 0, 'thoughtful': 0, 'surprised': 0, 'serious': 0, 'excited': 0, 'happy': 0} → OK
+  «x» no STT: 0×
+  «y» no STT: 0×
+  «r» no STT: 0×
+  «u» no STT: 0×
+  «v» no STT: 0×
+  «w» no STT: 0×
+  «k» no STT: 0×
+  «téta (nunca teta)» no STT: 0×
+  «teta (errado)» no STT: 0×
+  «rô» no STT: 0×
+  «pi» no STT: 0×
+  «jacobiano» no STT: 20×
+  «Pappus» no STT: 7×
+  «centroide» no STT: 8×
+  «hipérbole» no STT: 6×
+  «elipse» no STT: 9×
+  «arruela» no STT: 4×
+  «toro» no STT: 1×
+  «parábola» no STT: 5×
+  «logaritmo» no STT: 10×
+  «Parallax Lab» no STT: 2×
+  «Cálculo três» no STT: 0×
+palavras 5181; 3.21 palavras/s no WAV inteiro; 3.21 palavras/s do início ao fim da fala (referência 3,0 palavras/s)
+fronteira de bloco antes de «não aprendemos uma primitiva impossível encontramos»: pausa 0.30 s (278.92–279.22); nível 2 s antes -18.4 dB × 2 s depois -20.0 dB
+  maior salto entre amostras na pausa: 0.0150 (clique > 0,2)
+fronteira de bloco antes de «a massa é a integral de»: pausa 0.28 s (570.92–571.20); nível 2 s antes -19.9 dB × 2 s depois -21.2 dB
+  maior salto entre amostras na pausa: 0.1212 (clique > 0,2)
+fronteira de bloco antes de «mais pesada em cima mais leve»: pausa 0.56 s (862.42–862.98); nível 2 s antes -21.3 dB × 2 s depois -20.7 dB
+  maior salto entre amostras na pausa: 0.0587 (clique > 0,2)
+fronteira de bloco antes de «e o centro de massa é»: pausa 0.24 s (1153.98–1154.22); nível 2 s antes -22.4 dB × 2 s depois -21.9 dB
+  maior salto entre amostras na pausa: 0.0292 (clique > 0,2)
+fronteira de bloco antes de «e vale para qualquer meia arruela»: pausa 0.24 s (1431.66–1431.90); nível 2 s antes -24.2 dB × 2 s depois -20.6 dB
+  maior salto entre amostras na pausa: 0.0490 (clique > 0,2)

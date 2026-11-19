@@ -1,0 +1,198 @@
+{
+ "acidente": {
+  "ini": 0.1,
+  "fim": 7.5,
+  "texto": "Dois carros batem num cruzamento. O azul vinha do oeste; o violeta, do sul. Grudados, eles ainda deslizam até parar."
+ },
+ "depois": {
+  "ini": 7.82,
+  "fim": 11.02,
+  "texto": "Só que a gente chegou depois: sobrou só a marca no asfalto."
+ },
+ "cotas": {
+  "ini": 11.34,
+  "fim": 13.6,
+  "texto": "Oito metros para leste, seis para norte."
+ },
+ "pergunta": {
+  "ini": 13.9,
+  "fim": 16.86,
+  "texto": "O que uma marca no asfalto consegue contar sobre uma batida?"
+ },
+ "volta": {
+  "ini": 17.16,
+  "fim": 18.16,
+  "texto": "Vamos voltar no tempo!"
+ },
+ "dados": {
+  "ini": 18.68,
+  "fim": 26.76,
+  "texto": "Os dados: o carro azul tem dois mil quilos; o violeta, mil. O coeficiente de atrito é zero vírgula cinco; a gravidade, dez."
+ },
+ "hipoteses": {
+  "ini": 27.0,
+  "fim": 32.5,
+  "texto": "Modelo idealizado, não perícia: impacto curtíssimo, atrito constante, marca reta."
+ },
+ "fim": {
+  "ini": 32.74,
+  "fim": 35.02,
+  "texto": "E todo bom detetive começa pelo fim!"
+ },
+ "conjunto": {
+  "ini": 35.3,
+  "fim": 38.56,
+  "texto": "Grudados, os carros viram um conjunto de três mil quilos."
+ },
+ "forcas": {
+  "ini": 38.82,
+  "fim": 43.26,
+  "texto": "O chão empurra com a força normal, igual ao peso: massa total vezes gravidade."
+ },
+ "atrito": {
+  "ini": 43.46,
+  "fim": 47.64,
+  "texto": "O atrito, contra o movimento, vale o coeficiente de atrito vezes a normal."
+ },
+ "trabalho": {
+  "ini": 47.84,
+  "fim": 53.84,
+  "texto": "E nos dez metros da marca ele tira energia: o trabalho é menos o atrito vezes o comprimento da marca."
+ },
+ "teorema": {
+  "ini": 54.06,
+  "fim": 62.58,
+  "texto": "Pelo teorema do trabalho e energia: zero, menos meio da massa total vezes a velocidade logo depois da batida ao quadrado, é igual a esse trabalho."
+ },
+ "sinais": {
+  "ini": 62.82,
+  "fim": 64.26,
+  "texto": "Os sinais de menos cancelam."
+ },
+ "corta": {
+  "ini": 64.459,
+  "fim": 67.32,
+  "texto": "A massa total está dos dois lados... então corta!"
+ },
+ "meio": {
+  "ini": 67.56,
+  "fim": 69.8,
+  "texto": "O meio passa para o outro lado como dois,"
+ },
+ "raiz": {
+  "ini": 69.98,
+  "fim": 77.46,
+  "texto": "e tirando a raiz, a velocidade é a raiz de duas vezes o coeficiente de atrito vezes a gravidade vezes o comprimento da marca."
+ },
+ "numeros": {
+  "ini": 77.7,
+  "fim": 80.96,
+  "texto": "Com os números, a raiz de cem dá dez metros por segundo,"
+ },
+ "direcao": {
+  "ini": 81.12,
+  "fim": 84.34,
+  "texto": "na direção da marca: oito para leste, seis para norte."
+ },
+ "impacto": {
+  "ini": 84.62,
+  "fim": 88.62,
+  "texto": "Agora, o impacto: tão curto que o impulso externo fica desprezível."
+ },
+ "conserva": {
+  "ini": 88.88,
+  "fim": 90.54,
+  "texto": "Aqui, o momento se conserva."
+ },
+ "momento": {
+  "ini": 90.82,
+  "fim": 92.94,
+  "texto": "Momento é massa vezes velocidade."
+ },
+ "total": {
+  "ini": 93.14,
+  "fim": 95.3,
+  "texto": "O total antes é igual ao total depois,"
+ },
+ "direcoes": {
+  "ini": 95.48,
+  "fim": 102.74,
+  "texto": "e vale em cada direção: massa do carro vezes a velocidade dele, igual à massa total vezes aquela parte da velocidade final."
+ },
+ "isolar": {
+  "ini": 102.96,
+  "fim": 104.66,
+  "texto": "Passando a massa do carro dividindo:"
+ },
+ "azul": {
+  "ini": 104.86,
+  "fim": 109.18,
+  "texto": "três mil sobre dois mil, vezes oito... doze metros por segundo para o azul."
+ },
+ "violeta": {
+  "ini": 109.4,
+  "fim": 112.72,
+  "texto": "Três mil sobre mil, vezes seis... dezoito para o violeta."
+ },
+ "pegadinha": {
+  "ini": 112.98,
+  "fim": 116.34,
+  "texto": "E a pegadinha: o mesmo triângulo aparece três vezes."
+ },
+ "tangente": {
+  "ini": 116.56,
+  "fim": 123.26,
+  "texto": "A tangente do ângulo é dezoito mil sobre vinte e quatro mil, três quartos: razão dos momentos, não das velocidades."
+ },
+ "barras": {
+  "ini": 123.42,
+  "fim": 128.46,
+  "texto": "O violeta era mais rápido, mas o azul tinha mais momento... e foi ele que mandou na direção."
+ },
+ "ida": {
+  "ini": 128.74,
+  "fim": 133.26,
+  "texto": "Na ida, com doze e dezoito, o conjunto para exatamente no fim da marca!"
+ },
+ "energia": {
+  "ini": 133.52,
+  "fim": 134.62,
+  "texto": "E a energia cinética?"
+ },
+ "kantes": {
+  "ini": 134.9,
+  "fim": 137.0,
+  "texto": "Antes, trezentos e seis quilojoules;"
+ },
+ "kdepois": {
+  "ini": 137.2,
+  "fim": 138.82,
+  "texto": "depois, cento e cinquenta."
+ },
+ "metade": {
+  "ini": 139.02,
+  "fim": 143.34,
+  "texto": "Pouco mais da metade virou deformação, calor, som e vibração."
+ },
+ "frase": {
+  "ini": 143.58,
+  "fim": 146.46,
+  "texto": "Momento se conserva; energia cinética, não."
+ },
+ "licao": {
+  "ini": 146.74,
+  "fim": 153.16,
+  "texto": "A lição: cada intervalo tem a sua lei. No impacto, momento; no deslizamento, trabalho e energia."
+ },
+ "ponte": {
+  "ini": 153.36,
+  "fim": 160.62,
+  "texto": "E numa colisão elástica, com a energia também conservada, os momentos até limitam os ângulos possíveis... assunto para outro vídeo."
+ },
+ "cta": {
+  "ini": 160.94,
+  "fim": 162.92,
+  "texto": "Segue o Parallax Lab. Até a próxima!"
+ },
+ "_fim_voz": 162.92
+}

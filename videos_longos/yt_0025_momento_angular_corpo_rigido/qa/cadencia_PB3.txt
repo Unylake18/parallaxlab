@@ -1,0 +1,33 @@
+CADÊNCIA PB3: 20 linhas, média 0.231 s/glifo, mínimo 0.133, 10 abaixo de 0,20
+  B3-1 t0=3.0s  11 glifos  1.47s 0.133 s/glifo  m = 0{,}40 \,\mathrm{kg}  <0,20
+  B3-1 t0=4.5s  10 glifos  1.33s 0.133 s/glifo  \ell = 0{,}30 \,\mathrm m  <0,20
+  B3-1 t0=5.8s   5 glifos  1.00s 0.200 s/glifo  \alpha = 30^\circ
+  B3-2 t0=17.4s  12 glifos  2.93s 0.244 s/glifo  \vec L_1 = \vec r_1 \times m \vec v_1
+  B3-2 t0=20.3s  13 glifos  3.20s 0.246 s/glifo  \vec L_1 = \vec L_{1z} + \vec L_{1\perp}
+  B3-3 t0=28.9s   8 glifos  2.00s 0.250 s/glifo  \vec\rho_2 = - \vec\rho_1
+  B3-3 t0=34.0s   6 glifos  2.33s 0.389 s/glifo  z_2 = - z_1
+  B3-3 t0=37.8s  17 glifos  5.47s 0.322 s/glifo  z_2 \vec\rho_2 = (-z_1) (-\vec\rho_1)
+  B3-3 t0=44.4s  11 glifos  1.73s 0.158 s/glifo  z_2 \vec\rho_2 = z_1 \vec\rho_1  <0,20
+  B3-4 t0=51.9s  10 glifos  6.33s 0.633 s/glifo  \vec L = \vec L_1 + \vec L_2
+  B3-4 t0=58.2s  10 glifos  1.80s 0.180 s/glifo  L_z = L_{1z} + L_{2z}  <0,20
+  B3-4 t0=60.0s  10 glifos  1.80s 0.180 s/glifo  L_\perp = L_{1\perp} + L_{2\perp}  <0,20
+  B3-5 t0=64.5s  15 glifos  2.93s 0.196 s/glifo  L_z = 2 m (\ell\operatorname{sen}\alpha)^2 \omega  <0,20
+  B3-5 t0=67.7s  24 glifos  3.87s 0.161 s/glifo  L_z = 2 \cdot 0{,}40 \cdot (0{,}30\cdot0{,}5)^2 \cdot 2\pi  <0,20
+  B3-5 t0=71.5s  18 glifos  3.47s 0.193 s/glifo  L_z = 0{,}113 \,\mathrm{kg\cdot m^2/s}  <0,20
+  B3-5 t0=75.3s  15 glifos  3.27s 0.218 s/glifo  L_\perp = 2 m \ell^2 \omega \operatorname{sen}\alpha\cos\alpha
+  B3-5 t0=78.9s  18 glifos  2.73s 0.152 s/glifo  L_\perp = 0{,}196 \,\mathrm{kg\cdot m^2/s}  <0,20
+  B3-6 t0=82.5s  14 glifos  2.47s 0.176 s/glifo  \vec L_\perp = - \omega \sum m_i z_i \vec\rho_i  <0,20
+  B3-6 t0=87.4s  11 glifos  2.53s 0.230 s/glifo  \vec\rho_i = (x_i,y_i)
+  B3-6 t0=92.1s   9 glifos  2.07s 0.230 s/glifo  \sum mxz \qquad \sum myz
+
+ENXUGAR A PAUTA (decisão da Produção):
+B3-1: m = 0{,}40 \,\mathrm{kg} (0.133 s/glifo)
+B3-1: \ell = 0{,}30 \,\mathrm m (0.133 s/glifo)
+B3-3: z_2 \vec\rho_2 = z_1 \vec\rho_1 (0.158 s/glifo)
+B3-4: L_z = L_{1z} + L_{2z} (0.180 s/glifo)
+B3-4: L_\perp = L_{1\perp} + L_{2\perp} (0.180 s/glifo)
+B3-5: L_z = 2 m (\ell\operatorname{sen}\alpha)^2 \omega (0.196 s/glifo)
+B3-5: L_z = 2 \cdot 0{,}40 \cdot (0{,}30\cdot0{,}5)^2 \cdot 2\pi (0.161 s/glifo)
+B3-5: L_z = 0{,}113 \,\mathrm{kg\cdot m^2/s} (0.193 s/glifo)
+B3-5: L_\perp = 0{,}196 \,\mathrm{kg\cdot m^2/s} (0.152 s/glifo)
+B3-6: \vec L_\perp = - \omega \sum m_i z_i \vec\rho_i (0.176 s/glifo)

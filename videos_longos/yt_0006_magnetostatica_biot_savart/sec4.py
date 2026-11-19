@@ -22,19 +22,19 @@ class Sec4:
 
         def geometry():
             w, h = self.dw.get_value(), self.dh.get_value()
-            g = VGroup(Line(W([-X, 0, 0]), W([X, 0, 0]), color=BLUE_L, stroke_width=7 if w < 0.05 else 3))
+            g = VGroup(Line(W([-X, 0, 0]), W([X, 0, 0]), color=STEEL, stroke_width=7 if w < 0.05 else 3))
             if w > 0.02:
-                g.add(Polygon(W([-X, -w, 0]), W([X, -w, 0]), W([X, w, 0]), W([-X, w, 0]), color=BLUE_L, fill_color=BLUE_L,
+                g.add(Polygon(W([-X, -w, 0]), W([X, -w, 0]), W([X, w, 0]), W([-X, w, 0]), color=STEEL, fill_color=STEEL,
                               fill_opacity=0.14, stroke_width=2.5))
                 if h > 0.02:
                     top = [W([-X, -w, h]), W([X, -w, h]), W([X, w, h]), W([-X, w, h])]
-                    g.add(Polygon(*top, color=BLUE_L, fill_color=BLUE_L, fill_opacity=0.10, stroke_width=2.5))
+                    g.add(Polygon(*top, color=STEEL, fill_color=STEEL, fill_opacity=0.10, stroke_width=2.5))
                     for yy in (-w, w):
-                        g.add(Polygon(W([-X, yy, 0]), W([X, yy, 0]), W([X, yy, h]), W([-X, yy, h]), color=BLUE_L,
-                                      fill_color=BLUE_L, fill_opacity=0.08, stroke_width=2))
+                        g.add(Polygon(W([-X, yy, 0]), W([X, yy, 0]), W([X, yy, h]), W([-X, yy, h]), color=STEEL,
+                                      fill_color=STEEL, fill_opacity=0.08, stroke_width=2))
                     for xx in (-X, X):
-                        g.add(Polygon(W([xx, -w, 0]), W([xx, w, 0]), W([xx, w, h]), W([xx, -w, h]), color=BLUE_L,
-                                      fill_color=BLUE_L, fill_opacity=0.08, stroke_width=2))
+                        g.add(Polygon(W([xx, -w, 0]), W([xx, w, 0]), W([xx, w, h]), W([xx, -w, h]), color=STEEL,
+                                      fill_color=STEEL, fill_opacity=0.08, stroke_width=2))
             return g
         geo = self.cached(lambda: (self.dw.get_value(), self.dh.get_value(), *self.view_key()), geometry)
         paths = [lambda u, yy=yy, zz=zz: W([-X + 2 * X * u, yy * self.dw.get_value(), zz * self.dh.get_value()])
@@ -44,7 +44,7 @@ class Sec4:
         self.play(FadeIn(geo), run_time=0.8)
         H = lambda: self.slots["H"]["eq"]
         # ── linha ─────────────────────────────────────────────────────────────────────────────────────────
-        el = Line(W([-0.4, 0, 0]), W([0.4, 0, 0]), color=GREEN, stroke_width=11).set_z_index(9)
+        el = Line(W([-0.4, 0, 0]), W([0.4, 0, 0]), color=WHITE, stroke_width=11).set_z_index(9)
         dll = self.lab(r"d\boldsymbol\ell", W([0, -0.55, 0]), r"d\boldsymbol\ell", size=M_M)
         il = self.lab("I", W([-1.5, 0.5, 0]), "I", size=M_M)
         self.play(Create(el), FadeIn(dll), FadeIn(il), run_time=1.0)
@@ -60,7 +60,7 @@ class Sec4:
         self.play(FadeOut(el), FadeOut(il), FadeOut(dll), self.dw.animate.set_value(0.95), run_time=2.5)
         patch = Polygon(W([-0.4, -0.3, 0]), W([0.4, -0.3, 0]), W([0.4, 0.3, 0]), W([-0.4, 0.3, 0]), color=GREEN, fill_color=GREEN,
                         fill_opacity=0.35, stroke_width=3).set_z_index(9)
-        tarr = arrow(W([-0.5, 0.62, 0]), W([0.5, 0.62, 0]), GREEN, 5, z=9)
+        tarr = arrow(W([-0.5, 0.62, 0]), W([0.5, 0.62, 0]), WHITE, 5, z=9)
         tl = self.lab(r"\hat{\mathbf t}", W([0.0, 0.95, 0]), r"\hat{\mathbf t}", size=M_M)
         kl = self.lab("K", W([-1.5, -0.1, 0]), "K", size=M_M)
         dwl = self.lab("dw", W([0.78, 0.0, 0]), "dw", size=M_M)
@@ -80,9 +80,10 @@ class Sec4:
                   src={(r"d\boldsymbol\ell", 0): glyphs(aux, r"d\boldsymbol\ell", 0), (r"\hat{\mathbf t}", 0): glyphs(aux, r"\hat{\mathbf t}", 0),
                        (r"d\ell", 0): glyphs(aux, r"d\ell", 0)}, rt=2.4, wait=1.2)
         self.show(E(r"\mathbf K=K\,\hat{\mathbf t}", r"\mathbf K", "K", r"\hat{\mathbf t}", size=M_M), slot="A",
-                  src={("K", 0): glyphs(H(), "K", 0), (r"\hat{\mathbf t}", 0): glyphs(H(), r"\hat{\mathbf t}", 0)}, rt=1.8, wait=1.2)
+                  src={("K", 0): glyphs(H(), "K", 0), (r"\hat{\mathbf t}", 0): glyphs(H(), r"\hat{\mathbf t}", 0)}, rt=1.8, wait=1.8,
+                  note=r"unidade: $\mathrm{A/m}$")
         aux = self.slots["A"]["eq"]
-        self.caption("$\\mathbf K=K\\hat{\\mathbf t}$ é a corrente por unidade de largura, em A/m")
+        self.caption("Corrente por unidade de largura")
         self.show(E(r"dI\,d\boldsymbol\ell=\mathbf K\,dw\,d\ell", "dI", r"d\boldsymbol\ell", r"\mathbf K", "dw", r"d\ell", size=M_L),
                   ("K", None), (r"\hat{\mathbf t}", None), src={(r"\mathbf K", 0): glyphs(aux, r"\mathbf K", 0)}, rt=2.2, wait=1.2)
         self.show(E(r"da=dw\,d\ell", "da", "dw", r"d\ell", size=M_M), slot="A",
@@ -104,16 +105,17 @@ class Sec4:
         jl = self.lab("J", W([-1.5, 0.0, 0.45]), "J", size=M_M)
         dal = self.lab(r"dA_\perp", W([0.4, 0.0, 0.45]) + np.array([0.75, 0.15, 0]), r"dA_\perp", size=M_M)
         tl2 = self.lab(r"\hat{\mathbf t}", W([0.0, 0.0, 1.35]), r"\hat{\mathbf t}", size=M_M)
-        tarr2 = arrow(W([-0.55, 0.0, 1.05]), W([0.5, 0.0, 1.05]), GREEN, 5, z=9)
+        tarr2 = arrow(W([-0.55, 0.0, 1.05]), W([0.5, 0.0, 1.05]), WHITE, 5, z=9)
         dl3 = self.lab(r"d\ell", W([0.0, -0.55, 0.0]), r"d\ell", size=M_M)
         self.play(Create(sec), FadeIn(dal), FadeIn(jl), FadeIn(dl3), Create(tarr2), FadeIn(tl2), run_time=1.6)
         self.caption("A corrente na seção $dA_\\perp$ é $dI=J\\,dA_\\perp$")
         self.show(E(r"dI=J\,dA_\perp", "dI", "J", r"dA_\perp", size=M_XL), ("dI", "dI"), (r"\mathbf K", None), ("da", None),
                   (r"d\boldsymbol\ell", None), src={("J", 0): jl, (r"dA_\perp", 0): dal}, rt=2.2, wait=1.0)
         self.show(E(r"\mathbf J=J\,\hat{\mathbf t}", r"\mathbf J", "J", r"\hat{\mathbf t}", size=M_M), slot="A",
-                  src={("J", 0): glyphs(H(), "J", 0), (r"\hat{\mathbf t}", 0): tl2}, rt=1.8, wait=1.2)
+                  src={("J", 0): glyphs(H(), "J", 0), (r"\hat{\mathbf t}", 0): tl2}, rt=1.8, wait=1.8,
+                  note=r"unidade: $\mathrm{A/m^2}$")
         aux = self.slots["A"]["eq"]
-        self.caption("$\\mathbf J=J\\hat{\\mathbf t}$ é a corrente por unidade de área transversal, em A/m²")
+        self.caption("Corrente por unidade de área")
         self.show(E(r"dI\,d\boldsymbol\ell=\mathbf J\,dA_\perp\,d\ell", "dI", r"d\boldsymbol\ell", r"\mathbf J", r"dA_\perp", r"d\ell", size=M_L),
                   ("J", None), src={(r"\mathbf J", 0): glyphs(aux, r"\mathbf J", 0), (r"d\boldsymbol\ell", 0): dl3, (r"d\ell", 0): dl3},
                   rt=2.4, wait=1.2)
@@ -150,12 +152,12 @@ class Sec4:
         # só o elemento e sua vizinhança: P nunca cai sobre o filamento
         L["wire"] = always_redraw(lambda: self.tube(W([-0.8, 0, 0]), W([1.3, 0, 0])))
         L["flow"] = self.flow([lambda u: W([-0.8 + 2.1 * u, 0, 0])], count=4)
-        dbs = always_redraw(lambda: self.out_symbol(W(self.local_pt()) + np.array([0.62, 0, 0]), 1,
-                                                    radius=max(0.0, 0.24 * math.sin(th.get_value()))) if math.sin(th.get_value()) > 0.02 else VGroup())
+        dbs = always_redraw(lambda: self.out_symbol(W(self.local_pt()) + np.array([0.62, 0, 0]), 1, radius=0.16)
+                            if math.sin(th.get_value()) > 0.02 else VGroup())
         dbl = self.lab(r"d\mathbf B", [0, 0, 0], r"d\mathbf B", size=M_M)
         dbl.add_updater(lambda m: m.move_to(W(self.local_pt()) + np.array([1.25, 0, 0])).set_opacity(1.0 if math.sin(th.get_value()) > 0.03 else 0.0))
-        zero_l = self.lab(r"dB=0", [0, 0, 0], "dB", size=M_M)
-        zero_l.add_updater(lambda m: m.move_to(W(self.local_pt()) + np.array([0, 0.55, 0])).set_opacity(0.0 if math.sin(th.get_value()) > 0.03 else 1.0))
+        zero_l = self.lab(r"dB=0\ \text{neste elemento}", [0, 0, 0], "dB", size=M_S)
+        zero_l.add_updater(lambda m: m.move_to(W(self.local_pt()) + np.array([1.9, -0.05, 0])).set_opacity(0.0 if math.sin(th.get_value()) > 0.03 else 1.0))
         self.add(zero_l)
         self.add(L["wire"], L["flow"], L["f"], L["P"], L["R"], L["dl"], L["guide"], L["arc"], L["Pl"], L["Rl"], L["dll"], L["thl"], dbs, dbl)
         self.play(FadeIn(VGroup(L["wire"], L["f"], L["P"], L["R"], L["dl"], L["Pl"], L["Rl"], L["dll"], L["guide"])), run_time=1.2)
@@ -174,11 +176,11 @@ class Sec4:
         self.play(FadeIn(card), Create(ax), Create(curve), FadeIn(ticks), FadeIn(dot), FadeIn(drop_l), run_time=1.5)
         self.slots["A"]["eq"] = VGroup(ax, curve, ticks, dot, drop_l)
         self.play(th.animate.set_value(0.0), run_time=2.5)
-        self.caption("$\\theta=0$: $dB=0$, embora a corrente continue")
+        self.caption("$\\theta=0$: contribuição deste elemento nula")
         self.mark("clinica_zero")
         self.hold(3)
         for ang, note in [(30, "$\\theta=30^\\circ$"), (60, "$\\theta=60^\\circ$"), (90, "$\\theta=90^\\circ$: contribuição máxima para este $R$"),
-                          (150, "$\\theta=150^\\circ$: volta a enfraquecer"), (180, "$\\theta=180^\\circ$: oposto ao elemento, também zero")]:
+                          (150, "$\\theta=150^\\circ$: volta a enfraquecer"), (180, "$\\theta=180^\\circ$: contribuição deste elemento nula")]:
             self.delcap()
             self.play(th.animate.set_value(math.radians(ang)), run_time=3, rate_func=linear)
             self.caption(note)
@@ -187,8 +189,8 @@ class Sec4:
         self.play(th.animate.set_value(math.pi / 2), run_time=2)
         # mão direita em 2.5D
         self.drop("A")
-        self.caption("Mas o produto vetorial também dá a direção: vamos olhar em perspectiva")
-        self.remove(dbs)
+        self.caption("O produto vetorial dá também a direção")
+        dbs.clear_updaters()
         self.play(FadeOut(dbl), run_time=0.4)
         b3 = always_redraw(lambda: self.vec(self.local_pt(), [0, 0, 1], MAG, scale=1.3 * math.sin(th.get_value()) + 0.001, width=7))
         b3l = self.lab(r"d\mathbf B", [0, 0, 0], r"d\mathbf B", size=M_M)
@@ -197,19 +199,24 @@ class Sec4:
                                                        t_range=[0.001, max(0.002, th.get_value())], color=WHITE, stroke_width=4,
                                                        fill_opacity=0))
         self.add(b3, b3l, turn)
-        self.play(self.beta.animate.set_value(32), self.tau.animate.set_value(52), run_time=3)
-        self.play(FadeIn(b3), FadeIn(b3l), run_time=0.8)
+        self.play(self.beta.animate.set_value(32), self.tau.animate.set_value(52), FadeOut(dbs), run_time=3)
+        self.remove(dbs)
+        self.play(FadeIn(b3l), run_time=0.8)
         self.caption("Dedos de $d\\boldsymbol\\ell$ para $\\mathbf R$; o polegar dá o sentido de $d\\mathbf B$")
         self.hold(4)
         self.mark("clinica_perpendicular_espacial")
         self.show(E(r"d\boldsymbol\ell\times\mathbf R=-\,\mathbf R\times d\boldsymbol\ell", r"d\boldsymbol\ell", r"\mathbf R", r"\times", size=M_L),
                   slot="A", src={(r"d\boldsymbol\ell", 0): L["dll"], (r"\mathbf R", 0): L["Rl"]}, rt=1.8, wait=1.0)
-        self.caption("Trocar a ordem dos fatores inverte $d\\mathbf B$")
+        self.caption("Trocar a ordem inverte o produto vetorial.")
         b4 = always_redraw(lambda: self.vec(self.local_pt(), [0, 0, -1], MAG, scale=1.3, width=7))
         self.play(FadeOut(b3), run_time=0.3)
         self.add(b4)
         self.play(FadeIn(b4), run_time=0.8)
-        self.hold(3)
+        self.hold(1.4)
+        self.play(FadeOut(b4), run_time=0.3)
+        self.add(b3)
+        self.play(FadeIn(b3), run_time=0.8)
+        self.hold(1.4)
         self.remove(b4)
 
     # ── superposição ────────────────────────────────────────────────────────────────────────────────────────
@@ -234,7 +241,7 @@ class Sec4:
         chain, labels, firsts = VGroup(), [], []
         for i, x in enumerate(np.linspace(-2, 2, 5)):
             f, pt, dl, Rv, rm, thv, al, b = trecho(x, dl=1.0)
-            src = VGroup(Dot(W(f), color=GREEN, radius=0.09), self.vec(f, dl, GREEN, width=6), self.vec(f, Rv, VIOLET, width=3))
+            src = VGroup(Dot(W(f), color=GREEN, radius=0.09), self.vec(f, dl, WHITE, width=6), self.vec(f, Rv, VIOLET, width=3))
             contrib = self.vec(pt, b, MAG, scale=SC * 2.4, width=6)
             self.play(FadeIn(src), Create(contrib), run_time=0.8)
             delta = W(pt + SC * 2.4 * b) - W(pt)
@@ -258,7 +265,7 @@ class Sec4:
                   rt=2.4, wait=2.5)
         self.mark("soma_ponta_cauda")
         # refinar
-        small = VGroup(*[Line(W([x, 0, 0]), W([x + 0.14, 0, 0]), color=GREEN, stroke_width=9) for x in np.arange(-2.5, 2.4, 0.25)])
+        small = VGroup(*[Line(W([x, 0, 0]), W([x + 0.14, 0, 0]), color=WHITE, stroke_width=9) for x in np.arange(-2.5, 2.4, 0.25)])
         self.play(Create(small), run_time=2)
         self.caption("Refinar a fonte: mais elementos, cada contribuição menor")
         fine, tip = VGroup(), start.copy()

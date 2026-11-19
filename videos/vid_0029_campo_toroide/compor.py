@@ -6,6 +6,7 @@ Uso (na raiz do repositório): uv run python videos/vid_0029_campo_toroide/compo
 """
 import argparse
 import json
+import sys
 import time
 from fractions import Fraction
 from pathlib import Path
@@ -15,6 +16,8 @@ import numpy as np
 from PIL import Image
 
 UNIT = Path(__file__).resolve().parent
+sys.path.insert(0, str(Path(__file__).absolute().parents[2]))  # raiz do repo sem resolver o junction da unidade (→ K:)
+from template.config import BACKGROUND_COLOR  # noqa: E402
 
 
 def encoder(path, w, h, fps):
@@ -46,6 +49,11 @@ def main():
     out3d, s3d = encoder(UNIT / 'renders' / f'parte3d{suf}_{w}x{h}.mp4', w, h, a.fps)
     outc, sc = encoder(UNIT / 'renders' / f'preview{suf}_{w}x{h}.mp4', w, h, a.fps)
 
+    global K, LOGO
+    K = np.array([int(BACKGROUND_COLOR[i:i + 2], 16) for i in (1, 3, 5)], np.float32)
+    # logo: largura 1,8 no canto UP+RIGHT (buff 0,28) de um quadro 9 × 16 → x 830–1046, y 34–106 px em 1080 × 1920
+    s = w / 9
+    LOGO = (slice(int(.28 * s) - 1, int((.28 + 1.8 * 724 / 2172) * s) + 1), slice(int((9 - .28 - 1.8) * s) - 1, int((9 - .28) * s) + 1))
     t0 = time.time()
     manim = av.open(str(mov))
     layer = (f.to_ndarray(format='rgba') for f in manim.decode(video=0))
@@ -60,8 +68,15 @@ def main():
             n_manim += 1
             last = fg
         alpha = fg[..., 3:4].astype(np.float32) / 255
-        # O .mov do Manim (qtrle/argb) traz alfa direto (não pré-multiplicado): over = fg·α + bg·(1 − α).
-        comp = (fg[..., :3] * alpha + bg * (1 - alpha) + .5).astype(np.uint8)
+        rgb = fg[..., :3].astype(np.float32)
+        # O .mov do Manim (qtrle/argb, -t) NÃO é alfa direto (medido): o quadro vazio guarda K = BACKGROUND_COLOR com α = 0 e
+        # o Cairo desenha por cima em pré-multiplicado, então vetores e textos saem como cor·α + K·(1 − α).
+        # over correto: rgb − K·(1 − α) + bg·(1 − α). Tratar como alfa direto (rgb·α) escurecia bordas e translúcidos (α²).
+        comp = rgb + (bg - K) * (1 - alpha)
+        # Exceção: ImageMobject (só o logo) entra em alfa direto (rgb = cor) → over clássico no retângulo do logo.
+        ly, lx = LOGO
+        comp[ly, lx] = rgb[ly, lx] * alpha[ly, lx] + bg[ly, lx] * (1 - alpha[ly, lx])
+        comp = np.clip(comp + .5, 0, 255).astype(np.uint8)
         write(out3d, s3d, bg)
         write(outc, sc, comp)
     for out, s in ((out3d, s3d), (outc, sc)):

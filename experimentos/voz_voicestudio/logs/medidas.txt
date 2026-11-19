@@ -1,0 +1,13 @@
+B_omnivoice_cold engine=omnivoice voz=design_omnivoice rc=1 tempo_s=0.53 dur_s=NA sr=NA
+B_omnivoice_frio engine=omnivoice voz=design_omnivoice rc=0 tempo_s=1059.01 dur_s=16.644167 sr=24000
+B_omnivoice engine=omnivoice voz=design_omnivoice rc=0 tempo_s=9.58 dur_s=16.644167 sr=24000
+A_omnivoice engine=omnivoice voz=design_omnivoice rc=0 tempo_s=14.5 dur_s=61.989708 sr=24000
+A_omnivoice_clone engine=omnivoice voz=clone_omnivoice rc=0 tempo_s=18.86 dur_s=60.945208 sr=24000
+B_omnivoice_clone engine=omnivoice voz=clone_omnivoice rc=0 tempo_s=5.55 dur_s=16.879667 sr=24000
+B_voxcpm2_frio engine=voxcpm2 voz=design_voxcpm2 rc=1 tempo_s=64.23 dur_s=NA sr=NA
+B_voxcpm2_frio engine=voxcpm2 http=503 tempo_s=2037.17 dur_s=NA sr=NA args=-F instruct=Brazilian Portuguese male voice, about 30 years old, warm and energetic prep-course teacher, enthusiastic, friendly, very clear diction, native Brazilian Portuguese accent
+B_voxcpm2 engine=voxcpm2(direto) modo=design ref=None blocos=1 tempo_s=287.4 dur_s=21.12 rtf=13.61 vram_pico_GB=6.15 sr=48000
+B_voxcpm2_clone engine=voxcpm2(direto) modo=clone ref=ref1_yt0034 blocos=1 tempo_s=467.3 dur_s=16.32 rtf=28.63 vram_pico_GB=6.52 sr=48000
+A_voxcpm2 engine=voxcpm2(direto) modo=design ref=None blocos=3 tempo_s=1142.2 dur_s=61.30 rtf=18.63 vram_pico_GB=6.41 sr=48000
+A_voxcpm2_clone engine=voxcpm2(direto) modo=clone ref=ref1_yt0034 blocos=3 tempo_s=884.8 dur_s=54.58 rtf=16.21 vram_pico_GB=6.52 sr=48000
+A_voxcpm2_clone_multi engine=voxcpm2(direto) modo=clone ref=ref_multi_yt0034_yt0032 blocos=3 tempo_s=1047.7 dur_s=55.22 rtf=18.97 vram_pico_GB=6.77 sr=48000

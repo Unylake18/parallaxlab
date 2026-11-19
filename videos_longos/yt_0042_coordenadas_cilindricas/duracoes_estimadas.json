@@ -1,0 +1,357 @@
+{
+ "fonte": "narração v1.4 (referencia/yt_0041_narracao_v1_4.md), 3 palavras/s (0,15 + palavras/3 + 0,35); gatilhos = instante absoluto da 1ª palavra da frase",
+ "total_s": 1210.98,
+ "ancoras": {
+  "H1": {
+   "palavras": 171,
+   "ini": 0.0,
+   "fim": 57.5,
+   "dur": 57.5,
+   "gatilhos": {
+    "Pensa numa lata": 0.15,
+    "mais denso conforme se afasta": 6.483,
+    "A densidade, rô": 8.817,
+    "Quanto pesa essa lata": 21.15,
+    "o x vai de menos um a um": 26.483,
+    "A integral de dentro": 35.817,
+    "Trava": 42.483,
+    "E em esféricas": 42.817,
+    "a fórmula racha": 53.15
+   }
+  },
+  "H2": {
+   "palavras": 150,
+   "ini": 57.5,
+   "fim": 108.0,
+   "dur": 50.5,
+   "gatilhos": {
+    "a lata tem um eixo": 58.317,
+    "Primeiro, cilindros": 64.65,
+    "Depois, páginas": 68.983,
+    "por fim, andares": 73.983,
+    "Repara nestes dois pedaços": 83.983,
+    "o mesmo delta s": 86.317,
+    "qual é o volume": 99.317
+   }
+  },
+  "A1": {
+   "palavras": 53,
+   "ini": 108.0,
+   "fim": 126.17,
+   "dur": 18.17,
+   "gatilhos": {}
+  },
+  "B1-1": {
+   "palavras": 223,
+   "ini": 126.17,
+   "fim": 201.0,
+   "dur": 74.83,
+   "gatilhos": {
+    "Olha de cima": 131.961,
+    "A distância dessa sombra até a origem se chama s": 135.944,
+    "o téta de sempre": 142.249,
+    "Então x é s cosseno de téta": 143.576,
+    "z é z": 154.195,
+    "cuidado com o s": 155.522,
+    "um fio horizontal do eixo até o ponto": 163.819,
+    "Olha de lado": 179.415,
+    "Pitágoras": 186.716,
+    "prédio-garagem redondo": 194.016
+   }
+  },
+  "B1-2": {
+   "palavras": 133,
+   "ini": 201.0,
+   "fim": 245.83,
+   "dur": 44.83,
+   "gatilhos": {
+    "Vamos testar num ponto": 201.15,
+    "O x é dois vezes": 207.483,
+    "O y é dois vezes": 212.817,
+    "o z não precisa de conta": 221.15,
+    "Confere a sombra": 224.15,
+    "E a distância até a origem": 231.817,
+    "Repara no triângulo": 238.483
+   }
+  },
+  "B1-3": {
+   "palavras": 154,
+   "ini": 245.83,
+   "fim": 297.66,
+   "dur": 51.83,
+   "gatilhos": {
+    "a lata é uma caixa": 251.98,
+    "Três intervalos fixos": 258.98,
+    "a gente chama de T": 262.313,
+    "uma célula da caixa vira": 266.313,
+    "duas bordas ruins": 271.313,
+    "A face em que s é zero": 272.313,
+    "vão parar na mesma página": 283.98,
+    "as duas têm volume zero": 293.98
+   }
+  },
+  "B2-1": {
+   "palavras": 240,
+   "ini": 297.66,
+   "fim": 378.16,
+   "dur": 80.5,
+   "gatilhos": {
+    "Ampliando uma célula": 299.47,
+    "mede delta s": 309.76,
+    "mede delta z": 313.412,
+    "A do meio é um arco": 316.399,
+    "Arco é raio vezes ângulo": 323.038,
+    "roda de bicicleta": 327.354,
+    "Multiplicando as três arestas": 334.656,
+    "Só um fator novo": 340.3,
+    "Vamos pôr números": 345.279,
+    "o do eixo dá": 359.221,
+    "o da parede, três vezes isso": 363.204,
+    "Razão três": 365.196,
+    "o aproximado é exato": 369.843
+   }
+  },
+  "B2-2": {
+   "palavras": 112,
+   "ini": 378.16,
+   "fim": 415.99,
+   "dur": 37.83,
+   "gatilhos": {
+    "Olha a célula de cima": 381.643,
+    "a área dela vocês já conhecem": 387.643,
+    "Agora olha de lado": 391.31,
+    "Volume de prisma": 398.31,
+    "a altura não estica nada": 400.643,
+    "No limite": 410.977
+   }
+  },
+  "B2-3": {
+   "palavras": 214,
+   "ini": 415.99,
+   "fim": 487.82,
+   "dur": 71.83,
+   "gatilhos": {
+    "Cada coluna é a derivada": 419.807,
+    "Derivando x igual a s cosseno de téta": 427.807,
+    "O y é igual": 438.807,
+    "o z é o mais preguiçoso": 444.807,
+    "Então expande por ela": 450.14,
+    "Os dois zeros matam": 453.473,
+    "tampa a linha três e a coluna três": 459.14,
+    "Diagonal principal menos a secundária": 466.807,
+    "Cuidado com o menos com menos": 471.807,
+    "Põe o s em evidência": 474.807,
+    "O determinante é s": 479.473,
+    "nunca é negativo": 482.807
+   }
+  },
+  "B2-4": {
+   "palavras": 181,
+   "ini": 487.82,
+   "fim": 548.65,
+   "dur": 60.83,
+   "gatilhos": {
+    "um cilindro de raio R e altura h": 491.303,
+    "Em cilíndricas é uma caixa": 493.97,
+    "a integral tripla separa": 507.303,
+    "A de z": 509.97,
+    "A de s": 513.303,
+    "A de téta": 518.303,
+    "Multiplica": 521.303,
+    "Área da base vezes a altura": 527.303,
+    "esquecer o s": 531.637,
+    "Olha a unidade": 535.97,
+    "o rótulo da lata": 542.303
+   }
+  },
+  "B3-1": {
+   "palavras": 176,
+   "ini": 548.65,
+   "fim": 607.82,
+   "dur": 59.17,
+   "gatilhos": {
+    "Agora o enunciado": 548.8,
+    "As exigências são no interior": 561.133,
+    "onde isso falha": 567.467,
+    "a lata entra em duas metades": 582.133,
+    "Trocando o jacobiano por s": 592.8
+   }
+  },
+  "B3-2": {
+   "palavras": 96,
+   "ini": 607.82,
+   "fim": 640.32,
+   "dur": 32.5,
+   "gatilhos": {
+    "Primeiro, a sombra": 610.97,
+    "Segundo, a sonda em pé": 618.97,
+    "Terceiro, monta": 628.97
+   }
+  },
+  "B4-1": {
+   "palavras": 226,
+   "ini": 640.32,
+   "fim": 716.15,
+   "dur": 75.83,
+   "gatilhos": {
+    "Agora uma região de verdade": 640.47,
+    "Completa o quadrado em x": 656.137,
+    "aparece x menos um": 659.803,
+    "com o centro em um, zero": 666.803,
+    "fica só a metade de cima": 671.47,
+    "o eixo das cilíndricas não precisa passar pela origem": 675.137,
+    "Põe o polo no centro do disco": 678.137,
+    "o jacobiano continua s": 689.137,
+    "como mudar o compasso de lugar": 690.803,
+    "A sombra": 696.47,
+    "A sonda": 703.47,
+    "trocando x e y": 708.47,
+    "Monta": 713.803
+   }
+  },
+  "B4-2": {
+   "palavras": 288,
+   "ini": 716.15,
+   "fim": 812.65,
+   "dur": 96.5,
+   "gatilhos": {
+    "De dentro para fora": 716.3,
+    "A de z é a mais fácil": 717.633,
+    "sobra s vezes o telhado": 726.633,
+    "Distribui o s": 728.3,
+    "Agora a de s": 730.633,
+    "o zero não contribui": 739.633,
+    "Por último, a de téta": 746.967,
+    "cuidado com esse menos": 753.633,
+    "Em pi": 757.3,
+    "Em zero": 765.633,
+    "Um menos o outro": 769.633,
+    "Faz sentido": 779.633,
+    "fica um desafio": 801.633
+   }
+  },
+  "B5-1": {
+   "palavras": 143,
+   "ini": 812.65,
+   "fim": 860.82,
+   "dur": 48.17,
+   "gatilhos": {
+    "a lata pesada do começo": 813.467,
+    "x ao quadrado mais y ao quadrado é s ao quadrado": 821.133,
+    "é o r do triângulo": 829.133,
+    "a lata, como a gente viu, é uma caixa": 831.8,
+    "Monta a massa": 840.133,
+    "Se o z for por dentro": 847.133,
+    "Se o s for por dentro": 853.467
+   }
+  },
+  "B5-2": {
+   "palavras": 169,
+   "ini": 860.82,
+   "fim": 917.65,
+   "dur": 56.83,
+   "gatilhos": {
+    "Chama de u": 861.637,
+    "A derivada em s é dois s": 868.303,
+    "é a peça que completa a substituição": 877.303,
+    "troca os limites junto": 880.637,
+    "Agora é integral de potência": 890.303,
+    "sobe o expoente para três meios": 895.303,
+    "Aplica os limites": 902.97,
+    "como z é positivo": 913.637
+   }
+  },
+  "B5-3": {
+   "palavras": 217,
+   "ini": 917.65,
+   "fim": 990.48,
+   "dur": 72.83,
+   "gatilhos": {
+    "Agora a de z": 917.8,
+    "O do z ao cubo é tranquilo": 920.8,
+    "um doze avos": 930.133,
+    "O outro pedaço é o osso": 931.133,
+    "o triângulo": 940.467,
+    "Chama de t o ângulo": 946.133,
+    "a hipotenusa": 951.467,
+    "Então z igual a tangente de t": 959.467,
+    "Troca os limites": 965.8,
+    "o triângulo com os dois catetos iguais": 973.8,
+    "vira secante ao cubo": 979.467,
+    "fica secante à quinta": 983.467
+   }
+  },
+  "B5-4": {
+   "palavras": 199,
+   "ini": 990.48,
+   "fim": 1057.31,
+   "dur": 66.83,
+   "gatilhos": {
+    "a fórmula de recorrência": 993.63,
+    "Com n igual a cinco": 1002.297,
+    "aplica de novo, com n igual a três": 1009.63,
+    "os valores, que vêm do triângulo": 1018.63,
+    "todo pedaço com tangente morre no zero": 1028.297,
+    "O primeiro pedaço dá": 1033.297,
+    "A integral da secante ao cubo dá": 1036.297,
+    "Agora junta": 1043.297,
+    "as raízes de dois se somam em oitavos": 1045.63,
+    "O resultado é": 1048.297
+   }
+  },
+  "B5-5": {
+   "palavras": 177,
+   "ini": 1057.31,
+   "fim": 1116.81,
+   "dur": 59.5,
+   "gatilhos": {
+    "voltar pelo caminho": 1058.46,
+    "divide cada pedaço por três": 1063.46,
+    "multiplica por dois pi": 1069.46,
+    "põe pi sobre doze em evidência": 1071.793,
+    "A massa da lata": 1079.46,
+    "o computador": 1083.46,
+    "O volume da lata é pi": 1089.46,
+    "vai de zero, na origem, até raiz de dois": 1097.46
+   }
+  },
+  "B6": {
+   "palavras": 89,
+   "ini": 1116.81,
+   "fim": 1146.98,
+   "dur": 30.17,
+   "gatilhos": {
+    "Quando a região tem um eixo": 1118.293,
+    "vira s ao quadrado": 1128.293,
+    "entra por um piso e sai por um teto": 1133.96,
+    "Numa bola": 1137.96,
+    "numa caixa": 1142.96
+   }
+  },
+  "S1": {
+   "palavras": 84,
+   "ini": 1146.98,
+   "fim": 1175.48,
+   "dur": 28.5,
+   "gatilhos": {
+    "o cilindro deu": 1164.797,
+    "o cilindro fora do eixo deu": 1167.463,
+    "a lata pesada deu": 1171.797
+   }
+  },
+  "S2": {
+   "palavras": 105,
+   "ini": 1175.48,
+   "fim": 1210.98,
+   "dur": 35.5,
+   "gatilhos": {
+    "girar essa lata em volta do eixo": 1177.63,
+    "Cada pedacinho entra pesando": 1182.963,
+    "a distância até o eixo, ao quadrado": 1186.63,
+    "vira s ao cubo": 1192.963,
+    "No próximo vídeo": 1196.63,
+    "deixa o like": 1202.63
+   }
+  }
+ }
+}

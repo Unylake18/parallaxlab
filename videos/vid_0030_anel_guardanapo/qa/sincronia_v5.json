@@ -1,0 +1,521 @@
+{
+ "tolerancia_s": 0.2,
+ "pares": 64,
+ "fora_da_tolerancia": 0,
+ "maior_desvio_s": 0.16,
+ "atrasos_manim": {},
+ "tabela": [
+  {
+   "fala": "anel que segura",
+   "t_fala": 4.42,
+   "t_tela": 4.42,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "etiqueta ANEL DE GUARDANAPO"
+  },
+  {
+   "fala": "esfera e fura",
+   "t_fala": 15.88,
+   "t_tela": 15.88,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "a esfera fantasma envolve o anel"
+  },
+  {
+   "fala": "fura bem no meio",
+   "t_fala": 16.68,
+   "t_tela": 16.68,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "etiqueta = ESFERA FURADA"
+  },
+  {
+   "fala": "furadeira",
+   "t_fala": 18.64,
+   "t_tela": 18.64,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "a broca atravessa a esfera"
+  },
+  {
+   "fala": "o que sobra",
+   "t_fala": 21.56,
+   "t_tela": 21.56,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "a esfera some e o anel se destaca"
+  },
+  {
+   "fala": "três esferas",
+   "t_fala": 25.14,
+   "t_tela": 25.14,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "as três esferas aparecem"
+  },
+  {
+   "fala": "pequena",
+   "t_fala": 26.32,
+   "t_tela": 26.32,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "R = 5 cm"
+  },
+  {
+   "fala": "média",
+   "t_fala": 27.22,
+   "t_tela": 27.22,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "R = 7 cm"
+  },
+  {
+   "fala": "grande",
+   "t_fala": 27.98,
+   "t_tela": 27.98,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "R = 10 cm"
+  },
+  {
+   "fala": "furadas",
+   "t_fala": 28.54,
+   "t_tela": 28.54,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "as três brocas entram"
+  },
+  {
+   "fala": "anéis fiquem",
+   "t_fala": 30.06,
+   "t_tela": 30.06,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "os anéis se juntam no trio"
+  },
+  {
+   "fala": "mesma altura",
+   "t_fala": 31.0,
+   "t_tela": 31.0,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "MESMA ALTURA: h = 6 cm"
+  },
+  {
+   "fala": "seis centímetros",
+   "t_fala": 32.0,
+   "t_tela": 32.0,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "réguas de 6 cm"
+  },
+  {
+   "fala": "qual deles",
+   "t_fala": 33.06,
+   "t_tela": 33.06,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "QUAL TEM MAIS VOLUME?"
+  },
+  {
+   "fala": "cortando",
+   "t_fala": 35.8,
+   "t_tela": 35.75,
+   "tela_menos_fala": -0.05,
+   "ok": true,
+   "tela": "o corte vertical abre o anel"
+  },
+  {
+   "fala": "raio da esfera",
+   "t_fala": 37.28,
+   "t_tela": 37.28,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "lado R do triângulo"
+  },
+  {
+   "fala": "raio do furo",
+   "t_fala": 38.42,
+   "t_tela": 38.42,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "lado a"
+  },
+  {
+   "fala": "metade da altura",
+   "t_fala": 39.38,
+   "t_tela": 39.38,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "lado h/2"
+  },
+  {
+   "fala": "triângulo retângulo",
+   "t_fala": 41.38,
+   "t_tela": 41.38,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "triângulo completo"
+  },
+  {
+   "fala": "por pitágoras",
+   "t_fala": 42.58,
+   "t_tela": 42.74,
+   "tela_menos_fala": 0.16,
+   "ok": true,
+   "tela": "R² = a² + (h/2)²"
+  },
+  {
+   "fala": "menos",
+   "t_fala": 45.12,
+   "t_tela": 45.12,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "a² muda de lado: R² − a² = (h/2)²"
+  },
+  {
+   "fala": "anota essa relação",
+   "t_fala": 49.42,
+   "t_tela": 49.42,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "a relação vira o lembrete"
+  },
+  {
+   "fala": "fatiar",
+   "t_fala": 54.02,
+   "t_tela": 54.02,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "o plano sobe pelo anel"
+  },
+  {
+   "fala": "tipo um cd",
+   "t_fala": 60.22,
+   "t_tela": 60.22,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "coroa destacada com os raios"
+  },
+  {
+   "fala": "o raio de fora",
+   "t_fala": 62.58,
+   "t_tela": 62.58,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "r_ext² = R² − z²"
+  },
+  {
+   "fala": "o raio de dentro",
+   "t_fala": 67.96,
+   "t_tela": 67.96,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "r_int² = a²"
+  },
+  {
+   "fala": "a área é pi",
+   "t_fala": 69.94,
+   "t_tela": 69.94,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "A(z) = π(r_ext² − r_int²)"
+  },
+  {
+   "fala": "diferença desses",
+   "t_fala": 71.44,
+   "t_tela": 71.44,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "substitui os quadrados"
+  },
+  {
+   "fala": "reorganizando",
+   "t_fala": 73.1,
+   "t_tela": 73.1,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "a² e z² trocam de lugar"
+  },
+  {
+   "fala": "justamente",
+   "t_fala": 78.04,
+   "t_tela": 78.04,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "R² − a² destacado no lembrete"
+  },
+  {
+   "fala": "isso vale",
+   "t_fala": 79.64,
+   "t_tela": 79.64,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "o bloco sai e (h/2)² entra"
+  },
+  {
+   "fala": "o raio da esfera sumiu",
+   "t_fala": 82.14,
+   "t_tela": 82.14,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "O RAIO DA ESFERA SUMIU + esfera fantasma"
+  },
+  {
+   "fala": "uma esfera de raio",
+   "t_fala": 88.5,
+   "t_tela": 88.5,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "esfera pequena aparece"
+  },
+  {
+   "fala": "raio igual",
+   "t_fala": 89.36,
+   "t_tela": 89.36,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "raio h/2"
+  },
+  {
+   "fala": "nela",
+   "t_fala": 91.56,
+   "t_tela": 91.56,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "triângulo na esfera pequena (ρ, z, h/2)"
+  },
+  {
+   "fala": "por pitágoras",
+   "t_fala": 93.38,
+   "t_tela": 93.38,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "ρ² + z² = (h/2)²"
+  },
+  {
+   "fala": "diferença entre",
+   "t_fala": 95.84,
+   "t_tela": 95.84,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "A_esf(z) = πρ² = π[(h/2)² − z²]"
+  },
+  {
+   "fala": "sobe o plano",
+   "t_fala": 100.12,
+   "t_tela": 100.12,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "o plano sobe"
+  },
+  {
+   "fala": "desce o plano",
+   "t_fala": 101.08,
+   "t_tela": 101.08,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "o plano desce"
+  },
+  {
+   "fala": "as áreas continuam",
+   "t_fala": 102.12,
+   "t_tela": 102.12,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "MESMA ÁREA EM TODA ALTURA"
+  },
+  {
+   "fala": "princípio de cavalieri",
+   "t_fala": 104.54,
+   "t_tela": 104.54,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "A_anel(z) = A_esf(z) na caixa"
+  },
+  {
+   "fala": "mesmo volume",
+   "t_fala": 108.96,
+   "t_tela": 108.96,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "LOGO, MESMO VOLUME"
+  },
+  {
+   "fala": "então o volume",
+   "t_fala": 112.98,
+   "t_tela": 112.98,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "V_anel = V_esf"
+  },
+  {
+   "fala": "quatro terços",
+   "t_fala": 115.36,
+   "t_tela": 115.36,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "V = (4/3)π(h/2)³"
+  },
+  {
+   "fala": "o cubo da metade é",
+   "t_fala": 118.82,
+   "t_tela": 118.82,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "(h/2)³ = h³/2³"
+  },
+  {
+   "fala": "sobre oito",
+   "t_fala": 120.96,
+   "t_tela": 120.96,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "2³ = 8 numa fração só"
+  },
+  {
+   "fala": "quatro sobre oito",
+   "t_fala": 121.68,
+   "t_tela": 121.68,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "riscos: 4 → 1, 8 → 2"
+  },
+  {
+   "fala": "um meio vezes",
+   "t_fala": 123.56,
+   "t_tela": 123.56,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "V = πh³/(3·2)"
+  },
+  {
+   "fala": "dá um sexto",
+   "t_fala": 125.12,
+   "t_tela": 125.12,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "3·2 → 6"
+  },
+  {
+   "fala": "pi vezes a altura ao cubo",
+   "t_fala": 126.8,
+   "t_tela": 126.8,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "caixa V = πh³/6"
+  },
+  {
+   "fala": "olha as paredes",
+   "t_fala": 132.42,
+   "t_tela": 132.42,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "corte das três paredes"
+  },
+  {
+   "fala": "um centímetro",
+   "t_fala": 133.52,
+   "t_tela": 133.52,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "1,00 cm"
+  },
+  {
+   "fala": "sessenta e oito",
+   "t_fala": 135.5,
+   "t_tela": 135.5,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "0,68 cm"
+  },
+  {
+   "fala": "quarenta e seis",
+   "t_fala": 137.7,
+   "t_tela": 137.7,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "0,46 cm"
+  },
+  {
+   "fala": "aumentando a esfera",
+   "t_fala": 143.76,
+   "t_tela": 143.8,
+   "tela_menos_fala": 0.04,
+   "ok": true,
+   "tela": "R começa a crescer (contador)"
+  },
+  {
+   "fala": "só um cuidado",
+   "t_fala": 149.68,
+   "t_tela": 149.68,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "frase de proteção"
+  },
+  {
+   "fala": "sem furo",
+   "t_fala": 156.42,
+   "t_tela": 156.42,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "o anel engrossa até a esfera"
+  },
+  {
+   "fala": "fórmula devolve",
+   "t_fala": 157.32,
+   "t_tela": 157.32,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "V = π(2R)³/6"
+  },
+  {
+   "fala": "aumenta o furo",
+   "t_fala": 162.16,
+   "t_tela": 162.16,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "o anel afina"
+  },
+  {
+   "fala": "a altura e o volume",
+   "t_fala": 164.58,
+   "t_tela": 164.58,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "h → 0 ⇒ V → 0 (o fio já chegou a h = 0)"
+  },
+  {
+   "fala": "pergunta respondida",
+   "t_fala": 166.8,
+   "t_tela": 166.8,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "o trio volta"
+  },
+  {
+   "fala": "empate triplo",
+   "t_fala": 168.1,
+   "t_tela": 168.1,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "V = 36π nos três"
+  },
+  {
+   "fala": "só a altura determina",
+   "t_fala": 169.42,
+   "t_tela": 169.42,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "SÓ A ALTURA DETERMINA O VOLUME + V = πh³/6"
+  },
+  {
+   "fala": "qual era o seu",
+   "t_fala": 171.3,
+   "t_tela": 171.3,
+   "tela_menos_fala": 0.0,
+   "ok": true,
+   "tela": "cartão final"
+  }
+ ]
+}

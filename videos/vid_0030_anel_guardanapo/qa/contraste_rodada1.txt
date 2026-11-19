@@ -1,0 +1,225 @@
+{
+ "abaixo_do_limiar": [
+  {
+   "elemento": "Manim rot_aux",
+   "medidas": 489,
+   "pior": 1.58,
+   "t_pior": 88.0,
+   "tipo": "texto",
+   "xy": [
+    464,
+    321
+   ],
+   "mediana": 2.67
+  },
+  {
+   "elemento": "Remotion C04_cont A = 5,00π cm²",
+   "medidas": 2,
+   "pior": 3.95,
+   "t_pior": 101.0,
+   "tipo": "texto",
+   "xy": [
+    407,
+    603
+   ],
+   "mediana": 4.0
+  },
+  {
+   "elemento": "Remotion regua0",
+   "medidas": 5,
+   "pior": 1.01,
+   "t_pior": 25.0,
+   "tipo": "linha",
+   "xy": [
+    161,
+    296
+   ],
+   "mediana": 1.01
+  },
+  {
+   "elemento": "Remotion regua0_rot 6 cm",
+   "medidas": 8,
+   "pior": 4.44,
+   "t_pior": 25.0,
+   "tipo": "texto",
+   "xy": [
+    120,
+    296
+   ],
+   "mediana": 7.34
+  },
+  {
+   "elemento": "Remotion regua1",
+   "medidas": 3,
+   "pior": 1.01,
+   "t_pior": 173.0,
+   "tipo": "linha",
+   "xy": [
+    135,
+    366
+   ],
+   "mediana": 1.01
+  },
+  {
+   "elemento": "Remotion regua_anel",
+   "medidas": 16,
+   "pior": 1.0,
+   "t_pior": 147.0,
+   "tipo": "linha",
+   "xy": [
+    150,
+    312
+   ],
+   "mediana": 1.01
+  },
+  {
+   "elemento": "Remotion rot_trio2 R = 10 cm",
+   "medidas": 13,
+   "pior": 4.31,
+   "t_pior": 23.0,
+   "tipo": "texto",
+   "xy": [
+    437,
+    591
+   ],
+   "mediana": 4.7
+  },
+  {
+   "elemento": "Remotion tag_hook = ESFERA FURADA",
+   "medidas": 5,
+   "pior": 2.01,
+   "t_pior": 12.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    729
+   ],
+   "mediana": 2.01
+  },
+  {
+   "elemento": "Remotion tag_hook ANEL DE GUARDANAPO",
+   "medidas": 9,
+   "pior": 1.43,
+   "t_pior": 2.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    729
+   ],
+   "mediana": 1.43
+  },
+  {
+   "elemento": "linha 3D cor (112, 88, 183)",
+   "medidas": 1,
+   "pior": 1.57,
+   "t_pior": 47.0,
+   "tipo": "linha",
+   "xy": [
+    364,
+    277
+   ],
+   "mediana": 1.57
+  },
+  {
+   "elemento": "linha 3D cor (115, 105, 177)",
+   "medidas": 1,
+   "pior": 2.4,
+   "t_pior": 81.0,
+   "tipo": "linha",
+   "xy": [
+    304,
+    297
+   ],
+   "mediana": 2.4
+  },
+  {
+   "elemento": "linha 3D cor (127, 149, 178)",
+   "medidas": 1,
+   "pior": 2.52,
+   "t_pior": 47.0,
+   "tipo": "linha",
+   "xy": [
+    121,
+    312
+   ],
+   "mediana": 2.52
+  },
+  {
+   "elemento": "linha 3D cor (184, 182, 241)",
+   "medidas": 1,
+   "pior": 1.81,
+   "t_pior": 96.0,
+   "tipo": "linha",
+   "xy": [
+    434,
+    293
+   ],
+   "mediana": 1.81
+  },
+  {
+   "elemento": "linha 3D cor (185, 190, 246)",
+   "medidas": 9,
+   "pior": 1.97,
+   "t_pior": 89.0,
+   "tipo": "linha",
+   "xy": [
+    434,
+    293
+   ],
+   "mediana": 1.97
+  },
+  {
+   "elemento": "linha 3D cor (186, 189, 245)",
+   "medidas": 1,
+   "pior": 1.95,
+   "t_pior": 86.0,
+   "tipo": "linha",
+   "xy": [
+    434,
+    293
+   ],
+   "mediana": 1.95
+  },
+  {
+   "elemento": "linha 3D cor (232, 98, 253)",
+   "medidas": 1,
+   "pior": 2.91,
+   "t_pior": 37.0,
+   "tipo": "linha",
+   "xy": [
+    284,
+    301
+   ],
+   "mediana": 2.91
+  }
+ ],
+ "quadros_de_teste": {
+  "C01 trio com régua": {
+   "Remotion rot_trio0 R = 5 cm": 4.75,
+   "Remotion rot_trio1 R = 7 cm": 5.47,
+   "Remotion rot_trio2 R = 10 cm": 4.67,
+   "Remotion regua0": 1.01,
+   "Remotion regua0_rot 6 cm": 7.42,
+   "Remotion regua1_rot 6 cm": 7.49,
+   "Remotion regua2_rot 6 cm": 7.07
+  },
+  "C02 corte com h e triângulo": {
+   "Manim rot_aux": 1.82,
+   "linha 3D cor (230, 138, 255)": 6.56,
+   "linha 3D cor (232, 249, 255)": 16.62
+  },
+  "C03 coroa com r_int/r_ext/R": {
+   "Manim rot_aux": 1.8,
+   "linha 3D cor (183, 143, 238)": 6.11
+  },
+  "C04 disco da esfera": {
+   "Manim rot_aux": 1.59,
+   "linha 3D cor (185, 190, 246)": 1.97
+  },
+  "C06 anel com régua": {
+   "Remotion regua_anel": 1.0,
+   "Remotion regua_anel_rot h = 6 cm": 6.88,
+   "Remotion C06_cont R = 7,1 cm     a =": 12.34
+  }
+ }
+}

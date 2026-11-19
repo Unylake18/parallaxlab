@@ -1,0 +1,20 @@
+// ===== Cenas 3D-alvo do 3.5-T3 (coordenadas cilíndricas) =====
+// cyl(s,θ,z) → cartesianas; WC = no mundo (× SC)
+const cyl=(s,t,z)=>[s*Math.cos(t),s*Math.sin(t),z];
+const WC=(s,t,z)=>Wp(...cyl(s,t,z));
+const bolinha=(p,cor,r=.055)=>{const b=new T.Mesh(new T.SphereGeometry(r,20,12),new T.MeshBasicMaterial({color:C(cor)}));b.position.set(...p);S.add(b);return b;};
+const RMAX=Math.SQRT2, corR=(s,z)=>corDens(Math.sqrt(s*s+z*z)/RMAX);
+// lata em traço: dois círculos + verticais a cada 30°
+function lataTraco(R=1,Hh=1,{cor=GEO,w=.008,nv=12,t0=0,t1=2*PI,cv=TR}={}){for(const z of [0,Hh])tubo(arco(t=>WC(R,t,z),t0,t1,120),w,cor);
+ for(let k=0;k<nv;k++){const t=2*PI*k/nv;if(t<t0-1e-9||t>t1+1e-9)continue;tubo([WC(R,t,0),WC(R,t,Hh)],w*.6,cv);}}
+// célula cilíndrica s∈[s1,s2], θ∈[t1,t2], z∈[z1,z2]
+function celC(s1,s2,t1,t2,z1,z2,cor=LI,{w=.010,borda=LI,fill=true}={}){
+ if(fill){const fc=n=>tom(cor,n,.40,.45);
+  sup((t,z)=>WC(s2,t,z),t1,t2,z1,z2,10,4,(t,z)=>fc([Math.cos(t),Math.sin(t),0]));
+  if(s1>1e-6)sup((t,z)=>WC(s1,t,z),t1,t2,z1,z2,10,4,()=>mixc(BG,cor,.30));
+  for(const z of [z1,z2])sup((s,t)=>WC(s,t,z),s1,s2,t1,t2,4,10,()=>fc([0,0,z===z2?1:-1]));
+  for(const t of [t1,t2])sup((s,z)=>WC(s,t,z),s1,s2,z1,z2,3,3,()=>fc(t===t1?[Math.sin(t),-Math.cos(t),0]:[-Math.sin(t),Math.cos(t),0]));}
+ for(const s of [s1,s2])for(const z of [z1,z2])if(s>1e-6)tubo(arco(t=>WC(s,t,z),t1,t2,24),w,borda);
+ for(const t of [t1,t2])for(const z of [z1,z2])tubo([WC(s1,t,z),WC(s2,t,z)],w,borda);
+ for(const s of [s1,s2])for(const t of [t1,t2])if(s>1e-6||t===t1)tubo([WC(s,t,z1),WC(s,t,z2)],w,borda);}
+

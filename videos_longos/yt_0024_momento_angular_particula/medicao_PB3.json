@@ -1,0 +1,145 @@
+{
+"lote": "PB3",
+"marcas": [
+{
+"id": "an:B3-1",
+"A": 1.1,
+"W": 0.0
+},
+{
+"id": "gat:B3-1:derivar a defini\u00e7\u00e3o no tempo",
+"A": 2.6999999999999993,
+"W": 0.0
+},
+{
+"id": "gat:B3-1:s\u00e3o duas parcelas",
+"A": 7.699999999999999,
+"W": 0.0
+},
+{
+"id": "ate:B3-1:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:B3-2",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "gat:B3-2:a derivada da posi\u00e7\u00e3o \u00e9 a velocidade",
+"A": 2.2,
+"W": 0.0
+},
+{
+"id": "gat:B3-2:na mesma dire\u00e7\u00e3o",
+"A": 2.4,
+"W": 0.0
+},
+{
+"id": "gat:B3-2:ela some",
+"A": 2.2199999999999998,
+"W": 0.0
+},
+{
+"id": "ate:B3-2:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:B3-3",
+"A": 0.8999999999999999,
+"W": 0.0
+},
+{
+"id": "gat:B3-3:que \u00e9 o torque",
+"A": 2.9899999999999998,
+"W": 0.0
+},
+{
+"id": "gat:B3-3:a taxa de varia\u00e7\u00e3o do momento angular",
+"A": 1.75,
+"W": 0.0
+},
+{
+"id": "gat:B3-3:a for\u00e7a muda o momento linear",
+"A": 1.0,
+"W": 0.0
+},
+{
+"id": "gat:B3-3:s\u00f3 com um cuidado",
+"A": 0.9,
+"W": 0.0
+},
+{
+"id": "ate:B3-3:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:B3-4",
+"A": 2.0,
+"W": 0.0
+},
+{
+"id": "gat:B3-4:uma pedra de meio quilo",
+"A": 0.6,
+"W": 0.0
+},
+{
+"id": "gat:B3-4:ela cai reto",
+"A": 0.5,
+"W": 0.0
+},
+{
+"id": "ate:B3-4:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:B3-5",
+"A": 1.25,
+"W": 0.0
+},
+{
+"id": "gat:B3-5:ganha",
+"A": 5.9,
+"W": 0.0
+},
+{
+"id": "gat:B3-5:o momento linear para baixo cresce",
+"A": 4.300000000000002,
+"W": 0.0
+},
+{
+"id": "gat:B3-5:cresce em linha reta",
+"A": 1.8599999999999999,
+"W": 0.0
+},
+{
+"id": "gat:B3-5:e o torque do peso",
+"A": 4.6,
+"W": 0.0
+},
+{
+"id": "gat:B3-5:menos um v\u00edrgula noventa e seis",
+"A": 5.749999999999999,
+"W": 0.0
+},
+{
+"id": "gat:B3-5:\u00e9 exatamente a inclina\u00e7\u00e3o",
+"A": 2.4,
+"W": 0.0
+},
+{
+"id": "ate:B3-5:0.995",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "fim",
+"A": 0.0,
+"W": 0.0
+}
+]
+}

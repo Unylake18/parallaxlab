@@ -14,6 +14,7 @@ Preview:  uv run python -m manim -r 960,540 --fps 15 videos_longos/yt_0005_magne
 GUIAS=1 mostra a safe area. SEG=K (aprofundamento analítico: Lorentz+Newton → EDO → ω_c → v(t) → x(t) → hélice), A (dedução de R, ω_c e T), C (duas partículas), B (hélice), D (B01→B02), E (B04), F (B05) ou G (B06) renderiza só esse trecho.
 """
 
+import json
 import math
 import os
 import sys
@@ -25,8 +26,9 @@ from manim import (
     Flash, ImageMobject, Line, MathTex, VMobject, ParametricFunction, ReplacementTransform, Rotate, Scene, SurroundingRectangle,
     Transform, ValueTracker, VGroup, always_redraw, linear, smooth,
 )
-from manim import DashedVMobject, TransformMatchingTex, ManimColor, TransformFromCopy, interpolate_color
-from manim import AnimationGroup, Axes, Ellipse, LaggedStart, Polygon, Rectangle, RoundedRectangle
+from manim import CurvedArrow, DashedVMobject, TransformMatchingTex, ManimColor, TransformFromCopy, interpolate_color, CapStyleType
+from manim import Wait, config
+from manim import Succession, AnimationGroup, Axes, Ellipse, LaggedStart, Polygon, Rectangle, RoundedRectangle
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from template.config_horizontal import BACKGROUND_COLOR, PRIMARY_COLOR, TEXT_COLOR, WATERMARK_PATH  # noqa: E402
@@ -34,6 +36,27 @@ from template.fonts import DISPLAY_FONT, official_text, screen_text  # noqa: E40
 from template.layout_horizontal import GUIAS, safe_guides  # noqa: E402
 
 SEG = os.environ.get("SEG", "")
+SEGS = {x for x in os.environ.get("SEGS", "").split(",") if x.strip()}      # render só destas seções (grupos paralelos do render final)
+
+# ── Sincronia com a voz (mesmo método do yt_0001/yt_0002; ver sync_voz.py) ───────────────────────────────────────────
+# `self.at(n)` marca, na cena, o instante em que COMEÇA a fala da célula n de narracao_sugestao.md (n = ordem das células com fala).
+# O tempo de cada fala vem de sync.json (alinhamento medido nas pausas do WAV). A cena espera, ou pede ao áudio uma pausa extra
+# (pads.json), para que o acontecimento visual e a fala caiam no mesmo quadro (a fala começa LEAD s antes do evento). Sem sync.json
+# (ou com SEM_VOZ=1) a cena roda como o preview sem voz.
+VOZ = (Path(__file__).resolve().parent / "sync.json").exists() and os.environ.get("SEM_VOZ") != "1"
+CEL_T = [c["onset"] for c in json.loads((Path(__file__).resolve().parent / "sync.json").read_text(encoding="utf-8"))["celulas"]] if VOZ else []
+FIM_VOZ = json.loads((Path(__file__).resolve().parent / "sync.json").read_text(encoding="utf-8"))["fala"][1] if VOZ else 0.0
+_SYNC = json.loads((Path(__file__).resolve().parent / "sync.json").read_text(encoding="utf-8")) if VOZ else {"celulas": [], "words": []}
+PAL_N = [c["palavra"] for c in _SYNC["celulas"]]                      # índice da 1ª palavra de cada célula
+WORD_T = [w[1] for w in _SYNC["words"]]                               # início estimado de cada palavra (âncoras dentro de uma célula)
+LEAD, TOL, OFFSET0, CAUDA = 0.3, 0.1, 0.7, 2.0      # a fala precede o evento em LEAD s; 0,7 s de silêncio antes da 1ª palavra; cauda após a voz
+AJUSTAR = os.environ.get("AJUSTAR") == "1"
+RITMO_ARQ = Path(__file__).resolve().parent / "ritmo.json"
+RITMO = {} if (AJUSTAR or not VOZ or not RITMO_ARQ.exists()) else json.loads(RITMO_ARQ.read_text(encoding="utf-8"))
+P_ESPERA, P_ANIM, FOLGA = 0.3, 0.55, 0.04
+E_ESPERA, E_ANIM = 4.0, 1.35                        # alongamento máximo das esperas e das animações quando a fala é mais longa           # compressão máxima das esperas e das animações antes de pedir pausa ao áudio
+CLOCKS_CRIT = ("tt", "tg", "tv", "tw")             # relógios das órbitas: esperas sob eles não se comprimem
+CLOCKS_EXATOS = ("tg", "tv", "tw")                 # janelas de volta inteira: nada sob eles se comprime (esperas nem animações)
 LOGO_PATH = Path(__file__).resolve().parents[2] / "assets" / "branding" / "overlays" / "parallax_lab_logo_horizontal.png"
 WHITE = TEXT_COLOR
 CYAN = PRIMARY_COLOR        # campo elétrico E
@@ -43,6 +66,7 @@ BLUE_L = "#7FB2FF"          # fios
 VIOLET = "#9C8CFF"          # v∥ · carga negativa
 FC = "#5AA2FF"              # força magnética F_B
 GREEN = "#3FE08B"           # CORRENTE (I, K, J): o mesmo verde do vid_0009; carga continua azul
+STEEL = "#7A8696"           # matéria condutora / fio (corpo material): cinza-aço neutro, distinto da corrente (verde) e da carga (azul)
 PANEL = "#0E2A52"           # painel discreto azul-escuro (cards): mesmo espírito dos preenchimentos translúcidos do Gauss
 HEADER = "ELETROMAGNETISMO · MAGNETOSTÁTICA"
 WM_W, WM_OP = 1.92, 0.45
@@ -55,6 +79,11 @@ Z_LINES = (-1.0, 1.0, 2.0, 3.0)   # poucas linhas de B (unidades do diagrama); z
 FLUXO_B = 0.0               # B é uniforme e estacionário: as marcas ficam estáticas (sem escoamento)
 FLUXO_I = 0.75              # velocidade dos portadores nos fios (unidades/s)
 CX = 4.6                    # centro da coluna de análise (direita)
+
+
+def mudo(m):
+    m.set_opacity(0)
+    return m
 
 
 def txt(s, size=T_BODY, color=WHITE, opacity=1.0):
@@ -101,6 +130,19 @@ def vec(a, b, color, width=5, z=4, tip=0.24):
     return VGroup(Line(a, b - u * tl * 0.8, color=color, stroke_width=width), head).set_z_index(z)
 
 
+def pulso(a, b, op=1.0, w=7.5, z=2):
+    """Pulso de corrente: traço alongado verde de pontas redondas; contorno na cor do fundo (destaca do aço e do fio) e cabeça
+    (metade da frente, no sentido a→b) mais clara que a cauda. Nunca uma bolinha (bolinha lê como carga)."""
+    a, b = np.asarray(a, dtype=float), np.asarray(b, dtype=float)
+    mid = (a + b) / 2
+
+    def seg(p, q, o):
+        ln = Line(p, q, color=GREEN, stroke_width=w, cap_style=CapStyleType.ROUND).set_stroke(opacity=o * op)
+        return ln.set_stroke(BACKGROUND_COLOR, w + 3.5, opacity=op, background=True)
+
+    return VGroup(seg(a, mid, 0.55), seg(mid, b, 1.0)).set_z_index(z)
+
+
 def panel(m, pad=0.28, op=0.55, color=PANEL, stroke=BLUE_L):
     """Card azul-escuro discreto atrás de um grupo (hierarquia visual do Gauss; sem caixa branca)."""
     r = RoundedRectangle(corner_radius=0.16, width=m.width + 2 * pad, height=m.height + 2 * pad, stroke_width=1.5)
@@ -133,23 +175,44 @@ def eqc(*parts, size=M_M, colors=None):
     return _EQC[key].copy()
 
 
+def RF_OUT(t):
+    """Saída escalonada: o símbolo antigo some em 0–70% da passada ..."""
+    return smooth(min(1.0, t / 0.7))
+
+
+def RF_IN(t):
+    """... e o novo entra em 30–100%: os dois se cruzam só em ~40% de opacidade (sem glifos amontoados) e a expressão nunca fica em branco."""
+    return smooth(min(1.0, max(0.0, (t - 0.3) / 0.7)))
+
+
 def RT(a, b, **kw):
     """Troca limpa entre duas representações: equações compatíveis preservam os termos iguais (TransformMatchingTex);
     o resto sai e entra por fade, sem deformar glifos diferentes em um amontoado ilegível."""
     if kw.pop("match", False) and isinstance(a, MathTex) and isinstance(b, MathTex):
         return TransformMatchingTex(a, b, **kw)
-    return AnimationGroup(FadeOut(a), FadeIn(b))
+    return Succession(FadeOut(a, run_time=0.45), FadeIn(b, run_time=0.55), run_time=1.0)  # sequencial: nunca dois textos sobrepostos
+
+
+def conceito(texto, pos=(0.0, 0.0, 0.0), cor=CYAN):
+    """Título de CONCEITO (distinto de nota): pílula azul-escura com barra de acento; texto mais forte que as notas.
+    `texto` é uma str ou uma lista de str / ("m", tex)."""
+    itens = [texto] if isinstance(texto, (str, tuple)) else texto
+    t = VGroup(*[(eq(it[1], size=24) if isinstance(it, tuple) else txt(it, 21, opacity=1.0)) for it in itens]).arrange(RIGHT, buff=0.1)
+    r = RoundedRectangle(corner_radius=0.19, width=t.width + 0.62, height=max(t.height, 0.3) + 0.3).set_fill(PANEL, 0.95).set_stroke(BLUE_L, 1.6, 0.75)
+    bar = Rectangle(width=0.07, height=r.height * 0.55).set_fill(cor, 1).set_stroke(width=0)
+    g = VGroup(r, bar, t)
+    bar.move_to(r.get_left() + np.array([0.2, 0.0, 0.0]))
+    t.move_to(r.get_center() + np.array([0.13, 0.0, 0.0]))
+    return g.move_to(list(pos)).set_z_index(5)
 
 
 def nome(*linhas, pos=(0.0, 0.0, 0.0)):
-    """Título curto de um resultado consolidado. Cada linha é uma str ou uma lista de str/("m", tex); a 1ª linha é a principal."""
-    g = VGroup()
-    for k, ln in enumerate(linhas):
+    """Título do resultado consolidado: pílula de conceito (+ subtítulo discreto, se houver)."""
+    g = VGroup(conceito(linhas[0]))
+    for ln in linhas[1:]:
         itens = [ln] if isinstance(ln, (str, tuple)) else ln
-        size, op = (22, 1.0) if k == 0 else (18, 0.8)
-        row = VGroup(*[(eq(it[1], size=size + 2) if isinstance(it, tuple) else txt(it, size, opacity=op)) for it in itens]).arrange(RIGHT, buff=0.1)
-        g.add(row)
-    return g.arrange(DOWN, buff=0.06).move_to(list(pos))
+        g.add(VGroup(*[(eq(it[1], size=20) if isinstance(it, tuple) else txt(it, 17, opacity=0.8)) for it in itens]).arrange(RIGHT, buff=0.1))
+    return g.arrange(DOWN, buff=0.1).move_to(list(pos))
 
 
 def box(m, color=WHITE, pad=0.16):
@@ -185,7 +248,7 @@ BASECOL = {"B": MAG, "Bv": MAG, "FB": FC, "dF": FC, "F": FC,
            "vp": VIOLET, "vp2": VIOLET, "vpar": VIOLET, "v": VIOLET, "vv": VIOLET, "vs": VIOLET, "w": VIOLET, "T": VIOLET,
            "dt": VIOLET, "dtt": VIOLET,
            "q": BLUE_L, "qs": BLUE_L, "dq": BLUE_L, "lam": BLUE_L, "Qi": BLUE_L, "rho": BLUE_L, "drho": BLUE_L, "dQdt": BLUE_L,
-           "FE": FC, "Ev": CYAN, "Es": CYAN, "Bs": MAG, "Fy": FC, "Fyq": FC, "B2": MAG, "I": GREEN, "Kv": GREEN, "Jv": GREEN, "div": GREEN, "PB": CYAN, "WB": CYAN, "Ient": GREEN, "Isai": GREEN}
+           "FE": CYAN, "Ev": CYAN, "Es": CYAN, "Bs": MAG, "Fy": WHITE, "Fyq": WHITE, "B2": MAG, "I": GREEN, "Kv": GREEN, "Jv": GREEN, "div": GREEN, "PB": CYAN, "WB": CYAN, "Ient": GREEN, "Isai": GREEN}
 
 
 class Orbit:
@@ -219,10 +282,42 @@ class Orbit:
         return self.s * ABSQ * np.cross(self.vel(u), np.array([0.0, 0.0, BM]))   # F = q v×B
 
 
+class BalancoB06:
+    """Balanço de carga do B06, UMA fonte física: A = portadores que entraram, B = portadores que saíram (contadores contínuos).
+    dA/dt = R0·I_ent e dB/dt = R0·I_sai com R0 = N0·S_PHYS, logo  Q_int = (A − B)/N0 obedece EXATAMENTE a
+    dQ_int/dt (físico) = I_ent − I_sai  (S_PHYS = segundos físicos por segundo de tela; câmera lenta).
+    Cada portador k nasce na face de entrada quando A cruza k, atravessa e sai quando B cruza k; entre uma coisa e outra sua
+    posição é a fração s = (A − k)/(A − B) (densidade uniforme): ninguém aparece nem some no interior."""
+
+    def __init__(self, n0=24, s_phys=0.11, q0=1.0):
+        self.n0, self.s_phys, self.q0 = n0, s_phys, q0
+        self.r0 = n0 * s_phys / q0
+        self.A, self.B = n0 + 0.5, 0.5
+
+    def step(self, i_in, i_out, dt):
+        self.A += self.r0 * i_in * dt
+        self.B += self.r0 * i_out * dt
+
+    def q(self):
+        return self.q0 * (self.A - self.B) / self.n0
+
+    def particles(self):
+        n = max(self.A - self.B, 1e-6)
+        return [(k, (self.A - k) / n) for k in range(int(math.floor(self.B)) + 1, int(math.floor(self.A)) + 1)]
+
+
 class YT0005MagnetostaticaM1(Scene):
 
     def setup(self):
         self.camera.background_color = BACKGROUND_COLOR
+        # relógio da sincronia: T = tempo do vídeo (quadros inteiros); shift = silêncio já inserido no áudio; trecho corrente (entre âncoras)
+        self.T, self.shift, self.pads, self.blocos, self.ancoras_log = 0.0, 0.0, [], {}, []
+        self.seg_k, self.s0, self.base_a, self.base_w, self.base_f, self.na_at, self.ritmo = "pre", 0.0, 0.0, 0.0, 0.0, False, {}
+        self._fixo = False
+        self._skip = False
+        self._livre = False
+        if VOZ:
+            self._espera(0.0, OFFSET0)                       # silêncio antes da 1ª palavra
         # geometria 2D do diagrama (origem da carga e escala): trackers para poder abrir espaço (FOCUS) no M1-06
         self.ox, self.oy, self.gs = ValueTracker(-4.3), ValueTracker(-1.0), ValueTracker(1.15)
 
@@ -243,7 +338,11 @@ class YT0005MagnetostaticaM1(Scene):
             self.next_section(name, skip_animations=(self.cur_r != SEG))
             return
         ativo = (not SEG) or SEG == name or (SEG == "F" and name == "F2") or (SEG == "KA" and name in ("K", "Kend", "rest0", "A")) or (SEG == "B03" and name in ("B", "Bx"))
+        if SEGS:
+            ativo = name in SEGS
+        self._skip = not ativo
         self.next_section(name, skip_animations=not ativo)
+        self.blocos[name] = round(self.T, 3)
 
     def rsec(self, r):
         """Fronteira dos previews de redesign (SEG=R1..R4): só o grupo escolhido gera quadros; os outros rodam sem render."""
@@ -254,7 +353,112 @@ class YT0005MagnetostaticaM1(Scene):
     def hold(self, d):
         """Pausa que não congela o quadro: o wait() padrão do Manim vira imagem estática quando os updaters não usam dt
         (always_redraw), o que parava o fluxo de B, os portadores e os vetores a cada pausa."""
+        self._fixo = self._clock_crit()                  # espera sob um relógio de órbita: não se comprime (a fase importa)
         self.wait(d, frozen_frame=False)
+        self._fixo = False
+
+    def _clock_crit(self):
+        return any(getattr(self, "run", {}).get(k) for k in CLOCKS_CRIT if not (k == "tw" and self._livre))
+
+    # ── sincronia: relógio em quadros inteiros, ritmo por trecho, esperas pedidas ao áudio ──────────────────────────────
+    def play(self, *args, **kwargs):
+        return self._tocar(self.compile_animations(*args, **kwargs))
+
+    def _tocar(self, anims):
+        """Duração em quadros inteiros: o relógio T (quadros exatos) é o que as âncoras at(n) usam, sem deriva."""
+        fps = config.frame_rate
+        espera = isinstance(anims[0], Wait)
+        static = False
+        if espera:
+            w0 = anims[0]
+            static = bool(w0.is_static_wait) if w0.is_static_wait is not None else False
+        m = max(a.run_time for a in anims)
+        rt = m
+        if VOZ and not self.na_at:
+            fixo = (espera and self._fixo) or any(getattr(self, "run", {}).get(k) for k in CLOCKS_EXATOS if not (k == "tw" and self._livre))
+            fa, fw = RITMO.get(self.seg_k, (1.0, 1.0))
+            if espera:
+                if fixo:
+                    self.base_f += m
+                else:
+                    self.base_w += m
+            else:
+                self.base_a += m
+            rt = m * (1.0 if fixo else (fw if espera else fa))
+        n = max(1, int(round(rt * fps)))
+        real = (n + 0.25) / fps if static else (n - 0.5) / fps
+        if self._skip and not static:
+            # seção pulada: o Manim avança os relógios (updaters) de uma só vez por run_time; renderizada, avança (n-1)/fps.
+            # Igualar os dois evita que a fase das órbitas (e as esperas das âncoras) mude entre passada seca e render.
+            real = max((n - 1) / fps, 1e-6)
+        for a in anims:
+            a.run_time = real * a.run_time / m
+        self.T += n / fps
+        return super().play(*anims)
+
+    def _espera(self, tv, d):
+        self.pads.append([round(tv, 3), round(d, 3)])
+        self.shift += d
+
+    def _ajusta(self, livre):
+        """Fatores (animação, espera) para que o trecho desenhado caiba em `livre` segundos de fala."""
+        a, w, f = self.base_a, self.base_w, self.base_f
+        sobra = a + w + f - (livre - FOLGA)
+        if sobra < 0 and a + w > 0:
+            # a fala é mais longa que o desenho: as esperas se alongam (e as animações um pouco) para que os passos se espalhem
+            # pela fala em vez de acontecerem todos no começo e a tela ficar parada no fim
+            falta = -sobra
+            fw = min(E_ESPERA, 1 + falta / w) if w else 1.0
+            falta -= w * (fw - 1)
+            fa = min(E_ANIM, 1 + falta / a) if a and falta > 0 else 1.0
+            self.ritmo[self.seg_k] = [round(fa, 3), round(fw, 3)]
+            return
+        if sobra <= 0 or a + w == 0:
+            return
+        fw = max(P_ESPERA, 1 - sobra / w) if w else 1.0
+        sobra -= w * (1 - fw)
+        fa = max(P_ANIM, 1 - sobra / a) if a and sobra > 0 else 1.0
+        self.ritmo[self.seg_k] = [round(fa, 3), round(fw, 3)]
+
+    def _roda(self, clock, dur):
+        """Deixa um relógio de órbita correr `dur` s (dentro de uma espera de âncora)."""
+        if dur < 0.5 / config.frame_rate:
+            return
+        self.run[clock] = True
+        self.na_at = True
+        self.hold(dur)
+        self.na_at = False
+        self.run[clock] = False
+
+    def at(self, n, k=0, fase=None, clock="tt"):
+        """A próxima animação começa quando a fala da célula n começa (+LEAD): espera até lá, ou pede pausa ao áudio se já passou.
+        k > 0: âncora na k-ésima palavra da célula (início estimado). fase: termina a volta da órbita (True = relógio tt; ou uma
+        função que devolve quanto falta) e a deixa estacionada (relógio parado; quem chama religa) para a próxima condição inicial."""
+        if not VOZ:
+            return
+        tv = CEL_T[n] if k == 0 else WORD_T[PAL_N[n] + k]
+        alvo = tv + (LEAD if n else -LEAD) + self.shift
+        self._ajusta(alvo - self.s0)
+        if fase is not None:
+            rem = (self.turn_rem if fase is True else fase)()
+            d0 = alvo - self.T
+            vol = rem if rem > 0.02 else 0.0
+            if d0 > vol:
+                vol += int((d0 - vol) // T_PER) * T_PER          # enquanto couber, a órbita segue viva; só o resto fica parado
+            self._roda(clock, vol)
+        d = alvo - self.T
+        status = "ok"
+        if d > 0.5 / config.frame_rate:
+            self.update_mobjects(0)
+            self.na_at = True
+            self.hold(d)
+            self.na_at = False
+            status = f"espera {d:.2f}"
+        elif d < -TOL:
+            self._espera(tv, -d)
+            status = f"pad {-d:.2f}"
+        self.ancoras_log.append([n if k == 0 else f"{n}.{k}", round(self.T, 3), round(tv, 3), round(self.shift, 3), status])
+        self.seg_k, self.s0, self.base_a, self.base_w, self.base_f = (str(n) if k == 0 else f"{n}.{k}"), self.T, 0.0, 0.0, 0.0
 
     def construct(self):
         self.wm = ImageMobject(str(WATERMARK_PATH)).set_width(WM_W).set_opacity(WM_OP).to_corner(UR, buff=0.3)
@@ -278,9 +482,26 @@ class YT0005MagnetostaticaM1(Scene):
         self.bloco_07_thomson()
         self.bloco_08_qm()
         self.bloco_09_fechamento()
+        if VOZ:
+            fim = FIM_VOZ + self.shift + CAUDA                 # o vídeo termina CAUDA s depois da última palavra
+            if self.T < fim:
+                self.na_at = True
+                self.hold(fim - self.T)
+                self.na_at = False
+            base = Path(__file__).resolve().parent
+            if AJUSTAR:
+                RITMO_ARQ.write_text(json.dumps(self.ritmo, indent=0), encoding="utf-8")
+                print(f"ritmo.json: {len(self.ritmo)} trechos comprimidos")
+            suf = ("_" + "_".join(sorted(SEGS))) if SEGS and SEGS != {"nenhuma"} else ""
+            (base / ("pads%s.json" % suf)).write_text(json.dumps({"fps": config.frame_rate, "pads": self.pads}, indent=0), encoding="utf-8")
+            self.blocos["fim"] = round(self.T, 3)
+            (base / ("blocos%s.json" % suf)).write_text(json.dumps(self.blocos, indent=0), encoding="utf-8")
+            (base / ("ancoras_log%s.json" % suf)).write_text(json.dumps(self.ancoras_log, indent=0), encoding="utf-8")
+            print(f"duração total: {self.T:.2f}s · pausas pedidas ao áudio: {len(self.pads)} (+{self.shift:.2f}s)")
 
     # ── abertura ───────────────────────────────────────────────────────────────────────────────────────────────
     def abertura(self):
+        self.at(0)
         brand = txt("PARALLAX LAB", 22, opacity=0.8).move_to([0, 2.05, 0])
         title = official_text("MAGNETOSTÁTICA", DISPLAY_FONT, BOLD, 58).move_to([0, 1.2, 0])
         ask = txt("O que um campo magnético realmente faz?", 30, opacity=0.9).move_to([0, 0.25, 0])
@@ -313,7 +534,7 @@ class YT0005MagnetostaticaM1(Scene):
 
         def wire(sign):
             return always_redraw(lambda: ParametricFunction(lambda y: np.array([wx(sign, y), y, 0]), t_range=[-2.1, 1.9],
-                                                           color=BLUE_L, stroke_width=LW_WIRE))
+                                                           color=STEEL, stroke_width=LW_WIRE))
 
         def dots(sign, ph):
             """Corrente como fluxo: pulsos claros que correm ao longo do fio (sem modelo microscópico de portadores)."""
@@ -324,7 +545,7 @@ class YT0005MagnetostaticaM1(Scene):
                     y = YMIN + ((k * period + ph.get_value()) % (SPAN + STEP))
                     op = min(1.0, max(0.0, min(y + 1.95, 1.95 - y) / 0.4))   # entram e saem sem "pop"
                     y2 = min(y + 0.32, 1.9)
-                    g.add(Line([wx(sign, y), y, 0], [wx(sign, y2), y2, 0], color=GREEN, stroke_width=5).set_opacity(0.95 * op))
+                    g.add(pulso([wx(sign, y), y, 0], [wx(sign, y2), y2, 0], op=op))
                 return g.set_z_index(2)
             return always_redraw(f)
 
@@ -356,25 +577,32 @@ class YT0005MagnetostaticaM1(Scene):
             return VGroup(a_l, a_r, lab_l, lab_r)
 
         forces = always_redraw(force_pair)
-        neutro = txt("fios eletricamente neutros, percorridos por corrente", T_NOTE, opacity=0.9).move_to([0, 2.3, 0])
+        neutro = txt("dois fios eletricamente neutros conduzem corrente", T_NOTE, opacity=0.9).move_to([0, 2.3, 0])
         cap1 = txt("correntes no mesmo sentido: os fios se atraem", T_BODY).move_to([0, -2.75, 0])
+        cap1.set_opacity(0)                       # falado na narração: não repete na tela
         cap2 = txt("sentidos opostos: os fios se repelem", T_BODY).move_to([0, -2.75, 0])
-        cap3 = txt("neutros, e ainda assim interagem", T_BODY).move_to([0, -2.75, 0])
+        cap2.set_opacity(0)                       # falado na narração: não repete na tela
+        cap3 = VGroup(txt("se cada fio é neutro,", T_BODY), txt("por que mudar o sentido da corrente muda a interação?", T_BODY)).arrange(DOWN, buff=0.12).move_to([0, -2.9, 0])
+        cap3.set_opacity(0)                       # falado na narração: não repete na tela
 
         self.wires = VGroup(wl, wr, dl, dr, cur_l, cur_r, i_l, i_r, forces)
         self.add(forces)
+        self.at(1)
         self.play(AnimationGroup(AnimationGroup(FadeIn(wl), FadeIn(wr), FadeIn(dl), FadeIn(dr), FadeIn(neutro)),
                                  AnimationGroup(FadeIn(cur_l), FadeIn(cur_r), FadeIn(i_l), FadeIn(i_r)), lag_ratio=0.5),
                   run_time=1.6)
         self.hold(0.5)
+        self.at(2)
         self.play(FadeIn(cap1), t.animate.set_value(1.0), run_time=1.6, rate_func=smooth)
         self.hold(1.0)
         # zera o estado (atração) antes de inverter a corrente: as barras relaxam enquanto a corrente da direita gira
+        self.at(3)
         self.play(FadeOut(cap1), t.animate.set_value(0.0), run_time=0.9, rate_func=smooth)
         self.dir_r = -1.0
         self.play(Rotate(cur_r, math.pi, about_point=cur_r.get_center()), run_time=0.8)
         self.play(FadeIn(cap2), t.animate.set_value(-1.0), run_time=1.6, rate_func=smooth)
         self.hold(1.2)
+        self.at(4)
         self.play(RT(cap2, cap3), run_time=0.8)
         self.hold(0.6)
         self.neutro, self.cur_r_ref, self.cap3 = neutro, cur_r, cap3
@@ -383,8 +611,10 @@ class YT0005MagnetostaticaM1(Scene):
     def m1_02_carga(self):
         t, ph = self.t_fios, self.ph_l
         # volta à geometria reta; só a corrente da esquerda interessa agora
+        self.at(5)
         self.play(t.animate.set_value(0.0), FadeOut(self.cur_r_ref), FadeOut(self.neutro), FadeOut(self.cap3), run_time=1.0)
         cap = txt("olhando para uma carga em movimento", T_BODY).move_to([0, -2.75, 0])
+        cap.set_opacity(0)                       # falado na narração: não repete na tela
         lens = Circle(radius=1.0, color=WHITE, stroke_width=3).move_to([-1.9, 0.0, 0])
         self.play(FadeIn(lens), FadeIn(cap), run_time=0.8)
         self.hold(1.6)                                 # a corrente continua fluindo dentro da lente
@@ -440,6 +670,7 @@ class YT0005MagnetostaticaM1(Scene):
         self.v_lab = always_redraw(v_label)
         self.add(self.v_arr, self.v_lab)
         # o campo aparece em volta da carga e, logo em seguida, a velocidade cresce (uma só entrada contínua)
+        self.at(6)
         self.play(AnimationGroup(AnimationGroup(FadeIn(self.b_mob, shift=0.2 * RIGHT), FadeIn(self.b_lab)),
                                  self.vs.animate.set_value(1.0), lag_ratio=0.45), run_time=1.8, rate_func=smooth)
 
@@ -448,6 +679,7 @@ class YT0005MagnetostaticaM1(Scene):
                   colors={4: CYAN, 8: MAG}).move_to([CX, 1.9, 0])
         short = eq(r"\mathbf F_B", "=", "q", r"\mathbf v", r"\times", r"\mathbf B", size=M_L,
                    colors={0: FC, 5: MAG}).move_to([CX, 1.9, 0])
+        self.at(7)
         self.play(FadeIn(full, shift=0.1 * DOWN), run_time=1.2)
         self.hold(1.2)
         pairs = ((0, 0), (1, 1), (2, 2), (6, 3), (7, 4), (8, 5))
@@ -455,6 +687,7 @@ class YT0005MagnetostaticaM1(Scene):
         self.lor_box = box(short)
         self.nome_F = nome("Força magnética", "parcela magnética da força de Lorentz", pos=(CX, 3.0, 0))
         # E sai e o termo magnético se fecha numa só passagem contínua; a caixa nasce já no destino
+        self.at(8)
         self.play(AnimationGroup(AnimationGroup(*[FadeOut(full[i]) for i in (3, 4, 5, 9)]),
                                  AnimationGroup(*[Transform(full[a], short[b]) for a, b in pairs]),
                                  FadeIn(self.lor_box), FadeIn(self.nome_F), lag_ratio=0.35), run_time=2.0, rate_func=smooth)
@@ -517,14 +750,18 @@ class YT0005MagnetostaticaM1(Scene):
 
         th_lab = always_redraw(th_label)
         self.helper, self.arc, self.th_lab = helper, arc, th_lab
+        self.at(9)
         self.play(FadeIn(helper), FadeIn(arc), FadeIn(th_lab), run_time=1.0)
         self.add(self.f_sym)
         note = eq(r"\otimes", r"\;\text{entra na tela}", size=M_S).move_to([CX, -2.0, 0])
+        self.at(10)
         self.play(fs.animate.set_value(1.0), FadeIn(note), run_time=1.4, rate_func=smooth)
+        self.at(11)
         self.hold(0.6)
 
         # |F_B| = |q| v B sinθ
         mag = eq(r"|\mathbf F_B|", "=", "|q|", "v", "B", r"\sin\theta", size=M_M, colors={0: FC, 4: MAG}).move_to([CX, 0.7, 0])
+        self.at(12)
         self.play(FadeIn(mag, shift=0.1 * DOWN), FadeOut(note), run_time=1.2)
         lab_t, lab_s = eq(r"\theta", "=", size=M_S), eq(r"\sin\theta", "=", size=M_S)
         num_t = DecimalNumber(60, num_decimal_places=0, unit=r"^\circ", font_size=M_S)
@@ -536,6 +773,7 @@ class YT0005MagnetostaticaM1(Scene):
         self.readout = VGroup(lab_t, num_t, lab_s, num_s)
         self.mag = mag
         self.play(FadeIn(self.readout), run_time=0.8)
+        self.at(13)
         self.play(th.animate.set_value(85.0), run_time=1.8, rate_func=smooth)
         self.play(th.animate.set_value(40.0), run_time=1.8, rate_func=smooth)
         self.hold(0.6)
@@ -547,6 +785,7 @@ class YT0005MagnetostaticaM1(Scene):
         cap_par = eq(r"\mathbf v\parallel\mathbf B", r"\Rightarrow", r"|\mathbf F_B|=0", size=34, colors={2: FC}).move_to(slot)
         cap_obl = eq(r"0<|\mathbf F_B|<|q|vB", size=34, colors={0: WHITE}).move_to(slot)
         cap_per = eq(r"\mathbf v\perp\mathbf B", r"\Rightarrow", r"|\mathbf F_B|=|q|vB", size=34, colors={2: FC}).move_to(slot)
+        self.at(14)
         self.play(th.animate.set_value(0.0), run_time=2.6, rate_func=smooth)
         self.play(FadeIn(cap_par), run_time=0.6)
         self.hold(1.6)
@@ -563,11 +802,14 @@ class YT0005MagnetostaticaM1(Scene):
         e_pos = eq("q>0", r"\Rightarrow", r"\otimes", size=M_M).move_to(slot)
         e_neg = eq("q<0", r"\Rightarrow", r"\odot", size=M_M).move_to(slot)
         note = txt("mesmo módulo, sentido oposto", T_NOTE, opacity=0.9).move_to([CX, -1.3, 0])
+        note.set_opacity(0)                       # falado na narração: não repete na tela
+        self.at(15)
         self.play(FadeOut(self.readout), FadeOut(self.cap_per), run_time=0.5)
         self.play(FadeIn(e_pos, shift=0.1 * DOWN), run_time=0.6)
         self.hold(1.0)
         # troca discreta: o módulo de F_B não passa por zero
         qs.set_value(-1.0)
+        self.at(16)
         self.play(Flash(self.O(), color=VIOLET, flash_radius=0.7, line_length=0.18), RT(e_pos, e_neg),
                   FadeIn(note), run_time=0.8)
         self.hold(2.0)
@@ -579,6 +821,7 @@ class YT0005MagnetostaticaM1(Scene):
     def m1_06_decomposicao(self):
         th = self.th
         # FOCUS: o diagrama ganha espaço; a fórmula magnética desce para virar a conclusão
+        self.at(17)
         self.play(FadeOut(self.mag), FadeOut(self.nome_F), FadeOut(self.readout), run_time=0.6)
         self.play(th.animate.set_value(60.0), self.ox.animate.set_value(-3.7),
                   self.oy.animate.set_value(-1.1), self.gs.animate.set_value(1.3),
@@ -642,6 +885,7 @@ class YT0005MagnetostaticaM1(Scene):
         self.play(FadeIn(note_p), run_time=0.8)
         self.play(FadeIn(note_q), run_time=0.8)
         self.seg("D")                              # SEG=D: começa aqui (fim do M1-06) e vai até o início da curvatura no B02
+        self.at(18)
         # conclusão: F_B = q v⊥ × B (a mesma força: a geometria de F_B não muda)
         final = eq(r"\mathbf F_B", "=", "q", r"\mathbf v_\perp", r"\times", r"\mathbf B", size=M_L,
                    colors={0: FC, 5: MAG}).move_to([CX, -0.45, 0])
@@ -817,7 +1061,7 @@ class YT0005MagnetostaticaM1(Scene):
 
         def lab():
             c, p, n = geom()
-            return halo(eqc(name, size=M_M).move_to((c + p) / 2 + n * (0.2 * self.S() / 1.3 + 0.3)))
+            return halo(eqc(name, size=M_M).move_to((c + p) / 2 + n * (0.2 * self.S() / 1.3 + 0.42)))
 
         return always_redraw(line), always_redraw(lab)
 
@@ -883,20 +1127,32 @@ class YT0005MagnetostaticaM1(Scene):
         root.move_to(at)
         old = {} if first else self.cur
         alias = alias or {}
-        anims = []
+        outs, moves, ins = [], [], []
         for k, m in old.items():
             if k in alias and alias[k]:
-                anims.append(FadeOut(m))
-                anims.extend(FadeIn(new[t]) for t in alias[k])
+                outs.append(FadeOut(m, shift=0.3 * UP, rate_func=RF_OUT))
+                ins.extend(FadeIn(new[t], shift=0.3 * UP, rate_func=RF_IN) for t in alias[k])
             elif k in new:
-                anims.append(ReplacementTransform(m, new[k]))
+                moves.append(ReplacementTransform(m, new[k]))
             else:
-                anims.append(FadeOut(m))
+                outs.append(FadeOut(m, rate_func=RF_OUT))
         aliased = {t for v in alias.values() for t in v}
         for k, m in new.items():
             if k not in old and k not in aliased:
-                anims.append(FadeIn(m))
-        self.play(*anims, run_time=run, rate_func=smooth)
+                ins.append(FadeIn(m, shift=0.3 * UP, rate_func=RF_IN))
+        # deslocamento dos símbolos que sobrevivem: se for grande (mais de 1 unidade), a troca completa e limpa é mais legível
+        disp = max([float(np.linalg.norm(m.get_center() - new[k].get_center())) for k, m in old.items()
+                    if k in new and not (k in alias and alias[k])] or [0.0])
+        if disp > 1.0 and (outs or ins) and old:
+            self.play(Succession(AnimationGroup(*[FadeOut(m) for m in old.values()], run_time=run * 0.45),
+                                 AnimationGroup(*[FadeIn(m) for m in new.values()], run_time=run * 0.55)), run_time=run)
+            self.cur = new
+            return new
+        # uma só passada: o que sai (sobe) e o que entra (vem de baixo) se cruzam sem se sobrepor e os símbolos que ficam se movem
+        # juntos; a igualdade nunca fica incompleta (antes: "P_B = · v", "F = ∫ ▢ × B") durante a transformação
+        todas = outs + moves + ins
+        if todas:
+            self.play(*todas, run_time=run, rate_func=smooth)
         self.cur = new
         return new
 
@@ -961,6 +1217,7 @@ class YT0005MagnetostaticaM1(Scene):
         hyp = VGroup(txt("agora vamos escolher o caso", T_BODY, opacity=0.95),
                      eq(r"v_\parallel=0", size=M_L, colors={0: VIOLET})).arrange(DOWN, buff=0.3).move_to([CX, -0.8, 0])
         hb = box(hyp[1])
+        self.at(19)
         self.play(RT(gen, case), FadeIn(hyp[0]), FadeIn(hyp[1]), FadeIn(hb), run_time=1.2)
         self.hold(0.6)
         self.play(self.vparB.animate.set_value(0.0), run_time=1.4, rate_func=smooth)
@@ -968,7 +1225,9 @@ class YT0005MagnetostaticaM1(Scene):
         self.remove(self.vl3)
         self.hold(0.4)
         # 4) só agora muda a representação: olhar ao longo de B (as linhas viram ⊙; F_B sai da profundidade)
-        look = txt("a perspectiva muda; a física não", T_BODY, opacity=0.95).move_to([CX, -2.2, 0])
+        look = txt("a perspectiva muda; a física não", T_NOTE, opacity=0.95).move_to([CX - 0.3, -2.2, 0])
+        look.set_opacity(0)                       # falado na narração: não repete na tela
+        self.at(20)
         self.bmode = "b02"
         self.play(FadeIn(look), run_time=0.6)
         self.play(self.beta.animate.set_value(0.0), self.ox.animate.set_value(-4.2), self.oy.animate.set_value(-0.1),
@@ -1032,6 +1291,9 @@ class YT0005MagnetostaticaM1(Scene):
                 self.hold(rem)
                 self.run["tt"] = False
 
+        self.finish_turn = finish_turn
+        self.turn_rem = lambda: (lambda uu: (TP - uu) if uu > 0.02 else 0.0)(max(u_now(), 0.0) % TP)
+
         def comp_overlay(vecfn, scale, color, names, trk, gh, gv):
             """componentes (horizontal = y, vertical = z) do vetor, finas e atrás do vetor principal; cada uma com seu destaque"""
             def g():
@@ -1060,14 +1322,22 @@ class YT0005MagnetostaticaM1(Scene):
 
         # ── 1 · eixos e componentes ──
         cap1 = txt("escolha de eixos: B ao longo de x", T_NOTE, opacity=0.95).move_to([RX, 2.9, 0])
+        cap1.set_opacity(0)                       # falado na narração: não repete na tela
         l1 = eq(r"\mathbf B", "=", "B", r"\hat{\mathbf x}", size=M_L, colors={0: MAG, 2: MAG, 3: MAG}).move_to([RX, 1.6, 0])
-        self.play(FadeOut(self.lor), FadeOut(self.lor_box), FadeOut(self.bleg), FadeOut(fm[2]), FadeIn(tri), FadeIn(cap1), FadeIn(l1, shift=0.1 * UP), run_time=1.2)
+        self.at(21)
+        self.play(FadeOut(self.lor), FadeOut(self.lor_box), FadeOut(self.bleg), FadeOut(fm[2]), run_time=0.6)
+        self.play(FadeIn(tri), FadeIn(cap1), FadeIn(l1, shift=0.1 * UP), run_time=0.8)
         self.play(self.tt.animate.set_value(o1.t0 + TP / 8), run_time=1.6)           # a carga avança 1/8 de volta: v tem duas componentes
         l2 = eq(r"\mathbf v", "=", r"(v_x,\,v_y,\,v_z)", size=M_L, colors={0: VIOLET, 2: VIOLET}).move_to([RX, 0.1, 0])
         self.play(FadeIn(l2, shift=0.1 * UP), kc.animate.set_value(1.0), run_time=1.0)
         nvx = eq(r"v_x\ \text{ao longo de}\ \mathbf B\ (\odot)", size=28, colors={}).move_to([RX, -1.2, 0])
         self.play(FadeIn(nvx), run_time=0.7)
-        self.hold(2.4)
+        # hipóteses da análise (uma vez, antes de qualquer conclusão sobre ω_c, R, T, rapidez e hélice)
+        hip = VGroup(txt("hipóteses: B uniforme e constante,", 20, opacity=0.9),
+                     txt("só a força magnética, regime não relativístico", 20, opacity=0.9)).arrange(DOWN, buff=0.08).move_to([RX, -2.25, 0])
+        self.at(22)
+        self.play(FadeIn(hip, shift=0.1 * UP), run_time=0.8)
+        self.hold(2.8)
 
         # ── 2 · produto vetorial: o determinante é construído por componentes (i, j, k) ──
         ref1 = eq(r"\mathbf B=B\,\hat{\mathbf x},\quad \mathbf v=(v_x,\,v_y,\,v_z)", size=26).move_to([RX, 3.2, 0])
@@ -1092,35 +1362,62 @@ class YT0005MagnetostaticaM1(Scene):
                  colors={2: VIOLET, 4: VIOLET, 5: MAG, 9: MAG, 10: VIOLET}).move_to([RX, -0.6, 0])
         t_k = eq(r"+\hat{\mathbf z}", "(", "v_x", ZD + "-", "v_y", "B", ")", "=", "-", "B", "v_y", r"\hat{\mathbf z}", size=36,
                  colors={2: VIOLET, 4: VIOLET, 5: MAG, 9: MAG, 10: VIOLET}).move_to([RX, -1.35, 0])
-        self.play(FadeOut(l1), FadeOut(l2), FadeOut(cap1), FadeOut(nvx), FadeIn(ref1), FadeIn(mat), run_time=1.1)
+        self.at(23)
+        self.play(FadeOut(l1), FadeOut(l2), FadeOut(cap1), FadeOut(nvx), FadeOut(hip), run_time=0.5)      # sai antes de entrar o determinante
+        self.play(FadeIn(ref1), FadeIn(mat), run_time=0.9)
         self.hold(1.4)
         fxn = eq(r"F_x=0", size=28, colors={0: FC}).move_to([-4.3, -3.05, 0])
-        # i: o menor de x̂ não tem força na direção de B
+
+        def ind(ms, sc=1.35):
+            """pulso no elemento de origem (sem copiar letras voando por cima de outras equações)"""
+            return [Indicate(m, scale_factor=sc, color=m.get_color()) for m in ms]
+
+        def arcos(pares):
+            """cruzes finas e discretas que indicam quais elementos se multiplicam em cada menor"""
+            g = VGroup()
+            for (i1, j1), (i2, j2), col in pares:
+                g.add(DashedLine(cell[i1][j1].get_center(), cell[i2][j2].get_center(), dash_length=0.07, color=col, stroke_width=1.6).set_opacity(0.75))
+            return g
+
+        # i: o menor de x̂ — v_y·0 e v_z·0 (nenhuma força na direção de B)
+        self.at(24)
         h = hl([cell[0][0], cell[1][1], cell[1][2], cell[2][1], cell[2][2]])
-        self.play(FadeIn(h), run_time=0.6)
-        self.play(FadeIn(t_i[:7]), run_time=0.9)
+        ar = arcos([((1, 1), (2, 2), VIOLET), ((1, 2), (2, 1), VIOLET)])
+        self.play(FadeIn(h), FadeIn(ar), run_time=0.7)
+        self.play(FadeIn(t_i[0:2]), FadeIn(t_i[2]), FadeIn(t_i[3]), FadeIn(t_i[4]), FadeIn(t_i[5:7]),
+                  *ind([cell[1][1], cell[1][2]]), run_time=1.2)
         self.play(FadeIn(t_i[7:]), FadeIn(fxn), run_time=0.7)
-        self.hold(1.2)
-        # j: o menor de ŷ dá a componente horizontal da força
+        self.hold(1.0)
+        # j: o menor de ŷ — v_x·0 e v_z·B (a componente horizontal da força)
+        self.at(25)
         h2 = hl([cell[0][1], cell[1][0], cell[1][2], cell[2][0], cell[2][2]])
-        self.play(ReplacementTransform(h, h2), run_time=0.7)
-        self.play(FadeIn(t_j[:8]), run_time=0.9)
-        self.play(FadeIn(t_j[8:]), kf.animate.set_value(1.0), fyg.animate.set_value(1.0), run_time=0.9)
-        self.hold(1.2)
-        # k: o menor de ẑ dá a componente vertical
+        ar2 = arcos([((1, 0), (2, 2), VIOLET), ((1, 2), (2, 0), MAG)])
+        self.play(ReplacementTransform(h, h2), ReplacementTransform(ar, ar2), run_time=0.8)
+        self.play(FadeIn(t_j[0:2]), FadeIn(t_j[2]), FadeIn(t_j[3]), FadeIn(t_j[4]), FadeIn(t_j[5]), FadeIn(t_j[6]),
+                  *ind([cell[1][0], cell[1][2], cell[2][0]]), run_time=1.3)
+        self.play(FadeIn(t_j[7]), FadeIn(t_j[8]), FadeIn(t_j[9]), FadeIn(t_j[10]), FadeIn(t_j[11]), *ind([t_j[5], t_j[4]], 1.12),
+                  kf.animate.set_value(1.0), fyg.animate.set_value(1.0), run_time=1.1)
+        self.hold(1.0)
+        # k: o menor de ẑ — v_x·0 e v_y·B (a componente vertical)
+        self.at(26)
         h3 = hl([cell[0][2], cell[1][0], cell[1][1], cell[2][0], cell[2][1]])
-        self.play(ReplacementTransform(h2, h3), run_time=0.7)
-        self.play(FadeIn(t_k[:8]), run_time=0.9)
-        self.play(FadeIn(t_k[8:]), fzg.animate.set_value(1.0), run_time=0.9)
-        self.hold(1.2)
-        # coletar: os mesmos termos sobrevivem e se somam
+        ar3 = arcos([((1, 0), (2, 1), VIOLET), ((1, 1), (2, 0), MAG)])
+        self.play(ReplacementTransform(h2, h3), ReplacementTransform(ar2, ar3), run_time=0.8)
+        self.play(FadeIn(t_k[0:2]), FadeIn(t_k[2]), FadeIn(t_k[3]), FadeIn(t_k[4]), FadeIn(t_k[5]), FadeIn(t_k[6]),
+                  *ind([cell[1][0], cell[1][1], cell[2][0]]), run_time=1.3)
+        self.play(FadeIn(t_k[7]), FadeIn(t_k[8]), FadeIn(t_k[9]), FadeIn(t_k[10]), FadeIn(t_k[11]), *ind([t_k[5], t_k[4]], 1.12),
+                  fzg.animate.set_value(1.0), run_time=1.1)
+        self.hold(1.0)
+        # coletar: SÓ os resultados sobrevivem e se juntam (os termos não reaparecem como texto novo)
         col = eq(r"\mathbf v\times\mathbf B", "=", "B", "v_z", r"\hat{\mathbf y}", "-", "B", "v_y", r"\hat{\mathbf z}", size=36,
-                 colors={0: VIOLET, 2: MAG, 3: VIOLET, 6: MAG, 7: VIOLET}).move_to([RX, -2.2, 0])
-        self.play(FadeOut(h3), FadeIn(col, shift=0.1 * UP), run_time=1.0)
-        self.hold(1.2)
+                 colors={0: VIOLET, 2: MAG, 3: VIOLET, 6: MAG, 7: VIOLET}).move_to([RX, -2.0, 0])
+        self.at(27)
+        self.play(FadeOut(h3), FadeOut(ar3), FadeOut(t_i), FadeOut(t_j[0:9]), FadeOut(t_k[0:8]), FadeOut(fxn), run_time=0.9)
+        self.play(FadeIn(col[0:2]), ReplacementTransform(t_j[9:12], col[2:5]), ReplacementTransform(t_k[8:12], col[5:9]), run_time=1.4)
+        self.hold(1.0)
         res = eq(r"\mathbf v\times\mathbf B", "=", r"(0,\;Bv_z,\;-Bv_y)", size=36, colors={0: VIOLET}).move_to([RX, -3.0, 0])
-        self.play(FadeIn(res, shift=0.1 * UP), run_time=1.0)
-        self.hold(1.6)
+        self.play(FadeIn(res[0:2]), TransformFromCopy(col[2:], res[2]), run_time=1.1)
+        self.hold(1.4)
 
         # ── 3 · Newton + Lorentz: o v×B calculado entra na equação de movimento ──
         cap3 = txt("Newton + Lorentz", T_NOTE, opacity=0.95).move_to([RX, 3.0, 0])
@@ -1128,15 +1425,18 @@ class YT0005MagnetostaticaM1(Scene):
                     colors={1: VIOLET, 3: BLUE_L, 4: VIOLET, 6: MAG}).move_to([RX, 1.5, 0])
         newton2 = eq("m", r"\frac{d\mathbf v}{dt}", "=", "q", r"(0,\;Bv_z,\;-Bv_y)", size=44,
                      colors={1: VIOLET, 3: BLUE_L}).move_to([RX, 1.5, 0])
-        self.play(FadeOut(mat), FadeOut(ref1), FadeOut(t_i), FadeOut(t_j), FadeOut(t_k), FadeOut(col), FadeOut(fxn),
+        self.at(28)
+        self.play(FadeOut(mat), FadeOut(ref1), FadeOut(col),
                   res.animate.move_to([RX, -0.2, 0]), kc.animate.set_value(0.4), run_time=0.9)
         self.play(FadeIn(cap3), FadeIn(newton, shift=0.1 * DOWN), run_time=0.8)
         self.hold(1.4)
-        self.play(ReplacementTransform(newton[:4], newton2[:4]), FadeOut(newton[4:]), TransformFromCopy(res[2], newton2[4]),
-                  FadeOut(res), run_time=1.4)
+        self.play(ReplacementTransform(newton[:4], newton2[:4]), FadeOut(newton[4:]), run_time=0.8)
+        self.play(TransformFromCopy(res[2], newton2[4]), FadeOut(res[0:2]), run_time=1.1)
+        self.play(FadeOut(res[2]), run_time=0.4)
         self.hold(1.8)
 
         # ── 4 · uma equação por componente; a componente correspondente se acende no desenho ──
+        self.at(29)
         self.play(FadeOut(cap3), newton2.animate.scale(0.7).move_to([RX, 3.05, 0]), run_time=1.0)
         cx_ = eq(r"\frac{dv_x}{dt}", "=", "0", size=40, colors={0: VIOLET}).move_to([RX - 0.6, 1.85, 0])
         cy_ = eq(r"\frac{dv_y}{dt}", "=", QB, "v_z", size=40, colors={0: VIOLET, 3: VIOLET}).move_to([RX, 0.35, 0])
@@ -1147,6 +1447,7 @@ class YT0005MagnetostaticaM1(Scene):
         self.play(FadeIn(cx_, shift=0.1 * UP), FadeIn(bcx), FadeIn(fxn2), fyg.animate.set_value(0.25), fzg.animate.set_value(0.25), run_time=0.9)
         self.play(FadeIn(nx), run_time=0.7)
         self.hold(1.6)
+        self.at(30)
         self.play(FadeIn(cy_, shift=0.1 * UP), FadeIn(bcy), fyg.animate.set_value(1.0), vzg.animate.set_value(1.0),
                   vyg.animate.set_value(0.3), kc.animate.set_value(1.0), run_time=1.1)
         self.hold(1.8)
@@ -1159,9 +1460,11 @@ class YT0005MagnetostaticaM1(Scene):
         # ── 5 · DEDUÇÃO CENTRAL: a álgebra ocupa o lado direito; a órbita continua girando à esquerda ──
         self.run["tt"] = True
         gy, gz, gx = VGroup(cy_, bcy), VGroup(cz_, bcz), VGroup(cx_, bcx)
+        self.at(31)
         self.play(FadeOut(newton2), FadeOut(gx), FadeOut(nx), FadeOut(fxn2), kf.animate.set_value(0.0), kc.animate.set_value(0.0),
-                  gy.animate.scale(0.72).move_to([RX - 1.7, 3.0, 0]), gz.animate.scale(0.72).move_to([RX + 1.8, 3.0, 0]),
-                  self.bop.animate.set_value(0.25), run_time=1.4, rate_func=smooth)
+                  self.bop.animate.set_value(0.25), run_time=0.7)
+        self.play(gy.animate.scale(0.72).move_to([RX - 1.7, 3.0, 0]), gz.animate.scale(0.72).move_to([RX + 1.8, 3.0, 0]),
+                  run_time=0.9, rate_func=smooth)
         capa = VGroup(txt("derivando a equação de", T_BODY, opacity=0.95), eq(r"v_y", size=40, colors={0: VIOLET}),
                       txt("em t", T_BODY, opacity=0.95)).arrange(RIGHT, buff=0.2).move_to([RX, 2.0, 0])
         e1 = eq(r"\frac{d^2v_y}{dt^2}", "=", QB, r"\frac{dv_z}{dt}", size=50, colors={0: VIOLET, 3: VIOLET}).move_to([RX, 0.7, 0])
@@ -1169,9 +1472,17 @@ class YT0005MagnetostaticaM1(Scene):
         self.hold(2.4)
         capb = VGroup(txt("trocando", T_BODY, opacity=0.95), eq(r"\frac{dv_z}{dt}", size=40, colors={0: VIOLET}),
                       txt("pela 3ª equação", T_BODY, opacity=0.95)).arrange(RIGHT, buff=0.2).move_to([RX, 2.0, 0])
-        e2 = eq(r"\frac{d^2v_y}{dt^2}", "=", QB, rf"\left(-{QB}\,v_y\right)", size=46, colors={0: VIOLET}).move_to([RX, 0.7, 0])
-        self.play(RT(capa, capb), RT(e1, e2), run_time=1.3)
+        e2 = eq(r"\frac{d^2v_y}{dt^2}", "=", QB, "(", "-" + QB, "v_y", ")", size=46, colors={0: VIOLET, 5: VIOLET}).move_to([RX, 0.7, 0])
+        self.at(32)
+        self.play(FadeOut(capa), run_time=0.3)
+        self.play(FadeIn(capb), Indicate(e1[3], color=VIOLET, scale_factor=1.15), Indicate(cz_[0], color=VIOLET, scale_factor=1.25), run_time=1.1)
+        self.hold(0.8)
+        # o dv_z/dt sai da equação e é substituído pelo lado direito da 3ª equação (que continua visível no topo)
+        # numa só passada: dv_z/dt sai enquanto o lado direito da 3ª equação entra (a igualdade nunca fica falsa nem incompleta)
+        self.play(FadeOut(e1[3]), ReplacementTransform(e1[0:3], e2[0:3]), FadeIn(e2[3]), FadeIn(e2[6]),
+                  TransformFromCopy(cz_[2], e2[4]), TransformFromCopy(cz_[3], e2[5]), run_time=1.9)
         self.hold(2.4)
+        self.at(33)
         e3 = eq(r"\frac{d^2v_y}{dt^2}", "=", rf"-\left({QB}\right)^2", "v_y", size=50, colors={0: VIOLET, 3: VIOLET}).move_to([RX, 0.7, 0])
         self.play(RT(e2, e3), FadeOut(capb), run_time=1.3)
         self.hold(2.0)
@@ -1182,18 +1493,22 @@ class YT0005MagnetostaticaM1(Scene):
         nm_edo = nome(["Equação do oscilador harmônico para ", ("m", r"v_y")], pos=(RX, 1.7, 0))
         self.play(FadeIn(b4), FadeIn(nm_edo), run_time=0.6)
         self.hold(2.0)
+        self.at(34)
         g4 = VGroup(e4, b4)
         gen = eq(r"\frac{d^2f}{dt^2}", "+", r"\omega^2", "f", "=", "0", size=46, colors={2: VIOLET}).move_to([RX, -0.55, 0])
         cap_same = txt("mesma estrutura de", T_BODY, opacity=0.9).move_to([RX, 0.45, 0])
+        cap_same.set_opacity(0)                       # falado na narração: não repete na tela
         self.play(g4.animate.scale(0.85).move_to([RX, 2.4, 0]), FadeOut(nm_edo), run_time=0.9)
         self.play(FadeIn(cap_same), FadeIn(gen, shift=0.1 * UP), run_time=0.9)
         self.hold(2.0)
+        self.at(35)
         idA = eq(r"\omega^2", "=", rf"\left({QB}\right)^2", size=46, colors={0: VIOLET}).move_to([RX, -1.85, 0])
         self.play(FadeIn(idA, shift=0.1 * UP), run_time=0.9)
         self.hold(2.0)
         idB = eq(r"\omega", "=", rf"\left|{QB}\right|", size=46, colors={0: VIOLET}).move_to([RX, -1.85, 0])
         self.play(RT(idA, idB), run_time=0.9)
         self.hold(1.4)
+        self.at(36)
         self.play(*[FadeOut(m) for m in (g4, gen, cap_same, idB)], run_time=0.8)
         idC = eq(r"\omega_c", "=", rf"\frac{{|{tc(BLUE_L, 'q')}|{tc(MAG, 'B')}}}{{m}}", size=64, colors={0: VIOLET}).move_to([RX, 1.0, 0])
         self.play(FadeIn(idC, shift=0.1 * UP), run_time=0.8)
@@ -1208,24 +1523,30 @@ class YT0005MagnetostaticaM1(Scene):
         self.play(FadeOut(idC), FadeOut(bid), FadeOut(born), FadeOut(sgn_a), FadeOut(sgn_b), run_time=0.8)
 
         # ── 5b · que função resolve? (verificação por derivação) → solução geral → condições iniciais → C1, C2 ──
+        self.at(37)
         ed = eq(r"\frac{d^2v_y}{dt^2}", "+", r"\omega_c^2", "v_y", "=", "0", size=46, colors={0: VIOLET, 2: VIOLET, 3: VIOLET}).move_to([RX, 2.5, 0])
         ask = txt("derivar 2× troca o sinal: qual função?", 22, opacity=0.9).move_to([RX, 1.65, 0])
+        ask.set_opacity(0)                       # falado na narração: não repete na tela
         self.play(FadeIn(ed, shift=0.1 * DOWN), FadeIn(ask), run_time=1.0)
+        self.at(38)
         tS = eq(r"\frac{d^2}{dt^2}\sin(\omega_c t)", "=", r"-\omega_c^2", r"\sin(\omega_c t)", size=38, colors={2: VIOLET}).move_to([RX, 0.6, 0])
         tC = eq(r"\frac{d^2}{dt^2}\cos(\omega_c t)", "=", r"-\omega_c^2", r"\cos(\omega_c t)", size=38, colors={2: VIOLET}).move_to([RX, -0.5, 0])
         self.play(FadeIn(tS, shift=0.1 * UP), run_time=1.0)
         self.hold(1.6)
         self.play(FadeIn(tC, shift=0.1 * UP), run_time=1.0)
         self.hold(1.4)
+        self.at(39)
         sol = eq(r"v_y(t)", "=", "C_1", r"\cos(\omega_c t)", "+", "C_2", r"\sin(\omega_c t)", size=40, colors={0: VIOLET}).move_to([RX, -1.7, 0])
         bsol = bx(sol)
         self.play(FadeOut(ask), FadeIn(sol, shift=0.1 * UP), FadeIn(bsol), run_time=1.5)
         self.hold(2.0)
+        self.at(40, fase=True)
         finish_turn()
-        self.run["tt"] = True
-        self.play(*[FadeOut(m) for m in (tS, tC, ed)], VGroup(sol, bsol).animate.move_to([RX, 2.4, 0]), run_time=0.9)
+        self.play(*[FadeOut(m) for m in (tS, tC, ed)], run_time=0.5)
+        self.play(VGroup(sol, bsol).animate.move_to([RX, 2.4, 0]), run_time=0.8)
         # condições iniciais: a carga está na origem, com v para cima (v_y = 0, v_z = v⊥)
         o1.t0 = self.tt.get_value()
+        self.run["tt"] = True
         ic = eq(r"q>0:\ \ v_y(0)=0,\ \ v_z(0)=v_\perp", size=34, colors={}).move_to([RX, 1.5, 0])
         self.play(FadeIn(ic), run_time=0.7)
         s1 = eq(r"v_y(0)", "=", "C_1", "=", "0", size=40, colors={0: VIOLET}).move_to([RX, 0.4, 0])
@@ -1235,39 +1556,51 @@ class YT0005MagnetostaticaM1(Scene):
         self.play(RT(sol, sol2), FadeOut(bsol), run_time=1.1)
         self.hold(0.8)
         # C2 vem da equação acoplada em t = 0
-        s2 = eq(r"\frac{dv_y}{dt}", "=", r"\omega_c", "v_z", size=40, colors={0: VIOLET, 3: VIOLET}).move_to([RX, -0.55, 0])
-        self.play(FadeOut(s1), FadeIn(s2, shift=0.1 * UP), run_time=0.9)
-        self.hold(1.2)
-        s3 = eq(r"\omega_c", "C_2", "=", r"\omega_c", r"v_\perp", size=40, colors={0: VIOLET, 3: VIOLET, 4: VIOLET}).move_to([RX, -1.6, 0])
-        t0n = txt("em t = 0", 22, opacity=0.9).move_to([RX, -2.25, 0])
-        self.play(FadeIn(s3, shift=0.1 * UP), FadeIn(t0n), run_time=1.0)
+        self.at(41)
+        s2 = eq(r"\frac{dv_y}{dt}", "=", r"\omega_c", "v_z", size=40, colors={0: VIOLET, 3: VIOLET}).move_to([RX, 0.55, 0])
+        self.play(FadeOut(s1), run_time=0.4)
+        self.play(FadeIn(s2, shift=0.1 * UP), run_time=0.7)
+        self.hold(1.0)
+        s2a = eq(r"\frac{dv_y}{dt}", "=", r"\omega_c C_2", r"\cos(\omega_c t)", size=40, colors={0: VIOLET}).move_to([RX, -0.45, 0])
+        self.play(Indicate(sol2[2], color=VIOLET, scale_factor=1.3), FadeIn(s2a, shift=0.1 * UP), run_time=1.1)
+        self.hold(1.0)
+        s3 = eq(r"\omega_c C_2", "=", r"\omega_c", r"v_\perp", size=40, colors={0: VIOLET, 2: VIOLET, 3: VIOLET}).move_to([RX, -1.5, 0])
+        t0n = txt("em t = 0", 22, opacity=0.9).move_to([RX, -2.15, 0])
+        t0n.set_opacity(0)                       # falado na narração: não repete na tela
+        self.play(FadeIn(s3), FadeIn(t0n), Indicate(s2a[2], color=VIOLET, scale_factor=1.25), Indicate(s2[2], color=VIOLET, scale_factor=1.25),
+                  Indicate(s2[3], color=VIOLET, scale_factor=1.25), run_time=1.3)
         self.hold(1.4)
         s4 = eq("C_2", "=", r"v_\perp", size=44, colors={2: VIOLET}).move_to([RX, -1.6, 0])
-        self.play(RT(s3, s4), FadeOut(t0n), run_time=1.0)
+        self.play(RT(s3, s4), FadeOut(t0n), FadeOut(s2a), run_time=1.0)
         self.hold(1.0)
         vy_f = eq(r"v_y(t)", "=", r"v_\perp", r"\sin(\omega_c t)", size=44, colors={0: VIOLET, 2: VIOLET}).move_to([RX, 2.4, 0])
         self.play(RT(sol2, vy_f), FadeOut(s4), FadeOut(ic), run_time=1.1)
         self.hold(1.0)
         # v_z nasce da MESMA equação acoplada: v_z = (1/ω_c) dv_y/dt
+        self.at(42)
         z1 = eq(r"v_z", "=", r"\frac{1}{\omega_c}", r"\frac{dv_y}{dt}", size=44, colors={0: VIOLET, 3: VIOLET}).move_to([RX, 0.9, 0])
-        self.play(FadeIn(z1, shift=0.1 * UP), FadeOut(s2), run_time=1.0)
+        self.play(FadeOut(s2), run_time=0.5)
+        self.play(FadeIn(z1, shift=0.1 * UP), run_time=0.8)
         self.hold(1.4)
         z2 = eq(r"v_z", "=", r"\frac{1}{\omega_c}", r"\frac{d}{dt}\left[v_\perp\sin(\omega_c t)\right]", size=40, colors={0: VIOLET}).move_to([RX, 0.9, 0])
-        self.play(RT(z1, z2), run_time=1.1)
+        self.play(Indicate(vy_f, color=VIOLET, scale_factor=1.08), RT(z1, z2), run_time=1.3)
         self.hold(1.2)
         z3 = eq(r"v_z", "=", r"\frac{1}{\omega_c}", r"\omega_c", r"v_\perp\cos(\omega_c t)", size=44, colors={0: VIOLET}).move_to([RX, -0.3, 0])
         self.play(FadeIn(z3, shift=0.1 * UP), run_time=1.0)
         self.hold(1.0)
+        self.at(43)
         vz_f = eq(r"v_z(t)", "=", r"v_\perp", r"\cos(\omega_c t)", size=44, colors={0: VIOLET, 2: VIOLET}).move_to([RX, -1.6, 0])
         self.play(RT(z3, vz_f), FadeOut(z2), run_time=1.1)
         self.hold(1.4)
+        self.at(44, fase=True)
         finish_turn()
-        self.run["tt"] = True
 
         # ── 6 · soluções: trajetória REAL (esquerda-alto) · ESPAÇO DAS VELOCIDADES (esquerda-baixo) · gráficos (direita) ──
         o1.t0 = self.tt.get_value()
-        VC, RV = np.array([-3.4, -1.25, 0.0]), 1.25
-        self.play(self.ox.animate.set_value(-6.2), self.oy.animate.set_value(2.2), self.gs.animate.set_value(0.5),
+        CWd, CHt, CXc = 4.7, 2.95, -3.95
+        CY1, CY2 = 1.9, -1.25
+        VC, RV = np.array([CXc + 0.6, CY2 - 0.2, 0.0]), 0.95
+        self.play(self.ox.animate.set_value(CXc + 0.6 - 0.755), self.oy.animate.set_value(CY1 - 0.2), self.gs.animate.set_value(0.5),
                   self.bop.animate.set_value(0.0), FadeOut(vy_f), FadeOut(vz_f), FadeOut(tri), run_time=1.4, rate_func=smooth)
 
         def mk_ax(cy):
@@ -1285,15 +1618,24 @@ class YT0005MagnetostaticaM1(Scene):
         ticks = VGroup(*[eq(s, size=22).next_to(a.c2p(0, v), LEFT, buff=0.1) for a in (axy, axz)
                          for s, v in ((r"v_\perp", 1), (r"-v_\perp", -1))])
         ini = eq(r"q>0:\ \ v_y(0)=0,\ \ v_z(0)=v_\perp", size=32, colors={}).move_to([RX, -1.75, 0])
-        vtag = VGroup(txt("espaço das velocidades", 20, opacity=0.95), eq(r"(v_y,\,v_z)", size=24, colors={0: VIOLET})).arrange(RIGHT, buff=0.15).move_to([VC[0], 0.55, 0])
-        rtag = VGroup(txt("trajetória real", 20, opacity=0.95), eq(r"(y,\,z)", size=24)).arrange(DOWN, buff=0.1).move_to([-2.9, 2.2, 0])
-        vpan = panel(VGroup(vtag, Circle(radius=RV).move_to(VC)).move_to(VC + np.array([0, 0.2, 0])), pad=0.25, op=0.35)
-        rpan = panel(Rectangle(width=5.0, height=2.15).move_to([-4.15, 2.2, 0]), pad=0.1, op=0.35)
+        def card(cy):
+            return RoundedRectangle(corner_radius=0.16, width=CWd, height=CHt).set_fill(PANEL, 0.45).set_stroke(BLUE_L, 1.5, 0.55).move_to([CXc, cy, 0])
+
+        rpan, vpan = card(CY1), card(CY2)
+
+        def hdr(cy, nome_, simb):
+            g = VGroup(txt(nome_, 20, opacity=1.0), eq(simb, size=24, colors={})).arrange(RIGHT, buff=0.15)
+            return g.move_to([CXc - CWd / 2 + 0.25 + g.width / 2, cy + CHt / 2 - 0.3, 0])
+
+        rtag = hdr(CY1, "trajetória real", r"(y,\,z)")
+        vtag = hdr(CY2, "espaço das velocidades", r"(v_y,\,v_z)")
+        mesmo_t = txt("mesmo instante t", 15, opacity=0.75)
+        mesmo_t.move_to([CXc - CWd / 2 + 0.25 + mesmo_t.width / 2, CY1 - CHt / 2 + 0.25, 0])   # canto inferior esquerdo do card (livre)
         vcirc = VGroup(Circle(radius=RV, color=WHITE, stroke_width=2).set_stroke(opacity=0.55).move_to(VC),
-                       Line(VC + np.array([-RV - 0.25, 0, 0]), VC + np.array([RV + 0.25, 0, 0]), color=WHITE, stroke_width=1.5).set_stroke(opacity=0.55),
-                       Line(VC + np.array([0, -RV - 0.25, 0]), VC + np.array([0, RV + 0.25, 0]), color=WHITE, stroke_width=1.5).set_stroke(opacity=0.55),
-                       eq("v_y", size=28, colors={0: VIOLET}).move_to(VC + np.array([RV + 0.5, 0.0, 0])),
-                       eq("v_z", size=28, colors={0: VIOLET}).move_to(VC + np.array([0.0, RV + 0.42, 0])), vtag, rtag)
+                       Line(VC + np.array([-RV - 0.2, 0, 0]), VC + np.array([RV + 0.2, 0, 0]), color=WHITE, stroke_width=1.5).set_stroke(opacity=0.55),
+                       Line(VC + np.array([0, -RV - 0.2, 0]), VC + np.array([0, RV + 0.2, 0]), color=WHITE, stroke_width=1.5).set_stroke(opacity=0.55),
+                       eq("v_y", size=26, colors={0: VIOLET}).move_to(VC + np.array([RV + 0.42, 0.0, 0])),
+                       eq("v_z", size=26, colors={0: VIOLET}).move_to(VC + np.array([0.0, RV + 0.32, 0])), vtag, rtag, mesmo_t)
 
         def curve(ax, f):
             def g():
@@ -1340,27 +1682,29 @@ class YT0005MagnetostaticaM1(Scene):
         statics = VGroup(axy, axz, ylab_y, ylab_z, tl, tT, ticks, vcirc, vpan, rpan)
         self.play(FadeIn(statics), FadeIn(form_y, shift=0.1 * UP), FadeIn(form_z, shift=0.1 * UP), FadeIn(ini), run_time=1.4)
         cap6 = VGroup(VGroup(txt("a ponta de", 22, opacity=0.95), eq(r"\mathbf v_\perp", size=28, colors={0: VIOLET})).arrange(RIGHT, buff=0.14),
-                      txt("percorre um círculo", 22, opacity=0.95)).arrange(DOWN, buff=0.08).move_to([-3.4, -3.3, 0])
+                      txt("percorre um círculo", 22, opacity=0.95)).arrange(DOWN, buff=0.08).move_to([CXc, -3.2, 0])
         self.play(FadeIn(cap6), run_time=0.5)
+        self.at(45)
         self.run["tt"] = True
         self.hold(TP)                                      # uma volta: gráficos e vetor nascem juntos
         self.run["tt"] = False
-        cap6b = VGroup(txt("componentes senoidais,", 22, opacity=0.95), txt("defasadas de 90°", 22, opacity=0.95)).arrange(DOWN, buff=0.08).move_to([-3.4, -3.3, 0])
+        cap6b = VGroup(txt("componentes senoidais,", 22, opacity=0.95), txt("defasadas de 90°", 22, opacity=0.95)).arrange(DOWN, buff=0.08).move_to([CXc, -3.2, 0])
+        cap6b.set_opacity(0)                       # falado na narração: não repete na tela
         self.play(RT(cap6, cap6b), run_time=0.5)
         self.hold(2.4)
 
         # ── 7 · o módulo de v⊥ não muda ──
+        self.at(46)
         mag1 = eq(r"v_y^2+v_z^2=v_\perp^2\left(\sin^2\omega_c t+\cos^2\omega_c t\right)", size=26, colors={}).move_to([RX, -2.55, 0])
         mag2 = eq(r"v_y^2+v_z^2", "=", r"v_\perp^2", size=40, colors={0: VIOLET, 2: VIOLET}).move_to([RX, -3.25, 0])
         self.run["tt"] = True
         self.play(FadeOut(ini), FadeIn(mag1, shift=0.1 * UP), run_time=1.0)
         self.hold(1.6)
         self.play(FadeIn(mag2, shift=0.1 * UP), run_time=0.8)
-        self.hold(TP - 3.4)
-        self.run["tt"] = False
+        finish_turn()
         msg7 = VGroup(VGroup(txt("a força magnética faz", 22, opacity=0.95), eq(r"\mathbf v_\perp", size=28, colors={0: VIOLET}),
                              txt("girar;", 22, opacity=0.95)).arrange(RIGHT, buff=0.12),
-                      txt("seu módulo permanece constante", 22, opacity=0.95)).arrange(DOWN, buff=0.08).move_to([-3.4, -3.3, 0])
+                      txt("seu módulo permanece constante", 22, opacity=0.95)).arrange(DOWN, buff=0.08).move_to([CXc, -3.2, 0])
         self.play(RT(cap6b, msg7), run_time=0.7)
         self.hold(2.6)
         # q < 0 é OUTRO caso físico (mesmos |q|, m, B e mesmas condições iniciais): troca discreta de todo o conjunto
@@ -1375,21 +1719,22 @@ class YT0005MagnetostaticaM1(Scene):
             qsK.set_value(-1.0 if para_neg else 1.0)
             self.remove(*(pos_set if para_neg else neg_set))
             self.add(*(neg_set if para_neg else pos_set))
-            self.ox.set_value(-4.9 if para_neg else -6.2)   # o centro da órbita fica no mesmo lugar (o círculo é espelhado)
+            self.ox.set_value(CXc + 0.6 + 0.755 if para_neg else CXc + 0.6 - 0.755)   # o centro da órbita fica no mesmo lugar (o círculo é espelhado)
 
         row_p = VGroup(eq(r"q>0:", size=34, colors={0: BLUE_L}), txt("gira no sentido horário", 22, opacity=0.95)).arrange(RIGHT, buff=0.25).move_to([RX, -2.15, 0])
         row_n = VGroup(eq(r"q<0:", size=34, colors={0: BLUE_L}), txt("gira no sentido anti-horário", 22, opacity=0.95)).arrange(RIGHT, buff=0.25).move_to([RX, -2.15, 0])
         form_yn = eq(r"v_y(t)", "=", r"-v_\perp\sin(\omega_c t)", size=34, colors={0: VIOLET, 2: VIOLET}).move_to([RX, 2.95, 0])
         sg_w = eq(r"\omega_c=\frac{|q|B}{m}", r"\ \text{(mesmo m\'odulo)}", size=30, colors={0: VIOLET}).move_to([RX, -3.2, 0])
-        self.run["tt"] = True
-        self.play(FadeIn(row_p), run_time=0.8)
-        self.hold(TP - 0.8)                                # uma volta completa do caso q > 0
+        self.play(FadeIn(row_p), run_time=0.8)             # (a carga já está parada na origem: não há volta extra a completar)
+        self.at(47, fase=True)                             # completa a volta do caso q > 0 e estaciona na origem
         troca(True)
+        self.run["tt"] = True
         self.play(Flash(self.O(), color=VIOLET, flash_radius=0.4, line_length=0.1), RT(form_y, form_yn),
                   RT(row_p, row_n), FadeIn(sg_w), run_time=1.0)
-        self.hold(TP - 1.0)                                # uma volta completa do caso q < 0
+        finish_turn()                                      # uma volta completa do caso q < 0
         form_y = eq(r"v_y(t)", "=", r"v_\perp\sin(\omega_c t)", size=34, colors={0: VIOLET, 2: VIOLET}).move_to([RX, 2.95, 0])
         troca(False)
+        self.run["tt"] = True
         self.play(Flash(self.O(), color=BLUE_L, flash_radius=0.4, line_length=0.1), RT(form_yn, form_y),
                   FadeOut(row_n), FadeOut(sg_w), run_time=1.0)
         self.run["tt"] = False
@@ -1403,6 +1748,12 @@ class YT0005MagnetostaticaM1(Scene):
                   self.bop.animate.set_value(0.3), FadeIn(tri), run_time=1.6, rate_func=smooth)
         self.run["tt"] = True
         cap8 = eq(r"v_y=\frac{dy}{dt},\quad v_z=\frac{dz}{dt}", size=28, colors={}).move_to([RX, 3.15, 0])
+        self.at(48)
+        ponte = txt("a velocidade já gira; agora: onde está a partícula?", 22, opacity=0.95).move_to([RX, 3.15, 0])
+        ponte.set_opacity(0)                       # falado na narração: não repete na tela
+        self.play(FadeIn(ponte), run_time=0.7)
+        self.hold(1.6)
+        self.play(FadeOut(ponte), run_time=0.4)
         XEQ = 2.5                                           # todas as igualdades da integração ficam alinhadas neste x
 
         def al(m, idx, y):
@@ -1416,23 +1767,31 @@ class YT0005MagnetostaticaM1(Scene):
         a2 = al(eq("dy", "=", r"v_\perp", r"\sin(\omega_c t)", r"\,dt", size=42, colors={2: VIOLET}), 1, 2.2)
         self.play(RT(a1, a2), run_time=1.0)
         self.hold(0.8)
+        self.at(49)
         a3 = al(eq(r"\int_{y_0}^{y(t)}", "dy", "=", r"\int_0^{t}", r"v_\perp", r"\sin(\omega_c t')", r"\,dt'", size=40, colors={4: VIOLET}), 2, 1.1)
         lim = txt("de t' = 0 até t", 22, opacity=0.85).move_to([RX, 0.2, 0])
-        self.play(FadeIn(a3, shift=0.1 * UP), FadeIn(lim), run_time=1.2)
+        lim.set_opacity(0)                       # falado na narração: não repete na tela
+        self.play(FadeIn(a3[0]), FadeIn(a3[2]), FadeIn(a3[3]), TransformFromCopy(a2[0], a3[1]), TransformFromCopy(a2[2], a3[4]),
+                  TransformFromCopy(a2[3], a3[5]), TransformFromCopy(a2[4], a3[6]), FadeIn(lim), run_time=1.5)
         self.hold(1.2)
+        self.at(50)
         prim = al(eq(r"\int\sin(\omega_c t')\,dt'", "=", r"-\frac{\cos(\omega_c t')}{\omega_c}+C", size=34, colors={}), 1, -0.3)
-        self.play(FadeOut(lim), FadeIn(prim, shift=0.1 * UP), run_time=1.0)
+        self.play(FadeOut(lim), run_time=0.4)
+        self.play(FadeIn(prim, shift=0.1 * UP), run_time=0.8)
         self.hold(1.4)
         a4 = al(eq("y(t)-y_0", "=", r"v_\perp", r"\left[-\frac{\cos(\omega_c t')}{\omega_c}\right]_0^{t}", size=38, colors={2: VIOLET}), 1, -1.5)
         self.play(FadeIn(a4, shift=0.1 * UP), run_time=1.1)
         cnote = txt("C se cancela nos limites", 20, opacity=0.8).move_to([RX, -2.2, 0])
+        cnote.set_opacity(0)                       # falado na narração: não repete na tela
         self.play(FadeIn(cnote), run_time=0.5)
         self.hold(1.2)
+        self.at(51)
         a5 = al(eq("y(t)-y_0", "=", r"\frac{v_\perp}{\omega_c}", r"\left[1-\cos(\omega_c t)\right]", size=38, colors={2: VIOLET}), 1, -1.5)
         self.play(RT(a4, a5), FadeOut(prim), FadeOut(cnote), run_time=1.2)
         self.hold(1.0)
         self.play(*[FadeOut(m) for m in (a2, a3)], a5.animate.shift(UP * 3.7), run_time=0.9)
         # z: mesmo caminho, a primitiva de cos é sen
+        self.at(52)
         b1 = al(eq(r"\int_{z_0}^{z(t)}", "dz", "=", r"\int_0^{t}", r"v_\perp", r"\cos(\omega_c t')", r"\,dt'", size=40, colors={4: VIOLET}), 2, 0.9)
         self.play(FadeIn(b1, shift=0.1 * UP), run_time=1.0)
         self.hold(1.0)
@@ -1446,6 +1805,7 @@ class YT0005MagnetostaticaM1(Scene):
         R1, R2 = a5, b3
 
         # ── 9 · por que é uma circunferência: elimina t somando os quadrados; o desenho revela o círculo ──
+        self.at(53)
         nameR = VGroup(txt("defina", 22, opacity=0.95), eq(r"R\equiv\frac{v_\perp}{\omega_c}", size=34, colors={0: WHITE})).arrange(RIGHT, buff=0.2).move_to([RX, 3.15, 0])
         c2a = eq("y-y_0", "=", "R", r"\left[1-\cos(\omega_c t)\right]", size=40).move_to([RX, 2.15, 0])
         c2b = eq("z-z_0", "=", "R", r"\sin(\omega_c t)", size=40).move_to([RX, 1.0, 0])
@@ -1454,28 +1814,38 @@ class YT0005MagnetostaticaM1(Scene):
         c2a2 = eq("y-y_0-R", "=", "-R", r"\cos(\omega_c t)", size=40).move_to([RX, 2.15, 0])
         self.play(RT(c2a, c2a2), run_time=1.2)
         self.hold(1.4)
+        self.at(54)
         sq1 = eq(r"(y-y_0-R)^2", "=", r"R^2", r"\cos^2(\omega_c t)", size=38).move_to([RX, 2.15, 0])
         sq2 = eq(r"(z-z_0)^2", "=", r"R^2", r"\sin^2(\omega_c t)", size=38).move_to([RX, 1.0, 0])
         self.play(RT(c2a2, sq1), RT(c2b, sq2), run_time=1.3)
         self.hold(1.6)
-        sm = eq(r"(y-y_0-R)^2+(z-z_0)^2", "=", r"R^2", r"\left[\cos^2+\sin^2\right]", size=36).move_to([RX, -0.35, 0])
-        self.play(FadeIn(sm, shift=0.1 * UP), run_time=1.1)
-        self.hold(1.6)
-        sm2 = eq(r"(y-y_0-R)^2+(z-z_0)^2", "=", r"R^2", size=40).move_to([RX, -0.35, 0])
-        self.play(RT(sm, sm2), run_time=1.2)
+        sm = eq(r"(y-y_0-R)^2", "+", r"(z-z_0)^2", "=", r"R^2", r"\left[\cos^2+\sin^2\right]", size=34).move_to([RX, -0.35, 0])
+        self.play(FadeIn(sm[0]), FadeIn(sm[1]), FadeIn(sm[2]),
+                  Indicate(sq1[0], color=WHITE, scale_factor=1.12), Indicate(sq2[0], color=WHITE, scale_factor=1.12), run_time=1.2)
+        self.play(FadeIn(sm[3]), FadeIn(sm[4]), FadeIn(sm[5]),
+                  Indicate(sq1[2], color=WHITE, scale_factor=1.12), Indicate(VGroup(sq1[3], sq2[3]), color=WHITE, scale_factor=1.12), run_time=1.2)
+        self.hold(1.4)
+        um = eq(r"\left[1\right]", size=34).move_to(sm[5].get_center())
+        self.play(FadeOut(sm[5]), FadeIn(um), run_time=0.9)
+        self.hold(0.8)
+        self.at(55)
+        self.play(FadeOut(um), run_time=0.5)
+        sm2 = sm[0:5]
         bsm = bx(sm2)
         self.play(FadeIn(bsm), run_time=0.5)
         # só agora: o desenho revela a circunferência, com centro e raio que saem da álgebra
         cline, clab = self.mk_center(o1, "R")
         ctag = eq(r"C=(y_0+R,\;z_0)", size=34).move_to([RX, -1.5, 0])
         circ_msg = txt("circunferência", T_BODY, opacity=0.95).move_to([RX, -2.3, 0])
+        circ_msg.set_opacity(0)                       # falado na narração: não repete na tela
         self.add(cline, clab)
         self.play(FadeIn(cline), FadeIn(clab), FadeIn(ctag), FadeIn(circ_msg), run_time=1.0)
         self.hold(2.4)
+        self.at(56)
         Rfin = eq("R", "=", r"\frac{v_\perp}{\omega_c}", "=", rf"\frac{{m\,v_\perp}}{{|{tc(BLUE_L, 'q')}|{tc(MAG, 'B')}}}", size=44, colors={2: VIOLET}).move_to([RX, 1.2, 0])
         bR = bx(Rfin)
         nm_R = nome("Raio da órbita magnética", pos=(RX, 2.2, 0))
-        self.play(*[FadeOut(m) for m in (sq1, sq2, sm2, bsm, ctag, circ_msg, nameR)], run_time=0.8)
+        self.play(*[FadeOut(m) for m in (sq1, sq2, sm, bsm, ctag, circ_msg, nameR)], run_time=0.8)
         self.play(FadeIn(Rfin, shift=0.1 * UP), run_time=0.9)
         self.play(FadeIn(bR), FadeIn(nm_R), run_time=0.5)
         self.hold(2.4)
@@ -1506,6 +1876,7 @@ class YT0005MagnetostaticaM1(Scene):
         ghost = VGroup(self.q3.copy(), self.vp3.copy(), self.fm3[1].copy())
         self.remove(self.q3, self.vp3, self.fm3[0], self.fm3[1], self.trK)
         self.add(ghost)
+        self.at(57)
         self.play(*[FadeOut(m) for m in (Rfin, bR, nm_R, cline, clab, tri, ghost)], FadeIn(baxis), self.bop.animate.set_value(0.0),
                   run_time=1.2, rate_func=smooth)
         hx1 = eq(r"\frac{dv_x}{dt}", "=", "0", size=M_L, colors={0: VIOLET}).move_to([RX, 1.9, 0])
@@ -1517,12 +1888,14 @@ class YT0005MagnetostaticaM1(Scene):
         self.hold(0.6)
         self.play(FadeIn(hx3, shift=0.1 * UP), run_time=0.8)
         # nova condição inicial: v∥ já no valor final antes de qualquer evolução; a hélice é desenhada uma só vez
+        self.at(58)
         hp.set_value(0.0)
         vh.set_value(VPAR)
         nc = VGroup(txt("nova condição inicial:", T_NOTE, opacity=0.95),
                     eq(r"v_\parallel\neq0\ \ \text{j\'a em}\ t=0", size=34, colors={0: VIOLET})).arrange(DOWN, buff=0.12).move_to([RX, -0.9, 0])
         self.play(FadeIn(nc), run_time=0.7)
         self.play(hp.animate.set_value(1.0), run_time=TP, rate_func=linear)
+        self.at(59)
         self.play(FadeOut(nc), run_time=0.4)
         d1 = VGroup(VGroup(txt("a Lorentz não cria", 24, opacity=0.95), eq(r"v_\parallel", size=36, colors={0: VIOLET}), txt(";", 24)).arrange(RIGHT, buff=0.12),
                     txt("ela preserva essa componente", 24, opacity=0.95)).arrange(DOWN, buff=0.1)
@@ -1573,7 +1946,7 @@ class YT0005MagnetostaticaM1(Scene):
             F = o1.force() * (0.5 / (ABSQ * BM))
             d = self.W(o1.pos()) - self.W(np.array([o1.C[0], o1.C[1], o1.pos()[2]]))
             nn = unit(np.array([-d[1], d[0], 0.0]))
-            return halo(eqc(r"\mathbf F_B", size=M_M, colors={0: FC}).move_to(self.W(o1.pos() + 0.5 * F) - 0.5 * nn))
+            return halo(eqc(r"\mathbf F_B", size=M_M, colors={0: FC}).move_to(self.W(o1.pos() + 0.5 * F) - 0.75 * nn))
 
         def vlab():
             v = o1.vel() * np.array([1.0, 1.0, 0.0])
@@ -1583,7 +1956,9 @@ class YT0005MagnetostaticaM1(Scene):
         self.fl, self.vl = always_redraw(flab), always_redraw(vlab)
         self.add(self.fl, self.vl)
         AT, SZ = [RX, 0.3, 0], 52
-        cap = txt("a força magnética é a força centrípeta", T_NOTE, opacity=0.95).move_to([RX + 0.5, 3.2, 0])
+        cap = txt("a força magnética fornece a força centrípeta", 22, opacity=0.95).move_to([RX - 0.1, 3.2, 0])
+        cap.set_opacity(0)                       # falado na narração: não repete na tela
+        self.at(60)
         self.play(FadeOut(self.note_perp), FadeOut(self.bleg), FadeOut(self.lor), FadeOut(self.lor_box), run_time=0.7)
         self.play(FadeIn(cap), self.bop.animate.set_value(0.3), FadeIn(self.fl), FadeIn(self.vl), run_time=0.9, rate_func=smooth)
         # ── raio por um segundo caminho ──
@@ -1606,14 +1981,17 @@ class YT0005MagnetostaticaM1(Scene):
         self.cur = new_
         bx = box(VGroup(*self.cur.values()))
         same = txt("o mesmo raio, por outro caminho", 22, opacity=0.85).move_to([RX, -1.5, 0])
+        same.set_opacity(0)                       # falado na narração: não repete na tela
         self.play(FadeIn(bx), FadeIn(same), run_time=0.8)
         self.hold(2.2)
 
         # ── período: uma volta completa, com o comprimento 2πR e a rapidez v⊥ ──
         ref = VGroup(*self.build(["R", "=", ("f", ["m", "vp"], ["q", "B"], "b1")], 30)[0]).move_to([RX, 2.2, 0])
+        self.at(61)
         self.play(*[FadeOut(m) for m in self.cur.values()], FadeOut(bx), FadeOut(cap), FadeOut(same), FadeIn(ref), run_time=0.7)
         self.cur = {}
         o1.t0 = self.tt.get_value()                      # a trilha recomeça: a volta se desenha enquanto o cronômetro corre
+        self.run["tt"] = True
         BW, BY = 3.6, 3.05
         bar_bg = Rectangle(width=BW, height=0.2, color=WHITE, stroke_width=2).set_stroke(opacity=0.6).move_to([RX, BY, 0])
         bar = always_redraw(lambda: Rectangle(width=max(0.02, BW * min(1.0, max(0.0, (self.tt.get_value() - o1.t0) / T_PER))), height=0.2, stroke_width=0,
@@ -1624,10 +2002,12 @@ class YT0005MagnetostaticaM1(Scene):
         len_l = VGroup(eq(r"2\pi R", size=34), txt("uma volta", 20, opacity=0.9)).arrange(RIGHT, buff=0.18).move_to([RX, -3.2, 0])
         self.play(FadeIn(bar_bg), FadeIn(bar), FadeIn(t0l), FadeIn(tTl), FadeIn(tcl), FadeIn(len_l), run_time=0.8)
         self.morph(["T", "=", ("f", ["2pi", "R"], ["vp@d"], "b1")], SZ, AT, first=True)
-        self.hold(T_PER - 2.0)                           # a volta termina com o cronômetro em T
+        self.finish_turn()                               # a volta termina com o cronômetro em T
+        self.run["tt"] = True
         self.morph(["T", "=", ("f", ["2pi", ("f", ["m", "vp@n"], ["q", "B"], "b2")], ["vp@d"], "b1")], SZ, AT,
                    alias={"R": ["m", "vp@n", "q", "B", "b2"]}, run=1.4)
         self.hold(1.0)
+        self.at(62)
         lines = self.strike(self.cur["vp@n"], self.cur["vp@d"])
         self.hold(1.0)
         c = self.cur
@@ -1639,20 +2019,15 @@ class YT0005MagnetostaticaM1(Scene):
         msg = VGroup(txt("raios diferentes.", T_BODY, opacity=0.95), txt("mesmo período.", T_BODY, opacity=0.95)).arrange(DOWN, buff=0.1).move_to([RX, -1.7, 0])
         self.play(FadeIn(bx), FadeIn(msg), FadeIn(nm_T), run_time=0.8)
         self.hold(2.6)
-        self.play(*[FadeOut(m) for m in self.cur.values()], FadeOut(bx), FadeOut(nm_T), FadeOut(ref), FadeOut(msg), FadeOut(bar_bg), FadeOut(bar), FadeOut(t0l),
-                  FadeOut(tTl), FadeOut(tcl), FadeOut(len_l), FadeOut(self.fl), FadeOut(self.vl), run_time=0.8)
-        self.remove(self.fl, self.vl, bar)
-        self.run["tt"] = False
+        # a equação final e a órbita continuam na tela (viva) até a fala passar para as duas partículas; o fade vai na próxima cena
+        self._alg_out = [*self.cur.values(), bx, nm_T, ref, msg, bar_bg, bar, t0l, tTl, tcl, len_l, self.fl, self.vl]
         self.cur = {}
         self.res_fade = (self.cline, self.clab)
 
     def b02_duas(self):
         """Duas partículas: mesmos m, q, B; só v⊥ muda. Mesma ω (mesmo relógio) → raios diferentes, mesmo período."""
-        # limpa a órbita única e reabre a composição: as trajetórias dominam
+        self.at(63)
         self.remove(*self.res_fade)
-        self.play(FadeOut(self.trail1), FadeOut(self.q3), FadeOut(self.vp3), FadeOut(self.fm3[0]), FadeOut(self.fm3[1]),
-                  self.ox.animate.set_value(-3.5), self.oy.animate.set_value(-0.5), self.gs.animate.set_value(1.4),
-                  self.bop.animate.set_value(0.6), run_time=1.6, rate_func=smooth)
         self.tg.set_value(0.0)
         self.tfull = ValueTracker(T_PER)
         c1 = Orbit(VP1, 0.0, 1, self.tg, 0.0, BLUE_L)
@@ -1662,7 +2037,13 @@ class YT0005MagnetostaticaM1(Scene):
         st1, st2 = self.mk_trail(s1, 3.5, optr=self.stat_op), self.mk_trail(s2, 3.5, optr=self.stat_op)
         hyp = VGroup(eq(r"m_1=m_2,\;q_1=q_2,\;B_1=B_2", size=30), eq(r"v_{\perp 1}\neq v_{\perp 2}", size=30)
                      ).arrange(RIGHT, buff=0.7).move_to([0.9, 3.15, 0])
-        self.play(FadeIn(st1), FadeIn(st2), FadeIn(hyp), run_time=1.6)
+        # a equação do período e a órbita seguiram vivas até aqui; saem agora, enquanto as duas trajetórias entram (uma só passada)
+        self.play(FadeOut(self.trail1), FadeOut(self.q3), FadeOut(self.vp3), FadeOut(self.fm3[0]), FadeOut(self.fm3[1]),
+                  *[FadeOut(m) for m in self._alg_out], FadeIn(st1), FadeIn(st2), FadeIn(hyp),
+                  self.ox.animate.set_value(-3.5), self.oy.animate.set_value(-0.5), self.gs.animate.set_value(1.4),
+                  self.bop.animate.set_value(0.6), run_time=1.4, rate_func=smooth)
+        self.remove(*self._alg_out)
+        self.run["tt"] = False
 
         def ray(orb, ang, name, side):
             def lines():
@@ -1680,12 +2061,8 @@ class YT0005MagnetostaticaM1(Scene):
 
         r1, l1 = ray(s1, 40, "R_1", 1)
         r2, l2 = ray(s2, 140, "R_2", -1)
-        self.add(r1, l1, r2, l2)
         concl_r = eq(r"R_1\neq R_2", size=42)
         gR = VGroup(concl_r, box(concl_r)).move_to([4.7, 0.9, 0])
-        self.play(FadeIn(r1), FadeIn(l1), FadeIn(r2), FadeIn(l2), FadeIn(gR, shift=0.1 * DOWN), run_time=1.2)
-        self.hold(2.0)
-        # as duas partem do mesmo ponto e da mesma fase: marca de fase comum (relógio ωt) e passagens juntas
         dc = np.array([4.7, -0.9, 0.0])
         dial = always_redraw(lambda: VGroup(
             Circle(radius=0.55, color=WHITE, stroke_width=2).move_to(dc),
@@ -1695,19 +2072,19 @@ class YT0005MagnetostaticaM1(Scene):
         dlab = eq(r"\omega t", size=M_M).move_to(dc + np.array([0.0, -0.95, 0.0]))
         tr1, tr2 = self.mk_trail(c1, 4.5), self.mk_trail(c2, 4.5)
         q1, q2 = self.mk_charge(c1), self.mk_charge(c2)
-        self.add(tr1, tr2, q1, q2, dial)
-        self.play(FadeOut(r1), FadeOut(l1), FadeOut(r2), FadeOut(l2), FadeOut(gR), self.stat_op.animate.set_value(0.3),
-                  FadeIn(dlab), run_time=1.0)
-        self.run["tg"] = True
-        # o gatilho do flash é a passagem física: t = nT (as duas partículas na origem comum); o flash COMEÇA aí
-        self.hold(T_PER)
         concl_t = eq("T_1", "=", "T_2", size=42)
         gT = VGroup(concl_t, box(concl_t)).move_to([4.7, 0.9, 0])
+        self.at(63, k=2)                                    # "raios diferentes": os raios aparecem e as duas partículas já partem juntas
+        self.add(r1, l1, r2, l2, tr1, tr2, q1, q2, dial)
+        self.run["tg"] = True
+        # UMA volta exata (T = 150 quadros, nada se comprime): raios → raios saem → o flash COMEÇA em t = T, na passagem comum
+        self.play(FadeIn(r1), FadeIn(l1), FadeIn(r2), FadeIn(l2), FadeIn(gR, shift=0.1 * DOWN), self.stat_op.animate.set_value(0.3),
+                  FadeIn(dlab), run_time=0.8)
+        self.hold(1.6)
+        self.play(FadeOut(r1), FadeOut(l1), FadeOut(r2), FadeOut(l2), FadeOut(gR), run_time=0.8)
+        self.hold(T_PER - 3.2 + 3 / config.frame_rate)       # + 3 quadros: cada play perde 1 quadro do relógio (ver _tocar)
         self.play(Flash(self.W(np.zeros(3)), color=VIOLET, flash_radius=0.5, line_length=0.14), FadeIn(gT, shift=0.1 * DOWN),
                   run_time=1.0)
-        self.hold(T_PER - 1.0)                # t = 2T
-        self.play(Flash(self.W(np.zeros(3)), color=VIOLET, flash_radius=0.5, line_length=0.14), run_time=1.0)
-        self.hold(0.8)
         self.run["tg"] = False
         self.cmp = VGroup(tr1, tr2, q1, q2, dial, dlab, hyp, gT, st1, st2)
 
@@ -1724,24 +2101,27 @@ class YT0005MagnetostaticaM1(Scene):
 
     def b03_circulo_e_condicao(self):
         # limpa a comparação e volta ao caso circular, só como ponto de partida
+        self.at(64)
         self.play(FadeOut(self.cmp), self.gs.animate.set_value(1.3), self.ox.animate.set_value(-4.2),
-                  self.oy.animate.set_value(-0.1), run_time=1.2, rate_func=smooth)
+                  self.oy.animate.set_value(-0.1), run_time=0.9, rate_func=smooth)
         self.tg.set_value(0.0)
         self.hc = Orbit(VP1, 0.0, 1, self.tg, 0.0, BLUE_L)
         trc, qc, vc = self.mk_trail(self.hc, 3.5), self.mk_charge(self.hc), self.mk_vec(self.hc, "v", WHITE, 6, 5)
         self.add(trc, qc, vc)
         dec = eq(r"\mathbf v", "=", r"\mathbf v_\perp", size=M_L).move_to([CX, 2.2, 0])
         row1 = VGroup(eq(r"\mathbf v_\perp", size=30), txt("→ movimento circular", T_BODY)).arrange(RIGHT, buff=0.3).move_to([CX, 0.9, 0])
-        self.play(FadeIn(dec), FadeIn(row1), run_time=0.8)
+        self.play(FadeIn(dec), FadeIn(row1), run_time=0.5)
         self.run["tg"] = True
-        self.hold(T_PER * 0.4)
+        self.hold(T_PER * 0.2)
         self.run["tg"] = False
+        self.at(64, k=5)                              # "Nova condição inicial"
         # NOVA CONDIÇÃO INICIAL: pausa, reconfigura e só então começa uma nova evolução
         newc = VGroup(txt("nova condição inicial", T_BODY), eq(r"x(t)=x_0+v_\parallel t", size=34, colors={0: VIOLET})).arrange(DOWN, buff=0.2).move_to([CX, 0.9, 0])
         dec3 = eq(r"\mathbf v", "=", r"\mathbf v_\parallel", "+", r"\mathbf v_\perp", size=M_L, colors={2: VIOLET}).move_to([CX, 2.2, 0])
         self.play(FadeOut(trc), FadeOut(qc), FadeOut(vc), RT(row1, newc), RT(dec, dec3),
                   self.bop.animate.set_value(0.0), run_time=1.0)
         self.dec3 = dec3
+        self.at(64, k=8)                              # "a velocidade tem uma componente paralela ao campo": a vista inclina
         self.bmode = "b03"
         self.bz1.set_value(7.4)
         self.play(self.bop.animate.set_value(0.8), self.tau.animate.set_value(58.0), self.beta.animate.set_value(15.0),
@@ -1768,6 +2148,7 @@ class YT0005MagnetostaticaM1(Scene):
         row2 = VGroup(eq(r"\mathbf v_\parallel", size=30, colors={0: VIOLET}), txt("= constante (já definida)", T_BODY)
                       ).arrange(RIGHT, buff=0.3).move_to([CX, -0.4, 0])
         # v∥ aparece JÁ com seu valor (sem crescer), como parte da nova condição inicial
+        self.at(65)
         self.play(self.vpar_op.animate.set_value(1.0), FadeIn(row2), run_time=1.2)
         self.hold(0.8)
         self.add(self.trn)
@@ -1789,6 +2170,7 @@ class YT0005MagnetostaticaM1(Scene):
         self.add(cl, clab)
         self.cl3 = (cl, clab)
         AT = [CX, -0.3, 0]
+        self.at(66)
         self.play(FadeOut(self.rows3), FadeOut(self.labs3), FadeIn(self.pm), FadeIn(cl), FadeIn(clab), run_time=1.2)
         self.morph(["p", "=", "vpar", "T"], 44, AT, first=True)
         self.hold(1.0)
@@ -1821,6 +2203,7 @@ class YT0005MagnetostaticaM1(Scene):
         self.remove(self.trn)
         self.trn = self.mk_trail(self.hn, 3.6, optr=self.main_op)
         self.add(self.trn)
+        self.at(67)
         # da referência fica SÓ a trilha, em baixa opacidade: sem partícula, vetores, cotas, rótulos nem fórmula
         self.play(self.main_op.animate.set_value(0.25), FadeOut(self.arr_rows), FadeOut(self.qn), FadeOut(self.vn),
                   FadeOut(self.vln), FadeOut(self.pm), FadeOut(self.cl3[0]), FadeOut(self.cl3[1]), FadeOut(self.pbox), FadeOut(self.nome_p),
@@ -1828,47 +2211,52 @@ class YT0005MagnetostaticaM1(Scene):
         self.cur = {}
         # (a) v⊥ menor: só o raio muda
         na = VGroup(eq(r"v_\perp\downarrow", size=34), eq(r"R\downarrow", r",\ ", r"p\ \text{igual}", size=34)).arrange(DOWN, buff=0.25).move_to(n)
-        ga, gga = self.ghost(VP1 * 0.55, VPAR, 1, 1.4)
+        ga, gga = self.ghost(VP1 * 0.55, VPAR, 1, 0.65)
         cla, clb = self.mk_center(ga, "R")
-        self.play(FadeIn(na), run_time=0.7)
+        self.at(67, k=4)                              # "com menos velocidade perpendicular"
+        self.play(FadeIn(na), run_time=0.5)
         self.add(cla, clb)
         self.run["tv"] = True
-        self.hold(1.4 * T_PER + 0.3)
+        self.hold(0.65 * T_PER)
         self.run["tv"] = False
         self.play(FadeOut(gga), FadeOut(cla), FadeOut(clb), run_time=0.6)
         # (b) v∥ maior: só o passo muda (a cota acompanha a trajetória em teste)
         nb = VGroup(eq(r"v_\parallel\uparrow", size=34, colors={0: VIOLET}), eq(r"p\uparrow", r",\ ", r"R\ \text{igual}", size=34)
                     ).arrange(DOWN, buff=0.25).move_to(n)
-        gb, ggb = self.ghost(VP1, VPAR * 1.6, 1, 1.0)
+        gb, ggb = self.ghost(VP1, VPAR * 1.6, 1, 0.65)
         pmb = self.mk_p_marker(gb)
-        self.play(RT(na, nb), run_time=0.7)
+        self.at(67, k=16)                             # "com mais componente paralela"
+        self.play(RT(na, nb), run_time=0.5)
         self.add(pmb)
         self.run["tv"] = True
-        self.hold(1.0 * T_PER + 0.3)
+        self.hold(0.65 * T_PER)
         self.run["tv"] = False
         self.play(FadeOut(ggb), FadeOut(pmb), run_time=0.6)
-        # (c) q → −q: gira ao contrário; R, T e p iguais; avança no mesmo sentido ao longo de B
-        nc = VGroup(eq(r"q\to-q", size=34), eq(r"\text{gira ao contr\'ario}", size=30), eq(r"\text{avan\c{c}a igual}", size=30)
+        # (c) sem componente perpendicular: sobra o movimento retilíneo ao longo de B (é o que a fala diz)
+        nc = VGroup(eq(r"v_\perp=0", size=34), eq(r"\text{movimento retil\'ineo}", size=30), eq(r"\text{ao longo de}\ \mathbf B", size=30)
                     ).arrange(DOWN, buff=0.2).move_to(n)
-        gc, ggc = self.ghost(VP1, VPAR, -1, 1.4, VIOLET)
-        self.play(RT(nb, nc), run_time=0.7)
+        gc, ggc = self.ghost(0.0, VPAR, 1, 0.65)
+        self.at(67, k=28)                             # "Sem componente perpendicular"
+        self.play(RT(nb, nc), run_time=0.5)
         self.run["tv"] = True
-        self.hold(1.4 * T_PER + 0.3)
+        self.hold(0.65 * T_PER)
         self.run["tv"] = False
-        self.hold(2.0)
+        self.hold(0.5)
 
     # ═════════════════════════════════════════════════════════════════════════════════════════════════════════
     # Utilidades B04–B06
     # ═════════════════════════════════════════════════════════════════════════════════════════════════════════
-    def limpa(self, run=0.9, keep_extra=()):
-        """Fecha o bloco anterior: tudo sai, menos marca, cabeçalho e o que for pedido (os relógios/trackers ficam)."""
+    def limpa(self, run=0.9, keep_extra=(), extra_anims=()):
+        """Fecha o bloco anterior: tudo sai, menos marca, cabeçalho e o que for pedido (os relógios/trackers ficam).
+        `extra_anims` entram na MESMA passada (troca cruzada: o bloco novo já começa a aparecer enquanto o antigo sai)."""
         keep = (self.wm, self.tag) + tuple(keep_extra)
         mobs = [m for m in self.mobjects if m not in keep and not isinstance(m, ValueTracker)]
         dyn = [m for m in mobs if getattr(m, "dyn", False)]      # estrutura variável: não aceita FadeOut (sai direto)
         self.remove(*dyn)
         mobs = [m for m in mobs if m not in dyn]
-        if mobs:
-            self.play(*[FadeOut(m) for m in mobs], run_time=run)
+        anims = [FadeOut(m) for m in mobs] + list(extra_anims)
+        if anims:
+            self.play(*anims, run_time=run)
         self.cur = {}
 
     def setcap(self, new, run=0.7):
@@ -1900,6 +2288,7 @@ class YT0005MagnetostaticaM1(Scene):
     def b04_rapidez(self):
         self.seg("E")
         # a hélice do B03 se achata no círculo: olhando ao longo de B, a mesma trilha helicoidal projeta-se na órbita circular
+        self.at(68)
         self.capb = None
         self.limpa(0.8, keep_extra=(self.trn,))
         self.tw = self.clock("tw")
@@ -1914,6 +2303,7 @@ class YT0005MagnetostaticaM1(Scene):
                   run_time=3.0, rate_func=smooth)
         self.bop.set_value(0.0)
         self.play(FadeOut(ret), FadeOut(retb), run_time=0.5)
+        self.at(69)
         ques = VGroup(txt("A partícula está acelerando.", 30), txt("Então por que ela não fica mais rápida?", 30)
                       ).arrange(DOWN, buff=0.2).move_to([0, 2.75, 0])
         self.play(FadeIn(ques, shift=0.1 * UP), run_time=1.0)
@@ -1951,6 +2341,7 @@ class YT0005MagnetostaticaM1(Scene):
         hb = self.hb
         RX = 3.9
         # espera a partícula chegar ao topo da órbita (v horizontal, F vertical): geometria limpa para nomear os vetores
+        self.at(70, fase=lambda: (0.25 * T_PER - (hb.u() % T_PER)) % T_PER, clock="tw")
         u = hb.u()
         w = (0.25 * T_PER - (u % T_PER)) % T_PER
         if w > 0.05:
@@ -1964,15 +2355,17 @@ class YT0005MagnetostaticaM1(Scene):
         tv = self.W(pos + hb.vel() * np.array([1, 1, 0]) * 0.65)
         tf = self.W(pos + hb.force() * (0.5 / (ABSQ * BM)))
         lv = halo(self.lab(r"\mathbf v", "velocidade", color=VIOLET).move_to(tv + np.array([1.4, 0.35, 0.0])))
-        lf = halo(self.lab(r"\mathbf F_B", "força magnética", color=FC).move_to(tf + np.array([1.9, -0.45, 0.0])))
+        lf = halo(self.lab(r"\mathbf F_B", "força magnética", color=FC).move_to(tf + np.array([0.2, -0.85, 0.0])))      # dentro do círculo: não cruza o arco
         l90 = eq(r"90^\circ", size=42).move_to(p0 + np.array([0.62, -0.42, 0.0]))
         self.play(FadeIn(lv, shift=0.1 * RIGHT), run_time=0.8)
         self.hold(0.8)
         self.play(FadeIn(lf, shift=0.1 * RIGHT), FadeIn(l90), run_time=0.8)
         self.hold(1.8)
+        self.at(71)
         self.play(FadeOut(lv), FadeOut(lf), FadeOut(l90), run_time=0.5)
         # a órbita volta a girar e fica viva durante toda a dedução: dr é o pequeno deslocamento ao longo da trajetória
         self.run["tw"] = True
+        self._livre = True                                # decorativa daqui em diante: esperas e animações podem se ajustar à fala
 
         def unit(v):
             return v / (np.linalg.norm(v) + 1e-9)
@@ -1982,14 +2375,14 @@ class YT0005MagnetostaticaM1(Scene):
             p = hb.pos()
             tdir = unit(self.Wv(v))
             nout = unit(self.W(p) - self.W(np.array([hb.C[0], hb.C[1], p[2]])))
-            a = self.W(p) + 0.22 * nout
-            b = a + 0.5 * tdir
-            return VGroup(arrow(a, b, WHITE, 7, 7, tip=0.2),
-                          halo(eqc(r"d\mathbf r", size=M_M).move_to(b + 0.35 * unit(0.6 * tdir + 0.8 * nout))))
+            a = self.W(p) + 0.1 * tdir                       # nasce na partícula, tangente à trajetória
+            b = a + 0.8 * tdir
+            return VGroup(arrow(a, b, WHITE, 7, 8, tip=0.22),
+                          halo(eqc(r"d\mathbf r", size=M_M).move_to(b + 0.3 * nout + 0.15 * tdir)))
 
         drm = always_redraw(dr_mob)
         AT, SZ = [RX, 0.2, 0], 54
-        cap = txt("trabalho em um deslocamento", T_NOTE, opacity=0.95).move_to([RX, 2.4, 0])
+        cap = conceito("Trabalho em um deslocamento", pos=(RX, 2.4, 0))
         wd = eq("dW", "=", r"\mathbf F", r"\cdot", r"d\mathbf r", size=SZ, colors={0: CYAN, 2: FC}).move_to(AT)
         self.add(drm)
         self.play(FadeIn(cap), FadeIn(drm), FadeIn(wd, shift=0.1 * UP), run_time=1.2)
@@ -1998,11 +2391,13 @@ class YT0005MagnetostaticaM1(Scene):
         self.play(FadeIn(perp, shift=0.1 * UP), run_time=0.9)
         self.hold(2.0)
         # potência: dW por unidade de tempo → F · dr/dt → F · v
+        self.at(72)
         self.play(FadeOut(perp), FadeOut(cap), run_time=0.5)
-        cap2 = txt("potência: trabalho por tempo", T_NOTE, opacity=0.95).move_to([RX, 2.4, 0])
+        cap2 = conceito("Potência instantânea", pos=(RX, 2.4, 0))
         p1 = eq("P", "=", r"\frac{dW}{dt}", size=SZ, colors={0: CYAN, 2: CYAN}).move_to(AT)
         self.play(RT(wd, p1), FadeIn(cap2), run_time=1.2)
         self.hold(1.4)
+        self.at(73)
         p2 = eq("P", "=", r"\frac{\mathbf F\cdot d\mathbf r}{dt}", size=SZ, colors={0: CYAN}).move_to(AT)
         self.play(RT(p1, p2), run_time=1.3)
         self.hold(1.2)
@@ -2018,14 +2413,16 @@ class YT0005MagnetostaticaM1(Scene):
         self.play(FadeIn(b4), run_time=0.5)
         self.hold(2.0)
         # aplicada à força magnética
+        self.at(74)
         self.play(FadeOut(p4), FadeOut(b4), FadeOut(cap2), FadeOut(drm), run_time=0.7)
         self.remove(drm)
-        cap = txt("a potência da força magnética", T_BODY, opacity=0.95).move_to([RX, 2.4, 0])
+        cap = conceito("Potência da força magnética", pos=(RX, 2.4, 0))
         self.play(FadeIn(cap), run_time=0.5)
         self.morph(["PB", "=", "FB@a", "dot", "v@a"], SZ, AT, first=True, run=1.2)
         self.hold(1.2)
         self.morph(["PB", "=", "qs", "(", "v@b", "times", "Bv", ")", "dot", "v@a"], SZ, AT, alias={"FB@a": ["qs", "(", "v@b", "times", "Bv", ")"]}, run=1.4)
         self.hold(0.8)
+        self.at(75)
         note = eq(r"\mathbf v", r"\times", r"\mathbf B", r"\ \perp\ ", r"\mathbf v", size=36, colors={0: VIOLET, 2: MAG, 4: VIOLET}).move_to([RX, -1.7, 0])
         self.play(FadeIn(note, shift=0.1 * UP), run_time=0.8)
         self.hold(1.2)
@@ -2033,9 +2430,10 @@ class YT0005MagnetostaticaM1(Scene):
         bx = box(VGroup(*self.cur.values()))
         self.play(FadeIn(bx), run_time=0.5)
         self.hold(1.4)
+        self.at(76)
         self.play(FadeOut(bx), FadeOut(note), FadeOut(cap), run_time=0.5)
         # trabalho
-        cap = VGroup(eq("W_B", size=34, colors={0: CYAN}), txt("trabalho da força magnética", T_BODY, opacity=0.95)).arrange(RIGHT, buff=0.2).move_to([RX, 2.4, 0])
+        cap = conceito("Trabalho da força magnética", pos=(RX, 2.4, 0))
         self.play(FadeIn(cap), run_time=0.5)
         self.morph(["WB", "=", "int", "PB", "dtt", "=@2", "0"], SZ, AT, run=1.4)
         bx = box(VGroup(*[m for k, m in self.cur.items()]))
@@ -2044,10 +2442,12 @@ class YT0005MagnetostaticaM1(Scene):
         self.play(FadeOut(bx), FadeOut(cap), *[FadeOut(m) for m in self.cur.values()], run_time=0.6)
         self.cur = {}
         # energia cinética: K identificada e hipótese explícita antes de concluir ΔK = 0
+        self.at(77)
         kdef = eq(r"E_c", "=", r"\frac12 m", r"|\mathbf v|^2", size=SZ, colors={3: VIOLET}).move_to(AT)
-        kcap = VGroup(eq(r"E_c", size=34), txt("energia cinética", T_BODY, opacity=0.95)).arrange(RIGHT, buff=0.2).move_to([RX, 2.4, 0])
+        kcap = conceito("Energia cinética", pos=(RX, 2.4, 0))
         self.play(FadeIn(kdef), FadeIn(kcap), run_time=0.9)
         self.hold(1.6)
+        self.at(78)
         hyp = txt("só a força magnética atua", T_BODY, opacity=0.95).move_to([RX, 2.4, 0])
         self.play(FadeOut(kdef), RT(kcap, hyp), run_time=0.7)
         self.morph(["dK", "=", "WB", "=@2", "0"], SZ, AT, first=True, run=1.2)
@@ -2062,9 +2462,11 @@ class YT0005MagnetostaticaM1(Scene):
         self.play(*[FadeOut(m) for m in self.cur.values()], FadeOut(bx), FadeOut(msg), FadeOut(note2), FadeOut(hyp), FadeOut(nm_W), run_time=0.8)
         self.cur = {}
         self.run["tw"] = False
+        self._livre = False
 
     def b04_sistema(self):
         """M1-18, curto: o termo magnético não trabalha sobre a carga, mas o sistema completo pode transferir energia."""
+        self.at(79)
         self.limpa(0.6)
         labels = ["fonte\nelétrica", "corrente", "interação\nmagnética", "movimento\nmecânico"]
         cols = [CYAN, GREEN, MAG, VIOLET]
@@ -2118,21 +2520,26 @@ class YT0005MagnetostaticaM1(Scene):
                       Line([xb, WY - 0.5, 0], [xb, WY + 0.5, 0], color=WHITE, stroke_width=2.5))
         dlab = eq(r"d\ell", size=M_M).move_to([xm, WY + 0.95, 0])
         # 1) um pequeno trecho do fio: comprimento dℓ e a carga dq que ele contém
+        self.at(82)
         self.capb = self.cap2
-        self.setcap(txt("trecho do fio: comprimento dℓ", T_NOTE, opacity=0.95).move_to([0, -0.6, 0]))
+        self.setcap(mudo(txt("trecho do fio: comprimento dℓ", T_NOTE, opacity=0.95).move_to([0, -0.6, 0])))
         self.play(FadeIn(elem), FadeIn(dlab), run_time=1.0)
         self.hold(1.4)
         dqlab = eq("dq", size=M_M, colors={0: BLUE_L}).move_to([xm, WY - 1.15, 0])
-        self.setcap(txt("carga contida no trecho", T_NOTE, opacity=0.95).move_to([0, -0.6, 0]))
+        self.at(82, k=11)
+        self.setcap(mudo(txt("carga contida no trecho", T_NOTE, opacity=0.95).move_to([0, -0.6, 0])))
         self.play(FadeIn(dqlab), run_time=0.7)
         self.hold(1.4)
         # 2) λ: carga por comprimento
+        self.at(83)
         self.setcap(VGroup(eq(r"\lambda\!:", size=32, colors={0: BLUE_L}), txt("carga / comprimento", T_NOTE, opacity=0.95)
                            ).arrange(RIGHT, buff=0.1).move_to([0, -0.6, 0]))
         self.morph(["lam", "=", ("f", ["dq"], ["dl"], "b1")], SZ, AT, first=True, run=1.2)
         self.hold(1.8)
+        self.at(83, k=11)
         self.morph(["dq", "=", "lam", "dl"], SZ, AT, run=1.3)
         self.hold(1.4)
+        self.at(84)
         self.play(FadeOut(elem), FadeOut(dlab), FadeOut(dqlab), *[FadeOut(m) for m in self.cur.values()], run_time=0.7)
         self.cur = {}
         # 3) corrente: carga que atravessa uma seção durante dt
@@ -2147,18 +2554,22 @@ class YT0005MagnetostaticaM1(Scene):
                            ).arrange(RIGHT, buff=0.15).move_to([0, -0.6, 0]))
         self.play(FadeIn(plane), FadeIn(bnd), FadeIn(vdt), FadeIn(sec), run_time=0.9)
         self.hold(1.6)
+        self.at(84, k=12)
         self.setcap(VGroup(eq("I", size=32, colors={0: GREEN}), txt("carga / tempo", T_NOTE, opacity=0.95)
                            ).arrange(RIGHT, buff=0.15).move_to([0, -0.6, 0]))
         self.morph(["I", "=", ("f", ["dq"], ["dt@d"], "b1")], SZ, AT, first=True, run=1.2)
         self.hold(1.4)
         # nos portadores do modelo: durante dt percorrem v dt, então dq = λ v dt
-        self.setcap(txt("em dt, cada portador percorre v dt", T_NOTE, opacity=0.95).move_to([0, -0.6, 0]))
+        self.at(85)
+        self.setcap(mudo(txt("em dt, cada portador percorre v dt", T_NOTE, opacity=0.95).move_to([0, -0.6, 0])))
         dq3 = eq("dq", "=", r"\lambda", "v", "dt", size=40, colors={0: BLUE_L, 2: BLUE_L, 3: VIOLET, 4: VIOLET}).move_to([0.5, -2.75, 0])
         self.play(FadeIn(dq3, shift=0.1 * UP), run_time=0.8)
         self.hold(1.4)
+        self.at(85, k=28)
         self.morph(["I", "=", ("f", ["lam", "vs", "dt@n"], ["dt@d"], "b1")], SZ, AT, alias={"dq": ["lam", "vs", "dt@n"]}, run=1.4)
         self.play(FadeOut(dq3), run_time=0.4)
         self.hold(0.6)
+        self.at(86)
         lines = self.strike(self.cur["dt@n"], self.cur["dt@d"])
         c = self.cur
         self.play(FadeOut(c["dt@n"]), FadeOut(c["dt@d"]), FadeOut(lines), run_time=0.7)
@@ -2168,6 +2579,7 @@ class YT0005MagnetostaticaM1(Scene):
         self.play(FadeIn(bx), run_time=0.5)
         self.hold(1.4)
         # 4) força no elemento: Lorentz aplicada à carga dq já conhecida
+        self.at(87)
         self.delcap()
         dlv = arrow([xa, WY + 0.0, 0], [xb, WY + 0.0, 0], WHITE, 6, 6)
         dlv_l = eq(r"d\boldsymbol\ell", size=M_M).move_to([xm, WY + 0.55, 0])
@@ -2179,23 +2591,31 @@ class YT0005MagnetostaticaM1(Scene):
         self.morph(["dF", "=", "dq", "vv@a", "times", "Bv"], SZ, AT, first=True)
         self.play(FadeIn(dF), FadeIn(dF_l), run_time=0.7)
         self.hold(1.4)
+        self.at(88)
         self.morph(["dF", "=", "lam", "dl", "vv@a", "times", "Bv"], SZ, AT, alias={"dq": ["lam", "dl"]}, run=1.2)
         self.hold(0.8)
+        self.at(88, k=13)
         note2 = txt("v e dℓ: mesmo sentido", T_NOTE, opacity=0.9).move_to([0.5, -2.6, 0])
+        note2.set_opacity(0)                       # falado na narração: não repete na tela
         self.play(FadeIn(note2), run_time=0.6)
         self.morph(["dF", "=", "lam", "dlv", "vs", "times", "Bv"], SZ, AT, alias={"dl": ["dlv"], "vv@a": ["vs"]}, run=1.3)
         self.hold(1.0)
         self.play(FadeOut(note2), run_time=0.4)
+        self.at(88, k=21)
         note3 = eq(r"\lambda", r"\,v", "=", "I", size=40, colors={0: BLUE_L, 1: VIOLET, 3: GREEN}).move_to([0.5, -2.6, 0])
         self.play(FadeIn(note3), run_time=0.6)
+        self.at(88, k=24)
         self.morph(["dF", "=", "I", "dlv", "times", "Bv"], SZ, AT, alias={"lam": ["I"]}, run=1.4)
         bx = box(VGroup(*self.cur.values()))
         self.play(FadeIn(bx), run_time=0.5)
         self.hold(1.6)
         self.play(FadeOut(bx), FadeOut(note3), run_time=0.5)
+        self.at(89)
         self.morph(["F", "=", "int", "I", "dlv", "times", "Bv"], SZ, AT, run=1.4)
         bx = box(VGroup(*self.cur.values()))
+        self.at(90)
         n4 = txt("dℓ segue a corrente convencional", T_NOTE, opacity=0.9).move_to([0.5, -2.7, 0])
+        n4.set_opacity(0)                       # falado na narração: não repete na tela
         nm_fio = nome("Força magnética sobre um fio com corrente", pos=(0.5, -0.8, 0))
         self.play(FadeIn(bx), FadeIn(n4), FadeIn(nm_fio), run_time=0.8)
         self.hold(2.0)
@@ -2225,15 +2645,15 @@ class YT0005MagnetostaticaM1(Scene):
             s = self.psc.get_value()
             g = VGroup()
             if w < 0.03 and t < 0.03:
-                g.add(Line(P3(0, 0, 0), P3(L, 0, 0), color=BLUE_L, stroke_width=6))
+                g.add(Line(P3(0, 0, 0), P3(L, 0, 0), color=STEEL, stroke_width=6))
             else:
-                top = Polygon(P3(0, 0, t), P3(L, 0, t), P3(L, w, t), P3(0, w, t), color=BLUE_L, stroke_width=2.5,
-                              fill_color=BLUE, fill_opacity=0.16)
+                top = Polygon(P3(0, 0, t), P3(L, 0, t), P3(L, w, t), P3(0, w, t), color=STEEL, stroke_width=2.5,
+                              fill_color=STEEL, fill_opacity=0.16)
                 if t > 0.03:
-                    front = Polygon(P3(0, 0, 0), P3(L, 0, 0), P3(L, 0, t), P3(0, 0, t), color=BLUE_L, stroke_width=2.5,
-                                    fill_color=BLUE, fill_opacity=0.10)
-                    end = Polygon(P3(L, 0, 0), P3(L, w, 0), P3(L, w, t), P3(L, 0, t), color=BLUE_L, stroke_width=2.5,
-                                  fill_color=BLUE, fill_opacity=0.22)
+                    front = Polygon(P3(0, 0, 0), P3(L, 0, 0), P3(L, 0, t), P3(0, 0, t), color=STEEL, stroke_width=2.5,
+                                    fill_color=STEEL, fill_opacity=0.10)
+                    end = Polygon(P3(L, 0, 0), P3(L, w, 0), P3(L, w, t), P3(L, 0, t), color=STEEL, stroke_width=2.5,
+                                  fill_color=STEEL, fill_opacity=0.22)
                     g.add(front, end)
                 g.add(top)
             ny = 1 if w < 0.05 else int(round(w / 0.8)) + 1
@@ -2272,7 +2692,18 @@ class YT0005MagnetostaticaM1(Scene):
                 g.add(charge_c(cen, 1, 0.3).set_opacity(hq))
             return g
 
-        self.prism = always_redraw(prism)
+        self.pgate = ValueTracker(1.0)
+
+        def prism_g():
+            g = prism()
+            k = self.pgate.get_value()
+            if k < 0.999:
+                for sm in g.family_members_with_points():
+                    sm.set_stroke(opacity=sm.get_stroke_opacity() * k)
+                    sm.set_fill(opacity=sm.get_fill_opacity() * k)
+            return g
+
+        self.prism = always_redraw(prism_g)
         right = np.array([4.4, 0.0, 0.0])
 
         def panel(*mobs):
@@ -2288,9 +2719,11 @@ class YT0005MagnetostaticaM1(Scene):
         self.hold(2.2)
         # ── linha → superfície ────────────────────────────────────────────────────────────────────────────
         c1 = panel(txt("a linha ganha largura", 22, opacity=0.9))
+        self.at(91)
         self.play(self.pw.animate.set_value(2.6), RT(c0, c1), run_time=2.0, rate_func=smooth)
         self.hold(0.8)
         # faixa de largura dw (marcada no desenho) → K, dI = K dw
+        self.at(91, k=8)
         lab_dw = eq("dw", size=M_M, colors={0: GREEN}).move_to(P3(L, 0.35 * 2.6 + 0.25, 0) + np.array([0.65, -0.3, 0.0]))
         c2 = panel(named(r"\mathbf K", "corrente / largura", GREEN),
                    eq("dI", "=", r"|\mathbf K|", "dw", size=44, colors={0: GREEN, 2: GREEN}),
@@ -2298,6 +2731,7 @@ class YT0005MagnetostaticaM1(Scene):
         self.play(self.hl.animate.set_value(1.0), FadeIn(lab_dw), RT(c1, c2), run_time=1.2)
         self.hold(3.0)
         # elemento da superfície carregada dA_sup que contém dq → σ, dq = σ dA_sup
+        self.at(91, k=26)
         _la = eq(r"dA_{\mathrm{sup}}", size=M_M).move_to(P3(2.6, 1.55, 0) + np.array([-1.2, 1.0, 0.0]))
         _ll = Line(_la.get_right() + np.array([0.05, -0.05, 0.0]), P3(2.55, 1.6, 0) + np.array([-0.1, 0.0, 0.0]), color=WHITE, stroke_width=1.6).set_opacity(0.85)
         lab_as = VGroup(_la, _ll)
@@ -2308,32 +2742,44 @@ class YT0005MagnetostaticaM1(Scene):
         self.play(self.hl.animate.set_value(0.0), FadeOut(lab_dw), self.hq.animate.set_value(1.0), FadeIn(lab_as), FadeIn(lab_dq),
                   RT(c2, c3), run_time=1.2)
         self.hold(3.2)
+        self.at(91, k=38)
         c3b = panel(txt("espécie com velocidade v", 20, opacity=0.9), eq(r"\mathbf K", "=", r"\sigma", r"\mathbf v", size=54, colors={0: GREEN, 2: BLUE_L, 3: VIOLET}))
         self.play(RT(c3, c3b), run_time=1.0)
         self.hold(2.4)
         # ── superfície → volume ───────────────────────────────────────────────────────────────────────────
+        self.at(92)
         c4 = panel(txt("a superfície ganha espessura", 22, opacity=0.9))
         self.play(self.pt.animate.set_value(1.1), self.hq.animate.set_value(0.0), FadeOut(lab_as), FadeOut(lab_dq),
                   RT(c3b, c4), run_time=2.0, rate_func=smooth)
         self.hold(0.8)
-        lab_ap = eq(r"dA_\perp", size=M_M, colors={0: GREEN}).move_to(P3(L, 0.35 * 2.6 + 0.25, 0.44) + np.array([0.8, 0.05, 0.0]))
-        c5 = panel(named(r"\mathbf J", "corrente / área", GREEN),
+        self.at(93)
+        lab_ap = eq(r"dA_\perp", size=M_M, colors={0: GREEN}).move_to(P3(L, 0.35 * 2.6 + 0.25, 0.44) + np.array([1.25, 0.35, 0.0]))
+        c5 = panel(conceito("Densidade de corrente", cor=GREEN), named(r"\mathbf J", "corrente / área", GREEN),
                    eq("dI", "=", r"|\mathbf J|", r"dA_\perp", size=44, colors={0: GREEN, 2: GREEN}),
                    eq(r"[\mathbf J]", "=", r"\mathrm{A/m^2}", size=34, colors={0: GREEN}))
         self.play(self.hl.animate.set_value(1.0), FadeIn(lab_ap), RT(c4, c5), run_time=1.2)
         self.hold(3.0)
+        # somando as pequenas contribuições: a ponte natural para o B06
+        self.at(94)
+        c5b = panel(conceito("Corrente total", cor=GREEN), eq("dI", "=", r"|\mathbf J|", r"dA_\perp", size=40, colors={0: GREEN, 2: GREEN}),
+                    eq("I", "=", r"\int_S", r"\mathbf J", r"\cdot", r"d\mathbf a", size=48, colors={0: GREEN, 3: GREEN}))
+        self.play(RT(c5, c5b), run_time=1.1)
+        self.hold(2.4)
+        self.at(95)
         lab_dt = eq(r"d\tau", size=M_M).move_to(P3(2.5, 1.2, 0.55) + np.array([0.0, 0.7, 0.0]))
         lab_dq2 = eq("dq", size=42, colors={0: BLUE_L}).move_to(P3(2.5, 1.2, 0.55) + np.array([1.05, -0.5, 0.0]))
         c6 = panel(named(r"\rho", "carga / volume", BLUE_L),
                    eq("dq", "=", r"\rho", r"d\tau", size=44, colors={0: BLUE_L, 2: BLUE_L}),
                    eq(r"[\rho]", "=", r"\mathrm{C/m^3}", size=34, colors={0: BLUE_L}))
         self.play(self.hl.animate.set_value(0.0), FadeOut(lab_ap), self.hq.animate.set_value(1.0), FadeIn(lab_dt), FadeIn(lab_dq2),
-                  RT(c5, c6), run_time=1.2)
+                  RT(c5b, c6), run_time=1.2)
         self.hold(3.2)
+        self.at(95, k=30)
         c6b = panel(txt("espécie com velocidade v", 20, opacity=0.9), eq(r"\mathbf J", "=", r"\rho", r"\mathbf v", size=54, colors={0: GREEN, 2: BLUE_L, 3: VIOLET}))
         self.play(RT(c6, c6b), run_time=1.0)
         self.hold(2.4)
         # ── várias espécies: ρ_i inclui o sinal da carga ─────────────────────────────────────────────────
+        self.at(96)
         sp = ValueTracker(0.0)
 
         def species():
@@ -2367,6 +2813,7 @@ class YT0005MagnetostaticaM1(Scene):
         self.play(FadeIn(bxs), run_time=0.5)
         self.hold(3.0)
         # ── a mesma interação em linha, superfície e volume (o objeto físico vira só uma referência discreta) ──
+        self.at(97)
         self.play(FadeOut(c8), FadeOut(bxs), FadeOut(self.spec), self.psc.animate.set_value(0.4),
                   self.pbx.animate.set_value(-6.6), self.pby.animate.set_value(1.7), run_time=1.0)
         AT, SZ = [0.8, -0.1, 0], 52
@@ -2412,10 +2859,9 @@ class YT0005MagnetostaticaM1(Scene):
 
     def b05_muitas_cargas(self):
         self.seg("F")
-        self.limpa()
         WY = 1.5
         self.WY = WY
-        wire = Line([-6.2, WY, 0], [3.9, WY, 0], color=BLUE_L, stroke_width=7).set_opacity(0.45)
+        wire = Line([-6.2, WY, 0], [3.9, WY, 0], color=STEEL, stroke_width=7).set_opacity(0.85)
         bdots = VGroup()
         for yy in (0.45, 2.55):
             for xx in np.arange(-6.0, 4.0, 1.25):
@@ -2447,11 +2893,13 @@ class YT0005MagnetostaticaM1(Scene):
         self.add(self.car5)
         cur5 = VGroup(arrow([-5.9, WY + 0.8, 0], [-3.7, WY + 0.8, 0], GREEN, 6, 4), eq("I", size=M_M, colors={0: GREEN}).move_to([-4.8, WY + 1.2, 0]))
         self.wire5 = VGroup(wire, bdots, blab, cur5)
-        self.play(FadeIn(self.wire5), self.g5.animate.set_value(1.0), run_time=1.2)
+        self.at(80)
+        self.limpa(1.2, keep_extra=(self.car5,), extra_anims=(FadeIn(self.wire5), self.g5.animate.set_value(1.0)))   # troca cruzada
         cap1 = VGroup(txt("uma carga em movimento:", T_BODY), eq(r"\mathbf F", "=", "q", r"\mathbf v", r"\times", r"\mathbf B", size=34, colors={0: FC, 2: BLUE_L, 3: VIOLET, 5: MAG})
                       ).arrange(RIGHT, buff=0.3).move_to([0, -0.55, 0])
         self.play(FadeIn(cap1), run_time=0.7)
         self.hold(4.2)
+        self.at(81)
         cap2 = VGroup(txt("muitas cargas: portadores positivos efetivos", T_NOTE, opacity=0.95),
                       txt("representação conveniente, não um metal real", 20, opacity=0.75)
                       ).arrange(DOWN, buff=0.15).move_to([0, -0.6, 0])
@@ -2471,7 +2919,8 @@ class YT0005MagnetostaticaM1(Scene):
     def b06_fluxo(self):
         """Redesign 2.5D (Manim): volume de controle em perspectiva oblíqua, J como fluxo verde contínuo e regular."""
         self.seg("G")
-        self.limpa()
+        self.at(98)
+        self.limpa(0.8, keep_extra=(self.prism,))          # o prisma de J fica como referência até o fluxo do volume entrar
 
         def S_(fn):
             return fn()
@@ -2479,9 +2928,15 @@ class YT0005MagnetostaticaM1(Scene):
         self.pf = self.clock("pf")
         self.run["pf"] = True
         self.gj, self.gbox, self.gq = ValueTracker(0.0), ValueTracker(0.0), ValueTracker(0.0)
-        S_PHYS = 0.11                        # segundos físicos por segundo de tela: a lei física dQ/dt = I_ent − I_sai é mantida internamente
         self.Iin, self.Iout, self.Q = ValueTracker(1.0), ValueTracker(1.0), ValueTracker(1.0)
-        self.Q.add_updater(lambda m, dt: m.set_value(min(1.9, max(0.15, m.get_value() + (self.Iin.get_value() - self.Iout.get_value()) * S_PHYS * dt))))
+        mdl = BalancoB06()                   # câmera lenta: 1 s de tela = 0,11 s físico; Q_int, dQ/dt e portadores saem do MESMO balanço
+        self.mdl = mdl
+
+        def bal_step(m, dt):
+            mdl.step(self.Iin.get_value(), self.Iout.get_value(), dt)
+            m.set_value(mdl.q())
+
+        self.Q.add_updater(bal_step)
         self.add(self.Q)
         W_, H_, D_ = 4.0, 2.6, 1.8
         self.BW = (W_, H_, D_)
@@ -2527,7 +2982,7 @@ class YT0005MagnetostaticaM1(Scene):
             g = VGroup()
             if gb < 0.02:
                 return g
-            fo = 0.05 + 0.13 * self.Q.get_value() / 1.9
+            fo = 0.05 + 0.07 * min(2.0, self.Q.get_value())
             g.add(Polygon(pm(0, 0, 0), pm(W_, 0, 0), pm(W_, H_, 0), pm(0, H_, 0), stroke_width=2.5, color=EDGE).set_fill(BLUE, fo).set_stroke(EDGE, 2.5, 0.85 * gb).set_fill(BLUE, fo * gb))
             g.add(Polygon(pm(0, H_, 0), pm(W_, H_, 0), pm(W_, H_, D_), pm(0, H_, D_)).set_fill(BLUE, 0.8 * fo * gb).set_stroke(EDGE, 2.5, 0.85 * gb))
             g.add(Polygon(pm(W_, 0, 0), pm(W_, 0, D_), pm(W_, H_, D_), pm(W_, H_, 0)).set_fill(BLUE, 1.2 * fo * gb).set_stroke(EDGE, 2.5, 0.85 * gb))
@@ -2537,33 +2992,33 @@ class YT0005MagnetostaticaM1(Scene):
 
         self.vol = always_redraw(faces)
         self.vol.dyn = True
+        # carga interna: portadores positivos efetivos que entram, atravessam e saem (posições vêm do balanço único `mdl`)
         rng = np.random.RandomState(11)
-        NX, NY, NZ = 7, 4, 3
-        pts = [(0.4 + (W_ - 0.8) * (i + 0.5 * rng.rand()) / NX * (NX / (NX - 0.5)), 0.35 + (H_ - 0.7) * (j + 0.4 * rng.rand()) / (NY - 0.6),
-                0.3 + (D_ - 0.6) * (k + 0.3 * rng.rand()) / (NZ - 0.7)) for i in range(NX) for j in range(NY) for k in range(NZ)]
-        order = rng.permutation(len(pts))
+        YZ = [(0.3 + (H_ - 0.6) * rng.rand(), 0.3 + (D_ - 0.6) * rng.rand()) for _ in range(1024)]
 
         def dots():
             g = VGroup()
             gq = self.gq.get_value()
             if gq < 0.02:
                 return g
-            n = len(pts) * self.Q.get_value() / 1.9
             s = self.vsc.get_value()
-            for rank, idx in enumerate(order):
-                op = min(1.0, max(0.0, n - rank)) * gq
+            for k, sf in mdl.particles():
+                x = W_ * sf
+                y, z = YZ[k % 1024]
+                op = min(1.0, x / 0.35, (W_ - x) / 0.35) * gq
                 if op > 0.02:
-                    x, y, z = pts[idx]
-                    g.add(Dot(pm(x, y, z), radius=0.07 * s, color=BLUE_L).set_opacity(op * (1.0 - 0.35 * z / D_)))
+                    g.add(Dot(pm(x, y, z), radius=0.075 * s, color=BLUE_L).set_opacity(op * (1.0 - 0.35 * z / D_)))
             return g.set_z_index(3)
 
         self.qd = always_redraw(dots)
         self.qd.dyn = True
         self.add(self.jf)
         jl = eq(r"\mathbf J", size=M_L, colors={0: GREEN}).move_to([-6.2, 2.5, 0])
-        self.play(self.gj.animate.set_value(1.0), FadeIn(jl), run_time=1.4)
+        self.play(self.gj.animate.set_value(1.0), FadeIn(jl), self.pgate.animate.set_value(0.0), run_time=1.4)
+        self.remove(self.prism)
         self.hold(1.6)
         # superfície S (plano em perspectiva), normal da e a "fatia" v dt que atravessa em dt
+        self.at(99)
         xs = 2.0
         surf = S_(lambda: Polygon(pm(xs, 0.15, 0), pm(xs, 2.45, 0), pm(xs, 2.45, 1.75), pm(xs, 0.15, 1.75))
                              .set_fill(BLUE_L, 0.16).set_stroke(WHITE, 2.5, 0.9).set_z_index(4))
@@ -2577,6 +3032,7 @@ class YT0005MagnetostaticaM1(Scene):
         self.play(FadeIn(surf), FadeIn(da), FadeIn(sl), FadeIn(dal), run_time=1.0)
         self.add(slab, vdt)
         self.play(FadeIn(slab), FadeIn(vdt), run_time=0.8)
+        self.at(99, k=14)
         e = eq(r"I", "=", r"\int_S", r"\mathbf J", r"\cdot", r"d\mathbf a", size=48, colors={0: GREEN, 3: GREEN}).move_to([4.2, 0.9, 0])
         t = txt("corrente = fluxo de J", T_BODY, opacity=0.95).move_to([4.2, -0.3, 0])
         pn = panel(VGroup(e, t), pad=0.3, op=0.45)
@@ -2589,31 +3045,49 @@ class YT0005MagnetostaticaM1(Scene):
         pm = self.pm
         S_ = self.S_
         # a superfície S vira a fronteira de um volume: as caixas se cruzam sem tela vazia; o fluxo segue vivo
+        self.at(100)
         self.add(self.vol, self.qd)
         self.play(*[FadeOut(m) for m in self.fl], self.gbox.animate.set_value(1.0), self.gq.animate.set_value(1.0), run_time=1.8)
-        l_v = S_(lambda: halo(self.lab(r"V", "volume de controle").move_to(pm(0.6, H_ + 0.55, D_) + np.array([0.6, 0.0, 0.0]))))
-        l_dv = S_(lambda: halo(self.lab(r"\partial V", "fronteira").move_to(pm(W_ - 0.4, H_ + 0.55, D_) + np.array([0.3, 0.0, 0.0]))))
-        l_q = S_(lambda: halo(self.lab(r"Q_{\mathrm{int}}", "carga contida", color=BLUE_L).move_to(pm(W_ / 2, -0.55, 0))))
-        l_ji = S_(lambda: halo(self.lab(r"\mathbf J", "entra", color=GREEN).move_to(pm(-0.95, 2.95, 0))))
-        l_jo = S_(lambda: halo(self.lab(r"\mathbf J", "sai", color=GREEN).move_to(pm(W_ + 1.0, 2.95, 0))))
-        for m in (l_v, l_dv, l_q, l_ji, l_jo):
+        def lider(label_fn, ancora, desl, cor=WHITE):
+            """rótulo deslocado da geometria + linha-guia até o ponto do volume que ele nomeia"""
+            def f():
+                a_ = pm(*ancora)
+                lab_ = label_fn().move_to(a_ + np.array(desl))
+                d_ = a_ - lab_.get_center()
+                u_ = d_ / (np.linalg.norm(d_) + 1e-9)
+                ini = lab_.get_center() + u_ * (0.45 if abs(u_[1]) > 0.6 else 0.9)
+                return VGroup(Line(ini, a_ - u_ * 0.06, color=cor, stroke_width=1.6).set_opacity(0.75), halo(lab_))
+            return S_(f)
+
+        l_v = conceito("Volume de controle", pos=(-4.3, 3.05, 0))
+        l_dv = lider(lambda: self.lab(r"\partial V", "fronteira"), (W_, H_, D_ / 2), (0.9, 0.75, 0.0))
+        l_q = lider(lambda: self.lab(r"Q_{\mathrm{int}}", "carga dos portadores (+)", color=BLUE_L), (W_ / 2, 0.0, 0.0), (0.0, -0.75, 0.0), BLUE_L)
+        l_ji = lider(lambda: self.lab(r"\mathbf J", "entra", color=GREEN), (0.0, 2.15, 0.0), (-1.05, 0.55, 0.0), GREEN)
+        l_jo = lider(lambda: self.lab(r"\mathbf J", "sai", color=GREEN), (W_, 2.15, 0.0), (1.2, 0.55, 0.0), GREEN)
+        for m in (l_dv, l_q, l_ji, l_jo):
             m.dyn = True
+        self.at(100, k=9)
         self.add(l_v)
         self.play(FadeIn(l_v), run_time=0.8)
+        self.at(100, k=13)
         self.add(l_dv)
         self.play(Indicate(self.vol, color=BLUE_L, scale_factor=1.02), FadeIn(l_dv), run_time=1.0)
         self.hold(0.6)
+        self.at(100, k=20)
         self.add(l_q)
         self.play(FadeIn(l_q), run_time=0.8)
         self.hold(0.8)
+        self.at(100, k=28)
         self.add(l_ji, l_jo)
         self.play(FadeIn(l_ji), FadeIn(l_jo), run_time=0.8)
         self.hold(1.0)
         # balanço: frase curta → símbolos
+        self.at(101)
         ST, SZs = [0.0, -3.0, 0], 40
         words = txt("variação = entra − sai", T_BODY, opacity=0.95).move_to(ST)
         self.play(FadeIn(words, shift=0.1 * UP), run_time=0.8)
         self.hold(1.4)
+        self.at(101, k=5)
         root_, new_ = self.build(["dQdt", "=", "Ient", "minus", "Isai"], SZs)
         root_.move_to(ST)
         self.play(RT(words, VGroup(*new_.values())), run_time=1.4)      # a frase vira a equação
@@ -2635,45 +3109,58 @@ class YT0005MagnetostaticaM1(Scene):
         self.reads = VGroup(readout(r"I_{\mathrm{ent}}=", self.Iin, 2.2, r"\mathrm{A}", GREEN), readout(r"I_{\mathrm{sai}}=", self.Iout, 1.5, r"\mathrm{A}", GREEN),
                             readout(r"\frac{dQ_{\mathrm{int}}}{dt}=", rate, 0.5, r"\mathrm{A}", BLUE_L),
                             readout(r"Q_{\mathrm{int}}=", self.Q, -0.5, r"\mathrm{C}", BLUE_L))
-        rp = panel(self.reads, pad=0.45, op=0.4)
+        slow = txt("câmera lenta: 1 s de tela = 0,11 s", 15, opacity=0.55).move_to([4.1, -1.0, 0])
+        self.slow_note = slow
+        rp = panel(VGroup(self.reads, slow), pad=0.45, op=0.4)             # a nota fica DENTRO da caixa
         self.reads_p = rp
-        self.play(FadeIn(rp), FadeIn(self.reads), run_time=0.8)
+        self.at(101, k=18)
+        self.play(FadeIn(rp), FadeIn(self.reads), FadeIn(slow), run_time=0.8)
+        self.at(102)
         self.hold(1.6)
-        cap = eq(r"I_{\mathrm{sai}}>I_{\mathrm{ent}}", r"\Rightarrow", r"Q_{\mathrm{int}}\downarrow", size=34, colors={0: GREEN, 2: BLUE_L}).move_to([-1.4, -2.2, 0])
+        cap = eq(r"I_{\mathrm{sai}}>I_{\mathrm{ent}}", r"\Rightarrow", r"Q_{\mathrm{int}}\downarrow", size=34, colors={0: GREEN, 2: BLUE_L}).move_to([4.1, -1.75, 0])
+        self.at(102, k=8)
         self.play(self.Iout.animate.set_value(2.0), FadeIn(cap), run_time=1.5)
-        self.hold(5.2)
+        self.hold(2.0)
         self.play(self.Iout.animate.set_value(1.0), FadeOut(cap), run_time=1.2)
         self.hold(0.8)
-        cap2 = eq(r"I_{\mathrm{ent}}>I_{\mathrm{sai}}", r"\Rightarrow", r"Q_{\mathrm{int}}\uparrow", size=34, colors={0: GREEN, 2: BLUE_L}).move_to([-1.4, -2.2, 0])
+        cap2 = eq(r"I_{\mathrm{ent}}>I_{\mathrm{sai}}", r"\Rightarrow", r"Q_{\mathrm{int}}\uparrow", size=34, colors={0: GREEN, 2: BLUE_L}).move_to([4.1, -1.75, 0])
+        self.at(102, k=12)
         self.play(self.Iin.animate.set_value(2.0), FadeIn(cap2), run_time=1.5)
-        self.hold(5.2)
+        self.hold(2.0)
         self.play(self.Iin.animate.set_value(1.0), FadeOut(cap2), run_time=1.2)
         self.hold(0.6)
         # o sinal negativo nasce das normais externas
-        self.play(FadeOut(self.reads), FadeOut(rp), run_time=0.6)
+        self.at(103)
+        self.play(FadeOut(self.reads), FadeOut(rp), FadeOut(self.slow_note), run_time=0.6)
         nL = S_(lambda: arrow(pm(0, 1.3, 0.87), pm(0, 1.3, 0.87) + np.array([-0.8, 0.0, 0.0]), WHITE, 5, 6))
         nR = S_(lambda: arrow(pm(W_, 1.3, 0.87), pm(W_, 1.3, 0.87) + np.array([0.8, 0.0, 0.0]), WHITE, 5, 6))
         nl = S_(lambda: halo(eqc(r"\hat{\mathbf n}", size=M_M).move_to(pm(0, 1.3, 0.87) + np.array([-0.4, 0.45, 0.0]))))
         nr = S_(lambda: halo(eqc(r"\hat{\mathbf n}", size=M_M).move_to(pm(W_, 1.3, 0.87) + np.array([0.4, 0.45, 0.0]))))
-        capn = VGroup(eq(r"\hat{\mathbf n}", size=32), txt("para fora de V", T_NOTE, opacity=0.95)).arrange(RIGHT, buff=0.15).move_to([-1.4, -2.2, 0])
+        capn = VGroup(eq(r"\hat{\mathbf n}", size=32), txt("para fora de V", T_NOTE, opacity=0.95)).arrange(RIGHT, buff=0.15).move_to([4.1, -1.75, 0])
         sL = S_(lambda: eqc(r"\mathbf J\cdot\hat{\mathbf n}<0", size=30, colors={0: GREEN}).move_to(pm(-0.2, -0.05, 0) + np.array([-0.5, -0.1, 0.0])))
         sR = S_(lambda: eqc(r"\mathbf J\cdot\hat{\mathbf n}>0", size=30, colors={0: GREEN}).move_to(pm(W_ + 0.2, -0.05, 0) + np.array([1.0, -0.1, 0.0])))
         for m in (nL, nR, nl, nr, sL, sR):
             m.dyn = True
+        self.at(103, k=1)
         self.add(nL, nR, nl, nr)
         self.play(FadeIn(nL), FadeIn(nR), FadeIn(nl), FadeIn(nr), FadeIn(capn), run_time=1.0)
         self.hold(1.2)
+        self.at(103, k=5)
         self.add(sL)
         self.play(FadeIn(sL), run_time=0.7)
         self.hold(1.0)
+        self.at(103, k=12)
         self.add(sR)
         self.play(FadeIn(sR), run_time=0.7)
         self.hold(1.4)
         self.play(FadeOut(capn), run_time=0.3)
-        capf = txt("fluxo líquido para fora:", T_NOTE, opacity=0.95).move_to([-1.4, -2.2, 0])
+        self.at(103, k=15)
+        capf = txt("fluxo líquido para fora:", T_NOTE, opacity=0.95).move_to([4.1, -1.75, 0])
         self.play(FadeIn(capf), run_time=0.5)
+        self.at(103, k=18)
         self.morph(["oint", "Jv", "dot", "da", "=", "Isai", "minus", "Ient"], SZs, ST, run=1.4)
         self.hold(2.0)
+        self.at(104)
         self.play(FadeOut(capf), run_time=0.3)
         self.morph(["dQdt", "=", "neg", "oint", "Jv", "dot", "da"], SZs, ST, run=1.6)
         bx = box(VGroup(*self.cur.values()))
@@ -2693,6 +3180,7 @@ class YT0005MagnetostaticaM1(Scene):
         self.Iin.set_value(1.0)
         self.Iout.set_value(1.0)
         # só ficam o volume, o fluxo e a carga interna; rótulos e normais saem
+        self.at(105)
         self.play(*[FadeOut(m) for m in self.vlabs], run_time=0.8)
         self.remove(*self.vlabs)
         cap = VGroup(eq(r"\rho", size=34, colors={0: BLUE_L}), txt("carga / volume", T_NOTE, opacity=0.95)).arrange(RIGHT, buff=0.2).move_to([RX, 2.4, 0])
@@ -2706,6 +3194,7 @@ class YT0005MagnetostaticaM1(Scene):
         self.play(FadeIn(cap), run_time=0.5)
         self.hold(1.2)
         self.play(FadeOut(cap), run_time=0.3)
+        self.at(106)
         cap = txt("forma integral", T_BODY, opacity=0.95).move_to([RX, 2.4, 0])
         self.play(FadeIn(cap), run_time=0.5)
         self.morph(["ddt", "intV", "rho", "dtau", "=", "neg", "oint", "Jv", "dot", "da"], SZ, AT, alias={"Qi": ["ddt"]}, run=1.6)
@@ -2723,6 +3212,7 @@ class YT0005MagnetostaticaM1(Scene):
         self.play(FadeIn(bx), run_time=0.5)
         self.hold(2.0)
         self.play(FadeOut(bx), FadeOut(cap), FadeOut(nn), run_time=0.4)
+        self.at(107)
         cap = txt("teorema da divergência", T_BODY, opacity=0.95).move_to([RX, 2.4, 0])
         self.play(FadeIn(cap), run_time=0.5)
         # o que atravessa a fronteira vira o que acontece localmente: células com setas saindo, no interior
@@ -2737,26 +3227,37 @@ class YT0005MagnetostaticaM1(Scene):
         dvl = halo(eq(r"\nabla\cdot\mathbf J", size=M_M, colors={0: GREEN}).move_to(pm(2.0, 2.2, 0.9) + np.array([0.0, 0.5, 0.0])).set_z_index(8))
         self.morph(["ddt", "intV", "rho", "dtau", "=", "neg", "intV@d", "div", "dtau@d"], SZ, AT,
                    alias={"oint": ["intV@d"], "Jv": ["div"], "da": ["dtau@d"]}, run=1.7)
+        self.at(107, k=24)
         self.play(FadeOut(hi_l), FadeOut(hi_r), FadeIn(cells), FadeIn(dvl), run_time=1.2)
         self.hold(1.6)
+        self.at(108)
         self.morph(["intV", "drho", "dtau", "=", "neg", "intV@d", "div", "dtau@d"], SZ, AT, alias={"rho": ["drho"]}, run=1.5)
         self.hold(1.4)
         self.play(FadeOut(cap), run_time=0.3)
+        self.at(108, k=20)                            # "Então a integral dessa taxa mais o divergente é zero"
+        self.morph(["intV", "(", "drho", "plus", "div", ")", "dtau", "=", "0"], SZ, AT, run=1.6)
+        self.hold(0.6)
+        self.at(109)
+        self.at(109, k=11)                            # "Mas vale pra qualquer volume"
         cap = txt("V é qualquer", T_BODY, opacity=0.95).move_to([RX, 2.4, 0])
         self.play(FadeIn(cap), run_time=0.5)
-        self.morph(["intV", "(", "drho", "plus", "div", ")", "dtau", "=", "0"], SZ, AT, run=1.6)
-        self.hold(2.0)
+        self.hold(1.0)
         self.play(FadeOut(cap), run_time=0.3)
+        self.at(110)
         self.morph(["div", "=", "neg", "drho"], 52, AT, run=1.6)
         bx = box(VGroup(*self.cur.values()))
+        self.at(110, k=17)
         nm_c = nome("Equação da continuidade", "conservação da carga", pos=(RX, 1.1, 0))
         self.play(FadeIn(bx), FadeIn(nm_c), run_time=0.5)
         self.hold(2.6)
         self.play(FadeOut(bx), FadeOut(nm_c), run_time=0.4)
+        self.at(111)
         cap = txt("magnetostática", T_BODY, opacity=0.95).move_to([RX, 2.4, 0])
         self.play(FadeIn(cap), run_time=0.5)
+        self.at(111, k=19)
         self.morph(["drho", "=", "0"], 52, AT, run=1.2)
         self.hold(1.4)
+        self.at(111, k=22)
         self.morph(["div", "=", "0"], 58, AT, alias={"drho": ["div"]}, run=1.4)
         bx = box(VGroup(*self.cur.values()))
         self.play(FadeIn(bx), run_time=0.6)
@@ -2770,14 +3271,18 @@ class YT0005MagnetostaticaM1(Scene):
         RX = 4.2
         e1 = VGroup(eq(r"\mathbf J", r"\neq 0", size=56, colors={0: GREEN}), txt("a corrente existe", T_BODY, opacity=0.95)).arrange(DOWN, buff=0.25).move_to([RX, 1.5, 0])
         e2 = VGroup(eq(r"\nabla\cdot\mathbf J", "=0", size=56, colors={0: GREEN}), txt("nenhuma carga se acumula", T_BODY, opacity=0.95)).arrange(DOWN, buff=0.35).move_to([RX, -1.0, 0])
+        self.at(112)
         p1, p2 = panel(e1, pad=0.3, op=0.45), panel(e2, pad=0.3, op=0.45)
         self.play(FadeIn(p1), FadeIn(e1, shift=0.1 * DOWN), run_time=1.0)
         self.hold(1.6)
+        self.at(112, k=11)
         self.play(FadeIn(p2), FadeIn(e2, shift=0.1 * DOWN), run_time=1.0)
         self.hold(4.0)
+        self.at(112, k=24)
         msg = txt("corrente estacionária: não é nula", T_BODY, opacity=0.95).move_to([-1.4, -2.9, 0])
         self.play(FadeIn(msg), run_time=0.8)
-        self.hold(3.0)
+        self.hold(1.0)
+        self._est_out = [p1, p2, e1, e2, msg]
 
     # ═════════════════════════════════════════════════════════════════════════════════════════════════════════
     # B07 · Thomson: seletor de velocidades (aplicação direta de Lorentz)
@@ -2852,8 +3357,8 @@ class YT0005MagnetostaticaM1(Scene):
             for x in np.arange(x0, x1 + 0.01, 0.65 if self.mode7 == "cross" else 0.6):
                 for y in ((-0.6, 0.6) if self.mode7 == "cross" else tuple(np.linspace(-2.3, 2.3, 7))):
                     c = apx(x, y)
-                    g.add(Circle(radius=0.075 * self.asc.get_value(), color=MAG, stroke_width=2).set_opacity(0.45).move_to(c),
-                          Dot(c, radius=0.025, color=MAG).set_opacity(0.45))
+                    g.add(Circle(radius=0.075 * self.asc.get_value(), color=MAG, stroke_width=2).set_opacity(0.45 * self.bop7.get_value()).move_to(c),
+                          Dot(c, radius=0.025, color=MAG).set_opacity(0.45 * self.bop7.get_value()))
             return g
 
         def detector():
@@ -2867,16 +3372,24 @@ class YT0005MagnetostaticaM1(Scene):
     def bloco_07_thomson(self):
         self.seg("H")
         self.cores_novas = True
-        self.limpa(0.8)
         # estado do aparato: UMA variável física v controla gráfico, valor de F_y/q e deflexão do feixe
         self.vth, self.qs7 = ValueTracker(0.6), ValueTracker(1.0)
         self.asc, self.aox, self.aoy = ValueTracker(1.0), ValueTracker(-3.0), ValueTracker(0.35)   # aparato ~58% esquerdo, fixo em todo o B07/B08
         self.pop, self.eop = ValueTracker(0.0), ValueTracker(0.0)          # opacidade das placas / das setas de E
+        self.bop7 = ValueTracker(0.0)                                      # opacidade dos símbolos de B do aparato
         self.mode7 = "cross"
         self.ph7 = ValueTracker(0.0)
         self.ph7.add_updater(lambda m, dt: m.increment_value(dt * self.vth.get_value() / (E7 / B7)))     # avanço do pulso ∝ v (mesma variável do gráfico)
         self.add(self.ph7)
         self.b07_montar_aparato()
+        # troca cruzada: o volume de J (B06) se dissolve enquanto o feixe e o campo B do aparato entram; sem tela vazia
+        self.at(113)
+        self.play(*[FadeOut(m) for m in self._est_out], run_time=0.6)      # os painéis de J saem ANTES da troca cruzada (sem sobreposição)
+        self.add(self.plates, self.efield, self.bfield)                     # o feixe só entra na troca cruzada (antes aparecia por cima dos painéis)
+        self.limpa(1.2, keep_extra=tuple(self.ap_mobs) + (self.jf, self.vol, self.qd),
+                   extra_anims=(self.gj.animate.set_value(0.0), self.gbox.animate.set_value(0.0), self.gq.animate.set_value(0.0),
+                                FadeIn(self.beam_t), FadeIn(self.beam_p), FadeIn(self.detec), self.bop7.animate.set_value(1.0)))
+        self.remove(self.jf, self.vol, self.qd)
         self.b07_aparato()
         self.b07_forcas()
         self.b07_grafico()
@@ -2885,8 +3398,7 @@ class YT0005MagnetostaticaM1(Scene):
 
     def b07_aparato(self):
         """O aparato nasce antes de qualquer equação: feixe, v, região de E, região de B, eixos."""
-        self.add(*self.ap_mobs)
-        self.play(FadeIn(self.beam_t), FadeIn(self.beam_p), FadeIn(self.detec), run_time=1.2)
+        # (feixe, detector e B já entraram na troca cruzada do início do bloco)
         # eixos e v
         triad = VGroup(arrow(self.ap(-3.9, 1.3), self.ap(-3.3, 1.3), WHITE, 3, 2, tip=0.14), arrow(self.ap(-3.9, 1.3), self.ap(-3.9, 1.9), WHITE, 3, 2, tip=0.14),
                        Circle(radius=0.07, color=MAG, stroke_width=2).move_to(self.ap(-3.9, 1.3)),
@@ -2894,10 +3406,12 @@ class YT0005MagnetostaticaM1(Scene):
                        eq("z", size=28).move_to(self.ap(-4.2, 1.3)))
         vlab = eq(r"\mathbf v", "=", "v", r"\hat{\mathbf x}", size=36, colors={0: VIOLET, 2: VIOLET}).move_to(self.ap(-3.0, -0.55))
         varr = arrow(self.ap(-3.5, 0.0), self.ap(-2.6, 0.0), VIOLET, 5, 5)
+        self.at(114)
         self.play(FadeIn(triad), FadeIn(varr), FadeIn(vlab), run_time=1.0)
         self.hold(1.2)
         # região de E (placas) e região de B (⊙)
         elab = eq(r"\mathbf E", "=", "E", r"\hat{\mathbf y}", size=36, colors={0: CYAN, 2: CYAN}).move_to(self.ap(0.0, 1.75))
+        self.at(115)
         self.play(self.pop.animate.set_value(1.0), self.eop.animate.set_value(1.0), FadeIn(elab), run_time=1.2)
         self.hold(1.0)
         blab = eq(r"\mathbf B", "=", "B", r"\hat{\mathbf z}", size=36, colors={0: MAG, 2: MAG}).move_to(self.ap(0.0, -1.75))
@@ -2920,8 +3434,8 @@ class YT0005MagnetostaticaM1(Scene):
             p = probe()
             tip = p + np.array([0.0, 0.75 * E7 * q * self.asc.get_value(), 0.0])
             lab = p + np.array([2.0 * self.asc.get_value(), 0.75 * E7 * q * self.asc.get_value(), 0.0])
-            return VGroup(arrow(p, tip, FC, 5, 6), lead(tip + np.array([0.08, 0.0, 0.0]), lab + np.array([-0.45, 0.0, 0.0]), FC),
-                          halo(eqc(r"\mathbf F_E", size=M_M, colors={0: FC}).move_to(lab))).set_opacity(self.foE.get_value())
+            return VGroup(arrow(p, tip, CYAN, 5, 6), lead(tip + np.array([0.08, 0.0, 0.0]), lab + np.array([-0.45, 0.0, 0.0]), CYAN),
+                          halo(eqc(r"\mathbf F_E", size=M_M, colors={0: CYAN}).move_to(lab))).set_opacity(self.foE.get_value())
 
         def fB():
             q = self.qs7.get_value()
@@ -2940,7 +3454,7 @@ class YT0005MagnetostaticaM1(Scene):
                 return VGroup()
             tip = p + np.array([0.0, L_, 0.0])
             return VGroup(arrow(p, tip, WHITE, 8, 7),
-                          halo(eqc(r"F_y", size=M_M, colors={0: FC}).move_to(tip + np.array([-0.5, 0.0, 0.0])))).set_opacity(self.foN.get_value())
+                          halo(eqc(r"F_y", size=M_M, colors={0: WHITE}).move_to(tip + np.array([-0.5, 0.0, 0.0])))).set_opacity(self.foN.get_value())
 
         self.fop = ValueTracker(0.0)
         self.foE, self.foB, self.foN = ValueTracker(0.0), ValueTracker(0.0), ValueTracker(0.0)
@@ -2948,10 +3462,12 @@ class YT0005MagnetostaticaM1(Scene):
         self.add(self.fE_m, self.fB_m, self.fN_m)
         ST, SZ = [RX, 1.5, 0], 40
         # 1) F_E
+        self.at(116)
         self.play(self.foE.animate.set_value(1.0), run_time=0.8)
         self.morph(["FE", "=", "qs", "Ev"], SZ, ST, first=True, run=1.0)
         self.hold(1.6)
         # 2) F_B
+        self.at(117)
         self.play(self.foB.animate.set_value(1.0), run_time=0.8)
         self.morph(["FB", "=", "qs", "vv", "times", "Bv"], SZ, ST, run=1.2)
         self.hold(1.2)
@@ -2968,9 +3484,11 @@ class YT0005MagnetostaticaM1(Scene):
         self.hold(1.4)
         self.play(FadeOut(card), FadeOut(cp), run_time=0.5)
         # 3) resultante
+        self.at(118)
         self.play(self.foN.animate.set_value(1.0), run_time=0.8)
         self.morph(["Fy", "=", "qs", "(", "Es", "minus", "vs", "Bs", ")"], SZ, ST, run=1.5)
         self.hold(1.6)
+        self.at(119)
         self.morph(["Fyq", "=", "Es", "minus", "vs", "Bs"], SZ, ST, run=1.3)
         bx = box(VGroup(*self.cur.values()))
         self.play(FadeIn(bx), run_time=0.5)
@@ -2981,6 +3499,7 @@ class YT0005MagnetostaticaM1(Scene):
 
     def b07_grafico(self):
         """Aparato à esquerda (58%), gráfico de F_y/q = E − vB à direita (42%); mesma variável v."""
+        self.at(120)
         self.play(FadeOut(self.leg7), FadeOut(self.fE_m), FadeOut(self.fB_m), FadeOut(self.fN_m), run_time=1.0)
         self.remove(self.fE_m, self.fB_m, self.fN_m)
         axes = Axes(x_range=[0, 2.4, 0.4], y_range=[-1.2, 1.2, 0.6], x_length=5.2, y_length=3.2, tips=False,
@@ -3024,7 +3543,9 @@ class YT0005MagnetostaticaM1(Scene):
                 cap = None
 
         VS = r"v_{\mathrm{sel}}"
+        self.at(121)
         self.play(self.vth.animate.set_value(0.5), run_time=1.2)
+        self.at(122)
         show([[eq(r"v\ \text{(atual)}", "<", VS, size=30, colors={}), eq(r"\Rightarrow\ F_y/q>0", size=30, colors={})],
               [txt("força líquida para +y (q > 0)", 20, opacity=0.9)]])
         self.hold(3.0)
@@ -3034,6 +3555,7 @@ class YT0005MagnetostaticaM1(Scene):
               [txt("força líquida para −y (q > 0)", 20, opacity=0.9)]])
         self.hold(3.0)
         clear()
+        self.at(123)
         self.play(self.vth.animate.set_value(vsel), run_time=2.6, rate_func=smooth)
         show([[eq("v", "=", VS, size=30, colors={}), eq(r"\Rightarrow\ F_y/q=0", size=30, colors={})],
               [txt("feixe reto: velocidade selecionada", 20, opacity=0.9)]])
@@ -3046,6 +3568,7 @@ class YT0005MagnetostaticaM1(Scene):
         res = txt("Condição de seleção de velocidades", 22, opacity=1.0).move_to([RX, -3.0, 0])
         bx = box(rl)
         self.play(FadeIn(bx), FadeIn(res), run_time=0.8)
+        self.at(124)
         self.hold(2.4)
         self.cap7, self.root7 = cap, VGroup(root, rl, bx, res, ldr)
 
@@ -3054,7 +3577,8 @@ class YT0005MagnetostaticaM1(Scene):
         vsel = E7 / B7
         VS = r"v_{\mathrm{sel}}"
         RX = 4.3
-        self.play(FadeOut(self.cap7), self.vth.animate.set_value(0.6), run_time=1.6, rate_func=smooth)
+        self.at(125)
+        self.play(FadeOut(self.cap7), self.vth.animate.set_value(0.6), run_time=1.0, rate_func=smooth)
 
         def topcap(sinal):
             return VGroup(VGroup(eq(r"\text{mesma } v", "<", VS, size=28, colors={}),
@@ -3062,25 +3586,21 @@ class YT0005MagnetostaticaM1(Scene):
                           txt("força líquida para %s" % sinal, 20, opacity=0.9)).arrange(DOWN, buff=0.1).move_to([RX, 2.85, 0])
 
         c1 = topcap("+y (q > 0)")
-        self.play(FadeIn(c1), run_time=0.6)
-        self.hold(1.6)
+        self.play(FadeIn(c1), run_time=0.4)
         capq = VGroup(eq(r"q", r"\to", "-q", size=34, colors={0: BLUE_L, 2: BLUE_L}), txt("a força inverte", 22)).arrange(RIGHT, buff=0.3).move_to([RX, -3.0, 0])
-        self.play(FadeOut(self.root7[3]), run_time=0.4)
         self.qs7.set_value(-1.0)
         c2 = topcap("−y (q < 0)")
-        self.play(Flash(self.ap(-1.5, 0.0), color=BLUE_L, flash_radius=0.5, line_length=0.14), FadeIn(capq), RT(c1, c2), run_time=0.9)
-        self.hold(3.0)
+        self.play(Flash(self.ap(-1.5, 0.0), color=BLUE_L, flash_radius=0.5, line_length=0.14), FadeIn(capq), RT(c1, c2),
+                  FadeOut(self.root7[3]), run_time=0.8)
+        self.hold(0.6)
         n2 = VGroup(eq(r"F_y/q", size=28, colors={0: FC}), txt("não depende do sinal de q", 20, opacity=0.9)).arrange(RIGHT, buff=0.15).move_to([RX, -2.35, 0])
-        self.play(RT(self.eqg, n2), run_time=0.8)
-        self.hold(2.0)
-        self.play(FadeOut(c2), run_time=0.3)
-        self.play(self.vth.animate.set_value(vsel), run_time=2.0, rate_func=smooth)
+        self.play(RT(self.eqg, n2), run_time=0.6)
+        self.play(FadeOut(c2), self.vth.animate.set_value(vsel), run_time=1.2, rate_func=smooth)
         n3 = VGroup(VGroup(eq("v", "=", VS, size=28, colors={}), eq(r"\Rightarrow\ F_y/q=0", size=28, colors={})).arrange(RIGHT, buff=0.18),
                     txt("reto para qualquer sinal de q", 20, opacity=0.9)).arrange(DOWN, buff=0.1).move_to([RX, 2.85, 0])
-        self.play(FadeIn(n3), run_time=0.8)
-        self.hold(1.2)
+        self.play(FadeIn(n3), run_time=0.5)
         self.qs7.set_value(1.0)                                # no v = v_sel os dois sinais passam retos
-        self.hold(1.4)
+        self.hold(0.3)
         self.play(FadeOut(capq), FadeOut(n2), FadeOut(self.root7[0]), FadeOut(self.root7[1]), FadeOut(self.root7[2]), FadeOut(self.root7[4]), run_time=0.6)
         self.sel7 = (n3,)
 
@@ -3090,6 +3610,7 @@ class YT0005MagnetostaticaM1(Scene):
     def bloco_08_qm(self):
         self.seg("I")
         # o MESMO feixe selecionado (v = E/B): só E é desligado; a região passa a conter apenas B
+        self.at(126)
         self.play(FadeOut(self.graf), FadeOut(self.gdot), FadeOut(self.sel7[0]), FadeOut(self.esq7), run_time=0.8)
         vsel_lab = eq(r"v", "=", r"\frac EB", size=40, colors={0: VIOLET, 2: CYAN}).move_to([4.3, 2.75, 0])
         self.play(FadeIn(vsel_lab), run_time=0.7)
@@ -3097,6 +3618,7 @@ class YT0005MagnetostaticaM1(Scene):
         breg = Polygon(self.ap(-1.5, -2.6), self.ap(0.6, -2.6), self.ap(0.6, 2.6), self.ap(-1.5, 2.6)).set_fill(MAG, 0.06).set_stroke(MAG, 1.8, 0.6)
         self.add(breg)
         self.play(self.eop.animate.set_value(0.0), self.pop.animate.set_value(0.0), FadeIn(desl), FadeIn(breg), run_time=1.2)
+        self.at(127)
         self.mode7 = "arc"                           # só B: o feixe passa a descrever um arco circular
         self.hold(0.4)
         self.hold(3.4)
@@ -3119,11 +3641,13 @@ class YT0005MagnetostaticaM1(Scene):
         self.b08_leituras()
 
     def b08_resultado(self):
+        self.at(128)
         AT, SZ = [4.3, -0.7, 0], 44
         cap = txt("na região só com B:", T_NOTE, opacity=0.95).move_to([4.3, 0.9, 0])
         self.play(FadeIn(cap), run_time=0.5)
         self.morph(["q", "vs@L", "B", "=", ("f", ["m", "vs@a", "vs@b"], ["R"], "b1")], SZ, AT, first=True, run=1.2)
         self.hold(1.4)
+        self.at(129)
         lines = self.strike(self.cur["vs@L"], self.cur["vs@a"])
         c = self.cur
         self.play(FadeOut(c["vs@L"]), FadeOut(c["vs@a"]), FadeOut(lines), run_time=0.7)
@@ -3139,6 +3663,7 @@ class YT0005MagnetostaticaM1(Scene):
         self.hold(1.4)
         self.play(FadeOut(bx), FadeOut(cap), run_time=0.4)
         # v = E/B (do seletor) alimenta a substituição
+        self.at(130)
         cap2 = VGroup(txt("usando a velocidade selecionada", T_NOTE, opacity=0.95),
                       txt("(mesmo módulo B nas duas etapas)", 20, opacity=0.8)).arrange(DOWN, buff=0.1).move_to([4.3, 0.95, 0])
         self.play(FadeIn(cap2), Indicate(self.rlab8[2], color=CYAN, scale_factor=1.15), run_time=0.8)
@@ -3147,7 +3672,7 @@ class YT0005MagnetostaticaM1(Scene):
         self.hold(1.4)
         self.morph([("f", ["q"], ["m"], "b2"), "=", ("f", ["Es"], ["B2", "R"], "b1")], SZ + 4, AT, alias={"Bs": ["B2"]}, run=1.6)
         bx = box(VGroup(*self.cur.values()))
-        nm_qm = nome("Razão carga–massa em módulo", pos=(4.3, 0.15, 0))
+        nm_qm = nome("Razão carga–massa em módulo", pos=(4.3, 0.38, 0))
         self.play(FadeIn(bx), FadeOut(cap2), FadeIn(nm_qm), run_time=0.6)
         self.hold(2.8)
         self.fin8 = bx
@@ -3158,20 +3683,21 @@ class YT0005MagnetostaticaM1(Scene):
         L1 = txt("↑ vem do seletor", 22, opacity=0.95).move_to([4.3, 2.0, 0])
         L2 = VGroup(txt("com E e B conhecidos, medir R fornece", 22, opacity=0.95),
                     eq(r"|q|/m", size=32, colors={0: BLUE_L})).arrange(RIGHT, buff=0.2).move_to([-3.0, -3.2, 0])
+        self.at(131)
         self.play(FadeIn(L1), run_time=0.8)
         self.hold(1.0)
         self.play(FadeIn(L2), run_time=0.8)
         self.hold(1.4)
         # sentido da curvatura ↔ sinal de q (R em módulo)
-        sg_lab = VGroup(eq(r"q>0", size=30, colors={0: BLUE_L}), txt("curva para baixo", 22, opacity=0.9)).arrange(RIGHT, buff=0.2).move_to([4.3, 0.95, 0])
+        sg_lab = VGroup(eq(r"q>0", size=30, colors={0: BLUE_L}), txt("curva para baixo", 22, opacity=0.9)).arrange(RIGHT, buff=0.2).move_to([4.3, 1.1, 0])
         self.play(FadeIn(sg_lab), run_time=0.7)
         self.hold(2.4)
         self.qs7.set_value(-1.0)
-        sg_lab2 = VGroup(eq(r"q<0", size=30, colors={0: BLUE_L}), txt("curva para cima (mesmo R)", 22, opacity=0.9)).arrange(RIGHT, buff=0.2).move_to([4.3, 0.95, 0])
+        sg_lab2 = VGroup(eq(r"q<0", size=30, colors={0: BLUE_L}), txt("curva para cima (mesmo R)", 22, opacity=0.9)).arrange(RIGHT, buff=0.2).move_to([4.3, 1.1, 0])
         self.play(RT(sg_lab, sg_lab2), run_time=0.8)
         self.hold(3.0)
         self.qs7.set_value(1.0)
-        sg3 = VGroup(txt("o sentido da curva dá o sinal de", 22, opacity=0.9), eq("q", size=30, colors={0: BLUE_L})).arrange(RIGHT, buff=0.15).move_to([4.3, 0.95, 0])
+        sg3 = VGroup(txt("o sentido da curva dá o sinal de", 22, opacity=0.9), eq("q", size=30, colors={0: BLUE_L})).arrange(RIGHT, buff=0.15).move_to([4.3, 1.1, 0])
         self.play(RT(sg_lab2, sg3), run_time=0.8)
         # callback: trabalho magnético
         cb = VGroup(eq(r"|\mathbf v|", r"\ \text{constante}\ \Rightarrow\ ", "W_B", "=0", size=30, colors={0: VIOLET, 2: CYAN})).move_to([4.3, 1.6, 0])
@@ -3187,6 +3713,7 @@ class YT0005MagnetostaticaM1(Scene):
     # ═════════════════════════════════════════════════════════════════════════════════════════════════════════
     def bloco_09_fechamento(self):
         self.seg("J")
+        self.at(132)
         self.limpa(0.8)
         # uma única forma central se transforma, passo a passo, nas imagens que já vimos
         cx = np.array([0.0, 0.3, 0.0])
@@ -3217,7 +3744,7 @@ class YT0005MagnetostaticaM1(Scene):
         self.play(FadeIn(t2), run_time=0.6)
         self.hold(1.6)
         # → muitas cargas → corrente (portadores azuis; corrente convencional em verde)
-        wire = Line([-3.0, 0.3, 0], [3.0, 0.3, 0], color=BLUE_L, stroke_width=6).set_opacity(0.45)
+        wire = Line([-3.0, 0.3, 0], [3.0, 0.3, 0], color=STEEL, stroke_width=6).set_opacity(0.85)
         cars = VGroup(*[charge_c([x, 0.3, 0], 1, 0.5) for x in np.linspace(-2.6, 2.6, 7)])
         arr = arrow([2.0, 0.85, 0], [3.2, 0.85, 0], GREEN, 6, 4)
         il = eq("I", size=M_M, colors={0: GREEN}).move_to([2.6, 1.3, 0])
@@ -3251,13 +3778,16 @@ class YT0005MagnetostaticaM1(Scene):
         jl = eq(r"\mathbf J", size=52, colors={0: GREEN}).move_to([-3.7, 1.7, 0])
         t4 = VGroup(eq(r"\mathbf J\neq 0", ",", r"\ \nabla\cdot\mathbf J=0", size=44, colors={0: GREEN, 2: GREEN}),
                     txt("regime estacionário", 22, opacity=0.9)).arrange(DOWN, buff=0.2).move_to([0.0, -2.35, 0])
-        self.play(FadeOut(VGroup(wire, cars, arr, il)), g9.animate.set_value(1.0), FadeIn(jl), FadeOut(t3), FadeIn(t4), run_time=1.4)
+        self.play(FadeOut(t3), run_time=0.4)
+        self.play(FadeOut(VGroup(wire, cars, arr, il)), g9.animate.set_value(1.0), FadeIn(jl), run_time=1.0)
+        self.play(FadeIn(t4), run_time=0.7)
         self.hold(3.2)
         # → Thomson
         pl = VGroup(Rectangle(width=2.6, height=0.12, color=WHITE, stroke_width=2).move_to([0.0, 1.2, 0]), Rectangle(width=2.6, height=0.12, color=WHITE, stroke_width=2).move_to([0.0, -0.6, 0]))
         bm = Line([-3.2, 0.3, 0], [3.2, 0.3, 0], color=BLUE_L, stroke_width=3.5)
         t5 = VGroup(eq("v", "=", r"\frac EB", size=34, colors={0: VIOLET, 2: CYAN}), eq(r"\frac{|q|}{m}", "=", r"\frac{E}{B^2R}", size=34, colors={0: BLUE_L, 2: CYAN})).arrange(RIGHT, buff=0.6).move_to([0.0, -2.4, 0])
-        self.play(g9.animate.set_value(0.0), FadeOut(jl), FadeIn(VGroup(pl, bm)), FadeOut(t4), FadeIn(t5), run_time=1.4)
+        self.play(g9.animate.set_value(0.0), FadeOut(jl), FadeOut(t4), run_time=0.8)
+        self.play(FadeIn(VGroup(pl, bm)), FadeIn(t5), run_time=0.8)
         self.remove(flow)
         self.hold(2.2)
         self.play(FadeOut(pl), FadeOut(bm), FadeOut(t5), run_time=0.8)
@@ -3266,12 +3796,13 @@ class YT0005MagnetostaticaM1(Scene):
 
     def b09_fios(self):
         """Volta aos dois fios do começo, agora com a corrente (verde) EM MOVIMENTO e o B orientado em torno de cada fio."""
+        self.at(133)
         WX = 1.9
         ph = self.clock("p9b")
         self.run["p9b"] = True
         self.g9b = ValueTracker(1.0)
-        wl = Line([-WX, -2.0, 0], [-WX, 1.9, 0], color=BLUE_L, stroke_width=6)
-        wr = Line([WX, -2.0, 0], [WX, 1.9, 0], color=BLUE_L, stroke_width=6)
+        wl = Line([-WX, -2.0, 0], [-WX, 1.9, 0], color=STEEL, stroke_width=6)
+        wr = Line([WX, -2.0, 0], [WX, 1.9, 0], color=STEEL, stroke_width=6)
         cl = arrow([-2.75, 0.6, 0], [-2.75, 1.7, 0], GREEN, 6)
         cr = arrow([2.75, 0.6, 0], [2.75, 1.7, 0], GREEN, 6)
         il, ir = eq("I_1", size=M_S, colors={0: GREEN}).next_to(cl, LEFT, buff=0.15), eq("I_2", size=M_S, colors={0: GREEN}).next_to(cr, RIGHT, buff=0.15)
@@ -3285,7 +3816,7 @@ class YT0005MagnetostaticaM1(Scene):
                     y = YMIN + ((k * period + ph.get_value() * 0.75) % (SPAN + STEP))
                     op = min(1.0, max(0.0, min(y + 1.95, 1.95 - y) / 0.4))
                     y2 = min(y + 0.32, 1.9)
-                    g.add(Line([x, y, 0], [x, y2, 0], color=GREEN, stroke_width=5).set_opacity(0.95 * op * self.g9b.get_value()))
+                    g.add(pulso([x, y, 0], [x, y2, 0], op=op * self.g9b.get_value()))
                 return g.set_z_index(2)
             return always_redraw(f)
 
@@ -3310,19 +3841,43 @@ class YT0005MagnetostaticaM1(Scene):
                     p = np.array([x + RW * math.cos(th), y + RH * math.sin(th), 0.0])
                     tv = np.array([-RW * math.sin(th), RH * math.cos(th), 0.0])
                     tv /= np.linalg.norm(tv)
-                    marks.add(arrow(p - 0.22 * tv, p + 0.22 * tv, MAG, 5, 6, tip=0.2).set_opacity(op))   # tangentes fixas: sentido de B
+                    marks.add(arrow(p - 0.22 * tv, p + 0.22 * tv, MAG, 5, 6, tip=0.2).set_opacity(0.6 * op))   # tangentes fixas: sentido de B
+        # destaque sequencial (só orientação): uma seta por anel acende por vez; o campo NÃO escoa
+        hi_t = ValueTracker(0.0)
+        hi_t.add_updater(lambda m, dt: m.increment_value(dt))
+        self.add(hi_t)
+        ths = (-math.pi / 2, 0.0, math.pi / 2, math.pi)
+
+        def destaque():
+            g = VGroup()
+            k = int(hi_t.get_value() * 1.5) % 4
+            th = ths[k]
+            for x in (-WX, WX):
+                for y in levels:
+                    p = np.array([x + RW * math.cos(th), y + RH * math.sin(th), 0.0])
+                    tv = np.array([-RW * math.sin(th), RH * math.cos(th), 0.0])
+                    tv /= np.linalg.norm(tv)
+                    g.add(arrow(p - 0.24 * tv, p + 0.24 * tv, MAG, 7, 7, tip=0.24))
+            return g.set_opacity(self.g9b.get_value())
+
+        dest = always_redraw(destaque)
+        dest.dyn = True
+        self.add(dest)
         md = marks
         blab = eq(r"\mathbf B", size=44, colors={0: MAG}).move_to([0.0, 1.5, 0])
         self.play(FadeIn(rings), FadeIn(md), FadeIn(blab), run_time=1.4)
         self.hold(2.0)
+        self.at(134)
         att = VGroup(arrow([-WX + 0.2, -0.6, 0], [-WX + 1.0, -0.6, 0], FC, 5, 4), arrow([WX - 0.2, -0.6, 0], [WX - 1.0, -0.6, 0], FC, 5, 4))
         self.play(FadeIn(att), run_time=0.8)
         self.hold(1.2)
+        self.at(135)
         q_ = VGroup(txt("Como uma corrente cria", 34), eq(r"\mathbf B", size=46, colors={0: MAG}), txt("?", 34)).arrange(RIGHT, buff=0.18).move_to([0.0, -2.75, 0])
         bq = box(q_)
         self.play(FadeIn(q_, shift=0.1 * UP), FadeIn(bq), run_time=1.2)
         self.hold(4.0)                               # a cena segue viva: corrente fluindo, B girando
         self.fios9 = VGroup(wl, wr, cl, cr, il, ir, rings, md, blab, att, q_, bq)
+        self.dest9 = dest
 
     def b09_cta(self):
         """End card no padrão dos longos (Gauss): marca Parallax Lab, anéis tracejados, chamada curta e tease do próximo assunto."""
@@ -3340,6 +3895,8 @@ class YT0005MagnetostaticaM1(Scene):
             self.play(w.animate.scale(2.6, about_point=oc).set_stroke(opacity=0.0), run_time=2.6)
             self.remove(w)
 
+        self.at(136)
+        self.remove(self.dest9)
         self.play(FadeOut(self.fios9), self.g9b.animate.set_value(0.0), FadeOut(self.wm), FadeOut(self.tag), run_time=1.0)
         self.play(LaggedStart(*[FadeIn(r_, scale=0.85) for r_ in rings], lag_ratio=0.3), FadeIn(logo, scale=0.92), run_time=1.8)
         self.play(FadeIn(msg, shift=0.1 * UP), run_time=1.0)

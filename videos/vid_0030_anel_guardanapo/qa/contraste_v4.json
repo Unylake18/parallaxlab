@@ -1,0 +1,684 @@
+{
+ "quadros_avaliados": 180,
+ "limiar": {
+  "texto": 4.5,
+  "linha": 3.0
+ },
+ "abaixo_do_limiar": [
+  {
+   "elemento": "Manim rot_aux",
+   "medidas": 213,
+   "pior": 1.68,
+   "t_pior": 86.0,
+   "tipo": "texto",
+   "xy": [
+    386,
+    299
+   ],
+   "mediana": 5.33
+  },
+  {
+   "elemento": "Remotion regua0",
+   "medidas": 5,
+   "pior": 4.44,
+   "t_pior": 25.0,
+   "tipo": "texto",
+   "xy": [
+    167,
+    296
+   ],
+   "mediana": 7.22
+  },
+  {
+   "elemento": "Remotion regua0_rot 6 cm",
+   "medidas": 8,
+   "pior": 4.18,
+   "t_pior": 25.0,
+   "tipo": "texto",
+   "xy": [
+    126,
+    296
+   ],
+   "mediana": 6.88
+  },
+  {
+   "elemento": "linha 3D cor (230, 178, 249)",
+   "medidas": 9,
+   "pior": 1.79,
+   "t_pior": 87.0,
+   "tipo": "linha",
+   "xy": [
+    434,
+    293
+   ],
+   "mediana": 1.79
+  },
+  {
+   "elemento": "linha 3D cor (232, 139, 253)",
+   "medidas": 3,
+   "pior": 2.44,
+   "t_pior": 39.0,
+   "tipo": "linha",
+   "xy": [
+    364,
+    277
+   ],
+   "mediana": 3.36
+  },
+  {
+   "elemento": "linha 3D cor (233, 98, 253)",
+   "medidas": 8,
+   "pior": 2.36,
+   "t_pior": 39.0,
+   "tipo": "linha",
+   "xy": [
+    121,
+    331
+   ],
+   "mediana": 2.64
+  }
+ ],
+ "quadros_de_teste": {
+  "C01 trio com régua": {
+   "Remotion rot_trio0 R = 5 cm": 17.95,
+   "Remotion rot_trio1 R = 7 cm": 18.01,
+   "Remotion rot_trio2 R = 10 cm": 17.9,
+   "Remotion regua0": 7.22,
+   "Remotion regua0_rot 6 cm": 6.88,
+   "Remotion regua1_rot 6 cm": 6.78,
+   "Remotion regua2_rot 6 cm": 6.77
+  },
+  "C02 corte com h e triângulo": {
+   "Manim rot_aux": 3.52,
+   "linha 3D cor (232, 139, 253)": 3.36,
+   "linha 3D cor (233, 98, 253)": 2.64
+  },
+  "C03 coroa com r_int/r_ext/R": {
+   "Manim rot_aux": 2.27,
+   "linha 3D cor (182, 194, 247)": 6.41
+  },
+  "C04 disco da esfera": {
+   "Manim rot_aux": 2.03,
+   "linha 3D cor (230, 178, 249)": 1.79
+  },
+  "C06 anel com régua": {
+   "Remotion regua_anel": 6.99,
+   "Remotion regua_anel_rot h = 6 cm": 6.84,
+   "Remotion C06_cont R = 7,1 cm     a =": 17.88
+  }
+ },
+ "por_elemento": {
+  "Manim rot_aux": {
+   "medidas": 213,
+   "pior": 1.68,
+   "t_pior": 86.0,
+   "tipo": "texto",
+   "xy": [
+    386,
+    299
+   ],
+   "mediana": 5.33
+  },
+  "Remotion C04_cont A = 0,00π cm²": {
+   "medidas": 4,
+   "pior": 17.71,
+   "t_pior": 103.0,
+   "tipo": "texto",
+   "xy": [
+    407,
+    603
+   ],
+   "mediana": 17.79
+  },
+  "Remotion C04_cont A = 4,49π cm²": {
+   "medidas": 2,
+   "pior": 17.77,
+   "t_pior": 107.0,
+   "tipo": "texto",
+   "xy": [
+    181,
+    603
+   ],
+   "mediana": 17.79
+  },
+  "Remotion C04_cont A = 4,80π cm²": {
+   "medidas": 2,
+   "pior": 17.78,
+   "t_pior": 105.0,
+   "tipo": "texto",
+   "xy": [
+    181,
+    603
+   ],
+   "mediana": 17.82
+  },
+  "Remotion C04_cont A = 5,00π cm²": {
+   "medidas": 2,
+   "pior": 17.82,
+   "t_pior": 101.0,
+   "tipo": "texto",
+   "xy": [
+    180,
+    603
+   ],
+   "mediana": 17.82
+  },
+  "Remotion C04_cont A = 5,02π cm²": {
+   "medidas": 2,
+   "pior": 17.99,
+   "t_pior": 100.0,
+   "tipo": "texto",
+   "xy": [
+    406,
+    603
+   ],
+   "mediana": 17.99
+  },
+  "Remotion C04_cont A = 6,00π cm²": {
+   "medidas": 2,
+   "pior": 17.78,
+   "t_pior": 106.0,
+   "tipo": "texto",
+   "xy": [
+    407,
+    603
+   ],
+   "mediana": 17.8
+  },
+  "Remotion C04_cont A = 6,75π cm²": {
+   "medidas": 2,
+   "pior": 17.86,
+   "t_pior": 104.0,
+   "tipo": "texto",
+   "xy": [
+    406,
+    603
+   ],
+   "mediana": 17.87
+  },
+  "Remotion C04_cont A = 7,83π cm²": {
+   "medidas": 2,
+   "pior": 17.79,
+   "t_pior": 108.0,
+   "tipo": "texto",
+   "xy": [
+    181,
+    603
+   ],
+   "mediana": 17.83
+  },
+  "Remotion C04_cont A = 8,28π cm²": {
+   "medidas": 2,
+   "pior": 17.84,
+   "t_pior": 109.0,
+   "tipo": "texto",
+   "xy": [
+    407,
+    603
+   ],
+   "mediana": 17.84
+  },
+  "Remotion C04_cont z = +0,9 cm": {
+   "medidas": 1,
+   "pior": 17.51,
+   "t_pior": 109.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 17.51
+  },
+  "Remotion C04_cont z = +1,1 cm": {
+   "medidas": 1,
+   "pior": 17.68,
+   "t_pior": 108.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 17.68
+  },
+  "Remotion C04_cont z = +2,0 cm": {
+   "medidas": 2,
+   "pior": 17.8,
+   "t_pior": 100.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 17.8
+  },
+  "Remotion C04_cont z = +2,1 cm": {
+   "medidas": 1,
+   "pior": 17.51,
+   "t_pior": 107.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 17.51
+  },
+  "Remotion C04_cont z = +3,0 cm": {
+   "medidas": 2,
+   "pior": 17.75,
+   "t_pior": 102.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 17.75
+  },
+  "Remotion C04_cont z = -1,5 cm": {
+   "medidas": 1,
+   "pior": 17.84,
+   "t_pior": 104.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 17.84
+  },
+  "Remotion C04_cont z = -1,7 cm": {
+   "medidas": 1,
+   "pior": 17.31,
+   "t_pior": 106.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 17.31
+  },
+  "Remotion C04_cont z = -2,0 cm": {
+   "medidas": 1,
+   "pior": 17.68,
+   "t_pior": 105.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    549
+   ],
+   "mediana": 17.68
+  },
+  "Remotion C06_cont R = 10,8 cm     a": {
+   "medidas": 1,
+   "pior": 17.95,
+   "t_pior": 150.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    602
+   ],
+   "mediana": 17.95
+  },
+  "Remotion C06_cont R = 11,0 cm     a": {
+   "medidas": 1,
+   "pior": 12.52,
+   "t_pior": 151.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    602
+   ],
+   "mediana": 12.52
+  },
+  "Remotion C06_cont R = 5,0 cm     a =": {
+   "medidas": 1,
+   "pior": 17.92,
+   "t_pior": 146.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    602
+   ],
+   "mediana": 17.92
+  },
+  "Remotion C06_cont R = 5,4 cm     a =": {
+   "medidas": 1,
+   "pior": 17.85,
+   "t_pior": 147.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    602
+   ],
+   "mediana": 17.85
+  },
+  "Remotion C06_cont R = 7,1 cm     a =": {
+   "medidas": 1,
+   "pior": 17.88,
+   "t_pior": 148.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    602
+   ],
+   "mediana": 17.88
+  },
+  "Remotion C06_cont R = 9,3 cm     a =": {
+   "medidas": 1,
+   "pior": 17.88,
+   "t_pior": 149.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    602
+   ],
+   "mediana": 17.88
+  },
+  "Remotion C07_cont h = 0,3 cm     V =": {
+   "medidas": 1,
+   "pior": 17.86,
+   "t_pior": 170.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    537
+   ],
+   "mediana": 17.86
+  },
+  "Remotion C07_cont h = 1,3 cm     V =": {
+   "medidas": 1,
+   "pior": 17.82,
+   "t_pior": 169.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    537
+   ],
+   "mediana": 17.82
+  },
+  "Remotion C07_cont h = 10,0 cm     V": {
+   "medidas": 2,
+   "pior": 17.98,
+   "t_pior": 166.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    537
+   ],
+   "mediana": 18.0
+  },
+  "Remotion C07_cont h = 6,9 cm     V =": {
+   "medidas": 1,
+   "pior": 17.81,
+   "t_pior": 164.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    537
+   ],
+   "mediana": 17.81
+  },
+  "Remotion C07_cont h = 7,9 cm     V =": {
+   "medidas": 1,
+   "pior": 17.91,
+   "t_pior": 168.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    537
+   ],
+   "mediana": 17.91
+  },
+  "Remotion C07_cont h = 9,6 cm     V =": {
+   "medidas": 1,
+   "pior": 17.9,
+   "t_pior": 165.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    537
+   ],
+   "mediana": 17.9
+  },
+  "Remotion regua0": {
+   "medidas": 5,
+   "pior": 4.44,
+   "t_pior": 25.0,
+   "tipo": "texto",
+   "xy": [
+    167,
+    296
+   ],
+   "mediana": 7.22
+  },
+  "Remotion regua0_rot 6 cm": {
+   "medidas": 8,
+   "pior": 4.18,
+   "t_pior": 25.0,
+   "tipo": "texto",
+   "xy": [
+    126,
+    296
+   ],
+   "mediana": 6.88
+  },
+  "Remotion regua1": {
+   "medidas": 3,
+   "pior": 7.11,
+   "t_pior": 174.0,
+   "tipo": "texto",
+   "xy": [
+    135,
+    366
+   ],
+   "mediana": 7.11
+  },
+  "Remotion regua1_rot 6 cm": {
+   "medidas": 7,
+   "pior": 6.71,
+   "t_pior": 26.0,
+   "tipo": "texto",
+   "xy": [
+    100,
+    426
+   ],
+   "mediana": 6.78
+  },
+  "Remotion regua2_rot 6 cm": {
+   "medidas": 7,
+   "pior": 6.77,
+   "t_pior": 27.0,
+   "tipo": "texto",
+   "xy": [
+    60,
+    554
+   ],
+   "mediana": 6.84
+  },
+  "Remotion regua_anel": {
+   "medidas": 16,
+   "pior": 6.99,
+   "t_pior": 148.0,
+   "tipo": "texto",
+   "xy": [
+    116,
+    312
+   ],
+   "mediana": 7.11
+  },
+  "Remotion regua_anel_rot h = 6 cm": {
+   "medidas": 16,
+   "pior": 6.8,
+   "t_pior": 146.0,
+   "tipo": "texto",
+   "xy": [
+    156,
+    210
+   ],
+   "mediana": 6.92
+  },
+  "Remotion rot_trio0 R = 5 cm": {
+   "medidas": 14,
+   "pior": 17.95,
+   "t_pior": 27.0,
+   "tipo": "texto",
+   "xy": [
+    371,
+    296
+   ],
+   "mediana": 18.01
+  },
+  "Remotion rot_trio0 V = 36π cm³": {
+   "medidas": 3,
+   "pior": 17.91,
+   "t_pior": 174.0,
+   "tipo": "texto",
+   "xy": [
+    365,
+    263
+   ],
+   "mediana": 17.91
+  },
+  "Remotion rot_trio1 R = 7 cm": {
+   "medidas": 13,
+   "pior": 17.98,
+   "t_pior": 20.0,
+   "tipo": "texto",
+   "xy": [
+    396,
+    364
+   ],
+   "mediana": 18.01
+  },
+  "Remotion rot_trio1 V = 36π cm³": {
+   "medidas": 2,
+   "pior": 18.02,
+   "t_pior": 175.0,
+   "tipo": "texto",
+   "xy": [
+    388,
+    380
+   ],
+   "mediana": 18.02
+  },
+  "Remotion rot_trio2 R = 10 cm": {
+   "medidas": 13,
+   "pior": 17.82,
+   "t_pior": 20.0,
+   "tipo": "texto",
+   "xy": [
+    440,
+    581
+   ],
+   "mediana": 17.91
+  },
+  "Remotion rot_trio2 V = 36π cm³": {
+   "medidas": 2,
+   "pior": 17.84,
+   "t_pior": 175.0,
+   "tipo": "texto",
+   "xy": [
+    424,
+    497
+   ],
+   "mediana": 17.89
+  },
+  "Remotion tag_hook = ESFERA FURADA": {
+   "medidas": 5,
+   "pior": 12.31,
+   "t_pior": 12.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    729
+   ],
+   "mediana": 12.31
+  },
+  "Remotion tag_hook ANEL DE GUARDANAPO": {
+   "medidas": 9,
+   "pior": 17.01,
+   "t_pior": 2.0,
+   "tipo": "texto",
+   "xy": [
+    270,
+    729
+   ],
+   "mediana": 17.02
+  },
+  "linha 3D cor (182, 194, 247)": {
+   "medidas": 11,
+   "pior": 5.15,
+   "t_pior": 57.0,
+   "tipo": "linha",
+   "xy": [
+    304,
+    297
+   ],
+   "mediana": 6.41
+  },
+  "linha 3D cor (182, 194, 248)": {
+   "medidas": 14,
+   "pior": 5.15,
+   "t_pior": 58.0,
+   "tipo": "linha",
+   "xy": [
+    304,
+    297
+   ],
+   "mediana": 6.38
+  },
+  "linha 3D cor (182, 195, 254)": {
+   "medidas": 1,
+   "pior": 3.68,
+   "t_pior": 38.0,
+   "tipo": "linha",
+   "xy": [
+    343,
+    283
+   ],
+   "mediana": 3.68
+  },
+  "linha 3D cor (230, 178, 249)": {
+   "medidas": 9,
+   "pior": 1.79,
+   "t_pior": 87.0,
+   "tipo": "linha",
+   "xy": [
+    434,
+    293
+   ],
+   "mediana": 1.79
+  },
+  "linha 3D cor (232, 139, 253)": {
+   "medidas": 3,
+   "pior": 2.44,
+   "t_pior": 39.0,
+   "tipo": "linha",
+   "xy": [
+    364,
+    277
+   ],
+   "mediana": 3.36
+  },
+  "linha 3D cor (233, 139, 253)": {
+   "medidas": 5,
+   "pior": 3.37,
+   "t_pior": 42.0,
+   "tipo": "linha",
+   "xy": [
+    364,
+    277
+   ],
+   "mediana": 3.38
+  },
+  "linha 3D cor (233, 98, 253)": {
+   "medidas": 8,
+   "pior": 2.36,
+   "t_pior": 39.0,
+   "tipo": "linha",
+   "xy": [
+    121,
+    331
+   ],
+   "mediana": 2.64
+  }
+ }
+}

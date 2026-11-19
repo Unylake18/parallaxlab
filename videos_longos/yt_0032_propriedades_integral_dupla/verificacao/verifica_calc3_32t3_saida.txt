@@ -1,0 +1,37 @@
+área leve A1 = 2.4721 m², área pesada A2 = 1.5279 m²
+massa leve = 2.4721 kg, massa pesada = 4.5836 kg, total = 7.0557 kg
+W1 massa = leve + pesado = 2,47 + 4,58 = 7,06 kg: True 
+W2 rho = 1 + 2·[pesado]: 4 + 2·A2 = 7,06 (propriedade I: soma e constante): True 
+W3 rho = 3 em cima: massa pesada = 3 × área pesada (I b): True 
+W4 comparação 1 <= rho <= 3: 4 <= massa <= 12 (III + I b): True 
+W5 densidade média da chapa de dois metais = 1,76 kg/m², valor que rho (1 ou 3) nunca assume: True (1.7639)
+W6 ∬x² = ∬y² = 16/3 e somam 32/3 (I a + simetria): True 
+  n=  4: soma(x²) = 5.2500, soma(y²) = 5.2500, soma(x²+y²) = 10.5000
+  n= 16: soma(x²) = 5.3281, soma(y²) = 5.3281, soma(x²+y²) = 10.6562
+  n= 64: soma(x²) = 5.3330, soma(y²) = 5.3330, soma(x²+y²) = 10.6660
+W7 na mesma partição e mesmos pontos, soma(f+g) = soma(f) + soma(g): True 
+W8 limites 0 <= x²+y² <= 8 ⇒ 0 <= 32/3 <= 32 (comparação): True 
+W9 valor médio de x²+y² na chapa = 8/3 ≈ 2,67; atingido no arco x²+y² = 8/3 (raio ≈ 1,63 < 2, inteiro dentro da chapa): True (raio 1.6330)
+  volume acima do nível = 2.7925, volume que falta abaixo = 2.7925 (exato 2.7925 = 8π/9)
+W10 lago nivelado: volume acima de 8/3 = volume abaixo = 8π/9 ≈ 2,79: True 
+W11 área da região abaixo do nível = quarto de disco π·(8/3)/4 = 2π/3 ≈ 2,09 m²: True 
+W12 sem caminho dentro de B: f contínua, média 2, nunca vale 2: True 
+Muro de altura H = 100 kg/m² posto só na solda (volume máximo = H × área das células que a solda cruza):
+  n=   64: células    95, área 0.0928 m², 100 × área = 9.28 kg
+  n=  128: células   188, área 0.0459 m², 100 × área = 4.59 kg
+  n=  256: células   376, área 0.0229 m², 100 × área = 2.29 kg
+  n=  512: células   753, área 0.0115 m², 100 × área = 1.15 kg
+  n= 1024: células  1508, área 0.0058 m², 100 × área = 0.58 kg
+W13 células cruzadas n=64 → 95 (bate com o EP. 06): True 
+W14 a área das células da solda cai pela metade ao dobrar n (o muro de 100 vale 9,3 → 4,6 → 2,3 → 1,2 → 0,6 kg): True 
+comprimento da solda L = 2.2491 m
+  cordão de largura 1.0 cm e 6 kg/m²: área ≈ 0.0225 m², massa ≈ 135 g
+  cordão de largura 0.1 cm e 6 kg/m²: área ≈ 0.0022 m², massa ≈ 13 g
+W15 comprimento da solda ≈ 2,25 m; cordão de 1 cm a 6 kg/m² ≈ 135 g; de 1 mm ≈ 13 g (→ 0 com a largura): True 
+W16 regiões que se sobrepõem numa faixa de 0,2 m de altura: área(B) + área(B1) = 4 + 0,4 ≠ 4: True 
+W17 Ex. 1: ∬_disco x²/(x²+y²) = π/2 (por simetria: x²/r² + y²/r² = 1, área π, metade cada): True 
+W18 Ex. 2: sen(1-x²-y²)/(1-x²-y²) → 1 na circunferência (g = 1 em D torna g contínua no disco fechado): True 
+  Ex. 2 (fora do vídeo, precisa de polares): ∬ = π·Si(1) ≈ 2.9722
+W19 Ex. 2 numérico confere com π·Si(1): True 
+
+TOTAL: 19/19 True

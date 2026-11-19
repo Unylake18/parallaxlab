@@ -1,0 +1,1387 @@
+1
+00:00:00,100 --> 00:00:04,060
+Ficou uma pergunta no ar: uma
+hélice enrolada na parede da lata,
+
+2
+00:00:04,100 --> 00:00:07,220
+como a espiral de um caderno.
+A lata é a nossa de sempre,
+
+3
+00:00:07,260 --> 00:00:12,180
+raio um e altura um. Nas cilíndricas, essa
+hélice é a coisa mais simples do mundo:
+
+4
+00:00:12,220 --> 00:00:16,651
+a distância até o eixo fica parada em um,
+o ângulo cresce junto com o tempo t,
+
+5
+00:00:16,780 --> 00:00:19,280
+e a altura sobe devagar, c vezes t.
+
+6
+00:00:19,320 --> 00:00:24,110
+Em x, y e z, isso vira
+cosseno de t, seno de t e c t.
+
+7
+00:00:24,160 --> 00:00:28,380
+Agora põe uma conta de colar nessa hélice,
+e uma força empurrando a conta pelo
+
+8
+00:00:28,420 --> 00:00:32,660
+caminho. Em cada ponto, a força tem
+um tamanho e uma direção diferentes.
+
+9
+00:00:32,700 --> 00:00:35,120
+Quanto trabalho essa força faz numa volta?
+
+10
+00:00:35,160 --> 00:00:39,720
+E repara no problema: tudo o que a gente
+integrou até agora tinha área ou volume.
+
+11
+00:00:39,760 --> 00:00:42,740
+A curva não tem nenhum dos
+dois. Ela é só um caminho,
+
+12
+00:00:42,780 --> 00:00:47,760
+fininho. Então a pergunta de hoje é: como
+somar uma coisa ao longo de um caminho?
+
+13
+00:00:47,800 --> 00:00:50,460
+Pensa na conta presa no
+fio. Num ponto qualquer,
+
+14
+00:00:50,500 --> 00:00:53,700
+a força puxa para algum lado.
+Só que a conta não tem escolha:
+
+15
+00:00:53,740 --> 00:00:57,800
+ela só anda ao longo do fio.
+Então separa a força em duas partes.
+
+16
+00:00:57,840 --> 00:01:01,400
+A parte que aponta ao longo do
+caminho empurra a conta para frente,
+
+17
+00:01:01,440 --> 00:01:04,860
+ou segura ela para trás,
+e essa faz trabalho: se empurra,
+
+18
+00:01:04,900 --> 00:01:09,680
+ajuda; se segura, atrapalha. A parte
+de lado só aperta a conta contra o fio,
+
+19
+00:01:09,720 --> 00:01:13,000
+e não faz trabalho nenhum, porque
+a conta não anda naquela direção.
+
+20
+00:01:13,040 --> 00:01:16,160
+É como apertar um carrinho de
+supermercado de cima para baixo:
+
+21
+00:01:16,200 --> 00:01:19,360
+força tem, mas o carrinho não
+vai para frente por causa dela.
+
+22
+00:01:19,400 --> 00:01:23,880
+E como a força muda de ponto para ponto,
+a ideia é a de sempre neste curso:
+
+23
+00:01:23,920 --> 00:01:27,450
+corta o caminho em pedacinhos,
+calcula um trabalhinho em cada um,
+
+24
+00:01:27,500 --> 00:01:29,980
+soma tudo e faz os pedaços encolherem.
+
+25
+00:01:30,020 --> 00:01:32,670
+O resultado tem nome: integral de linha.
+
+26
+00:01:32,720 --> 00:01:35,460
+Fala, pessoal! Bem-vindos ao Parallax Lab!
+
+27
+00:01:35,500 --> 00:01:39,560
+Hoje começa o módulo de integrais de
+linha: a integral de um campo vetorial
+
+28
+00:01:39,600 --> 00:01:43,660
+sobre uma curva, e uma notação nova que
+vai acompanhar a gente até o teorema de
+
+29
+00:01:43,700 --> 00:01:47,240
+Green. Começa pelo caso que a
+física do colégio já resolve:
+
+30
+00:01:47,280 --> 00:01:52,300
+força constante e caminho reto. A conta
+sai do ponto A e vai até o ponto B em
+
+31
+00:01:52,340 --> 00:01:56,000
+linha reta, e a força é sempre
+a mesma, F igual a dois,
+
+32
+00:01:56,040 --> 00:01:59,830
+um. O trabalho é o produto escalar
+da força pelo deslocamento:
+
+33
+00:01:59,960 --> 00:02:04,500
+F escalar B menos A. O deslocamento
+é ponto final menos ponto inicial,
+
+34
+00:02:04,540 --> 00:02:08,040
+e aqui dá três, zero: três
+para a direita, nada para cima.
+
+35
+00:02:08,080 --> 00:02:12,080
+Agora o produto escalar: multiplica
+coordenada com coordenada e soma.
+
+36
+00:02:12,120 --> 00:02:15,000
+Dá seis. Olha o que aconteceu
+com aquele um da força,
+
+37
+00:02:15,040 --> 00:02:19,240
+a parte que puxa para cima: ele foi
+multiplicado pelo zero do deslocamento e
+
+38
+00:02:19,280 --> 00:02:22,760
+sumiu. É exatamente a parte
+de lado, a que não trabalha.
+
+39
+00:02:22,800 --> 00:02:25,820
+O produto escalar já faz
+essa separação sozinho.
+
+40
+00:02:25,860 --> 00:02:29,540
+E tem outro jeito de escrever a
+mesma coisa: o tamanho da força,
+
+41
+00:02:29,580 --> 00:02:33,740
+vezes o tamanho do deslocamento,
+vezes o cosseno do ângulo entre os dois.
+
+42
+00:02:33,780 --> 00:02:36,980
+Daí saem os três casos que
+vão aparecer o vídeo inteiro.
+
+43
+00:02:37,020 --> 00:02:40,200
+Ângulo agudo, cosseno
+positivo: a força ajuda,
+
+44
+00:02:40,240 --> 00:02:43,760
+e o trabalho é positivo.
+Ângulo reto: a força é de lado,
+
+45
+00:02:43,800 --> 00:02:47,200
+trabalho zero. Ângulo
+obtuso, cosseno negativo:
+
+46
+00:02:47,240 --> 00:02:51,050
+a força atrapalha, como o atrito,
+e o trabalho é negativo.
+
+47
+00:02:51,120 --> 00:02:55,960
+Agora o caso de verdade: o caminho é
+curvo e a força muda de ponto para ponto.
+
+48
+00:02:56,000 --> 00:02:59,911
+O caminho vem descrito por uma
+curva γ, que leva cada instante t,
+
+49
+00:03:00,060 --> 00:03:02,280
+de a até b, num ponto do espaço.
+
+50
+00:03:02,320 --> 00:03:05,650
+Pensa em γ de t como a posição
+da conta no instante t.
+
+51
+00:03:05,780 --> 00:03:08,800
+Primeiro passo: corta o
+intervalo de tempo em pedaços,
+
+52
+00:03:08,840 --> 00:03:13,980
+com t zero igual a a, depois t
+um, t dois, até t n igual a b.
+
+53
+00:03:14,020 --> 00:03:16,800
+Cada pedaço de tempo vira
+um pedacinho do caminho.
+
+54
+00:03:16,840 --> 00:03:21,600
+Em cada pedacinho, troca o arco pela
+corda: a setinha que sai do ponto anterior
+
+55
+00:03:21,640 --> 00:03:25,680
+e chega no ponto seguinte.
+A gente chama essa setinha de Δγᵢ,
+
+56
+00:03:25,720 --> 00:03:30,520
+posição de chegada menos posição de saída,
+igualzinho ao B menos A de antes.
+
+57
+00:03:30,560 --> 00:03:33,980
+E dentro de um pedacinho tão
+curto, a força quase não muda,
+
+58
+00:03:34,020 --> 00:03:38,010
+então dá para fingir que ela é constante
+e usar o valor no ponto de chegada,
+
+59
+00:03:38,120 --> 00:03:41,940
+F de γ de t i. O trabalhinho
+desse pedaço é o caso fácil:
+
+60
+00:03:41,980 --> 00:03:44,640
+força constante escalar deslocamento reto.
+
+61
+00:03:44,680 --> 00:03:48,620
+Somando todos, a gente tem uma aproximação
+do trabalho no caminho inteiro.
+
+62
+00:03:48,660 --> 00:03:52,920
+Agora o truque que transforma essa soma
+numa integral que a gente sabe fazer.
+
+63
+00:03:52,960 --> 00:03:56,380
+A setinha Δγᵢ é deslocamento
+num tempo curto.
+
+64
+00:03:56,420 --> 00:03:59,840
+E deslocamento num tempo curto
+é velocidade vezes tempo.
+
+65
+00:03:59,880 --> 00:04:04,600
+A velocidade da conta é a derivada,
+γ′ de t, um vetor tangente ao
+
+66
+00:04:04,640 --> 00:04:09,140
+caminho. Então Δγᵢ é quase γ′ de t i vezes
+
+67
+00:04:09,180 --> 00:04:13,500
+Δtᵢ. É como no carro: em um segundo,
+a vinte metros por segundo,
+
+68
+00:04:13,540 --> 00:04:17,020
+você anda vinte metros, sem
+precisar olhar o desenho da estrada.
+
+69
+00:04:17,060 --> 00:04:20,880
+Troca isso na soma, e olha o
+que aparece: F de γ de t i,
+
+70
+00:04:20,920 --> 00:04:24,340
+escalar γ′ de t i, vezes Δtᵢ.
+
+71
+00:04:24,380 --> 00:04:29,240
+Repara bem: o produto escalar
+de F de γ de t com γ′ de t é um
+
+72
+00:04:29,280 --> 00:04:31,990
+número, um número para cada instante t.
+
+73
+00:04:32,040 --> 00:04:36,660
+Chama esse número de g de t.
+Então a soma virou g de t i vezes
+
+74
+00:04:36,700 --> 00:04:41,680
+Δtᵢ, somado em i: uma soma de Riemann
+comum, de uma função de uma variável,
+
+75
+00:04:41,720 --> 00:04:45,680
+no intervalo de a até b. Quando o
+maior pedaço de tempo vai a zero,
+
+76
+00:04:45,720 --> 00:04:49,231
+ela vai para a integral
+de a até b de g de t, dt.
+
+77
+00:04:49,420 --> 00:04:52,770
+E o erro da troca, de corda
+por velocidade vezes tempo?
+
+78
+00:04:52,820 --> 00:04:56,700
+Se γ é de classe C um, a derivada
+é contínua no intervalo fechado,
+
+79
+00:04:56,740 --> 00:05:00,340
+e esse erro, somado em todos
+os pedaços, vai a zero junto.
+
+80
+00:05:00,380 --> 00:05:02,630
+É por isso que a hipótese C um está lá.
+
+81
+00:05:02,740 --> 00:05:07,440
+Então vale a definição. F é um campo
+vetorial contínuo num aberto Ω,
+
+82
+00:05:07,480 --> 00:05:11,250
+e γ é uma curva de classe C
+um, do intervalo de a até b,
+
+83
+00:05:11,300 --> 00:05:15,200
+com a imagem dentro de Ω.
+A integral de linha de F sobre γ,
+
+84
+00:05:15,240 --> 00:05:20,300
+que se lê integral sobre γ de F
+escalar d γ, é a integral de a até b
+
+85
+00:05:20,340 --> 00:05:24,080
+de F de γ de t, escalar γ′ de t, dt.
+
+86
+00:05:24,120 --> 00:05:28,280
+O d γ do lado esquerdo é só
+um apelido: d γ é γ′ de t,
+
+87
+00:05:28,320 --> 00:05:30,800
+dt, o deslocamento minúsculo da conta.
+
+88
+00:05:30,840 --> 00:05:34,840
+E essa integral sempre existe:
+F é contínuo e γ é contínua,
+
+89
+00:05:34,880 --> 00:05:39,700
+então F de γ de t é contínua;
+γ′ também é; e o produto escalar das
+
+90
+00:05:39,740 --> 00:05:43,020
+duas é uma função contínua
+de t num intervalo fechado.
+
+91
+00:05:43,060 --> 00:05:45,570
+Na prática, a receita tem três passos.
+
+92
+00:05:45,640 --> 00:05:49,380
+Um: coloca a curva dentro
+do campo, ou seja, troca x,
+
+93
+00:05:49,420 --> 00:05:51,740
+y e z pelas coordenadas da curva.
+
+94
+00:05:51,780 --> 00:05:54,960
+Dois: deriva a curva, e acha γ′ de t.
+
+95
+00:05:55,000 --> 00:05:58,620
+Três: faz o produto escalar,
+que vira uma função comum de t,
+
+96
+00:05:58,660 --> 00:06:02,800
+e integra de a até b. E o sinal do
+produto escalar conta a história de cada
+
+97
+00:06:02,840 --> 00:06:06,160
+instante: positivo,
+a força está ajudando; zero,
+
+98
+00:06:06,200 --> 00:06:09,000
+está de lado; negativo, está atrapalhando.
+
+99
+00:06:09,040 --> 00:06:12,680
+Primeiro exemplo:
+o redemoinho. O campo é F de x,
+
+100
+00:06:12,720 --> 00:06:16,560
+y igual a menos y, x.
+Desenha umas setas e você vê:
+
+101
+00:06:16,600 --> 00:06:19,380
+ele gira em volta da origem,
+no sentido anti-horário,
+
+102
+00:06:19,420 --> 00:06:23,200
+como a água descendo pelo ralo,
+e fica mais forte longe do centro.
+
+103
+00:06:23,240 --> 00:06:27,830
+A curva é o círculo de raio R, uma
+volta inteira no sentido anti-horário:
+
+104
+00:06:27,920 --> 00:06:31,880
+R cosseno de t, R seno de t,
+com t de zero a dois π.
+
+105
+00:06:31,920 --> 00:06:36,380
+Passo um: coloca a curva no campo.
+O x virou R cosseno de t e o y
+
+106
+00:06:36,420 --> 00:06:40,830
+virou R seno de t, então o
+campo vira menos R seno de t,
+
+107
+00:06:40,940 --> 00:06:44,000
+R cosseno de t. Passo
+dois: deriva a curva.
+
+108
+00:06:44,040 --> 00:06:47,720
+A derivada do cosseno é menos
+seno, a do seno é cosseno.
+
+109
+00:06:47,760 --> 00:06:50,880
+E olha que curioso: deu
+exatamente o mesmo vetor.
+
+110
+00:06:50,920 --> 00:06:55,440
+A força e a velocidade apontam para o
+mesmo lado em todo ponto do círculo.
+
+111
+00:06:55,480 --> 00:06:59,720
+Passo três: o produto escalar.
+Multiplica coordenada com coordenada,
+
+112
+00:06:59,760 --> 00:07:03,100
+e os dois sinais de menos da
+primeira coordenada se cancelam.
+
+113
+00:07:03,140 --> 00:07:07,320
+Coloca o R ao quadrado em evidência,
+e sobra aquela relação que vocês conhecem
+
+114
+00:07:07,360 --> 00:07:11,180
+desde o colégio: seno ao quadrado
+mais cosseno ao quadrado é um.
+
+115
+00:07:11,220 --> 00:07:13,720
+O integrando é constante, R ao quadrado.
+
+116
+00:07:13,760 --> 00:07:18,280
+Integra de zero a dois π: R ao quadrado
+vezes o comprimento do intervalo,
+
+117
+00:07:18,320 --> 00:07:21,780
+dois π R ao quadrado.
+Positivo, como tinha que ser:
+
+118
+00:07:21,820 --> 00:07:26,320
+a força ajudou o tempo todo. Dá para
+conferir esse resultado pela própria soma,
+
+119
+00:07:26,360 --> 00:07:29,520
+sem integral, porque no círculo
+a soma sai inteira na mão.
+
+120
+00:07:29,560 --> 00:07:34,340
+Divide a volta em n pedaços iguais,
+cada um com ângulo dois π sobre n,
+
+121
+00:07:34,380 --> 00:07:37,860
+e calcula o trabalhinho de um
+pedaço: força no ponto de chegada,
+
+122
+00:07:37,900 --> 00:07:42,620
+escalar a corda. Abrindo as contas, dois
+termos aparecem com sinais contrários e se
+
+123
+00:07:42,660 --> 00:07:45,660
+cancelam, seno vezes
+cosseno do mesmo ângulo.
+
+124
+00:07:45,700 --> 00:07:49,500
+O que sobra é a fórmula do seno
+da diferença, de trás para frente.
+
+125
+00:07:49,540 --> 00:07:53,780
+Cada trabalhinho é R ao quadrado
+vezes o seno do ângulo de um pedaço,
+
+126
+00:07:53,820 --> 00:07:58,540
+e como são n pedaços iguais,
+a soma inteira é n R ao quadrado
+
+127
+00:07:58,580 --> 00:08:01,220
+seno de dois π sobre n. Agora testa.
+
+128
+00:08:01,260 --> 00:08:04,280
+Com quatro pedaços, o caminho
+vira um quadrado inscrito,
+
+129
+00:08:04,320 --> 00:08:06,540
+e a soma dá quatro R ao quadrado.
+
+130
+00:08:06,580 --> 00:08:09,300
+Com oito, uns cinco
+vírgula sessenta e seis.
+
+131
+00:08:09,340 --> 00:08:11,640
+Com dezesseis, seis vírgula doze.
+
+132
+00:08:11,680 --> 00:08:14,660
+Está subindo e encostando em
+seis vírgula vinte e oito,
+
+133
+00:08:14,700 --> 00:08:17,890
+que é dois π. É o limite
+fundamental disfarçado:
+
+134
+00:08:17,980 --> 00:08:21,460
+n vezes o seno de dois π
+sobre n vai para dois π.
+
+135
+00:08:21,500 --> 00:08:24,920
+A definição pela soma e a
+conta pela integral concordam.
+
+136
+00:08:24,960 --> 00:08:28,080
+Agora o mesmo redemoinho,
+mas a conta anda pelo raio,
+
+137
+00:08:28,120 --> 00:08:31,600
+do centro até a borda,
+em linha reta sobre o eixo x.
+
+138
+00:08:31,640 --> 00:08:35,080
+A curva é t, zero, com t de zero a R.
+
+139
+00:08:35,120 --> 00:08:38,940
+Em cima do eixo x, o y é zero,
+então a força vira zero,
+
+140
+00:08:38,980 --> 00:08:42,619
+t: aponta para cima. E a
+velocidade aponta para a direita,
+
+141
+00:08:42,659 --> 00:08:45,040
+um, zero. Produto escalar: zero.
+
+142
+00:08:45,080 --> 00:08:49,340
+A força está inteira de lado,
+o tempo todo, e o trabalho é zero.
+
+143
+00:08:49,380 --> 00:08:52,880
+Mesmo campo, caminhos diferentes,
+trabalhos diferentes:
+
+144
+00:08:52,920 --> 00:08:55,160
+a integral de linha depende do caminho.
+
+145
+00:08:55,200 --> 00:09:00,140
+E guarda um detalhe da volta inteira:
+dois π R ao quadrado é exatamente duas
+
+146
+00:09:00,180 --> 00:09:03,780
+vezes π R ao quadrado,
+duas vezes a área do disco.
+
+147
+00:09:03,820 --> 00:09:07,730
+O trabalho do redemoinho numa volta
+deu o dobro da área de dentro.
+
+148
+00:09:07,800 --> 00:09:11,750
+Coincidência? Daqui a pouco esse
+dobro da área aparece de novo.
+
+149
+00:09:11,900 --> 00:09:14,320
+Segundo exemplo, e esse tem uma surpresa.
+
+150
+00:09:14,360 --> 00:09:19,120
+O campo agora é F de x,
+y igual a x, y: cada seta
+
+151
+00:09:19,160 --> 00:09:23,760
+aponta para longe da origem, como um vento
+soprando para fora a partir de um ponto.
+
+152
+00:09:23,800 --> 00:09:27,360
+E a conta anda pela parábola
+y igual a x ao quadrado,
+
+153
+00:09:27,400 --> 00:09:31,420
+de menos um até um: γ de t
+igual a t, t ao quadrado.
+
+154
+00:09:31,460 --> 00:09:36,060
+Receita de sempre. Passo um:
+no campo, o x vira t e o y vira t ao
+
+155
+00:09:36,100 --> 00:09:41,020
+quadrado. Passo dois: a derivada de
+t é um, a de t ao quadrado é dois t.
+
+156
+00:09:41,060 --> 00:09:45,320
+Passo três: multiplica e soma,
+e sai t mais dois t ao cubo.
+
+157
+00:09:45,360 --> 00:09:47,580
+Agora integra de menos um até um.
+
+158
+00:09:47,620 --> 00:09:52,000
+A primitiva é t ao quadrado sobre
+dois, mais t à quarta sobre dois.
+
+159
+00:09:52,040 --> 00:09:55,600
+Aplica os limites: no um,
+meio mais meio; no menos um,
+
+160
+00:09:55,640 --> 00:09:58,820
+os expoentes são pares,
+então dá o mesmo meio mais meio.
+
+161
+00:09:58,860 --> 00:10:02,720
+Um menos um: zero. A força passou
+o caminho inteiro empurrando,
+
+162
+00:10:02,760 --> 00:10:05,330
+e o trabalho total foi zero. Como assim?
+
+163
+00:10:05,380 --> 00:10:09,180
+Quebra o caminho no meio. Na primeira
+metade, de menos um até zero,
+
+164
+00:10:09,220 --> 00:10:13,520
+a conta está descendo para a origem,
+enquanto a força empurra para longe dela:
+
+165
+00:10:13,560 --> 00:10:16,880
+a força atrapalha, e o trabalho
+dessa metade é menos um.
+
+166
+00:10:16,920 --> 00:10:20,320
+Na segunda metade, de zero
+até um, a conta se afasta,
+
+167
+00:10:20,360 --> 00:10:22,800
+a força ajuda, e o trabalho é mais um.
+
+168
+00:10:22,840 --> 00:10:25,740
+Um cancela o outro. E tem
+uma coisa mais funda aqui.
+
+169
+00:10:25,780 --> 00:10:30,200
+Olha a primitiva: t ao quadrado sobre
+dois, mais t à quarta sobre dois.
+
+170
+00:10:30,240 --> 00:10:33,580
+Isso é metade de x ao
+quadrado mais y ao quadrado,
+
+171
+00:10:33,620 --> 00:10:38,000
+calculado no ponto da curva,
+porque x é t e y é t ao quadrado.
+
+172
+00:10:38,040 --> 00:10:42,680
+Ou seja: para esse campo, o trabalho só
+depende de quão longe da origem a conta
+
+173
+00:10:42,720 --> 00:10:47,040
+começa e termina. E as duas pontas
+da parábola estão na mesma distância,
+
+174
+00:10:47,080 --> 00:10:50,390
+raiz de dois. Não importa o
+caminho no meio: deu zero.
+
+175
+00:10:50,440 --> 00:10:54,640
+Esse campo é especial, e campos desse
+tipo vão ganhar um capítulo inteiro mais
+
+176
+00:10:54,680 --> 00:10:57,520
+adiante no curso: os campos conservativos.
+
+177
+00:10:57,560 --> 00:11:00,870
+O redemoinho, que dependia
+do caminho, não é desse tipo.
+
+178
+00:11:00,920 --> 00:11:05,360
+Agora a outra notação, a que você vai
+encontrar em todo livro e em toda prova.
+
+179
+00:11:05,400 --> 00:11:08,860
+Escreve o campo pelas
+componentes: F igual a P,
+
+180
+00:11:08,900 --> 00:11:11,730
+Q, onde P e Q são funções de x e y.
+
+181
+00:11:11,960 --> 00:11:15,840
+E a curva também pelas
+componentes: x de t e y de t.
+
+182
+00:11:15,880 --> 00:11:19,840
+O produto escalar dentro da integral,
+abrindo coordenada por coordenada,
+
+183
+00:11:19,880 --> 00:11:24,060
+fica P calculado na curva
+vezes x linha de t, dt,
+
+184
+00:11:24,100 --> 00:11:28,280
+mais Q calculado na curva
+vezes y linha de t, dt.
+
+185
+00:11:28,320 --> 00:11:31,580
+E aqui entra uma coisa que vocês
+já conhecem da substituição:
+
+186
+00:11:31,620 --> 00:11:36,020
+quando x é função de t,
+dx é x linha de t, dt.
+
+187
+00:11:36,060 --> 00:11:41,200
+O mesmo para o y. Então o x
+linha de t, dt vira simplesmente
+
+188
+00:11:41,240 --> 00:11:45,500
+dx, e o y linha de t, dt vira dy.
+
+189
+00:11:45,540 --> 00:11:48,420
+E a integral de linha ganha
+a cara mais famosa dela:
+
+190
+00:11:48,460 --> 00:11:51,890
+integral sobre γ de P dx mais Q dy.
+
+191
+00:11:52,180 --> 00:11:55,880
+No espaço, é só ganhar uma
+componente: com F igual a P,
+
+192
+00:11:55,920 --> 00:12:00,220
+Q, R, fica P dx mais Q dy mais R dz.
+
+193
+00:12:00,260 --> 00:12:04,190
+Cuidado: isso não é uma integral
+em x somada com uma integral em y.
+
+194
+00:12:04,420 --> 00:12:07,840
+O dx e o dy só ganham
+sentido em cima da curva:
+
+195
+00:12:07,880 --> 00:12:12,820
+você sempre volta para o t,
+trocando x, y, dx e dy pelo que
+
+196
+00:12:12,860 --> 00:12:16,320
+a curva diz. Por exemplo,
+o redemoinho, nessa notação,
+
+197
+00:12:16,360 --> 00:12:20,270
+é a integral sobre γ de
+menos y dx mais x dy.
+
+198
+00:12:20,560 --> 00:12:23,720
+Vamos testar a notação nova
+com o redemoinho numa elipse:
+
+199
+00:12:23,760 --> 00:12:27,320
+x igual a dois cosseno de
+t, y igual a seno de t,
+
+200
+00:12:27,360 --> 00:12:30,440
+uma volta no sentido anti-horário.
+Uma elipse achatada,
+
+201
+00:12:30,480 --> 00:12:33,420
+com semieixo dois na
+horizontal e um na vertical.
+
+202
+00:12:33,460 --> 00:12:36,260
+Nessa notação, a receita
+é trocar tudo pelo t.
+
+203
+00:12:36,300 --> 00:12:40,300
+O dx é a derivada de dois
+cosseno, menos dois seno de t,
+
+204
+00:12:40,340 --> 00:12:43,480
+dt, e o dy é cosseno de t, dt.
+
+205
+00:12:43,520 --> 00:12:48,560
+Agora monta cada pedaço. Menos y
+dx: menos seno vezes menos dois
+
+206
+00:12:48,600 --> 00:12:52,040
+seno, os sinais se cancelam
+e fica dois seno ao quadrado.
+
+207
+00:12:52,080 --> 00:12:56,240
+x dy: dois cosseno vezes cosseno,
+dois cosseno ao quadrado.
+
+208
+00:12:56,280 --> 00:13:00,740
+Somando, coloca o dois em evidência,
+e lá vem de novo o seno ao quadrado mais
+
+209
+00:13:00,780 --> 00:13:04,060
+cosseno ao quadrado igual
+a um: o integrando é dois.
+
+210
+00:13:04,100 --> 00:13:06,430
+Integra de zero a dois π: quatro π.
+
+211
+00:13:06,480 --> 00:13:10,940
+Agora a área dessa elipse.
+A fórmula é π vezes os dois semieixos:
+
+212
+00:13:10,980 --> 00:13:13,340
+π vezes dois vezes um, dois π.
+
+213
+00:13:13,380 --> 00:13:16,840
+E o trabalho deu quatro π:
+o dobro da área, de novo!
+
+214
+00:13:16,880 --> 00:13:19,920
+No círculo, o dobro da
+área do disco; na elipse,
+
+215
+00:13:19,960 --> 00:13:24,731
+o dobro da área da elipse. Essa
+integral, menos y dx mais x dy
+
+216
+00:13:24,860 --> 00:13:28,960
+numa volta fechada, sem a curva se
+cruzar e no sentido anti-horário,
+
+217
+00:13:29,000 --> 00:13:32,140
+mede área. O porquê é
+assunto do teorema de Green,
+
+218
+00:13:32,180 --> 00:13:36,180
+mais adiante no curso. Por enquanto,
+guarda: a integral de linha numa curva
+
+219
+00:13:36,220 --> 00:13:39,540
+fechada sabe alguma coisa
+sobre o que está dentro dela.
+
+220
+00:13:39,580 --> 00:13:43,360
+Agora sim, a hélice da lata.
+A curva é cosseno de t,
+
+221
+00:13:43,400 --> 00:13:47,580
+seno de t, c t, com t de zero
+a dois π: uma volta inteira,
+
+222
+00:13:47,620 --> 00:13:50,120
+subindo c vezes dois π. E a força?
+
+223
+00:13:50,160 --> 00:13:54,120
+Vamos escolher uma com significado.
+As duas primeiras componentes são o nosso
+
+224
+00:13:54,160 --> 00:13:58,500
+redemoinho, menos y, x, que
+empurra a conta em volta da lata.
+
+225
+00:13:58,540 --> 00:14:03,180
+A terceira é menos um: um peso de uma
+unidade puxando a conta para baixo,
+
+226
+00:14:03,220 --> 00:14:07,520
+igual em todo lugar. Então
+F é menos y, x, menos um:
+
+227
+00:14:07,560 --> 00:14:11,810
+o redemoinho empurrando a conta pela
+volta, e o peso segurando ela embaixo.
+
+228
+00:14:11,920 --> 00:14:15,980
+Antes de fazer conta, palpite.
+O redemoinho ajuda o tempo todo,
+
+229
+00:14:16,020 --> 00:14:18,340
+porque a conta gira no mesmo sentido dele.
+
+230
+00:14:18,380 --> 00:14:21,820
+O peso atrapalha o tempo todo,
+porque a conta está subindo.
+
+231
+00:14:21,860 --> 00:14:26,280
+Quem ganha? Na notação nova,
+o trabalho é a integral sobre γ de menos y
+
+232
+00:14:26,320 --> 00:14:29,360
+dx mais x dy menos dz.
+
+233
+00:14:29,400 --> 00:14:33,640
+E a receita é trocar tudo
+pelo t: dx é menos seno de t,
+
+234
+00:14:33,680 --> 00:14:38,640
+dt; dy é cosseno de t,
+dt; e dz é c, dt, porque
+
+235
+00:14:38,680 --> 00:14:42,370
+o z sobe em ritmo constante.
+Monta pedaço por pedaço.
+
+236
+00:14:42,460 --> 00:14:47,100
+Menos y dx: menos seno vezes menos
+seno, os dois sinais de menos se
+
+237
+00:14:47,140 --> 00:14:49,690
+cancelam, e fica seno ao quadrado dt.
+
+238
+00:14:49,760 --> 00:14:53,760
+x dy: cosseno vezes cosseno,
+cosseno ao quadrado dt.
+
+239
+00:14:53,800 --> 00:14:56,480
+E o menos dz é só menos c dt.
+
+240
+00:14:56,520 --> 00:15:00,000
+Junta tudo debaixo da mesma
+integral, de zero a dois π.
+
+241
+00:15:00,040 --> 00:15:04,780
+E, pela terceira vez no vídeo, seno ao
+quadrado mais cosseno ao quadrado vira um.
+
+242
+00:15:04,820 --> 00:15:09,300
+Sobra um menos c, que é constante.
+Integral de constante é a constante vezes
+
+243
+00:15:09,340 --> 00:15:12,780
+o comprimento do intervalo:
+um menos c, vezes dois π.
+
+244
+00:15:12,820 --> 00:15:15,680
+Distribuindo: dois π menos dois π c.
+
+245
+00:15:15,720 --> 00:15:18,380
+Repara que a conta inteira
+coube em poucas linhas,
+
+246
+00:15:18,420 --> 00:15:22,620
+e o motivo é bonito: o redemoinho e a
+velocidade horizontal da hélice andam
+
+247
+00:15:22,660 --> 00:15:27,360
+sempre juntos, exatamente como no círculo,
+então essa parte nem percebe onde a conta
+
+248
+00:15:27,400 --> 00:15:31,500
+está. Agora lê a resposta, porque ela
+conta uma história em duas partes.
+
+249
+00:15:31,540 --> 00:15:34,720
+O dois π veio do redemoinho,
+e já é velho conhecido:
+
+250
+00:15:34,760 --> 00:15:39,320
+é duas vezes π vezes um ao quadrado,
+o dobro da área da tampa da lata.
+
+251
+00:15:39,360 --> 00:15:43,620
+O mesmo dobro da área do círculo,
+só que agora a conta sobe enquanto gira,
+
+252
+00:15:43,660 --> 00:15:47,400
+e o redemoinho nem percebe a subida,
+porque ele não tem componente em z.
+
+253
+00:15:47,440 --> 00:15:49,780
+E o menos dois π c veio do peso.
+
+254
+00:15:49,820 --> 00:15:52,880
+Dois π c é a altura que
+a conta sobe numa volta:
+
+255
+00:15:52,920 --> 00:15:55,100
+o z final menos o z inicial.
+
+256
+00:15:55,140 --> 00:15:58,320
+Então essa parte é o peso,
+um, vezes a subida,
+
+257
+00:15:58,360 --> 00:16:01,280
+com sinal de menos. O peso
+não liga para o caminho,
+
+258
+00:16:01,320 --> 00:16:04,580
+nem para a volta que a conta
+deu: só para quanto ela subiu.
+
+259
+00:16:04,620 --> 00:16:08,780
+Na nossa lata, a hélice dá duas voltas
+da tampa de baixo até a de cima,
+
+260
+00:16:08,820 --> 00:16:12,680
+então cada volta sobe meio,
+e c é um sobre quatro π.
+
+261
+00:16:12,720 --> 00:16:17,261
+O trabalho numa volta dá dois π menos
+meio, mais ou menos cinco vírgula setenta
+
+262
+00:16:17,301 --> 00:16:19,950
+e oito. Positivo: o redemoinho ganha.
+
+263
+00:16:20,000 --> 00:16:23,350
+E dá para empatar? O trabalho
+zera quando c vale um:
+
+264
+00:16:23,420 --> 00:16:28,000
+uma mola tão esticada que sobe dois
+π, uns seis vírgula vinte e oito,
+
+265
+00:16:28,040 --> 00:16:32,930
+a cada volta. Essa já é outra hélice,
+muito mais alta do que a nossa lata.
+
+266
+00:16:33,020 --> 00:16:36,920
+Resumindo a aula. A integral de
+linha de um campo vetorial soma,
+
+267
+00:16:36,960 --> 00:16:40,320
+ao longo do caminho, a parte da
+força que acompanha o movimento.
+
+268
+00:16:40,360 --> 00:16:43,620
+Na definição, a gente leva
+o campo para cima da curva,
+
+269
+00:16:43,660 --> 00:16:47,080
+faz o produto escalar com a
+velocidade e integra no tempo,
+
+270
+00:16:47,120 --> 00:16:51,640
+de a até b. Na outra notação,
+a mesma coisa vira integral de P
+
+271
+00:16:51,680 --> 00:16:56,320
+dx mais Q dy mais R dz,
+sempre voltando para o parâmetro.
+
+272
+00:16:56,360 --> 00:17:00,020
+O sinal do produto escalar conta
+quem ajuda e quem atrapalha.
+
+273
+00:17:00,060 --> 00:17:04,140
+E duas lições dos exemplos: em geral,
+a integral depende do caminho,
+
+274
+00:17:04,180 --> 00:17:07,779
+como no redemoinho; mas tem campos
+em que só importam as pontas,
+
+275
+00:17:07,819 --> 00:17:11,260
+como o vento que soprava para
+fora. E, numa volta fechada,
+
+276
+00:17:11,300 --> 00:17:14,640
+ela pode até medir área. E fica
+uma pergunta para a próxima.
+
+277
+00:17:14,680 --> 00:17:18,299
+A gente calculou o redemoinho no
+círculo com t de zero a dois π.
+
+278
+00:17:18,339 --> 00:17:21,920
+Mas a mesma volta pode ser
+percorrida duas vezes mais rápido,
+
+279
+00:17:21,960 --> 00:17:24,579
+com u de zero a π e o ângulo dois u.
+
+280
+00:17:24,619 --> 00:17:27,680
+A velocidade dobra, e o
+intervalo cai pela metade.
+
+281
+00:17:27,720 --> 00:17:30,580
+O trabalho muda? E se a conta
+der a volta ao contrário,
+
+282
+00:17:30,620 --> 00:17:33,120
+no sentido horário?
+E se o caminho tiver quina,
+
+283
+00:17:33,160 --> 00:17:36,260
+como um quadrado, onde a
+derivada nem existe no canto?
+
+284
+00:17:36,300 --> 00:17:39,960
+No próximo vídeo: mudança de
+parâmetro e caminhos com quina.
+
+285
+00:17:40,000 --> 00:17:44,560
+E, se você quiser adiantar, faz a conta
+da volta duas vezes mais rápida e deixa o
+
+286
+00:17:44,600 --> 00:17:47,960
+resultado nos comentários. Curte
+o vídeo, se inscreve no canal,
+
+287
+00:17:48,000 --> 00:17:50,000
+e até o próximo!

@@ -1,0 +1,185 @@
+yt_0043 · sincronização (rodada final1080, 30 fps): atraso = tela − voz (s); meta ≤ +0,20 s
+
+PH: [deriva] PH +0.00s além do fim da última âncora
+PA: [deriva] PA +0.00s além do fim da última âncora
+PB1: [deriva] PB1 +0.00s além do fim da última âncora
+PB2: [deriva] PB2 +0.00s além do fim da última âncora
+PB3: [deriva] PB3 +0.00s além do fim da última âncora
+PB4: [deriva] PB4 +0.00s além do fim da última âncora
+PS: [deriva] PS +0.00s além do fim da última âncora
+
+âncoras (início na tela × 1ª palavra na voz):
+  H1    tela     0.00 s · voz     0.14 s · -0.14 s OK
+  H2    tela    57.43 s · voz    57.66 s · -0.23 s OK
+  A1    tela   104.53 s · voz   104.68 s · -0.15 s OK
+  B1-1  tela   121.86 s · voz   122.02 s · -0.16 s OK
+  B1-2  tela   206.36 s · voz   206.52 s · -0.16 s OK
+  B1-3  tela   276.39 s · voz   276.54 s · -0.15 s OK
+  B2-1  tela   353.86 s · voz   354.02 s · -0.16 s OK
+  B2-2  tela   410.79 s · voz   411.00 s · -0.21 s OK
+  B3-1  tela   476.26 s · voz   476.40 s · -0.14 s OK
+  B3-2  tela   543.03 s · voz   543.24 s · -0.21 s OK
+  B3-3  tela   591.26 s · voz   591.48 s · -0.22 s OK
+  B3-4  tela   653.09 s · voz   653.32 s · -0.23 s OK
+  B3-5  tela   745.49 s · voz   745.64 s · -0.15 s OK
+  B4-1  tela   802.23 s · voz   802.38 s · -0.15 s OK
+  B4-2  tela   865.00 s · voz   865.30 s · -0.30 s OK
+  B4-3  tela   950.26 s · voz   950.48 s · -0.22 s OK
+  B4-4  tela  1009.33 s · voz  1009.54 s · -0.21 s OK
+  B4-5  tela  1068.46 s · voz  1068.68 s · -0.22 s OK
+  B4-6  tela  1154.06 s · voz  1154.20 s · -0.14 s OK
+  S1    tela  1199.53 s · voz  1199.70 s · -0.17 s OK
+  S2    tela  1230.13 s · voz  1230.34 s · -0.21 s OK
+
+gatilhos (149):
+  H1    -0.14 s  «Lembra da lata pesada»  (tela 0.00 · voz 0.14) OK
+  H1    -0.14 s  «mais densa conforme se afasta»  (tela 5.50 · voz 5.64) OK
+  H1    -0.13 s  «A densidade é a distância até a origem»  (tela 11.77 · voz 11.90) OK
+  H1    -0.15 s  «uma caixa em cilíndricas»  (tela 17.13 · voz 17.28) OK
+  H1    -0.15 s  «onde ela equilibra»  (tela 24.47 · voz 24.62) OK
+  H1    -0.14 s  «quanto custa colocar ela para girar»  (tela 32.30 · voz 32.44) OK
+  H1    -0.14 s  «Se a lata fosse comum»  (tela 41.10 · voz 41.24) OK
+  H1    -0.15 s  «E a lata pesada»  (tela 50.37 · voz 50.52) OK
+  H2    -0.22 s  «pega um pedacinho da lata»  (tela 59.90 · voz 60.12) OK
+  H2    -0.22 s  «A massa de um pedacinho é a densidade vezes o volume»  (tela 63.06 · voz 63.28) OK
+  H2    -0.23 s  «Para o equilíbrio»  (tela 74.73 · voz 74.96) OK
+  H2    -0.24 s  «Para o giro»  (tela 82.56 · voz 82.80) OK
+  H2    -0.22 s  «E a integral tripla soma»  (tela 90.20 · voz 90.42) OK
+  B1-1  -0.17 s  «três bolinhas»  (tela 123.33 · voz 123.50) OK
+  B1-1  -0.15 s  «É uma média das posições»  (tela 128.73 · voz 128.88) OK
+  B1-1  -0.15 s  «a mesma média, três vezes»  (tela 138.39 · voz 138.54) OK
+  B1-1  -0.16 s  «o ponto de equilíbrio fica mais perto da mais pesada»  (tela 144.06 · voz 144.22) OK
+  B1-1  -0.15 s  «Num corpo de verdade»  (tela 155.09 · voz 155.24) OK
+  B1-1  -0.17 s  «a massa do pedacinho é quase rô vezes delta V»  (tela 166.53 · voz 166.70) OK
+  B1-1  -0.17 s  «vira integral tripla»  (tela 174.23 · voz 174.40) OK
+  B1-1  -0.15 s  «a massa total»  (tela 179.19 · voz 179.34) OK
+  B1-1  -0.15 s  «Dividindo pela massa»  (tela 181.79 · voz 181.94) OK
+  B1-1  -0.15 s  «têm nome»  (tela 189.69 · voz 189.84) OK
+  B1-2  -0.16 s  «um plano deitado na altura z barra»  (tela 209.06 · voz 209.22) OK
+  B1-2  -0.15 s  «a distância de cada pedaço até esse plano»  (tela 212.79 · voz 212.94) OK
+  B1-2  -0.15 s  «Soma tudo»  (tela 221.59 · voz 221.74) OK
+  B1-2  -0.17 s  «separa em duas integrais»  (tela 223.39 · voz 223.56) OK
+  B1-2  -0.17 s  «a primeira é o momento»  (tela 232.03 · voz 232.20) OK
+  B1-2  -0.17 s  «é exatamente M vezes z barra»  (tela 239.73 · voz 239.90) OK
+  B1-2  -0.15 s  «equilibra o que está abaixo»  (tela 248.33 · voz 248.48) OK
+  B1-3  -0.15 s  «nem toda conta precisa ser feita»  (tela 278.69 · voz 278.84) OK
+  B1-3  -0.14 s  «a densidade não depende do ângulo»  (tela 283.82 · voz 283.96) OK
+  B1-3  -0.16 s  «x é s cosseno de téta»  (tela 295.82 · voz 295.98) OK
+  B1-3  -0.16 s  «a integral do cosseno numa volta inteira»  (tela 298.72 · voz 298.88) OK
+  B1-3  -0.16 s  «x barra é zero»  (tela 306.16 · voz 306.32) OK
+  B1-3  -0.16 s  «o centro de massa está no eixo»  (tela 313.26 · voz 313.42) OK
+  B1-3  -0.14 s  «E se a densidade fosse um mais x»  (tela 320.12 · voz 320.26) OK
+  B1-3  -0.14 s  «A massa continua pi»  (tela 326.96 · voz 327.10) OK
+  B1-3  -0.15 s  «o x ao quadrado»  (tela 332.59 · voz 332.74) OK
+  B1-3  -0.16 s  «um quarto para a direita»  (tela 348.36 · voz 348.52) OK
+  B2-1  -0.15 s  «uma taça»  (tela 354.83 · voz 354.98) OK
+  B2-1  -0.15 s  «x ao quadrado mais y ao quadrado vira s ao quadrado»  (tela 367.19 · voz 367.34) OK
+  B2-1  -0.17 s  «ela entra pelo fundo curvo»  (tela 376.19 · voz 376.36) OK
+  B2-1  -0.15 s  «A sombra no chão»  (tela 381.89 · voz 382.04) OK
+  B2-1  -0.17 s  «a simetria já matou»  (tela 389.13 · voz 389.30) OK
+  B2-1  -0.16 s  «Sobra o z barra»  (tela 392.46 · voz 392.62) OK
+  B2-1  -0.15 s  «o k sai das duas»  (tela 397.89 · voz 398.04) OK
+  B2-1  -0.15 s  «o meio da altura»  (tela 407.53 · voz 407.68) OK
+  B2-2  -0.21 s  «Primeiro o volume»  (tela 410.79 · voz 411.00) OK
+  B2-2  -0.22 s  «A de dentro, em z»  (tela 415.12 · voz 415.34) OK
+  B2-2  -0.22 s  «Agora em s»  (tela 427.92 · voz 428.14) OK
+  B2-2  -0.22 s  «a volta inteira em téta»  (tela 435.92 · voz 436.14) OK
+  B2-2  -0.22 s  «Agora o momento»  (tela 440.02 · voz 440.24) OK
+  B2-2  -0.22 s  «o s fica parado»  (tela 443.92 · voz 444.14) OK
+  B2-2  -0.20 s  «potência de novo»  (tela 452.72 · voz 452.92) OK
+  B2-2  -0.21 s  «multiplica por dois pi»  (tela 457.09 · voz 457.30) OK
+  B2-2  -0.22 s  «dois terços»  (tela 462.92 · voz 463.14) OK
+  B2-2  -0.22 s  «acima do meio»  (tela 464.32 · voz 464.54) OK
+  B3-1  -0.14 s  «girando em volta do eixo»  (tela 480.66 · voz 480.80) OK
+  B3-1  -0.14 s  «a velocidade de cada pedaço»  (tela 486.46 · voz 486.60) OK
+  B3-1  -0.13 s  «A energia de movimento»  (tela 493.69 · voz 493.82) OK
+  B3-1  -0.15 s  «o que fica do lado do ômega ao quadrado»  (tela 503.79 · voz 503.94) OK
+  B3-1  -0.13 s  «Com vários pedaços»  (tela 509.59 · voz 509.72) OK
+  B3-1  -0.15 s  «Num corpo contínuo»  (tela 515.69 · voz 515.84) OK
+  B3-1  -0.15 s  «quilograma vezes metro ao quadrado»  (tela 521.29 · voz 521.44) OK
+  B3-1  -0.15 s  «A massa diz quanto custa empurrar»  (tela 523.33 · voz 523.48) OK
+  B3-2  -0.21 s  «a distância até o eixo, não até a origem»  (tela 546.93 · voz 547.14) OK
+  B3-2  -0.20 s  «Para o eixo z»  (tela 549.90 · voz 550.10) OK
+  B3-2  -0.21 s  «Se o eixo for o x»  (tela 558.83 · voz 559.04) OK
+  B3-2  -0.20 s  «e para o eixo y»  (tela 563.30 · voz 563.50) OK
+  B3-2  -0.22 s  «Em cartesianas, o momento em relação ao eixo z»  (tela 566.86 · voz 567.08) OK
+  B3-2  -0.22 s  «o r é a distância até a origem»  (tela 575.66 · voz 575.88) OK
+  B3-2  -0.20 s  «Troca o eixo»  (tela 579.50 · voz 579.70) OK
+  B3-3  -0.21 s  «o cilindro uniforme»  (tela 592.69 · voz 592.90) OK
+  B3-3  -0.22 s  «o s ao quadrado da distância encontra o s do fator»  (tela 599.86 · voz 600.08) OK
+  B3-3  -0.23 s  «as três integrais se separam»  (tela 610.23 · voz 610.46) OK
+  B3-3  -0.21 s  «Multiplica tudo»  (tela 623.09 · voz 623.30) OK
+  B3-3  -0.23 s  «A massa do cilindro»  (tela 626.79 · voz 627.02) OK
+  B3-3  -0.21 s  «separa um R ao quadrado»  (tela 631.93 · voz 632.14) OK
+  B3-3  -0.22 s  «Se toda a massa estivesse na parede»  (tela 639.66 · voz 639.88) OK
+  B3-4  -0.24 s  «a bola uniforme»  (tela 654.36 · voz 654.60) OK
+  B3-4  -0.23 s  «a distância até o eixo é a sombra»  (tela 661.89 · voz 662.12) OK
+  B3-4  -0.22 s  «o fator das esféricas»  (tela 673.36 · voz 673.58) OK
+  B3-4  -0.22 s  «monta a integral»  (tela 676.62 · voz 676.84) OK
+  B3-4  -0.23 s  «De novo tudo se separa»  (tela 680.69 · voz 680.92) OK
+  B3-4  -0.22 s  «Seno ao cubo: guarda um seno»  (tela 689.16 · voz 689.38) OK
+  B3-4  -0.24 s  «Chama de u o cosseno»  (tela 694.12 · voz 694.36) OK
+  B3-4  -0.24 s  «os limites invertem»  (tela 707.76 · voz 708.00) OK
+  B3-4  -0.22 s  «O menos do d u»  (tela 709.06 · voz 709.28) OK
+  B3-4  -0.24 s  «Aplica os limites»  (tela 715.52 · voz 715.76) OK
+  B3-4  -0.22 s  «Junta tudo»  (tela 720.32 · voz 720.54) OK
+  B3-4  -0.24 s  «o volume da bola»  (tela 723.92 · voz 724.16) OK
+  B3-4  -0.24 s  «Dois quintos de M R ao quadrado»  (tela 733.16 · voz 733.40) OK
+  B3-5  -0.15 s  «Coloca os três lado a lado»  (tela 745.49 · voz 745.64) OK
+  B3-5  -0.15 s  «quanto da massa mora longe do eixo»  (tela 758.09 · voz 758.24) OK
+  B3-5  -0.14 s  «o raio de giração»  (tela 775.32 · voz 775.46) OK
+  B3-5  -0.16 s  «num anel fininho»  (tela 780.16 · voz 780.32) OK
+  B4-1  -0.02 s  «Agora a lata pesada»  (tela 802.36 · voz 802.38) OK
+  B4-1  -0.14 s  «a simetria resolve dois terços»  (tela 814.20 · voz 814.34) OK
+  B4-1  -0.16 s  «Monta o momento»  (tela 819.36 · voz 819.52) OK
+  B4-1  -0.14 s  «chama de u»  (tela 832.30 · voz 832.44) OK
+  B4-1  -0.16 s  «A derivada em s»  (tela 835.56 · voz 835.72) OK
+  B4-1  -0.16 s  «integral de potência»  (tela 848.66 · voz 848.82) OK
+  B4-1  -0.16 s  «o de cima menos o de baixo»  (tela 858.36 · voz 858.52) OK
+  B4-2  -0.30 s  «Agora a de z»  (tela 865.00 · voz 865.30) OK
+  B4-2  -0.31 s  «esse z que está multiplicando»  (tela 882.33 · voz 882.64) OK
+  B4-2  -0.31 s  «sobe para cinco meios»  (tela 896.87 · voz 897.18) OK
+  B4-2  -0.29 s  «O pedaço do z ao cubo»  (tela 906.97 · voz 907.26) OK
+  B4-2  -0.30 s  «junta os dois»  (tela 913.80 · voz 914.10) OK
+  B4-2  -0.29 s  «a volta inteira»  (tela 918.67 · voz 918.96) OK
+  B4-2  -0.32 s  «Agora divide pela massa»  (tela 923.60 · voz 923.92) OK
+  B4-2  -0.30 s  «O pi some»  (tela 925.20 · voz 925.50) OK
+  B4-2  -0.31 s  «Na lata comum»  (tela 932.67 · voz 932.98) OK
+  B4-2  -0.29 s  «o computador»  (tela 944.67 · voz 944.96) OK
+  B4-3  -0.21 s  «quanto custa girar»  (tela 951.79 · voz 952.00) OK
+  B4-3  -0.21 s  «dois s a mais»  (tela 962.63 · voz 962.84) OK
+  B4-3  -0.22 s  «s ao quadrado é u menos z ao quadrado»  (tela 984.76 · voz 984.98) OK
+  B4-3  -0.23 s  «distribui a raiz»  (tela 989.19 · voz 989.42) OK
+  B4-3  -0.22 s  «Duas potências»  (tela 996.06 · voz 996.28) OK
+  B4-3  -0.22 s  «Aplica os limites»  (tela 999.46 · voz 999.68) OK
+  B4-4  -0.20 s  «os dois pedaços sem raiz»  (tela 1011.16 · voz 1011.36) OK
+  B4-4  -0.22 s  «Sobram os dois com raiz»  (tela 1025.26 · voz 1025.48) OK
+  B4-4  -0.22 s  «o triângulo»  (tela 1027.40 · voz 1027.62) OK
+  B4-4  -0.21 s  «z igual a tangente de t»  (tela 1033.33 · voz 1033.54) OK
+  B4-4  -0.22 s  «o primeiro vira secante à sétima»  (tela 1042.76 · voz 1042.98) OK
+  B4-4  -0.22 s  «tangente ao quadrado é secante ao quadrado menos um»  (tela 1054.20 · voz 1054.42) OK
+  B4-4  -0.20 s  «Junta os dois»  (tela 1060.86 · voz 1061.06) OK
+  B4-5  -0.22 s  «A secante à quinta já está pronta»  (tela 1068.46 · voz 1068.68) OK
+  B4-5  -0.23 s  «a fórmula de recorrência»  (tela 1077.33 · voz 1077.56) OK
+  B4-5  -0.21 s  «Com n igual a sete»  (tela 1083.83 · voz 1084.04) OK
+  B4-5  -0.21 s  «os valores vêm do triângulo»  (tela 1091.93 · voz 1092.14) OK
+  B4-5  -0.21 s  «Raiz de dois à quinta»  (tela 1100.63 · voz 1100.84) OK
+  B4-5  -0.21 s  «Agora substitui»  (tela 1107.23 · voz 1107.44) OK
+  B4-5  -0.21 s  «distribui o dois nonos»  (tela 1116.23 · voz 1116.44) OK
+  B4-5  -0.23 s  «o MMC de trinta e seis e quarenta e cinco»  (tela 1123.43 · voz 1123.66) OK
+  B4-5  -0.23 s  «o um quarenta e cinco avos»  (tela 1130.83 · voz 1131.06) OK
+  B4-5  -0.23 s  «a volta inteira em téta»  (tela 1134.03 · voz 1134.26) OK
+  B4-5  -0.22 s  «o computador»  (tela 1140.26 · voz 1140.48) OK
+  B4-6  -0.14 s  «Coloca as duas latas lado a lado»  (tela 1154.06 · voz 1154.20) OK
+  B4-6  -0.15 s  «O equilíbrio subiu»  (tela 1156.93 · voz 1157.08) OK
+  B4-6  -0.15 s  «Divide o momento de inércia pela massa»  (tela 1163.43 · voz 1163.58) OK
+  B4-6  -0.15 s  «Em raio de giração»  (tela 1170.99 · voz 1171.14) OK
+  B4-6  -0.14 s  «a massa foi morar longe»  (tela 1182.76 · voz 1182.90) OK
+  S1    -0.18 s  «a taça»  (tela 1217.46 · voz 1217.64) OK
+  S1    -0.16 s  «o cilindro e a bola»  (tela 1219.96 · voz 1220.12) OK
+  S1    -0.18 s  «e a lata pesada»  (tela 1224.16 · voz 1224.34) OK
+  S2    -0.22 s  «girar a lata em volta de uma reta»  (tela 1235.10 · voz 1235.32) OK
+  S2    -0.14 s  «encostada na parede»  (tela 1237.10 · voz 1237.24) OK
+  S2    -0.22 s  «No próximo vídeo»  (tela 1247.16 · voz 1247.38) OK
+
+resumo: 21 âncoras, 149 gatilhos; atraso de -0.32 a -0.02 s; fora da meta (> +0,2 s): 0

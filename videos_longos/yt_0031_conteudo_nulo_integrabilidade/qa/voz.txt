@@ -1,0 +1,29 @@
+yt_0031 · QA da voz (narracao_final.wav)
+modelo eleven_v4 · voz qw7jgPZWOKrl10GsjQ82 · texto narracao_tags.md (narração v2.3) · 5 blocos de API
+duração 1210.08 s (20:10.08); limite da parada: 21:00 → OK
+pico -0.94 dBFS; amostras em clipping (|x| ≥ 0,999): 0 → OK
+silêncios > 1,5 s dentro de parágrafo: 0
+pausas entre parágrafos: 30; 0.22–0.40 s (média 0.29 s); maior pausa entre palavras no texto todo 0.52 s
+tag lida em voz alta (STT): {'curious': 0, 'thoughtful': 0, 'surprised': 0, 'serious': 0, 'excited': 0, 'happy': 0} → OK
+  «épsilon» no STT: 10×
+  «delta» no STT: 11×
+  «alfa» no STT: 5×
+  «eme» no STT: 10×
+  «esse minúsculo de P» no STT: 4×
+  «erre i j» no STT: 1×
+  «Riemann» no STT: 6×
+  «Dirichlet» no STT: 0×
+  «Heine-Cantor» no STT: 1×
+  «cê um» no STT: 1×
+  «Parallax Lab» no STT: 2×
+palavras 3612; 2.98 palavras/s no WAV inteiro; 2.99 palavras/s do início ao fim da fala (referência 3,0 palavras/s)
+fronteira de bloco antes de «e juntas essas tampas formam um»: pausa 0.24 s (264.14–264.38); nível 2 s antes -22.6 dB × 2 s depois -20.2 dB
+  maior salto entre amostras na pausa: 0.0355 (clique > 0,2)
+fronteira de bloco antes de «o livro vai além toda curva»: pausa 0.28 s (534.28–534.56); nível 2 s antes -23.3 dB × 2 s depois -20.3 dB
+  maior salto entre amostras na pausa: 0.0136 (clique > 0,2)
+fronteira de bloco antes de «é uma margem de segurança toda»: pausa 0.28 s (796.82–797.10); nível 2 s antes -23.0 dB × 2 s depois -19.9 dB
+  maior salto entre amostras na pausa: 0.0715 (clique > 0,2)
+fronteira de bloco antes de «as descontinuidades ficam num conjunto de»: pausa 0.26 s (1060.94–1061.20); nível 2 s antes -23.2 dB × 2 s depois -23.1 dB
+  maior salto entre amostras na pausa: 0.1067 (clique > 0,2)
+  (a narração v2.3 não fala «Dirichlet»: o B8-1 descreve a função sem dar o nome; nada a conferir)
+  pronúncia: STT transcreve «épsilon», «delta», «alfa», «M maiúsculo», «esse minúsculo de P», «Riemann», «Heine-Cantor», «C1», «Parallax Lab» como no texto; escuta humana do Kaio em paralelo

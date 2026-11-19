@@ -1,0 +1,2080 @@
+1
+00:00:00,080 --> 00:00:04,820
+Olha esta chapa. Pensa numa meia-lua de
+aço, dessas de suporte de prateleira:
+
+2
+00:00:04,860 --> 00:00:09,320
+é um meio disco de raio dois com um
+meio disco de raio um arrancado do meio.
+
+3
+00:00:09,360 --> 00:00:13,320
+Sobrou uma meia arruela, e ela é
+homogênea, a mesma densidade em todo
+
+4
+00:00:13,360 --> 00:00:16,920
+ponto. Se você tentasse equilibrar
+essa peça na ponta do dedo,
+
+5
+00:00:16,960 --> 00:00:20,230
+onde ficaria o ponto? Pela
+simetria, em cima do eixo y.
+
+6
+00:00:20,520 --> 00:00:24,060
+Mas em que altura? E olha a
+pegadinha: se der menos de um,
+
+7
+00:00:24,100 --> 00:00:27,670
+o ponto de equilíbrio cai no buraco,
+onde não existe aço nenhum.
+
+8
+00:00:27,720 --> 00:00:30,860
+Será que cai? E se a borda
+de fora fosse mais pesada,
+
+9
+00:00:30,900 --> 00:00:34,700
+ele sobe de volta para a chapa? Hoje
+a gente responde as duas perguntas.
+
+10
+00:00:34,740 --> 00:00:39,240
+No fim, uma bola e uma bola oca vão
+conferir o número sem fazer integral
+
+11
+00:00:39,280 --> 00:00:44,100
+nenhuma. Este vídeo junta o módulo
+inteiro, e tudo cabe numa receita de cinco
+
+12
+00:00:44,140 --> 00:00:47,360
+passos e uma divisão.
+Na maioria dos nossos exercícios,
+
+13
+00:00:47,400 --> 00:00:51,560
+a troca de variáveis segue esta
+receita: escolher as variáveis novas;
+
+14
+00:00:51,600 --> 00:00:55,400
+escrever x e y em função
+delas; calcular o jacobiano;
+
+15
+00:00:55,440 --> 00:01:00,300
+desenhar a região nova, borda por borda;
+e calcular e conferir por outro caminho.
+
+16
+00:01:00,340 --> 00:01:04,760
+E, depois de encontrar massa e momento,
+a coordenada do centro de massa vem de uma
+
+17
+00:01:04,800 --> 00:01:08,700
+divisão só: momento sobre massa.
+A ordem de hoje é a do módulo:
+
+18
+00:01:08,740 --> 00:01:13,140
+primeiro o jacobiano, depois as polares,
+depois massa e centro de massa,
+
+19
+00:01:13,180 --> 00:01:15,560
+e a meia arruela no final. Fala, pessoal!
+
+20
+00:01:15,600 --> 00:01:19,020
+Bem-vindos ao Parallax Lab!
+Hoje é dia de exercício:
+
+21
+00:01:19,060 --> 00:01:22,920
+seis problemas que começam parecidos
+e vão ficando mais espertos.
+
+22
+00:01:22,960 --> 00:01:26,260
+Duas parábolas, duas hipérboles,
+um oitavo de bola,
+
+23
+00:01:26,300 --> 00:01:30,120
+uma elipse, a meia arruela e,
+no fim, o teorema de Pappus.
+
+24
+00:01:30,160 --> 00:01:34,160
+Pega papel e lápis: em cada um tem
+a hora de pausar o vídeo e tentar.
+
+25
+00:01:34,200 --> 00:01:38,780
+Primeiro problema. A região A fica
+entre a parábola y igual a um mais x ao
+
+26
+00:01:38,820 --> 00:01:42,460
+quadrado e a parábola y igual
+a dois mais x ao quadrado,
+
+27
+00:01:42,500 --> 00:01:45,780
+acima da curva y igual
+a x mais x ao quadrado,
+
+28
+00:01:45,820 --> 00:01:48,920
+com x maior ou igual a zero.
+Calcule a integral dupla,
+
+29
+00:01:48,960 --> 00:01:54,060
+em A, de e^ y menos x ao quadrado,
+sobre y menos x ao quadrado.
+
+30
+00:01:54,100 --> 00:01:57,280
+Se quiser, pausa o vídeo e
+tenta. Primeiro o instinto:
+
+31
+00:01:57,320 --> 00:02:02,240
+fatiar em pé. A integral de dentro pede
+a primitiva de e^ alguma coisa sobre
+
+32
+00:02:02,280 --> 00:02:05,680
+essa mesma coisa, e isso não
+existe com as funções do Cálculo I.
+
+33
+00:02:05,720 --> 00:02:08,379
+Trava. Com a fatia deitada, trava também.
+
+34
+00:02:08,419 --> 00:02:12,920
+Agora repara numa coisa: o integrando
+só enxerga y menos x ao quadrado,
+
+35
+00:02:12,960 --> 00:02:17,840
+sempre junto. E as bordas também: duas
+delas são y menos x ao quadrado igual a
+
+36
+00:02:17,880 --> 00:02:21,060
+um e igual a dois. A conta
+está sugerindo a troca.
+
+37
+00:02:21,100 --> 00:02:24,320
+Vamos ao passo um:
+escolher. A ideia é simples:
+
+38
+00:02:24,360 --> 00:02:27,480
+o integrando só enxerga
+y menos x ao quadrado,
+
+39
+00:02:27,520 --> 00:02:30,740
+então a gente batiza esse
+pedaço. Chama x de u,
+
+40
+00:02:30,780 --> 00:02:33,840
+e o y menos x ao quadrado,
+que o integrando adorou,
+
+41
+00:02:33,880 --> 00:02:37,040
+de v. Passo dois: agora
+a gente precisa voltar,
+
+42
+00:02:37,080 --> 00:02:40,260
+escrever x e y em função de u e v.
+
+43
+00:02:40,300 --> 00:02:44,750
+O x é fácil, x é u. Já o y a
+gente isola na equação do v:
+
+44
+00:02:44,860 --> 00:02:47,180
+y é v mais u ao quadrado.
+
+45
+00:02:47,220 --> 00:02:52,020
+Repara que o x ao quadrado que estava do
+outro lado atravessou a igualdade e virou
+
+46
+00:02:52,060 --> 00:02:54,620
+u ao quadrado, é a
+mesma álgebra de sempre.
+
+47
+00:02:54,660 --> 00:02:59,300
+Passo três: o jacobiano. Lembra o
+que ele é: o fator de zoom da troca,
+
+48
+00:02:59,340 --> 00:03:01,680
+quanto a área é esticada ou encolhida.
+
+49
+00:03:01,720 --> 00:03:05,880
+Para calcular, a gente monta a matriz
+das derivadas e tira o determinante.
+
+50
+00:03:05,920 --> 00:03:08,740
+A primeira linha na tela
+é a das derivadas de x,
+
+51
+00:03:08,780 --> 00:03:13,140
+um e zero. A segunda é a das
+derivadas de y, dois u e um.
+
+52
+00:03:13,180 --> 00:03:16,400
+Agora o determinante,
+diagonal principal menos a outra:
+
+53
+00:03:16,440 --> 00:03:19,100
+o zero cancela aquele dois u, e sobra um.
+
+54
+00:03:19,140 --> 00:03:22,820
+O jacobiano é um. E faz
+todo sentido: com x parado,
+
+55
+00:03:22,860 --> 00:03:27,420
+o y só perde x ao quadrado. É como um
+baralho em que cada carta escorrega um
+
+56
+00:03:27,460 --> 00:03:30,450
+pouco para baixo: a forma
+muda, mas a área não.
+
+57
+00:03:30,500 --> 00:03:33,760
+Passo quatro: a região
+nova, borda por borda.
+
+58
+00:03:33,800 --> 00:03:37,240
+Pega a primeira parábola,
+y igual a um mais x ao quadrado:
+
+59
+00:03:37,280 --> 00:03:39,760
+passando pela regra, vira v igual a um.
+
+60
+00:03:39,800 --> 00:03:43,040
+A de dois mais x ao quadrado
+vira v igual a dois.
+
+61
+00:03:43,080 --> 00:03:46,140
+O eixo x igual a zero vira u igual a zero.
+
+62
+00:03:46,180 --> 00:03:50,080
+E y igual a x mais x ao
+quadrado vira v igual a u.
+
+63
+00:03:50,120 --> 00:03:53,960
+Os cantos conferem, é só passar
+cada um pela regra e ver onde cai.
+
+64
+00:03:54,000 --> 00:03:58,580
+E no plano u v a região virou
+um trapézio: v vai de um a dois,
+
+65
+00:03:58,620 --> 00:04:01,800
+e, para cada v, o u vai de zero até v.
+
+66
+00:04:01,840 --> 00:04:05,320
+Passo cinco: calcular.
+Agora é a hora da verdade.
+
+67
+00:04:05,360 --> 00:04:09,260
+A gente monta a integral nova,
+e repara de onde vem cada pedacinho:
+
+68
+00:04:09,300 --> 00:04:12,640
+o integrando troca de roupa,
+os limites saem do desenho,
+
+69
+00:04:12,680 --> 00:04:16,220
+e entra o módulo do jacobiano,
+que é um, então nem muda nada.
+
+70
+00:04:16,260 --> 00:04:18,900
+Vamos resolver de dentro
+para fora, como sempre.
+
+71
+00:04:18,940 --> 00:04:23,220
+A de dentro é em u, e o e^
+v sobre v não depende de u,
+
+72
+00:04:23,260 --> 00:04:25,810
+então ele sai da integral,
+como uma constante.
+
+73
+00:04:25,860 --> 00:04:29,470
+Sobra a integral de d u,
+que é só u, de zero até v:
+
+74
+00:04:29,660 --> 00:04:34,220
+v menos zero, v. E esse v é
+exatamente o comprimento da fatia.
+
+75
+00:04:34,260 --> 00:04:37,780
+Olha o que acontece: esse v
+cancela o v que estava embaixo.
+
+76
+00:04:37,820 --> 00:04:41,730
+A trava foi embora! Não aprendemos
+uma primitiva impossível:
+
+77
+00:04:41,780 --> 00:04:46,240
+encontramos uma direção de integração
+em que o comprimento da fatia elimina o
+
+78
+00:04:46,280 --> 00:04:49,030
+denominador. Sobra só e^ v.
+
+79
+00:04:49,120 --> 00:04:52,940
+Agora a de fora: a primitiva
+de e^ v é ela mesma,
+
+80
+00:04:52,980 --> 00:04:57,130
+a gente aplica de um a dois,
+e fica é ao quadrado menos é.
+
+81
+00:04:57,180 --> 00:05:00,470
+Dá mais ou menos quatro
+vírgula sessenta e sete.
+
+82
+00:05:00,600 --> 00:05:03,820
+Mas será que está certo?
+Vamos conferir pela área,
+
+83
+00:05:03,860 --> 00:05:08,560
+que o jacobiano um promete conservar. Essa
+conferência testa a transformação e os
+
+84
+00:05:08,600 --> 00:05:12,460
+limites; não pretende refazer a
+integral exponencial por outro caminho.
+
+85
+00:05:12,500 --> 00:05:17,260
+No plano u v a região é um trapézio,
+e a área de um trapézio todo mundo sabe:
+
+86
+00:05:17,300 --> 00:05:21,220
+média das bases vezes a altura.
+As bases são um e dois,
+
+87
+00:05:21,260 --> 00:05:24,050
+a altura é um, então dá três meios.
+
+88
+00:05:24,140 --> 00:05:27,900
+Agora o caminho de volta,
+direto em x e y, fatiando em pé.
+
+89
+00:05:27,940 --> 00:05:31,940
+Vamos por partes, porque a fatia muda
+de comportamento em x igual a um.
+
+90
+00:05:31,980 --> 00:05:35,120
+De zero a um, a fatia
+entra na parábola de baixo,
+
+91
+00:05:35,160 --> 00:05:39,200
+um mais x ao quadrado, e sai na
+de cima, dois mais x ao quadrado:
+
+92
+00:05:39,240 --> 00:05:42,740
+o x ao quadrado cancela e o
+comprimento é um, constante.
+
+93
+00:05:42,780 --> 00:05:47,780
+De um a dois, ela entra na curva x
+mais x ao quadrado e sai em dois mais x
+
+94
+00:05:47,820 --> 00:05:50,730
+ao quadrado: o comprimento é dois menos x.
+
+95
+00:05:50,800 --> 00:05:54,460
+Agora é integrar. A primeira é
+fácil, a integral de um dá um.
+
+96
+00:05:54,500 --> 00:05:59,300
+Na segunda, a primitiva de dois menos
+x é dois x menos x ao quadrado sobre
+
+97
+00:05:59,340 --> 00:06:02,400
+dois, a gente aplica os
+limites e, olha na tela,
+
+98
+00:06:02,440 --> 00:06:06,020
+sobra um meio. Um mais um
+meio: três meios de novo.
+
+99
+00:06:06,060 --> 00:06:09,790
+A troca não ganhou nem perdeu área,
+e as duas contas concordam.
+
+100
+00:06:09,920 --> 00:06:13,420
+Segundo problema. A região R
+fica no primeiro quadrante,
+
+101
+00:06:13,460 --> 00:06:17,460
+entre as hipérboles x y igual
+a um e x y igual a dois,
+
+102
+00:06:17,500 --> 00:06:21,480
+e entre as retas y igual
+a x e y igual a dois x.
+
+103
+00:06:21,520 --> 00:06:26,420
+Calcule a área, e a massa de uma chapa
+com esse formato e densidade rô igual a
+
+104
+00:06:26,460 --> 00:06:31,240
+x vezes y. Pausa e tenta. Fatiando
+em pé, a fatia vai de um sobre
+
+105
+00:06:31,280 --> 00:06:35,960
+raiz de dois até raiz de dois,
+mas em x igual a um as bordas trocam:
+
+106
+00:06:36,000 --> 00:06:39,920
+até ali ela entra na hipérbole
+de baixo e sai na reta de cima;
+
+107
+00:06:39,960 --> 00:06:43,600
+depois, entra na reta de baixo
+e sai na hipérbole de cima.
+
+108
+00:06:43,640 --> 00:06:46,800
+Seriam duas integrais,
+cada uma com o seu logaritmo.
+
+109
+00:06:46,840 --> 00:06:52,050
+Só que olha as bordas de novo:
+x y constante, e y sobre x constante.
+
+110
+00:06:52,120 --> 00:06:55,100
+Duas famílias de curvas.
+Isso é um convite.
+
+111
+00:06:55,140 --> 00:06:59,420
+Passo um: u igual a x y
+e v igual a y sobre x.
+
+112
+00:06:59,460 --> 00:07:02,790
+Olha como as bordas ficam
+bonitas: u igual a um e dois,
+
+113
+00:07:02,880 --> 00:07:07,280
+v igual a um e dois, e a grade nova
+é feita de hipérboles e de raios,
+
+114
+00:07:07,320 --> 00:07:10,400
+exatamente o que o desenho
+já sugeria. Passo dois:
+
+115
+00:07:10,440 --> 00:07:15,180
+voltar para x e y. A gente multiplica
+as duas equações e o x some:
+
+116
+00:07:15,220 --> 00:07:19,720
+u v é y ao quadrado. Divide
+uma pela outra e o y some:
+
+117
+00:07:19,760 --> 00:07:24,240
+u sobre v é x ao quadrado.
+Então x é raiz de u sobre v,
+
+118
+00:07:24,280 --> 00:07:28,300
+e y é raiz de u v. Agora
+vem a hora de ser esperto:
+
+119
+00:07:28,340 --> 00:07:31,660
+derivar essas raízes dá trabalho,
+e a gente não precisa.
+
+120
+00:07:31,700 --> 00:07:36,590
+Vai o atalho: calcula o jacobiano
+da ida, de u e v em relação a x e y,
+
+121
+00:07:36,760 --> 00:07:40,180
+que só tem derivadas de coisas
+simples. A matriz está na tela:
+
+122
+00:07:40,220 --> 00:07:44,920
+u derivado em x dá y,
+em y dá x; v derivado em x dá
+
+123
+00:07:44,960 --> 00:07:49,000
+menos y sobre x ao quadrado,
+em y dá um sobre x.
+
+124
+00:07:49,040 --> 00:07:53,860
+Agora o determinante: duas parcelas
+iguais, y sobre x mais y sobre
+
+125
+00:07:53,900 --> 00:07:58,800
+x, dois y sobre x, e como
+y sobre x é o v, dá dois v.
+
+126
+00:07:58,840 --> 00:08:02,080
+E agora o truque: ir e
+voltar é não fazer nada.
+
+127
+00:08:02,120 --> 00:08:06,100
+O jacobiano da volta vezes o da
+ida dá um, pela regra da cadeia.
+
+128
+00:08:06,140 --> 00:08:09,510
+Então o que a gente quer,
+o da volta, é um sobre dois v,
+
+129
+00:08:09,640 --> 00:08:12,480
+e, como v é positivo, o módulo é o mesmo.
+
+130
+00:08:12,520 --> 00:08:15,840
+Repara numa coisa curiosa:
+o fator depende de v.
+
+131
+00:08:15,880 --> 00:08:18,530
+Quanto menor o v, mais a área esticou.
+
+132
+00:08:18,580 --> 00:08:22,280
+Passo quatro: no plano u v
+a região virou um quadrado,
+
+133
+00:08:22,320 --> 00:08:25,440
+de um a dois nas duas direções.
+Olha que arrumação!
+
+134
+00:08:25,480 --> 00:08:29,110
+Duas hipérboles tortas e duas
+retas viraram um quadradinho.
+
+135
+00:08:29,160 --> 00:08:32,720
+Passo cinco: a área é a
+integral de um sobre dois v.
+
+136
+00:08:32,760 --> 00:08:36,499
+A de dentro é em u, e o um
+sobre dois v sai como constante;
+
+137
+00:08:36,539 --> 00:08:40,700
+sobra a integral de d u, de um a dois,
+que é o comprimento do quadrado,
+
+138
+00:08:40,740 --> 00:08:42,960
+um. Fica só um sobre dois v.
+
+139
+00:08:43,000 --> 00:08:47,020
+A de fora é um meio vezes o
+logaritmo de v, de um a dois:
+
+140
+00:08:47,060 --> 00:08:51,360
+logaritmo de dois menos logaritmo
+de um, e o logaritmo de um é zero.
+
+141
+00:08:51,400 --> 00:08:55,960
+A área é logaritmo de dois sobre dois,
+mais ou menos zero vírgula trezentos e
+
+142
+00:08:56,000 --> 00:08:58,580
+quarenta e sete. Dá para
+conferir sem integral,
+
+143
+00:08:58,620 --> 00:09:02,000
+mais ou menos: liga os quatro
+cantos e aparece uma pipa.
+
+144
+00:09:02,040 --> 00:09:04,920
+As diagonais são
+perpendiculares, uma mede um,
+
+145
+00:09:04,960 --> 00:09:09,800
+a outra um sobre raiz de dois, e a área
+de uma pipa é diagonal vezes diagonal
+
+146
+00:09:09,840 --> 00:09:14,100
+sobre dois: raiz de dois sobre quatro,
+zero vírgula trezentos e cinquenta e
+
+147
+00:09:14,140 --> 00:09:18,120
+quatro. As bordas curvas tiram um
+tiquinho de um lado e põem do outro,
+
+148
+00:09:18,160 --> 00:09:21,040
+então a pipa chega bem
+perto: é uma estimativa,
+
+149
+00:09:21,080 --> 00:09:25,330
+não a área exata. Agora a massa.
+A densidade é x vezes y,
+
+150
+00:09:25,620 --> 00:09:28,300
+e adivinha: x vezes y é o nosso u.
+
+151
+00:09:28,340 --> 00:09:31,160
+A troca de variáveis
+já embutiu a densidade!
+
+152
+00:09:31,200 --> 00:09:34,940
+A massa é a integral de
+u vezes um sobre dois v,
+
+153
+00:09:34,980 --> 00:09:37,700
+no mesmo quadrado.
+Vamos de dentro para fora.
+
+154
+00:09:37,740 --> 00:09:42,040
+A de dentro é em u: a primitiva
+de u é u ao quadrado sobre dois,
+
+155
+00:09:42,080 --> 00:09:46,180
+a gente aplica de um a dois, faz
+aquela subtração de frações com calma,
+
+156
+00:09:46,220 --> 00:09:49,820
+e sobram três meios, que
+multiplicam o um sobre dois v:
+
+157
+00:09:49,860 --> 00:09:54,440
+três sobre quatro v. A de fora é
+três quartos de logaritmo de v,
+
+158
+00:09:54,480 --> 00:09:57,340
+de um a dois, e o logaritmo
+de um some de novo:
+
+159
+00:09:57,380 --> 00:10:02,160
+três quartos de logaritmo de dois, mais
+ou menos zero vírgula cinquenta e dois
+
+160
+00:10:02,200 --> 00:10:05,860
+quilos. E tem uma conferência
+esperta: a densidade média,
+
+161
+00:10:05,900 --> 00:10:09,560
+que é a massa dividida pela área.
+O logaritmo de dois cancela,
+
+162
+00:10:09,600 --> 00:10:12,720
+e dá três meios, bem no
+meio entre um e dois.
+
+163
+00:10:12,760 --> 00:10:15,820
+Faz sentido: o jacobiano
+só depende de v, então,
+
+164
+00:10:15,860 --> 00:10:20,300
+na direção do u, a área se espalha por
+igual, Por isso a densidade média fica bem
+
+165
+00:10:20,340 --> 00:10:24,720
+no meio entre um e dois. Terceiro
+problema, do jeito que cai em prova:
+
+166
+00:10:24,760 --> 00:10:27,920
+passe para polares e calcule
+esta integral repetida.
+
+167
+00:10:27,960 --> 00:10:32,960
+A integral de zero a a, da integral de
+zero a raiz de a ao quadrado menos x
+
+168
+00:10:33,000 --> 00:10:38,140
+ao quadrado, de raiz de a ao quadrado
+menos x ao quadrado menos y ao quadrado.
+
+169
+00:10:38,180 --> 00:10:42,260
+Pausa e tenta. O primeiro trabalho
+é ler a região nos limites,
+
+170
+00:10:42,300 --> 00:10:45,180
+como quem lê um mapa. x vai de zero a a.
+
+171
+00:10:45,220 --> 00:10:49,840
+Para cada x, a fatia entra em y
+igual a zero e sai na raiz de a ao
+
+172
+00:10:49,880 --> 00:10:53,660
+quadrado menos x ao quadrado.
+Elevando ao quadrado e arrumando:
+
+173
+00:10:53,700 --> 00:10:57,440
+x ao quadrado mais y ao
+quadrado igual a a ao quadrado.
+
+174
+00:10:57,480 --> 00:11:01,020
+É o círculo de raio a, e a
+região é um quarto de disco.
+
+175
+00:11:01,060 --> 00:11:04,840
+E o integrando? z igual àquela
+raiz é a esfera de raio a,
+
+176
+00:11:04,880 --> 00:11:08,160
+a parte de cima. A integral
+é o volume embaixo dela:
+
+177
+00:11:08,200 --> 00:11:10,900
+um oitavo de bola,
+como uma fatia de melão.
+
+178
+00:11:10,940 --> 00:11:14,000
+Vamos para polares. Aqui
+a gente já sabe a receita:
+
+179
+00:11:14,040 --> 00:11:17,540
+x ao quadrado mais y ao
+quadrado é r ao quadrado,
+
+180
+00:11:17,580 --> 00:11:21,620
+e o integrando fica raiz de a
+ao quadrado menos r ao quadrado.
+
+181
+00:11:21,660 --> 00:11:26,500
+O quarto de disco é r de zero a
+a e θ de zero a pi sobre dois.
+
+182
+00:11:26,540 --> 00:11:30,400
+E não esquece o fator: vezes
+r, o jacobiano das polares.
+
+183
+00:11:30,440 --> 00:11:34,860
+Esse r que sobrou não está ali de enfeite:
+é ele que vai deixar a substituição
+
+184
+00:11:34,900 --> 00:11:39,700
+funcionar. Vamos fazer w igual a
+a ao quadrado menos r ao quadrado.
+
+185
+00:11:39,740 --> 00:11:44,640
+Derivando, d w é menos
+dois r d r, então r d r é
+
+186
+00:11:44,680 --> 00:11:49,560
+menos d w sobre dois: olha, o r d r
+que a gente tinha caiu direitinho.
+
+187
+00:11:49,600 --> 00:11:53,080
+Agora os limites mudam junto,
+e isso muita gente esquece:
+
+188
+00:11:53,120 --> 00:11:56,880
+quando r é zero, w é a ao
+quadrado; quando r é a,
+
+189
+00:11:56,920 --> 00:12:00,160
+w é zero. O sinal de
+menos inverte os limites,
+
+190
+00:12:00,200 --> 00:12:05,120
+e, ao desinverter, o menos some.
+Fica um meio da integral de w elevado a
+
+191
+00:12:05,160 --> 00:12:07,440
+um meio, de zero a a ao quadrado.
+
+192
+00:12:07,480 --> 00:12:11,320
+A primitiva é dois terços
+de w elevado a três meios.
+
+193
+00:12:11,360 --> 00:12:15,980
+Aplica os limites: em a ao quadrado,
+a ao quadrado elevado a três meios
+
+194
+00:12:16,020 --> 00:12:19,320
+devolve a ao cubo,
+porque a é um raio positivo;
+
+195
+00:12:19,360 --> 00:12:23,480
+em zero, é zero. Um meio
+vezes dois terços dá um terço:
+
+196
+00:12:23,520 --> 00:12:28,560
+a ao cubo sobre três. A de fora só
+multiplica pelo tamanho do intervalo de θ,
+
+197
+00:12:28,600 --> 00:12:31,500
+pi sobre dois: pi a ao cubo sobre seis.
+
+198
+00:12:31,540 --> 00:12:34,980
+E confere com a bola inteira:
+quatro terços de pi a ao cubo,
+
+199
+00:12:35,020 --> 00:12:38,530
+dividido por oito, dá o
+mesmo. Um oitavo, certinho.
+
+200
+00:12:38,600 --> 00:12:43,580
+Quarto problema: a área da elipse x ao
+quadrado sobre a ao quadrado mais y ao
+
+201
+00:12:43,620 --> 00:12:46,640
+quadrado sobre b ao quadrado
+menor ou igual a um.
+
+202
+00:12:46,680 --> 00:12:50,220
+Polares comuns não endireitam uma
+elipse de maneira tão simples,
+
+203
+00:12:50,260 --> 00:12:53,500
+porque o alongamento nas
+direções x e y é diferente.
+
+204
+00:12:53,540 --> 00:12:57,670
+Vamos supor a e b positivos.
+Então a gente estica as polares:
+
+205
+00:12:57,720 --> 00:13:02,440
+x igual a a r cosseno de θ,
+e y igual a b r seno de
+
+206
+00:13:02,480 --> 00:13:06,470
+θ. É pegar o círculo e puxar,
+um pouco no x, um pouco no y,
+
+207
+00:13:06,620 --> 00:13:09,090
+como uma massa de pizza.
+Vamos ver se funciona:
+
+208
+00:13:09,140 --> 00:13:13,440
+joga na desigualdade. No primeiro termo,
+a ao quadrado em cima e a ao quadrado
+
+209
+00:13:13,480 --> 00:13:17,540
+embaixo, cancelam. No segundo,
+b ao quadrado com b ao quadrado,
+
+210
+00:13:17,580 --> 00:13:22,220
+cancelam também. Sobra r ao quadrado
+vezes cosseno ao quadrado mais seno ao
+
+211
+00:13:22,260 --> 00:13:25,440
+quadrado, e essa soma é
+um, a velha identidade.
+
+212
+00:13:25,480 --> 00:13:28,380
+Resultado: r ao quadrado
+menor ou igual a um.
+
+213
+00:13:28,420 --> 00:13:30,750
+A elipse virou o disco de raio um.
+
+214
+00:13:30,800 --> 00:13:34,340
+Agora o jacobiano. Olha a matriz
+na tela e faz o determinante,
+
+215
+00:13:34,380 --> 00:13:39,240
+diagonal menos diagonal: sai a b
+r cosseno ao quadrado mais a b r
+
+216
+00:13:39,280 --> 00:13:43,580
+seno ao quadrado, põe a b r em evidência
+e o cosseno ao quadrado mais seno ao
+
+217
+00:13:43,620 --> 00:13:46,400
+quadrado some de novo, sobra a b r.
+
+218
+00:13:46,440 --> 00:13:50,320
+Faz sentido: esticar por a e
+por b multiplica a área por a b,
+
+219
+00:13:50,360 --> 00:13:53,860
+e o r é o das polares.
+Agora a área, como no disco:
+
+220
+00:13:53,900 --> 00:13:57,000
+faz a metade de cima,
+θ de zero a pi, e dobra.
+
+221
+00:13:57,040 --> 00:14:01,600
+A integral de r d r dá um meio,
+a de θ dá pi, vezes dois,
+
+222
+00:14:01,640 --> 00:14:06,560
+vezes a b: pi a b. Com a igual a b,
+a elipse é um círculo e volta o pi
+
+223
+00:14:06,600 --> 00:14:10,200
+a ao quadrado que a gente conhece.
+Agora a elipse ganha massa.
+
+224
+00:14:10,240 --> 00:14:15,100
+Uma chapa com a forma da meia elipse x
+ao quadrado mais quatro y ao quadrado
+
+225
+00:14:15,140 --> 00:14:20,000
+menor ou igual a um, com y positivo,
+e densidade proporcional à distância até o
+
+226
+00:14:20,040 --> 00:14:22,670
+eixo x: rô igual a k vezes y.
+
+227
+00:14:22,980 --> 00:14:27,380
+Mais pesada em cima, mais leve embaixo,
+como um sorvete derretido que escorreu
+
+228
+00:14:27,420 --> 00:14:29,920
+para a ponta. Onde fica o centro de massa?
+
+229
+00:14:29,960 --> 00:14:33,860
+Pausa e tenta. Aproveita a
+simetria: x barra é zero,
+
+230
+00:14:33,900 --> 00:14:36,160
+o que sobra é descobrir o y barra.
+
+231
+00:14:36,200 --> 00:14:40,940
+Vamos montar. Aqui a é um
+e b é um meio, então x é r
+
+232
+00:14:40,980 --> 00:14:45,720
+cosseno de θ, y é um meio de
+r seno de θ, e o jacobiano,
+
+233
+00:14:45,760 --> 00:14:49,690
+que a gente já sabe, é a b
+r, ou seja, r sobre dois.
+
+234
+00:14:49,760 --> 00:14:53,570
+A meia elipse é r de zero
+a um e θ de zero a pi.
+
+235
+00:14:53,620 --> 00:14:56,980
+A massa é a integral da
+densidade vezes o jacobiano:
+
+236
+00:14:57,020 --> 00:15:01,800
+k vezes y, que é k r seno
+de θ sobre dois, vezes r
+
+237
+00:15:01,840 --> 00:15:06,820
+sobre dois. Olha que bonito: o integrando
+separa num pedaço só de θ e num pedaço
+
+238
+00:15:06,860 --> 00:15:10,280
+só de r, e a gente resolve
+cada um sozinho, sem sofrer.
+
+239
+00:15:10,320 --> 00:15:14,180
+A de θ é a integral do seno,
+menos cosseno, de zero a pi:
+
+240
+00:15:14,220 --> 00:15:17,820
+aquele um mais um, dois.
+A de r é r ao quadrado,
+
+241
+00:15:17,860 --> 00:15:21,420
+que dá um terço. Junta tudo com
+o k sobre quatro que sobrou:
+
+242
+00:15:21,460 --> 00:15:26,390
+k sobre quatro vezes dois vezes um
+terço, e a massa é k sobre seis.
+
+243
+00:15:26,520 --> 00:15:30,180
+Massa a gente tem. Falta o
+momento em relação ao eixo x,
+
+244
+00:15:30,220 --> 00:15:32,460
+que é a integral de y vezes rô.
+
+245
+00:15:32,500 --> 00:15:37,160
+Repara: o y aparece duas vezes, uma
+porque é a posição e outra porque a
+
+246
+00:15:37,200 --> 00:15:41,300
+densidade é k y. A primeira
+cópia mede o braço do momento,
+
+247
+00:15:41,340 --> 00:15:44,280
+e a segunda mede quanta
+massa está concentrada ali.
+
+248
+00:15:44,320 --> 00:15:49,040
+Juntando com o jacobiano, o y ao quadrado
+dá r ao quadrado seno ao quadrado
+
+249
+00:15:49,080 --> 00:15:53,370
+sobre quatro, vezes r sobre dois,
+e os números viram um oitavo.
+
+250
+00:15:53,420 --> 00:15:57,600
+Sobra k sobre oito, vezes a
+integral do seno ao quadrado de θ,
+
+251
+00:15:57,640 --> 00:16:02,580
+vezes a integral de r ao cubo. Agora, seno
+ao quadrado a gente não integra direto,
+
+252
+00:16:02,620 --> 00:16:07,120
+então vai a identidade: seno ao
+quadrado é um menos cosseno de dois θ,
+
+253
+00:16:07,160 --> 00:16:12,200
+sobre dois. Integra termo a termo:
+θ sobre dois menos seno de dois θ sobre
+
+254
+00:16:12,240 --> 00:16:16,480
+quatro. Aplica de zero a pi,
+e lembra que o seno de dois pi é zero:
+
+255
+00:16:16,520 --> 00:16:20,840
+sobra pi sobre dois. A de r ao
+cubo é r à quarta sobre quatro,
+
+256
+00:16:20,880 --> 00:16:24,900
+um quarto. Junta: o momento é
+k pi sobre sessenta e quatro.
+
+257
+00:16:24,940 --> 00:16:28,340
+E o centro de massa, a gente
+já sabe, é momento sobre massa:
+
+258
+00:16:28,380 --> 00:16:31,940
+k pi sobre sessenta e quatro
+dividido por k sobre seis.
+
+259
+00:16:31,980 --> 00:16:35,600
+Divisão de fração: inverte
+e multiplica, o k cancela,
+
+260
+00:16:35,640 --> 00:16:39,320
+e sobra seis pi sobre sessenta e
+quatro, que simplifica por dois:
+
+261
+00:16:39,360 --> 00:16:44,220
+três pi sobre trinta e dois, mais ou menos
+zero vírgula duzentos e noventa e cinco.
+
+262
+00:16:44,260 --> 00:16:48,460
+A chapa tem meio de altura, e o centro
+de massa ficou um pouco acima do meio,
+
+263
+00:16:48,500 --> 00:16:52,460
+porque a densidade cresce para cima.
+Dá para conferir a massa sem polares,
+
+264
+00:16:52,500 --> 00:16:55,980
+fatiando em pé, e é bom fazer isso
+para a gente confiar na conta.
+
+265
+00:16:56,020 --> 00:17:00,900
+Aqui x vai de menos um a um,
+e y de zero até raiz de
+
+266
+00:17:00,940 --> 00:17:03,220
+um menos x ao quadrado, sobre dois.
+
+267
+00:17:03,260 --> 00:17:06,660
+A de dentro é k vezes y
+ao quadrado sobre dois,
+
+268
+00:17:06,700 --> 00:17:11,420
+aplicado no topo da fatia: o quadrado
+da raiz sobre dois vira um menos x ao
+
+269
+00:17:11,460 --> 00:17:15,700
+quadrado sobre quatro, e sobra
+k vezes um menos x ao quadrado,
+
+270
+00:17:15,740 --> 00:17:19,279
+sobre oito. A de fora integra
+isso de menos um a um:
+
+271
+00:17:19,319 --> 00:17:23,010
+a primitiva é x menos x
+ao cubo sobre três, e,
+
+272
+00:17:23,099 --> 00:17:26,799
+olha na tela, dois terços mais
+dois terços, quatro terços,
+
+273
+00:17:26,839 --> 00:17:29,820
+vezes k sobre oito, k sobre seis de novo.
+
+274
+00:17:29,860 --> 00:17:33,560
+Duas contas diferentes, a mesma
+massa: isso é um bom sinal.
+
+275
+00:17:33,600 --> 00:17:37,780
+E se a chapa fosse homogênea? A meia
+elipse é o meio disco achatado pela
+
+276
+00:17:37,820 --> 00:17:41,980
+metade, e o centroide achata
+junto: quatro b sobre três pi,
+
+277
+00:17:42,020 --> 00:17:46,700
+com b igual a um meio, dois sobre
+três pi, zero vírgula duzentos e doze.
+
+278
+00:17:46,740 --> 00:17:50,540
+A densidade que cresce para cima
+puxa o centro de massa para cima,
+
+279
+00:17:50,580 --> 00:17:53,280
+até zero vírgula duzentos
+e noventa e cinco.
+
+280
+00:17:53,320 --> 00:17:55,640
+Agora sim, a meia arruela.
+
+281
+00:17:55,680 --> 00:17:58,960
+Em polares ela é um retângulo:
+r vai de um a dois,
+
+282
+00:17:59,000 --> 00:18:03,200
+e θ de zero a pi. É um desenho
+torto que vira uma caixa certinha,
+
+283
+00:18:03,240 --> 00:18:05,600
+e esse é o grande presente das polares.
+
+284
+00:18:05,640 --> 00:18:09,900
+A densidade é a mesma em todo lugar,
+então pode chamar de um e esquecer.
+
+285
+00:18:09,940 --> 00:18:12,300
+Pela simetria, x barra é zero.
+
+286
+00:18:12,340 --> 00:18:16,140
+Falta o y barra, e para ele a
+gente precisa de duas coisas:
+
+287
+00:18:16,180 --> 00:18:20,420
+a área e o momento. A área
+é a integral de r d r d θ,
+
+288
+00:18:20,460 --> 00:18:24,800
+e aquele r é o jacobiano. A de
+dentro: r ao quadrado sobre dois,
+
+289
+00:18:24,840 --> 00:18:28,400
+de um a dois, quatro meios
+menos um meio, três meios.
+
+290
+00:18:28,440 --> 00:18:32,600
+A de fora é só multiplicar por pi:
+a área é três pi sobre dois.
+
+291
+00:18:32,640 --> 00:18:36,160
+E dá para conferir sem integral,
+só com a geometria que a gente sabe:
+
+292
+00:18:36,200 --> 00:18:39,280
+o meio disco grande tem
+área dois pi, o pequeno,
+
+293
+00:18:39,320 --> 00:18:42,700
+pi sobre dois, e a diferença
+é três pi sobre dois.
+
+294
+00:18:42,740 --> 00:18:47,560
+Bateu. Agora o momento em relação
+ao eixo x: a integral de y d A,
+
+295
+00:18:47,600 --> 00:18:52,220
+e y é r seno de θ, o cateto daquele
+triângulo que a gente conhece.
+
+296
+00:18:52,260 --> 00:18:56,460
+Junta com o r do jacobiano e
+fica r ao quadrado seno de θ.
+
+297
+00:18:56,500 --> 00:19:00,080
+Vamos de dentro para fora.
+A de dentro integra r ao quadrado,
+
+298
+00:19:00,120 --> 00:19:05,100
+que dá r ao cubo sobre três, de um
+a dois: oito terços menos um terço,
+
+299
+00:19:05,140 --> 00:19:08,980
+sete terços de seno de θ.
+A de fora é a integral do seno,
+
+300
+00:19:09,020 --> 00:19:12,080
+menos cosseno, de zero a pi,
+aquele dois de sempre,
+
+301
+00:19:12,120 --> 00:19:16,820
+e o momento é catorze terços. E o
+centro de massa é momento sobre área,
+
+302
+00:19:16,860 --> 00:19:21,850
+porque a densidade é um: catorze
+terços dividido por três pi sobre dois.
+
+303
+00:19:21,900 --> 00:19:25,520
+Inverte e multiplica, e dá
+vinte e oito sobre nove pi,
+
+304
+00:19:25,560 --> 00:19:28,390
+mais ou menos zero vírgula
+novecentos e noventa.
+
+305
+00:19:28,480 --> 00:19:32,380
+Agora olha a lupa: menor
+que um, por um centésimo.
+
+306
+00:19:32,420 --> 00:19:36,060
+O ponto de equilíbrio da meia
+arruela homogênea cai no buraco.
+
+307
+00:19:36,100 --> 00:19:40,040
+Isso não é contradição: a média de
+posições de pontos de uma região não
+
+308
+00:19:40,080 --> 00:19:43,430
+precisa pertencer à própria
+região quando ela tem um vazio.
+
+309
+00:19:43,480 --> 00:19:47,860
+Dá para ver isso em casa. Recorta essa
+meia arruela num papelão e pendura por uma
+
+310
+00:19:47,900 --> 00:19:52,420
+ponta, com um alfinete. Ela gira até
+o centro de massa ficar bem embaixo do
+
+311
+00:19:52,460 --> 00:19:56,780
+alfinete. Pendura um fio de prumo no
+mesmo alfinete e risca a linha do fio.
+
+312
+00:19:56,820 --> 00:19:59,770
+Agora pendura pela outra
+ponta e risca de novo.
+
+313
+00:19:59,820 --> 00:20:03,900
+As duas linhas se cruzam no buraco,
+no ar, onde não tem papelão.
+
+314
+00:20:03,940 --> 00:20:06,980
+O centro de massa não precisa
+estar dentro do corpo.
+
+315
+00:20:07,020 --> 00:20:10,440
+Acontece com um anel, com uma
+ferradura, com um bumerangue.
+
+316
+00:20:10,480 --> 00:20:14,080
+Nesses corpos, o centro de massa
+pode ficar fora do material,
+
+317
+00:20:14,120 --> 00:20:17,120
+dependendo da geometria.
+E se a borda pesar mais,
+
+318
+00:20:17,160 --> 00:20:20,080
+com a densidade crescendo
+com a distância até o centro:
+
+319
+00:20:20,120 --> 00:20:24,460
+rô igual a k r? Pensa numa roda
+de bicicleta com chumbinho no aro.
+
+320
+00:20:24,500 --> 00:20:28,920
+Agora aparecem dois r, e cada um
+tem um dono: um é da densidade,
+
+321
+00:20:28,960 --> 00:20:32,690
+o outro é do jacobiano. Resolve
+a massa de dentro para fora:
+
+322
+00:20:32,820 --> 00:20:36,110
+r ao quadrado integra
+em r ao cubo sobre três,
+
+323
+00:20:36,160 --> 00:20:40,680
+de um a dois, oito terços menos
+um terço, sete k sobre três.
+
+324
+00:20:40,720 --> 00:20:45,110
+A de fora multiplica por pi:
+a massa é sete k pi sobre três.
+
+325
+00:20:45,180 --> 00:20:50,320
+Agora o momento, e aqui entram
+três r: o y, que é r seno de θ,
+
+326
+00:20:50,360 --> 00:20:55,060
+a densidade e o jacobiano. A de
+dentro é r à quarta sobre quatro,
+
+327
+00:20:55,100 --> 00:20:58,240
+de um a dois: dezesseis
+quartos menos um quarto,
+
+328
+00:20:58,280 --> 00:21:01,160
+quinze quartos, vezes k seno de θ.
+
+329
+00:21:01,200 --> 00:21:04,020
+A de fora traz o mesmo
+dois da integral do seno,
+
+330
+00:21:04,060 --> 00:21:06,460
+e o momento é quinze k sobre dois.
+
+331
+00:21:06,500 --> 00:21:10,780
+Dividindo momento por massa, o k
+cancela, divisão de frações de novo:
+
+332
+00:21:10,820 --> 00:21:14,920
+inverte e multiplica. Sobra
+quarenta e cinco sobre catorze pi,
+
+333
+00:21:14,960 --> 00:21:19,160
+um vírgula zero vinte e três.
+Maior que um: com a borda mais pesada,
+
+334
+00:21:19,200 --> 00:21:22,890
+o centro de massa volta para
+a chapa, por dois centésimos.
+
+335
+00:21:22,940 --> 00:21:25,100
+Último problema, e ele junta tudo.
+
+336
+00:21:25,140 --> 00:21:29,580
+Pega uma região plana homogênea
+inteiramente de um lado do eixo x e gira
+
+337
+00:21:29,620 --> 00:21:33,200
+em torno do eixo x, sem que
+esse eixo corte o interior dela,
+
+338
+00:21:33,240 --> 00:21:36,520
+como uma moeda girando no
+pião. Ela varre um sólido.
+
+339
+00:21:36,560 --> 00:21:40,180
+Qual o volume? Olha um quadradinho
+da chapa, de área delta A,
+
+340
+00:21:40,220 --> 00:21:44,750
+a uma altura y. Girando, ele desenha
+um anel de comprimento dois pi y,
+
+341
+00:21:45,160 --> 00:21:48,980
+e varre um volume de mais ou
+menos dois pi y vezes delta A.
+
+342
+00:21:49,020 --> 00:21:53,060
+Quando a região é um meio disco,
+a bola aparece como caso particular,
+
+343
+00:21:53,100 --> 00:21:56,670
+mas o método serve para toda
+região plana nessas condições.
+
+344
+00:21:56,760 --> 00:22:01,680
+Somando, no limite: o volume é a
+integral dupla de dois pi y d A.
+
+345
+00:22:01,720 --> 00:22:05,660
+O dois pi sai, e o que sobra é
+o momento em relação ao eixo x.
+
+346
+00:22:05,700 --> 00:22:08,420
+E o momento é y barra vezes a área.
+
+347
+00:22:08,460 --> 00:22:11,920
+Então o volume é a área
+vezes dois pi y barra:
+
+348
+00:22:11,960 --> 00:22:14,970
+a área vezes o caminho
+do centroide numa volta.
+
+349
+00:22:15,060 --> 00:22:19,200
+Esse é o teorema de Pappus.
+Não é mágica: fatiando deitado,
+
+350
+00:22:19,240 --> 00:22:21,560
+cada fatia vira uma casca de cilindro.
+
+351
+00:22:21,600 --> 00:22:24,780
+É o método das cascas do
+Cálculo I, com a fatia inteira.
+
+352
+00:22:24,820 --> 00:22:28,480
+Vamos testar com o meio disco de
+raio a, que a gente já conhece bem.
+
+353
+00:22:28,520 --> 00:22:32,020
+O centroide dele fica a quatro
+a sobre três pi da base,
+
+354
+00:22:32,060 --> 00:22:34,640
+e a área é pi a ao quadrado sobre dois.
+
+355
+00:22:34,680 --> 00:22:37,280
+Girando em torno da base,
+ele varre uma bola.
+
+356
+00:22:37,320 --> 00:22:42,240
+Pappus diz: o volume é dois pi vezes
+o caminho do centroide vezes a área.
+
+357
+00:22:42,280 --> 00:22:47,120
+Olha a conta na tela: o pi cancela,
+e fica oito a sobre três vezes pi a ao
+
+358
+00:22:47,160 --> 00:22:50,800
+quadrado sobre dois, que dá
+quatro terços de pi a ao cubo.
+
+359
+00:22:50,840 --> 00:22:54,020
+É a bola, o volume que a gente
+conhece desde o ensino médio,
+
+360
+00:22:54,060 --> 00:22:56,920
+sem integral nenhuma.
+Agora a meia arruela.
+
+361
+00:22:56,960 --> 00:22:59,780
+Girando em torno da base,
+ela varre uma bola oca,
+
+362
+00:22:59,820 --> 00:23:04,380
+como uma casca de laranja grossa: a bola
+de raio dois menos a bola de raio um.
+
+363
+00:23:04,420 --> 00:23:08,120
+Olha a conta na tela: quatro
+terços de pi vezes oito menos um,
+
+364
+00:23:08,160 --> 00:23:11,600
+vinte e oito pi sobre três.
+Agora vem a jogada bonita:
+
+365
+00:23:11,640 --> 00:23:16,400
+usar Pappus ao contrário. Se o volume
+é dois pi y barra vezes a área,
+
+366
+00:23:16,440 --> 00:23:20,780
+então y barra é o volume dividido
+por dois pi vezes a área.
+
+367
+00:23:20,820 --> 00:23:25,460
+A área a gente já tem, três pi sobre
+dois, e dois pi vezes ela dá três pi ao
+
+368
+00:23:25,500 --> 00:23:28,700
+quadrado. Vamos dividir:
+vinte e oito pi sobre três,
+
+369
+00:23:28,740 --> 00:23:32,600
+por três pi ao quadrado. Um pi de
+cima cancela com um pi de baixo,
+
+370
+00:23:32,640 --> 00:23:34,940
+e sobra vinte e oito sobre nove pi.
+
+371
+00:23:34,980 --> 00:23:38,980
+O mesmo número da integral! Duas
+contas de naturezas diferentes:
+
+372
+00:23:39,020 --> 00:23:44,020
+uma usa integral dupla e polares; a outra
+usa o volume da bola oca e o teorema de
+
+373
+00:23:44,060 --> 00:23:48,080
+Pappus. As duas recuperam o mesmo
+centroide, que fica no buraco.
+
+374
+00:23:48,120 --> 00:23:51,860
+É uma conferência independente do
+método de integração usado antes.
+
+375
+00:23:51,900 --> 00:23:56,710
+E vale para qualquer meia arruela,
+de raio de dentro a e raio de fora b:
+
+376
+00:23:56,780 --> 00:23:59,940
+a mesma conta. Pappus ao
+contrário dá uma fração:
+
+377
+00:23:59,980 --> 00:24:04,240
+em cima, quatro terços de pi
+vezes b ao cubo menos a ao cubo;
+
+378
+00:24:04,280 --> 00:24:08,820
+embaixo, dois pi vezes a área,
+e a área é pi sobre dois vezes b ao
+
+379
+00:24:08,860 --> 00:24:13,560
+quadrado menos a ao quadrado. Arruma os
+números e sobra quatro vezes b ao cubo
+
+380
+00:24:13,600 --> 00:24:18,260
+menos a ao cubo, sobre três pi vezes
+b ao quadrado menos a ao quadrado.
+
+381
+00:24:18,300 --> 00:24:21,180
+Agora fatora essas duas
+diferenças, que você conhece:
+
+382
+00:24:21,220 --> 00:24:23,900
+diferença de cubos e
+diferença de quadrados.
+
+383
+00:24:23,940 --> 00:24:27,700
+Olha na tela e repara que em cima
+e embaixo aparece o mesmo fator,
+
+384
+00:24:27,740 --> 00:24:32,600
+e o b menos a cancela. Sobra quatro
+vezes a ao quadrado mais a b mais b
+
+385
+00:24:32,640 --> 00:24:35,750
+ao quadrado, sobre três pi vezes a mais b.
+
+386
+00:24:35,820 --> 00:24:39,100
+Agora o melhor: testa os
+extremos. Com a igual a zero,
+
+387
+00:24:39,140 --> 00:24:42,920
+sem buraco, sobra quatro b
+sobre três pi: é o meio disco,
+
+388
+00:24:42,960 --> 00:24:47,200
+como tinha que ser. Com a igual a b,
+a conta original daria zero sobre zero,
+
+389
+00:24:47,240 --> 00:24:50,860
+porque a chapa não tem mais área.
+Então a gente não substitui direto:
+
+390
+00:24:50,900 --> 00:24:54,700
+usa a fórmula simplificada,
+olhando para a tendendo a b por baixo.
+
+391
+00:24:54,740 --> 00:24:58,040
+A chapa afina até virar um
+arame dobrado em meia volta,
+
+392
+00:24:58,080 --> 00:25:00,660
+e o centro dele fica em dois b sobre pi.
+
+393
+00:25:00,700 --> 00:25:04,780
+O centro de um arame em semicírculo fica
+a sessenta e quatro por cento do raio,
+
+394
+00:25:04,820 --> 00:25:08,540
+no ar. E um bônus: uma rosquinha,
+ou uma boia de piscina.
+
+395
+00:25:08,580 --> 00:25:11,580
+Um disco com o centro a
+dois do eixo, de raio um,
+
+396
+00:25:11,620 --> 00:25:14,840
+girando em volta dele. E o
+centro do disco é o centroide,
+
+397
+00:25:14,880 --> 00:25:19,240
+que percorre dois pi vezes dois.
+A área é pi vezes um ao quadrado.
+
+398
+00:25:19,280 --> 00:25:23,880
+O volume do toro é quatro pi ao quadrado,
+mais ou menos trinta e nove vírgula cinco.
+
+399
+00:25:23,920 --> 00:25:27,220
+Uma linha de conta, e uma integral
+tripla a menos para fazer.
+
+400
+00:25:27,260 --> 00:25:31,010
+Resumindo, os cinco erros que
+mais custam ponto neste módulo.
+
+401
+00:25:31,060 --> 00:25:35,740
+Um: esquecer o jacobiano.
+Em polares, d A é r d r d
+
+402
+00:25:35,780 --> 00:25:40,620
+θ, sempre. Dois: usar o jacobiano
+sem módulo, ou usar o da ida no
+
+403
+00:25:40,660 --> 00:25:43,920
+lugar do da volta. Se só
+a ida é fácil, inverte.
+
+404
+00:25:43,960 --> 00:25:47,460
+Três: escrever os limites
+da região nova sem desenhar.
+
+405
+00:25:47,500 --> 00:25:49,800
+Borda por borda, e os cantos conferem.
+
+406
+00:25:49,840 --> 00:25:52,640
+Quatro: no centro de massa
+com densidade variável,
+
+407
+00:25:52,680 --> 00:25:55,140
+dividir pela área. Divide pela massa.
+
+408
+00:25:55,180 --> 00:25:59,700
+E cinco: usar Pappus com chapa não
+homogênea e pôr o centro de massa no lugar
+
+409
+00:25:59,740 --> 00:26:03,900
+do centroide. O volume de revolução
+usa a área e o caminho do centroide,
+
+410
+00:26:03,940 --> 00:26:06,820
+que é geometria pura,
+qualquer que seja a densidade.
+
+411
+00:26:06,860 --> 00:26:09,940
+E a meia arruela? Homogênea,
+o equilíbrio cai no buraco,
+
+412
+00:26:09,980 --> 00:26:13,440
+em zero vírgula novecentos e
+noventa. Com a borda mais pesada,
+
+413
+00:26:13,480 --> 00:26:16,460
+volta para a chapa, em um
+vírgula zero vinte e três.
+
+414
+00:26:16,500 --> 00:26:19,980
+Até aqui, toda massa foi de
+chapa: densidade por área,
+
+415
+00:26:20,020 --> 00:26:23,600
+integral dupla. E se a densidade
+mudar dentro de um sólido,
+
+416
+00:26:23,640 --> 00:26:26,600
+ponto a ponto? Um cubo de
+lado dois, por exemplo,
+
+417
+00:26:26,640 --> 00:26:31,280
+mais pesado longe de um canto:
+a densidade é x ao quadrado mais y ao
+
+418
+00:26:31,320 --> 00:26:34,390
+quadrado mais z ao quadrado.
+Quanto pesa esse cubo?
+
+419
+00:26:34,520 --> 00:26:38,120
+Aí a massa vira uma soma de
+caixinhas em três dimensões:
+
+420
+00:26:38,160 --> 00:26:41,470
+a integral tripla. É o que a
+gente começa no próximo vídeo.
+
+421
+00:26:41,520 --> 00:26:45,980
+Se essa aula te ajudou, deixa o like, se
+inscreve no Parallax Lab e fica o desafio
+
+422
+00:26:46,020 --> 00:26:50,220
+para os comentários: a partir de que
+tamanho de buraco o centro de massa da
+
+423
+00:26:50,260 --> 00:26:52,660
+meia arruela homogênea cai dentro dele?
+
+424
+00:26:52,700 --> 00:26:55,320
+Dica: a fórmula da família já tem tudo.
+
+425
+00:26:55,360 --> 00:26:57,360
+Até a próxima!

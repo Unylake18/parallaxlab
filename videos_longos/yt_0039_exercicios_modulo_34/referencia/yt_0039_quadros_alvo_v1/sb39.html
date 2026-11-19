@@ -1,0 +1,443 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="katex/katex.min.css">
+<script src="katex/katex.min.js"></script>
+<script src="r3d_pts.js"></script>
+<style>
+@font-face{font-family:SG;src:url(SpaceGrotesk-Bold.ttf)}
+@font-face{font-family:SGM;src:url(SpaceGrotesk-Medium.ttf)}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#131030}
+canvas{position:absolute;left:0;top:0}
+.f{position:absolute;color:#F5F7FF;white-space:nowrap;line-height:1}
+.f .katex{font-size:1em}
+.pl{position:absolute;background:rgba(19,16,48,.88);border-radius:6px}
+</style></head><body><canvas id="o" width="1920" height="1080"></canvas>
+<script>
+// Quadros-alvo v1 + v2 (chaves v2*) do 3.4-T3 (Massa e centro de massa), sobre os helpers do sb34v3 · antigo cabeçalho: Quadros-alvo v1 + v2 do yt_0034 (chaves v2_* = avaliação do preview v1) (Cálculo III · EP. 09 · Regiões gerais e troca de ordem). ?k=<chave>  (helpers herdados do sb33)
+// Mesmo sistema do sb29 (EP. 05): fundo violeta #18143A → #0F0C26 + grade #2B2558 a cada 0,25 m da chapa (60 px), alinhada ao canto (0,0) em (360,780);
+// layout A (palco + coluna em x = 1120), chapa R = [0,2]² com 1 m = 240 px; placa mínima; cor por grandeza; operadores brancos.
+// As cenas 3D vêm de c3d34.html (r3d_<k>.png e r3d_pts.js). A grade de cada palco nasce dos eixos (papel()).
+const K=new URLSearchParams(location.search).get('k'), x=document.getElementById('o').getContext('2d'), PI=Math.PI;
+const CI='#35D9FF', AZC='#7FB2FF', CORAL='#FF7A8A', POS='#E08A3C', E1='#FFC24D', E2='#EA63FF', GEO='#B8C4DA', BR='#F5F7FF',
+ AL='#FF5D5D', MEN='#8CFFD2', BG='#131030', LEVE='#1E5072', PESADO='#30BBE0';
+const M={'\\X':'\\textcolor{#FFC24D}{x}','\\Y':'\\textcolor{#EA63FF}{y}','\\f':'\\textcolor{#35D9FF}{f}','\\rr':'\\textcolor{#35D9FF}{\\rho}',
+ '\\Xij':'\\textcolor{#E08A3C}{X_{ij}}','\\dxi':'\\textcolor{#FFC24D}{\\Delta x_i}','\\dyj':'\\textcolor{#EA63FF}{\\Delta y_j}',
+ '\\Ci':'\\textcolor{#35D9FF}','\\Az':'\\textcolor{#7FB2FF}','\\Co':'\\textcolor{#FF7A8A}','\\Me':'\\textcolor{#8CFFD2}','\\Lr':'\\textcolor{#E08A3C}','\\Al':'\\textcolor{#FF5D5D}',
+ '\\eps':'\\textcolor{#8CFFD2}{\\varepsilon}','\\del':'\\textcolor{#E08A3C}{\\delta}','\\Rij':'R_{ij}',
+ '\\mij':'\\textcolor{#7FB2FF}{m_{ij}}','\\Mij':'\\textcolor{#FF7A8A}{M_{ij}}','\\sP':'\\textcolor{#7FB2FF}{s(P)}','\\SP':'\\textcolor{#FF7A8A}{S(P)}',
+ '\\XX':'\\textcolor{#E08A3C}{X}','\\YY':'\\textcolor{#E08A3C}{Y}','\\g':'\\textcolor{#C9A7FF}{g}','\\Li':'\\textcolor{#C9A7FF}','\\Am':'\\textcolor{#FFC24D}','\\Mg':'\\textcolor{#EA63FF}','\\Ge':'\\textcolor{#B8C4DA}','\\al':'\\textcolor{#B8C4DA}{\\alpha}','\\dX':'\\textcolor{#FFC24D}{dx}','\\dY':'\\textcolor{#EA63FF}{dy}','\\be':'\\textcolor{#FFC24D}{\\beta}','\\alp':'\\textcolor{#EA63FF}{\\alpha}','\\xii':'\\textcolor{#E08A3C}{\\xi_i}','\\sen':'\\operatorname{sen}',
+ '\\xb':'\\textcolor{#FFC24D}{\\bar x}','\\yb':'\\textcolor{#EA63FF}{\\bar y}','\\dm':'\\textcolor{#35D9FF}{dm}','\\My':'\\textcolor{#FFC24D}{M_y}','\\Mx':'\\textcolor{#EA63FF}{M_x}',
+ '\\mm':'\\textcolor{#35D9FF}{m}','\\kk':'\\textcolor{#35D9FF}{k}','\\R':'\\textcolor{#FF9440}{r}','\\th':'\\textcolor{#2EE6A6}{\\theta}','\\Rj':'\\textcolor{#C6F26B}{r}','\\dr':'\\textcolor{#FF9440}{dr}','\\dth':'\\textcolor{#2EE6A6}{d\\theta}','\\dA':'dA'};
+let O=[960,540],U=100; const P=(a,b)=>[O[0]+a*U,O[1]-b*U]; const vista=(cx,cy,u)=>{O=[cx,cy];U=u;};
+const img=s=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=s;});
+function mix(a,b,t){const h=s=>[1,3,5].map(i=>parseInt(s.slice(i,i+2),16));const A=h(a),B=h(b);return 'rgb('+A.map((v,i)=>Math.round(v+(B[i]-v)*t)).join(',')+')';}
+function tex(s,X,Y,size=48,al='l',placa=false){const d=document.createElement('div');d.className='f';d.style.fontSize=size+'px';
+ katex.render(s,d,{macros:M,throwOnError:false});document.body.appendChild(d);const w=d.offsetWidth,h=d.offsetHeight;
+ const L=(al==='c'?X-w/2:al==='r'?X-w:X),T=(Y-h/2);d.style.left=L+'px';d.style.top=T+'px';
+ if(placa){const p=document.createElement('div');p.className='pl';p.style.left=(L-6)+'px';p.style.top=(T-4)+'px';p.style.width=(w+12)+'px';p.style.height=(h+8)+'px';document.body.insertBefore(p,d);}return d;}
+function txt(s,X,Y,{size=30,f='SG',cor=BR,al='left',alpha=1,placa=false}={}){x.font=`${size}px ${f}`;if(placa){const w=x.measureText(s).width,L=al==='center'?X-w/2:al==='right'?X-w:X;x.fillStyle='rgba(19,16,48,.88)';x.beginPath();x.roundRect(L-8,Y-size*.82,w+16,size*1.05,6);x.fill();}
+ x.globalAlpha=alpha;x.textAlign=al;x.fillStyle=cor;x.fillText(s,X,Y);x.textAlign='left';x.globalAlpha=1;}
+function leg(s,X,Y,cor=GEO,al='left',size=28){txt(s,X,Y,{size,f:'SGM',cor,al});}
+function caminho(pts){x.beginPath();pts.forEach((p,i)=>{const q=P(...p);i?x.lineTo(...q):x.moveTo(...q)});}
+function linha(pts,cor,w,{dash=null,alpha=1}={}){x.lineCap='round';x.lineJoin='round';x.setLineDash(dash||[]);caminho(pts);x.globalAlpha=alpha;x.strokeStyle=cor;x.lineWidth=w;x.stroke();x.globalAlpha=1;x.setLineDash([]);}
+function preenche(pts,cor){caminho(pts);x.closePath();x.fillStyle=cor;x.fill();}
+function ret(a,b,c,d,fill,stroke=null,w=2,dash=null){const A=P(a,d),B=P(b,c);if(fill){x.fillStyle=fill;x.fillRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);}
+ if(stroke){x.setLineDash(dash||[]);x.strokeStyle=stroke;x.lineWidth=w;x.strokeRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);x.setLineDash([]);}}
+function seta(a,b,cor,w=5,head=20){const A=P(...a),B=P(...b),dx=B[0]-A[0],dy=B[1]-A[1],L=Math.hypot(dx,dy);if(L<3)return;
+ const ux=dx/L,uy=dy/L,h=Math.min(head,.45*L),hw=h*.5,bx=B[0]-ux*h,by=B[1]-uy*h;
+ x.lineCap='round';x.beginPath();x.moveTo(...A);x.lineTo(bx+ux,by+uy);x.strokeStyle=cor;x.lineWidth=w;x.stroke();
+ x.beginPath();x.moveTo(...B);x.lineTo(bx-uy*hw,by+ux*hw);x.lineTo(bx+uy*hw,by-ux*hw);x.closePath();x.fillStyle=cor;x.fill();}
+function ponto(p,cor,r=9){const q=P(...p);x.beginPath();x.arc(...q,r,0,7);x.fillStyle=cor;x.fill();}
+function canto(s){txt('CÁLCULO III · INTEGRAL DUPLA',36,73,{size:22,f:'SGM',cor:'#C8D6F0',alpha:.6});if(s)txt(s,36,118,{size:36});}
+async function logo(){const lg=await img('logo_crop.png');if(lg)x.drawImage(lg,1650,24);}
+function painel(X0,Y0,w,h){x.strokeStyle='rgba(184,196,218,.35)';x.lineWidth=2;x.beginPath();x.roundRect(X0,Y0,w,h,14);x.stroke();}
+function check(X,Y,cor=MEN,s=1){x.strokeStyle=cor;x.lineWidth=6*s;x.lineCap='round';x.beginPath();x.moveTo(X-14*s,Y);x.lineTo(X-3*s,Y+11*s);x.lineTo(X+16*s,Y-13*s);x.stroke();}
+function cruz(X,Y,cor=AL,s=1){x.strokeStyle=cor;x.lineWidth=6*s;x.lineCap='round';x.beginPath();x.moveTo(X-12*s,Y-12*s);x.lineTo(X+12*s,Y+12*s);x.moveTo(X+12*s,Y-12*s);x.lineTo(X-12*s,Y+12*s);x.stroke();}
+function fundoV(grade=true){const g=x.createLinearGradient(0,0,0,1080);g.addColorStop(0,'#18143A');g.addColorStop(1,'#0F0C26');x.fillStyle=g;x.fillRect(0,0,1920,1080);
+ if(grade){x.strokeStyle='#2B2558';x.lineWidth=1.2;for(let X=0;X<=1920;X+=60){x.beginPath();x.moveTo(X+.5,0);x.lineTo(X+.5,1080);x.stroke();}for(let Y=0;Y<=1080;Y+=60){x.beginPath();x.moveTo(0,Y+.5);x.lineTo(1920,Y+.5);x.stroke();}}}
+const P3=(k,n)=>(window.R3D&&R3D[k]&&R3D[k][n])||[0,0];
+async function cena3d(k,{dx=0,dy=0,esc=1}={}){const im=await img('r3d_'+k+'.png');if(!im)return;x.drawImage(im,dx,dy,1920*esc,1080*esc);}
+const Q3=(k,n,{dx=0,dy=0,esc=1}={})=>{const p=P3(k,n);return [dx+p[0]*esc,dy+p[1]*esc];};
+// ---------- chapa ----------
+const f=(X,Y)=>X*X+Y*Y;
+const CH=()=>vista(360,780,240);
+function corDens(v){return mix('#10243A',CI,Math.pow(Math.min(1,v/8),.85));}
+function mapaDens(n=64){const h=2/n;for(let i=0;i<n;i++)for(let j=0;j<n;j++){const A=P(i*h,(j+1)*h),B=P((i+1)*h,j*h);x.fillStyle=corDens(f((i+.5)*h,(j+.5)*h));x.fillRect(A[0],A[1],B[0]-A[0]+.6,B[1]-A[1]+.6);}}
+function borda(cor=GEO,w=3){linha([[0,0],[2,0],[2,2],[0,2],[0,0]],cor,w);}
+function eixosChapa(){seta([-.1,0],[2.3,0],E1,3,16);seta([0,-.1],[0,2.3],E2,3,16);tex('\\X',...P(2.4,0),32,'c');tex('\\Y',...P(0,2.42),32,'c');}
+function grade(xs,ys,cor=GEO,w=2,dash=[7,7]){for(const a of xs)linha([[a,0],[a,2]],cor,w,{dash});for(const b of ys)linha([[0,b],[2,b]],cor,w,{dash});}
+const uni=n=>Array.from({length:n+1},(_,i)=>2*i/n);
+// ---------- solda e dois metais ----------
+const g=a=>1+.42*Math.sin(1.7*a-.4);
+function faixa(a,b,am=60){let mn=9,mx=-9;for(let s=0;s<=am;s++){const v=g(a+(b-a)*s/am);mn=Math.min(mn,v);mx=Math.max(mx,v);}return [mn,mx];}
+function metais(n,{verm=true,alphaV=.6,linhasGrade=true}={}){const h=2/n;for(let i=0;i<n;i++){const a=i*h,b=a+h,[mn,mx]=faixa(a,b);for(let j=0;j<n;j++){const c=j*h,d=c+h,leve=c<=mx,pes=d>mn;
+  const A=P(a,d),B=P(b,c);x.fillStyle=(verm&&leve&&pes)?mix(BG,AL,alphaV):((c+d)/2>g((a+b)/2)?PESADO:LEVE);x.fillRect(A[0],A[1],B[0]-A[0]+.6,B[1]-A[1]+.6);}}
+ if(linhasGrade&&n<=32)grade(uni(n).slice(1,-1),uni(n).slice(1,-1),mix(BG,GEO,.35),1,null);}
+function curvaG(dy=0){const c=[];for(let s=0;s<=120;s++){const a=2*s/120;c.push([a,g(a)+dy]);}return c;}
+function metaisLiso(){preenche([[0,0],[2,0]].concat(curvaG().reverse()),LEVE);preenche([[0,2],[2,2]].concat(curvaG().reverse()),PESADO);}
+function solda(cor=BR,w=4){const c=[];for(let s=0;s<=80;s++){const a=2*s/80;c.push([a,g(a)]);}linha(c,cor,w);}
+function cobertura(n,{cor=MEN,fill=.22,w=2,eng=0,dash=null}={}){const h=2/n;let area=0;for(let i=0;i<n;i++){const a=i*h,b=a+h,[mn,mx]=faixa(a,b);area+=(b-a)*(mx-mn);
+  ret(a-eng,b+eng,mn-eng,mx+eng,fill?(cor===MEN?`rgba(140,255,210,${fill})`:mix(BG,cor,fill)):null,cor,w,dash);}return area;}
+// ---------- quarto de disco ----------
+function escadaB(n,{cIn=mix(BG,CI,.55),cBord=mix(BG,AL,.55),bordaOn=false}={}){const h=2/n;for(let i=0;i<n;i++)for(let j=0;j<n;j++){const near=(i*h)**2+(j*h)**2,far=((i+1)*h)**2+((j+1)*h)**2,cx=(i+.5)*h,cy=(j+.5)*h;
+ const A=P(i*h,(j+1)*h),B=P((i+1)*h,j*h);let c=null;if(bordaOn&&near<4&&far>4)c=cBord;else if(cx*cx+cy*cy<=4)c=cIn;if(c){x.fillStyle=c;x.fillRect(A[0],A[1],B[0]-A[0]+.6,B[1]-A[1]+.6);}}}
+function arcoB(cor=CI,w=3,r=2){const a=[];for(let k=0;k<=90;k++){const t=PI/2*k/90;a.push([r*Math.cos(t),r*Math.sin(t)]);}linha(a,cor,w);}
+function discoB(fill){const a=[[0,0]];for(let k=0;k<=90;k++){const t=PI/2*k/90;a.push([2*Math.cos(t),2*Math.sin(t)]);}preenche(a,fill);}
+// régua da massa (0–12 kg), X0 = posição do 0, k = px por kg
+function regua(Y,{X0=1120,k=52,band=null,marks=[],ticks=[0,2,4,6,8,10,12]}={}){
+ x.strokeStyle=GEO;x.lineWidth=3;x.beginPath();x.moveTo(X0,Y);x.lineTo(X0+12*k+24,Y);x.stroke();
+ x.beginPath();x.moveTo(X0+12*k+34,Y);x.lineTo(X0+12*k+18,Y-8);x.lineTo(X0+12*k+18,Y+8);x.closePath();x.fillStyle=GEO;x.fill();
+ for(const t of ticks){x.beginPath();x.moveTo(X0+t*k,Y-7);x.lineTo(X0+t*k,Y+7);x.stroke();txt(String(t),X0+t*k,Y+38,{size:24,f:'SGM',cor:GEO,al:'center'});}
+ txt('kg',X0+12*k+40,Y+36,{size:22,f:'SGM',cor:GEO});
+ if(band){const [a,b]=band;x.fillStyle='rgba(184,196,218,.22)';x.fillRect(X0+a*k,Y-13,(b-a)*k,26);x.fillStyle=AZC;x.fillRect(X0+a*k-3,Y-18,6,36);x.fillStyle=CORAL;x.fillRect(X0+b*k-3,Y-18,6,36);}
+ for(const [v,lab,cor] of marks){x.beginPath();x.arc(X0+v*k,Y,9,0,7);x.fillStyle=cor;x.fill();if(lab)txt(lab,X0+v*k,Y-26,{size:24,f:'SGM',cor,al:'center'});}}
+// três miniaturas do gancho (dois metais · quarto de disco · x²+y²), cada uma com a chapa de lado L px e canto (0,0) em (X,Y)
+function miniMetais(X,Y,L,n=16){vista(X,Y,L/2);metais(n);borda(GEO,2);solda(BR,3);}
+function miniDisco(X,Y,L,n=32){vista(X,Y,L/2);escadaB(n,{bordaOn:true});grade(uni(n).slice(1,-1),uni(n).slice(1,-1),mix(BG,GEO,.3),1,null);borda(GEO,2);arcoB(CI,3);}
+function miniDens(X,Y,L){vista(X,Y,L/2);mapaDens(48);borda(GEO,2);}
+
+const LIL='#C9A7FF';
+const v3=s=>s.replace(/\./g,'{,}');
+// ---------- balança: dois pratos com os pedaços da chapa (pedaço leve à esquerda, pesado à direita) ----------
+function balanca(cx,Yp,u,{ok=false,dois=true}={}){const L=2*u,gap=60,xl=cx-gap/2-L,xr=cx+gap/2;
+ x.strokeStyle=GEO;x.lineWidth=3;x.lineCap='round';
+ const Yb=Yp-1.6*u-40;x.beginPath();x.moveTo(xl+L/2,Yb);x.lineTo(xr+L/2,Yb);x.stroke();
+ x.beginPath();x.moveTo(cx,Yb);x.lineTo(cx,Yp+90);x.stroke();x.beginPath();x.moveTo(cx-60,Yp+110);x.lineTo(cx+60,Yp+110);x.lineTo(cx,Yp+80);x.closePath();x.stroke();
+ for(const X0 of [xl,xr]){x.beginPath();x.moveTo(X0+L/2,Yb);x.lineTo(X0-6,Yp+4);x.moveTo(X0+L/2,Yb);x.lineTo(X0+L+6,Yp+4);x.stroke();
+  x.lineWidth=5;x.beginPath();x.moveTo(X0-14,Yp+6);x.lineTo(X0+L+14,Yp+6);x.stroke();x.lineWidth=3;}
+ vista(xl,Yp,u);preenche([[0,0],[2,0]].concat(curvaG().reverse()),LEVE);solda(BR,3);
+ vista(xr,Yp+0.836*u,u);preenche([[0,2],[2,2]].concat(curvaG().reverse()),PESADO);solda(BR,3);
+ return {xl,xr,L};}
+function cartao(X0,Y0,w,h,t,sub,cor=BR){painel(X0,Y0,w,h);txt(t,X0+w/2,Y0+h-58,{size:28,al:'center',cor});if(sub)leg(sub,X0+w/2,Y0+h-22,GEO,'center',22);}
+function mapaF(fun,n,cor0,cor1,{disco=false,vmax=1}={}){const h=2/n;for(let i=0;i<n;i++)for(let j=0;j<n;j++){const X=(i+.5)*h,Y=(j+.5)*h;
+  if(disco&&(X-1)**2+(Y-1)**2>1)continue;const A=P(i*h,(j+1)*h),B=P((i+1)*h,j*h);x.fillStyle=mix(cor0,cor1,Math.min(1,fun(X,Y)/vmax));x.fillRect(A[0],A[1],B[0]-A[0]+.6,B[1]-A[1]+.6);}}
+function circ(c,r,cor,w=3,dash=null){const q=P(...c);x.setLineDash(dash||[]);x.beginPath();x.arc(...q,r*U,0,7);x.strokeStyle=cor;x.lineWidth=w;x.stroke();x.setLineDash([]);}
+
+
+// ---------- yt_0033: helpers novos ----------
+const RG=s=>s.replace(/(\d)\.(\d)/g,'$1{,}$2');
+// linha mista: palavras em Space Grotesk + matemática em KaTeX, lado a lado (regra: frase portuguesa nunca dentro de MathTex)
+function mixl(parts,X,Y,size=36,cor=BR){let cx=X;for(const [t,s,c] of parts){if(t==='m'){const d=tex(s,cx,Y,size,'l');cx+=d.getBoundingClientRect().width+14;}
+ else{x.font=`${Math.round(size*.78)}px SG`;txt(s,cx,Y+size*.27,{size:Math.round(size*.78),cor:c||cor});cx+=x.measureText(s).width+14;}}return cx;}
+// painel lateral (vista de lado da fatia): eixo horizontal (y, magenta) e vertical (valor de f, ciano), grade 0,25 nascendo dos eixos
+let LX=0,LY=0,LUY=1,LUZ=1;const L=(a,b)=>[LX+a*LUY,LY-b*LUZ];
+function lateral(X0,Y0,uy,uz,zmax,{ymax=2.25,zt=[0,2,4,6],yt=[0,1,2],hcor=E2,vcor=CI,hl='\\Y',vl='\\f',grade=true,passo=null}={}){LX=X0;LY=Y0;LUY=uy;LUZ=uz;
+ if(grade){x.strokeStyle='#2B2558';x.lineWidth=1.2;const pz=passo||(uz*.25>=20?.25:(uz*.5>=20?.5:1));
+  for(let a=0;a<=ymax+1e-9;a+=.25){const [px]=L(a,0);x.beginPath();x.moveTo(px+.5,LY);x.lineTo(px+.5,LY-zmax*uz);x.stroke();}
+  for(let b=0;b<=zmax+1e-9;b+=pz){const [,py]=L(0,b);x.beginPath();x.moveTo(LX,py+.5);x.lineTo(LX+ymax*uy,py+.5);x.stroke();}}
+ const ar=(A,B,cor)=>{x.strokeStyle=cor;x.fillStyle=cor;x.lineWidth=3;x.beginPath();x.moveTo(...A);x.lineTo(...B);x.stroke();const dx=B[0]-A[0],dy=B[1]-A[1],l=Math.hypot(dx,dy),ux=dx/l,uy2=dy/l;
+  x.beginPath();x.moveTo(B[0]+ux*14,B[1]+uy2*14);x.lineTo(B[0]-uy2*8,B[1]+ux*8);x.lineTo(B[0]+uy2*8,B[1]-ux*8);x.closePath();x.fill();};
+ ar(L(-.05,0),L(ymax+.08,0),hcor);ar(L(0,-.1),L(0,zmax+.15),vcor);tex(hl,...(()=>{const p=L(ymax+.2,0);return [p[0]+6,p[1]];})(),32,'l');tex(vl,...(()=>{const p=L(0,zmax+.15);return [p[0],p[1]-30];})(),32,'c');
+ for(const a of yt){const [px,py]=L(a,0);txt(RG(String(a)).replace('{,}',','),px,py+36,{size:26,f:'SGM',cor:GEO,al:'center'});}
+ for(const b of zt){const [px,py]=L(0,b);txt(String(b).replace('.',','),px-14,py+9,{size:26,f:'SGM',cor:GEO,al:'right'});}}
+function curvaL(fn,cor,w=4,{a0=0,a1=2,dash=null,alpha=1}={}){x.setLineDash(dash||[]);x.globalAlpha=alpha;x.beginPath();for(let s=0;s<=120;s++){const a=a0+(a1-a0)*s/120,p=L(a,fn(a));s?x.lineTo(...p):x.moveTo(...p);}
+ x.strokeStyle=cor;x.lineWidth=w;x.lineJoin='round';x.stroke();x.setLineDash([]);x.globalAlpha=1;}
+function areaL(fn,cor,{a0=0,a1=2}={}){x.beginPath();x.moveTo(...L(a0,0));for(let s=0;s<=120;s++){const a=a0+(a1-a0)*s/120;x.lineTo(...L(a,fn(a)));}x.lineTo(...L(a1,0));x.closePath();x.fillStyle=cor;x.fill();}
+function escadaL(deg,cor,w=4,fill=null){if(fill){for(const [a,b,v] of deg){const A=L(a,v),B=L(b,0);x.fillStyle=fill;x.fillRect(A[0],A[1],B[0]-A[0],B[1]-A[1]);}}
+ x.beginPath();deg.forEach(([a,b,v],i)=>{const A=L(a,v),B=L(b,v);if(i===0)x.moveTo(...L(a,0));x.lineTo(...A);x.lineTo(...B);});x.lineTo(...L(deg[deg.length-1][1],0));x.strokeStyle=cor;x.lineWidth=w;x.lineJoin='miter';x.stroke();}
+function chapaFatiada(n=8,afasta=.05){const h=2/n;for(let i=0;i<n;i++){x.save();x.translate(i*afasta*U,0);const a=i*h,b=a+h;
+ preenche([[a,0],[b,0],[b,g(b)],[a,g(a)]],LEVE);preenche([[a,g(a)],[b,g(b)],[b,2],[a,2]],PESADO);linha([[a,g(a)],[b,g(b)]],BR,2);linha([[a,0],[b,0],[b,2],[a,2],[a,0]],E1,2);x.restore();}}
+function placaTxt(s,X,Y,cor=BR,size=28,al='left'){txt(s,X,Y,{size,cor,placa:true,al});}
+function caixaOk(X,Y,w,t,{cor=MEN,ok=true}={}){x.strokeStyle='rgba(184,196,218,.45)';x.lineWidth=2;x.beginPath();x.roundRect(X,Y-45,w,80,12);x.stroke();(ok?check:cruz)(X+40,Y-6,ok?cor:AL,.9);txt(t,X+80,Y+8,{size:30});}
+function sublinha(X0,X1,Y,cor=BR){x.strokeStyle=cor;x.lineWidth=2.5;x.beginPath();x.moveTo(X0,Y);x.lineTo(X1,Y);x.stroke();}
+
+// ---------- yt_0034: helpers novos ----------
+const RB=mix(BG,GEO,.18), S3=Math.sqrt(3);
+// grade papel(ax): só no palco, nascendo dos eixos (quadradinho 0,25)
+function papel(a0,a1,b0,b1,p=.25){x.strokeStyle='#2B2558';x.lineWidth=1.2;
+ for(let a=Math.ceil(a0/p-1e-9)*p;a<=a1+1e-9;a+=p){const A=P(a,b0),B=P(a,b1);x.beginPath();x.moveTo(A[0]+.5,A[1]);x.lineTo(B[0]+.5,B[1]);x.stroke();}
+ for(let b=Math.ceil(b0/p-1e-9)*p;b<=b1+1e-9;b+=p){const A=P(a0,b),B=P(a1,b);x.beginPath();x.moveTo(A[0],A[1]+.5);x.lineTo(B[0],B[1]+.5);x.stroke();}}
+function eixos(a1,b1,{a0=-.06,b0=-.06,lx='\\X',ly='\\Y'}={}){seta([a0,0],[a1,0],E1,3,16);seta([0,b0],[0,b1],E2,3,16);const A=P(a1,0),B=P(0,b1);tex(lx,A[0]+22,A[1],32,'c');tex(ly,B[0],B[1]-26,32,'c');}
+function tkx(a,s,size=28){const q=P(a,0);x.strokeStyle=GEO;x.lineWidth=2;x.beginPath();x.moveTo(q[0],q[1]-7);x.lineTo(q[0],q[1]+7);x.stroke();tex(s,q[0],q[1]+30,size,'c');}
+function tky(b,s,size=28){const q=P(0,b);x.strokeStyle=GEO;x.lineWidth=2;x.beginPath();x.moveTo(q[0]-7,q[1]);x.lineTo(q[0]+7,q[1]);x.stroke();tex(s,q[0]-16,q[1],size,'r');}
+const cX=(fn,a0,a1,n=120)=>Array.from({length:n+1},(_,i)=>{const a=a0+(a1-a0)*i/n;return [a,fn(a)];});
+const cY=(fn,b0,b1,n=120)=>Array.from({length:n+1},(_,i)=>{const b=b0+(b1-b0)*i/n;return [fn(b),b];});
+function tiraV(a,lo,hi,{h=.06,cor=E1,ent=true,alpha=.55}={}){ret(a-h/2,a+h/2,lo,hi,mix(BG,cor,alpha),cor,2);if(ent){ponto([a,lo],AZC,9);ponto([a,hi],CORAL,9);}}
+function tiraH(b,lo,hi,{h=.06,cor=E2,ent=true,alpha=.55}={}){ret(lo,hi,b-h/2,b+h/2,mix(BG,cor,alpha),cor,2);if(ent){ponto([lo,b],AZC,9);ponto([hi,b],CORAL,9);}}
+function rot(s,p,dx=0,dy=0,size=30,al='l'){const q=P(...p);return tex(s,q[0]+dx,q[1]+dy,size,al,true);}
+function selo(s,X,Y,cor=GEO,size=24){x.font=`${size}px SGM`;const w=x.measureText(s).width;x.strokeStyle=cor;x.lineWidth=2;x.beginPath();x.roundRect(X,Y-size-6,w+28,size+22,8);x.stroke();txt(s,X+14,Y+2,{size,f:'SGM',cor});}
+function chave(X0,X1,Y,cor=E2){x.strokeStyle=cor;x.lineWidth=3;x.lineCap='round';x.beginPath();x.moveTo(X0,Y-10);x.quadraticCurveTo(X0,Y,X0+14,Y);x.lineTo((X0+X1)/2-12,Y);x.quadraticCurveTo((X0+X1)/2,Y,(X0+X1)/2,Y+12);x.quadraticCurveTo((X0+X1)/2,Y,(X0+X1)/2+12,Y);x.lineTo(X1-14,Y);x.quadraticCurveTo(X1,Y,X1,Y-10);x.stroke();}
+const TRI=[[0,0],[1,1],[0,1]];
+function triPalco(){vista(260,860,560);papel(0,1.12,0,1.12);preenche([[0,0],[1,1],[0,1]],RB);linha([[0,0],[0,1]],GEO,2);eixos(1.2,1.2);tkx(1,'\\Am{1}');tky(1,'\\Mg{1}');}
+function quartoDisco(){CH();papel(0,2.2,0,2.2);discoB(RB);eixos(2.35,2.35);tkx(2,'\\Am{2}');tky(2,'\\Mg{2}');}
+const gs=(y)=>Math.exp(-y*y);
+// ---------- 3.4-T3: helpers novos ----------
+const LAR='#FF9440', VAG='#2EE6A6', LIMA='#C6F26B';
+// ⊕ do centro de massa (degradê ciano → magenta, como no yt_0017); vaz = centroide (só contorno branco)
+function cm(p,{r=17,vaz=false}={}){const q=P(...p);if(vaz){x.strokeStyle=BR;x.lineWidth=3;x.beginPath();x.arc(...q,r,0,7);x.stroke();}
+ else{const g=x.createLinearGradient(q[0]-r,q[1]-r,q[0]+r,q[1]+r);g.addColorStop(0,CI);g.addColorStop(1,E2);x.fillStyle=g;x.beginPath();x.arc(...q,r,0,7);x.fill();}
+ x.strokeStyle=vaz?BR:BG;x.lineWidth=3;x.beginPath();x.moveTo(q[0]-r*.62,q[1]);x.lineTo(q[0]+r*.62,q[1]);x.moveTo(q[0],q[1]-r*.62);x.lineTo(q[0],q[1]+r*.62);x.stroke();}
+function disco(p,raio,cor=CI){const q=P(...p);x.beginPath();x.arc(...q,raio,0,7);x.fillStyle=cor;x.fill();x.strokeStyle=BG;x.lineWidth=2;x.stroke();}
+function meiaLuaMapa(a=1,{r0=0,dens=r=>r,vmax=1,n=60,m=120}={}){for(let i=0;i<n;i++)for(let j=0;j<m;j++){const ra=r0+(a-r0)*i/n,rb=r0+(a-r0)*(i+1)/n,ta=PI*j/m,tb=PI*(j+1)/m;
+ x.beginPath();const A=P(ra*Math.cos(ta),ra*Math.sin(ta));x.moveTo(...A);[[rb,ta],[rb,tb],[ra,tb]].forEach(([r,t])=>x.lineTo(...P(r*Math.cos(t),r*Math.sin(t))));x.closePath();
+ const v=dens((ra+rb)/2);x.fillStyle=mix('#10243A',CI,Math.pow(Math.min(1,v/vmax),.85));x.fill();x.strokeStyle=x.fillStyle;x.lineWidth=.6;x.stroke();}}
+const arcoP=(r,t0=0,t1=PI,n=120)=>Array.from({length:n+1},(_,k)=>{const t=t0+(t1-t0)*k/n;return [r*Math.cos(t),r*Math.sin(t)];});
+function quadrado(fill=true){CH();papel(0,2.2,0,2.2);if(fill)mapaDens(64);borda(GEO,3);eixos(2.4,2.4);tkx(1,'\\Am{1}');tkx(2,'\\Am{2}');tky(1,'\\Mg{1}');tky(2,'\\Mg{2}');}
+
+
+// ---------- v2: helpers ----------
+// grade da TELA INTEIRA nascendo dos eixos do palco (mesma origem O e unidade U): o papel(ax) sem `area`
+function papelTela(p=.25){x.strokeStyle='#2B2558';x.lineWidth=1.2;const s=p*U;
+ for(let X=O[0]-Math.ceil(O[0]/s)*s;X<=1920;X+=s){x.beginPath();x.moveTo(Math.round(X)+.5,0);x.lineTo(Math.round(X)+.5,1080);x.stroke();}
+ for(let Y=O[1]-Math.ceil(O[1]/s)*s;Y<=1080;Y+=s){x.beginPath();x.moveTo(0,Math.round(Y)+.5);x.lineTo(1920,Math.round(Y)+.5);x.stroke();}}
+function chaveV(Y0,Y1,X,cor=E2){x.strokeStyle=cor;x.lineWidth=3;x.lineCap='round';const m=(Y0+Y1)/2;x.beginPath();x.moveTo(X-10,Y0);x.quadraticCurveTo(X,Y0,X,Y0-14);x.lineTo(X,m+12);x.quadraticCurveTo(X,m,X+12,m);x.quadraticCurveTo(X,m,X,m-12);x.lineTo(X,Y1+14);x.quadraticCurveTo(X,Y1,X-10,Y1);x.stroke();}
+function chipM(s,X,Y,size=28,cor=GEO){const d=tex(s,X+16,Y,size,'l');const r=d.getBoundingClientRect();x.strokeStyle=cor;x.globalAlpha=.7;x.lineWidth=2;x.beginPath();x.roundRect(r.left-14,r.top-10,r.width+28,r.height+20,10);x.stroke();x.globalAlpha=1;return d;}
+function seta2px(A,B,cor,w=3,head=12){const dx=B[0]-A[0],dy=B[1]-A[1],L=Math.hypot(dx,dy),ux=dx/L,uy=dy/L;x.strokeStyle=cor;x.fillStyle=cor;x.lineWidth=w;x.beginPath();x.moveTo(...A);x.lineTo(B[0]-ux*head,B[1]-uy*head);x.stroke();
+ x.beginPath();x.moveTo(...B);x.lineTo(B[0]-ux*head-uy*head*.55,B[1]-uy*head+ux*head*.55);x.lineTo(B[0]-ux*head+uy*head*.55,B[1]-uy*head-ux*head*.55);x.closePath();x.fill();}
+function triPesado(){vista(330,930,290);papelTela();
+ const n=60;for(let i=0;i<n;i++)for(let j=0;j<n;j++){const X=(i+.5)/n,Y=2*(j+.5)/n;if(Y>2-2*X)continue;const A=P(i/n,2*(j+1)/n),B=P((i+1)/n,2*j/n);x.fillStyle=mix('#10243A',CI,Math.pow((1+3*X+Y)/4.6,.85));x.fillRect(A[0],A[1],B[0]-A[0]+.6,B[1]-A[1]+.6);}
+ linha([[0,0],[1,0],[0,2],[0,0]],GEO,3);eixos(1.35,2.35);tkx(1,'\\Am{1}');tky(2,'\\Mg{2}');
+ rot('\\rr(0,0)=1',[0,0],-12,-30,26,'r');rot('\\rr(1,0)=4',[1,0],22,-30,26);rot('\\rr(0,2)=3',[0,2],22,8,26);}
+
+// ======================= yt_0039 · 3.4-E1 · quadros-alvo v1 =======================
+Object.assign(M,{'\\U':'\\textcolor{#FF9440}{u}','\\V':'\\textcolor{#2EE6A6}{v}','\\Jl':'\\textcolor{#C6F26B}','\\w':'\\textcolor{#C9A7FF}{w}','\\dw':'\\textcolor{#C9A7FF}{dw}',
+ '\\du':'\\textcolor{#FF9440}{du}','\\dv':'\\textcolor{#2EE6A6}{dv}','\\aa':'\\textcolor{#FFC24D}{a}','\\bb':'\\textcolor{#EA63FF}{b}','\\AR':'\\textcolor{#B8C4DA}'});
+const LIL2='#C9A7FF';
+function canto39(s){txt('CÁLCULO III · INTEGRAL DUPLA',36,73,{size:22,f:'SGM',cor:'#C8D6F0',alpha:.6});if(s)txt(s,36,118,{size:36});}
+// coluna: lista de [tipo, conteúdo, opções]; 'm' = MathTex, 'x' = linha mista (mixl), 'w' = palavra (Space Grotesk)
+function coluna(L,X,Y0,dy=78,size=38){let Y=Y0;for(const l of L){if(l===null){Y+=dy*.5;continue;}const [t,c,o={}]=l;const sz=o.size||size;
+  if(t==='m')tex(c,X+(o.dx||0),Y,sz,'l');else if(t==='x')mixl(c,X+(o.dx||0),Y,sz);else if(t==='w')txt(c,X+(o.dx||0),Y+sz*.3,{size:Math.round(sz*.72),f:'SG',cor:o.cor||BR});
+  if(o.selo)selo(o.selo[0],o.selo[1],Y+14,o.selo[2]||GEO,24);if(o.ok)check(o.ok,Y,MEN);Y+=(o.dy||dy);}return Y;}
+function arruela(r0=1,r1=2,fill=mix(BG,GEO,.30)){const pts=arcoP(r1).concat(arcoP(r0).reverse());preenche(pts,fill);}
+function meiaArruelaMapa(){meiaLuaMapa(2,{r0:1,dens:r=>r,vmax:2,n:40,m:120});}
+function eixosC(a0,a1,b0,b1,{lx='\\X',ly='\\Y'}={}){seta([a0,0],[a1,0],E1,3,16);seta([0,b0],[0,b1],E2,3,16);const A=P(a1,0),B=P(0,b1);tex(lx,A[0]+22,A[1],32,'c');tex(ly,B[0],B[1]-26,32,'c');}
+function pausa(X,Y){x.strokeStyle=MEN;x.lineWidth=2;x.beginPath();x.roundRect(X,Y-30,226,44,10);x.stroke();txt('PAUSE E TENTE',X+16,Y+2,{size:24,f:'SG',cor:MEN});}
+function moldura(X,Y,w,h,cor=MEN){x.strokeStyle=cor;x.lineWidth=2.5;x.beginPath();x.roundRect(X,Y,w,h,12);x.stroke();}
+
+async function main(){
+ await document.fonts.load('30px SG');await document.fonts.load('30px SGM');
+ const warm=tex('\\int\\iint\\sum_j\\dfrac{a}{b}\\bar x\\theta\\,x\\,y\\,\\mathrm{kg}\\sqrt{3}\\operatorname{sen}\\ln',0,-300,40);await document.fonts.ready;await new Promise(r=>setTimeout(r,300));warm.remove();
+
+ // 01 · H1 · a meia arruela: o centro de massa cai no buraco?
+ if(K==='h1'){fundoV(false);vista(960,820,220);papelTela();await logo();canto39('A CHAPA E O BURACO');
+  arruela();linha(arcoP(2),GEO,3);linha([[-2,0],[-1,0]],GEO,3);linha([[1,0],[2,0]],GEO,3);linha(arcoP(1),AL,3,{dash:[10,8]});
+  eixosC(-2.55,2.6,-.05,2.55);tkx(-2,'\\Am{-2}');tkx(-1,'\\Am{-1}');tkx(1,'\\Am{1}');tkx(2,'\\Am{2}');
+  linha([[0,0],[0,2.3]],BR,2,{dash:[8,8]});leg('SIMETRIA',...P(.06,2.28),GEO,'left',26);
+  x.strokeStyle=AL;x.lineWidth=7;x.globalAlpha=.85;x.beginPath();x.moveTo(...P(0,0.04));x.lineTo(...P(0,.97));x.stroke();x.globalAlpha=1;
+  placaTxt('BURACO',...(()=>{const q=P(-.62,.5);return q;})(),AL,28);
+  cm([0,1.0],{r:16});txt('?',...(()=>{const q=P(.13,1.13);return q;})(),{size:44,cor:BR});
+  placaTxt('MEIA ARRUELA',...P(1.35,1.75),BR,30);placaTxt('HOMOGÊNEA',...P(1.55,1.5),GEO,26);
+  txt('O CENTRO DE MASSA CAI NO BURACO?',960,200,{size:44,al:'center'});
+  // promessa do fim: bola e bola oca em traço
+  x.strokeStyle=GEO;x.lineWidth=2.5;x.beginPath();x.arc(1600,940,46,0,7);x.stroke();x.beginPath();x.ellipse(1600,940,46,14,0,0,7);x.stroke();
+  x.beginPath();x.arc(1730,940,46,0,7);x.stroke();x.beginPath();x.arc(1730,940,22,0,7);x.setLineDash([5,5]);x.stroke();x.setLineDash([]);
+  leg('SEM INTEGRAL',1665,1018,GEO,'center',24);}
+
+ // 02 · E1-2 · passo 4: as bordas voam do xy para o u, v (layout B)
+ if(K==='e12'){fundoV(false);await logo();canto39('1 · A FAIXA ENTRE PARÁBOLAS');
+  vista(215,985,118);x.save();x.beginPath();x.rect(0,0,540,1080);x.clip();papelTela();x.restore();
+  const lo=X=>X<=1?1+X*X:X+X*X, hi=X=>2+X*X;
+  preenche(cX(lo,0,2).concat(cX(hi,0,2).reverse()),mix(BG,GEO,.30));
+  linha(cX(X=>1+X*X,0,1.0),AZC,3);linha(cX(X=>2+X*X,0,2),CORAL,3);linha(cX(X=>X+X*X,1,2),CORAL,3,{dash:[9,7]});linha([[0,1],[0,2]],AZC,3);
+  eixosC(-.05,2.55,-.05,6.35);tkx(1,'\\Am{1}');tkx(2,'\\Am{2}');tky(2,'\\Mg{2}');tky(6,'\\Mg{6}');
+  for(const p of [[0,1],[0,2],[1,2],[2,6]])ponto(p,BR,6);
+  rot('y=2+x^2',[1.15,3.6],-8,0,26,'r');rot('y=1+x^2',[.62,1.38],14,26,26,'l');rot('y=x+x^2',[1.55,2.3],10,0,26,'l');
+  // plano u, v
+  vista(720,770,170);
+  x.save();x.beginPath();x.rect(540,0,1380,1080);x.clip();papelTela();x.restore();x.strokeStyle='rgba(184,196,218,.35)';x.lineWidth=2;x.beginPath();x.moveTo(540.5,150);x.lineTo(540.5,1080);x.stroke();
+  preenche([[0,1],[1,1],[2,2],[0,2]],mix(BG,GEO,.30));linha([[0,1],[1,1]],AZC,3);linha([[0,2],[2,2]],CORAL,3);linha([[1,1],[2,2]],CORAL,3);linha([[0,1],[0,2]],AZC,3);
+  seta([-.05,0],[2.4,0],LAR,3,16);seta([0,-.05],[0,2.4],VAG,3,16);tex('\\U',...(()=>{const q=P(2.4,0);return [q[0]+22,q[1]];})(),32,'c');tex('\\V',...(()=>{const q=P(0,2.4);return [q[0],q[1]-26];})(),32,'c');
+  tkx(1,'\\textcolor{#FF9440}{1}');tkx(2,'\\textcolor{#FF9440}{2}');tky(1,'\\textcolor{#2EE6A6}{1}');tky(2,'\\textcolor{#2EE6A6}{2}');
+  for(const p of [[0,1],[0,2],[1,1],[2,2]])ponto(p,BR,6);
+  placaTxt('B',...P(.55,1.55),BR,30);tex('_{uv}',...(()=>{const q=P(.55,1.55);return [q[0]+22,q[1]+8];})(),24,'l');
+  // seta φ entre os planos
+  seta2px([560,600],[650,600],GEO,3,14);tex('\\varphi',605,570,30,'c');
+  chipM('|J| = \\Jl{1}',1210,175,30);
+  coluna([['m','y=1+x^2\\enspace \\longrightarrow\\enspace \\V=1'],['m','y=2+x^2\\enspace \\longrightarrow\\enspace \\V=2'],['m','x=0\\enspace \\longrightarrow\\enspace \\U=0'],['m','y=x+x^2\\enspace \\longrightarrow\\enspace \\V=\\U'],
+   ['m','(0,1)\\to(0,1)\\quad(1,2)\\to(1,1)',{size:32}],['m','(0,2)\\to(0,2)\\quad(2,6)\\to(2,2)',{size:32}],['x',[['m','B_{uv}:'],['m','1\\le \\V\\le 2,\\enspace \\enspace  0\\le \\U\\le \\V']]]],1210,290,88,36);}
+
+ // 03 · E1-3 · a conta: o comprimento cancela
+ if(K==='e13'){fundoV(false);await logo();canto39('1 · A FAIXA ENTRE PARÁBOLAS');
+  vista(260,820,250);papelTela();
+  preenche([[0,1],[1,1],[2,2],[0,2]],mix(BG,GEO,.30));linha([[0,1],[1,1],[2,2],[0,2],[0,1]],GEO,3);
+  seta([-.05,0],[2.4,0],LAR,3,16);seta([0,-.05],[0,2.5],VAG,3,16);tex('\\U',...(()=>{const q=P(2.4,0);return [q[0]+22,q[1]];})(),32,'c');tex('\\V',...(()=>{const q=P(0,2.5);return [q[0],q[1]-26];})(),32,'c');
+  tkx(1,'\\textcolor{#FF9440}{1}');tkx(2,'\\textcolor{#FF9440}{2}');tky(1,'\\textcolor{#2EE6A6}{1}');tky(2,'\\textcolor{#2EE6A6}{2}');
+  tiraH(1.75,0,1.75,{cor:VAG,h:.07});
+  const a=P(0,1.62),b=P(1.75,1.62);chave(a[0],b[0],a[1]+10,VAG);mixl([['w','COMPRIMENTO',VAG],['m','=\\V']],a[0]+70,a[1]+62,32);
+  rot('\\V=\\U',[1.8,1.75],16,0,28,'l');
+  chipM('|J| = \\Jl{1}',1100,175,30);
+  coluna([['m','\\iint_A \\dfrac{e^{y-x^2}}{y-x^2}\\,dA=\\int_1^2\\!\\!\\int_0^{\\V}\\dfrac{e^{\\V}}{\\V}\\cdot\\Jl{1}\\enspace \\du\\,\\dv',{size:36,dy:118}],
+   ['w','DE DENTRO',{size:30,dy:62}],['m','\\int_0^{\\V}\\dfrac{e^{\\V}}{\\V}\\,\\du=\\dfrac{e^{\\V}}{\\V}\\Big[\\,\\U\\,\\Big]_0^{\\V}=\\dfrac{e^{\\V}}{\\V}(\\V-0)=e^{\\V}',{size:36,dy:118}],
+   ['w','DE FORA',{size:30,dy:62}],['m','\\int_1^2 e^{\\V}\\,\\dv=\\Big[e^{\\V}\\Big]_1^2=e^2-e^1',{size:36,dy:100}],['m','=e^2-e\\approx 4{,}67',{size:40}]],1100,300,90);}
+
+ // 04 · E2-2 · o jacobiano da volta
+ if(K==='e22'){fundoV(false);await logo();canto39('2 · AS HIPÉRBOLES');
+  vista(150,960,300);papelTela();
+  const lo=X=>Math.max(1/X,X),hi=X=>Math.min(2/X,2*X);const xs0=1/Math.SQRT2,xs1=Math.SQRT2;
+  preenche(cX(lo,xs0,xs1).concat(cX(hi,xs0,xs1).reverse()),mix(BG,GEO,.30));
+  for(const u of [1.25,1.5,1.75])linha(cX(X=>u/X,Math.sqrt(u/2),Math.sqrt(u)),mix(BG,LAR,.6),2);
+  for(const v of [1.25,1.5,1.75])linha([[Math.sqrt(1/v),Math.sqrt(1/v)*v],[Math.sqrt(2/v),Math.sqrt(2/v)*v]],mix(BG,VAG,.6),2);
+  linha(cX(X=>1/X,.5,1.7),LAR,3);linha(cX(X=>2/X,.85,1.7),LAR,3);linha([[0,0],[1.6,1.6]],VAG,3);linha([[0,0],[1.1,2.2]],VAG,3);
+  eixosC(-.05,1.85,-.05,2.55);tkx(1,'\\Am{1}');tky(1,'\\Mg{1}');tky(2,'\\Mg{2}');
+  rot('\\U=1',[1.62,.62],10,10,26,'l');rot('\\U=2',[1.66,1.21],10,4,26,'l');rot('\\V=1',[1.5,1.5],18,22,26,'l');rot('\\V=2',[1.02,2.04],16,0,26,'l');
+  // célula lima
+  preenche([[1.06,1.20],[1.12,1.27],[1.17,1.21],[1.10,1.14]],LIMA);
+  coluna([['x',[['w','PASSO 1',GEO],['m','\\U=xy\\qquad \\V=\\dfrac{y}{x}']]],
+   ['x',[['w','PASSO 2',GEO],['m','x=\\sqrt{\\U/\\V}\\qquad y=\\sqrt{\\U\\V}']]],
+   ['x',[['w','PASSO 3',GEO],['m','\\dfrac{\\partial(\\U,\\V)}{\\partial(x,y)}=\\begin{vmatrix} y & x\\\\ -\\dfrac{y}{x^2} & \\dfrac{1}{x}\\end{vmatrix}']],{dy:120}],
+   ['m','=y\\cdot\\dfrac{1}{x}-x\\cdot\\left(-\\dfrac{y}{x^2}\\right)=\\dfrac{y}{x}+\\dfrac{y}{x}=\\dfrac{2y}{x}=2\\V',{size:34,dy:100}],
+   ['m','\\dfrac{\\partial(x,y)}{\\partial(\\U,\\V)}\\cdot\\dfrac{\\partial(\\U,\\V)}{\\partial(x,y)}=1',{size:34,dy:76}],['w','IR E VOLTAR = NÃO FAZER NADA',{size:26,cor:MEN,dy:74}],
+   ['m','J=\\Jl{\\dfrac{1}{2\\V}}\\qquad |J|=\\Jl{\\dfrac{1}{2\\V}}\\enspace \\enspace (\\V>0)',{size:36}]],1040,230,92,36);}
+
+ // 05 · E2-3 · a área e a pipa
+ if(K==='e23'){fundoV(false);await logo();canto39('2 · AS HIPÉRBOLES');
+  vista(440,990,360);papelTela();
+  const lo=X=>Math.max(1/X,X),hi=X=>Math.min(2/X,2*X);const xs0=1/Math.SQRT2,xs1=Math.SQRT2;
+  preenche(cX(lo,xs0,xs1).concat(cX(hi,xs0,xs1).reverse()),mix(BG,GEO,.30));
+  linha(cX(X=>1/X,xs0,1),LAR,3);linha(cX(X=>2/X,1,xs1),LAR,3);linha([[1,1],[xs1,xs1]],VAG,3);linha([[xs0,2*xs0],[1,2]],VAG,3);
+  eixosC(-.04,1.65,-.04,2.25);tkx(1,'\\Am{1}');tky(1,'\\Mg{1}');tky(2,'\\Mg{2}');
+  const A=[1,1],B=[xs1,xs1],Cc=[1,2],D=[xs0,xs1];linha([A,B,Cc,D,A],BR,2.5,{dash:[10,7]});
+  linha([A,Cc],BR,3);linha([D,B],BR,3);for(const p of [A,B,Cc,D])ponto(p,BR,7);
+  rot('1',[1,1.72],16,0,30,'l');rot('\\dfrac{1}{\\sqrt2}',[.86,xs1],0,44,28,'c');
+  rot('(1,1)',[1,1],16,22,24,'l');rot('(1,2)',[1,2],16,-8,24,'l');rot('(\\sqrt2,\\sqrt2)',[xs1,xs1],16,0,24,'l');rot('\\left(\\tfrac{1}{\\sqrt2},\\sqrt2\\right)',[xs0,xs1],-14,0,24,'r');
+  chipM('|J| = \\Jl{\\dfrac{1}{2\\V}}',1100,175,30);
+  coluna([['x',[['w','ÁREA'],['m','=\\int_1^2\\!\\!\\int_1^2\\Jl{\\dfrac{1}{2\\V}}\\,\\du\\,\\dv']],{size:36,dy:104}],
+   ['m','\\dfrac{1}{2\\V}\\Big[\\U\\Big]_1^2=\\dfrac{1}{2\\V}(2-1)=\\dfrac{1}{2\\V}',{size:36,dy:100}],
+   ['m','\\dfrac{1}{2}\\Big[\\ln \\V\\Big]_1^2=\\dfrac{1}{2}(\\ln 2-\\ln 1)=\\dfrac{\\ln 2}{2}\\approx 0{,}347',{size:36,dy:110}],
+   ['x',[['w','PIPA',GEO],['m','=\\dfrac{1\\cdot\\frac{1}{\\sqrt2}}{2}=\\dfrac{\\sqrt2}{4}\\approx 0{,}354']],{dy:100}],
+   ['x',[['m','0{,}347\\approx 0{,}354'],['w','ESTIMATIVA DA PIPA',GEO]]]],1100,290,96,36);}
+
+ // 06 · E3-1 · um oitavo de bola (3D + leitura dos limites)
+ if(K==='e31'){fundoV(false);await logo();canto39('3 · O OITAVO DE BOLA');const o3={dx:40,dy:95,esc:.9};await cena3d('oct',o3);
+  const ex=Q3('oct','ex',o3),ey=Q3('oct','ey',o3),ez=Q3('oct','ez',o3);tex('\\X',ex[0]-10,ex[1]+10,32,'c');tex('\\Y',ey[0]+22,ey[1],32,'c');tex('z',ez[0]+24,ez[1]+10,32,'c');
+  const cs=Q3('oct','casca',o3);tex('x^2+y^2+z^2=a^2',cs[0]+30,cs[1]-118,30,'l',true);
+  txt('UM OITAVO DE BOLA',300,1010,{size:34,cor:MEN});
+  coluna([['m','\\int_0^{a}\\left[\\int_0^{\\sqrt{a^2-x^2}}\\sqrt{a^2-x^2-y^2}\\,dy\\right]dx',{size:36,dy:130}],
+   ['m','0\\le x\\le a\\qquad \\textcolor{#7FB2FF}{0}\\le y\\le \\textcolor{#FF7A8A}{\\sqrt{a^2-x^2}}',{dy:84}],
+   ['m','y^2=a^2-x^2\\enspace \\Rightarrow\\enspace x^2+y^2=a^2',{dy:70}],['w','QUARTO DE DISCO',{cor:GEO,dy:84}],
+   ['m','z=\\sqrt{a^2-x^2-y^2}\\enspace \\Rightarrow\\enspace x^2+y^2+z^2=a^2',{size:34}]],1060,260,92,36);
+  pausa(1060,980);}
+
+ // 07 · E3-2 · polares (etapa B) com o quarto de disco
+ if(K==='e32'){fundoV(false);await logo();canto39('3 · O OITAVO DE BOLA');
+  vista(220,900,560);papelTela();
+  const q=[[0,0]].concat(arcoP(1,0,PI/2));preenche(q,mix(BG,GEO,.30));linha(arcoP(1,0,PI/2),CORAL,3);
+  eixosC(-.04,1.25,-.04,1.25,{});tkx(1,'\\aa');tky(1,'a');
+  const t=.62;linha([[0,0],[Math.cos(t),Math.sin(t)]],LAR,4);ponto([0,0],AZC,8);ponto([Math.cos(t),Math.sin(t)],CORAL,8);
+  x.strokeStyle=VAG;x.lineWidth=3;x.beginPath();x.arc(...P(0,0),70,-t,0);x.stroke();tex('\\th',...P(.2,.06),30,'c');tex('\\R',...P(.5*Math.cos(t)-.05,.5*Math.sin(t)+.07),30,'c');
+  chipM('\\int_0^{\\pi/2}\\!\\!\\int_0^a\\sqrt{a^2-\\R^2}\\enspace \\Rj\\,\\dr\\,\\dth',1060,180,28);
+  coluna([['m','\\dfrac12\\left[\\dfrac23\\,\\w^{3/2}\\right]_0^{a^2}=\\dfrac12\\cdot\\dfrac23\\left((a^2)^{3/2}-0\\right)=\\dfrac{a^3}{3}',{size:36,dy:126}],
+   ['m','\\dfrac{a^3}{3}\\Big[\\th\\Big]_0^{\\pi/2}=\\dfrac{a^3}{3}\\left(\\dfrac{\\pi}{2}-0\\right)=\\dfrac{\\pi a^3}{6}',{size:36,dy:126}],
+   ['m','\\dfrac{4\\pi a^3}{3}\\div 8=\\dfrac{4\\pi a^3}{24}=\\dfrac{\\pi a^3}{6}',{size:36,ok:1520}]],1060,330,110,36);
+  txt('UM OITAVO DA BOLA',1060,760,{size:30,cor:MEN});}
+
+ // 08 · E4-1 · polares esticadas
+ if(K==='e41'){fundoV(false);await logo();canto39('4 · A ELIPSE');
+  vista(470,560,240);papelTela();const a=1.6,b=1;
+  const el=Array.from({length:181},(_,k)=>{const t=2*PI*k/180;return [a*Math.cos(t),b*Math.sin(t)];});preenche(el,mix(BG,GEO,.26));linha(el,GEO,3);
+  linha(Array.from({length:181},(_,k)=>{const t=2*PI*k/180;return [Math.cos(t),Math.sin(t)];}),GEO,2,{dash:[8,8]});
+  const cel=(r0,r1,t0,t1,sx,sy)=>{const pts=[];for(let k=0;k<=12;k++){const t=t0+(t1-t0)*k/12;pts.push([sx*r1*Math.cos(t),sy*r1*Math.sin(t)]);}for(let k=12;k>=0;k--){const t=t0+(t1-t0)*k/12;pts.push([sx*r0*Math.cos(t),sy*r0*Math.sin(t)]);}return pts;};
+  preenche(cel(.55,.8,.6,1.0,1,1),mix(BG,LIMA,.45));preenche(cel(.55,.8,.6,1.0,a,b),LIMA);
+  eixosC(-1.85,1.9,-1.3,1.45);tkx(a,'\\aa');tky(b,'\\bb');rot('\\times\\, ab',[a*.7*Math.cos(.82),b*.7*Math.sin(.82)],60,-40,28,'l');
+  seta2px([...P(1.03,.1)],[...P(a-.04,.1)],E1,3,12);
+  coluna([['m','\\dfrac{x^2}{\\aa^2}+\\dfrac{y^2}{\\bb^2}\\le 1\\qquad x=\\aa\\,\\R\\cos\\th\\quad y=\\bb\\,\\R\\sen\\th',{size:32,dy:96}],
+   ['m','\\dfrac{\\aa^2\\R^2\\cos^2\\th}{\\aa^2}+\\dfrac{\\bb^2\\R^2\\sen^2\\th}{\\bb^2}=\\R^2(\\cos^2\\th+\\sen^2\\th)=\\R^2\\le 1',{size:30,dy:110}],
+   ['m','J=\\begin{vmatrix}\\aa\\cos\\th & -\\aa\\R\\sen\\th\\\\ \\bb\\sen\\th & \\bb\\R\\cos\\th\\end{vmatrix}=\\aa\\bb\\R\\cos^2\\th+\\aa\\bb\\R\\sen^2\\th=\\Jl{ab r}',{size:30,dy:120}],
+   ['m','A=2\\int_0^{\\pi}\\!\\!\\int_0^1 \\Jl{ab r}\\,\\dr\\,\\dth=2ab\\left[\\dfrac{\\R^2}{2}\\right]_0^1\\Big[\\th\\Big]_0^{\\pi}=2ab\\cdot\\dfrac12\\cdot\\pi=\\pi ab',{size:30,dy:100}],
+   ['x',[['w','METADE DE CIMA × 2',GEO],['m','\\aa=\\bb\\enspace \\Rightarrow\\enspace \\pi a^2'],['w','✓',MEN]]]],1040,250,100,32);}
+
+ // 09 · E4-3 · a meia elipse pesada: o centro de massa
+ if(K==='e43'){fundoV(false);await logo();canto39('4 · A MEIA ELIPSE PESADA');
+  vista(545,900,470);papelTela();
+  const n=90;for(let i=0;i<n;i++){const y0=.5*i/n,y1=.5*(i+1)/n,w0=Math.sqrt(Math.max(0,1-4*y1*y1)),w1=Math.sqrt(Math.max(0,1-4*y0*y0));
+   preenche([[-w1,y0],[w1,y0],[w0,y1],[-w0,y1]],mix('#10243A',CI,Math.pow((y0+y1)/1,.85)));}
+  const el=Array.from({length:121},(_,k)=>{const t=PI*k/120;return [Math.cos(t),.5*Math.sin(t)];});linha(el.concat([[1,0]]),GEO,3);
+  eixosC(-1.1,1.12,-.04,.78);tkx(-1,'\\Am{-1}');tkx(1,'\\Am{1}');tky(.5,'\\Mg{0{,}5}');
+  linha([[0,0],[0,.62]],BR,2,{dash:[8,8]});
+  const yb=3*PI/32;linha([[-.95,yb],[.95,yb]],E2,2,{dash:[8,8]});cm([0,yb],{r:16});
+  rot('\\yb',[-.97,yb],-8,0,32,'r');rot('\\rr=\\kk\\,y',[-1.05,.72],0,0,32,'l');leg('MAIS PESADA EM CIMA',...P(-1.05,.62),CI,'left',26);
+  chipM('\\mm=\\dfrac{\\kk}{6}',1130,175,30);
+  coluna([['m','\\Mx=\\int_0^{\\pi}\\!\\!\\int_0^1\\left(\\dfrac{\\R\\sen\\th}{2}\\right)^{\\!2}\\kk\\,\\Jl{\\dfrac{r}{2}}\\,\\dr\\,\\dth=\\dfrac{\\kk}{8}\\int_0^{\\pi}\\sen^2\\th\\,\\dth\\int_0^1\\R^3\\,\\dr',{size:30,dy:110}],
+   ['m','\\sen^2\\th=\\dfrac{1-\\cos 2\\th}{2}',{size:30,dy:100}],['m','\\int_0^{\\pi}\\sen^2\\th\\,\\dth=\\left[\\dfrac{\\th}{2}-\\dfrac{\\sen 2\\th}{4}\\right]_0^{\\pi}=\\dfrac{\\pi}{2}-\\dfrac{\\sen 2\\pi}{4}-0=\\dfrac{\\pi}{2}',{size:30,dy:110}],
+   ['m','\\left[\\dfrac{\\R^4}{4}\\right]_0^1=\\dfrac14\\qquad \\Mx=\\dfrac{\\kk}{8}\\cdot\\dfrac{\\pi}{2}\\cdot\\dfrac14=\\dfrac{\\kk\\pi}{64}',{size:32,dy:110}],
+   ['m','\\yb=\\dfrac{\\Mx}{\\mm}=\\dfrac{\\kk\\pi/64}{\\kk/6}=\\dfrac{\\kk\\pi}{64}\\cdot\\dfrac{6}{\\kk}=\\dfrac{6\\pi}{64}=\\dfrac{3\\pi}{32}\\approx 0{,}295',{size:32}]],1130,290,100,32);}
+
+ // 10 · E5-2 · a meia arruela homogênea: o centro de massa no buraco
+ if(K==='e52'){fundoV(false);await logo();canto39('5 · A MEIA ARRUELA');
+  vista(560,860,230);papelTela();arruela();linha(arcoP(2),GEO,3);linha(arcoP(1),AL,3);linha([[-2,0],[-1,0]],GEO,3);linha([[1,0],[2,0]],GEO,3);
+  eixosC(-2.4,2.45,-.04,2.45);tkx(-2,'\\Am{-2}');tkx(-1,'\\Am{-1}');tkx(1,'\\Am{1}');tkx(2,'\\Am{2}');
+  const t=1.0,r=1.6;linha([[0,0],[r*Math.cos(t),r*Math.sin(t)]],LAR,3);linha([[r*Math.cos(t),0],[r*Math.cos(t),r*Math.sin(t)]],E2,3);rot('y = r\\,\\mathrm{sen}\\,\\theta',[r*Math.cos(t),r*Math.sin(t)*.5],16,0,26,'l');
+  const yb=28/(9*PI);cm([0,yb],{r:13});
+  // lupa ×10
+  const LX=560-330,LY=300,LR=120;x.save();x.beginPath();x.arc(LX,LY,LR,0,7);x.fillStyle='#131030';x.fill();x.clip();
+  const sc=230*10;const toL=(X,Y)=>[LX+X*sc,LY-(Y-1)*sc];x.strokeStyle=AL;x.lineWidth=4;x.beginPath();for(let k=-30;k<=30;k++){const tt=PI/2+k*.002;const p=toL(Math.cos(tt),Math.sin(tt));k===-30?x.moveTo(...p):x.lineTo(...p);}x.stroke();
+  x.fillStyle=mix(BG,GEO,.30);x.beginPath();for(let k=-30;k<=30;k++){const tt=PI/2+k*.002;const p=toL(Math.cos(tt),Math.sin(tt));k===-30?x.moveTo(...p):x.lineTo(...p);}x.lineTo(LX-200,LY-200);x.lineTo(LX+200,LY-200);x.closePath();x.fill();x.strokeStyle=AL;x.lineWidth=4;x.beginPath();for(let k=-30;k<=30;k++){const tt=PI/2+k*.002;const p=toL(Math.cos(tt),Math.sin(tt));k===-30?x.moveTo(...p):x.lineTo(...p);}x.stroke();leg('CHAPA',LX,LY-60,BR,'center',24);leg('BURACO',LX,LY+70,AL,'center',24);
+  const pc=toL(0,yb);x.restore();{const o=[O[0],O[1]],u=U;vista(pc[0],pc[1],1);cm([0,0],{r:14});vista(o[0],o[1],u);}
+  x.strokeStyle=GEO;x.lineWidth=2.5;x.beginPath();x.arc(LX,LY,LR,0,7);x.stroke();leg('× 10',LX+LR+14,LY-LR+30,GEO,'left',26);
+  x.setLineDash([5,6]);x.beginPath();x.moveTo(...P(0,yb));x.lineTo(LX+40,LY+LR-6);x.stroke();x.setLineDash([]);
+  tex('0{,}990<1',LX,LY+LR+40,30,'c');placaTxt('NO BURACO',...P(-.78,.42),AL,30);
+  chipM('A=\\dfrac{3\\pi}{2}',1180,175,30);
+  coluna([['m','\\Mx=\\iint y\\,dA=\\int_0^{\\pi}\\!\\!\\int_1^2 \\R\\sen\\th\\cdot\\Rj\\,\\dr\\,\\dth',{size:34,dy:104}],['w','DE DENTRO',{size:28,dy:58}],
+   ['m','\\sen\\th\\left[\\dfrac{\\R^3}{3}\\right]_1^2=\\sen\\th\\left(\\dfrac83-\\dfrac13\\right)=\\dfrac73\\sen\\th',{size:34,dy:104}],['w','DE FORA',{size:28,dy:58}],
+   ['m','\\dfrac73\\Big[-\\cos\\th\\Big]_0^{\\pi}=\\dfrac73(1+1)=\\dfrac{14}{3}',{size:34,dy:110}],
+   ['m','\\yb=\\dfrac{14/3}{3\\pi/2}=\\dfrac{14}{3}\\cdot\\dfrac{2}{3\\pi}=\\dfrac{28}{9\\pi}\\approx 0{,}990',{size:34}]],1180,290,96,34);}
+
+ // 11 · E5-3 · o fio de prumo
+ if(K==='e53'){fundoV(false);vista(960,560,60);papelTela(.5);await logo();canto39('5 · O FIO DE PRUMO');
+  const yb=28/(9*PI);
+  // pendurada pela ponta (2,0): rotação que põe o CM abaixo do alfinete
+  const draw=(pin,ox,oy,s)=>{const vx=0-pin[0],vy=yb-pin[1];const ang=-PI/2-Math.atan2(vy,vx);const R=(p)=>{const dx=p[0]-pin[0],dy=p[1]-pin[1];return [ox+(dx*Math.cos(ang)-dy*Math.sin(ang))*s,oy-(dx*Math.sin(ang)+dy*Math.cos(ang))*s];};
+   const pts=arcoP(2).concat(arcoP(1).reverse()).map(R);x.beginPath();pts.forEach((p,i)=>i?x.lineTo(...p):x.moveTo(...p));x.closePath();x.fillStyle=mix(BG,GEO,.55);x.fill();x.strokeStyle=GEO;x.lineWidth=2.5;x.stroke();
+   x.strokeStyle=BR;x.lineWidth=2;x.beginPath();x.moveTo(ox,oy);x.lineTo(ox,oy+3.6*s);x.stroke();x.fillStyle=BR;x.beginPath();x.moveTo(ox-8,oy+3.6*s);x.lineTo(ox+8,oy+3.6*s);x.lineTo(ox,oy+3.6*s+16);x.closePath();x.fill();
+   x.beginPath();x.arc(ox,oy,7,0,7);x.fillStyle=BR;x.fill();const c=R([0,yb]);const g=x.createLinearGradient(c[0]-12,c[1]-12,c[0]+12,c[1]+12);g.addColorStop(0,CI);g.addColorStop(1,E2);x.fillStyle=g;x.beginPath();x.arc(...c,12,0,7);x.fill();};
+  draw([2,0],380,260,130);draw([-2,0],1000,260,130);
+  leg('PENDURADA PELA DIREITA',380,1000,GEO,'center',26);leg('PENDURADA PELA ESQUERDA',1000,1000,GEO,'center',26);
+  // a chapa de volta com as duas linhas
+  vista(1560,780,105);arruela(1,2,mix(BG,GEO,.55));linha(arcoP(2),GEO,2.5);
+  linha([[2,0],[-2*0+0,yb]].map(p=>p),BR,2,{dash:[8,6]});linha([[2,0],[2+( -2)*1.6, yb*1.6]],BR,2,{dash:[8,6]});linha([[-2,0],[-2+2*1.6,yb*1.6]],BR,2,{dash:[8,6]});
+  for(const p of [[2,0],[-2,0]])ponto(p,BR,6);cm([0,yb],{r:12});
+  txt('O EQUILÍBRIO FICA NO AR',1560,560,{size:30,cor:MEN,al:'center'});}
+
+ // 12 · E5-4 · a comparação: homogênea × ρ = k r
+ if(K==='e54'){fundoV(false);await logo();canto39('5 · A BORDA MAIS PESADA');
+  vista(520,860,210);papelTela();meiaArruelaMapa();linha(arcoP(2),GEO,3);linha(arcoP(1),AL,3);linha([[-2,0],[-1,0]],GEO,3);linha([[1,0],[2,0]],GEO,3);
+  eixosC(-2.35,2.4,-.04,2.45);tkx(-2,'\\Am{-2}');tkx(2,'\\Am{2}');tkx(1,'\\Am{1}');tkx(-1,'\\Am{-1}');
+  rot('\\rr=\\kk\\,r',[-2.2,2.05],0,0,30,'l');leg('MAIS PESADA NA BORDA',...P(-2.2,1.85),CI,'left',24);
+  const hs=[[28/(9*PI),BR,'0{,}990','HOMOGÊNEA'],[1.0,AL,'1{,}000','BORDA DO BURACO'],[45/(14*PI),CI,'1{,}023','\\rho = k r']];
+  const RX=1240,Ry=v=>860-(v-.98)/(.05)*600;
+  for(const [v,c] of hs){linha([[-.3,v],[2.05,v]],c,2,{dash:[8,8]});const q=P(2.05,v);x.strokeStyle=c;x.lineWidth=2;x.setLineDash([4,6]);x.beginPath();x.moveTo(...q);x.lineTo(RX-20,Ry(v));x.stroke();x.setLineDash([]);}
+  x.strokeStyle=GEO;x.lineWidth=4;x.beginPath();x.moveTo(RX,Ry(.98));x.lineTo(RX,Ry(1.03));x.stroke();for(let v=.98;v<=1.0301;v+=.01){x.lineWidth=2;x.beginPath();x.moveTo(RX-10,Ry(v));x.lineTo(RX+10,Ry(v));x.stroke();}
+  for(const [v,c,n,l] of hs){x.beginPath();x.arc(RX,Ry(v),10,0,7);x.fillStyle=c;x.fill();tex(n,RX+40,Ry(v),30,'l');if(l.startsWith('\\'))tex('\\rr=\\kk\\,r',RX+160,Ry(v),30,'l');else leg(l,RX+160,Ry(v)+10,c,'left',28);}
+  cm([0,45/(14*PI)],{r:12});cm([0,28/(9*PI)],{r:10,vaz:true});
+  leg('HOMOGÊNEA',1080,150,GEO,'left',26);chipM('\\dfrac{28}{9\\pi}\\approx 0{,}990',1080,205,28);leg('BORDA MAIS PESADA',1480,150,CI,'left',26);chipM('\\dfrac{45}{14\\pi}\\approx 1{,}023',1480,205,28);
+  txt('VOLTA PARA A CHAPA',1240,960,{size:32,cor:MEN});}
+
+ // 13 · E6-1 · Pappus: o anel 2πy (3D) + coluna
+ if(K==='e61'){fundoV(false);await logo();canto39('6 · O TEOREMA DE PAPPUS');await cena3d('pap_anel');
+  const q=Q3('pap_anel','quad'),ef=Q3('pap_anel','eixo_fim');tex('\\Jl{\\Delta A}',q[0]+30,q[1]+2,30,'l',true);tex('\\X',ef[0]+10,ef[1]+18,32,'l');
+  const at=Q3('pap_anel','anel_topo');mixl([['w','ANEL DE COMPRIMENTO',LIMA],['m','\\Jl{2\\pi y}']],at[0]-200,at[1]+70,34);
+  coluna([['m','\\Delta V\\approx 2\\pi y\\,\\Jl{\\Delta A}',{dy:90}],['m','V=\\iint_B 2\\pi y\\,dA=2\\pi\\iint_B y\\,dA=2\\pi\\,\\Mx',{size:36,dy:96}],
+   ['m','=2\\pi\\,\\yb\\,A',{dy:76}],['x',[['m','\\yb=\\dfrac{\\Mx}{A}'],['w','CHAPA HOMOGÊNEA',GEO]],{size:30,dy:96}],
+   ['w','VOLUME = ÁREA × CAMINHO DO CENTROIDE',{size:30,cor:MEN,dy:110}],
+   ['m','\\iint_B 2\\pi y\\,dA=\\int_0^a 2\\pi y\\,L(y)\\,dy',{size:34,dy:60}],['w','CASCAS DO CÁLCULO I',{size:26,cor:GEO}]],1120,260,90,38);}
+
+ // 14 · E6-3 · a bola oca confere 28/(9π)
+ if(K==='e63'){fundoV(false);await logo();canto39('6 · O TEOREMA DE PAPPUS');await cena3d('pap_arr');
+  const ef=Q3('pap_arr','eixo_fim');tex('\\X',ef[0]+10,ef[1]+18,32,'l');const cf=Q3('pap_arr','cm_fim');
+  placaTxt('CAMINHO DO CENTROIDE',90,1000,E2,26);
+  chipM('A=\\dfrac{3\\pi}{2}',1120,175,28);chipM('\\dfrac{28}{9\\pi}',1420,175,28);
+  coluna([['m','V=\\dfrac43\\pi\\cdot 2^3-\\dfrac43\\pi\\cdot 1^3=\\dfrac43\\pi(8-1)=\\dfrac{28\\pi}{3}',{size:34,dy:110}],
+   ['m','V=2\\pi\\,\\yb\\,A\\enspace \\Rightarrow\\enspace \\yb=\\dfrac{V}{2\\pi A}',{size:36,dy:110}],
+   ['m','\\yb=\\dfrac{28\\pi/3}{2\\pi\\cdot 3\\pi/2}\\qquad 2\\pi\\cdot\\dfrac{3\\pi}{2}=3\\pi^2',{size:34,dy:110}],
+   ['m','\\yb=\\dfrac{28\\pi}{3}\\cdot\\dfrac{1}{3\\pi^2}=\\dfrac{28}{9\\pi}',{size:38,dy:90,ok:1650}],['w','O MESMO NÚMERO',{size:32,cor:MEN}]],1120,300,100,36);}
+
+ // 15 · S2 · o cubo do próximo vídeo
+ if(K==='s2'){fundoV(false);vista(960,540,60);papelTela(.5);await logo();canto39('O PRÓXIMO PASSO');
+  // cubo de lado 2 em perspectiva fixa (oblíqua), faces com o mapa de x²+y²+z²
+  const O0=[330,820],U0=230,dx=[1,0],dy=[.55,-.42],dz=[0,-1];const Pp=(a,b,c)=>[O0[0]+U0*(a*dx[0]+b*dy[0]+c*dz[0]),O0[1]+U0*(a*dx[1]+b*dy[1]+c*dz[1])];
+  const face=(f,n=24)=>{for(let i=0;i<n;i++)for(let j=0;j<n;j++){const s0=2*i/n,s1=2*(i+1)/n,t0=2*j/n,t1=2*(j+1)/n;const q=[f(s0,t0),f(s1,t0),f(s1,t1),f(s0,t1)];const m=f.m((s0+s1)/2,(t0+t1)/2);
+    x.beginPath();q.forEach((p,k)=>k?x.lineTo(...Pp(...p)):x.moveTo(...Pp(...p)));x.closePath();x.fillStyle=mix('#10243A',CI,Math.pow(Math.min(1,(m[0]**2+m[1]**2+m[2]**2)/12),.85));x.fill();}};
+  const fF=(s,t)=>[s,0,t];fF.m=(s,t)=>[s,0,t];const fT=(s,t)=>[s,t,2];fT.m=(s,t)=>[s,t,2];const fR=(s,t)=>[2,s,t];fR.m=(s,t)=>[2,s,t];
+  face(fF);face(fT);face(fR);
+  const ed=[[[0,0,0],[2,0,0]],[[2,0,0],[2,2,0]],[[2,0,0],[2,0,2]],[[0,0,0],[0,0,2]],[[0,0,2],[2,0,2]],[[2,0,2],[2,2,2]],[[0,0,2],[0,2,2]],[[0,2,2],[2,2,2]],[[2,2,0],[2,2,2]]];
+  x.strokeStyle=GEO;x.lineWidth=2.5;for(const [a,b] of ed){x.beginPath();x.moveTo(...Pp(...a));x.lineTo(...Pp(...b));x.stroke();}
+    ponto0=Pp(0,0,0);x.beginPath();x.arc(...ponto0,8,0,7);x.fillStyle=BR;x.fill();leg('CANTO (0, 0, 0)',ponto0[0]-20,ponto0[1]+44,GEO,'left',24);
+  // caixinha lima
+  const bx=[1.2,.9,1.1],h=.28;const cb=[[0,0,0],[h,0,0],[h,0,h],[0,0,h]].map(p=>Pp(bx[0]+p[0],bx[1]+p[1],bx[2]+p[2]));x.beginPath();cb.forEach((p,k)=>k?x.lineTo(...p):x.moveTo(...p));x.closePath();x.fillStyle=LIMA;x.fill();
+  tex('\\rr = \\X^2+\\Y^2+z^2',1180,760,38,'l');leg('MAIS PESADO LONGE DO CANTO',1180,830,CI,'left',28);
+  txt('QUANTO PESA ESTE CUBO?',330,1010,{size:36});
+  painel(1180,330,600,330);txt('NO PRÓXIMO VÍDEO',1480,440,{size:32,cor:GEO,al:'center'});txt('INTEGRAL TRIPLA',1480,530,{size:52,al:'center'});tex('\\iiint_E \\rho\\enspace dV',1480,610,40,'c');}
+
+ document.title='ok';}
+let ponto0;
+main();
+</script></body></html>

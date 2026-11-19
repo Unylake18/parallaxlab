@@ -1,0 +1,279 @@
+{
+ "fonte": "narração v1.1 (referencia/yt_0045_narracao_v1_2_final.md), 3 palavras/s (0,15 + palavras/3 + 0,35); gatilhos = instante absoluto da 1ª palavra da frase",
+ "total_s": 1149.16,
+ "ancoras": {
+  "H1": {
+   "palavras": 161,
+   "ini": 0.0,
+   "fim": 54.17,
+   "dur": 54.17,
+   "gatilhos": {
+    "uma hélice enrolada na parede da lata": 1.817,
+    "Em x, y e z": 22.15,
+    "uma conta de colar": 28.15,
+    "Quanto trabalho essa força faz numa volta": 36.817,
+    "A curva não tem nenhum dos dois": 44.483
+   }
+  },
+  "H2": {
+   "palavras": 152,
+   "ini": 54.17,
+   "fim": 105.34,
+   "dur": 51.17,
+   "gatilhos": {
+    "conta presa no fio": 54.987,
+    "separa a força em duas partes": 64.32,
+    "A parte que aponta ao longo do caminho": 66.32,
+    "A parte de lado": 75.653,
+    "corta o caminho em pedacinhos": 96.653
+   }
+  },
+  "A1": {
+   "palavras": 37,
+   "ini": 105.34,
+   "fim": 118.17,
+   "dur": 12.83,
+   "gatilhos": {}
+  },
+  "B1": {
+   "palavras": 204,
+   "ini": 118.17,
+   "fim": 186.67,
+   "dur": 68.5,
+   "gatilhos": {
+    "força constante e caminho reto": 121.653,
+    "F igual a dois, um": 130.653,
+    "F escalar B menos A": 135.653,
+    "ponto final menos ponto inicial": 138.32,
+    "multiplica coordenada com coordenada": 145.32,
+    "aquele um da força": 149.653,
+    "o tamanho da força, vezes": 164.987,
+    "Ângulo agudo": 174.32,
+    "Ângulo reto": 178.32,
+    "Ângulo obtuso": 181.32
+   }
+  },
+  "B2-1": {
+   "palavras": 188,
+   "ini": 186.67,
+   "fim": 249.84,
+   "dur": 63.17,
+   "gatilhos": {
+    "uma curva gama": 194.153,
+    "corta o intervalo de tempo em pedaços": 204.487,
+    "troca o arco pela corda": 216.487,
+    "delta gama i": 224.153,
+    "F de gama de t i": 239.153,
+    "O trabalhinho desse pedaço": 241.153,
+    "Somando todos": 245.487
+   }
+  },
+  "B2-2": {
+   "palavras": 247,
+   "ini": 249.84,
+   "fim": 332.67,
+   "dur": 82.83,
+   "gatilhos": {
+    "velocidade vezes tempo": 259.99,
+    "Troca isso na soma": 278.99,
+    "Chama esse número de g de t": 295.657,
+    "uma soma de Riemann comum": 302.99,
+    "Quando o maior pedaço de tempo vai a zero": 308.657,
+    "E o erro da troca": 316.657
+   }
+  },
+  "B3": {
+   "palavras": 213,
+   "ini": 332.67,
+   "fim": 404.17,
+   "dur": 71.5,
+   "gatilhos": {
+    "F é um campo vetorial contínuo": 334.153,
+    "gama é uma curva de classe C um": 337.487,
+    "A integral de linha de F sobre gama": 344.153,
+    "O d gama do lado esquerdo": 357.153,
+    "Na prática, a receita": 378.153,
+    "Dois: deriva a curva": 386.487,
+    "Três: faz o produto escalar": 389.82,
+    "o sinal do produto escalar": 396.153
+   }
+  },
+  "B4-1": {
+   "palavras": 232,
+   "ini": 404.17,
+   "fim": 482.0,
+   "dur": 77.83,
+   "gatilhos": {
+    "o redemoinho": 404.981,
+    "A curva é o círculo de raio R": 419.192,
+    "Passo um": 429.106,
+    "Passo dois": 440.673,
+    "deu exatamente o mesmo vetor": 447.613,
+    "Passo três": 454.223,
+    "Integra de zero a dois pi": 471.739
+   }
+  },
+  "B4-2": {
+   "palavras": 189,
+   "ini": 482.0,
+   "fim": 545.5,
+   "dur": 63.5,
+   "gatilhos": {
+    "Divide a volta em n pedaços iguais": 488.483,
+    "dois termos aparecem com sinais contrários": 499.483,
+    "a fórmula do seno da diferença": 505.817,
+    "a soma inteira é": 515.817,
+    "Com quatro pedaços": 521.15,
+    "Com oito": 526.817,
+    "Com dezesseis": 529.483,
+    "o limite fundamental disfarçado": 536.15
+   }
+  },
+  "B4-3": {
+   "palavras": 140,
+   "ini": 545.5,
+   "fim": 592.67,
+   "dur": 47.17,
+   "gatilhos": {
+    "a conta anda pelo raio": 547.317,
+    "a força vira zero, t": 559.983,
+    "Produto escalar: zero": 565.65,
+    "a integral de linha depende do caminho": 573.317,
+    "duas vezes a área do disco": 582.317
+   }
+  },
+  "B5-1": {
+   "palavras": 172,
+   "ini": 592.67,
+   "fim": 650.5,
+   "dur": 57.83,
+   "gatilhos": {
+    "O campo agora é F de x, y igual a x, y": 595.153,
+    "a conta anda pela parábola": 605.487,
+    "Passo um": 614.82,
+    "Passo dois": 619.82,
+    "Passo três": 625.153,
+    "Agora integra de menos um até um": 629.487,
+    "Aplica os limites": 636.487,
+    "Um menos um: zero": 643.82
+   }
+  },
+  "B5-2": {
+   "palavras": 179,
+   "ini": 650.5,
+   "fim": 710.67,
+   "dur": 60.17,
+   "gatilhos": {
+    "Quebra o caminho no meio": 650.65,
+    "o trabalho dessa metade é menos um": 660.983,
+    "o trabalho é mais um": 668.317,
+    "Olha a primitiva": 673.65,
+    "na mesma distância, raiz de dois": 695.65,
+    "os campos conservativos": 705.983
+   }
+  },
+  "B6-1": {
+   "palavras": 252,
+   "ini": 710.67,
+   "fim": 795.17,
+   "dur": 84.5,
+   "gatilhos": {
+    "Agora a outra notação": 710.82,
+    "F igual a P, Q": 717.82,
+    "E a curva também pelas componentes": 722.82,
+    "abrindo coordenada por coordenada": 729.153,
+    "d x é x linha de t, d t": 744.153,
+    "integral sobre gama de P d x mais Q d y": 760.153,
+    "No espaço": 763.82,
+    "Cuidado": 772.487,
+    "o redemoinho, nessa notação": 788.82
+   }
+  },
+  "B6-2": {
+   "palavras": 247,
+   "ini": 795.17,
+   "fim": 878.0,
+   "dur": 82.83,
+   "gatilhos": {
+    "o redemoinho numa elipse": 797.304,
+    "O d x é a derivada": 811.853,
+    "Menos y d x": 821.772,
+    "x d y: dois cosseno": 828.386,
+    "Somando, coloca o dois em evidência": 832.023,
+    "Integra de zero a dois pi": 840.62,
+    "Agora a área dessa elipse": 843.265,
+    "o dobro da área, de novo": 851.862
+   }
+  },
+  "B7-1": {
+   "palavras": 192,
+   "ini": 878.0,
+   "fim": 942.5,
+   "dur": 64.5,
+   "gatilhos": {
+    "a hélice da lata": 878.817,
+    "As duas primeiras componentes": 891.483,
+    "Então F é menos y, x, menos um": 904.15,
+    "O redemoinho ajuda o tempo todo": 912.817,
+    "O peso atrapalha o tempo todo": 917.483,
+    "o trabalho é a integral sobre gama": 922.817,
+    "trocar tudo pelo t": 930.483
+   }
+  },
+  "B7-2": {
+   "palavras": 144,
+   "ini": 942.5,
+   "fim": 991.0,
+   "dur": 48.5,
+   "gatilhos": {
+    "Menos y d x: menos seno": 943.983,
+    "x d y: cosseno vezes cosseno": 951.65,
+    "o menos d z": 955.65,
+    "Junta tudo debaixo da mesma integral": 958.983,
+    "vira um": 966.983,
+    "Integral de constante": 969.983,
+    "Distribuindo": 975.65
+   }
+  },
+  "B7-3": {
+   "palavras": 220,
+   "ini": 991.0,
+   "fim": 1064.83,
+   "dur": 73.83,
+   "gatilhos": {
+    "O dois pi veio do redemoinho": 995.15,
+    "E o menos dois pi c veio do peso": 1013.817,
+    "Na nossa lata": 1034.483,
+    "O trabalho numa volta dá": 1043.817,
+    "E dá para empatar": 1050.817
+   }
+  },
+  "S1": {
+   "palavras": 126,
+   "ini": 1064.83,
+   "fim": 1107.33,
+   "dur": 42.5,
+   "gatilhos": {
+    "Resumindo a aula": 1064.98,
+    "Na outra notação": 1081.647,
+    "O sinal do produto escalar": 1089.98,
+    "E duas lições dos exemplos": 1093.647,
+    "medir área": 1106.313
+   }
+  },
+  "S2": {
+   "palavras": 124,
+   "ini": 1107.33,
+   "fim": 1149.16,
+   "dur": 41.83,
+   "gatilhos": {
+    "com t de zero a dois pi": 1112.147,
+    "duas vezes mais rápido": 1116.813,
+    "E se a conta der a volta ao contrário": 1125.813,
+    "E se o caminho tiver quina": 1129.813,
+    "No próximo vídeo": 1135.147,
+    "Curte o vídeo": 1145.147
+   }
+  }
+ }
+}

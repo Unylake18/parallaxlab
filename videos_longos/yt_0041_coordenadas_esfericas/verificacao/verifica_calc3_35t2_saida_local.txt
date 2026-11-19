@@ -1,0 +1,69 @@
+B1a    (2, pi/6, pi/3): z = 2cos(pi/6) = sqrt3                                True
+B1b    sombra r = rho sen phi = 2 * 1/2 = 1                                   True
+B1c    x = r cos(pi/3) = 1/2                                                  True
+B1d    y = r sen(pi/3) = sqrt3/2                                              True
+B1e    x²+y²+z² = 1/4 + 3/4 + 3 = 4 = rho²                                    True
+B1f    x²+y²+z² = rho² (identidade)                                           True
+B1g    x²+y² = (rho sen phi)² (sombra = polar)                                True
+B2a    rho * (rho sen phi) = rho² sen phi                                     True
+   VA exato pi*(7/24 - 7*sqrt(3)/48)/6 0.020460105907425453  aprox 0.019956574895543627
+   VB exato 7*pi/288 0.07635815477475191  aprox 0.07447895145522238  razão 3.732050807568877 3.732050807568877
+B2b    VA exato = (7pi/144)(1 - sqrt3/2) ~ 0,0204                             True
+B2c    VB exato = 7pi/288 ~ 0,0764                                            True
+B2d    aprox A (ponto do meio) ~ 0,020                                        True
+B2e    aprox B (ponto do meio) ~ 0,075                                        True
+B2f    sen(5pi/12)/sen(pi/12) = 2+sqrt3 ~ 3,73 (razão das aproximações)       True
+B2g    razão exata VB/VA ~ 3,73                                               True
+B2h    polar no meio-plano: det [(cos,-rho sen),(sen, rho cos)] = rho         True
+B2i    polar no chão (r, theta, z): det = r                                   True
+B2j    produto rho * r com r = rho sen phi = rho² sen phi                     True
+B2k    coluna d/drho = (sen phi cos th, sen phi sen th, cos phi)              True
+B2l    coluna d/dphi = (rho cos phi cos th, rho cos phi sen th, -rho sen phi) True
+B2m    coluna d/dth = (-rho sen phi sen th, rho sen phi cos th, 0)            True
+B2n    menor 31 = rho²cos phi sen phi cos²th + rho² cos phi sen phi sen²th    True
+B2o    menor 31 = rho² sen phi cos phi                                        True
+B2p    menor 32 = rho sen²phi cos²th + rho sen²phi sen²th = rho sen²phi       True
+B2q    Laplace linha 3: cos phi*m31 - (-rho sen phi)*m32 + 0*m33 = det        True
+B2r    = rho² sen phi cos²phi + rho² sen³phi                                  True
+B2s    det = rho² sen phi (>= 0 em 0<=phi<=pi)                                True
+B2t    ordem do Guidorizzi (theta, rho, phi) também dá +rho² sen phi          True
+B2u    [rho³/3]_0^a = a³/3                                                    True
+B2v    [-cos phi]_0^pi = -cos pi - (-cos 0) = 1 + 1 = 2                       True
+B2w    [theta]_0^{2pi} = 2pi                                                  True
+B2x    a³/3 * 2 * 2pi = 4 pi a³/3                                             True
+B2y    ERRO sem sen phi: a³/3 * pi * 2pi = 2pi²a³/3 ~ 6,58 a³ (unidade certa, número errado) True
+B2z    ERRO sem rho²: a * 2 * 2pi = 4 pi a (metro)                            True
+B2z2   4pi/3 ~ 4,19 e 2pi²/3 ~ 6,58                                           True
+B3a    toda (x,y,z) com y>0 na bola aberta vem de (0,1)x(0,pi)x(0,pi) (amostra) True
+B3b    rho² sen phi > 0 no interior (rho>0, 0<phi<pi)                         True
+B4a    int_0^{2pi} int_0^pi rho² sen phi dphi dtheta = 4 pi rho²              True
+B4b    int_0^a 4 pi rho² drho = 4 pi a³/3                                     True
+B4c    d/da (4pi a³/3) = 4 pi a² (área = derivada do volume)                  True
+B5a    delta = sqrt(x²+y²+z²) = rho                                           True
+B5b    [rho⁴/4]_0^1 = 1/4                                                     True
+B5c    M = 1/4 * 2 * 2pi = pi                                                 True
+B5d    densidade média = M/V = pi/(4pi/3) = 3/4                               True
+B5e    metade da massa fora de rho = (1/2)^(1/4) ~ 0,84                       True
+B5f    conferência numérica em cartesianas = 3.141593 ~ pi                    True
+H1a    int sqrt(k²+z²) dz envolve asinh/log (não é polinômio)                 True
+   primitiva de dentro: k**2*asinh(z/k)/2 + z*sqrt(k**2 + z**2)/2
+B6a    cone: rho cos phi = rho sen phi  <=>  phi = pi/4                       True
+B6b    esfera: rho² = 2 rho cos phi  =>  rho = 2 cos phi                      True
+B6c    x²+y²+z² = 2z <=> x²+y²+(z-1)² = 1                                     True
+B6d    cone e esfera se cruzam em phi = pi/4, rho = 2cos(pi/4) = sqrt2, (r, z) = (1, 1) True
+B6e    de dentro: [rho³/3]_0^{2cos phi} sen phi = (8/3) cos³phi sen phi       True
+B6f    u = cos phi: phi=0 -> u=1; phi=pi/4 -> u=sqrt2/2                       True
+B6g    (8/3) int_{sqrt2/2}^1 u³ du = (8/3)[u⁴/4] = (8/3)(1/4 - 1/16)          True
+B6h    (sqrt2/2)⁴ = 4/16 = 1/4                                                True
+B6i    (8/3)(3/16) = 1/2                                                      True
+B6j    int_0^{pi/4} (8/3)cos³ sen dphi = 1/2 (direto)                         True
+B6k    V = 2pi * 1/2 = pi                                                     True
+B6l    confere: cone (pi*1²*1/3) + meia bola (2pi/3) = pi                     True
+B6m    confere em cilíndricas: int (1+sqrt(1-r²) - r) r dr dtheta = pi        True
+B6n    sinal: du = -sen phi dphi; inverter limites troca o sinal              True
+B7a    lateral x²+y²=1 => rho sen phi = 1 => rho = 1/sen phi                  True
+B7b    tampa z=1 => rho = 1/cos phi; troca em phi = pi/4 (quina (1,1))        True
+   (referência p/ 3.5-T3) Guidorizzi 5.6 Ex.1 =  pi*(-2 + 3*log(1 + sqrt(2)) + 7*sqrt(2))/12 2.760312134839585
+B7c    Guidorizzi 5.6 Ex.1 calculável em cilíndricas (valor finito ~ 2,76)    True
+
+TOTAL: 63/63 True

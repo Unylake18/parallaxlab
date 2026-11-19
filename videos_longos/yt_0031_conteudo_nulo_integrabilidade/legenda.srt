@@ -1,0 +1,1582 @@
+1
+00:00:00,080 --> 00:00:02,410
+Olha esta chapa feita de dois metais.
+
+2
+00:00:02,460 --> 00:00:05,700
+Embaixo, a densidade é de
+um quilo por metro quadrado.
+
+3
+00:00:05,740 --> 00:00:09,550
+Em cima, três. E, entre os
+dois, uma linha de solda.
+
+4
+00:00:09,620 --> 00:00:12,700
+Agora divide a chapa em retanguinhos,
+como no vídeo passado.
+
+5
+00:00:12,740 --> 00:00:16,680
+E os pedaços que cruzam a solda?
+Se o ponto escolhido cai do lado leve,
+
+6
+00:00:16,720 --> 00:00:20,920
+a densidade é uma. Se cai do
+lado pesado, é três vezes maior!
+
+7
+00:00:20,960 --> 00:00:24,410
+Será que as somas de Riemann
+ainda chegam a um único resultado?
+
+8
+00:00:24,500 --> 00:00:27,500
+E lembra do quarto de disco?
+Quando a grade refinava,
+
+9
+00:00:27,540 --> 00:00:30,560
+a área dos quadradinhos que
+cruzavam a borda diminuía.
+
+10
+00:00:30,600 --> 00:00:32,980
+Mas isso acontece com qualquer borda?
+
+11
+00:00:33,020 --> 00:00:37,180
+E tem a terceira pergunta: para provar
+que a massa da chapa do vídeo passado era
+
+12
+00:00:37,220 --> 00:00:40,360
+trinta e dois terços, a gente
+fez uma conta sob medida,
+
+13
+00:00:40,400 --> 00:00:42,660
+aquele dezesseis vezes o maior lado.
+
+14
+00:00:42,700 --> 00:00:45,990
+Será que precisa inventar uma
+prova nova para cada função?
+
+15
+00:00:46,140 --> 00:00:50,940
+Então a pergunta de hoje é esta: como
+saber se uma integral dupla existe sem
+
+16
+00:00:50,980 --> 00:00:54,480
+calcular o valor dela?
+E a resposta é surpreendente.
+
+17
+00:00:54,520 --> 00:00:57,860
+Uma função pode ter
+descontinuidades e, mesmo assim,
+
+18
+00:00:57,900 --> 00:01:02,560
+ser integrável. O que importa é onde
+essas descontinuidades acontecem e quanto
+
+19
+00:01:02,600 --> 00:01:07,220
+espaço elas ocupam. E, no caminho, você
+vai ver por que a chapa de dois metais tem
+
+20
+00:01:07,260 --> 00:01:11,410
+uma massa bem definida, mesmo com
+a densidade saltando na solda.
+
+21
+00:01:11,460 --> 00:01:14,420
+Fala, pessoal! Bem-vindos ao Parallax Lab!
+
+22
+00:01:14,460 --> 00:01:17,420
+Este é o segundo vídeo do
+módulo de integrais duplas.
+
+23
+00:01:17,460 --> 00:01:21,320
+No vídeo passado, a gente construiu a
+integral a partir das somas de Riemann;
+
+24
+00:01:21,360 --> 00:01:25,300
+hoje a pergunta é quando dá para
+garantir que essas somas convergem.
+
+25
+00:01:25,340 --> 00:01:29,780
+São três passos: medir a diferença entre
+a soma por cima e a soma por baixo,
+
+26
+00:01:29,820 --> 00:01:33,200
+entender o que é conteúdo nulo
+e juntar tudo num teorema.
+
+27
+00:01:33,240 --> 00:01:36,700
+Começa pela chapa do vídeo passado.
+Pega um retanguinho da grade,
+
+28
+00:01:36,740 --> 00:01:40,720
+o R_ij. Dentro dele,
+a função assume vários valores.
+
+29
+00:01:40,760 --> 00:01:44,790
+Agora procura o maior número que
+fica abaixo de todos esses valores:
+
+30
+00:01:44,860 --> 00:01:47,930
+esse é o piso da célula, m_ij.
+
+31
+00:01:48,180 --> 00:01:52,100
+O teto é o contrário: o menor
+número que fica acima de todos,
+
+32
+00:01:52,140 --> 00:01:57,120
+M_ij. Na matemática, esses números
+se chamam ínfimo e supremo.
+
+33
+00:01:57,160 --> 00:02:00,880
+Nos exemplos de hoje, eles são o
+menor e o maior valor de verdade.
+
+34
+00:02:00,920 --> 00:02:03,880
+Mas nem toda função chega
+a atingir esses extremos,
+
+35
+00:02:03,920 --> 00:02:06,800
+e por isso o nome certo
+é ínfimo e supremo.
+
+36
+00:02:06,840 --> 00:02:10,999
+E a gente trabalha com funções limitadas,
+para que o piso e o teto existam.
+
+37
+00:02:11,039 --> 00:02:15,500
+Multiplica o piso pela área da célula
+e soma em todas as células da grade:
+
+38
+00:02:15,540 --> 00:02:18,420
+essa é a soma por baixo, s(P).
+
+39
+00:02:18,460 --> 00:02:21,400
+Faz o mesmo com o teto e
+você tem a soma por cima,
+
+40
+00:02:21,440 --> 00:02:26,420
+S(P). E repara: qualquer ponto que
+você escolhe dentro de uma célula
+
+41
+00:02:26,460 --> 00:02:31,420
+dá um valor entre o piso e o teto. Então
+qualquer soma de Riemann fica entre a soma
+
+42
+00:02:31,460 --> 00:02:36,480
+por baixo e a soma por cima.
+Lê-se: s(P) é menor ou igual à
+
+43
+00:02:36,520 --> 00:02:39,980
+soma de Riemann, que é
+menor ou igual a S(P).
+
+44
+00:02:40,020 --> 00:02:44,010
+Todas as aproximações possíveis
+ficam presas entre duas paredes.
+
+45
+00:02:44,080 --> 00:02:48,840
+Agora subtrai as duas somas. Em cada
+retanguinho sobra o teto menos o
+
+46
+00:02:48,880 --> 00:02:53,300
+piso, vezes a área da base. Essa
+diferença entre teto e piso tem nome:
+
+47
+00:02:53,340 --> 00:02:55,520
+a oscilação da função na célula.
+
+48
+00:02:55,560 --> 00:02:58,400
+E olha no desenho: tirando
+o prédio azul, o de baixo,
+
+49
+00:02:58,440 --> 00:03:01,200
+o que sobra do prédio de
+cima são as tampas coral.
+
+50
+00:03:01,240 --> 00:03:04,240
+Cada tampa tem a altura
+do teto menos o piso.
+
+51
+00:03:04,280 --> 00:03:09,160
+Então S(P) menos s(P) é
+exatamente o volume de todas
+
+52
+00:03:09,200 --> 00:03:12,900
+as tampas juntas. Guarda essa imagem,
+porque ela vai conduzir a demonstração
+
+53
+00:03:12,940 --> 00:03:15,420
+inteira. E aqui está o critério da aula.
+
+54
+00:03:15,460 --> 00:03:19,820
+Se a diferença entre a soma por cima e
+a soma por baixo pode ficar tão pequena
+
+55
+00:03:19,860 --> 00:03:22,920
+quanto se queira, só deixando
+a grade fina o bastante,
+
+56
+00:03:22,960 --> 00:03:27,980
+então a função é integrável. Em ε
+e δ: para todo ε maior que zero,
+
+57
+00:03:28,020 --> 00:03:32,720
+existe δ maior que zero tal que, se o
+maior lado da partição for menor que
+
+58
+00:03:32,760 --> 00:03:36,160
+δ, a diferença entre as
+duas somas é menor que ε.
+
+59
+00:03:36,200 --> 00:03:40,860
+Por que isso funciona? Porque toda soma de
+Riemann está presa entre as duas paredes.
+
+60
+00:03:40,900 --> 00:03:45,120
+Quando as paredes se fecham num mesmo
+número, todas as escolhas são obrigadas a
+
+61
+00:03:45,160 --> 00:03:49,020
+chegar nele também. Então, para
+provar que uma integral dupla existe,
+
+62
+00:03:49,060 --> 00:03:52,920
+a gente persegue uma coisa só:
+fazer o volume das tampas sumir.
+
+63
+00:03:52,960 --> 00:03:56,140
+Agora volta na chapa de dois
+metais. Embaixo da solda,
+
+64
+00:03:56,180 --> 00:03:58,980
+um quilo por metro
+quadrado; em cima, três.
+
+65
+00:03:59,020 --> 00:04:03,040
+É mais ou menos a diferença entre uma
+chapa de alumínio e uma de aço com a mesma
+
+66
+00:04:03,080 --> 00:04:06,840
+espessura. Coloca uma grade.
+Numa célula inteira no metal leve,
+
+67
+00:04:06,880 --> 00:04:09,960
+a densidade vale um em
+todo ponto: o piso é um,
+
+68
+00:04:10,000 --> 00:04:12,460
+o teto é um, e a tampa tem altura zero.
+
+69
+00:04:12,500 --> 00:04:14,900
+No metal pesado, o mesmo, com três.
+
+70
+00:04:14,940 --> 00:04:19,460
+Mas, nas células atravessadas pela
+solda, aparecem as duas densidades:
+
+71
+00:04:19,500 --> 00:04:23,000
+o piso é um e o teto é três.
+Tampa de altura dois,
+
+72
+00:04:23,040 --> 00:04:27,800
+o tamanho do salto. E, juntas, essas
+tampas formam um muro coral em cima da
+
+73
+00:04:27,840 --> 00:04:31,540
+solda. Então a diferença
+entre as duas somas é o salto,
+
+74
+00:04:31,580 --> 00:04:34,950
+dois, vezes a área das
+células que a solda atravessa.
+
+75
+00:04:35,000 --> 00:04:39,780
+Refina a grade. Com quatro divisões
+por lado, cinco células cruzam a solda;
+
+76
+00:04:39,820 --> 00:04:43,460
+a soma por baixo dá seis quilos
+e a por cima, oito e meio.
+
+77
+00:04:43,500 --> 00:04:48,140
+Diferença de dois e meio. Com oito
+divisões, a diferença cai para um vírgula
+
+78
+00:04:48,180 --> 00:04:51,740
+trinta e oito. Com dezesseis,
+setenta e cinco centésimos.
+
+79
+00:04:51,780 --> 00:04:54,540
+Com trinta e duas,
+trinta e sete centésimos.
+
+80
+00:04:54,580 --> 00:04:57,440
+Com sessenta e quatro,
+dezenove centésimos.
+
+81
+00:04:57,480 --> 00:05:01,500
+As duas somas apertam em torno
+de sete vírgula zero seis quilos.
+
+82
+00:05:01,540 --> 00:05:04,660
+E repara: o salto continua
+exatamente o mesmo.
+
+83
+00:05:04,700 --> 00:05:08,100
+O que diminui é a área das
+células que atravessam a solda.
+
+84
+00:05:08,140 --> 00:05:12,000
+Então a descoberta é esta:
+o problema não era a densidade saltar.
+
+85
+00:05:12,040 --> 00:05:16,300
+O problema era quanto espaço os
+pontos de descontinuidade ocupam.
+
+86
+00:05:16,340 --> 00:05:20,760
+Se a região problemática pode ser coberta
+por retângulos de área total tão pequena
+
+87
+00:05:20,800 --> 00:05:24,620
+quanto se queira, dá para controlar a
+contribuição dela na diferença entre as
+
+88
+00:05:24,660 --> 00:05:28,310
+somas. E essa propriedade
+tem um nome: conteúdo nulo.
+
+89
+00:05:28,400 --> 00:05:32,560
+Monta a definição com a própria solda.
+A ideia é cobrir a linha inteira com
+
+90
+00:05:32,600 --> 00:05:36,200
+retângulos, quantos você quiser,
+desde que seja um número finito.
+
+91
+00:05:36,240 --> 00:05:40,800
+E a condição é: a soma das áreas tem que
+poder ficar menor que qualquer número
+
+92
+00:05:40,840 --> 00:05:44,320
+positivo escolhido, o ε.
+Então a definição diz:
+
+93
+00:05:44,360 --> 00:05:49,160
+um conjunto D tem conteúdo nulo
+se, para todo ε maior que zero,
+
+94
+00:05:49,200 --> 00:05:52,880
+existe um número finito de
+retângulos, a um até a ene,
+
+95
+00:05:52,920 --> 00:05:58,000
+tais que D está contido na união deles
+e a soma das áreas é menor que ε.
+
+96
+00:05:58,040 --> 00:06:00,600
+Esse U grande é a união dos conjuntos.
+
+97
+00:06:00,640 --> 00:06:03,680
+E m(A_i) é a área do retângulo a i.
+
+98
+00:06:03,720 --> 00:06:08,000
+Ou seja: cobrir o conjunto inteiro
+gastando menos área do que a tolerância
+
+99
+00:06:08,040 --> 00:06:10,880
+permite. Pensa no ε como um orçamento.
+
+100
+00:06:10,920 --> 00:06:15,260
+Alguém diz: você pode gastar no
+máximo um metro quadrado de cobertura.
+
+101
+00:06:15,300 --> 00:06:19,340
+Quatro retângulos em volta da solda
+gastam quarenta e seis centésimos.
+
+102
+00:06:19,380 --> 00:06:23,080
+Deu. Agora o orçamento cai para
+um quarto de metro quadrado.
+
+103
+00:06:23,120 --> 00:06:27,160
+Tudo bem: dezesseis retângulos
+mais finos gastam doze centésimos.
+
+104
+00:06:27,200 --> 00:06:31,820
+E se cair para cinco centésimos?
+Sessenta e quatro retângulos gastam três.
+
+105
+00:06:31,860 --> 00:06:34,680
+Mas cuidado: três exemplos
+não demonstram nada.
+
+106
+00:06:34,720 --> 00:06:38,700
+O que a definição pede é que funcione
+para qualquer orçamento positivo,
+
+107
+00:06:38,740 --> 00:06:41,860
+por menor que seja.
+Isso é ter conteúdo nulo.
+
+108
+00:06:41,900 --> 00:06:46,800
+Alguns exemplos. Um ponto tem conteúdo
+nulo: basta um quadradinho em volta dele,
+
+109
+00:06:46,840 --> 00:06:50,860
+tão pequeno quanto o orçamento pedir.
+Um número finito de pontos também:
+
+110
+00:06:50,900 --> 00:06:54,020
+um quadradinho para cada
+um. Um segmento de reta:
+
+111
+00:06:54,060 --> 00:06:56,880
+um retângulo comprido
+e cada vez mais fino.
+
+112
+00:06:56,920 --> 00:07:01,900
+E daí saem duas regras úteis. Um pedaço
+de um conjunto de conteúdo nulo também
+
+113
+00:07:01,940 --> 00:07:06,640
+tem conteúdo nulo, e juntar um número
+finito desses conjuntos continua dando
+
+114
+00:07:06,680 --> 00:07:10,200
+conteúdo nulo. Agora,
+um disco cheio não tem.
+
+115
+00:07:10,240 --> 00:07:13,900
+Para cobri-lo, os retângulos
+gastam pelo menos a área do disco,
+
+116
+00:07:13,940 --> 00:07:16,660
+e um orçamento menor
+que isso nunca dá conta.
+
+117
+00:07:16,700 --> 00:07:19,920
+Então a ideia não é o conjunto
+parecer fino no desenho.
+
+118
+00:07:19,960 --> 00:07:23,330
+É dar para cobri-lo com área
+tão pequena quanto se queira.
+
+119
+00:07:23,420 --> 00:07:26,780
+E uma curva inteira? Lembra
+da parábola do vídeo passado,
+
+120
+00:07:26,820 --> 00:07:30,700
+x ao quadrado? Divide o eixo
+em pedaços e, em cada pedaço,
+
+121
+00:07:30,740 --> 00:07:34,470
+desenha uma caixa que vai do
+menor ao maior valor da curva ali.
+
+122
+00:07:34,540 --> 00:07:36,840
+Juntas, as caixas cobrem a parábola.
+
+123
+00:07:36,880 --> 00:07:41,660
+Agora o truque: a curva é crescente, então
+dá para empurrar as caixas para a direita
+
+124
+00:07:41,700 --> 00:07:46,740
+e empilhar. Todas cabem numa coluna com
+a largura do maior lado e altura quatro,
+
+125
+00:07:46,780 --> 00:07:51,780
+a subida total da parábola. Área total:
+no máximo quatro vezes o maior lado.
+
+126
+00:07:51,820 --> 00:07:55,920
+Com quatro pedaços, dois;
+com oito, um; com dezesseis,
+
+127
+00:07:55,960 --> 00:07:59,200
+meio. E refinando, fica tão
+pequena quanto se queira.
+
+128
+00:07:59,240 --> 00:08:01,790
+O gráfico da parábola tem conteúdo nulo.
+
+129
+00:08:01,840 --> 00:08:04,620
+A solda não cresce o
+tempo todo: primeiro sobe,
+
+130
+00:08:04,660 --> 00:08:07,440
+depois desce. Então
+separa os dois movimentos.
+
+131
+00:08:07,480 --> 00:08:11,440
+As caixas da subida se empilham numa
+coluna de cinquenta e oito centésimos de
+
+132
+00:08:11,480 --> 00:08:14,220
+altura, e as da descida
+numa de trinta e seis.
+
+133
+00:08:14,260 --> 00:08:18,620
+Área total: no máximo noventa e
+quatro centésimos vezes o maior lado,
+
+134
+00:08:18,660 --> 00:08:20,860
+que vai a zero junto com o maior lado.
+
+135
+00:08:20,900 --> 00:08:24,180
+O arco do quarto de disco
+desce de dois até zero,
+
+136
+00:08:24,220 --> 00:08:27,440
+então as caixas dele somam
+duas vezes o maior lado.
+
+137
+00:08:27,480 --> 00:08:30,690
+Com quatro divisões,
+um metro quadrado; com oito,
+
+138
+00:08:30,740 --> 00:08:33,980
+meio; com dezesseis,
+um quarto; com trinta e duas,
+
+139
+00:08:34,020 --> 00:08:38,820
+um oitavo. E dá para ir além dos exemplos:
+o gráfico de qualquer função contínua num
+
+140
+00:08:38,860 --> 00:08:41,180
+intervalo fechado tem conteúdo nulo.
+
+141
+00:08:41,220 --> 00:08:45,760
+Por quê? A área das caixas que cobrem o
+gráfico é exatamente a diferença entre a
+
+142
+00:08:45,800 --> 00:08:48,820
+soma por cima e a soma por
+baixo da integral simples.
+
+143
+00:08:48,860 --> 00:08:52,440
+E toda função contínua num
+intervalo fechado é integrável,
+
+144
+00:08:52,480 --> 00:08:55,840
+então essa diferença vai
+a zero. O livro vai além:
+
+145
+00:08:55,880 --> 00:09:00,720
+toda curva de classe C¹, ou seja, com uma
+parametrização de derivada contínua num
+
+146
+00:09:00,760 --> 00:09:03,580
+intervalo fechado,
+também tem conteúdo nulo.
+
+147
+00:09:03,620 --> 00:09:07,620
+E o mesmo vale para curvas feitas
+de um número finito desses pedaços:
+
+148
+00:09:07,660 --> 00:09:12,560
+segmentos, polígonos, circunferências,
+elipses e quase toda borda que
+
+149
+00:09:12,600 --> 00:09:16,750
+aparece num problema. Para essas bordas,
+a primeira pergunta tem resposta:
+
+150
+00:09:16,820 --> 00:09:21,440
+sim, a área some. Mas isso não quer dizer
+que qualquer fronteira imaginável tenha
+
+151
+00:09:21,480 --> 00:09:25,800
+essa propriedade. Agora a borda de
+uma região ganha nome matemático.
+
+152
+00:09:25,840 --> 00:09:28,800
+Pega um ponto e desenha em
+volta dele uma bola aberta:
+
+153
+00:09:28,840 --> 00:09:31,180
+um disquinho sem a
+circunferência da borda.
+
+154
+00:09:31,220 --> 00:09:34,360
+Se dá para escolher uma bola
+inteira dentro da região B,
+
+155
+00:09:34,400 --> 00:09:37,820
+o ponto é interior. Se dá para
+escolher uma inteira fora,
+
+156
+00:09:37,860 --> 00:09:41,980
+é exterior. Mas existem pontos em
+que nenhuma das duas coisas acontece:
+
+157
+00:09:42,020 --> 00:09:47,270
+não importa o quanto a bola encolhe, ela
+sempre pega pontos de B e pontos de fora.
+
+158
+00:09:47,360 --> 00:09:50,620
+Esses são os pontos de
+fronteira. No quarto de disco,
+
+159
+00:09:50,660 --> 00:09:53,960
+a fronteira é o arco e os
+dois segmentos sobre os eixos.
+
+160
+00:09:54,000 --> 00:09:58,280
+E um detalhe: um ponto de fronteira
+pode pertencer à região ou não.
+
+161
+00:09:58,320 --> 00:10:01,120
+E aqui as duas primeiras
+perguntas se encontram.
+
+162
+00:10:01,160 --> 00:10:04,160
+Lembra como se integra numa
+região que não é retangular?
+
+163
+00:10:04,200 --> 00:10:08,840
+Coloca a região dentro de um retângulo
+maior e faz a função valer zero fora dela.
+
+164
+00:10:08,880 --> 00:10:12,680
+No quarto de disco, a função
+vale um dentro e zero fora.
+
+165
+00:10:12,720 --> 00:10:15,300
+E o que acontece quando
+você atravessa a borda?
+
+166
+00:10:15,340 --> 00:10:17,590
+A função salta de um para zero!
+
+167
+00:10:17,640 --> 00:10:21,520
+A borda funciona exatamente como
+a solda da chapa de dois metais.
+
+168
+00:10:21,560 --> 00:10:26,380
+Olha o prédio: as tampas só aparecem nos
+retângulos atravessados pela fronteira.
+
+169
+00:10:26,420 --> 00:10:31,000
+E, se a fronteira tem conteúdo nulo, a
+área dessas células pode ficar tão pequena
+
+170
+00:10:31,040 --> 00:10:35,640
+quanto se queira. Uma borda curva e uma
+linha de solda eram o mesmo problema.
+
+171
+00:10:35,680 --> 00:10:38,660
+Só que falta uma peça.
+Na chapa de dois metais,
+
+172
+00:10:38,700 --> 00:10:42,580
+longe da solda, a densidade era
+constante, e as tampas eram zero.
+
+173
+00:10:42,620 --> 00:10:46,860
+Mas numa densidade que varia, como
+x ao quadrado mais y ao quadrado,
+
+174
+00:10:46,900 --> 00:10:50,020
+quase toda célula tem o
+piso diferente do teto.
+
+175
+00:10:50,060 --> 00:10:52,800
+Então não basta cuidar
+de onde a função salta:
+
+176
+00:10:52,840 --> 00:10:56,680
+onde ela é contínua, as tampas
+também têm que poder ficar pequenas.
+
+177
+00:10:56,720 --> 00:10:59,900
+E aí aparece um detalhe.
+Ser contínua quer dizer que,
+
+178
+00:10:59,940 --> 00:11:02,600
+perto de cada ponto, a função muda pouco.
+
+179
+00:11:02,640 --> 00:11:07,160
+Mas dá para escolher uma única distância
+que sirva para todos os pontos da chapa ao
+
+180
+00:11:07,200 --> 00:11:12,020
+mesmo tempo? Dá, quando a região é
+fechada e limitada e a função é contínua
+
+181
+00:11:12,060 --> 00:11:14,340
+nela: é o teorema de Heine-Cantor.
+
+182
+00:11:14,380 --> 00:11:19,400
+Para todo ε maior que zero, existe
+δ maior que zero tal que quaisquer
+
+183
+00:11:19,440 --> 00:11:24,160
+dois pontos da região,
+X e Y, a menos de δ um do
+
+184
+00:11:24,200 --> 00:11:27,160
+outro, têm valores que
+diferem menos que ε.
+
+185
+00:11:27,200 --> 00:11:31,260
+As barras duplas lê-se norma:
+a distância entre os dois pontos.
+
+186
+00:11:31,300 --> 00:11:35,840
+O mesmo δ serve para todos os pares,
+e por isso se chama continuidade
+
+187
+00:11:35,880 --> 00:11:40,320
+uniforme. Na chapa de densidade
+x ao quadrado mais y ao quadrado,
+
+188
+00:11:40,360 --> 00:11:44,660
+o canto de cima é o mais exigente,
+porque a função muda mais rápido ali.
+
+189
+00:11:44,700 --> 00:11:49,620
+Com ε igual a um, um δ de dezessete
+centésimos serve na chapa inteira.
+
+190
+00:11:49,660 --> 00:11:54,790
+É esse δ que controla, ao mesmo tempo,
+a oscilação de todas as células pequenas.
+
+191
+00:11:54,880 --> 00:11:58,080
+E por que a região precisa
+ser fechada e limitada?
+
+192
+00:11:58,120 --> 00:12:02,920
+Olha esta função: seno de um sobre
+x, numa faixa sem a borda onde x
+
+193
+00:12:02,960 --> 00:12:07,320
+vale zero. Perto dessa borda que falta,
+ela oscila cada vez mais rápido.
+
+194
+00:12:07,360 --> 00:12:10,700
+Dá para achar dois pontos tão
+próximos quanto você quiser,
+
+195
+00:12:10,740 --> 00:12:14,040
+um onde o seno vale um e
+outro onde vale menos um.
+
+196
+00:12:14,080 --> 00:12:18,320
+A diferença continua dois,
+e nenhum δ serve para a faixa inteira.
+
+197
+00:12:18,360 --> 00:12:21,660
+Numa região fechada e
+limitada, isso não acontece.
+
+198
+00:12:21,700 --> 00:12:26,200
+Se a continuidade uniforme falhasse,
+haveria pares de pontos cada vez mais
+
+199
+00:12:26,240 --> 00:12:29,040
+próximos com valores
+sempre longe um do outro.
+
+200
+00:12:29,080 --> 00:12:33,560
+Só que, numa região fechada e limitada,
+dá para escolher entre esses pares uma
+
+201
+00:12:33,600 --> 00:12:37,200
+sequência que se aproxima de um
+mesmo ponto da própria região.
+
+202
+00:12:37,240 --> 00:12:39,660
+E ali a função seria descontínua.
+
+203
+00:12:39,700 --> 00:12:43,260
+Contradição. Então, numa
+região fechada e limitada,
+
+204
+00:12:43,300 --> 00:12:46,750
+toda função contínua é
+uniformemente contínua.
+
+205
+00:12:46,800 --> 00:12:49,920
+Agora a demonstração
+principal, juntando tudo.
+
+206
+00:12:49,960 --> 00:12:54,180
+Pega uma função limitada num
+retângulo: existe um número M,
+
+207
+00:12:54,220 --> 00:12:57,180
+positivo, que limita o
+módulo dos valores dela.
+
+208
+00:12:57,220 --> 00:13:00,920
+E chama de D o conjunto dos
+pontos onde ela não é contínua,
+
+209
+00:13:00,960 --> 00:13:04,960
+com conteúdo nulo. O objetivo
+é provar que ela é integrável.
+
+210
+00:13:05,000 --> 00:13:08,220
+Primeiro, cobre D com um
+número finito de retângulos,
+
+211
+00:13:08,260 --> 00:13:10,960
+gastando área total menor que ε₁.
+
+212
+00:13:11,000 --> 00:13:13,620
+Depois, engorda um
+pouquinho esses retângulos,
+
+213
+00:13:13,660 --> 00:13:16,000
+sem passar de duas vezes ε₁.
+
+214
+00:13:16,040 --> 00:13:20,440
+Por que engordar? É uma margem de
+segurança: toda célula pequena da grade
+
+215
+00:13:20,480 --> 00:13:24,750
+que encosta na cobertura original fica
+inteira dentro da cobertura engordada.
+
+216
+00:13:24,800 --> 00:13:28,680
+Fora da cobertura, sobra uma região
+fechada onde a função é contínua,
+
+217
+00:13:28,720 --> 00:13:32,040
+então a continuidade uniforme
+controla a função ali.
+
+218
+00:13:32,080 --> 00:13:36,100
+Agora escolhe uma grade fina o
+bastante para respeitar as duas coisas:
+
+219
+00:13:36,140 --> 00:13:38,930
+a margem e o δ da continuidade uniforme.
+
+220
+00:13:39,040 --> 00:13:41,760
+As células da grade se
+dividem em dois grupos.
+
+221
+00:13:41,800 --> 00:13:45,720
+O primeiro é o das células calmas,
+longe dos pontos problemáticos.
+
+222
+00:13:45,760 --> 00:13:50,480
+Nelas, a continuidade uniforme garante
+que o teto e o piso estão muito próximos:
+
+223
+00:13:50,520 --> 00:13:53,300
+cada tampa tem altura menor que ε₂.
+
+224
+00:13:53,340 --> 00:13:56,260
+E a área total delas não
+passa da área do retângulo,
+
+225
+00:13:56,300 --> 00:14:01,120
+que a gente chama de α.
+Contribuição: menos que α vezes ε₂.
+
+226
+00:14:01,160 --> 00:14:05,420
+O segundo grupo é o das células
+vermelhas, perto das descontinuidades.
+
+227
+00:14:05,460 --> 00:14:10,080
+Ali a função pode variar bastante,
+mas o módulo dela nunca passa de M,
+
+228
+00:14:10,120 --> 00:14:12,780
+então a tampa nunca passa de dois M.
+
+229
+00:14:12,820 --> 00:14:17,460
+E essas células cabem na cobertura
+engordada, de área menor que dois ε₁.
+
+230
+00:14:17,500 --> 00:14:20,720
+Contribuição: menos que quatro M ε₁.
+
+231
+00:14:20,760 --> 00:14:25,480
+Somando os dois grupos,
+S(P) menos s(P) é menor que
+
+232
+00:14:25,520 --> 00:14:28,680
+α ε₂ mais quatro M ε₁.
+
+233
+00:14:28,720 --> 00:14:33,260
+Agora escolhe os dois épsilons para que
+cada parcela fique menor que metade da
+
+234
+00:14:33,300 --> 00:14:38,220
+tolerância. Com ε₂ =
+ε/(2α), o α cancela, e
+
+235
+00:14:38,260 --> 00:14:43,240
+sobra ε/2. Com ε₁ = ε/(8M), o M
+
+236
+00:14:43,280 --> 00:14:48,280
+cancela, o quatro com o oito vira
+um meio, e sobra ε/2 de novo.
+
+237
+00:14:48,320 --> 00:14:52,400
+Meio ε mais meio ε:
+a diferença fica menor que ε.
+
+238
+00:14:52,440 --> 00:14:55,640
+As tampas somem! E, pelo
+critério do começo da aula,
+
+239
+00:14:55,680 --> 00:15:00,600
+a função é integrável. E esse é o teorema:
+se uma função é limitada num retângulo e
+
+240
+00:15:00,640 --> 00:15:04,160
+o conjunto dos pontos onde ela
+é descontínua tem conteúdo nulo,
+
+241
+00:15:04,200 --> 00:15:07,240
+então ela é integrável.
+Repara na força disso.
+
+242
+00:15:07,280 --> 00:15:10,780
+Não precisa calcular o valor da
+integral nem testar mil grades:
+
+243
+00:15:10,820 --> 00:15:13,420
+basta verificar duas
+propriedades da função.
+
+244
+00:15:13,460 --> 00:15:17,820
+E sai uma consequência imediata. Se a
+função é contínua no retângulo inteiro,
+
+245
+00:15:17,860 --> 00:15:22,080
+o conjunto das descontinuidades é
+vazio, e o vazio tem conteúdo nulo.
+
+246
+00:15:22,120 --> 00:15:25,580
+Então toda função contínua
+num retângulo é integrável.
+
+247
+00:15:25,620 --> 00:15:29,500
+Dá para ir além: numa região limitada
+com fronteira de conteúdo nulo,
+
+248
+00:15:29,540 --> 00:15:33,600
+estende a função por zero. Se ela
+é contínua e limitada na região,
+
+249
+00:15:33,640 --> 00:15:36,460
+a extensão só pode ser
+descontínua na fronteira,
+
+250
+00:15:36,500 --> 00:15:39,580
+e o teorema garante a integral.
+E o livro ainda observa:
+
+251
+00:15:39,620 --> 00:15:42,580
+pode ter descontinuidades
+dentro da região também,
+
+252
+00:15:42,620 --> 00:15:45,210
+desde que fiquem num
+conjunto de conteúdo nulo.
+
+253
+00:15:45,280 --> 00:15:48,340
+Agora volta nas três perguntas.
+O quarto de disco:
+
+254
+00:15:48,380 --> 00:15:52,580
+a fronteira é um arco e dois
+segmentos, todos com conteúdo nulo.
+
+255
+00:15:52,620 --> 00:15:56,420
+Então a função que vale um
+dentro e zero fora é integrável,
+
+256
+00:15:56,460 --> 00:15:59,760
+e a área existe: é pi.
+A chapa de dois metais:
+
+257
+00:15:59,800 --> 00:16:03,720
+a densidade fica entre um e três
+e só é descontínua na solda,
+
+258
+00:16:03,760 --> 00:16:06,820
+que é o gráfico de uma função
+contínua e tem conteúdo nulo.
+
+259
+00:16:06,860 --> 00:16:10,460
+A massa está bem definida:
+sete vírgula zero seis quilos,
+
+260
+00:16:10,500 --> 00:16:14,980
+mais ou menos. E a chapa de densidade
+x ao quadrado mais y ao quadrado:
+
+261
+00:16:15,020 --> 00:16:18,380
+a função é contínua no retângulo
+inteiro, então é integrável,
+
+262
+00:16:18,420 --> 00:16:22,160
+sem refazer a conta do dezesseis
+δ. Três problemas diferentes,
+
+263
+00:16:22,200 --> 00:16:25,770
+um teorema só. Mas toda
+função limitada é integrável?
+
+264
+00:16:25,880 --> 00:16:30,320
+Não. Olha esta função estranha: vale um
+quando as duas coordenadas do ponto são
+
+265
+00:16:30,360 --> 00:16:33,760
+números racionais, aqueles que se
+escrevem como fração de inteiros,
+
+266
+00:16:33,800 --> 00:16:37,520
+e vale zero nos outros casos.
+Pega qualquer retanguinho da grade.
+
+267
+00:16:37,560 --> 00:16:42,100
+Por menor que seja, ele tem pontos com as
+duas coordenadas racionais e pontos com
+
+268
+00:16:42,140 --> 00:16:46,000
+pelo menos uma coordenada irracional.
+Então, em todas as células,
+
+269
+00:16:46,040 --> 00:16:50,100
+o piso é zero e o teto é um.
+A soma por cima dá sempre quatro,
+
+270
+00:16:50,140 --> 00:16:53,180
+a área do quadrado, e a soma
+por baixo dá sempre zero.
+
+271
+00:16:53,220 --> 00:16:56,320
+Refina quanto quiser:
+a diferença continua quatro.
+
+272
+00:16:56,360 --> 00:17:00,600
+As paredes nunca se aproximam, e essa
+função não é integrável no sentido de
+
+273
+00:17:00,640 --> 00:17:03,840
+Riemann. E isso responde à
+última dúvida do vídeo passado:
+
+274
+00:17:03,880 --> 00:17:06,559
+existem bordas que não somem? Existem.
+
+275
+00:17:06,599 --> 00:17:10,380
+Pega o conjunto dos pontos do quadrado
+com as duas coordenadas racionais.
+
+276
+00:17:10,420 --> 00:17:14,819
+Qualquer disquinho dentro do quadrado
+encontra pontos dele e pontos de fora.
+
+277
+00:17:14,859 --> 00:17:18,360
+Então a fronteira dele é o
+quadrado inteiro: não é uma curva,
+
+278
+00:17:18,400 --> 00:17:21,840
+é uma região de área positiva,
+e não tem conteúdo nulo.
+
+279
+00:17:21,880 --> 00:17:25,319
+Um último cuidado: o teorema
+dá uma condição suficiente.
+
+280
+00:17:25,359 --> 00:17:28,660
+Quando as hipóteses valem,
+a integral existe com certeza.
+
+281
+00:17:28,700 --> 00:17:32,320
+Quando não valem, isso sozinho
+não prova que ela não existe.
+
+282
+00:17:32,360 --> 00:17:35,560
+Aqui, a não integrabilidade
+saiu direto das somas,
+
+283
+00:17:35,600 --> 00:17:39,760
+que nunca se aproximam. Num exercício,
+o teorema vira três perguntas.
+
+284
+00:17:39,800 --> 00:17:44,550
+A função é limitada? As descontinuidades
+ficam num conjunto de conteúdo nulo?
+
+285
+00:17:44,720 --> 00:17:49,190
+E, se a região não é um retângulo,
+a fronteira dela tem conteúdo nulo?
+
+286
+00:17:49,320 --> 00:17:51,570
+Os exemplos do livro passam nas três.
+
+287
+00:17:51,620 --> 00:17:56,830
+x mais y no disco de raio um: contínua,
+e a fronteira é uma circunferência.
+
+288
+00:17:56,900 --> 00:18:01,780
+x mais y entre as parábolas y
+igual a x ao quadrado e y igual a
+
+289
+00:18:01,820 --> 00:18:06,220
+um mais x ao quadrado: a fronteira
+são dois gráficos e dois segmentos.
+
+290
+00:18:06,260 --> 00:18:10,640
+No disco, a função que vale um
+acima do eixo x e menos um abaixo:
+
+291
+00:18:10,680 --> 00:18:13,150
+uma chapa de dois metais com solda reta.
+
+292
+00:18:13,200 --> 00:18:16,900
+E x ao quadrado sobre x ao
+quadrado mais y ao quadrado,
+
+293
+00:18:16,940 --> 00:18:20,100
+valendo um na origem:
+só é descontínua na origem,
+
+294
+00:18:20,140 --> 00:18:23,940
+e um ponto tem conteúdo nulo.
+As quatro são integráveis.
+
+295
+00:18:23,980 --> 00:18:28,400
+E isso aparece fora dos exercícios:
+uma peça feita de dois materiais,
+
+296
+00:18:28,440 --> 00:18:32,120
+a densidade de população que muda
+na divisa entre duas cidades,
+
+297
+00:18:32,160 --> 00:18:37,000
+a probabilidade espalhada por igual dentro
+de um alvo redondo e zero fora dele.
+
+298
+00:18:37,040 --> 00:18:39,580
+Todas essas funções têm descontinuidades.
+
+299
+00:18:39,620 --> 00:18:43,040
+Mas são limitadas, e as
+descontinuidades moram em curvas,
+
+300
+00:18:43,080 --> 00:18:47,460
+então a integral existe. O teorema
+amplia muito o tipo de função que dá para
+
+301
+00:18:47,500 --> 00:18:50,150
+integrar com segurança.
+Então olha o caminho.
+
+302
+00:18:50,200 --> 00:18:54,300
+A soma por baixo e a soma por cima
+prendem todas as aproximações,
+
+303
+00:18:54,340 --> 00:18:57,180
+e a diferença entre elas
+é o volume das tampas.
+
+304
+00:18:57,220 --> 00:19:01,760
+Onde a função é contínua, a continuidade
+uniforme achata as tampas todas de uma
+
+305
+00:19:01,800 --> 00:19:05,060
+vez. Onde ela é descontínua,
+as tampas podem ser altas,
+
+306
+00:19:05,100 --> 00:19:09,240
+mas os pontos problemáticos precisam
+ficar num conjunto de conteúdo nulo:
+
+307
+00:19:09,280 --> 00:19:12,680
+um conjunto que dá para cobrir com
+um número finito de retângulos,
+
+308
+00:19:12,720 --> 00:19:15,120
+gastando tão pouca área quanto se queira.
+
+309
+00:19:15,160 --> 00:19:17,560
+Juntando as duas ideias, sai o teorema.
+
+310
+00:19:17,600 --> 00:19:20,820
+Uma integral dupla não exige
+que tudo seja contínuo:
+
+311
+00:19:20,860 --> 00:19:24,420
+o importante é controlar a
+diferença entre as aproximações.
+
+312
+00:19:24,460 --> 00:19:27,420
+Mas ficou uma pergunta.
+Na chapa de dois metais,
+
+313
+00:19:27,460 --> 00:19:31,540
+dá para calcular a massa do pedaço
+leve e a do pesado separadamente.
+
+314
+00:19:31,580 --> 00:19:34,080
+Então a massa total devia
+ser a soma das duas,
+
+315
+00:19:34,120 --> 00:19:37,100
+certo? Só que os dois pedaços
+se encontram na solda,
+
+316
+00:19:37,140 --> 00:19:40,930
+que fica na fronteira dos dois.
+Ela entra duas vezes na conta?
+
+317
+00:19:41,000 --> 00:19:44,400
+E, no nosso modelo, a solda
+é uma linha sem espessura:
+
+318
+00:19:44,440 --> 00:19:49,060
+ela tem alguma massa? No próximo vídeo,
+as propriedades da integral dupla:
+
+319
+00:19:49,100 --> 00:19:52,520
+somar funções, tirar constante,
+comparar integrais,
+
+320
+00:19:52,560 --> 00:19:56,920
+dividir a região em pedaços e entender
+por que mudar a função num conjunto de
+
+321
+00:19:56,960 --> 00:19:59,250
+conteúdo nulo não muda a integral.
+
+322
+00:19:59,400 --> 00:20:03,780
+Se essa aula te ajudou, deixa o like,
+se inscreve no Parallax Lab e conta nos
+
+323
+00:20:03,820 --> 00:20:08,420
+comentários: em que outra situação uma
+grandeza muda de repente ao atravessar uma
+
+324
+00:20:08,460 --> 00:20:10,460
+fronteira? Até a próxima!

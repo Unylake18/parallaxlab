@@ -1,0 +1,16 @@
+{
+  "name": "vid0030-remotion",
+  "private": true,
+  "description": "Experimento: Remotion como maestro (composição 3D PNG + Manim .mov alfa + interface React) do vid_0030. Instale com npm install nesta pasta; node_modules fica fora do Git.",
+  "scripts": {
+    "preparar": "node preparar.js",
+    "estudio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Vid0030 ../renders/preview_540x960_remotion.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.539",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.539"
+  }
+}

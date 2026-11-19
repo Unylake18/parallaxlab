@@ -1,0 +1,1632 @@
+1
+00:00:00,060 --> 00:00:04,740
+Pensa numa bola de raio um feita de
+camadas, em que cada camada é mais densa
+
+2
+00:00:04,780 --> 00:00:07,950
+que a de dentro. A densidade,
+que aqui a gente chama de ρ,
+
+3
+00:00:08,000 --> 00:00:12,920
+é a própria distância até o centro: raiz
+de x ao quadrado mais y ao quadrado mais z
+
+4
+00:00:12,960 --> 00:00:16,220
+ao quadrado. No centro,
+ρ vale zero; na casca,
+
+5
+00:00:16,260 --> 00:00:20,820
+vale um. Quanto pesa essa bola?
+A massa é a integral tripla de ρ na bola.
+
+6
+00:00:20,860 --> 00:00:23,040
+Então vamos tentar do
+jeito que a gente já sabe,
+
+7
+00:00:23,080 --> 00:00:26,620
+em cartesianas. O x vai de
+menos um a um, tranquilo.
+
+8
+00:00:26,660 --> 00:00:30,560
+Mas o y já depende do x,
+e o z depende dos dois:
+
+9
+00:00:30,600 --> 00:00:33,180
+olha as raízes aparecendo,
+uma dentro da outra.
+
+10
+00:00:33,220 --> 00:00:35,420
+E aí vem a integral de dentro, em z.
+
+11
+00:00:35,460 --> 00:00:40,100
+Para não carregar tanta coisa, chama x
+ao quadrado mais y ao quadrado de k ao
+
+12
+00:00:40,140 --> 00:00:43,120
+quadrado. Essa primitiva
+você até acha numa tabela,
+
+13
+00:00:43,160 --> 00:00:46,320
+mas olha o tamanho dela:
+tem raiz, tem logaritmo,
+
+14
+00:00:46,360 --> 00:00:48,700
+e isso é só a primeira das três integrais.
+
+15
+00:00:48,740 --> 00:00:51,240
+As outras duas ainda
+viriam por cima disso tudo.
+
+16
+00:00:51,280 --> 00:00:55,820
+Trava. Só que a bola é redonda, e ρ
+só depende da distância até o centro.
+
+17
+00:00:55,860 --> 00:00:58,620
+Então troca a grade.
+Em vez de cubinhos de montar,
+
+18
+00:00:58,660 --> 00:01:02,950
+cascas, uma dentro da outra; cones
+saindo da origem em volta do eixo z,
+
+19
+00:01:03,020 --> 00:01:07,340
+como um funil; e páginas, como as de um
+livro aberto em pé em volta desse eixo.
+
+20
+00:01:07,380 --> 00:01:10,840
+Repara nestes dois pedaços.
+Os dois têm o mesmo delta r,
+
+21
+00:01:10,880 --> 00:01:15,540
+o mesmo delta φ e o mesmo delta θ,
+mas o de perto do polo é fininho e o do
+
+22
+00:01:15,580 --> 00:01:18,660
+equador é gordo. Perto
+do polo, tudo se espreme.
+
+23
+00:01:18,700 --> 00:01:22,840
+Então a pergunta do vídeo é: qual é
+o volume de cada pedaço dessa grade?
+
+24
+00:01:22,880 --> 00:01:26,150
+Respondendo isso, a bola
+pesada sai em três linhas.
+
+25
+00:01:26,200 --> 00:01:28,900
+Fala, pessoal! Bem-vindos ao Parallax Lab!
+
+26
+00:01:28,940 --> 00:01:31,980
+Hoje é dia de coordenadas
+esféricas na integral tripla:
+
+27
+00:01:32,020 --> 00:01:35,010
+o endereço de um ponto no
+espaço, o fator de volume,
+
+28
+00:01:35,120 --> 00:01:38,500
+r ao quadrado seno de φ,
+o teorema, e três contas:
+
+29
+00:01:38,540 --> 00:01:41,540
+a bola, a bola pesada e
+uma casquinha de sorvete.
+
+30
+00:01:41,580 --> 00:01:45,560
+Primeiro, o endereço. Um ponto P
+no espaço fica com três números.
+
+31
+00:01:45,600 --> 00:01:49,520
+O primeiro é a distância de P
+até a origem, e ela se chama r.
+
+32
+00:01:49,560 --> 00:01:51,920
+Nos livros de Cálculo
+ela costuma se chamar ρ;
+
+33
+00:01:51,960 --> 00:01:54,980
+aqui, como na física,
+o ρ fica para a densidade.
+
+34
+00:01:55,020 --> 00:01:58,540
+O segundo é o ângulo que o
+segmento até P faz com o eixo z,
+
+35
+00:01:58,580 --> 00:02:02,020
+do lado de cima. Ele se chama φ,
+e se parece com a latitude,
+
+36
+00:02:02,060 --> 00:02:06,080
+mas com uma diferença que pega muita
+gente: a latitude do mapa conta a partir
+
+37
+00:02:06,120 --> 00:02:08,860
+do equador, e o φ conta a partir do polo.
+
+38
+00:02:08,900 --> 00:02:12,540
+Então φ zero é o polo norte,
+π sobre dois é o equador,
+
+39
+00:02:12,580 --> 00:02:16,500
+π é o polo sul. O terceiro é
+o θ de sempre, a longitude:
+
+40
+00:02:16,540 --> 00:02:19,820
+o ângulo das polares,
+no chão, a partir do eixo x.
+
+41
+00:02:19,860 --> 00:02:22,730
+Agora olha de lado,
+na página que passa por P.
+
+42
+00:02:22,840 --> 00:02:27,600
+É um triângulo retângulo, com
+hipotenusa r e o ângulo φ junto do eixo.
+
+43
+00:02:27,640 --> 00:02:31,860
+O cateto em pé é a altura:
+z igual a r cosseno de φ.
+
+44
+00:02:31,900 --> 00:02:35,950
+O cateto deitado é a sombra de P
+no chão, que a gente chama de s:
+
+45
+00:02:36,260 --> 00:02:39,600
+s igual a r seno de φ. Agora olha de cima.
+
+46
+00:02:39,640 --> 00:02:44,520
+No chão são as polares, com
+raio s: x é s cosseno de θ,
+
+47
+00:02:44,560 --> 00:02:49,520
+y é s seno de θ, e trocando
+o s aparece o r seno de φ nas
+
+48
+00:02:49,560 --> 00:02:53,310
+duas. Pensa num GPS do
+espaço: em vez de andar x,
+
+49
+00:02:53,380 --> 00:02:58,420
+y e z, você diz a que distância está,
+quanto desce a partir do polo e para que
+
+50
+00:02:58,460 --> 00:03:02,400
+lado gira. φ só vai até π
+porque, passando do polo sul,
+
+51
+00:03:02,440 --> 00:03:05,940
+você estaria do outro lado,
+e esse lado o θ já cobre.
+
+52
+00:03:05,980 --> 00:03:09,130
+Um exemplo para a gente
+conferir junto: r igual a dois,
+
+53
+00:03:09,260 --> 00:03:12,960
+φ igual a π sobre seis,
+θ igual a π sobre três.
+
+54
+00:03:13,000 --> 00:03:15,620
+Põe os valores nas fórmulas,
+começando pela altura.
+
+55
+00:03:15,660 --> 00:03:20,200
+É dois vezes o cosseno de trinta graus,
+e esse cosseno vocês já sabem de cor:
+
+56
+00:03:20,240 --> 00:03:24,340
+raiz de três sobre dois. O dois de
+fora cancela com o dois de baixo,
+
+57
+00:03:24,380 --> 00:03:28,420
+e z dá raiz de três. A sombra
+é a mesma ideia com o seno,
+
+58
+00:03:28,460 --> 00:03:33,000
+que é um meio: s dá um. Repara que é o
+triângulo de trinta graus do esquadro,
+
+59
+00:03:33,040 --> 00:03:36,520
+com hipotenusa dois e
+catetos um e raiz de três.
+
+60
+00:03:36,560 --> 00:03:39,510
+Agora desce para o chão com
+essa sombra de tamanho um:
+
+61
+00:03:39,580 --> 00:03:44,060
+x é o cosseno de sessenta
+graus, um meio, e y é o seno,
+
+62
+00:03:44,100 --> 00:03:47,680
+raiz de três sobre dois.
+E a prova dos nove é Pitágoras:
+
+63
+00:03:47,720 --> 00:03:50,020
+eleva cada um ao quadrado e soma.
+
+64
+00:03:50,060 --> 00:03:53,080
+Um quarto mais três quartos
+já fecha um inteiro,
+
+65
+00:03:53,120 --> 00:03:56,400
+mais três, quatro.
+E quatro é dois ao quadrado:
+
+66
+00:03:56,440 --> 00:04:01,420
+a distância ao quadrado. Isso vale sempre:
+x ao quadrado mais y ao quadrado
+
+67
+00:04:01,460 --> 00:04:04,320
+mais z ao quadrado é
+igual a r ao quadrado.
+
+68
+00:04:04,360 --> 00:04:07,340
+Por isso a densidade da
+bola pesada, em esféricas,
+
+69
+00:04:07,380 --> 00:04:11,580
+vira simplesmente r. Agora pensa
+nisso como uma transformação.
+
+70
+00:04:11,620 --> 00:04:15,900
+Do lado das coordenadas, r vai
+de zero a um, φ de zero a π,
+
+71
+00:04:15,940 --> 00:04:18,620
+θ de zero a dois π. É uma caixa!
+
+72
+00:04:18,660 --> 00:04:21,380
+Um tijolo. Pega uma
+celulinha desse tijolo.
+
+73
+00:04:21,420 --> 00:04:25,420
+A transformação, que aqui se chama T,
+porque a letra φ já é do ângulo,
+
+74
+00:04:25,460 --> 00:04:30,480
+leva r, φ, θ em x, y,
+z: o tijolo vira a bola,
+
+75
+00:04:30,520 --> 00:04:32,820
+e a celulinha vira uma célula curva.
+
+76
+00:04:32,860 --> 00:04:35,620
+Mas três pares de faces se comportam mal.
+
+77
+00:04:35,660 --> 00:04:39,960
+A face r igual a zero, um retângulo
+inteiro, cai num ponto só:
+
+78
+00:04:40,000 --> 00:04:45,040
+a origem. As faces φ igual a zero
+e φ igual a π caem no eixo z:
+
+79
+00:04:45,080 --> 00:04:50,240
+um retângulo vira um segmento. E as
+faces θ igual a zero e θ igual a dois π
+
+80
+00:04:50,280 --> 00:04:54,280
+caem na mesma página, uma em cima da
+outra, como as duas capas de um livro
+
+81
+00:04:54,320 --> 00:04:57,140
+aberto até dar a volta.
+Guarda essas três bordas,
+
+82
+00:04:57,180 --> 00:05:00,870
+que elas voltam no teorema.
+Agora, a pergunta do começo:
+
+83
+00:05:00,920 --> 00:05:04,260
+qual é o volume de uma célula?
+Ela é quase uma caixinha,
+
+84
+00:05:04,300 --> 00:05:09,220
+só que curva, com três arestas. A primeira
+vai na direção do raio e mede delta
+
+85
+00:05:09,260 --> 00:05:13,270
+r. A segunda anda no meridiano,
+num círculo de raio r;
+
+86
+00:05:13,360 --> 00:05:17,220
+arco é raio vezes ângulo,
+então ela mede r delta φ.
+
+87
+00:05:17,260 --> 00:05:20,620
+A terceira anda no paralelo,
+e aqui está a pegadinha.
+
+88
+00:05:20,660 --> 00:05:24,540
+O raio dele é a sombra,
+s igual a r seno de φ,
+
+89
+00:05:24,580 --> 00:05:28,360
+e não r. Pensa num globo:
+o paralelo do equador é enorme,
+
+90
+00:05:28,400 --> 00:05:33,280
+e o de perto do polo é um anelzinho.
+Então a terceira aresta mede r seno de
+
+91
+00:05:33,320 --> 00:05:36,940
+φ delta θ. O volume é
+quase o produto das três,
+
+92
+00:05:36,980 --> 00:05:41,210
+e juntando os r fica r ao
+quadrado seno de φ, delta r,
+
+93
+00:05:41,260 --> 00:05:45,820
+delta φ, delta θ. É esse seno de
+φ que separa os dois pedaços do
+
+94
+00:05:45,860 --> 00:05:49,010
+começo. Põe números para
+sentir o tamanho da diferença:
+
+95
+00:05:49,060 --> 00:05:53,450
+delta r um meio, delta φ
+e delta θ π sobre seis,
+
+96
+00:05:53,660 --> 00:05:58,300
+r médio três quartos. Perto do
+polo, o φ do meio é π sobre doze;
+
+97
+00:05:58,340 --> 00:06:00,630
+no equador, cinco π sobre doze.
+
+98
+00:06:00,680 --> 00:06:03,320
+Agora repara que as duas
+contas são idênticas,
+
+99
+00:06:03,360 --> 00:06:06,720
+termo a termo: o três quartos
+ao quadrado, o um meio,
+
+100
+00:06:06,760 --> 00:06:11,210
+os dois π sobre seis. A única coisa
+que muda é o seno do φ do meio.
+
+101
+00:06:11,260 --> 00:06:15,180
+Seno de um ângulo pequeno é pequeno,
+e o pedaço do polo fica em uns dois
+
+102
+00:06:15,220 --> 00:06:18,640
+centésimos. Perto de noventa
+graus o seno é quase um,
+
+103
+00:06:18,680 --> 00:06:21,360
+e o do equador vai para
+sete e meio centésimos.
+
+104
+00:06:21,400 --> 00:06:26,040
+Então a razão é só a razão dos senos,
+e ela dá dois mais raiz de três,
+
+105
+00:06:26,080 --> 00:06:30,900
+quase três vírgula sete. Mesmos deltas,
+e o pedaço do equador é quase quatro
+
+106
+00:06:30,940 --> 00:06:35,140
+vezes maior. Tem um segundo caminho,
+só com as polares que você já conhece,
+
+107
+00:06:35,180 --> 00:06:39,100
+em duas etapas. Primeiro,
+para numa página, com θ fixo.
+
+108
+00:06:39,140 --> 00:06:42,740
+Ali, r e φ viram altura
+e sombra: é uma polar,
+
+109
+00:06:42,780 --> 00:06:45,260
+só que com o ângulo
+medido a partir do eixo z.
+
+110
+00:06:45,300 --> 00:06:49,860
+O determinante dela é um dois por dois,
+e esse vocês já fazem de olho fechado:
+
+111
+00:06:49,900 --> 00:06:52,540
+diagonal principal menos
+diagonal secundária.
+
+112
+00:06:52,580 --> 00:06:56,060
+Na principal, cosseno de
+φ vezes r cosseno de φ.
+
+113
+00:06:56,100 --> 00:07:00,930
+Na secundária aparece um menos r seno
+de φ, e menos com menos vira mais.
+
+114
+00:07:00,980 --> 00:07:04,520
+Sobra r vezes cosseno ao
+quadrado mais seno ao quadrado,
+
+115
+00:07:04,560 --> 00:07:08,280
+e esse parêntese é a identidade
+mais famosa da trigonometria:
+
+116
+00:07:08,320 --> 00:07:11,920
+vale um. Fica r. É o mesmo
+r das polares do plano:
+
+117
+00:07:11,960 --> 00:07:14,860
+essa etapa estica a área da página por r.
+
+118
+00:07:14,900 --> 00:07:20,000
+Depois, desce para o chão: s e
+θ viram x e y, uma polar comum,
+
+119
+00:07:20,040 --> 00:07:23,940
+com fator s. E quando duas
+transformações vêm uma depois da outra,
+
+120
+00:07:23,980 --> 00:07:27,610
+os fatores se multiplicam, como
+dois zooms seguidos numa foto.
+
+121
+00:07:27,840 --> 00:07:32,940
+r vezes s, e s é r seno de φ:
+r ao quadrado seno de φ.
+
+122
+00:07:32,980 --> 00:07:37,220
+O mesmo fator, por outro caminho.
+E o terceiro caminho é o jacobiano,
+
+123
+00:07:37,260 --> 00:07:40,300
+a matriz das derivadas de x, y e z.
+
+124
+00:07:40,340 --> 00:07:44,160
+Repara na diferença: nas arestas,
+o volume deu só aproximado,
+
+125
+00:07:44,200 --> 00:07:47,500
+para uma célula pequena;
+o determinante dá o fator exato,
+
+126
+00:07:47,540 --> 00:07:51,980
+no limite em que a célula encolhe.
+Cada coluna é a derivada em uma variável:
+
+127
+00:07:52,020 --> 00:07:55,420
+a primeira em r, a segunda
+em φ, a terceira em θ.
+
+128
+00:07:55,460 --> 00:08:00,220
+Repara na linha de baixo: z não depende
+de θ, então ali aparece um zero.
+
+129
+00:08:00,260 --> 00:08:02,620
+É por isso que a gente
+expande pela linha de baixo,
+
+130
+00:08:02,660 --> 00:08:06,860
+com os sinais mais, menos, mais:
+o zero mata um termo inteiro,
+
+131
+00:08:06,900 --> 00:08:09,960
+e é menos conta para a gente.
+Sobram dois menores.
+
+132
+00:08:10,000 --> 00:08:14,340
+O menor de um elemento é o dois por dois
+que fica quando você tampa a linha e a
+
+133
+00:08:14,380 --> 00:08:18,420
+coluna dele. O do cosseno de φ
+tampa a linha três e a coluna um.
+
+134
+00:08:18,460 --> 00:08:23,380
+Sobra um dois por dois aqui em cima, e de
+novo é diagonal principal menos diagonal
+
+135
+00:08:23,420 --> 00:08:28,360
+secundária. Vai comigo: na principal,
+os dois r se juntam num r ao quadrado,
+
+136
+00:08:28,400 --> 00:08:30,880
+e vêm um seno de φ e um cosseno de φ.
+
+137
+00:08:30,920 --> 00:08:33,499
+Na secundária tem um
+sinal de menos escondido,
+
+138
+00:08:33,539 --> 00:08:37,180
+e menos com menos vira mais.
+Agora olha os dois termos:
+
+139
+00:08:37,220 --> 00:08:41,480
+os dois têm o mesmo r ao quadrado
+seno de φ cosseno de φ na frente.
+
+140
+00:08:41,520 --> 00:08:45,980
+Coloca em evidência, e o que sobra é
+cosseno ao quadrado de θ mais seno ao
+
+141
+00:08:46,020 --> 00:08:49,820
+quadrado de θ, que vale um.
+O θ some, e faz sentido:
+
+142
+00:08:49,860 --> 00:08:52,760
+girar em volta do eixo z
+não muda volume nenhum.
+
+143
+00:08:52,800 --> 00:08:55,940
+Fica r ao quadrado seno de φ cosseno de φ.
+
+144
+00:08:55,980 --> 00:09:00,480
+O do menos r seno de φ tampa a
+coluna dois, e é a mesma coreografia:
+
+145
+00:09:00,520 --> 00:09:04,660
+diagonal principal, diagonal secundária,
+menos com menos vira mais,
+
+146
+00:09:04,700 --> 00:09:09,500
+evidência, e de novo aparece cosseno
+ao quadrado mais seno ao quadrado de θ.
+
+147
+00:09:09,540 --> 00:09:11,840
+Fica r seno ao quadrado de φ.
+
+148
+00:09:11,880 --> 00:09:14,750
+Agora monta a expansão com
+os sinais da linha de baixo.
+
+149
+00:09:14,820 --> 00:09:19,680
+Mais cosseno de φ vezes o primeiro
+menor; menos o menos r seno de
+
+150
+00:09:19,720 --> 00:09:23,300
+φ vezes o segundo, e de novo
+os dois menos viram mais;
+
+151
+00:09:23,340 --> 00:09:26,480
+e o zero vezes o terceiro menor,
+que nem precisa calcular.
+
+152
+00:09:26,520 --> 00:09:31,380
+Multiplica: no primeiro termo, o cosseno
+de φ encontra outro cosseno e vira cosseno
+
+153
+00:09:31,420 --> 00:09:34,580
+ao quadrado; no segundo,
+o r encontra outro r,
+
+154
+00:09:34,620 --> 00:09:37,880
+e o seno encontra um seno ao
+quadrado e vira seno ao cubo.
+
+155
+00:09:37,920 --> 00:09:41,940
+Os dois termos têm r ao quadrado
+seno de φ: coloca em evidência,
+
+156
+00:09:41,980 --> 00:09:45,780
+e sobra cosseno ao quadrado de
+φ mais seno ao quadrado de φ.
+
+157
+00:09:45,820 --> 00:09:48,310
+A mesma identidade, de novo: um.
+
+158
+00:09:48,380 --> 00:09:51,200
+O determinante é r ao quadrado seno de φ.
+
+159
+00:09:51,240 --> 00:09:54,640
+E como φ vai de zero a π,
+o seno nunca é negativo:
+
+160
+00:09:54,680 --> 00:09:58,290
+o módulo não muda nada.
+Três caminhos, o mesmo fator:
+
+161
+00:09:58,360 --> 00:10:03,330
+dV igual a r ao quadrado
+seno de φ, dr, dφ, dθ.
+
+162
+00:10:03,520 --> 00:10:06,420
+Antes do teorema, um teste
+com resposta conhecida:
+
+163
+00:10:06,460 --> 00:10:10,700
+o volume da bola de raio R.
+Em esféricas, a bola é a caixa,
+
+164
+00:10:10,740 --> 00:10:14,420
+com limites constantes. E com limites
+constantes e um integrando que é um
+
+165
+00:10:14,460 --> 00:10:18,080
+produto, a integral tripla se
+separa em três integrais simples,
+
+166
+00:10:18,120 --> 00:10:21,910
+cada uma no seu canto. A de r é
+a potência mais simples que tem:
+
+167
+00:10:21,960 --> 00:10:25,480
+sobe o expoente e divide por
+ele, r ao cubo sobre três.
+
+168
+00:10:25,520 --> 00:10:30,170
+Aplica os limites: embaixo é zero,
+e sobra R ao cubo sobre três.
+
+169
+00:10:30,220 --> 00:10:33,340
+A de φ: a primitiva do
+seno é menos cosseno.
+
+170
+00:10:33,380 --> 00:10:36,290
+Aplica em π e em zero,
+com cuidado nos sinais:
+
+171
+00:10:36,360 --> 00:10:41,200
+menos cosseno de π é mais um, e menos
+o menos cosseno de zero é mais um de
+
+172
+00:10:41,240 --> 00:10:44,940
+novo. Um mais um, dois.
+A de θ é a mais fácil:
+
+173
+00:10:44,980 --> 00:10:48,080
+a integral de um é o
+próprio θ, de zero a dois π,
+
+174
+00:10:48,120 --> 00:10:51,740
+a volta inteira. Multiplica
+os três: o três de baixo fica,
+
+175
+00:10:51,780 --> 00:10:54,120
+e dois vezes dois π dá quatro π.
+
+176
+00:10:54,160 --> 00:10:57,690
+Quatro π R ao cubo sobre
+três: é o volume da bola.
+
+177
+00:10:57,760 --> 00:11:00,000
+Agora, os dois erros clássicos.
+
+178
+00:11:00,040 --> 00:11:03,580
+Esqueceu o r ao quadrado?
+Sai quatro π R, que é metro,
+
+179
+00:11:03,620 --> 00:11:06,000
+não metro cúbico: a unidade denuncia.
+
+180
+00:11:06,040 --> 00:11:09,440
+Esqueceu o seno de φ?
+A de φ dá π em vez de dois,
+
+181
+00:11:09,480 --> 00:11:14,180
+e sai quase seis vírgula seis R ao cubo,
+contra quatro vírgula dezenove da bola de
+
+182
+00:11:14,220 --> 00:11:18,000
+verdade. Esse erro tem a unidade
+certa, então ninguém te avisa:
+
+183
+00:11:18,040 --> 00:11:21,960
+é como calcular uma caixa d'água e
+prometer metade a mais de água do que cabe
+
+184
+00:11:22,000 --> 00:11:24,390
+nela. Confere sempre o seno de φ.
+
+185
+00:11:24,480 --> 00:11:29,340
+Agora, o teorema, do jeito do Guidorizzi,
+para qualquer transformação T de u,
+
+186
+00:11:29,380 --> 00:11:32,440
+v, w, de classe C um.
+Do lado das coordenadas,
+
+187
+00:11:32,480 --> 00:11:36,700
+a região B u v w é compacta,
+com fronteira de conteúdo nulo.
+
+188
+00:11:36,740 --> 00:11:40,620
+E no interior valem três coisas:
+T leva o interior no interior,
+
+189
+00:11:40,660 --> 00:11:43,640
+T é injetora, e o jacobiano não se anula.
+
+190
+00:11:43,680 --> 00:11:46,440
+Calma, que isso não é tão
+assustador quanto parece.
+
+191
+00:11:46,480 --> 00:11:51,190
+Interior no interior quer dizer que nenhum
+ponto de dentro escapa para a borda;
+
+192
+00:11:51,280 --> 00:11:55,230
+injetora, que dois endereços
+diferentes não caem no mesmo ponto;
+
+193
+00:11:55,280 --> 00:12:00,330
+e jacobiano diferente de zero, que
+nenhuma célula é esmagada até virar nada.
+
+194
+00:12:00,440 --> 00:12:04,220
+Aí a integral tripla em x,
+y, z vira a integral em u,
+
+195
+00:12:04,260 --> 00:12:08,620
+v, w, com o módulo do jacobiano
+fazendo o papel do pedacinho de volume.
+
+196
+00:12:08,660 --> 00:12:13,700
+Nas esféricas, u, v, w são
+r, φ, θ, e esse módulo é
+
+197
+00:12:13,740 --> 00:12:17,120
+r ao quadrado seno de φ.
+Só que, para a bola inteira,
+
+198
+00:12:17,160 --> 00:12:21,600
+tem um problema: o interior da caixa
+não cobre a página θ igual a zero,
+
+199
+00:12:21,640 --> 00:12:25,700
+e essa página está dentro da bola.
+Então corta a bola em duas metades,
+
+200
+00:12:25,740 --> 00:12:29,360
+como uma laranja: θ de
+zero a π e de π a dois π.
+
+201
+00:12:29,400 --> 00:12:32,220
+Em cada metade a hipótese
+vale ao pé da letra:
+
+202
+00:12:32,260 --> 00:12:35,200
+nenhum ponto se repete
+e o fator é positivo.
+
+203
+00:12:35,240 --> 00:12:39,760
+O corte, a origem e o eixo têm volume
+zero, então as metades se somam,
+
+204
+00:12:39,800 --> 00:12:44,560
+e a bola inteira vale. Numa frase só:
+o teorema é uma troca de variável,
+
+205
+00:12:44,600 --> 00:12:47,960
+com o módulo do jacobiano no
+lugar do pedacinho de volume.
+
+206
+00:12:48,000 --> 00:12:51,660
+Na prática, a receita tem três
+perguntas, sempre nessa ordem.
+
+207
+00:12:51,700 --> 00:12:55,830
+θ: de que ângulo a que ângulo a
+região gira em volta do eixo z?
+
+208
+00:12:55,940 --> 00:12:59,580
+φ: de que cone a que cone ela
+vai, a partir do polo norte?
+
+209
+00:12:59,620 --> 00:13:03,420
+E r: para cada direção, solta
+uma sonda saindo da origem,
+
+210
+00:13:03,460 --> 00:13:07,540
+como o feixe de uma lanterna. Onde ela
+entra na região é o limite de baixo;
+
+211
+00:13:07,580 --> 00:13:12,060
+onde ela sai é o limite de cima. É por
+isso que as esféricas combinam com bolas,
+
+212
+00:13:12,100 --> 00:13:16,601
+com cones de vértice na origem e com
+integrandos que têm x ao quadrado mais y
+
+213
+00:13:16,641 --> 00:13:19,740
+ao quadrado mais z ao
+quadrado. Guarda essa sonda,
+
+214
+00:13:19,780 --> 00:13:23,570
+que ela vai trabalhar muito daqui a
+pouco. Uma leitura bonita desse fator.
+
+215
+00:13:23,620 --> 00:13:26,620
+Fixa r e integra só em φ e θ.
+
+216
+00:13:26,660 --> 00:13:30,200
+Olha que essa conta vocês
+acabaram de fazer: a de φ dá dois,
+
+217
+00:13:30,240 --> 00:13:33,520
+a de θ dá dois π, e o r
+ao quadrado fica parado,
+
+218
+00:13:33,560 --> 00:13:37,000
+só esperando. Dois vezes
+dois π vezes r ao quadrado:
+
+219
+00:13:37,040 --> 00:13:40,520
+quatro π r ao quadrado,
+a área da esfera de raio r.
+
+220
+00:13:40,560 --> 00:13:45,260
+Então a bola é uma cebola: cascas finas,
+cada uma com área quatro π r ao
+
+221
+00:13:45,300 --> 00:13:50,080
+quadrado e espessura dr. Somar as
+cascas é integrar quatro π r ao
+
+222
+00:13:50,120 --> 00:13:53,670
+quadrado de zero a R:
+o quatro π sai da integral,
+
+223
+00:13:53,720 --> 00:13:56,980
+sobe o expoente, divide por
+três, aplica os limites,
+
+224
+00:13:57,020 --> 00:14:00,500
+e sai quatro π R ao cubo
+sobre três, o volume.
+
+225
+00:14:00,540 --> 00:14:04,720
+O caminho contrário também funciona:
+deriva o volume em relação ao raio,
+
+226
+00:14:04,760 --> 00:14:08,000
+o três do expoente desce e
+cancela com o três de baixo,
+
+227
+00:14:08,040 --> 00:14:12,420
+e volta a área. Engordar a bola um
+tiquinho é passar mais uma demão de tinta:
+
+228
+00:14:12,460 --> 00:14:15,220
+o volume a mais é a
+área vezes a espessura.
+
+229
+00:14:15,260 --> 00:14:19,760
+Por isso, se a densidade só depende de
+r, a integral tripla vira uma integral
+
+230
+00:14:19,800 --> 00:14:23,150
+simples em r, com o peso
+quatro π r ao quadrado.
+
+231
+00:14:23,320 --> 00:14:26,320
+Agora sim, a bola pesada do começo.
+
+232
+00:14:26,360 --> 00:14:30,700
+A densidade, raiz da soma dos
+quadrados, em esféricas é só r.
+
+233
+00:14:30,740 --> 00:14:35,780
+Na massa, o r da densidade multiplica
+o r ao quadrado seno de φ do fator,
+
+234
+00:14:35,820 --> 00:14:38,280
+e junta em r ao cubo seno de φ.
+
+235
+00:14:38,320 --> 00:14:41,610
+Os limites são a caixa de
+novo, então separa em três.
+
+236
+00:14:41,660 --> 00:14:44,860
+A de r, de zero a um:
+sobe o expoente para quatro,
+
+237
+00:14:44,900 --> 00:14:48,650
+divide por quatro; em um dá
+um quarto, em zero dá zero.
+
+238
+00:14:48,700 --> 00:14:51,620
+A de φ é a nossa velha conhecida: dois.
+
+239
+00:14:51,660 --> 00:14:56,520
+A de θ, dois π. Multiplica:
+o quatro de baixo come o dois e o outro
+
+240
+00:14:56,560 --> 00:14:59,650
+dois, e sobra só o π. A massa é π.
+
+241
+00:14:59,740 --> 00:15:03,180
+Aquela integral que travava em
+cartesianas sai em três linhas.
+
+242
+00:15:03,220 --> 00:15:06,280
+E o computador, insistindo
+em cartesianas, confere:
+
+243
+00:15:06,320 --> 00:15:08,750
+dá π, três vírgula catorze e pouco.
+
+244
+00:15:08,900 --> 00:15:12,620
+Agora, o que esse π diz.
+Se a bola fosse homogênea,
+
+245
+00:15:12,660 --> 00:15:16,780
+com a mesma massa, a densidade
+seria a média: massa sobre volume.
+
+246
+00:15:16,820 --> 00:15:20,680
+É π dividido por quatro π
+sobre três; divisão de frações,
+
+247
+00:15:20,720 --> 00:15:22,960
+mantém a primeira e inverte a segunda.
+
+248
+00:15:23,000 --> 00:15:25,850
+Os pis se cancelam, e fica três quartos.
+
+249
+00:15:25,900 --> 00:15:30,140
+E onde está essa massa? Pensa um
+pouco antes: se a casca é mais pesada,
+
+250
+00:15:30,180 --> 00:15:33,640
+a metade da massa deve estar
+perto da borda, não no meio.
+
+251
+00:15:33,680 --> 00:15:37,740
+Vamos ver se a conta concorda.
+Faz a mesma conta só até um raio c:
+
+252
+00:15:37,780 --> 00:15:40,600
+muda só o limite de cima da integral em r.
+
+253
+00:15:40,640 --> 00:15:44,240
+Agora o colchete dá c à quarta
+sobre quatro, menos zero,
+
+254
+00:15:44,280 --> 00:15:48,060
+vezes o mesmo dois e o
+mesmo dois π: π c à quarta.
+
+255
+00:15:48,100 --> 00:15:50,450
+Metade da massa é π sobre dois.
+
+256
+00:15:50,500 --> 00:15:54,880
+Iguala os dois: o π cancela dos
+dois lados, c à quarta é um meio,
+
+257
+00:15:54,920 --> 00:15:58,460
+e tira a raiz quarta: cerca de
+zero vírgula oitenta e quatro.
+
+258
+00:15:58,500 --> 00:16:01,700
+Ou seja, metade da massa
+mora na casca de fora,
+
+259
+00:16:01,740 --> 00:16:04,120
+nos últimos dezesseis por cento do raio.
+
+260
+00:16:04,160 --> 00:16:08,380
+Aqui a densidade cresce para fora;
+num planeta como a Terra é o contrário,
+
+261
+00:16:08,420 --> 00:16:10,690
+o fundo é mais denso que a superfície.
+
+262
+00:16:10,800 --> 00:16:14,610
+Agora, uma região que não é bola:
+uma casquinha de sorvete.
+
+263
+00:16:14,680 --> 00:16:19,440
+Embaixo, o cone z igual à raiz de
+x ao quadrado mais y ao quadrado;
+
+264
+00:16:19,480 --> 00:16:24,360
+em cima, a esfera x ao quadrado mais
+y ao quadrado mais z ao quadrado
+
+265
+00:16:24,400 --> 00:16:29,270
+igual a dois z. O truque é traduzir cada
+superfície com o que a gente já sabe:
+
+266
+00:16:29,400 --> 00:16:34,340
+z é r cosseno de φ, e a raiz de x
+ao quadrado mais y ao quadrado é
+
+267
+00:16:34,380 --> 00:16:38,210
+a sombra, r seno de φ.
+No cone, troca as duas coisas:
+
+268
+00:16:38,360 --> 00:16:41,100
+r cosseno de φ igual a r seno de φ.
+
+269
+00:16:41,140 --> 00:16:44,020
+Corta o r dos dois lados,
+divide pelo cosseno,
+
+270
+00:16:44,060 --> 00:16:47,880
+e fica tangente de φ igual a
+um: quarenta e cinco graus,
+
+271
+00:16:47,920 --> 00:16:52,010
+π sobre quatro. O cone inteiro
+é uma superfície de φ constante.
+
+272
+00:16:52,080 --> 00:16:55,060
+Na esfera, o lado esquerdo
+é a soma dos quadrados,
+
+273
+00:16:55,100 --> 00:16:58,200
+que a gente já sabe que é r
+ao quadrado; o lado direito,
+
+274
+00:16:58,240 --> 00:17:00,940
+dois z, vira dois r cosseno de φ.
+
+275
+00:17:00,980 --> 00:17:05,880
+Divide os dois lados por r, que é
+positivo, e sai r igual a dois cosseno de
+
+276
+00:17:05,920 --> 00:17:09,240
+φ. E se você completar o
+quadrado em z lá nas cartesianas,
+
+277
+00:17:09,280 --> 00:17:12,920
+aparece z menos um, ao quadrado:
+é uma esfera de raio um,
+
+278
+00:17:12,960 --> 00:17:16,000
+com centro em zero, zero,
+um, encostando na origem.
+
+279
+00:17:16,040 --> 00:17:19,960
+Agora a receita, olhando o corte.
+θ: a casquinha gira inteira,
+
+280
+00:17:20,000 --> 00:17:25,130
+de zero a dois π. φ: do eixo até
+o cone, de zero a π sobre quatro.
+
+281
+00:17:25,280 --> 00:17:28,319
+r: a sonda sai da ponta da
+casquinha, que é a origem,
+
+282
+00:17:28,359 --> 00:17:30,860
+e para na esfera, em dois cosseno de φ.
+
+283
+00:17:30,900 --> 00:17:33,660
+Na borda do cone,
+o encontro fica na altura um,
+
+284
+00:17:33,700 --> 00:17:38,300
+com sombra um. Monta a integral com
+esses limites e vai de dentro para fora.
+
+285
+00:17:38,340 --> 00:17:42,340
+A de dentro, em r: sobe o
+expoente, r ao cubo sobre três,
+
+286
+00:17:42,380 --> 00:17:45,080
+e aplica de zero até dois cosseno de φ.
+
+287
+00:17:45,120 --> 00:17:49,960
+Cuidado com o cubo: o dois ao cubo é
+oito, e o cosseno vira cosseno ao cubo;
+
+288
+00:17:50,000 --> 00:17:53,000
+embaixo, zero. Com o seno
+de φ que estava esperando,
+
+289
+00:17:53,040 --> 00:17:56,720
+fica oito terços de cosseno
+ao cubo de φ seno de φ.
+
+290
+00:17:56,760 --> 00:18:00,120
+A do meio pede uma troca de
+variável, e o motivo está na cara:
+
+291
+00:18:00,160 --> 00:18:04,320
+seno de φ dφ é, a menos do
+sinal, a derivada do cosseno.
+
+292
+00:18:04,360 --> 00:18:09,400
+Então u igual a cosseno de φ,
+e du igual a menos seno de φ dφ.
+
+293
+00:18:09,440 --> 00:18:12,060
+Quando troca a variável,
+troca os limites junto:
+
+294
+00:18:12,100 --> 00:18:16,880
+φ zero vira u igual a um, e φ π
+sobre quatro vira raiz de dois sobre
+
+295
+00:18:16,920 --> 00:18:21,900
+dois. Substitui tudo: aparece um
+menos du, e a integral corre de um até
+
+296
+00:18:21,940 --> 00:18:24,520
+raiz de dois sobre dois,
+de cima para baixo.
+
+297
+00:18:24,560 --> 00:18:28,380
+O menos serve justamente para desvirar:
+trocando os limites de lugar,
+
+298
+00:18:28,420 --> 00:18:33,090
+o sinal some. Daí é a primitiva de
+u ao cubo, u à quarta sobre quatro.
+
+299
+00:18:33,140 --> 00:18:37,290
+Aplica em um: um quarto.
+Aplica em raiz de dois sobre dois:
+
+300
+00:18:37,340 --> 00:18:41,380
+raiz de dois sobre dois à quarta é
+um quarto, e dividido por quatro,
+
+301
+00:18:41,420 --> 00:18:45,700
+um dezesseis avos. Um menos
+o outro: o MMC é dezesseis,
+
+302
+00:18:45,740 --> 00:18:49,180
+então quatro dezesseis avos
+menos um dezesseis avos,
+
+303
+00:18:49,220 --> 00:18:53,440
+três dezesseis avos. E oito
+terços vezes três dezesseis avos:
+
+304
+00:18:53,480 --> 00:18:56,620
+o três cancela com o três,
+o oito com o dezesseis,
+
+305
+00:18:56,660 --> 00:19:00,260
+e sobra um meio. A de θ
+multiplica por dois π:
+
+306
+00:19:00,300 --> 00:19:02,890
+o volume é π. Confere pela geometria?
+
+307
+00:19:02,980 --> 00:19:07,420
+Corta a casquinha na altura um.
+Embaixo, um cone de raio um e altura um:
+
+308
+00:19:07,460 --> 00:19:12,190
+π sobre três. Em cima, meia bola
+de raio um: dois π sobre três.
+
+309
+00:19:12,240 --> 00:19:15,360
+Somou: π. Então, quando usar esféricas?
+
+310
+00:19:15,400 --> 00:19:19,420
+Quando a região vem de bolas,
+cascas e cones com vértice na origem,
+
+311
+00:19:19,460 --> 00:19:24,100
+e quando o integrando tem x ao quadrado
+mais y ao quadrado mais z ao quadrado.
+
+312
+00:19:24,140 --> 00:19:27,080
+A sonda radial entra e
+sai por uma superfície só,
+
+313
+00:19:27,120 --> 00:19:29,980
+e os limites ficam simples.
+E quando não usar?
+
+314
+00:19:30,020 --> 00:19:33,040
+Quando a região tem paredes
+que não passam pela origem.
+
+315
+00:19:33,080 --> 00:19:36,380
+Aí a sonda sai às vezes por
+uma parede, às vezes por outra,
+
+316
+00:19:36,420 --> 00:19:40,340
+e os limites racham. Resumindo.
+O endereço esférico é r,
+
+317
+00:19:40,380 --> 00:19:44,320
+a distância até a origem; φ,
+o ângulo a partir do polo norte;
+
+318
+00:19:44,360 --> 00:19:49,100
+e θ, o ângulo das polares.
+O pedacinho de volume é r ao quadrado
+
+319
+00:19:49,140 --> 00:19:53,700
+seno de φ, dr dφ dθ,
+e ele sai por três caminhos:
+
+320
+00:19:53,740 --> 00:19:56,880
+as arestas, as duas
+polares e o determinante.
+
+321
+00:19:56,920 --> 00:20:01,260
+O teorema pede as hipóteses no interior,
+e a bola entra em duas metades.
+
+322
+00:20:01,300 --> 00:20:04,800
+Com isso, a bola deu quatro
+terços de π R ao cubo,
+
+323
+00:20:04,840 --> 00:20:09,180
+a bola pesada deu π, e a casquinha
+deu π, conferida pela geometria.
+
+324
+00:20:09,220 --> 00:20:12,660
+E fica uma pergunta para o
+próximo vídeo. A mesma densidade,
+
+325
+00:20:12,700 --> 00:20:17,680
+mas agora numa lata: o cilindro x ao
+quadrado mais y ao quadrado menor ou igual
+
+326
+00:20:17,720 --> 00:20:22,620
+a um, com z de zero a um. Em esféricas,
+a sonda que sai pela parede para em
+
+327
+00:20:22,660 --> 00:20:27,380
+r igual a um sobre seno de φ; a que sai
+pela tampa para em r igual a um sobre
+
+328
+00:20:27,420 --> 00:20:31,340
+cosseno de φ. A região racha
+em φ igual a π sobre quatro,
+
+329
+00:20:31,380 --> 00:20:33,920
+bem na quina. Nada de
+errado com as esféricas:
+
+330
+00:20:33,960 --> 00:20:36,320
+é só a ferramenta errada
+para esse formato.
+
+331
+00:20:36,360 --> 00:20:38,860
+Para uma lata, a grade certa é outra.
+
+332
+00:20:38,900 --> 00:20:44,010
+No próximo vídeo: coordenadas cilíndricas,
+as polares no chão mais a altura z.
+
+333
+00:20:44,080 --> 00:20:48,280
+Se essa aula te ajudou, deixa o like,
+se inscreve no Parallax Lab e conta nos
+
+334
+00:20:48,320 --> 00:20:51,300
+comentários: qual sólido
+você quer ver em esféricas?
+
+335
+00:20:51,340 --> 00:20:53,340
+Até a próxima!

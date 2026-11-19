@@ -1,0 +1,399 @@
+1
+00:00:00,060 --> 00:00:01,480
+Esse anel de fio prende o
+
+2
+00:00:01,500 --> 00:00:03,070
+próprio campo magnético.
+
+3
+00:00:03,140 --> 00:00:04,180
+Liga a corrente...
+
+4
+00:00:04,200 --> 00:00:06,030
+e o campo fica só aqui dentro.
+
+5
+00:00:06,060 --> 00:00:07,070
+No buraco do meio?
+
+6
+00:00:07,240 --> 00:00:07,750
+Zero.
+
+7
+00:00:07,800 --> 00:00:08,430
+E fora?
+
+8
+00:00:08,580 --> 00:00:09,390
+Zero também.
+
+9
+00:00:09,480 --> 00:00:10,630
+Como ele faz isso?
+
+10
+00:00:10,820 --> 00:00:12,160
+Isso é um toroide
+
+11
+00:00:12,180 --> 00:00:13,560
+um solenoide dobrado até
+
+12
+00:00:13,580 --> 00:00:14,960
+as pontas se encontrarem.
+
+13
+00:00:14,980 --> 00:00:16,500
+No modelo ideal, as espiras
+
+14
+00:00:16,520 --> 00:00:17,740
+são bem juntinhas.
+
+15
+00:00:17,760 --> 00:00:19,470
+O número de espiras é o N
+
+16
+00:00:19,500 --> 00:00:21,040
+a corrente, igual em todas
+
+17
+00:00:21,060 --> 00:00:21,570
+é o I.
+
+18
+00:00:21,620 --> 00:00:22,780
+Agora, de cima.
+
+19
+00:00:22,800 --> 00:00:24,610
+O raio médio do anel é o R
+
+20
+00:00:24,640 --> 00:00:26,000
+o raio do tubo, o a.
+
+21
+00:00:26,020 --> 00:00:26,980
+Desenha um caminho
+
+22
+00:00:27,000 --> 00:00:28,520
+um círculo em volta do eixo
+
+23
+00:00:28,540 --> 00:00:30,400
+com raio r, o raio do caminho.
+
+24
+00:00:30,420 --> 00:00:32,700
+No toroide ideal, a simetria faz o campo
+
+25
+00:00:32,720 --> 00:00:34,140
+acompanhar esse círculo
+
+26
+00:00:34,160 --> 00:00:36,060
+com o mesmo módulo em todo ponto.
+
+27
+00:00:36,080 --> 00:00:37,260
+E a gente percorre o caminho
+
+28
+00:00:37,280 --> 00:00:38,580
+no sentido do campo.
+
+29
+00:00:38,600 --> 00:00:39,960
+Aí entra a Lei de Ampère
+
+30
+00:00:39,980 --> 00:00:41,600
+a circulação do campo magnético
+
+31
+00:00:41,620 --> 00:00:43,840
+no caminho é mi zero vezes a corrente
+
+32
+00:00:43,860 --> 00:00:44,940
+que atravessa o disco.
+
+33
+00:00:44,960 --> 00:00:46,760
+Campo e caminho apontam juntos
+
+34
+00:00:46,780 --> 00:00:47,920
+o produto escalar vira
+
+35
+00:00:47,940 --> 00:00:49,300
+multiplicação simples.
+
+36
+00:00:49,320 --> 00:00:50,440
+E, como o campo vale o
+
+37
+00:00:50,460 --> 00:00:51,720
+mesmo no círculo todo
+
+38
+00:00:51,740 --> 00:00:52,870
+ele sai da integral.
+
+39
+00:00:52,920 --> 00:00:54,540
+Sobra o tamanho do caminho...
+
+40
+00:00:54,560 --> 00:00:55,260
+desenrola
+
+41
+00:00:55,280 --> 00:00:57,370
+dois pi vezes o raio do caminho.
+
+42
+00:00:58,540 --> 00:00:59,420
+Primeiro teste
+
+43
+00:00:59,440 --> 00:01:00,980
+o caminho no buraco do anel.
+
+44
+00:01:01,000 --> 00:01:02,930
+Quantos fios atravessam esse disco?
+
+45
+00:01:02,980 --> 00:01:03,460
+Nenhum.
+
+46
+00:01:03,480 --> 00:01:04,770
+Corrente atravessando
+
+47
+00:01:04,820 --> 00:01:05,279
+zero...
+
+48
+00:01:05,299 --> 00:01:07,050
+então o campo aqui é zero.
+
+49
+00:01:07,080 --> 00:01:07,980
+Segundo teste
+
+50
+00:01:08,000 --> 00:01:09,860
+o caminho por dentro do enrolamento.
+
+51
+00:01:09,880 --> 00:01:12,000
+Cada espira fura o disco uma vez
+
+52
+00:01:12,020 --> 00:01:13,020
+pelo lado de dentro
+
+53
+00:01:13,040 --> 00:01:14,420
+todas no mesmo sentido.
+
+54
+00:01:14,440 --> 00:01:16,200
+A corrente que atravessa é o número
+
+55
+00:01:16,220 --> 00:01:17,900
+de espiras vezes a corrente.
+
+56
+00:01:17,920 --> 00:01:19,220
+Passa o dois pi vezes o
+
+57
+00:01:19,240 --> 00:01:20,600
+raio para o outro lado...
+
+58
+00:01:20,620 --> 00:01:22,820
+e o campo é mi zero vezes o número
+
+59
+00:01:22,840 --> 00:01:24,520
+de espiras vezes a corrente
+
+60
+00:01:24,540 --> 00:01:26,120
+dividido por dois pi vezes
+
+61
+00:01:26,140 --> 00:01:27,180
+o raio do caminho.
+
+62
+00:01:27,200 --> 00:01:27,800
+Repara
+
+63
+00:01:27,820 --> 00:01:29,320
+o campo não é uniforme.
+
+64
+00:01:29,340 --> 00:01:30,580
+Mais perto do buraco
+
+65
+00:01:30,600 --> 00:01:31,380
+mais forte.
+
+66
+00:01:31,400 --> 00:01:32,200
+E o terceiro
+
+67
+00:01:32,220 --> 00:01:33,840
+o caminho por fora do anel.
+
+68
+00:01:33,860 --> 00:01:35,160
+Agora cada espira fura
+
+69
+00:01:35,180 --> 00:01:36,670
+o disco duas vezes
+
+70
+00:01:36,700 --> 00:01:38,040
+sobe pelo lado de dentro...
+
+71
+00:01:38,060 --> 00:01:39,540
+e desce pelo lado de fora.
+
+72
+00:01:39,560 --> 00:01:41,120
+Uma corrente cancela a outra.
+
+73
+00:01:41,140 --> 00:01:42,450
+Corrente atravessando
+
+74
+00:01:42,500 --> 00:01:42,920
+zero.
+
+75
+00:01:42,940 --> 00:01:44,040
+Campo, zero.
+
+76
+00:01:44,060 --> 00:01:45,860
+É por isso que o campo não escapa.
+
+77
+00:01:45,880 --> 00:01:47,640
+Agora, o gráfico, aumentando
+
+78
+00:01:47,660 --> 00:01:48,660
+o raio do caminho.
+
+79
+00:01:48,680 --> 00:01:49,980
+No buraco, zero.
+
+80
+00:01:50,000 --> 00:01:51,100
+Entrou no enrolamento
+
+81
+00:01:51,120 --> 00:01:52,120
+o campo salta.
+
+82
+00:01:52,140 --> 00:01:54,340
+Lá dentro, cai como um sobre o raio.
+
+83
+00:01:54,360 --> 00:01:55,740
+Saiu, zero de novo.
+
+84
+00:01:55,760 --> 00:01:56,920
+E na borda de dentro
+
+85
+00:01:56,940 --> 00:01:58,220
+o campo é quase o dobro
+
+86
+00:01:58,240 --> 00:01:59,220
+da borda de fora.
+
+87
+00:01:59,240 --> 00:02:00,200
+E dá pra conferir.
+
+88
+00:02:00,220 --> 00:02:02,120
+Se o anel for grande perto do tubo
+
+89
+00:02:02,140 --> 00:02:03,980
+o raio quase não muda lá dentro.
+
+90
+00:02:04,000 --> 00:02:06,380
+Aí, número de espiras dividido pela volta
+
+91
+00:02:06,400 --> 00:02:08,300
+do anel vira espiras por metro...
+
+92
+00:02:08,320 --> 00:02:10,369
+e aparece o campo do solenoide.
+
+93
+00:02:10,420 --> 00:02:11,190
+Resumindo
+
+94
+00:02:11,380 --> 00:02:12,620
+dentro do enrolamento
+
+95
+00:02:12,640 --> 00:02:14,880
+o campo cai como um sobre o raio.
+
+96
+00:02:14,900 --> 00:02:16,740
+No buraco e fora, zero
+
+97
+00:02:16,760 --> 00:02:17,710
+no modelo ideal.
+
+98
+00:02:17,740 --> 00:02:19,280
+É assim que um solenoide fechado
+
+99
+00:02:19,300 --> 00:02:21,330
+em anel confina o próprio campo.
+
+100
+00:02:21,420 --> 00:02:23,000
+Siga o Parallax Lab.

@@ -1,0 +1,203 @@
+# yt_0037 · CÁLCULO III · EP. 12 · Coordenadas polares na integral dupla
+## Narração v2.1 (2026-11-14: B4-1, B4-2 e B7 mudam com o handoff v2 do preview), por âncora, com Tela e Gatilhos
+
+Fonte: proposta v2 do 3.4-T2. As tags `[ ]` são do ElevenLabs v4 e não contam palavras. As contas estão em `verificacao/verifica_calc3_34t2_sympy.py`.
+
+## Anexo A · Narração v2 (tags do ElevenLabs v4)
+
+Uma tag por parágrafo (o S2 tem duas), sem [slowly] e com números por extenso.
+
+### Tempo por âncora
+
+| Âncora | Palavras | Tempo |
+|---|---:|---:|
+| H1 · a integral que não colabora | 120 | 0:40.5 |
+| H2 · a pergunta | 47 | 0:16.2 |
+| A1 · bem-vindos | 36 | 0:12.5 |
+| B1-1 · o ponto em polares | 163 | 0:54.8 |
+| B1-2 · a grade que vira círculos | 137 | 0:46.2 |
+| B2-1 · o retângulo polar: diferença de setores | 232 | 1:17.8 |
+| B2-2 · arco vezes lado e o jacobiano | 168 | 0:56.5 |
+| B2-3 · o teste da unidade | 93 | 0:31.5 |
+| B3-1 · o teorema, metade por metade | 219 | 1:13.5 |
+| B3-2 · a receita e a reta-sonda radial | 114 | 0:38.5 |
+| B4-1 · o disco do começo | 210 | 1:10.5 |
+| B4-2 · o anel, a casca e o volume | 180 | 1:00.5 |
+| B5 · um disco fora do centro | 286 | 1:35.8 |
+| B6-1 · o sino inteiro | 175 | 0:58.8 |
+| B6-2 · o confronto | 232 | 1:17.8 |
+| B6-3 · a curva normal | 88 | 0:29.8 |
+| B7 · quando usar polares | 147 | 0:49.5 |
+| S1 · síntese | 111 | 0:37.5 |
+| S2 · o próximo vídeo e CTA | 97 | 0:32.8 |
+| **Total** | **2855** | **16:01** |
+
+Contagem por script (palavras sem as tags; 0,15 s + palavras/3 + 0,35 s por âncora).
+
+### H1 · a integral que não colabora
+**Tela:** alvo 01. O sino 3D; os dois discos; as facas com `TRAVA`; `e^(−y²)? SEM PRIMITIVA ELEMENTAR`; a grade se curva; a célula escorrega e cresce; as duas células com "?"; `SÓ DEPENDE DA DISTÂNCIA ATÉ A ORIGEM`.
+**Gatilhos:**
+- "Lembra"→sino 3D;
+- "Fatiando em pé"→faca 1 + TRAVA;
+- "não é elementar"→rótulo;
+- "Deitado"→faca 2;
+- "só depende de uma coisa"→legenda de baixo;
+- "troca a grade"→grade curva;
+- "lá longe"→célula escorrega;
+- "maior"→as duas células com "?"
+> [curious] Lembra da pergunta que ficou no fim do vídeo passado? O disco de raio um, e a integral dupla de é elevado a menos, xis ao quadrado mais ípsilon ao quadrado. Fatiando em pé, a fatia pede uma primitiva de é elevado a menos ípsilon ao quadrado. Ela existe, mas não é elementar: não se escreve com as funções do Cálculo um. Deitado, trava igual. Só que esse integrando só depende de uma coisa: da distância até a origem. Então troca a grade. Em vez de quadradinhos, círculos e raios. Repara num detalhe: esta célula aqui perto da origem e esta lá longe têm o mesmo delta erre e o mesmo delta teta, mas a de fora é bem maior.
+
+### H2 · a pergunta
+**Tela:** as duas células com "?"; `QUAL É A ÁREA DE CADA PEDAÇO?`; o cartão `√π ?` entra no canto.
+**Gatilhos:**
+- "quanto vale"→pergunta;
+- "o sino inteiro"→cartão `√π ?`
+> [serious] Então a pergunta do vídeo é: quanto vale a área de cada pedaço dessa grade nova? Quando a gente descobrir, esse disco sai em poucas linhas. E a mesma ferramenta vai entregar uma coisa que nenhuma primitiva elementar entrega: a área inteira debaixo da curva do sino.
+
+### A1 · bem-vindos
+**Tela:** logo; `COORDENADAS POLARES NA INTEGRAL DUPLA`; `NESTE VÍDEO: A GRADE · O r · O TEOREMA · DOIS DISCOS · O SINO`.
+> [happy] Fala, pessoal! Bem-vindos ao Parallax Lab! Hoje é dia de coordenadas polares na integral dupla: a grade de círculos e raios, o fator de área, o teorema, dois discos e, no fim, a integral do sino.
+
+### B1-1 · o ponto em polares
+**Tela:** D1, igual à v1.
+> [thoughtful] Primeiro, o endereço de um ponto. Em vez de dizer quanto ele anda em xis e em ípsilon, você diz duas coisas: a distância até a origem, que se chama erre, e o ângulo que essa distância faz com o eixo xis, medido a partir do lado positivo, no sentido anti-horário, que se chama teta. No triângulo do desenho, erre é a hipotenusa. O cateto de baixo é erre vezes cosseno de teta: esse é o xis. O cateto em pé é erre vezes seno de teta: esse é o ípsilon. E, por Pitágoras, xis ao quadrado mais ípsilon ao quadrado é igual a erre ao quadrado. Por exemplo: erre igual a dois e teta igual a pi sobre três dão xis igual a dois vezes um meio, que é um, e ípsilon igual a dois vezes raiz de três sobre dois, que é raiz de três. A gente usa erre maior ou igual a zero e teta entre zero e dois pi.
+
+### B1-2 · a grade que vira círculos
+**Tela:** D2, alvo 02, igual à v1.
+> [curious] Agora olha isso como uma transformação, igual no vídeo passado. De um lado, o plano erre teta, com erre na horizontal e teta na vertical. Do outro, o plano xis ípsilon. A transformação fi leva o ponto erre, teta no ponto erre cosseno de teta, erre seno de teta. Uma reta vertical, com erre constante, vira um círculo. Uma reta horizontal, com teta constante, vira um raio saindo da origem. E o retângulo de erre entre zero e um e teta entre zero e dois pi vira o disco inteiro. Mas repara em duas bordas. O lado erre igual a zero, um segmento inteiro, cai todo num ponto só: a origem. E os lados teta igual a zero e teta igual a dois pi caem no mesmo segmento do eixo xis. Guarda isso, que já já volta.
+
+### B2-1 · o retângulo polar: diferença de setores
+**Tela:** D3, alvo 03, coluna C1.
+> [thoughtful] Agora, a pergunta do começo: quanto vale a área de um pedacinho dessa grade? Ele fica entre dois círculos, de raios erre um e erre dois, e entre dois raios separados por um ângulo delta teta. Começa pelo setor, a fatia de pizza inteira. O círculo de raio erre tem área pi erre ao quadrado, e o setor pega a fração delta teta sobre dois pi do círculo. Então o setor tem área um meio de erre ao quadrado vezes delta teta. A célula é o setor grande menos o setor pequeno: um meio de erre dois ao quadrado delta teta, menos um meio de erre um ao quadrado delta teta. Põe em evidência: um meio, vezes a diferença erre dois ao quadrado menos erre um ao quadrado, vezes delta teta. Diferença de quadrados: erre dois mais erre um, vezes erre dois menos erre um. A metade da soma é o raio médio, erre barra; a diferença é delta erre. A célula tem área exata: erre barra, delta erre, delta teta. Com delta erre igual a um meio e delta teta igual a pi sobre seis, a célula de dentro, de raio médio três quartos, dá pi sobre dezesseis; a de fora, de raio médio sete quartos, dá sete pi sobre quarenta e oito. Mesmo delta erre, mesmo delta teta, e a de fora tem sete terços da área da de dentro.
+
+### B2-2 · arco vezes lado e o jacobiano
+**Tela:** D4, alvo 04, coluna C2 até o chip `dA = r dr dθ`.
+> [serious] Tem outro jeito de ver o mesmo erre. A célula pequena é quase um retângulo: um lado é delta erre, na direção do raio; o outro é um arco, e arco é raio vezes ângulo em radianos, erre delta teta. Lado vezes lado: erre, delta erre, delta teta. E o terceiro jeito é o do vídeo passado: o jacobiano. A matriz das derivadas tem, na primeira linha, a derivada de xis em erre, cosseno de teta, e a derivada de xis em teta, menos erre seno de teta. Na segunda linha, a derivada de ípsilon em erre, seno de teta, e em teta, erre cosseno de teta. O determinante é cosseno de teta vezes erre cosseno de teta, menos, menos erre seno de teta vezes seno de teta: erre cosseno ao quadrado mais erre seno ao quadrado. Põe o erre em evidência, e cosseno ao quadrado mais seno ao quadrado é um. Sobra erre. Três caminhos, o mesmo fator: dê A igual a erre, dê erre, dê teta.
+
+### B2-3 · o teste da unidade
+**Tela:** D5, alvo 04 embaixo.
+> [serious] E aqui mora o erro mais comum das provas: esquecer esse erre. A unidade denuncia na hora. Num disco de raio á, sem o erre, a de dentro dá á e a de fora multiplica por dois pi: dois pi á, o perímetro, em metro. Com o erre, a de dentro é erre ao quadrado sobre dois, de zero a á, que dá á ao quadrado sobre dois, e a de fora multiplica por dois pi: pi á ao quadrado, em metro quadrado. Esqueceu o erre, a resposta nem tem unidade de área.
+
+### B3-1 · o teorema, metade por metade
+**Tela:** D6, alvo 05, coluna C3. O enunciado a caneta; o interior acende; as bordas em ALERTA; o retângulo se parte em θ = π e as duas metades vão para o disco.
+**Gatilhos:**
+- "cê um"→C3-1;
+- "três coisas"→legenda;
+- "Então"→C3-3;
+- "falha"→a origem e a costura em ALERTA;
+- "duas metades"→o corte em θ = π;
+- "conteúdo nulo"→rótulo;
+- "a soma"→C3-4 e C3-5
+> [serious] Agora o teorema, com o rigor do livro. A transformação fi é de classe cê um. Seja B erre teta um conjunto compacto, quer dizer, fechado e limitado, com fronteira de conteúdo nulo, e B a imagem dele por fi. O teorema pede três coisas no interior: fi leva o interior de B erre teta exatamente no interior de B, fi é injetora ali, e o jacobiano, erre, não se anula. Então, para f integrável em B, a integral dupla de f em B é igual à integral dupla em B erre teta de f de erre cosseno de teta, erre seno de teta, vezes erre, dê erre, dê teta. Só que, no disco inteiro, a primeira exigência falha: a imagem do interior do retângulo não chega na origem nem no segmento da costura, e esses pontos estão no interior do disco. A saída é cortar o disco em duas metades. A de cima vem de teta entre zero e pi; a de baixo, de teta entre pi e dois pi. Em cada metade, as três exigências valem ao pé da letra. E o corte, um segmento, tem conteúdo nulo: não soma área nenhuma. Então a integral no disco é a soma das duas metades, e as duas juntas são a integral com teta de zero a dois pi.
+
+### B3-2 · a receita e a reta-sonda radial
+**Tela:** D7. Os selos dos 4 passos; o raio girando; o cartão `θ FORA: NÚMEROS / r DENTRO: DA SONDA`; a lista da troca.
+> [thoughtful] Na prática, são quatro passos. Primeiro, desenha a região. Segundo, lê a região em polares. Os limites de fora são os do teta, números, dizendo de que ângulo a que ângulo os raios varrem a região. Os de dentro são os do erre, e aqui entra a reta-sonda, agora saindo da origem: ao longo de cada raio, onde ela entra na região começa o erre, onde ela sai termina. Terceiro, troca: xis vira erre cosseno de teta, ípsilon vira erre seno de teta, xis ao quadrado mais ípsilon ao quadrado vira erre ao quadrado, e dê A vira erre dê erre dê teta. Quarto, calcula, de dentro para fora, como no teorema de Fubini.
+
+### B4-1 · o disco do começo
+**Tela:** alvo 06, coluna C4 ao lado do sino 3D.
+**Gatilhos:**
+- "de volta"→sino;
+- "retângulo"→miniatura;
+- "o jacobiano traz o erre"→`r` lima;
+- "Chama u"→C4-4;
+- "os limites"→C4-5;
+- "a primitiva"→C4-6;
+- "a diferença"→C4-7;
+- "Guarda esse número"→o chip de dentro;
+- "dois pi"→C4-8
+> [happy] Agora sim, de volta ao disco do começo. Em polares, o disco de raio um é um retângulo: erre de zero a um, teta de zero a dois pi. O integrando vira é elevado a menos erre ao quadrado, e o jacobiano traz o erre. A integral fica: de zero a dois pi, da integral de zero a um, de é elevado a menos erre ao quadrado, vezes erre, dê erre, dê teta. E olha o que esse erre faz: ele é exatamente o fator que faltava. Chama u de erre ao quadrado: dê u é dois erre dê erre, então erre dê erre vira dê u sobre dois. E os limites: erre zero dá u zero, erre um dá u um. Fica a integral de zero a um de é elevado a menos u, dê u sobre dois. A primitiva é menos é elevado a menos u sobre dois, de zero a um. Em um, menos um sobre dois é; em zero, menos um meio. A diferença dá a metade de um menos um sobre é. Guarda esse número: zero vírgula três um seis. A de fora só multiplica por dois pi: pi vezes a diferença um menos um sobre é, mais ou menos um vírgula noventa e nove.
+
+### B4-2 · o anel, a casca e o volume
+**Tela:** alvo `v2_01`, cena 3D `casca` (handoff v2 §4.1). O sino vira traço, e a casca fina anda; o anel lima é inteiro; os rótulos `COMPRIMENTO 2πr`, `ALTURA e^(−r²)` e `ESPESSURA dr`; na coluna, `≈ 2πr · e^(−r²) · dr` e a soma das cascas.
+**Gatilhos:**
+- "volume"→`VOLUME ≈ 1,99`;
+- "cada anel fino"→casca;
+- "uma altura só"→a casca anda;
+- "o comprimento"→anel lima 0 → 2π;
+- "a altura"→chave ciano;
+- "a espessura"→`dr`;
+- "O volume da casca"→linha 1 (voos dos rótulos);
+- "Somando as cascas"→linha 2;
+- "acabou de fazer"→voo do chip;
+- "De novo"→π(1 − 1/e)
+> [thoughtful] E esse número tem cara: é o volume debaixo do sino, em cima do disco. Dá até para ver o erre no desenho. Como a função só depende da distância, cada anel fino tem uma altura só, é elevado a menos erre ao quadrado. Em cima do anel de raio erre e espessura dê erre fica uma casca: o comprimento é dois pi erre, a altura é é elevado a menos erre ao quadrado e a espessura é dê erre. O volume da casca é o produto: dois pi erre, vezes é elevado a menos erre ao quadrado, vezes dê erre. Somando as cascas de zero a um, sai a integral de zero a um de dois pi erre, é elevado a menos erre ao quadrado, dê erre: dois pi vezes a integral que a gente acabou de fazer, que deu um menos um sobre é, sobre dois. De novo, pi vezes um menos um sobre é. A fatia das polares é o anel, ou, em três dimensões, uma casca, e o comprimento do anel é que traz o erre.
+
+### B5 · um disco fora do centro
+**Tela:** D9, alvo 07, coluna C5. A sonda gira de −π/2 a π/2; `θ = π/3 ⇒ r = 1`; `A GRADE CERTA SIMPLIFICA A REGIÃO` entra no gatilho.
+**Gatilhos:**
+- "não está centrada"→palco;
+- "completa o quadrado"→C5-1;
+- "divide por erre"→C5-2;
+- "o cosseno"→C5-3;
+- "A reta-sonda"→sonda;
+- "pi sobre três"→rótulo;
+- "não vira retângulo"→legenda;
+- "a área"→C5-4;
+- "um mais cosseno"→C5-5;
+- "dá pi"→C5-6 + chip
+> [curious] Agora uma região redonda que não está centrada na origem: xis ao quadrado mais ípsilon ao quadrado menor ou igual a dois xis. Passa o dois xis para a esquerda e completa o quadrado, somando um dos dois lados: xis menos um, ao quadrado, mais ípsilon ao quadrado, menor ou igual a um. É o disco de centro um, zero e raio um, que passa pela origem. Em polares, o lado esquerdo vira erre ao quadrado e o dois xis vira dois erre cosseno de teta. Erre ao quadrado menor ou igual a dois erre cosseno de teta; divide por erre, que é positivo: erre menor ou igual a dois cosseno de teta. Como erre não é negativo, o cosseno tem que ser maior ou igual a zero: teta entre menos pi sobre dois e pi sobre dois. A reta-sonda sai da origem, que está na borda: entra em erre igual a zero e sai na circunferência, em erre igual a dois cosseno de teta. Com teta igual a pi sobre três, sai em erre igual a um. Repara que esse disco não vira retângulo no plano erre teta: o limite de dentro depende de teta. A grade certa simplifica a região, mas montar os limites ainda é o trabalho. Confere com a área. A de dentro dá erre ao quadrado sobre dois, de zero a dois cosseno de teta: dois cosseno ao quadrado de teta. Dois cosseno ao quadrado é um mais cosseno de dois teta, cuja primitiva é teta mais seno de dois teta sobre dois. Em pi sobre dois, pi sobre dois; em menos pi sobre dois, menos pi sobre dois. A diferença dá pi, a área de um disco de raio um.
+
+### B6-1 · o sino inteiro
+**Tela:** a curva e^(−x²) em 2D com a área de −a a a (`I(a)`); C6 tela 1; corte para a cena `gauss` (alvo 08).
+**Gatilhos:**
+- "a promessa"→cartão `√π ?`;
+- "chama de I de á"→C6-1;
+- "elevar ao quadrado"→I(a)²;
+- "uma com xis e a outra com ípsilon"→glyph map;
+- "Fubini"→C6-2;
+- "o sino girado"→cena gauss
+> [excited] E agora, a promessa do começo. A curva do sino, é elevado a menos xis ao quadrado. Qual é a área inteira debaixo dela, de menos infinito a mais infinito? A primitiva existe, mas não é elementar, então não dá para calcular nas pontas. Chama de I de á a integral de menos á até á, e depois deixa á crescer. O truque é elevar ao quadrado. I de á ao quadrado é I de á vezes I de á; escreve uma com xis e a outra com ípsilon. Pelo teorema de Fubini, no quadrado de lado dois á, a integral dupla de é elevado a menos xis ao quadrado vezes é elevado a menos ípsilon ao quadrado é exatamente isso: na fatia deitada, o fator em ípsilon é constante e sai da integral de dentro, que vira I de á; a de fora dá I de á de novo. E o produto das duas exponenciais é é elevado a menos, xis ao quadrado mais ípsilon ao quadrado: o sino girado, o mesmo do começo.
+
+### B6-2 · o confronto
+**Tela:** a câmera sobe até a vista de cima; os discos inscrito (azul-claro) e circunscrito (coral); C6 tela 2; a tabela; `√π` em menta; o cartão do canto ganha ✓.
+**Gatilhos:**
+- "entre dois discos"→discos;
+- "meia diagonal"→chave;
+- "região maior"→inclusões;
+- "raio bê"→C6-4;
+- "fica entre"→C6-5;
+- "á igual a um / dois / três"→linhas da tabela;
+- "confronto"→limite;
+- "raiz de pi"→moldura + ✓
+> [serious] Só que o quadrado não é redondo. Então a gente prende o quadrado entre dois discos. O disco de raio á, inscrito, cabe dentro dele. O disco de raio á raiz de dois, circunscrito, contém o quadrado, porque a meia diagonal é á raiz de dois. Como o integrando é positivo, região maior dá integral maior. Num disco de raio bê, é a mesma conta do disco do começo: dois pi vezes menos é elevado a menos erre ao quadrado sobre dois, de zero a bê, que dá pi vezes a diferença um menos é elevado a menos bê ao quadrado. Então I de á ao quadrado fica entre pi vezes um menos é elevado a menos á ao quadrado e pi vezes um menos é elevado a menos dois á ao quadrado. Com á igual a um: entre um vírgula noventa e nove e dois vírgula setenta e dois. Com á igual a dois: entre três vírgula zero oito e três vírgula catorze. Com á igual a três, as duas pontas já colam em pi. Quando á vai para o infinito, as duas pontas vão para pi, e o teorema do confronto prende o meio: I de á ao quadrado tende a pi. Como I de á é positivo, a integral de menos infinito a mais infinito de é elevado a menos xis ao quadrado, dê xis, é raiz de pi.
+
+### B6-3 · a curva normal
+**Tela:** C6-6; a curva e^(−x²/2); `1/√(2π)`; a área vira `1 = 100 %`.
+> [happy] E esse número mora em toda a estatística. A curva normal padrão usa é elevado a menos xis ao quadrado sobre dois. Troca xis por raiz de dois vezes u: dê xis vira raiz de dois dê u, e os limites continuam de menos infinito a mais infinito. A integral vira raiz de dois vezes raiz de pi: raiz de dois pi. É por isso que a fórmula da normal tem um sobre raiz de dois pi na frente: para a área total dar um, cem por cento.
+
+### B7 · quando usar polares
+**Tela:** D11. O quadrado [0, 1]²; o raio varre; a saída pula de lado em θ = π/4; C7; o cartão `POLARES: REGIÃO REDONDA · x² + y²`.
+> [serious] Mas polar não é botão mágico. Num quadrado, o raio sai ora pelo lado xis igual a um, ora pelo lado ípsilon igual a um. No lado xis igual a um, erre cosseno de teta é um, então erre é secante de teta. No lado ípsilon igual a um, erre seno de teta é um, então erre é cossecante de teta. A integral racha em duas, em teta igual a pi sobre quatro: de zero a pi sobre quatro, erre vai até secante de teta; de pi sobre quatro a pi sobre dois, até cossecante de teta. Em xis e ípsilon, o quadrado é a região mais simples que existe. Polar vale a pena quando a região tem simetria em torno da origem, um disco, um anel, um setor, ou quando o integrando tem xis ao quadrado mais ípsilon ao quadrado. Melhor ainda quando tem os dois.
+
+### S1 · síntese
+**Tela:** os dois painéis em miniatura; os três ✓: `dA = r dr dθ` · `DISCO: π(1 − 1/e)` · `SINO INTEIRO: √π`.
+> [thoughtful] Então, juntando tudo. Em coordenadas polares, a grade vira círculos e raios, e o pedacinho de área é erre dê erre dê teta: quanto mais longe da origem, maior o pedaço. Dá para ver esse erre por três caminhos: pelos setores, pelo arco vezes o lado e pelo determinante. Os limites saem da reta-sonda que parte da origem, e a grade certa simplifica a região. Quando o integrando depende de xis ao quadrado mais ípsilon ao quadrado, o erre do jacobiano costuma ser exatamente o fator que faltava. Foi assim que o disco deu pi vezes a diferença um menos um sobre é, e o sino inteiro deu raiz de pi.
+
+### S2 · o próximo vídeo e CTA
+**Tela:** alvo 09: o meio disco com o tom crescendo para a borda; `MAIS PESADO NA BORDA`; o lápis; `ONDE ELE EQUILIBRA?`; o cartão `NO PRÓXIMO VÍDEO: MASSA E CENTRO DE MASSA` (≥ 8 s); CTA.
+> [curious] E fica uma chapa para o próximo vídeo. Um meio disco de raio á, mais pesado na borda: a densidade cresce junto com a distância até o centro. Coloca um lápis embaixo. Onde ele equilibra? Em polares, a massa sai rápido, mas o ponto de equilíbrio pede uma ideia nova: o centro de massa. É o que a gente faz no próximo vídeo: massa e centro de massa. [happy] Se essa aula te ajudou, deixa o like, se inscreve no Parallax Lab e conta nos comentários: qual integral você já viu sair só em polares? Até a próxima!
+
+---
+
+## Anexo B · Leitura dos símbolos
+
+Igual à da v1, com estas mudanças:
+- saem a, b da elipse, v_max, 32/9, sec e cossec com conta, e (a²)^{3/2};
+- entra B̊ = "o interior de B";
+- π(1 − 1/e) = "pi vezes a diferença um menos um sobre é";
+- (1 − 1/e)/2 = "a metade de um menos um sobre é".
+
+| Símbolo | Como se lê |
+|---|---|
+| r, θ, r̄, Δr, Δθ | "erre", "teta", "erre barra", "delta erre", "delta teta" |
+| dA = r dr dθ | "dê A igual a erre, dê erre, dê teta" |
+| φ(r, θ) | "a transformação fi, de erre, teta" |
+| B_rθ, B̊ | "B erre teta", "o interior de B" |
+| C¹ | "de classe cê um" |
+| π(1 − 1/e) | "pi vezes a diferença um menos um sobre é" |
+| (1 − 1/e)/2 | "a metade de um menos um sobre é" |
+| r ≤ 2 cos θ | "erre menor ou igual a dois cosseno de teta" |
+| I(a) | "I de á" |
+| √π, √(2π) | "raiz de pi", "raiz de dois pi" |
+| sec θ, cossec θ | "secante de teta", "cossecante" |

@@ -26,7 +26,8 @@ WHITE = TEXT_COLOR
 CYAN = PRIMARY_COLOR        # E / grandezas auxiliares (α, γ)
 MAG = "#EA63FF"             # campo magnético B
 BLUE = "#267BFF"
-BLUE_L = "#7FB2FF"          # fios, carga/densidade
+BLUE_L = "#7FB2FF"          # painéis, carga/densidade, construção auxiliar (NÃO é matéria condutora)
+STEEL = "#7A8696"           # matéria condutora: fio, espira, lâmina, tubo
 VIOLET = "#9C8CFF"          # geometria da separação (R, r, s, a, x, z)
 FC = "#5AA2FF"              # força magnética
 GREEN = "#3FE08B"           # CORRENTE (I, K, J, dℓ)
@@ -62,6 +63,12 @@ for _t in (r"\alpha", r"\alpha_1", r"\alpha_2", r"\alpha_A", r"\alpha_B", r"\gam
 TOKCOL.update({r"\mathbf B_{\rm total}": MAG, r"\mathbf B_{\rm trecho}": MAG, r"\mathbf B_{\rm restante}": MAG, r"\mathbf 0": VIOLET, "dI": GREEN, r"\hat{\mathbf t}": GREEN, "dw": VIOLET, "da": VIOLET, r"d\tau": VIOLET, r"dA_\perp": VIOLET, r"-x\,\hat x": VIOLET, r"a\,\hat y": CYAN, r"a\,dx": GREEN, r"dx\,\hat x": GREEN, r"a\tan\alpha": CYAN,
                r"a\sec^2\alpha\,d\alpha": CYAN, r"a^3\sec^3\alpha": CYAN, r"a^2\sec^2\alpha": CYAN, r"(x^2+a^2)^{3/2}": VIOLET,
                "x_A": VIOLET, "x_B": VIOLET, r"\hat z": MAG})
+
+
+# elementos orientados do caminho (geometria, não corrente): branco. A corrente (I, K, J, dI) fica verde.
+for _t in (r"d\boldsymbol\ell", r"d\ell", r"\boldsymbol\ell", r"\ell", "dx", r"dx\,\hat x", r"\hat x", r"d\ell\,dw",
+           r"\mathbf L", "L", r"\hat{\mathbf t}", r"a\,dx"):
+    TOKCOL[_t] = WHITE
 
 
 def txt(s, size=T_BODY, color=WHITE, opacity=1.0):
@@ -149,6 +156,17 @@ def gmap(A, B, *pairs, auto=True, structure=True, reserved=(), **kw):
             for lst in _occ(A, ta, oa):
                 entries.append((list(lst), []))
                 ua.update(lst)
+            continue
+        if isinstance(ta, list):
+            # fusão: vários termos de A [(tok, occ), ...] viram UM termo de B (R·R² → R³, R·R → R²)
+            src_idx = [i for (t, o) in ta for lst in _occ(A, t, o) for i in lst]
+            dst = [i for lst in _occ(B, tb, ob) for i in lst]
+            if set(dst) & explicit_dst:
+                raise ValueError(f"destino duplicado em gmap: {ta!r}->{tb!r}")
+            explicit_dst.update(dst)
+            entries.append((src_idx, dst))
+            ua.update(src_idx)
+            ub.update(dst)
             continue
         la, lb = _occ(A, ta, oa), _occ(B, tb, ob)
         if len(la) != len(lb):

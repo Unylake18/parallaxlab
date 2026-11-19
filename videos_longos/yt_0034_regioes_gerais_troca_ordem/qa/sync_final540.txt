@@ -1,0 +1,501 @@
+yt_0034 · sincronização (rodada final540, 15 fps): atraso = tela − voz (s); meta ≤ +0,20 s
+
+PH: [deriva] PH +0.00s além do fim da última âncora
+PA: [deriva] PA +0.00s além do fim da última âncora
+PB1: [deriva] PB1 +0.00s além do fim da última âncora
+PB2: [deriva] PB2 +0.00s além do fim da última âncora
+PB3: [deriva] PB3 +0.00s além do fim da última âncora
+PB4: [deriva] PB4 +0.00s além do fim da última âncora
+PB5: [deriva] PB5 +0.00s além do fim da última âncora
+PB6: [deriva] PB6 +0.00s além do fim da última âncora
+PB7: [deriva] PB7 +0.00s além do fim da última âncora
+PB8: [deriva] PB8 +0.00s além do fim da última âncora
+PS: [deriva] PS +3.00s além do fim da última âncora
+
+âncoras (início na tela × 1ª palavra na voz):
+  H0    tela     0.00 s · voz     0.10 s · -0.10 s OK
+  H1    tela    17.20 s · voz    17.38 s · -0.18 s OK
+  H2    tela    77.27 s · voz    77.44 s · -0.17 s OK
+  A1    tela    97.13 s · voz    97.30 s · -0.17 s OK
+  B1-1  tela   115.53 s · voz   115.70 s · -0.17 s OK
+  B1-2  tela   182.66 s · voz   182.84 s · -0.18 s OK
+  B1-3  tela   239.20 s · voz   239.38 s · -0.18 s OK
+  B2-1  tela   325.86 s · voz   326.00 s · -0.14 s OK
+  B2-2  tela   373.73 s · voz   373.86 s · -0.13 s OK
+  B3-1  tela   422.39 s · voz   422.58 s · -0.19 s OK
+  B3-2  tela   490.52 s · voz   490.68 s · -0.16 s OK
+  B4-1  tela   599.79 s · voz   599.92 s · -0.13 s OK
+  B4-2  tela   634.99 s · voz   635.18 s · -0.19 s OK
+  B4-2b tela   684.52 s · voz   684.70 s · -0.18 s OK
+  B4-3  tela   755.19 s · voz   755.38 s · -0.19 s OK
+  B5-1  tela   797.79 s · voz   797.98 s · -0.19 s OK
+  B5-2  tela   852.72 s · voz   852.90 s · -0.18 s OK
+  B6-1  tela   917.79 s · voz   917.94 s · -0.15 s OK
+  B7-1  tela   995.99 s · voz   996.18 s · -0.19 s OK
+  B7-2  tela  1086.79 s · voz  1086.92 s · -0.13 s OK
+  B8    tela  1124.26 s · voz  1124.40 s · -0.14 s OK
+  S1    tela  1190.73 s · voz  1190.88 s · -0.15 s OK
+  S2    tela  1230.53 s · voz  1230.68 s · -0.15 s OK
+
+gatilhos (459):
+  H0    -0.12 s  «integral dupla»  (tela 2.20 · voz 2.32) OK
+  H0    -0.13 s  «trava logo na»  (tela 4.13 · voz 4.26) OK
+  H0    -0.17 s  «faca no outro»  (tela 8.07 · voz 8.24) OK
+  H0    -0.12 s  «em duas linhas»  (tela 9.60 · voz 9.72) OK
+  H0    -0.17 s  «só mudou a faca»  (tela 14.87 · voz 15.04) OK
+  H1    -0.18 s  «vamos devagar»  (tela 17.20 · voz 17.38) OK
+  H1    -0.18 s  «da integral de xis»  (tela 20.80 · voz 20.98) OK
+  H1    -0.21 s  «de é elevado a»  (tela 22.47 · voz 22.68) OK
+  H1    -0.21 s  «dê ípsilon dê xis»  (tela 24.93 · voz 25.14) OK
+  H1    -0.19 s  «dê xis o»  (tela 25.67 · voz 25.86) OK
+  H1    -0.18 s  «o número de euler»  (tela 27.00 · voz 27.18) OK
+  H1    -0.19 s  «dois vírgula setenta»  (tela 28.07 · voz 28.26) OK
+  H1    -0.19 s  «começa por dentro»  (tela 31.33 · voz 31.52) OK
+  H1    -0.18 s  «precisa de uma primitiva»  (tela 32.40 · voz 32.58) OK
+  H1    -0.17 s  «e aí trava»  (tela 36.07 · voz 36.24) OK
+  H1    -0.21 s  «primitiva existe mas»  (tela 37.13 · voz 37.34) OK
+  H1    -0.18 s  «nada de polinômio»  (tela 41.60 · voz 41.78) OK
+  H1    -0.16 s  «seno logaritmo»  (tela 42.80 · voz 42.96) OK
+  H1    -0.23 s  «logaritmo nada»  (tela 43.13 · voz 43.36) OK
+  H1    -0.15 s  «teto curvo»  (tela 46.67 · voz 46.82) OK
+  H1    -0.21 s  «com a ordem trocada»  (tela 48.67 · voz 48.88) OK
+  H1    -0.15 s  «cada fatia deitada»  (tela 54.27 · voz 54.42) OK
+  H1    -0.15 s  «teto reto»  (tela 55.67 · voz 55.82) OK
+  H1    -0.17 s  «os limites mudaram»  (tela 57.27 · voz 57.44) OK
+  H1    -0.18 s  «o xis até um»  (tela 58.40 · voz 58.58) OK
+  H1    -0.20 s  «a gente não trocou»  (tela 60.80 · voz 61.00) OK
+  H1    -0.15 s  «mudou o jeito de»  (tela 63.47 · voz 63.62) OK
+  H1    -0.17 s  «não mora num retângulo»  (tela 66.53 · voz 66.70) OK
+  H1    -0.17 s  «ela mora num triângulo»  (tela 67.87 · voz 68.04) OK
+  H1    -0.19 s  «duas perguntas como»  (tela 69.93 · voz 70.12) OK
+  H1    -0.20 s  «não é um retângulo»  (tela 73.20 · voz 73.40) OK
+  H1    -0.17 s  «os limites novos»  (tela 75.07 · voz 75.24) OK
+  H2    -0.16 s  «no desenho»  (tela 78.14 · voz 78.30) OK
+  H2    -0.17 s  «começa numa curva»  (tela 81.67 · voz 81.84) OK
+  H2    -0.14 s  «termina em outra»  (tela 83.00 · voz 83.14) OK
+  H2    -0.14 s  «os limites de fora»  (tela 84.20 · voz 84.34) OK
+  H2    -0.14 s  «passam a ser curvas»  (tela 87.54 · voz 87.68) OK
+  H2    -0.14 s  «que dependem da variável»  (tela 88.74 · voz 88.88) OK
+  H2    -0.15 s  «não é só trocar»  (tela 91.47 · voz 91.62) OK
+  H2    -0.19 s  «reler a mesma região»  (tela 93.87 · voz 94.06) OK
+  H2    -0.14 s  «fatiando no outro sentido»  (tela 95.40 · voz 95.54) OK
+  A1    -0.14 s  «o teorema de fubini»  (tela 99.86 · voz 100.00) OK
+  A1    -0.18 s  «em duas integrais»  (tela 103.00 · voz 103.18) OK
+  A1    -0.14 s  «a fatia que termina»  (tela 107.06 · voz 107.20) OK
+  A1    -0.16 s  «o teorema para regiões»  (tela 108.80 · voz 108.96) OK
+  A1    -0.20 s  «as duas ordens de»  (tela 110.66 · voz 110.86) OK
+  A1    -0.20 s  «como trocar uma»  (tela 112.26 · voz 112.46) OK
+  A1    -0.18 s  «quando vale a pena»  (tela 114.00 · voz 114.18) OK
+  B1-1  +0.03 s  «quarto de disco de»  (tela 116.13 · voz 116.10) OK
+  B1-1  -0.18 s  «regiões que não são»  (tela 120.66 · voz 120.84) OK
+  B1-1  -0.20 s  «dentro de um retângulo»  (tela 123.66 · voz 123.86) OK
+  B1-1  -0.16 s  «contido em erre»  (tela 125.80 · voz 125.96) OK
+  B1-1  -0.17 s  «valer zero fora»  (tela 127.53 · voz 127.70) OK
+  B1-1  -0.19 s  «xis congelado em um»  (tela 130.53 · voz 130.72) OK
+  B1-1  -0.14 s  «a fatia atravessa»  (tela 131.80 · voz 131.94) OK
+  B1-1  -0.16 s  «até ípsilon igual a dois»  (tela 135.46 · voz 135.62) OK
+  B1-1  -0.18 s  «só soma zeros»  (tela 139.06 · voz 139.24) OK
+  B1-1  -0.19 s  «então a integral da»  (tela 143.53 · voz 143.72) OK
+  B1-1  -0.20 s  «onde ela entra no»  (tela 146.26 · voz 146.46) OK
+  B1-1  -0.19 s  «até onde ela sai»  (tela 147.73 · voz 147.92) OK
+  B1-1  -0.17 s  «na circunferência»  (tela 149.93 · voz 150.10) OK
+  B1-1  -0.14 s  «com xis igual a»  (tela 154.60 · voz 154.74) OK
+  B1-1  -0.18 s  «é raiz de três»  (tela 160.86 · voz 161.04) OK
+  B1-1  -0.18 s  «deixa o xis andar»  (tela 162.40 · voz 162.58) OK
+  B1-1  -0.18 s  «perto de xis igual»  (tela 166.40 · voz 166.58) OK
+  B1-1  -0.20 s  «raiz de quatro menos»  (tela 171.66 · voz 171.86) OK
+  B1-1  -0.14 s  «ípsilon igual a zero»  (tela 175.40 · voz 175.54) OK
+  B1-1  -0.18 s  «a fatia começa numa»  (tela 176.60 · voz 176.78) OK
+  B1-2  -0.17 s  «duas coisas»  (tela 186.19 · voz 186.36) OK
+  B1-2  -0.19 s  «a função integrável no»  (tela 187.13 · voz 187.32) OK
+  B1-2  -0.21 s  «cada fatia com integral»  (tela 189.19 · voz 189.40) OK
+  B1-2  -0.20 s  «éfe é contínua em»  (tela 191.46 · voz 191.66) OK
+  B1-2  -0.17 s  «fechado e limitado»  (tela 193.19 · voz 193.36) OK
+  B1-2  -0.15 s  «com zero fora»  (tela 197.59 · voz 197.74) OK
+  B1-2  -0.21 s  «na fronteira de bê»  (tela 199.93 · voz 200.14) OK
+  B1-2  -0.19 s  «os dois segmentos»  (tela 201.79 · voz 201.98) OK
+  B1-2  -0.21 s  «estudou conteúdo nulo»  (tela 203.39 · voz 203.60) OK
+  B1-2  -0.20 s  «essas linhas têm»  (tela 205.06 · voz 205.26) OK
+  B1-2  -0.20 s  «a estendida é integrável»  (tela 207.26 · voz 207.46) OK
+  B1-2  -0.18 s  «cada fatia vale zero»  (tela 210.46 · voz 210.64) OK
+  B1-2  -0.24 s  «zero depois éfe depois»  (tela 211.46 · voz 211.70) OK
+  B1-2  -0.17 s  «dois saltos e»  (tela 214.99 · voz 215.16) OK
+  B1-2  -0.19 s  «tem integral lá»  (tela 218.39 · voz 218.58) OK
+  B1-2  -0.16 s  «as duas hipóteses valem»  (tela 220.26 · voz 220.42) OK
+  B1-2  -0.18 s  «então o teorema de»  (tela 221.86 · voz 222.04) OK
+  B1-2  -0.16 s  «garante a integral»  (tela 223.26 · voz 223.42) OK
+  B1-2  -0.21 s  «com os limites de dentro»  (tela 227.79 · voz 228.00) OK
+  B1-2  -0.18 s  «nada de especial do»  (tela 231.86 · voz 232.04) OK
+  B1-2  -0.19 s  «entre os gráficos de»  (tela 234.79 · voz 234.98) OK
+  B1-3  -0.19 s  «éfe igual a um»  (tela 240.93 · voz 241.12) OK
+  B1-3  -0.15 s  «a integral de dentro»  (tela 242.13 · voz 242.28) OK
+  B1-3  -0.17 s  «raiz de quatro menos»  (tela 244.07 · voz 244.24) OK
+  B1-3  -0.19 s  «de um dê ípsilon»  (tela 246.27 · voz 246.46) OK
+  B1-3  -0.19 s  «comprimento da fatia»  (tela 247.93 · voz 248.12) OK
+  B1-3  -0.16 s  «dá a área»  (tela 251.80 · voz 251.96) OK
+  B1-3  -0.23 s  «fica a integral de»  (tela 252.53 · voz 252.76) OK
+  B1-3  -0.17 s  «vamos fazer essa»  (tela 257.67 · voz 257.84) OK
+  B1-3  -0.17 s  «liga o ponto»  (tela 261.47 · voz 261.64) OK
+  B1-3  -0.15 s  «é um raio»  (tela 264.27 · voz 264.42) OK
+  B1-3  -0.18 s  «de tamanho dois»  (tela 265.00 · voz 265.18) OK
+  B1-3  -0.16 s  «chamando de teta»  (tela 266.20 · voz 266.36) OK
+  B1-3  -0.15 s  «o xis é dois»  (tela 268.87 · voz 269.02) OK
+  B1-3  -0.17 s  «é dois cosseno de»  (tela 273.93 · voz 274.10) OK
+  B1-3  -0.21 s  «então dê xis é»  (tela 275.53 · voz 275.74) OK
+  B1-3  -0.20 s  «os limites mudam junto»  (tela 279.00 · voz 279.20) OK
+  B1-3  -0.18 s  «e xis igual a dois»  (tela 282.80 · voz 282.98) OK
+  B1-3  -0.17 s  «a integral vira a»  (tela 286.13 · voz 286.30) OK
+  B1-3  -0.19 s  «quatro cosseno ao quadrado»  (tela 289.33 · voz 289.52) OK
+  B1-3  -0.18 s  «um mais cosseno de»  (tela 293.60 · voz 293.78) OK
+  B1-3  -0.21 s  «a primitiva fica»  (tela 296.33 · voz 296.54) OK
+  B1-3  -0.17 s  «em pi sobre dois dá»  (tela 301.13 · voz 301.30) OK
+  B1-3  -0.15 s  «em zero dá zero»  (tela 304.27 · voz 304.42) OK
+  B1-3  -0.19 s  «resultado pi»  (tela 305.53 · voz 305.72) OK
+  B1-3  -0.17 s  «a geometria confirma»  (tela 306.93 · voz 307.10) OK
+  B1-3  -0.17 s  «um quarto de pi»  (tela 308.27 · voz 308.44) OK
+  B1-3  -0.15 s  «lembra das caixinhas»  (tela 312.33 · voz 312.48) OK
+  B1-3  -0.19 s  «três vírgula vinte»  (tela 314.73 · voz 314.92) OK
+  B1-3  -0.17 s  «três vírgula dezessete»  (tela 316.93 · voz 317.10) OK
+  B1-3  -0.18 s  «três vírgula quinze»  (tela 319.40 · voz 319.58) OK
+  B1-3  -0.20 s  «chegando em pi»  (tela 321.20 · voz 321.40) OK
+  B1-3  -0.21 s  «o valor exato»  (tela 324.47 · voz 324.68) OK
+  B2-1  -0.16 s  «sejam cê e dê»  (tela 328.46 · voz 328.62) OK
+  B2-1  -0.17 s  «no intervalo fechado»  (tela 330.99 · voz 331.16) OK
+  B2-1  -0.15 s  «cê de xis menor»  (tela 333.59 · voz 333.74) OK
+  B2-1  -0.15 s  «menor ou igual a»  (tela 334.39 · voz 334.54) OK
+  B2-1  -0.11 s  «a região bê é»  (tela 336.33 · voz 336.44) OK
+  B2-1  -0.11 s  «xis está entre á»  (tela 339.99 · voz 340.10) OK
+  B2-1  -0.15 s  «ípsilon está entre»  (tela 341.73 · voz 341.88) OK
+  B2-1  -0.19 s  «as chaves se leem»  (tela 344.59 · voz 344.78) OK
+  B2-1  -0.13 s  «dois pontos tais que»  (tela 347.53 · voz 347.66) OK
+  B2-1  -0.15 s  «se éfe é contínua»  (tela 349.39 · voz 349.54) OK
+  B2-1  -0.19 s  «então a integral dupla»  (tela 350.99 · voz 351.18) OK
+  B2-1  -0.11 s  «à integral de á»  (tela 353.93 · voz 354.04) OK
+  B2-1  -0.19 s  «da integral de cê»  (tela 355.53 · voz 355.72) OK
+  B2-1  -0.12 s  «na figura a fatia»  (tela 361.66 · voz 361.78) OK
+  B2-1  -0.12 s  «entra na região pela»  (tela 363.46 · voz 363.58) OK
+  B2-1  -0.16 s  «e sai pela curva»  (tela 366.46 · voz 366.62) OK
+  B2-1  -0.13 s  «uma região que se»  (tela 369.39 · voz 369.52) OK
+  B2-1  -0.16 s  «região do tipo um»  (tela 372.26 · voz 372.42) OK
+  B2-2  -0.00 s  «trocando os papéis»  (tela 373.86 · voz 373.86) OK
+  B2-2  -0.16 s  «ípsilon entre cê e»  (tela 377.00 · voz 377.16) OK
+  B2-2  -0.12 s  «e xis entre á»  (tela 378.66 · voz 378.78) OK
+  B2-2  -0.12 s  «a integral de dentro é em»  (tela 381.80 · voz 381.92) OK
+  B2-2  -0.15 s  «da curva da esquerda»  (tela 383.73 · voz 383.88) OK
+  B2-2  -0.16 s  «a de fora é em»  (tela 386.00 · voz 386.16) OK
+  B2-2  -0.11 s  «você vai usar em»  (tela 388.93 · voz 389.04) OK
+  B2-2  -0.10 s  «são sempre números»  (tela 392.00 · voz 392.10) OK
+  B2-2  -0.16 s  «até onde as fatias»  (tela 393.86 · voz 394.02) OK
+  B2-2  -0.12 s  «só da variável de»  (tela 397.80 · voz 397.92) OK
+  B2-2  -0.16 s  «está congelada na»  (tela 399.86 · voz 400.02) OK
+  B2-2  -0.13 s  «e atravessa a região»  (tela 405.13 · voz 405.26) OK
+  B2-2  -0.15 s  «onde ela entra»  (tela 406.53 · voz 406.68) OK
+  B2-2  -0.10 s  «onde ela sai termina»  (tela 408.66 · voz 408.76) OK
+  B2-2  -0.13 s  «na fatia em pé»  (tela 410.13 · voz 410.26) OK
+  B2-2  -0.13 s  «na deitada da esquerda»  (tela 412.53 · voz 412.66) OK
+  B2-2  -0.14 s  «dois pedaços separados»  (tela 416.60 · voz 416.74) OK
+  B3-1  -0.20 s  «densidade que cresce»  (tela 425.46 · voz 425.66) OK
+  B3-1  -0.21 s  «ípsilon quilos por metro»  (tela 427.59 · voz 427.80) OK
+  B3-1  -0.20 s  «desenhando a densidade»  (tela 429.66 · voz 429.86) OK
+  B3-1  -0.19 s  «aparece uma cunha»  (tela 431.59 · voz 431.78) OK
+  B3-1  -0.16 s  «em xis igual a»  (tela 433.86 · voz 434.02) OK
+  B3-1  -0.18 s  «a fatia vai de»  (tela 435.06 · voz 435.24) OK
+  B3-1  -0.17 s  «e a altura dela»  (tela 438.99 · voz 439.16) OK
+  B3-1  -0.22 s  «é o próprio ípsilon»  (tela 440.72 · voz 440.94) OK
+  B3-1  -0.16 s  «a integral de dentro»  (tela 443.06 · voz 443.22) OK
+  B3-1  -0.22 s  «é ípsilon ao quadrado»  (tela 450.52 · voz 450.74) OK
+  B3-1  -0.22 s  «no limite de cima»  (tela 452.52 · voz 452.74) OK
+  B3-1  -0.20 s  «no de baixo zero»  (tela 457.66 · voz 457.86) OK
+  B3-1  -0.22 s  «fica quatro menos»  (tela 459.06 · voz 459.28) OK
+  B3-1  -0.20 s  «base vezes altura»  (tela 464.12 · voz 464.32) OK
+  B3-1  -0.21 s  «agora a de fora»  (tela 469.99 · voz 470.20) OK
+  B3-1  -0.17 s  «o meio sai»  (tela 475.19 · voz 475.36) OK
+  B3-1  -0.19 s  «em dois oito»  (tela 481.99 · voz 482.18) OK
+  B3-1  -0.18 s  «em zero zero»  (tela 485.92 · voz 486.10) OK
+  B3-1  -0.17 s  «metade de dezesseis»  (tela 487.19 · voz 487.36) OK
+  B3-1  -0.18 s  «oito terços de quilo»  (tela 489.06 · voz 489.24) OK
+  B3-2  -0.17 s  «a curva tem que»  (tela 494.79 · voz 494.96) OK
+  B3-2  -0.14 s  «ípsilon igual a raiz»  (tela 497.52 · voz 497.66) OK
+  B3-2  -0.15 s  «eleva ao quadrado»  (tela 500.65 · voz 500.80) OK
+  B3-2  -0.17 s  «isola o xis»  (tela 501.79 · voz 501.96) OK
+  B3-2  -0.17 s  «com a raiz positiva»  (tela 503.19 · voz 503.36) OK
+  B3-2  -0.13 s  «positivo xis igual»  (tela 505.59 · voz 505.72) OK
+  B3-2  -0.17 s  «e olha a fatia»  (tela 509.59 · voz 509.76) OK
+  B3-2  -0.16 s  «a altura é ípsilon»  (tela 510.52 · voz 510.68) OK
+  B3-2  -0.17 s  «em todo ponto dela»  (tela 511.79 · voz 511.96) OK
+  B3-2  -0.13 s  «então ela é um»  (tela 513.19 · voz 513.32) OK
+  B3-2  -0.19 s  «a integral de dentro»  (tela 514.45 · voz 514.64) OK
+  B3-2  -0.15 s  «ípsilon vezes xis»  (tela 515.85 · voz 516.00) OK
+  B3-2  -0.16 s  «altura vezes comprimento»  (tela 520.52 · voz 520.68) OK
+  B3-2  -0.13 s  «agora a de fora»  (tela 525.45 · voz 525.58) OK
+  B3-2  -0.15 s  «quase a derivada»  (tela 529.79 · voz 529.94) OK
+  B3-2  -0.15 s  «chama u de»  (tela 532.65 · voz 532.80) OK
+  B3-2  -0.15 s  «dê u é menos»  (tela 535.39 · voz 535.54) OK
+  B3-2  -0.19 s  «então ípsilon dê ípsilon»  (tela 537.85 · voz 538.04) OK
+  B3-2  -0.13 s  «os limites mudam junto»  (tela 541.45 · voz 541.58) OK
+  B3-2  -0.18 s  «e ípsilon igual a dois»  (tela 545.72 · voz 545.90) OK
+  B3-2  -0.18 s  «o menos inverte»  (tela 548.52 · voz 548.70) OK
+  B3-2  -0.13 s  «fica meio da»  (tela 550.59 · voz 550.72) OK
+  B3-2  -0.18 s  «a primitiva de raiz»  (tela 554.52 · voz 554.70) OK
+  B3-2  -0.13 s  «e quatro elevado a»  (tela 558.79 · voz 558.92) OK
+  B3-2  -0.15 s  «meio vezes dois terços»  (tela 561.19 · voz 561.34) OK
+  B3-2  -0.17 s  «oito terços de novo»  (tela 563.39 · voz 563.56) OK
+  B3-2  -0.15 s  «agora olha as fatias»  (tela 564.79 · voz 564.94) OK
+  B3-2  -0.15 s  «em pé a área»  (tela 567.25 · voz 567.40) OK
+  B3-2  -0.18 s  «é quatro menos xis»  (tela 569.32 · voz 569.50) OK
+  B3-2  -0.13 s  «deitada a área»  (tela 572.05 · voz 572.18) OK
+  B3-2  -0.15 s  «é ípsilon vezes raiz»  (tela 574.25 · voz 574.40) OK
+  B3-2  -0.15 s  «a mesma oito terços»  (tela 580.85 · voz 581.00) OK
+  B3-2  -0.19 s  «isso é o fubini»  (tela 582.65 · voz 582.84) OK
+  B3-2  -0.16 s  «a soma das áreas»  (tela 584.72 · voz 584.88) OK
+  B3-2  -0.14 s  «guarda essa diferença»  (tela 587.92 · voz 588.06) OK
+  B3-2  -0.14 s  «na direção em que»  (tela 589.92 · voz 590.06) OK
+  B3-2  -0.19 s  «vira altura vezes»  (tela 593.05 · voz 593.24) OK
+  B3-2  -0.13 s  «o fator que falta»  (tela 597.59 · voz 597.72) OK
+  B4-1  -0.15 s  «tem um método»  (tela 602.99 · voz 603.14) OK
+  B4-1  -0.12 s  «desenhar a região»  (tela 604.92 · voz 605.04) OK
+  B4-1  -0.10 s  «a partir dos limites»  (tela 605.92 · voz 606.02) OK
+  B4-1  -0.16 s  «xis vai de zero a um»  (tela 608.92 · voz 609.08) OK
+  B4-1  -0.15 s  «para cada xis ípsilon»  (tela 611.79 · voz 611.94) OK
+  B4-1  -0.14 s  «de xis até um»  (tela 613.66 · voz 613.80) OK
+  B4-1  -0.10 s  «entra na reta ípsilon»  (tela 616.32 · voz 616.42) OK
+  B4-1  -0.12 s  «a diagonal»  (tela 618.46 · voz 618.58) OK
+  B4-1  -0.14 s  «ípsilon igual a um»  (tela 620.32 · voz 620.46) OK
+  B4-1  -0.17 s  «com o xis andando»  (tela 621.39 · voz 621.56) OK
+  B4-1  -0.12 s  «essas fatias pintam»  (tela 623.32 · voz 623.44) OK
+  B4-1  -0.15 s  «um triângulo com»  (tela 624.39 · voz 624.54) OK
+  B4-1  -0.14 s  «com vértices em zero»  (tela 625.26 · voz 625.40) OK
+  B4-1  -0.14 s  «esse triângulo é»  (tela 628.46 · voz 628.60) OK
+  B4-1  -0.14 s  «a integral dupla não»  (tela 630.32 · voz 630.46) OK
+  B4-1  -0.12 s  «não sabe nada de»  (tela 631.26 · voz 631.38) OK
+  B4-1  -0.16 s  «ela só conhece»  (tela 632.66 · voz 632.82) OK
+  B4-2  -0.21 s  «reler o triângulo deitado»  (tela 635.99 · voz 636.20) OK
+  B4-2  -0.20 s  «o ípsilon vai de»  (tela 638.26 · voz 638.46) OK
+  B4-2  -0.18 s  «para cada ípsilon a»  (tela 640.46 · voz 640.64) OK
+  B4-2  -0.20 s  «entra no eixo»  (tela 642.26 · voz 642.46) OK
+  B4-2  -0.17 s  «sai na diagonal»  (tela 644.59 · voz 644.76) OK
+  B4-2  -0.19 s  «olha a peça»  (tela 647.19 · voz 647.38) OK
+  B4-2  -0.18 s  «em pé em xis»  (tela 648.32 · voz 648.50) OK
+  B4-2  -0.17 s  «zero vírgula dois»  (tela 649.79 · voz 649.96) OK
+  B4-2  -0.16 s  «é por isso que»  (tela 654.06 · voz 654.22) OK
+  B4-2  -0.16 s  «travava»  (tela 655.06 · voz 655.22) OK
+  B4-2  -0.18 s  «um retângulo»  (tela 664.66 · voz 664.84) OK
+  B4-2  -0.17 s  «agora desenha a»  (tela 665.59 · voz 665.76) OK
+  B4-2  -0.19 s  «em pé a área»  (tela 667.99 · voz 668.18) OK
+  B4-2  -0.20 s  «não tem fórmula»  (tela 671.72 · voz 671.92) OK
+  B4-2  -0.22 s  «deitada a área»  (tela 674.92 · voz 675.14) OK
+  B4-2  -0.22 s  «curvas diferentes»  (tela 679.72 · voz 679.94) OK
+  B4-2  -0.21 s  «mesma área embaixo»  (tela 680.99 · voz 681.20) OK
+  B4-2  -0.22 s  «da direita»  (tela 682.52 · voz 682.74) OK
+  B4-2b -0.19 s  «a de dentro é»  (tela 686.39 · voz 686.58) OK
+  B4-2b -0.17 s  «o é elevado a»  (tela 692.65 · voz 692.82) OK
+  B4-2b -0.17 s  «não depende de xis»  (tela 695.39 · voz 695.56) OK
+  B4-2b -0.20 s  «sai para fora»  (tela 696.72 · voz 696.92) OK
+  B4-2b -0.18 s  «altura vezes comprimento»  (tela 701.12 · voz 701.30) OK
+  B4-2b -0.20 s  «agora a de fora»  (tela 702.92 · voz 703.12) OK
+  B4-2b -0.20 s  «que veio do comprimento»  (tela 710.72 · voz 710.92) OK
+  B4-2b -0.17 s  «quase a derivada do»  (tela 712.85 · voz 713.02) OK
+  B4-2b -0.19 s  «chama u de»  (tela 714.59 · voz 714.78) OK
+  B4-2b -0.15 s  «dê u é dois»  (tela 716.65 · voz 716.80) OK
+  B4-2b -0.16 s  «então ípsilon dê ípsilon»  (tela 718.92 · voz 719.08) OK
+  B4-2b -0.17 s  «ípsilon igual a zero»  (tela 722.05 · voz 722.22) OK
+  B4-2b -0.21 s  «e ípsilon igual a um»  (tela 724.65 · voz 724.86) OK
+  B4-2b -0.17 s  «fica meio da»  (tela 727.05 · voz 727.22) OK
+  B4-2b -0.16 s  «de é elevado a menos u»  (tela 729.12 · voz 729.28) OK
+  B4-2b -0.15 s  «a primitiva é menos»  (tela 731.59 · voz 731.74) OK
+  B4-2b -0.21 s  «em um menos»  (tela 734.59 · voz 734.80) OK
+  B4-2b -0.16 s  «em zero menos»  (tela 736.52 · voz 736.68) OK
+  B4-2b -0.19 s  «menos menos um»  (tela 739.19 · voz 739.38) OK
+  B4-2b -0.20 s  «metade disso»  (tela 744.32 · voz 744.52) OK
+  B4-2b -0.17 s  «zero vírgula três»  (tela 745.45 · voz 745.62) OK
+  B4-2b -0.18 s  «a integral que travava»  (tela 747.52 · voz 747.70) OK
+  B4-2b -0.18 s  «mudou o jeito de»  (tela 753.12 · voz 753.30) OK
+  B4-3  -0.22 s  «trocar só o dê»  (tela 757.72 · voz 757.94) OK
+  B4-3  -0.18 s  «deixar os limites como»  (tela 760.06 · voz 760.24) OK
+  B4-3  -0.21 s  «olha o que acontece»  (tela 761.79 · voz 762.00) OK
+  B4-3  -0.21 s  «passa a ser em»  (tela 763.99 · voz 764.20) OK
+  B4-3  -0.16 s  «de xis até um o»  (tela 765.32 · voz 765.48) OK
+  B4-3  -0.17 s  «ao mesmo tempo»  (tela 767.39 · voz 767.56) OK
+  B4-3  -0.16 s  «essa escrita não»  (tela 770.66 · voz 770.82) OK
+  B4-3  -0.16 s  «a conta mesmo assim»  (tela 774.26 · voz 774.42) OK
+  B4-3  -0.21 s  «sobra um xis solto»  (tela 775.59 · voz 775.80) OK
+  B4-3  -0.20 s  «só que a integral»  (tela 777.72 · voz 777.92) OK
+  B4-3  -0.18 s  «é um número»  (tela 778.92 · voz 779.10) OK
+  B4-3  -0.20 s  «não pode depender de»  (tela 779.66 · voz 779.86) OK
+  B4-3  -0.22 s  «é o mesmo aviso»  (tela 781.26 · voz 781.48) OK
+  B4-3  -0.20 s  «só pode depender da»  (tela 783.92 · voz 784.12) OK
+  B4-3  -0.20 s  «por isso a troca»  (tela 786.26 · voz 786.46) OK
+  B4-3  -0.20 s  «começa pela região»  (tela 787.52 · voz 787.72) OK
+  B4-3  -0.21 s  «primeiro redesenha o»  (tela 788.79 · voz 789.00) OK
+  B4-3  -0.21 s  «depois acha os limites»  (tela 790.99 · voz 791.20) OK
+  B4-3  -0.18 s  «e só então escreve»  (tela 792.86 · voz 793.04) OK
+  B4-3  -0.20 s  «a região manda»  (tela 794.72 · voz 794.92) OK
+  B5-1  -0.19 s  «com a chapa de»  (tela 800.59 · voz 800.78) OK
+  B5-1  -0.18 s  «xis ao quadrado mais»  (tela 801.92 · voz 802.10) OK
+  B5-1  -0.17 s  «trinta e dois terços»  (tela 804.79 · voz 804.96) OK
+  B5-1  -0.16 s  «na diagonal ípsilon»  (tela 807.06 · voz 807.22) OK
+  B5-1  -0.18 s  «triângulo de baixo»  (tela 809.72 · voz 809.90) OK
+  B5-1  -0.22 s  «fatia em pé ela»  (tela 811.72 · voz 811.94) OK
+  B5-1  -0.20 s  «e sai na diagonal»  (tela 814.46 · voz 814.66) OK
+  B5-1  -0.16 s  «a integral de dentro»  (tela 817.12 · voz 817.28) OK
+  B5-1  -0.17 s  «a primitiva em ípsilon»  (tela 823.79 · voz 823.96) OK
+  B5-1  -0.17 s  «mais ípsilon ao cubo»  (tela 827.19 · voz 827.36) OK
+  B5-1  -0.22 s  «igual a xis dá»  (tela 829.86 · voz 830.08) OK
+  B5-1  -0.16 s  «em zero zero»  (tela 834.06 · voz 834.22) OK
+  B5-1  -0.17 s  «somando quatro terços»  (tela 835.39 · voz 835.56) OK
+  B5-1  -0.16 s  «a de fora»  (tela 838.06 · voz 838.22) OK
+  B5-1  -0.19 s  «à quarta sobre»  (tela 842.39 · voz 842.58) OK
+  B5-1  -0.20 s  «em dois xis à»  (tela 843.86 · voz 844.06) OK
+  B5-1  -0.17 s  «dezesseis terços de quilo»  (tela 850.79 · voz 850.96) OK
+  B5-2  -0.19 s  «congela o ípsilon»  (tela 853.79 · voz 853.98) OK
+  B5-2  -0.18 s  «entra na diagonal»  (tela 856.12 · voz 856.30) OK
+  B5-2  -0.16 s  «sai na borda em»  (tela 858.72 · voz 858.88) OK
+  B5-2  -0.19 s  «o limite de baixo»  (tela 861.25 · voz 861.44) OK
+  B5-2  -0.16 s  «agora é a diagonal»  (tela 863.92 · voz 864.08) OK
+  B5-2  -0.21 s  «a primitiva em xis»  (tela 865.05 · voz 865.26) OK
+  B5-2  -0.21 s  «igual a dois oito»  (tela 870.85 · voz 871.06) OK
+  B5-2  -0.18 s  «igual a ípsilon ípsilon»  (tela 874.92 · voz 875.10) OK
+  B5-2  -0.19 s  «subtraindo oito terços»  (tela 878.85 · voz 879.04) OK
+  B5-2  -0.19 s  «a primitiva disso»  (tela 885.05 · voz 885.24) OK
+  B5-2  -0.19 s  «dá dezesseis terços»  (tela 893.19 · voz 893.38) OK
+  B5-2  -0.21 s  «sobra dezesseis terços»  (tela 899.25 · voz 899.46) OK
+  B5-2  -0.21 s  «uma conferência que»  (tela 903.45 · voz 903.66) OK
+  B5-2  -0.17 s  «trocar xis com»  (tela 906.05 · voz 906.22) OK
+  B5-2  -0.17 s  «um espelho»  (tela 910.05 · voz 910.22) OK
+  B5-2  -0.23 s  «pesam igual dezesseis»  (tela 911.85 · voz 912.08) OK
+  B6-1  -0.13 s  «integral de zero a»  (tela 919.59 · voz 919.72) OK
+  B6-1  -0.18 s  «raiz de ípsilon até»  (tela 921.72 · voz 921.90) OK
+  B6-1  -0.15 s  «de seno de xis»  (tela 923.39 · voz 923.54) OK
+  B6-1  -0.13 s  «dê xis dê»  (tela 924.99 · voz 925.12) OK
+  B6-1  -0.18 s  «a primitiva de seno»  (tela 926.46 · voz 926.64) OK
+  B6-1  -0.14 s  «também não se escreve»  (tela 928.46 · voz 928.60) OK
+  B6-1  -0.15 s  «então o método»  (tela 930.99 · voz 931.14) OK
+  B6-1  -0.16 s  «desenha ípsilon de»  (tela 932.26 · voz 932.42) OK
+  B6-1  -0.14 s  «cada fatia deitada»  (tela 934.52 · voz 934.66) OK
+  B6-1  -0.16 s  «entra na curva»  (tela 935.86 · voz 936.02) OK
+  B6-1  -0.15 s  «e sai em xis»  (tela 938.39 · voz 938.54) OK
+  B6-1  -0.17 s  «pelo outro eixo»  (tela 940.99 · voz 941.16) OK
+  B6-1  -0.18 s  «é a parábola»  (tela 943.72 · voz 943.90) OK
+  B6-1  -0.17 s  «a região é o pedaço»  (tela 946.39 · voz 946.56) OK
+  B6-1  -0.16 s  «embaixo da parábola»  (tela 947.66 · voz 947.82) OK
+  B6-1  -0.16 s  «agora fatia em pé»  (tela 949.06 · voz 949.22) OK
+  B6-1  -0.13 s  «ípsilon de zero até»  (tela 950.39 · voz 950.52) OK
+  B6-1  -0.15 s  «como seno de xis»  (tela 952.79 · voz 952.94) OK
+  B6-1  -0.16 s  «não depende de ípsilon»  (tela 954.26 · voz 954.42) OK
+  B6-1  -0.14 s  «e a de dentro dá»  (tela 957.06 · voz 957.20) OK
+  B6-1  -0.16 s  «vezes ípsilon de»  (tela 959.32 · voz 959.48) OK
+  B6-1  -0.14 s  «até xis ao quadrado xis»  (tela 960.86 · voz 961.00) OK
+  B6-1  -0.13 s  «xis ao quadrado vezes»  (tela 962.19 · voz 962.32) OK
+  B6-1  -0.18 s  «no sino o»  (tela 964.92 · voz 965.10) OK
+  B6-1  -0.14 s  «aqui trouxe xis»  (tela 968.26 · voz 968.40) OK
+  B6-1  -0.18 s  «quase a derivada de»  (tela 970.32 · voz 970.50) OK
+  B6-1  -0.13 s  «chama u de»  (tela 972.39 · voz 972.52) OK
+  B6-1  -0.18 s  «dê u é três»  (tela 974.32 · voz 974.50) OK
+  B6-1  -0.17 s  «xis de zero a um»  (tela 977.19 · voz 977.36) OK
+  B6-1  -0.13 s  «fica um terço»  (tela 979.99 · voz 980.12) OK
+  B6-1  -0.14 s  «a primitiva é menos»  (tela 984.06 · voz 984.20) OK
+  B6-1  -0.18 s  «menos cosseno de um»  (tela 986.46 · voz 986.64) OK
+  B6-1  -0.16 s  «resultado um menos»  (tela 989.72 · voz 989.88) OK
+  B6-1  -0.16 s  «zero vírgula um»  (tela 993.92 · voz 994.08) OK
+  B7-1  -0.18 s  «olha este telhado»  (tela 999.26 · voz 999.44) OK
+  B7-1  -0.18 s  «de vértices menos um»  (tela 1000.92 · voz 1001.10) OK
+  B7-1  -0.16 s  «fatiando em pé a»  (tela 1004.46 · voz 1004.62) OK
+  B7-1  -0.20 s  «muda de fórmula no»  (tela 1007.92 · voz 1008.12) OK
+  B7-1  -0.22 s  «à direita um menos»  (tela 1012.32 · voz 1012.54) OK
+  B7-1  -0.17 s  «não descreve a saída»  (tela 1015.39 · voz 1015.56) OK
+  B7-1  -0.16 s  «se divide em duas»  (tela 1017.52 · voz 1017.68) OK
+  B7-1  -0.22 s  «bê um e bê»  (tela 1018.72 · voz 1018.94) OK
+  B7-1  -0.16 s  «vira duas integrais»  (tela 1020.72 · voz 1020.88) OK
+  B7-1  -0.25 s  «à esquerda a primitiva»  (tela 1022.59 · voz 1022.84) OK
+  B7-1  -0.20 s  «de menos um a zero»  (tela 1027.72 · voz 1027.92) OK
+  B7-1  -0.16 s  «à direita a primitiva»  (tela 1029.66 · voz 1029.82) OK
+  B7-1  -0.18 s  «de zero a um dá meio»  (tela 1034.72 · voz 1034.90) OK
+  B7-1  -0.19 s  «meio mais meio»  (tela 1036.59 · voz 1036.78) OK
+  B7-1  -0.21 s  «fatiando deitado»  (tela 1038.39 · voz 1038.60) OK
+  B7-1  -0.21 s  «em xis igual a ípsilon»  (tela 1041.59 · voz 1041.80) OK
+  B7-1  -0.18 s  «e sai pela direita»  (tela 1043.72 · voz 1043.90) OK
+  B7-1  -0.22 s  «saída menos a entrada»  (tela 1048.12 · voz 1048.34) OK
+  B7-1  -0.21 s  «dois menos dois ípsilon»  (tela 1053.39 · voz 1053.60) OK
+  B7-1  -0.22 s  «a primitiva é dois»  (tela 1055.12 · voz 1055.34) OK
+  B7-1  -0.19 s  «em um dois menos»  (tela 1058.59 · voz 1058.78) OK
+  B7-1  -0.16 s  «uma conta só a»  (tela 1062.06 · voz 1062.22) OK
+  B7-1  -0.18 s  «muda de comportamento»  (tela 1065.12 · voz 1065.30) OK
+  B7-1  -0.18 s  «onde a mudança acontece»  (tela 1067.66 · voz 1067.84) OK
+  B7-1  -0.19 s  «na chapa de dois»  (tela 1070.99 · voz 1071.18) OK
+  B7-1  -0.14 s  «o metal leve fatiado»  (tela 1073.06 · voz 1073.20) OK
+  B7-1  -0.20 s  «deitado a reta cortava»  (tela 1076.06 · voz 1076.26) OK
+  B7-1  -0.17 s  «dois vírgula quatro sete»  (tela 1083.39 · voz 1083.56) OK
+  B7-2  -0.15 s  «primeiro quando a»  (tela 1089.39 · voz 1089.54) OK
+  B7-2  -0.14 s  «como o sino»  (tela 1092.92 · voz 1093.06) OK
+  B7-2  -0.19 s  «e o seno de»  (tela 1093.59 · voz 1093.78) OK
+  B7-2  -0.14 s  «depende de uma variável»  (tela 1095.72 · voz 1095.86) OK
+  B7-2  -0.15 s  «no sentido da outra»  (tela 1097.99 · voz 1098.14) OK
+  B7-2  -0.16 s  «vira um retângulo»  (tela 1099.12 · voz 1099.28) OK
+  B7-2  -0.14 s  «entra como fator»  (tela 1101.32 · voz 1101.46) OK
+  B7-2  -0.14 s  «não é garantia»  (tela 1102.52 · voz 1102.66) OK
+  B7-2  -0.14 s  «a primeira coisa a»  (tela 1105.12 · voz 1105.26) OK
+  B7-2  -0.14 s  «segundo quando uma»  (tela 1106.86 · voz 1107.00) OK
+  B7-2  -0.16 s  «divide a região em»  (tela 1108.32 · voz 1108.48) OK
+  B7-2  -0.13 s  «e a outra não»  (tela 1109.99 · voz 1110.12) OK
+  B7-2  -0.11 s  «terceiro quando os»  (tela 1110.99 · voz 1111.10) OK
+  B7-2  -0.11 s  «ficam mais simples»  (tela 1112.59 · voz 1112.70) OK
+  B7-2  -0.11 s  «o valor não muda»  (tela 1114.99 · voz 1115.10) OK
+  B7-2  -0.13 s  «a região é a»  (tela 1116.19 · voz 1116.32) OK
+  B7-2  -0.10 s  «garante as duas ordens»  (tela 1119.46 · voz 1119.56) OK
+  B7-2  -0.16 s  «dos dois jeitos»  (tela 1123.12 · voz 1123.28) OK
+  B8    -0.15 s  «na probabilidade o»  (tela 1125.59 · voz 1125.74) OK
+  B8    -0.13 s  «dois amigos combinam»  (tela 1128.39 · voz 1128.52) OK
+  B8    -0.11 s  «entre meio dia e»  (tela 1130.13 · voz 1130.24) OK
+  B8    -0.13 s  «num horário sorteado»  (tela 1132.53 · voz 1132.66) OK
+  B8    -0.17 s  «sem um depender do»  (tela 1135.33 · voz 1135.50) OK
+  B8    -0.14 s  «espera só quinze»  (tela 1136.86 · voz 1137.00) OK
+  B8    -0.13 s  «coloca o horário de»  (tela 1140.39 · voz 1140.52) OK
+  B8    -0.15 s  «e o do outro»  (tela 1142.39 · voz 1142.54) OK
+  B8    -0.15 s  «é a faixa em»  (tela 1145.13 · voz 1145.28) OK
+  B8    -0.14 s  «de um quarto de hora»  (tela 1147.06 · voz 1147.20) OK
+  B8    -0.11 s  «daria três pedaços»  (tela 1150.53 · voz 1150.64) OK
+  B8    -0.15 s  «tem um atalho»  (tela 1152.19 · voz 1152.34) OK
+  B8    -0.12 s  «olha o que fica»  (tela 1153.06 · voz 1153.18) OK
+  B8    -0.11 s  «com catetos de»  (tela 1156.13 · voz 1156.24) OK
+  B8    -0.15 s  «cada um tem área»  (tela 1157.93 · voz 1158.08) OK
+  B8    -0.12 s  «nove dezesseis avos»  (tela 1162.06 · voz 1162.18) OK
+  B8    -0.17 s  «é um menos»  (tela 1167.19 · voz 1167.36) OK
+  B8    -0.17 s  «sete dezesseis avos»  (tela 1169.59 · voz 1169.76) OK
+  B8    -0.16 s  «quase quarenta e»  (tela 1171.06 · voz 1171.22) OK
+  B8    -0.13 s  «e aquele sino»  (tela 1173.19 · voz 1173.32) OK
+  B8    -0.15 s  «curva normal da»  (tela 1177.13 · voz 1177.28) OK
+  B8    -0.15 s  «não tem primitiva em»  (tela 1182.59 · voz 1182.74) OK
+  B8    -0.11 s  «na engenharia a»  (tela 1184.33 · voz 1184.44) OK
+  B8    -0.11 s  «peça recortada com»  (tela 1185.93 · voz 1186.04) OK
+  B8    -0.17 s  «é exatamente uma integral»  (tela 1187.99 · voz 1188.16) OK
+  B8    -0.13 s  «numa região geral»  (tela 1189.59 · voz 1189.72) OK
+  S1    -0.16 s  «entre duas curvas»  (tela 1194.20 · voz 1194.36) OK
+  S1    -0.12 s  «estende a função por»  (tela 1197.06 · voz 1197.18) OK
+  S1    -0.16 s  «até um retângulo e»  (tela 1198.60 · voz 1198.76) OK
+  S1    -0.15 s  «a fronteira dessas regiões»  (tela 1202.13 · voz 1202.28) OK
+  S1    -0.12 s  «no máximo dois saltos»  (tela 1205.86 · voz 1205.98) OK
+  S1    -0.11 s  «entra numa curva e»  (tela 1208.93 · voz 1209.04) OK
+  S1    -0.20 s  «os limites de fora»  (tela 1210.86 · voz 1211.06) OK
+  S1    -0.12 s  «os de dentro dependem»  (tela 1212.86 · voz 1212.98) OK
+  S1    -0.11 s  «só da variável de»  (tela 1214.13 · voz 1214.24) OK
+  S1    -0.16 s  «quando a ordem muda»  (tela 1215.80 · voz 1215.96) OK
+  S1    -0.16 s  «virar um retângulo»  (tela 1218.26 · voz 1218.42) OK
+  S1    -0.12 s  «o fator que faltava»  (tela 1220.60 · voz 1220.72) OK
+  S1    -0.14 s  «deu pi»  (tela 1223.40 · voz 1223.54) OK
+  S1    -0.14 s  «um menos um sobre»  (tela 1226.46 · voz 1226.60) OK
+  S1    -0.17 s  «reler a mesma região»  (tela 1228.93 · voz 1229.10) OK
+  S2    -0.17 s  «olha a região entre»  (tela 1231.73 · voz 1231.90) OK
+  S2    -0.12 s  «em pé é uma»  (tela 1238.06 · voz 1238.18) OK
+  S2    -0.21 s  «agora deitado»  (tela 1239.73 · voz 1239.94) OK
+  S2    -0.14 s  «mas quando ela»  (tela 1244.40 · voz 1244.54) OK
+  S2    -0.17 s  «a saída troca»  (tela 1246.93 · voz 1247.10) OK
+  S2    -0.15 s  «lida pelo eixo»  (tela 1251.33 · voz 1251.48) OK
+  S2    -0.14 s  «vira duas curvas»  (tela 1253.46 · voz 1253.60) OK
+  S2    -0.17 s  «quantas contas aparecem»  (tela 1260.33 · voz 1260.50) OK
+  S2    -0.15 s  «no próximo vídeo os»  (tela 1263.13 · voz 1263.28) OK
+  S2    -0.12 s  «essa parábola uma»  (tela 1265.60 · voz 1265.72) OK
+  S2    -0.14 s  «seno de ípsilon sobre»  (tela 1267.40 · voz 1267.54) OK
+  S2    -0.18 s  «dois cilindros que»  (tela 1270.66 · voz 1270.84) OK
+  S2    -0.18 s  «deixa o like»  (tela 1275.46 · voz 1275.64) OK
+
+resumo: 23 âncoras, 459 gatilhos; atraso de -0.25 a +0.03 s; fora da meta (> +0,2 s): 0

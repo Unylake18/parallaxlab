@@ -1,0 +1,42 @@
+{
+ "arquivo": "preview_yt0025_v1_960x540.mp4",
+ "quadros": 12704,
+ "metodo": "MAE RGB somente em componentes de conteúdo >=24 px, excluindo o cabeçalho; estrelas isoladas removidas. Limiar 0,35 por >=3 s.",
+ "intervalos": [
+  {
+   "inicio": 24.0,
+   "fim": 27.066666666666666,
+   "duracao": 3.066666666666667
+  },
+  {
+   "inicio": 67.0,
+   "fim": 73.4,
+   "duracao": 6.4
+  },
+  {
+   "inicio": 83.46666666666667,
+   "fim": 94.13333333333334,
+   "duracao": 10.666666666666666
+  },
+  {
+   "inicio": 154.86666666666667,
+   "fim": 159.8,
+   "duracao": 4.933333333333334
+  },
+  {
+   "inicio": 221.8,
+   "fim": 224.8,
+   "duracao": 3.0
+  },
+  {
+   "inicio": 226.33333333333334,
+   "fim": 232.2,
+   "duracao": 5.866666666666666
+  },
+  {
+   "inicio": 695.0666666666667,
+   "fim": 698.2,
+   "duracao": 3.1333333333333333
+  }
+ ]
+}

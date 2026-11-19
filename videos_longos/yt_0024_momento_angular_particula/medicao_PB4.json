@@ -1,0 +1,140 @@
+{
+"lote": "PB4",
+"marcas": [
+{
+"id": "an:B4-1",
+"A": 0.5,
+"W": 0.0
+},
+{
+"id": "gat:B4-1:o vetor posi\u00e7\u00e3o \u00e9 sempre perpendicular",
+"A": 3.3,
+"W": 0.0
+},
+{
+"id": "gat:B4-1:o bra\u00e7o \u00e9 o pr\u00f3prio raio",
+"A": 1.5999999999999999,
+"W": 0.0
+},
+{
+"id": "gat:B4-1:a massa, vezes a velocidade, vezes o raio",
+"A": 1.8,
+"W": 0.0
+},
+{
+"id": "gat:B4-1:a velocidade angular vezes o raio",
+"A": 3.2199999999999998,
+"W": 0.0
+},
+{
+"id": "ate:B4-1:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:B4-2",
+"A": 0.5,
+"W": 0.0
+},
+{
+"id": "gat:B4-2:o momento de in\u00e9rcia da part\u00edcula",
+"A": 2.4499999999999997,
+"W": 0.0
+},
+{
+"id": "gat:B4-2:no c\u00edrculo",
+"A": 12.5,
+"W": 0.0
+},
+{
+"id": "ate:B4-2:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:B4-3",
+"A": 0.3,
+"W": 0.0
+},
+{
+"id": "gat:B4-3:a tra\u00e7\u00e3o do fio",
+"A": 0.5,
+"W": 0.0
+},
+{
+"id": "gat:B4-3:n\u00e3o faz torque",
+"A": 1.7999999999999998,
+"W": 0.0
+},
+{
+"id": "gat:B4-3:momento angular constante",
+"A": 0.4,
+"W": 0.0
+},
+{
+"id": "ate:B4-3:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:B4-4",
+"A": 1.1,
+"W": 0.0
+},
+{
+"id": "gat:B4-4:um empurr\u00e3o de lado",
+"A": 1.1,
+"W": 2.5
+},
+{
+"id": "gat:B4-4:faz torque",
+"A": 3.0,
+"W": 0.0
+},
+{
+"id": "gat:B4-4:o momento angular cresce",
+"A": 1.3,
+"W": 0.0
+},
+{
+"id": "gat:B4-4:com o raio fixo",
+"A": 1.4,
+"W": 0.0
+},
+{
+"id": "gat:B4-4:sobra o momento de in\u00e9rcia",
+"A": 1.65,
+"W": 0.0
+},
+{
+"id": "ate:B4-4:0.99",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "an:B4-5",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "gat:B4-5:guarda este detalhe",
+"A": 1.4000000000000001,
+"W": 0.0
+},
+{
+"id": "gat:B4-5:s\u00f3 saiu assim",
+"A": 1.3,
+"W": 0.0
+},
+{
+"id": "ate:B4-5:0.995",
+"A": 0.0,
+"W": 0.0
+},
+{
+"id": "fim",
+"A": 0.0,
+"W": 0.0
+}
+]
+}

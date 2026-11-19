@@ -1,0 +1,121 @@
+// ===== Cenas 3D-alvo do 3.5-E1 (exercícios do módulo de integral tripla) · yt_0044 provisório =====
+// Estilo da série: opaco, tom fixo, sem luz, fundo transparente; piso quadriculado z = 0 (G2). Nada de transparência, brilho ou sombra.
+// Câmera da lata (H1, E5): ver([9.2,-6.2,5.8],[0,0,.45],600,560), SC = 2,2 (a mesma do 3.5-T4). Na lataDobradica o alvo anda junto com a lata.
+const MEN_='#8CFFD2',LIL='#B9A6FF',HEL='#FFB36B';
+const CAMLATA=()=>ver([9.2,-6.2,5.8],[0,0,.45],600,560);
+function eixoZ(z0=-.1,z1=1.45,cor=EZ,r=.010,cx=0,cy=0){tubo([Wp(cx,cy,z0),Wp(cx,cy,z1)],r,cor);proj('ez',Wp(cx,cy,z1+.12));}
+function giroSeta(cx,cy,zz,rr=.32,cor=GEO){const A=arco(t=>Wp(cx+rr*Math.cos(t),cy+rr*Math.sin(t),zz),-PI*.9,PI*.55,60);tubo(A,.010,cor);
+ const a1=Wp(cx+rr*Math.cos(PI*.55),cy+rr*Math.sin(PI*.55),zz),a0=Wp(cx+rr*Math.cos(PI*.48),cy+rr*Math.sin(PI*.48),zz);seta(a0,a1,.010,cor);proj('giro',Wp(cx+rr,cy,zz));}
+// lata uniforme opaca (GEO) com centro (cx, 0), raio 1, altura 1
+function lataSolida(cx=0){const Cc=(s,t,z)=>Wp(cx+s*Math.cos(t),s*Math.sin(t),z);
+ sup((t,z)=>Cc(1,t,z),0,2*PI,0,1,96,4,(t,z)=>tom(GEO,[Math.cos(t),Math.sin(t),0],.10,.20));
+ sup((s,t)=>Cc(s,t,1),0,1,0,2*PI,8,72,()=>mixc(BG,GEO,.28));
+ for(const z of [0,1])tubo(arco(t=>Cc(1,t,z),0,2*PI,120),.009,GEO);}
+// caixa [x0,x1]×[y0,y1]×[z0,z1] com cor por face (opaca)
+function caixa(x0,x1,y0,y1,z0,z1,corF){const F=[[n=>Wp(x1,n[0],n[1]),[y0,y1,z0,z1],[1,0,0]],[n=>Wp(x0,n[0],n[1]),[y0,y1,z0,z1],[-1,0,0]],[n=>Wp(n[0],y0,n[1]),[x0,x1,z0,z1],[0,-1,0]],[n=>Wp(n[0],y1,n[1]),[x0,x1,z0,z1],[0,1,0]],[n=>Wp(n[0],n[1],z1),[x0,x1,y0,y1],[0,0,1]],[n=>Wp(n[0],n[1],z0),[x0,x1,y0,y1],[0,0,-1]]];
+ for(const [f,[a0,a1,b0,b1],nn] of F)sup((a,b)=>f([a,b]),a0,a1,b0,b1,1,1,()=>corF(nn));}
+function arestasCaixa(x0,x1,y0,y1,z0,z1,cor,w=.006){const P=[[x0,y0],[x1,y0],[x1,y1],[x0,y1],[x0,y0]];for(const z of [z0,z1])tubo(P.map(([a,b])=>Wp(a,b,z)),w,cor);for(const [a,b] of P.slice(0,4))tubo([Wp(a,b,z0),Wp(a,b,z1)],w,cor);}
+// triângulo A-B-C com cor por ponto
+function tri(A,B,Cc,cor,n=24){sup((a,b)=>{const p=[0,1,2].map(i=>A[i]+a*((1-b)*(B[i]-A[i])+b*(Cc[i]-A[i])));return Wp(...p);},0,1,0,1,n,n,(a,b)=>{const p=[0,1,2].map(i=>A[i]+a*((1-b)*(B[i]-A[i])+b*(Cc[i]-A[i])));return cor(p);});}
+const corRho3=(p,mx)=>mixc(RAMP0,CI,Math.pow(Math.min(1,(p[0]+p[1]+p[2])/mx),1.5));
+
+// ---------- H1: lata uniforme, eixo central e a reta da parede (dobradiça) ----------
+if(K==='lataParede'){SC=2.2;DF=1.4;lataSolida(0);tracejado([Wp(0,0,-.1),Wp(0,0,1.45)],.010,EZ,.08,.05);
+ tracejado([Wp(1,0,-.25),Wp(1,0,1.6)],.014,AL,.08,.05);giroSeta(1,0,1.38,.30);
+ CAMLATA();proj('ez',Wp(0,0,1.57));proj('reta',Wp(1,0,1.65));proj('R',Wp(.5,-.0,1.0));proj('h',Wp(-.05,-1,.5));}
+
+// ---------- E5: a mesma lata, centro em (1, 0); o eixo z na parede ----------
+if(K==='lataDobradica'||K==='lataDob3'){SC=2.2;DF=1.4;lataSolida(1);tubo([Wp(0,0,-.2),Wp(0,0,1.5)],.012,EZ);proj('ez',Wp(0,0,1.62));
+ tracejado([Wp(1,0,-.05),Wp(1,0,1.3)],.008,GEO,.07,.05);giroSeta(0,0,1.38,.30);
+ if(K==='lataDob3'){ // ③ casca de raio s em volta do centro + fio R do eixo ao centro (sobre a tampa)
+  const sc=.55;tubo(arco(t=>Wp(1+sc*Math.cos(t),sc*Math.sin(t),1.004),0,2*PI,90),.012,SOMB);tubo([Wp(1,0,1.006),Wp(1+sc*Math.cos(-PI*.3),sc*Math.sin(-PI*.3),1.006)],.010,SOMB);
+  tubo([Wp(0,0,1.01),Wp(1,0,1.01)],.012,LIL);bolinha(Wp(1,0,1.01),BR,.035*SC);proj('s',Wp(1+.5*sc*Math.cos(-PI*.3),.5*sc*Math.sin(-PI*.3),1.0));proj('fioR',Wp(.5,0,1.0));proj('C',Wp(1,0,1.0));}
+ ver([10.2,-6.2,5.8],[1,0,.45],600,560);proj('O',Wp(0,0,0));proj('Ct',Wp(1,0,1));}
+
+// ---------- E1: cubo [0,1]³ com ρ = x + y + z ----------
+if(K==='cubo'||K==='cuboCaixas'||K==='cuboSonda'||K==='cuboDiag'){SC=2.0;DF=1.4;
+ if(K==='cuboCaixas'){const g=.035;for(const a of [0,.5])for(const b of [0,.5])for(const c of [0,.5]){const v=(a+b+c+.75)/3;caixa(a+g,a+.5-g,b+g,b+.5-g,c+g,c+.5-g,nn=>tom(corDens(v).getStyle?'#000':'#000',nn));}
+  // recolore: corDens com tom por face
+  S.children.length=0;
+  for(const a of [0,.5])for(const b of [0,.5])for(const c of [0,.5]){const v=(a+b+c+.75)/3,cc='#'+mixc(RAMP0,CI,Math.pow(v,1.3)).getHexString();caixa(a+g,a+.5-g,b+g,b+.5-g,c+g,c+.5-g,nn=>tom(cc,nn,.55,.40));arestasCaixa(a+g,a+.5-g,b+g,b+.5-g,c+g,c+.5-g,'#0F0C26',.005);
+   proj('c'+(a*2)+(b*2)+(c*2),Wp(a+.25,b+.25,c+.5-g));}
+  arestasCaixa(0,1,0,1,0,1,TR,.004);}
+ else{const fc=(p,nn)=>{const c=corRho3(p,3);return mixc(BG,'#'+c.getHexString(),.80+.20*Math.max(0,new T.Vector3(...nn).normalize().dot(LDIR)));};
+  sup((y,z)=>Wp(1,y,z),0,1,0,1,30,30,(y,z)=>fc([1,y,z],[1,0,0]));sup((x,z)=>Wp(x,0,z),0,1,0,1,30,30,(x,z)=>fc([x,0,z],[0,-1,0]));sup((x,y)=>Wp(x,y,1),0,1,0,1,30,30,(x,y)=>fc([x,y,1],[0,0,1]));
+  sup((y,z)=>Wp(0,y,z),0,1,0,1,4,4,()=>mixc(BG,GEO,.2));sup((x,z)=>Wp(x,1,z),0,1,0,1,4,4,()=>mixc(BG,GEO,.2));
+  arestasCaixa(0,1,0,1,0,1,CI,.008);
+  if(K==='cubo'){for(const v of [.5]){tubo([Wp(1.003,v,0),Wp(1.003,v,1)],.005,'#0F0C26');tubo([Wp(1.003,0,v),Wp(1.003,1,v)],.005,'#0F0C26');tubo([Wp(v,-.003,0),Wp(v,-.003,1)],.005,'#0F0C26');tubo([Wp(0,-.003,v),Wp(1,-.003,v)],.005,'#0F0C26');tubo([Wp(v,0,1.003),Wp(v,1,1.003)],.005,'#0F0C26');tubo([Wp(0,v,1.003),Wp(1,v,1.003)],.005,'#0F0C26');}}
+  if(K==='cuboSonda'){const xs=.7,ys=.3;/* sonda na face y = 0? fica dentro: desenha na frente da face x=1 recortada */}
+  if(K==='cuboDiag'){}
+ }
+ if(K==='cuboSonda'){S.children.length=0;arestasCaixa(0,1,0,1,0,1,GEO,.008);
+  sup((x,y)=>Wp(x,y,0),0,1,0,1,20,20,(x,y)=>mixc(BG,'#'+corRho3([x,y,0],3).getHexString(),.75));
+  sup((y,z)=>Wp(0,y,z),0,1,0,1,20,20,(y,z)=>mixc(BG,'#'+corRho3([0,y,z],3).getHexString(),.70));sup((x,z)=>Wp(x,1,z),0,1,0,1,20,20,(x,z)=>mixc(BG,'#'+corRho3([x,1,z],3).getHexString(),.80));
+  const xs=.7,ys=.3;tubo([Wp(xs,ys,0),Wp(xs,ys,1)],.014,'#E8ECF8');bolinha(Wp(xs,ys,0),AZC,.035*SC);bolinha(Wp(xs,ys,1),CORAL,.035*SC);
+  tracejado([Wp(xs,0,0),Wp(xs,ys,0)],.006,E2,.05,.04);tracejado([Wp(0,ys,0),Wp(xs,ys,0)],.006,E1,.05,.04);proj('entra',Wp(xs,ys,0));proj('sai',Wp(xs,ys,1));}
+ if(K==='cuboDiag'){S.children.length=0;arestasCaixa(0,1,0,1,0,1,GEO,.008);
+  sup((x,y)=>Wp(x,y,0),0,1,0,1,20,20,(x,y)=>mixc(BG,'#'+corRho3([x,y,0],3).getHexString(),.75));
+  sup((y,z)=>Wp(0,y,z),0,1,0,1,20,20,(y,z)=>mixc(BG,'#'+corRho3([0,y,z],3).getHexString(),.70));sup((x,z)=>Wp(x,1,z),0,1,0,1,20,20,(x,z)=>mixc(BG,'#'+corRho3([x,1,z],3).getHexString(),.80));
+  tracejado([Wp(0,0,0),Wp(1,1,1)],.010,GEO,.07,.05);bolinha(Wp(1,1,1),CI,.04*SC);
+  proj('centro',Wp(.5,.5,.5));proj('cm',Wp(5/9,5/9,5/9));proj('quina',Wp(1,1,1));proj('O',Wp(0,0,0));}
+ eixos3(SC*1.45,SC*1.45,SC*1.4);
+ ver([9.2,-6.2,5.8],[.5,.5,.45],600,560);proj('mid',Wp(.5,.5,1));}
+
+// ---------- E1-5: a folha z = 1 coberta por caixinhas de altura Δz ----------
+if(K==='cuboFolha'){SC=2.0;DF=1.4;arestasCaixa(0,1,0,1,0,1,TR,.006);
+ sup((x,y)=>Wp(x,y,1),0,1,0,1,4,4,()=>C(LI));
+ const dz=.09;for(let i=0;i<4;i++)for(let j=0;j<4;j++)arestasCaixa(i/4,(i+1)/4,j/4,(j+1)/4,1-dz/2,1+dz/2,'#E9FF9E',.004);
+ eixos3(SC*1.45,SC*1.45,SC*1.4);ver([9.2,-6.2,5.8],[.5,.5,.45],600,560);proj('dz',Wp(1,0,1));proj('folha',Wp(.5,.5,1.05));}
+
+// ---------- E2: tetraedro x + y + z ≤ 1 com ρ = x + y, aberto pela face inclinada ----------
+if(K==='tetra'||K==='tetraSonda'||K==='tetraCent'||K==='tetraPlano'){SC=2.6;DF=1.4;
+ const fc=(p,k)=>mixc(BG,'#'+corDens(p[0]+p[1]).getHexString(),k);
+ tri([0,0,0],[1,0,0],[0,1,0],p=>fc(p,.85));tri([0,0,0],[1,0,0],[0,0,1],p=>fc(p,.62));tri([0,0,0],[0,1,0],[0,0,1],p=>fc(p,.72));
+ const V=[[0,0,0],[1,0,0],[0,1,0],[0,0,1]];for(const [a,b] of [[1,2],[1,3],[2,3]])tubo([Wp(...V[a]),Wp(...V[b])],.009,GEO);
+ for(const [a,b] of [[0,1],[0,2],[0,3]])tubo([Wp(...V[a]),Wp(...V[b])],.006,TR);
+ if(K==='tetraSonda'||K==='tetra'){tubo([Wp(1,0,.002),Wp(0,1,.002),Wp(0,0,.002),Wp(1,0,.002)],.010,SOMB);}
+ if(K==='tetraSonda'){const xs=.3,ys=.2,zt=1-xs-ys;tubo([Wp(xs,ys,0),Wp(xs,ys,zt)],.014,'#E8ECF8');bolinha(Wp(xs,ys,0),AZC,.035*SC);bolinha(Wp(xs,ys,zt),CORAL,.035*SC);
+  tracejado([Wp(xs,ys,zt),Wp(xs,ys,zt+.001)],.004,CORAL);proj('entra',Wp(xs,ys,0));proj('sai',Wp(xs,ys,zt));}
+ if(K==='tetraCent'){for(const v of V)bolinha(Wp(...v),BR,.03*SC);for(const v of V)tracejado([Wp(.25,.25,.25),Wp(...v)],.005,GEO,.05,.04);proj('cent',Wp(.25,.25,.25));V.forEach((v,i)=>proj('v'+i,Wp(...v)));}
+ if(K==='tetraPlano'){const z5=.2,z4=.25;tubo([Wp(1-z5,0,z5),Wp(0,1-z5,z5),Wp(0,0,z5),Wp(1-z5,0,z5)],.010,MEN_);tracejado([Wp(1-z4,0,z4),Wp(0,1-z4,z4),Wp(0,0,z4),Wp(1-z4,0,z4)],.006,GEO,.05,.04);
+  proj('z5',Wp(1-z5,0,z5));proj('z4',Wp(0,0,z4));}
+ eixos3(SC*1.35,SC*1.35,SC*1.3);ver([8.2,7.4,5.6],[.34,.34,.28],600,560);proj('vx',Wp(1,0,0));proj('vy',Wp(0,1,0));proj('vz',Wp(0,0,1));}
+
+// ---------- E3: cone de sorvete (vértice na origem), R = 1, h = 1,4; um quarto aberto θ ∈ [−π/2, 0] ----------
+if(K==='cone'||K==='coneCm'||K==='coneCasca'){SC=2.0;DF=1.4;const Hh=1.4,ta=-PI/2,tb=0;const Cc=(s,t,z)=>WC(s,t,z);
+ sup((t,z)=>Cc(z/Hh,t,z),tb,ta+2*PI,0,Hh,96,14,(t,z)=>tom(GEO,[Math.cos(t),Math.sin(t),-1/Hh],.12,.24));
+ sup((s,t)=>Cc(s,t,Hh),0,1,tb,ta+2*PI,10,90,()=>mixc(BG,GEO,.30));
+ for(const t of [ta,tb])sup((s,z)=>Cc(s,t,Hh*s+(Hh-Hh*s)*z),0,1,0,1,20,20,()=>mixc(BG,GEO,t===tb?.46:.38));
+ tubo(arco(t=>Cc(1,t,Hh),tb,ta+2*PI,120),.009,GEO);for(const t of [ta,tb]){tubo([Cc(0,t,0),Cc(1,t,Hh),Cc(0,t,Hh)],.009,GEO);}
+ tubo(arco(t=>Cc(1,t,Hh),ta,tb,30),.005,TR);
+ eixoZ(-.05,Hh+.45);
+ if(K==='cone'){const ss=.6,tt=-.04,zi=Hh*ss;tracejado([Cc(ss,tt,0),Cc(ss,tt,zi)],.008,AZC,.05,.04);tubo([Cc(ss,tt,zi),Cc(ss,tt,Hh)],.012,'#E8ECF8');bolinha(Cc(ss,tt,zi),AZC,.035*SC);bolinha(Cc(ss,tt,Hh),CORAL,.035*SC);proj('entra',Cc(ss,tt,zi));proj('sai',Cc(ss,tt,Hh));}
+ if(K==='coneCasca'){const sc=.55;sup((t,z)=>Cc(sc,t,z),ta,tb,Hh*sc,Hh,20,4,(t,z)=>tom(SOMB,[Math.cos(t),Math.sin(t),0],.55,.35));
+  tubo(arco(t=>Cc(sc,t,Hh+.003),tb,ta+2*PI,90),.009,SOMB);tracejado([Cc(0,0,Hh+.01),Cc(sc,PI*.25,Hh+.01)],.009,SOMB,.05,.04);giroSeta(0,0,Hh+.32,.30);proj('s',Cc(sc*.5,PI*.25,Hh));proj('casca',Cc(sc,-PI/4,(Hh*sc+Hh)/2));}
+ ver([9.2,-6.2,5.0],[0,0,.70],600,560);proj('z34',Wp(0,0,.75*Hh));proj('z12',Wp(0,0,.5*Hh));proj('R',Cc(.5,PI*.6,Hh));proj('h',Cc(1,-PI*.55,Hh*.5));proj('O',Wp(0,0,0));proj('topo',Wp(0,0,Hh));}
+
+// ---------- E4: meia bola x²+y²+z² ≤ 1, z ≥ 0; um quarto aberto (x>0, y<0) ----------
+if(K==='semi'||K==='semiFatia'){SC=1.9;DF=1.4;const inQ=t=>(Math.cos(t)>1e-6&&Math.sin(t)<-1e-6);
+ const F=(f,t)=>WS(1,f,t);const tris=[];const nf=24,nt=96;
+ for(let i=0;i<nf;i++)for(let j=0;j<nt;j++){const f0=PI/2*i/nf,f1=PI/2*(i+1)/nf,t0=2*PI*j/nt,t1=2*PI*(j+1)/nt,fm=(f0+f1)/2,tm=(t0+t1)/2;if(inQ(tm))continue;
+  const cc=tom(GEO,sph(1,fm,tm),.12,.26);tris.push([F(f0,t0),F(f1,t0),F(f1,t1),cc],[F(f0,t0),F(f1,t1),F(f0,t1),cc]);}
+ malhaTri(tris);
+ sup((a,r)=>Wp(r*Math.cos(a),0,r*Math.sin(a)),0,PI/2,0,1,30,12,()=>mixc(BG,GEO,.48));
+ sup((a,r)=>Wp(0,-r*Math.cos(a),r*Math.sin(a)),0,PI/2,0,1,30,12,()=>mixc(BG,GEO,.38));
+ tubo(arco(a=>Wp(Math.cos(a),0,Math.sin(a)),0,PI/2,40),.007,GEO);tubo(arco(a=>Wp(0,-Math.cos(a),Math.sin(a)),0,PI/2,40),.007,GEO);
+ tubo(arco(t=>WC(1,t,0),0,2*PI,120),.007,GEO);
+ if(K==='semi'){const rr=.8,ff=PI*.30,Pp=[rr*Math.sin(ff),0,rr*Math.cos(ff)];
+  tubo([Wp(0,0,0),Wp(...Pp)],.012,RO);bolinha(Wp(...Pp),BR,.04*SC);tracejado([Wp(Pp[0],0,0),Wp(...Pp)],.010,EZ,.05,.04);
+  tubo(arco(a=>Wp(.28*Math.sin(a),0,.28*Math.cos(a)),0,ff,24),.008,FI);
+  proj('P',Wp(...Pp));proj('r',Wp(Pp[0]*.55,0,Pp[2]*.55));proj('phi',Wp(.36*Math.sin(ff/2),0,.36*Math.cos(ff/2)));proj('z',Wp(Pp[0],0,Pp[2]/2));}
+ if(K==='semiFatia'){const zf=.5,rf=Math.sqrt(1-zf*zf);sup((s,t)=>WC(s,t,zf),0,rf,-PI/2,0,8,24,()=>C(LI));
+  tubo(arco(t=>WC(rf+.006,t,zf),0,2*PI*.75+0.001,90).map((p,i,a)=>p),.010,LI);
+  tubo([Wp(0,0,zf+.004),WC(rf,-PI*.25,zf+.004)],.011,SOMB);proj('raio',WC(rf*.55,-PI*.25,zf));proj('zf',Wp(0,0,zf));}
+ eixoZ(-.02,1.45);ver([9.2,-6.2,5.0],[0,0,.3],600,560);proj('z38',Wp(0,0,3/8));proj('R',Wp(.72,-.72,0));}
+
+// ---------- S2: hélice enrolada na parede da lata, conta e força ----------
+if(K==='helice'){SC=2.2;DF=1.4;lataTraco(1,1,{nv:12});eixoZ(-.1,1.45);
+ const H=t=>WC(1.012,t,t/(4*PI));tubo(arco(H,0,4*PI,400),.014,HEL);
+ const tc=PI*1.30;bolinha(H(tc),BR,.05*SC);const P0=H(tc),tg=[-Math.sin(tc),Math.cos(tc),1/(4*PI)];const n=Math.hypot(...tg);
+ seta(P0,[P0[0]+tg[0]/n*.95,P0[1]+tg[1]/n*.95,P0[2]+tg[2]/n*.95+.30],.011,EZ);
+ CAMLATA();proj('conta',H(tc));proj('F',[P0[0]+tg[0]/n*.95,P0[1]+tg[1]/n*.95,P0[2]+tg[2]/n*.95+.30]);proj('hel',H(PI*3.1));}

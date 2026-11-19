@@ -12,7 +12,8 @@ const lista = arg('quadros') ? arg('quadros').split(',').map(Number) : [...Array
 
 (async () => {
   fs.mkdirSync(OUT, { recursive: true });
-  const browser = await chromium.launch({ args: ['--use-angle=d3d11', '--enable-gpu', '--ignore-gpu-blocklist'] });
+  const browser = await chromium.launch({ args: ['--use-angle=d3d11', '--enable-gpu', '--ignore-gpu-blocklist'],
+                                          executablePath: process.env.CHROMIUM_PATH || undefined });
   const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
   page.on('console', m => console.log('[página]', m.text()));
   page.on('pageerror', e => { console.error(e); process.exit(1); });

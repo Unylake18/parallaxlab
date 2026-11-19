@@ -1,0 +1,393 @@
+1
+00:00:00,120 --> 00:00:01,210
+Fala, pessoal!
+
+2
+00:00:01,240 --> 00:00:03,870
+Bem-vindos a mais um
+Absurdo Calculável.
+
+3
+00:00:03,920 --> 00:00:06,410
+Sabe aquele anel que segura
+o guardanapo de pano?
+
+4
+00:00:06,460 --> 00:00:09,370
+Essa pecinha virou um problema
+clássico da geometria:
+
+5
+00:00:09,400 --> 00:00:12,710
+no século dezessete, o
+matemático japonês Seki Kōwa
+
+6
+00:00:12,740 --> 00:00:14,030
+já estudava essa forma.
+
+7
+00:00:14,060 --> 00:00:15,530
+O nome vem do formato.
+
+8
+00:00:15,560 --> 00:00:17,750
+Pega uma esfera e
+fura bem no meio.
+
+9
+00:00:17,780 --> 00:00:19,710
+Calma, deixa a
+furadeira na caixa:
+
+10
+00:00:19,740 --> 00:00:21,530
+a gente fura aqui
+no computador.
+
+11
+00:00:21,560 --> 00:00:23,730
+O que sobra é um
+anel de guardanapo.
+
+12
+00:00:23,760 --> 00:00:25,110
+Agora, o desafio:
+
+13
+00:00:25,140 --> 00:00:26,970
+três esferas, uma pequena,
+
+14
+00:00:27,000 --> 00:00:29,430
+uma média e uma grande,
+furadas de um jeito
+
+15
+00:00:29,460 --> 00:00:31,930
+que os três anéis fiquem
+com a mesma altura,
+
+16
+00:00:32,000 --> 00:00:33,030
+seis centímetros.
+
+17
+00:00:33,060 --> 00:00:34,710
+Qual deles tem mais volume?
+
+18
+00:00:34,740 --> 00:00:35,750
+Guarda o seu chute.
+
+19
+00:00:35,800 --> 00:00:37,130
+Cortando o anel ao meio,
+
+20
+00:00:37,160 --> 00:00:39,350
+o raio da esfera,
+o raio do furo e
+
+21
+00:00:39,380 --> 00:00:42,550
+metade da altura do anel
+formam um triângulo retângulo.
+
+22
+00:00:42,580 --> 00:00:45,430
+Por Pitágoras, o raio da
+esfera ao quadrado menos
+
+23
+00:00:45,460 --> 00:00:47,590
+o raio do furo ao
+quadrado é igual ao
+
+24
+00:00:47,620 --> 00:00:49,390
+quadrado da metade da altura.
+
+25
+00:00:49,420 --> 00:00:52,130
+Anota essa relação,
+porque ela é a chave.
+
+26
+00:00:52,160 --> 00:00:53,950
+Agora, a ideia principal:
+
+27
+00:00:54,020 --> 00:00:54,650
+fatiar.
+
+28
+00:00:54,680 --> 00:00:57,030
+Um plano corta o anel
+numa altura qualquer,
+
+29
+00:00:57,060 --> 00:00:58,570
+medida a partir do centro.
+
+30
+00:00:58,600 --> 00:01:01,290
+A fatia é uma
+coroa, tipo um CD.
+
+31
+00:01:01,320 --> 00:01:04,569
+Pelo mesmo Pitágoras, o raio
+de fora ao quadrado é o raio
+
+32
+00:01:04,599 --> 00:01:07,850
+da esfera ao quadrado menos o
+quadrado da altura do corte,
+
+33
+00:01:07,880 --> 00:01:09,910
+e o raio de dentro
+é o raio do furo.
+
+34
+00:01:09,940 --> 00:01:13,070
+A área é pi vezes a
+diferença desses quadrados.
+
+35
+00:01:13,100 --> 00:01:16,470
+Reorganizando, aparece o raio
+da esfera ao quadrado menos
+
+36
+00:01:16,500 --> 00:01:18,010
+o raio do furo ao quadrado...
+
+37
+00:01:18,040 --> 00:01:19,610
+justamente o que
+a gente anotou!
+
+38
+00:01:19,640 --> 00:01:22,110
+Isso vale o
+quadrado da metade da altura.
+
+39
+00:01:22,140 --> 00:01:24,150
+O raio da esfera
+sumiu da conta!
+
+40
+00:01:24,180 --> 00:01:27,130
+Existe um sólido mais simples
+com essa mesma área em cada
+
+41
+00:01:27,160 --> 00:01:27,750
+corte?
+
+42
+00:01:27,780 --> 00:01:28,470
+Existe:
+
+43
+00:01:28,500 --> 00:01:31,530
+uma esfera de raio igual à
+metade da altura do anel.
+
+44
+00:01:31,560 --> 00:01:33,230
+Nela, a fatia é um disco,
+
+45
+00:01:33,260 --> 00:01:36,570
+e por Pitágoras a área dele
+é pi vezes a diferença entre
+
+46
+00:01:36,600 --> 00:01:39,010
+o quadrado da metade da altura
+e o quadrado da
+
+47
+00:01:39,040 --> 00:01:40,070
+altura do corte.
+
+48
+00:01:40,120 --> 00:01:42,090
+Sobe o plano, desce o plano...
+
+49
+00:01:42,120 --> 00:01:43,950
+as áreas continuam iguais.
+
+50
+00:01:43,980 --> 00:01:46,050
+Esse é o princípio
+de Cavalieri:
+
+51
+00:01:46,080 --> 00:01:49,910
+mesma altura e mesma área em
+todo corte dão o mesmo volume.
+
+52
+00:01:49,940 --> 00:01:51,730
+É como entortar uma
+pilha de moedas:
+
+53
+00:01:51,760 --> 00:01:52,950
+o volume não muda.
+
+54
+00:01:52,980 --> 00:01:55,330
+Então o volume do
+anel é o dessa esfera:
+
+55
+00:01:55,360 --> 00:01:58,790
+quatro terços de pi vezes
+o cubo da metade da altura.
+
+56
+00:01:58,820 --> 00:02:01,650
+O cubo da metade é a
+altura ao cubo sobre oito;
+
+57
+00:02:01,680 --> 00:02:03,430
+quatro sobre oito é um meio,
+
+58
+00:02:03,460 --> 00:02:05,910
+e um meio vezes um
+terço dá um sexto.
+
+59
+00:02:05,940 --> 00:02:06,770
+Resultado:
+
+60
+00:02:06,800 --> 00:02:08,430
+pi vezes a altura ao cubo,
+
+61
+00:02:08,460 --> 00:02:09,669
+dividido por seis!
+
+62
+00:02:09,699 --> 00:02:12,390
+Mas como o anel grandão
+empata com o pequeno?
+
+63
+00:02:12,420 --> 00:02:13,450
+Olha as paredes:
+
+64
+00:02:13,520 --> 00:02:15,450
+um centímetro na
+esfera pequena,
+
+65
+00:02:15,500 --> 00:02:17,670
+sessenta e oito
+centésimos na média,
+
+66
+00:02:17,700 --> 00:02:19,270
+quarenta e seis na grande.
+
+67
+00:02:19,300 --> 00:02:21,230
+O anel grande dá
+uma volta maior,
+
+68
+00:02:21,260 --> 00:02:23,730
+mas é mais fino, e uma
+coisa compensa a outra.
+
+69
+00:02:23,760 --> 00:02:27,030
+Aumentando a esfera, o volume
+não sai de trinta e seis pi
+
+70
+00:02:27,060 --> 00:02:29,550
+centímetros cúbicos,
+uns cento e treze.
+
+71
+00:02:29,680 --> 00:02:30,670
+Só um cuidado:
+
+72
+00:02:30,720 --> 00:02:32,110
+não é qualquer furo.
+
+73
+00:02:32,140 --> 00:02:35,310
+O que precisa ser igual é
+a altura do anel que sobra.
+
+74
+00:02:35,340 --> 00:02:36,370
+E os extremos?
+
+75
+00:02:36,420 --> 00:02:39,670
+Sem furo, a fórmula devolve
+o volume da esfera inteira.
+
+76
+00:02:39,700 --> 00:02:42,130
+Agora, mantendo a
+esfera do mesmo tamanho,
+
+77
+00:02:42,160 --> 00:02:44,550
+aumenta o furo até
+quase não sobrar nada:
+
+78
+00:02:44,580 --> 00:02:46,770
+a altura e o
+volume vão a zero.
+
+79
+00:02:46,800 --> 00:02:48,070
+Pergunta respondida:
+
+80
+00:02:48,100 --> 00:02:49,350
+empate triplo!
+
+81
+00:02:49,420 --> 00:02:51,270
+Só a altura
+determina o volume.
+
+82
+00:02:51,300 --> 00:02:52,330
+Qual era o seu chute?
+
+83
+00:02:52,360 --> 00:02:53,590
+Conta nos comentários.
+
+84
+00:02:53,620 --> 00:02:56,470
+Se essa conexão entre
+equação e fenômeno ajudou,
+
+85
+00:02:56,540 --> 00:02:57,730
+segue o Parallax Lab.
+
+86
+00:02:57,760 --> 00:02:58,710
+Até a próxima!

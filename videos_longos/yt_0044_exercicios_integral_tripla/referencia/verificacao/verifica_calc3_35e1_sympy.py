@@ -1,0 +1,143 @@
+# Cálculo III · 3.5-E1 · exercícios integradores do módulo 3.5 (yt_0044 provisório)
+# Notação do canal: rho = densidade; s = distância ao eixo; r = distância à origem; R, h, L fixos; k = densidade constante.
+from sympy import *
+from scipy import integrate as si
+import math
+x,y,z,s,th,r,ph,u,w,R,h,k,L,d,a=symbols('x y z s theta r phi u w R h k L d a',positive=True)
+ok=[]
+def chk(nome,cond):
+    c=bool(cond); ok.append(c); print(('OK  ' if c else 'FALHA ')+nome)
+Q=Rational
+# ================= E1 · cubo [0,1]^3, rho = x + y + z (Guidorizzi 5.4-3) =================
+rho1=x+y+z
+chk('C1.1 chute do centro: rho(1/2,1/2,1/2)·1 = 3/2', rho1.subs({x:Q(1,2),y:Q(1,2),z:Q(1,2)})==Q(3,2))
+pts=[Q(1,4),Q(3,4)]
+Smed=sum(a_+b_+c_ for a_ in pts for b_ in pts for c_ in pts)*Q(1,8)
+chk('C1.2 Riemann n=2, pontos médios: soma 12 · 1/8 = 3/2', sum(a_+b_+c_ for a_ in pts for b_ in pts for c_ in pts)==12 and Smed==Q(3,2))
+lo=[0,Q(1,2)]; hi=[Q(1,2),1]
+Slo=sum(a_+b_+c_ for a_ in lo for b_ in lo for c_ in lo)*Q(1,8); Shi=sum(a_+b_+c_ for a_ in hi for b_ in hi for c_ in hi)*Q(1,8)
+chk('C1.3 canto de baixo: 6 · 1/8 = 3/4 ; canto de cima: 18 · 1/8 = 9/4', Slo==Q(3,4) and Shi==Q(9,4))
+n=symbols('n',positive=True,integer=True)
+def soma(nn,desl):
+    pts=[ (i+desl)/Integer(nn) for i in range(nn)]
+    return sum(a_+b_+c_ for a_ in pts for b_ in pts for c_ in pts)/Integer(nn)**3
+chk('C1.4 canto de baixo = 3/2 − 3/(2n) (n = 2, 4, 10)', all(soma(m,0)==Q(3,2)-Q(3,2*m) for m in (2,4,10)))
+chk('C1.5 canto de cima = 3/2 + 3/(2n) (n = 2, 4, 10)', all(soma(m,1)==Q(3,2)+Q(3,2*m) for m in (2,4,10)))
+chk('C1.6 tabela: n=4 → 1,125 e 1,875; n=10 → 1,35 e 1,65', soma(4,0)==Q(9,8) and soma(4,1)==Q(15,8) and soma(10,0)==Q(27,20) and soma(10,1)==Q(33,20))
+chk('C1.7 ponto médio = 3/2 para todo n (2, 3, 4, 10)', all(soma(m,Q(1,2))==Q(3,2) for m in (2,3,4,10)))
+chk('C1.8 diferença cima − baixo = 3/n → 0', all(soma(m,1)-soma(m,0)==Q(3,m) for m in (2,4,10)))
+i1=integrate(rho1,(z,0,1)); chk('C1.9 ∫₀¹(x+y+z)dz = [xz + yz + z²/2]₀¹ = x + y + 1/2', simplify(i1-(x+y+Q(1,2)))==0)
+i2=integrate(i1,(y,0,1)); chk('C1.10 ∫₀¹(x + y + 1/2)dy = [xy + y²/2 + y/2]₀¹ = x + 1', simplify(i2-(x+1))==0)
+M1=integrate(i2,(x,0,1)); chk('C1.11 ∫₀¹(x+1)dx = [x²/2 + x]₀¹ = 3/2', M1==Q(3,2))
+chk('C1.12 ∭x² = 1/3 ; ∭xy = ∭xz = 1/4', integrate(x**2,(x,0,1),(y,0,1),(z,0,1))==Q(1,3) and integrate(x*y,(x,0,1),(y,0,1),(z,0,1))==Q(1,4))
+Myz1=integrate(x*rho1,(x,0,1),(y,0,1),(z,0,1)); chk('C1.13 M_yz = 1/3 + 1/4 + 1/4 = 5/6', Myz1==Q(5,6) and Q(1,3)+Q(1,4)+Q(1,4)==Q(5,6))
+chk('C1.14 x̄ = (5/6)/(3/2) = 5/9 ≈ 0,556 (= ȳ = z̄ pela troca de letras)', Myz1/M1==Q(5,9) and integrate(z*rho1,(x,0,1),(y,0,1),(z,0,1))==Q(5,6))
+chk('C1.15 1/3 + 1/4 + 1/4 = 4/12 + 3/12 + 3/12 = 10/12 = 5/6', Q(4,12)+Q(3,12)+Q(3,12)==Q(10,12)==Q(5,6))
+# folha: conteúdo nulo
+chk('C1.16 folha z = 1: na tampa, rho = x + y + 1 ≤ 3; soma ≤ 3 · 1 · Δz → 0', (rho1.subs(z,1)).subs({x:1,y:1})==3)
+# ================= E2 · tetraedro x + y + z ≤ 1, rho = x + y (Guidorizzi 5.4-4) =================
+chk('C2.1 V = 1/6 (cateto·cateto/2 · altura/3)', integrate(1,(z,0,1-x-y),(y,0,1-x),(x,0,1))==Q(1,6))
+in1=integrate(x+y,(z,0,1-x-y)); chk('C2.2 ∫₀^{1−x−y}(x+y)dz = (x+y)(1−x−y)', simplify(in1-(x+y)*(1-x-y))==0)
+chk('C2.3 w = x + y: y = 0 → w = x ; y = 1 − x → w = 1 ; dw = dy', diff(x+y,y)==1)
+chk('C2.4 ∫ₓ¹ w(1 − w)dw = [w²/2 − w³/3]ₓ¹ = 1/6 − x²/2 + x³/3', simplify(integrate(w*(1-w),(w,x,1))-(Q(1,6)-x**2/2+x**3/3))==0 and simplify(integrate(in1,(y,0,1-x))-(Q(1,6)-x**2/2+x**3/3))==0)
+chk('C2.5 (1/2 − 1/3) − (x²/2 − x³/3) = 1/6 − x²/2 + x³/3', Q(1,2)-Q(1,3)==Q(1,6))
+M2=integrate(Q(1,6)-x**2/2+x**3/3,(x,0,1)); chk('C2.6 ∫₀¹ (1/6 − x²/2 + x³/3)dx = 1/6 − 1/6 + 1/12 = 1/12', M2==Q(1,12) and integrate(x+y,(z,0,1-x-y),(y,0,1-x),(x,0,1))==Q(1,12))
+chk('C2.7 centroide = média dos 4 vértices = (1/4, 1/4, 1/4)', integrate(x,(z,0,1-x-y),(y,0,1-x),(x,0,1))/Q(1,6)==Q(1,4))
+chk('C2.8 confere: rho(centroide) · V = (1/4 + 1/4)(1/6) = 1/12', (Q(1,4)+Q(1,4))*Q(1,6)==Q(1,12))
+A,B,Cc,D=symbols('A B C D')
+lin=integrate(A*x+B*y+Cc*z+D,(z,0,1-x-y),(y,0,1-x),(x,0,1))
+chk('C2.9 densidade linear: ∭(Ax+By+Cz+D) = V·(valor no centroide)', simplify(lin-Q(1,6)*(A/4+B/4+Cc/4+D))==0)
+chk('C2.10 contraexemplo: rho = x² não vale (∭x² = 1/60 ≠ (1/16)(1/6) = 1/96)', integrate(x**2,(z,0,1-x-y),(y,0,1-x),(x,0,1))==Q(1,60) and Q(1,16)*Q(1,6)==Q(1,96))
+in3=integrate(z*(x+y),(z,0,1-x-y)); chk('C2.11 ∫₀^{1−x−y} z(x+y)dz = (x+y)(1−x−y)²/2', simplify(in3-(x+y)*(1-x-y)**2/2)==0)
+chk('C2.12 em w: ∫₀¹∫ₓ¹ (1/2)w(1−w)² dw dx', simplify(integrate(in3,(y,0,1-x))-integrate(w*(1-w)**2/2,(w,x,1)))==0)
+chk('C2.13 troca a ordem: 0 ≤ x ≤ w ≤ 1 ⇒ ∫₀¹ (1/2)w(1−w)² · [x]₀ʷ dw = ∫₀¹ (1/2)w²(1−w)² dw', simplify(integrate(integrate(w*(1-w)**2/2,(w,x,1)),(x,0,1))-integrate(w**2*(1-w)**2/2,(w,0,1)))==0)
+chk('C2.14 w²(1 − w)² = w² − 2w³ + w⁴ ; ∫₀¹ = 1/3 − 1/2 + 1/5 = 1/30', expand(w**2*(1-w)**2)==w**2-2*w**3+w**4 and Q(1,3)-Q(1,2)+Q(1,5)==Q(1,30))
+Mxy2=integrate(z*(x+y),(z,0,1-x-y),(y,0,1-x),(x,0,1)); chk('C2.15 M_xy = (1/2)(1/30) = 1/60', Mxy2==Q(1,60))
+chk('C2.16 z̄ = (1/60)/(1/12) = 12/60 = 1/5 < 1/4', Mxy2/M2==Q(1,5))
+chk('C2.17 (reserva) x̄ = ȳ = 3/10', integrate(x*(x+y),(z,0,1-x-y),(y,0,1-x),(x,0,1))/M2==Q(3,10))
+chk('C2.18 a massa pela troca também: ∫₀¹ w(1−w)·w dw = 1/3 − 1/4 = 1/12', integrate(w*(1-w)*w,(w,0,1))==Q(1,12))
+# ================= E3 · cone s·h/R ≤ z ≤ h (vértice na origem), homogêneo (Guidorizzi 5.7-9) =================
+zin=h*s/R
+chk('C3.1 entrada z = (h/R)s (a parede), saída z = h (a tampa)', zin.subs(s,R)==h)
+Vi=integrate(s,(z,zin,h)); chk('C3.2 ∫_{hs/R}^h s dz = s(h − hs/R) = hs − (h/R)s²', simplify(Vi-(h*s-h*s**2/R))==0)
+chk('C3.3 ∫₀^R (hs − (h/R)s²) ds = hR²/2 − hR²/3 = hR²/6', simplify(integrate(h*s-h*s**2/R,(s,0,R))-h*R**2/6)==0)
+Vc=2*pi*h*R**2/6; chk('C3.4 V = 2π · hR²/6 = πR²h/3', simplify(Vc-pi*R**2*h/3)==0)
+Mi=integrate(z*s,(z,zin,h)); chk('C3.5 ∫ z s dz = s[z²/2] = s(h²/2 − h²s²/(2R²))', simplify(Mi-(s*(h**2/2-h**2*s**2/(2*R**2))))==0)
+chk('C3.6 ∫₀^R (h²s/2 − h²s³/(2R²)) ds = h²R²/4 − h²R²/8 = h²R²/8', simplify(integrate(h**2*s/2-h**2*s**3/(2*R**2),(s,0,R))-h**2*R**2/8)==0)
+Mxy3=2*pi*h**2*R**2/8; chk('C3.7 ∭z dV = 2π · h²R²/8 = πR²h²/4', simplify(Mxy3-pi*R**2*h**2/4)==0)
+chk('C3.8 z̄ = (πR²h²/4)/(πR²h/3) = 3h/4 (do vértice) = h/4 da base', simplify(Mxy3/Vc-Q(3,4)*h)==0)
+Ii=integrate(s**2*s,(z,zin,h)); chk('C3.9 ∫ s³ dz = s³(h − hs/R) = hs³ − (h/R)s⁴', simplify(Ii-(h*s**3-h*s**4/R))==0)
+chk('C3.10 ∫₀^R (hs³ − (h/R)s⁴) ds = hR⁴/4 − hR⁴/5 = hR⁴/20', simplify(integrate(h*s**3-h*s**4/R,(s,0,R))-h*R**4/20)==0)
+Icone=k*2*pi*h*R**4/20; chk('C3.11 I_z = k · 2π · hR⁴/20 = πkR⁴h/10', simplify(Icone-pi*k*R**4*h/10)==0)
+Mcone=k*pi*R**2*h/3; chk('C3.12 I_z = (πkR⁴h/10)/(πkR²h/3) MR² = (3/10)MR²', simplify(Icone/(Mcone*R**2)-Q(3,10))==0)
+chk('C3.13 (1/10)/(1/3) = 3/10 ; 0,3 < 0,5 (cilindro)', Q(1,10)/Q(1,3)==Q(3,10))
+# esféricas
+al=atan(R/h)
+chk('C3.14 plano z = h em esféricas: r cos φ = h ⇒ r = h/cos φ ; tg α = R/h', True)
+Vi_e=integrate(r**2*sin(ph),(r,0,h/cos(ph))); chk('C3.15 ∫₀^{h/cos φ} r² sen φ dr = (h³/3) sen φ / cos³φ', simplify(Vi_e-h**3*sin(ph)/(3*cos(ph)**3))==0)
+cA=symbols('c',positive=True)
+chk('C3.16 u = cos φ, du = −sen φ dφ: ∫₀^α senφ/cos³φ dφ = ∫₁^{cos α} −u⁻³ du = [u⁻²/2]₁^{cos α}', simplify(integrate(-u**-3,(u,1,cA))-(1/(2*cA**2)-Q(1,2)))==0)
+chk('C3.17 = (1/cos²α − 1)/2 = tg²α/2 = R²/(2h²)', simplify((1/cos(al)**2-1)/2-R**2/(2*h**2))==0)
+chk('C3.18 V = 2π · (h³/3) · R²/(2h²) = πR²h/3 ✓', simplify(2*pi*h**3/3*R**2/(2*h**2)-pi*R**2*h/3)==0)
+chk('C3.19 numérico R = 1, h = 2: V esféricas ≈ 2,0944', abs(2*math.pi*si.quad(lambda p: 8*math.sin(p)/(3*math.cos(p)**3),0,math.atan(0.5))[0]-2*math.pi/3)<1e-9)
+# ================= E4 · semiesfera x²+y²+z² ≤ R², z ≥ 0 (Guidorizzi 5.7-7 e 5.7-11) =================
+Mse=k*integrate(r**2*sin(ph),(r,0,R),(ph,0,pi/2),(th,0,2*pi)); chk('C4.1 M = k · 2π · 1 · R³/3 = (2/3)πkR³', simplify(Mse-Q(2,3)*pi*k*R**3)==0)
+chk('C4.2 z = r cos φ ; integrando r cos φ · r² sen φ = r³ sen φ cos φ', True)
+chk('C4.3 ∫₀^{π/2} sen φ cos φ dφ = [sen²φ/2]₀^{π/2} = 1/2', integrate(sin(ph)*cos(ph),(ph,0,pi/2))==Q(1,2))
+Mxyse=k*integrate(r**3*sin(ph)*cos(ph),(r,0,R),(ph,0,pi/2),(th,0,2*pi)); chk('C4.4 M_xy = k · 2π · 1/2 · R⁴/4 = πkR⁴/4', simplify(Mxyse-pi*k*R**4/4)==0)
+chk('C4.5 z̄ = (πR⁴/4)/(2πR³/3) = 3R/8 = 0,375R', simplify(Mxyse/Mse-Q(3,8)*R)==0)
+chk('C4.6 fatias: área do disco na altura z = π(R² − z²)', True)
+chk('C4.7 ∫₀^R z π(R² − z²) dz = π(R⁴/2 − R⁴/4) = πR⁴/4 ✓', simplify(integrate(z*pi*(R**2-z**2),(z,0,R))-pi*R**4/4)==0)
+chk('C4.8 volume por fatias: ∫₀^R π(R² − z²) dz = 2πR³/3 ✓', simplify(integrate(pi*(R**2-z**2),(z,0,R))-2*pi*R**3/3)==0)
+Mr=k*integrate(r*r**2*sin(ph),(r,0,R),(ph,0,pi/2),(th,0,2*pi)); chk('C4.9 rho = k r: M = k · 2π · 1 · R⁴/4 = πkR⁴/2', simplify(Mr-pi*k*R**4/2)==0)
+Mxyr=k*integrate(r*r**3*sin(ph)*cos(ph),(r,0,R),(ph,0,pi/2),(th,0,2*pi)); chk('C4.10 M_xy = k · 2π · 1/2 · R⁵/5 = πkR⁵/5', simplify(Mxyr-pi*k*R**5/5)==0)
+chk('C4.11 z̄ = (πR⁵/5)/(πR⁴/2) = 2R/5 = 0,4R > 0,375R', simplify(Mxyr/Mr-Q(2,5)*R)==0 and Q(2,5)>Q(3,8))
+chk('C4.12 (cartesianas, numérico R = 1) z̄ homogênea ≈ 0,375', abs(si.tplquad(lambda zz,yy,xx: zz,-1,1,lambda xx:-math.sqrt(1-xx*xx),lambda xx:math.sqrt(1-xx*xx),lambda xx,yy:0,lambda xx,yy:math.sqrt(max(0,1-xx*xx-yy*yy)))[0]/(2*math.pi/3)-0.375)<1e-6)
+nn=symbols('nn',positive=True)
+Mn=integrate(r**nn*r**2*sin(ph),(r,0,R),(ph,0,pi/2),(th,0,2*pi)); Mzn=integrate(r**nn*r**3*sin(ph)*cos(ph),(r,0,R),(ph,0,pi/2),(th,0,2*pi))
+zbn=simplify(Mzn/Mn)
+chk('C4.13 rho = k rⁿ: z̄ = (n+3)R/(2(n+4)) → n = 0: 3R/8, n = 1: 2R/5, n → ∞: R/2 (tudo na casca)', simplify(zbn-(nn+3)*R/(2*(nn+4)))==0 and limit(zbn,nn,oo)==R/2)
+chk('C4.14 casca fina (meia esfera oca) z̄ = R/2 direto', simplify(integrate(R*cos(ph)*R**2*sin(ph),(ph,0,pi/2),(th,0,2*pi))/integrate(R**2*sin(ph),(ph,0,pi/2),(th,0,2*pi))-R/2)==0)
+# ================= E5 · lata na dobradiça: (x − R)² + y² ≤ R², 0 ≤ z ≤ h, eixo z (Guidorizzi 5.7-4, 5.7-6) =================
+xx=R+s*cos(th); yy=s*sin(th)
+chk('C5.1 polo deslocado: x = R + s cos θ, y = s sen θ, z = z; jacobiano s', simplify(Matrix([[diff(xx,s),diff(xx,th)],[diff(yy,s),diff(yy,th)]]).det()-s)==0)
+chk('C5.2 x² + y² = R² + 2Rs cos θ + s²cos²θ + s²sen²θ = R² + 2Rs cos θ + s²', simplify(expand(xx**2+yy**2)-(R**2+2*R*s*cos(th)+s**2))==0)
+Mlata=k*pi*R**2*h
+T1=k*R**2*integrate(s,(z,0,h),(s,0,R),(th,0,2*pi)); chk('C5.3 termo 1: kR² ∭ s = R² · kπR²h = MR²', simplify(T1-Mlata*R**2)==0)
+T2=2*R*k*integrate(s**2*cos(th),(z,0,h),(s,0,R),(th,0,2*pi)); chk('C5.4 termo 2: ∫₀^{2π} cos θ dθ = 0 ⇒ 0', T2==0)
+T3=k*integrate(s**3,(z,0,h),(s,0,R),(th,0,2*pi)); chk('C5.5 termo 3: k ∭ s³ = k · h · R⁴/4 · 2π = πkR⁴h/2 = MR²/2', simplify(T3-Mlata*R**2/2)==0)
+Ip=simplify(T1+T2+T3); chk('C5.6 I = MR² + 0 + MR²/2 = (3/2)MR²', simplify(Ip-Q(3,2)*Mlata*R**2)==0)
+chk('C5.7 polo na origem: (x−R)² + y² ≤ R² ⇔ s² ≤ 2Rs cos θ ⇔ s ≤ 2R cos θ, −π/2 ≤ θ ≤ π/2', simplify(expand((s*cos(th)-R)**2+(s*sin(th))**2-R**2)-(s**2-2*R*s*cos(th)))==0)
+Io_s=integrate(s**3,(s,0,2*R*cos(th))); chk('C5.8 ∫₀^{2R cos θ} s³ ds = (2R cos θ)⁴/4 = 4R⁴cos⁴θ', simplify(Io_s-4*R**4*cos(th)**4)==0)
+chk('C5.9 cos⁴θ = ((1 + cos 2θ)/2)² = (1 + 2cos 2θ + cos²2θ)/4', simplify(cos(th)**4-(1+2*cos(2*th)+cos(2*th)**2)/4)==0)
+chk('C5.10 cos²2θ = (1 + cos 4θ)/2 ⇒ cos⁴θ = 3/8 + (1/2)cos 2θ + (1/8)cos 4θ', simplify(cos(th)**4-(Q(3,8)+cos(2*th)/2+cos(4*th)/8))==0)
+chk('C5.11 ∫_{−π/2}^{π/2}: [3θ/8 + sen 2θ/4 + sen 4θ/32] = 3π/8 + 0 + 0', integrate(cos(th)**4,(th,-pi/2,pi/2))==3*pi/8 and sin(pi)==0 and sin(2*pi)==0)
+Io=k*h*integrate(Io_s,(th,-pi/2,pi/2)); chk('C5.12 I = k · h · 4R⁴ · 3π/8 = (3/2)πkR⁴h = (3/2)MR² ✓', simplify(Io-Q(3,2)*Mlata*R**2)==0)
+Mo=k*h*integrate(integrate(s,(s,0,2*R*cos(th))),(th,-pi/2,pi/2)); chk('C5.13 massa com o polo na origem: kh ∫ 2R²cos²θ dθ = πkR²h ✓', simplify(Mo-Mlata)==0)
+chk('C5.14 numérico (R = h = k = 1): I ≈ 3π/2 ≈ 4,712', abs(si.tplquad(lambda zz,yy,xx: xx*xx+yy*yy,0,2,lambda xx:-math.sqrt(max(0,1-(xx-1)**2)),lambda xx:math.sqrt(max(0,1-(xx-1)**2)),lambda xx,yy:0,lambda xx,yy:1)[0]-1.5*math.pi)<1e-6)
+# ================= E6 · Steiner (Guidorizzi 5.7-5) e aplicações =================
+# prova: corpo com centro de massa na origem, eixo paralelo a z passando por (d, 0)
+X=symbols('X'); expr=expand((X-d)**2)
+chk('C6.1 (x − d)² + y² = (x² + y²) − 2dx + d²', expr==X**2-2*d*X+d**2)
+chk('C6.2 ∭ x dm = M x̄ = 0 (centro de massa na origem) ⇒ I = I_cm + Md²', True)
+# aplicação 1: cubo de aresta L, eixo na aresta (Guidorizzi 5.7-2)
+Icm_cubo=k*integrate(x**2+y**2,(x,-L/2,L/2),(y,-L/2,L/2),(z,-L/2,L/2)); Mcubo=k*L**3
+chk('C6.3 cubo: ∭x² (centrado) = L · L · L³/12 = L⁵/12', integrate(x**2,(x,-L/2,L/2),(y,-L/2,L/2),(z,-L/2,L/2))==L**5/12)
+chk('C6.4 I_cm (eixo central) = 2kL⁵/12 = ML²/6', simplify(Icm_cubo-Mcubo*L**2/6)==0)
+chk('C6.5 d = meia diagonal da face = L/√2 ⇒ d² = L²/2', simplify((L*sqrt(2)/2)**2-L**2/2)==0)
+chk('C6.6 I_aresta = ML²/6 + ML²/2 = 2ML²/3', Q(1,6)+Q(1,2)==Q(2,3))
+Ia=k*integrate(x**2+y**2,(x,0,L),(y,0,L),(z,0,L)); chk('C6.7 confere direto: k(L⁵/3 + L⁵/3) = (2/3)ML² ✓', simplify(Ia-Q(2,3)*Mcubo*L**2)==0)
+# aplicação 2: bola, eixo tangente
+chk('C6.8 bola tangente: (2/5)MR² + MR² = (7/5)MR²', Q(2,5)+1==Q(7,5))
+Ib=k*integrate(((r*sin(ph)*cos(th)-R)**2+(r*sin(ph)*sin(th))**2)*r**2*sin(ph),(r,0,R),(ph,0,pi),(th,0,2*pi))
+chk('C6.9 confere direto em esféricas: I_tangente = (7/5)MR²', simplify(Ib-Q(7,5)*k*Q(4,3)*pi*R**3*R**2)==0)
+# erro clássico
+chk('C6.10 erro: parede → parede oposta "+M(2R)²" daria 11/2 MR²; certo: 3/2 (simetria)', Q(3,2)+4==Q(11,2))
+Iop=k*integrate(((R+s*cos(th))-2*R)**2*s+(s*sin(th))**2*s,(z,0,h),(s,0,R),(th,0,2*pi))
+chk('C6.11 eixo na parede oposta (x = 2R): I = (3/2)MR² também', simplify(Iop-Q(3,2)*Mlata*R**2)==0)
+chk('C6.12 certo: volta ao centro (− MR²) e vai (+ MR²): 3/2 − 1 + 1 = 3/2', Q(3,2)-1+1==Q(3,2))
+# desafio dos comentários (fora da tela): cone, eixo num diâmetro da base
+zc=symbols('zc')
+Ix_base=k*integrate(((s*sin(th))**2+(z-h)**2)*s,(z,h*s/R,h),(s,0,R),(th,0,2*pi))
+chk('C6.13 (desafio) cone, diâmetro da base: (3/20)MR² + (1/10)Mh²', simplify(Ix_base-(Q(3,20)*Mcone*R**2+Q(1,10)*Mcone*h**2))==0)
+print(f'\n{sum(ok)}/{len(ok)} True')

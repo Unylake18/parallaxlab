@@ -1,0 +1,45 @@
+yt_0036 · QA da voz (narracao_final.wav)
+modelo eleven_v4 · voz qw7jgPZWOKrl10GsjQ82 · formato mp3_44100_192 → WAV mono 16 bits 44,1 kHz · texto narracao_tags.md (narração final v2) · 5 blocos de API
+duração 1301.68 s (21:41.68); limite da parada: 24:30 → OK
+pico -1.01 dBFS; amostras em clipping (|x| ≥ 0,999): 0 → OK
+silêncios > 1,5 s dentro de parágrafo: 0
+pausas entre parágrafos: 23; 0.18–0.38 s (média 0.28 s); maior pausa entre palavras no texto todo 0.54 s
+tag lida em voz alta (STT): {'curious': 0, 'thoughtful': 0, 'surprised': 0, 'serious': 0, 'excited': 0, 'happy': 0} → OK
+  «xis» no STT: 0×
+  «ípsilon» no STT: 0×
+  «u» no STT: 97×
+  «vê» no STT: 0×
+  «á» no STT: 233×
+  «bê» no STT: 0×
+  «cê» no STT: 0×
+  «dê» no STT: 170×
+  «erre» no STT: 3×
+  «téta (nunca teta)» no STT: 2×
+  «teta (errado)» no STT: 0×
+  «i, jota, cá» no STT: 0×
+  «fi» no STT: 17×
+  «gama» no STT: 4×
+  «delta» no STT: 37×
+  «ômega» no STT: 4×
+  «classe cê um» no STT: 2×
+  «dê xis dê ípsilon» no STT: 1×
+  «dê u dê vê» no STT: 5×
+  «á dê menos bê cê» no STT: 2×
+  «gê linha de tê» no STT: 0×
+  «é elevado à fração» no STT: 3×
+  «três quartos de é menos um sobre é» no STT: 2×
+  «secante da latitude» no STT: 1×
+  «cosseno de xis menos ípsilon» no STT: 0×
+  «jacobiano» no STT: 27×
+  «Mercator» no STT: 1×
+  «Groenlândia» no STT: 2×
+  «Parallax Lab» no STT: 2×
+palavras 4073; 3.13 palavras/s no WAV inteiro; 3.13 palavras/s do início ao fim da fala (referência 3,0 palavras/s)
+fronteira de bloco antes de «o lado do u de zero»: pausa 0.24 s (276.94–277.18); nível 2 s antes -21.0 dB × 2 s depois -20.2 dB
+  maior salto entre amostras na pausa: 0.0266 (clique > 0,2)
+fronteira de bloco antes de «perto de m as áreas ficam»: pausa 0.22 s (560.80–561.02); nível 2 s antes -20.8 dB × 2 s depois -21.8 dB
+  maior salto entre amostras na pausa: 0.0195 (clique > 0,2)
+fronteira de bloco antes de «agora confere sem jacobiano fatiando deitado»: pausa 0.28 s (840.76–841.04); nível 2 s antes -20.5 dB × 2 s depois -20.0 dB
+  maior salto entre amostras na pausa: 0.0713 (clique > 0,2)
+fronteira de bloco antes de «por dentro um sobre seno de»: pausa 0.26 s (1142.04–1142.30); nível 2 s antes -20.6 dB × 2 s depois -21.8 dB
+  maior salto entre amostras na pausa: 0.0225 (clique > 0,2)

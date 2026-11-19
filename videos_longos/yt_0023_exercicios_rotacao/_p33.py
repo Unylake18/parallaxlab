@@ -1,0 +1,6 @@
+B = chr(92)
+s = open('sec_e3.py', encoding='utf-8').read()
+print(s.count(chr(7)))
+s = s.replace('r"' + chr(7) + 'lpha"', 'r"' + B + 'alpha"')
+open('sec_e3.py', 'w', encoding='utf-8').write(s)
+print(s.count(chr(7)))

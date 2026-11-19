@@ -1,0 +1,27 @@
+CADÊNCIA PB1: 21 linhas, média 0.345 s/glifo, mínimo 0.111, 3 abaixo de 0,20
+  B1-1 t0=28.7s   8 glifos  3.20s 0.400 s/glifo  \vec L = \vec r \times \vec p
+  B1-1 t0=37.8s   7 glifos  2.40s 0.343 s/glifo  \lvert \vec L\rvert  = r p
+  B1-1 t0=44.5s   8 glifos  7.40s 0.925 s/glifo  \lvert \vec L\rvert  = \ell m v
+  B1-3 t0=72.6s   8 glifos  2.13s 0.267 s/glifo  R = \ell \operatorname{sen} \theta
+  B1-3 t0=78.6s   9 glifos  1.00s 0.111 s/glifo  v = \omega \ell \operatorname{sen} \theta  <0,20
+  B1-3 t0=82.0s  12 glifos  4.13s 0.344 s/glifo  L_z = \lvert \vec L\rvert  \operatorname{sen} \theta
+  B1-3 t0=86.6s   7 glifos  4.07s 0.581 s/glifo  L_z = m R^2 \omega
+  B1-3 t0=91.1s   9 glifos  4.13s 0.459 s/glifo  L_h = \lvert \vec L\rvert  \cos \theta
+  B1-3 t0=95.7s  14 glifos  2.93s 0.210 s/glifo  L_h = m \omega \ell^2 \operatorname{sen} \theta \cos \theta
+  B1-4 t0=99.6s  20 glifos  2.93s 0.147 s/glifo  \lvert \vec L\rvert  = 0{,}336 \,\mathrm{kg\cdot m^2/s}  <0,20
+  B1-5 t0=115.8s  12 glifos  4.60s 0.383 s/glifo  \lvert d\vec L\rvert  = L_h \cdot \omega dt
+  B1-5 t0=125.9s  14 glifos  6.67s 0.476 s/glifo  \left\lvert \frac{d\vec L}{dt}\right\rvert  = \omega L_h
+  B1-5 t0=133.8s   5 glifos  1.80s 0.360 s/glifo  \tau = m g R
+  B1-5 t0=142.2s  10 glifos  2.73s 0.273 s/glifo  \tau = m g \ell \operatorname{sen} \theta
+  B1-6 t0=151.3s   9 glifos  1.73s 0.193 s/glifo  \vec\tau = \frac{d\vec L}{dt}  <0,20
+  B1-6 t0=157.5s  22 glifos  4.73s 0.215 s/glifo  mg\ell\operatorname{sen}\theta = \omega \cdot m\omega\ell^2\operatorname{sen}\theta\cos\theta
+  B1-6 t0=162.9s   7 glifos  2.73s 0.390 s/glifo  g = \omega^2 \ell \cos \theta
+  B1-6 t0=166.6s   8 glifos  2.80s 0.350 s/glifo  \omega^2 = \frac{g}{\ell\cos\theta}
+  B1-6 t0=170.2s  16 glifos  4.20s 0.263 s/glifo  \omega = \sqrt{\frac{9{,}8}{1{,}00\cdot\cos30^\circ}}
+  B1-6 t0=174.7s  14 glifos  4.47s 0.319 s/glifo  \omega = 3{,}36 \,\mathrm{rad/s}
+  B1-6 t0=179.7s  15 glifos  3.60s 0.240 s/glifo  T = \frac{2\pi}{\omega} = 1{,}87 \,\mathrm{s}
+
+ENXUGAR A PAUTA (decisão da Produção):
+B1-3: v = \omega \ell \operatorname{sen} \theta (0.111 s/glifo)
+B1-4: \lvert \vec L\rvert  = 0{,}336 \,\mathrm{kg\cdot m^2/s} (0.147 s/glifo)
+B1-6: \vec\tau = \frac{d\vec L}{dt} (0.193 s/glifo)

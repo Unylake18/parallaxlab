@@ -1,0 +1,49 @@
+Cobertura do arco do quarto de disco por caixas [x_{i-1},x_i] x [piso, teto]:
+  n=  4  área das caixas = 1.0000   4/n = 1.0000
+  n=  8  área das caixas = 0.5000   4/n = 0.5000
+  n= 16  área das caixas = 0.2500   4/n = 0.2500
+  n= 32  área das caixas = 0.1250   4/n = 0.1250
+  n= 64  área das caixas = 0.0625   4/n = 0.0625
+V1 arco: área das caixas = 4/n (decrescente: teto - piso telescopa até 2): True 
+V2 y = x^2: área das caixas = 4*Delta = 8/n (as tiras empurradas do EP. 05): True 
+
+Solda g(x): variação total = 0.9443 (sobe 0.5836, desce 0.3607)
+  n=  4  área das caixas = 0.4645   Delta*TV = 0.4721
+  n=  8  área das caixas = 0.2348   Delta*TV = 0.2361
+  n= 16  área das caixas = 0.1179   Delta*TV = 0.1180
+  n= 32  área das caixas = 0.0590   Delta*TV = 0.0590
+  n= 64  área das caixas = 0.0295   Delta*TV = 0.0295
+  n=128  área das caixas = 0.0148   Delta*TV = 0.0148
+V3 solda: área das caixas <= Delta * variação total e cai pela metade ao dobrar n: True 
+
+Área do metal leve A1 = 21*cos(2/5)/85 - 21*cos(3)/85 + 2 = 2.47214 m^2; metal pesado = 1.52786 m^2; massa = 12 - 2*A1 = 7.0557 kg
+V4 A1 = 2 + (0,42/1,7)(cos 0,4 - cos 3) ≈ 2,4721; massa ≈ 7,06 kg: True 
+
+Chapa de dois metais (rho 1 e 3), grade n x n:
+  n=  4  por baixo= 6.0000  por cima= 8.5000  diferença=2.5000  células vermelhas=   5  área vermelha=1.2500  2*área=2.5000
+  n=  8  por baixo= 6.3750  por cima= 7.7500  diferença=1.3750  células vermelhas=  11  área vermelha=0.6875  2*área=1.3750
+  n= 16  por baixo= 6.6562  por cima= 7.4062  diferença=0.7500  células vermelhas=  24  área vermelha=0.3750  2*área=0.7500
+  n= 32  por baixo= 6.8828  por cima= 7.2500  diferença=0.3672  células vermelhas=  47  área vermelha=0.1836  2*área=0.3672
+  n= 64  por baixo= 6.9668  por cima= 7.1523  diferença=0.1855  células vermelhas=  95  área vermelha=0.0928  2*área=0.1855
+  n=128  por baixo= 7.0122  por cima= 7.1040  diferença=0.0918  células vermelhas= 188  área vermelha=0.0459  2*área=0.0918
+V5 por cima - por baixo = salto (2) x área das células vermelhas: True 
+V6 por baixo <= massa <= por cima e diferença cai ~pela metade ao dobrar n: True 
+
+Quarto de disco, células da borda:
+  n=  4  células=   7  área=1.7500   (cobertura por caixas do arco: 1.0000)
+  n=  8  células=  15  área=0.9375   (cobertura por caixas do arco: 0.5000)
+  n= 16  células=  31  área=0.4844   (cobertura por caixas do arco: 0.2500)
+  n= 32  células=  63  área=0.2461   (cobertura por caixas do arco: 0.1250)
+  n= 64  células= 127  área=0.1240   (cobertura por caixas do arco: 0.0625)
+V7 células da borda 2n-1 (7, 15, 31, 63, 127) como no EP. 05: True 
+V8 ponto: quadrado de lado raiz(eps/2) tem área eps/2 < eps; segmento de comprimento l: retângulo l x eps/(2l): True 
+V9 número finito de pontos p: p quadrados de área eps/(2p) cada, total eps/2 < eps: True 
+V10 x^2+y^2 em [0,2]^2: |f(X)-f(Y)| <= 4*raiz(2)*|X-Y|, logo delta = eps/(4 raiz 2) (eps=1 -> 0,177): True pior razão = 5.3711; 4√2 = 5.6569
+V11 sen(1/x) em (0,1]: distância -> 0 e diferença sempre 2 (nenhum delta serve): True distâncias: ['3.64e-02', '7.22e-04', '7.88e-06', '7.95e-08']
+V12 Ex. 6: x^2/(x^2+y^2) em [-1,1]^2 vale 1/(1+m^2) ao longo de y = mx: descontínua só na origem; 0 <= f <= 1: True limite na reta y=mx: 1/(m**2 + 1)
+V13 Ex. 5: f = 1 (y >= 0), -1 (y < 0) no disco: descontinuidades = segmento y = 0, |x| <= 1 (gráfico de função contínua): True 
+V14 Ex. 4: fronteira = gráfico de x^2 + gráfico de 1+x^2 (-1<=x<=1) + segmentos x = ±1, 1<=y<=2 (4 pedaços de conteúdo nulo): True 
+V15 escolha eps1 = eps/(8M) e eps2 = eps/(2 alpha) dá alpha*eps2 + 4M*eps1 = eps/2 + eps/2 = eps (com < estrito na prova): True 
+V16 Dirichlet em [0,2]^2: por cima = 4 e por baixo = 0 para toda partição; conjunto das descontinuidades = o quadrado todo (área 4, não é conteúdo nulo): True 
+
+16/16 checagens True

@@ -1,0 +1,32 @@
+yt_0030 · QA da voz (narracao_final.wav)
+modelo eleven_v4 · voz qw7jgPZWOKrl10GsjQ82 · mp3_44100_192 → WAV 1 canal, 16 bits, 44100 Hz · texto narracao_tags.md v3.4 · voz v3.3 + 11 trechos v3.4 emendados (22 emendas: ver qa/emendas_v34.txt)
+duração 2372.69 s (39:32.69); limite da parada: 41:30 → OK
+pico -0.72 dBFS; amostras em clipping (|x| ≥ 0,999): 0 → OK
+parágrafos 69; silêncios > 1,5 s dentro de parágrafo: 0
+pausas entre parágrafos: 68; 0.14–0.46 s (média 0.27 s); maior pausa entre palavras no texto todo 0.48 s
+tag lida em voz alta (STT): {'curious': 0, 'thoughtful': 0, 'emphatic': 0, 'excited': 0, 'happy': 0} → OK
+  «Parallax Lab» no STT: 2× (no texto: 2×)
+  «Cálculo três» no STT: 1× (no texto: 1×)
+  «fi» no STT: 10× (no texto: 10×)
+  «nabla» no STT: 2× (no texto: 2×)
+  «alfa» no STT: 52× (no texto: 52×)
+  «épsilon» no STT: 6× (no texto: 6×)
+  «delta» no STT: 3× (no texto: 3×)
+  «ípsilon» no STT: 0× (no texto: 61×)
+  «cê um» no STT: 5× (no texto: 5×)
+  «Schwarz» no STT: 2× (no texto: 2×)
+  «Cauchy-Riemann» no STT: 2× (no texto: 2×)
+  «Laplace» no STT: 1× (no texto: 1×)
+  «Mercator» no STT: 1× (no texto: 1×)
+  «Groenlândia» no STT: 1× (no texto: 1×)
+  «Ampère» no STT: 1× (no texto: 1×)
+  «Gauss» no STT: 2× (no texto: 2×)
+  «Coulomb» no STT: 1× (no texto: 1×)
+  «agá» no STT: 0× (no texto: 14×)
+  «tê» no STT: 1× (no texto: 10×)
+  «esse» no STT: 19× (no texto: 19×)
+  «vê» no STT: 0× (no texto: 2×)
+palavras 6956 (tokens \w+ 6969); 2.932 palavras/s no WAV inteiro; 2.932 palavras/s do início ao fim da fala (estimativa 3,0 palavras/s = 38.64 min)
+nota (conferida à mão na transcrição): o STT grafa as letras faladas como letra — «agá» → «h» (16 «h» isolados para 14 «agá»), «tê» → «t»
+(9 «t» + 1 «tê» = 10), «vê» → «v», «ípsilon» → «Y» («passo h, h», «dividido por t», «fi de u, v»). Grafia do STT, não erro de pronúncia.
+«esse» 19 de 19.

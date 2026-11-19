@@ -1,0 +1,64 @@
+OK  C2.1 ∫₀^{2π} cos θ dθ = 0
+OK  C2.2 ∫₀^{2π} sen θ dθ = 0
+OK  C2.3 M (ρ = 1 + x) = π
+OK  C2.4 ∫cos²θ = π
+OK  C2.5 ∫₀¹ s³ ds = 1/4
+OK  C2.6 ∭ x(1+x) dV = π/4
+OK  C2.7 x̄ = 1/4
+OK  C2.8 cartesianas ∬ x(1+x) = π/4
+OK  C3.1 ∫_{s²}^1 s dz = s − s³
+OK  C3.2 ∫₀¹ (s − s³) ds = 1/4
+OK  C3.3 V = π/2
+OK  C4.1 ∫_{s²}^1 z s dz = s/2 − s⁵/2
+OK  C4.2 ∫₀¹ (s/2 − s⁵/2) ds = 1/6
+OK  C4.3 M_xy/k = π/3
+OK  C4.4 z̄ = 2/3
+OK  C4.5 cartesianas: z̄ = 2/3
+OK  C4.6 ∭(z − z̄) dV = 0 na taça
+OK  C5.1 ½ m (ω s)² = ½ (m s²) ω²
+OK  C6.1 I = πkR⁴h/2
+OK  C6.2 I = MR²/2
+OK  C6.3 casca fina (tudo em s = R): MR²
+OK  C6.4 [s⁴/4]₀^R = R⁴/4
+OK  C7.1 ∫₀^R r⁴ dr = R⁵/5
+OK  C7.2 sen³ = (1 − cos²) sen
+OK  C7.3 ∫₀^π sen³φ dφ = ∫_{−1}^{1}(1 − u²)du = 4/3
+OK  C7.4 [u − u³/3]_{−1}^{1} = (2/3) − (−2/3)
+OK  C7.5 I = 8πkR⁵/15
+OK  C7.6 I = (2/5)MR²
+OK  C7.7 (8/15)/(4/3) = 2/5
+OK  C8.1 s_G cilindro = R/√2 ≈ 0,707R
+OK  C8.2 s_G esfera = √(2/5)R ≈ 0,632R
+OK  C9.0 M = (π/12)(7√2 − 2 + 3 ln(1+√2)) ≈ 2,7603
+OK  C9.1 dw = 2z dz
+OK  C9.2 ∫₀¹ z√(s²+z²) dz = (1/3)[(1+s²)^{3/2} − s³]
+OK  C9.3 (1/2)∫_{s²}^{1+s²} w^{1/2} dw = (1/2)(2/3)[w^{3/2}]
+OK  C9.4 v = 1 + s², ∫₀¹ s(1+s²)^{3/2} ds = (1/2)∫₁² v^{3/2} dv = (1/5)(4√2 − 1)
+OK  C9.5 2^{5/2} = 4√2
+OK  C9.6 ∫₀¹ s⁴ ds = 1/5
+OK  C9.7 (1/3)[(4√2 − 1)/5 − 1/5] = (4√2 − 2)/15
+OK  C9.8 M_xy = 2π(4√2 − 2)/15 = 4π(2√2 − 1)/15 ≈ 1,532
+OK  C9.9 z̄ = 16(2√2 − 1)/(5(7√2 − 2 + 3 ln(1+√2))) ≈ 0,555
+OK  C9.10 simetria: ∭ x ρ dV = 0 na lata
+OK  C10.1 (1/2)∫_{z²}^{1+z²}(u − z²)u^{1/2} du = (1/5)[(1+z²)^{5/2} − z⁵] − (z²/3)[(1+z²)^{3/2} − z³]
+OK  C10.2 parte polinomial: −z⁵/5 + z⁵/3 = (2/15) z⁵
+OK  C10.3 ∫₀¹ (2/15) z⁵ dz = 1/45
+OK  C10.4 I₅ = ∫₀^{π/4} sec⁵ = 7√2/8 + (3/8) ln(1+√2)
+OK  C10.5 (1+tg²)^{5/2}·sec² = sec⁷ ; tg²·sec³·sec² = sec⁷ − sec⁵
+OK  C10.6 ∫₀¹(1+z²)^{5/2} dz = I₇ ; ∫₀¹ z²(1+z²)^{3/2} dz = I₇ − I₅
+OK  C10.7 (1/5)I₇ − (1/3)(I₇ − I₅) = (1/3)I₅ − (2/15)I₇
+OK  C10.8 recorrência n = 7: I₇ = (1/6)(√2)⁵·1 + (5/6)I₅ = 2√2/3 + (5/6)I₅
+OK  C10.9 (1/3)I₅ − (2/15)I₇ = (2/9)I₅ − 4√2/45
+OK  C10.10 (2/9)I₅ = 7√2/36 + (1/12) ln(1+√2)
+OK  C10.11 7√2/36 − 4√2/45 = 19√2/180 (MMC 180: 35 − 16)
+OK  C10.12 ∫ em z = (19√2 + 4)/180 + (1/12) ln(1+√2)
+OK  C10.13 I = (π/90)(19√2 + 4 + 15 ln(1+√2)) ≈ 1,539
+OK  C10.14 2π·(19√2+4)/180 = π(19√2+4)/90 ; 2π/12 = π/6 = 15π/90
+OK  C10.15 I/M ≈ 0,558 (homogênea: 0,5)
+OK  C10.16 s_G = √(I/M) ≈ 0,747 (homogênea 0,707)
+OK  C10.17 cartesianas no computador: I ≈ 1.5391
+OK  C9.11 cartesianas no computador: M_xy ≈ 1.5318
+OK  C1.1 ∭(z − z̄)ρ dV = M_xy − z̄ M = 0 (lata)
+OK  C11.1 I (reta da parede) = (3/2) M R² = I_cm + M R²
+
+62/62 True

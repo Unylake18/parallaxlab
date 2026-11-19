@@ -25,7 +25,7 @@ class Sec5:
         al = math.atan2(x, a)
         g = VGroup(DashedLine(W([0, 0, 0]), W(P), color=VIOLET, stroke_width=2.4),
                    Dot(W(f), radius=0.1, color=GREEN).set_z_index(9),
-                   arrow(W(f), W(f + [0.8, 0, 0]), GREEN, 8, z=8),
+                   arrow(W(f), W(f + [0.8, 0, 0]), WHITE, 8, z=8),
                    arrow(W(f), W(P), VIOLET, 5, z=6),
                    Dot(W(P), radius=0.11, color=WHITE).set_z_index(9))
         if abs(x) > 0.3:
@@ -57,12 +57,12 @@ class Sec5:
         H = lambda: self.slots["H"]["eq"]
         A_ = lambda: self.slots["A"]["eq"]
         self.x_src = ValueTracker(1.7)
-        self.seg_flags = {"sym": True}
+        self.seg_flags = {"sym": False}
         key = lambda: (self.x_src.get_value(), tuple(sorted(self.seg_flags.items())), *self.view_key())
         geo = self.cached(key, self.seg_shapes)
         wire = always_redraw(lambda: self.tube(W([-2.6, 0, 0]), W([2.6, 0, 0])))
         flow = self.flow([lambda u: W([-2.6 + 5.2 * u, 0, 0])])
-        circ = VMobject(color=BLUE_L, stroke_width=3.5).set_points_as_corners(
+        circ = VMobject(color=STEEL, stroke_width=3.5).set_points_as_corners(
             [W([2.6, 0, 0]), W([2.6, -1.3, 0]), W([-2.6, -1.3, 0]), W([-2.6, 0, 0])]).set_stroke(opacity=0.4)
         pl = self.lab("P", W([0, a, 0]) + np.array([-0.3, 0.3, 0]), size=M_M)
         pl.add_updater(lambda m: m.move_to(W([0, a, 0]) + np.array([-0.3, 0.3, 0])))
@@ -75,7 +75,9 @@ class Sec5:
         al_.add_updater(lambda m: m.move_to(W([0, a / 2, 0]) + np.array([-0.3, 0, 0])))
         xl = self.lab("x", [0, 0, 0], "x", size=M_M, color=VIOLET)
         xl.add_updater(lambda m: m.move_to(W([xv() / 2, -0.4, 0])))
-        self.play(FadeIn(wire), FadeIn(geo), FadeIn(pl), run_time=1.2)
+        sy = self.out_symbol(W([0, a, 0]) + np.array([0.6, 0, 0]), 1, 0.19)
+        sy.add_updater(lambda m: m.move_to(W([0, a, 0]) + np.array([0.6, 0, 0])))
+        self.play(FadeIn(wire), FadeIn(geo), FadeIn(pl), FadeIn(sy), run_time=1.2)
         self.add(flow)
         # ── 1 · o trecho dentro do circuito ──────────────────────────────────────────────────────────────
         self.play(Create(circ), run_time=1.2)
@@ -91,6 +93,11 @@ class Sec5:
         self.play(FadeOut(circ), FadeOut(seg_l), FadeOut(rest_l), run_time=0.8)
         self.drop("H")
         self.play(FadeIn(dll), FadeIn(Rl), FadeIn(al_), FadeIn(xl), run_time=0.8)
+        tx = self.tip("$x$ · posição do elemento", W([xv() / 2, -0.4, 0]) + np.array([0, -0.45, 0]))
+        ta = self.tip("$a$ · distância até P", W([0, a / 2, 0]) + np.array([-1.35, 0.0, 0]))
+        self.play(FadeIn(tx), FadeIn(ta), run_time=0.6)
+        self.hold(2.0)
+        self.play(FadeOut(tx), FadeOut(ta), run_time=0.4)
         # ── 2 · elemento e separação ─────────────────────────────────────────────────────────────────────
         self.show(E(r"d\boldsymbol\ell=dx\,\hat x", r"d\boldsymbol\ell", r"dx\,\hat x", size=M_L), src={(r"d\boldsymbol\ell", 0): dll},
                   rt=1.8, wait=1.0)
@@ -101,7 +108,8 @@ class Sec5:
         perl = self.lab(r"a\,\hat y", W([0, a * 0.5, 0]) + np.array([-0.62, 0, 0]), r"a\,\hat y", size=M_M)
         self.play(FadeOut(al_), FadeOut(xl), FadeIn(parl), FadeIn(perl), run_time=1.2)
         self.show(E(r"\mathbf R=-x\,\hat x+a\,\hat y", r"\mathbf R", r"-x\,\hat x", r"a\,\hat y", size=M_M), slot="A",
-                  src={(r"\mathbf R", 0): Rl, (r"-x\,\hat x", 0): parl, (r"a\,\hat y", 0): perl}, rt=2.2, wait=1.5)
+                  src={(r"\mathbf R", 0): Rl, (r"-x\,\hat x", 0): parl, (r"a\,\hat y", 0): perl}, rt=2.2, wait=0)
+        self.destaca([parl, perl], 1.5)
         self.caption("$\\mathbf R$ = parte paralela + parte perpendicular")
         self.mark("trecho_modelagem")
         # ── 3 · produto vetorial, passo a passo ──────────────────────────────────────────────────────────
@@ -117,8 +125,10 @@ class Sec5:
                     colors={r"-x\,dx": VIOLET}),
                   (r"-x\,\hat x", r"-x\,dx"), (r"a\,\hat y", r"a\,dx"), (r"dx\,\hat x", r"\left(\hat x\times\hat x\right)"),
                   (r"dx\,\hat x", r"\left(\hat x\times\hat y\right)"), rt=2.6, wait=2.0, structure=False)
-        self.caption("Paralelo: $\\hat x\\times\\hat x=0$.  Perpendicular: $\\hat x\\times\\hat y=\\hat z$")
-        self.play(Indicate(self.slots["H"]["eq"], color=MAG, scale_factor=1.02), run_time=0.8)
+        self.caption("Paralelo: $\\hat x\\times\\hat x=0$")
+        self.play(Indicate(parl, color=MAG, scale_factor=1.25), run_time=1.0)
+        self.caption("Perpendicular: $\\hat x\\times\\hat y=\\hat z$")
+        self.play(Indicate(perl, color=MAG, scale_factor=1.25), run_time=1.0)
         self.show(E(r"d\boldsymbol\ell\times\mathbf R=-x\,dx\,\mathbf 0+a\,dx\,\hat z", r"d\boldsymbol\ell", r"\mathbf R", r"-x\,dx", r"\mathbf 0", r"a\,dx",
                     r"\hat z", size=M_L, colors={r"-x\,dx": VIOLET, r"\mathbf 0": VIOLET}),
                   (r"\left(\hat x\times\hat x\right)", r"\mathbf 0"), (r"\left(\hat x\times\hat y\right)", r"\hat z"), rt=2.2, wait=1.5, structure=False)
@@ -126,19 +136,23 @@ class Sec5:
         self.hold(0.6)
         self.caption("A parte paralela zera; a perpendicular vira $\\hat z$, para fora da tela")
         zl = self.lab(r"\hat z", [0, 0, 0], r"\hat z", size=M_M)
-        self.play(self.beta.animate.set_value(20), self.tau.animate.set_value(38), FadeOut(parl), FadeOut(perl), run_time=2.0)
-        zv = self.vec(np.array([0, a, 0]), [0, 0, 1], MAG, scale=1.1, width=6)
+        self.caption("Em 3D, o $\\odot$ vira o eixo $z$")
+        zv = always_redraw(lambda: self.vec(np.array([0, a, 0]), [0, 0, 1], MAG, scale=1.1, width=6))
+        self.add(zv)
+        self.play(self.beta.animate.set_value(20), self.tau.animate.set_value(38), FadeOut(parl), FadeOut(perl), FadeOut(sy),
+                  run_time=2.6)
         zl.move_to(W(np.array([0, a, 1.2])) + np.array([0.35, 0.1, 0]))
-        self.play(FadeIn(zv), FadeIn(zl), run_time=0.9)
+        o3 = np.array([3.0, 0.3, 0.0])
+        triad = VGroup(*[arrow(W(o3), W(o3 + 0.7 * d), DIM, 2.5, z=3, tip=0.14) for d in np.eye(3)],
+                       *[self.lab(t, W(o3 + 0.95 * d), size=24, color=DIM) for t, d in zip("xyz", np.eye(3))])
+        self.play(FadeIn(zl), FadeIn(triad), run_time=0.9)
         self.show(E(r"d\boldsymbol\ell\times\mathbf R=a\,dx\,\hat z", r"d\boldsymbol\ell", r"\mathbf R", r"a\,dx", r"\hat z", size=M_XL),
                   (r"-x\,dx", None), (r"\mathbf 0", None), rt=2.0, wait=1.5, structure=False)
         self.mark("trecho_componente_perpendicular")
         # ── 4 · entra na lei ─────────────────────────────────────────────────────────────────────────────
         lei = E(r"d\mathbf B=\frac{\mu_0}{4\pi}\frac{I\,d\boldsymbol\ell\times\mathbf R}{R^3}", r"d\mathbf B", "I", r"d\boldsymbol\ell",
                 r"\times", r"\mathbf R", "R^3", r"\frac{\mu_0}{4\pi}", "=", size=M_S)
-        lei_t = txt("lei de Biot–Savart", T_NOTE, DIM).move_to(AUX + np.array([0, 0.95, 0]))
-        self.show(lei, slot="A", rt=1.2, wait=0.5)
-        self.play(FadeIn(lei_t), run_time=0.5)
+        self.show(lei, slot="A", rt=1.2, wait=0.5, name="Lei de Biot–Savart")
         self.caption("Substitua na lei")
         self.hold(1.2)
         aux = A_()
@@ -147,19 +161,21 @@ class Sec5:
                   src={(r"d\mathbf B", 0): glyphs(aux, r"d\mathbf B", 0), ("I", 0): glyphs(aux, "I", 0),
                        ("R^3", 0): glyphs(aux, "R^3", 0), (r"\mu_0", 0): glyphs(aux, r"\frac{\mu_0}{4\pi}", 0)},
                   rt=2.6, wait=1.5)
-        self.play(FadeOut(lei_t), FadeOut(zv), FadeOut(zl), run_time=0.4)
+        zv.clear_updaters()
+        self.play(FadeOut(zv), FadeOut(zl), run_time=0.4)
         self.drop("A")
         self.mark("trecho_dB_R3")
         # ── 5 · triângulo grande: Pitágoras ──────────────────────────────────────────────────────────────
         self.seg_flags["par"] = True
         self.seg_flags["perp"] = True
-        self.play(self.beta.animate.set_value(0), self.tau.animate.set_value(0), run_time=1.2)
+        self.play(self.beta.animate.set_value(0), self.tau.animate.set_value(0), FadeOut(triad), FadeIn(sy), run_time=1.2)
         self.relayout("geo", 1.0)
         self.view_to(-2.7, -1.75, 1.4, 1.4)
         self.play(FadeIn(xl), FadeIn(al_), run_time=0.6)
         self.caption("Pitágoras: $R^2=x^2+a^2$")
         self.show(E(r"R=\sqrt{x^2+a^2}", "R", r"x^2+a^2", size=M_M), slot="A",
-                  src={("R", 0): Rl, (r"x^2+a^2", 0): [xl, al_]}, rt=2.0, wait=2.0)
+                  src={("R", 0): Rl, (r"x^2+a^2", 0): [xl, al_]}, rt=2.0, wait=2.0,
+                  name="Teorema de Pitágoras")
         self.show(E(r"d\mathbf B=\frac{\mu_0 I}{4\pi}\frac{a\,dx}{(x^2+a^2)^{3/2}}\,\hat z", r"d\mathbf B", "I", r"a\,dx", r"\hat z",
                     r"(x^2+a^2)^{3/2}", r"\mu_0", "=", size=M_M, colors={r"(x^2+a^2)^{3/2}": VIOLET}),
                   ("R^3", r"(x^2+a^2)^{3/2}"), rt=2.2, wait=1.5)
@@ -204,7 +220,7 @@ class Sec5:
         self.view_to(-4.3, -1.3, 0.95, 1.2)
         self.show(E(r"\tan\alpha=\frac{x}{a}", r"\tan\alpha", r"\frac{x}{a}", size=M_L, colors={r"\tan\alpha": CYAN}), slot="A",
                   src={(r"\frac{x}{a}", 0): [xl, al_]}, rt=1.8, wait=1.5)
-        self.caption("Reescreva $x$ em função de $\\alpha$")
+        self.caption("Troque $x$ por $\\alpha$")
         self.show(E(r"x=a\tan\alpha", r"a\tan\alpha", size=M_L, colors={r"a\tan\alpha": CYAN}), (r"\tan\alpha", r"a\tan\alpha"),
                   slot="A", rt=1.8, wait=1.5)
         self.show(E(r"dx=a\sec^2\alpha\,d\alpha", "dx", r"a\sec^2\alpha\,d\alpha", size=M_L, colors={r"a\sec^2\alpha\,d\alpha": CYAN}),
@@ -243,10 +259,13 @@ class Sec5:
                     r"a^2\sec^2\alpha\,d\alpha", r"a^3\sec^3\alpha", r"\mu_0", "=", size=M_L,
                     colors={r"a^2\sec^2\alpha\,d\alpha": CYAN, r"a^3\sec^3\alpha": CYAN}),
                   (r"a\sec^2\alpha\,d\alpha", r"a^2\sec^2\alpha\,d\alpha"), rt=2.0, wait=1.2, structure=False)
-        self.show(E(r"\frac{a^2}{a^3}=\frac{1}{a}\ ,\qquad\frac{\sec^2\alpha}{\sec^3\alpha}=\frac{1}{\sec\alpha}=\cos\alpha", r"\cos\alpha",
-                    size=M_L, colors={r"\cos\alpha": CYAN}), slot="A", rt=1.8, wait=2.2)
+        self.caption("Cancele as potências de $a$")
+        self.show(E(r"\frac{a^2}{a^3}=\frac{1}{a}", size=M_L), slot="A", rt=1.6, wait=1.6)
+        self.caption("Cancele as secantes")
+        self.show(E(r"\frac{\sec^2\alpha}{\sec^3\alpha}=\frac{1}{\sec\alpha}", size=M_L), slot="A", rt=1.6, wait=1.6)
+        self.show(E(r"\frac{1}{\sec\alpha}=\cos\alpha", r"\cos\alpha", size=M_L, colors={r"\cos\alpha": CYAN}), slot="A", rt=1.4, wait=1.8)
         aux4 = A_()
-        self.caption("Cancele potências de $a$ e as secantes")
+        self.caption("Fica $\\cos\\alpha\\,d\\alpha$")
         self.show(E(r"d\mathbf B=\frac{\mu_0 I}{4\pi a}\cos\alpha\,d\alpha\,\hat z", r"d\mathbf B", "I", r"\hat z", r"\cos\alpha",
                     r"d\alpha", r"\mu_0", "=", size=M_XL),
                   (r"a^2\sec^2\alpha\,d\alpha", r"d\alpha"), (r"a^3\sec^3\alpha", None),
@@ -263,7 +282,8 @@ class Sec5:
         self.play(FadeIn(al_a), FadeIn(al_b), run_time=0.8)
         self.caption("Os limites são os ângulos nas extremidades")
         self.show(E(r"\alpha_A<0<\alpha_B", r"\alpha_A", r"\alpha_B", size=M_L), slot="A", src={(r"\alpha_A", 0): al_a, (r"\alpha_B", 0): al_b},
-                  rt=1.8, wait=1.5)
+                  rt=1.8, wait=0)
+        self.destaca([al_a, al_b], 1.5)
         aux = A_()
         self.show(E(r"B_{\rm trecho}=\frac{\mu_0 I}{4\pi a}\int_{\alpha_A}^{\alpha_B}\cos\alpha\,d\alpha", r"B_{\rm trecho}", "I", r"\cos\alpha", r"d\alpha",
                     r"\alpha_A", r"\alpha_B", r"\mu_0", "=", size=M_M),
@@ -300,7 +320,7 @@ class Sec5:
         def geom():
             L, P = self.Lw.get_value(), W([0, a, 0])
             clip = 3.0
-            g = VGroup(Line(W([-min(L, clip), 0, 0]), W([min(L, clip), 0, 0]), color=BLUE_L, stroke_width=7), Dot(P, radius=0.11),
+            g = VGroup(Line(W([-min(L, clip), 0, 0]), W([min(L, clip), 0, 0]), color=STEEL, stroke_width=7), Dot(P, radius=0.11),
                        DashedLine(W([0, 0, 0]), P, color=VIOLET, stroke_width=2.4))
             for s in (-1, 1):
                 fr = min(1, clip / L)
@@ -310,7 +330,7 @@ class Sec5:
                     g.add(Dot(W([s * L, 0, 0]), color=GREEN, radius=0.09))
                 else:
                     # a fonte continua além do quadro
-                    g.add(arrow(W([s * clip, 0, 0]), W([s * (clip + 0.45), 0, 0]), BLUE_L, 6, tip=0.22))
+                    g.add(arrow(W([s * clip, 0, 0]), W([s * (clip + 0.45), 0, 0]), STEEL, 6, tip=0.22))
                 alv = math.atan2(L, a)
                 g.add(ParametricFunction(lambda u, s=s: W(np.array([0, a, 0]) + 0.7 * np.array([s * math.sin(u), -math.cos(u), 0])),
                                          t_range=[0, alv], color=CYAN, stroke_width=3.2, fill_opacity=0))
@@ -321,6 +341,7 @@ class Sec5:
         a1 = self.lab(r"\alpha_1", W([-0.75, a - 0.95, 0]), r"\alpha_1", size=M_M, colors={r"\alpha_1": CYAN})
         a2 = self.lab(r"\alpha_2", W([0.75, a - 0.95, 0]), r"\alpha_2", size=M_M, colors={r"\alpha_2": CYAN})
         self.add(geo)
+        self.add(self.flow([lambda u: W([-2.5 + 5.0 * u, 0, 0])], count=9))     # o fio carrega corrente: o fluxo segue vivo na cena
         self.play(FadeIn(geo), FadeIn(pl), FadeIn(a1), FadeIn(a2), run_time=1.0)
         nums = VGroup(E(r"\alpha_1=\alpha_2=", size=M_S), DecimalNumber(0, num_decimal_places=1, unit=r"^\circ", font_size=40)).arrange(
             RIGHT, buff=0.2).move_to(AUX)
@@ -339,7 +360,8 @@ class Sec5:
         self.show(E(r"\sin\alpha_1\to1\ ,\quad\sin\alpha_2\to1", r"\sin\alpha_1", r"\sin\alpha_2", size=M_M), slot="A", rt=1.4, wait=2.5)
         self.show(E(r"B_\infty=\frac{\mu_0 I}{4\pi a}\left(1+1\right)", r"B_\infty", "I", r"\mu_0", "=", size=M_M),
                   (r"B_{\rm trecho}", r"B_\infty"), (r"\sin\alpha_1", None), (r"\sin\alpha_2", None), rt=2.0, wait=2.0)
-        self.show(E(r"B_\infty=\frac{\mu_0 I}{2\pi a}", r"B_\infty", "I", r"\mu_0", "=", size=M_L), rt=2.0, wait=1.5)
+        self.show(E(r"B_\infty=\frac{\mu_0 I}{2\pi a}", r"B_\infty", "I", r"\mu_0", "=", size=M_L), rt=2.0, wait=1.5,
+                  name="Campo de um fio retilíneo infinito")
         self.drop("A")
         bx = box(self.slots["H"]["eq"], MAG)
         self.play(FadeIn(bx), run_time=0.5)
@@ -356,8 +378,8 @@ class Sec5:
         self.I2s = 1
         w1 = self.tube([X1, -2.0, 0], [X1, 2.0, 0])
         f1 = self.flow([lambda u: np.array([X1, -2.0 + 4.0 * u, 0])], count=8)
-        a1 = arrow([X1 - 0.55, YC - 0.5, 0], [X1 - 0.55, YC + 0.6, 0], GREEN, 6)
-        i1 = self.lab("I_1", [X1 - 1.0, YC + 0.05, 0], "I_1", size=M_S)
+        a1 = arrow([X1 + 0.5, YC + 1.85, 0], [X1 + 0.5, YC + 2.55, 0], GREEN, 6)
+        i1 = self.lab("I_1", [X1 + 0.95, YC + 2.25, 0], "I_1", size=M_S)
         self.play(Create(w1), run_time=1.0)
         self.add(f1)
         self.play(FadeIn(a1), FadeIn(i1), run_time=0.8)
@@ -367,26 +389,27 @@ class Sec5:
         syms = VGroup()
         for dist in (0.9, 1.7, 3.0):
             for yy in (YC - 1.3, YC, YC + 1.3):
-                rad = 0.2 * min(1.0, 1.15 / dist) + 0.05
-                syms.add(self.out_symbol(np.array([X1 + dist, yy, 0]), -1, rad))
+                syms.add(self.out_symbol(np.array([X1 + dist, yy, 0]), -1, 0.14))
                 if dist < 3.0:
-                    syms.add(self.out_symbol(np.array([X1 - dist - 0.4, yy, 0]), 1, rad))
+                    syms.add(self.out_symbol(np.array([X1 - dist - 0.15, yy, 0]), 1, 0.14))
         self.play(LaggedStart(*[FadeIn(s) for s in syms], lag_ratio=0.05), run_time=2.0)
-        self.caption("Mão direita: à direita do fio, $\\mathbf B_1$ entra na tela; à esquerda, sai")
+        self.caption("Mão direita: $\\otimes$ à direita do fio, $\\odot$ à esquerda")
         p2 = np.array([X2, YC, 0])
         b1l = self.lab(r"\mathbf B_1", p2 + np.array([0.0, 0.55, 0]), r"\mathbf B_1", size=M_S)
         dline = VGroup(DashedLine([X1, -2.35, 0], [X2, -2.35, 0], color=VIOLET, stroke_width=3), self.lab("d", [(X1 + X2) / 2, -2.65, 0], "d", size=M_S))
         self.play(FadeIn(b1l), FadeIn(dline), run_time=1.0)
         self.hold(2.0)
         self.show(E(r"B_1=\frac{\mu_0 I_1}{2\pi d}", r"B_1", "I_1", "d", r"\mu_0", size=M_L),
-                  src={(r"B_1", 0): b1l, ("I_1", 0): i1, ("d", 0): dline[1]}, rt=2.2, wait=1.5)
+                  src={(r"B_1", 0): b1l, ("I_1", 0): i1, ("d", 0): dline[1]}, rt=2.2, wait=1.5,
+                  name="Campo de um fio retilíneo infinito")
+        self.caption("A intensidade está na fórmula: $B_1\\propto1/d$")
         self.mark("fios_campo_no_segundo")
         # fio 2, corrente I₂ (estado discreto: I2s = ±1)
         w2 = self.tube([X2, -2.0, 0], [X2, 2.0, 0])
         f2 = self.flow([lambda u: np.array([X2, -2.0 + 4.0 * u, 0])], count=8, direction=lambda: self.I2s)
         a2 = always_redraw(lambda: arrow([X2 + 0.55, YC - 0.55 * self.I2s, 0], [X2 + 0.55, YC + 0.55 * self.I2s, 0], GREEN, 6))
         i2 = self.lab("I_2", [X2 + 1.0, YC + 0.9, 0], "I_2", size=M_S)
-        La = always_redraw(lambda: arrow([X2 + 0.2, YC - 0.9 * self.I2s - 0.6, 0], [X2 + 0.2, YC + 0.9 * self.I2s - 0.6, 0], GREEN, 3, tip=0.18))
+        La = always_redraw(lambda: arrow([X2 + 0.2, YC - 0.9 * self.I2s - 0.6, 0], [X2 + 0.2, YC + 0.9 * self.I2s - 0.6, 0], WHITE, 3, tip=0.18))
         Lm = self.lab(r"\mathbf L", [X2 + 0.55, YC - 1.45, 0], r"\mathbf L", size=M_S)
         self.play(Create(w2), run_time=0.8)
         self.add(f2)
@@ -397,13 +420,14 @@ class Sec5:
         self.play(Create(fa), FadeIn(fm), run_time=1.0)
         self.caption("Força no fio 2: $\\mathbf L\\times\\mathbf B_1$ aponta para o fio 1")
         self.show(E(r"\mathbf F_2=I_2\,\mathbf L\times\mathbf B_1", r"\mathbf F_2", "I_2", r"\mathbf L", r"\mathbf B_1", size=M_M), slot="A",
-                  src={(r"\mathbf F_2", 0): fm, ("I_2", 0): i2, (r"\mathbf L", 0): Lm, (r"\mathbf B_1", 0): b1l}, rt=2.2, wait=1.5)
+                  src={(r"\mathbf F_2", 0): fm, ("I_2", 0): i2, (r"\mathbf L", 0): Lm, (r"\mathbf B_1", 0): b1l}, rt=2.2, wait=1.5,
+                  name="Força magnética sobre um fio")
         aux = self.slots["A"]["eq"]
         self.show(E(r"F_2=I_2\,L\,\frac{\mu_0 I_1}{2\pi d}", "I_1", "I_2", r"\mu_0", "L", "=", size=M_L),
                   src={("I_2", 0): glyphs(aux, "I_2", 0), ("L", 0): glyphs(aux, r"\mathbf L", 0)}, rt=2.4, wait=1.5)
         self.show(E(r"\frac{F_2}{L}=\frac{\mu_0 I_1 I_2}{2\pi d}", "I_1", "I_2", r"\mu_0", "=", size=M_L), ("L", None), rt=2.2, wait=1.5)
         self.drop("A")
-        unit = E(r"\left[\frac{F_2}{L}\right]=\mathrm{N/m}", size=M_S).move_to([3.95, 0.35, 0])
+        unit = E(r"\left[\frac{F_2}{L}\right]=\mathrm{N/m}", size=M_S).move_to([3.95, -0.1, 0])
         self.play(FadeIn(unit), run_time=0.8)
         self.caption("Mesmo sentido de corrente: os fios se atraem")
         self.mark("fios_atracao")
@@ -412,4 +436,8 @@ class Sec5:
         self.I2s = -1
         self.caption("Inverta $I_2$: $\\mathbf B_1$ não muda, a força inverte")
         self.mark("fios_repulsao")
-        self.hold(7)
+        self.hold(2.5)
+        self.I2s = 1                    # mesmo sentido: atração
+        self.hold(2.0)
+        self.I2s = -1                   # sentidos opostos: repulsão
+        self.hold(2.0)

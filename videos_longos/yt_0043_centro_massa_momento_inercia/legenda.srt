@@ -1,0 +1,1658 @@
+1
+00:00:00,140 --> 00:00:04,320
+Lembra da lata pesada? Raio um,
+altura um, em pé na origem,
+
+2
+00:00:04,360 --> 00:00:07,940
+feita de um material que fica mais
+densa conforme se afasta da origem:
+
+3
+00:00:07,980 --> 00:00:11,860
+leve lá no fundo, perto do centro,
+e pesada na quina da tampa.
+
+4
+00:00:11,900 --> 00:00:16,580
+A densidade é a distância até a origem,
+raiz de s ao quadrado mais z ao quadrado,
+
+5
+00:00:16,620 --> 00:00:20,520
+e a lata é uma caixa em cilíndricas.
+A gente já sabe quanto ela pesa.
+
+6
+00:00:20,560 --> 00:00:23,900
+Agora vêm duas perguntas novas,
+que qualquer engenheiro faria.
+
+7
+00:00:23,940 --> 00:00:28,220
+Primeira: onde ela equilibra? Ou seja,
+onde fica o centro de massa dela:
+
+8
+00:00:28,260 --> 00:00:31,690
+no meio da altura, ou mais perto
+da tampa, que é mais pesada?
+
+9
+00:00:31,760 --> 00:00:35,340
+Segunda: quanto custa colocar
+ela para girar em volta do eixo,
+
+10
+00:00:35,380 --> 00:00:38,780
+como um pião? Custar, aqui,
+é resistir a ganhar giro,
+
+11
+00:00:38,820 --> 00:00:41,200
+e quem mede isso é o momento de inércia.
+
+12
+00:00:41,240 --> 00:00:45,240
+Se a lata fosse comum, de material
+uniforme, as duas respostas saem quase de
+
+13
+00:00:45,280 --> 00:00:49,780
+cabeça: o equilíbrio fica no meio da
+altura, e o giro custa metade de M R ao
+
+14
+00:00:49,820 --> 00:00:53,720
+quadrado. E a lata pesada?
+Mesmo formato, mesma lata,
+
+15
+00:00:53,760 --> 00:00:57,610
+só que a massa mora em outro lugar.
+É isso que o vídeo de hoje vai medir.
+
+16
+00:00:57,660 --> 00:01:01,620
+As duas perguntas se resolvem do mesmo
+jeito: pega um pedacinho da lata e
+
+17
+00:01:01,660 --> 00:01:06,340
+pergunta quanto ele contribui. A massa de
+um pedacinho é a densidade vezes o volume
+
+18
+00:01:06,380 --> 00:01:08,620
+dele: dm igual a ρ dV.
+
+19
+00:01:08,660 --> 00:01:12,720
+Repara nesses dois pedaços do mesmo
+tamanho: o de perto da origem quase não
+
+20
+00:01:12,760 --> 00:01:15,780
+pesa, o da quina pesa
+bastante. Para o equilíbrio,
+
+21
+00:01:15,820 --> 00:01:19,080
+cada pedaço entra com a altura
+dele, pesada pela massa:
+
+22
+00:01:19,120 --> 00:01:22,760
+quem é pesado e está alto puxa
+o ponto de equilíbrio para cima.
+
+23
+00:01:22,800 --> 00:01:27,000
+Para o giro, cada pedaço entra com a
+massa vezes a distância até o eixo,
+
+24
+00:01:27,040 --> 00:01:30,380
+ao quadrado: quem está longe
+do eixo custa muito mais.
+
+25
+00:01:30,420 --> 00:01:33,840
+E a integral tripla soma
+tudo isso, pedaço por pedaço.
+
+26
+00:01:33,880 --> 00:01:36,540
+Então o roteiro é:
+primeiro o centro de massa,
+
+27
+00:01:36,580 --> 00:01:39,580
+com uma taça de exemplo;
+depois o momento de inércia,
+
+28
+00:01:39,620 --> 00:01:42,740
+com o cilindro e a esfera;
+e no fim, a lata pesada,
+
+29
+00:01:42,780 --> 00:01:45,700
+com as duas contas
+inteiras. Fala, pessoal!
+
+30
+00:01:45,740 --> 00:01:50,240
+Bem-vindos ao Parallax Lab! Hoje é dia de
+centro de massa e momento de inércia na
+
+31
+00:01:50,280 --> 00:01:54,400
+integral tripla: de onde vêm as fórmulas,
+quando a simetria resolve metade do
+
+32
+00:01:54,440 --> 00:01:57,500
+trabalho, os dois clássicos,
+cilindro e esfera,
+
+33
+00:01:57,540 --> 00:02:01,980
+e a lata pesada, que vai equilibrar e
+girar de um jeito diferente da lata comum.
+
+34
+00:02:02,020 --> 00:02:05,500
+Começa pelo mais simples: três
+bolinhas com massas diferentes,
+
+35
+00:02:05,540 --> 00:02:08,840
+espalhadas no espaço. Onde fica
+o ponto de equilíbrio delas?
+
+36
+00:02:08,880 --> 00:02:13,700
+É uma média das posições, só que pesada:
+cada x entra multiplicado pela sua
+
+37
+00:02:13,740 --> 00:02:16,320
+massa, e no fim divide pela massa total.
+
+38
+00:02:16,360 --> 00:02:19,500
+Como no espaço tem três
+coordenadas, é a mesma média,
+
+39
+00:02:19,540 --> 00:02:23,540
+três vezes: uma para o x,
+uma para o y e uma para o z.
+
+40
+00:02:23,580 --> 00:02:27,360
+E repara que o ponto de equilíbrio
+fica mais perto da mais pesada,
+
+41
+00:02:27,400 --> 00:02:30,740
+como numa gangorra em que o
+adulto senta mais perto do apoio.
+
+42
+00:02:30,780 --> 00:02:35,190
+Não é o meio das três posições:
+é a média pesada pelas massas.
+
+43
+00:02:35,240 --> 00:02:38,820
+Num corpo de verdade, não tem
+bolinha: a massa está espalhada.
+
+44
+00:02:38,860 --> 00:02:41,340
+Então a gente faz o que
+sempre faz no Cálculo:
+
+45
+00:02:41,380 --> 00:02:44,260
+quebra o corpo em caixinhas.
+Se a caixinha é pequena,
+
+46
+00:02:44,300 --> 00:02:49,080
+a densidade quase não muda dentro dela,
+e a massa do pedacinho é quase ρ vezes
+
+47
+00:02:49,120 --> 00:02:53,660
+delta V. A soma de x vezes ρ vezes
+delta V, com as caixinhas cada vez
+
+48
+00:02:53,700 --> 00:02:57,060
+menores, vira integral tripla de x ρ dV.
+
+49
+00:02:57,100 --> 00:03:00,340
+Embaixo, no lugar da soma
+das massas, a massa total:
+
+50
+00:03:00,380 --> 00:03:05,020
+a integral tripla de ρ. Dividindo pela
+massa, saem as três coordenadas do centro
+
+51
+00:03:05,060 --> 00:03:08,360
+de massa: x̄, ȳ e z̄.
+
+52
+00:03:08,400 --> 00:03:12,820
+E as três integrais de cima têm nome:
+são os momentos em relação aos planos.
+
+53
+00:03:12,860 --> 00:03:15,780
+O momento em relação ao
+plano x y, por exemplo,
+
+54
+00:03:15,820 --> 00:03:19,100
+usa a altura z, que é a distância
+até esse plano com sinal:
+
+55
+00:03:19,140 --> 00:03:21,340
+positiva acima, negativa abaixo.
+
+56
+00:03:21,380 --> 00:03:26,210
+Do mesmo jeito, o plano y z
+usa o x, e o plano x z usa o y.
+
+57
+00:03:26,520 --> 00:03:31,260
+Mas o que esse ponto tem de especial?
+Pensa num plano deitado na altura z̄,
+
+58
+00:03:31,300 --> 00:03:35,500
+cortando a lata. Agora mede a distância
+de cada pedaço até esse plano,
+
+59
+00:03:35,540 --> 00:03:39,680
+com sinal: positiva para quem está
+acima, negativa para quem está abaixo,
+
+60
+00:03:39,720 --> 00:03:42,460
+e pesa cada uma pela massa. Soma tudo.
+
+61
+00:03:42,500 --> 00:03:46,100
+Para ver quanto dá, separa
+em duas integrais: a de z ρ,
+
+62
+00:03:46,140 --> 00:03:50,320
+e a de z̄ ρ. O z̄ é um número
+só, então sai da integral,
+
+63
+00:03:50,360 --> 00:03:55,050
+e o que sobra é a massa. Então a primeira
+é o momento em relação ao plano x y,
+
+64
+00:03:55,280 --> 00:03:57,740
+e a segunda é z̄ vezes M.
+
+65
+00:03:57,780 --> 00:04:02,460
+Só que, pela definição,
+o momento é exatamente M vezes z̄.
+
+66
+00:04:02,500 --> 00:04:06,980
+Um menos o outro: zero. Esse zero quer
+dizer que o que está acima do plano,
+
+67
+00:04:07,020 --> 00:04:10,200
+pesado pela distância,
+equilibra o que está abaixo.
+
+68
+00:04:10,240 --> 00:04:13,400
+E vale para qualquer plano que
+passe pelo centro de massa,
+
+69
+00:04:13,440 --> 00:04:15,640
+deitado, em pé ou inclinado.
+
+70
+00:04:15,680 --> 00:04:18,620
+O equilíbrio de verdade vem
+quando entra a gravidade:
+
+71
+00:04:18,660 --> 00:04:23,420
+com o peso uniforme, a força resultante
+age na vertical que passa pelo centro de
+
+72
+00:04:23,460 --> 00:04:27,860
+massa. É por isso que uma chapa fica
+parada num lápis quando o lápis está bem
+
+73
+00:04:27,900 --> 00:04:32,440
+embaixo desse ponto: o plano em pé que
+passa pelo lápis divide a massa em dois
+
+74
+00:04:32,480 --> 00:04:36,350
+lados que se cancelam, e o peso
+não gira a chapa para lado nenhum.
+
+75
+00:04:36,540 --> 00:04:41,010
+E agora uma economia que vale ouro:
+nem toda conta precisa ser feita.
+
+76
+00:04:41,080 --> 00:04:43,840
+Pega a lata pesada: ela é
+redonda em volta do eixo,
+
+77
+00:04:43,880 --> 00:04:48,380
+e a densidade não depende do ângulo,
+só da distância ao eixo e da altura.
+
+78
+00:04:48,420 --> 00:04:51,620
+Para cada pedaço de um lado,
+tem um gêmeo do outro lado,
+
+79
+00:04:51,660 --> 00:04:54,280
+com a mesma massa e o x trocado de sinal.
+
+80
+00:04:54,320 --> 00:04:58,920
+Na conta, aparece assim: x é s
+cosseno de θ, e o momento fica com a
+
+81
+00:04:58,960 --> 00:05:01,380
+integral do cosseno numa volta inteira.
+
+82
+00:05:01,420 --> 00:05:05,330
+Essa integral a gente já sabe:
+seno de dois π menos seno de zero,
+
+83
+00:05:05,380 --> 00:05:09,600
+zero. Então x̄ é zero,
+e pelo mesmo motivo, com o seno,
+
+84
+00:05:09,640 --> 00:05:13,380
+ȳ também. Quando o corpo
+e a densidade giram juntos,
+
+85
+00:05:13,420 --> 00:05:16,940
+o centro de massa está no eixo,
+e só sobra calcular o z̄.
+
+86
+00:05:16,980 --> 00:05:20,210
+Mas atenção: a simetria
+tem que ser dos dois.
+
+87
+00:05:20,260 --> 00:05:24,400
+E se a densidade fosse um mais x,
+mais pesada do lado direito?
+
+88
+00:05:24,440 --> 00:05:27,060
+O cilindro é o mesmo, raio um e altura um.
+
+89
+00:05:27,100 --> 00:05:31,800
+A massa continua π, porque a parte do x
+se cancela pelo mesmo motivo de antes.
+
+90
+00:05:31,840 --> 00:05:34,900
+Já no momento, o x ao
+quadrado não troca de sinal:
+
+91
+00:05:34,940 --> 00:05:38,110
+integral do cosseno ao
+quadrado numa volta, que dá π,
+
+92
+00:05:38,180 --> 00:05:41,080
+vezes a integral de s ao
+cubo, que dá um quarto,
+
+93
+00:05:41,120 --> 00:05:45,120
+vezes um da altura. Dá π sobre
+quatro, e dividindo pela massa,
+
+94
+00:05:45,160 --> 00:05:49,860
+x̄ igual a um quarto. O centro de
+massa andou um quarto para a direita,
+
+95
+00:05:49,900 --> 00:05:53,520
+para o lado pesado. A forma
+era simétrica; a densidade,
+
+96
+00:05:53,560 --> 00:05:55,740
+não. Primeiro exemplo: uma taça.
+
+97
+00:05:55,780 --> 00:06:00,300
+É o sólido que fica acima do paraboloide
+z igual a x ao quadrado mais y ao
+
+98
+00:06:00,340 --> 00:06:04,500
+quadrado, e abaixo do plano z igual
+a um, feito de um material uniforme,
+
+99
+00:06:04,540 --> 00:06:09,440
+com densidade constante k. Em cilíndricas,
+x ao quadrado mais y ao quadrado
+
+100
+00:06:09,480 --> 00:06:14,080
+vira s ao quadrado, e a taça fica:
+s ao quadrado menor ou igual a z,
+
+101
+00:06:14,120 --> 00:06:17,920
+menor ou igual a um. Olha a sonda
+em pé: ela entra pelo fundo curvo,
+
+102
+00:06:17,960 --> 00:06:22,000
+em z igual a s ao quadrado,
+e sai pela boca, em z igual a um.
+
+103
+00:06:22,040 --> 00:06:25,480
+A sombra no chão é o disco
+de raio um: s de zero a um,
+
+104
+00:06:25,520 --> 00:06:29,020
+θ de zero a dois π.
+A taça é redonda e uniforme,
+
+105
+00:06:29,060 --> 00:06:32,580
+então a simetria já matou o x̄ e o ȳ.
+
+106
+00:06:32,620 --> 00:06:37,340
+Sobra o z̄: o momento em relação
+ao plano x y dividido pela massa.
+
+107
+00:06:37,380 --> 00:06:40,620
+E repara que o k sai das
+duas integrais e cancela:
+
+108
+00:06:40,660 --> 00:06:44,300
+num corpo uniforme, o centro
+de massa só depende da forma.
+
+109
+00:06:44,340 --> 00:06:47,640
+Antes da conta, um chute.
+A taça vai de zero a um;
+
+110
+00:06:47,680 --> 00:06:50,960
+o meio da altura é um meio.
+Será que o equilíbrio fica ali?
+
+111
+00:06:51,000 --> 00:06:55,300
+Primeiro o volume: integral tripla
+de um, com o fator s das cilíndricas.
+
+112
+00:06:55,340 --> 00:06:59,220
+A de dentro, em z, é a mais
+fácil: o s não depende de z,
+
+113
+00:06:59,260 --> 00:07:04,000
+então a primitiva é s vezes z,
+aplicada de s ao quadrado até um.
+
+114
+00:07:04,040 --> 00:07:08,100
+Sobra s menos s ao cubo, que
+é a altura da sonda vezes o s.
+
+115
+00:07:08,140 --> 00:07:11,940
+Agora em s: integral de potência,
+sobe o expoente e divide;
+
+116
+00:07:11,980 --> 00:07:15,550
+aplica de zero a um, e um meio
+menos um quarto dá um quarto.
+
+117
+00:07:15,600 --> 00:07:19,100
+Fecha com a volta inteira em
+θ: dois π vezes um quarto,
+
+118
+00:07:19,140 --> 00:07:22,220
+π sobre dois. Agora o
+momento: a mesma integral,
+
+119
+00:07:22,260 --> 00:07:25,320
+com um z a mais. Na de
+dentro, o s fica parado,
+
+120
+00:07:25,360 --> 00:07:28,420
+e a primitiva de z é z
+ao quadrado sobre dois;
+
+121
+00:07:28,460 --> 00:07:31,140
+aplica os limites, o de
+cima menos o de baixo,
+
+122
+00:07:31,180 --> 00:07:34,420
+e distribui o s. Depois,
+potência de novo em s:
+
+123
+00:07:34,460 --> 00:07:37,180
+um quarto menos um doze
+avos, que é um sexto.
+
+124
+00:07:37,220 --> 00:07:39,660
+E multiplica por dois π: π sobre três.
+
+125
+00:07:39,700 --> 00:07:43,100
+O z̄ é π sobre três
+dividido por π sobre dois:
+
+126
+00:07:43,140 --> 00:07:45,520
+dois terços. Ficou acima do meio!
+
+127
+00:07:45,560 --> 00:07:49,080
+E faz sentido: a taça é fininha
+no fundo e larga na boca,
+
+128
+00:07:49,120 --> 00:07:51,660
+então a maior parte do
+material mora lá em cima,
+
+129
+00:07:51,700 --> 00:07:54,440
+e puxa o equilíbrio para
+cima. Se fosse um cilindro,
+
+130
+00:07:54,480 --> 00:07:57,820
+o chute de um meio estaria certo.
+Agora a segunda pergunta:
+
+131
+00:07:57,860 --> 00:08:02,060
+quanto custa colocar para girar.
+Imagina a lata girando em volta do eixo,
+
+132
+00:08:02,100 --> 00:08:06,500
+com velocidade angular ω. Cada pedaço
+anda numa roda em volta do eixo,
+
+133
+00:08:06,540 --> 00:08:11,400
+e a velocidade de cada pedaço é ω vezes
+s: quem está longe do eixo anda mais
+
+134
+00:08:11,440 --> 00:08:13,780
+rápido, como o cavalinho
+de fora do carrossel.
+
+135
+00:08:13,820 --> 00:08:17,660
+A energia de movimento desse
+pedaço é meio dm v ao quadrado,
+
+136
+00:08:17,700 --> 00:08:21,260
+e trocando o v, aparece
+meio de s ao quadrado dm,
+
+137
+00:08:21,300 --> 00:08:26,200
+vezes ω ao quadrado. Para um ponto só,
+o que fica do lado do ω ao quadrado é a
+
+138
+00:08:26,240 --> 00:08:29,680
+massa vezes s ao quadrado:
+isso é o momento de inércia.
+
+139
+00:08:29,720 --> 00:08:34,660
+Com vários pedaços, soma: cada um entra
+com a sua massa vezes a sua distância ao
+
+140
+00:08:34,700 --> 00:08:39,259
+eixo, ao quadrado. Num corpo contínuo,
+a soma vira integral tripla de s ao
+
+141
+00:08:39,299 --> 00:08:43,440
+quadrado ρ dV. A unidade é
+quilograma vezes metro ao quadrado.
+
+142
+00:08:43,480 --> 00:08:46,620
+A massa diz quanto custa
+empurrar um corpo em linha reta;
+
+143
+00:08:46,660 --> 00:08:49,500
+o momento de inércia
+diz quanto custa girar.
+
+144
+00:08:49,540 --> 00:08:52,820
+Com o eixo fixo, para dar
+a mesma aceleração de giro,
+
+145
+00:08:52,860 --> 00:08:57,130
+quanto maior o momento de inércia,
+maior o torque que você precisa fazer.
+
+146
+00:08:57,180 --> 00:09:01,420
+E o s ao quadrado é o detalhe que
+muda tudo: dobrar a distância ao eixo
+
+147
+00:09:01,460 --> 00:09:05,380
+quadruplica o custo. Um cuidado
+que derruba muita prova:
+
+148
+00:09:05,420 --> 00:09:08,750
+no momento de inércia,
+o s é a distância até o eixo,
+
+149
+00:09:08,820 --> 00:09:13,780
+não até a origem. Para o eixo z, o caminho
+mais curto até o eixo é horizontal,
+
+150
+00:09:13,820 --> 00:09:17,600
+então s ao quadrado é x ao
+quadrado mais y ao quadrado:
+
+151
+00:09:17,640 --> 00:09:22,560
+o z não entra. Se o eixo for o x,
+o que conta é y ao quadrado mais
+
+152
+00:09:22,600 --> 00:09:27,040
+z ao quadrado; e para o eixo y,
+x ao quadrado mais z ao quadrado.
+
+153
+00:09:27,080 --> 00:09:32,080
+Em cartesianas, o momento em relação ao
+eixo z fica integral de x ao quadrado
+
+154
+00:09:32,120 --> 00:09:35,840
+mais y ao quadrado, ρ dV.
+E não confunde com o r:
+
+155
+00:09:35,880 --> 00:09:39,660
+o r é a distância até a origem,
+e ele carrega o z junto.
+
+156
+00:09:39,700 --> 00:09:44,200
+Troca o eixo e o momento de inércia muda:
+um lápis gira fácil em volta do próprio
+
+157
+00:09:44,240 --> 00:09:47,670
+comprimento e difícil quando
+você gira ele como uma hélice.
+
+158
+00:09:47,720 --> 00:09:51,270
+Mesmo corpo, eixos diferentes,
+custos diferentes.
+
+159
+00:09:51,480 --> 00:09:54,180
+Agora o primeiro clássico:
+o cilindro uniforme,
+
+160
+00:09:54,220 --> 00:09:59,030
+raio R, altura h, densidade k,
+girando em volta do próprio eixo.
+
+161
+00:09:59,080 --> 00:10:03,220
+Em cilíndricas, o s ao quadrado da
+distância encontra o s do fator,
+
+162
+00:10:03,260 --> 00:10:06,770
+e vira s ao cubo: era essa a
+pergunta que tinha ficado no ar.
+
+163
+00:10:06,820 --> 00:10:10,420
+Como os limites são todos constantes
+e o integrando é um produto,
+
+164
+00:10:10,460 --> 00:10:14,760
+as três integrais se separam:
+uma em z, uma em s e uma em θ.
+
+165
+00:10:14,800 --> 00:10:18,860
+A de z dá a altura h; a de s,
+s à quarta sobre quatro,
+
+166
+00:10:18,900 --> 00:10:22,560
+dá R à quarta sobre quatro;
+e a de θ, a volta inteira,
+
+167
+00:10:22,600 --> 00:10:26,980
+dois π. Multiplica tudo:
+π k R à quarta h sobre dois.
+
+168
+00:10:27,020 --> 00:10:29,960
+A massa do cilindro é a
+densidade vezes o volume,
+
+169
+00:10:30,000 --> 00:10:33,520
+k π R ao quadrado h. Então
+separa um R ao quadrado,
+
+170
+00:10:33,560 --> 00:10:38,180
+e o que sobra é exatamente a massa:
+o momento de inércia é meio M R ao
+
+171
+00:10:38,220 --> 00:10:41,780
+quadrado. Por que meio? Se toda
+a massa estivesse na parede,
+
+172
+00:10:41,820 --> 00:10:45,160
+como num tubo fininho, cada
+pedaço estaria a distância R,
+
+173
+00:10:45,200 --> 00:10:47,480
+e daria M R ao quadrado inteiro.
+
+174
+00:10:47,520 --> 00:10:50,240
+O cilindro cheio tem
+muita massa perto do eixo,
+
+175
+00:10:50,280 --> 00:10:53,210
+que quase não custa nada,
+e por isso fica com a metade.
+
+176
+00:10:53,320 --> 00:10:57,660
+O segundo clássico: a bola
+uniforme, raio R, densidade k,
+
+177
+00:10:57,700 --> 00:11:01,080
+girando em volta de um diâmetro.
+Aqui as esféricas mandam.
+
+178
+00:11:01,120 --> 00:11:04,310
+E olha que bonito: a distância
+até o eixo é a sombra,
+
+179
+00:11:04,500 --> 00:11:09,280
+s igual a r seno de φ, o cateto do
+triângulo que tem o raio como hipotenusa.
+
+180
+00:11:09,320 --> 00:11:13,420
+Então s ao quadrado é r ao
+quadrado seno ao quadrado de φ.
+
+181
+00:11:13,460 --> 00:11:16,800
+Com o fator das esféricas,
+r ao quadrado seno de φ,
+
+182
+00:11:16,840 --> 00:11:20,870
+monta a integral: dentro,
+r à quarta e seno ao cubo de φ.
+
+183
+00:11:20,920 --> 00:11:25,720
+De novo tudo se separa:
+a de θ é dois π, a de r dá R à
+
+184
+00:11:25,760 --> 00:11:29,270
+quinta sobre cinco, e a de φ
+é a única que pede atenção.
+
+185
+00:11:29,380 --> 00:11:33,660
+Seno ao cubo: guarda um seno e troca
+os outros dois por um menos cosseno ao
+
+186
+00:11:33,700 --> 00:11:38,620
+quadrado. Chama de u o cosseno
+de φ; então du é menos seno de φ
+
+187
+00:11:38,660 --> 00:11:42,520
+dφ, e aquele seno que a gente
+guardou é justamente o que faltava.
+
+188
+00:11:42,560 --> 00:11:45,680
+Cuidado com os limites:
+quando φ vai de zero a π,
+
+189
+00:11:45,720 --> 00:11:49,240
+o cosseno vai de um até menos
+um, e os limites invertem.
+
+190
+00:11:49,280 --> 00:11:54,200
+O menos do du desvira os limites,
+e fica a integral de menos um a um de
+
+191
+00:11:54,240 --> 00:11:58,800
+um menos u ao quadrado. Aplica os
+limites: dois terços menos menos dois
+
+192
+00:11:58,840 --> 00:12:03,520
+terços, quatro terços. Junta
+tudo: oito π k R à quinta sobre
+
+193
+00:12:03,560 --> 00:12:07,360
+quinze. E o volume da bola
+é quatro terços π R ao cubo,
+
+194
+00:12:07,400 --> 00:12:10,840
+então a massa é k vezes isso.
+Divide um pelo outro:
+
+195
+00:12:10,880 --> 00:12:13,360
+oito quinze avos sobre quatro terços.
+
+196
+00:12:13,400 --> 00:12:15,620
+Dois quintos de M R ao quadrado!
+
+197
+00:12:15,660 --> 00:12:19,900
+E vale para qualquer diâmetro, porque
+a bola é igual em todas as direções.
+
+198
+00:12:19,940 --> 00:12:22,840
+Repara que é menos que o
+meio do cilindro: na bola,
+
+199
+00:12:22,880 --> 00:12:25,600
+a massa fica, em média,
+mais perto do eixo.
+
+200
+00:12:25,640 --> 00:12:29,680
+Coloca os três lado a lado, todos
+com a mesma massa e o mesmo raio:
+
+201
+00:12:29,720 --> 00:12:34,400
+o tubo fininho custa M R ao quadrado,
+o cilindro cheio custa a metade,
+
+202
+00:12:34,440 --> 00:12:38,200
+e a bola, dois quintos.
+A ordem é sempre a mesma pergunta:
+
+203
+00:12:38,240 --> 00:12:40,460
+quanto da massa mora longe do eixo?
+
+204
+00:12:40,500 --> 00:12:45,180
+No tubo, tudo está na borda. No cilindro,
+muita coisa está perto do centro.
+
+205
+00:12:45,220 --> 00:12:49,040
+Na bola, é ainda menos:
+longe do eixo, perto do equador,
+
+206
+00:12:49,080 --> 00:12:53,440
+a bola fica baixinha, e aquela parede
+alta do cilindro quase não existe.
+
+207
+00:12:53,480 --> 00:12:56,720
+Um jeito de ver isso num
+número só é o raio de giração:
+
+208
+00:12:56,760 --> 00:13:00,280
+a distância até o eixo em que
+você poderia colocar toda a massa,
+
+209
+00:13:00,320 --> 00:13:03,080
+num anel fininho, sem
+mudar o custo de girar.
+
+210
+00:13:03,120 --> 00:13:07,160
+No tubo, é o próprio R.
+No cilindro, R sobre raiz de dois,
+
+211
+00:13:07,200 --> 00:13:11,880
+uns setenta e um por cento do raio;
+na bola, raiz de dois quintos vezes R,
+
+212
+00:13:11,920 --> 00:13:15,900
+uns sessenta e três por cento. É por isso
+que um volante de motor é feito com a
+
+213
+00:13:15,940 --> 00:13:20,320
+massa na borda: na mesma velocidade
+de giro, quanto mais longe do eixo,
+
+214
+00:13:20,360 --> 00:13:23,800
+mais energia ele guarda
+girando. Agora a lata pesada.
+
+215
+00:13:23,840 --> 00:13:26,400
+A massa dela a gente já
+tirou nas cilíndricas:
+
+216
+00:13:26,440 --> 00:13:30,120
+uns dois vírgula setenta e seis.
+Primeiro, onde ela equilibra.
+
+217
+00:13:30,160 --> 00:13:34,010
+A lata é redonda e a densidade
+só depende de s e de z,
+
+218
+00:13:34,060 --> 00:13:36,910
+então a simetria resolve
+dois terços do problema:
+
+219
+00:13:36,980 --> 00:13:39,410
+x̄ e ȳ são zero.
+
+220
+00:13:39,520 --> 00:13:42,891
+Monta o momento em relação
+ao plano x y: a altura z,
+
+221
+00:13:43,080 --> 00:13:47,000
+vezes a densidade, raiz de s
+ao quadrado mais z ao quadrado,
+
+222
+00:13:47,040 --> 00:13:49,280
+vezes o fator s, na caixa de sempre.
+
+223
+00:13:49,320 --> 00:13:52,400
+Por dentro, em s,
+o truque é o mesmo da massa:
+
+224
+00:13:52,440 --> 00:13:55,680
+chama de u o que está dentro
+da raiz, com o z parado.
+
+225
+00:13:55,720 --> 00:14:00,720
+A derivada em s é dois s, então
+o s do fator vira du sobre dois,
+
+226
+00:14:00,760 --> 00:14:05,240
+e os limites mudam junto: s igual a
+zero vira u igual a z ao quadrado,
+
+227
+00:14:05,280 --> 00:14:08,250
+e s igual a um vira um mais z ao quadrado.
+
+228
+00:14:08,300 --> 00:14:12,580
+Daí é integral de potência:
+raiz de u é u elevado a um meio,
+
+229
+00:14:12,620 --> 00:14:17,340
+sobe para três meios, e o um meio de
+fora com o dois terços dá um terço.
+
+230
+00:14:17,380 --> 00:14:20,220
+Aplica os limites, o de
+cima menos o de baixo;
+
+231
+00:14:20,260 --> 00:14:25,190
+e como z é positivo, z ao quadrado
+elevado a três meios é z ao cubo.
+
+232
+00:14:25,300 --> 00:14:30,280
+Agora a de z. Distribui o z: fica
+um terço da integral de z vezes um
+
+233
+00:14:30,320 --> 00:14:34,980
+mais z ao quadrado, elevado a três meios,
+menos um terço da integral de z à
+
+234
+00:14:35,020 --> 00:14:38,070
+quarta. E aqui aparece a
+diferença para a massa.
+
+235
+00:14:38,120 --> 00:14:42,030
+Lá, a integral em z precisou do
+triângulo e da secante à quinta.
+
+236
+00:14:42,100 --> 00:14:46,640
+Aqui, esse z que está multiplicando é
+exatamente a derivada do um mais z ao
+
+237
+00:14:46,680 --> 00:14:51,290
+quadrado, a menos de um dois. Então
+chama de w o um mais z ao quadrado:
+
+238
+00:14:51,360 --> 00:14:55,780
+z dz é dw sobre dois, e os
+limites vão de um a dois.
+
+239
+00:14:55,820 --> 00:14:59,320
+Integral de potência: sobe
+para cinco meios, divide,
+
+240
+00:14:59,360 --> 00:15:01,840
+e o meio com o dois quintos dá um quinto.
+
+241
+00:15:01,880 --> 00:15:05,820
+Dois elevado a cinco meios é dois
+ao quadrado vezes raiz de dois:
+
+242
+00:15:05,860 --> 00:15:09,220
+quatro raiz de dois. O pedaço
+do z ao cubo é tranquilo:
+
+243
+00:15:09,260 --> 00:15:13,630
+z à quarta, sobe para cinco,
+e com o um terço dá um quinze avos.
+
+244
+00:15:13,680 --> 00:15:18,000
+Agora junta os dois no denominador
+quinze: quatro raiz de dois menos dois,
+
+245
+00:15:18,040 --> 00:15:21,740
+sobre quinze. E a volta inteira
+em θ multiplica por dois π:
+
+246
+00:15:21,780 --> 00:15:25,460
+uns um vírgula cinquenta e três.
+Agora divide pela massa.
+
+247
+00:15:25,500 --> 00:15:29,020
+O π some, sobra uma fração
+com raízes e um logaritmo,
+
+248
+00:15:29,060 --> 00:15:32,940
+e o número é: zero vírgula
+cinquenta e cinco, mais ou menos.
+
+249
+00:15:32,980 --> 00:15:36,820
+Na lata comum, o equilíbrio ficava
+no meio, em zero vírgula cinco.
+
+250
+00:15:36,860 --> 00:15:41,340
+A lata pesada equilibra um pouco mais de
+cinco por cento da altura acima do meio,
+
+251
+00:15:41,380 --> 00:15:44,840
+porque a tampa, que está longe
+da origem, pesa mais que o fundo.
+
+252
+00:15:44,880 --> 00:15:48,180
+E o computador, integrando em
+cartesianas, confere o momento:
+
+253
+00:15:48,220 --> 00:15:51,960
+um vírgula cinco três um oito.
+Agora a segunda pergunta:
+
+254
+00:15:52,000 --> 00:15:54,240
+quanto custa girar a lata pesada.
+
+255
+00:15:54,280 --> 00:15:57,100
+Monta o momento de inércia:
+a distância até o eixo,
+
+256
+00:15:57,140 --> 00:16:00,460
+ao quadrado, vezes a
+densidade, vezes o fator s,
+
+257
+00:16:00,500 --> 00:16:04,740
+na mesma caixa. Repara que agora
+são dois s a mais que na massa:
+
+258
+00:16:04,780 --> 00:16:08,120
+o s ao quadrado da distância,
+junto com o s do fator,
+
+259
+00:16:08,160 --> 00:16:13,320
+dá s ao cubo, ds. A ideia é a mesma
+de antes, só que com uma peça extra.
+
+260
+00:16:13,360 --> 00:16:17,270
+Separa o s ao cubo em s
+ao quadrado vezes s ds;
+
+261
+00:16:17,340 --> 00:16:20,340
+o s ds vira du sobre dois, como sempre.
+
+262
+00:16:20,380 --> 00:16:24,910
+E o s ao quadrado que sobrou? Como u
+é s ao quadrado mais z ao quadrado,
+
+263
+00:16:24,980 --> 00:16:27,440
+s ao quadrado é u menos z ao quadrado.
+
+264
+00:16:27,480 --> 00:16:30,850
+Pronto: tudo virou u.
+Agora distribui a raiz de u:
+
+265
+00:16:30,940 --> 00:16:35,720
+u vezes u a um meio é u a três meios,
+e o z ao quadrado fica com u a um
+
+266
+00:16:35,760 --> 00:16:39,640
+meio. Duas potências, cada
+uma sobe o expoente e divide.
+
+267
+00:16:39,680 --> 00:16:42,580
+Aplica os limites, o de
+cima menos o de baixo;
+
+268
+00:16:42,620 --> 00:16:47,480
+e de novo, como z é positivo, z ao
+quadrado a cinco meios é z à quinta,
+
+269
+00:16:47,520 --> 00:16:50,620
+e a três meios, z ao cubo. Agora a de z.
+
+270
+00:16:50,660 --> 00:16:54,960
+Começa pelos dois pedaços sem raiz:
+menos um quinto de z à quinta,
+
+271
+00:16:55,000 --> 00:16:59,700
+mais um terço de z à quinta, que juntos
+dão dois quinze avos de z à quinta.
+
+272
+00:16:59,740 --> 00:17:03,860
+A integral disso de zero a um é
+dois quinze avos vezes um sexto:
+
+273
+00:17:03,900 --> 00:17:06,940
+um quarenta e cinco avos.
+Sobram os dois com raiz,
+
+274
+00:17:06,980 --> 00:17:10,369
+e eles pedem o triângulo de
+novo: cateto um, cateto z,
+
+275
+00:17:10,460 --> 00:17:13,260
+hipotenusa raiz de um mais z ao quadrado.
+
+276
+00:17:13,300 --> 00:17:18,000
+Com z igual a tangente de t,
+dz é secante ao quadrado de t d t,
+
+277
+00:17:18,040 --> 00:17:21,380
+e z de zero a um vira t
+de zero a π sobre quatro.
+
+278
+00:17:21,420 --> 00:17:24,900
+A raiz vira a secante:
+o primeiro vira secante à sétima,
+
+279
+00:17:24,940 --> 00:17:28,470
+porque são cinco secantes da
+potência e mais duas do dz.
+
+280
+00:17:28,580 --> 00:17:32,380
+O segundo tem um z ao quadrado na
+frente, que é tangente ao quadrado.
+
+281
+00:17:32,420 --> 00:17:36,820
+E aqui entra a identidade de sempre:
+tangente ao quadrado é secante ao quadrado
+
+282
+00:17:36,860 --> 00:17:41,020
+menos um. Então ele vira secante
+à sétima menos secante à quinta.
+
+283
+00:17:41,060 --> 00:17:45,780
+Junta os dois: um terço da secante à
+quinta, menos dois quinze avos da secante
+
+284
+00:17:45,820 --> 00:17:48,640
+à sétima, as duas de
+zero a π sobre quatro.
+
+285
+00:17:48,680 --> 00:17:52,240
+A secante à quinta já está pronta:
+foi o osso da massa da lata,
+
+286
+00:17:52,280 --> 00:17:55,740
+nas cilíndricas, pela recorrência.
+Falta só a secante à sétima,
+
+287
+00:17:55,780 --> 00:18:00,440
+e a mesma ferramenta resolve: a fórmula
+de recorrência troca a potência n pela
+
+288
+00:18:00,480 --> 00:18:04,000
+potência n menos dois e
+deixa um pedaço já integrado.
+
+289
+00:18:04,040 --> 00:18:08,160
+Com n igual a sete: um sexto de
+secante à quinta vezes tangente,
+
+290
+00:18:08,200 --> 00:18:12,020
+aplicado nos limites, mais cinco
+sextos da secante à quinta.
+
+291
+00:18:12,060 --> 00:18:15,160
+E os valores vêm do triângulo:
+em π sobre quatro,
+
+292
+00:18:15,200 --> 00:18:20,240
+secante raiz de dois e tangente um;
+em zero, a tangente é zero e aquele pedaço
+
+293
+00:18:20,280 --> 00:18:23,460
+morre. Raiz de dois à quinta
+é quatro raiz de dois,
+
+294
+00:18:23,500 --> 00:18:27,400
+e um sexto disso simplifica para
+dois raiz de dois sobre três.
+
+295
+00:18:27,440 --> 00:18:31,840
+Agora substitui na sobra: o dois
+quinze avos multiplica os dois pedaços,
+
+296
+00:18:31,880 --> 00:18:35,110
+e junta as secantes à quinta:
+um terço menos um nono,
+
+297
+00:18:35,160 --> 00:18:38,860
+dois nonos. Agora distribui o
+dois nonos na secante à quinta:
+
+298
+00:18:38,900 --> 00:18:41,900
+sai uma parte com raiz de
+dois e uma com logaritmo.
+
+299
+00:18:41,940 --> 00:18:46,700
+Para juntar as raízes de dois, o MMC de
+trinta e seis e quarenta e cinco é cento e
+
+300
+00:18:46,740 --> 00:18:49,900
+oitenta: trinta e cinco
+menos dezesseis, dezenove.
+
+301
+00:18:49,940 --> 00:18:53,260
+Por fim, volta o um quarenta
+e cinco avos lá do começo,
+
+302
+00:18:53,300 --> 00:18:56,380
+e multiplica pela volta
+inteira em θ, dois π.
+
+303
+00:18:56,420 --> 00:19:00,360
+O momento de inércia da lata pesada
+é uns um vírgula cinquenta e quatro.
+
+304
+00:19:00,400 --> 00:19:03,520
+E o computador, teimando
+em cartesianas, confere:
+
+305
+00:19:03,560 --> 00:19:08,440
+um vírgula cinco três nove um. Repara que
+a conta ficou longa por causa da densidade
+
+306
+00:19:08,480 --> 00:19:10,800
+que a gente escolheu,
+não por causa do conceito:
+
+307
+00:19:10,840 --> 00:19:14,160
+continua sendo somar cada
+massa vezes s ao quadrado.
+
+308
+00:19:14,200 --> 00:19:17,040
+Coloca as duas latas lado
+a lado, com a mesma forma.
+
+309
+00:19:17,080 --> 00:19:21,460
+O equilíbrio subiu: de zero vírgula cinco
+para uns zero vírgula cinquenta e cinco,
+
+310
+00:19:21,500 --> 00:19:25,600
+porque a tampa pesa mais que o fundo.
+Divide o momento de inércia pela massa,
+
+311
+00:19:25,640 --> 00:19:29,200
+para comparar por quilo:
+na lata comum, meio; na pesada,
+
+312
+00:19:29,240 --> 00:19:32,340
+uns zero vírgula cinquenta
+e seis. Em raio de giração,
+
+313
+00:19:32,380 --> 00:19:36,840
+o anel equivalente sai de setenta e um
+para setenta e cinco por cento do raio.
+
+314
+00:19:36,880 --> 00:19:39,920
+Repara que os dois números
+subiram, e pelo mesmo motivo:
+
+315
+00:19:39,960 --> 00:19:42,620
+a densidade cresce com a
+distância até a origem,
+
+316
+00:19:42,660 --> 00:19:47,020
+então a massa foi morar longe. Longe da
+origem quer dizer mais perto da tampa,
+
+317
+00:19:47,060 --> 00:19:49,720
+o que sobe o equilíbrio,
+e mais perto da parede,
+
+318
+00:19:49,760 --> 00:19:52,860
+o que encarece o giro.
+Uma só função densidade,
+
+319
+00:19:52,900 --> 00:19:55,860
+e as duas integrais leem
+ela de jeitos diferentes:
+
+320
+00:19:55,900 --> 00:19:59,660
+uma pesa pela altura, a outra,
+pela distância ao eixo ao quadrado.
+
+321
+00:19:59,700 --> 00:20:04,140
+Resumindo. O centro de massa é a
+média das posições pesada pela massa:
+
+322
+00:20:04,180 --> 00:20:07,440
+cada coordenada é um momento
+dividido pela massa total,
+
+323
+00:20:07,480 --> 00:20:12,140
+e a simetria do corpo e da densidade,
+juntas, já zera as coordenadas que sobram.
+
+324
+00:20:12,180 --> 00:20:16,240
+O momento de inércia soma cada
+pedaço vezes a distância até o eixo,
+
+325
+00:20:16,280 --> 00:20:20,080
+ao quadrado. Com isso, a taça
+equilibrou em dois terços da altura,
+
+326
+00:20:20,120 --> 00:20:24,300
+o cilindro e a bola custaram meio
+e dois quintos de M R ao quadrado,
+
+327
+00:20:24,340 --> 00:20:28,660
+e a lata pesada equilibrou em zero vírgula
+cinquenta e cinco e custou um vírgula
+
+328
+00:20:28,700 --> 00:20:31,650
+cinquenta e quatro para
+girar. E fica uma pergunta.
+
+329
+00:20:31,700 --> 00:20:34,420
+Até agora o eixo passava
+pelo meio da lata.
+
+330
+00:20:34,460 --> 00:20:38,500
+E se a gente fosse girar a lata em
+volta de uma reta encostada na parede,
+
+331
+00:20:38,540 --> 00:20:41,560
+como uma porta girando
+na dobradiça? O s muda,
+
+332
+00:20:41,600 --> 00:20:44,220
+a caixa muda, e a conta parece outra.
+
+333
+00:20:44,260 --> 00:20:47,290
+Será que precisa refazer
+tudo, ou tem um atalho?
+
+334
+00:20:47,380 --> 00:20:51,520
+No próximo vídeo: exercícios integradores
+do módulo de integral tripla,
+
+335
+00:20:51,560 --> 00:20:54,400
+e esse está entre eles.
+Se essa aula te ajudou,
+
+336
+00:20:54,440 --> 00:20:59,260
+deixa o like, se inscreve no Parallax Lab
+e conta nos comentários onde fica o centro
+
+337
+00:20:59,300 --> 00:21:03,380
+de massa de meia bola uniforme de
+raio R: em que altura ela equilibra?
+
+338
+00:21:03,420 --> 00:21:05,420
+Até a próxima!

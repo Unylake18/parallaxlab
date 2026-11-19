@@ -1,0 +1,401 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="katex/katex.min.css">
+<script src="katex/katex.min.js"></script>
+<script src="r3d_pts.js"></script>
+<style>
+@font-face{font-family:SG;src:url(SpaceGrotesk-Bold.ttf)}
+@font-face{font-family:SGM;src:url(SpaceGrotesk-Medium.ttf)}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#131030}
+canvas{position:absolute;left:0;top:0}
+.f{position:absolute;color:#F5F7FF;white-space:nowrap;line-height:1}
+.f .katex{font-size:1em}
+.pl{position:absolute;background:rgba(19,16,48,.88);border-radius:6px}
+</style></head><body><canvas id="o" width="1920" height="1080"></canvas>
+<script>
+// Quadros-alvo v1 do 3.5-T2 (Cálculo III · coordenadas esféricas na integral tripla) · yt_0041 provisório · ?k=<chave>
+// Sistema da série: fundo violeta #18143A → #0F0C26; grade #2B2558 na TELA INTEIRA (papelTela) em todo quadro 2D; o 3D (r3d_<k>.png de c3d41.html) fica sobre o liso;
+// palavra em Space Grotesk, matemática em KaTeX; cor por grandeza; operadores brancos; \dfrac; legendas ≥ 26 px.
+const K=new URLSearchParams(location.search).get('k'), x=document.getElementById('o').getContext('2d'), PI=Math.PI;
+const CI='#35D9FF',AZC='#7FB2FF',CORAL='#FF7A8A',E1='#FFC24D',E2='#EA63FF',EZ='#5AA2FF',GEO='#B8C4DA',BR='#F5F7FF',AL='#FF5D5D',MEN='#8CFFD2',BG='#131030',
+ RO='#FF9440',TH='#2EE6A6',FI='#B48CFF',SOMB='#FFC08A',LI='#C6F26B',UU='#E08A3C';
+const M={'\\X':'\\textcolor{#FFC24D}{x}','\\Y':'\\textcolor{#EA63FF}{y}','\\Z':'\\textcolor{#5AA2FF}{z}','\\dX':'\\textcolor{#FFC24D}{dx}','\\dY':'\\textcolor{#EA63FF}{dy}','\\dZ':'\\textcolor{#5AA2FF}{dz}',
+ '\\R':'\\textcolor{#FF9440}{r}','\\F':'\\textcolor{#B48CFF}{\\varphi}','\\T':'\\textcolor{#2EE6A6}{\\theta}','\\Rs':'\\textcolor{#FFC08A}{s}',
+ '\\dR':'\\textcolor{#FF9440}{dr}','\\dF':'\\textcolor{#B48CFF}{d\\varphi}','\\dT':'\\textcolor{#2EE6A6}{d\\theta}',
+ '\\DR':'\\textcolor{#FF9440}{\\Delta r}','\\DF':'\\textcolor{#B48CFF}{\\Delta\\varphi}','\\DT':'\\textcolor{#2EE6A6}{\\Delta\\theta}',
+ '\\sen':'\\operatorname{sen}','\\J':'\\textcolor{#C6F26B}{r^2\\operatorname{sen}\\varphi}','\\Li':'\\textcolor{#C6F26B}','\\Ci':'\\textcolor{#35D9FF}','\\de':'\\textcolor{#35D9FF}{\\rho}',
+ '\\Me':'\\textcolor{#8CFFD2}','\\Al':'\\textcolor{#FF5D5D}','\\Co':'\\textcolor{#FF7A8A}','\\Az':'\\textcolor{#7FB2FF}','\\Ro':'\\textcolor{#FF9440}','\\Fi':'\\textcolor{#B48CFF}','\\Th':'\\textcolor{#2EE6A6}',
+ '\\Uu':'\\textcolor{#E08A3C}','\\uu':'\\textcolor{#E08A3C}{u}','\\du':'\\textcolor{#E08A3C}{du}','\\Ge':'\\textcolor{#B8C4DA}','\\dV':'dV'};
+let O=[960,540],U=100; const P=(a,b)=>[O[0]+a*U,O[1]-b*U]; const vista=(cx,cy,u)=>{O=[cx,cy];U=u;};
+const img=s=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=s;});
+function mix(a,b,t){const h=s=>[1,3,5].map(i=>parseInt(s.slice(i,i+2),16));const A=h(a),B=h(b);return 'rgb('+A.map((v,i)=>Math.round(v+(B[i]-v)*t)).join(',')+')';}
+function tex(s,X,Y,size=40,al='l',placa=false){const d=document.createElement('div');d.className='f';d.style.fontSize=size+'px';
+ katex.render(s,d,{macros:M,throwOnError:false});document.body.appendChild(d);const w=d.offsetWidth,h=d.offsetHeight;
+ const L=(al==='c'?X-w/2:al==='r'?X-w:X),T=(Y-h/2);d.style.left=L+'px';d.style.top=T+'px';
+ if(placa){const p=document.createElement('div');p.className='pl';p.style.left=(L-6)+'px';p.style.top=(T-4)+'px';p.style.width=(w+12)+'px';p.style.height=(h+8)+'px';document.body.insertBefore(p,d);}return d;}
+function txt(s,X,Y,{size=30,f='SG',cor=BR,al='left',alpha=1,placa=false}={}){x.font=`${size}px ${f}`;if(placa){const w=x.measureText(s).width,L=al==='center'?X-w/2:al==='right'?X-w:X;x.fillStyle='rgba(19,16,48,.88)';x.beginPath();x.roundRect(L-8,Y-size*.82,w+16,size*1.05,6);x.fill();}
+ x.globalAlpha=alpha;x.fillStyle=cor;x.textAlign=al;x.fillText(s,X,Y);x.globalAlpha=1;x.textAlign='left';}
+function leg(s,X,Y,cor=GEO,al='left',size=28,placa=false){txt(s,X,Y,{size,f:'SGM',cor,al,placa});}
+function caminho(pts){x.beginPath();pts.forEach((p,i)=>{const q=P(...p);i?x.lineTo(...q):x.moveTo(...q)});}
+function linha(pts,cor,w,{dash=null,alpha=1}={}){x.lineCap='round';x.lineJoin='round';x.setLineDash(dash||[]);caminho(pts);x.globalAlpha=alpha;x.strokeStyle=cor;x.lineWidth=w;x.stroke();x.globalAlpha=1;x.setLineDash([]);}
+function preenche(pts,cor){caminho(pts);x.closePath();x.fillStyle=cor;x.fill();}
+function seta(a,b,cor,w=4,head=18){const A=P(...a),B=P(...b);setaPx(A,B,cor,w,head);}
+function setaPx(A,B,cor,w=4,head=18){const dx=B[0]-A[0],dy=B[1]-A[1],L=Math.hypot(dx,dy);if(L<3)return;const ux=dx/L,uy=dy/L;
+ x.strokeStyle=cor;x.lineWidth=w;x.lineCap='round';x.beginPath();x.moveTo(...A);x.lineTo(B[0]-ux*head*.8,B[1]-uy*head*.8);x.stroke();
+ x.fillStyle=cor;x.beginPath();x.moveTo(...B);x.lineTo(B[0]-ux*head-uy*head*.5,B[1]-uy*head+ux*head*.5);x.lineTo(B[0]-ux*head+uy*head*.5,B[1]-uy*head-ux*head*.5);x.closePath();x.fill();}
+function ponto(p,cor,r=9){const q=P(...p);x.beginPath();x.arc(...q,r,0,7);x.fillStyle=cor;x.fill();}
+function pontoPx(q,cor,r=9){x.beginPath();x.arc(...q,r,0,7);x.fillStyle=cor;x.fill();}
+function canto(s){txt('CÁLCULO III · INTEGRAL TRIPLA',36,73,{size:22,f:'SGM',cor:'#C8D6F0',alpha:.6});if(s)txt(s,36,118,{size:36});}
+async function logo(){const lg=await img('logo_crop.png');if(lg)x.drawImage(lg,1650,24);}
+function painel(X0,Y0,w,h,{fill=null,a=.35}={}){if(fill){x.fillStyle=fill;x.beginPath();x.roundRect(X0,Y0,w,h,14);x.fill();}x.strokeStyle=`rgba(184,196,218,${a})`;x.lineWidth=2;x.beginPath();x.roundRect(X0,Y0,w,h,14);x.stroke();}
+function check(X,Y,cor=MEN,s=1){x.strokeStyle=cor;x.lineWidth=6*s;x.lineCap='round';x.beginPath();x.moveTo(X-14*s,Y);x.lineTo(X-3*s,Y+11*s);x.lineTo(X+16*s,Y-13*s);x.stroke();}
+function cruz(X,Y,cor=AL,s=1){x.strokeStyle=cor;x.lineWidth=6*s;x.lineCap='round';x.beginPath();x.moveTo(X-12*s,Y-12*s);x.lineTo(X+12*s,Y+12*s);x.moveTo(X+12*s,Y-12*s);x.lineTo(X-12*s,Y+12*s);x.stroke();}
+function fundoV(){const g=x.createLinearGradient(0,0,0,1080);g.addColorStop(0,'#18143A');g.addColorStop(1,'#0F0C26');x.fillStyle=g;x.fillRect(0,0,1920,1080);}
+// grade na TELA INTEIRA, nascendo da origem O do palco (passo p na unidade U); sem palco: passo 0,5 com U = 120 → 60 px
+function papelTela(p=.25){x.strokeStyle='#2B2558';x.lineWidth=1.2;const s=p*U;let X0=O[0]%s,Y0=O[1]%s;
+ for(let X=X0;X<=1920;X+=s){x.beginPath();x.moveTo(Math.round(X)+.5,0);x.lineTo(Math.round(X)+.5,1080);x.stroke();}
+ for(let Y=Y0;Y<=1080;Y+=s){x.beginPath();x.moveTo(0,Math.round(Y)+.5);x.lineTo(1920,Math.round(Y)+.5);x.stroke();}}
+const P3=(k,n)=>(window.R3D&&R3D[k]&&R3D[k][n])||[0,0];
+async function cena3d(k,{dx=0,dy=0,esc=1}={}){const im=await img('r3d_'+k+'.png');if(!im)return;x.save();x.beginPath();x.rect(0,120,975,960);x.clip();x.drawImage(im,dx,dy,1920*esc,1080*esc);x.restore();}
+const Q3=(k,n,{dx=0,dy=0,esc=1}={})=>{const p=P3(k,n);return [dx+p[0]*esc,dy+p[1]*esc];};
+function mixl(parts,X,Y,size=36,cor=BR){let cx=X;for(const [t,s,c] of parts){if(t==='m'){const d=tex(s,cx,Y,size,'l');cx+=d.getBoundingClientRect().width+14;}
+ else{x.font=`${Math.round(size*.78)}px SG`;txt(s,cx,Y+size*.27,{size:Math.round(size*.78),cor:c||cor});cx+=x.measureText(s).width+14;}}return cx;}
+function chip(s,X,Y,size=30,cor=GEO){const d=tex(s,X+16,Y,size,'l');const r=d.getBoundingClientRect();x.strokeStyle=cor;x.globalAlpha=.75;x.lineWidth=2;x.beginPath();x.roundRect(X,r.top-10,r.width+32,r.height+20,10);x.stroke();x.globalAlpha=1;return r.right+16;}
+function moldura(X,Y,w,h,cor=MEN){x.strokeStyle=cor;x.lineWidth=3;x.beginPath();x.roundRect(X,Y,w,h,12);x.stroke();}
+function selo(s,X,Y,cor=GEO,size=26){x.font=`${size}px SGM`;const w=x.measureText(s).width;x.strokeStyle=cor;x.lineWidth=2;x.beginPath();x.roundRect(X,Y-size-6,w+28,size+22,8);x.stroke();txt(s,X+14,Y+2,{size,f:'SGM',cor});}
+function sublinha(X0,X1,Y,cor=BR){x.strokeStyle=cor;x.lineWidth=2.5;x.beginPath();x.moveTo(X0,Y);x.lineTo(X1,Y);x.stroke();}
+function guia(A,B,cor=GEO){x.strokeStyle=cor;x.globalAlpha=.7;x.lineWidth=2;x.setLineDash([6,6]);x.beginPath();x.moveTo(...A);x.lineTo(...B);x.stroke();x.setLineDash([]);x.globalAlpha=1;}
+function rotulo3(k,n,s,{dx=0,dy=0,esc=1,ox=0,oy=0,size=34,al='l'}={}){const q=Q3(k,n,{dx,dy,esc});return tex(s,q[0]+ox,q[1]+oy,size,al,true);}
+// fundo liso do 3D + grade que entra no pouso: nos alvos 3D a grade fica fora (liso), como na série
+async function main(){await document.fonts.load('30px SG');await document.fonts.load('30px SGM');
+ for(const f of ['KaTeX_Main','KaTeX_Math','KaTeX_Size1','KaTeX_Size2','KaTeX_Size3','KaTeX_Size4','KaTeX_AMS']){try{await document.fonts.load(`40px ${f}`);await document.fonts.load(`italic 40px ${f}`);}catch(e){}}
+ {const w=tex('\\iiint\\int_0^1\\dfrac{a}{b}\\sqrt{x}\\rho\\varphi\\theta\\Big[\\Big]\\left|\\begin{matrix}a\\\\b\\end{matrix}\\right|',0,-200,40);await document.fonts.ready;await new Promise(r=>setTimeout(r,300));w.remove();}
+
+ // 01 · H1 · a bola pesada na casca: o 3D + a montagem em cartesianas que trava
+ if(K==='h1'){fundoV();await logo();canto('A BOLA PESADA NA CASCA');const o={dx:-60,dy:30,esc:1};await cena3d('bola',o);
+  rotulo3('bola','ex','\\X',{...o,size:32});rotulo3('bola','ey','\\Y',{...o,size:32});rotulo3('bola','ez','\\Z',{...o,size:32,ox:16});
+  {const q=Q3('bola','faceMeio',o);leg('LEVE NO CENTRO',q[0]-150,q[1]+210,GEO,'left',28,true);const r=Q3('bola','casca',o);leg('PESADA NA CASCA',r[0]-260,r[1]+70,CI,'left',28,true);}
+  mixl([['t','DENSIDADE',CI],['m','\\de=\\sqrt{\\X^2+\\Y^2+\\Z^2}']],1020,215,38);
+  mixl([['t','MASSA',BR],['m','=\\iiint_B \\Ci{\\sqrt{\\X^2+\\Y^2+\\Z^2}}\\;dV']],1020,320,38);
+  tex('=\\int_{-1}^{1}\\int_{-\\sqrt{1-\\X^2}}^{\\sqrt{1-\\X^2}}\\int_{-\\sqrt{1-\\X^2-\\Y^2}}^{\\sqrt{1-\\X^2-\\Y^2}}\\Ci{\\sqrt{\\X^2+\\Y^2+\\Z^2}}\\;\\dZ\\,\\dY\\,\\dX',1020,470,36);
+  tex('\\int \\Ci{\\sqrt{k^2+\\Z^2}}\\,\\dZ=\\dfrac12\\Big[\\Z\\sqrt{k^2+\\Z^2}+k^2\\ln\\!\\big(\\Z+\\sqrt{k^2+\\Z^2}\\big)\\Big]',1020,640,32);
+  mixl([['t','COM',GEO],['m','k^2=\\X^2+\\Y^2']],1020,720,30);
+  selo('TRAVA',1020,840,AL,30);leg('RAIZ E LOGARITMO JÁ NA DE DENTRO',1160,834,AL,'left',28);}
+
+ // 02 · H2 · a grade nova e os dois pedaços com "?"
+ if(K==='h2'){fundoV();await logo();canto('QUAL É O VOLUME DE CADA PEDAÇO?');const o={dx:-30,dy:80,esc:.94};await cena3d('grade',o);
+  rotulo3('grade','ez','\\Z',{...o,size:32,ox:14});
+  const a=Q3('grade','celPolo',o),b=Q3('grade','celEq',o);
+  txt('?',a[0]-40,a[1]-18,{size:64,cor:LI});txt('?',b[0]-150,b[1]+20,{size:64,cor:LI});
+  leg('PERTO DO POLO',a[0]+60,a[1]-40,LI,'left',28,true);leg('NO EQUADOR',b[0]-260,b[1]+150,LI,'left',28,true);
+  painel(1180,330,640,420,{fill:'rgba(19,16,48,.6)'});txt('A GRADE NOVA',1215,400,{size:30,cor:GEO});
+  mixl([['t','CASCAS',RO],['m','\\R=\\text{cte}']],1215,470,34);
+  mixl([['t','CONES',FI],['m','\\F=\\text{cte}']],1215,545,34);
+  mixl([['t','PÁGINAS',TH],['m','\\T=\\text{cte}']],1215,620,34);
+  leg('MESMO',1215,700,GEO,'left',28);tex('\\DR,\\;\\DF,\\;\\DT',1330,692,34);}
+
+ // 03 · B1-1 · o endereço esférico: o ponto, o triângulo em pé e as fórmulas
+ if(K==='b1'){fundoV();await logo();canto('O ENDEREÇO ESFÉRICO');const o={dx:-80,dy:40,esc:1};await cena3d('ponto',o);
+  rotulo3('ponto','ex','\\X',{...o,size:32});rotulo3('ponto','ey','\\Y',{...o,size:32});rotulo3('ponto','ez','\\Z',{...o,size:32,ox:12});
+  rotulo3('ponto','P','P',{...o,size:34,ox:18,oy:-22});rotulo3('ponto','meioRho','\\R',{...o,size:38,ox:22,oy:-14});rotulo3('ponto','arcoFi','\\F',{...o,size:36,ox:-34,oy:-40});
+  rotulo3('ponto','meioR','\\Rs',{...o,size:36,ox:8,oy:26});rotulo3('ponto','arcoTh','\\T',{...o,size:36,ox:14,oy:24});rotulo3('ponto','zEixo','\\Z',{...o,size:32,ox:-40});
+  tex('\\Z=\\R\\cos\\F',1090,250,42);tex('\\Rs=\\R\\sen\\F',1090,340,42);leg('SOMBRA NO CHÃO',1420,348,SOMB);
+  tex('\\X=\\Rs\\cos\\T=\\R\\sen\\F\\cos\\T',1090,450,42);tex('\\Y=\\Rs\\sen\\T=\\R\\sen\\F\\sen\\T',1090,540,42);
+  tex('\\R\\ge 0,\\quad 0\\le\\F\\le\\pi,\\quad 0\\le\\T\\le 2\\pi',1090,660,38);
+  leg('φ: DO POLO NORTE (0) AO POLO SUL (π)',1090,760,FI);leg('θ: A LONGITUDE, IGUAL ÀS POLARES',1090,812,TH);}
+
+ // 04 · B1-2 · o exemplo (2, π/6, π/3) e o Pitágoras
+ if(K==='b1b'){fundoV();await logo();canto('UM PONTO DE EXEMPLO');const o={dx:-80,dy:40,esc:1};await cena3d('ponto',o);
+  rotulo3('ponto','meioRho','\\Ro{2}',{...o,size:38,ox:22,oy:-14});rotulo3('ponto','arcoFi','\\Fi{\\pi/6}',{...o,size:32,ox:-80,oy:-44});rotulo3('ponto','arcoTh','\\Th{\\pi/3}',{...o,size:32,ox:14,oy:26});
+  rotulo3('ponto','meioR','\\Rs=1',{...o,size:32,ox:-10,oy:30});rotulo3('ponto','zEixo','\\sqrt3',{...o,size:32,ox:-70});rotulo3('ponto','P','P',{...o,size:34,ox:18,oy:-22});
+  tex('(\\R,\\F,\\T)=\\big(\\Ro{2},\\,\\Fi{\\tfrac{\\pi}{6}}\\!,\\,\\Th{\\tfrac{\\pi}{3}}\\big)'.replace(/\\tfrac/g,'\\dfrac'),1090,220,40);
+  tex('\\Z=2\\cos\\dfrac{\\pi}{6}=2\\cdot\\dfrac{\\sqrt3}{2}=\\sqrt3',1090,330,38);
+  tex('\\Rs=2\\sen\\dfrac{\\pi}{6}=2\\cdot\\dfrac12=1',1090,440,38);
+  tex('\\X=1\\cdot\\cos\\dfrac{\\pi}{3}=\\dfrac12,\\qquad \\Y=1\\cdot\\sen\\dfrac{\\pi}{3}=\\dfrac{\\sqrt3}{2}',1090,550,38);
+  tex('\\X^2+\\Y^2+\\Z^2=\\dfrac14+\\dfrac34+3=4=\\Ro{2}^2',1090,670,38);check(1800,670);
+  chip('\\X^2+\\Y^2+\\Z^2=\\R^2',1090,790,36,MEN);}
+
+ // 05 · B1-3 · a caixa (ρ, φ, θ) vira a bola; as bordas ruins
+ if(K==='b13'){fundoV();await logo();canto('A CAIXA VIRA A BOLA');
+  const a={dx:20,dy:210,esc:.62},b={dx:640,dy:210,esc:.62};await cena3d('caixa',a);await cena3d('bolagrade',b);
+  rotulo3('caixa','eRho','\\R',{...a,size:34});rotulo3('caixa','eTh','\\T',{...a,size:34,ox:6});rotulo3('caixa','eFi','\\F',{...a,size:34,ox:10});
+  rotulo3('caixa','um','1',{...a,size:28,ox:-6,oy:26});rotulo3('caixa','pi','\\pi',{...a,size:28,ox:-34});rotulo3('caixa','dois_pi','2\\pi',{...a,size:28,ox:-6,oy:30});
+  rotulo3('bolagrade','ez','\\Z',{...b,size:32,ox:14});
+  setaPx([760,540],[930,540],BR,4,18);tex('T(\\R,\\F,\\T)',845,490,32,'c');
+  const c=Q3('caixa','cel',a),d=Q3('bolagrade','cel',b);guia([c[0]+14,c[1]],[d[0]-80,d[1]],LI);
+  leg('BORDAS RUINS',1450,330,AL,'left',30);
+  mixl([['m','\\R=0'],['t','→ ORIGEM',GEO]],1450,400,32);
+  mixl([['m','\\F=0,\\ \\F=\\pi'],['t','→ EIXO',GEO],['m','\\Z']],1450,470,32);
+  mixl([['m','\\T=0,\\ \\T=2\\pi'],['t','→ MESMA PÁGINA',GEO]],1450,540,32);
+  leg('UMA CAIXA!',120,930,MEN,'left',34);tex('0\\le\\R\\le1,\\ \\ 0\\le\\F\\le\\pi,\\ \\ 0\\le\\T\\le2\\pi',120,990,32);}
+
+ // 06 · B2-1 · a caixinha curva: três arestas
+ if(K==='b21'){fundoV();await logo();canto('A CAIXINHA CURVA');const o={dx:-110,dy:150,esc:1};await cena3d('caixinha',o);
+  rotulo3('caixinha','dRho','\\DR',{...o,size:36,ox:-30,oy:40});rotulo3('caixinha','dFi','\\R\\,\\DF',{...o,size:36,ox:26,oy:-10});
+  rotulo3('caixinha','dTh','\\R\\sen\\F\\,\\DT',{...o,size:36,ox:-40,oy:52});rotulo3('caixinha','raioPar','\\Rs=\\R\\sen\\F',{...o,size:32,ox:-170,oy:44});
+  rotulo3('caixinha','arcoFi','\\F',{...o,size:32,ox:6,oy:-30});
+  mixl([['t','ARESTA 1',RO],['m','\\DR']],1080,230,36);
+  mixl([['t','ARESTA 2',FI],['m','\\R\\,\\DF'],['t','ARCO = RAIO · ÂNGULO',GEO]],1080,310,36);
+  mixl([['t','ARESTA 3',TH],['m','(\\R\\sen\\F)\\,\\DT'],['t','RAIO DO PARALELO',GEO]],1080,390,36);
+  tex('\\Delta V\\approx \\DR\\cdot\\R\\,\\DF\\cdot\\R\\sen\\F\\,\\DT',1080,500,40);
+  tex('=\\J\\;\\DR\\,\\DF\\,\\DT',1120,590,44);
+  painel(1060,660,780,300);leg('Δr = 1/2,  Δφ = Δθ = π/6,  r̄ = 3/4',1090,712,GEO,'left',26);
+  mixl([['t','POLO',LI],['m','\\big(\\tfrac34\\big)^2\\!\\cdot\\sen\\tfrac{\\pi}{12}\\cdot\\tfrac12\\cdot\\tfrac{\\pi}{6}\\cdot\\tfrac{\\pi}{6}\\approx 0{,}020'.replace(/\\tfrac/g,'\\dfrac')]],1090,790,30);
+  mixl([['t','EQUADOR',LI],['m','\\big(\\tfrac34\\big)^2\\!\\cdot\\sen\\tfrac{5\\pi}{12}\\cdot\\tfrac12\\cdot\\tfrac{\\pi}{6}\\cdot\\tfrac{\\pi}{6}\\approx 0{,}075'.replace(/\\tfrac/g,'\\dfrac')]],1090,870,30);
+  mixl([['t','RAZÃO',GEO],['m','2+\\sqrt3\\approx 3{,}7']],1090,935,28);}
+
+ // 07 · B2-2 · duas polares em sequência (2D, grade na tela inteira nascendo do painel da página)
+ if(K==='b22'){fundoV();vista(230,800,250);papelTela();await logo();canto('DUAS POLARES EM SEQUÊNCIA');
+  seta([0,0],[1.85,0],SOMB,3,16);seta([0,0],[0,1.9],EZ,3,16);tex('\\Rs',...P(1.98,0),32,'c');tex('\\Z',...P(0,2.02),32,'c');
+  const f=PI/6,L=1.6,rr=L*Math.sin(f),zz=L*Math.cos(f);
+  linha([[0,0],[rr,zz]],RO,6);ponto([rr,zz],BR,8);linha([[rr,zz],[rr,0]],EZ,2,{dash:[7,7]});linha([[rr,zz],[0,zz]],GEO,2,{dash:[7,7]});
+  {const a=[];for(let k=0;k<=30;k++){const t=f*k/30;a.push([.5*Math.sin(t),.5*Math.cos(t)]);}linha(a,FI,4);}
+  tex('\\F',...P(.1,.72),32,'c');tex('\\R',...P(rr*.62+.16,zz*.62),36,'c');
+  tex('\\Rs=\\R\\sen\\F',...P(rr,-.2),30,'c');tex('\\Z=\\R\\cos\\F',...P(-.03,zz),30,'r');
+  leg('NA PÁGINA θ',P(0,0)[0]-30,P(0,2.3)[1],TH,'left',30);
+  tex('\\left|\\begin{matrix}\\cos\\F & -\\R\\sen\\F\\\\ \\sen\\F & \\R\\cos\\F\\end{matrix}\\right|=\\R\\cos^2\\!\\F+\\R\\sen^2\\!\\F=\\R',90,985,32);
+  // o chão (x, y): polares de sempre, raio r e ângulo θ
+  vista(1020,800,250);seta([0,0],[1.85,0],E1,3,16);seta([0,0],[0,1.9],E2,3,16);tex('\\X',...P(1.96,0),32,'c');tex('\\Y',...P(0,2.02),32,'c');
+  const t=PI/3,R1=rr;linha([[0,0],[R1*Math.cos(t),R1*Math.sin(t)]],SOMB,6);ponto([R1*Math.cos(t),R1*Math.sin(t)],SOMB,8);
+  {const a=[];for(let k=0;k<=30;k++){const u=t*k/30;a.push([.36*Math.cos(u),.36*Math.sin(u)]);}linha(a,TH,4);}tex('\\T',...P(.5,.2),32,'c');tex('\\Rs',...P(.22,.6),32,'c');
+  leg('NO CHÃO',P(0,0)[0]-30,P(0,2.3)[1],GEO,'left',30);
+  mixl([['t','FATOR',GEO],['m','\\Rs']],1000,985,32);
+  setaPx([690,560],[880,560],BR,4,18);tex('(\\R,\\F)\\to(\\Rs,\\Z)',785,505,28,'c');
+  painel(1500,330,380,330,{fill:'rgba(19,16,48,.88)'});leg('OS FATORES',1530,390,GEO,'left',28);leg('SE MULTIPLICAM',1530,430,GEO,'left',28);
+  tex('\\R\\cdot\\Rs',1540,500,38);tex('=\\R\\cdot\\R\\sen\\F',1540,565,36);tex('=\\J',1540,630,40);}
+
+ // 08 · B2-3 · o determinante 3×3 pela última linha
+ if(K==='b23'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('O DETERMINANTE');
+  const m=tex('\\dfrac{\\partial(\\X,\\Y,\\Z)}{\\partial(\\R,\\F,\\T)}=\\def\\arraystretch{1.45}\\left|\\begin{array}{ccc}\\sen\\F\\cos\\T & \\R\\cos\\F\\cos\\T & -\\R\\sen\\F\\sen\\T\\\\ \\sen\\F\\sen\\T & \\R\\cos\\F\\sen\\T & \\R\\sen\\F\\cos\\T\\\\ \\cos\\F & -\\R\\sen\\F & 0\\end{array}\\right|',90,330,38);
+  const r=m.getBoundingClientRect();
+  mixl([['t','1ª COLUNA: EM',GEO],['m','\\R'],['t','· 2ª: EM',GEO],['m','\\F'],['t','· 3ª: EM',GEO],['m','\\T']],90,190,36);
+  setaPx([r.right+150,r.bottom-38],[r.right+30,r.bottom-38],MEN,3,16);leg('LINHA DE BAIXO:  +  −  +',r.right+165,r.bottom-28,MEN,'left',28);
+  tex('=\\cos\\F\\cdot\\R^2\\cos\\F\\sen\\F\\underbrace{(\\cos^2\\!\\T+\\sen^2\\!\\T)}_{=\\,1}\\;-\\;(-\\R\\sen\\F)\\cdot\\R\\sen^2\\!\\F\\underbrace{(\\cos^2\\!\\T+\\sen^2\\!\\T)}_{=\\,1}\\;+\\;0',90,590,34);
+  tex('=\\R^2\\sen\\F\\cos^2\\!\\F+\\R^2\\sen^3\\!\\F',90,720,38);
+  const z=tex('=\\R^2\\sen\\F\\,\\underbrace{(\\cos^2\\!\\F+\\sen^2\\!\\F)}_{=\\,1}=\\J',90,840,40);const zr=z.getBoundingClientRect();moldura(zr.left-14,zr.top-12,zr.width+28,zr.height+24);
+  chip('dV=\\J\\;\\dR\\,\\dF\\,\\dT',zr.right+60,830,40,MEN);
+  leg('0 ≤ φ ≤ π:  SEN φ ≥ 0, O MÓDULO NÃO MUDA NADA',90,985,GEO,'left',28);}
+
+ // 09 · B2-4 · o teste: o volume da bola e os dois erros
+ if(K==='b24'){fundoV();await logo();canto('O TESTE: A BOLA');const o={dx:-180,dy:60,esc:.9};await cena3d('bolagrade',o);
+  tex('V=\\int_0^{2\\pi}\\!\\!\\int_0^{\\pi}\\!\\!\\int_0^{R}\\J\\;\\dR\\,\\dF\\,\\dT',960,200,38);
+  tex('\\int_0^R\\R^2\\,\\dR=\\Big[\\dfrac{\\R^3}{3}\\Big]_0^R=\\dfrac{R^3}{3}',960,320,34);
+  tex('\\int_0^{\\pi}\\sen\\F\\,\\dF=\\big[-\\cos\\F\\big]_0^{\\pi}=-\\cos\\pi-(-\\cos0)=1+1=2',960,425,34);
+  tex('\\int_0^{2\\pi}\\dT=2\\pi',960,520,34);
+  tex('V=\\dfrac{R^3}{3}\\cdot 2\\cdot 2\\pi=\\Me{\\dfrac43\\pi R^3}',960,625,40);check(1560,625);
+  painel(950,710,900,250);
+  mixl([['t','SEM',AL],['m','\\R^2'],['m','\\Rightarrow R\\cdot2\\cdot2\\pi=4\\pi R'],['t','METRO',AL]],980,775,32);cruz(1800,775);
+  mixl([['t','SEM',AL],['m','\\sen\\F'],['m','\\Rightarrow \\dfrac{R^3}{3}\\cdot\\pi\\cdot 2\\pi=\\dfrac{2\\pi^2R^3}{3}\\approx 6{,}6\\,R^3']],980,880,32);cruz(1800,880);
+  leg('UNIDADE CERTA, NÚMERO ERRADO (O CERTO ≈ 4,19 R³)',980,945,AL,'left',26);}
+
+ // 10 · B3-1 · o teorema com as hipóteses e as duas metades
+ if(K==='b31'){fundoV();await logo();canto('O TEOREMA');const a={dx:20,dy:40,esc:.56},b={dx:700,dy:40,esc:.56};
+  await cena3d('caixa2',a);await cena3d('bolagrade',b);
+  setaPx([760,360],[920,360],BR,4,18);tex('T',840,320,32,'c');
+  leg('METADE  θ ≤ π',110,640,AZC,'left',28);leg('METADE  θ ≥ π',430,640,CORAL,'left',28);
+  leg('O CORTE: VOLUME ZERO',1380,420,AL,'left',28);
+  painel(60,690,1800,360,{fill:'rgba(19,16,48,.75)'});
+  mixl([['m','T:\\Omega\\subset\\mathbb{R}^3\\to\\mathbb{R}^3'],['t','DE CLASSE',GEO],['m','C^1'],['t','·',GEO],['m','B_{uvw}'],['t','COMPACTO, FRONTEIRA DE CONTEÚDO NULO',GEO]],100,750,32);
+  mixl([['t','NO INTERIOR:',BR],['m','T(\\mathring B_{uvw})=\\mathring B'],['t','·  T INJETORA  ·',BR],['m','\\dfrac{\\partial(\\X,\\Y,\\Z)}{\\partial(u,v,w)}\\neq 0']],100,850,32);
+  tex('\\iiint_B f(\\X,\\Y,\\Z)\\,\\dX\\,\\dY\\,\\dZ=\\iiint_{B_{uvw}} f\\big(T(u,v,w)\\big)\\left|\\dfrac{\\partial(\\X,\\Y,\\Z)}{\\partial(u,v,w)}\\right|du\\,dv\\,dw',100,975,36);}
+
+ // 11 · B4 · a cebola: a casca e a área da esfera
+ if(K==='b4'){fundoV();await logo();canto('A BOLA É UMA CEBOLA');const o={dx:-80,dy:30,esc:1};await cena3d('cebola',o);
+  {const q=Q3('cebola','casca',o);leg('CASCA DE RAIO r',q[0]-300,q[1]-60,RO,'left',28,true);const r=Q3('cebola','espessura',o);leg('ESPESSURA dr',r[0]+60,r[1]+40,RO,'left',28,true);}
+  tex('\\int_0^{2\\pi}\\!\\!\\int_0^{\\pi}\\J\\,\\dF\\,\\dT=\\R^2\\cdot\\big[-\\cos\\F\\big]_0^{\\pi}\\cdot\\big[\\T\\big]_0^{2\\pi}',1060,250,34);
+  tex('=\\R^2\\cdot 2\\cdot 2\\pi=4\\pi\\R^2',1100,350,38);mixl([['t','ÁREA DA ESFERA',MEN]],1520,350,34);
+  tex('V=\\int_0^R 4\\pi\\R^2\\,\\dR=4\\pi\\Big[\\dfrac{\\R^3}{3}\\Big]_0^R=\\dfrac43\\pi R^3',1060,500,36);
+  mixl([['m','\\dfrac{d}{dR}\\Big(\\dfrac43\\pi R^3\\Big)=4\\pi R^2'],['t','ENGORDAR = UMA CASCA',GEO]],1060,650,34);}
+
+ // 12 · B5 · a bola pesada na casca: M = π
+ if(K==='b5'){fundoV();await logo();canto('DE VOLTA À BOLA');const o={dx:-100,dy:30,esc:1};await cena3d('bola',o);
+  mixl([['m','\\de=\\sqrt{\\X^2+\\Y^2+\\Z^2}=\\sqrt{\\R^2}=\\R'],['t','(r ≥ 0)',GEO]],1020,210,36);
+  tex('M=\\int_0^{2\\pi}\\!\\!\\int_0^{\\pi}\\!\\!\\int_0^{1}\\Ci{r}\\cdot\\J\\;\\dR\\,\\dF\\,\\dT',1020,320,36);
+  tex('=\\Big[\\dfrac{\\R^4}{4}\\Big]_0^1\\cdot\\big[-\\cos\\F\\big]_0^{\\pi}\\cdot\\big[\\T\\big]_0^{2\\pi}',1050,440,34);
+  tex('=\\Big(\\dfrac14-0\\Big)\\cdot(1+1)\\cdot(2\\pi-0)=\\Me{\\pi}',1050,550,36);check(1700,550);
+  mixl([['t','MÉDIA',GEO],['m','\\dfrac{M}{V}=\\dfrac{\\pi}{4\\pi/3}=\\pi\\cdot\\dfrac{3}{4\\pi}=\\dfrac34']],1020,690,34);
+  mixl([['t','MASSA ATÉ',GEO],['m','c:\\ \\pi c^4=\\dfrac{\\pi}{2}\\Rightarrow c=\\sqrt[4]{1/2}\\approx 0{,}84']],1020,820,32);}
+
+ // 13 · B6 · a casquinha: a região e a conta
+ if(K==='b6'){fundoV();await logo();canto('A CASQUINHA');const o={dx:-90,dy:40,esc:1};await cena3d('casquinha',o);
+  rotulo3('casquinha','ez','\\Z',{...o,size:32,ox:14});rotulo3('casquinha','um','1',{...o,size:28,ox:-34});rotulo3('casquinha','arcoFi','\\F',{...o,size:30,ox:-34,oy:-6});
+  {const q=Q3('casquinha','saida',o);tex('\\Co{\\R=2\\cos\\F}',q[0]+24,q[1]-30,30,'l',true);const c=Q3('casquinha','cone',o);tex('\\Fi{\\varphi=\\tfrac{\\pi}{4}}'.replace('\\tfrac','\\dfrac'),c[0]-140,c[1]+10,30,'l',true);}
+  mixl([['t','CONE',FI],['m','\\R\\cos\\F=\\R\\sen\\F\\Rightarrow\\F=\\dfrac{\\pi}{4}']],1020,190,30);
+  mixl([['t','ESFERA',CORAL],['m','\\R^2=2\\R\\cos\\F\\Rightarrow\\R=2\\cos\\F']],1020,265,30);
+  tex('V=\\int_0^{2\\pi}\\!\\!\\int_0^{\\pi/4}\\!\\!\\int_0^{\\Co{2\\cos\\varphi}}\\J\\;\\dR\\,\\dF\\,\\dT',1020,370,34);
+  tex('\\Big[\\dfrac{\\R^3}{3}\\Big]_0^{2\\cos\\F}\\!\\sen\\F=\\dfrac83\\cos^3\\!\\F\\,\\sen\\F',1020,480,32);
+  tex('\\uu=\\cos\\F,\\ \\ \\du=-\\sen\\F\\,\\dF\\qquad \\F=0\\to\\uu=1,\\ \\ \\F=\\tfrac{\\pi}{4}\\to\\uu=\\tfrac{\\sqrt2}{2}'.replace(/\\tfrac/g,'\\dfrac'),1020,580,28);
+  tex('\\dfrac83\\int_{\\sqrt2/2}^{1}\\uu^3\\,\\du=\\dfrac83\\Big[\\dfrac{\\uu^4}{4}\\Big]_{\\sqrt2/2}^{1}=\\dfrac83\\Big(\\dfrac14-\\dfrac1{16}\\Big)=\\dfrac83\\cdot\\dfrac3{16}=\\dfrac12',1020,690,30);
+  tex('V=2\\pi\\cdot\\dfrac12=\\Me{\\pi}',1020,800,38);check(1330,800);
+  mixl([['t','CONFERE',MEN],['m','\\dfrac{\\pi}{3}+\\dfrac{2\\pi}{3}=\\pi'],['t','CONE + MEIA BOLA',GEO]],1020,910,32);}
+
+ // 14 · S2 · a lata e o cartão do próximo vídeo
+ if(K==='s2'){fundoV();await logo();canto('E UMA LATA?');const o={dx:-20,dy:150,esc:.8};await cena3d('lata',o);
+  {const p=Q3('lata','parede',o),t=Q3('lata','tampa',o),q=Q3('lata','quina',o);tex('\\Co{\\R=\\dfrac{1}{\\sen\\F}}',p[0]+30,p[1]+10,30,'l',true);tex('\\Co{\\R=\\dfrac{1}{\\cos\\F}}',t[0]+30,t[1]-40,30,'l',true);
+   leg('RACHA EM φ = π/4',140,930,AL,'left',30);}
+  mixl([['t','MESMO INTEGRANDO',GEO],['m','\\Ci{\\sqrt{\\X^2+\\Y^2+\\Z^2}}']],1120,240,32);
+  mixl([['m','\\X^2+\\Y^2\\le1,\\quad 0\\le\\Z\\le1']],1120,320,32);
+  painel(1120,420,680,300);txt('NO PRÓXIMO VÍDEO',1460,500,{size:30,al:'center',cor:GEO});txt('COORDENADAS',1460,580,{size:44,al:'center'});txt('CILÍNDRICAS',1460,640,{size:44,al:'center',cor:SOMB});
+  leg('POLARES NO CHÃO + A ALTURA z',1460,700,GEO,'center',26);}
+
+ // ===================== v2 (2026-11-16): octante, duas vistas, cortes 2D, coluna maior =====================
+ // tamanhos v2: fórmula principal 50–54 px (KaTeX font-size), secundária 44, legenda 30; coluna x ≥ 1010
+ function legq(t,X,Y,cor,size=30){x.fillStyle=cor;x.fillRect(X,Y-size*.62,size*.6,size*.6);txt(t,X+size*.9,Y,{size,f:'SGM',cor});}
+function painel2d(X0,Y0,w,h){x.save();x.fillStyle='#16123A';x.beginPath();x.roundRect(X0,Y0,w,h,14);x.fill();x.clip();
+  x.strokeStyle='#2B2558';x.lineWidth=1.2;const s=30;for(let X=X0;X<=X0+w;X+=s){x.beginPath();x.moveTo(X+.5,Y0);x.lineTo(X+.5,Y0+h);x.stroke();}
+  for(let Y=Y0;Y<=Y0+h;Y+=s){x.beginPath();x.moveTo(X0,Y+.5);x.lineTo(X0+w,Y+.5);x.stroke();}x.restore();painel(X0,Y0,w,h,{a:.45});}
+ function arcoAng(c,R,a0,a1,cor,w=4){x.strokeStyle=cor;x.lineWidth=w;x.beginPath();x.arc(...P(...c),R,a0,a1,a1<a0);x.stroke();}
+ // corte da página θ (s para a direita, z para cima) com ângulo φ medido do eixo z
+ function pagina(cx,cy,u,{pt=[1,1.732],rot=true}={}){vista(cx,cy,u);seta([0,0],[1.55,0],RO==0?0:SOMB,4,16);seta([0,0],[0,2.05],EZ,4,16);
+  linha([[0,0],pt],RO,6);linha([pt,[pt[0],0]],GEO,2.5,{dash:[8,8]});linha([pt,[0,pt[1]]],GEO,2.5,{dash:[8,8]});ponto(pt,BR,9);
+  const ang=Math.atan2(pt[0],pt[1]);x.strokeStyle=FI;x.lineWidth=4;x.beginPath();x.arc(...P(0,0),.55*u,-PI/2,-PI/2+ang);x.stroke();}
+
+ if(K==='h1v2'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('A BOLA PESADA NA CASCA');const o={dx:-40,dy:20,esc:1};await cena3d('bola8',o);
+  rotulo3('bola8','ex','\\X',{...o,size:36});rotulo3('bola8','ey','\\Y',{...o,size:36});rotulo3('bola8','ez','\\Z',{...o,size:36,ox:18});
+  legq('LEVE NO CENTRO: ρ = 0',120,1020,'#5FA8C8');legq('PESADA NA CASCA: ρ = 1',540,1020,CI);
+  mixl([['t','DENSIDADE',CI],['m','\\de=\\sqrt{\\X^2+\\Y^2+\\Z^2}']],1020,200,50);
+  mixl([['t','MASSA',BR],['m','=\\iiint_B \\Ci{\\sqrt{\\X^2+\\Y^2+\\Z^2}}\\,dV']],1020,320,50);
+  tex('=\\int_{-1}^{1}\\int_{-\\sqrt{1-\\X^2}}^{\\sqrt{1-\\X^2}}\\int_{-\\sqrt{1-\\X^2-\\Y^2}}^{\\sqrt{1-\\X^2-\\Y^2}}\\Ci{\\sqrt{\\X^2+\\Y^2+\\Z^2}}\\,\\dZ\\,\\dY\\,\\dX',1020,480,40);
+  tex('\\int \\Ci{\\sqrt{k^2+\\Z^2}}\\,\\dZ=\\dfrac12\\Big[\\Z\\sqrt{k^2+\\Z^2}+k^2\\ln\\!\\big(\\Z+\\sqrt{k^2+\\Z^2}\\big)\\Big]',1020,660,36);
+  mixl([['t','COM',GEO],['m','k^2=\\X^2+\\Y^2']],1020,760,38);
+  selo('TRAVA',1020,890,AL,34);leg('RAIZ E LOGARITMO JÁ NA DE DENTRO',1170,884,AL,'left',30);}
+
+ if(K==='b1v2'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('O ENDEREÇO ESFÉRICO');const o={dx:-150,dy:60,esc:.95};await cena3d('ponto',o);
+  rotulo3('ponto','ex','\\X',{...o,size:36,oy:-16});rotulo3('ponto','ey','\\Y',{...o,size:36});rotulo3('ponto','ez','\\Z',{...o,size:36,ox:16});
+  rotulo3('ponto','P','P',{...o,size:38,ox:22,oy:-26});rotulo3('ponto','meioRho','\\R',{...o,size:42,ox:-48,oy:-30});rotulo3('ponto','arcoFi','\\F',{...o,size:40,ox:-44,oy:-48});
+  rotulo3('ponto','meioR','\\Rs',{...o,size:40,ox:-40,oy:-30});rotulo3('ponto','arcoTh','\\T',{...o,size:40,ox:26,oy:30});
+  // vista 1: a página (de lado)
+  painel2d(1000,150,420,350);txt('PÁGINA (DE LADO)',1020,192,{size:26,f:'SGM',cor:TH});
+  pagina(1090,480,125,{pt:[1,1.732]});tex('\\R',P(.66,1.05)[0]+14,P(.66,1.05)[1],38);tex('\\F',P(.12,.78)[0],P(.12,.78)[1],34);
+  tex('\\Z',P(0,2.05)[0]+14,P(0,2.05)[1]+6,32);tex('\\Rs',P(1.55,0)[0]-8,P(1.55,0)[1]-26,32);
+  // vista 2: o chão (de cima)
+  painel2d(1450,150,420,350);txt('CHÃO (DE CIMA)',1470,192,{size:26,f:'SGM',cor:SOMB});
+  vista(1560,450,150);seta([0,0],[1.6,0],E1,4,16);seta([0,0],[0,1.6],E2,4,16);const q=[.5,.866];linha([[0,0],q],SOMB,6);
+  linha([q,[q[0],0]],GEO,2.5,{dash:[8,8]});linha([q,[0,q[1]]],GEO,2.5,{dash:[8,8]});ponto(q,SOMB,9);x.strokeStyle=TH;x.lineWidth=4;x.beginPath();x.arc(...P(0,0),.45*150,0,-PI/3,true);x.stroke();
+  tex('\\Rs',P(.08,.62)[0],P(.08,.62)[1],38);tex('\\T',P(.6,.15)[0],P(.6,.15)[1],34);tex('\\X',P(1.6,0)[0]-6,P(1.6,0)[1]-26,32);tex('\\Y',P(0,1.6)[0]+14,P(0,1.6)[1]+6,32);
+  tex('\\Z=\\R\\cos\\F',1020,570,50);tex('\\Rs=\\R\\sen\\F',1450,570,50);
+  tex('\\X=\\Rs\\cos\\T=\\R\\sen\\F\\cos\\T',1020,670,50);tex('\\Y=\\Rs\\sen\\T=\\R\\sen\\F\\sen\\T',1020,770,50);
+  tex('\\R\\ge 0,\\quad 0\\le\\F\\le\\pi,\\quad 0\\le\\T\\le 2\\pi',1020,880,44);
+  leg('φ: DO POLO NORTE (0) AO POLO SUL (π)',1020,975,FI,'left',30);leg('θ: A LONGITUDE, IGUAL ÀS POLARES',1020,1025,TH,'left',30);}
+
+ if(K==='b22v2'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('DUAS POLARES EM SEQUÊNCIA');
+  painel2d(60,170,880,560);txt('NA PÁGINA θ',90,220,{size:30,f:'SGM',cor:TH});tex('(\\R,\\F)\\to(\\Rs,\\Z)',480,208,34);
+  pagina(340,660,195,{pt:[1,1.732]});tex('\\R',P(.66,1.05)[0]+16,P(.66,1.05)[1],46);tex('\\F',P(.12,.78)[0],P(.12,.78)[1],40);
+  tex('\\Z=\\R\\cos\\F',P(0,1.732)[0]-18,P(0,1.732)[1],40,'r');tex('\\Rs=\\R\\sen\\F',P(1,0)[0],P(1,0)[1]+36,40,'c');
+  tex('\\Z',P(0,2.05)[0]+16,P(0,2.05)[1]+8,36);tex('\\Rs',P(1.55,0)[0]+10,P(1.55,0)[1]-24,36);
+  painel2d(980,170,880,560);txt('NO CHÃO',1020,220,{size:30,f:'SGM',cor:SOMB});tex('(\\Rs,\\T)\\to(\\X,\\Y)',1190,208,34);
+  vista(1120,690,230);seta([0,0],[1.6,0],E1,4,16);seta([0,0],[0,1.9],E2,4,16);const q=[.6,1.04];linha([[0,0],q],SOMB,6);ponto(q,SOMB,9);
+  x.strokeStyle=TH;x.lineWidth=4;x.beginPath();x.arc(...P(0,0),.42*230,0,-PI/3,true);x.stroke();tex('\\Rs',P(.1,.62)[0],P(.1,.62)[1],44);tex('\\T',P(.5,.16)[0],P(.5,.16)[1]-6,40);
+  tex('\\X',P(1.6,0)[0]+10,P(1.6,0)[1]-24,36);tex('\\Y',P(0,1.9)[0]+16,P(0,1.9)[1]+8,36);
+  
+  tex('\\left|\\begin{matrix}\\cos\\F & -\\R\\sen\\F\\\\ \\sen\\F & \\R\\cos\\F\\end{matrix}\\right|=\\R\\cos^2\\!\\F+\\R\\sen^2\\!\\F=\\R',80,840,44);
+  leg('FATOR DA PÁGINA',90,950,RO,'left',30);
+  painel(1000,770,860,250,{fill:'rgba(19,16,48,.92)'});txt('OS FATORES SE MULTIPLICAM',1030,820,{size:30,f:'SGM',cor:GEO});
+  tex('\\R\\cdot\\Rs=\\R\\cdot\\R\\sen\\F=\\J',1030,910,52);leg('FATOR DO CHÃO: s',1030,1000,SOMB,'left',28);}
+
+ if(K==='b23v2'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('O DETERMINANTE');
+  mixl([['t','1ª COLUNA: EM',GEO],['m','\\R'],['t','· 2ª: EM',GEO],['m','\\F'],['t','· 3ª: EM',GEO],['m','\\T']],60,175,34);
+  const m=tex('\\dfrac{\\partial(\\X,\\Y,\\Z)}{\\partial(\\R,\\F,\\T)}=\\left|\\begin{matrix}\\sen\\F\\cos\\T & \\R\\cos\\F\\cos\\T & -\\R\\sen\\F\\sen\\T\\\\ \\sen\\F\\sen\\T & \\R\\cos\\F\\sen\\T & \\R\\sen\\F\\cos\\T\\\\ \\cos\\F & -\\R\\sen\\F & 0\\end{matrix}\\right|',60,330,44);
+  {const r=m.getBoundingClientRect();setaPx([r.right+150,408],[r.right+20,408],MEN,4,16);leg('LINHA DE BAIXO:  +  −  +',r.right+165,418,MEN,'left',30);
+   // menor do cos φ: linhas 1–2, colunas 2–3 (contorno fino)
+   x.strokeStyle=LI;x.lineWidth=2.5;x.setLineDash([8,6]);x.beginPath();x.roundRect(r.left+488,r.top+8,r.width-503,104,10);x.stroke();x.setLineDash([]);}
+  leg('O MENOR DO cos φ: TAMPA A LINHA 3 E A COLUNA 1',60,520,LI,'left',30);
+  tex('M_{31}=\\R\\cos\\F\\cos\\T\\cdot\\R\\sen\\F\\cos\\T-(-\\R\\sen\\F\\sen\\T)\\cdot\\R\\cos\\F\\sen\\T',60,600,44);
+  tex('=\\R^2\\sen\\F\\cos\\F\\,\\cos^2\\!\\T+\\R^2\\sen\\F\\cos\\F\\,\\sen^2\\!\\T',100,690,44);
+  tex('=\\R^2\\sen\\F\\cos\\F\\,\\underbrace{(\\cos^2\\!\\T+\\sen^2\\!\\T)}_{=\\,1}=\\R^2\\sen\\F\\cos\\F',100,790,44);
+  leg('O MENOR DO −r sen φ: TAMPA A LINHA 3 E A COLUNA 2',60,905,GEO,'left',30);
+  tex('M_{32}=\\sen\\F\\cos\\T\\cdot\\R\\sen\\F\\cos\\T-(-\\R\\sen\\F\\sen\\T)\\cdot\\sen\\F\\sen\\T=\\R\\sen^2\\!\\F',60,985,44);}
+
+ if(K==='b23bv2'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('O DETERMINANTE');
+  let X1=chip('M_{31}=\\R^2\\sen\\F\\cos\\F',60,190,36,LI);chip('M_{32}=\\R\\sen^2\\!\\F',X1+24,190,36,GEO);
+  leg('LINHA DE BAIXO:  +  −  +',1300,200,MEN,'left',30);
+  tex('\\det=+\\cos\\F\\cdot M_{31}-(-\\R\\sen\\F)\\cdot M_{32}+0\\cdot M_{33}',60,330,52);
+  tex('=\\cos\\F\\cdot\\R^2\\sen\\F\\cos\\F+\\R\\sen\\F\\cdot\\R\\sen^2\\!\\F+0',100,450,52);
+  tex('=\\R^2\\sen\\F\\cos^2\\!\\F+\\R^2\\sen^3\\!\\F',100,570,52);
+  {const d=tex('=\\R^2\\sen\\F\\,\\underbrace{(\\cos^2\\!\\F+\\sen^2\\!\\F)}_{=\\,1}=\\J',100,710,52);const q=d.getBoundingClientRect();
+  moldura(q.left-18,q.top-14,q.width+36,q.height+28);
+  chip('dV=\\J\\,\\dR\\,\\dF\\,\\dT',q.right+70,700,46,MEN);}
+  leg('0 ≤ φ ≤ π: SEN φ ≥ 0, O MÓDULO NÃO MUDA NADA',60,880,GEO,'left',30);}
+
+ if(K==='b32'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('A RECEITA');const o={dx:-60,dy:40,esc:1};await cena3d('receita',o);
+  rotulo3('receita','ez','\\Z',{...o,size:36,ox:16});
+  {const e=Q3('receita','entra',o),s=Q3('receita','sai',o);leg('ENTRA',e[0]-150,e[1]+44,AZC,'left',30,true);guia([e[0]-60,e[1]+28],[e[0]-8,e[1]+6],AZC);
+   leg('SAI',s[0]+40,s[1]-30,CORAL,'left',30,true);}
+  const st=(n,c,parts,Y)=>{x.strokeStyle=c;x.lineWidth=3;x.beginPath();x.arc(1035,Y-10,24,0,7);x.stroke();txt(n,1035,Y,{size:28,cor:c,al:'center'});mixl(parts,1075,Y-12,40);};
+  st('1',TH,[['m','\\T'],['t','QUANTO GIRA EM VOLTA DE z',BR]],260);
+  st('2',FI,[['m','\\F'],['t','DE QUE CONE A QUE CONE',BR]],370);
+  st('3',RO,[['m','\\R'],['t','A SONDA SAI DA ORIGEM',BR]],480);
+  leg('ENTRA NA REGIÃO: LIMITE DE BAIXO',1075,560,AZC,'left',30);leg('SAI DA REGIÃO: LIMITE DE CIMA',1075,610,CORAL,'left',30);
+  painel(1020,700,840,200,{fill:'rgba(19,16,48,.92)'});mixl([['m','\\T'],['t','E',GEO],['m','\\F'],['t','FORA: NÚMEROS',BR]],1045,775,42);
+  mixl([['m','\\R'],['t','DENTRO: DA SONDA',BR]],1045,855,42);}
+
+ if(K==='b4v2'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('A BOLA É UMA CEBOLA');const o={dx:-40,dy:20,esc:1};await cena3d('cebola8',o);
+  rotulo3('cebola8','ex','\\X',{...o,size:36});rotulo3('cebola8','ey','\\Y',{...o,size:36});rotulo3('cebola8','ez','\\Z',{...o,size:36,ox:18});
+  legq('CASCA DE RAIO r, ESPESSURA dr',120,1020,RO);
+  tex('\\int_0^{2\\pi}\\!\\!\\int_0^{\\pi}\\R^2\\sen\\F\\,\\dF\\,\\dT=\\R^2\\cdot\\big[-\\cos\\F\\big]_0^{\\pi}\\cdot\\big[\\T\\big]_0^{2\\pi}',1020,230,44);
+  mixl([['m','=\\R^2\\cdot 2\\cdot 2\\pi=4\\pi\\R^2'],['t','ÁREA DA ESFERA',MEN]],1050,350,48);
+  tex('V=\\int_0^R 4\\pi\\R^2\\,\\dR=4\\pi\\Big[\\dfrac{\\R^3}{3}\\Big]_0^R=\\dfrac{4\\pi R^3}{3}',1020,500,48);
+  mixl([['m','\\dfrac{d}{dR}\\Big(\\dfrac{4\\pi R^3}{3}\\Big)=4\\pi R^2'],['t','ENGORDAR = UMA CASCA',MEN]],1020,660,46);
+  mixl([['m','\\de'],['t','SÓ DE r:',BR],['m','\\iiint \\de\\,dV=\\int_0^R \\de(\\R)\\,4\\pi\\R^2\\,\\dR']],1020,810,44);}
+
+ if(K==='b5v2'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('DE VOLTA À BOLA');const o={dx:-40,dy:20,esc:1};await cena3d('bola8c',o);
+  rotulo3('bola8c','ex','\\X',{...o,size:36});rotulo3('bola8c','ey','\\Y',{...o,size:36});rotulo3('bola8c','ez','\\Z',{...o,size:36,ox:18});
+  legq('r = 0,84: METADE DA MASSA DE CADA LADO',120,1020,RO);
+  chip('M=\\pi',1020,175,40,MEN);
+  mixl([['t','MÉDIA',GEO],['m','\\dfrac{M}{V}=\\dfrac{\\pi}{4\\pi/3}=\\pi\\cdot\\dfrac{3}{4\\pi}=\\dfrac34']],1020,300,46);
+  mixl([['t','MASSA ATÉ c',GEO],['m','M(c)=\\int_0^{2\\pi}\\!\\!\\int_0^{\\pi}\\!\\!\\int_0^{c}\\R^3\\sen\\F\\,\\dR\\,\\dF\\,\\dT']],1020,440,44);
+  tex('=\\Big[\\dfrac{\\R^4}{4}\\Big]_0^c\\cdot 2\\cdot 2\\pi=\\Big(\\dfrac{c^4}{4}-0\\Big)\\cdot 2\\cdot 2\\pi=\\pi c^4',1050,570,46);
+  tex('\\pi c^4=\\dfrac{\\pi}{2}\\;\\Rightarrow\\; c^4=\\dfrac12\\;\\Rightarrow\\; c=\\sqrt[4]{\\tfrac12}\\approx 0{,}84'.replace('\\tfrac','\\dfrac'),1020,710,48);
+  leg('METADE DA MASSA MORA NOS 16% DE FORA DO RAIO',1020,830,RO,'left',30);}
+
+ // casquinha: 3D pequeno + corte meridiano 2D grande
+ function corteCasq(X0,Y0,w,h,u,{etapa=1,ox=90,sonda=true}={}){painel2d(X0,Y0,w,h);txt('O CORTE: UMA PÁGINA',X0+24,Y0+44,{size:26,f:'SGM',cor:TH});
+  vista(X0+ox,Y0+h-50,u);
+  // região: φ ∈ [0, π/4] dentro de r = 2 cos φ
+  const reg=[[0,0]];for(let k=0;k<=40;k++){const f=PI/4*k/40,r=2*Math.cos(f);reg.push([r*Math.sin(f),r*Math.cos(f)]);}
+  if(etapa===2){preenche([[0,0],[1,1],[0,1]],mix('#16123A',FI,.45));const cap=[[0,1]];for(let k=0;k<=40;k++){const a=PI/2*k/40;cap.push([Math.cos(PI/2-a)*0+Math.sin(a)*0+Math.cos(a)*1>2?0:Math.cos(a),1+Math.sin(a)]);}preenche(cap,mix('#16123A',CI,.45));}
+  else preenche(reg,mix('#16123A',CI,.30));
+  seta([0,0],[1.45,0],SOMB,4,16);seta([0,0],[0,2.3],EZ,4,16);
+  linha([[0,0],[1.35,1.35]],FI,5);const circ=[];for(let k=0;k<=90;k++){const a=-PI/2+PI*k/90;circ.push([Math.cos(a),1+Math.sin(a)]);}linha(circ,CORAL,5);
+  linha([[1,1],[1,0]],GEO,2,{dash:[7,7]});linha([[1,1],[0,1]],GEO,2,{dash:[7,7]});
+  if(etapa===1&&sonda){const fs=PI/6,r=2*Math.cos(fs),pe=[r*Math.sin(fs),r*Math.cos(fs)];linha([[0,0],pe],RO,6);pontoPx(P(0,0),AZC,10);ponto(pe,CORAL,10);
+   x.strokeStyle=FI;x.lineWidth=4;x.beginPath();x.arc(...P(0,0),.5*u,-PI/2,-PI/2+fs);x.stroke();tex('\\F',P(.12,.62)[0]-4,P(.12,.62)[1]-14,36);
+   tex('\\R=2\\cos\\F',P(...pe)[0]-22,P(...pe)[1]-36,38,'r',true);}
+  ponto([1,1],BR,9);tex('(1,\\,1)',P(1,1)[0]-14,P(1,1)[1]+34,34,'r',true);
+  tex('\\F=\\dfrac{\\pi}{4}',P(1.0,1.66)[0],P(1.0,1.66)[1],36,'l',true);
+  tex('\\Z',P(0,2.3)[0]+14,P(0,2.3)[1]+8,34);tex('\\Rs',P(1.45,0)[0]-6,P(1.45,0)[1]-26,34);tex('1',P(1,0)[0]-8,P(1,0)[1]+24,30);tex('2',P(0,2)[0]-34,P(0,2)[1],30);}
+
+ if(K==='b61'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('A CASQUINHA');const o={dx:-150,dy:90,esc:.55};await cena3d('casquinha',o);
+  corteCasq(430,140,540,900,260);
+  mixl([['t','CONE',FI],['m','\\Z=\\sqrt{\\X^2+\\Y^2}']],1020,210,46);
+  tex('\\R\\cos\\F=\\R\\sen\\F\\;\\Rightarrow\\;\\operatorname{tg}\\F=1\\;\\Rightarrow\\;\\F=\\dfrac{\\pi}{4}',1050,310,46);
+  mixl([['t','ESFERA',CORAL],['m','\\X^2+\\Y^2+\\Z^2=2\\Z']],1020,430,46);
+  tex('\\R^2=2\\R\\cos\\F\\;\\Rightarrow\\;\\R=2\\cos\\F\\quad(\\R>0)',1050,530,46);
+  mixl([['m','\\X^2+\\Y^2+(\\Z-1)^2=1'],['t','CENTRO (0, 0, 1)',GEO]],1050,620,36);
+  tex('V=\\int_0^{2\\pi}\\!\\!\\int_0^{\\pi/4}\\!\\!\\int_0^{2\\cos\\F}\\J\\,\\dR\\,\\dF\\,\\dT',1020,780,50);}
+
+ if(K==='b62'){fundoV();await logo();canto('A CASQUINHA');corteCasq(60,140,440,900,230,{ox:70,sonda:false});
+  chip('V=\\int_0^{2\\pi}\\!\\int_0^{\\pi/4}\\!\\int_0^{2\\cos\\F}\\J\\,\\dR\\,\\dF\\,\\dT',560,200,34,GEO);
+  tex('\\Big[\\dfrac{\\R^3}{3}\\Big]_0^{2\\cos\\F}\\sen\\F=\\dfrac{(2\\cos\\F)^3}{3}\\sen\\F-0=\\dfrac83\\cos^3\\!\\F\\,\\sen\\F',560,330,44);
+  mixl([['m','\\uu=\\cos\\F,\\quad \\du=-\\sen\\F\\,\\dF']],560,450,44);
+  mixl([['m','\\F=0\\to\\uu=1,\\qquad \\F=\\dfrac{\\pi}{4}\\to\\uu=\\dfrac{\\sqrt2}{2}']],560,550,44);
+  tex('\\int_0^{\\pi/4}\\dfrac83\\cos^3\\!\\F\\,\\sen\\F\\,\\dF=\\dfrac83\\int_1^{\\sqrt2/2}\\uu^3\\,(-\\du)',560,680,44);
+  tex('=\\dfrac83\\int_{\\sqrt2/2}^{1}\\uu^3\\,\\du',600,810,46);leg('O MENOS INVERTE OS LIMITES',1020,820,UU,'left',30);
+  tex('=\\dfrac83\\Big[\\dfrac{\\uu^4}{4}\\Big]_{\\sqrt2/2}^{1}=\\dfrac83\\Big(\\dfrac14-\\dfrac1{16}\\Big)=\\dfrac83\\cdot\\dfrac{3}{16}=\\dfrac12',600,950,44);}
+
+ if(K==='s2v2'){fundoV();U=120;O=[0,0];papelTela(.5);await logo();canto('E UMA LATA?');const o={dx:-20,dy:110,esc:.42};await cena3d('lata',o);
+  painel2d(60,560,640,480);txt('O CORTE: UMA PÁGINA',84,604,{size:26,f:'SGM',cor:TH});
+  vista(150,990,300);preenche([[0,0],[1,0],[1,1],[0,1]],mix('#16123A',GEO,.25));seta([0,0],[1.25,0],SOMB,4,16);seta([0,0],[0,1.15],EZ,4,16);
+  linha([[1,0],[1,1],[0,1]],GEO,4);linha([[0,0],[1,1]],AL,3,{dash:[9,7]});
+  const a=PI/3,pw=[1,1/Math.tan(a)],b=PI/8,pt=[Math.tan(b),1];linha([[0,0],pw],RO,6);linha([[0,0],pt],RO,6);pontoPx(P(0,0),AZC,10);ponto(pw,CORAL,10);ponto(pt,CORAL,10);
+  tex('\\R=\\dfrac{1}{\\sen\\F}',P(...pw)[0]+18,P(...pw)[1],32,'l',true);tex('\\R=\\dfrac{1}{\\cos\\F}',P(...pt)[0]+20,P(...pt)[1]+56,32,'l',true);
+  tex('\\Rs',P(1.25,0)[0]-4,P(1.25,0)[1]-26,32);tex('\\Z',P(0,1.15)[0]+14,P(0,1.15)[1]+8,32);
+  
+  mixl([['t','MESMO INTEGRANDO',GEO],['m','\\Ci{\\sqrt{\\X^2+\\Y^2+\\Z^2}}']],780,200,44);
+  tex('\\X^2+\\Y^2\\le 1,\\qquad 0\\le\\Z\\le 1',780,300,46);
+  leg('A SONDA PARA NA PAREDE OU NA TAMPA:',780,400,GEO,'left',30);leg('DUAS FÓRMULAS PARA r',780,445,GEO,'left',30);leg('A FÓRMULA RACHA NA DIAGONAL: φ = π/4',780,500,AL,'left',30);
+  painel(1060,560,800,330,{fill:'rgba(19,16,48,.92)'});txt('NO PRÓXIMO VÍDEO',1460,640,{size:30,f:'SGM',cor:GEO,al:'center'});
+  txt('COORDENADAS',1460,720,{size:48,al:'center'});txt('CILÍNDRICAS',1460,785,{size:48,cor:SOMB,al:'center'});leg('POLARES NO CHÃO + A ALTURA z',1460,850,GEO,'center',30);}
+
+ document.title='ok';}
+main();
+</script></body></html>

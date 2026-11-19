@@ -1,0 +1,761 @@
+{
+ "sections": [
+  {
+   "name": "c01",
+   "time": 0.0,
+   "part": 0
+  },
+  {
+   "name": "c02",
+   "time": 49.067,
+   "part": 34
+  },
+  {
+   "name": "c03",
+   "time": 60.133,
+   "part": 42
+  },
+  {
+   "name": "c04",
+   "time": 134.4,
+   "part": 90
+  },
+  {
+   "name": "c05",
+   "time": 161.06,
+   "part": 109
+  },
+  {
+   "name": "c06",
+   "time": 193.82,
+   "part": 133
+  },
+  {
+   "name": "c07",
+   "time": 244.31,
+   "part": 166
+  },
+  {
+   "name": "c08",
+   "time": 275.11,
+   "part": 200
+  },
+  {
+   "name": "c09",
+   "time": 329.42,
+   "part": 240
+  },
+  {
+   "name": "c10",
+   "time": 365.01,
+   "part": 265
+  },
+  {
+   "name": "c11",
+   "time": 409.27,
+   "part": 293
+  },
+  {
+   "name": "c12",
+   "time": 445.53,
+   "part": 323
+  },
+  {
+   "name": "c13",
+   "time": 495.56,
+   "part": 353
+  },
+  {
+   "name": "c14",
+   "time": 507.51,
+   "part": 362
+  },
+  {
+   "name": "c15",
+   "time": 570.12,
+   "part": 411
+  },
+  {
+   "name": "c16",
+   "time": 596.61,
+   "part": 430
+  },
+  {
+   "name": "c17",
+   "time": 621.34,
+   "part": 454
+  },
+  {
+   "name": "c18",
+   "time": 647.63,
+   "part": 470
+  },
+  {
+   "name": "c19",
+   "time": 682.05,
+   "part": 491
+  },
+  {
+   "name": "c20",
+   "time": 742.02,
+   "part": 533
+  },
+  {
+   "name": "c20b",
+   "time": 772.88,
+   "part": 560
+  }
+ ],
+ "checkpoints": [
+  {
+   "name": "c01_aparato",
+   "time": 8.267,
+   "part": 5
+  },
+  {
+   "name": "c01_previsao",
+   "time": 21.867,
+   "part": 16
+  },
+  {
+   "name": "c01_curva",
+   "time": 44.533,
+   "part": 33
+  },
+  {
+   "name": "c02_titulo",
+   "time": 53.867,
+   "part": 39
+  },
+  {
+   "name": "c03_aparato",
+   "time": 68.4,
+   "part": 47
+  },
+  {
+   "name": "c03_cadeia",
+   "time": 94.933,
+   "part": 65
+  },
+  {
+   "name": "c03_leis",
+   "time": 110.933,
+   "part": 74
+  },
+  {
+   "name": "c03_M",
+   "time": 129.467,
+   "part": 88
+  },
+  {
+   "name": "c04_reciproca",
+   "time": 152.89,
+   "part": 105
+  },
+  {
+   "name": "c05_EL",
+   "time": 187.15,
+   "part": 129
+  },
+  {
+   "name": "c06_sobe",
+   "time": 207.24,
+   "part": 146
+  },
+  {
+   "name": "c06_desce",
+   "time": 219.31,
+   "part": 151
+  },
+  {
+   "name": "c06_payoff",
+   "time": 228.16,
+   "part": 160
+  },
+  {
+   "name": "c06_constante",
+   "time": 239.81,
+   "part": 165
+  },
+  {
+   "name": "c07_malha",
+   "time": 264.34,
+   "part": 194
+  },
+  {
+   "name": "c07_rl",
+   "time": 270.61,
+   "part": 199
+  },
+  {
+   "name": "c08_definicoes",
+   "time": 293.0,
+   "part": 214
+  },
+  {
+   "name": "c08_solucao",
+   "time": 324.52,
+   "part": 238
+  },
+  {
+   "name": "c09_inicio",
+   "time": 340.17,
+   "part": 252
+  },
+  {
+   "name": "c09_tau",
+   "time": 347.54,
+   "part": 257
+  },
+  {
+   "name": "c09_regime",
+   "time": 360.01,
+   "part": 263
+  },
+  {
+   "name": "c10_axial",
+   "time": 378.36,
+   "part": 275
+  },
+  {
+   "name": "c10_Ephi",
+   "time": 390.03,
+   "part": 285
+  },
+  {
+   "name": "c10_regime",
+   "time": 404.77,
+   "part": 292
+  },
+  {
+   "name": "c11_medidores",
+   "time": 432.96,
+   "part": 313
+  },
+  {
+   "name": "c11_vezesI",
+   "time": 442.53,
+   "part": 322
+  },
+  {
+   "name": "c12_balanco",
+   "time": 464.12,
+   "part": 339
+  },
+  {
+   "name": "c12_UB",
+   "time": 470.29,
+   "part": 344
+  },
+  {
+   "name": "c12_medidores",
+   "time": 492.56,
+   "part": 352
+  },
+  {
+   "name": "c13_pergunta",
+   "time": 503.01,
+   "part": 361
+  },
+  {
+   "name": "c14_volume",
+   "time": 525.3,
+   "part": 378
+  },
+  {
+   "name": "c14_uB",
+   "time": 565.22,
+   "part": 409
+  },
+  {
+   "name": "c15_integral",
+   "time": 591.31,
+   "part": 428
+  },
+  {
+   "name": "c16_troca",
+   "time": 618.34,
+   "part": 453
+  },
+  {
+   "name": "c17_fem",
+   "time": 634.96,
+   "part": 466
+  },
+  {
+   "name": "c17_fim",
+   "time": 644.63,
+   "part": 469
+  },
+  {
+   "name": "c18_curvas",
+   "time": 663.18,
+   "part": 481
+  },
+  {
+   "name": "c18_area",
+   "time": 678.25,
+   "part": 489
+  },
+  {
+   "name": "c19_total",
+   "time": 715.95,
+   "part": 521
+  },
+  {
+   "name": "c19_conservacao",
+   "time": 737.52,
+   "part": 532
+  },
+  {
+   "name": "c20_sintese",
+   "time": 769.88,
+   "part": 559
+  },
+  {
+   "name": "c20_ampere",
+   "time": 800.21,
+   "part": 586
+  },
+  {
+   "name": "c20_maxwell",
+   "time": 815.93,
+   "part": 597
+  }
+ ],
+ "layout_issues": [
+  {
+   "checkpoint": "c01_aparato",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c01_previsao",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c01_curva",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c02_titulo",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c03_aparato",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c03_cadeia",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c03_leis",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c03_M",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c04_reciproca",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c05_EL",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c06_sobe",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c06_sobe",
+   "text": "I"
+  },
+  {
+   "checkpoint": "c06_sobe",
+   "text": "I_1"
+  },
+  {
+   "checkpoint": "c06_sobe",
+   "text": "P_{\\rm fonte}"
+  },
+  {
+   "checkpoint": "c06_sobe",
+   "text": "\\frac{dU_B}{dt}"
+  },
+  {
+   "checkpoint": "c06_desce",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c06_desce",
+   "text": "I"
+  },
+  {
+   "checkpoint": "c06_desce",
+   "text": "I_1"
+  },
+  {
+   "checkpoint": "c06_desce",
+   "text": "P_{\\rm fonte}"
+  },
+  {
+   "checkpoint": "c06_desce",
+   "text": "\\frac{dU_B}{dt}"
+  },
+  {
+   "checkpoint": "c06_payoff",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c06_payoff",
+   "text": "I"
+  },
+  {
+   "checkpoint": "c06_payoff",
+   "text": "I_1"
+  },
+  {
+   "checkpoint": "c06_payoff",
+   "text": "P_{\\rm fonte}"
+  },
+  {
+   "checkpoint": "c06_payoff",
+   "text": "\\frac{dU_B}{dt}"
+  },
+  {
+   "estado": "c06_payoff",
+   "t": 228.16,
+   "sobrepoe": [
+    "I",
+    "mudança"
+   ]
+  },
+  {
+   "checkpoint": "c06_constante",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c06_constante",
+   "text": "I"
+  },
+  {
+   "checkpoint": "c06_constante",
+   "text": "I_1"
+  },
+  {
+   "checkpoint": "c06_constante",
+   "text": "P_{\\rm fonte}"
+  },
+  {
+   "checkpoint": "c06_constante",
+   "text": "\\frac{dU_B}{dt}"
+  },
+  {
+   "checkpoint": "c07_malha",
+   "text": "+\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c07_malha",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c07_rl",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c08_definicoes",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c08_solucao",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c09_inicio",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c09_tau",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c09_regime",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c10_axial",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c10_axial",
+   "text": "I"
+  },
+  {
+   "checkpoint": "c10_axial",
+   "text": "I_1"
+  },
+  {
+   "checkpoint": "c10_axial",
+   "text": "medidor"
+  },
+  {
+   "checkpoint": "c10_axial",
+   "text": "fonte"
+  },
+  {
+   "checkpoint": "c10_axial",
+   "text": "P_{\\rm fonte}"
+  },
+  {
+   "checkpoint": "c10_axial",
+   "text": "P_{\\rm Joule}"
+  },
+  {
+   "checkpoint": "c10_axial",
+   "text": "\\frac{dU_B}{dt}"
+  },
+  {
+   "checkpoint": "c10_Ephi",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c10_Ephi",
+   "text": "I"
+  },
+  {
+   "checkpoint": "c10_Ephi",
+   "text": "I_1"
+  },
+  {
+   "checkpoint": "c10_Ephi",
+   "text": "medidor"
+  },
+  {
+   "checkpoint": "c10_Ephi",
+   "text": "fonte"
+  },
+  {
+   "checkpoint": "c10_Ephi",
+   "text": "P_{\\rm fonte}"
+  },
+  {
+   "checkpoint": "c10_Ephi",
+   "text": "P_{\\rm Joule}"
+  },
+  {
+   "checkpoint": "c10_Ephi",
+   "text": "\\frac{dU_B}{dt}"
+  },
+  {
+   "checkpoint": "c10_regime",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c10_regime",
+   "text": "I"
+  },
+  {
+   "checkpoint": "c10_regime",
+   "text": "I_1"
+  },
+  {
+   "checkpoint": "c10_regime",
+   "text": "medidor"
+  },
+  {
+   "checkpoint": "c10_regime",
+   "text": "fonte"
+  },
+  {
+   "checkpoint": "c10_regime",
+   "text": "P_{\\rm fonte}"
+  },
+  {
+   "checkpoint": "c10_regime",
+   "text": "P_{\\rm Joule}"
+  },
+  {
+   "checkpoint": "c10_regime",
+   "text": "\\frac{dU_B}{dt}"
+  },
+  {
+   "checkpoint": "c11_medidores",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c11_vezesI",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c12_balanco",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c12_UB",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c12_medidores",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c13_pergunta",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c13_pergunta",
+   "text": "I"
+  },
+  {
+   "checkpoint": "c13_pergunta",
+   "text": "I_1"
+  },
+  {
+   "checkpoint": "c13_pergunta",
+   "text": "medidor"
+  },
+  {
+   "checkpoint": "c13_pergunta",
+   "text": "fonte"
+  },
+  {
+   "checkpoint": "c13_pergunta",
+   "text": "\\frac{dU_B}{dt}"
+  },
+  {
+   "checkpoint": "c14_volume",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c14_volume",
+   "text": "I"
+  },
+  {
+   "checkpoint": "c14_volume",
+   "text": "I_1"
+  },
+  {
+   "checkpoint": "c14_volume",
+   "text": "P_{\\rm fonte}"
+  },
+  {
+   "checkpoint": "c14_volume",
+   "text": "\\frac{dU_B}{dt}"
+  },
+  {
+   "checkpoint": "c14_uB",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c14_uB",
+   "text": "I"
+  },
+  {
+   "checkpoint": "c14_uB",
+   "text": "I_1"
+  },
+  {
+   "checkpoint": "c14_uB",
+   "text": "P_{\\rm fonte}"
+  },
+  {
+   "checkpoint": "c14_uB",
+   "text": "\\frac{dU_B}{dt}"
+  },
+  {
+   "checkpoint": "c15_integral",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c15_integral",
+   "text": "I"
+  },
+  {
+   "checkpoint": "c15_integral",
+   "text": "I_1"
+  },
+  {
+   "checkpoint": "c15_integral",
+   "text": "P_{\\rm fonte}"
+  },
+  {
+   "checkpoint": "c16_troca",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c17_fem",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c17_fim",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c18_curvas",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c18_area",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "estado": "c18_area",
+   "t": 678.25,
+   "sobrepoe": [
+    "2\\tau",
+    "Q_R(t)=\\int_0^t P_R\\,dt'"
+   ]
+  },
+  {
+   "estado": "c18_area",
+   "t": 678.25,
+   "sobrepoe": [
+    "3\\tau",
+    "Q_R(t)=\\int_0^t P_R\\,dt'"
+   ]
+  },
+  {
+   "estado": "c18_area",
+   "t": 678.25,
+   "sobrepoe": [
+    "4\\tau",
+    "Q_R(t)=\\int_0^t P_R\\,dt'"
+   ]
+  },
+  {
+   "estado": "c18_area",
+   "t": 678.25,
+   "sobrepoe": [
+    "épotência:oritmodaenergia.Ocal",
+    "Q_R(t)=\\int_0^t P_R\\,dt'"
+   ]
+  },
+  {
+   "checkpoint": "c19_total",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c19_conservacao",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c20_sintese",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c20_ampere",
+   "text": "\\mathcal E_0"
+  },
+  {
+   "checkpoint": "c20_maxwell",
+   "text": "Comoocampomagnéticosabe"
+  },
+  {
+   "checkpoint": "c20_maxwell",
+   "text": "\\mathcal E_0"
+  }
+ ],
+ "duration": 822.73
+}

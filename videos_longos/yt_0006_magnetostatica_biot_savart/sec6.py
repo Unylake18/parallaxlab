@@ -17,16 +17,16 @@ class Sec6:
     # ── geometria viva da espira (rótulos são objetos persistentes, não parte do grupo recalculado) ──────────
     def loop_shapes(self):
         R, z, ph, W, F = self.RL, self.z_obs.get_value(), self.phi_src.get_value(), self.W, self.lf
-        g = VGroup(ParametricFunction(lambda u: W([R * math.cos(u), R * math.sin(u), 0]), t_range=[0, 2 * math.pi], color=BLUE_L,
+        g = VGroup(ParametricFunction(lambda u: W([R * math.cos(u), R * math.sin(u), 0]), t_range=[0, 2 * math.pi], color=STEEL,
                                       stroke_width=7, fill_opacity=0))
         f, p, dl, sep, b, tr, ax = espira(ph, z, R)
         O = np.zeros(3)
         g.add(Dot(W(f), color=GREEN, radius=0.085).set_z_index(9))
         if abs(self.beta.get_value() - 90) < 0.01 and abs(math.cos(ph)) < 0.001:
             s = 1 if math.sin(ph) > 0 else -1
-            g.add(self.out_symbol(W(f), s, 0.17, GREEN))
+            g.add(self.out_symbol(W(f), s, 0.17, WHITE))
         else:
-            g.add(self.vec(f, dl, GREEN, scale=0.38, width=6))
+            g.add(self.vec(f, dl, WHITE, scale=0.38, width=6))
         if F["axis"]:
             g.add(DashedLine(W([0, 0, -0.3]), W([0, 0, 3.1]), color=VIOLET, stroke_width=2.4), Dot(W(p), radius=0.1).set_z_index(9))
         if F["tri"]:
@@ -44,10 +44,10 @@ class Sec6:
                 g.add(self.vec(p, ax, MAG, scale=sc, width=4), self.vec(p + sc * ax, tr, CYAN, scale=sc, width=4))
         if F["pair"]:
             f2, p2, dl2, sep2, b2, tr2, ax2 = espira(ph + math.pi, z, R)
-            g.add(self.out_symbol(W(f2), -1, 0.17, GREEN), Line(W(f2), W(p), color=VIOLET, stroke_width=2).set_opacity(0.5))
-            if not F["only_comp"]:
+            g.add(self.out_symbol(W(f2), -1, 0.17, WHITE), Line(W(f2), W(p), color=VIOLET, stroke_width=2).set_opacity(0.5))
+            if not F["only_comp"] and F.get("pair_b", True):
                 g.add(self.vec(p, b2, MAG, scale=4.5, width=5))
-            if F["comp"]:
+            if F["comp"] and F.get("pair_b", True):
                 g.add(self.vec(p + 4.5 * ax2, tr2, CYAN, scale=4.5, width=4))
         if F.get("many"):
             for ang_ in np.linspace(0, 2 * math.pi, 8, endpoint=False):
@@ -83,9 +83,18 @@ class Sec6:
         ia = arrow(W([R, -0.05, 0]), W([R, 0.7, 0]), GREEN, 6)
         self.play(FadeIn(frontal), FadeIn(il), FadeIn(ia), run_time=0.9)
         self.caption("A corrente $I$ percorre a espira de raio $R$")
-        self.hold(2.5)
+        self.hold(1.5)
+        # a notação muda: R deixa de ser a distância fonte–observador; ela passa a ser s
+        row = lambda sym, col, txt_: VGroup(MathTex(sym, font_size=40, color=col), txt(txt_, 26, WHITE)).arrange(RIGHT, buff=0.22)
+        legend = VGroup(txt("Na espira, a notação muda", 24, DIM), row("R", VIOLET, "raio da espira"),
+                        row("s", VIOLET, "separação até P"), row("z", VIOLET, "posição axial de P")).arrange(
+            DOWN, aligned_edge=LEFT, buff=0.2).move_to(AUX)
+        legend_card = panel(legend.width + 0.9, legend.height + 0.6, AUX)
+        self.play(FadeIn(legend_card), FadeIn(legend), run_time=0.8)
+        self.destaca([legend[1], legend[2], legend[3]], 4.0)
+        self.play(FadeOut(legend_card), FadeOut(legend), run_time=0.6)
         ph0 = math.pi / 2
-        arc = Arc(radius=R * self.gs.get_value(), start_angle=ph0 - 0.4, angle=0.4, arc_center=W([0, 0, 0]), color=GREEN, stroke_width=12)
+        arc = Arc(radius=R * self.gs.get_value(), start_angle=ph0 - 0.4, angle=0.4, arc_center=W([0, 0, 0]), color=WHITE, stroke_width=12)
         rad = Line(W([0, 0, 0]), W([0, R, 0]), color=WHITE, stroke_width=2.5)
         ang = Arc(radius=0.55, start_angle=ph0 - 0.4, angle=0.4, arc_center=W([0, 0, 0]), color=WHITE, stroke_width=3)
         rl = self.plab("R", "R", lambda: W([-0.3, R / 2, 0]))
@@ -102,7 +111,7 @@ class Sec6:
         self.play(FadeOut(VGroup(frontal, ia, il, arc, ang, rad, dpl)), run_time=0.8)
         self.lf["axis"] = True
         side = txt("vista lateral · espira de perfil", T_NOTE, DIM).move_to([-4.4, 2.75, 0])
-        self.caption("Giramos a mesma espira de $0^\\circ$ a $90^\\circ$: vemos o eixo $z$ e o ponto $P$")
+        self.caption("Mudamos a perspectiva: da vista frontal ao perfil da espira.")
         rl.clear_updaters()
         rl.add_updater(lambda m: m.move_to(W([0.0, R * 0.5, 0]) + np.array([-0.3, 0.0, 0])))
         self.play(self.beta.animate.set_value(90), self.ox.animate.set_value(-5.6), self.oy.animate.set_value(-0.2), self.gs.animate.set_value(1.3),
@@ -122,11 +131,13 @@ class Sec6:
         rl2 = self.plab("R", "R", lambda: W(0.5 * fpos()) + np.array([-0.3, 0.0, 0]))
         sl = self.plab("s", "s", lambda: W(fpos() + 0.5 * (ppos() - fpos())) + np.array([0.3, 0.15, 0]))
         zl = self.plab("z", "z", lambda: W(0.5 * ppos()) + np.array([0.0, -0.38, 0]))
-        self.play(FadeOut(rl), FadeIn(rl2), FadeIn(sl), FadeIn(zl), run_time=1.0)
-        self.caption("Triângulo retângulo: $R$ é o raio, $z$ é a altura de $P$ e $s$ liga a fonte a $P$")
+        ol_ = self.plab("O", None, lambda: W(O) + np.array([-0.32, -0.32, 0]), size=M_S)
+        pl_ = self.plab("P", None, lambda: W(ppos()) + np.array([0.12, 0.38, 0]), size=M_S)
+        self.play(FadeOut(rl), FadeIn(rl2), FadeIn(sl), FadeIn(zl), FadeIn(ol_), FadeIn(pl_), run_time=1.0)
+        self.caption("Use o triângulo: $R$ raio, $z$ eixo, $s$ fonte → $P$")
         self.hold(3)
         self.show(E(r"s^2=R^2+z^2", "s^2", "R^2", "z^2", size=M_XL), slot="A", src={("s^2", 0): sl, ("R^2", 0): rl2, ("z^2", 0): zl},
-                  rt=2.2, wait=2.5)
+                  rt=2.2, wait=2.5, name="Teorema de Pitágoras")
         self.caption("Pitágoras: a separação $s$ vale $\\sqrt{R^2+z^2}$")
         self.mark("espira_triangulo")
         self.hold(1.5)
@@ -156,11 +167,11 @@ class Sec6:
         dbl = self.plab(r"d\mathbf B", r"d\mathbf B", lambda: W(ppos() + 4.5 * espira(self.phi_src.get_value(), self.z_obs.get_value(), R)[4]) + np.array([0.15, 0.4, 0]))
         self.play(FadeIn(dbl), run_time=0.8)
         self.caption("A mão direita dá $d\\mathbf B$: perpendicular a $\\mathbf s$ e a $d\\ell$")
-        self.hold(3.5)
+        self.destaca([dbl], 3.5, each=2.0)
         self.lf["comp"] = True
         dbz = self.plab(r"dB_z", r"dB_z", lambda: W(ppos() + 2.25 * espira(self.phi_src.get_value(), self.z_obs.get_value(), R)[6]) + np.array([0.0, -0.5, 0]), size=M_S)
         self.play(FadeIn(dbz), run_time=0.8)
-        self.caption("Decompomos $d\\mathbf B$ em uma parte axial ($dB_z$) e uma transversal")
+        self.caption("Projete no eixo")
         self.show(E(r"dB_z=dB\cos\gamma", "dB", r"dB_z", r"\cos\gamma", size=M_XL), (r"dB", "dB"), src={(r"dB_z", 0): dbz}, rt=2.0, wait=1.5)
         gam = math.atan2(self.z_obs.get_value(), R)
         f0, p0 = espira(math.pi / 2, self.z_obs.get_value(), R)[0], espira(math.pi / 2, self.z_obs.get_value(), R)[1]
@@ -184,9 +195,12 @@ class Sec6:
         self.play(self.z_obs.animate.set_value(2.6), run_time=3, rate_func=smooth)
         self.play(self.z_obs.animate.set_value(1.9), run_time=2, rate_func=smooth)
         # ── elemento oposto: transversais se cancelam, axiais se somam ───────────────────────────────────
+        self.lf["pair_b"] = False
         self.lf["pair"] = True
         self.caption("Agora o elemento diametralmente oposto, com a mesma distância $s$ até $P$")
-        self.hold(3)
+        self.hold(1.6)
+        self.lf["pair_b"] = True
+        self.hold(1.6)
         self.lf["only_comp"] = True
         self.play(FadeOut(dbl), run_time=0.4)
         self.hold(0.1)
@@ -197,7 +211,7 @@ class Sec6:
         base = np.array([2.0, -1.0, 0.0])
         delta = W(p1 + sc * tr1) - W(p1)
         t1, t2 = arrow(base, base + delta, CYAN, 5), arrow(base + delta, base, CYAN, 5)
-        self.caption("Transversais, ponta a ponta: o caminho volta ao ponto de partida")
+        self.caption("As transversais cancelam")
         self.show(E(r"d\mathbf B_\perp(\phi)+d\mathbf B_\perp(\phi+\pi)=\mathbf 0", r"d\mathbf B_\perp(\phi)", r"d\mathbf B_\perp(\phi+\pi)", size=M_S,
                     colors={r"d\mathbf B_\perp(\phi)": CYAN, r"d\mathbf B_\perp(\phi+\pi)": CYAN}), rt=1.6, wait=0.5)
         self.play(TransformFromCopy(orig_t1, t1), run_time=1.3)
@@ -211,16 +225,17 @@ class Sec6:
         abase = np.array([1.5, -1.9, 0.0])
         oa = self.vec(p1, ax1, MAG, scale=sc, width=4)
         a_1, a_2 = arrow(abase, abase + adelta, MAG, 5), arrow(abase + adelta, abase + 2 * adelta, MAG, 5)
-        self.caption("Axiais, ponta a ponta: as duas parcelas têm o mesmo sentido e se somam")
+        self.caption("As axiais se somam")
         self.show(E(r"dB_z+dB_z=2\,dB_z", r"dB_z", size=M_L), rt=1.6, wait=0.3)
         self.play(TransformFromCopy(oa, a_1), run_time=1.1)
         self.play(TransformFromCopy(oa, a_2), run_time=1.1)
         res = arrow(abase + np.array([0.5, 0, 0]), abase + np.array([0.5, 0, 0]) + 2 * adelta, MAG, 8)
         self.play(Create(res), run_time=0.9)
         self.mark("espira_cancelamento_e_soma")
-        self.caption("O par prova o cancelamento. Volte a UMA contribuição $dB_z$")
-        self.hold(3.5)
-        self.play(FadeOut(VGroup(a_1, a_2, res, side)), run_time=0.7)
+        self.caption("O par mostrou a simetria. Integre UMA contribuição $dB_z$")
+        self.hold(2.5)
+        self.play(FadeOut(VGroup(a_1, a_2, res)), run_time=0.7)
+        self.show(E(r"dB_z", r"dB_z", size=M_XL), (r"dB_z", r"dB_z", 0, 0), rt=1.6, wait=2.0)
         self.lf["pair"] = False
         self.lf["only_comp"] = False
         # ── álgebra do integrando ─────────────────────────────────────────────────────────────────────────
@@ -249,7 +264,7 @@ class Sec6:
         self.hl("R", 0, color=VIOLET, rt=0.4)
         self.hl("R", 1, color=VIOLET, rt=0.4)
         self.show(E(r"dB_z=\frac{\mu_0}{4\pi}\frac{I\,R^2\,d\phi}{s^3}",r"dB_z", "I", r"R^2", r"s^3", r"d\phi", r"\frac{\mu_0}{4\pi}", size=M_XL),
-                  ("R", "R^2", 0, 0), ("R", None, 1), ("s^2", "s^3"), ("s", None), rt=2.2, wait=2.0)
+                  ([("R", 0), ("R", 1)], "R^2"), ([("s^2", 0), ("s", 0)], "s^3"), rt=2.2, wait=2.0)
         self.show(E(r"s^3=\left(R^2+z^2\right)^{3/2}", r"s^3", size=M_M), slot="A", src={("s^3", 0): glyphs(self.slots["H"]["eq"], "s^3", 0)}, rt=1.6, wait=1.5)
         self.caption("Use $s^2=R^2+z^2$ no denominador")
         self.hl("s^3")
@@ -263,9 +278,18 @@ class Sec6:
         self.view_to(-4.2, -0.2, 1.05, 1.0)
         self.lf["tri"] = False
         self.lf["comp"] = False
-        self.play(FadeOut(VGroup(rl2, sl, zl, dbz)), self.beta.animate.set_value(68), run_time=2.0)
-        self.caption("Percorrer uma volta: $I$, $R$, $z$ e $s$ não mudam; só $\\phi$ varre de $0$ a $2\\pi$")
+        self.play(FadeOut(VGroup(rl2, sl, zl, dbz, ol_)), self.beta.animate.set_value(68), run_time=2.0)
+        self.caption("Integre uma volta: só $\\phi$ varia")
         self.play(self.phi_src.animate.increment_value(2 * math.pi), run_time=8, rate_func=linear)
+        self.caption("Somadas, as contribuições formam o campo total $\\mathbf B$")
+        self.lf["field"] = False
+        Btot = always_redraw(lambda: self.vec(np.array([0.0, 0.0, self.z_obs.get_value()]), [0, 0, 1], MAG, scale=0.9, width=8))
+        Btl = self.lab(r"B_z", [0, 0, 0], r"B_z", size=M_M)
+        Btl.add_updater(lambda m: m.move_to(W(np.array([0.0, 0.0, self.z_obs.get_value() + 1.05])) + np.array([0.5, 0.1, 0])))
+        Btl.update(0)
+        self.add(Btot)
+        self.play(FadeIn(Btl), run_time=0.8)
+        self.Btot, self.Btl, self.loop_extra = Btot, Btl, VGroup(pl_)
         self.show(E(r"B_z=\int_0^{2\pi}\frac{\mu_0}{4\pi}\frac{I\,R^2}{(R^2+z^2)^{3/2}}\,d\phi", r"B_z", "I", r"(R^2+z^2)^{3/2}", r"d\phi",
                     r"\frac{\mu_0}{4\pi}", size=M_M, colors={r"(R^2+z^2)^{3/2}": VIOLET}),
                   (r"dB_z", r"B_z"), rt=2.2, wait=2.0)
@@ -281,11 +305,16 @@ class Sec6:
         self.drop("A")
         self.caption("A volta inteira dá $2\\pi$; junto com o $4\\pi$ da lei, resta $1/2$")
         hh = self.slots["H"]["eq"]
-        self.show(E(r"\frac{2\pi}{4\pi}=\frac{1}{2}", r"\frac{2\pi}{4\pi}", size=M_L), slot="A",
-                  src={(r"\frac{2\pi}{4\pi}", 0): [glyphs(hh, r"2\pi", 0), glyphs(hh, r"\frac{\mu_0}{4\pi}", 0)]}, rt=1.8, wait=2.0)
-        self.show(E(r"B_z(z)=\frac{\mu_0 I R^2}{2\left(R^2+z^2\right)^{3/2}}", r"B_z", "I", r"\mu_0", size=M_XL, colors={}),
-                  rt=2.4, wait=2.5)
+        self.show(E(r"\frac{2\pi}{4\pi}", r"\frac{2\pi}{4\pi}", size=M_L), slot="A",
+                  src={(r"\frac{2\pi}{4\pi}", 0): [glyphs(hh, r"2\pi", 0), glyphs(hh, r"\frac{\mu_0}{4\pi}", 0)]}, rt=1.8, wait=1.4)
+        self.show(E(r"\frac{2\pi}{4\pi}=\frac{1}{2}", r"\frac{2\pi}{4\pi}", r"\frac{1}{2}", "=", size=M_L), slot="A", rt=1.6, wait=1.8)
+        aux = self.slots["A"]["eq"]
+        self.show(E(r"B_z(z)=\frac{\mu_0 I R^2}{2\,(R^2+z^2)^{3/2}}", r"B_z", "I", r"\mu_0", r"2\,", size=M_XL, colors={}),
+                  src={(r"2\,", 0): glyphs(aux, r"\frac{1}{2}", 0)}, rt=2.4, wait=1.5)
         self.drop("A")
+        self.hold(0.8)
+        self.delcap()
+        self.name_card("Campo no eixo de uma espira")
         bx = box(self.slots["H"]["eq"], MAG)
         self.play(FadeIn(bx), run_time=0.6)
         self.mark("resultado_espira_eixo")
@@ -300,6 +329,7 @@ class Sec6:
         self.caption("Leve $P$ até $z=0$")
         self.lf.update(field=False, comp=False, tri=False, pair=False, only_comp=False, many=True)
         self.play(self.z_obs.animate.set_value(0), run_time=5, rate_func=smooth)
+        self.play(FadeOut(self.Btot), FadeOut(self.Btl), run_time=0.5)
         self.show(E(r"B(0)=\frac{\mu_0 I R^2}{2R^3}", "B(0)", "I", "R^3", r"\mu_0", size=M_XL),
                   (r"B_z", "B(0)"), rt=2.4, wait=2.0)
         self.caption("Em $z=0$, a separação até cada elemento é igual ao raio $R$")
@@ -308,23 +338,30 @@ class Sec6:
         self.play(self.phi_src.animate.increment_value(2 * math.pi), run_time=6, rate_func=linear)
         self.mark("espira_centro_sem_laterais")
         self.lf["many"] = False
-        self.hold(1.5)
+        self.play(FadeIn(self.Btot), FadeIn(self.Btl), run_time=0.6)
+        self.hold(1.0)
         self.section("distante", "Checagem 2: muito longe da espira")
         self.show(E(r"B_z(z)=\frac{\mu_0 I R^2}{2\left(R^2+z^2\right)^{3/2}}", "B_z", "I", r"\mu_0", size=M_L), (r"B(0)", "B_z"), rt=2.0, wait=1.0)
         self.caption("Afastamos $P$ do centro: a expressão geral acompanha a geometria")
         self.play(self.z_obs.animate.set_value(2.4), run_time=4)
         self.loop_grp.clear_updaters()
         self.loop_flow.clear_updaters(recursive=True)
-        self.play(FadeOut(self.loop_grp), FadeOut(self.loop_flow), run_time=0.7)
+        self.Btot.clear_updaters()
+        self.Btl.clear_updaters()
+        self.loop_extra.clear_updaters(recursive=True)
+        self.play(FadeOut(self.loop_grp), FadeOut(self.loop_flow), FadeOut(self.Btot), FadeOut(self.Btl), FadeOut(self.loop_extra), run_time=0.7)
         self.reset_view(x=-5.7, y=0, scale=1, beta=0, tau=0)
 
         def far():
             z = self.z_obs.get_value()
             x0, x1, y = -6.7, -0.8, -0.3
             px = x0 + (x1 - x0) * z / (12 * R)
+            Lb = 1.4 * (1 + (z / R) ** 2) ** -1.5
             g = VGroup(Line([x0, y, 0], [x1, y, 0], color=VIOLET, stroke_width=2.4),
-                       Ellipse(width=0.35, height=1.65, color=BLUE_L, stroke_width=5).move_to([x0, y, 0]),
+                       Ellipse(width=0.35, height=1.65, color=STEEL, stroke_width=5).move_to([x0, y, 0]),
                        Dot([px, y, 0], radius=0.1), self.lab("P", [px, y + 0.42, 0], size=M_M), self.lab("z/R", [-0.8, -1.15, 0], size=M_S))
+            if Lb > 0.08:
+                g.add(arrow([px, y, 0], [px + Lb, y, 0], MAG, 7, z=6), self.lab(r"\mathbf B", [px + 0.5 * Lb, y + 0.5, 0], r"\mathbf B", size=M_M))
             for u in (0, 3, 6, 9, 12):
                 xx = x0 + (x1 - x0) * u / 12
                 g.add(Line([xx, y - 0.1, 0], [xx, y + 0.1, 0], color=WHITE, stroke_width=2), self.lab(str(u), [xx, y - 0.45, 0], size=M_S))

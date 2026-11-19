@@ -1,0 +1,2532 @@
+1
+00:00:00,000 --> 00:00:04,740
+Olha esse carretel: gira sem atrito,
+com dois blocos em tambores diferentes,
+
+2
+00:00:04,760 --> 00:00:06,300
+fios em sentidos opostos.
+
+3
+00:00:06,320 --> 00:00:08,880
+Seis quilos no grande, dez no pequeno.
+
+4
+00:00:08,900 --> 00:00:10,900
+Quando eu soltar, qual dos dois desce?
+
+5
+00:00:10,920 --> 00:00:14,650
+Se apostou no mais pesado, fica
+tranquilo: quase todo mundo aposta.
+
+6
+00:00:14,780 --> 00:00:18,660
+Só que olha: o de seis quilos
+desce, e o de dez sobe.
+
+7
+00:00:18,680 --> 00:00:21,350
+Sem motor, sem empurrão,
+sem truque nenhum.
+
+8
+00:00:21,500 --> 00:00:23,960
+Como o mais leve vence o mais pesado?
+
+9
+00:00:23,980 --> 00:00:27,700
+A resposta está na geometria das
+forças e na inércia de quem gira,
+
+10
+00:00:27,720 --> 00:00:30,120
+e é isso que vamos desvendar
+hoje: quatro problemas,
+
+11
+00:00:30,140 --> 00:00:33,350
+montando as equações e
+conferindo cada resultado.
+
+12
+00:00:33,380 --> 00:00:34,460
+Fala, pessoal!
+
+13
+00:00:34,480 --> 00:00:36,050
+Bem-vindos ao Parallax Lab!
+
+14
+00:00:36,240 --> 00:00:39,860
+Hoje é aula de dinâmica da
+rotação, aprendendo resolvendo.
+
+15
+00:00:39,880 --> 00:00:42,380
+Primeiro, um volante
+com um bloco pendurado.
+
+16
+00:00:42,400 --> 00:00:46,620
+Depois, uma haste que cai girando, e a
+força que o eixo faz durante a queda.
+
+17
+00:00:46,640 --> 00:00:49,320
+Em seguida, o carretel
+do começo, com números.
+
+18
+00:00:49,340 --> 00:00:53,840
+E, por fim, um pêndulo: onde pôr o eixo
+para ele oscilar o mais rápido possível?
+
+19
+00:00:53,860 --> 00:00:57,760
+Três deles escondem a mesma
+ideia: importa onde a massa está.
+
+20
+00:00:57,780 --> 00:01:01,540
+Antes de começar, a caixa de
+ferramentas, porque são só cinco.
+
+21
+00:01:01,560 --> 00:01:06,240
+A primeira é o momento de inércia: a
+resistência de um corpo a mudar sua rotação.
+
+22
+00:01:06,260 --> 00:01:10,380
+Ele é a soma de cada pedacinho de
+massa vezes a sua distância ao eixo,
+
+23
+00:01:10,400 --> 00:01:11,320
+ao quadrado.
+
+24
+00:01:11,340 --> 00:01:16,400
+Repara nesse ao quadrado: massa longe do
+eixo conta muito mais do que massa perto.
+
+25
+00:01:16,420 --> 00:01:21,100
+A segunda é o teorema dos eixos paralelos:
+o momento de inércia em torno do centro de
+
+26
+00:01:21,120 --> 00:01:24,620
+massa, mais a massa total vezes
+a distância entre os eixos,
+
+27
+00:01:24,640 --> 00:01:25,340
+ao quadrado.
+
+28
+00:01:25,360 --> 00:01:30,800
+A terceira é a segunda lei da rotação: a soma
+dos torques externos é o momento de inércia
+
+29
+00:01:30,820 --> 00:01:32,680
+vezes a aceleração angular.
+
+30
+00:01:32,700 --> 00:01:37,620
+A quarta é a energia cinética de rotação:
+metade do momento de inércia vezes a velocidade
+
+31
+00:01:37,640 --> 00:01:39,160
+angular ao quadrado.
+
+32
+00:01:39,180 --> 00:01:42,820
+E a quinta são as pontes entre
+o giro e cada ponto do corpo:
+
+33
+00:01:42,840 --> 00:01:47,120
+velocidade tangencial, aceleração
+tangencial e aceleração centrípeta.
+
+34
+00:01:47,140 --> 00:01:48,090
+Então bora usar.
+
+35
+00:01:48,260 --> 00:01:50,960
+Antes do primeiro problema,
+um desafio que ficou no ar.
+
+36
+00:01:50,980 --> 00:01:55,620
+Uma régua uniforme de um metro, presa
+numa dobradiça horizontal sem atrito,
+
+37
+00:01:55,640 --> 00:01:57,040
+é solta na horizontal.
+
+38
+00:01:57,060 --> 00:02:01,800
+Uma moeda solta na ponta fica para trás,
+porque a ponta acelera mais do que a gravidade.
+
+39
+00:02:01,820 --> 00:02:05,020
+Agora prende na ponta uma
+massa igual à da própria régua.
+
+40
+00:02:05,040 --> 00:02:06,720
+A moeda é só detector.
+
+41
+00:02:06,740 --> 00:02:09,160
+Será que a ponta ainda passa da gravidade?
+
+42
+00:02:09,500 --> 00:02:13,240
+O torque agora tem duas
+contribuições: o peso da régua,
+
+43
+00:02:13,260 --> 00:02:17,360
+no meio, com braço de metade do
+comprimento, e o peso da massa extra,
+
+44
+00:02:17,380 --> 00:02:19,100
+na ponta, com o comprimento inteiro.
+
+45
+00:02:19,120 --> 00:02:23,700
+Somando, três meios da massa vezes
+a gravidade vezes o comprimento.
+
+46
+00:02:23,720 --> 00:02:28,480
+O momento de inércia também cresce: um terço
+da massa vezes o comprimento ao quadrado,
+
+47
+00:02:28,500 --> 00:02:31,840
+da régua, mais a massa vezes
+o comprimento ao quadrado,
+
+48
+00:02:31,860 --> 00:02:32,680
+da ponta.
+
+49
+00:02:32,700 --> 00:02:34,440
+Total: quatro terços.
+
+50
+00:02:34,460 --> 00:02:39,780
+Dividindo, a aceleração angular inicial é
+nove oitavos da gravidade sobre o comprimento.
+
+51
+00:02:39,800 --> 00:02:44,120
+E a ponta, a um comprimento do eixo,
+acelera nove oitavos da gravidade.
+
+52
+00:02:44,140 --> 00:02:47,680
+Repara no peso de cada termo:
+como as duas massas são iguais,
+
+53
+00:02:47,700 --> 00:02:52,800
+a massa da ponta, com braço duas vezes maior,
+manda mais no torque que a régua inteira.
+
+54
+00:02:53,140 --> 00:02:57,360
+Ainda passa da gravidade,
+mas por pouco: só um oitavo.
+
+55
+00:02:57,380 --> 00:03:00,440
+Antes, a ponta chegava a
+três meios da gravidade.
+
+56
+00:03:00,460 --> 00:03:05,360
+O torque ficou três vezes maior, mas o
+momento de inércia ficou quatro vezes maior,
+
+57
+00:03:05,380 --> 00:03:07,320
+porque a massa está longe do eixo.
+
+58
+00:03:07,340 --> 00:03:12,120
+O ponto da régua que acelera exatamente como
+a gravidade foi de dois terços do comprimento
+
+59
+00:03:12,140 --> 00:03:13,640
+para oito nonos.
+
+60
+00:03:13,660 --> 00:03:17,740
+Primeira pista do vídeo: massa
+longe do eixo atrapalha o giro.
+
+61
+00:03:17,760 --> 00:03:21,580
+Pensa assim: com a massa mais longe,
+o torque cresce com a distância,
+
+62
+00:03:21,600 --> 00:03:24,770
+mas a inércia cresce com
+o quadrado dela, e vence.
+
+63
+00:03:25,080 --> 00:03:26,900
+Exercício um, o volante.
+
+64
+00:03:26,920 --> 00:03:32,380
+Volantes de inércia guardam energia no giro
+e suavizam o movimento de máquinas e motores.
+
+65
+00:03:32,400 --> 00:03:36,480
+O nosso gira em torno de um eixo
+fixo horizontal e tem três partes.
+
+66
+00:03:36,500 --> 00:03:41,240
+Um anel espesso de quinze quilos, com raio
+interno de trinta centímetros e externo de
+
+67
+00:03:41,260 --> 00:03:41,800
+quarenta.
+
+68
+00:03:41,820 --> 00:03:46,700
+Um cubo central, um disco maciço de
+três quilos e dez centímetros de raio.
+
+69
+00:03:46,720 --> 00:03:50,240
+E dois discos pequenos de um
+quilo e cinco centímetros de raio,
+
+70
+00:03:50,260 --> 00:03:54,140
+em lados opostos, com os centros a
+vinte e cinco centímetros do eixo.
+
+71
+00:03:54,160 --> 00:03:57,800
+Na frente do cubo, um tambor leve
+de quinze centímetros de raio,
+
+72
+00:03:57,820 --> 00:04:01,590
+com um fio que segura um bloco
+de dez quilos, solto do repouso.
+
+73
+00:04:01,740 --> 00:04:04,860
+O que queremos: o momento
+de inércia do volante;
+
+74
+00:04:04,880 --> 00:04:08,960
+a aceleração do bloco, a aceleração
+angular e a tração no fio;
+
+75
+00:04:08,980 --> 00:04:13,180
+quanto o conjunto gira em um segundo
+e meio; para onde vai a energia;
+
+76
+00:04:13,200 --> 00:04:15,820
+e o que acontece quando entra um freio.
+
+77
+00:04:15,840 --> 00:04:20,300
+Hipóteses: eixo sem atrito, fio
+leve, que não estica nem escorrega,
+
+78
+00:04:20,320 --> 00:04:25,800
+raios e tambor sem massa, e gravidade de nove
+vírgula oito metros por segundo ao quadrado.
+
+79
+00:04:25,820 --> 00:04:29,160
+Repara na ordem do que vem aí:
+primeiro a inércia do volante,
+
+80
+00:04:29,180 --> 00:04:32,720
+depois a dinâmica, e só então
+a cinemática e a energia.
+
+81
+00:04:32,740 --> 00:04:35,900
+Item a: o momento de inércia.
+
+82
+00:04:35,920 --> 00:04:38,600
+Começa pelo anel, e tem um
+jeito bonito de enxergar:
+
+83
+00:04:38,620 --> 00:04:42,080
+o anel é um disco cheio de
+quarenta centímetros de raio,
+
+84
+00:04:42,100 --> 00:04:45,160
+menos um disco de trinta
+que foi recortado do miolo.
+
+85
+00:04:45,180 --> 00:04:50,220
+Os dois têm a mesma densidade por área, que
+é a massa do anel dividida pela área do anel.
+
+86
+00:04:50,240 --> 00:04:54,800
+O momento de inércia de um disco é
+metade da massa vezes o raio ao quadrado,
+
+87
+00:04:54,820 --> 00:04:57,800
+e a massa de cada disco
+cresce com o raio ao quadrado,
+
+88
+00:04:57,820 --> 00:05:01,820
+então o momento de inércia de cada
+um cresce com o raio na quarta.
+
+89
+00:05:01,840 --> 00:05:05,400
+Faz a subtração, coloca em evidência,
+e sobra uma expressão simples:
+
+90
+00:05:05,420 --> 00:05:09,880
+metade da massa do anel vezes a
+soma dos quadrados dos dois raios.
+
+91
+00:05:09,900 --> 00:05:15,550
+Com os números, metade de quinze vezes zero
+vírgula zero nove mais zero vírgula dezesseis.
+
+92
+00:05:15,570 --> 00:05:19,300
+Dá um vírgula oito sete cinco
+quilograma metro quadrado.
+
+93
+00:05:19,320 --> 00:05:23,140
+Esse truque vale para qualquer forma
+montada com pedaços conhecidos:
+
+94
+00:05:23,160 --> 00:05:26,970
+o momento de inércia soma, desde
+que seja em torno do mesmo eixo.
+
+95
+00:05:27,200 --> 00:05:31,080
+Fórmula nova sem teste é
+fórmula suspeita, então confere.
+
+96
+00:05:31,100 --> 00:05:33,740
+Se o furo some, com o
+raio interno indo a zero,
+
+97
+00:05:33,760 --> 00:05:37,540
+volta o disco cheio: metade da
+massa vezes o raio ao quadrado.
+
+98
+00:05:37,560 --> 00:05:40,320
+Se o anel afina até os
+dois raios coincidirem,
+
+99
+00:05:40,340 --> 00:05:44,120
+vira massa vezes raio ao quadrado,
+o aro, toda a massa na borda.
+
+100
+00:05:44,140 --> 00:05:45,660
+Passou nos dois limites.
+
+101
+00:05:45,680 --> 00:05:50,320
+Agora o cubo, disco maciço: metade de
+três vezes zero vírgula um ao quadrado,
+
+102
+00:05:50,340 --> 00:05:52,320
+zero vírgula zero um cinco.
+
+103
+00:05:52,340 --> 00:05:56,900
+E os discos pequenos, que não estão no
+eixo, pedem o teorema dos eixos paralelos:
+
+104
+00:05:56,920 --> 00:06:00,520
+cada um tem metade de um quilo
+vezes cinco centímetros ao quadrado,
+
+105
+00:06:00,540 --> 00:06:05,320
+em torno do próprio centro, mais um quilo
+vezes vinte e cinco centímetros ao quadrado,
+
+106
+00:06:05,340 --> 00:06:06,740
+pelo deslocamento.
+
+107
+00:06:06,760 --> 00:06:09,840
+Os dois juntos: zero
+vírgula um dois sete cinco.
+
+108
+00:06:09,860 --> 00:06:13,660
+Somando: dois vírgula zero
+dois quilograma metro quadrado.
+
+109
+00:06:13,680 --> 00:06:15,100
+E repara na distribuição.
+
+110
+00:06:15,120 --> 00:06:19,860
+O anel tem setenta e cinco por cento da massa
+e quase noventa e três por cento do momento
+
+111
+00:06:19,880 --> 00:06:20,680
+de inércia.
+
+112
+00:06:20,700 --> 00:06:24,100
+O cubo, quinze por cento da
+massa, não chega a um por cento.
+
+113
+00:06:24,120 --> 00:06:26,860
+E os discos pequenos: sem
+o termo do deslocamento,
+
+114
+00:06:26,880 --> 00:06:30,160
+seriam zero vírgula zero
+zero dois cinco; com ele,
+
+115
+00:06:30,180 --> 00:06:32,240
+cinquenta e uma vezes mais.
+
+116
+00:06:32,260 --> 00:06:34,940
+Massa longe do eixo é a que pesa no giro.
+
+117
+00:06:34,960 --> 00:06:35,640
+Guarda essa frase.
+
+118
+00:06:35,660 --> 00:06:38,380
+Item b: a aceleração do bloco.
+
+119
+00:06:38,400 --> 00:06:41,000
+O primeiro passo é
+sempre separar os corpos.
+
+120
+00:06:41,020 --> 00:06:44,120
+No bloco, o peso para
+baixo e a tração para cima.
+
+121
+00:06:44,140 --> 00:06:49,000
+No volante, a tração puxa a borda do
+tambor, com braço igual ao raio do tambor.
+
+122
+00:06:49,020 --> 00:06:52,040
+O peso do volante e a
+força do eixo também atuam,
+
+123
+00:06:52,060 --> 00:06:54,900
+mas passam pelo eixo:
+braço zero, torque zero.
+
+124
+00:06:54,920 --> 00:06:57,270
+Por isso nem entram na equação da rotação.
+
+125
+00:06:57,440 --> 00:06:58,600
+Três equações.
+
+126
+00:06:58,620 --> 00:07:03,660
+Newton no bloco: o peso menos a tração
+é a massa do bloco vezes a aceleração.
+
+127
+00:07:03,680 --> 00:07:09,680
+Rotação do volante: a tração vezes o raio do
+tambor é o momento de inércia vezes a aceleração
+
+128
+00:07:09,700 --> 00:07:10,380
+angular.
+
+129
+00:07:10,400 --> 00:07:15,820
+E o vínculo: como o fio não escorrega, a
+aceleração do bloco é a aceleração angular vezes
+
+130
+00:07:15,840 --> 00:07:17,040
+o raio do tambor.
+
+131
+00:07:17,060 --> 00:07:20,740
+O vínculo amarra a translação
+do bloco à rotação do volante.
+
+132
+00:07:20,760 --> 00:07:23,900
+Sem ele, seriam três
+incógnitas e só duas equações.
+
+133
+00:07:23,920 --> 00:07:29,160
+Da equação do volante, a tração é o momento
+de inércia vezes a aceleração angular,
+
+134
+00:07:29,180 --> 00:07:31,060
+dividido pelo raio do tambor.
+
+135
+00:07:31,080 --> 00:07:36,260
+Trocando a aceleração angular pelo vínculo,
+fica momento de inércia vezes aceleração,
+
+136
+00:07:36,280 --> 00:07:38,260
+sobre o raio do tambor ao quadrado.
+
+137
+00:07:38,280 --> 00:07:42,260
+Coloca na equação do bloco, junta
+os termos com a aceleração e divide.
+
+138
+00:07:42,280 --> 00:07:47,880
+Sai uma fórmula que vale guardar: a aceleração
+é a gravidade dividida por um mais o momento
+
+139
+00:07:47,900 --> 00:07:51,780
+de inércia sobre a massa do bloco
+vezes o raio do tambor ao quadrado.
+
+140
+00:07:51,800 --> 00:07:53,820
+A fórmula conta uma história.
+
+141
+00:07:53,840 --> 00:07:58,160
+Sem inércia nenhuma, o termo de baixo
+some e a aceleração é a da gravidade:
+
+142
+00:07:58,180 --> 00:07:59,200
+queda livre.
+
+143
+00:07:59,220 --> 00:08:03,920
+Com momento de inércia enorme, a aceleração
+vai a zero e o bloco mal se mexe.
+
+144
+00:08:03,940 --> 00:08:08,680
+Tem um jeito ainda mais concreto de ler: o
+momento de inércia dividido pelo raio do tambor
+
+145
+00:08:08,700 --> 00:08:12,500
+ao quadrado tem unidade de
+massa, uma inércia equivalente.
+
+146
+00:08:12,520 --> 00:08:16,760
+Aqui, dois vírgula zero dois sobre
+zero vírgula zero dois dois cinco:
+
+147
+00:08:16,780 --> 00:08:18,400
+quase noventa quilos.
+
+148
+00:08:18,420 --> 00:08:23,000
+O volante tem vinte quilos de massa, mas
+resiste à aceleração como se fossem noventa
+
+149
+00:08:23,020 --> 00:08:24,420
+andando em linha reta.
+
+150
+00:08:24,440 --> 00:08:27,100
+Cuidado: não é uma massa
+extra puxando o fio.
+
+151
+00:08:27,120 --> 00:08:29,900
+Quem puxa continua sendo
+só o peso do bloco.
+
+152
+00:08:29,920 --> 00:08:32,480
+O giro acrescenta inércia, não força.
+
+153
+00:08:32,820 --> 00:08:34,460
+Agora os números.
+
+154
+00:08:34,480 --> 00:08:38,980
+A aceleração do bloco: zero vírgula
+nove oito metro por segundo ao quadrado,
+
+155
+00:08:39,000 --> 00:08:40,520
+um décimo da gravidade.
+
+156
+00:08:40,540 --> 00:08:43,180
+Dividindo pelo raio do
+tambor, a aceleração angular:
+
+157
+00:08:43,200 --> 00:08:46,960
+seis vírgula cinco seis radianos
+por segundo ao quadrado.
+
+158
+00:08:46,980 --> 00:08:50,500
+A tração é a massa vezes
+gravidade menos aceleração:
+
+159
+00:08:50,520 --> 00:08:54,320
+oitenta e oito vírgula dois newtons,
+menos que o peso de noventa e oito,
+
+160
+00:08:54,340 --> 00:08:57,140
+como tem que ser, porque
+o bloco desce acelerando.
+
+161
+00:08:57,160 --> 00:09:02,420
+Confere pelo torque: a tração vezes o raio do
+tambor dá treze vírgula dois newtons metro,
+
+162
+00:09:02,440 --> 00:09:05,640
+igual ao momento de inércia
+vezes a aceleração angular.
+
+163
+00:09:05,660 --> 00:09:10,500
+Repara no sentido físico: a tração é menor
+que o peso porque ela é quem freia a queda.
+
+164
+00:09:10,520 --> 00:09:13,460
+Item c: um segundo e meio.
+
+165
+00:09:13,480 --> 00:09:17,020
+A aceleração angular é constante,
+então é cinemática angular,
+
+166
+00:09:17,040 --> 00:09:18,080
+a de sempre.
+
+167
+00:09:18,100 --> 00:09:21,040
+A velocidade angular é
+aceleração angular vezes tempo:
+
+168
+00:09:21,060 --> 00:09:24,160
+nove vírgula oito três
+radianos por segundo.
+
+169
+00:09:24,180 --> 00:09:28,000
+O ângulo é metade da aceleração
+angular vezes o tempo ao quadrado:
+
+170
+00:09:28,020 --> 00:09:31,720
+sete vírgula três sete radianos,
+pouco mais de uma volta.
+
+171
+00:09:31,740 --> 00:09:34,420
+O bloco desce esse ângulo
+vezes o raio do tambor:
+
+172
+00:09:34,440 --> 00:09:39,620
+um vírgula um um metro, com velocidade de
+um vírgula quatro sete metro por segundo.
+
+173
+00:09:39,640 --> 00:09:42,060
+Todas essas fórmulas são
+a cinemática de sempre,
+
+174
+00:09:42,080 --> 00:09:43,470
+com letras de rotação.
+
+175
+00:09:43,540 --> 00:09:47,480
+Agora um ponto na borda do anel,
+a quarenta centímetros do eixo.
+
+176
+00:09:47,500 --> 00:09:51,060
+A aceleração tangencial é a
+aceleração angular vezes o raio:
+
+177
+00:09:51,080 --> 00:09:54,300
+dois vírgula seis dois metros
+por segundo ao quadrado.
+
+178
+00:09:54,320 --> 00:09:57,680
+A centrípeta é a velocidade
+angular ao quadrado vezes o raio:
+
+179
+00:09:57,700 --> 00:10:01,320
+trinta e oito vírgula sete,
+quase quatro vezes a gravidade.
+
+180
+00:10:01,340 --> 00:10:06,280
+Quem manda na borda é a centrípeta: a
+aceleração total desvia só uns quatro graus do
+
+181
+00:10:06,300 --> 00:10:06,620
+raio.
+
+182
+00:10:06,640 --> 00:10:10,840
+Item d: a energia, o grande
+teste da resolução inteira,
+
+183
+00:10:10,860 --> 00:10:13,200
+porque ela não depende
+de como a gente resolveu.
+
+184
+00:10:13,220 --> 00:10:17,440
+O peso do bloco realizou um trabalho
+de cento e oito vírgula quatro joules.
+
+185
+00:10:17,460 --> 00:10:21,620
+A energia cinética do bloco, metade
+da massa vezes velocidade ao quadrado,
+
+186
+00:10:21,640 --> 00:10:23,000
+é dez vírgula nove.
+
+187
+00:10:23,020 --> 00:10:28,000
+A de rotação do volante, metade do momento de
+inércia vezes a velocidade angular ao quadrado,
+
+188
+00:10:28,020 --> 00:10:30,020
+é noventa e sete vírgula cinco.
+
+189
+00:10:30,040 --> 00:10:32,500
+Somando: cento e oito vírgula quatro.
+
+190
+00:10:32,520 --> 00:10:33,240
+Fecha!
+
+191
+00:10:33,260 --> 00:10:36,920
+E repara: quase noventa por cento
+da energia foi parar no giro,
+
+192
+00:10:36,940 --> 00:10:41,940
+nove vezes a do bloco, a mesma razão entre
+a inércia equivalente e a massa do bloco.
+
+193
+00:10:41,960 --> 00:10:46,540
+Vale guardar essa conferência: quando o
+resultado do torque e o da energia concordam,
+
+194
+00:10:46,560 --> 00:10:48,600
+a chance de erro de conta é pequena.
+
+195
+00:10:48,620 --> 00:10:51,480
+Ela mostra também que o
+volante, com a mesma tração,
+
+196
+00:10:51,500 --> 00:10:55,110
+guarda energia como se fosse uma
+massa muito maior que a do bloco.
+
+197
+00:10:55,360 --> 00:10:57,780
+E de onde vem a energia do volante?
+
+198
+00:10:57,800 --> 00:11:00,280
+Do fio, e não direto do peso do bloco.
+
+199
+00:11:00,300 --> 00:11:03,380
+A potência é a tração
+vezes a velocidade do fio,
+
+200
+00:11:03,400 --> 00:11:05,920
+ou o torque vezes a velocidade angular.
+
+201
+00:11:05,940 --> 00:11:08,380
+Em um segundo e meio, chega
+a cento e trinta watts.
+
+202
+00:11:08,400 --> 00:11:12,600
+Como cresce em linha reta com o tempo,
+a energia é a área do triângulo:
+
+203
+00:11:12,620 --> 00:11:17,100
+metade de cento e trinta vezes um e
+meio, noventa e sete vírgula cinco,
+
+204
+00:11:17,120 --> 00:11:19,680
+exatamente a energia cinética de rotação.
+
+205
+00:11:19,700 --> 00:11:20,460
+Bate de novo.
+
+206
+00:11:20,480 --> 00:11:23,600
+Item e: o freio, como o de uma bicicleta.
+
+207
+00:11:23,620 --> 00:11:27,540
+Nesse instante o fio se solta, e uma
+pastilha encosta na borda do anel,
+
+208
+00:11:27,560 --> 00:11:30,320
+apertando com vinte e
+cinco newtons, para o eixo.
+
+209
+00:11:30,340 --> 00:11:33,420
+O coeficiente de atrito
+cinético é zero vírgula quatro.
+
+210
+00:11:33,440 --> 00:11:37,300
+O atrito é esse coeficiente
+vezes a normal: dez newtons,
+
+211
+00:11:37,320 --> 00:11:39,320
+tangente à borda, contra o giro.
+
+212
+00:11:39,340 --> 00:11:43,460
+O torque é dez vezes quarenta
+centímetros: quatro newtons metro.
+
+213
+00:11:43,480 --> 00:11:46,620
+E a normal aponta direto
+para o eixo: braço zero,
+
+214
+00:11:46,640 --> 00:11:47,420
+torque zero.
+
+215
+00:11:47,440 --> 00:11:50,800
+A desaceleração angular é o
+torque sobre o momento de inércia:
+
+216
+00:11:50,820 --> 00:11:54,220
+um vírgula nove oito radiano
+por segundo ao quadrado.
+
+217
+00:11:54,240 --> 00:11:57,620
+Para zerar nove vírgula oito
+três radianos por segundo,
+
+218
+00:11:57,640 --> 00:12:00,160
+leva quatro vírgula nove seis segundos.
+
+219
+00:12:00,180 --> 00:12:03,320
+O ângulo até parar sai da
+equação de Torricelli angular:
+
+220
+00:12:03,340 --> 00:12:07,400
+velocidade angular ao quadrado
+sobre duas vezes a desaceleração.
+
+221
+00:12:07,420 --> 00:12:11,380
+Vinte e quatro vírgula quatro
+radianos, quase quatro voltas.
+
+222
+00:12:11,400 --> 00:12:15,120
+Confere pela energia: o trabalho do
+atrito é o torque vezes o ângulo,
+
+223
+00:12:15,140 --> 00:12:19,760
+quatro vezes vinte e quatro vírgula quatro,
+noventa e sete vírgula cinco joules,
+
+224
+00:12:19,780 --> 00:12:22,340
+exatamente a energia que o volante tinha.
+
+225
+00:12:22,360 --> 00:12:25,420
+Ela não sumiu: virou calor
+na pastilha e no anel.
+
+226
+00:12:25,440 --> 00:12:27,110
+É por isso que freio esquenta.
+
+227
+00:12:27,180 --> 00:12:29,440
+Último item, um teste de intuição.
+
+228
+00:12:29,460 --> 00:12:34,280
+Outro volante, com os mesmos vinte quilos,
+mas todos num aro fino de quarenta centímetros
+
+229
+00:12:34,300 --> 00:12:35,160
+de raio.
+
+230
+00:12:35,180 --> 00:12:38,200
+Mesmo bloco, mesmo fio, solto do repouso.
+
+231
+00:12:38,220 --> 00:12:42,180
+O momento de inércia do aro é vinte
+vezes zero vírgula quatro ao quadrado:
+
+232
+00:12:42,200 --> 00:12:43,160
+três vírgula dois.
+
+233
+00:12:43,180 --> 00:12:46,520
+A inércia equivalente pula para
+cento e quarenta e dois quilos,
+
+234
+00:12:46,540 --> 00:12:51,320
+e a aceleração do bloco cai de zero vírgula
+nove oito para zero vírgula seis quatro.
+
+235
+00:12:51,340 --> 00:12:55,320
+Mesma massa, resultado
+diferente: o aro perde,
+
+236
+00:12:55,340 --> 00:12:57,410
+porque a massa dele está longe do eixo.
+
+237
+00:12:57,460 --> 00:13:00,700
+Moral do volante: a massa
+total não decide sozinha,
+
+238
+00:13:00,720 --> 00:13:02,460
+decide onde ela está.
+
+239
+00:13:02,480 --> 00:13:05,620
+E o método vale para o vídeo
+inteiro: separa os corpos,
+
+240
+00:13:05,640 --> 00:13:08,780
+escreve uma equação para cada
+um e não esquece o vínculo,
+
+241
+00:13:08,800 --> 00:13:11,560
+que transforma três
+incógnitas numa resposta.
+
+242
+00:13:11,580 --> 00:13:13,620
+Agora, um sistema bem diferente.
+
+243
+00:13:13,960 --> 00:13:15,800
+Exercício dois, a haste.
+
+244
+00:13:15,820 --> 00:13:18,860
+Pensa na tampa de um alçapão
+presa numa dobradiça horizontal:
+
+245
+00:13:18,880 --> 00:13:21,540
+ao cair, que força a dobradiça faz?
+
+246
+00:13:21,560 --> 00:13:24,240
+Vamos investigar com uma
+haste fina e uniforme,
+
+247
+00:13:24,260 --> 00:13:28,840
+de massa e comprimento conhecidos, girando
+em torno de um eixo horizontal a um quarto
+
+248
+00:13:28,860 --> 00:13:32,320
+do comprimento de uma das pontas,
+solta do repouso na horizontal.
+
+249
+00:13:32,340 --> 00:13:35,060
+Queremos o momento de
+inércia, a aceleração angular,
+
+250
+00:13:35,080 --> 00:13:37,920
+a velocidade angular na
+queda e, principalmente,
+
+251
+00:13:37,940 --> 00:13:39,520
+a força do eixo.
+
+252
+00:13:39,860 --> 00:13:42,960
+Hipóteses: eixo sem atrito
+e sem resistência do ar.
+
+253
+00:13:42,980 --> 00:13:47,360
+O centro de massa está no meio da haste,
+a um quarto do comprimento do eixo.
+
+254
+00:13:47,380 --> 00:13:50,740
+Pelos eixos paralelos: o momento
+de inércia em torno do centro,
+
+255
+00:13:50,760 --> 00:13:54,260
+um doze avos da massa vezes
+o comprimento ao quadrado,
+
+256
+00:13:54,280 --> 00:13:57,200
+mais a massa vezes um quarto
+do comprimento ao quadrado.
+
+257
+00:13:57,220 --> 00:14:02,740
+Um doze avos mais um dezesseis avos dá sete
+quarenta e oito avos da massa vezes o comprimento
+
+258
+00:14:02,760 --> 00:14:03,300
+ao quadrado.
+
+259
+00:14:03,320 --> 00:14:04,400
+Faz sentido?
+
+260
+00:14:04,420 --> 00:14:07,360
+Com o eixo no centro, seriam
+quatro quarenta e oito avos.
+
+261
+00:14:07,380 --> 00:14:10,600
+Na ponta, um terço, dezesseis
+quarenta e oito avos.
+
+262
+00:14:10,620 --> 00:14:14,380
+O nosso eixo está entre os dois, então
+o resultado também tem que estar.
+
+263
+00:14:14,400 --> 00:14:14,890
+Está.
+
+264
+00:14:15,040 --> 00:14:17,640
+Agora a segunda lei da rotação.
+
+265
+00:14:17,660 --> 00:14:19,880
+Mede o ângulo a partir da horizontal.
+
+266
+00:14:19,900 --> 00:14:23,120
+O único torque é o do
+peso, no centro de massa,
+
+267
+00:14:23,140 --> 00:14:26,780
+com braço de um quarto do comprimento
+vezes o cosseno do ângulo.
+
+268
+00:14:26,800 --> 00:14:32,140
+Dividindo pelo momento de inércia, a aceleração
+angular é doze sétimos da gravidade sobre
+
+269
+00:14:32,160 --> 00:14:34,560
+o comprimento, vezes o cosseno do ângulo.
+
+270
+00:14:34,580 --> 00:14:36,640
+Repara: ela não é constante.
+
+271
+00:14:36,660 --> 00:14:41,800
+É máxima na largada e cai a zero na vertical,
+porque ali o peso aponta para o eixo e
+
+272
+00:14:41,820 --> 00:14:43,260
+deixa de girar a haste.
+
+273
+00:14:43,280 --> 00:14:47,120
+A intuição ajuda: conforme a haste
+desce, o braço do peso encolhe,
+
+274
+00:14:47,140 --> 00:14:51,830
+e o peso empurra cada vez mais ao longo
+da haste e cada vez menos de lado.
+
+275
+00:14:51,860 --> 00:14:56,160
+Como a aceleração angular muda, esquece
+as equações de aceleração constante:
+
+276
+00:14:56,180 --> 00:14:58,620
+para a velocidade angular, usa a energia.
+
+277
+00:14:58,640 --> 00:15:02,740
+O centro de massa desce um quarto do
+comprimento vezes o seno do ângulo,
+
+278
+00:15:02,760 --> 00:15:06,220
+e essa energia potencial vira
+energia cinética de rotação,
+
+279
+00:15:06,240 --> 00:15:09,960
+metade do momento de inércia vezes
+a velocidade angular ao quadrado.
+
+280
+00:15:09,980 --> 00:15:14,640
+Isolando, a velocidade angular ao quadrado
+é vinte e quatro sétimos da gravidade sobre
+
+281
+00:15:14,660 --> 00:15:16,830
+o comprimento, vezes o seno do ângulo.
+
+282
+00:15:16,880 --> 00:15:18,080
+E a força do eixo?
+
+283
+00:15:18,100 --> 00:15:19,500
+Aqui está o pulo do gato.
+
+284
+00:15:19,520 --> 00:15:23,600
+A haste só tem duas forças
+externas, o peso e a força do eixo,
+
+285
+00:15:23,620 --> 00:15:26,960
+então ela sai da segunda lei de
+Newton para o centro de massa:
+
+286
+00:15:26,980 --> 00:15:31,280
+força do eixo mais peso é a massa
+vezes a aceleração do centro de massa.
+
+287
+00:15:31,300 --> 00:15:35,200
+Só que o centro de massa anda num
+círculo de raio um quarto do comprimento.
+
+288
+00:15:35,220 --> 00:15:38,760
+Por isso a aceleração tem
+duas partes: a tangencial,
+
+289
+00:15:38,780 --> 00:15:41,820
+aceleração angular vezes
+esse raio, e a centrípeta,
+
+290
+00:15:41,840 --> 00:15:44,620
+velocidade angular ao
+quadrado vezes esse raio,
+
+291
+00:15:44,640 --> 00:15:45,860
+apontando para o eixo.
+
+292
+00:15:45,880 --> 00:15:49,060
+Projetando ao longo da
+haste e perpendicular a ela,
+
+293
+00:15:49,080 --> 00:15:50,180
+as contas ficam curtas.
+
+294
+00:15:50,200 --> 00:15:55,440
+Ao longo da haste, o eixo puxa para dentro
+com treze sétimos do peso vezes o seno do
+
+295
+00:15:55,460 --> 00:15:55,700
+ângulo.
+
+296
+00:15:55,720 --> 00:15:59,880
+Perpendicular, segura com quatro
+sétimos do peso vezes o cosseno,
+
+297
+00:15:59,900 --> 00:16:01,480
+contra o sentido da queda.
+
+298
+00:16:01,500 --> 00:16:05,410
+E o comprimento da haste sumiu: a
+força só depende do peso e do ângulo.
+
+299
+00:16:05,560 --> 00:16:07,880
+Teste dos sentidos, em três posições.
+
+300
+00:16:07,900 --> 00:16:11,600
+Na largada, ângulo zero: sobra
+só a parte perpendicular,
+
+301
+00:16:11,620 --> 00:16:13,940
+quatro sétimos do peso, para cima.
+
+302
+00:16:13,960 --> 00:16:17,320
+Ainda não há velocidade,
+então não há centrípeta.
+
+303
+00:16:17,340 --> 00:16:21,080
+O centro de massa começa descendo
+com três sétimos da gravidade:
+
+304
+00:16:21,100 --> 00:16:23,720
+peso menos quatro sétimos dá três sétimos.
+
+305
+00:16:23,740 --> 00:16:28,020
+O eixo não segura o peso inteiro, mas
+também não deixa a haste em queda livre.
+
+306
+00:16:28,040 --> 00:16:28,890
+Confere.
+
+307
+00:16:29,040 --> 00:16:32,240
+A quarenta e cinco graus aparece
+o que muita gente esquece:
+
+308
+00:16:32,260 --> 00:16:34,280
+o eixo também empurra de lado.
+
+309
+00:16:34,300 --> 00:16:37,820
+A componente horizontal vale
+nove quatorze avos do peso,
+
+310
+00:16:37,840 --> 00:16:41,580
+para o lado do eixo, e a
+vertical, dezessete quatorze avos,
+
+311
+00:16:41,600 --> 00:16:42,160
+para cima.
+
+312
+00:16:42,180 --> 00:16:45,700
+No total, uma vírgula
+três sete vez o peso.
+
+313
+00:16:45,720 --> 00:16:46,240
+Por que de lado?
+
+314
+00:16:46,260 --> 00:16:48,800
+Porque o centro de massa
+está fazendo uma curva,
+
+315
+00:16:48,820 --> 00:16:52,020
+e para curvar alguém precisa
+empurrar na horizontal.
+
+316
+00:16:52,040 --> 00:16:54,400
+A única força horizontal aqui é a do eixo.
+
+317
+00:16:54,420 --> 00:16:58,320
+E na vertical, noventa graus:
+a aceleração angular é zero,
+
+318
+00:16:58,340 --> 00:17:02,220
+a parte perpendicular some e
+sobram treze sétimos do peso,
+
+319
+00:17:02,240 --> 00:17:03,980
+para cima, quase o dobro.
+
+320
+00:17:04,000 --> 00:17:09,520
+Aceleração angular zero não é parada: aqui
+a velocidade angular é a maior da queda.
+
+321
+00:17:09,540 --> 00:17:14,280
+É a centrípeta cobrando a conta: o centro
+de massa passa voando por baixo do eixo,
+
+322
+00:17:14,300 --> 00:17:16,580
+e o eixo precisa puxá-lo para a curva.
+
+323
+00:17:16,600 --> 00:17:22,460
+Numa única queda, a força vai de quatro a
+treze sétimos do peso e ainda muda de direção.
+
+324
+00:17:22,480 --> 00:17:26,820
+Neste problema, o momento mais exigente
+para o eixo é a passagem pela vertical,
+
+325
+00:17:26,840 --> 00:17:28,160
+não a largada.
+
+326
+00:17:28,180 --> 00:17:32,500
+A dica: a força no eixo sai da segunda
+lei de Newton para o centro de massa,
+
+327
+00:17:32,520 --> 00:17:36,160
+com as duas acelerações, a
+tangencial e a centrípeta.
+
+328
+00:17:36,180 --> 00:17:39,790
+Esquecer a centrípeta é errar
+justamente onde a força é maior.
+
+329
+00:17:40,040 --> 00:17:44,080
+Exercício três, o carretel
+do começo, agora com números.
+
+330
+00:17:44,100 --> 00:17:47,800
+Momento de inércia de zero vírgula
+cinco quilograma metro quadrado,
+
+331
+00:17:47,820 --> 00:17:48,840
+sem atrito.
+
+332
+00:17:48,860 --> 00:17:53,420
+O tambor grande tem trinta centímetros
+de raio e segura o bloco de seis quilos.
+
+333
+00:17:53,440 --> 00:17:58,020
+O pequeno tem dez e segura o de dez
+quilos, com o fio em sentido contrário.
+
+334
+00:17:58,040 --> 00:18:00,040
+Fios leves, sem escorregamento.
+
+335
+00:18:00,060 --> 00:18:02,490
+De novo, antes da conta: qual desce?
+
+336
+00:18:02,760 --> 00:18:05,160
+Dá para prever sem resolver.
+
+337
+00:18:05,180 --> 00:18:08,800
+Imagina um giro pequeno, no
+sentido em que o bloco leve desce.
+
+338
+00:18:08,820 --> 00:18:12,540
+Para o mesmo giro, o leve desce o
+ângulo vezes trinta centímetros;
+
+339
+00:18:12,560 --> 00:18:16,420
+o pesado sobe o mesmo ângulo
+vezes dez, três vezes menos.
+
+340
+00:18:16,440 --> 00:18:21,040
+Compara a energia potencial: o leve
+perde seis vezes zero vírgula três,
+
+341
+00:18:21,060 --> 00:18:24,956
+um vírgula oito; o pesado ganha
+dez vezes zero vírgula um,
+
+342
+00:18:24,976 --> 00:18:25,181
+um.
+
+343
+00:18:25,201 --> 00:18:28,540
+Sobra energia, então o movimento
+acontece nesse sentido,
+
+344
+00:18:28,560 --> 00:18:29,680
+e só nele.
+
+345
+00:18:29,700 --> 00:18:33,440
+Quem decide não é a massa
+sozinha, é a massa vezes o raio.
+
+346
+00:18:33,460 --> 00:18:36,860
+Esse raciocínio poupa conta: antes
+de escrever qualquer equação,
+
+347
+00:18:36,880 --> 00:18:41,300
+já dá para saber o sentido do movimento, e
+o resultado final tem que concordar com essa
+
+348
+00:18:41,320 --> 00:18:41,970
+previsão.
+
+349
+00:18:42,140 --> 00:18:43,980
+Só que cuidado.
+
+350
+00:18:44,000 --> 00:18:47,040
+No carretel, quem faz
+torque não são os pesos:
+
+351
+00:18:47,060 --> 00:18:52,040
+são as trações dos fios, e com tudo em
+movimento a tração deixa de ser igual ao peso.
+
+352
+00:18:52,060 --> 00:18:53,660
+Então separa os corpos.
+
+353
+00:18:53,680 --> 00:18:57,780
+No bloco leve, o peso para baixo
+e a primeira tração para cima.
+
+354
+00:18:57,800 --> 00:19:01,800
+No pesado, o peso para baixo
+e a segunda tração para cima.
+
+355
+00:19:01,820 --> 00:19:04,860
+No carretel, cada tração
+puxa a borda do seu tambor,
+
+356
+00:19:04,880 --> 00:19:08,760
+e como os fios são opostos,
+os torques também são opostos.
+
+357
+00:19:08,780 --> 00:19:13,260
+Esse é o erro mais comum do problema:
+supor que a tração é igual ao peso.
+
+358
+00:19:13,280 --> 00:19:14,660
+Isso só vale em equilíbrio.
+
+359
+00:19:14,680 --> 00:19:18,560
+Com aceleração, a tração do bloco
+que desce é menor que o peso,
+
+360
+00:19:18,580 --> 00:19:20,340
+e a do que sobe é maior.
+
+361
+00:19:20,680 --> 00:19:24,000
+As equações, com o sentido
+positivo em que o leve desce.
+
+362
+00:19:24,020 --> 00:19:28,320
+Bloco leve: peso menos primeira
+tração é massa vezes aceleração.
+
+363
+00:19:28,340 --> 00:19:32,840
+Bloco pesado: segunda tração menos
+peso é massa vezes aceleração.
+
+364
+00:19:32,860 --> 00:19:37,960
+Carretel: primeira tração vezes raio grande,
+menos segunda tração vezes raio pequeno,
+
+365
+00:19:37,980 --> 00:19:40,700
+é o momento de inércia
+vezes a aceleração angular.
+
+366
+00:19:40,720 --> 00:19:45,320
+E dois vínculos: o leve acelera com
+aceleração angular vezes raio grande,
+
+367
+00:19:45,340 --> 00:19:47,200
+o pesado, vezes raio pequeno.
+
+368
+00:19:47,220 --> 00:19:52,180
+As acelerações lineares são diferentes:
+a do leve é três vezes a do pesado.
+
+369
+00:19:52,200 --> 00:19:57,640
+Isola as trações, troca as acelerações pelos
+vínculos e leva tudo para a equação do carretel.
+
+370
+00:19:57,660 --> 00:20:03,420
+Aparece algo bonito: a aceleração angular é a
+gravidade vezes massa leve vezes raio grande
+
+371
+00:20:03,440 --> 00:20:08,840
+menos massa pesada vezes raio pequeno, tudo
+dividido por momento de inércia mais massa
+
+372
+00:20:08,860 --> 00:20:13,980
+leve vezes raio grande ao quadrado mais
+massa pesada vezes raio pequeno ao quadrado.
+
+373
+00:20:14,000 --> 00:20:16,200
+O de cima é a comparação da energia.
+
+374
+00:20:16,220 --> 00:20:20,200
+O de baixo é sempre positivo, porque
+tudo que se move soma inércia.
+
+375
+00:20:20,220 --> 00:20:22,900
+Então o sinal do numerador
+já prevê o sentido.
+
+376
+00:20:22,920 --> 00:20:27,200
+É a mesma comparação de energia de
+antes, agora escrita com todas as letras.
+
+377
+00:20:27,220 --> 00:20:30,540
+Se as massas ou os raios mudarem,
+a fórmula continua valendo:
+
+378
+00:20:30,560 --> 00:20:31,960
+é só trocar os valores.
+
+379
+00:20:32,300 --> 00:20:35,060
+Com os números: gravidade
+vezes zero vírgula oito,
+
+380
+00:20:35,080 --> 00:20:38,755
+que dá sete vírgula oito quatro,
+sobre um vírgula catorze.
+
+381
+00:20:38,775 --> 00:20:42,260
+Seis vírgula oito oito radianos
+por segundo ao quadrado.
+
+382
+00:20:42,280 --> 00:20:46,680
+O bloco leve desce com dois vírgula zero
+seis metros por segundo ao quadrado,
+
+383
+00:20:46,700 --> 00:20:49,440
+o pesado sobe com zero vírgula seis nove.
+
+384
+00:20:49,460 --> 00:20:52,560
+Primeira conferência: a razão
+entre as acelerações é três,
+
+385
+00:20:52,580 --> 00:20:54,190
+a razão entre os raios.
+
+386
+00:20:54,440 --> 00:20:55,880
+Agora as trações.
+
+387
+00:20:55,900 --> 00:21:00,034
+Leve: seis vezes nove vírgula
+oito menos dois vírgula zero seis,
+
+388
+00:21:00,054 --> 00:21:04,890
+quarenta e seis vírgula quatro newtons,
+menos que o peso de cinquenta e oito vírgula
+
+389
+00:21:04,910 --> 00:21:06,560
+oito, porque ele desce acelerando.
+
+390
+00:21:06,580 --> 00:21:11,009
+Pesado: dez vezes nove vírgula
+oito mais zero vírgula seis nove,
+
+391
+00:21:11,029 --> 00:21:15,420
+cento e quatro vírgula nove, mais
+que o peso, porque sobe acelerando.
+
+392
+00:21:15,440 --> 00:21:20,320
+O torque resultante das trações no carretel
+é três vírgula quatro quatro newtons metro;
+
+393
+00:21:20,340 --> 00:21:24,740
+dividido por zero vírgula cinco, volta a
+aceleração angular de seis vírgula oito oito.
+
+394
+00:21:24,760 --> 00:21:27,280
+E os sete vírgula oito quatro de antes?
+
+395
+00:21:27,300 --> 00:21:32,820
+Aquela equação é do sistema inteiro: o sete
+vírgula oito quatro é a contribuição gravitacional,
+
+396
+00:21:32,840 --> 00:21:35,600
+dividida pela inércia total
+de um vírgula catorze,
+
+397
+00:21:35,620 --> 00:21:37,080
+que inclui os blocos.
+
+398
+00:21:37,100 --> 00:21:42,040
+O erro clássico é dividir o sete vírgula oito
+quatro só pelo momento de inércia do carretel:
+
+399
+00:21:42,060 --> 00:21:46,400
+dá quinze vírgula sete, e está errado,
+porque ignora a inércia dos blocos.
+
+400
+00:21:46,420 --> 00:21:49,780
+Repara no que cada número diz:
+as duas trações são diferentes,
+
+401
+00:21:49,800 --> 00:21:52,860
+e é essa diferença, atuando
+em braços diferentes,
+
+402
+00:21:52,880 --> 00:21:54,250
+que gira o carretel.
+
+403
+00:21:54,560 --> 00:21:56,940
+Outra conferência, pela energia.
+
+404
+00:21:56,960 --> 00:22:00,400
+Quando o leve desce um metro,
+o pesado sobe um terço.
+
+405
+00:22:00,420 --> 00:22:05,295
+A energia potencial perdida é cinquenta e
+oito vírgula oito menos trinta e dois vírgula
+
+406
+00:22:05,315 --> 00:22:10,540
+sete: vinte e seis vírgula um joules, que
+viram energia cinética dos dois blocos e do
+
+407
+00:22:10,560 --> 00:22:11,220
+carretel.
+
+408
+00:22:11,240 --> 00:22:16,000
+Resolvendo com os vínculos, o leve chega a
+dois vírgula zero três metros por segundo.
+
+409
+00:22:16,020 --> 00:22:20,080
+Pela cinemática, aceleração dois
+vírgula zero seis em um metro,
+
+410
+00:22:20,100 --> 00:22:21,440
+dá o mesmo valor.
+
+411
+00:22:21,460 --> 00:22:21,890
+Bate.
+
+412
+00:22:22,160 --> 00:22:26,020
+Que massa deixaria o sistema
+parado, se fosse solto do repouso?
+
+413
+00:22:26,040 --> 00:22:31,340
+O numerador precisa zerar: a massa do bloco
+do tambor pequeno vezes dez centímetros igual
+
+414
+00:22:31,360 --> 00:22:32,988
+a seis quilos vezes trinta.
+
+415
+00:22:33,008 --> 00:22:38,140
+Dezoito quilos, três vezes a massa do
+leve, porque o braço é três vezes menor.
+
+416
+00:22:38,160 --> 00:22:39,880
+A aceleração angular zera.
+
+417
+00:22:39,900 --> 00:22:43,600
+Se o carretel já estivesse girando,
+continuaria com velocidade constante:
+
+418
+00:22:43,620 --> 00:22:46,400
+ele só fica parado
+porque parte do repouso.
+
+419
+00:22:46,420 --> 00:22:51,360
+E a pergunta do começo está respondida: o
+bloco leve desce porque puxa com um braço três
+
+420
+00:22:51,380 --> 00:22:52,320
+vezes maior.
+
+421
+00:22:52,340 --> 00:22:55,560
+Em equilíbrio, as duas trações
+voltam a ser iguais aos pesos,
+
+422
+00:22:55,580 --> 00:22:57,330
+e os torques se compensam.
+
+423
+00:22:57,560 --> 00:23:01,500
+A dica do carretel: compara massa
+vezes raio para prever o sentido,
+
+424
+00:23:01,520 --> 00:23:03,880
+mas escreve as equações com as trações.
+
+425
+00:23:03,900 --> 00:23:07,450
+E confere pela razão das
+acelerações e pela energia.
+
+426
+00:23:07,680 --> 00:23:12,840
+Exercício quatro, o pêndulo de disco, o
+problema de quem projeta um relógio de pêndulo.
+
+427
+00:23:12,860 --> 00:23:17,720
+Dois discos iguais, mesma massa e
+mesmo raio, ligados por uma haste leve.
+
+428
+00:23:17,740 --> 00:23:21,720
+O de cima é preso ao eixo pelo
+centro, o de baixo fica pendurado,
+
+429
+00:23:21,740 --> 00:23:23,620
+com os centros a uma certa distância.
+
+430
+00:23:23,640 --> 00:23:25,820
+Qual é o período das oscilações pequenas?
+
+431
+00:23:25,840 --> 00:23:29,320
+A estratégia é comparar
+com o pêndulo simples,
+
+432
+00:23:29,340 --> 00:23:31,200
+uma bolinha na ponta de um fio.
+
+433
+00:23:31,220 --> 00:23:34,900
+O momento de inércia dela é massa
+vezes comprimento ao quadrado,
+
+434
+00:23:34,920 --> 00:23:40,320
+e o torque do peso é massa vezes gravidade
+vezes comprimento vezes o seno do ângulo,
+
+435
+00:23:40,340 --> 00:23:41,440
+puxando de volta.
+
+436
+00:23:41,460 --> 00:23:44,520
+Para ângulos pequenos, o seno
+é quase o próprio ângulo,
+
+437
+00:23:44,540 --> 00:23:47,380
+e a aceleração angular fica
+proporcional ao ângulo,
+
+438
+00:23:47,400 --> 00:23:50,080
+com sinal contrário:
+movimento harmônico simples.
+
+439
+00:23:50,100 --> 00:23:54,320
+O período é dois pi vezes a raiz
+do comprimento sobre a gravidade.
+
+440
+00:23:54,340 --> 00:23:58,040
+Então, se o nosso pêndulo der a
+mesma equação com outro comprimento,
+
+441
+00:23:58,060 --> 00:24:00,020
+é só usar esse comprimento equivalente.
+
+442
+00:24:00,040 --> 00:24:03,860
+Essa ideia vale muito além deste
+problema: todo pêndulo físico,
+
+443
+00:24:03,880 --> 00:24:07,940
+de qualquer forma, tem um pêndulo
+simples equivalente com o mesmo período.
+
+444
+00:24:07,960 --> 00:24:13,260
+Aqui o torque vem só do disco de baixo,
+porque o peso do de cima passa pelo eixo.
+
+445
+00:24:13,280 --> 00:24:15,300
+Já o momento de inércia tem os dois.
+
+446
+00:24:15,320 --> 00:24:18,740
+O de cima, metade da massa
+vezes o raio ao quadrado.
+
+447
+00:24:18,760 --> 00:24:22,760
+O de baixo, o mesmo, mais a massa
+vezes a distância ao quadrado,
+
+448
+00:24:22,780 --> 00:24:24,020
+pelos eixos paralelos.
+
+449
+00:24:24,040 --> 00:24:28,660
+A massa total é o dobro da de um disco, e
+o centro de massa do conjunto fica no meio:
+
+450
+00:24:28,680 --> 00:24:33,740
+massa total vezes a distância do eixo ao
+centro de massa dá a massa de um disco vezes
+
+451
+00:24:33,760 --> 00:24:34,840
+a distância inteira.
+
+452
+00:24:34,860 --> 00:24:39,640
+Dividindo o momento de inércia por isso, o
+comprimento equivalente é a distância mais
+
+453
+00:24:39,660 --> 00:24:41,560
+o raio ao quadrado sobre a distância.
+
+454
+00:24:41,580 --> 00:24:44,240
+Com raio de dez centímetros
+e distância de trinta,
+
+455
+00:24:44,260 --> 00:24:46,880
+o período dá um vírgula um seis segundo.
+
+456
+00:24:46,900 --> 00:24:49,820
+E o pêndulo simples equivalente
+ao lado oscila junto,
+
+457
+00:24:49,840 --> 00:24:50,560
+em fase.
+
+458
+00:24:50,580 --> 00:24:55,240
+Repara que o comprimento equivalente é sempre
+maior que a distância até o disco de baixo,
+
+459
+00:24:55,260 --> 00:24:57,100
+porque o segundo termo é positivo.
+
+460
+00:24:57,120 --> 00:25:00,820
+Esse excesso é o preço de a massa
+não estar concentrada num ponto.
+
+461
+00:25:00,840 --> 00:25:03,760
+O disco de cima ajuda ou atrapalha?
+
+462
+00:25:03,780 --> 00:25:07,900
+Solta dois pêndulos juntos, do mesmo
+ângulo: um com o disco de cima,
+
+463
+00:25:07,920 --> 00:25:08,660
+outro sem.
+
+464
+00:25:08,680 --> 00:25:12,380
+O de cima soma momento de inércia
+e nenhum torque restaurador,
+
+465
+00:25:12,400 --> 00:25:14,760
+então só deixa o pêndulo mais preguiçoso.
+
+466
+00:25:14,780 --> 00:25:19,170
+Sem ele, o período cai de um vírgula um
+seis para um vírgula um três segundo.
+
+467
+00:25:19,360 --> 00:25:20,540
+Tira o disco de cima.
+
+468
+00:25:20,560 --> 00:25:23,560
+Fica um disco só, pendurado
+por uma haste leve,
+
+469
+00:25:23,580 --> 00:25:25,780
+com o eixo a uma certa
+distância do centro.
+
+470
+00:25:25,800 --> 00:25:30,580
+Agora a pergunta é de projeto: onde pôr o
+eixo para o período ser o menor possível?
+
+471
+00:25:30,600 --> 00:25:35,720
+O momento de inércia é metade da massa vezes
+o raio ao quadrado mais a massa vezes a
+
+472
+00:25:35,740 --> 00:25:39,220
+distância ao quadrado, e o torque
+é o peso vezes a distância.
+
+473
+00:25:39,240 --> 00:25:44,220
+O comprimento equivalente fica a distância
+mais o raio ao quadrado sobre duas vezes a
+
+474
+00:25:44,240 --> 00:25:44,740
+distância.
+
+475
+00:25:44,760 --> 00:25:45,820
+Olha os extremos.
+
+476
+00:25:45,840 --> 00:25:51,060
+Eixo muito longe: o segundo termo some,
+e o disco vira uma bolinha num fio.
+
+477
+00:25:51,080 --> 00:25:55,380
+Eixo quase no centro: o torque
+some, o segundo termo explode,
+
+478
+00:25:55,400 --> 00:25:58,840
+e o período vai ao infinito,
+como um balanço que mal volta.
+
+479
+00:25:58,860 --> 00:26:00,760
+Entre os dois tem que haver um mínimo.
+
+480
+00:26:00,780 --> 00:26:03,640
+Vamos achar esse mínimo de três maneiras.
+
+481
+00:26:03,660 --> 00:26:08,180
+Primeiro, a derivada: como o período cresce
+com a raiz do comprimento equivalente,
+
+482
+00:26:08,200 --> 00:26:11,980
+minimizar um é minimizar o outro;
+derivando e igualando a zero,
+
+483
+00:26:12,000 --> 00:26:14,480
+a distância é o raio sobre raiz de dois.
+
+484
+00:26:14,500 --> 00:26:18,360
+Segundo, sem derivada: os
+dois termos têm produto fixo,
+
+485
+00:26:18,380 --> 00:26:23,460
+metade do raio ao quadrado, e a soma de dois
+positivos de produto fixo é mínima quando
+
+486
+00:26:23,480 --> 00:26:24,080
+eles são iguais.
+
+487
+00:26:24,100 --> 00:26:25,080
+Mesma resposta.
+
+488
+00:26:25,100 --> 00:26:30,320
+Terceiro, a curva do período: o fundo cai
+em sete vírgula zero sete centímetros,
+
+489
+00:26:30,340 --> 00:26:31,500
+para um disco de dez.
+
+490
+00:26:31,520 --> 00:26:35,160
+O período mínimo é zero vírgula
+sete cinco cinco segundo.
+
+491
+00:26:35,180 --> 00:26:36,280
+E nos extremos?
+
+492
+00:26:36,300 --> 00:26:41,060
+Com o eixo muito perto do centro, o termo do
+raio ao quadrado sobre a distância explode,
+
+493
+00:26:41,080 --> 00:26:44,300
+e o pêndulo fica lento,
+quase sem torque restaurador.
+
+494
+00:26:44,320 --> 00:26:46,640
+A curva ainda esconde um presente.
+
+495
+00:26:46,660 --> 00:26:50,040
+Com o eixo a cinco ou a
+dez centímetros do centro,
+
+496
+00:26:50,060 --> 00:26:52,560
+o período é o mesmo, dentro
+da precisão mostrada:
+
+497
+00:26:52,580 --> 00:26:55,060
+zero vírgula sete sete sete segundo.
+
+498
+00:26:55,080 --> 00:27:00,300
+Trocar a distância pelo raio ao quadrado sobre
+duas vezes a distância não muda o comprimento
+
+499
+00:27:00,320 --> 00:27:04,340
+equivalente: cinco vezes dez dá
+cinquenta, metade de dez ao quadrado.
+
+500
+00:27:04,360 --> 00:27:06,660
+Duas posições, o mesmo relógio.
+
+501
+00:27:06,680 --> 00:27:11,720
+Isso acontece porque a expressão é simétrica:
+duas distâncias que multiplicadas dão metade
+
+502
+00:27:11,740 --> 00:27:14,620
+do raio ao quadrado dão o
+mesmo comprimento equivalente.
+
+503
+00:27:14,640 --> 00:27:18,280
+Só que o mínimo caiu a
+sete centímetros do centro,
+
+504
+00:27:18,300 --> 00:27:21,460
+num disco de dez: o eixo
+está dentro do disco.
+
+505
+00:27:21,480 --> 00:27:23,440
+Isso é possível, fazendo um furo.
+
+506
+00:27:23,460 --> 00:27:27,560
+Mas se o disco tem que ficar pendurado
+por uma haste presa fora dele,
+
+507
+00:27:27,580 --> 00:27:32,440
+a distância não pode ser menor que o raio,
+e o melhor permitido é o eixo bem na borda:
+
+508
+00:27:32,460 --> 00:27:37,000
+zero vírgula sete sete sete segundo,
+só três por cento acima do mínimo.
+
+509
+00:27:37,020 --> 00:27:42,080
+Perto do fundo a curva é quase plana: errar
+um pouco a posição do eixo quase não muda
+
+510
+00:27:42,100 --> 00:27:42,460
+o período.
+
+511
+00:27:42,480 --> 00:27:47,460
+Na prática, isso alivia: não é preciso
+precisão de laboratório para posicionar o eixo,
+
+512
+00:27:47,480 --> 00:27:50,160
+porque a curva do período
+é quase plana no mínimo.
+
+513
+00:27:50,180 --> 00:27:53,780
+A dica: para qualquer
+pêndulo de corpo rígido,
+
+514
+00:27:53,800 --> 00:27:58,720
+divide o momento de inércia em torno do eixo
+pela massa total vezes a distância do eixo
+
+515
+00:27:58,740 --> 00:27:59,800
+ao centro de massa.
+
+516
+00:27:59,820 --> 00:28:03,360
+Esse é o comprimento equivalente,
+e o resto é pêndulo simples.
+
+517
+00:28:03,380 --> 00:28:04,860
+Vamos resumir os quatro.
+
+518
+00:28:04,880 --> 00:28:08,580
+No volante, a distribuição
+da massa decide a aceleração:
+
+519
+00:28:08,600 --> 00:28:11,320
+o momento de inércia age
+como uma inércia extra,
+
+520
+00:28:11,340 --> 00:28:13,080
+que atrapalha, mas não puxa.
+
+521
+00:28:13,100 --> 00:28:18,720
+Na haste, a força no eixo não é constante:
+vai de quatro sétimos a treze sétimos do
+
+522
+00:28:18,740 --> 00:28:20,180
+peso e muda de direção.
+
+523
+00:28:20,200 --> 00:28:25,340
+No carretel, quem manda é massa vezes
+raio: as trações dão a equação do carretel,
+
+524
+00:28:25,360 --> 00:28:28,840
+e os pesos dão a do sistema
+inteiro, cada um com a sua inércia.
+
+525
+00:28:28,860 --> 00:28:32,800
+E no pêndulo, torque e momento de
+inércia viram ferramenta de projeto:
+
+526
+00:28:32,820 --> 00:28:37,840
+o período é mínimo com o eixo a uma distância
+do centro igual ao raio sobre raiz de dois.
+
+527
+00:28:37,860 --> 00:28:41,800
+O método foi o mesmo: começa
+pela física, não pela fórmula.
+
+528
+00:28:41,820 --> 00:28:45,440
+Desenha o sistema, identifica
+as forças, escolhe o eixo,
+
+529
+00:28:45,460 --> 00:28:47,780
+escreve as equações e usa os vínculos.
+
+530
+00:28:47,800 --> 00:28:51,320
+Depois confere: pela energia,
+pelos sentidos das forças,
+
+531
+00:28:51,340 --> 00:28:53,540
+pelos casos-limite ou por outro caminho.
+
+532
+00:28:53,560 --> 00:28:57,520
+Essas conferências não são detalhe:
+mostram se o resultado faz sentido.
+
+533
+00:28:57,540 --> 00:29:00,580
+Conta que passa nesses
+testes merece confiança.
+
+534
+00:29:00,600 --> 00:29:05,040
+Se esse vídeo te ajudou, se inscreve no
+Parallax Lab para acompanhar os próximos vídeos.
+
+535
+00:29:05,060 --> 00:29:07,940
+E, antes de ir, um desafio
+para os comentários.
+
+536
+00:29:07,960 --> 00:29:11,532
+Volta no volante e troca o bloco
+de dez quilos por um de vinte.
+
+537
+00:29:11,552 --> 00:29:13,340
+A aceleração dobra?
+
+538
+00:29:13,360 --> 00:29:14,400
+Mais que dobra?
+
+539
+00:29:14,420 --> 00:29:15,080
+Menos?
+
+540
+00:29:15,100 --> 00:29:19,060
+Usa a fórmula que a gente guardou e
+escreve sua resposta e seu raciocínio.
+
+541
+00:29:19,080 --> 00:29:20,047
+Até a próxima!

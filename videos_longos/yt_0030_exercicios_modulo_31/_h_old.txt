@@ -1,0 +1,20 @@
+        # ── H · gancho (alvo 03) ──
+        self.an("H-1")
+        zera_chapas()
+        cs = [cartao_h(i) for i in range(3)]
+        self.play(FadeIn(cs[0][0]), run_time=0.6)
+        self.play(FadeIn(cs[1][0]), caneta(cs[0][1], ritmo=0.25), run_time=0.6)
+        self.play(FadeIn(cs[2][0]), caneta(cs[1][1], ritmo=0.25), run_time=0.6)
+        self.play(caneta(cs[2][1], ritmo=0.25))
+        tit = T("QUAL GIRA? QUAL MUDA DE ÁREA? QUAL ENTORTA?", 960, 215, 40, "center")
+        tit._caneta, tit._esc, tit._em_caneta, tit._tex = True, False, False, "QUAL GIRA?"
+        self.gat("um vai girar")
+        self.play(caneta(tit, ritmo=0.12))
+        fs_ = legenda("A FÓRMULA JÁ SABE", 960, 930, GEO, "center", 30)
+        self.gat("dá e hoje")
+        self.play(caneta(fs_, ritmo=0.2))
+        t2 = T("POR QUE 1/r? POR QUE 1/r²?", 960, 215, 40, "center", up=False)
+        self.gat("por que o campo magnético")
+        troca_linha(self, tit, t2)
+        self.ate(1.0)
+
